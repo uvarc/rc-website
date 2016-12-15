@@ -1,3 +1,1 @@
-***Title Goes Here***
-lorem ipsum
-More test goes here
+This file should be synchronized by Lambda. I will check after it executes to be sure.
