@@ -1,2 +1,0 @@
-This file should be synchronized by Lambda. I will check after it executes to be sure.
-This is another update, circa 2:06pm.
