@@ -4,7 +4,6 @@ box: debian
 # services:
     # - postgres
     # http://devcenter.wercker.com/docs/services/postgresql.html
-
     # - mongo
     # http://devcenter.wercker.com/docs/services/mongodb.html
 
