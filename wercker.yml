@@ -20,8 +20,7 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
-    - script:
-        name: echo
-        code: |
-          echo "hello world!"
-
+    - arjen/hugo-build@1.13.1
+        version: "1.13.1"
+        theme: hugo-theme-bootstrap4-blog
+        flags: --buildDrafts=true
