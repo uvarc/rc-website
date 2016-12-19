@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>UVA School of Medicine Research Computing</title>
-    <link>http://detp3yipwutia.cloudfront.net/categories/category/index.xml</link>
+    <link>http://detp3yipwutia.cloudfront.net/tags/tag2/index.xml</link>
     <description>Recent content on UVA School of Medicine Research Computing</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://detp3yipwutia.cloudfront.net/categories/category/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://detp3yipwutia.cloudfront.net/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Request</title>
