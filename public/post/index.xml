@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Post-rsses on UVA School of Medicine Research Computing</title>
-    <link>http://detp3yipwutia.cloudfront.net/post/index.xml</link>
+    <link>http://somrc-website.s3-website-us-east-1.amazonaws.com/post/index.xml</link>
     <description>Recent content in Post-rsses on UVA School of Medicine Research Computing</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 19 Dec 2016 11:50:07 -0500</lastBuildDate>
-    <atom:link href="http://detp3yipwutia.cloudfront.net/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://somrc-website.s3-website-us-east-1.amazonaws.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Welcome to Our New Site</title>
-      <link>http://detp3yipwutia.cloudfront.net/post/welcome-to-my-site/</link>
+      <link>http://somrc-website.s3-website-us-east-1.amazonaws.com/post/welcome-to-my-site/</link>
       <pubDate>Mon, 19 Dec 2016 11:50:07 -0500</pubDate>
       
-      <guid>http://detp3yipwutia.cloudfront.net/post/welcome-to-my-site/</guid>
+      <guid>http://somrc-website.s3-website-us-east-1.amazonaws.com/post/welcome-to-my-site/</guid>
       <description>&lt;p&gt;This is just a simple post to say &amp;ldquo;Welcome to my site&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lobortis sapien. Phasellus mauris ante, elementum quis sollicitudin et, luctus sed metus. Morbi scelerisque condimentum porttitor. Suspendisse sit amet elit mi. Suspendisse nisl nunc, pharetra vel gravida sed, rhoncus a nisi. Pellentesque nec leo nulla. Donec in dolor a est tincidunt viverra. Vestibulum id arcu ut eros lobortis euismod. Nam vitae sem ut tellus tristique egestas ac sit amet neque. Maecenas vel nibh a urna condimentum suscipit ut et nunc.&lt;/p&gt;
