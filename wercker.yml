@@ -1,5 +1,5 @@
 # This references a standard debian container from the
-# Docker Hub https://registry.hub.docker.com/_/debian/
+# Docker Hub https://registry.hub.docker.com/_/debian/ .
 box: debian
 # services:
     # - postgres
