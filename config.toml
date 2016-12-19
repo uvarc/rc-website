@@ -1,5 +1,5 @@
 baseurl = "http://somrc-website.s3-website-us-east-1.amazonaws.com/"
-title = "UVA School of Medicine - Research Computing"
+title = "UVA School of Medicine Research Computing"
 publishdir = "public"
 languageCode = "en-us"
 theme = "hugo-theme-bootstrap4-blog"

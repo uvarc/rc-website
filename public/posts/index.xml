@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Post-rsses on UVA School of Medicine Research Computing</title>
-    <link>http://somrc-website.s3-website-us-east-1.amazonaws.com/post/index.xml</link>
-    <description>Recent content in Post-rsses on UVA School of Medicine Research Computing</description>
+    <title>Posts-rsses on UVA School of Medicine Research Computing</title>
+    <link>http://somrc-website.s3-website-us-east-1.amazonaws.com/posts/index.xml</link>
+    <description>Recent content in Posts-rsses on UVA School of Medicine Research Computing</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Dec 2016 11:50:07 -0500</lastBuildDate>
-    <atom:link href="http://somrc-website.s3-website-us-east-1.amazonaws.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Dec 2016 13:43:10 -0500</lastBuildDate>
+    <atom:link href="http://somrc-website.s3-website-us-east-1.amazonaws.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>welcome to my site</title>
-      <link>http://somrc-website.s3-website-us-east-1.amazonaws.com/post/welcome-to-my-site/</link>
-      <pubDate>Mon, 19 Dec 2016 11:50:07 -0500</pubDate>
+      <title>publish to s3</title>
+      <link>http://somrc-website.s3-website-us-east-1.amazonaws.com/posts/publish-to-s3/</link>
+      <pubDate>Mon, 19 Dec 2016 13:43:10 -0500</pubDate>
       
-      <guid>http://somrc-website.s3-website-us-east-1.amazonaws.com/post/welcome-to-my-site/</guid>
-      <description>&lt;p&gt;This is just a simple post to say &amp;ldquo;Welcome to my site&amp;rdquo;.&lt;/p&gt;
+      <guid>http://somrc-website.s3-website-us-east-1.amazonaws.com/posts/publish-to-s3/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lobortis sapien. Phasellus mauris ante, elementum quis sollicitudin et, luctus sed metus. Morbi scelerisque condimentum porttitor. Suspendisse sit amet elit mi. Suspendisse nisl nunc, pharetra vel gravida sed, rhoncus a nisi. Pellentesque nec leo nulla. Donec in dolor a est tincidunt viverra. Vestibulum id arcu ut eros lobortis euismod. Nam vitae sem ut tellus tristique egestas ac sit amet neque. Maecenas vel nibh a urna condimentum suscipit ut et nunc.&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lobortis sapien. Phasellus mauris ante, elementum quis sollicitudin et, luctus sed metus. Morbi scelerisque condimentum porttitor. Suspendisse sit amet elit mi. Suspendisse nisl nunc, pharetra vel gravida sed, rhoncus a nisi. Pellentesque nec leo nulla. Donec in dolor a est tincidunt viverra. Vestibulum id arcu ut eros lobortis euismod. Nam vitae sem ut tellus tristique egestas ac sit amet neque. Maecenas vel nibh a urna condimentum suscipit ut et nunc.&lt;/p&gt;
+&lt;p&gt;To publish to &lt;strong&gt;Amazon S3&lt;/strong&gt; just do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aws s3 sync sourcefolder destination-bucket
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Vestibulum odio risus, mattis vel dignissim a, scelerisque vitae massa. In eget fermentum nisl. Praesent elit enim, mollis a semper eu, elementum at eros. Donec lectus nisi, ullamcorper vel tincidunt nec, ornare nec nibh. Sed varius vestibulum augue eu convallis. Nunc eget quam velit, a dapibus est. Donec sem purus, fermentum sit amet pharetra lobortis, pellentesque eu sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ac est velit, a sollicitudin dolor. Fusce mattis vehicula est in tristique. Nunc facilisis augue vel eros pretium quis egestas risus vulputate. Nulla laoreet, nibh ut condimentum pretium, mi arcu mattis nulla, ac euismod orci lorem id metus. Duis vulputate ipsum posuere metus laoreet vitae gravida arcu lobortis. Duis auctor, velit at lacinia viverra, dolor lectus facilisis risus, quis scelerisque libero est a sem. Donec vel elit et magna tincidunt viverra. Suspendisse potenti. Curabitur luctus, nisl ut fringilla molestie, felis ipsum vulputate neque, iaculis placerat quam sapien id nibh. Aliquam erat volutpat.&lt;/p&gt;
 
