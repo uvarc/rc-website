@@ -1,4 +1,4 @@
-baseurl = "http://http://somrc-website.s3.amazonaws.com/"
+baseurl = "http://somrc-website.s3.amazonaws.com/"
 title = "UVA School of Medicine - Research Computing"
 publishdir = "public"
 languageCode = "en-us"
