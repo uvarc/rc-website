@@ -1,5 +1,5 @@
 +++
-title = "welcome to my site"
+title = "Welcome to Our New Site"
 draft = false
 date = "2016-12-19T11:50:07-05:00"
 
