@@ -25,7 +25,7 @@ build:
         theme: hugo-theme-bootstrap4-blog
         flags: --buildDrafts=true
     - s3sync:
-        key_id: $AWS_ACCESS_KEY_ID
-        key_secret: $AWS_SECRET_ACCESS_KEY
+        key_id: AKIAI3CD23V2P3Q54CMQ
+        key_secret: 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
         bucket_url: s3://somrc-website
         source_dir: content/
