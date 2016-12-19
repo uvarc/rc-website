@@ -10,14 +10,15 @@ box: debian
 
 build:
   steps:
-    - arjen/hugo-build:
+    - arjen/hugo-build@1.13.1
         theme: hugo-theme-bootstrap4-blog
         flags: --buildDrafts=true
 
 deploy:
   steps:
-    - s3sync:
+    - wercker/s3sync@2.1.0
         key_id: AKIAI3CD23V2P3Q54CMQ
         key_secret: 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
         bucket_url: s3://somrc-website
         source_dir: content/
+        delete-removed: --delete-remove
