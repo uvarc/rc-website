@@ -20,4 +20,5 @@
 * Publishing will generate all HTML into a new /public/ directory, and then sync that dir to the s3://somrc-website/ bucket in AWS.
 
 **To modify the theme:**
-Themes for HUGO are written using the TWIG syntax. This can be found within various files/folders of the `themes/xxxxx` dir.
+* Themes for HUGO are written using the TWIG syntax. This can be found within various files/folders of the `themes/xxxxx` dir.
+* Themes are (usually) standalone repositories themselves, unless customized, as in this case. You can try out a new theme by cloning its repo into the /themes/ dir, and then changing config.toml to identify the theme you wish to use before you build again.
