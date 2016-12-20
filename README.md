@@ -11,7 +11,8 @@
   * `hugo new content/post/here-is-my-post.md`
   * `hugo new content/top-level-page.md`
 
-** About HEAD matter metadata:**
+** About front matter metadata:**
+
     +++
     categories = [
       "category1",
