@@ -34,7 +34,7 @@
 
 
 **To delete content:**
-* Delete the .md file(s) you no longer want in the site
+* Delete the .md file(s) you no longer want in the site + republish.
   
 **To publish your content:**
 * `cd` to the root level of the site tree
