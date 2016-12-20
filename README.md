@@ -1,6 +1,6 @@
 # Research Computing - Website
 
-**SiteURL:**
+**Development Site URL:**
 http://somrc-website.s3-website-us-east-1.amazonaws.com/
 
 **To install:**
