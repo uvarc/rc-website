@@ -4,3 +4,5 @@ publishdir = "public"
 languageCode = "en-us"
 theme = "hugo-theme-bootstrap4-blog"
 copyright = "&copy;2017 UVA School of Medicine"
+[permalinks]
+  post = "/:year/:month/:title/"
