@@ -1,18 +1,24 @@
 # Research Computing - Website
 
+**SiteURL:**
+http://somrc-website.s3-website-us-east-1.amazonaws.com/
+
 **To install:**
 * [Install](https://gohugo.io/overview/installing/) the HUGO GoLang framework on your local computer. For more information, see the Hugo GitHub repo: https://github.com/spf13/hugo
 * Install the AWSCLI `pip install awscli` (or `sudo pip install awscli`)
 * Configure the AWSCLI with your IAM key/secret: `aws configure` and follow the prompts.
-  * If asked for a region: us-east-1
-  * If asked for a format: text | json | table (select one)
-* Clone this website repository `git clone git@github.com:uva-som-rc/rc-website.git` or `git clone https://github.com/uva-som-rc/rc-website.git`
+  * If asked for a region: `us-east-1`
+  * If asked for a format: `text` | `json` | `table` (select one)
+* Clone this website repository 
+  * `git clone git@github.com:uva-som-rc/rc-website.git` or
+  * `git clone https://github.com/uva-som-rc/rc-website.git`
 
 **To create new content:**
-* Follow guidelines from https://gohugo.io/content/organization/
+* Follow guidelines from https://gohugo.io/content/organization/. But essentially you use the `hugo new` command declaring the path to the .md object you want to create.
   * `hugo new content/post/here-is-my-post.md`
   * `hugo new content/top-level-page.md`
   * Reference: [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+  * Store images in `content/images/`. For example, the published URL of `content/images/uva-som.jpg will be `http://somrc-website.s3-website-us-east-1.amazonaws.com/images/uva-som.jpg`
 
 **About front matter metadata (at the head of each object):**
 
