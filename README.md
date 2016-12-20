@@ -12,6 +12,7 @@
   * `hugo new content/top-level-page.md`
   
 **To publish your content:**
+* `cd` to the root level of the site tree
 * Publish by executing the bash script `./publish.sh`
 * Publishing will generate all HTML into a new /public/ directory, and then sync that dir to the s3://somrc-website/ bucket in AWS.
 
