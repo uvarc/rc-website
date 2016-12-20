@@ -11,6 +11,27 @@
   * `hugo new content/post/here-is-my-post.md`
   * `hugo new content/top-level-page.md`
 
+** About HEAD matter metadata:**
+    +++
+    categories = [
+      "category1",
+      "category2",
+    ]
+    tags = [
+      "hpc",
+      "cluster",
+      "ivy",
+    ]
+    draft = false
+    date = "2016-12-20T09:07:38-05:00"
+    title = "Another Post Title Goes Here"
+    images = [
+      "/2016/10/image-for-previews.jpg",
+    ]
+    description = "This is where a brief page description could go."
+    +++
+
+
 **To delete content:**
 * Delete the .md file(s) you no longer want in the site
   
