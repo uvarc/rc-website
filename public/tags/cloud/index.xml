@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>UVA School of Medicine Research Computing</title>
+    <title>Research Computing</title>
     <link>http://somrc-website.s3-website-us-east-1.amazonaws.com/tags/cloud/index.xml</link>
-    <description>Recent content on UVA School of Medicine Research Computing</description>
+    <description>Recent content on Research Computing</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&amp;copy;2017 UVA School of Medicine</copyright>
     <atom:link href="http://somrc-website.s3-website-us-east-1.amazonaws.com/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
