@@ -2,10 +2,13 @@ baseurl = "http://somrc-website.s3-website-us-east-1.amazonaws.com/"
 title = "Research Computing"
 publishdir = "public"
 languageCode = "en-us"
-# theme = "hugo-theme-bootstrap4-somrc"
-theme = "sp-minimal"
+theme = "hugo-theme-bootstrap4-somrc"
+# theme = "sp-minimal"
 copyright = "&copy;2017 UVA School of Medicine"
 paginate        = 5
+disableRSS = true
+disableSitemap = true
+disable404 = true
 [permalinks]
   post = "/:year/:month/:title/"
 [params]
