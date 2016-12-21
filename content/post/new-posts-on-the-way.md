@@ -9,9 +9,9 @@ tags = [
 ]
 draft = false
 date = "2016-12-20T09:08:47-05:00"
-title = "new posts on the way"
+title = "More New Posts"
 images = [
-  "/2016/10/image.jpg",
+  "/images/ec2-icon.png",
 ]
 
 +++
