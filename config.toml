@@ -1,4 +1,4 @@
-baseurl = "http://drt8f6sjipt06.cloudfront.net/"
+baseurl = "http://somrc.virginia.edu/"
 # baseurl = "http://somrc-website.s3-website-us-east-1.amazonaws.com/"
 title = "Research Computing"
 publishdir = "public"
