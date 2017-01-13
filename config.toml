@@ -6,20 +6,42 @@ languageCode = "en-us"
 theme = "hugo-theme-bootstrap4-somrc"
 # theme = "sp-minimal"
 copyright = "&copy;2017 UVA School of Medicine"
-paginate = 5
+paginate = 10
 disableRSS = true
 disableSitemap = true
 disable404 = true
+
 [permalinks]
   post = "/:year/:month/:title/"
+
 [params]
   subtitle    = "Research Computing"
   authorImage = "ec2-icon.png"
   #"single" or "multi"
   renderType = "multi"
-  #"simple" or "original"
+  # "simple" or "original"
   themeStyle = "simple"
-  googleAnalytics = ""
+  googleAnalytics = "UA-90358528-1"
   name = "UVA School of Medicine"
   description = "HPC / Cloud Computing for Researchers"
   pageNotFoundTitle = "404 - Page not found"
+
+[params.sidebar]
+  # Optional about block for sidebar (can be Markdown)
+  about = "Providing high-performance and cloud computing solutions to SOM researchers."
+  # How many posts to show on the sidebar (Default: 5)
+  num_recent_posts = 3
+
+[params.social]
+  # Optional, used for attribution in Twitter cards
+  # See: https://dev.twitter.com/cards/types/summary-large-image
+  twitter = "username"
+
+[params.sharingicons]
+  # Hide the sharing icons on posts? (Default: false)
+  hide = true
+  # Optionally, set any of these to false to hide them:
+  #facebook = true
+  #googleplus = true
+  #linkedin = true
+  #twitter = true
