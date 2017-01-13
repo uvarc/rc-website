@@ -9,7 +9,8 @@
   {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
 
   <section class="sidebar-module">
-    <h4>{{ i18n "recentPosts" }}</h4>
+    <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
+    <h4>Recent News</h4>
     <ol class="list-unstyled">
       {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
       <li><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
@@ -30,6 +31,7 @@
 
   <section class="sidebar-module">
     <h4>Recent Tweets</h4>
+    <a class="twitter-timeline" data-width="280" data-height="400" href="https://twitter.com/XSEDEscience">Tweets by XSEDEscience</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </section>
 
 </aside><!-- /.blog-sidebar -->
