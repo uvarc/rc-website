@@ -12,7 +12,7 @@ body{color:#555;font-family:'Lato';}
 .nav-link:focus,.nav-link:hover{color:#fff;background-color:transparent}
 .nav-link.active{color:#fff}
 .nav-link.active:after{position:absolute;bottom:0;left:50%;width:0;height:0;margin-left:-.3rem;vertical-align:middle;content:"";border-right:.3rem solid transparent;border-bottom:.3rem solid;border-left:.3rem solid transparent}
-.blog-header{padding-bottom:1.25rem;margin-bottom:2rem;border-bottom:.05rem solid #eee}
+.blog-header{padding-bottom:1.25rem;}
 .blog-title{margin-bottom:0;font-size:2rem;font-weight:400}
 .blog-description{font-size:1.1rem;color:#999}
 
