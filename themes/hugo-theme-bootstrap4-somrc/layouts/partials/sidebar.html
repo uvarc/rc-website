@@ -1,7 +1,7 @@
 <aside class="col-sm-3 offset-sm-1 blog-sidebar">
   {{ if isset .Site.Params.sidebar "about" }}
   <section class="sidebar-module sidebar-module-inset">
-    <h4>{{ i18n "about" }}</h4>
+    <h6>{{ i18n "about" }}</h6>
     <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
   </section>
   {{ end }}
@@ -10,17 +10,17 @@
 
   <section class="sidebar-module">
     <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
-    <h4>Recent News</h4>
+    <h6>Recent News</h6>
     <ol class="list-unstyled">
       {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
-      <li><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+      <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
   </section>
 
   {{ with .Site.Menus.sidebar }}
   <section class="sidebar-module">
-    <h4>{{ i18n "links" }}</h4>
+    <h6>{{ i18n "links" }}</h6>
     <ol class="list-unstyled">
       {{ range . }}
       <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
@@ -30,7 +30,7 @@
   {{ end }}
 
   <section class="sidebar-module">
-    <h4>Recent Tweets</h4>
+    <h6>Recent Tweets</h6>
     <a class="twitter-timeline" data-width="280" data-height="400" href="https://twitter.com/XSEDEscience">Tweets by XSEDEscience</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
   </section>
 

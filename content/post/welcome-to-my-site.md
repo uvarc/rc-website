@@ -2,10 +2,15 @@
 title = "Welcome to Our New Site"
 draft = false
 date = "2016-12-19T11:50:07-05:00"
-
+categories = [
+  "feature",
+]
+tags = [
+  "somrc",
+  "ivy",
+]
+description = "An introduction to the new website"
 +++
-
-This is just a simple post to say "Welcome to my site".
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lobortis sapien. Phasellus mauris ante, elementum quis sollicitudin et, luctus sed metus. Morbi scelerisque condimentum porttitor. Suspendisse sit amet elit mi. Suspendisse nisl nunc, pharetra vel gravida sed, rhoncus a nisi. Pellentesque nec leo nulla. Donec in dolor a est tincidunt viverra. Vestibulum id arcu ut eros lobortis euismod. Nam vitae sem ut tellus tristique egestas ac sit amet neque. Maecenas vel nibh a urna condimentum suscipit ut et nunc.
 

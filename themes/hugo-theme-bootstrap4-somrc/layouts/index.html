@@ -61,11 +61,29 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 blog-main">
-          Featured Story
+          <h6>Featured</h6>
+
+
+<p id="all-tags">
+  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a><br />
+  {{ end }}
+</p>
+
+
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
         <div class="col-sm-4 blog-main">
-          User News
+          <h6>System Status</h6>
+
+            {{ partial "status.html" . }}
+
+          <hr />
+
+          <h6>User News</h6>
+
+            {{ partial "user-news.html" . }}
+
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
         {{ partial "sidebar.html" . }}
