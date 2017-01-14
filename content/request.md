@@ -3,7 +3,7 @@ date = "2016-12-19T15:38:23-05:00"
 title = "Request"
 description = ""
 categories = [
-  "category",
+  "request",
 ]
 tags = [
   "tag1",

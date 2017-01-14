@@ -66,7 +66,7 @@
 
 <p id="all-tags">
   {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-    <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a><br />
+    <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a><br />
   {{ end }}
 </p>
 
