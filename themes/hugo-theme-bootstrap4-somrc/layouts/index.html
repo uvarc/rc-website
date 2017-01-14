@@ -63,12 +63,17 @@
         <div class="col-sm-4 blog-main">
           <h6>Featured</h6>
 
+      {{ range first 1 (where .Site.Pages "Type" "post") }}
+      <p><a href="{{.RelPermalink}}"><h5>{{.Title | markdownify }}</h5></a> 
+      <span style="font-size:0.85em;"> {{ .Summary }} </span>
+      </p>
+      {{ end }}
 
-<p id="all-tags">
-  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-    <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a><br />
-  {{ end }}
-</p>
+      <p id="all-tags">
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+          <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>&nbsp;
+        {{ end }}
+      </p>
 
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
