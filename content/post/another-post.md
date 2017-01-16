@@ -19,7 +19,7 @@ description = ""
 
 The command to run is:
 
-    history | grep -r "lorem"
+<code>history | grep -r "lorem"</code>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lobortis sapien. Phasellus mauris ante, elementum quis sollicitudin et, luctus sed metus. Morbi scelerisque condimentum porttitor. Suspendisse sit amet elit mi. Suspendisse nisl nunc, pharetra vel gravida sed, rhoncus a nisi. Pellentesque nec leo nulla. Donec in dolor a est tincidunt viverra. Vestibulum id arcu ut eros lobortis euismod. Nam vitae sem ut tellus tristique egestas ac sit amet neque. Maecenas vel nibh a urna condimentum suscipit ut et nunc.
 
