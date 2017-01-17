@@ -1,0 +1,16 @@
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav">
+          <a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ .Site.BaseURL | absLangURL }}">{{ i18n "home" }}</a>
+          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Resources & Services</a>
+          <a class="nav-link" href="#">User Information</a>
+          <a class="nav-link" href="#">Education & Outreach</a>
+          <a class="nav-link" href="#">Partnerships</a>
+          <!-- <form class="form-inline">
+            <input class="form-control mr-sm-2" style="height:32px;" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" style="height:32px;font-size:0.8em;" type="submit">Search</button>
+          </form> -->
+        </nav>
+      </div>
+    </div>
