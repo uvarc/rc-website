@@ -54,23 +54,21 @@
         {{ end }}
       </p>
 
+      <h4 />
+
+      <!-- begin more recent posts section below feature -->
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
         <div class="col-sm-4 blog-main">
-          <h6>System Status</h6>
-
-            {{ partial "status.html" . }}
 
           <hr />
 
-          <h6>User News</h6>
-
-            {{ partial "user-news.html" . }}
+            {{ partial "twitter.html" . }}
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
-        {{ partial "sidebar.html" . }}
+        {{ partial "sidebar-home.html" . }}
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}

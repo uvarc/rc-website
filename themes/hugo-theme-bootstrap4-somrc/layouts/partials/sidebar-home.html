@@ -1,0 +1,44 @@
+<!-- <aside class="col-sm-3 offset-sm-1 blog-sidebar"> -->
+<aside class="col-sm-4 blog-sidebar">
+
+  <section class="sidebar-module">
+    {{ partial "status.html" . }}
+  </section>
+
+  {{ if isset .Site.Params.sidebar "about" }}
+  <section class="sidebar-module sidebar-module-inset">
+    <h6>{{ i18n "about" }} Us</h6>
+    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
+  </section>
+  {{ end }}
+
+  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+
+  <section class="sidebar-module">
+    <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
+    <h6>Recent News</h6>
+    <ol class="list-unstyled">
+      {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
+      <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+      {{ end }}
+    </ol>
+  </section>
+
+  {{ with .Site.Menus.sidebar }}
+  <section class="sidebar-module">
+    <h6>{{ i18n "links" }}</h6>
+    <ol class="list-unstyled">
+      {{ range . }}
+      <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ol>
+  </section>
+  {{ end }}
+
+  <section class="sidebar-module">
+
+  </section>
+
+</aside><!-- /.blog-sidebar -->
+
+{{- /* vim: set ts=2 sw=2 et: */}}

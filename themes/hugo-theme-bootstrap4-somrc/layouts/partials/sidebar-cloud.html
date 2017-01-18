@@ -1,0 +1,20 @@
+<aside class="col-sm-4 blog-sidebar">
+  {{ if isset .Site.Params.sidebar "about" }}
+  <section class="sidebar-module sidebar-module-inset">
+    <h6>{{ i18n "about" }} Us</h6>
+    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
+  </section>
+  {{ end }}
+
+  <section class="sidebar-module">
+    <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
+    <h6>Amazon Web Services</h6>
+    <ol class="list-unstyled">
+      <li> <a href="https://jobs.virginia.edu/" target="_new">Jobs @ UVA</a></li>
+      <li> <a href="http://hr.virginia.edu/" target="_new">UVA Human Resources</a></li>
+    </ol>
+  </section>
+
+</aside><!-- /.blog-sidebar -->
+
+{{- /* vim: set ts=2 sw=2 et: */}}
