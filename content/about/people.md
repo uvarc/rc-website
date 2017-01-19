@@ -41,7 +41,7 @@ With expertise in R and Python, I've been active in package development and a va
   <div class="col-lg-6">
     <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
     <h2>Hussain Zaidi, PhD</h2>
-    <p><b>HPC Computational Scientist</b> | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <p><b>HPC Computational Scientist</b> | Hussain devises and applies computational and mathematical tools for computational biology and quantum computation. He received his Ph.D. in physics from the University of Virginia and most recently completed a postdoc in genomics in which he quantified the residence time of TATA-binding Protein (TBP) genome-wide in yeast. He is also actively interested in machine learning and big data architectures.</p>
     <p><a class="btn btn-secondary" href="#" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
