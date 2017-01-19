@@ -32,9 +32,10 @@ categories = [
     <p><a class="btn btn-secondary" href="#" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-    <h2>Peter Nagraj</h2>
-    <p><b>HPC Data Research Associate</b> | Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/8546787" alt="VP Nagraj" width="140" height="140">
+    <h2>VP Nagraj</h2>
+    <p><b>Research Computing Associate</b> | I teach, consult and contribute to scientific programming and data analysis projects.
+With expertise in R and Python, I've been active in package development and a variety of open-source collaborations.</p>
     <p><a class="btn btn-secondary" href="#" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
