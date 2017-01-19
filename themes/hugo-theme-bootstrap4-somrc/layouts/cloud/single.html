@@ -11,10 +11,6 @@
       in {{ partial "meta-terms.html" . }}{{ end }}</p>
   </header>
 
-  <div id="toc" class="well col-md-4 col-sm-6">
-  {{ .TableOfContents }}
-  </div> 
-
   {{ .Content }}
 
   {{ if .IsTranslated }}

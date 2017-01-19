@@ -1,2 +1,5 @@
 wercker.yml
 # public/*
+node*
+npm*
+package.json
