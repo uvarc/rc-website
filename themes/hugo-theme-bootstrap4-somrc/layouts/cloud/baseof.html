@@ -4,7 +4,7 @@
   <head>
     {{ partial "head-meta.html" . }}
 
-    <base href="{{ .Site.BaseURL }}resources/cloud-computing/cloud/">
+    <base href="{{ .Site.BaseURL }}resources/cloud/overview/">
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
 
@@ -29,9 +29,16 @@
     {{ partial "head-custom.html" . }}
 
     <style>
-    container row blog-main h1 {
-        font-size:1.8em;
-    }
+
+.affix-top {
+    /* Initial items */
+}
+
+.affix {
+    top:50px;
+    position:fixed;
+}
+
     </style>
 
   </head>
@@ -44,12 +51,6 @@
 
     <div class="container">
 
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="#">Home</a></li>
-      <li class="breadcrumb-item"><a href="#">Resources</a></li>
-      <li class="breadcrumb-item active">Cloud Computing</li>
-    </ol>
-
       <div class="row">
         <div class="col-sm-8 blog-main">
 
@@ -58,10 +59,6 @@
           {{ end }}
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
-
-  <div id="toc" class="well col-md-4 col-sm-6">
-  {{ .TableOfContents }}
-  </div>
 
         {{ partial "sidebar-cloud.html" . }}
 
