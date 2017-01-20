@@ -60,10 +60,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.18.1" />
+<meta name="generator" content="Hugo 0.17" />
 
 
-    <base href="https://somrc.virginia.edu/">
+    <base href="https://somrc.virginia.edu/resources/cloud/overview/">
     <link rel="canonical" href="https://somrc.virginia.edu/resources/cloud/overview/">
     <link rel="Shortcut Icon" href="https://somrc.virginia.edu/images/favicon.ico" type="image/x-icon" />
 
@@ -76,19 +76,26 @@
     
 
     
-<script>
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-ga('create', 'UA-90358528-1', 'auto');
-ga('send', 'pageview');
-</script>
-<script async src='//www.google-analytics.com/analytics.js'></script>
-
 
     
 
     
 
 <link rel="stylesheet" href="https://somrc.virginia.edu/font-awesome/css/font-awesome.min.css">
+
+
+    <style>
+
+.affix-top {
+     
+}
+
+.affix {
+    top:50px;
+    position:fixed;
+}
+
+    </style>
 
   </head>
 
@@ -172,15 +179,17 @@ ga('send', 'pageview');
 </div>
 
 
-    <header class="blog-header">
+        <header class="blog-header">
       <div class="container">
-        <img src="https://somrc.virginia.edu/images/uva-som.jpg" alt="Header" style="float:right;height:106px;width:289px;" />
+        <img src="https://somrc.virginia.edu/images/uva-som.jpg" alt="Header" style="float:right;height:80px;width:216px;" />
         <h1 class="blog-title"><a href="https://somrc.virginia.edu/" rel="home">Research Computing</a></h1>
         <p class="lead blog-description">HPC / Cloud Computing for Researchers</p>
       </div>
     </header>
 
+
     <div class="container">
+
       <div class="row">
         <div class="col-sm-8 blog-main">
 
@@ -233,36 +242,33 @@ ga('send', 'pageview');
 
         </div> <!-- /.blog-main -->
 
-        
-<aside class="col-sm-4 blog-sidebar">
-  
-  <section class="sidebar-module sidebar-module-inset">
-    <h6>About Us</h6>
-    <p>Enabling scientific breakthroughs at scale through advanced computing.</p>
+        <aside class="col-sm-4 blog-sidebar">
+
+  <sesction id="toc" class="sidebar-module">
+    <div data-spy="affix" data-offset-top="300">
+      <nav id="TableOfContents">
+<ul>
+<li><a href="#what-is-the-public-cloud">What is the public cloud?</a></li>
+<li><a href="#why-would-i-use-the-cloud-for-research">Why would I use the cloud for research?</a></li>
+<li><a href="#what-advantages-does-using-the-cloud-offer">What advantages does using the cloud offer?</a></li>
+<li><a href="#what-are-the-limitations-of-the-cloud-for-som-research">What are the limitations of the cloud for SOM research?</a></li>
+<li><a href="#what-cloud-providers-does-the-uva-school-of-medicine-support">What cloud providers does the UVA School of Medicine support?</a></li>
+</ul>
+</nav>
+    </div>
   </section>
-  
 
-  
-
-  <section class="sidebar-module">
-    
-    <h6>Recent News</h6>
-    <ol class="list-unstyled">
-      
-      <li> <a href="/2016/12/more-new-posts/">More New Posts</a></li>
-      
-      <li> <a href="/2016/12/another-post/">Another Post</a></li>
-      
-      <li> <a href="/2016/12/welcome-to-our-new-site/">Welcome to Our New Site</a></li>
-      
+  <section class="sidebar-module sidebar-module-inset">
+    <h6>Cloud Resources</h6>
+    <ol class="list-unstyled" style="padding-left:10px;">
+      <li> <a href="https://jobs.virginia.edu/" target="_new">Amazon Web Services</a></li>
+      <li> <a href="http://hr.virginia.edu/" target="_new">Google Cloud Platform</a></li>
+      <li> <a href="http://hr.virginia.edu/" target="_new">Microsoft Azure Cloud</a></li>
     </ol>
   </section>
 
-  
-
   <section class="sidebar-module">
-    <h6>Recent Tweets</h6>
-    <a class="twitter-timeline" tweet-limit="1" data-width="280" data-height="400" data-chrome="nofooter" href="https://twitter.com/XSEDEscience">Tweets by XSEDEscience</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
   </section>
 
 </aside>

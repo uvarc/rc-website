@@ -23,12 +23,12 @@ disable404 = true
   themeStyle = "simple"
   googleAnalytics = "UA-90358528-1"
   name = "UVA School of Medicine"
-  description = "HPC / Cloud Computing for Researchers"
+  description = "Enabling scientific breakthroughs at scale via advanced computing"
   pageNotFoundTitle = "404 - Page not found"
 
 [params.sidebar]
   # Optional about block for sidebar (can be Markdown)
-  about = "Enabling scientific breakthroughs at scale through advanced computing."
+  about = "Enabling scientific breakthroughs at scale via advanced computing."
   # How many posts to show on the sidebar (Default: 5)
   num_recent_posts = 5
 
