@@ -23,7 +23,7 @@ disable404 = true
   themeStyle = "simple"
   googleAnalytics = "UA-90358528-1"
   name = "UVA School of Medicine"
-  description = "Enabling scientific breakthroughs at scale via advanced computing"
+  description = "Enabling scientific breakthroughs at scale through advanced computing"
   pageNotFoundTitle = "404 - Page not found"
 
 [params.sidebar]
