@@ -14,6 +14,8 @@
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
     <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="http://getbootstrap.com/assets/css/docs.min.css">
+
     {{ if .RSSLink }}
     {{ "<!-- RSS 2.0 feed -->" | safeHTML }}
     <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
@@ -29,21 +31,11 @@
     {{ partial "head-custom.html" . }}
 
     <style>
-
-.affix-top {
-    /* Initial items */
-}
-
-.affix {
-    top:50px;
-    position:fixed;
-}
-
     </style>
 
   </head>
 
-  <body style="font-family:'Roboto';">
+  <body style="font-family:'Roboto';" data-spy="scroll" data-target="#toc">
 
     {{ partial "menu-home.html" . }}
 

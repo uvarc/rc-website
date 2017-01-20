@@ -2,6 +2,6 @@
       <div class="container">
         <img src="https://somrc.virginia.edu/images/uva-som.jpg" alt="Header" style="float:right;height:80px;width:216px;" />
         <h1 class="blog-title"><a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title | safeHTML }}</a></h1>
-        {{ if .Site.Params.description }}<p class="lead blog-description">{{ .Site.Params.description | markdownify }}</p>{{ end }}
+        <i>{{ if .Site.Params.description }}<p class="lead blog-description">{{ .Site.Params.description | markdownify }}</i></p>{{ end }}
       </div>
     </header>
