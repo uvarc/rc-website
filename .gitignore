@@ -1,4 +1,4 @@
-wercker.yml
+# wercker.yml
 # public/*
 node*
 npm*

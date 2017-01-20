@@ -1,0 +1,32 @@
+
+# This references a standard debian container from the
+# Docker Hub https://registry.hub.docker.com/_/debian/
+box: debian
+# services:
+
+build:
+  steps:
+    - arjen/hugo-build@1.13.1:
+        theme: hugo-theme-bootstrap4-blog
+        flags: --buildDrafts=true
+
+deploy:
+  steps:
+    - wercker/s3sync@2.1.0:
+        key_id: AKIAI3CD23V2P3Q54CMQ
+        key_secret: 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
+        bucket_url: s3://somrc-website
+        source_dir: public/
+        delete-removed: --delete-remove
+        opts: --acl-public
+
+
+deploy:
+    steps:
+        - s3sync:
+            key-id: $KEY
+            key-secret: $SECRET
+            bucket-url: $BUCKET
+            source-dir: $SOURCE
+            delete-removed: --delete-remove
+            opts: --acl-private
