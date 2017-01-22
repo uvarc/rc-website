@@ -18,10 +18,9 @@ categories = [
 
 +++
 
-1. Provide centralized support for advanced cyber-infrastructure to support the research community at UVA SOM and Medical Center.
-
-2. Increase research productivity and promote scientific discoveries & breakthroughs.
-
-3. Build strategic partnership with other academic and service units to create new opportunities in computation and data-driven research.
-
-4. Foster a culture of computation and interdisciplinary research.
+<ul class="lead">
+  <li>Provide centralized support for advanced cyber-infrastructure to support the research community at UVA SOM and Medical Center.
+  <li>Increase research productivity and promote scientific discoveries & breakthroughs.
+  <li>Build strategic partnership with other academic and service units to create new opportunities in computation and data-driven research.
+  <li>Foster a culture of computation and interdisciplinary research.
+</ul>
