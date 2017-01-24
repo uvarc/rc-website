@@ -18,9 +18,4 @@ categories = [
 
 +++
 
-<ul class="lead">
-  <li>Provide centralized support for advanced cyber-infrastructure to support the research community at UVA SOM and Medical Center.
-  <li>Increase research productivity and promote scientific discoveries & breakthroughs.
-  <li>Build strategic partnership with other academic and service units to create new opportunities in computation and data-driven research.
-  <li>Foster a culture of computation and interdisciplinary research.
-</ul>
+UVA School of Medicine Research Computing is a new program that aims to support computational biomedical research by providing advanced cyberinfrastructure and expertise in data analysis at scale. Our mission is to foster a culture of computational thinking and promote interdisciplinary collaboration in various data-driven research domains. We offer services related to high performance computing, cloud architecture, scientific programming and big data solutions. We also aim to promote computationally intensive research at UVA through collaborative efforts such as CADRE (Computation And Data Resource Exchange) and XSEDE (Extreme Science and Engineering Discovery Environment).
