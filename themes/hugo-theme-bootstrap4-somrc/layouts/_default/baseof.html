@@ -29,17 +29,11 @@
     {{ partial "head-custom.html" . }}
   </head>
 
-  <body style="font-family:'Roboto';">
+  <body style="font-family:HelveticaNeueLight,Helvetica;">
 
     {{ partial "menu-home.html" . }}
 
-    <header class="blog-header">
-      <div class="container">
-        <img src="https://somrc.virginia.edu/images/uva-som.jpg" alt="Header" style="float:right;height:106px;width:289px;" />
-        <h1 class="blog-title"><a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title | safeHTML }}</a></h1>
-        {{ if .Site.Params.description }}<p class="lead blog-description">{{ .Site.Params.description | markdownify }}</p>{{ end }}
-      </div>
-    </header>
+    {{ partial "site-header.html" . }}
 
     <div class="container">
       <div class="row">

@@ -32,7 +32,9 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 .blog-post-meta{margin-bottom:1.25rem;color:#999}
 article img{max-width:100%;height:auto;margin:13px auto}
 .blog-footer{padding:1.0rem 0;color:#999;text-align:center;background-color:#f9f9f9;border-top:.05rem solid #e5e5e5}
-.blog-footer p:last-child{margin-bottom:0}/*!
+.blog-footer p:last-child{margin-bottom:0}
+
+/*!
 
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)

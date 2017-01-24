@@ -4,7 +4,7 @@
   <head>
     {{ partial "head-meta.html" . }}
 
-    <base href="{{ .Site.BaseURL }}">
+    <base href="{{ .Permalink }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
 
@@ -29,7 +29,7 @@
     {{ partial "head-custom.html" . }}
   </head>
 
-  <body style="font-family:'Roboto';">
+  <body style="font-family:HelveticaNeueLight,Helvetica;">
 
     {{ partial "menu-home.html" . }}
 
@@ -38,6 +38,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 blog-main">
+        <base href="{{ .Site.BaseURL }}/{{ .URL }}">
 
           {{ block "main" . }}
           <!-- The part of the page that begins to differ between templates -->
@@ -45,7 +46,7 @@
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
-        {{ partial "sidebar.html" . }}
+        {{ partial "sidebar-resources.html" . }}
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}

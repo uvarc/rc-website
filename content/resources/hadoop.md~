@@ -1,0 +1,19 @@
++++
+categories = [
+  "category1",
+]
+tags = [
+  "tag1",
+  "tag2",
+]
+draft = true
+title = "hadoop"
+description = ""
+author = "SOMRC Staff"
+images = [
+  "/2016/10/image.jpg",
+]
+date = "2017-01-24T08:28:49-05:00"
+
++++
+

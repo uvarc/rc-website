@@ -29,7 +29,7 @@
     {{ partial "head-custom.html" . }}
   </head>
 
-  <body style="font-family:HelveticaNeueLight,Helvetica;margin-top:100px;">
+  <body style="font-family:HelveticaNeueLight,Helvetica;">
 
     {{ partial "menu-home.html" . }}
 
@@ -40,7 +40,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 blog-main">
-          <h6>Featured</h6>
+          <p class=lead>Featured</p>
 
       {{ range first 1 (where .Site.Pages "Type" "post") }}
       <p><a href="{{.RelPermalink}}"><h5>{{.Title | markdownify }}</h5></a> 
@@ -62,7 +62,7 @@
 
         <div class="col-sm-4 blog-main">
 
-          <h6>User News</h6>
+          <p class=lead>User News</p>
           <p style="font-size:0.9em;"><b>Save the Date! - March 1, 2017</b> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lobortis sapien. Phasellus mauris ante, elementum quis sollicitudin et, l</p>
           <hr />
 

@@ -1,7 +1,7 @@
 <!-- <aside class="col-sm-3 offset-sm-1 blog-sidebar"> -->
 <aside class="col-sm-4 blog-sidebar">
 
-  <h6>System Status</h6>  
+  <p class=lead>System Status</p>  
 
     {{ partial "status.html" . }}
 
@@ -10,7 +10,7 @@
 
   {{ if isset .Site.Params.sidebar "about" }}
   <section class="sidebar-module sidebar-module-inset">
-    <h6>{{ i18n "about" }} Us</h6>
+    <p class=lead>{{ i18n "about" }} Us</p>
     <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
   </section>
   {{ end }}
@@ -19,7 +19,7 @@
 
   <section class="sidebar-module">
     <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
-    <h6>Recent News</h6>
+    <p class=lead>Recent News</p>
     <ol class="list-unstyled">
       {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
       <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
@@ -29,7 +29,7 @@
 
   {{ with .Site.Menus.sidebar }}
   <section class="sidebar-module">
-    <h6>{{ i18n "links" }}</h6>
+    <p class=lead>{{ i18n "links" }}</p>
     <ol class="list-unstyled">
       {{ range . }}
       <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>

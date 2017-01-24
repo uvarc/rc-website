@@ -21,25 +21,31 @@ draft = false
 
 <div class="card-group">
   <div class="card">
+  <a href="userinfo/compute/">
     <div style="text-align:center;"><i class="fa fa-microchip fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Computing Resources</h4>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     </div>
+  </a>
   </div>
   <div class="card">
+  <a href="userinfo/storage/">
     <div style="text-align:center;"><i class="fa fa-database fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Storage</h4>
       <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
     </div>
+  </a>
   </div>
   <div class="card">
+  <a href="userinfo/data-science/">
     <div style="text-align:center;"><i class="fa fa-table fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Data Science</h4>
       <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
     </div>
+  </a>
   </div>
 </div>
 <div class="card-group">
