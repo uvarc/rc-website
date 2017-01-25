@@ -1,0 +1,23 @@
+<aside class="col-sm-4 blog-sidebar">
+
+  <section class="sidebar-module">
+    <p class=lead>Topics</p>
+    <ul id="tags">
+      {{ range .Params.tags }}
+        <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <section class="sidebar-module sidebar-module-inset">
+    <p class=lead>User Resources</p>
+    <ol class="list-unstyled" style="padding-left:10px;">
+      <li> <a href="https://jobs.virginia.edu/" target="_new">Amazon Web Services</a></li>
+      <li> <a href="http://hr.virginia.edu/" target="_new">Google Cloud Platform</a></li>
+      <li> <a href="http://hr.virginia.edu/" target="_new">Microsoft Azure Cloud</a></li>
+    </ol>
+  </section>
+
+</aside><!-- /.blog-sidebar -->
+
+{{- /* vim: set ts=2 sw=2 et: */}}

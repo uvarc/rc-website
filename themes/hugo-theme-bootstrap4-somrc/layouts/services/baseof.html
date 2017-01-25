@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+
+  <head>
+    {{ partial "head-meta.html" . }}
+
+    <base href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ "<!-- combined, minified CSS -->" | safeHTML }}
+    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+    <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    {{ if .RSSLink }}
+    {{ "<!-- RSS 2.0 feed -->" | safeHTML }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+
+    {{ template "_internal/google_analytics_async.html" . }}
+
+    {{ if .Site.Params.cookie_consent_info_url }}
+    {{ partial "cookie-consent.html" . }}
+    {{ end }}
+
+    {{ partial "head-custom.html" . }}
+
+<style>
+#TableOfContents {
+  width:50%;
+  background-color:#f6f6f6;
+  padding-bottom:6px;
+  padding-top:20px;
+  margin:20px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  font-size:0.9em;
+}
+#TableOfContents ul {
+  list-style-type: square;
+}
+.explainer h1 {
+  font-size:1.6em;
+}
+.explainer h2 {
+  font-size:1.4em;
+}
+.explainer h3 {
+  font-size:1.2em;
+}
+</style>
+
+  </head>
+
+  <body style="font-family:HelveticaNeueLight,Helvetica;">
+
+    {{ partial "menu-home.html" . }}
+
+    {{ partial "site-header.html" . }}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          {{ block "main" . }}
+          <!-- The part of the page that begins to differ between templates -->
+          {{ end }}
+   
+        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+
+        {{ partial "sidebar-services.html" . }}
+
+      </div> {{ "<!-- /.row -->" | safeHTML }}
+    </div> {{ "<!-- /.container -->" | safeHTML }}
+
+    {{ partial "footer.html" . }}
+
+  </body>
+
+</html>
+
+{{- /* vim: set ts=2 sw=2 et: */}}
