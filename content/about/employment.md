@@ -18,12 +18,16 @@ title = "Employment"
 
 +++
 
-### DevOps Engineer for Research Computing ###
+### HPC/Cloud DevOps Engineer ###
 
-The University of Virginia has recently embarked upon an ambitious effort to improve its research computing infrastructure. The initiatives over the past several years include deployment of a large-scale high-performance computing cluster and a secure virtual-environment data analytics platform; provision of centralized multi-tiered storage solutions; and a recent upgrade of the campus network backbone. 
+The HPC/Cloud DevOps Engineer will provide support in advanced computing for SOM researchers. He will work closely with ITS-HPC team for seamless service workflow and provide solutions for users' computational needs. Another main responsibility is developing Cloud computing solutions for research projects by utilizing AWS and/or GCP. The position will be a key service provider of computational research support for SOM faculty. 
 
-This much enhanced cyberinfrastructure has set the stage for unprecedented growth in research activity. In order to capitalize on the momentum and to accelerate future scientific breakthroughs using our state-of-the-art computing environment, the University is assembling a world-class team of highly skilled individuals in advanced research computing fields. Individuals with technical competency in HPC and research computing, and those who enjoy the challenges involving complex data and computing problems are strongly encouraged to apply for one or more of the three positions being offered in Information Technology Services (ITS) at the University of Virginia. 
+Minimally the qualified candidate must have a Bachelor's degree in Computer Science, Information Technology or related Field or equivalent combination of education and experience (3 years overall experience in Science and/or IT is required (Linux and HPC platform). An in-depth knowledge and demonstrated skills of system tools and programming languages is also required. The qualified candidate will effectively program, operate and administer heterogeneous computing systems as well.) 
 
-The Research Computing DevOps Engineer will play a critical role in building the research infrastructure to support the University's academic research facilities. Responsibilities will include design, operation and technical support of academic research computing infrastructure. The position will work with other ITS teams, and in cooperation with UVA's other research computing service units in supporting research. This position will also work with new HPC technologies, evaluating potential enhancements to the existing toolset. The goal is to allow our team to look around the next corner, while still executing at a high level. Strong customer service skills and excellent written and oral communication are required. 
+The qualified candidate will also have broad knowledge of research computing infrastructure management, and system design and integration, and related components and applications. Knowledge and experiences in Cloud solution development and implementation and a broad knowledge of computer science, IT technology trends and ability to effectively apply the knowledge to UVA's HPC environment is also required. 
 
-For more information, please visit: https://executivesearch.virginia.edu/search/researchcomputingdevopsengineer
+Experience with cluster software stack management (module, Lmod, Spack, etc.) and optimization (compilers, InfiniBand, MPI, numerical libraries and other scientific applications) is preferred. Experience with Linux Container solutions and system management is also preferred. The qualified candidate will also preferably have expert knowledge and skills in HPC systems and administration, file system configuration and performance tuning, high-speed network, virtualization and stateless system management. Proven ability to work across organizations to build partnerships, develop stakeholder buy-in and support, and influence without direct authority is highly valued. 
+
+This position is restricted and contingent upon the continuation of funding. 
+
+Applicants should complete a candidate profile through the Jobs@UVa website and provide a cover letter, CV, and a list of three references. [Apply / More Information](https://jobs.virginia.edu/applicants/Central?quickFind=79694)

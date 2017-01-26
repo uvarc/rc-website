@@ -6,7 +6,7 @@ rm -R *
 cd ../
 echo "--- Content cleared"
 
-hugo
+hugo --disableRSS --disable404 -v
 echo "--- Hugo content generated"
 
 cp google091118a6c00d06c0.html public/

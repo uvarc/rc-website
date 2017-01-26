@@ -3,7 +3,7 @@ type = "cloud"
 title = ""
 description = ""
 author = "SOMRC Staff"
-images = ["/2016/10/image.jpg"]
+images = [""]
 categories = [
     "cloud"
 ]

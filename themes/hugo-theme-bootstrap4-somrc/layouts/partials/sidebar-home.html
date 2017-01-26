@@ -5,12 +5,14 @@
 
     {{ partial "status.html" . }}
 
+    {{ partial "user-help-widget.html" . }} 
+
   <section class="sidebar-module">
-  </section>
+  </section>  
 
   {{ if isset .Site.Params.sidebar "about" }}
   <section class="sidebar-module sidebar-module-inset">
-    <p class=lead>{{ i18n "about" }} Us</p>
+    <p class=lead>Research Computing</p>
     <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
   </section>
   {{ end }}

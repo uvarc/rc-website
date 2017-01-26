@@ -2,8 +2,8 @@
 title = ""
 description = ""
 author = "SOMRC Staff"
-images = ["/2016/10/image.jpg"]
-categories = ["category1"]
+images = [""]
+categories = ["about"]
 tags = [
     "tag1", 
     "tag2"
