@@ -32,21 +32,11 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 article img{max-width:100%;height:auto;margin:13px auto}
 .blog-footer{padding:1.0rem 0;color:#999;text-align:center;background-color:#f9f9f9;border-top:.05rem solid #e5e5e5}
 .blog-footer p:last-child{margin-bottom:0}
-.footer {
-  color:#999;
-  text-align:center;
-  background-color:#f9f9f9;
-  border-top:.05rem solid #e5e5e5
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  margin-bottom:0;
-  padding-top:20px;
-  padding:1.0rem;
-}
+.footer {color:#999;text-align:center;background-color:#f9f9f9;border-top:.05rem solid #e5e5e5position: absolute;bottom: 0;width: 100%;margin-bottom:0;padding-top:20px;padding:1.0rem;}
 
 #TableOfContents {width:50%;background-color:#f6f6f6;padding-bottom:6px;padding-top:20px;margin:20px;-moz-border-radius:5px;border-radius:5px;font-size:0.9em;}
 #TableOfContents ul {list-style-type: square;}
+#TableOfContents ul li a:hover {text-decoration:none;}
 .explainer h1 {font-size:1.6em;}
 .explainer h2 {font-size:1.4em;}
 .explainer h3 {font-size:1.2em;}
