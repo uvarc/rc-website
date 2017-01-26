@@ -20,7 +20,7 @@ categories = [
 <!-- Three columns of text below the carousel -->
 <div class="row">
   <div class="col-lg-6">
-    <img class="rounded-circle" src="images/profile_bdkim.jpeg" alt="BD Kim" width="140" height="140">
+    <img class="rounded-circle" src="https://somrc.virginia.edu/images/profile_bdkim.jpeg" alt="BD Kim" width="140" height="140">
     <h2>B.D. Kim, PhD</h2>
     <p><b>Director of Research Computing</b> <br /> 
       BD leads the SOM research computing program and also supports university-wide collaborations such as CADRE. He received his PhD in Aeronautics and Astronautics Engineering from Purdue University, and has been working in high-performance computing and big data field for more than 10 years at many institutions including National Center for Supercomputing Applications (NCSA) and Harvard Medical School. He always looks for opportunities where SOM-RC team can maximize the potential of computational biomed research by providing expertise in big data analysis and advanced computing.
@@ -28,7 +28,7 @@ categories = [
     <p><a class="btn btn-secondary" href="#" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="images/profile_nmagee.png" alt="Neal Magee" width="140" height="140">
+    <img class="rounded-circle" src="https://somrc.virginia.edu/images/profile_nmagee.png" alt="Neal Magee" width="140" height="140">
     <h2>Neal Magee, PhD</h2>
     <p><b>HPC / Cloud Solution Architect</b> <br /> Neal designs scaling, service-driven, distributed systems in the public cloud. His recent work has been built primarily in Amazon Web Services, a platform in which he is a certified solution architect. Drawing on a background in development and operations, his work now focuses on "programmable infrastructure" that changes dynamically with the needs of an application. He has extensive experience with Python, the Amazon / Google / Microsoft public clouds, and architecting dynamic systems that scale and heal automatically. Neal is also interested in large IoT and data sensor projects that gather large amounts of data.</p>
     <p><a class="btn btn-secondary" href="#" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
