@@ -7,6 +7,7 @@ author = "SOMRC Staff"
 description = ""
 date = "2017-01-25T18:34:19-05:00"
 title = ""
+type = "about"
 
 +++
 
