@@ -8,7 +8,7 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <meta property="og:title" content="Bioinformatics &amp; Genomics" />
-<meta property="og:description" content="Bioinformatics &amp; Genomics content goes here." />
+<meta property="og:description" content="School of Medicine Research Computing (SOMRC) provides state-of-the-art resources and expertise in handling and analyzing genomics and bioinformatics data. Bioinformatics is a quickly evolving field with new biological and computational techniques being formalized and adopted at a fast pace. Hence, the following is only a brief cross-section of the ways researchers can use SOM RC’s expertise and computing resources for their bioinformatics research. Please contact the SOM RC with your computational research needs." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://somrc.virginia.edu/service/bioinformatics/" />
 
@@ -28,17 +28,17 @@
 
 
 <meta itemprop="name" content="Bioinformatics &amp; Genomics">
-<meta itemprop="description" content="Bioinformatics &amp; Genomics content goes here.">
+<meta itemprop="description" content="School of Medicine Research Computing (SOMRC) provides state-of-the-art resources and expertise in handling and analyzing genomics and bioinformatics data. Bioinformatics is a quickly evolving field with new biological and computational techniques being formalized and adopted at a fast pace. Hence, the following is only a brief cross-section of the ways researchers can use SOM RC’s expertise and computing resources for their bioinformatics research. Please contact the SOM RC with your computational research needs.">
 
 
 <meta itemprop="dateModified" content="2017-01-31T09:48:06-05:00" />
-<meta itemprop="wordCount" content="6">
+<meta itemprop="wordCount" content="398">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/">
 
 
 
-<meta itemprop="keywords" content=",about,architecture,big-data,category1,cloud,data,education,employment,feature,funding,grants,hipaa,hpc,infrastructure,material,python,r,resources,security,seminars,services,staff,storage,support,userinfo,workshops,,amazon,aws,azure,bioinformatics,cloud,cluster,collaboration,data,data-analysis,ddl,domino,emr,genomics,google,grants,hadoop,hipaa,hpc,ivy,programming,publications,python,r,rc,rivanna,security,services,som,somrc,staff,storage,support,tag1,tag2,user," />
+<meta itemprop="keywords" content=",about,architecture,big-data,category1,cloud,data,education,employment,feature,funding,grants,hipaa,hpc,infrastructure,material,python,r,reference,resources,security,seminars,services,staff,storage,support,userinfo,workshops,,amazon,aws,azure,bioinformatics,boto3,cli,cloud,cluster,collaboration,data,data-analysis,ddl,domino,emr,genomics,google,grants,hadoop,hipaa,hpc,ivy,programming,publications,python,r,rc,rivanna,security,services,som,somrc,staff,storage,support,tag1,tag2,user," />
 
 
 
@@ -49,7 +49,7 @@
 
 
 <meta name="twitter:title" content="Bioinformatics &amp; Genomics"/>
-<meta name="twitter:description" content="Bioinformatics &amp; Genomics content goes here."/>
+<meta name="twitter:description" content="School of Medicine Research Computing (SOMRC) provides state-of-the-art resources and expertise in handling and analyzing genomics and bioinformatics data. Bioinformatics is a quickly evolving field with new biological and computational techniques being formalized and adopted at a fast pace. Hence, the following is only a brief cross-section of the ways researchers can use SOM RC’s expertise and computing resources for their bioinformatics research. Please contact the SOM RC with your computational research needs."/>
 
 
 
@@ -197,9 +197,64 @@
     <hr size=1 />
 
   </header>
-  
-  <p>Bioinformatics &amp; Genomics content goes here.</p>
 
+  <div class="explainer">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#bioinformatics-tools">Bioinformatics tools</a></li>
+<li><a href="#chip-seq-chip-chip-rna-seq-and-other-ngs-analyses">ChIP-Seq, ChIP-chip, RNA-Seq and other NGS analyses</a></li>
+<li><a href="#aws-cloud">AWS Cloud</a></li>
+<li><a href="#ivy-and-rivanna-high-performance-computing">Ivy and Rivanna High Performance Computing</a></li>
+<li><a href="#long-term-collaborations">Long-term collaborations</a></li>
+<li><a href="#new-research-lines">New Research Lines</a></li>
+</ul>
+</nav>  
+    
+
+<p class=lead>School of Medicine Research Computing (SOMRC) provides state-of-the-art resources and expertise in handling and analyzing genomics and bioinformatics data. Bioinformatics is a quickly evolving field with new biological and computational techniques being formalized and adopted at a fast pace. Hence, the following is only a brief cross-section of the ways researchers can use SOM RC’s expertise and computing resources for their bioinformatics research. Please contact the SOM RC with your computational research needs.</p>
+
+<hr size=1 />
+
+<h1 id="bioinformatics-tools">Bioinformatics tools</h1>
+
+<ul>
+<li>Running genomic alignment and analysis tools on desktop or on Rivanna, Ivy, or AWS including Bowtie, Samtools, Bedtools, MACS, HTSeq, and TopHat</li>
+<li>Accessing and retrieving data from ArrayExpress, GEO, and other databases</li>
+</ul>
+
+<h1 id="chip-seq-chip-chip-rna-seq-and-other-ngs-analyses">ChIP-Seq, ChIP-chip, RNA-Seq and other NGS analyses</h1>
+
+<ul>
+<li>Formalizing an automated analysis pipeline in Linux</li>
+<li>Background subtraction, normalization, and processing of the data</li>
+<li>Statistical modeling, regression, and computational methods for exploratory analyses (clustering and heat maps), significance testing (e.g., statistical tests), and hypothesis testing (e.g., proportional hazards models)</li>
+<li>Quantitative and correlative analyses with other publicly available datasets for biological insight</li>
+</ul>
+
+<h1 id="aws-cloud">AWS Cloud</h1>
+
+<ul>
+<li>Setting up ChIP-Seq/RNA-Seq analysis pipelines on AWS (or Ivy and Rivanna). This is an extensive area, for some examples check out the items below:</li>
+<li>Setting up the <a href="http://star.mit.edu/cluster/docs/latest/overview.html">StarCluster</a> on <a href="http://www.oliverelliott.org/article/computing/tut_bio_aws/">AWS</a> to run bioinformatics analyses:</li>
+<li><a href="http://omics-pipe.readthedocs.io/en/latest/about.html">Omics Pipe</a> (for RNA-Seq, ChIP-Seq) that utilizes a StarCluster</li>
+<li>Running <a href="http://bcbio-nextgen.readthedocs.io/en/latest/contents/pipelines.html">Bcbio-nextgen</a> pipeline on AWS for RNA-Seq, cancer variant calling, and ChIp-Seq.</li>
+</ul>
+
+<h1 id="ivy-and-rivanna-high-performance-computing">Ivy and Rivanna High Performance Computing</h1>
+
+<p>Ivy is a high performance computing resource that can be used for HIPAA compliant translational research. Amongst other things, the SOMRC team can help with:
+-   Setting up alignment, variant calling, and analysis pipelines for ChIP-Seq, ChIP-chip, RNA-Seq and other genomic experiments on Rivanna and Ivy.
+-   Using <a href="https://software.broadinstitute.org/gatk/guide/article.php?id=1988">GATK</a> on Ivy or Rivanna employing multi-threading and scatter-gather for fast SNP variant calling.</p>
+
+<h1 id="long-term-collaborations">Long-term collaborations</h1>
+
+<p>We warmly welcome long-term collaborations with experimentalists and computational biologists. Working with experimental biologists we can chart out experimental design, come up with controls, and think about statistical and computational analyses so the experiment is designed to extract the most value from the data. With computational biologists, we can build and maintain code and pipelines, as well as test new algorithms on multi-core and multi-node machines.</p>
+
+<h1 id="new-research-lines">New Research Lines</h1>
+
+<p>We are actively exploring and researching new computational techniques that can reap big rewards in genomics and bioinformatics. Our particular focus is on machine learning, especially deep learning, and big data architectures, especially MapReduce and Spark.</p>
+
+  </div>
 
 </article> 
 
