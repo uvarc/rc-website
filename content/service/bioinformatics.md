@@ -10,8 +10,7 @@ images = [""]
 
 +++
 
-School of Medicine Research Computing (SOM RC) provides state-of-the-art resources and expertise in handling and analyzing genomics and bioinformatics data. Bioinformatics is a quickly evolving field with new biological and computational techniques being formalized and adopted at a fast pace. Hence, the following is only a brief cross-section of the ways researchers can use SOM RC’s expertise and computing resources for their bioinformatics research. Please contact the SOM RC with your computational research needs.
-
+<p class=lead>School of Medicine Research Computing (SOMRC) provides state-of-the-art resources and expertise in handling and analyzing genomics and bioinformatics data. Bioinformatics is a quickly evolving field with new biological and computational techniques being formalized and adopted at a fast pace. Hence, the following is only a brief cross-section of the ways researchers can use SOM RC’s expertise and computing resources for their bioinformatics research. Please contact the SOM RC with your computational research needs.</p>
 
 # Bioinformatics tools:
 -	Running genomic alignment and analysis tools on desktop or on Rivanna, Ivy, or AWS including Bowtie, Samtools, Bedtools, MACS, HTSeq, and TopHat
