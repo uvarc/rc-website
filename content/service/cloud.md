@@ -9,7 +9,7 @@ tags = [
 ]
 draft = false
 date = "2017-01-24T14:18:18-05:00"
-title = "Architecture &amp; Design"
+title = "Cloud Solutions"
 description = ""
 author = "SOMRC Staff"
 images = [
@@ -18,4 +18,4 @@ images = [
 
 +++
 
-Architecture content goes here.
+Cloud architecture content goes here.

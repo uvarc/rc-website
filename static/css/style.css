@@ -37,7 +37,8 @@ article img{max-width:100%;height:auto;margin:13px auto}
 .blog-footer p:last-child{margin-bottom:0}
 .footer {color:#999;text-align:center;background-color:#f9f9f9;border-top:.05rem solid #e5e5e5position: absolute;bottom: 0;width: 100%;margin-bottom:0;padding-top:20px;padding:1.0rem;}
 
-.contact-button { width: inherit; height: inherit; }
+.card-body { width: 100%; }
+.contact-button { width: 100%; height: inherit; }
 .contact-button button { position: absolute; bottom:20px; left: 20px;}
 
 #TableOfContents {width:50%;background-color:#f6f6f6;padding-bottom:6px;padding-top:20px;margin:20px;-moz-border-radius:5px;border-radius:5px;font-size:0.9em;}
