@@ -14,9 +14,15 @@ categories = ["reference"]
 
 # Install the AWSCLI
 
-## On Mac/Linux
+## Mac/Linux
 
-## On Windows
+Using `pip` you can install the current release:
+
+```pip install awscli```
 
 
-# More Topics
+## Windows
+
+
+# Configure With Credentials
+

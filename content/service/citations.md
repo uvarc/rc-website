@@ -21,4 +21,6 @@ Recognition and documentation of the contribution that SOMRC’s systems play in
 
 Suggested citation format:
 
+<div class="bd-callout bd-callout-warning">
 The authors acknowledge School of Medicine Research Computing at The University of Virginia for providing computational resources and technical support that have contributed to the results reported within this publication. URL: https://somrc.virginia.edu
+</div>

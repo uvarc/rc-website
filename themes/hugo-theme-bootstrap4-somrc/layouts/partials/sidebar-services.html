@@ -3,33 +3,16 @@
 
   {{ partial "user-help-widget.html" . }}
 
-  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts") }}
-  <!-- $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 30) -->
-
   <section class="sidebar-module">
-    <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
-    <p class=lead>Resources</p>
+    <p class=lead>Services</p>
     <ol class="list-unstyled">
-      {{ range first 30 (where .Site.Pages.ByTitle "Type" "services") }}
+      {{ range first 30 (where .Site.Pages.ByTitle "Type" "service") }}
       <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
   </section>
 
-  {{ with .Site.Menus.sidebar }}
-  <section class="sidebar-module">
-    <p class=lead>{{ i18n "links" }}</p>
-    <ol class="list-unstyled">
-      {{ range . }}
-      <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ol>
-  </section>
-  {{ end }}
-
-
 <section id="menu" class="sidebar-module">
-
 
 </section>
 
