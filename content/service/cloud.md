@@ -40,7 +40,7 @@ We have experience designing and delivering solutions to the public cloud using 
 Here are some of the building blocks available using cloud infrastructure:
 
 <div class="row">
-  <div class="col">
+  <div class="col-sm">
   <ul class="list-group">
     <li class="list-group-item"><i class="fa fa-2x fa-microchip" aria-hidden="true" style="padding-right:8px;"></i> Compute</li>
     <li class="list-group-item"><i class="fa fa-2x fa-hdd-o" aria-hidden="true" style="padding-right:8px;"></i> Storage</li>
@@ -49,7 +49,7 @@ Here are some of the building blocks available using cloud infrastructure:
     <li class="list-group-item"><i class="fa fa-2x fa-pie-chart" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
   </ul>
   </div>
-  <div class="col">
+  <div class="col-sm">
   <ul class="list-group">
     <li class="list-group-item"><i class="fa fa-2x fa-spin fa-cog" aria-hidden="true" style=""></i> &nbsp; Sensor / IoT Data Streaming</li>
     <li class="list-group-item"><i class="fa fa-2x fa-list-ul" aria-hidden="true" style="padding-right:8px;"></i> Messaging Queues</li>
@@ -64,10 +64,11 @@ Here are some of the building blocks available using cloud infrastructure:
 
 # Reference Architecture
 
-To get an idea of how AWS is used in real-world and research scenarios, visit the [**AWS Architecture Center**](https://aws.amazon.com/architecture/) or review some reference deployments below.
+To get an idea of how AWS is used in real-world and research scenarios, visit the <a style="font-weight:bold;" href="https://aws.amazon.com/architecture/" target="_new">AWS Architecture Center</a> or review some reference deployments below.
+<small id="emailHelp" class="form-text text-muted">These examples are drawn from AWS.</small>
 
 <div class="row">
-  <div class="aws-comp section col"> 
+  <div class="aws-comp section col-sm"> 
     <a href="http://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_batch_03.pdf"> 
     <div class="image-border image-shadow "> 
       <div class="image parbase"> 
@@ -78,7 +79,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
      <p><b>Batch Processing</b><br /> Build auto-scalable batch processing systems like video/image/datastream processing pipelines (<a adhocenable="false" href="http://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_batch_03.pdf">PDF</a>)<br /> </p> 
     </div> 
   </div> 
-  <div class="aws-comp section col"> 
+  <div class="aws-comp section col-sm"> 
     <a href="http://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_largescale_05.pdf"> 
     <div class="image-border image-shadow "> 
       <div class="image parbase"> 
@@ -89,7 +90,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
       <p><b>Large Scale Processing and Huge Data sets</b><br /> Build high-performance computing systems that involve Big Data (<a adhocenable="false" href="http://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_largescale_05.pdf">PDF</a>) <br /> </p> 
     </div> 
   </div> 
-  <div class="aws-comp section col">
+  <div class="aws-comp section col-sm">
     <a href="http://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_timeseriesprocessing_16.pdf">
     <div class="image-border image-shadow ">
       <div class="image parbase">

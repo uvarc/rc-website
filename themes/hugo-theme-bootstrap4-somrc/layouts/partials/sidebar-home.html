@@ -7,16 +7,6 @@
 
     {{ partial "user-help-widget.html" . }} 
 
-  <section class="sidebar-module">
-  </section>  
-
-  {{ if isset .Site.Params.sidebar "about" }}
-  <section class="sidebar-module sidebar-module-inset">
-    <p class=lead>Research Computing</p>
-    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
-  </section>
-  {{ end }}
-
   {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
 
   <section class="sidebar-module">

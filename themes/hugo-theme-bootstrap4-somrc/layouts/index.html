@@ -42,11 +42,13 @@
         <div class="col-sm-4 blog-main">
           <p class=lead>Featured</p>
 
-      {{ range first 1 (where .Site.Pages "Type" "post") }}
-      <p><a href="{{.RelPermalink}}"><h5>{{.Title | markdownify }}</h5></a> 
-      <span style="font-size:0.85em;"> {{ .Summary }} </span>
-      </p>
-      {{ end }}
+      <!-- begin Featured Story section -->
+        {{ range first 1 (where .Site.Pages "Type" "post") }}
+        <p><a href="{{.RelPermalink}}"><h5>{{.Title | markdownify }}</h5></a> 
+        <span style="font-size:0.9em;"> {{ .Summary }} </span>
+        </p>
+        {{ end }}
+      <!-- end Featured Story section -->
 
       <p id="all-tags">
         {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
@@ -62,8 +64,10 @@
 
         <div class="col-sm-4 blog-main">
 
-          <p class=lead>User News</p>
-          <p style="font-size:0.9em;"><b>Save the Date! - March 1, 2017</b> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lobortis sapien. Phasellus mauris ante, elementum quis sollicitudin et, l</p>
+          <p class=lead>User News / Events</p>
+
+          {{ partial "upcoming-event.html" . }}
+
           <hr />
 
             {{ partial "twitter.html" . }}

@@ -1,11 +1,17 @@
 <!-- <aside class="col-sm-3 offset-sm-1 blog-sidebar"> -->
 <aside class="col-sm-4 blog-sidebar">
-  {{ if isset .Site.Params.sidebar "about" }}
+
+
+  {{ partial "user-help-widget.html" . }}
+
+
+<!--  {{ if isset .Site.Params.sidebar "about" }}
   <section class="sidebar-module sidebar-module-inset">
     <p class=lead>{{ i18n "about" }} Us</p>
     <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
   </section>
   {{ end }}
+-->
 
   {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
 
