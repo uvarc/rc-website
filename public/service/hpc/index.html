@@ -8,7 +8,8 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 <meta property="og:title" content="High Performance Computing" />
-<meta property="og:description" content="This page is for HPC information." />
+<meta property="og:description" content="UVA has two local HPC facilities available to researchers: Rivanna and Ivy. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.
+Rivanna Standard Security Cluster Rivanna provides a high-performance computing environment for all user levels. A majority of Rivanna’s nodes are Cray Cluster Solutions nodes connected by FDR (fourteen data rate) Infiniband, but there are also two nodes with NVIDIA Kepler K20 GPUs, several nodes with QDR (quad data rate) Infiniband, and quite a few older nodes connected with gigabit ethernet." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://somrc.virginia.edu/service/hpc/" />
 
@@ -28,17 +29,18 @@
 
 
 <meta itemprop="name" content="High Performance Computing">
-<meta itemprop="description" content="This page is for HPC information.">
+<meta itemprop="description" content="UVA has two local HPC facilities available to researchers: Rivanna and Ivy. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.
+Rivanna Standard Security Cluster Rivanna provides a high-performance computing environment for all user levels. A majority of Rivanna’s nodes are Cray Cluster Solutions nodes connected by FDR (fourteen data rate) Infiniband, but there are also two nodes with NVIDIA Kepler K20 GPUs, several nodes with QDR (quad data rate) Infiniband, and quite a few older nodes connected with gigabit ethernet.">
 
 
 <meta itemprop="dateModified" content="2017-01-16T09:30:12-05:00" />
-<meta itemprop="wordCount" content="6">
+<meta itemprop="wordCount" content="183">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/2016/10/image.jpg">
 
 
 
-<meta itemprop="keywords" content="about,architecture,big-data,cloud,data,education,employment,events,feature,funding,grants,hipaa,hpc,infrastructure,material,python,r,reference,resources,security,seminars,services,staff,storage,support,userinfo,workshops,,amazon,aws,azure,bioinformatics,boto3,cli,cloud,cluster,collaboration,consultation,data,data-analysis,ddl,domino,emr,genomics,google,grants,hadoop,hipaa,hpc,ivy,programming,publications,python,r,rc,rivanna,security,services,som,somrc,staff,storage,support,tag1,tag2,user," />
+<meta itemprop="keywords" content="about,architecture,big-data,cloud,data,education,employment,events,feature,funding,grants,hipaa,hpc,infrastructure,python,r,reference,resources,security,seminars,services,staff,storage,support,userinfo,workshops,,amazon,aws,azure,bioinformatics,boto3,cli,cloud,cluster,collaboration,consultation,data,data-analysis,ddl,domino,emr,genomics,google,grants,hadoop,hipaa,hpc,ivy,programming,publications,python,r,rc,rivanna,security,services,som,somrc,staff,storage,support,tag1,tag2,user," />
 
 
 
@@ -49,7 +51,8 @@
 
 
 <meta name="twitter:title" content="High Performance Computing"/>
-<meta name="twitter:description" content="This page is for HPC information."/>
+<meta name="twitter:description" content="UVA has two local HPC facilities available to researchers: Rivanna and Ivy. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.
+Rivanna Standard Security Cluster Rivanna provides a high-performance computing environment for all user levels. A majority of Rivanna’s nodes are Cray Cluster Solutions nodes connected by FDR (fourteen data rate) Infiniband, but there are also two nodes with NVIDIA Kepler K20 GPUs, several nodes with QDR (quad data rate) Infiniband, and quite a few older nodes connected with gigabit ethernet."/>
 
 
 
@@ -107,7 +110,7 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Services</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">User Support</a>
+      <a class="dropdown-item disabled" href="#">User Support</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="https://somrc.virginia.edu/service/bioinformatics">Bioinformatics &amp; Genomics</a>
       <a class="dropdown-item" href="https://somrc.virginia.edu/service/cloud">Cloud Solutions</a>
@@ -198,7 +201,41 @@
 
   <div class="explainer">
       
-    <p>This page is for HPC information.</p>
+    <p><img src="https://somrc.virginia.edu/images/cray-logo.png" alt="CRAY Supercomputers" align="right" />
+<p class=lead>UVA has two local HPC facilities available to researchers: <b>Rivanna</b> and <b>Ivy</b>. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.</p></p>
+
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">Rivanna</h4>
+    <h6 class="card-subtitle mb-2 text-muted">Standard Security Cluster</h6>
+    <p class="card-text">
+    Rivanna provides a high-performance computing environment for all user levels. A majority of Rivanna’s nodes are Cray Cluster Solutions nodes connected by FDR (fourteen data rate) Infiniband, but there are also two nodes with NVIDIA Kepler K20 GPUs, several nodes with QDR (quad data rate) Infiniband, and quite a few older nodes connected with gigabit ethernet.
+    </p><p class="card-text">
+    All nodes share a Lustre filesystem for temporary storage called /scratch with up to 1.4PB of storage space for all users.   Each user is assigned space in <code>/scratch/$USER</code> with a default quota of 10TB of storage. 
+    </p>
+    <a href="http://arcs.virginia.edu/rivanna" class="card-link"><button class="btn btn-primary">Read more</button></a>
+    <a href="http://arcs.virginia.edu/user-info/frequently-asked-questions" class="card-link"><button class="btn btn-primary">FAQs</button></a>
+  </div>
+</div>
+
+<div style="height:40px;"></div>
+
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title">Ivy</h4>
+    <h6 class="card-subtitle mb-2 text-muted">High-Security / HIPAA Computing</h6>
+    <p class="card-text">
+    Ivy provides a secure computing environment for all user levels. It is made up of three tiers, each HIPAA-compliant out of the box:
+    <ul>
+      <li>VMware virtual compute instances (Windows Server 2012R2 / CentOS Linux)</li>
+      <li>Apache Hadoop</li>
+      <li>Domino Data Lab</li>
+    </ul>
+    </p>
+    <a href="#" class="card-link"><button class="btn btn-primary disabled">Read more</button></a>
+    <a href="#" class="card-link"><button class="btn btn-primary disabled">FAQs</button></a>
+  </div>
+</div>
 
   </div>
 
