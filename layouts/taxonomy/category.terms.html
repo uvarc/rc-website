@@ -1,6 +1,5 @@
 <section id="main">
   <div>
-    <h1 id="title">{{ .Title }}</h1>
 
     <ul>
     {{ $data := .Data }}
@@ -8,5 +7,8 @@
       <li><a href="{{ .Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> {{ len $value }}</li>
     {{ end }}
    </ul>
+
   </div>
 </section>
+
+

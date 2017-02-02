@@ -10,10 +10,14 @@ copyright = "&copy;2017 UVA School of Medicine"
 paginate = 10
 disableRSS = true
 disableSitemap = true
-disable404 = true
+disable404 = false
 
 [permalinks]
   post = "/:year/:month/:title/"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
 
 [params]
   subtitle    = "Research Computing"

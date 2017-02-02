@@ -36,7 +36,8 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 article img{max-width:100%;height:auto;margin:13px auto}
 .blog-footer{padding:1.0rem 0;color:#999;text-align:center;background-color:#f9f9f9;border-top:.05rem solid #e5e5e5}
 .blog-footer p:last-child{margin-bottom:0}
-.footer {color:#999;text-align:center;background-color:#f9f9f9;border-top:.05rem solid #e5e5e5position: absolute;bottom: 0;width: 100%;margin-bottom:0;padding-top:20px;padding:1.0rem;}
+
+.footer {font-size:0.8em;color:#6b6b6b;text-align:center;background-color:#e0e0e0;border-top:.05rem solid #e5e5e5position: absolute;bottom: 0;width: 100%;margin-bottom:0;padding-top:20px;padding:1.0rem;}
 
 .card a {text-decoration:none;color:black;}
 .card-body { width: 100%; }
