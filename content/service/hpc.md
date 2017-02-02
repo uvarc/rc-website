@@ -29,7 +29,7 @@ images = [
     <p class="card-text">
     Rivanna provides a high-performance computing environment for all user levels. A majority of Rivanna’s nodes are Cray Cluster Solutions nodes connected by FDR (fourteen data rate) Infiniband, but there are also two nodes with NVIDIA Kepler K20 GPUs, several nodes with QDR (quad data rate) Infiniband, and quite a few older nodes connected with gigabit ethernet.
     </p><p class="card-text">
-    All nodes share a Lustre filesystem for temporary storage called /scratch with up to 1.4PB of storage space for all users.   Each user is assigned space in <code>/scratch/$USER</code> with a default quota of 10TB of storage. 
+    All nodes share a Lustre filesystem for temporary storage called <code>/scratch</code> with up to 1.4PB of storage space for all users.   Each user is assigned space in <code>/scratch/$USER</code> with a default quota of 10TB of storage. 
     </p>
     <a href="http://arcs.virginia.edu/rivanna" class="card-link"><button class="btn btn-warning">Read more</button></a>
     <a href="http://arcs.virginia.edu/user-info/frequently-asked-questions" class="card-link"><button class="btn btn-warning">FAQs</button></a>
