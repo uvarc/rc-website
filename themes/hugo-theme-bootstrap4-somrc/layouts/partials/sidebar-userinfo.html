@@ -4,7 +4,7 @@
     <p class=lead>Topics</p>
     <ul id="tags">
       {{ range .Params.tags }}
-        <li><a href="{{ "https://somrc.virginia.edu/userinfo/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+        <li><a href="{{ "https://somrc.virginia.edu/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
       {{ end }}
     </ul>
   </section>

@@ -40,21 +40,32 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 blog-main">
-          <p class=lead>Featured</p>
+
 
       <!-- begin Featured Story section -->
-        {{ range first 1 (where .Site.Pages "Type" "post") }}
-        <p><a href="{{.RelPermalink}}"><h5>{{.Title | markdownify }}</h5></a> 
-        <span style="font-size:0.9em;"> {{ .Summary }} </span>
-        </p>
-        {{ end }}
+      <p class=lead>Featured</p>
+      {{ range first 1 (where .Site.Pages "Type" "post") }}
+        <h5><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></h5>
+        <p style="font-size:0.9em;"> {{ .Summary }} </p>
+      {{ end }}
       <!-- end Featured Story section -->
 
-      <p id="all-tags">
-        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-          <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>&nbsp;
-        {{ end }}
-      </p>
+      <hr size=1 />
+
+      <!-- begin Category drop-down -->
+      <p class=lead>Browse by category:</p>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Explore
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height: auto;max-height: 400px;overflow-x: hidden;">
+          {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+            <a class="dropdown-item" href="https://somrc.virginia.edu/categories/{{ $name | urlize }}">{{ $name }}</a>
+          {{ end }}
+        </div>
+      </div>
+      <!-- end Category drop-down -->
+
 
       <h4 />
 

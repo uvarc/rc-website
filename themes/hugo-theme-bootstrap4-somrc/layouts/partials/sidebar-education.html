@@ -1,38 +1,22 @@
 <!-- <aside class="col-sm-3 offset-sm-1 blog-sidebar"> -->
 <aside class="col-sm-4 blog-sidebar">
-  {{ if isset .Site.Params.sidebar "about" }}
-  <section class="sidebar-module sidebar-module-inset">
-    <p class=lead>{{ i18n "about" }} Us</p>
-    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
-  </section>
-  {{ end }}
 
-  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+  {{ partial "user-help-widget.html" . }}
 
   <section class="sidebar-module">
-    <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
-    <p class=lead>Recent News</p>
+    <p class=lead>Education/Training Opportunities</p>
     <ol class="list-unstyled">
-      {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
+      {{ range first 30 (where .Site.Pages.ByTitle "Type" "education") }}
       <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
   </section>
 
-  {{ with .Site.Menus.sidebar }}
-  <section class="sidebar-module">
-    <p class=lead>{{ i18n "links" }}</p>
-    <ol class="list-unstyled">
-      {{ range . }}
-      <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ol>
-  </section>
-  {{ end }}
+<section id="menu" class="sidebar-module">
 
-  <section class="sidebar-module">
-    {{ partial "twitter.html" . }}
-  </section>
+</section>
+
+
 
 </aside><!-- /.blog-sidebar -->
 

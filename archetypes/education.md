@@ -1,13 +1,15 @@
 +++
-title = ""
-description = ""
 author = "SOMRC Staff"
-images = [""]
-categories = ["education"]
-tags = [
-    "tag1", 
-    "tag2"
+description = ""
+title = ""
+date = "2017-01-27T10:55:28-05:00"
+draft = false
+tags = [""]
+categories = [
+  "education", 
+  "workshops"
 ]
-draft = true
+images = [""]
+
 +++
 
