@@ -14,6 +14,7 @@
     {{ "<!-- combined, minified CSS -->" | safeHTML }}
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://v4-alpha.getbootstrap.com/assets/css/docs.min.css">
 
     {{ partial "head-custom.html" . }}
   </head>
@@ -28,13 +29,13 @@
       <div class="row">
         <div class="col-sm-8 blog-main">
 
-          {{ block "main" . }}
+          {{ block "event" . }}
           <!-- The part of the page that begins to differ between templates -->
           {{ end }}
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
-        {{ partial "sidebar.html" . }}
+        {{ partial "sidebar-services.html" . }}
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}

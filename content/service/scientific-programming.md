@@ -14,7 +14,7 @@ description = ""
 
 +++
 
-School of Medicine Research Computing supports SOM and UVa Medical Center researchers who are interested in writing code to address their scientific inquiries. Whether these programming tasks are implemented interactively, in a series of scripts or as an open-source software package, services are available to provide guidance and enable collaborative development. SOMRC has specific expertise in object oriented programming in **R** and **Python**.
+<p class=lead>School of Medicine Research Computing supports SOM and UVa Medical Center researchers who are interested in writing code to address their scientific inquiries. Whether these programming tasks are implemented interactively, in a series of scripts or as an open-source software package, services are available to provide guidance and enable collaborative development. SOMRC has specific expertise in object oriented programming in <b>R</b> and <b>Python</b>.</p>
 
 Examples of service areas include:
 

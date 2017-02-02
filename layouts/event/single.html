@@ -1,0 +1,45 @@
+{{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "event" }}
+{{ $dateFormat := default "Mon Jan 2, 2006" (index .Site.Params "date_format") }}
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="{{ .Permalink }}">Event: {{ .Title | markdownify }}</a></h2>
+<!--    <p class="blog-post-meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> by {{ .Params.author | default .Site.Params.author }}{{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</p> -->
+  </header>
+  <div style="height:20px;"></div>
+
+  <div class="explainer">
+
+  <table class="table">
+  <tbody>
+    <tr>
+      <td style="font-weight:bold;">Course Name</td>
+      <td>{{ .Title }}</td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold;">Instructor</td>
+      <td>{{ printf "%s" $.Params.instructor }}</td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold;">Date</td>
+      <td>{{ printf "%s" $.Params.eventdate }}</td>
+    </tr>
+    <tr>
+      <td style="font-weight:bold;">Time</td>
+      <td>{{ printf "%s" $.Params.eventtime }}</td>
+    </tr>
+  </tbody>
+  </table>
+
+    {{ .Content }}
+
+    <a href="{{ printf "%s" $.Params.eventurl }}" target="_new"><button class="btn btn-success">More Information</button></a>
+
+  </div>
+
+</article> <!-- /.blog-post -->
+
+{{ end }}
+
+{{- /* vim: set ts=2 sw=2 et: */}}
