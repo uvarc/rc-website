@@ -32,6 +32,7 @@ images = [""]
 
 # Ivy and Rivanna High Performance Computing
 Ivy is a high performance computing resource that can be used for HIPAA compliant translational research. Amongst other things, the SOMRC team can help with:
+
 -	Setting up alignment, variant calling, and analysis pipelines for ChIP-Seq, ChIP-chip, RNA-Seq and other genomic experiments on Ivy and Rivanna 
 -	Using [GATK](https://software.broadinstitute.org/gatk/guide/article.php?id=1988) on Ivy or Rivanna employing multi-threading and scatter-gather for fast SNP variant calling
 
