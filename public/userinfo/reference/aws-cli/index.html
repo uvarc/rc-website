@@ -34,7 +34,7 @@ Learn more at the AWS Command Line Interface page.">
 
 
 <meta itemprop="dateModified" content="2017-01-31T12:19:03-05:00" />
-<meta itemprop="wordCount" content="230">
+<meta itemprop="wordCount" content="292">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/">
 
@@ -83,6 +83,13 @@ Learn more at the AWS Command Line Interface page."/>
 <style>
 
 </style>
+
+
+    <style>
+    pre code {
+      background-color:#f6f6f6;
+    }
+    </style>
 
   </head>
 
@@ -168,9 +175,9 @@ Learn more at the AWS Command Line Interface page."/>
   </li>
 
     </ul>
-      <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2 form-control-sm" type="text" placeholder="Search">
-      <button class="btn btn-sm align-middle btn-outline-secondary" type="submit">Search</button>
+      <form class="form-inline my-2 my-lg-0" method="get" action="https://somrc.virginia.edu/search/">
+      <input class="form-control mr-sm-2 form-control-sm" name="q" id="q" type="text" placeholder="Search">
+      <button class="btn btn-sm align-middle btn-outline-secondary" name="searchbtn" id="searchbtn" type="submit">Search</button>
     </form>
   </div>
 </div>
@@ -211,6 +218,7 @@ Learn more at the AWS Command Line Interface page."/>
 <li><a href="#configure-with-credentials">Configure With Credentials</a></li>
 <li><a href="#basic-usage">Basic Usage</a></li>
 <li><a href="#help">Help</a></li>
+<li><a href="#real-world-example">Real-world example</a></li>
 </ul>
 </nav>  
     
@@ -250,16 +258,17 @@ This can be useful for local scripts or automated cron tasks. The AWS CLI also s
 
 <p>The <code>aws</code> command is used, followed by the service name, and then the specific operation you want to call:</p>
 
-<p><code>$ aws ec2 describe-instances</code></p>
+<pre><code class="language-bash">$ aws ec2 describe-instances
 
-<p><code>$ aws ec2 start-instances --instance-ids i-1348636c</code></p>
+$ aws ec2 start-instances --instance-ids i-1348636c
 
-<p><code>$ aws s3 cp local-file.txt s3://my-bucket/</code></p>
+$ aws s3 cp local-file.txt s3://my-bucket/
 
-<p><code>$ aws sns publish --topic-arn arn:aws:sns:us-east-1:546123:OperationsError \
-      --message &quot;Script Failure&quot;</code></p>
+$ aws sns publish --topic-arn arn:aws:sns:us-east-1:546123:OperationsError \
+      --message &quot;Script Failure&quot;
 
-<p><code>$ aws sqs receive-message --queue-url https://queue.amazonaws.com/546123/Test</code></p>
+$ aws sqs receive-message --queue-url https://queue.amazonaws.com/546123/Test
+</code></pre>
 
 <hr />
 
@@ -276,6 +285,25 @@ This can be useful for local scripts or automated cron tasks. The AWS CLI also s
 <p>Specific parameters for a call within a service:</p>
 
 <p><code>aws ec2 describe-instances help</code></p>
+
+<hr />
+
+<h1 id="real-world-example">Real-world example</h1>
+
+<p>Use a <code>bash</code> script to turn off your EC2 instance at night, and send you a notification. Use a similar script for a morning startup:</p>
+
+<pre><code class="language-bash">#!/bin/sh
+
+set -e
+instance='i-1234567890abcd'
+
+# our script won't know where aws is unless you specify a full path
+/path/to/aws ec2 stop-instances --instance-ids $instance
+
+/path/to/aws sns publish --topic-arn arn:aws:sns:us-east-1:546123:OnlineNotifications \
+    --message &quot;Your instance is back on!&quot;
+
+</code></pre>
 
   </div>
 

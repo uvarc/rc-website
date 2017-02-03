@@ -17,9 +17,10 @@
 
     {{ partial "head-custom.html" . }}
 
+
     <style>
-    pre code {
-      background-color:#f6f6f6;
+    .card-group .card a {
+      text-decoration:none;
     }
     </style>
 
@@ -35,13 +36,22 @@
       <div class="row">
         <div class="col-sm-8 blog-main">
 
-          {{ block "main" . }}
-          <!-- The part of the page that begins to differ between templates -->
-          {{ end }}
+<script>
+  (function() {
+    var cx = '009070394138504404541:6d4gc6cb7oi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchresults-only></gcse:searchresults-only>
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
-        {{ partial "sidebar-reference.html" . }}
+        {{ partial "sidebar.html" . }}
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}

@@ -45,6 +45,8 @@ article img{max-width:100%;height:auto;margin:13px auto}
 .contact-button button { position: absolute; bottom:20px; left: 20px;}
 .spacer-20 { width:100%; height:20px; }
 
+pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radius:.25rem; font-size:90%;}
+
 #TableOfContents {width:50%;background-color:#f6f6f6;padding-bottom:6px;padding-top:20px;margin:20px;-moz-border-radius:5px;border-radius:5px;font-size:0.9em;}
 #TableOfContents ul {list-style-type: square;}
 #TableOfContents ul li a:hover {text-decoration:none;}

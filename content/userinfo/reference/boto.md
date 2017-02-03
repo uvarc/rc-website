@@ -31,10 +31,9 @@ or for Windows (or the latest release) simply clone from GitHub:
 `boto` can run under AWS authentication granted in a few ways:
 
 * Inherited from user environment variables
-
-* Using hard-coded AWS credentials in your code or in a local config.json file
-
-* Using AWS IAM roles assigned to the EC2 instance when you created it
+* Using hard-coded AWS credentials in your code (Never in production / Never committed to git)
+* Using hard-coded AWS credentials in a local config.json file (Never committed to git)
+* Using AWS IAM roles assigned to the EC2 instance when you created it (Best practice)
 
 - - -
 

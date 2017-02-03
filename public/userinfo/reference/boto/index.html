@@ -12,9 +12,7 @@
 pip install boto3
 or for Windows (or the latest release) simply clone from GitHub:
 $ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install  Authentication boto can run under AWS authentication granted in a few ways:
- Inherited from user environment variables
- Using hard-coded AWS credentials in your code or in a local config.json file
- Using AWS IAM roles assigned to the EC2 instance when you created it" />
+ Inherited from user environment variables Using hard-coded AWS credentials in your code (Never in production / Never committed to git) Using hard-coded AWS credentials in a local config." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://somrc.virginia.edu/userinfo/reference/boto/" />
 
@@ -38,13 +36,11 @@ $ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install
 pip install boto3
 or for Windows (or the latest release) simply clone from GitHub:
 $ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install  Authentication boto can run under AWS authentication granted in a few ways:
- Inherited from user environment variables
- Using hard-coded AWS credentials in your code or in a local config.json file
- Using AWS IAM roles assigned to the EC2 instance when you created it">
+ Inherited from user environment variables Using hard-coded AWS credentials in your code (Never in production / Never committed to git) Using hard-coded AWS credentials in a local config.">
 
 
 <meta itemprop="dateModified" content="2017-02-02T22:28:18-05:00" />
-<meta itemprop="wordCount" content="196">
+<meta itemprop="wordCount" content="213">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/">
 
@@ -65,9 +61,7 @@ $ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install
 pip install boto3
 or for Windows (or the latest release) simply clone from GitHub:
 $ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install  Authentication boto can run under AWS authentication granted in a few ways:
- Inherited from user environment variables
- Using hard-coded AWS credentials in your code or in a local config.json file
- Using AWS IAM roles assigned to the EC2 instance when you created it"/>
+ Inherited from user environment variables Using hard-coded AWS credentials in your code (Never in production / Never committed to git) Using hard-coded AWS credentials in a local config."/>
 
 
 
@@ -98,6 +92,13 @@ $ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install
 <style>
 
 </style>
+
+
+    <style>
+    pre code {
+      background-color:#f6f6f6;
+    }
+    </style>
 
   </head>
 
@@ -183,9 +184,9 @@ $ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install
   </li>
 
     </ul>
-      <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2 form-control-sm" type="text" placeholder="Search">
-      <button class="btn btn-sm align-middle btn-outline-secondary" type="submit">Search</button>
+      <form class="form-inline my-2 my-lg-0" method="get" action="https://somrc.virginia.edu/search/">
+      <input class="form-control mr-sm-2 form-control-sm" name="q" id="q" type="text" placeholder="Search">
+      <button class="btn btn-sm align-middle btn-outline-secondary" name="searchbtn" id="searchbtn" type="submit">Search</button>
     </form>
   </div>
 </div>
@@ -247,11 +248,10 @@ $ python setup.py install
 <p><code>boto</code> can run under AWS authentication granted in a few ways:</p>
 
 <ul>
-<li><p>Inherited from user environment variables</p></li>
-
-<li><p>Using hard-coded AWS credentials in your code or in a local config.json file</p></li>
-
-<li><p>Using AWS IAM roles assigned to the EC2 instance when you created it</p></li>
+<li>Inherited from user environment variables</li>
+<li>Using hard-coded AWS credentials in your code (Never in production / Never committed to git)</li>
+<li>Using hard-coded AWS credentials in a local config.json file (Never committed to git)</li>
+<li>Using AWS IAM roles assigned to the EC2 instance when you created it (Best practice)</li>
 </ul>
 
 <hr />
