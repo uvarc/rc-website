@@ -14,17 +14,15 @@ School of Medicine Research Computing can help with accessing, preparing, visual
 
 # Manipulation
 
-<i class = "fa fa-2x fa-table"></i>
+<div>
+<i class = "fa fa-2x fa-th-list"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-2x fa-long-arrow-right"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-2x fa-th"></i>
+</div>
 
 Data analysis generally involves a significant effort to transform, aggregate, subset or otherwise prepare a dataset. We can help you wrangle your data into a "tidy" format in order to analyze the features and observations relevant to your question.
 
-<div>
-<i class = "fa fa-4x fa-th"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-4x fa-long-arrow-right"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-4x fa-th-list"></i>
-</div>
-	
 # Inference
 
-<i class = "fa fa-2x fa-plus-square-o"></i>
+<i class = "fa fa-2x fa-plus-square"></i>
 
 Testing assumptions about a dataset is critical to arriving at a scientific conclusion. Once you've identified a hypothesis test appropriate for your data, we can help you translate that procedure into code.
 
