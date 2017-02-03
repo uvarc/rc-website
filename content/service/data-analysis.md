@@ -10,7 +10,7 @@ tags = ["R","Python","data analysis"]
 
 +++
 
-School of Medicine Research Computing can help with accessing, preparing, visualizing and analyzing data. We can assist you by implementing your analysis strategy in an appropriate statistical computing language . We will work with you to prepare scripts that are as reproducible, flexible and legible to you and your research team as possible. Our consultation services include wrangling, manipulating or otherwise cleaning datasets to prepare them to be analyzed. We also have expertise in visual representation of data both with static and interactive plotting tools.
+<p class=lead>School of Medicine Research Computing can help with accessing, preparing, visualizing and analyzing data. We can assist you by implementing your analysis strategy in an appropriate statistical computing language . We will work with you to prepare scripts that are as reproducible, flexible and legible to you and your research team as possible. Our consultation services include wrangling, manipulating or otherwise cleaning datasets to prepare them to be analyzed. We also have expertise in visual representation of data both with static and interactive plotting tools.</p>
 
 # Manipulation
 
