@@ -7,10 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="AWS Command Line Tools" />
-<meta property="og:description" content=" Install the AWSCLI Mac/Linux Using pip you can install the current release:
-pip install awscli
-Windows Configure With Credentials " />
+<meta property="og:title" content="AWS Command Line" />
+<meta property="og:description" content="The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via bash and PowerShell scripts. This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)
+Learn more at the AWS Command Line Interface page." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://somrc.virginia.edu/reference/aws-cli/" />
 
@@ -29,14 +28,13 @@ Windows Configure With Credentials " />
 
 
 
-<meta itemprop="name" content="AWS Command Line Tools">
-<meta itemprop="description" content=" Install the AWSCLI Mac/Linux Using pip you can install the current release:
-pip install awscli
-Windows Configure With Credentials ">
+<meta itemprop="name" content="AWS Command Line">
+<meta itemprop="description" content="The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via bash and PowerShell scripts. This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)
+Learn more at the AWS Command Line Interface page.">
 
 
 <meta itemprop="dateModified" content="2017-01-31T12:19:03-05:00" />
-<meta itemprop="wordCount" content="19">
+<meta itemprop="wordCount" content="230">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/">
 
@@ -52,10 +50,9 @@ Windows Configure With Credentials ">
 
 
 
-<meta name="twitter:title" content="AWS Command Line Tools"/>
-<meta name="twitter:description" content=" Install the AWSCLI Mac/Linux Using pip you can install the current release:
-pip install awscli
-Windows Configure With Credentials "/>
+<meta name="twitter:title" content="AWS Command Line"/>
+<meta name="twitter:description" content="The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via bash and PowerShell scripts. This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)
+Learn more at the AWS Command Line Interface page."/>
 
 
 
@@ -74,7 +71,7 @@ Windows Configure With Credentials "/>
     <link rel="Shortcut Icon" href="https://somrc.virginia.edu/images/favicon.ico" type="image/x-icon" />
     <meta type="reference" />
 
-    <title>AWS Command Line Tools | Research Computing</title>
+    <title>AWS Command Line | Research Computing</title>
 
     <!-- combined, minified CSS -->
     <link href="https://somrc.virginia.edu/css/style.css" rel="stylesheet">
@@ -137,6 +134,8 @@ Windows Configure With Credentials "/>
       <a class="dropdown-item disabled" href="#">FAQ</a>
       <a class="dropdown-item disabled" href="#">Software</a>
       <a class="dropdown-item disabled" href="#">Use Cases</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item disabled" href="#">Reference</a>
     </div>
   </li>
 
@@ -196,7 +195,7 @@ Windows Configure With Credentials "/>
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/reference/aws-cli/">AWS Command Line Tools</a></h2>
+    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/reference/aws-cli/">AWS Command Line</a></h2>
     <hr size=1 />
 
   </header>
@@ -210,9 +209,18 @@ Windows Configure With Credentials "/>
 <li><a href="#windows">Windows</a></li>
 </ul></li>
 <li><a href="#configure-with-credentials">Configure With Credentials</a></li>
+<li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#help">Help</a></li>
 </ul>
 </nav>  
     
+
+<p class=lead>The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via <code>bash</code> and PowerShell scripts. 
+This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)</p>
+
+<p class=lead>Learn more at the <a href="https://aws.amazon.com/cli/" target="_new"><b>AWS Command Line Interface</b></a> page.</p>
+
+<hr />
 
 <h1 id="install-the-awscli">Install the AWSCLI</h1>
 
@@ -224,7 +232,50 @@ Windows Configure With Credentials "/>
 
 <h2 id="windows">Windows</h2>
 
+<p>Download and run the <a href="https://s3.amazonaws.com/aws-cli/AWSCLI64.msi">64-bit</a> or <a href="https://s3.amazonaws.com/aws-cli/AWSCLI32.msi">32-bit</a> Windows installer.</p>
+
+<hr />
+
 <h1 id="configure-with-credentials">Configure With Credentials</h1>
+
+<p>Using the access key and secret access key generated for your account, enter those into the AWS CLI configuration. Use this command:</p>
+
+<p><code>aws configure</code></p>
+
+<p>When prompted, enter the appropriate region you are working in, such as <code>us-east-1</code> and your preferred output format <code>text</code> | <code>table</code> | <code>json</code>.</p>
+
+<hr />
+
+<h1 id="basic-usage">Basic Usage</h1>
+
+<p>The <code>aws</code> command is used, followed by the service name, and then the specific operation you want to call:</p>
+
+<p><code>$ aws ec2 describe-instances</code></p>
+
+<p><code>$ aws ec2 start-instances --instance-ids i-1348636c</code></p>
+
+<p><code>$ aws s3 cp local-file.txt s3://my-bucket/</code></p>
+
+<p><code>$ aws sns publish --topic-arn arn:aws:sns:us-east-1:546123:OperationsError \
+      --message &quot;Script Failure&quot;</code></p>
+
+<p><code>$ aws sqs receive-message --queue-url https://queue.amazonaws.com/546123/Test</code></p>
+
+<hr />
+
+<h1 id="help">Help</h1>
+
+<p>General help with listing services:</p>
+
+<p><code>aws help</code></p>
+
+<p>Find available commands specific to one service:</p>
+
+<p><code>aws ec2 help</code></p>
+
+<p>Specific parameters for a call within a service:</p>
+
+<p><code>aws ec2 describe-instances help</code></p>
 
   </div>
 
@@ -238,15 +289,13 @@ Windows Configure With Credentials "/>
 
   <section class="sidebar-module">
     <p class=lead>Reference Topics</p>
-    <ul id="tags">
+    <ol class="list-unstyled">
       
-        <li><a href="/tags/aws">aws</a> </li>
+      <li> <a href="/reference/aws-cli/">AWS Command Line</a></li>
       
-        <li><a href="/tags/boto3">boto3</a> </li>
+      <li> <a href="/reference/boto/">Boto Library (Python)</a></li>
       
-        <li><a href="/tags/cli">cli</a> </li>
-      
-    </ul>
+    </ol>
   </section>
 
   <section class="sidebar-module sidebar-module-inset">
@@ -264,7 +313,7 @@ Windows Configure With Credentials "/>
       </div> <!-- /.row -->
     </div> <!-- /.container -->
 
-      <footer class="footer">
+      <footer class="footer" style="margin-top:20px;">
     <div class="container" style="text-align:left;padding-top:20px;">
         <div class="col-6 col-sm-4 col-lg-4">
           <strong><span class="glyphicon glyphicon-map-marker"></span> Contact</strong>

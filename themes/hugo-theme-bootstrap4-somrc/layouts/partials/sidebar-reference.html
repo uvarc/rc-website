@@ -2,11 +2,11 @@
 
   <section class="sidebar-module">
     <p class=lead>Reference Topics</p>
-    <ul id="tags">
-      {{ range .Params.tags }}
-        <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+    <ol class="list-unstyled">
+      {{ range first 30 (where .Site.Pages.ByTitle "Type" "reference") }}
+      <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
-    </ul>
+    </ol>
   </section>
 
   <section class="sidebar-module sidebar-module-inset">
