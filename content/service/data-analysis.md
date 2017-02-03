@@ -12,12 +12,14 @@ tags = ["R","Python","data analysis"]
 
 School of Medicine Research Computing can help with accessing, preparing, visualizing and analyzing data. We can assist you by implementing your analysis strategy in an appropriate statistical computing language . We will work with you to prepare scripts that are as reproducible, flexible and legible to you and your research team as possible. Our consultation services include wrangling, manipulating or otherwise cleaning datasets to prepare them to be analyzed. We also have expertise in visual representation of data both with static and interactive plotting tools.
 
-# Manipulation 
+# Manipulation
+
+<i class = "fa fa-2x fa-table"></i>
 
 Data analysis generally involves a significant effort to transform, aggregate, subset or otherwise prepare a dataset. We can help you wrangle your data into a "tidy" format in order to analyze the features and observations relevant to your question.
 
 <div>
-<i class = "fa fa-4x fa-th"></i>&nbsp;<i class = "fa fa-4x fa-long-arrow-right"></i>&nbsp;<i class = "fa fa-4x fa-th-list"></i>
+<i class = "fa fa-4x fa-th"></i>&nbsp;&nbsp;<i class = "fa fa-4x fa-long-arrow-right"></i>&nbsp;&nbsp;<i class = "fa fa-4x fa-th-list"></i>
 </div>
 	
 # Inference
@@ -32,12 +34,13 @@ Developing algorithms and predictive models can be a fruitful data analysis stra
 
 From exploratory plots to publication-ready visualizations, we are available to help you prepare strong visual representations of your data. In some cases, interactive plotting tools are helpful for communicating features, particularly when dealing with high-dimensional datasets. 
 
+<img class="img-fluid" src="https://somrc.virginia.edu/images/boxplot.png" alt="Boxplot Example" align="center" />
 
 <div class="row">
 	<div class="col-sm-4">
-		<img src="https://somrc.virginia.edu/images/boxplot.png" alt="Boxplot Example" align="center" />
+		<img class="img-fluid" src="https://somrc.virginia.edu/images/boxplot.png" alt="Boxplot Example" align="center" />
 	</div>
 	<div class="col-sm-4">
-		<img src="https://somrc.virginia.edu/images/heatmap.png" alt="Boxplot Example" align="center" />
+		<img class="img-fluid" src="https://somrc.virginia.edu/images/heatmap.png" alt="Boxplot Example" align="center" />
 	</div>
 </div>
