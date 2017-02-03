@@ -62,7 +62,7 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 .gs-title, .gs-snippet {font-family:HelveticaNeueLight,Helvetica;}  
 
 /* Add a border between individual search results */
-.gs-webResult {border-bottom:1px solid #eee;padding: 1em;}  
+.gs-webResult {border-bottom:1px solid #eee;padding-top:10px;padding-bottom:10px;}
 /* Do no display the count of search results */    
 .gsc-result-info {display: none;}   
 /* Hide the Google branding in search results */
@@ -72,15 +72,17 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 /* Hide the snippets in Google search results */
 /* .gs-snippet { display: none;}  */
 /* Change the font size of the title of search results */
-.gs-title a { font-size: 14px;font-weight:bold; padding-left:0px; margin-left:0px;} 
+.gs-title a { font-size: 1.1em; font-weight:bold; padding-left:0px; margin-left:0px; padding-top:0px; margin-top:0px; text-decoration:none;} 
+.gs-title a:hover { text-decoration:underline; }
 /* Change the font size of snippets inside search results */
-.gs-snippet {font-size: 0.9em; padding-left:8px; margin-left:0px;}
+.gs-snippet {font-size: 0.95em; padding-left:8px; margin-left:0px;}
 /* Google Custom Search highlights matching words in bold, toggle that */
 .gs-title b, .gs-snippet b {font-weight: normal;}
 /* Do no display the URL of web pages in search results */
 .gsc-url-top, .gsc-url-bottom {display: none;}
 /* Highlight the pagination buttons at the bottom of search results */
-.gsc-cursor-page {font-size: 1.5em;padding: 4px 8px;border: 2px solid #ccc;}
+/* .gsc-cursor-page {font-size: 1.5em;padding: 4px 8px;border: 2px solid #ccc;} */
+.gsc-cursor-page {font-size: 1.5em;padding: 4px 8px;border: 2px solid #ccc; color:black; background-color:#FF9900;}
 
 /*!
 
