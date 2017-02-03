@@ -1,4 +1,5 @@
 +++
+type = "reference"
 draft = false
 object = "awscli"
 images = [""]

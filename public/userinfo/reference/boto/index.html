@@ -7,11 +7,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="Boto Library (Python)" />
-<meta property="og:description" content="Installing the boto3 library:
-pip install boto3" />
+<meta property="og:title" content="boto3 Library (Python)" />
+<meta property="og:description" content="Install the boto3 library: Install using pip on Linux/Mac:
+pip install boto3
+or for Windows (or the latest release) simply clone from GitHub:
+$ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install  Authentication boto can run under AWS authentication granted in a few ways:
+ Inherited from user environment variables
+ Using hard-coded AWS credentials in your code or in a local config.json file
+ Using AWS IAM roles assigned to the EC2 instance when you created it" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://somrc.virginia.edu/reference/boto/" />
+<meta property="og:url" content="https://somrc.virginia.edu/userinfo/reference/boto/" />
 
   <meta property="og:image" content="https://somrc.virginia.edu/" />
 
@@ -28,13 +33,18 @@ pip install boto3" />
 
 
 
-<meta itemprop="name" content="Boto Library (Python)">
-<meta itemprop="description" content="Installing the boto3 library:
-pip install boto3">
+<meta itemprop="name" content="boto3 Library (Python)">
+<meta itemprop="description" content="Install the boto3 library: Install using pip on Linux/Mac:
+pip install boto3
+or for Windows (or the latest release) simply clone from GitHub:
+$ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install  Authentication boto can run under AWS authentication granted in a few ways:
+ Inherited from user environment variables
+ Using hard-coded AWS credentials in your code or in a local config.json file
+ Using AWS IAM roles assigned to the EC2 instance when you created it">
 
 
 <meta itemprop="dateModified" content="2017-02-02T22:28:18-05:00" />
-<meta itemprop="wordCount" content="7">
+<meta itemprop="wordCount" content="196">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/">
 
@@ -50,9 +60,14 @@ pip install boto3">
 
 
 
-<meta name="twitter:title" content="Boto Library (Python)"/>
-<meta name="twitter:description" content="Installing the boto3 library:
-pip install boto3"/>
+<meta name="twitter:title" content="boto3 Library (Python)"/>
+<meta name="twitter:description" content="Install the boto3 library: Install using pip on Linux/Mac:
+pip install boto3
+or for Windows (or the latest release) simply clone from GitHub:
+$ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install  Authentication boto can run under AWS authentication granted in a few ways:
+ Inherited from user environment variables
+ Using hard-coded AWS credentials in your code or in a local config.json file
+ Using AWS IAM roles assigned to the EC2 instance when you created it"/>
 
 
 
@@ -66,12 +81,12 @@ pip install boto3"/>
 <meta name="generator" content="Hugo 0.18.1" />
 
 
-    <base href="https://somrc.virginia.edu/reference/boto/">
-    <link rel="canonical" href="https://somrc.virginia.edu/reference/boto/">
+    <base href="https://somrc.virginia.edu/userinfo/reference/boto/">
+    <link rel="canonical" href="https://somrc.virginia.edu/userinfo/reference/boto/">
     <link rel="Shortcut Icon" href="https://somrc.virginia.edu/images/favicon.ico" type="image/x-icon" />
     <meta type="reference" />
 
-    <title>Boto Library (Python) | Research Computing</title>
+    <title>boto3 Library (Python) | Research Computing</title>
 
     <!-- combined, minified CSS -->
     <link href="https://somrc.virginia.edu/css/style.css" rel="stylesheet">
@@ -195,16 +210,91 @@ pip install boto3"/>
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/reference/boto/">Boto Library (Python)</a></h2>
+    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/userinfo/reference/boto/">boto3 Library (Python)</a></h2>
     <hr size=1 />
 
   </header>
 
   <div class="explainer">
-      
-    <p>Installing the boto3 library:</p>
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#install-the-boto3-library">Install the boto3 library:</a></li>
+<li><a href="#authentication">Authentication</a></li>
+<li><a href="#create-the-client">Create the client</a></li>
+<li><a href="#make-your-request">Make your request</a></li>
+<li><a href="#errors">Errors</a></li>
+</ul>
+</nav>  
+    
+
+<h1 id="install-the-boto3-library">Install the boto3 library:</h1>
+
+<p>Install using <code>pip</code> on Linux/Mac:</p>
 
 <p><code>pip install boto3</code></p>
+
+<p>or for Windows (or the latest release) simply clone from GitHub:</p>
+
+<pre><code>$ git clone git://github.com/boto/boto3.git
+$ cd boto3
+$ python setup.py install
+</code></pre>
+
+<hr />
+
+<h1 id="authentication">Authentication</h1>
+
+<p><code>boto</code> can run under AWS authentication granted in a few ways:</p>
+
+<ul>
+<li><p>Inherited from user environment variables</p></li>
+
+<li><p>Using hard-coded AWS credentials in your code or in a local config.json file</p></li>
+
+<li><p>Using AWS IAM roles assigned to the EC2 instance when you created it</p></li>
+</ul>
+
+<hr />
+
+<h1 id="create-the-client">Create the client</h1>
+
+<p>The client is generally referenced directly by name as a resource:</p>
+
+<pre><code class="language-python"># Get the service resource
+sns = boto3.resource('sns')
+</code></pre>
+
+<hr />
+
+<h1 id="make-your-request">Make your request</h1>
+
+<p>Here is an example of sending a message to an SQS queue:</p>
+
+<pre><code class="language-python"># Get the service resource
+sqs = boto3.resource('sqs')
+
+# Get the queue
+queue = sqs.get_queue_by_name(QueueName='test')
+
+# Create a new message
+response = queue.send_message(MessageBody='boto3', MessageAttributes={
+    'Author': {
+        'StringValue': 'Daniel',
+        'DataType': 'String'
+    }
+})
+
+# The response is NOT a resource, but gives you a message ID and MD5
+print(response.get('MessageId'))
+print(response.get('MD5OfMessageBody'))
+
+</code></pre>
+
+<hr />
+
+<h1 id="errors">Errors</h1>
+
+<p>Note that error handling and parsing error messages is not built into most <code>boto3</code> requests. You should use <code>try</code> and <code>catch</code>, and <code>botocore</code> can help you display, log, or act on errors.</p>
 
   </div>
 
@@ -220,9 +310,9 @@ pip install boto3"/>
     <p class=lead>Reference Topics</p>
     <ol class="list-unstyled">
       
-      <li> <a href="/reference/aws-cli/">AWS Command Line</a></li>
+      <li> <a href="/userinfo/reference/aws-cli/">AWS Command Line</a></li>
       
-      <li> <a href="/reference/boto/">Boto Library (Python)</a></li>
+      <li> <a href="/userinfo/reference/boto/">boto3 Library (Python)</a></li>
       
     </ol>
   </section>

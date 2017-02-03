@@ -3,3 +3,7 @@
 node*
 npm*
 package.json
+
+# Ignore some hugoidx things
+hugoidx
+
