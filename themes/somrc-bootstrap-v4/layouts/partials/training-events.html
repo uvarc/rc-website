@@ -1,0 +1,22 @@
+<div style="width:100%;">
+<table class="table table-sm table-responsive status-tbl table-striped" style="width: auto">
+  <thead class="thead-inverse">
+    <tr>
+      <th scope="row">Event</th>
+      <th>Tech</th>
+      <th style="text-align:right;">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{ $url := "https://s3.amazonaws.com/somrc-data/events/events.csv" }}
+  {{ $sep := "," }}
+  {{ range $i, $r := getCSV $sep $url }}
+    <tr>
+      <td scope="row" style="width:70%;">{{ index $r 0 }}</td>
+      <td>{{ index $r 1 }}</td>
+      <td align="right">{{ index $r 2 }}</td>
+    </tr>
+  {{ end }}
+  </tbody>
+</table>
+</div>
