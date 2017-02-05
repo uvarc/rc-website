@@ -12,9 +12,6 @@ echo "--- Content cleared"
 hugo --disableRSS --disable404 -v --ignoreCache
 echo "--- Hugo content generated"
 
-mkdir public/data
-cp events.csv public/data/
-echo "--- Events data copied"
 cp google091118a6c00d06c0.html public/
 echo "--- Google domain verification copied"
 cp robots.txt public/

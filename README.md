@@ -21,7 +21,7 @@ https://somrc.virginia.edu/
   * `hugo new post/here-is-my-post.md`
   * `hugo new top-level-page.md`
   * Reference: [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-  * Store images in `content/images/`. For example, the published URL of `content/images/uva-som.jpg will be `https://somrc.virginia.edu/images/uva-som.jpg`
+  * Store images in `static/images/`. For example, the published URL of `static/images/uva-som.jpg will be `https://somrc.virginia.edu/images/uva-som.jpg`
 
 **About front matter metadata (at the head of each object):**
 
@@ -60,3 +60,6 @@ https://somrc.virginia.edu/
 * HUGO themes can be [browsed here](http://themes.gohugo.io/).
 * Themes for HUGO are written using the TwiMG syntax. This can be found within various files/folders of the `themes/xxxxx` dir.
 * Themes are (usually) standalone repositories themselves, unless customized, as in this case. You can try out a new theme by cloning its repo into the /themes/ dir, and then changing config.toml to identify the theme you wish to use before you build again.
+
+**Events Data**
+The "Training / Upcoming Events" grid is populated with the `events.csv` file. This file is published to a separate endpoint, and Hugo compiles the CSV into HTML when the site is compiled.
