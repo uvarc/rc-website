@@ -105,4 +105,11 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
 
 <hr size=1 style="padding-bottom:20px;" />
 
-<img src="https://somrc.virginia.edu/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" align="center" />
+<div class="row">
+  <div class="col-sm-4">
+    <img src="https://www.awseducate.com/resource/AWSLogo_350" alt="AWS Educate Member" style="padding-top:20px;padding-bottom:20px;" />
+  </div>
+  <div class="col-sm-8">
+    <img src="https://somrc.virginia.edu/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" style="width:196px;height:80px;" />
+  </div>
+</div>

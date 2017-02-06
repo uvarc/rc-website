@@ -6,7 +6,7 @@ author = "SOMRC Staff"
 description = ""
 title = "Request a Consultation"
 draft = false
-tags = ["somrc","consultation"]
+tags = [""]
 
 +++
 

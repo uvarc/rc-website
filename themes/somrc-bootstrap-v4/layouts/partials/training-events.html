@@ -8,7 +8,6 @@
     </tr>
   </thead>
   <tbody>
-#  {{ $url := "https://s3.amazonaws.com/somrc-data/events/events.csv" }}
   {{ $url := "events.csv" }}
   {{ $sep := "," }}
   {{ range $i, $r := getCSV $sep $url }}

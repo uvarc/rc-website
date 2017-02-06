@@ -1,11 +1,8 @@
-{{ define "main" }}
-  <header>
-    <h1>{{ .Title }}</h1>
-  </header>
-  <ul>
+  <div>
+    <ul>
+    {{ $data := .Data }}
     {{ range $key, $value := .Data.Terms }}
-      <li><a href="{{ $key | urlize }}">{{ $key }}</a> ({{ len $value }})
+      <li><a href="{{ .Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> {{ len $value }}</li>
     {{ end }}
-  </ul>
-{{ end }}
-
+   </ul>
+  </div>

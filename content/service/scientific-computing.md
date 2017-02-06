@@ -1,6 +1,6 @@
 +++
 categories = [
-  "resources",
+  "services",
   "hpc",
 ]
 tags = [
@@ -10,16 +10,29 @@ tags = [
 ]
 draft = false
 date = "2017-01-16T09:30:12-05:00"
-title = "High Performance Computing"
+title = "Scientific Computing"
 description = ""
 author = "SOMRC Staff"
 images = [
-  "/2016/10/image.jpg",
+  "",
 ]
 
 +++
 
 <img src="https://somrc.virginia.edu/images/cray-logo.png" alt="CRAY Supercomputers" align="right" class="img-fluid" style="margin-top:40px;max-width:33%;" />
+
+<p class=lead>School of Medicine Research Computing supports SOM and UVa Medical Center researchers who are interested in writing code to address their scientific inquiries. Whether these programming tasks are implemented interactively, in a series of scripts or as an open-source software package, services are available to provide guidance and enable collaborative development. SOMRC has specific expertise in object oriented programming in <b>R</b> and <b>Python</b>.</p>
+
+Examples of service areas include:
+
+- Collaborating on package development
+- Reviewing and debugging code
+- Preparing scripts to automate or expedite tasks
+- Developing web interfaces for interactive data exploration
+- Advising on integration of existing software tools
+
+- - -
+
 <p class=lead>UVA has two local HPC facilities available to researchers: <b>Rivanna</b> and <b>Ivy</b>. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.</p>
 
 <div class="card">

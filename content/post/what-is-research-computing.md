@@ -5,8 +5,17 @@ description = ""
 title = "What is Research Computing?"
 date = "2017-02-01T10:26:34-05:00"
 draft = false
-tags = ["somrc","rc"]
-categories = ["feature","about"]
+tags = [
+  "somrc",
+  "rc",
+  "cloud",
+  "xsede",
+  "cadre",
+]
+categories = [
+  "feature",
+  "about"
+]
 
 +++
 
