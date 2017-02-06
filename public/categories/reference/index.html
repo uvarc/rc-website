@@ -164,13 +164,19 @@
         <div class="col-sm-8 blog-main">
 
           
-
-
-
-
-
-
-
+  <header>
+    <h1>Reference</h1>
+  </header>
+  
+    Install the boto3 library: Install using pip on Linux/Mac:
+pip install boto3
+or for Windows (or the latest release) simply clone from GitHub:
+$ git clone git://github.com/boto/boto3.git $ cd boto3 $ python setup.py install  Authentication boto can run under AWS authentication granted in a few ways:
+ Inherited from user environment variables Using hard-coded AWS credentials in your code (Never in production / Never committed to git) Using hard-coded AWS credentials in a local config.
+  
+    The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via bash and PowerShell scripts. This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)
+Learn more at the AWS Command Line Interface page.
+  
 
 
         </div> <!-- /.blog-main -->

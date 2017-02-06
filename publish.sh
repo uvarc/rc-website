@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ship the events CSV file
-aws s3 cp --acl public-read events.csv s3://somrc-data/events/
+# aws s3 cp --acl public-read events.csv s3://somrc-data/events/
 
 echo "--- Clear the /public/ dir of all content"
 cd public/
