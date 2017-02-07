@@ -54,9 +54,9 @@
 
       <!-- begin Category drop-down -->
       <p class=lead>Browse by category:</p>
-      <div class="dropdown">
-        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Explore
+      <div class="dropdown" style="float:left;margin-right:20px;">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height: auto;max-height: 400px;overflow-x: hidden;">
           {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
@@ -65,8 +65,10 @@
         </div>
       </div>
       <!-- end Category drop-down -->
+      <br clear=all>
+      <hr size=1 />
 
-      <p class="lead" style="padding-top:20px;">Training</p>
+      <p class="lead">Training</p>
       {{ partial "training-events.html" . }}
 
       <h4 />

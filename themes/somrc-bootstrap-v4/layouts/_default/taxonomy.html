@@ -1,14 +1,17 @@
 {{ define "main" }}
+  <h3 style="padding-bottom:20px;"><code><i class="fa fa-tag" aria-hidden="true"></i> /{{ .Data.Singular }}/{{ lower .LinkTitle }}</code></h3>
+  <ul style="list-style:none;">
+    {{ range .Data.Pages }}
+    <li><a href="{{ .RelPermalink }}"><h4 style="text-decoration:none;color:#222;">{{ .Title }}</h4></a>
+      <span style="font-size:0.95em;">
 
-<h3 style="padding-bottom:20px;">/{{ .Data.Singular }}/{{ lower .LinkTitle }}</h3>
+          {{ .Summary | markdownify }}
 
-<ul style="list-style:none;">
-  {{ range .Data.Pages }}
-  <li><a href="{{ .RelPermalink }}"><h4 style="text-decoration:none;color:#222;">{{ .Title }}</h4></a>
-    {{ .Summary }}
-  <hr size=1>
-  </li>
-  {{ end }}
-</ul>
+        <br /><a href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+      </span>
+    <hr size=1>
+    </li>
+    {{ end }}
+  </ul>
 
 {{ end }}
