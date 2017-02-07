@@ -4,6 +4,7 @@
     {{ range .Data.Pages }}
     <li><a href="{{ .RelPermalink }}"><h4 style="text-decoration:none;color:#222;">{{ .Title }}</h4></a>
       <span style="font-size:0.95em;">
+
           {{ .Summary | markdownify }}
 
         <div class="row">
