@@ -1,6 +1,6 @@
 +++
 date = "2017-01-31T15:26:06-05:00"
-categories = ["services"]
+categories = [""]
 images = [""]
 author = "SOMRC Staff"
 description = ""

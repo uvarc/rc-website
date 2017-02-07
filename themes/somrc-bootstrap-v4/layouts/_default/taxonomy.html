@@ -4,10 +4,16 @@
     {{ range .Data.Pages }}
     <li><a href="{{ .RelPermalink }}"><h4 style="text-decoration:none;color:#222;">{{ .Title }}</h4></a>
       <span style="font-size:0.95em;">
-
           {{ .Summary | markdownify }}
 
-        <br /><a href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+        <div class="row">
+          <div class="col-sm-4">
+            <a style="padding-left:20px;" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+          </div>
+          <div class="col-sm-8" style="text-align:right;">
+            {{ partial "meta-terms.html" . }}
+          </div>
+        </div>
       </span>
     <hr size=1>
     </li>

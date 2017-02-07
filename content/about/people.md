@@ -9,10 +9,11 @@ title = "Staff"
 description = ""
 author = "SOMRC Staff"
 images = [
-  "/2016/10/image.jpg",
+  ""
 ]
 categories = [
   "staff",
+  "about"
 ]
 
 +++

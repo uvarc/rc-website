@@ -1,7 +1,7 @@
 +++
-date = "2017-02-03T15:11:16-05:00"
-tags = ["tag1","tag2"]
-categories = ["about"]
+date = "2016-12-31T23:59:16-05:00"
+tags = [""]
+categories = [""]
 images = [""]
 author = "SOMRC Staff"
 description = ""

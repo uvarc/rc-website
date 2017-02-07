@@ -6,7 +6,6 @@
   <header>
     <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
     <hr size=1 />
-<!--    <p class="blog-post-meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> by {{ .Params.author | default .Site.Params.author }}{{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</p> -->
   </header>
 
   <div class="explainer">
@@ -14,6 +13,8 @@
     {{ .Content }}
   </div>
 
+  <hr size=1 />
+  <p style="font-size:95%;" class="blog-post-meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">Updated {{ .Date.Format $dateFormat }}</time> | {{ partial "meta-terms.html" . }}</p>
 </article> <!-- /.blog-post -->
 
 {{ end }}
