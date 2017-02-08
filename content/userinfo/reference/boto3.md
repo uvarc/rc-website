@@ -8,7 +8,7 @@ title = "boto3 Library (Python)"
 categories = ["reference"]
 images = [""]
 object = "Python"
-tags = ["python","boto3","aws"]
+tags = ["python","boto3","aws","cloud"]
 
 +++
 

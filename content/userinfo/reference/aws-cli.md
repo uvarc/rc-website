@@ -7,7 +7,7 @@ author = "SOMRC Staff"
 description = ""
 title = "AWS Command Line"
 date = "2017-01-31T12:19:03-05:00"
-tags = ["aws","boto3","cli"]
+tags = ["aws","boto3","cli","cloud"]
 categories = ["reference"]
 
 +++

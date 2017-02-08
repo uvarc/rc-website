@@ -8,10 +8,10 @@
           {{ .Summary | markdownify }}
 
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-3">
             <a style="padding-left:20px;" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
           </div>
-          <div class="col-sm-8" style="text-align:right;">
+          <div class="col-sm-9" style="text-align:right;">
             {{ partial "meta-terms.html" . }}
           </div>
         </div>

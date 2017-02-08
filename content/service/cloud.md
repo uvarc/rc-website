@@ -3,9 +3,11 @@ categories = [
   "architecture",
 ]
 tags = [
-  "hpc",
+  "aws",
+  "google",
   "cloud",
   "services",
+  "containers"
 ]
 draft = false
 date = "2017-01-24T14:18:18-05:00"
@@ -20,16 +22,6 @@ images = [
 
 <img src="https://somrc.virginia.edu/images/aws-logo-344x150.png" alt="AWS" align=right style="height:50%;width:50%;max-width:33%;" />
 <p class=lead>Cloud computing is ideal for running flexible, scalable applications on demand, in periodic bursts, or for fixed periods of time. UVA SOMRC works alongside researchers to design and run research applications and datasets into Amazon Web Services, the leader among public cloud vendors. This means that server, storage, and database needs do not have to be estimated or purchased beforehand – they can be scaled larger and smaller with your needs, or programmed to scale dynamically with your application. If you have an idea or project and need a proof of concept, we would be happy to sit down and design a cloud solution with you.</p>
-
-<hr size=1 style="padding-bottom:20px;" />
-
-# Common Use Cases
-
-* Proofs of concept
-* Test/Development environments
-* Dynamic / flexible / scaling application stacks
-* Short-term or fast deployment projects
-* Container deployments
 
 <hr size=1 style="padding-bottom:20px;" />
 
@@ -59,6 +51,16 @@ Here are some of the building blocks available using cloud infrastructure:
   </ul>
   </div>
 </div>
+
+<hr size=1 style="padding-bottom:20px;" />
+
+# How we use AWS / Common Use Cases
+
+* **Proofs of concept** - To verify a system or design works, to benchmark processing speeds, we may use short-lived instances to learn from before building a production system.
+* **Test / Development environments** - For installing test packages, trying new ideas, and testing design patterns.
+* **Dynamic / flexible / scaling application stacks** - When future traffic or load cannot be determined beforehand, deploying into a dynamic environment means the infrastructure is not locked into any set type of CPU/RAM or scale.
+* **Short-term or fast deployment projects** - For almost immediate computing needs, existing users can create new instances as needed.
+* **Container deployments** - Run microservices (such as Docker containers) in an environment that can load-balance their traffic and maintain container health.
 
 <hr size=1 style="padding-bottom:20px;" />
 
