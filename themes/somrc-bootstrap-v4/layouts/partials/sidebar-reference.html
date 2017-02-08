@@ -2,7 +2,7 @@
 
   <section class="sidebar-module">
     <p class=lead>Reference Topics</p>
-    <ol class="list-unstyled">
+    <ol class="list-unstyled" style="font-size:90%;">
       {{ range first 30 (where .Site.Pages.ByTitle "Type" "reference") }}
       <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}

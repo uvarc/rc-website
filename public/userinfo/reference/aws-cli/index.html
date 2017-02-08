@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="AWS Command Line" />
+<meta property="og:title" content="AWS Command Line (bash)" />
 <meta property="og:description" content="The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via bash and PowerShell scripts. This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)
 Learn more at the AWS Command Line Interface page." />
 <meta property="og:type" content="article" />
@@ -28,19 +28,19 @@ Learn more at the AWS Command Line Interface page." />
 
 
 
-<meta itemprop="name" content="AWS Command Line">
+<meta itemprop="name" content="AWS Command Line (bash)">
 <meta itemprop="description" content="The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via bash and PowerShell scripts. This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)
 Learn more at the AWS Command Line Interface page.">
 
 
 <meta itemprop="dateModified" content="2017-01-31T12:19:03-05:00" />
-<meta itemprop="wordCount" content="292">
+<meta itemprop="wordCount" content="268">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/">
 
 
 
-<meta itemprop="keywords" content=",about,architecture,big-data,cloud,data,education,employment,events,feature,funding,grants,hipaa,hpc,infrastructure,python,r,reference,resources,security,seminars,services,staff,storage,support,userinfo,workshops,,amazon,aws,azure,bioinformatics,boto3,cadre,cli,cloud,cluster,collaboration,containers,data,data-analysis,ddl,domino,emr,genomics,google,grants,hadoop,hipaa,hpc,ivy,publications,python,r,rc,reference,rivanna,security,services,som,somrc,staff,storage,support,tag1,tag2,xsede," />
+<meta itemprop="keywords" content=",about,architecture,big-data,cloud,data,education,employment,events,feature,funding,grants,hipaa,hpc,infrastructure,python,r,reference,resources,security,seminars,services,staff,storage,support,userinfo,workshops,,amazon,aws,azure,bash,bioinformatics,boto3,cadre,cli,cloud,cluster,collaboration,containers,data,data-analysis,ddl,domino,emr,genomics,google,grants,hadoop,hipaa,hpc,ivy,json,publications,python,r,rc,rivanna,security,services,som,somrc,staff,storage,support,tag1,tag2,xsede," />
 
 
 
@@ -50,7 +50,7 @@ Learn more at the AWS Command Line Interface page.">
 
 
 
-<meta name="twitter:title" content="AWS Command Line"/>
+<meta name="twitter:title" content="AWS Command Line (bash)"/>
 <meta name="twitter:description" content="The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via bash and PowerShell scripts. This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)
 Learn more at the AWS Command Line Interface page."/>
 
@@ -71,7 +71,7 @@ Learn more at the AWS Command Line Interface page."/>
     <link rel="Shortcut Icon" href="https://somrc.virginia.edu/images/favicon.ico" type="image/x-icon" />
     <meta type="reference" />
 
-    <title>AWS Command Line | Research Computing</title>
+    <title>AWS Command Line (bash) | Research Computing</title>
 
     <!-- combined, minified CSS -->
     <link href="https://somrc.virginia.edu/css/style.css" rel="stylesheet">
@@ -199,7 +199,7 @@ Learn more at the AWS Command Line Interface page."/>
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/userinfo/reference/aws-cli/">AWS Command Line</a></h2>
+    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/userinfo/reference/aws-cli/">AWS Command Line (bash)</a></h2>
     <hr size=1 />
 
   </header>
@@ -249,23 +249,20 @@ This can be useful for local scripts or automated cron tasks. The AWS CLI also s
 
 <p>When prompted, enter the appropriate region you are working in, such as <code>us-east-1</code> and your preferred output format <code>text</code> | <code>table</code> | <code>json</code>.</p>
 
+<div class="bd-callout bd-callout-warning">
+  <h4>Profiles</h4>
+  <p>If you access AWS through numerous accounts, you can create multiple profiles. To do this, use the <code>--profile myprofile</code> parameter when configuring the AWS CLI, with a name you like (replacing <code>myprofile</code>.</p>
+  <p>Then to use a profile:</p>
+  <code>aws --profile mycoolprofile ec2 describe-instances</code>
+</div>
+
 <hr />
 
 <h1 id="basic-usage">Basic Usage</h1>
 
 <p>The <code>aws</code> command is used, followed by the service name, and then the specific operation you want to call:</p>
 
-<pre><code class="language-bash">$ aws ec2 describe-instances
-
-$ aws ec2 start-instances --instance-ids i-1348636c
-
-$ aws s3 cp local-file.txt s3://my-bucket/
-
-$ aws sns publish --topic-arn arn:aws:sns:us-east-1:546123:OperationsError \
-      --message &quot;Script Failure&quot;
-
-$ aws sqs receive-message --queue-url https://queue.amazonaws.com/546123/Test
-</code></pre>
+<script src="//gist.github.com/nmagee/2f8426406a99c6cfd11e11d8e2aee11b.js"></script>
 
 <hr />
 
@@ -289,18 +286,7 @@ $ aws sqs receive-message --queue-url https://queue.amazonaws.com/546123/Test
 
 <p>Use a <code>bash</code> script to turn off your EC2 instance at night, and send you a notification. Use a similar script for a morning startup:</p>
 
-<pre><code class="language-bash">#!/bin/sh
-
-set -e
-instance='i-1234567890abcd'
-
-# our script won't know where aws is unless you specify a full path
-/path/to/aws ec2 stop-instances --instance-ids $instance
-
-/path/to/aws sns publish --topic-arn arn:aws:sns:us-east-1:546123:OnlineNotifications \
-    --message &quot;Your instance is back on!&quot;
-
-</code></pre>
+<script src="//gist.github.com/nmagee/64bbe2b80fd90514b463032d01ba8d9f.js"></script>
 
   </div>
 
@@ -309,7 +295,7 @@ instance='i-1234567890abcd'
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/reference" rel="category tag">reference</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/aws" rel="tag">aws</a>, <a href="/tags/boto3" rel="tag">boto3</a>, <a href="/tags/cli" rel="tag">cli</a>, <a href="/tags/cloud" rel="tag">cloud</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/aws" rel="tag">aws</a>, <a href="/tags/cli" rel="tag">cli</a>, <a href="/tags/cloud" rel="tag">cloud</a>, <a href="/tags/bash" rel="tag">bash</a>
 
 </p>
 </article> 
@@ -322,13 +308,15 @@ instance='i-1234567890abcd'
 
   <section class="sidebar-module">
     <p class=lead>Reference Topics</p>
-    <ol class="list-unstyled">
+    <ol class="list-unstyled" style="font-size:90%;">
       
-      <li> <a href="/userinfo/reference/aws-cli/">AWS Command Line</a></li>
+      <li> <a href="/userinfo/reference/aws-cli/">AWS Command Line (bash)</a></li>
       
       <li> <a href="/userinfo/reference/">Reference Guides</a></li>
       
       <li> <a href="/userinfo/reference/boto3/">boto3 Library (Python)</a></li>
+      
+      <li> <a href="/userinfo/reference/jq/">jq (bash)</a></li>
       
     </ol>
   </section>

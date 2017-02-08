@@ -1,7 +1,7 @@
 +++
 title = "Reference Guides"
 draft = false
-tags = ["reference","support"]
+# tags = ["reference","support"]
 categories = ["reference","support"]
 images = [""]
 author = "SOMRC Staff"
@@ -19,10 +19,10 @@ type = "reference"
       <div class="card-block">
         <h3 class="card-title">Python</h3>
         <ul>
-          <li>boto3</li>
-          <li>boto3</li>
-          <li>boto3</li>
-          <li>boto3</li>
+          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/boto3/">boto3</a></code></li>
+          <li><code></code></li>
+          <li><code></code></li>
+          <li><code></code></li>
         </ul>
       </div>
     </div>
@@ -32,10 +32,9 @@ type = "reference"
       <div class="card-block">
         <h3 class="card-title">R</h3>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><code></code></li>
+          <li><code></code></li>
+          <li><code></code></li>
         </ul>
       </div>
     </div>
@@ -47,10 +46,10 @@ type = "reference"
       <div class="card-block">
         <h3 class="card-title">bash</h3>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/aws-cli/">awscli</a></code></li>
+          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/jq/">jq</a></code></li>
+          <li><code></code></li>
+          <li><code></code></li>
         </ul>
       </div>
     </div>
@@ -60,10 +59,9 @@ type = "reference"
       <div class="card-block">
         <h3 class="card-title">Powershell</h3>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li><code></code></li>
+          <li><code></code></li>
+          <li><code></code></li>
         </ul>
       </div>
     </div>

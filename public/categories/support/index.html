@@ -168,7 +168,7 @@
       <span style="font-size:0.95em;">
 
           By language and platform
-Python  boto3 boto3 boto3 boto3     R           bash          Powershell           {{ range first 30 (where .Site.Pages.ByTitle &ldquo;Type&rdquo; &ldquo;reference&rdquo;) }}  {{.Title | markdownify }} {{ end }}  &ndash;
+Python  boto3        R          bash  awscli jq       Powershell          {{ range first 30 (where .Site.Pages.ByTitle &ldquo;Type&rdquo; &ldquo;reference&rdquo;) }}  {{.Title | markdownify }} {{ end }}  &ndash;
 
         <div class="row">
           <div class="col-sm-3">
@@ -178,8 +178,6 @@ Python  boto3 boto3 boto3 boto3     R           bash          Powershell        
             
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/reference" rel="category tag">reference</a>, <a href="/categories/support" rel="category tag">support</a>
 
-
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/reference" rel="tag">reference</a>, <a href="/tags/support" rel="tag">support</a>
 
 
           </div>

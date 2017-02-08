@@ -5,9 +5,9 @@ object = "awscli"
 images = [""]
 author = "SOMRC Staff"
 description = ""
-title = "AWS Command Line"
+title = "AWS Command Line (bash)"
 date = "2017-01-31T12:19:03-05:00"
-tags = ["aws","boto3","cli","cloud"]
+tags = ["aws","cli","cloud","bash"]
 categories = ["reference"]
 
 +++
@@ -43,6 +43,12 @@ Using the access key and secret access key generated for your account, enter tho
 
 When prompted, enter the appropriate region you are working in, such as `us-east-1` and your preferred output format `text` | `table` | `json`.
 
+<div class="bd-callout bd-callout-warning">
+  <h4>Profiles</h4>
+  <p>If you access AWS through numerous accounts, you can create multiple profiles. To do this, use the <code>--profile myprofile</code> parameter when configuring the AWS CLI, with a name you like (replacing <code>myprofile</code>.</p>
+  <p>Then to use a profile:</p>
+  <code>aws --profile mycoolprofile ec2 describe-instances</code>
+</div>
 
 - - -
 
@@ -50,18 +56,7 @@ When prompted, enter the appropriate region you are working in, such as `us-east
 
 The `aws` command is used, followed by the service name, and then the specific operation you want to call:
 
-```bash
-$ aws ec2 describe-instances
-
-$ aws ec2 start-instances --instance-ids i-1348636c
-
-$ aws s3 cp local-file.txt s3://my-bucket/
-
-$ aws sns publish --topic-arn arn:aws:sns:us-east-1:546123:OperationsError \
-      --message "Script Failure"
-
-$ aws sqs receive-message --queue-url https://queue.amazonaws.com/546123/Test
-```
+{{< gist nmagee 2f8426406a99c6cfd11e11d8e2aee11b >}}
 
 - - -
 
@@ -85,18 +80,4 @@ Specific parameters for a call within a service:
 
 Use a `bash` script to turn off your EC2 instance at night, and send you a notification. Use a similar script for a morning startup:
 
-```bash
-#!/bin/sh
-
-set -e
-instance='i-1234567890abcd'
-
-# our script won't know where aws is unless you specify a full path
-/path/to/aws ec2 stop-instances --instance-ids $instance
-
-/path/to/aws sns publish --topic-arn arn:aws:sns:us-east-1:546123:OnlineNotifications \
-    --message "Your instance is back on!"
-
-```
-
-
+{{< gist nmagee 64bbe2b80fd90514b463032d01ba8d9f >}}
