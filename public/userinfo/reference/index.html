@@ -7,15 +7,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="Resources" />
-<meta property="og:description" content="Resources are defined here." />
+<meta property="og:title" content="Reference Guides" />
+<meta property="og:description" content="By language and platform
+Python  boto3 boto3 boto3 boto3     R           bash          Powershell           {{ range first 30 (where .Site.Pages.ByTitle &#34;Type&#34; &#34;reference&#34;) }}  {{.Title | markdownify }} {{ end }}  -- " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://somrc.virginia.edu/userinfo/resources/" />
+<meta property="og:url" content="https://somrc.virginia.edu/userinfo/reference/" />
 
   <meta property="og:image" content="https://somrc.virginia.edu/" />
 
 
-<meta property="og:updated_time" content="2017-01-26T12:05:54-05:00"/>
+<meta property="og:updated_time" content="2017-02-08T10:42:33-05:00"/>
 
 
 
@@ -27,12 +28,13 @@
 
 
 
-<meta itemprop="name" content="Resources">
-<meta itemprop="description" content="Resources are defined here.">
+<meta itemprop="name" content="Reference Guides">
+<meta itemprop="description" content="By language and platform
+Python  boto3 boto3 boto3 boto3     R           bash          Powershell           {{ range first 30 (where .Site.Pages.ByTitle &#34;Type&#34; &#34;reference&#34;) }}  {{.Title | markdownify }} {{ end }}  -- ">
 
 
-<meta itemprop="dateModified" content="2017-01-26T12:05:54-05:00" />
-<meta itemprop="wordCount" content="4">
+<meta itemprop="dateModified" content="2017-02-08T10:42:33-05:00" />
+<meta itemprop="wordCount" content="29">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/">
 
@@ -48,8 +50,9 @@
 
 
 
-<meta name="twitter:title" content="Resources"/>
-<meta name="twitter:description" content="Resources are defined here."/>
+<meta name="twitter:title" content="Reference Guides"/>
+<meta name="twitter:description" content="By language and platform
+Python  boto3 boto3 boto3 boto3     R           bash          Powershell           {{ range first 30 (where .Site.Pages.ByTitle &#34;Type&#34; &#34;reference&#34;) }}  {{.Title | markdownify }} {{ end }}  -- "/>
 
 
 
@@ -63,12 +66,12 @@
 <meta name="generator" content="Hugo 0.18.1" />
 
 
-    <base href="https://somrc.virginia.edu/userinfo/resources/">
-    <link rel="canonical" href="https://somrc.virginia.edu/userinfo/resources/">
+    <base href="https://somrc.virginia.edu/userinfo/reference/">
+    <link rel="canonical" href="https://somrc.virginia.edu/userinfo/reference/">
     <link rel="Shortcut Icon" href="https://somrc.virginia.edu/images/favicon.ico" type="image/x-icon" />
-    <meta type="userinfo" />
+    <meta type="reference" />
 
-    <title>Resources | Research Computing</title>
+    <title>Reference Guides | Research Computing</title>
 
     <!-- combined, minified CSS -->
     <link href="https://somrc.virginia.edu/css/style.css" rel="stylesheet">
@@ -82,10 +85,9 @@
 </style>
 
 
-
     <style>
-    .card-group .card a {
-      text-decoration:none;
+    pre code {
+      background-color:#f6f6f6;
     }
     </style>
 
@@ -197,21 +199,88 @@
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/userinfo/resources/">Resources</a></h2>
+    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/userinfo/reference/">Reference Guides</a></h2>
+    <hr size=1 />
+
   </header>
 
   <div class="explainer">
       
-    <p>Resources are defined here.</p>
+    <p class=lead>By language and platform</p>
+
+<div class="row" style="margin-bottom:20px;">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h3 class="card-title">Python</h3>
+        <ul>
+          <li>boto3</li>
+          <li>boto3</li>
+          <li>boto3</li>
+          <li>boto3</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h3 class="card-title">R</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" style="margin-bottom:20px;">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h3 class="card-title">bash</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h3 class="card-title">Powershell</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<ol class="list-unstyled">
+{{ range first 30 (where .Site.Pages.ByTitle "Type" "reference") }}
+<li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+{{ end }}
+</ol>
+-->
 
   </div>
 
   <hr size=1 />
-  <p style="font-size:95%;" class="blog-post-meta"><time datetime="2017-01-26T12:05:54-05:00">Updated Thu Jan 26, 2017</time> | 
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/userinfo" rel="category tag">userinfo</a>
+  <p style="font-size:95%;" class="blog-post-meta"><time datetime="2017-02-08T10:42:33-05:00">Updated Wed Feb 8, 2017</time> | 
+<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/reference" rel="category tag">reference</a>, <a href="/categories/support" rel="category tag">support</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/tag1" rel="tag">tag1</a>, <a href="/tags/tag2" rel="tag">tag2</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/reference" rel="tag">reference</a>, <a href="/tags/support" rel="tag">support</a>
 
 </p>
 </article> 
@@ -223,48 +292,26 @@
         <aside class="col-sm-4 blog-sidebar">
 
   <section class="sidebar-module">
-    <p class=lead>Topics</p>
-    <ul id="tags">
+    <p class=lead>Reference Topics</p>
+    <ol class="list-unstyled">
       
-        <li><a href="/tags/tag1">tag1</a> </li>
+      <li> <a href="/userinfo/reference/aws-cli/">AWS Command Line</a></li>
       
-        <li><a href="/tags/tag2">tag2</a> </li>
+      <li> <a href="/userinfo/reference/">Reference Guides</a></li>
       
-    </ul>
+      <li> <a href="/userinfo/reference/boto3/">boto3 Library (Python)</a></li>
+      
+    </ol>
   </section>
 
   <section class="sidebar-module sidebar-module-inset">
-    <p class=lead>User Resources</p>
+    <p class=lead>Other Reference Materials</p>
     <ol class="list-unstyled" style="padding-left:10px;">
       <li> <a href="https://jobs.virginia.edu/" target="_new">Amazon Web Services</a></li>
       <li> <a href="http://hr.virginia.edu/" target="_new">Google Cloud Platform</a></li>
       <li> <a href="http://hr.virginia.edu/" target="_new">Microsoft Azure Cloud</a></li>
     </ol>
   </section>
-
-  <section class="sidebar-module">
-  </section>  
-
-    <section class="sidebar-module sidebar-module-inset" style="margin-bottom:20px;">
-    <p class=lead>User Support</p>
-    
-
-
-<div class="btn-group">
-  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Support Options
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="https://virginia.zendesk.com/hc/en-us/requests/new" target="_new">Open a Support Ticket</a>
-    <a class="dropdown-item" href="https://somrc.virginia.edu/service/consult/">Request a Consultation</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="https://somrc.virginia.edu/userinfo/quickstart/">Quick Start Guides</a>
-    <a class="dropdown-item" href="#">Documentation</a>
-  </div>
-</div>
-
-  </section>
-
 
 </aside>
 

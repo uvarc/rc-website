@@ -34,4 +34,5 @@ tags = [""]
   </div>
 
   <button type="submit" value="Send" class="btn btn-primary">Send</button>
+  <a href="https://somrc.virginia.edu/"><button class="btn btn-secondary">Cancel</button></a>
 </form>
