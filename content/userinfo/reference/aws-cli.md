@@ -81,3 +81,9 @@ Specific parameters for a call within a service:
 Use a `bash` script to turn off your EC2 instance at night, and send you a notification. Use a similar script for a morning startup:
 
 {{< gist nmagee 64bbe2b80fd90514b463032d01ba8d9f >}}
+
+- - -
+
+# Use in combination with other CLI tools
+
+See the [`jq`](https://somrc.virginia.edu/userinfo/reference/jq/#real-world-examples) page for more examples of how to make AWS CLI calls and parse the response JSON in meaningful ways.

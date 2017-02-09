@@ -15,6 +15,8 @@ From their website:
 
 >`jq` is like `sed` for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that `sed`, `awk`, `grep` and friends let you play with text.
 
+`jq` is extremely useful alongside the [AWS command-line tools](https://somrc.virginia.edu/userinfo/reference/aws-cli/).
+
 - - -
 
 # Download & Install `jq`
