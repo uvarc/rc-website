@@ -9,8 +9,6 @@ build:
     - arjen/hugo-build@1.13.1:
         theme: hugo-theme-bootstrap4-blog
         flags: --buildDrafts=true
-    - change-dirs
-        cwd: src/
 
 deploy:
     steps:

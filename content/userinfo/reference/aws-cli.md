@@ -5,9 +5,9 @@ object = "awscli"
 images = [""]
 author = "SOMRC Staff"
 description = ""
-title = "AWS Command Line (bash)"
+title = "AWS Command Line (Shell)"
 date = "2017-01-31T12:19:03-05:00"
-tags = ["aws","cli","cloud","bash"]
+tags = ["aws","cli","cloud","shell"]
 categories = ["reference"]
 
 +++

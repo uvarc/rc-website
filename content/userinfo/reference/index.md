@@ -44,7 +44,7 @@ type = "reference"
   <div class="col-sm-6">
     <div class="card">
       <div class="card-block">
-        <h3 class="card-title">bash</h3>
+        <h3 class="card-title">Shell</h3>
         <ul>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/aws-cli/">awscli</a></code></li>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/jq/">jq</a></code></li>

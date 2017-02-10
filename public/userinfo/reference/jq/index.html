@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-<meta property="og:title" content="jq (bash)" />
+<meta property="og:title" content="jq (Shell)" />
 <meta property="og:description" content="From their website:
  jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text.
  jq is extremely useful alongside the AWS command-line tools.
@@ -30,7 +30,7 @@ Download &amp; Install jq Follow the instructions available on https://stedolan.
 
 
 
-<meta itemprop="name" content="jq (bash)">
+<meta itemprop="name" content="jq (Shell)">
 <meta itemprop="description" content="From their website:
  jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text.
  jq is extremely useful alongside the AWS command-line tools.
@@ -38,13 +38,13 @@ Download &amp; Install jq Follow the instructions available on https://stedolan.
 
 
 <meta itemprop="dateModified" content="2017-02-08T15:28:51-05:00" />
-<meta itemprop="wordCount" content="213">
+<meta itemprop="wordCount" content="265">
 
   <meta itemprop="image" content="https://somrc.virginia.edu/">
 
 
 
-<meta itemprop="keywords" content=",about,architecture,big-data,cloud,data,education,employment,events,feature,funding,grants,hipaa,hpc,infrastructure,python,r,reference,resources,security,seminars,services,staff,storage,support,userinfo,workshops,,amazon,aws,azure,bash,bioinformatics,boto3,cadre,cli,cloud,cluster,collaboration,containers,data,data-analysis,ddl,domino,emr,genomics,google,grants,hadoop,hipaa,hpc,ivy,json,publications,python,r,rc,rivanna,security,services,som,somrc,staff,storage,support,tag1,tag2,xsede," />
+<meta itemprop="keywords" content=",about,architecture,big-data,cloud,data,education,employment,events,feature,funding,grants,hipaa,hpc,infrastructure,python,r,reference,resources,security,seminars,services,staff,storage,support,userinfo,workshops,,amazon,aws,azure,bioinformatics,boto3,cadre,cli,cloud,cluster,collaboration,containers,data,data-analysis,ddl,domino,emr,genomics,google,grants,hadoop,hipaa,hpc,ivy,json,publications,python,r,rc,rivanna,security,services,shell,som,somrc,staff,storage,support,tag1,tag2,xsede," />
 
 
 
@@ -54,7 +54,7 @@ Download &amp; Install jq Follow the instructions available on https://stedolan.
 
 
 
-<meta name="twitter:title" content="jq (bash)"/>
+<meta name="twitter:title" content="jq (Shell)"/>
 <meta name="twitter:description" content="From their website:
  jq is like sed for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that sed, awk, grep and friends let you play with text.
  jq is extremely useful alongside the AWS command-line tools.
@@ -77,7 +77,7 @@ Download &amp; Install jq Follow the instructions available on https://stedolan.
     <link rel="Shortcut Icon" href="https://somrc.virginia.edu/images/favicon.ico" type="image/x-icon" />
     <meta type="reference" />
 
-    <title>jq (bash) | Research Computing</title>
+    <title>jq (Shell) | Research Computing</title>
 
     <!-- combined, minified CSS -->
     <link href="https://somrc.virginia.edu/css/style.css" rel="stylesheet">
@@ -205,7 +205,7 @@ Download &amp; Install jq Follow the instructions available on https://stedolan.
 
 <article class="blog-post">
   <header>
-    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/userinfo/reference/jq/">jq (bash)</a></h2>
+    <h2 class="blog-post-title"><a href="https://somrc.virginia.edu/userinfo/reference/jq/">jq (Shell)</a></h2>
     <hr size=1 />
 
   </header>
@@ -241,27 +241,43 @@ Download &amp; Install jq Follow the instructions available on https://stedolan.
 
 <p><code>jq</code> is used to parse JSON, which helps with programmatic interaction with many APIs. For example, you can retrieve data from an open API like GitHub:</p>
 
-<pre><code>curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=3'
+<pre><code>curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5'
 </code></pre>
 
-<p>And then pipe that output to <code>jq</code> to begin to parse the results. Here you can filter down to only the first record <code>[0]</code>:</p>
+<p>And then pipe that output to <code>jq</code> to begin to parse the results. You can filter down to just the first record <code>[0]</code>:</p>
 
 <pre><code>curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' \
     | jq '.[0]'
 </code></pre>
 
-<p>And then begin to drill down to specific elements of the response hierarchy:</p>
+<p>And then begin to drill down to specific elements of the response hierarchy, building into a new structure:</p>
 
 <pre><code>curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' \
     | jq '.[0] | {message: .commit.message, name: .commit.committer.name}'
 </code></pre>
 
-<p>would result in this filtered response:</p>
+<p>which results in this response:</p>
 
 <pre><code>{
-  &quot;message&quot;: &quot;Merge pull request #162 from stedolan/utf8-fixes\n\nUtf8 fixes. Closes #161&quot;,
+  &quot;message&quot;: &quot;Merge pull request #162 from stedolan. Closes #161&quot;,
   &quot;name&quot;: &quot;Stephen Dolan&quot;
 }
+</code></pre>
+
+<hr />
+
+<p>Or, if you wanted to grab a series of values from all entries you retrieved, you could filter into an array. Here are the sha values for 5 recent commits by the user <code>stedolan</code>:</p>
+
+<pre><code>curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq -r .[].sha
+</code></pre>
+
+<p>which results in this output:</p>
+
+<pre><code>dc679081fa770c260ca9a569a8a4fdbb10bcdc20
+597c1f6667746058e88a9f6fb0415f80fe114b18
+125071cf005e687d4beba9d5822b1c6a72d7d14c
+2fb099e4cfe5a9fedd55a1ace44ae2c5ee02cb12
+6f9646a44ff0046126f5a2c3010e92a974da7c48
 </code></pre>
 
 <hr />
@@ -285,7 +301,7 @@ Download &amp; Install jq Follow the instructions available on https://stedolan.
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/reference" rel="category tag">reference</a>
 
 
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/json" rel="tag">json</a>, <a href="/tags/bash" rel="tag">bash</a>
+<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;<a href="/tags/json" rel="tag">json</a>, <a href="/tags/shell" rel="tag">shell</a>
 
 </p>
 </article> 
@@ -300,13 +316,13 @@ Download &amp; Install jq Follow the instructions available on https://stedolan.
     <p class=lead>Reference Topics</p>
     <ol class="list-unstyled" style="font-size:90%;">
       
-      <li> <a href="/userinfo/reference/aws-cli/">AWS Command Line (bash)</a></li>
+      <li> <a href="/userinfo/reference/aws-cli/">AWS Command Line (Shell)</a></li>
       
       <li> <a href="/userinfo/reference/">Reference Guides</a></li>
       
       <li> <a href="/userinfo/reference/boto3/">boto3 Library (Python)</a></li>
       
-      <li> <a href="/userinfo/reference/jq/">jq (bash)</a></li>
+      <li> <a href="/userinfo/reference/jq/">jq (Shell)</a></li>
       
     </ol>
   </section>
