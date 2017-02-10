@@ -21,8 +21,6 @@ date = "2017-01-24T08:28:49-05:00"
 
 # Hadoop
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Hadoop_logo.svg/2000px-Hadoop_logo.svg.png" align=right style="height:50%;width:50%" />
-
 Hadoop is frequently used by researchers for processing either massive data files (larger than you might be able to store on your local workstation) or a great quantity of files. It has become a critical element to companies and organizations that need to digest vast data sets, or continual data streams, on a regular basis.
 
 # MapReduce
@@ -33,5 +31,4 @@ The programming paradigm of Hadoop is called "mapreduce," a two-tier process tha
 
 <div class="blockquote"><b>Reducing</b> takes these pairs, aggregates them, and then (often) performs some form of analysis upon them.</div>
 
-<iframe width="600" height="338" src="https://www.youtube.com/embed/8wjvMyc01QY" frameborder="0" allowfullscreen></iframe>
-
+{{< youtube 8wjvMyc01QY >}}
