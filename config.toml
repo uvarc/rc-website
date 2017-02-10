@@ -8,7 +8,7 @@ copyright = "&copy;2017 UVA School of Medicine"
 paginate = 10
 disableRSS = true
 disableSitemap = true
-disable404 = false
+disable404 = true
 
 [permalinks]
   post = "/:year/:month/:title/"
