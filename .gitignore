@@ -1,9 +1,3 @@
-# wercker.yml
-# public/*
-node*
-npm*
-package.json
-
-# Ignore some hugoidx things
-hugoidx
-
+# Ignore a few things:
+wercker.yml
+public/*
