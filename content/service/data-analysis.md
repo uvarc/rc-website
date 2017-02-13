@@ -10,7 +10,7 @@ tags = ["R","Python","data analysis"]
 
 +++
 
-School of Medicine Research Computing can help with accessing, preparing, visualizing and analyzing data. We can assist you by implementing your analysis strategy in an appropriate statistical computing language . We will work with you to prepare scripts that are as reproducible, flexible and legible to you and your research team as possible. Our consultation services include wrangling, manipulating or otherwise cleaning datasets to prepare them to be analyzed. We also have expertise in visual representation of data both with static and interactive plotting tools.
+Researchers at the School of Medicine regularly deal with datasets that range in complexity from Excel tables to SQL and NoSQL databases and large publicly available repositories. School of Medicine Research Computing can help with accessing, preparing, visualizing and analyzing data. We can assist you by implementing your analysis strategy in an appropriate computing language, including R, Python, C/C++, and Mathematica. We will work with you to prepare scripts that are as reproducible, flexible and legible to you and your research team as possible. Our consultation services include wrangling, manipulating or otherwise cleaning datasets to prepare them to be analyzed. We also have expertise in visual representation of data both with static and interactive plotting tools.
 
 # Manipulation
 
@@ -18,7 +18,7 @@ School of Medicine Research Computing can help with accessing, preparing, visual
 <i class = "fa fa-2x fa-th-list"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-2x fa-long-arrow-right"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-2x fa-th"></i>
 </div>
 
-Data analysis generally involves a significant effort to transform, aggregate, subset or otherwise prepare a dataset. We can help you wrangle your data into a "tidy" format in order to analyze the features and observations relevant to your question.
+Data analysis generally involves a significant effort to transform, aggregate, subset or otherwise prepare a dataset. That could include We can help you wrangle your data into a "tidy" format in order to analyze the features and observations relevant to your question.
 
 # Inference
 
