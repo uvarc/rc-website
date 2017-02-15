@@ -1,3 +1,4 @@
 # Ignore a few things:
 wercker.yml
 public/*
+update.sh
