@@ -16,48 +16,6 @@ For a comprehensive list of all such educational resources visit the [Computatio
 
 - - -
 
-# R For Beginners
-
-**Date**: Tuesday, January 24, 2017 2-5PM
-
-**Time**: 2:00pm - 5:00pm
-
-**Location**: Health Sciences Library Carter Classroom
-
-**Instructor**: VP Nagraj, SOM Research Computing
-
-This workshop is directed towards participants who have little or no experience with statistical computing or programming. R is an open source language that can be used for a variety of computational purposes. This class will introduce R in the context of its data manipulation and visualization capabilities. Via interactive demonstrations, students will learn the basics of creating variables, using functions, accessing documentation, loading packages, importing data and plotting. 
-
-[<button class="btn btn-primary">Register</button>](http://cal.hsl.virginia.edu/event/3066390)
-
-# Introduction to the Command Line
-
-**Date**: Tuesday, January 31, 2017
-
-**Time**: 3:00pm - 5:00pm
-
-**Location**: Health Sciences Library Carter Classroom
-
-**Instructor**: VP Nagraj, SOM Research Computing
-
-Mac, Windows and Linux operating systems all included a number of command line utilities for organizing files, manipulating data and executing programs that do not have graphical interfaces. This workshop will introduce participants to a number of commands to perform basic operations in the terminal. No previous experience with the command line is required.
-
-[<button class="btn btn-primary">Register</button>](http://cal.hsl.virginia.edu/event/3066410)
-
-# Advanced Data Manipulation with R
-
-**Date**: Wednesday, February 15, 2017
-
-**Time**: 2:00pm - 5:00pm
-
-**Location**: Health Sciences Library Carter Classroom
-
-**Instructor**: VP Nagraj, SOM Research Computing
-
-Data analysis involves a large amount of janitor work - munging and cleaning data to facilitate downstream data analysis. This workshop is designed for those with a basic familiarity with R who want to learn tools and techniques for advanced data manipulation. It will cover data cleaning and "tidy data," and will introduce participants to R packages that enable data manipulation, analysis, and visualization using split-apply-combine strategies. Upon completing this lesson, participants will be able to use the dplyr package in R to effectively manipulate and conditionally compute summary statistics over subsets of a "big" dataset containing many observations.
-
-[<button class="btn btn-primary">Register</button>](http://cal.hsl.virginia.edu/event/3066440)
-
 # Advanced Data Visualization with R
 
 **Date**: Thursday, February 23, 2017

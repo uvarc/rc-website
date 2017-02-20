@@ -1,4 +1,4 @@
-{{ range first 1 (where .Site.Pages.ByTitle "Type" "event") }}
+{{ range first 1 (where .Site.Pages "Type" "event") }}
 <div style="font-size:0.9em;">
   <h5><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></h5>
 

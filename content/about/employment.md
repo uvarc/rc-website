@@ -56,3 +56,5 @@ The qualified candidate must have a Bachelor's degree in Computer Science, Infor
 * Passion for providing delivery of high-quality production services and supporting academic researchers
 * Proven ability to work across organizations to build partnerships
 * Great communications skills and must be a team player
+
+If you have interest in applying to this position please contact <bdkim@virginia.edu>.
