@@ -53,6 +53,7 @@
       <hr size=1 />
 
       <!-- begin Category drop-down -->
+      <!--
       <p class=lead>Browse by category:</p>
       <div class="dropdown" style="float:left;margin-right:20px;">
         <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,10 +67,6 @@
       </div>
       <!-- end Category drop-down -->
       <br clear=all>
-      <hr size=1 />
-
-      <p class="lead">Training</p>
-      {{ partial "training-events.html" . }}
 
       <h4 />
 
@@ -79,19 +76,58 @@
 
         <div class="col-sm-4 blog-main">
 
-          <p class=lead>User News / Events</p>
-
-          {{ partial "upcoming-event.html" . }}
-
-          <a href="https://somrc.virginia.edu/education/workshops/"><button class="btn btn-primary" style="margin-top:20px;">Upcoming Workshops & Seminars</button></a>
-
-          <hr />
+          <p class=lead>User News & Events</p>
 
             {{ partial "twitter.html" . }}
 
+            <hr size=1 />
+
+            <p class="lead">Training</p>
+            {{ partial "training-events.html" . }}
+
+            <!-- {{ partial "upcoming-event.html" . }} -->
+
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
-        {{ partial "sidebar-home.html" . }}
+        {{ "<!-- /.blog-sidebar -->" | safeHTML }}
+        <aside class="col-sm-4 blog-sidebar">
+
+          <p class=lead>System Status</p>
+
+            {{ partial "status.html" . }}
+
+            {{ partial "user-help-widget.html" . }}
+
+          {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+
+          <section class="sidebar-module">
+            <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
+            <p class=lead>Recent News</p>
+            <ol class="list-unstyled">
+              {{ range first $num_recent_posts (where .Site.Pages "Type" "post").Reverse }}
+              <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+              {{ end }}
+            </ol>
+          </section>
+
+          {{ with .Site.Menus.sidebar }}
+          <section class="sidebar-module">
+            <p class=lead>{{ i18n "links" }}</p>
+            <ol class="list-unstyled">
+              {{ range . }}
+              <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+              {{ end }}
+            </ol>
+          </section>
+          {{ end }}
+
+          <section class="sidebar-module">
+            <a href="https://somrc.virginia.edu/education/workshops/">
+              <button class="btn btn-primary" style="margin-top:20px;">Upcoming Workshops & Seminars</button>
+            </a>
+          </section>
+
+        </aside><!-- /.blog-sidebar -->
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}

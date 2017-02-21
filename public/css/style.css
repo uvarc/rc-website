@@ -86,24 +86,17 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 .gsc-cursor-page {font-size: 1.5em;padding: 4px 8px;border: 2px solid #ccc; color:black; background-color:#FF9900;}
 
 
-.dropdown-submenu {
-    position: relative;
-}
-
+.dropdown-submenu { position: relative }
 .dropdown-submenu>.dropdown-menu {
     top: 0;
     left: 100%;
     margin-top: -6px;
     margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
-    border-radius: 0 6px 6px 6px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
-
-.dropdown-submenu:hover>.dropdown-menu {
-    display: block;
-}
-
+.dropdown-submenu:hover>.dropdown-menu { display: block }
 .dropdown-submenu>a:after {
     display: block;
     content: " ";
@@ -117,21 +110,15 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
     margin-top: 5px;
     margin-right: -10px;
 }
-
-.dropdown-submenu:hover>a:after {
-    border-left-color: #fff;
-}
-
-.dropdown-submenu.pull-left {
-    float: none;
-}
-
+.dropdown-submenu:hover>a:after { border-left-color: #ccc }
+.dropdown-submenu.pull-left { float: none }
 .dropdown-submenu.pull-left>.dropdown-menu {
     left: -100%;
     margin-left: 10px;
-    -webkit-border-radius: 6px 0 6px 6px;
-    -moz-border-radius: 6px 0 6px 6px;
-    border-radius: 6px 0 6px 6px;}
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
 
 /*!
 
