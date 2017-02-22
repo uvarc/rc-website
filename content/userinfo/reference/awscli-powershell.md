@@ -61,6 +61,5 @@ The following example loops through a log directory, finds files older than one 
     }
 
 
-# Help
-
 # Real-world Examples
+

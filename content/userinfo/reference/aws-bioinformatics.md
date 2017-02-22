@@ -1,9 +1,10 @@
 +++
-date = "2017-02-22"
+
+date = "2017-02-22T15:28:51-05:00"
 description = ""
-title = "AWS for Bioinformatics“
+title = "AWS for Bioinformatics"
 draft = false
-tags = [“bioinformatics”,”samtools”,”AWS”,”bowtie2”, “genomics”]
+tags = ["bioinformatics","samtools","AWS","bowtie2", "genomics"]
 categories = ["reference"]
 images = [""]
 author = "SOMRC Staff"
