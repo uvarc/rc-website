@@ -18,7 +18,7 @@ Setting up computational infrastructure on AWS is a well defined, though somewha
 Setting up a server on AWS involves making decisions on the following broad categories.
 
 
-#Setup a Computational Server
+# Set Up a Computational Server
 
 An excellent tutorial that covers the steps for creating an EC2 (Elastic Compute Cloud) instance (up to logging into your EC2) along with a myriad of questions such as pricing and what kind of computing and storage resources to choose from geared towards bioinformatics and genomics is available [here](https://github.com/griffithlab/rnaseq_tutorial/wiki/Intro-to-AWS-Cloud-Computing). Broadly speaking, setting up a server (EC2 instance) requires the following steps.
 
@@ -48,7 +48,7 @@ To install MACS, first install pip and then use pip to install MACS:
 To install SRA Toolkit, scroll down to the section SRA Toolkit [here](http://fenglabwkshopmay2015.readthedocs.io/en/latest/instance_readying/), and follow the step-by-step instructions. 
   
 
-# Things to look out for when you first start using AWS:
+# Considerations when using AWS
 
 * If you are trying to ssh into your instance and you get “operation timed out” error, check in the EC2 Dashboard on AWS that the instance is running. Another reason for getting the error could be that the EC2 instance only accepts inbound network connections from a specific IP, so if you change your wifi networks your laptop’s IP may not be recognized. Go to EC2 Dashboard, click on Running Instances, click on the instance you are trying to connect to, under Description click on Security groups, click on Inbound, and Edit to add a connection with Source “MyIP.” 
 
