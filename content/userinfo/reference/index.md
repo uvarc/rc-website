@@ -67,6 +67,19 @@ type = "reference"
     </div>
   </div>
 </div>
+<div class="row" style="margin-bottom:20px;">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h3 class="card-title">Bioinformatics</h3>
+        <ul>
+          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/aws-bioinformatics/">AWS for Bioinformatics</a></code></li>
+          <li><code></code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--
 <ol class="list-unstyled">
