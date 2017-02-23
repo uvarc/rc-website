@@ -65,17 +65,10 @@ type = "reference"
         <h3 class="card-title">Bioinformatics</h3>
         <ul>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/aws-bioinformatics/">AWS for Bioinformatics</a></code></li>
-          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/bioinformatics-pipelines/“>Genomics and Bioinformatics Pipelines</a></code></li>
+          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/bioinformatics-pipelines/">Genomics and Bioinformatics Pipelines</a></code></li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-<!--
-<ol class="list-unstyled">
-{{ range first 30 (where .Site.Pages.ByTitle "Type" "reference") }}
-<li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
-{{ end }}
-</ol>
--->

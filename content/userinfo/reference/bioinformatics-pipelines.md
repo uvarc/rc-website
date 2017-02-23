@@ -2,9 +2,9 @@
 
 date = "2017-02-22T15:28:51-05:00"
 description = ""
-title = “Data Processing Trends in Genomics and Bioinformatics"
+title = "Data Processing Trends in Genomics and Bioinformatics"
 draft = false
-tags = ["bioinformatics”,”genomics”,”pipeline”]
+tags = ["bioinformatics","genomics","pipeline"]
 categories = ["reference"]
 images = [""]
 author = "SOMRC Staff"
