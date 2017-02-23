@@ -21,7 +21,6 @@ draft = false
 
 <div class="card-group">
   <div class="card">
-  <a href="https://somrc.virginia.edu/service/hpc">
     <div style="text-align:center;"><i class="fa fa-microchip fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">High Performance Computing</h4>
@@ -31,7 +30,6 @@ draft = false
         <button class="btn btn-sm btn-primary">Get Started &rsaquo;</button>
       </div>
     </div>
-  </a>
   </div>
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-shield fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
@@ -40,22 +38,20 @@ draft = false
       <p class="card-text">For patient data or other secure applications requiring HIPAA, we have multiple options on-grounds and in the AWS cloud.</p>
       <br clear=all />  
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary">Get Started &rsaquo;</button>
+        <a href="https://somrc.virginia.edu/userinfo/hipaa-compliance/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
   <div class="card">
-  <a href="https://somrc.virginia.edu/service/cloud/">
     <div style="text-align:center;"><i class="fa fa-cloud fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Cloud</h4>
       <p class="card-text">Have an idea you'd like to test? Need an environment provisioned in short-order? We can help you build in the AWS cloud.</p>
       <br clear=all />
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary">Get Started &rsaquo;</button>
+        <a href="https://somrc.virginia.edu/service/cloud/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
-  </a>
   </div>
 </div>
 <div class="card-group">

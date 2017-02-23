@@ -20,9 +20,6 @@ type = "reference"
         <h3 class="card-title">Python</h3>
         <ul>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/boto3/">boto3</a></code></li>
-          <li><code></code></li>
-          <li><code></code></li>
-          <li><code></code></li>
         </ul>
       </div>
     </div>
@@ -32,8 +29,6 @@ type = "reference"
       <div class="card-block">
         <h3 class="card-title">R</h3>
         <ul>
-          <li><code></code></li>
-          <li><code></code></li>
           <li><code></code></li>
         </ul>
       </div>
@@ -48,8 +43,6 @@ type = "reference"
         <ul>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/aws-cli/">awscli</a></code></li>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/jq/">jq</a></code></li>
-          <li><code></code></li>
-          <li><code></code></li>
         </ul>
       </div>
     </div>
@@ -60,8 +53,6 @@ type = "reference"
         <h3 class="card-title">Powershell</h3>
         <ul>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/awscli-powershell/">AWS Tools for Windows PowerShell</a></code></li>
-          <li><code></code></li>
-          <li><code></code></li>
         </ul>
       </div>
     </div>
@@ -74,7 +65,6 @@ type = "reference"
         <h3 class="card-title">Bioinformatics</h3>
         <ul>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/aws-bioinformatics/">AWS for Bioinformatics</a></code></li>
-          <li><code></code></li>
         </ul>
       </div>
     </div>

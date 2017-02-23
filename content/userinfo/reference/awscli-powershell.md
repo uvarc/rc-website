@@ -1,7 +1,7 @@
 +++
 date = "2017-02-21T13:43:32-05:00"
 description = ""
-title = "AWS Command Line for PowerShell"
+title = "AWS Command Line (PowerShell)"
 draft = false
 tags = ["cli","powershell","windows"]
 categories = ["reference"]

@@ -10,9 +10,9 @@ images = [""]
 
 +++
 
-School of Medicine Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by SOMRC experts and are freely available to UVa faculty, staff and students.
+<p class=lead>School of Medicine Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by SOMRC experts and are freely available to UVa faculty, staff and students.</p>
 
-For a comprehensive list of all such educational resources visit the [Computation and Data Resource Exchange (CADRE) education portal](http://cadre.virginia.edu/service-detail/education).
+<p class=lead>For a comprehensive list of all such educational resources visit the [Computation and Data Resource Exchange (CADRE) education portal](http://cadre.virginia.edu/service-detail/education).</p>
 
 - - -
 
@@ -29,6 +29,24 @@ For a comprehensive list of all such educational resources visit the [Computatio
 This workshop will cover fundamental concepts for creating effective data visualization and will introduce tools and techniques for visualizing large, high-dimensional data using R. We will review fundamental concepts for visually displaying quantitative information, such as using series of small multiples, avoiding "chart-junk," and maximizing the data-ink ratio. After briefly covering data visualization using base R graphics, we will introduce the ggplot2 package for advanced high-dimensional visualization. We will cover the grammar of graphics (geoms, aesthetics, stats, and faceting), and using ggplot2 to create plots layer-by-layer. Upon completing this lesson, learners will be able to use ggplot2 to explore a high-dimensional dataset by faceting and scaling scatter plots in small multiples.
 
 [<button class="btn btn-primary">Register</button>](http://cal.hsl.virginia.edu/event/3066441)
+
+- - -
+
+# Introduction to Cloud Computing with AWS
+
+This workshop will cover the basic paradigms of public cloud infrastructure, and introduce techniques for computing in these environments. Why use the cloud for computation and storage? What are its advantages? We will discuss core concepts such as elasticity and infrastructure-as-code, while also getting hands-on experience with creating computing, storage, and data resources in Amazon Web Services. Workshop participants will work directly in both the AWS console and command-line tools. Upon completing this workshop, students will be familiar with best practices for cloud design, as well as with how to deploy simple, resizable environments on their own.
+
+**Date**: Monday, April 10, 2017
+
+**Time**: 10:00am - 1:00pm
+
+**Location**: Health Sciences Library Carter Classroom
+
+**Instructor**: Neal Magee, SOM Research Computing
+
+<button class="btn btn-primary disabled">Register</button>
+
+- - -
 
 # Building Shiny Web Applications in R
 
