@@ -24,10 +24,10 @@ draft = false
     <div style="text-align:center;"><i class="fa fa-microchip fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">High Performance Computing</h4>
-      <p class="card-text">Standard and high security HPC to run your code, generally written in R and Python.</p>
+      <p class="card-text">Standard and high security HPC to run your code, generally written in R, Python or shell scripts.</p>
       <br clear=all />
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary">Get Started &rsaquo;</button>
+        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#hpcModal">Get Started &rsaquo;</button>
       </div>
     </div>
   </div>
@@ -85,6 +85,50 @@ draft = false
       <br clear=all />
       <div class="contact-button">
         <button class="btn btn-sm btn-primary">Get Started &rsaquo;</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal for HPC -->
+<div class="modal fade" id="hpcModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">High Performance Computing</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<div class="row" style="">
+  <div class="col-sm-6">
+<div class="card">
+  <div class="card-header">
+    <b>Rivanna - Standard Security</b>
+  </div>
+  <div class="card-block">
+    <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
+    <a href="http://arcs.virginia.edu/rivanna" target="_new" class="btn btn-secondary">Get Started on Rivanna</a>
+  </div>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="card">
+  <div class="card-header">
+    <b>Ivy - High Security</b>
+  </div>
+  <div class="card-block">
+    <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
+    <a href="#" class="btn btn-secondary">Get started on Ivy</a>
+  </div>
+</div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Rivanna</button>
+        <button type="button" class="btn btn-primary">Ivy</button>
       </div>
     </div>
   </div>
