@@ -4,7 +4,7 @@ date = "2017-02-22T15:28:51-05:00"
 description = ""
 title = "Data Processing Trends in Genomics and Bioinformatics"
 draft = false
-tags = ["bioinformatics","genomics","pipeline"]
+tags = ["bioinformatics","genomics"]
 categories = ["reference"]
 images = [""]
 author = "SOMRC Staff"
@@ -30,7 +30,7 @@ Packaged pipelines such as bcbio-nextgen and Omic Pipe are not fully customizabl
 # "Hybrid" Pipelines
 
 The poster child for hybrid pipelines is the [Galaxy toolkit](https://galaxyproject.org). Galaxy is a web-based interface that lets researchers combine genomic tools in a flexible graphical way without programming the dependencies and failure conditions themselves. The learning curve for Galaxy is short, and the toolkit covers a wide range of cases where no more programming would be required, but is not geared for researchers looking for a fully-customizable solution.
-  
+
 # Further Resources
 
 For an overview of pipeline development and scripting innovations, see [here](https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/bib/PAP/10.1093_bib_bbw020/2/bbw020.pdf?Expires=1488129445&Signature=MBYVRsDIcB1Ytg3hcXjORfkK60hZbmbrSlF-SPaIHDaEHQtr4EGdrzjrey8Ql9q0pAHtP1yN8suduXS9SKzDAzhXd5Nz-kwjb7vVTFIlheRk35pYccLxBMM7Y9Lg2pw99ey2lCvpXrnJfuPGue8GJZg2QyavPSxjPWrvJph7pFWlaib6LxWMNqgj-swWhM1HmtBFV5ZGNPe7Ix9fYA1f6MckWlP47M5k2kBH0k79o6~ndnWeiEJPzj-K8L20beDLfgLVFfSOqGMOV7yVErJ7K4GGldLrs8GGoCQ5t3jZyATtrLJ3alUmy2uLn9B9~77O3kVsDWsRg6Q2hzLdCTavAw__&Key-Pair-Id=APKAIUCZBIA4LVPAVW3Q).
