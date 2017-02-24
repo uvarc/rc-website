@@ -27,7 +27,7 @@ draft = false
       <p class="card-text">Standard and high security HPC to run your code, generally written in R, Python or shell scripts.</p>
       <br clear=all />
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#hpcModal">Get Started &rsaquo;</button>
+        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#hpcModal">Learn More &rsaquo;</button>
       </div>
     </div>
   </div>
@@ -92,7 +92,7 @@ draft = false
 
 
 <!-- Modal for HPC -->
-<div class="modal fade" id="hpcModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="hpcModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:100px;">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -110,7 +110,7 @@ draft = false
   </div>
   <div class="card-block">
     <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
-    <a href="http://arcs.virginia.edu/rivanna" target="_new" class="btn btn-secondary">Get Started on Rivanna</a>
+    <a href="http://arcs.virginia.edu/rivanna" target="_new"><button class="btn btn-primary">Rivanna User Guide</button></a>
   </div>
 </div>
 </div>
@@ -121,7 +121,7 @@ draft = false
   </div>
   <div class="card-block">
     <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
-    <a href="#" class="btn btn-secondary">Get started on Ivy</a>
+    <a href="#"><button class="btn btn-primary">Ivy User Guide</button></a>
   </div>
 </div>
 </div>
