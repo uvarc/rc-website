@@ -47,7 +47,7 @@ type = "reference"
       </div>
       <div class="card-block">
         <ul>
-          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/aws-cli/">awscli</a></code></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/aws-cli/">AWS Command Line (Shell)</a></li>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/jq/">jq</a></code></li>
         </ul>
       </div>
@@ -60,7 +60,7 @@ type = "reference"
       </div>
       <div class="card-block">
         <ul>
-          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/awscli-powershell/">AWS Tools for Windows PowerShell</a></code></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/awscli-powershell/">AWS Tools for Windows PowerShell</a></li>
         </ul>
       </div>
     </div>
@@ -74,8 +74,8 @@ type = "reference"
       </div>
       <div class="card-block">
         <ul>
-          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/aws-bioinformatics/">AWS for Bioinformatics</a></code></li>
-          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/bioinformatics-pipelines/">Genomics and Bioinformatics Pipelines</a></code></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/aws-bioinformatics/">AWS for Bioinformatics</a></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/bioinformatics-pipelines/">Genomics and Bioinformatics Pipelines</a></li>
         </ul>
       </div>
     </div>
