@@ -12,10 +12,14 @@ categories = ["reference"]
 
 +++
 
-<p class=lead>The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via <code>bash</code> and PowerShell scripts. 
+<div class="bd-callout bd-callout-warning">
+<h4>From the AWS website</h4>
+<p>The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via <code>bash</code> and PowerShell scripts. 
 This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)</p>
 
-<p class=lead>Learn more at the <a href="https://aws.amazon.com/cli/" target="_new"><b>AWS Command Line Interface</b></a> page.</p>
+<p>Learn more at the <a href="https://aws.amazon.com/cli/" target="_new"><b>AWS Command Line Interface</b></a> page.</p>
+</div>
+
 
 - - - 
 

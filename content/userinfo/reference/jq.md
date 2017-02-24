@@ -11,9 +11,11 @@ type = "reference"
 
 +++
 
-From their website:
-
->`jq` is like `sed` for JSON data - you can use it to slice and filter and map and transform structured data with the same ease that `sed`, `awk`, `grep` and friends let you play with text.
+<div class="bd-callout bd-callout-warning">
+<h4>From the jq website</h4>
+<code>jq</code> is like <code>sed</code> for JSON data - you can use it to slice and filter and map and transform structured data with 
+the same ease that <code>sed</code>, <code>awk</code>, <code>grep</code> and friends let you play with text.
+</div>
 
 `jq` is extremely useful alongside the [AWS command-line tools](https://somrc.virginia.edu/userinfo/reference/aws-cli/).
 

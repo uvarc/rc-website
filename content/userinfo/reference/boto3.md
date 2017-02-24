@@ -12,6 +12,11 @@ tags = ["python","boto3","aws","cloud"]
 
 +++
 
+<div class="bd-callout bd-callout-warning">
+<h4>boto3 - the AWS SDK for Python</h4>
+Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows Python developers to write software that makes use of services like Amazon S3 and Amazon EC2. You can find the latest, most up to date, documentation at <a href="https://boto3.readthedocs.io/en/latest/" target="_new">Read the Docs</a>, including a list of services that are supported. To see only those features which have been released, check out the stable docs.
+</div>
+
 # Install the boto3 library:
 
 Install using `pip` on Linux/Mac:
