@@ -13,7 +13,7 @@ categories = ["reference"]
 +++
 
 <div class="bd-callout bd-callout-warning">
-<h4>From the AWS website</h4>
+<h4>AWS Command-Line Interface</h4>
 <p>The AWS CLI is a command-line interface to the AWS service APIs. It allows users to interact programmatically with services such as EC2, S3, and others via <code>bash</code> and PowerShell scripts. 
 This can be useful for local scripts or automated cron tasks. The AWS CLI also serves as a good introduction for programmatic API interaction using language-specific SKDs (Python, C#, PHP, Go, etc.)</p>
 

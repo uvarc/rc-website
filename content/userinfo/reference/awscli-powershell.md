@@ -11,8 +11,11 @@ type = "reference"
 
 +++
 
-<p class=lead>All the functionality of the Linux-based AWSCLI tools are also available for Windows users. 
-Install the AWS Tools for Windows PowerShell if you need to script against AWS or automate repetitive tasks.</p>
+<div class="bd-callout bd-callout-warning">
+<h4>AWS Command Line for PowerShell</h4>
+All the functionality of the Linux-based AWSCLI tools are also available for Windows users. 
+Install the AWS Tools for Windows PowerShell if you need to script against AWS or automate repetitive tasks.
+</div>
 
 # Installation
 
