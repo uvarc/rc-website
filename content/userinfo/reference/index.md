@@ -50,6 +50,7 @@ type = "reference"
           <li><a href="https://somrc.virginia.edu/userinfo/reference/aws-cli/">AWS Command Line (Shell)</a></li>
           <li><a href="https://somrc.virginia.edu/userinfo/reference/google-cloud-sdk/">Google Cloud SDK</a></li>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/jq/">jq</a></code></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/s3/">S3 Storage</a></li>
         </ul>
       </div>
     </div>

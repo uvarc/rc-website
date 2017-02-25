@@ -44,7 +44,7 @@ This workshop will cover the basic paradigms of public cloud infrastructure, and
 
 **Instructor**: Neal Magee, SOM Research Computing
 
-<button class="btn btn-primary disabled">Register</button>
+[<button class="btn btn-primary">Register</button>](http://cal.hsl.virginia.edu/event/3188800)
 
 - - -
 
