@@ -72,6 +72,18 @@ type = "reference"
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
+        HPC
+      </div>
+      <div class="card-block">
+        <ul>
+          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/slurm/">slurm</a></code></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">
         Bioinformatics
       </div>
       <div class="card-block">

@@ -13,7 +13,7 @@ type = "reference"
 
 
 <div class="bd-callout bd-callout-warning">
-<h4>From the Google Developer website</h4>
+<h4>Google Cloud SDK</h4>
 The Cloud SDK is a set of tools for Cloud Platform. It contains gcloud, gsutil, and bq, which you can use to access Google Compute Engine, Google Cloud Storage, Google BigQuery, and other products and services from the command-line. You can run these tools interactively or in your automated scripts.
 </div>
 
