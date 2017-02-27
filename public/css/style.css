@@ -51,9 +51,9 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 #TableOfContents {width:50%;background-color:#f6f6f6;padding-bottom:6px;padding-top:20px;margin:20px;-moz-border-radius:5px;border-radius:5px;font-size:0.9em;}
 #TableOfContents ul {list-style-type: square;}
 #TableOfContents ul li a:hover {text-decoration:none;}
-.explainer h1 {font-size:1.6em;}
-.explainer h2 {font-size:1.4em;}
-.explainer h3 {font-size:1.2em;}
+.explainer h1 {font-size:1.6em;margin-top:1.5rem;margin-bottom:1.5rem;}
+.explainer h2 {font-size:1.4em;margin-top:1.5rem;margin-bottom:1.5rem;}
+.explainer h3 {font-size:1.2em;margin-top:1.5rem;margin-bottom:1.5rem;}
 
 .parbase {height:100%;}
 .image-border{border:1px solid #ddd;color:#ddd;}

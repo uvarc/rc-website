@@ -19,6 +19,9 @@ draft = false
 
 +++
 
+
+
+
 <div class="card-group">
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-microchip fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
@@ -59,7 +62,7 @@ draft = false
     <div style="text-align:center;"><i class="fa fa-area-chart fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Visualization</h4>
-      <p class="card-text">Sometimes numbers on a page, or data in a table, isn't enough to show others the significance of your research. UVA SOM has a visualization lab to help you show your data.</p>
+      <p class="card-text">Sometimes numbers on a page, or data in a table, isn't enough to show others the significance of your research. UVA has a visualization lab to help you show your data.</p>
       <br clear=all />
       <div class="contact-button">
         <button class="btn btn-sm btn-primary">Get Started &rsaquo;</button>
