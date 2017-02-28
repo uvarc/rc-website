@@ -45,7 +45,36 @@ will authenticate to the UVA network using a digital certificate installed on yo
 
 # Virtual Machines
 
-Virtual Machines (VMs) come in two platforms, CentOS7 Linux and Windows Server 2012R2. Each platform is available in three instance types. Refer to the grid below for specifics.
+A virtual machine (VM) is a computing instance dedicated to your project. 
+
+Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2. Each platform is available in three instance types. Refer to the grid below for specifics.
+
+<table class="table table-sm" style="width:50%;border:solid 1px #ccc;margin-left:4rem;">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Type</th>
+      <th>CPU</th>
+      <th>Memory</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Small</td>
+      <td>2 cores</td>
+      <td>4GB</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>8 cores</td>
+      <td>16GB</td>
+    </tr>
+    <tr>
+      <td>Large</td>
+      <td>16 cores</td>
+      <td>64GB</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Connecting to your VM
 
@@ -58,7 +87,12 @@ To connect to your VM, follow the platform-specific steps below:
         <b>CentOS 7 Linux</b>
       </div>
       <div class="card-block">
-        <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
+        <ul>
+          <li>Open your JointVPN connection</li>
+          <li>Reference the IP address of your Ivy VM.</li>
+          <li>For SSH access:<br />&nbsp;&nbsp;<code>ssh uva-id@ip-address</code></li>
+          <li>For Remote Desktop access: Start the x2goclient to the IP address of your VM and sign in.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -68,7 +102,11 @@ To connect to your VM, follow the platform-specific steps below:
         <b>Windows</b>
       </div>
       <div class="card-block">
-        <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
+        <ul>
+          <li>Open your JointVPN connection</li>
+          <li>Reference the IP address of your Ivy VM.</li>
+          <li>For Remote Desktop access: Start an RDP client to the IP address of your VM and sign in.</li>
+        </ul>
       </div>
     </div>
   </div>
