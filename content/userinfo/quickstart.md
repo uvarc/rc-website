@@ -19,7 +19,7 @@ draft = false
 
 +++
 
-<div id="accordion" role="tablist" aria-multiselectable="true">
+<div id="accordion" role="tablist" aria-multiselectable="true" style="margin-top:2rem;">
 
   <div class="card">
     <div class="card-header" role="tab" id="headingOne">
@@ -37,6 +37,23 @@ draft = false
       </div>
     </div>
   </div>
+
+  <div class="card">
+    <div class="card-header" role="tab" id="headingFour">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          Do you need help accessing Ivy?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+      <div class="card-block">
+        <p>Read details about the Ivy secure environment and how to log in.</p>
+        <a href="https://somrc.virginia.edu/userinfo/ivy/"><button class="btn btn-success">Read More about Ivy</button></a>
+      </div>
+    </div>
+  </div>
+
   <div class="card">
     <div class="card-header" role="tab" id="headingTwo">
       <h5 class="mb-0">
@@ -51,6 +68,7 @@ draft = false
       </div>
     </div>
   </div>
+
   <div class="card">
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">

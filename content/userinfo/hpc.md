@@ -20,7 +20,7 @@ description = ""
   </div>
   <div class="card-block">
     <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
-    <a href="http://arcs.virginia.edu/rivanna" target="_new" class="btn btn-secondary">Get Started on Rivanna</a>
+    <a href="http://arcs.virginia.edu/rivanna" target="_new" class="btn btn-success">Get Started on Rivanna</a>
   </div>
 </div>
 </div>
@@ -31,7 +31,7 @@ description = ""
   </div>
   <div class="card-block">
     <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
-    <a href="#" class="btn btn-secondary">Get started on Ivy</a>
+    <a href="https://somrc.virginia.edu/userinfo/ivy/" class="btn btn-success">Get started on Ivy</a>
   </div>
 </div>
 </div>

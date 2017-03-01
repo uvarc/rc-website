@@ -122,7 +122,7 @@ draft = false
           </div>
           <div class="card-block">
             <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
-            <a href="#"><button class="btn btn-primary">Ivy User Guide</button></a>
+            <a href="https://somrc.virginia.edu/userinfo/ivy/"><button class="btn btn-primary">Ivy User Guide</button></a>
           </div>
         </div>
         </div>

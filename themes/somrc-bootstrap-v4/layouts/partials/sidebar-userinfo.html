@@ -2,8 +2,13 @@
 
   <div class="sticky">
 
-  <section class="sidebar-module sidebar-module-inset" style="margin-top:20px;">
-    <p class=lead>User Resources</p>
+  <section class="sidebar-module">
+    <p class="lead">Contents</p>
+    {{ .TableOfContents }}
+  </section>
+
+  <section class="sidebar-module sidebar-module-inset">
+    <p class="lead">User Resources</p>
     <ol class="list-unstyled" style="padding-left:10px;">
       <li> <a href="https://somrc.virginia.edu/userinfo/quickstart/">Quick Start</a></li>
       <li> <a href="https://somrc.virginia.edu/userinfo/user-guide/">User Guides</a></li>
@@ -13,7 +18,7 @@
   </section>
 
   <section class="sidebar-module">
-    <p class=lead>Topics</p>
+    <p class="lead">Topics</p>
     <ul id="tags">
       {{ range .Params.tags }}
         <li><a href="{{ "https://somrc.virginia.edu/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
