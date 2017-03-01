@@ -25,6 +25,7 @@ The Cloud SDK is a set of tools for Cloud Platform. It contains gcloud, gsutil, 
 * Visit https://cloud.google.com/sdk/ and download the installer for your OS platform.
 * For Mac/Linux users, move the decompressed `google-cloud-sdk` folder to an appropriate place, then run the `./install.sh` script. Windows users have an .exe wizard that will complete the installation process.
 * To set up after installation, run `gcloud init` and you will authenticate (using a web browser) into your Google account. Follow the prompts to create a project, etc.
+* Services that incur charges will have to be associated with billing information (storage, compute, etc.)
 
 - - -
 
@@ -40,10 +41,28 @@ To see information about your installation:
 
 Included with the package is the `gsutil` tool for Google cloud storage
 
-    gsutil
+    gsutil mb gs://my-bucket            # Make a bucket
+    gsutil ls gs://my-bucket/folder/    # List contents of a bucket sub-folder
+    gsutil cp *.txt gs://my-bucket      # Copies all text files up into bucket
+
 
 - - -
 
-# Real-world examples
+# Real-world Examples
 
-- - -
+A backup script to run nightly and keep two weeks of archives:
+
+{{< gist nmagee fe999280428f15ebed98ca88942fc29f >}}
+
+
+A snippet to create an expiring, signed URL of an object within a bucket:
+
+    gsutil signurl -d 10m <private-key-file> gs://<bucket>/<object>
+
+
+A snippet to monitor a bucket for changes and send alerts to a web endpoint. This
+would trigger a notification every time a new object is added or deleted, or if metadata is
+updated:
+
+    gsutil notification watchbucket https://example.com/notify \
+      gs://example-bucket

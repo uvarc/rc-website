@@ -37,6 +37,7 @@ article img{max-width:100%;height:auto;margin:13px auto}
 .blog-footer{padding:1.0rem 0;color:#999;text-align:center;background-color:#f9f9f9;border-top:.05rem solid #e5e5e5}
 .blog-footer p:last-child{margin-bottom:0}
 
+.feature-box {margin:1rem;padding:2rem;border: solid 1px #ccc;}
 .footer {font-size:0.8em;color:#6b6b6b;text-align:center;background-color:#f5f5f5;border-top:.05rem solid #e5e5e5position: absolute;bottom: 0;width: 100%;margin-bottom:0;padding-top:20px;padding:1.0rem;}
 
 .card a {text-decoration:none;color:black;}
@@ -51,7 +52,9 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 /* #TableOfContents {width:50%;background-color:#f6f6f6;padding-bottom:6px;padding-top:20px;margin:20px;-moz-border-radius:5px;border-radius:5px;font-size:0.9em;}
 #TableOfContents ul {list-style-type: square;}
 #TableOfContents ul li a:hover {text-decoration:none;} */
+
 #TableOfContents {font-size:0.9em;}
+#TableOfContents:before {content: "Page Content";font-size:1.25rem;font-weight:300;line-height:280%;}
 #TableOfContents ul {list-style-type: square;}
 #TableOfContents ul li a:hover {text-decoration:none;}
 .explainer h1 {font-size:1.6em;margin-top:1.5rem;margin-bottom:1.5rem;}

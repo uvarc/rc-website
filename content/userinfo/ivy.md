@@ -1,6 +1,6 @@
 +++
 description = ""
-title = "Ivy - Secure Environment"
+title = "Ivy Secure Environment"
 draft = false
 date = "2017-02-26T17:45:12-05:00"
 tags = ["hpc","ivy","hipaa","linux","windows"]
@@ -25,21 +25,49 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra
 
 ## <span class="badge badge-default">1</span> Authentication
 
-You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, your Eservices password must be changed every 60 days.
+<div class="feature-box">
+
+<p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, your Eservices password must be changed every 60 days.</p>
+
+<p>Need help resetting your Eservices password?</p>
+
+<a href="http://its.virginia.edu/accounts/wizard.html" target="_new"><button class="btn btn-sm btn-warning">Reset Password</button></a>
+
+</div>
 
 ## <span class="badge badge-default">2</span> Identity Token
 
-To connect to the Ivy environment with VPN you will need a physical USB identity token, issued to you by the ISPRO Access Management Office. Tokens must be requested, approved, and may take 
-from 1-2 weeks for delivery. In addition, your token will have its own password in order to be used. 
+<div class="feature-box">
 
-[<button class="btn btn-sm btn-warning">Request a UVA Identity Token</button>](http://its.virginia.edu/identity/token/distribution.html)
+<p>To connect to the Ivy environment with VPN you will need a physical USB identity token, issued to you by the <b><a href="http://www.virginia.edu/ispro/ispa/accessmanagement/" target="_new">ISPRO Access Management Office</a></b>. Tokens must be requested, approved, and may take 
+from 1-2 weeks for delivery. You must pick up and activate your token in person, with proof of identification. Your token will have its own password in order to be used. </p>
+
+<ul>
+<li><a href="http://its.virginia.edu/identity/token/" target="_new">Read general information about identity tokens at UVA</a>.
+<li>You should work with your LSP to submit a token request for you.
+</ul>
+
+<a href="http://its.virginia.edu/identity/token/distribution.html" target="_new"><button class="btn btn-sm btn-warning">Request a UVA Identity Token</button></a>
+
+</div>
 
 ## <span class="badge badge-default">3</span> Joint VPN
 
-With your UVA computing ID, Eservices password, and USB identity token in hand, you must run the Cisco AnyConnect software to start a JointVPN connection every time you use any Ivy resource. AnyConnect
-will authenticate to the UVA network using a digital certificate installed on your workstation. More information about how to [create, install, and use digital certificates](http://itc.virginia.edu/identity/certificate/) is available from ITS.
+<div class="feature-box">
 
-[<button class="btn btn-sm btn-warning">AnyConnect VPN Instructions</button>](http://its.virginia.edu/vpn/)
+<p>With your UVA computing ID, Eservices password, and USB identity token in hand, you must run the Cisco AnyConnect software to start a JointVPN connection every time you use any Ivy resource. AnyConnect
+will authenticate to the UVA network using a digital certificate installed on your workstation. </p>
+
+<p>More information on VPN from ITS:</p>
+
+<ul>
+<li><a href="http://its.virginia.edu/network/vpn/" target="_new">General VPN connection instructions</a>.
+<li><a href="http://itc.virginia.edu/identity/certificate/" target="_new">How to create, install, and use digital certificates</a>..
+</ul>
+
+<a href="http://its.virginia.edu/vpn/" target="_new"><button class="btn btn-sm btn-warning">AnyConnect VPN Instructions</button></a>
+
+</div>
 
 - - -
 
@@ -156,11 +184,15 @@ Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, 
 
 Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
 
+
+
 {{< youtube nID9QcAB9g0 >}}
+
+
 
 - - -
 
-# Mapreduce
+# MapReduce
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
 
@@ -178,6 +210,4 @@ Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, 
 
 # HIPAA Compliance
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
-
-Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
+The entire Ivy platform is HIPAA compliant by default. 

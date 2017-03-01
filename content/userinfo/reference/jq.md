@@ -21,13 +21,13 @@ the same ease that <code>sed</code>, <code>awk</code>, <code>grep</code> and fri
 
 - - -
 
-# Download & Install `jq`
+# Installation
 
 Follow the instructions available on https://stedolan.github.io/jq/ for installing the latest version for your platform. 
 
 - - -
 
-# Basic Usage of `jq`
+# Basic Usage
 
 `jq` is used to parse JSON, which helps with programmatic interaction with many APIs. For example, you can retrieve data from an open API like GitHub:
 
