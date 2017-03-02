@@ -13,6 +13,7 @@ author = "SOMRC Staff"
 <div class="bd-callout bd-callout-warning">
 <h4>Ivy</h4>
 Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Hadoop/Spark mapreduce environment.
+Researchers with sensitive data can use Ivy to process and store that data with the confidence that th environment is secure and meets HIPAA requirements.
 </div>
 
 # Obtaining Access
@@ -106,7 +107,28 @@ Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2.
 
 ## Connecting to your VM
 
-To connect to your VM, follow the platform-specific steps below:
+To connect to your VM, you will need the right software. You must install either an SSH client to connect to your VM via the command-line (CentOS VMs only), or 
+remote desktop software to connect to the desktop GUI of your VM.
+
+**MacOSX Users:**
+
+* Terminal (for SSH, can be found in Applications -> Utilities -> Terminal)
+* x2goclient (for remote desktop to CentOS VMs, [download here](http://wiki.x2go.org/doku.php/download:start))
+* Other RDP clients (for remote desktop to Windows VMs, [download here](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12))
+
+**Windows Users:**
+
+* PuTTy (for SSH, [download here](http://www.chiark.greenend.org.uk/~sgtatham/putty/))
+* x2goclient (for remote desktop to CentOS VMs, [download here](http://wiki.x2go.org/doku.php/download:start))
+* Microsoft Remote Desktop (built-in)
+
+**Linux Users:**
+
+* Terminal / Command (for SSH, built-in)
+* x2goclient (for remote desktop to CentOS VMs, [download here](http://wiki.x2go.org/doku.php/download:start))
+* Other remote desktop clients can be used (for Windows VMs)
+
+For connecting follow the platform-specific steps below:
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
@@ -182,11 +204,25 @@ Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, 
 
 <img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
 
-Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
+## Run R and Python on DDL
 
+## Accessing DDL
 
+DDL is entirely browser-based and does not require any setup on your workstation. Once connected via JointVPN, point your browser to
 
-{{< youtube nID9QcAB9g0 >}}
+    https://domino.hpc.virginia.edu/
+
+<a href="https://domino.ddl.virginia.edu/" target="_new"><button class="btn btn-sm btn-danger">Connect to DDL</button></a>
+
+## Learn more about DDL
+
+* [Explore a Demo Version of DDL](https://trial.dominodatalab.com/u/domino/kaggle-titanic-solutions#console)
+* [Data science resources from DDL](https://www.dominodatalab.com/resources)
+* Watch a walkthrough of the main features of DDL:
+
+<video width="730" height="460" controls>
+  <source src="https://s3.amazonaws.com/uvasom-assets/video/product_tour_trimmed.mp4" type="video/mp4">
+</video>
 
 
 
@@ -202,9 +238,7 @@ Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, 
 
 # Data Transfer In/Out of Ivy
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
-
-Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
+Moving your data in and out of Ivy requires that it move through a Data Transfer Node (DTN). This node has 100TB of storage and a web interface for you to move your data.
 
 - - -
 
