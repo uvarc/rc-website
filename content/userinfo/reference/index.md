@@ -22,6 +22,7 @@ type = "reference"
       <div class="card-block">
         <ul>
           <li><code><a href="https://somrc.virginia.edu/userinfo/reference/boto3/">boto3</a></code></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda</a></li>
         </ul>
       </div>
     </div>
