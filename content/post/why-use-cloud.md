@@ -2,7 +2,7 @@
 images = [""]
 author = "SOMRC Staff"
 description = ""
-date = "2017-02-20T15:18:25-05:00"
+date = "2017-03-02T15:18:25-05:00"
 title = "Why use the cloud?"
 draft = true
 tags = ["aws","cloud"]
@@ -16,10 +16,11 @@ The phrase "cloud computing" has come to mean a lot of things lately: web-based 
 
 And so, this "infrastructure" that you purchase from a cloud vendor is really just a service. Gone are the days of having to figure out how large a server to purchase, or how many of them, or waiting for them to be delivered so that you can plug them in and start setting them up. In the Amazon, Google, or Microsoft cloud you simply request them and, seconds later, use them. 
 
-This model gives researchers at least three powerful features worth using:
+This model gives researchers (at least) three powerful features:
 
 1. Quick, disposable environments
 
 2. Environments that can be created repeatedly
 
 3. Low-cost, short-term footprints
+

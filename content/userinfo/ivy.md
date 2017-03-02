@@ -20,6 +20,8 @@ Researchers with sensitive data can use Ivy to process and store that data with 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
 
+[<button class="btn btn-success">Request Access</button>](https://dev.cadre.virginia.edu/)
+
 - - -
 
 # Connecting and Signing In
@@ -74,7 +76,7 @@ will authenticate to the UVA network using a digital certificate installed on yo
 
 # Virtual Machines
 
-A virtual machine (VM) is a computing instance dedicated to your project. 
+A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign into a single VM.
 
 Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2. Each platform is available in three instance types. Refer to the grid below for specifics.
 
@@ -105,6 +107,9 @@ Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2.
   </tbody>
 </table>
 
+Once created, your instance will be assigned a private IP address that you will use to connect to it (in the format `10.xx.xx.xx`). VMs exist in a private, secure network and cannot
+reach outside resources on the Internet. 
+
 ## Connecting to your VM
 
 To connect to your VM, you will need the right software. You must install either an SSH client to connect to your VM via the command-line (CentOS VMs only), or 
@@ -112,7 +117,7 @@ remote desktop software to connect to the desktop GUI of your VM.
 
 **MacOSX Users:**
 
-* Terminal (for SSH, can be found in Applications -> Utilities -> Terminal)
+* Terminal (for SSH, built-in. Can be found in Applications -> Utilities -> Terminal)
 * x2goclient (for remote desktop to CentOS VMs, [download here](http://wiki.x2go.org/doku.php/download:start))
 * Other RDP clients (for remote desktop to Windows VMs, [download here](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12))
 
@@ -171,20 +176,101 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        <b>CentOS 7 Linux Software</b>
+        <b>PREINSTALLED Linux Software</b>
       </div>
       <div class="card-block">
-        <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
+        <p class="card-text">
+          <ul>
+            <li>R 3.2.3</li>
+            <li>Perl 5.10</li>
+            <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 2</a></li>
+            <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 3</a></li>
+            <li>Java SDK+JRE 1.8</li>
+            <li>KNIME 2.11.3</li>
+            <li>X2GO Server</li>
+            <li>BioPerl 1.6</li>
+            <li>Bowtie2 2.2.6</li>
+            <li>Cufflinks 2.2.1</li>
+            <li>Rodeo 1.1.21</li>
+            <li>LibreOffice 4.2.8.2-11</li>
+          </ul>
+        </p>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        <b>Windows Software</b>
+        <b>PREINSTALLED Windows Software</b>
       </div>
       <div class="card-block">
-        <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
+        <p class="card-text">
+          <ul>
+            <li>R 3.2.3</li>
+            <li>Strawberry Perl 5.22.1.2</li>
+            <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 2</a></li>
+            <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 3</a></li>
+            <li>Java SDK+JRE 1.8</li>
+            <li>Axiovision 4.9.1</li>
+            <li>ImageJ 1.49</li>
+            <li>KNIME 2.11.3</li>
+            <li>X2GO Client</li>
+            <li>BioPerl 1.6</li>
+            <li>Rodeo 1.1.21</li>
+            <li>SumatraPDF 3.1.1</li>
+            <li>Microsoft Office Professional Plus 2016</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" style="margin-bottom:2rem;">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">
+        <b>ADDITIONAL Linux Software</b>
+      </div>
+      <div class="card-block">
+        <p class="card-text">
+          <ul>
+            <li>MATLAB</li>
+            <li>SAS Teaching & Research</li>
+            <li>SAS Admin</li>
+            <li>IDL</li>
+            <li>Stata IC/SE/MP</li>
+            <li>OpenCV 2.x</li>
+            <li>OpenCV 3.x</li>
+            <li>PyCharm Community Edition</li>
+            <li>MySQL (+Server)</li>
+            <li>Apache</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">
+        <b>ADDITIONAL Windows Software</b>
+      </div>
+      <div class="card-block">
+        <p class="card-text">
+          <ul>
+            <li>MATLAB</li>
+            <li>SAS Teaching & Research</li>
+            <li>SAS Admin</li>
+            <li>IDL</li>
+            <li>SPSS Teaching & Research</li>
+            <li>SPSS Admin</li>
+            <li>Stata IC/SE/MP</li>
+            <li>OpenCV 2.x</li>
+            <li>OpenCV 3.x</li>
+            <li>PyCharm Community Edition</li>
+            <li>MySQL (+Server)</li>
+            <li>Apache</li>
+          </ul>
+        </p>
       </div>
     </div>
   </div>
@@ -231,6 +317,12 @@ DDL is entirely browser-based and does not require any setup on your workstation
 # MapReduce
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
+
+## Subtopic 1
+
+Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
+
+## Subtopic 2
 
 Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
 
