@@ -16,6 +16,7 @@ tags = [
   "cloud",
 ]
 draft = false
+quell_footer = true
 
 +++
 
@@ -65,7 +66,7 @@ draft = false
       <p class="card-text">Sometimes numbers on a page, or data in a table, isn't enough to show others the significance of your research. UVA has a visualization lab to help you show your data.</p>
       <br clear=all />
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary">Get Started &rsaquo;</button>
+        <a href="https://somrc.virginia.edu/userinfo/lab-computing/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -76,7 +77,7 @@ draft = false
       <p class="card-text">Need large, or extremely large storage offsite or on grounds? Can you count in GB, TB, or PB? Learn more about storage options and pricing.</p>
       <br clear=all />
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#storageModal">Get Started &rsaquo;</button>
+        <a href="https://somrc.virginia.edu/userinfo/storage/"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#storageModal">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -87,7 +88,7 @@ draft = false
       <p class="card-text">Sometimes you have the right data, but in the wrong place. There are several paths available for researchers depending upon the size and destination of your data.</p>
       <br clear=all />
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary">Get Started &rsaquo;</button>
+        <a href="https://somrc.virginia.edu/userinfo/data-transfer/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
