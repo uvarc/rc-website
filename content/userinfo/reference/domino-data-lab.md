@@ -8,6 +8,8 @@ tags = ["r","python","ddl","domino"]
 categories = ["reference"]
 images = [""]
 type = "reference"
+project = "DDL Home"
+projecturl = "https://www.dominodatalab.com/resources"
 
 +++
 

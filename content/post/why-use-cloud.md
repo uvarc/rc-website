@@ -2,9 +2,9 @@
 images = [""]
 author = "SOMRC Staff"
 description = ""
-date = "2017-03-02T15:18:25-05:00"
+date = "2017-01-14T15:18:25-05:00"
 title = "Why use the cloud?"
-draft = true
+draft = false
 tags = ["aws","cloud"]
 categories = ["feature"]
 

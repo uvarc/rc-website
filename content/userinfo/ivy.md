@@ -16,9 +16,20 @@ Ivy is a secure computing environment for researchers consisting of virtual mach
 Researchers with sensitive data can use Ivy to process and store that data with the confidence that th environment is secure and meets HIPAA requirements.
 </div>
 
-# Obtaining Access
+# Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
+Ivy consists of three separate computing environments. Access to one environment does not automatically grant access to the others:
+
+* [Virtual Machines](#virtual-machines)
+* [Domino Data Lab](#domino-data-lab)
+* [MapReduce](#mapreduce)
+
+- - -
+
+# Requesting Access
+
+Access to Ivy resources is project-based, limited to PIs and their designees, and must be approved by xxxxxxx. Costs for Ivy resources and storage must be funded by the PI.
+Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher, for each project).
 
 [<button class="btn btn-success">Request Access</button>](https://dev.cadre.virginia.edu/)
 

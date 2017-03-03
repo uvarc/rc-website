@@ -20,10 +20,7 @@ quell_footer = true
 
 +++
 
-
-
-
-<div class="card-group">
+<div class="card-group" style="margin-top:2rem;">
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-microchip fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">

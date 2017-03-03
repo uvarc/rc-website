@@ -8,6 +8,8 @@ tags = ["json","shell"]
 categories = ["reference"]
 images = [""]
 type = "reference"
+project = "jq Project"
+projecturl = "https://stedolan.github.io/jq/"
 
 +++
 
@@ -16,10 +18,6 @@ type = "reference"
 <code>jq</code> is like <code>sed</code> for JSON data - you can use it to slice and filter and map and transform structured data with 
 the same ease that <code>sed</code>, <code>awk</code>, <code>grep</code> and friends let you play with text.
 </div>
-
-{{< project jq "https://stedolan.github.io/jq/" >}}
-
-- - -
 
 # Installation
 

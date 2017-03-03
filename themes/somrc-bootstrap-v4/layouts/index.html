@@ -104,7 +104,7 @@
             <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
             <p class=lead>Recent News</p>
             <ol class="list-unstyled">
-              {{ range first $num_recent_posts (where .Site.Pages "Type" "post").Reverse }}
+              {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
               <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
               {{ end }}
             </ol>

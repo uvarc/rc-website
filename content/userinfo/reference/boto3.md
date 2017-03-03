@@ -9,6 +9,8 @@ categories = ["reference"]
 images = [""]
 object = "Python"
 tags = ["python","boto3","aws","cloud"]
+project = "boto3 Project"
+projecturl = "https://github.com/boto/boto3"
 
 +++
 
@@ -17,8 +19,6 @@ tags = ["python","boto3","aws","cloud"]
 <p>Boto3 is the Amazon Web Services (AWS) Software Development Kit (SDK) for Python, which allows Python developers to write software that makes use of services like Amazon S3 and Amazon EC2. You can find the latest, most up to date, documentation at <a href="https://boto3.readthedocs.io/en/latest/" target="_new">Read the Docs</a>, including a list of services that are supported.</p>
 <p><code>boto3</code> is unavailable on the Ivy Secure Platform.</p>
 </div>
-
-{{< project boto3 "https://github.com/boto/boto3" >}}
 
 # Install the boto3 library:
 

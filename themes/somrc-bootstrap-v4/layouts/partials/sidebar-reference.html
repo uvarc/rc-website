@@ -4,6 +4,17 @@
 
   {{ partial "page-contents.html" . }}
 
+  {{ if $.Params.projecturl }}
+  <section class="sidebar-module">
+    <div class="" style="background-color:#333;border-radius:5px;padding:4px;padding-left:1rem;font-size:1.1em;color:white;">
+      <a href="{{ $.Params.projecturl }}" target="_new" style="color:white;text-decoration:none;"><i class="fa fa-code fa-inverse align-middle" aria-hidden="true" style=""></i>
+         &nbsp;{{ $.Params.project }}</a>
+    </div>
+  </section>
+  {{ else }}
+    
+  {{ end }}
+
   <section class="sidebar-module">
     <p class=lead>Reference Topics</p>
     <ol class="list-unstyled" style="font-size:90%;">

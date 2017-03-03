@@ -8,7 +8,8 @@ tags = ["anaconda","python"]
 categories = ["reference"]
 images = [""]
 type = "reference"
-
+project = "Anaconda Home"
+projecturl = "https://docs.continuum.io/"
 +++
 
 {{< define "Anaconda" "Anaconda is a distribution of Python geared toward data science. It includes a package manager, environment manager, and over 700 supplementary packages. Within the Ivy Secure Environment, Anaconda is available on both Linux and Windows VMs." >}}

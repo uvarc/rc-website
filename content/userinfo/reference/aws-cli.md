@@ -9,6 +9,8 @@ title = "AWS Command Line (Shell)"
 date = "2017-01-31T12:19:03-05:00"
 tags = ["aws","cli","cloud","shell"]
 categories = ["reference"]
+project = "AWS Command Line"
+projecturl = "https://aws.amazon.com/cli/"
 
 +++
 
@@ -64,7 +66,7 @@ The `aws` command is used, followed by the service name, and then the specific o
 
 - - -
 
-# Help
+# Contextual Help
 
 General help with listing services:
 
@@ -88,6 +90,6 @@ Use a `bash` script to turn off your EC2 instance at night, and send you a notif
 
 - - -
 
-# Use in combination with other CLI tools
+# Combine with other CLI tools
 
 See the [`jq`](https://somrc.virginia.edu/userinfo/reference/jq/#real-world-examples) page for more examples of how to make AWS CLI calls and parse the response JSON in meaningful ways.

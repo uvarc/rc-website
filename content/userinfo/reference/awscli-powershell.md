@@ -8,6 +8,8 @@ categories = ["reference"]
 images = [""]
 author = "SOMRC Staff"
 type = "reference"
+project = "AWS CLI for PowerShell"
+projecturl = "https://aws.amazon.com/powershell/"
 
 +++
 

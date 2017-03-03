@@ -8,6 +8,8 @@ tags = ["json","shell","google"]
 categories = ["reference"]
 images = [""]
 type = "reference"
+project = "Google Cloud SDK"
+projecturl = "https://cloud.google.com/sdk/"
 
 +++
 
