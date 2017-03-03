@@ -63,8 +63,7 @@ Examples of service areas include:
       <li>Domino Data Lab</li>
     </ul>
     </p>
-    <a href="#" class="card-link"><button class="btn btn-warning disabled">Read more</button></a>
-    <a href="#" class="card-link"><button class="btn btn-warning disabled">FAQs</button></a>
+    <a href="https://somrc.virginia.edu/userinfo/ivy/" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
   </div>
 </div>
 
