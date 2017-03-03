@@ -1,8 +1,3 @@
-// var sidebar = document.getElementById('sticky-sidebar');
-// Stickyfill.add(sidebar);
-
-// $('#sticky-sidebar').Stickyfill();
-
 var stickySidebar = $('.sticky');
 
 if (stickySidebar.length > 0) { 

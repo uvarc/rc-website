@@ -11,11 +11,7 @@ type = "reference"
 
 +++
 
-<div class="bd-callout bd-callout-warning">
-<h4>Anaconda</h4>
-<p>Anaconda is a distribution of Python geared toward data science. It includes a package manager, environment manager, and over 700 supplementary packages.
-<p>Within the Ivy Secure Environment, Anaconda is available on both Linux and Windows VMs.</p>
-</div>
+{{< define "Anaconda" "Anaconda is a distribution of Python geared toward data science. It includes a package manager, environment manager, and over 700 supplementary packages. Within the Ivy Secure Environment, Anaconda is available on both Linux and Windows VMs." >}}
 
 # Basic Usage
 

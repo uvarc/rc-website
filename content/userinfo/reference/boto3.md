@@ -18,6 +18,8 @@ tags = ["python","boto3","aws","cloud"]
 <p><code>boto3</code> is unavailable on the Ivy Secure Platform.</p>
 </div>
 
+{{< project boto3 "https://github.com/boto/boto3" >}}
+
 # Install the boto3 library:
 
 Install using `pip` on Linux/Mac:

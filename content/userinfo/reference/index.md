@@ -21,8 +21,10 @@ type = "reference"
       </div>
       <div class="card-block">
         <ul>
-          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/boto3/">boto3</a></code></li>
           <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda</a></li>
+          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/boto3/">boto3</a></code></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/domino-data-lab/">Domino Data Lab</a></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/ivy/">Ivy Secure Platform</a></li>
         </ul>
       </div>
     </div>
@@ -34,7 +36,8 @@ type = "reference"
       </div>
       <div class="card-block">
         <ul>
-          <li><code></code></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/domino-data-lab/">Domino Data Lab</a></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/ivy/">Ivy Secure Platform</a></li>
         </ul>
       </div>
     </div>
@@ -85,15 +88,16 @@ type = "reference"
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        Bioinformatics
+        Bioinformatics / Genomics
       </div>
       <div class="card-block">
         <ul>
           <li><a href="https://somrc.virginia.edu/userinfo/reference/aws-bioinformatics/">AWS for Bioinformatics</a></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/bowtie/">Bowtie 2</a></li>
           <li><a href="https://somrc.virginia.edu/userinfo/reference/bioinformatics-pipelines/">Genomics and Bioinformatics Pipelines</a></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/ivy/">Ivy Secure Platform</a></li>
         </ul>
       </div>
     </div>
   </div>
 </div>
-

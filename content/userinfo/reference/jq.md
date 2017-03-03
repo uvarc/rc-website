@@ -17,7 +17,7 @@ type = "reference"
 the same ease that <code>sed</code>, <code>awk</code>, <code>grep</code> and friends let you play with text.
 </div>
 
-`jq` is extremely useful alongside the [AWS command-line tools](https://somrc.virginia.edu/userinfo/reference/aws-cli/).
+{{< project jq "https://stedolan.github.io/jq/" >}}
 
 - - -
 
@@ -49,6 +49,8 @@ which results in this response:
       "message": "Merge pull request #162 from stedolan. Closes #161",
       "name": "Stephen Dolan"
     }
+
+`jq` is extremely useful alongside the [AWS command-line tools](https://somrc.virginia.edu/userinfo/reference/aws-cli/).
 
 - - -
 
