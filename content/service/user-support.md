@@ -21,18 +21,18 @@ With expertise in high-performance computing, SOMRC provides support in the foll
 
 SOMRC delivers the services above in the context of system support (web-based ticketing) and consultations (in-person meetings). In either scenario, we seek long-term scientific collaborations. Please use the contact methods below for user support.
 
-## System Support
+# System Support
 
-Whether you are interested in local computing resources ([Rivanna](http://arcs.virginia.edu/rivanna), [Ivy](/userinfo/ivy/)) or cloud solutions ([Amazon Web Services](/service/cloud/), SOMRC can help you effectively implement computational strategies.
+Whether you are interested in local computing resources ([Rivanna](http://arcs.virginia.edu/rivanna), [Ivy](/userinfo/ivy/)) or cloud solutions ([Amazon Web Services](/service/cloud/)), SOMRC can help you effectively implement computational strategies.
 
 <a href="http://cadre.virginia.edu/need-help" target="_new">
 <button class="btn btn-warning">System Support Ticket</button>
 </a>
 
-## Consultations
+# Consultations
 
 SOMRC offers free one-on-one consultations to address specific needs related to data analysis, storage and computation. We are happy to meet with you and discuss your project in-person at your convenience. 
 
-<a href="https://somrc.virginia.edu/service/consult/"><button class="btn btn-warning">System Support Ticket
+<a href="https://somrc.virginia.edu/service/consult/"><button class="btn btn-warning">
 Request Consultation</button>
 </a>
