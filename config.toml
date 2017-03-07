@@ -1,6 +1,6 @@
 baseurl = "https://somrc.virginia.edu/"
 # baseurl = "http://somrc-website.s3-website-us-east-1.amazonaws.com/"
-title = "Research Computing"
+title = "SOM Research Computing"
 publishdir = "public"
 languageCode = "en-us"
 theme = "somrc-bootstrap-v4"
