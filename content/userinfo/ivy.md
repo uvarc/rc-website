@@ -309,7 +309,7 @@ DDL is entirely browser-based and does not require any setup on your workstation
 
     https://domino.hpc.virginia.edu/
 
-<a href="https://domino.ddl.virginia.edu/" target="_new"><button class="btn btn-sm btn-danger">Connect to DDL</button></a>
+<a href="https://domino.hpc.virginia.edu/" target="_new"><button class="btn btn-sm btn-danger">Connect to DDL</button></a>
 
 ## Learn more about DDL
 
