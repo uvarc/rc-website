@@ -2,7 +2,7 @@
 description = ""
 title = "My Project Page"
 date = "2017-03-07T11:34:02-05:00"
-draft = false
+draft = true
 tags = ["tag1","tag2"]
 categories = ["projects"]
 images = [""]
