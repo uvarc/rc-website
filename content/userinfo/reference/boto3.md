@@ -9,7 +9,7 @@ categories = ["reference"]
 images = [""]
 object = "Python"
 tags = ["python","boto3","aws","cloud"]
-project = "boto3 Project"
+project = "boto3 Home"
 projecturl = "https://github.com/boto/boto3"
 
 +++
