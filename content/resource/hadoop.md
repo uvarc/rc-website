@@ -7,7 +7,7 @@ tags = [
   "emr",
 ]
 draft = false
-title = "Hadoop / EMR"
+title = "Hadoop / Spark"
 description = ""
 author = "SOMRC Staff"
 images = [
