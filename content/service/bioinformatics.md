@@ -23,7 +23,7 @@ SOMRC can help you select genomic alignment and bioinformatics tools that best f
 
 # ChIP-chip, ChIP-Seq, RNA-Seq and other NGS analyses
 
-Next Generation Sequencing (NGS) has lead to numerous new genomic techniques with many more being devised every year. Genomic, transcriptomic, and epigenomic data analysis usually follows the following steps:
+Next Generation Sequencing (NGS) has led to numerous new genomic techniques with many more being devised every year. Genomic, transcriptomic, and epigenomic data analysis usually follows the following steps:
 
 -	Formalizing genomic or de novo assembly and peak/variant calling pipeline 
 -	Background subtraction, normalization, and processing of the data
