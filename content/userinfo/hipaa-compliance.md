@@ -28,7 +28,7 @@ From a compliance perspective, SOMRC offers three levels of review/assessment:
 1. **Security Plan** - Having a security plan in place is important to your success at UVA School of Medicine. If your lab or department doesn’t have a plan in place Research Computing Information Security will be happy to help you develop such a plan.
 
 2. **Security Review** - If you have a security plan in place already we can help you verify that your computing resources are functioning as documented in your security plan. As part of security review, we will do a risk analyst and provide you a list of recommended enhancements.
- 
+
 3. **Risk Assessment** - This is the systematic process of evaluating the potential security risks/hazards and any business impact they could present.  We analyze the likelyhood of events occurring. As we conduct a risk assessment we look for vulnerabilities and weaknesses that could your system more susceptible to an event. We will provide list of finds and either work with your local support person or other resources to help mitigate the risk.  
 
 - - -
@@ -38,9 +38,7 @@ From a compliance perspective, SOMRC offers three levels of review/assessment:
 For implementation, SOMRC offers a number of skills and services:
 
 1. PHI and De-identification
-
 2. Encryption best practices
-
 3. Encryption of files, databases, and systems
 
 - - -
