@@ -18,7 +18,7 @@ disable404 = true
   category = "categories"
 
 [params]
-  subtitle    = "Research Computing"
+  subtitle = "Research Computing"
   authorImage = "ec2-icon.png"
   #"single" or "multi"
   renderType = "multi"
