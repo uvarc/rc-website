@@ -16,8 +16,7 @@ tags = ["R","Python","data analysis"]
 
 <div class="row">
         <div class="col-sm-2">
-               <div><i class = "fa fa-4x fa-th-list"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-4x fa-long-arrow-right"></i>&nbsp;&nbsp;&nbsp;<i class = "fa fa-4x fa-th"></i>
-</div>
+               <i class = "fa fa-4x fa-th"></i>
         </div>
         <div class="col-sm-10">
         Data analysis generally involves a significant effort to transform, aggregate, subset or otherwise prepare a dataset. That could include dealing with missing values as well as merging or joining multiple datasets. We can help you wrangle your data into a "tidy" format in order to analyze the features and observations relevant to your question.
