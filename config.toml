@@ -9,7 +9,7 @@ paginate = 10
 disableRSS = true
 disableSitemap = true
 disable404 = true
-date_format = "January 2, 2006"
+# date_format = "January 2, 2006"
 
 [permalinks]
   post = "/:year/:month/:title/"
