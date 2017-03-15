@@ -4,7 +4,7 @@ description = ""
 title = "Tools / Applications"
 date = "2017-03-09T18:31:24-05:00"
 draft = false
-tags = ["python","r"]
+tags = ["python","r","aws","cloud"]
 categories = ["projects"]
 images = [""]
 
@@ -31,7 +31,9 @@ images = [""]
       </div>
       <div class="card-block">
         <p class="card-text">
-          * [AWS Snippets - Python](https://github.com/uva-som-rc/aws-snippets) - Utility snippets for interacting with core AWS services.
+          <ul>
+            <li><a href="https://github.com/uva-som-rc/aws-snippets" target="_new"><b>AWS Snippets</b></a> - Utility snippets for interacting with core AWS services.
+          </ul>
         </p>
       </div>
     </div>
@@ -44,10 +46,8 @@ images = [""]
         <b>Docker Containers</b>
       </div>
       <div class="card-block">
-        <img src="https://somrc.virginia.edu/images/container.png" alt="Docker" align="right" style="max-width:20%;" />
         <p class="card-text">
           <ul>
-            <li>Genomics pipeline image</li>
             <li>Genomics pipeline image</li>
           </ul>
         </p>
@@ -63,7 +63,9 @@ images = [""]
       </div>
       <div class="card-block">
         <p class="card-text">
-          * [cloud-templates](https://github.com/uva-som-rc/cloud-templates) - A series of CloudFormation stacks for AWS deployments.
+          <ul>
+            <li><a href="https://github.com/uva-som-rc/cloud-templates" target="_new"><b>Cloud-Templates</b></a> - CloudFormation stacks for AWS deployments.
+          </ul>
         </p>
       </div>
     </div>
