@@ -4,7 +4,7 @@ description = ""
 title = "RStudio Server (Docker)"
 draft = false
 date = "2017-03-01T15:28:51-05:00"
-tags = ["r","python","docker"]
+tags = ["r","docker"]
 categories = ["reference"]
 images = [""]
 type = "reference"
@@ -12,7 +12,7 @@ project = "RStudio Server (Docker)"
 projecturl = "https://hub.docker.com/r/rocker/rstudio/"
 +++
 
-{{< define "RStudio Server" "RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server, bringing the power and productivity of the RStudio IDE to server-based deployments of R. The instructions below will launch your RStudio environment locally." >}}
+{{< define "RStudio Server" "RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server, bringing the power and productivity of the RStudio IDE to server-based deployments of R. The instructions below will launch your RStudio environment locally within a Docker container." >}}
 
 # Installing Docker
 

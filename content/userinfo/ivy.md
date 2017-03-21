@@ -47,6 +47,8 @@ Once a project is approved a PI and her/his researchers must sign a RUDA (one fo
 
 <a href="http://its.virginia.edu/accounts/wizard.html" target="_new"><button class="btn btn-sm btn-warning">Reset Password</button></a>
 
+If you are working from a secure Health Systems workstation you are ready to connect. You only need an Identity Token and JointVPN connection if you are outside of the secure HS network.
+
 </div>
 
 ## <span class="badge badge-default">2</span> Identity Token
@@ -181,7 +183,14 @@ For connecting follow the platform-specific steps below:
  
 ## Software
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
+Every virtual machine (Linux or Windows) comes with a base installation of software by default. These helps researchers by
+providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation
+upon request. See the lists below for options.
+
+If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security
+and regulatory compliance and, if approved, will be installed for you.
+
+**Please note** that Anaconda Python and R packages are already available to users through the normal CRAN and Anaconda library installation methods.
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
@@ -301,9 +310,7 @@ Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, 
 
 <img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
 
-## Run R and Python on DDL
-
-## Accessing DDL
+## Access
 
 DDL is entirely browser-based and does not require any setup on your workstation. Once connected via JointVPN, point your browser to
 
@@ -311,7 +318,15 @@ DDL is entirely browser-based and does not require any setup on your workstation
 
 <a href="https://domino.hpc.virginia.edu/" target="_new"><button class="btn btn-sm btn-danger">Connect to DDL</button></a>
 
-## Learn more about DDL
+## Running R and Python
+
+Code is project-based, and projects automatically provision a folder hierarchy to store your code, data, and output. DDL provides a history of code runs,
+with their output, which is useful when debugging and reviewing your team's code development. Projects can be shared among other Ivy DDL users, who can
+then collaborate on code development or simply use your code on their data.
+
+We suggest you sign up for a intro-level DDL Training to make the most of this new tool.
+
+## Learn More
 
 * [Explore a Demo Version of DDL](https://trial.dominodatalab.com/u/domino/kaggle-titanic-solutions#console)
 * [Data science resources from DDL](https://www.dominodatalab.com/resources)

@@ -77,11 +77,12 @@ type = "reference"
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        HPC
+        Docker / Containers
       </div>
       <div class="card-block">
         <ul>
-          <li><code><a href="https://somrc.virginia.edu/userinfo/reference/slurm/">slurm</a></code></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/bowtie-docker/">Bowtie</a></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/rstudio-docker/">RStudio Server</a></li>
         </ul>
       </div>
     </div>
