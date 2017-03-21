@@ -38,6 +38,7 @@ type = "reference"
         <ul>
           <li><a href="https://somrc.virginia.edu/userinfo/reference/domino-data-lab/">Domino Data Lab</a></li>
           <li><a href="https://somrc.virginia.edu/userinfo/ivy/">Ivy Secure Platform</a></li>
+          <li><a href="https://somrc.virginia.edu/userinfo/reference/rstudio-docker/">RStudio Server on Docker</a></li>
         </ul>
       </div>
     </div>

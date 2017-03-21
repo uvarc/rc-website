@@ -80,6 +80,7 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
     position: sticky;
     top: 0; // required as well.
 }   
+.space {height:100px;}
 
 .gs-title, .gs-snippet {font-family:HelveticaNeueLight,Helvetica;}  
 
