@@ -97,9 +97,28 @@ container and return to your local computer's shell. If you have made any change
 
 If you cannot find just the right container, you can always build your own. There are two ways to do this:
 
-1. Download a container image, run it and log into it, and customize as if it were your own custom virtual machine. Then, save the container for later deployment.
-2. Alternatively, you can write a custom `Dockerfile` and build the container from scratch, using `docker build`.
+1. Download a container image, run it and log into it, and customize as if it were your own custom virtual machine. Then, save the container for later deployment. Instructions for interactively logging into a container can be found above.
+2. Alternatively, you can write a custom `Dockerfile` and build the container from scratch, using `docker build`. More on Docker files and builds can be found at https://docs.docker.com/engine/getstarted/step_four/
 
-- - -
+# Tutorials
 
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <h3 class="card-title">Docker Training</h3>
+        <p class="card-text">Docker documents this process in great detail, and provides a step-by-step overview of their container system.</p>
+        <a href="https://docs.docker.com/engine/getstarted/" class="btn btn-primary" style="color:white;">Launch</a>
+      </div>
+      <div class="card-block">
+        <h3 class="card-title">Katacoda Interactive Labs</h3>
+        <p class="card-text">Katacoda offers a free series of interactive trainings that build sequentially. The tutorials require you to
+          engage with the Docker command-line as you progress.</p>
+        <a href="https://www.katacoda.com/courses/docker" class="btn btn-primary" style="color:white;">Launch</a>
+      </div>
+    </div>
+  </div>
+</div>
 
+{{< space >}}
+{{< space >}}

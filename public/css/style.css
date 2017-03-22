@@ -45,7 +45,6 @@ article img{max-width:100%;height:auto;margin:13px auto}
 .card-body { width: 100%; }
 .contact-button { width: 100%; height: inherit; }
 .contact-button button { position: absolute; bottom:20px; left: 20px;}
-.spacer-20 { width:100%; height:20px; }
 
 pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radius:.25rem; font-size:90%;}
 .category { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radius:.25rem;font-weight:600;font-family:monospace;padding-bottom:20px;}
@@ -80,7 +79,9 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
     position: sticky;
     top: 0; // required as well.
 }   
-.space {height:100px;}
+.space { width:100%; height:100px; }
+.spacer-20 { width:100%; height:20px; }
+.spacer-100 { width:100%; height:100px; }
 
 .gs-title, .gs-snippet {font-family:HelveticaNeueLight,Helvetica;}  
 
