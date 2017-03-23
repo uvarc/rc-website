@@ -100,13 +100,15 @@ If you cannot find just the right container, you can always build your own. Ther
 1. Download a container image, run it and log into it, and customize as if it were your own custom virtual machine. Then, save the container for later deployment. Instructions for interactively logging into a container can be found above.
 2. Alternatively, you can write a custom `Dockerfile` and build the container from scratch, using `docker build`. More on Docker files and builds can be found at https://docs.docker.com/engine/getstarted/step_four/
 
+- - -
+
 # Tutorials
 
 <div class="row">
   <div class="col-sm-6">
     <div class="card">
       <div class="card-block">
-        <h3 class="card-title">Docker Training</h3>
+        <h3 class="card-title" style="padding-top:0px;margin-top:0px;">Docker Training</h3>
         <p class="card-text">Docker documents this process in great detail, and provides a step-by-step overview of their container system.</p>
         <a href="https://docs.docker.com/engine/getstarted/" class="btn btn-primary" style="color:white;">Launch</a>
       </div>
