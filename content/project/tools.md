@@ -32,7 +32,7 @@ images = [""]
       <div class="card-block">
         <p class="card-text">
           <ul>
-            <li><a href="https://github.com/uva-som-rc/aws-snippets" target="_new"><b>AWS Utility Tools</b></a> - Utility snippets for interacting with core AWS services.
+            <li><a href="https://github.com/uva-som-rc/aws-snippets" target="_new"><b>AWS Utilities</b></a> - Utility snippets for interacting with core AWS services.
           </ul>
         </p>
       </div>
