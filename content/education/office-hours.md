@@ -10,7 +10,9 @@ images = [""]
 
 +++
 
-<p class=lead>Coming Soon</p>
+<div class="alert alert-success" role="alert" style="">
+  <h3>Coming Soon</h3>
+  <p class="lead">Look for SOMRC Staff office hours beginning in late April, 2017. Our staff will have regular availability to speak with you in MR-5.</p>
+</div>
 
-Look for SOMRC Staff office hours beginning in late April, 2017. Our staff will have regular availability to speak with you in MR-5.
-
+{{< space >}}
