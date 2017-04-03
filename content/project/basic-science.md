@@ -28,5 +28,5 @@ For a more general description of this collaboration, refer [here](https://somrc
 
 SOMRC is working with researchers in the Center for Public Health Genomics to write an R package to calculate RPIM scores, which represent the epigenetic heterogeneity in a bisulfite sequencing sample.
 
-**Nathan Sheffield ([Center for Public Health Genomics](https://med.virginia.edu/cphg/)))**
+**Nathan Sheffield ([Center for Public Health Genomics](https://med.virginia.edu/cphg/))**
 
