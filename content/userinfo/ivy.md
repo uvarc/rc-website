@@ -13,7 +13,7 @@ author = "SOMRC Staff"
 <div class="bd-callout bd-callout-warning">
 <h4>Ivy</h4>
 Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Hadoop/Spark mapreduce environment.
-Researchers with sensitive data can use Ivy to process and store that data with the confidence that th environment is secure and meets HIPAA requirements.
+Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA requirements.
 </div>
 
 # Overview
@@ -28,8 +28,8 @@ Ivy consists of three separate computing environments. Access to one environment
 
 # Requesting Access
 
-Access to Ivy resources is project-based, limited to PIs and their designees, and must be approved by xxxxxxx. Costs for Ivy resources and storage must be funded by the PI.
-Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher, for each project).
+Access to Ivy resources is project-based, limited to PIs and their designees, and requires approval. Costs for Ivy resources and storage must be funded by the PI.
+Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
 
 [<button class="btn btn-success">Request Access</button>](https://dev.cadre.virginia.edu/)
 
@@ -47,7 +47,7 @@ Once a project is approved a PI and her/his researchers must sign a RUDA (one fo
 
 <a href="http://its.virginia.edu/accounts/wizard.html" target="_new"><button class="btn btn-sm btn-warning">Reset Password</button></a>
 
-If you are working from a secure Health Systems workstation you are ready to connect. You only need an Identity Token and JointVPN connection if you are outside of the secure HS network.
+If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.
 
 </div>
 
@@ -121,12 +121,12 @@ Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2.
 </table>
 
 Once created, your instance will be assigned a private IP address that you will use to connect to it (in the format `10.xx.xx.xx`). VMs exist in a private, secure network and cannot
-reach outside resources on the Internet. 
+reach outside resources on the Internet. Most inbound and outbound data transfer is managed through the Data Transfer Node (see below). 
 
 ## Connecting to your VM
 
-To connect to your VM, you will need the right software. You must install either an SSH client to connect to your VM via the command-line (CentOS VMs only), or 
-remote desktop software to connect to the desktop GUI of your VM.
+To connect to your VM, you must install either an SSH client to connect to your VM using the command-line interface (CentOS VMs only), or 
+remote desktop software to connect to the desktop GUI of your VM. These options are outlined below.
 
 **MacOSX Users:**
 
@@ -146,7 +146,7 @@ remote desktop software to connect to the desktop GUI of your VM.
 * x2goclient (for remote desktop to CentOS VMs, [download here](http://wiki.x2go.org/doku.php/download:start))
 * Other remote desktop clients can be used (for Windows VMs)
 
-For connecting follow the platform-specific steps below:
+To connect to Ivy follow the platform-specific steps below:
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
@@ -183,7 +183,7 @@ For connecting follow the platform-specific steps below:
  
 ## Software
 
-Every virtual machine (Linux or Windows) comes with a base installation of software by default. These helps researchers by
+Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by
 providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation
 upon request. See the lists below for options.
 
@@ -298,15 +298,13 @@ and regulatory compliance and, if approved, will be installed for you.
 
 ## Storage
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
-
-Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
+Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space he’d like to have when requesting access to Ivy. Virtual machines do not come with disk storage of their own.  
 
 - - -
 
 # Domino Data Lab
 
-<img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
+<img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" /> Domino Data Lab (DDL) provides a central environment for data science projects including project management, collaboration with team members, and setting up hardware configuration for a project.  
 
 ## Access
 
@@ -315,6 +313,10 @@ DDL is entirely browser-based and does not require any setup on your workstation
     https://domino.hpc.virginia.edu/
 
 <a href="https://domino.hpc.virginia.edu/" target="_new"><button class="btn btn-sm btn-danger">Connect to DDL</button></a>
+
+## Storage
+
+Each DDL node comes with 500 gigabytes of storage. Central storage is not visible to DDL nodes.  
 
 ## Running R and Python
 
@@ -340,15 +342,20 @@ We suggest you sign up for a intro-level DDL Training to make the most of this n
 
 # Hadoop
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
+Ivy Hadoop is an environment for distributed map/reduce computational analyses for Big Data applications.  
 
-## Subtopic 1
+## Access
 
-Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
+Access to Ivy Hadoop is through the Hue web interface.  
 
-## Subtopic 2
+## Software
 
-Donec fermentum eu tortor eu dignissim. Curabitur elit diam, tempor in dui non, tincidunt rhoncus risus. Praesent pharetra nisl elit, vitae commodo odio rutrum et. Praesent ac ligula pharetra, mollis lorem tristique, convallis leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Cras sit amet euismod elit, et iaculis ipsum. Fusce aliquet mauris sit amet elit euismod, in varius justo suscipit.
+The platform comes with Spark, Hive, Impala, Pig, ZooKeeper, and Oozie. 
+
+
+## Storage
+
+Ivy Hadoop has 480 terabytes of HDFS storage shared amongst users. Each Hadoop node has 500 gigabytes of disk storage. Data can be uploaded through the Hue web interface. 
 
 - - -
 
