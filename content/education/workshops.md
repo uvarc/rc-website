@@ -16,7 +16,9 @@ images = [""]
 
 - - -
 
-# Introduction to Cloud Computing with AWS
+# Upcoming
+
+## Introduction to Cloud Computing with AWS
 
 This workshop will cover the basic paradigms of public cloud infrastructure, and introduce techniques for computing in these environments. Why use the cloud for computation and storage? What are its advantages? We will discuss core concepts such as elasticity and infrastructure-as-code, while also getting hands-on experience with creating computing, storage, and data resources in Amazon Web Services. Workshop participants will work directly in both the AWS console and command-line tools. Upon completing this workshop, students will be familiar with best practices for cloud design, as well as with how to deploy simple, resizable environments on their own.
 
@@ -32,7 +34,7 @@ This workshop will cover the basic paradigms of public cloud infrastructure, and
 
 - - -
 
-# Building Shiny Web Applications in R
+## Building Shiny Web Applications in R
 
 Shiny is a framework for developing interactive, web-based tools with R. This workshop will cover how to create a basic user interface, add reactive widgets and publish a Shiny app.
 
@@ -45,3 +47,15 @@ Shiny is a framework for developing interactive, web-based tools with R. This wo
 **Instructor**: VP Nagraj, SOM Research Computing
 
 [<button class="btn btn-primary">Register</button>](http://cal.hsl.virginia.edu/event/3066560)
+
+- - -
+
+# Previous
+
+## Advanced Data Visualization with R
+
+## Advanced Data Manipulation with R
+
+## R For Beginners
+
+## Introduction to the Command Line
