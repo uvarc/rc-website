@@ -10,7 +10,7 @@ categories = ["education","courses"]
 
 +++
 
-<p class=lead>In addition to providing <a href = "https://somrc.virginia.edu/education/workshops/"> free, in-person workshop training, School of Medicine Research Computing staff teach for-credit courses. Below is a selection of courses that SOMRC has taught, co-taught or provided guest lectures.</p>
+<p class=lead>In addition to providing <a href = "https://somrc.virginia.edu/education/workshops/"> free, in-person workshop training</a>, School of Medicine Research Computing staff teach for-credit courses. Below is a selection of courses that SOMRC has taught, co-taught or provided guest lectures.</p>
 
 # BIMS 8382: Introduction to Biomedical Data Science
 
