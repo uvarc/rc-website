@@ -32,7 +32,7 @@ draft = false
     <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="card-block">
         <p class="lead">Submit an account request for Rivanna or Ivy below.</p>
-        <p><button class="btn btn-success">Rivanna Account Request</button></p>
+        <p><a href = "http://arcs.virginia.edu/resources/rivanna/allocations"><button class="btn btn-success">Rivanna Account Request</button></a></p>
         <p><button class="btn btn-success">Ivy Account Request</button></p>
       </div>
     </div>
