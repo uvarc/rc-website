@@ -1,7 +1,7 @@
 +++
 author = "SOMRC Staff"
 description = ""
-title = "Workshops & Seminars"
+title = "Workshops"
 date = "2017-01-27T10:55:28-05:00"
 draft = false
 tags = [""]
