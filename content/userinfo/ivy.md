@@ -12,7 +12,7 @@ author = "SOMRC Staff"
 
 <div class="bd-callout bd-callout-warning">
 <h4>Ivy</h4>
-Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Hadoop/Spark mapreduce environment.
+Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Hadoop/Spark MapReduce environment.
 Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA requirements.
 </div>
 
