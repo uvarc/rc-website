@@ -361,7 +361,7 @@ Ivy Hadoop has 480 terabytes of HDFS storage shared amongst users. Each Hadoop n
 
 # Data Transfer In/Out of Ivy
 
-Moving your data in and out of Ivy requires that it move through a Data Transfer Node (DTN). This node has 100TB of storage and a web interface for you to move your data.
+Moving your data in and out of Ivy requires that it move through the [Data Transfer Node (DTN)](https://ivyxfer.hpc.virginia.edu). This node has 100TB of storage and a web interface for you to move your data.
 
 - - -
 
