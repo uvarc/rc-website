@@ -14,6 +14,9 @@ projecturl = "https://hub.docker.com/r/rocker/rstudio/"
 
 {{< define "RStudio Server" "RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server, bringing the power and productivity of the RStudio IDE to server-based deployments of R. The instructions below will launch your RStudio environment locally within a Docker container." >}}
 
+# What is Docker?
+{{< youtube aLipr7tTuA4 >}}
+
 # Install Docker
 
 Click the button below and download the appropriate Docker Edition for your platform. We suggest the CE "Community Edition."
