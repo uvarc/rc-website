@@ -37,8 +37,7 @@ Rather than approach your research with a specific technology or platform in min
     <a class="dropdown-item" href="https://somrc.virginia.edu/service/bioinformatics">Bioinformatics & Genomics</a>
     <a class="dropdown-item" href="https://somrc.virginia.edu/service/cloud">Cloud Solutions</a>
     <a class="dropdown-item" href="https://somrc.virginia.edu/service/data-analysis">Data Analysis</a>
-    <a class="dropdown-item" href="https://somrc.virginia.edu/service/hpc">High Performance Computing</a>
-    <a class="dropdown-item" href="https://somrc.virginia.edu/service/scientific-programming">Scientific Programming</a>
+    <a class="dropdown-item" href="https://somrc.virginia.edu/service/scientific-computing/">Scientific Computing</a>
   </div>
 </div>
 
