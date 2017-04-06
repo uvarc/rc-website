@@ -30,6 +30,8 @@
     {{ partial "menu-home.html" . }}
 
     {{ partial "site-header.html" . }}
+	
+   <section id="main-content" class="main-content">
 
     <div class="container">
       <div class="row">
@@ -45,6 +47,7 @@
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}
+    </section>
 
     {{ partial "footer.html" . }}
 
