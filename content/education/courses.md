@@ -1,12 +1,11 @@
 +++
-tags = [""]
 draft = false
 date = "2017-01-27T10:55:28-05:00"
 title = "Courses"
 description = ""
 author = "SOMRC Staff"
-images = [""]
 categories = ["education","courses"]
+tags = ["R","cloud","AWS"]
 
 +++
 
@@ -19,3 +18,8 @@ categories = ["education","courses"]
 This course introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data. Specifically, the course introduces the R statistical computing environment and packages for manipulating and visualizing high-dimensional data, covers strategies for reproducible research, and culminates with analysis of data from a real RNA-seq experiment using R and Bioconductor packages.
 
 
+# CS 6501: Distributed & Cloud Computing
+
+**Spring 2017**
+
+This graduate course introduces a basic grounding in designing and implementing distributed and cloud systems. It aims to acquaint students with principles and technologies of server clusters, virtualized datacenters, Grids/P2P, Internet clouds, social networks, Internet of Things (IoT), and applications. Students will have the opportunity to gain hands-on experience on public cloud such as Amazon EC2. Selected scientific applications will also be used as case studies to gain hands-on experiences.

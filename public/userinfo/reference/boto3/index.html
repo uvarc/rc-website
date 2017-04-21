@@ -41,7 +41,7 @@
 
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color:#0f3a72;border-radius: 0 !important;">
 <div class="container">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -89,8 +89,9 @@
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Education</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item disabled" href="https://somrc.virginia.edu/events/">Upcoming Events</a>
-      <a class="dropdown-item" href="https://somrc.virginia.edu/education/workshops">Workshops & Seminars</a>
+      <a class="dropdown-item" href="https://somrc.virginia.edu/education/events">Events</a>
+      <a class="dropdown-item" href="https://somrc.virginia.edu/education/workshops">Workshops</a>
+      <a class="dropdown-item" href="https://somrc.virginia.edu/education/courses">Courses</a>
       <a class="dropdown-item" href="https://somrc.virginia.edu/education/office-hours/">Office Hours</a>
       
     </div>
@@ -135,6 +136,8 @@
       </div>
     </header>
 
+	
+	<section id="main-content" class="main-content">
 
     <div class="container">
       <div class="row">
@@ -298,7 +301,9 @@ sns = boto3.resource('sns')
 
       </div> <!-- /.row -->
     </div> <!-- /.container -->
-
+	
+	</section>
+	
       <footer class="footer" style="margin-top:20px;">
     <div class="container" style="text-align:left;padding-top:20px;">
       <div class="row">
@@ -317,7 +322,7 @@ sns = boto3.resource('sns')
         <div class="col-6 col-sm-4 col-lg-4">
           <strong><span class="glyphicon glyphicon-time"></span> Find Us</strong><br /><br />
             <p>
-              <a href="https://github.com/uva-som-rc" target="_blank" rel="noopener noreferrer"><img src="https://somrc.virginia.edu/images/github-32.png" alt="GitHub" style="margin-right:8px;" /></a>
+              <a href="https://github.com/uvasomrc" target="_blank" rel="noopener noreferrer"><img src="https://somrc.virginia.edu/images/github-32.png" alt="GitHub" style="margin-right:8px;" /></a>
               <a href="https://twitter.com/uvasomrc" target="_blank" rel="noopener noreferrer"><img src="https://somrc.virginia.edu/images/twitter-32.png" alt="Twitter" style="margin-right:8px;" /></a>
               <a href="https://hub.docker.com/u/somrc/" target="_blank" rel="noopener noreferer"><img src="https://somrc.virginia.edu/images/docker-gray.png" alt="Docker" style="margin-right:8px;" /></a>
             </p>
