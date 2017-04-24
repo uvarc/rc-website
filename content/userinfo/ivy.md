@@ -312,8 +312,6 @@ DDL is entirely browser-based and does not require any setup on your workstation
 
     https://domino.hpc.virginia.edu/
 
-<a href="https://domino.hpc.virginia.edu/" target="_new"><button class="btn btn-sm btn-danger">Connect to DDL</button></a>
-
 ## Storage
 
 Each DDL node comes with 500 gigabytes of storage. Central storage is not visible to DDL nodes.  
@@ -347,6 +345,8 @@ The DDL platform allows users to run Python and R scripts. To issue a run, navig
 ### Uploading Large files (> 550 MB)
 
 ### Resolving Resource Usage Issues
+
+<img class="img-fluid" src="/images/ivyddl_resourceusage.png" alt="Resource usage on Domino Data Lab session" align="center">
 
 ### Updating Existing Packages
 
