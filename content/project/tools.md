@@ -18,6 +18,9 @@ images = [""]
       </div>
       <div class="card-block">
         <p class="card-text">
+          <ul>
+            <li>R Packages</li>
+          </ul>
         </p>
       </div>
     </div>
@@ -33,6 +36,7 @@ images = [""]
         <p class="card-text">
           <ul>
             <li><a href="https://github.com/uva-som-rc/aws-snippets" target="_new"><b>AWS Utilities</b></a> - Utility snippets for interacting with core AWS services.
+            <li><a href="https://gist.github.com/nmagee/0ce2cd44a1c4664783a68a903a4d6264" target="_new">Install AWS CLI on Rivanna</a></li>
           </ul>
         </p>
       </div>
