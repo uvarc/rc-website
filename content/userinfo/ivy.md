@@ -312,6 +312,8 @@ DDL is entirely browser-based and does not require any setup on your workstation
 
     https://domino.hpc.virginia.edu/
 
+You will be prompted for Domino login credentials, which correspond to your UVa computing ID and Eservices password. Please remember that in order to maintain access to any platform on Ivy (including DDL), you will need to change your Eservices password every 60 days. 
+
 ## Storage
 
 Each DDL node comes with 500 gigabytes of storage. Central storage is not visible to DDL nodes.  
@@ -320,15 +322,19 @@ Each DDL node comes with 500 gigabytes of storage. Central storage is not visibl
 
 ### Project Structure
 
-DDL is organized into projects, which automatically provision a folder hierarchy to store your code, data, and output. Individuals are able to create new projects, and can also invite other Ivy DDL users to collaboratively view, edit, or run files in an existing project. Collaborators can "fork" (copy the contents of) projects, leave comments, and use built-in version control utilities to store / revert changes to files as necessary.
+DDL is organized into projects, which automatically provision a folder hierarchy to store your code, data, and output. Individuals are able to create new projects, and can also invite other Ivy DDL users to collaboratively view, edit, or run files in an existing project. 
+
+Collaborators can "fork" (copy the contents of) projects, leave comments, and use built-in version control utilities to store / revert changes to files as necessary.
 
 ### Uploading Files
 
-To upload a script, dataset or other file, users can navigate to a project and select the "files" menu item. DDL includes a drag-and-drop interface for uploading files less than 500 MB.
+To upload a script, dataset or other file, users can navigate to a project and select the "files" menu item. DDL includes a drag-and-drop interface for uploading files less than 550 MB.
+
+<img class="img-fluid" src="/images/ivyddl_uploadfiles.png" alt="Uploading files via Domino Data Lab web interface" align="center">
 
 ### Running code
 
-The DDL platform allows users to run Python and R scripts. To issue a run, navigate to the file you would like to execute and click **Run**. Alternatively you can can use the **Runs** window to start a run by entering the filename. Note that if code is associated with data, it should be written relative to the location of that dataset in the project directory. 
+The DDL platform allows users to run Python and R scripts. To issue a run, navigate to the file you would like to execute and click `Run`. Alternatively you can can use the `Runs` window to start a run by entering the filename. Note that if code is associated with data, it should be written relative to the location of that dataset in the project directory. 
 
 ### Scheduling Jobs
 
