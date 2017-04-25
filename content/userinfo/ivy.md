@@ -22,7 +22,7 @@ Ivy consists of three separate computing environments. Access to one environment
 
 * [Virtual Machines](#virtual-machines)
 * [Domino Data Lab](#domino-data-lab)
-* [Hadoop](#hadoop)
+* [Hadoop/Spark](#hadoop/spark)
 
 - - -
 
@@ -298,7 +298,7 @@ and regulatory compliance and, if approved, will be installed for you.
 
 ## Storage
 
-Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space he’d like to have when requesting access to Ivy. Virtual machines do not come with disk storage of their own.  
+Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
 
 - - -
 
@@ -371,7 +371,7 @@ The DDL platform allows users to run Python and R scripts. To issue a run, navig
 
 - - -
 
-# Hadoop
+# Hadoop/Spark
 
 Ivy Hadoop is an environment for distributed map/reduce computational analyses for Big Data applications.  
 
