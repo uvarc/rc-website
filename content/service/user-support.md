@@ -36,3 +36,11 @@ SOMRC offers free one-on-one consultations to address specific needs related to 
 <a href="https://somrc.virginia.edu/service/consult/"><button class="btn btn-warning">
 Request Consultation</button>
 </a>
+
+# Office Hours
+
+Staff from SOMRC host weekly office hours in MR5 (Biomedical Engineering and Medical Science Building) Room 1005. Drop by with a project idea, question about a system or anything else you would like to discuss.
+
+<button class="btn btn-success">
+Wednesdays 9:00-10:30AM</button>
+
