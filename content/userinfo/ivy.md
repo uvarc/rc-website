@@ -322,7 +322,7 @@ Each DDL node comes with 500 gigabytes of storage. Central storage is not visibl
 
 DDL is organized in a project structure, which is ideal for collaborative data analyses. Scripts written in Python and R can be edited, scheduled and run from within the web interface, both inside and outside of interactive notebook sessions (i.e. RStudio or Jupyter). 
 
-For specifics about these features and more, refer to the [Ivy DDL User Guide](content/userinfo/ivy-ddl).
+For specifics about these features and more, refer to the [Ivy DDL User Guide](/userinfo/ivy-ddl/).
 
 ## Learn More
 
