@@ -377,11 +377,13 @@ Ivy Hadoop is an environment for distributed map/reduce computational analyses f
 
 ## Access
 
-Access to Ivy Hadoop is through the Hue web interface.  
+Access to Ivy Hadoop is through the [Hue](http://gethue.com) web interface. Check out a live demo of Hue [here](http://demo.gethue.com). To access Ivy Hadoop, connect through the Joint VPN and go to:
+	http://udc-aw26-1.hpc.virginia.edu:8888/accounts/login/
+where you can enter your eservices login and password.
 
 ## Software
 
-The platform comes with Spark, Hive, Impala, Pig, ZooKeeper, and Oozie. 
+The platform comes with Cloudera Hadoop, YARN, Spark, Hive, Impala, Piig, ZooKeeper, and Oozie. 
 
 
 ## Storage
