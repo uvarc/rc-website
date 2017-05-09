@@ -254,7 +254,7 @@ and regulatory compliance and, if approved, will be installed for you.
             <li>Data Analysis</li>
             <li>Data / Database</li>	
             <li>Image Processing</li>
-            <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See all packages</a>]</li>
+            <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See packages by group</a>]</li>
           </ul>
         </p>
       </div>
@@ -272,7 +272,7 @@ and regulatory compliance and, if approved, will be installed for you.
             <li>Data Analysis</li>
             <li>Data / Database</li>
             <li>Image Processing</li>
-            <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See all packages</a>]</li>
+            <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See packages by group</a>]</li>
           </ul>
         </p>
       </div>
