@@ -22,7 +22,7 @@ Ivy consists of three separate computing environments. Access to one environment
 
 * [Virtual Machines](#virtual-machines)
 * [Domino Data Lab](#domino-data-lab)
-* [Hadoop/Spark](#hadoop/spark)
+* [Hadoop/Spark](#hadoop-spark)
 
 - - -
 
@@ -86,6 +86,8 @@ will authenticate to the UVA network using a digital certificate installed on yo
 </div>
 
 - - -
+
+<div class="spacer-100"></div>
 
 # Virtual Machines
 
@@ -190,7 +192,7 @@ upon request. See the lists below for options.
 If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security
 and regulatory compliance and, if approved, will be installed for you.
 
-**Please note** that Anaconda Python and R packages are already available to users through the normal CRAN and Anaconda library installation methods.
+**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
@@ -206,11 +208,7 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 2</a></li>
             <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 3</a></li>
             <li>Java SDK+JRE 1.8</li>
-            <li>KNIME 2.11.3</li>
             <li>X2GO Server</li>
-            <li>BioPerl 1.6</li>
-            <li>Bowtie2 2.2.6</li>
-            <li>Cufflinks 2.2.1</li>
             <li>Rodeo 1.1.21</li>
             <li>LibreOffice 4.2.8.2-11</li>
           </ul>
@@ -231,11 +229,7 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 2</a></li>
             <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 3</a></li>
             <li>Java SDK+JRE 1.8</li>
-            <li>Axiovision 4.9.1</li>
-            <li>ImageJ 1.49</li>
-            <li>KNIME 2.11.3</li>
             <li>X2GO Client</li>
-            <li>BioPerl 1.6</li>
             <li>Rodeo 1.1.21</li>
             <li>SumatraPDF 3.1.1</li>
             <li>Microsoft Office Professional Plus 2016</li>
@@ -245,25 +239,22 @@ and regulatory compliance and, if approved, will be installed for you.
     </div>
   </div>
 </div>
+
+
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        <b>ADDITIONAL Linux Software</b>
+        <b>ADDITIONAL Linux Groups</b>
       </div>
       <div class="card-block">
         <p class="card-text">
           <ul>
-            <li>MATLAB</li>
-            <li>SAS Teaching & Research</li>
-            <li>SAS Admin</li>
-            <li>IDL</li>
-            <li>Stata IC/SE/MP</li>
-            <li>OpenCV 2.x</li>
-            <li>OpenCV 3.x</li>
-            <li>PyCharm Community Edition</li>
-            <li>MySQL (+Server)</li>
-            <li>Apache</li>
+            <li>Bioinformatics</li>
+            <li>Data Analysis</li>
+            <li>Data / Database</li>	
+            <li>Image Processing</li>
+            <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See all packages</a>]</li>
           </ul>
         </p>
       </div>
@@ -272,23 +263,16 @@ and regulatory compliance and, if approved, will be installed for you.
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        <b>ADDITIONAL Windows Software</b>
+        <b>ADDITIONAL Windows Groups</b>
       </div>
       <div class="card-block">
         <p class="card-text">
           <ul>
-            <li>MATLAB</li>
-            <li>SAS Teaching & Research</li>
-            <li>SAS Admin</li>
-            <li>IDL</li>
-            <li>SPSS Teaching & Research</li>
-            <li>SPSS Admin</li>
-            <li>Stata IC/SE/MP</li>
-            <li>OpenCV 2.x</li>
-            <li>OpenCV 3.x</li>
-            <li>PyCharm Community Edition</li>
-            <li>MySQL (+Server)</li>
-            <li>Apache</li>
+            <li>Bioinformatics</li>
+            <li>Data Analysis</li>
+            <li>Data / Database</li>
+            <li>Image Processing</li>
+            <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See all packages</a>]</li>
           </ul>
         </p>
       </div>
@@ -296,11 +280,14 @@ and regulatory compliance and, if approved, will be installed for you.
   </div>
 </div>
 
+
 ## Storage
 
 Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
 
 - - -
+
+<div class="spacer-100"></div>
 
 # Domino Data Lab
 
@@ -338,6 +325,8 @@ For specifics about these features and more, refer to the [Ivy DDL User Guide](/
 
 
 - - -
+
+<div class="spacer-100"></div>
 
 # Hadoop/Spark
 
