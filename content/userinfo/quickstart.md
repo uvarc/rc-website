@@ -70,6 +70,22 @@ draft = false
     </div>
   </div>
 
+  <div class="card">
+    <div class="card-header" role="tab" id="headingFive">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          Do you need help with Domino Data Lab?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+      <div class="card-block">
+        <p>Read about how to use Domino Data Lab in Ivy.</p>
+        <a href="https://somrc.virginia.edu/userinfo/ivy-ddl/"><button class="btn btn-success">Read More about DDL</button></a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <div class="space"></div>

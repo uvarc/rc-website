@@ -61,9 +61,6 @@
 
             <hr size=1 />
 
-            <p class="lead">Training</p>
-            {{ partial "training-events.html" . }}
-
             <!-- {{ partial "upcoming-event.html" . }} -->
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
@@ -76,8 +73,14 @@
 
             {{ partial "user-help-widget.html" . }}
 
-          {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
 
+          <section class="sidebar-module">
+            <a href="https://somrc.virginia.edu/education/workshops/">
+              <button class="btn btn-primary" style="margin-top:0px;">Upcoming Workshops & Seminars</button>
+            </a>
+          </section>
+
+          {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
           <section class="sidebar-module">
             <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
             <p class=lead>Recent News</p>
@@ -89,9 +92,8 @@
           </section>
 
           <section class="sidebar-module">
-            <a href="https://somrc.virginia.edu/education/workshops/">
-              <button class="btn btn-primary" style="margin-top:0px;">Upcoming Workshops & Seminars</button>
-            </a>
+            <p class="lead">Training</p>
+            {{ partial "training-events.html" . }}
           </section>
 
           {{ with .Site.Menus.sidebar }}
