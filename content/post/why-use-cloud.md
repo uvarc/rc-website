@@ -3,8 +3,8 @@ images = [""]
 author = "SOMRC Staff"
 description = ""
 date = "2017-01-14T15:18:25-05:00"
-title = "Why use the cloud?"
-draft = true
+title = "Why use the Cloud?"
+draft = false
 tags = ["aws","cloud"]
 categories = ["feature"]
 
@@ -23,25 +23,26 @@ This model gives researchers (at least) three powerful features:
 3. Deploying low-cost, short-term footprints
 4. Leveraging services and fetures that would otherwise be difficult to build or manage.
 
-But for many reasons, moving into the cloud can seem daunting or users are not quite sure where to begin. So let's take some of these principles and apply them to real-world use cases:
+But for many reasons, moving into the cloud can seem daunting or users are not quite sure where to begin. So let's take some of these principles and apply them to practical, real-world use cases:
 
-# Storage with S3
+## Storage with S3
 
-<img src="https://somrc.virginia.edu/images/aws/s3.png" align="right" style="max-height:60px;" alt="S3" />
+<img src="https://somrc.virginia.edu/images/aws/s3.png" align="left" style="max-height:80px;margin:4px;" alt="S3" />
 S3 (Simple Storage Service) is Amazon's object storage service, ideal for large files, archives, media files, backups, and other file types that do not require
-direct interaction (writes/updates) as if they were in your filesystem. Consider S3 for these use cases:
+direct interaction (writes/updates) as if they were in your filesystem.
 
-## Offload media files
-If you are serving a website (regardless of where you host your code), consider placing your image, js, and css files in S3 and referencing
-them by
+## Resize your Computers
 
-# High Availability / EC2 Auto-scaling
+Amazon EC2 (Elastic Compute Cloud) is a service that provides virtual compute instances. Need a small instance to test an idea on? That's 
+no problem, but what if your code works great but now you need to test it on real data? Resize your instance to something much more powerful
+easily, and only for the time you need extra resources. 
 
-<img src="https://somrc.virginia.edu/images/aws/autoscaling.png" align="right" style="max-height:60px;" alt="EC2 Autoscaling" />
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.
+## Website / Web Publishing
 
-# Messaging / SQS
+Need to host a simple, public-facing site to explain or share your research? You may only need a static HTML website, and in S3 you can publish
+your site with no server(s) to maintain. If you need something more that runs Python, PHP, or Shiny (among many others), we can help you create
+an instance and publish to it. You can even lock down all or part of your site using Netbadge.
 
-Resilient systems based on the SOA model are de-coupled, or "loosely coupled." In more traditional monolithic stacks, services such as web presentation, database, storage, 
-were all hard-coded to specific instances doing specific tasks. This meant single points of failure, and the stack could fail if any single service dropped out. In a cloud
-SOA, we try to point to service endpoints. 
+## Want to learn more?
+
+[Read more](https://somrc.virginia.edu/service/cloud/) about how the UVA School of Medicine Research Computing group is helping researchers use the cloud.

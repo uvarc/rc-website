@@ -61,6 +61,12 @@
 
             <hr size=1 />
 
+          <section class="sidebar-module">
+            <a href="https://somrc.virginia.edu/education/workshops/">
+              <button class="btn btn-primary" style="margin-top:0px;">Upcoming Workshops & Seminars</button>
+            </a>
+          </section>
+
             <!-- {{ partial "upcoming-event.html" . }} -->
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
@@ -72,13 +78,6 @@
             {{ partial "status.html" . }} -->
 
             {{ partial "user-help-widget.html" . }}
-
-
-          <section class="sidebar-module">
-            <a href="https://somrc.virginia.edu/education/workshops/">
-              <button class="btn btn-primary" style="margin-top:0px;">Upcoming Workshops & Seminars</button>
-            </a>
-          </section>
 
           {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
           <section class="sidebar-module">
