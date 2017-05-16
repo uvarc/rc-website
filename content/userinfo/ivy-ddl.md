@@ -32,7 +32,42 @@ The DDL platform allows users to run Python and R scripts. To issue a run, navig
 
 ## Using Notebook Sessions
 
+In addition to scheduling and executing scripts that have been uploaded, DDL provides an interactive notebook session feature. 
+
 ## Selecting Hardware Tiers
+
+Ivy DDL includes several tiers of hardware to choose from. 
+
+<table class="table table-sm" style="width:50%;border:solid 1px #ccc;margin-left:4rem;">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Type</th>
+      <th>CPU</th>
+      <th>Memory</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Free</td>
+      <td>1 core</td>
+      <td>6GB</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>4 cores</td>
+      <td>16GB</td>
+    </tr>
+    <tr>
+      <td>Dedicated</td>
+      <td>20 cores</td>
+      <td>120GB</td>
+    </tr>
+  </tbody>
+</table>
+
+To specify the tier you would like to use, navigate to the project settings:
+
+<img class="img-fluid" src="/images/ivyddl_hardwaretier.png" alt="Selecting a hardware tier for a Domino Data Lab project on Ivy" align="center">
 
 ## Using the Command Line Interface (CLI)
 
