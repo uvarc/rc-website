@@ -33,13 +33,13 @@ quell_footer = true
     </div>
   </div>
   <div class="card">
-    <div style="text-align:center;"><i class="fa fa-shield fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
+    <div style="text-align:center;"><i class="fa fa-database fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
-      <h4 class="card-title">HIPAA Compliance</h4>
-      <p class="card-text">For patient data or other secure applications requiring HIPAA, we have multiple options on-grounds and in the AWS cloud.</p>
-      <br clear=all />  
+      <h4 class="card-title">Storage</h4>
+      <p class="card-text">Need large, or extremely large storage offsite or on grounds? Can you count in GB, TB, or PB? Learn more about storage options and pricing.</p>
+      <br clear=all />
       <div class="contact-button">
-        <a href="https://somrc.virginia.edu/userinfo/hipaa-compliance/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="https://somrc.virginia.edu/userinfo/storage/"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#storageModal">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -68,13 +68,13 @@ quell_footer = true
     </div>
   </div>
   <div class="card">
-    <div style="text-align:center;"><i class="fa fa-database fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
+    <div style="text-align:center;"><i class="fa fa-shield fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
-      <h4 class="card-title">Storage</h4>
-      <p class="card-text">Need large, or extremely large storage offsite or on grounds? Can you count in GB, TB, or PB? Learn more about storage options and pricing.</p>
-      <br clear=all />
+      <h4 class="card-title">HIPAA Compliance</h4>
+      <p class="card-text">For patient data or other secure applications requiring HIPAA, we have multiple options on-grounds and in the AWS cloud.</p>
+      <br clear=all />  
       <div class="contact-button">
-        <a href="https://somrc.virginia.edu/userinfo/storage/"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#storageModal">Get Started &rsaquo;</button></a>
+        <a href="https://somrc.virginia.edu/userinfo/hipaa-compliance/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
