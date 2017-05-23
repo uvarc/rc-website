@@ -38,8 +38,8 @@ else
   echo "--- Content cleared"
   hugo --disableRSS --disable404 -v --ignoreCache
   echo "--- Hugo content generated"
-  cp home.html public/
-  echo "--- Copied dummy home page for fixed navbar test"
+  cp storage.html public/
+  echo "--- Copied mockup of storage decision tree"
   cp google091118a6c00d06c0.html public/
   echo "--- Google domain verification copied"
   cp robots.txt public/
