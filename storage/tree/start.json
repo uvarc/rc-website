@@ -1,0 +1,15 @@
+{
+	"id": "start",
+	"question": "What sort of data do you have?",
+	"answers": [
+
+		{
+			"text": "Sensitive",
+			"target": "dtn1"
+		},
+		{
+			"text": "Non-sensitive",
+			"target": "dtn2"
+		}
+	]
+}

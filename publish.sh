@@ -38,7 +38,7 @@ else
   echo "--- Content cleared"
   hugo --disableRSS --disable404 -v --ignoreCache
   echo "--- Hugo content generated"
-  cp storage.html public/
+  cp -R storage public/storage
   echo "--- Copied mockup of storage decision tree"
   cp google091118a6c00d06c0.html public/
   echo "--- Google domain verification copied"
