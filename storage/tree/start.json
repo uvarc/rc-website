@@ -5,11 +5,11 @@
 
 		{
 			"text": "Sensitive",
-			"target": "dtn1"
+			"target": "sensitive1"
 		},
 		{
 			"text": "Non-sensitive",
-			"target": "dtn2"
+			"target": "sensitive0"
 		}
 	]
 }

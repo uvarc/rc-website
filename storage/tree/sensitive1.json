@@ -1,0 +1,15 @@
+{
+	"id": "sensitive1",
+	"question": "Is your data related to research?",
+	"answers": [
+
+		{
+			"text": "Yes - Research Data",
+			"target": "research1"
+		},
+		{
+			"text": "No - Non-Research Data",
+			"target": "research0"
+		}
+	]
+}

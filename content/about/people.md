@@ -41,10 +41,13 @@ categories = [
 With expertise in R and Python, he's been active in package development and a variety of open-source collaborations.</p>
     <p><a class="btn btn-secondary" href="mailto:vpnagraj@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
+
+  <!-- Have to remove haz4z
   <div class="col-lg-6">
     <img class="rounded-circle" src="https://somrc.virginia.edu/images/hzaidi.jpeg" alt="Generic placeholder image" width="140" height="140">
     <h2>Hussain Zaidi, PhD</h2>
     <p><b>Computational Scientist</b> <br /> Hussain devises and applies computational and mathematical tools for computational biology and quantum computation. He received his Ph.D. in physics from the University of Virginia and most recently completed a postdoc in genomics in which he quantified the residence time of TATA-binding Protein (TBP) genome-wide in yeast. He is also actively interested in machine learning and big data architectures.</p>
     <p><a class="btn btn-secondary" href="mailto:haz4z@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
+
 </div><!-- /.row -->

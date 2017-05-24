@@ -1,0 +1,15 @@
+{
+	"id": "sensitive0",
+	"question": "Is this your personal data?",
+	"answers": [
+
+		{
+			"text": "Yes",
+			"target": "personal1"
+		},
+		{
+			"text": "No,",
+			"target": "personal0"
+		}
+	]
+}

@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link href="css/styles.css" type="text/css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+        <script src="js/tree.js"></script>
+        <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <title>jQuery Tree.js Decision Tree Plugin Demo</title>
+    <style>
+    body {
+      font-family:sans-serif;
+      padding:40px;
+    }
+    </style>
+    </head>
+    <body>
+    <h1>Storage Solutions</h1>
+    <div class="main" style="max-width:600px;max-height:800px;"></div>
+    <script type="text/javascript">
+var data = {
+    message: "<div style='color:green;'>Is your data sensitive?</div>",
+    decisions: [
+            {
+                answer: "Yes",
+                class: "green",
+                message: "Is your data related to research?",
+                decisions: [
+                    {
+                        answer: "Yes",
+                        class: "green",
+                        message: "<div style='text-align:center;'>Research data storage options:<ul><li><a href='http://somrc.virginia.edu/'>Ivy Secure Storage</a><li><a href='http://somrc.virginia.edu/'>HSZ Storage</a></ul></div>"
+                    },
+                    {
+                        answer: "No",
+                        class: "orange",
+                        message: "Your best storage option is <b>ITS Enterprise Storage</b>."
+                    }
+                ]
+            },
+            {
+                answer: "No",
+                        class: "red",
+                message: "Is this your personal data?"
+            }
+        ]
+};
+
+$(document).ready(function() {
+    $('.main').decisionTree({data: data});
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
