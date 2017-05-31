@@ -1,6 +1,6 @@
+<!DOCTYPE html>
 <html xmlns:xlink="http://www.w3.org/1999/xlink">
-<head><meta charset="utf-8">
-
+<meta charset="UTF-8">
 <link rel="Shortcut Icon" href="https://somrc.virginia.edu/images/favicon.ico" type="image/x-icon" />
 <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://somrc.virginia.edu/font-awesome/css/font-awesome.min.css">
@@ -21,22 +21,8 @@ h2 {
   padding-top:20px;
 }
 
-a .fa-link {
-  opacity: 0.1;
-  filter: alpha(opacity=10);
-}
-
-a .fa-link:hover {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-
 .btn {
   margin-bottom:20px;
-}
-
-.node {
-  cursor: pointer;
 }
 
 .node circle {
@@ -47,6 +33,9 @@ a .fa-link:hover {
 
 .node text {
   font: 15px sans-serif;
+  padding-left:10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .link {
@@ -57,218 +46,317 @@ a .fa-link:hover {
 
 </style>
 
-</head>
 <body>
 
-<a name="top"></a>
 <h1>Storage Options</h1>
 <p class="description">Select options by clicking on nodes to expand them.</p>
 
-<script src="https://d3js.org/d3.v3.min.js"></script>
-
+<!-- load the d3.js library -->	
+<script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
+var treeData =
+  {
+    "name": "Do you have sensitive data?",
+    "children": [
+      { 
+        "name": "YES - Sensitive data",
+        "children": [
+          { "name": "Research Data",
+            "children": [
+              { "name": "Ivy Secure Storage", 
+                "url":  "https://www.google.com"
+              },
+              { "name": "High Security Zone Storage",
+                "url":  "https://www.google.com"
+              }
+            ]
+          },
+          { "name": "Non-research Data",
+            "children": [
+              { "name": "ITS Enterprise Storage",
+                "url":  "https://www.google.com"
+              }
+            ]
+          }
+        ]
+      },
+      { "name": "NO - Non-sensitive data",
+        "children": [
+          { "name": "Rivanna Users",
+            "children": [
+              { "name": "/home",
+                "url":  "https://www.google.com"
+              },
+              { "name": "/scratch - LUSTRE",
+                "url":  "https://www.google.com"
+              },
+              { "name": "/projects - Qumulo",
+                "url":  "https://www.google.com"
+              },
+              { "name": "Value Storage",
+                "url":  "https://www.google.com"
+              },
+              { "name": "Object Storage - Swift",
+                "url":  "https://www.google.com"
+              }
+            ]
+          },
+          { "name": "Non-Rivanna Users",
+            "children": [
+              { "name": "Value Storage",
+                "url":  "https://www.google.com"
+              },
+              { "name": "Tape Archiving",
+                "url":  "https://www.google.com"
+              },
+              { "name": "Object Storage - Swift",
+                "url":  "https://www.google.com"
+              }
+            ]
+          },
+          { "name": "Personal Computer Data",
+            "children": [
+              { "name": "Box",
+                "url":  "https://www.google.com"
+              },
+              { "name": "CrashPlan",
+                "url":  "https://www.google.com"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  };
+
+// Set the dimensions and margins of the diagram
 var margin = {top: 20, right: 90, bottom: 30, left: 200},
-    width = 1100 - margin.left - margin.right,
+    width = 960 - margin.left - margin.right,
     height = 700 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+// appends a "group" element to "svg"
+// moves the "group" element to the top left margin
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.right + margin.left)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate("
+          + margin.left + "," + margin.top + ")");
 
 var i = 0,
     duration = 750,
     root;
 
-var tree = d3.layout.tree()
-    .size([height, width]);
+// declares a tree layout and assigns the size
+var treemap = d3.tree().size([height, width]);
 
-var diagonal = d3.svg.diagonal()
-    .projection(function(d) { return [d.y, d.x]; });
+// Assigns parent, children, height, depth
+root = d3.hierarchy(treeData, function(d) { return d.children; });
+root.x0 = height / 2;
+root.y0 = 0;
 
-var svg = d3.select("body").append("svg")
-    .attr("width", width + margin.right + margin.left)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+// Collapse after the second level
+root.children.forEach(collapse);
 
-d3.json("data.json", function(error, turbo) {
-  root = turbo;
-  root.x0 = height / 2;
-  root.y0 = 0;
+update(root);
 
-  function collapse(d) {
-    if (d.children) {
-      d._children = d.children;
-      d._children.forEach(collapse);
-      d.children = null;
-    }
+// Collapse the node and all it's children
+function collapse(d) {
+  if(d.children) {
+    d._children = d.children
+    d._children.forEach(collapse)
+    d.children = null
   }
-
-  root.children.forEach(collapse);
-  update(root);
-});
-
-d3.select(self.frameElement).style("height", "700px");
+}
 
 function update(source) {
 
+  // Assigns the x and y position for the nodes
+  var treeData = treemap(root);
+
   // Compute the new tree layout.
-  var nodes = tree.nodes(root).reverse(),
-      links = tree.links(nodes);
+  var nodes = treeData.descendants(),
+      links = treeData.descendants().slice(1);
 
   // Normalize for fixed-depth.
-  nodes.forEach(function(d) { d.y = d.depth * 200; });
+  nodes.forEach(function(d){ d.y = d.depth * 180});
+
+  // ****************** Nodes section ***************************
 
   // Update the nodes...
   var node = svg.selectAll("g.node")
-      .data(nodes, function(d) { return d.id || (d.id = ++i); });
+      .data(nodes, function(d) {return d.id || (d.id = ++i); });
 
-  // Enter any new nodes at the parent's previous position.
+  // Enter any new modes at the parent"s previous position.
   var nodeEnter = node.enter().append("g")
       .attr("class", "node")
-      .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
-      .on("click", click);
+      .attr("transform", function(d) {
+        return "translate(" + source.y0 + "," + source.x0 + ")";
+    })
+    .on("click", click);
 
+  // Add Circle for the nodes
   nodeEnter.append("circle")
-      // .attr("r", 1e-6)
-      .attr("r", 10)
-      .style("fill", function(d) { return d._children ? "steelblue" : "#fff"; });
-
-
-  nodeEnter.each(function(d){
-    var thisNode = d3.select(this);
-    if (!d.children) {
-        thisNode.append("a")
-            .attr("xlink:href", function(d) { return d.url; })
-            .append("text")
-                .attr("x", 20)
-                // .attr("dy", 3)
-                .attr("dy", ".35em")
-                .attr("text-anchor", "start")
-                .text(function(d) { return d.name; });
-    } else {
-        thisNode.append("text")
-            .attr("x", -16)
-            // .attr("dy", 3)
-            .attr("dy", ".35em")
-            .attr("text-anchor", "end")
-            .text(function(d) { return d.name; });      
-    }
-});
-
-
-  // Transition nodes to their new position.
-  var nodeUpdate = node.transition()
-      .duration(duration)
-      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
-
-  nodeUpdate.select("circle")
-      .attr("r", 10)
-      .style("fill", function(d) { return d._children ? "steelblue" : "#fff"; });
-
-  nodeUpdate.select("text")
-      .style("fill-opacity", 1);
-
-  // Transition exiting nodes to the parent's new position.
-  var nodeExit = node.exit().transition()
-      .duration(duration)
-      .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
-      .remove();
-
-  nodeExit.select("circle")
-      // .attr("r", 1e-6);
-      .attr("r", 10);
-
-  nodeExit.select("text")
-      // .style("fill-opacity", 1e-6);
-      .style("fill-opacity", 1e-6);
-
-  // Update the links…
-  var link = svg.selectAll("path.link")
-      .data(links, function(d) { return d.target.id; });
-
-  // Enter any new links at the parent's previous position.
-  link.enter().insert("path", "g")
-      .attr("class", "link")
-      .attr("d", function(d) {
-        var o = {x: source.x0, y: source.y0};
-        return diagonal({source: o, target: o});
+      .attr("class", "node")
+      .attr("r", 1e-6)
+      .style("fill", function(d) {
+          return d._children ? "lightsteelblue" : "#fff";
       });
 
-  // Transition links to their new position.
-  link.transition()
-      .duration(duration)
-      .attr("d", diagonal);
+  nodeEnter.append("text")
+        .attr("dy", ".35em")
+        .attr("x", function(d) {
+            return d.children || d._children ? -13 : 13;
+        })
+        .attr("text-anchor", function(d) {
+            return d.children || d._children ? "end" : "start";
+        })
+        .text(function(d) { return d.data.name; });
 
-  // Transition exiting nodes to the parent's new position.
-  link.exit().transition()
+
+  // UPDATE
+  var nodeUpdate = nodeEnter.merge(node);
+
+  // Transition to the proper position for the node
+  nodeUpdate.transition()
+    .duration(duration)
+    .attr("transform", function(d) { 
+        return "translate(" + d.y + "," + d.x + ")";
+     });
+
+  // Update the node attributes and style
+  nodeUpdate.select("circle.node")
+    .attr("r", 10)
+    .style("fill", function(d) {
+        return d._children ? "lightsteelblue" : "#fff";
+    })
+    .attr("cursor", "pointer");
+
+
+  // Remove any exiting nodes
+  var nodeExit = node.exit().transition()
       .duration(duration)
-      .attr("d", function(d) {
-        var o = {x: source.x, y: source.y};
-        return diagonal({source: o, target: o});
+      .attr("transform", function(d) {
+          return "translate(" + source.y + "," + source.x + ")";
       })
       .remove();
 
-  // Stash the old positions for transition.
-  nodes.forEach(function(d) {
+  // On exit reduce the node circles size to 0
+  nodeExit.select("circle")
+    .attr("r", 1e-6);
+
+  // On exit reduce the opacity of text labels
+  nodeExit.select("text")
+    .style("fill-opacity", 1e-6);
+
+  // ****************** links section ***************************
+
+  // Update the links...
+  var link = svg.selectAll("path.link")
+      .data(links, function(d) { return d.id; });
+
+  // Enter any new links at the parent"s previous position.
+  var linkEnter = link.enter().insert("path", "g")
+      .attr("class", "link")
+      .attr("d", function(d){
+        var o = {x: source.x0, y: source.y0}
+        return diagonal(o, o)
+      });
+
+  // UPDATE
+  var linkUpdate = linkEnter.merge(link);
+
+  // Transition back to the parent element position
+  linkUpdate.transition()
+      .duration(duration)
+      .attr("d", function(d){ return diagonal(d, d.parent) });
+
+  // Remove any exiting links
+  var linkExit = link.exit().transition()
+      .duration(duration)
+      .attr("d", function(d) {
+        var o = {x: source.x, y: source.y}
+        return diagonal(o, o)
+      })
+      .remove();
+
+  // Store the old positions for transition.
+  nodes.forEach(function(d){
     d.x0 = d.x;
     d.y0 = d.y;
   });
-}
 
-// Toggle children on click.
-function click(d) {
-  if (d.children) {
-    d._children = d.children;
-    d.children = null;
-  } else {
-    d.children = d._children;
-    d._children = null;
+  // Creates a curved (diagonal) path from parent to the child nodes
+  function diagonal(s, d) {
+
+    path = `M ${s.y} ${s.x}
+            C ${(s.y + d.y) / 2} ${s.x},
+              ${(s.y + d.y) / 2} ${d.x},
+              ${d.y} ${d.x}`
+
+    return path
   }
-  update(d);
+
+  // Toggle children on click.
+  function click(d) {
+    if (d.children) {
+        d._children = d.children;
+        d.children = null;
+      } else {
+        d.children = d._children;
+        d._children = null;
+      }
+    update(d);
+  }
 }
 
 </script>
 
-<a name="ivy"><h2>Ivy Secure Storage</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2>Ivy Secure Storage</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
 <button class="btn btn-small btn-success">Learn More</button>
 
-<a name="high-security-zone"><h2>High Security Zone Storage</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2>High Security Zone Storage</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
 <button class="btn btn-small btn-success">Learn More</button>
 
-<a name="its-enterprise"><h2>ITS Enterprise Storage</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
-<a href="http://its.virginia.edu/services/displayService.php?sId=295" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>
-
-<a name="rivanna-home"><h2>Rivanna <code>/home</code> Storage</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2>ITS Enterprise Storage</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
 <button class="btn btn-small btn-success">Learn More</button>
 
-<a name="rivanna-scratch"><h2>Rivanna <code>/scratch</code> Storage</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2>Rivanna <code>/home</code> Storage</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
 <button class="btn btn-small btn-success">Learn More</button>
 
-<a name="rivanna-projects"><h2>Rivanna <code>/projects</code> Storage</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2>Rivanna <code>/scratch</code> Storage</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
 <button class="btn btn-small btn-success">Learn More</button>
 
-<a name="value"><h2>Value Storage</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
-<a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>
-
-<a name="object"><h2>Swift Object Storage</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2>Rivanna <code>/projects</code> Storage</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
 <button class="btn btn-small btn-success">Learn More</button>
 
-<a name="tape"><h2>Tape Archiving</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2>Value Storage</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
 <button class="btn btn-small btn-success">Learn More</button>
 
-<a name="box"><h2>UVA Box</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
+<h2>Swift Object Storage</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
+<button class="btn btn-small btn-success">Learn More</button>
+
+<h2>Tape Archiving</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tincidunt viverra elit vitae mollis. Donec ipsum erat, ornare id suscipit non, lobortis in orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed ac ante eget purus ultrices cursus. Vivamus pretium erat in mattis feugiat. Nullam accumsan dignissim erat non auctor. Quisque elementum faucibus lacus pretium pretium. Mauris luctus, sapien id suscipit semper, eros ipsum fringilla odio, in scelerisque diam sem a libero. Ut accumsan non nibh in gravida. Pellentesque non ornare ipsum. Sed sed tellus eu arcu consectetur convallis. Aenean feugiat turpis id ex pretium ornare. Morbi sed odio sodales lorem tempus egestas ac at magna.</p>
+<button class="btn btn-small btn-success">Learn More</button>
+
+<h2>UVA Box</h2>
 <p>UVA Box is a cloud-based storage and collaboration service that gives eligible members of the University community the ability to access, store, and share up to 1 TB of non-sensitive/moderately sensitive University files securely—anywhere, anytime, on any device.</p>
 <a href="http://its.virginia.edu/box/" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>
 
-<a name="crashplan"><h2>CrashPlan</a> <a href="#top"><i class="fa fa-link" aria-hidden="true"></i></a></h2>
-<p>CrashPlan is a cloud-enhanced desktop backup service. It securely backs up your endpoint devices to the cloud. CrashPlan provides: 
+<h2>CrashPlan</h2>
+<p>
+CrashPlan is a cloud-enhanced desktop backup service. It securely backs up your endpoint devices to the cloud. CrashPlan provides: 
 Cloud storage for backup of up to 4 endpoint devices per user; 
 Protection against crypto-ransomware and other malicious software that destroys/encrypts content on end-users devices; 
 Protection of University data on endpoint devices from loss due to hard drive failure, computer failure, etc. </p>

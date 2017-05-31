@@ -1,0 +1,73 @@
+  {
+    "name": "Is Your Data Sensitive?",
+    "children": [
+      { 
+        "name": "YES - Sensitive Data",
+        "children": [
+          { "name": "Research Data",
+            "children": [
+              { "name": "Ivy Secure Storage", 
+                "url":  "#ivy-secure"
+              },
+              { "name": "High Security Zone Storage",
+                "url":  "#high-security-zone"
+              }
+            ]
+          },
+          { "name": "Non-Research Data",
+            "children": [
+              { "name": "ITS Enterprise Storage",
+                "url":  "#its-enterprise"
+              }
+            ]
+          }
+        ]
+      },
+      { "name": "NO - Not Sensitive Data",
+        "children": [
+          { "name": "Rivanna User",
+            "children": [
+              { "name": "/home",
+                "url":  "#rivanna-home"
+              },
+              { "name": "/scratch - LUSTRE",
+                "url":  "#rivanna-scratch"
+              },
+              { "name": "/projects - Qumulo",
+                "url":  "#rivanna-projects"
+              },
+              { "name": "Value Storage",
+                "url":  "#value"
+              },
+              { "name": "Object Storage - Swift",
+                "url":  "#object"
+              }
+            ]
+          },
+          { "name": "Non-Rivanna User",
+            "children": [
+              { "name": "Value Storage",
+                "url":  "#value"
+              },
+              { "name": "Tape Archiving",
+                "url":  "#tape"
+              },
+              { "name": "Object Storage - Swift",
+                "url":  "#object"
+              }
+            ]
+          },
+          { "name": "Personal Computing",
+            "children": [
+              { "name": "Box",
+                "url":  "#box"
+              },
+              { "name": "CrashPlan",
+                "url":  "#crashplan"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
