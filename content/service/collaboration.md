@@ -17,4 +17,9 @@ title = "Collaboration"
 
 +++
 
-More information about opportunities for collaboration goes here.
+The SOMRC is available for collaborative work with researchers, faculty, and students. These may include:
+
+* Code and package development, such as R and Python packages, pipelines, or containers.
+* Open source project development.
+* Ongoing analysis of large data sets and publication of results.
+* Architecture / design best practices for specific research approaches.
