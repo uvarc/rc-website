@@ -25,7 +25,7 @@ disable404 = true
   renderType = "multi"
   # "simple" or "original"
   themeStyle = "simple"
-  googleAnalytics = "UA-90358528-1"
+  # googleAnalytics = "UA-90358528-1"
   name = "UVA School of Medicine"
   description = "Enabling scientific breakthroughs at scale through advanced computing"
   pageNotFoundTitle = "404 - Page not found"
