@@ -59,6 +59,8 @@ The qualified candidate must have a Bachelor's degree in Computer Science, Infor
 
 If you have interest in applying to this position please contact <bdkim@virginia.edu>.
 
+--- 
+
 ## Web Application Developer ##
 
 <p class = "lead">The Web Application Developer will work with the Research Computing team to develop an online educational platform for campus-wide programs in computational science and engineering. Another responsibility is to develop, maintain and enhance current SOMRC and CADRE websites. This is a restricted position contingent upon the continued availability of funds. This salaried position is expected to last six-months, with the possibility of being extended or end-date removed to become a permanent restricted position after the initial development project.</p>
