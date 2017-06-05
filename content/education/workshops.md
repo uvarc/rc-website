@@ -16,32 +16,22 @@ images = [""]
 
 - - -
 
-# Upcoming
+# Upcoming 
 
-## Building Shiny Web Applications in R
-
-Shiny is a framework for developing interactive, web-based tools with R. This workshop will cover how to create a basic user interface, add reactive widgets and publish a Shiny app.
-
-**Date**: Wednesday, April 19, 2017
-
-**Time**: 3:00pm - 5:00pm
-
-**Location**: Health Sciences Library Carter Classroom
-
-**Instructor**: VP Nagraj, SOM Research Computing
-
-[<button class="btn btn-primary">Register</button>](http://cal.hsl.virginia.edu/event/3066560)
+<div class="alert alert-success" role="alert" style="">
+  <h3>There are currently no workshops scheduled.</h3>
+  <p class="lead">See below for a list of previous workshops and check back soon for new announcements.</p>
+</div>
 
 - - -
 
 # Previous
 
-## Advanced Data Visualization with R
+## Spring 2017 
 
-## Advanced Data Manipulation with R
-
-## R For Beginners
-
-## Introduction to the Command Line
-
-## Introduction to Cloud Computing with AWS
+- [Building Shiny Web Applications in R](http://cal.hsl.virginia.edu/event/3066560)
+- [Advanced Data Visualization with R](http://cal.lib.virginia.edu/event/3027288)
+- [Advanced Data Manipulation with R](http://cal.hsl.virginia.edu/event/3066440)
+- [R For Beginners](http://cal.hsl.virginia.edu/event/3066390)
+- [Introduction to the Command Line](http://cal.hsl.virginia.edu/event/3066410)
+- [Introduction to Cloud Computing with AWS](http://cal.hsl.virginia.edu/event/3188800)
