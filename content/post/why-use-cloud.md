@@ -4,7 +4,7 @@ author = "SOMRC Staff"
 description = ""
 date = "2017-01-14T15:18:25-05:00"
 title = "Why use the Cloud?"
-draft = false
+draft = true
 tags = ["aws","cloud"]
 categories = ["feature"]
 
