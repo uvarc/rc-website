@@ -7,17 +7,17 @@
           { "name": "Research Data",
             "children": [
               { "name": "Ivy Secure Storage", 
-                "url":  "#ivy"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#ivy"
               },
               { "name": "High Security Zone Storage",
-                "url":  "#high-security-zone"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#high-security-zone"
               }
             ]
           },
           { "name": "Non-Research Data",
             "children": [
               { "name": "ITS Enterprise Storage",
-                "url":  "#its-enterprise"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#its-enterprise"
               }
             ]
           }
@@ -28,19 +28,19 @@
           { "name": "Rivanna User",
             "children": [
               { "name": "/home",
-                "url":  "#rivanna-home"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#rivanna-home"
               },
               { "name": "/scratch - LUSTRE",
-                "url":  "#rivanna-scratch"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#rivanna-scratch"
               },
               { "name": "/projects - Qumulo",
-                "url":  "#rivanna-projects"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#rivanna-projects"
               },
               { "name": "Value Storage",
-                "url":  "#value"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#value"
               },
               { "name": "Object Storage - Swift",
-                "url":  "#object"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#object"
               }
             ]
           },
@@ -53,17 +53,17 @@
                 "url":  "#tape"
               },
               { "name": "Object Storage - Swift",
-                "url":  "#object"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#object"
               }
             ]
           },
           { "name": "Personal Computing",
             "children": [
               { "name": "Box",
-                "url":  "#box"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#box"
               },
               { "name": "CrashPlan",
-                "url":  "#crashplan"
+                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#crashplan"
               }
             ]
           }
