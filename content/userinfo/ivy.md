@@ -334,11 +334,7 @@ Ivy Hadoop is an environment for distributed map/reduce computational analyses f
 
 ## Access
 
-Access to Ivy Hadoop is through the [Hue](http://gethue.com) web interface. Check out a live demo of Hue [here](http://demo.gethue.com). To access Ivy Hadoop, connect through the Joint VPN and go to:
-
-    http://udc-aw26-1.hpc.virginia.edu:8888/accounts/login/
-
-where you can enter your eservices login and password.
+The Hadoop / Spark installation on Ivy is under active development. If you have questions about access to this recourse, please email ivy-support@virginia.edu with information about your use-case.
 
 ## Software
 
