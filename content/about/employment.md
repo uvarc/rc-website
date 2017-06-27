@@ -57,4 +57,4 @@ The Computational Scientist/Research Computing Associate supports the University
 * Experience with SQL-based RDBMS system utilization
 * Experiences in image analysis & visualization programming
 
-For more information or to apply, review the [Jobs@UVa position description](	jobs.virginia.edu/applicants/Central?quickFind=82171).
+For more information or to apply, review the [Jobs@UVa position description](http://jobs.virginia.edu/applicants/Central?quickFind=82171).
