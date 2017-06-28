@@ -285,6 +285,8 @@ and regulatory compliance and, if approved, will be installed for you.
 
 Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
 
+[<button class="btn btn-success">Documentation - Ivy Virtual Machines</button>](https://discuss.rc.virginia.edu/c/ivy/vm)
+
 - - -
 
 <div class="spacer-100"></div>
@@ -322,7 +324,7 @@ For specifics about these features and more, refer to the [Ivy DDL User Guide](/
   <source src="https://s3.amazonaws.com/uvasom-assets/video/product_tour_trimmed.mp4" type="video/mp4">
 </video>
 
-
+[<button class="btn btn-success">Documentation - Ivy DDL</button>](https://discuss.rc.virginia.edu/c/ivy/ddl)
 
 - - -
 
@@ -349,7 +351,9 @@ Ivy Hadoop has 480 terabytes of HDFS storage shared amongst users. Each Hadoop n
 
 # Data Transfer In/Out of Ivy
 
-Moving your data in and out of Ivy requires that it move through the [Data Transfer Node (DTN)](https://ivyxfer.hpc.virginia.edu). This node has 100TB of storage and a web interface for you to move your data.
+Moving your data in and out of Ivy requires that it move through the **Data Transfer Node (DTN)**. This server has 100TB of storage and can be accessed via a web interface as well as via SFTP, SCP, or FTPS in the command-line.
+
+[<button class="btn btn-success">Documentation - Ivy DTN</button>](https://discuss.rc.virginia.edu/t/about-the-ivy-data-transfer-node-dtn/123)
 
 - - -
 
