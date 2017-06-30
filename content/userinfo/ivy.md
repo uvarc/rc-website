@@ -35,6 +35,47 @@ Once a project is approved a PI and her/his researchers must sign a RUDA (one fo
 
 - - -
 
+# Pricing
+
+Ivy resources will be provided at a fee to the PI on a per project, yearly basis. The fees for Virtual Machine (VM) environments are based on a combination of the tier of computational resources and amount of storage requested:
+
+<table class="table table-sm" style="width:50%;border:solid 1px #ccc;margin-left:4rem;">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Type</th>
+      <th>CPU</th>
+      <th>Memory</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Small</td>
+      <td>4 cores</td>
+      <td>16GB</td>
+      <td>$1,594</td>
+    </tr>
+    <tr>
+      <td>Medium</td>
+      <td>8 cores</td>
+      <td>32GB</td>
+      <td>$3,209</td>
+    </tr>
+    <tr>
+      <td>Large</td>
+      <td>16 cores</td>
+      <td>128GB</td>
+      <td>$8,156</td>
+    </tr>
+  </tbody>
+</table>
+
+All of the prices above indicate **yearly** costs. Funds will be collected via a purchase order (PTAO), which must be provided during the account request process.
+
+Please also note that VMs have minimal local storage space, so purchasing additional secure central storage space is recommended. Ivy secure storage is available for $360 per terabyte per year.
+
+Prices for the Domino Data Lab and Hadoop/Spark environments are TBD.
+
 # Connecting and Signing In
 
 ## <span class="badge badge-default">1</span> Authentication
@@ -106,18 +147,18 @@ Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2.
   <tbody>
     <tr>
       <td>Small</td>
-      <td>2 cores</td>
-      <td>4GB</td>
+      <td>4 cores</td>
+      <td>16GB</td>
     </tr>
     <tr>
       <td>Medium</td>
       <td>8 cores</td>
-      <td>16GB</td>
+      <td>32GB</td>
     </tr>
     <tr>
       <td>Large</td>
       <td>16 cores</td>
-      <td>64GB</td>
+      <td>128GB</td>
     </tr>
   </tbody>
 </table>
