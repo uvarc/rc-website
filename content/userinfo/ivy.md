@@ -10,6 +10,60 @@ author = "SOMRC Staff"
 
 +++
 
+<script>
+ var compute_prices = new Array();
+ compute_prices["small"]=1594;
+ compute_prices["medium"]=3209;
+ compute_prices["large"]=8156;
+	 
+function getComputePrice()
+{  
+    var computePrice=0;
+    var theForm = document.forms["vmcalc"];
+    var selectedTier = theForm.elements["selectedtier"];
+
+    for(var i = 0; i < selectedTier.length; i++)
+    {
+        if(selectedTier[i].checked)
+        {
+            computePrice = compute_prices[selectedTier[i].value];
+            
+            break;
+        }
+    }
+
+    return computePrice;
+}
+
+
+function getStoragePrice()
+{
+    var storagePrice=0;
+
+    var theForm = document.forms["vmcalc"];
+    var selectedStorage = theForm.elements["storageamount"]; 
+	storagePrice = selectedStorage.value*360;
+    return storagePrice;
+}
+
+
+function calculateTotal()
+{
+
+    var totalPrice = getComputePrice() + getStoragePrice();
+    var divobj = document.getElementById('totalPrice');
+    divobj.style.display='block';
+    divobj.innerHTML = "Estimated cost for VM is $"+totalPrice+" per year";
+
+}
+
+function hideTotal()
+{
+    var divobj = document.getElementById('totalPrice');
+    divobj.style.display='none';
+}
+</script>
+
 <div class="bd-callout bd-callout-warning">
 <h4>Ivy</h4>
 Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Hadoop/Spark MapReduce environment.
@@ -73,6 +127,33 @@ Ivy resources will be provided at a fee to the PI on a per project, yearly basis
 All of the prices above indicate **yearly** costs. Funds will be collected via a purchase order (PTAO), which must be provided during the account request process.
 
 Please also note that VMs have minimal local storage space, so purchasing additional secure central storage space is recommended. Ivy secure storage is available for $360 per terabyte per year.
+
+
+
+<body onload='hideTotal()'>
+    <div id="wrap">
+        <form action="" id="vmcalc" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+                <legend>Ivy Virtual Machine (VM) Cost Calculator</legend>
+                <label >Computing Tier</label>
+                <br/>
+                <label class='radiolabel'><input type="radio"  name="selectedtier" value="small" onclick="calculateTotal()" /> Small (4 Cores 16GB Memory)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedtier" value="medium" onclick="calculateTotal()" /> Medium (8 Cores 32GB Memory) </label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedtier" value="large" onclick="calculateTotal()" /> Large (16 Cores 128 GB Memory)</label><br/>
+                <label >Storage (TB)</label>
+         		<br/>
+         		<input name = "storageamount" type="number" step = ".25" value="0" min = "0" onclick = "calculateTotal()"><br/>
+         		<br>
+                <div id="totalPrice"></div>
+                </fieldset>
+            </div>
+       	 </form>
+	</div><!--End of wrap-->
+</body>
+
+
 
 Prices for the Domino Data Lab and Hadoop/Spark environments are TBD.
 
