@@ -3,3 +3,4 @@ wercker.yml
 public/*
 update.sh
 **/.DS_Store
+invalidate*
