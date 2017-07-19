@@ -134,3 +134,9 @@ Note that if the DDL project includes files or revisions that are not present on
 DDL includes an interactive dashboard for viewing CPU and memory usage per run within a given project. This can be especially helpful for diagnosing performance issues in your code. To access this feature, navigate to `Runs`, select a run and view the resource usage tab.
 
 <img class="img-fluid" src="/images/ivyddl_resourceusage.png" alt="Resource usage on Domino Data Lab session" align="center">
+
+# Further Documentation
+
+[<button class="btn btn-success">Ivy DDL FAQ</button>](https://discuss.rc.virginia.edu/c/ivy/ddl)
+
+[<button class="btn btn-success">General DDL Support Articles</button>](https://support.dominodatalab.com/)

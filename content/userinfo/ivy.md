@@ -415,7 +415,7 @@ Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst
 
 # Domino Data Lab
 
-<img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" /> Domino Data Lab (DDL) provides a central environment for data science projects including project management, collaboration with team members, and setting up hardware configuration for a project.  
+<img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" /> [Domino Data Lab (DDL)](https://www.dominodatalab.com/) provides a central environment for data science projects including project management, collaboration with team members, and setting up hardware configuration for a project.  
 
 ## Access
 
