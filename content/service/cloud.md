@@ -115,5 +115,3 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
     <a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=4&t=c&d=2015-10-06&ci=AWS00131326" target="_new"><img src="https://somrc.virginia.edu/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" style="width:196px;height:80px;" /></a>
   </div>
 </div>
-
-<a href="https://twitter.com/uvasomrc" class="twitter-follow-button" data-show-count="false">Follow @uvasomrc</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
