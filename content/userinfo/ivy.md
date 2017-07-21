@@ -483,4 +483,4 @@ Moving your data in and out of Ivy requires that it move through the **Data Tran
 
 # HIPAA Compliance
 
-The entire Ivy platform is HIPAA compliant by default. 
+The Ivy platform is HIPAA compliant by default.
