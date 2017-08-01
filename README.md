@@ -1,9 +1,9 @@
 # Research Computing - Website
 
-** Development Site URL:**
+**Development Site URL:**
 http://somrc-website.s3-website-us-east-1.amazonaws.com/
 
-** Production Site URL:**
+**Production Site URL:**
 https://somrc.virginia.edu/
 
 **To install:**

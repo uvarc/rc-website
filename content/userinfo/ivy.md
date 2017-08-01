@@ -475,10 +475,12 @@ Ivy Hadoop has 480 terabytes of HDFS storage shared amongst users. Each Hadoop n
 
 Moving your data in and out of Ivy requires that it move through the **Data Transfer Node (DTN)**. This server has 100TB of storage and can be accessed via a web interface as well as via SFTP, SCP, or FTPS in the command-line.
 
+<img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/408a13704cd919580a83065ea1e52da41c0cd653.png" />
+
 [<button class="btn btn-success">Documentation - Ivy DTN</button>](https://discuss.rc.virginia.edu/t/about-the-ivy-data-transfer-node-dtn/123)
 
 - - -
 
 # HIPAA Compliance
 
-The entire Ivy platform is HIPAA compliant by default. 
+The Ivy platform is HIPAA compliant by default.
