@@ -42,7 +42,7 @@ Request Consultation</button>
 Staff from SOMRC host weekly office hours in MR5 (Biomedical Engineering and Medical Science Building) Room 1005. Drop by with a project idea, question about a system or anything else you would like to discuss.
 
 <div class="alert alert-success" role="alert"> 
-Wednesdays 9:00-10:30AM <br>
-MR5 (Biomedical Engineering and Medical Science Building) Room 1005
+Wednesdays 10AM-12PM <br>
+Health Sciences Library Room 1212
 </div>
 
