@@ -66,7 +66,7 @@ function hideTotal()
 
 <div class="bd-callout bd-callout-warning">
 <h4>Ivy</h4>
-Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Hadoop/Spark MapReduce environment.
+Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Apache Spark environment.
 Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA requirements.
 </div>
 
@@ -76,7 +76,7 @@ Ivy consists of three separate computing environments. Access to one environment
 
 * [Virtual Machines](#virtual-machines)
 * [Domino Data Lab](#domino-data-lab)
-* [Hadoop/Spark](#hadoop-spark)
+* [Apache Spark](#apache-spark)
 
 - - -
 
@@ -155,7 +155,7 @@ Please also note that VMs have minimal local storage space, so purchasing additi
 
 
 
-Prices for the Domino Data Lab and Hadoop/Spark environments are TBD.
+Prices for the Domino Data Lab and Apache Spark environments are TBD.
 
 # Connecting and Signing In
 
@@ -452,22 +452,22 @@ For specifics about these features and more, refer to the [Ivy DDL User Guide](/
 
 <div class="spacer-100"></div>
 
-# Hadoop/Spark
+# Apache Spark
 
-Ivy Hadoop is an environment for distributed map/reduce computational analyses for Big Data applications.  
+Ivy Spark is an environment for distributed map/reduce computational analyses for Big Data applications.  
 
 ## Access
 
-The Hadoop / Spark installation on Ivy is under active development. If you have questions about access to this recourse, please email ivy-support@virginia.edu with information about your use-case.
+The Apache Spark installation on Ivy is under active development. If you have questions about access to this recourse, please email ivy-support@virginia.edu with information about your use-case.
 
 ## Software
 
-The platform comes with Cloudera Hadoop, YARN, Spark, Hive, Impala, Piig, ZooKeeper, and Oozie. 
+The platform comes with Cloudera Hadoop, Spark, YARN, Hive, Impala, Piig, ZooKeeper, and Oozie. 
 
 
 ## Storage
 
-Ivy Hadoop has 480 terabytes of HDFS storage shared amongst users. Each Hadoop node has 500 gigabytes of disk storage. Data can be uploaded through the Hue web interface. 
+Ivy Spark has 480 terabytes of HDFS storage shared amongst users. Each node has 500 gigabytes of local disk storage. Data can be uploaded through the Hue web interface. 
 
 - - -
 

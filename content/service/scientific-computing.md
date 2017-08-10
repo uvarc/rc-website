@@ -59,8 +59,8 @@ Examples of service areas include:
     Ivy provides a secure computing environment for all user levels. It is made up of three tiers, each HIPAA-compliant out of the box:
     <ul>
       <li>VMware virtual compute instances (Windows Server 2012R2 / CentOS Linux)</li>
-      <li>Apache Hadoop</li>
       <li>Domino Data Lab</li>
+      <li>Apache Spark</li>
     </ul>
     </p>
     <a href="https://somrc.virginia.edu/userinfo/ivy/" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
