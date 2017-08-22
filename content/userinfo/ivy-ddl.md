@@ -1,5 +1,5 @@
 +++
-title = "Ivy Domino Data Lab User Guide"
+title = "Ivy Domino Data Lab (DDL) Quick Start"
 draft = false
 tags = ["R","python", "Ivy", "Domino", "DDL"]
 date = "2017-05-01T12:35:54-04:00"
@@ -10,7 +10,13 @@ description = ""
 
 +++
 
-# Features
+<p class=lead>[Domino Data Lab (DDL)](https://www.dominodatalab.com/) provides a central environment and features for data science projects including project management, collaboration with team members, and setting up hardware configuration for a project.</p>
+
+## Getting an Account 
+
+### Account Request
+
+Access to DDL to Ivy is managed through the [Ivy account request process](https://somrc.virginia.edu/userinfo/ivy/#requesting-access). Accounts are issued on a per project basis, with PIs (and any project members) being granted individual accounts to log into the DDL platform. Once the request has been approved and all associated members have completed the necessary documentation, each individual project member can sign into DDL with his / her UVa Eservices user name and password. 
 
 ## Project Structure
 
@@ -18,17 +24,17 @@ DDL is organized into projects, which automatically provision a folder hierarchy
 
 Collaborators can "fork" (copy the contents of) projects, leave comments, and use built-in version control utilities to store / revert changes to files as necessary.
 
-## Uploading Files
+### Uploading Files
 
 To upload a script, dataset or other file, users can navigate to a project and select the "files" menu item. DDL includes a drag-and-drop interface for uploading files less than 550 MB.
 
-<img class="img-fluid" src="/images/ivyddl_uploadfiles.png" alt="Uploading files via Domino Data Lab web interface" align="center">
+## Running Code
 
-## Running code
+### Runs
 
-The DDL platform allows users to run Python and R scripts. To issue a run, navigate to the file you would like to execute and click `Run`. Alternatively you can can use the `Runs` window to start a run by entering the filename. Note that if code is associated with data, it should be written relative to the location of that dataset in the project directory. 
+The DDL platform allows users to run Python and R scripts that have been either uploaded to a project or written in one of the DDL editors or notebooks. To issue a run, navigate to the file you would like to execute and click `Run`. Alternatively you can can use the `Runs` window to start a run by entering the filename. Note that if code is associated with data, it should be written relative to the location of that dataset in the project directory. 
 
-## Using Notebook Sessions
+### Notebooks
 
 In addition to scheduling and executing scripts that have been uploaded, DDL provides an interactive notebook session feature. 
 
@@ -39,10 +45,23 @@ Available notebooks include:
 
 Scripts and data generated in an interactive notebook session can be saved ("synced") to the DDL project from which they were initiated. To do so, click on the DDL icon on the right side of the screen.
 
-<img class="img-fluid" src="/images/ivyddl_notebooksync.png" alt="Syncing notebook session contents with DDL project" align="center">
+## Configuring the Compute Environment
 
+### Choosing a Base Environment
 
-## Selecting Hardware Tiers
+Depending on what analysis tools (i.e. R or Python) you plan on using, you may need to adjust the default computing environment. For example, if your code is written to run with Python 2.x (and not Python 3.x), you can choose to an base environment that uses that version. Note that these configurations are on a per project basis, and can managed in by visiting **Settings >> Compute environment** in the given project.
+
+### Installing Packages
+
+Each compute environment comes with a number of popular packages / modules pre-installed. 
+Users are able to install additional packages as necessary via standard package management tools.
+
+For specifics related to R or Python package installation refer to the following:
+
+- [How do I install R packages on Ivy DDL?](https://discuss.rc.virginia.edu/t/how-do-i-install-r-packages-on-ivy-ddl/393)
+- [Installing Python Modules on Ivy DDL](https://discuss.rc.virginia.edu/t/installing-python-modules-on-ivy-ddl/382)
+
+### Selecting Hardware Tiers
 
 Ivy DDL includes several tiers of hardware to choose from. 
 
@@ -73,70 +92,17 @@ Ivy DDL includes several tiers of hardware to choose from.
   </tbody>
 </table>
 
-To specify the tier you would like to use, navigate to the project settings:
+To specify the tier you would like to use, navigate to **Settings >> Hardware tier**.
 
-<img class="img-fluid" src="/images/ivyddl_hardwaretier.png" alt="Selecting a hardware tier for a Domino Data Lab project on Ivy" align="center">
+## More Features
 
-## Using the Command Line Interface (CLI)
-
-Domino Data Lab (DDL) on Ivy is equipped with a command line interface (CLI) tool. This can be especially helpful for syncing local files, uploading large datasets (> 500 mb) and efficiently interacting with projects outside of the graphical environment.
-
-To install and configure the CLI:
-
-1. Download and run the CLI installer appropriate for your computer's operating system
-
-	- [Mac](https://app.dominodatalab.com/download/client/mac)
-	- [Windows](https://app.dominodatalab.com/download/client/win) 
-	- [Linux/Unix](https://app.dominodatalab.com/download/client/unix)
-
-2. Once the CLI software is installed, open a terminal and run:
-
-`domino login https://domino.hpc.virginia.edu`
-
-3. You will be prompted for your Domino account user name and password, which is your Eservices credentials
-
-4. After logging in you'll be returned to your console prompt in your terminal, but from there will be able to use the DDL CLI to:
-	
-	- [upload](https://somrc.virginia.edu/userinfo/ivy-ddl/#uploading-large-files-550-mb) / download files
-	- run jobs
-	- create a new project
-	
-For more information on use-cases for the DDL CLI visit the [Domino use cases documentation](https://support.dominodatalab.com/hc/en-us/articles/204842905--How-to-CLI-reference).
-
-## Installing Packages
-
-# Troubleshooting 
-
-## Uploading Large files (> 550 MB)
-
-Ivy DDL prevents files larger than 550 MB from being uploaded through the web interface. However, if you need to upload large files, you can use the DDL command line interface (CLI).
-
-Once [logged into the DDL CLI](https://somrc.virginia.edu/userinfo/ivy-ddl/#using-the-command-line-interface-cli), you are able to upload and download files to and from your project. 
-
-To sync files between `domino.hpc.virginia.edu` and a directory on your local computer, you must first initiate that folder as a Domino project:
-
-`domino init`
-
-From there, to upload the entire contents of that folder on your local computer to DDL use:
-
-`domino upload`
-
-You can upload an individual file by specifying the file name as follows:
-
-`domino upload file.txt`
-
-Note that if the DDL project includes files or revisions that are not present on your local computer, you will need to synchronize with `domino download` (download all changes *from* DDL *to* your local machine) or `domino sync` (download all changes *from* DDL *to* your local machine AND upload all changes *from* your local machine *to* DDL).
-
-<img class="img-fluid" src="/images/ivyddl_clisync.png" alt="Synchronizing changes with Ivy DDL command line interface" align="center">
-
-## Identifying Resource Usage Issues
-
-DDL includes an interactive dashboard for viewing CPU and memory usage per run within a given project. This can be especially helpful for diagnosing performance issues in your code. To access this feature, navigate to `Runs`, select a run and view the resource usage tab.
-
-<img class="img-fluid" src="/images/ivyddl_resourceusage.png" alt="Resource usage on Domino Data Lab session" align="center">
-
-# Further Documentation
+DDL includes a number of additional features. Use the resources below to find specific topics:
 
 [<button class="btn btn-success">Ivy DDL FAQ</button>](https://discuss.rc.virginia.edu/c/ivy/ddl)
 
 [<button class="btn btn-success">General DDL Support Articles</button>](https://support.dominodatalab.com/)
+
+Please note that because Ivy is designed to be a secure environment, certain DDL features are *not* available in Ivy DDL. Examples include the following:
+
+- [Github integration](https://support.dominodatalab.com/hc/en-us/articles/115000148846-Adding-a-Git-repository-to-a-Domino-Project)
+- Email notifications
