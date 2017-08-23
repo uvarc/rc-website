@@ -16,14 +16,14 @@ images = [""]
 
 - - -
 
-# Upcoming 
+# Upcoming Workshops
 
 <!--
 <div class="alert alert-success" role="alert" style="">
 </div>
 -->
 
-<h2>Fall 2017 Workshops</h2>
+## Fall 2017
   <ul>
 <li> Introduction to R – Wed 9/6/2017 8:30-11:30
 <li> Introduction to Python – Thu 9/7/2017 8:30-11:30
