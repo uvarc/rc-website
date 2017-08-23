@@ -18,9 +18,12 @@ images = [""]
 
 # Upcoming 
 
+<!--
 <div class="alert alert-success" role="alert" style="">
-  <h3>Fall 2017 Workshops</h3>
-  <p class="lead">However, these topics will be coming up in <b>Fall 2017</b>:</p>
+</div>
+-->
+
+<h3>Fall 2017 Workshops</h3>
   <ul>
 <li> Introduction to R – Wed 9/6 8:30-11:30
 <li> Introduction to Python – Thu 9/7 8:30-11:30
@@ -43,8 +46,6 @@ images = [""]
 <li> Introduction to Rivanna – Wed 11/1 9:00-11:00
 <li> Introduction to Ivy – Wed 11/8 9:00-10:30
   </ul>
-  <p class="lead">See below for a list of previous workshops and check back soon for new announcements.</p>
-</div>
 
 - - -
 
