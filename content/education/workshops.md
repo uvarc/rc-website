@@ -16,7 +16,7 @@ images = [""]
 
 - - -
 
-# Upcoming Workshops
+# Upcoming
 
 <!--
 <div class="alert alert-success" role="alert" style="">
