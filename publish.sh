@@ -49,3 +49,5 @@ else
   aws s3 sync --delete public/ s3://somrc-website/
   echo "--- Public dir published to AWS"
 fi
+
+aws cloudfront create-invalidation --distribution-id "E1JZBKRR78QE2T" --paths "/*"
