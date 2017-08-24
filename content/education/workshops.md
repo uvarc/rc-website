@@ -33,7 +33,7 @@ images = [""]
 <li> Introduction to the Command Line – Fri 9/9/2017 8:30-11:30 
 <li> Overview of Computational Infrastructure Environments at UVa – Tue 9/12/2017 10:00-12:00
 <li> Introduction to R – Thu 9/14/2017 2:00-5:00
-<li> Introduction to Python - Mon 9/11/2017 2:00-5:005
+<li> Introduction to Python - Mon 9/11/2017 2:00-5:00
 <li> Introduction to Ivy – Tue 9/19/2017 3:30-5:00
 <li> Introduction to Rivanna - Thu 9/21/2017 3:00-5:00
 <li> Introduction to Cloud – Tue 9/26/2017 2:00-5:00
