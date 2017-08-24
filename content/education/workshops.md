@@ -25,7 +25,7 @@ images = [""]
 
 ## Fall 2017
 
-<p class=lead>Open registration coming soon! Mark these dates on your calendar:</p>
+<div class="alert alert-success" role="alert">Open registration coming soon! Mark these dates on your calendar.</div>
 
   <ul>
 <li> Introduction to R – Wed 9/6/2017 8:30-11:30
