@@ -39,10 +39,10 @@ Request Consultation</button>
 
 # Office Hours
 
-Staff from SOMRC host weekly office hours in MR5 (Biomedical Engineering and Medical Science Building) Room 1005. Drop by with a project idea, question about a system or anything else you would like to discuss.
+Staff from SOMRC host weekly office hours in the HLS Room 2502. Drop by with a project idea, question about a system or anything else you would like to discuss.
 
 <div class="alert alert-success" role="alert"> 
 Wednesdays 10AM-12PM <br>
-Health Sciences Library Room 1212
+Health Sciences Library Room 2502 (Detmer Room)
 </div>
 
