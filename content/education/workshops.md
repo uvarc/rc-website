@@ -24,6 +24,9 @@ images = [""]
 -->
 
 ## Fall 2017
+
+<p class=lead>Open registration coming soon! Mark these dates on your calendar:</p>
+
   <ul>
 <li> Introduction to R – Wed 9/6/2017 8:30-11:30
 <li> Introduction to Python – Thu 9/7/2017 8:30-11:30
