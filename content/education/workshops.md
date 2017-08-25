@@ -30,14 +30,14 @@ images = [""]
 - [**Introduction to R**](http://cal.hsl.virginia.edu/event/3540810) – Wed 9/6/2017 8:30-11:30
 - [**Introduction to Python**](http://cal.hsl.virginia.edu/event/3542919) – Thu 9/7/2017 8:30-11:30
 - [**Introduction to the Command Line**](http://cal.hsl.virginia.edu/event/3542973) – Fri 9/9/2017 8:30-11:30 
-- [**Overview of Computational Infrastructure Environments at UVa**](z) – Tue 9/12/2017 10:00-12:00
+- [**Introduction to UVA Research Computing Resources**](z) – Tue 9/12/2017 10:00-12:00
 - [**Introduction to Python**](http://cal.hsl.virginia.edu/event/3542985) - Mon 9/11/2017 2:00-5:00
 - [**Introduction to R**](http://cal.hsl.virginia.edu/event/3542986) – Thu 9/12/2017 2:00-5:00
 - [**Introduction to Ivy**](http://cal.hsl.virginia.edu/event/3543023) – Tue 9/19/2017 3:30-5:00
-- [**Introduction to Rivanna**](z) - Thu 9/21/2017 3:00-5:00
-- [**Introduction to Cloud**](z) – Tue 9/26/2017 2:00-5:00
+- [**Introduction to Rivanna**](http://cal.hsl.virginia.edu/event/3543026) - Thu 9/21/2017 3:00-5:00
+- [**Introduction to Cloud**](http://cal.hsl.virginia.edu/event/3543036) – Tue 9/26/2017 2:00-5:00
 - [**Version Control with Git and Github**](z) – TBD
-- [**Advanced Data Manipulation in R**](z) – Tue 10/3/2017 2:00-5:00 
+- [**Advanced Data Manipulation in R**](http://cal.hsl.virginia.edu/event/3543043) – Tue 10/3/2017 2:00-5:00 
 - [**Survey of Database Technology**](z) – Wed 10/4/2017 10:00-12:00
 - [**Introduction to Ivy**](z) – Wed 10/11/2017 9:00-10:30
 - [**Advanced Data Visualization in R**](z) – Thu 10/10/2017 2:00-5:00
