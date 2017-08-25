@@ -38,13 +38,13 @@ images = [""]
 - [**Introduction to Cloud**](http://cal.hsl.virginia.edu/event/3543036) – Tue 9/26/2017 2:00-5:00
 - [**Version Control with Git and Github**](z) – TBD
 - [**Advanced Data Manipulation in R**](http://cal.hsl.virginia.edu/event/3543043) – Tue 10/3/2017 2:00-5:00 
-- [**Survey of Database Technology**](z) – Wed 10/4/2017 10:00-12:00
+- [**How to Work With Databases**](http://cal.hsl.virginia.edu/event/3543075) – Wed 10/4/2017 10:00-12:00
 - [**Introduction to Ivy**](z) – Wed 10/11/2017 9:00-10:30
 - [**Advanced Data Visualization in R**](z) – Thu 10/10/2017 2:00-5:00
-- [**Introduction to Cloud**](z) – Thu 10/19/2017 9:00-12:00
-- [**R Package Development Basics**](z) – Mon 10/16/2017 2:00-5:00
+- [**Introduction to Cloud**](http://cal.hsl.virginia.edu/event/3543088) – Thu 10/19/2017 9:00-12:00
+- [**R Package Development Basics**](http://cal.hsl.virginia.edu/event/3543086) – Mon 10/16/2017 2:00-5:00
 - [**Introduction to Matlab**](z) – TBD
-- [**What are Docker Containers?**](z) - TBD
+- [**What are Docker Containers?**](http://cal.hsl.virginia.edu/event/3543093) - Tues 10/31/2017 2:00-5:00
 - [**Introduction to Rivanna**](z) – Wed 11/1/2017 9:00-11:00
 - [**Introduction to Ivy**](z) – Wed 11/8/2017 9:00-10:30
 
