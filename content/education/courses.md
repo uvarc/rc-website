@@ -1,11 +1,11 @@
 +++
 draft = false
-date = "2017-01-27T10:55:28-05:00"
+date = "2017-08-25T10:55:28-05:00"
 title = "Courses"
 description = ""
 author = "SOMRC Staff"
 categories = ["education","courses"]
-tags = ["R","cloud","AWS"]
+tags = ["R","cloud","AWS","DSI"]
 
 +++
 
