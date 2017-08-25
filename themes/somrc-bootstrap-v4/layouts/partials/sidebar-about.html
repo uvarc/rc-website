@@ -1,5 +1,9 @@
 <aside class="col-sm-4 blog-sidebar">
 
+  <div class="sticky">
+
+  {{ partial "page-contents.html" . }}
+
   <section class="sidebar-module">
     <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
     <p class=lead>UVA Jobs</p>
@@ -10,6 +14,8 @@
   </section>
 
   {{ partial "user-help-widget.html" . }}
+
+  </div>
 
 </aside><!-- /.blog-sidebar -->
 
