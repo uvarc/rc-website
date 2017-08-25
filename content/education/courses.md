@@ -23,3 +23,10 @@ This course introduces methods, tools, and software for reproducibly managing, m
 **Spring 2017**
 
 This graduate course introduces a basic grounding in designing and implementing distributed and cloud systems. It aims to acquaint students with principles and technologies of server clusters, virtualized datacenters, Grids/P2P, Internet clouds, social networks, Internet of Things (IoT), and applications. Students will have the opportunity to gain hands-on experience on public cloud such as Amazon EC2. Selected scientific applications will also be used as case studies to gain hands-on experiences.
+
+
+# DSI MSDS Summer Bootcamp - Cloud Computing & Data Analysis in RStudio
+
+**Summer 2017**
+
+This 1.5 day course introduces MSDS students to the basics of cloud computing in AWS, and the independent management of code, data, and computing resources in a research environment. Particular concern is given to the concepts of programmable, reusable, scalable resources in the AWS cloud, through hands-on labs in EC2 and S3.
