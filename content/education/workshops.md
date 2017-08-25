@@ -27,6 +27,7 @@ images = [""]
 
 <div class="alert alert-success" role="alert">Registration is now open! Mark these dates on your calendar. Most classes are limited to 30 participants.</div>
 
+<!--
 - [**Introduction to R**](http://cal.hsl.virginia.edu/event/3540810) – Wed 9/6/2017 8:30-11:30
 - [**Introduction to Python**](http://cal.hsl.virginia.edu/event/3542919) – Thu 9/7/2017 8:30-11:30
 - [**Introduction to the Command Line**](http://cal.hsl.virginia.edu/event/3542973) – Fri 9/9/2017 8:30-11:30 
@@ -47,6 +48,10 @@ images = [""]
 - [**What are Docker Containers?**](http://cal.hsl.virginia.edu/event/3543093) - Tues 10/31/2017 2:00-5:00
 - [**Introduction to Rivanna**](z) – Wed 11/1/2017 9:00-11:00
 - [**Introduction to Ivy**](z) – Wed 11/8/2017 9:00-10:30
+-->
+
+<iframe name="workshops" id="workshops" width="100%" height="1000px" framecolor="#cccccc" frameborder="1" marginheight="4" marginwidth="4" src="https://api3.libcal.com/api_events.php?iid=3782&m=upc&cid=7723&c=&d=&l=50&target=_blank">
+</iframe>
 
 - - -
 
