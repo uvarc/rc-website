@@ -27,7 +27,7 @@ images = [""]
 
 <div class="alert alert-success" role="alert">Open registration coming soon! Mark these dates on your calendar.</div>
 
-- [*Introduction to R*](http://cal.hsl.virginia.edu/event/3540810) – Wed 9/6/2017 8:30-11:30
+- [**Introduction to R**](http://cal.hsl.virginia.edu/event/3540810) – Wed 9/6/2017 8:30-11:30
 - Introduction to Python – Thu 9/7/2017 8:30-11:30
 - Introduction to the Command Line – Fri 9/9/2017 8:30-11:30 
 - Overview of Computational Infrastructure Environments at UVa – Tue 9/12/2017 10:00-12:00
