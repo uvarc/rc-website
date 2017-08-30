@@ -1,6 +1,6 @@
 +++
 type = "reference"
-draft = false
+draft = true
 object = "awscli"
 images = [""]
 author = "SOMRC Staff"

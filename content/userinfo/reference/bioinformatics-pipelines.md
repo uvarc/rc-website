@@ -3,7 +3,7 @@
 date = "2017-02-22T15:28:51-05:00"
 description = ""
 title = "Data Processing Trends in Genomics and Bioinformatics"
-draft = false
+draft = true
 tags = ["bioinformatics","genomics"]
 categories = ["reference"]
 images = [""]

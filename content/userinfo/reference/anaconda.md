@@ -2,7 +2,7 @@
 author = "SOMRC Staff"
 description = ""
 title = "Anaconda (Python)"
-draft = false
+draft = true
 date = "2017-03-01T15:28:51-05:00"
 tags = ["anaconda","python"]
 categories = ["reference"]

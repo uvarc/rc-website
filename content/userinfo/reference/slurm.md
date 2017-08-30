@@ -2,7 +2,7 @@
 author = "SOMRC Staff"
 description = ""
 title = "Slurm Job Scheduler (HPC)"
-draft = false
+draft = true
 date = "2017-02-08T15:28:51-05:00"
 tags = ["hpc"]
 categories = ["reference"]

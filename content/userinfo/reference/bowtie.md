@@ -2,7 +2,7 @@
 author = "SOMRC Staff"
 description = ""
 title = "Bowtie 2"
-draft = false
+draft = true
 date = "2017-03-01T15:28:51-05:00"
 tags = ["r","python","bowtie","sequencing"]
 categories = ["reference"]
