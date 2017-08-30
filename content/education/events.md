@@ -13,10 +13,8 @@ tags = ["events", "community"]
 <p class=lead>School of Medicine Research Computing is involved with coordinating and participating in a variety of events to foster community among computational researchers.</p>
 
 # Upcoming 
-<div class="alert alert-success" role="alert" style="">
-  <h3>There are currently no events scheduled.</h3>
-  <p class="lead">See below for a list of previous events and check back soon for new announcements.</p>
-</div>
+
+- [UVa R Users Group September Meetup](https://www.meetup.com/UVa-R-Users-Group/events/242800492/)
 
 # Previous
 
