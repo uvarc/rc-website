@@ -5,7 +5,7 @@ author = "SOMRC Staff"
 images = [
   "",
 ]
-date = "2017-01-19T09:55:56-05:00"
+date = "2017-08-29T09:55:56-05:00"
 categories = [
   "userinfo",
 ]
@@ -82,6 +82,22 @@ draft = false
       <div class="card-block">
         <p>Read about how to use Domino Data Lab in Ivy.</p>
         <a href="https://somrc.virginia.edu/userinfo/ivy-ddl/"><button class="btn btn-success">Read More about DDL</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" role="tab" id="headingSix">
+      <h5 class="mb-0">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+          Do you have a question about research computing at UVA?
+        </a>
+      </h5>
+    </div>
+    <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+      <div class="card-block">
+        <p>Post your question on Discourse, our FAQ/Knowledgebase platform and join in the conversation with the rest of the community.</p>
+        <a href="https://discuss.rc.virginia.edu/" target="_new"><button class="btn btn-success">discuss.rc.virginia.edu</button></a>
       </div>
     </div>
   </div>

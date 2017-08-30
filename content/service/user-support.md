@@ -4,9 +4,9 @@ author = "SOMRC Staff"
 description = ""
 title = "User Support"
 draft = false
-tags = [""]
+tags = ["computing","cloud","data","bioinformatics"]
 categories = ["support"]
-date = "2017-02-07T12:04:58-05:00"
+date = "2017-08-27T12:04:58-05:00"
 
 +++
 
@@ -39,10 +39,10 @@ Request Consultation</button>
 
 # Office Hours
 
-Staff from SOMRC host weekly office hours in the HSL Room 2502. Drop by with a project idea, question about a system or anything else you would like to discuss.
+Staff from SOMRC host weekly office hours in the HSL Room 203. Drop by with a project idea, question about a system or anything else you would like to discuss.
 
 <div class="alert alert-success" role="alert"> 
 Wednesdays 10AM-12PM <br>
-Health Sciences Library Room 2502 (Detmer Room)
+Health Sciences Library Room 203 (Detmer Room)
 </div>
 
