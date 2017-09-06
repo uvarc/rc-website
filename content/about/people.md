@@ -45,6 +45,12 @@ categories = [
 With expertise in R and Python, he's been active in package development and a variety of open-source collaborations.</p>
     <p><a class="btn btn-secondary" href="mailto:vpnagraj@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/17575107" alt="Christina Gancayco" width="140" height="140">
+    <h2>Christina Gancayco</h2>
+    <p><b>Research Computing Associate</b> <br /> Christina recently joined SOM research computing and brings with her expertise in image analysis and Matlab. Prior to joining the team, Christing performed brain imaging research in the University of Virginia Department of Radiology and Medical Imaging. She takes great pride in developing computational solutions for expediting long or repetitive processes and looks forward to collaborating on more image analysis projects. </p>
+    <p><a class="btn btn-secondary" href="mailto:vpnagraj@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
+  </div><!-- /.col-lg-6 -->
 
   <!-- Have to remove haz4z
   <div class="col-lg-6">
