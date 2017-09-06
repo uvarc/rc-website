@@ -1,7 +1,7 @@
 language: go
 install: go get -v github.com/spf13/hugo
 script:
-  - hugo --disableRSS --disable404 -v --ignoreCache
+  - hugo -v --ignoreCache
 notifications:
     email:
         on_failure: always
