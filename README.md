@@ -59,6 +59,10 @@ Follow guidelines from https://gohugo.io/content/organization/. But essentially 
 
 To remove a cached object so you can see it immediately, configure the AWSCLI (steps above) and run the local `./publish.sh` script.
 
+Or execute this from your command-line:
+
+    aws cloudfront create-invalidation --distribution-id "E1JZBKRR78QE2T" --paths "/*"
+
 ## Modify the theme:
 
 * HUGO themes can be [browsed here](http://themes.gohugo.io/).
