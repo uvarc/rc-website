@@ -1,9 +1,11 @@
+[![Build Status](https://travis-ci.org/uvasomrc/rc-website.svg?branch=master)](https://travis-ci.org/uvasomrc/rc-website)
+
 # Research Computing - Website
 
-**Development Site URL:**
+**Development URL:**
 http://somrc-website.s3-website-us-east-1.amazonaws.com/
 
-**Production Site URL:**
+**Production URL:**
 https://somrc.virginia.edu/
 
 **To install:**
@@ -44,7 +46,7 @@ https://somrc.virginia.edu/
     description = "This is where a brief page description could go."
     +++
 
-**To preview your content:**
+**To preview your content locally:**
 `hugo server` will bring up the local Node.js server and give you a preview URL `http://localhost:1313/`
 
 **To publish your content:**
