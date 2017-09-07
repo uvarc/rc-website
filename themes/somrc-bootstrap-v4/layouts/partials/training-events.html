@@ -12,7 +12,7 @@
   {{ $sep := "," }}
   {{ range $i, $r := getCSV $sep $url }}
     <tr>
-      <td scope="row" style="width:70%;">{{ index $r 0 }}</td>
+      <td scope="row" style="width:70%;"><a href="http://cal.hsl.virginia.edu/event/{{ index $r 3 }}" target="_new">{{ index $r 0 }}</a></td>
       <td>{{ index $r 1 }}</td>
       <td align="right">{{ index $r 2 }}</td>
     </tr>
