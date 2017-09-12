@@ -1,6 +1,6 @@
 +++
 title = "Lab Computing"
-draft = false
+draft = true
 tags = ["storage","data","value","legacy","migration"]
 categories = ["userinfo"]
 images = [""]

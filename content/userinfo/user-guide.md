@@ -55,6 +55,8 @@ quell_footer = true
     </div>
   </div>
 </div>
+
+<!-- DROPPING SECOND ROW FOR NOW
 <div class="card-group">
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-stethoscope fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
@@ -90,6 +92,9 @@ quell_footer = true
     </div>
   </div>
 </div>
+-->
+
+
 <!-- Modal for HPC -->
 <div class="modal fade" id="hpcModal" tabindex="-1" role="dialog" aria-labelledby="hpcModalLabel" aria-hidden="true" style="margin-top:100px;">
   <div class="modal-dialog modal-lg" role="document">
