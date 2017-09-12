@@ -47,37 +47,41 @@
       <!-- end Category drop-down -->
       <br clear=all>
 
-      <h4 />
-
-      <!-- begin more recent posts section below feature -->
-
-        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
-
-        <div class="col-sm-4 blog-main">
-
-          <!-- <p class=lead>User News & Events</p> -->
-
-            {{ partial "twitter.html" . }}
-
-            <hr size=1 />
-
           <section class="sidebar-module">
             <a href="https://somrc.virginia.edu/education/workshops/">
               <button class="btn btn-primary" style="margin-top:0px;">Upcoming Workshops & Seminars</button>
             </a>
           </section>
 
-            <!-- {{ partial "upcoming-event.html" . }} -->
+      <!-- begin more recent posts section below feature -->
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+        <!-- END LEFT COLUMN -->
 
+        <!-- BEGIN MIDDLE COLUMN -->
+        <div class="col-sm-4 blog-main">
+
+          <!-- <p class=lead>User News & Events</p> -->
+
+            {{ partial "twitter.html" . }}
+
+            <!-- {{ partial "upcoming-event.html" . }} -->
+
+          <hr size=1 />
+
+            {{ partial "user-help-widget.html" . }}
+
+        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+        <!-- END MIDDLE COLUMN -->
+
+        <!-- BEGIN RIGHT COLUMN -->
         {{ "<!-- /.blog-sidebar -->" | safeHTML }}
         <aside class="col-sm-4 blog-sidebar">
 
+            {{ partial "office-hours.html" . }}
+
           <!-- <p class=lead>System Status</p>
             {{ partial "status.html" . }} -->
-
-            {{ partial "user-help-widget.html" . }}
 
           {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
           <section class="sidebar-module">
