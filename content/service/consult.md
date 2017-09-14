@@ -10,8 +10,7 @@ tags = [""]
 
 +++
 
-
-<form action="https://formspree.io/somrc-support@virginia.edu" method="POST">
+<form action="https://handlers.uvasomrc.io/consult/" method="POST">
   <div class="form-group">
     <label for="inputName">Name</label>
     <input type="text" name="_name" id="inputName" class="form-control" placeholder="Enter name">
