@@ -21,7 +21,7 @@ tags = [""]
   </div>
   <div class="form-group">
     <label for="inputUvaHandle">User ID</label>
-    <input type="text" name="_uvahandle" id="inputUvaHandle" class="form-control" placeholder="Enter your UVA computing user ID">
+    <input type="text" name="_uvahandle" id="inputUvaHandle" class="form-control" placeholder="Enter your UVA computing user ID, i.e. mst3k">
   </div>
   <div class="form-group">
     <label for="inputPhone">Phone</label>
