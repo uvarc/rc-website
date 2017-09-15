@@ -12,11 +12,15 @@ description = ""
 
 <p class=lead><a href = "https://www.dominodatalab.com/">Domino Data Lab (DDL)</a> provides a central environment and features for data science projects including project management, collaboration with team members, and setting up hardware configuration for a project.</p>
 
+- - -
+
 # Account Request
 
 Access to DDL to Ivy is managed through the [Ivy account request process](https://somrc.virginia.edu/userinfo/ivy/#requesting-access). Accounts are issued on a per project basis, with PIs (and any project members) being granted individual accounts to log into the DDL platform. 
 
 Once the request has been approved and all associated members have completed the necessary documentation, each individual project member can sign into DDL with his / her UVa Eservices user name and password. 
+
+- - -
 
 # Project Structure
 
@@ -27,6 +31,8 @@ Collaborators can "fork" (copy the contents of) projects, leave comments, and us
 ## Uploading Files
 
 To upload a script, dataset or other file, users can navigate to a project and select the "files" menu item. DDL includes a drag-and-drop interface for uploading files less than 550 MB.
+
+- - -
 
 # Running Code
 
@@ -44,6 +50,8 @@ Available notebooks include:
 - [Jupyter](http://jupyter.org/)
 
 Scripts and data generated in an interactive notebook session can be saved ("synced") to the DDL project from which they were initiated. 
+
+- - -
 
 # Compute Environments
 
@@ -93,6 +101,8 @@ Ivy DDL includes several tiers of hardware to choose from.
 </table>
 
 To specify the tier you would like to use, navigate to **Settings >> Hardware tier**.
+
+- - -
 
 # More Features
 
