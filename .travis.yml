@@ -4,6 +4,11 @@ script:
 - hugo -v --ignoreCache
 notifications:
   email:
+    on_success: change
     on_failure: always
+    recipients:
+      - somrc@virginia.edu
   slack:
     secure: S27Eetiy8VLj6jBz37wMX+9wl40PgdrHm347oIGFikJ+ci2XCkJCXyq+nDkt9YfYw83RA/sTezy6GbASxnYry5BItsUD1gJCcQ7YvUtAu7mjLcZZxd3mCJeydnPZOHFAPEPPwgH8EvD5sVwtPE/dluouG8aQdYSqji1ZiVAsLBr+PYIOrDeVDEYRE2hO0SUKfnxuVUnKwNVccahTeIcELXm8JGIhtf3/o+RkUT4YsjNQ2XH3RugGArcWvZex6WwZgeML83uPA0fuEb1nnBDkuRGsvJlgO6XNcaiDLyqQoj+LUNCzEjKcNWUrloFIR+I9nZBcqsWjmKtj3GA0Uzl678OJ5/CZvjmwjjrnbV7ENdde/MZXJr/MNq5mI6UZCayZJXrXNS4cVKI9ITWA09omEOhS3Z/FUiSR0MzldCnL9X5AP2MkxBUfW6c6vgb5Xkt8hB4BLHFNjvDew9oxWeHnPF5q+KsUEMJNk0cXPxNilgRfDd6YzCMQUzwi/e1eSX2QCK86ZDla+21QJQEgS+0ZnJQaxWFCg1swRoBw40828Mcz1N1BPV8X5n4QcKAgUyl2BfxVylWnEdua68YpCsU2U7T7bKUo2JxAbgpnG3P3g15o4R4EVK/r8Ztwnkqib9nVyMLTyC7QGLjGLQ/F2Hjvp+QfNZ6DnXITP4CHfkLE+3Q=
+    on_success: change
+    on_failure: always
