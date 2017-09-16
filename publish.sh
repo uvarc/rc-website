@@ -36,7 +36,7 @@ else
   rm -R *
   cd ../
   echo "--- Content cleared"
-  hugo --disableRSS --disable404 -v --ignoreCache
+  hugo -v --ignoreCache
   echo "--- Hugo content generated"
   cp -R storage public/storage
   echo "--- Copied mockup of storage decision tree"
