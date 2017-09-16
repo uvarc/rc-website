@@ -47,7 +47,7 @@ else
   cp 404.html public/
   echo "--- 404 error page copied"
   aws s3 sync --delete public/ s3://somrc-website/
-  aws s3 sync --delete public/ s3://somrc-website-uswest2/
+  # aws s3 sync --delete public/ s3://somrc-website-uswest2/
   echo "--- Public dir published to AWS"
 fi
 
