@@ -4,9 +4,9 @@
 <div class="sticky">
 
   {{ partial "page-contents.html" . }}
-  
-  {{ partial "user-help-widget.html" . }}
 
+  {{ partial "office-hours.html" . }}
+  
   <section class="sidebar-module">
     <p class=lead>Education/Training Opportunities</p>
     <ol class="list-unstyled">
@@ -15,6 +15,8 @@
       {{ end }}
     </ol>
   </section>
+
+  {{ partial "user-help-widget.html" . }}
 
 <section id="menu" class="sidebar-module">
 
