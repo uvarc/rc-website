@@ -16,6 +16,7 @@ disableKinds= ["sitemap","RSS","404"]
 [taxonomies]
   tag = "tags"
   category = "categories"
+  featured = "featured"
 
 [params]
   subtitle = "Research Computing"

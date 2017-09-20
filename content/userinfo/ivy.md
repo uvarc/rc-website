@@ -343,6 +343,7 @@ and regulatory compliance and, if approved, will be installed for you.
 
 Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
 
+## Learn More
 [<button class="btn btn-success">Documentation - Ivy Virtual Machines</button>](https://discuss.rc.virginia.edu/c/ivy/vm)
 
 - - -
@@ -400,7 +401,6 @@ The Apache Spark installation on Ivy is under active development. If you have qu
 
 The platform comes with Cloudera Hadoop, Spark, YARN, Hive, Impala, Piig, ZooKeeper, and Oozie. 
 
-
 ## Storage
 
 Ivy Spark has 480 terabytes of HDFS storage shared amongst users. Each node has 500 gigabytes of local disk storage. Data can be uploaded through the Hue web interface. 
@@ -413,6 +413,7 @@ Moving your data in and out of Ivy requires that it move through the **Data Tran
 
 <img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/408a13704cd919580a83065ea1e52da41c0cd653.png" />
 
+## Learn More
 [<button class="btn btn-success">Documentation - Ivy DTN</button>](https://discuss.rc.virginia.edu/t/about-the-ivy-data-transfer-node-dtn/123)
 
 - - -

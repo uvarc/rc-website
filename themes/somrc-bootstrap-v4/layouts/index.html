@@ -49,11 +49,9 @@
 
           <section class="sidebar-module">
             <a href="https://somrc.virginia.edu/education/workshops/">
-              <button class="btn btn-primary" style="margin-top:0px;">Upcoming Workshops & Seminars</button>
+              <button class="btn btn-primary" style="margin-top:0px;margin-bottom:10px;">Upcoming Workshops & Seminars</button>
             </a>
           </section>
-
-      <!-- begin more recent posts section below feature -->
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
         <!-- END LEFT COLUMN -->
@@ -80,17 +78,19 @@
 
             {{ partial "office-hours.html" . }}
 
-          <!-- <p class=lead>System Status</p>
-            {{ partial "status.html" . }} -->
-
-          {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
           <section class="sidebar-module">
-            <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
             <p class=lead>Recent News</p>
             <ol class="list-unstyled">
-              {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
-              <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
-              {{ end }}
+              <!-- Get all posts-->
+              {{ $posts := where .Site.Pages "Type" "post" }}
+              <!-- (re)set the counter to 0 -->
+              {{ $.Scratch.Set "tagCounter" 0 }}
+              <!-- increment counter if post contains the current tag-->
+                {{ range first 5 $posts}}
+                  {{ if in .Params.tags "featured" }}
+                    <li><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+                  {{ end }}
+                {{ end }}
             </ol>
           </section>
 

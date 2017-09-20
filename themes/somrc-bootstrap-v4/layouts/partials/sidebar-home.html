@@ -7,7 +7,7 @@
 
     {{ partial "user-help-widget.html" . }} 
 
-  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 3) }}
 
   <section class="sidebar-module">
     <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
