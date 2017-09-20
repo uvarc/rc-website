@@ -47,12 +47,6 @@
       <br clear=all>
       <!-- end Category drop-down -->
 
-          <section class="sidebar-module">
-            <a href="https://somrc.virginia.edu/education/workshops/">
-              <button class="btn btn-primary" style="margin-top:0px;margin-bottom:10px;">Upcoming Workshops & Seminars</button>
-            </a>
-          </section>
-
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
         <!-- END LEFT COLUMN -->
 
@@ -67,7 +61,10 @@
 
           <hr size=1 />
 
-            {{ partial "user-help-widget.html" . }}
+          <section class="sidebar-module">
+            <p class=lead>Recent News</p>
+            {{ partial "recent-news.html" . }}
+          </section>
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
         <!-- END MIDDLE COLUMN -->
@@ -78,13 +75,10 @@
 
             {{ partial "office-hours.html" . }}
 
-          <section class="sidebar-module">
-            <p class=lead>Recent News</p>
-            {{ partial "recent-news.html" . }}
-          </section>
+            {{ partial "user-help-widget.html" . }}
 
           <section class="sidebar-module">
-            <p class="lead">Training</p>
+            <p class="lead"><a style="text-decoration:none;color:black;" href="https://somrc.virginia.edu/education/workshops/">Training</a></p>
             {{ partial "training-events.html" . }}
           </section>
 

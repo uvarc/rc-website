@@ -117,8 +117,8 @@ If you are working from a secure Health Systems workstation you are ready to con
 from 1-2 weeks for delivery. You must pick up and activate your token in person, with proof of identification. Your token will have its own password in order to be used. </p>
 
 <ul>
-<li><a href="http://its.virginia.edu/identity/token/" target="_new">Read general information about identity tokens at UVA</a>.
-<li>You should work with your LSP to submit a token request for you.
+  <li><a href="http://its.virginia.edu/identity/token/" target="_new">Read general information about identity tokens at UVA</a>.
+  <li>You should work with your LSP to submit a token request for you.
 </ul>
 
 <a href="http://its.virginia.edu/identity/token/distribution.html" target="_new"><button class="btn btn-sm btn-warning">Request a UVA Identity Token</button></a>
