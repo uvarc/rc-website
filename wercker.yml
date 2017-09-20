@@ -7,7 +7,7 @@ box: debian
 
 build:
   steps:
-    - arjen/hugo-build
+    - arjen/hugo-build@1.13.1:
         theme: somrc-bootstrap-v4
         flags: --disableRSS --disable404 -v --ignoreCache
 
