@@ -5,7 +5,7 @@
               {{ $.Scratch.Set "tagCounter" 0 }}
               <!-- increment counter if post contains the current tag-->
                 {{ range first 5 $posts}}
-                  {{ if in .Params.tags "featured" }}
+                  {{ if in .Params.tags "feature" }}
                     <li><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
                   {{ end }}
                 {{ end }}

@@ -11,7 +11,7 @@ tags = [
   "cloud",
   "xsede",
   "cadre",
-  "featured"
+  "feature"
 ]
 categories = [
   "feature",
