@@ -85,7 +85,7 @@ Ivy consists of three separate computing environments. Access to one environment
 Access to Ivy resources is project-based, limited to PIs and their designees, and requires approval. Costs for Ivy resources and storage must be funded by the PI.
 Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
 
-[<button class="btn btn-success">Request Access</button>](https://cadre.virginia.edu/node/add/account-request)
+[<button class="btn btn-success">Request an Ivy Account</button>](https://cadre.virginia.edu/node/add/account-request)
 
 - - -
 
@@ -103,7 +103,7 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 
 <p>Need help resetting your Eservices password?</p>
 
-<a href="http://its.virginia.edu/accounts/wizard.html" target="_new"><button class="btn btn-sm btn-warning">Reset Password</button></a>
+<a href="http://its.virginia.edu/accounts/wizard.html" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a>
 
 If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.
 
@@ -144,8 +144,6 @@ will authenticate to the UVA network using a digital certificate installed on yo
 </div>
 
 - - -
-
-<div class="spacer-100"></div>
 
 # Virtual Machines
 
@@ -344,11 +342,10 @@ and regulatory compliance and, if approved, will be installed for you.
 Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
 
 ## Learn More
-[<button class="btn btn-success">Documentation - Ivy Virtual Machines</button>](https://discuss.rc.virginia.edu/c/ivy/vm)
+
+[<button class="btn btn-success">Read more about Ivy Virtual Machines</button>](https://discuss.rc.virginia.edu/c/ivy/vm)
 
 - - -
-
-<div class="spacer-100"></div>
 
 # Domino Data Lab
 
@@ -383,11 +380,10 @@ For specifics about these features and more, refer to the [Ivy DDL User Guide](/
   <source src="https://s3.amazonaws.com/uvasom-assets/video/product_tour_trimmed.mp4" type="video/mp4">
 </video>
 
-[<button class="btn btn-success">Documentation - Ivy DDL</button>](https://discuss.rc.virginia.edu/c/ivy/ddl)
+
+[<button class="btn btn-success">Read more about Ivy DDL</button>](https://discuss.rc.virginia.edu/c/ivy/ddl)
 
 - - -
-
-<div class="spacer-100"></div>
 
 # Apache Spark
 
@@ -414,7 +410,8 @@ Moving your data in and out of Ivy requires that it move through the **Data Tran
 <img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/408a13704cd919580a83065ea1e52da41c0cd653.png" />
 
 ## Learn More
-[<button class="btn btn-success">Documentation - Ivy DTN</button>](https://discuss.rc.virginia.edu/t/about-the-ivy-data-transfer-node-dtn/123)
+
+[<button class="btn btn-success">Read more about the Ivy DTN</button>](https://discuss.rc.virginia.edu/t/about-the-ivy-data-transfer-node-dtn/123)
 
 - - -
 
