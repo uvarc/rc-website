@@ -22,7 +22,7 @@ Follow guidelines from https://gohugo.io/content/organization/. But essentially 
   * `hugo new post/here-is-my-post.md`
   * `hugo new top-level-page.md`
   * Reference: [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-  * Store images in `static/images/`. For example, the published URL of `static/images/uva-som.jpg will be `https://somrc.virginia.edu/images/uva-som.jpg`
+  * Store images in `static/images/`. For example, the published URL of `static/images/uva-som.jpg` will be https://somrc.virginia.edu/images/uva-som.jpg
 
 **About front matter metadata (at the head of each object):**
 
@@ -73,4 +73,4 @@ Or execute this from your command-line:
 
 ## Events Data
 
-The "Training / Upcoming Events" grid is populated with the `events.csv` file. This file is published to a separate endpoint, and Hugo compiles the CSV into HTML when the site is compiled.
+The "Training / Upcoming Events" grid is populated by the `events.csv` file. Hugo renders the CSV into HTML when the site is compiled.
