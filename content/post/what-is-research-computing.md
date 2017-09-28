@@ -3,7 +3,7 @@ images = [""]
 author = "SOMRC Staff"
 description = ""
 title = "What is Research Computing?"
-date = "2017-02-01T10:26:34-05:00"
+date = "2017-04-19T10:26:34-05:00"
 draft = false
 tags = [
   "somrc",
