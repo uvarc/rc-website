@@ -10,10 +10,12 @@ categories = ["feature"]
 
 +++
 
-School of Medicine Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by SOMRC experts and are freely available to UVa faculty, staff and students.
+School of Medicine Research Computing provides training opportunities covering a variety of data analysis, basic programming 
+and computational topics. All of the classes are taught by SOMRC experts and are freely available to UVa faculty, staff and students.
 
 * R / R packages
 * Python
+* Matlab
 * Data manipulation
 * Data visualization
 * Cloud Computing
