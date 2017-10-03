@@ -24,8 +24,10 @@
       <!-- begin Featured Story section -->
       <p class=lead>Featured</p>
       {{ range first 2 (where .Site.Pages "Type" "post") }}
-        <h5><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></h5>
-        <p style="font-size:0.9em;margin-bottom:30px;"> {{ slicestr .Summary 0 420 | markdownify }} ...</p>
+        <a href="{{.RelPermalink}}" style="text-decoration:none;color:black;"><div>
+          <h5>{{.Title | markdownify }}</h5>
+          <p style="font-size:0.9em;margin-bottom:30px;"> {{ slicestr .Summary 0 420 | markdownify }} ...</p>
+        </div></a>
       {{ end }}
       <!-- end Featured Story section -->
 
