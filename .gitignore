@@ -4,3 +4,4 @@ public/*
 update.sh
 **/.DS_Store
 invalidate*
+wercker*

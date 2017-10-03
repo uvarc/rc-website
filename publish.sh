@@ -19,7 +19,7 @@ echo "**********************************************************"
 echo ""
 read -p "   Do you still want to manually publish? [Y/n]: " proceed
 case $proceed in
-    [Yy]* ) proceedx="1"; break;;
+    [Yy]* ) proceedx="1";;
     [Nn]* ) proceedx="2";;
     * ) echo "Please answer Y or N";;
 esac
