@@ -10,9 +10,9 @@ date = "2017-03-23T17:17:53-04:00"
 
 +++
 
+<div class="bd-callout bd-callout-warning">
 <p class=lead>Bringing expertise in data analysis and large scale computation, School of Medicine Research Computing is supporting clinical research at UVa. Several recent collaborations are listed below.</p>
-
-- - -
+</div>
 
 # Heart Rate and Blood Pressure Analysis 
 

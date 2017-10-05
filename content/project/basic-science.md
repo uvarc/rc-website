@@ -10,9 +10,9 @@ images = [""]
 
 +++
 
+<div class="bd-callout bd-callout-warning">
 <p class=lead>School of Medicine Research Computing is engaged in multiple collaborative projects in support of basic science research. Below is a list of some recent collaborations in this area.</p>
-
-- - -
+</div>
 
 # PHACTR1 and Smooth Muscle Cell Behavior
 
