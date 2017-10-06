@@ -113,7 +113,7 @@ If you are working from a secure Health Systems workstation you are ready to con
 
 <div class="feature-box">
 
-<p>To connect to the Ivy environment with VPN you will need a physical USB identity token, issued to you by the <b><a href="http://www.virginia.edu/ispro/ispa/accessmanagement/" target="_new">ISPRO Access Management Office</a></b>. Tokens must be requested, approved, and may take 
+<p>To connect to the Ivy environment with VPN you will need a physical USB identity token, issued to you by the <b><a href="https://security.virginia.edu/access" target="_new">ISPRO Access Management Office</a></b>. Tokens must be requested, approved, and may take 
 from 1-2 weeks for delivery. You must pick up and activate your token in person, with proof of identification. Your token will have its own password in order to be used. </p>
 
 <ul>
@@ -261,8 +261,8 @@ and regulatory compliance and, if approved, will be installed for you.
           <ul>
             <li>R 3.2.3</li>
             <li>Perl 5.10</li>
-            <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 2</a></li>
-            <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 3</a></li>
+            <li>Anaconda Python 2
+            <li>Anaconda Python 3
             <li>Java SDK+JRE 1.8</li>
             <li>X2GO Server</li>
             <li>Rodeo 1.1.21</li>
@@ -282,8 +282,8 @@ and regulatory compliance and, if approved, will be installed for you.
           <ul>
             <li>R 3.2.3</li>
             <li>Strawberry Perl 5.22.1.2</li>
-            <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 2</a></li>
-            <li><a href="https://somrc.virginia.edu/userinfo/reference/anaconda/">Anaconda Python 3</a></li>
+            <li>Anaconda Python 2
+            <li>Anaconda Python 3
             <li>Java SDK+JRE 1.8</li>
             <li>X2GO Client</li>
             <li>Rodeo 1.1.21</li>
