@@ -71,7 +71,7 @@ For specifics related to R or Python package installation refer to the following
 
 ## Selecting Hardware Tiers
 
-Ivy DDL includes several tiers of hardware to choose from. 
+Ivy DDL currently has a single hardware tier available. This tier is selected by default and currently is the only option available on Ivy DDL.
 
 <table class="table table-sm" style="width:50%;border:solid 1px #ccc;margin-left:4rem;">
   <thead class="thead-inverse">
@@ -84,23 +84,13 @@ Ivy DDL includes several tiers of hardware to choose from.
   <tbody>
     <tr>
       <td>Free</td>
-      <td>1 core</td>
-      <td>6GB</td>
-    </tr>
-    <tr>
-      <td>Medium</td>
-      <td>4 cores</td>
-      <td>16GB</td>
-    </tr>
-    <tr>
-      <td>Dedicated</td>
-      <td>20 cores</td>
+      <td>18 cores</td>
       <td>120GB</td>
     </tr>
   </tbody>
 </table>
 
-To specify the tier you would like to use, navigate to **Settings >> Hardware tier**.
+In the future additional tiers may be specified; to specify the tier you would like to use, navigate to **Settings >> Hardware tier**.
 
 - - -
 
