@@ -38,7 +38,7 @@ need a relational or NoSQL database, a messaging service, or offsite storage? Re
 and code-based tools into their HPC jobs to create, use, and manage external cloud services.
 
 * **HIPAA-Compliant Computing**<br />
-Researchers working on clinical datasets use Ivy, our internal private virtualized platform
+Researchers working on clinical datasets use Ivy, our private virtualized platform
 to perform HIPAA compliant analytics and compute jobs. This platform offers virtual machines, an R/Python data analytics
 tool, and Hadoop/Spark for larger analytics projects. Many users in Ivy work with EPIC clinical data alongside other
 highly-sensitive datasets for their investigations.
@@ -138,9 +138,10 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
   </div>
 </div>
 
-# Solution Design & Consulting
+# Solution Architecture
 
-If you have an project and need to think through implementation, we would be happy to sit down and discuss design options with you. 
+If you have an project and need to think through implementation, we would be happy to sit down and discuss design options
+ with you based on your requirements and possible options.
 
 [<button class="btn btn-success">Request a Consultation</button>](https://somrc.virginia.edu/service/consult/)
 
