@@ -1,6 +1,6 @@
 # Ignore a few things:
 wercker.yml
-public/*
+public/
 update.sh
 **/.DS_Store
 invalidate*
