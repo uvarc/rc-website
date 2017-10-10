@@ -27,32 +27,60 @@ images = [
 
 # How Researchers Use the Cloud
 
-* **Serverless Web**<br />
+<table class="table table-striped">
+  <tbody>
+    <tr>
+      <th scope="row" style="width:25%;">Serverless Web</th>
+      <td>
 SoM faculty and researchers can share data, findings, tools and other resources from static HTML
 content published to object storage. This simple method for publishing can cost only a few dollars a month and requires
-no server management.
-
-* **Ancillary Services in Support of HPC**<br />
+no server management. 
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" style="width:25%;font-weight:bold;">Data Lakes</th>
+      <td>
+A new paradigm in data storage and processing, data lakes help researchers by providing a singular repository for both
+structured and unstructured data, of any type or size. These data can then be siphoned off for processing, either in
+real-time streams or in queues for analysis later.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" style="width:25%;font-weight:bold;">Ancillary Services in Support of HPC</th>
+      <td>
 Users of HPC usually have more than enough computing power to run their jobs. But what if you
 need a relational or NoSQL database, a messaging service, or offsite storage? Researchers have begun integrating command-line
 and code-based tools into their HPC jobs to create, use, and manage external cloud services.
-
-* **HIPAA-Compliant Computing**<br />
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" style="width:25%;font-weight:bold;">HIPAA-Compliant Computing</th>
+      <td>
 Researchers working on clinical datasets use Ivy, our private virtualized platform
 to perform HIPAA compliant analytics and compute jobs. This platform offers virtual machines, an R/Python data analytics
 tool, and Hadoop/Spark for larger analytics projects. Many users in Ivy work with EPIC clinical data alongside other
-highly-sensitive datasets for their investigations.
-
-<img src="https://somrc.virginia.edu/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:33%;padding-left:10px;" />
-
-* **Workflows & Pipeline Management**<br />
+highly-sensitive datasets for their investigations. 
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" style="width:25%;font-weight:bold;">Workflows & Pipeline Management</th>
+      <td>
+<img src="https://somrc.virginia.edu/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:30%;padding-left:10px;" />
 Researchers need flexibility for where they run their data pipelines -- it might be on a personal computer, a lab server,
 an HPC cluster, or a cloud instance. We are working with faculty to extend some commonly-used pipeline tools so that they
-can create and push jobs to cloud-based resources, regardless of the cloud vendor.
-
-* **Long-term Cold Storage**<br />
+can create and push jobs to cloud-based resources, regardless of the cloud vendor. 
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" style="width:25%;font-weight:bold;">Long-term Cold Storage</th>
+      <td>
 AWS Glacier and Google Nearline/Coldline offer researchers "cold" offsite storage for long-term backups of infrequently-accessed data. 
-Genomics researchers use Glacier to store terabytes of source data as required by grants and federal research projects.
+Genomics researchers use Glacier to store terabytes of source data as required by grants and federal research projects. 
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 
 # Other Common Use Cases
 
@@ -162,6 +190,6 @@ If you have an idea for a workshop or would like to schedule training for your l
     <a href="https://aws.amazon.com/education/awseducate/" target="_new"><img src="https://www.awseducate.com/resource/AWSLogo_350" alt="AWS Educate Member" style="padding-top:20px;padding-bottom:20px;" /></a>
   </div>
   <div class="col-sm-8">
-    <a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=4&t=c&d=2015-10-06&ci=AWS00131326" target="_new"><img src="https://somrc.virginia.edu/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" style="width:196px;height:80px;" /></a>
+    <img src="https://somrc.virginia.edu/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" style="width:196px;height:80px;" />
   </div>
 </div>
