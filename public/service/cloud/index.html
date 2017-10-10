@@ -166,13 +166,62 @@
     
 
 <p><img src="https://somrc.virginia.edu/images/aws-logo-344x150.png" alt="AWS" align=right style="height:50%;width:50%;max-width:33%;" />
-<p class=lead>Cloud computing is ideal for running flexible, scalable applications on demand, in periodic bursts, or for fixed periods of time. UVA SOMRC works alongside researchers to design and run research applications and datasets into Amazon Web Services, the leader among public cloud vendors. This means that server, storage, and database needs do not have to be estimated or purchased beforehand – they can be scaled larger and smaller with your needs, or programmed to scale dynamically with your application. If you have an idea or project and need a proof of concept, we would be happy to sit down and design a cloud solution with you.</p></p>
+<p class=lead>Cloud computing is ideal for running flexible, scalable applications on demand, in periodic bursts, or for fixed periods of time. UVA SOMRC works alongside researchers to design and run research applications and datasets into Amazon Web Services, the leader among public cloud vendors. This means that server, storage, and database needs do not have to be estimated or purchased beforehand – they can be scaled larger and smaller with your needs, or programmed to scale dynamically with your application.</p></p>
 
-<hr size=1 style="padding-bottom:20px;" />
+<hr size=1 style="padding-bottom:10px;" />
+
+<h1 id="how-researchers-use-the-cloud">How Researchers Use the Cloud</h1>
+
+<ul>
+<li><p><strong>Serverless Web</strong><br />
+SoM faculty and researchers can share data, findings, tools and other resources from static HTML
+content published to object storage. This simple method for publishing can cost only a few dollars a month and requires
+no server management.</p></li>
+
+<li><p><strong>Ancillary Services in Support of HPC</strong><br />
+Users of HPC usually have more than enough computing power to run their jobs. But what if you
+need a relational or NoSQL database, a messaging service, or offsite storage? Researchers have begun integrating command-line
+and code-based tools into their HPC jobs to create, use, and manage external cloud services.</p></li>
+
+<li><p><strong>HIPAA-Compliant Computing</strong><br />
+Researchers working on clinical datasets use Ivy, our internal private virtualized platform
+to perform HIPAA compliant analytics and compute jobs. This platform offers virtual machines, an R/Python data analytics
+tool, and Hadoop/Spark for larger analytics projects. Many users in Ivy work with EPIC clinical data alongside other
+highly-sensitive datasets for their investigations.</p></li>
+</ul>
+
+<p><img src="https://somrc.virginia.edu/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:33%;padding-left:10px;" /></p>
+
+<ul>
+<li><p><strong>Workflows &amp; Pipeline Management</strong><br />
+Researchers need flexibility for where they run their data pipelines &ndash; it might be on a personal computer, a lab server,
+an HPC cluster, or a cloud instance. We are working with faculty to extend some commonly-used pipeline tools so that they
+can create and push jobs to cloud-based resources, regardless of the cloud vendor.</p></li>
+
+<li><p><strong>Long-term Cold Storage</strong><br />
+AWS Glacier and Google Nearline/Coldline offer researchers &ldquo;cold&rdquo; offsite storage for long-term backups of infrequently-accessed data.
+Genomics researchers use Glacier to store terabytes of source data as required by grants and federal research projects.</p></li>
+</ul>
+
+<h1 id="other-common-use-cases">Other Common Use Cases</h1>
+
+<ul>
+<li><p><strong>Proofs of concept</strong> - To verify a system or design works, to benchmark processing speeds, we may use short-lived instances to learn from before building a production system.</p></li>
+
+<li><p><strong>Test / Development environments</strong> - For installing test packages, trying new ideas, and testing design patterns.</p></li>
+
+<li><p><strong>Dynamic / flexible / scaling application stacks</strong> - When future traffic or load cannot be determined beforehand, deploying into a dynamic environment means the infrastructure is not locked into any set type of CPU/RAM or scale.</p></li>
+
+<li><p><strong>Short-term or fast deployment projects</strong> - For almost immediate computing needs, existing users can create new instances as needed.</p></li>
+
+<li><p><strong>Container deployments</strong> - Run microservices (such as Docker containers) in an environment that can load-balance their traffic and maintain container health.</p></li>
+</ul>
+
+<hr size=1 style="padding-bottom:10px;" />
 
 <h1 id="service-oriented-architecture">Service Oriented Architecture</h1>
 
-<p>We have experience designing and delivering solutions to the public cloud using industry best practices. A key advantage of the cloud is that, for many services, you do not need to build, provision, or maintain the servers that support the service &ndash; you simply use it.</p>
+<p>We have experience designing and delivering solutions to the public cloud using industry best practices. A key advantage of the cloud is that for many services you do not need to build or maintain the servers that support the service &ndash; you simply use it.</p>
 
 <p>Here are some of the building blocks available using cloud infrastructure:</p>
 
@@ -184,6 +233,7 @@
     <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> Database</li>
     <li class="list-group-item"><i class="fa fa-2x fa-cube" aria-hidden="true" style="padding-right:8px;"></i> Containers / Docker</li>
     <li class="list-group-item"><i class="fa fa-2x fa-pie-chart" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-share-alt" aria-hidden="true" style="padding-right:8px;"></i> Continuous Integration</li>
   </ul>
   </div>
   <div class="col-sm">
@@ -193,23 +243,10 @@
     <li class="list-group-item"><i class="fa fa-2x fa-mobile" aria-hidden="true" style="padding-left:8px;padding-right:18px;"></i> SMS / Push Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-amazon" aria-hidden="true" style="padding-right:8px;"></i> Alexa Skills / Speech Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-code" aria-hidden="true" style="padding-right:8px;"></i> Serverless Computing</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-check-square-o" aria-hidden="true" style="padding-right:8px;"></i> Build Validation</li>
   </ul>
   </div>
 </div>
-
-<hr size=1 style="padding-bottom:20px;" />
-
-<h1 id="how-we-use-aws-common-use-cases">How we use AWS / Common Use Cases</h1>
-
-<ul>
-<li><strong>Proofs of concept</strong> - To verify a system or design works, to benchmark processing speeds, we may use short-lived instances to learn from before building a production system.</li>
-<li><strong>Test / Development environments</strong> - For installing test packages, trying new ideas, and testing design patterns.</li>
-<li><strong>Dynamic / flexible / scaling application stacks</strong> - When future traffic or load cannot be determined beforehand, deploying into a dynamic environment means the infrastructure is not locked into any set type of CPU/RAM or scale.</li>
-<li><strong>Short-term or fast deployment projects</strong> - For almost immediate computing needs, existing users can create new instances as needed.</li>
-<li><strong>Container deployments</strong> - Run microservices (such as Docker containers) in an environment that can load-balance their traffic and maintain container health.</li>
-</ul>
-
-<hr size=1 style="padding-bottom:20px;" />
 
 <h1 id="reference-architecture">Reference Architecture</h1>
 
@@ -252,7 +289,23 @@
   </div>
 </div>
 
-<hr size=1 style="padding-bottom:20px;" />
+<h1 id="solution-design-consulting">Solution Design &amp; Consulting</h1>
+
+<p>If you have an project and need to think through implementation, we would be happy to sit down and discuss design options with you.</p>
+
+<p><a href="https://somrc.virginia.edu/service/consult/"><button class="btn btn-success">Request a Consultation</button></a></p>
+
+<hr size=1 style="padding-bottom:10px;" />
+
+<h1 id="training">Training</h1>
+
+<p>We also offer in-person, hands-on workshops and sessions on working with the cloud. Workshops cover a number of topics,
+from creating object storage buckets and simple compute instances to more complex data-driven workflows and Docker containers,
+If you have an idea for a workshop or would like to schedule training for your lab or group, please contact us.</p>
+
+<p><a href="https://somrc.virginia.edu/education/workshops/"><button class="btn btn-success">Find a Workshop</button></a></p>
+
+<hr size=1 style="padding-bottom:10px;" />
 
 <div class="row">
   <div class="col-sm-4">
@@ -266,7 +319,7 @@
   </div>
 
   <hr size=1 />
-  <p style="font-size:95%;" class="blog-post-meta"><time datetime="2017-01-24T14:18:18-05:00">Updated January 24, 2017</time> | 
+  <p style="font-size:95%;" class="blog-post-meta"><time datetime="2017-10-02T14:18:18-05:00">Updated October 2, 2017</time> | 
 <i class="fa fa-folder" aria-hidden="true"></i>&nbsp;<a href="/categories/architecture" rel="category tag">architecture</a>
 
 
@@ -288,9 +341,12 @@
     <section class="sidebar-module toc">
     <nav id="TableOfContents">
 <ul>
+<li><a href="#how-researchers-use-the-cloud">How Researchers Use the Cloud</a></li>
+<li><a href="#other-common-use-cases">Other Common Use Cases</a></li>
 <li><a href="#service-oriented-architecture">Service Oriented Architecture</a></li>
-<li><a href="#how-we-use-aws-common-use-cases">How we use AWS / Common Use Cases</a></li>
 <li><a href="#reference-architecture">Reference Architecture</a></li>
+<li><a href="#solution-design-consulting">Solution Design &amp; Consulting</a></li>
+<li><a href="#training">Training</a></li>
 </ul>
 </nav>
   </section>

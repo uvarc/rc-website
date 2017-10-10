@@ -32,45 +32,36 @@ SoM faculty and researchers can share data, findings, tools and other resources 
 content published to object storage. This simple method for publishing can cost only a few dollars a month and requires
 no server management.
 
-* **Ancillary Services in Support of HPC**<br />
+* **Ancillary Services to HPC**<br />
 Users of HPC usually have more than enough computing power to run their jobs. But what if you
-need a relational or NoSQL database, a messaging service, or offsite storage? Researchers have begun integrating command-line
-and code-based tools into their HPC jobs to create, use, and manage external cloud services.
+need a relational or NoSQL database, a messaging service, or offsite storage? Researchers can easily integrate command-line
+and code-based tools into their HPC jobs to create, use, and manage external cloud services and tools.
 
 * **HIPAA-Compliant Computing**<br />
-Researchers working on clinical datasets use Ivy, our internal private virtualized platform
+Researchers working on clinical data sets use Ivy, our internal private virtualized platform
 to perform HIPAA compliant analytics and compute jobs. This platform offers virtual machines, an R/Python data analytics
-tool, and Hadoop/Spark for larger analytics projects. Many users in Ivy work with EPIC clinical data alongside other
-highly-sensitive datasets for their investigations.
-
-<img src="https://somrc.virginia.edu/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:33%;padding-left:10px;" />
+tool, and Hadoop/Spark for larger analytics projects.
 
 * **Workflows & Pipeline Management**<br />
-Researchers need flexibility for where they run their data pipelines -- it might be on a personal computer, a lab server,
-an HPC cluster, or a cloud instance. We are working with faculty to extend some commonly-used pipeline tools so that they
-can create and push jobs to cloud-based resources, regardless of the cloud vendor.
+
 
 * **Long-term Cold Storage**<br />
 AWS Glacier and Google Nearline/Coldline offer researchers "cold" offsite storage for long-term backups of infrequently-accessed data. 
 Genomics researchers use Glacier to store terabytes of source data as required by grants and federal research projects.
 
-# Other Common Use Cases
+# Common Use Cases
 
 * **Proofs of concept** - To verify a system or design works, to benchmark processing speeds, we may use short-lived instances to learn from before building a production system.
-
 * **Test / Development environments** - For installing test packages, trying new ideas, and testing design patterns.
-
 * **Dynamic / flexible / scaling application stacks** - When future traffic or load cannot be determined beforehand, deploying into a dynamic environment means the infrastructure is not locked into any set type of CPU/RAM or scale.
-
 * **Short-term or fast deployment projects** - For almost immediate computing needs, existing users can create new instances as needed.
-
 * **Container deployments** - Run microservices (such as Docker containers) in an environment that can load-balance their traffic and maintain container health.
 
 <hr size=1 style="padding-bottom:10px;" />
 
 # Service Oriented Architecture
 
-We have experience designing and delivering solutions to the public cloud using industry best practices. A key advantage of the cloud is that for many services you do not need to build or maintain the servers that support the service -- you simply use it.
+We have experience designing and delivering solutions to the public cloud using industry best practices. A key advantage of the cloud is that, for many services, you do not need to build, provision, or maintain the servers that support the service -- you simply use it.
 
 Here are some of the building blocks available using cloud infrastructure:
 
@@ -82,7 +73,6 @@ Here are some of the building blocks available using cloud infrastructure:
     <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> Database</li>
     <li class="list-group-item"><i class="fa fa-2x fa-cube" aria-hidden="true" style="padding-right:8px;"></i> Containers / Docker</li>
     <li class="list-group-item"><i class="fa fa-2x fa-pie-chart" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-share-alt" aria-hidden="true" style="padding-right:8px;"></i> Continuous Integration</li>
   </ul>
   </div>
   <div class="col-sm">
@@ -92,10 +82,11 @@ Here are some of the building blocks available using cloud infrastructure:
     <li class="list-group-item"><i class="fa fa-2x fa-mobile" aria-hidden="true" style="padding-left:8px;padding-right:18px;"></i> SMS / Push Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-amazon" aria-hidden="true" style="padding-right:8px;"></i> Alexa Skills / Speech Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-code" aria-hidden="true" style="padding-right:8px;"></i> Serverless Computing</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-check-square-o" aria-hidden="true" style="padding-right:8px;"></i> Build Validation</li>
   </ul>
   </div>
 </div>
+
+<hr size=1 style="padding-bottom:10px;" />
 
 # Reference Architecture
 
@@ -137,6 +128,8 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
     </div>
   </div>
 </div>
+
+<hr size=1 style="padding-bottom:10px;" />
 
 # Solution Design & Consulting
 
