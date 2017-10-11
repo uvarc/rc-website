@@ -30,13 +30,19 @@ tags = ["R","Python","data analysis"]
     <tr>
       <th scope="row" style="width:25%;font-weight:bold;">Modeling</th>
       <td>
- Developing algorithms and predictive models can be a fruitful data analysis strategy. Whether you're interested in using regression, network analysis or general machine learning techniques, we can help compare, optimize and interpet models. Depending on the size of the dataset and the method used, these approaches can be quite computationally intensive. Our expertise includes implementation of modeling in high-performance computing environments.
+ Developing algorithms and predictive models can be a fruitful data analysis strategy. Whether you're interested in using regression, network analysis or general machine learning techniques, we can help compare, optimize and interpret models. Depending on the size of the dataset and the method used, these approaches can be quite computationally intensive. Our expertise includes implementation of modeling in high-performance computing environments.
       </td>
     </tr>
     <tr>
       <th scope="row" style="width:25%;font-weight:bold;">Visualization</th>
       <td>
  From exploratory plots to publication-ready visualizations, we are available to help you prepare strong visual representations of your data. Some example of visualizations where we can help include heat maps, clustering, box plots, and Kaplan-Meier plots. In some cases, interactive plotting tools are helpful for communicating features, particularly when dealing with high-dimensional datasets. 
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" style="width:25%;font-weight:bold;">Image Analysis</th>
+      <td>
+ Image analysis can be a computationally intensive process involving a multitude of preprocessing steps to remove noise from the data. Whether your images come from a microscope or MRI scanner, we can help you streamline your image analysis workflow.   
       </td>
     </tr>
   </tbody>
