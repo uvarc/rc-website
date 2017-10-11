@@ -166,10 +166,10 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
   </div>
 </div>
 
-# Solution Architecture
+# Solution Architecture / Consulting
 
-If you have an project and need to think through implementation, we would be happy to sit down and discuss design options
- with you based on your requirements and possible options.
+If you have a project and would like to discuss options, pricing, design, or implementation, we are available for consultation.
+Our staff includes a solution architect who is certified with AWS, and we all use AWS for our own internal systems and tools.
 
 [<button class="btn btn-success">Request a Consultation</button>](https://somrc.virginia.edu/service/consult/)
 
