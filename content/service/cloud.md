@@ -25,7 +25,7 @@ images = [
 
 <hr size=1 style="padding-bottom:10px;" />
 
-# How Researchers Use the Cloud
+# Researchers Using the Cloud
 
 <table class="table table-striped">
   <tbody>
@@ -40,9 +40,9 @@ no server management.
     <tr>
       <th scope="row" style="width:25%;font-weight:bold;">Data Lakes</th>
       <td>
-A new paradigm in data storage and processing, data lakes help researchers by providing a singular repository for both
+A new paradigm in data storage and processing, data lakes help researchers by providing a central repository for both
 structured and unstructured data, of any type or size. These data can then be siphoned off for processing, either in
-real-time streams or in queues for analysis later.
+real-time streams or in queues for later analysis.
       </td>
     </tr>
     <tr>
