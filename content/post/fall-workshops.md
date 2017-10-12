@@ -24,6 +24,8 @@ and computational topics. All of the classes are taught by SOMRC experts and are
 * Containers and Databases
 * Rivanna and Ivy
 
-[**Click here**](https://somrc.virginia.edu/education/workshops/) to see the list of remaining courses. Be sure to register through the HSL calendar, as space is limited!
+Be sure to register through the HSL calendar, as space is limited.
+
+[<button class="btn btn-warning">View Workshops</button>](https://somrc.virginia.edu/education/workshops/)
 
 For a comprehensive list of all such educational resources visit the [Computation and Data Resource Exchange (CADRE) education portal](http://cadre.virginia.edu/service-detail/education).
