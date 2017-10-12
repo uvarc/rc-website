@@ -65,7 +65,7 @@ highly-sensitive datasets for their investigations.
     <tr>
       <th scope="row" style="width:25%;font-weight:bold;">Workflows & Pipeline Management</th>
       <td>
-<img src="https://somrc.virginia.edu/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:30%;padding-left:10px;" />
+<img src="https://somrc.virginia.edu/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
 Researchers need flexibility for where they run their data pipelines -- it might be on a personal computer, a lab server,
 an HPC cluster, or a cloud instance. We are working with faculty to extend some commonly-used pipeline tools so that they
 can create and push jobs to cloud-based resources, regardless of the cloud vendor. 

@@ -6,4 +6,20 @@
 <i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ range sort .Params.tags "value" "asc" }}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>, {{ end }}
 {{ end }}
 
+{{ with .Params.tags }}
+<div class="tags-list">
+  <span class="dark-red">Tags</span><span class="decorative-marker">//</span>
+  {{ $len := len . }}
+  {{ if eq $len 1 }}
+    {{ partial "post/tag/link" (index . 0) }}
+  {{ else }}
+    {{ $last := sub $len 1 }}
+    {{ range first $last . }}
+      {{ partial "post/tag/link" . }},
+    {{ end }}
+    {{ partial "post/tag/link" (index . $last) }}
+  {{ end }}
+</div>
+{{ end }}
+
 {{- /* vim: set ts=2 sw=2 et: */}}
