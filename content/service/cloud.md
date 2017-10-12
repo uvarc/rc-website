@@ -98,7 +98,7 @@ Genomics researchers use Glacier to store terabytes of source data as required b
 
 # Service Oriented Architecture
 
-We have experience designing and delivering solutions to the public cloud using industry best practices. A key advantage of the cloud is that for many services you do not need to build or maintain the servers that support the service -- you simply use it.
+A key advantage of the cloud is that for many services you do not need to build or maintain the servers that support the service -- you simply use it.
 
 Here are some of the building blocks available using cloud infrastructure:
 
@@ -168,10 +168,11 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
 
 # Solution Architecture / Consulting
 
+We have experience designing and delivering solutions to the public cloud using industry best practices. 
 If you have a project and would like to discuss options, pricing, design, or implementation, we are available for consultation.
 Our staff includes a solution architect who is certified with AWS, and we all use AWS for our own internal systems and tools.
 
-[<button class="btn btn-success">Request a Consultation</button>](https://somrc.virginia.edu/service/consult/)
+[<button class="btn btn-primary">Request a Consultation</button>](https://somrc.virginia.edu/service/consult/)
 
 <hr size=1 style="padding-bottom:10px;" />
 
@@ -181,7 +182,7 @@ We also offer in-person, hands-on workshops and sessions on working with the clo
 from creating object storage buckets and simple compute instances to more complex data-driven workflows and Docker containers,
 If you have an idea for a workshop or would like to schedule training for your lab or group, please contact us. 
 
-[<button class="btn btn-success">Find a Workshop</button>](https://somrc.virginia.edu/education/workshops/)
+[<button class="btn btn-primary">Find a Workshop</button>](https://somrc.virginia.edu/education/workshops/)
 
 <hr size=1 style="padding-bottom:10px;" />
 

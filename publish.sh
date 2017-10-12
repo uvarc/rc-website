@@ -17,7 +17,7 @@ echo "**********************************************************"
 # aws s3 cp --acl public-read events.csv s3://somrc-data/events/
 
 echo ""
-read -p "   Do you still want to manually publish? [Y/n]: " proceed
+read -p "   Do you want to manually publish? [Y/n]: " proceed
 case $proceed in
     [Yy]* ) proceedx="1";;
     [Nn]* ) proceedx="2";;
@@ -38,14 +38,6 @@ else
   echo "--- Content cleared"
   hugo -v --ignoreCache    # try without cache
   echo "--- Hugo content generated"
-#  cp -R storage public/storage
-#  echo "--- Copied mockup of storage decision tree"
-#  cp google091118a6c00d06c0.html public/
-#  echo "--- Google domain verification copied"
-#  cp robots.txt public/
-#  echo "--- Robots file copied"
-#  cp 404.html public/
-#  echo "--- 404 error page copied"
   aws s3 sync --delete public/ s3://somrc-website/
   # aws s3 sync --delete public/ s3://somrc-website-uswest2/
   echo "--- Public dir published to AWS"
