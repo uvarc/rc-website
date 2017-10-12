@@ -45,6 +45,9 @@ Follow guidelines from https://gohugo.io/content/organization/. But essentially 
     description = "This is where a brief page description could go."
     +++
 
+## Featured Content
+To "feature" a post on the home page (which displays 2 most recent feature posts), simply add a TAG with the value "feature".
+
 ## Preview your content locally
 `hugo server` will bring up the local Node.js server and give you a preview URL `http://localhost:1313/`
 
