@@ -46,7 +46,9 @@ Follow guidelines from https://gohugo.io/content/organization/. But essentially 
     +++
 
 ## Featured Content
-To "feature" a post on the home page (which displays 2 most recent feature posts), simply add a TAG with the value "feature".
+To "feature" a post on the home page (which displays 2 most recent feature posts), simply add a TAG with the value `feature`.
+
+    tags = ["feature","another-tag","yet-another-tag"]
 
 ## Preview your content locally
 `hugo server` will bring up the local Node.js server and give you a preview URL `http://localhost:1313/`
