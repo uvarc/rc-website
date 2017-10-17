@@ -14,7 +14,7 @@ tags = ["events", "community"]
 
 # Upcoming 
 
-- [SC17 Supercomputing Conference (Denver, CO)](http://iebms.heiexpo.com/iebms/oep/oep_p2_details.aspx?sessionid=fckfa9ej5felfh8fh6fgk&OrderNbr=8705)
+- [SC17 Supercomputing Conference (Denver, CO)](http://sc17.supercomputing.org/)
 
 # Previous
 
