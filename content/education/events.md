@@ -14,6 +14,7 @@ tags = ["events", "community"]
 
 # Upcoming 
 
+- [UVa R Users Group November Meetup](https://www.meetup.com/UVa-R-Users-Group/events/244353382/)
 - [SC17 Supercomputing Conference (Denver, CO)](http://sc17.supercomputing.org/)
 
 # Previous
