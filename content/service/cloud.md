@@ -166,11 +166,12 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
   </div>
 </div>
 
-# Solution Architecture / Consulting
+# Solution Architecture & Consulting
 
 We have experience designing and delivering solutions to the public cloud using industry best practices. 
 If you have a project and would like to discuss options, pricing, design, or implementation, we are available for consultation.
-Our staff includes a solution architect who is certified with AWS, and we all use AWS for our own internal systems and tools.
+Our staff includes an AWS certified solution architect, and the entire SOMRC team uses AWS for our own internal 
+systems and development.
 
 [<button class="btn btn-primary">Request a Consultation</button>](https://somrc.virginia.edu/service/consult/)
 
