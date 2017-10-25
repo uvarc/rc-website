@@ -24,4 +24,4 @@ deploy:
   skip_cleanup: true
   # clear the cloudfront cache
   provider: script
-  script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id "E1JZBKRR78QE2T" --paths "/*"
+  script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
