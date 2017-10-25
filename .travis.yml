@@ -18,6 +18,10 @@ env:
   - secure: VNxK+PByY9fZExSmq1+QSRyzafTh65FpmjSk7dmBCZ5/rQ6bLKFHOMlHKyiSyNL8e/CuXGbyy7cWZiT2waisZOUVbBuyWqH8hXKxP3gPZg4unsmVvh/D6pQ525zO6F2aYxJiZrDiVhCxGDOtYMCbr2vASafnhHTZLlEgwgdG1E8x4ksRCSlBaKnjk6uEeohR59jKEpnJ6YzQddNR79ZlCFFvcO9HUx3GJ/clAb3FL2n1bdA8/XgBLDuV6ia0RmW/I29TcEfj1cvJd7eaI45gKlKGXHGYtX+Cu5zWO+kJaDaAlH0GUz9urx3ZX5ciKC33n/RtlCXdSvTqUI16hY1QrAdxPtytU0Vms8pxbgu1d8kiuUS6g16rQ3pPeZcplS+JPuVx7h2KvvIXejZsgCKZQC1XK2NvT1RoGpHiTI976mv85ueoHqpBVWH/hKROI0kJ1uvkrasrYDGrdIEphwW8lO5+L6MDT1K3/5vYJcKbp1BV4dEtLjDKBMfJ9kAtQMr/HLr2btwGIUol5jMarwbYoJh2gHeiMS8j2GnHoru92MJWCGctgK3WAxaGLh8/nH1a2EaL2lkblPljUVLpx2zRh6z/VxdQaDq896NRwzSVvaroWNGJoQXblI2P5WaAux3uTa+PlTsMzofsX2XJxq97X20ZebjILyoy8GMIMmwdViI=
 before_deploy: pip install --user awscli
 deploy:
+  # push all files to s3 / delete removed files
   provider: script
   script: ~/.local/bin/aws s3 sync public s3://somrc-website --region=us-east-1 --delete
   skip_cleanup: true
+  # clear the cloudfront cache
+  provider: script
+  script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id "E1JZBKRR78QE2T" --paths "/*"
