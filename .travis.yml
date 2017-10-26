@@ -23,5 +23,5 @@ deploy:
   script: ~/.local/bin/aws s3 sync public s3://$BUCKET_NAME --region=us-east-1 --delete
   skip_cleanup: true
   # clear the cloudfront cache
-  provider: script
-  script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+  # provider: script
+  # script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
