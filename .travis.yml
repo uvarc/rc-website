@@ -18,10 +18,10 @@ notifications:
     on_failure: always
 before_deploy: pip install --user awscli
 deploy:
-  # push all files to s3 / delete removed files
-  provider: script
-  script: ~/.local/bin/aws s3 sync public s3://$BUCKET_NAME --region=us-east-1 --delete
-  skip_cleanup: true
-  # clear the cloudfront cache
-  # provider: script
-  # script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+  # sync all files to s3
+  - provider: script
+    script: ~/.local/bin/aws s3 sync public s3://$BUCKET_NAME --region=us-east-1 --delete
+    skip_cleanup: true
+  # clear the cloudfront cache so changes are seen
+  - provider: script
+    script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
