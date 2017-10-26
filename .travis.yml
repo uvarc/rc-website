@@ -25,4 +25,4 @@ deploy:
   # clear the cloudfront cache so changes are seen
   - provider: script
     # script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
-    script: ~/.local/bin/aws sns publish --topic-arn '$TOPIC_ARN' --message '{'clear'}'
+    script: ~/.local/bin/aws sns publish --region=us-east-1 --topic-arn '$TOPIC_ARN' --message '{'clear'}'
