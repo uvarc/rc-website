@@ -15,7 +15,7 @@ tags = [
   "google",
   "amazon",
 ]
-draft = false
+draft = true
 title = "Cloud Computing"
 description = "Public cloud computing infrastructure"
 author = "SOMRC Staff"

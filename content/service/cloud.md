@@ -20,7 +20,7 @@ images = [
 
 +++
 
-<img src="https://somrc.virginia.edu/images/aws-logo-344x150.png" alt="AWS" align=right style="height:50%;width:50%;max-width:33%;" />
+<img src="https://somrc.virginia.edu/images/logos/aws_logo_smile_195x195.png" alt="AWS" align=right style="max-width:33%;" />
 <p class=lead>Cloud computing is ideal for running flexible, scalable applications on demand, in periodic bursts, or for fixed periods of time. UVA SOMRC works alongside researchers to design and run research applications and datasets into Amazon Web Services, the leader among public cloud vendors. This means that server, storage, and database needs do not have to be estimated or purchased beforehand – they can be scaled larger and smaller with your needs, or programmed to scale dynamically with your application.</p>
 
 <hr size=1 style="padding-bottom:10px;" />
