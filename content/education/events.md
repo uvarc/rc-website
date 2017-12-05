@@ -14,11 +14,12 @@ tags = ["events", "community"]
 
 # Upcoming 
 
-- [UVa R Users Group November Meetup](https://www.meetup.com/UVa-R-Users-Group/events/244353382/)
-- [SC17 Supercomputing Conference (Denver, CO)](http://sc17.supercomputing.org/)
+There area currently no upcoming events please check back soon!
 
 # Previous
 
+- [UVa R Users Group November Meetup](https://www.meetup.com/UVa-R-Users-Group/events/244353382/)
+- [SC17 Supercomputing Conference (Denver, CO)](http://sc17.supercomputing.org/)
 - [UVa R Users Group September Meetup](https://www.meetup.com/UVa-R-Users-Group/events/242800492/)
 - [UVa R Users Group May Meetup](https://www.meetup.com/UVa-R-Users-Group/events/239691982/)
 - [ARCS Open House](https://vpit.virginia.edu/arcs-open-house)
