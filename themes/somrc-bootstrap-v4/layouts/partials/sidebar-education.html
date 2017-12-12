@@ -11,7 +11,7 @@
     <p class=lead>Education/Training Opportunities</p>
     <ol class="list-unstyled">
       {{ range first 30 (where .Site.Pages.ByTitle "Type" "education") }}
-      <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
   </section>

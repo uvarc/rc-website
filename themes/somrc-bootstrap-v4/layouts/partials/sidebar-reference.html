@@ -20,7 +20,7 @@
     <ol class="list-unstyled" style="font-size:90%;">
       <li><a href="https://somrc.virginia.edu/userinfo/reference/">Index</a></li>
       {{ range first 30 (where .Site.Pages.ByTitle "Type" "reference") }}
-      <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
   </section>

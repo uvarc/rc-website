@@ -15,7 +15,7 @@
     <p class=lead>Resources</p>
     <ol class="list-unstyled">
       {{ range first 30 (where .Site.Pages.ByTitle "Type" "resource") }}
-      <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
   </section>

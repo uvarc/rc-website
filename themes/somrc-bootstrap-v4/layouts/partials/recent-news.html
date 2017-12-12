@@ -5,6 +5,6 @@
               {{ $.Scratch.Set "tagCounter" 0 }}
               <!-- increment counter if post contains the current tag-->
                 {{ range first 3 $posts}}
-                    <li><a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+                    <li><a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
                 {{ end }}
             </ol>

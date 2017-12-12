@@ -9,7 +9,7 @@
     <p class=lead>Services</p>
     <ol class="list-unstyled">
       {{ range first 30 (where .Site.Pages.ByTitle "Type" "service") }}
-      <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
   </section>

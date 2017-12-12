@@ -3,7 +3,7 @@
     {{ range $key, $taxonomy := .Site.Taxonomies.featured }}
     <ol class="list-unstyled">
       { range $taxonomy.Pages }}
-      <li> <a href="{{.RelPermalink}}">{{.Title | markdownify }}</a></li>
+      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
   </section>
