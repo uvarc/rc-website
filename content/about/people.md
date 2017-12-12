@@ -51,5 +51,12 @@ With expertise in R and Python, he's been active in package development and a va
     <p><b>Research Computing Associate</b> <br /> Christina recently joined SOM research computing and brings with her expertise in image analysis and Matlab. Prior to joining the team, Christina performed brain imaging research in the University of Virginia Department of Radiology and Medical Imaging. She takes great pride in developing computational solutions for expediting long or repetitive processes and looks forward to collaborating on more image analysis projects. </p>
     <p><a class="btn btn-secondary" href="mailto:cag3fr@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
+  <!--Omar's profile-->
+  <div class="col-lg-6">
+    <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/089253d.jpg" alt="Omar Khurshid" width="140" height="140">
+    <h2>Omar Khurshid</h2>
+    <p><b>Cloud DevOps Engineer</b> <br />Bio coming soon </p>
+    <p><a class="btn btn-secondary" href="mailto:ork8s@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
+  </div><!-- /.col-lg-6 -->
 
 </div><!-- /.row -->
