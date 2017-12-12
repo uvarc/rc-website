@@ -16,7 +16,7 @@ images = [
 ]
 description = "This is where a brief page description could go."
 +++
-![omar profile pic](/static/images/profile_okhurs.jpg 	"Omar Khurshid")
+![omar profile pic](https://s3.amazonaws.com/ork-somrc-bucket/089253d.jpg 	"Omar Khurshid")
 ## Omar R. Khurshid
 **Cloud DevOps Engineer**
 Omar has a background in cloud automation and architecture design, particularly AWS.
