@@ -360,7 +360,7 @@ You will be prompted for Domino login credentials, which correspond to your UVa 
 
 ## Storage
 
-Each DDL node comes with 500 gigabytes of storage. Central storage is not visible to DDL nodes.  
+Each DDL project can accommodate up to 500 gigabytes of storage. Central storage is not visible to DDL. 
 
 ## Features
 
