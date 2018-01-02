@@ -18,44 +18,29 @@ images = [""]
 
 # Upcoming
 
-<!--
-<div class="alert alert-success" role="alert" style="">
-</div>
--->
+<div class="alert alert-success" role="alert">We're currently scheduling our Spring 2018 workshops. Check back soon!</div>
+
+# Previous
 
 ## Fall 2017
 
-<div class="alert alert-success" role="alert">Registration is now open! Mark these dates on your calendar. Most classes are limited to 30 participants.</div>
-
-<!--
-- [**Introduction to R**](http://cal.hsl.virginia.edu/event/3540810) – Wed 9/6/2017 8:30-11:30
-- [**Introduction to Python**](http://cal.hsl.virginia.edu/event/3542919) – Thu 9/7/2017 8:30-11:30
-- [**Introduction to the Command Line**](http://cal.hsl.virginia.edu/event/3542973) – Fri 9/9/2017 8:30-11:30 
-- [**Introduction to UVA Research Computing Resources**](z) – Tue 9/12/2017 10:00-12:00
-- [**Introduction to Python**](http://cal.hsl.virginia.edu/event/3542985) - Mon 9/11/2017 2:00-5:00
-- [**Introduction to R**](http://cal.hsl.virginia.edu/event/3542986) – Thu 9/12/2017 2:00-5:00
-- [**Introduction to Ivy**](http://cal.hsl.virginia.edu/event/3543023) – Tue 9/19/2017 3:30-5:00
-- [**Introduction to Rivanna**](http://cal.hsl.virginia.edu/event/3543026) - Thu 9/21/2017 3:00-5:00
-- [**Introduction to Cloud**](http://cal.hsl.virginia.edu/event/3543036) – Tue 9/26/2017 2:00-5:00
-- [**Version Control with Git and Github**](z) – TBD
-- [**Advanced Data Manipulation in R**](http://cal.hsl.virginia.edu/event/3543043) – Tue 10/3/2017 2:00-5:00 
-- [**How to Work With Databases**](http://cal.hsl.virginia.edu/event/3543075) – Wed 10/4/2017 10:00-12:00
-- [**Introduction to Ivy**](z) – Wed 10/11/2017 9:00-10:30
-- [**Advanced Data Visualization in R**](z) – Thu 10/10/2017 2:00-5:00
-- [**Introduction to Cloud**](http://cal.hsl.virginia.edu/event/3543088) – Thu 10/19/2017 9:00-12:00
-- [**R Package Development Basics**](http://cal.hsl.virginia.edu/event/3543086) – Mon 10/16/2017 2:00-5:00
-- [**Introduction to Matlab**](z) – TBD
-- [**What are Docker Containers?**](http://cal.hsl.virginia.edu/event/3543093) - Tues 10/31/2017 2:00-5:00
-- [**Introduction to Rivanna**](z) – Wed 11/1/2017 9:00-11:00
-- [**Introduction to Ivy**](z) – Wed 11/8/2017 9:00-10:30
--->
-
-<iframe name="workshops" id="workshops" width="100%" height="1000px" framecolor="#cccccc" frameborder="1" marginheight="4" marginwidth="4" src="https://api3.libcal.com/api_events.php?iid=3782&m=upc&cid=7723&c=&d=&l=50&target=_blank">
-</iframe>
-
-- - -
-
-# Previous
+- [Introduction to R](http://cal.hsl.virginia.edu/event/3540810)
+- [Introduction to Python](http://cal.hsl.virginia.edu/event/3542919)
+- [Introduction to the Command Line](http://cal.hsl.virginia.edu/event/3542973)
+- [Introduction to UVA Research Computing Resources](http://cal.hsl.virginia.edu/event/3543110) 
+- [Introduction to Python](http://cal.hsl.virginia.edu/event/3542985)
+- [Introduction to R](http://cal.hsl.virginia.edu/event/3542986) 
+- [Introduction to Ivy](http://cal.hsl.virginia.edu/event/3543023)
+- [Introduction to Rivanna](http://cal.hsl.virginia.edu/event/3543026)
+- [Introduction to Cloud](http://cal.hsl.virginia.edu/event/3543036) 
+- [Introduction to Git and Github](http://cal.hsl.virginia.edu/event/3546324)
+- [Advanced Data Manipulation in R](http://cal.hsl.virginia.edu/event/3543043)
+- [How to Work With Databases](http://cal.hsl.virginia.edu/event/3543075) 
+- [Introduction to Cloud](http://cal.hsl.virginia.edu/event/3543088) 
+- [R Package Development Tools](http://cal.hsl.virginia.edu/event/3543086)
+- [Introduction to Matlab](http://cal.hsl.virginia.edu/event/3543097)
+- [Introduction to Rivanna](http://cal.hsl.virginia.edu/event/3543174)
+- [Introduction to Docker Containers](http://cal.hsl.virginia.edu/event/3543093) 
 
 ## Spring 2017 
 
