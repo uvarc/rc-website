@@ -48,14 +48,21 @@ With expertise in R and Python, he's been active in package development and a va
   <div class="col-lg-6">
     <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/17575107" alt="Christina Gancayco" width="140" height="140">
     <h2>Christina Gancayco</h2>
-    <p><b>Research Computing Associate</b> <br /> Christina recently joined SOM research computing and brings with her expertise in image analysis and Matlab. Prior to joining the team, Christina performed brain imaging research in the University of Virginia Department of Radiology and Medical Imaging. She takes great pride in developing computational solutions for expediting long or repetitive processes and looks forward to collaborating on more image analysis projects. </p>
+    <p><b>Research Computing Associate</b> <br /> Christina collaborates with researchers on image processing and imaging data management projects. Prior to joining SOM research computing, Christina performed brain imaging research at the UVa Department of Radiology and Medical Imaging. She specializes in Matlab programming and is interested in machine learning projects. </p>
     <p><a class="btn btn-secondary" href="mailto:cag3fr@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
+  </div><!-- /.col-lg-6 -->
+  <!--Diane's profile-->
+  <div class="col-lg-6">
+    <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/Diane-pic.jpg" alt="Diane Silverman" width="140" height="140">
+    <h2>Diane Silverman</h2>
+    <p><b>Executive Assistant</b> <br /> </p>
+    <p><a class="btn btn-secondary" href="mailto:sdb8c@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
   <!--Omar's profile-->
   <div class="col-lg-6">
     <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/089253d.jpg" alt="Omar Khurshid" width="140" height="140">
     <h2>Omar Khurshid</h2>
-    <p><b>Cloud DevOps Engineer</b> <br />Bio coming soon </p>
+    <p><b>Cloud DevOps Engineer</b> <br />Omar has a background in designing enterprise cloud platforms, we well as software and web development. For much of his recent work, he has been directly responsible for the development of secured, scalable, compliant cloud infrastructure services. He is certified in Amazon Web Services and can help with projects that need to be migrated to the cloud. Areas of interest include: Containers, DevOps, automation, Python, Web, Big Data. </p>
     <p><a class="btn btn-secondary" href="mailto:ork8s@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
 
