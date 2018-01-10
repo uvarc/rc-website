@@ -65,5 +65,12 @@ With expertise in R and Python, he's been active in package development and a va
     <p><b>Cloud DevOps Engineer</b> <br />Omar has a background in designing enterprise cloud platforms, we well as software and web development. For much of his recent work, he has been directly responsible for the development of secured, scalable, compliant cloud infrastructure services. He is certified in Amazon Web Services and can help with projects that need to be migrated to the cloud. Areas of interest include: Containers, DevOps, automation, Python, Web, Big Data. </p>
     <p><a class="btn btn-secondary" href="mailto:ork8s@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
+  <!--Hardik's profile-->
+  <div class="col-lg-6">
+    <img class="rounded-circle" src="https://somrc.virginia.edu/images/ParikhHardik_pic.jpeg" alt="Hardik Parikh" width="140" height="140">
+    <h2>Hardik I. Parikh</h2>
+    <p><b>Computational Scientist</b> <br />Hardik is interested in understanding the molecular mechanisms in various biological events and pathological processes using computational technologies. He received his PhD in Medicinal Chemistry at VCU focusing on applying molecular modeling approaches to problems pertaining to drug design/discovery, followed by a postdoc in the field of microbiome data analysis. At UVa, Hardik collaborates with multi-disciplinary researchers to provide extended bioinformatics solutions focused on genomic and metagenomics analysis. He is interested in developing novel computational algorithms/tools as required by research goals, from raw experimental data all the way through to meaningful biological interpretation.</p>
+    <p><a class="btn btn-secondary" href="mailto:hp7d@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>
+  </div><!-- /.col-lg-6 -->
 
 </div><!-- /.row -->
