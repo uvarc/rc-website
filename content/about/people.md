@@ -67,7 +67,7 @@ With expertise in R and Python, he's been active in package development and a va
   </div><!-- /.col-lg-6 -->
   <!--Hardik's profile-->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="https://somrc.virginia.edu/images/ParikhHardik_pic.jpeg" alt="Hardik Parikh" width="140" height="140">
+    <img class="rounded-circle" src="https://somrc.virginia.edu/images/ParikhHardik_pic.png" alt="Hardik Parikh" width="140" height="140">
     <h2>Hardik I. Parikh</h2>
     <p><b>Computational Scientist</b> <br />Hardik is interested in understanding the molecular mechanisms in various biological events and pathological processes using computational technologies. He received his PhD in Medicinal Chemistry at VCU focusing on applying molecular modeling approaches to problems pertaining to drug design/discovery, followed by a bioinformatics postdoc in the field of microbiome data analysis. At UVa, Hardik collaborates with multi-disciplinary researchers to provide extended bioinformatics solutions focused on genomic and metagenomic analyses. He develops novel computational algorithms/tools for meaningful biological interpretation of NGS data.</p>
     <p><a class="btn btn-secondary" href="mailto:hp7d@virginia.edu" role="button"><i class="fa fa-envelope-o fa-md"></i>&nbsp; Send email &raquo;</a></p>

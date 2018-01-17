@@ -1,7 +1,7 @@
 +++
 author = "SOMRC Staff"
 description = ""
-title = "Bioinformatics & Genomics"
+title = "Genomics"
 date = "2017-01-31T09:48:06-05:00"
 draft = false
 tags = ["bioinformatics","genomics"]
@@ -14,24 +14,20 @@ images = [""]
 
 <hr size=1 />
 
-# Bioinformatics tools
+# Next-generation sequence data analyis
 
-SOMRC can help you select genomic alignment and bioinformatics tools that best fit your analysis needs. We can also help troubleshoot problems with software packages and retrieve data from publicly available repositories. These tasks could include:
+SOMRC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/Rivanna/Ivy/AWS. Typical analyses include (but not limited to) – 
+ - Genome assembly, reference-based and/or de-novo
+ - Whole Genome/Exome Sequence analysis for variant calling/annotation
+ - RNA-Seq data analysis to quantify, discover and profile RNAs 
+ - Mircobiome data analysis, including 16S rRNA surveys, OTU clustering, microbial profiling, taxonomic and functional analysis from whole shotgun metagenomic/metatranscriptomic datasets
+ - Epigenetic analysis from BSAS/ChIP-Seq/ATAC-Seq
 
--	Running genomic alignment and analysis tools on desktop, Rivanna, Ivy, or AWS including Bowtie, Samtools, Bedtools, MACS, HTSeq, and TopHat
--	Accessing and retrieving data from ArrayExpress, GEO, and other databases
+In addition to above-mentioned generic cookie cutter analyses, SOMRC can work with you to provide customized bioinformatics solutions for specific research goals.
 
-# ChIP-chip, ChIP-Seq, RNA-Seq and other NGS analyses
+We can advise and collaborate on the various experimental stages, from experimental design, to data processing/analysis/visualization/exploration, as well as downstream statistical modeling for biological insights.  
 
-Next Generation Sequencing (NGS) has led to numerous new genomic techniques with many more being devised every year. Genomic, transcriptomic, and epigenomic data analysis usually follows the following steps:
-
--	Formalizing genomic or de novo assembly and peak/variant calling pipeline 
--	Background subtraction, normalization, and processing of the data
--	Downstream analysis of gene expression, transcription-factor binding, and other biologically meaningful questions. This can involve statistical modeling, regression, and computational methods for exploratory analyses (e.g., clustering and heat maps), significance testing (e.g., statistical tests), hypothesis testing (e.g., proportional hazards models), and pathway analysis. 
--	Quantitative and correlative analyses with other publicly available datasets for biological insight
- 
-We can advise and collaborate on the various experimental stages, from experimental design and pre-processing to downstream analysis and devising new computational tools.
-
+For a comprehensive list of bioinformatics tools pre-installed on Rivanna [click here](https://arcs.virginia.edu/software-list). We can work with you, and the [ARCS  team](https://arcs.virginia.edu/), to install additional project-specific applications. 
 
 # AWS Cloud
 
