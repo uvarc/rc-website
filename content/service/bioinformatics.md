@@ -17,11 +17,13 @@ images = [""]
 # Next-generation sequence data analyis
 
 SOMRC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/Rivanna/Ivy/AWS. Typical analyses include (but not limited to) – 
- - Genome assembly, reference-based and/or de-novo
- - Whole Genome/Exome Sequence analysis for variant calling/annotation
- - RNA-Seq data analysis to quantify, discover and profile RNAs 
- - Mircobiome data analysis, including 16S rRNA surveys, OTU clustering, microbial profiling, taxonomic and functional analysis from whole shotgun metagenomic/metatranscriptomic datasets
- - Epigenetic analysis from BSAS/ChIP-Seq/ATAC-Seq
+  <ul>
+   <li>Genome assembly, reference-based and/or de-novo</li>
+   <li>Whole Genome/Exome Sequence analysis for variant calling/annotation</li>
+   <li>RNA-Seq data analysis to quantify, discover and profile RNAs</li>
+   <li>Mircobiome data analysis, including 16S rRNA surveys, OTU clustering, microbial profiling, taxonomic and functional analysis from whole shotgun metagenomic/metatranscriptomic datasets</li>
+   <li>Epigenetic analysis from BSAS/ChIP-Seq/ATAC-Seq</li>
+  </ul>
 
 In addition to above-mentioned generic cookie cutter analyses, SOMRC can work with you to provide customized bioinformatics solutions for specific research goals.
 
