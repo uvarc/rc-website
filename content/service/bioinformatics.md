@@ -10,13 +10,13 @@ images = [""]
 
 +++
 
-<p class=lead>School of Medicine Research Computing (SOMRC) provides state-of-the-art resources and expertise in handling and analyzing genomics and bioinformatics data. Bioinformatics is a quickly evolving field with new biological and computational techniques being formalized and adopted at a fast pace. Hence, the following is only a brief cross-section of the ways researchers can use SOMRC’s expertise and computing resources for their bioinformatics research. Please contact SOMRC with your computational questions and needs.</p>
+<p class=lead>School of Medicine Research Computing (SOMRC) provides state-of-the-art resources and expertise in handling and analyzing genomics and metagenomics data. Bioinformatics is a quickly evolving field with new biological and computational techniques being formalized and adopted at a fast pace. Hence, the following is only a brief cross-section of the ways researchers can use SOMRC’s expertise and computing resources for their bioinformatics research. Please contact SOMRC with your computational questions and needs.</p>
 
 <hr size=1 />
 
 # Next-generation sequence data analyis
 
-SOMRC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/Rivanna/Ivy/AWS. Typical analyses include (but not limited to) – 
+SOMRC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://arcs.virginia.edu/rivanna)/[Ivy](https://somrc.virginia.edu/userinfo/ivy/)/[AWS](https://somrc.virginia.edu/service/cloud/). Typical analyses include (but not limited to) – 
   <ul>
    <li>Genome assembly, reference-based and/or de-novo</li>
    <li>Whole Genome/Exome Sequence analysis for variant calling/annotation</li>
