@@ -6,7 +6,7 @@ date = "2017-02-26T17:45:12-05:00"
 tags = ["hpc","ivy","hipaa","linux","windows"]
 categories = ["userinfo"]
 images = [""]
-author = "SOMRC Staff"
+author = "SOMRC Staff"  
 
 +++
 
@@ -257,16 +257,14 @@ and regulatory compliance and, if approved, will be installed for you.
       </div>
       <div class="card-block">
         <p class="card-text">
-          <ul>
-            <li>R 3.2.3</li>
+            <li><a href="/userinfo/ivy-linux-sw/r">R 3.2.3</a></li>
             <li>Perl 5.10</li>
-            <li>Anaconda Python 2
-            <li>Anaconda Python 3
+            <li><a href="/userinfo/ivy-linux-sw/anaconda">Anaconda Python 2 and 3</a></li>
             <li>Java SDK+JRE 1.8</li>
             <li>X2GO Server</li>
             <li>Rodeo 1.1.21</li>
             <li>LibreOffice 4.2.8.2-11</li>
-          </ul>
+          
         </p>
       </div>
     </div>
@@ -279,10 +277,9 @@ and regulatory compliance and, if approved, will be installed for you.
       <div class="card-block">
         <p class="card-text">
           <ul>
-            <li>R 3.2.3</li>
+            <li><a href="/userinfo/ivy-win-sw/rstudio">R 3.2.3</a></li>
             <li>Strawberry Perl 5.22.1.2</li>
-            <li>Anaconda Python 2
-            <li>Anaconda Python 3
+            <li><a href="/userinfo/ivy-win-sw/anaconda">Anaconda Python 2 and 3</a></li>
             <li>Java SDK+JRE 1.8</li>
             <li>X2GO Client</li>
             <li>Rodeo 1.1.21</li>
