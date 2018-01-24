@@ -73,9 +73,9 @@ images = [""]
 	</object>
 
 	<!-- <a href="http://its.virginia.edu/hosting/storage/home.html" target="_new"><img orgheight="563" orgwidth="1200" src="/images/storage/Enterprise-storage-jan-2018.png" width="1200" /></a> -->
-	
-	<div style="text-align:right;margin-right:10%;">
-		<a class="return" href="#top" target="_self">▲ Return to Top</a></div>
+</div>	
+<div style="text-align:right;margin-right:10%;">
+	<a class="return" href="#top" target="_self">▲ Return to Top</a></div>
 </div>
 <br />
 <hr />
@@ -84,12 +84,15 @@ images = [""]
 <br />
 <h2>
 	Personal Computing</h2>
+	<a name="box-storage" style="text-align:left;"></a>
 <h3>
 	UVA Box</h3>
 <p>UVA Box is a cloud-based storage and collaboration service that gives eligible members of the University community the ability to access, store, and share up to 1 TB of non-sensitive/moderately sensitive University files securely—anywhere, anytime, on any device.</p>
-<p><a href="http://its.virginia.edu/box/" target="_new"><button name="box-storage" class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="http://its.virginia.edu/box/" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<a name="crash-plan" style="text-align:left;"></a>
 <h3>
 	CrashPlan</h3>
+
 <p>CrashPlan is a cloud-based desktop backup service. It securely backs up your endpoint devices to the cloud. CrashPlan provides:</p>
 <ul>
 	<li>
@@ -100,33 +103,40 @@ images = [""]
 		Protection of University data on endpoint devices from loss due to hard drive failure, computer failure, etc.</li>
 </ul>
 <p>CrashPlan is currently offered at no cost to the University community until June 30, 2018. After that, the cost model/fee structure will be determined for continued use of the service. During this this initial phase, the system has a per-user quota of 250GB. If you need more space and have a valid use case, please contact ITS via the link below.</p>
-<p><a href="http://its.virginia.edu/crashplan/" target="_new"><button name="crash-plan" class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="http://its.virginia.edu/crashplan/" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <h2>
 	High Performance Computing</h2>
+	<a name="rivanna-home" style="text-align:left;"></a>
 <h3>
 	Rivanna <code>/home</code> File System (FREE)</h3>
 <p>Each user on Rivanna HPC cluster is provided with 50GB of /home directory. It is a standard place where you can store important files or data such as your research code, configuration files, and valuable output data. Users can compile, debug their codes in this space before getting ready for production runs via scheduler (SLURM on Rivanna) on compute nodes. The /home comes with 3 weeks of snapshot backup, so if you delete your data by mistake, you can ask file recovery. The 50GB is the hard quota of the space, and users are not allowed to exceed this limit. You job will fail if the hard limit is reached.</p>
-<p><a href="http://arcs.virginia.edu/rivanna" target="_new"><button name="rivanna-home" class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="http://arcs.virginia.edu/rivanna" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<a name="rivanna-scratch" style="text-align:left;"></a>
 <h3>
 	Rivanna <code>/scratch</code> File System (FREE)</h3>
+
 <p>The /scratch file system is a large-scale, high-performance parallel file system (Lustre) where multi-threaded, high-performance read &amp; write is possible. The scratch space is freely provided, and one of the most versatile storage locations available to you -- for certain use cases and with the right tuning, /scratch performs extremely well: upwards of 10x faster than NFS-mounted storage. We recommend to use this file system whenever running a series of jobs on RIvanna. There are quotas imposed (10TB per user), but they are not strictly enforced: being over quota usually just means not being able to submit jobs until you're not over quota any more, and in many cases you can have your quota adjusted simply by asking.</p>
-<p><a href="http://arcs.virginia.edu/rivanna" target="_new"><button name="rivanna-scratch" class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="http://arcs.virginia.edu/rivanna" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+
+<a name="group-storage" style="text-align:left;"></a>
 <h3>
 	<code>/group</code> Project Storage - GPS ($TBD)</h3>
 <p>The /group storage option provides storage for collaboration and data sharing within the research group. Like /home and /scratch file systems, /project is mounted on the Rivanna, and users can freely move data around between those file systems. UVA faculty can purchase /project space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a>. The system is being configured and tested as of now, and will be available in the fall semester. More details coming soon.</p>
-<p><button name="group-storage" class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <h2>
 	Long-Term Storage</h2>
+	<a name="value-storage" style="text-align:left;"></a>
 <h3>
 	Research Value Storage ($45/TB/YR)</h3>
 <p>Research Value Storage is a low-cost, moderate-performance version of the Enterprise Storage offered by ITS. Users can request a space on this system by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a>, and can use this storage without having to get an account Rivanna HPC system. It can be mounted from the central network by clients on local laptops and workstations running Linux, Windows, or Mac OSX. Although not as fast as other UVA storage solutions, Value Storage offers a familiar format which is easy to understand and use. It is differentiated from Enterprise Storage by the lack of data protection features and services that are available on the Enterprise tiers.</p>
-<p><a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"><button name="value-storage" class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <h2>
 	Storage Solution for Sensitive Data</h2>
+	<a name="secure-storage" style="text-align:left;"></a>
 <h3>
 	Ivy Secure Storage ($360/TB/YR)</h3>
 <p>Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.</p>
-<p><a href="https://somrc.virginia.edu/userinfo/ivy/#storage" target="_new"><button name="secure-storage" class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="https://somrc.virginia.edu/userinfo/ivy/#storage" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <h3>
 	High Security Zone Storage ($TBD)</h3>
 <p>(coming soon)</p>
