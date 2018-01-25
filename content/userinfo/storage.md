@@ -23,21 +23,21 @@ images = [""]
 			<tr>
 				<th colspan="2" style="border-bottom:none">
 					<h3>
-						Is your data research data?</h3>
+						Is your data <i>research data?</i></h3>
 				</th>
 			</tr>
 			<tr>
-				<td>
-					<p>If yes, please check out the research computing storage solutions. The primary purpose of these storages is to provide adequate space for your large-scale research data. This includes file systems for Rivanna HPC system and long-term storage for large-scale data as well as secure storage for sensitive data.</p>
+				<td colspan="2" style="border: solid 1px;">
+					<p><b>If yes</b>, please check out the research computing storage solutions. The primary purpose of these storages is to provide adequate space for your large-scale research data. This includes file systems for Rivanna HPC system and long-term storage for large-scale data as well as secure storage for sensitive data.</p>
 					<a href="#rs" target="_self"><button class="btn btn-lg btn-success">Learn More</button></a></td>
-				<td>
+				<td colspan="2" style="border: solid 1px; padding: 8px;">
 					<p>ITS provides an array of enterprise storage solutions that comes with multiple layers of data protection (snapshot, replica, and tape archiving). The minimum request for storage space starts from 10GB, it may suite you well if you are dealing with small size of very important data.</p>
 					<a href="#es" target="_self"><button class="btn btn-lg btn-success">Learn More</button></a></td>
 			</tr>
 		</tbody>
 	</table>
-	<h2 style="padding-top:100px;font-weight:bold;">
-		<a name="rs" style="text-align:left;">Research Data Storage</a></h2>
+	<h1 style="padding-top:100px;font-weight:bold;">
+		<a name="rs" style="text-align:left;">Research Data Storage</a></h1>
 
 	<!-- <img alt="" border="0" height="621" id="Image-Maps-Com-image-maps-2017-06-14-103927" orgheight="563" orgwidth="1200" src="/images/storage/Research-storage-jan-18.png" usemap="#image-maps-2017-06-14-103927" width="1200" /> -->
 
@@ -58,28 +58,32 @@ images = [""]
 	</map>
  -->
 	<!-- <map  name="image-maps-2017-06-14-103927"><area alt="" coords="21,53,310,103" href="http://security.virginia.edu/university-data-protection" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="601,27,863,77" href="https://cadre.virginia.edu/service-detail/storage#ivy" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="941,27,1055,77" href="https://cadre.virginia.edu/service-detail/storage#high-security-zone" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="601,127,715,177" href="https://cadre.virginia.edu/service-detail/storage#box" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="760,129,895,179" href="https://cadre.virginia.edu/service-detail/storage#crashplan" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="602,221,713,266" href="https://cadre.virginia.edu/service-detail/storage#rivanna-home" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="837,221,973,266" href="https://cadre.virginia.edu/service-detail/storage#rivanna-scratch" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="689,308,861,353" href="https://cadre.virginia.edu/service-detail/storage#rivanna-projects" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="253,400,425,445" href="https://cadre.virginia.edu/service-detail/storage#value" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="548,400,720,445" href="https://cadre.virginia.edu/service-detail/storage#tape" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="546,480,804,525" href="https://cadre.virginia.edu/service-detail/storage#object" shape="rect" style="outline:none;" target="_parent" title="" /></map> -->
-	<div style="text-align:right;margin-right:10%;">
-		<a class="return" href="#top" target="_self">▲ Return to Top</a></div>
+	
 </div>
 <br />
-<hr />
+
 <p><a href="https://cadre.virginia.edu/node/add/storage-request" target="_new"><button class="btn btn-large btn-success" style="text-align:center;margin-right: 25%;margin-left: 25%;width: 50%;height: 10%;font-size: 26px;">Submit Storage Request</button></a></p>
+<hr />
+<div style="text-align:right;margin-right:10%;">
+		<a class="return" href="#top" target="_self">▲ Return to Top</a></div>
 <div style="text-align:center;">
 	<a name="es" style="text-align:left;"></a>
-	<h2 style="padding-top:100px;font-weight:bold;">
-		<a name="es" style="text-align:left;">Enterprise Data Storage</a></h2>
+	<h1 style="padding-top:100px;font-weight:bold;">
+		<a name="es" style="text-align:left;">Enterprise Data Storage</a></h1>
 	<object type="image/svg+xml" data="/images/storage/enterprise-storage.svg">
   		Your browser does not support SVG
 	</object>
 
 	<!-- <a href="http://its.virginia.edu/hosting/storage/home.html" target="_new"><img orgheight="563" orgwidth="1200" src="/images/storage/Enterprise-storage-jan-2018.png" width="1200" /></a> -->
 </div>	
-<div style="text-align:right;margin-right:10%;">
-	<a class="return" href="#top" target="_self">▲ Return to Top</a></div>
+
 </div>
 <br />
-<hr />
+
 <p><a href="http://its.virginia.edu/hosting/storage/home.html" target="_new"><button class="btn btn-large btn-success" style="text-align:center;margin-right: 25%;margin-left: 25%;width: 50%;height: 10%;font-size: 26px;">Request ITS Storage</button></a></p>
+<hr />
+<div style="text-align:right;margin-right:10%;">
+	<a class="return" href="#top" target="_self">▲ Return to Top</a></div>
 <p>&nbsp;</p>
 <br />
 <h2>
@@ -104,32 +108,44 @@ images = [""]
 </ul>
 <p>CrashPlan is currently offered at no cost to the University community until June 30, 2018. After that, the cost model/fee structure will be determined for continued use of the service. During this this initial phase, the system has a per-user quota of 250GB. If you need more space and have a valid use case, please contact ITS via the link below.</p>
 <p><a href="http://its.virginia.edu/crashplan/" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<br>
+<hr>
 <h2>
 	High Performance Computing</h2>
 	<a name="rivanna-home" style="text-align:left;"></a>
 <h3>
 	Rivanna <code>/home</code> File System (FREE)</h3>
 <p>Each user on Rivanna HPC cluster is provided with 50GB of /home directory. It is a standard place where you can store important files or data such as your research code, configuration files, and valuable output data. Users can compile, debug their codes in this space before getting ready for production runs via scheduler (SLURM on Rivanna) on compute nodes. The /home comes with 3 weeks of snapshot backup, so if you delete your data by mistake, you can ask file recovery. The 50GB is the hard quota of the space, and users are not allowed to exceed this limit. You job will fail if the hard limit is reached.</p>
-<p><a href="http://arcs.virginia.edu/rivanna" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="https://arcs.virginia.edu/storage" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <a name="rivanna-scratch" style="text-align:left;"></a>
 <h3>
 	Rivanna <code>/scratch</code> File System (FREE)</h3>
 
 <p>The /scratch file system is a large-scale, high-performance parallel file system (Lustre) where multi-threaded, high-performance read &amp; write is possible. The scratch space is freely provided, and one of the most versatile storage locations available to you -- for certain use cases and with the right tuning, /scratch performs extremely well: upwards of 10x faster than NFS-mounted storage. We recommend to use this file system whenever running a series of jobs on RIvanna. There are quotas imposed (10TB per user), but they are not strictly enforced: being over quota usually just means not being able to submit jobs until you're not over quota any more, and in many cases you can have your quota adjusted simply by asking.</p>
-<p><a href="http://arcs.virginia.edu/rivanna" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="http://arcs.virginia.edu/storage" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 
-<a name="group-storage" style="text-align:left;"></a>
+<a name="project-storage" style="text-align:left;"></a>
 <h3>
-	<code>/group</code> Project Storage - GPS ($TBD)</h3>
-<p>The /group storage option provides storage for collaboration and data sharing within the research group. Like /home and /scratch file systems, /project is mounted on the Rivanna, and users can freely move data around between those file systems. UVA faculty can purchase /project space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a>. The system is being configured and tested as of now, and will be available in the fall semester. More details coming soon.</p>
+	<code>/project</code> Project Storage - GPS ($90/TB/Yr)</h3>
+<p>The /project storage option provides storage for collaboration and data sharing within the research group. Like /home and /scratch file systems, /project is mounted on the Rivanna, and users can freely move data around between those file systems. UVA faculty can purchase /project space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a></p>
 <p><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<br>
+<hr>
 <h2>
 	Long-Term Storage</h2>
-	<a name="value-storage" style="text-align:left;"></a>
+<a name="research-value-storage" style="text-align:left;"></a>	
 <h3>
 	Research Value Storage ($45/TB/YR)</h3>
 <p>Research Value Storage is a low-cost, moderate-performance version of the Enterprise Storage offered by ITS. Users can request a space on this system by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a>, and can use this storage without having to get an account Rivanna HPC system. It can be mounted from the central network by clients on local laptops and workstations running Linux, Windows, or Mac OSX. Although not as fast as other UVA storage solutions, Value Storage offers a familiar format which is easy to understand and use. It is differentiated from Enterprise Storage by the lack of data protection features and services that are available on the Enterprise tiers.</p>
 <p><a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+
+<a name="academic-value-storage" style="text-align:left;"></a>
+<h3>
+	Academic Value Storage ($90/TB/YR)</h3>
+<p>ITS offers storage for non-research users for hosting their non-sensitive data. Users can request a space on this system by submitting <a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"> a form</a>. It can be mounted from the central network by clients on local laptops and workstations running Linux, Windows, or Mac OSX. Although not as fast as other UVA storage solutions, Value Storage offers a familiar format which is easy to understand and use. It is differentiated from Enterprise Storage by the lack of data protection features and services that are available on the Enterprise tiers. It is good for users who have their own backup solutions in place, and need a low cost terabyte level storage solution</p>
+<p><a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<br>
+<hr>
 <h2>
 	Storage Solution for Sensitive Data</h2>
 	<a name="secure-storage" style="text-align:left;"></a>
@@ -137,18 +153,4 @@ images = [""]
 	Ivy Secure Storage ($360/TB/YR)</h3>
 <p>Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.</p>
 <p><a href="https://somrc.virginia.edu/userinfo/ivy/#storage" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
-<h3>
-	High Security Zone Storage ($TBD)</h3>
-<p>(coming soon)</p>
-<p><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
-<h2>
-	Archiving Solution (Coming Soon)</h2>
-<h3>
-	Disk Archiving Storage ($TBD)</h3>
-<p>The object storage system is a high-performance, high-capacity, long-term, and inexpensive storage service. This storage provides individual researchers with an affordable place to store large datasets for access when needed at a later date. It can be made directly accessible from workstations, labs, and clusters as well as from central computing resources. Its usability as a "live" data storage system for running processes is limited, but it can perform very fast transfers back to the computing system.</p>
-<p><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
-<h3>
-	Tape Archiving ($TBD)</h3>
-<p>(coming soon)</p>
-<p><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 
