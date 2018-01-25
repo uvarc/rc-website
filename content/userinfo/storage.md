@@ -12,30 +12,41 @@ images = [""]
 
 <p class=lead>The following storage options are available through CADRE, UVA's Computation and Data Resource Exchange.</p>
 
-- - -
+<hr>
 
 <p><map name="image-map"><area alt="" coords="405,607,728,500" href="https://security.virginia.edu/system/files/netbadge/udps2-0.pdf" shape="rect" target="" title="" /> <area alt="" coords="2135,771,2340,842" href="#crashplan" shape="rect" target="_self" title="" /> <area alt="" coords="1731,792,1873,854" href="#box" shape="rect" target="_self" title="" /> <area alt="" coords="2755,573,2627,523" href="#high-security-zone" shape="rect" target="_self" title="" /> <area alt="" coords="1912,1221,2326,1321" href="#rivanna-projects" shape="rect" target="_self" title="" /> <area alt="" coords="1701,1070,1918,1020" href="#rivanna-home" shape="rect" target="_self" title="" /> <area alt="" coords="2602,999,2301,1099" href="#rivanna-scratch" shape="rect" target="_self" title="" /> <area alt="" coords="824,1555,1133,1456,835,1485,958,1522,952,1484,902,1463,1067,1516,1070,1493" href="#value" shape="rect" target="_self" title="" /> <area alt="" coords="2158,1765,1570,1679" href="#object" shape="rect" target="_self" title="" /> <area alt="" coords="1856,503,2142,599" href="#ivy" shape="rect" target="_self" title="" /> <area alt="" coords="1936,1546,1584,1478" href="#tape" shape="rect" target="_self" title="" /></map></p>
 <p><a name="top"></a></p>
 <p>UVA Research Computing provides multi-tiered storage solutions for your data. From the individual cloud storage solution for your personal computing to the high-performance parallel file system for serious computational runs, various storage solutions are available for your need. In order to help you find the right storage, let’s start with one simple question:</p>
+<h3>Is your data <i>research data?</i></h3>
+<div class="row" style="margin-bottom:2rem;">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">
+        <b>Yes</b>
+      </div>
+      <div class="card-block">
+        <p class="card-text">
+            Please check out the research computing storage solutions. The primary purpose of these storages is to provide adequate space for your large-scale research data. This includes file systems for Rivanna HPC system and long-term storage for large-scale data as well as secure storage for sensitive data.
+          
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-header">
+        <b>No</b>
+      </div>
+      <div class="card-block">
+        <p class="card-text">
+          ITS provides an array of enterprise storage solutions that comes with multiple layers of data protection (snapshot, replica, and tape archiving). The minimum request for storage space starts from 10GB, it may suite you well if you are dealing with small size of very important data.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div style="text-align:center;height:100%;">
-	<table style="width:100%; text-align:left;">
-		<tbody>
-			<tr>
-				<th colspan="2" style="border-bottom:none">
-					<h3>
-						Is your data <i>research data?</i></h3>
-				</th>
-			</tr>
-			<tr>
-				<td colspan="2" style="border: solid 1px;">
-					<p><b>If yes</b>, please check out the research computing storage solutions. The primary purpose of these storages is to provide adequate space for your large-scale research data. This includes file systems for Rivanna HPC system and long-term storage for large-scale data as well as secure storage for sensitive data.</p>
-					<a href="#rs" target="_self"><button class="btn btn-lg btn-success">Learn More</button></a></td>
-				<td colspan="2" style="border: solid 1px; padding: 8px;">
-					<p>ITS provides an array of enterprise storage solutions that comes with multiple layers of data protection (snapshot, replica, and tape archiving). The minimum request for storage space starts from 10GB, it may suite you well if you are dealing with small size of very important data.</p>
-					<a href="#es" target="_self"><button class="btn btn-lg btn-success">Learn More</button></a></td>
-			</tr>
-		</tbody>
-	</table>
 	<h1 style="padding-top:100px;font-weight:bold;">
 		<a name="rs" style="text-align:left;">Research Data Storage</a></h1>
 
@@ -130,7 +141,6 @@ images = [""]
 <p>The /project storage option provides storage for collaboration and data sharing within the research group. Like /home and /scratch file systems, /project is mounted on the Rivanna, and users can freely move data around between those file systems. UVA faculty can purchase /project space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a></p>
 <p><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <br>
-<hr>
 <h2>
 	Long-Term Storage</h2>
 <a name="research-value-storage" style="text-align:left;"></a>	
@@ -145,7 +155,6 @@ images = [""]
 <p>ITS offers storage for non-research users for hosting their non-sensitive data. Users can request a space on this system by submitting <a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"> a form</a>. It can be mounted from the central network by clients on local laptops and workstations running Linux, Windows, or Mac OSX. Although not as fast as other UVA storage solutions, Value Storage offers a familiar format which is easy to understand and use. It is differentiated from Enterprise Storage by the lack of data protection features and services that are available on the Enterprise tiers. It is good for users who have their own backup solutions in place, and need a low cost terabyte level storage solution</p>
 <p><a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <br>
-<hr>
 <h2>
 	Storage Solution for Sensitive Data</h2>
 	<a name="secure-storage" style="text-align:left;"></a>
