@@ -24,14 +24,19 @@ images = [""]
       <div class="card-header">
         <b>Yes</b>
       </div>
-      <div class="card-block">
-        <p class="card-text">
-            Please check out the research computing storage solutions. The primary purpose of these storages is to provide adequate space for your large-scale research data. This includes file systems for Rivanna HPC system and long-term storage for large-scale data as well as secure storage for sensitive data.
-          
-        </p>
-      </div>
-    </div>
+	      <div class="card-block">
+	        <p class="card-text">
+	            Please check out the research computing storage solutions. The primary purpose of these storages is to provide adequate space for your large-scale research data. This includes file systems for Rivanna HPC system and long-term storage for large-scale data as well as secure storage for sensitive data. 
+	        </p>
+	      </div>
+	      <div class="card-block">
+		      <p class="card-text">
+		      	<a href="#rs" target="_self"><button class="btn btn-lg btn-success">Learn More</button></a>
+		      </p>
+	      </div>
+    	</div>
   </div>
+
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
@@ -40,7 +45,12 @@ images = [""]
       <div class="card-block">
         <p class="card-text">
           ITS provides an array of enterprise storage solutions that comes with multiple layers of data protection (snapshot, replica, and tape archiving). The minimum request for storage space starts from 10GB, it may suite you well if you are dealing with small size of very important data.
-        </p>
+        </p>        
+      </div>
+      <div class="card-block">
+      	<p class="card-text">
+      		<a href="#es" target="_self"><button class="btn btn-lg btn-success">Learn More</button></a>
+      	</p>
       </div>
     </div>
   </div>
@@ -138,9 +148,10 @@ images = [""]
 <a name="project-storage" style="text-align:left;"></a>
 <h3>
 	<code>/project</code> Project Storage - GPS ($90/TB/Yr)</h3>
-<p>The /project storage option provides storage for collaboration and data sharing within the research group. Like /home and /scratch file systems, /project is mounted on the Rivanna, and users can freely move data around between those file systems. UVA faculty can purchase /project space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a></p>
+<p>The /project storage option provides storage for collaboration and data sharing within the research group. Like /home and /scratch file systems, /project is mounted on the Rivanna, and users can freely move data around between those file systems. Total usable space of /project is close to 2 PB, and the file system comes with a data protection of 3-week snapshot. Non-Rivanna users can still request the storage space, and the data transfer to/from the storage is possible via Globus data transfer node [link]. UVA faculty can purchase /project space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a>.</p>
 <p><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <br>
+<hr>
 <h2>
 	Long-Term Storage</h2>
 <a name="research-value-storage" style="text-align:left;"></a>	
@@ -155,11 +166,12 @@ images = [""]
 <p>ITS offers storage for non-research users for hosting their non-sensitive data. Users can request a space on this system by submitting <a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"> a form</a>. It can be mounted from the central network by clients on local laptops and workstations running Linux, Windows, or Mac OSX. Although not as fast as other UVA storage solutions, Value Storage offers a familiar format which is easy to understand and use. It is differentiated from Enterprise Storage by the lack of data protection features and services that are available on the Enterprise tiers. It is good for users who have their own backup solutions in place, and need a low cost terabyte level storage solution</p>
 <p><a href="http://its.virginia.edu/hosting/storage/value.html" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <br>
+<hr>
 <h2>
 	Storage Solution for Sensitive Data</h2>
 	<a name="secure-storage" style="text-align:left;"></a>
 <h3>
-	Ivy Secure Storage ($360/TB/YR)</h3>
-<p>Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.</p>
+	Ivy Central Storage and NAS for VM ($TBD/TB/YR)</h3>
+<p>UVA’s secure data analytics system, Ivy, has multi-tiered storage systems, and a PI can specify the storage space s/he would like to have when requesting access to Ivy. A central storage pool of more than 1 PB of space is available for highly sensitive data storage regardless which platform users select for their project (among three available platforms: virtual machine, Domino DataLab, and Hadoop/Spark. For more information, please check out our Ivy User Guide[link]). This storage doesn’t allow users to store executable files for security reason, and provides read & write only access. Executable files can be stored on the VM storage. Virtual machines do not come with any significant disk storage of their own, but small amount of data (less than 100GB) can be stored directly in the block storage space that comes with each VM. When larger storage space is required for relatively higher I/O performance than the central storage space, users can request a space on the network attached storage (NAS) mounted on the VM.</p>
 <p><a href="https://somrc.virginia.edu/userinfo/ivy/#storage" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 
