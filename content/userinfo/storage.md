@@ -24,7 +24,7 @@ images = [""]
       <div class="card-header">
         <b>Yes</b>
       </div>
-	      <div class="card-block">
+	      <div class="card-block" style="min-height:250px">
 	        <p class="card-text">
 	            Please check out the research computing storage solutions. The primary purpose of these storages is to provide adequate space for your large-scale research data. This includes file systems for Rivanna HPC system and long-term storage for large-scale data as well as secure storage for sensitive data. 
 	        </p>
@@ -42,7 +42,7 @@ images = [""]
       <div class="card-header">
         <b>No</b>
       </div>
-      <div class="card-block">
+      <div class="card-block" style="min-height: 250px">
         <p class="card-text">
           ITS provides an array of enterprise storage solutions that comes with multiple layers of data protection (snapshot, replica, and tape archiving). The minimum request for storage space starts from 10GB, it may suite you well if you are dealing with small size of very important data.
         </p>        
