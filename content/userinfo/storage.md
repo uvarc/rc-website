@@ -29,7 +29,7 @@ images = [""]
 	            Please check out the research computing storage solutions. The primary purpose of these storages is to provide adequate space for your large-scale research data. This includes file systems for Rivanna HPC system and long-term storage for large-scale data as well as secure storage for sensitive data. 
 	        </p>
 	      </div>
-	      <div class="card-block">
+	      <div class="card-header">
 		      <p class="card-text">
 		      	<a href="#rs" target="_self"><button class="btn btn-lg btn-success">Learn More</button></a>
 		      </p>
@@ -47,7 +47,8 @@ images = [""]
           ITS provides an array of enterprise storage solutions that comes with multiple layers of data protection (snapshot, replica, and tape archiving). The minimum request for storage space starts from 10GB, it may suite you well if you are dealing with small size of very important data.
         </p>        
       </div>
-      <div class="card-block">
+      
+      <div class="card-header">
       	<p class="card-text">
       		<a href="#es" target="_self"><button class="btn btn-lg btn-success">Learn More</button></a>
       	</p>
