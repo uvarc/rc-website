@@ -27,7 +27,7 @@ images = [""]
 		<tr>
 		<th scope="row" style="width:25%;font-weight:bold;">Preprocessing</th>
 			<td>
-				<img src="images/preprocessing.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				<img src="/images/preprocessing.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
 				Image preprocessing can help enhance the quality of your images. Common preprocessing techniques include adjusting brightness and contrast, removing noise, sharpening images, and performing geometric and color transformations.
 			</td>
 		</tr>
@@ -35,7 +35,7 @@ images = [""]
 		<tr>
 		<th scope="row" style="width:25%;font-weight:bold;">Segmentation</th>
 			<td>
-				<img src="images/segmentation.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				<img src="/images/segmentation.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
 				Image segmentation is useful for determining one or multiple regions of interest. Segmentation can be used to identify foreground objects, cell boundaries, or tissue types. 
 			</td>
 		</tr>
@@ -43,7 +43,7 @@ images = [""]
 		<tr>
 		<th scope="row" style="width:25%;font-weight:bold;">Registration</th>
 			<td>
-				<img src="images/register.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				<img src="/images/register.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
 				Image registration is useful when comparing two or more objects of differing size or morphological features. Registration can be used to align 2D or 3D images through linear or non-linear algorithms.
 			</td>
 		</tr>
