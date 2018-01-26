@@ -12,13 +12,38 @@ images = [""]
 
 <p class=lead>School of Medicine Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by SOMRC experts and are freely available to UVa faculty, staff and students.</p>
 
-<p class=lead>For a comprehensive list of all such educational resources visit the <a href="http://cadre.virginia.edu/service-detail/education" target="_new">Computation and Data Resource Exchange (CADRE) education portal</a>.</p>
-
+<a href = "https://education.cadre.virginia.edu/">
+<img src="https://somrc.virginia.edu/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=left style="max-width:33%;" />
+</a>
+<p class=lead>Beginning in Spring 2018, SOMRC will be offering workshop registration through CADRE Academy, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site. </p>
 - - -
 
 # Upcoming
 
-<div class="alert alert-success" role="alert">We're currently scheduling our Spring 2018 workshops. Check back soon!</div>
+- [Introduction to Matlab] (https://education.cadre.virginia.edu/#/workshop/1524)
+- [Introduction to the Command Line] (https://education.cadre.virginia.edu/#/workshop/1503)
+- [Introduction to Cloud Computing] (https://education.cadre.virginia.edu/#/workshop/1502)
+- [Introduction to R] (https://education.cadre.virginia.edu/#/workshop/1510)
+- [Introduction to Python] (https://education.cadre.virginia.edu/#/workshop/1523)
+- [Introduction to Highly-Sensitive Data Analysis (Ivy)] (https://education.cadre.virginia.edu/#/workshop/1501)
+- [Machine Learning with MatLab] (https://education.cadre.virginia.edu/#/workshop/1525)
+- [Conditionals and Iteration in R] (https://education.cadre.virginia.edu/#/workshop/1511)
+- [Introduction to Git and Github] (https://education.cadre.virginia.edu/#/workshop/1528)
+- [Data Visualization with Matlab] (https://education.cadre.virginia.edu/#/workshop/1520)
+- [Image Processing with Matlab] (https://education.cadre.virginia.edu/#/workshop/1519)
+- [Parallel Computing with Matlab] (https://education.cadre.virginia.edu/#/workshop/1526)
+- [Data Analysis & Visualization with Python] (https://education.cadre.virginia.edu/#/workshop/1527)
+- [Writing in Functions in R] (https://education.cadre.virginia.edu/#/workshop/1514)
+- [Advanced Computing in the Cloud] (https://education.cadre.virginia.edu/#/workshop/1507)
+- [Docker Containers for Scientific Research] (https://education.cadre.virginia.edu/#/workshop/1506)
+- [Introduction to High Performance Computing (Rivanna)] (https://education.cadre.virginia.edu/#/workshop/1504)
+- [Databases and How to Use Them] (https://education.cadre.virginia.edu/#/workshop/1505)
+- [R Package Development Tools] (https://education.cadre.virginia.edu/#/workshop/1512)
+- [Image Data Management with OMERO] (https://education.cadre.virginia.edu/#/workshop/1522)
+- [Analyzing 16s RNA Amplicons] (https://education.cadre.virginia.edu/#/workshop/1544)
+- [Optimizing R] (https://education.cadre.virginia.edu/#/workshop/1513)
+- [Next Generation Sequence Alignment] (https://education.cadre.virginia.edu/#/workshop/1534)
+- [Machine Learning in the Cloud] (https://education.cadre.virginia.edu/#/workshop/1508)
 
 # Previous
 
