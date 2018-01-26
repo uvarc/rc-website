@@ -20,6 +20,8 @@ images = [""]
 
 # Upcoming
 
+## Spring 2018
+
 - [Introduction to Matlab] (https://education.cadre.virginia.edu/#/workshop/1524)
 - [Introduction to the Command Line] (https://education.cadre.virginia.edu/#/workshop/1503)
 - [Introduction to Cloud Computing] (https://education.cadre.virginia.edu/#/workshop/1502)
