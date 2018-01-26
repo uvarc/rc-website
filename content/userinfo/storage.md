@@ -129,7 +129,7 @@ images = [""]
 		Protection of University data on endpoint devices from loss due to hard drive failure, computer failure, etc.</li>
 </ul>
 <p>CrashPlan is currently offered at no cost to the University community until June 30, 2018. After that, the cost model/fee structure will be determined for continued use of the service. During this this initial phase, the system has a per-user quota of 250GB. If you need more space and have a valid use case, please contact ITS via the link below.</p>
-<p><a href="http://its.virginia.edu/crashplan/" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="http://its.virginia.edu/crashplan/" target="_blank"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <br>
 <hr>
 <h2>
@@ -137,20 +137,20 @@ images = [""]
 	<a name="rivanna-home" style="text-align:left;"></a>
 <h3>
 	Rivanna <code>/home</code> File System (FREE)</h3>
-<p>Each user on Rivanna HPC cluster is provided with 50GB of /home directory. It is a standard place where you can store important files or data such as your research code, configuration files, and valuable output data. Users can compile, debug their codes in this space before getting ready for production runs via scheduler (SLURM on Rivanna) on compute nodes. The /home comes with 3 weeks of snapshot backup, so if you delete your data by mistake, you can ask file recovery. The 50GB is the hard quota of the space, and users are not allowed to exceed this limit. You job will fail if the hard limit is reached.</p>
-<p><a href="https://arcs.virginia.edu/storage" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p>Each user on Rivanna HPC cluster is provided with 50GB of <code>/home</code> directory. It is a standard place where you can store important files or data such as your research code, configuration files, and valuable output data. Users can compile, debug their codes in this space before getting ready for production runs via scheduler (SLURM on Rivanna) on compute nodes. The <code>/home</code> comes with 3 weeks of snapshot backup, so if you delete your data by mistake, you can ask file recovery. The 50GB is the hard quota of the space, and users are not allowed to exceed this limit. You job will fail if the hard limit is reached.</p>
+<p><a href="https://arcs.virginia.edu/storage" target="_blank"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <a name="rivanna-scratch" style="text-align:left;"></a>
 <h3>
 	Rivanna <code>/scratch</code> File System (FREE)</h3>
 
-<p>The /scratch file system is a large-scale, high-performance parallel file system (Lustre) where multi-threaded, high-performance read &amp; write is possible. The scratch space is freely provided, and one of the most versatile storage locations available to you -- for certain use cases and with the right tuning, /scratch performs extremely well: upwards of 10x faster than NFS-mounted storage. We recommend to use this file system whenever running a series of jobs on RIvanna. There are quotas imposed (10TB per user), but they are not strictly enforced: being over quota usually just means not being able to submit jobs until you're not over quota any more, and in many cases you can have your quota adjusted simply by asking.</p>
-<p><a href="http://arcs.virginia.edu/storage" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p>The <code>/scratch</code> file system is a large-scale, high-performance parallel file system (Lustre) where multi-threaded, high-performance read &amp; write is possible. The scratch space is freely provided, and one of the most versatile storage locations available to you -- for certain use cases and with the right tuning, <code>/scratch</code> performs extremely well: upwards of 10x faster than NFS-mounted storage. We recommend to use this file system whenever running a series of jobs on RIvanna. There are quotas imposed (10TB per user), but they are not strictly enforced: being over quota usually just means not being able to submit jobs until you're not over quota any more, and in many cases you can have your quota adjusted simply by asking.</p>
+<p><a href="http://arcs.virginia.edu/storage" target="_blank"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 
 <a name="project-storage" style="text-align:left;"></a>
 <h3>
-	<code>/project</code> Project Storage - GPS ($90/TB/Yr)</h3>
-<p>The /project storage option provides storage for collaboration and data sharing within the research group. Like /home and /scratch file systems, /project is mounted on the Rivanna, and users can freely move data around between those file systems. Total usable space of /project is close to 2 PB, and the file system comes with a data protection of 3-week snapshot. Non-Rivanna users can still request the storage space, and the data transfer to/from the storage is possible via Globus data transfer node [link]. UVA faculty can purchase /project space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_new">this form</a>.</p>
-<p><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+	Research Project Storage <code>/project</code> ($90/TB/Yr)</h3>
+<p>The /project storage option provides storage for collaboration and data sharing within the research group. Like <code>/home</code> and <code>/scratch</code> file systems, <code>/project</code> is mounted on the Rivanna, and users can freely move data around between those file systems. Total usable space of <code>/project</code> is close to 2 PB, and the file system comes with a data protection of 3-week snapshot. Non-Rivanna users can still request the storage space, and the data transfer to/from the storage is possible via Globus data transfer node. UVA faculty can purchase <code>/project</code> space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_blank">this form</a>.</p>
+<p><a href="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank"><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <br>
 <hr>
 <h2>
@@ -174,5 +174,5 @@ images = [""]
 <h3>
 	Ivy Central Storage and NAS for VM ($TBD/TB/YR)</h3>
 <p>UVA’s secure data analytics system, Ivy, has multi-tiered storage systems, and a PI can specify the storage space s/he would like to have when requesting access to Ivy. A central storage pool of more than 1 PB of space is available for highly sensitive data storage regardless which platform users select for their project (among three available platforms: virtual machine, Domino DataLab, and Hadoop/Spark. For more information, please check out our Ivy User Guide[link]). This storage doesn’t allow users to store executable files for security reason, and provides read & write only access. Executable files can be stored on the VM storage. Virtual machines do not come with any significant disk storage of their own, but small amount of data (less than 100GB) can be stored directly in the block storage space that comes with each VM. When larger storage space is required for relatively higher I/O performance than the central storage space, users can request a space on the network attached storage (NAS) mounted on the VM.</p>
-<p><a href="https://somrc.virginia.edu/userinfo/ivy/#storage" target="_new"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
+<p><a href="https://somrc.virginia.edu/userinfo/ivy/" target="_blank"><button class="btn btn-small btn-success">Learn More</button></a>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 
