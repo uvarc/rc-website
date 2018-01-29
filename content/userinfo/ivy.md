@@ -258,7 +258,7 @@ and regulatory compliance and, if approved, will be installed for you.
       <div class="card-block">
         <p class="card-text">
             <li><a href="/userinfo/ivy-linux-sw/r">R 3.2.3</a></li>
-            <li>Perl 5.10</li>
+            <li><a href="/userinfo/ivy-linux-sw/perl">Perl 5.10</a></li>
             <li><a href="/userinfo/ivy-linux-sw/anaconda">Anaconda Python 2 and 3</a></li>
             <li>Java SDK+JRE 1.8</li>
             <li>X2GO Server</li>
