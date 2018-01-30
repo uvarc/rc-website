@@ -1,22 +1,20 @@
 +++
-title = "Preinstalled Strawberry Perl on Ivy Windows VM"
+title = ""
 description = ""
 author = "SOMRC Staff"
-date = "2018-01-29T15:45:12-05:00"
 images = [""]
 categories = ["userinfo"]
 tags = [
-    "Perl", 
-    "windows",
-    "ivy"
+    "tag1", 
+    "tag2"
 ]
 draft = false
 +++
 
 # Perl
 
-Our VMs have Strawberry Perl 5.24 available as part of the Windows 
-VM, as of the last writing. Licensed as open source under the GPL, it is most often used 
+Our VMs have Perl 5.16.3 available as part of the base linux 
+VM. Licensed as open source under the GPL, it is most often used 
 to develop mission critical software, and has excellent integration
 with markup languages such as HTML, XML, amongst others. Since it is both Object
 Oriented as well as procedural, it could be used within a multitude
@@ -28,8 +26,7 @@ familiar with Python.
 
 ## Running Perl code
 
-Strawberry Perl has an interactive interpreter, available under Start>
-All Programs> Strawberry Perl. Perl commands could be executed by simply typing
+Perl has an interactive interpreter, which could be run by simply typing
 ```perl -e <perl_code_goes here>```. E.g. to print a number:
 	perl -e 'print 10'
 the ```-e``` flag is simply to denote that the code is not a file, but code
@@ -54,13 +51,3 @@ This would start the installation of the module. Ivy is able to download modules
 
 **NB:** You could manually install a module from its compressed file, once you have transferred the file 
 into Ivy. *However, using the process above downloads the modules's dependencies as well.*  
-
-## Verifying if a module is installed
-
-Run the following command after installing your module :
-	
-	perldoc -l DBD::mysql
-(e.g. if you installed ```DBD::mysql```)
-It should output a path to the installed module. 
-
-

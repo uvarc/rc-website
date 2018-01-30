@@ -261,9 +261,8 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="/userinfo/ivy-linux-sw/perl">Perl 5.10</a></li>
             <li><a href="/userinfo/ivy-linux-sw/anaconda">Anaconda Python 2 and 3</a></li>
             <li>Java SDK+JRE 1.8</li>
-            <li>X2GO Server</li>
-            <li>Rodeo 1.1.21</li>
-            <li>LibreOffice 4.2.8.2-11</li>
+            <li><a href="/userinfo/ivy-linux-sw/rodeo">Rodeo 2.5</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/libre-office">LibreOffice 5</li>
           
         </p>
       </div>
@@ -278,11 +277,10 @@ and regulatory compliance and, if approved, will be installed for you.
         <p class="card-text">
           <ul>
             <li><a href="/userinfo/ivy-win-sw/rstudio">R 3.2.3</a></li>
-            <li>Strawberry Perl 5.22.1.2</li>
+            <li><a href="/userinfo/ivy-win-sw/strawberry-perl">Strawberry Perl 5.24</a></li>
             <li><a href="/userinfo/ivy-win-sw/anaconda">Anaconda Python 2 and 3</a></li>
             <li>Java SDK+JRE 1.8</li>
-            <li>X2GO Client</li>
-            <li>Rodeo 1.1.21</li>
+            <li><a href="/userinfo/ivy-win-sw/rodeo">Rodeo 1.3</a></li>
             <li>SumatraPDF 3.1.1</li>
             <li>Microsoft Office Professional Plus 2016</li>
           </ul>

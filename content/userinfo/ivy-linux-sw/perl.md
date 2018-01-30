@@ -1,12 +1,13 @@
 +++
-title = ""
+title = "Preinstalled Perl on Ivy Linux VMs"
 description = ""
 author = "SOMRC Staff"
 images = [""]
+date = "2018-01-29T15:45:12-05:00"
 categories = ["userinfo"]
 tags = [
-    "tag1", 
-    "tag2"
+    "perl", 
+    "linux"
 ]
 draft = false
 +++
@@ -57,4 +58,4 @@ into Ivy. *However, using the process above downloads the modules's dependencies
 Run the following command after installing your module :
 	
 	perldoc -l DBD::mysql
-(e.g. if you installed ```DBD::mysql```)
+(e.g. if you installed ```DBD::mysql```). It should output the path to the installed module. 
