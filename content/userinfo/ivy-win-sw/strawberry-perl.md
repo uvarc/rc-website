@@ -63,4 +63,5 @@ Run the following command after installing your module :
 (e.g. if you installed ```DBD::mysql```)
 It should output a path to the installed module. 
 
-
+## More Information
+For more information on Strawberry Perl, please visit the [official website] (http://strawberryperl.com/support.html).

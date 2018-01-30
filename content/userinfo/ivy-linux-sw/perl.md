@@ -59,3 +59,6 @@ Run the following command after installing your module :
 	
 	perldoc -l DBD::mysql
 (e.g. if you installed ```DBD::mysql```). It should output the path to the installed module. 
+
+## More Information
+Please visit the official [Perl website](https://www.perl.org/) for more details.

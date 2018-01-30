@@ -15,7 +15,7 @@ draft = false
 
 # Rodeo Overview
 
-Our Windows VMs are installed with Rodeo version 2.5, as of the last update. Rodeo is a lightweight, Python based, IDE for data science.
+Our Linux VMs are installed with Rodeo version 2.5, as of the last update. Rodeo is a lightweight, Python based, IDE for data science.
 It has a very streamlined code-to-plot workflow, with easily extensible packages that make it simple to 
 analyze difficult patterns in data. It includes many data analysis features under one roof, and adopts features from 
 iPython Notebook (it actually runs atop the iPython kernel). Like most Python projects, 
@@ -41,6 +41,10 @@ You can then open the ```Environment``` tab to view this in tabular form.
 
 All commands can be viewed under the ```History``` tab
 
+
+## More Information
+
+For more information, please visit the official [Rodeo website] (http://rodeo.yhat.com/)
 
 
 

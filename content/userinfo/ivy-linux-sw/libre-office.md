@@ -42,3 +42,6 @@ LibreOffice Draw is the vector graphics component of LibreOffice. It can save fi
 
 LibreOffice Base is the database component of LibreOffice. It uses the HSQLDB as its storage engine, and can be used as a front end for 
 larger databases systems such as MySQL and MariaDB. 
+
+## More Details
+For more details, please visit LibreOffice's [official website] (https://www.libreoffice.org/)

@@ -41,3 +41,7 @@ You can then open the ```Environment``` tab to view this in tabular form.
 
 All commands can be viewed under the ```History``` tab
 
+## More Information
+
+For more information, please visit the official [Rodeo website] (http://rodeo.yhat.com/)
+
