@@ -260,7 +260,7 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="/userinfo/ivy-linux-sw/r">R 3.2.3</a></li>
             <li><a href="/userinfo/ivy-linux-sw/perl">Perl 5.10</a></li>
             <li><a href="/userinfo/ivy-linux-sw/anaconda">Anaconda Python 2 and 3</a></li>
-            <li>Java SDK+JRE 1.8</li>
+            <li><a href="/userinfo/ivy-linux-sw/java-sdk-jre">Java SDK+JRE 1.8</a></li>
             <li><a href="/userinfo/ivy-linux-sw/rodeo">Rodeo 2.5</a></li>
             <li><a href="/userinfo/ivy-linux-sw/libre-office">LibreOffice 5</li>
           
@@ -279,10 +279,10 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="/userinfo/ivy-win-sw/rstudio">R 3.2.3</a></li>
             <li><a href="/userinfo/ivy-win-sw/strawberry-perl">Strawberry Perl 5.24</a></li>
             <li><a href="/userinfo/ivy-win-sw/anaconda">Anaconda Python 2 and 3</a></li>
-            <li>Java SDK+JRE 1.8</li>
+            <li><a href="/userinfo/ivy-win-sw/java-sdk-jre">Java SDK+JRE 1.8</a></li>
             <li><a href="/userinfo/ivy-win-sw/rodeo">Rodeo 1.3</a></li>
-            <li>SumatraPDF 3.1.1</li>
-            <li>Microsoft Office Professional Plus 2016</li>
+            <li><a href="/userinfo/ivy-win-sw/sumatra-pdf">SumatraPDF 3.1.1</a></li>
+            <li><a href="/userinfo/ivy-win-sw/ms-office">Microsoft Office Professional Plus 2016</a></li>
           </ul>
         </p>
       </div>

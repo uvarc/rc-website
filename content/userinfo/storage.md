@@ -62,24 +62,13 @@ images = [""]
 		<a name="rs" style="text-align:left;">Research Data Storage</a></h1>
 
 	<!-- <img alt="" border="0" height="621" id="Image-Maps-Com-image-maps-2017-06-14-103927" orgheight="563" orgwidth="1200" src="/images/storage/Research-storage-jan-18.png" usemap="#image-maps-2017-06-14-103927" width="1200" /> -->
-
-	<object type="image/svg+xml" data="/images/storage/research-storage.svg">
-  		Your browser does not support SVG
-	</object>
-
-	<!-- <map name="image-map" id="image-maps-2017-06-14-103927">
-	    <area target="" alt="Secure Storage" title="Secure Storage" href="#secure-storage-link" coords="492,216,708,148" shape="rect">
-	    <area target="" alt="Box Storage" title="Box Storage" href="#box-storage-link" coords="494,232,582,279" shape="rect">
-	    <area target="" alt="Crash Plan" title="Crash Plan" href="#crashplan-link" coords="616,235,728,279" shape="rect">
-	    <area target="" alt="Rivanna Home" title="Rivanna Home" href="#home-directory-link" coords="490,299,651,353" shape="rect">
-	    <area target="" alt="Enterprise Storage" title="Enterprise Storage" href="#enterprise-storage" coords="490,98,698,138" shape="rect">
-	    <area target="" alt="Rivanna Scratch" title="Rivanna Scratch" href="#scratch-storage" coords="791,297,670,355" shape="rect">
-	    <area target="" alt="Group Storage" title="Group Storage" href="#group-storage" coords="489,403,650,484" shape="rect">
-	    <area target="" alt="Project Storage" title="Project Storage" href="#project-storage" coords="660,399,818,482" shape="rect">
-	    <area target="" alt="Value Storage" title="Value Storage" href="#value-storage" coords="214,475,376,535" shape="rect">
-	</map>
- -->
-	<!-- <map  name="image-maps-2017-06-14-103927"><area alt="" coords="21,53,310,103" href="http://security.virginia.edu/university-data-protection" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="601,27,863,77" href="https://cadre.virginia.edu/service-detail/storage#ivy" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="941,27,1055,77" href="https://cadre.virginia.edu/service-detail/storage#high-security-zone" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="601,127,715,177" href="https://cadre.virginia.edu/service-detail/storage#box" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="760,129,895,179" href="https://cadre.virginia.edu/service-detail/storage#crashplan" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="602,221,713,266" href="https://cadre.virginia.edu/service-detail/storage#rivanna-home" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="837,221,973,266" href="https://cadre.virginia.edu/service-detail/storage#rivanna-scratch" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="689,308,861,353" href="https://cadre.virginia.edu/service-detail/storage#rivanna-projects" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="253,400,425,445" href="https://cadre.virginia.edu/service-detail/storage#value" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="548,400,720,445" href="https://cadre.virginia.edu/service-detail/storage#tape" shape="rect" style="outline:none;" target="_parent" title="" /> <area alt="" coords="546,480,804,525" href="https://cadre.virginia.edu/service-detail/storage#object" shape="rect" style="outline:none;" target="_parent" title="" /></map> -->
+	<div style="width: 100%;background: #fff;margin: 0 auto;">
+		<object type="image/svg+xml" data="/images/storage/research-storage.svg" style="width:100%">
+	  		<img src="/images/storage/Research-storage-jan-18.png" alt="Your browser does not support svg. Click on the Larger Image link below.">
+		</object>
+		<a href="/images/storage/Research-storage-jan-18.png" target="_self">Click here for larger image</a>
+	</div>
+	
 	
 </div>
 <br />
@@ -87,16 +76,21 @@ images = [""]
 <p><a href="https://cadre.virginia.edu/node/add/storage-request" target="_new"><button class="btn btn-large btn-success" style="text-align:center;margin-right: 25%;margin-left: 25%;width: 50%;height: 10%;font-size: 26px;">Submit Storage Request</button></a></p>
 <hr />
 <div style="text-align:right;margin-right:10%;">
-		<a class="return" href="#top" target="_self">▲ Return to Top</a></div>
+		<a class="return" href="#top" target="_self">▲ Return to Top</a>
+</div>
+
 <div style="text-align:center;">
 	<a name="es" style="text-align:left;"></a>
 	<h1 style="padding-top:100px;font-weight:bold;">
 		<a name="es" style="text-align:left;">Enterprise Data Storage</a></h1>
-	<object type="image/svg+xml" data="/images/storage/enterprise-storage.svg">
-  		Your browser does not support SVG
-	</object>
+	<div style="width: 100%;background: #fff;margin: 0 auto;">
+		<object type="image/svg+xml" data="/images/storage/enterprise-storage.svg" style="width: 100%">
+  			<img src="/images/storage/Enterprise-storage-jan-18.png" alt="Your browser does not support svg. Click on the Larger Image link below.">
+		</object>
+		<a href="/images/storage/Enterprise-storage-jan-2018.png" target="_self">Click here for larger image</a>
+	</div>
 
-	<!-- <a href="http://its.virginia.edu/hosting/storage/home.html" target="_new"><img orgheight="563" orgwidth="1200" src="/images/storage/Enterprise-storage-jan-2018.png" width="1200" /></a> -->
+
 </div>	
 
 </div>
@@ -149,7 +143,7 @@ images = [""]
 <a name="project-storage" style="text-align:left;"></a>
 <h3>
 	Research Project Storage <code>/project</code> ($90/TB/Yr)</h3>
-<p>The /project storage option provides storage for collaboration and data sharing within the research group. Like <code>/home</code> and <code>/scratch</code> file systems, <code>/project</code> is mounted on the Rivanna, and users can freely move data around between those file systems. Total usable space of <code>/project</code> is close to 2 PB, and the file system comes with a data protection of 3-week snapshot. Non-Rivanna users can still request the storage space, and the data transfer to/from the storage is possible via Globus data transfer node <a href="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345">(More details here)</a>. UVA faculty can purchase <code>/project</code> space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_blank">this form</a>.</p>
+<p>The <code>/project</code> storage option provides storage for collaboration and data sharing within the research group. Like <code>/home</code> and <code>/scratch</code> file systems, <code>/project</code> is mounted on Rivanna, and users can freely move data around between those file systems. Total usable space of <code>/project</code> is close to 2 PB, and the file system comes with a data protection of 3-week snapshot. Non-Rivanna users can still request the storage space, and the data transfer to/from the storage is possible via Globus data transfer node <a href="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345">(More details here)</a>. UVA faculty can purchase <code>/project</code> space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_blank">this form</a>.</p>
 <p><a href="/userinfo/project" target="_self"><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <br>
 <hr>
