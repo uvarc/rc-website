@@ -66,7 +66,7 @@ images = [""]
 		<object type="image/svg+xml" data="/images/storage/research-storage.svg" style="width:100%">
 	  		<img src="/images/storage/Research-storage-jan-18.png" alt="Your browser does not support svg. Click on the Larger Image link below.">
 		</object>
-		<a href="/images/storage/Research-storage-jan-18.png" target="_self">Click here for larger image</a>
+		<a href="/images/storage/research-storage.svg" target="_self">Click here for larger image</a>
 	</div>
 	
 	
@@ -87,7 +87,7 @@ images = [""]
 		<object type="image/svg+xml" data="/images/storage/enterprise-storage.svg" style="width: 100%">
   			<img src="/images/storage/Enterprise-storage-jan-18.png" alt="Your browser does not support svg. Click on the Larger Image link below.">
 		</object>
-		<a href="/images/storage/Enterprise-storage-jan-2018.png" target="_self">Click here for larger image</a>
+		<a href="/images/storage/enterprise-storage.svg" target="_self">Click here for larger image</a>
 	</div>
 
 
@@ -143,7 +143,7 @@ images = [""]
 <a name="project-storage" style="text-align:left;"></a>
 <h3>
 	Research Project Storage <code>/project</code> ($90/TB/Yr)</h3>
-<p>The <code>/project</code> storage option provides storage for collaboration and data sharing within the research group. Like <code>/home</code> and <code>/scratch</code> file systems, <code>/project</code> is mounted on Rivanna, and users can freely move data around between those file systems. Total usable space of <code>/project</code> is close to 2 PB, and the file system comes with a data protection of 3-week snapshot. Non-Rivanna users can still request the storage space, and the data transfer to/from the storage is possible via Globus data transfer node <a href="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345">(More details here)</a>. UVA faculty can purchase <code>/project</code> space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_blank">this form</a>.</p>
+<p>The <code>/project</code> storage option provides storage for collaboration and data sharing within the research group. Like <code>/home</code> and <code>/scratch</code> file systems, <code>/project</code> is mounted on Rivanna, and users can freely move data around between those file systems. Total usable space of <code>/project</code> is close to 2 PB, and the file system comes with a data protection of 3-week snapshot. Non-Rivanna users can still request the storage space, and the data transfer to/from the storage is possible via a Globus data transfer node <a href="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345">(More details here)</a>. UVA faculty can purchase <code>/project</code> space by submitting <a href="https://cadre.virginia.edu/node/add/storage-request" target="_blank">this form</a>.</p>
 <p><a href="/userinfo/project" target="_self"><button class="btn btn-small btn-success">Learn More</button>&nbsp;<a class="return" href="#top" style="align:right" target="_self">▲ Return to Top</a></p>
 <br>
 <hr>
