@@ -1,9 +1,9 @@
-{{ if .Params.categories }}
-<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;{{ range $index, $category := .Params.categories }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category tag">{{ . }}</a>{{ end }}
+{{ with .Params.categories }}
+&nbsp;<i class="fa fa-folder" aria-hidden="true"></i>&nbsp;{{ range $i, $e := . }}{{ if $i }}, {{ end }}<a href="{{ "categories/" | absURL }}{{ $e | urlize }}" rel="tag">{{ $e }}</a>{{ end }}
 {{ end }}
 
-{{ if .Params.tags }}
-<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ range sort .Params.tags "value" "asc" }}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>, {{ end }}
+{{ with .Params.tags }}
+&nbsp;<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{ range $i, $e := . }}{{ if $i }}, {{ end }}<a href="{{ "tags/" | absURL }}{{ $e | urlize }}" rel="tag">{{ $e }}</a>{{ end }}
 {{ end }}
 
 {{- /* vim: set ts=2 sw=2 et: */}}
