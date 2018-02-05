@@ -13,6 +13,8 @@ tags = [
 draft = false
 +++
 
+*Please note that HISAT2 requires approval prior to installation on the VM*
+
 # HISAT2 Overview
 
 HISAT2 is a fast and sensitive tool for aligning short reads against the general human population 
@@ -32,7 +34,7 @@ Alignment using ```HISAT2``` is a 2-step process - indexing the reference genome
 		hisat2 -x <ht2-index-basename> -1 <sampleR1.fq> -2 <sampleR2.fq> -p <N> -S <output.sam>
 	The alignment results in SAM format are written to the file ```output.sam```
 
-## Note on using the ```--sra-acc``` option
+# Note on using the ```--sra-acc``` option
 
 Since Ivy VM’s do not allow outside connections, ```--sra-acc``` option will not work with HISAT2. 
 If users plan to use SRA data, they will have to download it and move into Ivy prior to alignment.
