@@ -304,7 +304,7 @@ and regulatory compliance and, if approved, will be installed for you.
         <p class="card-text">
           <ul>
             <li><a href="/userinfo/ivy-linux-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
-            <li>Data Analysis</li>
+            <li><a href="/userinfo/ivy-linux-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
             <li>Data / Database</li>	
             <li><a href="/userinfo/ivy-linux-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
           </ul>
@@ -322,7 +322,7 @@ and regulatory compliance and, if approved, will be installed for you.
         <p class="card-text">
           <ul>
             <li><a href="/userinfo/ivy-win-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
-            <li>Data Analysis</li>
+            <li><a href="/userinfo/ivy-win-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
             <li>Data / Database</li>
             <li><a href="/userinfo/ivy-win-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
 <!--             <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See packages by group</a>]</li>

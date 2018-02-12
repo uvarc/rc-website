@@ -33,7 +33,7 @@ one data element.
 
 To start MATLAB, open a terminal window and type ```matlab```
 
-Since MATLAB is a large software, it may take time to load up. When it starts up, the first screen to appear 
+Since MATLAB is a large software, it may take time to load up. When it starts, the first screen to appear 
 would be the MATLAB Desktop, with several windows within it. These might include the ribbons (Home, Plot, and App), the Command Window,
 the Current Folder window, and the Workspace window. 
 
@@ -62,7 +62,7 @@ calculations.
 A very basic plot can be drawn using MATLAB arrays. To create an array in MATLAB, use the square brackets:
 
 	x = [1 2 3 4 5 6]
-	y = [4	-4 7 3 7 1]
+	y = [4 -4 7 3 7 1]
 
 Notice how the array elements do not have commas between them. These arrays could be used like any other variable. 
 
@@ -72,9 +72,7 @@ We have a limited number of MATLAB Licenses available, which are provided on a f
 As a consequence, availability of MATLAB on your VM is not always guaranteed once a VM request is submitted.
 Please consult with us before requesting MATLAB. 
 
-
 ## More Information
 
 For help, type ```help``` in the Command Window or click on the *Help* button on the HOME ribbon. For more Information on MATLAB itself, please
-visit the official website [here](https://www.mathworks.com/products/matlab.html
-)
+visit the official website [here](https://www.mathworks.com/products/matlab.html)

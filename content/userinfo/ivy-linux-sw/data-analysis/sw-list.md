@@ -38,10 +38,21 @@ Stata is a large GUI based data analysis software package. It is great for stati
 
 **NB**: Requires user to bring their own license(s). For more information on Stata, please click [here](/userinfo/ivy-linux-sw/data-analysis/stata)
 
-## IDL
+## [IDL](/userinfo/ivy-linux-sw/data-analysis/idl)
 
-More information coming soon.
+IDL is a programming language used widely in the areas of medicine, physics, and astronomy. Image processing can be performed easily on it. 
+Users can use it on the VM using its command line based
+interface. 
 
-## cTAKES
+**NB**: Limited licenses available, for more informationon IDL and licensing, please click [here](/userinfo/ivy-linux-sw/data-analysis/idl)
 
-More information coming soon. 
+## [Apache cTAKES](/userinfo/ivy-linux-sw/data-analysis/ctakes)
+
+The clinical Text Analysis and Knowledge Extraction System (cTAKES) is an open source system to extract information from clinical health records. 
+It uses natural language processing to extract information about the patient, drugs, symptoms, procedures, etc. It is an efficient clinical analysis
+tool, and was specifically written for the clinical domain. 
+
+**NB** cTAKES requires pre-installation approval. Please get in touch with us regarding your requirements before making a VM request. 
+
+For information about cTAKES, please click [here](/userinfo/ivy-linux-sw/data-analysis/ctakes)  
+ 
