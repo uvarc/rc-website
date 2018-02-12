@@ -1,5 +1,5 @@
 +++
-title = "SAS on the Ivy Linux VM"
+title = "UVa Licensed SAS on the Ivy Linux VM"
 description = ""
 author = "SOMRC Staff"
 images = [""]
@@ -30,6 +30,10 @@ research activiites. The SAS Clinical Standards Toolkit initially focuses on sta
 Interchange Standards Consortium (CDISC). CDISC is a global, open, multidisciplinary, nonprofit organization that 
 has established standards to support the acquisition, exchange, submission, and archival of clinical research data and metadata. 
 
+### Starting SAS
+
+Open a terminal window and type ```sas```.
+
 ### Getting a list of all installed standards
 	
 	%cst_getregisteredstandards(
@@ -49,7 +53,7 @@ has established standards to support the acquisition, exchange, submission, and 
 ## Licensing
 
 We have a limited number of SAS Licenses available, which are provided on a first-come-first-serve basis. 
-As a consequence, availability of SAS on your Windows VM is not always guaranteed once a VM request is submitted.
+As a consequence, availability of SAS on your VM is not always guaranteed once a VM request is submitted.
 Please consult with us before requesting SAS. 
 
 ## More information
