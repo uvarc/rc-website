@@ -96,3 +96,7 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 	```deactivate```
 7. Remove an environment:
 ```conda remove -n your_env_name_goes_here -all```
+
+## More Information
+
+For more information, please visit the official [Anaconda website] (https://anaconda.org/anaconda/python)

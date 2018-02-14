@@ -62,5 +62,7 @@ to it
 	options(repos = r)
 	rm(r)
 	
+## More Information
 
+For more information, please visit the official [R website](https://www.r-project.org/)
 

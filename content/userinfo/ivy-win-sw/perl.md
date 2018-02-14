@@ -1,13 +1,12 @@
 +++
-title = "Preinstalled Perl on Ivy Linux VMs"
+title = ""
 description = ""
 author = "SOMRC Staff"
 images = [""]
-date = "2018-01-29T15:45:12-05:00"
 categories = ["userinfo"]
 tags = [
-    "perl", 
-    "linux"
+    "tag1", 
+    "tag2"
 ]
 draft = false
 +++
@@ -52,13 +51,3 @@ This would start the installation of the module. Ivy is able to download modules
 
 **NB:** You could manually install a module from its compressed file, once you have transferred the file 
 into Ivy. *However, using the process above downloads the modules's dependencies as well.*  
-
-## Verifying if a module is installed
-
-Run the following command after installing your module :
-	
-	perldoc -l DBD::mysql
-(e.g. if you installed ```DBD::mysql```). It should output the path to the installed module. 
-
-## More Information
-Please visit the official [Perl website](https://www.perl.org/) for more details.

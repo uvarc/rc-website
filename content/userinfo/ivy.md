@@ -256,14 +256,14 @@ and regulatory compliance and, if approved, will be installed for you.
         <b>PREINSTALLED Linux Software</b>
       </div>
       <div class="card-block">
+        <i>Click on each for details:</i>
         <p class="card-text">
-            <li><a href="/userinfo/ivy-linux-sw/r">R 3.2.3</a></li>
-            <li>Perl 5.10</li>
-            <li><a href="/userinfo/ivy-linux-sw/anaconda">Anaconda Python 2 and 3</a></li>
-            <li>Java SDK+JRE 1.8</li>
-            <li>X2GO Server</li>
-            <li>Rodeo 1.1.21</li>
-            <li>LibreOffice 4.2.8.2-11</li>
+            <li><a href="/userinfo/ivy-linux-sw/r" style="color: #0275d8;">R 3.2.3</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/perl" style="color: #0275d8;">Perl 5.10</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/anaconda" style="color: #0275d8;">Anaconda Python 2 and 3</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/java-sdk-jre" style="color: #0275d8;">Java SDK+JRE 1.8</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/rodeo" style="color: #0275d8;">Rodeo 2.5</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/libre-office" style="color: #0275d8;">LibreOffice 5</a></li>
           
         </p>
       </div>
@@ -275,16 +275,16 @@ and regulatory compliance and, if approved, will be installed for you.
         <b>PREINSTALLED Windows Software</b>
       </div>
       <div class="card-block">
+        <i>Click on each for details:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy-win-sw/rstudio">R 3.2.3</a></li>
-            <li>Strawberry Perl 5.22.1.2</li>
-            <li><a href="/userinfo/ivy-win-sw/anaconda">Anaconda Python 2 and 3</a></li>
-            <li>Java SDK+JRE 1.8</li>
-            <li>X2GO Client</li>
-            <li>Rodeo 1.1.21</li>
-            <li>SumatraPDF 3.1.1</li>
-            <li>Microsoft Office Professional Plus 2016</li>
+            <li><a href="/userinfo/ivy-win-sw/rstudio" style="color: #0275d8;">R 3.2.3</a></li>
+            <li><a href="/userinfo/ivy-win-sw/strawberry-perl" style="color: #0275d8;">Strawberry Perl 5.24</a></li>
+            <li><a href="/userinfo/ivy-win-sw/anaconda" style="color: #0275d8;">Anaconda Python 2 and 3</a></li>
+            <li><a href="/userinfo/ivy-win-sw/java-sdk-jre" style="color: #0275d8;">Java SDK+JRE 1.8</a></li>
+            <li><a href="/userinfo/ivy-win-sw/rodeo" style="color: #0275d8;">Rodeo 1.3</a></li>
+            <li><a href="/userinfo/ivy-win-sw/sumatra-pdf" style="color: #0275d8;">SumatraPDF 3.1.1</a></li>
+            <li><a href="/userinfo/ivy-win-sw/ms-office" style="color: #0275d8;">Microsoft Office Professional Plus 2016</a></li>
           </ul>
         </p>
       </div>
@@ -300,13 +300,13 @@ and regulatory compliance and, if approved, will be installed for you.
         <b>ADDITIONAL Linux Groups</b>
       </div>
       <div class="card-block">
+        <i>Click on each for details:</i>
         <p class="card-text">
           <ul>
-            <li>Bioinformatics</li>
-            <li>Data Analysis</li>
+            <li><a href="/userinfo/ivy-linux-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
             <li>Data / Database</li>	
-            <li>Image Processing</li>
-            <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See packages by group</a>]</li>
+            <li><a href="/userinfo/ivy-linux-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
           </ul>
         </p>
       </div>
@@ -318,14 +318,15 @@ and regulatory compliance and, if approved, will be installed for you.
         <b>ADDITIONAL Windows Groups</b>
       </div>
       <div class="card-block">
+        <i>Click on each for details:</i>
         <p class="card-text">
           <ul>
-            <li>Bioinformatics</li>
-            <li>Data Analysis</li>
+            <li><a href="/userinfo/ivy-win-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy-win-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
             <li>Data / Database</li>
-            <li>Image Processing</li>
-            <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See packages by group</a>]</li>
-          </ul>
+            <li><a href="/userinfo/ivy-win-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
+<!--             <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See packages by group</a>]</li>
+ -->          </ul>
         </p>
       </div>
     </div>

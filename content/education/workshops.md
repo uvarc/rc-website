@@ -13,7 +13,7 @@ images = [""]
 <p class=lead>School of Medicine Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by SOMRC experts and are freely available to UVa faculty, staff and students.</p>
 
 <a href = "https://education.cadre.virginia.edu/">
-<img src="https://somrc.virginia.edu/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:33%; padding-left:25px; padding-bottom:50px;" />
+	<img src="https://somrc.virginia.edu/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:104%; padding-left:25px; padding-bottom:10px;" />
 </a>
 <p class=lead>Beginning in Spring 2018, SOMRC will be offering workshop registration through <a href = "https://education.cadre.virginia.edu/">CADRE Academy</a>, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site. </p>
 - - -
