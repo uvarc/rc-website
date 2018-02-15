@@ -52,8 +52,8 @@ window:
 	install DBD::MySQL
 This would start the installation of the module. Ivy is able to download modules from CPAN using this method. 
 
-**NB:** You could manually install a module from its compressed file, once you have transferred the file 
-into Ivy. *However, using the process above downloads the modules's dependencies as well.*  
+&#42; *You could manually install a module from its compressed file, once you have transferred the file 
+into Ivy. However, using the process above downloads the modules's dependencies as well.*  
 
 ## Verifying if a module is installed
 

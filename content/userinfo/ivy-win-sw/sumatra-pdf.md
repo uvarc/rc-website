@@ -14,7 +14,7 @@ tags = [
 draft = false
 +++
 
-# Overview
+# Sumatra PDF Overview
 
 Sumatra PDF is an open source software to view PDF files in Windows. It could be used to view PDF documents stored within the Ivy VM. 
 As of the latest version, Sumatra supports multiple formats including PDF, EPUB, MOBI, and XPS. 
