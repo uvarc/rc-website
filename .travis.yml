@@ -1,6 +1,7 @@
 branches:
   only:
   - master
+  - staging
 language: go
 env:
   global:
@@ -27,6 +28,8 @@ notifications:
     - provider: script
       script: ~/.local/bin/aws s3 sync public s3://$BUCKET_NAME --region=us-east-1 --delete
       skip_cleanup: true
+      on:
+        branch: master
     # clear the cloudfront cache so changes are seen
     - provider: script
       script: ~/.local/bin/aws sns publish --region=us-east-1 --topic-arn '$TOPIC_ARN' --message '{'clear'}'
