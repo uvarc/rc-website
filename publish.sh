@@ -43,4 +43,4 @@ else
   echo "--- Public dir published to AWS"
 fi
 
-aws cloudfront create-invalidation --distribution-id "E1JZBKRR78QE2T" --paths "/*"
+aws cloudfront create-invalidation --distribution-id "E1D17U7SPHRTOU" --paths "/*"
