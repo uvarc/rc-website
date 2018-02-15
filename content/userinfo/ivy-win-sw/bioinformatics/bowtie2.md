@@ -12,7 +12,6 @@ tags = [
 ]
 draft = false
 +++
-# Bowtie2 Overview
 
 Bowtie2 is a memory-efficient tool for aligning short sequences to long reference genomes.
 It indexes the genome using FM Index, which is based on Burrows-Wheeler Transform algorithm,
@@ -44,7 +43,7 @@ The alignment results in SAM format are written to the file ```output.sam```
 
 For more information, please refer to the Bowtie2 [manual] (http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml).
 
-# Citation: 
+# Citation
 
 If you use ```bowtie2``` for your work, please cite:
 
