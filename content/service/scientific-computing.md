@@ -61,7 +61,7 @@ Examples of service areas include:
       <li>Apache Spark</li>
     </ul>
     </p>
-    <a href="https://somrc.virginia.edu/userinfo/ivy/" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
+    <a href="/userinfo/ivy/" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
   </div>
 </div>
 

@@ -20,7 +20,7 @@ images = [
 
 +++
 
-<img src="https://somrc.virginia.edu/images/logos/aws_logo_smile_195x195.png" alt="AWS" align=right style="max-width:33%;" />
+<img src="/images/logos/aws_logo_smile_195x195.png" alt="AWS" align=right style="max-width:33%;" />
 <p class=lead>Cloud computing is ideal for running flexible, scalable applications on demand, in periodic bursts, or for fixed periods of time. UVA SOMRC works alongside researchers to design and run research applications and datasets into Amazon Web Services, the leader among public cloud vendors. This means that server, storage, and database needs do not have to be estimated or purchased beforehand – they can be scaled larger and smaller with your needs, or programmed to scale dynamically with your application.</p>
 
 <hr size=1 style="padding-bottom:10px;" />
@@ -65,7 +65,7 @@ highly-sensitive datasets for their investigations.
     <tr>
       <th scope="row" style="width:25%;font-weight:bold;">Workflows & Pipeline Management</th>
       <td>
-<img src="https://somrc.virginia.edu/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+<img src="/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
 Researchers need flexibility for where they run their data pipelines -- it might be on a personal computer, a lab server,
 an HPC cluster, or a cloud instance. We are working with faculty to extend some commonly-used pipeline tools so that they
 can create and push jobs to cloud-based resources, regardless of the cloud vendor. 
@@ -173,7 +173,7 @@ If you have a project and would like to discuss options, pricing, design, or imp
 Our staff includes an AWS certified solution architect, and the entire SOMRC team uses AWS for our own internal 
 systems and development.
 
-[<button class="btn btn-primary">Request a Consultation</button>](https://somrc.virginia.edu/service/consult/)
+[<button class="btn btn-primary">Request a Consultation</button>](/service/consult/)
 
 <hr size=1 style="padding-bottom:10px;" />
 
@@ -183,7 +183,7 @@ We also offer in-person, hands-on workshops and sessions on working with the clo
 from creating object storage buckets and simple compute instances to more complex data-driven workflows and Docker containers,
 If you have an idea for a workshop or would like to schedule training for your lab or group, please contact us. 
 
-[<button class="btn btn-primary">Find a Workshop</button>](https://somrc.virginia.edu/education/workshops/)
+[<button class="btn btn-primary">Find a Workshop</button>](/education/workshops/)
 
 <hr size=1 style="padding-bottom:10px;" />
 
@@ -192,6 +192,6 @@ If you have an idea for a workshop or would like to schedule training for your l
     <a href="https://aws.amazon.com/education/awseducate/" target="_new"><img src="https://www.awseducate.com/resource/AWSLogo_350" alt="AWS Educate Member" style="padding-top:20px;padding-bottom:20px;" /></a>
   </div>
   <div class="col-sm-8">
-    <img src="https://somrc.virginia.edu/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" style="width:196px;height:80px;" />
+    <img src="/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" style="width:196px;height:80px;" />
   </div>
 </div>

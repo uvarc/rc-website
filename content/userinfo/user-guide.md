@@ -39,7 +39,7 @@ quell_footer = true
       <p class="card-text">Need large, or extremely large storage offsite or on grounds? Can you count in GB, TB, or PB? Learn more about storage options and pricing.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="https://somrc.virginia.edu/userinfo/storage/"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#storageModal">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/storage/"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#storageModal">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@ quell_footer = true
       <p class="card-text">Have an idea you'd like to test? Need an environment provisioned in short-order? We can help you build in the AWS cloud.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="https://somrc.virginia.edu/service/cloud/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/service/cloud/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@ quell_footer = true
       <p class="card-text">Sometimes numbers on a page, or data in a table, isn't enough to show others the significance of your research. UVA has a visualization lab to help you show your data.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="https://somrc.virginia.edu/userinfo/lab-computing/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/lab-computing/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -76,7 +76,7 @@ quell_footer = true
       <p class="card-text">Sometimes you have the right data, but in the wrong place. There are several paths available for researchers depending upon the size and destination of your data.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="https://somrc.virginia.edu/userinfo/data-transfer/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/data-transfer/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -87,7 +87,7 @@ quell_footer = true
       <p class="card-text">For patient data or other secure applications requiring HIPAA, we have multiple options on-grounds and in the AWS cloud.</p>
       <br clear=all />  
       <div class="contact-button">
-        <a href="https://somrc.virginia.edu/userinfo/hipaa-compliance/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/hipaa-compliance/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -125,7 +125,7 @@ quell_footer = true
           </div>
           <div class="card-block">
             <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
-            <a href="https://somrc.virginia.edu/userinfo/ivy/"><button class="btn btn-primary">Ivy User Guide</button></a>
+            <a href="/userinfo/ivy/"><button class="btn btn-primary">Ivy User Guide</button></a>
           </div>
         </div>
         </div>

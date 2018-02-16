@@ -84,7 +84,7 @@ Depending on the amount of data you have, running automatic image processing pip
 
 SOM Research Computing has experience with image processing and developing pipelines to expedite processing for large datasets. If you have an image processing project and would like to discuss potential solutions and implementation, SOM Research Computing is available for consultation. 
 
-[<button class="btn btn-primary">Request a Consultation</button>](https://somrc.virginia.edu/service/consult/)
+[<button class="btn btn-primary">Request a Consultation</button>](/service/consult/)
 
 <hr size=1 style="padding-bottom:10px;" />
 
@@ -92,4 +92,4 @@ SOM Research Computing has experience with image processing and developing pipel
 
 SOM Research Computing offers interactive workshops for learning image processing and data management techniques. To learn more and register for workshops, please visit the CADRE Academy education platform.
 
-[<button class="btn btn-primary">Find a Workshop</button>](https://somrc.virginia.edu/education/workshops/)
+[<button class="btn btn-primary">Find a Workshop</button>](/education/workshops/)

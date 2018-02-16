@@ -33,7 +33,7 @@ Whether you are interested in local computing resources ([Rivanna](http://arcs.v
 
 SOMRC offers free one-on-one consultations to address specific needs related to data analysis, storage and computation. We are happy to meet with you and discuss your project in-person at your convenience. 
 
-<a href="https://somrc.virginia.edu/service/consult/"><button class="btn btn-warning">
+<a href="/service/consult/"><button class="btn btn-warning">
 Request Consultation</button>
 </a>
 
