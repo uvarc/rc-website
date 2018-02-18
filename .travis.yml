@@ -37,4 +37,7 @@ deploy:
     skip_cleanup: true
     on:
       branch: staging
-        
+  - provider: script
+    script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $STAGING_DISTRIBUTION_ID --paths "/*"
+    on:
+      branch: staging
