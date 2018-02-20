@@ -39,7 +39,7 @@ these principles and apply them to practical, real-world use cases:
 
 ## Storage with S3
 
-<img src="https://somrc.virginia.edu/images/aws/s3.png" align="left" style="max-height:80px;margin:4px;" alt="S3" />
+<img src="/images/aws/s3.png" align="left" style="max-height:80px;margin:4px;" alt="S3" />
 S3 (Simple Storage Service) is Amazon's object storage service, ideal for large files, archives, media files, backups, and other file types that do not require
 direct interaction (writes/updates) as if they were in your filesystem.
 
@@ -51,7 +51,7 @@ powerful easily, and only for the time you need extra resources.
 
 ## Websites / Web Publishing
 
-<img src="https://somrc.virginia.edu/images/website-icon.png" align="right" style="max-height:100px;margin:4px;" alt="Web" />
+<img src="/images/website-icon.png" align="right" style="max-height:100px;margin:4px;" alt="Web" />
 Need to host a simple, public-facing site to explain or share your research? You may only need a static HTML website, and in S3 you 
 can publish your site with no server(s) to maintain. (The website you are currently reading is hosted in S3.) If you need something
 more that runs Python, PHP, or Shiny (among many others), we can help you create an instance and publish to it. You can even lock 
@@ -67,4 +67,4 @@ PostgreSQL, or NoSQL options such as MongoDB and DynamoDB.
 
 ## Want to learn more?
 
-[Read more](https://somrc.virginia.edu/service/cloud/) about how the UVA School of Medicine Research Computing group is helping researchers use the cloud.
+[Read more](/service/cloud/) about how the UVA School of Medicine Research Computing group is helping researchers use the cloud.
