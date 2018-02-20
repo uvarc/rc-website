@@ -33,7 +33,7 @@ draft = false
       <div class="card-block">
         <p class="lead">Submit an account request for Rivanna or Ivy below.</p>
         <p><a href="http://arcs.virginia.edu/rivanna#access"><button class="btn btn-success">Rivanna Account Request</button></a></p>
-        <p><a href="https://somrc.virginia.edu/userinfo/ivy/"><button class="btn btn-success">Ivy Account Request</button></a></p>
+        <p><a href="/userinfo/ivy/"><button class="btn btn-success">Ivy Account Request</button></a></p>
       </div>
     </div>
   </div>
@@ -49,7 +49,7 @@ draft = false
     <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="card-block">
         <p>Read more about free and fee-based storage options for researchers.</p>
-        <a href="https://somrc.virginia.edu/userinfo/storage/"><button class="btn btn-success">Storage Options</button></a>
+        <a href="/userinfo/storage/"><button class="btn btn-success">Storage Options</button></a>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@ draft = false
     <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="card-block">
         <p>Read details about the Ivy secure environment and how to log in.</p>
-        <a href="https://somrc.virginia.edu/userinfo/ivy/"><button class="btn btn-success">Read More about Ivy</button></a>
+        <a href="/userinfo/ivy/"><button class="btn btn-success">Read More about Ivy</button></a>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@ draft = false
     <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
       <div class="card-block">
         <p>Read about how to use Domino Data Lab in Ivy.</p>
-        <a href="https://somrc.virginia.edu/userinfo/ivy-ddl/"><button class="btn btn-success">Read More about DDL</button></a>
+        <a href="/userinfo/ivy-ddl/"><button class="btn btn-success">Read More about DDL</button></a>
       </div>
     </div>
   </div>

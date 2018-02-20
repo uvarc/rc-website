@@ -16,7 +16,7 @@ images = [""]
 
 # Next-generation sequence data analyis
 
-SOMRC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://arcs.virginia.edu/rivanna)/[Ivy](https://somrc.virginia.edu/userinfo/ivy/)/[AWS](https://somrc.virginia.edu/service/cloud/). Typical analyses include (but not limited to) – 
+SOMRC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://arcs.virginia.edu/rivanna)/[Ivy](/userinfo/ivy/)/[AWS](/service/cloud/). Typical analyses include (but not limited to) – 
   <ul>
    <li>Genome assembly, reference-based and/or de-novo</li>
    <li>Whole Genome/Exome Sequence analysis for variant calling/annotation</li>

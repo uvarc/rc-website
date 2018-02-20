@@ -1,4 +1,4 @@
-baseurl = "https://somrc.virginia.edu/"
+baseurl = "/"
 title = "Research Computing"
 publishdir = "public"
 languageCode = "en-us"
