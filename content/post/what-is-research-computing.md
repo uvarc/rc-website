@@ -39,6 +39,7 @@ Rather than approach your research with a specific technology or platform in min
     <a class="dropdown-item" href="/service/cloud">Cloud Solutions</a>
     <a class="dropdown-item" href="/service/data-analysis">Data Analysis</a>
     <a class="dropdown-item" href="/service/scientific-computing/">Scientific Computing</a>
+    <a class="dropdown-item" href="/service/imaging/">Image Processing</a>
     <hr/>
     <a class="dropdown-item" href="/service/grant-support">Grant Support</a>
     <a class="dropdown-item" href="/service/collaboration">Collaboration</a>
