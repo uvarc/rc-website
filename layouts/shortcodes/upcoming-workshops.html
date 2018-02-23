@@ -1,0 +1,25 @@
+<div style="width:100%;">
+<table class="table table-hover table-striped" style="width: 100%; table-layout: fixed;">
+  <thead class="thead-inverse">
+    <tr>
+      <th scope="row">DATE</th>
+      <th style="text-align:left;">WORKSHOP</th>
+      <th>INSTRUCTOR</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/featured" }}
+  {{ range $dataWorkshops }}
+    {{$sessions := .sessions}}
+    <tr>
+      {{ range first 1 $sessions }}
+      <td>{{ dateFormat "January 02, 2006" .date_time}}</td>
+      {{ end }}
+
+      <td><a href="https://education.cadre.virginia.edu/#/workshop/{{ .id }}" target="_new">{{ .title }}</a></td>
+      <td>{{.instructor.display_name }}</td>
+    </tr>
+  {{ end }}
+  </tbody>
+</table>
+</div>
