@@ -13,7 +13,7 @@
     <tr>
       <td scope="row" style="width:60%;"><a href="https://education.cadre.virginia.edu/#/workshop/{{ .id }}" target="_new">{{ .title }}</a></td>
       {{ range first 1 $sessions }}
-      <td >{{ dateFormat "Jan 01, 2006" .date_time}}</td>
+      <td >{{ dateFormat "Jan 2, 2006" .date_time}}</td>
       {{ end }}
     </tr>
   {{ end }}
