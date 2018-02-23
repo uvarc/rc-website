@@ -1,20 +1,19 @@
 <div style="width:100%;">
-<table class="table table-sm table-responsive status-tbl table-striped" style="width: auto">
+<table class="table table-sm table-responsive status-tbl table-striped" style="width: 100%; table-layout: fixed;">
   <thead class="thead-inverse">
     <tr>
-      <th scope="row">Workshop</th>
-      <th style="text-align:right;">Date</th>
+      <th scope="row">WORKSHOP</th>
+      <th style="text-align:left;">DATE</th>
     </tr>
   </thead>
   <tbody>
   {{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/featured" }}
   {{ range first 5 $dataWorkshops }}
     {{$sessions := .sessions}}
-
     <tr>
-      <td scope="row" style="width:70%;"><a href="https://education.cadre.virginia.edu/#/workshop/{{ .id }}" target="_new">{{ .title }}</a></td>
+      <td scope="row" style="width:60%;"><a href="https://education.cadre.virginia.edu/#/workshop/{{ .id }}" target="_new">{{ .title }}</a></td>
       {{ range first 1 $sessions }}
-      <td align="right">{{ dateFormat "01/2/06" .date_time}}</td>
+      <td >{{ dateFormat "Jan 01, 2006" .date_time}}</td>
       {{ end }}
     </tr>
   {{ end }}
