@@ -23,7 +23,7 @@ images = [""]
 {{% upcoming-workshops %}}
 
 <!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
-<a href="https://education.cadre.virginia.edu/" class="btn btn-warning" target="_new"> View All Upcoming Workshops on CADRE Academy <i class="fa fa-external-link"></i></a>
+<a href="https://education.cadre.virginia.edu/" class="btn btn-warning" target="_new"> View All Upcoming Workshops on CADRE Academy </a>
 
 <!-- ## Spring 2018
 

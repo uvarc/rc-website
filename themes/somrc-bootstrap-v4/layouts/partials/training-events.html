@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-  {{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/featured" }}
+  {{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
   {{ range first 5 $dataWorkshops }}
     {{$sessions := .sessions}}
     <tr>
