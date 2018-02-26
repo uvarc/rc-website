@@ -15,7 +15,7 @@ tags = [
   "hipaa",
   "security",
 ]
-draft = true
+draft = false
 
 +++
 
