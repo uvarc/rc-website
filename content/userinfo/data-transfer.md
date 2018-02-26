@@ -10,7 +10,7 @@ images = [""]
 author = "SOMRC Staff"
 description = ""
 title = "Data Transfer"
-draft = false
+draft = true
 +++
 
 <p class="lead">Many resources are available to ensure that Laboratory Research data is being stored in proper locations, organized correctly with help of Records Management suggestions and is being stored in appropriate environments.</p>
