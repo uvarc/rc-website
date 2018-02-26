@@ -56,16 +56,17 @@ quell_footer = true
   </div>
 </div>
 
-<!-- DROPPING SECOND ROW FOR NOW
+
 <div class="card-group">
   <div class="card">
-    <div style="text-align:center;"><i class="fa fa-stethoscope fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
+    <div style="text-align:center;"><i class="fa fa-image fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
-      <h4 class="card-title">Lab Computing</h4>
-      <p class="card-text">Sometimes numbers on a page, or data in a table, isn't enough to show others the significance of your research. UVA has a visualization lab to help you show your data.</p>
+      <h4 class="card-title">Image Processing</h4>
+      <p class="card-text">Do you have a large imaging dataset to process? Do you want to automate your image processing pipeline? Learn more about tools and techniques to speed up your workflow. 
+      </p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/userinfo/lab-computing/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/service/imaging/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -83,16 +84,16 @@ quell_footer = true
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-shield fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
-      <h4 class="card-title">HIPAA Compliance</h4>
+      <h4 class="card-title">Secure Computing</h4>
       <p class="card-text">For patient data or other secure applications requiring HIPAA, we have multiple options on-grounds and in the AWS cloud.</p>
       <br clear=all />  
       <div class="contact-button">
-        <a href="/userinfo/hipaa-compliance/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/secure-computing/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
 </div>
--->
+
 
 
 <!-- Modal for HPC -->

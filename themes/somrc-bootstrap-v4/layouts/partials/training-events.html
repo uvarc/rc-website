@@ -1,20 +1,20 @@
 <div style="width:100%;">
-<table class="table table-sm table-responsive status-tbl table-striped" style="width: auto">
+<table class="table table-sm table-responsive status-tbl table-striped" style="width: 100%; table-layout: fixed;">
   <thead class="thead-inverse">
     <tr>
-      <th scope="row">Event</th>
-      <th>Tech</th>
-      <th style="text-align:right;">Date</th>
+      <th scope="row">WORKSHOP</th>
+      <th style="text-align:left;">DATE</th>
     </tr>
   </thead>
   <tbody>
-  {{ $url := "events.csv" }}
-  {{ $sep := "," }}
-  {{ range $i, $r := getCSV $sep $url }}
+  {{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
+  {{ range first 5 $dataWorkshops }}
+    {{$sessions := .sessions}}
     <tr>
-      <td scope="row" style="width:70%;"><a href="https://education.cadre.virginia.edu/#/workshop/{{ index $r 3 }}" target="_new">{{ index $r 0 }}</a></td>
-      <td>{{ index $r 1 }}</td>
-      <td align="right">{{ index $r 2 }}</td>
+      <td scope="row" style="width:60%;"><a href="https://education.cadre.virginia.edu/#/workshop/{{ .id }}" target="_new">{{ .title }}</a></td>
+      {{ range first 1 $sessions }}
+      <td >{{ dateFormat "Jan 02, 2006" .date_time}}</td>
+      {{ end }}
     </tr>
   {{ end }}
   </tbody>

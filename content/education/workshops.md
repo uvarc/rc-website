@@ -20,7 +20,12 @@ images = [""]
 
 # Upcoming
 
-## Spring 2018
+{{% upcoming-workshops %}}
+
+<!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
+<a href="https://education.cadre.virginia.edu/" class="btn btn-warning" target="_new"> View All Upcoming Workshops on CADRE Academy </a>
+
+<!-- ## Spring 2018
 
 - [Introduction to Matlab] (https://education.cadre.virginia.edu/#/workshop/1524)
 - [Introduction to the Command Line] (https://education.cadre.virginia.edu/#/workshop/1503)
@@ -45,7 +50,7 @@ images = [""]
 - [Analyzing 16s RNA Amplicons] (https://education.cadre.virginia.edu/#/workshop/1544)
 - [Optimizing R] (https://education.cadre.virginia.edu/#/workshop/1513)
 - [Next Generation Sequence Alignment] (https://education.cadre.virginia.edu/#/workshop/1534)
-- [Machine Learning in the Cloud] (https://education.cadre.virginia.edu/#/workshop/1508)
+- [Machine Learning in the Cloud] (https://education.cadre.virginia.edu/#/workshop/1508) -->
 
 # Previous
 
