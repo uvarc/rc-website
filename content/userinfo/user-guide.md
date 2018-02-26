@@ -70,7 +70,7 @@ quell_footer = true
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card" style="visibility: hidden">
     <div style="text-align:center;"><i class="fa fa-truck fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Data Transfer</h4>
@@ -81,7 +81,7 @@ quell_footer = true
       </div>
     </div>
   </div>
-  <div class="card">
+  <div class="card" style="visibility: hidden">
     <div style="text-align:center;"><i class="fa fa-shield fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Secure Computing</h4>
