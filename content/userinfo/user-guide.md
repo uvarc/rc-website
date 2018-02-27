@@ -66,7 +66,7 @@ quell_footer = true
       </p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/service/imaging/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="#"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
