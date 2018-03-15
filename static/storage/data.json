@@ -6,18 +6,21 @@
         "children": [
           { "name": "Research Data",
             "children": [
-              { "name": "Ivy Secure Storage", 
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#ivy"
+              { "name": "Ivy Central Storage", 
+                "url":  "https://cadre.virginia.edu/service-detail/storage",
+                "note": "note about ICS"
               },
               { "name": "High Security Zone Storage",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#high-security-zone"
+                "url":  "https://cadre.virginia.edu/service-detail/storage",
+                "note": "note about HSZ Storage"
               }
             ]
           },
           { "name": "Non-Research Data",
             "children": [
               { "name": "ITS Enterprise Storage",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#its-enterprise"
+                "url":  "https://cadre.virginia.edu/service-detail/storage",
+                "note": "note about ITS Enterprise Storage"
               }
             ]
           }
@@ -28,42 +31,44 @@
           { "name": "Rivanna User",
             "children": [
               { "name": "/home",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#rivanna-home"
+                "url":  "https://cadre.virginia.edu/service-detail/storage",
+                "note": "note about /home storage"
               },
               { "name": "/scratch - LUSTRE",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#rivanna-scratch"
+                "url":  "https://cadre.virginia.edu/service-detail/storage",
+                "note": "note about LUSTRE storage"
               },
-              { "name": "/projects - Qumulo",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#rivanna-projects"
+              { "name": "/project - Qumulo",
+                "url":  "https://cadre.virginia.edu/service-detail/storage",
+                "note": "note about /project storage"
               },
               { "name": "Value Storage",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#value"
-              },
-              { "name": "Object Storage - Swift",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#object"
+                "url":  "http://its.virginia.edu/hosting/storage/value.html",
+                "note": "note about value storage"
               }
             ]
           },
           { "name": "Non-Rivanna User",
             "children": [
               { "name": "Value Storage",
-                "url":  "#value"
+                "url":  "http://its.virginia.edu/hosting/storage/value.html",
+                "note": "note about value Storage"
               },
               { "name": "Tape Archiving",
-                "url":  "#tape"
-              },
-              { "name": "Object Storage - Swift",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#object"
+                "url":  "http://its.virginia.edu/hosting/storage/hsm.html",
+                "note": "note about Tape Archiving"
               }
             ]
           },
           { "name": "Personal Computing",
             "children": [
               { "name": "Box",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#box"
+                "url":  "http://its.virginia.edu/box/",
+                "note": "note about Box Storage"
               },
               { "name": "CrashPlan",
-                "url":  "https://dev.cadre.virginia.edu/content/storage-dev#crashplan"
+                "url":  "http://its.virginia.edu/crashplan/",
+                "note": "note about CrashPlan storage"
               }
             ]
           }
