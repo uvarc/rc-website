@@ -230,7 +230,7 @@ To connect to Ivy follow the platform-specific steps below:
         <ul>
           <li>Open your JointVPN connection</li>
           <li>Reference the IP address of your Ivy VM.</li>
-          <li>For Remote Desktop access: Start an RDP client to the IP address of your VM and sign in.</li>
+          <li>For Remote Desktop access: Start an RDP client to the IP address of your VM and sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
         </ul>
       </div>
     </div>
