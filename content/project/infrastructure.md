@@ -6,7 +6,7 @@ description = ""
 title = "Infrastructure"
 date = "2018-01-30T17:18:27-04:00"
 draft = false
-tags = ["tools","containers","ami","scripts","architecture","cloud"]
+tags = ["tools","containers","ami","scripts","architecture","cloud","code"]
 
 +++
 
@@ -44,6 +44,6 @@ Some example workloads:
 * Apache Spark / Spark or Zeppelin Notebooks
 * See [other available packages](https://universe.dcos.io/#/packages)
 
-Eligible users will create their own Docker images, stored in a UVA Container Registry, and will be able to launch them on-demand. This new cluster will be attached to Qumulo storage, as well as the Globus DTN.
+Eligible users will be able to select from a catalog of images, stored in a UVA Container Registry, and will be able to launch them on-demand. This new cluster will be attached to Qumulo storage, as well as the Globus DTN.
 
 More information coming soon!
