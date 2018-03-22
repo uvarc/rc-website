@@ -10,9 +10,9 @@ tags = ["tools","containers","ami","scripts","architecture","cloud","code"]
 
 +++
 
-<img align="right" alt="GitHub" style="max-height:120px;padding-right:8em;" src="/images/octocat-logo.png">
+<img align="right" alt="GitHub" style="max-height:80px;padding-right:6em;" src="/images/octocat-logo.png">
 
-# Code Resources
+## Code Resources
 
 * [**SOMRC on GitHub**](https://github.com/uvasomrc/)
 * [AWS Snippets](https://github.com/uvasomrc/aws-snippets)
@@ -21,14 +21,14 @@ tags = ["tools","containers","ami","scripts","architecture","cloud","code"]
 * [Git Intro](https://github.com/uvasomrc/git-intro-somrc)
 * [`scratchr`](https://github.com/uvasomrc/scratchr)
 
-<img align="right" alt="Docker" style="max-height:120px;padding-right:8em;" src="/images/docker-logo.png">
+<img align="right" alt="Docker" style="max-height:80px;padding-right:6em;" src="/images/docker-logo.png">
 
-# Container Images
+## Container Images
 
 * [**SOMRC Docker Hub**](https://hub.docker.com/u/somrc/dashboard/)
 * [LOLAweb](https://hub.docker.com/r/databio/lolaweb/)
 
-# DC/OS Mesosphere
+## DC/OS Mesosphere
 
 Launching in late 2008, this platform will orchestrate container deployments for both periodic workflows and long-running services.
 
