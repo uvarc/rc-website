@@ -15,8 +15,8 @@ notifications:
     recipients:
     - nmagee@virginia.edu
 before_deploy: 
-  sudo pip install --upgrade pip
-  pip install --user awscli
+  - sudo pip install --upgrade pip
+  - pip install --user awscli
 deploy:
   # sync all files to s3
   - provider: script
