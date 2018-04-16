@@ -14,7 +14,9 @@ notifications:
     on_failure: always
     recipients:
     - nmagee@virginia.edu
-before_deploy: pip install --user awscli
+before_deploy: 
+  sudo pip install --upgrade pip
+  pip install --user awscli
 deploy:
   # sync all files to s3
   - provider: script
