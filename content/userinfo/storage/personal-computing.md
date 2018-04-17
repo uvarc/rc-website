@@ -25,29 +25,6 @@ images = [""]
 <div class="card-group" style="margin-top:2rem;">
   <div class="card">
   	<div class="card-block">
-    	<h4 class="card-title">CrashPlan&reg;</h4>
-    	<h6 class="card-subtitle mb-2 text-muted">Non-sensitive cloud desktop backup</h6>
-    	<p class="card-text">
-    		CrashPlan is a cloud-based desktop backup service. It securely backs up your endpoint devices to the cloud. CrashPlan provides:
-    	</p>
-    	<p class="card-text">
-    		<ul>
-			<li>Cloud storage for backup of up to 4 endpoint devices per user</li>
-			<li>Protection against crypto-ransomware and other malicious software that destroys/encrypts content on end-user’s devices</li>
-			<li>Protection of University data on endpoint devices from loss due to hard drive failure, computer failure, etc.</li>
-			</ul>
-		</p>
-		<p class="card-text">
-			CrashPlan is currently offered at no cost to the University community until June 30, 2018. After that, the cost model/fee structure will be determined for continued use of the service. During this this initial phase, the system has a per-user quota of 250GB. If you need more space and have a valid use case, please contact ITS via the link below.
-    	</p>
-    	<a href="http://its.virginia.edu/crashplan/" class="card-link"><button class="btn btn-warning">Read more</button></a>
-  	</div>
-	</div>
-</div>
-
-<div class="card-group" style="margin-top:2rem;">
-  <div class="card">
-  	<div class="card-block">
     	<h4 class="card-title">DropBox&reg;/Sookasa&reg;</h4>
     	<h6 class="card-subtitle mb-2 text-muted">Sensitive Data (PHI/PII) storage</h6>
     	<p class="card-text">
@@ -75,4 +52,26 @@ images = [""]
     	<a href="https://med.virginia.edu/med-ed-tech/for-students/general-tech/secure-storage/" class="card-link"><button class="btn btn-warning">Read more</button></a>
   	</div>
 	</div>
+</div>
+<div class="card-group" style="margin-top:2rem;">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">CrashPlan&reg;</h4>
+      <h6 class="card-subtitle mb-2 text-muted">Non-sensitive cloud desktop backup</h6>
+      <p class="card-text">
+        CrashPlan is a cloud-based desktop backup service. It securely backs up your endpoint devices to the cloud. CrashPlan provides:
+      </p>
+      <p class="card-text">
+        <ul>
+      <li>Cloud storage for backup of up to 4 endpoint devices per user</li>
+      <li>Protection against crypto-ransomware and other malicious software that destroys/encrypts content on end-user’s devices</li>
+      <li>Protection of University data on endpoint devices from loss due to hard drive failure, computer failure, etc.</li>
+      </ul>
+    </p>
+    <p class="card-text">
+      CrashPlan is currently offered at no cost to the University community until June 30, 2018. After that, the cost model/fee structure will be determined for continued use of the service. During this this initial phase, the system has a per-user quota of 250GB. If you need more space and have a valid use case, please contact ITS via the link below.
+      </p>
+      <a href="http://its.virginia.edu/crashplan/" class="card-link"><button class="btn btn-warning">Read more</button></a>
+    </div>
+  </div>
 </div>
