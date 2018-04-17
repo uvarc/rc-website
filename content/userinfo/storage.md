@@ -33,7 +33,7 @@ images = [""]
     		<h4 class="card-title">Commercial Data Sharing and Archiving Solutions</h4>
     			<p class="card-text">
     			There are a number of commercially licensed tools available to UVa researchers for free. These products, including UVa Box, Dropbox (Health System) and CrashPlan, are most suitable for small-scale storage needs.</p>
-    <a href="" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    <a href="/userinfo/storage/personal-computing" class="card-link"><button class="btn btn-warning">Learn more</button></a>
   </div>
 </div>
 </div>
