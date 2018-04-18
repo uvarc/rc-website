@@ -70,13 +70,14 @@ images = [""]
 </table>
 </div>
 <br>
+
 <h3>
   Non-Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
-<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png">
+<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png" alt="nonsecure-storage-options-overview">
 <h3>
   Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
-<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-secure-apr2018.png">
+<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-secure-apr2018.png" alt="secure-storage-options-overview">
