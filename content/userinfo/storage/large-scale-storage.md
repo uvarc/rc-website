@@ -28,44 +28,44 @@ images = [""]
     <th class="tg-0qmj">Price</th>
     <th class="tg-0qmj">Data Protection</th>
     <th class="tg-0qmj">File system</th>
-    <th class="tg-0qmj">Access Methods</th>
+    <th class="tg-0qmj">Mounted On</th>
     <th class="tg-0qmj">Best Practics</th>
   </tr>
   <tr>
-    <td class="tg-dc35"><a href="https://arcs.virginia.edu/storage"><code>/home</code></a></td>
+    <td class="tg-dc35"><a href="/userinfo/storage"><code>/home</code></a></td>
     <td class="tg-dc35">50 GB</td>
     <td class="tg-dc35">Free</td>
     <td class="tg-dc35">3-week snapshot</td>
     <td class="tg-dc35">NFS</td>
-    <td class="tg-dc35">Proprietary</td>
-    <td class="tg-dc35">Best used as a working directory when using Rivanna interactively. SLURM jobs run against /home will be slower than those run against /scratch.</td>
+    <td class="tg-dc35">Login, Compute Nodes</td>
+    <td class="tg-dc35">Best used as a working directory when using Rivanna interactively. SLURM jobs run against /home will be slower than those run against <code>/scratch.</code></td>
   </tr>
   <tr>
-    <td class="tg-hy9w"><a href="http://arcs.virginia.edu/storage"><code>/scratch</code></a></td>
+    <td class="tg-hy9w"><a href="/userinfo/storage"><code>/scratch</code></a></td>
     <td class="tg-hy9w">10 TB</td>
     <td class="tg-hy9w">Free</td>
     <td class="tg-hy9w">Data removed 60 days after last file modification timestamp</td>
     <td class="tg-hy9w">Lustre</td>
-    <td class="tg-hy9w">Rivanna, SSHFS</td>
-    <td class="tg-hy9w">Optimal storage space for computational work on Rivanna. SLURM jobs run against /scratch will be faster than those run against /home, /project, or /value. Data should be moved from /scratch for long-term storage.</td>
+    <td class="tg-hy9w">Login, Compute Nodes</td>
+    <td class="tg-hy9w">Optimal storage space for computational work on Rivanna. SLURM jobs run against <code>/scratch</code> will be faster than those run against <code>/home</code>, <code>/project</code>, or <code>/value</code>. Data should be moved from <code>/scratch</code> for long-term storage.</td>
   </tr>
   <tr>
-    <td class="tg-dc35"><a href="https://somrc.virginia.edu/userinfo/project"><code>/project</code></a></td> 
+    <td class="tg-dc35"><a href="/userinfo/project"><code>/project</code></a></td> 
     <td class="tg-dc35">Available in 1 TB increments</td>
     <td class="tg-dc35">$90/TB/Yr</td>
     <td class="tg-dc35">3-week snapshot</td>
     <td class="tg-dc35">NFS</td>
-    <td class="tg-dc35">Rivanna, SSHFS</td>
-    <td class="tg-dc35">Ideal for long-term storage of data that can be accessed by either a personal computer or Rivanna. SLURM jobs run against /project will be slower than those run against /scratch.</td>
+    <td class="tg-dc35">Login, Compute Nodes</td>
+    <td class="tg-dc35">Ideal for long-term storage of data that can be accessed by either a personal computer or Rivanna. SLURM jobs run against <code>/project</code> will be slower than those run against <code>/scratch</code>.</td>
   </tr>
   <tr>
-    <td class="tg-hy9w"><a href="http://its.virginia.edu/hosting/storage/value.html"><code>/value</code></a></td>  
+    <td class="tg-hy9w"><a href="/userinfo/storage"><code>/value</code></a></td>  
     <td class="tg-hy9w">Available in 1 TB increments</td>
     <td class="tg-hy9w">$45/TB/Yr</td>
     <td class="tg-hy9w">No backup</td>
     <td class="tg-hy9w">Proprietary</td>
-    <td class="tg-hy9w">Rivanna, SSHFS, Samba (direct mount)</td>
-    <td class="tg-hy9w">Budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs run against /value storage will be slower than those run against /home, /scratch, or /project.</td>
+    <td class="tg-hy9w">Login node, SMB mount</td>
+    <td class="tg-hy9w">Budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs run against <code>/value</code> storage will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
 </table>
 </div>
@@ -74,9 +74,9 @@ images = [""]
   Non-Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
-<img src="https://s3.amazonaws.com/somrc-data/somrc-storage-nonsecure-apr2018.png">
+<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png">
 <h3>
   Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
-<img src="https://s3.amazonaws.com/somrc-data/somrc-storage-secure-apr2018.png">
+<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-secure-apr2018.png">
