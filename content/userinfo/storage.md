@@ -28,14 +28,28 @@ images = [""]
 <br>
 
 <div class = "card-group">
-	<div class="card">
-  		<div class="card-block">
-    		<h4 class="card-title">Commercial Data Sharing and Archiving Solutions</h4>
-    			<p class="card-text">
-    			There are a number of commercially licensed tools available to UVa researchers for free. These products, including UVa Box, Dropbox (Health System) and CrashPlan, are most suitable for small-scale storage needs.</p>
-    <a href="/userinfo/storage/personal-computing" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Commercial Data Sharing and Archiving Solutions</h4>
+        <p class="card-text">
+        There are a number of commercially licensed tools available to UVa researchers for free. These products, including UVa Box, Dropbox (Health System) and CrashPlan, are most suitable for small-scale storage needs.</p>
+      <a href="/userinfo/storage/personal-computing" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
   </div>
 </div>
+
+<br>
+
+<div class = "card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Cloud Storage Solutions</h4>
+        <p class="card-text">
+        Long-term and high-capacity storage solutions are also available in Amazon Web Services and Google Cloud Platform. Both provide object storage for files of any type, and low-cost archival storage (comparable to tape backups).
+        </p>
+      <a href="" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
+  </div>
 </div>
 
 <br>
