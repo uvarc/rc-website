@@ -2,7 +2,7 @@
 author = "SOMRC Staff"
 description = ""
 title = "Storage for Researchers"
-date = "2017-02-24T10:08:29-05:00"
+date = "2017-04-18T10:08:29-05:00"
 draft = false
 tags = ["storage","rivanna","swift","osf","lustre","backup","s3"]
 categories = ["userinfo"]
