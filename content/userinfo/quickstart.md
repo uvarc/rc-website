@@ -19,6 +19,30 @@ draft = false
 
 +++
 
+
+<div class = "card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Services</h4>
+        <p class="card-text">
+        There are a number of commercially licensed tools available to UVa researchers for free. These p$
+      <a href="/userinfo/storage/personal-computing" class="card-link"><button class="btn btn-warning">L$
+    </div>
+  </div>
+</div>
+<div class = "card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Systems</h4>
+        <p class="card-text">
+        There are a number of commercially licensed tools available to UVa researchers for free. These p$
+      <a href="/userinfo/storage/personal-computing" class="card-link"><button class="btn btn-warning">L$
+    </div>
+  </div>
+</div>
+
+
+<!-- REMOVED FOR NEW FORMAT
 <div id="accordion" role="tablist" aria-multiselectable="true" style="margin-top:2rem;">
 
   <div class="card">
@@ -103,5 +127,6 @@ draft = false
   </div>
 
 </div>
+-->
 
 <div class="space"></div>
