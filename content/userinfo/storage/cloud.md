@@ -30,7 +30,7 @@ images = [""]
           <li>Training - Attend one of our free cloud workshops, or receive in-person training from our staff to understand additional features available.
         </ul>
     </p>
-    <a href="https://aws.amazon.com/s3/" target="_new" class="card-link"><button class="btn btn-warning">Read more</button></a>
+    <a href="https://aws.amazon.com/s3/" target="_new" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
@@ -53,7 +53,7 @@ images = [""]
           <li>Training - Attend one of our free cloud workshops, or receive in-person training from our staff to understand additional features available.
         </ul>
     </p>
-    <a href="https://cloud.google.com/storage/" target="_new" class="card-link"><button class="btn btn-warning">Read more</button></a>
+    <a href="https://cloud.google.com/storage/" target="_new" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
