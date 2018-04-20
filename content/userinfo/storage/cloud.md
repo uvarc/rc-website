@@ -31,6 +31,7 @@ images = [""]
         </ul>
     </p>
     <a href="https://aws.amazon.com/s3/" target="_new" class="card-link"><button class="btn btn-warning">Read more</button></a>
+    </div>
   </div>
 </div>
 
@@ -53,5 +54,7 @@ images = [""]
         </ul>
     </p>
     <a href="https://cloud.google.com/storage/" target="_new" class="card-link"><button class="btn btn-warning">Read more</button></a>
+    </div>
   </div>
 </div>
+
