@@ -47,7 +47,7 @@ images = [""]
         <p class="card-text">
         Long-term and high-capacity storage solutions are also available in Amazon Web Services and Google Cloud Platform. Both provide object storage for files of any type, and low-cost archival storage (comparable to tape backups).
         </p>
-      <a href="" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+      <a href="/userinfo/storage/cloud/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>

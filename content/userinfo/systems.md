@@ -13,8 +13,6 @@ images = [""]
 From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure,
 various systems are available to researchers.</p>
 
-<br>
-
 <div class = "card-group">
 <div class="card">
   <div class="card-block">
