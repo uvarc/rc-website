@@ -28,7 +28,7 @@ images = [""]
     	<h4 class="card-title">DropBox&reg;/Sookasa&reg;</h4>
     	<h6 class="card-subtitle mb-2 text-muted">Sensitive Data (PHI/PII) storage</h6>
     	<p class="card-text">
-    		If you plan on storing sensitive data such as PHI or PII, UVA Health System offers a secure encrypted storage for Health System affiliated researchers, students, and staff. "DropBox Sookasa" is a free cloud-based service hosted on <a href="https://www.dropbox.com/business" style="color: #0275d8" target="_blank">Dropbox</a> that can be accessed over the internet on any device. It can be used to store both moderately or highly sensitive data, and to share files between Health System users. Presently a shared storage space of 1600 TB is available to Health System users. 
+    		If you plan on storing sensitive data such as PHI or PII, UVA Health System offers a secure encrypted storage for Health System affiliated researchers, students, and staff. "DropBox Sookasa" is a free cloud-based service hosted on <a href="https://www.dropbox.com/business" style="color: #0275d8" target="_blank">Dropbox</a> that can be accessed over the internet on any device. Highly sensitive data such as a HIPAA compliant dataset or PHI/PII must be stored in a Sookasa folder. It can be used to share files between Health System users. 
     	</p>
     	<p class="card-text">
     		<h5 class="card-subtitle mb-2 text-muted">User Manual</h5>

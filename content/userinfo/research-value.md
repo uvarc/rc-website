@@ -26,6 +26,10 @@ Research Value Storage can be requested for $45/TB/YR through UVa <a href="https
 
 When your Research Value Storage share is created, you will receive an email an from uvaprod@service-now containing the NFS mount `sammas.storage.virginia.edu:vol###`, where ### refers to the specific volume number, and the SMB map `\\sammas.storage.virginia.edu\MyGroup_name`.
 
+# Drive Mapping with Research Value Storage
+
+Research Value Storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing <a href="https://discuss.rc.virginia.edu/t/research-value-storage-drive-mapping/838" target="_blank">FAQ knowledgebase</a>.
+
 # Data transfer
 
 
@@ -57,10 +61,6 @@ When your Research Value Storage share is created, you will receive an email an 
 <p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>).</p>
 </div>
 
-# Drive Mapping with Research Value Storage
-
-Research Value Storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing <a href="https://discuss.rc.virginia.edu/t/research-value-storage-drive-mapping/838" target="_blank">FAQ knowledgebase</a>.
- 
 # File Manipulation and Navigation with Value Storage
  
 Research Value Storage is based on a Linux file system similar to storage spaces on the Rivanna cluster, including [/home](/userinfo/non-sensitive-data/#home) and [/scratch](/userinfo/non-sensitive-data/#scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
