@@ -24,7 +24,8 @@ If you are not a researcher, UVa ITS also offers Academic Value storage for long
 
 Research Value Storage can be requested for $45/TB/YR through UVa [ServiceNow](https://virginia.service-now.com/). After logging into ServiceNow, click the Service Request Catalog > Hosting > Storage - Research Value Storage to access the request form. Users can specify the size and name of the Research Value Storage directory and the name of an existing MyGroups group that can access the space. If the MyGroups group does not yet exist, please create one through the [ITS MyGroups system](http://its.virginia.edu/mygroups/) before filling out the value storage request form.
 
- 
+When your Research Value Storage share is created, you will receive an email an from uvaprod@service-now containing the NFS mount `sammas.storage.virginia.edu:vol###`, where ### refers to the specific volume number, and the SMB map `\\sammas.storage.virginia.edu\MyGroup_name`.
+
 # Data transfer
 
 
@@ -55,8 +56,12 @@ Research Value Storage can be requested for $45/TB/YR through UVa [ServiceNow](h
 <b>Globus Connect (Large Data Transfer)</b>
 <p><a href="https://www.globus.org/">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345">here</a>).</p>
 </div>
+
+# Drive Mapping with Research Value Storage
+
+Research Value Storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [FAQ knowledgebase](https://discuss.rc.virginia.edu/t/research-value-storage-drive-mapping/838).
  
-# File manipulation and navigation with value storage
+# File Manipulation and Navigation with Value Storage
  
 Research Value Storage is based on a Linux file system similar to storage spaces on the Rivanna cluster, including [/home](link to page about home) and [/scratch](link to page about scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 

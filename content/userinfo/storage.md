@@ -16,7 +16,7 @@ images = [""]
 <div class = "card-group">
 <div class="card">
   <div class="card-block">
-    <h4 class="card-title">Large-Scale Data Storage</h4>
+    <h4 class="card-title">Large-Scale Research Data Storage</h4>
         <p class="card-text">
         UVa offers a number of institutional solutions for storing and managing large-scale research data. Each of these can serve different use-cases depending on budget and archival needs. All of these systems are mounted and visible to local high-performance computing resources.
         </p>
