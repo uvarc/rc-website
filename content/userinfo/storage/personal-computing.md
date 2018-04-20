@@ -18,7 +18,7 @@ images = [""]
     	<p class="card-text">
     		UVA Box is a cloud-based storage and collaboration service that gives eligible members of the University community the ability to access, store, and share up to 1 TB of non-sensitive/moderately sensitive University files securely—anywhere, anytime, on any device.
     	</p>
-    	<a href="http://its.virginia.edu/box/" class="card-link"><button class="btn btn-warning">Read more</button></a>
+    	<a href="http://its.virginia.edu/box/" class="card-link" target="_blank"><button class="btn btn-warning">Read more</button></a>
   	</div>
 	
 </div>
@@ -28,18 +28,18 @@ images = [""]
     	<h4 class="card-title">DropBox&reg;/Sookasa&reg;</h4>
     	<h6 class="card-subtitle mb-2 text-muted">Sensitive Data (PHI/PII) storage</h6>
     	<p class="card-text">
-    		If you plan on storing sensitive data such as PHI or PII, UVA Health System offers a secure encrypted storage for Health System affiliated researchers, students, and staff. "DropBox Sookasa" is a free cloud-based service hosted on <a href="https://www.dropbox.com/business" style="color: #0275d8">Dropbox</a> that can be accessed over the internet on any device. It can be used to store both moderately or highly sensitive data, and to share files between Health System users. Presently a shared storage space of 1600 TB is available to Health System users. 
+    		If you plan on storing sensitive data such as PHI or PII, UVA Health System offers a secure encrypted storage for Health System affiliated researchers, students, and staff. "DropBox Sookasa" is a free cloud-based service hosted on <a href="https://www.dropbox.com/business" style="color: #0275d8" target="_blank">Dropbox</a> that can be accessed over the internet on any device. It can be used to store both moderately or highly sensitive data, and to share files between Health System users. Presently a shared storage space of 1600 TB is available to Health System users. 
     	</p>
     	<p class="card-text">
     		<h5 class="card-subtitle mb-2 text-muted">User Manual</h5>
     		To read more details about the service, please refer to Health System IT's official documentation on Dropbox Sookasa by
-    		<a href="http://hit.healthsystem.virginia.edu/index.cfm/departments/security/guides-tools-and-forms/dropbox-guide/" style="color: #0275d8">clicking on this link.</a>
+    		<a href="http://hit.healthsystem.virginia.edu/index.cfm/departments/security/guides-tools-and-forms/dropbox-guide/" style="color: #0275d8" target="_blank">clicking on this link.</a>
     	</p>
     	<h5 class="card-subtitle mb-2 text-muted">Requesting your DropBox account</h5>
     	<p class="card-text">
     		You have to make a request to Health System IT in order to gain access to the UVA HS DropBox Sookasa service. 
     		<ul>
-			<li><a href="https://www.healthsystem.virginia.edu/alive/computing/forms/Security/OAR2/AccessRequest.cfm?" style="color: #0275d8">Click here to access the request form on the HIT website</a></li>
+			<li><a href="https://www.healthsystem.virginia.edu/alive/computing/forms/Security/OAR2/AccessRequest.cfm?" style="color: #0275d8" target="_blank">Click here to access the request form on the HIT website</a></li>
 			<li>Login using your Health System username and password</li>
 			<li>Click on the green colored "Account Request" icon</li>
 			<li>Underneath the System menu select "Dropbox"</li>
@@ -49,7 +49,7 @@ images = [""]
 			<li>Click "Checkout" after entering any comments about your request</li>
     		</ul>
     	</p>
-    	<a href="https://med.virginia.edu/med-ed-tech/for-students/general-tech/secure-storage/" class="card-link"><button class="btn btn-warning">Read more</button></a>
+    	<a href="https://med.virginia.edu/med-ed-tech/for-students/general-tech/secure-storage/" class="card-link" target="_blank"><button class="btn btn-warning">Read more</button></a>
   	</div>
 	</div>
 </div>
@@ -71,7 +71,7 @@ images = [""]
     <p class="card-text">
       CrashPlan is currently offered at no cost to the University community until June 30, 2018. After that, the cost model/fee structure will be determined for continued use of the service. During this this initial phase, the system has a per-user quota of 250GB. If you need more space and have a valid use case, please contact ITS via the link below.
       </p>
-      <a href="http://its.virginia.edu/crashplan/" class="card-link"><button class="btn btn-warning">Read more</button></a>
+      <a href="http://its.virginia.edu/crashplan/" class="card-link" target="_blank"><button class="btn btn-warning">Read more</button></a>
     </div>
   </div>
 </div>
