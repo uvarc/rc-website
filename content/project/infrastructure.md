@@ -25,13 +25,13 @@ tags = ["tools","containers","ami","scripts","architecture","cloud","code","meso
 
 ## Containers
 
-* [Learn how to use Docker](https://github.com/uvasomrc/courses/blob/master/workshops/docker/README.md)
 * [**SOMRC Docker Hub**](https://hub.docker.com/u/somrc/dashboard/)
+* [Learn how to use Docker](https://github.com/uvasomrc/courses/blob/master/workshops/docker/README.md)
 * [LOLAweb](https://hub.docker.com/r/databio/lolaweb/)
 
-## DC/OS Mesosphere
+## DC/OS Mesos
 
-Launching in late 2018, this platform will orchestrate container deployments for both periodic workflows and long-running services.
+Launching in late 2018, this platform will orchestrate container deployments for both on-demand workflows and long-running services.
 
 <img align="right" alt="DCOS" style="max-width:34%;" src="/images/dcos-logo.png">
 Some example workloads:
@@ -41,7 +41,8 @@ Some example workloads:
 * NoSQL Databases (MongoDB, Cassandra, Redis, Scylla)
 * Elasticsearch / Kibana
 * Pipelines and sequential workflows
-* Apache Kafka
+* Travis-based builds
+* Apache Kafka 
 * Apache Spark / Spark or Zeppelin Notebooks
 * See [other available packages](https://universe.dcos.io/#/packages)
 
