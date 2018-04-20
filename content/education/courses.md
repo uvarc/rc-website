@@ -5,7 +5,7 @@ title = "Courses"
 description = ""
 author = "SOMRC Staff"
 categories = ["education","courses"]
-tags = ["R","cloud","AWS","DSI"]
+tags = ["R","cloud","AWS","DSI","UVA","BIMS"]
 
 +++
 
@@ -17,6 +17,7 @@ tags = ["R","cloud","AWS","DSI"]
 
 This course introduces methods, tools, and software for reproducibly managing, manipulating, analyzing, and visualizing large-scale biomedical data. Specifically, the course introduces the R statistical computing environment and packages for manipulating and visualizing high-dimensional data, covers strategies for reproducible research, and culminates with analysis of data from a real RNA-seq experiment using R and Bioconductor packages.
 
+-----
 
 # CS 6501: Distributed & Cloud Computing
 
@@ -24,6 +25,7 @@ This course introduces methods, tools, and software for reproducibly managing, m
 
 This graduate course introduces a basic grounding in designing and implementing distributed and cloud systems. It aims to acquaint students with principles and technologies of server clusters, virtualized datacenters, Grids/P2P, Internet clouds, social networks, Internet of Things (IoT), and applications. Students will have the opportunity to gain hands-on experience on public cloud such as Amazon EC2. Selected scientific applications will also be used as case studies to gain hands-on experiences.
 
+-----
 
 # CS 4740: Cloud Computing
 
@@ -31,6 +33,7 @@ This graduate course introduces a basic grounding in designing and implementing 
 
 Investigates the architectural foundations of the various cloud platforms, as well as examining both current cloud computing platforms and modern cloud research. Student assignments utilize the major cloud platforms.
 
+-----
 
 # DSI Bootcamp: Computing, Storage & Data Analysis in the Cloud
 
