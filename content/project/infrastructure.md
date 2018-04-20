@@ -4,9 +4,9 @@ images = [""]
 author = "SOMRC Staff"
 description = ""
 title = "Infrastructure"
-date = "2018-03-21T17:18:27-04:00"
+date = "2018-04-12T17:18:27-04:00"
 draft = false
-tags = ["tools","containers","ami","scripts","architecture","cloud","code"]
+tags = ["tools","containers","ami","scripts","architecture","cloud","code","mesos"]
 
 +++
 
@@ -23,14 +23,15 @@ tags = ["tools","containers","ami","scripts","architecture","cloud","code"]
 
 <img align="right" alt="Docker" style="max-height:80px;padding-right:6em;" src="/images/docker-logo.png">
 
-## Container Images
+## Containers
 
+* [Learn how to use Docker](https://github.com/uvasomrc/courses/blob/master/workshops/docker/README.md)
 * [**SOMRC Docker Hub**](https://hub.docker.com/u/somrc/dashboard/)
 * [LOLAweb](https://hub.docker.com/r/databio/lolaweb/)
 
 ## DC/OS Mesosphere
 
-Launching in late 2008, this platform will orchestrate container deployments for both periodic workflows and long-running services.
+Launching in late 2018, this platform will orchestrate container deployments for both periodic workflows and long-running services.
 
 <img align="right" alt="DCOS" style="max-width:34%;" src="/images/dcos-logo.png">
 Some example workloads:

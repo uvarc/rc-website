@@ -1,6 +1,6 @@
 +++
 title = "Get Started with HPC"
-draft = false
+draft = true
 tags = ["rivanna","ivy","hpc"]
 categories = ["userinfo"]
 images = [""]

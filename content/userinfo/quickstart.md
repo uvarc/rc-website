@@ -20,27 +20,38 @@ draft = false
 +++
 
 
-<div class = "card-group">
+<div class = "card-group" style="margin-top:2rem;">
   <div class="card">
     <div class="card-block">
       <h4 class="card-title">Services</h4>
         <p class="card-text">
-        There are a number of commercially licensed tools available to UVa researchers for free. These p$
-      <a href="/userinfo/storage/personal-computing" class="card-link"><button class="btn btn-warning">L$
+        School of Medicine Research Computing (SOMRC) is committed to providing individualized support for researchers who are engaged in computationally intensive projects.<br />
+        With expertise in high-performance computing, SOMRC provides support in the following areas:
+        <ul>
+          <li>Bioinformatics & Genomics
+          <li>Cloud Solutions
+          <li>Data Analysis
+          <li>Scientific Computing
+        </ul>
+        </p>
+      <a href="/userinfo/user-support/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
+
+<p><br></p>
+
 <div class = "card-group">
   <div class="card">
     <div class="card-block">
       <h4 class="card-title">Systems</h4>
         <p class="card-text">
-        There are a number of commercially licensed tools available to UVa researchers for free. These p$
-      <a href="/userinfo/storage/personal-computing" class="card-link"><button class="btn btn-warning">L$
+        Long-term and high-capacity storage solutions are also available in Amazon Web Services and Google Cloud Platform. Both provide object storage for files of any type, and low-cost archival storage (comparable to tape backups).
+        </p>
+      <a href="/userinfo/quickstart/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
-
 
 <!-- REMOVED FOR NEW FORMAT
 <div id="accordion" role="tablist" aria-multiselectable="true" style="margin-top:2rem;">

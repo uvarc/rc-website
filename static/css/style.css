@@ -110,8 +110,14 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 /* .gsc-cursor-page {font-size: 1.5em;padding: 4px 8px;border: 2px solid #ccc;} */
 .gsc-cursor-page {font-size: 1.5em;padding: 4px 8px;border: 2px solid #ccc; color:black; background-color:#FF9900;}
 
+.dropdown-header {
+    background-color:#0f3a72;
+}
+h6 .dropdown-header {
+    color:#ffffff;
+}
 
-.dropdown-submenu { position: relative }
+/* .dropdown-submenu { position: relative }
 .dropdown-submenu>.dropdown-menu {
     top: 0;
     left: 100%;
@@ -143,7 +149,7 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-}
+} */
 
 /*!
 
