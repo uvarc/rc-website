@@ -10,7 +10,7 @@ images = [""]
 +++
 
 
-<p class="lead">There are a variety of options for storing large-scale research data at UVa. Non-sensitive data storage systems can be accessed from the <a href="https://arcs.virginia.edu/rivanna">Rivanna</a> high performance computing system. Sensitive data can be stored and accessed within the <a href="/userinfo/ivy">Ivy</a> secure computing environment.</p>
+<p class="lead">There are a variety of options for storing large-scale research data at UVa. Non-sensitive data storage systems can be accessed from the <a href="https://arcs.virginia.edu/rivanna" target="_blank">Rivanna</a> high performance computing system. Sensitive data can be stored and accessed within the <a href="/userinfo/ivy">Ivy</a> secure computing environment.</p>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
