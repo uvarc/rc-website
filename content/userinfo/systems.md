@@ -9,7 +9,9 @@ categories = ["userinfo"]
 images = [""]
 +++
 
-<p class=lead>UVA Research Computing provides multi-tiered storage solutions for your data. From small-scale personal computing options to high-performance parallel file systems for serious computational runs, various systems are available to researchers.</p>
+<p class=lead>UVA Research Computing can help you find the right system for your computational workloads. 
+From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure,
+various systems are available to researchers.</p>
 
 <br>
 
