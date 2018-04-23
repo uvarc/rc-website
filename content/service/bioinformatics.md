@@ -17,7 +17,7 @@ images = [""]
 
 # Next-generation sequence data analyis
 
-SOMRC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://arcs.virginia.edu/rivanna)/[Ivy](/userinfo/ivy/)/[AWS](/service/cloud/). Typical analyses include (but not limited to) – 
+SOMRC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://arcs.virginia.edu/rivanna)/[Ivy](/userinfo/ivy/)/[Cloud](/service/cloud/). Typical analyses include (but not limited to) – 
 
 * Genome assembly, reference-based and/or de-novo
 * Whole Genome/Exome Sequence analysis for variant calling/annotation
@@ -32,14 +32,28 @@ We can advise and collaborate on the various experimental stages, from experimen
 
 # Computing Platforms @ UVA
 
-SOMRC can work with your team to determine the computing platform best suited for your research project. 
+SOMRC can work with your team to determine the computing platform best suited for your research project.  
 
-All faculty, research staff and graduate students of UVA have access to [Rivanna](https://arcs.virginia.edu/rivanna), university's high-performance computing system with 290+ compute nodes (6500+ cores) for high-throughput multithreaded jobs, parallel jobs as well as memmory intensive large-scale data analyses. For a comprehensive list of bioinformatics tools pre-installed on Rivanna [click here](https://arcs.virginia.edu/software-list). We can work with you, and the [ARCS  team](https://arcs.virginia.edu/), to install additional project-specific applications. 
+## Rivanna HPC 
 
-Ivy is a HIPAA compliant cluster at UVA with Domino Data Lab, Hadoop, R, Python, and other computational software to work with sensitive data. For more details [click here](/userinfo/ivy/).
+All faculty, research staff and graduate students of UVA have access to Rivanna, university's high-performance computing system with 290+ compute nodes (6500+ cores) for high-throughput multithreaded jobs, parallel jobs as well as memmory intensive large-scale data analyses. The architecture is specifically suited for large scale distributed genomic data analysis, with [100+](https://arcs.virginia.edu/software-list) bioinformatics software packages installed and ready to use.   
+
+<a href="https://arcs.virginia.edu/rivanna" class="card-link"><button class="btn btn-warning">Read more</button></a>
+<a href="/service/bioinformatics/rivanna-sw-list" class="card-link"><button class="btn btn-warning">Bioinformatics Software on Rivanna</button></a>
+
+
+## Ivy Secure Platform  
+
+Ivy is a HIPAA compliant cluster at UVA with Domino Data Lab, Hadoop, R, Python, and other computational software to work with sensitive data. Researchers have access to a group of bioinformatics software on Ivy Linux VM.  
+
+<a href="/userinfo/ivy/" class="card-link"><button class="btn btn-warning">Read more</button></a>
+<a href="/service/bioinformatics/rivanna-sw-list" class="card-link"><button class="btn btn-warning">Bioinformatics Software on Ivy</button></a>
+
+## Cloud Solutions 
 
 In addition, we can also explore the possibility of using cloud infrastucture (AWS/GCP) for your bioinformatics analysis and data storage. For certain applications, the 'elasticity' of cloud computing may prove beneficial for saving time and reducing costs of data analysis and sharing. The SOMRC team is available for consultation on your project needs.      
 
+<a href="/service/cloud/" class="card-link"><button class="btn btn-warning">Read more</button></a>
 
 # Long-term collaborations
 We warmly welcome long-term collaborations with experimentalists and computational biologists. Working with biologists we can chart out experimental design, come up with controls, and think about statistical and computational analyses so the experiment is designed to extract the most value from the data. We can also build and maintain code and pipelines, as well as test new algorithms on multi-core and multi-node architectures.
