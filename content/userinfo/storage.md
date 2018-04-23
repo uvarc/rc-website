@@ -61,7 +61,7 @@ images = [""]
     <p class="card-text">
     UVa ITS provides a tiered catalog of data storage options for data not intended to be analyzed in research projects. Examples of appropriate data could include administrative records or departmental information.	
     </p>
-    <a href="http://its.virginia.edu/hosting/storage/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    <a href="http://its.virginia.edu/hosting/storage/" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
   </div>
 </div>
 </div>
