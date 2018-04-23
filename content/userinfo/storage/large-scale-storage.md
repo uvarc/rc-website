@@ -32,7 +32,7 @@ images = [""]
     <th class="tg-0qmj">Best Practices</th>
   </tr>
   <tr>
-    <td class="tg-dc35"><a href="/userinfo/non-sensitive-data/#home"><code>/home</code></a></td>
+    <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#home"><code>/home</code></a></td>
     <td class="tg-dc35">50GB</td>
     <td class="tg-dc35">Free</td>
     <td class="tg-dc35">3-week snapshot</td>
@@ -41,7 +41,7 @@ images = [""]
     <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna interactively. SLURM jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>.</td>
   </tr>
   <tr>
-    <td class="tg-hy9w"><a href="/userinfo/non-sensitive-data/#scratch"><code>/scratch</code></a></td>
+    <td class="tg-hy9w"><a href="/userinfo/storage/non-sensitive-data/#scratch"><code>/scratch</code></a></td>
     <td class="tg-hy9w">10TB</td>
     <td class="tg-hy9w">Free</td>
     <td class="tg-hy9w">Data removed 60 days after last file modification timestamp</td>
@@ -50,7 +50,7 @@ images = [""]
     <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage.</td>
   </tr>
   <tr>
-    <td class="tg-dc35"><a href="/userinfo/non-sensitive-data/#project"><code>/project</code></a></td> 
+    <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#project"><code>/project</code></a></td> 
     <td class="tg-dc35">Available in 1TB increments</td>
     <td class="tg-dc35">$90/TB/Yr</td>
     <td class="tg-dc35">3-week snapshot</td>
@@ -59,7 +59,7 @@ images = [""]
     <td class="tg-dc35"><code>/project</code>is ideal for long-term storage of data that can be accessed from Rivanna. <code>/project</code> is ideal for running jobs with smaller files.</td>
   </tr>
   <tr>
-    <td class="tg-hy9w"><a href="/userinfo/research-value">Value Storage</a></td>  
+    <td class="tg-hy9w"><a href="/userinfo/storage/research-value">Value Storage</a></td>  
     <td class="tg-hy9w">Available in 1TB increments</td>
     <td class="tg-hy9w">$45/TB/Yr</td>
     <td class="tg-hy9w">No backup</td>
@@ -84,7 +84,7 @@ images = [""]
 		<th class="tg-0qmj">Best Practices</th>
 	</tr>
 	<tr>
-		<td class="tg-dc35"><a href="/userinfo/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></td>
+		<td class="tg-dc35"><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></td>
 		<td class="tg-dc35">Available in 1TB increments</td>
 		<td class="tg-dc35">First TB is free, price for additional space TBD</td>
 		<!-- <td class="tg-dc35">No backup</td>
@@ -93,7 +93,7 @@ images = [""]
 		<td class="tg-dc35">ICS is ideal for long-term storage of sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
 	</tr>
 	<tr>
-		<td class="tg-hy9w"><a href="/userinfo/sensitive-data/#vm-storage">VM Storage</a></td>
+		<td class="tg-hy9w"><a href="/userinfo/storage/sensitive-data/#vm-storage">VM Storage</a></td>
 		<td class="tg-hy9w">Available in 1TB increments</td>
 		<td class="tg-hy9w">First TB is free, price for additional space TBD</td>
 		<!-- <td class="tg-hy9w">No backup</td>
@@ -102,7 +102,7 @@ images = [""]
 		<td class="tg-hy9w">VM Storage is suitable for storing executables and jobs that require higher I/O performance than that provided by ICS.</td>
 	</tr>
 	<tr>
-		<td class="tg-dc35"><a href="/userinfo/sensitive-data/#ddl-storage">DDL Storage</a></td>
+		<td class="tg-dc35"><a href="/userinfo/storage/sensitive-data/#ddl-storage">DDL Storage</a></td>
 		<td class="tg-dc35">500GB per project</td>
 		<td class="tg-dc35">Currently free, price TBD</td>
 		<!-- <td class="tg-dc35"></td>
