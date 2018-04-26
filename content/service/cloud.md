@@ -105,12 +105,12 @@ Here are some of the building blocks available using cloud infrastructure:
 <div class="row">
   <div class="col-sm">
   <ul class="list-group">
-    <li class="list-group-item"><i class="fa fa-2x fa-microchip" aria-hidden="true" style="padding-right:8px;"></i> Compute</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-hdd-o" aria-hidden="true" style="padding-right:8px;"></i> Storage</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> Database</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-microchip" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Compute</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-hdd" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Storage</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Database</li>
     <li class="list-group-item"><i class="fa fa-2x fa-cube" aria-hidden="true" style="padding-right:8px;"></i> Containers / Docker</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-pie-chart" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-share-alt" aria-hidden="true" style="padding-right:8px;"></i> Continuous Integration</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-chart-pie" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-share-alt" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Continuous Integration</li>
   </ul>
   </div>
   <div class="col-sm">
@@ -118,9 +118,9 @@ Here are some of the building blocks available using cloud infrastructure:
     <li class="list-group-item"><i class="fa fa-2x fa-spin fa-cog" aria-hidden="true" style=""></i> &nbsp; Sensor / IoT Data Streaming</li>
     <li class="list-group-item"><i class="fa fa-2x fa-list-ul" aria-hidden="true" style="padding-right:8px;"></i> Messaging Queues</li>
     <li class="list-group-item"><i class="fa fa-2x fa-mobile" aria-hidden="true" style="padding-left:8px;padding-right:18px;"></i> SMS / Push Integration</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-amazon" aria-hidden="true" style="padding-right:8px;"></i> Alexa Skills / Speech Integration</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-microphone" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Alexa Skills / Speech Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-code" aria-hidden="true" style="padding-right:8px;"></i> Serverless Computing</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-check-square-o" aria-hidden="true" style="padding-right:8px;"></i> Build Validation</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-check-square" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Build Validation</li>
   </ul>
   </div>
 </div>
