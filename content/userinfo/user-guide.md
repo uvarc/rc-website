@@ -82,7 +82,7 @@ quell_footer = true
     </div>
   </div>
   <div class="card">
-    <div style="text-align:center;"><i class="fa fa-flask fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
+    <div style="text-align:center;"><i class="fas fa-dna fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Bioinformatics</h4>
       <p class="card-text">We are developing a library of documentation and code templates for performing bioinformatics analyses using local HPC Rivanna) and cloud computing resources.</p>
