@@ -106,10 +106,10 @@ Here are some of the building blocks available using cloud infrastructure:
   <div class="col-sm">
   <ul class="list-group">
     <li class="list-group-item"><i class="fa fa-2x fa-microchip" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Compute</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-hdd" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Storage</li>
+    <li class="list-group-item"><i class="far fa-2x fa-hdd" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Storage</li>
     <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Database</li>
     <li class="list-group-item"><i class="fa fa-2x fa-cube" aria-hidden="true" style="padding-right:8px;"></i> Containers / Docker</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-chart-pie" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
+    <li class="list-group-item"><i class="far fa-2x fa-chart-pie" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
     <li class="list-group-item"><i class="fa fa-2x fa-share-alt" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Continuous Integration</li>
   </ul>
   </div>
@@ -120,7 +120,7 @@ Here are some of the building blocks available using cloud infrastructure:
     <li class="list-group-item"><i class="fa fa-2x fa-mobile" aria-hidden="true" style="padding-left:8px;padding-right:18px;"></i> SMS / Push Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-microphone" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Alexa Skills / Speech Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-code" aria-hidden="true" style="padding-right:8px;"></i> Serverless Computing</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-check-square" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Build Validation</li>
+    <li class="list-group-item"><i class="far fa-2x fa-check-square" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Build Validation</li>
   </ul>
   </div>
 </div>
