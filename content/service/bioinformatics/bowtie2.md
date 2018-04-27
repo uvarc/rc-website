@@ -1,12 +1,13 @@
 +++
 author = "SOMRC Staff"
 description = ""
-title = "Bioinformatics Software on Rivanna"
+title = "Bioinformatics Tools - Bowtie2"
 date = "2017-01-31T09:48:06-05:00"
 draft = false
-tags = ["bioinformatics","genomics","rivanna", "bowtie2"]
+tags = ["bioinformatics","genomics","rivanna", "bowtie2","tools"]
 categories = ["services"]
 images = [""]
+sidebar = "hidden"
 +++
 
 # Bowtie2

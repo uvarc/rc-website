@@ -1,12 +1,13 @@
 +++
 author = "SOMRC Staff"
 description = ""
-title = "Bioinformatics Software on Rivanna"
+title = "Bioinformatics Tools - BWA"
 date = "2017-01-31T09:48:06-05:00"
 draft = false
-tags = ["bioinformatics","genomics","rivanna", "bwa"]
+tags = ["bioinformatics","genomics","rivanna", "bwa","tools"]
 categories = ["services"]
 images = [""]
+sidebar = "hidden"
 +++
 
 # BWA

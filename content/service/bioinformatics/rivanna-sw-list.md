@@ -4,9 +4,10 @@ description = ""
 title = "Bioinformatics Software on Rivanna"
 date = "2017-01-31T09:48:06-05:00"
 draft = false
-tags = ["bioinformatics","genomics", "rivanna"]
+tags = ["bioinformatics","genomics", "rivanna","tools"]
 categories = ["services"]
 images = [""]
+sidebar = "hidden"
 +++
 
 <p class=lead>UVa research community has access to 100+ bioinformatics software installed and ready-to-use on Rivanna. They are all available via the LMod module system.</p>
