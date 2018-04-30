@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+
+  <head>
+    {{ partial "head-meta.html" . }}
+
+    <base href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+    <meta type="{{ .Type }}" />
+
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ "<!-- combined, minified CSS -->" | safeHTML }}
+    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+ 
+    {{ partial "head-custom.html" . }}
+    <style>
+ .portfolioFilter a { 
+    margin-right: 10px; 
+    color:#666;
+    text-decoration:none;
+}
+ 
+.portfolioFilter a.current { 
+    font-weight:bold;
+}
+ 
+img {
+    margin:5px;
+}
+ 
+.isotope-item {
+    z-index: 2;
+}
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+ 
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+$(window).on('load', function(){
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+ 
+    $('.portfolioFilter a').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
+});
+
+</script>
+  </head>
+
+  <body>
+  
+
+    {{ partial "menu-home.html" . }}
+
+    {{ partial "site-header.html" . }}
+	
+	<section id="main-content" class="main-content">
+	
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+
+
+<div class="portfolioFilter">
+ 
+    <a href="#" data-filter="*" class="current">All Projects</a>
+    <a href="#" data-filter=".basic-science">Basic Science</a>
+    <a href="#" data-filter=".clincial-research">Clinical Research</a>
+    <a href="#" data-filter=".infrastructure">Infrastructure</a>
+ 
+</div>
+ 
+<div class="portfolioContainer">
+ 
+    <div class="basic-science">
+        <img src="/images/docker-logo.png" alt="image">
+    </div>
+ 
+    <div class="clincial-research">
+        <img src="/images/docker-logo.png" alt="image">
+    </div>    
+     
+    <div class="clincial-research infrastructure">
+        <img src="/images/docker-logo.png" alt="image">
+    </div>    
+    
+    <div class="clincial-research basic-science">
+        <img src="/images/docker-logo.png" alt="image">
+    </div>    
+    
+    <div class="infrastructure">
+        <img src="/images/docker-logo.png" alt="image">
+    </div>
+    
+    <div class="basic-science">
+        <img src="/images/docker-logo.png" alt="image">
+    </div>    
+ 
+ 
+</div>
+
+
+        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+
+        {{ partial "sidebar-projects.html" . }}
+
+      </div> {{ "<!-- /.row -->" | safeHTML }}
+    </div> {{ "<!-- /.container -->" | safeHTML }}
+    
+
+	</section>
+	
+    {{ partial "footer.html" . }}
+
+  </body>
+
+</html>
+
+{{- /* vim: set ts=2 sw=2 et: */}}
