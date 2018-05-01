@@ -19,8 +19,9 @@ draft = false
 
 +++
 
+<p><br></p>
 
-<div class = "card-group" style="margin-top:2rem;">
+<div class = "card-group">
   <div class="card">
     <div class="card-block">
       <h4 class="card-title">User Support</h4>
@@ -41,20 +42,25 @@ draft = false
 
 <p><br></p>
 
-<div class = "card-group" style="margin-top:2rem;">
+<div class = "card-group">
   <div class="card">
     <div class="card-block">
       <h4 class="card-title">Services</h4>
         <p class="card-text">
         SOMRC has expertise in the following service areas:
-        <ul>
-          <li>Bioinformatics & Genomics
-          <li>Cloud Solutions
-          <li>Data Analysis
-          <li>Scientific Computing
-        </ul>
         </p>
-      <a href="/userinfo/user-support/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+        <div class="btn-group">
+          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select a Service
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/service/bioinformatics/">Bioinformatics & Genomics</a>
+            <a class="dropdown-item" href="/service/cloud/">Cloud Solutions</a>
+            <a class="dropdown-item" href="/service/data-analysis/">Data Analysis</a>
+            <a class="dropdown-item" href="/service/imaging/">Image Processing</a>
+            <a class="dropdown-item" href="/service/scientific-computing/">Scientific Computing</a>
+          </div>
+        </div>
     </div>
   </div>
 </div>
