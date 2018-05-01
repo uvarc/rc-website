@@ -30,12 +30,13 @@ draft = false
         We offer support in a variety of contexts:
         <ul>
           <li>Support tickets in ZenDesk
+          <li>Documentation & FAQs
           <li>Weekly Office Hours
           <li>Hands-On Workshops
           <li>In-person Consultations
         </ul>
         </p>
-      <a href="/userinfo/user-support/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+      <a href="/service/user-support/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
