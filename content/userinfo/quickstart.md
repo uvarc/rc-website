@@ -66,9 +66,9 @@ draft = false
     <div class="card-block">
       <h4 class="card-title">Systems</h4>
         <p class="card-text">
-        Long-term and high-capacity storage solutions are also available in Amazon Web Services and Google Cloud Platform. Both provide object storage for files of any type, and low-cost archival storage (comparable to tape backups).
+        UVA Research Computing can help you find the right system for your computational workloads. From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure, various systems are available to researchers.
         </p>
-      <a href="/userinfo/quickstart/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+      <a href="/userinfo/systems/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
