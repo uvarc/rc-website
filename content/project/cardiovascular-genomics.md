@@ -5,7 +5,7 @@ draft = false
 date = "2017-03-07T14:33:50-05:00"
 tags = ["basic-science"]
 categories = ["projects"]
-images = [""]
+images = "/images/docker-logo.png"
 author = "SOMRC Staff"
 
 +++

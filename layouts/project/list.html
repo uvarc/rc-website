@@ -83,7 +83,7 @@ $(window).on('load', function(){
 {{ range $paginator.Pages }}	
 
 <div class = "{{ delimit .Params.tags " " }}">
-<img src="/images/docker-logo.png" alt="image">
+<img src ="{{ .Params.images }}">
 <div style = "text-align:center;">
 <h5>{{ .Title }}</h5>
 </div>

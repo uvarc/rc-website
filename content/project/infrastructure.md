@@ -1,6 +1,6 @@
 +++
 categories = ["projects"]
-images = [""]
+images = "/images/docker-logo.png"
 author = "SOMRC Staff"
 description = ""
 title = "Infrastructure"

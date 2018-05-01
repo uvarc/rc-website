@@ -6,7 +6,7 @@ title = "Basic Science Projects"
 draft = false
 tags = ["collaborations", "basic-science"]
 categories = ["projects"]
-images = [""]
+images = "/images/docker-logo.png"
 
 +++
 
