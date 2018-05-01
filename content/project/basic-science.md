@@ -4,7 +4,7 @@ description = ""
 date = "2017-03-23T17:17:35-04:00"
 title = "Basic Science Projects"
 draft = false
-tags = ["collaborations", "basic science"]
+tags = ["collaborations", "basic-science"]
 categories = ["projects"]
 images = [""]
 

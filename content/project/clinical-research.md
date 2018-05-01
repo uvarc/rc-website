@@ -1,7 +1,7 @@
 +++
 title = "Clinical Research Projects"
 draft = false
-tags = ["collaborations", "clinical research"]
+tags = ["collaborations", "clinical-research"]
 categories = ["projects"]
 images = [""]
 author = "SOMRC Staff"
