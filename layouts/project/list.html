@@ -80,18 +80,19 @@ $(window).on('load', function(){
 <!--<div class="row isotope portfolioContainer js-layout-masonry" style="position: relative; height: 2535px;">-->
 
 {{ $paginator := .Paginate (where .Data.Pages "Type" "project") }}
-{{ range $paginator.Pages }}	
-
-<div class = "{{ delimit .Params.tags " " }}">
-<a href ="{{ .Permalink }}">
-<img src ="{{ .Params.images }}">
-<div style = "text-align:center;">
-<h5>{{ .Title }}</h5>
-</div>
-</a>
-</div>
-<!--</div>-->
-{{ end }}
+	
+	{{ range where $paginator.Pages "Params.projecttype" "!=" nil}}
+	
+		<div class = "{{ delimit .Params.projecttype " " }}">
+			<a href ="{{ .Permalink }}">
+				<img src ="{{ .Params.images }}">
+				<div style = "text-align:center;">
+					<h5>{{ .Title }}</h5>
+				</div>
+			</a>
+		</div>
+		
+		{{ end }}
  
 </div>
 

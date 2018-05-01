@@ -3,11 +3,10 @@ description = ""
 title = "Cardiovascular Genomics"
 draft = false
 date = "2017-03-07T14:33:50-05:00"
-tags = ["basic-science"]
+tags = [""]
 categories = ["projects"]
 images = "/images/docker-logo.png"
 author = "SOMRC Staff"
-
 +++
 
 <img alt="CPHG Logo" src="https://somrc.virginia.edu/images/projects/cphg.png" align="right" style="height:100px;width:224px;" />
