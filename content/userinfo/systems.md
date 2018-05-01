@@ -30,7 +30,7 @@ various systems are available to researchers.</p>
     <div class="card-block">
       <h4 class="card-title">Ivy Secure Platform</h4>
         <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
-        <a href="https://somrc.virginia.edu/userinfo/ivy/" class="btn btn-warning" style="color:white;">Get started on Ivy</a>
+        <a href="/userinfo/ivy/" class="btn btn-warning" style="color:white;">Get started on Ivy</a>
     </div>
   </div>
 </div>
