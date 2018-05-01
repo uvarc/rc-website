@@ -23,10 +23,30 @@ draft = false
 <div class = "card-group" style="margin-top:2rem;">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Services</h4>
+      <h4 class="card-title">User Support</h4>
         <p class="card-text">
         School of Medicine Research Computing (SOMRC) is committed to providing individualized support for researchers who are engaged in computationally intensive projects.<br />
-        With expertise in high-performance computing, SOMRC provides support in the following areas:
+        We offer support in a variety of contexts:
+        <ul>
+          <li>Support tickets in ZenDesk
+          <li>Weekly Office Hours
+          <li>Hands-On Workshops
+          <li>In-person Consultations
+        </ul>
+        </p>
+      <a href="/userinfo/user-support/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
+  </div>
+</div>
+
+<p><br></p>
+
+<div class = "card-group" style="margin-top:2rem;">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Services</h4>
+        <p class="card-text">
+        SOMRC has expertise in the following service areas:
         <ul>
           <li>Bioinformatics & Genomics
           <li>Cloud Solutions
