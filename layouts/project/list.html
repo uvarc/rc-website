@@ -85,19 +85,33 @@ $(window).on('load', function(){
 	{{ range where $paginator.Pages "Params.projecttype" "!=" nil}}
 	
 		<div class = "{{ delimit .Params.projecttype " " }}">
+		
 			<a href ="{{ .Permalink }}">
-				<!--
-				<img src ="{{ .Params.images }}">
-				<div style = "text-align:center;">
-					<h5>{{ .Title }}</h5>
-				</div> -->
-				<div class="image" style="display:table;">
+			
+		<div class="card" style ="max-width:200px; text-align:center; border:none;">
+
+            <img src="{{ .Params.images }}" class="card-img-top">
+          <div class="card-img-overlay">
+			<h4 class="card-title">{{ .Title }}</h4>
+		  </div>
+		</div>
+		 
+      	  </a>
+      	  
+      	  
+          <!-- <div class="card-text">
+            <h5>{{ .Title }}</h5>
+          </div>
+        </div> -->
+        
+
+			<!--	<div class="image" style="display:table;">
     				<img src="{{ .Params.images }}" alt="">
     <div style="display:table-caption;caption-side:bottom; text-align:center;">
     	<h5>{{ .Title }}</h5>
     </div>
-</div>
-			</a>
+</div> -->
+			
 		</div>
 		
 		{{ end }}
