@@ -2,7 +2,7 @@
 title = "simpleCache"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/r-language-square.png"
 categories = ["projects"]
 tags = [
     "bioinformatics"

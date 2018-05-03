@@ -2,7 +2,7 @@
 title = "Sonomicrometry Signal Classification"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/sonomicrometry.jpg"
 categories = ["projects"]
 tags = ["basic-science"]
 draft = false

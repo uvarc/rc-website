@@ -1,8 +1,8 @@
 +++
 title = "Center for Diabetes Technology PriMed"
-description = ""
+description = "Blah blah blah here we are with a placeholder."
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/dexcom.jpg"
 categories = ["projects"]
 tags = [
     "bioinformatics"

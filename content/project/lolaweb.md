@@ -2,7 +2,7 @@
 title = "LOLAweb"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/LOLAweb-logo-square.png"
 categories = ["projects"]
 tags = [
     "bioinformatics"
