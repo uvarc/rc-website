@@ -1,13 +1,12 @@
 +++
 title = "Clinical Research Projects"
 draft = false
-tags = ["collaborations", "clinical research"]
+tags = ["collaborations"]
 categories = ["projects"]
-images = [""]
+images = ""
 author = "SOMRC Staff"
 description = ""
 date = "2017-03-23T17:17:53-04:00"
-
 +++
 
 <div class="bd-callout bd-callout-warning">

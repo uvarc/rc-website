@@ -1,13 +1,12 @@
 +++
 categories = ["projects"]
-images = [""]
+images = "/images/docker-logo.png"
 author = "SOMRC Staff"
 description = ""
 title = "Infrastructure"
 date = "2018-04-12T17:18:27-04:00"
 draft = false
 tags = ["tools","containers","ami","scripts","architecture","cloud","code","mesos","github","docker"]
-
 +++
 
 <img align="right" alt="GitHub" style="max-height:80px;padding-right:6em;" src="/images/octocat-logo.png">
