@@ -19,22 +19,49 @@ draft = false
 
 +++
 
+<p><br></p>
 
-<div class = "card-group" style="margin-top:2rem;">
+<div class = "card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">User Support</h4>
+        <p class="card-text">
+        School of Medicine Research Computing (SOMRC) is committed to providing individualized support for researchers who are engaged in computationally intensive projects.<br />
+        We offer support in a variety of contexts:
+        <ul>
+          <li>Support tickets in ZenDesk
+          <li>Documentation & FAQs
+          <li>Weekly Office Hours
+          <li>Hands-On Workshops
+          <li>In-person Consultations
+        </ul>
+        </p>
+      <a href="/service/user-support/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
+  </div>
+</div>
+
+<p><br></p>
+
+<div class = "card-group">
   <div class="card">
     <div class="card-block">
       <h4 class="card-title">Services</h4>
         <p class="card-text">
-        School of Medicine Research Computing (SOMRC) is committed to providing individualized support for researchers who are engaged in computationally intensive projects.<br />
-        With expertise in high-performance computing, SOMRC provides support in the following areas:
-        <ul>
-          <li>Bioinformatics & Genomics
-          <li>Cloud Solutions
-          <li>Data Analysis
-          <li>Scientific Computing
-        </ul>
+        SOMRC has expertise in the following service areas:
         </p>
-      <a href="/userinfo/user-support/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+        <div class="btn-group">
+          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select a Service
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/service/bioinformatics/">Bioinformatics & Genomics</a>
+            <a class="dropdown-item" href="/service/cloud/">Cloud Solutions</a>
+            <a class="dropdown-item" href="/service/data-analysis/">Data Analysis</a>
+            <a class="dropdown-item" href="/service/imaging/">Image Processing</a>
+            <a class="dropdown-item" href="/service/scientific-computing/">Scientific Computing</a>
+          </div>
+        </div>
     </div>
   </div>
 </div>
@@ -46,9 +73,9 @@ draft = false
     <div class="card-block">
       <h4 class="card-title">Systems</h4>
         <p class="card-text">
-        Long-term and high-capacity storage solutions are also available in Amazon Web Services and Google Cloud Platform. Both provide object storage for files of any type, and low-cost archival storage (comparable to tape backups).
+        UVA Research Computing can help you find the right system for your computational workloads. From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure, various systems are available to researchers.
         </p>
-      <a href="/userinfo/quickstart/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+      <a href="/userinfo/systems/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>

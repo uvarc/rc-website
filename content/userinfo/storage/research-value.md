@@ -58,7 +58,7 @@ Research Value Storage can be drive mapped on a personal computer to enable drag
 
 <div class="bd-callout bd-callout-warning">
 <b>Globus Connect (Large Data Transfer)</b>
-<p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>).</p>
+<p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>.</p>
 </div>
 
 # File Manipulation and Navigation with Value Storage
