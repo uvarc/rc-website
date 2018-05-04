@@ -14,7 +14,6 @@ images = ""
 </div>
 
 
-
 # Microbiome Analysis of Hospital Sink Drains
 
 Sink drains are notoriously characterized as reservoirs of pathogens causing nosocomial transmissions in hospitals worldwide. Outbreaks where sinks have been implicated as source of antibiotic resistant bacteria have upsurged over the last few years. To understand transmission dynamics University of Virginia School of Medicine has established a unique "Sink Lab" for this research. This one-of-the kind laboratory establishes UVa as worldwide frontrunners in investigating sink related antibiotic resistant bacteria and how they spread. SOMRC is working with the UVa Sink Lab for genomic analysis of the sink biomass. 
