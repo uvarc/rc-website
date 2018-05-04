@@ -75,36 +75,24 @@ $(window).on('load', function(){
 
         {{ $paginator := .Paginate ((first 50 (where .Data.Pages "Type" "project"))) }}
 	
-	{{ range where $paginator.Pages "Params.projecttype" "!=" nil}}	
+        {{ range where $paginator.Pages "Params.projecttype" "!=" nil}}	
 
-<div class = "{{ delimit .Params.projecttype " " }}">
-<a href ="{{ .Permalink }}" style="color:black; text-decoration:none;">
-<div class="card card-shadow" style="width:220px; max-width:220px; margin: 8px; max-height:18em; min-height:18em; text-align:center; padding:4px;">
-  <img class="card-img-top" src="{{ .Params.images }}" alt="{{ .Title }}" style="max-width:200px;max-height:200px;">
-  <div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-    <h5 class="card-title" style="margin-top:auto;margin-bottom:auto;">{{ .Title }}</h5>
-  <!--  <p class="card-text">{{ .Description }}</p> -->
-  </div>
-  <!-- <div class="card-body">
-    <a href="#" class="card-link">Card link</a>
-  </div>
-  -->
-</div>
-</a>
-</div>
+          <div class = "{{ delimit .Params.projecttype " " }}">
+          <a href ="{{ .Permalink }}" style="color:black; text-decoration:none;">
+          <div class="card card-shadow" style="width:220px; max-width:220px; margin: 8px; max-height:18em; min-height:18em; text-align:center; padding:4px;">
+            <img class="card-img-top" src="{{ .Params.images }}" alt="{{ .Title }}" style="max-width:200px;max-height:200px;">
+            <div class="card-body" style="margin-top:auto;margin-bottom:auto;">
+              <h5 class="card-title" style="font-size:18px; margin-top:auto;margin-bottom:auto;">{{ .Title }}</h5>
+              <!-- <p class="card-text">{{ .Title }}</p> -->
+            </div>
+            <!-- <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+            </div>
+            -->
+          </div>
+          </a>
+          </div>
 
-<!--		<div class = "{{ delimit .Params.projecttype " " }}">		
-		  <a href ="{{ .Permalink }}" style="color:black;">
-		  <div class="card" style ="max-width:200px; text-align:center; border:solid 1px #ccc; margin:10px; min-height:16em;">
-                    <img src="{{ .Params.images }}" class="card-img-top" style="max-width:200px;max-height:200px;">
-                    <div class="card-img-overlay">
-		      <h4 class="card-title">{{ .Title }}</h4>
-		    </div>
-		  </div>		 
-                  </a>
-      	       	  
-		</div>
--->		
 	{{ end }}
  
     </div>
