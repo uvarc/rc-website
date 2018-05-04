@@ -1,6 +1,7 @@
 +++
 title = "LOLAweb"
 description = ""
+date = "2018-05-03T14:33:50-05:00"
 author = "SOMRC Staff"
 images = "/images/projects/LOLAweb-logo-square.png"
 categories = ["projects"]
@@ -17,6 +18,6 @@ SOM Research Computing is working with faculty in the UVA Center for Public Heal
 
 *<http://lolaweb.databio.org/>*
 
-*Manuscript under review*
+*Manuscript accepted for publication*
 
 **PI: Nathan Sheffield ([Center for Public Health Genomics](https://med.virginia.edu/cphg/))**

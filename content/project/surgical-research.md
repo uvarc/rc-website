@@ -1,6 +1,7 @@
 +++
 title = "Secure Computing for Surgical Research"
 description = ""
+date = "2018-05-03T14:33:50-05:00"
 author = "SOMRC Staff"
 images = "/images/projects/secure-surgery.png"
 categories = ["projects"]

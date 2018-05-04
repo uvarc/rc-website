@@ -1,5 +1,6 @@
 +++
 title = "Functional Connectome Fingerprinting"
+date = "2018-05-03T14:33:50-05:00"
 description = ""
 author = "SOMRC Staff"
 images = "/images/code.png"

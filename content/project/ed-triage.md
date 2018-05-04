@@ -7,6 +7,7 @@ categories = ["projects"]
 tags = ["clinical-research","machine learning"]
 draft = false
 projecttype = ["clinical-research"]
+date = "2018-05-03T14:33:50-05:00"
 +++
 
 Before patients are admitted to the emergency room, they are assigned a triage level based on the severity of their health problems. This is accomplished using the Emergency Severity Index (ESI), an emergency department triage algorithm that classifies patient cases into five different levels of urgency. Researchers are interested in using machine learning to develop a model to predict patient triage level. This model would not only analyze the typical vital signs that are used in the ESI, but also demographic data and patients’ history of health.

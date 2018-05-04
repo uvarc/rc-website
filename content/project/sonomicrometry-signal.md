@@ -1,6 +1,7 @@
 +++
 title = "Sonomicrometry Signal Classification"
 description = ""
+date = "2018-05-03T14:33:50-05:00"
 author = "SOMRC Staff"
 images = "/images/projects/sonomicrometry.jpg"
 categories = ["projects"]

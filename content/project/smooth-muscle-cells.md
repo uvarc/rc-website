@@ -1,6 +1,7 @@
 +++
 title = "PHACTR1 and Smooth Muscle Cell Behavior"
 description = ""
+date = "2018-05-03T14:33:50-05:00"
 author = "SOMRC Staff"
 images = "/images/projects/smooth-muscle-cells.jpg"
 categories = ["projects"]

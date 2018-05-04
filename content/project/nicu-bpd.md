@@ -1,6 +1,7 @@
 +++
 title = "Bradycardia and Desaturation Events in Infants"
 description = ""
+date = "2018-05-03T14:33:50-05:00"
 author = "SOMRC Staff"
 images = "/images/projects/infant-rn.jpg"
 categories = ["projects"]

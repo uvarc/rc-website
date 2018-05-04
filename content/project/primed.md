@@ -1,6 +1,7 @@
 +++
 title = "Center for Diabetes Technology PriMed"
 description = "Blah blah blah here we are with a placeholder."
+date = "2018-05-03T14:33:50-05:00"
 author = "SOMRC Staff"
 images = "/images/projects/dexcom.jpg"
 categories = ["projects"]
