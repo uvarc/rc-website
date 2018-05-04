@@ -43,8 +43,7 @@ UVA has two local HPC facilities available to researchers: **Rivanna** and **Ivy
     <p class="card-text">
 All faculty, research staff and graduate students of UVA have access to Rivanna, university's high-performance computing system with 290+ compute nodes (6500+ cores) for high-throughput multithreaded jobs, parallel jobs as well as memmory intensive large-scale data analyses. The architecture is specifically suited for large scale distributed genomic data analysis, with <a href="https://arcs.virginia.edu/software-list" style="color:#0275d8";>100+</a> bioinformatics software packages installed and ready to use.   
     </p>
-<a href="https://arcs.virginia.edu/rivanna" class="card-link"><button class="btn btn-primary">Learn more</button></a>
-<a href="https://discuss.rc.virginia.edu/tags/c/rivanna/software/bioinformatics" class="card-link"><button class="btn btn-primary">Bioinformatics Software on Rivanna</button></a>
+<a href="https://arcs.virginia.edu/rivanna" class="card-link" target="_blank"><button class="btn btn-primary">Learn more</button></a>
   </div>
 </div>
 
