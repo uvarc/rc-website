@@ -48,20 +48,16 @@ draft = false
     <div class="card-block">
       <h4 class="card-title">Services</h4>
         <p class="card-text">
-        SOMRC has expertise in the following service areas:
+        SOMRC has expertise in the following service areas. Click on an area for more information:
         </p>
-        <div class="btn-group">
-          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Select a Service
-          </button>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="/service/bioinformatics/">Bioinformatics & Genomics</a>
-            <a class="dropdown-item" href="/service/cloud/">Cloud Solutions</a>
-            <a class="dropdown-item" href="/service/data-analysis/">Data Analysis</a>
-            <a class="dropdown-item" href="/service/imaging/">Image Processing</a>
-            <a class="dropdown-item" href="/service/scientific-computing/">Scientific Computing</a>
-          </div>
-        </div>
+          <ul>
+            <li><a href="/service/bioinformatics/">Bioinformatics & Genomics</a>
+            <li><a href="/service/cloud/">Cloud Solutions</a>
+            <li><a href="/service/data-analysis/">Data Analysis</a>
+            <li><a href="/service/imaging/">Image Processing</a>
+            <li><a href="/service/scientific-computing/">Scientific Computing</a>
+          </ul>
+      <a href="/service/consult/" class="card-link"><button class="btn btn-warning">Request a Consultation</button></a>
     </div>
   </div>
 </div>
