@@ -2,7 +2,7 @@
 title = "Secure Computing for Surgical Research"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/secure-surgery.png"
 categories = ["projects"]
 tags = [
     "secure computing"
