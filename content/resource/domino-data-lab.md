@@ -1,12 +1,13 @@
 +++
 tags = [
   "ddl",
-  "domino",
   "data",
   "R",
+  "ivy",
   "python",
+  "hipaa",
 ]
-draft = false
+draft = true
 date = "2017-01-24T09:43:35-05:00"
 title = "Domino Data Lab"
 description = ""
@@ -16,7 +17,7 @@ images = [
 ]
 categories = [
   "resources",
-  "data",
+  "ivy",
 ]
 
 +++

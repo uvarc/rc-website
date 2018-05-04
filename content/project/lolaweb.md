@@ -6,7 +6,10 @@ author = "SOMRC Staff"
 images = "/images/projects/LOLAweb-logo-square.png"
 categories = ["projects"]
 tags = [
-    "bioinformatics"
+    "bioinformatics",
+    "containers",
+    "docker",
+    "r",
 ]
 draft = false
 projecttype = ["basic-science", "infrastructure"]
