@@ -2,7 +2,7 @@
 title = "Transcription factor-chromatin Binding Dynamics"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/chromatin-unwinding.jpg"
 categories = ["projects"]
 tags = ["basic-science"]
 draft = false
