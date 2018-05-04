@@ -1,5 +1,5 @@
 +++
-title = "Predicting Triage Levels in the ER with Machine Learning"
+title = "Predicting ER Triage Levels with Machine Learning"
 description = ""
 author = "SOMRC Staff"
 images = "/images/projects/uva-er.jpg"

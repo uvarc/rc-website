@@ -3,7 +3,7 @@ title = "Microbiome Analysis of Hospital Sink Drains"
 description = ""
 date = "2018-05-03T14:33:50-05:00"
 author = "SOMRC Staff"
-images = "/images/klebsiella_pneumoniae.jpg"
+images = "/images/projects/klebsiella_pneumoniae.jpg"
 categories = ["projects"]
 tags = [
     "bioinformatics"
