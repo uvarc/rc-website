@@ -1,8 +1,8 @@
 +++
-title = "Predicting Triage Level in the Emergency Department with Machine Learning"
+title = "Predicting Triage Levels in the ER with Machine Learning"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/uva-er.jpg"
 categories = ["projects"]
 tags = ["clinical-research","machine learning"]
 draft = false

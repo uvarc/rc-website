@@ -2,7 +2,7 @@
 title = "Bradycardia and Desaturation Events in Infants"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/infant-rn.jpg"
 categories = ["projects"]
 tags = [
     "NICU"

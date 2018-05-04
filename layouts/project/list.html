@@ -52,37 +52,48 @@ $(window).on('load', function(){
 
   <body>
   
-
     {{ partial "menu-home.html" . }}
 
     {{ partial "site-header.html" . }}
 	
-	<section id="main-content" class="main-content">
+    <section id="main-content" class="main-content">
 	
-
     <div class="container">
       <div class="row">
         <div class="col-sm-8 blog-main">
 
-
-
-<div class="portfolioFilter" style="margin-bottom:2em;">
-     <a href="#" data-filter="*" class="current"><button class="btn btn-sm btn-info">All Projects</button></a>
-    <a href="#" data-filter=".basic-science"><button class="btn btn-sm btn-info">Basic Science</button></a>
-    <a href="#" data-filter=".clinical-research"><button class="btn btn-sm btn-info">Clinical Research</button></a>
-    <a href="#" data-filter=".infrastructure"><button class="btn btn-sm btn-info">Infrastructure</button></a>
-</div>
+    <div class="portfolioFilter" style="margin-bottom:2em;">
+        <a href="#" data-filter="*" class="current"><button class="btn btn-sm btn-info">All Projects</button></a>
+        <a href="#" data-filter=".basic-science"><button class="btn btn-sm btn-info">Basic Science</button></a>
+        <a href="#" data-filter=".clinical-research"><button class="btn btn-sm btn-info">Clinical Research</button></a>
+        <a href="#" data-filter=".infrastructure"><button class="btn btn-sm btn-info">Infrastructure</button></a>
+    </div>
  
-<div class="portfolioContainer" style="min-height:60rem;">
+    <div class="portfolioContainer" style="min-height:60rem;">
 
 <!--<div class="row isotope portfolioContainer js-layout-masonry" style="position: relative; height: 2535px;">-->
 
-	
-{{ $paginator := .Paginate ((first 50 (where .Data.Pages "Type" "project"))) }}
+        {{ $paginator := .Paginate ((first 50 (where .Data.Pages "Type" "project"))) }}
 	
 	{{ range where $paginator.Pages "Params.projecttype" "!=" nil}}	
 
-		<div class = "{{ delimit .Params.projecttype " " }}">		
+<div class = "{{ delimit .Params.projecttype " " }}">
+<a href ="{{ .Permalink }}" style="color:black; text-decoration:none;">
+<div class="card" style="width:220px; max-width:220px; margin: 10px; max-height:18em; min-height:18em; text-align:center; padding:4px;">
+  <img class="card-img-top" src="{{ .Params.images }}" alt="{{ .Title }}" style="max-width:200px;max-height:200px;">
+  <div class="card-body">
+    <h5 class="card-title" style="">{{ .Title }}</h5>
+  <!--  <p class="card-text">{{ .Description }}</p> -->
+  </div>
+  <!-- <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+  </div>
+  -->
+</div>
+</a>
+</div>
+
+<!--		<div class = "{{ delimit .Params.projecttype " " }}">		
 		  <a href ="{{ .Permalink }}" style="color:black;">
 		  <div class="card" style ="max-width:200px; text-align:center; border:solid 1px #ccc; margin:10px; min-height:16em;">
                     <img src="{{ .Params.images }}" class="card-img-top" style="max-width:200px;max-height:200px;">
@@ -92,24 +103,13 @@ $(window).on('load', function(){
 		  </div>		 
                   </a>
       	       	  
-                  <!-- <div class="card-text">
-                    <h5>{{ .Title }}</h5>
-                  </div>
-                  </div> -->
-		  <!--	<div class="image" style="display:table;">
-     		    <img src="{{ .Params.images }}" alt="">
-                    <div style="display:table-caption;caption-side:bottom; text-align:center;">
-                      <h5>{{ .Title }}</h5>
-                    </div>
-                  </div> -->
-			
 		</div>
-		
-		{{ end }}
+-->		
+	{{ end }}
  
-</div>
+    </div>
 
-        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+    </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
         {{ partial "sidebar-projects.html" . }}
 

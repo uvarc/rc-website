@@ -2,7 +2,7 @@
 title = "Heart Rate Ranges in Neonates"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/heart-rate.jpg"
 categories = ["projects"]
 tags = [
     "NICU"

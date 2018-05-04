@@ -2,7 +2,7 @@
 title = "PHACTR1 and Smooth Muscle Cell Behavior"
 description = ""
 author = "SOMRC Staff"
-images = "/images/code.png"
+images = "/images/projects/smooth-muscle-cells.jpg"
 categories = ["projects"]
 tags = ["basic-science"]
 draft = false
