@@ -47,6 +47,8 @@ article img{max-width:100%;height:auto;margin:13px auto}
 .contact-button { width: 100%; height: inherit; }
 .contact-button button { position: absolute; bottom:20px; left: 20px;}
 
+.project-inset { max-width:240px;max-height:240px;margin-left:10px;margin-bottom:10px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
+
 pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radius:.25rem; font-size:90%;}
 .category { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radius:.25rem;font-weight:600;font-family:monospace;padding-bottom:20px;}
 
@@ -217,8 +219,7 @@ img {
 .isotope,
 .isotope .isotope-item {
   /* change duration value to whatever you like */
- 
-    -webkit-transition-duration: 0.8s;
+     -webkit-transition-duration: 0.8s;
     -moz-transition-duration: 0.8s;
     transition-duration: 0.8s;
 }
