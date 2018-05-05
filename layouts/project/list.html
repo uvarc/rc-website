@@ -23,6 +23,8 @@ $(window).on('load', function(){
     var $container = $('.portfolioContainer');
     $container.isotope({
         filter: '*',
+        sortBy: 'name',
+        sortAscending: true,
         animationOptions: {
             duration: 750,
             easing: 'linear',
@@ -37,6 +39,8 @@ $(window).on('load', function(){
         var selector = $(this).attr('data-filter');
         $container.isotope({
             filter: selector,
+            sortBy: 'name',
+            sortAscending: true,
             animationOptions: {
                 duration: 750,
                 easing: 'linear',
