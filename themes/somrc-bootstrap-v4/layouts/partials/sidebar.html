@@ -3,8 +3,12 @@
 
   <div class="sticky">
 
-  {{ partial "user-help-widget.html" . }}
+  <p style="padding-left:1rem;">
+    <a href="/categories/" style="text-decoration:none;"><i class="fa fa-folder-open" aria-hidden="true"></i> All categories</a> &nbsp;
+    <a href="/tags/" style="text-decoration:none;"><i class="fa fa-tag" aria-hidden="true"></i> All tags</a>
+  </p>
 
+  {{ partial "user-help-widget.html" . }}
 
 <!--  {{ if isset .Site.Params.sidebar "about" }}
   <section class="sidebar-module sidebar-module-inset">

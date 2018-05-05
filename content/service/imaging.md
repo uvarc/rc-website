@@ -3,9 +3,11 @@ categories = [
   "services",
 ]
 tags = [
-  "image processing",
+  "image-processing",
   "hpc",
-  "services"
+  "services",
+  "matlab",
+  "omero",
 ]
 draft = false
 date = "2018-01-26T14:18:18-05:00"

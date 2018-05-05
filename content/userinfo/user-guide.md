@@ -6,9 +6,7 @@ images = [
   "",
 ]
 date = "2017-01-19T09:55:56-05:00"
-categories = [
-  "userinfo",
-]
+categories = ["userinfo"]
 tags = [
   "hpc",
   "ivy",

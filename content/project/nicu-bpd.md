@@ -6,7 +6,7 @@ author = "SOMRC Staff"
 images = "/images/projects/infant-rn.jpg"
 categories = ["projects"]
 tags = [
-    "NICU"
+    "NICU",
 ]
 draft = false
 projecttype = ["clinical-research","machine-learning"]
