@@ -23,7 +23,7 @@ $(window).on('load', function(){
     var $container = $('.portfolioContainer');
     $container.isotope({
         filter: '*',
-        sortBy: 'name',
+        sortBy: 'card-title',
         animationOptions: {
             duration: 750,
             easing: 'linear',
@@ -38,7 +38,7 @@ $(window).on('load', function(){
         var selector = $(this).attr('data-filter');
         $container.isotope({
             filter: selector,
-            sortBy: 'name',
+            sortBy: 'card-title',
             animationOptions: {
                 duration: 750,
                 easing: 'linear',
@@ -63,7 +63,7 @@ $(window).on('load', function(){
     <div class="container">
       <div class="row">
         <div class="col-sm-12 blog-main">
-          <h2>Projects</h2>
+          <h2><a href="">Projects</a></h2>
           <p class="lead">We work with researchers to make genuine contributions to the biomedical sciences. Here are some of our most recent collaborations:</p>
 
     <div class="portfolioFilter" style="margin-bottom:2em;">
