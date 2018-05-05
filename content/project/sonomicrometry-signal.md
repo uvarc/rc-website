@@ -7,7 +7,7 @@ images = "/images/projects/sonomicrometry.jpg"
 categories = ["projects"]
 tags = ["basic-science"]
 draft = false
-projecttype = ["basic-science"]
+projecttype = ["basic-science","machine-learning"]
 +++
 
 Researchers are using sonomicrometry to study the biomechanics of the human brain. While at times the signals collected do not require any preprocessing, more frequently they do require some denoising or are too noisy to analyze. Currently, researchers are manually categorizing the quality of thousands of these sonomicrometry signals and preprocessing them individually. SOMRC is helping researchers develop a machine learning model to classify the signals and to determine the necessary preprocessing steps.

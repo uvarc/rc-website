@@ -9,7 +9,7 @@ tags = [
     "NICU"
 ]
 draft = false
-projecttype = ["clinical-research"]
+projecttype = ["clinical-research","machine-learning"]
 +++
 
 Episodes of bradycardia and oxygen desaturation (BD) are common among preterm very low birthweight (VLBW) infants and their association with adverse outcomes such as bronchopulmonary dysplasia (BPD) is unclear. A better understanding of this relationship could lead to improved clinical interventions.

@@ -4,9 +4,9 @@ description = ""
 author = "SOMRC Staff"
 images = "/images/projects/uva-er.jpg"
 categories = ["projects"]
-tags = ["clinical-research","machine learning"]
+tags = ["clinical-research","machine-learning"]
 draft = false
-projecttype = ["clinical-research"]
+projecttype = ["clinical-research","machine-learning"]
 date = "2018-05-03T14:33:50-05:00"
 +++
 
