@@ -12,7 +12,7 @@ tags = [
     "r",
 ]
 draft = false
-projecttype = ["basic-science", "infrastructure"]
+projecttype = ["basic-science", "tools"]
 +++
 
 The past few years have seen an explosion of interest in understanding the role of regulatory DNA. This interest has driven large-scale production of functional genomics data resources and analytical methods. One popular analysis is to test for enrichment of overlaps between a query set of genomic regions and a database of region sets. In this way, annotations from external data sources can be easily connected to new genomic data.

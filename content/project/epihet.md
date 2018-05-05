@@ -9,7 +9,7 @@ tags = [
     "bioinformatics"
 ]
 draft = false
-projecttype = ["basic-science", "infrastructure"]
+projecttype = ["basic-science", "tools"]
 +++
 
 SOMRC is working with researchers in the Center for Public Health Genomics to write an R package to calculate Relative Proportion of Sites with Intermediate Methylation (RPIM) scores, which represent the epigenetic heterogeneity in a bisulfite sequencing sample.
