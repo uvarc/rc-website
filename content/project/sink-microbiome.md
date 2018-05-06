@@ -17,7 +17,7 @@ Sink drains are notoriously characterized as reservoirs of pathogens causing nos
 SOMRC is contributing to:
 
 - Comparative genomic analysis of gram-negative bacterial isolates:
-    The analysis aims at tracking the mobile genetic element blaKPC gene, which encodes for Klebsiella pneumoniae carbapenemase (KPC) enzyme that confers resistance to all beta lactam agents including penicillins, cephalosporins, monobactams and carbapenems. As a part of this project, whole-genome shotgun sequencing data for about 1500 samples will be analyzed to assess the risk of acquisition of Carbapenemase producing Enterobacteriaceae from exposure to contaminated waste water premise plumbing.   
+    The analysis aims at tracking the mobile genetic element blaKPC gene, which encodes for Klebsiella pneumoniae carbapenemase (KPC) enzyme that confers resistance to all beta lactam agents including penicillins, cephalosporins, monobactams and carbapenems. As a part of this project, whole-genome shotgun sequencing data for about 1500 bacterial isolates will be analyzed to assess the risk of acquisition of Carbapenemase producing Enterobacteriaceae from exposure to contaminated waste water premise plumbing.   
 - Metagenomic analysis: 
     This project, under a contract for the Center for Disease Control and Prevention (CDC), aims at understanding the temporal dynamics of hospital sink microbiome. Taxonomic and functional analysis of whole metagenomic shotgun sequencing data from longitudinal sampling will shed light on the transfer and sustenance of high-risk antibiotic resistance genes in the hospital environments.
 

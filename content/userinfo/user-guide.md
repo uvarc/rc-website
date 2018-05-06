@@ -83,10 +83,10 @@ quell_footer = true
     <div style="text-align:center;"><i class="fas fa-dna fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Bioinformatics</h4>
-      <p class="card-text">We are developing a library of documentation and code templates for performing bioinformatics analyses using local HPC Rivanna) and cloud computing resources.</p>
+      <p class="card-text">We are developing a library of documentation and code templates for performing bioinformatics analyses using local HPC (Rivanna) and cloud computing resources.</p>
       <br clear=all />  
       <div class="contact-button">
-        <a href="/service/bioinformatics/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/bioinfo-rivana-sw-list/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
