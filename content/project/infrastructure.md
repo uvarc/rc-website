@@ -2,7 +2,7 @@
 title = "Code & Infrastructure"
 author = "SOMRC Staff"
 categories = ["projects"]
-tags = ["tools","containers","ami","scripts","architecture","cloud","code","mesos","github","docker"]
+tags = ["tools","containers","ami","scripts","architecture","cloud","code","mesos","bots"]
 images = "/images/projects/code-infrastructure.png"
 description = ""
 date = "2018-04-12T17:18:27-04:00"
@@ -12,14 +12,15 @@ projecttype = ["tools"]
 
 <!-- <img align="right" alt="GitHub" style="max-height:80px;padding-right:6em;" src="/images/octocat-logo.png"> -->
 
-## Code Resources
+## Code & Resources
 
 * [**SOMRC on GitHub**](https://github.com/uvasomrc/)
 * [AWS Snippets](https://github.com/uvasomrc/aws-snippets)
 * [Cloud Templates](https://github.com/uvasomrc/cloud-templates)
 * [Courses / Workshops](https://github.com/uvasomrc/courses)
-* [Git Intro](https://github.com/uvasomrc/git-intro-somrc)
 * [`scratchr`](https://github.com/uvasomrc/scratchr)
+* [Project: `epihet`](/project/epihet/)
+* [Project: `simpleCache`](/project/simplecache/)
 
 <!-- <img align="right" alt="Docker" style="max-height:80px;padding-right:6em;" src="/images/docker-logo.png"> -->
 
@@ -27,7 +28,12 @@ projecttype = ["tools"]
 
 * [**SOMRC Docker Hub**](https://hub.docker.com/u/somrc/dashboard/)
 * [Learn how to use Docker](https://github.com/uvasomrc/courses/blob/master/workshops/docker/README.md)
-* [LOLAweb](https://hub.docker.com/r/databio/lolaweb/)
+* [Project: LOLAweb](/project/lolaweb/)
+
+## Bots & Artificial Intelligence
+
+* Alexa Skills (in development)
+* Twitter Chatbot (in development)
 
 ## DC/OS Mesos
 

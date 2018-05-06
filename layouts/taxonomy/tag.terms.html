@@ -42,6 +42,13 @@
     {{end}}
     </p>
 
+    <p style="line-height: 200%;">
+    {{ $data := .Data }}
+    {{ range $key, $value := .Data.Taxonomy.ByCount }}
+        {{ $value.Name }} ({{ $value.Count }}) <br />
+    {{ end }}
+    </p>
+
   </div>
 </section>
 <!-- END TAG CLOUD -->
