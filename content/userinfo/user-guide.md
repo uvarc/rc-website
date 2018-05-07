@@ -26,7 +26,8 @@ quell_footer = true
       <p class="card-text">Standard and high security HPC to run your code, generally written in R, Python or shell scripts.</p>
       <br clear=all />
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#hpcModal">Learn More &rsaquo;</button>
+        <a href="/userinfo/systems/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
+        <!-- <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#hpcModal">Learn More &rsaquo;</button> -->
       </div>
     </div>
   </div>
@@ -37,7 +38,7 @@ quell_footer = true
       <p class="card-text">Need large, or extremely large storage offsite or on grounds? Can you count in GB, TB, or PB? Learn more about storage options and pricing.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/userinfo/storage/"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#storageModal">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/storage/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -91,7 +92,6 @@ quell_footer = true
     </div>
   </div>
 </div>
-
 
 
 <!-- Modal for HPC -->

@@ -34,19 +34,12 @@
 <!-- BEGIN TAG CLOUD -->
 <section id="main">
   <div>
-    <h1 id="title">{{ .Title }}</h1>
+    <h1 id="title"><i class="fa fa-tag" aria-hidden="true"></i> {{ .Title }}</h1>
 
     <p style="line-height: 200%;">
     {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
       <a style="font-weight:bold;" href="/tags/{{ $name | urlize }}"><button class="btn btn-outline-danger btn-sm">{{ $name }} ({{ $taxonomy.Count }}) </button></a>
     {{end}}
-    </p>
-
-    <p style="line-height: 200%;">
-    {{ $data := .Data }}
-    {{ range $key, $value := .Data.Taxonomy.ByCount }}
-        {{ $value.Name }} ({{ $value.Count }}) <br />
-    {{ end }}
     </p>
 
   </div>
