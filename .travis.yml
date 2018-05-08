@@ -17,7 +17,6 @@ notifications:
     on_failure: always
     recipients:
     - nmagee@virginia.edu
-
 before_deploy: 
   - sudo pip install --upgrade pip
   - pip install --user awscli
@@ -34,12 +33,13 @@ deploy:
     script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
     on:
       branch: master
-  # sync all files to s3
+  # sync all files to stagingg s3 bucket
   - provider: script
     script: ~/.local/bin/aws s3 sync public s3://$BUCKET_NAME_STAGING --region=us-east-1 --delete
     skip_cleanup: true
     on:
       branch: staging
+  # invalidate staging cache
   - provider: script
     script: ~/.local/bin/aws cloudfront create-invalidation --distribution-id $STAGING_DISTRIBUTION_ID --paths "/*"
     on:

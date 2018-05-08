@@ -56,7 +56,7 @@ quell_footer = true
 </div>
 
 
-<div class="card-group">
+<!-- <div class="card-group">
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-image fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
@@ -91,7 +91,7 @@ quell_footer = true
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <!-- Modal for HPC -->
