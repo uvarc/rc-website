@@ -6,9 +6,6 @@ theme = "somrc-bootstrap-v4"
 copyright = " {year} UVA School of Medicine "
 paginate = 20
 disableKinds= ["RSS","404"]
-# disableKinds = ["sitemap","RSS","404"]
-# disableRSS = true
-# disable404 = true
 # date_format = "January 2, 2006"
 
 [permalinks]
@@ -40,3 +37,4 @@ disableKinds= ["RSS","404"]
 [params.sharingicons]
   # Hide the sharing icons on posts? (Default: false)
   hide = true
+
