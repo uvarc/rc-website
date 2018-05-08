@@ -5,4 +5,3 @@ update.sh
 **/.DS_Store
 invalidate*
 wercker*
-static/d3/*
