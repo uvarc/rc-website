@@ -6,7 +6,7 @@ tags = ["tools","r","cloud"]
 images = "/images/projects/code-infrastructure.png"
 description = ""
 date = "2018-04-12T17:18:27-04:00"
-draft = false
+draft = true
 projecttype = ["tools"]
 +++
 
