@@ -31,7 +31,7 @@ categories = [
   <div class="col-lg-6">
     <img class="rounded-circle" src="https://somrc.virginia.edu/images/profile_nmagee.png" alt="Neal Magee" width="140" height="140">
     <h2>Neal Magee, PhD</h2>
-    <p><b>Cloud Solution Architect</b> <br /> Neal designs scaling, service-driven, distributed systems in the public cloud. His recent work has been built primarily in Amazon Web Services, a platform in which he is a certified solution architect. Drawing on a background in development and operations, he designs "programmable infrastructure" that changes dynamically with the needs of an application. He has extensive experience with Python, the Amazon / Google / Microsoft clouds, and architecting dynamic systems that scale and heal automatically.</p>
+    <p><b>Cloud Solution Architect</b> <br /> Neal designs scaling, service-driven, distributed systems in the public cloud. His recent work has been built primarily in Amazon Web Services, with which he is a certified solution architect. Drawing on a background in development and operations, he designs programmable infrastructure that changes dynamically with the needs of an application. He has extensive experience with Python, public clouds, and architecting dynamic systems that scale and heal automatically.</p>
     <p>
       <a class="btn btn-secondary" target="_new" href="mailto:nem2p@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i></a>
       <a class="btn btn-secondary" target="_new" href="https://stackoverflow.com/users/473488/neal" role="button"><i class="fab fa-stack-overflow fa-lg"></i></a>
@@ -60,7 +60,7 @@ With expertise in R and Python, he's been active in package development and a va
   </div><!-- /.col-lg-6 -->
   <!--Omar's profile-->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/089253d.jpg" alt="Omar Khurshid" width="140" height="140">
+    <img class="rounded-circle" src="/images/omar-kurshid.jpg" alt="Omar Khurshid" width="140" height="140">
     <h2>Omar Khurshid</h2>
     <p><b>Cloud DevOps Engineer</b> <br />Omar has a background in designing enterprise cloud platforms, we well as software and web development. For much of his recent work, he has been directly responsible for the development of secured, scalable, compliant cloud infrastructure services. He is certified in Amazon Web Services and can help with projects that need to be migrated to the cloud. Areas of interest include: Containers, DevOps, automation, Python, Web, Big Data. </p>
     <p><a class="btn btn-secondary" href="mailto:ork8s@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
