@@ -67,11 +67,11 @@ draft = false
 <div class = "card-group">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Systems</h4>
+      <h4 class="card-title">User Guides</h4>
         <p class="card-text">
-        UVA Research Computing can help you find the right system for your computational workloads. From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure, various systems are available to researchers.
+        UVA Research Computing can help you find the right system or solution for your computational workloads. We have expertise in supercomputers, cloud deployments, image processing and bioinformatics, as well as storage and data management.
         </p>
-      <a href="/userinfo/systems/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+      <a href="/userinfo/user-guide/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
