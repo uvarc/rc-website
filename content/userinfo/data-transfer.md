@@ -1,7 +1,7 @@
 +++
 date = "2018-05-01T10:08:34-05:00"
 tags = [
-	"data transfer",
+	"data-transfer",
 	"globus",
 	"ftp"
 	]
