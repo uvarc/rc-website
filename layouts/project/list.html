@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+
+  <head>
+    {{ partial "head-meta.html" . }}
+
+    <base href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+    <meta type="{{ .Type }}" />
+
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ "<!-- combined, minified CSS -->" | safeHTML }}
+    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+ 
+    {{ partial "head-custom.html" . }}
+
+<script type="text/javascript">
+
+$(window).on('load', function(){
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+        filter: '*',
+        sortBy: 'card-title',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+ 
+    $('.portfolioFilter a').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            sortBy: 'card-title',
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
+});
+
+</script>
+  </head>
+
+  <body>
+  
+    {{ partial "menu-home.html" . }}
+
+    {{ partial "site-header.html" . }}
+	
+    <section id="main-content" class="main-content">
+	
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 blog-main">
+          <h2><a href="">Projects</a></h2>
+          <p class="lead">We work with researchers to make genuine contributions to the biomedical sciences. Here are some of our most recent collaborations:</p>
+
+    <div class="portfolioFilter" style="margin-bottom:2em;">
+      <p style="line-height:200%;">
+        <a href="#" data-filter="*" class="current"><button class="btn btn-sm btn-info">All Projects</button></a>
+        <a href="#" data-filter=".basic-science"><button class="btn btn-sm btn-info">Basic Science</button></a>
+        <a href="#" data-filter=".clinical-research"><button class="btn btn-sm btn-info">Clinical Research</button></a>
+        <a href="#" data-filter=".machine-learning"><button class="btn btn-sm btn-info">Machine Learning</button></a>
+        <a href="#" data-filter=".tools"><button class="btn btn-sm btn-info">Tools & Data</button></a>
+      </p>
+    </div>
+
+    <div class="portfolioContainer" style="min-height:60rem;">
+
+<!--<div class="row isotope portfolioContainer js-layout-masonry" style="position: relative; height: 2535px;">-->
+
+        {{ $paginator := .Paginate ((first 50 (where .Data.Pages "Type" "project"))) }}
+	
+        {{ range where $paginator.Pages "Params.projecttype" "!=" nil}}	
+
+          <div class = "{{ delimit .Params.projecttype " " }}">
+          <a href ="{{ .Permalink }}" style="color:black; text-decoration:none;">
+          <div class="card card-shadow" style="width:250px; max-width:250px; margin: 8px; max-height:20em; min-height:20em; text-align:center; padding:4px;">
+            <img class="card-img-top" src="{{ .Params.images }}" alt="{{ .Title }}" style="max-width:240px;max-height:240px;">
+            <div class="card-body" style="margin-top:auto;margin-bottom:auto;">
+              <h5 class="card-title" style="font-size:18px; margin-top:auto;margin-bottom:auto;">{{ .Title }}</h5>
+              <!-- <p class="card-text">{{ .Title }}</p> -->
+            </div>
+            <!-- <div class="card-body">
+              <a href="#" class="card-link">Card link</a>
+            </div>
+            -->
+          </div>
+          </a>
+          </div>
+
+	{{ end }}
+ 
+    </div>
+
+    </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+
+      </div> {{ "<!-- /.row -->" | safeHTML }}
+    </div> {{ "<!-- /.container -->" | safeHTML }}
+    
+
+	</section>
+	
+    {{ partial "footer.html" . }}
+
+  </body>
+
+</html>
+
+{{- /* vim: set ts=2 sw=2 et: */}}

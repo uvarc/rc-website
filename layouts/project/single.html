@@ -8,6 +8,9 @@
   </header>
   
   <div class="explainer">
+    {{ if .Params.images }}
+      <img src="{{ .Params.images }}" alt="{{ .Title }}" class="project-inset" align="right" />
+    {{ end }}
     {{ .Content }}
   </div>
 

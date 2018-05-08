@@ -6,9 +6,7 @@ images = [
   "",
 ]
 date = "2017-01-19T09:55:56-05:00"
-categories = [
-  "userinfo",
-]
+categories = ["userinfo"]
 tags = [
   "hpc",
   "ivy",
@@ -28,7 +26,8 @@ quell_footer = true
       <p class="card-text">Standard and high security HPC to run your code, generally written in R, Python or shell scripts.</p>
       <br clear=all />
       <div class="contact-button">
-        <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#hpcModal">Learn More &rsaquo;</button>
+        <a href="/userinfo/systems/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
+        <!-- <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#hpcModal">Learn More &rsaquo;</button> -->
       </div>
     </div>
   </div>
@@ -39,7 +38,7 @@ quell_footer = true
       <p class="card-text">Need large, or extremely large storage offsite or on grounds? Can you count in GB, TB, or PB? Learn more about storage options and pricing.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/userinfo/storage/"><button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#storageModal">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/storage/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -82,18 +81,17 @@ quell_footer = true
     </div>
   </div>
   <div class="card">
-    <div style="text-align:center;"><i class="fa fa-shield fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
+    <div style="text-align:center;"><i class="fas fa-dna fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
-      <h4 class="card-title">Secure Computing</h4>
-      <p class="card-text">For patient data or other secure applications requiring HIPAA, we have multiple options on-grounds and in the AWS cloud.</p>
+      <h4 class="card-title">Bioinformatics</h4>
+      <p class="card-text">We are developing a library of documentation and code templates for performing bioinformatics analyses using local HPC (Rivanna) and cloud computing resources.</p>
       <br clear=all />  
       <div class="contact-button">
-        <a href="/userinfo/secure-computing/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/bioinfo-rivana-sw-list/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
 </div> -->
-
 
 
 <!-- Modal for HPC -->

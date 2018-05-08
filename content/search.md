@@ -1,7 +1,7 @@
 +++
 date = "2016-12-31T23:59:16-05:00"
-tags = [""]
-categories = [""]
+tags = ["search"]
+categories = ["search"]
 images = [""]
 author = "SOMRC Staff"
 description = ""

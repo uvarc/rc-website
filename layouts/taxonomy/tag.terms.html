@@ -1,12 +1,121 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+
+  <head>
+    {{ partial "head-meta.html" . }}
+
+    <base href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+    <meta type="{{ .Type }}" />
+
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ "<!-- combined, minified CSS -->" | safeHTML }}
+    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    {{ partial "head-custom.html" . }}
+
+<style>
+circle {
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.leaf circle {
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+text {
+  font: 12px sans-serif;
+  text-anchor: middle;
+}
+</style>
+
+  </head>
+
+  <body>
+
+    {{ partial "menu-home.html" . }}
+
+    {{ partial "site-header.html" . }}
+	
+	<section id="main-content" class="main-content">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+<!-- BEGIN TAG CLOUD -->
 <section id="main">
   <div>
-    <h1 id="title">{{ .Title }}</h1>
+    <h1 id="title"><i class="fa fa-tag" aria-hidden="true"></i> {{ .Title }}</h1>
 
-    <ul>
-    {{ $data := .Data }}
-    {{ range $key, $value := .Data.Tags }}
-      <li><a href="{{ .Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $key | urlize }}">{{ $key }}</a> {{ len $value }}</li>
-    {{ end }}
-   </ul>
+    <p style="line-height: 200%;">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <a style="font-weight:bold;" href="/tags/{{ $name | urlize }}"><button class="btn btn-outline-danger btn-sm">{{ $name }} ({{ $taxonomy.Count }}) </button></a>
+    {{end}}
+    </p>
+
+<svg width="800" height="800"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+var svg = d3.select("svg"),
+    diameter = +svg.attr("width"),
+    g = svg.append("g").attr("transform", "translate(2,2)"),
+    format = d3.format(",d");
+
+var pack = d3.pack()
+    .size([diameter - 4, diameter - 4]);
+
+d3.json("https://staging.somrc.virginia.edu/d3/flare.json", function(error, root) {
+  if (error) throw error;
+
+  root = d3.hierarchy(root)
+      .sum(function(d) { return d.size; })
+      .sort(function(a, b) { return b.value - a.value; });
+
+  var node = g.selectAll(".node")
+    .data(pack(root).descendants())
+    .enter().append("g")
+      .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  node.append("title")
+      .text(function(d) { return d.data.name + "\n" + format(d.value); });
+
+  node.append("circle")
+      .attr("r", function(d) { return d.r; });
+
+  node.filter(function(d) { return !d.children; }).append("text")
+      .attr("dy", "0.3em")
+      .text(function(d) { return d.data.name.substring(0, d.r / 3); });
+});
+
+</script>
+
   </div>
 </section>
+<!-- END TAG CLOUD -->
+
+        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+
+        {{ partial "sidebar.html" . }}
+
+      </div> {{ "<!-- /.row -->" | safeHTML }}
+    </div> {{ "<!-- /.container -->" | safeHTML }}
+
+	</section>
+	
+    {{ partial "footer.html" . }}
+
+  </body>
+
+</html>
+
+{{- /* vim: set ts=2 sw=2 et: */}}

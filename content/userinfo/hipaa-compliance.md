@@ -8,8 +8,7 @@ images = [
 ]
 categories = [
   "support",
-  "hipaa",
-  "security",
+  "userinfo",
 ]
 tags = [
   "hipaa",

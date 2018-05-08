@@ -3,7 +3,7 @@ description = ""
 title = "Ivy Secure Environment"
 draft = false
 date = "2017-02-26T17:45:12-05:00"
-tags = ["hpc","ivy","hipaa","linux","windows"]
+tags = ["hpc","ivy","hipaa","linux","windows","ddl"]
 categories = ["userinfo"]
 images = [""]
 author = "SOMRC Staff"  
@@ -230,7 +230,7 @@ To connect to Ivy follow the platform-specific steps below:
         <ul>
           <li>Open your JointVPN connection</li>
           <li>Reference the IP address of your Ivy VM.</li>
-          <li>For Remote Desktop access: Start an RDP client to the IP address of your VM and sign in.</li>
+          <li>For Remote Desktop access: Start an RDP client to the IP address of your VM and sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
         </ul>
       </div>
     </div>

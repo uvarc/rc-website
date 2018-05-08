@@ -19,6 +19,64 @@ draft = false
 
 +++
 
+<p><br></p>
+
+<div class = "card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">User Support</h4>
+        <p class="card-text">
+        School of Medicine Research Computing (SOMRC) is committed to providing individualized support for researchers who are engaged in computationally intensive projects.<br />
+        We offer support in a variety of contexts:
+        <ul>
+          <li>Support tickets in ZenDesk
+          <li>Documentation & FAQs
+          <li>Weekly Office Hours
+          <li>Hands-On Workshops
+          <li>In-person Consultations
+        </ul>
+        </p>
+      <a href="/service/user-support/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
+  </div>
+</div>
+
+<p><br></p>
+
+<div class = "card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Services</h4>
+        <p class="card-text">
+        SOMRC has expertise in the following service areas. Click on an area for more information:
+        </p>
+          <ul>
+            <li><a href="/service/bioinformatics/">Bioinformatics & Genomics</a>
+            <li><a href="/service/cloud/">Cloud Solutions</a>
+            <li><a href="/service/data-analysis/">Data Analysis</a>
+            <li><a href="/service/imaging/">Image Processing</a>
+            <li><a href="/service/scientific-computing/">Scientific Computing</a>
+          </ul>
+      <a href="/service/consult/" class="card-link"><button class="btn btn-warning">Request a Consultation</button></a>
+    </div>
+  </div>
+</div>
+
+<p><br></p>
+
+<div class = "card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">User Guides</h4>
+        <p class="card-text">
+        UVA Research Computing can help you find the right system or solution for your computational workloads. We have expertise in supercomputers, cloud deployments, image processing and bioinformatics, as well as storage and data management.
+        </p>
+      <a href="/userinfo/user-guide/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
+  </div>
+</div>
+
+<!-- REMOVED FOR NEW FORMAT
 <div id="accordion" role="tablist" aria-multiselectable="true" style="margin-top:2rem;">
 
   <div class="card">
@@ -103,5 +161,6 @@ draft = false
   </div>
 
 </div>
+-->
 
 <div class="space"></div>

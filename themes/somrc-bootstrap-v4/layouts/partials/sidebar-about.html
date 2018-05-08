@@ -2,10 +2,7 @@
 
   <div class="sticky">
 
-  {{ partial "page-contents.html" . }}
-
   <section class="sidebar-module">
-    <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
     <p class=lead>UVA Jobs</p>
     <ol class="list-unstyled">
       <li> <a href="https://jobs.virginia.edu/" target="_new">Jobs @ UVA</a></li>
@@ -14,6 +11,10 @@
   </section>
 
   {{ partial "user-help-widget.html" . }}
+
+  <section class="sidebar-module" style="margin-top:36px;">
+    {{ partial "twitter.html" . }}
+  </section>
 
   </div>
 

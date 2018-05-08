@@ -4,7 +4,7 @@ author = "SOMRC Staff"
 description = ""
 title = "User Support"
 draft = false
-tags = ["computing","cloud","data","bioinformatics"]
+tags = ["computing","cloud","data","bioinformatics","image-processing","data-analysis"]
 categories = ["support"]
 date = "2017-08-27T12:04:58-05:00"
 
@@ -18,6 +18,7 @@ With expertise in high-performance computing, SOMRC provides support in the foll
 - [Cloud Solutions](/service/cloud/)
 - [Data Analysis](/service/data-analysis/)
 - [Scientific Computing](/service/scientific-computing/)
+- [Image Processing](/service/imaging/)
 
 SOMRC delivers the services above in the context of system support (web-based ticketing) and consultations (in-person meetings). In either scenario, we seek long-term scientific collaborations. Please use the contact methods below for user support.
 
@@ -46,3 +47,4 @@ Wednesdays 10AM-12PM <br>
 Health Sciences Library Room 2502 (Detmer Room)
 </div>
 
+<!--End mc_embed_signup-->

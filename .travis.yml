@@ -3,11 +3,14 @@ env:
   global:
   - secure: BY84jB6eMK361JTPEwFQGm3KuqW6vdbwi8iM52q5F69nh6nfCh0yBZrhw55UQIWp5yB0Z36X8OyNUCMV6yDWW1IqkMLlUM+Khb/9/8EHN8XGgNM7JBN/ggkWYs047+YVonF+DnN6IS1valq9vQVZm9uUy8LNp6c8GwumPFVMdbZne1Cob5tg/okow2cCm3FkmF4F0NwKo8EbI4aYJirQzqMxjKsnyU6yNcMe1WjbPJY2jrQlj8os6iHZnatn55f0XK9iQYWQRxUne13JmrRZFwmKgJseJIroVDlUpr1GuvcHYk0ahJA/hHvUq65L8kHhs73xdgfa+ivPjeg9zoh91CESWLQHnZjXKZrBbH1w6TRacpvyH6LxwUw+1gnbKiepxRP0n+4oEnukFylTpNziO9/DJMNJtMpydHEZxMs5n6JcyGg6CLpAnJ/DboNcVZ1G/gZ9Umy81vxhTtgQyijQvn82do1hlo6pCYNpF6vKbgXLWvGqa8YoJCAYVH70PSc+aqyuUGMNNjR9R2wUW/e98AM+B/WMuNVdAAuAES9n5lKhAZETGn4QZ4d3nPcEl+yXchB89dCtCme5Cw9VkaXpm7//MQDMzMKw7LLO/0XuxolFfDSA1wHqvShHljM5eSJ5Gf+tkb9xBPWnA23VN0Oy2ZYoHzIOL85s0evoI+cIbZA=
   - secure: VNxK+PByY9fZExSmq1+QSRyzafTh65FpmjSk7dmBCZ5/rQ6bLKFHOMlHKyiSyNL8e/CuXGbyy7cWZiT2waisZOUVbBuyWqH8hXKxP3gPZg4unsmVvh/D6pQ525zO6F2aYxJiZrDiVhCxGDOtYMCbr2vASafnhHTZLlEgwgdG1E8x4ksRCSlBaKnjk6uEeohR59jKEpnJ6YzQddNR79ZlCFFvcO9HUx3GJ/clAb3FL2n1bdA8/XgBLDuV6ia0RmW/I29TcEfj1cvJd7eaI45gKlKGXHGYtX+Cu5zWO+kJaDaAlH0GUz9urx3ZX5ciKC33n/RtlCXdSvTqUI16hY1QrAdxPtytU0Vms8pxbgu1d8kiuUS6g16rQ3pPeZcplS+JPuVx7h2KvvIXejZsgCKZQC1XK2NvT1RoGpHiTI976mv85ueoHqpBVWH/hKROI0kJ1uvkrasrYDGrdIEphwW8lO5+L6MDT1K3/5vYJcKbp1BV4dEtLjDKBMfJ9kAtQMr/HLr2btwGIUol5jMarwbYoJh2gHeiMS8j2GnHoru92MJWCGctgK3WAxaGLh8/nH1a2EaL2lkblPljUVLpx2zRh6z/VxdQaDq896NRwzSVvaroWNGJoQXblI2P5WaAux3uTa+PlTsMzofsX2XJxq97X20ZebjILyoy8GMIMmwdViI=
+
 install:
   - go get -v github.com/spf13/hugo
   #- pip install --user -r requirements.txt
+
 script:
   - hugo -v --ignoreCache
+
 notifications:
   email:
     on_success: change
@@ -17,6 +20,7 @@ notifications:
 before_deploy: 
   - sudo pip install --upgrade pip
   - pip install --user awscli
+
 deploy:
   # sync all files to s3
   - provider: script

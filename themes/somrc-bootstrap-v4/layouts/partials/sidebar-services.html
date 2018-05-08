@@ -8,7 +8,7 @@
   <section class="sidebar-module">
     <p class=lead>Services</p>
     <ol class="list-unstyled">
-      {{ range first 30 (where .Site.Pages.ByTitle "Type" "service") }}
+      {{ range (where (where .Site.Pages.ByTitle "Type" "service") ".Params.sidebar" "ne" "hidden") }}
       <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
       {{ end }}
     </ol>
