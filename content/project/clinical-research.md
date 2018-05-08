@@ -1,6 +1,6 @@
 +++
 title = "Clinical Research Projects"
-draft = false
+draft = true
 tags = ["collaborations"]
 categories = ["projects"]
 images = ""
