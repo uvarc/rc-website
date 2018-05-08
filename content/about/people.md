@@ -53,7 +53,7 @@ With expertise in R and Python, he's been active in package development and a va
   </div><!-- /.col-lg-6 -->
   <!--Diane's profile-->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/Diane-pic.jpg" alt="Diane Silverman" width="140" height="140">
+<!--    <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/Diane-pic.jpg" alt="Diane Silverman" width="140" height="140"> -->
     <h2>Diane Silverman</h2>
     <p><b>Executive Assistant</b> <br />With a background in healthcare and nonprofit management, Diane supports the SOMRC research computing team. Diane received her MSM from Purdue University. </p>
     <p><a class="btn btn-secondary" href="mailto:sdb8c@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
