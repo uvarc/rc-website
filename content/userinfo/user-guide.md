@@ -55,8 +55,7 @@ quell_footer = true
   </div>
 </div>
 
-
-<!-- <div class="card-group">
+<div class="card-group">
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-image fa-5x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
@@ -88,46 +87,6 @@ quell_footer = true
       <br clear=all />  
       <div class="contact-button">
         <a href="/userinfo/bioinfo-rivana-sw-list/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-
-<!-- Modal for HPC -->
-<div class="modal fade" id="hpcModal" tabindex="-1" role="dialog" aria-labelledby="hpcModalLabel" aria-hidden="true" style="margin-top:100px;">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="hpcModalLabel">High Performance Computing</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="row" style="">
-          <div class="col-sm-6">
-        <div class="card">
-          <div class="card-header">
-            <b>Rivanna - Standard Security</b>
-          </div>
-          <div class="card-block">
-            <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
-            <a href="http://arcs.virginia.edu/rivanna" target="_new"><button class="btn btn-primary">Rivanna User Guide</button></a>
-          </div>
-        </div>
-        </div>
-        <div class="col-sm-6">
-        <div class="card">
-          <div class="card-header">
-            <b>Ivy - High Security</b>
-          </div>
-          <div class="card-block">
-            <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Hadoop/Spark.</p>
-            <a href="/userinfo/ivy/"><button class="btn btn-primary">Ivy User Guide</button></a>
-          </div>
-        </div>
-        </div>
       </div>
     </div>
   </div>
