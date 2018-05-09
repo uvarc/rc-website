@@ -80,7 +80,7 @@ UVA has two local HPC facilities available to researchers: **Rivanna** and **Ivy
 
 Bioinformatics analyses invariably involve chaining a series of tools/processes/functions etc. across many input samples to go from raw data to biologically interpretable results. Using a workflow management system to setup, execute and monitor pipelines makes it simpler to put together such complex scientific workflow. SOMRC is using [WDL](https://gatkforums.broadinstitute.org/wdl/) (pronounced *widdle*), a workflow definition language for describing tasks and workflows, and [Cromwell](http://cromwell.readthedocs.io/en/develop/), the execution engine that can run the WDL scripts locally or on the cloud. Cromwell provides an abstraction layer between the pipeline's logic and execution, so that it can be executed on multiple platforms with minimal configuration changes. We are using the built-in scatter-gather parallelism features to develop variant calling WDL workflows, adhering to [GATK Best Practices](https://software.broadinstitute.org/gatk/best-practices/), and executing them on Rivanna using Cromwell. In the future, we also plan to transition these pipelines to Google Cloud Platform, for more cost-effective execution solutions. 
 
-<a href="https://discuss.rc.virginia.edu/tags/c/rivanna/software/bioinformatics" class="card-link"><button class="btn  btn-primary">WDL/Cromwell on Rivanna</button></a>
+<a href="https://discuss.rc.virginia.edu/tags/crom-wdl" class="card-link"><button class="btn  btn-primary">WDL/Cromwell on Rivanna</button></a>
 
 <hr size=1 style="padding-bottom:10px;" />
 
