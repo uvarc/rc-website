@@ -1,5 +1,9 @@
+{
+  "name": "flare",
+  "children":
 {{- $.Scratch.Add "index" slice -}}
 {{- range $name, $taxonomy := .Site.Taxonomies.tags -}}
-{{- $.Scratch.Add "index" (dict "name" $name "count" $taxonomy.Count) -}}
+{{- $.Scratch.Add "index" (dict "name" $name "size" $taxonomy.Count) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
+}
