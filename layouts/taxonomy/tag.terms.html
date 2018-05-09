@@ -73,7 +73,7 @@ var svg = d3.select("svg"),
 var pack = d3.pack()
     .size([diameter - 4, diameter - 4]);
 
-d3.json("https://staging.somrc.virginia.edu/d3/flare.json", function(error, root) {
+d3.json("https://somrc.virginia.edu/d3/flare.json", function(error, root) {
   if (error) throw error;
 
   root = d3.hierarchy(root)
