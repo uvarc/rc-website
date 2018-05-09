@@ -1,0 +1,5 @@
+{{- $.Scratch.Add "index" slice -}}
+{{- range $name, $taxonomy := .Site.Taxonomies.tags -}}
+{{- $.Scratch.Add "index" (dict "name" $name "count" $taxonomy.Count) -}}
+{{- end -}}
+{{- $.Scratch.Get "index" | jsonify -}}

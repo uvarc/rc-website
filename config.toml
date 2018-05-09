@@ -38,3 +38,6 @@ disableKinds= ["RSS","404"]
   # Hide the sharing icons on posts? (Default: false)
   hide = true
 
+[outputs]
+    home = [ "HTML", "JSON"]
+    page = [ "HTML", "JSON"]
