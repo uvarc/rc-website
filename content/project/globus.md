@@ -8,6 +8,8 @@ categories = ["projects"]
 tags = [
   "genomics",
   "cphg",
+  "data",
+  "globus",
 ]
 draft = false
 projecttype = ["tools"]
