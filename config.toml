@@ -40,4 +40,4 @@ disableKinds= ["RSS","404"]
 
 [outputs]
     home = [ "HTML", "JSON"]
-    page = [ "HTML", "JSON"]
+    page = [ "HTML"]
