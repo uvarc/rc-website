@@ -5,7 +5,7 @@
 // "If you don't know what that means, you are already losing."
 // );
 
-var iSpeed = 400; // time delay of print out
+var iSpeed = 100; // time delay of print out
 var iIndex = 0; // start printing array at this posision
 var iArrLength = aText[0].length; // the length of the text array
 var iScrollAt = 0; // start scrolling up at this many lines
