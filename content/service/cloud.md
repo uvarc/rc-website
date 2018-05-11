@@ -20,6 +20,19 @@ images = [
 
 +++
 
+<script>
+var aText = new Array(
+"serverless website",
+"pipelines",
+"containers",
+"jobs more efficiently"
+);
+</script>
+
+<div class="typed">Run your<span id="typedtext"></span>
+  <script src="/js/typed.js"></script>
+</div>
+
 <img src="/images/logos/aws_logo_smile_195x195.png" alt="AWS" align=right style="max-width:33%;" />
 <p class=lead>Cloud computing is ideal for running flexible, scalable applications on demand, in periodic bursts, or for fixed periods of time. UVA SOMRC works alongside researchers to design and run research applications and datasets into Amazon Web Services, the leader among public cloud vendors. This means that server, storage, and database needs do not have to be estimated or purchased beforehand – they can be scaled larger and smaller with your needs, or programmed to scale dynamically with your application.</p>
 
