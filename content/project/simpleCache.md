@@ -6,7 +6,8 @@ author = "SOMRC Staff"
 images = "/images/projects/r-language.png"
 categories = ["projects"]
 tags = [
-    "bioinformatics"
+  "bioinformatics",
+  "r",
 ]
 draft = false
 projecttype = ["tools"]
