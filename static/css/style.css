@@ -247,7 +247,7 @@ img {
 
 /* For typed animations */
 .typed {
-  font-family: 'Roboto Mono'; 
+  font-family: 'Roboto Mono', monospace; 
   font-size:30px; 
   margin-left:0px;
   margin-right:0px;

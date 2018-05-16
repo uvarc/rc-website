@@ -14,7 +14,7 @@ tags = ["events", "community"]
 
 # Upcoming 
 
-There area currently no upcoming events please check back soon!
+There area currently no upcoming events. Please check back soon!
 
 # Previous
 

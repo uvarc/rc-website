@@ -59,11 +59,11 @@ real-time streams or in queues for later analysis.
       </td>
     </tr>
     <tr>
-      <th scope="row" style="width:25%;font-weight:bold;">Ancillary Services in Support of HPC</th>
+      <th scope="row" style="width:25%;font-weight:bold;">Services Alongside HPC</th>
       <td>
 Users of HPC usually have more than enough computing power to run their jobs. But what if you
-need a relational or NoSQL database, a messaging service, or offsite storage? Researchers have begun integrating command-line
-and code-based tools into their HPC jobs to create, use, and manage external cloud services.
+need a relational or NoSQL database, a messaging service, or offsite storage? Researchers have begun integrating the cloud 
+into their HPC jobs to create, use, and manage external services like these.
       </td>
     </tr>
     <tr>

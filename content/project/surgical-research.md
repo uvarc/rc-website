@@ -6,7 +6,9 @@ author = "SOMRC Staff"
 images = "/images/projects/secure-surgery.png"
 categories = ["projects"]
 tags = [
-    "secure-computing"
+  "secure-computing",
+  "ivy",
+  "hipaa"
 ]
 draft = false
 projecttype = ["clinical-research"]
