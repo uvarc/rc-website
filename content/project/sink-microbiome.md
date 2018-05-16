@@ -6,7 +6,8 @@ author = "SOMRC Staff"
 images = "/images/projects/klebsiella_pneumoniae.jpg"
 categories = ["projects"]
 tags = [
-    "bioinformatics"
+  "bioinformatics",
+  "sink-lab"
 ]
 draft = false
 projecttype = ["basic-science"]

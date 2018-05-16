@@ -7,7 +7,8 @@ images = "/images/projects/r-language.png"
 categories = ["projects"]
 tags = [
   "bioinformatics",
-  "cphg"
+  "cphg",
+  "r",
 ]
 draft = false
 projecttype = ["basic-science", "tools"]

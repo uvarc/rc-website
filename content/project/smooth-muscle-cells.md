@@ -5,7 +5,10 @@ date = "2018-05-03T14:33:50-05:00"
 author = "SOMRC Staff"
 images = "/images/projects/smooth-muscle-cells.jpg"
 categories = ["projects"]
-tags = ["basic-science"]
+tags = [
+  "basic-science",
+  "r",
+]
 draft = false
 projecttype = ["basic-science"]
 +++
