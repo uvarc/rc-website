@@ -210,8 +210,6 @@ draft = false
 </table>
 </div>
 
-<br></br>
-
 # Data Transfer Methods
 
 <a id="globus"></a>
@@ -233,8 +231,6 @@ draft = false
 	</div>
 </div>
 
-<br></br>
-
 <a id="ftp"></a>
 <div class="card-group">
 	<div class="card">
@@ -249,8 +245,6 @@ draft = false
 	</div>
 </div>
 
-<br></br>
-
 <a id="command-line"></a>
 <div class="card-group">
 	<div class="card">
@@ -264,7 +258,6 @@ draft = false
 		</div>
 	</div>
 </div>
-- - -
 
 # More Resources for Data Transfer with the Command Line
  
