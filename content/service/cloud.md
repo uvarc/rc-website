@@ -6,7 +6,7 @@ tags = [
   "aws",
   "google",
   "cloud",
-  "services",
+  "iot",
   "containers"
 ]
 draft = false
