@@ -2,7 +2,7 @@
 images = [""]
 author = "SOMRC Staff"
 description = ""
-date = "2018-05-21T15:18:25-05:00"
+date = "2018-05-19T15:18:25-05:00"
 title = "A simple test post"
 draft = false
 tags = ["feature"]
