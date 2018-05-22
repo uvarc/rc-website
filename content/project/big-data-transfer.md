@@ -1,5 +1,5 @@
 +++
-title = "Globus Data Transfer"
+title = "Moving Big Data"
 description = ""
 date = "2017-05-08T14:33:50-05:00"
 author = "SOMRC Staff"
