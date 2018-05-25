@@ -208,3 +208,5 @@ If you have an idea for a workshop or would like to schedule training for your l
     <img src="/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" style="width:196px;height:80px;" />
   </div>
 </div>
+
+{{% top-of-page %}}

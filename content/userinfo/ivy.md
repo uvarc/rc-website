@@ -3,7 +3,7 @@ description = ""
 title = "Ivy Secure Environment"
 draft = false
 date = "2017-02-26T17:45:12-05:00"
-tags = ["hpc","ivy","hipaa","linux","windows","ddl"]
+tags = ["ivy","vm","hipaa","linux","windows","ddl","security"]
 categories = ["userinfo"]
 images = [""]
 author = "SOMRC Staff"  
@@ -67,7 +67,7 @@ function hideTotal()
 <div class="bd-callout bd-callout-warning">
 <h4>Ivy</h4>
 Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Apache Spark environment.
-Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA requirements.
+Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA requirements</a>.
 </div>
 
 # Overview
@@ -402,7 +402,7 @@ Ivy Spark has 480 terabytes of HDFS storage shared amongst users. Each node has 
 
 # Data Transfer In/Out of Ivy
 
-Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is mapped to a pool of secure storage called “Ivy Central Storage” (ICS). You must be an active researcher using an Ivy virtual machine to use this service. DDL users do not have access to this storage.
+Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “Ivy Central Storage” (ICS), which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service. DDL users do not have access to Ivy Central Storage.
 
 <img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/95f8dfa70374a538d3e940dc69cf960d9e5ac9a6.png" />
 
@@ -414,4 +414,22 @@ Moving sensitive data into the Ivy VMware platform is possible through a secure 
 
 # HIPAA Compliance
 
-The Ivy platform is HIPAA compliant by default.
+The Ivy platform is HIPAA compliant by design. From the <a href="http://www.virginia.edu/vpr/irb/hsr/HIPAA.html" target="_new">UVA Institutional Review Board for Health Sciences Research</a> (IRB-HSR):
+
+<div class="bd-callout bd-callout-warning">
+<p>HIPAA affects only that research which uses, creates, or discloses PHI. Researchers have legitimate needs to use, access, and disclose PHI to carry out a wide range of health research studies.</p>
+<p>The Privacy Rule protects PHI while providing ways for researchers to access and use PHI when necessary to conduct research.</p>
+<p>In general, there are two types of human research that would involve PHI:</p>
+
+<ul>
+<li>Studies involving review of existing medical records as a source of research information. Retrospective studies, such as chart reviews, often do this. Sometimes prospective studies do it also, for example, when they contact a participant's physician to obtain or verify some aspect of the participant's health history.
+<li>Studies that create new medical information because a health care service is being performed as part of the research, such as testing of a new way of diagnosing a health condition or a new drug or device for treating a health condition. Virtually all sponsored clinical trials that submit data to the U.S. Food and Drug Administration (FDA) will involve PHI.
+</ul>
+
+</div>
+
+Researchers must understand that, in general, the more difficult parts of HIPAA compliance are less technical (networks, computers, and data) than they are human and how users interact with these systems. The mishandling of data -- such as storing them on insecure devices or in insecure places -- jeopardizes confidential patient data and UVA's ability to remain a trusted keeper of those data.
+
+All data imported into Ivy must be treated as highly sensitive data. Data and results exported from Ivy must be protected and managed appropriately according to UVA's [data classification guidelines](http://www.virginia.edu/informationsecurity/dataprotection/). Guidance regarding these guidelines and data types is available from UVA Information Security, Policy, and Records Office (ISPRO) by emailing it-security@virginia.edu.
+
+<button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
