@@ -7,7 +7,7 @@ https://somrc.virginia.edu/
 
 ## Install
 
-* [Install](https://gohugo.io/overview/installing/) the HUGO GoLang framework on your local computer. For more information, see the Hugo GitHub repo: https://github.com/spf13/hugo
+* [Install](https://gohugo.io/overview/installing/) the HUGO binary on your local computer. For more information, see the Hugo GitHub repo: https://github.com/spf13/hugo
 * Clone this website repository 
   * `git clone git@github.com:uva-som-rc/rc-website.git` or
   * `git clone https://github.com/uva-som-rc/rc-website.git`
@@ -52,12 +52,12 @@ To "feature" a post on the home page (which displays 2 most recent feature posts
 `hugo server` will bring up the local Node.js server and give you a preview URL `http://localhost:1313/`
 
 ## Publish your content
-* `cd` to the root level of the site tree
+* Simply push `master` or `staging` back to GitHub. Travis will handle it from there.
 * Publish by executing the bash script `./publish.sh`
-* Publishing generates all HTML/css/js into a /public/ directory, and then syncs that dir to the s3://somrc-website/ bucket in AWS.
 
 ## Delete content
-* Delete the .md object(s) you no longer want in the site + republish.
+* Delete the .md object(s) you no longer want in the site, then commit and push.
+* To temporarily remove content, set the `draft` status of any .md object to `true`.
 * Republishing deletes remote files in S3.
 
 ## Flush the CloudFront Cache
@@ -68,6 +68,8 @@ Or execute this from your command-line:
 
     aws cloudfront create-invalidation --distribution-id "E1JZBKRR78QE2T" --paths "/*"
 
+CloudFront is automatically flushed with a push to either branch.
+
 ## Modify the theme:
 
 * HUGO themes can be [browsed here](http://themes.gohugo.io/).
@@ -76,4 +78,4 @@ Or execute this from your command-line:
 
 ## Events Data
 
-The "Training / Upcoming Events" grid is populated by the `events.csv` file. Hugo renders the CSV into HTML when the site is compiled.
+The "Training" widget and workshops page are both fed from a JSON API connected to the education.cadre.virginia.edu portal. They are updated when the site is published (by hand) or each day by a Travis-CI cron job.
