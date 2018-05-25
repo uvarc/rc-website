@@ -133,7 +133,7 @@ Here are some of the building blocks available using cloud infrastructure:
     <li class="list-group-item"><i class="fa fa-2x fa-mobile" aria-hidden="true" style="padding-left:8px;padding-right:18px;"></i> SMS / Push Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-microphone" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Alexa Skills / Speech Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-code" aria-hidden="true" style="padding-right:8px;"></i> Serverless Computing</li>
-    <li class="list-group-item"><i class="far fa-2x fa-check-square" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Build Validation</li>
+    <li class="list-group-item"><i class="fas fa-2x fa-check-circle" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Code Build / Validation</li>
   </ul>
   </div>
 </div>
@@ -208,3 +208,5 @@ If you have an idea for a workshop or would like to schedule training for your l
     <img src="/images/aws-sa-pro.png" alt="Certified Solution Architect - Professional" style="width:196px;height:80px;" />
   </div>
 </div>
+
+{{% top-of-page %}}
