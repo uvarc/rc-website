@@ -402,13 +402,13 @@ Ivy Spark has 480 terabytes of HDFS storage shared amongst users. Each node has 
 
 # Data Transfer In/Out of Ivy
 
-Moving your data in and out of Ivy requires that it move through the **Data Transfer Node (DTN)**. This server has 100TB of storage and can be accessed via a web interface as well as via SFTP, SCP, or FTPS in the command-line.
+Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is mapped to a pool of secure storage called “Ivy Central Storage” (ICS). You must be an active researcher using an Ivy virtual machine to use this service. DDL users do not have access to this storage.
 
-<img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/408a13704cd919580a83065ea1e52da41c0cd653.png" />
+<img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/95f8dfa70374a538d3e940dc69cf960d9e5ac9a6.png" />
 
 ## Learn More
 
-[<button class="btn btn-success">Read more about the Ivy DTN</button>](https://discuss.rc.virginia.edu/t/about-the-ivy-data-transfer-node-dtn/123)
+[<button class="btn btn-success">Read more about the Ivy Secure DTN</button>](https://discuss.rc.virginia.edu/t/ivy-secure-dtn-transfer-sensitive-data/771)
 
 - - -
 
