@@ -88,8 +88,8 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 .spacer-100 { width:100%; height:100px; }
 .spacer-200 { width:100%; height:200px; }
 
-.gs-title, .gs-snippet {font-family:HelveticaNeueLight,Helvetica;}  
-
+/* GOOGLE SEARCH RESULTS */
+.gs-title, .gs-snippet {font-family:HelveticaNeueLight,Helvetica,Arial;}  
 /* Add a border between individual search results */
 .gs-webResult {border-bottom:1px solid #eee;padding-top:10px;padding-bottom:10px;}
 /* Do no display the count of search results */    
@@ -101,12 +101,12 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 /* Hide the snippets in Google search results */
 /* .gs-snippet { display: none;}  */
 /* Change the font size of the title of search results */
-.gs-title a { font-size: 1.1em; font-weight:bold; padding-left:0px; margin-left:0px; padding-top:0px; margin-top:0px; text-decoration:none;} 
+.gs-title a { font-size: 1.2em; font-weight:bold; padding-left:0px; margin-left:0px; padding-top:0px; margin-top:0px; text-decoration:none;} 
 .gs-title a:hover { text-decoration:underline; }
 /* Change the font size of snippets inside search results */
-.gs-snippet {font-size: 0.95em; padding-left:8px; margin-left:0px;}
+.gs-snippet {font-size: 1em; padding-left:8px; margin-left:0px;}
 /* Google Custom Search highlights matching words in bold, toggle that */
-.gs-title b, .gs-snippet b {font-weight: normal;}
+.gs-title b, .gs-snippet b {font-weight: bold;}
 /* Do no display the URL of web pages in search results */
 .gsc-url-top, .gsc-url-bottom {display: none;}
 /* Highlight the pagination buttons at the bottom of search results */
