@@ -51,24 +51,10 @@ With expertise in R and Python, he's been active in package development and a va
     <p><b>Research Computing Associate</b> <br /> Christina collaborates with researchers on image processing and imaging data management projects. Prior to joining SOM research computing, Christina performed brain imaging research at the UVa Department of Radiology and Medical Imaging. She specializes in Matlab programming and is interested in machine learning projects. </p>
     <p><a class="btn btn-secondary" href="mailto:cag3fr@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
-  <!--Diane's profile-->
-  <div class="col-lg-6">
-<!--    <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/Diane-pic.jpg" alt="Diane Silverman" width="140" height="140"> -->
-    <h2>Diane Silverman</h2>
-    <p><b>Executive Assistant</b> <br />With a background in healthcare and nonprofit management, Diane supports the SOMRC research computing team. Diane received her MSM from Purdue University. </p>
-    <p><a class="btn btn-secondary" href="mailto:sdb8c@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
-  </div><!-- /.col-lg-6 -->
-  <!--Omar's profile-->
-  <div class="col-lg-6">
-    <img class="rounded-circle" src="/images/omar-kurshid.jpg" alt="Omar Khurshid" width="140" height="140">
-    <h2>Omar Khurshid</h2>
-    <p><b>Cloud DevOps Engineer</b> <br />Omar has a background in designing enterprise cloud platforms, we well as software and web development. For much of his recent work, he has been directly responsible for the development of secured, scalable, compliant cloud infrastructure services. He is certified in Amazon Web Services and can help with projects that need to be migrated to the cloud. Areas of interest include: Containers, DevOps, automation, Python, Web, Big Data. </p>
-    <p><a class="btn btn-secondary" href="mailto:ork8s@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
-  </div><!-- /.col-lg-6 -->
   <!--Hardik's profile-->
   <div class="col-lg-6">
     <img class="rounded-circle" src="https://somrc.virginia.edu/images/ParikhHardik_pic.png" alt="Hardik Parikh" width="140" height="140">
-    <h2>Hardik I. Parikh</h2>
+    <h2>Hardik I. Parikh, PhD</h2>
     <p><b>Computational Scientist</b> <br />Hardik is interested in understanding the molecular mechanisms in various biological events and pathological processes using computational technologies. He received his PhD in Medicinal Chemistry at VCU focusing on applying molecular modeling approaches to problems pertaining to drug design/discovery, followed by a bioinformatics postdoc in the field of microbiome data analysis. At UVa, Hardik collaborates with multi-disciplinary researchers to provide extended bioinformatics solutions focused on genomic and metagenomic analyses. He develops novel computational algorithms/tools for meaningful biological interpretation of NGS data.</p>
     <p><a class="btn btn-secondary" href="mailto:hp7d@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
@@ -78,5 +64,12 @@ With expertise in R and Python, he's been active in package development and a va
     <h2>Cory DeFreitas</h2>
     <p><b>Research Computing Associate</b> <br />Cory has experience with Machine Learning, Visualization, and Parallel Computation using Matlab. He has performed complex 3D Spectral Analysis and Visualization with the Radiology Department, categorized sound signals using Machine Learning algorithms, and taught as an adjunct instructor for a graduate course on Research Computation. </p>
     <p><a class="btn btn-secondary" href="mailto:crd2jg@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
+  </div><!-- /.col-lg-6 -->
+    <!--Diane's profile-->
+  <div class="col-lg-6">
+<!--    <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/Diane-pic.jpg" alt="Diane Silverman" width="140" height="140"> -->
+    <h2>Diane Silverman</h2>
+    <p><b>Executive Assistant</b> <br />With a background in healthcare and nonprofit management, Diane supports the SOMRC research computing team. Diane received her MSM from Purdue University. </p>
+    <p><a class="btn btn-secondary" href="mailto:sdb8c@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
