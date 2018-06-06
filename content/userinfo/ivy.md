@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2017-02-26T17:45:12-05:00"
+date = "2018-05-24T17:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","ddl","security"]
 categories = ["userinfo"]
 images = [""]
