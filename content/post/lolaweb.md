@@ -10,10 +10,6 @@ categories = ["feature"]
 
 +++
 
-<!-- 
-<img src="/images/ns_300.jpg" alt="Code|Compute|Data" style="max-width:33%;float:right;padding-left:15px;" />
--->
-
 From his lab in the Center for Public Health Genomics at UVa, [Nathan Sheffield](http://databio.org/) seeks to develop a deeper understanding of functional genomics. Dr. Sheffield and his collaborators study epigenetic mechanisms, including DNA methylation, which can involve analyzing enrichment of genomic region set data. By identifying patterns of enriched genomic regions, one can differentiate between normal and diseased gene regulation. Dr. Sheffield builds on this research focus as well as a history of open-source software development with the publication of [LOLAweb: A containerized web server for interactive genomic locus overlap enrichment analysis](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gky464/5033529) as part of a special web server issue of *Nucleic Acids Research*. 
 
 The paper introduces [LOLAweb](http://lolaweb.databio.org/), a web interface for genomic region or locus enrichment analysis. Dr. Sheffield collaborated with SOMRC to conceptualize, develop and deploy the application. LOLAweb facilitates automated identification of enriched regions based on input regions of interest. Users upload the region data in BED format and specify the data for comparison, including the reference genome, a background region set and an annotation source. On the back-end the application scores the overlapping loci, and the results display regions of interest with significant overlap, along with annotated metadata.
