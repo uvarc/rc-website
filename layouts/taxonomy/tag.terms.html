@@ -91,6 +91,8 @@ d3.json("https://staging.somrc.virginia.edu/index.json", function(error, root) {
 
   node.append("circle")
       .attr("r", function(d) { return d.r; });
+      .on("click", function(d,i) {window.open("http://www.yahoo.com/")};
+      // .on("click", function(d,i) {window.open(d.address)};
 
   node.filter(function(d) { return !d.children; }).append("text")
       .attr("dy", "0.3em")
