@@ -45,20 +45,6 @@ Once the package is loaded, you could start it using
 Simply type the following on Command Prompt 
 
 	Rscript path\\to\\script\\your_script_file.R
-
-
-## (Optional) Setting the repository
-
-In order to avoid R from asking which repository it should use every time a package
-is installed, you need to edit the ```.Rprofile``` file in your installation directory. If 
-it is not there, create a new file and call it ```.Rprofile```. Add the following code
-to it
-
-	
-	r <- getOption("repos")             
-	r["CRAN"] <- "http://cran.us.r-project.org"
-	options(repos = r)
-	rm(r)
 	
 ## More Information
 
