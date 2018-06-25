@@ -24,7 +24,7 @@ Once the request has been approved and all associated members have completed the
 
 # Project Structure
 
-DDL is organized into projects, which automatically provision a folder hierarchy to store your code, data, and output. Users can create new projects, and can also invite other Ivy DDL users to collaboratively view, edit, or run files in an existing project. 
+DDL is organized into projects, which automatically provision a folder hierarchy to store code, data, and output. Users can create new projects, and can also invite other Ivy DDL users to collaboratively view, edit, or run files in an existing project. 
 
 Collaborators can "fork" (copy the contents of) projects, leave comments, and use built-in version control utilities to store / revert changes to files as necessary.
 
@@ -32,13 +32,19 @@ Collaborators can "fork" (copy the contents of) projects, leave comments, and us
 
 To upload a script, dataset or other file, users can navigate to a project and select the "files" menu item. DDL includes a drag-and-drop interface for uploading files less than 550 MB.
 
+To upload files larger that 550 MB refer to the following:
+
+- [How do I upload large files to Domino Data Lab through the CLI?](https://discuss.rc.virginia.edu/t/how-do-i-upload-large-files-to-domino-data-lab-through-the-cli/74)
+
 - - -
 
 # Running Code
 
 ## Runs
 
-The DDL platform allows users to run Python and R scripts that have been either uploaded to a project or written in one of the DDL editors or notebooks. To issue a run, navigate to the file you would like to execute and click `Run`. Alternatively you can can use the `Runs` window to start a run by entering the filename. Note that if code is associated with data, it should be written relative to the location of that dataset in the project directory. 
+The DDL platform allows users to run Python and R scripts that have been either uploaded to a project or written in one of the DDL editors or notebooks. To issue a run, navigate to the file you would like to execute and click `Run`. Alternatively you can can use the `Runs` window to start a run by entering the filename. 
+
+Note that if code is associated with data, it should be written relative to the location of that dataset in the project directory. 
 
 ## Notebooks
 
@@ -57,7 +63,7 @@ Scripts and data generated in an interactive notebook session can be saved ("syn
 
 ## Choosing a Base Environment
 
-Depending on what analysis tools (i.e. R or Python) you plan on using, you may need to adjust the default computing environment. For example, if your code is written to run with Python 2.x (and not Python 3.x), you can choose to an base environment that uses that version. Note that these configurations are on a per project basis, and can managed by visiting **Settings >> Compute environment**.
+Depending on what analysis tools (i.e. R or Python) you plan on using, you may need to adjust the default computing environment. For example, if your code is written to run with Python 2.x (and not Python 3.x), you can choose a base environment that uses that version. Note that these configurations are on a per project basis, and can managed by visiting **Settings >> Compute environment**.
 
 ## Installing Packages
 
