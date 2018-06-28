@@ -86,7 +86,7 @@ quell_footer = true
       <p class="card-text">We are developing a library of documentation and code templates for performing bioinformatics analyses using local HPC (Rivanna) and cloud computing resources.</p>
       <br clear=all />  
       <div class="contact-button">
-        <a href="/userinfo/bioinfo-rivana-sw-list/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/bioinfo-user-guide/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
