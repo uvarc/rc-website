@@ -19,6 +19,9 @@ SOMRC helped document and develop new functions for the package ahead of its rel
 
 <https://CRAN.R-project.org/package=simpleCache>
 
-*Sheffield et al., (2018). simpleCache: R caching for reproducible, distributed, large-scale projects. Journal of Open Source Software, 3(21), 463, https://doi.org/10.21105/joss.00463*
-
 **PI: Nathan Sheffield ([Center for Public Health Genomics](https://med.virginia.edu/cphg/))**
+
+---
+## Publications
+
+Sheffield et al., (2018). simpleCache: R caching for reproducible, distributed, large-scale projects. Journal of Open Source Software, 3(21), 463, https://doi.org/10.21105/joss.00463

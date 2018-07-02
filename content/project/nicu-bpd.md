@@ -18,4 +18,4 @@ SOMRC is helping neonatologists describe BD events in a large single-NICU VLBW c
 
 *Manuscript under review*
 
-**Karen Fairchild (Department of Pediatrics–Neonatology) & Doug Lake (Center for Advanced Medical Analytics)**
+**PI: Karen Fairchild (Department of Pediatrics–Neonatology) & Doug Lake (Center for Advanced Medical Analytics)**
