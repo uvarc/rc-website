@@ -21,8 +21,14 @@ The past few years have seen an explosion of interest in understanding the role 
 
 SOM Research Computing is working with faculty in the UVA Center for Public Health Genomics to implement LOLAweb, an online tool for performing genomic locus overlap annotations and analyses. This project, written in the statistical programming language R, allows users to specify region set data in BED format for automated enrichment analysis. LOLAweb provides interactive plots and annotated data based on specific reference genomes and region databases. 
 
-LOLAweb: http://lolaweb.databio.org/
-
-Manuscript: *Nucleic Acids Research*, gky464, https://doi.org/10.1093/nar/gky464, 06 June 2018.
+<http://lolaweb.databio.org/>
 
 **PI: Nathan Sheffield ([Center for Public Health Genomics](https://med.virginia.edu/cphg/))**
+
+---
+
+## Publications
+
+Nagraj VP, Magee NE, Sheffield NC. LOLAweb: a containerized web server for
+interactive genomic locus overlap enrichment analysis. Nucleic Acids Res. 2018
+Jun 6. [doi: 10.1093/nar/gky464](https://doi.org/10.1093/nar/gky464).
