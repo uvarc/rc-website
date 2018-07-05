@@ -279,6 +279,17 @@ img {
   font-weight: normal;
 }
 
+.typed-sm {
+  font-family: 'Roboto Mono', monospace; 
+  font-size:20px; 
+  margin-left:0px;
+  margin-right:0px;
+  margin-top:60px;
+  margin-bottom:60px;
+  letter-spacing: 1px; 
+  font-weight: normal;
+}
+
 .gitter-open-chat-button {
   background-color: red;
 }

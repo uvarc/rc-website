@@ -76,14 +76,17 @@
         <!-- BEGIN RIGHT COLUMN -->
         {{ "<!-- /.blog-sidebar -->" | safeHTML }}
         <aside class="col-sm-4 blog-sidebar">
+
+            {{ partial "typed-widget.html" . }}
+
             {{ partial "office-hours.html" . }}
 
             {{ partial "user-help-widget.html" . }}
 
-          <section class="sidebar-training">
+          <!-- <section class="sidebar-training">
             <p class="lead"><a style="text-decoration:none;color:black;" href="/education/workshops/">Training</a></p>
             {{ partial "training-events.html" . }}
-          </section>
+          </section> -->
 
           {{ with .Site.Menus.sidebar }}
           <section class="sidebar-module">
