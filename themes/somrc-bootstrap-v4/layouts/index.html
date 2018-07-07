@@ -59,9 +59,9 @@
 
           <!-- <p class=lead>User News & Events</p> -->
 
-            {{ partial "twitter.html" . }}
+          {{ partial "twitter.html" . }}
 
-            <!-- {{ partial "upcoming-event.html" . }} -->
+          <!-- {{ partial "upcoming-event.html" . }} -->
 
           <hr size=1 />
 
@@ -77,27 +77,7 @@
         {{ "<!-- /.blog-sidebar -->" | safeHTML }}
         <aside class="col-sm-4 blog-sidebar">
 
-            {{ partial "typed-widget.html" . }}
-
-            {{ partial "office-hours.html" . }}
-
-            {{ partial "user-help-widget.html" . }}
-
-          <!-- <section class="sidebar-training">
-            <p class="lead"><a style="text-decoration:none;color:black;" href="/education/workshops/">Training</a></p>
-            {{ partial "training-events.html" . }}
-          </section> -->
-
-          {{ with .Site.Menus.sidebar }}
-          <section class="sidebar-module">
-            <p class=lead>{{ i18n "links" }}</p>
-            <ol class="list-unstyled">
-              {{ range . }}
-              <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
-              {{ end }}
-            </ol>
-          </section>
-          {{ end }}
+            {{ partial "right-smart-sidebar.html" . }}
 
         </aside><!-- /.blog-sidebar -->
 

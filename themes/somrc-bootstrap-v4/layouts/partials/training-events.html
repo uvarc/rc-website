@@ -1,22 +1,25 @@
-<div style="width:100%;">
-<table class="table table-sm table-responsive status-tbl table-striped" style="width: 100%; table-layout: fixed; min-width:100%;">
-  <thead class="thead-inverse">
-    <tr>
-      <th scope="row">WORKSHOP</th>
-      <th style="text-align:left;">DATE</th>
-    </tr>
-  </thead>
-  <tbody>
-  {{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
-  {{ range first 5 $dataWorkshops }}
-    {{$sessions := .sessions}}
-    <tr>
-      <td scope="row" style="width:60%;"><a href="https://education.cadre.virginia.edu/#/workshop/{{ .id }}" target="_new">{{ .title }}</a></td>
-      {{ range first 1 $sessions }}
-      <td >{{ dateFormat "Jan 02, 2006" .date_time}}</td>
+  <section class="sidebar-training">
+  <p class="lead"><a style="text-decoration:none;color:black;" href="/education/workshops/">Training</a></p>
+    <div style="width:100%;">
+    <table class="table table-sm table-responsive status-tbl table-striped" style="width: 100%; table-layout: fixed; min-width:100%;">
+      <thead class="thead-inverse">
+        <tr>
+          <th scope="row">Workshop</th>
+          <th style="text-align:left;">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
+      {{ range first 5 $dataWorkshops }}
+        {{$sessions := .sessions}}
+        <tr>
+          <td scope="row" style="width:60%;"><a href="https://education.cadre.virginia.edu/#/workshop/{{ .id }}" target="_new">{{ .title }}</a></td>
+          {{ range first 1 $sessions }}
+          <td >{{ dateFormat "Jan 02, 2006" .date_time}}</td>
+          {{ end }}
+        </tr>
       {{ end }}
-    </tr>
-  {{ end }}
-  </tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+    </div>
+  </section>

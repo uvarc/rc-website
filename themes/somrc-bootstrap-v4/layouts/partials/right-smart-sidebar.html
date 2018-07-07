@@ -1,0 +1,21 @@
+{{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
+{{ if (eq ($dataWorkshops | len) 0) }}
+<!-- WHEN NO WORKSHOPS -->
+
+  {{ partial "typed-widget.html" . }}
+  {{ partial "office-hours.html" . }}
+  {{ partial "user-help-widget.html" . }}
+
+<!-- END WHEN NO WORKSHOPS -->
+
+{{ else }}
+
+<!-- WHEN WORKSHOPS EXIST -->
+
+  {{ partial "office-hours.html" . }}
+  {{ partial "user-help-widget.html" . }}
+  {{ partial "training-events.html" . }}
+
+<!-- END WHEN WORKSHOPS EXIST -->
+
+{{ end }}
