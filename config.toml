@@ -6,6 +6,7 @@ theme = "somrc-bootstrap-v4"
 copyright = " {year} By the Rector and Visitors of the University of Virginia "
 paginate = 20
 disableKinds= ["RSS","404"]
+ignoreCache = true
 # date_format = "January 2, 2006"
 
 [permalinks]
