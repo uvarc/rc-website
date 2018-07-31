@@ -1,12 +1,12 @@
 +++
-title = "Code & Infrastructure"
+title = "Infrastructure & Code"
 author = "SOMRC Staff"
 categories = ["projects"]
-tags = ["tools","containers","ami","scripts","architecture","cloud","code","mesos","bots"]
+tags = ["tools","containers","ami","scripts","architecture","cloud","code","mesos","bots","dcos"]
 images = "/images/projects/code-infrastructure.png"
 description = ""
 date = "2018-04-12T17:18:27-04:00"
-draft = true
+draft = false
 projecttype = ["tools"]
 +++
 
