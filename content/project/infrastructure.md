@@ -5,7 +5,7 @@ categories = ["projects"]
 tags = ["tools","containers","ami","scripts","architecture","cloud","code","mesos","bots","dcos"]
 images = "/images/projects/code-infrastructure.png"
 description = ""
-date = "2018-06-27T17:18:27-04:00"
+date = "2018-04-27T17:18:27-04:00"
 draft = false
 projecttype = ["tools"]
 +++
