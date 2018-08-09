@@ -44,7 +44,82 @@ Staff from SOMRC host weekly office hours in the HSL Room 2502. Drop by with a p
 
 <div class="alert alert-success" role="alert"> 
 Wednesdays 10AM-12PM <br>
-Health Sciences Library Room 2502 (Detmer Room)
+Health Sciences Library (see location below)
+</div>
+
+<div style="width:100%;">
+
+<table class="table table-hover table-striped" style="width: 100%; table-layout: fixed;">
+  <thead class="thead-inverse">
+    <tr>
+      <th scope="row">DATE</th>
+      <th style="text-align:left;">TIME</th>
+      <th>LOCATION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>August 15</td>
+      <td>10AM-12PM</td>
+      <td>HSL Detmer Room (2502)</td>
+    </tr>
+    <tr>
+      <td>August 22</td>
+      <td>10AM-12PM</td>
+      <td>HSL Room 1226</td>
+    </tr>
+    <tr>
+      <td>August 29</td>
+      <td>10AM-12PM</td>
+      <td>HSL Room 1226</td>
+    </tr>
+    <tr>
+      <td>September 5</td>
+      <td>10AM-12PM</td>
+      <td>HSL Detmer Room (2502)</td>
+    </tr>
+    <tr>
+      <td>September 12</td>
+      <td>10AM-12PM</td>
+      <td>HSL Room 1226</td>
+    </tr>
+    <tr>
+      <td>September 19</td>
+      <td>10AM-12PM</td>
+      <td>HSL Room 1226</td>
+    </tr>
+    <tr>
+      <td>September 26</td>
+      <td>10AM-12PM</td>
+      <td>HSL Detmer Room (2502)</td>
+    </tr>
+    <tr>
+      <td>October 3</td>
+      <td>10AM-12PM</td>
+      <td>HSL Room 1226</td>
+    </tr>
+    <tr>
+      <td>October 10</td>
+      <td>10AM-12PM</td>
+      <td>HSL Detmer Room (2502)</td>
+    </tr>
+    <tr>
+      <td>October 17</td>
+      <td>10AM-12PM</td>
+      <td>HSL Detmer Room (2502)</td>
+    </tr>
+    <tr>
+      <td>October 24</td>
+      <td>10AM-12PM</td>
+      <td>HSL Detmer Room (2502)</td>
+    </tr>
+    <tr>
+      <td>October 31</td>
+      <td>10AM-12PM</td>
+      <td>HSL Detmer Room (2502)</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 <!--End mc_embed_signup-->
