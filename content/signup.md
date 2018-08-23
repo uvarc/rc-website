@@ -12,6 +12,8 @@ type = "about"
 
 +++
 
+<p class="lead">Keep up to date with our latest news, updates, workshops and service announcements.</p>
+
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
 <style type="text/css">
