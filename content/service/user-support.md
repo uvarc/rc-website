@@ -40,7 +40,7 @@ Request Consultation</button>
 
 # Office Hours
 
-Staff from SOMRC host weekly office hours in the HSL Room 2502. Drop by with a project idea, question about a system or anything else you would like to discuss.
+Staff from SOMRC host weekly office hours in the Health Sciences Library (HSL). Drop by with a project idea, question about a system or anything else you would like to discuss.
 
 <div class="alert alert-success" role="alert"> 
 Wednesdays 10AM-12PM <br>
