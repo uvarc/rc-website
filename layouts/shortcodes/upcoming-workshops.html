@@ -8,16 +8,13 @@
     </tr>
   </thead>
   <tbody>
-  {{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
-  {{ range $dataWorkshops }}
-    {{$sessions := .sessions}}
+  {{ $workshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
+  {{ range $workshops }}
+    {{ $w := . }}
     <tr>
-      {{ range last 1 $sessions }}
-      <td>{{ dateFormat "January 02, 2006" .date_time}}</td>
-      {{ end }}
-
-      <td><a href="https://education.cadre.virginia.edu/#/workshop/{{ .id }}" target="_new">{{ .title }}</a></td>
-      <td>{{.instructor.display_name }}</td>
+      <td>{{ dateFormat "January 02, 2006" $w.next_session.date_time}}</td>
+      <td><a href="https://education.cadre.virginia.edu/#/workshop/{{ $w.id }}" target="_new">{{ $w.title }}</a></td>
+      <td>{{ $w.instructor.display_name }}</td>
     </tr>
   {{ end }}
   </tbody>
