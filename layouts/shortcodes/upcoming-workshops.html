@@ -12,7 +12,7 @@
   {{ range $dataWorkshops }}
     {{$sessions := .sessions}}
     <tr>
-      {{ range first 1 $sessions }}
+      {{ range last 1 $sessions }}
       <td>{{ dateFormat "January 02, 2006" .date_time}}</td>
       {{ end }}
 
