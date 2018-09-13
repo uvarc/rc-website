@@ -90,6 +90,8 @@ SOM Research Computing has experience with image processing and developing pipel
 
 <hr size=1 style="padding-bottom:10px;" />
 
+{{< education-track "278" >}}
+
 # Training
 
 SOM Research Computing offers interactive workshops for learning image processing and data management techniques. To learn more and register for workshops, please visit the CADRE Academy education platform.

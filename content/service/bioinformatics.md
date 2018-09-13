@@ -100,6 +100,7 @@ If you have a bioinformatics project and would like to discuss potential solutio
 
 <hr size=1 style="padding-bottom:10px;" />
 
+{{< education-track "281" >}}
 
 # Training
 
