@@ -10,7 +10,7 @@ tags = [
   "containers"
 ]
 draft = false
-date = "2017-10-02T14:18:18-05:00"
+date = "2018-09-11T14:18:18-05:00"
 title = "Cloud Solutions"
 description = ""
 author = "SOMRC Staff"
@@ -59,7 +59,7 @@ real-time streams or in queues for later analysis.
       </td>
     </tr>
     <tr>
-      <th scope="row" style="width:25%;font-weight:bold;">Services Alongside HPC</th>
+      <th scope="row" style="width:25%;font-weight:bold;">Services Supporting HPC</th>
       <td>
 Users of HPC usually have more than enough computing power to run their jobs. But what if you
 need a relational or NoSQL database, a messaging service, or offsite storage? Researchers have begun integrating the cloud 
@@ -137,6 +137,41 @@ Here are some of the building blocks available using cloud infrastructure:
   </ul>
   </div>
 </div>
+
+<hr size=1 style="padding-bottom:10px;" />
+
+# Cloud Services at UVA
+
+As an [Internet2](https://www.internet2.edu/) institution, the University of Virginia has access to AWS accounts through a reseller, DLT. This program 
+offers a few key advantages for researchers: 
+
+1. First, it allows for billing through purchase orders (P.O.'s) rather than credit cards;
+2. Second, it gives a slight (~3%) discount on services; and
+3. Third, it removes the required minimum costs for AWS support. [Read more about the Internet2/AWS program](https://www.internet2.edu/products-services/cloud-services-applications/amazon-web-services/).
+
+## Requesting an Account
+
+Researchers or labs who would like to use AWS for their computing infrastructure should contact us to help set up an account through DLT. In order to
+set up your account you will need a "standing" annual P.O. from the UVA Procurement office equal to or greater than your estimated annual costs. 
+For example, if you estimate your costs will be $300 per month, you might want to request a $4000 standing P.O. Your monthly AWS bills are then charged against that P.O. for the year. Note that these purchase orders *must be renewed* each year that you continue to use AWS.
+
+## Training & Implementation
+
+With an AWS account in hand, you will need training. We offer regular, free [workshops on cloud computing](/education/workshops/). In addition, we have weekly availability to 
+answer your questions during our office ours, or we can schedule an in-person, hands-on training with your research group or lab.
+
+If you need help in designing your infrastructure in a cloud environment, or thinking through how to migrate your existing projects, [contact us](/service/consult/) for a consultation.
+
+## Sensitive Data in the Cloud
+
+If your cloud-based project involves any sensitive data (HIPAA, PHI, etc.) you must request approval from the [Information Security](http://security.virginia.edu/) office at UVA. You will be required
+to verify that your application, infrastructure, and staff can meet all minimum requirements for the secure transfer and handling of sensitive data.
+
+<div class="bd-callout bd-callout-warning">
+<b>Please note</b> that while sensitive data projects are possible in the cloud, their approval is not automatic nor guaranteed.
+</div>
+
+<hr size=1 style="padding-bottom:10px;" />
 
 # Reference Architecture
 

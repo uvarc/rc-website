@@ -106,3 +106,5 @@ If you have a bioinformatics project and would like to discuss potential solutio
 SOMRC offers interactive workshops that focus on various aspects of bioinformatics. We typically make use of Rivanna to teach participants how to analyze large amounts of high-throughput sequencing data. To learn more and register for workshops, please visit the CADRE Academy education platform.
 
 [<button class="btn  btn-primary">Find a Workshop</button>](/education/workshops/)
+
+{{% top-of-page %}}
