@@ -60,6 +60,7 @@ Simply push `master` or `staging` back to GitHub. Travis will handle it from the
 * HUGO themes can be [browsed here](http://themes.gohugo.io/).
 * Themes for HUGO are written using the TwiMG syntax. This can be found within various files/folders of the `themes/xxxxx` dir.
 * Themes are (usually) standalone repositories themselves, unless customized, as in this case. You can try out a new theme by cloning its repo into the /themes/ dir, and then changing config.toml to identify the theme you wish to use before you build again.
+* Changes to /static/css/style.css and /static/js/scripts.js are automatically minified using `yuicompressor`.
 
 ## Events Data
 
