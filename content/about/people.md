@@ -58,18 +58,9 @@ With expertise in R and Python, he's been active in package development and a va
     <p><b>Computational Scientist</b> <br />Hardik is interested in understanding the molecular mechanisms in various biological events and pathological processes using computational technologies. He received his PhD in Medicinal Chemistry at VCU focusing on applying molecular modeling approaches to problems pertaining to drug design/discovery, followed by a bioinformatics postdoc in the field of microbiome data analysis. At UVa, Hardik collaborates with multi-disciplinary researchers to provide extended bioinformatics solutions focused on genomic and metagenomic analyses. He develops novel computational algorithms/tools for meaningful biological interpretation of NGS data.</p>
     <p><a class="btn btn-secondary" href="mailto:hp7d@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
   </div><!-- /.col-lg-6 -->
-  <!--Cory's profile-->
+  <!-- New Staffer Profile -->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="/images/CoryDeFreitasPhoto.jpg" alt="Cory DeFreitas" width="140" height="140">
-    <h2>Cory DeFreitas</h2>
-    <p><b>Research Computing Associate</b> <br />Cory has experience with Machine Learning, Visualization, and Parallel Computation using Matlab. He has performed complex 3D Spectral Analysis and Visualization with the Radiology Department, categorized sound signals using Machine Learning algorithms, and taught as an adjunct instructor for a graduate course on Research Computation. </p>
-    <p><a class="btn btn-secondary" href="mailto:crd2jg@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
+
   </div><!-- /.col-lg-6 -->
-    <!--Diane's profile-->
-  <div class="col-lg-6">
-<!--    <img class="rounded-circle" src="https://s3.amazonaws.com/ork-somrc-bucket/Diane-pic.jpg" alt="Diane Silverman" width="140" height="140"> -->
-    <h2>Diane Silverman</h2>
-    <p><b>Executive Assistant</b> <br />With a background in healthcare and nonprofit management, Diane supports the SOMRC research computing team. Diane received her MSM from Purdue University. </p>
-    <p><a class="btn btn-secondary" href="mailto:sdb8c@virginia.edu" role="button"><i class="far fa-envelope fa-lg"></i>&nbsp; Send email &raquo;</a></p>
-  </div><!-- /.col-lg-6 -->
+
 </div><!-- /.row -->
