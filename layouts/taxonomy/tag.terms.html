@@ -95,6 +95,7 @@ d3.json("https://staging.somrc.virginia.edu/index.json", function(error, root) {
   node.filter(function(d) { return !d.children; }).append("text")
       .attr("dy", "0.3em")
       .text(function(d) { return d.data.name.substring(0, d.r / 3); });
+      .on("click",function(d){ window.location = d.url });
 });
 
 </script>
