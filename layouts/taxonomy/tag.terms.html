@@ -85,10 +85,6 @@ d3.json("https://staging.somrc.virginia.edu/index.json", function(error, root) {
     .enter().append("g")
       .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
       .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-      .attr("xlink:href", function (d){
-                return d.url;
-       });
-      // .on("click",function(d){ window.location = d.url });
 
   node.append("title")
       .text(function(d) { return d.data.name + "\n" + format(d.value); });
