@@ -9,7 +9,7 @@
   </thead>
   <tbody>
   {{ $workshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
-  {{ range $workshops }}
+  {{ range first 10 $workshops }}
     {{ $w := . }}
     <tr>
       <td>{{ dateFormat "January 02, 2006" $w.next_session.date_time}}</td>
