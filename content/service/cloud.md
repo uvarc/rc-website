@@ -233,7 +233,7 @@ We also offer in-person, hands-on workshops and sessions on working with the clo
 from creating object storage buckets and simple compute instances to more complex data-driven workflows and Docker containers,
 If you have an idea for a workshop or would like to schedule training for your lab or group, please contact us. 
 
-[<button class="btn btn-primary">Find a Workshop</button>](https://education.cadre.virginia.edu/)
+{{< upcoming-workshops >}}
 
 <hr size=1 style="padding-bottom:10px;" />
 
