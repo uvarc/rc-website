@@ -1,7 +1,7 @@
     <header class="blog-header" style="padding-top:20px;">
       <div class="container">
-        <a href="/"><img src="/images/logos/uva-somrc-logo-v3-352x86.png" alt="UVA School of Medicine" class="img-fluid somrc-logo-fluid" style="float:right;" /></a>
-        <h1 class="blog-title"><a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title | safeHTML }}</a></h1>
+        <a href="/"><img src="/images/logos/uva_somrc_logo_lefthead.png" alt="UVA School of Medicine" class="img-fluid somrc-logo-fluid" style="float:left;max-width:240px;" /></a>
+        <h1 class="blog-title" style="padding-top:10px;"><a href="{{ .Site.BaseURL }}" rel="home">{{ .Site.Title | safeHTML }}</a></h1>
         {{ if .Site.Params.description }}<p class="lead blog-description" style="font-style:italic;">{{ .Site.Params.description | markdownify }}</p>{{ end }}
       </div>
     </header>
