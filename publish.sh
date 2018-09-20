@@ -13,9 +13,6 @@ echo "  it from there.                                          "
 echo ""
 echo "**********************************************************"
 
-# Ship the events CSV file
-# aws s3 cp --acl public-read events.csv s3://somrc-data/events/
-
 echo ""
 read -p "   Do you want to manually publish? [Y/n]: " proceed
 case $proceed in
@@ -38,7 +35,7 @@ else
   echo "--- Content cleared"
   hugo -v --ignoreCache    # try without cache
   echo "--- Hugo content generated"
-  aws s3 sync --delete public/ s3://somrc-website/
+  aws s3 sync --delete --cache-control max-age=604800 public/ s3://somrc-website/
   # aws s3 sync --delete public/ s3://somrc-website-uswest2/
   echo "--- Public dir published to AWS"
 fi
