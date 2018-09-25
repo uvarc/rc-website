@@ -116,11 +116,11 @@ If you are working from a secure Health Systems workstation you are ready to con
 from 1-2 weeks for delivery. You must pick up and activate your token in person, with proof of identification. Your token will have its own password in order to be used. </p>
 
 <ul>
-  <li><a href="http://its.virginia.edu/identity/token/" target="_new">Read general information about identity tokens at UVA</a>.
-  <li>You should work with your LSP to submit a token request for you.
+  <li><a href="https://virginia.service-now.com/its?id=kb_article&sys_id=21155845db49d7084f32fb671d9619bf" target="_new">Read general information about identity tokens at UVA</a>.
+  <li>You may also work with your LSP to submit a token request for you.
 </ul>
 
-<a href="http://its.virginia.edu/identity/token/distribution.html" target="_new"><button class="btn btn-sm btn-warning">Request a UVA Identity Token</button></a>
+<a href="https://virginia.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3Df73c300b13d9db40602dbcaf3244b0ec" target="_new"><button class="btn btn-sm btn-warning">Request a UVA Identity Token</button></a>
 
 </div>
 
@@ -134,8 +134,8 @@ will authenticate to the UVA network using a digital certificate installed on yo
 <p>More information on VPN from ITS:</p>
 
 <ul>
-<li><a href="http://its.virginia.edu/network/vpn/" target="_new">General VPN connection instructions</a>.
-<li><a href="http://itc.virginia.edu/identity/certificate/" target="_new">How to create, install, and use digital certificates</a>..
+<li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new">General VPN connection instructions</a>.
+<li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>..
 </ul>
 
 <a href="http://its.virginia.edu/vpn/" target="_new"><button class="btn btn-sm btn-warning">AnyConnect VPN Instructions</button></a>
