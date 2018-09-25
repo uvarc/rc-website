@@ -29,6 +29,6 @@ SOM Research Computing is working with faculty in the UVA Center for Public Heal
 
 ## Publications
 
-Nagraj VP, Magee NE, Sheffield NC. LOLAweb: a containerized web server for
-interactive genomic locus overlap enrichment analysis. Nucleic Acids Res. 2018
+Nagraj VP, Magee NE, Sheffield NC. "LOLAweb: a containerized web server for
+interactive genomic locus overlap enrichment analysis." *Nucleic Acids Research*, 2018
 Jun 6. [doi: 10.1093/nar/gky464](https://doi.org/10.1093/nar/gky464).

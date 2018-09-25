@@ -167,7 +167,7 @@ If you need help in designing your infrastructure in a cloud environment, or thi
 If your cloud-based project involves any sensitive data (HIPAA, PHI, etc.) you must request approval from the [Information Security](http://security.virginia.edu/) office at UVA. You will be required
 to verify that your application, infrastructure, and staff can meet all minimum requirements for the secure transfer and handling of sensitive data.
 
-<div class="bd-callout bd-callout-warning">
+<div class="alert alert-danger">
 <b>Please note</b> that while sensitive data projects are possible in the cloud, their approval is not automatic nor guaranteed.
 </div>
 

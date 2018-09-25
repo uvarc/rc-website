@@ -22,7 +22,7 @@ Ivy consists of two separate computing environments. Access to one environment d
 
 * [Virtual Machines](#virtual-machines)
 * [Domino Data Lab](#domino-data-lab)
-* Coming soon - Secure HPC
+* <mark>Coming soon - Secure HPC</mark>
 
 - - -
 
