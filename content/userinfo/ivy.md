@@ -10,73 +10,19 @@ author = "SOMRC Staff"
 
 +++
 
-<script>
- var compute_prices = new Array();
- compute_prices["small"]=1594;
- compute_prices["medium"]=3209;
- compute_prices["large"]=8156;
-	 
-function getComputePrice()
-{  
-    var computePrice=0;
-    var theForm = document.forms["vmcalc"];
-    var selectedTier = theForm.elements["selectedtier"];
-
-    for(var i = 0; i < selectedTier.length; i++)
-    {
-        if(selectedTier[i].checked)
-        {
-            computePrice = compute_prices[selectedTier[i].value];
-            
-            break;
-        }
-    }
-
-    return computePrice;
-}
-
-
-function getStoragePrice()
-{
-    var storagePrice=0;
-
-    var theForm = document.forms["vmcalc"];
-    var selectedStorage = theForm.elements["storageamount"]; 
-	storagePrice = selectedStorage.value*360;
-    return storagePrice;
-}
-
-
-function calculateTotal()
-{
-
-    var totalPrice = getComputePrice() + getStoragePrice();
-    var divobj = document.getElementById('totalPrice');
-    divobj.style.display='block';
-    divobj.innerHTML = "Estimated cost for VM is $"+totalPrice+" per year";
-
-}
-
-function hideTotal()
-{
-    var divobj = document.getElementById('totalPrice');
-    divobj.style.display='none';
-}
-</script>
-
 <div class="bd-callout bd-callout-warning">
 <h4>Ivy</h4>
-Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows), Domino Data Lab, and the Apache Spark environment.
+Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) and Domino Data Lab.
 Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA requirements</a>.
 </div>
 
 # Overview
 
-Ivy consists of three separate computing environments. Access to one environment does not automatically grant access to the others:
+Ivy consists of two separate computing environments. Access to one environment does not automatically grant access to the others:
 
 * [Virtual Machines](#virtual-machines)
 * [Domino Data Lab](#domino-data-lab)
-* [Apache Spark](#apache-spark)
+* Coming soon - Secure HPC
 
 - - -
 
@@ -381,24 +327,6 @@ For specifics about these features and more, refer to the [Ivy DDL User Guide](/
 
 
 [<button class="btn btn-success">Read more about Ivy DDL</button>](https://discuss.rc.virginia.edu/c/ivy/ddl)
-
-- - -
-
-# Apache Spark
-
-Ivy Spark is an environment for distributed map/reduce computational analyses for Big Data applications.  
-
-## Access
-
-The Apache Spark installation on Ivy is under active development. If you have questions about access to this recourse, please email ivy-support@virginia.edu with information about your use-case.
-
-## Software
-
-The platform comes with Cloudera Hadoop, Spark, YARN, Hive, Impala, Piig, ZooKeeper, and Oozie. 
-
-## Storage
-
-Ivy Spark has 480 terabytes of HDFS storage shared amongst users. Each node has 500 gigabytes of local disk storage. Data can be uploaded through the Hue web interface. 
 
 - - -
 
