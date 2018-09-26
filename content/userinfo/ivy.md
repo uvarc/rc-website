@@ -47,7 +47,7 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 <div class="feature-box">
 <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, your Eservices password must be changed every 60 days.</p>
 <p>Need help resetting your Eservices password?</p>
-<a href="http://its.virginia.edu/accounts/wizard.html" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a>
+<p><a href="http://its.virginia.edu/accounts/wizard.html" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a></p>
 <p>If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.</p>
 </div>
 
