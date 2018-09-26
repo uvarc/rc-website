@@ -45,49 +45,35 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 ## <span class="badge badge-default">1</span> Authentication
 
 <div class="feature-box">
-
 <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, your Eservices password must be changed every 60 days.</p>
-
 <p>Need help resetting your Eservices password?</p>
-
 <a href="http://its.virginia.edu/accounts/wizard.html" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a>
-
-If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.
-
+<p>If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.</p>
 </div>
 
 ## <span class="badge badge-default">2</span> Identity Token
 
 <div class="feature-box">
-
 <p>To connect to the Ivy environment with VPN you will need a physical USB identity token, issued to you by the <b><a href="https://security.virginia.edu/access" target="_new">ISPRO Access Management Office</a></b>. Tokens must be requested, approved, and may take 
 from 1-2 weeks for delivery. You must pick up and activate your token in person, with proof of identification. Your token will have its own password in order to be used. </p>
-
 <ul>
   <li><a href="https://virginia.service-now.com/its?id=kb_article&sys_id=21155845db49d7084f32fb671d9619bf" target="_new">Read general information about identity tokens at UVA</a>.
   <li>You may also work with your LSP to submit a token request for you.
 </ul>
-
 <a href="https://virginia.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3Df73c300b13d9db40602dbcaf3244b0ec" target="_new"><button class="btn btn-sm btn-warning">Request a UVA Identity Token</button></a>
-
 </div>
 
 ## <span class="badge badge-default">3</span> Joint VPN
 
 <div class="feature-box">
-
 <p>With your UVA computing ID, Eservices password, and USB identity token in hand, you must run the Cisco AnyConnect software to start a JointVPN connection every time you use any Ivy resource. AnyConnect
 will authenticate to the UVA network using a digital certificate installed on your workstation. </p>
-
 <p>More information on VPN from ITS:</p>
-
 <ul>
-<li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new">General VPN connection instructions</a>.
-<li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>..
+  <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new">General VPN connection instructions</a>.
+  <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>..
 </ul>
-
 <a href="http://its.virginia.edu/vpn/" target="_new"><button class="btn btn-sm btn-warning">AnyConnect VPN Instructions</button></a>
-
 </div>
 
 - - -
