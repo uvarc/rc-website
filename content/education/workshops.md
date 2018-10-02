@@ -12,15 +12,18 @@ images = [""]
 
 <p class=lead>School of Medicine Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by SOMRC experts and are freely available to UVa faculty, staff and students.</p>
 
-<a href = "https://education.cadre.virginia.edu/">
-	<img src="https://somrc.virginia.edu/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:104%; padding-left:25px; padding-bottom:10px;" />
-</a>
-<p class=lead>Register for SOMRC workshops through <a style="font-weight:bold;" href="https://education.cadre.virginia.edu/">CADRE Academy</a>, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site. </p>
+<a href = "https://education.cadre.virginia.edu/"><img src="https://somrc.virginia.edu/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:104%; padding-left:25px; padding-bottom:10px;" /></a>
 
-<div class="alert alert-success">
-<b>Workshop Materials</b> are available through a companion site. Feel free to browse classes, read ahead, or learn at your own pace.
+- - - 
+
+# Register
+Register for SOMRC workshops through <a style="font-weight:bold;" href="https://education.cadre.virginia.edu/">CADRE Academy</a>, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site.
+
+- - -
+
+# Materials
+Course material and exercises are available through a companion site. Feel free to browse classes, read ahead, or learn at your own pace.
   <div style="margin:12px;"><code><a href="https://workshops.somrc.virginia.edu/" target="_new">https://workshops.somrc.virginia.edu/</a></code></div>
-</div>
 
 - - -
 
