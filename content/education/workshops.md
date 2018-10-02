@@ -15,7 +15,13 @@ images = [""]
 <a href = "https://education.cadre.virginia.edu/">
 	<img src="https://somrc.virginia.edu/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:104%; padding-left:25px; padding-bottom:10px;" />
 </a>
-<p class=lead>Beginning in Spring 2018, SOMRC will be offering workshop registration through <a href = "https://education.cadre.virginia.edu/">CADRE Academy</a>, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site. </p>
+<p class=lead>Register for SOMRC workshops through <a href = "https://education.cadre.virginia.edu/">CADRE Academy</a>, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site. </p>
+
+<div class="alert alert-success">
+<b>Workshop Materials</b> are available through a companion site. Feel free to browse classes, read ahead, or learn at your own pace.
+  <div style="margin:12px;"><code><a href="https://workshops.somrc.virginia.edu/" target="_new">https://workshops.somrc.virginia.edu/</a></code></div>
+</div>
+
 - - -
 
 # Upcoming
