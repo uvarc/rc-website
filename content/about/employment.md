@@ -50,4 +50,4 @@ Skills/Attributes Preferred:
 
 This position will remain open to applications until filled. This position is restricted and is contingent upon the continuation of funding. 
 
-[<button class="btn btn-primary">Learn More</button>](jobs.virginia.edu/applicants/Central?quickFind=85613)
+[<button class="btn btn-primary">Learn More</button>](https://jobs.virginia.edu/applicants/Central?quickFind=85613)
