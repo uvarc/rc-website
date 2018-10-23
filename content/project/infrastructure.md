@@ -13,7 +13,7 @@ projecttype = ["tools"]
 ## Code & Resources
 
 * [**SOMRC on GitHub**](https://github.com/uvasomrc/)
-* [**SOMRC Workshop Materials**](https://workshops.somrc.virginia.ed/)
+* [**SOMRC Workshop Materials**](https://workshops.somrc.virginia.edu/)
 * [AWS Snippets](https://github.com/uvasomrc/aws-snippets)
 * [Cloud Templates](https://github.com/uvasomrc/cloud-templates)
 * [Project: `epihet`](/project/epihet/)
