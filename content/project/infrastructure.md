@@ -13,9 +13,9 @@ projecttype = ["tools"]
 ## Code & Resources
 
 * [**SOMRC on GitHub**](https://github.com/uvasomrc/)
+* [**SOMRC Workshop Materials**](https://workshops.somrc.virginia.ed/)
 * [AWS Snippets](https://github.com/uvasomrc/aws-snippets)
 * [Cloud Templates](https://github.com/uvasomrc/cloud-templates)
-* [Courses / Workshops](https://github.com/uvasomrc/courses)
 * [Project: `epihet`](/project/epihet/)
 * [Project: `simpleCache`](/project/simplecache/)
 
@@ -24,6 +24,7 @@ projecttype = ["tools"]
 * [**SOMRC Docker Hub**](https://hub.docker.com/u/somrc/dashboard/)
 * [Learn how to use Docker](https://github.com/uvasomrc/courses/blob/master/workshops/docker/README.md)
 * [Project: LOLAweb](/project/lolaweb/)
+* [Project: BARTweb](/project/bartweb/)
 
 ## Bots & Artificial Intelligence
 
