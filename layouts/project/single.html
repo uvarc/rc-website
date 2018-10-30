@@ -12,6 +12,11 @@
       <img src="{{ .Params.images }}" alt="{{ .Title }}" class="project-inset" align="right" />
     {{ end }}
     {{ .Content }}
+    
+    <hr>
+    
+    {{ partial "publications.html" . }}
+    
   </div>
 
   <hr size=1 />

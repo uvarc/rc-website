@@ -1,0 +1,16 @@
+{{ if isset $.Params "publications" }}
+{{ $pubLen := len $.Params.publications }}
+{{ if gt $pubLen 0 }}
+<div>
+
+<h2> Publications </h2>
+	<ul>
+  {{ range $.Params.publications }}
+
+     <li>{{ . }}</li>
+
+  {{ end }}
+	</ul>
+</div>
+{{ end }}
+{{ end }}
