@@ -1,0 +1,13 @@
+<h1>Publications</h1>
+
+{{ $projectPages := where .Site.Pages "Type" "project" }}
+  <ul>
+    
+    {{ range where $projectPages "Params.publications" "!=" nil}}
+    {{ range .Params.publications }}
+
+
+      <li>{{ . }}</li>
+    {{ end }}
+    {{ end }}
+  </ul>
