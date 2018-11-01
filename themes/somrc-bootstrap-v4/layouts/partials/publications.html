@@ -7,7 +7,7 @@
 	<ul>
   {{ range $.Params.publications }}
 
-     <li>{{ . }}</li>
+     <div>{{ .authors }}. {{ .title }}. <em>{{ .journal }} </em>, {{ .year }}. <a href = {{ .doi }}> {{ .doi }}</a></div>
 
   {{ end }}
 	</ul>

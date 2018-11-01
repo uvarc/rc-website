@@ -1,13 +1,26 @@
 <h1>Publications</h1>
 
+<hr>
 {{ $projectPages := where .Site.Pages "Type" "project" }}
   <ul>
     
     {{ range where $projectPages "Params.publications" "!=" nil}}
+    
+    {{ $projname := .Title }}
+    {{ $projurl := .URL }}
+    
     {{ range .Params.publications }}
 
-
-      <li style="padding-bottom:1rem;">{{ . }}</li>
+	 <div>
+	 <a href = {{ .doi }}><h4>{{ .title }}</h4></a>
+	 <br>
+	 <em>{{ .journal }}</em>
+	 <br>
+	 {{ .authors }}
+	 <br>
+	 <a href = {{ $projurl }}>{{ $projname }} </a>
+	 <hr>
+	 </div>
     {{ end }}
     {{ end }}
   </ul>
