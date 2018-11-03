@@ -1,26 +1,42 @@
 <h1>Publications</h1>
-
+<p class = "lead">
+School of Medicine Research Computing regularly collaborates with UVa researchers on original computational scientific projects, many of which yield peer-reviewed publications. Below is a list of papers that have been co-authored with SOMRC staff.
+</p>
 <hr>
 {{ $projectPages := where .Site.Pages "Type" "project" }}
-  <ul>
-    
+  
+    <div class="container">
+
     {{ range where $projectPages "Params.publications" "!=" nil}}
     
     {{ $projname := .Title }}
     {{ $projurl := .URL }}
+    {{ $projimg := .Params.images }}
     
     {{ range .Params.publications }}
+    
+    <div class="row">
+  		<div class="col-8" style = "text-align:left;">
+	 <h4>
+	 	<span style ="padding-right: 20px;">{{ .title }}</span>
 
-	 <div>
-	 <a href = {{ .doi }}><h4>{{ .title }}</h4></a>
-	 <br>
-	 <em>{{ .journal }}</em>
-	 <br>
+	 </h4>
 	 {{ .authors }}
 	 <br>
-	 <a href = {{ $projurl }}>{{ $projname }} </a>
-	 <hr>
+	 <em>{{ .journal }}</em> ({{ .year }})
+	 <br>
+	 <a href = "http://doi.org/{{ .doi }}" target="_new">http://doi.org/{{ .doi }}</a>
+	 </div>
+	<div class="col-4" style = "text-align:center;">
+	<a href = {{ $projurl }}>
+	<img src = {{ $projimg }} style = "max-width:100px;max-height:100px;"></img>
+	<br>
+	{{ $projname }}
+	</a>
+	</div>
 	 </div>
     {{ end }}
+    <hr>
     {{ end }}
-  </ul>
+    
+    </div>

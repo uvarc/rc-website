@@ -10,7 +10,7 @@ tags = [
 ]
 draft = false
 projecttype = ["clinical-research"]
-publications = [{authors = "Alonzo CJ, Nagraj VP, Zschaebitz JV, Lake DE, Moorman JR, Spaeder MC", title = "Heart rate ranges in premature neonates using high resolution physiologic data", journal = "J Perinatol", year = "2018", doi = "http://10.1038/s41372-018-0156-16-1"}]
+publications = [{authors = "Alonzo CJ, Nagraj VP, Zschaebitz JV, Lake DE, Moorman JR, Spaeder MC", title = "Heart rate ranges in premature neonates using high resolution physiologic data", journal = "Journal of Perinatology", year = "2018", doi = "10.1038/s41372-018-0156-1"}]
 +++
 
 There are limited evidence-based published heart rate ranges for premature neonates. However, knowing heart rate reference ranges in the premature neonatal population can be beneficial for bedside assessment in the Neonatal Intensive Care Unit (NICU).
