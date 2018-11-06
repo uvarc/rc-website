@@ -10,6 +10,7 @@ tags = [
 ]
 draft = false
 projecttype = ["clinical-research","machine-learning"]
+publications = [{authors = "Fairchild KD, Nagraj VP, Sullivan BA, Moorman JR, Lake DE", title = "Oxygen desaturations in the early neonatal period predict development of bronchopulmonary dysplasia", journal = "Pediatric Research", year = "2018", doi = "10.1038/s41390-018-0223-5"}]
 +++
 
 Episodes of bradycardia and oxygen desaturation (BD) are common among preterm very low birthweight (VLBW) infants and their association with adverse outcomes such as bronchopulmonary dysplasia (BPD) is unclear. A better understanding of this relationship could lead to improved clinical interventions.
