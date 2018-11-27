@@ -157,8 +157,8 @@ For example, if you estimate your costs will be $300 per month, you might want t
 
 ## Training & Implementation
 
-With an AWS account in hand, you will need training. We offer regular, free [workshops on cloud computing](/education/workshops/). In addition, we have weekly availability to 
-answer your questions during our office ours, or we can schedule an in-person, hands-on training with your research group or lab.
+With an AWS account in hand, you will need some training. We offer regular, free [workshops on cloud computing](/education/workshops/). In addition, we have weekly availability to 
+answer your questions during our office hours, or we can schedule an in-person, hands-on training with your research group or lab.
 
 If you need help in designing your infrastructure in a cloud environment, or thinking through how to migrate your existing projects, [contact us](/service/consult/) for a consultation.
 
@@ -181,7 +181,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
 <div class="row">
   <div class="aws-comp section col-sm"> 
     <a href="https://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_batch_03.pdf"> 
-    <div class="image-border image-shadow "> 
+    <div class="image-border image-shadow"> 
       <div class="image parbase"> 
         <img alt="AWS-batch-processing-thumb" title="AWS-batch-processing-thumb" src="//d0.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/AWS-batch-processing-thumb.png" /> 
       </div> 
@@ -192,7 +192,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
   </div> 
   <div class="aws-comp section col-sm"> 
     <a href="https://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_largescale_05.pdf"> 
-    <div class="image-border image-shadow "> 
+    <div class="image-border image-shadow"> 
       <div class="image parbase"> 
         <img alt="AWS-large-scale-processing-huge-data-thumb" title="AWS-large-scale-processing-huge-data-thumb" src="//d0.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/AWS-large-scale-processing-huge-data-thumb.png" /> 
       </div> 
@@ -203,7 +203,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
   </div> 
   <div class="aws-comp section col-sm">
     <a href="https://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_timeseriesprocessing_16.pdf">
-    <div class="image-border image-shadow ">
+    <div class="image-border image-shadow">
       <div class="image parbase">
         <img alt="AWS-large-scale-processing-huge-data-thumb" title="AWS-large-scale-processing-huge-data-thumb" src="//d0.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/AWS-Time-Series.png" />
       </div>
@@ -214,7 +214,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
   </div>
 </div>
 
-# Solution Architecture & Consulting
+# Solution Architecture / Consulting
 
 We have experience designing and delivering solutions to the public cloud using industry best practices. 
 If you have a project and would like to discuss options, pricing, design, or implementation, we are available for consultation.
