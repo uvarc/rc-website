@@ -38,6 +38,35 @@ var aText = new Array(
 
 <hr size=1 style="padding-bottom:10px;" />
 
+# Service Oriented Architecture
+
+A key advantage of the cloud is that for many services you do not need to build or maintain the servers that support the service -- you simply use it.
+
+Here are some of the building blocks available using cloud infrastructure:
+
+<div class="row">
+  <div class="col-sm">
+  <ul class="list-group">
+    <li class="list-group-item"><i class="fa fa-2x fa-microchip" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Compute</li>
+    <li class="list-group-item"><i class="far fa-2x fa-hdd" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Storage</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Database</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-cube" aria-hidden="true" style="padding-right:8px;"></i> Containers / Docker</li>
+    <li class="list-group-item"><i class="fas fa-2x fa-chart-pie" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-share-alt" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Continuous Integration</li>
+  </ul>
+  </div>
+  <div class="col-sm">
+  <ul class="list-group">
+    <li class="list-group-item"><i class="fa fa-2x fa-spin fa-cog" aria-hidden="true" style=""></i> &nbsp; Sensor / IoT Data Streaming</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-list-ul" aria-hidden="true" style="padding-right:8px;"></i> Messaging Queues</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-mobile" aria-hidden="true" style="padding-left:8px;padding-right:18px;"></i> SMS / Push Integration</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-microphone" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Alexa Skills / Speech Integration</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-code" aria-hidden="true" style="padding-right:8px;"></i> Serverless Computing</li>
+    <li class="list-group-item"><i class="fas fa-2x fa-check-circle" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Code Build / Validation</li>
+  </ul>
+  </div>
+</div>
+
 # Researchers Using the Cloud
 
 <table class="table table-striped">
@@ -109,70 +138,6 @@ Genomics researchers use Glacier to store terabytes of source data as required b
 
 <hr size=1 style="padding-bottom:10px;" />
 
-# Service Oriented Architecture
-
-A key advantage of the cloud is that for many services you do not need to build or maintain the servers that support the service -- you simply use it.
-
-Here are some of the building blocks available using cloud infrastructure:
-
-<div class="row">
-  <div class="col-sm">
-  <ul class="list-group">
-    <li class="list-group-item"><i class="fa fa-2x fa-microchip" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Compute</li>
-    <li class="list-group-item"><i class="far fa-2x fa-hdd" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Storage</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Database</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-cube" aria-hidden="true" style="padding-right:8px;"></i> Containers / Docker</li>
-    <li class="list-group-item"><i class="fas fa-2x fa-chart-pie" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-share-alt" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Continuous Integration</li>
-  </ul>
-  </div>
-  <div class="col-sm">
-  <ul class="list-group">
-    <li class="list-group-item"><i class="fa fa-2x fa-spin fa-cog" aria-hidden="true" style=""></i> &nbsp; Sensor / IoT Data Streaming</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-list-ul" aria-hidden="true" style="padding-right:8px;"></i> Messaging Queues</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-mobile" aria-hidden="true" style="padding-left:8px;padding-right:18px;"></i> SMS / Push Integration</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-microphone" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Alexa Skills / Speech Integration</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-code" aria-hidden="true" style="padding-right:8px;"></i> Serverless Computing</li>
-    <li class="list-group-item"><i class="fas fa-2x fa-check-circle" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Code Build / Validation</li>
-  </ul>
-  </div>
-</div>
-
-<hr size=1 style="padding-bottom:10px;" />
-
-# Cloud Services at UVA
-
-As an [Internet2](https://www.internet2.edu/) institution, the University of Virginia has access to AWS accounts through a reseller, DLT. This program 
-offers a few key advantages for researchers: 
-
-1. First, it allows for billing through purchase orders (P.O.'s) rather than credit cards;
-2. Second, it gives a slight (~3%) discount on services; and
-3. Third, it removes the required minimum costs for AWS support. [Read more about the Internet2/AWS program](https://www.internet2.edu/products-services/cloud-services-applications/amazon-web-services/).
-
-## Requesting an Account
-
-Researchers or labs who would like to use AWS for their computing infrastructure should contact us to help set up an account through DLT. In order to
-set up your account you will need a "standing" annual P.O. from the UVA Procurement office equal to or greater than your estimated annual costs. 
-For example, if you estimate your costs will be $300 per month, you might want to request a $4000 standing P.O. Your monthly AWS bills are then charged against that P.O. for the year. Note that these purchase orders *must be renewed* each year that you continue to use AWS.
-
-## Training & Implementation
-
-With an AWS account in hand, you will need some training. We offer regular, free [workshops on cloud computing](/education/workshops/). In addition, we have weekly availability to 
-answer your questions during our office hours, or we can schedule an in-person, hands-on training with your research group or lab.
-
-If you need help in designing your infrastructure in a cloud environment, or thinking through how to migrate your existing projects, [contact us](/service/consult/) for a consultation.
-
-## Sensitive Data in the Cloud
-
-If your cloud-based project involves any sensitive data (HIPAA, PHI, etc.) you must request approval from the [Information Security](http://security.virginia.edu/) office at UVA. You will be required
-to verify that your application, infrastructure, and staff can meet all minimum requirements for the secure transfer and handling of sensitive data.
-
-<div class="alert alert-danger">
-<b>Please note</b> that while sensitive data projects are possible in the cloud, their approval is not automatic nor guaranteed.
-</div>
-
-<hr size=1 style="padding-bottom:10px;" />
-
 # Reference Architecture
 
 To get an idea of how AWS is used in real-world and research scenarios, visit the <a style="font-weight:bold;" href="https://aws.amazon.com/architecture/" target="_new">AWS Architecture Center</a> or review some reference deployments below.
@@ -213,6 +178,41 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
     </div>
   </div>
 </div>
+
+<hr size=1 style="padding-bottom:10px;" />
+
+# Cloud Services at UVA
+
+As an [Internet2](https://www.internet2.edu/) institution, the University of Virginia has access to AWS accounts through a reseller, DLT. This program 
+offers a few key advantages for researchers: 
+
+1. First, it allows for billing through purchase orders (P.O.'s) rather than credit cards;
+2. Second, it gives a slight (~3%) discount on services; and
+3. Third, it removes the required minimum costs for AWS support. [Read more about the Internet2/AWS program](https://www.internet2.edu/products-services/cloud-services-applications/amazon-web-services/).
+
+## Requesting an Account
+
+Researchers or labs who would like to use AWS for their computing infrastructure should contact us to help set up an account through DLT. In order to
+set up your account you will need a "standing" annual P.O. from the UVA Procurement office equal to or greater than your estimated annual costs. 
+For example, if you estimate your costs will be $300 per month, you might want to request a $4000 standing P.O. Your monthly AWS bills are then charged against that P.O. for the year. Note that these purchase orders *must be renewed* each year that you continue to use AWS.
+
+## Training & Implementation
+
+With an AWS account in hand, you will need some training. We offer regular, free [workshops on cloud computing](/education/workshops/). In addition, we have weekly availability to 
+answer your questions during our office hours, or we can schedule an in-person, hands-on training with your research group or lab.
+
+If you need help in designing your infrastructure in a cloud environment, or thinking through how to migrate your existing projects, [contact us](/service/consult/) for a consultation.
+
+## Sensitive Data in the Cloud
+
+If your cloud-based project involves any sensitive data (HIPAA, PHI, etc.) you must request approval from the [Information Security](http://security.virginia.edu/) office at UVA. You will be required
+to verify that your application, infrastructure, and staff can meet all minimum requirements for the secure transfer and handling of sensitive data.
+
+<div class="alert alert-danger">
+<b>Please note</b> that while sensitive data projects are possible in the cloud, their approval is not automatic nor guaranteed.
+</div>
+
+<hr size=1 style="padding-bottom:10px;" />
 
 # Solution Architecture / Consulting
 
