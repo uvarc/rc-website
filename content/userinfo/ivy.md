@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2018-05-24T17:45:12-05:00"
+date = "2018-12-04T17:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","ddl","security"]
 categories = ["userinfo"]
 images = [""]
@@ -22,7 +22,9 @@ Ivy consists of two separate computing environments. Access to one environment d
 
 * [Virtual Machines](#virtual-machines)
 * [Domino Data Lab](#domino-data-lab)
-* <mark>Coming soon - Secure HPC</mark>
+* [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
+* [HIPAA Compliance](#hipaa-compliance)
+* [Coming Soon - Secure HPC](#coming-soon-secure-hpc)
 
 - - -
 
@@ -344,8 +346,16 @@ The Ivy platform is HIPAA compliant by design. From the <a href="http://www.virg
 
 </div>
 
-Researchers must understand that, in general, the more difficult parts of HIPAA compliance are less technical (networks, computers, and data) than they are human and how users interact with these systems. The mishandling of data -- such as storing them on insecure devices or in insecure places -- jeopardizes confidential patient data and UVA's ability to remain a trusted keeper of those data.
+Researchers must understand that, in general, the more difficult parts of HIPAA compliance are less technical (networks, computers, and data) than they are human and how users interact with these systems and data. The mishandling of data -- such as storing them on insecure devices or in insecure places -- jeopardizes confidential patient data and UVA's ability to remain a trusted keeper of those data.
 
 All data imported into Ivy must be treated as highly sensitive data. Data and results exported from Ivy must be protected and managed appropriately according to UVA's [data classification guidelines](http://www.virginia.edu/informationsecurity/dataprotection/). Guidance regarding these guidelines and data types is available from UVA Information Security, Policy, and Records Office (ISPRO) by emailing it-security@virginia.edu.
 
 <button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
+
+# Coming Soon - Secure HPC
+
+<img src="https://pbs.twimg.com/media/DRQcamFX0AA9tmU.jpg" style="float:right;max-width:40%;" />
+
+In 2019 we will launch a secure high performance computing system. This will support computationally-intensive research for sensitive data, within the Ivy secure environment.
+
+<br clear=all />
