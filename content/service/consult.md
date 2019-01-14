@@ -31,7 +31,7 @@ sidebar = "hidden"
     <label for="Textarea">Describe your project</label>
     <textarea class="form-control" id="Textarea" rows="5" name="_project"></textarea>
   </div>
-
+    <input type="hidden" name="nogo" id="nogo" class="form-control" placeholder="This should not be filled in.">
   <button type="submit" value="Send" class="btn btn-primary">Send</button>
   <a href="https://somrc.virginia.edu/"><button class="btn btn-secondary">Cancel</button></a>
 </form>
