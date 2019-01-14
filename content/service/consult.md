@@ -10,6 +10,7 @@ tags = ["staff","consultation","contact"]
 sidebar = "hidden"
 +++
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <form action="https://handlers.uvasomrc.io/consult/" method="POST">
   <div class="form-group">
     <label for="inputName">Name</label>
@@ -31,7 +32,9 @@ sidebar = "hidden"
     <label for="Textarea">Describe your project</label>
     <textarea class="form-control" id="Textarea" rows="5" name="_project"></textarea>
   </div>
-
+  <div class="form-group">
+    <div class="g-recaptcha" data-sitekey="6Ld9qIkUAAAAAKCAj8KRvpYAGraCgzgiTC8wHnWI"></div>
+  </div>
   <button type="submit" value="Send" class="btn btn-primary">Send</button>
   <a href="https://somrc.virginia.edu/"><button class="btn btn-secondary">Cancel</button></a>
 </form>
