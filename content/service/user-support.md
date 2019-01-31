@@ -40,8 +40,6 @@ Request Consultation</button>
 
 # Office Hours
 
-<b>SOMRC will not be hosting office hours during the academic winter break. We'll be back on Thursday January 17. Happy holidays!</b>
-
 Staff from SOMRC host weekly office hours in the Health Sciences Library (HSL). Drop by with a project idea, question about a system or anything else you would like to discuss.
 
 <div class="alert alert-success" role="alert"> 
