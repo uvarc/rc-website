@@ -38,7 +38,7 @@ var aText = new Array(
 
 <hr size=1 style="padding-bottom:10px;" />
 
-# Service Oriented Architecture
+# Service Based Architecture
 
 A key advantage of the cloud is that for many services you do not need to build or maintain the servers that support the service -- you simply use it.
 
