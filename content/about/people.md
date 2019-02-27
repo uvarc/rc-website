@@ -49,6 +49,12 @@ With expertise in R and Python, he's been active in package development and a va
     <h2>Hardik I. Parikh, PhD</h2>
     <p><b>Computational Scientist</b> <br />Hardik is interested in understanding the molecular mechanisms in various biological events and pathological processes using computational technologies. He received his PhD in Medicinal Chemistry at VCU focusing on applying molecular modeling approaches to problems pertaining to drug design/discovery, followed by a bioinformatics postdoc in the field of microbiome data analysis. At UVa, Hardik collaborates with multi-disciplinary researchers to provide extended bioinformatics solutions focused on genomic and metagenomic analyses. He develops novel computational algorithms/tools for meaningful biological interpretation of NGS data.</p>
   </div><!-- /.col-lg-6 -->
+  <!--Ravi Chamakuri's profile-->
+  <div class="col-lg-6">
+    <img class="rounded-circle" src="https://somrc.virginia.edu/images/ChamakuriRavi_pic.png" alt="Ravi Chamakuri" width="140" height="140">
+    <h2>Ravi Kiran R. Chamakuri, PMP</h2>
+    <p><b>Full Stack Developer</b> <br />Ravi designs, develops and maintains various software solutions ranging from web applicatipns, master database management, middleware and sofware integrations/orchestrations. He specializes in designing and developing enterprise-wide data driven software solutions and has previously worked for Automotive, Higher Education, Financial, Environmental Research and Telecom industries. He has wide range of industry experience designing and devloping software applications using Python and Java technologies</p>
+  </div><!-- /.col-lg-6 -->
   <!-- New Staffer Profile -->
   <div class="col-lg-6">
 
