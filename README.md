@@ -10,7 +10,7 @@ https://somrc.virginia.edu/
 * [Install](https://gohugo.io/overview/installing/) the HUGO binary on your local computer. For more information, see the Hugo GitHub repo: https://github.com/spf13/hugo
 * Clone this website repository: `git clone git@github.com:uva-som-rc/rc-website.git`.
 
-## Create new content
+## Create new content.
 
 Follow guidelines from https://gohugo.io/content/organization/. But essentially you use the `hugo new` command declaring the path to the .md object you want to create.
   * `hugo new post/here-is-my-post.md`
