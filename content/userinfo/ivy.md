@@ -124,20 +124,12 @@ remote desktop software to connect to the desktop GUI of your VM. These options 
 **MacOSX Users:**
 
 * Terminal (for SSH, built-in. Can be found in Applications -> Utilities -> Terminal)
-* x2goclient (for remote desktop to CentOS VMs, [download here](http://wiki.x2go.org/doku.php/download:start))
-* Other RDP clients (for remote desktop to Windows VMs, [download here](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12))
+* Microsoft Remote Desktop (for remote desktop to Windows or CentOS VMs, [download here](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12))
 
 **Windows Users:**
 
 * PuTTy (for SSH, [download here](http://www.chiark.greenend.org.uk/~sgtatham/putty/))
-* x2goclient (for remote desktop to CentOS VMs, [download here](http://wiki.x2go.org/doku.php/download:start))
-* Microsoft Remote Desktop (built-in)
-
-**Linux Users:**
-
-* Terminal / Command (for SSH, built-in)
-* x2goclient (for remote desktop to CentOS VMs, [download here](http://wiki.x2go.org/doku.php/download:start))
-* Other remote desktop clients can be used (for Windows VMs)
+* Microsoft Remote Desktop (built-in, for remote desktop to Windows or CentOS VMs)
 
 To connect to Ivy follow the platform-specific steps below:
 
@@ -152,7 +144,7 @@ To connect to Ivy follow the platform-specific steps below:
           <li>Open your JointVPN connection</li>
           <li>Reference the IP address of your Ivy VM.</li>
           <li>For SSH access:<br />&nbsp;&nbsp;<code>ssh uva-id@ip-address</code></li>
-          <li>For Remote Desktop access: Start the x2goclient to the IP address of your VM and sign in.</li>
+          <li>For Remote Desktop access: Start the RDP client and point to the IP address of your VM and sign in.</li>
         </ul>
       </div>
     </div>
@@ -166,7 +158,7 @@ To connect to Ivy follow the platform-specific steps below:
         <ul>
           <li>Open your JointVPN connection</li>
           <li>Reference the IP address of your Ivy VM.</li>
-          <li>For Remote Desktop access: Start an RDP client to the IP address of your VM and sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
+          <li>For Remote Desktop access: Start an RDP client and point to the IP address of your VM and sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
         </ul>
       </div>
     </div>
@@ -304,8 +296,6 @@ For specifics about these features and more, refer to the [Ivy DDL User Guide](/
 
 ## Learn More
 
-* [View upcoming in-person DDL training sessions](/education/workshops/)
-* [Explore a Demo Version of DDL](https://trial.dominodatalab.com/u/domino/kaggle-titanic-solutions#console)
 * [Data science resources from DDL](https://www.dominodatalab.com/resources)
 * Watch a walkthrough of the main features of DDL:
 
