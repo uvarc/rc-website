@@ -1,6 +1,6 @@
 <h2>Publications</h2>
 <p class = "lead">
-School of Medicine Research Computing regularly collaborates with UVa researchers on original computational scientific projects, many of which yield peer-reviewed publications. Below is a list of papers that have been co-authored with SOMRC staff.
+UVA Research Computing regularly collaborates with researchers on original computational scientific projects, many of which yield peer-reviewed publications. Below is a list of papers that have been co-authored with UVARC staff.
 </p>
 <hr>
 {{ $projectPages := where .Site.Pages "Type" "project" }}
@@ -16,11 +16,10 @@ School of Medicine Research Computing regularly collaborates with UVa researcher
     {{ range .Params.publications }}
     
     <div class="row">
-  		<div class="col-8" style = "text-align:left;">
-	 <h4>
-	 	<span style ="padding-right: 20px;">{{ .title }}</span>
-
-	 </h4>
+      <div class="col-8" style = "text-align:left;">
+        <h4>
+	   <span style ="padding-right: 20px;">{{ .title }}</span>
+	</h4>
 	 {{ .authors }}
 	 <br>
 	 <em>{{ .journal }}</em> ({{ .year }})
