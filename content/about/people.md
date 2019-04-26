@@ -38,7 +38,7 @@ categories = [
     <p><b>Full Stack Developer</b> <br />Ravi designs, develops and maintains various software solutions ranging from web applicatipns, master database management, middleware and sofware integrations/orchestrations. He specializes in designing and developing enterprise-wide data driven software solutions and has previously worked for Automotive, Higher Education, Financial, Environmental Research and Telecom industries. He has wide range of industry experience designing and devloping software applications using Python and Java technologies</p>
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="/images/profile_andrew_bell.png" alt="Michele Co" width="140" height="140">
+    <img class="rounded-circle" src="https://t4.rbxcdn.com/74d87e9ecb19c7f8562f1249695897c7" alt="Michele Co" width="140" height="140">
     <h2>Michele Co, PhD</h2>
     <p><b>HPC Systems Specialist</b><br /></p>
   </div><!-- /.col-lg-6 -->
@@ -72,7 +72,7 @@ categories = [
     <p><b>Special Projects</b> <br />BD leads the SOM research computing program and also supports university-wide collaborations such as CADRE. He received his PhD in Aeronautics and Astronautics Engineering from Purdue University, and has been working in high-performance computing and big data field for more than 10 years at many institutions including National Center for Supercomputing Applications (NCSA) and Harvard Medical School. He always looks for opportunities where SOM-RC team can maximize the potential of computational biomed research by providing expertise in big data analysis and advanced computing.</p>
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="https://somrc.virginia.edu/images/profile_nmagee.png" alt="Neal Magee" width="140" height="140">
+    <img class="rounded-circle" src="https://somrc.virginia.edu/images/profile_neal_magee.png" alt="Neal Magee" width="140" height="140">
     <h2>Neal Magee, PhD</h2>
     <p><b>Cloud Solution Architect</b> <br /> Neal designs scaling, service-driven, distributed systems in the public cloud. His recent work has been built primarily in Amazon Web Services, with which he is a certified solution architect. Drawing on a background in development and operations, he designs programmable infrastructure that changes dynamically with the needs of an application. He has extensive experience with Python, public clouds, and architecting dynamic systems that scale and heal automatically.</p>
   </div><!-- /.col-lg-6 -->
