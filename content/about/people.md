@@ -22,6 +22,7 @@ categories = [
 * Rick Downs
 * Andrew Bell
 * Ravi Chamakuri
+* Michele Co
 * Christina Gancayco
 * Katherine Holcomb
 * Ed Hall
