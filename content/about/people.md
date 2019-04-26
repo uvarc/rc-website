@@ -18,46 +18,19 @@ categories = [
 
 +++
 
-<!-- Three columns of text below the carousel -->
-<div class="row">
-  <div class="col-lg-6">
-    <img class="rounded-circle" src="https://somrc.virginia.edu/images/profile_bdkim.jpeg" alt="BD Kim" width="140" height="140">
-    <h2>Byoung-Do Kim, PhD</h2>
-    <p><b>Director of Research Computing</b> <br /> 
-      BD leads the SOM research computing program and also supports university-wide collaborations such as CADRE. He received his PhD in Aeronautics and Astronautics Engineering from Purdue University, and has been working in high-performance computing and big data field for more than 10 years at many institutions including National Center for Supercomputing Applications (NCSA) and Harvard Medical School. He always looks for opportunities where SOM-RC team can maximize the potential of computational biomed research by providing expertise in big data analysis and advanced computing.
-    </p>
-  </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
-    <img class="rounded-circle" src="https://somrc.virginia.edu/images/profile_nmagee.png" alt="Neal Magee" width="140" height="140">
-    <h2>Neal Magee, PhD</h2>
-    <p><b>Cloud Solution Architect</b> <br /> Neal designs scaling, service-driven, distributed systems in the public cloud. His recent work has been built primarily in Amazon Web Services, with which he is a certified solution architect. Drawing on a background in development and operations, he designs programmable infrastructure that changes dynamically with the needs of an application. He has extensive experience with Python, public clouds, and architecting dynamic systems that scale and heal automatically.</p>
-  </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
-    <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/8546787" alt="VP Nagraj" width="140" height="140">
-    <h2>VP Nagraj</h2>
-    <p><b>Research Computing Associate</b> <br /> Pete teaches, consults and contributes to scientific programming and data analysis projects.
-With expertise in R and Python, he's been active in package development and a variety of open-source collaborations.</p>
-  </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
-    <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/17575107" alt="Christina Gancayco" width="140" height="140">
-    <h2>Christina Gancayco</h2>
-    <p><b>Research Computing Associate</b> <br /> Christina collaborates with researchers on image processing and imaging data management projects. Prior to joining SOM research computing, Christina performed brain imaging research at the UVa Department of Radiology and Medical Imaging. She specializes in Matlab programming and is interested in machine learning projects. </p>
-  </div><!-- /.col-lg-6 -->
-  <!--Hardik's profile-->
-  <div class="col-lg-6">
-    <img class="rounded-circle" src="https://somrc.virginia.edu/images/ParikhHardik_pic.png" alt="Hardik Parikh" width="140" height="140">
-    <h2>Hardik I. Parikh, PhD</h2>
-    <p><b>Computational Scientist</b> <br />Hardik is interested in understanding the molecular mechanisms in various biological events and pathological processes using computational technologies. He received his PhD in Medicinal Chemistry at VCU focusing on applying molecular modeling approaches to problems pertaining to drug design/discovery, followed by a bioinformatics postdoc in the field of microbiome data analysis. At UVa, Hardik collaborates with multi-disciplinary researchers to provide extended bioinformatics solutions focused on genomic and metagenomic analyses. He develops novel computational algorithms/tools for meaningful biological interpretation of NGS data.</p>
-  </div><!-- /.col-lg-6 -->
-  <!--Ravi Chamakuri's profile-->
-  <div class="col-lg-6">
-    <img class="rounded-circle" src="https://somrc.virginia.edu/images/ChamakuriRavi_pic.png" alt="Ravi Chamakuri" width="140" height="140">
-    <h2>Ravi Kiran R. Chamakuri, PMP</h2>
-    <p><b>Full Stack Developer</b> <br />Ravi designs, develops and maintains various software solutions ranging from web applicatipns, master database management, middleware and sofware integrations/orchestrations. He specializes in designing and developing enterprise-wide data driven software solutions and has previously worked for Automotive, Higher Education, Financial, Environmental Research and Telecom industries. He has wide range of industry experience designing and devloping software applications using Python and Java technologies</p>
-  </div><!-- /.col-lg-6 -->
-  <!-- New Staffer Profile -->
-  <div class="col-lg-6">
 
-  </div><!-- /.col-lg-6 -->
-
-</div><!-- /.row -->
+* Rick Downs
+* Andrew Bell
+* Ravi Chamakuri
+* Christina Gancayco
+* Katherine Holcomb
+* Ed Hall
+* Jacalyn Huband
+* BD Kim
+* Neal Magee
+* Adam Munro
+* VP Nagraj
+* Gisoo Park
+* David Parsley
+* Karsten Siller
+* Alden Stradling
