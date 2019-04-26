@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "Research Computing"
+title = "UVA Research Computing"
 publishdir = "public"
 languageCode = "en-us"
 theme = "somrc-bootstrap-v4"
@@ -18,14 +18,14 @@ ignoreCache = true
   featured = "featured"
 
 [params]
-  subtitle = "Research Computing"
+  subtitle = "UVA Research Computing"
   authorImage = "ec2-icon.png"
   #"single" or "multi"
   renderType = "multi"
   # "simple" or "original"
   themeStyle = "simple"
   # googleAnalytics = "UA-90358528-1"
-  name = "UVA School of Medicine"
+  name = "UVA Research Computing"
   description = "Enabling scientific breakthroughs at scale with advanced computing"
   pageNotFoundTitle = "404 - Page not found"
 
