@@ -10,7 +10,9 @@ categories = [
 ]
 date = "2019-04-23T08:37:46-05:00"
 tags = [
-  ""
+  "rivanna",
+  "modules",
+  "software"
 ]
 draft = false
 title = "Rivanna HPC Software"
@@ -19,17 +21,6 @@ author = "SOMRC Staff"
 
 +++
 
-ARCS offers a variety of standard software packages for all users. We also install requested software based on the needs of the HPC community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group.  Departments with a set of widely-used software packages may install them to the lsp_apps space.  ARCS will also provide limited assistance for individual installations. For help installing research software on your PC, please contact Research Software Support at res-consult@virginia.edu.
+ARCS offers a variety of standard software packages for all users. We also install requested software based on the needs of the HPC community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group.  Departments with a set of widely-used software packages may install them to the lsp_apps space.  ARCS will also provide limited assistance for individual installations. For help installing research software on your PC, please contact Research Software Support at <a href="mailto:res-consult@virginia.edu">res-consult@virginia.edu</a>.
 
-<table>
-  {{ $urlPre := "https://staging.rc.virginia.edu" }}
-  {{ $gistJ := getJSON $urlPre "/data/rivanna-software.json" }}
-  {{ range first 500 $gistJ }}
-      <tr>
-        <td>{{ .Module }}</td>
-        <td>{{ .Version }}</td>
-        <td>{{ .Tag }}</td>
-        <td>{{ .Description }}</td>
-      </tr>
-  {{ end }}
-</table>
+{{% rivanna-software %}}
