@@ -5,7 +5,13 @@
 **Production URL:**
 https://somrc.virginia.edu/
 
-## Install
+## Developing
+
+### Using Gitpod
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/uvasomrc/rc-website/tree/staging)
+
+### Local Install
 
 * [Install](https://gohugo.io/overview/installing/) the HUGO binary on your local computer. For more information, see the Hugo GitHub repo: https://github.com/spf13/hugo
 * Clone this website repository: `git clone git@github.com:uva-som-rc/rc-website.git`.
