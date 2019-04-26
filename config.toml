@@ -1,5 +1,5 @@
 baseurl = "/"
-title = "UVA Research Computing"
+title = "Research Computing"
 publishdir = "public"
 languageCode = "en-us"
 theme = "somrc-bootstrap-v4"
