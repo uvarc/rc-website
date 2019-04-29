@@ -32,6 +32,6 @@ related workshops.
 
 {{< education-track "283" >}}
 
-[<button class="btn btn-warning">View Workshops</button>](https://education.cadre.virginia.edu/#/track/283)
-
 For a comprehensive list of all such educational opportunities across Grounds, visit the [Computation and Data Resource Exchange (CADRE) education portal](http://cadre.virginia.edu/service-detail/education).
+
+[<button class="btn btn-warning">View Workshops</button>](https://education.cadre.virginia.edu/#/track/283)
