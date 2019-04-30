@@ -2,9 +2,9 @@
 author = "SOMRC Staff"
 description = ""
 title = "Workshops"
-date = "2017-08-24T10:55:28-05:00"
+date = "2019-04-24T10:55:28-05:00"
 draft = false
-tags = ["R","Python","Shiny","Cloud","AWS"]
+tags = ["R","Python","Shiny","Cloud","HPC","Rivanna","Ivy"]
 categories = ["education", "workshops","seminars"]
 images = [""]
 
@@ -36,50 +36,37 @@ Course material and exercises are available through a companion site. Feel free 
 
 # Previous
 
-- [Introduction to Matlab] (https://education.cadre.virginia.edu/#/workshop/1524)
-- [Introduction to the Command Line] (https://education.cadre.virginia.edu/#/workshop/1503)
-- [Introduction to Cloud Computing] (https://education.cadre.virginia.edu/#/workshop/1502)
-- [Introduction to R] (https://education.cadre.virginia.edu/#/workshop/1510)
-- [Introduction to Python] (https://education.cadre.virginia.edu/#/workshop/1523)
-- [Introduction to Highly-Sensitive Data Analysis (Ivy)] (https://education.cadre.virginia.edu/#/workshop/1501)
-- [Machine Learning with MatLab] (https://education.cadre.virginia.edu/#/workshop/1525)
-- [Conditionals and Iteration in R] (https://education.cadre.virginia.edu/#/workshop/1511)
-- [Introduction to Git and Github] (https://education.cadre.virginia.edu/#/workshop/1528)
-- [Data Visualization with Matlab] (https://education.cadre.virginia.edu/#/workshop/1520)
-- [Image Processing with Matlab] (https://education.cadre.virginia.edu/#/workshop/1519)
-- [Parallel Computing with Matlab] (https://education.cadre.virginia.edu/#/workshop/1526)
-- [Data Analysis & Visualization with Python] (https://education.cadre.virginia.edu/#/workshop/1527)
-- [Writing in Functions in R] (https://education.cadre.virginia.edu/#/workshop/1514)
-- [Advanced Computing in the Cloud] (https://education.cadre.virginia.edu/#/workshop/1507)
-- [Docker Containers for Scientific Research] (https://education.cadre.virginia.edu/#/workshop/1506)
-- [Introduction to High Performance Computing (Rivanna)] (https://education.cadre.virginia.edu/#/workshop/1504)
-- [Databases and How to Use Them] (https://education.cadre.virginia.edu/#/workshop/1505)
-- [R Package Development Tools] (https://education.cadre.virginia.edu/#/workshop/1512)
-- [Image Data Management with OMERO] (https://education.cadre.virginia.edu/#/workshop/1522)
-- [Analyzing 16s RNA Amplicons] (https://education.cadre.virginia.edu/#/workshop/1544)
-- [Optimizing R] (https://education.cadre.virginia.edu/#/workshop/1513)
-- [Next Generation Sequence Alignment] (https://education.cadre.virginia.edu/#/workshop/1534)
-- [Machine Learning in the Cloud] (https://education.cadre.virginia.edu/#/workshop/1508) -->
-- [Introduction to R](http://cal.hsl.virginia.edu/event/3540810)
-- [Introduction to Python](http://cal.hsl.virginia.edu/event/3542919)
-- [Introduction to the Command Line](http://cal.hsl.virginia.edu/event/3542973)
-- [Introduction to UVA Research Computing Resources](http://cal.hsl.virginia.edu/event/3543110) 
-- [Introduction to Python](http://cal.hsl.virginia.edu/event/3542985)
-- [Introduction to R](http://cal.hsl.virginia.edu/event/3542986) 
-- [Introduction to Ivy](http://cal.hsl.virginia.edu/event/3543023)
-- [Introduction to Rivanna](http://cal.hsl.virginia.edu/event/3543026)
-- [Introduction to Cloud](http://cal.hsl.virginia.edu/event/3543036) 
-- [Introduction to Git and Github](http://cal.hsl.virginia.edu/event/3546324)
-- [Advanced Data Manipulation in R](http://cal.hsl.virginia.edu/event/3543043)
-- [How to Work With Databases](http://cal.hsl.virginia.edu/event/3543075) 
-- [Introduction to Cloud](http://cal.hsl.virginia.edu/event/3543088) 
-- [R Package Development Tools](http://cal.hsl.virginia.edu/event/3543086)
-- [Introduction to Matlab](http://cal.hsl.virginia.edu/event/3543097)
-- [Introduction to Rivanna](http://cal.hsl.virginia.edu/event/3543174)
-- [Introduction to Docker Containers](http://cal.hsl.virginia.edu/event/3543093) 
-- [Building Shiny Web Applications in R](http://cal.hsl.virginia.edu/event/3066560)
-- [Advanced Data Visualization with R](http://cal.lib.virginia.edu/event/3027288)
-- [Advanced Data Manipulation with R](http://cal.hsl.virginia.edu/event/3066440)
-- [R For Beginners](http://cal.hsl.virginia.edu/event/3066390)
-- [Introduction to the Command Line](http://cal.hsl.virginia.edu/event/3066410)
-- [Introduction to Cloud Computing with AWS](http://cal.hsl.virginia.edu/event/3188800)
+- Advanced Computing in the Cloud
+- Advanced Data Manipulation with R
+- Advanced Data Visualization with R
+- Analyzing 16s RNA Amplicons
+- Building Shiny Web Applications in R
+- Conditionals and Iteration in R
+- Data Analysis & Visualization with Python
+- Data Visualization with Matlab
+- Databases and How to Use Them
+- Docker Containers for Scientific Research
+- How to Work With Databases
+- Image Data Management with OMERO
+- Image Processing with Matlab
+- Introduction to Cloud Computing
+- Introduction to Docker Containers
+- Introduction to Git and Github
+- Introduction to High Performance Computing (Rivanna)
+- Introduction to Highly-Sensitive Data Analysis (Ivy)
+- Introduction to Ivy
+- Introduction to Matlab
+- Introduction to Python
+- Introduction to R
+- Introduction to Rivanna
+- Introduction to the Command Line
+- Introduction to UVA Research Computing Resources
+- Machine Learning in the Cloud
+- Machine Learning with MatLab
+- Next Generation Sequence Alignment
+- Optimizing R
+- Parallel Computing with Matlab
+- R For Beginners
+- R Package Development Tools
+- R Package Development Tools
+- Writing in Functions in R
