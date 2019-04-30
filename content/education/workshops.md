@@ -54,7 +54,6 @@ Course material and exercises are available through a companion site. Feel free 
 - Introduction to Git and Github
 - Introduction to High Performance Computing (Rivanna)
 - Introduction to Highly-Sensitive Data Analysis (Ivy)
-- Introduction to Ivy
 - Introduction to Matlab
 - Introduction to Python
 - Introduction to R
@@ -67,6 +66,5 @@ Course material and exercises are available through a companion site. Feel free 
 - Optimizing R
 - Parallel Computing with Matlab
 - R For Beginners
-- R Package Development Tools
 - R Package Development Tools
 - Writing in Functions in R
