@@ -4,7 +4,7 @@ description = ""
 title = "Workshops"
 date = "2019-04-24T10:55:28-05:00"
 draft = false
-tags = ["R","Python","Shiny","Cloud","HPC","Rivanna","Ivy"]
+tags = ["R","python","shiny","cloud","HPC","Rivanna","Ivy"]
 categories = ["education", "workshops","seminars"]
 images = [""]
 
