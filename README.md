@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/uvasomrc/rc-website.svg?branch=master)](https://travis-ci.org/uvasomrc/rc-website)
 
-# SOM Research Computing Website
+# UVA Research Computing Website
 
-**Production URL:**
-https://somrc.virginia.edu/
+**Staging URL:**
+https://staging.rc.virginia.edu/
 
 ## Developing
 

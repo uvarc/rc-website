@@ -10,14 +10,14 @@ images = [""]
 
 +++
 
-<p class=lead>School of Medicine Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by SOMRC experts and are freely available to UVa faculty, staff and students.</p>
+<p class=lead>UVA Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by experts and are freely available to UVa faculty, staff and students.</p>
 
 <a href = "https://education.cadre.virginia.edu/"><img src="https://somrc.virginia.edu/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:104%; padding-left:25px; padding-bottom:10px;" /></a>
 
 - - - 
 
 # Register
-Register for SOMRC workshops through <a style="font-weight:bold;" href="https://education.cadre.virginia.edu/">CADRE Academy</a>, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site.
+Register for UVARC workshops through <a style="font-weight:bold;" href="https://education.cadre.virginia.edu/">CADRE Academy</a>, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site.
 
 - - -
 
@@ -34,7 +34,7 @@ Course material and exercises are available through a companion site. Feel free 
 <!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
 <a href="https://education.cadre.virginia.edu/" class="btn btn-warning" target="_new"> View All Upcoming Workshops on CADRE Academy </a>
 
-<!-- ## Spring 2018
+# Previous
 
 - [Introduction to Matlab] (https://education.cadre.virginia.edu/#/workshop/1524)
 - [Introduction to the Command Line] (https://education.cadre.virginia.edu/#/workshop/1503)
@@ -60,11 +60,6 @@ Course material and exercises are available through a companion site. Feel free 
 - [Optimizing R] (https://education.cadre.virginia.edu/#/workshop/1513)
 - [Next Generation Sequence Alignment] (https://education.cadre.virginia.edu/#/workshop/1534)
 - [Machine Learning in the Cloud] (https://education.cadre.virginia.edu/#/workshop/1508) -->
-
-# Previous
-
-## Fall 2017
-
 - [Introduction to R](http://cal.hsl.virginia.edu/event/3540810)
 - [Introduction to Python](http://cal.hsl.virginia.edu/event/3542919)
 - [Introduction to the Command Line](http://cal.hsl.virginia.edu/event/3542973)
@@ -82,9 +77,6 @@ Course material and exercises are available through a companion site. Feel free 
 - [Introduction to Matlab](http://cal.hsl.virginia.edu/event/3543097)
 - [Introduction to Rivanna](http://cal.hsl.virginia.edu/event/3543174)
 - [Introduction to Docker Containers](http://cal.hsl.virginia.edu/event/3543093) 
-
-## Spring 2017 
-
 - [Building Shiny Web Applications in R](http://cal.hsl.virginia.edu/event/3066560)
 - [Advanced Data Visualization with R](http://cal.lib.virginia.edu/event/3027288)
 - [Advanced Data Manipulation with R](http://cal.hsl.virginia.edu/event/3066440)

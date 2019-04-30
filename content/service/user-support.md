@@ -24,7 +24,7 @@ UVARC delivers the services above in the context of system support (web-based ti
 
 # System Support
 
-Whether you are interested in local computing resources ([Rivanna](http://arcs.virginia.edu/rivanna), [Ivy](/userinfo/ivy/)) or cloud solutions ([Amazon Web Services](/service/cloud/)), SOMRC can help you effectively implement computational strategies.
+Whether you are interested in local computing resources ([Rivanna](http://arcs.virginia.edu/rivanna), [Ivy](/userinfo/ivy/)) or cloud solutions ([Amazon Web Services](/service/cloud/)), Research Computing can help you effectively implement computational strategies.
 
 <a href="http://cadre.virginia.edu/need-help" target="_new">
 <button class="btn btn-warning">System Support Ticket</button>
