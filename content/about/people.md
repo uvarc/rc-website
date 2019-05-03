@@ -1,13 +1,13 @@
 +++
 tags = [
-  "somrc",
+  "uvarc",
   "staff",
 ]
 draft = false
-date = "2017-01-17T15:25:10-05:00"
+date = "2019-04-17T15:25:10-05:00"
 title = "Staff"
 description = ""
-author = "SOMRC Staff"
+author = "Staff"
 images = [
   ""
 ]
@@ -18,7 +18,6 @@ categories = [
 
 +++
 
-<!-- Two columns of text below the carousel -->
 <div class="row">
 
   <div class="col-lg-6">
@@ -38,7 +37,7 @@ categories = [
     <p><b>Full Stack Developer</b> <br />Ravi designs, develops and maintains various software solutions ranging from web applicatipns, master database management, middleware and sofware integrations/orchestrations. He specializes in designing and developing enterprise-wide data driven software solutions and has previously worked for Automotive, Higher Education, Financial, Environmental Research and Telecom industries. He has wide range of industry experience designing and devloping software applications using Python and Java technologies</p>
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
-    <img class="rounded-circle" src="https://t4.rbxcdn.com/74d87e9ecb19c7f8562f1249695897c7" alt="Michele Co" width="140" height="140">
+    <img class="rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-2.png" alt="Michele Co" width="140" height="140">
     <h2>Michele Co, PhD</h2>
     <p><b>HPC Systems Specialist</b><br /></p>
   </div><!-- /.col-lg-6 -->
@@ -100,10 +99,17 @@ categories = [
   </div><!-- /.col-lg-6 -->
 
   <div class="col-lg-6">
+    <img class="rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-2.png" alt="Alex Ptak" width="140" height="140">
+    <h2>Alex Ptak</h2>
+    <p><b>HPC Systems Specialist</b><br /></p>
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
     <img class="rounded-circle" src="/images/profile_karsten_siller.png" alt="Karsten Siller" width="140" height="140">
     <h2>Karsten Siller, PhD</h2>
     <p><b>Computational Research Consultant</b><br />Karsten received his doctorate degree in Biology from the University of Tuebingen, Germany. His research has been focused on genetic programs and cellular mechanisms that drive nervous system development. After working for a bioinstrumentation company where he provided hardware and software support for automated light microscopy and image processing, Karsten joined UVA's Biology Department in 2013. As an UVARC computational research consultant, Karsten specializes in bioinformatics computational tools.</p>
   </div><!-- /.col-lg-6 -->
+
+
   <div class="col-lg-6">
     <img class="rounded-circle" src="/images/profile_alden_stradling.png" alt="Alden Stradling" width="140" height="140">
     <h2>Alden Stradling, PhD</h2>
