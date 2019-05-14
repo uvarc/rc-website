@@ -1,8 +1,8 @@
 +++
-author = "SOMRC Staff"
+author = "UVARC Staff"
 description = ""
 title = "Storage for Researchers"
-date = "2017-04-18T10:08:29-05:00"
+date = "2019-04-18T10:08:29-05:00"
 draft = false
 tags = ["storage","rivanna","swift","osf","lustre","backup","s3"]
 categories = ["userinfo"]
@@ -23,19 +23,6 @@ images = [""]
     <a href="/userinfo/storage/large-scale-storage" class="card-link"><button class="btn btn-warning">Learn more</button></a>
   </div>
 </div>
-</div>
-
-<br>
-
-<div class = "card-group">
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Commercial Data Sharing and Archiving Solutions</h4>
-        <p class="card-text">
-        There are a number of commercially licensed tools available to UVa researchers for free. These products, including UVa Box, Dropbox (Health System) and CrashPlan, are most suitable for small-scale storage needs.</p>
-      <a href="/userinfo/storage/personal-computing" class="card-link"><button class="btn btn-warning">Learn more</button></a>
-    </div>
-  </div>
 </div>
 
 <br>
@@ -64,4 +51,19 @@ images = [""]
     <a href="http://its.virginia.edu/hosting/storage/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
   </div>
 </div>
+</div>
+
+<br>
+
+<div class = "card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Commercial Data Sharing and Archiving Solutions</h4>
+        <p class="card-text">
+        There are a number of commercially licensed tools available to UVa researchers for free. These products, including UVa Box, Dropbox (Health System) and CrashPlan, are most suitable for small-scale storage needs.</p>
+      <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=13f08053db7ac744f032f1f51d9619da" class="card-link" target="_new"><button class="btn btn-warning">Box</button></a>
+      <a href="https://med.virginia.edu/med-ed-tech/for-students-2/general-tech/secure-storage/" class="card-link" target="_new"><button class="btn btn-warning">Dropbox (HS Only)</button></a>
+      <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=3e70bf30db851bc4f032f1f51d9619ca" class="card-link" target="_new"><button class="btn btn-warning">CrashPlan</button></a>
+    </div>
+  </div>
 </div>
