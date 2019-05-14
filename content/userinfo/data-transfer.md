@@ -17,7 +17,7 @@ draft = false
 
 # Use Cases
 
-<p>The data transfer method you choose heavily relies on where the data are currently located and to where you want to transfer the data. Click on a row in the table below to learn more about the data transfer methods available for a specific use case.</p>
+The data transfer method you choose heavily relies on where the data are currently located and to where you want to transfer the data. Click on a row in the table below to learn more about the data transfer methods available for a specific use case.
 
 <div>
 <table class="table table-hover">
@@ -45,10 +45,11 @@ draft = false
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
-					<li>A research scientist wants to copy data from her lab workstation to her lab's /project storage share.</li>
+					<li>A research scientist wants to copy data from her lab workstation to her lab's <code>/project</code> storage share.</li>
 					<br>
-					<li>A graduate student needs to copy scripts he wrote to his /scratch directory on Rivanna.</li>
+					<li>A graduate student needs to copy scripts he wrote to his <code>/scratch</code> directory on Rivanna.</li>
 				</ul>
+				<span style="float:right;font-size:85%;margin-bottom:-8px;margin-right:-4px;"><i class="fas fa-angle-double-down"></i> Expand</span>
 			</td>
 		</tr>
 		<tr id="accordion1" class="collapse">
@@ -67,6 +68,7 @@ draft = false
 					<li><a href="/userinfo/storage/non-sensitive-data/#project/">/project</a></li>
 					<li><a href="/userinfo/storage/research-value/">Value Storage</a></li>
 				</ul>
+				
 			</td>
 			<td>
 				<p align="center"><b>Data Transfer Methods</b></p>
@@ -92,6 +94,8 @@ draft = false
 				<ul>
 					<li>A clinician wants to transfer HIPAA data from his Health Systems workstation to Ivy Central Storage.</li>
 				</ul>
+				<p>&nbsp;</p>
+				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
 			</td>
 		</tr>
 		<tr id="accordion2" class="collapse">
@@ -129,10 +133,11 @@ draft = false
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
-					<li>An undergraduate student needs to move results from his /home directory on Rivanna to his personal laptop.</li>
+					<li>An undergraduate student needs to move results from his <code>/home</code> directory on Rivanna to his personal laptop.</li>
 					<br>
 					<li>A postdoc wants to copy imaging data from Research Value storage to her lab workstation.</li>
 				</ul>
+				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
 			</td>
 		</tr>
 		<tr id="accordion3" class="collapse">
@@ -178,6 +183,7 @@ draft = false
 					<br>
 					<li>A researcher needs to transfer results from the analysis he ran using ORNL's Titan supercomputer.</li>
 				</ul>
+				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
 			</td>
 		</tr>
 		<tr id="accordion4" class="collapse">
