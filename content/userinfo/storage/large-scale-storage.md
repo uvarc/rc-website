@@ -2,7 +2,7 @@
 author = "SOMRC Staff"
 description = ""
 title = "Large-Scale Research Data Storage"
-date = "2018-04-19T10:08:29-05:00"
+date = "2019-05-12T10:08:29-05:00"
 draft = false
 tags = ["storage","large scale"]
 categories = ["userinfo"]
@@ -100,15 +100,6 @@ images = [""]
 		<td class="tg-hy9w"></td> -->
 		<td class="tg-hy9w">Ivy virtual machine</td>
 		<td class="tg-hy9w">VM Storage is suitable for storing executables and jobs that require higher I/O performance than that provided by ICS.</td>
-	</tr>
-	<tr>
-		<td class="tg-dc35"><a href="/userinfo/storage/sensitive-data/#ddl-storage">DDL Storage</a></td>
-		<td class="tg-dc35">500GB per project</td>
-		<td class="tg-dc35">Currently free, price TBD</td>
-		<!-- <td class="tg-dc35"></td>
-		<td class="tg-dc35"></td> -->
-		<td class="tg-dc35">Domino Data Lab</td>
-		<td class="tg-dc35">This storage type is available for data science projects managed with Domino Data Lab.</td>
 	</tr>
 </table>
 </div>
