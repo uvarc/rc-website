@@ -1,11 +1,11 @@
 +++
 title = "Quick Start"
 description = ""
-author = "SOMRC Staff"
+author = "UVARC Staff"
 images = [
   "",
 ]
-date = "2017-08-29T09:55:56-05:00"
+date = "2019-04-29T09:55:56-05:00"
 categories = [
   "userinfo",
 ]
@@ -26,10 +26,10 @@ draft = false
     <div class="card-block">
       <h4 class="card-title">User Support</h4>
         <p class="card-text">
-        School of Medicine Research Computing (SOMRC) is committed to providing individualized support for researchers who are engaged in computationally intensive projects.<br />
+        UVA Research Computing (UVARC) is committed to providing individualized support for researchers who are engaged in computationally intensive projects.<br />
         We offer support in a variety of contexts:
         <ul>
-          <li>Support tickets in ZenDesk
+          <li>Support tickets
           <li>Documentation & FAQs
           <li>Weekly Office Hours
           <li>Hands-On Workshops
@@ -48,7 +48,7 @@ draft = false
     <div class="card-block">
       <h4 class="card-title">Services</h4>
         <p class="card-text">
-        SOMRC has expertise in the following service areas. Click on an area for more information:
+        UVARC has expertise in the following service areas. Click on an area for more information:
         </p>
           <ul>
             <li><a href="/service/bioinformatics/">Bioinformatics & Genomics</a>
@@ -56,6 +56,7 @@ draft = false
             <li><a href="/service/data-analysis/">Data Analysis</a>
             <li><a href="/service/imaging/">Image Processing</a>
             <li><a href="/service/scientific-computing/">Scientific Computing</a>
+            <li><a href="/service/scientific-computing/">. . .</a>
           </ul>
       <a href="/service/consult/" class="card-link"><button class="btn btn-warning">Request a Consultation</button></a>
     </div>
