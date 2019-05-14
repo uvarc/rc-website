@@ -5,8 +5,8 @@ description = ""
 date = "2018-06-06T15:18:25-05:00"
 title = "LOLAweb"
 draft = false
-tags = ["projects","lolaweb","feature"]
-categories = ["feature"]
+tags = ["projects","lolaweb"]
+categories = ["post"]
 
 +++
 

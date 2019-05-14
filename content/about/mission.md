@@ -1,21 +1,22 @@
 +++
 tags = [
-  "som",
   "rc",
+  "hpc",
+  "data",
+  "storage",
   "medicine",
   "research",
-  "xsede",
   "cadre",
 ]
 draft = false
 date = "2017-01-15T14:53:45-05:00"
 title = "Mission"
 about = true
-author = "SOMRC Staff"
+author = "UVARC Staff"
 images = [
   "/2016/10/image.jpg",
 ]
-description = "The mission of SOM research computing"
+description = "The mission of UVA Research Computing"
 categories = [
   "about",
 ]
@@ -23,7 +24,6 @@ categories = [
 +++
 
 <p class=lead>
-UVA School of Medicine Research Computing is a new program that aims to support computational biomedical research by providing advanced cyberinfrastructure and expertise in data analysis at scale. Our mission is to foster a culture of computational thinking and promote interdisciplinary collaboration in various data-driven research domains. We offer services related to high performance computing, cloud architecture, scientific programming and big data solutions. We also aim to promote computationally intensive research at UVA through collaborative efforts such as CADRE (Computation And Data Resource Exchange) and XSEDE (Extreme Science and Engineering Discovery Environment).
-</p>
+Research Computing is a support team at the University of Virginia whose mission is to empower researchers to achieve more through the use of cutting-edge computational resources. We strive to create innovative solutions for researchers who need help solving complex optimization, parallelization, workflow, and data analysis issues. Our strategy is to build and maintain the University's best computing platforms while educating the next generation of researchers on the power and utility of advanced computing.</p>
 
 <div style="height:400px;"></div>
