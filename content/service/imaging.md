@@ -10,10 +10,10 @@ tags = [
   "omero",
 ]
 draft = false
-date = "2018-01-26T14:18:18-05:00"
+date = "2019-04-26T14:18:18-05:00"
 title = "Image Processing"
 description = ""
-author = "SOMRC Staff"
+author = "UVARC Staff"
 images = [""]
 
 +++
@@ -84,7 +84,7 @@ Depending on the amount of data you have, running automatic image processing pip
 
 # Consulting
 
-SOM Research Computing has experience with image processing and developing pipelines to expedite processing for large datasets. If you have an image processing project and would like to discuss potential solutions and implementation, SOM Research Computing is available for consultation. 
+Research Computing staff have experience with image processing and developing pipelines to expedite processing for large datasets. If you have an image processing project and would like to discuss potential solutions and implementation, we are available for consultation. 
 
 [<button class="btn btn-primary">Request a Consultation</button>](/service/consult/)
 
@@ -94,7 +94,7 @@ SOM Research Computing has experience with image processing and developing pipel
 
 # Training
 
-SOM Research Computing offers interactive workshops for learning image processing and data management techniques. To learn more and register for workshops, please visit the CADRE Academy education platform.
+Research Computing offers interactive workshops for learning image processing and data management techniques. To learn more and register for workshops, please visit the CADRE Academy education platform.
 
 [<button class="btn btn-primary">Find a Workshop</button>](/education/workshops/)
 
