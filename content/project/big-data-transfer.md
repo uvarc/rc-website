@@ -1,8 +1,8 @@
 +++
 title = "Moving Big Data"
 description = ""
-date = "2017-05-08T14:33:50-05:00"
-author = "SOMRC Staff"
+date = "2018-05-08T14:33:50-05:00"
+author = "UVARC Staff"
 images = "/images/projects/globus-workflow.png"
 categories = ["projects"]
 tags = [
@@ -15,7 +15,7 @@ draft = false
 projecttype = ["tools"]
 +++
 
-School of Medicine Research Computing works with researchers in the UVA [Center for Public Health Genomics](https://med.virginia.edu/cphg/), 
+Research Computing works with researchers in the UVA [Center for Public Health Genomics](https://med.virginia.edu/cphg/), 
 to transfer large genomics datasets from partner institutions. Using Globus, an asynchronous data transfer
 utility (created at Argonne Laboratory and based on GridFTP), transfers of data larger than 40TB has been
 made easier and more reliable.
@@ -27,7 +27,7 @@ In practical terms, Globus allows users to queue large files for transfer betwee
 Transfer is attempted for up to 24 hours, and you are notified upon completion or failure of the request. Globus can be used via
 a web browser, command-line utility, or a Python SDK.
 
-Learn more about [Globus](https://www.globus.org/).
+[Learn more about Globus](https://www.globus.org/).
 
-UVA has Globus Data Transfer Nodes (DTNs) for both insecure and secure data. Researchers can learn more specifics about Globus and 
+UVA has Globus Data Transfer Nodes (DTNs) for both normal and highly-sensitive data. Researchers can learn more specifics about Globus and 
 how to use it by visiting our [Globus documentation on Discourse](https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345).
