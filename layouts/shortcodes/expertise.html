@@ -1,0 +1,6 @@
+{{ $subjects := .Get "subjects" }}
+{{ $subj := split $subjects "," }}
+
+{{ range first 6 ( sort $subj ) }}
+  <a style="text-decoration:none;" href="/tags/{{ . }}"><span class="expertise">{{ . }}</span></a>
+{{ end }}

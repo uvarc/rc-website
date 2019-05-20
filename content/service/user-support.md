@@ -4,7 +4,7 @@ author = "SOMRC Staff"
 description = ""
 title = "User Support"
 draft = false
-tags = ["computing","cloud","data","bioinformatics","image-processing","data-analysis","hpc","storage","rivanna"]
+tags = ["computing","cloud","data","image-processing","data-analysis","hpc","storage","rivanna","data-science"]
 categories = ["support"]
 date = "2019-04-27T12:04:58-05:00"
 

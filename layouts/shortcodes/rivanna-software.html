@@ -2,20 +2,16 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Module</th>
-      <th scope="col">Version</th>
-      <th scope="col">Tag</th>
       <th scope="col">Description</th>
     </tr>
   </thead>
   <tbody>
-  {{ $urlPre := "https://staging.rc.virginia.edu" }}
-  {{ $gistJ := getJSON $urlPre "/data/rivanna-software.json" }}
-  {{ range first 500 $gistJ }}
+  {{ $urlPre := "https://rci.hpc.virginia.edu" }}
+  {{ $gistJ := getJSON $urlPre "/public/rivanna-software.json" }}
+  {{ range sort $gistJ "package" "asc" }}
       <tr>
-        <td>{{ .Module }}</td>
-        <td>{{ .Version }}</td>
-        <td>{{ .Tag }}</td>
-        <td>{{ .Description }}</td>
+        <td><a target="_new" href="https://discuss.rc.virginia.edu/{{ .package }}">{{ .package }}</a></td>
+        <td>{{ .description }}</td>
       </tr>
   {{ end }}
   </tbody>
