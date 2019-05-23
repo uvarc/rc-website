@@ -2,5 +2,6 @@
 {{ $subj := split $subjects "," }}
 
 {{ range first 6 ( sort $subj ) }}
-  <a style="text-decoration:none;" href="/tags/{{ . }}"><span class="expertise">{{ . }}</span></a>
+  <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
+ {{ $.Page.Scratch.Add "subjs" . }}
 {{ end }}

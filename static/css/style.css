@@ -174,7 +174,7 @@ h6 .dropdown-header {
 .fa-folder a {color: #E57200;}
 .fa-tag a {color: #E57200;}
  
-.expertise {font-size:85%;padding-left:5px;padding-right:5px;padding-top:3px;padding-bottom:3px;border:solid 1px #ccc;background-color:#eee;margin-right:4px;text-decoration:none;color:black;line-height:2rem;}
+.expertise {font-size:85%;padding-left:5px;padding-right:5px;padding-top:3px;padding-bottom:3px;border:solid 1px orange;background-color:white;margin-right:2px;text-decoration:none;color:orange;font-weight:normal;line-height:2rem;}
 .expertise a {text-decoration:none;color:black;}
 
 code,kbd,pre,samp{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}

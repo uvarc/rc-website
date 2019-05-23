@@ -1,0 +1,8 @@
+{{ with .Parent }}
+  {{ $all_subjs := .Scratch.Get "subjs" }}
+  {{ range first 100 ( sort $all_subjs ) }}
+    <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
+  {{ end }}
+
+  
+{{ end }}
