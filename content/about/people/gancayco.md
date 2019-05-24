@@ -7,7 +7,7 @@ lastname = "gancayco"
 type = "people"
 author = "UVARC Staff"
 images = [
-  ""
+  "https://avatars0.githubusercontent.com/u/17575107"
 ]
 subjects = [
   "matlab",
@@ -18,4 +18,4 @@ subjects = [
 ]
 +++
 
-This is where everything Christina goes.
+Christina collaborates with researchers on image processing and imaging data management projects. Prior to joining SOM research computing, Christina performed brain imaging research at the UVa Department of Radiology and Medical Imaging. She specializes in Matlab programming and is interested in machine learning projects.
