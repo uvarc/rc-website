@@ -5,10 +5,9 @@ title = "Christina Gancayco"
 job_title = "Research Computing Associate"
 lastname = "gancayco"
 type = "people"
+email = "cag3fr@virginia.edu"
 author = "UVARC Staff"
-images = [
-  "https://avatars0.githubusercontent.com/u/17575107"
-]
+image = "https://avatars0.githubusercontent.com/u/17575107"
 subjects = [
   "matlab",
   "image-processing",

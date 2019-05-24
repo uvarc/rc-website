@@ -2,12 +2,30 @@
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
-<article class="blog-post">
+<article class="blog-post" style="width:70%;">
   <header>
-    <h2 style="margin-bottom:2rem;" class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+    <img src="{{ .Params.image }}" alt="{{ .Title }}" class="rounded-circle" width="140" height="140">
+    <h2 style="margin-bottom:2rem;"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
   </header>
+
+  <h5>{{ .Params.job_title }}</h5>
   
+  {{ if (not (isset .Params "email")) | or (eq .Params.email "") }}
+    <span></span>
+  {{ else }}
+    <div style="margin-top:2rem;">Email: <a href="mailto:{{ .Params.email }}" style="font-weight:bold;">{{ .Params.email }}</a></div>
+  {{ end }}
+
+  <hr size=1 />
+
   {{ .Content }}
+
+  <hr size=1 />
+
+  {{ $subjects := .Params.subjects }}
+  {{ range first 6 ( sort $subjects ) }}
+    <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
+  {{ end }}
 
 </article> <!-- /.blog-post -->
 
