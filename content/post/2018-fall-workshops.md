@@ -4,7 +4,7 @@ author = "SOMRC Staff"
 description = ""
 date = "2018-09-02T15:18:25-05:00"
 title = "Fall 2018 Workshops"
-draft = false
+draft = true
 tags = ["education","workshops","feature"]
 categories = ["feature"]
 

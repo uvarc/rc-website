@@ -1,6 +1,6 @@
 +++
 images = [""]
-author = "SOMRC Staff"
+author = "Staff"
 description = ""
 date = "2018-06-06T15:18:25-05:00"
 title = "LOLAweb"

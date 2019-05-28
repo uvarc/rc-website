@@ -1,13 +1,15 @@
 +++
 images = [""]
-author = "SOMRC Staff"
+author = "Staff"
 description = ""
 title = "What is Research Computing?"
 date = "2017-04-19T10:26:34-05:00"
 draft = false
 tags = [
-  "somrc",
   "rc",
+  "hpc",
+  "rivanna",
+  "ivy",
   "cloud",
   "xsede",
   "cadre",
