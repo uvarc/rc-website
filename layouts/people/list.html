@@ -41,7 +41,7 @@
   </thead>
   <tbody>
 
-    {{ range .Pages.ByTitle }}
+    {{ range (.Pages.ByParam "lastname") }}
 
         <tr>
           <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th>
