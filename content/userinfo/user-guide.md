@@ -71,7 +71,7 @@ quell_footer = true
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-image fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
-      <h4 class="card-title">Image Processing</h4>
+      <h4 class="card-title">Image Analysis</h4>
       <p class="card-text">Do you have a large imaging dataset to process? Do you want to automate your image processing pipeline? Learn more about tools and techniques to speed up your workflow. 
       </p>
       <br clear=all />
