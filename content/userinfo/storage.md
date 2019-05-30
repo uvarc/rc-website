@@ -1,69 +1,105 @@
 +++
-author = "UVARC Staff"
+author = "Staff"
 description = ""
-title = "Storage for Researchers"
-date = "2019-04-18T10:08:29-05:00"
+title = "Research Data Storage"
+date = "2019-05-12T10:08:29-05:00"
 draft = false
-tags = ["storage","rivanna","swift","osf","lustre","backup","s3"]
+tags = ["storage","large scale","cloud","ivy","rivanna","project"]
 categories = ["userinfo"]
 images = [""]
 +++
 
-<p class=lead>UVA Research Computing provides multi-tiered storage solutions for your data. From small-scale personal computing options to high-performance parallel file systems for serious computational runs, various systems are available to researchers.</p>
 
+<p class="lead">There are a variety of options for storing large-scale research data at UVa. Non-sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/">Rivanna</a> high performance computing system. Sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment.</p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:0px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-hy9w{background-color:#eceeef;border-color:inherit;vertical-align:top}
+.tg .tg-dc35{background-color:#f9f9f9;border-color:inherit;vertical-align:top}
+.tg .tg-0qmj{font-weight:bold;background-color:#eceeef;border-color:inherit;vertical-align:top}
+</style>
+<div>
+<h3>Non-Sensitive Data Storage</h3>
+<table class="tg">
+  <tr>
+    <th class="tg-0qmj">Name</th>
+    <th class="tg-0qmj">Quota</th>
+    <th class="tg-0qmj">Price</th>
+    <th class="tg-0qmj">Data Protection</th>
+    <!-- <th class="tg-0qmj">File system</th> -->
+    <th class="tg-0qmj">Accessible from</th>
+    <th class="tg-0qmj">Best Practices</th>
+  </tr>
+  <tr>
+    <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#home"><code>/home</code></a></td>
+    <td class="tg-dc35">50GB</td>
+    <td class="tg-dc35">Free</td>
+    <td class="tg-dc35">3-week snapshot</td>
+    <!-- <td class="tg-dc35">NFS</td> -->
+    <td class="tg-dc35">Rivanna login and compute nodes</td>
+    <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna interactively. SLURM jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>.</td>
+  </tr>
+  <tr>
+    <td class="tg-hy9w"><a href="/userinfo/storage/non-sensitive-data/#scratch"><code>/scratch</code></a></td>
+    <td class="tg-hy9w">10TB</td>
+    <td class="tg-hy9w">Free</td>
+    <td class="tg-hy9w">Data removed 60 days after last file modification timestamp</td>
+    <!-- <td class="tg-hy9w">Lustre</td> -->
+    <td class="tg-hy9w">Rivanna login and compute nodes</td>
+    <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage.</td>
+  </tr>
+  <tr>
+    <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#project"><code>/project</code></a></td> 
+    <td class="tg-dc35">Available in 1TB increments</td>
+    <td class="tg-dc35">$90/TB/Yr</td>
+    <td class="tg-dc35">3-week snapshot</td>
+    <!-- <td class="tg-dc35">NFS</td> -->
+    <td class="tg-dc35">Rivanna login and compute nodes</td>
+    <td class="tg-dc35"><code>/project</code>is ideal for long-term storage of data that can be accessed from Rivanna. <code>/project</code> is ideal for running jobs with smaller files.</td>
+  </tr>
+  <tr>
+    <td class="tg-hy9w"><a href="/userinfo/storage/research-value">Value Storage</a></td>  
+    <td class="tg-hy9w">Available in 1TB increments</td>
+    <td class="tg-hy9w">$45/TB/Yr</td>
+    <td class="tg-hy9w">No backup</td>
+    <!-- <td class="tg-hy9w">Proprietary</td> -->
+    <td class="tg-hy9w">Rivanna login and compute nodes, SMB mount</td>
+    <td class="tg-hy9w">Research value storage budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
+  </tr>
+</table>
+</div>
 <br>
 
-<div class = "card-group">
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">Large-Scale Research Data Storage</h4>
-        <p class="card-text">
-        UVa offers a number of institutional solutions for storing and managing large-scale research data. Each of these can serve different use-cases depending on budget and archival needs. All of these systems are mounted and visible to local high-performance computing resources.
-        </p>
-    <a href="/userinfo/storage/large-scale-storage" class="card-link"><button class="btn btn-warning">Learn more</button></a>
-  </div>
-</div>
-</div>
-
-<br>
-
-<div class = "card-group">
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Cloud Storage Solutions</h4>
-        <p class="card-text">
-        Long-term and high-capacity storage solutions are also available in Amazon Web Services and Google Cloud Platform. Both provide object storage for files of any type, and low-cost archival storage (comparable to tape backups).
-        </p>
-      <a href="/userinfo/storage/cloud/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
-    </div>
-  </div>
-</div>
-
-<br>
-
-<div class = "card-group">
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">Non-Research (Enterprise) Data Storage</h4>
-    <p class="card-text">
-    UVa ITS provides a tiered catalog of data storage options for data not intended to be analyzed in research projects. Examples of appropriate data could include administrative records or departmental information.	
-    </p>
-    <a href="http://its.virginia.edu/hosting/storage/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
-  </div>
-</div>
-</div>
-
-<br>
-
-<div class = "card-group">
-  <div class="card">
-    <div class="card-block">
-      <h4 class="card-title">Commercial Data Sharing and Archiving Solutions</h4>
-        <p class="card-text">
-        There are a number of commercially licensed tools available to UVa researchers for free. These products, including UVa Box, Dropbox (Health System) and CrashPlan, are most suitable for small-scale storage needs.</p>
-      <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=13f08053db7ac744f032f1f51d9619da" class="card-link" target="_new"><button class="btn btn-warning">Box</button></a>
-      <a href="https://med.virginia.edu/med-ed-tech/for-students-2/general-tech/secure-storage/" class="card-link" target="_new"><button class="btn btn-warning">Dropbox (HS Only)</button></a>
-      <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=3e70bf30db851bc4f032f1f51d9619ca" class="card-link" target="_new"><button class="btn btn-warning">CrashPlan</button></a>
-    </div>
-  </div>
+<div>
+<h3>Sensitive Data Storage</h3>
+<table class="tg">
+	<tr>
+		<th class="tg-0qmj">Name</th>
+		<th class="tg-0qmj">Quota</th>
+		<th class="tg-0qmj">Price</th>
+		<!--<th class="tg-0qmj">Data Protection</th>
+		<th class="tg-0qmj">File System</th> -->
+		<th class="tg-0qmj">Mounted On</th>
+		<th class="tg-0qmj">Best Practices</th>
+	</tr>
+	<tr>
+		<td class="tg-dc35"><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></td>
+		<td class="tg-dc35">Available in 1TB increments</td>
+		<td class="tg-dc35">First TB is free, price for additional space TBD</td>
+		<!-- <td class="tg-dc35">No backup</td>
+		<td class="tg-dc35"></td> -->
+		<td class="tg-dc35">Ivy virtual machine</td>
+		<td class="tg-dc35">ICS is ideal for long-term storage of sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
+	</tr>
+	<tr>
+		<td class="tg-hy9w"><a href="/userinfo/storage/sensitive-data/#vm-storage">VM Storage</a></td>
+		<td class="tg-hy9w">Available in 1TB increments</td>
+		<td class="tg-hy9w">First TB is free, price for additional space TBD</td>
+		<!-- <td class="tg-hy9w">No backup</td>
+		<td class="tg-hy9w"></td> -->
+		<td class="tg-hy9w">Ivy virtual machine</td>
+		<td class="tg-hy9w">VM Storage is suitable for storing executables and jobs that require higher I/O performance than that provided by ICS.</td>
+	</tr>
+</table>
 </div>
