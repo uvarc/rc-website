@@ -1,0 +1,37 @@
+<script>
+    function getToolchain(parent) {
+        return parent
+    }
+</script>
+
+
+<table class="table table-striped" id="versionTable">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Version</th>
+      <th scope="col">Module Load Command</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{ $urlPre := "https://rci.hpc.virginia.edu" }}
+  {{ $gistJ := getJSON $urlPre "/public/rivanna-software.json" }}
+  {{ range $gistJ }}
+     {{ if eq (.package) $.Page.Params.modulename }}
+        {{ range sort .versions "full" "asc" }}
+           <tr>
+               <td>{{ delimit (last 1 (split .full "/")) "" }}</td>
+               <td>
+                 {{ "module load" }}
+                 {{ range .parent }}
+                     {{ if not (in . "/.") }}
+                         {{ replace (strings.TrimLeft "default:" . ) ":" " " }}
+                     {{ end }}
+                 {{ end }}
+                 {{ .full }}
+               </td>
+           </tr>
+        {{ end }}
+      {{ end }}
+  {{ end }}
+  </tbody>
+</table>

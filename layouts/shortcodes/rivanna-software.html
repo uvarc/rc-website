@@ -1,19 +1,53 @@
-<table class="table table-striped">
+<script>
+function searchFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("moduleTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = (td.textContent || td.innerText);
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+
+<input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search for software...">
+
+<table class="table table-striped" id="moduleTable">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Module</th>
+      <th scope="col">Category</th>
       <th scope="col">Description</th>
     </tr>
   </thead>
   <tbody>
   {{ $urlPre := "https://rci.hpc.virginia.edu" }}
   {{ $gistJ := getJSON $urlPre "/public/rivanna-software.json" }}
+  {{ $tags := .Get "tags" }}
+  {{ $showhidden := .Get "showhidden" }}
   {{ range sort $gistJ "package" "asc" }}
-      <tr>
-        <td><a target="_new" href="https://discuss.rc.virginia.edu/{{ .package }}">{{ .package }}</a></td>
-        <td>{{ .description }}</td>
-      </tr>
+      {{ $ishidden := eq "." (substr (index (split (index .versions 0).full "/") 1) 0 1)  }}
+      {{ $tag := index (split (delimit (last 1 (split (index .versions 0).help "Application class: ")) " ") "\n") 0 }}
+      {{ if and (or $showhidden (not $ishidden)) (or (eq "all" $tags) (and (ne "" $tag) (in (slice $tags ",") $tag))) }}
+        <tr>
+          <td><a target="_new" href="../{{ .package }}">{{ .package }}</a></td>
+          <td>{{ $tag }}
+          <td>{{ .description }}</td>
+        </tr>
+      {{ end }}
   {{ end }}
   </tbody>
 </table>
-
