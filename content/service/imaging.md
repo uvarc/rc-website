@@ -1,28 +1,40 @@
-+++
-categories = [
-  "services",
-]
-tags = [
-  "image-processing",
-  "hpc",
-  "services",
-  "matlab",
-  "omero",
-]
-draft = false
-date = "2019-04-26T14:18:18-05:00"
-title = "Image Processing"
-description = ""
-author = "UVARC Staff"
-images = [""]
+---
+title: "Image Processing and Data Visualization"
+author: "Christina Gancayco"
+date: 2019-06-24T11:13:14-05:00
+draft: false
 
-+++
+toc: true
+---
 
-<p class=lead>Automatic image processing allows researchers to perform their work faster for large quantities of data. From image denoising to registration to segmentation, SOM Research Computing can help researchers utilize image processing tools to streamline their analyses.</p>
+<p class="lead">
+<b>Image Processing</b> and <b>Scientific Visualization</b> are two separate processes 
+within the scientific research lifecycle, yet the two concepts often play off of one 
+another. Image processing refers to the enhancement and transformation of images to 
+prepare them for quantitative analysis. Scientific visualization is the graphical communication 
+of data so that trends and anomalies can be more easily recognized. UVa Research Computing 
+offers many services and resources to help researchers augment their work with image 
+processing and scientific visualization techniques.
+</p>
 
-<hr size=1 style="padding-bottom:10px;" />
+# Image Processing
 
-# Applications for Researchers
+## Overview
+
+Image processing encompasses a variety of techniques to prepare images for analysis. 
+Researchers often need to remove noise artifacts from their imaging data, or they need to 
+analyze particular regions of interest. While manual image manipulation can easily yield 
+the desired results, this can be time-consuming or even impossible with the amount of data 
+we are able to collect with high throughput screening. By automating image processing steps 
+such as noise filtering and segmentation, researchers are able to perform their work faster 
+and for larger quantities of data.
+
+## Common Image Processing Techniques
+
+The following techniques are commonly employed in imaging research. All of these processes 
+can be automated and run locally on your computer or on Rivanna, UVa's high performance 
+computing (HPC) cluster. With the parallelization capabilities of HPC, it is possible to 
+fully process and analyze a large imaging data set in a few hours or less!
 
 <table class="table table-striped">
 	<tbody>
@@ -60,42 +72,130 @@ images = [""]
 	</tbody>
 </table>
 
-<hr size=1 style="padding-bottom:10px;" />
+## Popular Software
 
-# Commonly Used Software
+* **ImageJ/Fiji** - ImageJ is a Java-based image processing program developed at the NIH. 
+ImageJ can be used interactively through a graphical user interface or automatically with 
+Java. Fiji is ImageJ with common plugins pre-installed for scientific image analysis.
 
-* **ImageJ/Fiji** - ImageJ is a Java-based image processing program developed at the NIH. ImageJ can be used interactively through a graphical user interface or automatically with Java. Fiji is ImageJ with common plugins pre-installed for scientific image analysis.
+* **MATLAB** - Matlab is a numerical computing environment with its own proprietary 
+programming language. Matlab provides an extensive Image Processing Toolbox for with 
+built-in functions for image registration, segmentation, and analysis.
 
-* **MATLAB** - Matlab is a numerical computing environment with its own proprietary programming language. Matlab provides an extensive Image Processing Toolbox for with built-in functions for image registration, segmentation, and analysis.
+* **Python** - Python is a powerful high-level programming language for general purpose 
+programming. There are several open source packages available in Python for image 
+processing, including: OpenCV, scikit-image, and Python Imaging Library.
 
-* **Python** - Python is a powerful high-level programming language for general purpose programming. There are several open source packages available in Python for image processing, including: OpenCV, scikit-image, and Python Imaging Library.
+* **ANTs** - ANTs, or Advanced Normalization Tools, is a state-of-the-art medical image 
+registration and segmentation toolkit. ANTs works in conjunction with Insight Toolkit 
+(ITK) to read and visualize multidimensional imaging data.
 
-* **ANTs** - ANTs, or Advanced Normalization Tools, is a state-of-the-art medical image registration and segmentation toolkit. ANTs works in conjunction with Insight Toolkit (ITK) to read and visualize multidimensional imaging data.
+* **R** - R is an open source programming language and computing environment for 
+statistical analysis and data visualization. There are a variety of R packages available 
+for image processing, such as ANTsR, EBImage, and magick.
 
-* **R** - R is an open source programming language and computing environment for statistical analysis and data visualization. There are a variety of R packages available for image processing, such as ANTsR, EBImage, and magick.
+## Additional Resources
 
-<hr size=1 style="padding-bottom:10px;" />
+We currently offer online tutorials for image processing with Fiji/ImageJ. 
 
-# Choosing a Computing Environment
+[Introduction to Scientific Image Processing with Fiji/ImageJ](https://workshops.somrc.virginia.edu/lesson/intro-fiji-imagej/)
 
-Depending on the amount of data you have, running automatic image processing pipelines on your local machine still might be too slow. In this case, you may be interested in using Rivanna, UVA's High-Performance Computing (HPC) system, or Ivy, UVA's secure HIPAA-compliant computing environment for highly sensitive data.
+[Fiji/ImageJ: Script Development for Image Processing](https://workshops.somrc.virginia.edu/lesson/fiji-scripting/)
 
-<hr size=1 style="padding-bottom:10px;" />
+Stay tuned for additional online tutorials as well as live workshops listed on our education 
+platform, [CADRE Academy!](https://education.cadre.virginia.edu/#/home)
 
-# Consulting
 
-Research Computing staff have experience with image processing and developing pipelines to expedite processing for large datasets. If you have an image processing project and would like to discuss potential solutions and implementation, we are available for consultation. 
+# Visualization
 
-[<button class="btn btn-primary">Request a Consultation</button>](/service/consult/)
+## Overview
 
-<hr size=1 style="padding-bottom:10px;" />
+Visualization is the conversion of data into plots or images in order to view various 
+features of the data. As humans, we are able to absorb large amounts of information through 
+sight. We can use visualizations as an exploratory tool to gain insight into the data we 
+collect and to create hypotheses for relationships. We can also use visualizations to 
+communicate ideas to others.
 
-{{< education-track "278" >}}
+## Popular Software
 
-# Training
+<!-- * **R** - R is popular among data scientists for its plethora of data manipulation and 
+analysis packages, but it is also widely used for its visualization tools such as **ggplot2**. 
+**ggplot2** is part of the R tidyverse, a collection of packages dedicated to data science. 
 
-Research Computing offers interactive workshops for learning image processing and data management techniques. To learn more and register for workshops, please visit the CADRE Academy education platform.
+* **Python** - Python has a variety of popular data visualization packages including **matplotlib**, 
+**seaborn**, and **bokeh**. These packages work well Python's other data science packages, such as 
+**pandas** for data manipulation and **TensorFlow** for machine learning. -->
 
-[<button class="btn btn-primary">Find a Workshop</button>](/education/workshops/)
+* **MATLAB** - MATLAB contains many built-in functions for data visualization, including those 
+for 3D surfaces and meshes. MATLAB is also capable of medical image visualization and is 
+compatible with DICOM and NIFTI filetypes.
 
-{{% top-of-page %}}
+* **ParaView** - ParaView is an open-source application for visualization and analysis of 
+data defined on meshes or grids. It allows for visualization of 2D or 3D data and is good 
+for general purpose, rapid visualization.
+
+* **VisIt** - VisIt is software for the visualization of data defined on meshes or grids. It is 
+compatible with file types that have an underlying HDF5 format.
+
+* **Blender** - Blender is a 3D graphics software that can be used for creating 3D objects and 
+animations. It can be used for 3D modeling, rendering, motion tracking, and video 
+editing.
+
+* **Unity** - Unity is a cross-platform software application for the creation of visualizations 
+in augmented and virtual reality. 
+
+
+
+## Additional Resources
+
+We currently offer several online tutorials for data visualization.
+
+[MATLAB Data Processing and Visualization](https://workshops.somrc.virginia.edu/lesson/matlab-data-visualization/)
+
+Stay tuned for additional online tutorials as well as our workshops posted on [CADRE Academy!](https://education.cadre.virginia.edu/#/home)
+
+# Viz Lab
+
+The Viz Lab is a facility designed to help UVA faculty, staff, and students explore the 
+power of visualization in research and education.
+
+By allowing researchers to interactively view data, the Viz Lab helps them find 
+innovative ways of translating data into images and see stacks of images as 
+three-dimensional models. Discoveries can be made and visual results shared with remote 
+collaborators through a Cisco system.
+
+Find out what your data are telling you!
+
+## Systems and Resources
+
+### Virtual Reality Environment (Touch Table II & HTC Vive)      
+Touch Table II is a 65" ultra high-definition monitor with capacitative touch that is 
+driven by a computer with 64GB RAM and two NVidia GeForce 970 Graphics cards. It interacts 
+with an HTC Vive headset which allows users to experience the wonders of virtual reality.
+
+### Visualization Environment (Touch Table I & the Viz Wall)
+Touch Table I consists of a 55" monitor with touch capability that can be used to interact 
+with images on the Viz Wall. It is driven by a computer with 64GB RAM and one NVidia Quadro 
+2000 Graphics card. The Viz Wall is a 4' X 7.5' MicroTile system with a resolution of 7.76 
+Mpixels developed by Christie Digital.
+
+### GPU Environment (Escher)
+Escher is a high-end graphics workstation with 64 GB RAM and two NVidia GeForce Titan 
+Graphics cards.  This machine is available to researchers upon request.
+
+## Training
+
+The Viz Lab is conveniently located in Rice Hall on the south end of UVA's historic Grounds. 
+To request a tour of the Viz Lab or to receive training on the equipment, simply fill out 
+and submit [this form](https://arcs.virginia.edu/viz-lab-contact-form).
+
+## Viz Lab Calendar
+
+The Viz Lab is open to UVA researchers Monday-Friday during normal business hours. Extended 
+access is available to those with longer-term research projects. The calendar below is updated 
+regularly and shows the days/times the Viz Lab is unavailable. To reserve your time slot(s), 
+please contact us through [this form](https://arcs.virginia.edu/viz-lab-contact-form).
+
+<!-- google calendar embedded here-->
+
+<iframe frameborder="0" height="600" scrolling="no" src="https://calendar.google.com/calendar/embed?src=dvndpkvnloa8bvt5nre3d5n9as%40group.calendar.google.com&amp;ctz=America/New_York" style="border: 0" width="800"></iframe>
