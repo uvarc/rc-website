@@ -6,8 +6,8 @@
     </tr>
   </thead>
   <tbody>
-  {{ $urlPre := "https://rci.hpc.virginia.edu" }}
-  {{ $gistJ := getJSON $urlPre "/public/rivanna-software.json" }}
+  {{ $urlPre := "http://apidata.uvarc.io" }}
+  {{ $gistJ := getJSON $urlPre "/rivanna-software.json" }}
   {{ range sort $gistJ "package" "asc" }}
       <tr>
         <td><a target="_new" href="https://discuss.rc.virginia.edu/{{ .package }}">{{ .package }}</a></td>
