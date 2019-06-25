@@ -7,7 +7,8 @@ categories = [
   "software",
 ]
 date = "2019-06-23T08:37:46-05:00"
-tags = ["anaconda"
+tags = [
+  "programming"
 ]
 draft = false
 modulename = "anaconda"

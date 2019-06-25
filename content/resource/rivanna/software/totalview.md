@@ -7,7 +7,8 @@ categories = [
 date = "2019-06-22T08:37:46-05:00"
 tags = [
   "multi-core",
-  "mpi"
+  "mpi",
+  "programming"
 ]
 draft = false
 modulename = "totalview"
