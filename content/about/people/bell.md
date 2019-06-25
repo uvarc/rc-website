@@ -7,15 +7,14 @@ lastname = "bell"
 type = "people"
 description = ""
 author = "UVARC Staff"
-images = [
-  ""
-]
+image = "/images/profile_andrew_bell.png"
 subjects = [
-  "hpc",
   "rivanna",
-  "parallel-computing",
   "storage",
+  "staff",
+  "projects"
 ]
 +++
 
-More about this user goes here.
+Andrew Bell joined ARCS in December 2014. He handles procurement, budgeting, travel, personnel management, communications, public relations, academic events, and engagement with the UVA research community.
+
