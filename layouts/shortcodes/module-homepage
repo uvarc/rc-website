@@ -1,0 +1,9 @@
+{{- $urlPre := "http://apidata.uvarc.io" -}}
+{{- $gistJ := getJSON $urlPre "/rivanna-software.json" -}}
+{{- range $gistJ -}}
+   {{- if eq .package $.Page.Params.modulename -}}
+       {{- $firstversion := index (.versions) 0 -}}
+       {{- $url := chomp (delimit ( split (delimit ( last 2 ( split $firstversion.help "\n" ) ) " " ) " - Homepage: " ) "") -}}
+       {{ $url -}}
+   {{- end -}}
+{{- end -}}

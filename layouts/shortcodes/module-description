@@ -1,0 +1,9 @@
+<div class="text" id="moduleDescription">
+  {{- $urlPre := "http://apidata.uvarc.io" -}}
+  {{- $gistJ := getJSON $urlPre "/rivanna-software.json" -}}
+  {{- range $gistJ -}}
+      {{- if eq (.package) $.Page.Params.modulename -}}
+        {{ .description }}
+      {{- end -}}
+  {{- end -}}
+</div>

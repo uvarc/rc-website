@@ -1,0 +1,454 @@
+<div class="form-group" style="margin-top:2rem;">
+  <div class="input-group">
+    <input class="form-control genome" id="path" type="text" value="/project/genomes" style="font-family:monospace;max-height:40px;max-width:100%;" />
+    <div class="input-group-addon" style="max-height:40px;min-height:40px;">
+      <button class="btnz" type="button" data-clipboard-demo data-clipboard-target="#path" style="border:none;background-color:#eee;margin:-14px;padding:-14px;max-height:40px;min-width:40px;min-height:40px;border:solid 1px #bbb;border-top-right-radius:4px;border-bottom-right-radius:4px;">
+        <img class="clippy" src="/images/clippy.svg" width="14" height="14" alt="Copy to clipboard">
+      </button>
+    </div>
+  </div>
+</div>
+<div>
+  <table id="myTable2"  class="tg scroll">
+  <thead>
+   <tr>
+     <th class="tg-0qmj" rowspan="2" style="width:235px">Organism</th>
+     <th class="tg-0qmj" rowspan="2" style="width:70px">Source</th>
+     <th class="tg-0qmj" rowspan="2" style="width:90px">Build</th>
+     <th class="tg-0qmj" style="text-align:center; widht:150px">Whole Genome</th>
+     <th class="tg-0qmj" colspan="3" style="text-align:center; width:220px">Index Files</th>
+   </tr>
+   <tr>
+     <th class="tg-0qmj" style="text-align:center; width:150px">FASTA</th>
+     <th class="tg-0qmj" style="text-align:center; width:55px">BWA</th>
+     <th class="tg-0qmj" style="text-align:center; width:80px">Bowtie2</th>
+     <th class="tg-0qmj" style="text-align:center; width:70px">STAR2</th>
+   </tr>
+  </thead>
+
+  <tbody>
+   <tr>
+     <td rowspan="4" class="tg-dc35" style="text-align:left; width:235px"><font color="#bd4147"><i>Arabidopsis thaliana</i></font></td>
+     <td rowspan="2" class="tg-dc35" style="width:70px">Ensembl</td>
+     <td class="tg-dc35" style="width:90px">TAIR9</td>
+     <td class="tg-dc35" style="text-align:center; width:150px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/Ensembl/TAIR9/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:55px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/Ensembl/TAIR9/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:80px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/Ensembl/TAIR9/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:70px">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:90px">TAIR10</td>
+     <td class="tg-dc35" style="text-align:center;width:150px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/Ensembl/TAIR10/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:55px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/Ensembl/TAIR10/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:80px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/Ensembl/TAIR10/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:70px">
+     </td>
+   </tr>
+   <tr>
+     <td rowspan="2" class="tg-dc35" style="width:70px">NCBI</td>
+     <td class="tg-dc35" style="width:90px">build9.1</td>
+     <td class="tg-dc35" style="text-align:center; width:150px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/NCBI/build9.1/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:55px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/NCBI/build9.1/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:80px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/NCBI/build9.1/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:70px">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:90px">TAIR10</td>
+     <td class="tg-dc35" style="text-align:center; width:150px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/NCBI/TAIR10/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:55px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/NCBI/TAIR10/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:80px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Arabidopsis_thaliana/NCBI/TAIR10/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="text-align:center; width:70px">
+     </td>
+   </tr>
+
+   <tr>
+     <td class="tg-hy9w" style="text-align:left; width:235px"><font color="#bd4147"><i>Chlorocebus sabeus</i></font></td>
+     <td class="tg-hy9w" style="width:70px">NCBI</td>
+     <td class="tg-hy9w" style="width:90px">chlSab2</td>
+     <td class="tg-hy9w" style="text-align:center; width:150px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Chlorocebus_sabeus/NCBI/chlSab2/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="text-align:center;width:55px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Chlorocebus_sabeus/NCBI/chlSab2/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="text-align:center; width:80px">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Chlorocebus_sabeus/NCBI/chlSab2/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="text-align:center; width:70px">
+     </td>
+   </tr>
+
+   <tr>
+     <td rowspan="2" class="tg-dc35" style="width:235px" style="text-align:left"><font color="#bd4147"><i>Danio rerio</i></font></td>
+     <td class="tg-dc35" style="width:70px">Ensembl</td>
+     <td class="tg-dc35" style="width:90px">GRCz10</td>
+     <td class="tg-dc35" style="width:150px; text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Danio_rerio/Ensembl/GRCz10/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Danio_rerio/Ensembl/GRCz10/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Danio_rerio/Ensembl/GRCz10/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:70px">UCSC</td>
+     <td class="tg-dc35" style="width:90px">danRer10</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Danio_rerio/UCSC/danRer10/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Danio_rerio/UCSC/danRer10/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Danio_rerio/UCSC/danRer10/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+
+   <tr>
+     <td rowspan="4" class="tg-hy9w" style="width:235;text-align:left"><font color="#bd4147"><i>Drosophila melanogaster</i></font></td>
+     <td class="tg-hy9w" style="width:70px">Ensembl</td>
+     <td class="tg-hy9w" style="width:90px">BDGP6</td>
+     <td class="tg-hy9w" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/Ensembl/BDGP6/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td rowspan="2" class="tg-hy9w" style="width:70px">NCBI</td>
+     <td class="tg-hy9w" style="width:90px">build5.3</td>
+     <td class="tg-hy9w" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/NCBI/build5.3/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/NCBI/build5.3/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/NCBI/build5.3/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-hy9w" style="width:90px">build5.41</td>
+     <td class="tg-hy9w" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/NCBI/build5.41/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/NCBI/build5.41/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/NCBI/build5.41/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-hy9w" style="width:70px">UCSC</td>
+     <td class="tg-hy9w" style="width:90px">dm6</td>
+     <td class="tg-hy9w" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/UCSC/dm6/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/UCSC/dm6/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Drosophila_melanogaster/UCSC/dm6/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="width:70;text-align:center">
+     </td>
+   </tr>
+
+   <tr>
+     <td rowspan="2" class="tg-dc35" style="width:235;text-align:left"><font color="#bd4147"><i>Escherichia coli strain</i> K12, DH10B</font></td>
+     <td class="tg-dc35" style="width:70px">Ensembl</td>
+     <td class="tg-dc35" style="width:90px">EB1</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_DH10B/Ensembl/EB1/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:70px">NCBI</td>
+     <td class="tg-dc35" style="width:90px">2008-03-17</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_DH10B/NCBI/2008-03-17/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_DH10B/NCBI/2008-03-17/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_DH10B/NCBI/2008-03-17/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+
+   <tr>
+     <td class="tg-hy9w" style="width:235;text-align:left"><font color="#bd4147"><i>Escherichia coli strain</i> K12, MG1655</font>  </td>
+     <td class="tg-hy9w" style="width:70px">NCBI  </td>
+     <td class="tg-hy9w" style="width:90px">2001-10-15  </td>
+     <td class="tg-hy9w" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Ensembl/EB1/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Escherichia_coli_K_12_MG1655/NCBI/2001-10-15/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="width:70;text-align:center">
+     </td>
+   </tr>
+
+   <tr>
+     <td rowspan="4" class="tg-dc35" style="width:235;text-align:left"><font color="#bd4147"><i>Homo sapiens</i></font>  </td>
+     <td class="tg-dc35" style="width:70px">Ensembl</td>
+     <td class="tg-dc35" style="width:90px">GRCh37</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/Ensembl/GRCh37/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/Ensembl/GRCh37/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/Ensembl/GRCh37/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/Ensembl/GRCh37/Sequence/STAR2Index/">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:70px">NCBI</td>
+     <td class="tg-dc35" style="width:90px">GRCh38</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/NCBI/GRCh38/Sequence/STAR2Index/">
+     </td>
+   </tr>
+   <tr>
+     <td rowspan="2" class="tg-dc35" style="width:70px">UCSC</td>
+     <td class="tg-dc35" style="width:90px">hg19</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/UCSC/hg19/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/UCSC/hg19/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/UCSC/hg19/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/UCSC/hg19/Sequence/STAR2Index/">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:90px">hg38</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/UCSC/hg38/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/UCSC/hg38/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Homo_sapiens/UCSC/hg38/Sequence/STAR2Index/">
+     </td>
+   </tr>
+
+   <tr>
+     <td rowspan="3" class="tg-hy9w" style="width:235;text-align:left"><font color="#bd4147"><i>Mus musculus</i></font>  </td>
+     <td class="tg-hy9w" style="width:70px">NCBI</td>
+     <td class="tg-hy9w" style="width:90px">GRCm38</td>
+     <td class="tg-hy9w" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/NCBI/GRCm38/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/NCBI/GRCm38/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/NCBI/GRCm38/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="width:70;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/NCBI/GRCm38/Sequence/STAR2Index/">
+     </td>
+   </tr>
+   <tr>
+     <td rowspan="2" class="tg-hy9w" style="width:70px">UCSC</td>
+     <td class="tg-hy9w" style="width:90px">mm9</td>
+     <td class="tg-hy9w" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/UCSC/mm9/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/UCSC/mm9/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/UCSC/mm9/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="width:70;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/UCSC/mm9/Sequence/STAR2Index/">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-hy9w" style="width:90px">mm10</td>
+     <td class="tg-hy9w" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/UCSC/mm10/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-hy9w" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/UCSC/mm10/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-hy9w" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/UCSC/mm10/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-hy9w" style="width:70;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Mus_musculus/UCSC/mm10/Sequence/STAR2Index/">
+     </td>
+   </tr>
+
+   <tr>
+     <td rowspan="5" class="tg-dc35" style="width:235;text-align:left"><font color="#bd4147"><i>Pan troglodytes</i></font>  </td>
+     <td rowspan="2" class="tg-dc35" style="width:70px">Ensembl</td>
+     <td class="tg-dc35" style="width:90px">CHIMP2.1</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/Ensembl/CHIMP2.1/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/Ensembl/CHIMP2.1/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/Ensembl/CHIMP2.1/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:90px">CHIMP2.1.4</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/Ensembl/CHIMP2.1.4/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:70px">NCBI</td>
+     <td class="tg-dc35" style="width:90px">build3.1</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/NCBI/build3.1/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/NCBI/build3.1/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/NCBI/build3.1/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td rowspan="2" class="tg-dc35" style="width:70px">UCSC</td>
+     <td class="tg-dc35" style="width:90px">panTro3</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/UCSC/panTro3/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/UCSC/panTro3/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/UCSC/panTro3/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+   <tr>
+     <td class="tg-dc35" style="width:90px">panTro4</td>
+     <td class="tg-dc35" style="width:150;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/UCSC/panTro4/Sequence/WholeGenomeFasta/genome.fa">
+     </td>
+     <td class="tg-dc35" style="width:55;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/UCSC/panTro4/Sequence/BWAIndex/">
+     </td>
+     <td class="tg-dc35" style="width:80;text-align:center">
+       <input type="radio" class="genome" name="genome" value="/project/genomes/Pan_troglodytes/UCSC/panTro4/Sequence/Bowtie2Index/">
+     </td>
+     <td class="tg-dc35" style="width:70;text-align:center">
+     </td>
+   </tr>
+  </tbody>
+
+  </table>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+<script>
+// When the page is ready
+$(document).ready(function() {
+  var clipboard = new ClipboardJS('.btnz');
+  $("input").click(function(event) {
+    $("input:checked").each(function() {
+      var path = $(this).attr("value");
+      $("#path").val(path);
+    });
+  });
+});
+</script>

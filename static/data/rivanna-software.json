@@ -8,7 +8,7 @@
  {
    "Module": "amber",
    "Version": "10",
-   "Tag": "",
+   "Tag": "chem",
    "Description": "A suite of biomolecular simulation programs. It began in the late 1970's, and is maintained by an active develpment community."
  },
  {
