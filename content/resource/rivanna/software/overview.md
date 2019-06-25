@@ -11,7 +11,7 @@ author = "RC Staff"
 +++
 
 # Overview
-Research Computing at UVA offers a variety of standard software packages for all users. We also install requested software based on the needs of the HPC community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group. Departments with a set of widely-used software packages may install them to the lsp_apps space. The Research Computing group also provides limited assistance for individual installations.
+Research Computing at UVA offers a variety of standard software packages for all Rivanna users. We also install requested software based on the needs of the HPC community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group. Departments with a set of widely-used software packages may install them to the lsp_apps space. The Research Computing group also provides limited assistance for individual installations.
 
 For help installing research software on your PC, please contact Research Software Support at <a href="mailto:res-consult@virginia.edu">res-consult@virginia.edu</a>.
 
@@ -41,7 +41,7 @@ Software on Rivanna is provided via environment [modules](/resource/rivanna/soft
 * [Jupyter Lab](//resource/rivanna/software/jupyterlab)
 * [Compilers](/resource/rivanna/software/compilers)
 * [Parallel & MPI](/resource/rivanna/software/mpi)
-* [Debugger](/resource/rivanna/software/debugger)
+* [Debugger](/resource/rivanna/software/totalview)
 * [Containers](/resource/rivanna/software/containers)
 
 ## Access & File Transfer Tools

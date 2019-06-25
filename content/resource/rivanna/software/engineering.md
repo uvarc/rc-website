@@ -7,20 +7,29 @@ categories = [
   "software",
 ]
 date = "2019-06-23T08:37:46-05:00"
-tags = ["chem"
+tags = ["cae"
 ]
 draft = false
-shorttitle = "Chemistry"
-title = "Chemistry on Rivanna"
-description = "Chemistry Software in Rivanna's HPC environment"
+shorttitle = "Engineering"
+title = "Engineering on Rivanna"
+description = "Engineering Software in Rivanna's HPC environment"
 author = "RC Staff"
 
 +++
 # Overview
-Many popular software packages for computational chemistry are available on Rivanna.
+Several software packages for computer-aided engineering are available on Rivanna.
 
 # General considerations
-Most computational chemistry packages utilize MPI for parallel execution.  Accordingly, the SLURM job scripts should contain the following two SBATCH directives:
+Some engineering software packages utilize single node, multi-core or multi-node [MPI](/resource/rivanna/software/mpi) for parallel execution.  Accordingly, the SLURM job scripts should contain either of the following two SBATCH directives:
+
+**Single Node Multi-Core**
+```
+#SBATCH -N 1                    # request single node
+#SBATCH --cpus-per-task=<X>     # request X multiple cpu cores
+```
+Replace `<X>` with the actual number of cpu cores to be requested.
+
+**Multi Node MPI**
 ```
 #SBATCH -N <M>                  # request M nodes (replace with a number)
 #SBATCH --ntasks-per-node=<L>   # request L MPI processes per node
@@ -29,29 +38,30 @@ You should launch your program with `srun` as the MPI executor, for example for 
 ```
 srun pw.x -in mymol.in
 ```
+
 Please see the page of the particular package you wish to use for more details.
 
 **VASP Users**
 The Vienna Ab-Initio Simulation Package, is licensed by individual groups and we do not have a common installation.  We have basic instructions for building VASP on Rivanna at its page.
 
 
-# Available Chemistry Software
+# Available Engineering Software
 
-To get an up-to-date list of the installed bioinformatics applications, log on to Rivanna and run the following command in a terminal window:
+To get an up-to-date list of the installed engineering applications, log on to Rivanna and run the following command in a terminal window:
 ```
-module keyword chem
+module keyword cae
 ```
 
 To get more information about a specific module version, run the module spider command, for example:
 ```
-module spider quantumespresso/6.3
+module spider ansys/19.2
 ```
 
 <br>
 
-**List of Chemistry Software Modules**
+**List of Engineering Software Modules**
 
-{{< rivanna-software tags="chem" >}}
+{{< rivanna-software tags="cae" >}}
 
 # Using a Specific Software Module
 
@@ -59,5 +69,5 @@ To use a specific software package, run the `module load` command. The `module l
 
 After loading a module, you are ready to run the application(s) provided by the module. **For example:**
 ```
-module load quantumespresso/6.3
+module load ansys/19.2
 ```
