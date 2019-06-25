@@ -13,8 +13,8 @@
     </tr>
   </thead>
   <tbody>
-  {{ $urlPre := "https://rci.hpc.virginia.edu" }}
-  {{ $gistJ := getJSON $urlPre "/public/rivanna-software.json" }}
+  {{ $urlPre := "http://apidata.uvarc.io" }}
+  {{ $gistJ := getJSON $urlPre "/rivanna-software.json" }}
   {{ range $gistJ }}
      {{ if eq (.package) $.Page.Params.modulename }}
         {{ range sort .versions "full" "asc" }}
@@ -22,9 +22,11 @@
                <td>{{ delimit (last 1 (split .full "/")) "" }}</td>
                <td>
                  {{ "module load" }}
-                 {{ range .parent }}
-                     {{ if not (in . "/.") }}
-                         {{ replace (strings.TrimLeft "default:" . ) ":" " " }}
+                 {{ $trunc := split (index (split .path .full) 0) "/" }}
+                 {{ if gt (len $trunc) 6 }}
+                     {{ delimit (slice (index $trunc 5) (index $trunc 6)) "/" }}
+                     {{ if gt (len $trunc) 8 }}
+                         {{ delimit (slice (index $trunc 7) (index $trunc 8)) "/" }}
                      {{ end }}
                  {{ end }}
                  {{ .full }}

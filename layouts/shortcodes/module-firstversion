@@ -1,5 +1,5 @@
-{{- $urlPre := "https://rci.hpc.virginia.edu" -}}
-{{- $gistJ := getJSON $urlPre "/public/rivanna-software.json" -}}
+{{- $urlPre := "http://apidata.uvarc.io" -}}
+{{- $gistJ := getJSON $urlPre "/rivanna-software.json" -}}
 {{- range $gistJ -}}
     {{- if eq (.package) $.Page.Params.modulename -}}
         {{- $fversion := (index .versions 0).full -}}

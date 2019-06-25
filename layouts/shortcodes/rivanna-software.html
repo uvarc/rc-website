@@ -34,15 +34,10 @@ function searchFunction() {
     </tr>
   </thead>
   <tbody>
-<<<<<<< HEAD
-  {{ $urlPre := "https://rci.hpc.virginia.edu" }}
-  {{ $gistJ := getJSON $urlPre "/public/rivanna-software.json" }}
-  {{ $tags := .Get "tags" }}
-  {{ $showhidden := .Get "showhidden" }}
-=======
   {{ $urlPre := "http://apidata.uvarc.io" }}
   {{ $gistJ := getJSON $urlPre "/rivanna-software.json" }}
->>>>>>> 9d5ec22f66afcefb42557da0f500b2016ff2d831
+  {{ $tags := .Get "tags" }}
+  {{ $showhidden := .Get "showhidden" }}
   {{ range sort $gistJ "package" "asc" }}
       {{ $ishidden := eq "." (substr (index (split (index .versions 0).full "/") 1) 0 1)  }}
       {{ $tag := index (split (delimit (last 1 (split (index .versions 0).help "Application class: ")) " ") "\n") 0 }}

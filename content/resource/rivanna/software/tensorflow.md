@@ -10,7 +10,7 @@ author = "RC Staff"
 
 +++
 # Overview
-TensorFlow™ is an open source software library for high performance numerical computation.  It has become a very popular tool for machine learning and in particular for the creation of deep neural networks.  The latest TensorFlow versions are now provided as prebuilt Singularity containers on Rivanna.  The basic concept of running Singularity containers on Rivanna is described here.
+[TensorFlow™]({{< module-homepage >}}) is an open source software library for high performance numerical computation.  It has become a very popular tool for machine learning and in particular for the creation of deep neural networks.  The latest TensorFlow versions are now provided as prebuilt Singularity containers on Rivanna.  The basic concept of running Singularity containers on Rivanna is described here.
 
 TensorFlow code is provided in two flavors, either with or without support of general purpose graphics processing units (GPUs).  All TensorFlow container images provided on Rivanna require access to a GPU node.  Access to GPU nodes is detailed in the sections below.
 
@@ -60,7 +60,7 @@ Jupyter Notebooks can be used for interactive code development and execution of 
 1. Open a web browser and go to URL:  https://rivanna-portal.hpc.virginia.edu
 2. Use your `Netbadge` credentials to log in.
 3. On the top right of the menu bar of the Open OnDemand dashboard, click on “Interactive Apps”.
-4. In the drop-down box, click on `JupyterLab`
+4. In the drop-down box, click on `JupyterLab`.
 
 ## Requesting access to a GPU node
 

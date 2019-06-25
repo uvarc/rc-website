@@ -24,211 +24,30 @@ Software on Rivanna is provided via environment [modules](/resource/rivanna/soft
 # Software by Category
 
 ## Research Domains
-<div class="card-group" style="margin-top:2rem;">
 
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/resource/rivanna/software/machine-learning"><button class="btn btn-sm btn-primary"">Machine Learning &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/resource/rivanna/software/chemistry"><button class="btn btn-sm btn-primary"">Chemistry &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Engineering &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="card-group" style="margin-top:2rem;">
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/resource/rivanna/software/bioinformatics"><button class="btn btn-sm btn-primary"">Bioinformatics &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Image Processing &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Visualization &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-</div>
+* [Data Science & Machine Learning](/resource/rivanna/software/machine-learning)
+* [Chemistry](/resource/rivanna/software/chemistry)
+* [Engineering](/resource/rivanna/software/engineering)
+* [Bioinformatics](/resource/rivanna/software/bioinformatics)
+* [Image Processing](/resource/rivanna/software/imageprocessing)
+* [Data Visualization](/resource/rivanna/software/visualization)
 
 ## Programming Languages & Tools
 
-<div class="card-group" style="margin-top:2rem;">
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Python &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Perl &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Matlab &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">R & RStudio &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Jupyter Lab &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="card-group" style="margin-top:2rem;">
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/resource/rivanna/software/compilers"><button class="btn btn-sm btn-primary"">Compiler &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/resource/rivanna/software/mpi"><button class="btn btn-sm btn-primary"">MPI & Parallel &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Debugger &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/resource/rivanna/software/containers"><button class="btn btn-sm btn-primary"">Containers &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-</div>
+* [Python](/resource/rivanna/software/python)
+* [Perl](/resource/rivanna/software/perl)
+* [Matlab](/resource/rivanna/software/matlab)
+* [R & RStudio](/resource/rivanna/software/R)
+* [Jupyter Lab](//resource/rivanna/software/jupyterlab)
+* [Compilers](/resource/rivanna/software/compilers)
+* [Parallel & MPI](/resource/rivanna/software/mpi)
+* [Debugger](/resource/rivanna/software/debugger)
+* [Containers](/resource/rivanna/software/containers)
 
 ## Access & File Transfer Tools
-<div class="card-group" style="margin-top:2rem;">
 
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Open OnDemand &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">FastX &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">MobaXterm &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-microchip fa-4x" aria-hidden="true" style="padding-top:10px;padding-bottom:10px;"></i></div>
-    <div class="card-block">
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/userinfo/rivanna/"><button class="btn btn-sm btn-primary"">Globus &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
-</div>
+* [Open OnDemand](/resource/rivanna/access/openondemand)
+* [FastX](/resource/rivanna/access/fastx)
+* [MobaXterm](/resource/rivanna/access/mobaxterm)
+* [SSH](/resource/rivanna/access/ssh)
+* [Globus](/resource/rivanna/filetransfer/globus)

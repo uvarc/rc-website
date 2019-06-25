@@ -1,6 +1,6 @@
 <div class="text" id="moduleDescription">
-  {{- $urlPre := "https://rci.hpc.virginia.edu" -}}
-  {{- $gistJ := getJSON $urlPre "/public/rivanna-software.json" -}}
+  {{- $urlPre := "http://apidata.uvarc.io" -}}
+  {{- $gistJ := getJSON $urlPre "/rivanna-software.json" -}}
   {{- range $gistJ -}}
       {{- if eq (.package) $.Page.Params.modulename -}}
         {{ .description }}

@@ -10,9 +10,9 @@ date = "2019-06-23T08:37:46-05:00"
 tags = ["bio"
 ]
 draft = false
-shorttitle = "Bioinformatics"
-title = "Bioinformatics on Rivanna"
-description = "Bioinformatics Software in Rivanna's HPC environment"
+shorttitle = "Chemistry"
+title = "Chemistry on Rivanna"
+description = "Chemistry Software in Rivanna's HPC environment"
 author = "RC Staff"
 
 +++
