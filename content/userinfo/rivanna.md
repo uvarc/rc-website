@@ -17,6 +17,24 @@ Rivanna is the University of Virginia's High-Performance Computing (HPC) system.
 
 # Summary
 
+UVA Researchers need three things to use Rivanna:
+
+1. An **Allocation**, a group that provides billable service-units (SU's) for any work performed on Rivanna. SU's can be given to researchers and faculty as part of a new hire, given by your Dean, or purchased from Research Computing.
+
+2. An authorized **Rivanna Login**. Members of your allocation group will be granted login access to Rivanna interactive nodes, and can run jobs charged to your allocation.
+
+3. An understanding of the **SLURM** job submission engine. SLURM accepts job requests from all users and sends them to the right queues, in the most optimal order. 
+
+[<button class="btn btn-success">Request Access</button>](https://www.virginia.edu/)
+
+Learn more about Rivanna:
+
+* Allocations
+* Queues
+* Software
+* Storage
+* Data Transfer
+
 <div id="accordion">
   <div class="card">
     <div class="card-header" id="headingOne">
@@ -66,53 +84,31 @@ Rivanna is a managed resource; users must submit jobs to queues controlled by a 
 
 - - -
 
-## Storage
+# Queues
+
+asdlfkjsdlfkj sdlfkj sdflkj sdflksdf
+
+- - -
+
+# Software
+
+asdlfksaldfkj sdflk
+
+- - -
+
+# Storage
 
 Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
 
-## Learn More
+- - -
 
-[<button class="btn btn-success">Read more about Ivy Virtual Machines</button>](https://discuss.rc.virginia.edu/c/ivy/vm)
+# Data Transfer
+
+asldfkjasldfkjs dlfkjs dflkjs dflkjs dflksjd flskdjf 
 
 - - -
 
-# Domino Data Lab
-
-<img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" /> [Domino Data Lab (DDL)](https://www.dominodatalab.com/) provides a central environment for data science projects including project management, collaboration with team members, and setting up hardware configuration for a project.  
-
-## Access
-
-DDL is entirely browser-based and does not require any setup on your workstation. Once connected via JointVPN, point your browser to:
-
-    https://domino.hpc.virginia.edu/
-
-You will be prompted for Domino login credentials, which correspond to your UVa computing ID and Eservices password. Please remember that in order to maintain access to any platform on Ivy (including DDL), you will need to change your Eservices password every 60 days. 
-
-## Storage
-
-Each DDL project can accommodate up to 500 gigabytes of storage. Central storage is not visible to DDL. 
-
-## Features
-
-DDL is organized in a project structure, which is ideal for collaborative data analyses. Scripts written in Python and R can be edited, scheduled and run from within the web interface, both inside and outside of interactive notebook sessions (i.e. RStudio or Jupyter). 
-
-For specifics about these features and more, refer to the [Ivy DDL User Guide](/userinfo/ivy-ddl/).
-
-## Learn More
-
-* [Data science resources from DDL](https://www.dominodatalab.com/resources)
-* Watch a walkthrough of the main features of DDL:
-
-<video width="730" height="460" controls>
-  <source src="https://s3.amazonaws.com/uvasom-assets/video/product_tour_trimmed.mp4" type="video/mp4">
-</video>
-
-
-[<button class="btn btn-success">Read more about Ivy DDL</button>](https://discuss.rc.virginia.edu/c/ivy/ddl)
-
-- - -
-
-# Coming Soon - Secure HPC
+# Secure HPC
 
 <img src="https://pbs.twimg.com/media/DRQcamFX0AA9tmU.jpg" style="float:right;max-width:40%;" />
 

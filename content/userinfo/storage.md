@@ -12,7 +12,7 @@ images = [""]
 
 <p class="lead">There are a variety of options for storing large-scale research data at UVa. Non-sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/">Rivanna</a> high performance computing system. Sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment.</p>
 
-<p class="lead">Information Technology Services (ITS) also provides [**multiple tiers of data storage**](https://virginia.service-now.com/its?id=kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb) for personal and other storage needs.</p>
+<p class="lead">Information Technology Services (ITS) also provides <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" target="_new"><b>multiple tiers of data storage</b></a> for personal and non-research storage needs.</p>
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -22,7 +22,8 @@ images = [""]
 .tg .tg-dc35{background-color:#f9f9f9;border-color:inherit;vertical-align:top}
 .tg .tg-0qmj{font-weight:bold;background-color:#eceeef;border-color:inherit;vertical-align:top}
 </style>
-<div>
+
+<div style="margin-top:4rem;">
 <h3>Non-Sensitive Data Storage</h3>
 <table class="tg">
   <tr>
