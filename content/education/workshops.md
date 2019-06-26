@@ -1,5 +1,5 @@
 +++
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 title = "Workshops"
 date = "2019-04-24T10:55:28-05:00"
@@ -12,7 +12,7 @@ images = [""]
 
 <p class=lead>UVA Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by experts and are freely available to UVa faculty, staff and students.</p>
 
-<a href = "https://education.cadre.virginia.edu/"><img src="https://somrc.virginia.edu/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:104%; padding-left:25px; padding-bottom:10px;" /></a>
+<a href = "https://education.cadre.virginia.edu/"><img src="/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:104%; padding-left:25px; padding-bottom:10px;" /></a>
 
 - - - 
 

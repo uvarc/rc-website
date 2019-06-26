@@ -7,7 +7,7 @@ lastname = "magee"
 email = "nem2p@virginia.edu"
 type = "people"
 author = "UVARC Staff"
-image = "https://somrc.virginia.edu/images/profile_nmagee.png"
+image = "/images/profile_nmagee.png"
 subjects = [
   "cloud",
   "containers",

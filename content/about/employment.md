@@ -1,7 +1,7 @@
 +++
 type = "about"
 description = "Join our team. Do good work."
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [
   "/2016/10/image.jpg",
 ]
@@ -9,7 +9,7 @@ categories = [
   "employment",
 ]
 tags = [
-  "somrc",
+  "rc",
   "staff",
 ]
 date = "2018-12-06T15:25:19-05:00"

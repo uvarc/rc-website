@@ -26,7 +26,7 @@ ignoreCache = true
   themeStyle = "simple"
   # googleAnalytics = "UA-90358528-1"
   name = "UVA Research Computing"
-  description = "Enabling scientific breakthroughs at scale with advanced computing"
+  description = "Creating innovative solutions for researchers"
   pageNotFoundTitle = "404 - Page not found"
 
 [params.sidebar]

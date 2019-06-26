@@ -6,7 +6,7 @@ date = "2018-12-04T17:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","ddl","security"]
 categories = ["userinfo"]
 images = [""]
-author = "SOMRC Staff"  
+author = "RC Staff"  
 
 +++
 
