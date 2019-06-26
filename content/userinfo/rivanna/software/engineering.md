@@ -1,4 +1,5 @@
 +++
+type = "rivanna"
 images = [
   "/2016/10/image.jpg",
 ]
