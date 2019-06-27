@@ -20,14 +20,14 @@ type = "rivanna"
 <p class="lead">The sidebar to your right contains important information for Rivanna users. Please read each section carefully.</p>
 <p class="lead">New users are invited to attend one of our free orientation sessions ("Introduction to the HPC System") held throughout the year during office hours or by appointment.</p>
 
-<div style="width:100%;height:4rem;"></div>
+# Get Started
 
 <div class="card-group">
-<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
+<div class="card shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Get Access</h5>
     <p class="card-text">Request access to Rivanna HPC for your research. Add collaborators to your work.</p>
-    <a href="/userinfo/rivanna/overview/"><button class="btn btn-warning">Request an Allocation</button></a>
+    <a href="/userinfo/rivanna/overview/"><button class="btn btn-primary">Request an Allocation</button></a>
   </div>
 </div>
 <div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
@@ -71,6 +71,7 @@ type = "rivanna"
 </div>
 </div>
 
+# System Specs
 
 <div id="accordion" style="margin-top:4rem;margin-bottom:4rem;">
   <div class="card">
@@ -84,6 +85,76 @@ type = "rivanna"
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
         Rivanna is a managed resource; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna is SLURM.  SLURM refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
+
+<table class="table" style="font-weight:normal;">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Partition</th>
+      <th scope="col">Max time per job</th>
+      <th scope="col">Max nodes per job</th>
+      <th scope="col">Max cores per job</th>
+      <th scope="col">Max memory per core</th>
+      <th scope="col">Max memory per node per job</th>
+      <th scope="col">SU Charge Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">standard</th>
+      <th scope="row">7 days</th>
+      <th scope="row">1</th>
+      <th scope="row">28</th>
+      <th scope="row">12GB</th>
+      <th scope="row">240GB</th>
+      <th scope="row">1.00</th>
+    </tr>
+    <tr>
+      <th scope="row">parallel</th>
+      <th scope="row">3 days</th>
+      <th scope="row">120</th>
+      <th scope="row">2400</th>
+      <th scope="row">6GB</th>
+      <th scope="row">120GB</th>
+      <th scope="row">1.00</th>
+    </tr>
+    <tr>
+      <th scope="row">largemem</th>
+      <th scope="row">4 days</th>
+      <th scope="row">1</th>
+      <th scope="row">16</th>
+      <th scope="row">62GB</th>
+      <th scope="row">975GB</th>
+      <th scope="row">1.00</th>
+    </tr>
+    <tr>
+      <th scope="row">gpu</th>
+      <th scope="row">3 days</th>
+      <th scope="row">4</th>
+      <th scope="row">8</th>
+      <th scope="row">12GB</th>
+      <th scope="row">240GB</th>
+      <th scope="row">1.00</th>
+    </tr>
+    <tr>
+      <th scope="row">knl</th>
+      <th scope="row">3 days</th>
+      <th scope="row">8</th>
+      <th scope="row">512 cores/2048 threads</th>
+      <th scope="row">3 GB (per physical core)	</th>
+      <th scope="row">192GB</th>
+      <th scope="row">1.00</th>
+    </tr>
+    <tr>
+      <th scope="row">dev</th>
+      <th scope="row">1 hour</th>
+      <th scope="row">2</th>
+      <th scope="row">8</th>
+      <th scope="row">6GB</th>
+      <th scope="row">36GB</th>
+      <th scope="row">0.00</th>
+    </tr>
+  </tbody>
+</table>
       </div>
     </div>
   </div>
@@ -97,7 +168,7 @@ type = "rivanna"
     </div>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
-<table class="table">
+<table class="table" style="font-weight:normal;">
   <thead>
     <tr>
       <th scope="col">Cores/node</th>
