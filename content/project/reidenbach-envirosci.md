@@ -3,7 +3,7 @@ title = "Fluid Dynamics and Reef Health"
 description = "Blah blah blah here we are with a placeholder."
 date = "2019-06-20T14:33:50-05:00"
 author = "RC Staff"
-images = "/images/projects/fluid-dynamics.jpg"
+images = "/images/projects/fluid-dynamics.png"
 categories = ["projects"]
 tags = [
   "hpc",
