@@ -10,6 +10,12 @@ tags = ["staff","consultation","contact"]
 sidebar = "hidden"
 +++
 
+Research Computing consulting services can help you take your research to the next level through the use of advanced computational techniques. Our experts are accustomed to working with researchers from across Grounds who are ready to take advantage of the University’s high-performance resources, but need help conceptualizing and executing their computation-intensive projects.
+
+RC consulting team members provide professional advice, hands-on training, and constructive feedback at every stage of the process. Since our founding in 2008, we have assisted scores of academic researchers looking for better ways to solve complex optimization, parallelization, workflow, and data analysis issues. From concept to code, we’re here to help.
+
+Our team members forge creative partnerships and tackle complex computing problems which may take days or even months to solve. A majority of RC consulting services are free, but some long-term collaborations require contributions from outside funding.
+
 <form action="https://formspree.io/nem2p@virginia.edu" method="POST">
   <div class="form-group">
     <label for="inputName">Name</label>
