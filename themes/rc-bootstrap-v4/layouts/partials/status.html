@@ -13,7 +13,7 @@
 </div>
 
 <script>
-$.getJSON('https://s3.amazonaws.com/uvarc-resources/status/status.json', function(data){
+$.getJSON('https://s3.amazonaws.com/uvarc-data/status/status.json', function(data){
   $(data).each(function(i, stats){
     $('#statusBody').append($("<tr>")
       .append($("<td>").append(stats.system))
