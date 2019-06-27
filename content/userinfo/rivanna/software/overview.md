@@ -23,7 +23,7 @@ For help installing research software on your PC, please contact Research Softwa
 
 # Software Modules and Containers
 
-Software on Rivanna is provided via environment [modules](/userinfo/rivanna/software/modules) or as [containers](/userinfo/rivanna/software/containers).
+Software on Rivanna is accessed via environment [modules](/userinfo/rivanna/software/modules) or [containers](/userinfo/rivanna/software/containers).
 
 <a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-sm btn-primary"">Complete List of Rivanna Software &rsaquo;</button></a>
 
