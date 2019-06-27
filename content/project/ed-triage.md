@@ -1,7 +1,7 @@
 +++
 title = "Predicting ER Triage Levels with Machine Learning"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = "/images/projects/uva-er.jpg"
 categories = ["projects"]
 tags = ["clinical-research","machine-learning"]

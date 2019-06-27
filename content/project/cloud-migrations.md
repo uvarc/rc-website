@@ -2,7 +2,7 @@
 title = "Cloud Migration for HIPAA Data"
 description = ""
 date = "2019-03-08T14:33:50-05:00"
-author = "SOMRC Staff"
+author = "RC Staff"
 images = "/images/aws/aws-smile-logo.jpg"
 categories = ["projects"]
 tags = [

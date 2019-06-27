@@ -2,7 +2,7 @@
 title = "LOLAweb"
 description = ""
 date = "2018-05-03T14:33:50-05:00"
-author = "SOMRC Staff"
+author = "RC Staff"
 images = "/images/projects/LOLAweb-logo-square.png"
 categories = ["projects"]
 tags = [

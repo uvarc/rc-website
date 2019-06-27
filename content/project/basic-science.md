@@ -1,5 +1,5 @@
 +++
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 date = "2018-04-23T17:17:35-04:00"
 title = "Basic Science Projects"
