@@ -35,8 +35,9 @@ Software on Rivanna is accessed via environment [modules](/userinfo/rivanna/soft
 * [Chemistry](/userinfo/rivanna/software/chemistry)
 * [Engineering](/userinfo/rivanna/software/engineering)
 * [Bioinformatics](/userinfo/rivanna/software/bioinformatics)
+* [Environmental Sciences](/userinfo/rivanna/software/envsci)
+* [Math & Statistics](/userinfo/rivanna/software/math-statistics)
 * [Physics](/userinfo/rivanna/software/physics)
-* [Statistics](/userinfo/rivanna/software/statistics)
 * [Image Processing](/userinfo/rivanna/software/imageprocessing)
 * [Data Visualization](/userinfo/rivanna/software/visualization)
 

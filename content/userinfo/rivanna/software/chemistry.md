@@ -38,7 +38,7 @@ The Vienna Ab-Initio Simulation Package, is licensed by individual groups and we
 
 # Available Chemistry Software
 
-To get an up-to-date list of the installed bioinformatics applications, log on to Rivanna and run the following command in a terminal window:
+To get an up-to-date list of the installed chemistry applications, log on to Rivanna and run the following command in a terminal window:
 ```
 module keyword chem
 ```
