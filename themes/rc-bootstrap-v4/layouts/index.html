@@ -9,6 +9,7 @@
     {{ "<!-- combined, minified CSS -->" | safeHTML }}
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
     <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
     {{ template "_internal/google_analytics_async.html" . }}
     {{ partial "head-custom.html" . }}
   </head>

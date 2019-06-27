@@ -20,12 +20,59 @@ type = "rivanna"
 <p class="lead">The sidebar to your right contains important information for Rivanna users. Please read each section carefully.</p>
 <p class="lead">New users are invited to attend one of our free orientation sessions ("Introduction to the HPC System") held throughout the year during office hours or by appointment.</p>
 
-[<button class="btn btn-success">Request an Allocation</button>](https://www.virginia.edu/)
+<div style="width:100%;height:4rem;"></div>
 
-- - -
+<div class="card-group">
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">Get Access</h5>
+    <p class="card-text">Request access to Rivanna HPC for your research. Add collaborators to your work.</p>
+    <a href="/userinfo/rivanna/overview/"><button class="btn btn-warning">Request an Allocation</button></a>
+  </div>
+</div>
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">Login & File Transfer</h5>
+    <p class="card-text">How to log in? How to move large datasets to the HPC sluter? Learn how.</p>
+    <a href="/userinfo/rivanna/login/"><button class="btn btn-warning">Learn More</button></a>
+  </div>
+</div>
+</div>
+<div class="card-group">
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">Software</h5>
+    <p class="card-text">Find and run software for HPC jobs. Learn how to load and use modules.</p>
+    <a href="/userinfo/rivanna/software/overview/"><button class="btn btn-warning">Learn More</button></a>
+  </div>
+</div>
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">Storage</h5>
+    <p class="card-text">Learn about the vaious storage options within Rivanna: for users, groups, and temporary.</p>
+    <a href="/userinfo/rivanna/storage/"><button class="btn btn-warning">Learn More</button></a>
+  </div>
+</div>
+</div>
+<div class="card-group">
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">Running Jobs</h5>
+    <p class="card-text">Your code is ready. Your data is in place. Learn how to run your jobs across the cluster, and advanced SLURM features.</p>
+    <a href="/userinfo/rivanna/slurm/"><button class="btn btn-warning">Learn More</button></a>
+  </div>
+</div>
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
+  <div class="card-body">
+    <h5 class="card-title">Usage Policies</h5>
+    <p class="card-text">Understand what is expected of you as a Rivanna HPC user. All users must comply with these requirements.</p>
+    <a href="/userinfo/rivanna/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
+  </div>
+</div>
+</div>
+
 
 <div id="accordion" style="margin-top:4rem;margin-bottom:4rem;">
-
   <div class="card">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
@@ -40,7 +87,6 @@ type = "rivanna"
       </div>
     </div>
   </div>
-
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
@@ -55,7 +101,6 @@ type = "rivanna"
       </div>
     </div>
   </div>
-
   <div class="card">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
@@ -66,26 +111,10 @@ type = "rivanna"
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
-
       </div>
     </div>
   </div>
-
 </div>
-
-- - -
-
-# Software / Modules
-
-Research Computing offers a variety of standard software packages for all users. We also install requested software based on the needs of the HPC community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group. Departments with a set of widely-used software packages may install them to the lsp_apps space. ARCS will also provide limited assistance for individual installations. For help installing research software on your PC, please contact Research Software Support at res-consult@virginia.edu.
-
-[**Learn more about specific software available on Rivanna**](/userinfo/rivanna/software/overview/).
-
-- - -
-
-# Data Transfer
-
-asldfkjasldfkjs dlfkjs dflkjs dflkjs dflksjd flskdjf 
 
 - - -
 
