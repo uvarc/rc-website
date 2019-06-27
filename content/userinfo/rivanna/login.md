@@ -27,13 +27,13 @@ https://rivanna-portal.hpc.virginia.edu/
 
 ## Secure Shell Access
 
-Rivanna is accessible through ssh (Secure Shell) connections using the hostname rivanna.hpc.virginia.edu.  
+Rivanna is accessible through ssh (Secure Shell) connections using the hostname `rivanna.hpc.virginia.edu`.
 
-## Windows
+### Windows
 
-Windows users must install an ssh client application.  We recommend MobXterm, but you may also use other clients such as SecureCRT or PuTTY. 
+Windows users must install an ssh client application.  We recommend [MobXterm](https://mobaxterm.mobatek.net/), but you may also use other clients such as [SecureCRT](https://www.vandyke.com/products/securecrt/) or [PuTTY](https://www.putty.org/). 
 
-## Mac OSX and Linux
+### Mac OSX and Linux
 
 OSX and Linux users may connect through a terminal using the command
 
@@ -41,24 +41,24 @@ OSX and Linux users may connect through a terminal using the command
 ssh -Y mst3k@rivanna.hpc.virginia.edu  
 ```
 
-Mac users must install XQuartz in order to be able to run graphical (X11) applications.  Keep in mind that graphical X11 applications may be slow through a standard ssh login.  For extensive use of graphical applications you may prefer the FastX remote desktop environment.
+SSH key authentication is also permissible. Mac users must install XQuartz in order to be able to run graphical (X11) applications.  Keep in mind that graphical X11 applications may be slow through a standard ssh login.  For extensive use of graphical applications you may prefer the FastX remote desktop environment.
 
 For more details and for troubleshooting information, please see our ssh page.
 
 ## Remote Desktop Access
 
-Users who wish to run X11 graphical applications may prefer the FastX remote desktop web interface.  The FastX web client is accessible at rivanna-desktop.hpc.virginia.edu.  Your login credentials are your UVA computing ID and your Eservices password.
+Users who wish to run X11 graphical applications may prefer the FastX remote desktop web interface.  The FastX web client is accessible at `rivanna-desktop.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
 
 
 # File Transfer
 
 ## Small files
 
-Small files may be transferred using comand line tools like scp (secure copy), rsync (Linux & Mac OSX), or curl, with a connection to the host rivanna.hpc.virginia.edu.  
+Small files may be transferred using comand line tools like `scp` (secure copy), `rsync` (Linux & Mac OSX), or `curl`, with a connection to the host `rivanna.hpc.virginia.edu`.  
 
 For Windows users, MobaXterm bundles an ssh client, an sftp/scp client, and an X11 server.  To transfer files, start a new session and select sftp.  Once you authenticate to Rivanna, two panes will appear.  You can drag and drop between them.
 
-Mac users may use a graphical drag-and-drop application such as Cyberduck (also available for Windows) or Fugu. For Fugu be sure to choose the 1.21pre1 version.
+Mac users may use a graphical drag-and-drop application such as Cyberduck (also available for Windows) or Fugu. For Fugu be sure to choose the `1.21pre1` version.
 
 ## Large files
 

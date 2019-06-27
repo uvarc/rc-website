@@ -61,7 +61,7 @@ type = "rivanna"
 <div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Running Jobs</h5>
-    <p class="card-text">Your code is ready. Your data is in place. Learn how to run your jobs across the cluster, and advanced SLURM features.</p>
+    <p class="card-text">Your code is ready. Your data is in place. Learn how to run your jobs across the cluster, and other advanced SLURM features.</p>
     <a href="/userinfo/rivanna/slurm/"><button class="btn btn-warning">Learn More</button></a>
   </div>
 </div>
@@ -74,7 +74,7 @@ type = "rivanna"
 </div>
 </div>
 
-# System Specs
+# System Details
 
 <div id="accordion" style="margin-top:4rem;margin-bottom:4rem;">
   <div class="card">
