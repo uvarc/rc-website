@@ -97,7 +97,47 @@ type = "rivanna"
     </div>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Cores/node</th>
+      <th scope="col">RAM/node</th>
+      <th scope="col">Nodes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">20</th>
+      <th scope="row">128GB</th>
+      <th scope="row">240</th>
+    </tr>
+    <tr>
+      <th scope="row">28</th>
+      <th scope="row">256GB</th>
+      <th scope="row">25</th>
+    </tr>
+    <tr>
+      <th scope="row">16</th>
+      <th scope="row">1TB</th>
+      <th scope="row">5</th>
+    </tr>
+    <tr>
+      <th scope="row">28+4 K80 GPU</th>
+      <th scope="row">256GB</th>
+      <th scope="row">10</th>
+    </tr>
+    <tr>
+      <th scope="row">28+4 P100 GPU</th>
+      <th scope="row">256GB</th>
+      <th scope="row">4</th>
+    </tr>
+    <tr>
+      <th scope="row">64 Knight's Landing</th>
+      <th scope="row">196GB</th>
+      <th scope="row">8</th>
+    </tr>
+  </tbody>
+</table>
       </div>
     </div>
   </div>
@@ -111,6 +151,14 @@ type = "rivanna"
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
+      <p>A more complete description of storage options and policies is at our <a href="/userinfo/rivanna/storage/">HPC storage page</a>.</p>
+      <h4>Home Directories</h4>
+      <p>Each user has a home directory.  This storage is accessed as <code>/home/$USER</code>, where <code>$USER</code> is an environment variable set by the system that corresponds to the user's login ID.</p>
+      <p>The <code>hdquota</code> command shows usage of space for the home directory only.</p>
+      <h4>Scratch Storage</h4>
+      <p>All nodes share a high-speed Lustre filesystem for temporary storage with up to 1.4PB of storage space for all users.   Each user is assigned space with a default quota of 10TB of storage per user.   This storage is accessed as <code>/scratch/$USER</code>.</p>
+      <h4>Long-Term Storage</h4>
+      <p>Groups may lease permanent storage from ITS which can be mounted to Rivanna.</p>
       </div>
     </div>
   </div>
