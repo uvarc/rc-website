@@ -23,18 +23,20 @@ For help installing research software on your PC, please contact Research Softwa
 
 # Software Modules and Containers
 
-Software on Rivanna is provided via environment [modules](/userinfo/rivanna/software/modules) or as [containers](/userinfo/rivanna/software/containers).
+Software on Rivanna is accessed via environment [modules](/userinfo/rivanna/software/modules) or [containers](/userinfo/rivanna/software/containers).
 
 <a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-sm btn-primary"">Complete List of Rivanna Software &rsaquo;</button></a>
 
 # Software by Category
 
-## Research Domains
+## Software Application Domains
 
 * [Data Science & Machine Learning](/userinfo/rivanna/software/machine-learning)
 * [Chemistry](/userinfo/rivanna/software/chemistry)
 * [Engineering](/userinfo/rivanna/software/engineering)
 * [Bioinformatics](/userinfo/rivanna/software/bioinformatics)
+* [Physics](/userinfo/rivanna/software/physics)
+* [Statistics](/userinfo/rivanna/software/statistics)
 * [Image Processing](/userinfo/rivanna/software/imageprocessing)
 * [Data Visualization](/userinfo/rivanna/software/visualization)
 
@@ -44,9 +46,10 @@ Software on Rivanna is provided via environment [modules](/userinfo/rivanna/soft
 * [Perl](/userinfo/rivanna/software/perl)
 * [Matlab](/userinfo/rivanna/software/matlab)
 * [R & RStudio](/userinfo/rivanna/software/R)
-* [Jupyter Lab](//userinfo/rivanna/software/jupyterlab)
+* [Jupyter Lab](/userinfo/rivanna/software/jupyterlab)
 * [Compilers](/userinfo/rivanna/software/compilers)
 * [Parallel & MPI](/userinfo/rivanna/software/mpi)
+* [Libraries](/userinfo/rivanna/software/libraries)
 * [Debugger](/userinfo/rivanna/software/totalview)
 * [Containers](/userinfo/rivanna/software/containers)
 
