@@ -16,9 +16,9 @@ type = "rivanna"
 <p>Rivanna is the University of Virginia's High-Performance Computing (HPC) system. Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. All UVA faculty, staff, and postdoctoral associates are considered PIs and therefore eligible for an allocation on Rivanna. Students—both graduate and undergraduate—cannot request allocations, but they are allowed to use Rivanna as members of a MyGroups group controlled by a PI.</p>
 <p>Each PI is ultimately responsible for managing the roster of users in his/her MyGroups account although PIs may delegate day-to-day management to one or more other members.</p>
 </div>
-
-<p class="lead">The sidebar to your right contains important information for Rivanna users. Please read each section carefully.</p>
+<p class="lead">The sections below contain important information for Rivanna users. Please read each carefully.</p>
 <p class="lead">New users are invited to attend one of our free orientation sessions ("Introduction to the HPC System") held throughout the year during office hours or by appointment.</p>
+
 
 # Get Started
 
@@ -42,7 +42,7 @@ type = "rivanna"
 <div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Software</h5>
-    <p class="card-text">Find and run software for HPC jobs. Learn how to load and use modules.</p>
+    <p class="card-text">Find and run software suited for your HPC jobs. Learn how to load and use modules.</p>
     <a href="/userinfo/rivanna/software/overview/"><button class="btn btn-warning">Learn More</button></a>
   </div>
 </div>
@@ -212,6 +212,7 @@ type = "rivanna"
       </div>
     </div>
   </div>
+<!--
   <div class="card">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
@@ -233,6 +234,7 @@ type = "rivanna"
       </div>
     </div>
   </div>
+  -->
 </div>
 
 - - -
