@@ -17,7 +17,7 @@ With expertise in high-performance computing, UVARC provides support in the foll
 - [Bioinformatics & Genomics](/service/bioinformatics/)
 - [Cloud Solutions](/service/cloud/)
 - [Data Analysis](/service/data-analysis/)
-- [Scientific Computing](/service/scientific-computing/)
+- [High Performance Computing](/service/high-performance-computing/)
 - [Image Processing](/service/imaging/)
 
 UVARC delivers the services above in the context of system support (web-based ticketing) and consultations (in-person meetings). In either scenario, we seek long-term scientific collaborations. Please use the contact methods below for user support.

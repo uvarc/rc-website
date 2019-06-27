@@ -55,8 +55,7 @@ draft = false
             <li><a href="/service/cloud/">Cloud Solutions</a>
             <li><a href="/service/data-analysis/">Data Analysis</a>
             <li><a href="/service/imaging/">Image Processing</a>
-            <li><a href="/service/scientific-computing/">Scientific Computing</a>
-            <li><a href="/service/scientific-computing/">. . .</a>
+            <li><a href="/service/high-performance-computing/">High Performance Computing</a>
           </ul>
       <a href="/service/consult/" class="card-link"><button class="btn btn-warning">Request a Consultation</button></a>
     </div>

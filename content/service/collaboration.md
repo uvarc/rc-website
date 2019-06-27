@@ -11,7 +11,7 @@ tags = [
   "collaboration",
   "staff",
 ]
-draft = false
+draft = true
 date = "2017-05-19T09:15:36-05:00"
 title = "Collaboration"
 
