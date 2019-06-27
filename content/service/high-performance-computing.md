@@ -10,16 +10,16 @@ tags = [
 ]
 draft = false
 date = "2017-01-16T09:30:12-05:00"
-title = "Scientific Computing"
+title = "High Performance Computing"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [
   "",
 ]
 
 +++
 
-<p class=lead>School of Medicine Research Computing supports SOM and UVa Medical Center researchers who are interested in writing code to address their scientific inquiries. Whether these programming tasks are implemented interactively, in a series of scripts or as an open-source software package, services are available to provide guidance and enable collaborative development. SOMRC has specific expertise in object oriented programming in <b>Matlab</b>, <b>R</b>, and <b>Python</b>.</p>
+<p class=lead>Research Computing supports all UVA researchers who are interested in writing code to address their scientific inquiries. Whether these programming tasks are implemented interactively, in a series of scripts or as an open-source software package, services are available to provide guidance and enable collaborative development. RC has specific expertise in object oriented programming in <b>Matlab</b>, <b>R</b>, and <b>Python</b>.</p>
 
 Examples of service areas include:
 
@@ -42,8 +42,7 @@ Examples of service areas include:
     </p><p class="card-text">
     All nodes share a Lustre filesystem for temporary storage called <code>/scratch</code> with up to 1.4PB of storage space for all users.   Each user is assigned space in <code>/scratch/$USER</code> with a default quota of 10TB of storage. 
     </p>
-    <a href="https://arcs.virginia.edu/rivanna" class="card-link"><button class="btn btn-warning">Read more</button></a>
-    <a href="https://arcs.virginia.edu/frequently-asked-questions" class="card-link"><button class="btn btn-warning">FAQs</button></a>
+    <a href="/userinfo/rivanna/overview" class="card-link"><button class="btn btn-warning">Read more about Rivanna</button></a>
   </div>
 </div>
 
@@ -54,11 +53,10 @@ Examples of service areas include:
     <h4 class="card-title">Ivy</h4>
     <h6 class="card-subtitle mb-2 text-muted">High-Security / HIPAA Computing</h6>
     <p class="card-text">
-    Ivy provides a secure computing environment for all user levels. It is made up of three tiers, each HIPAA-compliant out of the box:
+    Ivy provides a secure computing environment for all user levels. It is made up of two separate components, each HIPAA-compliant out of the box:
     <ul>
       <li>VMware virtual compute instances (Windows Server 2012R2 / CentOS Linux)</li>
       <li>Domino Data Lab</li>
-      <li>Apache Spark</li>
     </ul>
     </p>
     <a href="/userinfo/ivy/" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>

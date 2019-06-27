@@ -3,7 +3,6 @@ title: "Image Processing and Scientific Visualization"
 author: "Christina Gancayco"
 date: 2019-06-24T11:13:14-05:00
 draft: false
-
 toc: true
 ---
 

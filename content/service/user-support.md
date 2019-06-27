@@ -1,6 +1,6 @@
 +++
 images = [""]
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 title = "User Support"
 draft = false

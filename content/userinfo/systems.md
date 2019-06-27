@@ -1,10 +1,10 @@
 +++
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 title = "Computing Systems"
-date = "2017-04-18T10:08:29-05:00"
+date = "2019-04-18T10:08:29-05:00"
 draft = false
-tags = ["compute","rivanna","ivy","cloud","aws","gcp"]
+tags = ["compute","rivanna","ivy","cloud","aws","hpc"]
 categories = ["userinfo"]
 images = [""]
 +++
@@ -18,7 +18,7 @@ various systems are available to researchers.</p>
   <div class="card-block">
     <h4 class="card-title">Rivanna HPC</h4>
       <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
-      <a href="http://arcs.virginia.edu/rivanna" target="_new" class="btn btn-warning" style="color:white">Get Started on Rivanna</a>
+      <a href="/userinfo/rivanna/overview/" class="btn btn-warning" style="color:white">Get Started on Rivanna</a>
   </div>
 </div>
 </div>

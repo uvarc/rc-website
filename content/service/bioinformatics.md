@@ -1,9 +1,9 @@
 +++
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 title = "Bioinformatics & Genomics"
 date = "2017-01-31T09:48:06-05:00"
-draft = false
+draft = true
 tags = ["bioinformatics","genomics"]
 categories = ["services"]
 images = [""]
