@@ -10,6 +10,8 @@ categories = ["feature"]
 
 +++
 
+<a href="/project/"><img src="/images/projects/project-panels.png" style="width:100%;" alt="Research Computing Projects" /></a>
+
 UVA Research Computing strives to empower researchers to achieve more through the use of cutting-edge computational resources.
 This has led to fruitful collaborations with researchers and staff across grounds, including these groups and departments:
 
