@@ -27,7 +27,7 @@ If you do not have the ability to create your own image for Rivanna or to use a 
 
 
 # Singularity on Rivanna
-Singularity is available as a [module](/resource/rivanna/software/modules), and a library of prepared Singularity container images is provided for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the module avail and module spider commands.
+Singularity is available as a [module](/userinfo/rivanna/software/modules), and a library of prepared Singularity container images is provided for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the module avail and module spider commands.
 
 ```
 module load singularity

@@ -71,7 +71,7 @@ To start a JupyterLab session, fill out the resource request webform.  To reques
 2. Under Optional GPU Type, choose "K80", "P100", or leave it as "default".
 3. Click `Launch` to start the session.
 
-Review our [Jupyer Lab documentation](/resource/rivanna/software/jupterlab) for more details..
+Review our [Jupyer Lab documentation](/userinfo/rivanna/software/jupyterlab) for more details..
 
 ## Editing and Running the Notebook
 

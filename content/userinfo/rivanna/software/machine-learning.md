@@ -18,9 +18,9 @@ Rivanna has several nodes that are equipped with GPU devices.  These nodes are a
 # Applications
 Several machine learning software packages are installed on Rivanna.  The most commonly used ones are:
 
-* [TensorFlow](/resource/rivanna/software/tensorflow)
-* [Keras](/resource/rivanna/software/Keras)
-* [PyTorch](/resource/rivanna/software/pytorch)
+* [TensorFlow](/userinfo/rivanna/software/tensorflow)
+* [Keras](/userinfo/rivanna/software/Keras)
+* [PyTorch](/userinfo/rivanna/software/pytorch)
 * Caffe2
 
 Other less frequently used software packages include:

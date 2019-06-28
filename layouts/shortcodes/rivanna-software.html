@@ -43,7 +43,9 @@ function searchFunction() {
       {{ $tag := index (split (delimit (last 1 (split (index .versions 0).help "Application class: ")) " ") "\n") 0 }}
       {{ if and (or $showhidden (not $ishidden)) (or (eq "all" $tags) (and (ne "" $tag) (in (slice $tags ",") $tag))) }}
         <tr>
-          <td><a target="_new" href="../{{ .package }}">{{ .package }}</a></td>
+          {{ $modulesite := delimit (slice "/userinfo" "rivanna" "software" .package) "/" }}
+          {{ $exists := .Site.GetPage $modulesite }}
+          <td><a href="{{ $modulesite }}">{{ .package }}</a></td>
           <td>{{ $tag }}
           <td>{{ .description }}</td>
         </tr>

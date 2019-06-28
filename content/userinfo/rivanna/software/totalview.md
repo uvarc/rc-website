@@ -30,12 +30,12 @@ module load totalview
 totalview
 ```
 
-Totalview is normally used with its X11-based graphical user interface and to use it directly, you must have an X server running on your local system or use [FastX](/resource/rivanna/access/fastx). Computers running Linux will automatically have an X server available.
+Totalview is normally used with its X11-based graphical user interface and to use it directly, you must have an X server running on your local system or use [FastX](/userinfo/rivanna/access/fastx). Computers running Linux will automatically have an X server available.
 
 * On Mac OS X you will need to install `XQuartz`.
 * Windows users must also install an X server; we recommend `XminGW`.
 
-The recommended way to run X applications remotely is to enable X11 port forwarding in your ssh client (SecureCRT, PuTTY, etc.) and run the X server in the background (passively). Another option is the [FastX client](/resource/rivanna/access/fastx) which can be installed on the user's local system to open a desktop on the cluster frontend.
+The recommended way to run X applications remotely is to enable X11 port forwarding in your ssh client (SecureCRT, PuTTY, etc.) and run the X server in the background (passively). Another option is the [FastX client](/userinfo/rivanna/access/fastx) which can be installed on the user's local system to open a desktop on the cluster frontend.
 
 # Using Totalview to Debug MPI Codes
 One of the most powerful features of Totalview is its ability to debug parallel codes.
