@@ -58,8 +58,6 @@ quell_footer = true
 </div>
 
 <div class="card-group">
-
-<!-- SECTION STUB IN RESERVE
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-cloud fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
@@ -71,8 +69,6 @@ quell_footer = true
       </div>
     </div>
   </div>
--->
-
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-image fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
