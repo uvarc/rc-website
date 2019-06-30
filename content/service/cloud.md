@@ -13,7 +13,7 @@ draft = false
 date = "2018-09-11T14:18:18-05:00"
 title = "Cloud Solutions"
 description = ""
-author = "SOMRC Staff"
+author = "Staff"
 images = [
   "/2016/10/image.jpg",
 ]
@@ -21,12 +21,14 @@ images = [
 +++
 
 <script>
+// <!--
 var aText = new Array(
 "serverless website",
 "pipelines",
 "containers",
 "jobs more efficiently"
 );
+//-->
 </script>
 
 <div class="typed">Run your<span id="typedtext"></span>
@@ -34,7 +36,7 @@ var aText = new Array(
 </div>
 
 <img src="/images/logos/aws_logo_smile_195x195.png" alt="AWS" align=right style="max-width:33%;" />
-<p class=lead>Cloud computing is ideal for running flexible, scalable applications on demand, in periodic bursts, or for fixed periods of time. UVA SOMRC works alongside researchers to design and run research applications and datasets into Amazon Web Services, the leader among public cloud vendors. This means that server, storage, and database needs do not have to be estimated or purchased beforehand – they can be scaled larger and smaller with your needs, or programmed to scale dynamically with your application.</p>
+<p class=lead>Cloud computing is ideal for running flexible, scalable applications on demand, in periodic bursts, or for fixed periods of time. UVA Research Computing works alongside researchers to design and run research applications and datasets into Amazon Web Services, the leader among public cloud vendors. This means that server, storage, and database needs do not have to be estimated or purchased beforehand – they can be scaled larger and smaller with your needs, or programmed to scale dynamically with your application.</p>
 
 <hr size=1 style="padding-bottom:10px;" />
 
@@ -218,7 +220,7 @@ to verify that your application, infrastructure, and staff can meet all minimum 
 
 We have experience designing and delivering solutions to the public cloud using industry best practices. 
 If you have a project and would like to discuss options, pricing, design, or implementation, we are available for consultation.
-Our staff includes an AWS certified solution architect, and the entire SOMRC team uses AWS for our own internal 
+Our staff includes an AWS certified solution architect, and the RC team uses AWS for our own internal 
 systems and development.
 
 [<button class="btn btn-primary">Request a Consultation</button>](/service/consult/)
