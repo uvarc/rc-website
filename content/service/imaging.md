@@ -6,18 +6,16 @@ title = "Image Processing & Scientific Visualization"
 author = "Christina Gancayco"
 tags = [
   "vizlab",
-  "visualization"
   "imaging",
   "image-processing",
   "omero",
-  "radiology"
+  "radiology",
 ]
 date = "2019-06-24"
 draft = false
 toc = true
 
 +++
-
 
 <p class="lead">
 <b>Image Processing</b> and <b>Scientific Visualization</b> are two separate processes 
@@ -34,6 +32,8 @@ processing and scientific visualization techniques.
 # Image Processing
 
 ## Overview
+
+<img src="/images/image-processing.jpg" style="float:right; max-width:40%; margin-left:2rem; margin-bottom:2rem;" />
 
 Image processing encompasses a variety of techniques to prepare images for analysis. 
 Researchers often need to remove noise artifacts from their imaging data, or they need to 
@@ -112,13 +112,15 @@ for image processing, such as ANTsR, EBImage, and magick.
 
 We currently offer online tutorials for image processing with Fiji/ImageJ. 
 
-[Introduction to Scientific Image Processing with Fiji/ImageJ](https://workshops.somrc.virginia.edu/lesson/intro-fiji-imagej/)
+* [Introduction to Scientific Image Processing with Fiji/ImageJ](https://workshops.somrc.virginia.edu/lesson/intro-fiji-imagej/)
+* [Fiji/ImageJ: Script Development for Image Processing](https://workshops.somrc.virginia.edu/lesson/fiji-scripting/)
 
-[Fiji/ImageJ: Script Development for Image Processing](https://workshops.somrc.virginia.edu/lesson/fiji-scripting/)
-
-Stay tuned for additional online tutorials as well as live workshops listed on our education 
+Stay tuned for additional online tutorials as well as in-person workshops listed on our education 
 platform, [CADRE Academy!](https://education.cadre.virginia.edu/#/home)
 
+{{< education-track "278" >}}
+
+- - -
 
 # Visualization
 
@@ -159,14 +161,17 @@ editing.
 in augmented and virtual reality. 
 
 
-
 ## Additional Resources
 
 We currently offer several online tutorials for data visualization.
 
-[MATLAB Data Processing and Visualization](https://workshops.somrc.virginia.edu/lesson/matlab-data-visualization/)
+* [MATLAB Data Processing and Visualization](https://workshops.somrc.virginia.edu/lesson/matlab-data-visualization/)
 
 Stay tuned for additional online tutorials as well as our workshops posted on [CADRE Academy!](https://education.cadre.virginia.edu/#/home)
+
+{{< education-track "283" >}}
+
+- - -
 
 # Viz Lab
 
@@ -183,25 +188,33 @@ Find out what your data are telling you!
 ## Systems and Resources
 
 ### Virtual Reality Environment (Touch Table II & HTC Vive)      
-Touch Table II is a 65" ultra high-definition monitor with capacitative touch that is 
-driven by a computer with 64GB RAM and two NVidia GeForce 970 Graphics cards. It interacts 
-with an HTC Vive headset which allows users to experience the wonders of virtual reality.
+<div class="bd-callout bd-callout-warning">
+  Touch Table II is a 65" ultra high-definition monitor with capacitative touch that is 
+  driven by a computer with 64GB RAM and two NVidia GeForce 970 Graphics cards. It interacts 
+  with an HTC Vive headset which allows users to experience the wonders of virtual reality.
+</div>
 
 ### Visualization Environment (Touch Table I & the Viz Wall)
-Touch Table I consists of a 55" monitor with touch capability that can be used to interact 
-with images on the Viz Wall. It is driven by a computer with 64GB RAM and one NVidia Quadro 
-2000 Graphics card. The Viz Wall is a 4' X 7.5' MicroTile system with a resolution of 7.76 
-Mpixels developed by Christie Digital.
+<div class="bd-callout bd-callout-warning">
+  Touch Table I consists of a 55" monitor with touch capability that can be used to interact 
+  with images on the Viz Wall. It is driven by a computer with 64GB RAM and one NVidia Quadro 
+  2000 Graphics card. The Viz Wall is a 4' X 7.5' MicroTile system with a resolution of 7.76 
+  Mpixels developed by Christie Digital.
+</div>
 
 ### GPU Environment (Escher)
-Escher is a high-end graphics workstation with 64 GB RAM and two NVidia GeForce Titan 
-Graphics cards.  This machine is available to researchers upon request.
+<div class="bd-callout bd-callout-warning">
+  Escher is a high-end graphics workstation with 64 GB RAM and two NVidia GeForce Titan 
+  Graphics cards.  This machine is available to researchers upon request.
+</div>
 
 ## Training
 
 The Viz Lab is conveniently located in Rice Hall on the south end of UVA's historic Grounds. 
 To request a tour of the Viz Lab or to receive training on the equipment, simply fill out 
 and submit [this form](https://arcs.virginia.edu/viz-lab-contact-form).
+
+<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJNVN8Z1uGs4kR7JcEE4iqkGQ&key=AIzaSyDlPVTTX5CpSjoyzqXOpHxxV3xBNbiC2nI" allowfullscreen></iframe>
 
 ## Viz Lab Calendar
 
