@@ -2,7 +2,7 @@
 draft = false
 date = "2019-05-17T15:25:10-05:00"
 title = "Neal Magee, PhD"
-job_title = "Cloud Solution Architect"
+job_title = "HPC / Cloud Solution Architect"
 lastname = "magee"
 email = "nem2p@virginia.edu"
 type = "people"

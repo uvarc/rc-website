@@ -1,10 +1,23 @@
----
-title: "Image Processing and Scientific Visualization"
-author: "Christina Gancayco"
-date: 2019-06-24T11:13:14-05:00
-draft: false
-toc: true
----
++++
+categories = ["services"]
+images = []
+description = ""
+title = "Image Processing & Scientific Visualization"
+author = "Christina Gancayco"
+tags = [
+  "vizlab",
+  "visualization"
+  "imaging",
+  "image-processing",
+  "omero",
+  "radiology"
+]
+date = "2019-06-24"
+draft = false
+toc = true
+
++++
+
 
 <p class="lead">
 <b>Image Processing</b> and <b>Scientific Visualization</b> are two separate processes 
@@ -15,6 +28,8 @@ of data so that trends and anomalies can be more easily recognized. UVa Research
 offers many services and resources to help researchers augment their work with image 
 processing and scientific visualization techniques.
 </p>
+
+- - -
 
 # Image Processing
 

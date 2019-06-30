@@ -15,6 +15,8 @@ subjects = [
   "rivanna",
   "parallel-computing",
   "storage",
+  "data-analysis",
+  "vizlab"
 ]
 +++
 
