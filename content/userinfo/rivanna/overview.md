@@ -67,6 +67,15 @@ type = "rivanna"
 </div>
 <div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
+    <h5 class="card-title">Queues</h5>
+    <p class="card-text">Learn the right queue (or "allocation") for running your job, such as standard, paralle, gpu, and more.</p>
+    <a href="/userinfo/rivanna/queues/"><button class="btn btn-warning">Learn More</button></a>
+  </div>
+</div>
+</div>
+<div class="card-group">
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
+  <div class="card-body">
     <h5 class="card-title">Usage Policies</h5>
     <p class="card-text">Understand what is expected of you as a Rivanna HPC user. All users must comply with these requirements.</p>
     <a href="/userinfo/rivanna/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>

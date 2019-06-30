@@ -3,7 +3,7 @@ description = ""
 title = "Login & File Transfer"
 draft = false
 date = "2019-05-28T17:45:12-05:00"
-tags = ["hpc","rivanna","parallel-computing","supercomputer","allocations","queues","storage"]
+tags = ["hpc","rivanna","supercomputer","login"]
 categories = ["userinfo"]
 images = [""]
 author = "Staff"  
@@ -15,19 +15,21 @@ type = "rivanna"
 
 Rivanna is accessible through a web portal, secure shell terminals, or a remote desktop environment.  For of all of these access points, your login is your UVA computing ID and your password is your Eservices password.  If you do not know your Eservices password you must change it through ITS.
 
-All users who wish to access Rivanna while off Grounds, must use the UVA Anywhere VPN client.  Only Windows and Mac OSX operating systems are supported.  Linux users can find unsupported instructions to install and configure a VPN here.
+All users who wish to access Rivanna while off Grounds must use the [UVA Anywhere VPN client](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).  Only Windows and Mac OSX operating systems are supported.  Linux users can find unsupported instructions to install and configure a VPN here.
 
-## Web Portal Access
+- - -
+
+## Web-based Access
 
 Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser.  The Open OnDemand access point is rivanna-portal.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our Open OnDemand documentation page.
 
-```
-https://rivanna-portal.hpc.virginia.edu/
-```
+[<button style="margin-left:20%;" class="btn btn-primary">Launch Open OnDemand</button>](https://rivanna-portal.hpc.virginia.edu/)
 
-## Secure Shell Access
+- - -
 
-Rivanna is accessible through ssh (Secure Shell) connections using the hostname `rivanna.hpc.virginia.edu`.
+## Secure Shell Access (SSH)
+
+Rivanna is accessible through `ssh` (Secure Shell) connections using the hostname `rivanna.hpc.virginia.edu`.
 
 ### Windows
 
@@ -45,10 +47,13 @@ SSH key authentication is also permissible. Mac users must install XQuartz in or
 
 For more details and for troubleshooting information, please see our ssh page.
 
+- - -
+
 ## Remote Desktop Access
 
 Users who wish to run X11 graphical applications may prefer the FastX remote desktop web interface.  The FastX web client is accessible at `rivanna-desktop.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
 
+- - -
 
 # File Transfer
 

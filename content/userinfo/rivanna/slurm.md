@@ -13,7 +13,9 @@ type = "rivanna"
 
 # Overview
 
-Rivanna is a multi-user, managed environment.  It is divided into frontends, which are directly accessible by users, and compute nodes, which must be accessed through the resource manager.  We use the Simple Linux Utility for Resource Management (SLURM), an open-source tool that performs cluster management and job scheduling for Linux clusters. Jobs are submitted to the resource manager, which queues them until the system is ready to run them. SLURM selects which jobs to run, when to run them, and how to place them on the compute node, according to a predetermined site policy meant to balance competing user needs and to maximize efficient use of cluster resources. SLURM divides a cluster into logical units called partitions (generally known as queues in other systems). Different partitions may contain different nodes, or they may overlap; they may also impose different resource limitations. The UVA HPC environment provides several partitions and there is no default; each job must request a partition. To determine which queues are available to your group, log in to the HPC System and type queues at a Linux command-line prompt.
+<img style="margin-left:2rem; margin-bottom:2rem; float:right; max-width:30%;" src="/images/rivanna/slurm-workload-manager.png" />
+
+Rivanna is a multi-user, managed environment.  It is divided into frontends, which are directly accessible by users, and compute nodes, which must be accessed through the resource manager.  We use the **Simple Linux Utility for Resource Management (SLURM)**, an open-source tool that performs cluster management and job scheduling for Linux clusters. Jobs are submitted to the resource manager, which queues them until the system is ready to run them. SLURM selects which jobs to run, when to run them, and how to place them on the compute node, according to a predetermined site policy meant to balance competing user needs and to maximize efficient use of cluster resources. SLURM divides a cluster into logical units called partitions (generally known as queues in other systems). Different partitions may contain different nodes, or they may overlap; they may also impose different resource limitations. The UVA HPC environment provides several partitions and there is no default; each job must request a partition. To determine which queues are available to your group, log in to the HPC System and type queues at a Linux command-line prompt.
 
 # Local Queue Configuration
 
@@ -57,7 +59,7 @@ In our installation of SLURM, the default starting directory is the directory fr
 
 - - - 
 
-# Common SLURM Options and Environment Variables
+# Configurable Options in SLURM
 
 SLURM refers to processes as "tasks."  A task may be envisioned as an independent, running process.  SLURM also refers to cores as "cpus" even though modern cpus contain several to many cores.  If your program uses only one core it is a single, sequential task.  If it can use multiple cores on the same node, it is generally regarded as a single task, with multiple cores assigned to that task.  If it is a distributed code that can run on multiple nodes, each process would be a task.
 
@@ -77,6 +79,17 @@ Note that most SLURM options have two forms, a short (single-letter) form that i
 | Account to be charged  | `-A <account>` or `--account=<allocation>` |
 
 - - -
+
+## Environment variables
+
+These are the most basic; there are many more.  By default SLURM changes to the directory from which the job was submitted, so the `SLURM_SUBMIT_DIR` environment variable is usually not needed.
+
+```
+SLURM_JOB_ID
+SLURM_SUBMIT_DIR
+SLURM_JOB_PARTITION
+SLURM_JOB_NODELIST
+```
 
 SLURM passes all environment variables from the shell in which the `sbatch` or `salloc` (and `ijob`) command was run. To override this behavior in an `sbatch` script, add
 
@@ -108,17 +121,6 @@ To separate standard error from standard output, you must rename both.
 
 ```
 #SBATCH -e <errfile> or --error=<errfile>
-```
-
-## Environment variables
-
-These are the most basic; there are many more.  By default SLURM changes to the directory from which the job was submitted, so the SLURM_SUBMIT_DIR environment variable is usually not needed.
-
-```
-SLURM_JOB_ID
-SLURM_SUBMIT_DIR
-SLURM_JOB_PARTITION
-SLURM_JOB_NODELIST
 ```
 
 # Requesting Special Resources
