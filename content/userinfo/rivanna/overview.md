@@ -20,10 +20,9 @@ type = "rivanna"
 <p class="lead">The sections below contain important information for Rivanna users. Please read each carefully.</p>
 <p class="lead">New users are invited to attend one of our free orientation sessions ("Introduction to the HPC System") held throughout the year during office hours or by appointment.</p>
 
-
+- - -
 
 # Get Started
-
 
 <div class="card-group">
 <div class="card shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
@@ -82,6 +81,8 @@ type = "rivanna"
   </div>
 </div>
 </div>
+
+- - -
 
 # System Details
 
