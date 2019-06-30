@@ -33,20 +33,20 @@ The remainder of this tutorial will focus on the SLURM command line interface. M
 
 # Job Scripts
 
-Jobs are submitting through a job script, which is a shell script (usually bash).  Since it is a shell script it begins with a "shebang"
+Jobs are submitted through a job script, which is a shell script (usually written in `bash`).  Since it is a shell script it must begin with a "shebang"
 
 ```
 #!/bin/bash
 ```
 
-This is followed by a preamble, which describes the resource requests the job is making.  Each request begins with #SBATCH followed by an option.
+This is followed by a preamble describing the resource requests the job is making.  Each request begins with `#SBATCH` followed by an option.
 
 ```
 #SBATCH --time=12:00:00
 #SBATCH -A myaccount
 ```
 
-After all resource requests have been established through #SBATCH, the script must describe exactly how to run the job.  
+After all resource requests have been established through `#SBATCH`, the script must describe exactly how to run the job.  
 
 ```
 module load gcc/7.1.0
@@ -63,7 +63,7 @@ SLURM refers to processes as "tasks."  A task may be envisioned as an independen
 
 ## Options
 
-Note that most SLURM options have two forms, a short (single-letter) form that is preceded by a single hyphen and followed by a space, and a longer form preceded by a double hyphen and followed by an equals sign.  In a job script these options are preceded by a pseudocomment #SBATCH.  They may also be used as command-line options on their own, especially with ijob.
+Note that most SLURM options have two forms, a short (single-letter) form that is preceded by a single hyphen and followed by a space, and a longer form preceded by a double hyphen and followed by an equals sign.  In a job script these options are preceded by a pseudocomment `#SBATCH`.  They may also be used as command-line options on their own, especially with ijob.
 
 | Option | Usage |
 |---|---|
@@ -78,7 +78,7 @@ Note that most SLURM options have two forms, a short (single-letter) form that i
 
 - - -
 
-SLURM passes all environment variables from the shell in which the sbatch or salloc (and ijob) command was run. To override this behavior in an sbatch script, add
+SLURM passes all environment variables from the shell in which the `sbatch` or `salloc` (and `ijob`) command was run. To override this behavior in an `sbatch` script, add
 
 ```
 #SBATCH --export=NONE
