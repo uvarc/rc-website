@@ -51,7 +51,7 @@ Here are some of the building blocks available using cloud infrastructure:
   <ul class="list-group">
     <li class="list-group-item"><i class="fa fa-2x fa-microchip" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Compute</li>
     <li class="list-group-item"><i class="far fa-2x fa-hdd" aria-hidden="true" style="padding-right:8px;"></i>&nbsp;Storage</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Database</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-database" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Databases</li>
     <li class="list-group-item"><i class="fa fa-2x fa-cube" aria-hidden="true" style="padding-right:8px;"></i> Containers / Docker</li>
     <li class="list-group-item"><i class="fas fa-2x fa-chart-pie" aria-hidden="true" style="padding-right:8px;"></i> Analytics / Data Management</li>
     <li class="list-group-item"><i class="fa fa-2x fa-share-alt" aria-hidden="true" style="padding-right:8px;"></i> &nbsp;Continuous Integration</li>
@@ -60,7 +60,7 @@ Here are some of the building blocks available using cloud infrastructure:
   <div class="col-sm">
   <ul class="list-group">
     <li class="list-group-item"><i class="fa fa-2x fa-spin fa-cog" aria-hidden="true" style=""></i> &nbsp; Sensor / IoT Data Streaming</li>
-    <li class="list-group-item"><i class="fa fa-2x fa-list-ul" aria-hidden="true" style="padding-right:8px;"></i> Messaging Queues</li>
+    <li class="list-group-item"><i class="fa fa-2x fa-list-ul" aria-hidden="true" style="padding-right:8px;"></i> Message Queues / Brokers</li>
     <li class="list-group-item"><i class="fa fa-2x fa-mobile" aria-hidden="true" style="padding-left:8px;padding-right:18px;"></i> SMS / Push Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-microphone" aria-hidden="true" style="padding-right:8px;"></i> &nbsp; Alexa Skills / Speech Integration</li>
     <li class="list-group-item"><i class="fa fa-2x fa-code" aria-hidden="true" style="padding-right:8px;"></i> Serverless Computing</li>
@@ -90,7 +90,7 @@ real-time streams or in queues for later analysis.
       </td>
     </tr>
     <tr>
-      <th scope="row" style="width:25%;font-weight:bold;">Services Supporting HPC</th>
+      <th scope="row" style="width:25%;font-weight:bold;">Services in Support of HPC</th>
       <td>
 Users of HPC usually have more than enough computing power to run their jobs. But what if you
 need a relational or NoSQL database, a messaging service, or offsite storage? Researchers have begun integrating the cloud 
@@ -119,7 +119,7 @@ can create and push jobs to cloud-based resources, regardless of the cloud vendo
       <th scope="row" style="width:25%;font-weight:bold;">Long-term Cold Storage</th>
       <td>
 AWS Glacier and Google Nearline/Coldline offer researchers "cold" offsite storage for long-term backups of infrequently-accessed data. 
-Genomics researchers use Glacier to store terabytes of source data as required by grants and federal research projects. 
+Many researchers use Glacier to store terabytes of source data to fulfill grants and federal research project compliance. 
       </td>
     </tr>
   </tbody>
