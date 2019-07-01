@@ -12,12 +12,12 @@ type = "rivanna"
 +++
 
 <div class="bd-callout bd-callout-warning">
-<h4>Rivanna</h4>
-<p>Rivanna is the University of Virginia's High-Performance Computing (HPC) system. Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. All UVA faculty, staff, and postdoctoral associates are considered PIs and therefore eligible for an allocation on Rivanna. Students—both graduate and undergraduate—cannot request allocations, but they are allowed to use Rivanna as members of a MyGroups group controlled by a PI.</p>
-<p>Each PI is ultimately responsible for managing the roster of users in his/her MyGroups account although PIs may delegate day-to-day management to one or more other members.</p>
+<h4>Rivanna HPC</h4>
+<p>Rivanna is the University of Virginia's High-Performance Computing (HPC) system. As a centralized resource it has hundreds of pre-installed software packages available for computational research across many disciplines. Currently the Rivanna supercomputer has over 8,000 cores and 8PB of various storage.</p>
+<p>All UVA faculty, staff, and postdoctoral associates are eligible to use Rivanna, or students when part of faculty research.</p>
 </div>
 
-<p class="lead">The sections below contain important information for Rivanna users. Please read each carefully.</p>
+<p class="lead">The sections below contain important information for new and existing Rivanna users. Please read each carefully.</p>
 <p class="lead">New users are invited to attend one of our free orientation sessions ("Introduction to the HPC System") held throughout the year during office hours or by appointment.</p>
 
 - - -
@@ -29,7 +29,7 @@ type = "rivanna"
   <div class="card-body">
     <h5 class="card-title">Get Access</h5>
     <p class="card-text">Request access to Rivanna HPC for your research. Add collaborators to your work.</p>
-    <a href="/userinfo/rivanna/overview/"><button class="btn btn-primary">Request an Allocation</button></a>
+    <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary">Request an Allocation</button></a>
   </div>
 </div>
 <div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
@@ -59,7 +59,7 @@ type = "rivanna"
 <div class="card-group">
 <div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
   <div class="card-body">
-    <h5 class="card-title">Running Jobs</h5>
+    <h5 class="card-title">Running Jobs in SLURM</h5>
     <p class="card-text">Your code is ready. Your data is in place. Learn how to run your jobs across the cluster, and other advanced SLURM features.</p>
     <a href="/userinfo/rivanna/slurm/"><button class="btn btn-warning">Learn More</button></a>
   </div>
@@ -73,11 +73,18 @@ type = "rivanna"
 </div>
 </div>
 <div class="card-group">
-<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Usage Policies</h5>
     <p class="card-text">Understand what is expected of you as a Rivanna HPC user. All users must comply with these requirements.</p>
     <a href="/userinfo/rivanna/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
+  </div>
+</div>
+<div class="card shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
+  <div class="card-body">
+    <h5 class="card-title">FAQs</h5>
+    <p class="card-text">Have a question? Others may have asked it before, so please check our Frequently Asked Questions page first.</p>
+    <a href="/userinfo/rivanna/faqs/"><button class="btn btn-warning">Read our FAQs</button></a>
   </div>
 </div>
 </div>

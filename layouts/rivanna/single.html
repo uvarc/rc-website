@@ -3,8 +3,10 @@
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
 <article class="blog-post">
-  <header>
+  <header style="margin-bottom:3rem;">
     <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+
+    <h6 style="float:right;font-size:90%;"><a href="/userinfo/rivanna/overview/">&laquo; Return to Rivanna Overview</a></h6>
   </header>
   
   <div class="explainer">

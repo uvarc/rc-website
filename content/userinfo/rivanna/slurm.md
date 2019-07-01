@@ -31,7 +31,7 @@ SLURM has a controller process (called a daemon) on a head node and a worker dae
 
 To submit a job to the cluster, you must request the appropriate resources and specify what you want to run with a SLURM Job Command File. In most cases, this batch job file is simply a bash or other shell script containing directives that specify the resource requirements (e.g. the number of cores, the maximum runtime, partition specification, etc.) that your job is requesting along with the set of commands required to execute your workflow on a subset of cluster compute nodes.  Batch job scripts are submitted to the SLURM Controller to be run on the cluster. When the script is submitted to the resource manager, the controller reads the directives, ignoring the rest of the script, and uses them to determine the overall resource request.  It then assigns a priority to the job and places it into the queue.  Once the job is assigned to a worker, the job script is run as an ordinary shell script on the "master" node, in which case the directives are treated as comments.  For this reason it is important to follow the format for directives exactly.
 
-The remainder of this tutorial will focus on the SLURM command line interface. More detailed information about using SLURM can be found in the official SLURM documentation.
+The remainder of this tutorial will focus on the SLURM command line interface. More detailed information about using SLURM can be found in the [official SLURM documentation](https://slurm.schedmd.com/documentation.html).
 
 # Job Scripts
 

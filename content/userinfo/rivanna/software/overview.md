@@ -1,9 +1,11 @@
 +++
-date = "2019-04-23T08:37:46-05:00"
+date = "2019-06-23T08:37:46-05:00"
+categories = ["userinfo"]
 tags = [
   "rivanna",
   "hpc",
   "research",
+  "software",
   "containers",
   "singularity"
 ]
@@ -25,7 +27,7 @@ For help installing research software on your PC, please contact Research Softwa
 
 Software on Rivanna is accessed via environment [modules](/userinfo/rivanna/software/modules) or [containers](/userinfo/rivanna/software/containers).
 
-<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-sm btn-primary"">Complete List of Rivanna Software &rsaquo;</button></a>
+<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">Browse All Rivanna Software &rsaquo;</button></a>
 
 # Software by Category
 
