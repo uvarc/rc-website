@@ -3,16 +3,22 @@ type = "rivanna"
 date = "2019-04-23T08:37:46-05:00"
 tags = [
   "rivanna",
+  "lmod",
+  "software",
+  "hpc"
 ]
 draft = false
 title = "Software Modules"
 description = "Software Modules"
 author = "RC Staff"
+categories = ["userinfo"]
 
 +++
 
 <p class="lead">The <code>lmod</code> modules system on Rivanna enables users to easily set their environments for selected software and to choose versions if appropriate.</p>
 <p class="lead">The <code>lmod</code> system is hierarchical; not every module is available in every environment.  We provide a core environment which contains most of the software installed by Research Computing staff, but software that requires a compiler or MPI is not in that environment and a compiler must first be loaded.</p>
+
+<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">View All Modules</button></a> &nbsp;
 
 - - -
 
@@ -31,7 +37,7 @@ module spider
 module spider hdf5
 ```
 
-If a version is specified to spider, it will indicate how to load that version.
+If a version is specified to `spider`, it will indicate how to load that version.
 
 ```
 module spider openmpi/2.1.1
@@ -90,14 +96,14 @@ For example, if you have loaded gcc/7.1.0 and you wish to switch to intel/17.0
 ```
 module swap gcc/7.1.0 intel/17.0
 ```
-This will unload the gcc/7.1.0 environment entirely, and load the intel/17.0 environment. 
+This will unload the `gcc/7.1.0` environment entirely, and load the `intel/17.0` environment. 
 
 To clear all modules you have loaded and return to the default state:
 
 ```
 module purge
 ```
-More about these commands can be found in the documentation.
+More about these commands can be found in [the documentation](https://lmod.readthedocs.io/en/latest/).
 
 - - -
 # Modules in Job Scripts

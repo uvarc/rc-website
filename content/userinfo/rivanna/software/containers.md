@@ -1,4 +1,5 @@
 +++
+categories = ["userinfo"]
 type = "rivanna"
 date = "2019-04-23T08:37:46-05:00"
 tags = [
@@ -10,10 +11,12 @@ description = "Software Containers"
 author = "RC Staff"
 
 +++
+
 # Overview
-Containers bundle an application, the libraries and other executables it may need, and even the data used with the application into a portable, self-contained files called images. Containers simplify installation and management of software with complex dependencies and can also be used to package workflows. Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with SLURM and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
 
+<img src="/images/rivanna/singularity-logo.png" alt="Singularity HPC Containers" class="project-inset" style="float:right;max-width:30%;" />
 
+Containers bundle an application, the libraries and other executables it may need, and even the data used with the application into portable, self-contained files called images. Containers simplify installation and management of software with complex dependencies and can also be used to package workflows. Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with SLURM and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
 
 # Creating Singularity Containers
 To create your own image from scratch, you must have root privileges on some computer running Linux (any version).  Follow the instructions at the Singularity site.  If you have only Mac or Windows, you can use the Vagrant environment.  Vagrant is a pre-packed system that runs under several virtual-machine environments, including the free Virtualbox environment.  Singularity provides instructions for installing on Mac or installing on Windows.  Once you have installed Vitrualbox, you install Singularity's Vagrant image, which contains the prerequisites to author images.  You can then follow the instructions for Linux to author your image.
@@ -22,12 +25,12 @@ You can also import existing Docker images with the singularity pull command.
 ```
 singularity pull --name animage.simg docker://someaccount/animage
 ```
+
 If you do not have the ability to create your own image for Rivanna or to use a Docker image, contact us for assistance.
 
 
-
 # Singularity on Rivanna
-Singularity is available as a [module](/userinfo/rivanna/software/modules), and a library of prepared Singularity container images is provided for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the module avail and module spider commands.
+Singularity is available as a [module](/userinfo/rivanna/software/modules). The RC staff has also curated a library of pre-prepared Singularity container images for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the `module avail` and `module spider` commands.
 
 ```
 module load singularity
@@ -38,7 +41,6 @@ The available singularity containers are listed under /apps/modulefiles/standard
    cellprofiler/3.0.0 (D)    danpos/2.2.2 (D)    hydrator/0.0.2    tensorflow/1.6.0-py36
 Loading any of these container modules produces an on-screen message with instructions on how to copy the container image file to the personal /scratch directory and how to run the container.
 ```
-
 
 # What is Inside the Container?
 To learn more about the applications and libraries installed in a container you can use the singularity help CONTAINER command, where CONTAINER is a placeholder for the actual container image file.

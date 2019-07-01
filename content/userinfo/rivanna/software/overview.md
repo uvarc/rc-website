@@ -19,15 +19,16 @@ type = "rivanna"
 
 # Overview
 
-Research Computing at UVA offers a variety of standard software packages for all Rivanna users. We also install requested software based on the needs of the high-performance computing (HPC) community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group. Departments with a set of widely-used software packages may install them to the lsp_apps space. The Research Computing group also provides limited assistance for individual installations.
-
-For help installing research software on your PC, please contact Research Software Support at <a href="mailto:res-consult@virginia.edu">res-consult@virginia.edu</a>.
+<p class="lead">Research Computing at UVA offers a variety of standard software packages for all Rivanna users. We also install requested software based on the needs of the high-performance computing (HPC) community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group. Departments with a set of widely-used software packages may install them to the <code>lsp_apps</code> space. The Research Computing group also provides limited assistance for individual installations.</p>
+<p class="lead">For help installing research software on your PC, please contact Research Software Support at <a href="mailto:res-consult@virginia.edu">res-consult@virginia.edu</a>.</p>
 
 # Software Modules and Containers
 
-Software on Rivanna is accessed via environment [modules](/userinfo/rivanna/software/modules) or [containers](/userinfo/rivanna/software/containers).
+Software on Rivanna is accessed via environment **modules** or **containers**.
 
-<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">Browse All Rivanna Software &rsaquo;</button></a>
+<a href="/userinfo/rivanna/software/modules/"><button class="btn btn-primary"">Learn About Modules</button></a> &nbsp;
+<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">View All Modules</button></a> &nbsp;
+<a href="/userinfo/rivanna/software/containers/"><button class="btn btn-primary"">Learn About Containers</button></a>
 
 # Software by Category
 
