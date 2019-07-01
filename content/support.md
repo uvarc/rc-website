@@ -32,14 +32,14 @@ type = "about"
 <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Request a Consultation</h5>
-    <p class="card-text">Work directly with RC staff on your research project or get individual guidance or advice.</p>
+    <p class="card-text">Work directly with RC staff on your project idea.</p>
     <a href="/service/consult/"><button class="btn btn-primary">Request a Consultation</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">FAQ / Knowledgebase</h5>
-    <p class="card-text">Search topics or post your own question related to research computing.</p>
+    <p class="card-text">Search topics or post your own related to research computing.</p>
     <a href="https://discuss.rc.virginia.edu/" target="_new"><button class="btn btn-primary">Search or Ask a Question</button></a>
   </div>
 </div>
@@ -48,14 +48,14 @@ type = "about"
 <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Office Hours</h5>
-    <p class="card-text">Come meet our support staff at one of our three weekly office hours. Bring your questions!</p>
+    <p class="card-text">Bring your questions to one of our three weekly office hours.</p>
     <a href="/support/#office-hours"><button class="btn btn-primary">Meet Us at Office Hours</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">VizLab</h5>
-    <p class="card-text">The UVA VizLab is a resource specifically designed for data visualization.</p>
+    <p class="card-text">A place specifically designed for data visualization.</p>
     <a href="/service/imaging/#viz-lab"><button class="btn btn-primary">Learn More</button></a>
   </div>
 </div>
