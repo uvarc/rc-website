@@ -1,8 +1,5 @@
 +++
-categories = [
-  "services,"
-  "architecture",
-]
+categories = ["architecture"]
 tags = [
   "aws",
   "google",
