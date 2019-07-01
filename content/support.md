@@ -1,0 +1,90 @@
++++
+date = "2016-12-31T23:59:16-05:00"
+tags = ["support"]
+categories = ["support"]
+images = [""]
+about = true
+author = "Staff"
+description = ""
+title = "Support Options"
+draft = false
+type = "about"
+
++++
+
+<div class="card-group">
+<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+  <div class="card-body">
+    <h5 class="card-title">Submit a Ticket</h5>
+    <p class="card-text">Open a support ticket with your specific questions or issues.<p>
+    <a href="/"><button class="btn btn-primary">Open a Support Ticket</button></a>
+  </div>
+</div>
+<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">User Guides</h5>
+    <p class="card-text">Learn about systems, storage, data transfer, image analysis or tools.</p>
+    <a href="/userinfo/user-guide/"><button class="btn btn-primary">Read the User Guides</button></a>
+  </div>
+</div>
+</div>
+<div class="card-group">
+<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+  <div class="card-body">
+    <h5 class="card-title">Request a Consultation</h5>
+    <p class="card-text">Work directly with RC staff on your research project or get individual guidance or advice.</p>
+    <a href="/service/consult/"><button class="btn btn-primary">Request a Consultation</button></a>
+  </div>
+</div>
+<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">FAQ / Knowledgebase</h5>
+    <p class="card-text">Search topics or post your own question related to research computing.</p>
+    <a href="https://discuss.rc.virginia.edu/" target="_new"><button class="btn btn-primary">Search or Ask a Question</button></a>
+  </div>
+</div>
+</div>
+<div class="card-group">
+<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+  <div class="card-body">
+    <h5 class="card-title">Office Hours</h5>
+    <p class="card-text">Come meet our support staff at one of our three weekly office hours. Bring your questions!</p>
+    <a href="/support/#office-hours"><button class="btn btn-primary">Meet Us at Office Hours</button></a>
+  </div>
+</div>
+<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">VizLab</h5>
+    <p class="card-text">The UVA VizLab is a resource specifically designed for data visualization.</p>
+    <a href="/service/imaging/#viz-lab"><button class="btn btn-primary">Learn More</button></a>
+  </div>
+</div>
+</div>
+
+
+## Office Hours
+- - -
+
+Research Computing staff host weekly office hours. Drop by with a project idea, question about a system or anything else you would like to discuss. Walkups are welcome.
+
+<div class="alert alert-success" role="alert"> 
+<div style="float:right;margin-top:-10px;"><a href="https://www.google.com/maps/place/Physical+Life+Sciences+Building,+University+of+Virginia/@38.0329905,-78.5130147,19z/data=!4m5!3m4!1s0x89b3865ba6a606e1:0x3cea570629ea49b1!8m2!3d38.0329905!4d-78.5124622" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
+<b>Tuesdays 3:00-5:00pm</b><br />
+Physical Life Sciences Building, Room 430
+</div>
+
+<div class="alert alert-success" role="alert"> 
+<div style="float:right;margin-top:-10px;"><a href="https://www.google.com/maps/place/Claude+Moore+Health+Sciences+Library/@38.0323341,-78.5015411,19z/data=!4m5!3m4!1s0x89b38646ed2db88b:0xf9acb5aff9d27187!8m2!3d38.0323341!4d-78.5009886" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
+<b>Thursdays 10:00-12:00pm</b><br />
+Health Sciences Library, Room 1212
+</div>
+
+<div class="alert alert-success" role="alert"> 
+<div style="float:right;margin-top:-10px;"><a href="https://www.google.com/maps/place/Physical+Life+Sciences+Building,+University+of+Virginia/@38.0329905,-78.5130147,19z/data=!4m5!3m4!1s0x89b3865ba6a606e1:0x3cea570629ea49b1!8m2!3d38.0329905!4d-78.5124622" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
+<b>Thursdays 3:00-5:00pm</b><br />
+Physical Life Sciences Building, Room 430
+</div>
+
+
+<!-- {{< office-hours-grid >}} -->
+
