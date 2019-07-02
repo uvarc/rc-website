@@ -10,18 +10,19 @@ images = [""]
 
 +++
 
-<p class=lead>**Globus** - Unified access to your research data, across all systems, using any existing identity. Systems such as:</p>
+<div class="bd-callout bd-callout-warning">
+<p><b>Globus</b> - Unified access to your research data, across all systems, using any existing identity. Systems such as:</p>
 
-* Laptops
-* HPC clusters
-* Lab / departmental storage
-* Tape archives and Cloud storage
+<ul>
+<li> Laptops
+<li> HPC clusters
+<li> Lab / departmental storage
+<li> Tape archives and Cloud storage
+</ul>
  
-Access them all using just a web browser. This can help you share research data with colleagues, co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.
-
-Data stored at a different institution? At a supercomputing facility? All you need is your campus login.
-
-**Globus Connect is NOT for secure or sensitive data.**
+<p>Access them all using just a web browser. This can help you share research data with colleagues, co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.</p>
+<p>Data stored at a different institution? At a supercomputing facility? All you need is your campus login.</p>
+</div>
 
 # Set Up Globus Connect Personal
 <img class="img-right" src="//uvarc-discourse.s3.amazonaws.com/original/1X/e173debd0e4ab4497f7a799cbe864258f3482e5a.png" width="390" height="129">

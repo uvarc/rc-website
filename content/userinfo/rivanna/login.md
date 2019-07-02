@@ -43,7 +43,7 @@ OSX and Linux users may connect through a terminal using the command
 ssh -Y mst3k@rivanna.hpc.virginia.edu  
 ```
 
-SSH key authentication is also permissible. Mac users must install XQuartz in order to be able to run graphical (X11) applications.  Keep in mind that graphical X11 applications may be slow through a standard ssh login.  For extensive use of graphical applications you may prefer the FastX remote desktop environment.
+[SSH key authentication](https://discuss.rc.virginia.edu/t/ssh-key-authentication/200) is also permissible. Mac users must install XQuartz in order to be able to run graphical (X11) applications.  Keep in mind that graphical X11 applications may be slow through a standard ssh login.  For extensive use of graphical applications you may prefer the FastX remote desktop environment.
 
 For more details and for troubleshooting information, please see our ssh page.
 
