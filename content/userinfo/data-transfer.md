@@ -36,12 +36,12 @@ The data transfer method you choose heavily relies on where the data are current
 	<tbody style="font-size:14px">
 		<tr data-toggle="collapse" data-target="#accordion1" class="clickable">
 			<td align="center" vertical-align="middle">
-				<i class="fas fa-laptop fa-3x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<i class="fas fa-laptop fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
 				<b>Lab Workstation</b>
 			</td>
 			<td align="center" vertical-align="middle">
-				<i class="fas fa-database fa-3x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<i class="fas fa-database fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
 				<b>Non-Sensitive Data Storage</b>
 			</td>
@@ -83,12 +83,12 @@ The data transfer method you choose heavily relies on where the data are current
 		</tr>
 		<tr data-toggle="collapse" data-target="#accordion2" class="clickable">
 			<td align="center" vertical-align="middle">
-				<i class="fas fa-laptop fa-3x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<i class="fas fa-laptop fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
 				<b>Secure Lab Workstation</b>
 			</td>
 			<td align="center" vertical-align="middle">
-				<i class="fas fa-lock fa-3x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<i class="fas fa-lock fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
 				<b>Sensitive Data Storage</b>
 			</td>
@@ -124,12 +124,12 @@ The data transfer method you choose heavily relies on where the data are current
 		</tr>
 		<tr data-toggle="collapse" data-target="#accordion3" class="clickable">
 			<td align="center" vertical-align="middle">
-				<i class="fas fa-database fa-3x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<i class="fas fa-database fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
 				<b>Non-Sensitive Data Storage</b>
 			</td>
 			<td align="center" vertical-align="middle">
-				<i class="fas fa-laptop fa-3x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<i class="fas fa-laptop fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
 				<b>Lab Workstation</b>
 			</td>
@@ -170,12 +170,12 @@ The data transfer method you choose heavily relies on where the data are current
 		</tr>
 		<tr data-toggle="collapse" data-target="#accordion4" class="clickable">
 			<td align="center" vertical-align="middle">
-				<i class="fas fa-building fa-3x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<i class="fas fa-building fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
 				<b>External Institution</b>
 			</td>
 			<td align="center" vertical-align="middle">
-				<i class="fas fa-home fa-3x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<i class="fas fa-home fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
 				<b>University of Virginia</b>
 			</td>
@@ -246,6 +246,7 @@ The data transfer method you choose heavily relies on where the data are current
 	<div class="card">
 		<div class="card-block">
 			<h4 class="card-title">Filezilla & Cyberduck</h4>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/FileZilla_logo.svg/1024px-FileZilla_logo.svg.png" alt="FileZilla" style="max-width:16%; margin-left:2rem; float:right;" />
 			<h6 class="card-subtitle mb-2 text-muted">File transfer protocol (FTP) solutions</h6>
 				<p class="card-text">
 					FTP clients such as Filezilla and Cyberduck give researchers a graphical user interface to transfer data between their lab computers and a remote storage location. These apps allow for drag-and-drop file manipulation.
@@ -260,6 +261,7 @@ The data transfer method you choose heavily relies on where the data are current
 	<div class="card">
 		<div class="card-block">
 			<h4 class="card-title">Command Line Tools</h4>
+                        <div style="float:right; margin-left:2rem;"><i class="fas fa-6x fa-laptop-code"></i></div>
 			<h6 class="card-subtitle mb-2 text-muted">Small-scale file transfer</h6>
 				<p class="card-text">
 					Researchers who are comfortable with using the command line can use a variety of command line tools to transfer their data between their laptops and storage systems. Tools such as `scp`, `sftp`, and `rsync` can be used to quickly transfer a small number of files.
