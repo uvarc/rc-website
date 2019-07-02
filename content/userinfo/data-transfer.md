@@ -7,13 +7,15 @@ tags = [
 	]
 categories = ["userinfo"]
 images = [""]
-author = "SOMRC Staff"
+author = "Staff"
 description = ""
 title = "Data Transfer"
 draft = false
 +++
 
 <p class="lead">Efficient and reliable data transfer is a critical component of scientific research computing. There are a variety of useful tools available for expedient data transfer, whether you are transferring data from an external site or within different computing environments at UVa. </p>
+
+- - -
 
 # Use Cases
 
@@ -224,10 +226,12 @@ The data transfer method you choose heavily relies on where the data are current
 		<div class="card-block">
 			<h4 class="card-title">Globus Connect</h4>
 			<h6 class="card-subtitle mb-2 text-muted">Large-scale research data transfer</h6>
+                        <img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/e173debd0e4ab4497f7a799cbe864258f3482e5a.png" alt="Globus" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
 				<p class="card-text">
 					Transferring large amounts of research data is fast and simple with Globus Connect. Globus gives researchers unified access to their data through an easy-to-use web interface, and can be used to transfer data between your laptop and storage systems mounted on the Rivanna HPC system. Globus can also be used to transfer data from other universities or supercomputing facilities.
 				</p>
-			<a href="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
+			<a href="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a> &nbsp;
+			<a href="https://www.globus.org/" class="card-link" target="_blank"><button class="btn btn-primary">Access Globus</button></a>
 				<br></br>
 				<p class="card-text">	
 					For transferring highly sensitive data such as HIPAA or CUI data to the Ivy secure computing environment, researchers must use the secure Globus data transfer node (DTN).
@@ -275,4 +279,4 @@ Many of the UVa storage options are based on a Linux file system. Users can invo
 - <a href="http://www.linuxplanet.com/linuxplanet/tutorials/6666/1" target="_blank">Navigating the Linux Filesystem</a>
 - <a href="https://swcarpentry.github.io/shell-novice/" target="_blank">Shell Novice</a>
 
-For more help, please feel free to contact SOMRC to set up a consultation or visit us during office hours. We also provide in-person training opportunities around basic command line skills and more through the <a href="https://education.cadre.virginia.edu/#/home" target="_blank">CADRE Academy portal</a>.
+For more help, please feel free to contact RC staff to set up a consultation or visit us during office hours. We also provide in-person training opportunities around basic command line skills and more through the <a href="https://education.cadre.virginia.edu/#/home" target="_blank">CADRE Academy portal</a>.
