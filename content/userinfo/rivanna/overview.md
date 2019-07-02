@@ -2,7 +2,7 @@
 description = ""
 title = "Rivanna"
 draft = false
-date = "2019-05-28T17:45:12-05:00"
+date = "2019-06-30T17:45:12-05:00"
 tags = ["hpc","rivanna","parallel-computing","supercomputer","allocations","queues","storage"]
 categories = ["userinfo"]
 images = [""]
@@ -97,7 +97,7 @@ type = "rivanna"
   <div class="card">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration:none;color:black;font-weight:bold;font-size:110%;">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration:none;color:black;font-weight:bold;">
           Queuing Policies
         </button>
       </h5>
@@ -181,7 +181,7 @@ type = "rivanna"
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration:none;color:black;font-weight:bold;font-size:110%;">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration:none;color:black;font-weight:bold;">
           Hardware Configuration
         </button>
       </h5>
