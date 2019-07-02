@@ -42,7 +42,7 @@ various systems are available to researchers.</p>
     <div class="card-block">
       <h4 class="card-title">Cloud Solutions</h4>
         <p class="card-text">
-        Cloud-based computing solutions are also available in Amazon Web Services and Google Cloud Platform. Both provide options for quick deployments, short-term lifecycles, and unique requirements such as GPUs or clusters.
+        Cloud-based computing solutions are also available in Amazon Web Services, Google Cloud Platform, and our private cloud UVA Skyline. All three provide options for quick deployments, short-term lifecycles, and unique requirements such as GPUs or clusters.
         </p>
       <a href="/service/cloud/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
