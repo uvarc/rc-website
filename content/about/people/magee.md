@@ -5,9 +5,10 @@ title = "Neal Magee, PhD"
 job_title = "HPC / Cloud Solution Architect"
 lastname = "magee"
 email = "nem2p@virginia.edu"
+display = true
 type = "people"
 author = "UVARC Staff"
-image = "/images/profile_nmagee.png"
+image = "/images/profiles/profile_neal_magee.png"
 subjects = [
   "cloud",
   "containers",

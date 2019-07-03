@@ -45,7 +45,11 @@
 
         <tr>
           <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
-          <th scope="row">{{ .Title }}</th>
+          {{ if .Params.display }}
+            <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th>
+          {{ else }}
+            <th scope="row">{{ .Title }}</th>
+          {{ end }}
           <td>{{ .Params.job_title }}</td>
           <td>
             {{ $subjects := .Params.subjects }}
