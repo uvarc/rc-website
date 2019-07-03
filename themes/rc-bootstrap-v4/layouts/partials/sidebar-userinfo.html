@@ -4,22 +4,7 @@
 
   {{ partial "page-contents.html" . }}
 
-  <section class="sidebar-module sidebar-module-inset">
-    <p class="lead">User Information</p>
-    <ol class="list-unstyled" style="padding-left:10px;font-size:90%;">
-      <!-- <li> <a href="/userinfo/quickstart/">Quick Start</a></li> -->
-      <li> <a href="/userinfo/user-guide/">User Guides</a></li>
-      <!-- <li> <a href="/userinfo/reference/">Reference</a></li> -->
-      <li> <a href="https://discuss.rc.virginia.edu/" target="_new">FAQ / Knowledgebase</a><br /><br /></li>
-      <li> <a href="/userinfo/systems/">Systems</a></li>
-      <li> <a style="padding-left:1.4rem;" href="/userinfo/rivanna/overview/">Rivanna HPC</a></li>
-      <li> <a style="padding-left:1.4rem;" href="/userinfo/ivy/">Ivy Secure Environment</a></li>
-      <li> <a style="padding-left:1.4rem;" href="/service/cloud/">Cloud Solutions</a></li>
-      <li> <a style="padding-left:1.4rem;" href="https://dcos.uvasomrc.io/">Container Services</a></li>
-      <li> <a href="/userinfo/storage/">Storage</a></li>
-      <li> <a href="/userinfo/data-transfer/">Data Transfer</a></li>
-    </ol>
-  </section>
+  {{ partial "user-information.html" . }}
 
   <section class="sidebar-module sidebar-module-inset" style="margin-top:10px;">
     <p class="lead">Rivanna Monitoring</p>
