@@ -7,7 +7,7 @@ lastname = "bell"
 type = "people"
 description = ""
 author = "UVARC Staff"
-image = "/images/profile_andrew_bell.png"
+image = "/images/profiles/profile_andrew_bell.png"
 subjects = [
   "rivanna",
   "storage",

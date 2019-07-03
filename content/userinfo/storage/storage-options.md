@@ -3,8 +3,8 @@ author = "UVARC Staff"
 description = ""
 title = "Storage for Researchers"
 date = "2019-04-18T10:08:29-05:00"
-draft = false
-tags = ["storage","rivanna","swift","osf","lustre","backup","s3"]
+draft = true
+tags = ["storage","rivanna","nfs","lustre","backup","s3"]
 categories = ["userinfo"]
 images = [""]
 +++
