@@ -23,8 +23,10 @@ images = [""]
 .tg .tg-0qmj{font-weight:bold;background-color:#eceeef;border-color:inherit;vertical-align:top}
 </style>
 
-<div style="margin-top:4rem;">
-<h3>Non-Sensitive Data Storage</h3>
+- - -
+
+# Non-Sensitive Data Storage
+
 <table class="tg">
   <tr>
     <th class="tg-0qmj">Name</th>
@@ -51,11 +53,11 @@ images = [""]
     <td class="tg-hy9w">Research value storage budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
 </table>
-</div>
-<br>
 
-<div>
-<h3>Sensitive Data Storage</h3>
+- - -
+
+# Sensitive Data Storage
+
 <table class="tg">
   <tr>
     <th class="tg-0qmj">Name</th>
@@ -72,6 +74,6 @@ images = [""]
     <td class="tg-dc35">ICS is ideal for long-term storage of sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
   </tr>
 </table>
-</div>
 
+<br />
 Ivy Central Storage is accessible by using Globus and connecting to the Ivy DTN.
