@@ -1,0 +1,17 @@
+{{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+{{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+    <hr size=1 />
+  </header>
+
+  {{ .Content }}
+
+</article> <!-- /.blog-post -->
+
+{{ end }}
+
+{{- /* vim: set ts=2 sw=2 et: */}}

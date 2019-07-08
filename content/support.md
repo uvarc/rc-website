@@ -17,7 +17,7 @@ type = "about"
   <div class="card-body">
     <h5 class="card-title">Submit a Ticket</h5>
     <p class="card-text">Open a support ticket with your specific questions or issues.<p>
-    <a href="/"><button class="btn btn-danger">Open a Support Ticket</button></a>
+    <a href="/"><button class="btn btn-primary">Open a Support Ticket</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
