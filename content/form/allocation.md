@@ -13,16 +13,16 @@ type = "form"
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-<form class="webform-client-form webform-client-form-5" action="/secure/standard-allocation-request" method="post" id="webform-client-form-5" accept-charset="UTF-8">
+<form action="/standard-allocation-request" method="post" id="allocation-form" accept-charset="UTF-8">
 <div>
   <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-name" name="submitted[name]" value="" size="60" maxlength="128" />
+    <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
   </div>
   <div class="form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="edit-submitted-e-mail">E-mail <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="email form-control form-text form-email required" type="email" id="edit-submitted-e-mail" name="submitted[e_mail]" value="" size="60" />
+    <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
   </div>
   <div class="form-item form-group form-item form-item-submitted-computing-id form-type-textfield form-group"> <label class="control-label" for="edit-submitted-computing-id">Computing ID <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-computing-id" name="submitted[computing_id]" value="" size="60" maxlength="128" />
+    <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
   </div>
   <div class="form-item form-group form-item form-item-submitted-classification form-type-select form-group"> <label class="control-label" for="edit-submitted-classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="edit-submitted-classification" name="submitted[classification]"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
@@ -63,3 +63,67 @@ type = "form"
   </div>
 </div>
 </form>
+
+<div id="result-pane">
+<h2>Thank you</h2>
+  <p id="r_name"></p>
+  <p id="r_email"></p>
+</div>
+
+<script>
+function getParams() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+
+function decode64(str) {
+  var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
+  var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+  for(i=0;i<64;i++){e[A.charAt(i)]=i;}
+  for(x=0;x<L;x++){
+    c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
+    while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
+  }
+  return r;
+};
+
+var form = document.getElementById('allocation-form');
+
+// name
+var name_enc = getParams()["name"];
+var name_esc = decodeURI(name_enc);
+var form_name = decode64(name_esc);
+var name_field = document.getElementById('name');
+name_field.value = form_name;
+
+// uid
+var uid_enc = getParams()["uid"];
+var uid_esc = decodeURI(uid_enc);
+var form_uid = decode64(uid_esc);
+var uid_field = document.getElementById('uid');
+uid_field.value = form_uid;
+
+// email
+var email_enc = getParams()["email"];
+var email_esc = decodeURI(email_enc);
+var form_email = decode64(email_esc);
+var email_field = document.getElementById('email');
+email_field.value = form_email;
+
+// var rpane = document.getElementById('result-pane');
+// rpane.style.display = "none";
+var form = document.getElementById('allocation-form');
+form.onsubmit = function(e) {
+  e.preventDefault();
+  var r_name = document.getElementById('r_name');
+  r_name.innerHTML = "Hello " + form.name.value;
+  var r_email = document.getElementById('r_email');
+  r_email.innerHTML = form.email.value;
+  this.reset();
+  rpane.style.display = "block";
+  form.style.display = "none";
+}; 
+</script>
