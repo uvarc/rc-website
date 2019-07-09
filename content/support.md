@@ -17,7 +17,7 @@ type = "about"
   <div class="card-body">
     <h5 class="card-title">Submit a Ticket</h5>
     <p class="card-text">Open a support ticket with your specific questions or issues.<p>
-    <a href="/form/support-request/"><button class="btn btn-primary">Open a Support Ticket</button></a>
+    <a href="https://auth.uvasomrc.io/site/support.php"><button class="btn btn-primary">Open a Support Ticket</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
@@ -33,7 +33,7 @@ type = "about"
   <div class="card-body">
     <h5 class="card-title">Request a Consultation</h5>
     <p class="card-text">Work directly with RC staff on your project idea.</p>
-    <a href="/form/consult/"><button class="btn btn-primary">Request a Consultation</button></a>
+    <a href="https://auth.uvasomrc.io/site/consult.php"><button class="btn btn-primary">Request a Consultation</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
