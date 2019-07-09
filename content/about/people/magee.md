@@ -26,3 +26,7 @@ Neal designs scaling, service-driven, distributed systems in the public cloud. H
 {{% highlight %}}
 Nagraj VP, Magee NE, Sheffield NC. LOLAweb: a containerized web server for interactive genomic locus overlap enrichment analysis. Nucleic Acids Research , 2018. http://doi.org/10.1093/nar/gky464
 {{% /highlight %}}
+
+{{% highlight %}}
+Michal Stolarczyk, Vincent P. Reuter, Neal E. Magee, Nathan C. Sheffield. Refgenie: a reference genome resource manager. (Manuscript submitted.)
+{{% /highlight %}}
