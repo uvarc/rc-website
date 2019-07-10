@@ -38,26 +38,29 @@ type = "form"
     </div>
   </div>
   <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1"><input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" checked="checked" class="form-radio" />New</label>
+    <div id="edit-submitted-new-or-renewal" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
+      <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" checked="checked" class="form-radio" />&nbsp;New</label>
     </div>
-    <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2"><input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="renewal" class="form-radio" />Renewal</label>
+    <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
+      <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="renewal" class="form-radio" />&nbsp;Renewal</label>
     </div>
   </div>
   <div class="help-block">If this is your first request, select New.  Otherwise select Renewal.
   </div>
   </div>
   <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-  <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="edit-submitted-description-of-research-project" name="submitted[description_of_research_project]" cols="60" rows="5"></textarea>
-  </div>
+    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="edit-submitted-description-of-research-project" name="submitted[description_of_research_project]" cols="60" rows="5"></textarea>
+    </div>
   </div>
   <div class="form-item form-group form-item form-item-submitted-for-renewals-description-of-results-from-previous-allocation form-type-textarea form-group"> <label class="control-label" for="edit-submitted-for-renewals-description-of-results-from-previous-allocation">For Renewals: Description of Results from Previous Allocation</label>
-  <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="edit-submitted-for-renewals-description-of-results-from-previous-allocation" name="submitted[for_renewals_description_of_results_from_previous_allocation]" cols="60" rows="5"></textarea>
+    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="edit-submitted-for-renewals-description-of-results-from-previous-allocation" name="submitted[for_renewals_description_of_results_from_previous_allocation]" cols="60" rows="5"></textarea>
+    </div>
   </div>
-  </div>
-  <input type="hidden" name="details[sid]" />
+
   <div class="form-item form-item-captcha-response form-type-textfield form-group"> <label class="control-label" for="edit-captcha-response">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="g-recaptcha" data-sitekey="6LdNnqwUAAAAAJR9L4Cl-q-AIhW12OGJ9-titSrl"></div>
   </div>
+
   <div class="form-actions">
     <button class="button-primary btn btn-primary form-submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
@@ -113,8 +116,8 @@ var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
 email_field.value = form_email;
 
-// var rpane = document.getElementById('result-pane');
-// rpane.style.display = "none";
+var rpane = document.getElementById('result-pane');
+rpane.style.display = "none";
 var form = document.getElementById('allocation-form');
 form.onsubmit = function(e) {
   e.preventDefault();

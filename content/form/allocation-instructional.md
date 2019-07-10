@@ -113,8 +113,8 @@ var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
 email_field.value = form_email;
 
-// var rpane = document.getElementById('result-pane');
-// rpane.style.display = "none";
+var rpane = document.getElementById('result-pane');
+rpane.style.display = "none";
 var form = document.getElementById('allocation-form');
 form.onsubmit = function(e) {
   e.preventDefault();
