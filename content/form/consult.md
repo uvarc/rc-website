@@ -18,12 +18,16 @@ type = "form"
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
   </div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="submitted-email">E-mail <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
+
+  <div class="row">
+    <div class="col form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="edit-submitted-e-mail">E-mail <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
+    </div>
+    <div class="col form-item form-group form-item form-item-submitted-computing-id form-type-textfield form-group"> <label class="control-label" for="edit-submitted-computing-id">Computing ID <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
+    </div>
   </div>
-  <div class="form-item form-group form-item form-type-textfield form-group submitted-uid"> <label class="control-label" for="submitted-uid">Computing ID <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
-  </div>
+
   <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Describe your project <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="details" name="details" cols="60" rows="8"></textarea>
     </div>
