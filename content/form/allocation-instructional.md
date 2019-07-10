@@ -5,7 +5,7 @@ categories = ["forms"]
 images = [""]
 author = "Staff"
 description = ""
-title = "Request an Allocation"
+title = "Request an Instructional Allocation"
 draft = false
 type = "form"
 

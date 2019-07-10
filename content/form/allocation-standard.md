@@ -5,7 +5,7 @@ categories = ["forms"]
 images = [""]
 author = "Staff"
 description = ""
-title = "Request an Allocation"
+title = "Request or Renew a Standard Allocation"
 draft = false
 type = "form"
 
