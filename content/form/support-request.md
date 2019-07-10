@@ -11,24 +11,6 @@ type = "form"
 
 +++
 
-<script>
-
-var referrer =  document.referrer;
-    
-if(referrer.indexOf("rc.virginia.edu") > -1) {
-  window.location.replace("https://auth.uvasomrc.io/site/support.php");
-}
-if(referrer.indexOf("staging.rc.virginia.edu") > -1) {
-  window.location.replace("https://auth.uvasomrc.io/site/support.php");
-}
-if(referrer.indexOf("auth.uvasomrc.io") > -1) {
-  // do nothing
-} else {
-  window.location.replace("https://auth.uvasomrc.io/site/support.php");
-};
-
-</script>
-
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <form action="https://api.uvarc.io/support" method="post" id="request-form" accept-charset="UTF-8">
