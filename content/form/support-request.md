@@ -84,6 +84,13 @@ function decode64(str) {
 
 var form = document.getElementById('request-form');
 
+var name_enc = getParams()["name"];
+if (name_enc) {
+  // do nothing
+} else {
+  window.location.replace( "https://auth.uvasomrc.io/site/support.php" );
+}
+
 // name
 var name_enc = getParams()["name"];
 var name_esc = decodeURI(name_enc);
