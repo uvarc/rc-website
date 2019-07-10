@@ -11,8 +11,9 @@ type = "form"
 
 +++
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<form action="https://api.uvasomrc.io/handler/support-request" method="post" id="request-form" accept-charset="UTF-8">
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+<form action="https://api.uvarc.io/" method="post" id="request-form" accept-charset="UTF-8">
 <div>
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
