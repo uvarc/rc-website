@@ -47,12 +47,6 @@ type = "form"
 </div>
 </form>
 
-<div id="result-pane">
-<h2>Thank you</h2>
-  <p id="r_name"></p>
-  <p id="r_email"></p>
-</div>
-
 <script type="text/javascript" src="/js/captcha.js"></script>
 
 <script>
@@ -105,17 +99,4 @@ var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
 email_field.value = form_email;
 
-var rpane = document.getElementById('result-pane');
-rpane.style.display = "none";
-var form = document.getElementById('allocation-form');
-form.onsubmit = function(e) {
-  e.preventDefault();
-  var r_name = document.getElementById('r_name');
-  r_name.innerHTML = "Hello " + form.name.value;
-  var r_email = document.getElementById('r_email');
-  r_email.innerHTML = form.email.value;
-  this.reset();
-  rpane.style.display = "block";
-  form.style.display = "none";
-}; 
 </script>

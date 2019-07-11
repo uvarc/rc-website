@@ -29,19 +29,18 @@ function validateCaptcha() {
   debugger
   if (document.getElementById("cpatchaTextBox").value == code) {
     // alert("Valid Captcha")
-    // document.getElementById("submit").disabled = false;
-    var x = document.getElementById("submit-div");
-    x.style.display = "block";
+    document.getElementById("submit").disabled = false;
+    // var x = document.getElementById("submit-div");
+    // x.style.display = "block";
   } else {
-    var x = document.getElementById("submit-div");
-    x.style.display = "none";
+    document.getElementById("submit").disabled = true;
+    // var x = document.getElementById("submit-div");
+    // x.style.display = "none";
     alert("Invalid Captcha. Please try again");
     createCaptcha();
   }
 }
 window.onload = function() {
-  // document.getElementById("submit").disabled = true;
-  var x = document.getElementById("submit-div");
-  x.style.display = "none";
+  document.getElementById("submit").disabled = true;
   createCaptcha();
 }
