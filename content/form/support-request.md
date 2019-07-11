@@ -27,7 +27,6 @@ type = "form"
       <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
     </div>
   </div>
-
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="edit-submitted-classification">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="category" name="category">
       <option value="" selected="selected"> - Select - </option>
@@ -39,7 +38,6 @@ type = "form"
       <option value="other">Other</option>
     </select>
   </div>
-
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-department">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
   </div>
@@ -64,11 +62,11 @@ type = "form"
 
 <script>
 function getParams() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  return vars;
 }
 
 function decode64(str) {
@@ -115,14 +113,15 @@ email_field.value = form_email;
 var rpane = document.getElementById('result-pane');
 rpane.style.display = "none";
 var form = document.getElementById('allocation-form');
-form.onsubmit = function(e) {
-  e.preventDefault();
-  var r_name = document.getElementById('r_name');
-  r_name.innerHTML = "Hello " + form.name.value;
-  var r_email = document.getElementById('r_email');
-  r_email.innerHTML = form.email.value;
-  this.reset();
-  rpane.style.display = "block";
-  form.style.display = "none";
-}; 
+
+// form.onsubmit = function(e) {
+  // e.preventDefault();
+  // var r_name = document.getElementById('r_name');
+  // r_name.innerHTML = "Hello " + form.name.value;
+  // var r_email = document.getElementById('r_email');
+  // r_email.innerHTML = form.email.value;
+  // this.reset();
+  // rpane.style.display = "block";
+  /// form.style.display = "none";
+// }; 
 </script>
