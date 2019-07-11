@@ -49,13 +49,14 @@ type = "form"
         <div id="captcha-fail">Verify a CAPTCHA to proceed</div>
       </div>
       <div class="form-item form-group col">
-        <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:2rem;padding:6px;font-family:monospace; width:8rem;" />
+        <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:1rem;padding:6px;font-family:monospace; width:8rem;" />
         <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
       </div>
     </div>
   </div>
 
-  <div class="form-actions" id="submit-div" style="margin-top:2rem;">
+  <div class="form-actions" id="submit-div" style="margin-top:1rem;">
+    <hr size="1" style="" />
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 
