@@ -11,8 +11,6 @@ type = "form"
 
 +++
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 <form action="https://api.uvarc.io/support" method="post" id="request-form" accept-charset="UTF-8">
 <div>
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
@@ -45,13 +43,22 @@ type = "form"
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="details" name="details" cols="60" rows="8"></textarea>
     </div>
   </div>
-  <div class="form-item form-item-captcha-response form-type-textfield form-group"> <label class="control-label" for="edit-captcha-response">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
-    <div class="g-recaptcha" data-sitekey="6LdNnqwUAAAAAJR9L4Cl-q-AIhW12OGJ9-titSrl"></div>
-    <div id="result-pane">Please verify the captcha</div>
+  <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
+    <div class="row"">
+      <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
+        <div id="captcha-fail">Verify a CAPTCHA to proceed</div>
+      </div>
+      <div class="form-item form-group col">
+        <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:2rem;padding:6px;font-family:monospace; width:8rem;" />
+        <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
+      </div>
+    </div>
   </div>
-  <div class="form-actions">
+
+  <div class="form-actions" id="submit-div" style="margin-top:2rem;">
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
+
 </div>
 </form>
 
@@ -60,6 +67,8 @@ type = "form"
   <p id="r_name"></p>
   <p id="r_email"></p>
 </div>
+
+<script type="text/javascript" src="/js/captcha.js"></script>
 
 <script>
 function getParams() {
@@ -115,14 +124,4 @@ var rpane = document.getElementById('result-pane');
 rpane.style.display = "none";
 var form = document.getElementById('allocation-form');
 
-// form.onsubmit = function(e) {
-  // e.preventDefault();
-  // var r_name = document.getElementById('r_name');
-  // r_name.innerHTML = "Hello " + form.name.value;
-  // var r_email = document.getElementById('r_email');
-  // r_email.innerHTML = form.email.value;
-  // this.reset();
-  // rpane.style.display = "block";
-  /// form.style.display = "none";
-// }; 
 </script>
