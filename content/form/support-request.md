@@ -47,9 +47,10 @@ type = "form"
   </div>
   <div class="form-item form-item-captcha-response form-type-textfield form-group"> <label class="control-label" for="edit-captcha-response">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="g-recaptcha" data-sitekey="6LdNnqwUAAAAAJR9L4Cl-q-AIhW12OGJ9-titSrl"></div>
+    <div id="result-pane">Please verify the captcha</div>
   </div>
   <div class="form-actions">
-    <button class="button-primary btn btn-primary form-submit" type="submit" name="op" value="Submit">Submit</button>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>
 </form>
