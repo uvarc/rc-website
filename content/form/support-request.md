@@ -46,11 +46,11 @@ type = "form"
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
       <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
-        <div id="captcha-fail">Verify a CAPTCHA to proceed</div>
       </div>
       <div class="form-item form-group col">
         <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:1rem;padding:6px;font-family:monospace; width:8rem;" />
         <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
+        <button class="btn btn-default" id="captcha-refresh" type="button" onclick="createCaptcha()"><i class="fas fa-sync fa-1x"></i></button>
       </div>
     </div>
   </div>
