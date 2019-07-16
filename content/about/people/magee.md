@@ -28,5 +28,5 @@ Nagraj VP, Magee NE, Sheffield NC. LOLAweb: a containerized web server for inter
 {{% /highlight %}}
 
 {{% highlight %}}
-Michal Stolarczyk, Vincent P. Reuter, Neal E. Magee, Nathan C. Sheffield. Refgenie: a reference genome resource manager. (Manuscript submitted.)
+Michal Stolarczyk, Vincent P. Reuter, Neal E. Magee, Nathan C. Sheffield. Refgenie: a reference genome resource manager. BioRxiv doi: https://doi.org/10.1101/698704
 {{% /highlight %}}
