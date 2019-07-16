@@ -9,6 +9,11 @@
 
   {{ partial "user-information.html" . }}
 
+  <section class="sidebar-module" style="margin-top:20px;">
+  <p class=lead>Status</p>
+    {{ partial "status.html" . }}
+  </section>
+
   {{ partial "rivanna-monitoring.html" . }}
 
   {{ partial "user-help-widget.html" . }}
