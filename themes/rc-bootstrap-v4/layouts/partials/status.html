@@ -28,29 +28,37 @@
 
 <script>
 
-/* function createCell(x,y) {
-    $('<td>').text(x+':'+y).appendTo(this);
+$(document).ready(function() {
+    refreshStatusTable();
+    setInterval(refreshStatusTable, 5000);
+    refreshJobsTable();
+    setInterval(refreshJobsTable, 5000);
+});
+
+function refreshStatusTable(){
+    $.getJSON('https://slash-commands.uvarc.io/status/available', function(data) {
+        var statusData = '';
+        $.each(data, function(key, value) {
+            statusData += '<tr class="">';
+            statusData += '<td>'+value.system+'</td>';
+            statusData += '<td><img align=center src='+value.image+'/></td>';
+            statusData += '</tr>';     
+        });
+        $('#statusBody').html(statusData);
+    });
 }
 
-$.repeat().$('<tr>').repeat(createCell).until(30)
-  .appendTo('tbody').until(200);
-
-*/
-
-$.getJSON('https://slash-commands.uvarc.io/status/available', function(data){
-  $(data).each(function(i, stats){
-    $('#statusBody').append($("<tr>")
-      .append($("<td>").append(stats.system))
-      .append($("<td align=center>").append($("<img>",{id: 'statusImg',src:stats.image}))));
-  });
-});
-
-$.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data){
-  $(data).each(function(i, jobs){
-    $('#jobsBody').append($("<tr>")
-      .append($("<td>").append(jobs.partition))
-      .append($("<td>").append(jobs.jobs)));
-  });
-});
+function refreshJobsTable(){
+    $.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data) {
+        var jobData = '';
+        $.each(data, function(key, value) {
+            jobData += '<tr class="">';
+            jobData += '<td>'+value.partition+'</td>';
+            jobData += '<td>'+value.jobs+'</td>';
+            jobData += '</tr>';     
+        });
+        $('#jobsBody').html(jobData);
+    });
+}
 
 </script>
