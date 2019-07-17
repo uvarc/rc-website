@@ -41,7 +41,7 @@ function refreshStatusTable(){
         $.each(data, function(key, value) {
             statusData += '<tr class="">';
             statusData += '<td>'+value.system+'</td>';
-            statusData += '<td><img align=center src='+value.image+'/></td>';
+            statusData += '<td><img align=center src='+value.image+' /></td>';
             statusData += '</tr>';     
         });
         $('#statusBody').html(statusData);
