@@ -27,13 +27,24 @@
 </div>
 
 <script>
-$.getJSON('https://s3.amazonaws.com/uvarc-data/status/status.json', function(data){
+
+/* function createCell(x,y) {
+    $('<td>').text(x+':'+y).appendTo(this);
+}
+
+$.repeat().$('<tr>').repeat(createCell).until(30)
+  .appendTo('tbody').until(200);
+
+*/
+
+$.getJSON('https://slash-commands.uvarc.io/status/available', function(data){
   $(data).each(function(i, stats){
     $('#statusBody').append($("<tr>")
       .append($("<td>").append(stats.system))
-      .append($("<td align=center>").append($("<img>",{id: 'statusImg',src:stats.status}))));
+      .append($("<td align=center>").append($("<img>",{id: 'statusImg',src:stats.image}))));
   });
 });
+
 $.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data){
   $(data).each(function(i, jobs){
     $('#jobsBody').append($("<tr>")
@@ -41,4 +52,5 @@ $.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data){
       .append($("<td>").append(jobs.jobs)));
   });
 });
+
 </script>
