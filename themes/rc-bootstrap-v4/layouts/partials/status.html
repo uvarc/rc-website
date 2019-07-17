@@ -1,7 +1,7 @@
 <div style="width:100%;">
 
   <div style="float:right;width:48%;">
-  <table class="table table-sm table-responsive status-tbl table-striped" style="width:auto;border:solid 1px #f5f5f5;margin-bottom:20px;">
+  <table class="table table-sm table-responsive status-tbl table-striped" style="width:100%;border:solid 1px #f5f5f5;margin-bottom:20px;">
     <thead class="thead-inverse">
       <tr>
         <th scope="row">Queue</th>
@@ -13,7 +13,7 @@
   </div>
 
   <div style="width:48%;">
-  <table class="table table-sm table-responsive status-tbl table-striped" style="width:auto;border:solid 1px #f5f5f5;margin-bottom:20px;">
+  <table class="table table-sm table-responsive status-tbl table-striped" style="width:100%;border:solid 1px #f5f5f5;margin-bottom:20px;">
     <thead class="thead-inverse">
       <tr>
         <th scope="row">System</th>
@@ -34,10 +34,10 @@ $.getJSON('https://s3.amazonaws.com/uvarc-data/status/status.json', function(dat
       .append($("<td align=center>").append($("<img>",{id: 'statusImg',src:stats.status}))));
   });
 });
-$.getJSON('https://s3.amazonaws.com/uvarc-data/status/rivanna.json', function(data){
+$.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data){
   $(data).each(function(i, jobs){
     $('#jobsBody').append($("<tr>")
-      .append($("<td>").append(jobs.queue))
+      .append($("<td>").append(jobs.partition))
       .append($("<td>").append(jobs.jobs)));
   });
 });
