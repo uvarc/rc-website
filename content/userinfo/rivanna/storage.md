@@ -2,8 +2,8 @@
 description = ""
 title = "HPC Storage"
 draft = false
-date = "2019-05-28T17:45:12-05:00"
-tags = ["storage","large scale","hpc","rivanna"]
+date = "2019-07-22T17:45:12-05:00"
+tags = ["storage","scratch","hpc","rivanna","project","qumulo"]
 categories = ["userinfo"]
 images = [""]
 author = "Staff"  
