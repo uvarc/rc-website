@@ -1,5 +1,5 @@
 +++
-date = "2019-06-30T23:59:16-05:00"
+date = "2016-12-31T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -11,7 +11,7 @@ type = "form"
 
 +++
 
-<form action="https://api.uvarc.io/" method="post" id="request-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/support" method="post" id="request-form" accept-charset="UTF-8">
 <div>
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
@@ -25,14 +25,22 @@ type = "form"
       <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
     </div>
   </div>
-  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Describe your project <span class="form-required" title="This field is required.">*</span></label>
-    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="details" name="details" cols="60" rows="8"></textarea>
+  <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="edit-submitted-classification">Support Category <span class="form-required" title="This field is required.">*</span></label>
+    <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="category" name="category" readonly>
+      <option id="consultation" value="consultation" selected="selected">Consultation Request</option>
+    </select>
+  </div>
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-department">Department <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
+  </div>
+  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Details of your support request <span class="form-required" title="This field is required.">*</span></label>
+    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8"></textarea>
     </div>
   </div>
-
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
-      <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin-top:1.4rem;width:12rem;"></div>
+      <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
+      </div>
       <div class="form-item form-group col">
         <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:1rem;padding:6px;font-family:monospace; width:8rem;" />
         <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
@@ -53,11 +61,11 @@ type = "form"
 
 <script>
 function getParams() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  return vars;
 }
 
 function decode64(str) {
@@ -77,7 +85,7 @@ var name_enc = getParams()["name"];
 if (name_enc) {
   // do nothing
 } else {
-  window.location.replace( "https://auth.uvasomrc.io/site/consult.php" );
+  window.location.replace( "https://auth.uvasomrc.io/site/support.php" );
 }
 
 // name
