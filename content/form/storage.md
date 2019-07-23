@@ -46,7 +46,7 @@ type = "form"
   <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Data Sensitivity <span class="form-required" title="This field is required.">*</span></label>
     <div id="edit-submitted-new-or-renewal" class="form-radios">
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" checked="checked" class="form-radio" />&nbsp;Highly Sensitive</label>
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" class="form-radio" />&nbsp;Highly Sensitive</label>
       </div>
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
         <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="renewal" class="form-radio" />&nbsp;Moderately sensitive / public</label>
@@ -59,13 +59,16 @@ type = "form"
   <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="edit-submitted-new-or-renewal" class="form-radios">
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="project" class="form-radio" /> &nbsp; Project Storage</label>
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="project" class="form-radio" /> &nbsp; Project Storage ($60/TB/year)</label>
       </div>
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="zfs" class="form-radio" /> &nbsp; ZFS Storage</label>
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ($XX/TB/year)</label>
       </div>
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-3">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-3" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Value Storage</label>
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-3" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Value Storage ($45/TB/year)</label>
+      </div>
+      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-4">
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-4" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Ivy Central Storage (Price TBD)</label>
       </div>
     </div>
   </div>
@@ -80,7 +83,7 @@ type = "form"
 
   <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
     <p>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
-    <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="8" maxlength="8" style="width:10rem;" />
+    <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="32" maxlength="32" style="width:10rem;" />
   </div>
 
   <hr size=1 />
