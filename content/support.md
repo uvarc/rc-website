@@ -28,6 +28,7 @@ type = "about"
   </div>
 </div>
 </div>
+
 <div class="card-group">
 <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
   <div class="card-body">
@@ -44,6 +45,24 @@ type = "about"
   </div>
 </div>
 </div>
+
+<div class="card-group">
+<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+  <div class="card-body">
+    <h5 class="card-title">Pricing</h5>
+    <p class="card-text">Read more about pricing for SUs, Ivy virtual machines, storage, and more.</p>
+    <a href="/userinfo/pricing"><button class="btn btn-primary">Learn More</button></a>
+  </div>
+</div>
+<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">Request an Allocation</h5>
+    <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
+    <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary">Request Allocations</button></a>
+  </div>
+</div>
+</div>
+
 <div class="card-group">
 <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
   <div class="card-body">

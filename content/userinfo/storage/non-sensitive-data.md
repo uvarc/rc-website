@@ -4,7 +4,7 @@ description = ""
 author = "SOMRC Staff"
 images = [""]
 categories = ["userinfo"]
-date = "2018-04-19T17:45:12-05:00"
+date = "2019-07-19T17:45:12-05:00"
 tags = [
     "rivanna", 
     "sensitive data",
@@ -14,27 +14,28 @@ tags = [
 draft = false
 +++
 
-# /home
+# `/home`
+
 `/home` is a free 50GB space provided to users of the Rivanna HPC system and is visible from the Rivanna login and compute nodes. `/home` is the default working directory when logging on to Rivanna. Users can also access their home directory at `/home/$USER`, where `$USER` is an individual's UVa computing ID.
 
-# /scratch
+# `/scratch`
+
 `/scratch` is a Lustre high performance parallel filesystem accessible via the Rivanna login and compute nodes. All Rivanna HPC users are granted 10TB for free and can access this space within Rivanna at `/scratch/$USER`, where `$USER` is an individual's UVa computing ID.
 
 **How to request /home and /scratch space**
 
 `/home` and `/scratch` space can be obtained by requesting an allocation on Rivanna. Information on free trial and standard allocations and their corresponding request forms can be found on the ARCS <a href="https://arcs.virginia.edu/allocations" target="_blank">website</a>.
 
-# /project
+# `/project`
 
 The `/project` file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS MyGroups system</a>. `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
 
-**How to request /project storage space**
+**How to request `/project` storage space**
  
-`/project` storage is available by request (via <a href="https://cadre.virginia.edu/user-support" target="_blank">CADRE User Support page</a>) for $90/TB/YR. When filling out the form, the PI can specify the size of the `/project` directory and the name of an existing or new MyGroup that can access this space. We recommend choosing a MyGroup name specific to your group or collaboration for the `/project` directory. This will reduce confusion in the future if you manage multiple MyGroups and directories on other storage systems.
+`/project` storage is available by request (via <a href="https://cadre.virginia.edu/user-support" target="_blank">CADRE User Support page</a>) for $60/TB/YR. When filling out the form, the PI can specify the size of the `/project` directory and the name of an existing or new MyGroup that can access this space. We recommend choosing a MyGroup name specific to your group or collaboration for the `/project` directory. This will reduce confusion in the future if you manage multiple MyGroups and directories on other storage systems.
  
 Once the request has been submitted, the PI will receive a notification that the `/project` space has been provisioned within 24 hours. Once the space becomes available, the PI can grant access to lab members by adding them to the MyGroup. Users in the MyGroup will see the directory (`~/project/MyGroup_name`) after logging into Rivanna. Addition and removal of users is managed by the PI of the group.
  
-
 
 # Data transfer
 
@@ -67,7 +68,7 @@ Once the request has been submitted, the PI will receive a notification that the
 <p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>.</p>
 </div> 
 
-# File manipulation and navigation with non-sensitive data storage systems
+# Non-sensitive Data Storage Systems
  
 `/home`, `/scratch`, and `/project` storage are based on a Linux file system. Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 

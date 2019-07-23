@@ -28,19 +28,19 @@ type = "form"
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="edit-submitted-classification">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="category" name="category">
       <option value="" selected="selected"> - Select - </option>
-      <option value="rivanna">Rivanna HPC</option>
-      <option value="ivy">Ivy Secure Computing</option>
-      <option value="software">Licensed Research Software</option>
-      <option value="storage">Storage</option>
-      <option value="consultation">Consultation Request</option>
-      <option value="other">Other</option>
+      <option id="rivanna" value="rivanna">Rivanna HPC</option>
+      <option id="ivy" value="ivy">Ivy Secure Computing</option>
+      <option id="software" value="software">Licensed Research Software</option>
+      <option id="storage" value="storage">Storage</option>
+      <option id="consultation" value="consultation">Consultation Request</option>
+      <option id="other" value="other">Other</option>
     </select>
   </div>
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-department">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Details of your support request <span class="form-required" title="This field is required.">*</span></label>
-    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="details" name="details" cols="60" rows="8"></textarea>
+    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8"></textarea>
     </div>
   </div>
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
@@ -64,6 +64,22 @@ type = "form"
 </form>
 
 <script type="text/javascript" src="/js/captcha.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Construct URL object using current browser URL
+  var url = new URL(document.location);
+
+  // Get query parameters object
+  var params = url.searchParams;
+
+  // Get value of paper
+  var categoroy = params.get("category");
+
+  // Set it as the dropdown value
+  $("#category").val(category);
+});
+</script>
 
 <script>
 function getParams() {
