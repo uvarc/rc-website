@@ -129,6 +129,10 @@ type = "form"
     <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
       <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
     </div>
+    <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
+    </div>
+    <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
+    </div>
   </div>
 
   <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Financial Contact </label>
@@ -158,14 +162,13 @@ type = "form"
 
 <script type="text/javascript" src="/js/captcha.js"></script>
 
-
 <script>
 function getParams() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  return vars;
 }
 
 function decode64(str) {
@@ -179,7 +182,14 @@ function decode64(str) {
   return r;
 };
 
-var form = document.getElementById('allocation-form');
+var form = document.getElementById('request-form');
+
+var name_enc = getParams()["name"];
+if (name_enc) {
+  // do nothing
+} else {
+  window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );
+}
 
 // name
 var name_enc = getParams()["name"];
@@ -202,17 +212,4 @@ var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
 email_field.value = form_email;
 
-var rpane = document.getElementById('result-pane');
-rpane.style.display = "none";
-var form = document.getElementById('allocation-form');
-form.onsubmit = function(e) {
-  e.preventDefault();
-  var r_name = document.getElementById('r_name');
-  r_name.innerHTML = "Hello " + form.name.value;
-  var r_email = document.getElementById('r_email');
-  r_email.innerHTML = form.email.value;
-  this.reset();
-  rpane.style.display = "block";
-  form.style.display = "none";
-}; 
 </script>
