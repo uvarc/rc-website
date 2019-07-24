@@ -41,7 +41,7 @@ $(document).ready(function() {
     refreshJobsTable();
     setInterval(refreshJobsTable, 5000);
     checkStatusMessages();
-    setInterval(checkStatusMessages, 5000);
+    setInterval(checkStatusMessages, 30000);
 });
 
 function checkStatusMessages() {
@@ -50,7 +50,7 @@ function checkStatusMessages() {
         $.each(data, function(key, value) {
             var messageBody = value.body;
             var messageLength = messageBody.length;
-            if ( messageLength < 2 ) {
+            if ( messageLength < 5 ) {
                 $("#status-message").hide();
             } else {
                 $("#status-message").show();

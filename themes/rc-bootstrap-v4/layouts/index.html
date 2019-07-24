@@ -28,7 +28,7 @@
         {{ if in .Params.tags "feature" }}
           <a href="{{.Permalink}}" style="text-decoration:none;color:black;"><div>
             <h5>{{.Title | markdownify }}</h5>
-            <p style="font-size:0.9em;margin-bottom:30px;"> {{ slicestr .Summary 0 420 | markdownify }} ...</p>
+            <p style="font-size:0.9em;margin-bottom:30px;"> {{ slicestr .Summary 0 460 | markdownify }} ...</p>
           </div></a>
         {{ end }}
       {{ end }}
