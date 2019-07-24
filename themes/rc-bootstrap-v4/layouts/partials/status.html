@@ -1,4 +1,10 @@
+<section class="sidebar-module">
+<p class=lead>Status</p>
 <div style="width:100%;margin-bottom:1rem;">
+
+<div id="status-message" style="font-size:80%;margin:1rem 0 1rem 0; padding:6px; border: solid 1px #ccc; background-color:#eee;">
+  <p id="status-message-content" style="margin:0; padding:0;"></p>
+</div>
 
   <div style="float:right;width:48%;">
   <table class="table table-sm table-responsive status-tbl table-striped" style="width:100%;border:solid 1px #f5f5f5;">
@@ -25,6 +31,7 @@
   </div>
 
 </div>
+</section>
 
 <script>
 
@@ -33,7 +40,26 @@ $(document).ready(function() {
     setInterval(refreshStatusTable, 5000);
     refreshJobsTable();
     setInterval(refreshJobsTable, 5000);
+    checkStatusMessages();
+    setInterval(checkStatusMessages, 5000);
 });
+
+function checkStatusMessages() {
+    $.getJSON('https://slash-commands.uvarc.io/status/messages', function(data) {
+        var messageData = '';
+        $.each(data, function(key, value) {
+            var messageBody = value.body;
+            var messageLength = messageBody.length;
+            if ( messageLength < 2 ) {
+                $("#status-message").hide();
+            } else {
+                messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
+                messageData += value.body;
+                $('#status-message-content').html(messageData);
+            }
+        });
+    });
+}
 
 function refreshStatusTable(){
     $.getJSON('https://slash-commands.uvarc.io/status/available', function(data) {
