@@ -53,6 +53,7 @@ function checkStatusMessages() {
             if ( messageLength < 2 ) {
                 $("#status-message").hide();
             } else {
+                $("#status-message").show();
                 messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
                 messageData += value.body;
                 $('#status-message-content').html(messageData);
