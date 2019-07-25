@@ -71,3 +71,11 @@ type = "rivanna"
   </tr>
 </table>
 </div>
+
+- - -
+
+# Request Storage
+
+Storage requests can be made from this form:
+
+[<button class="btn btn-success">Storage Requests</button>](/form/storage/)

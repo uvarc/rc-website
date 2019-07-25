@@ -2,7 +2,7 @@
 <p class=lead>Status</p>
 <div style="width:100%;margin-bottom:1rem;">
 
-<div id="status-message" style="font-size:80%;margin:1rem 0 1rem 0; padding:6px; border: solid 1px #ccc; background-color:#eee;">
+<div id="status-message" class="alert alert-danger" role="alert" style="font-size:80%;padding:6px;">
   <p id="status-message-content" style="margin:0; padding:0;"></p>
 </div>
 
@@ -41,7 +41,7 @@ $(document).ready(function() {
     refreshJobsTable();
     setInterval(refreshJobsTable, 5000);
     checkStatusMessages();
-    setInterval(checkStatusMessages, 30000);
+    setInterval(checkStatusMessages, 5000);
 });
 
 function checkStatusMessages() {
@@ -66,7 +66,7 @@ function refreshStatusTable(){
     $.getJSON('https://slash-commands.uvarc.io/status/available', function(data) {
         var statusData = '';
         $.each(data, function(key, value) {
-            statusData += '<tr class="">';
+            statusData += '<tr>';
             statusData += '<td>'+value.title+'</td>';
             statusData += '<td><img align=center src='+value.image+' /></td>';
             statusData += '</tr>';     
@@ -79,7 +79,7 @@ function refreshJobsTable(){
     $.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data) {
         var jobData = '';
         $.each(data, function(key, value) {
-            jobData += '<tr class="">';
+            jobData += '<tr>';
             jobData += '<td>'+value.partition+'</td>';
             jobData += '<td>'+value.jobs+'</td>';
             jobData += '</tr>';     

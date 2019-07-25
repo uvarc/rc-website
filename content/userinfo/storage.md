@@ -27,53 +27,77 @@ images = [""]
 
 # Non-Sensitive Data Storage
 
-<table class="tg">
+<table class="table table-striped table-sm" style="font-size:90%;">
+  <thead class="thead-dark">
   <tr>
-    <th class="tg-0qmj">Name</th>
-    <th class="tg-0qmj">Quota</th>
-    <th class="tg-0qmj">Price</th>
-    <th class="tg-0qmj">Data Protection</th>
-    <th class="tg-0qmj">Accessible from</th>
-    <th class="tg-0qmj">Best Practices</th>
+    <th class="" style="width:16%;">Name</th>
+    <th class="">Quota</th>
+    <th class="">Price</th>
+    <th class="">Data Protection</th>
+    <th class="">Accessible from</th>
+    <th class="">Best Practices</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td class=""><a href="/userinfo/storage/non-sensitive-data/#project">Project Storage</a></td> 
+    <td class="">1TB increments</td>
+    <td class="">$60/TB/yr</td>
+    <td class="">2 week snapshots</td>
+    <td class="">Rivanna, NFS mount</td>
+    <td class=""><code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for running jobs with smaller files.</td>
   </tr>
   <tr>
-    <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#project">Project Storage</a></td> 
-    <td class="tg-dc35">Available in 1TB increments</td>
-    <td class="tg-dc35">$60/TB/yr</td>
-    <td class="tg-dc35">3-week snapshots</td>
-    <td class="tg-dc35">Rivanna, NFS mount</td>
-    <td class="tg-dc35"><code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for running jobs with smaller files.</td>
+    <td class=""><a href="/userinfo/storage/research-value">Value Storage</a></td>  
+    <td class="">1TB increments</td>
+    <td class="">$45/TB/yr</td>
+    <td class="">No backup</td>
+    <td class="">Rivanna, SMB mount</td>
+    <td class="">Research value storage budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
   <tr>
-    <td class="tg-hy9w"><a href="/userinfo/storage/research-value">Value Storage</a></td>  
-    <td class="tg-hy9w">Available in 1TB increments</td>
-    <td class="tg-hy9w">$45/TB/yr</td>
-    <td class="tg-hy9w">No backup</td>
-    <td class="tg-hy9w">Rivanna, SMB mount</td>
-    <td class="tg-hy9w">Research value storage budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
+    <td class="">ZFS NAS Storage</td>  
+    <td class="">1TB increments</td>
+    <td class="">$30/TB/yr</td>
+    <td class="">No backup</td>
+    <td class="">Rivanna</td>
+    <td class="">ZFS NAS storage can be mounted on your desktop and allows for file sharing among research team members.</td>
   </tr>
+  </tbody>
 </table>
 
 - - -
 
 # Sensitive Data Storage
 
-<table class="tg">
-  <tr>
-    <th class="tg-0qmj">Name</th>
-    <th class="tg-0qmj">Quota</th>
-    <th class="tg-0qmj">Price</th>
-    <th class="tg-0qmj">Mounted On</th>
-    <th class="tg-0qmj">Best Practices</th>
-  </tr>
-  <tr>
-    <td class="tg-dc35"><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></td>
-    <td class="tg-dc35">Available in 1TB increments</td>
-    <td class="tg-dc35">First TB is free, price for additional space TBD</td>
-    <td class="tg-dc35">Ivy virtual machine</td>
-    <td class="tg-dc35">ICS is ideal for long-term storage of sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
-  </tr>
+<table class="table table-striped table-sm" style="font-size:90%;">
+  <thead class="thead-dark">
+    <tr>
+      <th class="" style="width:16%;">Name</th>
+      <th class="">Quota</th>
+      <th class="">Price</th>
+      <th class="">Mounted On</th>
+      <th class="">Best Practices</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class=""><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></td>
+      <td class="">1TB increments</td>
+      <td class="">First TB is free, additional space TBD</td>
+      <td class="">Ivy virtual machine</td>
+      <td class="">ICS is ideal for long-term storage of sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
+    </tr>
+  </tbody>
 </table>
 
 <br />
 Ivy Central Storage is accessible by using Globus and connecting to the Ivy DTN.
+
+- - -
+
+# Request Storage
+
+Storage requests can be made from this form:
+
+[<button class="btn btn-success">Storage Requests</button>](/form/storage/)
