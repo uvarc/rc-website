@@ -1,6 +1,6 @@
 +++
 images = [""]
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 date = "2017-04-14T15:18:25-05:00"
 title = "New Container Platform"

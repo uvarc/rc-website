@@ -1,6 +1,6 @@
 +++
 images = [""]
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 date = "2018-01-24T15:18:25-05:00"
 title = "Spring 2018 Workshops"
@@ -17,7 +17,7 @@ and computational topics.
 
 Workshops break roughly into the three main areas relevant to computationally-intensive research: **code**, **data**, and **computing**.
 
-All of the classes are taught by SOMRC experts and are freely available to UVa faculty, staff and students.
+All of the classes are taught by RC experts and are freely available to UVa faculty, staff and students.
 
 * R / R package development
 * Python

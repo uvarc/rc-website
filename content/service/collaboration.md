@@ -1,6 +1,6 @@
 +++
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [
   "/2016/10/image.jpg",
 ]
@@ -17,7 +17,7 @@ title = "Collaboration"
 
 +++
 
-The SOMRC is available for collaborative work with researchers, faculty, and students. These may include:
+The RC is available for collaborative work with researchers, faculty, and students. These may include:
 
 * Code and package development, such as R and Python packages, Matlab toolboxes, pipelines, or containers.
 * Open source initiatives.
