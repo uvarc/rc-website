@@ -43,13 +43,32 @@ type = "form"
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Data Sensitivity <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Type of Request <span class="form-required" title="This field is required.">*</span></label>
     <div id="edit-submitted-new-or-renewal" class="form-radios">
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" class="form-radio" />&nbsp;Highly Sensitive</label>
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="project" class="form-radio" /> &nbsp; Create new storage share</label>
+      </div>
+      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-4">
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-4" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Increase size of existing share</label>
       </div>
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="renewal" class="form-radio" />&nbsp;Moderately sensitive / public</label>
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="zfs" class="form-radio" /> &nbsp; Decrease size of existing share</label>
+      </div>
+      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-3">
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-3" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Retire existing share</label>
+      </div>
+    </div>
+  </div>
+
+  <hr size=1 />
+
+  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Data Sensitivity <span class="form-required" title="This field is required.">*</span></label>
+    <div id="edit-submitted-new-or-renewal" class="form-radios">
+      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="renewal" class="form-radio" />&nbsp; Moderately sensitive / public</label>
+      </div>
+      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" class="form-radio" />&nbsp; Highly Sensitive</label>
       </div>
     </div>
   </div>
@@ -61,14 +80,14 @@ type = "form"
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
         <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="project" class="form-radio" /> &nbsp; Project Storage ($60/TB/year)</label>
       </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ($XX/TB/year)</label>
+      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-4">
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-4" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Ivy Central Storage (Price TBD)</label>
       </div>
       <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-3">
         <input required="required" type="radio" id="edit-submitted-new-or-renewal-3" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Value Storage ($45/TB/year)</label>
       </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-4">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-4" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Ivy Central Storage (Price TBD)</label>
+      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
+        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ($30/TB/year)</label>
       </div>
     </div>
   </div>
@@ -136,6 +155,10 @@ type = "form"
     </div>
     <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
     </div>
+  </div>
+
+  <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Total Cost </label>
+    <input class="form-control form-text required" type="text" id="uid" name="uid" value="$" size="200" maxlength="200" readonly style="width:20%;" />
   </div>
 
   <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Financial Contact </label>
