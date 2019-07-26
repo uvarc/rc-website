@@ -101,16 +101,16 @@ type = "form"
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
-    <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
-    <input required="required" class="form-control form-text required" type="text" id="mygroup-ownership" name="mygroup-ownership" value="" size="32" maxlength="32" style="width:10rem;" />
-  </div>
+  <div class="row">
+    <div class="col form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="form-control form-text required" type="text" id="mygroup-ownership" name="mygroup-ownership" value="" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
+      <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
+    </div>
 
-  <hr size=1 />
-
-  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
-    <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
-    <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:10rem;" />
+    <div class="col form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
+      <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
+    </div>
   </div>
 
   <hr size=1 />
@@ -123,7 +123,6 @@ type = "form"
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="5"></textarea>
     </div>
   </div>
-
 
   <div style="border:solid 1px #ccc;padding:2rem;margin-top:2rem;margin-bottom:2rem;background-color:#eee;">
     <h5>Grant Summary</h5>

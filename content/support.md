@@ -65,7 +65,7 @@ type = "about"
   <div class="card-body">
     <h5 class="card-title">Request Storage</h5>
     <p class="card-text">Manage your shared project, value, or ZFS storage volumes.</p>
-    <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a>
+    <a href="https://auth.uvasomrc.io/site/storage.php"><button class="btn btn-primary btn-sm">Request Storage</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
