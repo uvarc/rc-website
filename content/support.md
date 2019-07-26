@@ -13,85 +13,78 @@ type = "about"
 +++
 
 <div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Submit a Ticket</h5>
     <p class="card-text">Open a support ticket with your specific questions or issues.<p>
-    <a href="https://auth.uvasomrc.io/site/support.php"><button class="btn btn-primary">Open a Support Ticket</button></a>
+    <a href="https://auth.uvasomrc.io/site/support.php"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
   </div>
 </div>
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">User Guides</h5>
     <p class="card-text">Learn about systems, storage, data transfer, image analysis or tools.</p>
-    <a href="/userinfo/user-guide/"><button class="btn btn-primary">Read the User Guides</button></a>
+    <a href="/userinfo/user-guide/"><button class="btn btn-primary btn-sm">Read the User Guides</button></a>
+  </div>
+</div>
+<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
+  <div class="card-body">
+    <h5 class="card-title">Request a Consultation</h5>
+    <p class="card-text">Work directly with RC staff on your project idea or application design.</p>
+    <a href="https://auth.uvasomrc.io/site/consult.php"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
   </div>
 </div>
 </div>
 
 <div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">Request a Consultation</h5>
-    <p class="card-text">Work directly with RC staff on your project idea.</p>
-    <a href="https://auth.uvasomrc.io/site/consult.php"><button class="btn btn-primary">Request a Consultation</button></a>
-  </div>
-</div>
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">FAQ / Knowledgebase</h5>
     <p class="card-text">Search topics or post your own related to research computing.</p>
-    <a href="https://discuss.rc.virginia.edu/" target="_new"><button class="btn btn-primary">Search or Ask a Question</button></a>
+    <a href="https://discuss.rc.virginia.edu/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
   </div>
 </div>
-</div>
-
-<div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Pricing</h5>
     <p class="card-text">Read more about pricing for SUs, Ivy virtual machines, storage, and more.</p>
-    <a href="/userinfo/pricing"><button class="btn btn-primary">Learn More</button></a>
+    <a href="/userinfo/pricing"><button class="btn btn-primary btn-sm">Learn More</button></a>
   </div>
 </div>
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Request an Allocation</h5>
     <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
-    <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary">Request Allocations</button></a>
+    <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
   </div>
 </div>
 </div>
 
 <div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Request Storage</h5>
     <p class="card-text">Manage your shared project, value, or ZFS storage volumes.</p>
-    <a href="/form/storage/"><button class="btn btn-primary">Request Storage</button></a>
+    <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a>
   </div>
 </div>
-<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Office Hours</h5>
     <p class="card-text">Bring your questions to one of our three weekly office hours.</p>
-    <a href="/support/#office-hours"><button class="btn btn-primary">Meet Us at Office Hours</button></a>
+    <a href="/support/#office-hours"><button class="btn btn-primary btn-sm">Come Meet Us!</button></a>
   </div>
 </div>
-</div>
-
-<div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">VizLab</h5>
     <p class="card-text">A place specifically designed for data visualization.</p>
-    <a href="/service/imaging/#viz-lab"><button class="btn btn-primary">Learn More</button></a>
+    <a href="/service/imaging/#viz-lab"><button class="btn btn-primary btn-sm">Learn More</button></a>
   </div>
-</div>
-<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
 </div>
 </div>
 
+<div style="width:100%;height:2rem;"></div>
 
 ## Office Hours
 - - -
