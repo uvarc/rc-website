@@ -64,6 +64,13 @@ type = "about"
 </div>
 
 <div class="card-group">
+<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
+    <h5 class="card-title">Request Storage</h5>
+    <p class="card-text">Manage your shared project, value, or ZFS storage volumes.</p>
+    <a href="/form/storage/"><button class="btn btn-primary">Request Storage</button></a>
+  </div>
+</div>
 <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Office Hours</h5>
@@ -71,12 +78,17 @@ type = "about"
     <a href="/support/#office-hours"><button class="btn btn-primary">Meet Us at Office Hours</button></a>
   </div>
 </div>
+</div>
+
+<div class="card-group">
 <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">VizLab</h5>
     <p class="card-text">A place specifically designed for data visualization.</p>
     <a href="/service/imaging/#viz-lab"><button class="btn btn-primary">Learn More</button></a>
   </div>
+</div>
+<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 1px #ccc;">
 </div>
 </div>
 
