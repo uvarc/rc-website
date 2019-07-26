@@ -11,25 +11,25 @@ type = "form"
 
 +++
 
-<form action="https://api.uvarc.io/" method="post" id="allocation-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/" method="post" id="storage-form" accept-charset="UTF-8">
 <div>
-  <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
   </div>
 
   <div class="row">
-    <div class="col form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="edit-submitted-e-mail">E-mail <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="email">E-mail <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-computing-id form-type-textfield form-group"> <label class="control-label" for="edit-submitted-computing-id">Computing ID <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-item form-item-submitted-computing-id form-type-textfield form-group"> <label class="control-label" for="uid">Computing ID <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
     </div>
   </div>
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-item-submitted-classification form-type-select form-group"> <label class="control-label" for="edit-submitted-classification">Affiliation <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="edit-submitted-classification" name="submitted[classification]">
+  <div class="form-item form-group form-type-select form-group"> <label class="control-label" for="classification">Affiliation <span class="form-required" title="This field is required.">*</span></label>
+    <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="classification" name="classification">
       <option value="" selected="selected">- Select -</option>
       <option value="cas">College of Arts & Sciences</option>
       <option value="ceas">College of Engineering and Applied Sciences</option>
@@ -43,126 +43,127 @@ type = "form"
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Type of Request <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios">
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="project" class="form-radio" /> &nbsp; Create new storage share</label>
+  <div class="row">
+  <div class="col form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
+    <div id="type-of-request" class="form-radios">
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="type-of-request-1" name="type-of-request" value="project" class="form-radio" /> &nbsp; Create new storage share</label>
       </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-4">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-4" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Increase size of existing share</label>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="type-of-request-2" name="type-of-request" value="value" class="form-radio" /> &nbsp; Increase size of existing share</label>
       </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="zfs" class="form-radio" /> &nbsp; Decrease size of existing share</label>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="type-of-request-3" name="type-of-request" value="zfs" class="form-radio" /> &nbsp; Decrease size of existing share</label>
       </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-3">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-3" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Retire existing share</label>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="type-of-request-3" name="type-of-request" value="value" class="form-radio" /> &nbsp; Retire existing share</label>
       </div>
+    </div>
+  </div>
+
+  <div class="col form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
+    <div id="storage-options" class="form-radios">
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ($60/TB/year)  {{% storage-project %}}</label>
+      </div>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage (Price TBD)</label>
+      </div>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ($45/TB/year)</label>
+      </div>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ($30/TB/year)</label>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <hr size=1 />
+
+  <div class="row">
+    <div class="col form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="data-sensitivity">Data Sensitivity <span class="form-required" title="This field is required.">*</span></label>
+      <div id="data-sensitivity" class="form-radios">
+        <div class="form-item form-type-radio radio">
+          <input required="required" type="radio" id="data-sensitivity-1" name="data-sensitivity" value="moderately-sensitive" class="form-radio" />&nbsp; Moderately sensitive / public</label>
+        </div>
+        <div class="form-item form-type-radio radio">
+          <input required="required" type="radio" id="data-sensitivity-2" name="data-sensitivity" value="highly-sensitive" class="form-radio" />&nbsp; Highly Sensitive</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col form-item form-group"> <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
+      <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
+      <p class=tiny>Select an increment of 1TB.</p>
     </div>
   </div>
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Data Sensitivity <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios">
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="renewal" class="form-radio" />&nbsp; Moderately sensitive / public</label>
-      </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" class="form-radio" />&nbsp; Highly Sensitive</label>
-      </div>
-    </div>
+  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
+    <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
+    <input required="required" class="form-control form-text required" type="text" id="mygroup-ownership" name="mygroup-ownership" value="" size="32" maxlength="32" style="width:10rem;" />
   </div>
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios">
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="project" class="form-radio" /> &nbsp; Project Storage ($60/TB/year)</label>
-      </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-4">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-4" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Ivy Central Storage (Price TBD)</label>
-      </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-3">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-3" name="submitted[new_or_renewal]" value="value" class="form-radio" /> &nbsp; Value Storage ($45/TB/year)</label>
-      </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ($30/TB/year)</label>
-      </div>
-    </div>
+  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
+    <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
+    <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:10rem;" />
   </div>
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="8" maxlength="8" style="width:10rem;" />
+  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="project-title">Project Title </label>
+    <input class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
   </div>
 
-  <hr size=1 />
-
-  <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
-    <p>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
-    <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="32" maxlength="32" style="width:10rem;" />
-  </div>
-
-  <hr size=1 />
-
-  <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
-    <p>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
-    <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="8" maxlength="8" style="width:10rem;" />
-  </div>
-
-  <hr size=1 />
-
-  <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Project Title </label>
-    <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
-  </div>
-
-  <div class="form-item form-group form-item form-item-submitted-for-renewals-description-of-results-from-previous-allocation form-type-textarea form-group"> <label class="control-label" for="edit-submitted-for-renewals-description-of-results-from-previous-allocation">Project Summary </label>
-    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="edit-submitted-for-renewals-description-of-results-from-previous-allocation" name="submitted[for_renewals_description_of_results_from_previous_allocation]" cols="60" rows="5"></textarea>
+  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="project-summary">Project Summary </label>
+    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="5"></textarea>
     </div>
   </div>
 
 
   <div style="border:solid 1px #ccc;padding:2rem;margin-top:2rem;margin-bottom:2rem;background-color:#eee;">
     <h5>Grant Summary</h5>
-    <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Grant Agency </label>
-      <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
+    <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="grant-agency">Grant Agency </label>
+      <input class="form-control form-text required" type="text" id="grant-agency" name="grant-agency" value="" size="200" maxlength="200" />
     </div>
 
-    <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Grant Number </label>
-      <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
+    <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="grant-number">Grant Number </label>
+      <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
   </div>
 
   <hr size=1 />
 
-  <p>PTAO</p>
+  <label class="control-label" for="data-sensitivity-2">PTAO</label>
   <div class="row">
-    <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
+    <div class="col form-item form-group form-item form-type-textarea form-group">
+      <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
+    <div class="col form-item form-group form-item form-type-textarea form-group">
+      <input class="form-control form-text required" type="text" id="ptao2" name="ptao2" value="" size="10" maxlength="10" />
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
+    <div class="col form-item form-group form-item form-type-textarea form-group">
+      <input class="form-control form-text required" type="text" id="ptao3" name="ptao3" value="" size="10" maxlength="10" />
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
+    <div class="col form-item form-group form-item form-type-textarea form-group">
+      <input class="form-control form-text required" type="text" id="ptao4" name="ptao4" value="" size="10" maxlength="10" />
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
+    <div class="col form-item form-group form-item form-type-textarea form-group">
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group">
+    <div class="col form-item form-group form-item form-type-textarea form-group">
     </div>
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Total Cost </label>
-    <input class="form-control form-text required" type="text" id="uid" name="uid" value="$" size="200" maxlength="200" readonly style="width:20%;" />
+  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="estimated-cost">Estimated Total Cost </label>
+    <input class="form-control form-text required" type="text" id="estimated-cost" name="estimated-cost" value="$" size="200" maxlength="200" readonly style="width:20%;" />
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Financial Contact </label>
-    <input class="form-control form-text required" type="text" id="uid" name="uid" value="" size="200" maxlength="200" />
+  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="financial-contact">Financial Contact </label>
+    <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
   </div>
 
   <hr size=1 style="margin-top:2rem;" />
@@ -181,13 +182,13 @@ type = "form"
 
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
-    <button class="button-primary btn btn-primary form-submit" type="submit" name="op" value="Submit">Submit</button>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
+
 </div>
 </form>
 
 <script type="text/javascript" src="/js/captcha.js"></script>
-
 <script>
 function getParams() {
   var vars = {};

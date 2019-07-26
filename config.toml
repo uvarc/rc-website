@@ -28,6 +28,9 @@ ignoreCache = true
   name = "UVA Research Computing"
   description = "Creating innovative solutions for researchers"
   pageNotFoundTitle = "404 - Page not found"
+  valueStorage = 45
+  projectStorage = 60
+  zfsStorage = 30
 
 [params.sidebar]
   # Optional about block for sidebar (can be Markdown)
