@@ -211,13 +211,6 @@ function decode64(str) {
 
 var form = document.getElementById('request-form');
 
-var name_enc = getParams()["name"];
-if (name_enc) {
-  // do nothing
-} else {
-  window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );
-}
-
 // name
 var name_enc = getParams()["name"];
 var name_esc = decodeURI(name_enc);
@@ -238,5 +231,15 @@ var email_esc = decodeURI(email_enc);
 var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
 email_field.value = form_email;
+
+var name_enc = getParams()["name"];
+if (name_enc) {
+  // do nothing
+} else {
+  $('#name').val('');
+  $('#email').val('');
+  $('#uid').val('');
+  window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );
+}
 
 </script>

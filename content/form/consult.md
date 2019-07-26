@@ -85,6 +85,9 @@ var name_enc = getParams()["name"];
 if (name_enc) {
   // do nothing
 } else {
+  $('#name').val('');
+  $('#email').val('');
+  $('#uid').val('');
   window.location.replace( "https://auth.uvasomrc.io/site/consult.php" );
 }
 

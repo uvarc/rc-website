@@ -12,7 +12,11 @@ images = [""]
 
 <p class="lead">There are a variety of options for storing large-scale research data at UVa. Non-sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/">Rivanna</a> high performance computing system. Sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment.</p>
 
-<p class="lead">Information Technology Services (ITS) also provides <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" target="_new"><b>multiple tiers of data storage</b></a> for personal and non-research storage needs.</p>
+
+{{< highlight >}}
+  Information Technology Services (ITS) also provides <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" target="_new"><b>multiple tiers of data storage</b></a> for personal and non-research storage needs.</alert>
+{{< /highlight >}}
+
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -42,7 +46,7 @@ images = [""]
   <tr>
     <td class=""><a href="/userinfo/storage/non-sensitive-data/#project">Project Storage</a></td> 
     <td class="">1TB increments</td>
-    <td class="">$60/TB/yr</td>
+    <td class="">${{% project-storage %}}/TB/yr</td>
     <td class="">2 week snapshots</td>
     <td class="">Rivanna, NFS mount</td>
     <td class=""><code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for running jobs with smaller files.</td>
@@ -50,7 +54,7 @@ images = [""]
   <tr>
     <td class=""><a href="/userinfo/storage/research-value">Value Storage</a></td>  
     <td class="">1TB increments</td>
-    <td class="">$45/TB/yr</td>
+    <td class="">${{% value-storage %}}/TB/yr</td>
     <td class="">No backup</td>
     <td class="">Rivanna, SMB mount</td>
     <td class="">Research value storage budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
@@ -58,7 +62,7 @@ images = [""]
   <tr>
     <td class="">ZFS NAS Storage</td>  
     <td class="">1TB increments</td>
-    <td class="">$30/TB/yr</td>
+    <td class="">${{% zfs-storage %}}/TB/yr</td>
     <td class="">No backup</td>
     <td class="">Rivanna</td>
     <td class="">ZFS NAS storage can be mounted on your desktop and allows for file sharing among research team members.</td>
@@ -101,3 +105,4 @@ Ivy Central Storage is accessible by using Globus and connecting to the Ivy DTN.
 Storage requests can be made from this form:
 
 [<button class="btn btn-success">Storage Requests</button>](/form/storage/)
+
