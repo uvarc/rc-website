@@ -50,7 +50,7 @@ function checkStatusMessages() {
         $.each(data, function(key, value) {
             var messageBody = value.body;
             var messageLength = messageBody.length;
-            if ( messageLength < 5 ) {
+            if ( messageLength < 22 ) {
                 $("#status-message").hide();
             } else {
                 $("#status-message").show();
