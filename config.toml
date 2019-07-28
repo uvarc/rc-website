@@ -28,9 +28,11 @@ ignoreCache = true
   name = "UVA Research Computing"
   description = "Creating innovative solutions for researchers"
   pageNotFoundTitle = "404 - Page not found"
-  storageValue = 45
+  # Set STORAGE PRICES globally below:
   storageProject = 60
+  storageValue = 45
   storageZfs = 30
+  storageIvy = 999
 
 [params.sidebar]
   # Optional about block for sidebar (can be Markdown)
@@ -43,5 +45,5 @@ ignoreCache = true
   hide = true
 
 [outputs]
-    home = [ "HTML", "JSON"]
-    page = [ "HTML"]
+  home = [ "HTML", "JSON"]
+  page = [ "HTML"]
