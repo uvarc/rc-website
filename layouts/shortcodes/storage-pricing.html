@@ -1,0 +1,8 @@
+{{ $type := .Get 0 }}
+{{ if (eq $type "project") }}
+  {{ .Site.Params.pricing.storageProject }}
+{{ else if (eq $type "value") }}
+  {{ .Site.Params.pricing.valueProject }}
+{{ else if (eq $type "zfs") }}
+  {{ .Site.Params.pricing.zfsProject }}
+{{ end }}
