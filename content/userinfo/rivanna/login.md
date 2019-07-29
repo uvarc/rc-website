@@ -11,15 +11,15 @@ type = "rivanna"
 
 +++
 
-# Logging in to Rivanna
+<p class=lead>Rivanna is accessible through a web portal, secure shell terminals, or a remote desktop environment.  For of all of these access points, your login is your UVA computing ID and your password is your Eservices password.  If you do not know your Eservices password you must change it through ITS.</p>
 
-Rivanna is accessible through a web portal, secure shell terminals, or a remote desktop environment.  For of all of these access points, your login is your UVA computing ID and your password is your Eservices password.  If you do not know your Eservices password you must change it through ITS.
-
-All users who wish to access Rivanna while off Grounds must use the [UVA Anywhere VPN client](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).  Only Windows and Mac OSX operating systems are supported.  Linux users can find unsupported instructions to install and configure a VPN here.
+{{% highlight %}}
+<div style="float:left;padding:0 1rem 0 0;"><i style="" class="fas fa-3x fa-map-marked-alt"></i></div> **Off Campus?** All users who wish to access Rivanna while off Grounds must use the [UVA Anywhere VPN client](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).  Only Windows and Mac OSX operating systems are supported.  Linux users can find unsupported instructions to install and configure a VPN here.
+{{% /highlight %}}
 
 - - -
 
-## Web-based Access
+# Web-based Access
 
 Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser.  The Open OnDemand access point is rivanna-portal.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our Open OnDemand documentation page.
 
@@ -27,15 +27,15 @@ Open OnDemand is a graphical user interface that allows access to Rivanna via a 
 
 - - -
 
-## Secure Shell Access (SSH)
+# Secure Shell Access (SSH)
 
 Rivanna is accessible through `ssh` (Secure Shell) connections using the hostname `rivanna.hpc.virginia.edu`.
 
-### Windows
+## Windows
 
 Windows users must install an ssh client application.  We recommend [MobXterm](https://mobaxterm.mobatek.net/), but you may also use other clients such as [SecureCRT](https://www.vandyke.com/products/securecrt/) or [PuTTY](https://www.putty.org/). 
 
-### Mac OSX and Linux
+## Mac OSX and Linux
 
 OSX and Linux users may connect through a terminal using the command
 
@@ -49,7 +49,7 @@ For more details and for troubleshooting information, please see our ssh page.
 
 - - -
 
-## Remote Desktop Access
+# Remote Desktop Access
 
 Users who wish to run X11 graphical applications may prefer the FastX remote desktop web interface.  The FastX web client is accessible at `rivanna-desktop.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
 

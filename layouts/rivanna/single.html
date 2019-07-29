@@ -4,9 +4,12 @@
 
 <article class="blog-post">
   <header style="margin-bottom:3rem;">
-    <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
-
-    <h6 style="float:right;font-size:90%;"><a href="/userinfo/rivanna/overview/">&laquo; Return to Rivanna Overview</a></h6>
+    <div style="float:right;padding: 20px 0;max-width:30%;">
+      <h6 style="font-size:85%;"><a href="/userinfo/rivanna/overview/">&laquo; Return to Rivanna Overview</a></h6>
+    </div>
+    <div>
+      <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+    </div>
   </header>
   
   <div class="explainer">
