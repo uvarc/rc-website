@@ -27,8 +27,8 @@ type = "rivanna"
 <div class="card-group">
 <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
   <div class="card-body">
-    <h5 class="card-title">Get Access</h5>
-    <p class="card-text">Request access to Rivanna HPC for your research. Add collaborators to your work.</p>
+    <h5 class="card-title">Get Access / Allocations</h5>
+    <p class="card-text">Request access to Rivanna HPC for your research. Add collaborators to your project.</p>
     <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary">Request an Allocation</button></a>
   </div>
 </div>
@@ -67,7 +67,7 @@ type = "rivanna"
 <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Queues</h5>
-    <p class="card-text">Learn the right queue (or "allocation") for running your job, such as standard, parallel, gpu, and more.</p>
+    <p class="card-text">Learn the right queue (or "partition") for running your job, such as standard, parallel, gpu, and more.</p>
     <a href="/userinfo/rivanna/queues/"><button class="btn btn-warning">Learn More</button></a>
   </div>
 </div>
