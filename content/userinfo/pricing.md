@@ -13,12 +13,15 @@ images = [""]
 From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure,
 various systems are available to researchers.</p>
 
+- - -
+
 # HPC Allocations
 
 Allocation pricing goes here.
 
-# Storage
+- - -
 
+# Storage
 
 <table class="table">
   <thead>
@@ -55,6 +58,7 @@ Allocation pricing goes here.
 
 [<button class="btn btn-primary btn-sm">Storage Details</button>](/userinfo/storage/)
 
+- - -
 
 # Ivy Virtual Machines
 
