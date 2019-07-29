@@ -32,17 +32,17 @@ Allocation pricing goes here.
     <tr>
       <th scope="row">Project</th>
       <td>Standard</td>
-      <td>${{% storage-pricing project %}} TB/year</td>
+      <td>{{% storage-pricing project %}} TB/year</td>
     </tr>
     <tr>
       <th scope="row">Value</th>
       <td>Standard</td>
-      <td>${{% storage-pricing value %}} TB/year</td>
+      <td>{{% storage-pricing value %}} TB/year</td>
     </tr>
     <tr>
       <th scope="row">ZFS</th>
       <td>Standard</td>
-      <td>${{% storage-pricing zfs %}} TB/year</td>
+      <td>{{% storage-pricing zfs %}} TB/year</td>
     </tr>
     <tr>
       <th scope="row">Ivy Central Storage</th>
