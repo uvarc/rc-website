@@ -11,6 +11,8 @@ type = "form"
 
 +++
 
+<script type="text/javascript" src="/js/typeahead.js"></script>
+
 <form action="https://api.uvarc.io/" method="post" id="storage-form" accept-charset="UTF-8">
 <div>
   <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="name">Name <span class="form-required" title="This field is required.">*</span></label>
@@ -102,8 +104,8 @@ type = "form"
   <hr size=1 />
 
   <div class="row">
-    <div class="col form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="text" id="mygroup-ownership" name="mygroup-ownership" value="" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
+    <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
       <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
     </div>
 
