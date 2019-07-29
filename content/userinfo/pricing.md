@@ -17,6 +17,8 @@ images = [""]
 
 Allocation pricing goes here.
 
+[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/rivanna/allocations/)
+
 - - -
 
 # Storage
@@ -54,7 +56,7 @@ Allocation pricing goes here.
 </table>
 
 
-[<button class="btn btn-primary btn-sm">Storage Details</button>](/userinfo/storage/)
+[<button class="btn btn-primary btn-sm">Storage Details</button>](/userinfo/storage/)  &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Storage</button>](/form/storage/)
 
 - - -
 
