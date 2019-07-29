@@ -9,9 +9,7 @@ categories = ["userinfo"]
 images = [""]
 +++
 
-<p class=lead>UVA Research Computing can help you find the right system for your computational workloads. 
-From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure,
-various systems are available to researchers.</p>
+<p class=lead>Below is a schedule of prices for Research Computing resources.</p>
 
 - - -
 
