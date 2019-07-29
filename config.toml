@@ -28,11 +28,16 @@ ignoreCache = true
   name = "UVA Research Computing"
   description = "Creating innovative solutions for researchers"
   pageNotFoundTitle = "404 - Page not found"
-  # Set STORAGE PRICES globally below:
+
+[params.pricing]
+  # Set STORAGE / VM PRICES globally below:
   storageProject = 60
   storageValue = 45
   storageZfs = 30
   storageIvy = 999
+  ivyVmSmall = 999
+  ivyVmMedium = 1499
+  ivyVmLarge = 1999
 
 [params.sidebar]
   # Optional about block for sidebar (can be Markdown)

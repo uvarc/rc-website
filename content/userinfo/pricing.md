@@ -19,7 +19,42 @@ Allocation pricing goes here.
 
 # Storage
 
-Storage pricing or link goes here
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Security</th>
+      <th scope="col">Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Project</th>
+      <td>Standard</td>
+      <td>${{% storage-pricing project %}} TB/year</td>
+    </tr>
+    <tr>
+      <th scope="row">Value</th>
+      <td>Standard</td>
+      <td>${{% storage-pricing value %}} TB/year</td>
+    </tr>
+    <tr>
+      <th scope="row">ZFS</th>
+      <td>Standard</td>
+      <td>${{% storage-pricing zfs %}} TB/year</td>
+    </tr>
+    <tr>
+      <th scope="row">Ivy Central Storage</th>
+      <td>High</td>
+      <td>TBD</td>
+    </tr>
+  </tbody>
+</table>
+
+
+[<button class="btn btn-primary btn-sm">Storage Details</button>](/userinfo/storage/)
+
 
 # Ivy Virtual Machines
 

@@ -51,7 +51,7 @@ type = "rivanna"
   <tr>
     <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#project"><code>/project</code></a></td> 
     <td class="tg-dc35">Available in 1TB increments</td>
-    <td class="tg-dc35">${{% project-storage %}}/TB/Yr</td>
+    <td class="tg-dc35">{{% storage-pricing project %}}/TB/Yr</td>
     <td class="tg-dc35">3-week snapshot</td>
     <td class="tg-dc35">Rivanna login and compute nodes</td>
     <td class="tg-dc35"><code>/project</code>is ideal for long-term storage of data that can be accessed from Rivanna. <code>/project</code> is ideal for running jobs with smaller files.</td>
@@ -59,7 +59,7 @@ type = "rivanna"
   <tr>
     <td class="tg-hy9w"><a href="/userinfo/storage/research-value">Value Storage</a></td>  
     <td class="tg-hy9w">Available in 1TB increments</td>
-    <td class="tg-hy9w">${{% value-storage %}}/TB/Yr</td>
+    <td class="tg-hy9w">{{% storage-pricing value %}}/TB/Yr</td>
     <td class="tg-hy9w">No backup</td>
     <td class="tg-hy9w">Rivanna login and compute nodes, SMB mount</td>
     <td class="tg-hy9w">Research value storage budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
@@ -67,7 +67,7 @@ type = "rivanna"
   <tr>
     <td class="tg-hy9w">ZFS Storage</td>  
     <td class="tg-hy9w">Available in 1TB increments</td>
-    <td class="tg-hy9w">${{% zfs-storage %}}/TB/Yr</td>
+    <td class="tg-hy9w">{{% storage-pricing zfs %}}/TB/Yr</td>
     <td class="tg-hy9w">No backup</td>
     <td class="tg-hy9w">Rivanna login and compute nodes</td>
     <td class="tg-hy9w">Research ZFS is our least expensive storage solution for data that can be accessed by Rivanna. Can be used with SLURM jobs.</td>
