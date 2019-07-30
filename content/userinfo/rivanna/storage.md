@@ -81,4 +81,4 @@ type = "rivanna"
 
 Storage requests can be made from this form:
 
-[<button class="btn btn-success">Storage Requests</button>](/form/storage/)
+[<button class="btn btn-success">Storage Requests</button>](https://auth.uvasomrc.io/site/storage.php)
