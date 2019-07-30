@@ -213,21 +213,21 @@ function decode64(str) {
 var form = document.getElementById('request-form');
 
 // name
-var name_enc = getParams()["n"];
+var name_enc = getParams()["name"];
 var name_esc = decodeURI(name_enc);
 var form_name = decode64(name_esc);
 var name_field = document.getElementById('name');
 name_field.value = form_name;
 
 // uid
-var uid_enc = getParams()["u"];
+var uid_enc = getParams()["uid"];
 var uid_esc = decodeURI(uid_enc);
 var form_uid = decode64(uid_esc);
 var uid_field = document.getElementById('uid');
 uid_field.value = form_uid;
 
 // email
-var email_enc = getParams()["e"];
+var email_enc = getParams()["email"];
 var email_esc = decodeURI(email_enc);
 var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
