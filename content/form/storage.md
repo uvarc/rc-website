@@ -69,13 +69,13 @@ type = "form"
         <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage (Price TBD)</label>
-      </div>
-      <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ({{% storage-pricing zfs %}}/TB/year)</label>
+      </div>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage (Price TBD)</label>
       </div>
     </div>
   </div>
