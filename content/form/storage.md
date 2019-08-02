@@ -13,10 +13,12 @@ type = "form"
 
 <script type="text/javascript" src="/js/typeahead.js"></script>
 
-<form action="https://api.uvarc.io/" method="post" id="storage-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="storage-form" accept-charset="UTF-8">
+<p id="form_post_response"></p>
 <div>
   <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
+    <input class="form-control form-text required" type="hidden" id="category" name="category" value="Storage">
   </div>
 
   <div class="row">
@@ -99,6 +101,7 @@ type = "form"
       <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>Select an increment of 1TB.</p>
     </div>
+
   </div>
 
   <hr size=1 />
@@ -113,6 +116,7 @@ type = "form"
       <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
       <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
     </div>
+
   </div>
 
   <hr size=1 />
@@ -135,11 +139,13 @@ type = "form"
     <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="grant-number">Grant Number </label>
       <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
+
   </div>
 
   <hr size=1 />
 
-  <label class="control-label" for="data-sensitivity-2">PTAO</label>
+<label class="control-label" for="data-sensitivity-2">PTAO</label>
+
   <div class="row">
     <div class="col form-item form-group form-item form-type-textarea form-group">
       <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
@@ -243,4 +249,17 @@ if (name_enc) {
   window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );
 }
 
+let message = decodeURI(getParams()["message"]);
+let status = decodeURI(getParams()["status"]);
+if(message == "undefined" || message == undefined) {
+  message="";
+}
+document.getElementById("form_post_response").innerHTML = message;
+if(status == "error" || status == undefined) {
+  document.getElementById("form_post_response").style.color = "red";
+  document.getElementById("form_post_response").style.fontWeight = "500"
+} else {
+  document.getElementById("form_post_response").style.color = "green";
+  document.getElementById("form_post_response").style.fontWeight = "500"
+}
 </script>

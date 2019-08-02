@@ -11,9 +11,11 @@ type = "form"
 
 +++
 
-<form action="https://api.uvarc.io/support" method="post" id="request-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+<p id="form_post_response"></p>
 <div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-type-textfield form-group"> 
+    <label class="control-label" for="submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
   </div>
 
@@ -112,4 +114,17 @@ var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
 email_field.value = form_email;
 
+let message = decodeURI(getParams()["message"]);
+let status = decodeURI(getParams()["status"]);
+if(message == "undefined" || message == undefined) {
+  message="";
+}
+document.getElementById("form_post_response").innerHTML = message;
+if(status == "error" || status == undefined) {
+  document.getElementById("form_post_response").style.color = "red";
+  document.getElementById("form_post_response").style.fontWeight = "500"
+} else {
+  document.getElementById("form_post_response").style.color = "green";
+  document.getElementById("form_post_response").style.fontWeight = "500"
+}
 </script>

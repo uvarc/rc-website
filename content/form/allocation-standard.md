@@ -11,10 +11,14 @@ type = "form"
 
 +++
 
-<form action="https://api.uvarc.io/" method="post" id="allocation-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
+<p id="form_post_response"></p>
 <div>
-  <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group">
+    <label class="control-label" for="edit-submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
+    <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
+    <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Request or Renew a Standard Allocation">
   </div>
 
   <div class="row">
@@ -80,7 +84,6 @@ type = "form"
 
 <script type="text/javascript" src="/js/captcha.js"></script>
 
-
 <script>
 function getParams() {
     var vars = {};
@@ -137,4 +140,19 @@ form.onsubmit = function(e) {
   rpane.style.display = "block";
   form.style.display = "none";
 }; 
+
+let message = decodeURI(getParams()["message"]);
+let status = decodeURI(getParams()["status"]);
+if(message == "undefined" || message == undefined) {
+  message="";
+}
+
+document.getElementById("form_post_response").innerHTML = message;
+if(status == "error" || status == undefined) {
+  document.getElementById("form_post_response").style.color = "red";
+  document.getElementById("form_post_response").style.fontWeight = "500"
+} else {
+  document.getElementById("form_post_response").style.color = "green";
+  document.getElementById("form_post_response").style.fontWeight = "500"
+}
 </script>

@@ -6,3 +6,4 @@ update.sh
 invalidate*
 wercker*
 npm*
+/.project
