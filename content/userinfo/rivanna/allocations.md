@@ -48,3 +48,7 @@ Time on Rivanna can also be purchased using a PTAO. Purchasers are given a highe
 Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014.
 
 [<button class="btn btn-primary">Request an Instructional Allocation</button>](https://auth.uvasomrc.io/site/allocation-instructional.php)
+
+# Allocation Pricing
+
+{{< allocation-pricing >}}

@@ -15,7 +15,7 @@ images = [""]
 
 # HPC Allocations
 
-Allocation pricing goes here.
+{{< allocation-pricing >}}
 
 [<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/rivanna/allocations/)
 
@@ -62,17 +62,7 @@ Allocation pricing goes here.
 
 # Ivy Virtual Machines
 
-Ivy VM pricing goes here. Link over to Ivy page.
+{{< ivy-pricing >}}
 
+[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy/) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](/)
 
-<!--
-<div class = "card-group">
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title">Rivanna HPC</h4>
-      <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
-      <a href="/userinfo/rivanna/overview/" class="btn btn-warning" style="color:white">Get Started on Rivanna</a>
-  </div>
-</div>
-</div>
--->

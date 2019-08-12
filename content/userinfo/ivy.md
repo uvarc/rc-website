@@ -42,6 +42,8 @@ Access to Ivy resources is project-based, limited to PIs and their designees, an
 
 Ivy resources will be provided without a fee for approved projects. Please note that the pricing model is still under evaluation. A valid PTAO is required as part of the account request process, although no charges will be made without advanced notice to the PI.
 
+{{< ivy-pricing >}}
+
 - - -
 
 # Connecting and Signing In
