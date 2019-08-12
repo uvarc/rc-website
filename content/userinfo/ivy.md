@@ -30,6 +30,8 @@ Ivy consists of two separate computing environments. Access to one environment d
 
 # Requesting Access
 
+University of Virginia tenure stream and academic general faculty, research faculty, research scientists, and postdoctoral associates may request an account on Ivy. UVA graduate and undergraduate students are not permitted to request accounts—this must be done by their faculty advisor(s).
+
 Access to Ivy resources is project-based, limited to PIs and their designees, and requires approval. Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
 
 [<button class="btn btn-success">Request an Ivy Account</button>](https://cadre.virginia.edu/node/add/account-request)
