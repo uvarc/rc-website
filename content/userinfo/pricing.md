@@ -50,7 +50,7 @@ images = [""]
     <tr>
       <th scope="row">Ivy Central Storage</th>
       <td>High</td>
-      <td>TBD</td>
+      <td>{{% storage-pricing ivy %}} TB/year</td>
     </tr>
   </tbody>
 </table>

@@ -88,7 +88,7 @@ images = [""]
     <tr>
       <td class=""><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></td>
       <td class="">1TB increments</td>
-      <td class="">First TB is free, additional space TBD</td>
+      <td class="">First TB is free, additional space {{% storage-pricing ivy %}} TB/year</td>
       <td class="">Ivy virtual machine</td>
       <td class="">ICS is ideal for long-term storage of sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
     </tr>
