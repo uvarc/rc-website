@@ -1,5 +1,5 @@
 +++
-draft = false
+draft = true
 date = "2019-05-17T15:25:10-05:00"
 title = "Alden Stradling, PhD"
 job_title = "HPC Systems Specialist"
