@@ -66,3 +66,10 @@ images = [""]
 
 [<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy/) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](/)
 
+- - -
+
+# Skyline Virtual Machines
+
+{{< skyline-pricing >}}
+
+More information on ordering Skyline VMs coming soon!
