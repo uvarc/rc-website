@@ -13,7 +13,7 @@ images = [""]
 
 - - -
 
-# HPC Allocations
+# Rivanna Allocations
 
 {{< allocation-pricing >}}
 
