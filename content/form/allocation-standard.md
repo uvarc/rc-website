@@ -30,20 +30,20 @@ type = "form"
     </div>
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-classification form-type-select form-group"> <label class="control-label" for="edit-submitted-classification">Classification <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="edit-submitted-classification" name="submitted[classification]"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
+  <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
+    <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-department form-type-textfield form-group"> <label class="control-label" for="edit-submitted-department">Department <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-department" name="submitted[department]" value="" size="60" maxlength="128" />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-name-of-mygroups-group form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name-of-mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-name-of-mygroups-group" name="submitted[name_of_mygroups_group]" value="" size="60" maxlength="128" />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-others-to-be-added-to-mygroups-account-uva-computing-ids-separated-by-commas form-type-textarea form-group"> <label class="control-label" for="edit-submitted-others-to-be-added-to-mygroups-account-uva-computing-ids-separated-by-commas">Others to be Added to MyGroups Account (UVA computing IDs separated by commas)</label>
-    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="edit-submitted-others-to-be-added-to-mygroups-account-uva-computing-ids-separated-by-commas" name="submitted[others_to_be_added_to_mygroups_account_uva_computing_ids_separated_by_commas]" cols="60" rows="3"></textarea>
+  <div class="form-item form-group form-item add-uids form-type-textarea form-group"> <label class="control-label" for="add-uids">Others to be Added to MyGroups Account (UVA computing IDs separated by commas)</label>
+    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="add-uids" name="add-uids" cols="60" rows="3"></textarea>
     </div>
   </div>
 
