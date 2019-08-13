@@ -22,10 +22,10 @@ type = "form"
   </div>
 
   <div class="row">
-    <div class="col form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="edit-submitted-e-mail">E-mail <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="email">E-mail <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-computing-id form-type-textfield form-group"> <label class="control-label" for="edit-submitted-computing-id">Computing ID <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-item form-item-submitted-computing-id form-type-textfield form-group"> <label class="control-label" for="uid">Computing ID <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
     </div>
   </div>
@@ -33,33 +33,38 @@ type = "form"
   <div class="form-item form-group form-item form-item-submitted-classification form-type-select form-group"> <label class="control-label" for="edit-submitted-classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="edit-submitted-classification" name="submitted[classification]"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
+
   <div class="form-item form-group form-item form-item-submitted-department form-type-textfield form-group"> <label class="control-label" for="edit-submitted-department">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="edit-submitted-department" name="submitted[department]" value="" size="60" maxlength="128" />
   </div>
+
   <div class="form-item form-group form-item form-item-submitted-name-of-mygroups-group form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name-of-mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="edit-submitted-name-of-mygroups-group" name="submitted[name_of_mygroups_group]" value="" size="60" maxlength="128" />
   </div>
+
   <div class="form-item form-group form-item form-item-submitted-others-to-be-added-to-mygroups-account-uva-computing-ids-separated-by-commas form-type-textarea form-group"> <label class="control-label" for="edit-submitted-others-to-be-added-to-mygroups-account-uva-computing-ids-separated-by-commas">Others to be Added to MyGroups Account (UVA computing IDs separated by commas)</label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="edit-submitted-others-to-be-added-to-mygroups-account-uva-computing-ids-separated-by-commas" name="submitted[others_to_be_added_to_mygroups_account_uva_computing_ids_separated_by_commas]" cols="60" rows="5"></textarea>
     </div>
   </div>
-  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-      <input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" checked="checked" class="form-radio" />&nbsp;New</label>
+
+  <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
+    <div id="new-or-renewal" class="form-radios">
+      <div class="form-item form-type-radio radio"> <label class="control-label" for="new-or-renewal-1">
+        <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" checked="checked" class="form-radio" />&nbsp;New</label>
+      </div>
+      <div class="form-item form-type-radio radio"> <label class="control-label" for="new-or-renewal-2">
+        <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />&nbsp;Renewal</label>
+      </div>
     </div>
-    <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-      <input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="renewal" class="form-radio" />&nbsp;Renewal</label>
+    <div class="help-block">If this is your first request, select New.  Otherwise select Renewal.</div>
+  </div>
+
+  <div class="form-item project-description form-type-textarea form-group"> <label class="control-label" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
+    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="5"></textarea>
     </div>
   </div>
-  <div class="help-block">If this is your first request, select New.  Otherwise select Renewal.
-  </div>
-  </div>
-  <div class="form-item form-group form-item form-item-submitted-description-of-research-project form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="edit-submitted-description-of-research-project" name="submitted[description_of_research_project]" cols="60" rows="5"></textarea>
-    </div>
-  </div>
-  <div class="form-item form-group form-item form-item-submitted-for-renewals-description-of-results-from-previous-allocation form-type-textarea form-group"> <label class="control-label" for="edit-submitted-for-renewals-description-of-results-from-previous-allocation">For Renewals: Description of Results from Previous Allocation</label>
-    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="edit-submitted-for-renewals-description-of-results-from-previous-allocation" name="submitted[for_renewals_description_of_results_from_previous_allocation]" cols="60" rows="5"></textarea>
+  <div class="form-item form-type-textarea form-group"> <label class="control-label" for="renewal-description">For Renewals: Description of Results from Previous Allocation</label>
+    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="renewal-description" name="renewal-description" cols="60" rows="5"></textarea>
     </div>
   </div>
 
@@ -77,8 +82,9 @@ type = "form"
 
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
-    <button class="button-primary btn btn-primary form-submit" type="submit" name="op" value="Submit">Submit</button>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
+
 </div>
 </form>
 
@@ -86,11 +92,11 @@ type = "form"
 
 <script>
 function getParams() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  return vars;
 }
 
 function decode64(str) {
@@ -105,6 +111,16 @@ function decode64(str) {
 };
 
 var form = document.getElementById('allocation-form');
+
+var name_enc = getParams()["name"];
+if (name_enc) {
+  // do nothing
+} else {
+  $('#name').val('');
+  $('#email').val('');
+  $('#uid').val('');
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-standard.php" );
+}
 
 // name
 var name_enc = getParams()["name"];
@@ -126,20 +142,6 @@ var email_esc = decodeURI(email_enc);
 var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
 email_field.value = form_email;
-
-var rpane = document.getElementById('result-pane');
-rpane.style.display = "none";
-var form = document.getElementById('allocation-form');
-form.onsubmit = function(e) {
-  e.preventDefault();
-  var r_name = document.getElementById('r_name');
-  r_name.innerHTML = "Hello " + form.name.value;
-  var r_email = document.getElementById('r_email');
-  r_email.innerHTML = form.email.value;
-  this.reset();
-  rpane.style.display = "block";
-  form.style.display = "none";
-}; 
 
 let message = decodeURI(getParams()["message"]);
 let status = decodeURI(getParams()["status"]);
