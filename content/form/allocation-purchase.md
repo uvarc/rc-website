@@ -73,8 +73,8 @@ type = "form"
     </div>
   </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="award-title">Title of Award (if applicable) <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="award-title" name="award-title" value="" size="60" maxlength="128" />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="award-title">Title of Award (if applicable) </label>
+    <input class="form-control form-text" type="text" id="award-title" name="award-title" value="" size="60" maxlength="128" />
   </div>
 
   <div class="form-item form-type-textfield form-group"> <label class="control-label" for="sus-requested">Total number of SUs requested <span class="form-required" title="This field is required.">*</span></label>
