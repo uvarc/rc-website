@@ -14,43 +14,43 @@ type = "form"
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <p id="form_post_response"></p>
 <div>
-  <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
     <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
     <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
   </div>
 
   <div class="row">
-    <div class="col form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="edit-submitted-e-mail">E-mail <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-item form-type-webform-email form-group"> <label class="control-label" for="email">E-mail <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-computing-id form-type-textfield form-group"> <label class="control-label" for="edit-submitted-computing-id">Computing ID <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="uid">Computing ID <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
     </div>
   </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-ptao">PTAO <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-ptao" name="ptao" value="" size="60" maxlength="128" />
+  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="ptao">PTAO <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="ptao" name="ptao" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Are you requesting use of Rivanna's GPU nodes? <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios">
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-        <input required="required" type="radio" id="research-agree" name="research-verify" value="agree" class="form-radio" /> &nbsp;Yes</label>
+  <div class="form-item form-type-radios form-group"> <label class="control-label" for="gpus-required">Are you requesting use of Rivanna's GPU nodes? <span class="form-required" title="This field is required.">*</span></label>
+    <div id="gpus-required" class="form-radios">
+      <div class="form-item form-type-radio radio"> <label class="control-label" for="gpu-required-yes">
+        <input required="required" type="radio" id="gpu-required-yes" name="gpu-required" value="yes" class="form-radio" /> &nbsp;Yes</label>
       </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="research-disagree" name="research-verify" value="renewal" class="form-radio" /> &nbsp;No</label>
+      <div class="form-item form-type-radio radio"> <label class="control-label" for="gpu-required-no">
+        <input required="required" type="radio" id="gpu-required-no" name="gpu-required" value="no" class="form-radio" /> &nbsp;No</label>
       </div>
     </div>
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">Is the PI of your account a UVA faculty member? <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios">
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
-        <input required="required" type="radio" id="research-agree" name="research-verify" value="agree" class="form-radio" /> &nbsp;Yes</label>
+  <div class="form-item form-type-radios form-group"> <label class="control-label" for="faculty-verify">Is the PI of your account a UVA faculty member? <span class="form-required" title="This field is required.">*</span></label>
+    <div id="faculty-verify" class="form-radios">
+      <div class="form-item form-type-radio radio"> <label class="control-label" for="faculty-verify-yes">
+        <input required="required" type="radio" id="faculty-verify-yes" name="faculty-verify" value="yes" class="form-radio" /> &nbsp;Yes</label>
       </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="research-disagree" name="research-verify" value="renewal" class="form-radio" /> &nbsp;No</label>
+      <div class="form-item form-type-radio radio"> <label class="control-label" for="faculty-verify-no">
+        <input required="required" type="radio" id="faculty-verify-no" name="faculty-verify" value="no" class="form-radio" /> &nbsp;No</label>
       </div>
     </div>
     <div class="help-block" style="font-size:85%;color:gray;">
@@ -58,42 +58,43 @@ type = "form"
     </div>
   </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-pi">Name of PI <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-pi" name="pi" value="" size="60" maxlength="128" />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="pi-name">Name of PI <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="pi-name" name="pi-name" value="" size="60" maxlength="80" />
   </div>
 
-  <div class="form-item form-group form-item form-item-submitted-new-or-renewal form-type-radios form-group"> <label class="control-label" for="edit-submitted-new-or-renewal">I agree that this allocation will be used for research purposes only <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios">
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
+  <div class="form-item form-type-radios form-group"> <label class="control-label" for="research-verify">I agree that this allocation will be used for research purposes only <span class="form-required" title="This field is required.">*</span></label>
+    <div id="research-verify" class="form-radios">
+      <div class="form-item form-type-radio radio"> <label class="control-label" for="research-agree">
         <input required="required" type="radio" id="research-agree" name="research-verify" value="agree" class="form-radio" /> &nbsp;Agree</label>
       </div>
-      <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2">
-        <input required="required" type="radio" id="research-disagree" name="research-verify" value="renewal" class="form-radio" /> &nbsp;Disagree</label>
+      <div class="form-item form-type-radio radio"> <label class="control-label" for="research-disagree">
+        <input required="required" type="radio" id="research-disagree" name="research-verify" value="disagree" class="form-radio" /> &nbsp;Disagree</label>
       </div>
     </div>
   </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-pi">Title of Award (if applicable) <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-pi" name="pi" value="" size="60" maxlength="128" />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="award-title">Title of Award (if applicable) <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="award-title" name="award-title" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-pi">Total number of SUs requested <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-pi" name="pi" value="" size="60" maxlength="128" />
+  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="sus-requested">Total number of SUs requested <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="sus-requested" name="sus-requested" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-pi">Total amount to be charged to PTAO <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-pi" name="pi" value="" size="60" maxlength="128" />
+  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="ptao-total">Total amount to be charged to PTAO <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="ptao-total" name="ptao-total" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-pi">SU expiration date (if applicable) </label>
-    <input class="form-control form-text" type="text" id="edit-submitted-pi" name="pi" value="" size="60" maxlength="128" />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="su-expires">SU expiration date (if applicable) </label>
+    <input class="form-control form-text" type="text" id="su-expires" name="su-expires" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-pi">Name of allocation to which purchase should be applied <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="edit-submitted-pi" name="pi" value="" size="60" maxlength="128" />
+  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="su-allocation">Name of allocation to which purchase should be applied <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="su-allocation" name="su-allocation" value="" size="60" maxlength="128" />
   </div>
 
   <hr size=1 />
+
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
       <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
@@ -108,20 +109,22 @@ type = "form"
 
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
-    <button class="button-primary btn btn-primary form-submit" type="submit" name="op" value="Submit">Submit</button>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
+
 </div>
 
 </form>
 
 <script type="text/javascript" src="/js/captcha.js"></script>
+
 <script>
 function getParams() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  return vars;
 }
 
 function decode64(str) {
@@ -136,6 +139,16 @@ function decode64(str) {
 };
 
 var form = document.getElementById('allocation-form');
+
+var name_enc = getParams()["name"];
+if (name_enc) {
+  // do nothing
+} else {
+  $('#name').val('');
+  $('#email').val('');
+  $('#uid').val('');
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-purchase.php" );
+}
 
 // name
 var name_enc = getParams()["name"];
@@ -158,25 +171,12 @@ var form_email = decode64(email_esc);
 var email_field = document.getElementById('email');
 email_field.value = form_email;
 
-var rpane = document.getElementById('result-pane');
-rpane.style.display = "none";
-var form = document.getElementById('allocation-form');
-form.onsubmit = function(e) {
-  e.preventDefault();
-  var r_name = document.getElementById('r_name');
-  r_name.innerHTML = "Hello " + form.name.value;
-  var r_email = document.getElementById('r_email');
-  r_email.innerHTML = form.email.value;
-  this.reset();
-  rpane.style.display = "block";
-  form.style.display = "none";
-};
-
 let message = decodeURI(getParams()["message"]);
 let status = decodeURI(getParams()["status"]);
 if(message == "undefined" || message == undefined) {
   message="";
 }
+
 document.getElementById("form_post_response").innerHTML = message;
 if(status == "error" || status == undefined) {
   document.getElementById("form_post_response").style.color = "red";
