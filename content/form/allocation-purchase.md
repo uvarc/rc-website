@@ -29,7 +29,7 @@ type = "form"
     </div>
   </div>
 
-  <div class="form-item form-group" style="margin-top:2rem;border:1px solid #ccc;padding:2rem;">
+  <div class="form-item form-group" style="margin-top:2rem;margin-bottom:2rem;border:1px solid #ccc;padding:2rem;">
     <label class="control-label" style="">Allocation Pricing</label>
     <div class="help-block" style="font-size:85%;color:gray;" id="pricing">
       {{< allocation-pricing >}}
@@ -62,6 +62,7 @@ type = "form"
       </div>
       <div class="form-item form-type-radio radio"> <label class="control-label" for="faculty-verify-no">
         <input required="required" type="radio" id="faculty-verify-no" name="faculty-verify" value="no" class="form-radio" /> &nbsp;No</label>
+        &nbsp;(Non-UVA personnel are chaged $0.07/SU)
       </div>
     </div>
   </div>
