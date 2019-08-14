@@ -149,7 +149,7 @@ function figureTotal() {
   }
   // if sus < 1M = 0.015 per
   // if sus >= 1M = 0.01 per
-  var sutotal = sureq.toString()
+  var sutotal = parseInt(sureq, 10);
   total.value = sutotal;
 }
 
