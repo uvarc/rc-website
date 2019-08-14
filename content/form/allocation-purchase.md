@@ -29,6 +29,17 @@ type = "form"
     </div>
   </div>
 
+  <div class="form-item form-group" style="margin-top:2rem;border:1px solid #ccc;padding:2rem;">
+    <label class="control-label" style="">Allocation Pricing</label>
+    <div class="help-block" style="font-size:85%;color:gray;" id="pricing">
+      {{< allocation-pricing >}}
+    </div>
+  </div>
+
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="pi-name">Name of PI <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="pi-name" name="pi-name" value="" size="60" maxlength="80" />
+  </div>
+
   <div class="form-item form-type-textfield form-group"> <label class="control-label" for="ptao">PTAO <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="ptao" name="ptao" value="" size="60" maxlength="128" />
   </div>
@@ -53,13 +64,6 @@ type = "form"
         <input required="required" type="radio" id="faculty-verify-no" name="faculty-verify" value="no" class="form-radio" /> &nbsp;No</label>
       </div>
     </div>
-    <div class="help-block" style="font-size:85%;color:gray;">
-      For use of standard nodes, UVA PIs are charged $0.015 per SU for <1 million SUs and $0.01 per SU for 1 million or more SUs. Non-UVA researchers are charged $0.07 per SU. For use of GPU nodes, UVA PIs are charged $0.03 per SU for <1 million SUs and $0.025 per SU for 1 million or more SUs. Non-UVA researchers are charged $0.10 per SU.
-    </div>
-  </div>
-
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="pi-name">Name of PI <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="pi-name" name="pi-name" value="" size="60" maxlength="80" />
   </div>
 
   <div class="form-item form-type-radios form-group"> <label class="control-label" for="research-verify">I agree that this allocation will be used for research purposes only <span class="form-required" title="This field is required.">*</span></label>
@@ -77,20 +81,27 @@ type = "form"
     <input class="form-control form-text" type="text" id="award-title" name="award-title" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="sus-requested">Total number of SUs requested <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="sus-requested" name="sus-requested" value="" size="60" maxlength="128" />
+  <div class="row">
+    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="sus-requested">Total number of SUs requested <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="form-control form-text required" type="text" id="sus-requested" name="sus-requested" value="" size="60" maxlength="128" onfocusout="figureTotal()" />
+    </div>
+
+    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="ptao-total">Total amount to be charged to PTAO <span class="form-required" title="This field is required.">*</span></label>
+      <div>
+        <div style="float:left;width:1.4rem;font-size:120%;padding-top:4px;margin:auto;">$</div>
+        <input class="form-control form-text" type="text" id="ptao-total" name="ptao-total" value="0" size="60" maxlength="128" readonly style="text-align:right;width:90%;" />
+      </div>
+    </div>
   </div>
 
-  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="ptao-total">Total amount to be charged to PTAO <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="ptao-total" name="ptao-total" value="" size="60" maxlength="128" />
-  </div>
+  <div class="row">
+    <div class="col form-item form-group form-item form-type-date form-group"> <label class="control-label" for="su-expires">SU expiration date (if applicable) </label>
+      <input class="form-control form-date" type="date" id="su-expires" name="su-expires" value="" size="20" maxlength="20" />
+    </div>
 
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="su-expires">SU expiration date (if applicable) </label>
-    <input class="form-control form-text" type="text" id="su-expires" name="su-expires" value="" size="60" maxlength="128" />
-  </div>
-
-  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="su-allocation">Name of allocation to which purchase should be applied <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="su-allocation" name="su-allocation" value="" size="60" maxlength="128" />
+    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="su-allocation">Apply this purchase to which allocation <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="form-control form-text required" type="text" id="su-allocation" name="su-allocation" value="" size="60" maxlength="128" />
+    </div>
   </div>
 
   <hr size=1 />
@@ -125,6 +136,21 @@ function getParams() {
     vars[key] = value;
   });
   return vars;
+}
+
+function figureTotal() {
+  var total = document.getElementById('ptao-total');
+  var sus = document.getElementById('sus-requested').value;
+  var susi = parseInt(sus, 10);
+  if ( susi < 1000000) {
+    var sureq = sus * 0.015;
+  } else {
+    var sureq = sus * 0.01;
+  }
+  // if sus < 1M = 0.015 per
+  // if sus >= 1M = 0.01 per
+  var sutotal = sureq.toString()
+  total.value = sutotal;
 }
 
 function decode64(str) {
