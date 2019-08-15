@@ -50,8 +50,8 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 
 ## <span class="badge badge-default">1</span> Authentication
 
-<div class="feature-box">
-  <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, your Eservices password must be changed every 60 days.</p>
+<div class="feature-box box">
+  <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, <b>your Eservices password must be changed every 60 days.</b></p>
   <p>Need help resetting your Eservices password?</p>
   <p><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a></p>
   <p>If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.</p>
@@ -59,8 +59,8 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 
 ## <span class="badge badge-default">2</span> Duo MFA
 
-<div class="feature-box">
-  <div class="corner-ribbon top-right sticky green">Updated!</div>
+<div class="feature-box box">
+  <div class="ribbon ribbon-top-right"><span>Updated!</span></div>
   <img style="float:right;max-width:30%;" src="/images/duo-auth.png" alt="Duo 2-Factor Authentication" />
   <p>To connect to the Ivy environment with VPN you will need to install the Duo Mobile multi-factor authentication (MFA) app on your smartphone.</p> 
   <ul>
@@ -74,7 +74,8 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 
 ## <span class="badge badge-default">3</span> High Security VPN
 
-<div class="feature-box">
+<div class="feature-box box">
+  <div class="ribbon ribbon-top-right"><span>Updated!</span></div>
   <p>With your UVA computing ID, Eservices password, and Duo Mobile in hand, you must run the Cisco AnyConnect software to start a UVA High Security VPN connection every time you use any Ivy resource. AnyConnect will authenticate to the UVA network using a digital certificate installed on your workstation. </p>
   <p>More information on VPN from ITS:</p>
   <ul>
@@ -83,6 +84,8 @@ Ivy resources will be provided without a fee for approved projects. Please note 
   </ul>
   <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new"><button class="btn btn-sm btn-warning">Learn More about UVA VPN</button></a>
 </div>
+
+Once you have completed these three steps, you will be connected to the secure Ivy network. From there you can connect to a Virtual Machine, or use a web browser to access JupyterHub.
 
 - - -
 
