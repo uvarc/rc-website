@@ -51,35 +51,37 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 ## <span class="badge badge-default">1</span> Authentication
 
 <div class="feature-box">
-<p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, your Eservices password must be changed every 60 days.</p>
-<p>Need help resetting your Eservices password?</p>
-<p><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a></p>
-<p>If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.</p>
-</div>
+  <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, your Eservices password must be changed every 60 days.</p>
+  <p>Need help resetting your Eservices password?</p>
+  <p><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a></p>
+  <p>If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.</p>
+  </div>
 
-## <span class="badge badge-default">2</span> Identity Token
-
-<div class="feature-box">
-<p>To connect to the Ivy environment with VPN you will need a physical USB identity token, issued to you by the <b><a href="https://security.virginia.edu/access" target="_new">ISPRO Access Management Office</a></b>. Tokens must be requested, approved, and may take 
-from 1-2 weeks for delivery. You must pick up and activate your token in person, with proof of identification. Your token will have its own password in order to be used. </p>
-<ul>
-  <li><a href="https://virginia.service-now.com/its?id=kb_article&sys_id=21155845db49d7084f32fb671d9619bf" target="_new">Read general information about identity tokens at UVA</a>.
-  <li>You may also work with your LSP to submit a token request for you.
-</ul>
-<a href="https://virginia.service-now.com/nav_to.do?uri=%2Fcom.glideapp.servicecatalog_cat_item_view.do%3Fv%3D1%26sysparm_id%3Df73c300b13d9db40602dbcaf3244b0ec" target="_new"><button class="btn btn-sm btn-warning">Request a UVA Identity Token</button></a>
-</div>
-
-## <span class="badge badge-default">3</span> Joint VPN
+## <span class="badge badge-default">2</span> Duo MFA
 
 <div class="feature-box">
-<p>With your UVA computing ID, Eservices password, and USB identity token in hand, you must run the Cisco AnyConnect software to start a JointVPN connection every time you use any Ivy resource. AnyConnect
-will authenticate to the UVA network using a digital certificate installed on your workstation. </p>
-<p>More information on VPN from ITS:</p>
-<ul>
-  <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new">General VPN connection instructions</a>.
-  <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>..
-</ul>
-<a href="http://its.virginia.edu/vpn/" target="_new"><button class="btn btn-sm btn-warning">AnyConnect VPN Instructions</button></a>
+  <div class="corner-ribbon top-right sticky green">Updated!</div>
+  <img style="float:right;max-width:30%;" src="/images/duo-auth.png" alt="Duo 2-Factor Authentication" />
+  <p>To connect to the Ivy environment with VPN you will need to install the Duo Mobile multi-factor authentication (MFA) app on your smartphone.</p> 
+  <ul>
+    <li><a href="https://apps.apple.com/us/app/duo-mobile/id422663827" target="_new">Get Duo for iPhone in the App Store</a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=com.duosecurity.duomobile&hl=en_US" target="_new">Get Duo for Android on Google Play</a></li>
+
+  </ul>
+  <p>In the context of Ivy, Duo allows you two ways to provide a second factor of authentication beyond your password: via a random 6-digit key, or via a push message direct to your phone.</p>
+  <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=3c95c8d0dbc06f00f032f1f51d96191a" target="_new"><button class="btn btn-sm btn-warning">Set Up Duo</button></a>
+</div>
+
+## <span class="badge badge-default">3</span> High Security VPN
+
+<div class="feature-box">
+  <p>With your UVA computing ID, Eservices password, and Duo Mobile in hand, you must run the Cisco AnyConnect software to start a UVA High Security VPN connection every time you use any Ivy resource. AnyConnect will authenticate to the UVA network using a digital certificate installed on your workstation. </p>
+  <p>More information on VPN from ITS:</p>
+  <ul>
+    <li><a href="" target="_new">High Security VPN installation and connection instructions</a>.
+    <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>..
+  </ul>
+  <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new"><button class="btn btn-sm btn-warning">Learn More about UVA VPN</button></a>
 </div>
 
 - - -
@@ -90,32 +92,7 @@ A virtual machine (VM) is a computing instance dedicated to your project. Multip
 
 Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2. Each platform is available in three instance types. Refer to the grid below for specifics.
 
-<table class="table table-sm" style="width:50%;border:solid 1px #ccc;margin-left:4rem;">
-  <thead class="thead-inverse">
-    <tr>
-      <th>Type</th>
-      <th>CPU</th>
-      <th>Memory</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Small</td>
-      <td>4 cores</td>
-      <td>16GB</td>
-    </tr>
-    <tr>
-      <td>Medium</td>
-      <td>8 cores</td>
-      <td>32GB</td>
-    </tr>
-    <tr>
-      <td>Large</td>
-      <td>16 cores</td>
-      <td>128GB</td>
-    </tr>
-  </tbody>
-</table>
+{{< ivy-pricing >}}
 
 Once created, your instance will be assigned a private IP address that you will use to connect to it (in the format `10.xx.xx.xx`). VMs exist in a private, secure network and cannot
 reach outside resources on the Internet. Most inbound and outbound data transfer is managed through the Data Transfer Node (see below). 
@@ -346,10 +323,15 @@ All data imported into Ivy must be treated as highly sensitive data. Data and re
 
 <button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
 
+
+<!--
+
 # Coming Soon - Secure HPC
 
 <img src="https://pbs.twimg.com/media/DRQcamFX0AA9tmU.jpg" style="float:right;max-width:40%;" />
 
 In 2019 we will launch a secure high performance computing system. This will support computationally-intensive research for sensitive data, within the Ivy secure environment.
+
+-->
 
 <br clear=all />
