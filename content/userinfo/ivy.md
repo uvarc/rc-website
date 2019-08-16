@@ -124,7 +124,7 @@ To connect to Ivy follow the platform-specific steps below:
       </div>
       <div class="card-block">
         <ul>
-          <li>Open your JointVPN connection</li>
+          <li>Open your High Security VPN connection</li>
           <li>Reference the IP address of your Ivy VM.</li>
           <li>For SSH access:<br />&nbsp;&nbsp;<code>ssh uva-id@ip-address</code></li>
           <li>For Remote Desktop access: Start the RDP client and point to the IP address of your VM and sign in.</li>
@@ -139,7 +139,7 @@ To connect to Ivy follow the platform-specific steps below:
       </div>
       <div class="card-block">
         <ul>
-          <li>Open your JointVPN connection</li>
+          <li>Open your High Security VPN connection</li>
           <li>Reference the IP address of your Ivy VM.</li>
           <li>For Remote Desktop access: Start an RDP client and point to the IP address of your VM and sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
         </ul>
@@ -261,7 +261,7 @@ Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst
 
 ## Access
 
-DDL is entirely browser-based and does not require any setup on your workstation. Once connected via JointVPN, point your browser to:
+DDL is entirely browser-based and does not require any setup on your workstation. Once connected via High Security VPN, point your browser to:
 
     https://domino.hpc.virginia.edu/
 
