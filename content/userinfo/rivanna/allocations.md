@@ -32,22 +32,30 @@ Standard allocations are for 100,000 SUs and require a brief summary of the rese
 
 [<button class="btn btn-primary">Request New / Renew Standard Allocation</button>](https://auth.uvasomrc.io/site/allocation-standard.php)
 
+<div class="spacer-20"></div>
+
 ## Deans' Allocations
 Deans' Allocations are granted by the research deans who provide funding for Rivanna. A minimum one-page proposal must be included with any type of Deans' Allocation request. Available to: Faculty and postdocs who require very large allocations. Choose one of the following request options based on your school/college/organizational affiliation:
 
-* College of Arts and Sciences
-* School of Engineering and Applied Science
-* All other administrative allocation requests must be submitted to the Data Science Institute
+  [<button class="btn btn-primary">CAS</button>](https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=cas)
+  [<button class="btn btn-primary">SEAS</button>](https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=seas)
+  [<button class="btn btn-primary">DSI / Other</button>](https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=dsi)
+
+<div class="spacer-20"></div>
 
 ## Allocation Purchases
 Time on Rivanna can also be purchased using a PTAO. Purchasers are given a higher priority in the queue and their SUs never expire. Available to: Faculty and postdocs with grants; researchers who need priority access and premium service.
 
 [<button class="btn btn-primary">Purchase an Allocation</button>](https://auth.uvasomrc.io/site/allocation-purchase.php)
 
+<div class="spacer-20"></div>
+
 ## Instructional Allocations
 Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014.
 
 [<button class="btn btn-primary">Request an Instructional Allocation</button>](https://auth.uvasomrc.io/site/allocation-instructional.php)
+
+<div class="spacer-20"></div>
 
 # Allocation Pricing
 
