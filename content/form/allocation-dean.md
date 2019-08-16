@@ -67,14 +67,14 @@ type = "form"
 <h5 class="card-title">About the Request</h5>
 <div class="row">
   <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Total Request in SUs <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="su-request" name="su-request" value="" size="20" maxlength="20" />
+    <input required="required" class="form-control form-text required" type="number" id="su-request" name="su-request" value="" size="20" maxlength="20" />
   </div>
   <div class="col" style="width:50%;"></div>
   </div>
 
   <div class="form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="interdisciplinary">
     Will this request be used in support of interdisciplinary research? <span class="form-required" title="This field is required.">*</span></label>
-    <div id="for-research" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
+    <div id="for-research" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="for-research-1">
       <input required="required" type="radio" id="for-research-1" name="for-research" value="new" class="form-radio" /> &nbsp;Yes</label>
     </div>
     <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="for-research-2">

@@ -84,7 +84,7 @@ type = "form"
 
   <div class="row">
     <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="sus-requested">Total number of SUs requested <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="text" id="sus-requested" name="sus-requested" value="" size="60" maxlength="128" onfocusout="figureTotal()" />
+      <input required="required" class="form-control form-text required" type="number" id="sus-requested" name="sus-requested" value="" size="60" maxlength="128" onfocusout="figureTotal()" />
     </div>
 
     <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="ptao-total">Total amount to be charged to PTAO <span class="form-required" title="This field is required.">*</span></label>
