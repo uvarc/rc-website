@@ -25,6 +25,14 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 
 [<button class="btn btn-warning">Manage MyGroups</button>](https://mygroups.virginia.edu/)
 
+<div class="spacer-20"></div>
+
+# Allocation Pricing
+
+{{< allocation-pricing >}}
+
+<div class="spacer-20"></div>
+
 # Allocation Types
 
 ## Standard Allocations
@@ -55,8 +63,3 @@ Instructional allocations provide limited access to Rivanna and are available to
 
 [<button class="btn btn-primary">Request an Instructional Allocation</button>](https://auth.uvasomrc.io/site/allocation-instructional.php)
 
-<div class="spacer-20"></div>
-
-# Allocation Pricing
-
-{{< allocation-pricing >}}
