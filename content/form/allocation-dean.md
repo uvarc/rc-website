@@ -72,14 +72,18 @@ type = "form"
   <div class="col" style="width:50%;"></div>
   </div>
 
-  <div class="form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="interdisciplinary">Will this request be used in support of interdisciplinary research? <span class="form-required" title="This field is required.">*</span></label>
-    <div id="edit-submitted-new-or-renewal" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1"><input required="required" type="radio" id="edit-submitted-new-or-renewal-1" name="submitted[new_or_renewal]" value="new" checked="checked" class="form-radio" /> &nbsp;New</label>
+  <div class="form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="interdisciplinary">
+    Will this request be used in support of interdisciplinary research? <span class="form-required" title="This field is required.">*</span></label>
+    <div id="for-research" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-1">
+      <input required="required" type="radio" id="for-research-1" name="for-research" value="new" class="form-radio" /> &nbsp;Yes</label>
     </div>
-    <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="edit-submitted-new-or-renewal-2"><input required="required" type="radio" id="edit-submitted-new-or-renewal-2" name="submitted[new_or_renewal]" value="renewal" class="form-radio" /> &nbsp;Renewal</label>
+    <div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="for-research-2">
+      <input required="required" type="radio" id="for-research-2" name="for-research" value="no" class="form-radio" /> &nbsp;No</label>
     </div>
   </div>
   </div>
-  <!-- END SECOND SECTION -->
+  
+<!-- END SECOND SECTION -->
   </div>
   <div class="spacer-20"></div>
 
