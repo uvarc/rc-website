@@ -54,7 +54,7 @@ Ivy resources will be provided without a fee for approved projects. Please note 
   <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, <b>your Eservices password must be changed every 60 days.</b></p>
   <p>Need help resetting your Eservices password?</p>
   <p><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a></p>
-  <p>If you are working from a secure Health Systems workstation you are ready to connect. You need an Identity Token and JointVPN connection as described in the following if you are outside of the secure HS network.</p>
+  <p>If you are working from a secure Health Systems workstation you are ready to connect. If you are working from elsewhere on or off Grounds you will need Duo MFA and a High Security VPN connection.</p>
   </div>
 
 ## <span class="badge badge-default">2</span> Duo MFA
@@ -66,7 +66,6 @@ Ivy resources will be provided without a fee for approved projects. Please note 
   <ul>
     <li><a href="https://apps.apple.com/us/app/duo-mobile/id422663827" target="_new">Get Duo for iPhone in the App Store</a></li>
     <li><a href="https://play.google.com/store/apps/details?id=com.duosecurity.duomobile&hl=en_US" target="_new">Get Duo for Android on Google Play</a></li>
-
   </ul>
   <p>In the context of Ivy, Duo allows you two ways to provide a second factor of authentication beyond your password: via a random 6-digit key, or via a push message direct to your phone.</p>
   <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=3c95c8d0dbc06f00f032f1f51d96191a" target="_new"><button class="btn btn-sm btn-warning">Set Up Duo</button></a>
@@ -80,7 +79,7 @@ Ivy resources will be provided without a fee for approved projects. Please note 
   <p>More information on VPN from ITS:</p>
   <ul>
     <li><a href="" target="_new">High Security VPN installation and connection instructions</a>.
-    <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>..
+    <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>.
   </ul>
   <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new"><button class="btn btn-sm btn-warning">Learn More about UVA VPN</button></a>
 </div>
