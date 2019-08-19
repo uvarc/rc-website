@@ -117,7 +117,7 @@ Note that not all bioinformatics packages have been ported from Python 2.7 to Py
 
 # Reference Genomes on Rivanna
 
-SOMRC maintains a set of ready-to-use reference sequences and annotations for commonly analyzed organisms in a convenient, shared storage location on Rivanna.
+Research Computing maintains a set of ready-to-use reference sequences and annotations for commonly analyzed organisms in a convenient, shared storage location on Rivanna.
 
 The majority of files have been downloaded from Illumina's genomes repository (<a href="https://support.illumina.com/sequencing/sequencing_software/igenome.html" target="blank">iGenomes</a>), which contain assembly builds and corresponding annotations from Ensembl, NCBI and UCSC. Each genome directory contain index files of the whole genome for use with aligners like BWA and Bowtie2. In addition, STAR2 index files have been generated for each of *Homo Sapiens* (human) and *Mus musculus* (mouse) genomic builds.
 
