@@ -17,20 +17,11 @@ type = "form"
   <!-- BEGIN FIRST SECTION -->
   <div style="padding:1.4rem;" class="card">
   <h5 class="card-title">About the Requestor</h5>
-  <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="name">PI Name <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
-    <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
-    <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
-  </div>
 
-  <div class="row">
-    <div class="col form-item form-type-webform-email form-group"> <label class="control-label" for="edit-submitted-e-mail">PI E-mail <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
-    </div>
-    <div class="col form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="uid">PI Computing ID <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
-    </div>
-  </div>
+  <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
+  <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
+
+  {{% form-userinfo %}}
 
   <div class="form-item form-type-select form-group">
     <label class="control-label" for="edit-submitted-classification">Sponsoring Dean

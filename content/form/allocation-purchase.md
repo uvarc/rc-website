@@ -14,20 +14,13 @@ type = "form"
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <p id="form_post_response"></p>
 <div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="name">Name <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
-    <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
-    <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
-  </div>
 
-  <div class="row">
-    <div class="col form-item form-group form-item form-type-webform-email form-group"> <label class="control-label" for="email">E-mail <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
-    </div>
-    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="uid">Computing ID <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
-    </div>
-  </div>
+  <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
+  <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
+
+  {{% form-userinfo %}}
+
+  <hr size=1 />
 
   <div class="form-item form-group" style="margin-top:2rem;margin-bottom:2rem;border:1px solid #ccc;padding:2rem;">
     <label class="control-label" style="">Allocation Pricing</label>

@@ -14,20 +14,13 @@ type = "form"
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <p id="form_post_response"></p>
 <div>
-  <div class="form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
-    <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
-    <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
-  </div>
 
-  <div class="row">
-    <div class="col form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="email">E-mail <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
-    </div>
-    <div class="col form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="uid">Computing ID <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
-    </div>
-  </div>
+  <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
+  <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
+
+  {{% form-userinfo %}}
+
+  <hr size=1 />
 
   <div class="form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations." data-toggle="tooltip" id="classification" name="classification">
