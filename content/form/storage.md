@@ -17,6 +17,8 @@ type = "form"
 <p id="form_post_response"></p>
 <div>
 
+  <input type="hidden" id="category" name="category" value="Storage">
+
   {{% form-userinfo %}}
 
   <hr size=1 />
