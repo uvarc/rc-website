@@ -37,18 +37,8 @@ type = "form"
     <input required="required" class="form-control form-text required" type="text" id="ptao" name="ptao" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-type-radios form-group"> <label class="control-label" for="gpus-required">Are you requesting use of Rivanna's GPU nodes? <span class="form-required" title="This field is required.">*</span></label>
-    <div id="gpus-required" class="form-radios">
-      <div class="form-item form-type-radio radio"> <label class="control-label" for="gpu-required-yes">
-        <input required="required" type="radio" id="gpu-required-yes" name="gpu-required" value="yes" class="form-radio" /> &nbsp;Yes</label>
-      </div>
-      <div class="form-item form-type-radio radio"> <label class="control-label" for="gpu-required-no">
-        <input required="required" type="radio" id="gpu-required-no" name="gpu-required" value="no" class="form-radio" /> &nbsp;No</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="form-item form-type-radios form-group"> <label class="control-label" for="faculty-verify">Is the PI of your account a UVA faculty member? <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-type-radios form-group"> 
+    <label class="control-label" for="faculty-verify">Is the PI of your account a UVA faculty member? <span class="form-required" title="This field is required.">*</span></label>
     <div id="faculty-verify" class="form-radios">
       <div class="form-item form-type-radio radio"> <label class="control-label" for="faculty-verify-yes">
         <input required="required" type="radio" id="faculty-verify-yes" name="faculty-verify" value="yes" class="form-radio" /> &nbsp;Yes</label>
