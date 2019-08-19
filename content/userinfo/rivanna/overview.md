@@ -131,8 +131,8 @@ type = "rivanna"
     <tr>
       <th scope="row">parallel</th>
       <th scope="row">3 days</th>
-      <th scope="row">120</th>
-      <th scope="row">2400</th>
+      <th scope="row">45</th>
+      <th scope="row">900</th>
       <th scope="row">6GB</th>
       <th scope="row">120GB</th>
       <th scope="row">1.00</th>
@@ -279,7 +279,7 @@ Exceeding the limits on the frontend will result in the user’s process(es) bei
 
 ## Standard Partition
 
-Each job in the standard queue is restricted to a single node. Users may submit arrays with multiple jobs, however execution of job array tasks is limited to concurrent use of no more than 1000 cpu cores.
+Each job in the standard queue is restricted to a single node. Users may submit arrays with multiple jobs, however, execution of job array tasks is limited to concurrent use of no more than 1000 cpu cores.
 
 ## Parallel Partition
 

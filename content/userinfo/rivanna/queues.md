@@ -38,8 +38,8 @@ Several queues (or "partitions") are availble to users for different types of jo
     <tr>
       <th scope="row"><code><a href="/userinfo/rivanna/slurm/#job-scripts-for-parallel-programs">parallel</a></code></th>
       <th scope="row">3 days</th>
-      <th scope="row">120</th>
-      <th scope="row">2400</th>
+      <th scope="row">45</th>
+      <th scope="row">900</th>
       <th scope="row">6GB</th>
       <th scope="row">120GB</th>
       <th scope="row">1.00</th>
