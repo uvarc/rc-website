@@ -15,19 +15,22 @@ type = "form"
 <p id="form_post_response"></p>
 <div>
   <div class="form-item form-group form-item form-type-textfield form-group">
-    <label class="control-label" for="submitted-name">Name <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" for="name">Name <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
   </div>
 
   <div class="row">
-    <div class="col form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> <label class="control-label" for="edit-submitted-e-mail">E-mail <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-item form-type-webform-email form-group"> 
+      <label class="control-label" for="email">E-mail <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
     </div>
-    <div class="col form-item form-group form-item form-item-submitted-computing-id form-type-textfield form-group"> <label class="control-label" for="edit-submitted-computing-id">Computing ID <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-item form-type-textfield form-group"> 
+      <label class="control-label" for="uid">Computing ID <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
     </div>
   </div>
-  <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="edit-submitted-classification">Support Category <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-type-select form-group"> 
+    <label class="control-label" for="edit-submitted-classification">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="category" name="category">
       <option value="" selected="selected"> - Select - </option>
       <option id="rivanna" value="Rivanna HPC">Rivanna HPC</option>
@@ -38,10 +41,12 @@ type = "form"
       <option id="other" value="Other">Other</option>
     </select>
   </div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-department">Department <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-type-textfield form-group"> 
+    <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
   </div>
-  <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="edit-submitted-description-of-research-project">Details of your support request <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-type-textarea form-group"> 
+    <label class="control-label" for="description">Details of your support request <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8"></textarea>
     </div>
   </div>
@@ -100,31 +105,31 @@ if (name_enc) {
 }
 
 // name
-var name_enc = getParams()["name"];
-var name_esc = decodeURI(name_enc);
-var form_name = decode64(name_esc);
-var name_field = document.getElementById('name');
-name_field.value = form_name;
+let name = decodeURI(getParams()["name"]);
+let name_dec = decode64(name);
+var set_name = document.getElementById("name").value = name_dec;
 
 // uid
-var uid_enc = getParams()["uid"];
-var uid_esc = decodeURI(uid_enc);
-var form_uid = decode64(uid_esc);
-var uid_field = document.getElementById('uid');
-uid_field.value = form_uid;
+let uid = decodeURI(getParams()["uid"]);
+let uid_dec = decode64(uid);
+var set_uid = document.getElementById("uid").value = uid_dec;
 
 // email
-var email_enc = getParams()["email"];
-var email_esc = decodeURI(email_enc);
-var form_email = decode64(email_esc);
-var email_field = document.getElementById('email');
-email_field.value = form_email;
+let email = decodeURI(getParams()["email"]);
+let email_dec = decode64(email);
+var set_email = document.getElementById("email").value = email_dec;
 
+// category
+let category = decodeURI(getParams()["category"]);
+var set_category = document.getElementById("category").value = category;
+
+// return message/status
 let message = decodeURI(getParams()["message"]);
 let status = decodeURI(getParams()["status"]);
 if(message == "undefined" || message == undefined) {
   message="";
 }
+
 document.getElementById("form_post_response").innerHTML = message;
 if(status == "error" || status == undefined) {
   document.getElementById("form_post_response").style.color = "red";
