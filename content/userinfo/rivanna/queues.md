@@ -30,9 +30,9 @@ Several queues (or "partitions") are availble to users for different types of jo
       <th scope="row"><code><a href="/userinfo/rivanna/slurm/#basic-serial-program">standard</a></code></th>
       <th scope="row">7 days</th>
       <th scope="row">1</th>
-      <th scope="row">28</th>
+      <th scope="row">40</th>
       <th scope="row">12GB</th>
-      <th scope="row">240GB</th>
+      <th scope="row">375GB</th>
       <th scope="row">1.00</th>
     </tr>
     <tr>
@@ -60,7 +60,7 @@ Several queues (or "partitions") are availble to users for different types of jo
       <th scope="row">8</th>
       <th scope="row">12GB</th>
       <th scope="row">240GB</th>
-      <th scope="row">1.00</th>
+      <th scope="row">2.00</th>
     </tr>
     <tr>
       <th scope="row"><code>knl</code></th>

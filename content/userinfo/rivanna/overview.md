@@ -123,9 +123,9 @@ type = "rivanna"
       <th scope="row">standard</th>
       <th scope="row">7 days</th>
       <th scope="row">1</th>
-      <th scope="row">28</th>
+      <th scope="row">40</th>
       <th scope="row">12GB</th>
-      <th scope="row">240GB</th>
+      <th scope="row">375GB</th>
       <th scope="row">1.00</th>
     </tr>
     <tr>
@@ -153,7 +153,7 @@ type = "rivanna"
       <th scope="row">8</th>
       <th scope="row">12GB</th>
       <th scope="row">240GB</th>
-      <th scope="row">1.00</th>
+      <th scope="row">2.00</th>
     </tr>
     <tr>
       <th scope="row">knl</th>
@@ -200,7 +200,7 @@ type = "rivanna"
     <tr>
       <th scope="row">20</th>
       <th scope="row">128GB</th>
-      <th scope="row">240</th>
+      <th scope="row">146</th>
     </tr>
     <tr>
       <th scope="row">28</th>
@@ -208,19 +208,29 @@ type = "rivanna"
       <th scope="row">25</th>
     </tr>
     <tr>
+      <th scope="row">40</th>
+      <th scope="row">384GB</th>
+      <th scope="row">44</th>
+    </tr>
+    <tr>
       <th scope="row">16</th>
       <th scope="row">1TB</th>
       <th scope="row">5</th>
     </tr>
     <tr>
-      <th scope="row">28+4 K80 GPU</th>
+      <th scope="row">28+8 K80 GPU</th>
       <th scope="row">256GB</th>
-      <th scope="row">10</th>
+      <th scope="row">8</th>
     </tr>
     <tr>
       <th scope="row">28+4 P100 GPU</th>
       <th scope="row">256GB</th>
       <th scope="row">4</th>
+    </tr>
+    <tr>
+      <th scope="row">28+4 V100 GPU</th>
+      <th scope="row">256GB</th>
+      <th scope="row">1</th>
     </tr>
     <tr>
       <th scope="row">64 Knight's Landing</th>
@@ -262,19 +272,23 @@ type = "rivanna"
 # Usage Policies
 
 Research computing resources at the University of Virginia are for use by faculty, staff, and students of the University and their collaborators in academic research projects.  Personal use is not permitted.  Users must comply with all University policies for access and security to University resources.  The HPC system has additional usage policies to ensure that this shared environment is managed fairly to all users. UVA's Research Computing (RC) group reserves the right to enact policy changes at any time without prior notice.
- 
+
 ## Frontends
 
 Exceeding the limits on the frontend will result in the user’s process(es) being killed. Repeated violations will result in a warning; users who ignore warnings risk losing access privileges.
- 
+
+## Standard Partition
+
+Each job in the standard queue is restricted to a single node. Users may submit arrays with multiple jobs, however execution of job array tasks is limited to concurrent use of no more than 1000 cpu cores.
+
 ## Parallel Partition
 
-Users must request a minimum of four cores (and no more than 2400 cores) when submitting a job to the parallel queue.
- 
+Users must request a minimum of two nodes and four cpu cores (and no more than 900 cpu cores) when submitting a job to the parallel queue.
+
 ## Software Licenses
 
 Excessive consumption of licenses for commercial software, either in time or number, if determined by system and/or RC staff to be interfering with other users' fair use of the software, will subject the violator's processes or jobs to termination without warning.  Staff will attempt to issue a warning before terminating processes or jobs but inadequate response from the violator will not be grounds for permitting the processes/jobs to continue.
- 
+
 ## Inappropriate Usage
 
 Any violation of the University’s security policies, or any behavior that is considered criminal in nature or a legal threat to the University, will result in the immediate termination of access privileges without warning.
