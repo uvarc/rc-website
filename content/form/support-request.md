@@ -33,9 +33,9 @@ type = "form"
     <label class="control-label" for="edit-submitted-classification">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="category" name="category">
       <option value="" selected="selected"> - Select - </option>
-      <option id="rivanna" value="Rivanna HPC">Rivanna HPC</option>
-      <option id="ivy" value="Ivy Secure Computing">Ivy Secure Computing</option>
-      <option id="software" value="Licensed Research Software">Licensed Research Software</option>
+      <option id="rivanna" value="Rivanna">Rivanna HPC</option>
+      <option id="ivy" value="Ivy">Ivy Secure Computing</option>
+      <option id="software" value="Software">Licensed Research Software</option>
       <option id="storage" value="Storage">Storage</option>
       <option id="consultation" value="Consultation">Consultation Request</option>
       <option id="other" value="Other">Other</option>
