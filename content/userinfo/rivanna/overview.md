@@ -279,7 +279,7 @@ Exceeding the limits on the frontend will result in the user’s process(es) bei
 
 ## Standard Partition
 
-Each job in the standard queue is restricted to a single node. Users may submit arrays with multiple jobs, however, execution of job array tasks is limited to concurrent use of no more than 1000 cpu cores.
+Each job in the standard queue is restricted to a single node. Users may submit multiple jobs or job arrays, but the maximum aggregate cpu cores allowed for a single user’s running jobs is 1000.
 
 ## Parallel Partition
 
