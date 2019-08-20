@@ -1,9 +1,9 @@
 +++
 description = ""
-title = "Login & File Transfer"
+title = "Logging In"
 draft = false
 date = "2019-05-28T17:45:12-05:00"
-tags = ["hpc","rivanna","supercomputer","login"]
+tags = ["hpc","rivanna","supercomputer","login","ssh","openondemand"]
 categories = ["userinfo"]
 images = [""]
 author = "Staff"  
@@ -53,18 +53,5 @@ For more details and for troubleshooting information, please see our ssh page.
 
 Users who wish to run X11 graphical applications may prefer the FastX remote desktop web interface.  The FastX web client is accessible at `rivanna-desktop.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
 
-- - -
+[<button style="margin-left:20%;" class="btn btn-primary">Connect to FastX via Web</button>](https://rivanna-gpu.hpc.virginia.edu:8000/auth/ssh)
 
-# File Transfer
-
-## Small files
-
-Small files may be transferred using comand line tools like `scp` (secure copy), `rsync` (Linux & Mac OSX), or `curl`, with a connection to the host `rivanna.hpc.virginia.edu`.  
-
-For Windows users, MobaXterm bundles an ssh client, an sftp/scp client, and an X11 server.  To transfer files, start a new session and select sftp.  Once you authenticate to Rivanna, two panes will appear.  You can drag and drop between them.
-
-Mac users may use a graphical drag-and-drop application such as Cyberduck (also available for Windows) or Fugu. For Fugu be sure to choose the `1.21pre1` version.
-
-## Large files
-
-Globus is a browser-based file transfer tool optimized for fast, fault-tolerant file transfers that run in the background once started. To use Globus with Rivanna please follow the instructions at our Globus documentation page.

@@ -230,7 +230,7 @@ The data transfer method you choose heavily relies on where the data are current
 				<p class="card-text">
 					Transferring large amounts of research data is fast and simple with Globus Connect. Globus gives researchers unified access to their data through an easy-to-use web interface, and can be used to transfer data between your laptop and storage systems mounted on the Rivanna HPC system. Globus can also be used to transfer data from other universities or supercomputing facilities.
 				</p>
-			<a href="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a> &nbsp;
+			<a href="/userinfo/globus/" class="card-link"><button class="btn btn-warning">Learn more</button></a> &nbsp;
 			<a href="https://www.globus.org/" class="card-link" target="_blank"><button class="btn btn-primary">Access Globus</button></a>
 				<br></br>
 				<p class="card-text">	

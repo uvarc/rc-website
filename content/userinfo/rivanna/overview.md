@@ -25,68 +25,81 @@ type = "rivanna"
 # Get Started
 
 <div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">Get Access / Allocations</h5>
-    <p class="card-text">Request access to Rivanna HPC for your research. Add collaborators to your project.</p>
-    <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary">Request an Allocation</button></a>
+  <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">Get Access / Allocations</h5>
+      <p class="card-text">Request access to Rivanna HPC for your research. Add collaborators to your project.</p>
+      <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary">Request an Allocation</button></a>
+    </div>
+  </div>
+  <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">Logging In</h5>
+      <p class="card-text">How to log in? Need to use a web browser or a shell command-line? Learn how.</p>
+      <a href="/userinfo/rivanna/login/"><button class="btn btn-warning">Learn More</button></a>
+    </div>
   </div>
 </div>
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">Login & File Transfer</h5>
-    <p class="card-text">How to log in? How to move large datasets to the HPC cluster? Learn how.</p>
-    <a href="/userinfo/rivanna/login/"><button class="btn btn-warning">Learn More</button></a>
-  </div>
-</div>
-</div>
+
 <div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">Software</h5>
-    <p class="card-text">Find and run software suited for your HPC jobs. Learn how to load and use modules.</p>
-    <a href="/userinfo/rivanna/software/overview/"><button class="btn btn-warning">Learn More</button></a>
+  <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">File Transfer</h5>
+      <p class="card-text">How to move files? How to move large datasets to the HPC cluster? Learn how.</p>
+      <a href="/userinfo/data-transfer/"><button class="btn btn-warning">Learn More</button></a>
+    </div>
+  </div>
+  <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">Software</h5>
+      <p class="card-text">Find and run software suited for your HPC jobs. Learn how to load and use modules.</p>
+      <a href="/userinfo/rivanna/software/overview/"><button class="btn btn-warning">Learn More</button></a>
+    </div>
   </div>
 </div>
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">Storage</h5>
-    <p class="card-text">Learn about the vaious storage options within Rivanna: for users, groups, and temporary.</p>
-    <a href="/userinfo/rivanna/storage/"><button class="btn btn-warning">Learn More</button></a>
-  </div>
-</div>
-</div>
+
 <div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">Running Jobs in SLURM</h5>
-    <p class="card-text">Your code is ready. Your data is in place. Learn how to run your jobs across the cluster, and other advanced SLURM features.</p>
-    <a href="/userinfo/rivanna/slurm/"><button class="btn btn-warning">Learn More</button></a>
+  <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">Storage</h5>
+      <p class="card-text">Learn about the vaious storage options within Rivanna: for users, groups, and temporary.</p>
+      <a href="/userinfo/rivanna/storage/"><button class="btn btn-warning">Learn More</button></a>
+    </div>
+  </div>
+  <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">Running Jobs in SLURM</h5>
+      <p class="card-text">Your code is ready. Your data is in place. Learn how to run your jobs across the cluster, and other advanced SLURM features.</p>
+      <a href="/userinfo/rivanna/slurm/"><button class="btn btn-warning">Learn More</button></a>
+    </div>
   </div>
 </div>
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">Queues</h5>
-    <p class="card-text">Learn the right queue (or "partition") for running your job, such as standard, parallel, gpu, and more.</p>
-    <a href="/userinfo/rivanna/queues/"><button class="btn btn-warning">Learn More</button></a>
-  </div>
-</div>
-</div>
+
 <div class="card-group">
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">Usage Policies</h5>
-    <p class="card-text">Understand what is expected of you as a Rivanna HPC user. All users must comply with these requirements.</p>
-    <a href="/userinfo/rivanna/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
+  <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">Queues</h5>
+      <p class="card-text">Learn the right queue (or "partition") for running your job, such as standard, parallel, gpu, and more.</p>
+      <a href="/userinfo/rivanna/queues/"><button class="btn btn-warning">Learn More</button></a>
+    </div>
+  </div>
+  <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">Usage Policies</h5>
+      <p class="card-text">Understand what is expected of you as a Rivanna HPC user. All users must comply with these requirements.</p>
+      <a href="/userinfo/rivanna/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
+    </div>
   </div>
 </div>
-<div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">FAQs</h5>
-    <p class="card-text">Have a question? Others may have asked it before, so please check our Frequently Asked Questions page first.</p>
-    <a href="/userinfo/rivanna/faqs/"><button class="btn btn-warning">Read our FAQs</button></a>
+
+<div class="card-group">
+  <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">FAQs</h5>
+      <p class="card-text">Have a question? Others may have asked it before, so please check our Frequently Asked Questions page first.</p>
+      <a href="/userinfo/rivanna/faqs/"><button class="btn btn-warning">Read our FAQs</button></a>
+    </div>
   </div>
-</div>
 </div>
 
 - - -
