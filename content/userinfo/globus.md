@@ -132,6 +132,56 @@ Users are notified via email for both successful and failed transfers. The email
 
 # File Sharing
 
+## Key Concepts
+
+- **Globus Endpoint** - A Globus “endpoint” is any other computer running the Globus Connect software, whether a server, laptop, or an HPC cluster.
+- **Shared Endpoint** - A folder containing the files/folders you want to share. To grant access to other users, you create a "shared endpoint" from this folder.
+- **Globus ID** - The unique 'handle' or user ID for the person you want to share with. This is typically in the form of `username@institution.edu`.
+- **Globus Groups** - You can share folders or files to either specific individuals, or to groups that you create and manage within Globus. A group must be populated with at least one user.
+
+## How To Share
+
+1. Open the [Globus web interface](https://www.globus.org/) and log in using UVA Netbadge. If you are coming for the first time, visit [these instructions](https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345).
+2. Go to the [**Transfer Files**](https://www.globus.org/app/transfer) interface in Globus, under the "Manage Data" tab.
+3. Select an endpoint that contains the files you'd like to share. It can be in either the left or right pane.
+4. Click into the folder structure of that endpoint until you can see the folder you want to share. Highlight it with one click. 
+  <img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/d0a0ae06df12b48d8f11460927c39f92a42cbdf0.png" height="383" width="619">
+
+5. Next, select the SHARE link near the top of the files window. (Where the red arrow points in the image above).
+6. The next window allows you to create a "Shared Endpoint." You can only create and manage shared endpoints for directories or files that you own and have access to. Provide a Display Share Name (required) and a description (optional).
+  <img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/65f92d7f15f2f97ad8cfb537375bc8e37b50c4c5.png" width="700" height="443" alt="manage-endpoints">
+7. Click CREATE. Your new share will be created, and you will be taken to the sharing details for that endpoint.
+  <img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/4b94f56673a7cc0cd782460415b7d659e6b859a2.png" alt="create-share" width="700" height="536">
+8. Here you will set the details for how you share your data with others:
+    - **Path** - Leave this set to `/` since it only means the path relative to the directory you are sharing from.
+    - **Share With** - Decide whether you want to share with individual users or with a group. **Please do not** set this to "All Users" or "Public". If you share with an individual user, follow the instructions below. If you choose to share with a group, you will first need to create that and add users to it by using the GROUPS tab at the top of the page.
+    - **Identity/E-mail** - You can look up other Globus users by searching for a part of their name or institution. If you cannot find the individual, you should contact them to make sure they have signed into Globus at least once. Generally, users at other colleges and universities can be identified with the simple form of their email address, like `mst3k@virginia.edu` or `jdoe@mit.edu`, etc. Users who are unaffiliated with a university can still sign into Globus using Google (identified as `username@gmail.com`) or by creating a username and password in Globus (identified as `userid@globusid.org`)
+    - **Permissions** - You can specify whether this user has access to read or write to your share.
+  <img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/736b778f617c5b155227f62a1d2fdd2bc600fc38.png" alt="manage-permissions" height="322" width="700">
+9. Once you have set these details -- and regardless of whether you are sharing to a user or a group -- the pane will prepare to send an email to those you have shared with. We highly recommend sending this email, since it will contain a link directly to your share within the Globus Transfer tool. Add a message if you wish, then click "Add Permission".
+
+## Managing Shares
+
+You can always go back to see your shared endpoints, or other endpoints that have been shared with you, by clicking on the [Endpoints submenu](https://www.globus.org/app/endpoints) on the "Manage Data" page. 
+
+<img src="https://uvarc-discourse.s3.amazonaws.com/original/1X/a0eebd56b6e3730c3df3c1b0ad6b445f90b68cee.png" alt="manage-shares" width="700" height="319">
+
+Note that from this page you can see endpoints
+
+- That are shared with you
+- That are shareable by you
+- That are administered by you
+
+Clicking on the name of each endpoint will allow you to review or modify settings, if you have permission to do so.
+
+## Security
+
+UVA is empowering faculty and researchers to manage sharing with colleagues and collaborators on their own, as they need. However, with this ability comes the responsibility to share wisely and carefully. Therefore, we ask that you follow a few basic principles as you share data using Globus:
+
+1. **Grant the least permissions necessary, not the most**. If a colleague needs to retrieve your data files, then grant read-only permissions.
+2. **Grant access to specific individuals only, not to "all users" or to the public**. These settings risk your information going to people and places that you have not designated, or being used in ways that you have no knowledge of.
+3. **Remove shared endpoints after they have done their job**. If you are no longer collaborating with a group or individual, and the share has done its job, delete it. It is a good practice to revisit your endpoints page periodically to clean and cull unused resources.
+4. **Finally, monitor and track your large file transfers**. When someone is transferring large data sets to you, or you to them, monitor their progress and keep in touch with the person or group on the other end. This helps identify any unusual behavior.
 
 # More Information
 
