@@ -52,7 +52,7 @@ type = "form"
   <div class="row">
 
     <div class="col form-item form-type-radios form-group"> 
-      <label class="control-label" for="data-sensitivity">Are you going to be uploading sensitive data? <span class="form-required" title="This field is required.">*</span></label>
+      <label class="control-label" for="data-sensitivity">Are you going to be uploading sensitive data? (IIHI, PHI, etc.) <span class="form-required" title="This field is required.">*</span></label>
       <div id="data-sensitivity" class="form-radios">
         <div class="form-item form-type-radio radio">
           <input required="required" type="radio" id="data-sensitivity-1" name="data-sensitivity" value="sensitive-data" class="form-radio" />&nbsp; Yes</label>
@@ -100,8 +100,8 @@ type = "form"
   <hr size=1 />
 
   <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="explanation">Please explain why you need supplemental storage for this project </label>
-    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="explanation" cols="60" rows="5"></textarea>
+    <label class="control-label" for="explanation">Please explain why you need supplemental storage for this project <span class="form-required" title="This field is required.">*</span></label>
+    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-summary" name="explanation" cols="60" rows="5"></textarea>
     </div>
   </div>
 
@@ -179,7 +179,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );
+  window.location.replace( "https://auth.uvasomrc.io/site/storage-supplemental.php" );
 }
 
 let message = decodeURI(getParams()["message"]);
