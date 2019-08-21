@@ -21,9 +21,10 @@ type = "rivanna"
 
 # Web-based Access
 
+<img alt="OpenOnDemand" src="/images/ood.png" align="right" style="max-width:30%;">
 Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser.  The Open OnDemand access point is rivanna-portal.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our Open OnDemand documentation page.
 
-[<button style="margin-left:20%;" class="btn btn-primary">Launch Open OnDemand</button>](https://rivanna-portal.hpc.virginia.edu/)
+[<button class="btn btn-primary">Launch Open OnDemand</button>](https://rivanna-portal.hpc.virginia.edu/)
 
 - - -
 
@@ -53,5 +54,5 @@ For more details and for troubleshooting information, please see our ssh page.
 
 Users who wish to run X11 graphical applications may prefer the FastX remote desktop web interface.  The FastX web client is accessible at `rivanna-desktop.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
 
-[<button style="margin-left:20%;" class="btn btn-primary">Connect to FastX via Web</button>](https://rivanna-gpu.hpc.virginia.edu:8000/auth/ssh)
+[<button class="btn btn-primary">Connect to FastX via Web</button>](https://rivanna-gpu.hpc.virginia.edu:8000/auth/ssh)
 
