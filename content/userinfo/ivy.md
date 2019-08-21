@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2018-12-04T17:45:12-05:00"
+date = "2019-06-04T17:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","ddl","security","jupyter"]
 categories = ["userinfo"]
 images = [""]
@@ -10,18 +10,21 @@ author = "RC Staff"
 
 +++
 
-<div class="bd-callout bd-callout-warning">
-<h4>Ivy</h4>
+{{% callout %}}
+#### Ivy
+
 Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) and Domino Data Lab.
 Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA requirements</a>.
-</div>
+
+{{% /callout %}}
 
 # Overview
 
 Ivy consists of two separate computing environments. Access to one environment does not automatically grant access to the others:
 
 * [Virtual Machines](#virtual-machines)
-* [Domino Data Lab](#domino-data-lab)
+* [Domino Data Lab](#domino-data-lab) - Retiring Soon!
+* Jupyter Notebooks - Coming Soon!
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
 * [HIPAA Compliance](#hipaa-compliance)
 * [Coming Soon - Secure HPC](#coming-soon-secure-hpc)
@@ -257,37 +260,11 @@ Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst
 
 # Domino Data Lab
 
-<img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" /> [Domino Data Lab (DDL)](https://www.dominodatalab.com/) provides a central environment for data science projects including project management, collaboration with team members, and setting up hardware configuration for a project.  
+<img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" />
 
-## Access
+As of August 31, 2019 Domino Data Lab will no longer be available within Ivy. Existing projects should be migrated to a virtual machine.
 
-DDL is entirely browser-based and does not require any setup on your workstation. Once connected via High Security VPN, point your browser to:
-
-    https://domino.hpc.virginia.edu/
-
-You will be prompted for Domino login credentials, which correspond to your UVa computing ID and Eservices password. Please remember that in order to maintain access to any platform on Ivy (including DDL), you will need to change your Eservices password every 60 days. 
-
-## Storage
-
-Each DDL project can accommodate up to 500 gigabytes of storage. Central storage is not visible to DDL. 
-
-## Features
-
-DDL is organized in a project structure, which is ideal for collaborative data analyses. Scripts written in Python and R can be edited, scheduled and run from within the web interface, both inside and outside of interactive notebook sessions (i.e. RStudio or Jupyter). 
-
-For specifics about these features and more, refer to the [Ivy DDL User Guide](/userinfo/ivy-ddl/).
-
-## Learn More
-
-* [Data science resources from DDL](https://www.dominodatalab.com/resources)
-* Watch a walkthrough of the main features of DDL:
-
-<video width="730" height="460" controls>
-  <source src="https://s3.amazonaws.com/uvasom-assets/video/product_tour_trimmed.mp4" type="video/mp4">
-</video>
-
-
-[<button class="btn btn-success">Read more about Ivy DDL</button>](https://discuss.rc.virginia.edu/c/ivy/ddl)
+Interactive data sessions will be available using Jupyter Notebooks (coming soon!)
 
 - - -
 
@@ -299,7 +276,8 @@ Moving sensitive data into the Ivy VMware platform is possible through a secure 
 
 ## Learn More
 
-[<button class="btn btn-success">Read more about the Ivy Secure DTN</button>](https://discuss.rc.virginia.edu/t/ivy-secure-dtn-transfer-sensitive-data/771)
+[<button class="btn btn-success">Read more about using Globus</button>](/userinfo/globus/)
+ &nbsp; [<button class="btn btn-success">Read more about the Ivy Secure DTN</button>](https://discuss.rc.virginia.edu/t/ivy-secure-dtn-transfer-sensitive-data/771)
 
 - - -
 
