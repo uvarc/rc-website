@@ -11,14 +11,21 @@ type = "rivanna"
 
 +++
 
-<div class="bd-callout bd-callout-warning">
-<h4>Rivanna HPC</h4>
-<p>Rivanna is the University of Virginia's High-Performance Computing (HPC) system. As a centralized resource it has hundreds of pre-installed software packages available for computational research across many disciplines. Currently the Rivanna supercomputer has over 8,000 cores and 8PB of various storage.</p>
-<p>All UVA faculty, staff, and postdoctoral associates are eligible to use Rivanna, or students when part of faculty research.</p>
-</div>
+{{% callout %}}
+#### Rivanna HPC
 
-<p class="lead">The sections below contain important information for new and existing Rivanna users. Please read each carefully.</p>
-<p class="lead">New users are invited to attend one of our free orientation sessions ("Introduction to the HPC System") held throughout the year during office hours or by appointment.</p>
+Rivanna is the University of Virginia's High-Performance Computing (HPC) system. As a centralized resource it has hundreds of pre-installed software packages available for computational research across many disciplines. Currently the Rivanna supercomputer has over 8,000 cores and 8PB of various storage.
+
+All UVA faculty, staff, and postdoctoral associates are eligible to use Rivanna, or students when part of faculty research.
+{{% /callout %}}
+
+{{< lead >}}
+The sections below contain important information for new and existing Rivanna users. Please read each carefully.
+{{< /lead >}}
+
+{{< lead >}}
+New users are invited to attend one of our free orientation sessions ("Introduction to the HPC System") held throughout the year during office hours or by appointment.
+{{< /lead >}}
 
 - - -
 

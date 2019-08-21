@@ -16,6 +16,7 @@ type = "rivanna"
 * [Applications](#applications)
 * [Job Management](#job-management)
 * [Storage Management](#storage-management)
+* [Data Transfer](#data-transfer)
 * [Other Questions](#other-questions)
 
 - - -
@@ -166,6 +167,14 @@ To check your home space, run `hdquota` (home directory quota).
 To check your leased space, change directory into your your leased space and then run `df -h /nv/volX/yourshare`, where `volX` is your leased storage volume and `yourshare` is the name of the group set up for the storage:
 
 - - -
+
+# Data Transfer
+
+Smaller files can be transferred to/from Rivanna using `scp`, `sftp`, and `rsync` as well as standard FTP tools.
+
+Larger files should be moved using [Globus](/userinfo/globus/).
+
+[Read more](/userinfo/data-transfer/) about data transfer.
 
 # Other Questions
 What if my question doesn't appear here? Take a look at our User Guide.  If your answer isn't there, contact us.

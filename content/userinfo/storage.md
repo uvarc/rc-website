@@ -104,5 +104,6 @@ Ivy Central Storage is accessible by using Globus and connecting to the Ivy DTN.
 
 Storage requests can be made from this form:
 
-[<button class="btn btn-success">Storage Requests</button>](https://auth.uvasomrc.io/site/storage.php)
+[<button class="btn btn-success">Request / Purchase Storage</button>](https://auth.uvasomrc.io/site/storage.php)
+&nbsp;[<button class="btn btn-success">Request Temporary Storage in `/scratch`</button>](https://auth.uvasomrc.io/site/storage-supplemental.php)
 
