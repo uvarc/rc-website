@@ -10,26 +10,30 @@ author = "Staff"
 
 +++
 
-<div class="bd-callout bd-callout-warning">
-<h4>Globus Data Transfer</h4>
-<img align="right" alt="Globus DTN" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/e173debd0e4ab4497f7a799cbe864258f3482e5a.png" style="max-width:30%;" />
+{{% callout %}}
+
+#### Globus Data Transfer
+
+<img align="right" alt="Globus DTN" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/e173debd0e4ab4497f7a799cbe864258f3482e5a.png" style="max-width:35%;" />
+
 Is a simplified way to access and move your research data, across all systems, using any existing identity. Transfer data to and from systems such as:
-<ul>
-  <li>Laptops
-  <li>HPC clusters (Rivanna)
-  <li>Secure computing (Ivy)
-  <li>Lab / departmental storage
-  <li>Tape archives
-  <li>Cloud storage
-  <li>Off-campus resources (XSEDE, National Labs)
-</ul>
 
-<p>Access them all using just a web browser. This can help you share research data with colleagues, co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.
+* Laptops
+* HPC clusters (Rivanna)
+* Secure computing (Ivy)
+* Lab / departmental storage
+* Tape archives
+* Cloud storage
+* Off-campus resources (XSEDE, National Labs)
 
-<p>Data stored at a different institution? At a supercomputing facility? All you need is your campus login.
+Access them all using just a web browser. This can help you share research data with colleagues, co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.
 
-<p><b>Globus Connect CAN now be used for transferring sensitive data. (See Ivy, below)</b></p>
-</div>
+Data stored at a different institution? At a supercomputing facility? All you need is your campus login.
+
+**Globus Connect CAN now be used for transferring sensitive data. (See Ivy, below)**
+
+{{% /callout %}}
+
 
 # Getting Started
 
@@ -37,13 +41,10 @@ Globus transfers data between endpoints, also now called collections.  You must 
 
 1. Open a browser window to [**https://www.globus.org/**](https://www.globus.org/) and click on **Log In**.
 2. Select “University of Virginia” from the drop-down list of organizations.
-
-<img src="//uvarc-discourse.s3.amazonaws.com/original/1X/ae36ef36d8dc39b431f83e67a2961889e3fd8721.png" width="700" height="550">
+  <img src="//uvarc-discourse.s3.amazonaws.com/original/1X/ae36ef36d8dc39b431f83e67a2961889e3fd8721.png" width="700" height="550">
 
 3. Next to you will be directed to sign in using **UVA NetBadge**. Once logged in you will see the Transfer management page:
-
-<img src="https://uvarc-discourse.s3.dualstack.us-east-1.amazonaws.com/original/1X/14de2df745ffa49ce009fb8caec08fa0685d0df0.png" width="700" height="550">
-
+  <img src="https://uvarc-discourse.s3.dualstack.us-east-1.amazonaws.com/original/1X/14de2df745ffa49ce009fb8caec08fa0685d0df0.png" width="700" height="550">
 
 # Create a Personal Endpoint
 
@@ -54,18 +55,20 @@ Globus transfers data between endpoints, also now called collections.  You must 
 3. This will leave the agent running on your laptop or workstation. Click on the agent icon (in the tray for Windows users, in the toolbar for MacOS users) to change your preferences or to see the web console.
 4. Your local workstation (or laptop) is now a Globus Endpoint.
 
-# Connect to Endpoints
+# Connect to Other Endpoints
 
-> **What is an endpoint?** - A Globus "endpoint" is any other computer running the Globus Connect software. An endpoint can be:
->
->* Your local workstation
->* A department server
->* A "DTN" (Data Transfer Node) connected to Rivanna or elsewhere on the UVA campus, or
->* Your own laptop.
->
->You can even connect to remote endpoints at other universities, if you have been given permission.
+{{% callout %}}
+**What is an endpoint?** - A Globus "endpoint" is any other computer running the Globus Connect software. An endpoint can be:
 
-It is important to remember that you can connect to any two endpoints for file transfers. **One endpoint does not necessarily have to be your local computer**. You could connect your lab/departmental server with the Rivanna DTN, for example, begin a large transfer, and then close the browser window.
+* Your local workstation
+* A department server
+* A "DTN" (Data Transfer Node) connected to Rivanna or elsewhere on the UVA campus, or
+* Your own laptop.
+
+You can even connect to remote endpoints at other universities, if you have been given permission.
+{{% /callout %}}
+
+It is important to remember that *you can connect to any two endpoints for file transfers*. **One endpoint does not necessarily have to be your local computer**. You could connect your lab/departmental server with the Rivanna DTN, for example, begin a large transfer, and then close the browser window.
 
 If one of your endpoints is managed by UVA, see **Request Access to Existing UVA Endpoints** below.
 
@@ -75,7 +78,7 @@ Select endpoints by clicking on the "Collection" box near the top of the screen 
 
 ## Access Existing UVA Endpoints
 
-To use and access UVA Managed Endpoints via Globus, please contact hpc-support@virginia.edu. Your account must have a Globus profile set up by UVA system administrators. The official UVA managed endpoints are:
+To use and access UVA Managed Endpoints via Globus, please [submit a ticket](https://uvarc.io/support). Your account must have a Globus profile set up by UVA system administrators. The official UVA managed endpoints are:
 
 * `uva#main-DTN` - generally available; maps to Rivanna home directories, scratch, etc.
 * `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into secure storage.
