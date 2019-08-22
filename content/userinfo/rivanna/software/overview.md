@@ -26,23 +26,21 @@ type = "rivanna"
 
 Software on Rivanna is accessed via environment **modules** or **containers**.
 
-<a href="/userinfo/rivanna/software/modules/"><button class="btn btn-primary"">Learn About Modules</button></a> &nbsp;
-<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">View All Modules</button></a> &nbsp;
-<a href="/userinfo/rivanna/software/containers/"><button class="btn btn-primary"">Learn About Containers</button></a>
+<a href="/userinfo/rivanna/software/modules/"><button class="btn btn-primary"">Learn about Modules</button></a> &nbsp;
+<a href="/userinfo/rivanna/software/containers/"><button class="btn btn-primary"">Learn about Containers</button></a>
 
 # Software by Category
 
-## Software Application Domains
+## Popular Software Packages and Libraries by Domain
 
 * [Data Science & Machine Learning](/userinfo/rivanna/software/machine-learning)
 * [Chemistry](/userinfo/rivanna/software/chemistry)
 * [Engineering](/userinfo/rivanna/software/engineering)
 * [Bioinformatics](/userinfo/rivanna/software/bioinformatics)
-* [Environmental Sciences](/userinfo/rivanna/software/envsci)
 * [Math & Statistics](/userinfo/rivanna/software/math-statistics)
-* [Physics](/userinfo/rivanna/software/physics)
-* [Image Processing](/userinfo/rivanna/software/imageprocessing)
-* [Scientific Visualization](/userinfo/rivanna/software/visualization)
+* [Image Processing & Scientific Visualization](/userinfo/rivanna/software/imageprocessing)
+
+<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">Full list of all software and library modules</button></a>
 
 ## Programming Languages & Tools
 
