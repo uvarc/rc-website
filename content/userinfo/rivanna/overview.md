@@ -42,7 +42,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Logging In</h5>
-      <p class="card-text">How to log in? Need to use a web browser or a shell command-line? Learn how.</p>
+      <p class="card-text">How do you log in? Need to use a web browser or a shell command-line? Learn how.</p>
       <a href="/userinfo/rivanna/login/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>

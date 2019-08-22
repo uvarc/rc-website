@@ -59,6 +59,7 @@ Software on Rivanna is accessed via environment **modules** or **containers**.
 
 * [Open OnDemand](/userinfo/rivanna/login/#web-based-access)
 * [FastX](/userinfo/rivanna/login/#remote-desktop-access)
-* [MobaXterm](/userinfo/rivanna/access/mobaxterm)
+* [MobaXterm](/userinfo/rivanna/mobaxterm/)
 * [SSH](/userinfo/rivanna/login/#secure-shell-access-ssh)
-* [Globus](https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345)
+* [Data Transfer](/userinfo/data-transfer)
+* [Globus](/userinfo/globus/)
