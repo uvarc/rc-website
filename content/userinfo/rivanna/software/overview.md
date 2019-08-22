@@ -36,7 +36,7 @@ Software on Rivanna is accessed via environment **modules** or **containers**.
 * [Data Science & Machine Learning](/userinfo/rivanna/software/machine-learning)
 * [Chemistry](/userinfo/rivanna/software/chemistry)
 * [Engineering](/userinfo/rivanna/software/engineering)
-* [Bioinformatics](/userinfo/rivanna/software/bioinformatics)
+* [Biology & Bioinformatics](/userinfo/rivanna/software/bioinformatics)
 * [Math & Statistics](/userinfo/rivanna/software/math-statistics)
 * [Image Processing & Scientific Visualization](/userinfo/rivanna/software/imageprocessing)
 
@@ -54,6 +54,7 @@ Software on Rivanna is accessed via environment **modules** or **containers**.
 * [Libraries](/userinfo/rivanna/software/libraries)
 * [Debugger](/userinfo/rivanna/software/totalview)
 * [Containers](/userinfo/rivanna/software/containers)
+* [IDEs and Editors](/userinfo/rivanna/software/ide)
 
 ## Access & File Transfer Tools
 

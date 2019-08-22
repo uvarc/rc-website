@@ -13,9 +13,9 @@ author = "RC Staff"
 
 Rivanna offers multiple compiler bundles for C, C++, and Fortran.  Different compilers have different strengths and weaknesses and different error messaging and debugging features, so users should be willing to try another one when appropriate.  The modules system manages the compiler environment and ensures that only compatible libraries are available for loading.
 
-Many users of compiled languages are working with codes that can employ MPI for multinode parallel runs.  MPI users should first understand how their chosen compiler works, then see the MPI instructions at our parallel programming page.
+Many users of compiled languages are working with codes that can employ MPI for multinode parallel runs.  MPI users should first understand how their chosen compiler works, then see the MPI instructions at our [parallel programming](/userinfo/rivanna/software/mpi) page.
 
-Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our debuggers and utilities page.
+Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our [debuggers and utilities](/userinfo/rivanna/software/totalview) page.
 
 # Available Compilers on rivanna
 
@@ -78,7 +78,7 @@ Then load the appropriate module, in this case the default version
 module load intel
 ```
 
-**IMPORTANT NOTE** for Fortran programmers: Nearly all Fortran code must be compiled with the flag `-heap-arrays` added or it encounter a segmentation violation.
+**Important note for Fortran programmers:** Nearly all Fortran code must be compiled with the flag `-heap-arrays` added or it will encounter a segmentation violation.
 
 If you still experience segmentation violations, recompile with `-g -CB` (for debugging and bounds checking respectively) and run the program under the control of a debugger.  Once the program is debugged, be sure to remove the `-g` and certainly the `-CB` flags and recompile with `-O` or `-O -ipo`. If that works, try `-O3` or `-O3 -ipo` for a higher level of optimization.  
 
@@ -178,7 +178,7 @@ gfortran -o mycode -L/home/mst3k/myblas mycode.o mymod.o -lopenblas
 ```
 
 # Managing the Build
-Typing a compiler line for each source file is tedious and error-prone.  There are several systems to help manage building.  The most widely used on Unix for C, C++, and Fortran is make.  Make uses rules to determine how to generate a particular file, called a target, from its dependencies.  It has a rather peculiar syntax so a more complete discussion can be found here.
+Typing a compiler line for each source file is tedious and error-prone.  There are several systems to help manage building.  The most widely used on Unix for C, C++, and Fortran is make.  Make uses rules to determine how to generate a particular file, called a target, from its dependencies.  It has a rather peculiar syntax so a more complete discussion can be found [here](/userinfo/rivanna/software/make).
 
 Make does not set up paths to external libraries, or specify a compiler other than the default, or enable or disable different build options.  Other systems have been written to handle these initialization steps.  The autoconf/configure system is widely used on Unix.  Another popular system is CMake, which is cross-platform and works on Windows and Mac OSX as well as on Unix.
 
@@ -224,7 +224,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/home/mst3k/softpack ..
 ```
 This assumes that `HDF5_ROOT` is already in the environment.  If it is not, another option `-DHDF5_ROOT=/path/to/hdf5` must be included.
 
-Other options can be set in different ways.  In order to see a list of the user-changeable options, you can run `ccmake`, which will bring up a simple text-based graphical user interface, where you can turn options on or off, set paths, and so forth.  More information is available at Kitware's CMake site.
+Other options can be set in different ways.  In order to see a list of the user-changeable options, you can run `ccmake`, which will bring up a simple text-based graphical user interface, where you can turn options on or off, set paths, and so forth.  More information is available at [Kitware's CMake website](https://cmake.org/cmake/help/v3.14/manual/ccmake.1.html).
 
 Regardless of how CMake is run, it will generate a CMakeCache.txt file that will not be overwritten if `cmake` is run again; it must be removed in order to redo the configuration.
 

@@ -18,8 +18,7 @@ Open OnDemand is a graphical user interface that allows access to Rivanna via a 
 # Logging in to Rivanna
 Rivanna is accessible through the Open OnDemand web client at https://rivanna-portal.hpc.virginia.edu. Your login is your UVA computing ID and your password is your Netbadge password. Some services, such as FastX Web, require the Eservices password. If you do not know your Eservices password you must change it through ITS by changing your Netbadge password.
 
-Open OnDemand can be accessed from off Grounds without the [UVA Anywhere](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0) VPN client, but FastX Web requires it. Only Windows and Mac OSX operating systems are supported by ITS for UVA Anywhere. Linux users can find unsupported instructions to install and configure a VPN <a href="https://discuss.rc.virginia.edu/t/configuring-the-uva-anywhere-vpn-on-linux/1190" target="_new">here</a>.
-
+Open OnDemand can be accessed from off Grounds without the [UVA Anywhere](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0) VPN client, but FastX Web requires it. Only Windows and Mac OSX operating systems are supported by ITS for UVA Anywhere. Linux users should refer to these <a href="https://discuss.rc.virginia.edu/t/configuring-the-uva-anywhere-vpn-on-linux/1190" target="_new">unsupported instructions</a> to install and configure a VPN.
 
 # The Dashboard
 Once you log in, you are automatically redirected to the Open OnDemand dashboard. The dashboard may contain information about upcoming changes and maintenance work that can affect your jobs, so please read all announcements carefully. Keep the dashboard tab open until you are ready to end your session and log out.
