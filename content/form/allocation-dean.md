@@ -18,10 +18,10 @@ type = "form"
   <div style="padding:1.4rem;" class="card">
   <h5 class="card-title">About the Requestor</h5>
 
-  <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
+  <input class="form-control form-text required" type="hidden" id="category" name="category" value="Deans Allocation">
   <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
 
-  {{% form-userinfo %}}
+{{% form-userinfo %}}
 
   <div class="form-item form-type-select form-group">
     <label class="control-label" for="edit-submitted-classification">Sponsoring Dean

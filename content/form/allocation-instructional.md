@@ -18,7 +18,7 @@ type = "form"
   <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
   <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
 
-  {{% form-userinfo %}}
+{{% form-userinfo %}}
 
   <hr size=1 />
 
@@ -51,6 +51,7 @@ type = "form"
     <div class="col form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="academic-term">Academic Term <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="academic-term" name="academic-term" value="" size="60" maxlength="128" />
     </div>
+
   </div>
 
   <input type="hidden" name="details" />
