@@ -18,7 +18,7 @@ Open OnDemand is a graphical user interface that allows access to Rivanna via a 
 # Logging in to Rivanna
 Rivanna is accessible through the Open OnDemand web client at https://rivanna-portal.hpc.virginia.edu. Your login is your UVA computing ID and your password is your Netbadge password. Some services, such as FastX Web, require the Eservices password. If you do not know your Eservices password you must change it through ITS by changing your Netbadge password.
 
-Open OnDemand can be accessed from off Grounds without the [UVA Anywhere](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0) VPN client, but FastX Web requires it. Only Windows and Mac OSX operating systems are supported by ITS for UVA Anywhere. Linux users can find unsupported instructions to install and configure a VPN [here](/userinfo/rivanna/logintools/linuxvpn).
+Open OnDemand can be accessed from off Grounds without the [UVA Anywhere](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0) VPN client, but FastX Web requires it. Only Windows and Mac OSX operating systems are supported by ITS for UVA Anywhere. Linux users can find unsupported instructions to install and configure a VPN <a href="https://discuss.rc.virginia.edu/t/configuring-the-uva-anywhere-vpn-on-linux/1190" target="_new">here</a>.
 
 
 # The Dashboard
@@ -37,7 +37,7 @@ These services and applications are accessible through drop-down boxes on the me
 
 
 # File Explorer
-File Explorer makes browsing and managing small files easy. Rivanna has multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage (/scratch) where large data sets can be staged for job processing. Users can also lease storage that is accessible on Rivanna. Contact Research Computing or visit the [storage page](/userinfo/storage) for more information.
+File Explorer makes browsing and managing small files easy. Rivanna has multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage (/scratch) where large data sets can be staged for job processing. Users can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage page](/userinfo/storage) for more information.
 
 The file explorer provides these basic functions:
 
@@ -48,7 +48,6 @@ The file explorer provides these basic functions:
 
 Visit our [File Explorer](/userinfo/rivanna/ood/fileexplorer) guide for detailed instructions.
 
-
 # Interactive Applications
 Open OnDemand provides access to interactive applications that provide a full graphical Rivanna desktop environment (FastX Web), as well as a website where you can check your current allocation and storage usage, JupyterLab for running Jupyter notebooks, RStudio Server for the execution of R scripts, and a simple terminal shell.
 
@@ -58,10 +57,8 @@ FastX Web enables users to start an X11 desktop environment on a remote system. 
 
 Please read our [FastX Web documentation](/userinfo/rivanna/logintools/fastx) for a detailed description of this remote desktop environment.
 
-
 ## My Rivanna Status
-To see an overview of your current allocations and scratch directory usage, click on the `Interactive Apps` drop-down and select `My Rivanna Status`. The data shown reflect the output obtained when running the allocations and `sfsq` commands in a command line terminal.
-
+To see an overview of your current allocations and scratch directory usage, click on the `Interactive Apps` drop-down and select `My Rivanna Status`. The data shown reflect the output obtained when running the `allocations` and `sfsq` commands in a command line terminal.
 
 ## JupyterLab
 JupyerLab provides an environment that has become popular for interactive code development and debugging. JupyterLab sessions run on user-specified allocated hardware resources which may include compute nodes equipped with graphical processing units (GPUs).
@@ -69,7 +66,6 @@ JupyerLab provides an environment that has become popular for interactive code d
 Please read the [JupyterLab documentation](/userinfo/rivanna/software/jupyterlab) for detailed instructions on how to start JupyerLab sessions and specify hardware resource requests.
 
 After starting a JupyterLab session, you're taken to the `My Interactive Sessions` page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
-
 
 ## RStudio Server
 RStudio provides an environment specifically designed for interactive R script development and debugging.

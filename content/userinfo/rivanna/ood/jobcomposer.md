@@ -11,7 +11,6 @@ type = "rivanna"
 
 +++
 
-Overview
 [Open OnDemand](/userinfo/rivanna/ood/overview) allows you to submit SLURM jobs to the cluster without using shell commands.
 
 The job composer simplifies the process of:
@@ -20,6 +19,7 @@ The job composer simplifies the process of:
 + Submitting a job
 + Downloading results
 
+# Submitting Jobs
 We will describe creating a job from a template provided by the system.
 
 1. Open the `Job Composer` tab from the Open OnDemand Dashboard.
@@ -28,7 +28,7 @@ We will describe creating a job from a template provided by the system.
 
 3. Click on `Create New Job`. You will need to edit the file that pops up, so click the light blue `Open Editor` button at the bottom. Replace your allocation with your group name and click `Save`.
 
-Open OnDemand creates a unique directory for each job. In most cases, you will need to upload or move files into the job directory, so when you have finished editing the script, return to the Job Composer tab and click the darker blue Open Dir button at the bottom of the page.
+4. Open OnDemand creates a unique directory for each job. In most cases, you will need to upload or move files into the job directory, so when you have finished editing the script, return to the Job Composer tab and click the darker blue `Open Dir` button at the bottom of the page.
 
 4. You may now use the File Explorer to upload or move the files you will need to run the job.
 
