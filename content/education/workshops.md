@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Workshops"
-date = "2019-04-24T10:55:28-05:00"
+date = "2019-07-21T10:55:28-05:00"
 draft = false
 tags = ["R","python","shiny","cloud","HPC","Rivanna","Ivy"]
 categories = ["education", "workshops","seminars"]
@@ -10,9 +10,16 @@ images = [""]
 
 +++
 
+<a href = "https://education.cadre.virginia.edu/"><img src="/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:40%; padding-left:25px; padding-bottom:10px;" /></a>
 <p class=lead>UVA Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by experts and are freely available to UVa faculty, staff and students.</p>
 
-<a href = "https://education.cadre.virginia.edu/"><img src="/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:104%; padding-left:25px; padding-bottom:10px;" /></a>
+
+# Upcoming Workshops
+
+{{% upcoming-workshops %}}
+
+<!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
+<a href="https://education.cadre.virginia.edu/" class="btn btn-warning" target="_new"> View All Upcoming Workshops on CADRE Academy </a>
 
 - - - 
 
@@ -21,20 +28,13 @@ Register for UVARC workshops through <a style="font-weight:bold;" href="https://
 
 - - -
 
-# Materials
+# Workshop Material
 Course material and exercises are available through a companion site. Feel free to browse classes, read ahead, or learn at your own pace.
   <div style="margin:12px;"><code><a href="https://workshops.somrc.virginia.edu/lesson/" target="_new">https://workshops.somrc.virginia.edu/</a></code></div>
 
 - - -
 
-# Upcoming
-
-{{% upcoming-workshops %}}
-
-<!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
-<a href="https://education.cadre.virginia.edu/" class="btn btn-warning" target="_new"> View All Upcoming Workshops on CADRE Academy </a>
-
-# Previous
+# Previous Workshops
 
 - Advanced Computing in the Cloud
 - Advanced Data Manipulation with R
@@ -68,3 +68,7 @@ Course material and exercises are available through a companion site. Feel free 
 - R For Beginners
 - R Package Development Tools
 - Writing in Functions in R
+
+{{% callout %}}
+Do you need a specific workshop and have a group of people to attend? [Write us](//uvarc.io/support)!
+{{% /callout %}}
