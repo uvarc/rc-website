@@ -13,16 +13,12 @@ type = "rivanna"
 
 <p class=lead>Rivanna is accessible through a web portal, secure shell terminals, or a remote desktop environment.  For of all of these access points, your login is your UVA computing ID and your password is your Eservices password.  If you do not know your Eservices password you must change it through ITS.</p>
 
-{{% highlight %}}
-<div style="float:left;padding:0 1rem 0 0;"><i style="" class="fas fa-3x fa-map-marked-alt"></i></div> **Off Campus?** All users who wish to access Rivanna while off Grounds must use the [UVA Anywhere VPN client](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).  Only Windows and Mac OSX operating systems are supported.  Linux users can find unsupported instructions to install and configure a VPN here.
-{{% /highlight %}}
-
-- - -
+{{< off-campus >}}
 
 # Web-based Access
 
 <img alt="OpenOnDemand" src="/images/ood.png" align="right" style="max-width:30%;">
-Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser.  The Open OnDemand access point is rivanna-portal.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our Open OnDemand documentation page.
+Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser. The Open OnDemand access point is rivanna-portal.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our Open OnDemand documentation page.
 
 [<button class="btn btn-primary">Launch Open OnDemand</button>](https://rivanna-portal.hpc.virginia.edu/)
 
@@ -34,7 +30,9 @@ Rivanna is accessible through `ssh` (Secure Shell) connections using the hostnam
 
 ## Windows
 
-Windows users must install an ssh client application.  We recommend [MobaXterm](https://mobaxterm.mobatek.net/), but you may also use other clients such as [SecureCRT](https://www.vandyke.com/products/securecrt/) or [PuTTY](https://www.putty.org/). 
+Windows users must install an ssh client application. We recommend [MobaXterm](/userinfo/rivanna/mobaxterm/), but you may also use other clients such as [SecureCRT](https://www.vandyke.com/products/securecrt/) or [PuTTY](https://www.putty.org/). 
+
+[<button class="btn btn-primary">Install MobaXterm</button>](/userinfo/rivanna/mobaxterm/)
 
 ## Mac OSX and Linux
 
