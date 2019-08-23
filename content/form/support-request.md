@@ -11,18 +11,20 @@ type = "form"
 
 +++
 
+<script type="text/javascript" src="/js/typeahead.js"></script>
+
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <p id="form_post_response"></p>
 <div>
 
-  {{% form-userinfo %}}
+{{% form-userinfo %}}
 
   <hr size=1 />
 
   <div class="form-item form-group form-item form-type-select form-group"> 
-    <label class="control-label" for="edit-submitted-classification">Support Category <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="category" name="category">
-      <option value="" selected="selected"> - Select - </option>
+      <option value="" selected="selected">- Select -</option>
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="software" value="Software">Licensed Research Software</option>
@@ -33,11 +35,12 @@ type = "form"
   </div>
   <div class="form-item form-group form-item form-type-textfield form-group"> 
     <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
+    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128"/>
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="description">Details of your support request <span class="form-required" title="This field is required.">*</span></label>
-    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8"></textarea>
+    <div class="form-textarea-wrapper resizable">
+      <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8"></textarea>
     </div>
   </div>
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>

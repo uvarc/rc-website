@@ -19,7 +19,7 @@ type = "form"
 
   <input type="hidden" id="category" name="category" value="Storage">
 
-  {{% form-userinfo %}}
+{{% form-userinfo %}}
 
   <hr size=1 />
 
@@ -92,7 +92,7 @@ type = "form"
       </div>
     </div>
 
-    <div class="col form-item form-group"> 
+    <div class="col form-item form-group">
       <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
       <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>Select an increment of 1TB.</p>
@@ -109,7 +109,7 @@ type = "form"
       <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
     </div>
 
-    <div class="col form-item form-type-textarea form-group"> 
+    <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
       <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
@@ -137,7 +137,7 @@ type = "form"
       <input class="form-control form-text required" type="text" id="grant-agency" name="grant-agency" value="" size="200" maxlength="200" />
     </div>
 
-    <div class="form-item form-type-textarea form-group"> 
+    <div class="form-item form-type-textarea form-group">
       <label class="control-label" for="grant-number">Grant Number </label>
       <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
