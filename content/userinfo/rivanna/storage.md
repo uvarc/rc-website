@@ -46,7 +46,9 @@ type = "rivanna"
     <td class="tg-hy9w">Free</td>
     <td class="tg-hy9w">Data removed 60 days after last file modification timestamp</td>
     <td class="tg-hy9w">Rivanna login and compute nodes</td>
-    <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage.</td>
+    <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage. <br /><br />
+      If you wish to request a very large temporary increase in your <code>/scratch</code> quota, you can  submit a <a href="https://auth.uvasomrc.io/site/storage-supplemental.php"><code>/scratch</code> supplemental request</a>.
+    </td>
   </tr>
   <tr>
     <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#project"><code>/project</code></a></td> 
