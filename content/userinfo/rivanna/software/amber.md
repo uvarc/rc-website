@@ -10,9 +10,9 @@ tags = [
   "multi-core",
 ]
 draft = false
-modulename = "samtools"
-softwarename = "SAMTools"
-title = "SAMTools on Rivanna"
+modulename = "amber"
+softwarename = "Amber"
+title = "Amber on Rivanna"
 author = "RC Staff"
 +++
 
@@ -23,8 +23,10 @@ author = "RC Staff"
 
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
+Local support is not available.
+
 # Available Versions
-The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
+The current installation of {{% software-name %}} lags behind the latest release due to license restrictions. To find the available versions and learn how to load them, run:
 <pre>module spider {{% module-name %}}</pre>
 
 The output of the command shows the available {{% software-name %}} module versions.
@@ -33,13 +35,3 @@ For detailed information about a particular {{% software-name %}} module, includ
 <pre>module spider {{% module-firstversion %}}</pre>
 
 {{% module-versions %}}
-
-# Build Your Own Version
-Users may build their own versions of {{% software-name %}} if they wish to use a different compiler or software version. Instructions are available on the [{{% software-name %}} website]({{< module-homepage >}}).
-
-# SLURM Script Example
-To run {{% software-name %}} on Rivanna, a script similar to the following can be used. {{% software-name %}} has many options so only a basic example is shown.
-
-```
-```
-<br>

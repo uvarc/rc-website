@@ -3,16 +3,16 @@ type = "rivanna"
 categories = [
   "HPC",
   "software",
-  "bio"
+  "math"
 ]
 date = "2019-06-22T08:37:46-05:00"
 tags = [
   "multi-core",
 ]
 draft = false
-modulename = "samtools"
-softwarename = "SAMTools"
-title = "SAMTools on Rivanna"
+modulename = "sas"
+softwarename = "SAS"
+title = "SAS on Rivanna"
 author = "RC Staff"
 +++
 
@@ -24,7 +24,7 @@ author = "RC Staff"
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
 # Available Versions
-The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
+To find the available versions and learn how to load them, run:
 <pre>module spider {{% module-name %}}</pre>
 
 The output of the command shows the available {{% software-name %}} module versions.
@@ -34,12 +34,4 @@ For detailed information about a particular {{% software-name %}} module, includ
 
 {{% module-versions %}}
 
-# Build Your Own Version
-Users may build their own versions of {{% software-name %}} if they wish to use a different compiler or software version. Instructions are available on the [{{% software-name %}} website]({{< module-homepage >}}).
-
-# SLURM Script Example
-To run {{% software-name %}} on Rivanna, a script similar to the following can be used. {{% software-name %}} has many options so only a basic example is shown.
-
-```
-```
-<br>
+**Note:** SAS scripts may be run on Rivanna through the SLURM queueing system in batch mode, but production interactive jobs on the frontend are not permitted.

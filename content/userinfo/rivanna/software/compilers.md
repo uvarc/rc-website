@@ -17,7 +17,7 @@ Many users of compiled languages are working with codes that can employ MPI for 
 
 Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our [debuggers and utilities](/userinfo/rivanna/software/totalview) page.
 
-# Available Compilers on rivanna
+# Available Compilers on Rivanna
 
 {{% rivanna-software tags="compiler" %}}
 
@@ -210,8 +210,9 @@ make
 If that succeeds run
 ```
 make install
-cmake
 ```
+
+## CMake
 CMake is an increasingly popular build system.  Whereas autoconf is generally tied to Unix, CMake is cross-platform.  It has several important differences from autoconf.  Most importantly, it pays no attention to user paths for binaries or libraries.  Each package has specific environment variables that must be set if it is to find binaries or libraries not in its internal default search path.  These environment variables can be set in the shell where cmake is run, or it can be specified at the cmake command line.
 
 CMake usually expects to build packages in a separate directory that typically must be created by the user.  The user must change to this directory before invoking the cmake command.  This command looks for a file CMakeLists.txt, so it takes a command-line argument of the directory where that file is located.

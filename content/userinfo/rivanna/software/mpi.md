@@ -2,7 +2,7 @@
 type = "rivanna"
 date = "2019-04-23T08:37:46-05:00"
 tags = [
-  "rivanna", "software"
+  "rivanna", "software", "mpi"
 ]
 draft = false
 title = "Message Passing Interface (MPI) on Rivanna"
