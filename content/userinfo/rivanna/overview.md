@@ -220,7 +220,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <tr>
       <th scope="row">20</th>
       <th scope="row">128GB</th>
-      <th scope="row">146</th>
+      <th scope="row">195</th>
     </tr>
     <tr>
       <th scope="row">28</th>
@@ -230,7 +230,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <tr>
       <th scope="row">40</th>
       <th scope="row">384GB</th>
-      <th scope="row">44</th>
+      <th scope="row">80</th>
     </tr>
     <tr>
       <th scope="row">16</th>
