@@ -39,27 +39,27 @@ Research Value Storage can be drive mapped on a personal computer to enable drag
 </h3>
 <img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png" alt="nonsecure-storage-options-overview">
 
-<div class="bd-callout bd-callout-warning">
-<b>Secure Copy (scp)</b> 
+{{% callout %}}
+#### Secure Copy (scp)
 <p><code>scp</code> uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. <code>scp</code> can be used with the following syntax:</p>
 <p><code>scp SourceFile mst3k@rivanna.hpc.virginia.edu:/nv/vol123/MyGroup_name</code></p>
 <p>Detailed instructions and examples for using <code>scp</code> are listed <a href ="https://discuss.rc.virginia.edu/t/secure-copy-scp/740" target="_blank">here</a>.</p>
-</div>
+{{% /callout %}}
 
-<div class="bd-callout bd-callout-warning">
-<b>Secure File Transfer Protocol (sftp)</b> 
+{{% callout %}}
+#### Secure File Transfer Protocol (SFTP)
 <p><code>sftp</code> is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "https://discuss.rc.virginia.edu/t/secure-file-transfer-protocol-sftp/741" target="_blank">here</a>.</p>
-</div>
+{{% /callout %}}
 
-<div class="bd-callout bd-callout-warning">
-<b>Filezilla & Cyberduck</b> 
-<p><a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a> are open source FTP client software for file management through an interactive graphical user interface. Instructions for using these FTP clients can be found <a href ="https://discuss.rc.virginia.edu/t/file-management-with-an-ftp-client/742" target="_blank">here</a>.</p>
-</div>
+{{% callout %}}
+#### Filezilla & Cyberduck
+<p><a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a> are open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="https://discuss.rc.virginia.edu/t/file-management-with-an-ftp-client/742" target="_blank">here</a>.</p>
+{{% /callout %}}
 
-<div class="bd-callout bd-callout-warning">
-<b>Globus Connect (Large Data Transfer)</b>
-<p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>.</p>
-</div>
+{{% callout %}}
+#### Globus Connect (Large Data Transfers)
+Globus provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found [here](/userinfo/globus/).
+{{% /callout %}}
 
 # File Manipulation and Navigation with Value Storage
  

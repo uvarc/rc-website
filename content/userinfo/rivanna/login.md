@@ -28,13 +28,13 @@ Open OnDemand is a graphical user interface that allows access to Rivanna via a 
 
 Rivanna is accessible through `ssh` (Secure Shell) connections using the hostname `rivanna.hpc.virginia.edu`.
 
-## Windows
+## <i class="fab fa-windows fa-1x"></i> Windows
 
 Windows users must install an ssh client application. We recommend [MobaXterm](/userinfo/rivanna/mobaxterm/), but you may also use other clients such as [SecureCRT](https://www.vandyke.com/products/securecrt/) or [PuTTY](https://www.putty.org/).
 
 [<button class="btn btn-primary">Install MobaXterm</button>](/userinfo/rivanna/mobaxterm/)
 
-## Mac OSX and Linux
+## <i class="fab fa-apple fa-1x"></i> Mac OSX and Linux
 
 OSX and Linux users may connect through a terminal using the command
 
