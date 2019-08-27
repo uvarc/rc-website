@@ -6,7 +6,7 @@ images = [""]
 categories = ["userinfo"]
 date = "2019-07-19T17:45:12-05:00"
 tags = [
-    "rivanna", 
+    "rivanna",
     "sensitive data",
     "storage",
     "ivy"
@@ -24,18 +24,18 @@ draft = false
 
 **How to request /home and /scratch space**
 
-`/home` and `/scratch` space can be obtained by requesting an allocation on Rivanna. Information on free trial and standard allocations and their corresponding request forms can be found on the ARCS <a href="https://arcs.virginia.edu/allocations" target="_blank">website</a>.
+`/home` and `/scratch` space can be obtained by requesting an allocation on Rivanna. The process of getting access to Rivanna is described [here](/userinfo/rivanna/overview/).
 
 # `/project`
 
 The `/project` file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS MyGroups system</a>. `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
 
 **How to request `/project` storage space**
- 
+
 `/project` storage is available by request (via <a href="https://cadre.virginia.edu/user-support" target="_blank">CADRE User Support page</a>) for $60/TB/YR. When filling out the form, the PI can specify the size of the `/project` directory and the name of an existing or new MyGroup that can access this space. We recommend choosing a MyGroup name specific to your group or collaboration for the `/project` directory. This will reduce confusion in the future if you manage multiple MyGroups and directories on other storage systems.
- 
+
 Once the request has been submitted, the PI will receive a notification that the `/project` space has been provisioned within 24 hours. Once the space becomes available, the PI can grant access to lab members by adding them to the MyGroup. Users in the MyGroup will see the directory (`~/project/MyGroup_name`) after logging into Rivanna. Addition and removal of users is managed by the PI of the group.
- 
+
 
 # Data transfer
 
@@ -46,7 +46,7 @@ Once the request has been submitted, the PI will receive a notification that the
 <img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png" alt="nonsecure-storage-options-overview">
 
 <div class="bd-callout bd-callout-warning">
-<b>Secure Copy (scp)</b> 
+<b>Secure Copy (scp)</b>
 <p><code>scp</code> uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. <code>scp</code> can be used with the following syntax:</p>
 <p><code>scp SourceFile mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k</code></p>
 <p><code>scp SourceFile mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name</code></p>
@@ -54,22 +54,22 @@ Once the request has been submitted, the PI will receive a notification that the
 </div>
 
 <div class="bd-callout bd-callout-warning">
-<b>Secure File Transfer Protocol (sftp)</b> 
+<b>Secure File Transfer Protocol (sftp)</b>
 <p><code>sftp</code> is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "https://discuss.rc.virginia.edu/t/secure-file-transfer-protocol-sftp/741" target="_blank">here</a>.</p>
 </div>
 
 <div class="bd-callout bd-callout-warning">
-<b>Filezilla & Cyberduck</b> 
+<b>Filezilla & Cyberduck</b>
 <p><a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a> are open source FTP client software for file management through an interactive graphical user interface. Instructions for using these FTP clients can be found <a href ="https://discuss.rc.virginia.edu/t/file-management-with-an-ftp-client/742" target="_blank">here</a>.</p>
 </div>
 
 <div class="bd-callout bd-callout-warning">
 <b>Globus Connect (Large Data Transfer)</b>
 <p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>.</p>
-</div> 
+</div>
 
 # Non-sensitive Data Storage Systems
- 
+
 `/home`, `/scratch`, and `/project` storage are based on a Linux file system. Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 
 - <a href="https://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855" target="_blank">A Gentle Introduction</a>
