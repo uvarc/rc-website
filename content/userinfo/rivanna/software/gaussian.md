@@ -40,7 +40,7 @@ The GaussView graphical interface is available on Rivanna.  Users must log in th
 ```
 gview &
 ```
-The ampersand (&) returns the terminal to input mode while GaussView is running.  Most use of GaussView will probably fit within the limits for frontend interactive use, but for very long or large GV jobs, please submit an ijob (interactive job).
+The ampersand (&) returns the terminal to input mode while GaussView is running.  Most use of GaussView will probably fit within the limits for frontend interactive use, but for very long or large GV jobs, please submit an [ijob (interactive job)](/userinfo/rivanna/slurm/#submitting-an-interactive-job).
 
 # Single-Core SLURM Script
 This is a SLURM job command file to run a Gaussian 16 batch job. In this example, the Gaussian 16 input is in the file `h2o.com`.  If no output file is specified, it will go to `h2o.log`.  The script assumes it will be submitted from the user's `/scratch` directory and the input file is in the same directory.  Gaussian also tends to use a lot of memory, so we make sure to request the amount per core that is available.  We pass that to g16 with the `-m` flag.  Be sure the value is less than or equal to what you request from SLURM.

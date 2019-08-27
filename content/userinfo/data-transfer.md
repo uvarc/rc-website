@@ -3,7 +3,7 @@ date = "2018-05-01T10:08:34-05:00"
 tags = [
 	"data-transfer",
 	"globus",
-	"ftp"
+	"sftp"
 	]
 categories = ["userinfo"]
 images = [""]
@@ -76,7 +76,7 @@ The data transfer method you choose heavily relies on where the data are current
 				<p align="center"><b>Data Transfer Methods</b></p>
 				<ul>
 					<li><a href="#globus">Globus Connect</a></li>
-					<li><a href="#ftp">FTP Client</a></li>
+					<li><a href="#sftp">SFTP Client</a></li>
 					<li><a href="#command-line">Command Line Tools</a></li>
 				</ul>
 			</td>
@@ -163,7 +163,7 @@ The data transfer method you choose heavily relies on where the data are current
 				<p align="center"><b>Data Transfer Methods</b></p>
 				<ul>
 					<li><a href="#globus">Globus Connect</a></li>
-					<li><a href="#ftp">FTP Client</a></li>
+					<li><a href="#sftp">SFTP Client</a></li>
 					<li><a href="#command-line">Command Line Tools</a></li>
 				</ul>
 			</td>
@@ -241,15 +241,15 @@ The data transfer method you choose heavily relies on where the data are current
 	</div>
 </div>
 
-<a id="ftp"></a>
+<a id="sftp"></a>
 <div class="card-group">
 	<div class="card">
 		<div class="card-block">
 			<h4 class="card-title">Filezilla & Cyberduck</h4>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/FileZilla_logo.svg/1024px-FileZilla_logo.svg.png" alt="FileZilla" style="max-width:16%; margin-left:2rem; float:right;" />
-			<h6 class="card-subtitle mb-2 text-muted">File transfer protocol (FTP) solutions</h6>
+			<h6 class="card-subtitle mb-2 text-muted">File transfer protocol (SFTP) solutions</h6>
 				<p class="card-text">
-					FTP clients such as Filezilla and Cyberduck give researchers a graphical user interface to transfer data between their lab computers and a remote storage location. These apps allow for drag-and-drop file manipulation.
+					SFTP clients such as Filezilla and Cyberduck give researchers a graphical user interface to transfer data between their lab computers and a remote storage location. These apps allow for drag-and-drop file manipulation.
 				</p>
 			<a href="https://discuss.rc.virginia.edu/t/file-management-with-an-ftp-client/742" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
 		</div>
