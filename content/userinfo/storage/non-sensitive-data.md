@@ -20,7 +20,7 @@ draft = false
 
 # `/scratch`
 
-`/scratch` is a Lustre high performance parallel filesystem accessible via the Rivanna login and compute nodes. All Rivanna HPC users are granted 10TB for free and can access this space within Rivanna at `/scratch/$USER`, where `$USER` is an individual's UVa computing ID.
+`/scratch` is a Lustre high performance parallel filesystem accessible via the Rivanna login and compute nodes. All Rivanna HPC users are granted 10TB for free and can access this space within Rivanna at `/scratch/$USER`, where `$USER` is an individual's UVa computing ID. **The `/scratch` directory is not intended for long-term data storage. Files are flagged for removal 90 days after last modification timestamp.**
 
 **How to request /home and /scratch space**
 
