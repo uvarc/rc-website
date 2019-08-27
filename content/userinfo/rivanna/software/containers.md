@@ -187,12 +187,14 @@ singularity run --nv $containerdir/tensorflow-1.12.0-py36.simg $containerdir/ten
 # Interaction with the Host File System
 
 Each container provides its own file system.  In addition, directories of the host file system can be overlayed onto the container file system so that host files can be accessed from within the container.  These overlayed directories are referred to as bind paths or bind points.  The following system directories of the host are exposed inside a container:
+
 * `/tmp`
 * `/proc`
 * `/sys`
 * `/dev`
 
 In addition, the following user directories are overlayed onto each container by default on Rivanna:
+
 * `/home`
 * `/scratch`
 * `/nv`
