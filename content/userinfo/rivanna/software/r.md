@@ -27,9 +27,9 @@ author = "RC Staff"
 # Loading the R module
 On Rivanna, R is available through our module system.  To load R, simply type:
 
-`
+```
 module load gcc R
-`
+```
 
 Notice that we included gcc in the load command. There are two reasons why including gcc is important:
 1.  R was built with the gcc compiler.  Due to its hierarchical layout, the module system must be told which build of R is needed.
@@ -51,7 +51,7 @@ module spider R
 
 RStudio is a development environment for R.  It also is supported through its own module, but you must load a version of R first. For example, to load and run Rstudio, you could type the following:
 
-```bash
+```
 module load gcc R/3.5.1
 module load rstudio
 rstudio &
@@ -64,7 +64,7 @@ RStudio is also available through our web-based portal to Rivanna.  For instruct
 # Submitting a Single-Core Job to the Cluster
 After you have developed your R program, you can submit it to the compute nodes by using a SLURM job script similar to the following: 
 
-```bash
+```
 #!/bin/bash
 #SBATCH -n 1
 #SBATCH -t 01:00:00
@@ -86,7 +86,7 @@ sbatch job.slurm
 # Submitting Multi-Core Jobs to the Cluster
 R programs can be written to use multiple cores on a node.  You will need to ensure that both SLURM and your R code know how many cores it will be using.  To submit a multi-core job to Rivanna, we recommend that the SLURM script be set up in the following way:
 
-```bash
+```
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -115,7 +115,7 @@ options(mc.cores=numCores)
 
 R programs can be distributed across multiple nodes with with MPI (message passing interface) and the appropriate MPI packages.  To run a parallel R job that uses MPI, the SLURM script would be similar to the following:
 
-```bash
+```
 #!/bin/bash
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=10
