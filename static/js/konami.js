@@ -38,7 +38,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 function activateCheats() {
-  document.body.style.backgroundImage = "url('/images/compute-ea4c57a4.png')";
+  document.body.style.backgroundImage = "url('/images/vector-bg.png')";
 
   var audio = new Audio('/data/ok-ikumi.mp3');
   audio.play();
