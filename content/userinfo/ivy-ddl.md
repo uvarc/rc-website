@@ -1,6 +1,6 @@
 +++
 title = "Ivy Domino Data Lab (DDL) Quick Start"
-draft = false
+draft = true
 tags = ["R","python", "Ivy", "Domino", "DDL"]
 date = "2017-05-01T12:35:54-04:00"
 categories = ["userinfo"]
