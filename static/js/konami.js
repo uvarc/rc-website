@@ -38,7 +38,6 @@ document.addEventListener('keydown', function(e) {
 });
 
 function activateCheats() {
-  // document.body.style.backgroundImage = "url('/images/konami-bg.svg')";
   document.body.style.backgroundImage = "url('/images/compute-ea4c57a4.png')";
 
   var audio = new Audio('/data/ok-ikumi.mp3');
