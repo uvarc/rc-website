@@ -43,7 +43,7 @@ Once the request has been submitted, the PI will receive a notification that the
   Non-Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
-<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png" alt="nonsecure-storage-options-overview">
+<img src="/images/storage/storage-nonsecure-apr2019.png" alt="nonsecure-storage-options-overview">
 
 <div class="bd-callout bd-callout-warning">
 <b>Secure Copy (scp)</b>
