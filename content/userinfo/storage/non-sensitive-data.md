@@ -32,7 +32,7 @@ The `/project` file system provides users with a collaborative space for data st
 
 **How to request `/project` storage space**
 
-`/project` storage is available by request (via <a href="https://cadre.virginia.edu/user-support" target="_blank">CADRE User Support page</a>) for $60/TB/YR. When filling out the form, the PI can specify the size of the `/project` directory and the name of an existing or new MyGroup that can access this space. We recommend choosing a MyGroup name specific to your group or collaboration for the `/project` directory. This will reduce confusion in the future if you manage multiple MyGroups and directories on other storage systems.
+`/project` storage can be purchased for {{% storage-pricing project %}}/TB/YR by using [this form](https://auth.uvasomrc.io/site/storage.php). When filling out the form, the PI can specify the size of the `/project` directory and the name of an existing or new MyGroup that can access this space. We recommend choosing a MyGroup name specific to your group or collaboration for the `/project` directory. This will reduce confusion in the future if you manage multiple MyGroups and directories on other storage systems.
 
 Once the request has been submitted, the PI will receive a notification that the `/project` space has been provisioned within 24 hours. Once the space becomes available, the PI can grant access to lab members by adding them to the MyGroup. Users in the MyGroup will see the directory (`~/project/MyGroup_name`) after logging into Rivanna. Addition and removal of users is managed by the PI of the group.
 
