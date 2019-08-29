@@ -23,7 +23,7 @@ type = "form"
 
   <div class="form-item form-group form-item form-type-select form-group"> 
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="category" name="category">
+    <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
       <option value="" selected="selected">- Select -</option>
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
