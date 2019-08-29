@@ -65,8 +65,7 @@ The following slurm script shows how to run 10 single core Matlab jobs using slu
 # multiple parallel Matlab jobs, either from within Matlab or as a
 # complied executable, using a Slurm job array
 
-#SBATCH --array=1-10
-##SBATCH --reservation=maintenance
+#SBATCH --array=1-100
 #SBATCH -p standard
 #SBATCH -A hpc_build
 #SBATCH --time=00:10:00
