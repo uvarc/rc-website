@@ -43,5 +43,6 @@ function activateCheats() {
   var audio = new Audio('/data/ok-ikumi.mp3');
   audio.play();
 
-  alert("Secret UVARC features activated!");
+  $('#konami-modal').delay(5000).modal('toggle')
+  // alert("Secret UVARC features activated!");
 }
