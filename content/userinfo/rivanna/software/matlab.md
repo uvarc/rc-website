@@ -97,13 +97,16 @@ nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
 # Run Matlab parallel program
-matlab -nodisplay -singleCompThread -r "pcalc2Test1(${nLoops},${nDim},'${slurmID}'); exit;"
+matlab -nodisplay -singleCompThread -r \
+"pcalc2Test1(${nLoops},${nDim},'${slurmID}'); exit;"
 
 # remove workspace
 rm -rf /scratch/teh1m/slurmJobs/$slurmID
 ```
 
-where the example code `pcalc2Test1.m` is shown below. Note that passing the `slurmID` variable allows the function to save output to a job-specific filenames.
+where the example code `pcalc2Test1.m` is shown below.
+Note that passing the `slurmID` variable allows the function to save
+output to a job-specific filenames.
 
 ```
 function  [a]=pcalc2Test1(nloop,ndim,jobid)
@@ -133,7 +136,8 @@ end
 time=toc;
 
 % output timing infomration and host
-stringOut1=sprintf('time = %f, nloop = %d on host %s \n',time,nloop,getenv('HOSTNAME'));
+stringOut1= ...
+sprintf('time = %f, nloop = %d on host %s \n',time,nloop,getenv('HOSTNAME'));
 
 % save output to a file
 fid = fopen(['pcalc_' jobid '.out'],'wt');
@@ -145,7 +149,7 @@ fclose(fid);
 If you have a job that can be structured to run across multiple cores, you can greatly speed up the time to your results. The Parallel Computing Toolkit allows you to distribute for loops over multiple cores using parfor and other parallel constructs in MATLAB. For more information on using the Parallel Computing Toolbox in MATLAB see the [MathWorks documentation](https://www.mathworks.com/products/parallel-computing.html).
 
 # Parallel Matlab on a Single Compute Node
-The example function pcalc2.m above uses a  parallel for loop (parfor) in MATLAB. To run your parallel MATLAB code across multiple cores on one compute node, you can use a slurm script similar to the following:
+The example function `pcalc2.m` above uses a  parallel for loop (parfor) in MATLAB. To run your parallel MATLAB code across multiple cores on one compute node, you can use a slurm script similar to the following:
 
 ```
 #!/bin/bash
@@ -208,7 +212,7 @@ matlab -nodisplay -nosplash -r "setPool1;pcalc2(10000,${slurmArrayID});exit;"
 # remove workspace
 rm -rf /scratch/teh1m/slurmJobs/$slurmArrayID
 ```
-The Matlab script setPool1.m get the number of workers allocated by Slurm and
+The Matlab script `setPool1.m` gets the number of workers allocated by Slurm and
 uses that to create the pool of Matlab workers.
 ```
 % Script setPool1.m
@@ -216,19 +220,23 @@ uses that to create the pool of Matlab workers.
 % create a local cluster object
 pc = parcluster('local');
 
-% explicitly set the JobStorageLocation to the temp directory that was created in your sbatch script
-pc.JobStorageLocation = strcat('/scratch/teh1m/slurmJobs/', getenv('slurmArrayID'));
+% explicitly set the JobStorageLocation to the temp directory that was created
+% in your sbatch script
+pc.JobStorageLocation=strcat('/scratch/teh1m/slurmJobs/',getenv('slurmArrayID'));
 
 % start the matlabpool with maximum available workers
 % control how many workers by setting ntasks in your sbatch script
 parpool(pc, str2num(getenv('numWorkers')))
 ```
 # Parallel Matlab on Multiple Compute Nodes
-To run Matlab parallel jobs that require more cores than are available on one compute node, you can launch the Matlab desktop on one of the Rivanna login nodes. The following MATLAB setup script will create the cluster profile for your account on Rivanna:
+To run Matlab parallel jobs that require more cores than are available on
+one compute node, you can launch the Matlab desktop on one of the Rivanna
+login nodes. The following MATLAB setup script will create the cluster profile
+for your account on Rivanna:
 
 ```
-% The following set of commands are for running parallel Matlab programs across compute nodes
-% of the Rivanna cluster using Matlab R2017a or R2017b.
+% The following set of commands are for running parallel Matlab programs
+% across compute nodes of the Rivanna cluster using Matlab R2018b or R2019a.
 
 % For running parallel Matlab programs using on one compute node using multiple
 % cores, use the slurm script runParallelNode.slurm
@@ -238,9 +246,11 @@ module load matlab
 
 % The following commands are executed from within Matlab
 
-configCluster  % set up initial configuration for running multi-node Matlab parallel jobs
-               % on Rivanna. This just needs to be done once, and its saved in Matlab’s
-               % parallel profiles
+% set up initial configuration for running multi-node Matlab parallel jobs
+% on Rivanna. This just needs to be done once, and its saved in Matlab’s
+% parallel profiles.
+
+configCluster
 
 
 c = parcluster; % Create a cluster object based on the profile
@@ -257,7 +267,8 @@ c.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
 % send email when job ends
 c.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
 ```
-Once this configuration is complete you can submit jobs to the cluster using the following commands:
+Once this configuration is complete you can submit jobs to the cluster using
+the following commands:
 
 ```
 c=parcluster
