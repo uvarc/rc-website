@@ -52,3 +52,8 @@ ignoreCache = true
 [outputs]
   home = [ "HTML", "JSON"]
   page = [ "HTML"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
