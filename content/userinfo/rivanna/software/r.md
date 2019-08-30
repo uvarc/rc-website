@@ -55,7 +55,7 @@ module load rstudio
 rstudio & 
 ```
 
-RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server page](https://arcs.virginia.edu/rstudio-server).  
+RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server access via OpenOnDemand](https://www.rc.virginia.edu/userinfo/rivanna/login/#web-based-access).
 
 # Submitting a Single-Core Job to the Cluster
 After you have developed your R program, you can submit it to the compute nodes by using a SLURM job script similar to the following: 

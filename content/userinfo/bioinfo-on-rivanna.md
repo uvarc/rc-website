@@ -12,7 +12,7 @@ images = [""]
 <p class=lead>UVA research community has access to numerous bioinformatics software installed and ready-to-use on Rivanna. They are all available via the LMod module system. In addition, 
 <br/>
 <br/>
-<a href="https://arcs.virginia.edu/software-list" target="blank">Click here</a> for a comprehensive list.
+<a href="https://www.rc.virginia.edu/userinfo/rivanna/software/complete-list/" target="blank">Click here</a> for a comprehensive list.
 </p>
 
 <hr size=1 />

@@ -31,9 +31,9 @@ You must always set up your environment in order to use MATLAB.  To load the mos
 
 `module load matlab`
 
-You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [FastX](https://arcs.virginia.edu/fastx) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through SLURM.
+You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through SLURM.
 
-If your Matlab job requires user interactions via the Matlab interface, you should use [ijob](https://arcs.virginia.edu/slurm#interactive_job) to request an interactive job.
+If your Matlab job requires user interactions via the Matlab interface, you should use [ijob](https://www.rc.virginia.edu/userinfo/rivanna/slurm/#submitting-an-interactive-job) to request an interactive job.
 
 # Submitting a SLURM Batch Job using a single core
 
