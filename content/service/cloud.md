@@ -8,7 +8,7 @@ tags = [
   "containers"
 ]
 draft = false
-date = "2018-09-11T14:18:18-05:00"
+date = "2019-08-21T14:18:18-05:00"
 title = "Cloud Solutions"
 description = ""
 author = "Staff"
@@ -74,7 +74,7 @@ Here are some of the building blocks available using cloud infrastructure:
     <tr>
       <th scope="row" style="width:25%;">Serverless Web</th>
       <td>
-SoM faculty and researchers can share data, findings, tools and other resources from static HTML
+UVA faculty and researchers can share data, findings, tools and other resources from static HTML
 content published to object storage. This simple method for publishing can cost only a few dollars a month and requires
 no server management. 
       </td>

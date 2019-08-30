@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Bioinformatics & Genomics"
-date = "2017-01-31T09:48:06-05:00"
+date = "2019-08-21T09:48:06-05:00"
 draft = true
 tags = ["bioinformatics","genomics"]
 categories = ["services"]
@@ -16,7 +16,7 @@ images = [""]
 
 # Next-generation sequence data analyis
 
-RC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://arcs.virginia.edu/rivanna)/[Ivy](/userinfo/ivy/)/[Cloud](/service/cloud/). Typical analyses include (but not limited to) – 
+RC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://www.rc.virginia.edu/userinfo/rivanna/overview/)/[Ivy](/userinfo/ivy/)/[Cloud](/service/cloud/). Typical analyses include (but not limited to) – 
 
 * Genome assembly, reference-based and/or de-novo
 * Whole-Genome/Exome sequence analysis for variant calling/annotation
@@ -40,9 +40,9 @@ UVA has two local HPC facilities available to researchers: **Rivanna** and **Ivy
     <h4 class="card-title">Rivanna</h4>
     <h6 class="card-subtitle mb-2 text-muted">High-performance Computing Cluster</h6>
     <p class="card-text">
-	All faculty, research staff and graduate students of UVA have access to Rivanna, university's high-performance computing system with 290+ compute nodes (6500+ cores) for high-throughput multithreaded jobs, parallel jobs as well as memmory intensive large-scale data analyses. The architecture is specifically suited for large scale distributed genomic data analysis, with <a href="https://arcs.virginia.edu/software-list" style="color:#0275d8";>100+</a> bioinformatics software packages installed and ready to use.   
+	All faculty, research staff and graduate students of UVA have access to Rivanna, university's high-performance computing system with 290+ compute nodes (6500+ cores) for high-throughput multithreaded jobs, parallel jobs as well as memmory intensive large-scale data analyses. The architecture is specifically suited for large scale distributed genomic data analysis, with <a href="https://www.rc.virginia.edu/userinfo/rivanna/software/overview/" style="color:#0275d8";>100+</a> bioinformatics software packages installed and ready to use.   
     </p>
-	<a href="https://arcs.virginia.edu/rivanna" class="card-link" target="_blank"><button class="btn  btn-primary">Learn more</button></a>
+	<a href="https://www.rc.virginia.edu/userinfo/rivanna/overview/" class="card-link" target="_blank"><button class="btn  btn-primary">Learn more</button></a>
   </div>
 </div>
 
