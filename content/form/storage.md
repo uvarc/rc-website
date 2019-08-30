@@ -167,10 +167,12 @@ type = "form"
     </div>
   </div>
 
+  <!--
   <div class="form-item form-type-textarea form-group"> 
     <label class="control-label" for="estimated-cost">Estimated Total Cost </label>
     <input class="form-control form-text required" type="text" id="estimated-cost" name="estimated-cost" value="$" size="200" maxlength="200" readonly style="width:20%;" />
   </div>
+  -->
 
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="financial-contact">Financial Contact </label>
