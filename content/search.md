@@ -8,7 +8,7 @@ description = ""
 title = "Search Results"
 draft = false
 type = "search"
-
+private = true
 +++
 
 <script>

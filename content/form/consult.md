@@ -8,7 +8,7 @@ description = ""
 title = "Consultation Request"
 draft = true
 type = "form"
-
+private = true
 +++
 
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
