@@ -3,7 +3,7 @@ description = ""
 title = "Ivy Secure Environment"
 draft = false
 date = "2019-06-04T17:45:12-05:00"
-tags = ["ivy","vm","hipaa","linux","windows","ddl","security","jupyter"]
+tags = ["ivy","vm","hipaa","linux","windows","security","jupyter"]
 categories = ["userinfo"]
 images = [""]
 author = "RC Staff"  
@@ -13,7 +13,7 @@ author = "RC Staff"
 {{% callout %}}
 #### Ivy
 
-Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) and Domino Data Lab.
+Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) and Jupyter Notebooks.
 Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA requirements</a>.
 
 {{% /callout %}}
@@ -23,8 +23,7 @@ Researchers can use Ivy to process and store sensitive data with the confidence 
 Ivy consists of two separate computing environments. Access to one environment does not automatically grant access to the others:
 
 * [Virtual Machines](#virtual-machines)
-* [Domino Data Lab](#domino-data-lab) - Retiring Soon!
-* Jupyter Notebooks - Coming Soon!
+* [JupyterLab Notebooks](#jupyterlab-notebooks) - Coming Soon!
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
 * [HIPAA Compliance](#hipaa-compliance)
 * [Coming Soon - Secure HPC](#coming-soon-secure-hpc)
@@ -258,19 +257,25 @@ Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst
 
 - - -
 
-# Domino Data Lab
+# JupyterLab Notebooks
 
-<img src="https://somrc.virginia.edu/images/domino-data-lab.png" align="right" style="max-width:25%;" />
+<div class="alert alert-danger">
+  As of August 31, 2019 Domino Data Lab will no longer be available within Ivy. Existing projects should be migrated to a virtual machine.
+  Interactive data sessions will be available using Jupyter Notebooks (coming soon!)
+</div>
 
-As of August 31, 2019 Domino Data Lab will no longer be available within Ivy. Existing projects should be migrated to a virtual machine.
-
-Interactive data sessions will be available using Jupyter Notebooks (coming soon!)
+{{% callout %}}
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" align="right" style="max-width:20%;" />
+JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones.
+<br clear=all />
+[<button class="btn btn-success">Learn more about Jupyter</button>](https://jupyter.org/)
+{{% /callout %}}
 
 - - -
 
 # Data Transfer In/Out of Ivy
 
-Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “Ivy Central Storage” (ICS), which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service. DDL users do not have access to Ivy Central Storage.
+Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “Ivy Central Storage” (ICS), which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
 
 <img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/95f8dfa70374a538d3e940dc69cf960d9e5ac9a6.png" />
 
