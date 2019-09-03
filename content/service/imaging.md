@@ -112,8 +112,8 @@ for image processing, such as ANTsR, EBImage, and magick.
 
 We currently offer online tutorials for image processing with Fiji/ImageJ. 
 
-* [Introduction to Scientific Image Processing with Fiji/ImageJ](https://workshops.somrc.virginia.edu/lesson/intro-fiji-imagej/)
-* [Fiji/ImageJ: Script Development for Image Processing](https://workshops.somrc.virginia.edu/lesson/fiji-scripting/)
+* [Introduction to Scientific Image Processing with Fiji/ImageJ](https://workshops.rc.virginia.edu/lesson/intro-fiji-imagej/)
+* [Fiji/ImageJ: Script Development for Image Processing](https://workshops.rc.virginia.edu/lesson/fiji-scripting/)
 
 Stay tuned for additional online tutorials as well as in-person workshops listed on our education 
 platform, [CADRE Academy!](https://education.cadre.virginia.edu/#/home)
@@ -165,7 +165,7 @@ in augmented and virtual reality.
 
 We currently offer several online tutorials for data visualization.
 
-* [MATLAB Data Processing and Visualization](https://workshops.somrc.virginia.edu/lesson/matlab-data-visualization/)
+* [MATLAB Data Processing and Visualization](https://workshops.rc.virginia.edu/lesson/matlab-data-visualization/)
 
 Stay tuned for additional online tutorials as well as our workshops posted on [CADRE Academy!](https://education.cadre.virginia.edu/#/home)
 
