@@ -29,7 +29,7 @@ various systems are available to researchers.</p>
   <div class="card">
     <div class="card-block">
       <h4 class="card-title">Ivy Secure Platform</h4>
-        <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), Domino Data Lab, and Apache Spark.</p>
+        <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), JupyterLab Notebooks, and Apache Spark.</p>
         <a href="/userinfo/ivy/" class="btn btn-warning" style="color:white;">Get started on Ivy</a>
     </div>
   </div>

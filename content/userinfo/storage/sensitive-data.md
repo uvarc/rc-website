@@ -31,11 +31,6 @@ website</a>. Users are granted 1TB for free and may request additional space in 
 
 Additionally, Ivy VMs have 100GB of block storage. All software and applications installed on the VM take up some of this block storage space.
 
-# DDL Storage
-DDL storage is available for researchers who choose to manage their projects in [Domino Data Lab](/userinfo/ivy/#domino-data-lab) (DDL). Data stored here can only be manipulated within DDL and is not visible to an Ivy VM. Data can be transferred to DDL storage using DDL's [drag-and-drop interface](/userinfo/ivy-ddl/#uploading-files) or <a href="https://discuss.rc.virginia.edu/t/how-do-i-upload-large-files-to-domino-data-lab-through-the-cli/74" target="_blank">command-line tools</a>.
-
-Each DDL project is granted 500GB of storage space. Access to DDL can be requested using the Ivy account request <a href="https://cadre.virginia.edu/node/add/account-request" target="_blank">form</a>.
-
 # Data Transfer to Ivy
 
 <p>To ensure that files are always secure, data can only be transferred to Ivy through the Ivy secure data transfer node (DTN) using Globus Connect. <a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Ivy Central Storage, Ivy's data parking zone. Data can then be moved between ICS and VM NAS or block storage as needed. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found on the UVa Research Computing <a href="https://discuss.rc.virginia.edu/t/ivy-secure-dtn-transfer-sensitive-data/771" target="_blank">FAQ knowledgebase</a>.</p>

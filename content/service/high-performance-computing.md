@@ -56,7 +56,7 @@ Examples of service areas include:
     Ivy provides a secure computing environment for all user levels. It is made up of two separate components, each HIPAA-compliant out of the box:
     <ul>
       <li>VMware virtual compute instances (Windows Server 2012R2 / CentOS Linux)</li>
-      <li>Domino Data Lab</li>
+      <li>JupyterLab Notebooks</li>
     </ul>
     </p>
     <a href="/userinfo/ivy/" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
