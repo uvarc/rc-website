@@ -8,7 +8,7 @@ tags = ["rivanna","maintenance","feature"]
 categories = ["feature"]
 type = "post"
 url = "/maintenance"
-summary = "Behold the power of `/scratch`! Learn about the upcoming maintenance of the Rivanna HPC platform and how it will affect you."
+summary = "Learn about the upcoming maintenance of the Rivanna HPC platform and how it will affect you."
 +++
 
 <p class=lead>Rivanna will be down for maintenance on Tuesday, September 17, beginning at 6 a.m. You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Rivanna is expected to return to service by 6 a.m. on Wednesday, September 18.</p>
