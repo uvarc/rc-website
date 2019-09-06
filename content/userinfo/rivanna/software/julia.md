@@ -52,6 +52,6 @@ One work-around is to force Julia to see only my local directory the first time 
 > using Pkg
 > Pkg.add("Plots")
 ```
-Julia will update the registry only in my local directory, /home/$USER/.julia. After that first time, it should aways default to /home/$USER/.julia – there would be no need to do the *deleteatat!* command after that first time.
+Julia will update the registry only in my local directory, /home/$USER/.julia. After that first time, it should aways default to /home/$USER/.julia – there would be no need to do the `deleteatat!` command after that first time.
 
 This approach can be done either at the Julia prompt or in a Jupyter notebook. The only assumption is that that first path in the DEPOT_PATH list is your local directory.
