@@ -46,6 +46,7 @@ Software on Rivanna is accessed via environment **modules** or **containers**.
 
 * [Python](/userinfo/rivanna/software/python)
 * [Perl](/userinfo/rivanna/software/perl)
+* [Julia](/userinfo/rivanna/software/julia)
 * [Matlab](/userinfo/rivanna/software/matlab)
 * [Mathematica](/userinfo/rivanna/software/mathematica)
 * [R & RStudio](/userinfo/rivanna/software/r)
