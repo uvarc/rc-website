@@ -8,6 +8,7 @@ paginate = 20
 disableKinds= ["RSS","404"]
 ignoreCache = true
 # date_format = "January 2, 2006"
+summaryLength = 100
 
 [permalinks]
   post = "/:year/:month/:title/"

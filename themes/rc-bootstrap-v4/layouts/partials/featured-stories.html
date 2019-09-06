@@ -1,0 +1,15 @@
+      <p class=lead>Featured</p>
+      {{ range first 3 (where .Site.Pages "Type" "post") }}
+        {{ if in .Params.categories "feature" }}
+          <a href="{{.Permalink}}" style="text-decoration:none;color:black;"><div>
+            <h5>{{.Title | markdownify }}</h5>
+            <p style="font-size:0.9em;margin-bottom:30px;">
+              {{ if .Params.summary }}
+                {{ .Params.summary | markdownify }}
+              {{ else }}
+                {{ slicestr .Summary 0 260 | markdownify }}
+              {{ end}}
+            </p>
+          </div></a>
+        {{ end }}
+      {{ end }}
