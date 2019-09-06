@@ -5,11 +5,12 @@
             <h5>{{.Title | markdownify }}</h5>
             <p style="font-size:0.9em;margin-bottom:30px;">
               {{ if .Params.summary }}
-                {{ .Params.summary | markdownify }}
+                {{ .Params.summary | markdownify }}<br />&nbsp;&nbsp;<a href="{{.Permalink}}">[Read More]</a>
               {{ else }}
-                {{ slicestr .Summary 0 260 | markdownify }} &nbsp;&nbsp;<a href="{{.Permalink}}">[Read More]</a>
+                {{ slicestr .Summary 0 260 | markdownify }}<br />&nbsp;&nbsp;<a href="{{.Permalink}}">[Read More]</a>
               {{ end}}
             </p>
           </div></a>
         {{ end }}
       {{ end }}
+      <p style="font-size:90%;"><a href="/post/" style="text-decoration:none;">More Recent Announcements &raquo;</a></p>
