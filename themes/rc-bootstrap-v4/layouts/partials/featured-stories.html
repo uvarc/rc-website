@@ -7,7 +7,7 @@
               {{ if .Params.summary }}
                 {{ .Params.summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
               {{ else }}
-                {{ slicestr .Summary 0 260 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+                {{slicestr .Summary 0 260 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
               {{ end}}
             </p>
           </div></a>

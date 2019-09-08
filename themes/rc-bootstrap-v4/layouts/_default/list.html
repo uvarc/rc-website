@@ -3,7 +3,7 @@
 <!-- {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }} -->
 {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
 {{ range $paginator.Pages }}
-{{ .Render "summary" }}
+  {{ .Render "summary" }}
 {{ end }}
 
 {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
