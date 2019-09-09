@@ -46,7 +46,8 @@ $(document).ready(function() {
 });
 
 function checkStatusMessages() {
-    $.getJSON('https://slash-commands.uvarc.io/status/messages', function(data) {
+    // $.getJSON('https://slash-commands.uvarc.io/status/messages', function(data) {
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/messages, function(data) {
         var messageData = '';
         $.each(data, function(key, value) {
             var messageBody = value.body;
@@ -78,7 +79,8 @@ function refreshStatusTable(){
 }
 
 function refreshJobsTable(){
-    $.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data) {
+    // $.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data) {
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/jobs', function(data) {
         var jobData = '';
         $.each(data, function(key, value) {
             jobData += '<tr>';
