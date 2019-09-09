@@ -64,7 +64,8 @@ function checkStatusMessages() {
 }
 
 function refreshStatusTable(){
-    $.getJSON('https://slash-commands.uvarc.io/status/available', function(data) {
+    // $.getJSON('https://slash-commands.uvarc.io/status/available', function(data) {
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/health', function(data) {
         var statusData = '';
         $.each(data, function(key, value) {
             statusData += '<tr>';
