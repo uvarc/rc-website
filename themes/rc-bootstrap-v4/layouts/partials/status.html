@@ -38,16 +38,15 @@
 $(document).ready(function() {
     $("#status-message").hide();
     refreshStatusTable();
-    setInterval(refreshStatusTable, 5000);
+    setInterval(refreshStatusTable, 10000);
     refreshJobsTable();
-    setInterval(refreshJobsTable, 5000);
+    setInterval(refreshJobsTable, 10000);
     checkStatusMessages();
-    setInterval(checkStatusMessages, 5000);
+    setInterval(checkStatusMessages, 10000);
 });
 
 function checkStatusMessages() {
-    // $.getJSON('https://slash-commands.uvarc.io/status/messages', function(data) {
-    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/messages, function(data) {
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/messages', function(data) {
         var messageData = '';
         $.each(data, function(key, value) {
             var messageBody = value.body;
@@ -65,7 +64,6 @@ function checkStatusMessages() {
 }
 
 function refreshStatusTable(){
-    // $.getJSON('https://slash-commands.uvarc.io/status/available', function(data) {
     $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/health', function(data) {
         var statusData = '';
         $.each(data, function(key, value) {
@@ -79,7 +77,6 @@ function refreshStatusTable(){
 }
 
 function refreshJobsTable(){
-    // $.getJSON('https://slash-commands.uvarc.io/status/rivanna', function(data) {
     $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/jobs', function(data) {
         var jobData = '';
         $.each(data, function(key, value) {
