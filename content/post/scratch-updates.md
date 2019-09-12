@@ -13,7 +13,7 @@ summary = "As part of the September 2019 maintenance for Rivanna, the Research C
 {{% callout %}}
 As part of the [September 2019 maintenance](/maintenance/) for Rivanna, the Research Computing team will replace the `/scratch` file system with new, faster hardware.  
 
-Research Computing systems engineers will transfer your files that are no older than 90 days from your currect `/scratch` folder to the new file system.
+Research Computing systems engineers will transfer your files that are no older than 90 days from your current `/scratch` folder to the new file system.
 
 As a reminder, `/scratch` is temporary storage and **files older than 90 days are subject to purging**.
 {{% /callout %}}
