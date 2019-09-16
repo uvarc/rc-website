@@ -4,7 +4,7 @@ images = [""]
 author = "RC Staff"
 description = ""
 title = "Data Analysis"
-date = "2017-01-30T15:36:37-05:00"
+date = "2019-08-30T15:36:37-05:00"
 draft = false
 tags = ["R","Python","data analysis"]
 
@@ -40,7 +40,7 @@ tags = ["R","Python","data analysis"]
       </td>
     </tr>
     <tr>
-      <th scope="row" style="width:25%;font-weight:bold;">Image Analysis</th>
+      <th scope="row" style="width:25%;font-weight:bold;"><a href="/service/imaging/">Image Analysis</a></th>
       <td>
  Image analysis can be a computationally intensive process involving a multitude of preprocessing steps to remove noise from the data. Whether your images come from a microscope or MRI scanner, we can help you streamline your image analysis workflow.   
       </td>
