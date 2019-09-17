@@ -8,7 +8,7 @@ tags = ["rivanna","maintenance","feature"]
 categories = ["feature"]
 type = "post"
 url = "/maintenance"
-summary = "Learn what you need to know about the Sept. 17, 2019 maintenance.
+summary = "Learn what you need to know about the Sept. 17, 2019 maintenance."
 +++
 
 <p class=lead>Rivanna was down for maintenance on Tuesday, September 17.  The items below summarize the changes that may impact the users of th Rivanna.
@@ -17,13 +17,13 @@ summary = "Learn what you need to know about the Sept. 17, 2019 maintenance.
 
 ## I.  **Changes to scratch**
 
-System engineers have installed a new /scratch system, and have transferred any files/data that were less than 90 days old from the old scratch system to the new /scratch system.  
-Files older than 90 days must be transferred manually from /oldscratch to the new system. 
+System engineers have installed a new /scratch system, and have transferred any files/data that were less than 90 days old from the old scratch system to the new /scratch system.
+Files older than 90 days must be transferred manually from /oldscratch to the new system.
 Instructions for tranferring your files are available here.
-RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, September 18 offering technical support for those who need help moving their files from /oldscratch to /scratch. 
+RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, September 18 offering technical support for those who need help moving their files from /oldscratch to /scratch.
 
 ## II.  **Updates to software modules**
-### * _New and updated modules_:  
+### * _New and updated modules_:
     The following software modules either replace older versions or are new to Rivanna:
 
     - pgi/19.7
@@ -33,7 +33,7 @@ RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, Septe
     - cuda/10
 
 
-### * _Removed modules_:  
+### * _Removed modules_:
     The following software modules were removed from Rivanna during the maintenance period:
 
     - cellranger/2.1.1 (replaced with cellranger/3.1.0)
@@ -64,7 +64,7 @@ RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, Septe
 
 > ```module spider abinit/8.2.2```
 
-states that     
+states that
 
 > ```You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
 
@@ -72,7 +72,7 @@ states that
 
 This statement tells you that both intel and intelmpi must be loaded in order to load abinit.
 
--  The operating system was updated, and (as usual) users who compile their own code may need to recompile.   
+-  The operating system was updated, and (as usual) users who compile their own code may need to recompile.
 This also applies to anyone who _**installed R packages which are dependent on openMPI**_. Those packages will need to be reinstalled.
 
 -  Libraries and applications built with the Intel 18.0 compiler and IntelMPI libraries have been re-compiled to enable execution on compute nodes with Kinghts Landing Many-Core processors in the `knl` queue.
