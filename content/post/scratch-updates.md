@@ -33,18 +33,22 @@ If you normally use Open on-Demand or JupyterLab, you can open a Terminal Window
 
 
 ## * Transferring a single file
+{{% callout %}}
 To copy a file from /oldscratch to /scratch, you can type (for example):
 
 > ```
 rsync -av /oldscratch/$USER/somefolder/myFile /scratch/$USER/somefolder
 ```
+{{% /callout %}}
 
 ## * Transferring a folder
+{{% callout %}}
 To copy a folder and its contents from /oldscratch to /scratch, you can type (for example):
 
 > ```
 rsync -av /oldscratch/$USER/somefolder/ /scratch/$USER/somefolder
 ```
+{{% /callout %}}
 
 Notice the trailing slash at the end of the first `somefolder`, and the lack of a slash at the end of the second `somefolder`.  The placement of the slash is important for how the transfer is done.
 
