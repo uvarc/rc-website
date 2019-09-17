@@ -22,18 +22,18 @@ Files older than 90 days must be transferred manually from `/oldscratch` to `/sc
 Instructions for transferring your files are available [here] (https://www.rc.virginia.edu/2019/09/changes-to-/scratch-september-2019/).
 
 
-RC staff will be in **Brown Library, room 145, from 3 to 5 p.m. on Wednesday, September 18**, offering technical support for those who need help moving their files to `/scratch`.**
+RC staff will be in **Brown Library, room 145, from 3 to 5 p.m. on Wednesday, September 18**, offering technical support for those who need help moving their files to `/scratch`.
 
 ## II.  **Updates to software modules**
 ### _New and updated modules_:
 
 The following software modules either replace older versions or are new to Rivanna: <br>
 
-     - pgi/19.7 
+     - pgi/19.7
 
      - openmpi/3.1.4 (for all GCC and PGI compilers)
 
-     - cuda/10 
+     - cuda/10.1.168
 
 For `openmpi`, be sure to remove any reference to 2.1.5 in your scripts.
 
@@ -65,12 +65,12 @@ The following software modules were removed from Rivanna during the maintenance 
 ## III. **Other important changes**
 
 {{% callout %}}
-The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi. 
+The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi.
 {{% /callout %}}
 
-Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module. 
+Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module.
 
-For example,  `module spider abinit/8.2.2`  states that 
+For example,  `module spider abinit/8.2.2`  states that
 
      You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
      intel/18.0  intelmpi/18.0
