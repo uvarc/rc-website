@@ -20,10 +20,11 @@ As a reminder, `/scratch` is temporary storage and **files older than 90 days ar
 
 #  Transferring your files
 
-
 The path to the old scratch file system is
 
-``` /oldscratch/$USER ```
+> ```
+/oldscratch/$USER 
+```
 
 To transfer your files, we recommend using the `rsync` command within a shell (i.e., Terminal Window).
 
