@@ -9,7 +9,7 @@ categories = ["userinfo"]
 images = [""]
 +++
 
-<p class=lead>UVA Research Computing can help you find the right system for your computational workloads. 
+<p class=lead>UVA Research Computing can help you find the right system for your computational workloads.
 From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure,
 various systems are available to researchers.</p>
 
@@ -17,7 +17,7 @@ various systems are available to researchers.</p>
 <div class="card">
   <div class="card-block">
     <h4 class="card-title">Rivanna HPC</h4>
-      <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. Please see the ARCS page for how to begin working in Rivanna.</p>
+      <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. </p>
       <a href="/userinfo/rivanna/overview/" class="btn btn-warning" style="color:white">Get Started on Rivanna</a>
   </div>
 </div>
