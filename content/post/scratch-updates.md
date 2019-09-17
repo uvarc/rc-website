@@ -18,15 +18,20 @@ The Research Computing systems engineers did transfer files that were no older t
 As a reminder, `/scratch` is temporary storage and **files older than 90 days are subject to purging**.
 {{% /callout %}}
 
-# Before the September Maintenance
+#  Transferring your files
 
-This is a great opportunity for you to clean out your `/scratch` folder.
 
-Between now and September 17th, we recommend that you:
+The path to the old scratch file system is
+> /oldscratch/$USER
 
- * **Copy** important files to a more permanent location (like `/project` storage)
- * **Delete** any old or obselete files.  But, be careful:  `/scratch` files are not backed up. Deletion is permanent.
- * Use [Globus](/userinfo/globus/) to archive any files to storage outside of the Rivanna system.
+To transfer your files, we recommend using the `rsync` command within a shell (i.e., Terminal Window).
+
+If you normally use Open on-Demand or JupyterLab, you can open a Terminal Window by
+- logging into Open on-Demand (https://rivanna-portal.hpc.virginia.edu);
+- clicking on Files > Home Directory ;
+- clicking on >_ Open in Terminal
+
+
 
 # After the September Maintenance
 
