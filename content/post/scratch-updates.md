@@ -53,6 +53,9 @@ rsync -av /oldscratch/$USER/somefolder/ /scratch/$USER/somefolder
 
 Notice the trailing slash at the end of the first `somefolder`, and the lack of a slash at the end of the second `somefolder`.  The placement of the slash is important for how the transfer is done.
 
+The slash at the end of the first folder refers to the contents of the folder (in this case, all files within `somefolder`).  Whereas, no slash at the end of the second folder instructs the computer to place the files directly in that folder. If you do include a slash at the end of the second folder, the computer will create a new folder under the existing folder. So, you would have
+`/scratch/$USER/somefolder/somefolder`.
+
 
 
 
