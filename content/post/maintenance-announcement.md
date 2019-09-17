@@ -2,13 +2,13 @@
 author = "Staff"
 date = "2019-09-15T05:18:25-05:00"
 expiryDate = "2019-09-18T23:00:01-05:00"
-title = "Maintenance After-Effects 9/17/2019"
+title = "Important Notes from the 17 September Rivanna Maintenance"
 draft = false
 tags = ["rivanna","maintenance","feature"]
 categories = ["feature"]
 type = "post"
 url = "/maintenance"
-summary = "Learn what you need to know about the Sept. 17, 2019 maintenance."
+summary = "Learn about recent changes implemented during the Sept. 17, 2019 maintenance."
 +++
 
 <p class=lead>Rivanna was down for maintenance on Tuesday, September 17.  The items below summarize the changes that may impact the users of Rivanna.
