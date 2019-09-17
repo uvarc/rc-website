@@ -7,13 +7,13 @@ title = "Changes to `/scratch` September 2019"
 draft = false
 tags = ["maintenance","storage","scratch"]
 categories = ["feature"]
-summary = "As part of the September 2019 maintenance for Rivanna, the Research Computing team will replace the `/scratch` file system with new, faster hardware."
+summary = "As part of the September 2019 maintenance for Rivanna, the Research Computing team replaced the `/scratch` file system with new, faster hardware."
 +++
 
 {{% callout %}}
-As part of the [September 2019 maintenance](/maintenance/) for Rivanna, the Research Computing team will replace the `/scratch` file system with new, faster hardware.  
+As part of the September 2019 maintenance for Rivanna, the Research Computing team replaced the `/scratch` file system with newer hardware.
 
-Research Computing systems engineers will transfer your files that are no older than 90 days from your current `/scratch` folder to the new file system.
+The Research Computing systems engineers did transfer files that were no older than 90 days to the new system.  If you are missing files, you will be able to retrieve them until the next maintenance (planned for December 2019).
 
 As a reminder, `/scratch` is temporary storage and **files older than 90 days are subject to purging**.
 {{% /callout %}}
