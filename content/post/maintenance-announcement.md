@@ -31,7 +31,7 @@ The following software modules either replace older versions or are new to Rivan
 
      - pgi/19.7 
 
-     - openmpi/3.1.4 (for all GCC and PGI compilers 
+     - openmpi/3.1.4 (for all GCC and PGI compilers)
 
      - cuda/10 
 
