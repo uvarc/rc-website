@@ -24,17 +24,20 @@ RC staff will be in Brown Library, room 145, from 3 to 5 p.m. on Wednesday, Sept
 
 ## II.  **Updates to software modules**
 ### _New and updated modules_:
-    The following software modules either replace older versions or are new to Rivanna:
+{{% callout %}}
+The following software modules either replace older versions or are new to Rivanna:
 
     - pgi/19.7
 
     - openmpi/3.1.4 (for all GCC and PGI compilers -- be sure to remove any referece to 2.1.5 in your scripts)
 
     - cuda/10
+{{% /callout %}}
 
 
 ### _Removed modules_:
-    The following software modules were removed from Rivanna during the maintenance period:
+{{% callout %}}
+The following software modules were removed from Rivanna during the maintenance period:
 
     - cellranger/2.1.1 (replaced with cellranger/3.1.0)
 
@@ -55,7 +58,7 @@ RC staff will be in Brown Library, room 145, from 3 to 5 p.m. on Wednesday, Sept
     - povray/3.7.0.7
 
     - rstudio/0.98.1103
-
+{{% /callout %}}
 
 ## III. **Other important changes**
 
@@ -66,9 +69,9 @@ RC staff will be in Brown Library, room 145, from 3 to 5 p.m. on Wednesday, Sept
 
 states that
 
-     ```You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
+     You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
 
-     intel/18.0  intelmpi/18.0 ```
+     intel/18.0  intelmpi/18.0
 
 This statement tells you that both intel and intelmpi must be loaded in order to load abinit.
 
