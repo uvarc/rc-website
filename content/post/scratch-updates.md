@@ -2,8 +2,8 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2019-09-02T15:18:25-05:00"
-title = "Changes to `/scratch` 17 Sept 2019"
+date = "2019-09-15T15:18:25-05:00"
+title = "Changes to `/scratch` September 2019"
 draft = true
 tags = ["maintenance","storage","scratch"]
 categories = ["feature"]
