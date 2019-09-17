@@ -13,13 +13,15 @@ summary = "As part of the September 2019 maintenance for Rivanna, the Research C
 {{% callout %}}
 As part of the September 2019 maintenance for Rivanna, the Research Computing team replaced the `/scratch` file system with newer hardware.
 
-The Research Computing systems engineers did transfer files that were no older than 90 days to the new system.  If you are missing files, you will be able to retrieve them until the next maintenance (planned for December 2019).
+The systems engineers did transfer files that were no older than 90 days to the new system.  
 
-As a reminder, `/scratch` is temporary storage and **files older than 90 days are subject to purging**.
+If you are missing files, you will be able to retrieve them until the next maintenance (planned for December 2019).
+
+As a reminder, `/scratch` is temporary storage and <b>files older than 90 days are subject to purging</b>.
 {{% /callout %}}
 
 #  Transferring your files
-The path to the old scratch file system is `/oldscratch/$USER`.
+The path to your folder on the old scratch file system is `/oldscratch/$USER`. This folder has been changed to read-only.  You do not have permission to write or execute files from that location.
 
 To transfer your files, we recommend using the `rsync` command within a shell (i.e., Terminal Window).
 
