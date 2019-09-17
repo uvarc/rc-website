@@ -72,8 +72,7 @@ Run the command `module spider <YOUR_MODULE>` to view module load instructions f
 
 For example,  `module spider abinit/8.2.2`  states that 
 
-_You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load._
-
+     You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
      intel/18.0  intelmpi/18.0
 
 
