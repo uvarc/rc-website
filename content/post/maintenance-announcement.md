@@ -25,60 +25,60 @@ RC staff will be in Brown Library, room 145, from 3 to 5 p.m. on Wednesday, Sept
 ## II.  **Updates to software modules**
 ### _New and updated modules_:
 {{% callout %}}
-The following software modules either replace older versions or are new to Rivanna:
+> The following software modules either replace older versions or are new to Rivanna:
 
-    - pgi/19.7
+    * pgi/19.7
 
-    - openmpi/3.1.4 (for all GCC and PGI compilers -- be sure to remove any referece to 2.1.5 in your scripts)
+    * openmpi/3.1.4 (for all GCC and PGI compilers -- be sure to remove any referece to 2.1.5 in your scripts)
 
-    - cuda/10
+    * cuda/10
 {{% /callout %}}
 
 
 ### _Removed modules_:
+
+> The following software modules were removed from Rivanna during the maintenance period:
 {{% callout %}}
-The following software modules were removed from Rivanna during the maintenance period:
+    * cellranger/2.1.1 (replaced with cellranger/3.1.0)
 
-    - cellranger/2.1.1 (replaced with cellranger/3.1.0)
+    * exonerate/2.2.0 (replaced with exonerate/2.4.0)
 
-    - exonerate/2.2.0 (replaced with exonerate/2.4.0)
+    * fenics/20180
 
-    - fenics/20180
+    * fluent/18.2 (is now part of the ansys/18.2 module)
 
-    - fluent/18.2 (is now part of the ansys/18.2 module)
+    * fiji/1.51
 
-    - fiji/1.51
+    * miniconda/4.3.21-py3.6 (replaced by anaconda/5.2.0-py3.6
 
-    - miniconda/4.3.21-py3.6 (replaced by anaconda/5.2.0-py3.6
+    * openmpi/2.1.5 (replaced by openmpi/3.1.5)
 
-    - openmpi/2.1.5 (replaced by openmpi/3.1.5)
+    * pgi/17.5 &  pgi/18.10 (replaced by pgi/19.7)
 
-    - pgi/17.5 &  pgi/18.10 (replaced by pgi/19.7)
+    * povray/3.7.0.7
 
-    - povray/3.7.0.7
-
-    - rstudio/0.98.1103
+    * rstudio/0.98.1103
 {{% /callout %}}
 
 ## III. **Other important changes**
 
 
--  The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi. Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module. For example,
+* The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi. Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module. For example,
 
       ```module spider abinit/8.2.2```
 
-states that
+> states that
 
-     You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
+>>     You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
 
      intel/18.0  intelmpi/18.0
 
-This statement tells you that both intel and intelmpi must be loaded in order to load abinit.
+> This statement tells you that both intel and intelmpi must be loaded in order to load abinit.
 
--  The operating system was updated, and (as usual) users who compile their own code may need to recompile.
+*  The operating system was updated, and (as usual) users who compile their own code may need to recompile.
 This also applies to anyone who _**installed R packages which are dependent on openMPI**_. Those packages will need to be reinstalled.
 
--  Libraries and applications built with the Intel 18.0 compiler and IntelMPI libraries have been re-compiled to enable execution on compute nodes with Kinghts Landing Many-Core processors in the `knl` queue.
+*  Libraries and applications built with the Intel 18.0 compiler and IntelMPI libraries have been re-compiled to enable execution on compute nodes with Kinghts Landing Many-Core processors in the `knl` queue.
 
 
 If you have any questions or concerns about these changes, please contact our user support team at [hpc-support@virginia.edu](mailto:hpc-support@virginia.edu) prior to 9/17/2019.
