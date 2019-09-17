@@ -11,19 +11,19 @@ url = "/maintenance"
 summary = "Learn what you need to know about the Sept. 17, 2019 maintenance."
 +++
 
-<p class=lead>Rivanna was down for maintenance on Tuesday, September 17.  The items below summarize the changes that may impact the users of th Rivanna.
+<p class=lead>Rivanna was down for maintenance on Tuesday, September 17.  The items below summarize the changes that may impact the users of Rivanna.
 </p>
 
 
 ## I.  **Changes to scratch**
 
-System engineers have installed a new /scratch system, and have transferred any files/data that were less than 90 days old from the old scratch system to the new /scratch system.
-Files older than 90 days must be transferred manually from /oldscratch to the new system.
+System engineers have installed a new `/scratch` file system, and have transferred to the new system any files/data that were less than 90 days old on the former scratch system (now called `/oldscratch`).
+Files older than 90 days must be transferred manually from `/oldscratch` to the `/scratch`.
 Instructions for tranferring your files are available here.
-RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, September 18 offering technical support for those who need help moving their files from /oldscratch to /scratch.
+RC staff will be in Brown Library, room 145, from 3 to 5 p.m. on Wednesday, September 18, offering technical support for those who need help moving their files to `/scratch`.
 
 ## II.  **Updates to software modules**
-### * _New and updated modules_:
+### _New and updated modules_:
     The following software modules either replace older versions or are new to Rivanna:
 
     - pgi/19.7
@@ -33,7 +33,7 @@ RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, Septe
     - cuda/10
 
 
-### * _Removed modules_:
+### _Removed modules_:
     The following software modules were removed from Rivanna during the maintenance period:
 
     - cellranger/2.1.1 (replaced with cellranger/3.1.0)
@@ -62,13 +62,13 @@ RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, Septe
 
 -  The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi. Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module. For example,
 
-> ```module spider abinit/8.2.2```
+      ```module spider abinit/8.2.2```
 
 states that
 
-> ```You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
+     ```You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
 
-> intel/18.0  intelmpi/18.0 ```
+     intel/18.0  intelmpi/18.0 ```
 
 This statement tells you that both intel and intelmpi must be loaded in order to load abinit.
 
