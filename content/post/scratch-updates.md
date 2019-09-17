@@ -32,7 +32,7 @@ If you normally use Open on-Demand or JupyterLab, you can open a Terminal Window
 - clicking on >_ Open in Terminal
 
 
-### Transferring a single file
+## Transferring a single file
 {{% callout %}}
 To copy a file from /oldscratch to /scratch, you can type (for example):
 
@@ -41,7 +41,7 @@ rsync -av /oldscratch/$USER/somefolder/myFile /scratch/$USER/somefolder
 ```
 {{% /callout %}}
 
-### Transferring a folder
+## Transferring a folder
 {{% callout %}}
 To copy a folder and its contents from /oldscratch to /scratch, you can type (for example):
 

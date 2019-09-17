@@ -22,6 +22,17 @@ Files older than 90 days must be transferred manually from /oldscratch to the ne
 Instructions for tranferring your files are available here.
 RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, September 18 offering technical support for those who need help moving their files from /oldscratch to /scratch. 
 
+## II.  **Updates to software modules**
+
+
+### * _New and updated modules_:  
+    The following software modules either replace older versions or are new to Rivanna:
+
+    - pgi/19.7
+
+    - openmpi/3.1.4 (for all GCC and PGI compilers -- be sure to remove any referece to 2.1.5 in your scripts)
+
+    - cuda/10
 
 - System engineers will be installing a new `/scratch` system with 1.4PB of storage space. Users are encouraged to back up their important data prior to the maintenance period. `/scratch` is intended as temporary storage (90 days maximum) for active work. It is not backed up and needs to be purged periodically in order to maintain a stable HPC environment. Research Computing offers a number of affordable, long-term data storage options to researchers. The current `/scratch` system will be renamed `/oldscratch` after the maintenance period. Data on `/oldscratch` that has been saved within the last 90 days will automatically transfer to the upgraded `/scratch` system. Data older than 90 days will need to be manually transferred from `/oldscratch` to the new system. RC staff will be in Brown Library, Room 145 from 3-5 p.m. on Wednesday, September 18 offering technical support for those who need help moving their files from `/oldscratch` to `/scratch`.</li>
 - Users who compile their own code may need to recompile after the maintenance period. A complete list of compiling instructions will be posted on the RC website by noon on 18 September.</li>
