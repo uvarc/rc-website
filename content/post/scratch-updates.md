@@ -2,40 +2,60 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2019-09-02T15:18:25-05:00"
+date = "2019-09-15T15:18:25-05:00"
 title = "Changes to `/scratch` September 2019"
 draft = false
 tags = ["maintenance","storage","scratch"]
 categories = ["feature"]
-summary = "As part of the September 2019 maintenance for Rivanna, the Research Computing team will replace the `/scratch` file system with new, faster hardware."
+summary = "As part of the September 2019 maintenance for Rivanna, the Research Computing team replaced the `/scratch` file system with new, faster hardware."
 +++
 
 {{% callout %}}
-As part of the [September 2019 maintenance](/maintenance/) for Rivanna, the Research Computing team will replace the `/scratch` file system with new, faster hardware.  
+As part of the September 2019 maintenance for Rivanna, the Research Computing team replaced the `/scratch` file system with newer hardware.
 
-Research Computing systems engineers will transfer your files that are no older than 90 days from your current `/scratch` folder to the new file system.
+The Research Computing systems engineers did transfer files that were no older than 90 days to the new system.  If you are missing files, you will be able to retrieve them until the next maintenance (planned for December 2019).
 
 As a reminder, `/scratch` is temporary storage and **files older than 90 days are subject to purging**.
 {{% /callout %}}
 
-# Before the September Maintenance
+#  Transferring your files
+The path to the old scratch file system is `/oldscratch/$USER`.
 
-This is a great opportunity for you to clean out your `/scratch` folder.
+To transfer your files, we recommend using the `rsync` command within a shell (i.e., Terminal Window).
 
-Between now and September 17th, we recommend that you:
+If you normally use Open on-Demand or JupyterLab, you can open a Terminal Window by
 
- * **Copy** important files to a more permanent location (like `/project` storage)
- * **Delete** any old or obselete files.  But, be careful:  `/scratch` files are not backed up. Deletion is permanent.
- * Use [Globus](/userinfo/globus/) to archive any files to storage outside of the Rivanna system.
+- logging into Open on-Demand (https://rivanna-portal.hpc.virginia.edu);
 
-# After the September Maintenance
+- clicking on Files > Home Directory ;
 
-After September 17th, the `/scratch` folder that you are using now will be available until the winter maintenance (planned for December 2019).  You will have the ability to copy any missing files to the new `/scratch` hardware.  
+- clicking on >_ Open in Terminal
 
-We will post instructions for how you may transfer the missing files after the maintenance.
+
+## Transferring a single file
+{{% callout %}}
+To copy a file from /oldscratch to /scratch, you can type (for example):
+
+> ```
+rsync -av /oldscratch/$USER/somefolder/myFile /scratch/$USER/somefolder
+```
+{{% /callout %}}
+
+## Transferring a folder
+{{% callout %}}
+To copy a folder and its contents from /oldscratch to /scratch, you can type (for example):
+
+> ```
+rsync -av /oldscratch/$USER/somefolder/ /scratch/$USER/somefolder
+```
+{{% /callout %}}
+
+Notice the trailing slash at the end of the first `somefolder`, and the lack of a slash at the end of the second `somefolder`.  The placement of the slash is important for how the transfer is done.
+
+The slash at the end of the first folder refers to the contents of the folder (in this case, all files within `somefolder`).  Whereas, no slash at the end of the second folder instructs the computer to place the files directly in that folder. If you do include a slash at the end of the second folder, the computer will create a new folder under the existing folder. So, you would have `/scratch/$USER/somefolder/somefolder`.
 
 # Need Help?
-
 If you have questions or need help with transferring your files, Research Computing will hold a "Clinic on Scratch" on Wednesday, September 18 in Brown Library, room 145 from 3 to 5 pm.  
+
 
 [<button class="btn btn-success">More about scratch</button>](/userinfo/storage/non-sensitive-data/#scratch)

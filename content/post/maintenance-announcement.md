@@ -1,6 +1,6 @@
 +++
 author = "Staff"
-date = "2019-09-03T05:18:25-05:00"
+date = "2019-09-15T05:18:25-05:00"
 expiryDate = "2019-09-18T23:00:01-05:00"
 title = "Scheduled Maintenance 9/17/2019"
 draft = false
@@ -8,15 +8,75 @@ tags = ["rivanna","maintenance","feature"]
 categories = ["feature"]
 type = "post"
 url = "/maintenance"
-summary = "Learn about the upcoming maintenance of the Rivanna HPC platform and how it will affect you."
+summary = "Learn what you need to know about the Sept. 17, 2019 maintenance."
 +++
 
-<p class=lead>Rivanna will be down for maintenance on Tuesday, September 17, beginning at 6 a.m. You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Rivanna is expected to return to service by 6 a.m. on Wednesday, September 18.</p>
+<p class=lead>Rivanna was down for maintenance on Tuesday, September 17.  The items below summarize the changes that may impact the users of th Rivanna.
+</p>
 
-**IMPORTANT MAINTENANCE NOTES:**
 
-- System engineers will be installing a new `/scratch` system with 1.4PB of storage space. Users are encouraged to back up their important data prior to the maintenance period. `/scratch` is intended as temporary storage (90 days maximum) for active work. It is not backed up and needs to be purged periodically in order to maintain a stable HPC environment. Research Computing offers a number of affordable, long-term data storage options to researchers. The current `/scratch` system will be renamed `/oldscratch` after the maintenance period. Data on `/oldscratch` that has been saved within the last 90 days will automatically transfer to the upgraded `/scratch` system. Data older than 90 days will need to be manually transferred from `/oldscratch` to the new system. RC staff will be in Brown Library, Room 145 from 3-5 p.m. on Wednesday, September 18 offering technical support for those who need help moving their files from `/oldscratch` to `/scratch`.</li>
-- Users who compile their own code may need to recompile after the maintenance period. A complete list of compiling instructions will be posted on the RC website by noon on 18 September.</li>
+## I.  **Changes to scratch**
+
+System engineers have installed a new /scratch system, and have transferred any files/data that were less than 90 days old from the old scratch system to the new /scratch system.
+Files older than 90 days must be transferred manually from /oldscratch to the new system.
+Instructions for tranferring your files are available here.
+RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, September 18 offering technical support for those who need help moving their files from /oldscratch to /scratch.
+
+## II.  **Updates to software modules**
+### * _New and updated modules_:
+    The following software modules either replace older versions or are new to Rivanna:
+
+    - pgi/19.7
+
+    - openmpi/3.1.4 (for all GCC and PGI compilers -- be sure to remove any referece to 2.1.5 in your scripts)
+
+    - cuda/10
+
+
+### * _Removed modules_:
+    The following software modules were removed from Rivanna during the maintenance period:
+
+    - cellranger/2.1.1 (replaced with cellranger/3.1.0)
+
+    - exonerate/2.2.0 (replaced with exonerate/2.4.0)
+
+    - fenics/20180
+
+    - fluent/18.2 (is now part of the ansys/18.2 module)
+
+    - fiji/1.51
+
+    - miniconda/4.3.21-py3.6 (replaced by anaconda/5.2.0-py3.6
+
+    - openmpi/2.1.5 (replaced by openmpi/3.1.5)
+
+    - pgi/17.5 &  pgi/18.10 (replaced by pgi/19.7)
+
+    - povray/3.7.0.7
+
+    - rstudio/0.98.1103
+
+
+## III. **Other important changes**
+
+
+-  The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi. Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module. For example,
+
+> ```module spider abinit/8.2.2```
+
+states that
+
+> ```You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
+
+> intel/18.0  intelmpi/18.0 ```
+
+This statement tells you that both intel and intelmpi must be loaded in order to load abinit.
+
+-  The operating system was updated, and (as usual) users who compile their own code may need to recompile.
+This also applies to anyone who _**installed R packages which are dependent on openMPI**_. Those packages will need to be reinstalled.
+
+-  Libraries and applications built with the Intel 18.0 compiler and IntelMPI libraries have been re-compiled to enable execution on compute nodes with Kinghts Landing Many-Core processors in the `knl` queue.
+
 
 If you have any questions or concerns about these changes, please contact our user support team at [hpc-support@virginia.edu](mailto:hpc-support@virginia.edu) prior to 9/17/2019.
 
