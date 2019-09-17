@@ -2,7 +2,7 @@
 author = "Staff"
 date = "2019-09-15T05:18:25-05:00"
 expiryDate = "2019-09-18T23:00:01-05:00"
-title = "Scheduled Maintenance 9/17/2019"
+title = "Maintenance After-Effects 9/17/2019"
 draft = false
 tags = ["rivanna","maintenance","feature"]
 categories = ["feature"]
@@ -19,10 +19,10 @@ summary = "Learn what you need to know about the Sept. 17, 2019 maintenance."
 
 System engineers have installed a new `/scratch` file system, and have transferred to the new system any files/data that were less than 90 days old on the former scratch system (now called `/oldscratch`).
 Files older than 90 days must be transferred manually from `/oldscratch` to `/scratch`.
-Instructions for tranferring your files are available [here] (https://www.rc.virginia.edu/2019/09/changes-to-/scratch-september-2019/).
+Instructions for transferring your files are available [here] (https://www.rc.virginia.edu/2019/09/changes-to-/scratch-september-2019/).
 
 
-**RC staff will be in Brown Library, room 145, from 3 to 5 p.m. on Wednesday, September 18, offering technical support for those who need help moving their files to `/scratch`.**
+RC staff will be in **Brown Library, room 145, from 3 to 5 p.m. on Wednesday, September 18**, offering technical support for those who need help moving their files to `/scratch`.**
 
 ## II.  **Updates to software modules**
 ### _New and updated modules_:
@@ -35,7 +35,7 @@ The following software modules either replace older versions or are new to Rivan
 
      - cuda/10 
 
-For `openmpi`, be sure to remove any referece to 2.1.5 in your scripts.
+For `openmpi`, be sure to remove any reference to 2.1.5 in your scripts.
 
 ### _Removed modules_:
 
@@ -51,11 +51,11 @@ The following software modules were removed from Rivanna during the maintenance 
 
     - fiji/1.51
 
-    - miniconda/4.3.21-py3.6 (replaced by anaconda/5.2.0-py3.6
+    - miniconda/4.3.21-py3.6 (replaced with anaconda/5.2.0-py3.6
 
-    - openmpi/2.1.5 (replaced by openmpi/3.1.5)
+    - openmpi/2.1.5 (replaced with openmpi/3.1.4)
 
-    - pgi/17.5 &  pgi/18.10 (replaced by pgi/19.7)
+    - pgi/17.5 &  pgi/18.10 (replaced with pgi/19.7)
 
     - povray/3.7.0.7
 
@@ -89,7 +89,7 @@ This also applies to anyone who installed R packages which are dependent on open
 {{% /callout %}}
 
 {{% callout %}}
-Libraries and applications built with the Intel 18.0 compiler and IntelMPI libraries have been re-compiled to enable execution on compute nodes with Kinghts Landing Many-Core processors in the `knl` queue.
+Libraries and applications built with the Intel 18.0 compiler and IntelMPI libraries have been re-compiled to enable execution on compute nodes with Knights Landing Many-Core processors in the `knl` queue.
 {{% /callout %}}
 
 
