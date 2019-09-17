@@ -23,8 +23,6 @@ Instructions for tranferring your files are available here.
 RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, September 18 offering technical support for those who need help moving their files from /oldscratch to /scratch. 
 
 ## II.  **Updates to software modules**
-
-
 ### * _New and updated modules_:  
     The following software modules either replace older versions or are new to Rivanna:
 
@@ -37,7 +35,6 @@ RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, Septe
 
 ### * _Removed modules_:  
     The following software modules were removed from Rivanna during the maintenance period:
-
 
     - cellranger/2.1.1 (replaced with cellranger/3.1.0)
 
@@ -62,21 +59,25 @@ RC staff will be in Brown Library, room 145 from 3 to 5 p.m. on Wednesday, Septe
 
 ## III. **Other important changes**
 
--       The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi. Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module. For example,
 
->``` module spider abinit/8.2.2```
+-  The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi. Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module. For example,
+
+> ```module spider abinit/8.2.2```
 
 states that     
-> You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
 
-> ```intel/18.0  intelmpi/18.0 ```
+> ```You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
+
+> intel/18.0  intelmpi/18.0 ```
 
 This statement tells you that both intel and intelmpi must be loaded in order to load abinit.
 
--       The operating system was updated, and (as usual) users who compile their own code may need to recompile.   
+-  The operating system was updated, and (as usual) users who compile their own code may need to recompile.   
 This also applies to anyone who _**installed R packages which are dependent on openMPI**_. Those packages will need to be reinstalled.
 
--       Libraries and applications built with the Intel 18.0 compiler and IntelMPI libraries have been re-compiled to enable execution on compute nodes with Kinghts Landing Many-Core processors in the `knl` queue.
+-  Libraries and applications built with the Intel 18.0 compiler and IntelMPI libraries have been re-compiled to enable execution on compute nodes with Kinghts Landing Many-Core processors in the `knl` queue.
+
+
 If you have any questions or concerns about these changes, please contact our user support team at [hpc-support@virginia.edu](mailto:hpc-support@virginia.edu) prior to 9/17/2019.
 
 - - -
