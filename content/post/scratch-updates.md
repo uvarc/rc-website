@@ -22,6 +22,7 @@ As a reminder, `/scratch` is temporary storage and **files older than 90 days ar
 
 
 The path to the old scratch file system is
+
 > /oldscratch/$USER
 
 To transfer your files, we recommend using the `rsync` command within a shell (i.e., Terminal Window).
@@ -32,8 +33,20 @@ If you normally use Open on-Demand or JupyterLab, you can open a Terminal Window
 - clicking on >_ Open in Terminal
 
 
+## Transferring a single file
+To copy a file from /oldscratch to /scratch, you can type (for example):
 
-# After the September Maintenance
+> ```
+rsync -av /oldscratch/$USER/somefolder/myFile /scratch/$USER/somefolder
+```
+
+## Transferring a folder
+To copy a folder and its contents from /oldscratch to /scratch, you can type (for example):
+
+> ```
+rsync -av /oldscratch/$USER/somefolder/ /scratch/$USER/somefolder
+```
+
 
 After September 17th, the `/scratch` folder that you are using now will be available until the winter maintenance (planned for December 2019).  You will have the ability to copy any missing files to the new `/scratch` hardware.  
 
