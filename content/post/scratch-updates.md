@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2019-09-02T15:18:25-05:00"
+date = "2019-09-15T15:18:25-05:00"
 title = "Changes to `/scratch` September 2019"
 draft = false
 tags = ["maintenance","storage","scratch"]
@@ -19,12 +19,7 @@ As a reminder, `/scratch` is temporary storage and **files older than 90 days ar
 {{% /callout %}}
 
 #  Transferring your files
-
-The path to the old scratch file system is
-
-> ```
-/oldscratch/$USER 
-```
+The path to the old scratch file system is `/oldscratch/$USER`.
 
 To transfer your files, we recommend using the `rsync` command within a shell (i.e., Terminal Window).
 
@@ -37,14 +32,14 @@ If you normally use Open on-Demand or JupyterLab, you can open a Terminal Window
 - clicking on >_ Open in Terminal
 
 
-## Transferring a single file
+## * Transferring a single file
 To copy a file from /oldscratch to /scratch, you can type (for example):
 
 > ```
 rsync -av /oldscratch/$USER/somefolder/myFile /scratch/$USER/somefolder
 ```
 
-## Transferring a folder
+## * Transferring a folder
 To copy a folder and its contents from /oldscratch to /scratch, you can type (for example):
 
 > ```
@@ -56,11 +51,7 @@ Notice the trailing slash at the end of the first `somefolder`, and the lack of 
 The slash at the end of the first folder refers to the contents of the folder (in this case, all files within `somefolder`).  Whereas, no slash at the end of the second folder instructs the computer to place the files directly in that folder. If you do include a slash at the end of the second folder, the computer will create a new folder under the existing folder. So, you would have
 `/scratch/$USER/somefolder/somefolder`.
 
-
-
-
 # Need Help?
-
 If you have questions or need help with transferring your files, Research Computing will hold a "Clinic on Scratch" on Wednesday, September 18 in Brown Library, room 145 from 3 to 5 pm.  
 
 [<button class="btn btn-success">More about scratch</button>](/userinfo/storage/non-sensitive-data/#scratch)
