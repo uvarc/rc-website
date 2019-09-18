@@ -24,17 +24,17 @@ images = [""]
 # Typical Use Cases
 
 <ul>
-  <li>Independent applications - Such as static HTML websites, interactive or data-driven web applications and databases.</li>
-  <li>Applications in support of HPC jobs - Some workflows in HPC jobs require supplemental services in order to run, such as relational databases, key-value stores, or reference APIs.</li>
+  <li class=lead><b>Standalone microservices or small stacks</b> - Such as static HTML websites, interactive or data-driven web applications and databases.</li>
+  <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run, such as relational databases, key-value stores, or reference APIs.</li>
 </ul>
 
 - - -
 
 # Eligibility
 
-{{% highlight %}}
-Custom containers must be for **research purposes only** and must pass basic security checks. Containers may not contain passwords, SSH keys, API keys, or other sensitive information.
-{{% /highlight %}}
+<div class="alert alert-danger" role="alert">
+Microservices and custom containers must be for **research purposes only** and must pass basic security checks. Containers may not contain passwords, SSH keys, API keys, or other sensitive information.
+</div>
 
 - - -
 
