@@ -58,6 +58,7 @@ Custom containers must be for **research purposes only** and must pass basic sec
         <ul>
           <li>Static HTML [<a target="_new" href="http://bioterms.org/">demo</a>]
           <li>Flask or Django apps [<a target="_new" href="http://bartweb.org/">demo</a>] 
+          <li>RESTful APIs
           <li>Expose Project storage [<a target="_new" href="http://big.databio.org/">demo</a>]
         </ul>
       </td>
@@ -78,7 +79,7 @@ Custom containers must be for **research purposes only** and must pass basic sec
       <th scope="row" style="text-align:center;"><img style="max-width:4.5rem;" src="/images/mysql_PNG9.png" /></th>
       <td>MySQL Database</td>
       <td>Grounds only</td>
-      <td>A stable, easy to use relational database. Campus-access only. Run MySQL in support of your HPC projects in Rivanna or web containers.</td>
+      <td>A stable, easy to use relational database. Run MySQL in support of your HPC projects in Rivanna or web containers.</td>
     </tr>
     <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:6rem;" src="https://dcos.uvasomrc.io/images/mongodb.png" /></th>
