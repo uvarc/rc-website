@@ -17,12 +17,7 @@ summary = "Learn about recent changes implemented during the Sept. 17, 2019 main
 
 ## I.  **Changes to scratch**
 
-System engineers have installed a new `/scratch` file system, and have transferred to the new system any files/data that were less than 90 days old on the former scratch system (now called `/oldscratch`).
-Files older than 90 days must be transferred manually from `/oldscratch` to `/scratch`.
-Instructions for transferring your files are available [here] (https://www.rc.virginia.edu/2019/09/changes-to-/scratch-september-2019/).
-
-
-RC staff will be in **Brown Library, room 145, from 3 to 5 p.m. on Wednesday, September 18**, offering technical support for those who need help moving their files to `/scratch`.
+System engineers have installed a new `/scratch` file system, and have transferred to the new system any files/data that were less than 90 days old on the former scratch system.
 
 ## II.  **Updates to software modules**
 ### _New and updated modules_:
