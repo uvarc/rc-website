@@ -2,13 +2,13 @@
 author = "Staff"
 date = "2019-09-15T05:18:25-05:00"
 expiryDate = "2019-09-18T23:00:01-05:00"
-title = "Maintenance After-Effects 9/17/2019"
+title = "Important Notes from the 17 September Rivanna Maintenance"
 draft = false
 tags = ["rivanna","maintenance","feature"]
 categories = ["feature"]
 type = "post"
 url = "/maintenance"
-summary = "Learn what you need to know about the Sept. 17, 2019 maintenance."
+summary = "Learn about recent changes implemented during the Sept. 17, 2019 maintenance."
 +++
 
 <p class=lead>Rivanna was down for maintenance on Tuesday, September 17.  The items below summarize the changes that may impact the users of Rivanna.
@@ -17,23 +17,18 @@ summary = "Learn what you need to know about the Sept. 17, 2019 maintenance."
 
 ## I.  **Changes to scratch**
 
-System engineers have installed a new `/scratch` file system, and have transferred to the new system any files/data that were less than 90 days old on the former scratch system (now called `/oldscratch`).
-Files older than 90 days must be transferred manually from `/oldscratch` to `/scratch`.
-Instructions for transferring your files are available [here] (https://www.rc.virginia.edu/2019/09/changes-to-/scratch-september-2019/).
-
-
-RC staff will be in **Brown Library, room 145, from 3 to 5 p.m. on Wednesday, September 18**, offering technical support for those who need help moving their files to `/scratch`.**
+System engineers have installed a new `/scratch` file system, and have transferred to the new system any files/data that were less than 90 days old on the former scratch system.
 
 ## II.  **Updates to software modules**
 ### _New and updated modules_:
 
 The following software modules either replace older versions or are new to Rivanna: <br>
 
-     - pgi/19.7 
+     - pgi/19.7
 
      - openmpi/3.1.4 (for all GCC and PGI compilers)
 
-     - cuda/10 
+     - cuda/10.1.168
 
 For `openmpi`, be sure to remove any reference to 2.1.5 in your scripts.
 
@@ -65,12 +60,12 @@ The following software modules were removed from Rivanna during the maintenance 
 ## III. **Other important changes**
 
 {{% callout %}}
-The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi. 
+The loading of some software modules now requires preloading of a dependency, such as a compiler or version of mpi.
 {{% /callout %}}
 
-Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module. 
+Run the command `module spider <YOUR_MODULE>` to view module load instructions for a particular application module.
 
-For example,  `module spider abinit/8.2.2`  states that 
+For example,  `module spider abinit/8.2.2`  states that
 
      You will need to load all module(s) on any one of the lines below before the "abinit/8.2.2" module is available to load.
      intel/18.0  intelmpi/18.0
