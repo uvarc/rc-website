@@ -38,7 +38,7 @@ Custom containers must be for **research purposes only** and must pass basic sec
 
 - - -
 
-# Common Deployments
+# Common Scenarios
 
 <table class="table">
   <thead>
@@ -51,22 +51,28 @@ Custom containers must be for **research purposes only** and must pass basic sec
   </thead>
   <tbody>
     <tr>
+      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="https://dcos.uvasomrc.io/images/nginx-500x500.png" /></th>
+      <td>NGINX Web Server</td>
+      <td>Public</td>
+      <td>A fast web server that can run
+        <ul>
+          <li>Static HTML [<a target="_new" href="http://bioterms.org/">demo</a>]
+          <li>Flask or Django apps [<a target="_new" href="http://bartweb.org/">demo</a>] 
+          <li>Expose Project storage [<a target="_new" href="http://big.databio.org/">demo</a>]
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:6rem;" src="/images/apache_logo.jpg" /></th>
       <td>Apache Web Server</td>
       <td>Public</td>
       <td>An extremely popular web server that can run your static HTML, Flask or Django apps, or expose files stored in Project storage.</td>
     </tr>
     <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="https://dcos.uvasomrc.io/images/nginx-500x500.png" /></th>
-      <td>NGINX Web Server</td>
-      <td>Public</td>
-      <td>A fast web server that can run your static HTML, Flask or Django apps, or expose files stored in Project storage.</td>
-    </tr>
-    <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/shiny-server.png" /></th>
       <td>Shiny Server</td>
       <td>Public</td>
-      <td>Runs R-based web applications and offers a dynamic, data-driven user interface. <a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new">See a demo</a>.</td>
+      <td>Runs R-based web applications and offers a dynamic, data-driven user interface. <a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new">See a <b>demo</b></a> or try using <a target="_new" href="http://lolaweb.databio.org/"><b>LOLAweb</b></a></td>
     </tr>
     <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:4.5rem;" src="/images/mysql_PNG9.png" /></th>
