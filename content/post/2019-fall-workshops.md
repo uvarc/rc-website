@@ -7,7 +7,6 @@ title = "Fall 2019 Workshop Series"
 draft = false
 tags = ["education","workshops","feature"]
 categories = ["feature"]
-
 +++
 
 <img src="/images/compute-code-data.png" alt="Code|Compute|Data" style="max-width:33%;float:right;" />
