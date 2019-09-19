@@ -15,7 +15,7 @@ images = [""]
 <p class=lead>
   Containers are portable, efficient, and disposable, and contain code and any dependencies in a single package.
   Containerized microservices typically run a single process, rather than an entire stack within the same computing environment. 
-  This allows portions of your application to be replaced or scaled as needed.
+  This allows portions of your application to be easily replaced or scaled as needed.
 </p>
 
 <p class=lead>
@@ -141,7 +141,7 @@ Have a more complicated design? [Contact us](http://uvarc.io/support).
 
 - [Microservices Whitepaper](/data/Mesosphere-ebook-Designing-Data-Intensive-Applications-by-Oreilly.pdf) from Mesosphere.
 - [Best Practices for Microsoft Implementations](/data/Best-Practices-for-Microservices-Whitepaper-Research.pdf) from Mulesoft.
-- Here's a brief video summarizing the design principles:
+- Here's a brief talk by Martin Fowler summarizing the design principles:
 
 {{< youtube "2yko4TbC8cI" >}}
 
