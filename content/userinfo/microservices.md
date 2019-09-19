@@ -2,41 +2,56 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2019-09-16T10:08:29-05:00"
+date = "2019-09-18T10:08:29-05:00"
 draft = false
-tags = ["compute","cloud","hpc","containers","dcos"]
+tags = ["compute","cloud","hpc","containers","dcos","hybrid"]
 categories = ["userinfo"]
 images = [""]
 +++
 
 <p class=lead>
-  Containers are portable, efficient, and disposable. Containerized microservices typically run a single process, rather than an entire stack within the same computing environment. 
+  Microservice architecture is an approach to designing and running applications. They are typically run using containers.
+</p>
+<p class=lead>
+  Containers are portable, efficient, and disposable, and contain code and any dependencies in a single package.
+  Containerized microservices typically run a single process, rather than an entire stack within the same computing environment. 
   This allows portions of your application to be replaced or scaled as needed.
 </p>
 
 <p class=lead>
   Research Computing runs containers in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon.
-This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS can also attach to project storage.
+  This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to project storage.
 </p>
 
 <img src="/images/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
 <p class=lead>How are microservices used for research? Typically in one of two ways:</p>
 
-<ul>
+<ol>
   <li class=lead><b>Standalone microservices or small stacks</b> - Such as static HTML websites, interactive or data-driven web applications and APIs, databases, or scheduled task containers.</li>
+    <ul style="margin-bottom:2rem;">
+      <li>Simple web container to serve Project files to the research community or as part of a publication.
+      <li>Reference APIs can handle requests based either on static reference data or databases.
+      <li>Shiny Server presents users with interactive plots to engage with your datasets.
+      <li>A scheduled job can retrieve remote datasets and stage them for processing.
+    </ul>
+
   <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run, such as relational databases, key-value stores, or reference APIs.</li>
-</ul>
+    <ul style="margin-bottom:2rem;">
+      <li>Cromwell/WDL pipelines rely on MySQL databases to track job status and state if a portion of your pipeline fails.
+      <li>Key-value stores in Redis can track an index of values or a running count that is updated as part of a job.
+    </ul>
+</ol>
 
 - - -
 
 # Eligibility
 
 <div class="alert alert-danger" role="alert">
-To be eligible to run your microservice in our infrastructure, you must meet these requirements:
+To be eligible to run your microservice on our infrastructure, you must meet the following requirements:
 
 <ul>
-  <li>Microservices and custom containers must be for <b>research purposes only</b>
+  <li>Microservices and custom containers must be for <b>research purposes only</b>.
   <li>Your container(s) must <b>pass basic security checks</b>. 
   <li>Containers <b>may not contain passwords</b>, SSH keys, API keys, or other sensitive information.
   <li>If bringing your own container, it must be <b>ready to go</b>! We cannot create custom containers for you.
@@ -121,6 +136,18 @@ Have a more complicated design? [Contact us](http://uvarc.io/support).
 - - -
 
 # Learn More
+
+<span class="badge badge-default">1</span> Microservice architecture is a design principle, or a way of building things.
+
+- [Microservices Whitepaper](/data/Mesosphere-ebook-Designing-Data-Intensive-Applications-by-Oreilly.pdf) from Mesosphere.
+- [Best Practices for Microsoft Implementations](/data/Best-Practices-for-Microservices-Whitepaper-Research.pdf) from Mulesoft.
+- Here's a brief video summarizing the design principles:
+
+{{< youtube "2yko4TbC8cI" >}}
+
+<div style="width:100%;height:2rem;"></div>
+
+<span class="badge badge-default">2</span> The most popular way to run microservices is inside of containers:
 
 - We teach workshops on containers and how to use them. Browse the course overview for <a href="https://workshops.rc.virginia.edu/lesson/containers/" target="_new">Introduction to Containers</a> at your own pace.
 - Docker provides an excellent [Getting Started](https://docs.docker.com/get-started/) tutorial.
