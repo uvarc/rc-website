@@ -115,7 +115,7 @@ var set_email = document.getElementById("email").value = email_dec;
 // category
 let category = decodeURI(getParams()["category"]);
 if(category != undefined && category != "undefined") {
-  var set_category = document.getElementById("category").value = category;
+  var set_category = document.getElementById("categories").value = category;
 }
 
 // return message/status
