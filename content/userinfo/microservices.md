@@ -15,7 +15,8 @@ images = [""]
 </p>
 
 <p class=lead>
-  Research Computing runs containers in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS can also attach to project storage.
+  Research Computing runs containers in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon.
+This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS can also attach to project storage.
 </p>
 
 <img src="/images/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
@@ -23,7 +24,7 @@ images = [""]
 <p class=lead>How are microservices used for research? Typically in one of two ways:</p>
 
 <ul>
-  <li class=lead><b>Standalone microservices or small stacks</b> - Such as static HTML websites, interactive or data-driven web applications, databases, or scheduled task containers.</li>
+  <li class=lead><b>Standalone microservices or small stacks</b> - Such as static HTML websites, interactive or data-driven web applications and APIs, databases, or scheduled task containers.</li>
   <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run, such as relational databases, key-value stores, or reference APIs.</li>
 </ul>
 
