@@ -1,7 +1,6 @@
 +++
 author = "Staff"
-date = "2019-09-15T05:18:25-05:00"
-expiryDate = "2019-09-18T23:00:01-05:00"
+date = "2019-09-17T05:18:25-05:00"
 title = "Important Notes from the 17 September Rivanna Maintenance"
 draft = false
 tags = ["rivanna","maintenance","feature"]
