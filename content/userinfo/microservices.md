@@ -47,7 +47,7 @@ images = [""]
 
 - - -
 
-# Microservices in Research
+# Uses for Research
 
 <p class="lead">Microservices are typically used in computational research in one of two ways:</p>
 
@@ -69,21 +69,6 @@ images = [""]
       <li>A scheduled job to refresh a library of reference data from an external source, such as reference genomes or public datasets.
     </ul>
 </ol>
-
-- - -
-
-# Eligibility
-
-<div class="alert alert-danger" role="alert">
-To be eligible to run your microservice on our infrastructure, you must meet the following requirements:
-
-<ul>
-  <li>Microservices and custom containers must be for <b>research purposes only</b>.
-  <li>Your container(s) must <b>pass basic security checks</b>. 
-  <li>Containers <b>may not contain passwords</b>, SSH keys, API keys, or other sensitive information.
-  <li>If bringing your own container, it must be <b>ready to go</b>! We cannot create custom containers for you.
-</ul>
-</div>
 
 - - -
 
@@ -152,6 +137,21 @@ To be eligible to run your microservice on our infrastructure, you must meet the
 </table>
 
 - - - 
+
+# Eligibility
+
+<div class="alert alert-danger" role="alert">
+To be eligible to run your microservice on our infrastructure, you must meet the following requirements:
+
+<ul>
+  <li>Microservices and custom containers must be for <b>research purposes only</b>.
+  <li>Your container(s) must <b>pass basic security checks</b>. 
+  <li>Containers <b>may not contain passwords</b>, SSH keys, API keys, or other sensitive information.
+  <li>If bringing your own container, it must be <b>ready to go</b>! We cannot create custom containers for you.
+</ul>
+</div>
+
+- - -
 
 # Pricing
 
