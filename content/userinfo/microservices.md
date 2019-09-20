@@ -44,6 +44,7 @@ images = [""]
 - We teach workshops on containers and how to use them. Browse the course overview for <a href="https://workshops.rc.virginia.edu/lesson/containers/" target="_new">Introduction to Containers</a> at your own pace.
 - Docker provides an excellent [Getting Started](https://docs.docker.com/get-started/) tutorial.
 - Katacoda offers a great [hands-on Docker training series](https://www.katacoda.com/courses/docker) for free.
+- DCOS allows users to inject `ENV` environment variables and encrypted secrets into containers at runtime. This means sensitive information does not need to be written into your container.
 
 - - -
 
@@ -74,13 +75,13 @@ images = [""]
 
 # Common Deployments
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Service</th>
       <th scope="col"></th>
+      <th scope="col">Service</th>
       <th scope="col">Accessibility</th>
-      <th scope="col" style="width:40%;">Details</th>
+      <th scope="col" style="width:40%;">Description</th>
     </tr>
   </thead>
   <tbody>
