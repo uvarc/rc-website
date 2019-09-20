@@ -80,8 +80,8 @@ To be eligible to run your microservice on our infrastructure, you must meet the
         <ul>
           <li>Static HTML [<a target="_new" href="http://bioterms.org/">demo</a>]
           <li>Flask or Django apps [<a target="_new" href="http://bartweb.org/">demo</a>] 
-          <li>RESTful APIs
-          <li>Expose Project storage [<a target="_new" href="http://big.databio.org/">demo</a>]
+          <li>RESTful APIs [<a target="_new" href="http://refgenomes.databio.org/">demo</a>]
+          <li>Expose Project storage [<a target="_new" href="http://qdemo.uvadcos.io/">demo</a>]
         </ul>
       </td>
     </tr>
@@ -95,7 +95,7 @@ To be eligible to run your microservice on our infrastructure, you must meet the
       <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/shiny-server.png" /></th>
       <td style="font-weight:bold;">Shiny Server</td>
       <td>Public</td>
-      <td>Runs R-based web applications and offers a dynamic, data-driven user interface. <a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new">See a <b>demo</b></a> or try using <a target="_new" href="http://lolaweb.databio.org/"><b>LOLAweb</b></a></td>
+      <td>Runs R-based web applications and offers a dynamic, data-driven user interface. [<a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new">See a <b>demo</b></a> or try using <a target="_new" href="http://lolaweb.databio.org/"><b>LOLAweb</b></a>]</td>
     </tr>
     <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:4.5rem;" src="/images/mysql_PNG9.png" /></th>
@@ -107,13 +107,13 @@ To be eligible to run your microservice on our infrastructure, you must meet the
       <th scope="row" style="text-align:center;"><img style="max-width:6rem;" src="https://dcos.uvasomrc.io/images/mongodb.png" /></th>
       <td style="font-weight:bold;">mongoDB Database</td>
       <td>Grounds only</td>
-      <td>A popular NoSQL database. Use mongo in support of your Rivanna jobs or web containers.</td>
+      <td>A popular NoSQL database. Use mongo in support of your Rivanna jobs or web containers. [<a href="https://mongoplayground.net/" target="_new">Try <b>Mongo</b></a>]</td>
     </tr>
     <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="https://dcos.uvasomrc.io/images/redis.svg" /></th>
       <td style="font-weight:bold;">Redis Database</td>
       <td>Grounds only</td>
-      <td>An extremely fast, durable, key-value database. Use Redis in support of Rivanna jobs or other processes you run. [<a href="https://try.redis.io/" target="_new">Try Redis</a>]</td>
+      <td>An extremely fast, durable, key-value database. Use Redis in support of Rivanna jobs or other processes you run. [<a href="https://try.redis.io/" target="_new">Try <b>Redis</b></a>]</td>
     </tr>
     <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/bash_512x512.png" /></th>
