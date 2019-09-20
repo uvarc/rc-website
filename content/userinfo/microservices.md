@@ -10,7 +10,8 @@ images = [""]
 +++
 
 <p class=lead>
-  Microservice architecture is an approach to designing and running applications. They are typically run using containers.
+  <img src="/images/docker-logo.png" style="max-width:30%;" alt="Docker Containers" align="right" />
+  Microservice architecture is an approach to designing and running applications. Such applications are typically run within containers, made popular in the last few years by Docker.
 </p>
 <p class=lead>
   Containers are portable, efficient, and disposable, and contain code and any dependencies in a single package.
@@ -19,11 +20,12 @@ images = [""]
 </p>
 
 <p class=lead>
-  Research Computing runs containers in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon.
+  Research Computing runs microservices in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon.
+  DCOS makes the deployment and management of many containers easy and scalable.
   This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to project storage.
 </p>
 
-<img src="/images/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
+<img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
 # Basic Principles of Microservices
 
@@ -98,7 +100,7 @@ To be eligible to run your microservice on our infrastructure, you must meet the
   </thead>
   <tbody>
     <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="https://dcos.uvasomrc.io/images/nginx-500x500.png" /></th>
+      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/nginx-500x500.png" /></th>
       <td style="font-weight:bold;">NGINX Web Server</td>
       <td>Public</td>
       <td>A fast web server that can run
@@ -111,37 +113,37 @@ To be eligible to run your microservice on our infrastructure, you must meet the
       </td>
     </tr>
     <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:6rem;" src="/images/apache_logo.jpg" /></th>
+      <th scope="row" style="text-align:center;"><img style="max-width:6rem;" src="/images/microservices/apache_logo.jpg" /></th>
       <td style="font-weight:bold;">Apache Web Server</td>
       <td>Public</td>
       <td>An extremely popular web server that can run your static HTML, Flask or Django apps, RESTful APIs, or expose files stored in Project storage.</td>
     </tr>
     <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/shiny-server.png" /></th>
+      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/shiny-server.png" /></th>
       <td style="font-weight:bold;">Shiny Server</td>
       <td>Public</td>
       <td>Runs R-based web applications and offers a dynamic, data-driven user interface. See a <a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new" class="badge badge-primary">demo</a> or try using <a target="_new" href="http://lolaweb.databio.org/" class="badge badge-primary"><b>LOLAweb</a></td>
     </tr>
     <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:4.5rem;" src="/images/mysql_PNG9.png" /></th>
+      <th scope="row" style="text-align:center;"><img style="max-width:4.5rem;" src="/images/microservices/mysql_PNG9.png" /></th>
       <td style="font-weight:bold;">MySQL Database</td>
       <td>HPC networks</td>
       <td>A stable, easy to use relational database. Run MySQL in support of your HPC projects in Rivanna or web containers.</td>
     </tr>
     <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:6rem;" src="https://dcos.uvasomrc.io/images/mongodb.png" /></th>
+      <th scope="row" style="text-align:center;"><img style="max-width:6rem;" src="/images/microservices/mongodb.png" /></th>
       <td style="font-weight:bold;">mongoDB Database</td>
       <td>HPC networks</td>
       <td>A popular NoSQL database. Use mongo in support of your Rivanna jobs or web containers. <a href="https://mongoplayground.net/" target="_new" class="badge badge-primary">Try Mongo</a></td>
     </tr>
     <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="https://dcos.uvasomrc.io/images/redis.svg" /></th>
+      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/redis.svg" /></th>
       <td style="font-weight:bold;">Redis Database</td>
       <td>HPC networks</td>
       <td>An extremely fast, durable, key-value database. Use Redis in support of Rivanna jobs or other processes you run. <a href="https://try.redis.io/" target="_new" class="badge badge-primary">Try <b>Redis</b></a></td>
     </tr>
     <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/bash_512x512.png" /></th>
+      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/bash_512x512.png" /></th>
       <td style="font-weight:bold;">Recurring Tasks</td>
       <td>n/a</td>
       <td>Schedule or automate tasks or data staging using the language of your choice (bash, Python, R, C, Ruby).</td>
