@@ -48,7 +48,7 @@ type = "rivanna"
     <td class="tg-hy9w">Rivanna login and compute nodes</td>
     <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage. <br /><br />
 
-    </td>
+
   </tr>
   <tr>
     <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#project"><code>/project</code></a></td>
