@@ -6,7 +6,7 @@ date = "2019-07-22T17:45:12-05:00"
 tags = ["storage","scratch","hpc","rivanna","project","qumulo"]
 categories = ["userinfo"]
 images = [""]
-author = "Staff"  
+author = "Staff"
 type = "rivanna"
 
 +++
@@ -47,8 +47,8 @@ type = "rivanna"
     <td class="tg-hy9w">Data removed 90 days after last file modification timestamp</td>
     <td class="tg-hy9w">Rivanna login and compute nodes</td>
     <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage. <br /><br />
-      If you wish to request a very large temporary increase in your <code>/scratch</code> quota, you can  submit a <a href="https://auth.uvasomrc.io/site/storage-supplemental.php"><code>/scratch</code> supplemental request</a>.
-    </td>
+
+
   </tr>
   <tr>
     <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#project"><code>/project</code></a></td>
@@ -59,7 +59,7 @@ type = "rivanna"
     <td class="tg-dc35"><code>/project</code>is ideal for long-term storage of data that can be accessed from Rivanna. <code>/project</code> is ideal for running jobs with smaller files.</td>
   </tr>
   <tr>
-    <td class="tg-hy9w"><a href="/userinfo/storage/research-value">Value Storage</a></td>  
+    <td class="tg-hy9w"><a href="/userinfo/storage/research-value">Value Storage</a></td>
     <td class="tg-hy9w">Available in 1TB increments</td>
     <td class="tg-hy9w">{{% storage-pricing value %}}/TB/Yr</td>
     <td class="tg-hy9w">No backup</td>
@@ -67,7 +67,7 @@ type = "rivanna"
     <td class="tg-hy9w">Research value storage budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
   <tr>
-    <td class="tg-hy9w">ZFS Storage</td>  
+    <td class="tg-hy9w">ZFS Storage</td>
     <td class="tg-hy9w">Available in 1TB increments</td>
     <td class="tg-hy9w">{{% storage-pricing zfs %}}/TB/Yr</td>
     <td class="tg-hy9w">No backup</td>

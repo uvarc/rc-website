@@ -26,6 +26,7 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 .status-tbl tr td{width:33%}
 @media (min-width:40em){
 .blog-title{font-size:3.0rem}}
+.big-bold{font-size:150%;font-weight:bold;}
 
 .p,.tiny {font-size:80%;padding-top:6px;}
 
