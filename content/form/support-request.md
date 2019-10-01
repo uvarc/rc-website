@@ -33,12 +33,16 @@ private = true
       <option id="other" value="Other">Other</option>
     </select>
   </div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> 
+  <div class="form-item form-type-textfield form-group"> 
+    <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
+  </div>
+  <div class="form-item form-type-textfield form-group"> 
     <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128"/>
+    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="description">Details of your support request <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable">
       <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8"></textarea>
     </div>
