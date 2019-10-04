@@ -25,11 +25,11 @@ private = true
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
       <option value="" selected="selected">- Select -</option>
+      <option id="rivanna" value="General">General research computing question</option>
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
-      <option id="ivy" value="Ivy">Ivy Secure Computing</option>
-      <option id="software" value="Software">Licensed Research Software</option>
+      <option id="ivy" value="Ivy">Ivy secure computing</option>
       <option id="storage" value="Storage">Storage</option>
-      <option id="consultation" value="Consultation">Consultation Request</option>
+      <option id="consultation" value="Consultation">Consultation request</option>
       <option id="other" value="Other">Other</option>
     </select>
   </div>
@@ -38,7 +38,7 @@ private = true
     <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
   </div>
   <div class="form-item form-type-textfield form-group"> 
-    <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group"> 
