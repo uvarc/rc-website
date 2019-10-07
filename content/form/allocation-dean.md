@@ -21,6 +21,7 @@ private = true
 
   <input class="form-control form-text required" type="hidden" id="category" name="category" value="Deans Allocation">
   <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
+  <input required="required" type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
 
 {{% form-userinfo %}}
 

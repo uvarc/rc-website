@@ -18,6 +18,7 @@ private = true
 <div>
 
   <input type="hidden" id="category" name="category" value="Storage">
+  <input required="required" type="hidden" id="request_title" name="request_title" value="Support Request" />
 
 {{% form-userinfo %}}
 

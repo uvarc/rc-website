@@ -17,6 +17,7 @@ private = true
 
   <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
   <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
+  <input required="required" type="hidden" id="request_title" name="request_title" value="Allocation Request: Purchase" />
 
   {{% form-userinfo %}}
 
