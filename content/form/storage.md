@@ -29,8 +29,8 @@ private = true
     <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="classification" name="classification">
       <option value="" selected="selected">- Select -</option>
       <option value="cas">College of Arts & Sciences</option>
+      <option value="dsi">School of Data Science</option>
       <option value="seas">School of Engineering and Applied Sciences</option>
-      <option value="dsi">Data Science Institute</option>
       <option value="som">School of Medicine</option>
       <option value="darden">Darden School of Business</option>
       <option value="health-system">UVA Health System</option>
