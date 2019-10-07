@@ -19,9 +19,9 @@ private = true
   <div style="padding:1.4rem;" class="card">
   <h5 class="card-title">About the Requestor</h5>
 
-  <input class="form-control form-text required" type="hidden" id="category" name="category" value="Deans Allocation">
-  <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
-  <input required="required" type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
+  <input type="hidden" id="category" name="category" value="Deans Allocation">
+  <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
+  <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
 
 {{% form-userinfo %}}
 

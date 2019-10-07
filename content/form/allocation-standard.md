@@ -16,9 +16,9 @@ private = true
 <p id="form_post_response"></p>
 <div>
 
-  <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
-  <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Request or Renew a Standard Allocation">
-  <input required="required" type="hidden" id="request_title" name="request_title" value="Allocation Request: Standard" />
+  <input type="hidden" id="category" name="category" value="Rivanna HPC">
+  <input type="hidden" id="allocation_type" name="Allocation Type" value="Request or Renew a Standard Allocation">
+  <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Standard" />
 
   {{% form-userinfo %}}
 
