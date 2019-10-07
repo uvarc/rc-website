@@ -18,7 +18,7 @@ private = true
 <div>
 
   <input type="hidden" id="category" name="category" value="Storage">
-  <input type="text" id="request_title" name="request_title" value="Storage Request" />
+  <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
 
 {{% form-userinfo %}}
 
