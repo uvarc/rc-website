@@ -92,19 +92,19 @@ type = "about"
 Research Computing staff host weekly office hours. Drop by with a project idea, question about a system or anything else you would like to discuss. Walkups are welcome.
 
 <div class="alert alert-success" role="alert"> 
-<div style="float:right;margin-top:-10px;"><a href="https://www.google.com/maps/place/Physical+Life+Sciences+Building,+University+of+Virginia/@38.0329905,-78.5130147,19z/data=!4m5!3m4!1s0x89b3865ba6a606e1:0x3cea570629ea49b1!8m2!3d38.0329905!4d-78.5124622" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
+<div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Tuesdays 3:00-5:00pm</b><br />
 Physical Life Sciences Building, Room 430
 </div>
 
 <div class="alert alert-success" role="alert"> 
-<div style="float:right;margin-top:-10px;"><a href="https://www.google.com/maps/place/Claude+Moore+Health+Sciences+Library/@38.0323341,-78.5015411,19z/data=!4m5!3m4!1s0x89b38646ed2db88b:0xf9acb5aff9d27187!8m2!3d38.0323341!4d-78.5009886" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
+<div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Thursdays 10:00-12:00pm</b><br />
 Health Sciences Library, MILL Room 
 </div>
 
 <div class="alert alert-success" role="alert"> 
-<div style="float:right;margin-top:-10px;"><a href="https://www.google.com/maps/place/Physical+Life+Sciences+Building,+University+of+Virginia/@38.0329905,-78.5130147,19z/data=!4m5!3m4!1s0x89b3865ba6a606e1:0x3cea570629ea49b1!8m2!3d38.0329905!4d-78.5124622" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
+<div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Thursdays 3:00-5:00pm</b><br />
 Physical Life Sciences Building, Room 430
 </div>
