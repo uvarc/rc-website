@@ -18,6 +18,7 @@ private = true
 <div>
 
   <input type="hidden" id="category" name="category" value="Storage">
+  <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
 
 {{% form-userinfo %}}
 
@@ -28,8 +29,8 @@ private = true
     <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="classification" name="classification">
       <option value="" selected="selected">- Select -</option>
       <option value="cas">College of Arts & Sciences</option>
+      <option value="dsi">School of Data Science</option>
       <option value="seas">School of Engineering and Applied Sciences</option>
-      <option value="dsi">Data Science Institute</option>
       <option value="som">School of Medicine</option>
       <option value="darden">Darden School of Business</option>
       <option value="health-system">UVA Health System</option>
@@ -62,16 +63,16 @@ private = true
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year)</label>
+        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
+        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ({{% storage-pricing zfs %}}/TB/year)</label>
+        <input onclick="getStorageType()"required="required" type="radio" id="storage-choice4" name="storage-choice" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ({{% storage-pricing zfs %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
+        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
       </div>
     </div>
   </div>
@@ -238,6 +239,12 @@ var set_uid = document.getElementById("uid").value = uid_dec;
 let email = decodeURI(getParams()["email"]);
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
+
+function getStorageType() {
+  var $myval = $('[name=storage-choice]:checked').val()
+  var $request_title = document.getElementById("request_title");
+  $request_title.value = "Storage Request: " + $myval.toUpperCase();
+};
 
 var name_enc = getParams()["name"];
 if (name_enc) {
