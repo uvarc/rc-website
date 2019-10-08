@@ -15,8 +15,9 @@ private = true
 <p id="form_post_response"></p>
 <div>
 
-  <input class="form-control form-text required" type="hidden" id="category" name="category" value="Rivanna HPC">
-  <input class="form-control form-text required" type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
+  <input type="hidden" id="category" name="category" value="Rivanna HPC">
+  <input type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
+  <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Purchase" />
 
   {{% form-userinfo %}}
 
@@ -88,8 +89,7 @@ private = true
     </div>
   </div>
 
-  <hr size=1 />
-
+  <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
       <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
@@ -101,6 +101,8 @@ private = true
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="/js/captcha.js"></script>
+  -->
 
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
@@ -110,8 +112,6 @@ private = true
 </div>
 
 </form>
-
-<script type="text/javascript" src="/js/captcha.js"></script>
 
 <script>
 function getParams() {

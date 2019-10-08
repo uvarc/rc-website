@@ -4,7 +4,7 @@ description = ""
 author = "SOMRC Staff"
 images = [""]
 categories = ["userinfo"]
-date = "2019-07-19T17:45:12-05:00"
+date = "2019-10-04T17:45:12-05:00"
 tags = [
     "rivanna",
     "sensitive data",
@@ -22,7 +22,12 @@ draft = false
 
 `/scratch` is a Lustre high performance parallel filesystem accessible via the Rivanna login and compute nodes. All Rivanna HPC users are granted 10TB for free and can access this space within Rivanna at `/scratch/$USER`, where `$USER` is an individual's UVa computing ID. **The `/scratch` directory is not intended for long-term data storage. Files are flagged for removal 90 days after last modification timestamp.**
 
-**How to request /home and /scratch space**
+{{% callout %}}
+#### 90 Day Deletion
+Users note that `/scratch` is designed for temporary storage for working jobs and should not be used as permanent storage. Files older than 90 days are deleted in a nightly process. [Read more](/userinfo/rivanna/storage/#scratch-cleanup-policy).
+{{% /callout %}}
+
+**How to request `/home` and `/scratch` space**
 
 `/home` and `/scratch` space can be obtained by requesting an allocation on Rivanna. The process of getting access to Rivanna is described [here](/userinfo/rivanna/overview/).
 
@@ -39,34 +44,41 @@ Once the request has been submitted, the PI will receive a notification that the
 
 # Data transfer
 
-<h3>
-  Non-Sensitive Storage Data Transfer
-  <small class="text-muted">High level Overview</small>
-</h3>
-<img src="/images/storage/storage-nonsecure-apr2019.png" alt="nonsecure-storage-options-overview">
+<h2>Non-Sensitive Storage Data Transfer</h2>
 
-<div class="bd-callout bd-callout-warning">
-<b>Secure Copy (scp)</b>
-<p><code>scp</code> uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. <code>scp</code> can be used with the following syntax:</p>
-<p><code>scp SourceFile mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k</code></p>
-<p><code>scp SourceFile mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name</code></p>
-<p>Detailed instructions and examples for using <code>scp</code> are listed <a href ="https://discuss.rc.virginia.edu/t/secure-copy-scp/740" target="_blank">here</a>.</p>
-</div>
+![Non-Sensitive Data Transfer](/images/storage/storage-nonsecure.jpg)
 
-<div class="bd-callout bd-callout-warning">
-<b>Secure File Transfer Protocol (sftp)</b>
-<p><code>sftp</code> is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "https://discuss.rc.virginia.edu/t/secure-file-transfer-protocol-sftp/741" target="_blank">here</a>.</p>
-</div>
+{{% callout %}}
 
-<div class="bd-callout bd-callout-warning">
-<b>Filezilla & Cyberduck</b>
-<p><a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a> are open source FTP client software for file management through an interactive graphical user interface. Instructions for using these FTP clients can be found <a href ="https://discuss.rc.virginia.edu/t/file-management-with-an-ftp-client/742" target="_blank">here</a>.</p>
-</div>
+#### Secure Copy (`scp`)
 
-<div class="bd-callout bd-callout-warning">
-<b>Globus Connect (Large Data Transfer)</b>
+`scp` uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. <code>scp</code> can be used with the following syntax:</p>
+
+```scp [source] [destination]```
+
+```scp SourceFile mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k```
+
+```scp SourceFile mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name```
+
+Detailed instructions and examples for using `scp` are listed <a href ="https://discuss.rc.virginia.edu/t/secure-copy-scp/740" target="_blank">here</a>.
+{{% /callout %}}
+
+{{% callout %}}
+#### Secure File Transfer Protocol (`sftp`)
+
+`sftp` is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "https://discuss.rc.virginia.edu/t/secure-file-transfer-protocol-sftp/741" target="_blank">here</a>.
+{{% /callout %}}
+
+{{% callout %}}
+#### Filezilla & Cyberduck
+
+<a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a> are open source FTP client software for file management through an interactive graphical user interface. Instructions for using these FTP clients can be found <a href ="https://discuss.rc.virginia.edu/t/file-management-with-an-ftp-client/742" target="_blank">here</a>.
+{{% /callout %}}
+
+{{% callout %}}
+#### Globus Connect (Large Data Transfer)
 <p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>.</p>
-</div>
+{{% /callout %}}
 
 # Non-sensitive Data Storage Systems
 

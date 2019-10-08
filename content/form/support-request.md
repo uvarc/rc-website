@@ -25,24 +25,30 @@ private = true
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
       <option value="" selected="selected">- Select -</option>
+      <option id="rivanna" value="General">General research computing question</option>
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
-      <option id="ivy" value="Ivy">Ivy Secure Computing</option>
-      <option id="software" value="Software">Licensed Research Software</option>
+      <option id="ivy" value="Ivy">Ivy secure computing</option>
       <option id="storage" value="Storage">Storage</option>
-      <option id="consultation" value="Consultation">Consultation Request</option>
+      <option id="consultation" value="Consultation">Consultation request</option>
       <option id="other" value="Other">Other</option>
     </select>
   </div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> 
-    <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128"/>
+  <div class="form-item form-type-textfield form-group"> 
+    <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
+  </div>
+  <div class="form-item form-type-textfield form-group"> 
+    <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="description">Details of your support request <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable">
       <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8"></textarea>
     </div>
   </div>
+
+  <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
       <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
@@ -54,6 +60,8 @@ private = true
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="/js/captcha.js"></script>
+  -->
 
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
@@ -62,8 +70,6 @@ private = true
 
 </div>
 </form>
-
-<script type="text/javascript" src="/js/captcha.js"></script>
 
 <script>
 function getParams() {
