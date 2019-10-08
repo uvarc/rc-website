@@ -140,8 +140,13 @@ Many researchers use Glacier to store terabytes of source data to fulfill grants
 
 # Reference Architecture
 
-To get an idea of how AWS is used in real-world and research scenarios, visit the <a style="font-weight:bold;" href="https://aws.amazon.com/architecture/" target="_new">AWS Architecture Center</a> or review some reference deployments below.
-<small id="emailHelp" class="form-text text-muted">These examples are drawn from AWS.</small>
+To get an idea of how public or private cloud resources are used in real-world and research scenarios, visit one of these **Solution Architecture References**:
+
+- <a style="font-weight:bold;" href="https://aws.amazon.com/architecture/" target="_new">AWS Architecture Center</a>.
+- <a style="font-weight:bold;" href="https://gcp.solutions" target="_new">Google Cloud Solutions Architecture Reference</a> | <a href="https://cloud.google.com/docs/tutorials" target="_new" style="font-weight:bold;">GCP Builder Tutorials</a>.
+- <a style="font-weight:bold;" href="https://azure.microsoft.com/en-us/solutions/architecture/" target="_new">Azure Solution Architecture</a> | <a style="font-weight:bold;" href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/" target="_new">Azure Reference Architectures</a>.
+
+<small id="emailHelp" class="form-text text-muted">Some examples from AWS:</small>
 
 <div class="row">
   <div class="aws-comp section col-sm"> 
@@ -152,7 +157,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
       </div> 
     </div></a> 
     <div style="padding-top:10px;"> 
-     <p><b>Batch Processing</b><br /> Build auto-scalable batch processing systems like video/image/datastream processing pipelines (<a adhocenable="false" href="https://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_batch_03.pdf">PDF</a>)<br /> </p> 
+     <p><b>Batch Processing</b><br /> Build auto-scalable batch processing systems like video/image/datastream processing pipelines.<br /> </p> 
     </div> 
   </div> 
   <div class="aws-comp section col-sm"> 
@@ -163,7 +168,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
       </div> 
     </div></a> 
     <div style="padding-top:10px;"> 
-      <p><b>Large Scale Processing and Huge Data sets</b><br /> Build high-performance computing systems that involve Big Data (<a adhocenable="false" href="https://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_largescale_05.pdf">PDF</a>) <br /> </p> 
+      <p><b>Large Scale Processing and Huge Data sets</b><br /> Build high-performance computing systems that involve Big Data.<br /> </p> 
     </div> 
   </div> 
   <div class="aws-comp section col-sm">
@@ -174,7 +179,7 @@ To get an idea of how AWS is used in real-world and research scenarios, visit th
       </div>
     </div></a>
     <div style="padding-top:10px;">
-      <p><b>Time Series Processing</b><br /> Build elastic systems that process time series data (<a adhocenable="false" href="https://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_timeseriesprocessing_16.pdf">PDF</a>)
+      <p><b>Time Series and Streaming Data Processing</b><br /> Build elastic systems that process chronological data.
     </div>
   </div>
 </div>
