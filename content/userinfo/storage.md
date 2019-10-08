@@ -49,7 +49,7 @@ images = [""]
     <td class="">{{% storage-pricing project %}}/TB/yr</td>
     <td class="">2 week snapshots</td>
     <td class="">Rivanna, NFS mount</td>
-    <td class=""><code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for running jobs with smaller files.</td>
+    <td class=""><code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for sharing data within a research group and for running jobs with smaller files.</td>
   </tr>
   <tr>
     <td class=""><a href="/userinfo/storage/research-value">Value Storage</a></td>
@@ -57,10 +57,10 @@ images = [""]
     <td class="">{{% storage-pricing value %}}/TB/yr</td>
     <td class="">No backup</td>
     <td class="">Rivanna, SMB mount</td>
-    <td class="">Research value storage budget solution for storing data that can be accessed by a personal computer or Rivanna. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
+    <td class="">Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
   <tr>
-    <td class="">ZFS NAS Storage</td>
+    <td class="">Archive Storage</td>
     <td class="">1TB increments</td>
     <td class="">{{% storage-pricing zfs %}}/TB/yr</td>
     <td class="">No backup</td>
@@ -105,4 +105,3 @@ Ivy Central Storage is accessible by using Globus and connecting to the Ivy DTN.
 Storage requests can be made from this form:
 
 [<button class="btn btn-success">Request / Purchase Storage</button>](https://auth.uvasomrc.io/site/storage.php)
-
