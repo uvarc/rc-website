@@ -5,7 +5,7 @@ description = ""
 date = "2019-09-02T15:18:25-05:00"
 title = "/scratch Policy Enforcement"
 draft = false
-tags = ["Rivanna,"scratch"]
+tags = ["scratch"]
 categories = ["feature"]
 +++
 
