@@ -21,8 +21,10 @@ type = "rivanna"
 .tg .tg-dc35{background-color:#f9f9f9;border-color:inherit;vertical-align:top}
 .tg .tg-0qmj{font-weight:bold;background-color:#eceeef;border-color:inherit;vertical-align:top}
 </style>
+
+# Non-Sensitive Data Storage
+
 <div>
-<h3>Non-Sensitive Data Storage</h3>
 <table class="tg">
   <tr>
     <th class="tg-0qmj">Name</th>
@@ -76,6 +78,17 @@ type = "rivanna"
   </tr>
 </table>
 </div>
+
+- - -
+
+# Scratch Cleanup Policy
+
+The Scratch filesystem is a shared resource available for the convenience of all users. Files on the scratch filesystem are subject 
+to deletion after a certain lifespan as determined by Research Computing. Home account storage and purchased storage are not subject to this policy.
+
+**The current lifespan for scratch files is 90 days**.
+
+[Read more about `/scratch`](https://discuss.rc.virginia.edu/t/1187) and why you would use it.
 
 - - -
 
