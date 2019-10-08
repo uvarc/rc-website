@@ -8,7 +8,7 @@ tags = [
   "containers"
 ]
 draft = false
-date = "2019-08-21T14:18:18-05:00"
+date = "2019-10-06T14:18:18-05:00"
 title = "Cloud Solutions"
 description = ""
 author = "Staff"
