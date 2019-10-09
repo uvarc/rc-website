@@ -25,7 +25,7 @@ private = true
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
       <option value="" selected="selected">- Select -</option>
-      <option id="rivanna" value="General">General research computing question</option>
+      <option id="general" value="General">General research computing question</option>
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
       <option id="ivy" value="Ivy">Ivy secure computing</option>
       <option id="storage" value="Storage">Storage</option>
