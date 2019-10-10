@@ -103,6 +103,13 @@ if (name_enc) {
   window.location.replace( "https://auth.uvasomrc.io/site/support.php" );
 }
 
+$("#categories").change(function () {
+  var cat = this.value;
+  if (cat == "Storage") {
+    window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );    
+  }
+});
+
 // name
 let name = decodeURI(getParams()["name"]);
 let name_dec = decode64(name);
