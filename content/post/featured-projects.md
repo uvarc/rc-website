@@ -36,4 +36,4 @@ This has led to fruitful collaborations with researchers and staff across ground
 
 To browse a gallery of recent projects, visit our Projects page below.
 
-[<button class="btn btn-warning">Browse Projects</button>](https://staging.rc.virginia.edu/project/)
+[<button class="btn btn-warning">Browse Projects</button>](/project/)
