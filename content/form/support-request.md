@@ -21,7 +21,7 @@ private = true
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-type-select form-group"> 
+  <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;"> 
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
       <option value="" selected="selected">- Select -</option>
@@ -32,6 +32,7 @@ private = true
       <option id="consultation" value="Consultation">Consultation request</option>
       <option id="other" value="Other">Other</option>
     </select>
+    <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="https://auth.uvasomrc.io/site/storage.php" style="font-weight:bold;">storage request</a>.</div>
   </div>
   <div class="form-item form-type-textfield form-group"> 
     <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>
@@ -103,10 +104,13 @@ if (name_enc) {
   window.location.replace( "https://auth.uvasomrc.io/site/support.php" );
 }
 
+$("#storage-help").hide();
 $("#categories").change(function () {
   var cat = this.value;
   if (cat == "Storage") {
-    window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );    
+    $("#storage-help").show(400);
+  } else {
+    $("#storage-help").hide();
   }
 });
 
