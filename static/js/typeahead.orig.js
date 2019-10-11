@@ -1,5 +1,4 @@
-//json-genarator.com for mock data
-// $.get("https://next.json-generator.com/api/json/get/V1cGoKmDV", function(data){
+// Use https://javascriptobfuscator.com/Javascript-Obfuscator.aspx to hash the upper section
 $.get("https://www.rc.virginia.edu/data/groups.json", function(data){
     console.log(data);
     // use a data source with 'id' and 'name' keys
