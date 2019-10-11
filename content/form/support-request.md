@@ -44,26 +44,13 @@ private = true
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span> </label>
     <div class="form-textarea-wrapper resizable">
-      <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8"></textarea>
+      <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
+      <div id="textarea_feedback" style="color:green;font-size:90%;margin-top:0.5rem;float:right;"></div>
     </div>
+  <br clear=all />
   </div>
-
-  <!--
-  <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
-    <div class="row"">
-      <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
-      </div>
-      <div class="form-item form-group col">
-        <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:1rem;padding:6px;font-family:monospace; width:8rem;" />
-        <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
-        <button class="btn btn-default" id="captcha-refresh" type="button" onclick="createCaptcha()"><i class="fas fa-sync fa-1x"></i></button>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript" src="/js/captcha.js"></script>
-  -->
 
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
@@ -118,6 +105,19 @@ $("#categories").change(function () {
   } else {
     $("#rivanna-help").hide(200);
     $("#storage-help").hide(200);
+  }
+});
+
+var text_max = 5000;
+$('#textarea_feedback').html(text_max + ' characters remaining');
+$('#description').keyup(function() {
+  var text_length = $('#description').val().length;
+  var text_remaining = text_max - text_length;
+  $('#textarea_feedback').html(text_remaining + ' characters remaining');
+  if (text_remaining <= 0) {
+    $('#textarea_feedback').html("No more room left!");
+    $('#textarea_feedback').css("color","red");
+    $('#textarea_feedback').css("font-weight","bold");
   }
 });
 
