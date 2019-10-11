@@ -32,6 +32,7 @@ private = true
       <option id="consultation" value="Consultation">Consultation request</option>
       <option id="other" value="Other">Other</option>
     </select>
+    <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/" style="font-weight:bold;">Allocation Request</a>.</div>
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="https://auth.uvasomrc.io/site/storage.php" style="font-weight:bold;">storage request</a>.</div>
   </div>
   <div class="form-item form-type-textfield form-group"> 
@@ -104,13 +105,17 @@ if (name_enc) {
   window.location.replace( "https://auth.uvasomrc.io/site/support.php" );
 }
 
+$("#rivanna-help").hide();
 $("#storage-help").hide();
 $("#categories").change(function () {
   var cat = this.value;
   if (cat == "Storage") {
     $("#storage-help").show(400);
+  } else if (cat == "Rivanna") {
+    $("#rivanna-help").show(400);
   } else {
-    $("#storage-help").hide();
+    $("#rivanna-help").hide(200);
+    $("#storage-help").hide(200);
   }
 });
 
