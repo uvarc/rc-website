@@ -1,5 +1,5 @@
 +++
-date = "2016-12-31T23:59:16-05:00"
+date = "2019-10-10T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -11,8 +11,6 @@ type = "form"
 private = true
 +++
 
-<script type="text/javascript" src="/js/typeahead.js"></script>
-
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <p id="form_post_response"></p>
 <div>
@@ -21,7 +19,7 @@ private = true
 
   <hr size=1 />
 
-  <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;"> 
+  <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
       <option value="" selected="selected">- Select -</option>
@@ -35,15 +33,15 @@ private = true
     <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/" style="font-weight:bold;">Allocation Request</a>.</div>
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="https://auth.uvasomrc.io/site/storage.php" style="font-weight:bold;">storage request</a>.</div>
   </div>
-  <div class="form-item form-type-textfield form-group"> 
+  <div class="form-item form-type-textfield form-group">
     <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
   </div>
-  <div class="form-item form-type-textfield form-group"> 
+  <div class="form-item form-type-textfield form-group">
     <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
-  <div class="form-item form-group form-item form-type-textarea form-group"> 
+  <div class="form-item form-group form-item form-type-textarea form-group">
     <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span> </label>
     <div class="form-textarea-wrapper resizable">
       <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
@@ -59,6 +57,8 @@ private = true
 
 </div>
 </form>
+
+<script type="text/javascript" src="/js/support-request.js"></script>
 
 <script>
 function getParams() {
@@ -91,35 +91,6 @@ if (name_enc) {
   $('#uid').val('');
   window.location.replace( "https://auth.uvasomrc.io/site/support.php" );
 }
-
-$("#rivanna-help").hide();
-$("#storage-help").hide();
-$("#categories").change(function () {
-  var cat = this.value;
-  if (cat == "Storage") {
-    $("#rivanna-help").hide(200);
-    $("#storage-help").show(400);
-  } else if (cat == "Rivanna") {
-    $("#rivanna-help").show(400);
-    $("#storage-help").hide(200);
-  } else {
-    $("#rivanna-help").hide(200);
-    $("#storage-help").hide(200);
-  }
-});
-
-var text_max = 5000;
-$('#textarea_feedback').html(text_max + ' characters remaining');
-$('#description').keyup(function() {
-  var text_length = $('#description').val().length;
-  var text_remaining = text_max - text_length;
-  $('#textarea_feedback').html(text_remaining + ' characters remaining');
-  if (text_remaining <= 0) {
-    $('#textarea_feedback').html("No more room left!");
-    $('#textarea_feedback').css("color","red");
-    $('#textarea_feedback').css("font-weight","bold");
-  }
-});
 
 // name
 let name = decodeURI(getParams()["name"]);
