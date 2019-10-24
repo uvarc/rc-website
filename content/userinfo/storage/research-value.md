@@ -4,7 +4,7 @@ description = ""
 author = "SOMRC Staff"
 images = [""]
 categories = ["userinfo"]
-date = "2018-04-19T17:45:12-05:00"
+date = "2019-10-08T17:45:12-05:00"
 tags = [
     "rivanna", 
     "non-sensitive data",
@@ -16,15 +16,21 @@ draft = false
 
 # Overview
 
-UVa ITS offers several budget options for storing non-sensitive data. The Research Value NAS storage system provides users with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS MyGroups system</a>. Value storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB mount, allowing for point-and-click file manipulation.
+Research Computing offers several budget options for storing non-sensitive research data. The Research Value Storage provides users 
+with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
+the team lead or PI. Group membership can be defined and managed through <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS 
+MyGroups system</a>. Value storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
+mount, allowing for point-and-click file manipulation.
 
-If you are not a researcher, UVa ITS also offers Academic Value storage for long-term storage of large scale data. More information about the ITS's various storage options can be found on the ITS <a href="http://its.virginia.edu/hosting/storage/value.html" target="_blank">website</a>.
+If you are not a researcher, UVA ITS offers Academic Value storage for long-term storage of large scale data. More information about ITS's 
+various storage options can be found <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" style="font-weight:bold;" target="_blank">on their website</a>.
 
-# How to Request Research Value Storage
+# Request Research Value Storage
 
-Research Value Storage can be requested for $45/TB/YR through UVa <a href="https://virginia.service-now.com/" target="_blank">ServiceNow</a>. After logging into ServiceNow, click the Service Request Catalog > Hosting > Storage - Research Value Storage to access the request form. Users can specify the size and name of the Research Value Storage directory and the name of an existing MyGroups group that can access the space. If the MyGroups group does not yet exist, please create one through the <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS MyGroups system</a> before filling out the value storage request form.
+Research Value Storage can be requested for $45/TB/YR through our [**Storage Request Form**](https://auth.uvasomrc.io/site/storage.php).
+Users can specify the size and name of the Research Value Storage directory and the name of an existing MyGroups group that can access the space. If the MyGroups group does not yet exist, please create one through the <a href="https://mygroups.virginia.edu/" style="font-weight:bold;" target="_blank">ITS MyGroups system</a> before filling out the value storage request form.
 
-When your Research Value Storage share is created, you will receive an email an from uvaprod@service-now containing the NFS mount `sammas.storage.virginia.edu:vol###`, where ### refers to the specific volume number, and the SMB map `\\sammas.storage.virginia.edu\MyGroup_name`.
+When your Research Value Storage share is created, you will receive an email detailing your NFS mount `sammas.storage.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\sammas.storage.virginia.edu\MyGroup_name`.
 
 # Drive Mapping with Research Value Storage
 
