@@ -5,6 +5,7 @@ title = "Ed Hall, PhD"
 job_title = "Computational Research Consultant"
 lastname = "hall"
 type = "people"
+biolink = false
 description = ""
 author = "UVARC Staff"
 images = [

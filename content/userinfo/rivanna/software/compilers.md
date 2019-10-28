@@ -38,7 +38,7 @@ More information is available from the manpage, e.g.:
 man g++
 ```
 
-The default Gnu compilers on Rivanna are typically fairly old. Newer versions can be invoked through an appropriate [module](/resource/rivanna/software/modules). For available versions, please run
+The default Gnu compilers on Rivanna are typically fairly old. Newer versions can be invoked through an appropriate [module](/userinfo/rivanna/software/modules). For available versions, please run
 ```
 module spider gcc
 ```
@@ -106,7 +106,7 @@ A list of compiler options can be obtained by invoking the compiler with the `-h
 
 More information is available from the manpage, e.g.: `man pgf90`
 
-PGI provides a very capable debugger, `pgdbg`. In its default mode, it is graphical, and it requires that an X server run on the user's local desktop machine. It may be run in command-line mode with the `-text` option; see the manpage for a full list of options. As with all debuggers, the user's program must be compiled with the `-g` flag in order to enable debugging. If you wish to use the graphical debugger and do not have or want to install an X11 server, you can also use FastX. Another option for a graphical debugger is [TotalView](/resource/rivanna/software/totalview).
+PGI provides a very capable debugger, `pgdbg`. In its default mode, it is graphical, and it requires that an X server run on the user's local desktop machine. It may be run in command-line mode with the `-text` option; see the manpage for a full list of options. As with all debuggers, the user's program must be compiled with the `-g` flag in order to enable debugging. If you wish to use the graphical debugger and do not have or want to install an X11 server, you can also use FastX. Another option for a graphical debugger is [TotalView](/userinfo/rivanna/software/totalview).
 
 The PGI compilers are particularly strong in their support of OpenACC for programming NVIDIA GPGPUs.
 
@@ -236,4 +236,4 @@ make install
 ```
 is generally the recipe to build and install the program.
 
-The default cmake on Rivanna is fairly old and most users will need to load a newer [cmake module](reource/rivanna/software/cmake) for a newer cmake.  If any newer version will work, module load will suffice.  Otherwise `module spider cmake` will show the options.
+The default cmake on Rivanna is fairly old and most users will need to load a newer cmake module for a newer cmake.  If any newer version will work, module load will suffice.  Otherwise `module spider cmake` will show the options.

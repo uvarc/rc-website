@@ -35,17 +35,16 @@ Rather than approach your research with a specific technology or platform in min
     Our Services
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="/service/user-support">User Support</a>
+    <a class="dropdown-item" href="/support">User Support</a>
     <hr/>
-    <a class="dropdown-item" href="/service/bioinformatics">Bioinformatics &amp; Genomics</a>
+    <a class="dropdown-item" href="/userinfo/rivanna/software/bioinformatics">Bioinformatics &amp; Genomics</a>
     <a class="dropdown-item" href="/service/cloud">Cloud Solutions</a>
     <a class="dropdown-item" href="/service/data-analysis">Data Analysis</a>
     <a class="dropdown-item" href="/service/high-performance-computing/">High Performance Computing</a>
     <a class="dropdown-item" href="/service/imaging/">Image Processing</a>
     <hr/>
-    <a class="dropdown-item" href="/service/grant-support">Grant Support</a>
-    <a class="dropdown-item" href="/service/collaboration">Collaboration</a>
-    <a class="dropdown-item" href="/service/citations">Citations</a>
+    <a class="dropdown-item" href="https://auth.uvasomrc.io/site/consult.php/">Collaboration</a>
+    <a class="dropdown-item" href="/service/acknowledgement">Citations</a>
   </div>
 </div>
 

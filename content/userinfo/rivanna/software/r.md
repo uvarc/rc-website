@@ -20,7 +20,7 @@ author = "RC Staff"
 
 # Overview
 
-[R]( https://www.r-project.org/) is a programming language that often is used for data analytics, statistical programming, and graphical visualization.
+[R](https://www.r-project.org/) is a programming language that often is used for data analytics, statistical programming, and graphical visualization.
 
 # Loading the R module
 On Rivanna, R is available through our module system.  To load R, simply type:

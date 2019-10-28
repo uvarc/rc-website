@@ -95,4 +95,4 @@ Here are some common examples of PHI research data that may need to be de-identi
 # Resources
 
 * [HIPAA for Professionals & Providers (HHS)](https://www.hhs.gov/hipaa/for-professionals/index.html)
-* [University of Virginia Information Security](security.virginia.edu)
+* [University of Virginia Information Security](https://security.virginia.edu)
