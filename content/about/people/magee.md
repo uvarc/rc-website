@@ -8,7 +8,7 @@ email = "nem2p@virginia.edu"
 biolink = true
 type = "people"
 author = "UVARC Staff"
-image = "/images/profiles/profile_neal_magee.png"
+image = "https://avatars2.githubusercontent.com/u/699798"
 subjects = [
   "cloud",
   "containers",
@@ -19,7 +19,7 @@ subjects = [
 ]
 +++
 
-Neal's background is in development and operations, he designs programmable infrastructure that change dynamically with the needs of an application. He has extensive experience with Python, public clouds, and architecting dynamic systems that scale and heal automatically. Neal is an AWS Certified Solution Architect.
+Neal's background is in development and operations, and designs both serverless and programmable infrastructure that change dynamically with the needs of an application. He has extensive experience with Python, public clouds, and architecting dynamic systems that scale and heal automatically. Neal is an AWS Certified Solution Architect and Developer.
 
 **Publications:**
 
