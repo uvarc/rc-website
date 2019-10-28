@@ -5,6 +5,7 @@ title = "Rick Downs"
 job_title = "Director, UVA Research Computing"
 lastname = "downs"
 type = "people"
+biolink = false
 description = ""
 author = "UVARC Staff"
 images = [

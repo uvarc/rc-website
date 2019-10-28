@@ -5,6 +5,7 @@ title = "Christina Gancayco"
 job_title = "Research Computing Associate"
 lastname = "gancayco"
 type = "people"
+biolink = false
 email = "cag3fr@virginia.edu"
 author = "UVARC Staff"
 image = "https://avatars0.githubusercontent.com/u/17575107"

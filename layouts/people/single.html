@@ -3,7 +3,11 @@
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
 <article class="blog-post" style="width:70%;">
+
   <header>
+    <div style="float:right;padding: 20px 0;max-width:30%;">
+      <h6 style="font-size:85%;"><a href="/about/people/">&laquo; Return to People</a></h6>
+    </div>
     <img src="{{ .Params.image }}" alt="{{ .Title }}" class="rounded-circle" width="140" height="140">
     <h2 style="margin-bottom:2rem;"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
   </header>

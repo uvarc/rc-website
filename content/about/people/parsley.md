@@ -4,6 +4,7 @@ date = "2019-05-17T15:25:10-05:00"
 title = "David Parsley"
 job_title = "HPC Systems Specialist"
 lastname = "parsley"
+biolink = false
 type = "people"
 description = ""
 author = "UVARC Staff"
