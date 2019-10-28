@@ -50,7 +50,7 @@ Once the request has been submitted, the PI will receive a notification that the
  
 # File manipulation and navigation with /project
  
-`/project` storage is based on a Linux file system just like other storage spaces on the Rivanna cluster, including [/home](link to page about home) and [/scratch](link to page about scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
+`/project` storage is based on a Linux file system just like other storage spaces on the Rivanna cluster, including `/home` and `/scratch`. Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 
 - [A Gentle Introduction] (https://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855)
 - [10 Essential Linux Commands] (https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320)

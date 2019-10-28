@@ -49,7 +49,7 @@ images = [""]
 			<li>Click "Checkout" after entering any comments about your request</li>
     		</ul>
     	</p>
-    	<a href="https://med.virginia.edu/med-ed-tech/for-students/general-tech/secure-storage/" class="card-link" target="_blank"><button class="btn btn-warning">Read more</button></a>
+    	<a href="https://med.virginia.edu/med-ed-tech/support-for-students/general-tech/secure-storage/" class="card-link" target="_blank"><button class="btn btn-warning">Read more</button></a>
   	</div>
 	</div>
 </div>

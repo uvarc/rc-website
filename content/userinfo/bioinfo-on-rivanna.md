@@ -89,7 +89,7 @@ images = [""]
     <td class="tg-hy9w" style="width:500px">Bowtie2 is a memory-efficient tool for aligning short sequences to long reference genomes.</td>
 	<td class="tg-hy9w-nw" style="width:105px">
       <a href="http://bowtie-bio.sourceforge.net/index.shtml" target="blank" style="color:#0275d8">Homepage</a><br/>
-      <a href="http://http://bowtie-bio.sourceforge.net/manual.shtml" target="blank" style="color:#0275d8">Manual</a><br/>
+      <a href="http://bowtie-bio.sourceforge.net/manual.shtml" target="blank" style="color:#0275d8">Manual</a><br/>
       <a href="https://discuss.rc.virginia.edu/tags/bowtie2" target="blank" style="color:#0275d8">Rivanna FAQs</a><br/>
   </tr>
   <tr>
