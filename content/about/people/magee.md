@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2019-05-17T15:25:10-05:00"
+date = "2019-10-17T15:25:10-05:00"
 title = "Neal Magee, PhD"
 job_title = "HPC / Cloud Solution Architect"
 lastname = "magee"
