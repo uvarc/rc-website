@@ -48,7 +48,7 @@ which results in this response:
       "name": "Stephen Dolan"
     }
 
-`jq` is extremely useful alongside the [AWS command-line tools](https://somrc.virginia.edu/userinfo/reference/aws-cli/).
+`jq` is extremely useful alongside the [AWS command-line tools](https://rc.virginia.edu/userinfo/reference/aws-cli/).
 
 - - -
 

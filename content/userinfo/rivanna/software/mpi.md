@@ -75,7 +75,7 @@ before running the command.  Users should refer to the installation documentatio
 
 The same wrappers should also be used to link the program, since they automatically link the correct MPI library for the chosen compiler and implementation.  When using the wrappers as the linker, any Makefile variables such as `MPILIB` should be left blank.
 
-Users who have difficulty building an MPI code not already present on the system can contact ARCS for assistance.
+Users who have difficulty building an MPI code not already present on the system can contact RC for assistance.
 
 # Running MPI Codes
 MPI programs are invoked under the control of an executor; without invoking an executor only a single process will be instantiated, so it is equivalent to running a serial executable.  

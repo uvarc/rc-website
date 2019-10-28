@@ -178,7 +178,7 @@ function myFunction() {
 
 <h2>Genomes on Rivanna</h2>
 
-SOMRC maintains a set of ready-to-use reference sequences and annotations for commonly analyzed organisms in a convenient, accessible location on Rivanna: 
+RC maintains a set of ready-to-use reference sequences and annotations for commonly analyzed organisms in a convenient, accessible location on Rivanna: 
 
 	/project/genomes/
 
