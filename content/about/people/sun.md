@@ -4,13 +4,12 @@ date = "2019-10-27T11:15:10-05:00"
 title = "Ruoshi Sun, PhD"
 job_title = "Computational Scientist"
 lastname = "sun"
-biolink = false
+biolink = true
+email = "rs7wz@virginia.edu"
 type = "people"
 description = ""
 author = "UVARC Staff"
-images = [
-  ""
-]
+image = "/images/profiles/profile_ruoshi_sun.gif"
 subjects = [
   "containers",
   "hpc",
@@ -21,8 +20,23 @@ subjects = [
 ]
 +++
 
-[Google Scholar](https://scholar.google.com/citations?user=SnJ0Pb8AAAAJ&hl=en)
+Ruoshi is experienced in electronic structure codes for computational materials science.
 
-* PhD, Materials Science and Engineering, Massachusetts Institute of Technology (2013)
-* BS, Materials Science and Engineering, University of Illinois at Urbana-Champaign(2008)
-* BS, Mathematics, University of Illinois at Urbana-Champaign(2008)
+##### Selected Publications
+- R Sun, M Asta, and A van de Walle, "First-principles thermal compatibility between Ru-based Re-substitute alloys and Ir coatings," *Computational Materials Science* **170**, 109199 (2019). [doi:10.1016/j.commatsci.2019.109199](https://doi.org/10.1016/j.commatsci.2019.109199)
+- R Sun, C Woodward, and A van de Walle, "First-principles study on Ni3Al (111) antiphase boundary with Ti and Hf impurities," *Physical Review B* **95**, 21412 (2017). [doi:10.1103/PhysRevB.95.214121](https://doi.org/10.1103/PhysRevB.95.214121)
+- R Sun and DD Johnson, "Stability maps to predict anomalous ductility in B2 materials," *Physical Review B* **87**, 104107 (2013). [doi:10.1103/PhysRevB.87.104107](https://doi.org/10.1103/PhysRevB.87.104107)
+- R Sun, MKY Chan, and G Ceder, "First-principles electronic structure and relative stability of pyrite and marcasite: Implications for photovoltaic performance," *Physical Review B* **83**, 235311 (2011). [doi:10.1103/PhysRevB.83.235311](https://doi.org/10.1103/PhysRevB.83.235311)
+
+See [Google Scholar](https://scholar.google.com/citations?user=SnJ0Pb8AAAAJ&hl=en) for a complete list.
+
+##### Education
+{{% highlight %}}
+PhD, Materials Science and Engineering, Massachusetts Institute of Technology (2013)
+{{% /highlight %}}
+{{% highlight %}}
+BS, Materials Science and Engineering, University of Illinois at Urbana-Champaign(2008)
+{{% /highlight %}}
+{{% highlight %}}
+BS, Mathematics, University of Illinois at Urbana-Champaign(2008)
+{{% /highlight %}}
