@@ -211,8 +211,6 @@ Find out what your data are telling you!
 ## Training
 
 The Viz Lab is conveniently located in Rice Hall on the south end of UVA's historic Grounds. 
-To request a tour of the Viz Lab or to receive training on the equipment, simply fill out 
-and submit [this form](https://arcs.virginia.edu/viz-lab-contact-form).
 
 <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJNVN8Z1uGs4kR7JcEE4iqkGQ&key=AIzaSyDlPVTTX5CpSjoyzqXOpHxxV3xBNbiC2nI" allowfullscreen></iframe>
 
