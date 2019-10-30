@@ -208,7 +208,7 @@ Find out what your data are telling you!
   Graphics cards.  This machine is available to researchers upon request.
 </div>
 
-## Training
+## Location
 
 The Viz Lab is conveniently located in Rice Hall on the south end of UVA's historic Grounds. 
 
@@ -218,8 +218,7 @@ The Viz Lab is conveniently located in Rice Hall on the south end of UVA's histo
 
 The Viz Lab is open to UVA researchers Monday-Friday during normal business hours. Extended 
 access is available to those with longer-term research projects. The calendar below is updated 
-regularly and shows the days/times the Viz Lab is unavailable. To reserve your time slot(s), 
-please contact us through [this form](https://arcs.virginia.edu/viz-lab-contact-form).
+regularly and shows the days/times the Viz Lab is unavailable.
 
 <!-- google calendar embedded here-->
 
