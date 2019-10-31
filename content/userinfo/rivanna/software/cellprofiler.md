@@ -90,7 +90,7 @@ singularity run /scratch/$USER/cellprofiler-3.0.0.img
 ```
 
 # Non-interactive SLURM jobs for batch image processing
-If you have a large number of images that all need to be processed in the same manner, you can use Rivanna's compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](http://cellprofiler.org/manuals/current/Help_Other%20Features_Batch_Processing.html).
+If you have a large number of images that all need to be processed in the same manner, you can use Rivanna's compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.1.9/help/other_batch.html).
 
 ## Setup
 

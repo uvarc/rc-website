@@ -206,7 +206,7 @@ For example, if you estimate your costs will be $300 per month, you might want t
 With an AWS account in hand, you will need some training. We offer regular, free [workshops on cloud computing](/education/workshops/). In addition, we have weekly availability to 
 answer your questions during our office hours, or we can schedule an in-person, hands-on training with your research group or lab.
 
-If you need help in designing your infrastructure in a cloud environment, or thinking through how to migrate your existing projects, [contact us](/service/consult/) for a consultation.
+If you need help in designing your infrastructure in a cloud environment, or thinking through how to migrate your existing projects, [contact us](https://auth.uvasomrc.io/site/consult.php) for a consultation.
 
 ## Sensitive Data in the Cloud
 

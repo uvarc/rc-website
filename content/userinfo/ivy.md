@@ -191,7 +191,7 @@ and regulatory compliance and, if approved, will be installed for you.
         <i>Click on each for details:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy-win-sw/rstudio" style="color: #0275d8;">R 3.2.3</a></li>
+            <li><a href="/userinfo/ivy-win-sw/r" style="color: #0275d8;">R 3.2.3</a></li>
             <li><a href="/userinfo/ivy-win-sw/strawberry-perl" style="color: #0275d8;">Strawberry Perl 5.24</a></li>
             <li><a href="/userinfo/ivy-win-sw/anaconda" style="color: #0275d8;">Anaconda Python 2 and 3</a></li>
             <li><a href="/userinfo/ivy-win-sw/java-sdk-jre" style="color: #0275d8;">Java SDK+JRE 1.8</a></li>
@@ -288,7 +288,7 @@ Moving sensitive data into the Ivy VMware platform is possible through a secure 
 
 # HIPAA Compliance
 
-The Ivy platform is HIPAA compliant by design. From the <a href="http://www.virginia.edu/vpr/irb/hsr/HIPAA.html" target="_new">UVA Institutional Review Board for Health Sciences Research</a> (IRB-HSR):
+The Ivy platform is HIPAA compliant by design. From the <a href="https://research.virginia.edu/irb-hsr/protected-health-information-hipaa-regulations-and-research" target="_new">UVA Institutional Review Board for Health Sciences Research</a> (IRB-HSR):
 
 <div class="bd-callout bd-callout-warning">
 <p>HIPAA affects only that research which uses, creates, or discloses PHI. Researchers have legitimate needs to use, access, and disclose PHI to carry out a wide range of health research studies.</p>
@@ -304,7 +304,7 @@ The Ivy platform is HIPAA compliant by design. From the <a href="http://www.virg
 
 Researchers must understand that, in general, the more difficult parts of HIPAA compliance are less technical (networks, computers, and data) than they are human and how users interact with these systems and data. The mishandling of data -- such as storing them on insecure devices or in insecure places -- jeopardizes confidential patient data and UVA's ability to remain a trusted keeper of those data.
 
-All data imported into Ivy must be treated as highly sensitive data. Data and results exported from Ivy must be protected and managed appropriately according to UVA's [data classification guidelines](http://www.virginia.edu/informationsecurity/dataprotection/). Guidance regarding these guidelines and data types is available from UVA Information Security, Policy, and Records Office (ISPRO) by emailing it-security@virginia.edu.
+All data imported into Ivy must be treated as highly sensitive data. Data and results exported from Ivy must be protected and managed appropriately according to UVA's [data classification guidelines](https://security.virginia.edu/university-data-protection-standards). Guidance regarding these guidelines and data types is available from UVA Information Security, Policy, and Records Office (ISPRO) by emailing it-security@virginia.edu.
 
 <button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
 

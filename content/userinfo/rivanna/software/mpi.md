@@ -17,7 +17,7 @@ MPI stands for Message Passing Interface. The MPI standard is defined by the Mes
 MPI is a standard that describes the behavior of a library.  It is intended to be used with compiled languages (C/C++/Fortran).  Several implementations of this standard exist.  Rivanna supports OpenMPI for all our compilers and IntelMPI for the Intel compiler.   MPI can also be used with the interpreted languages R and Python through packages that link to an implementation; on Rivanna these languages use OpenMPI.  
 
 # Selecting Compiler and Implementation
-An MPI implementation must be built with a specific [compiler](/resource/rivanna/software/compilers).  Consequently, only compilers for which MPI has been prepared can be used with it.  All versions of the Intel compiler will have a corresponding IntelMPI.  For OpenMPI run
+An MPI implementation must be built with a specific [compiler](/userinfo/rivanna/software/compilers).  Consequently, only compilers for which MPI has been prepared can be used with it.  All versions of the Intel compiler will have a corresponding IntelMPI.  For OpenMPI run
 ```
 module spider openmpi
 ```
@@ -55,7 +55,7 @@ module load gcc openmpi
 ```
 
 # Building an MPI Code
-All implementations provide wrappers around the underlying [compilers](/resource/rivanna/software/compilers) that simplify compilation.   As it is very important to use the headers that correspond to a given library, users are urged to make use of the wrappers whenever possible.   For OpenMPI and MVAPICH2 these are:
+All implementations provide wrappers around the underlying [compilers](/userinfo/rivanna/software/compilers) that simplify compilation.   As it is very important to use the headers that correspond to a given library, users are urged to make use of the wrappers whenever possible.   For OpenMPI and MVAPICH2 these are:
 
 * mpicc \(C)
 * mpicxx (C++)
@@ -75,7 +75,7 @@ before running the command.  Users should refer to the installation documentatio
 
 The same wrappers should also be used to link the program, since they automatically link the correct MPI library for the chosen compiler and implementation.  When using the wrappers as the linker, any Makefile variables such as `MPILIB` should be left blank.
 
-Users who have difficulty building an MPI code not already present on the system can contact ARCS for assistance.
+Users who have difficulty building an MPI code not already present on the system can contact RC for assistance.
 
 # Running MPI Codes
 MPI programs are invoked under the control of an executor; without invoking an executor only a single process will be instantiated, so it is equivalent to running a serial executable.  
@@ -89,7 +89,7 @@ mpirun -np 4 ./mycode
 ```
 On the frontends the processes will not be assigned to specific cores and may be competing with other processes, so performance may be poor.
 
-To use a debugger with an MPI program, compile with the `-g` flag as for a serial code.  We provide the [Totalview](/resource/rivanna/software/totalview) graphical debugger for MPI and OpenMP applications. Totalview requires that the `mpiexec` executor be in your path before you invoke it.  If you need to debug for a longer time, with a large number of cores, or with multiple nodes, you can use Totalview through [FastX](/resource/rivanna/software/fastx) with an interactive job (ijob).  Please request all cores for the node whether you use them or not, because Totalview cannot use the `srun` command as the executor.
+To use a debugger with an MPI program, compile with the `-g` flag as for a serial code.  We provide the [Totalview](/userinfo/rivanna/software/totalview) graphical debugger for MPI and OpenMP applications. Totalview requires that the `mpiexec` executor be in your path before you invoke it.  If you need to debug for a longer time, with a large number of cores, or with multiple nodes, you can use Totalview through [FastX](/userinfo/rivanna/logintools/fastx) with an interactive job (ijob).  Please request all cores for the node whether you use them or not, because Totalview cannot use the `srun` command as the executor.
 
 # Running Under SLURM
 When running with SLURM, the `srun` command **must** be used as the executor.  Load the appropriate modules in your script, then invoke

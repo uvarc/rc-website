@@ -5,6 +5,7 @@ title = "Michelle Co, PhD"
 lastname = "co"
 job_title = "HPC Systems Specialist"
 type = "people"
+biolink = false
 description = ""
 author = "UVARC Staff"
 images = [

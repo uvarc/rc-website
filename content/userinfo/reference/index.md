@@ -32,9 +32,9 @@ type = "reference"
       </div>
       <div class="card-block">
         <ul>
-          <li><a href="https://somrc.virginia.edu/userinfo/reference/aws-bioinformatics/">AWS for Bioinformatics</a></li>
-          <li><a href="https://somrc.virginia.edu/userinfo/reference/bowtie/">Bowtie 2</a></li>
-          <li><a href="https://somrc.virginia.edu/userinfo/reference/bioinformatics-pipelines/">Genomics and Bioinformatics Pipelines</a></li>
+          <li><a href="https://rc.virginia.edu/userinfo/reference/aws-bioinformatics/">AWS for Bioinformatics</a></li>
+          <li><a href="https://rc.virginia.edu/userinfo/reference/bowtie/">Bowtie 2</a></li>
+          <li><a href="https://rc.virginia.edu/userinfo/reference/bioinformatics-pipelines/">Genomics and Bioinformatics Pipelines</a></li>
         </ul>
       </div>
     </div>

@@ -50,7 +50,7 @@ Once the request has been submitted, the PI will receive a notification that the
  
 # File manipulation and navigation with /project
  
-`/project` storage is based on a Linux file system just like other storage spaces on the Rivanna cluster, including [/home](link to page about home) and [/scratch](link to page about scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
+`/project` storage is based on a Linux file system just like other storage spaces on the Rivanna cluster, including `/home` and `/scratch`. Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 
 - [A Gentle Introduction] (https://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855)
 - [10 Essential Linux Commands] (https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320)
@@ -58,4 +58,4 @@ Once the request has been submitted, the PI will receive a notification that the
 - [Navigating the Linux Filesystem] (http://www.linuxplanet.com/linuxplanet/tutorials/6666/1)
 - [Shell Novice] (https://swcarpentry.github.io/shell-novice/)
 
-For more help, please feel free to contact SOMRC to set up a consultation or visit us during office hours. We also provide in-person training opportunities around basic command line skills and more through the [CADRE Academy portal](https://education.cadre.virginia.edu/#/home).
+For more help, please feel free to contact RC to set up a consultation or visit us during office hours. We also provide in-person training opportunities around basic command line skills and more through the [CADRE Academy portal](https://education.cadre.virginia.edu/#/home).

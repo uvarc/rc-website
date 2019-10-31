@@ -22,7 +22,7 @@ draft = false
 
 # Review & Assessment
 
-From a compliance perspective, SOMRC offers three levels of review/assessment:
+From a compliance perspective, RC offers three levels of review/assessment:
 
 1. **Security Plan** - Having a security plan in place is important to your success at UVA School of Medicine. If your lab or department doesn’t have a plan in place Research Computing Information Security will be happy to help you develop such a plan.
 
@@ -34,7 +34,7 @@ From a compliance perspective, SOMRC offers three levels of review/assessment:
 
 # Implementation
 
-For implementation, SOMRC offers a number of skills and services:
+For implementation, RC offers a number of skills and services:
 
 1. PHI and De-identification
 2. Encryption best practices
@@ -95,4 +95,4 @@ Here are some common examples of PHI research data that may need to be de-identi
 # Resources
 
 * [HIPAA for Professionals & Providers (HHS)](https://www.hhs.gov/hipaa/for-professionals/index.html)
-* [University of Virginia Information Security](security.virginia.edu)
+* [University of Virginia Information Security](https://security.virginia.edu)

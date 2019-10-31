@@ -40,7 +40,7 @@ On Rivanna, Smrtlink tools can be executed only in non-interactive mode without 
 In the SLURM job scripts the number of requested cpu cores (per task) is stored in the envrionment variable `SLURM_CPUS_PER_TASK`.
 
 # PacBio BAM files
-The BAM format is a binary compressed format for raw or aligned sequence reads. The associated SAM format is a text representation of the same data ([specifications for BAM/SAM[(http://samtools.github.io/hts-specs/SAMv1.pdf)]).
+The BAM format is a binary compressed format for raw or aligned sequence reads. The associated SAM format is a text representation of the same data ([specifications for BAM/SAM](http://samtools.github.io/hts-specs/SAMv1.pdf)).
 
 PacBio-produced BAM files are a fully compatible extension of the BAM specification. In addition to the typical BAM headers, the PacBio BAM header includes `@RG` (read group) entries with the follwing tags: `ID`, `PL`, `PM`, `PU`, `DS`.  **This means that any of the Smrtlink tools that require a PacBio BAM file will not accept any generic BAM files (i.e. non-PacBio BAM files).**
 
