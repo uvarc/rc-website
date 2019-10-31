@@ -17,5 +17,5 @@ subjects = [
 ]
 +++
 
-Andrew Bell joined ARCS in December 2014. He handles procurement, budgeting, travel, personnel management, communications, public relations, academic events, and engagement with the UVA research community.
+Andrew Bell joined RC in December 2014. He handles procurement, budgeting, travel, personnel management, communications, public relations, academic events, and engagement with the UVA research community.
 

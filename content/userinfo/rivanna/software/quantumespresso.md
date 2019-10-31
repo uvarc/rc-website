@@ -19,7 +19,7 @@ author = "RC Staff"
 # Description
 {{% module-description %}}
 <br>
-Local support is not available. For detailed documentation and tutorials, visit the [{{% software-name %}} website]({{< module-homepage >}}). QuantumEspresso (QE) has a large and active community of users; to search or join the mailing list see the instructions [here](http://lammps.sandia.gov/mail.html).
+Local support is not available. For detailed documentation and tutorials, visit the [{{% software-name %}} website]({{< module-homepage >}}). QuantumEspresso (QE) has a large and active community of users; to search or join the mailing list see the instructions [here](https://www.quantum-espresso.org/forum).
 
 **Software Category:** {{% module-category %}}
 

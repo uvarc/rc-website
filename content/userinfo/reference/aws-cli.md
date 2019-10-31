@@ -92,4 +92,4 @@ Use a `bash` script to turn off your EC2 instance at night, and send you a notif
 
 # Combine with other CLI tools
 
-See the [`jq`](https://somrc.virginia.edu/userinfo/reference/jq/#real-world-examples) page for more examples of how to make AWS CLI calls and parse the response JSON in meaningful ways.
+See the [`jq`](https://rc.virginia.edu/userinfo/reference/jq/#real-world-examples) page for more examples of how to make AWS CLI calls and parse the response JSON in meaningful ways.

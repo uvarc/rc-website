@@ -123,3 +123,66 @@ Rscript myScript.R
 ```
 
 Please contact us if you encounter any problems using these applications in your job scripts.
+
+- - -
+# Creating Your Own Modules
+Rivanna users may create their own modules stored in their home directories.  The first step is to create a directory to store the modulefiles used by `lmod`.
+
+```
+mkdir $HOME/modulefiles
+```
+
+Next, download the software package for which you would like to create a module.  When configuring for build, make sure that the prefix is set to `--prefix=$HOME/pkg/<software name>/<software version>`. This documentation demonstrates creating a module for `git 2.6.2` as an example
+
+```
+$ wget https://www.kernel.org/pub/software/scm/git/git-2.6.2.tar.gz
+$ tar xf git-2.6.2.tar.gz
+$ cd git-2.6.2
+$ ./configure --prefix=$HOME/pkg/git/2.6.2
+$ make
+$ make install
+```
+
+Once the software has been built and installed, a modulefile (written in the Lua programming language) needs to be created that contains information about where to find the software.  The modulefile should be placed in a directory named after the software and the file should be named using the version number of the software. Any text editor of your choice may be used, but this example show the use of the `cat` utility to create the lua file.  The modulefile in this example adds `~/pkg/git/2.6.2/bin` to the user's path so that the personal version of `git` can be found.
+
+```
+$ cd ~/modulefiles
+$ mkdir git
+$ cd git
+$ cat > 2.6.2.lua
+local home    = os.getenv("HOME")
+local version = myModuleVersion()
+local pkgName = myModuleName()
+local pkg     = pathJoin(home,"pkg",pkgName,version,"bin")
+prepend_path("PATH", pkg)
+^D
+
+```
+
+The first line reads the user’s HOME directory from the environment. The second line uses the “pathJoin” function provided from Lmod. It joins strings together with the appropriate number of “/”. The last line calls the “prepend_path” function to add the path to git to the user’s path.
+
+Finally, to use the module:
+
+```
+$ module use $HOME/modulefiles
+$ module load git
+$ type git
+~/pkg/git/2.6.2/bin/git
+```
+
+## Finding Modules with the Same Name
+If the user has created a module and at a later date the system provides a newer version, the default behavior if no version is specified to the `module load` command is to use the highest version available.
+
+```
+$ module avail git
+--------------- /home/user/modulefiles ----------------
+git/2.6.2
+
+--------------- /opt/apps/modulefiles ----------------
+git/1.7.4   git/2.0.1   git/3.5.4 (D)
+
+$ module load git
+```
+
+The `module load` command will load `git/3.5.4` because it is the highest version.
+More about user created modules can be found in [the documentation](https://lmod.readthedocs.io/en/latest/020_advanced.html).

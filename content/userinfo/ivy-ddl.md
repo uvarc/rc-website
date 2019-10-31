@@ -16,7 +16,7 @@ description = ""
 
 # Account Request
 
-Access to DDL to Ivy is managed through the [Ivy account request process](https://somrc.virginia.edu/userinfo/ivy/#requesting-access). Accounts are issued on a per project basis, with PIs (and any project members) being granted individual accounts to log into the DDL platform. 
+Access to DDL to Ivy is managed through the [Ivy account request process](https://rc.virginia.edu/userinfo/ivy/#requesting-access). Accounts are issued on a per project basis, with PIs (and any project members) being granted individual accounts to log into the DDL platform. 
 
 Once the request has been approved and all associated members have completed the necessary documentation, each individual project member can sign into DDL with his / her UVa Eservices user name and password. 
 
