@@ -216,9 +216,9 @@ The Viz Lab is conveniently located in Rice Hall on the south end of UVA's histo
 
 ## Viz Lab Calendar
 
-The Viz Lab is open to UVA researchers Monday-Friday during normal business hours. Extended 
-access is available to those with longer-term research projects. The calendar below is updated 
-regularly and shows the days/times the Viz Lab is unavailable.
+The Viz Lab is available by request only.
+To reserve a day/time to use the resources in the Viz Lab, please contact us at [hpc-support@virginia.edu](mailto:hpc-support@virginia.edu).
+The calendar below is updated regularly and shows the days/times the Viz Lab is unavailable.
 
 <!-- google calendar embedded here-->
 
