@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/uvasomrc/rc-website.svg?branch=master)](https://travis-ci.org/uvasomrc/rc-website)
+[![Build Status](https://travis-ci.org/uvarc/rc-website.svg?branch=master)](https://travis-ci.org/uvarc/rc-website)
 
 # UVA Research Computing Website
 
@@ -12,7 +12,7 @@ https://www.rc.virginia.edu/
 
 ### Using Gitpod
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/uvasomrc/rc-website/tree/staging)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/uvarc/rc-website/tree/staging)
 
 This will bring up a ready-to-code environment on the `staging` branch, and download and start [hugo](https://gohugo.io) in server mode.
 
