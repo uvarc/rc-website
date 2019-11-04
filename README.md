@@ -141,4 +141,4 @@ Site search is provided by Google CSE. Publishing in hugo generates a `/sitemap.
 
 ## Migration
 
-This repository was moved from the `uvasomrc` GitHub organization to the `uvarc` Organization in November 2019. Please update all links accordingly.
+This repository was transferred from the `uvasomrc` GitHub organization to the `uvarc` Organization in November 2019. Please update all links accordingly.
