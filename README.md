@@ -138,3 +138,7 @@ The "Training" widget and workshops page are both fed from a JSON API connected 
 ## Search
 
 Site search is provided by Google CSE. Publishing in hugo generates a `/sitemap.xml` file that is bound to Google's crawlers. If you would like to omit a page from search, include `private = true` in the front matter of your page. The crawler generally refreshes every 3-7 days.
+
+## Migration
+
+This repository was moved from the `uvasomrc` GitHub organization to the `uvarc` Organization in November 2019. Please update all links accordingly.
