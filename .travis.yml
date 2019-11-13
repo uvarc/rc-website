@@ -15,3 +15,6 @@ notifications:
       - dlp7y@virginia.edu
       - cag3fr@virginia.edu
       - amb3xa@virginia.edu
+  slack: uvarc:umUqV7wFJK6e9Q3xP29mWrwO
+    on_success: change
+    on_failure: always
