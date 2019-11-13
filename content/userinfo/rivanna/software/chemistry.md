@@ -52,7 +52,7 @@ module spider quantumespresso/6.3
 
 **List of Chemistry Software Modules**
 
-{{< rivanna-software tags="chem" >}}
+{{< rivanna-software moduleclasses="chem" >}}
 
 # Using a Specific Software Module
 

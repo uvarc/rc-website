@@ -17,27 +17,27 @@ MPI stands for Message Passing Interface. The MPI standard is defined by the Mes
 MPI is a standard that describes the behavior of a library.  It is intended to be used with compiled languages (C/C++/Fortran).  Several implementations of this standard exist.  Rivanna supports OpenMPI for all our compilers and IntelMPI for the Intel compiler.   MPI can also be used with the interpreted languages R and Python through packages that link to an implementation; on Rivanna these languages use OpenMPI.  
 
 # Selecting Compiler and Implementation
-An MPI implementation must be built with a specific [compiler](/userinfo/rivanna/software/compilers).  Consequently, only compilers for which MPI has been prepared can be used with it.  All versions of the Intel compiler will have a corresponding IntelMPI.  For OpenMPI run
+An MPI implementation must be built with a specific [compiler](/userinfo/rivanna/software/compilers). Consequently, only compilers for which MPI has been prepared can be used with it. All versions of the Intel compiler will have a corresponding IntelMPI. For OpenMPI run
 ```
 module spider openmpi
 ```
-This will respond with the versions of OpenMPI available.  To see which version goes with which compiler, run
+This will respond with the versions of OpenMPI available. To see which version goes with which compiler, run
 ```
 module spider openmpi/<version>
 ```
 For example:
 ```
-module spider openmpi/2.1.5
+module spider {{< module-firstversion modulename="openmpi" >}}
 ```
 Example output:
 ```
 You will need to load all module(s) on any one of the lines below before the
-"openmpi/2.1.5" module is available to load.
+"{{< module-firstversion modulename="openmpi" >}}" module is available to load.
    gcc/system
    gcc/5.4.0
    gcc/7.1.0  
 ```
-This shows that OpenMPI version 2.1.5 is available for the gcc system (4.8.5), 5.4.0, and 7.1.0 compilers.
+This shows that OpenMPI version {{< module-firstversion modulename="openmpi" >}} is available for the gcc system (4.8.5), 5.4.0, and 7.1.0 compilers.
 
 Once a choice of compiler and MPI implementation have been made, the modules must be loaded.  First load the compiler, then the MPI.  For instance, to use OpenMPI with gcc 7.1.0, run
 ```
@@ -53,6 +53,10 @@ It is also possible to combine these into one line, as long as the compiler is s
 ```
 module load gcc openmpi
 ```
+<br>
+**Available MPI library modules**
+
+{{< rivanna-software moduleclasses="mpi" >}}
 
 # Building an MPI Code
 All implementations provide wrappers around the underlying [compilers](/userinfo/rivanna/software/compilers) that simplify compilation.   As it is very important to use the headers that correspond to a given library, users are urged to make use of the wrappers whenever possible.   For OpenMPI and MVAPICH2 these are:

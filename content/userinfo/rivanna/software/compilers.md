@@ -19,7 +19,7 @@ Compiled languages can be more difficult to debug, and the assistance of a good 
 
 # Available Compilers on Rivanna
 
-{{% rivanna-software tags="compiler" %}}
+{{% rivanna-software moduleclasses="compiler" exclude="mpi" %}}
 
 # Gnu Compiler
 The [Gnu Compiler Collection](https://gcc.gnu.org) compilers are free, open-source tools. Additional tools included are the gdb debugger and the gprof performance profiler. For detailed documentation, visit the [Gnu](https://gcc.gnu.org/onlinedocs/) website.
@@ -47,6 +47,11 @@ It is important to load the correct module if you want to use more advanced feat
 module load gcc
 ```
 It may be necessary to use an older compiler for programs using GPGPUs. The `gcccuda` module will load the correct version.
+
+<br>
+**Available Gnu Compilers**
+
+{{% module-versions module="gcc" %}}
 
 # Intel Compiler
 The [Intel Linux Fortran and C/C++ compilers](https://software.intel.com/en-us/compilers) are for x86-64 processor-based systems running Linux. These compilers have specific optimizations for Intel architectures. The University has floating network licenses for the Intel compiler suite as well as for the Math Kernel Libraries.
@@ -78,6 +83,12 @@ Then load the appropriate module, in this case the default version
 module load intel
 ```
 
+<br>
+**Available Intel Compilers**
+
+{{% module-versions module="intel" %}}
+
+
 **Important note for Fortran programmers:** Nearly all Fortran code must be compiled with the flag `-heap-arrays` added or it will encounter a segmentation violation.
 
 If you still experience segmentation violations, recompile with `-g -CB` (for debugging and bounds checking respectively) and run the program under the control of a debugger.  Once the program is debugged, be sure to remove the `-g` and certainly the `-CB` flags and recompile with `-O` or `-O -ipo`. If that works, try `-O3` or `-O3 -ipo` for a higher level of optimization.  
@@ -95,6 +106,13 @@ PGI compilers are accessed on the HPC cluster by using modules to dynamically se
 ```
 module load pgi
 ```
+
+<br>
+**Available PGI Compilers**
+
+{{% module-versions module="pgi" %}}
+
+
 After you have modified your environment to access the PGI compilers, you can invoke the compiler on a source code file in one of the following ways.
 
 * Fortran fixed format: pgf77 or pgf90 [options] filename.f

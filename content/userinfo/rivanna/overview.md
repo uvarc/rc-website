@@ -12,8 +12,6 @@ type = "rivanna"
 +++
 
 {{% callout %}}
-#### Rivanna HPC
-
 <img src="/images/hpc-cluster.jpg" alt="HPC" style="float:right;max-width:35%;margin-left:1rem;" />
 
 Rivanna is the University of Virginia's High-Performance Computing (HPC) system. As a centralized resource it has hundreds of pre-installed software packages available for computational research across many disciplines. Currently the Rivanna supercomputer has over 8,000 cores and 8PB of various storage.

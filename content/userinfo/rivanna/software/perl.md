@@ -29,7 +29,7 @@ The default Perl is required for system purposes and is generally too old for ap
 module spider perl
 ```
 
-{{% module-versions tags="lang" %}}
+{{% module-versions %}}
 
 To load the {{< module-firstversion >}} module, run this command:
 ```

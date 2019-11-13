@@ -34,7 +34,7 @@ module spider blender/2.78c
 
 **List of Image Processing and Visualization Software Modules**
 
-{{< rivanna-software tags="vis" >}}
+{{< rivanna-software moduleclasses="vis" >}}
 
 # Running Interactive Visualizations
 

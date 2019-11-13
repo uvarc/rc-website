@@ -1,8 +1,13 @@
-{{- $urlPre := "http://apidata.uvarc.io" -}}
-{{- $gistJ := getJSON $urlPre "/rivanna-software.json" -}}
-{{- range $gistJ -}}
-    {{- if eq (.package) $.Page.Params.modulename -}}
-        {{- $fversion := (index .versions 0).full -}}
-        {{ $fversion }}
+{{ $module := default $.Page.Params.modulename (.Get "module") }}
+{{- $gistJ := getJSON .Site.Params.rivannaJsonUrl -}}
+{{- range $modulename,$entries := $gistJ -}}
+    {{- if eq ($modulename) $module -}}
+        {{- $scratch := newScratch -}}
+        {{- range $k, $v := $entries -}}
+            {{- $scratch.Add $modulename (slice $k) -}}
+        {{- end -}}
+        {{- $firstentrykey := index ($scratch.Get $modulename) 0 -}}
+        {{- $firstentry := index $entries $firstentrykey -}}
+        {{- (printf "%s/%s"  $modulename $firstentry.Version) -}}
     {{- end -}}
 {{- end -}}

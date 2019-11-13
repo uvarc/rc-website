@@ -50,7 +50,7 @@ module spider bcftools/1.3.1
 
 **List of Bioinformatics Software Modules**
 
-{{< rivanna-software tags="bio" >}}
+{{< rivanna-software moduleclasses="bio" >}}
 
 # Using a Specific Software Module
 
