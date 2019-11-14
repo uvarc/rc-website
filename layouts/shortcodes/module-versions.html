@@ -4,32 +4,37 @@
     }
 </script>
 
-
+{{ $showmname := true }}
+{{ with (.Get "showmname") }}
+    {{ $showmname := (eq "true" .) }}
+{{ end }}
+{{ $module := default $.Page.Params.modulename (.Get "module") }}
 <table class="table table-striped" id="versionTable">
   <thead class="thead-dark">
     <tr>
+      {{ if $showmname }}
+          <th scope="col">Module</th>
+      {{ end }}
       <th scope="col">Version</th>
       <th scope="col">Module Load Command</th>
     </tr>
   </thead>
   <tbody>
-  {{ $urlPre := "http://apidata.uvarc.io" }}
-  {{ $gistJ := getJSON $urlPre "/rivanna-software.json" }}
-  {{ range $gistJ }}
-     {{ if eq (.package) $.Page.Params.modulename }}
-        {{ range sort .versions "full" "asc" }}
+  {{ $gistJ := getJSON .Site.Params.rivannaJsonUrl }}
+  {{ range $modulename,$items := $gistJ }}
+     {{ if eq $module $modulename  }}
+        {{ range $items }}
            <tr>
-               <td>{{ delimit (last 1 (split .full "/")) "" }}</td>
+               {{ if $showmname }}
+                   <td> {{ $modulename }}</td>
+               {{ end }}
+               <td>{{ .Version }}</td>
                <td>
                  {{ "module load" }}
-                 {{ $trunc := split (index (split .path .full) 0) "/" }}
-                 {{ if gt (len $trunc) 6 }}
-                     {{ delimit (slice (index $trunc 5) (index $trunc 6)) "/" }}
-                     {{ if gt (len $trunc) 8 }}
-                         {{ delimit (slice (index $trunc 7) (index $trunc 8)) "/" }}
-                     {{ end }}
+                 {{ range .parentAA }}
+                     {{ delimit . " " }}
                  {{ end }}
-                 {{ .full }}
+                 {{ printf "%s/%s" $modulename .Version }}
                </td>
            </tr>
         {{ end }}

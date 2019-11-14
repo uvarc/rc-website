@@ -62,7 +62,7 @@ module spider ansys/19.2
 
 **List of Engineering Software Modules**
 
-{{< rivanna-software tags="cae" >}}
+{{< rivanna-software moduleclasses="cae" >}}
 
 # Using a Specific Software Module
 

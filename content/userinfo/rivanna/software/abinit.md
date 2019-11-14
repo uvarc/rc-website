@@ -19,13 +19,16 @@ author = "RC Staff"
 # Description
 {{% module-description %}}
 <br>
-**Software Category:** {{% module-category %}}
+**Software Category:** {{< module-category >}}
 
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
 # Available Versions
 The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
-<pre>module spider {{% module-name %}}</pre>
+
+```
+module spider {{< module-name >}}
+```
 
 The output of the command shows the available {{% software-name %}} module versions.
 

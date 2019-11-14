@@ -9,7 +9,7 @@ email = "rs7wz@virginia.edu"
 type = "people"
 description = ""
 author = "UVARC Staff"
-image = "/images/profiles/profile_ruoshi_sun.gif"
+image = "/images/profiles/profile_ruoshi_sun.png"
 subjects = [
   "containers",
   "hpc",

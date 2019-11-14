@@ -42,7 +42,7 @@ module spider mathematica/12.1
 
 **List of Math & Statistics Software Modules**
 
-{{< rivanna-software tags="math" >}}
+{{< rivanna-software moduleclasses="math" >}}
 
 # Using a Specific Software Module
 

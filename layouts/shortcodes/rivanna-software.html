@@ -29,6 +29,12 @@ function searchFunction() {
 
 <table class="table table-striped" id="moduleTable">
   <thead class="thead-dark">
+    {{ $urlPre := "http://apidata.uvarc.io" }}
+    {{ $fullUrl := ( printf "%s%s" $urlPre "/rivanna-software-20191029.json" ) }}
+    {{ $gistJ := getJSON $fullUrl }}
+    {{ $mclasses := .Get "moduleclasses" }}
+    {{ $eclasses := .Get "exclude" }}
+    {{ $showhidden := .Get "showhidden" }}
     <tr>
       <th scope="col">Module</th>
       <th scope="col">Category</th>
@@ -36,25 +42,27 @@ function searchFunction() {
     </tr>
   </thead>
   <tbody>
-  {{ $urlPre := "http://apidata.uvarc.io" }}
-  {{ $gistJ := getJSON $urlPre "/rivanna-software.json" }}
-  {{ $tags := .Get "tags" }}
-  {{ $showhidden := .Get "showhidden" }}
-  {{ range sort $gistJ "package" "asc" }}
-      {{ $ishidden := eq "." (substr (index (split (index .versions 0).full "/") 1) 0 1)  }}
-      {{ $tag := index (split (delimit (last 1 (split (index .versions 0).help "Application class: ")) " ") "\n") 0 }}
-      {{ if and (or $showhidden (not $ishidden)) (or (eq "all" $tags) (and (ne "" $tag) (in (slice $tags ",") $tag))) }}
+    {{ range $modulename, $entries := $gistJ }}
+      {{ $scratch := newScratch }}
+      {{ range $k, $v := $entries }}
+          {{ $scratch.Add $modulename (slice $k) }}
+      {{ end }}
+      {{ $firstentrykey := index ($scratch.Get $modulename) 0 }}
+      {{ $firstentry := index $entries $firstentrykey }}
+      {{- $category := (index (split (index $firstentry.whatis 2) "Application class: ") 1) -}}
+      {{ if and (or $showhidden (not $firstentry.hidden)) (or (eq "all" $mclasses) (and (ne "" $category) (in $mclasses $category) (not (in $eclasses $category)))) }}
         <tr>
-          {{ $modulesite := delimit (slice "/userinfo" "rivanna" "software" (lower .package)) "/" }}
-          {{ if (fileExists (delimit (slice $modulesite "md") ".")) -}}
-              <td><a href="{{ $modulesite }}">{{ .package }}</a></td>
+          {{ $descr := $firstentry.Description }}
+          {{ $modulesite := (printf "/userinfo/rivanna/software/%s" (lower $modulename) )}}
+          {{ if (fileExists (printf "%s.md" $modulesite)) -}}
+              <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
           {{ else }}
-              <td>{{ .package }}</td>
+              <td>{{ $modulename }}</td>
           {{- end }}
-          <td>{{ $tag }}
-          <td>{{ .description }}</td>
+          <td>{{ $category }}</td>
+          <td>{{ $descr }}</td>
         </tr>
       {{ end }}
-  {{ end }}
+    {{ end }}
   </tbody>
 </table>

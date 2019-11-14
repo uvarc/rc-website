@@ -21,17 +21,21 @@ private = true
 
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
+    <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
       <option value="" selected="selected">- Select -</option>
       <option id="general" value="General">General research computing question</option>
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
       <option id="ivy" value="Ivy">Ivy secure computing</option>
       <option id="storage" value="Storage">Storage</option>
       <option id="consultation" value="Consultation">Consultation request</option>
+      <option value="">-----</option>
+      <option id="chase" value="Chase">CHASE Accounts/Data</option>
+      <option id="sentinel" value="Sentinel">Sentinel System/Software</option>
       <option id="other" value="Other">Other</option>
     </select>
     <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/" style="font-weight:bold;">Allocation Request</a>.</div>
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="https://auth.uvasomrc.io/site/storage.php" style="font-weight:bold;">storage request</a>.</div>
+    <div id="ivy-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Ivy questions. Or submit an <a href="http://cadre.virginia.edu/node/add/account-request" style="font-weight:bold;">Ivy Project Request</a>.</div>
   </div>
   <div class="form-item form-type-textfield form-group">
     <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>

@@ -29,6 +29,7 @@ summaryLength = 100
   name = "UVA Research Computing"
   description = "Creating innovative solutions for researchers"
   pageNotFoundTitle = "404 - Page not found"
+  rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
 
 [params.pricing]
   # Set STORAGE / VM PRICES globally below:

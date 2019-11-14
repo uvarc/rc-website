@@ -24,7 +24,7 @@ TotalView is a full-featured, source-level, graphical debugger for applications 
 # Getting started with TotalView.
 Your code must be compiled appropriately to use Totalview. For most Unix compilers, the debug flag `-g` must be added to the compilation options, just as it would be for other debuggers such as gdb. Optimization should also generally be suppressed, since optimization can change the code in ways that make it difficult for the debugger to interpret. Once the code has been recompiled and an executable generated, you are ready to invoke Totalview.
 
-To start TotalView, execute the follwing command:
+To start TotalView, execute the following command:
 ```
 module load totalview
 totalview
