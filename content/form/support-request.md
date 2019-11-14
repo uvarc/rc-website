@@ -12,7 +12,9 @@ private = true
 +++
 
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
-<p id="form_post_response"></p>
+<div class="alert alert-warning" id="response_message" role="alert" style="padding-bottom:0px;">
+  <p id="form_post_response"></p>
+</div>
 <div>
 
 {{% form-userinfo %}}
