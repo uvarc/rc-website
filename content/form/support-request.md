@@ -12,7 +12,7 @@ private = true
 +++
 
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
-<div class="alert alert-warning" id="response_message" role="alert" style="padding-bottom:0px;">
+<div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
@@ -126,12 +126,17 @@ if(message == "undefined" || message == undefined) {
   message="";
 }
 
-document.getElementById("form_post_response").innerHTML = message;
 if(status == "error" || status == undefined) {
-  document.getElementById("form_post_response").style.color = "red";
+  document.getElementById("form_post_response").innerHTML = message;
+  var messagebox = document.getElementById("response_message");
+  messagebox.classList.add("alert-danger");
   document.getElementById("form_post_response").style.fontWeight = "500"
 } else {
-  document.getElementById("form_post_response").style.color = "green";
+  success_message = "We're on it. RC staff make every effort to respond to requests within 1 business day.";
+  full_message = success_message + "<br /><b>" + message + "</b>";
+  document.getElementById("form_post_response").innerHTML = full_message;
+  var messagebox = document.getElementById("response_message");
+  messagebox.classList.add("alert-success");
   document.getElementById("form_post_response").style.fontWeight = "500"
 }
 </script>
