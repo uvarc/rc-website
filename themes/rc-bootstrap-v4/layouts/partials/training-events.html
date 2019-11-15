@@ -9,13 +9,15 @@
         </tr>
       </thead>
       <tbody>
-      {{ $workshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
-      {{ range first 5 $workshops }}
-        {{ $w := . }}
-        <tr>
-          <td scope="row" style="width:60%;"><a href="https://education.cadre.virginia.edu/#/workshop/{{ $w.id }}" target="_new">{{ $w.title }}</a></td>
-          <td >{{ dateFormat "Jan 2, 2006" $w.next_session.date_time}}</td>
-        </tr>
+        {{ $url := "events.csv" }}
+        {{ $sep := "," }}
+        {{ $workshops := getCSV $sep $url }}
+        {{ range first 5 $workshops }}
+          {{ $w := . }}
+          <tr>
+            <td scope="row" style="width:60%;"><a href="{{ index $w 2 }}" target="_new">{{ index $w 0 }}</a></td>
+            <td>{{ index $w 1}}</td>
+          </tr>
       {{ end }}
       </tbody>
     </table>
