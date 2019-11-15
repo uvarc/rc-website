@@ -135,8 +135,6 @@ Simply push `staging` back to GitHub. TravisCI will handle it from there. Pushin
 
 The "Training" widget and workshops page are both fed from a JSON API connected to the education.cadre.virginia.edu portal. They are updated when the site is published (by hand) or every 24 hours by a Travis-CI cron job.
 
-Soon this will be driven off of a CSV file within the root of this site. Stay tuned.
-
 ## Search
 
 Site search is provided by Google CSE. Publishing in hugo generates a `/sitemap.xml` file that is bound to Google's crawlers. If you would like to omit a page from search, include `private = true` in the front matter of your page. The crawler generally refreshes every 3-7 days.
