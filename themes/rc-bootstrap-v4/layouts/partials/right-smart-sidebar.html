@@ -1,4 +1,6 @@
-{{ $dataWorkshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
+{{ $url := "http://apidata.uvarc.io/events.csv" }}
+{{ $sep := "," }}
+{{ $dataWorkshops := getCSV $sep $url }}
 {{ if (eq ($dataWorkshops | len) 0) }}
 <!-- WHEN NO WORKSHOPS -->
 

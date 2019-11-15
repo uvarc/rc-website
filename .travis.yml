@@ -1,20 +1,19 @@
 language: bash
-
 services:
-  - docker
-
+- docker
 install:
-  - docker run -it -e TRAVIS_BRANCH=$TRAVIS_BRANCH -e BUCKET_NAME=$BUCKET_NAME -e DISTRIBUTION_ID=$DISTRIBUTION_ID -e BUCKET_NAME_STAGING=$BUCKET_NAME_STAGING -e STAGING_DISTRIBUTION_ID=$STAGING_DISTRIBUTION_ID -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e MAX_AGE=$MAX_AGE uvarc/hugo-build:v2 /root/build-site.sh
-
+- docker run -it -e TRAVIS_BRANCH=$TRAVIS_BRANCH -e BUCKET_NAME=$BUCKET_NAME -e DISTRIBUTION_ID=$DISTRIBUTION_ID
+  -e BUCKET_NAME_STAGING=$BUCKET_NAME_STAGING -e STAGING_DISTRIBUTION_ID=$STAGING_DISTRIBUTION_ID
+  -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+  -e MAX_AGE=$MAX_AGE uvarc/hugo-build:v2 /root/build-site.sh
 notifications:
+  slack:
+    secure: engQtQFI6UywuGKXcIRJ9vBSt5NQndckdouHsvAjqYjVeueu8fOe4XDuk8zRZbbzDHDbuclLJdgkjLR5pWKvL+QDAQRkUMl6adIyunSXSmyNHBTukPa0fy9Zm21MU3MjVEqAPxQYoXCiK+PDzVO5dyqq1z6EKRt+YwLj7U1VoG5jN6DL/XFZhLNU+nOKqKtX7l2piizCRWoOorH8NGhD7+vT8yKfA4rNIKNfBmIKuULK16Nd69ZrDV2taJHJKQgpYuVbkiIH9f1eKqOotZU6wPTtzvNhbo1BjKgu+LCmKXL0ttaq2ogvk+SyqGPA7lP4VaAB6pABVO6HWB6zNKH/mAICCdDkrJ7Vwva1UeNXteFzdIFXOvOhe8Ci5krqjcXTwGEi8xZjf0geePQ0qoqaYjE2BBJVltLv+bcNxbUYiyl6v7j1G4EkY57GaHhlGWa1CFUQqnQ116aBULj3o6WljW6h37bj5oLC3bx8VvC7ZOE0LKPym54PUsgmHr/mUqEaO2MrbdrrCLsRqWpKhQzS1BvicYXgyw+/eMGWc7TwcjKArVLeNK8qb73ISRgXvKR+9mLZ7GVc7l7qkUhNc6aCLLRXntLsD66p9fU0B+QcTjkNDAdMU5opYqqI4AsCu09Y8FqAAez3k66HeVnSmEPpiIlPDIMX2p7smQN/Hdqawrk=
   email:
     on_success: change
     on_failure: always
     recipients:
-      - nmagee@virginia.edu
-      - dlp7y@virginia.edu
-      - cag3fr@virginia.edu
-      - amb3xa@virginia.edu
-  slack: uvarc:umUqV7wFJK6e9Q3xP29mWrwO
-    on_success: change
-    on_failure: always
+    - nmagee@virginia.edu
+    - dlp7y@virginia.edu
+    - cag3fr@virginia.edu
+    - amb3xa@virginia.edu

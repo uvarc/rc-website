@@ -14,9 +14,10 @@ images = [
 subjects = [
   "hpc",
   "rivanna",
-  "parallel-computing",
-  "storage",
-  "image-processing"
+  "image-processing",
+  "omero",
+  "python",
+  "containers"
 ]
 +++
 

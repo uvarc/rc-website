@@ -14,7 +14,9 @@ private = true
 <script type="text/javascript" src="/js/typeahead.js"></script>
 
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="storage-form" accept-charset="UTF-8">
-<p id="form_post_response"></p>
+<div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
+  <p id="form_post_response"></p>
+</div>
 <div>
 
   <input type="hidden" id="category" name="category" value="Storage">
@@ -256,18 +258,5 @@ if (name_enc) {
   window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );
 }
 
-let message = decodeURI(getParams()["message"]);
-let status = decodeURI(getParams()["status"]);
-if(message == "undefined" || message == undefined) {
-  message="";
-}
-document.getElementById("form_post_response").innerHTML = message;
-if(status == "error" || status == undefined) {
-  document.getElementById("form_post_response").style.color = "red";
-  document.getElementById("form_post_response").style.fontWeight = "500"
-} else {
-  document.getElementById("form_post_response").style.color = "green";
-  document.getElementById("form_post_response").style.fontWeight = "500"
-}
-
 </script>
+<script type="text/javascript" src="/js/response-message.js"></script>
