@@ -8,6 +8,29 @@
     </tr>
   </thead>
   <tbody>
+    {{ $url := "https://staging.rc.virginia.edu/data/events.csv" }}
+    {{ $sep := "," }}
+    {{ range $i, $r := getCSV $sep $url }}
+    <tr>
+      <td>{{ index $r 1}}</td>
+      <td><a href="{{ index $r 2 }}" target="_new">{{ index $r 0 }}</a></td>
+      <td>{{ index $r 3 }}</td>
+    </tr>
+  {{ end }}
+  </tbody>
+</table>
+</div>
+
+<div style="width:100%;">
+<table class="table table-hover table-striped" style="width: 100%; table-layout: fixed;">
+  <thead class="thead-inverse">
+    <tr>
+      <th scope="row">DATE</th>
+      <th style="text-align:left;">WORKSHOP</th>
+      <th>INSTRUCTOR</th>
+    </tr>
+  </thead>
+  <tbody>
   {{ $workshops := getJSON "https://education.cadre.virginia.edu/api/workshop/upcoming" }}
   {{ range first 20 $workshops }}
     {{ $w := . }}
