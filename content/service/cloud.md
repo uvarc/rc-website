@@ -226,7 +226,7 @@ If you have a project and would like to discuss options, pricing, design, or imp
 Our staff includes an AWS certified solution architect, and the RC team uses AWS for our own internal 
 systems and development.
 
-[<button class="btn btn-primary">Request a Consultation</button>](/service/consult/)
+[<button class="btn btn-primary">Request a Consultation</button>](https://auth.uvasomrc.io/site/consult.php)
 
 <hr size=1 style="padding-bottom:10px;" />
 
