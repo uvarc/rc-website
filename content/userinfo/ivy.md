@@ -2,8 +2,8 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2019-06-04T17:45:12-05:00"
-tags = ["ivy","vm","hipaa","linux","windows","security","jupyter"]
+date = "2019-11-14T17:45:12-05:00"
+tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
 author = "RC Staff"  
@@ -11,10 +11,10 @@ author = "RC Staff"
 +++
 
 {{% callout %}}
-#### Ivy
+<h4>Ivy</h4>
 
-Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) and Jupyter Notebooks.
-Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA requirements</a>.
+<p>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) and Jupyter Notebooks.
+Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA requirements</a>.</p>
 
 {{% /callout %}}
 
