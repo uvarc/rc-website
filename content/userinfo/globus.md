@@ -2,7 +2,7 @@
 description = ""
 title = "Globus Data Transfer"
 draft = false
-date = "2019-08-28T17:45:12-05:00"
+date = "2019-11-12T17:45:12-05:00"
 tags = ["data-transfer","rivanna","storage","ivy","globus","dtn"]
 categories = ["userinfo"]
 images = [""]
@@ -11,26 +11,25 @@ author = "Staff"
 +++
 
 {{% callout %}}
-
-#### Globus Data Transfer
+<h4>Globus Data Transfer</h4>
 
 <img align="right" alt="Globus DTN" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/e173debd0e4ab4497f7a799cbe864258f3482e5a.png" style="max-width:35%;" />
 
-Is a simplified way to access and move your research data, across all systems, using any existing identity. Transfer data to and from systems such as:
+<p>Is a simplified way to access and move your research data, across all systems, using any existing identity. Transfer data to and from systems such as:</p>
 
-* Laptops
-* HPC clusters (Rivanna)
-* Secure computing (Ivy)
-* Lab / departmental storage
-* Tape archives
-* Cloud storage
-* Off-campus resources (XSEDE, National Labs)
+<ul>
+<li>Laptops
+<li>HPC clusters (Rivanna)
+<li>Secure computing (Ivy)
+<li>Lab / departmental storage
+<li>Tape archives
+<li>Cloud storage
+<li>Off-campus resources (XSEDE, National Labs)
+</ul>
 
-Access them all using just a web browser. This can help you share research data with colleagues, co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.
-
-Data stored at a different institution? At a supercomputing facility? All you need is your campus login.
-
-**Globus Connect CAN now be used for transferring sensitive data. (See Ivy, below)**
+<p>Access them all using just a web browser. This can help you share research data with colleagues, co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.</p>
+<p>Data stored at a different institution? At a supercomputing facility? All you need is your campus login.</p>
+<p><b>Globus Connect CAN now be used for transferring sensitive data. (See Ivy, below)</b></p>
 
 {{% /callout %}}
 
