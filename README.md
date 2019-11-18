@@ -57,7 +57,7 @@ Content of this website is contained in a series of markdown files within the `c
   * Store images in `static/images/`. For example, the published URL of `static/images/uva-logo.jpg` will be https://www.rc.virginia.edu/images/uva-logo.jpg
   * Follow guidelines from https://gohugo.io/content/organization/.
 
-### About front matter
+### Front matter
 
 Metadata for each web page is contained in TOML format at the top of each markdown page. The only required fields are usually TITLE and DATE. Categories and Tags can be as numerous as you find useful.
 
@@ -112,11 +112,13 @@ A CADRE Education Track tile:
 
     {{< education-track 279 >}}
 
+Shortcodes using `{{< >}}` simply render the text or HTML within the shortcode. Shortcodes using `{{% %}}` will also render any markdown within the shortcode.
+
 
 ### Featured Content
 To "feature" a post on the home page (which displays 2 most recent feature posts), simply add a CATEGORY with the value `feature`.
 
-    categories = ["feature","another-category","yet-another-category"]
+    categories = ["another-category","yet-another-category","feature"]
 
 ### Preview content locally
 `hugo server` will bring up the local hugo server and give you a preview URL `http://localhost:1313/`. If making many changes, open another terminal to keep the `hugo server` running as you edit.
@@ -134,6 +136,16 @@ Simply push `staging` back to GitHub. TravisCI will handle it from there. Pushin
 ### Events Data
 
 The "Training" widget and workshops page are both fed from a JSON API connected to the education.cadre.virginia.edu portal. They are updated when the site is published (by hand) or every 24 hours by a Travis-CI cron job.
+
+### Automated Builds
+
+Travis-CI is a CI/CD tool that automates builds and deployments of the website code. Take note of the contents of `.travis.yml` and you will see instructions for how Travis builds the site:
+* Upon a push to `staging` or `master` it launches a customized container `uvarc/hugo-build:v2`.
+* That container runs a script that clones that branch of the repository and runs `hugo -v --ignoreCache` to build the site.
+* Travis then synchronizes the published HTML, JS, CSS, images and files to Amazon S3.
+* Finally, the build invalidates the CloudFront cache that serves out the actual website.
+
+Build+deployment generally takes 70 seconds and can be monitored using the [Travis-CI dashboard](https://travis-ci.org/uvarc/rc-website/builds) for this repository.
 
 ## Search
 
