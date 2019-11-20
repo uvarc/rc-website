@@ -78,8 +78,7 @@ function refreshStatusTable(){
 }
 
 function refreshJobsTable(){
-    // $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/jobs', function(data) {
-    $.getJSON('https://d1g6oiq9cxc6x6.cloudfront.net/jobs.json', function(data) {
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/jobs', function(data) {
         var jobData = '';
         $.each(data, function(key, value) {
             jobData += '<tr>';
