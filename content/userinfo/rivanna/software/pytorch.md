@@ -25,7 +25,7 @@ In order to use one of our PyTorch containers hosted on Singularity-Hub, you wil
 ```
 cd
 module load singularity
-singularity build --name pytorch-1.0.0.simg shub://arcsUVA/pytorch:1.0.0-py36
+singularity pull --name pytorch-1.0.0.simg shub://arcsUVA/pytorch:1.0.0-py36
 ```
 After running this command, you will find the container image file, `pytorch-1.0.0.simg`, in your home directory.
 
