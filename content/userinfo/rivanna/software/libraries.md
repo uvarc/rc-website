@@ -35,4 +35,4 @@ module spider hdf5/1.10.4
 
 **List of Software Library Modules**
 
-{{< rivanna-software tags="numlib"  >}}
+{{< rivanna-software moduleclasses="numlib,lib"  >}}

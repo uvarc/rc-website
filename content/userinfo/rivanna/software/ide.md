@@ -54,13 +54,13 @@ via [FastX](/userinfo/rivanna/logintools/fastx).
 ## Geany
 
 [Geany](https://geany.org/) is a lightweight IDE.  In some respects it is
-intermediate between a text editor such as pluma and a full-featured IDE.  
-It is capable of managing building C/C++/Fortran programs, including through
-make.  It provides syntax coloring for many languages other than the three
-compiled languages.  It is accessed through a module
+intermediate between a text editor such as pluma and a full-featured IDE. It is capable of managing building C/C++/Fortran programs, including through make.  It provides syntax coloring for many languages other than the three compiled languages.  It is accessed through a module:
 ```
 module load geany
 ```
+
+{{% module-versions module="geany" %}}
+
 
 ## Code::Blocks
 
@@ -74,8 +74,12 @@ The module is codeblocks (without the colons)
 module load codeblocks
 ```
 
+{{% module-versions module="codeblocks" %}}
+
 ## Eclipse
 
 The [Eclipse](https://www.eclipse.org/ide/) IDE is a sophisticated programming
 environment with a nontrivial learning curve.  It is particularly powerful
 for Java programming.  A guide to getting started is [here](https://www.eclipse.org/getting_started/).
+
+{{% module-versions module="eclipse" %}}

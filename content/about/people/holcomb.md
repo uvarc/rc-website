@@ -15,7 +15,11 @@ subjects = [
   "hpc",
   "rivanna",
   "parallel-computing",
-  "storage",
+  "compiler",
+  "mpi",
+  "fortran",
+  "c/c++",
+  "python"
 ]
 +++
 

@@ -10,7 +10,6 @@ images = [""]
 
 +++
 
-<a href = "https://education.cadre.virginia.edu/"><img src="/images/logos/cadre_academy_logo.png" alt="Cadre Academy" align=right style="max-width:40%; padding-left:25px; padding-bottom:10px;" /></a>
 <p class=lead>UVA Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by experts and are freely available to UVa faculty, staff and students.</p>
 
 
@@ -19,12 +18,28 @@ images = [""]
 {{% upcoming-workshops %}}
 
 <!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
-<a href="https://education.cadre.virginia.edu/" class="btn btn-warning" target="_new"> View All Upcoming Workshops on CADRE Academy </a>
+<a href="https://data.library.virginia.edu/training/" class="btn btn-warning" target="_new"> View All Upcoming Workshops </a>
 
 - - - 
 
 # Register
-Register for UVARC workshops through <a style="font-weight:bold;" href="https://education.cadre.virginia.edu/">CADRE Academy</a>, a new portal that presents workshops sequentially in tracks of particular topics. Users can register for upcoming sessions, follow their progress, and find out about related classes on the site.
+Register for our workshops through <a style="font-weight:bold;" href="https://data.library.virginia.edu/training/">UVA Library Research Data Services</a>, where many technical workshops are taught for beginner, intermediate, and advanced users.
+UVA Research Data Services offers training on data analysis, statistics, and computation and on Library resources and methods. 
+
+Broad categories of RDS sponsored workshops are:
+
+- Getting Started with R
+- R for Statistics
+- R for Big (Comp/Data)
+- Getting Started with Python
+- Using Matlab
+- Using Rivanna
+- Using Tableau
+- Using Fiji/ImageJ
+- General Data Tools
+- Computational Workflow Tools
+- Grant Workflow Tools
+- Writing Workflow Tools
 
 - - -
 
@@ -70,5 +85,5 @@ Course material and exercises are available through a companion site. Feel free 
 - Writing in Functions in R
 
 {{% callout %}}
-Do you need a specific workshop and have a group of people to attend? [Write us](//uvarc.io/support)!
+Do you need a specific workshop and have a group of people to attend? <a href="//uvarc.io/support" style="font-weight:bold;">Write us</a>.
 {{% /callout %}}

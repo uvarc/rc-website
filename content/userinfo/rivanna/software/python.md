@@ -32,7 +32,7 @@ The default Python is required for system purposes and is generally too old for 
 module spider anaconda
 ```
 
-{{% module-versions tags="lang" %}}
+{{% module-versions module="anaconda" %}}
 
 The module version extensions, i.e. py2.7 and py3.6, indicate the version of the Python interpreter.
 
@@ -40,6 +40,12 @@ To load the `anaconda/5.2.0-py2.7` module which sets up your environment to use 
 ```
 module load anaconda/5.2.0-py2.7
 ```
+
+# Python and MPI
+
+{{< module-description module="mpi4py" >}} On Rivanna, we provide mpi4py libraies via dedicated modules that are built using the Gcc compiler and OpenMPI libraries.
+
+{{% module-versions module="mpi4py" %}}
 
 # View list of all installed packages
 After loading an `anaconda` module, a list of all installed packages can be viewed by running this command:

@@ -1,15 +1,23 @@
 $("#rivanna-help").hide();
+$("#ivy-help").hide();
 $("#storage-help").hide();
 $("#categories").change(function () {
   var cat = this.value;
   if (cat == "Storage") {
     $("#rivanna-help").hide(200);
+    $("#ivy-help").hide(200);
     $("#storage-help").show(400);
   } else if (cat == "Rivanna") {
     $("#rivanna-help").show(400);
+    $("#ivy-help").hide(200);
+    $("#storage-help").hide(200);
+  } else if (cat == "Ivy") {
+    $("#ivy-help").show(400);
+    $("#rivanna-help").hide(400);
     $("#storage-help").hide(200);
   } else {
     $("#rivanna-help").hide(200);
+    $("#ivy-help").hide(200);
     $("#storage-help").hide(200);
   }
 });
