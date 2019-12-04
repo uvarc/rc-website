@@ -103,6 +103,7 @@
       </div>
     </div>
     <script>
+      $("#overlay").hide();
       function qon() {
         $("#overlay").show();
         $("#q").focus();
@@ -123,7 +124,9 @@
         window.onscroll = function() {}; 
       } 
     </script>
-    <div style="float:right;margin-right:2rem;margin:auto;"><a href="#" onclick="qon()"><i class="fas fa-search-plus" style="color:white;"></i></a></div>
+    <div style="float:right;margin-right:1rem;">
+      <div style="margin-top:50%;margin-bottom:50%;"><a href="#" onclick="qon()"><i class="fas fa-search-plus" style="color:white;"></i></a></div>
+    </div>
     <!-- END SEARCH OVERLAY -->
 
   </div>
