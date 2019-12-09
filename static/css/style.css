@@ -441,3 +441,58 @@ img {
   bottom: 30px;
   transform: rotate(-225deg);
 }
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:white;
+  opacity: 0.96;
+  z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+#searchtext{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 80px;
+  color: black;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+#q {
+  text-transform: uppercase;
+  border:none;
+  text-align:center;
+  font-family:'Share Tech Mono', monospace;
+}
+.cursor {
+  position: relative;
+}
+.cursor	i {
+  position: absolute;
+  width: 1px;
+  height: 80%;
+  background-color: gray;
+  left: 5px;
+  top: 10%;
+  animation-name: blink;
+  animation-duration: 800ms;
+  animation-iteration-count: infinite;
+  opacity: 1;
+}
+.cursor input:focus + i {
+  display: none;
+}
+#q:focus {
+  outline-width: 0;  
+}
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
