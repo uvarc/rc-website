@@ -8,12 +8,6 @@
 
   <ul class="navbar-nav mr-auto">
 
-<!--
-  <li class="nav-item">
-    <a class="nav-link" href="/" style="color:white;">Get Help</a>
-  </li>
--->
-
   <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">About</a>
     <div class="dropdown-menu">
@@ -91,32 +85,34 @@
     <a class="nav-link" href="/project/" style="color:white;">Projects</a>
   </li>
 
-<!--
-  <li class="nav-item">
-    <a class="nav-link" href="/publication/" style="color:white;">Publications</a>
+  <li class="nav-item" style="margin-left:2rem;margin-right:2rem;">
+    <a href="/support/"><button style="" class="btn btn-success" type="submit">User Support</button></a>
   </li>
--->
 
-<!-- REMOVE HEADER ITEM
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Partnerships</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="http://ithriv.org/" target="_new">iTHRIV</a>
-      <a class="dropdown-item" href="https://cadre.virginia.edu/" target="_new">CADRE</a>
-      <a class="dropdown-item" href="http://accord.cs.virginia.edu/" target="_new">ACCORD</a>
-      <a class="dropdown-item" href="https://www.xsede.org/" target="_new">XSEDE</a>
+  </ul>
+
+    <!-- HIDDEN SEARCH DIV OVERLAY -->
+    <div id="overlay">
+      <div style="float:right;margin-top:10px;margin-right:20px;">
+        <a style="color:black;text-decoration:none" href="#" onclick="qoff()"><img src="/images/thin-x.png" alt="Close" style="max-width:40px;"></a>
+      </div>
+      <div id="searchtext" class="cursor">
+        <form method="get" action="/search/">
+          <input style="" type="text" id="q" name="q" onfocus="this.value=''"></input>
+        </form>
+      </div>
+      <div style="font-family:'Share Tech Mono', monospace;float:left;color:black;font-weight:bold;text-decoration:none;position:absolute;width:60%;padding-left:10px;top:10px;font-size:24px;" id="queries">Common searches: </div>
+      <script src="https://cse.google.com/query_renderer.js"></script>
+      <script src="https://cse.google.com/api/009070394138504404541:6d4gc6cb7oi/popularqueryjs?view=one_year&callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+      <script>
+        $("#overlay").hide();
+      </script>
     </div>
-  </li>
--->
+    <div style="float:right;margin-right:1rem;">
+      <div style="margin-top:50%;margin-bottom:50%;"><a href="#" onclick="qon()"><i class="fas fa-search-plus" style="color:white;"></i></a></div>
+    </div>
+    <!-- END SEARCH OVERLAY -->
 
-    </ul>
-
-  <a href="/support/"><button style="margin-right:1.4em;" class="btn btn-success" type="submit">User Support</button></a>
-
-      <form class="form-inline my-2 my-lg-0" method="get" action="/search/">
-      <input class="form-control mr-sm-2 form-control-sm" name="q" id="q" type="text" placeholder="Search">
-      <button class="btn btn-sm align-middle btn-outline-secondary" type="submit">Search</button>
-    </form>
   </div>
 </div>
 </nav>
