@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2019-12-09T15:18:25-05:00"
+date = "2019-12-09T11:18:25-05:00"
 title = "JIRA Downtime, December 13"
 draft = false
 tags = ["Rivanna"]
