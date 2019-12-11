@@ -1,9 +1,9 @@
 +++
 draft = false
 date = "2019-05-17T15:25:10-05:00"
-title = "Adam Munro"
+title = "Steve Losen"
 job_title = "HPC Systems Specialist"
-lastname = "munro"
+lastname = "losen"
 biolink = false
 type = "people"
 description = ""
