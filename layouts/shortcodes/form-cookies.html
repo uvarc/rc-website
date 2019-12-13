@@ -1,0 +1,36 @@
+<script>
+
+// 1. Look for cookie
+// 2. If no cookie, SET ONE then redirect
+// 3. Check for cookie match w/ URL param
+// 4. If mismatch, redirect
+// 5. If match, then proceed
+
+function setCookie(key, value, expiry) {
+  var expires = new Date();
+  expires.setTime(expires.getTime() + (expiry * 60 * 60 * 1000));
+  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+}
+
+function getCookie(key) {
+  var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+  return keyValue ? keyValue[2] : null;
+}
+
+function gen_random(length) {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < length; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
+var uniqid = gen_random(12);
+var get_cookie = getCookie("__user_token");
+if (!get_cookie) {
+  setCookie('__user_token', uniqid, '1');
+}
+
+</script>
