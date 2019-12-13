@@ -14,12 +14,16 @@ type = "about"
 
 {{< form-cookies >}}
 
+<script>
+var user_token = getCookie("__user_token");
+</script>
+
 <div class="card-group">
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Submit a Ticket</h5>
     <p class="card-text">Open a support ticket with your specific questions or issues.<p>
-    <a href="https://auth.uvasomrc.io/site/support.php"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
+    <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/support.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
@@ -33,7 +37,7 @@ type = "about"
   <div class="card-body">
     <h5 class="card-title">Request a Consultation</h5>
     <p class="card-text">Work directly with RC staff on your project idea or application design.</p>
-    <a href="https://auth.uvasomrc.io/site/consult.php"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
+    <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/consult.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
   </div>
 </div>
 </div>
@@ -67,7 +71,7 @@ type = "about"
   <div class="card-body">
     <h5 class="card-title">Request Storage</h5>
     <p class="card-text">Manage your shared project, value, or ZFS storage volumes.</p>
-    <a href="https://auth.uvasomrc.io/site/storage.php"><button class="btn btn-primary btn-sm">Request Storage</button></a>
+    <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/storage.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request Storage</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
