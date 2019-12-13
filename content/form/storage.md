@@ -11,6 +11,8 @@ type = "form"
 private = true
 +++
 
+{{< form-cookies >}}
+
 <script type="text/javascript" src="/js/typeahead.js"></script>
 
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="storage-form" accept-charset="UTF-8">
