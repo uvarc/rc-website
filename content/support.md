@@ -12,6 +12,8 @@ type = "about"
 
 +++
 
+{{< form-cookies >}}
+
 <div class="card-group">
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
