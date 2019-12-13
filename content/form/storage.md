@@ -227,6 +227,23 @@ function decode64(str) {
 
 var form = document.getElementById('request-form');
 
+var cookie_token = getCookie("__user_token");
+var url_user_token = getParams()["user_token"];
+
+if (cookie_token !== url_user_token) {
+  window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
+}
+
+var name_enc = getParams()["name"];
+if (name_enc) {
+  // do nothing
+} else {
+  $('#name').val('');
+  $('#email').val('');
+  $('#uid').val('');
+  window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
+}
+
 // name
 let name = decodeURI(getParams()["name"]);
 let name_dec = decode64(name);
@@ -247,16 +264,6 @@ function getStorageType() {
   var $request_title = document.getElementById("request_title");
   $request_title.value = "Storage Request: " + $myval.toUpperCase();
 };
-
-var name_enc = getParams()["name"];
-if (name_enc) {
-  // do nothing
-} else {
-  $('#name').val('');
-  $('#email').val('');
-  $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/storage.php" );
-}
 
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>
