@@ -13,6 +13,8 @@ tags = [
 ]
 draft = false
 shorttitle = "Matlab"
+softwarename = "Matlab"
+modulename = "matlab"
 title = "Matlab on Rivanna"
 description = "Matlab in Rivanna's HPC environment"
 author = "RC Staff"
@@ -25,19 +27,32 @@ MATLAB is an integrated technical computing environment from the MathWorks that 
 
 Mathworks provides MATLAB examples and tutorials for all experience levels here.
 
-# Using MATLAB on Rivanna
-
-You must always set up your environment in order to use MATLAB.  To load the most recent installed version run
-
-`module load matlab`
-
-**Available Matlab versions**
+# Available Matlab Versions
 
 {{% module-versions %}}
 
 You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through SLURM.
 
-If your Matlab job requires user interactions via the Matlab interface, you should use [ijob](https://www.rc.virginia.edu/userinfo/rivanna/slurm/#submitting-an-interactive-job) to request an interactive job.
+If your Matlab job requires user interactions via the Matlab interface, you should use [ijob](https://www.rc.virginia.edu/userinfo/rivanna/slurm/#submitting-an-interactive-job) to request an interactive job or start an interactive session through Rivanna's web portal, [Open OnDemand](/userinfo/rivanna/ood/overview), as described in the next section.
+
+# Interactive Sessions through Rivanna's Web Portal
+
+## Starting an Interactive Session
+To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/queues/) to learn more about the partitions.
+
+1. Open a web browser and go to URL:  https://rivanna-portal.hpc.virginia.edu.
+2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
+3. On the top banner of the Open OnDemand dashboard, click on `Interactive Apps`.
+4. In the drop-down box, click on `{{% software-name %}}`.
+5. After connecting to {{% software-name %}} through Open OnDemand, a form will appear where you can fill in the resources for {{% software-name %}}. Blender supports GPUs and should be run in the `GPU` partition.
+6. When done filling in the resources, click on the blue `Launch` button at the bottom of the form. **Do not click the button multiple times**.
+7. It may take a few minutes for the system to gather the resources for your instance of {{% software-name %}}. When the resources are ready a `Connect to {{% software-name %}}` button will appear. Click on the button to start {{% software-name %}}.
+
+## Using {{% software-name %}}
+When {{% software-name %}} opens in your web browser, it will appear just like the {{% software-name %}} that you have on your laptop or desktop.
+
+## Closing the Interactive Session
+When you are done, quit the Blender application.  The interactive session will be closed and the allocated resources will be released.
 
 # Submitting a SLURM Batch Job using a single core
 

@@ -41,7 +41,7 @@ Your instance (or copy) of RStudio will run on a Rivanna compute node. So, it wi
 1. After connecting to RStudio through Open OnDemand, a form will appear where you can fill in the resources for RStudio.
 2. When done filling in the resources, click on the blue “Launch” button at the bottom of the form.
 
-It will take a few minutes for the system to gather the resources for your instance of JupyterLab. When the resources are ready a “Connect to RStudio Server” button will appear. Click on the button.
+It will take a few minutes for the system to gather the resources for your instance of RStudio. When the resources are ready a “Connect to RStudio Server” button will appear. Click on the button.
 
 
 # Using RStudio
