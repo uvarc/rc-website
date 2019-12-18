@@ -81,14 +81,14 @@ Please read the [Matlab documentation](/userinfo/rivanna/software/matlab) for de
 After starting an interactive Matlab session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Blender
-Through this interface users can interactively run Blender sessions on a dedicated GPU node.
+Through this interface users can run interactive Blender sessions on a dedicated GPU node.
 
 Please read the [Blender documentation](/userinfo/rivanna/software/blender) for detailed instructions on how to start Blender sessions and specify hardware resource requests.
 
 After starting an interactive Blender session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## ParaView
-Through this interface users can interactively run ParaView sessions on a dedicated GPU node.
+Through this interface users can run interactive ParaView sessions on a dedicated GPU node.
 
 Please read the [ParaView documentation](/userinfo/rivanna/software/paraview) for detailed instructions on how to start ParaView sessions and specify hardware resource requests.
 
