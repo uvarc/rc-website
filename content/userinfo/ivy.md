@@ -64,7 +64,7 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 <div class="feature-box box">
   <div class="ribbon ribbon-top-right"><span>Updated!</span></div>
   <img style="float:right;max-width:30%;" src="/images/duo-auth.png" alt="Duo 2-Factor Authentication" />
-  <p>To connect to the Ivy environment with VPN you will need to install the Duo Mobile multi-factor authentication (MFA) app on your smartphone.</p> 
+  <p>To connect to the Ivy environment with VPN you will need to install the Duo Mobile multi-factor authentication (MFA) app on your smartphone.</p>
   <ul>
     <li><a href="https://apps.apple.com/us/app/duo-mobile/id422663827" target="_new">Get Duo for iPhone in the App Store</a></li>
     <li><a href="https://play.google.com/store/apps/details?id=com.duosecurity.duomobile&hl=en_US" target="_new">Get Duo for Android on Google Play</a></li>
@@ -96,14 +96,21 @@ A virtual machine (VM) is a computing instance dedicated to your project. Multip
 
 Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2. Each platform is available in three instance types. Refer to the grid below for specifics.
 
+{{% callout %}}
+<p>Note that Windows VMs only support concurrent access by 2 users at a time.</p>
+
+{{% /callout %}}
+
+
 {{< ivy-pricing >}}
 
 Once created, your instance will be assigned a private IP address that you will use to connect to it (in the format `10.xx.xx.xx`). VMs exist in a private, secure network and cannot
-reach outside resources on the Internet. Most inbound and outbound data transfer is managed through the Data Transfer Node (see below). 
+reach outside resources on the Internet. Most inbound and outbound data transfer is managed through the Data Transfer Node (see below).
+
 
 ## Connecting to your VM
 
-To connect to your VM, you must install either an SSH client to connect to your VM using the command-line interface (CentOS VMs only), or 
+To connect to your VM, you must install either an SSH client to connect to your VM using the command-line interface (CentOS VMs only), or
 remote desktop software to connect to the desktop GUI of your VM. These options are outlined below.
 
 **MacOSX Users:**
@@ -115,6 +122,7 @@ remote desktop software to connect to the desktop GUI of your VM. These options 
 
 * PuTTy (for SSH, [download here](http://www.chiark.greenend.org.uk/~sgtatham/putty/))
 * Microsoft Remote Desktop (built-in, for remote desktop to Windows or CentOS VMs)
+
 
 To connect to Ivy follow the platform-specific steps below:
 
@@ -150,7 +158,7 @@ To connect to Ivy follow the platform-specific steps below:
   </div>
 </div>
 
- 
+
 ## Software
 
 Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by
@@ -177,7 +185,7 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="/userinfo/ivy-linux-sw/java-sdk-jre" style="color: #0275d8;">Java SDK+JRE 1.8</a></li>
             <li><a href="/userinfo/ivy-linux-sw/rodeo" style="color: #0275d8;">Rodeo 2.5</a></li>
             <li><a href="/userinfo/ivy-linux-sw/libre-office" style="color: #0275d8;">LibreOffice 5</a></li>
-          
+
         </p>
       </div>
     </div>
@@ -218,7 +226,7 @@ and regulatory compliance and, if approved, will be installed for you.
           <ul>
             <li><a href="/userinfo/ivy-linux-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
             <li><a href="/userinfo/ivy-linux-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
-            <li>Data / Database</li>	
+            <li>Data / Database</li>
             <li><a href="/userinfo/ivy-linux-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
           </ul>
         </p>
