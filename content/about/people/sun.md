@@ -13,7 +13,6 @@ image = "/images/profiles/profile_ruoshi_sun.png"
 subjects = [
   "compiler",
   "hpc",
-  "rivanna",
   "materials-science",
   "parallel-computing",
   "python",
