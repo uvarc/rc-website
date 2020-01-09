@@ -126,3 +126,19 @@ g16 -m=100gb -p=${SLURM_CPUS_PER_TASK} -w=`cat snodes.$SLURM_JOBID` h2o.com
 #Clean up
 rm snodes.$SLURM_JOBID
 ```
+
+# galloc: could not allocate memory
+According to [here|https://docs.computecanada.ca/wiki/Gaussian_error_messages#galloc:_could_not_allocate_memory]:
+> *Explanation of error*
+> This is a memory allocation error due to lack of memory. Gaussian handles memory in such a way that it actually uses about 1GB more than %mem.
+> *Fixing the error*
+> The value for %mem should be at least 1GB less than the value specified in the job submission script. Conversely, the value specified for --mem in your job script should be at least 1GB greater than the amount specified in the %mem directive in your Gaussian input file. The exact increment needed seems to depend on the job type and input details; 1GB is a conservative value determined empirically.
+
+If you encounter this error, please try to keep the `-m` value passed to `g16` constant and increase the `--mem` value passed to `#SBATCH`. For example:
+```
+#SBATCH --mem=130000
+...
+g16 -m=128gb
+```
+
+See [here|https://docs.computecanada.ca/wiki/Gaussian_error_messages] for a list of common Gaussian error messages.
