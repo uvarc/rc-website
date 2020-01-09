@@ -11,12 +11,12 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_ruoshi_sun.png"
 subjects = [
-  "containers",
+  "compiler",
   "hpc",
-  "rivanna",
+  "materials-science",
   "parallel-computing",
   "python",
-  "vasp"
+  "singularity"
 ]
 +++
 
