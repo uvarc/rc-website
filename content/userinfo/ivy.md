@@ -20,7 +20,7 @@ Researchers can use Ivy to process and store sensitive data with the confidence 
 
 # Overview
 
-Ivy consists of both virtual computing environments and secure storage. In order to obtain access to either system, users must 1. Submit an account request, 2. Complete the Information Security Awareness Training, and 3. Ensure their personal computer meets all High Security VPN requirements.
+Ivy consists of both virtual computing environments and secure storage. In order to obtain access to either system, users must **1. Submit an account request, 2. Complete the Information Security Awareness Training, and 3. Ensure their personal computer meets all High Security VPN requirements.**
 
 * [Requesting Access](#requesting-access)
 * [Training](#training)
@@ -39,7 +39,7 @@ University of Virginia tenure stream and academic general faculty, research facu
 
 Access to Ivy resources is project-based, limited to PIs and their designees, and requires approval. Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
 
-[<button class="btn btn-success">Request an Ivy Account</button>](https://services.rc.virginia.edu/ivyvm)
+<button class="btn btn-success"><a href="https://services.rc.virginia.edu/ivyvm" target="_blank">Request an Ivy Account</a></button>
 
 - - -
 
