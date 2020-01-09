@@ -39,7 +39,7 @@ University of Virginia tenure stream and academic general faculty, research facu
 
 Access to Ivy resources is project-based, limited to PIs and their designees, and requires approval. Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
 
-<button class="btn btn-success"><a href="https://services.rc.virginia.edu/ivyvm" target="_blank">Request an Ivy Account</a></button>
+[<button class="btn btn-success">Request an Ivy Account</button>](https://services.rc.virginia.edu/ivyvm)
 
 - - -
 
@@ -47,24 +47,24 @@ Access to Ivy resources is project-based, limited to PIs and their designees, an
 
 In order to use Ivy, researchers must complete the Information Security Awareness Training (ISAT). This training takes approximately 10 minutes to complete.
 
-If you have a Workday account, please complete the training at the following link: [Workday ISAT](https://www.myworkday.com/uva/d/inst/1$17816/17816$202.htmld).
+If you have a Workday account, please complete the training at the following link: <a href="https://www.myworkday.com/uva/d/inst/1$17816/17816$202.htmld" target="_blank">Workday ISAT</a>.
 
-If you are a student and do not have a Workday account, please complete the training at this link instead: [Student ISAT](https://quiz.its.virginia.edu/itsa-staff).
+If you are a student and do not have a Workday account, please complete the training at this link instead: <a href="https://quiz.its.virginia.edu/itsa-staff" target="_blank">Student ISAT</a>.
 
 - - -
 
 # High Security VPN
 
-The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both on and off grounds. In order to use the HSVPN, users must ensure that their personal machines meet the following requirements. More information on HSVPN compliance can be found on the ITS website: [https://in.virginia.edu/vpncheck](https://in.virginia.edu/vpncheck).
+The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both on and off grounds. In order to use the HSVPN, users must ensure that their personal machines meet the following requirements. More information on HSVPN compliance can be found on the ITS website: <a href="https://in.virginia.edu/vpncheck" target="_blank">https://in.virginia.edu/vpncheck</a>
 
 1. **Install the Cisco AnyConnect Secure Mobility Client.**
-    This can be found at the [UVA ITS Software Gateway](https://virginia.service-now.com/its?id=sg_catalog&sys_id=d66f4fd4db29274c2192e665059619d6&sysparm_category=06d7db5bdbfcab00cebc550a48961963). Be sure to install the version of VPN Client HS 4.6 that is compatible with your personal computer's operating system. More detailed instructions for installing the VPN client can be found on the [ITS website](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).
+    This can be found at the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=d66f4fd4db29274c2192e665059619d6&sysparm_category=06d7db5bdbfcab00cebc550a48961963" target="_blank">UVA ITS Software Gateway</a>. Be sure to install the version of VPN Client HS 4.6 that is compatible with your personal computer's operating system. More detailed instructions for installing the VPN client can be found on the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">ITS website</a>.
     
 2. **Install Opswat.**
-    Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the [UVA ITS Software Gateway](https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa).
+    Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa" target="_blank">UVA ITS Software Gateway</a>.
     
 3. **Install Anti-malware software (Cylance recommended)**.
-    Anti-malware software must be installed on your machine. Cylance is behavioral-based antimalware software and meets UVA's HSVPN requirements. Cylance can downloaded from the [UVA ITS Software Gateway](https://virginia.service-now.com/its?id=sg_catalog&sys_id=b9fb6247db59270c2192e6650596190f).
+    Anti-malware software must be installed on your machine. Cylance is behavioral-based antimalware software and meets UVA's HSVPN requirements. Cylance can downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=b9fb6247db59270c2192e6650596190f" target="_blank">UVA ITS Software Gateway</a>.
     
 
 <!-- 
