@@ -12,10 +12,11 @@ images = [
   ""
 ]
 subjects = [
+  "ivy",
+  "sensitive-data",
+  "openstack",
   "hpc",
-  "rivanna",
-  "parallel-computing",
-  "storage",
+  "rivanna"
 ]
 +++
 
