@@ -55,7 +55,7 @@ If you see the following message asking you to upgrade your pip version, it is u
 You are using pip version x.x.x, however version y.y.y is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
 ```
-Doing so may result in broken depencies.
+Doing so may result in broken dependencies.
 
 (As of 01/10/2020, this error message is suppressed.)
 
