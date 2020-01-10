@@ -29,7 +29,7 @@ with **pip**, the common python package manager.
 
 # Installing packages 
 
-Packages could be installed via `pip` or `conda` package managers
+Packages could be installed via the `pip` or `conda` package managers
 
 ## Using `conda` 
 
