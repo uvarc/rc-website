@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2019-11-14T17:45:12-05:00"
+date = "2020-01-08T11:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -13,15 +13,18 @@ author = "RC Staff"
 {{% callout %}}
 <h4>Ivy</h4>
 
-<p>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) and Jupyter Notebooks.
-Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA requirements</a>.</p>
+<p>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
+Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA or CUI requirements</a>.</p>
 
 {{% /callout %}}
 
 # Overview
 
-Ivy consists of two separate computing environments. Access to one environment does not automatically grant access to the others:
+Ivy consists of both virtual computing environments and secure storage. In order to obtain access to either system, users must **1. Submit an account request, 2. Complete the Information Security Awareness Training, and 3. Ensure their personal computer meets all High Security VPN requirements.**
 
+* [Requesting Access](#requesting-access)
+* [Training](#training)
+* [High Security VPN](#high-security-vpn)
 * [Virtual Machines](#virtual-machines)
 * [JupyterLab Notebooks](#jupyterlab-notebooks) - Coming Soon!
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
@@ -32,7 +35,7 @@ Ivy consists of two separate computing environments. Access to one environment d
 
 # Requesting Access
 
-University of Virginia faculty, research scientists, and postdoctoral associates may request an account on Ivy. UVA graduate and undergraduate students are not permitted to request accounts—this must be done by their faculty advisor(s).
+University of Virginia tenure stream and academic general faculty, research faculty, research scientists, and postdoctoral associates may request an account on Ivy. UVA graduate and undergraduate students are not permitted to request accounts—this must be done by their faculty advisor(s).
 
 Access to Ivy resources is project-based, limited to PIs and their designees, and requires approval. Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
 
@@ -40,11 +43,87 @@ Access to Ivy resources is project-based, limited to PIs and their designees, an
 
 - - -
 
+# Training
+
+In order to use Ivy, researchers must complete the Information Security Awareness Training (ISAT). This training takes approximately 10 minutes to complete.
+
+If you have a Workday account, please complete the training at the following link: <a href="https://www.myworkday.com/uva/d/inst/1$17816/17816$202.htmld" target="_blank">Workday ISAT</a>.
+
+If you are a student and do not have a Workday account, please complete the training at this link instead: <a href="https://quiz.its.virginia.edu/itsa-staff" target="_blank">Student ISAT</a>.
+
+- - -
+
+# High Security VPN
+
+The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both on and off grounds. In order to use the HSVPN, users must ensure that their personal machines meet the following requirements. More information on HSVPN compliance can be found on the ITS website: <a href="https://in.virginia.edu/vpncheck" target="_blank">https://in.virginia.edu/vpncheck</a>
+
+1. **Install the Cisco AnyConnect Secure Mobility Client.**
+    This can be found at the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=d66f4fd4db29274c2192e665059619d6&sysparm_category=06d7db5bdbfcab00cebc550a48961963" target="_blank">UVA ITS Software Gateway</a>. Be sure to install the version of VPN Client HS 4.6 that is compatible with your personal computer's operating system. More detailed instructions for installing the VPN client can be found on the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">ITS website</a>.
+    
+2. **Install Opswat.**
+    Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa" target="_blank">UVA ITS Software Gateway</a>.
+    
+3. **Install Anti-malware software (Cylance recommended)**.
+    Anti-malware software must be installed on your machine. Cylance is behavioral-based antimalware software and meets UVA's HSVPN requirements. Cylance can downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=b9fb6247db59270c2192e6650596190f" target="_blank">UVA ITS Software Gateway</a>.
+    
+
+<!-- 
+# Pricing
+
+Ivy resources will be provided without a fee for approved projects. Please note that the pricing model is still under evaluation. A valid PTAO is required as part of the account request process, although no charges will be made without advanced notice to the PI.
+
+{{< ivy-pricing >}}
+ -->
+
+- - -
+
+# Connecting and Signing In
+
+## <span class="badge badge-default">1</span> Authentication
+
+<div class="feature-box box">
+  <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, <b>your Eservices password must be changed every 60 days.</b></p>
+  <p>Need help resetting your Eservices password?</p>
+  <p><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a></p>
+  <p>If you are working from a secure Health Systems workstation you are ready to connect. If you are working from elsewhere on or off Grounds you will need Duo MFA and a High Security VPN connection.</p>
+  </div>
+
+## <span class="badge badge-default">2</span> Duo MFA
+
+<div class="feature-box box">
+  <div class="ribbon ribbon-top-right"><span>Updated!</span></div>
+  <img style="float:right;max-width:30%;" src="/images/duo-auth.png" alt="Duo 2-Factor Authentication" />
+  <p>To connect to the Ivy environment with VPN you will need to install the Duo Mobile multi-factor authentication (MFA) app on your smartphone.</p>
+  <ul>
+    <li><a href="https://apps.apple.com/us/app/duo-mobile/id422663827" target="_new">Get Duo for iPhone in the App Store</a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=com.duosecurity.duomobile&hl=en_US" target="_new">Get Duo for Android on Google Play</a></li>
+  </ul>
+  <p>In the context of Ivy, Duo allows you two ways to provide a second factor of authentication beyond your password: via a random 6-digit key, or via a push message direct to your phone.</p>
+  <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=3c95c8d0dbc06f00f032f1f51d96191a" target="_new"><button class="btn btn-sm btn-warning">Set Up Duo</button></a>
+</div>
+
+## <span class="badge badge-default">3</span> High Security VPN
+
+<div class="feature-box box">
+  <div class="ribbon ribbon-top-right"><span>Updated!</span></div>
+  <p>With your UVA computing ID, Eservices password, and Duo Mobile in hand, you must run the Cisco AnyConnect software to start a UVA High Security VPN connection every time you use any Ivy resource. AnyConnect will authenticate to the UVA network using a digital certificate installed on your workstation. </p>
+  <p>More information on VPN from ITS:</p>
+  <ul>
+    <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=9a5c088c6f59ee400a017f512e3ee4e2" target="_new">High Security VPN installation and connection instructions</a>.
+    <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>.
+  </ul>
+  <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new"><button class="btn btn-sm btn-warning">Learn More about UVA VPN</button></a>
+</div>
+
+Once you have completed these three steps, you will be connected to the secure Ivy network. From there you can connect to a Virtual Machine, or use a web browser to access JupyterHub.
+
+- - -
+
 # Virtual Machines
 
-Ivy compute resources are provisioned as virtual machines (VMs). A VM is a computing instance dedicated to your project. Multiple users can sign into a single VM.
+A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign into a single VM.
 
-The PI of the project can choose between two different operating systems for their VM when submitting the project request: CentOS7 Linux or Windows Server 2012R2. Either platform is available in multiple instance types with different cpu core count and memory specifications. Refer to the grid below for specifics.
+Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2. Each platform is available in three instance types. Refer to the grid below for specifics.
 
 {{% callout %}}
 <p>Note that Windows VMs only support concurrent access by 2 users at a time.</p>
@@ -52,16 +131,13 @@ The PI of the project can choose between two different operating systems for the
 {{% /callout %}}
 
 
-## Pricing 
-
 {{< ivy-pricing >}}
 
-- - -
-
-# Connecting to the Ivy Secure Network
-
-Once your project is approved, your VM instance will be created and assigned a private IP address that you will use to connect to it (in the format `10.xx.xx.xx`). VMs exist in a private, secure network and cannot
+Once created, your instance will be assigned a private IP address that you will use to connect to it (in the format `10.xx.xx.xx`). VMs exist in a private, secure network and cannot
 reach outside resources on the Internet. Most inbound and outbound data transfer is managed through the Data Transfer Node (see below).
+
+
+## Connecting to your VM
 
 To connect to your VM, you must install either an SSH client to connect to your VM using the command-line interface (CentOS VMs only), or
 remote desktop software to connect to the desktop GUI of your VM. These options are outlined below.
@@ -75,57 +151,6 @@ remote desktop software to connect to the desktop GUI of your VM. These options 
 
 * PuTTy (for SSH, [download here](http://www.chiark.greenend.org.uk/~sgtatham/putty/))
 * Microsoft Remote Desktop (built-in, for remote desktop to Windows or CentOS VMs)
-
-
-### <span class="badge badge-default">1</span> Authentication
-
-<div class="feature-box box">
-  <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, <b>your Eservices password must be changed every 60 days.</b></p>
-  <p>Need help resetting your Eservices password?</p>
-  <p><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a></p>
-  </div>
-
-### <span class="badge badge-default">2</span> Duo MFA
-
-<div class="feature-box box">
-  <img style="float:right;max-width:30%;" src="/images/duo-auth.png" alt="Duo 2-Factor Authentication" />
-  <p>To connect to the Ivy environment with VPN you will need to install the Duo Mobile multi-factor authentication (MFA) app on your smartphone.</p>
-  <ul>
-    <li><a href="https://apps.apple.com/us/app/duo-mobile/id422663827" target="_new">Get Duo for iPhone in the App Store</a></li>
-    <li><a href="https://play.google.com/store/apps/details?id=com.duosecurity.duomobile&hl=en_US" target="_new">Get Duo for Android on Google Play</a></li>
-  </ul>
-  <p>In the context of Ivy, Duo allows you two ways to provide a second factor of authentication beyond your password: via a random 6-digit key, or via a push message direct to your phone.</p>
-  <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=3c95c8d0dbc06f00f032f1f51d96191a" target="_new"><button class="btn btn-sm btn-warning">Set Up Duo</button></a>
-</div>
-
-### <span class="badge badge-default">3</span> High Security VPN
-
-<div class="feature-box box">
-  <p>With your UVA computing ID, Eservices password, and Duo Mobile in hand, you must run the Cisco AnyConnect software to start a UVA High Security VPN connection every time you use any Ivy resource. AnyConnect will authenticate to the UVA network using a digital certificate installed on your workstation. </p>
-  <p>More information on VPN from ITS:</p>
-  <ul>
-    <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=9a5c088c6f59ee400a017f512e3ee4e2" target="_new">High Security VPN installation and connection instructions</a>.
-    <li><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927" target="_new">How to create, install, and use digital certificates</a>.
-  </ul>
-  <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new"><button class="btn btn-sm btn-warning">Learn More about UVA VPN</button></a>
-</div>
-
-Once you have completed these three steps, you will be connected to the secure Ivy network. From there you can connect to a Virtual Machine, or use a web browser to access JupyterHub.
-
-### <span class="badge badge-default">4</span> Connect to the VM
-
-<div class="feature-box box">
-  <p>You will sign in to all Ivy resources using your UVA computing ID and Eservices password. Because of Ivy's high security requirements, <b>your Eservices password must be changed every 60 days.</b></p>
-  <p>Need help resetting your Eservices password?</p>
-  <p><a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967" target="_new"><button class="btn btn-sm btn-warning">Reset Your Password</button></a></p>
-  <p>If you are working from a secure Health Systems workstation you are ready to connect. If you are working from elsewhere on or off Grounds you will need Duo MFA and a High Security VPN connection.</p>
-  </div>
-
-
-
-- - -
-
-
 
 
 To connect to Ivy follow the platform-specific steps below:
@@ -169,10 +194,7 @@ Every virtual machine (Linux or Windows) comes with a base installation of softw
 providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation
 upon request. See the lists below for options.
 
-If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security
-and regulatory compliance and, if approved, will be installed for you.
-
-**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
+### Preinstalled Software
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
@@ -203,6 +225,13 @@ and regulatory compliance and, if approved, will be installed for you.
   </div>
 </div>
 
+**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
+
+### Additional Approved Software (Available by Request)
+
+If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security
+and regulatory compliance and, if approved, will be installed for you.
+
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
@@ -232,10 +261,10 @@ and regulatory compliance and, if approved, will be installed for you.
         <i>Click on each for details:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy-windows-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy-windows-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy-win-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy-win-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
             <li>Data / Database</li>
-            <li><a href="/userinfo/ivy-windows-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
+            <li><a href="/userinfo/ivy-win-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
 <!--             <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See packages by group</a>]</li>
  -->          </ul>
         </p>
@@ -277,7 +306,23 @@ Moving sensitive data into the Ivy VMware platform is possible through a secure 
 
 <img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/95f8dfa70374a538d3e940dc69cf960d9e5ac9a6.png" />
 
-## Learn More
+## How to Connect to the DTN and Transfer Files
+
+Before transferring files to Ivy, you will need Globus installed on the computer you are transferring data from. Globus can be downloaded from [https://www.globus.org/globus-connect-personal](https://www.globus.org/globus-connect-personal).
+
+1. Ensure that you are **NOT** connected to the HSVPN. Data transfer will not work if you are connected to the HSVPN.
+
+2. Open Globus in your web browser: [https://app.globus.org/file-manager](https://app.globus.org/file-manager). When logging in, select **University of Virginia** and log in with Netbadge.
+
+3. Once you are in the Globus **File Manager**, select the two-panel view by clicking the two-panel button beside the **Panels** button in the top-right corner of the page. This should open a second panel on the page, so that you have two side by side.
+
+4. In one panel, click on the **Collections** field and select your computer. You can then click to the directory that contains the data you want to move, or type the path to the directory in the **Path** field. Click the files or folders you want to transfer to select them.
+
+5. In the remaining panel, click on the **Collections** field and search for and select the **Ivy Secure DTN**. Select the storage share to which you want to transfer data. (Unless you are part of multiple Ivy projects, you should only see one storage folder.)
+
+6. Click the **Start** button beneath the first panel (should be highlighted) to begin the data transfer.
+
+7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **ICS** shortcut on your VM's desktop.
 
 [<button class="btn btn-success">Read more about using Globus</button>](/userinfo/globus/)
  &nbsp; [<button class="btn btn-success">Read more about the Ivy Secure DTN</button>](https://discuss.rc.virginia.edu/t/ivy-secure-dtn-transfer-sensitive-data/771)
