@@ -1,0 +1,150 @@
+---
+software:
+ - name: Anaconda
+   versions:
+     - version: "Python 2 and 3"
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: preinstalled # optional,none
+   category: [Data,Programming]
+ - name: R
+   versions:
+     - version: "3.6"
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: preinstalled # optional,none  
+   category: [Data,Programming]
+ - name: Perl
+   versions:
+     - version: "5"
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: preinstalled # optional,none  
+   category: [Programming]
+ - name: Java
+   versions:
+     - version: "OpenJDK 8"
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: preinstalled # optional,none  
+   category: [Programming]
+ - name: Atom Text Editor
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: preinstalled # optional,none  
+   category: [Productivity]
+ - name: Rodeo
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: preinstalled # optional,none  
+   category: [Productivity]
+ - name: Emacs
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: preinstalled # optional,none  
+   category: [Productivity]
+ - name: LibreOffice
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: preinstalled # optional,none  
+   category: [Productivity]
+ - name: Microsoft Office Professional Plus
+   versions:
+     - version: "2016"
+       status: approved # pending,rejected
+       platforms: [Windows]
+       installation: preinstalled # optional,none  
+   category: [Productivity]
+ - name: SumatraPDF
+   versions:
+     - version: "3.1.1"
+       status: approved # pending,rejected
+       platforms: [Windows]
+       installation: preinstalled # optional,none  
+   category: [Productivity]
+ - name: Bowtie2
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Bioinformatics]
+ - name: HISAT2
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Bioinformatics]
+ - name: Matlab
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Data Analysis]
+ - name: SAS
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Data Analysis]
+ - name: STATA
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Data Analysis]
+ - name: IDL
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Data Analysis]
+ - name: Apache cTAKES
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Data Analysis]
+ - name: SPSS
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none  
+   category: [Data Analysis]
+ - name: Knime
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none  
+   category: [Image Processing]
+ - name: ImageJ
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none  
+   category: [Image Processing]
+ - name: OpenCV
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none  
+   category: [Image Processing]
+   

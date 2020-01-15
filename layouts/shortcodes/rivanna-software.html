@@ -29,9 +29,7 @@ function searchFunction() {
 
 <table class="table table-striped" id="moduleTable">
   <thead class="thead-dark">
-    {{ $urlPre := "http://apidata.uvarc.io" }}
-    {{ $fullUrl := ( printf "%s%s" $urlPre "/rivanna-software-20191029.json" ) }}
-    {{ $gistJ := getJSON $fullUrl }}
+    {{ $gistJ := getJSON .Site.Params.rivannaJsonUrl }}
     {{ $mclasses := .Get "moduleclasses" }}
     {{ $eclasses := .Get "exclude" }}
     {{ $showhidden := .Get "showhidden" }}

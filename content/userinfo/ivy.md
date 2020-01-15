@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2019-11-14T17:45:12-05:00"
+date = "2020-01-08T11:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -13,15 +13,18 @@ author = "RC Staff"
 {{% callout %}}
 <h4>Ivy</h4>
 
-<p>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) and Jupyter Notebooks.
-Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA requirements</a>.</p>
+<p>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
+Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA or CUI requirements</a>.</p>
 
 {{% /callout %}}
 
 # Overview
 
-Ivy consists of two separate computing environments. Access to one environment does not automatically grant access to the others:
+Ivy consists of both virtual computing environments and secure storage. In order to obtain access to either system, users must **1. Submit an account request, 2. Complete the Information Security Awareness Training, and 3. Ensure their personal computer meets all High Security VPN requirements.**
 
+* [Requesting Access](#requesting-access)
+* [Training](#training)
+* [High Security VPN](#high-security-vpn)
 * [Virtual Machines](#virtual-machines)
 * [JupyterLab Notebooks](#jupyterlab-notebooks) - Coming Soon!
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
@@ -40,11 +43,37 @@ Access to Ivy resources is project-based, limited to PIs and their designees, an
 
 - - -
 
+# Training
+
+In order to use Ivy, researchers must complete the Information Security Awareness Training (ISAT). This training takes approximately 10 minutes to complete.
+
+If you have a Workday account, please complete the training at the following link: <a href="https://www.myworkday.com/uva/d/inst/1$17816/17816$202.htmld" target="_blank">Workday ISAT</a>.
+
+If you are a student and do not have a Workday account, please complete the training at this link instead: <a href="https://quiz.its.virginia.edu/itsa-staff" target="_blank">Student ISAT</a>.
+
+- - -
+
+# High Security VPN
+
+The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both on and off grounds. In order to use the HSVPN, users must ensure that their personal machines meet the following requirements. More information on HSVPN compliance can be found on the ITS website: <a href="https://in.virginia.edu/vpncheck" target="_blank">https://in.virginia.edu/vpncheck</a>
+
+1. **Install the Cisco AnyConnect Secure Mobility Client.**
+    This can be found at the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=d66f4fd4db29274c2192e665059619d6&sysparm_category=06d7db5bdbfcab00cebc550a48961963" target="_blank">UVA ITS Software Gateway</a>. Be sure to install the version of VPN Client HS 4.6 that is compatible with your personal computer's operating system. More detailed instructions for installing the VPN client can be found on the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">ITS website</a>.
+    
+2. **Install Opswat.**
+    Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa" target="_blank">UVA ITS Software Gateway</a>.
+    
+3. **Install Anti-malware software (Cylance recommended)**.
+    Anti-malware software must be installed on your machine. Cylance is behavioral-based antimalware software and meets UVA's HSVPN requirements. Cylance can downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=b9fb6247db59270c2192e6650596190f" target="_blank">UVA ITS Software Gateway</a>.
+    
+
+<!-- 
 # Pricing
 
 Ivy resources will be provided without a fee for approved projects. Please note that the pricing model is still under evaluation. A valid PTAO is required as part of the account request process, although no charges will be made without advanced notice to the PI.
 
 {{< ivy-pricing >}}
+ -->
 
 - - -
 
@@ -165,10 +194,7 @@ Every virtual machine (Linux or Windows) comes with a base installation of softw
 providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation
 upon request. See the lists below for options.
 
-If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security
-and regulatory compliance and, if approved, will be installed for you.
-
-**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
+### Preinstalled Software
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
@@ -179,13 +205,7 @@ and regulatory compliance and, if approved, will be installed for you.
       <div class="card-block">
         <i>Click on each for details:</i>
         <p class="card-text">
-            <li><a href="/userinfo/ivy-linux-sw/r" style="color: #0275d8;">R 3.2.3</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/perl" style="color: #0275d8;">Perl 5.10</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/anaconda" style="color: #0275d8;">Anaconda Python 2 and 3</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/java-sdk-jre" style="color: #0275d8;">Java SDK+JRE 1.8</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/rodeo" style="color: #0275d8;">Rodeo 2.5</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/libre-office" style="color: #0275d8;">LibreOffice 5</a></li>
-
+			{{% ivy-approved-software platform="Linux" installation="preinstalled" category="all" %}}
         </p>
       </div>
     </div>
@@ -198,20 +218,19 @@ and regulatory compliance and, if approved, will be installed for you.
       <div class="card-block">
         <i>Click on each for details:</i>
         <p class="card-text">
-          <ul>
-            <li><a href="/userinfo/ivy-win-sw/r" style="color: #0275d8;">R 3.2.3</a></li>
-            <li><a href="/userinfo/ivy-win-sw/strawberry-perl" style="color: #0275d8;">Strawberry Perl 5.24</a></li>
-            <li><a href="/userinfo/ivy-win-sw/anaconda" style="color: #0275d8;">Anaconda Python 2 and 3</a></li>
-            <li><a href="/userinfo/ivy-win-sw/java-sdk-jre" style="color: #0275d8;">Java SDK+JRE 1.8</a></li>
-            <li><a href="/userinfo/ivy-win-sw/rodeo" style="color: #0275d8;">Rodeo 1.3</a></li>
-            <li><a href="/userinfo/ivy-win-sw/sumatra-pdf" style="color: #0275d8;">SumatraPDF 3.1.1</a></li>
-            <li><a href="/userinfo/ivy-win-sw/ms-office" style="color: #0275d8;">Microsoft Office Professional Plus 2016</a></li>
-          </ul>
+			{{% ivy-approved-software platform="Windows" installation="preinstalled" category="all" %}}
         </p>
       </div>
     </div>
   </div>
 </div>
+
+**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
+
+### Additional Approved Software (Available by Request)
+
+If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security
+and regulatory compliance and, if approved, will be installed for you.
 
 
 <div class="row" style="margin-bottom:2rem;">
@@ -287,7 +306,23 @@ Moving sensitive data into the Ivy VMware platform is possible through a secure 
 
 <img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/95f8dfa70374a538d3e940dc69cf960d9e5ac9a6.png" />
 
-## Learn More
+## How to Connect to the DTN and Transfer Files
+
+Before transferring files to Ivy, you will need Globus installed on the computer you are transferring data from. Globus can be downloaded from [https://www.globus.org/globus-connect-personal](https://www.globus.org/globus-connect-personal).
+
+1. Ensure that you are **NOT** connected to the HSVPN. Data transfer will not work if you are connected to the HSVPN.
+
+2. Open Globus in your web browser: [https://app.globus.org/file-manager](https://app.globus.org/file-manager). When logging in, select **University of Virginia** and log in with Netbadge.
+
+3. Once you are in the Globus **File Manager**, select the two-panel view by clicking the two-panel button beside the **Panels** button in the top-right corner of the page. This should open a second panel on the page, so that you have two side by side.
+
+4. In one panel, click on the **Collections** field and select your computer. You can then click to the directory that contains the data you want to move, or type the path to the directory in the **Path** field. Click the files or folders you want to transfer to select them.
+
+5. In the remaining panel, click on the **Collections** field and search for and select the **Ivy Secure DTN**. Select the storage share to which you want to transfer data. (Unless you are part of multiple Ivy projects, you should only see one storage folder.)
+
+6. Click the **Start** button beneath the first panel (should be highlighted) to begin the data transfer.
+
+7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **ICS** shortcut on your VM's desktop.
 
 [<button class="btn btn-success">Read more about using Globus</button>](/userinfo/globus/)
  &nbsp; [<button class="btn btn-success">Read more about the Ivy Secure DTN</button>](https://discuss.rc.virginia.edu/t/ivy-secure-dtn-transfer-sensitive-data/771)
