@@ -1,0 +1,22 @@
+{{ $platform := .Get "platform" }}
+{{ $installation := split (.Get "installation") "," }}
+{{ $requiredcategory := split (.Get "category") "," }}
+<ul>
+    {{ range $.Site.Data.ivysoftware.software }}
+        {{ $name := .name }}
+        {{ $thiscategory := .category }}
+    	{{ $incategory := or (in $requiredcategory "all") (gt (len (intersect $thiscategory $requiredcategory)) 0) }}
+    	{{ if $incategory }}
+			{{ range .versions }}
+				{{ if and (eq .status "approved") (and (in .platforms $platform) (in $installation .installation)) }}
+			   		{{ $softwaresite := (printf "/userinfo/ivy-%s-sw/%s" (lower $platform) (lower $name) )}}
+		        	{{ if (fileExists (printf "%s.md" $softwaresite)) -}}
+          				<li><a href="{{ $softwaresite }}" style="color: #0275d8";>{{ $name }} {{ .version }}</a></li>
+          			{{ else }}
+              			<li>{{ $name }} {{ .version }}</li>
+          			{{- end }}			   
+			   {{ end }}
+			{{ end }}
+        {{ end }}   
+    {{ end }}
+</ul>
