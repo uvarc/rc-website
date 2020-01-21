@@ -5,9 +5,10 @@ author = "SOMRC Staff"
 images = [""]
 categories = ["userinfo"]
 tags = [
-    "linux", 
-    "Ivy",
-    "Data Analysis"
+  "linux", 
+  "Ivy",
+  "Data Analysis",
+  "matlab"
 ]
 draft = false
 date = "2018-02-01T17:45:12-05:00"
