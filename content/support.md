@@ -106,7 +106,7 @@ Physical Life Sciences Building, Room 430
 <div class="alert alert-success" role="alert"> 
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50808/38.03293/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Wednesdays 3:00-5:00pm</b><br />
-Brown Library, First Floor
+Brown Library, <a href="https://cal.lib.virginia.edu/space/31372" target="_new">Table Worst Cat</a> (On the intermediate floor of Brown Library, in the East wing)
 </div>
 
 <div class="alert alert-success" role="alert"> 
