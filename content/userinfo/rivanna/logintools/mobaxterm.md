@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class=lead>MobaXterm is the recommended login tool for Windows users.  It bundles a tabbed ssh client, a graphical drag-and-drop sftp client, and an X11 window server for Windows, all in one easy-to-use package.  Some other tools included are a simple text editor with syntax coloring and several useful Unix utlities such as cd, ls, grep, and others, so that you can run a lightweight Linux environment on your local machine as well as use it to log in to a remote system.</p>
+<p class=lead><a href="https://mobaxterm.mobatek.net/">MobaXterm</a> is the recommended login tool for Windows users.  It bundles a tabbed ssh client, a graphical drag-and-drop sftp client, and an X11 window server for Windows, all in one easy-to-use package.  Some other tools included are a simple text editor with syntax coloring and several useful Unix utlities such as cd, ls, grep, and others, so that you can run a lightweight Linux environment on your local machine as well as use it to log in to a remote system.</p>
 
 # Download
 
@@ -47,7 +47,7 @@ Run the installer as directed.
 
 - When you are logged in to a Unix system such as Rivanna, MobaXterm will utilize the Unix X11 convention for cut and paste.  Hightlighting text with the left mouse button selects it automatically.  Clicking the middle mouse button pastes it.  If you do not have a middle mouse button or scroll wheel, such as on a laptop, clicking both left and right buttons simultaneously emulates a middle mouse button.
 
-# Access from Off-Grounds
+# Access from Off Grounds
 
 {{< off-campus >}}
 
