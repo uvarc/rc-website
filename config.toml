@@ -9,6 +9,7 @@ disableKinds= ["RSS","404"]
 ignoreCache = true
 # date_format = "January 2, 2006"
 summaryLength = 100
+timeout = "60000"
 
 [permalinks]
   post = "/:year/:month/:title/"

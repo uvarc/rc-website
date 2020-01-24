@@ -10,7 +10,7 @@ images = [""]
 +++
 
 
-<p class="lead">There are a variety of options for storing large-scale research data at UVA. Non-sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment.</p>
+<p class="lead">There are a variety of options for storing large-scale research data at UVA. Non-sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment. UVA graduate and undergraduate students are not permitted to request storage accounts. This must be done by their faculty advisor[s].</p>
 
 
 {{< highlight >}}
