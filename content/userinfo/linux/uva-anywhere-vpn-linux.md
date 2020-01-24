@@ -36,12 +36,13 @@ draft = false
 
     - Ubuntu
 
-        The packages are the same but the names are different.
+        The packages are the same but the names are different.  Ubuntu 18.04 and up requires an additional package.
 
         - openssl
         - openconnect
         - network-manager-openconnect
         - network-manager-gnome
+        - network-manager-openconnect-gnome
 
     It will be necessary for Network Manager to be able to manage the connection.
 
@@ -59,7 +60,7 @@ draft = false
 
     NetWork Manager may not recognize the `.p12` format.  Extract the key and certificate with the following commands:
 ```
-openssl pkcs12 -in mst3k.p12 -nocerts -nodes -out mst3k.crt
+openssl pkcs12 -in mst3k.p12 -nocerts -nodes -out mst3k.key
 openssl pkcs12 -in mst3k.p12 -clcerts -nokeys -out mst3k.crt
 ```
 
