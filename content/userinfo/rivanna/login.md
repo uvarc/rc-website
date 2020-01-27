@@ -26,13 +26,13 @@ Open OnDemand is a graphical user interface that allows access to Rivanna via a 
 
 # Secure Shell Access (SSH)
 
-Rivanna is accessible through `ssh` (Secure Shell) connections using the hostname `rivanna.hpc.virginia.edu`.
+Rivanna is accessible through **ssh** (Secure Shell) connections using the hostname `rivanna.hpc.virginia.edu`.
 
 ## <i class="fab fa-windows fa-1x"></i> Windows
 
-Windows users must install an ssh client application. We recommend [MobaXterm](/userinfo/rivanna/mobaxterm/), but you may also use other clients such as [SecureCRT](https://www.vandyke.com/products/securecrt/) or [PuTTY](https://www.putty.org/).
+Windows users must install an ssh client application. We recommend [MobaXterm](/userinfo/rivanna/logintools/mobaxterm/), but you may also use other clients such as [PuTTY](https://www.putty.org/).
 
-[<button class="btn btn-primary">Install MobaXterm</button>](/userinfo/rivanna/mobaxterm/)
+[<button class="btn btn-primary">Install MobaXterm</button>](/userinfo/rivanna/logintools/mobaxterm/)
 
 ## <i class="fab fa-apple fa-1x"></i> Mac OSX and Linux
 
@@ -42,9 +42,19 @@ OSX and Linux users may connect through a terminal using the command
 ssh -Y mst3k@rivanna.hpc.virginia.edu  
 ```
 
-[SSH key authentication](https://discuss.rc.virginia.edu/t/ssh-key-authentication/200) is also permissible. Mac users must install XQuartz in order to be able to run graphical (X11) applications.  Keep in mind that graphical X11 applications may be slow through a standard ssh login.  For extensive use of graphical applications you may prefer the FastX remote desktop environment.
+[SSH key authentication](https://discuss.rc.virginia.edu/t/ssh-key-authentication/200) is also permissible. 
 
-For more details and for troubleshooting information, please see our ssh page.
+## Using X11 Applications with SSH
+
+X11 applications can be run via an ssh connection as long as it is configured correctly.  The `-Y` option specifies this for the command-line application run in a terminal.
+
+Windows users who install MobaXterm do not need to add `-Y` in an ssh session since this is the default for MobaXterm.  Other clients such as PuTTY must be configured to allow X11 packets to be transferred. 
+
+Mac users must install [XQuartz](https://xquartz.org) in order to be able to run graphical (X11) applications locally.  
+
+Graphical X11 applications may be slow through a standard ssh login. For extensive use of graphical applications we recommend [FastX](/userinfo/rivanna/logintools/fastx).
+
+For more details and for troubleshooting information, please see our [ssh](/userinfo/rivanna/logintools/rivanna-ssh) page.
 
 - - -
 
