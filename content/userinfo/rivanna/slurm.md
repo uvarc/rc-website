@@ -569,10 +569,13 @@ srun ./hybrid_executable
 
 ## GPU-Intensive Computation
 
-### Jobs Using a GPU
+The `gpu` queue provides access to compute nodes equipped with K80, P100, and V100 NVIDIA GPU devices.
 
-The second argument to gres can be k80 or p100 for the different GPU architectures.  If unspecified, the job will run on the first available GPU node.
+{{< highlight >}}
+   In order to use GPU devices, the jobs needs to be submitted to the <b>gpu</b> partition and include the <b>--gres=gpu</b> option.</alert>
+{{< /highlight >}}
 
+**Example:**
 ```
 #!/bin/bash
 #SBATCH --ntasks=1
@@ -585,8 +588,10 @@ The second argument to gres can be k80 or p100 for the different GPU architectur
 module load tensorflow3
 python myAI.py
 ```
+The second argument to `gres` can be `k80`, `p100`, or `v100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
-### Jobs Using Knight's Landing Nodes
+
+## Jobs Using Knight's Landing Nodes
 
 ```
 #!/bin/bash
