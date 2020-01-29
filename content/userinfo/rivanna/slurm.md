@@ -572,7 +572,7 @@ srun ./hybrid_executable
 The `gpu` queue provides access to compute nodes equipped with K80, P100, and V100 NVIDIA GPU devices.
 
 {{< highlight >}}
-   In order to use GPU devices, the jobs needs to be submitted to the <b>gpu</b> partition and include the <b>--gres=gpu</b> option.</alert>
+   In order to use GPU devices, the jobs must to be submitted to the <b>gpu</b> partition and must include the <b>--gres=gpu</b> option.</alert>
 {{< /highlight >}}
 
 **Example:**
