@@ -51,6 +51,7 @@ This is followed by a preamble describing the resource requests the job is makin
 After all resource requests have been established through `#SBATCH`, the script must describe exactly how to run the job.  
 
 ```
+module purge
 module load gcc/7.1.0
 ./mycode
 ```
@@ -78,6 +79,11 @@ Note that most SLURM options have two forms, a short (single-letter) form that i
 | Partition (queue) requested  | `-p <part>` or `--partition <part>` |
 | Account to be charged  | `-A <account>` or `--account=<allocation>` |
 
+<br>
+{{< highlight >}}
+   The <b>--mem</b> and <b>--mem-per-cpu</b> options are mutually exclusive.  Job scripts should specify one or the other but not both.</alert>
+{{< /highlight >}}
+
 - - -
 
 ## Environment variables
@@ -100,7 +106,7 @@ SLURM passes all environment variables from the shell in which the `sbatch` or `
 To export specific variables use
 
 ```
-#SBATCH --export=var1, var2, var3
+#SBATCH --export=var1,var2,var3
 ```
 
 Optionally export and set with
@@ -111,7 +117,7 @@ Optionally export and set with
 
 ## Standard Output and Standard Error
 
-By default, SLURM combines standard output and standard error into a single file, which will be named slurm-<jobid>.out.  You may rename standard output with
+By default, SLURM combines standard output and standard error into a single file, which will be named slurm-\<jobid\>.out.  You may rename standard output with
 
 ```
 #SBATCH -o <outfile> or --output=<outfile>
@@ -123,32 +129,6 @@ To separate standard error from standard output, you must rename both.
 #SBATCH -e <errfile> or --error=<errfile>
 ```
 
-# Requesting Special Resources
-
-Some of Rivanna's nodes are equipped with special resources such as general-purpose graphical processing units (GPGPUs), Intel Many-Integrated-Core (MIC) Knight's Landing hardware, or a larger amount of memory per core than the typical node.  The GPGPUs are in their own partition, but submitting to this partition is not sufficient to reserve the resource.  An additional directive must be specified, gres for General Resource Scheduling.  To reserve a GPGPU requires
-
-```
-#SBATCH -p gpu
-#SBATCH --gres=gpu
-```
-
-With no number following the "gpu" gres, it defaults to a single unit. At least 4 GPGPUs per node are available.  A job that can take advantage of more than one GPGPU accelerator would request
-
-```
-#SBATCH --gres=gpu:4
-```
-
-Rivanna also contains two GPGPU architectures, NVIDIA K80 and NVIDIA P100.  To further specify the architecture use a type, where type may be either k80 or p100.
-
-```
-#SBATCH --gres=gpu:type:n
-```
-
-e.g.
-
-```
-#SBATCH --gres=gpu:k80:2
-```
 
 # Submitting a Job
 
@@ -590,16 +570,3 @@ python myAI.py
 ```
 The second argument to `gres` can be `k80`, `p100`, or `v100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
-
-## Jobs Using Knight's Landing Nodes
-
-```
-#!/bin/bash
-#SBATCH --nodes=8
-#SBATCH --ntasks-per-node=64
-#SBATCH --time=24:00:00
-#SBATCH -A mygroup
-#SBATCH --partition=knl
-module load iimpi
-srun mycode
-```
