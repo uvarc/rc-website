@@ -8,7 +8,8 @@ email = "nem2p@virginia.edu"
 biolink = true
 type = "people"
 author = "UVARC Staff"
-image = "https://avatars2.githubusercontent.com/u/699798"
+# image = "https://avatars2.githubusercontent.com/u/699798"
+image = "/images/profiles/neal_magee.jpg"
 subjects = [
   "cloud",
   "containers",
