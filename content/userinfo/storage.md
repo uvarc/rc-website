@@ -10,7 +10,7 @@ images = [""]
 +++
 
 
-<p class="lead">There are a variety of options for storing large-scale research data at UVA. Non-sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment. UVA graduate and undergraduate students are not permitted to request storage accounts. This must be done by their faculty advisor[s].</p>
+<p class="lead">There are a variety of options for storing large-scale research data at UVA. Non-sensitive and moderately-sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Highly-sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment. Information Security at UVA provides an overview of the <a href=https://security.virginia.edu/university-data-protection-standards>data sensitivity classifications</a>.  <br>UVA graduate and undergraduate students are not permitted to request storage accounts. This must be done by their faculty advisor[s].</p>
 
 
 {{< highlight >}}
@@ -29,7 +29,7 @@ images = [""]
 
 - - -
 
-# Non-Sensitive Data Storage
+# Non-Sensitive & Moderately Sensitive Data Storage
 
 <table class="table table-striped table-sm" style="font-size:90%;">
   <thead class="thead-dark">
@@ -72,7 +72,7 @@ images = [""]
 
 - - -
 
-# Sensitive Data Storage
+# Highly-Sensitive Data Storage
 
 <table class="table table-striped table-sm" style="font-size:90%;">
   <thead class="thead-dark">
@@ -90,7 +90,7 @@ images = [""]
       <td class="">1TB increments</td>
       <td class="">First TB is free, additional space {{% storage-pricing ivy %}} TB/year</td>
       <td class="">Ivy virtual machine</td>
-      <td class="">ICS is ideal for long-term storage of sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
+      <td class="">ICS is ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
     </tr>
   </tbody>
 </table>
@@ -102,6 +102,6 @@ Ivy Central Storage is accessible by using Globus and connecting to the Ivy DTN.
 
 # Request Storage
 
-Storage requests can be made from this form:
+Storage requests can be made via this form:
 
 [<button class="btn btn-success">Request / Purchase Storage</button>](https://auth.uvasomrc.io/site/storage.php)

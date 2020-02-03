@@ -7,7 +7,7 @@ categories = ["userinfo"]
 date = "2019-10-08T17:45:12-05:00"
 tags = [
     "rivanna", 
-    "non-sensitive data",
+    "moderately-sensitive data",
     "storage",
     "research"
 ]
@@ -16,7 +16,9 @@ draft = false
 
 # Overview
 
-Research Computing offers several budget options for storing non-sensitive research data. The Research Value Storage provides users 
+Research Computing offers several budget options for storing non-sensitive and moderately sensitive research data. Information Security at UVA provides details about [data sensitivity classification](https://security.virginia.edu/university-data-protection-standards).
+
+The Research Value Storage provides users 
 with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
 the team lead or PI. Group membership can be defined and managed through <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS 
 MyGroups system</a>. Value storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
@@ -40,7 +42,7 @@ Research Value Storage can be drive mapped on a personal computer to enable drag
 
 
 <h3>
-  Non-Sensitive Storage Data Transfer
+  Non-Sensitive and Moderatley-Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
 <img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png" alt="nonsecure-storage-options-overview">
