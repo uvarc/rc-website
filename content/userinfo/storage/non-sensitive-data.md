@@ -1,5 +1,5 @@
 +++
-title = "Non- and Moderately-Sensitive Data Storage"
+title = "Public and Moderately Sensitive Data Storage"
 description = ""
 author = "SOMRC Staff"
 images = [""]
@@ -44,7 +44,7 @@ Once the request has been submitted, the PI will receive a notification that the
 
 # Data transfer
 
-<h2>Non-Sensitive & Moderately Sensitive Data Transfer</h2>
+<h2>Public & Moderately Sensitive Data Transfer</h2>
 
 ![Non-Sensitive Data Transfer](/images/storage/storage-nonsecure.jpg)
 
@@ -80,7 +80,7 @@ Detailed instructions and examples for using `scp` are listed <a href ="https://
 <p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>.</p>
 {{% /callout %}}
 
-# Non-Sensitive & Moderately Sensitive Data Storage Systems
+# Public & Moderately Sensitive Data Storage Systems
 
 `/home`, `/scratch`, and `/project` storage are based on a Linux file system. Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 

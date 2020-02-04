@@ -16,7 +16,7 @@ draft = false
 
 # Overview
 
-Research Computing offers several budget options for storing non-sensitive and moderately sensitive research data. Information Security at UVA provides details about [data sensitivity classification](https://security.virginia.edu/university-data-protection-standards).
+Research Computing offers several budget options for storing public and moderately sensitive research data. Information Security at UVA provides details about [data sensitivity classifications](https://security.virginia.edu/university-data-protection-standards).
 
 The Research Value Storage provides users 
 with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
@@ -42,7 +42,7 @@ Research Value Storage can be drive mapped on a personal computer to enable drag
 
 
 <h3>
-  Non-Sensitive and Moderatley-Sensitive Storage Data Transfer
+  Public and Moderately Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
 <img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png" alt="nonsecure-storage-options-overview">
@@ -79,4 +79,4 @@ Research Value Storage is based on a Linux file system similar to storage spaces
 - <a href="http://www.linuxplanet.com/linuxplanet/tutorials/6666/1" target="_blank">Navigating the Linux Filesystem</a>
 - <a href="https://swcarpentry.github.io/shell-novice/" target="_blank">Shell Novice</a>
 
-For more help, please feel free to contact RC to set up a consultation or visit us during office hours. We also provide in-person training opportunities around basic command line skills and more through the <a href="https://education.cadre.virginia.edu/#/home" target="_blank">CADRE Academy portal</a>.
+For more help, please feel free to contact RC to set up a consultation or visit us during office hours. 
