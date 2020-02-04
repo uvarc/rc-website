@@ -32,7 +32,7 @@ various systems are available to researchers.</p>
   <div class="card">
     <div class="card-block">
       <img align="right" src="/images/ivy-leaf.png" style="max-width:20%;" />
-      <h4 class="card-title">Secure Computing for Sensitive Data - Ivy</h4>
+      <h4 class="card-title">Secure Computing for Highly Sensitive Data - Ivy</h4>
         <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), JupyterLab Notebooks, and Apache Spark.</p>
         <a href="/userinfo/ivy/" class="btn btn-warning" style="color:white;">Get started on Ivy</a>
     </div>

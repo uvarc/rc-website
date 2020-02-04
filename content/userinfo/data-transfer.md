@@ -19,7 +19,7 @@ draft = false
 
 # Selecting a Transfer Method
 
-The data transfer method you choose heavily relies on where the data are currently located and to where you want to transfer the data. Click on a row in the table below to learn more about the data transfer methods available for a specific scenario.
+The data transfer method you choose heavily relies on the [data sensitivity classification](https://security.virginia.edu/university-data-protection-standards), where the data are currently located and to where you want to transfer the data. Click on a row in the table below to learn more about the data transfer methods available for a specific scenario.
 
 <div>
 <table class="table table-hover">
@@ -43,7 +43,7 @@ The data transfer method you choose heavily relies on where the data are current
 			<td align="center" vertical-align="middle">
 				<i class="fas fa-database fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
-				<b>Non-Sensitive Data Storage</b>
+				<b>Non-Sensitive and Moderatively Sensitive Data Storage</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
@@ -90,7 +90,7 @@ The data transfer method you choose heavily relies on where the data are current
 			<td align="center" vertical-align="middle">
 				<i class="fas fa-lock fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
-				<b>Sensitive Data Storage</b>
+				<b>Highly Sensitive Data Storage</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
