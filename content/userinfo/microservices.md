@@ -29,11 +29,17 @@ images = [""]
 
 # Basic Principles of Microservices
 
-<p class="lead"><span class="badge badge-default">1</span> Microservice architecture is a design approach, or a way of building things.</p>
+<p class="lead"><span class="badge badge-default">1</span> Microservice architecture is a design approach, or a way of building things. Microservices can be considered the opposite of "monolithic" designs.</p>
 
-- [Microservices Whitepaper](/data/Mesosphere-ebook-Designing-Data-Intensive-Applications-by-Oreilly.pdf) from Mesosphere.
-- [Best Practices for Microsoft Implementations](/data/Best-Practices-for-Microservices-Whitepaper-Research.pdf) from Mulesoft.
-- Here's a brief talk by Martin Fowler summarizing the design principles:
+A few guiding principles of microservices:
+
+1. Separate components and services.
+2. Availability and resilielnce.
+3. Replaceable elements.
+4. Easily distributable.
+5. Reusable components.
+6. Decentralized elements.
+7. Easy deployment.
 
 {{< youtube "2yko4TbC8cI" >}}
 
