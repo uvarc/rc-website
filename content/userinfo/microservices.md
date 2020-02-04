@@ -31,7 +31,7 @@ images = [""]
 
 <p class="lead"><span class="badge badge-default">1</span> Microservice architecture is a design approach, or a way of building things. Microservices can be considered the opposite of "monolithic" designs.</p>
 
-A few guiding principles:
+A few guiding design principles:
 
 1. Separate components and services.
 2. Availability and resilielnce.
