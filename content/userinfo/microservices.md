@@ -156,7 +156,7 @@ To be eligible to run your microservice on our infrastructure, you must meet the
   <li>Microservices and custom containers must be for <b>research purposes only</b>.
   <li>Your container(s) must <b>pass basic security checks</b>. 
   <li>Containers <b>may not contain passwords</b>, SSH keys, API keys, or other sensitive information. There are secure methods for passing sensitive information into containers.
-  <li>If bringing your own container, it must be <b>ready to go</b>! Unfortunately, we cannot create custom containers for you unless it is part of a funded project.
+  <li>If bringing your own custom container, it must be <b>ready to go</b>! Unfortunately, we cannot create custom containers for you unless it is part of a funded project.
 </ul>
 </div>
 
