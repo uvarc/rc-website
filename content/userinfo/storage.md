@@ -2,15 +2,15 @@
 author = "Staff"
 description = ""
 title = "Research Data Storage"
-date = "2019-05-12T10:08:29-05:00"
+date = "2020-02-03T10:08:29-05:00"
 draft = false
-tags = ["storage","large scale","cloud","ivy","rivanna","project"]
+tags = ["storage","security","qumulo","ivy","rivanna","project"]
 categories = ["userinfo"]
 images = [""]
 +++
 
 
-<p class="lead">There are a variety of options for storing large-scale research data at UVA. Public and moderately sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Highly sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment. Information Security at UVA provides an overview of the <a href=https://security.virginia.edu/university-data-protection-standards>data sensitivity classifications</a>.  <br>UVA graduate and undergraduate students are not permitted to request storage accounts. This must be done by their faculty advisor[s].</p>
+<p class="lead">There are a variety of options for storing large-scale research data at UVA. Public and moderately sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Highly sensitive data can be stored and accessed within the <a href="/userinfo/ivy/">Ivy</a> secure computing environment. Information Security at UVA provides an overview of the <a href=https://security.virginia.edu/university-data-protection-standards>data sensitivity classifications</a>.  <br /><br />UVA graduate and undergraduate students are not permitted to request storage accounts. This must be done by their faculty advisor[s].</p>
 
 
 {{< highlight >}}
@@ -95,8 +95,8 @@ images = [""]
   </tbody>
 </table>
 
-<br />
-Ivy Central Storage is accessible by using Globus and connecting to the Ivy DTN.
+
+Ivy Central Storage is accessible by using [Globus](/userinfo/globus/) and connecting to the Ivy DTN.
 
 - - -
 
