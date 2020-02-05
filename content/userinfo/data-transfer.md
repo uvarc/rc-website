@@ -43,7 +43,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td align="center" vertical-align="middle">
 				<i class="fas fa-database fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
-				<b>Non-Sensitive and Moderatively Sensitive Data Storage</b>
+				<b>Storage for Public and Moderatively Sensitive Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
@@ -90,7 +90,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td align="center" vertical-align="middle">
 				<i class="fas fa-lock fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br></br>
-				<b>Highly Sensitive Data Storage</b>
+				<b>Storage for Highly Sensitive Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>

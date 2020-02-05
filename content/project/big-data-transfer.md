@@ -29,5 +29,5 @@ a web browser, command-line utility, or a Python SDK.
 
 [Learn more about Globus](https://www.globus.org/).
 
-UVA has Globus Data Transfer Nodes (DTNs) for non-sensitive and moderatively-sensitive data as well as highly-sensitive data. Researchers can learn more specifics about Globus and 
+UVA has Globus Data Transfer Nodes (DTNs) for public and moderately sensitive data as well as highly sensitive data. Researchers can learn more specifics about Globus and 
 how to use it by visiting our [Globus documentation on Discourse](https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345).
