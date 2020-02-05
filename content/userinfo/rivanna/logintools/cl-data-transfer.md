@@ -16,50 +16,56 @@ draft = false
 
 - - -
 
-# scp
+# `scp`
 
 `scp` uses the secure shell (SSH) protocol to transfer files between your local machine and a remote host, or between two remote hosts.
 
-The following syntax enables copying from local to remote or vice versa. In both cases we are starting from the _local_ system.  By default, scp works from the level of the directory in which it is invoked.
+The following syntax enables copying from local to remote or vice versa. In both cases we are starting from the _local_ system.  
+By default, `scp` works from the level of the directory in which it is invoked.
 
 - Copying from local to remote: `scp source_file mst3k@hostaddress:target_file`
 - Copying from remote to local: `scp mst3k@hostaddress:source_file target_file`
 
 The following examples detail how to transfer data between your local computer and /project storage on Rivanna. In these examples
 
-- my_file is the file you would like to transfer
-- mst3k is your computing ID
-- MyGroup_name is the name of your /project directory.
-- my_directory is the directory to which you wish to copy the file.
+- `my_file` is the file you would like to transfer
+- `mst3k` is your computing ID
+- `mygroup_name` is the name of your `/project` directory.
+- `my_directory` is the directory to which you wish to copy the file.
 
 To copy a file:
 
-From your computer to /project storage:
-```
+From your computer to `/project` storage:
+
+```bash
 scp my_file mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name
 ```
 
-From /project storage to "my_directory" on your computer:
-```
+From `/project` storage to `my_directory` on your computer:
+
+```bash
 scp mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name/my_file /my_directory
 ```
 
 scp accepts wildcards.  In this example, the mycode directory must exist in your scratch directory.
-```
+
+```bash
 scp *cxx mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k/mycode
 ```
 
-## scp Options
+## `scp` Options
 
 The `-r` option recursively copies directories.
 
 From your computer to /project storage:
-```
-scp -r my_directory mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name
+
+```bash
+scp -r my_directory mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name
 ```
 
-From /project storage to your computer:
-```
+From `/project` storage to your computer:
+
+```bash
 scp -r mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name /target_directory
 ```
 
@@ -67,17 +73,19 @@ The `-p` option preserves modification time, access time, and ownership from the
 
 The `-q` option suppresses the progress and debugging messages. Useful for scripts.
 
-# sftp
+# `sftp`
 
-Secure FTP or sfpt is an interface built on top of scp to mimic the behavior of ftp.
+Secure FTP or `sfpt` is an interface built on top of `scp` to mimic the behavior of `ftp`.
 
-To connect to Rivanna with sftp, execute the following in the command line interface:
-```
+To connect to Rivanna with `sftp`, execute the following in the command line interface:
+
+```bash
 sftp mst3k@rivanna.hpc.virginia.edu
 ```
 
 When prompted, enter your password. Once the connection succeeds, you will see the sftp prompt:
-```
+
+```bash
 sftp>
 ```
 
@@ -94,66 +102,76 @@ You can access both your local and remote file systems with sftp. The following 
 ## File Transfer from Local to Remote
 
 To transfer files from your computer to the Rivanna file system, use the put command:
-```
+
+```bash
 sftp> put my_file
 ```
 
 To transfer a folder from your computer to Rivanna, use `put -r`. A folder with the same name must also exist on Rivanna. An example is shown below:
 
 ```
-sftp> mkdir /project/MyGroup_name/my_folder
-sftp> cd /project/MyGroup_name
+sftp> mkdir /project/mygroup_name/my_folder
+sftp> cd /project/mygroup_name
 sftp> put -r my_folder
 ```
 
 ## File Transfer from Remote to Local
 
 To transfer files from Rivanna to your computer, use the get command:
-```
+
+```bash
 sftp> get my_file
 ```
 
 To transfer a folder from Rivanna to your computer, use `get -r`:
-```
+
+```bash
 sftp> get my_folder
 ```
 
 ## Terminating the Connection
 
 To terminate the sftp connection, use `exit`.
-```
+
+```bash
 sftp> exit
 ```
 
-# rsync
+# `rsync`
 
 Remote sync is a powerful tool for copying files.  It is most widely used to transfer multiple files and/or directories.
 
 In this example, we have a local directory `ldir` and a remote directory `rdir` and we wish to copy the contents of ldir to rdir. 
-```
+
+```bash
 rsync -r ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
+
 The trailing `/` after ldir is important.  Without it, ldir and its contents would be placed under `rdir`.
 
 Unlike `scp`, if the target directory does not exist, `rsync` will create it.  
 
 It is more common to use the `-a` (archive) option.  This option preserves symbolic links, special files, ownership, permissions, and timestamps.
-```
+
+```bash
 rsync -a ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
 Show a progress bar and keep partially transferred files
-```
+
+```bash
 rsync -Pa ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
 Delete files not present on the source directory if they are present on the target directory
-```
+
+```bash
 rsync -Pa --delete ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
 Have rsync print the list it will transfer without carrying out the tranfers.  Especially important when using `--delete`.
-```
+
+```bash
 rsync -Pa --delete --dry-run ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
