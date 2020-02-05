@@ -31,7 +31,7 @@ images = [""]
 
 <p class="lead"><span class="badge badge-default">1</span> Microservice architecture is a design approach, or a way of building things. Microservices can be considered the opposite of "monolithic" designs.</p>
 
-A few guiding principles of microservices:
+A few guiding design principles:
 
 1. Separate components and services.
 2. Availability and resilielnce.
@@ -40,6 +40,8 @@ A few guiding principles of microservices:
 5. Reusable components.
 6. Decentralized elements.
 7. Easy deployment.
+
+Here's a talk given by Martin Fowler explaining the idea:
 
 {{< youtube "2yko4TbC8cI" >}}
 
@@ -153,8 +155,8 @@ To be eligible to run your microservice on our infrastructure, you must meet the
 <ul>
   <li>Microservices and custom containers must be for <b>research purposes only</b>.
   <li>Your container(s) must <b>pass basic security checks</b>. 
-  <li>Containers <b>may not contain passwords</b>, SSH keys, API keys, or other sensitive information.
-  <li>If bringing your own container, it must be <b>ready to go</b>! We cannot create custom containers for you.
+  <li>Containers <b>may not contain passwords</b>, SSH keys, API keys, or other sensitive information. There are secure methods for passing sensitive information into containers.
+  <li>If bringing your own custom container, it must be <b>ready to go</b>! Unfortunately, we cannot create custom containers for you unless it is part of a funded project.
 </ul>
 </div>
 
@@ -165,7 +167,7 @@ To be eligible to run your microservice on our infrastructure, you must meet the
 Currently our microservices cluster is in beta testing. We welcome any single-container applications for free, 
 either as a deployment listed above or a ready-to-run container that you bring.
 
-Have a more complicated design? <a href="http://uvarc.io/consult" class="badge badge-success">Contact us</a>
+Have a more complicated design? Submit a consultation request using the button below.
 
 - - -
 
@@ -177,7 +179,7 @@ Want to run your container within an HPC environment? It can be done, using Sing
 
 Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with SLURM and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
 
-[Read more](/userinfo/rivanna/software/containers/).
+[**Learn more about Singularlity**](/userinfo/rivanna/software/containers/).
 
 - - -
 
