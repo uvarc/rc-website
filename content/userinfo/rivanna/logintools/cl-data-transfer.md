@@ -38,13 +38,13 @@ To copy a file:
 From your computer to `/project` storage:
 
 ```bash
-scp my_file mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name
+scp my_file mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name
 ```
 
 From `/project` storage to `my_directory` on your computer:
 
 ```bash
-scp mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name/my_file /my_directory
+scp mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name/my_file /my_directory
 ```
 
 scp accepts wildcards.  In this example, the mycode directory must exist in your scratch directory.
@@ -66,7 +66,7 @@ scp -r my_directory mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name
 From `/project` storage to your computer:
 
 ```bash
-scp -r mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name /target_directory
+scp -r mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name /target_directory
 ```
 
 The `-p` option preserves modification time, access time, and ownership from the original file.
