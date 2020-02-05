@@ -47,7 +47,7 @@ From `/project` storage to `my_directory` on your computer:
 scp mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name/my_file /my_directory
 ```
 
-scp accepts wildcards.  In this example, the mycode directory must exist in your scratch directory.
+`scp` accepts wildcards.  In this example, the mycode directory must exist in your scratch directory.
 
 ```bash
 scp *cxx mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k/mycode
@@ -83,7 +83,7 @@ To connect to Rivanna with `sftp`, execute the following in the command line int
 sftp mst3k@rivanna.hpc.virginia.edu
 ```
 
-When prompted, enter your password. Once the connection succeeds, you will see the sftp prompt:
+When prompted, enter your password. Once the connection succeeds, you will see the `sftp` prompt:
 
 ```bash
 sftp>
@@ -91,7 +91,7 @@ sftp>
 
 ## Navigating Directories
 
-You can access both your local and remote file systems with sftp. The following table lists how to execute the following commands for both your local and remote systems.
+You can access both your local and remote file systems with `sftp`. The following table lists how to execute the following commands for both your local and remote systems.
 
 | Action                    |On Remote System  | On Local System |
 | :-------                  |:----------:      |   :-----:       |
@@ -131,7 +131,7 @@ sftp> get my_folder
 
 ## Terminating the Connection
 
-To terminate the sftp connection, use `exit`.
+To terminate the `sftp` connection, use `exit`.
 
 ```bash
 sftp> exit
