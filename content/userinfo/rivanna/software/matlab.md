@@ -67,6 +67,10 @@ submitting different types of Matlab batch jobs to the Rivanna cluster.
 Once your program is debugged, we recommend running in batch mode when possible. This runs the job in the background on a compute node. Write a SLURM script similar to the following:
 
 ```
+#!/bin/bash
+# This slurm script file runs
+# a single-core Matlab job (on one compute node)
+
 #SBATCH -p standard
 #SBATCH -A hpc_build
 #SBATCH --time=00:10:00
@@ -152,6 +156,9 @@ The example function `pcalc2Test1.m` above uses a  parallel for loop (parfor) in
 
 ```
 #!/bin/bash
+# This slurm script file runs
+# a multi-core parallel Matlab job (on one compute node)
+
 #SBATCH -p standard
 #SBATCH -A hpc_build
 #SBATCH --time=12:00:00
@@ -188,8 +195,7 @@ The following slurm script shows how to run 10 single core Matlab jobs using slu
 ```
 #!/bin/bash
 # The slurm script file runParallelMultiple.slurm runs
-# multiple parallel Matlab jobs, either from within Matlab or as a
-# complied executable, using a Slurm job array
+# multiple single-core Matlab jobs using a Slurm job array
 
 #SBATCH --array=1-10
 #SBATCH -p standard
@@ -236,7 +242,7 @@ The following Slurm script uses job arrays to submit multiple parallel Matlab jo
 ```
 #!/bin/bash
 # The slurm script file runParallelMultiple.slurm runs
-# multiple parallel Matlabjobs using a Slurm job array
+# multiple parallel Matlab jobs using a Slurm job array
 
 #SBATCH --array=1-10
 #SBATCH -p standard
@@ -280,6 +286,7 @@ rm -rf /scratch/teh1m/slurmJobs/$slurmArrayID
 ```
 The Matlab script `setPool1.m` gets the number of workers allocated by Slurm and
 uses that to create the pool of Matlab workers.
+
 ```
 % Script setPool1.m
 
