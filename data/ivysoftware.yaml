@@ -1,8 +1,8 @@
 ---
 software:
- - name: Anaconda (Python 3)
+ - name: Anaconda
    versions:
-     - version: "5.2.0"
+     - version: "(Python 3) 5.2.0"
        status: approved # pending,rejected
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none
@@ -20,6 +20,26 @@ software:
        installation: preinstalled # optional,none  
    category: [Data,Programming]
    description: R is a free software environment for statistical computing and graphics.
+ - name: RStudio
+   versions:
+     - version: "1.0.136"
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: preinstalled # optional,none
+     - version: "1.1.414"
+       status: approved # pending,rejected
+       platforms: [Windows]
+       installation: preinstalled # optional,none
+   category: [Productivity]
+   description: Webster's defines RStudio as...
+ - name: RStudio Server
+   versions:
+     - version: "1.2.1335"
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: preinstalled # optional,none
+   category: [Connectivity]
+   description: Webster's defines RStudio Server as...
  - name: Perl
    versions:
      - version: "5.16.3"
