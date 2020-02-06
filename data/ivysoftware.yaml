@@ -7,6 +7,7 @@ software:
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none
    category: [Data,Programming]
+   description: The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X.
  - name: R
    versions:
      - version: "3.6"
@@ -14,6 +15,7 @@ software:
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none  
    category: [Data,Programming]
+   description: R is a free software environment for statistical computing and graphics.
  - name: Perl
    versions:
      - version: "5"
@@ -21,6 +23,7 @@ software:
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none  
    category: [Programming]
+   description: Perl is Larry Wall's Practical Extraction and Report Language.
  - name: Java
    versions:
      - version: "OpenJDK 8"
@@ -28,6 +31,7 @@ software:
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none  
    category: [Programming]
+   description: Java Platform, Standard Edition (Java SE) lets you develop and deploy Java applications on desktops and servers. 
  - name: Atom Text Editor
    versions:
      - version: ""
@@ -35,6 +39,7 @@ software:
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none  
    category: [Productivity]
+   description: Atom is a free and open-source text and source code editor.
  - name: Rodeo
    versions:
      - version: ""
@@ -42,6 +47,7 @@ software:
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none  
    category: [Productivity]
+   description: Rodeo is a Native Python IDE for Data Science.
  - name: Emacs
    versions:
      - version: ""
@@ -49,6 +55,7 @@ software:
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none  
    category: [Productivity]
+   description: A text editor characterized by its extensibility. 
  - name: LibreOffice
    versions:
      - version: ""
@@ -56,6 +63,7 @@ software:
        platforms: [Linux]
        installation: preinstalled # optional,none  
    category: [Productivity]
+   description: LibreOffice is a free and open-source office suite, a project of The Document Foundation.
  - name: Microsoft Office Professional Plus
    versions:
      - version: "2016"
@@ -70,6 +78,7 @@ software:
        platforms: [Windows]
        installation: preinstalled # optional,none  
    category: [Productivity]
+   description: Sumatra PDF is a free and open-source document viewer that supports many document formats.
  - name: Bowtie2
    versions:
      - version: ""
@@ -77,13 +86,16 @@ software:
        platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
    category: [Bioinformatics]
+   description: Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences.
  - name: HISAT2
    versions:
-     - version: ""
+     - version: "2.3.0"
        status: approved # pending,rejected
        platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
    category: [Bioinformatics]
+   description: HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads (both DNA and RNA) against the general human population
+      (as well as against a single reference genome). 
  - name: Matlab
    versions:
      - version: ""
@@ -91,6 +103,7 @@ software:
        platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
    category: [Data Analysis]
+   description: MATLAB is a multi-paradigm numerical computing environment and proprietary programming language developed by MathWorks. 
  - name: SAS
    versions:
      - version: ""
@@ -98,6 +111,7 @@ software:
        platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
    category: [Data Analysis]
+   description: SAS is a statistical analysis package.
  - name: STATA
    versions:
      - version: ""
@@ -105,6 +119,7 @@ software:
        platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
    category: [Data Analysis]
+   description: Stata is a complete, integrated statistical software package that provides everything you need for data analysis, data management, and graphics.
  - name: IDL
    versions:
      - version: ""
@@ -112,6 +127,7 @@ software:
        platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
    category: [Data Analysis]
+   description: IDL is an interpreted programming language used to create analyses and visualizations of numerical data.
  - name: Apache cTAKES
    versions:
      - version: ""
@@ -119,6 +135,7 @@ software:
        platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
    category: [Data Analysis]
+   description: cTAKES is an open-source Natural Language Processing system that extracts clinical information from electronic health record unstructured text. 
  - name: SPSS
    versions:
      - version: ""
@@ -126,6 +143,7 @@ software:
        platforms: [Windows]
        installation: optional #preinstalled,none  
    category: [Data Analysis]
+   description: The SPSS® software platform offers advanced statistical analysis, a vast library of machine learning algorithms, text analysis, and open source extensibility.
  - name: Knime
    versions:
      - version: ""
@@ -133,13 +151,15 @@ software:
        platforms: [Linux]
        installation: optional #preinstalled,none  
    category: [Image Processing]
+   description: KNIME is a free and open-source data analytics, reporting and integration platform. KNIME integrates various components for machine learning and data mining through its modular data pipelining concept. 
  - name: ImageJ
    versions:
      - version: ""
        status: approved # pending,rejected
-       platforms: [Linux]
+       platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
    category: [Image Processing]
+   description: ImageJ is a scriptable image processing program, bundling a lot of plugins that facilitate scientific image analysis.
  - name: OpenCV
    versions:
      - version: ""
@@ -147,4 +167,5 @@ software:
        platforms: [Linux]
        installation: optional #preinstalled,none  
    category: [Image Processing]
+   description: OpenCV is an open-source BSD-licensed library that includes several hundreds of computer vision algorithms. 
    

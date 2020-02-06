@@ -1,0 +1,42 @@
+{{ $platform := .Get "platform" }}
+{{ $installation := split (.Get "installation") "," }}
+{{ $requiredcategory := split (.Get "category") "," }}
+<div>
+	<table class="table table-striped" id="moduleTable">
+		<thead class="thead-dark">
+		    <tr>
+      			<th scope="col">Software</th>
+      			<th scope="col">Versions</th>
+      			<th scope="col">Description</th>
+    		</tr>
+  		</thead>
+  		<tbody>
+    {{ range $.Site.Data.ivysoftware.software }}
+        {{ $name := .name }}
+        {{ $thiscategory := .category }}
+        {{ $thisdesc := .description }}
+    	{{ $incategory := or (in $requiredcategory "all") (gt (len (intersect $thiscategory $requiredcategory)) 0) }}
+    	{{ if $incategory }}
+    		{{ $availversions := slice "" }}
+    		{{ $softwaresite := (printf "/userinfo/ivy-%s-sw/%s" (lower $platform) (lower $name) )}}
+    		{{ range .versions }}
+				{{ if and (eq .status "approved") (and (in .platforms $platform) (in $installation .installation)) }}
+					{{ $availversions = $availversions | append .version }}
+			   {{ end }}
+			{{ end }}
+			{{ if gt (len $availversions) 1 }} 
+				<tr>
+		        {{ if (fileExists (printf "%s.md" $softwaresite)) -}}
+          			<td><a href="{{ $softwaresite }}" style="color: #0275d8";>{{$name}}</a></td>
+          		{{ else }}
+          			<td>{{$name}}</td>	
+          		{{- end }}	
+    			<td>{{ delimit (after 1 $availversions) "," }}</td>
+				<td>{{ .description }}</td>
+				</tr>
+          	{{ end }}		  
+        {{ end }}   
+    {{ end }}
+  		</tbody>
+	</table>
+</div>    

@@ -91,7 +91,6 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 ## <span class="badge badge-default">2</span> Duo MFA
 
 <div class="feature-box box">
-  <div class="ribbon ribbon-top-right"><span>Updated!</span></div>
   <img style="float:right;max-width:30%;" src="/images/duo-auth.png" alt="Duo 2-Factor Authentication" />
   <p>To connect to the Ivy environment with VPN you will need to install the Duo Mobile multi-factor authentication (MFA) app on your smartphone.</p>
   <ul>
@@ -105,7 +104,6 @@ Ivy resources will be provided without a fee for approved projects. Please note 
 ## <span class="badge badge-default">3</span> High Security VPN
 
 <div class="feature-box box">
-  <div class="ribbon ribbon-top-right"><span>Updated!</span></div>
   <p>With your UVA computing ID, Eservices password, and Duo Mobile in hand, you must run the Cisco AnyConnect software to start a UVA High Security VPN connection every time you use any Ivy resource. AnyConnect will authenticate to the UVA network using a digital certificate installed on your workstation. </p>
   <p>More information on VPN from ITS:</p>
   <ul>
@@ -240,13 +238,13 @@ and regulatory compliance and, if approved, will be installed for you.
         <b>ADDITIONAL Linux Groups</b>
       </div>
       <div class="card-block">
-        <i>Click on each for details:</i>
+        <i>Click on each for more information:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy-linux-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
-            <li>Data / Database</li>
-            <li><a href="/userinfo/ivy-linux-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/overview" style="color: #0275d8;">All Packages</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy-linux-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
           </ul>
         </p>
       </div>
@@ -258,20 +256,23 @@ and regulatory compliance and, if approved, will be installed for you.
         <b>ADDITIONAL Windows Groups</b>
       </div>
       <div class="card-block">
-        <i>Click on each for details:</i>
+        <i>Click on each for more information:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy-win-sw/bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy-win-sw/data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
-            <li>Data / Database</li>
-            <li><a href="/userinfo/ivy-win-sw/image-processing" style="color: #0275d8;">Image Processing</a></li>
-<!--             <li>[<a href="https://s3.amazonaws.com/uvasom-resources/ivy/ivy-package-groups.pdf">See packages by group</a>]</li>
- -->          </ul>
+            <li><a href="/userinfo/ivy-windows-sw/overview" style="color: #0275d8;">All Packages</a></li>
+            <li><a href="/userinfo/ivy-windows-sw/overview#bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy-windows-sw/overview#data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy-windows-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
+         </ul>
         </p>
       </div>
     </div>
   </div>
 </div>
+
+[<button class="btn btn-success">Software Details for Linux</button>](/userinfo/ivy-linux-sw/overview)
+[<button class="btn btn-success">Software Details for Windows</button>](/userinfo/ivy-windows-sw/overview)
+[<button class="btn btn-success">Request Ivy Software</button>](https://www.rc.virginia.edu/form/support-request)
 
 
 ## Storage

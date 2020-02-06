@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class="lead">There are a variety of options for storing large-scale research data at UVa. Non-sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview">Rivanna</a> high performance computing system.</p>
+<p class="lead">There are a variety of options for storing large-scale research data at UVa. Public and moderately sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview">Rivanna</a> high performance computing system.</p>
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -22,7 +22,7 @@ type = "rivanna"
 .tg .tg-0qmj{font-weight:bold;background-color:#eceeef;border-color:inherit;vertical-align:top}
 </style>
 
-# Non-Sensitive Data Storage
+# Storage for Public and Moderately Sensitive Data
 
 <div>
 <table class="tg">

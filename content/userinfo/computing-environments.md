@@ -23,7 +23,7 @@ Ivy is a computing system that meets all Health Insurance Portability and Accoun
 - - -
 
 # Skyline
-Skyline is the University's local research cloud for non-sensitive and moderately-sensitive data. Skyline is a collection of OpenStack virtual machines that can be leased by research groups in a variety of configurations to fit their computing needs.
+Skyline is the University's local research cloud for public and moderately sensitive data. Skyline is a collection of OpenStack virtual machines that can be leased by research groups in a variety of configurations to fit their computing needs.
  
 - - -
 
