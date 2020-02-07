@@ -260,8 +260,8 @@ and regulatory compliance and, if approved, will be installed for you.
         <p class="card-text">
           <ul>
             <li><a href="/userinfo/ivy-windows-sw/overview" style="color: #0275d8;">All Packages</a></li>
-            <li><a href="/userinfo/ivy-windows-sw/overview#bioinformatics/sw-list" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy-windows-sw/overview#data-analysis/sw-list" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy-windows-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy-windows-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
             <li><a href="/userinfo/ivy-windows-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
          </ul>
         </p>
