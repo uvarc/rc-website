@@ -144,6 +144,13 @@ sprintf('time = %f, nloop = %d on host %s \n',time,nloop,getenv('HOSTNAME'));
 fid = fopen(['pcalc_' jobid '.out'],'wt');
 fprintf(fid, '%s', stringOut1);
 fclose(fid);
+
+end
+
+function max_eig=FunctionTakesLongTime(ndim);
+% Computation intensive calculation dependent on matrix size
+ max_eig=max(abs(eig(random('Exponential',ndim,ndim))));
+end
 ```
 
 
