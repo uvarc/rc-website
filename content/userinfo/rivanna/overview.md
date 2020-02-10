@@ -305,6 +305,10 @@ Each job in the standard queue is restricted to a single node. Users may submit 
 
 Users must request a minimum of two nodes and four cpu cores (and no more than 900 cpu cores) when submitting a job to the parallel queue.
 
+## GPU Partition
+
+The GPU queue is dedicated for jobs that can utilize a general purpose graphics processing unit. A job must request at least one GPU device and serial jobs that do not utilize any GPUs are not allowed in this queue.  Users may submit multiple jobs or job arrays, but the maximum aggregate GPU devices allowed for a single user’s running jobs is 16.
+
 ## Software Licenses
 
 Excessive consumption of licenses for commercial software, either in time or number, if determined by system and/or RC staff to be interfering with other users' fair use of the software, will subject the violator's processes or jobs to termination without warning.  Staff will attempt to issue a warning before terminating processes or jobs but inadequate response from the violator will not be grounds for permitting the processes/jobs to continue.
