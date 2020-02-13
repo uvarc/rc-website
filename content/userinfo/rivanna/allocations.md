@@ -52,13 +52,16 @@ Standard allocations are for 100,000 SUs and require a brief summary of the rese
 ## Deans' Allocations
 Deans' Allocations are granted by the research deans who provide funding for Rivanna. A minimum one-page proposal must be included with any type of Deans' Allocation request. Available to: Faculty and postdocs who require very large allocations. Choose one of the following request options based on your school/college/organizational affiliation:
 
-<a href="#" <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=cas&user_token=' + user_token">
+<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=cas&user_token=' + user_token">
   <button class="btn btn-primary">CLAS</button>
 </a>
-<a href="#" <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=seas&user_token=' + user_token">
+<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=hs&user_token=' + user_token">
+  <button class="btn btn-primary">HS</button>
+</a>
+<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=seas&user_token=' + user_token">
   <button class="btn btn-primary">SEAS</button>
 </a>
-<a href="#" <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=dsi&user_token=' + user_token">
+<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=dsi&user_token=' + user_token">
   <button class="btn btn-primary">SDS / Other</button>
 </a>
 
