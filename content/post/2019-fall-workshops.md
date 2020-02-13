@@ -25,21 +25,5 @@ RC staff are teaching a series of free hands-on workshops this fall that are ope
 * Deep Learning with MATLAB (Oct 17)
 * Moving R Programs to Rivanna (Oct 17)
 
-Register through the new CADRE Academy portal. You can register for classes, follow tracks or workshops that are not yet scheduled, and find other
-related workshops.
-
-The above workshops are a part of the following education tracks:
-
-<div class="row">
-{{< education-track "277" >}}
-{{< education-track "278" >}}
-</div>
-
-<div class="row">
-{{< education-track "279" >}}
-</div>
-
-For a comprehensive list of all such educational opportunities across Grounds, visit the [Computation and Data Resource Exchange (CADRE) education portal](http://cadre.virginia.edu/service-detail/education).
-
 [<button class="btn btn-warning">Browse Workshops</button>](https://education.cadre.virginia.edu/)
 

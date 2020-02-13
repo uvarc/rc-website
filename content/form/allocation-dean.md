@@ -34,6 +34,7 @@ private = true
     <select required="required" class="form-control form-select required" data-toggle="tooltip" id="sponsor" name="sponsor">
       <option value="" selected="selected">- Select -</option>
       <option value="cas">College of Arts & Sciences</option>
+      <option value="hs">Health System</option>
       <option value="seas">School of Engineering & Applied Sciences</option>
       <option value="dsi">School of Data Science</option>
       <option value="other">Other</option>
