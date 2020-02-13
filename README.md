@@ -135,7 +135,7 @@ Simply push `staging` back to GitHub. TravisCI will handle it from there. Pushin
 
 ### Events Data
 
-The "Training" widget and workshops page are both fed from a JSON API connected to the education.cadre.virginia.edu portal. They are updated when the site is published (by hand) or every 24 hours by a Travis-CI cron job.
+The "Training" widget and workshops page are both fed from `events.csv`. They are updated when the site is published (by hand) or every 24 hours by a Travis-CI cron job.
 
 ### Automated Builds
 

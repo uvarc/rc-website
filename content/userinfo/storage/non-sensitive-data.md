@@ -89,5 +89,3 @@ Detailed instructions and examples for using `scp` are listed <a href ="https://
 - <a href="https://www.howtogeek.com/107808/how-to-manage-files-from-the-linux-terminal-11-commands-you-need-to-know/" target="_blank">How To Manage Files From The Linux Terminal</a>
 - <a href="http://www.linuxplanet.com/linuxplanet/tutorials/6666/1" target="_blank">Navigating the Linux Filesystem</a>
 - <a href="https://swcarpentry.github.io/shell-novice/" target="_blank">Shell Novice</a>
-
-For more help, please feel free to contact RC to set up a consultation or visit us during office hours. We also provide in-person training opportunities around basic command line skills and more through the <a href="https://education.cadre.virginia.edu/#/home" target="_blank">CADRE Academy portal</a>.

@@ -33,9 +33,3 @@ All of the classes are taught by RC experts and are freely available to UVa facu
 * Rivanna (HPC)
 * Ivy (Secure Computing)
 
-Register through the new CADRE Academy portal. You can register for classes, follow tracks or workshops that are not yet scheduled, and find other
-related workshops.
-
-[<button class="btn btn-warning">View Workshops</button>](https://education.cadre.virginia.edu/)
-
-For a comprehensive list of all such educational opportunities across Grounds, visit the [Computation and Data Resource Exchange (CADRE) education portal](http://cadre.virginia.edu/service-detail/education).

@@ -115,10 +115,7 @@ We currently offer online tutorials for image processing with Fiji/ImageJ.
 * [Introduction to Scientific Image Processing with Fiji/ImageJ](https://workshops.rc.virginia.edu/lesson/fiji-intro/)
 * [Fiji/ImageJ: Script Development for Image Processing](https://workshops.rc.virginia.edu/lesson/fiji-scripting/)
 
-Stay tuned for additional online tutorials as well as in-person workshops listed on our education 
-platform, [CADRE Academy!](https://education.cadre.virginia.edu/#/home)
-
-{{< education-track "278" >}}
+Stay tuned for additional online tutorials as well as in-person workshops listed on our [workshops page](/education/workshops/)
 
 - - -
 
@@ -167,9 +164,7 @@ We currently offer several online tutorials for data visualization.
 
 * [MATLAB Data Processing and Visualization](https://workshops.rc.virginia.edu/lesson/matlab-data-visualization/)
 
-Stay tuned for additional online tutorials as well as our workshops posted on [CADRE Academy!](https://education.cadre.virginia.edu/#/home)
-
-{{< education-track "283" >}}
+Stay tuned for additional online tutorials as well as our workshops posted on our [workshops page](/education/workshops/)
 
 - - -
 

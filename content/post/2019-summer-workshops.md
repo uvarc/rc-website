@@ -30,11 +30,7 @@ RC staff are teaching a series of free hands-on workshops this summer that are o
 Register through the new CADRE Academy portal. You can register for classes, follow tracks or workshops that are not yet scheduled, and find other
 related workshops.
 
-{{< education-track "283" >}}
-
-For a comprehensive list of all such educational opportunities across Grounds, visit the [Computation and Data Resource Exchange (CADRE) education portal](http://cadre.virginia.edu/service-detail/education).
-
-[<button class="btn btn-warning">View Workshops</button>](https://education.cadre.virginia.edu/#/track/283)
+For a comprehensive list of all such educational opportunities across Grounds, visit the [Research & Data Services Training Portal](https://data.library.virginia.edu/training/).
 
 ---
 
