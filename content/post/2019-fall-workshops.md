@@ -25,5 +25,6 @@ RC staff are teaching a series of free hands-on workshops this fall that are ope
 * Deep Learning with MATLAB (Oct 17)
 * Moving R Programs to Rivanna (Oct 17)
 
-[<button class="btn btn-warning">Browse Workshops</button>](https://education.cadre.virginia.edu/)
+
+[<button class="btn btn-warning">Browse Workshops</button>](/education/workshops/)
 
