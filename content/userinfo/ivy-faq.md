@@ -6,39 +6,9 @@ date = "2017-02-26T17:45:12-05:00"
 tags = ["hpc","ivy","hipaa","linux","windows"]
 categories = ["userinfo"]
 images = [""]
-author = "SOMRC Staff"
+author = "Staff"
 
 +++
-
-<style>
-    .faqHeader {
-        font-size: 16px;
-    }
-
-    .panel-heading [data-toggle="collapse"]:after {
-        font-family: 'Glyphicons Halflings';
-        content: "e072"; /* "play" icon */
-        float: right;
-        color: #F58723;
-        font-size: 14px;
-        /* rotate "play" icon from > (right arrow) to down arrow */
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-    }
-
-    .panel-heading [data-toggle="collapse"].collapsed:after {
-        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        color: #454444;
-    }
-</style>
 
 <div class="" id="accordion">
         <div class="faqHeader">General questions</div>

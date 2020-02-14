@@ -2,7 +2,7 @@
 description = ""
 title = "Rivanna FAQs"
 draft = false
-date = "2019-07-01T01:45:12-05:00"
+date = "2020-02-14T01:45:12-05:00"
 tags = ["hpc","rivanna","faqs","supercomputer"]
 categories = ["userinfo"]
 images = [""]
@@ -24,16 +24,16 @@ type = "rivanna"
 # General Usage
   
 ## How do I gain access to Rivanna?
-A faculty or research staff member must first request an allocation on Rivanna. Full details can be found here.
+A faculty or research staff member must first request an allocation on Rivanna. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How do I log on to Rivanna?
-Use an SSH client from a campus-connected machine and connect to rivanna.hpc.virginia.edu. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are here. You can also use FastX.  If you are off Grounds you must use the UVA Anywhere VPN.
+Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/rivanna/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/rivanna/ood/overview) or [FastX](/userinfo/rivanna/logintools/fastx).  If you are off Grounds you must use the [UVA Anywhere VPN](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).
 
 ## How do I reset my current password / obtain a new password?
-Access to the HPC cluster requires a valid Eservices password. Your Netbadge password is not necessarily the same thing, so if you are unable to log in, you should first try resetting your ITS password here.  Resetting the Netbadge password should sync it with your Eservices password, which is no longer directly accessible to you. If the problem persists, contact ITS through their online Helpdesk.  Keep in mind that ITS requires annual resetting of your password.
+Access to the HPC cluster requires a valid Eservices password. Your Netbadge password is not necessarily the same thing, so if you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  Resetting the Netbadge password should sync it with your Eservices password, which is no longer directly accessible to you. If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
 
 ## Why am I seeing `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` when I log in?
-Some users logging in through ssh may encounter this error message. If you receive this message, please see [**our instructions**](https://discuss.rc.virginia.edu/t/ssh-key-error-possible-dns-spoofing-detected/535) on how to clear your known-hosts file. If you are running MobaXterm on Windows, you will be prompted to update your host key and should respond with "yes."
+Some users logging in through ssh may encounter this error message. If you receive this message, please see [**our instructions**](/userinfo/rivanna/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
 
 - - -
 
@@ -140,9 +140,20 @@ If your rating is low, please contact us; we can help.
 - - -
 
 # Storage Management
-  
-##How do I obtain leased storage?
-You can lease Enterprise or Value storage from here.  You should receive a path to which the share can be mounted to Rivanna as well as a path for mounting to Windows or Mac. Please contact us that you wish to have the storage mounted, or if you encounter any problems accessing your leased storage.
+
+## What storage options are available to me to use on Rivanna?
+All users are provided a 50-GB home directory for longer-term storage.  This directory provides "snapshots" though it is not backed up.  Each user also is provided 10TB of temporary "scratch" storage accessible as `/scratch/$USER` where `$USER` will stand for your ID.  Scratch storage is fast but is not backed up in any way.
+
+If the free storage is not sufficient, you need snapshots of your files, or you wish to share space among a research group, the group should lease storage.
+
+## Why should I use /scratch storage?
+Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  If you use or expect to use a large number of files please contact us.
+
+## How do I obtain leased storage?
+Research Computing offers two tiers of leased storage, Value and Project. Please see our [storage page](/userinfo/storage) for details.
+
+## How do I check my disk usage?
+Run `hdquota` on a Rivanna frontend.
 
 ## How do I check my `/scratch` usage on Rivanna?
 Run the command `sfsq`:
@@ -157,14 +168,9 @@ If you have used up too much space, created too many files, or have "old" files 
 `/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files older than NN days are automatically deleted from all `/scratch` directories. Store longer-term files in your home directory or purchased storage.
 
 ## How do I share data in my `/scratch` or leased storage with a colleague?
-To share data from your `/scratch` directly with any other user, use Globus sharing.  If your colleague also has an account on Rivanna, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.
+To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on Rivanna, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.
 
 If you wish to share data in leased space with a member of your group, be sure that permissions are set so that the group member can access your subdirectory.  The college can then simply use the data directly, or copy it elsewhere.  If you wish to share data from your leased storage to a colleague who is not a member of the group, use Globus sharing in the same manner as sharing `/scratch`.
-
-## How do I check how much leased or home storage I am using on Rivanna?
-To check your home space, run `hdquota` (home directory quota).
-
-To check your leased space, change directory into your your leased space and then run `df -h /nv/volX/yourshare`, where `volX` is your leased storage volume and `yourshare` is the name of the group set up for the storage:
 
 - - -
 

@@ -104,7 +104,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">FAQs</h5>
       <p class="card-text">Frequently Asked Questions.</p>
-      <a href="/userinfo/rivanna/faqs/"><button class="btn btn-warning">Read our FAQs</button></a>
+      <a href="/userinfo/faq/rivanna-faq"><button class="btn btn-warning">Rivanna FAQ</button></a>
     </div>
   </div>
 </div>
