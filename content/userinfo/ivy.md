@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2020-01-08T11:45:12-05:00"
+date = "2020-02-14T11:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -26,10 +26,9 @@ Ivy consists of both virtual computing environments and secure storage. In order
 * [Training](#training)
 * [High Security VPN](#high-security-vpn)
 * [Virtual Machines](#virtual-machines)
-* [JupyterLab Notebooks](#jupyterlab-notebooks) - Coming Soon!
+* [JupyterLab Notebooks](#jupyterlab-notebooks)
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
 * [HIPAA Compliance](#hipaa-compliance)
-* [Coming Soon - Secure HPC](#coming-soon-secure-hpc)
 
 - - -
 
@@ -113,7 +112,7 @@ Ivy resources will be provided without a fee for approved projects. Please note 
   <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new"><button class="btn btn-sm btn-warning">Learn More about UVA VPN</button></a>
 </div>
 
-Once you have completed these three steps, you will be connected to the secure Ivy network. From there you can connect to a Virtual Machine, or use a web browser to access JupyterHub.
+Once you have completed these three steps, you will be connected to the secure Ivy network. From there you can connect to a Virtual Machine, or use a web browser to access JupyterLab.
 
 - - -
 
@@ -296,7 +295,7 @@ Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" align="right" style="max-width:20%;" />
 JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones.
 <br clear=all />
-[<button class="btn btn-success">Learn more about Jupyter</button>](https://jupyter.org/)
+<a href="https://jupyter.org/" target="_new"><button class="btn btn-success">Learn more about Jupyter</button></a>
 {{% /callout %}}
 
 - - -
@@ -348,7 +347,7 @@ The Ivy platform is HIPAA compliant by design. From the <a href="https://researc
 
 Researchers must understand that, in general, the more difficult parts of HIPAA compliance are less technical (networks, computers, and data) than they are human and how users interact with these systems and data. The mishandling of data -- such as storing them on insecure devices or in insecure places -- jeopardizes confidential patient data and UVA's ability to remain a trusted keeper of those data.
 
-All data imported into Ivy must be treated as highly sensitive data. Data and results exported from Ivy must be protected and managed appropriately according to UVA's [data classification guidelines](https://security.virginia.edu/university-data-protection-standards). Guidance regarding these guidelines and data types is available from UVA Information Security, Policy, and Records Office (ISPRO) by emailing it-security@virginia.edu.
+All data imported into Ivy must be treated as highly sensitive data. Data and results exported from Ivy must be protected and managed appropriately according to UVA's [data classification guidelines](https://security.virginia.edu/university-data-protection-standards). Guidance regarding these guidelines and data types is available from UVA Information Security, Policy, and Records Office (ISPRO) by emailing [it-security@virginia.edu](it-security@virginia.edu).
 
 <button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
 
