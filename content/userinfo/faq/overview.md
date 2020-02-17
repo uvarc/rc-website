@@ -1,5 +1,5 @@
 +++
-title = "FAQ / Knowledgebase"
+title = "Frequently Asked Questions"
 description = ""
 author = "RC Staff"
 images = [
