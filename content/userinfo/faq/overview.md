@@ -28,7 +28,7 @@ quell_footer = true
       <div class="col-md-8">
         <div class="card-body">
           <h2 class="card-title">General</h2>
-          <p class="card-text">Do you have questions general computing questions?</p>
+          <p class="card-text">Do you have a general computing question?</p>
           <div class="card-footer">
             <a href="/userinfo/user-guide/"><button class="btn btn-sm btn-primary">Read our FAQ&rsaquo;</button></a>
           </div>
