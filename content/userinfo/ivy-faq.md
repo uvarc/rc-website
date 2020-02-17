@@ -1,52 +1,22 @@
 +++
 description = ""
 title = "Ivy Secure Environment - FAQs"
-draft = true
+draft = false
 date = "2017-02-26T17:45:12-05:00"
 tags = ["hpc","ivy","hipaa","linux","windows"]
 categories = ["userinfo"]
 images = [""]
-author = "SOMRC Staff"
+author = "Staff"
 
 +++
 
-<style>
-    .faqHeader {
-        font-size: 16px;
-    }
-
-    .panel-heading [data-toggle="collapse"]:after {
-        font-family: 'Glyphicons Halflings';
-        content: "e072"; /* "play" icon */
-        float: right;
-        color: #F58723;
-        font-size: 14px;
-        /* rotate "play" icon from > (right arrow) to down arrow */
-        -webkit-transform: rotate(-90deg);
-        -moz-transform: rotate(-90deg);
-        -ms-transform: rotate(-90deg);
-        -o-transform: rotate(-90deg);
-        transform: rotate(-90deg);
-    }
-
-    .panel-heading [data-toggle="collapse"].collapsed:after {
-        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        color: #454444;
-    }
-</style>
-
 <div class="" id="accordion">
-        <div class="faqHeader">General questions</div>
+        <div class="faqHeader"><h3>General questions</h3></div>
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header">
+                <h5 class="card-header">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is account registration required?</a>
-                </h4>
+                </h5>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="card-block">
@@ -57,9 +27,9 @@ author = "SOMRC Staff"
         </div>
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header">
+                <h5 class="card-header">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Can I submit my own Bootstrap templates or themes?</a>
-                </h4>
+                </h5>
             </div>
             <div id="collapseTen" class="panel-collapse collapse">
                 <div class="card-block">
@@ -70,9 +40,9 @@ author = "SOMRC Staff"
         </div>
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header">
+                <h5 class="card-header">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">What is the currency used for all transactions?</a>
-                </h4>
+                </h5>
             </div>
             <div id="collapseEleven" class="panel-collapse collapse">
                 <div class="card-block">
