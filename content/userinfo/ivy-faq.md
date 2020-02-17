@@ -1,7 +1,7 @@
 +++
 description = ""
 title = "Ivy Secure Environment - FAQs"
-draft = true
+draft = false
 date = "2017-02-26T17:45:12-05:00"
 tags = ["hpc","ivy","hipaa","linux","windows"]
 categories = ["userinfo"]
@@ -11,12 +11,12 @@ author = "Staff"
 +++
 
 <div class="" id="accordion">
-        <div class="faqHeader">General questions</div>
+        <div class="faqHeader"><h3>General questions</h3></div>
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header">
+                <h5 class="card-header">
                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Is account registration required?</a>
-                </h4>
+                </h5>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="card-block">
@@ -27,9 +27,9 @@ author = "Staff"
         </div>
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header">
+                <h5 class="card-header">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Can I submit my own Bootstrap templates or themes?</a>
-                </h4>
+                </h5>
             </div>
             <div id="collapseTen" class="panel-collapse collapse">
                 <div class="card-block">
@@ -40,9 +40,9 @@ author = "Staff"
         </div>
         <div class="card">
             <div class="card-header">
-                <h4 class="card-header">
+                <h5 class="card-header">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">What is the currency used for all transactions?</a>
-                </h4>
+                </h5>
             </div>
             <div id="collapseEleven" class="panel-collapse collapse">
                 <div class="card-block">
