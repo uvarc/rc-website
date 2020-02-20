@@ -55,7 +55,7 @@ Globus transfers data between two "collections" (or "endpoints").  You must log 
 
 # Transferring Sensitive or Secure Data to Ivy
 
-Globus is the **only** permitted data-transfer protocol for sensitive or secure data.  To transfer data to Ivy Central Storage, please see the special instructions [here](https://userinfo/ivy/#data-transfer-in-out-of-ivy).
+Globus is the **only** permitted data-transfer protocol for sensitive or secure data.  To transfer data to Ivy Central Storage, please see the special instructions [here](https://userinfo/ivy/overview#data-transfer-in-out-of-ivy).
 
 # Create a Personal Collection
 

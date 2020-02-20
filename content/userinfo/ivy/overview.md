@@ -240,10 +240,10 @@ and regulatory compliance and, if approved, will be installed for you.
         <i>Click on each for more information:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy-linux-sw/overview" style="color: #0275d8;">All Packages</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
-            <li><a href="/userinfo/ivy-linux-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/overview" style="color: #0275d8;">All Packages</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
           </ul>
         </p>
       </div>
@@ -258,10 +258,10 @@ and regulatory compliance and, if approved, will be installed for you.
         <i>Click on each for more information:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy-windows-sw/overview" style="color: #0275d8;">All Packages</a></li>
-            <li><a href="/userinfo/ivy-windows-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy-windows-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
-            <li><a href="/userinfo/ivy-windows-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/overview" style="color: #0275d8;">All Packages</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
          </ul>
         </p>
       </div>
@@ -269,8 +269,8 @@ and regulatory compliance and, if approved, will be installed for you.
   </div>
 </div>
 
-[<button class="btn btn-success">Software Details for Linux</button>](/userinfo/ivy-linux-sw/overview)
-[<button class="btn btn-success">Software Details for Windows</button>](/userinfo/ivy-windows-sw/overview)
+[<button class="btn btn-success">Software Details for Linux</button>](/userinfo/ivy/ivy-linux-sw/overview)
+[<button class="btn btn-success">Software Details for Windows</button>](/userinfo/ivy/ivy-windows-sw/overview)
 [<button class="btn btn-success">Request Ivy Software</button>](https://www.rc.virginia.edu/form/support-request)
 
 
@@ -323,9 +323,6 @@ Before transferring files to Ivy, you will need Globus installed on the computer
 6. Click the **Start** button beneath the first panel (should be highlighted) to begin the data transfer.
 
 7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **ICS** shortcut on your VM's desktop.
-
-[<button class="btn btn-success">Read more about using Globus</button>](/userinfo/globus/)
- &nbsp; [<button class="btn btn-success">Read more about the Ivy Secure DTN</button>](https://discuss.rc.virginia.edu/t/ivy-secure-dtn-transfer-sensitive-data/771)
 
 - - -
 

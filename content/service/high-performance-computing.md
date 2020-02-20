@@ -59,7 +59,7 @@ Examples of service areas include:
       <li>JupyterLab Notebooks</li>
     </ul>
     </p>
-    <a href="/userinfo/ivy/" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
+    <a href="/userinfo/ivy/overview" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
   </div>
 </div>
 
