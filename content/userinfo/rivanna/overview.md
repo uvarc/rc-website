@@ -144,7 +144,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
       <th scope="row">7 days</th>
       <th scope="row">1</th>
       <th scope="row">40</th>
-      <th scope="row">12GB</th>
+      <th scope="row">unlimited</th>
       <th scope="row">375GB</th>
       <th scope="row">1.00</th>
     </tr>
@@ -171,7 +171,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
       <th scope="row">3 days</th>
       <th scope="row">4</th>
       <th scope="row">8</th>
-      <th scope="row">12GB</th>
+      <th scope="row">unlimited</th>
       <th scope="row">240GB</th>
       <th scope="row">2.00</th>
     </tr>
