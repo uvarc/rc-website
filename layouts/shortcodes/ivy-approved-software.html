@@ -9,7 +9,7 @@
     	{{ if $incategory }}
 			{{ range .versions }}
 				{{ if and (eq .status "approved") (and (in .platforms $platform) (in $installation .installation)) }}
-			   		{{ $softwaresite := (printf "/userinfo/ivy-%s-sw/%s" (lower $platform) (lower $name) )}}
+			   		{{ $softwaresite := (printf "/userinfo/ivy/ivy-%s-sw/%s" (lower $platform) (lower $name) )}}
 		        	{{ if (fileExists (printf "%s.md" $softwaresite)) -}}
           				<li><a href="{{ $softwaresite }}" style="color: #0275d8";>{{ $name }} {{ .version }}</a></li>
           			{{ else }}

@@ -64,7 +64,7 @@ images = [""]
 
 {{< ivy-pricing >}}
 
-[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy/) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](/)
+[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy/overview) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](/)
 
 - - -
 

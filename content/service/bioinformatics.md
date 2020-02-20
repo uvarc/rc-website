@@ -16,7 +16,7 @@ images = [""]
 
 # Next-generation sequence data analyis
 
-RC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://www.rc.virginia.edu/userinfo/rivanna/overview/)/[Ivy](/userinfo/ivy/)/[Cloud](/service/cloud/). Typical analyses include (but not limited to) – 
+RC can support in-depth analysis of various next-generation sequencing experiment datasets on your desktop/[Rivanna](https://www.rc.virginia.edu/userinfo/rivanna/overview/)/[Ivy](/userinfo/ivy/overview)/[Cloud](/service/cloud/). Typical analyses include (but not limited to) – 
 
 * Genome assembly, reference-based and/or de-novo
 * Whole-Genome/Exome sequence analysis for variant calling/annotation
@@ -55,7 +55,7 @@ UVA has two local HPC facilities available to researchers: **Rivanna** and **Ivy
     <p class="card-text">
 	Ivy is a HIPAA compliant cluster at UVA with Domino Data Lab, Hadoop, R, Python, and other computational software to work with sensitive data. Researchers have access to a group of bioinformatics software on Ivy Linux VM.  
     </p>
-	<a href="/userinfo/ivy/" class="card-link"><button class="btn  btn-primary">Learn more</button></a>
+	<a href="/userinfo/ivy/overview" class="card-link"><button class="btn  btn-primary">Learn more</button></a>
   </div>
 </div>
 

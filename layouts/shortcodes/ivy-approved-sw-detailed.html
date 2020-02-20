@@ -18,7 +18,7 @@
     	{{ $incategory := or (in $requiredcategory "all") (gt (len (intersect $thiscategory $requiredcategory)) 0) }}
     	{{ if $incategory }}
     		{{ $availversions := slice "" }}
-    		{{ $softwaresite := (printf "/userinfo/ivy-%s-sw/%s" (lower $platform) (lower $name) )}}
+    		{{ $softwaresite := (printf "/userinfo/ivy/ivy-%s-sw/%s" (lower $platform) (lower $name) )}}
     		{{ range .versions }}
 				{{ if and (eq .status "approved") (and (in .platforms $platform) (in $installation .installation)) }}
 					{{ $availversions = $availversions | append .version }}

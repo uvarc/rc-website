@@ -1,7 +1,7 @@
 +++
 title = "User Guides"
 description = ""
-author = "SOMRC Staff"
+author = "Staff"
 images = [
   "",
 ]
@@ -39,7 +39,7 @@ quell_footer = true
       <p class="card-text">Secure virtual machines and interactive notebooks for processing HIPAA and other highly sensitive data.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/userinfo/ivy/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/ivy/overview/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>

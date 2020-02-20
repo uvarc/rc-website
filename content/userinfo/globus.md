@@ -55,7 +55,7 @@ Globus transfers data between two "collections" (or "endpoints").  You must log 
 
 # Transferring Sensitive or Secure Data to Ivy
 
-Globus is the **only** permitted data-transfer protocol for sensitive or secure data.  To transfer data to Ivy Central Storage, please see the special instructions [here](https://userinfo/ivy/#data-transfer-in-out-of-ivy).
+Globus is the **only** permitted data-transfer protocol for sensitive or secure data.  To transfer data to Ivy Central Storage, please see the special instructions [here](/userinfo/ivy/overview#data-transfer-in-out-of-ivy).
 
 # Create a Personal Collection
 
@@ -90,7 +90,7 @@ The official UVA managed collections are:
 
 * `uva#main-DTN` - generally available; maps to Rivanna home directories, scratch, etc.
 * `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into secure storage.
-** See special instructions for using the Ivy collection** [here](https://userinfo/ivy/#data-transfer-in-out-of-ivy)
+** See special instructions for using the Ivy collection** [here](/userinfo/ivy/overview#data-transfer-in-out-of-ivy)
 
 You can transfer files to or from your personal endpoint to a managed endpoint, one run either by UVA or by another institution.  You can transfer files between two managed endpoints.  You cannot transfer files from one personal endpoint to another personal endpoint.  If you wish to do this, contact Research Computing to convert at least one personal endpoint to a Globus Plus endpoint.
 
