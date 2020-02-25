@@ -11,6 +11,9 @@ type = "form"
 private = true
 +++
 
+<p class="lead">From the microscope to publication, OMERO handles all your images in a secure central repository. You can view, organize, analyze and share your data from anywhere you have internet access. Work with your images from a desktop app (Windows, Mac or Linux), from the web or from 3rd party software. Over 140 image file formats supported, including all major microscope formats.</p>
+<p class="lead">Use the form below to request access for your group or lab to manage and analyze data in our OMERO service.</p>
+
 {{< form-cookies >}}
 
 <script type="text/javascript" src="/js/typeahead.js"></script>
