@@ -52,9 +52,9 @@ private = true
   <hr size=1 />
 
   <div class="row">
-  <div class="col form-item form-group form-item form-type-radios form-group"> 
-    <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
-    <div id="type-of-request" class="form-radios">
+    <div class="col form-item form-group form-item form-type-radios form-group"> 
+      <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
+      <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="type-of-request-1" name="type-of-request" value="new-storage" class="form-radio" /> &nbsp; Create new storage share</label>
       </div>
@@ -67,31 +67,8 @@ private = true
       <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="type-of-request-4" name="type-of-request" value="retire-storage" class="form-radio" /> &nbsp; Retire existing share</label>
       </div>
-    </div>
-  </div>
-
-  <div class="col form-item form-group form-item form-type-radios form-group"> 
-    <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
-    <div id="storage-options" class="form-radios">
-      <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year)
-      </div>
-      <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)
-      </div>
-      <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()"required="required" type="radio" id="storage-choice4" name="storage-choice" value="zfs" class="form-radio" /> &nbsp; ZFS Storage ({{% storage-pricing zfs %}}/TB/year)
-      </div>
-      <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)
       </div>
     </div>
-  </div>
-  </div>
-
-  <hr size=1 />
-
-  <div class="row">
     <div class="col form-item form-type-radios form-group"> 
       <label class="control-label" for="data-sensitivity">Data Sensitivity</label>
       <div id="data-sensitivity" class="form-radios">
@@ -101,27 +78,22 @@ private = true
       </div>
     </div>
 
+  </div>
+
+  <hr size=1 />
+
+  <div class="row">
+
     <div class="col form-item form-group">
       <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
       <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
     </div>
 
-  </div>
-
-  <hr size=1 />
-
-  <div class="row">
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
       <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
-    </div>
-
-    <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-      <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
     </div>
 
   </div>
