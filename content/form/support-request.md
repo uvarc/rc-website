@@ -29,8 +29,9 @@ private = true
       <option value="" selected="selected">- Select -</option>
       <option id="general" value="General">General research computing question</option>
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
-      <option id="ivy" value="Ivy">Ivy secure computing</option>
+      <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="storage" value="Storage">Storage</option>
+      <option id="omero" value="Omero">Omero Image Analysis</option>
       <option id="consultation" value="Consultation">Consultation request</option>
       <option value="">-----</option>
       <option id="chase" value="Chase">CHASE Accounts/Data</option>

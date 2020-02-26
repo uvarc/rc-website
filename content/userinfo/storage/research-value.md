@@ -36,38 +36,29 @@ When your Research Value Storage share is created, you will receive an email det
 
 # Drive Mapping with Research Value Storage
 
-Research Value Storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing <a href="https://discuss.rc.virginia.edu/t/research-value-storage-drive-mapping/838" target="_blank">FAQ knowledgebase</a>.
+Research Value Storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [How To pages](/userinfo/howtos/storage/drive-mapping).
 
 # Data transfer
 
 
-<h3>
-  Public and Moderately Sensitive Storage Data Transfer
-  <small class="text-muted">High level Overview</small>
-</h3>
+### Public and Moderately Sensitive Storage Data Transfer
 <img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png" alt="nonsecure-storage-options-overview">
 
-{{% callout %}}
 #### Secure Copy (scp)
-<p><code>scp</code> uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. <code>scp</code> can be used with the following syntax:</p>
-<p><code>scp SourceFile mst3k@rivanna.hpc.virginia.edu:/nv/vol123/MyGroup_name</code></p>
-<p>Detailed instructions and examples for using <code>scp</code> are listed <a href ="https://discuss.rc.virginia.edu/t/secure-copy-scp/740" target="_blank">here</a>.</p>
-{{% /callout %}}
+`scp` uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. `scp can be used with the following syntax:
+```
+scp SourceFile mst3k@rivanna.hpc.virginia.edu:/nv/vol123/MyGroup_name
+```
+Detailed instructions and examples for using `scp` are provided [here](/userinfo/rivanna/logintools/cl-data-transfer).
 
-{{% callout %}}
 #### Secure File Transfer Protocol (SFTP)
-<p><code>sftp</code> is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "https://discuss.rc.virginia.edu/t/secure-file-transfer-protocol-sftp/741" target="_blank">here</a>.</p>
-{{% /callout %}}
+`sftp` is a network protocol for secure file management. Instructions and examples for using `sftp` are located [here](/userinfo/rivanna/logintools/cl-data-transfer).
 
-{{% callout %}}
-#### Filezilla & Cyberduck
-<p><a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a> are open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="https://discuss.rc.virginia.edu/t/file-management-with-an-ftp-client/742" target="_blank">here</a>.</p>
-{{% /callout %}}
+#### Graphical Data Transfer Packages
+Several packages such as [Filezilla](/userinfo/rivanna/logintools/filezilla), [Cyberduck](/userinfo/rivanna/logintools/cyberduck), and [MobaXterm](/userinfo/rivanna/logintools/mobaxterm) are available for users who want a graphical user interface for file transfers.  See [here](userinfo/rivanna/logintools/sftp-clients) for an overview.
 
-{{% callout %}}
 #### Globus Connect (Large Data Transfers)
 Globus provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found [here](/userinfo/globus/).
-{{% /callout %}}
 
 # File Manipulation and Navigation with Value Storage
  

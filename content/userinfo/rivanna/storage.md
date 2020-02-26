@@ -88,8 +88,6 @@ to deletion after a certain lifespan as determined by Research Computing. Home a
 
 **The current lifespan for scratch files is 90 days**.
 
-[Read more about `/scratch`](https://discuss.rc.virginia.edu/t/1187) and why you would use it.
-
 - - -
 
 # Request Storage
