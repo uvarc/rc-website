@@ -121,7 +121,7 @@ Stay tuned for additional online tutorials as well as in-person workshops listed
 
 # Imaging Data Management
 
-<img src="/images/ome-main-nav.svg"></img>
+<img src="/images/omero/ome-main-nav.svg"></img>
 
 With the advent of high-throughput screening, the need for a good imaging data workflow is greater than ever. OMERO allows researchers to organize, view, annotate, analyze, and share their data and metadata--all within the same software environment.
 
