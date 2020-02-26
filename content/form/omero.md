@@ -18,14 +18,14 @@ private = true
 
 <script type="text/javascript" src="/js/typeahead.js"></script>
 
-<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="storage-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="omero-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
 
-  <input type="hidden" id="category" name="category" value="Storage">
-  <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
+  <input type="hidden" id="category" name="category" value="Omero">
+  <input type="hidden" id="request_title" name="request_title" value="Omero Request" />
 
 {{% form-userinfo %}}
 
@@ -209,7 +209,7 @@ var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 
 if (cookie_token !== url_user_token) {
-  // window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/omero.php?user_token=" + cookie_token );
 }
 
 var name_enc = getParams()["name"];
@@ -219,7 +219,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  // window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/omero.php?user_token=" + cookie_token );
 }
 
 // name
@@ -236,12 +236,6 @@ var set_uid = document.getElementById("uid").value = uid_dec;
 let email = decodeURI(getParams()["email"]);
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
-
-function getStorageType() {
-  var $myval = $('[name=storage-choice]:checked').val()
-  var $request_title = document.getElementById("request_title");
-  $request_title.value = "Storage Request: " + $myval.toUpperCase();
-};
 
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>
