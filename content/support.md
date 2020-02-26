@@ -78,7 +78,7 @@ var user_token = getCookie("__user_token");
   <div class="card-body">
     <h5 class="card-title">Request OMERO Access</h5>
     <p class="card-text">Request or modify access to the OMERO image management database.</p>
-    <a href="https://www.rc.virginia.edu/form/omero/" target="_blank"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
+    <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/omero.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;">
