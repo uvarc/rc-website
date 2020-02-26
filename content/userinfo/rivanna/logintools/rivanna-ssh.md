@@ -30,7 +30,7 @@ Mac users will need to install [XQuartz](https://xquartz.org) in order to use gr
 
 # Passwordless SSH
 
-Sometimes you will need to enable passwordless ssh. We allow passwordless ssh to frontend nodes from UVA IP addresses.
+Sometimes you will need to enable passwordless ssh. We allow passwordless ssh to frontend nodes from UVA IP addresses.  
 
 ## Windows
 

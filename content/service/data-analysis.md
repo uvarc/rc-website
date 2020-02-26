@@ -10,7 +10,7 @@ tags = ["R","Python","data analysis"]
 
 +++
 
-<p class=lead>Research Computing can help with accessing, preparing, visualizing and analyzing data. We can assist you by implementing your analysis strategy in an appropriate computing language, including R, Python and Matlab. We will work with you to prepare scripts that are are reproducible, efficient and flexible.</p>
+<p class=lead>Research Computing can help with accessing, preparing, visualizing and analyzing data. We can assist you by implementing your analysis strategy in an appropriate computing language, including R, Python and Matlab. We will work with you to prepare scripts that are reproducible, efficient and flexible.</p>
 
 
 <table class="table table-striped">

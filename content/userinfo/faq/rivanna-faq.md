@@ -62,6 +62,12 @@ For help installing research software on your PC, please contact Research Softwa
 ## Is there any other way to install research software that I need?
 Some groups and departments have installed a bundle of software they need into shared space.  Please see your departmental IT support personnel if your department has its own bundle.
 
+## Can I run this Docker container on Rivanna?
+We do not run Docker on Rivanna.  Instead we use Singularity.  Singularity can run Docker images directly, or you can convert a Docker image to a Singularity image.  To import existing Docker images, use the singularity pull command.
+```
+singularity pull --name animage.simg docker://someaccount/animage
+```
+
 - - -
 
 # Job Management
@@ -89,6 +95,13 @@ If reporting a problem to us about a particular job, please let us know the JobI
 
 ## Why is my job not starting?
 Several things can cause jobs to wait in the queue. If you request a resource combination we do not have, such as 28 cores on a parallel node, the queueing system will not recognize that this condition will not be met and will leave the job pending (PD). You may also have run a large number of jobs in the recent past and the "fair share" algorithm is allowing other users higher priority. Finally, the queue you requested may simply be very busy.  If your job is pending there will be another field with the reason; if it is Resources that means that the resource you requested isn't available, either because it is busy or because you requested a nonexistent resource.  If the reason is "Priority" it means that a job with higher priority than yours is running.  Your job will rise in priority as it waits so it will start eventually.  To request an estimate from the queueing system of your start time, run `squeue -u <mst3k> --start` (substitute your own login for mst3k).
+
+## How can I check when my job will start?
+Run 
+```
+squeue -j <jobid> --start
+```
+SLURM will provide an estimate of the day and time your job will start.
 
 ## Why was my job killed?
 Usually this is because you inadvertently submitted the job to run in a location that the compute nodes can't access or is temporarily unavailable.  If your jobs exit immediately this is usually why.  Other common reasons include using too much memory, too many cores, or running past a job's timelimit. 

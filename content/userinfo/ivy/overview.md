@@ -278,10 +278,6 @@ and regulatory compliance and, if approved, will be installed for you.
 
 Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
 
-## Learn More
-
-[<button class="btn btn-success">Read more about Ivy Virtual Machines</button>](https://discuss.rc.virginia.edu/c/ivy/vm)
-
 - - -
 
 # JupyterLab Notebooks
@@ -355,7 +351,7 @@ All data imported into Ivy must be treated as highly sensitive data. Data and re
 
 <img src="https://pbs.twimg.com/media/DRQcamFX0AA9tmU.jpg" style="float:right;max-width:40%;" />
 
-In 2019 we will launch a secure high performance computing system. This will support computationally-intensive research for sensitive data, within the Ivy secure environment.
+In 2020 we will launch a secure high performance computing system. This will support computationally-intensive research for sensitive data, within the Ivy secure environment.
 
 -->
 

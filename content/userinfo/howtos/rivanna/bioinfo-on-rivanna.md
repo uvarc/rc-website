@@ -1,18 +1,18 @@
 +++
-author = "SOMRC Staff"
+author = "Staff"
 description = ""
 title = "Bioinformatics Resources on Rivanna"
-date = "2017-01-31T09:48:06-05:00"
+date = "2020-02-26T09:48:06-05:00"
 draft = false
 tags = ["bioinformatics","genomics", "rivanna","tools"]
-categories = ["services"]
+categories = ["howtos"]
 images = [""]
 +++
 
 <p class=lead>UVA research community has access to numerous bioinformatics software installed and ready-to-use on Rivanna. They are all available via the LMod module system. In addition, 
 <br/>
 <br/>
-<a href="https://www.rc.virginia.edu/userinfo/rivanna/software/complete-list/" target="blank">Click here</a> for a comprehensive list.
+<a href="https://www.rc.virginia.edu/userinfo/rivanna/software/complete-list/" target="blank">Click here</a> for a comprehensive list of all installed software.
 </p>
 
 <hr size=1 />
@@ -80,7 +80,6 @@ images = [""]
 	<td class="tg-dc35-nw" style="width:105px">
       <a href="http://bio-bwa.sourceforge.net/" target="blank" style="color:#0275d8">Homepage</a><br/>
       <a href="http://bio-bwa.sourceforge.net/bwa.shtml" target="blank" style="color:#0275d8">Manual</a><br/>
-      <a href="https://discuss.rc.virginia.edu/tags/bwa" target="blank" style="color:#0275d8">Rivanna FAQs</a><br/>
     </td>
   </tr>
   <tr>
@@ -90,7 +89,6 @@ images = [""]
 	<td class="tg-hy9w-nw" style="width:105px">
       <a href="http://bowtie-bio.sourceforge.net/index.shtml" target="blank" style="color:#0275d8">Homepage</a><br/>
       <a href="http://bowtie-bio.sourceforge.net/manual.shtml" target="blank" style="color:#0275d8">Manual</a><br/>
-      <a href="https://discuss.rc.virginia.edu/tags/bowtie2" target="blank" style="color:#0275d8">Rivanna FAQs</a><br/>
   </tr>
   <tr>
     <td class="tg-dc35" style="width:65px"><font color="#bd4147">FastQC</font></td>
@@ -107,7 +105,6 @@ images = [""]
     <td class="tg-hy9w" style="width:500px">The Genome Analysis Toolkit provide tools for variant discovery. In addition to SNP and INDEL identification in germline DNA and RNAseq data, GATK tools include somatic short variant calling, as well as tackle copy number and structural variation.</td>
 	<td class="tg-hy9w-nw" sytle="width:105px">
       <a href="https://software.broadinstitute.org/gatk/documentation/" target="blank" style="color:#0275d8">User Guide</a><br/>
-      <a href="https://discuss.rc.virginia.edu/tags/gatk" target="blank" style="color:#0275d8">Rivanna FAQs</a><br/>
   </tr>
   <tr>
     <td class="tg-dc35" style="width:65px"><font color="#bd4147">Picard</font></td>
@@ -654,9 +651,3 @@ $(document).ready(function() {
 </script>    
 
 <hr size=1 />
-
-<h2>Additional Support</h2>
-
-We are continually extending our library of code templates for usage on Rivanna. If you wish to use a bioinformatics software for your project and would like to see a _HowTo Use on Rivanna_ guide, create a topic on the UVA Research Computing <a href="https://discuss.rc.virginia.edu/" target="blank" style="color:#0275d8">discussion board</a>.
-
-
