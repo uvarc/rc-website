@@ -41,6 +41,7 @@ timeout = "60000"
   ivyVmSmall = 999
   ivyVmMedium = 1499
   ivyVmLarge = 1999
+  omero = 60
 
 [params.sidebar]
   # Optional about block for sidebar (can be Markdown)

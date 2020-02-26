@@ -25,11 +25,15 @@ With the advent of high-throughput screening, the need for efficient image manag
 
 # Getting Access
 
-Faculty members may request access to OMERO via this webform:
+Faculty members may request access to OMERO via the link below. To accommodate the images and associated metadata on centralized storage, the PI needs to specify the amount of storage space (1 TB increments) in the request. The storage size can be expanded or reduced at any time per request.
+
+**Pricing**: {{% storage-pricing omero %}} / TB per year.
 
 [<button class="btn btn-success">Request Access to OMERO</button>](https://auth.uvasomrc.io/site/omero.php)
 
+
 By default, all group members will be able to view and annotate their own and data of other members in the group, but cannot modify or delete another member's images. For details on obtaining more restrictive or flexible permissions for your group members, please read the [Group/User Permissions section](#group-user-permissions).
+
 
 - - -
 
