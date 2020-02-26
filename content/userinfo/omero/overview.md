@@ -25,10 +25,11 @@ With the advent of high-throughput screening, the need for efficient image manag
 
 # Getting Access
 
-OMERO accounts can be requested by submitting a <a href="https://www.rc.virginia.edu/form/omero/" target="_blank">OMERO request form</a>. **Only faculty members may submit a request**.
+Faculty members may request access to OMERO via this webform:
 
-By default, all group members will be able to view their own and others' 
-data. Group members can make annotations on each other's data, but cannot modify or delete another member's data. For details on obtaining more restrictive or flexible permissions for your group members, please read the [Group/User Permissions section](#group-user-permissions).
+[<button class="btn btn-success">Request Access to OMERO</button>](https://auth.uvasomrc.io/site/omero.php)
+
+By default, all group members will be able to view and annotate their own and data of other members in the group, but cannot modify or delete another member's images. For details on obtaining more restrictive or flexible permissions for your group members, please read the [Group/User Permissions section](#group-user-permissions).
 
 - - -
 
@@ -63,18 +64,18 @@ Rivanna, large images and movie files are rendered more quickly when using OMERO
 3. To log in, enter your computing ID (e.g. `mst3k`) in the *Username* field. For *Password*, enter the password emailed to you after your initial account request (you will be able to change this after logging in for the first time). **The OMERO database password is not the same as your Eservices or Netbadge password.** Click **Login**.
 
 
-## Logging in with OMERO.web
+## Logging in via the OMERO Web Interface
 
 1. Go to <a href="http://omero.hpc.virginia.edu" target="_blank">http://omero.hpc.virginia.edu</a>.
 
 2. Log in with your computing ID (e.g. `mst3k`) and the password that was emailed to you 
 upon your initial account request. **The OMERO database password is not the same as your Eservices or Netbadge password.**
 
-**Important things to note when using the OMERO web client interface:**
+**Important things to note when using the OMERO web interface:**
 
-* OMERO.web cannot be used to import images
+* The OMERO web interface cannot be used to import images.
 
-* Tags cannot be created in OMERO.web
+* Tags cannot be created through the OMERO web interface.
 
 - - -
 
@@ -108,10 +109,9 @@ If you cannot remember your password, please contact us through our [support req
 
 # Group/User Permissions
 
-OMERO users can have one of two user roles, **Group owner** or **Group member**.
+OMERO users can have one of two user roles, **Group Owner** or **Group Member**.
 
-As a Group owner of a lab/group account, you can edit the permissions of other 
-users in your group. This can be done from the desktop app OMERO.insight.
+As an OMERO group owner, you can edit the permissions of other users in your group. This can be done from the OMERO.insight desktop app.
 
 1. In the **Administration** tab of the sidebar menu, click the name of your group. This 
 will open the Group settings menu.
@@ -133,19 +133,19 @@ all group permissions are set to **Read-Annotate**.
   <tbody>
     <tr>
       <td>Private</td>
-      <td>The group owner can view data of all group members but cannot add annotations. Regular group members can only view and annotate their own data. This permissions setting does not allow for much collaboration.</td>
+      <td>The group owner can view data of all group members but cannot add annotations. Regular group members can only view and annotate their own data. This is the most restrictive permissions setting and does not allow for much collaboration.</td>
     </tr>  
     <tr>
       <td>Read-Only</td>
-      <td>The group owner can view data of all group members but cannot add annotations. Regular group members can only view and annotate their own data. This permissions setting does not allow for much collaboration.</td>
+      <td>The Group owner can see all group members' data and add annotations. Group members can see other members and their data but cannot modify images or annotations.</td>
     </tr>  
     <tr>
       <td>Read-Annotate</td>
-      <td>The group owner and group members can view and annotate each other's data. Regular members cannot modify or remove other members' images. <b>[Default]</b></td>
+      <td>The group owner and group members can view and annotate each other's data. Group members cannot modify or remove other members' images. <b>[Default]</b></td>
     </tr>  
     <tr>
       <td>Read-Write</td>
-      <td>The Group owner and Group members can view, annotate, modify, and delete each other's data.</td>
+      <td>This essentially allows all the group members to behave as if they co-own all the data: the group owner and group members can view, annotate, modify, and delete each other's data.</td>
     </tr>  
   </tbody>
 </table>
@@ -153,11 +153,11 @@ all group permissions are set to **Read-Annotate**.
 - - -
 
 # Image Analysis with OMERO
-OMERO is compatible with a variety of third-party image processing software packages. Using these OMERO-software bindings, you can import images from OMERO to your software such as Fiji or Python,and then process and analyze them as usual. You can then export any results or preprocessed images back to OMERO.
+OMERO is compatible with a variety of third-party image processing software packages. Using these OMERO software bindings, you can import images from OMERO to your software such as Fiji or Python,and then process and analyze them as usual. You can then export any results or preprocessed images back to OMERO.
 
 Using OMERO to serve images to your analysis software has many benefits over more traditional methods of reading imaging data. With OMERO, there is no need to download the images directly to your local machine. 
 
-## ImageJ/Fiji
+## Fiji/ImageJ
 Images managed by OMERO can be imported using the ImageJ/Fiji plugin for OMERO. Detailed 
 instructions for installing and using the plugin can be found in OMERO's online documentation: 
 [https://help.openmicroscopy.org/imagej.html](https://help.openmicroscopy.org/imagej.html).
