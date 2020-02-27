@@ -60,25 +60,19 @@ Once the request has been submitted, the PI will receive a notification that the
 
 ```scp SourceFile mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name```
 
-Detailed instructions and examples for using `scp` are listed <a href ="https://discuss.rc.virginia.edu/t/secure-copy-scp/740" target="_blank">here</a>.
+Detailed instructions and examples for using `scp` are listed <a href ="/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
 {{% /callout %}}
 
-{{% callout %}}
 #### Secure File Transfer Protocol (`sftp`)
 
-`sftp` is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "https://discuss.rc.virginia.edu/t/secure-file-transfer-protocol-sftp/741" target="_blank">here</a>.
-{{% /callout %}}
+`sftp` is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
 
-{{% callout %}}
-#### Filezilla & Cyberduck
+#### Graphical File-Transfer Applications
 
-<a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a> are open source FTP client software for file management through an interactive graphical user interface. Instructions for using these FTP clients can be found <a href ="https://discuss.rc.virginia.edu/t/file-management-with-an-ftp-client/742" target="_blank">here</a>.
-{{% /callout %}}
+<a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, and <a ref="https://mobaxterm.mobatek.net">MobaXterm</a> are examples of open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="/userinfo/rivanna/logintools/graphical-sftp" target="_blank">here</a>.
 
-{{% callout %}}
 #### Globus Connect (Large Data Transfer)
-<p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345" target="_blank">here</a>.</p>
-{{% /callout %}}
+<p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="/userinfo/globus" target="_blank">here</a>.</p>
 
 # Public & Moderately Sensitive Data Storage Systems
 

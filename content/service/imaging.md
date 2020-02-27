@@ -125,9 +125,12 @@ Stay tuned for additional online tutorials as well as in-person workshops listed
 
 With the advent of high-throughput screening, the need for a good imaging data workflow is greater than ever. OMERO allows researchers to organize, view, annotate, analyze, and share their data and metadata--all within the same software environment.
 
-OMERO is imaging data management software for microscopy. Using the BioFormats plug-in, OMERO is able to read over 140 proprietary file formats. OMERO is also compatible with third-party analysis software such as Fiji and ImageJ, Python, and MATLAB, so you can analyze files and share results seamlessly.
+OMERO is a database solution for managing and analyzing imaging data. Using the BioFormats plug-in, OMERO is able to read over 140 proprietary file formats. OMERO is also compatible with third-party analysis software such as Fiji and ImageJ, Python, and MATLAB, so you can analyze images and share results seamlessly from your laptop, laboratory workstations, or UVA's high performance computing platform, [Rivanna](/userinfo/rivanna/overview/).
 
-OMERO is a free service for researchers who purchase `/project` storage on Rivanna. Click [here](../../userinfo/storage) for more information about storage. If you are interested in learning more about OMERO and how it can be incorporated into your current workflow, please submit a [consultation request](../../form/support-request).
+Read our [OMERO documentation](/userinfo/omero/overview) or submit a [consultation request](../../form/support-request) if you are interested in learning more about OMERO and how it can be incorporated into your current workflow.
+
+[<button class="btn btn-success">Request Access to OMERO</button>](https://auth.uvasomrc.io/site/omero.php)
+
 
 - - -
 

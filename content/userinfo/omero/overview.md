@@ -25,11 +25,10 @@ With the advent of high-throughput screening, the need for efficient image manag
 
 # Getting Access
 
-Faculty members may request access to OMERO via this webform:
+OMERO accounts can be requested by submitting a <a href="https://www.rc.virginia.edu/form/omero/" target="_blank">OMERO request form</a>. **Only faculty members may submit a request**.
 
-[<button class="btn btn-success">Request Access to OMERO</button>](https://auth.uvasomrc.io/site/omero.php)
-
-By default, all group members will be able to view and annotate their own and data of other members in the group, but cannot modify or delete another member's images. For details on obtaining more restrictive or flexible permissions for your group members, please read the [Group/User Permissions section](#group-user-permissions).
+By default, all group members will be able to view their own and others' 
+data. Group members can make annotations on each other's data, but cannot modify or delete another member's data. For details on obtaining more restrictive or flexible permissions for your group members, please read the [Group/User Permissions section](#group-user-permissions).
 
 - - -
 
@@ -42,7 +41,7 @@ web client. Since images are imported into centralized storage that is mounted d
 Rivanna, large images and movie files are rendered more quickly when using OMERO on Rivanna. -->
 
 <div class="alert alert-danger">
-<p>When off Grounds, you have to connect through the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">UVA More Secure VPN</a> in order to access the OMERO database.</p>
+<p>When off Grounds, you have to connect through the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">UVA Anywhere VPN</a> in order to access the OMERO database.</p>
 
 <p>The current OMERO web client cannot perform data imports or image annotations. To import or annotate images, use the OMERO.insight desktop client instead.</p>
 </div>
@@ -64,18 +63,18 @@ Rivanna, large images and movie files are rendered more quickly when using OMERO
 3. To log in, enter your computing ID (e.g. `mst3k`) in the *Username* field. For *Password*, enter the password emailed to you after your initial account request (you will be able to change this after logging in for the first time). **The OMERO database password is not the same as your Eservices or Netbadge password.** Click **Login**.
 
 
-## Logging in via the OMERO Web Interface
+## Logging in with OMERO.web
 
 1. Go to <a href="http://omero.hpc.virginia.edu" target="_blank">http://omero.hpc.virginia.edu</a>.
 
 2. Log in with your computing ID (e.g. `mst3k`) and the password that was emailed to you 
 upon your initial account request. **The OMERO database password is not the same as your Eservices or Netbadge password.**
 
-**Important things to note when using the OMERO web interface:**
+**Important things to note when using the OMERO web client interface:**
 
-* The OMERO web interface cannot be used to import images.
+* OMERO.web cannot be used to import images
 
-* Tags cannot be created through the OMERO web interface.
+* Tags cannot be created in OMERO.web
 
 - - -
 
@@ -109,9 +108,10 @@ If you cannot remember your password, please contact us through our [support req
 
 # Group/User Permissions
 
-OMERO users can have one of two user roles, **Group Owner** or **Group Member**.
+OMERO users can have one of two user roles, **Group owner** or **Group member**.
 
-As an OMERO group owner, you can edit the permissions of other users in your group. This can be done from the OMERO.insight desktop app.
+As a Group owner of a lab/group account, you can edit the permissions of other 
+users in your group. This can be done from the desktop app OMERO.insight.
 
 1. In the **Administration** tab of the sidebar menu, click the name of your group. This 
 will open the Group settings menu.
@@ -133,19 +133,19 @@ all group permissions are set to **Read-Annotate**.
   <tbody>
     <tr>
       <td>Private</td>
-      <td>The group owner can view data of all group members but cannot add annotations. Regular group members can only view and annotate their own data. This is the most restrictive permissions setting and does not allow for much collaboration.</td>
+      <td>The group owner can view data of all group members but cannot add annotations. Regular group members can only view and annotate their own data. This permissions setting does not allow for much collaboration.</td>
     </tr>  
     <tr>
       <td>Read-Only</td>
-      <td>The Group owner can see all group members' data and add annotations. Group members can see other members and their data but cannot modify images or annotations.</td>
+      <td>The group owner can view data of all group members but cannot add annotations. Regular group members can only view and annotate their own data. This permissions setting does not allow for much collaboration.</td>
     </tr>  
     <tr>
       <td>Read-Annotate</td>
-      <td>The group owner and group members can view and annotate each other's data. Group members cannot modify or remove other members' images. <b>[Default]</b></td>
+      <td>The group owner and group members can view and annotate each other's data. Regular members cannot modify or remove other members' images. <b>[Default]</b></td>
     </tr>  
     <tr>
       <td>Read-Write</td>
-      <td>This essentially allows all the group members to behave as if they co-own all the data: the group owner and group members can view, annotate, modify, and delete each other's data.</td>
+      <td>The Group owner and Group members can view, annotate, modify, and delete each other's data.</td>
     </tr>  
   </tbody>
 </table>
@@ -153,11 +153,11 @@ all group permissions are set to **Read-Annotate**.
 - - -
 
 # Image Analysis with OMERO
-OMERO is compatible with a variety of third-party image processing software packages. Using these OMERO software bindings, you can import images from OMERO to your software such as Fiji or Python,and then process and analyze them as usual. You can then export any results or preprocessed images back to OMERO.
+OMERO is compatible with a variety of third-party image processing software packages. Using these OMERO-software bindings, you can import images from OMERO to your software such as Fiji or Python,and then process and analyze them as usual. You can then export any results or preprocessed images back to OMERO.
 
 Using OMERO to serve images to your analysis software has many benefits over more traditional methods of reading imaging data. With OMERO, there is no need to download the images directly to your local machine. 
 
-## Fiji/ImageJ
+## ImageJ/Fiji
 Images managed by OMERO can be imported using the ImageJ/Fiji plugin for OMERO. Detailed 
 instructions for installing and using the plugin can be found in OMERO's online documentation: 
 [https://help.openmicroscopy.org/imagej.html](https://help.openmicroscopy.org/imagej.html).

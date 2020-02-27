@@ -18,74 +18,92 @@ type = "about"
 var user_token = getCookie("__user_token");
 </script>
 
-<div class="card-group">
+<div class="card-group support-row">
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Submit a Ticket</h5>
     <p class="card-text">Open a support ticket with your specific questions or issues.<p>
-    <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/support.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
+    <div class="support-tiles">
+      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/support.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
+    </div>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">User Guides</h5>
     <p class="card-text">Learn about systems, storage, data transfer, image analysis or tools.</p>
-    <a href="/userinfo/user-guide/"><button class="btn btn-primary btn-sm">Read the User Guides</button></a>
+    <div class="support-tiles">
+      <a href="/userinfo/user-guide/"><button class="btn btn-primary btn-sm">Read the User Guides</button></a>
+    </div>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Request a Consultation</h5>
     <p class="card-text">Work directly with RC staff on your project idea or application design.</p>
-    <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/consult.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
+    <div class="support-tiles">
+      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/consult.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
+    </div>
   </div>
 </div>
 </div>
 
-<div class="card-group">
+<div class="card-group support-row">
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">FAQ / Knowledgebase</h5>
     <p class="card-text">Search topics or post your own related to research computing.</p>
-    <a href="https://discuss.rc.virginia.edu/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
+    <div class="support-tiles">
+      <a href="https://discuss.rc.virginia.edu/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
+    </div>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Pricing</h5>
     <p class="card-text">Read more about pricing for SUs, Ivy virtual machines, storage, and more.</p>
-    <a href="/userinfo/pricing"><button class="btn btn-primary btn-sm">Learn More</button></a>
+    <div class="support-tiles">
+      <a href="/userinfo/pricing"><button class="btn btn-primary btn-sm">Learn More</button></a>
+    </div>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Request an Allocation</h5>
     <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
-    <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+    <div class="support-tiles">
+      <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+    </div>
   </div>
 </div>
 </div>
 
-<div class="card-group">
+<div class="card-group support-row">
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Request Storage</h5>
     <p class="card-text">Manage your shared project, value, or ZFS storage volumes.</p>
-    <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/storage.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request Storage</button></a>
+    <div class="support-tiles">
+      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/storage.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request Storage</button></a>
+    </div>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Request OMERO Access</h5>
     <p class="card-text">Request or modify access to the OMERO image management database.</p>
-    <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/omero.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
+    <div class="support-tiles">
+      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/omero.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
+    </div>
   </div>
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">VizLab</h5>
     <p class="card-text">A place specifically designed for data visualization.</p>
-    <a href="/service/imaging/#viz-lab"><button class="btn btn-primary btn-sm">Learn More</button></a>
+    <div class="support-tiles">
+      <a href="/service/imaging/#viz-lab"><button class="btn btn-primary btn-sm">Learn More</button></a>
+    </div>
   </div>
 </div>
 </div>

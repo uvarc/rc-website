@@ -17,11 +17,11 @@ draft = false
 
 The Ivy Windows VMs are installed with Microsoft Office 2016. Features such as OneDrive are not available
 since Ivy is not connected to the public internet. Therefore in order to load documents in and out of the 
-VM, you would have to use the [Globus DTN](https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345). 
+VM, you would have to use the [Globus DTN](/userinfo/globus). 
 
 ## Softwares available
 
-The following software are available for use on the Ivy Windows VM:
+The following software packages are available for use on the Ivy Windows VM:
 
 * Word 2016
 * Excel 2016
