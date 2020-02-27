@@ -9,7 +9,7 @@
         </tr>
       </thead>
       <tbody>
-        {{ $url := "events.csv" }}
+        {{ $url := "http://apidata.uvarc.io/events.csv" }}
         {{ $sep := "," }}
         {{ $workshops := getCSV $sep $url }}
         {{ range first 5 $workshops }}
