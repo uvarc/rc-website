@@ -19,7 +19,7 @@ TensorFlow code is provided in two flavors, either with or without support of ge
 Keras is a high-level neural networks application programming interface (API), written in Python and capable of running on top of TensorFlow, CNTK, or Theano.  Since version 1.12.0, TensorFlow contains its own Keras API implementation as described on the TensorFlow website.
 
 # What is inside the TensorFlow containers?
-Most containers provide documentation regarding the main applications that have been installed inside. This information can be queried with the `singularity help` command.
+Most containers provide documentation regarding the main applications that have been installed inside. This information can be queried with the `singularity run-help` command.
 ```
 module load singularity/3.5.2
 module load tensorflow/2.1.0-py37
