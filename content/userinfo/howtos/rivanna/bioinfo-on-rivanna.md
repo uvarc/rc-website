@@ -179,7 +179,7 @@ RC maintains a set of ready-to-use reference sequences and annotations for commo
 
 	/project/genomes/
 
-Majority of files have been downloaded from Illumina's genomes repository (<a href="https://support.illumina.com/sequencing/sequencing_software/igenome.html" target="blank">iGenomes</a>), which contain assembly builds and corresponding annotations from Ensembl, NCBI and UCSC. Each genome directory contain index files of the whole genome for use with aligners like BWA and Bowtie2. In addition, STAR2 index files have been generated for each of *Homo Sapiens* (human) and *Mus musculus* (mouse) genomic builds. 
+The majority of files have been downloaded from Illumina's genomes repository (<a href="https://support.illumina.com/sequencing/sequencing_software/igenome.html" target="blank">iGenomes</a>), which contain assembly builds and corresponding annotations from Ensembl, NCBI and UCSC. Each genome directory contain index files of the whole genome for use with aligners like BWA and Bowtie2. In addition, STAR2 index files have been generated for each of *Homo Sapiens* (human) and *Mus musculus* (mouse) genomic builds. 
 
 
 **Rivanna PATH for your genome of interest:**
@@ -626,7 +626,7 @@ Majority of files have been downloaded from Illumina's genomes repository (<a hr
 </div>
 <div class="form-group" style="margin-top:2rem;">
   <div class="input-group">
-    <input class="form-control genome" id="path" type="text" value="Copy the Rivanna PATH" style="font-family:monospace;max-height:40px;max-width:100%;" />
+    <input class="form-control genome" id="path" type="text" value="Copy the Rivanna path" style="font-family:monospace;max-height:40px;max-width:100%;" />
     <div class="input-group-addon" style="max-height:40px;min-height:40px;">
       <button class="btnz" type="button" data-clipboard-demo data-clipboard-target="#path" style="border:none;background-color:#eee;margin:-14px;padding:-14px;max-height:40px;min-width:40px;min-height:40px;border:solid 1px #bbb;border-top-right-radius:4px;border-bottom-right-radius:4px;">
         <img class="clippy" src="/images/clippy.svg" width="14" height="14" alt="Copy to clipboard">

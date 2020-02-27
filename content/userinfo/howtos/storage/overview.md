@@ -12,4 +12,4 @@ author = "RC Staff"
 
 +++
 
-* [Map your Value or Project Storage to your Desktop](drive-mapping)
+* [Map your Value or Project Storage to your Desktop](/userinfo/howtos/storage/drive-mapping)

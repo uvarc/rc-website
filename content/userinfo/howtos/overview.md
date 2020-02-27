@@ -32,7 +32,7 @@ quell_footer = true
           <h2 class="card-title">General</h2>
           <p class="card-text">General Tips and Tricks</p>
           <div class="card-footer">
-            <a href="/userinfo/howtos/general"><button class="btn btn-sm btn-primary">General HowTos &rsaquo;</button></a>
+            <a href="/userinfo/howtos/general/overview"><button class="btn btn-sm btn-primary">General HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@ quell_footer = true
           <h2 class="card-title">Rivanna</h2>
           <p class="card-text">High Performance Computing Platform</p>
           <div class="card-footer">
-            <a href="/userinfo/howtos/rivanna/"><button class="btn btn-sm btn-primary">Rivanna HowTos &rsaquo;</button></a>
+            <a href="/userinfo/howtos/rivanna/overview"><button class="btn btn-sm btn-primary">Rivanna HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@ quell_footer = true
           <h2 class="card-title">Ivy</h2>
           <p class="card-text">Secure Data Computing Platform</p>
           <div class="card-footer">
-            <a href="/userinfo/howtos/ivy"><button class="btn btn-sm btn-primary">Ivy HowTos &rsaquo;</button></a>
+            <a href="/userinfo/howtos/ivy/overview"><button class="btn btn-sm btn-primary">Ivy HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@ quell_footer = true
           <h2 class="card-title">Storage</h2>
           <p class="card-text">Research Data Storage & Transfer</p>
           <div class="card-footer">
-            <a href="/userinfo/howtos/storage/"><button class="btn btn-sm btn-primary">Storage HowTos &rsaquo;</button></a>
+            <a href="/userinfo/howtos/storage/overview"><button class="btn btn-sm btn-primary">Storage HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>

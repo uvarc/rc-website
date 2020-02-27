@@ -21,7 +21,7 @@ author = "RC Staff"
 
 ## Windows
 
-* Open a File Explorer page.  In Windows 10 first select This PC. This is not necessary for earlier versions of Windows. When you see the *Computer* tab, select that, then select  *Map Network Drive*.
+* Open a File Explorer page.  In Windows 10 first select *This PC*. This is not necessary for earlier versions of Windows. When you see the *Computer* tab, select that, then select  *Map Network Drive*.
 * When the dialog box appears, the default drive letter will be *Z*.  You can change this to any other available letter if you wish.
 * In the Folder textbox, type the path you were given when the storage was set up, for example `\\qumulo.rc.virginia.edu\mylab-storage`.  Note that you must use backslashes even if the path provided to you used forward slashes.
 * When it asks you to authenticate, use your UVA id (e.g. `mst3k`) and your Eservices password.
