@@ -42,7 +42,7 @@ OSX and Linux users may connect through a terminal using the command
 ssh -Y mst3k@rivanna.hpc.virginia.edu  
 ```
 
-[SSH key authentication](https://discuss.rc.virginia.edu/t/ssh-key-authentication/200) is also permissible. 
+[SSH key authentication](/userinfo/rivanna/logintools/rivanna-ssh) is also permissible. 
 
 ## Using X11 Applications with SSH
 

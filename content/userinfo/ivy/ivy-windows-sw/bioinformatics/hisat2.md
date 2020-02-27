@@ -37,7 +37,7 @@ Alignment using ```HISAT2``` is a 2-step process - indexing the reference genome
 
 Since Ivy VM’s do not allow outside connections, ```--sra-acc``` option will not work with HISAT2. 
 If users plan to use SRA data, they will have to download it and move into Ivy prior to alignment.
-Please refer to our [Globus user guide](https://discuss.rc.virginia.edu/t/globus-connect-data-transfer-introduction/345) for help on how to do that.  
+Please refer to our [Globus user guide](/userinfo/globus) for help on how to do that.  
 
 # More information
 

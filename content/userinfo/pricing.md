@@ -73,3 +73,29 @@ images = [""]
 {{< skyline-pricing >}}
 
 More information on ordering Skyline VMs coming soon!
+
+- - - 
+
+# OMERO Image Database Service
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Security</th>
+      <th scope="col">Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Project</th>
+      <td>Standard</td>
+      <td>{{% storage-pricing omero %}} TB/year</td>
+    </tr>
+  </tbody>
+</table>    
+
+[<button class="btn btn-primary btn-sm">About OMERO</button>](/userinfo/omero/overview/) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request OMERO Access</button>](/form/omero/)
+
+- - -
+

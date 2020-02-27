@@ -6,6 +6,7 @@ images = [
 categories = [
   "HPC",
   "software",
+  "bioinformatics"
 ]
 date = "2019-06-23T08:37:46-05:00"
 tags = ["bio"
@@ -17,6 +18,7 @@ description = "Bioinformatics Software in Rivanna's HPC environment"
 author = "RC Staff"
 
 +++
+
 # Overview
 
 Many commonly used bioinformatics software packages on Rivanna are available as individual modules or as Python packages bundled in the bioconda modules.
