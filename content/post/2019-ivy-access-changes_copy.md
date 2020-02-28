@@ -27,6 +27,7 @@ The following software modules will be <strong>removed</strong> from Rivanna dur
 
 
 The following <strong>upgrades</strong> will take place during the maintenance period:
+
 - JupyterLab v1.2.6 - based on anaconda/2019.10-py3.7
 - anaconda/2019.10-py2.7, -py3.7
 - gcc/9.2.0 & toolchains
@@ -37,6 +38,7 @@ The following <strong>upgrades</strong> will take place during the maintenance p
 
 
 New tools:
+
 - LibreOffice - through FastX Web desktop environment
 - pytorch/1.4.0 - Singularity container module
 - goolfc/6.5.0_3.1.4_10.1.168 - GOOLF toolchain (GCC + OpenMPI + OpenBLAS + ScaLAPACK + FFTW) with CUDA support
