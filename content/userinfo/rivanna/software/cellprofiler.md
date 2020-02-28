@@ -5,7 +5,7 @@ categories = [
   "software",
   "bio"
 ]
-date = "2019-06-22T08:37:46-05:00"
+date = "2020-02-28T08:37:46-05:00"
 tags = [
   "multi-core",
 ]
@@ -44,9 +44,9 @@ The CellProfiler container image file is provided in a shared user space.  For b
 
 In a Rivanna terminal window execute these commands:
 ```
-module load singularity
-module load cellprofiler/3.0.0
-cp $CONTAINERDIR/cellprofiler-3.0.0.img /scratch/$USER
+module load singularity/3.5.2
+module load cellprofiler/3.1.8
+cp $CONTAINERDIR/cellprofiler-3.1.8.sif /scratch/$USER
 ```
 
 # Image Pipeline Configuration
@@ -84,9 +84,9 @@ To start an interactive job (ijob) and launch the CellProfiler graphical user in
 ijob -A YOUR_ALLOCATION -c 1 -p standard
 ```
 ```
-module load singularity
-module load cellprofiler/3.0.0
-singularity run /scratch/$USER/cellprofiler-3.0.0.img
+module load singularity/3.5.2
+module load cellprofiler/3.1.8
+singularity run /scratch/$USER/cellprofiler-3.1.8.sif
 ```
 
 # Non-interactive SLURM jobs for batch image processing
@@ -130,14 +130,14 @@ The SLURM job script `cellprofiler.slurm`:
 #SBATCH --mem-per-cpu=9000
 
 module purge
-module load singularity
-module load cellprofiler/3.0.0
+module load singularity/3.5.2
+module load cellprofiler/3.1.8
 
 FIRST_IMG_INDEX=$SLURM_ARRAY_TASK_ID
 LAST_IMG_INDEX=$SLURM_ARRAY_TASK_ID
 BATCH_FILE=/scratch/$USER/pipelines/Batch_data.h5
 
-singularity exec /scratch/$USER/cellprofiler-3.0.0.img cellprofiler -c -r -p $BATCH_FILE -f $FIRST_IMG_INDEX -l $LAST_IMG_INDEX
+singularity exec /scratch/$USER/cellprofiler-3.1.8.sif cellprofiler -c -r -p $BATCH_FILE -f $FIRST_IMG_INDEX -l $LAST_IMG_INDEX
 ```
 
 

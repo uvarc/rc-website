@@ -1,7 +1,7 @@
 +++
 categories = ["userinfo"]
 type = "rivanna"
-date = "2019-04-23T08:37:46-05:00"
+date = "2020-02-28T08:37:46-05:00"
 tags = [
   "rivanna", "software", "docker", "containers", "singularity"
 ]
@@ -23,7 +23,7 @@ To create your own image from scratch, you must have root privileges on some com
 
 You can also import existing Docker images with the singularity pull command.
 ```
-singularity pull --name animage.simg docker://someaccount/animage
+singularity pull docker://account/image
 ```
 
 If you do not have the ability to create your own image for Rivanna or to use a Docker image, contact us for assistance.
@@ -33,56 +33,62 @@ If you do not have the ability to create your own image for Rivanna or to use a 
 Singularity is available as a [module](/userinfo/rivanna/software/modules). The RC staff has also curated a library of pre-prepared Singularity container images for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the `module avail` and `module spider` commands.
 
 ```
-module load singularity
+module load singularity/3.5.2
 module avail
-The available singularity containers are listed under /apps/modulefiles/standard/container/singularity/2.6.1.
 
----------------------- /apps/modulefiles/standard/container/singularity/2.4.1 --------------------
-   cellprofiler/3.0.0 (D)    danpos/2.2.2 (D)    hydrator/0.0.2    tensorflow/1.6.0-py36
-Loading any of these container modules produces an on-screen message with instructions on how to copy the container image file to the personal /scratch directory and how to run the container.
+------------------------------- /apps/modulefiles/standard/container/singularity/3.5.2 --------------------------------
+   caffe2/0.8.0              danpos/2.2.2       pytorch/1.4.0-py37     (L)    tensorflow/2.1.0-py37 (D)
+   cellprofiler/2.2.0        hydrator/0.0.2     tensorflow/1.12.0-py27
+   cellprofiler/3.1.8 (D)    inkscape/0.92.3    tensorflow/1.12.0-py36
+   cp-analyst/2.2.1          patric/1.026       tensorflow/2.0.0-py36
 ```
+
+Loading any of these container modules produces an on-screen message with instructions on how to copy the container image file to your directory and how to run the container.
 
 # What is Inside the Container?
-To learn more about the applications and libraries installed in a container you can use the singularity help CONTAINER command, where CONTAINER is a placeholder for the actual container image file.
+To learn more about the applications and libraries installed in a container you can use the `run-help` command:
 ```
-module load singularity
-module load tensorflow/1.6.0-py36
-singularity help $CONTAINERDIR/tensorflow-1.6.0-py36.simg
+module load singularity/3.5.2
+module load tensorflow/2.1.0-py37
+singularity run-help $CONTAINERDIR/tensorflow-2.1.0-py37.sif
 ```
 
 **Output:**
 ```
-This container is backed by Anaconda version 4.4.0 and provides the Python 3.6 bindings for:
-    * Tensorflow 1.6.0
-    * Keras 2.1.5
-    * PyTorch 0.3.1
-    * XGBoost
-    * LightGBM
-    * CUDA 9.0
-    * CuDNN 7.0.5.15
+This container provides the Python 3.7.5 bindings for:
+    * Tensorflow 2.1.0 with Keras implementation
+    * Keras Visualization Toolkit 0.4
+    # tflearn 0.3.2
+    * scikit-learn 0.22.1
+    * Pandas 1.0.0
+    * OpenCV 4.2.0.32
+    * CUDA 10.1.243
+    * CuDNN 7.6.4.38
 ```
 
 # Running non-GPU Images
 If your container does not require a GPU, all that is necessary is to load the singularity module and provide it with a path to the image.
 
 ```bash
-module load singularity
+module load singularity/3.5.2
 singularity <CMD> <OPTIONS> <IMAGEFILE> <ARGS>
 ```
 
 `CMD` defines how the container is used. There are three main commands:
-`run`: Executes a default command inside the container. The default command is defined at container build time.
-`exec`: Executes a specific application/command inside the container as specified with ARGS. This provides more flexibility than the run command.
-`shell`: Starts a new interactive command line shell inside the container.
+
+- `run`: Executes a default command inside the container. The default command is defined at container build time.
+- `exec`: Executes a specific application/command inside the container as specified with ARGS. This provides more flexibility than the run command.
+- `shell`: Starts a new interactive command line shell inside the container.
+
 `OPTIONS` define how the singularity command is executed.  These can be omitted in most cases.
-`IMAGEFILE` refers to the single Singularity container image file, typically with a .img or .simg extension.
-`ARGS` define additional arguments passed inside the container.  In combination with the exec command they define what application/command to execute inside the container.
+`IMAGEFILE` refers to the single Singularity container image file, typically with a `.sif` or `.simg` extension.
+`ARGS` define additional arguments passed inside the container.  In combination with the `exec` command they define what command to execute inside the container.
 
 ## `singularity run`
 
 ```bash
 containerdir = ~mst3k
-singularity run $containerdir/myimage.img
+singularity run $containerdir/myimage.sif
 ```
 
 This executes a default application or set of commands inside the container.  The default application or set of commands to execute is defined in the image build script and cannot be changed after the container is built.  After execution of the default command, the container is closed.
@@ -90,7 +96,7 @@ This executes a default application or set of commands inside the container.  Th
 ## `singularity exec`
 
 ```bash
-singularity exec $containerdir/myimage.img python myscript.py
+singularity exec $containerdir/myimage.sif python myscript.py
 ```
 
 This is similar to singularity run but more versatile by allowing the specification of the particular application or command to execute inside the container.  In this example it launches the python interpreter and executes the myscript.py script, assuming that Python was installed into the container image.  After execution of the command, the container is closed.
@@ -98,21 +104,33 @@ This is similar to singularity run but more versatile by allowing the specificat
 ## `singularity shell`
 
 ```bash
-singularity shell $containerdir/myimage.img
+singularity shell $containerdir/myimage.sif
 ```
 
-This opens a command line shell inside the container. Note that the command line prompt changes and includes the name of the container. You can navigate the container file system, including /scratch and /nv, and run any application that is installed inside the container. To leave the interactive container shell, type
+This opens a new shell inside the container, notice the change of the prompt:
 
 ```bash
-exit
+Singularity>
+```
+
+Now you can execute any command or application defined in the container, for example `ls` to list all files in the current directory:
+
+```bash
+Singularity> ls
+```
+
+You can navigate the container file system, including `/scratch` and `/nv`, and run any application that is installed inside the container. To leave the interactive container shell, type `exit`:
+
+```bash
+Singularity> exit
 ```
 
 # Running GPU Images
 
-Singularity can make use of the local NVIDIA drivers installed on the host.  To use a GPU image, load the singularity module and add the `--nv` flag when executing the singularity shell, singularity exec, or singularity run commands.
+Singularity can make use of the local NVIDIA drivers installed on the host.  To use a GPU image, load the singularity module and add the `--nv` flag when executing the `singularity shell`, `singularity exec`, or `singularity run` commands.
 
 ```bash
-module load singularity
+module load singularity/3.5.2
 singularity <CMD> --nv <IMAGE_FILE> <ARGS>
 ```
 
@@ -120,16 +138,16 @@ singularity <CMD> --nv <IMAGE_FILE> <ARGS>
 
 ```bash
 containerdir = ~/
-singularity run --nv $containerdir/tensorflow.2-1.4.1-py27.simg myscript.py
+singularity run --nv $containerdir/tensorflow-2.1.0-py37.sif myscript.py
 ```
 
-In the container build script, python was defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. myscript.py, to the python interpreter. So the above singularity command is equivalent to
+In the container build script, `python` was defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. `myscript.py`, to the Python interpreter. So the above singularity command is equivalent to
 
 ```bash
-singularity exec --nv $containerdir/tensorflow.2-1.4.1-py27.simg python myscript.py
+singularity exec --nv $containerdir/tensorflow-2.1.0-py37.sif python myscript.py
 ```
 
-The tensorflow.2-1.4.1-py27.simg was built to include CUDA and cuDNN libraries that are required by TensorFlow.  Since these libraries are provided by the container, we do not need to load the CUDA/cuDNN libraries available on the host.
+The `tensorflow-2.1.0-py37.sif` image was built to include CUDA and cuDNN libraries that are required by TensorFlow.  Since these libraries are provided by the container, we do not need to load the CUDA/cuDNN libraries available on the host.
 
 # Running Images Interactively
 
@@ -145,24 +163,12 @@ salloc: Granted job allocation 12345
 
 ```bash
 module purge
-module load singularity
-containerdir=/share/resources/containers/singularity/gpu/tensorflow
-singularity shell --nv $containerdir/tensorflow-1.12.0-py36.simg
+module load singularity/3.5.2
+containerdir=~
+singularity shell --nv $containerdir/tensorflow-2.1.0-py37.sif
 ```
 
-This opens a new shell inside the container, notice the change of the prompt:
-
-```bash
-singularity tensorflow-1.12.0-py36.simg:~>
-```
-
-Now you can execute any command or application defined in the container, for example `ls` to list all files in the current directory:
-
-```bash
-singularity tensorflow-1.12.0-py36.simg:~> ls
-```
-
-# Running Image non-Interactively as SLURM jobs
+# Running Image Non-Interactively as SLURM jobs
 
 **Example script:**
 
@@ -178,10 +184,10 @@ singularity tensorflow-1.12.0-py36.simg:~> ls
 #SBATCH -A mygroup
 
 module purge
-module load singularity
+module load singularity/3.5.2
 
-containerdir=/share/resources/containers/singularity/gpu/tensorflow
-singularity run --nv $containerdir/tensorflow-1.12.0-py36.simg $containerdir/tensorflowtest.py
+containerdir=~
+singularity run --nv $containerdir/tensorflow-2.1.0-py37.sif tensorflowtest.py
 ```
 
 # Interaction with the Host File System
@@ -200,32 +206,31 @@ In addition, the following user directories are overlayed onto each container by
 * `/nv`
 * `/project`
 
-Due to the overlay these directories are by default the same inside and outside the container with the same read, write, and execute permissions.  This means that file modifications in these directories (e.g. in /home) via processes running inside the container are persistent even after the container instance exits.  The /nv and /project directories refer to leased storage locations that may not be available to all users.
+Due to the overlay these directories are by default the same inside and outside the container with the same read, write, and execute permissions.  This means that file modifications in these directories (e.g. in `/home`) via processes running inside the container are persistent even after the container instance exits.  The `/nv` and `/project` directories refer to leased storage locations that may not be available to all users.
 
 ## Disabling the Default Bind Paths
 
-Under some circumstances this default overlay of the host file systems is undesirable.  Users can disable the overlay of /home, /scratch, /nv, /project by adding the -c  flag when executing the singularity shell, singularity exec, or singularity run commands.
+Under some circumstances this default overlay of the host file systems is undesirable.  Users can disable the overlay of `/home`, `/scratch`, `/nv`, `/project` by adding the `-c` flag when executing the `singularity shell`, `singularity exec`, or `singularity run` commands.
 
 For example,
 
 ```bash
 containerdir=~mst3k
-singularity run -c $containerdir/myimage.img
+singularity run -c $containerdir/myimage.sif
 ```
 
 ## Adding Custom Bind Paths
 
-Users can define custom bind paths for host directories via the -B/--bind option.  The -B/--bind option can be used in combination with the -c flag.
+Users can define custom bind paths for host directories via the `-B`/`--bind` option, which can be used in combination with the `-c` flag.
 
-For example, the following command adds the /scratch directory as an overlay without overlaying any other user directories provided by the host:
-
-```bash
-singularity run -c -B /scratch $containerdir/myimage.img
-```
-
-To add the `/home` directory on the host as `/rivanna/home` inside the container, execute this command:
+For example, the following command adds the `/scratch/$USER` directory as an overlay without overlaying any other user directories provided by the host:
 
 ```bash
-singularity run -c -B /home:/rivanna/home $containerdir/myimage.img
+singularity run -c -B /scratch/$USER $containerdir/myimage.sif
 ```
-<br>
+
+To add the `/home` directory on the host as `/rivanna/home` inside the container:
+
+```bash
+singularity run -c -B /home:/rivanna/home $containerdir/myimage.sif
+```

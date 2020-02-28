@@ -4,10 +4,10 @@
 <div>
 
 <h2> Publications </h2>
-	<ul style="margin-right:1rem;margin-bottom:2rem;">
+	<ul style="margin-right:2rem;margin-bottom:2rem;">
   {{ range $.Params.publications }}
 
-     <div>{{ .authors }}. {{ .title }}. <em>{{ .journal }} </em>, {{ .year }}. <a href = {{ .doi }}> <a href = "http://doi.org/{{ .doi }}" target = "_new">http://doi.org/{{ .doi }}</a></div>
+     <div>{{ .authors }}. "{{ .title }}." <em>{{ .journal }} </em>, {{ .year }}. <a href = {{ .doi }}> <a href = "http://doi.org/{{ .doi }}" target = "_new">http://doi.org/{{ .doi }}</a></div>
 
   {{ end }}
 	</ul>

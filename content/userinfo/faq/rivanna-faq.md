@@ -63,10 +63,16 @@ For help installing research software on your PC, please contact Research Softwa
 Some groups and departments have installed a bundle of software they need into shared space.  Please see your departmental IT support personnel if your department has its own bundle.
 
 ## Can I run this Docker container on Rivanna?
-We do not run Docker on Rivanna.  Instead we use Singularity.  Singularity can run Docker images directly, or you can convert a Docker image to a Singularity image.  To import existing Docker images, use the singularity pull command.
+We do not run Docker on Rivanna.  Instead we use Singularity.  Singularity can run Docker images directly, or you can convert a Docker image to a Singularity image.  To import existing Docker images, use the `singularity pull` command.
 ```
-singularity pull --name animage.simg docker://someaccount/animage
+module load singularity/3.5.2
+singularity pull docker://account/image
 ```
+
+## Can I run application/container X on a GPU?
+Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/)) and prevent other users from using the GPUs.
+
+[https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support](https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support)
 
 - - -
 
