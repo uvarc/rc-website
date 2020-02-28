@@ -63,9 +63,9 @@ For help installing research software on your PC, please contact Research Softwa
 Some groups and departments have installed a bundle of software they need into shared space.  Please see your departmental IT support personnel if your department has its own bundle.
 
 ## Can I run this Docker container on Rivanna?
-We do not run Docker on Rivanna.  Instead we use Singularity.  Singularity can run Docker images directly, or you can convert a Docker image to a Singularity image.  To import existing Docker images, use the singularity pull command.
+We do not run Docker on Rivanna.  Instead we use Singularity.  Singularity can run Docker images directly, or you can convert a Docker image to a Singularity image.  To import existing Docker images, use the `singularity pull` command.
 ```
-singularity pull --name animage.simg docker://someaccount/animage
+singularity pull docker://account/image
 ```
 
 - - -
