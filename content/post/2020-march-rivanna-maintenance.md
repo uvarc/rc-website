@@ -45,6 +45,7 @@ The following **upgrades** will take place during the maintenance period:
 
 - LibreOffice - through FastX Web desktop environment
 - `pytorch/1.4.0` - Singularity container module & Jupyter kernel
+- `openfoam 7` (version 1909) - open-source CFD software
 - `goolfc/6.5.0_3.1.4_10.1.168` - GOOLF toolchain (GCC + OpenMPI + OpenBLAS + ScaLAPACK + FFTW) with CUDA support
 - `atom/1.43.0` - Atom text editor
 - `nodejs/12.14.1` - Node.js JavaScript runtime environment
