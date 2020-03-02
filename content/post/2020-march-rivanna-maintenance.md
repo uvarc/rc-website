@@ -37,6 +37,7 @@ The following **upgrades** will take place during the maintenance period:
 - `gurobi/9.0.1-py3.7`
 - `tensorflow/2.1.0-py37` - Singularity container module & Jupyter kernel
 - `julia/1.3.1` - module & Jupyter kernel
+- `samtools/1.10`
 - `rust/1.41.0`
 
 
