@@ -43,7 +43,7 @@ The following **upgrades** will take place during the maintenance period:
 **New tools**:
 
 - LibreOffice - through FastX Web desktop environment
-- `pytorch/1.4.0` - Singularity container module
+- `pytorch/1.4.0` - Singularity container module & Jupyter kernel
 - `goolfc/6.5.0_3.1.4_10.1.168` - GOOLF toolchain (GCC + OpenMPI + OpenBLAS + ScaLAPACK + FFTW) with CUDA support
 - `nodejs/12.14.1` - Node.js JavaScript runtime environment
 - `ninja/1.10.0-py3.6` - Ninja build system
