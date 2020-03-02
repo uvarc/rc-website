@@ -24,6 +24,7 @@ The following software modules will be **removed** from Rivanna during the maint
 - `anaconda/5.2.0-py2.7` - replaced by `anaconda/2019.10-py2.7`
 - `tensorflow/1.6.0-py27`, `-py36`
 - `boost/1.66.0`
+- `singularity/3.1.1`
 - `cushaw3/3.0.3`
 
 
@@ -33,6 +34,7 @@ The following **upgrades** will take place during the maintenance period:
 - `anaconda/2019.10-py2.7`, `-py3.7`
 - `gcc/9.2.0` & toolchains
 - `singularity/3.5.2` - now default version
+- `gurobi/9.0.1-py3.7`
 - `tensorflow/2.1.0-py37` - Singularity container module & Jupyter kernel
 - `julia/1.3.1` - module & Jupyter kernel
 - `rust/1.41.0`
