@@ -17,15 +17,15 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 
 Rivanna is expected to return to service later in the day.
 
-The following software modules will be **removed** from Rivanna during the maintenance period (newer versions will be made available to users):
+The following software modules will be **removed** from Rivanna during the maintenance period (please use the suggested newer versions):
 
-- `gcc/5.4.0` & toolchains - replaced by `gcc/7.1.0`
-- `pgi/19.7` & toolchains - replaced by `pgi/19.10`
-- `anaconda/5.2.0-py2.7` - replaced by `anaconda/2019.10-py2.7`
-- `tensorflow/1.6.0-py27`, `-py36`
-- `boost/1.66.0`
-- `singularity/3.1.1`
-- `cushaw3/3.0.3`
+- `gcc/5.4.0` & toolchains -> `7.1.0`
+- `pgi/19.7` & toolchains -> `19.10`
+- `anaconda/5.2.0-py2.7` -> `2019.10-py2.7`
+- `tensorflow/1.6.0-py27`, `-py36` -> `1.12.0`, `2.0.0`, or `2.1.0`
+- `boost/1.66.0` -> `1.68.0`
+- `singularity/3.1.1` -> `3.5.2`
+- `cushaw3/3.0.3` - no replacement (contact us if you need to use it)
 
 
 The following **upgrades** will take place during the maintenance period:
@@ -45,6 +45,7 @@ The following **upgrades** will take place during the maintenance period:
 - LibreOffice - through FastX Web desktop environment
 - `pytorch/1.4.0` - Singularity container module & Jupyter kernel
 - `goolfc/6.5.0_3.1.4_10.1.168` - GOOLF toolchain (GCC + OpenMPI + OpenBLAS + ScaLAPACK + FFTW) with CUDA support
+- `atom/1.43.0` - Atom text editor
 - `nodejs/12.14.1` - Node.js JavaScript runtime environment
 - `ninja/1.10.0-py3.6` - Ninja build system
 - `meson/0.53.1-py3.6` - Meson build system
