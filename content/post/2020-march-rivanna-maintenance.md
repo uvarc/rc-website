@@ -25,6 +25,7 @@ The following software modules will be **removed** from Rivanna during the maint
 - `tensorflow/1.6.0-py27`, `-py36` -> `1.12.0`, `2.0.0`, or `2.1.0`
 - `boost/1.66.0` -> `1.68.0`
 - `singularity/3.1.1` -> `3.5.2`
+- `julia/1.0.2`, `1.0.3` -> `1.3.1`
 - `cushaw3/3.0.3` - no replacement (contact us if you need to use it)
 
 
