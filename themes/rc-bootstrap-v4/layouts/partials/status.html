@@ -39,11 +39,11 @@
 $(document).ready(function() {
     $("#status-message").hide();
     refreshStatusTable();
-    setInterval(refreshStatusTable, 10000);
+    setInterval(refreshStatusTable, 30000);
     refreshJobsTable();
-    setInterval(refreshJobsTable, 10000);
+    setInterval(refreshJobsTable, 30000);
     checkStatusMessages();
-    setInterval(checkStatusMessages, 10000);
+    setInterval(checkStatusMessages, 30000);
 });
 
 function checkStatusMessages() {
