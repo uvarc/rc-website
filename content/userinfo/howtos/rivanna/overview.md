@@ -15,3 +15,4 @@ author = "RC Staff"
 * [Building Compiled Code](/userinfo/howtos/rivanna/compiler-howto)
 * [Using Make](/userinfo/howtos/rivanna/make)
 * [Bioinformatics on Rivanna](/userinfo/howtos/rivanna/bioinfo-on-rivanna)
+* [Custom Jupyter Kernels](/userinfo/howtos/rivanna/custom-jupyter-kernels)
