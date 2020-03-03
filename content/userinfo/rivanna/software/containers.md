@@ -21,10 +21,8 @@ Containers bundle an application, the libraries and other executables it may nee
 # Creating Singularity Containers
 To create your own image from scratch, you must have root privileges on some computer running Linux (any version).  Follow the instructions at the Singularity site.  If you have only Mac or Windows, you can use the Vagrant environment.  Vagrant is a pre-packed system that runs under several virtual-machine environments, including the free Virtualbox environment.  Singularity provides instructions for installing on Mac or installing on Windows.  Once you have installed Vitrualbox, you install Singularity's Vagrant image, which contains the prerequisites to author images.  You can then follow the instructions for Linux to author your image.
 
-You can also import existing Docker images with the singularity pull command.
-```
-singularity pull docker://account/image
-```
+## How to use a Docker image on Rivanna?
+You will need to convert the Docker image into Singularity. Please visit our [how-to page](/content/userinfo/howtos/rivanna/docker-images-on-rivanna) for instructions.
 
 If you do not have the ability to create your own image for Rivanna or to use a Docker image, contact us for assistance.
 
