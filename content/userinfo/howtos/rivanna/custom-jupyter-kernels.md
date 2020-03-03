@@ -14,7 +14,7 @@ author = "RC Staff"
 You can create custom kernels from an Anaconda environment or a Singularity container.
 In both cases you'll need to install the `ipykernel` package.
 
-## Jupyter kernel based on Anaconda environment
+# Jupyter kernel based on Anaconda environment
 To create a custom kernel of the Anaconda environment `myenv`:
 ```
 module load anaconda/2019.10-py3.7
@@ -24,7 +24,7 @@ python -m ipykernel install --user --name myenv --display-name "My Env"
 
 Note: You can customize the display name, which will be displayed when you may hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
 
-## Jupyter kernel based on Singularity container
+# Jupyter kernel based on Singularity container
 For this to work, the `ipykernel` Python package must be installed within your Singularity container.
 Custom kernels are stored under `~/.local/share/jupyter/kernels`. If this directory does not already exist, run
 ```
