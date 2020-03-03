@@ -52,5 +52,5 @@ However, if you want to create a new Notebook, go to the Launcher pane and click
 
 If you are more familiar with the classic Notebook environment, you can change the JupyterLab format by clicking on `Help` and select `Launch Classic Notebook`.
 
-# Custom JupyterLab Kernels
-You may notice that the number or type of tiles on the Launcher differs between your account and a colleague’s account.  If you have created conda environments with the `ipykernel` package installed, those environments will appear as separate, specialized kernels labeled `Python [conda env:<ENV_NAME>]`.  You may need to hover over a tile to see the name of the environment.
+# How to create custom JupyterLab kernels?
+Please refer to our [how-to](/content/userinfo/howtos/rivanna/custom-jupyter-kernels).
