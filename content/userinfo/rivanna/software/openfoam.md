@@ -42,7 +42,7 @@ OpenFOAM is an open-source, free software package for computational fluid dynami
 
 # Tutorials
 
-A number of tutorials are available online.  OpenFOAM itself is distributed with a number of tutorials. To find them, run
+Tutorials are available online.  OpenFOAM itself is distributed with a number of tutorials. To find them, run
 ```
 ls $FOAM_TUTORIALS
 ```
