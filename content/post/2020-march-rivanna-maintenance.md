@@ -49,6 +49,7 @@ The following **upgrades** will take place during the maintenance period:
 - `openfoam 7` (version 1909) - open-source CFD software
 - `goolfc/6.5.0_3.1.4_10.1.168` - GOOLF toolchain (GCC + OpenMPI + OpenBLAS + ScaLAPACK + FFTW) with CUDA support
 - `atom/1.43.0` - Atom text editor
+- `rclone/1.51.0` - Rclone for cloud file syncing (supports Google Drive)
 - `nodejs/12.14.1` - Node.js JavaScript runtime environment
 - `ninja/1.10.0-py3.6` - Ninja build system
 - `meson/0.53.1-py3.6` - Meson build system
