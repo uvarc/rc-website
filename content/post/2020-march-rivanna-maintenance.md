@@ -32,6 +32,7 @@ The following software modules will be **removed** from Rivanna during the maint
 The following **upgrades** will take place during the maintenance period:
 
 - JupyterLab v1.2.6 - based on `anaconda/2019.10-py3.7`
+- Python 3.7 Jupyter kernel - based on `anaconda/2019.10-py3.7`
 - `anaconda/2019.10-py2.7`, `-py3.7`
 - `gcc/9.2.0` & toolchains
 - `singularity/3.5.2` - now default version
@@ -40,6 +41,7 @@ The following **upgrades** will take place during the maintenance period:
 - `julia/1.3.1` - module & Jupyter kernel
 - `samtools/1.10`
 - `rust/1.41.0`
+- `cmake/1.16.5`
 
 
 **New tools**:
@@ -57,3 +59,4 @@ The following **upgrades** will take place during the maintenance period:
 - `fribidi/1.0.8` - Free Implementation of the Unicode Bidirectional Algorithm
 - `atk/2.28.1` - Accessibility Toolkit
 - `tree/1.8.0` - Tree structure of file system
+- `gnupg/2.2.19` - GnuPG encrypt and sign data
