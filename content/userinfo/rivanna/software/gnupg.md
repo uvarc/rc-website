@@ -12,7 +12,7 @@ tags = []
 draft = false
 shorttitle = "GnuPG"
 modulename = "gnupg"
-softwarename = "gpg"
+softwarename = "GnuPG"
 title = "GnuPG on Rivanna"
 author = "RC Staff"
 
