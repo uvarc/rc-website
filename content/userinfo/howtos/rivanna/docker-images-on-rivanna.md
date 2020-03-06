@@ -90,4 +90,4 @@ module load singularity/3.5.2
 singularity run|exec|shell image.sif
 ```
 
-Please visit [this page](/content/userinfo/rivanna/software/containers) for more information on `run`, `shell`, and `exec`.
+Please visit [this page](/userinfo/rivanna/software/containers) for more information on `run`, `shell`, and `exec`.

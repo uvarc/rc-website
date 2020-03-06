@@ -92,6 +92,13 @@ images = [""]
       <td class="">Ivy virtual machine</td>
       <td class="">ICS is ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
     </tr>
+    <tr>
+      <td class=""><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy NAS Storage</a></td>
+      <td class="">1TB increments</td>
+      <td class="">First TB is free, additional space {{% storage-pricing project %}} TB/year</td>
+      <td class="">Ivy virtual machine</td>
+      <td class="">Ivy NAS provides a secure storage environment with 2-week snapshot backups. Access to the storage is limited to the researchers' VM(s).</td>
+    </tr>
   </tbody>
 </table>
 

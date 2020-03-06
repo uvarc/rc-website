@@ -232,3 +232,15 @@ To add the `/home` directory on the host as `/rivanna/home` inside the container
 ```bash
 singularity run -c -B /home:/rivanna/home $containerdir/myimage.sif
 ```
+
+# Singularity Library
+
+We host all our Singularity images on [Singularity Library](https://cloud.sylabs.io/library/uvarc). To pull an image:
+
+```
+singularity pull library://uvarc/default/name:version
+```
+
+Deprecated images on Rivanna will be archived here in case any user needs to use them.
+
+Currently we do not use the `latest` tag, so please specify the exact version.
