@@ -54,7 +54,7 @@ images = [""]
     </tr>
     <tr>
       <th scope="row">Ivy NAS Storage</th>
-      <td>Standard</td>
+      <td>High</td>
       <td>{{% storage-pricing project %}} TB/year</td>
     </tr>
   </tbody>
