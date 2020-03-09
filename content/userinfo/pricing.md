@@ -93,7 +93,7 @@ More information on ordering Skyline VMs coming soon!
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Project</th>
+      <th scope="row">OMERO Data</th>
       <td>Standard</td>
       <td>{{% storage-pricing omero %}} TB/year</td>
     </tr>
