@@ -47,7 +47,7 @@ Software on Rivanna is provided via environment [modules](/userinfo/rivanna/soft
 * [Jupyter Lab](//userinfo/rivanna/software/jupyterlab)
 * [Compilers](/userinfo/rivanna/software/compilers)
 * [Parallel & MPI](/userinfo/rivanna/software/mpi)
-* [Debugger](/userinfo/rivanna/software/totalview)
+* [Debuggers and Profilers](/userinfo/rivanna/software/debuggers)
 * [Containers](/userinfo/rivanna/software/containers)
 
 ## Access & File Transfer Tools

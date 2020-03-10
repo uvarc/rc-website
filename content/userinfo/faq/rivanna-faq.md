@@ -6,7 +6,7 @@ date = "2020-02-14T01:45:12-05:00"
 tags = ["hpc","rivanna","faqs","supercomputer"]
 categories = ["userinfo"]
 images = [""]
-author = "Staff"  
+author = "Staff"
 type = "rivanna"
 
 +++
@@ -22,7 +22,7 @@ type = "rivanna"
 - - -
 
 # General Usage
-  
+
 ## How do I gain access to Rivanna?
 A faculty or research staff member must first request an allocation on Rivanna. Full details can be found [here](/userinfo/rivanna/allocations).
 
@@ -38,7 +38,7 @@ Some users logging in through ssh may encounter this error message. If you recei
 - - -
 
 # Allocations
-  
+
 ## How do I check my allocation status on Rivanna?
 Run the command `allocations`
 
@@ -50,7 +50,7 @@ You must use the MyGroups interface to do this, and you must have administrative
 - - -
 
 # Applications
-  
+
 ## How do I use research software that's already installed?
 We use the `lmod` system for managing software environments. [Learn more about how to use `lmod`](/userinfo/rivanna/software/modules/).
 
@@ -77,7 +77,7 @@ Please check the user manual for your application/container before running on a 
 - - -
 
 # Job Management
-  
+
 ## How do I submit jobs?
 You submit jobs by writing a SLURM script and submitting it with the  sbatch command.  Please see our SLURM documentation page.
 
@@ -103,26 +103,26 @@ If reporting a problem to us about a particular job, please let us know the JobI
 Several things can cause jobs to wait in the queue. If you request a resource combination we do not have, such as 28 cores on a parallel node, the queueing system will not recognize that this condition will not be met and will leave the job pending (PD). You may also have run a large number of jobs in the recent past and the "fair share" algorithm is allowing other users higher priority. Finally, the queue you requested may simply be very busy.  If your job is pending there will be another field with the reason; if it is Resources that means that the resource you requested isn't available, either because it is busy or because you requested a nonexistent resource.  If the reason is "Priority" it means that a job with higher priority than yours is running.  Your job will rise in priority as it waits so it will start eventually.  To request an estimate from the queueing system of your start time, run `squeue -u <mst3k> --start` (substitute your own login for mst3k).
 
 ## How can I check when my job will start?
-Run 
+Run
 ```
 squeue -j <jobid> --start
 ```
 SLURM will provide an estimate of the day and time your job will start.
 
 ## Why was my job killed?
-Usually this is because you inadvertently submitted the job to run in a location that the compute nodes can't access or is temporarily unavailable.  If your jobs exit immediately this is usually why.  Other common reasons include using too much memory, too many cores, or running past a job's timelimit. 
+Usually this is because you inadvertently submitted the job to run in a location that the compute nodes can't access or is temporarily unavailable.  If your jobs exit immediately this is usually why.  Other common reasons include using too much memory, too many cores, or running past a job's timelimit.
 
 You can run `sacct`:
 
 ```
 [aam2y@udc-ba36-27:/root] sacct
-       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- -------- 
-159637       ompi_char+   parallel  hpc_admin         80  COMPLETED      0:0 
-159637.batch      batch             hpc_admin          1  COMPLETED      0:0 
-159637.0          orted             hpc_admin          3  COMPLETED      0:0 
-159638       ompi_char+   parallel  hpc_admin        400    TIMEOUT      0:1 
-159638.batch      batch             hpc_admin          1  CANCELLED     0:15 
+       JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
+------------ ---------- ---------- ---------- ---------- ---------- --------
+159637       ompi_char+   parallel  hpc_admin         80  COMPLETED      0:0
+159637.batch      batch             hpc_admin          1  COMPLETED      0:0
+159637.0          orted             hpc_admin          3  COMPLETED      0:0
+159638       ompi_char+   parallel  hpc_admin        400    TIMEOUT      0:1
+159638.batch      batch             hpc_admin          1  CANCELLED     0:15
 159638.0          orted             hpc_admin         19  CANCELLED  255:126
 ```
 
@@ -138,7 +138,7 @@ sfsq
 If you have not exceeded the limits on `/scratch`, check whether your account has allocation units remaining by running
 
 ```
-allocations 
+allocations
 ```
 
 ## Why do I get an error "Batch script contains DOS line breaks"?
@@ -153,6 +153,10 @@ dos2unix myscript.slurm
 ```
 It will not hurt to run `dos2unix` on a file that doesn't need it.
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 76d812eb12f185e67903fc2f75aec2433fbe11cd
 ## How do I check the efficiency of my completed jobs?
 Run the command `jobe`:
 
@@ -204,6 +208,21 @@ Smaller files can be transferred to/from Rivanna using `scp`, `sftp`, and `rsync
 Larger files should be moved using [Globus](/userinfo/globus/).
 
 [Read more](/userinfo/data-transfer/) about data transfer.
+
+## Sbatch error: Batch script contains DOS line breaks `(\r\n)`
+Submitting jobs to Rivanna is through SLURM shell scripts. If you create your script in a Windows text editor and then try to run it on Rivanna, you’ll probably get an error:
+
+
+`sbatch: error: Batch script contains DOS line breaks (\r\n)`
+
+`sbatch: error: instead of expected UNIX line breaks (\n).`
+
+
+That’s because of Windows inserting `\r` with new line characters. There’s an easy way to fix this! On Rivanna, just run
+
+`dos2unix <slurm_filename.slurm>`
+
+which removes unwanted `\r` from text files. Sometimes you get `{^M}` character at the end of every line when the file was imported from Windows environment. `dos2unix` usually takes care of the problem, but not 100% all the time.
 
 # Other Questions
 What if my question doesn't appear here? Take a look at our User Guide.  If your answer isn't there, contact us.
