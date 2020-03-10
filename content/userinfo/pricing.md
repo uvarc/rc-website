@@ -54,7 +54,7 @@ images = [""]
     </tr>
     <tr>
       <th scope="row">Ivy NAS Storage</th>
-      <td>Standard</td>
+      <td>High</td>
       <td>{{% storage-pricing project %}} TB/year</td>
     </tr>
   </tbody>
@@ -93,7 +93,7 @@ More information on ordering Skyline VMs coming soon!
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Project</th>
+      <th scope="row">OMERO Storage</th>
       <td>Standard</td>
       <td>{{% storage-pricing omero %}} TB/year</td>
     </tr>

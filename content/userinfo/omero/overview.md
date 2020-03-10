@@ -30,6 +30,10 @@ OMERO accounts can be requested by submitting a <a href="https://www.rc.virginia
 By default, all group members will be able to view their own and others' 
 data. Group members can make annotations on each other's data, but cannot modify or delete another member's data. For details on obtaining more restrictive or flexible permissions for your group members, please read the [Group/User Permissions section](#group-user-permissions).
 
+**Pricing**: {{% storage-pricing omero %}} / TB per year.
+
+ [<button class="btn btn-success">Request Access to OMERO</button>](https://auth.uvasomrc.io/site/omero.php)
+
 - - -
 
 # Connecting to the OMERO database
