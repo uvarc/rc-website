@@ -22,7 +22,7 @@ source activate myenv
 python -m ipykernel install --user --name myenv --display-name "My Env"
 ```
 
-Note: You can customize the display name, which will be displayed when you may hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
+Note: You can customize the display name, which will be displayed when you hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
 
 # Jupyter kernel based on Singularity container
 For this to work, the `ipykernel` Python package must be installed within your Singularity container.
