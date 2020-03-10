@@ -89,7 +89,7 @@ If you wish to forward X11 in order to use a graphical user interface or to run 
 For more information see the documentation.
 
 ## What queues can I use?
-After logging in, run the command `queues` to see a list of queues to which you have access and their current status.
+After logging in, run the command `qlist` to see a list of queues and their availability.  Run `qlimits` for the restrictions on submitting to each queue. 
 
 ## How do I choose which queue to use?
 Queues (partitions to SLURM) are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  More information about queue policy is at the Rivanna homepage.
@@ -141,14 +141,18 @@ If you have not exceeded the limits on `/scratch`, check whether your account ha
 allocations 
 ```
 
-You may also run
-
+## Why do I get an error "Batch script contains DOS line breaks"?
+If you use a Windows editor to create SLURM batch scripts, when you try to run them you may encounter an error
 ```
-queues
+sbatch: error: Batch script contains DOS line breaks (\r\n)
+sbatch: error: instead of expected UNIX line breaks (\n).
 ```
-for a message that indicates the immediate issue.
+Windows and Linux use different conventions to mark the end of each line.  Many applications on Rivanna, such as compilers, Matlab, etc., understand Windows end-of-line markers, but the shell does not.  This is easy to fix by running the `dos2unix` commmand
+```
+dos2unix myscript.slurm
+```
+It will not hurt to run `dos2unix` on a file that doesn't need it.
 
-  
 ## How do I check the efficiency of my completed jobs?
 Run the command `jobe`:
 
