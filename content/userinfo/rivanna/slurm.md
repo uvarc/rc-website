@@ -15,11 +15,18 @@ type = "rivanna"
 
 <img style="margin-left:2rem; margin-bottom:2rem; float:right; max-width:30%;" src="/images/rivanna/slurm-workload-manager.png" />
 
-Rivanna is a multi-user, managed environment.  It is divided into frontends, which are directly accessible by users, and compute nodes, which must be accessed through the resource manager.  We use the **Simple Linux Utility for Resource Management (SLURM)**, an open-source tool that performs cluster management and job scheduling for Linux clusters. Jobs are submitted to the resource manager, which queues them until the system is ready to run them. SLURM selects which jobs to run, when to run them, and how to place them on the compute node, according to a predetermined site policy meant to balance competing user needs and to maximize efficient use of cluster resources. SLURM divides a cluster into logical units called partitions (generally known as queues in other systems). Different partitions may contain different nodes, or they may overlap; they may also impose different resource limitations. The UVA HPC environment provides several partitions and there is no default; each job must request a partition. To determine which queues are available to your group, log in to the HPC System and type queues at a Linux command-line prompt.
+Rivanna is a multi-user, managed environment.  It is divided into frontends, which are directly accessible by users, and compute nodes, which must be accessed through the resource manager.  We use the **Simple Linux Utility for Resource Management (SLURM)**, an open-source tool that performs cluster management and job scheduling for Linux clusters. Jobs are submitted to the resource manager, which queues them until the system is ready to run them. SLURM selects which jobs to run, when to run them, and how to place them on the compute node, according to a predetermined site policy meant to balance competing user needs and to maximize efficient use of cluster resources. SLURM divides a cluster into logical units called partitions (generally known as queues in other systems). Different partitions may contain different nodes, or they may overlap; they may also impose different resource limitations. The UVA HPC environment provides several partitions and there is no default; each job must request a partition. To determine which queues are available, log in to the HPC System and type 
+``` 
+qlist
+```
+at a Linux command-line prompt.  For the memory and core limits on each queue, use the command
+```
+qlimits
+```
 
 # Local Queue Configuration
 
-Several queues (partitions) are availble for different types of jobs.  One queue is restricted to single-node (serial or threaded) jobs; another for multinode parallel programs, and others are for access to specialty hardware such as large-memory nodes or nodes offering GPUs.  For the current queue configuration and policies on Rivanna please see its homepage. 
+Several queues (partitions) are available for different types of jobs.  One queue is restricted to single-node (serial or threaded) jobs; another for multinode parallel programs, and others are for access to specialty hardware such as large-memory nodes or nodes offering GPUs.  For the current queue configuration and policies on Rivanna please see its homepage. 
 
 # SLURM Architecture
 

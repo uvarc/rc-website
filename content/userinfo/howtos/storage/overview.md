@@ -13,3 +13,5 @@ author = "RC Staff"
 +++
 
 * [Map your Value or Project Storage to your Desktop](/userinfo/howtos/storage/drive-mapping)
+
+* [Using Globus from the Command Line](/userinfo/howtos/storage/globus-cli)
