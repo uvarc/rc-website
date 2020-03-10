@@ -54,7 +54,7 @@ Software on Rivanna is accessed via environment **modules** or **containers**.
 * [Compilers](/userinfo/rivanna/software/compilers)
 * [Parallel & MPI](/userinfo/rivanna/software/mpi)
 * [Libraries](/userinfo/rivanna/software/libraries)
-* [Debugger](/userinfo/rivanna/software/totalview)
+* [Debuggers and Profilers](/userinfo/rivanna/software/debuggers)
 * [Containers](/userinfo/rivanna/software/containers)
 * [IDEs and Editors](/userinfo/rivanna/software/ide)
 

@@ -15,7 +15,7 @@ Rivanna offers multiple compiler bundles for C, C++, and Fortran.  Different com
 
 Many users of compiled languages are working with codes that can employ MPI for multinode parallel runs.  MPI users should first understand how their chosen compiler works, then see the MPI instructions at our [parallel programming](/userinfo/rivanna/software/mpi) page.
 
-Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our [debuggers and utilities](/userinfo/rivanna/software/totalview) page.
+Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our [debuggers and utilities](/userinfo/rivanna/software/debuggers) page.
 
 # Available Compilers on Rivanna
 
