@@ -4,21 +4,30 @@ $("#storage-help").hide();
 $("#categories").change(function () {
   var cat = this.value;
   if (cat == "Storage") {
+    $("#storage-help").show(400);
     $("#rivanna-help").hide(200);
     $("#ivy-help").hide(200);
-    $("#storage-help").show(400);
+    $("#omero-help").hide(200);
   } else if (cat == "Rivanna") {
     $("#rivanna-help").show(400);
     $("#ivy-help").hide(200);
     $("#storage-help").hide(200);
+    $("#omero-help").hide(200);
   } else if (cat == "Ivy") {
     $("#ivy-help").show(400);
-    $("#rivanna-help").hide(400);
+    $("#rivanna-help").hide(200);
+    $("#storage-help").hide(200);
+    $("#omero-help").hide(200);
+  } else if (cat == "Omero") {
+    $("#omero-help").show(400);
+    $("#ivy-help").hide(200);
+    $("#rivanna-help").hide(200);
     $("#storage-help").hide(200);
   } else {
     $("#rivanna-help").hide(200);
     $("#ivy-help").hide(200);
     $("#storage-help").hide(200);
+    $("#omero-help").hide(200);
   }
 });
 
