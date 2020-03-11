@@ -1,6 +1,7 @@
 $("#rivanna-help").hide();
 $("#ivy-help").hide();
 $("#storage-help").hide();
+$("#omero-help").hide();
 $("#categories").change(function () {
   var cat = this.value;
   if (cat == "Storage") {
