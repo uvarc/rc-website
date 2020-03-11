@@ -33,6 +33,7 @@ The following **upgrades** have taken place during the maintenance period:
 
 - JupyterLab v1.2.6 - based on `anaconda/2019.10-py3.7`
 - Python 3.7 Jupyter kernel - based on `anaconda/2019.10-py3.7`
+    - The previous **"Python 3"** kernel (based on `anaconda/5.2.0-py3.6`) has been **renamed as "Python 3.6"**.
 - `anaconda/2019.10-py2.7`, `-py3.7`
 - `gcc/9.2.0` & toolchains - gcc/7.1.0 remains the default
 - `singularity/3.5.2` - now default version
