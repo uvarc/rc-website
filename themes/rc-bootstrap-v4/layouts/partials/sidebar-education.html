@@ -10,9 +10,9 @@
   <section class="sidebar-module">
     <p class=lead>Education/Training Opportunities</p>
     <ol class="list-unstyled">
-      {{ range first 30 (where .Site.Pages.ByTitle "Type" "education") }}
-      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
-      {{ end }}
+      <li><a href="/education/workshops/">Workshops</a></li>
+      <li><a href="https://workshops.rc.virginia.edu/" target="_new">Self-Paced Learning</a></li>
+      <li><a href="/education/courses/">Courses</a></li>
     </ol>
   </section>
 
