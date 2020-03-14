@@ -113,26 +113,34 @@ var user_token = getCookie("__user_token");
 ## Office Hours
 - - -
 
+<!--
 Research Computing staff host weekly office hours. Drop by with a project idea, question about a system or anything else you would like to discuss. Walkups are welcome.
+-->
+
+Research Computing staff host weekly office hours. Tell us about a project idea or talk to us about our computing platforms, storage and services. We're here to help you solve yor computational problems.
+
+**As a precaution, we are offering our weekly office hours as online Zoom sessions until further notice.** 
 
 <div class="alert alert-success" role="alert"> 
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Tuesdays 3:00-5:00pm</b><br />
-Physical Life Sciences Building, Room 430
+<a href="https://virginia.zoom.us/j/304271094"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
+<!-- Physical Life Sciences Building, Room 430-->
 </div>
 
 <div class="alert alert-success" role="alert"> 
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50808/38.03293/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Wednesdays 3:00-5:00pm</b><br />
-Brown Library, <a href="https://cal.lib.virginia.edu/space/31372" target="_new">Table Worst Cat</a> (On the intermediate floor of Brown Library, in the East wing)
+<a href="https://virginia.zoom.us/j/266856055"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
+<!-- Brown Library, <a href="https://cal.lib.virginia.edu/space/31372" target="_new">Table Worst Cat</a> (On the intermediate floor of Brown Library, in the East wing) -->
 </div>
 
 <div class="alert alert-success" role="alert"> 
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Thursdays 10:00-12:00pm</b><br />
-Health Sciences Library, MILL Room 
+<a href="https://virginia.zoom.us/j/723009972"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
+<!-- Health Sciences Library, MILL Room -->
 </div>
-
 
 <!-- {{< office-hours-grid >}} -->
 
