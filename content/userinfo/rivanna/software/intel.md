@@ -64,7 +64,7 @@ In your SLURM script, replace `srun myprog` with
 ```
 #SBATCH -n <number_of_tasks>
 ...
-mpirun -trace -bootstrap slurm -n ${SLURM_NTASKS} a.out
+mpirun -trace -bootstrap slurm -n ${SLURM_NTASKS} myprog
 ```
 The SLURM variable `${SLURM_NTASKS}` will expand to the `<number_of_tasks>` that you specify in the SBATCH directive.
 
