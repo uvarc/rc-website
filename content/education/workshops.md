@@ -15,7 +15,9 @@ images = [""]
 
 # Upcoming Workshops
 
-{{% upcoming-workshops %}}
+<!-- % upcoming-workshops % -->
+
+Workshops for Spring 2020 have been canceled due to campus closures from COVID-19. Please check back in the near future to see upcoming workshops once we resume instruction.
 
 <!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
 <a href="https://data.library.virginia.edu/training/" class="btn btn-warning" target="_new"> View All Upcoming Workshops </a>

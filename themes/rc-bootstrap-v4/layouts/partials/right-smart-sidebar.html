@@ -1,7 +1,3 @@
-{{ $url := "http://apidata.uvarc.io/events.csv" }}
-{{ $sep := "," }}
-{{ $dataWorkshops := getCSV $sep $url }}
-{{ if (eq ($dataWorkshops | len) 0) }}
 <!-- WHEN NO WORKSHOPS -->
 
   {{ partial "typed-widget.html" . }}
@@ -10,15 +6,3 @@
   {{ partial "office-hours.html" . }}
 
 <!-- END WHEN NO WORKSHOPS -->
-
-{{ else }}
-
-<!-- WHEN WORKSHOPS EXIST -->
-
-  {{ partial "office-hours.html" . }}
-  {{ partial "user-help-widget.html" . }}
-  {{ partial "training-events.html" . }}
-
-<!-- END WHEN WORKSHOPS EXIST -->
-
-{{ end }}
