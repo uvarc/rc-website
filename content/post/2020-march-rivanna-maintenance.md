@@ -35,7 +35,7 @@ The following software modules will be **removed** from Rivanna during the maint
 
 The following **upgrades** will take place during the maintenance period:
 
-- JupyterLab v1.2.6 - based on `anaconda/2019.10-py3.7`
+- JupyterLab v1.2.6
 - Python 3.7 Jupyter kernel - based on `anaconda/2019.10-py3.7`
     - The previous **"Python 3"** kernel (based on `anaconda/5.2.0-py3.6`) has been **renamed as "Python 3.6"**.
 - `anaconda/2019.10-py2.7`, `-py3.7`
