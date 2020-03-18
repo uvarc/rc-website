@@ -119,7 +119,7 @@ Research Computing staff host weekly office hours. Drop by with a project idea, 
 
 Research Computing staff host weekly office hours. Tell us about a project idea or talk to us about our computing platforms, storage and services. We're here to help you solve yor computational problems.
 
-**Starting March 17, we are discontinuing our office hours in the Physical & Life Sciences Building, Brown Library and Health Sciences Library, and instead offer our weekly office hours as online Zoom sessions until further notice.** 
+**Starting March 17, we are suspending our office hours in the Physical & Life Sciences Building, Brown Library and Health Sciences Library, and instead offer our weekly office hours as online Zoom sessions until further notice.** 
 
 <div class="alert alert-success" role="alert"> 
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
@@ -131,7 +131,7 @@ Research Computing staff host weekly office hours. Tell us about a project idea 
 <div class="alert alert-success" role="alert"> 
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50808/38.03293/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Wednesdays 3:00-5:00pm</b><br />
-<a href="https://virginia.zoom.us/j/266856055"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
+<a href="https://virginia.zoom.us/s/812332138"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 <!-- Brown Library, <a href="https://cal.lib.virginia.edu/space/31372" target="_new">Table Worst Cat</a> (On the intermediate floor of Brown Library, in the East wing) -->
 </div>
 
