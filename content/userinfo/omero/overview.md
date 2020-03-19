@@ -44,10 +44,8 @@ Once you have an OMERO account you can log in and begin importing images. You ca
 web client. Since images are imported into centralized storage that is mounted directly on 
 Rivanna, large images and movie files are rendered more quickly when using OMERO on Rivanna. -->
 
-<div class="alert alert-danger">
-<p>When off Grounds, you have to connect through the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">UVA Anywhere VPN</a> in order to access the OMERO database.</p>
-
-<p>The current OMERO web client cannot perform data imports or image annotations. To import or annotate images, use the OMERO.insight desktop client instead.</p>
+<div class="alert alert-success">
+<p>When off Grounds, you have to connect through the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">UVA VPN</a> in order to access the OMERO database. <b>We recommend to connect to the UVA More Secure Network if available.</b> The UVA Anywhere VPN should only be used if the UVA More Secure Network is not available.</p>
 </div>
 
 ## Logging in with OMERO.insight

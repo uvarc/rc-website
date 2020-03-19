@@ -32,7 +32,7 @@ draft = false
         - openssl
         - openconnect
         - NetworkManager-openconnect
-        - NetworkManager-gnome  
+        - NetworkManager-openconnect-gnome  
 
     - Ubuntu
 
