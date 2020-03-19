@@ -83,7 +83,7 @@ openssl x509 -inform DER -in usher.cer -out usher.crt
 
 <img src="/images/linux/vpn-setup-linux.png" alt="vpn-setup" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
 
-Off-Grounds Rivanna users should use the ITS more-secure network. The gateway for that VPN is *moresecure-vpn-1.itc.virginia.edu*.
+Off-Grounds Rivanna users should use the ITS more-secure network. The gateway for that VPN is *moresecure-vpn-1.itc.virginia.edu*.  The UVA-Anywhere gateway can be used by students for other purposes.
 
 Click "Add."
 
