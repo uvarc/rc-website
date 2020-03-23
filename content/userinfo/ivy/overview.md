@@ -274,6 +274,91 @@ and regulatory compliance and, if approved, will be installed for you.
 [<button class="btn btn-success">Request Ivy Software</button>](https://www.rc.virginia.edu/form/support-request)
 
 
+## Installing Python Packages on Your VM
+
+### Creating a Conda Environment
+
+Researchers often require Python packages that are not included in the base install of Anaconda. Users can install additional Python packages on their VMs using conda environments. Conda environments allows users to install packages in isolated environments to avoid version conflicts with other users on the VM.
+
+#### Windows
+
+1. Launch "Anaconda Prompt" from the Start Menu.
+
+2. From the prompt, issue the command:
+
+    `conda create -n my_env package1 package2`
+    
+    where `my_env` is the name you wish to give your new conda environment, and `package1` and `package2` are the names of the Python packages you want to install.
+    
+3. To activate and use your new environment, issue the command:
+
+    `conda activate my_env`
+    
+
+#### Linux
+
+1. Log into your VM via SSH or log in through your web browser and launch the Terminal.
+
+2. From the prompt, issue the command:
+
+    `conda create -n my_env package1 package2`
+    
+    where `my_env` is the name you wish to give your new conda environment, and `package1` and `package2` are the names of the Python packages you want to install.
+    
+3. To activate and use your new environment, issue the command:
+
+    `conda activate my_env`
+    
+#### Creating a Conda Environment with a Specific Python Version
+
+If you require a specific version of Python, you can create a new conda environment with:
+
+`conda create -n my_env python=2.7`
+
+### Installing Packages
+
+After creating your conda environment, you can install additional libraries with `pip` and `conda`.
+
+#### Installing Packages with `pip`
+
+* Use `pip` from the command line to install individual packages:
+
+    `pip install numpy`
+
+* You can search for a package:
+
+     `pip search panda`
+     
+* To see which packages you have installed already:
+
+    `pip list`
+    
+* You can install packages listed in a `requirements.txt` file (one package per line): 
+
+    `pip -r requirements.txt`
+    
+* To save a list of your currently installed packages in a `requirements.txt` file:
+
+    `pip freeze > requirements.txt`
+    
+#### Installing packages with `conda`
+
+`conda` works similarly to `pip`.
+
+* To install a package:
+
+    `conda install scipy`
+    
+* To search for a package:
+
+    `conda search scipy`
+    
+* And to list all packages in your environment:
+
+    `conda list`
+    
+Once installed on your VM, packages will persist and you will not need to install them again. You will only need to import them again in your code.
+
 ## Storage
 
 Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
