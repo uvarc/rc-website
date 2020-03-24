@@ -23,12 +23,6 @@ Ivy Central Storage (ICS) is a highly sensitive data parking zone and central st
 
 Researchers can request space on ICS by first requesting an Ivy account using the <a href="https://services.rc.virginia.edu/ivyvm" target="_blank">Ivy request form</a>. Users are granted 1TB of space for free, and additional space can be requested in 1TB increments.
 
-# VM Storage
-In addition to ICS space, researchers can also request network attached storage (NAS). Unlike ICS, files stored here can be executable. NAS space is accessible via an [Ivy VM](/userinfo/ivy/overview#virtual-machines). Data can be transferred from NAS to ICS for long-term data storage.
-
-VM NAS space can be requested with an Ivy account using the <a href="https://services.rc.virginia.edu/ivyvm" target="_blank">Ivy request form</a>. Users are granted 1TB for free and may request additional space in 1TB increments.
-
-Additionally, Ivy VMs have 100GB of block storage. All software and applications installed on the VM take up some of this block storage space.
 
 # Data Transfer to Ivy
 
