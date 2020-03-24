@@ -82,9 +82,7 @@ private = true
       <div class="form-item form-type-radio radio">
         <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
       </div>
-      <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice5" name="storage-choice" value="ivy nas" class="form-radio" /> &nbsp; Ivy NAS Storage ({{% storage-pricing project %}}/TB/year)</label>
-      </div>
+
     </div>
   </div>
   </div>
