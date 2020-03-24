@@ -117,9 +117,9 @@ var user_token = getCookie("__user_token");
 Research Computing staff host weekly office hours. Drop by with a project idea, question about a system or anything else you would like to discuss. Walkups are welcome.
 -->
 
-Research Computing staff host weekly office hours. Tell us about a project idea or talk to us about our computing platforms, storage and services. We're here to help you solve yor computational problems.
+Research Computing staff host weekly office hours. Tell us about a project idea or talk to us about our computing platforms, storage and services. We're here to help you solve your computational problems.
 
-**Starting March 17, we are suspending our office hours in the Physical & Life Sciences Building, Brown Library and Health Sciences Library, and instead offer our weekly office hours as online Zoom sessions until further notice.** 
+**Beginning March 17, we are suspending our in-person office hours in the Physical & Life Sciences Building, Brown Library and the Health Sciences Library. We will be offering weekly office hours as online Zoom sessions instead until further notice.** 
 
 <div class="alert alert-success" role="alert"> 
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
