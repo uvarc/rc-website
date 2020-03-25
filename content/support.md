@@ -123,7 +123,7 @@ Examples of the type of support we can provide are:
 
 - Data Transfer/Access
 - Parallel Coding in Fortran, C, Python, R, Matlab, Mathematica
-- Bioinformatics Software
+- Bioinformatics 
 - Computational Chemistry
 - Writing Slurm Job Scripts
 - Maximizing Job Efficiency
