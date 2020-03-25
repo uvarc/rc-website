@@ -1,4 +1,4 @@
-+++
+ +++
 type = "rivanna"
 categories = [
   "HPC",
@@ -61,6 +61,7 @@ Index files are created with the `bwa index` command. A reference genome sequenc
 #Run program
 module purge
 module load bwa
+module list
 
 cd /scratch/$USER/bwaanalysis
 
@@ -90,6 +91,7 @@ BWA provides three basic alignment algorithms to align sequence reads to a refer
 #Run program
 module purge
 module load bwa
+module list
 
 cd /scratch/$USER/bwaanalysis
 
@@ -97,3 +99,49 @@ cd /scratch/$USER/bwaanalysis
 bwa mem refgenome.fa read1.fq read2.fq -t $SLURM_CPUS_PER_TASK > aln-pe.sam
 ```
 Note the use of `-t $SLURM_CPUS_PER_TASK` to define the numbe of processing threads based on the numbe of requested cpu core (1 thread / cpu core). Follow the online [{{% software-name %}} documentation]({{< module-homepage >}}) to adjust parameters for aligning single-end reads.
+
+### Start an interactive session 
+You should **_NOT_** do your computational processing on the head node. In order to obtain a login shell on a compute node, use the `ijob` command - 
+```
+ijob -A <ACCOUNT> -p standard -c 20 --mem=20gb
+```
+replace `<ACCOUNT>` with your account name to charge SUs. The arguments for `-c` and `--mem` options depend on the resources you will use for the alignment step!
+
+### Load module
+First, lets make bwa executable available to you:
+```
+module load bwa
+```
+In order to check all available `bwa` commands: 
+```
+bwa
+```
+If you wish to check various options for each command: 
+```
+bwa index
+```
+```
+bwa mem 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
