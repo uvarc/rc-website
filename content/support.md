@@ -124,7 +124,9 @@ Examples of the type of support we can provide are:
 - Data Transfer/Access
 - Parallel Coding in Fortran, C, Python, R, Matlab, Mathematica
 - Bioinformatics Software
-- Optimizing Slurm Job Submissions to Rivanna
+- Computational Chemistry
+- Writing Slurm Job Scripts
+- Maximizing Job Efficiency
 - Managing a Computational Workflow
 
 
