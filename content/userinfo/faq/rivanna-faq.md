@@ -27,7 +27,7 @@ type = "rivanna"
 A faculty or research staff member must first request an allocation on Rivanna. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How do I log on to Rivanna?
-Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/rivanna/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/rivanna/ood/overview) or [FastX](/userinfo/rivanna/logintools/fastx).  If you are off Grounds and connecting via SSH client or FastX you must use the [UVA  VPN](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0). **It is recommended to use the `UVA More Secure Network` if available.** The `UVA Anywhere` connection should be used only when the UVA More Secure Network is not available. You do not need a VPN connection to use Open OnDemand when off Grounds. 
+Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/rivanna/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/rivanna/ood/overview) or [FastX](/userinfo/rivanna/logintools/fastx).  If you are off Grounds and connecting via SSH client or FastX you must use the [UVA  VPN](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0). **It is recommended to use the `UVA More Secure Network` if available.** The `UVA Anywhere` connection should be used only when the UVA More Secure Network is not available. You do not need a VPN connection to use Open OnDemand when off Grounds.
 
 ## How do I reset my current password / obtain a new password?
 Access to the HPC cluster requires a valid Eservices password. Your Netbadge password is not necessarily the same thing, so if you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  Resetting the Netbadge password should sync it with your Eservices password, which is no longer directly accessible to you. If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
@@ -89,7 +89,7 @@ If you wish to forward X11 in order to use a graphical user interface or to run 
 For more information see the documentation.
 
 ## What queues can I use?
-After logging in, run the command `qlist` to see a list of queues and their availability.  Run `qlimits` for the restrictions on submitting to each queue. 
+After logging in, run the command `qlist` to see a list of queues and their availability.  Run `qlimits` for the restrictions on submitting to each queue.
 
 ## How do I choose which queue to use?
 Queues (partitions to SLURM) are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  More information about queue policy is at the Rivanna homepage.
@@ -141,7 +141,7 @@ If you have not exceeded the limits on `/scratch`, check whether your account ha
 allocations
 ```
 
-## Why do I get an error "Batch script contains DOS line breaks"?
+## Why do I get `sbatch error: Batch script contains DOS line breaks` 
 If you use a Windows editor to create SLURM batch scripts, when you try to run them you may encounter an error
 ```
 sbatch: error: Batch script contains DOS line breaks (\r\n)
@@ -151,12 +151,9 @@ Windows and Linux use different conventions to mark the end of each line.  Many 
 ```
 dos2unix myscript.slurm
 ```
-It will not hurt to run `dos2unix` on a file that doesn't need it.
+It will not hurt to run `dos2unix` on a file that doesn't need it. Sometimes you get `{^M}` character at the end of every line when the file was imported from Windows environment. `dos2unix` usually takes care of the problem, but not 100% all the time.
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 76d812eb12f185e67903fc2f75aec2433fbe11cd
 ## How do I check the efficiency of my completed jobs?
 Run the command `jobe`:
 
@@ -209,20 +206,7 @@ Larger files should be moved using [Globus](/userinfo/globus/).
 
 [Read more](/userinfo/data-transfer/) about data transfer.
 
-## Sbatch error: Batch script contains DOS line breaks `(\r\n)`
-Submitting jobs to Rivanna is through SLURM shell scripts. If you create your script in a Windows text editor and then try to run it on Rivanna, you’ll probably get an error:
 
-
-`sbatch: error: Batch script contains DOS line breaks (\r\n)`
-
-`sbatch: error: instead of expected UNIX line breaks (\n).`
-
-
-That’s because of Windows inserting `\r` with new line characters. There’s an easy way to fix this! On Rivanna, just run
-
-`dos2unix <slurm_filename.slurm>`
-
-which removes unwanted `\r` from text files. Sometimes you get `{^M}` character at the end of every line when the file was imported from Windows environment. `dos2unix` usually takes care of the problem, but not 100% all the time.
 
 # Other Questions
 What if my question doesn't appear here? Take a look at our User Guide.  If your answer isn't there, contact us.
