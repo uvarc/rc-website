@@ -10,8 +10,8 @@
      * [Using Gitpod](#using-gitpod)
      * [Local Install](#local-install)
   * [Creating New Content](#creating-new-content)
-     * [Two methods for creating content:](#two-methods-for-creating-content)
-     * [Helpful notes about creating content:](#helpful-notes-about-creating-content)
+     * [Methods for creating content](#two-methods-for-creating-content)
+     * [Suggestions for creating content](#helpful-notes-about-creating-content)
      * [Front matter](#front-matter)
      * [Future Posts](#future-posts)
      * [Shortcodes](#shortcodes)
@@ -58,14 +58,14 @@ Content of this website is contained in a series of markdown files within the `c
 * `service` - Services offered by our staff.
 * `userinfo` - Systems and information we support: Rivanna, Ivy, Skyline, etc., and detailed user information.
 
-### Two methods for creating content:
+### Methods for creating content:
 
 1. Copy an existing page and modify it.
 2. Create a new page using the `hugo new` command declaring a path to the .md object you want to create:
   * `hugo new post/here-is-my-post.md`
   * `hugo new top-level-page.md`
   
-### Helpful notes about creating content:
+### Suggestions for creating content:
 
   * The "content type" of a page is usually determined by what folder it is in. Different content types are displayed in slightly different ways, i.e. the sidebar or layout.
   * Reference: [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
