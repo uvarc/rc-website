@@ -117,11 +117,10 @@ var user_token = getCookie("__user_token");
 Research Computing staff host weekly office hours. Drop by with a project idea, question about a system or anything else you would like to discuss. Walkups are welcome.
 -->
 
-Research Computing staff host weekly office hours. Tell us about a project idea or talk to us about our computing platforms, storage and services. We're here to help you solve your computational problems.
+Research Computing staff host weekly office hours. Tell us about a project idea or talk to us about our high performance computing platforms, storage and services. We're here to help you solve your computational problems.
 
 Examples of the type of support we can provide are:
 
-- High Performance Compute Platforms
 - Data Transfer/Access
 - Parallel Coding in Fortran, C, Python, R, Matlab, Mathematica
 - Bioinformatics
