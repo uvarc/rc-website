@@ -124,7 +124,7 @@ To "feature" a post on the home page (which displays 2 most recent feature posts
 `hugo server` will bring up the local hugo server and give you a preview URL `http://localhost:1313/`. If making many changes, open another terminal to keep the `hugo server` running as you edit.
 
 ### Publish content
-Simply push `staging` back to GitHub. TravisCI will handle it from there. Pushing your content to the production website requires a PULL REQUEST.
+Simply push `staging` back to GitHub. TravisCI will handle it from there - you can check the build status by clicking the "build status" badge at the top of this page. Pushing your content to the production website requires a PULL REQUEST.
 
 > Remember that after pushing your changes back to the `staging` branch, the https://staging.rc.virginia.edu/ website will be updated within 1-2 minutes. Hold down the SHIFT key when reloading your browser to refresh your local cache.
 
