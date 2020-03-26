@@ -6,6 +6,23 @@
 | ------------- | ------------- |
 | https://staging.rc.virginia.edu/ | https://www.rc.virginia.edu/  |
 
+  * [Developing](#developing)
+     * [Using Gitpod](#using-gitpod)
+     * [Local Install](#local-install)
+  * [Creating New Content](#creating-new-content)
+     * [Two methods for creating content:](#two-methods-for-creating-content)
+     * [Helpful notes about creating content:](#helpful-notes-about-creating-content)
+     * [Front matter](#front-matter)
+     * [Future Posts](#future-posts)
+     * [Shortcodes](#shortcodes)
+     * [Featured Content](#featured-content)
+     * [Preview content locally](#preview-content-locally)
+     * [Publish content](#publish-content)
+     * [Delete content](#delete-content)
+     * [Events Data](#events-data)
+     * [Automated Builds](#automated-builds)
+  * [Search](#search)
+
 ## Developing
 
 ### Using Gitpod
@@ -147,12 +164,8 @@ Travis-CI is a CI/CD tool that automates builds and deployments of the website c
 * Travis then synchronizes the published HTML, JS, CSS, images and files to Amazon S3.
 * Finally, the build invalidates the CloudFront cache that serves out the actual website.
 
-Build+deployment generally takes 70 seconds and can be monitored using the [Travis-CI dashboard](https://travis-ci.org/uvarc/rc-website/builds) for this repository.
+Build+deployment generally takes 70 seconds and can be monitored using the [Travis-CI dashboard](https://travis-ci.com/uvarc/rc-website/builds) for this repository.
 
 ## Search
 
 Site search is provided by Google CSE. Publishing in hugo generates a `/sitemap.xml` file that is bound to Google's crawlers. If you would like to omit a page from search, include `private = true` in the front matter of your page. The crawler generally refreshes every 3-7 days.
-
-## Migration
-
-This repository was transferred from the `uvasomrc` GitHub organization to the `uvarc` Organization in November 2019. Please update all links accordingly.
