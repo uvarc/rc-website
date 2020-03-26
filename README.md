@@ -2,11 +2,9 @@
 
 # UVA Research Computing Website
 
-**Staging URL:**
-https://staging.rc.virginia.edu/
-
-**Production URL:**
-https://www.rc.virginia.edu/
+| Staging URL   | Production URL |
+| ------------- | ------------- |
+| https://staging.rc.virginia.edu/ | https://www.rc.virginia.edu/  |
 
 ## Developing
 
@@ -79,6 +77,10 @@ Metadata for each web page is contained in TOML format at the top of each markdo
     ]
     description = "This is where a brief page description could go."
     +++
+
+### Future Posts
+
+Using the `date` metadata smartly, you can forward date any post or article. [Automated builds](#automated-builds) happen each morning and your page will be published when that datetime has passed.
 
 ### Shortcodes
 
