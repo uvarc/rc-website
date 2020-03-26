@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/uvarc/rc-website.svg?branch=master)](https://travis-ci.org/uvarc/rc-website)
+[![Build Status](https://travis-ci.com/uvarc/rc-website.svg?branch=master)](https://travis-ci.com/uvarc/rc-website)
 
 # UVA Research Computing Website
 
