@@ -130,7 +130,7 @@ Examples of the type of support we can provide are:
 - Image Processing
 - Writing Slurm Job Scripts
 - Maximizing Job Efficiency
-- Managing a Computational Workflow
+- Managing Computational Workflows
 
 
 **Beginning March 17, we are suspending our in-person office hours in the Physical & Life Sciences Building, Brown Library and the Health Sciences Library. We will be offering weekly office hours as online Zoom sessions instead until further notice.**
