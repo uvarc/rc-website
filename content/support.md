@@ -121,6 +121,7 @@ Research Computing staff host weekly office hours. Tell us about a project idea 
 
 Examples of the type of support we can provide are:
 
+- High Performance Compute Platforms
 - Data Transfer/Access
 - Parallel Coding in Fortran, C, Python, R, Matlab, Mathematica
 - Bioinformatics
