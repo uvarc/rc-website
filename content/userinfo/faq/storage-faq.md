@@ -8,12 +8,14 @@ categories = ["userinfo"]
 images = [""]
 author = "Staff"  
 type = "storage"
+toc = true
 
 +++
 
-* [Accidental File Deletions](#accidental-deletions)
-* [Why Lease Storage](#why-lease-storage)
-* [Leased Storage Options](#leased-storage-options)
+* [Accidental File Deletions](#help-i-deleted-my-files-accidentally-what-can-i-do)
+* [Why Lease Storage](#why-should-i-lease-storage)
+* [Leased Storage Options](#what-are-my-options-for-leased-storage)
+* [File Transfer with Globus](#where-can-i-learn-more-about-the-globus-file-transfer-tools)
 
 - - -
 
@@ -28,3 +30,5 @@ Leasing storage from Research Computing means that you do not have to run your o
 # What are my options for leased storage?
 Research Computing offers two tiers of leased storage, Value and Project. Please see our [storage page](/userinfo/storage) for details.
 
+# Where can I learn more about the Globus file transfer tools?
+Globus maintains a well documented [FAQ webpage](https://docs.globus.org/faq/) that answers common questions related to security, file transfer and sharing, Globus endpoints and the command line interface (CLI) tools.
