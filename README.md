@@ -1,12 +1,27 @@
-[![Build Status](https://travis-ci.org/uvarc/rc-website.svg?branch=master)](https://travis-ci.org/uvarc/rc-website)
+[![Build Status](https://travis-ci.com/uvarc/rc-website.svg?branch=master)](https://travis-ci.com/uvarc/rc-website)
 
 # UVA Research Computing Website
 
-**Staging URL:**
-https://staging.rc.virginia.edu/
+| Staging URL   | Production URL |
+| ------------- | ------------- |
+| https://staging.rc.virginia.edu/ | https://www.rc.virginia.edu/  |
 
-**Production URL:**
-https://www.rc.virginia.edu/
+  * [Developing](#developing)
+     * [Using Gitpod](#using-gitpod)
+     * [Local Install](#local-install)
+  * [Creating New Content](#creating-new-content)
+     * [Methods for creating content](#two-methods-for-creating-content)
+     * [Suggestions for creating content](#helpful-notes-about-creating-content)
+     * [Front matter](#front-matter)
+     * [Future Posts](#future-posts)
+     * [Shortcodes](#shortcodes)
+     * [Featured Content](#featured-content)
+     * [Preview content locally](#preview-content-locally)
+     * [Publish content](#publish-content)
+     * [Delete content](#delete-content)
+     * [Events Data](#events-data)
+     * [Automated Builds](#automated-builds)
+  * [Search](#search)
 
 ## Developing
 
@@ -43,14 +58,14 @@ Content of this website is contained in a series of markdown files within the `c
 * `service` - Services offered by our staff.
 * `userinfo` - Systems and information we support: Rivanna, Ivy, Skyline, etc., and detailed user information.
 
-### Two methods for creating content:
+### Methods for creating content:
 
 1. Copy an existing page and modify it.
 2. Create a new page using the `hugo new` command declaring a path to the .md object you want to create:
   * `hugo new post/here-is-my-post.md`
   * `hugo new top-level-page.md`
   
-### Helpful notes about creating content:
+### Suggestions for creating content:
 
   * The "content type" of a page is usually determined by what folder it is in. Different content types are displayed in slightly different ways, i.e. the sidebar or layout.
   * Reference: [markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
@@ -79,6 +94,10 @@ Metadata for each web page is contained in TOML format at the top of each markdo
     ]
     description = "This is where a brief page description could go."
     +++
+
+### Future Posts
+
+Using the `date` metadata smartly, you can forward date any post or article. [Automated builds](#automated-builds) happen each morning and your page will be published when that datetime has passed.
 
 ### Shortcodes
 
@@ -124,7 +143,7 @@ To "feature" a post on the home page (which displays 2 most recent feature posts
 `hugo server` will bring up the local hugo server and give you a preview URL `http://localhost:1313/`. If making many changes, open another terminal to keep the `hugo server` running as you edit.
 
 ### Publish content
-Simply push `staging` back to GitHub. TravisCI will handle it from there. Pushing your content to the production website requires a PULL REQUEST.
+Simply push `staging` back to GitHub. TravisCI will handle it from there - you can check the build status by clicking the "build status" badge at the top of this page. Pushing your content to the production website requires a PULL REQUEST.
 
 > Remember that after pushing your changes back to the `staging` branch, the https://staging.rc.virginia.edu/ website will be updated within 1-2 minutes. Hold down the SHIFT key when reloading your browser to refresh your local cache.
 
@@ -145,12 +164,8 @@ Travis-CI is a CI/CD tool that automates builds and deployments of the website c
 * Travis then synchronizes the published HTML, JS, CSS, images and files to Amazon S3.
 * Finally, the build invalidates the CloudFront cache that serves out the actual website.
 
-Build+deployment generally takes 70 seconds and can be monitored using the [Travis-CI dashboard](https://travis-ci.org/uvarc/rc-website/builds) for this repository.
+Build+deployment generally takes 70 seconds and can be monitored using the [Travis-CI dashboard](https://travis-ci.com/uvarc/rc-website/builds) for this repository.
 
 ## Search
 
 Site search is provided by Google CSE. Publishing in hugo generates a `/sitemap.xml` file that is bound to Google's crawlers. If you would like to omit a page from search, include `private = true` in the front matter of your page. The crawler generally refreshes every 3-7 days.
-
-## Migration
-
-This repository was transferred from the `uvasomrc` GitHub organization to the `uvarc` Organization in November 2019. Please update all links accordingly.
