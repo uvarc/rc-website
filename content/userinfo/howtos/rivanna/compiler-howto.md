@@ -4,6 +4,7 @@ date = "2020-02-21T15:12:46-05:00"
 tags = [
   "rivanna", "software", "compiler"
 ]
+category = ["howtos"]
 draft = false
 title = "Building Your Code on Rivanna"
 description = "Building on Rivanna"

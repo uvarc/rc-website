@@ -12,4 +12,6 @@ author = "RC Staff"
 +++
 
 - [User Guides](/userinfo/user-guide)
+- [Databases](/userinfo/howtos/general/databases)
 - [Docker - Basics](/userinfo/howtos/general/docker-basics)
+- [Authentication with SSH Keys](/userinfo/howtos/general/sshkeys)

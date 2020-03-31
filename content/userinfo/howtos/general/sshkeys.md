@@ -1,14 +1,17 @@
 +++
 type = "general" 
 date = "2020-03-20T00:00:00-05:00" 
-tags = [ "Rivanna", "login" ] 
+tags = [ "Rivanna", "login", "howto" ] 
+category = ["howtos"]
 draft = false 
 title = "SSH Keys" 
 description = "Authentication with SSH Keys" 
 author = "RC Staff"
 +++
 
+{{% callout %}}
 Users can authenticate their SSH sessions using either a password or an ssh key. The instructions below describe how to create a key and use it for password-less authentication to your Linux instances.
+{{% /callout %}}
 
 # About SSH Keys
 
