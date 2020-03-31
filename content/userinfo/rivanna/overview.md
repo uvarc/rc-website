@@ -253,6 +253,11 @@ New users are invited to attend one of our free orientation sessions ("Introduct
       <th scope="row">1</th>
     </tr>
     <tr>
+      <th scope="row">40+10 RTX2080 GPU</th>
+      <th scope="row">384GB</th>
+      <th scope="row">2</th>
+    </tr>
+    <tr>
       <th scope="row">64 Knight's Landing</th>
       <th scope="row">196GB</th>
       <th scope="row">8</th>
