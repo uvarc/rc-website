@@ -9,7 +9,8 @@ categories = [
   "Compilers"
 ]
 date = "2019-06-23T08:37:46-05:00"
-tags = []
+tags = ["compiler"]
+category = ["howtos"]
 draft = false
 shorttitle = "Make"
 title = "The Make Tool"
