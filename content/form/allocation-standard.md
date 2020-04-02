@@ -12,6 +12,8 @@ private = true
 
 +++
 
+{{< form-cookies >}}
+
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
@@ -111,6 +113,13 @@ function decode64(str) {
 
 var form = document.getElementById('allocation-form');
 
+var cookie_token = getCookie("__user_token");
+var url_user_token = getParams()["user_token"];
+
+if (cookie_token !== url_user_token) {
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-standard.php?user_token=" + cookie_token );
+}
+
 var name_enc = getParams()["name"];
 if (name_enc) {
   // do nothing
@@ -118,7 +127,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/allocation-standard.php" );
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-standard.php?user_token=" + cookie_token );
 }
 
 // name
