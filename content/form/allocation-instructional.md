@@ -115,8 +115,15 @@ if (cookie_token !== url_user_token) {
 }
 
 var name_enc = getParams()["name"];
+var name_enc = getParams()["name"];
+var uid_enc = getParams()["uid"];
+var email_enc = getParams()["email"];
 if (name_enc) {
   // do nothing
+} else if (uid_enc) {
+  // do nothing
+} else if (email_enc) {
+  // do even more nothing
 } else {
   $('#name').val('');
   $('#email').val('');
