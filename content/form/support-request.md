@@ -100,7 +100,7 @@ if (cookie_token !== url_user_token) {
 }
 
 var name_enc = getParams()["name"];
-if (name_enc){
+if (name_enc) {
   // do nothing
 } else {
   $('#name').val(''));
