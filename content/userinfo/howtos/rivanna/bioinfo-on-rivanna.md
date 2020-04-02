@@ -1,4 +1,5 @@
 +++
+type = "howto"
 author = "Staff"
 description = ""
 title = "Bioinformatics Resources on Rivanna"
