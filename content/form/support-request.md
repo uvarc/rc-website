@@ -100,10 +100,12 @@ if (cookie_token !== url_user_token) {
 }
 
 var name_enc = getParams()["name"];
-if (name_enc) {
+var email_enc = getParams()["email"];
+var uid_enc = getParams()["uid"];
+if ((name_enc) && (email_enc) && (uid_enc)) {
   // do nothing
 } else {
-  $('#name').val('');
+  $('#name').val(''));
   $('#email').val('');
   $('#uid').val('');
   window.location.replace( "https://auth.uvasomrc.io/site/support.php?user_token=" + cookie_token );
