@@ -1,5 +1,5 @@
 +++
-type = "general" 
+type = "howto"
 date = "2020-03-20T00:00:00-05:00" 
 tags = [ "Rivanna", "database", "howto" ] 
 category = ["howtos"]
@@ -151,7 +151,7 @@ Graph, or Node-arc databases are entirely different, in that they try to store a
 
 ---
 
-## Other Resources
+# Other Resources
 
 Here is a great overview of databases and their histories:
 

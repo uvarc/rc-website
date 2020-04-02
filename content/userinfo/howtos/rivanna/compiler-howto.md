@@ -1,6 +1,6 @@
 +++
 type = "howto"
-date = "2020-02-21T15:12:46-05:00"
+date = "2020-04-01T15:12:46-05:00"
 tags = [
   "rivanna", "software", "compiler"
 ]
@@ -12,17 +12,22 @@ author = "RC Staff"
 
 +++
 
-# Building Your Program on Rivanna
+# Building your Application
+
 Creating an executable from source with a compiled language requires two steps, compiling and linking.  The combination of these is generally called building.  The output of the compiler is generally an object file, which on Unix will end in a .o suffix.  Object files are machine code and are not human-readable, but they are not standalone and cannot be executed.  The linker, which is usually invoked through the compiler, takes all object files, along with any external libraries, and creates the executable (also called a binary).
 
 Compilers are invoked on source files with a line such as
 
-`<compiler> <options> code.<suffix>`
+```
+<compiler> <options> code.<suffix>
+```
+
 You must know the name of the compiler you wish to use as well as its options. Most compilers offer a large number of options that can control very detailed properties of the resulting executable, but the average user need only know a few of them.
 
 Please see our compiler [documentation](/userinfo/rivanna/software/compilers) for information about the available compilers on Rivanna.  For building and running parallel code, see the [documentation](/userinfo/rivanna/software/mpi).
 
 ## Debugging and Profiling
+
 To use a debugger you must compile with a special flag.  On all Unix compilers this is `-g`.  
 
 Fortran programmers can add a flag to check that array accesses fall within the declared bounds.  For gfortran this flag is -fbounds-check, for ifort it is -CB, and for pgfortran it is -C or -Mprof.  Since array-bounds errors are the most common cause of segmentation violations in Fortran, this can be a very valuable flag, but it slows down the execution.
@@ -80,6 +85,8 @@ gfortran -c -O -I/home/msk3k/myblas mycode.f90
 gfortran -c -O mymod.f90
 gfortran -o mycode -L/home/mst3k/myblas mycode.o mymod.o -lopenblas
 ```
+
+- - -
 
 # Managing the Build
 Typing a compiler line for each source file is tedious and error-prone.  There are several systems to help manage building.  The most widely used on Unix for C, C++, and Fortran is make.  Make uses rules to determine how to generate a particular file, called a target, from its dependencies.  It has a rather peculiar syntax so a more complete discussion can be found [here](/userinfo/howtos/rivanna/make).
@@ -152,4 +159,4 @@ make install
 ```
 is generally the recipe to build and install the program.
 
-The default cmake on Rivanna is fairly old and most users will need to load a newer cmake module for a newer cmake.  If any newer version will work, module load will suffice.  Otherwise `module spider cmake` will show the options.
+The default `cmake` on Rivanna is fairly old and most users will need to load a newer `cmake` module.  If any newer version will work, `module load` will suffice.  Otherwise `module spider cmake` will show the options.
