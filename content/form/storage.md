@@ -67,6 +67,18 @@ private = true
     </div>
   </div>
 
+    <div class="col form-item form-group">
+      <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
+      <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
+      <p class=tiny>The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
+    </div>
+
+  </div>
+
+  <hr size=1 />
+
+  <div class="row">
+
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
@@ -82,31 +94,13 @@ private = true
       <div class="form-item form-type-radio radio">
         <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
       </div>
-
     </div>
   </div>
+
+  <div class="col form-item form-group">
+    <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Standard / Moderately Sensitive Data</h6>This storage platform is appropriate for public, non-sensitive or moderately sensitive data.</div>
+    <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FIRPA, CUI, etc.</div>
   </div>
-
-  <hr size=1 />
-
-  <div class="row">
-    <div class="col form-item form-type-radios form-group"> 
-      <label class="control-label" for="data-sensitivity">Data Sensitivity <span class="form-required" title="This field is required.">*</span></label>
-      <div id="data-sensitivity" class="form-radios">
-        <div class="form-item form-type-radio radio">
-          <input required="required" type="radio" id="data-sensitivity-1" name="data-sensitivity" value="moderately-sensitive" class="form-radio" />&nbsp; Moderately sensitive / public</label>
-        </div>
-        <div class="form-item form-type-radio radio">
-          <input required="required" type="radio" id="data-sensitivity-2" name="data-sensitivity" value="highly-sensitive" class="form-radio" />&nbsp; Highly Sensitive</label>
-        </div>
-      </div>
-    </div>
-
-    <div class="col form-item form-group">
-      <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
-      <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
-      <p class=tiny>The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
-    </div>
 
   </div>
 
@@ -211,6 +205,8 @@ private = true
 
 </div>
 </form>
+
+<script type="text/javascript" src="/js/storage-request.js"></script>
 
 <script>
 function getParams() {
