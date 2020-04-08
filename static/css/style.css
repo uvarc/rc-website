@@ -83,14 +83,6 @@ pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radiu
 .image-shadow{-moz-box-shadow:#e6e6e6 2px 2px 3px;-webkit-box-shadow:#e6e6e6 2px 2px 3px;box-shadow:#e6e6e6 2px 2px 3px}
 
 .fixed {position:fixed;margin-top:0px;}
-div.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: yellow;
-  padding: 50px;
-  font-size: 20px;
-}
 /* .sticky {position:relative;top:0;}
 #sticky-sidebar {
     position: -webkit-sticky;
