@@ -59,7 +59,7 @@ private = true
     </div>
   </div>
 
-    <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="yes-or-no">Will you be using VASP or Gaussian on Rivanna? <span class="form-required" title="This field is required.">*</span></label>
+    <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="yes-or-no">Will you be using <a style="font-weight:bold;" href="/userinfo/rivanna/software/vasp/">VASP</a> or <a style="font-weight:bold;" href="/userinfo/rivanna/software/gaussian/">Gaussian</a> on Rivanna? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row">
       <div id="yes-or-no" class="form-radios col">
         <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-1">
