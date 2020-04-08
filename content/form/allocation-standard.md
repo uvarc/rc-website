@@ -1,5 +1,5 @@
 +++
-date = "2016-12-31T23:59:16-05:00"
+date = "2017-12-31T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -56,6 +56,19 @@ private = true
         </div>
       </div>
       <div class="help-block col">If this is your first request, select New.  Otherwise select Renewal.</div>
+    </div>
+  </div>
+
+    <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="yes-or-no">Will you be using VASP or Gaussian on Rivanna? <span class="form-required" title="This field is required.">*</span></label>
+    <div class="row">
+      <div id="yes-or-no" class="form-radios col">
+        <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-1">
+          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="yes" checked="checked" class="form-radio" />&nbsp;Yes</label>
+        </div>
+        <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-2">
+          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="no" class="form-radio" />&nbsp;No</label>
+        </div>
+      </div>
     </div>
   </div>
 
