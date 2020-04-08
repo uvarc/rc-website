@@ -63,10 +63,10 @@ private = true
     <div class="row">
       <div id="yes-or-no" class="form-radios col">
         <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-1">
-          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="yes" checked="checked" class="form-radio" />&nbsp;Yes</label>
+          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="yes" class="form-radio" />&nbsp;Yes</label>
         </div>
         <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-2">
-          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="no" class="form-radio" />&nbsp;No</label>
+          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="no" checked="checked" class="form-radio" />&nbsp;No</label>
         </div>
       </div>
     </div>
