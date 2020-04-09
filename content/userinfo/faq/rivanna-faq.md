@@ -35,6 +35,9 @@ Access to the HPC cluster requires a valid Eservices password. Your Netbadge pas
 ## Why am I seeing `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` when I log in?
 Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/rivanna/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
 
+## When I try to log in with ssh, nothing happens when I type my password!
+When you type your passaword, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
+
 - - -
 
 # Allocations
