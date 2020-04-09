@@ -17,7 +17,7 @@ author = "RC Staff"
 
 +++
 
-Value and Project storage can be mapped to your Windows or Mac computer as a remote drive.  If you are off Grounds you must be running a VPN, such as the UVA Anywhere or the More Secure VPN from [ITS](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).
+Value and Project storage can be mapped to your Windows or Mac computer as a remote drive.  If you are off Grounds you must be running a VPN, such as the UVA Anywhere or the More Secure VPN from [ITS](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).  We recommend the More Secure VPN if that is available to you.
 
 # Windows
 
