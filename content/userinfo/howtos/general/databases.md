@@ -43,10 +43,10 @@ Take the example of an online store, where data revolves around the ideas of ite
 
 The database for such an online store might have a handful of related tables:
 
-1. *Orders*
-2. *Customers*
-3. *Credit Cards*
-4. *Items*
+1. **Orders**
+2. **Customers**
+3. **Credit Cards**
+4. **Items**
 
 Relational database tables use unique keys as a way to relate one table with another, and so the "orders" table 
 might simply aggregate keys drawn from other tables for each order. This allows each table to have a clear definition 
@@ -68,14 +68,14 @@ anyone familiar with general SQL queries.
 
 Create a table:
 ```sql
-create table researchers
+  create table researchers
   (researcherID int NOT NULL AUTO_INCREMENT,
-   first varchar(15),
-   last varchar(20),
-   email varchar(30),
-   age int,
-   PRIMARY KEY (ID)
-);
+    first varchar(15),
+    last varchar(20),
+    email varchar(30),
+    age int,
+    PRIMARY KEY (ID)
+  );
 ```
 
 Insert an item into a table:
@@ -94,6 +94,7 @@ Select (read) a single item from a table:
 ```sql
   select * from researchers where researcherID = 147;
   select * from researchers where first = 'Jane';
+  select first, last from researchers where age = 34;
 ```
 
 ---
@@ -102,7 +103,7 @@ Select (read) a single item from a table:
 
 NoSQL databases come in at least two main groupings: **Aggregate oriented** or **Node-Arc/Graph**.
 
-## 1. Aggregate-Oriented
+## 1. Aggregate-Oriented Databases
 
 * Key-Value - Redis, Memcached
 * Document - DynamoDB, MongoDB
@@ -156,34 +157,38 @@ Here is an example of an entry in JSON. Note that the entire entry (or “docume
 
 ```
 {
-	"success": {
-        "total": 1
-    },
-    "contents": {
-        "quotes": [
-            {
-                "quote": "Remove the temptation to settle for anything short of what you deserve.",
-                "length": "71",
-                "author": "Lorii Myers",
-                "tags": [
-                    "expectation",
-                    "inspire",
-                    "perfection"
-                ],
-                "category": "inspire",
-                "date": "2017-09-08",
-                "permalink": "https://theysaidso.com/quote/ZWrV624xU_q6_KYYlrQpYgeF/lorii-myers-remove-the-temptation-to-settle-for-anything-short-of-what-you-deser",
-                "title": "Inspiring Quote of the day",
-                "background": "https://theysaidso.com/img/bgs/man_on_the_mountain.jpg",
-                "id": "ZWrV624xU_q6_KYYlrQpYgeF"
-            }
+  "success": {
+    "total": 1
+  },
+  "contents": {
+    "quotes": [
+      {
+        "quote": "Remove the temptation to settle for anything short of what you deserve.",
+        "length": "71",
+        "author": "Lorii Myers",
+        "tags": [
+          "expectation",
+          "inspire",
+          "perfection"
         ],
-        "copyright": "2017-19 theysaidso.com"
-    }
+        "category": "inspire",
+        "date": "2017-09-08",
+        "permalink": "https://theysaidso.com/quote/ZWrV624xU_q6_KYYlrQpYgeF/lorii-myers-remove-the-temptation-to-settle-for-anything-short-of-what-you-deser",
+        "title": "Inspiring Quote of the day",
+        "background": "https://theysaidso.com/img/bgs/man_on_the_mountain.jpg",
+        "id": "ZWrV624xU_q6_KYYlrQpYgeF"
+      }
+    ],
+    "copyright": "2017-19 theysaidso.com"
+  }
 }
 ```
 
-## 2. Node-Arc / Graph
+Also consider that subsequent entries into this table may or may not contain a background image, or the same number of tags, or the precise data structure of this
+entry. NoSQL evolved out of the need to quickly collect varied data at very high rates and so it does not suffer from impedance mismatch. Rather, it suffers from
+its difficulty to aggregate or join.
+
+## 2. Node-Arc / Graph Databases
 
 Graph, or Node-arc databases are entirely different, in that they try to store and represent connectivity between nodes in a constellation, and their relationships. So a “query” of a graph database might inform you about the networks of other nodes related to the node you are interested in, and the types and strengths of those relationships, among other uses. Some examples of Graph DBs are:
 
@@ -194,6 +199,17 @@ Graph, or Node-arc databases are entirely different, in that they try to store a
 ![](/images/howtos/databases/graph-nodes.png)
 
 ![](/images/howtos/databases/graphdb-property.png)
+
+---
+
+# Using Databases in Your Research
+
+We are frequently asked by researchers how to incorporate databases into their work. Here are four suggestions:
+
+1. Track your processed files or end results.
+2. Keep a queue of future work.
+3. Maintain a searchable history of source data, result sets, and code used to process them.
+4. Automate batch processing.
 
 ---
 
