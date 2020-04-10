@@ -41,14 +41,60 @@ Take the example of an online store, where data revolves around the ideas of ite
 
 ![](/images/howtos/databases/reldb.png)
 
+The database for such an online store might have a handful of related tables:
+
+1. *Orders*
+2. *Customers*
+3. *Credit Cards*
+4. *Items*
+
+Relational database tables use unique keys as a way to relate one table with another, and so the "orders" table 
+might simply aggregate keys drawn from other tables for each order. This allows each table to have a clear definition 
+of what data fields, and their data types, are expected with every transaction. Data coming in must be broken apart 
+to conform to this data structure, and data going out must be drawn back together from across the tables.
+
 But this “breaking apart” process is actually an intensive, time-consuming process. Data being sent off to
 any particular table has to be validated by data type (strings, integers, dates, decimals, binary, etc.), length,
-and NULL before it can be inserted into a particular data table. This is going on across multiple tables at
+and NULL before it can be inserted into a particular data table. This happens across multiple tables at
 the same time, and ensures that the entire transaction completes successfully or is rolled back.
 
 {{% callout %}}
 <b>Impedance Mismatch</b> - a set of conceptual and technical difficulties that are often encountered when interacting with a relational database management system.
 {{% /callout %}}
+
+SQL, "structured query language" is the language spoken by most relational databases. While there are slight variations
+in SQL syntax between RDBMS platforms (a semicolon here, a percent sign there), they all generally read the same to
+anyone familiar with general SQL queries.
+
+Create a table:
+```sql
+create table researchers
+  (researcherID int NOT NULL AUTO_INCREMENT,
+   first varchar(15),
+   last varchar(20),
+   email varchar(30),
+   age int,
+   PRIMARY KEY (ID)
+);
+```
+
+Insert an item into a table:
+```sql
+  insert into researchers
+    (first, last, email, age)
+    values ('Jane', 'Doe', 'jdoe@georgia.edu', 34);
+```
+
+Select (read) all items from a table:
+```sql
+  select * from researchers;
+```
+
+Select (read) a single item from a table:
+```sql
+  select * from researchers where researcherID = 147;
+  select * from researchers where first = 'Jane';
+```
 
 ---
 
