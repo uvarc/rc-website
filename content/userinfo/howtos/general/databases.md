@@ -206,10 +206,10 @@ Graph, or Node-arc databases are entirely different, in that they try to store a
 
 We are frequently asked by researchers how to incorporate databases into their work. Here are four suggestions:
 
-<div class="card-group">
+<div class="card-deck">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Track Results</h4>
+      <h4 class="card-title">&raquo; Track Results</h4>
       <p class="card-text">
         Track the status of your completed work by adding a record to a table upon completion. This lets you
         know what work remains open and information about its processing.
@@ -218,7 +218,7 @@ We are frequently asked by researchers how to incorporate databases into their w
   </div>
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Queue Up Your Work</h4>
+      <h4 class="card-title">&raquo; Queue Up Your Work</h4>
       <p class="card-text">
         Collect and store data about future work you need to complete, the steps required, and the expected lifecycle
         of each step. While this might be easy to do in Excel, you could grow this into a database that orchestrates
@@ -227,10 +227,10 @@ We are frequently asked by researchers how to incorporate databases into their w
     </div>
   </div>
 </div>
-<div class="card-group">
+<div class="card-deck" style="margin-top:2rem;">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Index Everything</h4>
+      <h4 class="card-title">&raquo; Index Everything</h4>
       <p class="card-text">
         Maintain a searchable history of source data, result sets, and code used to process them.
         This could include links to related data, articles published, GitHub code repositories, and more.
@@ -239,7 +239,7 @@ We are frequently asked by researchers how to incorporate databases into their w
   </div>
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Automate</h4>
+      <h4 class="card-title">&raquo; Automate</h4>
       <p class="card-text">
         If you are awash in source data or have a backlog of files to process, consider automating it by using a database.
         Your code, instead of handling a single file at a time, could read each row in the database and process files
@@ -249,7 +249,6 @@ We are frequently asked by researchers how to incorporate databases into their w
   </div>
 </div>
 
----
 
 # Other Resources
 
