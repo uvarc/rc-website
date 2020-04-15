@@ -16,20 +16,29 @@ modulename = "perl"
 softwarename = "Perl"
 shorttitle = "Perl"
 title = "Perl on Rivanna"
-description = "Python in Rivanna's HPC environment"
+description = "Perl in Rivanna's HPC environment"
 author = "RC Staff"
 
 +++
 # Overview
 Perl is a general-purpose interpreted programming language, originally developed for text manipulation and now used for a wide range of tasks including system administration, web development, network programming, GUI development, and bioinformatics.
 
-# Perl on Rivanna
-The default Perl is required for system purposes and is generally too old for applications. We offer more recent versions of Perl as modules. To see all available versions, run
+# Available Versions
+To find the available versions and learn how to load them, run:
 ```
-module spider perl
+module spider {{% module-name %}}
 ```
 
-{{% module-versions %}}
+The output of the command shows the available {{% software-name %}} module versions.
+
+For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
+```
+module spider {{% module-firstversion %}}
+```
+
+{{< module-versions >}}
+
+The default Perl is required for system purposes and is generally too old for applications. We offer more recent versions of Perl as modules. To see all available versions, run
 
 To load the {{< module-firstversion >}} module, run this command:
 ```

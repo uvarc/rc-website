@@ -25,14 +25,18 @@ Local support is not available. For detailed documentation and tutorials, visit 
 
 # Available Versions
 We built versions of QE incorporating the most popular optional packages. To find the available versions and learn how to load them, run:
-<pre>module spider {{% module-name %}}</pre>
+```
+module spider {{% module-name %}}
+```
 
 The output of the command shows the available {{% software-name %}} module versions.
 
 For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
-<pre>module spider {{% module-firstversion %}}</pre>
+```
+module spider {{% module-firstversion %}}
+```
 
-{{% module-versions %}}
+{{< module-versions >}}
 
 Users may build their own versions of QE if they wish to use a different compiler+MPI combination, or to choose individual optional packages.  Instructions are available at the installation FAQ.
 

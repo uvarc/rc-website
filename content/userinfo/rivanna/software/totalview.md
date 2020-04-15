@@ -21,6 +21,21 @@ author = "RC Staff"
 # TotalView
 TotalView is a full-featured, source-level, graphical debugger for applications written in C, C++, Fortran (77 and 90/95/2003), assembler, and mixed source/assembler codes. It is a multiprocess, multithread debugger that supports multiple parallel programming paradigms including MP and OpenMP. The University has a near-site license (256 tokens) for Totalview on all versions of Linux. Visit the [TotalView website]({{< module-homepage >}}) for detailed documentation.
 
+# Available Versions
+To find the available versions and learn how to load them, run:
+```
+module spider {{% module-name %}}
+```
+
+The output of the command shows the available {{% software-name %}} module versions.
+
+For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
+```
+module spider {{% module-firstversion %}}
+```
+
+{{< module-versions >}}
+
 # Getting started with TotalView.
 Your code must be compiled appropriately to use Totalview. For most Unix compilers, the debug flag `-g` must be added to the compilation options, just as it would be for other debuggers such as gdb. Optimization should also generally be suppressed, since optimization can change the code in ways that make it difficult for the debugger to interpret. Once the code has been recompiled and an executable generated, you are ready to invoke Totalview.
 

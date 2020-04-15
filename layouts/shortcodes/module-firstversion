@@ -7,6 +7,7 @@
             {{- $scratch.Add $modulename (slice $k) -}}
         {{- end -}}
         {{- $firstentrykey := index ($scratch.Get $modulename) 0 -}}
+        {{- $scratch.Delete $modulename -}}
         {{- $firstentry := index $entries $firstentrykey -}}
         {{- (printf "%s/%s"  $modulename $firstentry.Version) -}}
     {{- end -}}

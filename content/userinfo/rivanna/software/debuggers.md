@@ -31,7 +31,7 @@ module load gcc
 
 Both gdb and gprof are text-based, command-line tools.  
 
-{{% module-versions module="gcc" %}}
+{{< module-versions module="gcc" >}}
 
 ## Intel 
 
@@ -44,7 +44,7 @@ The Intel debugger for versions 16.0 and beyond is a modified `gdb` and is used 
 <br>
 **Available Intel Compilers**
 
-{{% module-versions module="intel" %}}
+{{< module-versions module="intel" >}}
 
 ## PGI Compiler
 The PGI Server Compilers and tools are licensed for Linux systems.
@@ -54,7 +54,7 @@ module load pgi
 <br>
 **Available PGI Compilers**
 
-{{% module-versions module="pgi" %}}
+{{< module-versions module="pgi" >}}
 
 PGI provides a very capable debugger, `pgdbg`. In its default mode, it is graphical, and it requires that an X server run on the user's local desktop machine. It may be run in command-line mode with the `-text` option; see the manpage for a full list of options. As with all debuggers, the user's program must be compiled with the `-g` flag in order to enable debugging. If you wish to use the graphical debugger and do not have or want to install an X11 server, you can also use FastX. 
 

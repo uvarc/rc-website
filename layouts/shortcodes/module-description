@@ -1,15 +1,16 @@
-<div class="text" id="moduleDescription">
+
   {{- $gistJ := getJSON .Site.Params.rivannaJsonUrl -}}
   {{ $module := default $.Page.Params.modulename (.Get "module") }}
   {{- range $modulename,$entries := $gistJ -}}
-      {{- if eq ($modulename) $module -}}
+      {{- if eq ($modulename) $.Page.Params.modulename -}}
           {{- $scratch := newScratch -}}
           {{- range $k, $v := $entries -}}
               {{- $scratch.Add $modulename (slice $k) -}}
           {{- end -}}
           {{- $firstentrykey := index ($scratch.Get $modulename) 0 -}}
+          {{- $scratch.Delete $modulename -}}
           {{- $firstentry := index $entries $firstentrykey -}}
           {{ $firstentry.Description }}
       {{- end -}}
   {{- end -}}
-</div>
+

@@ -19,7 +19,7 @@ Compiled languages can be more difficult to debug, and the assistance of a good 
 
 # Available Compilers on Rivanna
 
-{{% rivanna-software moduleclasses="compiler" exclude="mpi" %}}
+{{< rivanna-software moduleclasses="compiler" exclude="mpi" >}}
 
 # Gnu Compiler
 The [Gnu Compiler Collection](https://gcc.gnu.org) compilers are free, open-source tools. Additional tools included are the gdb debugger and the gprof performance profiler. For detailed documentation, visit the [Gnu](https://gcc.gnu.org/onlinedocs/) website.
@@ -51,7 +51,7 @@ It may be necessary to use an older compiler for programs using GPGPUs. The `gcc
 <br>
 **Available Gnu Compilers**
 
-{{% module-versions module="gcc" %}}
+{{< module-versions module="gcc" >}}
 
 # Intel Compiler
 The [Intel Linux Fortran and C/C++ compilers](https://software.intel.com/en-us/compilers) are for x86-64 processor-based systems running Linux. These compilers have specific optimizations for Intel architectures. The University has floating network licenses for the Intel compiler suite as well as for the Math Kernel Libraries.
@@ -86,7 +86,7 @@ module load intel
 <br>
 **Available Intel Compilers**
 
-{{% module-versions module="intel" %}}
+{{< module-versions module="intel" >}}
 
 
 **Important note for Fortran programmers:** Nearly all Fortran code must be compiled with the flag `-heap-arrays` added or it will encounter a segmentation violation.
@@ -110,7 +110,7 @@ module load pgi
 <br>
 **Available PGI Compilers**
 
-{{% module-versions module="pgi" %}}
+{{< module-versions module="pgi" >}}
 
 
 After you have modified your environment to access the PGI compilers, you can invoke the compiler on a source code file in one of the following ways.

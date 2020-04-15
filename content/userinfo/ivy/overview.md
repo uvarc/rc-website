@@ -193,6 +193,7 @@ upon request. See the lists below for options.
 
 ### Preinstalled Software
 
+{{< rawhtml >}}
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
     <div class="card">
@@ -221,6 +222,7 @@ upon request. See the lists below for options.
     </div>
   </div>
 </div>
+{{< /rawhtml >}}
 
 **Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
 
