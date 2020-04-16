@@ -1,5 +1,5 @@
 +++
-date = "2019-06-23T08:37:46-05:00"
+date = "2020-04-15T08:37:46-05:00"
 categories = ["userinfo"]
 tags = [
   "rivanna",
@@ -36,12 +36,12 @@ Software on Rivanna is accessed via environment **modules** or **containers**.
 
 ## Popular Software Packages and Libraries by Domain
 
-* [Data Science & Machine Learning](/userinfo/rivanna/software/machine-learning)
-* [Chemistry](/userinfo/rivanna/software/chemistry)
-* [Engineering](/userinfo/rivanna/software/engineering)
 * [Biology & Bioinformatics](/userinfo/rivanna/software/bioinformatics)
-* [Math & Statistics](/userinfo/rivanna/software/math-statistics)
+* [Chemistry](/userinfo/rivanna/software/chemistry)
+* [Data Science & Machine Learning](/userinfo/rivanna/software/machine-learning)
+* [Engineering](/userinfo/rivanna/software/engineering)
 * [Image Processing & Scientific Visualization](/userinfo/rivanna/software/imageprocessing)
+* [Math & Statistics](/userinfo/rivanna/software/math-statistics)
 
 {{< rawhtml >}}
 <a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">Full list of all software and library modules</button></a>
