@@ -25,7 +25,6 @@ RStudio Server is a web-based interface to RStudio -- a development environment 
 Research Computing provides a web portal where RStudio Server can be accessed on Rivanna. However, to use RStudio Server, you must have an account on Rivanna. Instructions for setting up an acccount can be found [here](/userinfo/rivanna/overview/#get-started).
 
 
-
 # Accessing RStudio Server
 To access RStudio Server, you will begin by connecting to our Open OnDemand portal:
 

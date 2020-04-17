@@ -25,15 +25,21 @@ author = "RC Staff"
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
 # Available Versions
-To find the available versions and learn how to load them, run:
-<pre>module spider {{% module-name %}}</pre>
+The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
+
+```
+module spider {{< module-name >}}
+```
 
 The output of the command shows the available {{% software-name %}} module versions.
 
 For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
-<pre>module spider {{% module-firstversion %}}</pre>
+```
+module spider {{% module-firstversion %}}
+```
 
-{{% module-versions %}}
+{{< module-versions >}}
+
 
 # GaussView
 The GaussView graphical interface is available on Rivanna.  Users must log in through a client capable of displaying X11 graphics.  We recommend [FastX Web](/userinfo/rivanna/logintools/fastx).  GaussView can be used to create input files for Gaussian jobs which should then be submitted to the compute nodes.  To start GaussView, in an X11-enabled terminal first load the gaussian module as above, then run

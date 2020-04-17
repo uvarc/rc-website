@@ -22,7 +22,7 @@ images = [""]
 - - -
 
 # Storage
-
+{{< rawhtml >}}
 <table class="table">
   <thead>
     <tr>
@@ -59,7 +59,7 @@ images = [""]
     </tr>
   </tbody>
 </table>
-
+{{< /rawhtml >}}
 
 [<button class="btn btn-primary btn-sm">Storage Details</button>](/userinfo/storage/)  &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Storage</button>](/form/storage/)
 
@@ -83,22 +83,24 @@ More information on ordering Skyline VMs coming soon!
 
 # OMERO Image Database Service
 
+{{< rawhtml >}}
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Security</th>
-      <th scope="col">Cost</th>
+      <th>Name</th>
+      <th>Security</th>
+      <th>Cost</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">OMERO Storage</th>
       <td>Standard</td>
-      <td>{{% storage-pricing omero %}} TB/year</td>
+      <td>{{% storage-pricing omero %}} / TB per year</td>
     </tr>
   </tbody>
-</table>    
+</table>  
+{{< /rawhtml >}}
 
 [<button class="btn btn-primary btn-sm">About OMERO</button>](/userinfo/omero/overview/) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request OMERO Access</button>](/form/omero/)
 

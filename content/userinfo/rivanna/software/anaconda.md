@@ -27,6 +27,22 @@ dependencies, keeping different package versions isolated on a project-by-projec
 Anaconda is available as open source under the New BSD license. It also ships 
 with **pip**, the common python package manager. 
 
+# Available Versions
+The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
+
+```
+module spider {{< module-name >}}
+```
+
+The output of the command shows the available {{% software-name %}} module versions.
+
+For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
+```
+module spider {{% module-firstversion %}}
+```
+
+{{< module-versions >}}
+
 # Installing packages 
 
 Packages could be installed via the `pip` or `conda` package managers

@@ -33,14 +33,18 @@ For detailed information, visit the [{{% software-name %}} website]({{< module-h
 
 # Available Versions
 To find the available versions and learn how to load them, run:
-<pre>module spider {{% module-name %}}</pre>
+```
+module spider {{% module-name %}}
+```
 
 The output of the command shows the available {{% software-name %}} module versions.
 
 For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
-<pre>module spider {{% module-firstversion %}}</pre>
+```
+module spider {{% module-firstversion %}}
+```
 
-{{% module-versions %}}
+{{< module-versions >}}
 
 # Installing Julia Packages
 

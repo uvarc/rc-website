@@ -15,4 +15,4 @@ categories = ["userinfo"]
 
 +++
 
-{{% rivanna-software moduleclasses="all" %}}
+{{< rivanna-software moduleclasses="all" >}}

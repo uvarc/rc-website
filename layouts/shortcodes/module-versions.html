@@ -1,44 +1,38 @@
-<script>
-    function getToolchain(parent) {
-        return parent
-    }
-</script>
-
-{{ $showmname := true }}
-{{ with (.Get "showmname") }}
-    {{ $showmname := (eq "true" .) }}
-{{ end }}
-{{ $module := default $.Page.Params.modulename (.Get "module") }}
+{{- $showmname := true -}}
+{{- with (.Get "showmname") -}}
+    {{- $showmname := (eq "true" .) -}}
+{{- end -}}
+{{- $module := default $.Page.Params.modulename (.Get "module") -}}
 <table class="table table-striped" id="versionTable">
   <thead class="thead-dark">
     <tr>
-      {{ if $showmname }}
-          <th scope="col">Module</th>
-      {{ end }}
-      <th scope="col">Version</th>
-      <th scope="col">Module Load Command</th>
+      {{- if $showmname -}}
+          <th>Module</th>
+      {{- end -}}
+      <th>Version</th>
+      <th>Module Load Command</th>
     </tr>
   </thead>
   <tbody>
-  {{ $gistJ := getJSON .Site.Params.rivannaJsonUrl }}
-  {{ range $modulename,$items := $gistJ }}
-     {{ if eq $module $modulename  }}
-        {{ range $items }}
+  {{- $gistJ := getJSON .Site.Params.rivannaJsonUrl -}}
+  {{- range $modulename,$items := $gistJ -}}
+     {{- if eq $module $modulename -}}
+        {{- range $items -}}
            <tr>
-               {{ if $showmname }}
+               {{- if $showmname -}}
                    <td> {{ $modulename }}</td>
-               {{ end }}
+               {{- end -}}
                <td>{{ .Version }}</td>
                <td>
-                 {{ "module load" }}
-                 {{ range .parentAA }}
-                     {{ delimit . " " }}
-                 {{ end }}
-                 {{ printf "%s/%s" $modulename .Version }}
+                 {{- "module load " -}}
+                 {{- range .parentAA -}}
+                     {{- delimit . " " -}}
+                 {{- end -}}
+                 {{ printf " %s/%s" $modulename .Version }}
                </td>
            </tr>
-        {{ end }}
-      {{ end }}
-  {{ end }}
+        {{- end -}}
+      {{- end -}}
+  {{- end -}}
   </tbody>
 </table>

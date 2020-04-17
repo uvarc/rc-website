@@ -12,6 +12,8 @@ date = "2020-04-03T14:27:46-05:00"
 tags = ["bio"
 ]
 draft = false
+modulename = "bioconda"
+softwarename = "Bioconda"
 shorttitle = "Bioconda"
 title = "The Bioconda Environment on Rivanna"
 description = "Bioconda Software in Rivanna's HPC environment"
@@ -23,25 +25,27 @@ author = "RC Staff"
 
 Many bioinformatics Python packages are now maintained and available for the popular Anaconda Python distribution. Python packages for the Anaconda distribution are distributed through a variety of different bundles, called channels. The bioconda channel is specifically set up for the maintenance and distribution of popular bioinformatics packages. On Rivanna, we offer two bioconda modules, one using Python 2.7 and the other using Python 3.6.
 
-To see the list of available bioconda modules, run the module spider command:
-```
-module spider bioconda
-```
-Output:
-```
--------------------------------------------------------------------------
-bioconda:
--------------------------------------------------------------------------
-    Description:
-      Bioconda is a channel for the conda package manager specializing in bioinformatics software.
+# Available Versions
+The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
 
-     Versions:
-        bioconda/py2.7
-        bioconda/py3.6
+```
+module spider {{< module-name >}}
 ```
 
+The output of the command shows the available {{% software-name %}} module versions.
 
-The `bioconda/py2.7` and `bioconda/py3.6` modules are backed by Anaconda distributions using Python 2.7 and Python 3.6, respectively.  To view an up-to-date list of the Python packages provided by a particular bioconda module, load the bioconda module and run the conda list command. For example:
+For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
+```
+module spider {{% module-firstversion %}}
+```
+
+{{< module-versions >}}
+
+
+
+The `bioconda/py2.7` and `bioconda/py3.6` modules are backed by Anaconda distributions using Python 2.7 and Python 3.6, respectively.
+
+To view an up-to-date list of the Python packages provided by a particular bioconda module, load the bioconda module and run the conda list command. For example:
 ```
 module load bioconda/py3.6
 conda list | grep bioconda

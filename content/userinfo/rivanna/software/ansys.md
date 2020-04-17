@@ -26,15 +26,19 @@ Local support is minimal; users should make an account at the student forum thro
 
 # Available Versions
 The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
-<pre>module spider {{% module-name %}}</pre>
+
+```
+module spider {{< module-name >}}
+```
 
 The output of the command shows the available {{% software-name %}} module versions.
 
 For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
-<pre>module spider {{% module-firstversion %}}</pre>
+```
+module spider {{% module-firstversion %}}
+```
 
-{{% module-versions %}}
-
+{{< module-versions >}}
 # Licensing
 UVA has a research license that covers most research needs, and ANSYS on Rivanna uses this by default.  However, some research groups have their own licenses with more capabilities.  If you need to direct ANSYS to a different license server, you must set the `ANSYSLI_SERVERS` and `ANSYSLMD_LICENSE_FILE` environment variables.  The format for these for a three-server license server cluster is
 ```

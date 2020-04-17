@@ -12,6 +12,8 @@ tags = [
   "lang",
 ]
 draft = false
+modulename = "R"
+softwarename = "R"
 shorttitle = "R & RStudio"
 title = "R and RStudio on Rivanna"
 description = "R and RStudio in Rivanna's HPC environment"
@@ -47,7 +49,8 @@ To see the available versions of R, type:
 module spider R
 ```
 
-{{% module-versions module="R" %}}
+<br>
+{{< module-versions >}}
 
 # Loading the RStudio module
 
@@ -65,10 +68,11 @@ RStudio is also available through our web-based portal to Rivanna.  For instruct
 
 Due to the amount and variability of packages available for R, Research Computing does not maintain R packages beyond the very basic.  If you need a package, you can install it in your account, using a local library.  For example, to install `BiocManager`, you can type:
 
-```bash
+```
 module load gcc R
 ```
-```bash
+
+```
 R
    .
    .
@@ -100,7 +104,7 @@ Rscript myRprog.R
 
 This script should be saved in a file, called (for example) job.slurm.  To run your job, you would submit the script by typing:
 
-```bash
+```
 sbatch job.slurm
 ```
 
@@ -108,7 +112,7 @@ sbatch job.slurm
 R programs can be written to use multiple cores on a node.  You will need to ensure that both SLURM and your R code know how many cores they will be using.  In the SLURM script, we recommend using `--cpus-per-task` to specify the number of cores.  For example:
 
 
-```bash
+```
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
@@ -125,15 +129,14 @@ Rscript myRprog.R ${SLURM_CPUS_PER_TASK}
 For the R code, the number of cores can be passed in with a command-line argument, as shown in the above example with ${SLURM_CPUS_PER_TASK}.  The code will need to be designed to read in the command-line argument and establish the number of available cores.  For example:
 
 
-```R
+```
 cmdArgs <- commandArgs(trailingOnly=TRUE)
 numCores <- as.integer(cmdArgs[1])
 options(mc.cores=numCores)
 ```
 Or, you if you do not want to use command-line arguments, you can use the function `Sys.getenv()` in the R code.  For example:
 
-```R
-
+```
 numCores <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK"))
 options(mc.cores=numCores)
 

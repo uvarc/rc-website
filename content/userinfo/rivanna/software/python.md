@@ -32,7 +32,7 @@ The default Python is required for system purposes and is generally too old for 
 module spider anaconda
 ```
 
-{{% module-versions module="anaconda" %}}
+{{< module-versions module="anaconda" >}}
 
 The module version extensions, i.e. py2.7 and py3.6, indicate the version of the Python interpreter.
 
