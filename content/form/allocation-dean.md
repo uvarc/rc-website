@@ -25,9 +25,7 @@ private = true
   <input type="hidden" id="category" name="category" value="Deans Allocation">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
-
 {{% form-userinfo %}}
-
   <div class="form-item form-type-select form-group">
     <label class="control-label" for="edit-submitted-classification">Sponsoring Dean
       <span class="form-required" title="This field is required.">*</span>
@@ -72,9 +70,19 @@ private = true
       <input required="required" type="radio" id="for-research-2" name="for-research" value="no" class="form-radio" /> &nbsp;No</label>
     </div>
   </div>
+  <div class="form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="faculty-startup">
+  Is this request part of a new faculty start-up agreement? If yes, provide the details below including the name of the dean who approved the agreement. <span class="form-required" title="This field is required.">*</span></label>
+  <div id="faculty-startup" class="form-radios">
+    <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-faculty-startup">
+      <input required="required" type="radio" id="yes-faculty-research" name="yes-faculty-startup" value="yes" class="form-radio" /> &nbsp;Yes</label>
+    </div>
+    <div class="form-item form-type-radio radio"> <label class="control-label" for="no-faculty-startup">
+      <input required="required" type="radio" id="no-faculty-startup" name="no-faculty-startup" value="no" class="form-radio" /> &nbsp;No</label>
+    </div>
+  </div>
   </div>
   <!-- END SECOND SECTION -->
-  </div>
+</div>
   <div class="spacer-20"></div>
   <!-- BEGIN THIRD SECTION -->
   <div class="card" style="padding:1.4rem;">
