@@ -81,6 +81,7 @@ private = true
     </div>
   </div>
   </div>
+  </div>
   <!-- END SECOND SECTION -->
 </div>
   <div class="spacer-20"></div>
