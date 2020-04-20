@@ -19,7 +19,6 @@ private = true
   <p id="form_post_response"></p>
 </div>
 <div>
-
   <input type="hidden" id="category" name="category" value="Rivanna HPC">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Instructional" />
@@ -27,7 +26,6 @@ private = true
 {{% form-userinfo %}}
 
   <hr size=1 />
-
   <div class="form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations." data-toggle="tooltip" id="classification" name="classification">
     <option value="" selected="selected">- Select -</option>
@@ -36,11 +34,9 @@ private = true
     <option value="postdoc">Postdoctoral Associate</option>
     <option value="other">Other</option></select>
   </div>
-
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
   </div>
-
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name-of-mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
@@ -48,20 +44,15 @@ private = true
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="mygroup-users" name="mygroup-users" cols="60" rows="5"></textarea>
     </div>
   </div>
-
   <div class="row">
     <div class="col form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="class-id">Class ID <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="class-id" name="class-id" value="" size="60" maxlength="128" />
     </div>
-
     <div class="col form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="academic-term">Academic Term <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="academic-term" name="academic-term" value="" size="60" maxlength="128" />
     </div>
-
   </div>
-
   <input type="hidden" name="details" />
-
   <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
@@ -76,12 +67,10 @@ private = true
   </div>
   <script type="text/javascript" src="/js/captcha.js"></script>
   -->
-
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
-
 </div>
 </form>
 

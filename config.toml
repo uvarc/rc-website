@@ -11,6 +11,15 @@ ignoreCache = true
 summaryLength = 100
 timeout = "60000"
 
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 1
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [permalinks]
   post = "/:year/:month/:title/"
 
