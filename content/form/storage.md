@@ -14,24 +14,20 @@ private = true
 {{< form-cookies >}}
 
 <script type="text/javascript" src="/js/typeahead.js"></script>
-
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="storage-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
-
   <input type="hidden" id="category" name="category" value="Storage">
   <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
 
 {{% form-userinfo %}}
 
   <hr size=1 />
-
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
-
   <div class="form-item form-group form-type-select form-group"> 
     <label class="control-label" for="classification">Affiliation <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="classification" name="classification">
@@ -45,9 +41,7 @@ private = true
       <option value="other">Other</option>
     </select>
   </div>
-
   <hr size=1 />
-
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
@@ -66,19 +60,14 @@ private = true
       </div>
     </div>
   </div>
-
     <div class="col form-item form-group">
       <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
       <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
     </div>
-
   </div>
-
   <hr size=1 />
-
   <div class="row">
-
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
@@ -96,62 +85,47 @@ private = true
       </div>
     </div>
   </div>
-
   <div class="col form-item form-group">
     <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Standard / Moderately Sensitive Data</h6>This storage platform is appropriate for public, non-sensitive or moderately sensitive data.</div>
     <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
   </div>
-
   </div>
-
   <hr size=1 />
-
   <div class="row">
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
       <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
     </div>
-
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
       <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
     </div>
-
   </div>
-
   <hr size=1 />
-
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-title">Project Title </label>
     <input class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
   </div>
-
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="5"></textarea>
     </div>
   </div>
-
   <div style="border:solid 1px #ccc;padding:2rem;margin-top:2rem;margin-bottom:2rem;background-color:#eee;">
     <h5>Grant Summary</h5>
     <div class="form-item form-type-textarea form-group"> 
       <label class="control-label" for="grant-agency">Grant Agency </label>
       <input class="form-control form-text required" type="text" id="grant-agency" name="grant-agency" value="" size="200" maxlength="200" />
     </div>
-
     <div class="form-item form-type-textarea form-group">
       <label class="control-label" for="grant-number">Grant Number </label>
       <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
-
   </div>
-
   <hr size=1 />
-
 <label class="control-label" for="data-sensitivity-2">PTAO</label>
-
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
       <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
@@ -170,19 +144,16 @@ private = true
     <div class="col form-item form-type-textarea form-group">
     </div>
   </div>
-
   <!--
   <div class="form-item form-type-textarea form-group"> 
     <label class="control-label" for="estimated-cost">Estimated Total Cost </label>
     <input class="form-control form-text required" type="text" id="estimated-cost" name="estimated-cost" value="$" size="200" maxlength="200" readonly style="width:20%;" />
   </div>
   -->
-
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="financial-contact">Financial Contact </label>
     <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
   </div>
-
   <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
@@ -197,12 +168,10 @@ private = true
   </div>
   <script type="text/javascript" src="/js/captcha.js"></script>
   -->
-
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
-
 </div>
 </form>
 
