@@ -70,7 +70,7 @@ Deans' Allocations are granted by the research deans who provide funding for Riv
 ## Allocation Purchases
 Time on Rivanna can also be purchased using a PTAO. Purchasers are given a higher priority in the queue and their SUs never expire. Available to: Faculty and postdocs with grants; researchers who need priority access and premium service.
 
-<a href="#" <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-purchase.php?user_token=' + user_token">
+<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-purchase.php?user_token=' + user_token">
   <button class="btn btn-primary">Purchase an Allocation</button>
 </a>
 
@@ -79,6 +79,6 @@ Time on Rivanna can also be purchased using a PTAO. Purchasers are given a highe
 ## Instructional Allocations
 Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014.
 
-<a href="#" <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=' + user_token">
+<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=' + user_token">
   <button class="btn btn-primary">Request an Instructional Allocation</button>
 </a>
