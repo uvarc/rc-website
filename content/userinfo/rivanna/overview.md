@@ -111,6 +111,12 @@ New users are invited to attend one of our free orientation sessions ("Introduct
 
 - - -
 
+# Overview
+
+<img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="max-width:100%;" />
+
+- - -
+
 # System Details
 
 <div id="accordion" style="margin-top:4rem;margin-bottom:4rem;">
