@@ -75,10 +75,10 @@ private = true
   Is this request part of a new faculty start-up agreement? <span class="form-required" title="This field is required.">*</span></label>
     <div id="faculty-startup" class="form-radios">
       <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-faculty-startup">
-        <input required="required" type="radio" id="yes-faculty-research" name="yes-faculty-startup" value="yes" class="form-radio" /> &nbsp;Yes</label>
+        <input required="required" type="radio" id="yes-faculty-research" name="faculty-startup" value="yes" class="form-radio" /> &nbsp;Yes</label>
       </div>
       <div class="form-item form-type-radio radio"> <label class="control-label" for="no-faculty-startup">
-        <input required="required" type="radio" id="no-faculty-startup" name="no-faculty-startup" value="no" class="form-radio" /> &nbsp;No</label>
+        <input required="required" type="radio" id="no-faculty-startup" name="faculty-startup" value="no" class="form-radio" /> &nbsp;No</label>
       </div>
     </div>
     <div class="form-item form-type-textarea form-group">
@@ -91,7 +91,6 @@ private = true
 </div>
 </div>
   <!-- END SECOND SECTION -->
-  <div class="spacer-20"></div>
   <!-- BEGIN THIRD SECTION -->
   <div class="card" style="padding:1.4rem;">
   <h5 class="card-title">About Your Project</h5>
@@ -192,6 +191,14 @@ var set_email = document.getElementById("email").value = email_dec;
 // sponsor
 let sponsor = decodeURI(getParams()["sponsor"]);
 var set_sponsor = document.getElementById("sponsor").value = sponsor;
+
+$("#faculty-startup-details").hide()
+$("#faculty-startup").change(function () {
+  var val = this.value;
+  if (val == "yes") {
+    $("#faculty-startup-details").show(400);
+  }
+});
 
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>
