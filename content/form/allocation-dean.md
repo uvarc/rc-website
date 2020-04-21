@@ -195,7 +195,7 @@ var set_sponsor = document.getElementById("sponsor").value = sponsor;
 
 $("#faculty-startup-details").hide();
 $("#faculty-startup-details-label").hide();
-$("#faculty-startup").select(function () {
+$("#faculty-startup").click(function () {
   var val = this.value;
   if (val == "yes") {
     $("#faculty-startup-details").show(400);
