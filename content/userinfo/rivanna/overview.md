@@ -113,7 +113,20 @@ New users are invited to attend one of our free orientation sessions ("Introduct
 
 # Overview
 
-<img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="max-width:100%;" />
+A high performance computing cluster is typically made up of at least four service layers:
+
+1. Interactive nodes
+2. Worker nodes
+3. Storage
+4. A job scheduler
+
+<img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="display:block;" class="hpc-overview" usemap="#hpc_map" data-bg_fill="rgba(244,124,67,0.5)" />
+<map name="hpc_map">
+  <area id="interactive-nodes" alt="Interactive Nodes" title="Interactive Nodes" href="#interactive-nodes" shape="rect" coords="243,37,555,120" style="outline:none;" class="hpchover" />
+  <area id="worker-nodes" alt="Worker Nodes" title="Worker Nodes" href="#worker-nodes" shape="rect" coords="38,150,700,500" style="outline:none;" class="hpchover" />
+  <area id="storage" alt="Storage" title="Storage" href="#storage" shape="rect" coords="70,540,700,650" style="outline:none;" class="hpchover" />
+  <area id="job-scheduler" alt="Job Scheduler" title="Job Scheduler" href="#scheduler" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
+</map>
 
 - - -
 

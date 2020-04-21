@@ -499,3 +499,6 @@ img {
   from { opacity: 1; }
   to { opacity: 0; }
 }
+.hpc-overview .hpchover a:hover {
+  background-color:#ccc;
+}
