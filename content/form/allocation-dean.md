@@ -81,7 +81,7 @@ private = true
         <input required="required" type="radio" id="no-faculty-startup" name="faculty-startup" value="no" class="form-radio" /> &nbsp;No</label>
       </div>
     </div>
-    <div class="form-item form-type-textarea form-group" style="margin-top:1rem;">
+    <div class="form-item form-type-textarea form-group" style="margin-top:1rem;" id="faculty-startup-explainer" style="display: none;">
       <label class="control-label" for="faculty-startup-details" id="faculty-startup-details-label">If yes, provide the details below including the name of the dean who approved the agreement.</label>
       <div class="form-textarea-wrapper resizable">
         <textarea class="form-control form-textarea" id="faculty-startup-details" name="faculty-startup-details" cols="60" rows="5"></textarea>
@@ -193,13 +193,10 @@ var set_email = document.getElementById("email").value = email_dec;
 let sponsor = decodeURI(getParams()["sponsor"]);
 var set_sponsor = document.getElementById("sponsor").value = sponsor;
 
-$("#faculty-startup-details").hide();
-$("#faculty-startup-details-label").hide();
 $("#faculty-startup").click(function () {
-  var val = this.value;
+  var val = $(this).val();
   if (val == "yes") {
-    $("#faculty-startup-details").show(400);
-    $("#faculty-startup-details-label").show(400);
+    $("#faculty-startup-explainer").show(400);
   }
 });
 

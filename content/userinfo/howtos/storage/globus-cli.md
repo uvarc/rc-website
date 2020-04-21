@@ -92,15 +92,16 @@ globus list-commands
 Find a Globus endpoint. Here is how you might find the UVA Main DTN:
 ```
 globus endpoint search "uva#main"
-```
+
 ID                                   | Owner            | Display Name
 ------------------------------------ | ---------------- | ------------
 c4d80096-7612-11e7-8b5e-22000b9923ef | uva@globusid.org | uva#main-DTN
+```
 
 Or search more broadly for all UVA endpoints in Globus:
 ```
 globus endpoint search "uva"
-```
+
 ID                                   | Owner                | Display Name     
 ------------------------------------ | -------------------- | -----------------
 c4d80096-7612-11e7-8b5e-22000b9923ef | uva@globusid.org     | uva#main-DTN     
@@ -113,6 +114,7 @@ de463ce4-6d04-11e5-ba46-22000b92c6ec | uvastro@globusid.org | uvastro#helix
 a9a9ae5d-6d04-11e5-ba46-22000b92c6ec | uvacse@globusid.org  | uvacse#cooper    
 df70ec7d-6d04-11e5-ba46-22000b92c6ec | uvastro@globusid.org | uvastro#cavi     
 24b0ca0c-3013-11e7-bcab-22000b9a448b | ars9ac@virginia.edu  | UVA Portable DTN 
+```
 
 For transfers and file operations, reference endpoints by their unique ID. Names are only convenient tags to help humans differentiate between endpoints.
 
@@ -243,7 +245,12 @@ Task ID: 5ffe3058-5543-11e8-90ce-0a6d4e044368
 
 # Use the Globus-CLI from your Rivanna Account
 
-1. Install the globus-cli package to your user space
+1. Load the globus-cli module and its dependencies:
+
+```bash
+module load gcc openmpi globus_cli
+```
+
 2. Authorize globus-cli
 
 Run this command:
