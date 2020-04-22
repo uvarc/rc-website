@@ -179,6 +179,8 @@ rsync -Pa --delete --dry-run ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 
 The Globus command-line interface can also be used to orchestrate the transfer of large datasets, or to script regular transfers in or out of systems.
 
+[Read more](/userinfo/howtos/storage/globus-cli/) about the Globus CLI.
+
 # Usage from Off Grounds
 
 {{< off-campus >}}
