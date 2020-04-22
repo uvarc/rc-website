@@ -82,7 +82,7 @@ private = true
       </div>
     </div>
     <div class="form-item form-type-textarea form-group" style="margin-top:1rem;display:none;" name="faculty-startup-explainer" id="faculty-startup-explainer">
-      <label class="control-label" for="faculty-startup-details" id="faculty-startup-details-label">If yes, provide the details below including the name of the dean who approved the agreement.</label>
+      <label class="control-label" for="faculty-startup-details" id="faculty-startup-details-label">Please provide details of the agreement below including the name of the approving dean.</label>
       <div class="form-textarea-wrapper resizable">
         <textarea class="form-control form-textarea" id="faculty-startup-details" name="faculty-startup-details" cols="60" rows="5"></textarea>
       </div>
