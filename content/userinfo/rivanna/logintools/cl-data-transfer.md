@@ -175,6 +175,10 @@ Have rsync print the list it will transfer without carrying out the tranfers.  E
 rsync -Pa --delete --dry-run ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
+# Globus CLI
+
+The Globus command-line interface can also be used to orchestrate the transfer of large datasets, or to script regular transfers in or out of systems.
+
 # Usage from Off Grounds
 
 {{< off-campus >}}
