@@ -51,7 +51,7 @@ This will open a page in your web browser where you select your institution and 
 
 Select “University of Virginia” and then click **Continue**. You are then taken to an authorization page where you agree to allow the Globus CLI to access your Globus account. Click on **Allow**.
 
-<img alt="Globus CLI authentication" src="/images/globus-cli-authentication.png" align="right" style="max-width:20%;">
+<img alt="Globus CLI authentication" src="/images/globus-cli-authenticate.png" align="right" style="max-width:20%;">
 
 You may now close your browser window. Your command-line tools are now authenticated and ready to use.
 
@@ -64,7 +64,7 @@ globus
 {{< /code >}}
 
 {{< code >}}
---jmespath, --jq TEXT     A JMESPath expression to apply to json output.
+  --jmespath, --jq TEXT     A JMESPath expression to apply to json output.
                             Takes precedence over any specified '--format' and
                             forces the format to be json processed by this
                             expression
@@ -226,9 +226,6 @@ Transfer a single file at a time to another DTN, via script:
 
 {{< gist nmagee d9f606ff7edfe1710ce81f1eb23ca654 >}}
 
-```
-https://gist.github.com/nmagee/d9f606ff7edfe1710ce81f1eb23ca654 
-```
 
 ## Folder sync transfers
 
@@ -236,9 +233,6 @@ Synchronize an entire folder and all contents with another DTN, via script:
 
 {{< gist nmagee 6f4ad4d32dbd0415528d1fb11242fd09 >}}
 
-```
-https://gist.github.com/nmagee/6f4ad4d32dbd0415528d1fb11242fd09 1
-```
 
 Run your script:
 
