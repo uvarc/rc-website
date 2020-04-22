@@ -27,8 +27,8 @@ timeout = "60000"
     lineNos = false
     lineNumbersInTable = true
     noClasses = true
-    style = "monokai"
-    tabWidth = 4
+    style = "manni"
+    tabWidth = 2
 
 [permalinks]
   post = "/:year/:month/:title/"
