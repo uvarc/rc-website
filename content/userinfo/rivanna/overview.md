@@ -120,6 +120,7 @@ A high performance computing cluster is typically made up of at least four servi
 3. **Storage** - Where files and data are stored, accessible by all nodes in the cluster.
 4. **Job scheduler** - A management system that takes job requests and optimizes their execution.
 
+
 <img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="margin-top:3rem;display:block;" class="hpc-overview" usemap="#hpc_map" data-bg_fill="rgba(244,124,67,0.5)" />
 <map name="hpc_map">
   <area id="interactive-nodes" alt="Interactive Nodes" title="Interactive Nodes" href="/userinfo/rivanna/login/" shape="rect" coords="243,37,555,120" style="outline:none;" class="hpchover" />
@@ -127,6 +128,7 @@ A high performance computing cluster is typically made up of at least four servi
   <area id="storage" alt="Storage" title="Storage" href="/userinfo/rivanna/storage/" shape="rect" coords="70,540,700,650" style="outline:none;" class="hpchover" />
   <area id="job-scheduler" alt="Job Scheduler" title="Job Scheduler" href="/userinfo/rivanna/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
 </map>
+
 
 - - -
 
