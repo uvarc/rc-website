@@ -170,7 +170,8 @@ globus transfer --encrypt c4d80096-7612-11e7-8b5e-22000b9923ef:home/mst3k/my-fil
 
 Using the Task ID returned from a request, you can get the status of a task:
 
-```
+
+{{< highlight bash >}}
 globus task show 94d15980-9c94-11e7-acbc-22000a92523b
 
 Label:                   None
@@ -196,7 +197,7 @@ Destination Endpoint:    uva#main-DTN
 Destination Endpoint ID: c4d80096-7612-11e7-8b5e-22000b9923ed
 Bytes Transferred:       2812
 Bytes Per Second:        2468
-```
+{{< /highlight >}}
 
 # Script Transfers Against the Globus CLI
 
