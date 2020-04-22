@@ -30,6 +30,7 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 .support-tiles{position:absolute;left:2;bottom:20px;}
 .support-row{height:240px;}
 .p,.tiny{font-size:80%;padding-top:6px;}
+.language-fallback{background-color:transparent;}
 
 .sidebar-training{padding:1rem;}
 .sidebar-module{padding-left:1rem;padding-right:1rem;padding-bottom:1.4rem;}
