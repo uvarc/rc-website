@@ -6,13 +6,12 @@ images = [
 categories = [
   "howto",
   "storage",
-  "globus",
 ]
 date = "2020-03-09T13:53:46-05:00"
-tags = ["howto","storage","globus"]
+tags = ["howto","storage","globus","cli"]
 draft = false
 shorttitle = "Globus CLI"
-title = "Using the Globus Command-Line Interface"
+title = "Globus Command-Line Interface"
 description = "Using Globus through its command-line interface."
 author = "RC Staff"
 
@@ -42,11 +41,11 @@ globus login
 ```
 This will open a page in your web browser where you select your institution and proceed to login:
 
-<img alt="Globus CLI login" src="/images/rivanna/globus-cli-login.png" align="right" style="max-width:20%;">
+<img alt="Globus CLI login" src="/images/globus-cli-login.png" align="right" style="max-width:20%;">
 
 Select “University of Virginia” and then click **Continue**. You are then taken to an authorization page where you agree to allow the Globus CLI to access your Globus account. Click on **Allow**.
 
-<img alt="Globus CLI authentication" src="/images/rivanna/globus-cli-authentication.png" align="right" style="max-width:20%;">
+<img alt="Globus CLI authentication" src="/images/globus-cli-authentication.png" align="right" style="max-width:20%;">
 
 You may now close your browser window. Your command-line tools are now authenticated and ready to use.
 
