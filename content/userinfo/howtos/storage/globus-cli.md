@@ -247,7 +247,7 @@ Task ID: 5ffe3058-5543-11e8-90ce-0a6d4e044368
 
 1. Load the globus-cli module and its dependencies:
 
-```bash
+```
 module load gcc openmpi globus_cli
 ```
 

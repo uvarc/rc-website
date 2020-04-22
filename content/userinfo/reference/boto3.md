@@ -49,7 +49,7 @@ or for Windows (or the latest release) simply clone from GitHub:
 
 The client is generally referenced directly by name as a resource:
 
-```python
+```
 # Get the service resource
 sns = boto3.resource('sns')
 ```

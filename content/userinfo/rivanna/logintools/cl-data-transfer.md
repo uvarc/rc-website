@@ -37,19 +37,19 @@ To copy a file:
 
 From your computer to `/project` storage:
 
-```bash
+```
 scp my_file mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name
 ```
 
 From `/project` storage to `my_directory` on your computer:
 
-```bash
+```
 scp mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name/my_file /my_directory
 ```
 
 `scp` accepts wildcards.  In this example, the mycode directory must exist in your scratch directory.
 
-```bash
+```
 scp *cxx mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k/mycode
 ```
 
@@ -59,13 +59,13 @@ The `-r` option recursively copies directories.
 
 From your computer to /project storage:
 
-```bash
+```
 scp -r my_directory mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name
 ```
 
 From `/project` storage to your computer:
 
-```bash
+```
 scp -r mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name /target_directory
 ```
 
@@ -79,13 +79,13 @@ Secure FTP or `sfpt` is an interface built on top of `scp` to mimic the behavior
 
 To connect to Rivanna with `sftp`, execute the following in the command line interface:
 
-```bash
+```
 sftp mst3k@rivanna.hpc.virginia.edu
 ```
 
 When prompted, enter your password. Once the connection succeeds, you will see the `sftp` prompt:
 
-```bash
+```
 sftp>
 ```
 
@@ -103,7 +103,7 @@ You can access both your local and remote file systems with `sftp`. The followin
 
 To transfer files from your computer to the Rivanna file system, use the put command:
 
-```bash
+```
 sftp> put my_file
 ```
 
@@ -119,13 +119,13 @@ sftp> put -r my_folder
 
 To transfer files from Rivanna to your computer, use the get command:
 
-```bash
+```
 sftp> get my_file
 ```
 
 To transfer a folder from Rivanna to your computer, use `get -r`:
 
-```bash
+```
 sftp> get my_folder
 ```
 
@@ -133,7 +133,7 @@ sftp> get my_folder
 
 To terminate the `sftp` connection, use `exit`.
 
-```bash
+```
 sftp> exit
 ```
 
@@ -143,7 +143,7 @@ Remote sync is a powerful tool for copying files.  It is most widely used to tra
 
 In this example, we have a local directory `ldir` and a remote directory `rdir` and we wish to copy the contents of ldir to rdir. 
 
-```bash
+```
 rsync -r ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
@@ -153,25 +153,25 @@ Unlike `scp`, if the target directory does not exist, `rsync` will create it.
 
 It is more common to use the `-a` (archive) option.  This option preserves symbolic links, special files, ownership, permissions, and timestamps.
 
-```bash
+```
 rsync -a ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
 Show a progress bar and keep partially transferred files
 
-```bash
+```
 rsync -Pa ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
 Delete files not present on the source directory if they are present on the target directory
 
-```bash
+```
 rsync -Pa --delete ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
 Have rsync print the list it will transfer without carrying out the tranfers.  Especially important when using `--delete`.
 
-```bash
+```
 rsync -Pa --delete --dry-run ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
 
