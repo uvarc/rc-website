@@ -30,6 +30,7 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 .support-tiles{position:absolute;left:2;bottom:20px;}
 .support-row{height:240px;}
 .p,.tiny{font-size:80%;padding-top:6px;}
+.language-fallback{background-color:transparent;}
 
 .sidebar-training{padding:1rem;}
 .sidebar-module{padding-left:1rem;padding-right:1rem;padding-bottom:1.4rem;}
@@ -183,12 +184,12 @@ h6 .dropdown-header {
 .expertise a {text-decoration:none;color:black;}
 
 code,kbd,pre,samp{font-family:Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}
-code{color:#bd4147;background-color:#f7f7f9;border-radius:.25rem}
-code,kbd{padding:.6rem .6rem;font-size:90%}
+code{color:#bd4147;background-color:#f7f7f9;border-radius:.25rem;}
+code,kbd{padding:1rem 1rem;font-size:90%}
 kbd{color:#fff;background-color:#333;border-radius:.2rem}
 kbd kbd{padding:0;font-size:100%;font-weight:700}
 pre{display:block;margin-top:0;margin-bottom:1rem;font-size:90%;color:#373a3c}
-pre code{padding:0;font-size:inherit;color:inherit;background-color:transparent;border-radius:0}
+pre code{padding:1rem;font-size:inherit;color:inherit;background-color:transparent;border-radius:0}
 .pre-scrollable{max-height:340px;overflow-y:scroll}
 .container{margin-left:auto;margin-right:auto;padding-left:15px;padding-right:15px}
 .container:after{content:"";display:table;clear:both}
@@ -498,4 +499,7 @@ img {
 @keyframes blink {
   from { opacity: 1; }
   to { opacity: 0; }
+}
+.hpc-overview .hpchover a:hover {
+  background-color:#ccc;
 }

@@ -107,7 +107,7 @@ If you cannot find just the right container, you can always build your own. Ther
 
     - **Step 1** - Create a text file called `Dockerfile` with contents such as:
 
-```bash
+```
 # Use an official Python runtime as a base image
 FROM python:3.7-slim
 

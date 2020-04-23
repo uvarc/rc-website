@@ -70,20 +70,35 @@ private = true
       <input required="required" type="radio" id="for-research-2" name="for-research" value="no" class="form-radio" /> &nbsp;No</label>
     </div>
   </div>
-  <div class="form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="faculty-startup">
-  Is this request part of a new faculty start-up agreement? If yes, provide the details below including the name of the dean who approved the agreement. <span class="form-required" title="This field is required.">*</span></label>
-  <div id="faculty-startup" class="form-radios">
-    <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-faculty-startup">
-      <input required="required" type="radio" id="yes-faculty-research" name="yes-faculty-startup" value="yes" class="form-radio" /> &nbsp;Yes</label>
+  <div class="spacer-20"></div>
+  <div class="form-item form-type-radios form-group"> 
+    <label class="control-label" for="faculty-startup">
+      Is this request part of a new faculty start-up agreement? <span class="form-required" title="This field is required.">*</span>
+    </label>
+    <div id="faculty-startup" class="form-radios">
+      <div class="form-item form-type-radio radio"> 
+        <input required="required" type="radio" id="yes-faculty-research" name="faculty-startup" value="yes" class="form-radio" /> 
+        <label class="control-label" for="yes-faculty-startup">
+          Yes
+        </label>
+      </div>
+      <div class="form-item form-type-radio radio"> 
+        <input required="required" type="radio" id="no-faculty-startup" name="faculty-startup" value="no" class="form-radio" />
+        <label class="control-label" for="no-faculty-startup">
+          No
+        </label>
+      </div>
     </div>
-    <div class="form-item form-type-radio radio"> <label class="control-label" for="no-faculty-startup">
-      <input required="required" type="radio" id="no-faculty-startup" name="no-faculty-startup" value="no" class="form-radio" /> &nbsp;No</label>
+    <div class="form-item form-type-textarea form-group" style="margin-top:1rem;display:none;" name="faculty-startup-explainer" id="faculty-startup-explainer">
+      <label class="control-label" for="faculty-startup-details" id="faculty-startup-details-label">Please provide details of the agreement below including the name of the approving dean.</label>
+      <div class="form-textarea-wrapper resizable">
+        <textarea class="form-control form-textarea" id="faculty-startup-details" name="faculty-startup-details" cols="60" rows="8"></textarea>
+      </div>
     </div>
   </div>
-  </div>
-  </div>
-  <!-- END SECOND SECTION -->
 </div>
+</div>
+  <!-- END SECOND SECTION -->
   <div class="spacer-20"></div>
   <!-- BEGIN THIRD SECTION -->
   <div class="card" style="padding:1.4rem;">
@@ -153,6 +168,8 @@ var form = document.getElementById('allocation-form');
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 
+
+// The two redirects below loosely verify an authenticated user. Comment out for testing.
 if (cookie_token !== url_user_token) {
   window.location.replace( "https://auth.uvasomrc.io/site/allocation-dean.php?user_token=" + cookie_token );
 }
@@ -185,6 +202,18 @@ var set_email = document.getElementById("email").value = email_dec;
 // sponsor
 let sponsor = decodeURI(getParams()["sponsor"]);
 var set_sponsor = document.getElementById("sponsor").value = sponsor;
+
+// faculty startup explanation
+$("#faculty-startup-explainer").hide();
+$('[name="faculty-startup"]').click(function(){
+  var startupVal = $(this).attr("value");
+  if (startupVal == "yes") {
+    $("#faculty-startup-explainer").show(400);
+  }
+  if (startupVal == "no") {
+    $("#faculty-startup-explainer").hide(200);
+  }
+});
 
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>
