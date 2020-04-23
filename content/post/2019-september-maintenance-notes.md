@@ -5,7 +5,6 @@ title = "Important Notes from the 17 September Rivanna Maintenance"
 draft = true
 tags = ["rivanna","maintenance","feature"]
 categories = ["feature"]
-# url = "/maintenance"
 summary = "Learn about recent changes implemented during the Sept. 17, 2019 maintenance."
 +++
 
