@@ -8,3 +8,13 @@
             <li><a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
           {{ end }}
       </ol>
+
+  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 3) }}
+
+    <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
+    <p class=lead>Recent News</p>
+    <ol class="list-unstyled">
+      {{ range first $num_recent_posts (where .Site.Pages "Type" "post").Reverse }}
+      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
+      {{ end }}
+    </ol>
