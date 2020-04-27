@@ -15,7 +15,7 @@ images = [""]
 
 # Upcoming Workshops
 
-<!-- % upcoming-workshops % -->
+{{% upcoming-workshops %}}
 
 Research Computing is partnering with the Research Library and the Health Sciences Library to deliver workshops covering a variety of research computing topics.  
 
