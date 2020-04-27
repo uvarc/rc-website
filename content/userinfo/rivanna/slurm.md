@@ -309,6 +309,23 @@ To submit a list of task IDs
 % sbatch --array=1,3,9,11,22
 ```
 
+## Using Files with Job Arrays
+
+For more complex commands, you can prepare a file containing the text you wish to use. Your job script can read the file line by line.  In the following example, you must number your subtasks starting from 1 sequentially.  You must prepare the `options_file.txt` in advance and each line must be the options you wish to pass to your program.  
+```
+#!/bin/bash
+#
+#SBATCH --ntasks=1
+#SBATCH --partition=standard
+#SBATCH --time=3:00:00
+#SBATCH --array=1-1000
+
+OPTS=$(sed -n "${SLURM_ARRAY_TASK_ID}"p options.txt)
+
+./myprogram $OPTS
+```
+The double quotes and curly braces are required.
+
 ## Canceling Individual Tasks in an Array
 
 One task
