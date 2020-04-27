@@ -15,18 +15,17 @@ images = [""]
 
 # Upcoming Workshops
 
+{{% callout %}}
+Workshops for 2020 have been moved to online learning formats due to campus closures from COVID-19. 
+{{% /callout %}}
+
 {{% upcoming-workshops %}}
 
 Research Computing is partnering with the Research Library and the Health Sciences Library to deliver workshops covering a variety of research computing topics.  
 
-{{% callout %}}
-Workshops for Spring 2020 have been canceled or have been moved to online learning formats due to campus closures from COVID-19. 
-{{% /callout %}}
+<a href="https://data.library.virginia.edu/training/" class="btn btn-warning" target="_new">All Upcoming Workshops from UVA Library Research Data Services</a>
 
-<!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
-<a href="https://data.library.virginia.edu/training/" class="btn btn-warning" target="_new"> View All Upcoming Online Workshops at the UVA Library Research Data Services</a>
-
-<a href="https://cal.hsl.virginia.edu/calendar/data/?cid=-1&t=g&d=0000-00-00&cal=-1" class="btn btn-warning" target="_new"> View All Upcoming Online Workshops at the UVA Health Sciences Library</a>
+<a href="https://cal.hsl.virginia.edu/calendar/data/?cid=-1&t=g&d=0000-00-00&cal=-1" class="btn btn-warning" target="_new">All Upcoming Workshops from UVA Health Sciences Library</a>
 
 - - - 
 
