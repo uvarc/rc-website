@@ -38,6 +38,12 @@ Some users logging in through ssh may encounter this error message. If you recei
 ## When I try to log in with ssh, nothing happens when I type my password!
 When you type your passaword, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
 
+## When I try to run firefox on rivanna, the following message shows up: "Firefox is already running, but is not responding. To open a new window, you must first close the existing Firefox process, or restart your system." What can I do?
+
+From your home directory on Rivanna, run the commands:
+rm -rf ~/.mozilla/firefox/*.default/.parentlock
+
+rm -rf ~/.mozilla/firefox/*.default/lock
 - - -
 
 # Allocations
@@ -144,7 +150,7 @@ If you have not exceeded the limits on `/scratch`, check whether your account ha
 allocations
 ```
 
-## Why do I get `sbatch error: Batch script contains DOS line breaks` 
+## Why do I get `sbatch error: Batch script contains DOS line breaks`
 If you use a Windows editor to create SLURM batch scripts, when you try to run them you may encounter an error
 ```
 sbatch: error: Batch script contains DOS line breaks (\r\n)
