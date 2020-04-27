@@ -15,17 +15,22 @@ images = [""]
 
 # Upcoming Workshops
 
-<!-- % upcoming-workshops % -->
+{{% callout %}}
+Workshops for 2020 have been moved to online learning formats due to campus closures from COVID-19. 
+{{% /callout %}}
 
-Workshops for Spring 2020 have been canceled due to campus closures from COVID-19. Please check back in the near future to see upcoming workshops once we resume instruction.
+{{% upcoming-workshops %}}
 
-<!-- [<button class="btn btn-warning">View All Upcoming Workshops on CADRE Academy &#8599;<span class="glyphicon glyphicon-new-window"></span></button>]() -->
-<a href="https://data.library.virginia.edu/training/" class="btn btn-warning" target="_new"> View All Upcoming Workshops </a>
+Research Computing is partnering with the Research Library and the Health Sciences Library to deliver workshops covering a variety of research computing topics.  
+
+<a href="https://data.library.virginia.edu/training/" class="btn btn-warning" target="_new">All Upcoming Workshops from UVA Library Research Data Services</a>
+
+<a href="https://cal.hsl.virginia.edu/calendar/data/?cid=-1&t=g&d=0000-00-00&cal=-1" class="btn btn-warning" target="_new">All Upcoming Workshops from UVA Health Sciences Library</a>
 
 - - - 
 
 # Register
-Register for our workshops through <a style="font-weight:bold;" href="https://data.library.virginia.edu/training/">UVA Library Research Data Services</a>, where many technical workshops are taught for beginner, intermediate, and advanced users.
+Register for our workshops through <a style="font-weight:bold;" href="https://data.library.virginia.edu/training/">UVA Library Research Data Services</a> and <a style="font-weight:bold;" href="https://cal.hsl.virginia.edu/calendar/data/?cid=-1&t=g&d=0000-00-00&cal=-1">UVA Health Sciences Library</a>, where many technical workshops are taught for beginner, intermediate, and advanced users.
 UVA Research Data Services offers training on data analysis, statistics, and computation and on Library resources and methods. 
 
 Broad categories of RDS sponsored workshops are:

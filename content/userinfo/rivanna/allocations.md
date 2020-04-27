@@ -18,7 +18,9 @@ var user_token = getCookie("__user_token");
 </script>
 
 <div class="bd-callout bd-callout-warning">
-Time on Rivanna is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. All UVA faculty, staff, and postdoctoral associates are considered PIs and therefore eligible for an allocation on Rivanna. Students—both graduate and undergraduate—cannot request allocations, but they are allowed to use Rivanna as members of a MyGroups group controlled by a PI.
+<div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
+<p>Time on Rivanna is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. </p>
+<p>All UVA faculty, staff, and postdoctoral associates are considered PIs and therefore eligible for an allocation on Rivanna. Students—both graduate and undergraduate—cannot request allocations, but they are allowed to use Rivanna as members of a MyGroups group controlled by a PI.</p>
 </div>
 
 # Eligibility and Account Creation
