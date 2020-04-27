@@ -9,8 +9,6 @@ tags = ["Rivanna","instructional"]
 
 +++
 
-Using Rivanna for Instructional Purposes
-
 Instructors can request _instructional allocations_ on Rivanna for classes and extended workshops.  These allocations are time-limited and generally allow access to a restricted set of nodes and only one special SLURM partition, but are otherwise equivalent to any allocation.
 
 # Resource Availability
