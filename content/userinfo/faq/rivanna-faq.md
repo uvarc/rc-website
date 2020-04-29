@@ -38,9 +38,11 @@ Some users logging in through ssh may encounter this error message. If you recei
 ## When I try to log in with ssh, nothing happens when I type my password!
 When you type your passaword, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
 
-## When I try to run firefox on rivanna, the following message shows up: "Firefox is already running, but is not responding. To open a new window, you must first close the existing Firefox process, or restart your system." What can I do?
+## When running Firefox on Rivanna, I get : "Firefox is already running, but is not responding. To open a new window, you must first close the existing Firefox process, or restart your system." What can I do?
 
 From your home directory on Rivanna, run the commands:
+
+
 rm -rf ~/.mozilla/firefox/*.default/.parentlock
 
 rm -rf ~/.mozilla/firefox/*.default/lock
@@ -83,6 +85,23 @@ Please check the user manual for your application/container before running on a 
 
 [https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support](https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support)
 
+## How can I make my Jupyter notebook from JupyterLab to run as a batch job on Rivanna?
+
+1. Capture the information that you use to start up a JupyterLab session.  It helps to take a screenshot of the web form where you enter the partition, number of cores, amount of memory, etc.  You will need that information for requesting resources on a compute node.
+
+2. Note which kernel is used to run your notebook.  This information will be needed later.
+
+3. Convert the notebook to a regular script.  To do this, go into the notebook that you want to convert.  In the upper left corner, click on File > Export Notebook As > Export Notebook to Executable Script .  This will download the script onto your laptop.   On my computer, this leaves a blank window on my screen.  But, if I close that tab on my browser, the tab with the notebook returns.  I’m now down with the notebook and can terminate the session.
+
+4. Upload the “executable script” to Rivanna. In Open onDemand dashboard view, on the black ribbon across the top, click on Files > Home Directory.  This will open a page that shows the files that you have in your home directory on Rivanna.  At the top of the page, toward the right, is a button labelled “Upload”.  Click on that button.  In the dialog box that appears, click on “Choose File”.  This will allow you to go to the downloaded file and select it.
+
+5. Create a SLURM script to run your code.  The SLURM script list the resources and instructions that are needed to run your “executable script”.   See the following link:
+
+      [https://www.rc.virginia.edu/userinfo/rivanna/slurm/](https://www.rc.virginia.edu/userinfo/rivanna/slurm/)
+
+6. Open a terminal window on Rivanna, and move to the location where your scripts are.  We recommend using the web-based FastX application (see below). Once in a terminal window, type sbatch followed my the name of your SLURM script.
+
+      [https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access)
 - - -
 
 # Job Management
