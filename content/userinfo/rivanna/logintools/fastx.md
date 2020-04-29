@@ -11,10 +11,8 @@ type = "rivanna"
 
 +++
 
-{{% callout %}}
-<h4>Overview</h4>
+# Overview
 FastX is a commercial solution that enables users to start an X11 desktop environment on a remote system. It is available on the Rivanna frontends. Using it is equivalent to logging in at the console of the frontend.
-{{% /callout %}}
 
 # Using FastX for the Web
 We recommend that most users access FastX through its Web interface. To connect, point a browser to:
