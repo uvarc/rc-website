@@ -30,7 +30,7 @@ module spider sagemath/9.0
 ```
 
 The sagemath software provides its own Jupyter notebook. To start sagemath, go to
-rivanna-portal.hpc.virginia.edu
+[rivanna-desktop.hpc.virginia.edu](https://rivanna-desktop.hpc.virginia.edu)
 and select FastX Web. This will open a desktop environment. Then click the terminal icon in the top toolbar and enter:
 ```
 module load singularity/3.5.2 sagemath
