@@ -55,6 +55,7 @@ Software on Rivanna is accessed via environment **modules** or **containers**.
 * [Julia](/userinfo/rivanna/software/julia)
 * [Matlab](/userinfo/rivanna/software/matlab)
 * [Mathematica](/userinfo/rivanna/software/mathematica)
+* [sageMath](/userinfo/rivanna/software/sagemath)
 * [R & RStudio](/userinfo/rivanna/software/r)
 * [Jupyter Lab](/userinfo/rivanna/software/jupyterlab)
 * [Compilers](/userinfo/rivanna/software/compilers)
