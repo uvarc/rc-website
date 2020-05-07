@@ -46,7 +46,7 @@ A library of prepared TensorFlow containers prepared to run on Rivanna's GPU nod
 module load singularity/3.5.2
 module avail tensorflow
 ```
-The available TensorFlow containers are listed under `/apps/modulefiles/standard/container/singularity/3.5.2`. Loading of any of these container modules produces an on-screen message with instructions on how to copy the TensorFlow container image file.
+The available TensorFlow containers are listed under `$CONTAINERDIR`. Loading of any of these container modules produces an on-screen message with instructions on how to copy the TensorFlow container image file.
 
 # TensorFlow Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available:
