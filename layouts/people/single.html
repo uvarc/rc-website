@@ -29,8 +29,6 @@
 
   {{ .Content }}
 
-  <hr size=1 />
-
   {{ $subjects := .Params.subjects }}
   {{ range $subjects }}
     <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
