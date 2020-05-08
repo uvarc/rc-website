@@ -10,7 +10,7 @@
       <h6 style="font-size:85%;"><a href="/about/people/" style="color:blue;">&laquo; Return to People</a></h6>
     </div>
   
-  {{ if (not (isset .Params "image")) | or (eq .Params.image "") }}
+  {{ if (isset .Params "image") }}
     <img src="{{ .Params.image }}" alt="{{ .Title }}" class="rounded-circle" width="140" height="140">
   {{ end }}
 
