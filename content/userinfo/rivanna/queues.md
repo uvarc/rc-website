@@ -2,7 +2,7 @@
 description = ""
 title = "Rivanna Queues"
 draft = false
-date = "2019-06-28T17:45:12-05:00"
+date = "2020-05-12T17:45:12-05:00"
 tags = ["hpc","rivanna","parallel-computing","gpu","allocations","queues"]
 categories = ["userinfo"]
 images = [""]
@@ -60,7 +60,7 @@ Several queues (or "partitions") are availble to users for different types of jo
       <th scope="row">8</th>
       <th scope="row">32GB</th>
       <th scope="row">240GB</th>
-      <th scope="row">2.00</th>
+      <th scope="row">3.00 <a href="#gpu-detail">*</a></th>
     </tr>
     <tr>
       <th scope="row"><code>knl</code></th>
@@ -82,3 +82,5 @@ Several queues (or "partitions") are availble to users for different types of jo
     </tr>
   </tbody>
 </table>
+
+<p style="font-size:90%;"><a name="gpu-detail">*</a> GPU jobs incur at least 3 SUs: By default a job uses 1 core (1 SU) + 1 GPU (2 SUs) for a total of 3. To calculate for more intensive jobs, add the number of cores plus twice the number of GPUs requested.</p>
