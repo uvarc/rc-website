@@ -146,76 +146,9 @@ A high performance computing cluster is typically made up of at least four servi
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
         Rivanna is a managed resource; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna is SLURM.  SLURM refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
-
-<table class="table" style="font-weight:normal;">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Partition</th>
-      <th scope="col">Max time per job</th>
-      <th scope="col">Max nodes per job</th>
-      <th scope="col">Max cores per job</th>
-      <th scope="col">Max memory per core</th>
-      <th scope="col">Max memory per node per job</th>
-      <th scope="col">SU Charge Rate</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">standard</th>
-      <th scope="row">7 days</th>
-      <th scope="row">1</th>
-      <th scope="row">40</th>
-      <th scope="row">9GB</th>
-      <th scope="row">375GB</th>
-      <th scope="row">1.00</th>
-    </tr>
-    <tr>
-      <th scope="row">parallel</th>
-      <th scope="row">3 days</th>
-      <th scope="row">45</th>
-      <th scope="row">900</th>
-      <th scope="row">9GB</th>
-      <th scope="row">120GB</th>
-      <th scope="row">1.00</th>
-    </tr>
-    <tr>
-      <th scope="row">largemem</th>
-      <th scope="row">4 days</th>
-      <th scope="row">1</th>
-      <th scope="row">16</th>
-      <th scope="row">64GB</th>
-      <th scope="row">975GB</th>
-      <th scope="row">1.00</th>
-    </tr>
-    <tr>
-      <th scope="row">gpu</th>
-      <th scope="row">3 days</th>
-      <th scope="row">4</th>
-      <th scope="row">8</th>
-      <th scope="row">32GB</th>
-      <th scope="row">240GB</th>
-      <th scope="row">2.00</th>
-    </tr>
-    <tr>
-      <th scope="row">knl</th>
-      <th scope="row">3 days</th>
-      <th scope="row">8</th>
-      <th scope="row">512 cores/2048 threads</th>
-      <th scope="row">3 GB (per physical core)	</th>
-      <th scope="row">192GB</th>
-      <th scope="row">1.00</th>
-    </tr>
-    <tr>
-      <th scope="row">dev</th>
-      <th scope="row">1 hour</th>
-      <th scope="row">2</th>
-      <th scope="row">8</th>
-      <th scope="row">6GB</th>
-      <th scope="row">36GB</th>
-      <th scope="row">0.00</th>
-    </tr>
-  </tbody>
-</table>
+        <p>
+            {{< queues >}}
+		</p>
       </div>
     </div>
   </div>
@@ -229,62 +162,7 @@ A high performance computing cluster is typically made up of at least four servi
     </div>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
-<table class="table" style="font-weight:normal;">
-  <thead>
-    <tr>
-      <th scope="col">Cores/node</th>
-      <th scope="col">RAM/node</th>
-      <th scope="col">Nodes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">20</th>
-      <th scope="row">128GB</th>
-      <th scope="row">195</th>
-    </tr>
-    <tr>
-      <th scope="row">28</th>
-      <th scope="row">256GB</th>
-      <th scope="row">25</th>
-    </tr>
-    <tr>
-      <th scope="row">40</th>
-      <th scope="row">384GB</th>
-      <th scope="row">80</th>
-    </tr>
-    <tr>
-      <th scope="row">16</th>
-      <th scope="row">1TB</th>
-      <th scope="row">5</th>
-    </tr>
-    <tr>
-      <th scope="row">28+8 K80 GPU</th>
-      <th scope="row">256GB</th>
-      <th scope="row">8</th>
-    </tr>
-    <tr>
-      <th scope="row">28+4 P100 GPU</th>
-      <th scope="row">256GB</th>
-      <th scope="row">4</th>
-    </tr>
-    <tr>
-      <th scope="row">28+4 V100 GPU</th>
-      <th scope="row">256GB</th>
-      <th scope="row">1</th>
-    </tr>
-    <tr>
-      <th scope="row">40+10 RTX2080 GPU</th>
-      <th scope="row">384GB</th>
-      <th scope="row">2</th>
-    </tr>
-    <tr>
-      <th scope="row">64 Knight's Landing</th>
-      <th scope="row">196GB</th>
-      <th scope="row">8</th>
-    </tr>
-  </tbody>
-</table>
+		{{% rivanna-specs %}}
       </div>
     </div>
   </div>
