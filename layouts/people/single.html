@@ -2,8 +2,11 @@
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
-<div class="row">
-<article class="blog-post" class="col-lg-8 col-md-8 col-sm-6">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-6">
+    <article class="blog-post" class="">
 
   <header>
 
@@ -35,7 +38,9 @@
     <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
   {{ end }}
 
-</article> <!-- /.blog-post -->
+    </article> <!-- /.blog-post -->
+    </div>
+  </div>
 </div>
 
 {{ end }}
