@@ -1,7 +1,10 @@
-  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
-
     <ol class="list-unstyled">
-      {{ range first $num_recent_posts (where .Site.Pages "Type" "post") }}
-      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
+      {{ range first 6 (where .Site.Pages "Type" "post") }}
+
+        {{ if ne .Title "Posts" }}
+
+          <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
+
+        {{ end }}
       {{ end }}
     </ol>
