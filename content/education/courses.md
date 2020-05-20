@@ -1,11 +1,11 @@
 +++
 draft = false
-date = "2017-08-25T10:55:28-05:00"
+date = "2020-05-19T10:55:28-05:00"
 title = "Courses"
 description = ""
 author = "RC Staff"
-categories = ["education","courses"]
-tags = ["R","cloud","AWS","DSI","UVA","BIMS"]
+categories = ["education"]
+tags = ["R","cloud","AWS","DSI","SDS","UVA","BIMS"]
 
 +++
 
@@ -37,7 +37,7 @@ Investigates the architectural foundations of the various cloud platforms, as we
 
 -----
 
-# DSI Bootcamp: Computing, Storage & Data Analysis in the Cloud
+# Data Science Bootcamp: Computing, Storage & Data Analysis in the Cloud
 
 **Summer 2017**
 
