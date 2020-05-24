@@ -94,7 +94,7 @@ module purge
 module load singularity/3.5.2
 
 # Assuming that the container has been copied to the user's home directory
-singularity run --nv ~/pytorch-1.4.0-py37.simg pytorch_example.py
+singularity run --nv ~/pytorch-1.4.0-py37.sif pytorch_example.py
 ```
 
 # PyTorch Interactive Jobs (ijob)
