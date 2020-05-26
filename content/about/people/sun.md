@@ -38,4 +38,4 @@ Massachusetts Institute of Technology (2013)
 
 - B.S. Materials Science and Engineering  
 B.S. Mathematics  
-University of Illinois at Urbana-Champaign(2008)
+University of Illinois at Urbana-Champaign (2008)
