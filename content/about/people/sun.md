@@ -34,11 +34,11 @@ See [Google Scholar](https://scholar.google.com/citations?user=SnJ0Pb8AAAAJ&hl=e
 
 ##### Education
 {{% highlight %}}
-PhD, Materials Science and Engineering, Massachusetts Institute of Technology (2013)
+Ph.D. Materials Science and Engineering  
+Massachusetts Institute of Technology (2013)
 {{% /highlight %}}
 {{% highlight %}}
-BS, Materials Science and Engineering, University of Illinois at Urbana-Champaign(2008)
-{{% /highlight %}}
-{{% highlight %}}
-BS, Mathematics, University of Illinois at Urbana-Champaign(2008)
+B.S. Materials Science and Engineering  
+B.S. Mathematics  
+University of Illinois at Urbana-Champaign(2008)
 {{% /highlight %}}
