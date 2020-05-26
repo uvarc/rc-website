@@ -33,12 +33,9 @@ He is a volunteer pianist at the University Hospital through the "Music for Heal
 See [Google Scholar](https://scholar.google.com/citations?user=SnJ0Pb8AAAAJ&hl=en) for a complete list.
 
 ##### Education
-{{% highlight %}}
-Ph.D. Materials Science and Engineering  
+- Ph.D. Materials Science and Engineering  
 Massachusetts Institute of Technology (2013)
-{{% /highlight %}}
-{{% highlight %}}
-B.S. Materials Science and Engineering  
+
+- B.S. Materials Science and Engineering  
 B.S. Mathematics  
 University of Illinois at Urbana-Champaign(2008)
-{{% /highlight %}}
