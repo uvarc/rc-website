@@ -31,7 +31,6 @@ Rivanna is expected to return to service later in the day.
     * sagemath/9.0 - removed 8.0
     * salmon/1.2.1 - removed 1.0.0 and 1.1.0 due to segfault bug
     * snap-stanford/5.0.9-py3.6
-    * rust/1.41.0
 
 1. New tools:
     * R/4.0.0 under intel/18.0
