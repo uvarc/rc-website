@@ -163,7 +163,7 @@ To connect to Ivy follow the platform-specific steps below:
           <li>Open your High Security VPN connection</li>
           <li>Reference the IP address of your Ivy VM.</li>
           <li>For SSH access:<br />&nbsp;&nbsp;<code>ssh uva-id@ip-address</code></li>
-          <li>For Remote Desktop access: Start the RDP client and point to the IP address of your VM and sign in.</li>
+          <li>For Remote Desktop access: Enter the IP address of your VM in a web browser (https://10.xxx.xxx.xxx) and sign in with your Eservices username and password.</li>
         </ul>
       </div>
     </div>
