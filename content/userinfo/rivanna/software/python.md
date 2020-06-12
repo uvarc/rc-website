@@ -43,9 +43,11 @@ module load anaconda/5.2.0-py2.7
 
 # Python and MPI
 
-{{< module-description module="mpi4py" >}} On Rivanna, we provide mpi4py libraies via dedicated modules that are built using the Gcc compiler and OpenMPI libraries.
+{{< module-description module="mpi4py" >}} On Rivanna, we provide mpi4py libraries via dedicated modules that are built using the GCC compiler and OpenMPI libraries.
 
 {{% module-versions module="mpi4py" %}}
+
+As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install `mpi4py` using any Python/Ancaonda module via `pip install --user mpi4py`.
 
 # View list of all installed packages
 After loading an `anaconda` module, a list of all installed packages can be viewed by running this command:
