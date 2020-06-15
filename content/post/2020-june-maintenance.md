@@ -25,7 +25,7 @@ Rivanna is expected to return to service later in the day.
     * intel/20.0 & toolchains - default 18.0
     * goolfc/8.3.0_3.1.6_10.2.89 - GCC 8 toolchain with OpenMPI, CUDA support, and numerical libraries
     * cuda/10.2.89
-    * R/3.6.3 (default), 3.5.3, 3.4.4; removed 3.6.[0-2], 3.5.1, 3.4.3
+    * R/3.6.3 (default), 3.5.3, 3.4.4; removed 3.6.[0-2], 3.5.1, 3.4.3  (For more details, see ["R Updates"](/userinfo/r_updates) and ["New Libraries"](/userinfo/transition_new_r_libraries)
     * matlab/R2020a
     * netcdf/4.7.3
     * sagemath/9.0 - removed 8.0
