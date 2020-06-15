@@ -51,9 +51,24 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 # Allocations
 
 ## How do I check my allocation status on Rivanna?
-Run the command `allocations`
+Run the command `allocations`.  The output may look like this:
+```
 
-In all cases you will need to use an account with remaining service units in order to submit jobs.  You do not need any allocation units to access the frontend or files in your directories as long as your account is active.
+Name           Balance  Reserved Effective Available 
+-------------- -------- -------- --------- --------- 
+rivanna_alloc  9885.811 1000.000  8885.811  8885.811 
+
+ for more information about a specific allocation,
+ run: 'allocations -a <allocation name>'
+```
+
+The `Balance` column shows the total of unused SUs; the `Reserved` column shows the number of SUs reserved for current active jobs (pending or running). It resembles an escrow or lien put on the account. The `Effective` and `Available` columns show the difference of Balance and Reserved, i.e. the amount of SUs available for future jobs. **After a job completes, the actual consumed SUs used will be deducted from the allocation balance and any unused SUs will be released from the reserved escrow pool.** 
+
+In all cases you can only submit additional jobs if the available SU amount is greater than the new lien required. You do not need any allocation units to access the frontend or files in your directories as long as your account is active.
+
+## What is an allocation lien?
+
+When a job is submitted the account manager calculates the required amount of service units (SUs) based on the requested resources with the assumption that the job runs to the implicit or specified time limit (wall time). These SUs are held in escrow as a lien against the used allocation while the job is active. When the job completes the lien is released and the actual consumed SUs are deducted from the allocation balance, see [How do I check my allocation status on Rivanna?](/userinfo/faq/rivanna-faq/#how-do-i-check-my-allocation-status-on-rivanna).
 
 ## How do I add or remove people from my allocations?
 You must use the MyGroups interface to do this, and you must have administrative access to the group.
