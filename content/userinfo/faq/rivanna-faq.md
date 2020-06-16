@@ -51,7 +51,7 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 # Allocations
 
 ## How do I check my allocation status on Rivanna?
-Run the command `allocations`.  The output may look like this:
+Run the `allocations` command.  The output may look like this:
 ```
 
 Name           Balance  Reserved Effective Available 
@@ -62,13 +62,18 @@ rivanna_alloc  9885.811 1000.000  8885.811  8885.811
  run: 'allocations -a <allocation name>'
 ```
 
-The `Balance` column shows the total of unused SUs; the `Reserved` column shows the number of SUs reserved for current active jobs (pending or running). It resembles an escrow or lien put on the account. The `Effective` and `Available` columns show the difference of Balance and Reserved, i.e. the amount of SUs available for future jobs. **After a job completes, the actual consumed SUs used will be deducted from the allocation balance and any unused SUs will be released from the reserved escrow pool.** 
+The _Balance_ column shows the total of unused SUs; the _Reserved_ column shows the number of SUs held for current active jobs (pending or running). The _Effective_ and _Available_ columns show the difference of _Balance_ and _Reserved_, i.e. the amount of SUs available for future jobs. **After a job completes, the SUs actually consumed will be deducted from the allocation Balance and any SUs unused by that job will be released from the Reserved pool.**
 
-In all cases you can only submit additional jobs if the available SU amount is greater than the new lien required. You do not need any allocation units to access the frontend or files in your directories as long as your account is active.
+In all cases you can only submit additional jobs if the available SU
+amount is sufficient to cover the full SU request for the jobs.
 
-## What is an allocation lien?
+You do not need any allocation service units to access the frontend or files in
+your directories as long as your account is active.
 
-When a job is submitted the account manager calculates the required amount of service units (SUs) based on the requested resources with the assumption that the job runs to the implicit or specified time limit (wall time). These SUs are held in escrow as a lien against the used allocation while the job is active. When the job completes the lien is released and the actual consumed SUs are deducted from the allocation balance, see [How do I check my allocation status on Rivanna?](/userinfo/faq/rivanna-faq/#how-do-i-check-my-allocation-status-on-rivanna).
+## How are SUs Reserved?
+
+When a job is submitted the account manager calculates the required maximum amount of service units (SUs) using the assumption that the job will run the full amount of time requested. These SUs are held in reserve as a "lien" against the allocation charged for the job.  When the job completes the lien is released and the _actual_ SUs consumed
+are deducted from the allocation balance. See [How do I check my allocation status on Rivanna?](/userinfo/faq/rivanna-faq/#how-do-i-check-my-allocation-status-on-rivanna) for specifics.
 
 ## How do I add or remove people from my allocations?
 You must use the MyGroups interface to do this, and you must have administrative access to the group.
