@@ -51,9 +51,29 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 # Allocations
 
 ## How do I check my allocation status on Rivanna?
-Run the command `allocations`
+Run the `allocations` command.  The output may look like this:
+```
 
-In all cases you will need to use an account with remaining service units in order to submit jobs.  You do not need any allocation units to access the frontend or files in your directories as long as your account is active.
+Name           Balance  Reserved Effective Available 
+-------------- -------- -------- --------- --------- 
+rivanna_alloc  9885.811 1000.000  8885.811  8885.811 
+
+ for more information about a specific allocation,
+ run: 'allocations -a <allocation name>'
+```
+
+The _Balance_ column shows the total of unused SUs; the _Reserved_ column shows the number of SUs held for current active jobs (pending or running). The _Effective_ and _Available_ columns show the difference of _Balance_ and _Reserved_, i.e. the amount of SUs available for future jobs. **After a job completes, the SUs actually consumed will be deducted from the allocation Balance and any SUs unused by that job will be released from the Reserved pool.**
+
+In all cases you can only submit additional jobs if the available SU
+amount is sufficient to cover the full SU request for the jobs.
+
+You do not need any allocation service units to access the frontend or files in
+your directories as long as your account is active.
+
+## How are SUs Reserved?
+
+When a job is submitted the account manager calculates the required maximum amount of service units (SUs) using the assumption that the job will run the full amount of time requested. These SUs are held in reserve as a "lien" against the allocation charged for the job.  When the job completes the lien is released and the _actual_ SUs consumed
+are deducted from the allocation balance. See [How do I check my allocation status on Rivanna?](/userinfo/faq/rivanna-faq/#how-do-i-check-my-allocation-status-on-rivanna) for specifics.
 
 ## How do I add or remove people from my allocations?
 You must use the MyGroups interface to do this, and you must have administrative access to the group.
