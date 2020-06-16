@@ -25,6 +25,8 @@ images = [""]
   This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to project storage.
 </p>
 
+<div style="width:100%;height:3rem;"></div>
+
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
 # Basic Principles of Microservices
