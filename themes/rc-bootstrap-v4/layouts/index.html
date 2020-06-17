@@ -56,10 +56,6 @@
 
           <!-- {{ partial "upcoming-event.html" . }} -->
 
-          <hr size=1 />
-
-          {{ partial "status.html" . }}
-
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
         <!-- END MIDDLE COLUMN -->
 
@@ -72,6 +68,16 @@
         </aside><!-- /.blog-sidebar -->
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
+
+    </div> {{ "<!-- /.container -->" | safeHTML }}
+
+    <!-- BEGIN NEW STATUS AREA -->
+    <div class="container">
+      <div class="row">
+
+        {{ partial "status-wide.html" . }}
+
+      </div>
     </div> {{ "<!-- /.container -->" | safeHTML }}
 
     {{ partial "konami-modal.html" . }}

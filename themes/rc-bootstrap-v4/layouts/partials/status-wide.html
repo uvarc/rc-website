@@ -1,0 +1,126 @@
+<div id="status-message" class="alert alert-danger" role="alert" style="font-size:80%;padding:10px;width:100%;">
+  <p id="status-message-content-z" style="margin:0; padding:0;"></p>
+</div>
+
+<div class="col-sm-4 blog-main">
+  <p class=lead>Systems</p>
+  <table class="table table-sm table-responsive status-tbl table-striped" style="">
+    <tbody id="statusBodyz"></tbody>
+  </table>
+</div>
+<div class="col-sm-4 blog-main">
+  <p class=lead>Storage</p>
+  <table class="table table-sm table-responsive status-tbl table-striped" style="">
+    <tbody id="statusBodyy"></tbody>
+  </table>
+
+<p style="text-align:left;margin-top:2rem;"><a href="https://rci.hpc.virginia.edu/xdmod/" target="_new" style="font-size:85%;text-decoration:none;"><i class="fas fa-chart-line"></i> View additional HPC metrics</a></p>
+
+</div>
+<div class="col-sm-4 blog-main">
+  <p class=lead>HPC Jobs</p>
+    <table class="table table-sm table-responsive status-tbl table-striped" style="">
+      <tbody id="jobsBodyz"></tbody>
+    </table>
+</div>
+
+<section class="" style="width:100%;">
+<div style="width:100%;margin-bottom:1rem;">
+
+  <div style="float:right;width:24%;">
+  </div>
+
+  <div style="width:24%;">
+  </div>
+
+  <div style="width:24%;">
+  </div>
+
+</div>
+</section>
+
+<script>
+$(document).ready(function() {
+    $("#status-message").hide();
+    refreshStatusTable();
+    setInterval(refreshStatusTable, 60000);
+    refreshStorageTable();
+    setInterval(refreshStorageTable, 60000);
+    checkStatusMessages();
+    setInterval(checkStatusMessages, 60000);
+    refreshJobsTable();
+    setInterval(refreshJobsTable, 60000);
+});
+
+function checkStatusMessages() {
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/messages', function(data) {
+        var messageData = '';
+        $.each(data, function(key, value) {
+            var messageBody = value.body;
+            var messageLength = messageBody.length;
+            if ( messageLength < 22 ) {
+                $("#status-message").hide();
+            } else {
+                $("#status-message").show();
+                messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
+                messageData += value.body;
+                $('#status-message-content-z').html(messageData);
+            }
+        });
+    });
+}
+
+function refreshStatusTable(){
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/health', function(data) {
+        var statusData = '';
+        $.each(data, function(key, value) {
+          if (key == 4) {
+            return false;
+          } else {
+            statusData += '<tr>';
+            statusData += '<td>'+value.title+'</td>';
+            statusData += '<td><img style="padding:auto;" src='+value.image+' /></td>';
+            statusData += '</tr>';
+          };
+        });
+        $('#statusBodyz').html(statusData);
+    });
+}
+
+function refreshStorageTable(){
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/health', function(data) {
+        var statusData = '';
+        $.each(data, function(key, value) {
+          if (key == 3 || key == 2 || key == 1 || key == 0) {
+            // return false;
+            statusData += '';
+          } else {
+            // return false;
+            statusData += '<tr>';
+            statusData += '<td>'+value.title+'</td>';
+            statusData += '<td><img style="padding:auto;" src='+value.image+' /></td>';
+            statusData += '</tr>';
+          };
+        });
+        $('#statusBodyy').html(statusData);
+    });
+}
+
+function refreshJobsTable(){
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/jobs', function(data) {
+        var jobData = '';
+        $.each(data, function(key, value) {
+          if (key == 4) {
+            return false;
+          } else {
+            jobData += '<tr>';
+            jobData += '<td>'+value.partition+'</td>';
+            jobData += '<td>'+value.jobs+'</td>';
+            jobData += '</tr>';     
+          }
+        });
+        $('#jobsBodyz').html(jobData);
+    });
+}
+
+</script>
