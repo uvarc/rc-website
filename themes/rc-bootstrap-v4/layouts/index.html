@@ -50,15 +50,11 @@
         <!-- BEGIN MIDDLE COLUMN -->
         <div class="col-sm-4 blog-main">
 
-          <!-- <p class=lead>User News & Events</p> -->
+          {{ partial "status.html" . }}
 
           {{ partial "twitter.html" . }}
 
           <!-- {{ partial "upcoming-event.html" . }} -->
-
-          <hr size=1 />
-
-          {{ partial "status.html" . }}
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
         <!-- END MIDDLE COLUMN -->
@@ -72,6 +68,7 @@
         </aside><!-- /.blog-sidebar -->
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
+
     </div> {{ "<!-- /.container -->" | safeHTML }}
 
     {{ partial "konami-modal.html" . }}

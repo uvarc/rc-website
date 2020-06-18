@@ -50,6 +50,10 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 
 # Allocations
 
+## What is an allocation?
+
+Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [MyGroups](https://mygroups.virginia.edu/) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations). 
+
 ## How do I check my allocation status on Rivanna?
 Run the `allocations` command.  The output may look like this:
 ```
@@ -62,7 +66,7 @@ rivanna_alloc  9885.811 1000.000  8885.811  8885.811
  run: 'allocations -a <allocation name>'
 ```
 
-The _Balance_ column shows the total of unused SUs; the _Reserved_ column shows the number of SUs held for current active jobs (pending or running). The _Effective_ and _Available_ columns show the difference of _Balance_ and _Reserved_, i.e. the amount of SUs available for future jobs. **After a job completes, the SUs actually consumed will be deducted from the allocation Balance and any SUs unused by that job will be released from the Reserved pool.**
+The _Balance_ column shows the total of unused service units (SUs); the _Reserved_ column shows the number of SUs held for current active jobs (pending or running). The _Effective_ and _Available_ columns show the difference of _Balance_ and _Reserved_, i.e. the amount of SUs available for future jobs. **After a job completes, the SUs actually consumed will be deducted from the allocation Balance and any SUs unused by that job will be released from the Reserved pool.**
 
 In all cases you can only submit additional jobs if the available SU
 amount is sufficient to cover the full SU request for the jobs.

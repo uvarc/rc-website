@@ -1,45 +1,36 @@
-<section class="sidebar-module">
-<p class=lead>Status</p>
-<div style="width:100%;">
-
-<div id="status-message" class="alert alert-danger" role="alert" style="font-size:80%;padding:10px;">
+<div id="status-message" class="alert alert-danger" role="alert" style="font-size:80%;padding:10px;width:100%;">
   <p id="status-message-content" style="margin:0; padding:0;"></p>
 </div>
 
-  <div style="float:right;width:48%;">
-  <table class="table table-sm table-responsive status-tbl table-striped" style="width:100%;border:solid 1px #f5f5f5;">
-    <thead class="thead-inverse">
-      <tr>
-        <th scope="row">Queue</th>
-        <th>Jobs</th>
-      </tr>
-    </thead>
-    <tbody id="jobsBody"></tbody>
-  </table>
-  </div>
-
-  <div style="width:48%;">
-  <table class="table table-sm table-responsive status-tbl table-striped" style="width:100%;border:solid 1px #f5f5f5;">
-    <thead class="thead-inverse">
-      <tr>
-        <th scope="row">System</th>
-        <th align="center">Status</th>
-      </tr>
-    </thead>
+<div class="col-6 col-sm-4 col-lg-4">
+  <p class=lead>Systems</p>
+  <table class="table table-sm table-responsive status-tbl table-striped" style="">
     <tbody id="statusBody"></tbody>
   </table>
-  </div>
-
 </div>
-<p style="text-align:right;"><a href="https://rci.hpc.virginia.edu/xdmod/" target="_new" style="font-size:85%;text-decoration:none;"><i class="fas fa-chart-line"></i> View additional HPC metrics</a></p>
-</section>
+
+<div class="col-6 col-sm-4 col-lg-4">
+  <p class=lead>Storage</p>
+  <table class="table table-sm table-responsive status-tbl table-striped" style="">
+    <tbody id="storageBody"></tbody>
+  </table>
+  <p style="text-align:left;margin-top:2rem;"><a href="https://rci.hpc.virginia.edu/xdmod/" target="_new" style="font-size:85%;text-decoration:none;"><i class="fas fa-chart-line"></i> View additional HPC metrics</a></p>
+</div>
+
+<div class="col-6 col-sm-4 col-lg-4">
+  <p class=lead>HPC Jobs</p>
+    <table class="table table-sm table-responsive status-tbl table-striped" style="">
+      <tbody id="jobsBody"></tbody>
+    </table>
+</div>
 
 <script>
-
 $(document).ready(function() {
     $("#status-message").hide();
     refreshStatusTable();
     setInterval(refreshStatusTable, 60000);
+    refreshStorageTable();
+    setInterval(refreshStorageTable, 60000);
     checkStatusMessages();
     setInterval(checkStatusMessages, 60000);
     refreshJobsTable();
@@ -68,12 +59,35 @@ function refreshStatusTable(){
     $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/health', function(data) {
         var statusData = '';
         $.each(data, function(key, value) {
+          if (key == 4) {
+            return false;
+          } else {
             statusData += '<tr>';
             statusData += '<td>'+value.title+'</td>';
             statusData += '<td><img style="padding:auto;" src='+value.image+' /></td>';
             statusData += '</tr>';
+          };
         });
         $('#statusBody').html(statusData);
+    });
+}
+
+function refreshStorageTable(){
+    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/health', function(data) {
+        var statusData = '';
+        $.each(data, function(key, value) {
+          if (key == 3 || key == 2 || key == 1 || key == 0) {
+            // return false;
+            statusData += '';
+          } else {
+            // return false;
+            statusData += '<tr>';
+            statusData += '<td>'+value.title+'</td>';
+            statusData += '<td><img style="padding:auto;" src='+value.image+' /></td>';
+            statusData += '</tr>';
+          };
+        });
+        $('#storageBody').html(statusData);
     });
 }
 
