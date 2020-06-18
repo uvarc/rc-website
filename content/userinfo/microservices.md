@@ -166,10 +166,16 @@ To be eligible to run your microservice on our infrastructure, you must meet the
 
 # Pricing
 
-Currently our microservices cluster is in beta testing. We welcome any single-container applications for free, 
-either as a deployment listed above or a ready-to-run container that you bring.
+Starting with the new fiscal year beginning July 1, the pilot phase of the DCOS platform will conclude and we will 
+begin charging a modest monthly fee for the use of research container services on DCOS.
 
-Have a more complicated design? Submit a consultation request using the button below.
+The following pricing structure will take effect on 1 July 2020:
+
+- Light Tier (1-5 containers) - $5/month total
+- Medium Tier (6-15 containers) - $10/month total
+- Heavy Tier (>15 containers) - $48/month total
+
+No charges will be incurred for stopped containers or any cluster storage.
 
 - - -
 
