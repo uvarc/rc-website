@@ -50,7 +50,7 @@
         <!-- BEGIN MIDDLE COLUMN -->
         <div class="col-sm-4 blog-main">
 
-          <!-- <p class=lead>User News & Events</p> -->
+          {{ partial "status.html" . }}
 
           {{ partial "twitter.html" . }}
 
@@ -69,15 +69,6 @@
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
 
-    </div> {{ "<!-- /.container -->" | safeHTML }}
-
-    <!-- BEGIN NEW STATUS AREA -->
-    <div class="container">
-      <div class="row">
-
-        {{ partial "status-wide.html" . }}
-
-      </div>
     </div> {{ "<!-- /.container -->" | safeHTML }}
 
     {{ partial "konami-modal.html" . }}
