@@ -11,8 +11,8 @@ categories = ["feature"]
 
 Research Computing will be activating a new accounting management package for Rivanna on June 17, 2020. The software was purchased from Adaptive Computing, which specializes in advanced management applications for high-performance systems. Rivanna users can expect to see more accurate reporting on their Service Unit (SU) balances and burn rates. Information on usage by individual members of an allocation group will also be available.
 
-Commands such as `allocations` will remain but will reflect the new accounting. Users should be aware that the new accounting system implements "liens" on running jobs, and that the SUs requested for each job will be held "in escrow" until the job completes. After a job completes, the actual SUs used will be deducted from the allocation and any unused SUs will be released from escrow. This will prevent balances from becoming negative, but means that fewer SUs will be available while jobs are running.
+Commands such as `allocations` will remain but will reflect the new accounting. Users should be aware that the new accounting system implements "liens" on running jobs, and that the SUs requested for each job will be held in a reserved pool until the job completes. When the job completes the lien is released and the _actual_ SUs consumed
+are deducted from the allocation balance. This will prevent balances from becoming negative, but means that fewer SUs will be available while jobs are running. Details are explained in our [FAQ](/userinfo/faq/rivanna-faq/#allocations) section.
 
 Learn more:
-- [Rivanna Allocations](/userinfo/rivanna/allocations/)
 - [Rivanna Overview](/userinfo/rivanna/overview/)
