@@ -1,43 +1,28 @@
 <div id="status-message" class="alert alert-danger" role="alert" style="font-size:80%;padding:10px;width:100%;">
-  <p id="status-message-content-z" style="margin:0; padding:0;"></p>
+  <p id="status-message-content" style="margin:0; padding:0;"></p>
 </div>
 
-<div class="col-sm-4 blog-main">
+<div class="col-sm-4">
   <p class=lead>Systems</p>
   <table class="table table-sm table-responsive status-tbl table-striped" style="">
-    <tbody id="statusBodyz"></tbody>
+    <tbody id="statusBody"></tbody>
   </table>
 </div>
-<div class="col-sm-4 blog-main">
+
+<div class="col-sm-4">
   <p class=lead>Storage</p>
   <table class="table table-sm table-responsive status-tbl table-striped" style="">
-    <tbody id="statusBodyy"></tbody>
+    <tbody id="storageBody"></tbody>
   </table>
-
-<p style="text-align:left;margin-top:2rem;"><a href="https://rci.hpc.virginia.edu/xdmod/" target="_new" style="font-size:85%;text-decoration:none;"><i class="fas fa-chart-line"></i> View additional HPC metrics</a></p>
-
+  <p style="text-align:left;margin-top:2rem;"><a href="https://rci.hpc.virginia.edu/xdmod/" target="_new" style="font-size:85%;text-decoration:none;"><i class="fas fa-chart-line"></i> View additional HPC metrics</a></p>
 </div>
-<div class="col-sm-4 blog-main">
+
+<div class="col-sm-4">
   <p class=lead>HPC Jobs</p>
     <table class="table table-sm table-responsive status-tbl table-striped" style="">
-      <tbody id="jobsBodyz"></tbody>
+      <tbody id="jobsBody"></tbody>
     </table>
 </div>
-
-<section class="" style="width:100%;">
-<div style="width:100%;margin-bottom:1rem;">
-
-  <div style="float:right;width:24%;">
-  </div>
-
-  <div style="width:24%;">
-  </div>
-
-  <div style="width:24%;">
-  </div>
-
-</div>
-</section>
 
 <script>
 $(document).ready(function() {
@@ -64,7 +49,7 @@ function checkStatusMessages() {
                 $("#status-message").show();
                 messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
                 messageData += value.body;
-                $('#status-message-content-z').html(messageData);
+                $('#status-message-content').html(messageData);
             }
         });
     });
@@ -83,7 +68,7 @@ function refreshStatusTable(){
             statusData += '</tr>';
           };
         });
-        $('#statusBodyz').html(statusData);
+        $('#statusBody').html(statusData);
     });
 }
 
@@ -102,7 +87,7 @@ function refreshStorageTable(){
             statusData += '</tr>';
           };
         });
-        $('#statusBodyy').html(statusData);
+        $('#storageBody').html(statusData);
     });
 }
 
@@ -110,16 +95,12 @@ function refreshJobsTable(){
     $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/jobs', function(data) {
         var jobData = '';
         $.each(data, function(key, value) {
-          if (key == 4) {
-            return false;
-          } else {
             jobData += '<tr>';
             jobData += '<td>'+value.partition+'</td>';
             jobData += '<td>'+value.jobs+'</td>';
             jobData += '</tr>';     
-          }
         });
-        $('#jobsBodyz').html(jobData);
+        $('#jobsBody').html(jobData);
     });
 }
 
