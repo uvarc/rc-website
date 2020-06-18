@@ -171,9 +171,32 @@ begin charging a modest monthly fee for the use of research container services o
 
 The following pricing structure will take effect on 1 July 2020:
 
-- Light Tier (1-5 containers) - $5/month total
-- Medium Tier (6-15 containers) - $10/month total
-- Heavy Tier (>15 containers) - $48/month total
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tier</th>
+      <th scope="col">Containers</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Light Tier</th>
+      <td>1 - 5</td>
+      <td>$5 / month</td>
+    </tr>
+    <tr>
+      <th scope="row">Medium Tier</th>
+      <td>6 - 15</td>
+      <td>$10 / month</td>
+    </tr>
+    <tr>
+      <th scope="row">Heavy Tier</th>
+      <td>> 15 containers</td>
+      <td>$48 / month</td>
+    </tr>
+  </tbody>
+</table>
 
 No charges will be incurred for stopped containers or any cluster storage.
 
