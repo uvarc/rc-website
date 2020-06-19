@@ -14,6 +14,7 @@ categories = ["feature"]
 {{< alert-green >}}Rivanna will be down for maintenance on <strong>Wednesday, June 17</strong>, beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
+<!--more-->
 
 Rivanna is expected to return to service later in the day.
 
