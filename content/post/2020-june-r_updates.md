@@ -11,11 +11,11 @@ categories = ["feature"]
 +++
 
 During the June maintenance, we made changes to R which **will** affect how your R programs run on Rivanna. A brief description of the changes is as follows:
+<!--more-->
 
 * The gcc-built versions of R were updated to goolf-built versions.
 * The locations of the R libraries were updated.
 * The versions of R have been streamlined to 3.4.4, 3.5.3, 3.6.3, and 4.0.0.
-<!--more-->
 
 # 1. The gcc-built versions of R have been updated to goolf-built versions.
 Instead of loading gcc before loading R, you will need to load `goolf` or `gcc openmpi`.  For example:  `module load goolf R/4.0.0`. 
