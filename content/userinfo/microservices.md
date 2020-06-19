@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2019-09-18T10:08:29-05:00"
+date = "2020-06-17T10:08:29-05:00"
 draft = false
 tags = ["compute","cloud","hpc","containers","dcos","hybrid","infrastructure"]
 categories = ["userinfo"]
@@ -166,10 +166,39 @@ To be eligible to run your microservice on our infrastructure, you must meet the
 
 # Pricing
 
-Currently our microservices cluster is in beta testing. We welcome any single-container applications for free, 
-either as a deployment listed above or a ready-to-run container that you bring.
+Starting with the new fiscal year beginning July 1, the pilot phase of the DCOS platform will conclude and we will 
+begin charging a modest monthly fee for the use of research container services on DCOS.
 
-Have a more complicated design? Submit a consultation request using the button below.
+The following pricing structure will take effect on 1 July 2020:
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tier</th>
+      <th scope="col">Containers</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Light Tier</th>
+      <td>1 - 5</td>
+      <td>$5 / month</td>
+    </tr>
+    <tr>
+      <th scope="row">Medium Tier</th>
+      <td>6 - 15</td>
+      <td>$10 / month</td>
+    </tr>
+    <tr>
+      <th scope="row">Heavy Tier</th>
+      <td>> 15 containers</td>
+      <td>$48 / month</td>
+    </tr>
+  </tbody>
+</table>
+
+No charges will be incurred for stopped containers or any cluster storage.
 
 - - -
 
