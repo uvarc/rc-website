@@ -44,11 +44,11 @@ Access to Ivy resources is project-based, limited to PIs and their designees, an
 
 # Training
 
-In order to use Ivy, researchers must complete the Information Security Awareness Training (ISAT). This training takes approximately 10 minutes to complete.
+In order to use Ivy, researchers must complete the High Security Awareness Training (HSAT). This training takes approximately 10 minutes to complete.
 
-If you have a Workday account, please complete the training at the following link: <a href="https://www.myworkday.com/uva/d/inst/1$17816/17816$202.htmld" target="_blank">Workday ISAT</a>.
+If you have a Workday account, please complete the training at the following link: <a href="https://in.virginia.edu/hsat-training" target="_blank">Workday HSAT</a>.
 
-If you are a student and do not have a Workday account, please complete the training at this link instead: <a href="https://quiz.its.virginia.edu/itsa-staff" target="_blank">Student ISAT</a>.
+If you are a student and do not have a Workday account, please complete contact infosec-training@virginia.edu for access to alternate training materials.
 
 - - -
 
