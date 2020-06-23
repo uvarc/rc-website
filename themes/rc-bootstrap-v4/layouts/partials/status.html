@@ -2,9 +2,11 @@
 <p class=lead>Status</p>
 <div style="width:100%;">
 
+<!--
 <div id="status-message" class="alert alert-danger" role="alert" style="font-size:80%;padding:10px;">
-  <p id="status-message-content" style="margin:0; padding:0;"></p>
+  <p id="status-message-content-z" style="margin:0; padding:0;"></p>
 </div>
+-->
 
   <div style="float:right;width:48%;">
   <table class="table table-sm table-responsive status-tbl table-striped" style="width:100%;border:solid 1px #f5f5f5;">
@@ -23,7 +25,7 @@
     <thead class="thead-inverse">
       <tr>
         <th scope="row">System</th>
-        <th align="center">Status</th>
+        <th align="center" style="text-align:center;">Status</th>
       </tr>
     </thead>
     <tbody id="statusBody"></tbody>
@@ -70,7 +72,7 @@ function refreshStatusTable(){
         $.each(data, function(key, value) {
             statusData += '<tr>';
             statusData += '<td>'+value.title+'</td>';
-            statusData += '<td class="table-cell" align=center><img style="vertical-align:middle;" src='+value.image+' /></td>';
+            statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src='+value.image+' /></td>';
             statusData += '</tr>';
         });
         $('#statusBody').html(statusData);
