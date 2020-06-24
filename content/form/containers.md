@@ -64,7 +64,7 @@ private = true
     </div>
   </div>
   </div>
-  <div style="font-size:90%;" class="alert alert-success"><b>Billing Tiers</b> are calculated by the average running containers in your account each month. Stopped containers do not incur charges, nor do any cluster or remote NFS mounts to <code>/project</code> storage. Project storage pricing can be found <a href="/userinfo/storage/" style="font-weight:bold;">here</a>.</div>
+  <div style="font-size:90%;" class="alert alert-success"><b>Billing Tiers</b> are selected and paid for by the PI. Submit this form again if you wish to change your tier. Stopped containers do not incur charges, nor does local cluster storage or remote NFS mounts to <code>/project</code> storage. Project storage pricing can be found <a href="/userinfo/storage/" style="font-weight:bold;">here</a>.</div>
   <hr size=1 />
 
   <div class="row">
