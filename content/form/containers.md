@@ -53,7 +53,7 @@ private = true
     <label class="control-label" for="type-of-request">Tier of Service <span class="form-required" title="This field is required.">*</span></label>
     <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-1" name="dcos-tier" value="dcos-tier-1" class="form-radio" /> &nbsp; < 5 containers ($5/month total)</label>
+        <input required="required" type="radio" id="tier-1" name="dcos-tier" value="dcos-tier-1" class="form-radio" /> &nbsp; <= 5 containers ($5/month total)</label>
       </div>
       <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="tier-2" name="dcos-tier" value="dcos-tier-2" class="form-radio" /> &nbsp; 6 - 15 containers ($10/month total)</label>
@@ -66,26 +66,51 @@ private = true
   </div>
   <div style="font-size:90%;" class="alert alert-success"><b>Billing Tiers</b> are calculated by the average running containers in your account each month. Stopped containers do not incur charges, nor do any cluster or remote NFS mounts to <code>/project</code> storage. Project storage pricing can be found <a href="/userinfo/storage/" style="font-weight:bold;">here</a>.</div>
   <hr size=1 />
+
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="storage-options">Storage Requirements <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; No storage necessary</label>
+        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; No storage required</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Persistent cluster storage required</label>
+        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Persistent cluster storage required</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()"required="required" type="radio" id="storage-choice4" name="storage-choice" value="zfs" class="form-radio" /> &nbsp; NFS mount of project storage is required</label>
+        <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="zfs" class="form-radio" /> &nbsp; NFS mount of project storage is required</label>
       </div>
     </div>
   </div>
     <div class="col form-item form-group">
-      <label class="control-label" for="capacity">Capacity (GB) <span class="form-required" title="This field is required.">*</span></label>
+      <label class="control-label" for="capacity">Storage Capacity (GB) <span class="form-required" title="This field is required.">*</span></label>
       <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>The size of storage if required. Specify in 1GB increments.</p>
     </div>
+  </div>
+  <div class="row">
+  <div class="col form-item form-group form-item form-type-radios form-group"> 
+    <label class="control-label" for="ssl-required">SSL/HTTPS Required <span class="form-required" title="This field is required.">*</span></label>
+    <div id="storage-options" class="form-radios">
+      <div class="form-item form-type-radio radio">
+        <input checked required="required" type="radio" id="ssl-required-no" name="ssl-required" value="ssl-no" class="form-radio" /> &nbsp; No</label>
+      </div>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="ssl-required-yes" name="ssl-required" value="ssl-yes" class="form-radio" /> &nbsp; Yes</label>
+      </div>
+    </div>
+  </div>
+  <div class="col form-item form-group form-item form-type-radios form-group"> 
+    <label class="control-label" for="netbadge-required">Netbadge Authentication <span class="form-required" title="This field is required.">*</span></label>
+    <div id="storage-options" class="form-radios">
+      <div class="form-item form-type-radio radio">
+        <input checked required="required" type="radio" id="netbadge-required-no" name="netbadge-required" value="netbadge-no" class="form-radio" /> &nbsp; No</label>
+      </div>
+      <div class="form-item form-type-radio radio">
+        <input required="required" type="radio" id="netbadge-required-yes" name="netbadge-required" value="netbadge-yes" class="form-radio" /> &nbsp; Yes</label>
+      </div>
+    </div>
+  </div>
   </div>
   <hr size=1 />
 <label class="control-label" for="data-sensitivity-2">PTAO</label>
