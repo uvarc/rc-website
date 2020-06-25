@@ -150,6 +150,34 @@ private = true
 </div>
 </form>
 
+
+<div>
+
+<!-- https://auth.uvasomrc.io/site/info.json -->
+
+<ul>
+  {{ $urlPre := "https://auth.uvasomrc.io" }}
+  {{ $identJ := getJSON $urlPre "/site/info.json" }}
+  {{ range first 1 $identJ }}
+      <li>UID: {{ .uid }}</li>
+      <li>Name: {{ .name }}</li>
+      <li>Tier: {{ .tier }}</li>
+      <li>Count: {{ .count }}</li>
+  {{ end }}
+</ul>
+
+<pre>
+  {
+    "uid": "nem2p",
+    "name": "Neal Magee",
+    "tier": "3",
+    "count": "17"
+  }
+</pre>
+
+</div>
+
+
 <script>
 function getParams() {
   var vars = {};
