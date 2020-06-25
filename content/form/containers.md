@@ -149,12 +149,8 @@ private = true
   </div>
 </div>
 </form>
-
-
 <div>
-
 <!-- https://auth.uvasomrc.io/site/info.json -->
-
 <ul>
   {{ $urlPre := "https://auth.uvasomrc.io" }}
   {{ $identJ := getJSON $urlPre "/site/info.json" }}
@@ -165,7 +161,6 @@ private = true
       <li>Count: {{ .count }}</li>
   {{ end }}
 </ul>
-
 <pre>
   {
     "uid": "nem2p",
@@ -174,10 +169,7 @@ private = true
     "count": "17"
   }
 </pre>
-
 </div>
-
-
 <script>
 function getParams() {
   var vars = {};
