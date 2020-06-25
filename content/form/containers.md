@@ -82,8 +82,8 @@ private = true
     </div>
   </div>
     <div class="col form-item form-group">
-      <label class="control-label" for="capacity">Storage Capacity (GB) <span class="form-required" title="This field is required.">*</span></label>
-      <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
+      <label class="control-label" for="capacity">Storage Capacity (GB)</label>
+      <input class="form-control" type="number" min="1" max="100" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>The size of storage if required. Specify in 1GB increments.</p>
     </div>
   </div>
@@ -112,7 +112,7 @@ private = true
   </div>
   </div>
   <hr size=1 />
-<label class="control-label" for="data-sensitivity-2">PTAO</label>
+<label class="control-label" for="data-sensitivity-2">PTAO <span class="form-required" title="This field is required.">*</span></label>
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
       <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
@@ -132,7 +132,7 @@ private = true
     </div>
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="financial-contact">Financial Contact </label>
+    <label class="control-label" for="financial-contact">Financial Contact <span class="form-required" title="This field is required.">*</span></label>
     <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
     <small id="financialContactHelp" class="form-text text-muted">Please enter the name and email address of your financial contact.</small>
   </div>
@@ -146,6 +146,10 @@ private = true
 </div>
 
 <script>
+$('form').submit(function() {
+  $(this).find("button[type='submit']").prop('disabled',true);
+});
+
 function getParams() {
   var vars = {};
   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -153,6 +157,7 @@ function getParams() {
   });
   return vars;
 }
+
 function decode64(str) {
   var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
   var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -163,11 +168,12 @@ function decode64(str) {
   }
   return r;
 };
+
 var form = document.getElementById('request-form');
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
+  // window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
 var name_enc = getParams()["name"];
 if (name_enc) {
@@ -176,16 +182,19 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
+  // window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
+
 // name
 let name = decodeURI(getParams()["name"]);
 let name_dec = decode64(name);
 var set_name = document.getElementById("name").value = name_dec;
+
 // uid
 let uid = decodeURI(getParams()["uid"]);
 let uid_dec = decode64(uid);
 var set_uid = document.getElementById("uid").value = uid_dec;
+
 // email
 let email = decodeURI(getParams()["email"]);
 let email_dec = decode64(email);
