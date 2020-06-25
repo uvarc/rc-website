@@ -13,7 +13,7 @@ private = true
 
 {{< form-cookies >}}
 
-<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="storage-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="containers-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
@@ -83,7 +83,7 @@ private = true
   </div>
     <div class="col form-item form-group">
       <label class="control-label" for="capacity">Storage Capacity (GB)</label>
-      <input class="form-control" type="number" min="1" max="100" id="capacity" name="capacity" value="0" style="width:8rem;" />
+      <input class="form-control" type="number" min="0" max="50" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>The size of storage if required. Specify in 1GB increments.</p>
     </div>
   </div>
