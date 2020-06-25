@@ -66,6 +66,11 @@ private = true
 <script type="text/javascript" src="/js/support-request.js"></script>
 
 <script>
+
+$('form').submit(function() {
+  $(this).find("button[type='submit']").prop('disabled',true);
+});
+
 function getParams() {
   var vars = {};
   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
