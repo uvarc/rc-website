@@ -176,7 +176,7 @@ var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 
 if (cookie_token !== url_user_token) {
-  // window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
 
 var name_enc = getParams()["name"];
@@ -186,7 +186,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  // window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
 
 // name
@@ -203,12 +203,6 @@ var set_uid = document.getElementById("uid").value = uid_dec;
 let email = decodeURI(getParams()["email"]);
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
-
-function getStorageType() {
-  var $myval = $('[name=storage-choice]:checked').val()
-  var $request_title = document.getElementById("request_title");
-  $request_title.value = "Storage Request: " + $myval.toUpperCase();
-};
 
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>
