@@ -66,7 +66,6 @@ private = true
   </div>
   <div style="font-size:90%;" class="alert alert-success"><b>Billing Tiers</b> are selected and paid for by the PI. Submit this form again if you wish to change your tier. Stopped containers do not incur charges, nor does local cluster storage or remote NFS mounts to <code>/project</code> storage. Project storage pricing can be found <a href="/userinfo/storage/" style="font-weight:bold;">here</a>.</div>
   <hr size=1 />
-
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="storage-options">Storage Requirements <span class="form-required" title="This field is required.">*</span></label>
@@ -132,12 +131,6 @@ private = true
     <div class="col form-item form-type-textarea form-group">
     </div>
   </div>
-  <!--
-  <div class="form-item form-type-textarea form-group"> 
-    <label class="control-label" for="estimated-cost">Estimated Total Cost </label>
-    <input class="form-control form-text required" type="text" id="estimated-cost" name="estimated-cost" value="$" size="200" maxlength="200" readonly style="width:20%;" />
-  </div>
-  -->
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="financial-contact">Financial Contact </label>
     <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
@@ -150,26 +143,8 @@ private = true
 </div>
 </form>
 <div>
-<!-- https://auth.uvasomrc.io/site/info.json -->
-<ul>
-  {{ $urlPre := "https://auth.uvasomrc.io" }}
-  {{ $identJ := getJSON $urlPre "/site/info.json" }}
-  {{ range first 1 $identJ }}
-      <li>UID: {{ .uid }}</li>
-      <li>Name: {{ .name }}</li>
-      <li>Tier: {{ .tier }}</li>
-      <li>Count: {{ .count }}</li>
-  {{ end }}
-</ul>
-<pre>
-  {
-    "uid": "nem2p",
-    "name": "Neal Magee",
-    "tier": "3",
-    "count": "17"
-  }
-</pre>
 </div>
+
 <script>
 function getParams() {
   var vars = {};
@@ -178,7 +153,6 @@ function getParams() {
   });
   return vars;
 }
-
 function decode64(str) {
   var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
   var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -189,16 +163,12 @@ function decode64(str) {
   }
   return r;
 };
-
 var form = document.getElementById('request-form');
-
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
-
 if (cookie_token !== url_user_token) {
   window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
-
 var name_enc = getParams()["name"];
 if (name_enc) {
   // do nothing
@@ -208,21 +178,17 @@ if (name_enc) {
   $('#uid').val('');
   window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
-
 // name
 let name = decodeURI(getParams()["name"]);
 let name_dec = decode64(name);
 var set_name = document.getElementById("name").value = name_dec;
-
 // uid
 let uid = decodeURI(getParams()["uid"]);
 let uid_dec = decode64(uid);
 var set_uid = document.getElementById("uid").value = uid_dec;
-
 // email
 let email = decodeURI(getParams()["email"]);
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
-
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>
