@@ -35,7 +35,7 @@ private = true
       <option id="sentinel" value="Sentinel">Sentinel System/Software</option>
       <option id="other" value="Other">Other</option>
     </select>
-    <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/" style="font-weight:bold;">Allocation Request</a>.</div>
+    <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/#allocation-types" style="font-weight:bold;">Allocation Request</a>.</div>
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="https://auth.uvasomrc.io/site/storage.php" style="font-weight:bold;">storage request</a>.</div>
     <div id="omero-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Omero questions. Or <a href="https://auth.uvasomrc.io/site/omero.php" style="font-weight:bold;">request Omero access</a>.</div>
     <div id="ivy-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Ivy questions. Or submit an <a href="https://services.rc.virginia.edu/ivyvm" style="font-weight:bold;">Ivy Project Request</a>.</div>
@@ -66,6 +66,11 @@ private = true
 <script type="text/javascript" src="/js/support-request.js"></script>
 
 <script>
+
+$('form').submit(function() {
+  $(this).find("button[type='submit']").prop('disabled',true);
+});
+
 function getParams() {
   var vars = {};
   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
