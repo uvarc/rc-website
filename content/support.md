@@ -54,7 +54,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">FAQ / Knowledgebase</h5>
     <p class="card-text">Search topics or post your own related to research computing.</p>
     <div class="support-tiles">
-      <a href="https://www.rc.virginia.edu/userinfo/faq/overview/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
+      <a href="/userinfo/faq/overview/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
     </div>
   </div>
 </div>
