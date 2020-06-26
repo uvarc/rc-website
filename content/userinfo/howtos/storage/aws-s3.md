@@ -168,9 +168,9 @@ aws s3 mv s3://mybucket1/original-file.csv s3://mybucket1/moved-file.csv
 ## `aws s3 presign` - Presign an S3 URL
 
 In some cases users want to share a file with a remote party without creating access keys or for a limited amount of time. The `presign` feature
-is useful in this situation since it creates a unique signed URL that expires after a set amount of time. 
+is useful in this case since it creates a unique signed URL that expires after a set amount of time. 
 
-To set the expiry time, calculate how length of time you want in seconds. This value will be used with the `--expires-in` flag.
+To set the expiry time, calculate the length of time you want the signature to last in seconds. This value will be used with the `--expires-in` flag.
 
 ```
 aws s3 presign --expires-in 600 s3://mybucket1/path/file-to-share.tar.gz
