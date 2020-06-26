@@ -18,4 +18,3 @@ For more information about research computing storage options:
 
 - Visit our [**Storage Overview**](/userinfo/storage/) page.
 - Learn more about specific [**storage features of Rivanna HPC**](/userinfo/rivanna/storage/).
-- [**What is `/scratch` and why should you use it?**](https://discuss.rc.virginia.edu/t/why-should-i-use-scratch-storage/1187)
