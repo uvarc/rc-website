@@ -68,7 +68,7 @@ private = true
   <hr size=1 />
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
-    <label class="control-label" for="storage-options">Storage Requirements <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" for="storage-options">Storage <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; No storage required</label>
@@ -112,7 +112,7 @@ private = true
   </div>
   </div>
   <hr size=1 />
-<label class="control-label" for="data-sensitivity-2">PTAO <span class="form-required" title="This field is required.">*</span></label>
+  <label class="control-label" for="data-sensitivity-2">PTAO <span class="form-required" title="This field is required.">*</span></label>
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
       <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
@@ -131,14 +131,24 @@ private = true
     <div class="col form-item form-type-textarea form-group">
     </div>
   </div>
-  <div class="form-item form-group form-item form-type-textarea form-group"> 
+  <div class="form-item form-group form-type-textarea"> 
     <label class="control-label" for="financial-contact">Financial Contact <span class="form-required" title="This field is required.">*</span></label>
     <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
     <small id="financialContactHelp" class="form-text text-muted">Please enter the name and email address of your financial contact.</small>
   </div>
+  <hr size=1 />
+  <div class="form-check form-item form-group">
+    <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
+    <label class="form-check-label" for="data-agreement">
+      The owner of these services assumes all responsibility for complying with state, federal, and international data retention laws. Researchers may be required to keep data securely stored for years after a project has ended and should plan accordingly. University of Virginia researchers are strongly encouraged to use the <a href="https://recordsmanagement.virginia.edu/urma/overview" target="_new" style="font-weight:bold;">University Records Management Application (URMA)</a>, a web-based tool that automatically tracks when data can be safely transferred or destroyed.
+    </label>
+  </div>
+  <div class="form-item form-group">
+    <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
+  </div>
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
-    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
   </div>
 </div>
 </form>
@@ -148,6 +158,18 @@ private = true
 <script>
 $('form').submit(function() {
   $(this).find("button[type='submit']").prop('disabled',true);
+});
+
+//Add a JQuery click event handler onto our checkbox.
+$('#data-agreement').click(function(){
+    //If the checkbox is checked.
+    if($(this).is(':checked')){
+        //Enable the submit button.
+        $('#submit').attr("disabled", false);
+    } else{
+        //If it is not checked, disable the button.
+        $('#submit').attr("disabled", true);
+    }
 });
 
 function getParams() {
@@ -173,7 +195,7 @@ var form = document.getElementById('request-form');
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 if (cookie_token !== url_user_token) {
-  // window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
 var name_enc = getParams()["name"];
 if (name_enc) {
@@ -182,7 +204,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  // window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
 
 // name
