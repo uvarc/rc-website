@@ -13,7 +13,6 @@ private = true
 +++
 
 {{< form-cookies >}}
-
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
@@ -22,9 +21,7 @@ private = true
   <input type="hidden" id="category" name="category" value="Rivanna HPC">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Request or Renew a Standard Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Standard" />
-
   {{% form-userinfo %}}
-
   <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
