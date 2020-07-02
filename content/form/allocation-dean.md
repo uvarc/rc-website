@@ -13,7 +13,6 @@ private = true
 +++
 
 {{< form-cookies >}}
-
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>

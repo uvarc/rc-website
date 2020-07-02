@@ -12,7 +12,6 @@ private = true
 +++
 
 {{< form-cookies >}}
-
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
@@ -21,9 +20,7 @@ private = true
   <input type="hidden" id="category" name="category" value="Rivanna HPC">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Purchase" />
-
   {{% form-userinfo %}}
-
   <hr size=1 />
   <div class="form-item form-group" style="margin-top:2rem;margin-bottom:2rem;border:1px solid #ccc;padding:2rem;">
     <label class="control-label" style="">Allocation Pricing</label>
