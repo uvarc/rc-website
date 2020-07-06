@@ -188,8 +188,10 @@ To get an idea of how public or private cloud resources are used in real-world a
 
 # Cloud Services at UVA
 
+## Request an Account
+
 Researchers or labs who would like to use AWS for their computing infrastructure should request an account through UVA Information Technology Services (ITS).
-They currently support deployments in both Amazon Web Services and Microsoft Azure.
+They currently support deployments in Amazon Web Services and Microsoft Azure, and offer both managed and self-service options.
 
 [<button class="btn btn-primary">ITS Cloud Solutions</button>](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=af6801bbdbd8509066137deaae96191d)
 
