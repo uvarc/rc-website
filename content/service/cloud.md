@@ -8,7 +8,7 @@ tags = [
   "containers"
 ]
 draft = false
-date = "2019-10-06T14:18:18-05:00"
+date = "2020-07-05T14:18:18-05:00"
 title = "Cloud Solutions"
 description = ""
 author = "Staff"
@@ -188,25 +188,18 @@ To get an idea of how public or private cloud resources are used in real-world a
 
 # Cloud Services at UVA
 
-As an [Internet2](https://www.internet2.edu/) institution, the University of Virginia has access to AWS accounts through a reseller, DLT. This program 
-offers a few key advantages for researchers: 
+## Request an Account
 
-1. First, it allows for billing through purchase orders (P.O.'s) rather than credit cards;
-2. Second, it gives a slight (~3%) discount on services; and
-3. Third, it removes the required minimum costs for AWS support. [Read more about the Internet2/AWS program](https://www.internet2.edu/products-services/cloud-services-applications/amazon-web-services/).
+Researchers or labs who would like to use AWS for their computing infrastructure should request an account through UVA Information Technology Services (ITS).
+They currently support deployments in Amazon Web Services and Microsoft Azure, and offer both managed and self-service options.
 
-## Requesting an Account
-
-Researchers or labs who would like to use AWS for their computing infrastructure should contact us to help set up an account through DLT. In order to
-set up your account you will need a "standing" annual P.O. from the UVA Procurement office equal to or greater than your estimated annual costs. 
-For example, if you estimate your costs will be $300 per month, you might want to request a $4000 standing P.O. Your monthly AWS bills are then charged against that P.O. for the year. Note that these purchase orders *must be renewed* each year that you continue to use AWS.
+[<button class="btn btn-primary">ITS Cloud Solutions</button>](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=af6801bbdbd8509066137deaae96191d)
 
 ## Training & Implementation
 
-With an AWS account in hand, you will need some training. We offer regular, free [workshops on cloud computing](/education/workshops/). In addition, we have weekly availability to 
-answer your questions during our office hours, or we can schedule an in-person, hands-on training with your research group or lab.
+With an AWS account in hand, you will need some training. ITS can provide you with links to self-paced training for both AWS and Azure. Research Computing
 
-If you need help in designing your infrastructure in a cloud environment, or thinking through how to migrate your existing projects, [contact us](https://auth.uvasomrc.io/site/consult.php) for a consultation.
+If you need help with how to design your project in a cloud environment, or thinking through how to migrate your existing projects, [contact us](https://auth.uvasomrc.io/site/consult.php) for a consultation.
 
 ## Sensitive Data in the Cloud
 

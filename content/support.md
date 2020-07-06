@@ -69,6 +69,18 @@ var user_token = getCookie("__user_token");
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
+    <h5 class="card-title">Create an Ivy Project</h5>
+    <p class="card-text">Perform your research on a HIPAA-compliant computing platform.</p>
+    <div class="support-tiles">
+      <a href="https://services.rc.virginia.edu/"><button class="btn btn-primary btn-sm">Set up a Project</button></a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="card-deck support-row">
+<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
     <h5 class="card-title">Request an Allocation</h5>
     <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
     <div class="support-tiles">
@@ -76,9 +88,6 @@ var user_token = getCookie("__user_token");
     </div>
   </div>
 </div>
-</div>
-
-<div class="card-deck support-row">
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Request Storage</h5>
@@ -94,15 +103,6 @@ var user_token = getCookie("__user_token");
     <p class="card-text">Request or modify access to the OMERO image management database.</p>
     <div class="support-tiles">
       <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/omero.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
-    </div>
-  </div>
-</div>
-<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">VizLab</h5>
-    <p class="card-text">A place specifically designed for data visualization.</p>
-    <div class="support-tiles">
-      <a href="/service/imaging/#viz-lab"><button class="btn btn-primary btn-sm">Learn More</button></a>
     </div>
   </div>
 </div>
