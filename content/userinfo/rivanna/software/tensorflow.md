@@ -146,7 +146,7 @@ Due to the overlay, these directories are by default the same inside and outside
 # TensorBoard
 
 In a [FastX Web](/userinfo/rivanna/logintools/fastx/) session, request an ijob (see above) and enter:
-```bash
+```
 $ module load singularity tensorflow
 $ singularity shell --nv /scratch/$USER/tensorflow-2.1.0-py37.sif
 Singularity> python -m tensorboard.main --logdir=logdir
