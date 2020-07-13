@@ -233,14 +233,27 @@ To add the `/home` directory on the host as `/rivanna/home` inside the container
 singularity run -c -B /home:/rivanna/home $containerdir/myimage.sif
 ```
 
-# Singularity Library
+# Container Registries
 
-We host all our Singularity images on [Singularity Library](https://cloud.sylabs.io/library/uvarc). To pull an image:
+Images built by Research Computing are hosted on Docker Hub (and previously Singularity Library).
 
+## Singularity Library
+
+Due to storage limits we can no longer add Singularity images to [Singularity Library](https://cloud.sylabs.io/library/uvarc). There will be no more updates to this registry.
+
+## Docker Hub
+
+In the summer of 2020, we switched to [Docker Hub](https://hub.docker.com/). A complete list of images along with their Dockerfiles can be found in our [rivanna-docker GitHub repository](https://github.com/uvarc/rivanna-docker). These images may or may not be installed as modules on Rivanna.
+
+We do not use the `latest` tag. Please specify the exact version when you pull an image. For example:
 ```
-singularity pull library://uvarc/default/name:version
+singularity pull docker://uvarc/pytorch:1.5.1
 ```
 
-Deprecated images on Rivanna will be archived here in case any user needs to use them.
+Images that contain `ipykernel` can be added to your Jupyter kernel. To verify:
+```
+singularity exec <container_name>.sif pip list | grep ipykernel
+```
+If this returns `ipykernel    <version>`, proceed [here](/userinfo/howtos/rivanna/custom-jupyter-kernels).
 
-Currently we do not use the `latest` tag, so please specify the exact version.
+You are welcome to use/modify our Dockerfiles. We would appreciate some form of acknowledgment/reference.

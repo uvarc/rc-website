@@ -25,7 +25,19 @@ python -m ipykernel install --user --name myenv --display-name "My Env"
 Note: You can customize the display name, which will be displayed when you hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
 
 # Jupyter kernel based on Singularity container
-For this to work, the `ipykernel` Python package must be installed within your Singularity container.
+For this to work, the `ipykernel` Python package must be installed within your Singularity container. To create a Jupyter kernel for a given Singularity image, you can either use our automated script `jkrollout` or do it manually.
+
+## Automated script
+Replace `/path/to/sif` with the actual image name or path:
+```
+jkrollout /path/to/sif "My kernel"
+```
+If GPU is supported:
+```
+jkrollout /path/to/sif "My kernel" gpu
+```
+
+## Manual
 Custom kernels are stored under `~/.local/share/jupyter/kernels`. If this directory does not already exist, run
 ```
 mkdir -p ~/.local/share/jupyter/kernels
