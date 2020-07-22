@@ -233,7 +233,7 @@ To add the `/home` directory on the host as `/rivanna/home` inside the container
 singularity run -c -B /home:/rivanna/home $containerdir/myimage.sif
 ```
 
-# Container Registries
+# Container Registries for UVA Research Computing
 
 Images built by Research Computing are hosted on Docker Hub (and previously Singularity Library).
 
@@ -250,7 +250,7 @@ We do not use the `latest` tag. Please specify the exact version when you pull a
 singularity pull docker://uvarc/pytorch:1.5.1
 ```
 
-Images that contain `ipykernel` can be added to your Jupyter kernel. To verify:
+Images that contain `ipykernel` can be added to your list of Jupyter kernels. To verify:
 ```
 singularity exec <container_name>.sif pip list | grep ipykernel
 ```
