@@ -142,3 +142,14 @@ The following user directories are overlayed onto each container by default on R
 * /project
 
 Due to the overlay, these directories are by default the same inside and outside the container with the same read, write, and execute permissions.  **This means that file modifications in these directories (e.g. in `/home`) via processes running inside the container are persistent even after the container instance exits.**  The `/nv` and `/project` directories refer to leased storage locations that may not be available to all users.
+
+# TensorBoard
+
+In a [FastX Web](/userinfo/rivanna/logintools/fastx/) session, request an ijob (see above) and enter:
+```
+$ module load singularity tensorflow
+$ singularity shell --nv /scratch/$USER/tensorflow-2.1.0-py37.sif
+Singularity> python -m tensorboard.main --logdir=logdir
+```
+
+Open the resulting URL (of the form `http://localhost:xxxx/`) in Firefox.
