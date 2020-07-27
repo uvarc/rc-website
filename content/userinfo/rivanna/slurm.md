@@ -595,7 +595,10 @@ python myAI.py
 The second argument to `gres` can be `k80`, `p100`, or `v100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
 # CPU and Memory Usage
-The `seff` command reports the CPU and memory usage of a SLURM job. This is very useful to determine if you used all cores effectively and if enough memory was allocated to the job.
+The `seff` command reports the CPU and memory usage of a SLURM job. This is very useful to determine if you used all cores effectively and if enough memory was allocated to the job. 
+
+Please use this for _completed_ jobs - efficiency statistics may be misleading for _running_ jobs.
+
 ```
 $ seff <jobid>
 Job ID: <jobid>
