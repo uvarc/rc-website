@@ -104,6 +104,13 @@ module load singularity/3.5.2
 singularity pull docker://account/image
 ```
 
+Software images built by Research Computing are hosted on Docker Hub. For example, to pull our PyTorch 1.5.1 image, run:
+```
+singularity pull docker://uvarc/pytorch:1.5.1
+```
+
+Please visit [this page](/userinfo/rivanna/software/containers/#container-registries-for-uva-research-computing) for more details.
+
 ## Can I run application/container X on a GPU?
 Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/)) and prevent other users from using the GPUs.
 
