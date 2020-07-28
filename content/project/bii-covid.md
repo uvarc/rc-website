@@ -22,5 +22,3 @@ The Biocomplexity Institute at the University of Virginia has been at the forefr
 Other COVID-19 resources from the UVA Biocomplexity Institute:
 
 <https://covid19.biocomplexity.virginia.edu/>
-
-**PIs: Bryan Lewis, Srini Venkatramanan, and Aniruddha Adiga ([Biocomplexity Institute](https://biocomplexity.virginia.edu/))**
