@@ -35,13 +35,13 @@ images = [""]
 
 A few guiding design principles:
 
-1. Separate components and services.
-2. Availability and resilielnce.
-3. Replaceable elements.
-4. Easily distributable.
-5. Reusable components.
-6. Decentralized elements.
-7. Easy deployment.
+1. Separate components and services
+2. Availability and resilielnce
+3. Replaceable elements
+4. Easily distributable
+5. Reusable components
+6. Decentralized elements
+7. Easy deployment
 
 Here's a talk given by Martin Fowler explaining the idea:
 
