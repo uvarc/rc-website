@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2020-06-17T10:08:29-05:00"
+date = "2020-07-17T10:08:29-05:00"
 draft = false
 tags = ["compute","cloud","hpc","containers","dcos","hybrid","infrastructure"]
 categories = ["userinfo"]
@@ -29,7 +29,7 @@ images = [""]
 
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
-# Basic Principles of Microservices
+# Basic Principles
 
 <p class="lead"><span class="badge badge-default">1</span> Microservice architecture is a design approach, or a way of building things. Microservices can be considered the opposite of "monolithic" designs.</p>
 
