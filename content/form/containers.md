@@ -1,5 +1,5 @@
 +++
-date = "2020-06-22T23:59:16-05:00"
+date = "2020-07-22T23:59:16-05:00"
 tags = ["microservices","containers","docker","dcos"]
 categories = ["forms"]
 images = [""]
@@ -192,7 +192,7 @@ var form = document.getElementById('request-form');
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 if (cookie_token !== url_user_token) {
-  // window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
 var name_enc = getParams()["name"];
 if (name_enc) {
@@ -201,7 +201,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  // window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
 }
 
 // name
