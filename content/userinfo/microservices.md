@@ -214,8 +214,8 @@ Singularity is a container application targeted to multi-user, high-performance 
 
 - - -
 
-# Contact Us
+# Next Steps
 
-Submit a consultation request to discuss your microservice implementation.
+Have a containerized application ready for launch? Or want a consultation to discuss your microservice implementation?
 
-{{< consult-button >}}
+<a href="https://auth.uvasomrc.io/site/container.php"><button class="btn btn-success">Request DCOS Access</button></a> &nbsp;&nbsp; {{< consult-button >}}
