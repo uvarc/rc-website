@@ -55,13 +55,9 @@ text {
   <div>
     <h1 id="title"><i class="fa fa-tag" aria-hidden="true"></i> {{ .Title }}</h1>
 
-    <p style="line-height: 200%;">
-    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <a style="font-weight:bold;" href="/tags/{{ $name | urlize }}"><button class="btn btn-outline-danger btn-sm">{{ $name }} ({{ $taxonomy.Count }}) </button></a>
-    {{end}}
-    </p>
 
-<svg width="800" height="800"></svg>
+    <!-- BEGIN TAG D3 -->
+<svg width="700" height="700"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -98,6 +94,17 @@ d3.json("https://www.rc.virginia.edu/index.json", function(error, root) {
 });
 
 </script>
+    <!-- END TAG D3 -->
+
+
+    <!-- BEGIN TAG LIST -->
+    <p style="line-height: 200%;">
+    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+      <a style="font-weight:bold;" href="/tags/{{ $name | urlize }}"><button class="btn btn-outline-danger btn-sm">{{ $name }} ({{ $taxonomy.Count }}) </button></a>
+    {{end}}
+    </p>
+    <!-- END TAG LIST -->
+
 
   </div>
 </section>
