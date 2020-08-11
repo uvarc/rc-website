@@ -57,7 +57,7 @@ To print help for a particular tool, run
 ```
 gatk ToolName --help
 ```
-### General Syntax 
+## General Syntax 
 To run a GATK tool locally, the syntax is:
 ```
 gatk ToolName toolArguments
