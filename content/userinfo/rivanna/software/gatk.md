@@ -58,7 +58,6 @@ gatk ToolName toolArguments
 ``` 
 
 # Basic Usage Examples
-
 Below are few trivial examples of using GATK4 tools in single-core mode.  
 
 ### 1. **[PrintReads](https://gatk.broadinstitute.org/hc/en-us/categories/360002369672)**
