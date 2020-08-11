@@ -29,9 +29,20 @@ MATLAB is an integrated technical computing environment from the MathWorks that 
 
 Mathworks provides MATLAB examples and tutorials for all experience levels here.
 
-# Available Matlab Versions
+# Available Versions
+To find the available versions and learn how to load them, run:
+```
+module spider {{% module-name %}}
+```
 
-{{% module-versions %}}
+The output of the command shows the available {{% software-name %}} module versions.
+
+For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
+```
+module spider {{% module-firstversion %}}
+```
+
+{{< module-versions >}}
 
 You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through SLURM.
 

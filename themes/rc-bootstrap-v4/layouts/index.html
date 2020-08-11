@@ -19,6 +19,14 @@
     {{ partial "site-header.html" . }}
     {{ partial "carousel.html" . }}
     <div class="container">
+
+      <!-- STATUS MESSAGE ALERT -->
+      <div class="row">
+        <div id="status-message" class="alert alert-danger" role="alert" style="font-size:80%;padding:10px;width:100%;margin-left:1rem;margin-right:1rem;">
+          <p id="status-message-content" style="margin:0; padding:0;"></p>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col-sm-4 blog-main">
 
@@ -50,15 +58,11 @@
         <!-- BEGIN MIDDLE COLUMN -->
         <div class="col-sm-4 blog-main">
 
-          <!-- <p class=lead>User News & Events</p> -->
+          {{ partial "status.html" . }}
 
           {{ partial "twitter.html" . }}
 
           <!-- {{ partial "upcoming-event.html" . }} -->
-
-          <hr size=1 />
-
-          {{ partial "status.html" . }}
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
         <!-- END MIDDLE COLUMN -->
@@ -72,6 +76,7 @@
         </aside><!-- /.blog-sidebar -->
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
+
     </div> {{ "<!-- /.container -->" | safeHTML }}
 
     {{ partial "konami-modal.html" . }}

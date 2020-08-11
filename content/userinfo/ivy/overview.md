@@ -44,11 +44,11 @@ Access to Ivy resources is project-based, limited to PIs and their designees, an
 
 # Training
 
-In order to use Ivy, researchers must complete the Information Security Awareness Training (ISAT). This training takes approximately 10 minutes to complete.
+In order to use Ivy, researchers must complete the High Security Awareness Training (HSAT). This training takes approximately 10 minutes to complete.
 
-If you have a Workday account, please complete the training at the following link: <a href="https://www.myworkday.com/uva/d/inst/1$17816/17816$202.htmld" target="_blank">Workday ISAT</a>.
+If you have a Workday account, please complete the training at the following link: <a href="https://in.virginia.edu/hsat-training" target="_blank">Workday HSAT</a>.
 
-If you are a student and do not have a Workday account, please complete the training at this link instead: <a href="https://quiz.its.virginia.edu/itsa-staff" target="_blank">Student ISAT</a>.
+If you are a student and do not have a Workday account, please complete contact infosec-training@virginia.edu for access to alternate training materials.
 
 - - -
 
@@ -163,7 +163,7 @@ To connect to Ivy follow the platform-specific steps below:
           <li>Open your High Security VPN connection</li>
           <li>Reference the IP address of your Ivy VM.</li>
           <li>For SSH access:<br />&nbsp;&nbsp;<code>ssh uva-id@ip-address</code></li>
-          <li>For Remote Desktop access: Start the RDP client and point to the IP address of your VM and sign in.</li>
+          <li>For Remote Desktop access: Enter the IP address of your VM in a web browser (https://10.xxx.xxx.xxx) and sign in with your Eservices username and password.</li>
         </ul>
       </div>
     </div>
@@ -193,6 +193,7 @@ upon request. See the lists below for options.
 
 ### Preinstalled Software
 
+{{< rawhtml >}}
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
     <div class="card">
@@ -221,6 +222,7 @@ upon request. See the lists below for options.
     </div>
   </div>
 </div>
+{{< /rawhtml >}}
 
 **Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
 

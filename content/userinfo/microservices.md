@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2019-09-18T10:08:29-05:00"
+date = "2020-07-17T10:08:29-05:00"
 draft = false
 tags = ["compute","cloud","hpc","containers","dcos","hybrid","infrastructure"]
 categories = ["userinfo"]
@@ -25,21 +25,23 @@ images = [""]
   This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to project storage.
 </p>
 
+<div style="width:100%;height:3rem;"></div>
+
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
-# Basic Principles of Microservices
+# Basic Principles
 
 <p class="lead"><span class="badge badge-default">1</span> Microservice architecture is a design approach, or a way of building things. Microservices can be considered the opposite of "monolithic" designs.</p>
 
 A few guiding design principles:
 
-1. Separate components and services.
-2. Availability and resilielnce.
-3. Replaceable elements.
-4. Easily distributable.
-5. Reusable components.
-6. Decentralized elements.
-7. Easy deployment.
+1. Separate components and services
+2. Availability and resilience
+3. Replaceable elements
+4. Easily distributable
+5. Reusable components
+6. Decentralized elements
+7. Easy deployment
 
 Here's a talk given by Martin Fowler explaining the idea:
 
@@ -164,10 +166,39 @@ To be eligible to run your microservice on our infrastructure, you must meet the
 
 # Pricing
 
-Currently our microservices cluster is in beta testing. We welcome any single-container applications for free, 
-either as a deployment listed above or a ready-to-run container that you bring.
+Starting with the new fiscal year beginning July 1, the pilot phase of the DCOS platform will conclude and we will 
+begin charging a modest monthly fee for the use of research container services on DCOS.
 
-Have a more complicated design? Submit a consultation request using the button below.
+The following pricing structure will take effect on 1 July 2020:
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tier</th>
+      <th scope="col">Containers</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Light Tier</th>
+      <td>1 - 5</td>
+      <td>$5 / month</td>
+    </tr>
+    <tr>
+      <th scope="row">Medium Tier</th>
+      <td>6 - 15</td>
+      <td>$10 / month</td>
+    </tr>
+    <tr>
+      <th scope="row">Heavy Tier</th>
+      <td>> 15 containers</td>
+      <td>$48 / month</td>
+    </tr>
+  </tbody>
+</table>
+
+No charges will be incurred for stopped containers or any cluster storage.
 
 - - -
 
@@ -183,8 +214,8 @@ Singularity is a container application targeted to multi-user, high-performance 
 
 - - -
 
-# Contact Us
+# Next Steps
 
-Submit a consultation request to discuss your microservice implementation.
+Have a containerized application ready for launch? Or want a consultation to discuss your microservice implementation?
 
-{{< consult-button >}}
+<a href="https://auth.uvasomrc.io/site/container.php"><button class="btn btn-success">Request DCOS Access</button></a> &nbsp;&nbsp; {{< consult-button >}}

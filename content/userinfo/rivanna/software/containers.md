@@ -67,7 +67,7 @@ This container provides the Python 3.7.5 bindings for:
 # Running non-GPU Images
 If your container does not require a GPU, all that is necessary is to load the singularity module and provide it with a path to the image.
 
-```bash
+```
 module load singularity/3.5.2
 singularity <CMD> <OPTIONS> <IMAGEFILE> <ARGS>
 ```
@@ -84,7 +84,7 @@ singularity <CMD> <OPTIONS> <IMAGEFILE> <ARGS>
 
 ## `singularity run`
 
-```bash
+```
 containerdir = ~mst3k
 singularity run $containerdir/myimage.sif
 ```
@@ -93,7 +93,7 @@ This executes a default application or set of commands inside the container.  Th
 
 ## `singularity exec`
 
-```bash
+```
 singularity exec $containerdir/myimage.sif python myscript.py
 ```
 
@@ -101,25 +101,25 @@ This is similar to singularity run but more versatile by allowing the specificat
 
 ## `singularity shell`
 
-```bash
+```
 singularity shell $containerdir/myimage.sif
 ```
 
 This opens a new shell inside the container, notice the change of the prompt:
 
-```bash
+```
 Singularity>
 ```
 
 Now you can execute any command or application defined in the container, for example `ls` to list all files in the current directory:
 
-```bash
+```
 Singularity> ls
 ```
 
 You can navigate the container file system, including `/scratch` and `/nv`, and run any application that is installed inside the container. To leave the interactive container shell, type `exit`:
 
-```bash
+```
 Singularity> exit
 ```
 
@@ -127,21 +127,21 @@ Singularity> exit
 
 Singularity can make use of the local NVIDIA drivers installed on the host.  To use a GPU image, load the singularity module and add the `--nv` flag when executing the `singularity shell`, `singularity exec`, or `singularity run` commands.
 
-```bash
+```
 module load singularity/3.5.2
 singularity <CMD> --nv <IMAGE_FILE> <ARGS>
 ```
 
 **Example:**
 
-```bash
+```
 containerdir = ~/
 singularity run --nv $containerdir/tensorflow-2.1.0-py37.sif myscript.py
 ```
 
 In the container build script, `python` was defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. `myscript.py`, to the Python interpreter. So the above singularity command is equivalent to
 
-```bash
+```
 singularity exec --nv $containerdir/tensorflow-2.1.0-py37.sif python myscript.py
 ```
 
@@ -151,7 +151,7 @@ The `tensorflow-2.1.0-py37.sif` image was built to include CUDA and cuDNN librar
 
 Start an `ijob`:
 
-```bash
+```
 ijob  -A mygroup -p gpu --gres=gpu -c 1
 salloc: Pending job allocation 12345
 salloc: job 12345 queued and waiting for resources
@@ -159,7 +159,7 @@ salloc: job 12345 has been allocated resources
 salloc: Granted job allocation 12345
 ```
 
-```bash
+```
 module purge
 module load singularity/3.5.2
 containerdir=~
@@ -170,7 +170,7 @@ singularity shell --nv $containerdir/tensorflow-2.1.0-py37.sif
 
 **Example script:**
 
-```bash
+```
 #!/usr/bin/env bash
 #SBATCH -J tftest
 #SBATCH -o tftest-%A.out
@@ -212,7 +212,7 @@ Under some circumstances this default overlay of the host file systems is undesi
 
 For example,
 
-```bash
+```
 containerdir=~mst3k
 singularity run -c $containerdir/myimage.sif
 ```
@@ -223,24 +223,37 @@ Users can define custom bind paths for host directories via the `-B`/`--bind` op
 
 For example, the following command adds the `/scratch/$USER` directory as an overlay without overlaying any other user directories provided by the host:
 
-```bash
+```
 singularity run -c -B /scratch/$USER $containerdir/myimage.sif
 ```
 
 To add the `/home` directory on the host as `/rivanna/home` inside the container:
 
-```bash
+```
 singularity run -c -B /home:/rivanna/home $containerdir/myimage.sif
 ```
 
-# Singularity Library
+# Container Registries for UVA Research Computing
 
-We host all our Singularity images on [Singularity Library](https://cloud.sylabs.io/library/uvarc). To pull an image:
+Images built by Research Computing are hosted on Docker Hub (and previously Singularity Library).
 
+## Singularity Library
+
+Due to storage limits we can no longer add Singularity images to [Singularity Library](https://cloud.sylabs.io/library/uvarc). There will be no more updates to this registry.
+
+## Docker Hub
+
+In the summer of 2020, we switched to [Docker Hub](https://hub.docker.com/). A complete list of images along with their Dockerfiles can be found in our [rivanna-docker GitHub repository](https://github.com/uvarc/rivanna-docker). These images may or may not be installed as modules on Rivanna.
+
+We do not use the `latest` tag. Please specify the exact version when you pull an image. For example:
 ```
-singularity pull library://uvarc/default/name:version
+singularity pull docker://uvarc/pytorch:1.5.1
 ```
 
-Deprecated images on Rivanna will be archived here in case any user needs to use them.
+Images that contain `ipykernel` can be added to your list of Jupyter kernels. To verify:
+```
+singularity exec <container_name>.sif pip list | grep ipykernel
+```
+If this returns `ipykernel    <version>`, proceed [here](/userinfo/howtos/rivanna/custom-jupyter-kernels).
 
-Currently we do not use the `latest` tag, so please specify the exact version.
+You are welcome to use/modify our Dockerfiles. We would appreciate some form of acknowledgment/reference.

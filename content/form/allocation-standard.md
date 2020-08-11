@@ -1,5 +1,5 @@
 +++
-date = "2016-12-31T23:59:16-05:00"
+date = "2017-12-31T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -12,37 +12,30 @@ private = true
 
 +++
 
+{{< form-cookies >}}
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
-
   <input type="hidden" id="category" name="category" value="Rivanna HPC">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Request or Renew a Standard Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Standard" />
-
   {{% form-userinfo %}}
-
   <hr size=1 />
-
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
-
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
   </div>
-
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
-
   <div class="form-item form-group form-item add-uids form-type-textarea form-group"> <label class="control-label" for="add-uids">Others to be Added to MyGroups Account (UVA computing IDs separated by commas)</label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="add-uids" name="add-uids" cols="60" rows="3"></textarea>
     </div>
   </div>
-
   <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
     <div class="row">
       <div id="new-or-renewal" class="form-radios col">
@@ -56,7 +49,18 @@ private = true
       <div class="help-block col">If this is your first request, select New.  Otherwise select Renewal.</div>
     </div>
   </div>
-
+    <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="yes-or-no">Will you be using <a style="font-weight:bold;" href="/userinfo/rivanna/software/vasp/">VASP</a> or <a style="font-weight:bold;" href="/userinfo/rivanna/software/gaussian/">Gaussian</a> on Rivanna? <span class="form-required" title="This field is required.">*</span></label>
+    <div class="row">
+      <div id="yes-or-no" class="form-radios col">
+        <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-1">
+          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="yes" class="form-radio" />&nbsp;Yes</label>
+        </div>
+        <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-2">
+          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="no" checked="checked" class="form-radio" />&nbsp;No</label>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="form-item project-description form-type-textarea form-group"> <label class="control-label" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
     </div>
@@ -65,7 +69,6 @@ private = true
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="renewal-description" name="renewal-description" cols="60" rows="8"></textarea>
     </div>
   </div>
-
   <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
@@ -80,12 +83,10 @@ private = true
   </div>
   <script type="text/javascript" src="/js/captcha.js"></script>
   -->
-
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
-
 </div>
 </form>
 
@@ -111,6 +112,13 @@ function decode64(str) {
 
 var form = document.getElementById('allocation-form');
 
+var cookie_token = getCookie("__user_token");
+var url_user_token = getParams()["user_token"];
+
+if (cookie_token !== url_user_token) {
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-standard.php?user_token=" + cookie_token );
+}
+
 var name_enc = getParams()["name"];
 if (name_enc) {
   // do nothing
@@ -118,7 +126,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/allocation-standard.php" );
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-standard.php?user_token=" + cookie_token );
 }
 
 // name

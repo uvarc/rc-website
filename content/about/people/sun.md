@@ -20,7 +20,9 @@ subjects = [
 ]
 +++
 
-Ruoshi is experienced in electronic structure codes for computational materials science.
+Ruoshi is experienced in electronic structure codes for computational materials science. He takes part in managing the Rivanna software stack, building Singularity/Docker containers, and providing user support/research consultation.
+
+He is a volunteer pianist at the University Hospital through the "Music for Healing" program.
 
 ##### Selected Publications
 - R Sun, M Asta, and A van de Walle, "First-principles thermal compatibility between Ru-based Re-substitute alloys and Ir coatings," *Computational Materials Science* **170**, 109199 (2019). [doi:10.1016/j.commatsci.2019.109199](https://doi.org/10.1016/j.commatsci.2019.109199)
@@ -31,12 +33,9 @@ Ruoshi is experienced in electronic structure codes for computational materials 
 See [Google Scholar](https://scholar.google.com/citations?user=SnJ0Pb8AAAAJ&hl=en) for a complete list.
 
 ##### Education
-{{% highlight %}}
-PhD, Materials Science and Engineering, Massachusetts Institute of Technology (2013)
-{{% /highlight %}}
-{{% highlight %}}
-BS, Materials Science and Engineering, University of Illinois at Urbana-Champaign(2008)
-{{% /highlight %}}
-{{% highlight %}}
-BS, Mathematics, University of Illinois at Urbana-Champaign(2008)
-{{% /highlight %}}
+- Ph.D. Materials Science and Engineering  
+Massachusetts Institute of Technology (2013)
+
+- B.S. Materials Science and Engineering  
+B.S. Mathematics  
+University of Illinois at Urbana-Champaign (2008)

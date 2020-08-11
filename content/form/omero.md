@@ -13,28 +13,20 @@ private = true
 
 <p class="lead">From the microscope to publication, OMERO handles all your images in a secure central repository. You can view, organize, analyze and share your data from anywhere you have internet access. Work with your images from a desktop app (Windows, Mac or Linux), from the web or from 3rd party software. Over 140 image file formats supported, including all major microscope formats.</p>
 <p class="lead">Use the form below to request access for your group or lab to manage and analyze data in our OMERO database service.</p>
-
 {{< form-cookies >}}
-
 <script type="text/javascript" src="/js/typeahead.js"></script>
-
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="omero-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
-
   <input type="hidden" id="category" name="category" value="Omero">
   <input type="hidden" id="request_title" name="request_title" value="Omero Request" />
-
 {{% form-userinfo %}}
-
   <hr size=1 />
-
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
-
   <div class="form-item form-group form-type-select form-group"> 
     <label class="control-label" for="classification">Affiliation <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="classification" name="classification">
@@ -48,9 +40,7 @@ private = true
       <option value="other">Other</option>
     </select>
   </div>
-
   <hr size=1 />
-
   <div class="row">
     <div class="col form-item form-group form-item form-type-radios form-group"> 
       <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
@@ -77,58 +67,43 @@ private = true
         </div>
       </div>
     </div>
-
   </div>
-
   <hr size=1 />
-
   <div class="row">
-
     <div class="col form-item form-group">
       <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
       <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
     </div>
-
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
       <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
     </div>
-
   </div>
-
   <hr size=1 />
-
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-title">Project Title </label>
     <input class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
   </div>
-
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="5"></textarea>
     </div>
   </div>
-
   <div style="border:solid 1px #ccc;padding:2rem;margin-top:2rem;margin-bottom:2rem;background-color:#eee;">
     <h5>Grant Summary</h5>
     <div class="form-item form-type-textarea form-group"> 
       <label class="control-label" for="grant-agency">Grant Agency </label>
       <input class="form-control form-text required" type="text" id="grant-agency" name="grant-agency" value="" size="200" maxlength="200" />
     </div>
-
     <div class="form-item form-type-textarea form-group">
       <label class="control-label" for="grant-number">Grant Number </label>
       <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
-
   </div>
-
   <hr size=1 />
-
 <label class="control-label" for="data-sensitivity-2">PTAO</label>
-
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
       <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
@@ -147,19 +122,16 @@ private = true
     <div class="col form-item form-type-textarea form-group">
     </div>
   </div>
-
   <!--
   <div class="form-item form-type-textarea form-group"> 
     <label class="control-label" for="estimated-cost">Estimated Total Cost </label>
     <input class="form-control form-text required" type="text" id="estimated-cost" name="estimated-cost" value="$" size="200" maxlength="200" readonly style="width:20%;" />
   </div>
   -->
-
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="financial-contact">Financial Contact </label>
     <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
   </div>
-
   <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
@@ -174,12 +146,10 @@ private = true
   </div>
   <script type="text/javascript" src="/js/captcha.js"></script>
   -->
-
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
-
 </div>
 </form>
 

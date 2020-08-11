@@ -8,7 +8,7 @@ type = "people"
 biolink = false
 description = ""
 author = "UVARC Staff"
-image = "/images/profiles/profile_andrew_bell.png"
+# image = "/images/profiles/profile_andrew_bell.png"
 subjects = [
   "rivanna",
   "storage",
@@ -17,5 +17,4 @@ subjects = [
 ]
 +++
 
-Andrew Bell joined RC in December 2014. He handles procurement, budgeting, travel, personnel management, communications, public relations, academic events, and engagement with the UVA research community.
 

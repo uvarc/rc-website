@@ -1,14 +1,14 @@
 +++
-type = "ivy"
+type = "howto"
 images = [
   "/2016/10/image.jpg",
 ]
 categories = [
   "ivy",
   "data",
-  "globux"
+  "globus"
 ]
-date = "2020-02-26T08:37:46-05:00"
+date = "2020-03-26T08:37:46-05:00"
 tags = ['howtos']
 draft = false
 shorttitle = "Secure DTN"

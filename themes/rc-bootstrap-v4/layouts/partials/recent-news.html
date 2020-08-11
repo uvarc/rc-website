@@ -1,10 +1,10 @@
-            <ol class="list-unstyled">
-              <!-- Get all posts-->
-              {{ $posts := where .Site.Pages "Type" "post" }}
-              <!-- (re)set the counter to 0 -->
-              {{ $.Scratch.Set "tagCounter" 0 }}
-              <!-- increment counter if post contains the current tag-->
-                {{ range first 5 $posts}}
-                    <li><a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
-                {{ end }}
-            </ol>
+    <ol class="list-unstyled">
+      {{ range first 6 (where .Site.Pages "Type" "post") }}
+
+        {{ if ne .Title "Posts" }}
+
+          <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
+
+        {{ end }}
+      {{ end }}
+    </ol>

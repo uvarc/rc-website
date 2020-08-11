@@ -26,6 +26,8 @@ ssh -Y mst3k@rivanna.hpc.virginia.edu
 
 where `mst3k` should be replaced by your user ID. You will generally need to use this format unless you set up your user account on your Mac or Linux system with your UVA ID. 
 
+Please note that ssh *will not* echo your password or move your cursor as you type.
+
 Mac users will need to install [XQuartz](https://xquartz.org) in order to use graphical applications through a shell (the -Y option will permit this).
 
 # Passwordless SSH

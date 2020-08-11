@@ -1,6 +1,6 @@
 +++
-type = "storage"
-date = "2020-02-21T15:12:46-05:00"
+type = "howto"
+date = "2020-06-21T15:12:46-05:00"
 tags = [
   "howto",
   "storage",
@@ -13,5 +13,5 @@ author = "RC Staff"
 +++
 
 * [Map your Value or Project Storage to your Desktop](/userinfo/howtos/storage/drive-mapping)
-
-* [Using Globus from the Command Line](/userinfo/howtos/storage/globus-cli)
+* [Use Globus from the Command Line](/userinfo/howtos/storage/globus-cli)
+* [Work with files in Amazon S3](/userinfo/howtos/storage/aws-s3)

@@ -12,17 +12,13 @@ private = true
 +++
 
 {{< form-cookies >}}
-
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
-
 {{% form-userinfo %}}
-
   <hr size=1 />
-
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
@@ -38,7 +34,7 @@ private = true
       <option id="sentinel" value="Sentinel">Sentinel System/Software</option>
       <option id="other" value="Other">Other</option>
     </select>
-    <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/" style="font-weight:bold;">Allocation Request</a>.</div>
+    <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/#allocation-types" style="font-weight:bold;">Allocation Request</a>.</div>
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="https://auth.uvasomrc.io/site/storage.php" style="font-weight:bold;">storage request</a>.</div>
     <div id="omero-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Omero questions. Or <a href="https://auth.uvasomrc.io/site/omero.php" style="font-weight:bold;">request Omero access</a>.</div>
     <div id="ivy-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Ivy questions. Or submit an <a href="https://services.rc.virginia.edu/ivyvm" style="font-weight:bold;">Ivy Project Request</a>.</div>
@@ -59,18 +55,21 @@ private = true
     </div>
   <br clear=all />
   </div>
-
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
-
 </div>
 </form>
 
 <script type="text/javascript" src="/js/support-request.js"></script>
 
 <script>
+
+$('form').submit(function() {
+  $(this).find("button[type='submit']").prop('disabled',true);
+});
+
 function getParams() {
   var vars = {};
   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {

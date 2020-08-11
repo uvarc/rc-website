@@ -1,5 +1,5 @@
 +++
-type = "rivanna"
+type = "howto"
 images = [
   "/2016/10/image.jpg",
 ]

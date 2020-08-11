@@ -1,5 +1,5 @@
       <p class=lead>Featured</p>
-      {{ range first 3 (where .Site.Pages "Type" "post") }}
+      {{ range first 4 (where .Site.Pages "Type" "post") }}
         {{ if in .Params.categories "feature" }}
           <a href="{{.Permalink}}" style="text-decoration:none;color:black;"><div>
             <h5>{{.Title | markdownify }}</h5>
@@ -7,7 +7,11 @@
               {{ if .Params.summary }}
                 {{ .Params.summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
               {{ else }}
-                {{slicestr .Summary 0 260 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+                {{ if gt (len .Summary) 380 }}
+                  {{slicestr .Summary 0 380 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+				{{ else }}
+				  {{ .Summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+				{{ end }}                
               {{ end}}
             </p>
           </div></a>

@@ -24,15 +24,21 @@ author = "RC Staff"
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
 # Available Versions
-To find the available versions and learn how to load them, run:
-<pre>module spider {{% module-name %}}</pre>
+The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
+
+```
+module spider {{< module-name >}}
+```
 
 The output of the command shows the available {{% software-name %}} module versions.
 
 For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
-<pre>module spider {{% module-firstversion %}}</pre>
+```
+module spider {{% module-firstversion %}}
+```
 
-{{% module-versions %}}
+{{< module-versions >}}
+
 
 The latest version of CellProfiler is available as a Singularity container.  Containers encapsulate applications, in this case CellProfiler, and all their required libraries isolated from the application and libraries provided by the system. The basic concepts of software containers, and Singularity container in particular, are explained [here](/userinfo/rivanna/software/containers).  We recommend using the latest CellProfiler container version whenever possible.  Please contact us for help with this package.
 

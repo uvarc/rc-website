@@ -35,14 +35,49 @@ Access to the HPC cluster requires a valid Eservices password. Your Netbadge pas
 ## Why am I seeing `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` when I log in?
 Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/rivanna/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
 
+## When I try to log in with ssh, nothing happens when I type my password!
+When you type your passaword, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
+
+## When running Firefox on Rivanna, I get : "Firefox is already running, but is not responding. To open a new window, you must first close the existing Firefox process, or restart your system." What can I do?
+
+From your home directory on Rivanna, run the commands:
+
+
+rm -rf ~/.mozilla/firefox/*.default/.parentlock
+
+rm -rf ~/.mozilla/firefox/*.default/lock
 - - -
 
 # Allocations
 
-## How do I check my allocation status on Rivanna?
-Run the command `allocations`
+## What is an allocation?
 
-In all cases you will need to use an account with remaining service units in order to submit jobs.  You do not need any allocation units to access the frontend or files in your directories as long as your account is active.
+Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [MyGroups](https://mygroups.virginia.edu/) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations). 
+
+## How do I check my allocation status on Rivanna?
+Run the `allocations` command.  The output may look like this:
+```
+
+Name           Balance  Reserved Effective Available 
+-------------- -------- -------- --------- --------- 
+rivanna_alloc  9885.811 1000.000  8885.811  8885.811 
+
+ for more information about a specific allocation,
+ run: 'allocations -a <allocation name>'
+```
+
+The _Balance_ column shows the total of unused service units (SUs); the _Reserved_ column shows the number of SUs held for current active jobs (pending or running). The _Effective_ and _Available_ columns show the difference of _Balance_ and _Reserved_, i.e. the amount of SUs available for future jobs. **After a job completes, the SUs actually consumed will be deducted from the allocation Balance and any SUs unused by that job will be released from the Reserved pool.**
+
+In all cases you can only submit additional jobs if the available SU
+amount is sufficient to cover the full SU request for the jobs.
+
+You do not need any allocation service units to access the frontend or files in
+your directories as long as your account is active.
+
+## How are SUs Reserved?
+
+When a job is submitted the account manager calculates the required maximum amount of service units (SUs) using the assumption that the job will run the full amount of time requested. These SUs are held in reserve as a "lien" against the allocation charged for the job.  When the job completes the lien is released and the _actual_ SUs consumed
+are deducted from the allocation balance. See [How do I check my allocation status on Rivanna?](/userinfo/faq/rivanna-faq/#how-do-i-check-my-allocation-status-on-rivanna) for specifics.
 
 ## How do I add or remove people from my allocations?
 You must use the MyGroups interface to do this, and you must have administrative access to the group.
@@ -69,11 +104,35 @@ module load singularity/3.5.2
 singularity pull docker://account/image
 ```
 
+Software images built by Research Computing are hosted on Docker Hub. For example, to pull our PyTorch 1.5.1 image, run:
+```
+singularity pull docker://uvarc/pytorch:1.5.1
+```
+
+Please visit [this page](/userinfo/rivanna/software/containers/#container-registries-for-uva-research-computing) for more details.
+
 ## Can I run application/container X on a GPU?
 Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/)) and prevent other users from using the GPUs.
 
 [https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support](https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support)
 
+## How can I make my Jupyter notebook from JupyterLab to run as a batch job on Rivanna?
+
+1. Capture the information that you use to start up a JupyterLab session.  It helps to take a screenshot of the web form where you enter the partition, number of cores, amount of memory, etc.  You will need that information for requesting resources on a compute node.
+
+2. Note which kernel is used to run your notebook.  This information will be needed later.
+
+3. Convert the notebook to a regular script.  To do this, go into the notebook that you want to convert.  In the upper left corner, click on File > Export Notebook As > Export Notebook to Executable Script .  This will download the script onto your laptop.   On my computer, this leaves a blank window on my screen.  But, if I close that tab on my browser, the tab with the notebook returns.  I’m now down with the notebook and can terminate the session.
+
+4. Upload the “executable script” to Rivanna. In Open onDemand dashboard view, on the black ribbon across the top, click on Files > Home Directory.  This will open a page that shows the files that you have in your home directory on Rivanna.  At the top of the page, toward the right, is a button labelled “Upload”.  Click on that button.  In the dialog box that appears, click on “Choose File”.  This will allow you to go to the downloaded file and select it.
+
+5. Create a SLURM script to run your code.  The SLURM script list the resources and instructions that are needed to run your “executable script”.   See the following link:
+
+      [https://www.rc.virginia.edu/userinfo/rivanna/slurm/](https://www.rc.virginia.edu/userinfo/rivanna/slurm/)
+
+6. Open a terminal window on Rivanna, and move to the location where your scripts are.  We recommend using the web-based FastX application (see below). Once in a terminal window, type sbatch followed my the name of your SLURM script.
+
+      [https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access)
 - - -
 
 # Job Management
@@ -141,7 +200,7 @@ If you have not exceeded the limits on `/scratch`, check whether your account ha
 allocations
 ```
 
-## Why do I get `sbatch error: Batch script contains DOS line breaks` 
+## Why do I get `sbatch error: Batch script contains DOS line breaks`
 If you use a Windows editor to create SLURM batch scripts, when you try to run them you may encounter an error
 ```
 sbatch: error: Batch script contains DOS line breaks (\r\n)

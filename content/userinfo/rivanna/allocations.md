@@ -2,7 +2,7 @@
 description = ""
 title = "Allocations"
 draft = false
-date = "2019-05-28T17:45:12-05:00"
+date = "2019-07-28T17:45:12-05:00"
 tags = ["hpc","rivanna","supercomputer","allocations"]
 categories = ["userinfo"]
 images = [""]
@@ -18,7 +18,9 @@ var user_token = getCookie("__user_token");
 </script>
 
 <div class="bd-callout bd-callout-warning">
-Time on Rivanna is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. All UVA faculty, staff, and postdoctoral associates are considered PIs and therefore eligible for an allocation on Rivanna. Students—both graduate and undergraduate—cannot request allocations, but they are allowed to use Rivanna as members of a MyGroups group controlled by a PI.
+<div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
+<p>Time on Rivanna is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. </p>
+<p>All UVA faculty, staff, and postdoctoral associates are considered PIs and therefore eligible for an allocation on Rivanna. Students—both graduate and undergraduate—cannot request allocations, but they are allowed to use Rivanna as members of a MyGroups group controlled by a PI.</p>
 </div>
 
 # Eligibility and Account Creation
@@ -42,7 +44,7 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 # Allocation Types
 
 ## Standard Allocations
-Standard allocations are for 100,000 SUs and require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations can be renewed (up to three times per year starting from when the account is created) as long as each renewal request includes a synopsis of results from the original allocation. Available to: Faculty and post-docs using Rivanna for research.
+Standard allocations are for 100,000 SUs and require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations can be renewed as long as each renewal request includes a synopsis of results from the original allocation. The maximum number of standard allocations--either new or renewal--a researcher can receive in a single fiscal year is 4 (or 400K SUs max). These allocations expire 12 months after they are disbursed. Available to: Faculty and post-docs using Rivanna for research.
 
 <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-standard.php?user_token=' + user_token">
 <button class="btn btn-primary">Request New / Renew Standard Allocation</button></a>
@@ -70,7 +72,7 @@ Deans' Allocations are granted by the research deans who provide funding for Riv
 ## Allocation Purchases
 Time on Rivanna can also be purchased using a PTAO. Purchasers are given a higher priority in the queue and their SUs never expire. Available to: Faculty and postdocs with grants; researchers who need priority access and premium service.
 
-<a href="#" <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-purchase.php?user_token=' + user_token">
+<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-purchase.php?user_token=' + user_token">
   <button class="btn btn-primary">Purchase an Allocation</button>
 </a>
 
@@ -79,6 +81,6 @@ Time on Rivanna can also be purchased using a PTAO. Purchasers are given a highe
 ## Instructional Allocations
 Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014.
 
-<a href="#" <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=' + user_token">
+<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=' + user_token">
   <button class="btn btn-primary">Request an Instructional Allocation</button>
 </a>

@@ -26,15 +26,19 @@ Local support is not available.  LAMMPS has documentation and tutorials at its W
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
 # Available Versions
-The LAMMPS version installed on Rivanna incorporates the most popular optional packages. To find the available versions and learn how to load them, run:
-<pre>module spider {{% module-name %}}</pre>
+To find the available versions and learn how to load them, run:
+```
+module spider {{% module-name %}}
+```
 
 The output of the command shows the available {{% software-name %}} module versions.
 
 For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
-<pre>module spider {{% module-firstversion %}}</pre>
+```
+module spider {{% module-firstversion %}}
+```
 
-{{% module-versions %}}
+{{< module-versions >}}
 
 Users may build their own versions of LAMMPS if they wish to use a different compiler and MPI combination, or to choose individual optional packages.  Instructions are available at the [LAMMPS Getting Started"](http://lammps.sandia.gov/doc/Build.html) page.
 

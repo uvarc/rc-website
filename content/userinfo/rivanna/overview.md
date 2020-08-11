@@ -111,6 +111,27 @@ New users are invited to attend one of our free orientation sessions ("Introduct
 
 - - -
 
+# Overview
+
+A high performance computing cluster is typically made up of at least four service layers:
+
+1. **Interactive nodes** - Where you log in, interact with data and code, and submit jobs.
+2. **Worker nodes** - Where larger jobs are run. These nodes are heterogenous, with some having higher CPU, some with more memory, some with GPUs. The type of nodes your job runs in is specified by what queue you select.
+3. **Storage** - Where files and data are stored, accessible by all nodes in the cluster.
+4. **Job scheduler** - A management system that takes job requests and optimizes their execution.
+
+<p style="margin-top:3rem;">Click on elements of the image to learn more:</p>
+<img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="margin-top:0rem;display:block;" class="hpc-overview" usemap="#hpc_map" data-bg_fill="rgba(244,124,67,0.5)" />
+<map name="hpc_map">
+  <area id="interactive-nodes" alt="Interactive Nodes" title="Interactive Nodes" href="/userinfo/rivanna/login/" shape="rect" coords="243,37,555,120" style="outline:none;" class="hpchover" />
+  <area id="worker-nodes" alt="Worker Nodes" title="Worker Nodes" href="/userinfo/rivanna/queues/" shape="rect" coords="38,150,700,500" style="outline:none;" class="hpchover" />
+  <area id="storage" alt="Storage" title="Storage" href="/userinfo/rivanna/storage/" shape="rect" coords="70,540,700,650" style="outline:none;" class="hpchover" />
+  <area id="job-scheduler" alt="Job Scheduler" title="Job Scheduler" href="/userinfo/rivanna/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
+</map>
+
+
+- - -
+
 # System Details
 
 <div id="accordion" style="margin-top:4rem;margin-bottom:4rem;">
@@ -125,76 +146,9 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
         Rivanna is a managed resource; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna is SLURM.  SLURM refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
-
-<table class="table" style="font-weight:normal;">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Partition</th>
-      <th scope="col">Max time per job</th>
-      <th scope="col">Max nodes per job</th>
-      <th scope="col">Max cores per job</th>
-      <th scope="col">Max memory per core</th>
-      <th scope="col">Max memory per node per job</th>
-      <th scope="col">SU Charge Rate</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">standard</th>
-      <th scope="row">7 days</th>
-      <th scope="row">1</th>
-      <th scope="row">40</th>
-      <th scope="row">9GB</th>
-      <th scope="row">375GB</th>
-      <th scope="row">1.00</th>
-    </tr>
-    <tr>
-      <th scope="row">parallel</th>
-      <th scope="row">3 days</th>
-      <th scope="row">45</th>
-      <th scope="row">900</th>
-      <th scope="row">9GB</th>
-      <th scope="row">120GB</th>
-      <th scope="row">1.00</th>
-    </tr>
-    <tr>
-      <th scope="row">largemem</th>
-      <th scope="row">4 days</th>
-      <th scope="row">1</th>
-      <th scope="row">16</th>
-      <th scope="row">64GB</th>
-      <th scope="row">975GB</th>
-      <th scope="row">1.00</th>
-    </tr>
-    <tr>
-      <th scope="row">gpu</th>
-      <th scope="row">3 days</th>
-      <th scope="row">4</th>
-      <th scope="row">8</th>
-      <th scope="row">32GB</th>
-      <th scope="row">240GB</th>
-      <th scope="row">2.00</th>
-    </tr>
-    <tr>
-      <th scope="row">knl</th>
-      <th scope="row">3 days</th>
-      <th scope="row">8</th>
-      <th scope="row">512 cores/2048 threads</th>
-      <th scope="row">3 GB (per physical core)	</th>
-      <th scope="row">192GB</th>
-      <th scope="row">1.00</th>
-    </tr>
-    <tr>
-      <th scope="row">dev</th>
-      <th scope="row">1 hour</th>
-      <th scope="row">2</th>
-      <th scope="row">8</th>
-      <th scope="row">6GB</th>
-      <th scope="row">36GB</th>
-      <th scope="row">0.00</th>
-    </tr>
-  </tbody>
-</table>
+        <p>
+            {{< queues >}}
+		</p>
       </div>
     </div>
   </div>
@@ -208,62 +162,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     </div>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
-<table class="table" style="font-weight:normal;">
-  <thead>
-    <tr>
-      <th scope="col">Cores/node</th>
-      <th scope="col">RAM/node</th>
-      <th scope="col">Nodes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">20</th>
-      <th scope="row">128GB</th>
-      <th scope="row">195</th>
-    </tr>
-    <tr>
-      <th scope="row">28</th>
-      <th scope="row">256GB</th>
-      <th scope="row">25</th>
-    </tr>
-    <tr>
-      <th scope="row">40</th>
-      <th scope="row">384GB</th>
-      <th scope="row">80</th>
-    </tr>
-    <tr>
-      <th scope="row">16</th>
-      <th scope="row">1TB</th>
-      <th scope="row">5</th>
-    </tr>
-    <tr>
-      <th scope="row">28+8 K80 GPU</th>
-      <th scope="row">256GB</th>
-      <th scope="row">8</th>
-    </tr>
-    <tr>
-      <th scope="row">28+4 P100 GPU</th>
-      <th scope="row">256GB</th>
-      <th scope="row">4</th>
-    </tr>
-    <tr>
-      <th scope="row">28+4 V100 GPU</th>
-      <th scope="row">256GB</th>
-      <th scope="row">1</th>
-    </tr>
-    <tr>
-      <th scope="row">40+10 RTX2080 GPU</th>
-      <th scope="row">384GB</th>
-      <th scope="row">2</th>
-    </tr>
-    <tr>
-      <th scope="row">64 Knight's Landing</th>
-      <th scope="row">196GB</th>
-      <th scope="row">8</th>
-    </tr>
-  </tbody>
-</table>
+		{{% rivanna-specs %}}
       </div>
     </div>
   </div>

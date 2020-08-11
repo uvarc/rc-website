@@ -1,5 +1,5 @@
 +++
-type = "rivanna"
+type = "howto"
 date = "2020-02-21T15:12:46-05:00"
 tags = [
   "rivanna", "software", "mpi"

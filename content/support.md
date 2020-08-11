@@ -18,7 +18,7 @@ type = "about"
 var user_token = getCookie("__user_token");
 </script>
 
-<div class="card-group support-row">
+<div class="card-deck support-row">
 <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
   <div class="card-body">
     <h5 class="card-title">Submit a Ticket</h5>
@@ -48,13 +48,13 @@ var user_token = getCookie("__user_token");
 </div>
 </div>
 
-<div class="card-group support-row">
+<div class="card-deck support-row">
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">FAQ / Knowledgebase</h5>
     <p class="card-text">Search topics or post your own related to research computing.</p>
     <div class="support-tiles">
-      <a href="https://discuss.rc.virginia.edu/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
+      <a href="/userinfo/faq/overview/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
     </div>
   </div>
 </div>
@@ -69,6 +69,18 @@ var user_token = getCookie("__user_token");
 </div>
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
+    <h5 class="card-title">Create an Ivy Project</h5>
+    <p class="card-text">Perform your research on a HIPAA-compliant computing platform.</p>
+    <div class="support-tiles">
+      <a href="https://services.rc.virginia.edu/"><button class="btn btn-primary btn-sm">Set up a Project</button></a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="card-deck support-row">
+<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
+  <div class="card-body">
     <h5 class="card-title">Request an Allocation</h5>
     <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
     <div class="support-tiles">
@@ -76,9 +88,6 @@ var user_token = getCookie("__user_token");
     </div>
   </div>
 </div>
-</div>
-
-<div class="card-group support-row">
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Request Storage</h5>
@@ -94,15 +103,6 @@ var user_token = getCookie("__user_token");
     <p class="card-text">Request or modify access to the OMERO image management database.</p>
     <div class="support-tiles">
       <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/omero.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
-    </div>
-  </div>
-</div>
-<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">VizLab</h5>
-    <p class="card-text">A place specifically designed for data visualization.</p>
-    <div class="support-tiles">
-      <a href="/service/imaging/#viz-lab"><button class="btn btn-primary btn-sm">Learn More</button></a>
     </div>
   </div>
 </div>
@@ -151,7 +151,7 @@ Examples of the type of support we can provide are:
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Thursdays 10:00-12:00pm</b><br />
-<a href="https://virginia.zoom.us/j/723009972"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
+<a href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
 

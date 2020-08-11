@@ -169,3 +169,5 @@ Build+deployment generally takes 70 seconds and can be monitored using the [Trav
 ## Search
 
 Site search is provided by Google CSE. Publishing in hugo generates a `/sitemap.xml` file that is bound to Google's crawlers. If you would like to omit a page from search, include `private = true` in the front matter of your page. The crawler generally refreshes every 3-7 days.
+
+[Test]

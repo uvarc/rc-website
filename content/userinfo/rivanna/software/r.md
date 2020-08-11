@@ -12,6 +12,8 @@ tags = [
   "lang",
 ]
 draft = false
+modulename = "R"
+softwarename = "R"
 shorttitle = "R & RStudio"
 title = "R and RStudio on Rivanna"
 description = "R and RStudio in Rivanna's HPC environment"
@@ -38,7 +40,7 @@ Notice that we included gcc in the load command. There are two reasons why inclu
 The load command will load a default version of R, unless another version is specified.  For example, you could type:
 
 ```
-module load gcc R/3.3.0
+module load gcc R/3.4.3
 ```
 
 To see the available versions of R, type:
@@ -47,48 +49,41 @@ To see the available versions of R, type:
 module spider R
 ```
 
-{{% module-versions module="R" %}}
+<br>
+{{< module-versions >}}
 
 # Loading the RStudio module
 
 RStudio is a development environment for R.  It also is supported through its own module, but you must load a version of R first. For example, to load and run Rstudio, you could type the following:
 
 ```
-module load gcc R/3.5.1
+module load gcc R
 module load rstudio
 rstudio &
 ```
 
 RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server access via OpenOnDemand](https://www.rc.virginia.edu/userinfo/rivanna/login/#web-based-access).
 
-# Submitting a Single-Core Job to the Cluster
-After you have developed your R program, you can submit it to the compute nodes by using a SLURM job script similar to the following: 
+# Installing packages
+
+Due to the amount and variability of packages available for R, Research Computing does not maintain R packages beyond the very basic.  If you need a package, you can install it in your account, using a local library.  For example, to install `BiocManager`, you can type:
 
 ```
-module load gcc R/3.3.0
+module load gcc R
 ```
 
-To see the available versions of R, type:
+```
+R
+   .
+   .
+   .
+> install.packages('BiocManager')
 
 ```
-module spider R
-```
 
-**Available R Versions**
+If the R interpreter prompts you about creating a local library, type `yes`.  If it asks you to select a CRAN mirror, scroll down the list it provides and select one of the US sites.
 
-{{% module-versions %}}
-
-# Loading the RStudio module
-
-RStudio is a development environment for R.  It also is supported through its own module, but you must load a version of R first. For example, to load and run Rstudio, you could type the following:
-
-```
-module load gcc R/3.5.1
-module load rstudio
-rstudio &
-```
-
-RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server page](/userinfo/rivanna/software/rstudio).  
+Or, you can launch RStudio and install the packages as you would on your laptop.
 
 
 # Submitting a Single-Core Job to the Cluster
@@ -103,25 +98,25 @@ After you have developed your R program, you can submit it to the compute nodes 
 #SBATCH -p standard
 #SBATCH -A mygroup
 
-module load gcc R/3.5.1
+module load gcc R
 Rscript myRprog.R
 ```
 
 This script should be saved in a file, called (for example) job.slurm.  To run your job, you would submit the script by typing:
 
-```bash
+```
 sbatch job.slurm
 ```
 
 # Submitting Multi-Core Jobs to the Cluster
-R programs can be written to use multiple cores on a node.  You will need to ensure that both SLURM and your R code know how many cores it will be using.  To submit a multi-core job to Rivanna, we recommend that the SLURM script be set up in the following way:
+R programs can be written to use multiple cores on a node.  You will need to ensure that both SLURM and your R code know how many cores they will be using.  In the SLURM script, we recommend using `--cpus-per-task` to specify the number of cores.  For example:
 
 
 ```
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=10      
+#SBATCH --cpus-per-task=10      #Requests 10 cores
 #SBATCH -t 00:30:00
 #SBATCH -o results.out
 #SBATCH -p standard
@@ -131,18 +126,28 @@ module load gcc R
 Rscript myRprog.R ${SLURM_CPUS_PER_TASK}
 ```
 
-In the R code, you will need to read in the number of cores, passed in through the command line:
+For the R code, the number of cores can be passed in with a command-line argument, as shown in the above example with ${SLURM_CPUS_PER_TASK}.  The code will need to be designed to read in the command-line argument and establish the number of available cores.  For example:
 
 
-```R
+```
 cmdArgs <- commandArgs(trailingOnly=TRUE)
 numCores <- as.integer(cmdArgs[1])
 options(mc.cores=numCores)
 ```
+Or, you if you do not want to use command-line arguments, you can use the function `Sys.getenv()` in the R code.  For example:
+
+```
+numCores <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK"))
+options(mc.cores=numCores)
+
+```
+
+Do not use the `detectCores()` function, which is often shown in tutorial examples.  It will detect the number of physical cores -- not how many core SLURM is allowing the program to use.
+
 
 # Submitting MPI Jobs to the Cluster
 
-R programs can be distributed across multiple nodes with with MPI (message passing interface) and the appropriate MPI packages.  To run a parallel R job that uses MPI, the SLURM script would be similar to the following:
+R programs can be distributed across multiple nodes with MPI (message passing interface) and the appropriate MPI packages.  To run a parallel R job that uses MPI, the SLURM script would be similar to the following:
 
 ```
 #!/bin/bash
@@ -157,5 +162,16 @@ module load gcc openmpi R
 
 srun Rscript myRprog.R
 ```
+The items to notice in this script are 
 
-Contact hpc-support@virginia.edu for consulting in optimizing and parallelizing your scripts.
+i)   the number of nodes; 
+
+ii)  the number of tasks; 
+
+iii) the parallel partition; and 
+
+iv)  the `srun` before the command to run the R code.
+
+
+
+If you have questions about running your R code on Rivanna or would like a consultation to optimize or parallelize your code, contact hpc-support@virginia.edu.

@@ -2,13 +2,22 @@
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
-<article class="blog-post" style="width:70%;">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-6">
+    <article class="blog-post" class="">
 
   <header>
+
     <div style="float:right;padding: 20px 0;max-width:30%;">
       <h6 style="font-size:85%;"><a href="/about/people/" style="color:blue;">&laquo; Return to People</a></h6>
     </div>
+  
+  {{ if (isset .Params "image") }}
     <img src="{{ .Params.image }}" alt="{{ .Title }}" class="rounded-circle" width="140" height="140">
+  {{ end }}
+
     <h2 style="margin-bottom:2rem;"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
   </header>
 
@@ -24,14 +33,15 @@
 
   {{ .Content }}
 
-  <hr size=1 />
-
   {{ $subjects := .Params.subjects }}
   {{ range $subjects }}
     <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
   {{ end }}
 
-</article> <!-- /.blog-post -->
+    </article> <!-- /.blog-post -->
+    </div>
+  </div>
+</div>
 
 {{ end }}
 

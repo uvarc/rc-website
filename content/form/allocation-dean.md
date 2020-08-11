@@ -12,6 +12,7 @@ private = true
 
 +++
 
+{{< form-cookies >}}
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="allocation-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
@@ -20,13 +21,10 @@ private = true
   <!-- BEGIN FIRST SECTION -->
   <div style="padding:1.4rem;" class="card">
   <h5 class="card-title">About the Requestor</h5>
-
   <input type="hidden" id="category" name="category" value="Deans Allocation">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
-
 {{% form-userinfo %}}
-
   <div class="form-item form-type-select form-group">
     <label class="control-label" for="edit-submitted-classification">Sponsoring Dean
       <span class="form-required" title="This field is required.">*</span>
@@ -40,24 +38,19 @@ private = true
       <option value="other">Other</option>
     </select>
   </div>
-
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">MyGroups Account for this Allocation (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
-
   <div class="form-item form-group form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-users">Others to be Added to MyGroups Account (UVA computing IDs separated by commas)</label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="mygroup-users" name="mygroup-users" cols="60" rows="5"></textarea>
     </div>
   </div>
-
   <div class="form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="64" />
   </div>
 <!-- END FIRST SECTION -->
 </div>
-
 <div class="spacer-20"></div>
-
 <!-- BEGIN SECOND SECTION -->
 <div style="padding:1.4rem;" class="card">
 <h5 class="card-title">About the Request</h5>
@@ -67,7 +60,6 @@ private = true
   </div>
   <div class="col" style="width:50%;"></div>
   </div>
-
   <div class="form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="interdisciplinary">
     Will this request be used in support of interdisciplinary research? <span class="form-required" title="This field is required.">*</span></label>
     <div id="for-research" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="for-research-1">
@@ -77,40 +69,58 @@ private = true
       <input required="required" type="radio" id="for-research-2" name="for-research" value="no" class="form-radio" /> &nbsp;No</label>
     </div>
   </div>
-  </div>
-  
-<!-- END SECOND SECTION -->
-  </div>
   <div class="spacer-20"></div>
-
+  <div class="form-item form-type-radios form-group"> 
+    <label class="control-label" for="faculty-startup">
+      Is this request part of a new faculty start-up agreement? <span class="form-required" title="This field is required.">*</span>
+    </label>
+    <div id="faculty-startup" class="form-radios">
+      <div class="form-item form-type-radio radio"> 
+        <input required="required" type="radio" id="yes-faculty-research" name="faculty-startup" value="yes" class="form-radio" /> 
+        <label class="control-label" for="yes-faculty-startup">
+          Yes
+        </label>
+      </div>
+      <div class="form-item form-type-radio radio"> 
+        <input required="required" type="radio" id="no-faculty-startup" name="faculty-startup" value="no" class="form-radio" />
+        <label class="control-label" for="no-faculty-startup">
+          No
+        </label>
+      </div>
+    </div>
+    <div class="form-item form-type-textarea form-group" style="margin-top:1rem;display:none;" name="faculty-startup-explainer" id="faculty-startup-explainer">
+      <label class="control-label" for="faculty-startup-details" id="faculty-startup-details-label">Please provide details of the agreement below including the name of the approving dean.</label>
+      <div class="form-textarea-wrapper resizable">
+        <textarea class="form-control form-textarea" id="faculty-startup-details" name="faculty-startup-details" cols="60" rows="8"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <!-- END SECOND SECTION -->
+  <div class="spacer-20"></div>
   <!-- BEGIN THIRD SECTION -->
   <div class="card" style="padding:1.4rem;">
   <h5 class="card-title">About Your Project</h5>
-
   <div class="form-item form-type-textarea form-group"> <label class="control-label" for="description-of-research">Describe Your Research Project <span class="form-required" title="This field is required.">*</span></label>
   <p style="font-size:85%;font-color:#bbb;">Please describe your research project in the box below (submit additional pages if needed). Be sure to include details of what you did with the startup allocation and how you plan to use the administrative allocation. Also, please provide a brief description of the code(s) and/or software you will be using, along with performance information to justify the resource request.</p>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="description-of-research" name="description-of-research" cols="60" rows="12"></textarea>
     </div>
   </div>
-
   <div class="form-item form-type-textarea form-group"> <label class="control-label" for="research-aims">Intended Research Outputs <span class="form-required" title="This field is required.">*</span></label>
   <p style="font-size:85%;font-color:#bbb;">One of the goals of this HPC cluster is to support sponsored research. Please list the title, award agency, award number, and award dates for research that will be enabled by this allocation, as well as other intended research outputs. Researchers are expected to provide project outcomes from allocations granted on the system.</p>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="research-aims" name="research-aims" cols="60" rows="12"></textarea>
     </div>
   </div>
-
   <div class="form-item form-type-textarea form-group"> <label class="control-label" for="description-of-research">HPC Features <span class="hpc-features" title="This field is required.">*</span></label>
   <p style="font-size:85%;font-color:#bbb;">In the box below, please briefly explain why this project requires access to Rivanna’s key features (e.g. fast parallel scratch storage, fast internode communication, etc.).</p>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="hpc-features" name="hpc-features" cols="60" rows="12"></textarea>
     </div>
   </div>
-
   <!-- END THIRD SECTION -->
   </div>
   <div class="spacer-20"></div>
-
   <input type="hidden" name="details" />
-
   <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
@@ -125,11 +135,9 @@ private = true
   </div>
   <script type="text/javascript" src="/js/captcha.js"></script>
   -->
-
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
-
 </div>
 </form>
 
@@ -155,6 +163,16 @@ function decode64(str) {
 
 var form = document.getElementById('allocation-form');
 
+
+var cookie_token = getCookie("__user_token");
+var url_user_token = getParams()["user_token"];
+
+
+// The two redirects below loosely verify an authenticated user. Comment out for testing.
+if (cookie_token !== url_user_token) {
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-dean.php?user_token=" + cookie_token );
+}
+
 var name_enc = getParams()["name"];
 if (name_enc) {
   // do nothing
@@ -162,8 +180,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  $('#sponsor').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/allocation-dean.php" );
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-dean.php?user_token=" + cookie_token );
 }
 
 // name
@@ -184,6 +201,18 @@ var set_email = document.getElementById("email").value = email_dec;
 // sponsor
 let sponsor = decodeURI(getParams()["sponsor"]);
 var set_sponsor = document.getElementById("sponsor").value = sponsor;
+
+// faculty startup explanation
+$("#faculty-startup-explainer").hide();
+$('[name="faculty-startup"]').click(function(){
+  var startupVal = $(this).attr("value");
+  if (startupVal == "yes") {
+    $("#faculty-startup-explainer").show(400);
+  }
+  if (startupVal == "no") {
+    $("#faculty-startup-explainer").hide(200);
+  }
+});
 
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>

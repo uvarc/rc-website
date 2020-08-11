@@ -1,5 +1,5 @@
 +++
-type = "rivanna"
+type = "howto"
 date = "2020-03-03T00:00:00-05:00"
 tags = [
   "rivanna", "software", "jupyter", "singularity"
@@ -15,17 +15,32 @@ You can create custom kernels from an Anaconda environment or a Singularity cont
 In both cases you'll need to install the `ipykernel` package.
 
 # Jupyter kernel based on Anaconda environment
-To create a custom kernel of the Anaconda environment `myenv`:
+To create a custom kernel of the Anaconda environment `myenv` that uses Python 3.7:
 ```
 module load anaconda/2019.10-py3.7
+conda create -n myenv python=3.7 ipykernel <other_packages>
 source activate myenv
 python -m ipykernel install --user --name myenv --display-name "My Env"
 ```
 
-Note: You can customize the display name, which will be displayed when you hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
+Note:
+- You can customize the display name for your kernel. It is shown when you hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
+- For more information on Anaconda, please visit [here](/userinfo/rivanna/software/python/).
 
 # Jupyter kernel based on Singularity container
-For this to work, the `ipykernel` Python package must be installed within your Singularity container.
+For this to work, the `ipykernel` Python package must be installed within the Singularity container. To create a Jupyter kernel for the container, you can either use our automated script `jkrollout` or do it manually.
+
+## Automated script
+Replace `/path/to/sif` with the actual image name or path:
+```
+jkrollout /path/to/sif "My kernel"
+```
+If GPU is supported:
+```
+jkrollout /path/to/sif "My kernel" gpu
+```
+
+## Manual
 Custom kernels are stored under `~/.local/share/jupyter/kernels`. If this directory does not already exist, run
 ```
 mkdir -p ~/.local/share/jupyter/kernels
