@@ -57,17 +57,16 @@ To print help for a particular tool, run
 ```
 gatk ToolName --help
 ```
-### General Syntax 
+# General Syntax 
 To run a GATK tool locally, the syntax is:
 ```
 gatk ToolName toolArguments
 ``` 
 
 # Basic Usage Examples
-
 Below are few trivial examples of using GATK4 tools in single-core mode.  
 
-### 1. **[PrintReads](https://gatk.broadinstitute.org/hc/en-us/categories/360002369672)**
+## 1. **[PrintReads](https://gatk.broadinstitute.org/hc/en-us/categories/360002369672)**
 PrintReads is a generic utility tool for manipulating sequencing data in SAM/BAM format. 
 
 In order to print all reads that have a mapping quality above zero in 2 input BAMs (say - `input1.bam` and `input2.bam`) and write the output to `output.bam`.
@@ -79,7 +78,7 @@ gatk PrintReads \
         --read_filter MappingQualityZero
 ``` 
 
-### 2. **[HaplotypeCaller](https://gatk.broadinstitute.org/hc/en-us/categories/360002369672)**
+## 2. **[HaplotypeCaller](https://gatk.broadinstitute.org/hc/en-us/categories/360002369672)**
 The HaplotypeCaller is capable of calling SNPs and indels simultaneously via local de-novo assembly of haplotypes in an active region.
 
 Basic syntax for variant-only calling on DNAseq.
@@ -109,14 +108,14 @@ gatk --java-option "-Xmx4g" HaplotypeCaller \
 ```
 The output will be written to the file - `output.raw.snps.indels.vcf`, in the [Variant Call Format](https://samtools.github.io/hts-specs/VCFv4.2.pdf).
 
-## Parallelism in GATK4 
+# Parallelism in GATK4 
 
 The concepts involved and their application within GATK are well explained in this [article](https://software.broadinstitute.org/gatk/documentation/article?id=11059). 
 
 + In GATK3, there were two options for tools that supported multi-threading, controlled by  the arguments `-nt/--num_threads` and `-nct/--num_cpu_threads_per_data_thread`.
 + In GATK4, tools take advantage of an open-source industry-standard [Apache Spark](https://spark.apache.org/) software library.  
 
-### Spark-enabled GATK tools
+## Spark-enabled GATK tools
 
 **Not all GATK tools use Spark.** Check the respective Tool Doc to make sure of Spark-capabilities.
 
@@ -128,7 +127,7 @@ The "sparkified" versions have the suffix "Spark" at the end of their names. Man
 
 While working on Rivanna's compute node (with multiple CPU cores), the GATK engine can use Spark to create a virtual standalone cluster in place, for its multi-threaded processing. 
 
-#### "local"-Spark Usage Example: 
+## "local"-Spark Usage Example: 
 The `PrintReads` tool we explored above has a Spark version called: `PrintReadsSpark`. In order to set up a local Spark environment to run the same job using 8 threads, we can use the `--spark-master` argument. 
 ```
 gatk PrintReadsSpark \
