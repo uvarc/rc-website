@@ -55,7 +55,7 @@ private = true
       <input required="required" class="form-control form-text required" type="text" id="class-size" name="class-size" value="" size="60" maxlength="128" />
     </div>
     <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="class-schedule">Class Schedule <span class="form-required" title="This field is required.">*</span></label>
-      <p style="font-size:80%;">What days/times does this class meet?</p>
+      <p style="font-size:80%;">What days/times does this class meet? Enter “n/a” if students will use the cluster at different times.</p>
       <input required="required" class="form-control form-text required" type="text" id="class-schedule" name="class-schedule" value="" size="60" maxlength="128" />
     </div>
   </div>
@@ -79,7 +79,6 @@ function getParams() {
     });
     return vars;
 }
-
 function decode64(str) {
   var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
   var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -90,16 +89,12 @@ function decode64(str) {
   }
   return r;
 };
-
 var form = document.getElementById('allocation-form');
-
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
-
 if (cookie_token !== url_user_token) {
   window.location.replace( "https://auth.uvasomrc.io/site/allocation-instructional-new.php?user_token=" + cookie_token );
 }
-
 var name_enc = getParams()["name"];
 var name_enc = getParams()["name"];
 var uid_enc = getParams()["uid"];
@@ -116,21 +111,17 @@ if (name_enc) {
   $('#uid').val('');
   window.location.replace( "https://auth.uvasomrc.io/site/allocation-instructional-new.php?user_token=" + cookie_token );
 }
-
 // name
 let name = decodeURI(getParams()["name"]);
 let name_dec = decode64(name);
 var set_name = document.getElementById("name").value = name_dec;
-
 // uid
 let uid = decodeURI(getParams()["uid"]);
 let uid_dec = decode64(uid);
 var set_uid = document.getElementById("uid").value = uid_dec;
-
 // email
 let email = decodeURI(getParams()["email"]);
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
-
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>
