@@ -470,13 +470,13 @@ img {
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
 }
-#q {
+/* #q {
   text-transform: lowercase;
   border:solid 1px white;
   background-color:##0f3a72;
   text-align:left;
   font-family:monospace;
-}
+} */
 .cursor {
   position: relative;
 }
