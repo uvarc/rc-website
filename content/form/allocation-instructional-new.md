@@ -51,7 +51,7 @@ private = true
   </div>
   <div class="row">
     <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="class-size">Class Size <span class="form-required" title="This field is required.">*</span></label>
-      <p style="font-size:80%;">How many students are in your class?</p>
+      <p style="font-size:80%;">How many students are in your class? <br /><br /></p>
       <input required="required" class="form-control form-text required" type="text" id="class-size" name="class-size" value="" size="60" maxlength="128" />
     </div>
     <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="class-schedule">Class Schedule <span class="form-required" title="This field is required.">*</span></label>
