@@ -31,46 +31,46 @@ private = true
     <option value="postdoc">Postdoctoral Associate</option>
     <option value="other">Other</option></select>
   </div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
   </div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name-of-mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
-  <div class="form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-users">Others to be Added to MyGroups Account (UVA computing IDs separated by commas)</label>
+  <div class="form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-users">Others to add to MyGroups account (UVA computing IDs separated by commas)</label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="mygroup-users" name="mygroup-users" cols="60" rows="5"></textarea>
     </div>
   </div>
   <div class="row">
-    <div class="col form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="class-id">Class ID <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-type-textfield"> <label class="control-label" for="class-id">Class ID <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="class-id" name="class-id" value="" size="60" maxlength="128" />
     </div>
-    <div class="col form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="academic-term">Academic Term <span class="form-required" title="This field is required.">*</span></label>
+    <div class="col form-item form-group form-type-textfield"> <label class="control-label" for="academic-term">Academic Term <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="academic-term" name="academic-term" value="" size="60" maxlength="128" />
     </div>
   </div>
-  <input type="hidden" name="details" />
-  <!--
-  <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
-    <div class="row"">
-      <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
-      </div>
-      <div class="form-item form-group col">
-        <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:1rem;padding:6px;font-family:monospace; width:8rem;" />
-        <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
-        <button class="btn btn-default" id="captcha-refresh" type="button" onclick="createCaptcha()"><i class="fas fa-sync fa-1x"></i></button>
-      </div>
+  <div class="row">
+    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="class-size">Class Size <span class="form-required" title="This field is required.">*</span></label>
+      <p style="font-size:80%;">How many students are in your class? <br /><br /></p>
+      <input required="required" class="form-control form-text required" type="text" id="class-size" name="class-size" value="" size="60" maxlength="128" />
+    </div>
+    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="class-schedule">Class Schedule <span class="form-required" title="This field is required.">*</span></label>
+      <p style="font-size:80%;">What days/times does this class meet? Enter “n/a” if students will use the cluster at different times.</p>
+      <input required="required" class="form-control form-text required" type="text" id="class-schedule" name="class-schedule" value="" size="60" maxlength="128" />
     </div>
   </div>
-  <script type="text/javascript" src="/js/captcha.js"></script>
-  -->
+  <div class="form-item form-type-textarea form-group"> <label class="control-label" for="resources-required">Cores/Memory Required <span class="form-required" title="This field is required.">*</span></label>
+    <p style="font-size:80%;">Estimate how many cores and how much memory each student will need to process his/her jobs. General descriptions are fine. A member of our user services team will contact you if we need additional information.</p>
+    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea required" id="resources-required" name="resources-required" cols="60" rows="5"></textarea>
+    </div>
+  </div>
+  <input type="hidden" name="details" />
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>
 </form>
-
 <script>
 function getParams() {
     var vars = {};
@@ -79,7 +79,6 @@ function getParams() {
     });
     return vars;
 }
-
 function decode64(str) {
   var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
   var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -90,16 +89,12 @@ function decode64(str) {
   }
   return r;
 };
-
 var form = document.getElementById('allocation-form');
-
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
-
 if (cookie_token !== url_user_token) {
   window.location.replace( "https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=" + cookie_token );
 }
-
 var name_enc = getParams()["name"];
 var name_enc = getParams()["name"];
 var uid_enc = getParams()["uid"];
@@ -116,21 +111,17 @@ if (name_enc) {
   $('#uid').val('');
   window.location.replace( "https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=" + cookie_token );
 }
-
 // name
 let name = decodeURI(getParams()["name"]);
 let name_dec = decode64(name);
 var set_name = document.getElementById("name").value = name_dec;
-
 // uid
 let uid = decodeURI(getParams()["uid"]);
 let uid_dec = decode64(uid);
 var set_uid = document.getElementById("uid").value = uid_dec;
-
 // email
 let email = decodeURI(getParams()["email"]);
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
-
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>
