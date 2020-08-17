@@ -31,7 +31,6 @@ $("#categories").change(function () {
     $("#omero-help").hide(200);
   }
 });
-
 var text_max = 5000;
 $('#textarea_feedback').html(text_max + ' characters remaining');
 $('#description').keyup(function() {
