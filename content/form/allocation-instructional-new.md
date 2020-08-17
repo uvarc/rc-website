@@ -97,7 +97,7 @@ var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 
 if (cookie_token !== url_user_token) {
-  // window.location.replace( "https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-instructional-new.php?user_token=" + cookie_token );
 }
 
 var name_enc = getParams()["name"];
@@ -114,7 +114,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  // window.location.replace( "https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=" + cookie_token );
+  window.location.replace( "https://auth.uvasomrc.io/site/allocation-instructional-new.php?user_token=" + cookie_token );
 }
 
 // name
