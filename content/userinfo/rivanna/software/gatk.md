@@ -20,6 +20,7 @@ author = "RC Staff"
 {{% module-description %}}
 
 <br>
+
 **Software Category:** {{% module-category %}}
 
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
