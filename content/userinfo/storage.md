@@ -65,7 +65,7 @@ images = [""]
     <td class="">{{% storage-pricing zfs %}}/TB/yr</td>
     <td class="">No backup</td>
     <td class="">Rivanna</td>
-    <td class="">ZFS NAS storage can be mounted on your desktop and allows for file sharing among research team members.</td>
+    <td class=""><b>Currently not available.</b> ZFS NAS storage can be mounted on your desktop and allows for file sharing among research team members.</td>
   </tr>
   </tbody>
 </table>
