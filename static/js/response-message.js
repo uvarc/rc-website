@@ -4,9 +4,7 @@ let status = decodeURI(getParams()["status"]);
 if(message == "undefined" || message == undefined) {
   message="";
 }
-
 $("#response_message").hide();
-
 if(status == "error" || status == undefined) {
   $("#response_message").show();
   document.getElementById("form_post_response").innerHTML = message;

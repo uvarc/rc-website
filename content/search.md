@@ -10,7 +10,6 @@ private = true
 +++
 
 <script async src="https://cse.google.com/cse.js?cx=009070394138504404541:6d4gc6cb7oi"></script>
-
 <script>
   (function() {
     var cx = '009070394138504404541:6d4gc6cb7oi';

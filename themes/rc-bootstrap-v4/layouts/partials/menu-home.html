@@ -91,29 +91,13 @@
 
   </ul>
 
-    <!-- HIDDEN SEARCH DIV OVERLAY -->
-    <div id="overlay">
-      <div style="float:right;margin-top:10px;margin-right:20px;">
-        <a style="color:black;text-decoration:none" href="#" onclick="qoff()"><img src="/images/thin-x.png" alt="Close" style="max-width:40px;"></a>
-      </div>
-      <div id="searchtext" class="cursor">
-        <form method="get" action="/search/">
-          <input style="" type="text" id="q" name="q" onfocus="this.value=''"></input>
-        </form>
-      </div>
-      <!-- REMOVE COMMON SEARCHES FOR NOW 
-      <div style="font-family:'Share Tech Mono', monospace;float:left;color:black;font-weight:bold;text-decoration:none;position:absolute;width:60%;padding-left:10px;top:10px;font-size:24px;" id="queries">Common searches: </div>
-      <script src="https://cse.google.com/query_renderer.js"></script>
-      <script src="https://cse.google.com/api/009070394138504404541:6d4gc6cb7oi/popularqueryjs?view=one_year&callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
-      -->
-      <script>
-        $("#overlay").hide();
-      </script>
-    </div>
+    <!-- BEGIN SEARCH BOX -->
     <div style="float:right;margin-right:1rem;">
-      <div style="margin-top:50%;margin-bottom:50%;"><a href="#" onclick="qon()"><i class="fas fa-search-plus" style="color:white;"></i></a></div>
+      <form method="get" action="/search/">
+       <i class="fas fa-search-plus" style="color:white;margin-right:4px;"></i> <input type=search id=qt name=q class="" placeholder="Search" style="font-size:90%;padding:4px;margin-top:0.2rem;margin-bottom:auto;background-color:#0f3a72;color:white;border:solid 1px white;">
+      </form>
     </div>
-    <!-- END SEARCH OVERLAY -->
+    <!-- END SEARCH BOX -->
 
   </div>
 </div>
