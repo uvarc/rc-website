@@ -648,8 +648,8 @@ You may use the `sreport` command to see your SLURM usage:
 ```
 $ sreport cluster UserUtilizationByAccount Start=2020-08-01 User=mst3k -t Hours
 --------------------------------------------------------------------------------
-Top 10 Users 2020-08-01T00:00:00 - 2020-08-23T23:59:59 (1987200 secs)
-Usage reported in CPU Minutes
+Cluster/User/Account Utilization 2020-08-01T00:00:00 - 2020-08-23T23:59:59 (1987200 secs)
+Usage reported in CPU Hours
 --------------------------------------------------------------------------------
   Cluster     Login     Proper Name         Account     Used   Energy
 --------- --------- --------------- --------------- -------- --------
