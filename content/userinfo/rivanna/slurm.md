@@ -640,3 +640,27 @@ Memory Efficiency: 4.16% of 87.89 GB
 ```
 
 If you need a more detailed analysis of CPU/memory usage, please contact us for help.
+
+# Usage Report
+
+You may use the `sreport` command to see your SLURM usage:
+
+```
+$ sreport cluster UserUtilizationByAccount Start=2020-08-01 User=mst3k -t Hours
+--------------------------------------------------------------------------------
+Top 10 Users 2020-08-01T00:00:00 - 2020-08-23T23:59:59 (1987200 secs)
+Usage reported in CPU Minutes
+--------------------------------------------------------------------------------
+  Cluster     Login     Proper Name         Account     Used   Energy
+--------- --------- --------------- --------------- -------- --------
+     shen     mst3k                     allocation1      100        0
+     shen     mst3k                     allocation2       40        0
+```
+
+For a summary of all group members:
+
+```
+$ sreport cluster UserUtilizationByAccount Start=2020-08-01 Accounts=<your_allocation> -t Hours
+```
+
+Please refer to the [documentation](https://slurm.schedmd.com/sreport.html) for more options.
