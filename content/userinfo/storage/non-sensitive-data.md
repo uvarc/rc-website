@@ -24,7 +24,7 @@ draft = false
 
 {{% callout %}}
 #### 90 Day Deletion
-Users note that `/scratch` is designed for temporary storage for working jobs and should not be used as permanent storage. Files older than 90 days are deleted in a nightly process. [Read more](/userinfo/rivanna/storage/#scratch-cleanup-policy).
+The `/scratch` is designed for temporary storage for working jobs and should not be used as permanent storage. It has a limit of 350,000 per user.  Files older than 90 days are deleted in a nightly process. [Read more](/userinfo/rivanna/storage/#scratch-cleanup-policy).
 {{% /callout %}}
 
 **How to request `/home` and `/scratch` space**
