@@ -22,9 +22,10 @@ An overview of available software packages for Linux VMs is provided [here](/use
 
 # Preinstalled Software 
 
-{{% ivy-approved-sw-detailed platform="Windows" installation="preinstalled" category="all" %}}
+{{< ivy-approved-sw-detailed platform="Windows" installation="preinstalled" category="all" >}}
 
 <br>
+
 - - -
 
 # Optional Software
@@ -37,18 +38,20 @@ In addition to the preinstalled software, researchers may request installation o
 
 ## Bioinformatics
 
-{{% ivy-approved-sw-detailed platform="Windows" installation="optional" category="Bioinformatics" %}}
+{{< ivy-approved-sw-detailed platform="Windows" installation="optional" category="Bioinformatics" >}}
 
 <br>
+
 - - -
 
 ## Data Analysis
 
-{{% ivy-approved-sw-detailed platform="Windows" installation="optional" category="Data Analysis" %}}
+{{< ivy-approved-sw-detailed platform="Windows" installation="optional" category="Data Analysis" >}}
 
 <br>
+
 - - -
 
 ## Image Processing
 
-{{% ivy-approved-sw-detailed platform="Windows" installation="optional" category="Image Processing" %}}
+{{< ivy-approved-sw-detailed platform="Windows" installation="optional" category="Image Processing" >}}
