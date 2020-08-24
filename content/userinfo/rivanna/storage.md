@@ -44,7 +44,7 @@ type = "rivanna"
   </tr>
   <tr>
     <td class="tg-hy9w"><a href="/userinfo/storage/non-sensitive-data/#scratch"><code>/scratch</code></a></td>
-    <td class="tg-hy9w">10TB</td>
+    <td class="tg-hy9w">10TB, 350,000 files</td>
     <td class="tg-hy9w">Free</td>
     <td class="tg-hy9w">Data removed 90 days after last file modification timestamp</td>
     <td class="tg-hy9w">Rivanna login and compute nodes</td>
