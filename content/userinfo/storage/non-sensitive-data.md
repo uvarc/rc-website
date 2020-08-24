@@ -23,36 +23,36 @@ draft = false
 `/scratch` is a Lustre high performance parallel filesystem accessible via the Rivanna login and compute nodes. All Rivanna HPC users are granted 10TB for free and can access this space within Rivanna at `/scratch/$USER`, where `$USER` is an individual's UVa computing ID. **The `/scratch` directory is not intended for long-term data storage. Files are flagged for removal 90 days after last modification timestamp.**
 
 {{% callout %}}
-#### 90 Day Deletion
-The `/scratch` is designed for temporary storage for working jobs and should not be used as permanent storage. It has a limit of 350,000 per user.  Files older than 90 days are deleted in a nightly process. [Read more](/userinfo/rivanna/storage/#scratch-cleanup-policy).
+
+<p><b>90 Day Deletion</b></p>
+The <code>/scratch</code> directory is designed for temporary storage for working jobs and should not be used as permanent storage. It has a limit of 350,000 per user.  Files older than 90 days are deleted in a nightly process. [Read more](/userinfo/rivanna/storage/#scratch-cleanup-policy).
+
 {{% /callout %}}
 
 **How to request `/home` and `/scratch` space**
 
 `/home` and `/scratch` space can be obtained by requesting an allocation on Rivanna. The process of getting access to Rivanna is described [here](/userinfo/rivanna/overview/).
 
-# `/project`
+# Project Storage
 
-The `/project` file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS MyGroups system</a>. `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
+The **Project Storage** file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS MyGroups system</a>. `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
 
 **How to request `/project` storage space**
 
 `/project` storage can be purchased for {{% storage-pricing project %}}/TB/YR by using [this form](https://auth.uvasomrc.io/site/storage.php). When filling out the form, the PI can specify the size of the `/project` directory and the name of an existing or new MyGroup that can access this space. We recommend choosing a MyGroup name specific to your group or collaboration for the `/project` directory. This will reduce confusion in the future if you manage multiple MyGroups and directories on other storage systems.
 
-Once the request has been submitted, the PI will receive a notification that the `/project` space has been provisioned within 24 hours. Once the space becomes available, the PI can grant access to lab members by adding them to the MyGroup. Users in the MyGroup will see the directory (`~/project/MyGroup_name`) after logging into Rivanna. Addition and removal of users is managed by the PI of the group.
+Once the request has been submitted, the PI will receive a notification that the `/project` space has been provisioned within 24 hours. Once the space becomes available, the PI can grant access to lab members by adding them to the MyGroup. Users in the MyGroup will see the directory (`/project/MyGroup_name`) after logging into Rivanna. Addition and removal of users is managed by the PI of the group.
 
 
 # Data transfer
 
-<h2>Public & Moderately Sensitive Data Transfer</h2>
+## Public & Moderately Sensitive Data Transfer
 
 ![Non-Sensitive Data Transfer](/images/storage/storage-nonsecure.jpg)
 
-{{% callout %}}
+## Secure Copy (`scp`)
 
-#### Secure Copy (`scp`)
-
-`scp` uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. <code>scp</code> can be used with the following syntax:</p>
+`scp` uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. <code>scp</code> can be used with the following syntax:
 
 ```scp [source] [destination]```
 
@@ -61,17 +61,16 @@ Once the request has been submitted, the PI will receive a notification that the
 ```scp SourceFile mst3k@rivanna.hpc.virginia.edu:/project/MyGroup_name```
 
 Detailed instructions and examples for using `scp` are listed <a href ="/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
-{{% /callout %}}
 
-#### Secure File Transfer Protocol (`sftp`)
+## Secure File Transfer Protocol (`sftp`)
 
 `sftp` is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
 
-#### Graphical File-Transfer Applications
+## Graphical File-Transfer Applications
 
 <a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, and <a ref="https://mobaxterm.mobatek.net">MobaXterm</a> are examples of open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="/userinfo/rivanna/logintools/graphical-sftp" target="_blank">here</a>.
 
-#### Globus Connect (Large Data Transfer)
+## Globus Connect (Large Data Transfer)
 <p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="/userinfo/globus" target="_blank">here</a>.</p>
 
 # Public & Moderately Sensitive Data Storage Systems
