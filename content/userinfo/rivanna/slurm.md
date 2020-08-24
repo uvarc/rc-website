@@ -663,4 +663,6 @@ For a summary of all group members:
 $ sreport cluster UserUtilizationByAccount Start=2020-08-01 Accounts=<your_allocation> -t Hours
 ```
 
-Please refer to the [documentation](https://slurm.schedmd.com/sreport.html) for more options.
+Refer to the [documentation](https://slurm.schedmd.com/sreport.html) for more options.
+
+Please note that this only provides an estimate of the actual allocation usage. If you need an accurate report of your allocation account, please contact us.

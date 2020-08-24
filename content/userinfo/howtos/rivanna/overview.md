@@ -18,3 +18,4 @@ author = "RC Staff"
 * [Bioinformatics on Rivanna](/userinfo/howtos/rivanna/bioinfo-on-rivanna)
 * [Custom Jupyter Kernels](/userinfo/howtos/rivanna/custom-jupyter-kernels)
 * [Docker Images on Rivanna](/userinfo/howtos/rivanna/docker-images-on-rivanna)
+* [Adding packages to a container](/userinfo/howtos/rivanna/add-packages-to-container)
