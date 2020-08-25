@@ -653,10 +653,12 @@ mam-list-transactions -a <your_allocation> -A Charge -s 2020-08-01 --show "Group
 [Documentation](http://docs.adaptivecomputing.com/9-1-0/releaseNotes/Content/topics/moabAccountingManager/appendices/commands/mam-list-transactions.htm)
 
 ### Non-PI
-Regular users can run the previous command, but it will only show your own usage. You may use the `sreport` command for an estimate of the actual allocation usage (`sreport` is unaware of charge policy):
+Regular users can run the previous command, but it will only show your own usage. You may use the `sreport` command for the total _CPU time_ of your group members:
 
 ```
 $ sreport cluster UserUtilizationByAccount Start=2020-08-01 Accounts=<your_allocation> -t Hours
 ```
+
+Note that this may be different from the actual allocation usage, since `sreport` is unaware of our SU charge policy, but can serve as an estimate.
 
 [Documentation](https://slurm.schedmd.com/sreport.html)
