@@ -22,7 +22,7 @@ draft = false
 The data transfer method you choose heavily relies on the [data sensitivity classification](https://security.virginia.edu/university-data-protection-standards), where the data are currently located and to where you want to transfer the data. Click on a row in the table below to learn more about the data transfer methods available for a specific scenario.
 
 <div>
-<table class="table table-hover">
+<table table table-hover">
 	<col width="25%">
 	<col width="25%">
 	<col width="50%">
@@ -35,14 +35,14 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 	</thead>
 	<tbody style="font-size:14px">
 		<tr data-toggle="collapse" data-target="#accordion1" class="clickable">
-			<td align="center" vertical-align="middle">
+			<td align="center" valign="top">
 				<i class="fas fa-laptop fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
-				<br></br>
+				<br>
 				<b>Lab Workstation</b>
 			</td>
-			<td align="center" vertical-align="middle">
+			<td align="center" valign="top">
 				<i class="fas fa-database fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
-				<br></br>
+				<br>
 				<b>Storage for Public and Moderatively Sensitive Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
@@ -54,7 +54,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<span style="float:right;font-size:85%;margin-bottom:-8px;margin-right:-4px;"><i class="fas fa-angle-double-down"></i> Expand</span>
 			</td>
 		</tr>
-		<tr id="accordion1" class="collapse">
+		<tr id="accordion1" valign="top" class="collapse">
 			<td>
 				<p align="center"><b>Local Computer</b></p>
 				<ul>
@@ -67,10 +67,9 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<ul>
 					<li><a href="/userinfo/storage/non-sensitive-data/#home/">/home on Rivanna</a></li>
 					<li><a href="/userinfo/storage/non-sensitive-data/#scratch/">/scratch on Rivanna</a></li>
-					<li><a href="/userinfo/storage/non-sensitive-data/#project/">/project</a></li>
+					<li><a href="/userinfo/storage/non-sensitive-data/#project/">Project Storage</a></li>
 					<li><a href="/userinfo/storage/research-value/">Value storage</a></li>
 				</ul>
-				
 			</td>
 			<td>
 				<p align="center"><b>Data Transfer Methods</b></p>
@@ -81,15 +80,34 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				</ul>
 			</td>
 		</tr>
+	</tbody>
+</table>
+</div>
+
+---
+
+<div>
+<table table table-hover">
+	<col width="25%">
+	<col width="25%">
+	<col width="50%">
+	<thead>
+		<tr>
+			<th class="text-center">System 1</th>
+			<th class="text-center">System 2</th>
+			<th class="text-center">Example Scenario</th>
+		</tr>	
+	</thead>
+	<tbody style="font-size:14px">
 		<tr data-toggle="collapse" data-target="#accordion2" class="clickable">
-			<td align="center" vertical-align="middle">
+			<td align="center" valign="top">
 				<i class="fas fa-laptop fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
-				<br></br>
+				<br>
 				<b>Secure Lab Workstation</b>
 			</td>
-			<td align="center" vertical-align="middle">
+			<td align="center" valign="top">
 				<i class="fas fa-lock fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
-				<br></br>
+				<br>
 				<b>Storage for Highly Sensitive Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
@@ -100,7 +118,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
 			</td>
 		</tr>
-		<tr id="accordion2" class="collapse">
+		<tr id="accordion2" valign="top" class="collapse">
 			<td>
 				<p align="center"><b>Sources</b></p>
 				<ul>
@@ -121,15 +139,34 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				</ul>
 			</td>			
 		</tr>
+	</tbody>
+</table>
+</div>
+
+---
+
+<div>
+<table table table-hover">
+	<col width="25%">
+	<col width="25%">
+	<col width="50%">
+	<thead>
+		<tr>
+			<th class="text-center">System 1</th>
+			<th class="text-center">System 2</th>
+			<th class="text-center">Example Scenario</th>
+		</tr>	
+	</thead>
+	<tbody style="font-size:14px">	
 		<tr data-toggle="collapse" data-target="#accordion3" class="clickable">
-			<td align="center" vertical-align="middle">
+			<td align="center" valign="top">
 				<i class="fas fa-building fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
-				<br></br>
+				<br>
 				<b>External Institution</b>
 			</td>
-			<td align="center" vertical-align="middle">
+			<td align="center" valign="top">
 				<i class="fas fa-home fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
-				<br></br>
+				<br>
 				<b>University of Virginia</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
@@ -139,9 +176,9 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 					<li>Transfer results from an analysis carried out on a remote supercomputer at a national lab or supercomputing center.</li>
 				</ul>
 				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
-			</td>
+			</td><br><br>
 		</tr>
-		<tr id="accordion3" class="collapse">
+		<tr id="accordion3" valign="top" class="collapse">
 			<td>
 				<p align="center"><b>Sources</b></p>
 				Any institution that uses Globus, such as:
@@ -155,7 +192,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<ul>
 					<li><a href="/userinfo/storage/non-sensitive-data/#home/">/home</a></li>
 					<li><a href="/userinfo/storage/non-sensitive-data/#scratch/">/scratch</a></li>
-					<li><a href="/userinfo/storage/non-sensitive-data/#project/">/project</a></li>
+					<li><a href="/userinfo/storage/non-sensitive-data/#project/">Project Storage</a></li>
 					<li><a href="/userinfo/storage/research-value/">Value Storage</a></li>
 					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage/">Ivy Central Storage</a></li>
 				</ul>
@@ -170,6 +207,8 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 	</tbody>	
 </table>
 </div>
+
+---
 
 # Data Transfer Methods
 
