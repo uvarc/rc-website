@@ -653,7 +653,7 @@ mam-list-transactions -a <your_allocation> -A Charge -s 2020-08-01 --show "Group
 [Documentation](http://docs.adaptivecomputing.com/9-1-0/releaseNotes/Content/topics/moabAccountingManager/appendices/commands/mam-list-transactions.htm)
 
 ### Non-PI
-Regular users can run the previous command, but it will only show your own usage. You may use the `sreport` command for an estimate of the actual allocation usage (`sreport` is oblivious to charge policy):
+Regular users can run the previous command, but it will only show your own usage. You may use the `sreport` command for an estimate of the actual allocation usage (`sreport` is unaware of charge policy):
 
 ```
 $ sreport cluster UserUtilizationByAccount Start=2020-08-01 Accounts=<your_allocation> -t Hours
