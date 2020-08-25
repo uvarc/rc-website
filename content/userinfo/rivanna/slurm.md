@@ -643,26 +643,22 @@ If you need a more detailed analysis of CPU/memory usage, please contact us for 
 
 # Usage Report
 
-You may use the `sreport` command to see your SLURM usage:
+## PI
+The PI of an allocation account can see SU usage of all group members via the following command:
 
 ```
-$ sreport cluster UserUtilizationByAccount Start=2020-08-01 User=mst3k -t Hours
---------------------------------------------------------------------------------
-Cluster/User/Account Utilization 2020-08-01T00:00:00 - 2020-08-23T23:59:59 (1987200 secs)
-Usage reported in CPU Hours
---------------------------------------------------------------------------------
-  Cluster     Login     Proper Name         Account     Used   Energy
---------- --------- --------------- --------------- -------- --------
-     shen     mst3k                     allocation1      100        0
-     shen     mst3k                     allocation2       40        0
+list-group-usage -A <your_allocation> [-S YYYY-MM-DD] [-E YYYY-MM-DD]
 ```
 
-For a summary of all group members:
+The `-S` and `-E` flags for the start date and end date are optional. The default values are, respectively, the beginning of the current month and now.
+
+## Non-PI
+Regular users can run the previous command, but it will only show your own usage. You may use the `sreport` command for the total _CPU time_ of your group members:
 
 ```
 $ sreport cluster UserUtilizationByAccount Start=2020-08-01 Accounts=<your_allocation> -t Hours
 ```
 
-Refer to the [documentation](https://slurm.schedmd.com/sreport.html) for more options.
+Note that this may be different from the actual allocation usage, since `sreport` is unaware of our SU charge policy, but can serve as an estimate.
 
-Please note that this only provides an estimate of the actual allocation usage. If you need an accurate report of your allocation account, please contact us.
+[Documentation](https://slurm.schedmd.com/sreport.html)
