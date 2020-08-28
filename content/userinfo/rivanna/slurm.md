@@ -643,16 +643,16 @@ If you need a more detailed analysis of CPU/memory usage, please contact us for 
 
 # Usage Report
 
-### PI
+## PI
 The PI of an allocation account can see SU usage of all group members via the following command:
 
 ```
-mam-list-transactions -a <your_allocation> -A Charge -s 2020-08-01 --show "GroupBy(User),Count(User),Sum(Amount)"
+list-group-usage -A <your_allocation> [-S YYYY-MM-DD] [-E YYYY-MM-DD]
 ```
 
-[Documentation](http://docs.adaptivecomputing.com/9-1-0/releaseNotes/Content/topics/moabAccountingManager/appendices/commands/mam-list-transactions.htm)
+The `-S` and `-E` flags for the start date and end date are optional. The default values are, respectively, the beginning of the current month and now.
 
-### Non-PI
+## Non-PI
 Regular users can run the previous command, but it will only show your own usage. You may use the `sreport` command for the total _CPU time_ of your group members:
 
 ```
