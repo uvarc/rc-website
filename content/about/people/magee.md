@@ -25,7 +25,7 @@ Neal's background is in development and operations, and designs both serverless 
 **Publications:**
 
 {{% highlight %}}
-Ma, Wenjing; Wang, Zhenjia; Zhang, Yifan; Magee, Neal; Chen, Yang; Zang, Chonghi. "BARTweb: a web server for transcription factor association analysis." <i>BioRxiv</i> (Feb 2020). <a href="https://www.biorxiv.org/content/10.1101/2020.02.17.952838v1" target="_new">https://www.biorxiv.org/content/10.1101/2020.02.17.952838v1</a>
+Ma, Wenjing; Wang, Zhenjia; Zhang, Yifan; Magee, Neal; Chen, Yang; Zang, Chonghi. "BARTweb: a web server for transcription factor association analysis." <i>Cancer Research</i> 80 (16 Supplement). <a href="https://cancerres.aacrjournals.org/content/80/16_Supplement/3214.abstract" target="_new">https://doi.org/10.1158/1538-7445.AM2020-3214</a>
 {{% /highlight %}}
 
 {{% highlight %}}
