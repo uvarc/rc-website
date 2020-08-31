@@ -652,6 +652,7 @@ list-group-usage -A <your_allocation> [-S YYYY-MM-DD] [-E YYYY-MM-DD]
 
 The `-S` and `-E` flags for the start date and end date are optional. The default values are, respectively, the beginning of the current month and now. You will see a report as follows:
 
+```
 ################################################################################
 #
 # Includes fund 000 (mst3klab)
