@@ -82,6 +82,9 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 ## How do I add or remove people from my allocations?
 You must use the MyGroups interface to do this, and you must have administrative access to the group.
 
+## How do I check allocation usage of individual group members?
+Please visit [here](/userinfo/rivanna/slurm/#usage-report) to see how to generate an allocation usage report.
+
 - - -
 
 # Applications

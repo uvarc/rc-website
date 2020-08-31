@@ -650,7 +650,25 @@ The PI of an allocation account can see SU usage of all group members via the fo
 list-group-usage -A <your_allocation> [-S YYYY-MM-DD] [-E YYYY-MM-DD]
 ```
 
-The `-S` and `-E` flags for the start date and end date are optional. The default values are, respectively, the beginning of the current month and now.
+The `-S` and `-E` flags for the start date and end date are optional. The default values are, respectively, the beginning of the current month and now. You will see a report as follows:
+
+################################################################################
+#
+# Includes fund 000 (mst3klab)
+# Generated on Mon Aug 31 00:00:00 2020.
+# Reporting fund activity from 2020-08-01 to Now.
+#
+################################################################################
+Beginning Balance:           100000.000
+Ending Balance:               99000.000
+############################### Debit Summary ##################################
+User   Jobs   SUs
+------ ------ ---------
+mst1k  500      500.000
+mst2k  200      300.000
+mst3k  100      200.000
+############################### End of Report ##################################
+```
 
 ## Non-PI
 Regular users can run the previous command, but it will only show your own usage. You may use the `sreport` command for the total _CPU time_ of your group members:
