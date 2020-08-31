@@ -54,7 +54,12 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 
 Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [MyGroups](https://mygroups.virginia.edu/) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations). 
 
+## How can I request an allocation?
+
+The different Service Unit (SU) allocation types are explained in [this article](/userinfo/rivanna/allocations/#allocation-types). It includes links to our allocation request webforms. 
+
 ## How do I check my allocation status on Rivanna?
+
 Run the `allocations` command.  The output may look like this:
 ```
 
@@ -74,17 +79,24 @@ amount is sufficient to cover the full SU request for the jobs.
 You do not need any allocation service units to access the frontend or files in
 your directories as long as your account is active.
 
-## How are SUs Reserved?
+## How are Service Units Reserved?
 
-When a job is submitted the account manager calculates the required maximum amount of service units (SUs) using the assumption that the job will run the full amount of time requested. These SUs are held in reserve as a "lien" against the allocation charged for the job.  When the job completes the lien is released and the _actual_ SUs consumed
+When a job is submitted the account manager calculates the required maximum amount of Service Units (SUs) using the assumption that the job will run the full amount of time requested. These SUs are held in reserve as a "lien" against the allocation charged for the job.  When the job completes the lien is released and the _actual_ SUs consumed
 are deducted from the allocation balance. See [How do I check my allocation status on Rivanna?](/userinfo/faq/rivanna-faq/#how-do-i-check-my-allocation-status-on-rivanna) for specifics.
+
+## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
+
+Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/).  
 
 ## How do I add or remove people from my allocations?
 You must use the MyGroups interface to do this, and you must have administrative access to the group.
 
+## How do I check allocation usage of individual group members?
+Please visit [here](/userinfo/rivanna/slurm/#usage-report) to see how to generate an allocation usage report.
+
 - - -
 
-# Applications
+# Research Software
 
 ## How do I use research software that's already installed?
 We use the `lmod` system for managing software environments. [Learn more about how to use `lmod`](/userinfo/rivanna/software/modules/).
