@@ -93,19 +93,19 @@ Once your program is debugged, we recommend running in batch mode when possible.
 #SBATCH --ntasks=1
 
 # Load Matlab environment
-module load matlab/R2019a
+module load matlab
 
-# Create variable for slurm job id
-slurmID="${SLURM_JOB_ID}"
-export slurmID
+# Create and export variable for slurm job id
+export slurm_ID="${SLURM_JOB_ID}"
+
 
 % Create a temporary directory on scratch for any Job related files
-mkdir -p /scratch/teh1m/slurmJobs/$slurmID
+mkdir -p /scratch/teh1m/slurmJobs/$slurm_ID
 
 # Shell script to sample output of top command
 # while your job runs on compute node (optional)
 # sampleTop3.sh runs top w/o specifying the user
-# ./sampleTop2.sh teh1m $slurmID 10 &
+# ./sampleTop2.sh teh1m $slurm_ID 10 &
 
 # Input paramaters
 nLoops=400; # number of iterations to perform
@@ -113,7 +113,7 @@ nDim=400; # Dimension of matrix to create
 
 # Run Matlab parallel program
 matlab -nodisplay -singleCompThread -r \
-"pcalc2Test1(${nLoops},${nDim},'${slurmID}'); exit;"
+"pcalc2Test1(${nLoops},${nDim},'${slurm_ID}'); exit;"
 ```
 The option `-nodisplay` suppresses the Desktop and any attempt to run a graphical display. The -singleCompThread option is to ensure that all MATLAB built-in functions use only one thread. Some MATLAB functions are capable of running on multiple cores, but may not do so very efficiently. To use them in multicore mode you must request the appropriate number of cores and parallelize your code as shown below, but you will be charged SUs for all cores whether they are used effectively or not. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores so again you again would have to request the addtional cores in your slurm script. Unless you are sure you can use the cores effectively it's generally best to restrict your job to one core.
 
@@ -191,16 +191,39 @@ The example function `pcalc2Test1.m` above uses a  parallel for loop (parfor) in
 # Load Matlab environment
 module load matlab
 
+# Create and export variable for slurm job id
+export slurm_ID="${SLURM_JOB_ID}"
+
+# Set workers to one less that number of tasks (leave 1 for master process)
+export numWorkers=$((SLURM_NTASKS-1))
+
 # Input paramaters
 nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
 # Run Matlab parallel program program
 matlab -nodisplay -nosplash  \
--r "parpool('local',19);pcalc2Test1(${nLoops},${nDim},'${slurmID}');exit;"
+-r "setPool1;pcalc2Test1(${nLoops},${nDim},'${slurm_ID}');exit;"
 ```
 
-Notice that the local profile is used. You may need to open MATLAB and edit the local parallel profile to specify a new maximum number of workers (the default is 20). Additionally you should specify the pool to have one less worker than the number of cores requested from SLURM. This is because the main MATLAB instance will be running on one of the cores requested.
+The Matlab script `setPool1.m` gets the number of workers allocated by Slurm and
+uses that to create the pool of Matlab workers.
+
+```
+% Script setPool1.m
+% create a local cluster object
+pc = parcluster('local');
+
+% explicitly set JobStorageLocation to jpb-specific temp directory
+mkdir(strcat('/scratch/', getenv('USER'),'/slurmJobs/', getenv('SLURM_ID')));
+pc.JobStorageLocation = strcat('/scratch/', getenv('USER'),'/slurmJobs/', getenv('
+SLURM_ID'));
+
+% start the matlabpool with maximum available workers
+% control how many workers by setting ntasks in your sbatch script
+parpool(pc, str2num(getenv('numWorkers')))
+
+```
 
 # Matlab Jobs using SLURM Job Arrays
 The SLURM has a mechanism for launching multiple independent jobs with one
@@ -227,19 +250,19 @@ The following slurm script shows how to run 10 single core Matlab jobs using slu
 #SBATCH --ntasks=1
 
 # Load Matlab environment
-module load matlab/R2019a
+module load matlab
 
-# Create variable for slurm job and task ids
-slurmID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
-export slurmID
+# Create and export variable for slurm job and task ids
+slurm_ID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
+
 
 % Create a temporary directory on scratch for any Job related files
-mkdir -p /scratch/teh1m/slurmJobs/$slurmID
+mkdir -p /scratch/teh1m/slurmJobs/$slurm_ID
 
 # Shell script to sample output of top command
 # while your job runs on compute node (optional)
 # sampleTop3.sh runs top w/o specifying the user
-#./sampleTop2.sh teh1m $slurmID 10 &
+#./sampleTop2.sh teh1m $slurm_ID 10 &
 
 # Input paramaters
 nLoops=400; # number of iterations to perform
@@ -247,10 +270,10 @@ nDim=400; # Dimension of matrix to create
 
 # Run Matlab parallel program
 matlab -nodisplay -singleCompThread -r \
-"pcalc2Test1(${nLoops},${nDim},'${slurmID}'); exit;"
+"pcalc2Test1(${nLoops},${nDim},'${slurm_ID}'); exit;"
 
 # remove workspace
-rm -rf /scratch/teh1m/slurmJobs/$slurmID
+rm -rf /scratch/teh1m/slurmJobs/$slurm_ID
 ```
 
 
@@ -273,51 +296,24 @@ The following Slurm script uses job arrays to submit multiple parallel Matlab jo
 #SBATCH --error=runMultiple_%A_%a.err
 #SBATCH --ntasks-per-node=20
 
+module purge
 # Load Matlab environment
 module load matlab
+
+# Create variable for slurm job and task ids
+export SLURM_ID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
+
+# Set workers to one less that number of tasks (leave 1 for master process)
+export numWorkers=$((SLURM_NTASKS-1))
 
 # Input paramaters
 nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
-# Create variable for slurm job and task ids
-slurmArrayID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
-export slurmArrayID
-
-% Create a temporary directory on scratch for any Job related files
-mkdir -p /scratch/teh1m/slurmJobs/$slurmArrayID
-
-# Shell script to sample output of top command
-# while your job runs on compute node (optional)
-#./sampleTop2.sh teh1m $slurmArrayID 15 &
-
-# Set workers to one less that number of tasks (leave 1 for mater process)
-numWorkers=$((SLURM_NTASKS-1))
-export numWorkers
-
 # Run Matlab parallel program
-matlab -nodisplay -nosplash -r \
-"setPool1;pcalc2Test1(${nLoops},${nDim},'${slurmID}');exit;"
+matlab -nodisplay -nosplash -r "setPool1; pcalc2Test1(${nLoops},${nDim},'${SLURM_I
+D}');exit;"
 
-# remove workspace
-rm -rf /scratch/teh1m/slurmJobs/$slurmArrayID
-```
-The Matlab script `setPool1.m` gets the number of workers allocated by Slurm and
-uses that to create the pool of Matlab workers.
-
-```
-% Script setPool1.m
-
-% create a local cluster object
-pc = parcluster('local');
-
-% explicitly set the JobStorageLocation to the temp directory that was created
-% in your sbatch script
-pc.JobStorageLocation=strcat('/scratch/teh1m/slurmJobs/',getenv('slurmArrayID'));
-
-% start the matlabpool with maximum available workers
-% control how many workers by setting ntasks in your sbatch script
-parpool(pc, str2num(getenv('numWorkers')))
 ```
 
 # Parallel Matlab on Multiple Compute Nodes
@@ -344,12 +340,15 @@ configCluster
 ## `parfor` example
 
 ```
-c = parcluster; % Create a cluster object based on the profile
-c.AdditionalProperties.Account = 'hpc_build' % account to charge job to
-c.AdditionalProperties.QueueName = 'parallel' % queue to submit job to
-c.AdditionalProperties.WallTime = '24:00:00' % amount of wall time needed
-c.saveProfile % save settings
-c.AdditionalProperties  % confirm above properties are set
+% Create a cluster object based on the profile
+pc = parcluster('rivanna R2020a'); % This must correspond to the matlab version
+
+% Add additional properties related to slurm job parameters
+pc.AdditionalProperties.Account = 'hpc_build' % account to charge job to
+pc.AdditionalProperties.QueueName = 'parallel' % queue to submit job to
+pc.AdditionalProperties.WallTime = '24:00:00' % amount of wall time needed
+pc.saveProfile % save settings
+pc.AdditionalProperties  % confirm above properties are set
 
 % Additional configuration commands
 
@@ -358,13 +357,19 @@ c.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
 % send email when job ends
 c.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
 
+% specify the total number of processes
+% and number of processes (cores) per node
+procs=40;
+procsPerNode=4;
+pc.AdditionalProperties.ProcsPerNode=procsPerNode;
+
 ```
 Once this configuration is complete you can submit jobs to the cluster using
 the following commands:
 
 ```
 % Launch Matlab parallel code across two compute nodes
-j=c.batch(@pcalc2Test1,1,{600,101,'myOutput1'},'pool',39); % Launch batch job to cluster
+j=c.batch(@pcalc2Test1,1,{600,101,'myOutput1'},'pool',procs-1); % Launch batch job to cluster
 
 % Arguments of c.batch in order
 
@@ -396,7 +401,7 @@ of equations (Ax=b) across multiple compute nodes using distributed arrays.
 
 ```
 % create a cluster object
-pc = parcluster('rivanna R2019a');
+pc = parcluster('rivanna R2020a'); % This must correspond to the matlab version
 pc.AdditionalProperties.AccountName = 'hpc_build'
 pc.AdditionalProperties.WallTime = '04:00:00';
 pc.AdditionalProperties.QueueName = 'parallel';
