@@ -21,6 +21,7 @@
      * [Delete content](#delete-content)
      * [Events Data](#events-data)
      * [Automated Builds](#automated-builds)
+     * [Pushing to Production](#pushing-to-production)
   * [Search](#search)
 
 ## Developing
@@ -165,6 +166,20 @@ Travis-CI is a CI/CD tool that automates builds and deployments of the website c
 * Finally, the build invalidates the CloudFront cache that serves out the actual website.
 
 Build+deployment generally takes 70 seconds and can be monitored using the [Travis-CI dashboard](https://travis-ci.com/uvarc/rc-website/builds) for this repository.
+
+### Pushing to Production
+
+To merge your changes to the production website, please submit a pull request. Here's how to do that:
+
+1. Switch to the [staging branch](https://github.com/uvarc/rc-website/tree/staging)
+2. Click on the "Pull Request" link in the header area of the repository.
+![Create a PR in GitHub](https://staging.rc.virginia.edu/images/github-pull-request.png)
+3. Make sure that the STAGING branch will be merging into the MASTER branch (note the arrow between branch selectors). GitHub will indicate whether branches can automatically merge.
+![Open a PR in GitHub](https://staging.rc.virginia.edu/images/github-merge-request.png)
+4. Add an appropriate Title for your PR, such as "Merging Staging into Master". Add details if they seem helpful.
+5. Click the green "Create Pull Request" button.
+6. Repo admins will be notified of the PR and will approve it or get back to you if there is an issue.
+
 
 ## Search
 
