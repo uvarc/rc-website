@@ -245,6 +245,7 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="/userinfo/ivy/ivy-linux-sw/overview" style="color: #0275d8;">All Packages</a></li>
             <li><a href="/userinfo/ivy/ivy-linux-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
             <li><a href="/userinfo/ivy/ivy-linux-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#database-software" style="color: #0275d8;">Database Software</a></li>
             <li><a href="/userinfo/ivy/ivy-linux-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
           </ul>
         </p>
@@ -263,6 +264,7 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="/userinfo/ivy/ivy-windows-sw/overview" style="color: #0275d8;">All Packages</a></li>
             <li><a href="/userinfo/ivy/ivy-windows-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
             <li><a href="/userinfo/ivy/ivy-windows-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#database-software" style="color: #0275d8;">Database Software</a></li>
             <li><a href="/userinfo/ivy/ivy-windows-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
          </ul>
         </p>

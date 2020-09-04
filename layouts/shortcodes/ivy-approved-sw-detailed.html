@@ -32,7 +32,7 @@
           			<td>{{$name}}</td>	
           		{{- end }}	
     			<td>{{ delimit (after 1 $availversions) "," }}</td>
-				<td>{{ .description }}</td>
+				<td>{{ .description }} <b>{{ .license }}</b></td>
 				</tr>
           	{{ end }}		  
         {{ end }}   

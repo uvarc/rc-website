@@ -17,7 +17,7 @@ draft = false
 Each Linux Virtual Machine (VM) comes with a set of preinstalled software applications.  Each VM can further be customized via installation of optional software packages.
 {{% /callout %}}
 
-An overview of available software packages for Windows VMs is provided [here](/userinfo/ivy-windows-sw/overview).
+An overview of available software packages for Windows VMs is provided [here](/userinfo/ivy/ivy-windows-sw/overview/).
 
 
 # Preinstalled Software 
@@ -25,6 +25,7 @@ An overview of available software packages for Windows VMs is provided [here](/u
 {{< ivy-approved-sw-detailed platform="Linux" installation="preinstalled" category="all" >}}
 
 <br>
+
 - - -
 
 # Optional Software
@@ -50,6 +51,14 @@ In addition to the preinstalled software, researchers may request installation o
 <br>
 
 - - -
+
+## Database Software
+
+{{< ivy-approved-sw-detailed platform="Linux" installation="optional" category="Database Software" >}}
+
+<br>
+
+---
 
 ## Image Processing
 
