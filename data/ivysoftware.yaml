@@ -6,7 +6,7 @@ software:
        status: approved # pending,rejected
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none
-   category: [Data,Programming]
+   category: [Data Analysis,Programming]
    description: The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X.
  - name: R
    versions:
@@ -18,7 +18,7 @@ software:
        status: approved # pending,rejected
        platforms: [Windows]
        installation: preinstalled # optional,none  
-   category: [Data,Programming]
+   category: [Data Analysis,Programming]
    description: R is a free software environment for statistical computing and graphics.
  - name: RStudio
    versions:
@@ -30,7 +30,7 @@ software:
        status: approved # pending,rejected
        platforms: [Windows]
        installation: preinstalled # optional,none
-   category: [Productivity]
+   category: [Data Analysis]
    description: Webster's defines RStudio as...
  - name: RStudio Server
    versions:
@@ -38,7 +38,7 @@ software:
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none
-   category: [Connectivity]
+   category: [Data Analysis]
    description: Webster's defines RStudio Server as...
  - name: Perl
    versions:
@@ -82,7 +82,7 @@ software:
        status: approved # pending,rejected
        platforms: [Windows]
        installation: preinstalled # optional,none 
-   category: [Productivity]
+   category: [Data Analysis]
    description: Rodeo is a Native Python IDE for Data Science.
  - name: Emacs
    versions:
@@ -129,7 +129,7 @@ software:
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none  
-   category: [Connectivity]
+   category: [Data Analysis]
    description: JupyterHub is multi-user, multi-notebook server for Jupyter Notebooks.
  - name: JupyterLab
    versions:
@@ -137,7 +137,7 @@ software:
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none  
-   category: [Productivity]
+   category: [Data Analysis]
    description: JupyterLab is the next-generation user interface for Project Jupyter offering all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user interface.
  - name: Notepad++
    versions:
