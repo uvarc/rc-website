@@ -203,7 +203,7 @@ upon request. See the lists below for options.
       <div class="card-block">
         <i>Click on each for details:</i>
         <p class="card-text">
-			{{% ivy-approved-software platform="Linux" installation="preinstalled" category="all" %}}
+			{{% ivy-approved-software os="Linux" installation="preinstalled" category="all" %}}
         </p>
       </div>
     </div>
@@ -216,7 +216,7 @@ upon request. See the lists below for options.
       <div class="card-block">
         <i>Click on each for details:</i>
         <p class="card-text">
-			{{% ivy-approved-software platform="Windows" installation="preinstalled" category="all" %}}
+			{{% ivy-approved-software os="Windows" installation="preinstalled" category="all" %}}
         </p>
       </div>
     </div>
@@ -245,9 +245,11 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="/userinfo/ivy/ivy-linux-sw/overview" style="color: #0275d8;">All Packages</a></li>
             <li><a href="/userinfo/ivy/ivy-linux-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
             <li><a href="/userinfo/ivy/ivy-linux-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#database-software" style="color: #0275d8;">Database Software</a></li>
             <li><a href="/userinfo/ivy/ivy-linux-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
           </ul>
         </p>
+        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-linux-sw/overview';"">Software Details for Linux</button>
       </div>
     </div>
   </div>
@@ -263,16 +265,18 @@ and regulatory compliance and, if approved, will be installed for you.
             <li><a href="/userinfo/ivy/ivy-windows-sw/overview" style="color: #0275d8;">All Packages</a></li>
             <li><a href="/userinfo/ivy/ivy-windows-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
             <li><a href="/userinfo/ivy/ivy-windows-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#database-software" style="color: #0275d8;">Database Software</a></li>
             <li><a href="/userinfo/ivy/ivy-windows-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
          </ul>
         </p>
+        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-windows-sw/overview';"">Software Details for Windows</button>
       </div>
     </div>
   </div>
 </div>
 
-[<button class="btn btn-success">Software Details for Linux</button>](/userinfo/ivy/ivy-linux-sw/overview)
-[<button class="btn btn-success">Software Details for Windows</button>](/userinfo/ivy/ivy-windows-sw/overview)
+To request installation of optional software packages, please use the web request form provided through this link:
+
 [<button class="btn btn-success">Request Ivy Software</button>](https://www.rc.virginia.edu/form/support-request)
 
 

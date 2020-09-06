@@ -6,7 +6,7 @@ software:
        status: approved # pending,rejected
        platforms: [Linux,Windows]
        installation: preinstalled # optional,none
-   category: [Data,Programming]
+   category: [Data Analysis,Programming]
    description: The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X.
  - name: R
    versions:
@@ -18,7 +18,7 @@ software:
        status: approved # pending,rejected
        platforms: [Windows]
        installation: preinstalled # optional,none  
-   category: [Data,Programming]
+   category: [Data Analysis,Programming]
    description: R is a free software environment for statistical computing and graphics.
  - name: RStudio
    versions:
@@ -30,16 +30,16 @@ software:
        status: approved # pending,rejected
        platforms: [Windows]
        installation: preinstalled # optional,none
-   category: [Productivity]
-   description: Webster's defines RStudio as...
+   category: [Data Analysis]
+   description: RStudio is an integrated development environment for R, with a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging and workspace management.
  - name: RStudio Server
    versions:
      - version: "1.2.1335"
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none
-   category: [Connectivity]
-   description: Webster's defines RStudio Server as...
+   category: [Data Analysis]
+   description: RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server.
  - name: Perl
    versions:
      - version: "5.16.3"
@@ -82,7 +82,7 @@ software:
        status: approved # pending,rejected
        platforms: [Windows]
        installation: preinstalled # optional,none 
-   category: [Productivity]
+   category: [Data Analysis]
    description: Rodeo is a Native Python IDE for Data Science.
  - name: Emacs
    versions:
@@ -129,7 +129,7 @@ software:
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none  
-   category: [Connectivity]
+   category: [Data Analysis]
    description: JupyterHub is multi-user, multi-notebook server for Jupyter Notebooks.
  - name: JupyterLab
    versions:
@@ -137,7 +137,7 @@ software:
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none  
-   category: [Productivity]
+   category: [Data Analysis]
    description: JupyterLab is the next-generation user interface for Project Jupyter offering all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user interface.
  - name: Notepad++
    versions:
@@ -188,6 +188,7 @@ software:
        installation: optional #preinstalled,none  
    category: [Data Analysis]
    description: Stata is a complete, integrated statistical software package that provides everything you need for data analysis, data management, and graphics.
+   license: Installation requires user-provided software license.
  - name: IDL
    versions:
      - version: ""
@@ -235,5 +236,45 @@ software:
        platforms: [Linux]
        installation: optional #preinstalled,none  
    category: [Image Processing]
-   description: OpenCV is an open-source BSD-licensed library that includes several hundreds of computer vision algorithms. 
-   
+   description: OpenCV is an open-source BSD-licensed library that includes several hundreds of computer vision algorithms.
+ - name: MariaDB
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Database Software]
+   description: MariaDB is a community-developed, commercially supported fork of the MySQL relational database management system.
+ - name: MongoDB
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Database Software]
+   description: MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.          
+ - name: PostgreSQL
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Database Software]
+   description: PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying.  
+ - name: MySQL Workbench
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none  
+   category: [Database Software]
+   description: MySQL Workbench is a unified visual tool for database architects, developers, and DBAs. MySQL Workbench provides data modeling, SQL development, and comprehensive administration tools for server configuration, user administration, backup, and much more.  
+ - name: Microsoft SQL Server
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none  
+   category: [Database Software]
+   description: Microsoft SQL Server is a relational database management system developed by Microsoft.
+   license: Installation requires user-provided software license.

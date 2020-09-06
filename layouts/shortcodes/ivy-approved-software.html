@@ -1,4 +1,4 @@
-{{ $platform := .Get "platform" }}
+{{ $os := .Get "os" }}
 {{ $installation := split (.Get "installation") "," }}
 {{ $requiredcategory := split (.Get "category") "," }}
 <ul>
@@ -8,8 +8,9 @@
     	{{- $incategory := or (in $requiredcategory "all") (gt (len (intersect $thiscategory $requiredcategory)) 0) -}}
     	{{- if $incategory -}}
 			{{- range .versions -}}
-				{{- if and (eq .status "approved") (and (in .platforms $platform) (in $installation .installation)) -}}
-			   		{{- $softwaresite := (printf "/userinfo/ivy/ivy-%s-sw/%s" (lower $platform) (lower $name) ) -}}
+				{{- if and (eq .status "approved") (and (in .platforms $os) (in $installation .installation)) -}}
+    				{{- $categorysubdir := (replace (lower (index $thiscategory 0)) " " "-") -}}
+			   		{{- $softwaresite := (printf "/userinfo/ivy/ivy-%s-sw/%s/%s" (lower $os) ($categorysubdir) (replace (lower $name) " " "-")) -}}
 		        	{{- if (fileExists (printf "%s.md" $softwaresite)) -}}
           				<li><a href="{{ $softwaresite }}" style="color: #0275d8";>{{ $name }} {{ .version }}</a></li>
           			{{- else -}}

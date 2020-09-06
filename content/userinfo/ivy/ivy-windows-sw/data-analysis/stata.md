@@ -21,5 +21,9 @@ is used in various disciplines, including biomedicine, economics, epidemiology, 
 of performing statistical analysis, simulations, regression, and data management. Besides the standard version
 Stata also ships with the *MP* version (multi=processing), and *SE* for large databases. 
 
-**NB** Users requesting an installation of Stata would be required to bring their own license. Please consult with us before
-requesting an installation. You may also request a Stata license from the [UVa Software Gateway](http://its.virginia.edu/software/displayPackages.php?tId=18)
+{{% callout %}}
+<b>Users requesting an installation of Stata are required to provide their own license.</b> Please consult with us before
+requesting an installation. 
+{{% /callout %}}
+
+You may also request a Stata license from the [UVa Software Gateway](http://its.virginia.edu/software/displayPackages.php?tId=18)
