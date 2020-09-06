@@ -31,7 +31,7 @@ software:
        platforms: [Windows]
        installation: preinstalled # optional,none
    category: [Data Analysis]
-   description: Webster's defines RStudio as...
+   description: RStudio is an integrated development environment for R, with a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging and workspace management.
  - name: RStudio Server
    versions:
      - version: "1.2.1335"
@@ -39,7 +39,7 @@ software:
        platforms: [Linux]
        installation: preinstalled # optional,none
    category: [Data Analysis]
-   description: Webster's defines RStudio Server as...
+   description: RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server.
  - name: Perl
    versions:
      - version: "5.16.3"
