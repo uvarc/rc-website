@@ -57,15 +57,15 @@ To launch an instance of {{% software-name %}}, you will begin by connecting to 
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
 3. On the top banner of the Open OnDemand dashboard, click on `Interactive Apps`.
 4. In the drop-down box, click on `{{% software-name %}}`.
-5. After connecting to {{% software-name %}} through Open OnDemand, a form will appear where you can fill in the resources for {{% software-name %}}. Blender supports GPUs and should be run in the `GPU` partition.
+5. After connecting to {{% software-name %}} through Open OnDemand, a form will appear where you can fill in the resources for `{{% software-name %}}`.
 6. When done filling in the resources, click on the blue `Launch` button at the bottom of the form. **Do not click the button multiple times**.
-7. It may take a few minutes for the system to gather the resources for your instance of {{% software-name %}}. When the resources are ready a `Connect to {{% software-name %}}` button will appear. Click on the button to start {{% software-name %}}.
+7. It may take a few minutes for the system to gather the resources for your instance of `{{% software-name %}}`. When the resources are ready a `Connect to {{% software-name %}}` button will appear. Click on the button to start `{{% software-name %}}`.
 
 ## Using {{% software-name %}}
 When {{% software-name %}} opens in your web browser, it will appear just like the {{% software-name %}} that you have on your laptop or desktop.
 
 ## Closing the Interactive Session
-When you are done, quit the Matlab application.  The interactive session will be closed and the allocated resources will be released.
+When you are done, quit the Matlab application.  The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged for the time.
 
 # Running a Matlab Batch Jobs on Rivanna
 

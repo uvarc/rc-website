@@ -172,6 +172,7 @@ software:
        installation: optional #preinstalled,none  
    category: [Data Analysis]
    description: MATLAB is a multi-paradigm numerical computing environment and proprietary programming language developed by MathWorks. 
+   license: Matlab usage by UVA affiliates is covered by a site license.
  - name: SAS
    versions:
      - version: ""
@@ -180,6 +181,7 @@ software:
        installation: optional #preinstalled,none  
    category: [Data Analysis]
    description: SAS is a statistical analysis package.
+   license: A limited number of SAS licenses are available on a first-come-first-serve basis.
  - name: STATA
    versions:
      - version: ""
@@ -197,6 +199,7 @@ software:
        installation: optional #preinstalled,none  
    category: [Data Analysis]
    description: IDL is an interpreted programming language used to create analyses and visualizations of numerical data.
+   license: A limited number of IDL licenses are available on a first-come-first-serve basis.
  - name: Apache cTAKES
    versions:
      - version: ""
@@ -213,6 +216,7 @@ software:
        installation: optional #preinstalled,none  
    category: [Data Analysis]
    description: The SPSS® software platform offers advanced statistical analysis, a vast library of machine learning algorithms, text analysis, and open source extensibility.
+   license: A limited number of SPSS licenses are available on a first-come-first-serve basis.
  - name: Knime
    versions:
      - version: ""
