@@ -6,7 +6,7 @@ images = [""]
 categories = ["userinfo"]
 date = "2018-02-01T00:45:12-05:00"
 tags = [
-  "Ivy", 
+  "Ivy",
   "Software",
   "Data Analysis",
   "Windows",
@@ -18,7 +18,7 @@ draft = false
 # MATLAB Overview
 
 MATLAB is a high-performance language for technical computing. It integrates
-computation, visualization, and programming environment. MATLAB stands for MATrix LABoratory. MATLAB was made 
+computation, visualization, and programming environment. MATLAB stands for MATrix LABoratory. MATLAB was made
 to provide easy access to matrix software developed by the LINPACK (linear system package)
 and EISPACK (Eigen system package) projects. MATLAB includes a programming language
 environment with built-in editing and debugging tools, and supports object-oriented programming.
@@ -28,15 +28,15 @@ environment with built-in editing and debugging tools, and supports object-orien
 MATLAB has many advantages compared to conventional computer languages (e.g.,
 C, FORTRAN) for solving technical problems. MATLAB is an interactive system whose
 basic data element is an array, and almost all problems can be solved in MATLAB using that
-one data element.  
+one data element.
 
 ### Starting MATLAB
 
-To start MATLAB, open the Start menu window and find MATLAB. 
+To start MATLAB, open the Start menu window and find MATLAB.
 
-Since MATLAB is a large software, it may take time to load up. When it starts, the first screen to appear 
+Since MATLAB is a large software, it may take time to load up. When it starts, the first screen to appear
 would be the MATLAB Desktop, with several windows within it. These might include the ribbons (Home, Plot, and App), the Command Window,
-the Current Folder window, and the Workspace window. 
+the Current Folder window, and the Workspace window.
 
 ### Basic Arithmetic
 
@@ -56,7 +56,7 @@ To create a variable, type the name of a the variable, followed by the equals si
 	x = 12
 
 If you type ```x``` again on the Command Window, you would see the value of the variable displayed. Variables could be used in any number of arithmetic
-calculations. 
+calculations.
 
 ### Arrays
 
@@ -65,13 +65,13 @@ A very basic plot can be drawn using MATLAB arrays. To create an array in MATLAB
 	x = [1 2 3 4 5 6]
 	y = [4 -4 7 3 7 1]
 
-Notice how the array elements do not have commas between them. These arrays could be used like any other variable. 
+Notice how the array elements do not have commas between them. These arrays could be used like any other variable.
 
 ## Licensing
 
-We have a limited number of MATLAB Licenses available, which are provided on a first-come-first-serve basis. 
-As a consequence, availability of MATLAB on your VM is not always guaranteed once a VM request is submitted.
-Please consult with us before requesting MATLAB. 
+University of Virginia has recently upgraded the Matlab license so that Matlab is available to everyone at UVa. There is one version of Matlab for students, faculty, and staff. MATLAB is available on the Windows, Mac OSX, and Linux platforms. To get started go to the UVa Software Gateway Matlab can be found under the Data Analysis & Research grouping.
+
+The Campus Wide License configuration now includes all 100+ MathWorks products. To better reflect the new configuration they have re-named the license option to Campus Wide Suite. For further information see the URL [https://data.library.virginia.edu/research-software/matlab/](https://data.library.virginia.edu/research-software/matlab/)
 
 ## More Information
 
