@@ -23,8 +23,8 @@ In this session we show you how to use apps for labeling image and video data to
 
 ## Highlights
 
-     * Preprocess and label datasets faster with domain-specific apps for audio, video, images and text data
-     * Use interactive apps to label, crop and identify important features and automate the process of labeling
-     * Create, visualize and edit deep learning networks with our easy-to-use Deep Network Designer app
-     * Incorporate deep learning models without having to create complex network architectures from scratch
-     * Accelerate development and training of deep learning networks with GPUs, clusters and cloud resources
+ * Preprocess and label datasets faster with domain-specific apps for audio, video, images and text data
+ * Use interactive apps to label, crop and identify important features and automate the process of labeling
+ * Create, visualize and edit deep learning networks with our easy-to-use Deep Network Designer app
+ * Incorporate deep learning models without having to create complex network architectures from scratch
+ * Accelerate development and training of deep learning networks with GPUs, clusters and cloud resources

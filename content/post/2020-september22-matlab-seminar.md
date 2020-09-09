@@ -25,11 +25,11 @@ In this new neuroscience seminar, we’ll illustrate the fundamentals of deep le
 
 Along the way, participants will learn many aspects of the deep learning workflow:
 
-  * Load and manage large sets of images
-  * Import pre-trained models such as ResNet
-  * Set up transfer learning via network modification
-  * Get to network training quickly with apps for preprocessing and augmenting training image data
-  * Configure network training parameters
-  * Validation of convergence during deep model training
-  * Interoperability with open source deep learning frameworks (i.e., TensorFlow-Keras, Caffe, PyTorch, etc.,) using ONNX
-  * Accelerate algorithms on NVIDIA® GPUs, cloud, and datacenter resources without specialized programming.
+ * Load and manage large sets of images
+ * Import pre-trained models such as ResNet
+ * Set up transfer learning via network modification
+ * Get to network training quickly with apps for preprocessing and augmenting training image data
+ * Configure network training parameters
+ * Validation of convergence during deep model training
+ * Interoperability with open source deep learning frameworks (i.e.,TensorFlow-Keras, Caffe, PyTorch, etc.,) using ONNX
+ * Accelerate algorithms on NVIDIA® GPUs, cloud, and datacenter resources without specialized programming.
