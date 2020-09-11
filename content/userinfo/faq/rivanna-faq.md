@@ -52,20 +52,20 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 
 ## What is an allocation?
 
-Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [MyGroups](https://mygroups.virginia.edu/) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations). 
+Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [MyGroups](https://mygroups.virginia.edu/) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How can I request an allocation?
 
-The different Service Unit (SU) allocation types are explained in [this article](/userinfo/rivanna/allocations/#allocation-types). It includes links to our allocation request webforms. 
+The different Service Unit (SU) allocation types are explained in [this article](/userinfo/rivanna/allocations/#allocation-types). It includes links to our allocation request webforms.
 
 ## How do I check my allocation status on Rivanna?
 
 Run the `allocations` command.  The output may look like this:
 ```
 
-Name           Balance  Reserved Effective Available 
--------------- -------- -------- --------- --------- 
-rivanna_alloc  9885.811 1000.000  8885.811  8885.811 
+Name           Balance  Reserved Effective Available
+-------------- -------- -------- --------- ---------
+rivanna_alloc  9885.811 1000.000  8885.811  8885.811
 
  for more information about a specific allocation,
  run: 'allocations -a <allocation name>'
@@ -86,7 +86,7 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/).  
+Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/).
 
 ## How do I add or remove people from my allocations?
 You must use the MyGroups interface to do this, and you must have administrative access to the group.
@@ -274,6 +274,16 @@ If you wish to share data in leased space with a member of your group, be sure t
 Smaller files can be transferred to/from Rivanna using `scp`, `sftp`, and `rsync` as well as standard FTP tools.
 
 Larger files should be moved using [Globus](/userinfo/globus/).
+
+## Why am I getting a timeout with `wget` when trying to download a file as part of my slurm job?
+Rivanna was originally architected with some assumptions about how data would flow, and the fundamental assumption was that it would all pass through the front-ends, and that the actual cluster compute nodes would only ever communicate significantly with the /scratch storage.  All parts of the original Rivanna cluster: the front-ends, /scratch storage and the compute nodes, are attached to a very high-speed, low-latency Infiniband Fabric, but only the front-end nodes had fast links to anything outside of the cluster (IB fabric).  That model envisioned researchers doing all of their downloads and data staging from a front-end interactive node, and then launching jobs.
+
+In the time since that design was created (well over a decade ago), data flows have changed considerably, and so have work flows; many researchers have jobs which retrieve data at run time; some (like yours) have jobs which do nothing but retrieve  data, and a large and growing percentage of users no longer run their jobs out of /scratch, but instead use their home directories or external leased storage.  The network path from compute nodes to these “external” data sources have been upgraded but have not kept up as the number of cores has doubled inside of rivanna.
+
+We are in the process of re-engineering the cluster with much better external network access for individual compute nodes, and shifting to faster, fabric connected storage for /project and /user but this will take a number of months to complete.
+
+In the meantime, to expedite your work and relieve some of the load on the network, we are giving you expanded privileges on the front ends so that your downloads are faster and you aren’t charged SUs.
+
 
 [Read more](/userinfo/data-transfer/) about data transfer.
 

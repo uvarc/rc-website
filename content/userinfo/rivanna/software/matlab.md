@@ -95,29 +95,17 @@ Once your program is debugged, we recommend running in batch mode when possible.
 # Load Matlab environment
 module load matlab
 
-# Create and export variable for slurm job id
-export slurm_ID="${SLURM_JOB_ID}"
-
-
-% Create a temporary directory on scratch for any Job related files
-mkdir -p /scratch/teh1m/slurmJobs/$slurm_ID
-
-# Shell script to sample output of top command
-# while your job runs on compute node (optional)
-# sampleTop3.sh runs top w/o specifying the user
-# ./sampleTop2.sh teh1m $slurm_ID 10 &
-
-# Input paramaters
+# Input paramaters for Matlab function
 nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
-# Run Matlab parallel program
+# Run Matlab single core program
 matlab -nodisplay -singleCompThread -r \
-"pcalc2Test1(${nLoops},${nDim},'${slurm_ID}'); exit;"
+"pcalc2Test1(${nLoops},${nDim},'${SLURM_JOB_ID}'); exit;"
 ```
-The option `-nodisplay` suppresses the Desktop and any attempt to run a graphical display. The -singleCompThread option is to ensure that all MATLAB built-in functions use only one thread. Some MATLAB functions are capable of running on multiple cores, but may not do so very efficiently. To use them in multicore mode you must request the appropriate number of cores and parallelize your code as shown below, but you will be charged SUs for all cores whether they are used effectively or not. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores so again you again would have to request the addtional cores in your slurm script. Unless you are sure you can use the cores effectively it's generally best to restrict your job to one core.
+The option `-nodisplay` suppresses the Desktop and any attempt to run a graphical display. The -singleCompThread option is to ensure that all MATLAB built-in functions use only one thread on one core (cpu). Some MATLAB functions are capable of running on multiple cores, but may not do so very efficiently. To use them in multicore mode you must request the appropriate number of cores and parallelize your code as shown below, but you will be charged SUs for all cores whether they are used effectively or not. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores so again you again would have to request the addtional cores in your slurm script. Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
 
-The `;exit` is very important to ensure that the job terminates when the computation is done. The example code `pcalc2Test1.m` is shown below. Note that passing the `slurmID` variable allows the function to save
+The `;exit` is very important to ensure that the job terminates when the computation is done. The example code `pcalc2Test1.m` is shown below. Note that passing the `SLURM_JOB_ID` variable allows the function to save
 output to a job-specific filenames. The function `pcalc2Test1` used in the above example is shown below.
 
 ```
@@ -139,7 +127,7 @@ a=zeros(nloop, 1);
 
 % TIME CONSUMING LOOP
 tic;
-parfor i=1:nloop  % parallelized for loop
+parfor i=1:nloop  % parallelized for loop, only used if parallel pool initialized
     a(i)=FunctionTakesLongTime(ndim);
     if mod(i,10)==0
         fprintf('Iteration number = %d of %d total \n',nloop-i,nloop)
@@ -163,7 +151,6 @@ function max_eig=FunctionTakesLongTime(ndim);
  max_eig=max(abs(eig(random('Exponential',ndim,ndim))));
 end
 ```
-
 
 ## Submitting a batch job using multiple cores on a compute node
 
@@ -255,15 +242,6 @@ module load matlab
 # Create and export variable for slurm job and task ids
 slurm_ID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
 
-
-% Create a temporary directory on scratch for any Job related files
-mkdir -p /scratch/teh1m/slurmJobs/$slurm_ID
-
-# Shell script to sample output of top command
-# while your job runs on compute node (optional)
-# sampleTop3.sh runs top w/o specifying the user
-#./sampleTop2.sh teh1m $slurm_ID 10 &
-
 # Input paramaters
 nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
@@ -272,8 +250,6 @@ nDim=400; # Dimension of matrix to create
 matlab -nodisplay -singleCompThread -r \
 "pcalc2Test1(${nLoops},${nDim},'${slurm_ID}'); exit;"
 
-# remove workspace
-rm -rf /scratch/teh1m/slurmJobs/$slurm_ID
 ```
 
 
@@ -335,13 +311,14 @@ module load matlab
 % on Rivanna. This just needs to be done once, and its saved in Matlab’s
 % parallel profiles.
 
-configCluster
+configCluster % the configuration created is specific to the Matlab version
 ```
 ## `parfor` example
 
 ```
 % Create a cluster object based on the profile
-pc = parcluster('rivanna R2020a'); % This must correspond to the matlab version
+pc = parcluster('rivanna R2020a'); % This must correspond to the matlab
+     % version you are using
 
 % Add additional properties related to slurm job parameters
 pc.AdditionalProperties.Account = 'hpc_build' % account to charge job to
@@ -435,7 +412,7 @@ j.fetchOutputs{:}
 
 ```
 
-The function solver_large1 looks like the following:
+The function `solver_large1` looks like the following:
 ```
 function [ firstTenX, errChk2 ] = solver_large1( N, jobid)
 % This function is a simple test of a LU linear solver
@@ -473,3 +450,71 @@ end
 [General guidelines on requesting GPUs on Rivanna](https://www.rc.virginia.edu/userinfo/rivanna/slurm/#gpu-intensive-computation)
 
 Once your job has been granted its allocated GPUs, you can use the gpuDevice function to initialize a specific GPU for use with Matlab functions that can utilize the architecture of GPUs. For more information see the [MathWorks documentation](https://www.mathworks.com/help/parallel-computing/gpu-computing-in-matlab.html) on GPU Computing in Matlab.
+
+The following slurm script is for submitting a Matlab job that uses 4 of the K80 GPUs. For each GPU requested, the script requests one cpu (ntasks-per-node).
+
+```
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:k80:4
+#SBATCH -A hpc_build
+#SBATCH --time=4:00:00
+#SBATCH --output=gpuTest%A.out
+#SBATCH --error=gpuTest%A.err
+#SBATCH --mail-type=end
+#SBATCH --mail-user=teh1m@virginia.edu
+#SBATCH --ntasks-per-node=4
+#SBATCH --mem=60000
+
+echo 'slurm allocates gpus ' $CUDA_VISIBLE_DEVICES
+
+# Load Matlab environment
+module load matlab/R2020a
+
+ndim=12000;
+nloop=100000;
+# Run Matlab parallel program program
+ matlab -nodisplay -nosplash  \
+ -r "gpuTest1(${ndim},${nloop},'${SLURMD_NODENAME}_${SLURM_JOB_ID}');exit;"
+```
+
+The function `gpuTest1` looks like the following.
+
+```
+ function  [a]=gpuTest1(ndim,nloop,jobid)
+ % Example to test gpu nodes
+ % ndim: dimension of matrix
+ % jobid: Slurm job id  for save saving output to job specific file
+
+ % Check to see if you have a GPU device on your machine:
+ gpuDeviceCount
+ parpool('local',gpuDeviceCount);
+ spmd
+     gpuDevice
+ end
+
+ % preallocate output array
+ % ndim= 8172;
+
+ % Create a random matrix
+ matrixCPU = rand(ndim,ndim);
+
+ %Start by placing the matrixCPU onto the GPU device:
+ matrixGPU = gpuArray(matrixCPU);
+ %Compute the fft of the matrixGPU:
+ tic
+ parfor k=1:nloop
+ outGPU = fft(matrixGPU);
+ %Finish the timer and print out results:
+ end
+ %Wait for the transfer to complete:
+ wait(gpuDevice)
+ %Gather the results from the GPU back to the CPU:
+ a = gather(outGPU);
+ delete(gcp('nocreate'));
+ tGPU = toc;
+ disp(['Total time on GPU: ' num2str(tGPU)])
+
+ end
+```
