@@ -77,7 +77,7 @@ images = [""]
 
 {{< skyline-pricing >}}
 
-More information on ordering Skyline VMs coming soon!
+[<button class="btn btn-primary btn-sm">Request Skyline VM</button>](/form/skyline/)
 
 - - - 
 
