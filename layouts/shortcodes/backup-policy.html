@@ -1,0 +1,2 @@
+{{ $storage := .Get 0 }}
+{{ default "None" (index $.Site.Params.backups $storage) }}
