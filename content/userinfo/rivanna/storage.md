@@ -38,7 +38,7 @@ type = "rivanna"
     <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#home"><code>/home</code></a></td>
     <td class="tg-dc35">50GB</td>
     <td class="tg-dc35">Free</td>
-    <td class="tg-dc35">2-week snapshot</td>
+    <td class="tg-dc35">{{% backup-policy rivanna_home %}}</td>
     <td class="tg-dc35">Rivanna</td>
     <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna interactively. SLURM jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>. The <code>/home</code> directory is a personal storage space that is not shareable with other users.</td>
   </tr>
@@ -46,7 +46,7 @@ type = "rivanna"
     <td class="tg-hy9w"><a href="/userinfo/storage/non-sensitive-data/#scratch"><code>/scratch</code></a></td>
     <td class="tg-hy9w">10TB, 350,000 files</td>
     <td class="tg-hy9w">Free</td>
-    <td class="tg-hy9w">Data removed 90 days after last file access time</td>
+    <td class="tg-hy9w">{{% backup-policy rivanna_scratch %}}, Data removed 90 days after last file access time</td>
     <td class="tg-hy9w">Rivanna</td>
     <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage. The <code>/scratch</code> directory is for personal use and not shared with other users.<br /><br />
   </tr>
