@@ -22,7 +22,7 @@ private = true
   <div style="padding:1.4rem;" class="card">
   <h5 class="card-title">About the Requestor</h5>
   <input type="hidden" id="category" name="category" value="Deans Allocation">
-  <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
+  <input type="hidden" id="allocation_type" name="Allocation Type" value="Deans Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
 {{% form-userinfo %}}
   <div class="form-item form-type-select form-group">

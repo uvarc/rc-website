@@ -40,6 +40,11 @@ private = true
     </select>
   </div>
   <hr size=1 />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account (lowercase only, no spaces). <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
+    <small id="group-Help" class="form-text text-muted">This group is used to define all members with access to the requested VM. You can use an existing group or <a href="https://mygroups.virginia.edu" target="_blank">set up a new MyGroup.</a> </small>
+  </div>
+
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="10"></textarea>
@@ -167,7 +172,7 @@ var form = document.getElementById('request-form');
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token ); -->
+  <!-- window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token ); -->
 }
 var name_enc = getParams()["name"];
 if (name_enc) {
@@ -176,7 +181,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token ); -->
+  <!-- window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token );
 }
 
 // name
