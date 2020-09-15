@@ -9,7 +9,9 @@ tags = ["Rivanna","maintenance","feature"]
 categories = ["feature"]
 +++
 
-Rivanna will be down for maintenance on **Tuesday, September 22, beginning at 8:30 a.m.** It is expected to return to service later in the day.
+{{< alert-green >}}
+Rivanna will be down for maintenance on <strong>Tuesday, September 22, beginning at 8:30 a.m.</strong> It is expected to return to service later in the day.
+{{< /alert-green >}}
 
 RC engineers will be installing new hardware that is needed to stabilize the `/scratch` filesystem.
 
