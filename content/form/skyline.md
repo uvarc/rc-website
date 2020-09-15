@@ -52,19 +52,19 @@ private = true
     <label class="control-label" for="type-of-request">VM Configuration <span class="form-required" title="This field is required.">*</span></label>
     <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-1" name="syline-tier" value="skyline-tier-mini" class="form-radio" /> &nbsp; 2 cpu cores / 2GB memory ($4/month)</label>
+        <input required="required" type="radio" id="tier-1" name="skyline-tier" value="skyline-tier-mini" class="form-radio" /> &nbsp; 2 cpu cores / 2GB memory ($4/month)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-2" name="syline-tier" value="skyline-tier-small" class="form-radio" /> &nbsp; 4 cpu cores / 16GB memory ($12/month)</label>
+        <input required="required" type="radio" id="tier-2" name="skyline-tier" value="skyline-tier-small" class="form-radio" /> &nbsp; 4 cpu cores / 16GB memory ($12/month)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-3" name="syline-tier" value="skyline-tier-medium" class="form-radio" /> &nbsp; 8 cpu cores / 32GB memory ($48/month)</label>
+        <input required="required" type="radio" id="tier-3" name="skyline-tier" value="skyline-tier-medium" class="form-radio" /> &nbsp; 8 cpu cores / 32GB memory ($48/month)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-3" name="syline-tier" value="skyline-tier-large" class="form-radio" /> &nbsp; 16 cpu cores / 64GB memory ($96/month)</label>
+        <input required="required" type="radio" id="tier-4" name="skyline-tier" value="skyline-tier-large" class="form-radio" /> &nbsp; 16 cpu cores / 64GB memory ($96/month)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-3" name="syline-tier" value="skyline-tier-xlarge" class="form-radio" /> &nbsp; 16 cpu cores / 124GB memory ($176/month)</label>
+        <input required="required" type="radio" id="tier-5" name="skyline-tier" value="skyline-tier-xlarge" class="form-radio" /> &nbsp; 16 cpu cores / 124GB memory ($176/month)</label>
       </div>
     </div>
   </div>
@@ -74,10 +74,10 @@ private = true
     <label class="control-label" for="type-of-request">Operating System <span class="form-required" title="This field is required.">*</span></label>
     <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="os-windows" name="syline-os" value="skyline-tier-mini" class="form-radio" /> &nbsp; Windows </label>
+        <input required="required" type="radio" id="os-windows" name="skyline-os" value="Windows" class="form-radio" /> &nbsp; Windows </label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="os-linux" name="syline-os" value="skyline-tier-small" class="form-radio" /> &nbsp; Linux CentOS</label>
+        <input required="required" type="radio" id="os-linux" name="skyline-os" value="CentOS" class="form-radio" /> &nbsp; Linux CentOS</label>
       </div>
     </div>
   </div>
