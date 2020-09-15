@@ -38,7 +38,7 @@ type = "rivanna"
     <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#home"><code>/home</code></a></td>
     <td class="tg-dc35">50GB</td>
     <td class="tg-dc35">Free</td>
-    <td class="tg-dc35">3-week snapshot</td>
+    <td class="tg-dc35">2-week snapshot</td>
     <td class="tg-dc35">Rivanna login and compute nodes</td>
     <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna interactively. SLURM jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>. The <code>/home</code> directory is a personal storage space that is not shareable with other users.</td>
   </tr>
@@ -46,7 +46,7 @@ type = "rivanna"
     <td class="tg-hy9w"><a href="/userinfo/storage/non-sensitive-data/#scratch"><code>/scratch</code></a></td>
     <td class="tg-hy9w">10TB, 350,000 files</td>
     <td class="tg-hy9w">Free</td>
-    <td class="tg-hy9w">Data removed 90 days after last file modification timestamp</td>
+    <td class="tg-hy9w">Data removed 90 days after last file access</td>
     <td class="tg-hy9w">Rivanna login and compute nodes</td>
     <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage. The <code>/scratch</code> directory is for personal use and not shared with other users.<br /><br />
 
@@ -56,8 +56,8 @@ type = "rivanna"
     <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#project"><code>/project</code></a></td>
     <td class="tg-dc35">Available in 1TB increments</td>
     <td class="tg-dc35">{{% storage-pricing project %}}/TB/Yr</td>
-    <td class="tg-dc35">3-week snapshot</td>
-    <td class="tg-dc35">Rivanna login and compute nodes</td>
+    <td class="tg-dc35">2-week snapshot</td>
+    <td class="tg-dc35">Rivanna login and compute nodes, mountable on local workstation</td>
     <td class="tg-dc35"><code>/project</code> is ideal for long-term storage data that can be accessed from Rivanna. <code>/project</code> can be used for sharing data within a research group and for running jobs with smaller files.</td>
   </tr>
   <tr>
@@ -65,7 +65,7 @@ type = "rivanna"
     <td class="tg-hy9w">Available in 1TB increments</td>
     <td class="tg-hy9w">{{% storage-pricing value %}}/TB/Yr</td>
     <td class="tg-hy9w">No backup</td>
-    <td class="tg-hy9w">Rivanna login and compute nodes, SMB mount</td>
+    <td class="tg-hy9w">Rivanna login and compute nodes, mountable on local workstation</td>
     <td class="tg-hy9w">Research value storage is budget solution for storing data that can be accessed by a personal computer or Rivanna. It can also be used to share data within a research group. SLURM jobs can be run against value storage but will be slower than those run against <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
   <tr>
@@ -74,7 +74,7 @@ type = "rivanna"
     <td class="tg-hy9w">{{% storage-pricing zfs %}}/TB/Yr</td>
     <td class="tg-hy9w">No backup</td>
     <td class="tg-hy9w">Rivanna login and compute nodes</td>
-    <td class="tg-hy9w">Research ZFS is our least expensive storage solution for data that can be accessed by Rivanna although with lower performance compared to <code>/project</code>. It can be used as shared storage for members of a research group.</td>
+    <td class="tg-hy9w"><b>Currently not available.</b> Research ZFS is our least expensive storage solution for data that can be accessed by Rivanna although with lower performance compared to <code>/project</code>. It can be used as shared storage for members of a research group.</td>
   </tr>
 </table>
 </div>
