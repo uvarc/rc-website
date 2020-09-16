@@ -51,6 +51,13 @@ timeout = "60000"
   pageNotFoundTitle = "404 - Page not found"
   rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
 
+[params.backups]
+  rivanna_home = "2-week snapshots"
+  rivanna_scratch = "No backups"
+  project = "2-week snapshots"
+  value = "No backups"
+  zfs = "No backups"
+
 [params.pricing]
   # Set STORAGE / VM PRICES globally below:
   storageProject = 60

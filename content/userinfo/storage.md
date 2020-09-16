@@ -47,24 +47,24 @@ images = [""]
     <td class=""><a href="/userinfo/storage/non-sensitive-data/#project">Project Storage</a></td>
     <td class="">1TB increments</td>
     <td class="">{{% storage-pricing project %}}/TB/yr</td>
-    <td class="">2 week snapshots</td>
-    <td class="">Rivanna, NFS mount</td>
+    <td class="">{{% backup-policy project %}}</td>
+    <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
     <td class=""><code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for sharing data within a research group and for running jobs with smaller files.</td>
   </tr>
   <tr>
     <td class=""><a href="/userinfo/storage/research-value">Value Storage</a></td>
     <td class="">1TB increments</td>
     <td class="">{{% storage-pricing value %}}/TB/yr</td>
-    <td class="">No backup</td>
-    <td class="">Rivanna, SMB mount</td>
+    <td class="">{{% backup-policy value %}}</td>
+    <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
     <td class="">Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
   <tr>
     <td class="">Archive Storage</td>
     <td class="">1TB increments</td>
     <td class="">{{% storage-pricing zfs %}}/TB/yr</td>
-    <td class="">No backup</td>
-    <td class="">Rivanna</td>
+    <td class="">{{% backup-policy zfs %}}</td>
+    <td class="">Rivanna</a></td>
     <td class=""><b>Currently not available.</b> ZFS NAS storage can be mounted on your desktop and allows for file sharing among research team members.</td>
   </tr>
   </tbody>

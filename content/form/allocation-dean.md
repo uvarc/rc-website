@@ -22,7 +22,7 @@ private = true
   <div style="padding:1.4rem;" class="card">
   <h5 class="card-title">About the Requestor</h5>
   <input type="hidden" id="category" name="category" value="Deans Allocation">
-  <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
+  <input type="hidden" id="allocation_type" name="Allocation Type" value="Deans Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
 {{% form-userinfo %}}
   <div class="form-item form-type-select form-group">
@@ -170,7 +170,7 @@ var url_user_token = getParams()["user_token"];
 
 // The two redirects below loosely verify an authenticated user. Comment out for testing.
 if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/allocation-dean.php?user_token=" + cookie_token );
+  // window.location.replace( "https://auth.uvasomrc.io/site/allocation-dean.php?user_token=" + cookie_token );
 }
 
 var name_enc = getParams()["name"];
@@ -180,7 +180,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/allocation-dean.php?user_token=" + cookie_token );
+  // window.location.replace( "https://auth.uvasomrc.io/site/allocation-dean.php?user_token=" + cookie_token );
 }
 
 // name
