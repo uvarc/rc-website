@@ -148,6 +148,16 @@ private = true
     <label class="control-label" for="financial-contact">Financial Contact </label>
     <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
   </div>
+  <hr size=1 />
+  <div class="form-check form-item form-group">
+    <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
+    <label class="form-check-label" for="data-agreement">
+      The owner of these services assumes all responsibility for complying with state, federal, and international data retention laws. Researchers may be required to keep data securely stored for years after a project has ended and should plan accordingly. University of Virginia researchers are strongly encouraged to use the <a href="https://recordsmanagement.virginia.edu/urma/overview" target="_new" style="font-weight:bold;">University Records Management Application (URMA)</a>, a web-based tool that automatically tracks when data can be safely transferred or destroyed.
+    </label>
+  </div>
+  <div class="form-item form-group">
+    <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
+  </div>
   <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
@@ -197,7 +207,7 @@ var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 
 if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
+  //window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
 }
 
 var name_enc = getParams()["name"];
@@ -207,7 +217,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
+  //window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
 }
 
 // name
