@@ -174,7 +174,7 @@ private = true
   -->
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
-    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
   </div>
 </div>
 </form>
@@ -182,6 +182,19 @@ private = true
 <script type="text/javascript" src="/js/storage-request.js"></script>
 
 <script>
+
+//Add a JQuery click event handler onto our checkbox.
+$('#data-agreement').click(function(){
+    //If the checkbox is checked.
+    if($(this).is(':checked')){
+        //Enable the submit button.
+        $('#submit').attr("disabled", false);
+    } else{
+        //If it is not checked, disable the button.
+        $('#submit').attr("disabled", true);
+    }
+});
+
 function getParams() {
   var vars = {};
   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
