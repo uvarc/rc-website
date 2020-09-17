@@ -12,7 +12,7 @@ type = "rivanna"
 +++
 
 # Overview
-Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser. Within the Open OnDemand environment users have access to a file explorer; interactive applications like [JupyterLab](/userinfo/rivanna/software/jupyterlab), [RStudio Server](/userinfo/rivanna/software/r) & [FastX Web](/userinfo/rivanna/logintools/fastx); a command line interface; and a job composer and job monitor.
+Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser. Within the Open OnDemand environment users have access to a file explorer; interactive applications like [JupyterLab](/userinfo/rivanna/software/jupyterlab), [RStudio Server](/userinfo/rivanna/software/rstudio) & [FastX Web](/userinfo/rivanna/logintools/fastx); a command line interface; and a job composer and job monitor.
 
 
 # Logging in to Rivanna
@@ -72,7 +72,7 @@ After starting a JupyterLab session, you're taken to the My Interactive Sessions
 ## RStudio Server
 RStudio provides an environment specifically designed for interactive R script development and debugging.
 
-Please read the [RStudio documentation](/userinfo/rivanna/software/r) for detailed instructions on how to start RStudio sessions and specify hardware resource requests.
+Please read the [RStudio Server documentation](/userinfo/rivanna/software/rstudio) for detailed instructions on how to start RStudio sessions and specify hardware resource requests.
 
 After starting an RStudio session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
