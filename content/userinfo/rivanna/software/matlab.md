@@ -68,7 +68,7 @@ To launch an instance of {{% software-name %}}, you will begin by connecting to 
 When {{% software-name %}} opens in your web browser, it will appear just like the {{% software-name %}} that you have on your laptop or desktop.
 
 ## Closing the Interactive Session
-When you are done, quit the Matlab application.  The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged for the time.
+When you are done, quit the Matlab application.  The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged until the specified time limit is reached.
 
 # Running a Matlab Batch Jobs on Rivanna
 
