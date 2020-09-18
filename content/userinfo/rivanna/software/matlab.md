@@ -35,7 +35,10 @@ To find the available versions and learn how to load them, run:
 module spider {{% module-name %}}
 ```
 
-The output of the command shows the available {{% software-name %}} module versions.
+The output of the command shows the available {{% software-name %}} module versions. To load the most recent version of {{% software-name %}}, at the terminal window prompt run:
+```
+module load matlab
+```
 
 For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
 ```
@@ -48,7 +51,7 @@ You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [
 
 If your Matlab job requires user interactions via the Matlab interface, you should use [ijob](https://www.rc.virginia.edu/userinfo/rivanna/slurm/#submitting-an-interactive-job) to request an interactive job or start an interactive session through Rivanna's web portal, [Open OnDemand](/userinfo/rivanna/ood/overview), as described in the next section.
 
-# Interactive Sessions through Rivanna's Web Portal
+# Interactive Sessions through Rivanna's Open OnDemand Web Portal
 
 ## Starting an Interactive Session
 To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/queues/) to learn more about the partitions.
@@ -75,7 +78,8 @@ submitting different types of Matlab batch jobs to the Rivanna cluster.
 
 ## Submitting a batch job using a single core of a compute node.
 
-Once your program is debugged, we recommend running in batch mode when possible. This runs the job in the background on a compute node. Write a SLURM script similar to the following:
+Once your program is debugged, we recommend running in batch mode when possible.
+This runs the job in the background on a compute node. Write a SLURM script similar to the following:
 
 ```
 #!/bin/bash
@@ -103,23 +107,27 @@ nDim=400; # Dimension of matrix to create
 matlab -nodisplay -singleCompThread -r \
 "pcalc2Test1(${nLoops},${nDim},'${SLURM_JOB_ID}'); exit;"
 ```
-The option `-nodisplay` suppresses the Desktop and any attempt to run a graphical display. The -singleCompThread option is to ensure that all MATLAB built-in functions use only one thread on one core (cpu). Some MATLAB functions are capable of running on multiple cores, but may not do so very efficiently. To use them in multicore mode you must request the appropriate number of cores and parallelize your code as shown below, but you will be charged SUs for all cores whether they are used effectively or not. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores so again you again would have to request the addtional cores in your slurm script. Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
+The option `-nodisplay` suppresses the Desktop interface and any attempt to run a graphical display. The -singleCompThread option is to ensure that all MATLAB built-in functions use only one thread on one core (cpu). Some MATLAB functions are capable of running on multiple cores. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores, so you would need to request the additional cores in your slurm script.  Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
 
-The `;exit` is very important to ensure that the job terminates when the computation is done. The example code `pcalc2Test1.m` is shown below. Note that passing the `SLURM_JOB_ID` variable allows the function to save
-output to a job-specific filenames. The function `pcalc2Test1` used in the above example is shown below.
+The `;exit` is important to ensure that the job terminates when the computation is done. The example code `pcalc2Test1.m` is shown below. Note that passing the `SLURM_JOB_ID` variable allows the function to save
+output to a job-specific filenames.
 
 ```
 function  [a]=pcalc2Test1(nloop,ndim,jobid)
 % Example using the parfor construct to calculate the maximum eignevalue
-% of a random ndim x ndim matrix nloops times
+% of a random ndim by ndim matrix nloops times
 % nloop: Number of time parfor loop should run
 % ndim: Dimension of the square matrix to create
+% jobid: Slurm job id number
 
 if ischar(nloop) % checking data type on first input
     nloop=str2num(nloop);
 end
-if ischar(ndim) % checking data type on first input
-    nloop=str2num(ndim);
+if ischar(ndim) % checking data type on second input
+    ndim=str2num(ndim);
+end
+if ischar(jobid) % checking data type on third input
+    jobid=str2num(jobid);
 end
 
 % preallocate output array
@@ -127,8 +135,10 @@ a=zeros(nloop, 1);
 
 % TIME CONSUMING LOOP
 tic;
-parfor i=1:nloop  % parallelized for loop, only used if parallel pool initialized
+parfor i=1:nloop  % parallelized for loop
+                  % parfor only used if parallel pool open
     a(i)=FunctionTakesLongTime(ndim);
+    % print progress of the parfor loop
     if mod(i,10)==0
         fprintf('Iteration number = %d of %d total \n',nloop-i,nloop)
     end
@@ -137,7 +147,7 @@ time=toc;
 
 % output timing information and host
 stringOut1= ...
-sprintf('time = %f, nloop = %d on host %s \n',time,nloop,getenv('HOSTNAME'));
+sprintf('time = %f,nloop = %d on host %s \n',time,nloop,getenv('HOSTNAME'));
 
 % save output to a file
 fid = fopen(['pcalc_' jobid '.out'],'wt');
@@ -154,10 +164,12 @@ end
 
 ## Submitting a batch job using multiple cores on a compute node
 
-If you have a job that can be structured to run across multiple cores, you can greatly speed up the time to your results. The linear algebraic libraries in Matlab are multi-theaded and will make use of multiple cores on a compute node. The Parallel Computing Toolkit allows you to distribute for loops over multiple cores using parfor and other parallel constructs in MATLAB. For more information on using the Parallel Computing Toolbox in MATLAB see the.
+If you have a Matlab job that can be structured to run across multiple cores, you can greatly speed up the time to your results. The linear algebraic libraries in Matlab are multi-theaded and will make use of multiple cores on a compute node. The Parallel Computing Toolkit allows you to distribute for loops over multiple cores using parfor and other parallel constructs in MATLAB. For more information on using the Parallel Computing Toolbox in MATLAB see the.
 **<a href="https://www.mathworks.com/products/parallel-computing.html" target="_blank">MathWorks documentation</a>** .
 
-The example function `pcalc2Test1.m` above uses a  parallel for loop (parfor) in MATLAB. To run your parallel MATLAB code across multiple cores on one compute node, you can use a slurm script similar to the following:
+The example function `pcalc2Test1.m` above uses a  parallel for loop (parfor)
+in MATLAB. To run your parallel MATLAB code across multiple cores on one compute
+node, you can use a slurm script similar to the following:
 
 ```
 #!/bin/bash
@@ -193,20 +205,20 @@ matlab -nodisplay -nosplash  \
 -r "setPool1;pcalc2Test1(${nLoops},${nDim},'${slurm_ID}');exit;"
 ```
 
-The Matlab script `setPool1.m` gets the number of workers allocated by Slurm and
-uses that to create the pool of Matlab workers.
+The Matlab script `setPool1.m` gets the number of workers allocated by Slurm from
+the `numWorkers` shell variable and uses that to create the pool of Matlab workers.
 
 ```
 % Script setPool1.m
 % create a local cluster object
 pc = parcluster('local');
 
-% explicitly set JobStorageLocation to jpb-specific temp directory
-mkdir(strcat('/scratch/', getenv('USER'),'/slurmJobs/', getenv('SLURM_ID')));
-pc.JobStorageLocation = strcat('/scratch/', getenv('USER'),'/slurmJobs/', getenv('
-SLURM_ID'));
+% explicitly set JobStorageLocation to job-specific temp directory
+mkdir(strcat('/scratch/',getenv('USER'),'/slurmJobs/',getenv('slurm_ID')));
+pc.JobStorageLocation = ...
+     strcat('/scratch/', getenv('USER'),'/slurmJobs/', getenv('slurm_ID'));
 
-% start the matlabpool with maximum available workers
+% start the matlabpool with the available workers
 % control how many workers by setting ntasks in your sbatch script
 parpool(pc, str2num(getenv('numWorkers')))
 
@@ -218,7 +230,8 @@ job script using the `--array` directive.
 
 ## Array of Multiple Single-Core Matlab Jobs
 
-The following slurm script shows how to run 10 single core Matlab jobs using slurm job arrays.
+The following slurm script shows how to run 10 single core Matlab jobs using
+slurm job arrays.
 
 ```
 #!/bin/bash
@@ -252,10 +265,10 @@ matlab -nodisplay -singleCompThread -r \
 
 ```
 
-
 ## Array of Multicore Parallel Matlab Jobs
 
-The following Slurm script uses job arrays to submit multiple parallel Matlab jobs, each running on a nodes of the standard queue.
+The following Slurm script uses job arrays to submit multiple parallel Matlab
+jobs, each running on a nodes of the standard queue.
 ```
 #!/bin/bash
 # The slurm script file runParallelMultiple.slurm runs
@@ -277,7 +290,7 @@ module purge
 module load matlab
 
 # Create variable for slurm job and task ids
-export SLURM_ID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
+export slurm_ID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
 
 # Set workers to one less that number of tasks (leave 1 for master process)
 export numWorkers=$((SLURM_NTASKS-1))
@@ -287,14 +300,14 @@ nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
 # Run Matlab parallel program
-matlab -nodisplay -nosplash -r "setPool1; pcalc2Test1(${nLoops},${nDim},'${SLURM_I
-D}');exit;"
+matlab -nodisplay -nosplash -r \
+"setPool1; pcalc2Test1(${nLoops},${nDim},'${slurm_ID}');exit;"
 
 ```
 
 # Parallel Matlab on Multiple Compute Nodes
 To run Matlab parallel jobs that require more cores than are available on
-one compute node, you can launch the Matlab desktop on one of the Rivanna
+one compute node (e.g. > 40), you can launch the Matlab desktop on one of the Rivanna
 login nodes. The following MATLAB setup script will create the cluster profile
 for your account on Rivanna:
 
@@ -346,7 +359,7 @@ the following commands:
 
 ```
 % Launch Matlab parallel code across two compute nodes
-j=c.batch(@pcalc2Test1,1,{600,101,'myOutput1'},'pool',procs-1); % Launch batch job to cluster
+j=c.batch(@pcalc2Test1,1,{600,101,'myOutput1'},'pool',procs-1);
 
 % Arguments of c.batch in order
 
@@ -366,50 +379,50 @@ j.wait
 % Get output from the job
 j.fetchOutputs
 
-% Commands to use to get back debug information if a job crashes
-
+% Command to use to get back debug information if a job crashes
 % For parallel jobs (i.e. calling batch with pool>0)
 j.Parent.getDebugLog(j)
 ```
 ## `spmd` example
-The previous example distributes the iterations of a 'parfor' loop across
-multiple compute nodes. The following example show how to solve a linear system
+The previous example distributes the iterations of a `parfor` loop across
+multiple compute nodes. The following example shows how to solve a linear system
 of equations (Ax=b) across multiple compute nodes using distributed arrays.
 
 ```
 % create a cluster object
-pc = parcluster('rivanna R2020a'); % This must correspond to the matlab version
+pc = parcluster('rivanna R2020a'); % This must correspond to the matlab
+     % version you are using
 pc.AdditionalProperties.AccountName = 'hpc_build'
 pc.AdditionalProperties.WallTime = '04:00:00';
 pc.AdditionalProperties.QueueName = 'parallel';
+
+% email address for Slurm to send email
+c.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
+% send email when job ends
+c.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
 
 % specify the total number of processes
 % and number of processes (cores) per node
 procs=40;
 procsPerNode=4;
 pc.AdditionalProperties.ProcsPerNode=procsPerNode;
-% explicitly set the JobStorageLocation to the temp directory that was c
-reated in your sbatch script
-pc.JobStorageLocation = strcat('/scratch/', getenv('USER'),'/slurmJobs/'
-, getenv('SLURM_JOBID'));
 pc.saveProfile;
 
 % specify additional submit arguments
 pc.AdditionalProperties.AdditionalSubmitArgs='--mem-per-cpu=30000';
-%pc.AdditionalProperties.AdditionalSubmitArgs.output='-o parallelTest.ou
-t';
-%pc.AdditionalProperties.AdditionalSubmitArgs.error='-e parallelTest.err
-';
 
-% start the matlabpool with maximum available workers
+% start the matlabpool with available workers
 % control how many workers by setting ntasks in your sbatch script
 
-j=pc.batch(@solver_large1,2,{200000,'1234'},'Pool',procs-1);
+j=pc.batch(@solver_large1,2,{200000,'myOutput2'},'Pool',procs-1);
 
 wait(j);
 j.State
 j.fetchOutputs{:}
 
+% Command to use to get back debug information if a job crashes
+% For parallel jobs (i.e. calling batch with pool>0)
+j.Parent.getDebugLog(j)
 ```
 
 The function `solver_large1` looks like the following:
@@ -437,10 +450,8 @@ errChk2=gather(errChk)
 
 firstTenX=x2(1:10)
 time
-whos
 
-save(['solver_large1_' num2str(jobid) '.out'],'time','errChk2','firstTen
-X');
+save(['solver_large1_' num2str(jobid) '.out'],'time','errChk2','firstTenX');
 
 end
 
@@ -460,11 +471,11 @@ The following slurm script is for submitting a Matlab job that uses 4 of the K80
 #SBATCH --gres=gpu:k80:4
 #SBATCH -A hpc_build
 #SBATCH --time=4:00:00
-#SBATCH --output=gpuTest%A.out
-#SBATCH --error=gpuTest%A.err
+#SBATCH --output=gpuTest_%A.out
+#SBATCH --error=gpuTest_%A.err
 #SBATCH --mail-type=end
 #SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=4 # allocate one cpue for each gpu
 #SBATCH --mem=60000
 
 echo 'slurm allocates gpus ' $CUDA_VISIBLE_DEVICES
@@ -473,48 +484,52 @@ echo 'slurm allocates gpus ' $CUDA_VISIBLE_DEVICES
 module load matlab/R2020a
 
 ndim=12000;
-nloop=100000;
+nloop=2000;
 # Run Matlab parallel program program
  matlab -nodisplay -nosplash  \
  -r "gpuTest1(${ndim},${nloop},'${SLURMD_NODENAME}_${SLURM_JOB_ID}');exit;"
 ```
 
-The function `gpuTest1` looks like the following.
+The function `gpuTest1` looks like the following. For further information, see [https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html](https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html)
 
 ```
- function  [a]=gpuTest1(ndim,nloop,jobid)
- % Example to test gpu nodes
- % ndim: dimension of matrix
- % jobid: Slurm job id  for save saving output to job specific file
+function  [a_cpu]=gpuTest1(ndim,nloop,jobid)
+% Example to test gpu nodes
+% ndim: dimension of matrix
+% jobid: Slurm job id  for save saving output to job specific file
+% nloop is number of time for parallel loop to run
 
- % Check to see if you have a GPU device on your machine:
- gpuDeviceCount
- parpool('local',gpuDeviceCount);
- spmd
-     gpuDevice
- end
+% Check to see if you have a GPU device on your machine:
+disp(['number of gpus ', num2str(gpuDeviceCount)])
 
- % preallocate output array
- % ndim= 8172;
+% Create pool of workers across the gpus
+parpool('local',gpuDeviceCount);
 
- % Create a random matrix
- matrixCPU = rand(ndim,ndim);
+% Display the gpus
+spmd
+   gpuDevice
+end
 
- %Start by placing the matrixCPU onto the GPU device:
- matrixGPU = gpuArray(matrixCPU);
- %Compute the fft of the matrixGPU:
- tic
- parfor k=1:nloop
- outGPU = fft(matrixGPU);
- %Finish the timer and print out results:
- end
- %Wait for the transfer to complete:
- wait(gpuDevice)
- %Gather the results from the GPU back to the CPU:
- a = gather(outGPU);
- delete(gcp('nocreate'));
- tGPU = toc;
- disp(['Total time on GPU: ' num2str(tGPU)])
+% preallocate output gpu array
+a=zeros(nloop, 1,'double','gpuArray');
 
- end
+tic
+parfor k=1:nloop
+% create random 2-D array on gpu, perform 2-D fft and get maximum value
+a(k) = max(max(abs(fft2((rand(ndim,'double','gpuArray'))))));
+end
+
+%Wait for the transfer to complete:
+wait(gpuDevice)
+
+%Gather the results from the GPU back to the CPU:
+a_cpu = gather(a);
+a_cpu(1:10)  % Display first 10 elements of output array
+
+delete(gcp('nocreate')); % delete parallel pool
+tGPU = toc;
+disp(['Total time on GPU: ' num2str(tGPU)])
+disp(['ndim = ', num2str(ndim), '   nloop = ', num2str(nloop)])
+
+end
 ```
