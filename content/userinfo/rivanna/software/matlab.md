@@ -126,9 +126,6 @@ end
 if ischar(ndim) % checking data type on second input
     ndim=str2num(ndim);
 end
-if ischar(jobid) % checking data type on third input
-    jobid=str2num(jobid);
-end
 
 % preallocate output array
 a=zeros(nloop, 1);
@@ -178,14 +175,14 @@ node, you can use a slurm script similar to the following:
 
 #SBATCH -p standard
 #SBATCH -A hpc_build
-#SBATCH --time=12:00:00
+#SBATCH --time=1:00:00
 #SBATCH --mail-type=end
 #SBATCH --mail-user=teh1m@virginia.edu
 #SBATCH --job-name=runParallelTest
 #SBATCH --output=runParallelTest_%A.out
 #SBATCH --error=runParallelTest_%A.err
 #SBATCH --nodes=1                #Number of nodes
-#SBATCH --ntasks-per-node=20     #Number of cores per node
+#SBATCH --ntasks-per-node=8     #Number of cores per node
 
 # Load Matlab environment
 module load matlab
@@ -238,7 +235,7 @@ slurm job arrays.
 # The slurm script file runParallelMultiple.slurm runs
 # multiple single-core Matlab jobs using a Slurm job array
 
-#SBATCH --array=1-10
+#SBATCH --array=1-5
 #SBATCH -p standard
 #SBATCH -A hpc_build
 #SBATCH --time=00:10:00
@@ -274,16 +271,16 @@ jobs, each running on a nodes of the standard queue.
 # The slurm script file runParallelMultiple.slurm runs
 # multiple parallel Matlab jobs using a Slurm job array
 
-#SBATCH --array=1-10
+#SBATCH --array=1-5
 #SBATCH -p standard
 #SBATCH -A hpc_build
-#SBATCH --time=00:30:00
+#SBATCH --time=00:10:00
 #SBATCH --mail-type=end
 #SBATCH --mail-user=teh1m@virginia.edu
 #SBATCH --job-name=runMultiple
 #SBATCH --output=runMultiple_%A_%a.out
 #SBATCH --error=runMultiple_%A_%a.err
-#SBATCH --ntasks-per-node=20
+#SBATCH --ntasks-per-node=8
 
 module purge
 # Load Matlab environment
@@ -316,7 +313,7 @@ for your account on Rivanna:
 % across multiple compute nodes of the Rivanna cluster.
 
 % Load the module for Matlab from the Linux command line.
-module load matlab
+% module load matlab
 
 % The following commands are executed from within Matlab
 
@@ -334,22 +331,22 @@ pc = parcluster('rivanna R2020a'); % This must correspond to the matlab
      % version you are using
 
 % Add additional properties related to slurm job parameters
-pc.AdditionalProperties.Account = 'hpc_build' % account to charge job to
+pc.AdditionalProperties.AccountName = 'hpc_build' % account to charge job to
 pc.AdditionalProperties.QueueName = 'parallel' % queue to submit job to
-pc.AdditionalProperties.WallTime = '24:00:00' % amount of wall time needed
+pc.AdditionalProperties.WallTime = '1:00:00' % amount of wall time needed
 pc.saveProfile % save settings
 pc.AdditionalProperties  % confirm above properties are set
 
 % Additional configuration commands
 
 % email address for Slurm to send email
-c.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
+pc.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
 % send email when job ends
-c.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
+pc.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
 
 % specify the total number of processes
 % and number of processes (cores) per node
-procs=40;
+procs=8;
 procsPerNode=4;
 pc.AdditionalProperties.ProcsPerNode=procsPerNode;
 
@@ -359,7 +356,7 @@ the following commands:
 
 ```
 % Launch Matlab parallel code across two compute nodes
-j=c.batch(@pcalc2Test1,1,{600,101,'myOutput1'},'pool',procs-1);
+j=c.batch(@pcalc2Test1,1,{400,400,'myOutput1'},'pool',procs-1);
 
 % Arguments of c.batch in order
 
@@ -367,8 +364,8 @@ j=c.batch(@pcalc2Test1,1,{600,101,'myOutput1'},'pool',procs-1);
 % Number of function outputs
 % Cell array of function inputs
 % Setting of a pool of matlab workers
-% Number of Matlab workers. There are 40 cores on two nodes
-% so use 39 for workers and one for master
+% Number of Matlab workers. There are 8 cores on two nodes
+% so use 7 for workers and one for master
 
 % Get the state of the job
 j.State
@@ -397,13 +394,13 @@ pc.AdditionalProperties.WallTime = '04:00:00';
 pc.AdditionalProperties.QueueName = 'parallel';
 
 % email address for Slurm to send email
-c.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
+pc.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
 % send email when job ends
-c.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
+pc.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
 
 % specify the total number of processes
 % and number of processes (cores) per node
-procs=40;
+procs=8;
 procsPerNode=4;
 pc.AdditionalProperties.ProcsPerNode=procsPerNode;
 pc.saveProfile;
@@ -414,7 +411,7 @@ pc.AdditionalProperties.AdditionalSubmitArgs='--mem-per-cpu=30000';
 % start the matlabpool with available workers
 % control how many workers by setting ntasks in your sbatch script
 
-j=pc.batch(@solver_large1,2,{200000,'myOutput2'},'Pool',procs-1);
+j=pc.batch(@solver_large1,2,{20000,'myOutput2'},'Pool',procs-1);
 
 wait(j);
 j.State
@@ -446,12 +443,14 @@ end
 time=toc;
 
 x2 = gather(x);
+fprintf('norm of the error for the solution \n')
 errChk2=gather(errChk)
-
+fprintf('first 10 elements of solution vector (should be all ones)\n')
 firstTenX=x2(1:10)
 time
 
-save(['solver_large1_' num2str(jobid) '.out'],'time','errChk2','firstTenX');
+save(['solver_large1_' num2str(jobid) '.out'],...
+      'time','errChk2','firstTenX');
 
 end
 
