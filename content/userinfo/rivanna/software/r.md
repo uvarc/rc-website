@@ -28,19 +28,19 @@ author = "RC Staff"
 On Rivanna, R is available through our module system.  To load R, simply type:
 
 ```
-module load gcc R
+module load goolf R
 ```
 
-Notice that we included gcc in the load command. There are two reasons why including gcc is important:
+Notice that we included goolf in the load command. There are two reasons why including goolf is important:
 
-1. R was built with the gcc compiler.  Due to its hierarchical layout, the module system must be told which build of R is needed.
+1. R was built with the gcc compiler, an interface to OpenMPI, and other utilities.  Due to its hierarchical layout, the module system must be told which build of R is needed.
 
-2. R has many computationally-intensive packages that are built with C, C++, or Fortran. By including gcc, we ensure that the same environment used for building R is loaded for any package installs.
+2. R has many computationally-intensive packages that are built with C, C++, or Fortran. By including goolf, we ensure that the same environment used for building R is loaded for any package installs.
 
 The load command will load a default version of R, unless another version is specified.  For example, you could type:
 
 ```
-module load gcc R/3.4.3
+module load goolf R/4.0.0
 ```
 
 To see the available versions of R, type:
@@ -57,7 +57,7 @@ module spider R
 RStudio is a development environment for R.  It also is supported through its own module, but you must load a version of R first. For example, to load and run Rstudio, you could type the following:
 
 ```
-module load gcc R
+module load goolf R
 module load rstudio
 rstudio &
 ```
@@ -69,7 +69,7 @@ RStudio is also available through our web-based portal to Rivanna.  For instruct
 Due to the amount and variability of packages available for R, Research Computing does not maintain R packages beyond the very basic.  If you need a package, you can install it in your account, using a local library.  For example, to install `BiocManager`, you can type:
 
 ```
-module load gcc R
+module load goolf R
 ```
 
 ```
@@ -98,7 +98,7 @@ After you have developed your R program, you can submit it to the compute nodes 
 #SBATCH -p standard
 #SBATCH -A mygroup
 
-module load gcc R
+module load goolf R
 Rscript myRprog.R
 ```
 
@@ -122,7 +122,7 @@ R programs can be written to use multiple cores on a node.  You will need to ens
 #SBATCH -p standard
 #SBATCH -A mygroup
 
-module load gcc R
+module load goolf R
 Rscript myRprog.R ${SLURM_CPUS_PER_TASK}
 ```
 
@@ -158,7 +158,7 @@ R programs can be distributed across multiple nodes with MPI (message passing in
 #SBATCH -p parallel
 #SBATCH -A mygroup
 
-module load gcc openmpi R
+module load goolf R
 
 srun Rscript myRprog.R
 ```
