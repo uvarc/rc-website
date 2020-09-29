@@ -77,14 +77,45 @@ private = true
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="type-of-request">Operating System <span class="form-required" title="This field is required.">*</span></label>
+	<table>
     <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="os-windows" name="skyline-os" value="Windows" class="form-radio" /> &nbsp; Windows </label>
+		<tr>
+		<td>
+        <input required="required" type="radio" style="display:block" id="os-linux" name="skyline-os" value="CentOS 7.8" class="form-radio" />
+        </td><td>
+        <label>&nbsp;CentOS 7.8:<br>&nbsp;Unlimited number of concurrent user logins.</label>
+        </td>
+        </tr>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="os-linux" name="skyline-os" value="CentOS" class="form-radio" /> &nbsp; Linux CentOS</label>
+		<tr>
+		<td>
+        <input required="required" type="radio" id="os-windows" name="skyline-os" value="Windows 10" class="form-radio" />
+        </td><td>
+        <label>&nbsp;Windows 10:<br>&nbsp;Limited to 2 concurrent user logins.</label>
+        </td>
+        </tr>
+      </div>
+      <div class="form-item form-type-radio radio">
+		<tr>
+		<td>
+        <input required="required" type="radio" id="os-windows" name="skyline-os" value="Windows Server 2012 limited" class="form-radio" />
+        </td><td>
+        <label>&nbsp;Windows Server 2012 limited:<br>&nbsp;Supports 2 concurrent user logins.</label>
+      </div>
+      </td>
+      <div class="form-item form-type-radio radio">
+		<tr>
+		<td>
+        <input required="required" type="radio" id="os-windows" name="skyline-os" value="Windows Server 2012 unlimited" class="form-radio" />
+        </td><td>
+        <label>&nbsp;Windows Server 2012 unlimited:<br>&nbsp;Supports >2 concurrent user logins (requires a seat license for each user).</label>
+        </td>
+        </tr>
       </div>
     </div>
+    </table>
   </div>
   </div>
   <div style="font-size:90%;" class="alert alert-success"><b>Billing Tiers</b> are selected and paid for by the PI. Submit this form again if you wish to change your VM configuration.</div>
@@ -172,7 +203,7 @@ var form = document.getElementById('request-form');
 var cookie_token = getCookie("__user_token");
 var url_user_token = getParams()["user_token"];
 if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token );
+  //window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token );
 }
 var name_enc = getParams()["name"];
 if (name_enc) {
@@ -181,7 +212,7 @@ if (name_enc) {
   $('#name').val('');
   $('#email').val('');
   $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token );
+  //window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token );
 }
 
 // name
