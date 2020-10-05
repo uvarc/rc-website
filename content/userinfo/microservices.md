@@ -1,7 +1,7 @@
 +++
 author = "RC Staff"
 description = ""
-title = "Microservices"
+title = "DCOS Microservices"
 date = "2020-07-17T10:08:29-05:00"
 draft = false
 tags = ["compute","cloud","hpc","containers","dcos","hybrid","infrastructure","docker"]
