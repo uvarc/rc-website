@@ -160,7 +160,6 @@ To be eligible to run your microservice on our infrastructure, you must meet the
   <li>Containers <b>may not contain passwords</b>, SSH keys, API keys, or other sensitive information. There are secure methods for passing sensitive information into containers.
   <li>If bringing your own custom container, it must be <b>ready to go</b>! Unfortunately, we cannot create custom containers for you unless it is part of a funded project.
 </ul>
-</div>
 
 Microservices may not run efficiently for all use cases. Some scenarios that cannot run successfully in DCOS include:
 
@@ -169,6 +168,7 @@ Microservices may not run efficiently for all use cases. Some scenarios that can
   <li>Services (apart from web-based services over HTTP/HTTPS) that need to be accessed from outside the HPC network.
   <li>Services that require licensing, such as Microsoft SQL Server, MATLAB, etc.
 </ul>
+</div>
 
 - - -
 
