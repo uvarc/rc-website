@@ -149,7 +149,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 
 - - - 
 
-# Eligibility
+# Service Eligibility & Limitations
 
 <div class="alert alert-danger" role="alert">
 To be eligible to run your microservice on our infrastructure, you must meet the following requirements:
@@ -161,6 +161,14 @@ To be eligible to run your microservice on our infrastructure, you must meet the
   <li>If bringing your own custom container, it must be <b>ready to go</b>! Unfortunately, we cannot create custom containers for you unless it is part of a funded project.
 </ul>
 </div>
+
+Microservices may not run efficiently for all use cases. Some scenarios that cannot run successfully in DCOS include:
+
+<ul>
+  <li>Large (over 100GB) database collections.
+  <li>Services (apart from web-based services over HTTP/HTTPS) that need to be accessed from outside the HPC network.
+  <li>Services that require licensing, such as Microsoft SQL Server, MATLAB, etc.
+</ul>
 
 - - -
 
