@@ -136,6 +136,7 @@ private = true
   <script type="text/javascript" src="/js/captcha.js"></script>
   -->
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
+    <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>
