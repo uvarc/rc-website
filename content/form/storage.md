@@ -69,7 +69,7 @@ private = true
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year)</label>
+        <input onclick="getStorageType()" disabled required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year) - <b>Currently unavailable</b>. </label>
       </div>
       <div class="form-item form-type-radio radio">
         <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
@@ -79,9 +79,14 @@ private = true
       </div>
     </div>
   </div>
+  </div>
   <div class="col form-item form-group">
     <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Standard / Moderately Sensitive Data</h6>This storage platform is appropriate for public, non-sensitive or moderately sensitive data.</div>
     <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
+  </div>
+  <div class="col form-item form-group">
+  <div class="alert alert-warning">
+    Due to Covid related delays in the data center we are unable to accommodate new Project storage requests at this time. We are working on bringing new storage capacity online as quickly as possible.
   </div>
   </div>
   <hr size=1 />
