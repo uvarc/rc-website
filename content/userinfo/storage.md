@@ -71,7 +71,7 @@ images = [""]
 </table>
 
 <div class="alert alert-warning">
-  Due to unexpected delays caused by the pandemic, RC engineers have been unable to complete a major storage system capacity expansion scheduled for October 2020. Therefore, effective immediately, RC is temporarily suspending the creation and expansion of project and value storage shares until the upgrade has been completed. The upgrade is expected to be completed by November 1. We apologize for the inconvenience.
+  Due to unexpected delays caused by the pandemic, RC engineers have been unable to complete a major storage system capacity expansion scheduled for October 2020. Therefore, effective immediately, RC is temporarily suspending the creation and enlargement of project and value storage shares until the expansion has been completed. The expansion is expected to be completed by November 1. We apologize for the inconvenience.
 </div>
 
 - - -
