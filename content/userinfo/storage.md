@@ -49,7 +49,7 @@ images = [""]
     <td class="">{{% storage-pricing project %}}/TB/yr</td>
     <td class="">{{% backup-policy project %}}</td>
     <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-    <td class=""><code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for sharing data within a research group and for running jobs with smaller files.</td>
+    <td class=""><b>Currently not available.</b> <code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for sharing data within a research group and for running jobs with smaller files.</td>
   </tr>
   <tr>
     <td class=""><a href="/userinfo/storage/research-value">Value Storage</a></td>
@@ -57,7 +57,7 @@ images = [""]
     <td class="">{{% storage-pricing value %}}/TB/yr</td>
     <td class="">{{% backup-policy value %}}</td>
     <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-    <td class="">Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
+    <td class=""><b>Currently not available.</b> Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
   <tr>
     <td class="">Archive Storage</td>
@@ -69,6 +69,10 @@ images = [""]
   </tr>
   </tbody>
 </table>
+
+<div class="alert alert-warning">
+  Due to unexpected delays caused by the pandemic, RC engineers have been unable to complete a major storage system capacity expansion scheduled for October 2020. Therefore, effective immediately, RC is temporarily suspending the creation and enlargement of project and value storage shares until the expansion has been completed. The expansion is expected to be completed by November 1. We apologize for the inconvenience.
+</div>
 
 - - -
 

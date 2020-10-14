@@ -88,6 +88,7 @@ private = true
         </td>
         </tr>
       </div>
+      <!--
       <div class="form-item form-type-radio radio">
 		<tr>
 		<td>
@@ -114,6 +115,7 @@ private = true
         </td>
         </tr>
       </div>
+      -->
     </div>
     </table>
   </div>

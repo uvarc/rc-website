@@ -69,19 +69,24 @@ private = true
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year)</label>
+        <input onclick="getStorageType()" disabled required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year) - <b>Currently unavailable</b>. </label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
+        <input onclick="getStorageType()" disabled required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
         <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
       </div>
     </div>
   </div>
+  </div>
   <div class="col form-item form-group">
     <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Standard / Moderately Sensitive Data</h6>This storage platform is appropriate for public, non-sensitive or moderately sensitive data.</div>
     <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
+  </div>
+  <div class="col form-item form-group">
+  <div class="alert alert-warning">
+     Due to unexpected delays caused by the pandemic, RC engineers have been unable to complete a major storage system capacity expansion scheduled for October 2020. Therefore, effective immediately, RC is temporarily suspending the creation and enlargement of project and value storage shares until the expansion has been completed. The expansion is expected to be completed by November 1. We apologize for the inconvenience.
   </div>
   </div>
   <hr size=1 />
