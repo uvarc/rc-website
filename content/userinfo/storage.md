@@ -57,7 +57,7 @@ images = [""]
     <td class="">{{% storage-pricing value %}}/TB/yr</td>
     <td class="">{{% backup-policy value %}}</td>
     <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-    <td class="">Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
+    <td class=""><b>Currently not available.</b> Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
   <tr>
     <td class="">Archive Storage</td>
@@ -71,7 +71,7 @@ images = [""]
 </table>
 
 <div class="alert alert-warning">
-  Due to Covid related delays in the data center we are unable to accommodate new Project or ZFS storage requests at this time. We are working on bringing new storage capacity online as quickly as possible.
+  Due to unexpected delays caused by the pandemic, RC engineers have been unable to complete a major storage system capacity expansion scheduled for October 2020. Therefore, effective immediately, RC is temporarily suspending the creation and expansion of project and value storage shares until the upgrade has been completed. The upgrade is expected to be completed by November 1. We apologize for the inconvenience.
 </div>
 
 - - -

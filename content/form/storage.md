@@ -72,7 +72,7 @@ private = true
         <input onclick="getStorageType()" disabled required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year) - <b>Currently unavailable</b>. </label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
+        <input onclick="getStorageType()" disabled required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
         <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
@@ -86,7 +86,7 @@ private = true
   </div>
   <div class="col form-item form-group">
   <div class="alert alert-warning">
-    Due to Covid related delays in the data center we are unable to accommodate new Project storage requests at this time. We are working on bringing new storage capacity online as quickly as possible.
+     Due to unexpected delays caused by the pandemic, RC engineers have been unable to complete a major storage system capacity expansion scheduled for October 2020. Therefore, effective immediately, RC is temporarily suspending the creation and expansion of project and value storage shares until the upgrade has been completed. The upgrade is expected to be completed by November 1. We apologize for the inconvenience.
   </div>
   </div>
   <hr size=1 />
