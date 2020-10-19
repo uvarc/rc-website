@@ -81,7 +81,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 </ol>
 
 
-Browse a list of recent [UVA projects employing DCOS Microservices](/project).
+Browse a list of recent [UVA projects employing DCOS Microservices](/project?tag=.dcos).
 
 - - -
 
@@ -220,7 +220,7 @@ Want to run your container within an HPC environment? It can be done, using Sing
 
 Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with SLURM and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
 
-[**Learn more about Singularlity**](/userinfo/rivanna/software/containers/).
+[**Learn more about Singularity**](/userinfo/rivanna/software/containers/).
 
 - - -
 
