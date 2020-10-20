@@ -11,7 +11,7 @@ images = [""]
 
 <p class=lead>
   <img src="/images/docker-logo.png" style="max-width:30%;" alt="Docker Containers" align="right" />
-  Microservice architecture is an approach to designing and running applications. Such applications are typically run within containers, made popular in the last few years by Docker.
+  Microservice architecture is an approach to designing and running applications. Such applications are typically run within containers, made popular in the last few years by <a href="https://www.docker.com" target="_new">Docker</a>.
 </p>
 <p class=lead>
   Containers are portable, efficient, and disposable, and contain code and any dependencies in a single package.
@@ -19,13 +19,12 @@ images = [""]
   This allows portions of your application to be easily replaced or scaled as needed.
 </p>
 
-<p class=lead>
-  Research Computing runs microservices in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon.
-  DCOS makes the deployment and management of many containers easy and scalable.
-  This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to project storage.
-</p>
+# Microservices at UVA
+Research Computing runs microservices in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon. DCOS makes the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to [project](/userinfo/storage/non-sensitive-data/#project-storage) storage.
 
-<div style="width:100%;height:3rem;"></div>
+{{% highlight %}}
+UVA's DCOS Microservices platform is hosted in the standard security zone. It is suitable for processing public or moderately sensitive data. Highly sensitive data is not permitted on this platform. 
+{{% /highlight %}}
 
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
@@ -65,7 +64,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 
 
 <ol>
-  <li class=lead><b>Standalone microservices or small stacks</b> - Such as static HTML websites, interactive or data-driven web applications and APIs, databases, or scheduled task containers. Some examples:</li>
+  <li class=lead><b>Standalone microservices or small stacks</b> - Such as interactive or data-driven web applications and APIs, small databases (<100GB), or scheduled task containers. Some examples:</li>
     <ul style="margin-bottom:2rem;">
       <li>Simple web container to serve Project files to the research community or as part of a publication.
       <li>Reference APIs can handle requests based either on static reference data or databases.
@@ -80,6 +79,9 @@ Here's a talk given by Martin Fowler explaining the idea:
       <li>A scheduled job to refresh a library of reference data from an external source, such as reference genomes or public datasets.
     </ul>
 </ol>
+
+
+Browse a list of recent [UVA projects employing DCOS Microservices](/project?tag=.dcos).
 
 - - -
 
@@ -218,7 +220,7 @@ Want to run your container within an HPC environment? It can be done, using Sing
 
 Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with SLURM and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
 
-[**Learn more about Singularlity**](/userinfo/rivanna/software/containers/).
+[**Learn more about Singularity**](/userinfo/rivanna/software/containers/).
 
 - - -
 

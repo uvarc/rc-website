@@ -13,7 +13,7 @@ tags = [
   "python"
 ]
 draft = false
-projecttype = ["basic-science", "tools"]
+projecttype = ["basic-science", "tools", "dcos"]
 publications = [{authors = "Michal Stolarczyk, Vincent P. Reuter, Jason P. Smith, Neal E. Magee, Nathan C. Sheffield", title = "Refgenie: a reference genome resource manager", journal = "GigaScience", year = "2020", doi = "10.1093/gigascience/giz149"}]
 +++
 
