@@ -11,7 +11,13 @@ type = "about"
 
 +++
 
-<p class="lead">Thank you for submitting your request. You should receive a confirmation email from 
-<b>VA Research Help &lt;sup@uvarc.atlassian.net&gt;</b> in the next few minutes.</p>
+<p class="lead">
+  Thank you for contacting UVA's Research Computing group (RC). We will make every effort to respond to your request
+  within 1 business day (9am-5pm EST, M-F, excluding holidays). System status updates are available on <a href="/">www.rc.virginia.edu</a>.
+</p>
+
+<p class="lead">
+  You should receive a confirmation email from <b>VA Research Help &lt;sup@uvarc.atlassian.net&gt;</b> in the next few minutes.
+</p>
 
 <img src="/images/sample-ticket-response.png" style="width:90%;margin-left:2rem;margin-top:2rem;border:solid 1px #ccc;" />
