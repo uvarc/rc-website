@@ -17,7 +17,7 @@ type = "about"
 </p>
 
 <p class="lead">
-  You should receive a confirmation email from <b>VA Research Help &lt;sup@uvarc.atlassian.net&gt;</b> in the next few minutes.
+  You should receive a confirmation email from <b>VA Research Help &lt;sup@uvarc.atlassian.net&gt;</b> in the next few minutes. It will look something like this:
 </p>
 
 <img src="/images/sample-ticket-response.png" style="width:90%;margin-left:2rem;margin-top:2rem;border:solid 1px #ccc;" />
