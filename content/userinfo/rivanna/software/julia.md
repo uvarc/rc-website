@@ -187,7 +187,7 @@ job script using the `--array` directive.
 
 ## Array of Multiple Single-Core Julia Jobs
 
-The following slurm script shows how to run 5 single core Matlab jobs using
+The following slurm script shows how to run 5 single core Julia jobs using
 SLURM job arrays.
 
 ```
