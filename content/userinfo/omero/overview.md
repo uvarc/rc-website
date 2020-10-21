@@ -177,4 +177,4 @@ OMERO's online documentation for the OMERO MATLAB language bindings can be found
 More information on the OMERO Python language bindings can be found here: 
 [https://docs.openmicroscopy.org/omero/5.5.0/developers/Python.html](https://docs.openmicroscopy.org/omero/5.5.0/developers/Python.html).
 
-More in-depth tutorials and sample scripts will be available on our [workshop](https://workshops.rc.virginia.edu) site soon!
+More in-depth tutorials and sample scripts will be available on our [workshop](https://learning.rc.virginia.edu) site soon!

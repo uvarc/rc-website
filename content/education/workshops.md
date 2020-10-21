@@ -51,8 +51,8 @@ Broad categories of RDS sponsored workshops are:
 - - -
 
 # Workshop Material
-Course material and exercises are available through a companion site. Feel free to browse classes, read ahead, or learn at your own pace.
-  <div style="margin:12px;"><code><a href="https://workshops.rc.virginia.edu/lesson/" target="_new">https://workshops.rc.virginia.edu/</a></code></div>
+Course material and exercises are available through a companion site. Feel free to browse classes, tutorials and workshop material and learn at your own pace.
+  <div style="margin:12px;"><code><a href="https://learning.rc.virginia.edu" target="_new">https://learning.rc.virginia.edu</a></code></div>
 
 - - -
 
