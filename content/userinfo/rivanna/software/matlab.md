@@ -449,7 +449,7 @@ fprintf('first 10 elements of solution vector (should be all ones)\n')
 firstTenX=x2(1:10)
 time
 
-save(['solver_large1_' num2str(jobid) '.out'],...
+save(['solver_large1_' num2str(jobid) '.out'], ...
       'time','errChk2','firstTenX');
 
 end
@@ -461,7 +461,7 @@ end
 
 Once your job has been granted its allocated GPUs, you can use the gpuDevice function to initialize a specific GPU for use with Matlab functions that can utilize the architecture of GPUs. For more information see the [MathWorks documentation](https://www.mathworks.com/help/parallel-computing/gpu-computing-in-matlab.html) on GPU Computing in Matlab.
 
-The following slurm script is for submitting a Matlab job that uses 4 of the K80 GPUs. For each GPU requested, the script requests one cpu (ntasks-per-node).
+The following slurm script is for submitting a Matlab job that uses 4 of the K80 GPUs in a `parfor` loop. For each GPU requested, the script requests one cpu (ntasks-per-node).
 
 ```
 #!/bin/bash
@@ -483,10 +483,10 @@ echo 'slurm allocates gpus ' $CUDA_VISIBLE_DEVICES
 module load matlab/R2020a
 
 ndim=12000;
-nloop=2000;
+nloop=1000;
 # Run Matlab parallel program program
  matlab -nodisplay -nosplash  \
- -r "gpuTest1(${ndim},${nloop},'${SLURMD_NODENAME}_${SLURM_JOB_ID}');exit;"
+ -r "gpuTest1(${ndim},${nloop},'${SLURM_JOB_ID}');exit;"
 ```
 
 The function `gpuTest1` looks like the following. For further information, see [https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html](https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html)
@@ -523,12 +523,16 @@ wait(gpuDevice)
 
 %Gather the results from the GPU back to the CPU:
 a_cpu = gather(a);
-a_cpu(1:10)  % Display first 10 elements of output array
+firstTen=a_cpu(1:10)  % Display first 10 elements of output array
 
 delete(gcp('nocreate')); % delete parallel pool
 tGPU = toc;
 disp(['Total time on GPU: ' num2str(tGPU)])
 disp(['ndim = ', num2str(ndim), '   nloop = ', num2str(nloop)])
+
+% save output to file
+save(['gpuTest1_' jobid '.out'],...
+    'tGPU','ndim','nloop','firstTen','-ascii');
 
 end
 ```
