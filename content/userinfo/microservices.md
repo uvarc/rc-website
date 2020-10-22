@@ -50,7 +50,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 
 <p class="lead"><span class="badge badge-default">2</span> The easiest and most common way to run microservices is inside of containers.</p>
 
-- We teach workshops on containers and how to use them. Browse the course overview for <a href="https://workshops.rc.virginia.edu/lesson/containers/" target="_new">Introduction to Containers</a> at your own pace.
+- We teach workshops on containers and how to use them. Browse the course overview for <a href="https://learning.rc.virginia.edu/tag/containers/" target="_new">Building Containers for Rivanna</a> at your own pace.
 - Docker provides an excellent [Getting Started](https://docs.docker.com/get-started/) tutorial.
 - Katacoda offers a great [hands-on Docker training series](https://www.katacoda.com/courses/docker) for free.
 - DCOS allows users to inject `ENV` environment variables and encrypted secrets into containers at runtime. This means sensitive information does not need to be written into your container.

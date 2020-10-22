@@ -164,7 +164,7 @@ Images managed by OMERO can be imported using the ImageJ/Fiji plugin for OMERO. 
 instructions for installing and using the plugin can be found in OMERO's online documentation: 
 [https://help.openmicroscopy.org/imagej.html](https://help.openmicroscopy.org/imagej.html).
 
-An introduction with example scripts that demonstrate the basic concepts of writing Fiji scripts to interact with the OMERO database are described in our [workshop materials](https://workshops.rc.virginia.edu/lesson/fiji-scripting/).
+An introduction with example scripts that demonstrate the basic concepts of writing Fiji scripts to interact with the OMERO database are described in our [tutorial ](https://learning.rc.virginia.edu/workshops/fiji-omero/).
 
 ## MATLAB and Python
 You can install packages to connect to OMERO with MATLAB or Python. These packages include 
@@ -177,4 +177,4 @@ OMERO's online documentation for the OMERO MATLAB language bindings can be found
 More information on the OMERO Python language bindings can be found here: 
 [https://docs.openmicroscopy.org/omero/5.5.0/developers/Python.html](https://docs.openmicroscopy.org/omero/5.5.0/developers/Python.html).
 
-More in-depth tutorials and sample scripts will be available on our [workshop](https://workshops.rc.virginia.edu) site soon!
+More in-depth tutorials and sample scripts will be available on our [workshop](https://learning.rc.virginia.edu) site soon!
