@@ -108,8 +108,8 @@ for image processing, such as ANTsR, EBImage, and magick.
 
 We currently offer online tutorials for image processing with Fiji/ImageJ.
 
-* [Introduction to Scientific Image Processing with Fiji/ImageJ](https://workshops.rc.virginia.edu/lesson/fiji-intro/)
-* [Fiji/ImageJ: Script Development for Image Processing](https://workshops.rc.virginia.edu/lesson/fiji-scripting/)
+* [Introduction to Scientific Image Processing with Fiji/ImageJ](https://learning.rc.virginia.edu/tutorials/fiji-intro/)
+* [Fiji/ImageJ: Script Development for Image Processing](https://learning.rc.virginia.edu/tutorials/fiji-scripting/)
 
 Stay tuned for additional online tutorials as well as in-person workshops listed on our [workshops page](/education/workshops/)
 
@@ -173,7 +173,7 @@ in augmented and virtual reality.
 
 We currently offer several online tutorials for data visualization.
 
-* [MATLAB Data Processing and Visualization](https://workshops.rc.virginia.edu/lesson/matlab-data-visualization/)
+* [MATLAB Data Processing and Visualization](https://learning.rc.virginia.edu/tutorials/matlab-data-viz/)
 
 Stay tuned for additional online tutorials as well as our workshops posted on our [workshops page](/education/workshops/)
 

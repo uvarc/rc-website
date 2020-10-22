@@ -24,10 +24,10 @@ author = "RC Staff"
 Python is an integrated technical computing environment that combines sophisticated computation, advanced graphics and visualization, and a high-level programming language.
 
 # Learning Python
-The Research Computing groups offers a free 10-part video series called "Python for Scientists & Engineers". Click [here](https://workshops.rc.virginia.edu/categories/programming-in-python-for-scientists-and-engineers/) to start learning Python.
+The Research Computing groups offers a free 10-part video series called "Python for Scientists & Engineers". Click [here](https://learning.rc.virginia.edu/courses/programming_python_scientists_engineers/) to start learning Python.
 
 # Python on Rivanna
-The default Python is required for system purposes and is generally too old for applications. We offer Python through the [Anaconda]() distribution from Continuum Analytics. Anaconda bundles a large number of popular modules and packages, as well as the Spyder IDE, an iPython console, and Jupyter notebooks. To see all available versions, run
+The default Python is required for system purposes and is generally too old for applications. We offer Python through the [Anaconda](https://www.anaconda.com) distribution from Continuum Analytics. Anaconda bundles a large number of popular modules and packages, as well as the Spyder IDE, an iPython console, and Jupyter notebooks. To see all available versions, run
 ```
 module spider anaconda
 ```
