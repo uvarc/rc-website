@@ -156,7 +156,7 @@ More about these commands can be found in [the documentation](https://lmod.readt
 
 - - -
 # Modules in Job Scripts
-After the definition of job variables, and before the command line to run the program, add `module load` lines for every application that you want included in your run environment.  Although it is not required, we also recommend that you clear your module environment before your job starts executing.  For example, to run R version 3.6.3 your job script should resemble the following:
+After the definition of job variables, and before the command line to run the program, add `module load` lines for every application that you want included in your run environment.  Although it is not required, we also recommend that you clear your module environment before your job starts executing.  For example, to run R version 3.6.3 in the module environment described above, your job script should resemble the following:
 
 ```
 #!/bin/bash
