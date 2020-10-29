@@ -18,32 +18,17 @@ categories = ["userinfo"]
 <p class="lead">The <code>lmod</code> modules system on Rivanna enables users to easily set their environments for selected software and to choose versions if appropriate.</p>
 <p class="lead">The <code>lmod</code> system is hierarchical; not every module is available in every environment.  We provide a core environment which contains most of the software installed by Research Computing staff, but software that requires a compiler or MPI is not in that environment and a compiler must first be loaded.</p>
 
-<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">View All Modules</button></a> &nbsp;
+{{< button button-class="primary" button-text="View All Modules" button-url="/userinfo/rivanna/software/complete-list/" >}}
+
 
 - - -
 
 # Basic Commands
-List all available software in the core environment:
+**List all available software**
 
 ```
 module avail
 ```
-
-Use "module spider" to find all possible modules.
-
-```
-module spider
-
-module spider hdf5
-```
-
-If a version is specified to `spider`, it will indicate how to load that version.
-
-```
-module spider openmpi/2.1.1
-```
-
-Note that spider will sometimes show modules whose version numbers begin with a period, e.g. icc/.17.0.  Any such module is “hidden” and users should not be required to load them explicitly.
 
 Use `key` to list all modules in a particular category.  The current choices are
 
@@ -57,57 +42,121 @@ Example:
 module key bio
 ```
 
-Load the environment for a particular package:
+**Load the environment for a particular package**
 
 ```
 module load thepackage
 ```
 
-If you do not specify a version, the system default is loaded.  For example, to load the default version of R, run
+If you do not specify a version, the system default is loaded.  For example, to load the default version of the anaconda Python distribution, run
 
 ```
-module load R
+module load anaconda
 ```
-If you do not wish to use the default version chosen by the modules environment, you may specify a path to the module script. For example, to select the older version of R
+If you do not wish to use the default version chosen by the modules environment, you must specify the version explicitly. For example, to select a different version of anaconda:
 
 ```
-module load R/3.3.0
+module load anaconda/2019.10-py3.7
 ```
-Note that the 'default' version of a module may change, so if you are developing applications yourself we highly recommend that you load explicit versions of modules; that is, do not invoke the default X, but specify a version.  If the package is upgraded, loading that module will fail, however.
+Note that the 'default' version of a module may change, so if you are developing applications yourself we highly recommend that you load explicit versions of modules; that is, do not invoke the default package, but specify a version.  If the version is eventually dropped for newer versions, loading the module will fail, which will make you aware that you will need to update your application appropriately.
 
-Delete a module:
+**Remove a module**
 
 ```
 module unload thepackage
 ```
-List all modules you have loaded in the current shell:
+
+**List all modules you have loaded in the current shell**
 
 ```
 module list
 ```
 
-To change from one version to another, use
+**Change from one version to another**
 
 ```
 module swap
 ```
-For example, if you have loaded gcc/7.1.0 and you wish to switch to intel/17.0
+For example, if you have loaded gcc/7.1.0 and you wish to switch to intel/18.0
 
 ```
-module swap gcc/7.1.0 intel/17.0
+module swap gcc/7.1.0 intel/18.0
 ```
-This will unload the `gcc/7.1.0` environment entirely, and load the `intel/17.0` environment. 
+This will unload the `gcc/7.1.0` environment entirely, and load the `intel/18.0` environment. 
 
-To clear all modules you have loaded and return to the default state:
+**Clear all modules you have loaded**
 
 ```
 module purge
 ```
+
+**Finding prequisites**
+
+Use "module spider" to find all possible modules.  Once you determine the name of the software you want to use, spider will also show you all available versions.
+
+```
+module spider
+
+module spider hdf5
+```
+
+Note that spider will sometimes show modules whose version numbers begin with a period, e.g. icc/.17.0.  Any such module is “hidden” and users should not be required to load them explicitly.
+
+For many applications, you will need to load one or more prerequisites. For example, to find out how to load a specific R version, run
+
+```
+module spider R/version
+```
+where you must replace "version" with the value.  At one particular time, module spider shows us that the following R versions are available:
+
+```
+module spider R
+
+----------------------------------------------------------------------------
+  R:
+----------------------------------------------------------------------------
+    Description:
+      R is a free software environment for statistical computing and
+      graphics.
+
+     Versions:
+        R/3.2.1
+        R/3.4.4
+        R/3.5.3
+        R/3.6.3
+        R/4.0.0
+```
+If we wish to determine how to run R 3.6.3 we run module spider for it
+```
+module spider R/3.6.3
+
+----------------------------------------------------------------------------
+  R: R/3.6.3
+----------------------------------------------------------------------------
+    Description:
+      R is a free software environment for statistical computing and
+      graphics.
+
+
+    You will need to load all module(s) on any one of the lines below before the
+ "R/3.6.3" module is available to load.
+
+      gcc/7.1.0  openmpi/3.1.4
+      intel/18.0  intelmpi/18.0
+```
+This shows that two versions of R 3.6.3 are available, one built with the gcc compiler and one built with the Intel compiler suite.  We must choose *one* of those.  We'll select the gcc version.
+
+```
+module load gcc/7.1.0
+module load openmpi/3.1.4
+module load R/3.6.3
+```
+
 More about these commands can be found in [the documentation](https://lmod.readthedocs.io/en/latest/).
 
 - - -
 # Modules in Job Scripts
-After the definition of job variables, and before the command line to run the program, add module load X lines for every application that you want included in your run environment. For example, to run R version 3.3.0 your job script should resemble the following:
+After the definition of job variables, and before the command line to run the program, add `module load` lines for every application that you want included in your run environment.  Although it is not required, we also recommend that you clear your module environment before your job starts executing.  For example, to run R version 3.6.3 your job script should resemble the following:
 
 ```
 #!/bin/bash
@@ -117,7 +166,10 @@ After the definition of job variables, and before the command line to run the pr
 #SBATCH --time=00:10:00
 #SBATCH --mem-per-cpu=4000
 
-module load R/3.3.0
+module purge
+module load gcc/7.1.0
+module load openmpi/3.1.4
+module load R/3.6.3
 
 Rscript myScript.R
 ```
@@ -126,59 +178,65 @@ Please contact us if you encounter any problems using these applications in your
 
 - - -
 # Creating Your Own Modules
-Rivanna users may create their own modules stored in their home directories.  The first step is to create a directory to store the modulefiles used by `lmod`.
+If you install your own software, you can create your own modules stored in your home directories.  This is not necessary; you can also add the path to your `.bashrc` file or write a script or just provide the path.  But it may be convenient to have a custom module.
+
+The first step is to create a directory to store the modulefiles used by `lmod`.
 
 ```
 mkdir $HOME/modulefiles
 ```
 
-Next, download the software package for which you would like to create a module.  When configuring for build, make sure that the prefix is set to `--prefix=$HOME/pkg/<software name>/<software version>`. This documentation demonstrates creating a module for `git 2.6.2` as an example
+Next, download the software package for which you would like to create a module. Carefully follow the instructions to install your software.  Remember that most packages assume you can install as an administrator, and that is not permitted on Rivanna, so you must change your installation directory.  If you are compiling software you can find a tutorial at our [training site](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
+
+In the following example we are installing a version of `git` according to its instructions:
 
 ```
 $ wget https://www.kernel.org/pub/software/scm/git/git-2.6.2.tar.gz
 $ tar xf git-2.6.2.tar.gz
 $ cd git-2.6.2
-$ ./configure --prefix=$HOME/pkg/git/2.6.2
+$ ./configure --prefix=$HOME/git/2.6.2
 $ make
 $ make install
 ```
 
-Once the software has been built and installed, a modulefile (written in the Lua programming language) needs to be created that contains information about where to find the software.  The modulefile should be placed in a directory named after the software and the file should be named using the version number of the software. Any text editor of your choice may be used, but this example show the use of the `cat` utility to create the lua file.  The modulefile in this example adds `~/pkg/git/2.6.2/bin` to the user's path so that the personal version of `git` can be found.
+Once the software has been installed, a modulefile (written in the Lua programming language) must be created. The modulefile should be placed in a subdirectory named after the software and the file should be named using the version number of the software. Any text editor of your choice may be used.  The modulefile in this example adds `~/git/2.6.2/bin` to the user's path so that the personal version of `git` can be found.
 
 ```
 $ cd ~/modulefiles
 $ mkdir git
 $ cd git
-$ cat > 2.6.2.lua
+```
+Use an editor to create the following file and name it `2.6.2.lua`
+```
 local home    = os.getenv("HOME")
 local version = myModuleVersion()
 local pkgName = myModuleName()
-local pkg     = pathJoin(home,"pkg",pkgName,version,"bin")
+local pkg     = pathJoin(home,pkgName,version,"bin")
 prepend_path("PATH", pkg)
-^D
 
 ```
 
-The first line reads the user’s HOME directory from the environment. The second line uses the “pathJoin” function provided from Lmod. It joins strings together with the appropriate number of “/”. The last line calls the “prepend_path” function to add the path to git to the user’s path.
+The first line reads the user’s HOME directory from the environment. The second line uses the “pathJoin” function provided from Lmod. It joins strings together with the appropriate number of “/”. The last line calls the “prepend_path” function to add the path to this version of git at the beginning of the user’s path.
 
 Finally, to use the module:
 
 ```
 $ module use $HOME/modulefiles
 $ module load git
-$ type git
-~/pkg/git/2.6.2/bin/git
+$ which git
+~/git/2.6.2/bin/git
 ```
 
 ## Finding Modules with the Same Name
-If the user has created a module and at a later date the system provides a newer version, the default behavior if no version is specified to the `module load` command is to use the highest version available.
+If the user has created a module and at a later date the system provides a newer version, the default behavior if no version is specified to the `module load` command is to use the highest version available in all module paths searched.
 
 ```
 $ module avail git
---------------- /home/user/modulefiles ----------------
+
+----------------------------- /home/mst3k/modules ------------------------------
 git/2.6.2
 
---------------- /opt/apps/modulefiles ----------------
+--------------- /apps/modulefiles/standard/core ------------------------
 git/1.7.4   git/2.0.1   git/3.5.4 (D)
 
 $ module load git
