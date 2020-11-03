@@ -52,5 +52,9 @@ However, if you want to create a new Notebook, go to the Launcher pane and click
 
 If you are more familiar with the classic Notebook environment, you can change the JupyterLab format by clicking on `Help` and select `Launch Classic Notebook`.
 
-# How to create custom JupyterLab kernels?
+# FAQ
+## How to create custom JupyterLab kernels?
 Please refer to our [how-to](/userinfo/howtos/rivanna/custom-jupyter-kernels).
+
+## How do I load a module in JupyterLab?
+That is not possible if you request a JupyterLab session. Please refer to our [how-to](/userinfo/howtos/rivanna/load-module-in-jupyter) for a workaround.
