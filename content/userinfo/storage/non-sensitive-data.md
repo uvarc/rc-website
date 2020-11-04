@@ -20,14 +20,12 @@ draft = false
 
 # `/scratch`
 
-`/scratch` is a Lustre high performance parallel filesystem accessible via the Rivanna login and compute nodes. All Rivanna HPC users are granted 10TB for free and can access this space within Rivanna at `/scratch/$USER`, where `$USER` is an individual's UVa computing ID. **The `/scratch` directory is not intended for long-term data storage. Files are flagged for removal 90 days after last modification timestamp.**
+`/scratch` is a Lustre high performance parallel filesystem accessible via the Rivanna login and compute nodes.
 
 {{% callout %}}
-
-<p><b>90 Day Deletion</b></p>
-The <code>/scratch</code> directory is designed for temporary storage for working jobs and should not be used as permanent storage. It has a limit of 350,000 per user.  Files older than 90 days are deleted in a nightly process. [Read more](/userinfo/rivanna/storage/#scratch-cleanup-policy).
-
+{{% scratch-policy %}}
 {{% /callout %}}
+
 
 **How to request `/home` and `/scratch` space**
 

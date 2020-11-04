@@ -242,7 +242,9 @@ All users are provided a 50-GB home directory for longer-term storage.  This dir
 If the free storage is not sufficient, you need snapshots of your files, or you wish to share space among a research group, the group should lease storage.
 
 ## Why should I use /scratch storage?
-Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  If you use or expect to use a large number of files please contact us.
+Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  [Please review our scratch filesystem policy for details](/userinfo/rivanna/overview/#scratch-directory). If you use or expect to use a large number of files please contact us.
+
+
 
 ## How do I obtain leased storage?
 Research Computing offers two tiers of leased storage, Value and Project. Please see our [storage page](/userinfo/storage) for details.

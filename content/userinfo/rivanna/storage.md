@@ -56,10 +56,7 @@ type = "rivanna"
 
 # Scratch Cleanup Policy
 
-The Scratch filesystem is a shared resource available for the convenience of all users. Files on the scratch filesystem are subject 
-to deletion after a certain lifespan as determined by Research Computing. Home account storage and purchased storage are not subject to this policy.
-
-**The current lifespan for scratch files is 90 days**.
+{{% scratch-policy %}}
 
 - - -
 
