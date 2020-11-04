@@ -73,6 +73,7 @@ images = [""]
 
 - - -
 
+<!--
 # Skyline Virtual Machines
 
 {{< skyline-pricing >}}
@@ -80,6 +81,7 @@ images = [""]
 [<button class="btn btn-primary btn-sm">Request Skyline VM</button>](/form/skyline/)
 
 - - - 
+-->
 
 # OMERO Image Database Service
 

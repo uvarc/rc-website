@@ -10,8 +10,6 @@ author = "Staff"
 
 +++
 
-# Globus Data Transfer</h4>
-
 <p class="lead">Globus is a simple, reliable, and <em>fast</em> way to access and move your research data between systems. </p>
 
 <img align="right" alt="Globus DTN" src="/images/globus-logo.png" style="max-width:35%;" />
