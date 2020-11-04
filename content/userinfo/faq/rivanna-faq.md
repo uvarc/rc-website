@@ -262,7 +262,7 @@ sfsq
 If you have used up too much space, created too many files, or have "old" files you may be regarded as "overallocated". Please note that if you are overallocated, you won't be able to submit any new jobs until you clean up your `/scratch` folder.
 
 ## How long can I store files in `/scratch`?
-`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files older than NN days are automatically deleted from all `/scratch` directories. Store longer-term files in your home directory or purchased storage.
+`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](https://staging.rc.virginia.edu/userinfo/rivanna/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/#public--moderately-sensitive-data-storage).
 
 ## How do I share data in my `/scratch` or leased storage with a colleague?
 To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on Rivanna, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.
