@@ -17,5 +17,6 @@ author = "RC Staff"
 * [Building and Running MPI Code](/userinfo/howtos/rivanna/mpi-howto)
 * [Bioinformatics on Rivanna](/userinfo/howtos/rivanna/bioinfo-on-rivanna)
 * [Custom Jupyter Kernels](/userinfo/howtos/rivanna/custom-jupyter-kernels)
+* [Loading Module in Jupyter](/userinfo/howtos/rivanna/load-module-in-jupyter)
 * [Docker Images on Rivanna](/userinfo/howtos/rivanna/docker-images-on-rivanna)
 * [Adding packages to a container](/userinfo/howtos/rivanna/add-packages-to-container)

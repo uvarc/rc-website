@@ -215,7 +215,7 @@ The gpu partition is dedicated to jobs that can utilize a general purpose graphi
 
 ## Scratch Directory
 
-Rivanna’s scratch file system has a limit of 10TB and 350,000 files per user. This policy is in place to guarantee the stability and performance of the scratch file system. Scratch is intended as a temporary work directory. It is not backed up and files that have not been accessed for more than 90 days are marked for deletion. Users are encouraged to back up their important data. 
+{{% scratch-policy %}}
 
 ## Software Licenses
 

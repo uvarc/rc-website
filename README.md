@@ -37,7 +37,7 @@ This will bring up a ready-to-code environment on the `staging` branch, and down
 ### Local Install
 
 * [Install](https://gohugo.io/overview/installing/) the HUGO binary on your local computer. For more information, see the Hugo GitHub repo: https://github.com/spf13/hugo
-* Clone this website repository: `git clone git@github.com:uva-som-rc/rc-website.git`.
+* Clone this website repository: `git clone git@github.com:uvarc/rc-website.git`.
 
 - - -
 
