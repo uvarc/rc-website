@@ -86,7 +86,7 @@ private = true
   </div>
   <div class="col form-item form-group">
   <div class="alert alert-warning">
-     Due to unexpected delays caused by the pandemic, RC engineers have been unable to complete a major storage system capacity expansion scheduled for October 2020. Therefore, effective immediately, RC is temporarily suspending the creation and enlargement of project and value storage shares until the expansion has been completed. The expansion is expected to be completed by November 9. We apologize for the inconvenience.
+     Due to unexpected delays caused by the pandemic, RC engineers have been unable to complete a major storage system capacity expansion scheduled for October 2020. Therefore, effective immediately, RC is temporarily suspending the creation and enlargement of project and value storage shares until the expansion has been completed. The expansion is expected to be completed by November 16. We apologize for the inconvenience.
   </div>
   </div>
   <hr size=1 />
