@@ -69,10 +69,10 @@ private = true
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" disabled required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year) - <b>Currently unavailable</b> </label>
+        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice1" name="storage-choice" value="project" class="form-radio" /> &nbsp; Project Storage ({{% storage-pricing project %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" disabled required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year) - <b>Currently unavailable</b></label>
+        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="value" class="form-radio" /> &nbsp; Value Storage ({{% storage-pricing value %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
         <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
