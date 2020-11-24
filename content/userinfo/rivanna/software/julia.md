@@ -351,9 +351,7 @@ Hello! I am 0 of 8 on udc-ba34-10c8
 
 [General guidelines on requesting GPUs on Rivanna](https://www.rc.virginia.edu/userinfo/rivanna/slurm/#gpu-intensive-computation)
 
-The following slurm script is for submitting a Julia job that uses 1 of the K80 GPUs. For each GPU requested, the script requests one cpu (ntasks-per-node). See the following link on using Julia on GPU's.
-
-(https://nextjournal.com/sdanisch/julia-gpu-programming)[https://nextjournal.com/sdanisch/julia-gpu-programming]
+The following slurm script is for submitting a Julia job that uses 1 of the K80 GPUs. For each GPU requested, the script requests one cpu (ntasks-per-node). The article [An Introduction to GPU Programming in Julia](https://nextjournal.com/sdanisch/julia-gpu-programming) provides more details to get started.
 
 ```
 #!/bin/bash

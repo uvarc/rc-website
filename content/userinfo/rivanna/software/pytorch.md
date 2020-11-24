@@ -55,7 +55,7 @@ Jupyter Notebooks can be used for interactive code development and execution of 
 To start a JupyterLab session, fill out the resource request webform.  To request access to a GPU, verify the correct selection for the following parameters:
 
 1. Under Rivanna Partition, choose "GPU".
-2. Under Optional GPU Type, choose "K80", "P100", "V100" or leave it as "default".
+2. Under Optional GPU Type, choose "NVIDIA K80", "NVIDIA P100", "NVIDIA V100", "NVIDIA RTX20280" or leave it as "default".
 Click `Launch` to start the session.
 
 ## Editing and Running the Notebook
