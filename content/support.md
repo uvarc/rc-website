@@ -143,14 +143,14 @@ Examples of the type of support we can provide are:
 
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50808/38.03293/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
-<b>Wednesdays 3:00-5:00pm</b> (cancelled 11/25 in observance of Thanksgiving holiday)<br />
+<b>Wednesdays 3:00-5:00pm</b><br />
 <a href="https://virginia.zoom.us/j/812332138"><button disabled class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 <!-- Brown Library, <a href="https://cal.lib.virginia.edu/space/31372" target="_new">Table Worst Cat</a> (On the intermediate floor of Brown Library, in the East wing) -->
 </div>
 
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
-<b>Thursdays 10:00-12:00pm </b>(cancelled 11/26 in observance of Thanksgiving holiday)<br />
+<b>Thursdays 10:00-12:00pm</b><br />
 <a href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button disabled class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
@@ -159,7 +159,7 @@ Examples of the type of support we can provide are:
 
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
-<b>Fridays 3:00-4:00pm</b> (cancelled 11/27 in observance of Thanksgiving holiday)<br />
+<b>Fridays 3:00-4:00pm</b><br />
 <a href="https://virginia.zoom.us/j/96324208866?pwd=aUNNNVVSU3FIZmtFYlVvNXQrNlFFUT09"><button disabled class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
