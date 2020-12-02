@@ -36,7 +36,7 @@ Rivanna is expected to return to service later in the day on December 17. The in
     - Upgrades to default versions of applications:
         - cellranger/3.1.0 -> 4.0.0
         - go/1.8.1 -> 1.13.4
-        - julia/1.3.1 -> 1.5.0
+        - julia/1.3.1 -> 1.5.3
 
         If you need to use a non-default version of an application, please specify the version when you load the module. Use `module spider` to [find prerequisites](/userinfo/rivanna/software/modules).
  
