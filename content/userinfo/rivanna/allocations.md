@@ -44,7 +44,7 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 # Allocation Types
 
 ## Standard Allocations
-Standard allocations are for 100,000 SUs and require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations can be renewed as long as each renewal request includes a synopsis of results from the original allocation. The maximum number of standard allocations--either new or renewal--a researcher can receive in a single fiscal year is 4 (or 400K SUs max). These allocations expire 12 months after they are disbursed. Available to: Faculty and post-docs using Rivanna for research.
+Standard allocations are for 100,000 SUs and require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations can be renewed as long as each renewal request includes a synopsis of results from the original allocation. The maximum number of standard allocations--either new or renewal--an account can receive in a single fiscal year is 4 (or 400K SUs max). These allocations expire 12 months after they are disbursed. Available to: Faculty and post-docs using Rivanna for research.
 
 <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-standard.php?user_token=' + user_token">
 <button class="btn btn-primary">Request New / Renew Standard Allocation</button></a>
