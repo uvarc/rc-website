@@ -142,25 +142,18 @@ Examples of the type of support we can provide are:
 </div>
 
 <div class="alert alert-success" role="alert">
-<div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50808/38.03293/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
-<b>Wednesdays 3:00-5:00pm</b><br />
-<a href="https://virginia.zoom.us/j/812332138"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
-<!-- Brown Library, <a href="https://cal.lib.virginia.edu/space/31372" target="_new">Table Worst Cat</a> (On the intermediate floor of Brown Library, in the East wing) -->
-</div>
-
-<div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Thursdays 10:00-12:00pm</b><br />
 <a href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
 
-**Are you new to Rivanna?  We offer an Introduction to Rivanna session every Friday.**
+**Are you new to Rivanna?  We offer an Introduction to Rivanna on Wednesdays by appointment.**
 
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
-<b>Fridays 3:00-4:00pm</b><br />
-<a href="https://virginia.zoom.us/j/96324208866?pwd=aUNNNVVSU3FIZmtFYlVvNXQrNlFFUT09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button></a>
+<b>Wednesdays 3:00-4:00pm</b><br />
+<a href="/form/support-request?category=Rivanna&request_title=Intro%20to%20Rivanna%20Training%20Session&description=I%20am%20interested%20in%20signing%20up%20for%20a%20Rivanna%20training%20session."><button  class="btn btn-primary btn-sm">Sign up for an "Intro to Rivanna" session</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
 
