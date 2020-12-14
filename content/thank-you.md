@@ -1,6 +1,5 @@
 +++
 date = "2016-12-31T23:59:16-05:00"
-categories = [""]
 images = [""]
 about = true
 author = "Staff"

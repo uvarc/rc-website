@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}">
+  <head>
+    {{ partial "head-meta.html" . }}
+
+    <base href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+    <meta type="{{ .Type }}" />
+
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+    {{ partial "head-custom.html" . }}
+
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <script>
+    
+    function getParams() {
+      var vars = {};
+      var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+      });
+      return vars;
+    }
+    
+    function decode64(str) {
+      var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
+      var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+      for(i=0;i<64;i++){e[A.charAt(i)]=i;}
+      for(x=0;x<L;x++){
+        c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
+        while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
+      }
+      return r;
+    };
+    
+    cookie_token = 'abcde12345';
+
+    if (Cookies.get('__rc_user') == null) {
+      window.location.replace( "https://auth.uvasomrc.io/site/?user_token=" + cookie_token );
+      // alert("COOKIE NOT FOUND!")
+    }
+
+    // name
+    let name = decodeURI(getParams()["name"]);
+    let name_dec = decode64(name);
+    // uid
+    let uid = decodeURI(getParams()["uid"]);
+    let uid_dec = decode64(uid);
+    // email
+    let email = decodeURI(getParams()["email"]);
+    let email_dec = decode64(email);
+    
+    var cookie_string = "name=" + name + ";uid=" + uid + ";email=" + email;
+    Cookies.set('__rc_user', cookie_string, { expires: 7, domain: '.rc.virginia.edu' })
+    
+    </script>
+
+  </head>
+
+  <body>
+
+Set Session Here
+
+  </body>
+</html>
+
+{{- /* vim: set ts=2 sw=2 et: */}}

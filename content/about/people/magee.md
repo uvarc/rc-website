@@ -5,6 +5,7 @@ title = "Neal Magee, PhD"
 job_title = "Solution Architect"
 lastname = "magee"
 email = "nem2p@virginia.edu"
+github = "nmagee"
 biolink = true
 type = "people"
 author = "UVARC Staff"
