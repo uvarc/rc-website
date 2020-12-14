@@ -31,7 +31,7 @@ This graduate course introduces a basic grounding in designing and implementing 
 
 # CS 4740: Cloud Computing
 
-**Spring 2018**
+**Spring 2018, Fall 2020**
 
 Investigates the architectural foundations of the various cloud platforms, as well as examining both current cloud computing platforms and modern cloud research. Student assignments utilize the major cloud platforms.
 
@@ -42,3 +42,13 @@ Investigates the architectural foundations of the various cloud platforms, as we
 **Summer 2017**
 
 This 1.5 day course introduces MSDS students to the basics of cloud computing in AWS, and the independent management of code, data, and computing resources in a research environment. Particular concern is given to the concepts of programmable, reusable, scalable resources in the AWS cloud, through hands-on labs in EC2 and S3.
+
+-----
+
+# DS 3002: Data Science Systems
+
+**Spring 2021**
+
+Exposes students to contemporary platforms, tools, and pipelines for data analysis through a series of steadily escalating use cases. 
+The course will begin with simple local database construction and evolve to cloud based providers such as AWS or Google Cloud. 
+Attention is given to data lakes and NoSQL as appropriate.
