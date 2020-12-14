@@ -26,13 +26,13 @@
   {{ if (not (isset .Params "email")) | or (eq .Params.email "") }}
     <span></span>
   {{ else }}
-    <div style="margin-top:2rem;"><i class="fas fa-envelope"></i> <a href="mailto:{{ .Params.email }}" style="padding-left:0.5rem;">{{ .Params.email }}</a></div>
+    <div style="margin-top:2rem;"><i class="fas fa-envelope"></i> <a target="_new" href="mailto:{{ .Params.email }}" style="padding-left:0.5rem;">{{ .Params.email }}</a></div>
   {{ end }}
 
   {{ if (not (isset .Params "github")) | or (eq .Params.github "") }}
     <span></span>
   {{ else }}
-    <div style="margin-top:0.4rem;"><i class="fab fa-github"></i> <a href="https://github.com/{{ .Params.github }}" style="padding-left:0.5rem;">https://github.com/{{ .Params.github }}</a></div>
+    <div style="margin-top:0.4rem;"><i class="fab fa-github"></i> <a target="_new" href="https://github.com/{{ .Params.github }}" style="padding-left:0.5rem;">https://github.com/{{ .Params.github }}</a></div>
   {{ end }}
 
   <hr size=1 />
