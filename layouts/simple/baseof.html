@@ -49,6 +49,13 @@
     Cookies.set('__rc_email', email, { expires: 7, domain: '.rc.virginia.edu' })
     Cookies.set('__rc_uid', uid, { expires: 7, domain: '.rc.virginia.edu' })
     Cookies.set('__rc_name', name, { expires: 7, domain: '.rc.virginia.edu' })
+
+    if (form == null || form == '') {
+      window.location.replace( "https://www.rc.virginia.edu/support/");
+    } else {
+      window.location.replace( "https://www.rc.virginia.edu/form/" + form + "/");
+    }
+
     </script>
 
   </head>
