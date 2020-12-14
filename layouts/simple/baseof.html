@@ -43,13 +43,8 @@
 
     // name
     let name = decodeURI(getParams()["name"]);
-    let name_dec = decode64(name);
-    // uid
     let uid = decodeURI(getParams()["uid"]);
-    let uid_dec = decode64(uid);
-    // email
     let email = decodeURI(getParams()["email"]);
-    let email_dec = decode64(email);
     
     var cookie_string = "name=" + name + ";uid=" + uid + ";email=" + email;
     Cookies.set('__rc_user', cookie_string, { expires: 7, domain: '.rc.virginia.edu' })
