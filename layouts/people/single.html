@@ -32,7 +32,7 @@
   {{ if (not (isset .Params "github")) | or (eq .Params.github "") }}
     <span></span>
   {{ else }}
-    <div style="margin-top:0.4rem;"><i class="fab fa-github"></i> <a href="mailto:{{ .Params.github }}" style="padding-left:0.5rem;">https://github.com/{{ .Params.github }}</a></div>
+    <div style="margin-top:0.4rem;"><i class="fab fa-github"></i> <a href="https://github.com/{{ .Params.github }}" style="padding-left:0.5rem;">https://github.com/{{ .Params.github }}</a></div>
   {{ end }}
 
   <hr size=1 />
