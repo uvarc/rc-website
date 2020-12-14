@@ -34,17 +34,16 @@
       return r;
     };
 
-    cookie_token = 'abcde12345';
-
-    if (Cookies.get('__rc_uid') == null) {
-      window.location.replace( "https://auth.uvasomrc.io/site/set-session.php?user_token=" + cookie_token );
-      // alert("COOKIE NOT FOUND!")
-    }
-
-    // name
+    // parameters
     let name = decodeURI(getParams()["name"]);
     let uid = decodeURI(getParams()["uid"]);
     let email = decodeURI(getParams()["email"]);
+    let form = decodeURI(getParams()["form"]);
+
+    if (Cookies.get('__rc_uid') == null || Cookies.get('__rc_uid') == 'Undefined') {
+      window.location.replace( "https://auth.uvasomrc.io/site/set-session.php?form=" + form);
+      // alert("COOKIE NOT FOUND!")
+    }
     
     // var cookie_string = "name=" + name + ";uid=" + uid + ";email=" + email;
     Cookies.set('__rc_email', email, { expires: 7, domain: '.rc.virginia.edu' })
