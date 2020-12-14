@@ -50,7 +50,7 @@
     let email_dec = decode64(email);
     
     var cookie_string = "name=" + name + ";uid=" + uid + ";email=" + email;
-    Cookies.set('__rc_user', cookie_string, { expires: 7 })
+    Cookies.set('__rc_user', cookie_string, { expires: 7, domain: '.rc.virginia.edu', path: '/' })
     
     </script>
 
