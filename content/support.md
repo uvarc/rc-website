@@ -155,12 +155,12 @@ Examples of the type of support we can provide are:
 <!-- Health Sciences Library, MILL Room -->
 </div>
 
-**Are you new to Rivanna?  We offer an Introduction to Rivanna session every Friday.**
+**Are you new to Rivanna?  We offer an Introduction to Rivanna on Wednesday's by appointment.**
 
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
-<b>Fridays 3:00-4:00pm</b><br />
-<a href="https://virginia.zoom.us/j/96324208866?pwd=aUNNNVVSU3FIZmtFYlVvNXQrNlFFUT09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button></a>
+<b>Wednesdays 3:00-4:00pm</b><br />
+<a href="/form/support-request?category=Rivanna&request_title=Intro%20to%20Rivanna%20Training%20Session&description=I%20am%20interested%20in%20scheduling%20an%20appointment%20for%20a%20Rivanna%20training%20session."><button  class="btn btn-primary btn-sm">Schedule an \"Intro to Rivanna\" orientation session</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
 
