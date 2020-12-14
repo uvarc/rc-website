@@ -52,9 +52,9 @@ timeout = "60000"
   rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
 
 [params.backups]
-  rivanna_home = "2-week snapshots"
+  rivanna_home = "1-week snapshots"
   rivanna_scratch = "No backups"
-  project = "2-week snapshots"
+  project = "1-week snapshots"
   value = "No backups"
   zfs = "No backups"
 
