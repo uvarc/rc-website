@@ -33,11 +33,11 @@
       }
       return r;
     };
-    
+
     cookie_token = 'abcde12345';
 
     if (Cookies.get('__rc_user') == null) {
-      window.location.replace( "https://auth.uvasomrc.io/site/?user_token=" + cookie_token );
+      window.location.replace( "https://auth.uvasomrc.io/site/set-session.php?user_token=" + cookie_token );
       // alert("COOKIE NOT FOUND!")
     }
 
