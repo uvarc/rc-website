@@ -46,7 +46,7 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 ## Standard Allocations
 Standard allocations are for 100,000 SUs and require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations can be renewed as long as each renewal request includes a synopsis of results from the original allocation. The maximum number of standard allocations--either new or renewal--an account can receive in a single fiscal year is 4 (or 400K SUs max). These allocations expire 12 months after they are disbursed. Available to: Faculty and post-docs using Rivanna for research.
 
-<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-standard.php?user_token=' + user_token">
+<a href="/form/allocation-standard/>
 <button class="btn btn-primary">Request New / Renew Standard Allocation</button></a>
 
 - - -
@@ -54,16 +54,16 @@ Standard allocations are for 100,000 SUs and require a brief summary of the rese
 ## Deans' Allocations
 Deans' Allocations are granted by the research deans who provide funding for Rivanna. A minimum one-page proposal must be included with any type of Deans' Allocation request. Available to: Faculty and postdocs who require very large allocations. Choose one of the following request options based on your school/college/organizational affiliation:
 
-<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=cas&user_token=' + user_token">
+<a href="/form/allocation-dean/?sponsor=cas">
   <button class="btn btn-primary">CLAS</button>
 </a>
-<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=hs&user_token=' + user_token">
+<a href="/form/allocation-dean.php?sponsor=hs">
   <button class="btn btn-primary">HS</button>
 </a>
-<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=seas&user_token=' + user_token">
+<a href="/form/allocation-dean/?sponsor=seas">
   <button class="btn btn-primary">SEAS</button>
 </a>
-<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-dean.php?sponsor=dsi&user_token=' + user_token">
+<a href="/form/allocation-dean/?sponsor=dsi">
   <button class="btn btn-primary">SDS / Other</button>
 </a>
 
@@ -72,7 +72,7 @@ Deans' Allocations are granted by the research deans who provide funding for Riv
 ## Allocation Purchases
 Time on Rivanna can also be purchased using a PTAO. Purchasers are given a higher priority in the queue and their SUs never expire. Available to: Faculty and postdocs with grants; researchers who need priority access and premium service.
 
-<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-purchase.php?user_token=' + user_token">
+<a href="/form/allocation-purchase/">
   <button class="btn btn-primary">Purchase an Allocation</button>
 </a>
 
@@ -81,6 +81,6 @@ Time on Rivanna can also be purchased using a PTAO. Purchasers are given a highe
 ## Instructional Allocations
 Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014.
 
-<a href="#" onClick="location.href='https://auth.uvasomrc.io/site/allocation-instructional.php?user_token=' + user_token">
+<a href="/form/allocation-instructional/">
   <button class="btn btn-primary">Request an Instructional Allocation</button>
 </a>

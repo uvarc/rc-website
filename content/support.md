@@ -24,7 +24,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">Submit a Ticket</h5>
     <p class="card-text">Open a support ticket with your specific questions or issues.<p>
     <div class="support-tiles">
-      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/support.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
+      <a href="/form/support-request/"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">Request a Consultation</h5>
     <p class="card-text">Work directly with RC staff on your project idea or application design.</p>
     <div class="support-tiles">
-      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/consult.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
+      <a href="/form/support-request/?category=Consultation"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
     </div>
   </div>
 </div>
@@ -93,7 +93,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">Request Storage</h5>
     <p class="card-text">Manage your shared project, value, or ZFS storage volumes.</p>
     <div class="support-tiles">
-      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/storage.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request Storage</button></a>
+      <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a>
     </div>
   </div>
 </div>
@@ -102,7 +102,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">Request OMERO Access</h5>
     <p class="card-text">Request or modify access to the OMERO image management database.</p>
     <div class="support-tiles">
-      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/omero.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
+      <a href="/form/omero/"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
     </div>
   </div>
 </div>

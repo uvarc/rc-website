@@ -4,7 +4,7 @@ description = ""
 title = "Computing Systems"
 date = "2019-09-16T10:08:29-05:00"
 draft = false
-tags = ["compute","rivanna","ivy","cloud","aws","hpc","containers","dcos"]
+tags = ["compute","rivanna","ivy","cloud","aws","hpc","containers"]
 categories = ["userinfo"]
 images = [""]
 +++
@@ -59,10 +59,10 @@ various systems are available to researchers.</p>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Microservices and Containers - DCOS</h4>
+      <h4 class="card-title">Microservices and Containers</h4>
       <img align="right" src="/images/docker-logo.png" style="max-width:20%;" />
         <p class="card-text" style="width:90%;">
-        Do you have a containerized service or web application to run for your research project? We are now running DC/OS, a platform designed for running fleets of containers independently of one another. This includes web applications, databases, specialized tools, and other solutions in support of HPC jobs.
+        Do you have a containerized service to run for your research project? We are now running DC/OS, a platform designed for running fleets of containers independently of one another. This includes web applications, databases, specialized tools, and other solutions in support of HPC jobs.
         </p>
       <a href="/userinfo/microservices/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
