@@ -57,7 +57,7 @@ Deans' Allocations are granted by the research deans who provide funding for Riv
 <a href="/form/allocation-dean/?sponsor=cas">
   <button class="btn btn-primary">CLAS</button>
 </a>
-<a href="/form/allocation-dean.php?sponsor=hs">
+<a href="/form/allocation-dean/?sponsor=hs">
   <button class="btn btn-primary">HS</button>
 </a>
 <a href="/form/allocation-dean/?sponsor=seas">
