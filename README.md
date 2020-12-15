@@ -22,6 +22,7 @@
      * [Events Data](#events-data)
      * [Automated Builds](#automated-builds)
      * [Pushing to Production](#pushing-to-production)
+  * [Forms & User Authentication](#forms-and-user-authentication)
   * [Search](#search)
 
 ## Developing
