@@ -109,4 +109,4 @@ Ivy Central Storage is accessible by using [Globus](/userinfo/globus/) and conne
 
 Storage requests can be made via this form:
 
-[<button class="btn btn-success">Request / Purchase Storage</button>](https://auth.uvasomrc.io/site/storage.php)
+[<button class="btn btn-success">Request / Purchase Storage</button>](/form/storage/)
