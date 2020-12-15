@@ -15,7 +15,7 @@ private = true
 <p class="lead">Use the form below to request access for your group or lab to manage and analyze data in our OMERO database service.</p>
 {{< form-cookies >}}
 <script type="text/javascript" src="/js/typeahead.js"></script>
-<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="omero-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
@@ -155,13 +155,32 @@ private = true
 </form>
 
 <script>
-function getParams() {
-  var vars = {};
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-    vars[key] = value;
-  });
-  return vars;
-}
+$('form').submit(function() {
+  $(this).find("button[type='submit']").prop('disabled',true);
+});
+
+//Add a JQuery click event handler onto our checkbox.
+$('#data-agreement').click(function(){
+    //If the checkbox is checked.
+    if($(this).is(':checked')){
+        //Enable the submit button.
+        $('#submit').attr("disabled", false);
+    } else{
+        //If it is not checked, disable the button.
+        $('#submit').attr("disabled", true);
+    }
+});
+
+function getCookie(key) {
+  var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+  return keyValue ? keyValue[2] : null;
+};
+
+function setCookie(key, value, expiry) {
+  var expires = new Date();
+  expires.setTime(expires.getTime() + (expiry * 60 * 60 * 1000));
+  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
+};
 
 function decode64(str) {
   var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
@@ -174,39 +193,29 @@ function decode64(str) {
   return r;
 };
 
+if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
+  window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
+}
+
+document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+var form_url = window.location;
+let referrer = setCookie('__rc_form_referrer', form_url, '1');
+
 var form = document.getElementById('request-form');
 
-var cookie_token = getCookie("__user_token");
-var url_user_token = getParams()["user_token"];
-
-if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/omero.php?user_token=" + cookie_token );
-}
-
-var name_enc = getParams()["name"];
-if (name_enc) {
-  // do nothing
-} else {
-  $('#name').val('');
-  $('#email').val('');
-  $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/omero.php?user_token=" + cookie_token );
-}
-
 // name
-let name = decodeURI(getParams()["name"]);
+let name = getCookie("__rc_name");
 let name_dec = decode64(name);
 var set_name = document.getElementById("name").value = name_dec;
 
 // uid
-let uid = decodeURI(getParams()["uid"]);
+let uid = getCookie("__rc_uid");
 let uid_dec = decode64(uid);
 var set_uid = document.getElementById("uid").value = uid_dec;
 
 // email
-let email = decodeURI(getParams()["email"]);
+let email = getCookie("__rc_email");
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
-
 </script>
 <script type="text/javascript" src="/js/response-message.js"></script>

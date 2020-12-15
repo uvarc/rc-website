@@ -195,6 +195,7 @@ if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 }
 
+document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 var form_url = window.location;
 let referrer = setCookie('__rc_form_referrer', form_url, '1');
 
