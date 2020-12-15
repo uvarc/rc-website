@@ -113,7 +113,7 @@ function figureTotal() {
   // if sus >= 1M = 0.01 per
   var sutotal = parseInt(sureq, 10);
   total.value = sutotal;
-}
+};
 
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
