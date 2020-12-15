@@ -84,8 +84,8 @@ if(request_title != undefined && request_title != "undefined") {
 }
 // department
 let department = decodeURI(getParams()["department"]);
-if(request_title != undefined && request_title != "undefined") {
-  var set_department = document.getElementById("department").value = request_title;
+if(department != undefined && request_title != "undefined") {
+  var set_department = document.getElementById("department").value = department;
 }
 // description
 let description = decodeURI(getParams()["description"]);
