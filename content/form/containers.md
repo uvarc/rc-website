@@ -191,10 +191,10 @@ function decode64(str) {
   return r;
 };
 
-var form_name = "containers";
+var form_url = window.location;
+let referrer = setCookie('__rc_form_referrer', form_url, '1');
 
 var form = document.getElementById('request-form');
-let referrer = setCookie('__rc_form_referrer', form_name, '1');
 
 // name
 let name = getCookie("__rc_name");
