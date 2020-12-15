@@ -191,7 +191,7 @@ function decode64(str) {
   return r;
 };
 
-if (getCookie("__rc_name") = null || getCookie("__rc_name") == '') {
+if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 }
 
