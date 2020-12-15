@@ -1,3 +1,11 @@
+function getParams() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  return vars;
+};
+
 // return message/status
 let message = decodeURI(getParams()["message"]);
 let status = decodeURI(getParams()["status"]);

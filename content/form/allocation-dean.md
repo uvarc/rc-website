@@ -142,6 +142,13 @@ private = true
 </form>
 
 <script>
+function getParams() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  return vars;
+};
 // set sponsor
 let sponsor = decodeURI(getParams()["sponsor"]);
 var set_sponsor = document.getElementById("sponsor").value = sponsor;
