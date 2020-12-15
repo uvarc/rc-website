@@ -153,7 +153,7 @@ Examples of the type of support we can provide are:
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Wednesdays 3:00-4:00pm</b><br />
-<a href="/form/support-request/?category=Rivanna&request_title=Intro%20to%20Rivanna%20Training%20Session&description=I%20am%20interested%20in%20signing%20up%20for%20a%20Rivanna%20training%20session."><button  class="btn btn-primary btn-sm">Sign up for an "Intro to Rivanna" session</button></a>
+<a href="{{% intro-rivanna-request %}}"><button  class="btn btn-primary btn-sm">Sign up for an "Intro to Rivanna" session</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
 

@@ -1,0 +1,7 @@
+{{ $category:="Rivanna" }}
+{{ $req_title:="Intro to Rivanna Training Session" }}
+{{ $description:="I'd like to reserve a seat for the \"Intro to Rivanna\" orientation session next Wednesday, 3-4pm." }}
+{{ $smart_url:=printf "/form/support-request/?category=%s&request_title=%s&description=%s" $category $req_title $description }}
+{{ $smart_url:= replace $smart_url " " "%20" }}
+
+{{ $smart_url }}

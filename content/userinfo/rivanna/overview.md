@@ -24,7 +24,7 @@ The sections below contain important information for new and existing Rivanna us
 {{< /lead >}}
 
 {{< lead >}}
-New users are invited to attend one of our free orientation sessions ("Introduction to the HPC System") held throughout the year during <a href="/support/#office-hours"><b>office hours</b></a> or <a href="/form/support-request/?category=Consultation"><b>by appointment</b></a>.
+New users are invited to attend one of our free orientation sessions ("Introduction to Rivanna") held throughout the year during <a href="{{% intro-rivanna-request %}}"><b>by appointment</b></a>.
 {{< /lead >}}
 
 - - -
