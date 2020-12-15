@@ -93,5 +93,5 @@ if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
 } 
 </script>
-<script type="text/javascript" src="/js/user-session.js"></script>
+<script type="text/javascript" src="/js/user-session.min.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
