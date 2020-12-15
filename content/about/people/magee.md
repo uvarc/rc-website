@@ -5,6 +5,7 @@ title = "Neal Magee, PhD"
 job_title = "Solution Architect"
 lastname = "magee"
 email = "nem2p@virginia.edu"
+github = "nmagee"
 biolink = true
 type = "people"
 author = "UVARC Staff"
@@ -36,3 +37,4 @@ Michal Stolarczyk, Vincent P. Reuter, Jason P. Smith, Neal E. Magee, Nathan C. S
 Nagraj VP, Magee NE, Sheffield NC. "LOLAweb: a containerized web server for interactive genomic locus overlap enrichment analysis." <i>Nucleic Acids Research</i>, 46.W1 (July 2018). <a href="http://doi.org/10.1093/nar/gky464" target="_new">http://doi.org/10.1093/nar/gky464</a>
 {{% /highlight %}}
 
+<a href="https://auth.uvasomrc.io/site/set-session.php?form=support-request&category=Consultation">test link</a>
