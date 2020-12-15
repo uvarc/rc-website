@@ -191,6 +191,10 @@ function decode64(str) {
   return r;
 };
 
+if (getCookie("__rc_name") = null || getCookie("__rc_name") == '') {
+  window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
+}
+
 var form_url = window.location;
 let referrer = setCookie('__rc_form_referrer', form_url, '1');
 
@@ -211,4 +215,5 @@ let email = getCookie("__rc_email");
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
 </script>
+
 <script type="text/javascript" src="/js/response-message.js"></script>
