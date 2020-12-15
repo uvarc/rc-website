@@ -11,7 +11,6 @@ type = "form"
 private = true
 +++
 
-{{< form-cookies >}}
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="containers-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
@@ -170,13 +169,16 @@ $('#data-agreement').click(function(){
     }
 });
 
-function getParams() {
-  var vars = {};
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-    vars[key] = value;
-  });
-  return vars;
-}
+function getCookie(key) {
+  var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+  return keyValue ? keyValue[2] : null;
+};
+
+function setCookie(key, value, expiry) {
+  var expires = new Date();
+  expires.setTime(expires.getTime() + (expiry * 60 * 60 * 1000));
+  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
+};
 
 function decode64(str) {
   var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
@@ -189,34 +191,23 @@ function decode64(str) {
   return r;
 };
 
+var form_name = "containers";
+
 var form = document.getElementById('request-form');
-var cookie_token = getCookie("__user_token");
-var url_user_token = getParams()["user_token"];
-if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
-}
-var name_enc = getParams()["name"];
-if (name_enc) {
-  // do nothing
-} else {
-  $('#name').val('');
-  $('#email').val('');
-  $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/container.php?user_token=" + cookie_token );
-}
+let referrer = setCookie('__rc_form_referrer', form_name, '1');
 
 // name
-let name = decodeURI(getParams()["name"]);
+let name = getCookie("__rc_name");
 let name_dec = decode64(name);
 var set_name = document.getElementById("name").value = name_dec;
 
 // uid
-let uid = decodeURI(getParams()["uid"]);
+let uid = getCookie("__rc_uid");
 let uid_dec = decode64(uid);
 var set_uid = document.getElementById("uid").value = uid_dec;
 
 // email
-let email = decodeURI(getParams()["email"]);
+let email = getCookie("__rc_email");
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
 </script>
