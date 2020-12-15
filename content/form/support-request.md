@@ -82,6 +82,11 @@ let request_title = decodeURI(getParams()["request_title"]);
 if(request_title != undefined && request_title != "undefined") {
   var set_request_title = document.getElementById("request_title").value = request_title;
 }
+// department
+let department = decodeURI(getParams()["department"]);
+if(request_title != undefined && request_title != "undefined") {
+  var set_department = document.getElementById("department").value = request_title;
+}
 // description
 let description = decodeURI(getParams()["description"]);
 if(description != undefined && description != "undefined") {
