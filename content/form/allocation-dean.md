@@ -142,6 +142,10 @@ private = true
 </form>
 
 <script>
+// set sponsor
+let sponsor = decodeURI(getParams()["sponsor"]);
+var set_sponsor = document.getElementById("sponsor").value = sponsor;
+
 // faculty startup explanation
 $("#faculty-startup-explainer").hide();
 $('[name="faculty-startup"]').click(function(){
