@@ -37,22 +37,23 @@ Rivanna is expected to return to service later in the day on December 17. The in
         - cellranger/3.1.0 -> 4.0.0
         - go/1.8.1 -> 1.13.4
         - julia/1.3.1 -> 1.5.3
+        - ase/3.17.0-py3 -> 3.20.1
+        - ffmpeg/4.3.1 (under gcc/9.2.0) - with x264 and x265 codecs
 
         If you need to use a non-default version of an application, please specify the version when you load the module. Use `module spider` to [find prerequisites](/userinfo/rivanna/software/modules).
  
 1. New nodes and tools:
-    - 2 RTX 2080Ti nodes (10 GPU devices each) in `gpu` partition - use `--gres:rtx2080` in SLURM script
+    - Two RTX 2080 Ti nodes (10 GPU devices each) in `gpu` partition - use `--gres:rtx2080` in SLURM script
     - Visual Studio Code Server on Open OnDemand
     - nvhpc/20.9 - NVIDIA HPC SDK (CUDA 11.0)
     - awscli/2.1.10 - command line interface to Amazon Web Services
     - texlive/2020 - LaTeX
+    - jq/1.6 - JSON processor
     - qiime2/2020.8 - microbiome bioinformatics platform with Empress and PICRUSt2 plugins
     - cellranger-atac/1.2.0
-    - ffmpeg/4.3.1 - with x264 and x265 codecs
     - lightgbm/2.3.1 - CLI for gradient boosting framework
-    - jq/1.6 - JSON processor
 
 ### Docker Hub container registry
-We are now using Docker Hub as our official container registry. Details are available [here](/userinfo/rivanna/software/containers/#container-registries-for-uva-research-computing). Many of these container images are very new and have not been installed as modules on Rivanna, but you are welcome to use them by following the instructions on the Docker Hub repository page.
+We are now using Docker Hub as our official container registry. Details are available [here](/userinfo/rivanna/software/containers/#container-registries-for-uva-research-computing). Many of these container images are very new (e.g. `pytorch:1.7.0`, `tensorflow:2.4.0`) and have not been installed as modules on Rivanna, but you are welcome to use them by following the instructions on the Docker Hub repository page.
 
 If you have any questions or concerns about maintenance day, please contact our user support team at hpc-support@virginia.edu prior to 12/16.
