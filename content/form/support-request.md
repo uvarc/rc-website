@@ -1,5 +1,5 @@
 +++
-date = "2019-10-10T23:59:16-05:00"
+date = "2020-12-10T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -76,22 +76,22 @@ function getParams() {
 let category = decodeURI(getParams()["category"]);
 if(category != undefined && category != "undefined") {
   var set_category = document.getElementById("categories").value = category;
-}
+};
 // request_title
 let request_title = decodeURI(getParams()["request_title"]);
 if(request_title != undefined && request_title != "undefined") {
   var set_request_title = document.getElementById("request_title").value = request_title;
-}
+};
 // department
 let department = decodeURI(getParams()["department"]);
-if(department != undefined && request_title != "undefined") {
+if(department != undefined && department != "undefined") {
   var set_department = document.getElementById("department").value = department;
-}
+};
 // description
 let description = decodeURI(getParams()["description"]);
 if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
-}
+};
 </script>
 <script type="text/javascript" src="/js/user-session.min.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
