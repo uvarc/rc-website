@@ -13,9 +13,8 @@ private = true
 
 <p class="lead">From the microscope to publication, OMERO handles all your images in a secure central repository. You can view, organize, analyze and share your data from anywhere you have internet access. Work with your images from a desktop app (Windows, Mac or Linux), from the web or from 3rd party software. Over 140 image file formats supported, including all major microscope formats.</p>
 <p class="lead">Use the form below to request access for your group or lab to manage and analyze data in our OMERO database service.</p>
-{{< form-cookies >}}
 <script type="text/javascript" src="/js/typeahead.js"></script>
-<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="omero-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
@@ -122,30 +121,10 @@ private = true
     <div class="col form-item form-type-textarea form-group">
     </div>
   </div>
-  <!--
-  <div class="form-item form-type-textarea form-group"> 
-    <label class="control-label" for="estimated-cost">Estimated Total Cost </label>
-    <input class="form-control form-text required" type="text" id="estimated-cost" name="estimated-cost" value="$" size="200" maxlength="200" readonly style="width:20%;" />
-  </div>
-  -->
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="financial-contact">Financial Contact </label>
     <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
   </div>
-  <!--
-  <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
-    <div class="row"">
-      <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
-      </div>
-      <div class="form-item form-group col">
-        <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:1rem;padding:6px;font-family:monospace; width:8rem;" />
-        <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
-        <button class="btn btn-default" id="captcha-refresh" type="button" onclick="createCaptcha()"><i class="fas fa-sync fa-1x"></i></button>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript" src="/js/captcha.js"></script>
-  -->
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
@@ -154,59 +133,5 @@ private = true
 </div>
 </form>
 
-<script>
-function getParams() {
-  var vars = {};
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-    vars[key] = value;
-  });
-  return vars;
-}
-
-function decode64(str) {
-  var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
-  var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-  for(i=0;i<64;i++){e[A.charAt(i)]=i;}
-  for(x=0;x<L;x++){
-    c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
-    while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
-  }
-  return r;
-};
-
-var form = document.getElementById('request-form');
-
-var cookie_token = getCookie("__user_token");
-var url_user_token = getParams()["user_token"];
-
-if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/omero.php?user_token=" + cookie_token );
-}
-
-var name_enc = getParams()["name"];
-if (name_enc) {
-  // do nothing
-} else {
-  $('#name').val('');
-  $('#email').val('');
-  $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/omero.php?user_token=" + cookie_token );
-}
-
-// name
-let name = decodeURI(getParams()["name"]);
-let name_dec = decode64(name);
-var set_name = document.getElementById("name").value = name_dec;
-
-// uid
-let uid = decodeURI(getParams()["uid"]);
-let uid_dec = decode64(uid);
-var set_uid = document.getElementById("uid").value = uid_dec;
-
-// email
-let email = decodeURI(getParams()["email"]);
-let email_dec = decode64(email);
-var set_email = document.getElementById("email").value = email_dec;
-
-</script>
+<script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

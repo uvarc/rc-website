@@ -12,7 +12,7 @@ private = true
 +++
 
 {{< form-cookies >}}
-<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="skyline-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div>Skyline Virtual Machines (VMs) are designated for computation that involves public and moderately-sensitive data. <b>Processing of highly sensitive data is not permitted.</b> <a href="/userinfo/ivy/overview">Learn about our Ivy environment</a> for processing and storage of highly sensitive data that have HIPAA, ITAR, or CUI requirements.
 </div>
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
@@ -166,71 +166,5 @@ private = true
 <div>
 </div>
 
-<script>
-$('form').submit(function() {
-  $(this).find("button[type='submit']").prop('disabled',true);
-});
-
-//Add a JQuery click event handler onto our checkbox.
-$('#data-agreement').click(function(){
-    //If the checkbox is checked.
-    if($(this).is(':checked')){
-        //Enable the submit button.
-        $('#submit').attr("disabled", false);
-    } else{
-        //If it is not checked, disable the button.
-        $('#submit').attr("disabled", true);
-    }
-});
-
-function getParams() {
-  var vars = {};
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-    vars[key] = value;
-  });
-  return vars;
-}
-
-function decode64(str) {
-  var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
-  var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-  for(i=0;i<64;i++){e[A.charAt(i)]=i;}
-  for(x=0;x<L;x++){
-    c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
-    while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
-  }
-  return r;
-};
-
-var form = document.getElementById('request-form');
-var cookie_token = getCookie("__user_token");
-var url_user_token = getParams()["user_token"];
-if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token );
-}
-var name_enc = getParams()["name"];
-if (name_enc) {
-  // do nothing
-} else {
-  $('#name').val('');
-  $('#email').val('');
-  $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/skyline.php?user_token=" + cookie_token );
-}
-
-// name
-let name = decodeURI(getParams()["name"]);
-let name_dec = decode64(name);
-var set_name = document.getElementById("name").value = name_dec;
-
-// uid
-let uid = decodeURI(getParams()["uid"]);
-let uid_dec = decode64(uid);
-var set_uid = document.getElementById("uid").value = uid_dec;
-
-// email
-let email = decodeURI(getParams()["email"]);
-let email_dec = decode64(email);
-var set_email = document.getElementById("email").value = email_dec;
-</script>
+<script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

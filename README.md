@@ -22,6 +22,7 @@
      * [Events Data](#events-data)
      * [Automated Builds](#automated-builds)
      * [Pushing to Production](#pushing-to-production)
+  * [Forms & User Authentication](#forms-and-user-authentication)
   * [Search](#search)
 
 ## Developing
@@ -134,7 +135,6 @@ A CADRE Education Track tile:
 
 Shortcodes using `{{< >}}` simply render the text or HTML within the shortcode. Shortcodes using `{{% %}}` will also render any markdown within the shortcode.
 
-
 ### Featured Content
 To "feature" a post on the home page (which displays 2 most recent feature posts), simply add a CATEGORY with the value `feature`.
 
@@ -180,6 +180,13 @@ To merge your changes to the production website, please submit a pull request. H
 5. Click the green "Create Pull Request" button.
 6. Repo admins will be notified of the PR and will approve it or get back to you if there is an issue.
 
+## Forms and User Authentication
+
+All request forms employ JS checks for the presence of user session cookies that define `name`, `uid`, and `eppn` (email). When these user session cookies are absent the browser is redirected to https://auth.rc.virginia.edu/ to re-establish a session.
+
+Some additional fields can then be populated by URL queryString, such as the `category`, `request_title` and `description` fields in this URL:
+
+    https://staging.rc.virginia.edu/form/support-request/?category=Rivanna&request_title=Intro%20to%20Rivanna%20Training%20Session&description=I%20am%20interested%20in%20signing%20up%20for%20a%20Rivanna%20training%20session.
 
 ## Search
 

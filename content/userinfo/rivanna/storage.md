@@ -66,4 +66,4 @@ Researchers can lease additional storage, **Value** or **Project** storage, for 
 
 Storage requests can be placed through this form:
 
-[<button class="btn btn-success">Storage Requests</button>](https://auth.uvasomrc.io/site/storage.php)
+[<button class="btn btn-success">Storage Requests</button>](/form/storage/)

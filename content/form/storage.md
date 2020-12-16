@@ -13,7 +13,7 @@ private = true
 
 {{< form-cookies >}}
 <script type="text/javascript" src="/js/typeahead.js"></script>
-<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="storage-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
@@ -186,79 +186,5 @@ private = true
 </form>
 
 <script type="text/javascript" src="/js/storage-request.js"></script>
-
-<script>
-
-//Add a JQuery click event handler onto our checkbox.
-$('#data-agreement').click(function(){
-    //If the checkbox is checked.
-    if($(this).is(':checked')){
-        //Enable the submit button.
-        $('#submit').attr("disabled", false);
-    } else{
-        //If it is not checked, disable the button.
-        $('#submit').attr("disabled", true);
-    }
-});
-
-function getParams() {
-  var vars = {};
-  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-    vars[key] = value;
-  });
-  return vars;
-}
-
-function decode64(str) {
-  var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
-  var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-  for(i=0;i<64;i++){e[A.charAt(i)]=i;}
-  for(x=0;x<L;x++){
-    c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
-    while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
-  }
-  return r;
-};
-
-var form = document.getElementById('request-form');
-
-var cookie_token = getCookie("__user_token");
-var url_user_token = getParams()["user_token"];
-
-if (cookie_token !== url_user_token) {
-  window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
-}
-
-var name_enc = getParams()["name"];
-if (name_enc) {
-  // do nothing
-} else {
-  $('#name').val('');
-  $('#email').val('');
-  $('#uid').val('');
-  window.location.replace( "https://auth.uvasomrc.io/site/storage.php?user_token=" + cookie_token );
-}
-
-// name
-let name = decodeURI(getParams()["name"]);
-let name_dec = decode64(name);
-var set_name = document.getElementById("name").value = name_dec;
-
-// uid
-let uid = decodeURI(getParams()["uid"]);
-let uid_dec = decode64(uid);
-var set_uid = document.getElementById("uid").value = uid_dec;
-
-// email
-let email = decodeURI(getParams()["email"]);
-let email_dec = decode64(email);
-var set_email = document.getElementById("email").value = email_dec;
-
-function getStorageType() {
-  var $myval = $('[name=storage-choice]:checked').val()
-  var $request_title = document.getElementById("request_title");
-  $request_title.value = "Storage Request: " + $myval.toUpperCase();
-};
-
-</script>
+<script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

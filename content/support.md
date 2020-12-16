@@ -24,7 +24,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">Submit a Ticket</h5>
     <p class="card-text">Open a support ticket with your specific questions or issues.<p>
     <div class="support-tiles">
-      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/support.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
+      <a href="/form/support-request/"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">Request a Consultation</h5>
     <p class="card-text">Work directly with RC staff on your project idea or application design.</p>
     <div class="support-tiles">
-      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/consult.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
+      <a href="/form/support-request/?category=Consultation"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
     </div>
   </div>
 </div>
@@ -93,7 +93,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">Request Storage</h5>
     <p class="card-text">Manage your shared project, value, or ZFS storage volumes.</p>
     <div class="support-tiles">
-      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/storage.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request Storage</button></a>
+      <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a>
     </div>
   </div>
 </div>
@@ -102,7 +102,7 @@ var user_token = getCookie("__user_token");
     <h5 class="card-title">Request OMERO Access</h5>
     <p class="card-text">Request or modify access to the OMERO image management database.</p>
     <div class="support-tiles">
-      <a href="#" onClick="location.href='https://auth.uvasomrc.io/site/omero.php?user_token=' + user_token"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
+      <a href="/form/omero/"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
     </div>
   </div>
 </div>
@@ -132,7 +132,7 @@ Examples of the type of support we can provide are:
 - Managing Computational Workflows
 
 
-**Beginning March 17, we are suspending our in-person office hours in the Physical & Life Sciences Building, Brown Library and the Health Sciences Library. We will be offering weekly office hours as online Zoom sessions instead until further notice.**
+**Since March 17, 2020, we have suspended our in-person office hours in the Physical & Life Sciences Building, Brown Library and the Health Sciences Library. We are offering weekly office hours as online Zoom sessions instead until further notice.**
 
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
@@ -153,7 +153,7 @@ Examples of the type of support we can provide are:
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>
 <b>Wednesdays 3:00-4:00pm</b><br />
-<a href="/form/support-request?category=Rivanna&request_title=Intro%20to%20Rivanna%20Training%20Session&description=I%20am%20interested%20in%20signing%20up%20for%20a%20Rivanna%20training%20session."><button  class="btn btn-primary btn-sm">Sign up for an "Intro to Rivanna" session</button></a>
+<a href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to Rivanna" session</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
 

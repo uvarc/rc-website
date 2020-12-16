@@ -32,7 +32,7 @@ data. Group members can make annotations on each other's data, but cannot modify
 
 **Pricing**: {{% storage-pricing omero %}} / TB per year.
 
- [<button class="btn btn-success">Request Access to OMERO</button>](https://auth.uvasomrc.io/site/omero.php)
+ [<button class="btn btn-success">Request Access to OMERO</button>](/form/omero/)
 
 - - -
 
