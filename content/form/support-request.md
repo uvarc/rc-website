@@ -91,18 +91,7 @@ if(department != undefined && request_title != "undefined") {
 let description = decodeURI(getParams()["description"]);
 if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
-} 
-
-function getCookie(key) {
-  var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-  return keyValue ? keyValue[2] : null;
-};
-
-// get fname for friendliness
-let fname_cookie = getCookie("__rc_fname");
-let fname = decode64(fname_cookie);
-var set_header = document.getElementById("support-header").value = fname;
-
+}
 </script>
 <script type="text/javascript" src="/js/user-session.min.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

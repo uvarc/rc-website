@@ -61,3 +61,7 @@ $('form').submit(function() {
   let email_dec = decode64(email);
   var set_email = document.getElementById("email").value = email_dec;
   
+  // get fname for friendliness
+  let fname_cookie = getCookie("__rc_fname");
+  let fname = decode64(fname_cookie);
+  var set_greeting = document.getElementById("support-greeting").value = fname;
