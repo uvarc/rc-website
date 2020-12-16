@@ -24,8 +24,12 @@ The sections below contain important information for new and existing Rivanna us
 {{< /lead >}}
 
 {{< lead >}}
-New users are invited to attend one of our free orientation sessions ("Introduction to Rivanna") held throughout the year during <a href="{{% intro-rivanna-request %}}"><b>by appointment</b></a>.
+New users are invited to attend one of our free orientation sessions ("Introduction to Rivanna") held throughout the year.
 {{< /lead >}}
+
+<div>
+<a href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-md">Sign up for an "Intro to Rivanna" session</button></a>
+</div>
 
 - - -
 
