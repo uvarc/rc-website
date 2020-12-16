@@ -1,7 +1,22 @@
-{{ $category:="Rivanna" }}
-{{ $req_title:="Intro to Rivanna Training Session" }}
-{{ $description:="I'd like to reserve a seat for the \"Intro to Rivanna\" orientation session next Wednesday, 3-4pm." }}
-{{ $smart_url:=printf "/form/support-request/?category=%s&request_title=%s&description=%s" $category $req_title $description }}
-{{ $smart_url:= replace $smart_url " " "%20" }}
+<!-- determine next available Wednesday -->
+{{- $weekdays:=dict "Monday" 2 "Tuesday" 1 "Wednesday" 7 "Thursday" 6 "Friday" 5 "Saturday" 4 "Sunday" 3 -}}
+{{- $dayoffset:=index $weekdays now.Weekday.String }}
+{{- $.Scratch.Set "nextavailable" (now.AddDate 0 0 $dayoffset) -}}
 
-{{ $smart_url }}
+<!-- blockout dates -->
+{{- $blockout:=slice (time "2020-12-16") (time "2020-12-23") (time "2020-12-30")  -}}
+{{ range $blockout }}
+    {{- $next:=$.Scratch.Get "nextavailable" -}}
+    {{- if in $blockout (time ($next.Format "2006-01-02")) -}}
+    	{{- $.Scratch.Set "nextavailable" ($next.AddDate 0 0 7) -}}
+    {{- end -}}
+{{- end -}}    
+
+<!-- construct smart URL -->
+{{- $category:="Rivanna" -}}
+{{- $req_title:="Intro to Rivanna Orientation Session" -}}
+{{- $description:=printf "I'd like to reserve a seat for the next \"Intro to Rivanna\" orientation session on %s, 3-4pm." (($.Scratch.Get "nextavailable").Format "Monday January 2") -}}
+{{- $smart_url:=printf "/form/support-request/?category=%s&request_title=%s&description=%s" $category $req_title $description -}}
+
+{{- $smart_url:=replace $smart_url " " "%20" -}}
+{{- $smart_url -}}
