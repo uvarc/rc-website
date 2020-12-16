@@ -93,6 +93,11 @@ if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
 } 
 
+function getCookie(key) {
+  var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+  return keyValue ? keyValue[2] : null;
+};
+
 // get fname for friendliness
 let fname_cookie = getCookie("__rc_fname");
 let fname = decode64(fname_cookie);
