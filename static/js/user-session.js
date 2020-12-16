@@ -64,4 +64,8 @@ $('form').submit(function() {
   // get fname for friendliness
   let fname_cookie = getCookie("__rc_fname");
   let fname = decode64(fname_cookie);
-  var set_greeting = document.getElementById("support-greeting").innerHTML = fname;
+  // var set_greeting = document.getElementById("support-greeting").innerHTML = fname;
+  var set_greeting = document.getElementById("support-greeting");
+    if(set_greeting){
+      var set_g = document.getElementById("support-greeting").innerHTML = fname;
+    }
