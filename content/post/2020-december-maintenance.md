@@ -33,6 +33,8 @@ Rivanna is expected to return to service later in the day on December 17. The in
 
         Most dependent modules have been installed under the new default, except for R. R users must specify the previous goolf/iintelmpi version explicitly as `goolf/7.1.0_3.1.4` or `iintelmpi/18.0_18.0`. Some dependent modules have been removed from the previous default compiler/toolchain version. If you need to use a module under the previous version, please contact our user services team at hpc-support@virginia.edu.
 
+        Users are reminded to recompile their code when switching to a different compiler/toolchain.
+
     - Upgrades to default versions of applications:
         - cellranger/3.1.0 -> 4.0.0
         - go/1.8.1 -> 1.13.4
