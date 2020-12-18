@@ -40,9 +40,9 @@ pip install --user awscli
 The project is open source, so you can also download the source at https://github.com/aws/aws-cli
 
 {{% alert-green %}}
-**Rivanna Users** - Install the <code>awscli</code> to your user directory:
+**Rivanna Users** - Please load the `awscli` module. If you need a different version, install it in your user directory:
 ```
-pip install --user awscli
+pip install --user awscli==<version>
 ```
 {{% /alert-green %}}
 
