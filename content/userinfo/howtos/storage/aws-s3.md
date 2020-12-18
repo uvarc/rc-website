@@ -1,13 +1,10 @@
 +++
 type = "howto"
-images = [
-  "/2016/10/image.jpg",
-]
 categories = [
   "howto",
   "storage",
 ]
-date = "2020-03-09T13:53:46-05:00"
+date = "2020-12-17T13:53:46-05:00"
 tags = ["howto","storage","aws","cloud","cli","boto3","curl"]
 draft = false
 shorttitle = "AWS CLI"
@@ -40,10 +37,14 @@ pip install --user awscli
 The project is open source, so you can also download the source at https://github.com/aws/aws-cli
 
 {{% alert-green %}}
-**Rivanna Users** - Please load the `awscli` module. If you need a different version, install it in your user directory:
-```
-pip install --user awscli==<version>
-```
+<p><b>Rivanna Users</b> have two options:</p>
+<ol>
+  <li>Load the <code>awscli</code> module:<br /><br />
+  <pre><code>module load awscli</code></pre></li>
+  <li>If you need a different version, install it in your user directory:<br /><br />
+  <pre><code>pip install --user awscli==<version></code></pre></li>
+</ol>
+
 {{% /alert-green %}}
 
 ## Authenticate the CLI to Amazon Web Services

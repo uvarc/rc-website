@@ -5,7 +5,7 @@ description = ""
 date = "2020-04-26T10:18:25-05:00"
 title = "RC Acquires New Accounting Management Software for Rivanna"
 draft = false
-tags = ["Rivanna","accounting"]
+tags = ["rivanna","accounting"]
 categories = ["feature"]
 +++
 

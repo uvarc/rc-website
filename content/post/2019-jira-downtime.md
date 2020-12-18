@@ -5,7 +5,7 @@ description = ""
 date = "2019-12-09T11:18:25-05:00"
 title = "JIRA Downtime: December 13, 2020"
 draft = false
-tags = ["Rivanna"]
+tags = ["rivanna"]
 categories = ["feature"]
 +++
 
