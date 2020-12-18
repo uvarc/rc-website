@@ -6,7 +6,7 @@ date = "2020-11-29T00:00:00-05:00"
 title = "Rivanna Maintenance: December 16-17, 2020"
 # url = "/maintenance"
 draft = false
-tags = ["Rivanna"]
+tags = ["rivanna"]
 categories = ["feature"]
 +++
 

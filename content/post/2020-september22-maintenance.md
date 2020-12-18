@@ -5,7 +5,7 @@ description = ""
 date = "2020-09-15T00:00:00-05:00"
 title = "Rivanna Maintenance: Sept 22, 2020"
 draft = false
-tags = ["Rivanna","maintenance","feature"]
+tags = ["rivanna","maintenance","feature"]
 categories = ["feature"]
 +++
 
