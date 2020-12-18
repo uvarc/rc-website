@@ -252,7 +252,7 @@ singularity pull docker://uvarc/pytorch:1.5.1
 
 Images that contain `ipykernel` can be added to your list of Jupyter kernels. To verify:
 ```
-singularity exec <container_name>.sif pip list | grep ipykernel
+singularity exec <container_name>.sif python -m pip list | grep ipykernel
 ```
 If this returns `ipykernel    <version>`, proceed [here](/userinfo/howtos/rivanna/custom-jupyter-kernels).
 

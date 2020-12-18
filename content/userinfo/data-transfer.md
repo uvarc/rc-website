@@ -1,5 +1,5 @@
 +++
-date = "2020-01-16:12:54-05:00"
+date = "2020-02-21T15:12:46-05:00"
 tags = [
 	"data-transfer",
 	"globus",
@@ -226,7 +226,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<a href="https://www.globus.org/" class="card-link" target="_blank"><button class="btn btn-primary">Access Globus</button></a>
 				<br></br>
 				<p class="card-text">	
-					For transferring highly sensitive data such as HIPAA or CUI data to the Ivy secure computing environment, researchers _must_ use the secure Globus data transfer node (DTN).
+					For transferring highly sensitive data such as HIPAA or CUI data to the Ivy secure computing environment, researchers <b>must</b> use the secure Globus data transfer node (DTN).
 				</p>
 			<a href="/userinfo/ivy/overview#data-transfer-in-out-of-ivy" class="card-link" 1target="_blank"><button class="btn btn-warning">Learn more</button></a>
 		</div>
@@ -238,10 +238,10 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 	<div class="card">
 		<div class="card-block">
 			<h4 class="card-title">Graphical SFTP Clients</h4>
-                        <img src="/images/graphical-sftp.png" alt="Graphical-SFTP" style="max-width:25%; margin-left:2rem; float:right;" />
+                <img src="/images/graphical-sftp.png" alt="Graphical-SFTP" style="max-width:25%; margin-left:2rem; float:right;" />
 			<h6 class="card-subtitle mb-2 text-muted">Secure file transfer protocol (SFTP)</h6>
 				<p class="card-text">
-					Programs such as MobaXterm, Filezilla, and Cyberduck provide a graphical user interface to transfer data between a local computer and a remote storage location that permits scp or sftp. These applications allow drag-and-drop file manipulation.
+					Programs such as MobaXterm, Filezilla, and Cyberduck provide a graphical user interface to transfer data between a local computer and a remote storage location that permits <code>scp</code> or <code>sftp</code>. These applications allow drag-and-drop file manipulation.
 				</p>
 			<a href="/userinfo/rivanna/logintools/graphical-sftp" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
 		</div>
@@ -253,10 +253,10 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 	<div class="card">
 		<div class="card-block">
 			<h4 class="card-title">Command Line Tools</h4>
-                        <div style="float:right; margin-left:2rem;"><i class="fas fa-6x fa-laptop-code"></i></div>
+                <div style="float:right; margin-left:2rem;"><i class="fas fa-6x fa-laptop-code"></i></div>
 			<h6 class="card-subtitle mb-2 text-muted">Transferring Files from a Terminal</h6>
 				<p class="card-text">
-					Researchers who are comfortable with the command line can use a variety of command line tools to transfer their data between their laptops and storage systems. Programs such as `scp`, `sftp`, and `rsync` can be used to quickly transfer files.
+					Researchers who are comfortable with the command line can use a variety of command line tools to transfer their data between their laptops and storage systems. Programs such as <code>scp</code>, <code>sftp</code>, and <code>rsync</code> can be used to quickly transfer files.
 				</p>
 			<a href="/userinfo/rivanna/logintools/cl-data-transfer" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
 		</div>
