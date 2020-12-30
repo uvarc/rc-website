@@ -148,7 +148,7 @@ Examples of the type of support we can provide are:
 <!-- Health Sciences Library, MILL Room -->
 </div>
 
-**Are you new to Rivanna?  We offer an Introduction to Rivanna on Wednesdays by appointment.**
+**New to Rivanna?  We offer Rivanna orientation sessions on Wednesdays (appointment required).**
 
 <div class="alert alert-success" role="alert">
 <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div>

@@ -5,7 +5,7 @@
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title" style="margin-top:2rem;margin-bottom:2rem;"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
-    <p class="blog-post-meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> | {{ .Params.author | default .Site.Params.author }}{{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</p>
+    <p class="blog-post-meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> &nbsp; | &nbsp; {{ if or (.Params.categories) (.Params.tags) }} {{ partial "meta-terms.html" . }}{{ end }}</p>
   </header>
   
   <div class="explainer">

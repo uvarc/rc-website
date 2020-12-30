@@ -5,7 +5,7 @@ description = ""
 date = "2020-03-11T10:18:25-05:00"
 title = "Rivanna Software Updates: March 11, 2020"
 draft = false
-tags = ["Rivanna"]
+tags = ["rivanna"]
 categories = ["feature"]
 +++
 

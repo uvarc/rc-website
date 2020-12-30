@@ -6,7 +6,7 @@ date = "2020-11-29T00:00:00-05:00"
 title = "Rivanna Maintenance: December 16-17, 2020"
 # url = "/maintenance"
 draft = false
-tags = ["Rivanna"]
+tags = ["rivanna"]
 categories = ["feature"]
 +++
 
@@ -32,6 +32,8 @@ Rivanna is expected to return to service later in the day on December 17. The in
         - cuda/10.2.89 -> 11.0.228
 
         Most dependent modules have been installed under the new default, except for R. R users must specify the previous goolf/iintelmpi version explicitly as `goolf/7.1.0_3.1.4` or `iintelmpi/18.0_18.0`. Some dependent modules have been removed from the previous default compiler/toolchain version. If you need to use a module under the previous version, please contact our user services team at hpc-support@virginia.edu.
+
+        Users are reminded to recompile their code when switching to a different compiler/toolchain.
 
     - Upgrades to default versions of applications:
         - cellranger/3.1.0 -> 4.0.0

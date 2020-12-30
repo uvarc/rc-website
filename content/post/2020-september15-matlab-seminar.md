@@ -6,7 +6,7 @@ date = "2020-09-09T00:00:00-05:00"
 title = "Automated Image Labeling and Iterative Learning - Live Seminar: September 15, 2020"
 # url = "/maintenance"
 draft = false
-tags = ["Rivanna","Matlab","education","workshops","feature"]
+tags = ["rivanna","Matlab","education","workshops","feature"]
 categories = ["feature"]
 +++
 
