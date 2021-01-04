@@ -120,7 +120,7 @@ module load nvhpc
 
 {{< module-versions module="nvhpc" >}}
 
-## `-arch` and `-gencode`
+## GPU architecture `-arch`
 According to the [CUDA documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list), "in the CUDA naming scheme, GPUs are named `sm_xy`, where `x` denotes the GPU generation number, and `y` the version in that generation." The documentation contains details about the architecture and the corresponding `xy` value. On Rivanna, the GPU nodes are K80, P100, V100, and RTX 2080 Ti, which are Kepler, Pascal, Volta, and Turing, respectively. In summary, please use the following values when compiling CUDA code on Rivanna.
 
 | GPU Type | Architechture | `xy` | CUDA Version |
@@ -138,10 +138,10 @@ module load cuda/10.2.89
 ```
 and provide a list of NVCC flags, e.g.
 ```
--gencode=arch=compute_37,code=sm_37
--gencode=arch=compute_60,code=sm_60
--gencode=arch=compute_70,code=sm_70
--gencode=arch=compute_75,code=sm_75
+-gencode arch=compute_37,code=sm_37 \
+-gencode arch=compute_60,code=sm_60 \
+-gencode arch=compute_70,code=sm_70 \
+-gencode arch=compute_75,code=sm_75
 ```
 
 # PGI Compiler
