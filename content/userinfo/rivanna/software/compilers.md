@@ -130,6 +130,8 @@ According to the [CUDA documentation](https://docs.nvidia.com/cuda/cuda-compiler
 | V100 | Volta | 70 | 9+ |
 | RTX 2080 Ti | Turing | 75 | 10+ |
 
+<br>
+
 Therefore, if you need your code to work on all GPU types, please load CUDA version 10:
 ```
 module load cuda/10.2.89
