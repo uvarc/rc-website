@@ -48,8 +48,7 @@ module load gcc
 ```
 It may be necessary to use an older compiler for programs using GPGPUs. The `gcccuda` module will load the correct version.
 
-<br>
-**Available Gnu Compilers**
+## Available Gnu Compilers
 
 {{< module-versions module="gcc" >}}
 
@@ -58,7 +57,11 @@ The [Intel Linux Fortran and C/C++ compilers](https://software.intel.com/en-us/c
 
 For detailed information, review the documentation on the [Intel C/C++](https://software.intel.com/en-us/articles/intel-c-compiler-professional-edition-for-linux-documentation/) and [Fortran compiler](https://software.intel.com/en-us/fortran-compiler-developer-guide-and-reference) website.
 
-The Intel compilers are accessed on the Rivanna cluster by using the modules software to dynamically set the appropriate environmental variables (e.g. `PATH` and `LD_LIBRARY_PATH`). To initialize your environment to use the Intel compilers, use the command: module load intel.
+The Intel compilers are accessed on the Rivanna cluster by using the modules software to dynamically set the appropriate environmental variables (e.g. `PATH` and `LD_LIBRARY_PATH`). To initialize your environment to use the Intel compilers, use the command:
+
+```
+module load intel
+```
 
 * Fortran fixed format: ifort [options] filename.f
 * Fortran free format: ifort [options] filename.f90
@@ -83,8 +86,7 @@ Then load the appropriate module, in this case the default version
 module load intel
 ```
 
-<br>
-**Available Intel Compilers**
+## Available Intel Compilers
 
 {{< module-versions module="intel" >}}
 
@@ -99,6 +101,47 @@ The MKL consists of a number of libraries, and which ones to link is not always 
 
 The Intel compiler should also be used, along with its companion Intel MPI, for Intel Many-Integrated Core systems.  To compile for MIC architectures use the flag -xMIC-AVX512 on your compile line.
 
+# NVIDIA CUDA Compiler
+The NVIDIA HPC SDK C, C++, and Fortran compilers support GPU acceleration of HPC modeling and simulation applications with standard C++ and Fortran, OpenACC directives, and CUDA.
+
+NVIDIA CUDA compilers are accessed on the HPC cluster by using modules to dynamically set the appropriate environmental variables (e.g. `PATH` and `LD_LIBRARY_PATH`). To initialize your environment to use the CUDA compilers, use the command
+
+```
+module load cuda
+```
+or
+```
+module load nvhpc
+```
+
+## Available NVIDIA CUDA Compilers
+
+{{< module-versions module="cuda" >}}
+
+{{< module-versions module="nvhpc" >}}
+
+## `-arch` and `-gencode`
+According to the [CUDA documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list), "in the CUDA naming scheme, GPUs are named `sm_xy`, where `x` denotes the GPU generation number, and `y` the version in that generation." The documentation contains details about the architecture and the corresponding `xy` value. On Rivanna, the GPU nodes are K80, P100, V100, and RTX 2080 Ti, which are Kepler, Pascal, Volta, and Turing, respectively. In summary, please use the following values when compiling CUDA code on Rivanna.
+
+| GPU Type | Architechture | `xy` | CUDA Version |
+| --- | --- | --- | --- |
+| K80 | Kepler | 37 | 5 - 10 (deprecated from 11) |
+| P100 | Pascal | 60 | 8+ |
+| V100 | Volta | 70 | 9+ |
+| RTX 2080 Ti | Turing | 75 | 10+ |
+
+Therefore, if you need your code to work on all GPU types, please load CUDA version 10:
+```
+module load cuda/10.2.89
+```
+and provide a list of NVCC flags, e.g.
+```
+-gencode=arch=compute_37,code=sm_37
+-gencode=arch=compute_60,code=sm_60
+-gencode=arch=compute_70,code=sm_70
+-gencode=arch=compute_75,code=sm_75
+```
+
 # PGI Compiler
 The PGI Server Compilers and tools are licensed for Linux systems.
 
@@ -107,8 +150,7 @@ PGI compilers are accessed on the HPC cluster by using modules to dynamically se
 module load pgi
 ```
 
-<br>
-**Available PGI Compilers**
+## Available PGI Compilers
 
 {{< module-versions module="pgi" >}}
 
