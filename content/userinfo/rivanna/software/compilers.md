@@ -173,4 +173,4 @@ PGI provides a very capable debugger, `pgdbg`. In its default mode, it is graphi
 The PGI compilers are particularly strong in their support of OpenACC for programming NVIDIA GPGPUs.
 
 # Building on Rivanna
-For more information about building your code on Rivanna, please see our [howto](/userinfo/howtos/compiler-howto)
+For more information about building your code on Rivanna, please see our [howto](/userinfo/howtos/rivanna/compiler-howto).
