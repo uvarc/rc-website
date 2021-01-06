@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - uses: actions/checkout@v2
-    - shell: 'script -q -e -c "bash {0}"'
     - name: Hugo container build
       env:  
         BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
@@ -27,8 +25,9 @@ jobs:
         MAX_AGE: ${{ secrets.MAX_AGE }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      run: |
-        docker run -it -e TRAVIS_BRANCH=master -e BUCKET_NAME="$BUCKET_NAME" -e DISTRIBUTION_ID="$DISTRIBUTION_ID" \
-          -e BUCKET_NAME_STAGING="$BUCKET_NAME_STAGING" -e STAGING_DISTRIBUTION_ID="$STAGING_DISTRIBUTION_ID" \
-          -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" \
-          -e MAX_AGE="$MAX_AGE" uvarc/hugo-build:v2 /root/build-site.sh
+    - uses: addnab/docker-run-action@v1
+      with:
+        image: uvarc/hugo-build:v2
+        options: -e TRAVIS_BRANCH=master -e BUCKET_NAME="$BUCKET_NAME" -e DISTRIBUTION_ID="$DISTRIBUTION_ID" -e BUCKET_NAME_STAGING="$BUCKET_NAME_STAGING" -e STAGING_DISTRIBUTION_ID="$STAGING_DISTRIBUTION_ID" -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" -e MAX_AGE="$MAX_AGE"
+        run: |
+          ./root/build-site.sh
