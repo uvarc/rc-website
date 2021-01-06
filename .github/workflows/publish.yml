@@ -17,6 +17,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - shell: 'script -q -e -c "bash {0}"'
     - name: Build the site using a custom hugo container
       env:  
         BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
