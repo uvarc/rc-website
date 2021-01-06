@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "DCOS Microservices"
-date = "2020-07-17T10:08:29-05:00"
+date = "2021-01-04T10:08:29-05:00"
 draft = false
 tags = ["compute","cloud","hpc","containers","dcos","hybrid","infrastructure","docker"]
 categories = ["userinfo"]
@@ -22,9 +22,9 @@ images = [""]
 # Microservices at UVA
 Research Computing runs microservices in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon. DCOS makes the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to [project](/userinfo/storage/non-sensitive-data/#project-storage) storage.
 
-{{% highlight %}}
+{{% highlight-danger %}}
 UVA's DCOS Microservices platform is hosted in the standard security zone. It is suitable for processing public or moderately sensitive data. Highly sensitive data is not permitted on this platform. 
-{{% /highlight %}}
+{{% /highlight-danger %}}
 
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
