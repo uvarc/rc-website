@@ -61,7 +61,10 @@ module load rstudio
 rstudio &
 ```
 
-RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server access via OpenOnDemand](https://www.rc.virginia.edu/userinfo/rivanna/login/#web-based-access).
+RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server on Rivanna](
+https://www.rc.virginia.edu/userinfo/rivanna/software/rstudio/).
+~
+
 
 # Installing packages
 
