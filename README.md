@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/uvarc/rc-website.svg?branch=master)](https://travis-ci.com/uvarc/rc-website) ![Hugo Build CI](https://github.com/uvarc/rc-website/workflows/Hugo%20Build%20CI/badge.svg)
+![Hugo Build CI](https://github.com/uvarc/rc-website/workflows/Hugo%20Build%20CI/badge.svg)
 
 # UVA Research Computing Website
 
@@ -144,7 +144,9 @@ To "feature" a post on the home page (which displays 2 most recent feature posts
 `hugo server` will bring up the local hugo server and give you a preview URL `http://localhost:1313/`. If making many changes, open another terminal to keep the `hugo server` running as you edit.
 
 ### Publish content
-Simply push `staging` back to GitHub. TravisCI will handle it from there - you can check the build status by clicking the "build status" badge at the top of this page. Pushing your content to the production website requires a PULL REQUEST.
+Simply push `staging` back to GitHub. GitHub Actions will handle it from there - you can check the 
+build status by clicking the "build status" badge at the top of this page. Pushing your content to 
+the production website requires a PULL REQUEST.
 
 > Remember that after pushing your changes back to the `staging` branch, the https://staging.rc.virginia.edu/ website will be updated within 1-2 minutes. Hold down the SHIFT key when reloading your browser to refresh your local cache.
 
@@ -155,17 +157,18 @@ Simply push `staging` back to GitHub. TravisCI will handle it from there - you c
 
 ### Events Data
 
-The "Training" widget and workshops page are both fed from `static/data/events.csv`. They are updated when the site is published (by hand) or every 24 hours by a Travis-CI cron job.
+The "Training" widget and workshops page are both fed from `static/data/events.csv`. They are updated when the site is published (by hand) or every 24 hours by a cron job.
 
 ### Automated Builds
 
-Travis-CI is a CI/CD tool that automates builds and deployments of the website code. Take note of the contents of `.travis.yml` and you will see instructions for how Travis builds the site:
+GitHub Actions is a CI/CD tool that automates builds and deployments of the website code. Take note 
+of the contents of `.github/workflows/main.yml` and you will see instructions for how Actions builds the site:
 * Upon a push to `staging` or `master` it launches a customized container `uvarc/hugo-build:v2`.
 * That container runs a script that clones that branch of the repository and runs `hugo -v --ignoreCache` to build the site.
-* Travis then synchronizes the published HTML, JS, CSS, images and files to Amazon S3.
+* Actions then synchronizes the published HTML, JS, CSS, images and files to Amazon S3.
 * Finally, the build invalidates the CloudFront cache that serves out the actual website.
 
-Build+deployment generally takes 70 seconds and can be monitored using the [Travis-CI dashboard](https://travis-ci.com/uvarc/rc-website/builds) for this repository.
+Build+deployment generally takes 70 seconds and can be monitored using the [GitHub Actions dashboard](https://github.com/uvarc/rc-website/actions) for this repository.
 
 ### Pushing to Production
 
