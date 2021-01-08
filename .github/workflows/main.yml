@@ -13,7 +13,7 @@ on:
     - 'staging'
 
 jobs:
-  build:
+  Build:
     runs-on: ubuntu-latest
     steps:
     - uses: nelonoel/branch-name@v1
@@ -36,6 +36,8 @@ jobs:
       run: docker run -e TRAVIS_BRANCH=$BRANCH_NAME -e BUCKET_NAME=${{ secrets.BUCKET_NAME }} -e DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }} -e BUCKET_NAME_STAGING=${{ secrets.BUCKET_NAME_STAGING }} -e STAGING_DISTRIBUTION_ID=${{ secrets.STAGING_DISTRIBUTION_ID }} -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -e MAX_AGE=${{ secrets.MAX_AGE}} uvarc/hugo-build:v2 /root/build-site.sh
   slack:
     name: Slack Notification
+    if: ${{ failure() }}
+    needs: Build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
