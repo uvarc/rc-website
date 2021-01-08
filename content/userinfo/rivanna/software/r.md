@@ -25,22 +25,22 @@ author = "RC Staff"
 [R](https://www.r-project.org/) is a programming language that often is used for data analytics, statistical programming, and graphical visualization.
 
 # Loading the R module
-On Rivanna, R is available through our module system.  To load R, simply type:
+On Rivanna, R is available through our module system.  For example, to load R, you can type:
 
 ```
-module load goolf R
+module load goolf/7.1.0_3.1.4 R
 ```
 
-Notice that we included goolf in the load command. There are two reasons why including goolf is important:
+Notice that we included goolf version 7.1.0_3.1.4 in the load command. There are two reasons why including goolf is important:
 
-1. R was built with the gcc compiler, an interface to OpenMPI, and other utilities.  Due to its hierarchical layout, the module system must be told which build of R is needed.
+1. R was built with a compiler, an interface to OpenMPI, and other utilities.  The `goolf` module will ensure that each of these items is loaded.  Also, because 7.1.0_3.1.4 is no longer the default version, we must specify the version of `goolf`.
 
 2. R has many computationally-intensive packages that are built with C, C++, or Fortran. By including goolf, we ensure that the same environment used for building R is loaded for any package installs.
 
 The load command will load a default version of R, unless another version is specified.  For example, you could type:
 
 ```
-module load goolf R/4.0.0
+module load goolf/7.1.0_3.1.4  R/4.0.0
 ```
 
 To see the available versions of R, type:
@@ -49,27 +49,27 @@ To see the available versions of R, type:
 module spider R
 ```
 
-<br>
-{{< module-versions >}}
 
 # Loading the RStudio module
 
 RStudio is a development environment for R.  It also is supported through its own module, but you must load a version of R first. For example, to load and run Rstudio, you could type the following:
 
 ```
-module load goolf R
+module load goolf/7.1.0_3.1.4 R
 module load rstudio
 rstudio &
 ```
 
-RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server access via OpenOnDemand](https://www.rc.virginia.edu/userinfo/rivanna/login/#web-based-access).
+RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server on Rivanna](
+https://www.rc.virginia.edu/userinfo/rivanna/software/rstudio/).
+
 
 # Installing packages
 
 Due to the amount and variability of packages available for R, Research Computing does not maintain R packages beyond the very basic.  If you need a package, you can install it in your account, using a local library.  For example, to install `BiocManager`, you can type:
 
 ```
-module load goolf R
+module load goolf/7.1.0_3.1.4  R
 ```
 
 ```
@@ -83,7 +83,7 @@ R
 
 If the R interpreter prompts you about creating a local library, type `yes`.  If it asks you to select a CRAN mirror, scroll down the list it provides and select one of the US sites.
 
-Or, you can launch RStudio and install the packages as you would on your laptop.
+Or, you can launch RStudio and install the packages as you would on your laptop.  However, RStudio Server (launched through Open onDemand) uses a different folders for its libraries.  The libraries are kept separate because RStudio Server runs in a container and has packages installed that are not visible to the versions of R loaded through modules. 
 
 
 # Submitting a Single-Core Job to the Cluster
@@ -98,7 +98,8 @@ After you have developed your R program, you can submit it to the compute nodes 
 #SBATCH -p standard
 #SBATCH -A mygroup
 
-module load goolf R
+module purge
+module load goolf/7.1.0_3.1.4  R
 Rscript myRprog.R
 ```
 
@@ -122,7 +123,8 @@ R programs can be written to use multiple cores on a node.  You will need to ens
 #SBATCH -p standard
 #SBATCH -A mygroup
 
-module load goolf R
+module purge
+module load goolf/7.1.0_3.1.4  R
 Rscript myRprog.R ${SLURM_CPUS_PER_TASK}
 ```
 
@@ -131,13 +133,13 @@ For the R code, the number of cores can be passed in with a command-line argumen
 
 ```
 cmdArgs <- commandArgs(trailingOnly=TRUE)
-numCores <- as.integer(cmdArgs[1])
+numCores <- as.integer(cmdArgs[1]) - 1
 options(mc.cores=numCores)
 ```
 Or, you if you do not want to use command-line arguments, you can use the function `Sys.getenv()` in the R code.  For example:
 
 ```
-numCores <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK"))
+numCores <- as.integer(Sys.getenv("SLURM_CPUS_PER_TASK")) - 1
 options(mc.cores=numCores)
 
 ```
@@ -158,7 +160,8 @@ R programs can be distributed across multiple nodes with MPI (message passing in
 #SBATCH -p parallel
 #SBATCH -A mygroup
 
-module load goolf R
+module purge
+module load goolf/7.1.0_3.1.4 R
 
 srun Rscript myRprog.R
 ```
