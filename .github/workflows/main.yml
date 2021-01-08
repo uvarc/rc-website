@@ -44,9 +44,10 @@ jobs:
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2
       env:
-        SLACK_CHANNEL: dev
+        SLACK_CHANNEL: website
         SLACK_COLOR: '#3278BD'
         SLACK_ICON: https://staging.rc.virginia.edu/images/logos/github-icon-48px.png
-        SLACK_TITLE: GitHub CI
+        SLACK_TITLE: ERROR - GitHub CI
+        SLACK_MESSAGE: 'Build Error :boom:'
         SLACK_USERNAME: ci-bot
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
