@@ -6,11 +6,6 @@ on:
     - 'main'
     - 'master'
     - 'staging'
-  pull_request:
-    branches:
-    - 'main'
-    - 'master'
-    - 'staging'
 
 jobs:
   Build:
