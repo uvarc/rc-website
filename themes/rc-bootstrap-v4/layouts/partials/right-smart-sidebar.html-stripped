@@ -11,7 +11,6 @@
 {{ $dataWorkshops := getCSV $sep $url }}
 {{ if (eq ($dataWorkshops | len) 0) }}
 <!-- WHEN NO WORKSHOPS -->
-
   {{ partial "typed-widget.html" . }}
   {{ partial "user-help-widget.html" . }}
     <div style="height:3rem;"></div>

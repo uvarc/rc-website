@@ -16,8 +16,10 @@ images = [""]
 # Upcoming Workshops
 
 {{% callout %}}
-Workshops for 2020 have been moved to online learning formats due to campus closures from COVID-19. 
+Workshops for 2021 have been moved to online learning formats due to campus closures from COVID-19. 
 {{% /callout %}}
+
+{{% upcoming-workshops %}}
 
 Research Computing is partnering with the Research Library and the Health Sciences Library to deliver workshops covering a variety of research computing topics.  
 
