@@ -6,7 +6,6 @@ on:
     - 'main'
     - 'master'
     - 'staging'
-on:
   schedule:
     - cron: '0 8 * * *'
 
