@@ -1,20 +1,20 @@
-      <p class=lead>Featured</p>
-      {{ range first 4 (where .Site.Pages "Type" "post") }}
-        {{ if in .Params.categories "feature" }}
-          <a href="{{.Permalink}}" style="text-decoration:none;color:black;"><div>
-            <h5>{{.Title | markdownify }}</h5>
-            <p style="font-size:0.9em;margin-bottom:30px;">
-              {{ if .Params.summary }}
-                {{ .Params.summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
-              {{ else }}
-                {{ if gt (len .Summary) 380 }}
-                  {{slicestr .Summary 0 380 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
-				{{ else }}
-				  {{ .Summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
-				{{ end }}                
-              {{ end}}
-            </p>
-          </div></a>
-        {{ end }}
-      {{ end }}
-      <p style="font-size:90%;"><a href="/post/" style="text-decoration:none;">More Recent Announcements &raquo;</a></p>
+  <p class=lead>Featured</p>
+  {{ range first 4 (where .Site.Pages "Type" "post") }}
+    {{ if in .Params.categories "feature" }}
+      <a href="{{.Permalink}}" style="text-decoration:none;color:black;"><div>
+        <h5>{{.Title | markdownify }}</h5>
+        <p style="font-size:0.9em;margin-bottom:30px;">
+          {{ if .Params.summary }}
+            {{ .Params.summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+          {{ else }}
+            {{ if gt (len .Summary) 380 }}
+              {{slicestr .Summary 0 380 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+            {{ else }}
+              {{ .Summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+            {{ end }}                
+          {{ end}}
+        </p>
+      </div></a>
+    {{ end }}
+  {{ end }}
+  <p style="font-size:90%;"><a href="/post/" style="text-decoration:none;">More Featured Announcements &raquo;</a></p>
