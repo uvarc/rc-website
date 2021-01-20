@@ -13,7 +13,7 @@
     <thead class="thead-inverse">
       <tr>
         <th scope="row">Queue</th>
-        <th>Jobs</th>
+        <th style="text-align:right;padding-right:0.6rem;">Jobs</th>
       </tr>
     </thead>
     <tbody id="jobsBody"></tbody>
@@ -71,7 +71,7 @@ function refreshStatusTable(){
         var statusData = '';
         $.each(data, function(key, value) {
             statusData += '<tr>';
-            statusData += '<td>'+value.title+'</td>';
+            statusData += '<td style="vertical-align:middle;" valign="middle">'+value.title+'</td>';
             statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src='+value.image+' /></td>';
             statusData += '</tr>';
         });
@@ -85,7 +85,7 @@ function refreshJobsTable(){
         $.each(data, function(key, value) {
             jobData += '<tr>';
             jobData += '<td>'+value.partition+'</td>';
-            jobData += '<td>'+value.jobs+'</td>';
+            jobData += '<td style="text-align:right;padding-right:0.6rem;">'+value.jobs+'</td>';
             jobData += '</tr>';     
         });
         $('#jobsBody').html(jobData);
