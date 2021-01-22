@@ -2,9 +2,9 @@
 author = "RC Staff"
 description = ""
 title = "Computing Environments at UVA"
-date = "2019-09-16T10:08:29-05:00"
+date = "2021-01-16T10:08:29-05:00"
 draft = false
-tags = ["compute","rivanna","ivy","cloud","aws","hpc","containers","dcos"]
+tags = ["compute","rivanna","ivy","containers","systems","hipaa","hpc","dcos"]
 categories = ["userinfo"]
 images = [""]
 +++
