@@ -2,9 +2,9 @@
 author = "RC Staff"
 description = ""
 title = "Pricing"
-date = "2019-06-18T10:08:29-05:00"
+date = "2021-01-18T10:08:29-05:00"
 draft = false
-tags = ["compute","rivanna","ivy","hpc","allocations","storage"]
+tags = ["compute","rivanna","ivy","hpc","allocations","storage","omero"]
 categories = ["userinfo"]
 images = [""]
 +++
@@ -69,7 +69,7 @@ images = [""]
 
 {{< ivy-pricing >}}
 
-[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy/overview) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](/)
+[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy/overview) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](https://services.rc.virginia.edu/)
 
 - - -
 

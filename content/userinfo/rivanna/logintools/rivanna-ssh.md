@@ -1,9 +1,9 @@
 +++
 description = ""
-title = "SSH on Rivanna"
+title = "`ssh` on Rivanna"
 draft = false
-date = "2020-01-17 T13:45:12-05:00"
-tags = ["rivanna","login","hpc","ssh"]
+date = "2021-01-17 T13:45:12-05:00"
+tags = ["rivanna","login","hpc","ssh","cli"]
 categories = ["userinfo"]
 images = [""]
 author = "Staff"
@@ -11,13 +11,13 @@ type = "rivanna"
 
 +++
 
-<p class="lead">SSH is the secure shell. It is the primary application used to access Rivanna from the command line.</p>
+<p class="lead">`ssh` is the secure shell. It is the primary application used to access Rivanna from the command line.</p>
 
 - - -
 
 # Connecting to a Remote Host
 
-For Windows, [MobaXterm](/userinfo/rivanna/logintools/mobaxterm) is our recommended ssh client; this package also provides an SFTP client and an X11 server in one bundle.
+For Windows, [MobaXterm](/userinfo/rivanna/logintools/mobaxterm) is our recommended `ssh` client; this package also provides an SFTP client and an X11 server in one bundle.
 
 Mac OSX and Linux users access the cluster from a terminal through OpenSSH, which are preinstalled on these operating systems. Open a terminal (on OSX, the Terminal application) and type
 ```
@@ -26,13 +26,13 @@ ssh -Y mst3k@rivanna.hpc.virginia.edu
 
 where `mst3k` should be replaced by your user ID. You will generally need to use this format unless you set up your user account on your Mac or Linux system with your UVA ID. 
 
-Please note that ssh *will not* echo your password or move your cursor as you type.
+Please note that `ssh` *will not* echo your password or move your cursor as you type.
 
 Mac users will need to install [XQuartz](https://xquartz.org) in order to use graphical applications through a shell (the -Y option will permit this).
 
-# Passwordless SSH
+# Passwordless `ssh` using keys
 
-Sometimes you will need to enable passwordless ssh. We allow passwordless ssh to frontend nodes from UVA IP addresses.  
+Sometimes you will need to enable passwordless `ssh`. We allow passwordless `ssh` to frontend nodes from UVA IP addresses.  
 
 ## Windows
 
@@ -68,17 +68,17 @@ Log in to Rivanna through a terminal, then type
 cat ~/.ssh/mykey.pub >> ~/.ssh/authorized_keys
 ```
 
-## Passwordless SSH Between Nodes
+## Passwordless `ssh` Between Nodes
 
-If you are permitted to use passwordless ssh between Rivanna compute nodes, such as for ANSYS, follow the instructions for Mac and Linux but generate the key directly on a Rivanna frontend. Use the cat command to append the key to your authorized_keys file.</p>
+If you are permitted to use passwordless `ssh` between Rivanna compute nodes, such as for ANSYS, follow the instructions for Mac and Linux but generate the key directly on a Rivanna frontend. Use the cat command to append the key to your authorized_keys file.</p>
 
 # Troubleshooting
 
-- When you log in to a new host, SSH will ask whether you wish to accept the host key. You must answer yes explicitly in order to procede.
+- When you log in to a new host, `ssh` will ask whether you wish to accept the host key. You must answer yes explicitly in order to procede.
 
-- When off Grounds, you must use the [UVA Anywhere](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0) client in order to connect to on-Grounds resources. If you do not, your attempt to use ssh will hang with no messages.
+- When off Grounds, you must use the [UVA Anywhere](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0) client in order to connect to on-Grounds resources. If you do not, your attempt to use `ssh` will hang with no messages.
 
-- A relatively short period of inactivity may cause ssh connections to time out.  Mac OSX and Linux users can reduce this by setting a configuration value. At the terminal change to your `~/.ssh` directory
+- A relatively short period of inactivity may cause `ssh` connections to time out.  Mac OSX and Linux users can reduce this by setting a configuration value. At the terminal change to your `~/.ssh` directory
 ```
 cd ~/.ssh
 ```
@@ -91,11 +91,11 @@ There should be one or more spaces at the beginning of the second line.
 
     - MobaXterm users should see the [documentation](/userinfo/rivanna/logintools/mobaxterm) for instructions to enable KeepAlive.
 
-- When in doubt, you can obtain more information by running ssh with the -v (verbose) flag.
+- When in doubt, you can obtain more information by running `ssh` with the -v (verbose) flag.
 ```
 ssh -v -Y mst3k@rivanna.hpc.virginia.edu
 ```
-- A common error message from SSH is when a host key changes, such as after an upgrade. This will appear as a message containing lines such as
+- A common error message from `ssh` is when a host key changes, such as after an upgrade. This will appear as a message containing lines such as
 ```
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @

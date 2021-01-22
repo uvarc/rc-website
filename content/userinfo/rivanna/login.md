@@ -18,6 +18,7 @@ type = "rivanna"
 # Web-based Access
 
 <img alt="OpenOnDemand" src="/images/ood.png" align="right" style="max-width:30%;">
+
 Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser.  The Open OnDemand access point is rivanna-portal.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our [Open OnDemand documentation](/userinfo/rivanna/ood/overview) page.
 
 [<button class="btn btn-primary">Launch Open OnDemand</button>](https://rivanna-portal.hpc.virginia.edu/)
@@ -44,17 +45,17 @@ ssh -Y mst3k@rivanna.hpc.virginia.edu
 
 [SSH key authentication](/userinfo/rivanna/logintools/rivanna-ssh) is also permissible. 
 
-## Using X11 Applications with SSH
+## <i class="fas fa-terminal"></i> Using X11 Applications with `ssh`
 
-X11 applications can be run via an ssh connection as long as it is configured correctly.  The `-Y` option specifies this for the command-line application run in a terminal.
+X11 applications can be run via an `ssh` connection as long as it is configured correctly.  The `-Y` option specifies this for the command-line application run in a terminal.
 
-Windows users who install MobaXterm do not need to add `-Y` in an ssh session since this is the default for MobaXterm.  Other clients such as PuTTY must be configured to allow X11 packets to be transferred. 
+Windows users who install MobaXterm do not need to add `-Y` in an `ssh` session since this is the default for MobaXterm.  Other clients such as PuTTY must be configured to allow X11 packets to be transferred. 
 
 Mac users must install [XQuartz](https://xquartz.org) in order to be able to run graphical (X11) applications locally.  
 
-Graphical X11 applications may be slow through a standard ssh login. For extensive use of graphical applications we recommend [FastX](/userinfo/rivanna/logintools/fastx).
+Graphical X11 applications may be slow through a standard `ssh` login. For extensive use of graphical applications we recommend [FastX](/userinfo/rivanna/logintools/fastx).
 
-For more details and for troubleshooting information, please see our [ssh](/userinfo/rivanna/logintools/rivanna-ssh) page.
+For more details and for troubleshooting information, please see our [`ssh`](/userinfo/rivanna/logintools/rivanna-ssh) page.
 
 - - -
 
