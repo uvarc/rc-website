@@ -15,7 +15,7 @@ Instructors can request _instructional allocations_ on Rivanna for classes and e
 
 ## Hardware and Partition
 
-Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 25,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days subsequent to it.  Class allocations also can access 50GB of shared storage temporarily.  The standard number of cores is 20 on one node.
+Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 25,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards.  Class allocations come with 50GB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. The standard number of cores is 20 on one node.
 
 ## Software
 
@@ -31,7 +31,7 @@ FastX connects only to a *frontend*.  We significantly restrict the time, memory
 
 # How to Submit a Request
 
-Instructors planning to use Rivanna should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  If this is the first use, we will create the MyGroups allocation group.  We suggest a group name related to the course rubric and the instructor's name, e.g. `cs5014-mst3k`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated.
+Instructors planning to use Rivanna should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  If this is the first use, we will create the MyGroups allocation group.  We suggest a group name related to the course rubric and the instructor's name, e.g. `cs5014-mst3k`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester. 
 
 # Using the Allocation
 
