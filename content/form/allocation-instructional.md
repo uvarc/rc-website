@@ -40,6 +40,19 @@ private = true
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="mygroup-users" name="mygroup-users" cols="60" rows="5"></textarea>
     </div>
   </div>
+  <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
+    <div class="row">
+      <div id="new-or-renewal" class="form-radios col">
+        <div class="form-item form-type-radio radio"> <label class="control-label" for="new-or-renewal-1">
+          <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" checked="checked" class="form-radio" />&nbsp;New</label>
+        </div>
+        <div class="form-item form-type-radio radio"> <label class="control-label" for="new-or-renewal-2">
+          <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />&nbsp;Renewal</label>
+        </div>
+      </div>
+      <div class="help-block col">If this is your first request, select New.  Otherwise select Renewal.</div>
+    </div>
+  </div>  
   <div class="row">
     <div class="col form-item form-group form-type-textfield"> <label class="control-label" for="class-id">Class ID <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="class-id" name="class-id" value="" size="60" maxlength="128" />
@@ -58,11 +71,19 @@ private = true
       <input required="required" class="form-control form-text required" type="text" id="class-schedule" name="class-schedule" value="" size="60" maxlength="128" />
     </div>
   </div>
+  
   <div class="form-item form-type-textarea form-group"> <label class="control-label" for="resources-required">Cores/Memory Required <span class="form-required" title="This field is required.">*</span></label>
     <p style="font-size:80%;">Estimate how many cores and how much memory each student will need to process his/her jobs. General descriptions are fine. A member of our user services team will contact you if we need additional information.</p>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea required" id="resources-required" name="resources-required" cols="60" rows="5"></textarea>
     </div>
   </div>
+  <div class="col form-item form-group">
+     <div class="alert alert-warning">
+        Instructional allocations come with 50GB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension.
+     	<a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
+     </div>
+  </div>
+
   <input type="hidden" name="details" />
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />

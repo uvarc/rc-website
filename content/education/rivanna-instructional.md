@@ -15,11 +15,11 @@ Instructors can request _instructional allocations_ on Rivanna for classes and e
 
 ## Hardware and Partition
 
-Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 25,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards.  Class allocations come with 50GB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. The standard number of cores is 20 on one node.
+Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 25,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards.  Instructional allocations come with 50GB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. The standard number of cores is 20 on one node.
 
 ## Software
 
-Instructors may submit requests for staff to install software.  Unless it is of general research interest, the software will be installed to the class shared storage space without a module.  Instructors must provide guidance to the students on how to use the software.  Instructors who are able to install software themselves should consider doing so; staff will attempt to fulfill requests as quickly as possible, but cannot guarantee as rapid a response as if the instructor installs it.
+Instructors may submit requests to RC staff for help installing software.  Unless it is of general research interest, the software will be installed to the class shared storage space without a module.  Instructors must provide guidance to the students on how to use the software.  Instructors who are able to install software themselves should consider doing so; RC staff will attempt to fulfill requests quickly, but cannot guarantee as rapid a response as if the instructor installs it himself/herself.
 
 ## Interface
 
@@ -35,7 +35,7 @@ Instructors planning to use Rivanna should fill out the [form](https://www.rc.vi
 
 # Using the Allocation
 
-Prior to the first class use, instructors should test the allocation and the software applications required during class.  Please do not wait till multiple students are attempting to use it.  
+Prior to the first class use, instructors should test the allocation and the software applications required during class.  Please do not wait until multiple students are attempting to use it.  
 
 ## Passwords
 Students, particularly undergraduates, frequently experience password difficulties.  Rivanna uses the Eservices password to authenticate, but few students know this password.  Instructors are urged to communicate to students that they should go to the ITS [password page](https://virginia.service-now.com/its?id=itsweb_services&category_id=869613f3db9fc7c0f032f1f51d9619ce) at least several hours in advance and change their Netbadge password before using the system.  Changing the Netbadge password will sync the Eservices password with it.
