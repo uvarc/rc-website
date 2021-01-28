@@ -78,7 +78,7 @@ Time on Rivanna can also be purchased using a PTAO. Purchasers are given a highe
 - - -
 
 ## Instructional Allocations
-Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014.
+Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014. Instructional allocations come with 50GB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
 <a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
 <a href="/form/allocation-instructional/">
 
