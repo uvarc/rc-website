@@ -36,9 +36,10 @@ private = true
   <div class="form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
-  <div class="form-item form-type-textarea form-group"> <label class="control-label" for="mygroup-users">Others to add to MyGroups account (UVA computing IDs separated by commas)</label>
-    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="mygroup-users" name="mygroup-users" cols="60" rows="5"></textarea>
-    </div>
+  <div class="col form-item form-group">
+     <div class="alert alert-warning">
+        Instructors are responsible for updating the class roster for the chosen account through the <a href="https://mygroups.virginia.edu/">ITS MyGroups portal</a>.
+     </div>
   </div>
   <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
     <div class="row">
