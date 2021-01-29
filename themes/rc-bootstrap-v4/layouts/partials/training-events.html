@@ -12,13 +12,21 @@
       <tbody>
         {{ $url := "http://apidata.uvarc.io/events.csv" }}
         {{ $sep := "," }}
-        {{ $workshops := getCSV $sep $url }}
-        {{ range first 5 $workshops }}
-          {{ $w := . }}
+        {{ $counter:=0 }}
+        {{- range $i, $r := getCSV $sep $url -}}
+        {{- $title:=index $r 0 -}}
+        {{- $scheduled_date:=replace (index $r 1) "/" "-" -}}
+        {{- $link:=index $r 2 -}}
+        {{- $instructor:=index $r 3 -}}
+        {{- $last_date:=last 1 (split $scheduled_date ",") -}}
+        {{- $last_date:=time (index $last_date 0) -}}
+        {{- if and ( lt $counter 5) (not ($last_date.Before now)) -}}
           <tr>
-            <td scope="row" style="width:70%;"><a href="{{ index $w 2 }}" target="_new">{{ index $w 0 }}</a></td>
-            <td>{{ index $w 1}}</td>
+            <td scope="row" style="width:70%;"><a href="{{ $link }}" target="_new">{{ $title }}</a></td>
+            <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }} {{ end }}</td>
           </tr>
+          {{ $counter = add $counter 1}}
+         {{ end }} 
       {{ end }}
       </tbody>
     </table>
