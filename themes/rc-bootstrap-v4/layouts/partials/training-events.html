@@ -20,7 +20,7 @@
         {{- $instructor:=index $r 3 -}}
         {{- $last_date:=last 1 (split $scheduled_date ",") -}}
         {{- $last_date:=time (index $last_date 0) -}}
-        {{- if and ( lt $counter 5) (not ($last_date.Before now)) -}}
+        {{- if and ( lt $counter 5) ($last_date.After (now.AddDate 0 0 -1)) -}}
           <tr>
             <td scope="row" style="width:70%;"><a href="{{ $link }}" target="_new">{{ $title }}</a></td>
             <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }} {{ end }}</td>
