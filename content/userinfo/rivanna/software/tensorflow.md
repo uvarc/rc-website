@@ -145,10 +145,11 @@ Due to the overlay, these directories are by default the same inside and outside
 
 # TensorBoard
 
-In a [FastX Web](/userinfo/rivanna/logintools/fastx/) session, request an ijob (see above) and enter:
+Request a Desktop session under Interactive Apps via [Open OnDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the SLURM job. Launch the session and open a terminal in the desktop. Enter these commands (using `tensorflow/2.1.0-py37` as an example):
+
 ```
-$ module load singularity tensorflow
-$ singularity shell --nv /scratch/$USER/tensorflow-2.1.0-py37.sif
+$ module load singularity tensorflow/2.1.0-py37
+$ singularity shell --nv $CONTAINERDIR/tensorflow-2.1.0-py37.sif
 Singularity> python -m tensorboard.main --logdir=logdir
 ```
 
