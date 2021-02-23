@@ -26,8 +26,6 @@ $(document).ready(function() {
     setInterval(refreshStatusTable, 60000);
     checkStatusMessages();
     setInterval(checkStatusMessages, 60000);
-    refreshJobsTable();
-    setInterval(refreshJobsTable, 60000);
 });
 
 function checkStatusMessages() {
@@ -58,19 +56,6 @@ function refreshStatusTable(){
             statusData += '</tr>';
         });
         $('#statusBody').html(statusData);
-    });
-}
-
-function refreshJobsTable(){
-    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/jobs', function(data) {
-        var jobData = '';
-        $.each(data, function(key, value) {
-            jobData += '<tr>';
-            jobData += '<td>'+value.partition+'</td>';
-            jobData += '<td style="text-align:right;padding-right:0.6rem;">'+value.jobs+'</td>';
-            jobData += '</tr>';     
-        });
-        $('#jobsBody').html(jobData);
     });
 }
 
