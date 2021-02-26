@@ -9,7 +9,6 @@ categories = [
 ]
 date = "2019-06-23T08:37:46-05:00"
 tags = [
-  "lang",
   "gurobi",
 ]
 draft = false
@@ -91,3 +90,12 @@ To check the version of your `python`, run `python -V`.
 If you followed these instructions and still have trouble importing `gurobipy` in your Python script, please use the Gurobi Python `python3.7`.
 
 ## Matlab
+
+## Julia
+
+The `GUROBI_HOME` environment variable is already defined. Load the `julia` module and run:
+```julia
+import Pkg
+Pkg.add("Gurobi")
+Pkg.build("Gurobi")
+```
