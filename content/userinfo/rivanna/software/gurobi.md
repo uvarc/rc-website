@@ -74,13 +74,13 @@ To check the version of your `python`, run `python -V`.
 #### 2.7
 If you are using the system Python (i.e. without loading any Anaconda or Python modules) or the `anaconda/2019.10-py2.7` module, run:
 ```bash
-export PYTHONPATH=$EBROOTGUROBI/lib/python2.7_utf32
+export PYTHONPATH=$GUROBI_HOME/lib/python2.7_utf32
 ```
 
 #### 3.6
 Python 3.6 is provided through, for instance, `anaconda/5.2.0-py3.6`. Run:
 ```bash
-export PYTHONPATH=$EBROOTGUROBI/lib/python3.6_utf32
+export PYTHONPATH=$GUROBI_HOME/lib/python3.6_utf32
 ```
 
 #### 3.7
