@@ -71,19 +71,22 @@ The module provides support for Python versions 2.7, 3.6, and 3.7. Please follow
 To check the version of your `python`, run `python -V`.
 
 - 2.7
-If you are using the system Python (i.e. without loading any Anaconda or Python modules) or the `anaconda/2019.10-py2.7` module, run:
-```bash
-export PYTHONPATH=$GUROBI_HOME/lib/python2.7_utf32
-```
+
+    If you are using the system Python (i.e. without loading any Anaconda or Python modules) or the `anaconda/2019.10-py2.7` module, run:
+    ```bash
+    export PYTHONPATH=$GUROBI_HOME/lib/python2.7_utf32
+    ```
 
 - 3.6
-Python 3.6 is provided through, for instance, `anaconda/5.2.0-py3.6`. Run:
-```bash
-export PYTHONPATH=$GUROBI_HOME/lib/python3.6_utf32
-```
+
+    Python 3.6 is provided through, for instance, `anaconda/5.2.0-py3.6`. Run:
+    ```bash
+    export PYTHONPATH=$GUROBI_HOME/lib/python3.6_utf32
+    ```
 
 - 3.7
-Python 3.7 is available through, for instance, `anaconda/2019.10-py3.7`. There should be no extra setup.
+
+    Python 3.7 is provided through, for instance, `anaconda/2019.10-py3.7`. No extra setup is needed.
 
 If you followed these instructions and still have trouble importing `gurobipy` in your Python script, please use the Gurobi Python `python3.7`.
 
