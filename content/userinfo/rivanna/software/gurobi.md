@@ -60,31 +60,29 @@ gurobi.sh
 ```
 
 ## Python
-### Import `gurobipy` as a Python module
+To import `gurobipy` as a Python module, you can either use Gurobi's own `python3.7` executable or a different `python`.
 
-You can either use Gurobi's own `python3.7` executable or a different `python`.
-
-#### Gurobi Python
+### Gurobi Python
 Please replace `python` with `python3.7` in your SLURM scripts.
 
-#### Non-Gurobi Python
+### Non-Gurobi Python
 The module provides support for Python versions 2.7, 3.6, and 3.7. Please follow the instructions in the `module load` message.
 
 To check the version of your `python`, run `python -V`.
 
-##### 2.7
+- 2.7
 If you are using the system Python (i.e. without loading any Anaconda or Python modules) or the `anaconda/2019.10-py2.7` module, run:
 ```bash
 export PYTHONPATH=$GUROBI_HOME/lib/python2.7_utf32
 ```
 
-##### 3.6
+- 3.6
 Python 3.6 is provided through, for instance, `anaconda/5.2.0-py3.6`. Run:
 ```bash
 export PYTHONPATH=$GUROBI_HOME/lib/python3.6_utf32
 ```
 
-##### 3.7
+- 3.7
 Python 3.7 is available through, for instance, `anaconda/2019.10-py3.7`. There should be no extra setup.
 
 If you followed these instructions and still have trouble importing `gurobipy` in your Python script, please use the Gurobi Python `python3.7`.
