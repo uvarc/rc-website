@@ -54,12 +54,13 @@ Please submit a ticket if you are UVA faculty/staff/student and need access to t
 There are several ways to use Gurobi. First load the module.
 
 ## Gurobi command prompt
+Run:
 ```
 gurobi.sh
 ```
 
 ## Python
-To import `gurobipy` as a Python module, you can either use Gurobi's own `python3.7` executable or a different `python`.
+To import `gurobipy` as a Python module, you can use either Gurobi's own `python3.7` executable or a different `python`.
 
 ### Gurobi Python
 Please replace `python` with `python3.7` in your SLURM scripts.

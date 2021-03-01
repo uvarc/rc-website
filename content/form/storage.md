@@ -86,7 +86,7 @@ private = true
   </div>
   <div class="col form-item form-group">
   <div class="alert alert-warning">
-     In order to ensure the long-term stability of our new storage system, RC’s engineering team is working closely with our vendors to resolve a number of recent storage network problems. Consequently, new project and value storage shares are temporarily unavailable. We apologize for the inconvenience.
+     RC engineers are working closely with vendors to calibrate value storage. Consequently, new shares of value storage are temporarily unavailable. We apologize for the inconvenience.
   </div>
   </div>
   <hr size=1 />
