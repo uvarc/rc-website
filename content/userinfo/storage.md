@@ -49,7 +49,7 @@ images = [""]
     <td class="">{{% storage-pricing project %}}/TB/yr</td>
     <td class="">{{% backup-policy project %}}</td>
     <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-    <td class=""><b>Currently not available.</b> <code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for sharing data within a research group and for running jobs with smaller files.</td>
+    <td class=""><code>/project</code>is ideal for long-term storage of data to be accessed from Rivanna. <code>/project</code> is ideal for sharing data within a research group and for running jobs with smaller files.</td>
   </tr>
   <tr>
     <td class=""><a href="/userinfo/storage/research-value">Value Storage</a></td>
@@ -71,7 +71,7 @@ images = [""]
 </table>
 
 <div class="alert alert-warning">
-  In order to ensure the long-term stability of our new storage system, RC’s engineering team is working closely with our vendors to resolve a number of recent storage network problems. Consequently, new project and value storage shares are temporarily unavailable. We apologize for the inconvenience.
+  RC engineers are working closely with vendors to calibrate value storage. Consequently, new shares of value storage are temporarily unavailable. We apologize for the inconvenience.
 </div>
 
 - - -
