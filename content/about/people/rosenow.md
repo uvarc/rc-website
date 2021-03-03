@@ -16,7 +16,10 @@ subjects = [
   "bioinformatics",
   "rivanna",
   "storage",
+  "python",
+  "R"
 ]
 +++
 
-More about this user goes here.
+Will specializes in bioinformatics, biostatistics, and the ACCORD project. Prior to joining Research Computing, he worked on single-cell RNA-seq and ATAC-seq data in the Farber Lab here at UVA. 
+
