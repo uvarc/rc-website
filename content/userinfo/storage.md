@@ -59,14 +59,6 @@ images = [""]
     <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
     <td class=""><b>Currently not available.</b> Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
-  <tr>
-    <td class="">Archive Storage</td>
-    <td class="">1TB increments</td>
-    <td class="">{{% storage-pricing zfs %}}/TB/yr</td>
-    <td class="">{{% backup-policy zfs %}}</td>
-    <td class="">Rivanna</a></td>
-    <td class=""><b>Currently not available.</b> ZFS NAS storage can be mounted on your desktop and allows for file sharing among research team members.</td>
-  </tr>
   </tbody>
 </table>
 
