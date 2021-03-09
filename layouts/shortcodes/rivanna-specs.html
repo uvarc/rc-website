@@ -3,14 +3,14 @@
 <table class="table" style="font-weight:normal;">
   <thead>
      <tr>
-        {{ range $header }} <th scope="col">{{ . }}</th> {{ end }}
+        {{- range $header -}} <th style="text-align:right" scope="col">{{ . }}</th> {{- end -}}
      </tr>   
   </thead>
   <tbody>
     {{- range $index, $line := $data -}}      
       <tr>
       {{- if ne $index 0 -}}
-        {{ range $line }} <td>{{ . }}</td> {{ end }}
+        {{- range $line -}} <td style="text-align:right">{{ . }}</td> {{- end -}}
       {{- end -}}  
       </tr>
     {{- end -}}
