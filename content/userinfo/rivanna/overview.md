@@ -166,7 +166,7 @@ A high performance computing cluster is typically made up of at least four servi
     </div>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
-		{{% rivanna-specs %}}
+		{{< rivanna-specs >}}
       </div>
     </div>
   </div>
