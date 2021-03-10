@@ -40,6 +40,10 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
+# License and Permission
+We have a site license. Please contact us if you need access to the software.
+
+For research, please load `gaussian`. For course work, please load `gaussian/grads16`.
 
 # GaussView
 The GaussView graphical interface is available on Rivanna.  Users must log in through a client capable of displaying X11 graphics.  We recommend [FastX Web](/userinfo/rivanna/logintools/fastx).  GaussView can be used to create input files for Gaussian jobs which should then be submitted to the compute nodes.  To start GaussView, in an X11-enabled terminal first load the gaussian module as above, then run
@@ -47,6 +51,16 @@ The GaussView graphical interface is available on Rivanna.  Users must log in th
 gview &
 ```
 The ampersand (&) returns the terminal to input mode while GaussView is running.  Most use of GaussView will probably fit within the limits for frontend interactive use, but for very long or large GV jobs, please submit an [ijob (interactive job)](/userinfo/rivanna/slurm/#submitting-an-interactive-job).
+
+Note: If the above command launches a text editor instead of GaussView, either you have not been granted access or your `PATH` is incorrectly configured. In either case, please run the following commands and send us the output:
+
+```bash
+module load gaussian # or gaussian/grads16, see explanation in previous section
+id
+which g16
+which gview
+echo $PATH
+```
 
 # Single-Core SLURM Script
 This is a SLURM job command file to run a Gaussian 16 batch job. In this example, the Gaussian 16 input is in the file `h2o.com`.  If no output file is specified, it will go to `h2o.log`.  The script assumes it will be submitted from the user's `/scratch` directory and the input file is in the same directory.  Gaussian also tends to use a lot of memory, so we make sure to request the amount per core that is available.  We pass that to g16 with the `-m` flag.  Be sure the value is less than or equal to what you request from SLURM.
