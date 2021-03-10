@@ -36,11 +36,6 @@ module spider anaconda
 
 The module version extensions, i.e. py2.7 and py3.6, indicate the version of the Python interpreter.
 
-To load the `anaconda/5.2.0-py2.7` module which sets up your environment to use the Python 2.7 interpreter, run this command:
-```
-module load anaconda/5.2.0-py2.7
-```
-
 # Python and MPI
 
 {{< module-description module="mpi4py" >}} On Rivanna, we provide mpi4py libraries via dedicated modules that are built using the GCC compiler and OpenMPI libraries.
