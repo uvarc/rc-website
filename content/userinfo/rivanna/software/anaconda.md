@@ -61,7 +61,7 @@ Open the bash terminal, and type:
 Open the bash terminal, and type:
 
 1. `pip search package_name` (search for a package by name)
-2. `pip install package_name` (install a package)
+2. `pip install --user package_name` (install a package)
 3. `pip update package_name --upgrade` (upgrade the package to latest stable version)
 4. `pip list` (list all installed packages)
 
