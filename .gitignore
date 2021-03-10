@@ -1,4 +1,5 @@
 # Ignore a few things:
+.*.swp
 wercker.yml
 public/
 update.sh
