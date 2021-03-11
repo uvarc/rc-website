@@ -50,6 +50,7 @@ timeout = "60000"
   description = "Creating innovative solutions for researchers"
   pageNotFoundTitle = "404 - Page not found"
   rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
+  rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
 
 [params.backups]
   rivanna_home = "1-week snapshots"
