@@ -807,8 +807,9 @@ window.onload = function() {
 </head>
 <body>
 
-<div class="return-home" style="float:left;text-align:left;">
-  <p style="color:white;font-family:sans-serif;font-size:10px;">Press 0 to Return</p>
+<div style="float:left;text-align:left;margin-left:1rem;">
+  <p class="return-home" style="color:white;font-family:sans-serif;font-size:10px;">Press 0 to Return</p>
+  <p id="stat_display" style="color:white;font-family:sans-serif;font-size:10px;"></p>
 </div>
 
 <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
@@ -820,11 +821,25 @@ window.onload = function() {
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
-url = 'https://l3aug2a1of.execute-api.us-east-1.amazonaws.com/api/plays'
 
-$.ajax({
-  url: url,
+const url = 'https://l3aug2a1of.execute-api.us-east-1.amazonaws.com/api/plays';
+fetch(url)
+.catch(function(error) {
+  console.log(error);
 });
+
+const ul = document.getElementById('stat_display');
+const purl = 'https://l3aug2a1of.execute-api.us-east-1.amazonaws.com/api/report';
+fetch(purl)
+.then((resp) => resp.json())
+.then(function(data) {
+  let plays = data.plays;
+  ul.innerHTML = plays + " plays";
+  })
+.catch(function(error) {
+  console.log(error);
+});
+
 </script>
 
 </body>
