@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2021-01-06T15:25:10-05:00"
+date = "2021-03-06T15:25:10-05:00"
 title = "Neal Magee, PhD"
 job_title = "Solution Architect"
 lastname = "magee"
@@ -15,7 +15,7 @@ subjects = [
   "cloud",
   "containers",
   "databases",
-  "globus",
+  "accord",
   "python",
   "infrastructure",
 ]
