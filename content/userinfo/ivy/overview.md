@@ -142,7 +142,7 @@ remote desktop software to connect to the desktop GUI of your VM. These options 
 **MacOSX Users:**
 
 * Terminal (for SSH, built-in. Can be found in Applications -> Utilities -> Terminal)
-* Microsoft Remote Desktop (for remote desktop to Windows or CentOS VMs, [download here](https://itunes.apple.com/us/app/microsoft-remote-desktop/id715768417?mt=12))
+* Microsoft Remote Desktop (for remote desktop to Windows or CentOS VMs, [download here](https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12)
 
 **Windows Users:**
 
