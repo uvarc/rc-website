@@ -84,11 +84,6 @@ private = true
     <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Standard / Moderately Sensitive Data</h6>This storage platform is appropriate for public, non-sensitive or moderately sensitive data.</div>
     <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
   </div>
-  <div class="col form-item form-group">
-  <div class="alert alert-warning">
-     RC engineers are working closely with vendors to calibrate value storage. Consequently, new shares of value storage are temporarily unavailable. We apologize for the inconvenience.
-  </div>
-  </div>
   <hr size=1 />
   <div class="row">
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 

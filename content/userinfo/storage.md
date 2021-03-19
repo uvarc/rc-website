@@ -57,14 +57,12 @@ images = [""]
     <td class="">{{% storage-pricing value %}}/TB/yr</td>
     <td class="">{{% backup-policy value %}}</td>
     <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-    <td class=""><b>Currently not available.</b> Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
+    <td class="">Research value storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run SLURM jobs against value storage unless absolutely necessary. File operations on value storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>
   </tbody>
 </table>
 
-<div class="alert alert-warning">
-  RC engineers are working closely with vendors to calibrate value storage. Consequently, new shares of value storage are temporarily unavailable. We apologize for the inconvenience.
-</div>
+
 
 - - -
 
