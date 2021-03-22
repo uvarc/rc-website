@@ -356,7 +356,7 @@ the following commands:
 
 ```
 % Launch Matlab parallel code across two compute nodes
-j=c.batch(@pcalc2Test1,1,{400,400,'myOutput1'},'pool',procs-1);
+j=pc.batch(@pcalc2Test1,1,{400,400,'myOutput1'},'pool',procs-1);
 
 % Arguments of c.batch in order
 
@@ -374,11 +374,11 @@ j.State
 j.wait
 
 % Get output from the job
-j.fetchOutputs
+j.diary
 
 % Command to use to get back debug information if a job crashes
 % For parallel jobs (i.e. calling batch with pool>0)
-j.Parent.getDebugLog(j)
+% j.Parent.getDebugLog(j)
 ```
 ## `spmd` example
 The previous example distributes the iterations of a `parfor` loop across
@@ -415,11 +415,11 @@ j=pc.batch(@solver_large1,2,{20000,'myOutput2'},'Pool',procs-1);
 
 wait(j);
 j.State
-j.fetchOutputs{:}
+j.diary
 
 % Command to use to get back debug information if a job crashes
 % For parallel jobs (i.e. calling batch with pool>0)
-j.Parent.getDebugLog(j)
+% j.Parent.getDebugLog(j)
 ```
 
 The function `solver_large1` looks like the following:
