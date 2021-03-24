@@ -50,7 +50,7 @@ The CellProfiler container image file is provided in a shared user space.  For b
 
 In a Rivanna terminal window execute these commands:
 ```
-module load singularity/3.5.2
+module load singularity
 module load cellprofiler/3.1.8
 cp $CONTAINERDIR/cellprofiler-3.1.8.sif /scratch/$USER
 ```
@@ -90,7 +90,7 @@ To start an interactive job (ijob) and launch the CellProfiler graphical user in
 ijob -A YOUR_ALLOCATION -c 1 -p standard
 ```
 ```
-module load singularity/3.5.2
+module load singularity
 module load cellprofiler/3.1.8
 singularity run /scratch/$USER/cellprofiler-3.1.8.sif
 ```
@@ -136,7 +136,7 @@ The SLURM job script `cellprofiler.slurm`:
 #SBATCH --mem-per-cpu=9000
 
 module purge
-module load singularity/3.5.2
+module load singularity
 module load cellprofiler/3.1.8
 
 FIRST_IMG_INDEX=$SLURM_ARRAY_TASK_ID

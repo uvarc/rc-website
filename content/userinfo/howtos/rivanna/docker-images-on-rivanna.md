@@ -25,7 +25,7 @@ Instructions are provided in each of the following sections.
 Docker images hosted on Docker Hub can be downloaded and converted in one step via the `singularity pull` command:
 
 ```
-module load singularity/3.5.2
+module load singularity
 singularity pull docker://account/image
 ```
 
@@ -86,7 +86,7 @@ From: account/image:version
 After you have obtained the converted `*.sif` Singularity image, you can use it by:
 
 ```
-module load singularity/3.5.2
+module load singularity
 singularity run|exec|shell image.sif
 ```
 

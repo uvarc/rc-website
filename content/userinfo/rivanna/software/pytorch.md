@@ -19,7 +19,7 @@ Similar to other popular deep learning frameworks like TensorFlow, Theano and CN
 The PyTorch Singularity module is available on Rivanna:
 
 ```
-module load singularity/3.5.2
+module load singularity
 module load pytorch/1.4.0-py37
 ```
 
@@ -69,7 +69,7 @@ To run commands in an GPU-enabled container image, load the singularity module a
 
 **For example:**
 ```
-module load singularity/3.5.2
+module load singularity
 singularity run --nv ~/pytorch-1.4.0-py37.sif pytorch_example.py
 ```
 In the container build script, `python` was defined as the default command to be executed and singularity passes the argument(s) after the image name, i.e. `pytorch_example.py`, to the python interpreter. So the above singularity command is equivalent to
@@ -91,7 +91,7 @@ Example SLURM Batch Script
 #SBATCH -A mygroup
 
 module purge
-module load singularity/3.5.2
+module load singularity
 
 # Assuming that the container has been copied to the user's home directory
 singularity run --nv ~/pytorch-1.4.0-py37.sif pytorch_example.py
@@ -107,7 +107,7 @@ ijob  -A mygroup -p gpu --gres=gpu -c 1
 ```
 ```
 module purge
-module load singularity/3.5.2
+module load singularity
 singularity run --nv ~/pytorch-1.4.0-py37.sif pytorch_example.py
 ```
 

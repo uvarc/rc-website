@@ -112,7 +112,7 @@ Some groups and departments have installed a bundle of software they need into s
 ## Can I run this Docker container on Rivanna?
 We do not run Docker on Rivanna.  Instead we use Singularity.  Singularity can run Docker images directly, or you can convert a Docker image to a Singularity image.  To import existing Docker images, use the `singularity pull` command.
 ```
-module load singularity/3.5.2
+module load singularity
 singularity pull docker://account/image
 ```
 
