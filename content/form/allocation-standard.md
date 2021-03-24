@@ -35,14 +35,15 @@ private = true
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="add-uids" name="add-uids" cols="60" rows="3"></textarea>
     </div>
   </div>
-  <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-type-radios form-group"> 
+    <label class="control-label" for="new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
     <div class="row">
-      <div id="new-or-renewal" class="form-radios col">
+      <div id="new-or-renewal-options" class="form-radios col">
         <div class="form-item form-type-radio radio"> <label class="control-label" for="new-or-renewal-1">
-          <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" checked="checked" class="form-radio" />&nbsp;New</label>
+          <input onclick="getStandardAllocType()" "required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" checked="checked" class="form-radio" />&nbsp;New</label>
         </div>
         <div class="form-item form-type-radio radio"> <label class="control-label" for="new-or-renewal-2">
-          <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />&nbsp;Renewal</label>
+          <input onclick="getStandardAllocType()" "required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />&nbsp;Renewal</label>
         </div>
       </div>
       <div class="help-block col">If this is your first request, select New.  Otherwise select Renewal.</div>
@@ -72,6 +73,15 @@ private = true
       </div>
     </div>
   </div>
+  
+  <div class="form-item form-type-textarea form-group"> 
+    <label class="control-label"  id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label"  id="renewal-descr" for="project-description">Briefly describe how you have used Rivanna in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+    <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
+    </div>
+  </div>
+  
+  <!--
   <div class="form-item project-description form-type-textarea form-group"> <label class="control-label" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
     </div>
@@ -80,6 +90,7 @@ private = true
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="renewal-description" name="renewal-description" cols="60" rows="8"></textarea>
     </div>
   </div>
+  -->  
   <!--
   <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row"">
@@ -102,5 +113,7 @@ private = true
 </div>
 </form>
 
-<script type="text/javascript" src="/js/user-session.js"></script>
+<!-- <script type="text/javascript" src="/js/user-session.js"></script> -->
 <script type="text/javascript" src="/js/response-message.js"></script>
+<script type="text/javascript" src="/js/allocation-request.js"></script>
+
