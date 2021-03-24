@@ -113,7 +113,7 @@ private = true
 </div>
 </form>
 
-<!-- <script type="text/javascript" src="/js/user-session.js"></script> -->
+<script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
 <script type="text/javascript" src="/js/allocation-request.js"></script>
 
