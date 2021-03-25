@@ -98,6 +98,8 @@ Start the VPN through the Network Manager, either through the applet in the tray
 
 <br clear=all />
 
+# More Secure VPN
+
 <img src="/images/linux/linux-msn-vpn.png" alt="msvpn-duo-push" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
 
 <b style="color:red;">UPDATE:</b> Users of the **More Secure VPN** will now be prompted for a Duo Push when connecting. When prompted for "Duo Authentication" enter the word "PUSH" (case does not matter)
