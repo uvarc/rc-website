@@ -1,7 +1,7 @@
 +++
 title="UVA Anywhere VPN on Linux"
 description = ""
-date = "2020-01-22T11:16:27-05:00"
+date = "2021-03-22T11:16:27-05:00"
 author = "Staff"
 categories = [
   "userinfo",
@@ -10,6 +10,7 @@ images=[""]
 tags = [
   "login",
   "security",
+  "vpn"
 ]
 draft = false
 
@@ -29,20 +30,20 @@ draft = false
 
         These distributions need the following packages:
 
-        - openssl
-        - openconnect
-        - NetworkManager-openconnect
-        - NetworkManager-openconnect-gnome  
+        - `openssl`
+        - `openconnect`
+        - `NetworkManager-openconnect`
+        - `NetworkManager-openconnect-gnome`
 
     - Ubuntu
 
         The packages are the same but the names are different.  Ubuntu 18.04 and up requires an additional package.
 
-        - openssl
-        - openconnect
-        - network-manager-openconnect
-        - network-manager-gnome
-        - network-manager-openconnect-gnome
+        - `openssl`
+        - `openconnect`
+        - `network-manager-openconnect`
+        - `network-manager-gnome`
+        - `network-manager-openconnect-gnome`
 
     It will be necessary for Network Manager to be able to manage the connection.
 
@@ -94,3 +95,12 @@ In the Details tab, make sure that "Make available to all users" is *not* checke
 <img src="/images/linux/running-uva-anywhere.png" alt="personal-cert" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
 
 Start the VPN through the Network Manager, either through the applet in the tray (Ubuntu) or in the Notifications section of the taskbar (Centos/Fedora).  The state can be controlled through the right arrow.
+
+<br clear=all />
+
+<img src="/images/linux/linux-msn-vpn.png" alt="msvpn-duo-push" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
+
+<b style="color:red;">UPDATE:</b> Users of the **More Secure VPN** will now be prompted for a Duo Push when connecting. When prompted for "Duo Authentication" enter the word "PUSH" (case does not matter)
+instead of a password and you will receive a push approval on your mobile device to connect to the VPN.
+<br clear=all />
+
