@@ -21,7 +21,7 @@ Keras is a high-level neural networks application programming interface (API), w
 # What is inside the TensorFlow containers?
 Most containers provide documentation regarding the main applications that have been installed inside. This information can be queried with the `singularity run-help` command.
 ```
-module load singularity/3.5.2
+module load singularity
 module load tensorflow/2.1.0-py37
 singularity run-help $CONTAINERDIR/tensorflow-2.1.0-py37.sif
 ```
@@ -43,7 +43,7 @@ The TensorFlow container images contain all the libraries and software packages 
 
 A library of prepared TensorFlow containers prepared to run on Rivanna's GPU nodes can be accessed through these commands:
 ```
-module load singularity/3.5.2
+module load singularity
 module avail tensorflow
 ```
 Loading of any of these container modules produces an on-screen message with instructions on how to copy the TensorFlow container image file, which resides in `$CONTAINERDIR`.
@@ -83,7 +83,7 @@ To run commands in an GPU-enabled container image, load the singularity module a
 
 For example:
 ```
-module load singularity/3.5.2
+module load singularity
 singularity run --nv /scratch/$USER/tensorflow-2.1.0-py37.sif tf_example.py
 ```
 In the container build script, `python` is defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. `tf_example.py`, to the Python interpreter. So the above singularity command is equivalent to
@@ -105,7 +105,7 @@ The TensorFlow container images were built to include CUDA and cuDNN libraries t
 #SBATCH -A mygroup
 
 module purge
-module load singularity/3.5.2
+module load singularity
 
 # Assuming that the container has been copied to the user's /scratch directory
 containerdir=/scratch/$USER
@@ -129,7 +129,7 @@ salloc: Granted job allocation 12345
 Now you can load the `singularity` module and execute commands provided by the container. For example:
 ```
 module purge
-module load singularity/3.5.2
+module load singularity
 singularity run --nv /scratch/$USER/tensorflow-2.1.0-py37.sif tf_example.py
 ```
 

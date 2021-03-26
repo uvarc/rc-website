@@ -46,7 +46,7 @@ Loading any of these container modules produces an on-screen message with instru
 # What is Inside the Container?
 To learn more about the applications and libraries installed in a container you can use the `run-help` command:
 ```
-module load singularity/3.5.2
+module load singularity
 module load tensorflow/2.1.0-py37
 singularity run-help $CONTAINERDIR/tensorflow-2.1.0-py37.sif
 ```
@@ -68,7 +68,7 @@ This container provides the Python 3.7.5 bindings for:
 If your container does not require a GPU, all that is necessary is to load the singularity module and provide it with a path to the image.
 
 ```
-module load singularity/3.5.2
+module load singularity
 singularity <CMD> <OPTIONS> <IMAGEFILE> <ARGS>
 ```
 
@@ -128,7 +128,7 @@ Singularity> exit
 Singularity can make use of the local NVIDIA drivers installed on the host.  To use a GPU image, load the singularity module and add the `--nv` flag when executing the `singularity shell`, `singularity exec`, or `singularity run` commands.
 
 ```
-module load singularity/3.5.2
+module load singularity
 singularity <CMD> --nv <IMAGE_FILE> <ARGS>
 ```
 
@@ -161,7 +161,7 @@ salloc: Granted job allocation 12345
 
 ```
 module purge
-module load singularity/3.5.2
+module load singularity
 containerdir=~
 singularity shell --nv $containerdir/tensorflow-2.1.0-py37.sif
 ```
@@ -182,7 +182,7 @@ singularity shell --nv $containerdir/tensorflow-2.1.0-py37.sif
 #SBATCH -A mygroup
 
 module purge
-module load singularity/3.5.2
+module load singularity
 
 containerdir=~
 singularity run --nv $containerdir/tensorflow-2.1.0-py37.sif tensorflowtest.py

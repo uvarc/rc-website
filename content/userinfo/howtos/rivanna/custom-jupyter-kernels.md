@@ -68,7 +68,7 @@ Create two files in that directory, `kernel.json` and `init.sh`. (The former mus
 `init.sh`:
 ```
 #!/bin/bash
-module load singularity/3.5.2
+module load singularity
 singularity exec /path/to/singularity/image python -m ipykernel $@
 ```
 (Remember to use the actual path of your Singularity image.)
