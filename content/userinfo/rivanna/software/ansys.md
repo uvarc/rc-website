@@ -56,7 +56,7 @@ ijob -c 2 --mem=96000 -p standard -A yourallocation -t 24:00:00
 ```
 When you are assigned a node, load the desired module and start the workbench with the `runwb2` command.
 ```
-module load ansys/18.2
+module load ansys/19.2
 unset SLURM_GTIDS
 runwb2
 ```
@@ -80,8 +80,8 @@ You can write a batch script to run ANSYS jobs.  Please refer to ANSYS documenta
 mkdir /scratch/$USER/myCFXrun
 cd /scratch/$USER/myCFXrun
 
-module load ansys/18.2
-ansys182 -np ${SLURM_CPUS_PER_TASK} -def /scratch/yourpath/yourdef.def -ini-file/scratch/yourpath/yourresfile.res
+module load ansys/19.2
+ansys192 -np ${SLURM_CPUS_PER_TASK} -def /scratch/yourpath/yourdef.def -ini-file/scratch/yourpath/yourresfile.res
 ```
 
 **CFX SLURM Script:**
@@ -100,13 +100,14 @@ cfx5solve -double -def /scratch/yourpath/mydef.def -par-local -partition "$SLURM
 
 # Multi-Node MPI Jobs
 
-We recommend that you use the IBM PlatformMPI distribution.  For Fluent also specify `-mpi=ibmmpi` along with the flag `-srun` to dispatch the MPI tasks using SLURM's task launcher.  Also include the `-slurm` option.  It is generally better with ANSYS and related products to request a total memory over all processes rather than using memory per core, because a process can exceed the allowed memory per core.  You must have access to a license that supports HPC usage.  These examples also show the minimum number of command-line options; you may require more for large jobs.
+You must use IntelMPI.  IBM MPI (Platform) will not work on our system.
+For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using SLURM's task launcher.  Also include the `-slurm` option.  It is generally better with ANSYS and related products to request a total memory over all processes rather than using memory per core, because a process can exceed the allowed memory per core.  You must have access to a license that supports HPC usage.  These examples also show the minimum number of command-line options; you may require more for large jobs.
 
 **Fluent SLURM Script:**
 ```
 #!/bin/bash
 #SBATCH --nodes=2
-#SBATCH --ntasks-per-node=16
+#SBATCH --ntasks-per-node=40
 #SBATCH --time=12:00:00
 #SBATCH --partition=parallel
 #SBATCH -J myFluentrun
@@ -120,8 +121,9 @@ done
 
 IFS=' '
 
-module load ansys/18.2
-fluent 3ddp -g -t${SLURM_NPROCS} -cnf=hosts -srun -pinfiniband -mpi=ibmmpi -ssh -i myjournalfile.jou
+module load intel/18.0
+module load ansys/19.2
+fluent 3ddp -g -t${SLURM_NPROCS} -cnf=hosts -srun -pinfiniband -mpi=intel -ssh -i myjournalfile.jou
 ```
 
 **CFX SLURM script:**
@@ -153,6 +155,8 @@ done
 hostlist+=${hosts[${#hosts[@]}-1]}
 
 rm hostfile
+module load intel/18.0
+module load ansys/19.2
 
-cfx5solve -double -def /scratch/yourpath/mydef.def -par-dist "$hostlist" -partition "$NPARTS" -start-method "Platform MPI Distributed Parallel"
+cfx5solve -double -def /scratch/yourpath/mydef.def -par-dist "$hostlist" -partition "$NPARTS" -start-method "Intel MPI Distributed Parallel"
 ```
