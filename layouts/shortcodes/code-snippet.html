@@ -1,0 +1,19 @@
+{{ $id := delimit (shuffle (seq 1 9)) "" }}
+{{ $btn := .Get 1 | default "button" }}
+<script>
+function copyToClipboard(element) {
+  var $temp = $("<input>");
+  var brRegex = /<br\s*[\/]?>/gi;
+  $("body").append($temp);
+  // $temp.val($(element).text()).select();
+  $temp.val($(element).html().replace(brRegex, "\r\n")).select();
+  document.execCommand("copy");
+  $temp.remove();
+};
+</script>
+<div style="border-radius:4px;background-color:#f7f7f9;">
+  <div style="float:right;"><button id="copy-btn-{{ $id }}" onclick="copyToClipboard('#{{ $id }}')" style="color:white;background-color:#666;margin:0.4rem;border-radius:4px;border:1px solid red;padding: 0.2rem 0.4rem;font-size:70%;"><i class="far fa-1x fa-clipboard"></i> Copy</button></div>
+  <div>
+    <pre style="padding-top:0;"><code id="{{ $id }}">{{ .Inner  }}</code></pre>
+  </div>
+</div>
