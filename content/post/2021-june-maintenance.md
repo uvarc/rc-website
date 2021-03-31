@@ -46,14 +46,14 @@ Rivanna is expected to return to service later in the day.
 Many of our Anaconda/Python modules have been updated to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit here.
 
 The following table shows the detailed version changes for all affected modules. Please note:
-- The new version replaces the current default. If the new version is `-`, that means the module version stays the same.
+- The new version replaces the current. If the new version is `-`, that means the module version stays the same.
 - The Python version is updated to 3.8.8 for all cases.
 - In some cases, the module load command is different. Check `module spider <module>/<version>` if you cannot load a module.
 - If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/rivanna/software/anaconda/#running-python2-and-python3-using-virtual-environments).
 
-| Module | Current Default | Python| NEW version  | Removed versions |
+| Module | Version | Python| NEW version  | Removed versions |
 |---|---|---|---|---|
-|anaconda  | 5.2.0-py3.6   | 3.8.5 | 2020.11-py3.8| 5.2.0-py3.6, 2019.10-py3.7 |
+|anaconda  | 2020.11-py3.8 | 3.8.5 | -            | 5.2.0-py3.6, 2019.10-py3.7 |
 |bioconda  | py3.8         | 3.8.5 | -            | py3.6, py3.7 |
 |globus_cli| 1.12.0        | 3.7.7 | 2.0.0        | 1.11.0, 1.12.0 |
 |gpustat   | 0.6.0         | 3.7.7 | -            | - |
