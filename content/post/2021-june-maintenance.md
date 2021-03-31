@@ -43,24 +43,30 @@ Rivanna is expected to return to service later in the day.
 
 ### Changes to Anaconda/Python modules
 
-Many of our Anaconda/Python modules have been updated to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit here.
+Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit here.
 
 The following table shows the detailed version changes for all affected modules. Please note:
-- The new version replaces the current. If the new version is `-`, that means the module version stays the same.
-- The Python version is updated to 3.8.8 for all cases.
+- The Python version is upgraded to 3.8.8 for all cases.
+- The new version replaces the current. If the new version is `-`, that means the Python version is upgraded within the same module version.
 - In some cases, the module load command is different. Check `module spider <module>/<version>` if you cannot load a module.
 - If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/rivanna/software/anaconda/#running-python2-and-python3-using-virtual-environments).
 
 | Module | Version | Python| NEW version  | Removed versions |
 |---|---|---|---|---|
-|anaconda  | 2020.11-py3.8 | 3.8.5 | -            | 5.2.0-py3.6, 2019.10-py3.7 |
-|bioconda  | py3.8         | 3.8.5 | -            | py3.6, py3.7 |
-|globus_cli| 1.12.0        | 3.7.7 | 2.0.0        | 1.11.0, 1.12.0 |
-|gpustat   | 0.6.0         | 3.7.7 | -            | - |
-| hexrd    | 0.6.12        | 2.7.17| 0.8.4        | jb-0.3.x, jb-0.5.6, 0.6.12 |
-| hoomd    | 2.9.4         | 3.7.7 | 2.9.6        | 2.9.4 |
-| meson    | 0.53.1        | 3.7.7 | 0.57.1-py3.8 | 0.53.1, 0.54.3 |
-| ninja    | 1.10.0        | 3.7.7 | 1.10.2-py3.8 | 1.10.0 |
+|anaconda     | 2020.11-py3.8 | 3.8.5 | -            | 5.2.0-py3.6, 2019.10-py3.7 |
+|bioconda     | py3.8         | 3.8.5 | -            | py3.6, py3.7 |
+| cutadapt    | 2.5           | 3.7.4 | 3.4          | 1.16, 2.5 |
+|globus_cli   | 1.12.0        | 3.7.7 | 2.0.0        | 1.11.0, 1.12.0 |
+|gpustat      | 0.6.0         | 3.7.7 | -            | - |
+| hexrd       | 0.6.12        | 2.7.17| 0.8.4        | jb-0.3.x, jb-0.5.6, 0.6.12 |
+| hoomd       | 2.9.4         | 3.7.7 | 2.9.6        | 2.9.4 |
+| iqtree      | 2.0.3         | 3.7.9 | 2.1.2        | 2.0.3 |
+| kallisto    | 0.44.0        | 3.7.3 | 0.46.2       | 0.44.0 |
+| mayavi      | 4.5.0         | 2.7.15| 4.7.2        | 4.5.0 |
+| meson       | 0.53.1        | 3.7.7 | 0.57.1-py3.8 | 0.53.1, 0.54.3 |
+| ninja       | 1.10.0        | 3.7.7 | 1.10.2-py3.8 | 1.10.0 |
+|snap-stanford| 6.0.0-py3.8   | 3.8.8 | -            | snap-stanford-py/4.1, 5.0.9-py3.6 |
+|snakemake    | 5.2.2         | 3.6.6 | 6.0.5        | 5.2.2 |
 
 ### Changes to Singularity modules
 
