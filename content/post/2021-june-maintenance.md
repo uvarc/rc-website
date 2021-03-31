@@ -51,9 +51,9 @@ The following table shows the detailed version changes for all affected modules.
 - In some cases, the module load command is different. Check `module spider <module>/<version>` if you cannot load a module.
 - If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/rivanna/software/anaconda/#running-python2-and-python3-using-virtual-environments).
 
-| Module | Current Default | Python | **New version** | Removed versions |
+| Module | Current Default | Python| NEW version  | Removed versions |
 |---|---|---|---|---|
-|anaconda  | 2020.11-py3.8 | 3.8.5 | -            | 5.2.0-py3.6, 2019.10-py3.7 |
+|anaconda  | 5.2.0-py3.6   | 3.8.5 | 2020.11-py3.8| 5.2.0-py3.6, 2019.10-py3.7 |
 |bioconda  | py3.8         | 3.8.5 | -            | py3.6, py3.7 |
 |globus_cli| 1.12.0        | 3.7.7 | 2.0.0        | 1.11.0, 1.12.0 |
 |gpustat   | 0.6.0         | 3.7.7 | -            | - |
