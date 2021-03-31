@@ -27,6 +27,7 @@ Rivanna is expected to return to service later in the day.
     - qiime2/2020.6 - replaced by 2020.8
     - cellprofiler/2.2.0 - replaced by 3.1.8
     - nextflow/0.26.0.4715 - replaced by 20.10.0
+    - salmon/0.11.2 - replaced by 1.2.1
     - lftp/4.8.4 - replaced by 4.9.2
 
 2. The following **upgrades** will take place during the maintenance period:
@@ -47,7 +48,7 @@ Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light 
 
 The following table shows the detailed version changes for all affected modules. Please note:
 - The Python version is upgraded to 3.8.8 for all cases.
-- The new version replaces the current. If the new version is `-`, that means the Python version is upgraded within the same module version.
+- The new version replaces the current. If the new version is `-`, that means the module version remains the same.
 - In some cases, the module load command is different. Check `module spider <module>/<version>` if you cannot load a module.
 - If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/rivanna/software/anaconda/#running-python2-and-python3-using-virtual-environments).
 
@@ -55,18 +56,26 @@ The following table shows the detailed version changes for all affected modules.
 |---|---|---|---|---|
 |anaconda     | 2020.11-py3.8 | 3.8.5 | -            | 5.2.0-py3.6, 2019.10-py3.7 |
 |bioconda     | py3.8         | 3.8.5 | -            | py3.6, py3.7 |
+|biopython    | 1.70-py2      | 2.7.17| 1.78-py3     | - |
 | cutadapt    | 2.5           | 3.7.4 | 3.4          | 1.16, 2.5 |
+|gcloud-sdk   | 196.0.0       | 2.7.17| 334.0.0      | 196.0.0 |
 |globus_cli   | 1.12.0        | 3.7.7 | 2.0.0        | 1.11.0, 1.12.0 |
+|google-api   | 1.9.6         | 2.7.17| 2.0.2        | 1.9.6 |
 |gpustat      | 0.6.0         | 3.7.7 | -            | - |
 | hexrd       | 0.6.12        | 2.7.17| 0.8.4        | jb-0.3.x, jb-0.5.6, 0.6.12 |
 | hoomd       | 2.9.4         | 3.7.7 | 2.9.6        | 2.9.4 |
 | iqtree      | 2.0.3         | 3.7.9 | 2.1.2        | 2.0.3 |
+| intervene   | 0.6.4         | 3.7.3 | 0.6.5        | 0.6.4 |
 | kallisto    | 0.44.0        | 3.7.3 | 0.46.2       | 0.44.0 |
 | mayavi      | 4.5.0         | 2.7.15| 4.7.2        | 4.5.0 |
 | meson       | 0.53.1        | 3.7.7 | 0.57.1-py3.8 | 0.53.1, 0.54.3 |
+| mysqlclient | 1.4.6-py3.7   | 3.7.4 | 2.0.3-py3.8  | 1.4.4-py3.6, 1.4.6-py3.7 |
 | ninja       | 1.10.0        | 3.7.7 | 1.10.2-py3.8 | 1.10.0 |
-|snap-stanford| 6.0.0-py3.8   | 3.8.8 | -            | snap-stanford-py/4.1, 5.0.9-py3.6 |
+|openslide-python| 1.1.1-py3  | 3.6.6 | 1.1.2-py3    | 1.1.1-py3 |
 |snakemake    | 5.2.2         | 3.6.6 | 6.0.5        | 5.2.2 |
+|snap-stanford| 6.0.0-py3.8   | 3.8.8 | -            | snap-stanford-py/4.1, 5.0.9-py3.6 |
+|spades       | 3.15.0        | 3.7.4 | 3.15.2       | 3.15.0 |
+|thirdorder   | 1.1.1-py3     | 3.6.6 | -            | - |
 
 ### Changes to Singularity modules
 
