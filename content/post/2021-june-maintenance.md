@@ -23,7 +23,7 @@ Rivanna is expected to return to service later in the day.
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
     - singularity/3.5.2, 3.6.1 - replaced by 3.7.1 (details below)
-    - anaconda/5.2.0-py3.6, 2019.10-py3.7 - replaced by -py3.8 (details below)
+    - anaconda/5.2.0-py3.6, 2019.10-py3.7 - replaced by 2020.11-py3.8 (details below)
     - qiime2/2020.6 - replaced by 2020.8
     - cellprofiler/2.2.0 - replaced by 3.1.8
     - nextflow/0.26.0.4715 - replaced by 20.10.0
