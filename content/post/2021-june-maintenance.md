@@ -46,20 +46,21 @@ Rivanna is expected to return to service later in the day.
 Many of our Anaconda/Python modules have been updated to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit here.
 
 The following table shows the detailed version changes for all affected modules. Please note:
-- The new Python version is 3.8.8 for all cases.
-- If the new version is `-`, that means the module version stays the same.
+- The new version replaces **all** older versions. If the new version is `-`, that means the module version stays the same.
+- The Python version is updated to 3.8.8 for all cases.
 - In some cases, the module load command is different. Check `module spider <module>/<version>` if you cannot load a module.
 - If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/rivanna/software/anaconda/#running-python2-and-python3-using-virtual-environments).
 
-| Module | Version | Python | New version |
+| Module | Current Default | Python | New version |
 |---|---|---|---|
-|anaconda | 2020.11-py3.8 | 3.8.5 | - |
-|bioconda | py3.8 | 3.8.5 | - |
-|globus_cli|1.12.0 | 3.7.7 | 2.0.0 |
-|gpustat|0.6.0| 3.7.7 | - |
-| hoomd|2.9.4 | 3.7.7 | 2.9.6 |
-| meson|0.53.1 | 3.7.7 | 0.57.1-py3.8 |
-| ninja|1.10.0 | 3.7.7 | 1.10.2-py3.8 |
+|anaconda  | 2020.11-py3.8 | 3.8.5 | - |
+|bioconda  | py3.8         | 3.8.5 | - |
+|globus_cli| 1.12.0        | 3.7.7 | 2.0.0 |
+|gpustat   | 0.6.0         | 3.7.7 | - |
+| hexrd    | 0.6.12        | 2.7.17| 0.8.4 |
+| hoomd    | 2.9.4         | 3.7.7 | 2.9.6 |
+| meson    | 0.53.1        | 3.7.7 | 0.57.1-py3.8 |
+| ninja    | 1.10.0        | 3.7.7 | 1.10.2-py3.8 |
 
 ### Changes to Singularity modules
 
