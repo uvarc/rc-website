@@ -36,7 +36,7 @@ Rivanna is expected to return to service later in the day.
     - pytorch/1.5.1 -> 1.8.0
     - tensorflow/2.1.0-py37 -> 2.4.1
 
-    For anaconda/python-dependent modules, please see below.
+    For anaconda/python-dependent modules, please [see below](#changes-to-anacondapython-modules).
 
 3. **New** modules:
     - rapidsai/0.17 - NVIDIA data science libraries
@@ -58,6 +58,7 @@ The following table shows the detailed version changes for all affected modules.
 | ase         | 3.20.1        | 3.7.9 | -            | - |
 |bioconda     | py3.8         | 3.8.5 | -            | py3.6, py3.7 |
 |biopython    | 1.70-py2      | 2.7.17| 1.78-py3     | - |
+|cudatoolkit  | 10.1.168-py3.6| 3.6.10| 11.0.3-py3.8 | 10.1.168-py3.6 |
 | cutadapt    | 2.5           | 3.7.4 | 3.4          | 1.16, 2.5 |
 |gcloud-sdk   | 196.0.0       | 2.7.17| 334.0.0      | 196.0.0 |
 |globus_cli   | 1.12.0        | 3.7.7 | 2.0.0        | 1.11.0, 1.12.0 |
@@ -70,9 +71,12 @@ The following table shows the detailed version changes for all affected modules.
 | kallisto    | 0.44.0        | 3.7.3 | 0.46.2       | 0.44.0 |
 | mayavi      | 4.5.0         | 2.7.15| 4.7.2        | 4.5.0 |
 | meson       | 0.53.1        | 3.7.7 | 0.57.1-py3.8 | 0.53.1, 0.54.3 |
+| mrtrix3     | rc3           | 2.7.17| 3.0.2        | rc3 |
+|mrtrix3tissue| 5.2.8         | 2.7.17| 5.2.9        | 5.2.8 |
 | mysqlclient | 1.4.6-py3.7   | 3.7.4 | 2.0.3-py3.8  | 1.4.4-py3.6, 1.4.6-py3.7 |
 | ninja       | 1.10.0        | 3.7.7 | 1.10.2-py3.8 | 1.10.0 |
 |openslide-python| 1.1.1-py3  | 3.6.6 | 1.1.2-py3    | 1.1.1-py3 |
+| pybind11    | 2.2.4-py3.7   | 3.7.4 | 2.6.2-py3.8  | 2.2.4-py3, 2.2.4-py3.7 |
 |snakemake    | 5.2.2         | 3.6.6 | 6.0.5        | 5.2.2 |
 |snap-stanford| 6.0.0-py3.8   | 3.8.8 | -            | snap-stanford-py/4.1, 5.0.9-py3.6 |
 |spades       | 3.15.0        | 3.7.4 | 3.15.2       | 3.15.0 |
