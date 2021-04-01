@@ -13,9 +13,9 @@ author = "RC Staff"
 
 # Scenario
 
-You installed Python packages in, say, Python 3.6 and now want to use the same packages in, say, Python 3.8. There are several ways to do this depending on the package manager. In this how-to we will look at Pip and Conda.
+You have installed Python packages locally in one version and now wish to use them in a different version.  For example, you have been using Python 3.6 but it is obsolete and will be removed soon, so you need to set up those packages for Python 3.8.  There are several ways to accomplish this, depending on the package manager. In this how-to we will discuss `pip` and `conda`.
 
-You will need to load the module with the newer Python version. In this case,
+You will need to load the module for the newer Python version. For this example,
 
 {{< code-snippet >}}
 module load anaconda/2020.11-py3.8
@@ -45,7 +45,7 @@ Next, install the packages:
 pip install --user -r requirements.txt
 {{< /code-snippet >}}
 
-## Use latest versions or whichever mutually compatible
+## Use the latest versions or whichever are mutually compatible
 
 If you have no preference on the package versions, you can remove the version requirements:
 
@@ -63,7 +63,7 @@ pip install --user -r requirements.txt
 
 Despite the `-py3.8` suffix in the Anaconda module, you can create/load a conda environment that uses a different Python version. Suppose the environment name is `myenv`. You can either update the existing environment or create a new one.
 
-## Update Python in old environment
+## Update Python in the old environment
 
 ```bash
 source activate myenv
@@ -72,7 +72,7 @@ conda install python=3.8
 
 Note that if you have many packages in the environment, such an update could take very long due to conda's slow dependency resolution. Individual package versions are not preserved.
 
-## Create new environment
+## Create the new environment
 
 It is better to create a new environment and let the dependency solver do its work from scratch:
 
