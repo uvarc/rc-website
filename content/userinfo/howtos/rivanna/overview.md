@@ -22,6 +22,7 @@ author = "RC Staff"
 * [Loading Modules in Jupyter](/userinfo/howtos/rivanna/load-module-in-jupyter)
 * [Docker images on Rivanna](/userinfo/howtos/rivanna/docker-images-on-rivanna)
 * [Adding packages to a container](/userinfo/howtos/rivanna/add-packages-to-container)
+* [Migrate Python packages](/userinfo/howtos/rivanna/migrate-python)
 
 - - -
 

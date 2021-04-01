@@ -44,7 +44,7 @@ Rivanna is expected to return to service later in the day.
 
 ### Changes to Anaconda/Python modules
 
-Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit here.
+Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit [here](/userinfo/howtos/rivanna/migrate-python/).
 
 The following table shows the detailed version changes for all affected modules. Please note:
 - The Python version is upgraded to 3.8.8 for all cases.
