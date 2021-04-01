@@ -81,3 +81,11 @@ conda create -n mynewenv python=3.8 <list of packages>
 ```
 
 Use the syntax `<package>=<version>` if you have version requirements.
+
+Run `conda list -n myenv` to get a list of all packages in `myenv`. You can use the following command to show the same list in one line without version information:
+
+{{< code-snippet >}}
+conda list -n myenv | awk '{if($1 !~ /^#/) print $1}' | tr '\n' ' '
+{{< /code-snippet >}}
+
+Please also visit [this page](/userinfo/rivanna/software/python/#package-installation-with-conda) for more information.
