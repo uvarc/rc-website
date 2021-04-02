@@ -20,19 +20,19 @@ You will need to install and configure the `awscli` package in order to access o
 
 ## Install the AWS CLI
 
-The AWS CLI is available through the pip installer:
+The AWS CLI is available through the `pip`/`pip3` installer:
 
 If you have administrator privileges type
 
-```
+{{< code-snippet >}}
 pip install awscli
-```
+{{< /code-snippet >}}
 
 Otherwise use
 
-```
+{{< code-snippet >}}
 pip install --user awscli
-```
+{{< /code-snippet >}}
 
 The project is open source, so you can also download the source at https://github.com/aws/aws-cli
 
@@ -40,9 +40,13 @@ The project is open source, so you can also download the source at https://githu
 <p><b>Rivanna Users</b> have two options:</p>
 <ol>
   <li>Load the <code>awscli</code> module:<br /><br />
-  <pre><code>module load awscli</code></pre></li>
+{{< code-snippet >}}
+module load awscli
+{{< /code-snippet >}}
   <li>If you need a different version, install it in your user directory:<br /><br />
-  <pre><code>pip install --user awscli==<version></code></pre></li>
+{{< code-snippet >}}
+pip install --user awscli==1.19.29
+{{< /code-snippet >}}
 </ol>
 
 {{% /alert-green %}}
@@ -51,9 +55,9 @@ The project is open source, so you can also download the source at https://githu
 
 Once the `aws` package is installed, you will need to configure it:
 
-```
+{{< code-snippet >}}
 aws configure
-```
+{{< /code-snippet >}}
 
 You will be prompted to enter four values:
 
@@ -177,7 +181,6 @@ To set the expiry time, calculate the length of time you want the signature to l
 aws s3 presign --expires-in 600 s3://mybucket1/path/file-to-share.tar.gz
 
 https://mybucket1.s3.amazonaws.com/path/file-to-share.tar.gz?AWSAccessKeyId=AKICMAJHNXKQDLN34VZJ&Signature=sCH2pRjn7M02P5D8JnAyBq%2FP7kQ%3D&Expires=1593196195
-
 ```
 
 {{<alert>}}
@@ -192,9 +195,10 @@ The `boto3` package is the standard library enabling programmatic access to AWS 
 managing, or removing remote resources and infrastructure dynamically. The steps below refer to using `boto3` for working with files in S3.
 
 ## Install `boto3`
-```
+
+{{< code-snippet >}}
 pip install boto3
-```
+{{< /code-snippet >}}
 
 `boto3` will obtain its credentials from one of a few various locations:
 

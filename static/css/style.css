@@ -58,7 +58,16 @@ article img{max-width:100%;height:auto;margin:13px auto}
 
 .project-inset { max-width:240px;max-height:240px;margin-left:10px;margin-bottom:10px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
 
-pre { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radius:.25rem; font-size:90%;}
+.toc ul li a:before {
+  content: '{';
+  font-size: 16px; 
+  color: #bbb;
+  position: absolute;
+  top: 1px; 
+  left: 0;
+  display: none;
+}
+
 .category { background-color:#f7f7f9; padding:.2rem .4rem; color:#bd4147; border-radius:.25rem;font-weight:600;font-family:monospace;padding-bottom:20px;}
 
 /* #TableOfContents {width:50%;background-color:#f6f6f6;padding-bottom:6px;padding-top:20px;margin:20px;-moz-border-radius:5px;border-radius:5px;font-size:0.9em;}
@@ -189,9 +198,22 @@ code{color:#bd4147;background-color:#f7f7f9;border-radius:.25rem;}
 code,kbd{padding:1rem 1rem;font-size:90%}
 kbd{color:#fff;background-color:#333;border-radius:.2rem}
 kbd kbd{padding:0;font-size:100%;font-weight:700}
+
 /* Below line is for inline code blocks */
-pre{display:block;margin-top:0;margin-bottom:1rem;font-size:90%;color:#373a3c;padding-left:1rem;padding-right:1rem;padding-top:0.7rem;padding-bottom:0.7rem;}
-pre code{padding:2rem;font-size:inherit;color:inherit;background-color:transparent;border-radius:0}
+/* pre {font-size:90%;color:#373a3c;} */
+pre { 
+  padding: 1rem;
+  background-color:#f7f7f9; 
+  color:#bd4147; 
+  border-radius:.25rem; 
+  font-size:90%;
+  font-family:Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+}
+pre code{
+  background:transparent;
+  font-size:90%;
+}
+
 .pre-scrollable{max-height:340px;overflow-y:scroll}
 .container{margin-left:auto;margin-right:auto;padding-left:15px;padding-right:15px}
 .container:after{content:"";display:table;clear:both}

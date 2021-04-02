@@ -1,76 +1,86 @@
+<style>
+.rotate {
+  font-size:80%;
+  text-align:left;
+  padding:auto;
+}
+.queue {
+  text-align:right;
+}
+</style>
 <table class="table" style="font-weight:normal;">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Partition</th>
-      <th scope="col">Max time per job</th>
-      <th scope="col">Max nodes per job</th>
-      <th scope="col">Max cores per job</th>
-      <th scope="col">Max cores per node</th>
-      <th scope="col">Max memory per core</th>
-      <th scope="col">Max memory per node per job</th>
-      <th scope="col">SU Charge Rate</th>
+      <th class="rotate" scope="col">Partition</th>
+      <th class="rotate" scope="col">Max time / job</th>
+      <th class="rotate" scope="col">Max nodes / job</th>
+      <th class="rotate" scope="col">Max cores / job</th>
+      <th class="rotate" scope="col">Max cores / node</th>
+      <th class="rotate" scope="col">Max memory / core</th>
+      <th class="rotate" scope="col">Max memory / node / job</th>
+      <th class="rotate" scope="col">SU Charge Rate</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row"><code><a href="/userinfo/rivanna/slurm/#basic-serial-program">standard</a></code></th>
-      <th scope="row">7 days</th>
-      <th scope="row">1</th>
-      <th scope="row">40</th>
-      <th scope="row">40</th>
-      <th scope="row">9GB</th>
-      <th scope="row">375GB</th>
-      <th scope="row">1.00</th>
+      <td class="queue" scope="row"><code><a href="/userinfo/rivanna/slurm/#basic-serial-program">standard</a></code></td>
+      <td>7 days</td>
+      <td scope="row">1</td>
+      <td scope="row">40</td>
+      <td scope="row">40</td>
+      <td scope="row">9GB</td>
+      <td scope="row">375GB</td>
+      <td scope="row">1.00</td>
     </tr>
     <tr>
-      <th scope="row"><code><a href="/userinfo/rivanna/slurm/#job-scripts-for-parallel-programs">parallel</a></code></th>
-      <th scope="row">3 days</th>
-      <th scope="row">45</th>
-      <th scope="row">900</th>
-      <th scope="row">40</th>
-      <th scope="row">9GB</th>
-      <th scope="row">375GB</th>
-      <th scope="row">1.00</th>
+      <td class="queue" scope="row"><code><a href="/userinfo/rivanna/slurm/#job-scripts-for-parallel-programs">parallel</a></code></td>
+      <td scope="row">3 days</td>
+      <td scope="row">45</td>
+      <td scope="row">900</td>
+      <td scope="row">40</td>
+      <td scope="row">9GB</td>
+      <td scope="row">375GB</td>
+      <td scope="row">1.00</td>
     </tr>
     <tr>
-      <th scope="row">largemem</th>
-      <th scope="row">4 days</th>
-      <th scope="row">1</th>
-      <th scope="row">16</th>
-      <th scope="row">16</th>
-      <th scope="row">64GB</th>
-      <th scope="row">975GB</th>
-      <th scope="row">1.00</th>
+      <td class="queue" scope="row"><code>largemem</code></td>
+      <td scope="row">4&nbsp;days</td>
+      <td scope="row">1</td>
+      <td scope="row">16</td>
+      <td scope="row">16</td>
+      <td scope="row">64GB</td>
+      <td scope="row">975GB</td>
+      <td scope="row">1.00</td>
     </tr>
     <tr>
-      <th scope="row"><code><a href="/userinfo/rivanna/slurm/#gpu-intensive-computation">gpu</a></code></th>
-      <th scope="row">3 days</th>
-      <th scope="row">4</th>
-      <th scope="row">10</th>
-      <th scope="row">10</th>
-      <th scope="row">32GB</th>
-      <th scope="row">375GB</th>
-      <th scope="row">3.00 <a href="#gpu-detail">*</a></th>
+      <td class="queue" scope="row"><code><a href="/userinfo/rivanna/slurm/#gpu-intensive-computation">gpu</a></code></td>
+      <td scope="row">3 days</td>
+      <td scope="row">4</td>
+      <td scope="row">10</td>
+      <td scope="row">10</td>
+      <td scope="row">32GB</td>
+      <td scope="row">375GB</td>
+      <td scope="row">3.00 <a href="#gpu-detail">*</a></td>
     </tr>
     <tr>
-      <th scope="row">knl</th>
-      <th scope="row">3 days</th>
-      <th scope="row">8</th>
-      <th scope="row">512 cores / 2048 threads</th>
-      <th scope="row">512</th>
-      <th scope="row">3GB (per physical core)</th>
-      <th scope="row">192GB</th>
-      <th scope="row">1.00</th>
+      <td class="queue" scope="row"><code>knl</code></td>
+      <td scope="row">3 days</td>
+      <td scope="row">8</td>
+      <td scope="row">512 cores / 2048 threads</td>
+      <td scope="row">512</td>
+      <td scope="row">3GB (per physical core)</td>
+      <td scope="row">192GB</td>
+      <td scope="row">1.00</td>
     </tr>
     <tr>
-      <th scope="row">dev</th>
-      <th scope="row">1 hour</th>
-      <th scope="row">2</th>
-      <th scope="row">8</th>
-      <th scope="row">4</th>
-      <th scope="row">6GB</th>
-      <th scope="row">36GB</th>
-      <th scope="row">0.00</th>
+      <td class="queue" scope="row"><code>dev</code></td>
+      <td scope="row">1 hour</td>
+      <td scope="row">2</td>
+      <td scope="row">8</td>
+      <td scope="row">4</td>
+      <td scope="row">6GB</td>
+      <td scope="row">36GB</td>
+      <td scope="row">0.00</td>
     </tr>
   </tbody>
 </table>

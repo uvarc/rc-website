@@ -73,3 +73,5 @@ srun ./parallel_executable
 In this example, the SLURM job file is requesting two nodes with sixteen tasks per node for a total of 32 processes.  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from SLURM, so these are not specified.  In general, MPI jobs should use all of a node so we'd recommend `--ntasks-per-node=20` on the parallel partition, but some codes cannot be distributed in that manner so we are showing a more general example here.
 
 Please see our MPI [software page](/userinfo/rivanna/software/mpi) for examples of SLURM scripts for more complex situations, including running hybrid MPI/OpenMP codes.
+
+For more detailed instructions on building and running compiled codes on Rivanna, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
