@@ -46,41 +46,43 @@ Rivanna is expected to return to service later in the day.
 
 Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit [here](/userinfo/howtos/rivanna/migrate-python/).
 
-The following table shows the detailed version changes for all affected modules. Please note:
-- The Python version is upgraded to 3.8.8 for all cases.
+The following tables show the detailed version changes for all affected modules. Please note:
+- The Python version is upgraded to 3.8.8 unless otherwise stated.
 - The new version replaces the current. If the new version is `-`, that means the module version remains the same.
 - In some cases, the module load command is different. Check `module spider <module>/<version>` if you cannot load a module.
 - If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/rivanna/software/anaconda/#running-python2-and-python3-using-virtual-environments).
 
-| Module | Version | Python| NEW version  | Removed versions |
+| Module | Version | Python| NEW version  | NEW Python version | Removed versions |
 |---|---|---|---|---|
-|anaconda     | 2020.11-py3.8 | 3.8.5 | -            | 5.2.0-py3.6, 2019.10-py3.7 |
-| ase         | 3.20.1        | 3.7.9 | -            | - |
-|bioconda     | py3.8         | 3.8.5 | -            | py3.6, py3.7 |
-|biopython    | 1.70-py2      | 2.7.17| 1.78-py3     | - |
-|cudatoolkit  | 10.1.168-py3.6| 3.6.10| 11.0.3-py3.8 | 10.1.168-py3.6 |
-| cutadapt    | 2.5           | 3.7.4 | 3.4          | 1.16, 2.5 |
-|gcloud-sdk   | 196.0.0       | 2.7.17| 334.0.0      | 196.0.0 |
-|globus_cli   | 1.12.0        | 3.7.7 | 2.0.0        | 1.11.0, 1.12.0 |
-|google-api   | 1.9.6         | 2.7.17| 2.0.2        | 1.9.6 |
-|gpustat      | 0.6.0         | 3.7.7 | -            | - |
-| hexrd       | 0.6.12        | 2.7.17| 0.8.4        | jb-0.3.x, jb-0.5.6, 0.6.12 |
-| hoomd       | 2.9.4         | 3.7.7 | 2.9.6        | 2.9.4 |
-| iqtree      | 2.0.3         | 3.7.9 | 2.1.2        | 2.0.3 |
-| intervene   | 0.6.4         | 3.7.3 | 0.6.5        | 0.6.4 |
-| kallisto    | 0.44.0        | 3.7.3 | 0.46.2       | 0.44.0 |
-| mayavi      | 4.5.0         | 2.7.15| 4.7.2        | 4.5.0 |
-| meson       | 0.53.1        | 3.7.7 | 0.57.1-py3.8 | 0.53.1, 0.54.3 |
-| mrtrix3     | rc3           | 2.7.17| 3.0.2        | rc3 |
-|mrtrix3tissue| 5.2.8         | 2.7.17| 5.2.9        | 5.2.8 |
-| mysqlclient | 1.4.6-py3.7   | 3.7.4 | 2.0.3-py3.8  | 1.4.4-py3.6, 1.4.6-py3.7 |
-| ninja       | 1.10.0        | 3.7.7 | 1.10.2-py3.8 | 1.10.0 |
-|openslide-python| 1.1.1-py3  | 3.6.6 | 1.1.2-py3    | 1.1.1-py3 |
-| pybind11    | 2.2.4-py3.7   | 3.7.4 | 2.6.2-py3.8  | 2.2.4-py3, 2.2.4-py3.7 |
-|snakemake    | 5.2.2         | 3.6.6 | 6.0.5        | 5.2.2 |
-|snap-stanford| 6.0.0-py3.8   | 3.8.8 | -            | snap-stanford-py/4.1, 5.0.9-py3.6 |
-|spades       | 3.15.0        | 3.7.4 | 3.15.2       | 3.15.0 |
-|thirdorder   | 1.1.1-py3     | 3.6.6 | -            | - |
+|anaconda     | 2020.11-py3.8 | 3.8.5 | -            |  | 5.2.0-py3.6, 2019.10-py3.7 |
+| ase         | 3.20.1        | 3.7.9 | -            |  | - |
+|bioconda     | py3.8         | 3.8.5 | -            |  | py3.6, py3.7 |
+|biopython    | 1.70-py2      | 2.7.17| 1.78-py3     |  | - |
+|cudatoolkit  | 10.1.168-py3.6| 3.6.10| 11.0.3-py3.8 |  | 10.1.168-py3.6 |
+| cutadapt    | 2.5           | 3.7.4 | 3.4          |  | 1.16, 2.5 |
+|gcloud-sdk   | 196.0.0       | 2.7.17| 334.0.0      |  | 196.0.0 |
+|gdc-client   | 1.5.0         | 3.7.7 | 1.6.0        | 3.7.10 | 1.5.0 |
+|globus_cli   | 1.12.0        | 3.7.7 | 2.0.0        |  | 1.11.0, 1.12.0 |
+|google-api   | 1.9.6         | 2.7.17| 2.0.2        |  | 1.9.6 |
+|gpustat      | 0.6.0         | 3.7.7 | -            |  | - |
+| hexrd       | 0.6.12        | 2.7.17| 0.8.4        |  | jb-0.3.x, jb-0.5.6, 0.6.12 |
+| hoomd       | 2.9.4         | 3.7.7 | 2.9.6        |  | 2.9.4 |
+| iqtree      | 2.0.3         | 3.7.9 | 2.1.2        |  | 2.0.3 |
+| intervene   | 0.6.4         | 3.7.3 | 0.6.5        |  | 0.6.4 |
+| kallisto    | 0.44.0        | 3.7.3 | 0.46.2       |  | 0.44.0 |
+| mayavi      | 4.5.0         | 2.7.15| 4.7.2        |  | 4.5.0 |
+| meson       | 0.53.1        | 3.7.7 | 0.57.1-py3.8 |  | 0.53.1, 0.54.3 |
+| mrtrix3     | rc3           | 2.7.17| 3.0.2        |  | rc3 |
+|mrtrix3tissue| 5.2.8         | 2.7.17| 5.2.9        |  | 5.2.8 |
+| mysqlclient | 1.4.6-py3.7   | 3.7.4 | 2.0.3-py3.8  |  | 1.4.4-py3.6, 1.4.6-py3.7 |
+| ninja       | 1.10.0        | 3.7.7 | 1.10.2-py3.8 |  | 1.10.0 |
+|openslide-python| 1.1.1-py3  | 3.6.6 | 1.1.2-py3    |  | 1.1.1-py3 |
+| pybind11    | 2.2.4-py3.7   | 3.7.4 | 2.6.2-py3.8  |  | 2.2.4-py3, 2.2.4-py3.7 |
+|snakemake    | 5.2.2         | 3.6.6 | 6.0.5        |  | 5.2.2 |
+|snap-stanford| 6.0.0-py3.8   | 3.8.8 | -            |  | snap-stanford-py/4.1, 5.0.9-py3.6 |
+|spades       | 3.15.0        | 3.7.4 | 3.15.2       |  | 3.15.0 |
+|thirdorder   | 1.1.1-py3     | 3.6.6 | -            |  | - |
+| wasp        | 0.3.4         | 3.7.7 | -            |  | - |
 
 ### Changes to Singularity modules
 
