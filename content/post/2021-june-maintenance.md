@@ -46,14 +46,14 @@ Rivanna is expected to return to service later in the day.
 
 Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit [here](/userinfo/howtos/rivanna/migrate-python/).
 
-The following tables show the detailed version changes for all affected modules. Please note:
+The following table shows the detailed version changes for all affected modules. Please note:
 - The Python version is upgraded to 3.8.8 unless otherwise stated.
 - The new version replaces the current. If the new version is `-`, that means the module version remains the same.
 - In some cases, the module load command is different. Check `module spider <module>/<version>` if you cannot load a module.
 - If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/rivanna/software/anaconda/#running-python2-and-python3-using-virtual-environments).
 
 | Module | Version | Python| NEW version  | NEW Python version | Removed versions |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 |anaconda     | 2020.11-py3.8 | 3.8.5 | -            |  | 5.2.0-py3.6, 2019.10-py3.7 |
 | ase         | 3.20.1        | 3.7.9 | -            |  | - |
 |bioconda     | py3.8         | 3.8.5 | -            |  | py3.6, py3.7 |
