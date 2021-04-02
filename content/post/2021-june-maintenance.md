@@ -42,6 +42,24 @@ Rivanna is expected to return to service later in the day.
     - rapidsai/0.17 - NVIDIA data science libraries
     - pipenv/2020.11.15 - automatically create and manage a virtualenv
 
+### Changes to Singularity modules
+
+All Singularity modules are now under 3.7.1. If you hardcoded older Singularity versions, e.g.
+```bash
+module load singularity/2.6.1 # or 3.5.2, 3.6.1
+```
+please change it to
+```bash
+module load singularity
+```
+
+The containers themselves have not been modified. We have not encountered backwards compatibility issues; please let us know if you do.
+
+If you need to know the Singularity version that was used to create a container, run:
+```bash
+singularity inspect /path/to/container
+```
+
 ### Changes to Anaconda/Python modules
 
 Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit [here](/userinfo/howtos/rivanna/migrate-python/).
@@ -88,23 +106,3 @@ The following table shows the detailed version changes for all affected modules.
 |thirdorder   | 1.1.1-py3     | 3.6.6 | -            |  | - |
 |trimgalore   | 0.6.4         | 3.6.8 | -            |  | 0.4.5 |
 | wasp        | 0.3.4         | 3.7.7 | -            |  | - |
-
-### Changes to Singularity modules
-
-All Singularity modules are now under 3.7.1. If you hardcoded older Singularity versions, e.g.
-```bash
-module load singularity/2.6.1 # or 3.5.2, 3.6.1
-```
-please change it to
-```bash
-module load singularity
-```
-
-The containers themselves have not been modified. We have not encountered backwards compatibility issues; please let us know if you do.
-
-If you need to know the Singularity version that was used to create a container, run:
-```bash
-singularity inspect /path/to/container
-```
-
-</details>
