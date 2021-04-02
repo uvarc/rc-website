@@ -40,9 +40,13 @@ The project is open source, so you can also download the source at https://githu
 <p><b>Rivanna Users</b> have two options:</p>
 <ol>
   <li>Load the <code>awscli</code> module:<br /><br />
-  <pre><code>module load awscli</code></pre></li>
+{{< code-snippet >}}
+module load awscli
+{{< /code-snippet >}}
   <li>If you need a different version, install it in your user directory:<br /><br />
-  <pre><code>pip install --user awscli==<version></code></pre></li>
+{{< code-snippet >}}
+pip install --user awscli==1.19.29
+{{< /code-snippet >}}
 </ol>
 
 {{% /alert-green %}}
