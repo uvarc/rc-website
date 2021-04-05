@@ -36,7 +36,6 @@ Rivanna is expected to return to service later in the day.
     - python/3.7.7 -> 3.8.8
     - pytorch/1.5.1 -> 1.8.0
     - tensorflow/2.1.0-py37 -> 2.4.1
-    - phonopy/2.6.1 -> 2.9.3 with phono3py 1.22.3
 
     For anaconda/python-dependent modules, please [see below](#changes-to-anacondapython-modules).
 
@@ -104,7 +103,7 @@ The following table shows the detailed version changes for all affected modules.
 | pybind11    | 2.2.4-py3.7   | 3.7.4 | 2.6.2-py3.8  |  | 2.2.4-py3, 2.2.4-py3.7 |
 | reframe     | 2.17          | 3.6.7 | -            |  | - |
 |snakemake    | 5.2.2         | 3.6.6 | 6.0.5        |  | 5.2.2 |
-|snap-stanford| 6.0.0-py3.8   | 3.8.8 | -            |  | 4.1, 5.0.9-py3.6, snap-stanford-py/4.1 |
+|snap-stanford| 5.0.9-py3.6   | 3.6.6 | 5.0.9-py3.8  |  | 4.1, 5.0.9-py3.6, snap-stanford-py/4.1 |
 |spades       | 3.15.0        | 3.7.4 | 3.15.2       |  | 3.15.0 |
 |thirdorder   | 1.1.1-py3     | 3.6.6 | -            |  | - |
 |trimgalore   | 0.6.4         | 3.6.8 | -            |  | 0.4.5 |
