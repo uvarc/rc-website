@@ -10,7 +10,6 @@ tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-
 {{< alert-green >}}Rivanna will be down for maintenance on <strong>June 15, 2021</strong>, beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
