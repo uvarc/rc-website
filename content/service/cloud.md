@@ -96,15 +96,6 @@ into their HPC jobs to create, use, and manage external services like these.
       </td>
     </tr>
     <tr>
-      <th scope="row" style="width:25%;font-weight:bold;">HIPAA-Compliant Computing</th>
-      <td>
-Researchers working on clinical datasets use Ivy, our private virtualized platform
-to perform HIPAA compliant analytics and compute jobs. This platform offers virtual machines, an R/Python data analytics
-tool, and Hadoop/Spark for larger analytics projects. Many users in Ivy work with EPIC clinical data alongside other
-highly-sensitive datasets for their investigations. 
-      </td>
-    </tr>
-    <tr>
       <th scope="row" style="width:25%;font-weight:bold;">Workflows & Pipeline Management</th>
       <td>
 <img src="/images/isometric-boxes.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
