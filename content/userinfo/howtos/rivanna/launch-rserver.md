@@ -61,7 +61,7 @@ singularity exec \
 Change the script into an executable:
 {{< code-snippet >}}
 chmod +x run_rserver.sh
-{{< code-snippet >}}
+{{< /code-snippet >}}
 
 ## Launch
 We recommend launching this in a [FastX Web (MATE)](/userinfo/rivanna/logintools/fastx/) session or through the Desktop Interactive App, both of which can be found on our Open OnDemand portal.
@@ -71,6 +71,6 @@ If you are performing compute-intensive tasks, please request an ijob after gett
 To launch RStudio Server, execute:
 {{< code-snippet >}}
 ./run_rserver.sh
-{{< code-snippet >}}
+{{< /code-snippet >}}
 
 Nothing will happen in the terminal which is normal. Open a browser and go to `localhost:8787`.
