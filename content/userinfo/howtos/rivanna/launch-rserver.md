@@ -66,7 +66,7 @@ chmod +x run_rserver.sh
 ## Launch
 We recommend launching this in a [FastX Web (MATE)](/userinfo/rivanna/logintools/fastx/) session or through the Desktop Interactive App, both of which can be found on our Open OnDemand portal.
 
-If you are performing compute-intensive tasks, please request an ijob after getting into FastX Web. This is not necessary in a Desktop session since you will have already requested resources.
+If you are performing compute-intensive tasks, please [request an ijob](/userinfo/rivanna/slurm/#submitting-an-interactive-job) after getting into FastX Web. This is not necessary in a Desktop session since you will have already requested resources.
 
 To launch RStudio Server, execute:
 {{< code-snippet >}}
