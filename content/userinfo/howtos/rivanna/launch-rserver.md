@@ -47,7 +47,7 @@ You must be consistent with the bind-mount paths that you set up in the previous
 SIF=$HOME/geospatial_latest.sif
 
 # specify path to tmp directory created in previous section
-TMPDIR=$(realpath $HOME/rstudio-tmp)
+TMPDIR=$HOME/rstudio-tmp
 
 module load singularity
 singularity exec \
