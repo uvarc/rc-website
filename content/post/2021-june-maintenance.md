@@ -2,8 +2,8 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2021-06-29T00:00:00-05:00"
-title = "Rivanna Maintenance: June, 2021"
+date = "2021-06-01T00:00:00-05:00"
+title = "Rivanna Maintenance: June 15, 2021"
 # url = "/maintenance"
 draft = false
 tags = ["rivanna"]
@@ -11,7 +11,7 @@ categories = ["feature"]
 +++
 
 
-{{< alert-green >}}Rivanna will be down for maintenance on <strong></strong>, beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna will be down for maintenance on <strong>June 15, 2021</strong>, beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
