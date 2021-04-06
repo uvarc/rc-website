@@ -23,6 +23,7 @@ author = "RC Staff"
 * [Docker images on Rivanna](/userinfo/howtos/rivanna/docker-images-on-rivanna)
 * [Adding packages to a container](/userinfo/howtos/rivanna/add-packages-to-container)
 * [Migrate Python packages](/userinfo/howtos/rivanna/migrate-python)
+* [Launch RStudio Server from a Singularity container](/userinfo/howtos/rivanna/launch-rserver)
 
 - - -
 
