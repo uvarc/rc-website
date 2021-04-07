@@ -34,7 +34,7 @@ module spider anaconda
 
 {{< module-versions module="anaconda" >}}
 
-The module version extensions, i.e. py2.7 and py3.6, indicate the version of the Python interpreter.
+The module version suffices, e.g. py2.7 and py3.8, indicate the version of the Python interpreter.
 
 # Python and MPI
 
@@ -65,7 +65,7 @@ Use one of the following two commands to install a particular package provided v
 **Creating a new environment**
 For example, if you want to install the epic package into a new environment named `custom_env` that does not exist yet, run this command:
 ```
-module load anaconda/5.2.0-py3.6
+module load anaconda
 conda create -n custom_env -c bioconda epic
 ```
 
@@ -85,7 +85,7 @@ After loading an anaconda module on Rivanna, the root environment with default p
 ```
 conda env list
 ```
-To use packages in your own environment named custom_env, run this command:
+To use packages in your own environment named `custom_env`, run this command:
 ```
 source activate custom_env
 ```
@@ -104,7 +104,7 @@ source deactivate custom_env
 #SBATCH -A mygroup
 
 module purge
-module load anaconda/5.2.0-py3.6 # or anaconda/5.2.0-py2.7
+module load anaconda # or anaconda/2019.10-py2.7 for Python 2
 # optional: uncomment next line to use your custom Conda environment; replace 'custom_env' with actual env name
 # source activate custom_env
 
