@@ -13,7 +13,7 @@ author = "RC Staff"
 
 Rocker provides many software containers for R. Due to the default permission settings of our file system, launching an RStudio Server session is not straightforward. If you are interested in using their containers on Rivanna, please follow these steps.
 
-## Pull container
+# Pull container
 Use Singularity to pull the container. We will use `geospatial` in this example.
 
 ```bash
@@ -23,7 +23,7 @@ singularity pull docker://rocker/geospatial
 
 You should see `geospatial_latest.sif` in your current directory.
 
-## One-time setup
+# One-time setup
 The commands in this section are to be executed as a one-time setup on the frontend.
 
 You will need to create a directory where you have write permissions, typically somewhere under `$HOME`.
@@ -38,7 +38,7 @@ mkdir -p $TMPDIR/var/{lib,run}
 
 These directories will be bind-mounted at runtime when you launch the container.
 
-## Launch script
+# Launch script
 You must be consistent with the bind-mount paths that you set up in the previous section. We recommend putting the following commands in a script (e.g. `run_rserver.sh`) so that you will not need to type every time you launch RStudio Server.
 
 ```bash
@@ -63,7 +63,7 @@ Change the script into an executable:
 chmod +x run_rserver.sh
 {{< /code-snippet >}}
 
-## Launch
+# Launch
 We recommend launching this in a [FastX Web (MATE)](/userinfo/rivanna/logintools/fastx/) session or through the Desktop Interactive App, both of which can be found on our Open OnDemand portal.
 
 If you are performing compute-intensive tasks, please [request an ijob](/userinfo/rivanna/slurm/#submitting-an-interactive-job) after getting into FastX Web. This is not necessary in a Desktop session since you will have already requested resources.
