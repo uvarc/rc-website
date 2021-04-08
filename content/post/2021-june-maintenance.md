@@ -74,6 +74,7 @@ The following table shows the detailed version changes for all affected modules.
 |---|---|---|---|---|---|
 |anaconda     | 2020.11-py3.8 | 3.8.5 | -            |  | 5.2.0-py3.6, 2019.10-py3.7 |
 | ase         | 3.20.1        | 3.7.9 | -            |  | 3.17.0-py3 |
+| bart        | 2.0           | 3.7.8 | -            |  | 1.0.1 |
 |bioconda     | py3.8         | 3.8.5 | -            |  | py3.6, py3.7 |
 |biopython    | 1.70-py2      | 2.7.17| 1.78-py3     |  | - |
 |cudatoolkit  | 10.1.168-py3.6| 3.6.10| 11.0.3-py3.8 |  | 10.1.168-py3.6 |
