@@ -66,33 +66,36 @@ To import `gurobipy` as a Python module, you can use either Gurobi's own `python
 Please replace `python` with `python3.7` in your SLURM scripts. However, note that Gurobi does not provide `pip`. If you need additional Python packages please use a non-Gurobi Python (e.g. via `module load anaconda`). See next section.
 
 ### Non-Gurobi Python
-The module supports Python versions 2.7, 3.6, and 3.7. Please follow the instructions in the `module load` message.
+The module supports Python versions 2.7, 3.6 - 3.9. Please follow the instructions in the `module load` message.
 
 To check the version of your `python`, run `python -V`.
 
 - 2.7
 
     If you are using the system Python (i.e. without loading any Anaconda or Python modules) or the `anaconda/2019.10-py2.7` module, run:
-    ```bash
+    {{< code-snippet >}}
     export PYTHONPATH=$GUROBI_HOME/lib/python2.7_utf32
-    ```
+    {{< /code-snippet >}}
 
 - 3.6
 
     Python 3.6 is provided through, for instance, `anaconda/5.2.0-py3.6`. Run:
-    ```bash
+    {{< code-snippet >}}
     export PYTHONPATH=$GUROBI_HOME/lib/python3.6_utf32
-    ```
+    {{< /code-snippet >}}
 
 - 3.7
 
     Python 3.7 is provided through, for instance, `anaconda/2019.10-py3.7`. No extra setup is needed.
 
+- 3.8
+
+    Python 3.8 is provided through, for instance, `anaconda/2020.11-py3.8`. Run:
+    {{< code-snippet >}}
+    export PYTHONPATH=$GUROBI_HOME/lib/python3.8_utf32
+    {{< /code-snippet >}}
+
 If you followed these instructions and still have trouble importing `gurobipy` in your Python script, please use the Gurobi Python `python3.7`.
-
-To install and use additional Python packages, we recommend loading `anaconda/2019.10-py3.7`.
-
-## Matlab
 
 ## Julia
 

@@ -52,6 +52,14 @@ However, if you want to create a new Notebook, go to the Launcher pane and click
 
 If you are more familiar with the classic Notebook environment, you can change the JupyterLab format by clicking on `Help` and select `Launch Classic Notebook`.
 
+# Extensions
+We provide the following JupyterLab extensions:
+
+- [plotly](https://plotly.com/python/getting-started/) is an interactive plotting library
+- [jupyterlab-dash](https://github.com/plotly/jupyterlab-dash) renders Plotly Dash apps as a separate window in JupyterLab
+- [jupyterlab-toc](https://github.com/jupyterlab/jupyterlab-toc) auto-generates a table of contents in the left area
+- [voila](https://voila.readthedocs.io/en/stable/index.html) **(available after June 15, 2021)** allows you to convert a Jupyter Notebook into an interactive dashboard
+
 # FAQ
 ## How to create custom JupyterLab kernels?
 Please refer to our [how-to](/userinfo/howtos/rivanna/custom-jupyter-kernels).

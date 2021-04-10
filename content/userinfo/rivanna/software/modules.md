@@ -57,7 +57,7 @@ module load anaconda
 If you do not wish to use the default version chosen by the modules environment, you must specify the version explicitly. For example, to select a different version of anaconda:
 
 {{< code-snippet >}}
-module load anaconda/2019.10-py3.7
+module load anaconda/2019.10-py2.7
 {{< /code-snippet >}}
 
 Note that the 'default' version of a module may change, so if you are developing applications yourself we highly recommend that you load explicit versions of modules; that is, do not invoke the default package, but specify a version.  If the version is eventually dropped for newer versions, loading the module will fail, which will make you aware that you will need to update your application appropriately.

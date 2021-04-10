@@ -17,7 +17,7 @@ In both cases you'll need to install the `ipykernel` package.
 # Jupyter kernel based on Anaconda environment
 To create a custom kernel of the Anaconda environment `myenv` that uses Python 3.7:
 ```
-module load anaconda/2019.10-py3.7
+module load anaconda
 conda create -n myenv python=3.7 ipykernel <other_packages>
 source activate myenv
 python -m ipykernel install --user --name myenv --display-name "My Env"
