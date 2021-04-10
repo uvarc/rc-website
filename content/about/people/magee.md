@@ -24,11 +24,9 @@ Neal's background is in development and operations, and designs both serverless 
 
 **Recent Publications**
 
-<ul>
-<li>Ma, Wenjing; Wang, Zhenjia; Zhang, Yifan; Magee, Neal; Feng, Yayi; Shi, Ruoyao; Zang, Chongzhi. "BARTweb: a web server for transcriptional regulator association analysis." <i>NAR Genomics and Bioinformatics</i>. 2021, 1-6. https://doi.org/10.1093/nargab/lqab022
-<li>Ma, Wenjing; Wang, Zhenjia; Zhang, Yifan; Magee, Neal; Chen, Yang; Zang, Chongzhi. "BARTweb: a web server for transcription factor association analysis." <i>Cancer Research</i> 80 (16 Supplement). <a href="https://cancerres.aacrjournals.org/content/80/16_Supplement/3214.abstract" target="_new">https://doi.org/10.1158/1538-7445.AM2020-3214</a>
-<li>Michal Stolarczyk, Vincent P. Reuter, Jason P. Smith, Neal E. Magee, Nathan C. Sheffield. "Refgenie: a reference genome resource manager." <i>GigaScience</i>, 9.2 (Feb 2020). <a href="https://doi.org/10.1093/gigascience/giz149" target="_new">https://doi.org/10.1093/gigascience/giz149</a>
-<li>Nagraj VP, Magee NE, Sheffield NC. "LOLAweb: a containerized web server for interactive genomic locus overlap enrichment analysis." <i>Nucleic Acids Research</i>, 46.W1 (July 2018). <a href="http://doi.org/10.1093/nar/gky464" target="_new">http://doi.org/10.1093/nar/gky464</a>
-</ul>
+- Ma, Wenjing; Wang, Zhenjia; Zhang, Yifan; Magee, Neal; Feng, Yayi; Shi, Ruoyao; Zang, Chongzhi. "BARTweb: a web server for transcriptional regulator association analysis." *NAR Genomics and Bioinformatics*, Volume 3, Issue 2, June 2021. https://doi.org/10.1093/nargab/lqab022
+- Ma, Wenjing; Wang, Zhenjia; Zhang, Yifan; Magee, Neal; Chen, Yang; Zang, Chongzhi. "BARTweb: a web server for transcription factor association analysis." *Cancer Research* 80 (16 Supplement). https://doi.org/10.1158/1538-7445.AM2020-3214
+- Michal Stolarczyk, Vincent P. Reuter, Jason P. Smith, Neal E. Magee, Nathan C. Sheffield. "Refgenie: a reference genome resource manager." *GigaScience*, 9.2 (Feb 2020). https://doi.org/10.1093/gigascience/giz149
+- Nagraj VP, Magee NE, Sheffield NC. "LOLAweb: a containerized web server for interactive genomic locus overlap enrichment analysis." *Nucleic Acids Research*, 46.W1 (July 2018). http://doi.org/10.1093/nar/gky464
 
-<hr size=1 />
+- - -
