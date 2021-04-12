@@ -5,7 +5,7 @@ categories = ["forms"]
 images = [""]
 author = "Staff"
 description = ""
-title = "DCOS Container Request"
+title = "Container Service Request"
 draft = false
 type = "form"
 private = true
@@ -18,7 +18,7 @@ private = true
 </div>
 <div>
   <input type="hidden" id="category" name="category" value="DCOS">
-  <input type="hidden" id="request_title" name="request_title" value="DCOS Service Request" />
+  <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
 {{% form-userinfo %}}
   <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
