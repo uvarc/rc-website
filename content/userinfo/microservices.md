@@ -4,7 +4,7 @@ description = ""
 title = "Microservices"
 date = "2021-04-04T10:08:29-05:00"
 draft = false
-tags = ["compute","cloud","hpc","containers","dcos","hybrid","infrastructure","docker"]
+tags = ["compute","cloud","hpc","containers","hybrid","infrastructure","docker"]
 categories = ["userinfo"]
 images = [""]
 +++

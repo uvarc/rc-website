@@ -1,6 +1,6 @@
 +++
-date = "2020-07-22T23:59:16-05:00"
-tags = ["microservices","containers","docker","dcos"]
+date = "2021-04-10T23:59:16-05:00"
+tags = ["microservices","containers","docker"]
 categories = ["forms"]
 images = [""]
 author = "Staff"
@@ -42,7 +42,7 @@ private = true
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="10"></textarea>
     </div>
-    <small id="project-summary-Help" class="form-text text-muted">Please describe your project and the container images you want to run in DCOS.</small>
+    <small id="project-summary-Help" class="form-text text-muted">Please describe your project and the container images you want to run.</small>
   </div>
   <hr size=1 />
   <div class="row">
