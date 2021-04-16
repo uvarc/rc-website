@@ -1,10 +1,10 @@
 +++
 author = "RC Staff"
 description = ""
-title = "DCOS Microservices"
-date = "2021-01-04T10:08:29-05:00"
+title = "Microservices"
+date = "2021-04-04T10:08:29-05:00"
 draft = false
-tags = ["compute","cloud","hpc","containers","dcos","hybrid","infrastructure","docker"]
+tags = ["compute","cloud","hpc","containers","hybrid","infrastructure","docker"]
 categories = ["userinfo"]
 images = [""]
 +++
@@ -20,10 +20,10 @@ images = [""]
 </p>
 
 # Microservices at UVA
-Research Computing runs microservices in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon. DCOS makes the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to [project](/userinfo/storage/non-sensitive-data/#project-storage) storage.
+Research Computing runs microservices in a clustered orchestration environment that automates the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. It also has over 300TB of cluster storage and can attach to [project](/userinfo/storage/non-sensitive-data/#project-storage) storage.
 
 {{% highlight-danger %}}
-UVA's DCOS Microservices platform is hosted in the standard security zone. It is suitable for processing public or moderately sensitive data. Highly sensitive data is not permitted on this platform. 
+UVA's microservices platform is hosted in the standard security zone. It is suitable for processing public or moderately sensitive data. Highly sensitive data is not permitted on this platform. 
 {{% /highlight-danger %}}
 
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
@@ -53,7 +53,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 - We teach workshops on containers and how to use them. Browse the course overview for <a href="https://learning.rc.virginia.edu/tag/containers/" target="_new">Building Containers for Rivanna</a> at your own pace.
 - Docker provides an excellent [Getting Started](https://docs.docker.com/get-started/) tutorial.
 - Katacoda offers a great [hands-on Docker training series](https://www.katacoda.com/courses/docker) for free.
-- DCOS allows users to inject `ENV` environment variables and encrypted secrets into containers at runtime. This means sensitive information does not need to be written into your container.
+- Users may inject `ENV` environment variables and encrypted secrets into containers at runtime. This means sensitive information does not need to be written into your container.
 
 - - -
 
@@ -81,7 +81,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 </ol>
 
 
-Browse a list of recent [UVA projects employing DCOS Microservices](/project?tag=.dcos).
+Browse a list of recent [UVA projects employing microservices](/project?tag=.dcos).
 
 - - -
 
@@ -163,7 +163,7 @@ To be eligible to run your microservice on our infrastructure, you must meet the
   <li>If bringing your own custom container, it must be <b>ready to go</b>! Unfortunately, we cannot create custom containers for you unless it is part of a funded project.
 </ul>
 
-Microservices may not run efficiently for all use cases. Some scenarios that cannot run successfully in DCOS include:
+Microservices may not run efficiently for all use cases. Some scenarios that cannot run successfully in containers include:
 
 <ul>
   <li>Large (over 100GB) database collections.
@@ -176,10 +176,7 @@ Microservices may not run efficiently for all use cases. Some scenarios that can
 
 # Pricing
 
-Starting with the new fiscal year beginning July 1, the pilot phase of the DCOS platform will conclude and we will 
-begin charging a modest monthly fee for the use of research container services on DCOS.
-
-The following pricing structure will take effect on 1 July 2020:
+Container services hosted by UVA Research Computing fall under this pricing structure:
 
 <table class="table">
   <thead>
@@ -228,4 +225,4 @@ Singularity is a container application targeted to multi-user, high-performance 
 
 Have a containerized application ready for launch? Or want a consultation to discuss your microservice implementation?
 
-<a href="/form/containers/"><button class="btn btn-success">Request DCOS Access</button></a> &nbsp;&nbsp; {{< consult-button >}}
+<a href="/form/containers/"><button class="btn btn-success">Request Access</button></a> &nbsp;&nbsp; {{< consult-button >}}
