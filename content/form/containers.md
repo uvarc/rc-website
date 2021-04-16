@@ -1,11 +1,11 @@
 +++
-date = "2020-07-22T23:59:16-05:00"
-tags = ["microservices","containers","docker","dcos"]
+date = "2021-04-10T23:59:16-05:00"
+tags = ["microservices","containers","docker"]
 categories = ["forms"]
 images = [""]
 author = "Staff"
 description = ""
-title = "DCOS Container Request"
+title = "Container Service Request"
 draft = false
 type = "form"
 private = true
@@ -18,7 +18,7 @@ private = true
 </div>
 <div>
   <input type="hidden" id="category" name="category" value="DCOS">
-  <input type="hidden" id="request_title" name="request_title" value="DCOS Service Request" />
+  <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
 {{% form-userinfo %}}
   <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
@@ -42,7 +42,7 @@ private = true
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="10"></textarea>
     </div>
-    <small id="project-summary-Help" class="form-text text-muted">Please describe your project and the container images you want to run in DCOS.</small>
+    <small id="project-summary-Help" class="form-text text-muted">Please describe your project and the container images you want to run.</small>
   </div>
   <hr size=1 />
   <div class="row">

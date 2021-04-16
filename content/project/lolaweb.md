@@ -13,7 +13,7 @@ images = "/images/projects/LOLAweb-logo-square.png"
 description = ""
 date = "2020-02-23T14:33:50-05:00"
 draft = false
-projecttype = ["basic-science", "tools", "dcos"]
+projecttype = ["basic-science", "tools", "containers"]
 publications = [{authors = "Nagraj VP, Magee NE, Sheffield NC", title = "LOLAweb: a containerized web server for interactive genomic locus overlap enrichment analysis", journal = "Nucleic Acids Research", year = "2018", doi = "10.1093/nar/gky464"}]
 
 +++

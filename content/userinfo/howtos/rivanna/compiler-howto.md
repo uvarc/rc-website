@@ -160,3 +160,6 @@ make install
 is generally the recipe to build and install the program.
 
 The default `cmake` on Rivanna is fairly old and most users will need to load a newer `cmake` module.  If any newer version will work, `module load` will suffice.  Otherwise `module spider cmake` will show the options.
+
+For more detailed instructions on building and running compiled codes on Rivanna, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
+

@@ -7,7 +7,7 @@ images = "/images/projects/bart-web.png"
 description = ""
 date = "2018-10-22T17:18:27-04:00"
 draft = false
-projecttype = ["basic-science", "tools", "dcos"]
+projecttype = ["basic-science", "tools", "containers"]
 +++
 
 ## BART (Binding Analysis for Regulation of Transcription) Web

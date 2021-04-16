@@ -87,7 +87,7 @@ With projects that have similar dependencies, you can freely install different v
 of the same package without worry on two different Virtual Environments. In order to jump
 between two VE's, you simply activate or deactivate your environment. Follow the steps below:
 
-1. Update Conda:
+1. Update Conda (skip this step if you are on Rivanna):
 
 	`conda update conda` 
 

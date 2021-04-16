@@ -2,9 +2,9 @@
 author = "RC Staff"
 description = ""
 title = "Computing Environments at UVA"
-date = "2021-01-16T10:08:29-05:00"
+date = "2021-04-10T10:08:29-05:00"
 draft = false
-tags = ["compute","rivanna","ivy","containers","systems","hipaa","hpc","dcos"]
+tags = ["compute","rivanna","ivy","containers","systems","hipaa","hpc"]
 categories = ["userinfo"]
 images = [""]
 +++
@@ -27,5 +27,5 @@ Skyline is the University's local research cloud for public and moderately sensi
  
 - - -
 
-# DCOS
+# Microservice Cluster
 Research Computing runs microservices in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon. DCOS makes the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to project storage and GPFS.

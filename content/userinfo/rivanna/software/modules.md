@@ -26,62 +26,66 @@ categories = ["userinfo"]
 # Basic Commands
 **List all available software**
 
-```
+{{< code-snippet >}}
 module avail
-```
+{{< /code-snippet >}}
 
 Use `key` to list all modules in a particular category.  The current choices are
 
-```
+{{< code-snippet nobutton >}}
 base, bio, cae, chem, compiler, data, debugger, devel, geo, ide, lang, lib, math, mpi, numlib, perf, phys, system, toolchain, tools, vis, licensed
-```
+{{< /code-snippet >}}
 
 Example:
 
-```
+{{< code-snippet >}}
 module key bio
-```
+{{< /code-snippet >}}
 
 **Load the environment for a particular package**
 
-```
+{{< code-snippet >}}
 module load thepackage
-```
+{{< /code-snippet >}}
 
 If you do not specify a version, the system default is loaded.  For example, to load the default version of the anaconda Python distribution, run
 
-```
+{{< code-snippet >}}
 module load anaconda
-```
+{{< /code-snippet >}}
+
 If you do not wish to use the default version chosen by the modules environment, you must specify the version explicitly. For example, to select a different version of anaconda:
 
-```
-module load anaconda/2019.10-py3.7
-```
+{{< code-snippet >}}
+module load anaconda/2019.10-py2.7
+{{< /code-snippet >}}
+
 Note that the 'default' version of a module may change, so if you are developing applications yourself we highly recommend that you load explicit versions of modules; that is, do not invoke the default package, but specify a version.  If the version is eventually dropped for newer versions, loading the module will fail, which will make you aware that you will need to update your application appropriately.
 
 **Remove a module**
 
-```
+{{< code-snippet >}}
 module unload thepackage
-```
+{{< /code-snippet >}}
 
 **List all modules you have loaded in the current shell**
 
-```
+{{< code-snippet >}}
 module list
-```
+{{< /code-snippet >}}
 
 **Change from one version to another**
 
-```
+{{< code-snippet >}}
 module swap
-```
+{{< /code-snippet >}}
+
 For example, if you have loaded gcc/7.1.0 and you wish to switch to intel/18.0
 
-```
+{{< code-snippet >}}
 module swap gcc/7.1.0 intel/18.0
-```
+{{< /code-snippet >}}
+
 This will unload the `gcc/7.1.0` environment entirely, and load the `intel/18.0` environment. 
 
 **Clear all modules you have loaded**
@@ -182,9 +186,9 @@ If you install your own software, you can create your own modules stored in your
 
 The first step is to create a directory to store the modulefiles used by `lmod`.
 
-```
+{{< code-snippet >}}
 mkdir $HOME/modulefiles
-```
+{{< /code-snippet >}}
 
 Next, download the software package for which you would like to create a module. Carefully follow the instructions to install your software.  Remember that most packages assume you can install as an administrator, and that is not permitted on Rivanna, so you must change your installation directory.  If you are compiling software you can find a tutorial at our [training site](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
 
@@ -206,14 +210,15 @@ $ cd ~/modulefiles
 $ mkdir git
 $ cd git
 ```
+
 Use an editor to create the following file and name it `2.6.2.lua`
+
 ```
 local home    = os.getenv("HOME")
 local version = myModuleVersion()
 local pkgName = myModuleName()
 local pkg     = pathJoin(home,pkgName,version,"bin")
 prepend_path("PATH", pkg)
-
 ```
 
 The first line reads the user’s HOME directory from the environment. The second line uses the “pathJoin” function provided from Lmod. It joins strings together with the appropriate number of “/”. The last line calls the “prepend_path” function to add the path to this version of git at the beginning of the user’s path.
@@ -227,7 +232,9 @@ $ which git
 ~/git/2.6.2/bin/git
 ```
 
-## Finding Modules with the Same Name
+- - -
+# Finding Modules with the Same Name
+
 If the user has created a module and at a later date the system provides a newer version, the default behavior if no version is specified to the `module load` command is to use the highest version available in all module paths searched.
 
 ```
