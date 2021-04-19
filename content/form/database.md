@@ -11,7 +11,37 @@ type = "form"
 private = true
 +++
 
-<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.885.0.min.js"></script>
+<script type="text/javascript">
+AWS.config.region = "us-east-1";
+AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: "us-east-1:476d3055-6a82-45c9-80f5-c04bfdc47cbd"});
+
+// var AWS = require('aws-sdk');
+
+// Create publish parameters
+var params = {
+  Message: 'MESSAGE_TEXT',
+  TopicArn: 'arn:aws:sns:us-east-1:474683445819:website-db-request',
+};
+
+// Create promise and SNS service object
+function submit(){
+  var publishTextPromise = new AWS.SNS({apiVersion: '2010-03-31'}).publish(params).promise();
+};
+
+// Handle promise's fulfilled/rejected states
+publishTextPromise.then(
+  function(data) {
+    console.log(`Message ${params.Message} sent to the topic ${params.TopicArn}`);
+    console.log("MessageID is " + data.MessageId);
+  }).catch(
+    function(err) {
+    console.error(err, err.stack);
+  });
+
+</script>
+<!-- <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8"> -->
+<form id="request-form" accept-charset="UTF-8" onsubmit="submit();">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
@@ -78,12 +108,14 @@ private = true
   </div>
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
-    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>
 </form>
 <div>
 </div>
 
+<!--
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+-->
