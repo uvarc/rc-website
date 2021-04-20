@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="generator" content="Hugo 0.59.1" />
+    <base href="//localhost:1313/form/sns-test/">
+    <link rel="canonical" href="//localhost:1313/forms/">
+    <link rel="Shortcut Icon" href="//www.rc.virginia.edu/images/favicon.ico" type="image/x-icon" />
+    <meta type="form" />
+
+    <title>Database Service Request | Research Computing</title>
+
+    <!-- combined, minified CSS -->
+    <link href="//localhost:1313/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="/js/jquery.isotope.min.js" type="text/javascript"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.885.0.min.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+        $('#response_message').show();
+    });
+
+    AWS.config.region = "us-east-1";
+    AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: "us-east-1:476d3055-6a82-45c9-80f5-c04bfdc47cbd"});
+    AWS.config.update({region: 'us-east-1'});
+
+    function generatePassword() {
+        var length = 10,
+        charset = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789%@$^!",
+        retVal = "";
+        for (var i = 0, n = charset.length; i < length; ++i) {
+            retVal += charset.charAt(Math.floor(Math.random() * n));
+        }
+        return retVal;
+    }
+
+    function submitForm(){
+      var pass = generatePassword();
+      var group = document.getElementById("group").value;
+      var family = document.getElementById("family").value;
+      var JSONObj = { "group ": group, "family": family, "pass": pass};
+      sendthis = JSON.stringify(JSONObj)
+      console.log(sendthis);
+      var params = {
+        Message: sendthis,
+        TopicArn: 'arn:aws:sns:us-east-1:474683445819:website-db-request',
+      };
+      var publish = new AWS.SNS({apiVersion: '2010-03-31'}).publish(params).promise();
+      search_params.set('message', 'SUBMITTED');
+      search_params.set('status', 'success');
+      search_params.set('password', pass)
+    };
+
+    </script>   
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-90358528-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="/js/scripts.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" style="background-color:#0f3a72;border-radius: 0 !important;">
+<div class="container">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+  <ul class="navbar-nav mr-auto">
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">About</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="/about/mission/">Mission</a>
+      <a class="dropdown-item" href="/about/people/">People</a>
+      
+    </div>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Get Started</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="/userinfo/systems/">Choose a System</a>
+      <a class="dropdown-item" href="/userinfo/rivanna/allocations/">Request Access</a>
+      <a class="dropdown-item" href="/userinfo/user-guide/">User Guides</a>
+    </div>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Services</a>
+    <div class="dropdown-menu">
+      
+      
+      
+      <a class="dropdown-item" href="/service/high-performance-computing/">High Performance Computing</a>
+      <a class="dropdown-item" href="/service/data-analysis/">Data Analysis</a>
+      <a class="dropdown-item" href="/service/imaging/">Image Processing & Visualization</a>  
+      <a class="dropdown-item" href="/service/bioinformatics/">Bioinformatics</a>  
+      <a class="dropdown-item" href="/service/cloud/">Cloud Solutions</a>
+      <a class="dropdown-item" href="/userinfo/storage/">Storage</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="/form/support-request/?category=Consultation">Project Consulting</a>
+      
+      <a class="dropdown-item" href="/service/acknowledgement/">Acknowledgement</a>
+    </div>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">User Info</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="/userinfo/user-guide/">User Guides</a>
+      <a class="dropdown-item" href="/userinfo/faq/overview">FAQ</a>
+      <a class="dropdown-item" href="/userinfo/howtos/overview">HowTos</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="/userinfo/rivanna/overview/">Rivanna</a>
+      <a class="dropdown-item" href="/userinfo/ivy/overview">Ivy</a>
+      <a class="dropdown-item" href="/userinfo/microservices/">DCOS Microservices</a>
+      <a class="dropdown-item" href="/userinfo/storage/">Storage</a>
+      <a class="dropdown-item" href="/userinfo/data-transfer/">Data Transfer</a>
+      <a class="dropdown-item" href="/userinfo/omero/overview">Omero Image Database</a>
+      <a class="dropdown-item" href="/userinfo/pricing/">Pricing</a>
+    </div>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Education</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="/education/workshops/">Workshops</a>
+      <a class="dropdown-item" target="_new" href="https://learning.rc.virginia.edu/">Course Material</a>
+      <a class="dropdown-item" href="/education/rivanna-instructional">Using Rivanna for Instruction</a>
+      
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" href="/project/" style="color:white;">Projects</a>
+  </li>
+
+  <li class="nav-item" style="margin-left:2rem;margin-right:2rem;">
+    <a href="/support/"><button style="" class="btn btn-success" type="submit">User Support</button></a>
+  </li>
+
+  </ul>
+
+    
+    <div style="float:right;margin-right:1rem;">
+      <form method="get" action="/search/">
+       <i class="fas fa-search-plus" style="color:white;margin-right:4px;"></i> <input type=search id=qt name=q class="" placeholder="Search" style="font-size:90%;padding:4px;margin-top:0.2rem;margin-bottom:auto;background-color:#0f3a72;color:white;border:solid 1px white;">
+      </form>
+    </div>
+    
+
+  </div>
+</div>
+</nav>
+
+
+        <header class="blog-header" style="padding-top:10px;padding-bottom:4px;">
+      <div class="container">
+        <a href="/"><img src="/images/logos/uva-logo-horiz-200x50.png" alt="UVA Research Computing" class="img-fluid somrc-logo-fluid" style="float:left;padding-top:1.4rem;padding-right:0.4rem;" /></a>
+        <img class="hidden-sm-down" src="/images/logos/black-1x1.png" style="width:1.4px;height:6rem;margin-left:10px;margin-right:20px;float:left;" />
+        <h1 class="blog-title" style="font-family:'Source Serif Pro';font-weight:semi-bold;padding-top:12px;"><a href="//localhost:1313/" rel="home">Research Computing</a></h1>          
+        <p class="lead blog-description" style="font-family:'Source Serif Pro';font-style:italic;font-weight:400;">Creating innovative solutions for researchers</p>
+      </div>
+    </header>
+
+	
+	<section id="main-content" class="main-content" style="margin-top:10px;">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+
+          
+
+
+<article class="blog-post">
+  <header>
+    <h2 id="support-header" class="blog-post-title"><a href="//localhost:1313/form/sns-test/">Database Service Request</a></h2>
+    <hr size=1 />
+  </header>
+
+  <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
+    <p id="form_post_response"></p>
+  </div>
+<div id="formbody">
+<div>
+  <input type="hidden" id="category" name="category" value="Database">
+  <input type="hidden" id="request_title" name="request_title" value="Database Request" />
+  <div class="row">
+    <div class="col-xs-4 col-md-4 form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> 
+      <label class="control-label" for="name">Name <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="form-control form-text required" type="text" id="name" name="name" value="" size="60" maxlength="128" readonly />
+      <input class="form-control form-text required" type="hidden" id="category" name="category" value="Storage">
+    </div>
+    <div class="col-xs-4 col-md-4 form-item form-group form-item form-item-submitted-e-mail form-type-webform-email form-group"> 
+      <label class="control-label" for="email">E-mail <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" readonly />
+    </div>
+    <div class="col-xs-2 col-md-2 form-item form-type-textfield form-group"> <label class="control-label" for="uid">User ID <span class="form-required" title="This field is required.">*</span></label>
+      <input required="required" class="form-control form-text required" type="text" id="uid" name="uid" value="" size="20" maxlength="20" readonly />
+    </div>  
+    <div class="col-xs-1" style="position:relative;">
+      <div class="" style="position:absolute;bottom:1.4rem;padding-left:0.6rem;">
+        <a style="font-size:80%;text-decoration:none;color:black;" href="https://auth.rc.virginia.edu/"><i class="fas fa-sync-alt" style="text-decoration:none;color:black;"></i></a>
+      </div>
+    </div>
+  </div>
+
+<p><hr size=1 />
+  <input type="hidden" id="category" name="category" value="DCOS">
+  <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
+  <div class="row">
+    <div class="col form-item form-type-textarea form-group">
+      <label class="control-label" for="group">Group</label>
+      <input class="form-control form-text" type="text" id="group" value="" size="20" maxlength="20" />
+    </div>
+  </div>
+<div class="row">
+    <div class="col form-item form-type-textarea form-group">
+      <label class="control-label" for="family">Family</label>
+      <input class="form-control form-text" type="text" id="family" value="" size="20" maxlength="20" />
+    </div>
+  </div>
+   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
+    <button class="button-primary btn btn-primary form-submit" id="submit" name="op" onclick="submitForm();" value="Submit">Submit</button>
+  </div>
+</div>
+</div></p>
+
+<!-- <script type="text/javascript" src="/js/user-session.js"></script> -->
+
+
+</article> 
+
+
+
+        </div> <!-- /.blog-main -->
+
+        <aside class="col-sm-4 blog-sidebar">
+
+  <div class="sticky">
+
+    <section class="sidebar-module sidebar-module-inset" style="margin-bottom:10px;margin-top:10px;">
+    <p class=lead>User Support</p>
+    
+    <div class="btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Support Options
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="/support/">Support Overview</a>
+        <a class="dropdown-item" href="/form/support-request/">Open a Support Ticket</a>
+        <a class="dropdown-item" href="/form/support-request/?category=Consultation">Request a Consultation</a>
+        <a class="dropdown-item" href="/userinfo/rivanna/allocations/">Request Rivanna Allocations</a>
+        <div class="dropdown-divider"></div>
+        
+        <a class="dropdown-item" href="/userinfo/user-guide/">User Guides</a>
+        <a class="dropdown-item" href="/userinfo/faq/overview/">FAQs</a>
+        <a class="dropdown-item" href="/userinfo/howtos/overview/">How To</a>
+      </div>
+    </div>
+  </section>
+
+
+    <section class="sidebar-module" style=";margin-bottom:10px;margin-top:4rem;">
+    <p class=lead>All Forms</p>
+    <ul style="font-size:90%;font-weight:light;" class="list-group">
+      <a href="/form/support-request/" class="list-group-item list-group-item-action">Support Request</a>
+      <a href="/form/storage/" class="list-group-item list-group-item-action">Storage Request</a>
+      <a href="/form/allocation-standard/" class="list-group-item list-group-item-action">Standard Allocation</a>
+      <a href="/form/allocation-purchase/" class="list-group-item list-group-item-action">Purchase Allocations</a>
+      <a href="/form/allocation-dean/" class="list-group-item list-group-item-action">Dean Sponsored Allocations</a>
+      <a href="/form/allocation-instructional/" class="list-group-item list-group-item-action">Instructional Allocation</a>
+      <a href="https://services.rc.virginia.edu/" target="_new" class="list-group-item list-group-item-action">Ivy Project Request</a>
+      <a href="/form/omero/" class="list-group-item list-group-item-action">Omero Request</a>
+      <a href="/form/containers/" class="list-group-item list-group-item-action">Microservice Request</a>
+      <a href="/form/support-request/?category=Consultation" class="list-group-item list-group-item-action">Consultation Request</a>
+    </ul>
+  </section>
+
+
+  </div>
+
+</aside>
+
+
+      </div> <!-- /.row -->
+    </div> <!-- /.container -->
+
+	</section>
+	
+      <footer class="footer" style="margin-top:20px;">
+    <div class="container" style="text-align:left;padding-top:20px;">
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+          <strong><span class="glyphicon glyphicon-map-marker"></span> Contact</strong>
+          <address>
+            Research Computing<br />
+            University of Virginia<br />
+            Fontaine Research Park<br />
+            560 Ray C. Hunt Drive<br />
+            Charlottesville, VA 22903<br />
+          </address>
+        </div>
+
+        <div class="col-6 col-sm-4 col-lg-4" style="padding-left:20px;">
+          <strong><span class="glyphicon glyphicon-time"></span> Find Us</strong><br /><br />
+            <p style="line-height:240%;">
+              <a href="https://github.com/uvarc" target="_blank" rel="noopener noreferrer"><img src="/images/github-32.png" alt="GitHub" style="margin-right:8px;" /></a>
+              <a href="https://twitter.com/uva_rc" target="_blank" rel="noopener noreferrer"><img src="/images/twitter-black-circle-32.png" alt="Twitter" style="margin-right:8px;" /></a>
+              <a href="https://hub.docker.com/r/uvarc/" target="_blank" rel="noopener noreferer"><img src="/images/docker-bw-32.png" alt="Docker" style="margin-right:8px;" /></a>
+              <a href="https://rci.hpc.virginia.edu/xdmod/#main_tab_panel:tg_summary" target="_blank" rel="noopener noreferer"><img src="/images/xdmod-logo-32.png" alt="XDMod" style="margin-right:8px;" /></a>
+              <a href="http://stats.pingdom.com/ahjqdv66ptc9" target="_blank" rel="noopener noreferer"><img src="/images/pingdom-logo-32.png" alt="Pingdom" style="margin-right:8px;" /></a>
+              <a href="https://cloudwatch.amazonaws.com/dashboard.html?dashboard=UVARC-Website&context=eyJSIjoidXMtZWFzdC0xIiwiRCI6ImN3LWRiLTQ3NDY4MzQ0NTgxOSIsIlUiOiJ1cy1lYXN0LTFfWElPUmJER0pWIiwiQyI6Ijc1NWhjZG9tM2l2NWpnbWFuaG8xZWEzaHF2IiwiSSI6InVzLWVhc3QtMTo0NzZkMzA1NS02YTgyLTQ1YzktODBmNS1jMDRiZmRjNDdjYmQiLCJNIjoiUHVibGljIn0%3D" target="_blank" rel="noopener noreferer"><img src="/images/cloudfront-icon-32.png" alt="CloudFront" style="margin-right:8px;" /></a>
+            </p>
+      	</div>
+
+        <div class="col-6 col-sm-4 col-lg-4" style="padding-left:20px;">
+          <strong><span class="glyphicon glyphicon-link"></span> Explore</strong>
+        	<p>
+        	  <a href="https://mailchi.mp/virginia/rc-signup" target="_blank" rel="noopener noreferrer">Newsletter</a> <br />
+        	  <a href="/education/workshops/">Workshops</a> <br />
+        	  <a href="https://learning.rc.virginia.edu/" target="_blank" rel="noopener noreferrer">Learn</a> <br />
+        	  <a href="https://vpit.virginia.edu" target="_blank" rel="noopener noreferrer">VPIT @ UVA</a> <br />
+        	  <a href="https://vpr.virginia.edu" target="_blank" rel="noopener noreferrer">VPR @ UVA</a> <br />
+        	  
+        	</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="text-align:center;margin-bottom:20px;">
+          <span class="copyright">
+            &copy; 2021  The Rector and Visitors of the <a href="https://www.virginia.edu/" target="_new">University of Virginia</a> | <a href="https://www.virginia.edu/siteinfo/privacy" target="_new">Privacy</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+<script src="/js/search-overlay.js"></script>
+<script async defer type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script async defer type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"b918ecff2df30f32775065906","lid":"7f59482acd","uniqueMethods":true}) })</script>
+<script data-no-instant>document.write('<script src="/livereload.js?port=1313&mindelay=10&v=2"></' + 'script>')</script></body>
+</html>
