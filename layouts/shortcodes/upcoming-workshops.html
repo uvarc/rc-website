@@ -17,7 +17,7 @@
     {{- $instructor:=index $r 3 -}}
     {{- $last_date:=last 1 (split $scheduled_date ",") -}}
     {{- $last_date:=time (index $last_date 0) -}}
-	{{- if $last_date.After (now.AddDate 0 0 -1) -}}
+    {{- if $last_date.After (now.AddDate 0 0 -1) -}}
       <tr>
         <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }}<br> {{ end }}</td>
         <td><a href="{{ $link }}" target="_new">{{ $title }}</a></td>
