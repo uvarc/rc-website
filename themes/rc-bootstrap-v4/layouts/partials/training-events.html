@@ -26,7 +26,7 @@
             <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }} {{ end }}</td>
           </tr>
           {{ $counter = add $counter 1}}
-         {{ end }} 
+         {{ end }}
       {{ end }}
       </tbody>
     </table>
