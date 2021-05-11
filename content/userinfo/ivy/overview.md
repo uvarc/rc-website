@@ -171,7 +171,7 @@ To connect to Ivy follow the platform-specific steps below:
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        <b>Windows</b>
+        <b>Windows Server 2012R2</b>
       </div>
       <div class="card-block">
         <ul>
