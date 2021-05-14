@@ -84,12 +84,12 @@ module load samtools
 samtools view -bS example.sam > example.bam
 ```
 
-To speed up your code, use multiple tasks per node. Here, we ask for 8 tasks with the `--ntasks=per-node` option, but only specify 7 tasks in our `samtools` command to leave one for the manager process:
+To speed up your code, use multiple cpus per task. Here, we ask for 8 with the `--cpus-per-task` option, but only specify 7 in our `samtools` command to leave one for the manager process:
 ```
 #!/bin/bash
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH --ntasks-per-node=8
+#SBATCH --cpus-per-task=8
 #SBATCH -t 1:00:00
 #SBATCH -p standard
 #SBATCH -A mygroup
