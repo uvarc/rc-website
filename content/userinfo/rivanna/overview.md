@@ -195,6 +195,8 @@ A high performance computing cluster is typically made up of at least four servi
   -->
 </div>
 
+A summary description of the Rivanna environment suitable for **grant applications** is available [here](/userinfo/computing-environments#rivanna). 
+
 - - -
 
 # Usage Policies

@@ -11,9 +11,8 @@ author = "RC Staff"
 +++
 
 {{% callout %}}
-<h4>Ivy</h4>
 
-<p>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
+<p><br>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
 Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA or CUI requirements</a>.</p>
 
 {{% /callout %}}
@@ -29,6 +28,9 @@ Ivy consists of both virtual computing environments and secure storage. In order
 * [JupyterLab Notebooks](#jupyterlab-notebooks)
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
 * [HIPAA Compliance](#hipaa-compliance)
+
+A summary description of the Ivy environment suitable for **grant applications** is available [here](/userinfo/computing-environments#ivy). 
+
 
 - - -
 
@@ -120,7 +122,7 @@ Once you have completed these three steps, you will be connected to the secure I
 
 A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign into a single VM.
 
-Virtual machines come in two platforms, CentOS7 Linux and Windows Server 2012R2. Each platform is available in three instance types. Refer to the grid below for specifics.
+Virtual machines come in two platforms, *CentOS 7 Linux* and *Windows Server 2012R2*. Each platform is available in three instance types. Refer to the grid below for specifics.
 
 {{% callout %}}
 <p>Note that Windows VMs only support concurrent access by 2 users at a time.</p>
