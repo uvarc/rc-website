@@ -41,7 +41,7 @@ module spider {{% module-firstversion %}}
 # Build Your Own Version
 Users may build their own versions of {{% software-name %}} if they wish to use a different compiler or software version. Instructions are available on the [{{% software-name %}} website]({{< module-homepage >}}).
 
-# Convert BAM to SAM with Samtools
+# Convert SAM to BAM with Samtools
 `samtools view` can convert human-readable `SAM` files to binary `BAM` files. Below is a simple command to convert `SAM` files to `BAM` files. Th `-S` option specifies that the input is in SAM format, while the `-b` option outputs to a BAM file:
 ```
 samtools view -bS example.sam > example.bam
