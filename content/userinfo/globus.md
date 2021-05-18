@@ -2,6 +2,7 @@
 description = ""
 title = "Globus Data Transfer"
 draft = false
+date = "2021-05-18T15:45:12-05:00"
 tags = ["data-transfer","rivanna","storage","ivy","globus","dtn","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -27,7 +28,7 @@ Globus can help you share research data with colleagues and co-investigators, or
 # Getting Started
 
 {{% callout %}}
-A Globus "endpoint" is any computer running the Globus Connect software. A collection can be:
+A Globus "collection" is any computer running the Globus Connect software. A collection can be:
 
 <ul>
 <li> Your local workstation </li>
@@ -39,7 +40,7 @@ A Globus "endpoint" is any computer running the Globus Connect software. A colle
 You must have an account on any remote server in order to connect directly to its endpoint.
 {{% /callout %}}
 
-Globus transfers data between two "endpoints".  You must log in to the Globus website to initiate any transfers.
+Globus transfers data between two "collections".  You must log in to the Globus website to initiate any transfers.
 
 1. Open a browser window to [**https://www.globus.org/**](https://www.globus.org/) and click on **Log In**.
 2. Select “University of Virginia” from the drop-down list of organizations.  You may also type the name into the textbox next to the down arrow.  Click Continue.
@@ -67,15 +68,15 @@ install and configure the Globus Connect Personal application.
   <img src="/images/globus-personal-endpoint-start.png" width="700" height="550">
 3. Search for the newly installed Globus Connect Personal and start it up. You should see the Globus icon ("g") at either the top or bottom menu bar depending on your operating system.
   <img src="/images/globus-logo-startup.png" width="700" height="550">
-4. A box will appear and ask you to login. It will redirect you to a webpage where you will allow access and provide a label for your endpoint. We recommend using something very descriptive, such as `mstk3-laptop` or `smith-genlab-workstation`.  
+4. A box will appear and ask you to login. It will redirect you to a webpage where you will allow access and provide a label for your collection. We recommend using something very descriptive, such as `mstk3-laptop` or `smith-genlab-workstation`.  
   <img src="/images/globus-connect-setup.png" width="700" height="550">
-5. After clicking allow, a new page will pop up asking you to provide a collection name and a description. Again, use something descriptive like `wr8yp-laptop`
+5. After clicking allow, a new page will pop up asking you to provide a collection name and a description. Again, use something descriptive like `mstk3-laptop`
   <img src="/images/globus-collection-name.png" width="700" height="550">
 
 
 On Windows and Mac OSX, the agent will run in the background on your laptop or workstation and will restart when the machine is booted. Click on the agent icon (in the tray for Windows users, in the toolbar for MacOS users) to change your preferences or to see the web console.  On Linux you must start the agent manually upon rebooting.
 
-Your local computer is now able to serve as a Globus Endpoint.
+Your local computer is now able to serve as a Globus Collection.
 
 # Transferring Files
 
