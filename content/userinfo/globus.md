@@ -1,13 +1,12 @@
 +++
+author = "RC Staff"
 description = ""
 title = "Globus Data Transfer"
+date = "2021-04-10T10:08:29-05:00"
 draft = false
-date = "2021-05-18T15:45:12-05:00"
 tags = ["data-transfer","rivanna","storage","ivy","globus","dtn","infrastructure"]
 categories = ["userinfo"]
 images = [""]
-author = "Staff"
-
 +++
 
 <p class="lead">Globus is a simple, reliable, and <em>fast</em> way to access and move your research data between systems. </p>
