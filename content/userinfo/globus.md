@@ -2,7 +2,7 @@
 description = ""
 title = "Globus Data Transfer"
 draft = false
-date = "2020-01-21T15:45:12-05:00"
+date = "2021-05-18T15:45:12-05:00"
 tags = ["data-transfer","rivanna","storage","ivy","globus","dtn","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -28,7 +28,7 @@ Globus can help you share research data with colleagues and co-investigators, or
 # Getting Started
 
 {{% callout %}}
-A Globus "collection" (also called an "endpoint") is any computer running the Globus Connect software. A collection can be:
+A Globus "endpoint" is any computer running the Globus Connect software. A collection can be:
 
 <ul>
 <li> Your local workstation </li>
@@ -40,7 +40,7 @@ A Globus "collection" (also called an "endpoint") is any computer running the Gl
 You must have an account on any remote server in order to connect directly to its endpoint.
 {{% /callout %}}
 
-Globus transfers data between two "collections" (or "endpoints").  You must log in to the Globus website to initiate any transfers.
+Globus transfers data between two "endpoints".  You must log in to the Globus website to initiate any transfers.
 
 1. Open a browser window to [**https://www.globus.org/**](https://www.globus.org/) and click on **Log In**.
 2. Select “University of Virginia” from the drop-down list of organizations.  You may also type the name into the textbox next to the down arrow.  Click Continue.
@@ -49,7 +49,7 @@ Globus transfers data between two "collections" (or "endpoints").  You must log 
 3. Next to you will be directed to sign in using **UVA NetBadge**. Once logged in you will see the Transfer management page:
   <img src="/images/globus-transfer-page.png" width="700" height="450">
 
-4. If you are transferring from an external source such as a national computing center, you may skip the creation of a personal endpoint and go to Transferring Files below.  If you wish to transfer to or from your local computer (lab or personal) you must create a collection for it.  
+4. If you are transferring from an external source such as a national computing center, you may skip the creation of a personal endpoint and go to Transferring Files below.  If you wish to transfer to or from your local computer (lab or personal) you must create an endpoint for it.  
 
 # Transferring Sensitive or Secure Data to Ivy
 
@@ -58,25 +58,25 @@ Globus is the **only** permitted data-transfer protocol for sensitive or secure 
 # Create a Personal Collection
 
 {{% callout %}}
-In order to transfer data to or from a lab or personal computer, you must 
-install and configure the Globus Personal Collection application.
+In order to transfer data to or from a lab or personal computer, you must
+install and configure the Globus Connect Personal application.
 {{% /callout %}}
 
-1. From the Globus home page, from the "I Want To" menu, select "Enable Globus on my system." If you are at the file manager page you can click the Globus logo in the upper left to return to the main `globus.org` page.
+1. Click the Globus logo in the upper left to return to the main `globus.org` page. From the Globus home page, from the "I Want To" menu, select "Enable Globus on my system."
 1a. Users can have personal Globus accounts as well as a UVA account.  If you have another Globus account you may link them.  You can also go back and do this later.
-2. Click the "Get Globus Connect Personal" link.  Select your operating system in the "Install Globus Connect Personal" box on the right at this link.
+2. Click the "Get Globus Connect Personal" link.  Select your operating system in the "Install Globus Connect Personal" box on the right. Install Globus Connect Personal by following the installation instructions.
   <img src="/images/globus-personal-endpoint-start.png" width="700" height="550">
-3. Click the link to create a Globus Connect Personal endpoint.  Accept the terms and click Continue.
-4. Decide on a name for your local endpoint. We recommend using something very descriptive, such as `mstk3-laptop` or `smith-genlab-workstation`.  Type it into the Endpoint Display Name textbox.
-5. Click the "Generate Setup Key" button. A unique key for your collection will be created. Copy this key to your clipboard once it has been displayed.  Do not copy anything else to your clipboard until you have completed setting up your collection. 
-  <img src="/images/globus-generate-key.png" width="700" height="550">
-5. Download the [Globus Connect Personal application](https://www.globus.org/globus-connect-personal) for your laptop or workstation. 
-6. Run the installer as directed.  Start the application.  When instructed to do so, paste the key from Step 5 into the indicated textbox and click "OK".
-  <img src="/images/globus-paste-key.png" width="700" height="550">
+3. Search for the newly installed Globus Connect Personal and start it up. You should see the Globus icon ("g") at either the top or bottom menu bar depending on your operating system.
+  <img src="/images/globus-logo-startup.png" width="700" height="550">
+4. A box will appear and ask you to login. It will redirect you to a webpage where you will allow access and provide a label for your endpoint. We recommend using something very descriptive, such as `mstk3-laptop` or `smith-genlab-workstation`.  
+  <img src="/images/globus-connect-setup.png" width="700" height="550">
+5. After clicking allow, a new page will pop up asking you to provide a collection name and a description. Again, use something descriptive like `wr8yp-laptop`
+  <img src="/images/globus-collection-name.png" width="700" height="550">
+
 
 On Windows and Mac OSX, the agent will run in the background on your laptop or workstation and will restart when the machine is booted. Click on the agent icon (in the tray for Windows users, in the toolbar for MacOS users) to change your preferences or to see the web console.  On Linux you must start the agent manually upon rebooting.
 
-Your local computer is now able to serve as a Globus Collection.
+Your local computer is now able to serve as a Globus Endpoint.
 
 # Transferring Files
 
@@ -133,7 +133,7 @@ Users are notified via email for both successful and failed transfers. The email
     Source: mst3k Lab MacBook (39e0bf8a-3037-11e7-bcae-22000b9a448b)
     Destination: uva#portable-DTN (67b9cb38-301c-11e7-bcac-22000b9a448b)
     Label: n/a
-    
+
     https://www.globus.org/app/activity/4460c25c-72d1-11e7-aa08-22000bf2d287
 
 # Sharing Folders
@@ -144,7 +144,7 @@ You can share folders to either specific individuals, or to groups that you crea
 
 1. Open the [Globus web interface](https://www.globus.org/) and log in using UVA Netbadge.
 2. From the Transfer Files interface, log in to the UVA Main-DTN endpoint as described above.  
-3. Navigate in the folder structure of that collection until you find the folder you want to share. Highlight it. 
+3. Navigate in the folder structure of that collection until you find the folder you want to share. Highlight it.
 4. Next, select the Share link near the top of the files window.
   <img src="/images/globus-shared-endpoint.png" width="700" height="443" alt="create-share">
 6. Globus regards shared folders as collections/endpoints, so you must create a new endpoint to share the folder.  Clicking on Share allows you to "Add a Shared Endopint." You can only create and manage shared collections for directories or files that you own and can access. Provide a Display Share Name (required) and a description (optional).
@@ -154,7 +154,7 @@ You can share folders to either specific individuals, or to groups that you crea
     - **Path** - Leave this set to `/` since it refers to the path relative to the directory you are sharing from.
     - **Share With** - Decide whether you want to share with individual users or with a group. **Please do not** set this to "All Users" or "Public". If you share with an individual user, follow the instructions below. If you choose to share with a group, you will first need to create that and add users to it by using the GROUPS tab at the top of the page.
     - **Identity/E-mail** - You can look up other Globus users by searching for a part of their name or institution. If you cannot find the individual, you should contact them to make sure they have signed into Globus at least once. Generally, users at other colleges and universities can be identified with the simple form of their email address, like `mst3k@virginia.edu` or `jdoe@mit.edu`, etc. Users who are unaffiliated with a university can still sign into Globus using Google (identified as `username@gmail.com`) or by creating a username and password in Globus (identified as `userid@globusid.org`)  
-    --If you enter your collaborator's email address, it _must_ exactly match the one associated with the recipient's Globus ID. 
+    --If you enter your collaborator's email address, it _must_ exactly match the one associated with the recipient's Globus ID.
     - **Permissions** - You can specify whether this user has access to read or write to your share.  Keep in mind that permission to write to the folder also grants the recipient the ability to delete files within in.
 9. Add a message if you wish, then click "Add Permission" whether you made any changes or not.
   <img src="/images/globus-add-permissions.png" alt="manage-permissions" height="322" width="700">
