@@ -45,7 +45,7 @@ In order to transfer data to/from a lab or personal computer, you must
 install the Globus Connect Personal application.
 {{% /callout %}}
 
-1. Click the Globus logo in the upper left to return to the main `globus.org` page. On the Globus home page, from the "I Want To" menu, select "Enable Globus on my system."
+1. Open a browser and navigate to [**https://www.globus.org/**](https://www.globus.org/). On the Globus home page, from the "I Want To" menu, select "Enable Globus on my system."
   <img src="/images/globus-enable-globus.png" width="700" height="550">
 2. Click the "Get Globus Connect Personal" link in the bottom left for "Researchers and other end users".  
   <img src="/images/globus-connect-personal-get.png" width="700" height="550">
