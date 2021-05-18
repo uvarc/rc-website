@@ -2,7 +2,6 @@
 description = ""
 title = "Globus Data Transfer"
 draft = false
-date = "2021-05-18T15:45:12-05:00"
 tags = ["data-transfer","rivanna","storage","ivy","globus","dtn","infrastructure"]
 categories = ["userinfo"]
 images = [""]
