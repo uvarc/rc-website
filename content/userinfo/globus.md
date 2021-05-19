@@ -8,33 +8,35 @@ tags = ["data-transfer","rivanna","storage","ivy","globus","dtn","infrastructure
 categories = ["userinfo"]
 images = [""]
 +++
-
+<br>
 <p class="lead">Globus is a simple, reliable, and <em>fast</em> way to access and move your research data between systems. </p>
 
 <img align="right" alt="Globus DTN" src="/images/globus-logo.png" style="max-width:35%;" />
+
 Globus allows you to transfer data to and from systems such as:
 
-- Laptops
-- HPC clusters (Rivanna)
+- Laptops & personal workstations
+- Rivanna HPC cluster
+- Ivy Central Storage
 - Lab / departmental storage
 - Tape archives
 - Cloud storage
 - Off-campus resources (XSEDE, National Labs)
 
-Globus can help you share research data with colleagues and co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.</p>
-<p>Are your data stored at a different institution? At a supercomputing facility? All you need is your campus login.</p>
+Globus can help you share research data with colleagues and co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.
+
+Are your data stored at a different institution? At a supercomputing facility? All you need is your institution's login credentials.
 
 # Getting Started
 
 {{% callout %}}
-Before you are able to transfer files, you must set up a Globus "collection". A Globus "collection" is any computer running the Globus Connect software. A collection can be:
 
-<ul>
-<li> Your local workstation </li>
-<li> A departmental server </li>
-<li> A "DTN" (Data Transfer Node) connected to Rivanna or elsewhere on the UVA campus, or </li>
-<li> A server operated by another university or by a national computing center.</li>
-</ul>
+Before you are able to transfer files from or to your personal laptop/workstation, you must set up a Globus `Collection` on that computer, aka your local endpoint. A collection can be a storage volume or specific file folder on
+
+- Your local workstation,
+- A departmental server,
+- A "DTN" (Data Transfer Node) connected to Rivanna or Ivy Central Storage, or
+- A server operated by another university or by a national computing center.
 
 {{% /callout %}}
 
@@ -45,38 +47,35 @@ In order to transfer data to/from a lab or personal computer, you must
 install the Globus Connect Personal application.
 {{% /callout %}}
 
-1. Open a browser and navigate to [**https://www.globus.org/**](https://www.globus.org/). On the Globus home page, from the "I Want To" menu, select "Enable Globus on my system."
+1. Open a browser and navigate to [https://www.globus.org/](https://www.globus.org/). On the Globus home page, from the "I Want To" menu, select "Enable Globus on my system."
   <img src="/images/globus-enable-globus.png" width="700" height="550">
 2. Click the "Get Globus Connect Personal" link in the bottom left for "Researchers and other end users".  
   <img src="/images/globus-connect-personal-get.png" width="700" height="550">
 3. Select your operating system in the "Install Globus Connect Personal" box on the right. Install Globus Connect Personal by following the installation instructions.
   <img src="/images/globus-personal-endpoint-start.png" width="700" height="550">
 4. Launch the newly installed Globus Connect Personal. 
-5. A box will appear and ask you to login. It will redirect you to a webpage where you will allow access and provide a label for your collection. We recommend using something very descriptive, such as `mstk3-laptop` or `smith-genlab-workstation`.  
+5. A box will appear and ask you to login. It will redirect you to a webpage where you will allow access and provide a label for your collection, i.e. your computer. We recommend using something very descriptive, such as `mstk3-laptop` or `smith-genlab-workstation`.  
   <img src="/images/globus-connect-setup.png" width="700" height="550">
-6. After clicking allow, a new page will pop up asking you to provide a collection name and a description. Again, use something descriptive like `mstk3-laptop`
+6. After clicking allow, a new page will pop up asking you to provide a collection name and a description. Again, use something descriptive like `mstk3-laptop`. **Do not select the "High Assurance" checkbox.**
   <img src="/images/globus-collection-name.png" width="700" height="550">
-7. Your collection is now set up and ready to use
+7. Your collection is now set up and ready to use.
 
-On Windows and Mac OSX, the agent will run in the background on your laptop or workstation and will restart when the machine is booted. Click on the agent icon (in the tray for Windows users, in the toolbar for MacOS users) to change your preferences or to see the web console.  On Linux you must start the agent manually upon rebooting.
+On Windows and Mac OSX, the agent will run in the background on your laptop or workstation and will restart when the machine is booted. Click on the agent icon (in the tray for Windows users, in the toolbar for MacOS users) to change your preferences or to see the web console. On Linux you must start the agent manually upon rebooting.
 
 Your local computer is now able to serve as a Globus Collection.
 
 # Check your new Collection
 
-Globus transfers data between two "collections".  You must log in to the Globus website to initiate any transfers.
+Globus transfers data between two "collections" or endpoints. You must log in to the Globus website to initiate any transfers.
 
-1. Open a browser window to [**https://www.globus.org/**](https://www.globus.org/) and click on **Log In**.
-2. Select “University of Virginia” from the drop-down list of organizations.  You may also type the name into the textbox next to the down arrow.  Click Continue.
+1. Open a browser window to [https://www.globus.org/](https://www.globus.org/) and click on **Log In**.
+2. Select “University of Virginia” from the drop-down list of organizations. You may also type the name into the textbox next to the down arrow.  Click Continue.
   <img src="/images/globus-login-page.png" width="700" height="550">
 
 3. Next to you will be directed to sign in using **UVA NetBadge**. Once logged in you will see the File Manager page:
   <img src="/images/globus-transfer-page.png" width="700" height="450">
 4. Click the Collection box and you should see your newly created collection
 
-# Transferring Sensitive or Secure Data to Ivy
-
-Globus is the **only** permitted data-transfer protocol for sensitive or secure data.  To transfer data to Ivy Central Storage, please see the special instructions [here](/userinfo/ivy/overview#data-transfer-in-out-of-ivy).
 
 # Transferring Files
 
@@ -86,21 +85,22 @@ You can search for the collections to use for your transfer from the File Manage
 
 The official UVA managed collections are:
 
-* `uva#main-DTN` - generally available; maps to Rivanna home directories, scratch, etc.
-* `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into secure storage.
-** See special instructions for using the Ivy collection** [here](/userinfo/ivy/overview#data-transfer-in-out-of-ivy)
+* `uva#main-DTN` - generally available; maps to Rivanna home directories, scratch, value  & project storage.
+* `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into Ivy Central Storage.
+    **Globus is the *only* permitted data-transfer protocol for highly sensitive data.** To transfer data to Ivy Central Storage, please see the special instructions [here](/userinfo/ivy/overview/#data-transfer-inout-of-ivy).
 
 You can transfer files to or from your personal collection to a managed collection, one run either by UVA or by another institution.  You can transfer files between two managed collections.  You cannot transfer files from one personal collection to another personal collection.  If you wish to do this, contact Research Computing to convert at least one personal collection to a Globus Plus collection.
 
-From the File Manager page, select an collection by clicking on the "Collection" link near the top of the screen ("start here, select a collection").  Start typing the name of the collection to see the options containing the string as you type.
-<img src="/images/globus-collection-search.png" alt="collection-search" height="550" width="700">
-
-Once the collection is found, click on its link.  Wait while it finds your folders.  When complete, click on "Transfer or sync to..." on the right sidebar.  If you do not remember the exact name of the second collection, click the magnifying glass to search.  If your second collection is one you have registered with Globus, you may also click Your Collections.  This will open a second pane.  Either may be the source or destination.
-
 To transfer a file:
 
-1. select a file or folder from your "source" pane, then
-2. select the `Start > ` or ` < Start ` button at the bottom of the pane to begin the transfer into the "destination" pane.
+1. From the File Manager page, select an collection by clicking on the "Collection" link near the top of the screen ("start here, select a collection").  Start typing the name of the collection to see the options containing the string as you type.
+<img src="/images/globus-collection-search.png" alt="collection-search" height="550" width="700">
+
+2. Once the collection is found, click on its link.  Wait while it finds your folders.  When complete, click on "Transfer or sync to..." on the right sidebar.  If you do not remember the exact name of the second collection, click the magnifying glass to search.  If your second collection is one you have registered with Globus, you may also click Your Collections.  This will open a second pane.  Either pane may be the source or destination.
+
+3. Select a file or folder from your "source" pane.
+
+4. Click the `Start > ` or ` < Start ` button at the bottom of the pane to begin the transfer into the "destination" pane.
 <img src="/images/globus-transfer-start.png" alt="second-collection" height="550" width="700">
 
 After you initiate a transfer, it will be assigned a `Task ID` that you can use to reference that specific transfer. This is a useful way of identifying transfers when checking on the status of a job or viewing your past Globus activity.
@@ -117,10 +117,11 @@ You can check on the status of your transfer using the Task ID.
 
 From the lefthand navigation bar of the Globus Connect manager, click on "Activity". Or visit https://app.globus.org/activity
 
-<img alt="activity" width="354" height="508" src="/images/globus-activity-page.png">
+<img alt="activity" width="700" src="/images/globus-activity-page.png">
 
 Here you will see a list of your current and past transfer jobs.  Click on a job and you will get details and status.
-<img alt="check-activity" width="354" height="508" src="https://globus-check-activity-page.png">
+
+<img alt="check-activity" width="700" src="/images/globus-check-activity.png">
 
 ## Notifications
 
@@ -186,7 +187,7 @@ UVA permits faculty and researchers to manage data transfer and sharing with col
 
 1. **Grant the least permissions necessary, not the most**. If a colleague needs only to retrieve your data files, then grant read-only permissions.
 2. **Grant access to specific individuals only, not to "all users" or to the public**. These settings risk your information going to people and places that you have not designated, or being used in ways you do not control.
-3. **Remove shared collections as soon as they are no longer needed **. It is a good practice to revisit your endpoints page periodically to clean up and to cull unused resources.
+3. **Remove shared collections as soon as they are no longer needed**. It is a good practice to revisit your endpoints page periodically to clean up and to cull unused resources.
 4. **Finally, monitor and track your large file transfers**. When someone is transferring large data sets to you, or you to them, monitor their progress and keep in touch with the person or group on the other end. This helps identify any unusual behavior.
 
 # For Advanced Users
