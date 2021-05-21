@@ -60,9 +60,12 @@ Below is a SLURM script template. Please note that:
 #SBATCH -n 10         # number of tasks
 #SBATCH -t 24:00:00   # time
 
+module purge
 module load orca
 $orcadir/orca my.inp > my.out
 ```
+
+Submit the job in the same directory as `my.inp`.
 
 # References
 
