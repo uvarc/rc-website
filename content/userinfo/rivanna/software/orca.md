@@ -67,6 +67,14 @@ $orcadir/orca my.inp > my.out
 
 Submit the job in the same directory as `my.inp`.
 
+## Multi-node
+
+For multi-node jobs, please add this line to your SLURM script:
+
+```
+export RSH_COMMAND=ssh
+```
+
 # References
 
 For more information please visit:
