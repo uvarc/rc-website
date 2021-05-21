@@ -62,7 +62,7 @@ singularity inspect /path/to/container
 
 ### Changes to Anaconda/Python modules
 
-Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit [here](/userinfo/howtos/rivanna/migrate-python/).
+Many of our Anaconda/Python modules have been upgraded to Python 3.8.8 in light of [security vulnerabilities](https://www.python.org/downloads/release/python-388/). If you need assistance with migrating python packages from one version to another, please visit [here](/userinfo/howtos/rivanna/migrate-python/). Note that conda environments created by one anaconda module version can be activated by another.
 
 The following table shows the detailed version changes for all affected modules. Please note:
 - The Python version is upgraded to 3.8.8 unless otherwise stated.
