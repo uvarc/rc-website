@@ -21,7 +21,7 @@ Rivanna is expected to return to service later in the day.
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
-    - singularity/3.5.2, 3.6.1 - replaced by 3.7.1 ([details](#changes-to-anacondapython-modules))
+    - singularity/2.6.1, 3.5.2, 3.6.1 - replaced by 3.7.1 ([details](#changes-to-anacondapython-modules))
     - anaconda/5.2.0-py3.6, 2019.10-py3.7 - replaced by 2020.11-py3.8 ([details](#changes-to-singularity-modules))
     - qiime2/2020.6 - replaced by 2020.8
     - cellprofiler/2.2.0 - replaced by 3.1.8
@@ -33,13 +33,13 @@ Rivanna is expected to return to service later in the day.
 2. The following **upgrades** will take place during the maintenance period:
     - JupyterLab backed by Anaconda 2020.11 with Python 3.8.8
     - python/3.7.7 -> 3.8.8
-    - pytorch/1.5.1 -> 1.8.0
+    - pytorch/1.5.1 -> 1.8.1
     - tensorflow/2.1.0-py37 -> 2.4.1
 
     For anaconda/python-dependent modules, please [see below](#changes-to-anacondapython-modules).
 
 3. **New** modules:
-    - rapidsai/0.17 - NVIDIA data science libraries
+    - rapidsai/0.19 - NVIDIA data science libraries
     - pipenv/2020.11.15 - automatically create and manage a virtualenv
 
 ### Changes to Singularity modules
