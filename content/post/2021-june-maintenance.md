@@ -37,6 +37,7 @@ Rivanna is expected to return to service later in the day.
     - python/3.7.7 -> 3.8.8
     - pytorch/1.5.1 -> 1.8.1
     - tensorflow/2.1.0-py37 -> 2.4.1
+    - cellranger-atac/1.2.0 -> 2.0.0
 
     For anaconda/python-dependent modules, please [see below](#changes-to-anacondapython-modules).
 
