@@ -26,6 +26,7 @@ Rivanna is expected to return to service later in the day.
     - julia/0.6.0, 1.1.0, 1.3.1 - replaced by 1.5.3 and 1.6.0
     - vscode/1.50.1, 1.53.2 - replaced by Code Server on Open OnDemand
     - qiime2/2020.6 - replaced by 2020.8
+    - samtools/0.1.20, 1.4.1, 1.7 - replaced by 1.9, 1.10, 1.12
     - cellprofiler/2.2.0 - replaced by 3.1.8
     - nextflow/0.26.0.4715 - replaced by 20.10.0
     - salmon/0.11.2 - replaced by 1.2.1
@@ -37,6 +38,7 @@ Rivanna is expected to return to service later in the day.
     - python/3.7.7 -> 3.8.8
     - pytorch/1.5.1 -> 1.8.1
     - tensorflow/2.1.0-py37 -> 2.4.1
+    - samtools/1.10 -> 1.12
     - cellranger-atac/1.2.0 -> 2.0.0
 
     For anaconda/python-dependent modules, please [see below](#changes-to-anacondapython-modules).
