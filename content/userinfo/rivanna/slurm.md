@@ -271,7 +271,7 @@ To restart (cancel and rerun)
 scontrol requeue <jobid>
 ```
 
-For further information about the squeue command, type man squeue on the cluster front-end machine or see the SLURM Documentation.
+For further information about the squeue command, type `man squeue` on the cluster front-end machine or see the SLURM Documentation.
 
 # Job Arrays
 
@@ -362,7 +362,7 @@ Notice that the --dependency has its own condition, in this case afterok. We wan
 * afterany: The dependent job is started after the specified job_id terminates either successfully or with a failure;
 * afternotok: The dependent job is started only if the specified job_id terminates with a failure.
 
-More options for arguments of the dependency condition are detailed in the manual pages for sbatch found here or by typing man sbatch at the Linux command prompt.
+More options for arguments of the dependency condition are detailed in the manual pages for sbatch found here or by typing `man sbatch` at the Linux command prompt.
 
 We also are able to see that a job dependency exists when we view the job status listing, although the explicit dependency is not stated, e.g.:
 
@@ -598,6 +598,7 @@ The second argument to `gres` can be `k80`, `p100`, `v100`, or `rtx2080` for the
 Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate SLURM commands for running jobs and completed jobs.
 
 ## Running job
+
 Use `sstat` to get CPU and memory usage for a running job.
 
 ```
@@ -617,9 +618,10 @@ which indicates good usage of all 20 cores.
 
 The maximum memory used is given by `MaxRSS` (about 91 GB).
 
-For more options, please read the manual `man sacct`.
+For more options, please read the manual `man sstat`.
 
 ## Completed job
+
 The `seff` command reports the CPU and memory usage of a completed job. 
 
 Please use this for _completed_ jobs only - efficiency statistics may be misleading for _running_ jobs.
