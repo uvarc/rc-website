@@ -18,6 +18,7 @@ author = "RC Staff"
 * [Using `make`](/userinfo/howtos/rivanna/make)
 * [Building and running MPI Code](/userinfo/howtos/rivanna/mpi-howto)
 * [Bioinformatics on Rivanna](/userinfo/howtos/rivanna/bioinfo-on-rivanna)
+* [Convert Jupyter Notebook to PDF](/userinfo/howtos/rivanna/convert-jupyter-pdf)
 * [Custom Jupyter kernels](/userinfo/howtos/rivanna/custom-jupyter-kernels)
 * [Loading Modules in Jupyter](/userinfo/howtos/rivanna/load-module-in-jupyter)
 * [Docker images on Rivanna](/userinfo/howtos/rivanna/docker-images-on-rivanna)
