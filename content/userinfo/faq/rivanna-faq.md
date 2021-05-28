@@ -34,6 +34,9 @@ Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.vi
 ## How do I reset my current password / obtain a new password?
 Access to the HPC cluster requires a valid Eservices password. Your Netbadge password is not necessarily the same thing, so if you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  Resetting the Netbadge password should sync it with your Eservices password, which is no longer directly accessible to you. If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
 
+## What happens to my account when I leave UVA?
+ITS controls access to the University’s computing resources, so when you or your students leave, you/they may lose access to many of these resources. Sponsored accounts allow people who work or volunteer at UVA, but who are not paid by UVA, to access the University’s computing resources. Researchers with sponsored accounts cannot request RC services but they are allowed to use the systems we manage as members of a MyGroups group controlled by a UVA Principal Investigator (PI). Details on sponsored accounts are posted on the [ITS sponsored accounts page](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=8fec94fcdb296b4c2192e6650596199b).
+
 ## Why am I seeing `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` when I log in?
 Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/rivanna/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
 
