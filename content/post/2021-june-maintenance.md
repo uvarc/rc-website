@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2021-06-01T00:00:00-05:00"
+date = "2021-06-04T00:00:00-05:00"
 title = "Rivanna Maintenance: June 15, 2021"
 # url = "/maintenance"
 draft = false
@@ -14,7 +14,7 @@ categories = ["feature"]
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
-Rivanna is expected to return to service later in the day.
+Rivanna is expected to return to service in 24 hours.
 
 ## IMPORTANT MAINTENANCE NOTES
 
