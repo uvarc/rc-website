@@ -14,7 +14,7 @@ categories = ["feature"]
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
-Rivanna is expected to return to service in 24 hours.
+Rivanna is expected to return to service by 6 a.m. on Wednesday, June 16.
 
 ## IMPORTANT MAINTENANCE NOTES
 
@@ -34,7 +34,7 @@ Rivanna is expected to return to service in 24 hours.
     - samtools/0.1.20, 1.4.1, 1.7 - replaced by 1.9, 1.10, 1.12
     - lftp/4.8.4 - replaced by 4.9.2
 
-2. The following **upgrades** will take place during the maintenance period:
+2. The following **upgrades** will take place during the maintenance period. Upgrades to default versions of applications:
     - JupyterLab backed by Anaconda 2020.11 with Python 3.8.8
     - python/3.7.7 -> 3.8.8
     - pytorch/1.5.1 -> 1.8.1
