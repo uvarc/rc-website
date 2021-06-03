@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2021-06-01T00:00:00-05:00"
+date = "2021-06-03T00:00:00-05:00"
 title = "Rivanna Maintenance: June 15, 2021"
 # url = "/maintenance"
 draft = false
@@ -10,36 +10,43 @@ tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}Rivanna will be down for maintenance on <strong>June 15, 2021</strong>, beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna will be down for maintenance on <strong>Tuesday, June 15, 2021</strong>, beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
-Rivanna is expected to return to service later in the day.
+Rivanna is expected to return to service by 6 a.m. on Wednesday, June 16.
 
 ## IMPORTANT MAINTENANCE NOTES
+
+### Globus
+
+Some Globus users may need to rebuild their shared connections after the maintenance period has ended. Users who require assistance with this task are invited to join us for office hours between 10 a.m. and 12 p.m. on Thursday, June 17. The Zoom link is available [here](https://www.rc.virginia.edu/support/#office-hours).
 
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
     - singularity/2.6.1, 3.5.2, 3.6.1 - replaced by 3.7.1 ([details](#changes-to-anacondapython-modules))
     - anaconda/5.2.0-py3.6, 2019.10-py3.7 - replaced by 2020.11-py3.8 ([details](#changes-to-singularity-modules))
-    - julia/0.6.0, 1.1.0, 1.3.1 - replaced by 1.5.3 and 1.6.0
+    - julia/0.6.0, 1.1.0, 1.3.1 - replaced by 1.5.3, 1.6.0
     - vscode/1.50.1, 1.53.2 - replaced by Code Server on Open OnDemand
-    - qiime2/2020.6 - replaced by 2020.8
-    - samtools/0.1.20, 1.4.1, 1.7 - replaced by 1.9, 1.10, 1.12
     - cellprofiler/2.2.0 - replaced by 3.1.8
+    - meme/4.10.2 - replaced by 5.1.0, 5.3.3
     - nextflow/0.26.0.4715 - replaced by 20.10.0
-    - salmon/0.11.2 - replaced by 1.2.1
     - phono3py/1.19.1 - 1.22.3 included in phonopy/2.9.3
+    - qiime2/2020.6 - replaced by 2020.8
+    - salmon/0.11.2 - replaced by 1.2.1
+    - samtools/0.1.20, 1.4.1, 1.7 - replaced by 1.9, 1.10, 1.12
     - lftp/4.8.4 - replaced by 4.9.2
 
-2. The following **upgrades** will take place during the maintenance period:
+2. The following **upgrades** will take place during the maintenance period. Upgrades to default versions of applications:
     - JupyterLab backed by Anaconda 2020.11 with Python 3.8.8
     - python/3.7.7 -> 3.8.8
     - pytorch/1.5.1 -> 1.8.1
     - tensorflow/2.1.0-py37 -> 2.4.1
-    - samtools/1.10 -> 1.12
     - cellranger-atac/1.2.0 -> 2.0.0
+    - lammps/20200615 -> 20201029
+    - meme/5.1.0 -> 5.3.3
+    - samtools/1.10 -> 1.12
 
     For anaconda/python-dependent modules, please [see below](#changes-to-anacondapython-modules).
 
