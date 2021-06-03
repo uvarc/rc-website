@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2021-06-04T00:00:00-05:00"
+date = "2021-06-03T00:00:00-05:00"
 title = "Rivanna Maintenance: June 15, 2021"
 # url = "/maintenance"
 draft = false
@@ -10,13 +10,17 @@ tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}Rivanna will be down for maintenance on <strong>June 15, 2021</strong>, beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna will be down for maintenance on <strong>Tuesday, June 15, 2021</strong>, beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
 Rivanna is expected to return to service by 6 a.m. on Wednesday, June 16.
 
 ## IMPORTANT MAINTENANCE NOTES
+
+### Globus
+
+Some Globus users may need to rebuild their shared connections after the maintenance period has ended. Users who require assistance with this task are invited to join us for office hours between 10 a.m. and 12 p.m. on Thursday, June 17. The Zoom link is available [here](https://www.rc.virginia.edu/support/#office-hours).
 
 ### Modules
 
