@@ -22,10 +22,3 @@ Ivy is a computing system that meets all Health Insurance Portability and Accoun
  
 - - -
 
-# Skyline
-Skyline is the University's local research cloud for public and moderately sensitive data. Skyline is a collection of OpenStack virtual machines that can be leased by research groups in a variety of configurations to fit their computing needs.
- 
-- - -
-
-# Microservice Cluster
-Research Computing runs microservices in an orchestration environment named DCOS (Distributed Cloud Operating System), based on Apache Mesos and Apache Marathon. DCOS makes the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. DCOS also has over 300TB of cluster storage and can attach to project storage and GPFS.
