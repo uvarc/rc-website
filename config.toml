@@ -52,6 +52,12 @@ timeout = "60000"
   rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
   rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
 
+[params.rivanna]
+  totalNodes = "~420"
+  totalCores = "~18,000"
+  scratchCapacity = "1.9PB"
+  totalStorageCapacity = "8PB"
+  
 [params.backups]
   rivanna_home = "1-week snapshots"
   rivanna_scratch = "No backups"

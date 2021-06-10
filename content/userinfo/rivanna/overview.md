@@ -14,7 +14,9 @@ type = "rivanna"
 {{% callout %}}
 <img src="/images/hpc-cluster.jpg" alt="HPC" style="float:right;max-width:35%;margin-left:1rem;" />
 
-Rivanna is the University of Virginia's High-Performance Computing (HPC) system. As a centralized resource it has hundreds of pre-installed software packages available for computational research across many disciplines. Currently the Rivanna supercomputer has over 8,000 cores and 8PB of various storage.
+Rivanna is the University of Virginia's High-Performance Computing (HPC) system. As a centralized resource it has hundreds of pre-installed software packages available for computational research across many disciplines. Currently the Rivanna supercomputer has {{< rivanna-node-count >}} nodes with over {{< rivanna-core-count >}} cores and {{< rivanna-total-storage >}} of various storage.
+
+{{< systems-boilerplate >}}
 
 All UVA faculty, staff, and postdoctoral associates are eligible to use Rivanna, or students when part of faculty research.
 {{% /callout %}}
@@ -195,7 +197,8 @@ A high performance computing cluster is typically made up of at least four servi
   -->
 </div>
 
-A summary description of the Rivanna environment suitable for **grant applications** is available [here](/userinfo/computing-environments#rivanna). 
+{{< systems-boilerplate >}}
+
 
 - - -
 
