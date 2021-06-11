@@ -3,11 +3,10 @@ description = ""
 title = "ACCORD"
 draft = false
 date = "2021-06-11T17:45:12-05:00"
-tags = ["hpc","accord","supercomputer","allocations","queues","storage","infrastructure"]
+tags = ["hpc","supercomputer","allocations","queues","storage","infrastructure"]
 categories = ["userinfo"]
 images = [""]
 author = "Staff"  
-type = "accord"
 
 +++
 
