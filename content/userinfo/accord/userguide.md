@@ -1,12 +1,14 @@
 +++
+title = ""
 description = ""
-title = "ACCORD User-Guide"
-draft = false
-tags = ["hpc","supercomputer","allocations"]
-categories = ["userinfo"]
+author = "SOMRC Staff"
 images = [""]
-author = "Staff"  
-
+categories = ["userinfo"]
+tags = [
+    "tag1", 
+    "tag2"
+]
+draft = true
 +++
 
 # User Guide

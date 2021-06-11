@@ -1,12 +1,14 @@
 +++
+title = ""
 description = ""
-title = "ACCORD"
-draft = false
-tags = ["hpc","supercomputer","allocations","queues","storage","infrastructure"]
-categories = ["userinfo"]
+author = "SOMRC Staff"
 images = [""]
-author = "Staff"  
-
+categories = ["userinfo"]
+tags = [
+    "tag1", 
+    "tag2"
+]
+draft = true
 +++
 
 ![Accord_logo](/img/ACCORD_logo.png)
