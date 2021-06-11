@@ -2,7 +2,6 @@
 description = ""
 title = "ACCORD User-Guide"
 draft = false
-date = "2021-06-11T17:45:12-05:00"
 tags = ["hpc","supercomputer","allocations"]
 categories = ["userinfo"]
 images = [""]
