@@ -116,7 +116,5 @@ private = true
 <div>
 </div>
 
-<!--
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
--->
