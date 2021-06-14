@@ -76,7 +76,8 @@ private = true
   </div>
   <hr size=1 />
   <h4>Billing</h4>
-  <div style="margin-top:1.4rem;font-size:90%;" class="alert alert-success"><b>Database Billing</b> is paid for by the PI or SDS Capstone Faculty Advisor. Database services currently cost <b>$5/month</b> (or can be folded in with other <a href="/form/containers/">DCOS billing tiers</a> if applicable). Seven days of backups are automatically stored for each database.</div>
+  <div style="margin-top:1.4rem;font-size:90%;" class="alert alert-success"><b>Database Billing</b> is paid for by the PI or SDS Capstone Faculty Advisor. Database services currently cost <b>$5/database/month</b> in addition to any charges for other deployed microservices containers.
+  (See <a href="/form/containers/">DCOS billing tiers</a> for more information.) Seven days of backups are automatically stored for each database.</div>
   <label class="control-label" for="data-sensitivity-2">PTAO <span class="form-required" title="This field is required.">*</span></label>
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
