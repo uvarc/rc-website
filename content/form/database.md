@@ -30,6 +30,11 @@ private = true
       </ul>
     <p>Connections can then be made over port <code>3306</code> to the endpoint using normal MySQL tools and libraries. A GUI user interface is available at <a href="https://phpmyadmin.uvadcos.io/" target="_new"><b>https://phpmyadmin.uvadcos.io/</b></a> for convenience of management.</p>
     <p>Databases are automatically backed up nightly, and 7 days are retained.</p>
+    <p>Learn more:</p>
+    <ul>
+      <li><a href="/userinfo/howtos/general/databases/">Database Basics</a></li>
+      <li><a href="/userinfo/rivanna/software/complete-list/">Rivanna Software</a></li>
+    </ul>
   </div>
   <hr size=1 />
 {{% form-userinfo %}}
