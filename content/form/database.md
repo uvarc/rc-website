@@ -19,6 +19,19 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="DCOS">
   <input type="hidden" id="request_title" name="request_title" value="Database Service Request" />
+  <div style="margin-top:-2rem;padding:2rem;border:solid 1px #ccc;background-color:#eee;">
+    <p>A <b>Relational Database Service</b> is available for researchers who need such resources in Rivanna or microservice applications. Currently database services are limited to the MySQL RDBMS, and can only be accessed from within the HPC network.</p>
+    <p style="font-weight:bold;">Note that you cannot connect directly to this database service from elsewhere on campus, VPN, etc. but only from Rivanna or other Research Computing systems.</p>
+    <p>Upon approval of this request you will be given the following:
+      <ul>
+        <li>The database host <code>endpoint</code> address</li>
+        <li>A database <code>username</code></li>
+        <li>A database <code>password</code></li>
+      </ul>
+    <p>Connections can then be made over port <code>3306</code> to the endpoint using normal MySQL tools and libraries. A GUI user interface is available at <a href="https://phpmyadmin.uvadcos.io/" target="_new"><b>https://phpmyadmin.uvadcos.io/</b></a> for convenience of management.</p>
+    <p>Databases are automatically backed up nightly, and 7 days are retained.</p>
+  </div>
+  <hr size=1 />
 {{% form-userinfo %}}
   <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
@@ -86,7 +99,7 @@ private = true
     </label>
   </div>
   <div class="form-item form-group">
-    <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
+    <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I agree
   </div>
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
@@ -98,5 +111,7 @@ private = true
 <div>
 </div>
 
+<!--
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+-->
