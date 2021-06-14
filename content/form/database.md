@@ -19,7 +19,7 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="DCOS">
   <input type="hidden" id="request_title" name="request_title" value="Database Service Request" />
-  <div style="margin-top:-2rem;padding:2rem;border:solid 1px #ccc;background-color:#eee;">
+  <div style="margin-top:-2rem;padding:2rem;border:solid 1px #ccc;background-color:#eee;padding-bottom:1rem;">
     <p>A <b>Relational Database Service</b> is available for researchers who need such resources in Rivanna or microservice applications. Currently database services are limited to the MySQL RDBMS, and can only be accessed from within the HPC network.</p>
     <p style="font-weight:bold;">Note that you cannot connect directly to this database service from elsewhere on campus, VPN, etc. but only from Rivanna or other Research Computing systems.</p>
     <p>Upon approval of this request you will be given the following:
@@ -65,13 +65,18 @@ private = true
   <div class="row">
     <div class="col form-item form-group">
       <label class="control-label" for="capacity">Anticipated Storage Capacity (GB)</label>
-      <input class="form-control" type="number" min="0" max="50" id="capacity" name="capacity" value="0" style="width:8rem;" />
+      <input class="form-control" type="number" min="0" max="20" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>The size of storage expected over time. Specify in 1GB increments. This should not exceed 20GB.</p>
+    </div>
+    <div class="col form-item form-group">
+      <label class="control-label" for="capstone">SDS Capstone Group</label>
+      <input class="form-control" type="text" id="capstone" name="capstone" style="" />
+      <p class=tiny>The name of your SDS capstone group, if applicable.</p>
     </div>
   </div>
   <hr size=1 />
   <h4>Billing</h4>
-  <div style="margin-top:1.4rem;font-size:90%;" class="alert alert-success"><b>Database Billing</b> is paid for by the PI. Database services currently cost <b>$5/month</b> (or can be folded in with other <a href="/form/containers/">DCOS billing tiers</a> if applicable). Seven days of backups are automatically stored for each database.</div>
+  <div style="margin-top:1.4rem;font-size:90%;" class="alert alert-success"><b>Database Billing</b> is paid for by the PI or SDS Capstone Faculty Advisor. Database services currently cost <b>$5/month</b> (or can be folded in with other <a href="/form/containers/">DCOS billing tiers</a> if applicable). Seven days of backups are automatically stored for each database.</div>
   <label class="control-label" for="data-sensitivity-2">PTAO <span class="form-required" title="This field is required.">*</span></label>
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
@@ -116,5 +121,7 @@ private = true
 <div>
 </div>
 
+<!--
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+-->
