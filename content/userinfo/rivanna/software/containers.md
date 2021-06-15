@@ -31,14 +31,8 @@ If you do not have the ability to create your own image for Rivanna or to use a 
 Singularity is available as a [module](/userinfo/rivanna/software/modules). The RC staff has also curated a library of pre-prepared Singularity container images for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the `module avail` and `module spider` commands.
 
 ```
-module load singularity/3.5.2
+module load singularity
 module avail
-
-------------------------------- /apps/modulefiles/standard/container/singularity/3.5.2 --------------------------------
-   caffe2/0.8.0              danpos/2.2.2       pytorch/1.4.0-py37     (L)    tensorflow/2.1.0-py37 (D)
-   cellprofiler/2.2.0        hydrator/0.0.2     tensorflow/1.12.0-py27
-   cellprofiler/3.1.8 (D)    inkscape/0.92.3    tensorflow/1.12.0-py36
-   cp-analyst/2.2.1          patric/1.026       tensorflow/2.0.0-py36
 ```
 
 Loading any of these container modules produces an on-screen message with instructions on how to copy the container image file to your directory and how to run the container.
