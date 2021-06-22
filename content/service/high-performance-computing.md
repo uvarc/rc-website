@@ -39,8 +39,6 @@ Examples of service areas include:
     <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
     <p class="card-text">
     Rivanna provides a high-performance computing environment for all user levels with a total of {{< rivanna-node-count >}} nodes and {{< rivanna-core-count >}} cpu cores.  This includes specialty hardware like GPGPUs and large memory nodes. All nodes are supported by a high-performance EDR/FDR Infiniband network using Mellanox hardware. The Rivanna cluster also provides approximately {{< rivanna-scratch-capacity >}} of scratch (temporary) storage on a high-speed Lustre filesystem. Users may also lease space on “Project” and “Value” storage that is mounted to Rivanna, as well as elsewhere. 
-    </p><p class="card-text">
-    All nodes share a Lustre filesystem for temporary storage called <code>/scratch</code> with up to 1.4PB of storage space for all users.   Each user is assigned space in <code>/scratch/$USER</code> with a default quota of 10TB of storage. 
     </p>
     <a href="/userinfo/rivanna/overview" class="card-link"><button class="btn btn-warning">Read more about Rivanna</button></a>
   </div>
@@ -52,10 +50,6 @@ Examples of service areas include:
     <h5 class="card-subtitle mb-2">High-Security / HIPAA Computing Environment</h5>
     <p class="card-text">
     Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) backed by a total of {{< ivy-node-count >}} nodes and approximately {{< ivy-core-count >}} cpu cores. Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, CUI or ITAR requirements.
-    <ul>
-      <li>VMware virtual compute instances (Windows Server 2012R2 / CentOS Linux)</li>
-      <li>JupyterLab Notebooks</li>
-    </ul>
     </p>
     <a href="/userinfo/ivy/overview" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
   </div>
