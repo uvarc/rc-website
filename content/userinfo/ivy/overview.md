@@ -13,7 +13,7 @@ author = "RC Staff"
 {{% callout %}}
 
 <p><br>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
-Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA or CUI requirements</a>.</p>
+Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA</a>, FERPA, CUI or ITAR requirements.</p>
 
 {{< systems-boilerplate >}}
 
@@ -22,7 +22,11 @@ Researchers can use Ivy to process and store sensitive data with the confidence 
 
 # Overview
 
-Ivy consists of both virtual computing environments and secure storage. In order to obtain access to either system, users must **1. Submit an account request, 2. Complete the Information Security Awareness Training, and 3. Ensure their personal computer meets all High Security VPN requirements.**
+Ivy consists of both virtual computing environments and secure storage. In order to obtain access to either system, users must 
+
+1. **Submit an account request,**
+2. **Complete the Information Security Awareness Training, and**
+3. **Ensure their personal computer meets all High Security VPN requirements.**
 
 * [Requesting Access](#requesting-access)
 * [Training](#training)

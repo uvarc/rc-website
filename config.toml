@@ -57,7 +57,11 @@ timeout = "60000"
   totalCores = "22598"
   scratchCapacity = "1.9PB"
   totalStorageCapacity = "8PB"
-  
+
+[params.ivy]
+  totalNodes = "83"
+  totalCores = "3000"
+    
 [params.backups]
   rivanna_home = "1-week snapshots"
   rivanna_scratch = "No backups"

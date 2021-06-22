@@ -38,7 +38,7 @@ Examples of service areas include:
     <h2 class="card-title">Rivanna</h2>
     <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
     <p class="card-text">
-    Rivanna provides a high-performance computing environment for all user levels. A majority of Rivanna’s nodes are Cray Cluster Solutions nodes connected by FDR (fourteen data rate) Infiniband, but there are also two nodes with NVIDIA Kepler K20 GPUs, several nodes with QDR (quad data rate) Infiniband, and quite a few older nodes connected with gigabit ethernet.
+    Rivanna provides a high-performance computing environment for all user levels with a total of {{< rivanna-node-count >}} nodes and {{< rivanna-core-count >}} cpu cores.  This includes specialty hardware like GPGPUs and large memory nodes. All nodes are supported by a high-performance EDR/FDR Infiniband network using Mellanox hardware. The Rivanna cluster also provides approximately {{< rivanna-scratch-capacity >}} of scratch (temporary) storage on a high-speed Lustre filesystem. Users may also lease space on “Project” and “Value” storage that is mounted to Rivanna, as well as elsewhere. 
     </p><p class="card-text">
     All nodes share a Lustre filesystem for temporary storage called <code>/scratch</code> with up to 1.4PB of storage space for all users.   Each user is assigned space in <code>/scratch/$USER</code> with a default quota of 10TB of storage. 
     </p>
@@ -51,7 +51,7 @@ Examples of service areas include:
     <h2 class="card-title">Ivy</h2>
     <h5 class="card-subtitle mb-2">High-Security / HIPAA Computing Environment</h5>
     <p class="card-text">
-    Ivy provides a secure computing environment for all user levels. It is made up of two separate components, each HIPAA-compliant out of the box:
+    Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) backed by a total of {{< ivy-node-count >}} nodes and approximately {{< ivy-core-count >}} cpu cores. Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, CUI or ITAR requirements.
     <ul>
       <li>VMware virtual compute instances (Windows Server 2012R2 / CentOS Linux)</li>
       <li>JupyterLab Notebooks</li>
