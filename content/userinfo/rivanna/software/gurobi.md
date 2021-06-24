@@ -77,20 +77,9 @@ To check the version of your `python`, run `python -V`.
     export PYTHONPATH=$GUROBI_HOME/lib/python2.7_utf32
     {{< /code-snippet >}}
 
-- 3.6
-
-    Python 3.6 is provided through, for instance, `anaconda/5.2.0-py3.6`. Run:
-    {{< code-snippet >}}
-    export PYTHONPATH=$GUROBI_HOME/lib/python3.6_utf32
-    {{< /code-snippet >}}
-
-- 3.7
-
-    Python 3.7 is provided through, for instance, `anaconda/2019.10-py3.7`. No extra setup is needed.
-
 - 3.8
 
-    Python 3.8 is provided through, for instance, `anaconda/2020.11-py3.8`. Run:
+    Python 3.8 is provided through `anaconda/2020.11-py3.8`. Run:
     {{< code-snippet >}}
     export PYTHONPATH=$GUROBI_HOME/lib/python3.8_utf32
     {{< /code-snippet >}}
