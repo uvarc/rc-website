@@ -63,6 +63,16 @@ Thanks to funding provided by the [National Science Foundation](https://www.nsf.
   </div>
 </div>
 
+<div class="card-group">
+  <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">FAQs</h5>
+      <p class="card-text">FAQs about ACCORD.</p>
+      <a href="/userinfo/accord/faq/"><button class="btn btn-warning">Learn More</button></a>
+    </div>
+  </div>
+</div>
+
 - - -
 
 # What is it
