@@ -1,14 +1,13 @@
 +++
-title = ""
 description = ""
-author = "SOMRC Staff"
-images = [""]
+title = "ACCORD"
+draft = false
+date = "2020-06-25T17:45:12-05:00"
+tags = ["supercomputer","storage","infrastructure"]
 categories = ["userinfo"]
-tags = [
-    "tag1", 
-    "tag2"
-]
-draft = true
+images = [""]
+author = "Staff"
+type = "accord"
 +++
 
 # User Guide
@@ -30,7 +29,7 @@ User onboarding is a multi-step process:
 
 1.) A PI requests access using an online form. Required documentation includes a description of the project data, level of sensitivity, the anticipated scope of computing for the project, and any supplemental information such as IRB approval.  
 
-[Request Access](http://example.com/){: .btn .btn-green }  
+[<button class="btn btn-success">Request Access to ACCORD</button>](/form/omero/)
 
 2.) The project application will be reviewed and approved/declined.  
 3.) If approved and a PI is from an institution that is new to ACCORD, an MOU/contract between their home institution and UVA will need to be established.  
@@ -50,8 +49,7 @@ A new project creates the following:
 PIs may suspend a project at any time using the console. Project data is stored for ~6 months and then
 automatically removed. Suspended projects can be reinstated by request before this time.
 
-[Manage a project](http://example.com/){: .btn .btn-green }
-
+[<button class="btn btn-success">Manage a Project</button>](/form/omero/)
 
 ### Add or Remove Team Members
 
@@ -70,11 +68,11 @@ Details on Globus data transfer coming soon
 
 ### Create an Environment
 
-[Open ACCORD console](https://accord.uvarc.io/){: .btn .btn-green }
+[<button class="btn btn-success">Open the ACCORD Console</button>](/form/omero/)
 
 From the ACCORD console, select the project you want to work with. Next select an environment. Your container should be running within a few seconds and will appear under "Running Environments" on the same page.
 
-To learn more about your choices of environment, see [Environments](https://accord-documentation.uvarc.io/environments)
+To learn more about your choices of environments, see [Environments](/userinfo/accord/environments)
 
 ### View the status of an environment
 
@@ -108,9 +106,5 @@ environments you have run before. Click the orange "Run" button next to an envir
 - A modern web browser such as Chrome, Firefox, Safari, or Edge.
 - Install and register OPSWAT, a posture-checking client.
 
-[Learn about OPSWAT](https://www.opswat.com/){: .btn .btn-green }
-
-- Create and install an authentication certificate.
-
-[Create a certificate](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=58aafbcfdbf6c744f032f1f51d961927){: .btn .btn-green }
+[<button class="btn btn-success">Learn More About OPSWAT</button>](/form/omero/)
 
