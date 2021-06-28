@@ -29,7 +29,8 @@ User onboarding is a multi-step process:
 
 1.) A PI requests access using an online form. Required documentation includes a description of the project data, level of sensitivity, the anticipated scope of computing for the project, and any supplemental information such as IRB approval.  
 
-[<button class="btn btn-success">Request Access to ACCORD</button>](/form/omero/)
+[<button class="btn btn-success">Request Access to ACCORD</button>]()
+<br>
 
 2.) The project application will be reviewed and approved/declined.  
 3.) If approved and a PI is from an institution that is new to ACCORD, an MOU/contract between their home institution and UVA will need to be established.  
@@ -49,7 +50,8 @@ A new project creates the following:
 PIs may suspend a project at any time using the console. Project data is stored for ~6 months and then
 automatically removed. Suspended projects can be reinstated by request before this time.
 
-[<button class="btn btn-success">Manage a Project</button>](/form/omero/)
+[<button class="btn btn-success">Manage a Project</button>]()
+<br>
 
 ### Add or Remove Team Members
 
@@ -68,7 +70,8 @@ Details on Globus data transfer coming soon
 
 ### Create an Environment
 
-[<button class="btn btn-success">Open the ACCORD Console</button>](/form/omero/)
+{{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="" >}}
+<br>
 
 From the ACCORD console, select the project you want to work with. Next select an environment. Your container should be running within a few seconds and will appear under "Running Environments" on the same page.
 
@@ -106,5 +109,4 @@ environments you have run before. Click the orange "Run" button next to an envir
 - A modern web browser such as Chrome, Firefox, Safari, or Edge.
 - Install and register OPSWAT, a posture-checking client.
 
-[<button class="btn btn-success">Learn More About OPSWAT</button>](/form/omero/)
-
+{{< button button-class="primary" button-text="Learn More About OPSWAT" button-url="https://www.opswat.com/" >}}
