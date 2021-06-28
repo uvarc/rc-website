@@ -14,8 +14,7 @@ type = "accord"
 
 1.)  What is the link to the accord portal?
 
-{{< button button-class="primary" button-text="Open the ACCORD Platform" button-url= >}}
-<br>
+{{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://www.rc.virginia.edu/" >}}
 
 2.)  Who can use ACCORD?
 
