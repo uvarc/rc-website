@@ -44,6 +44,19 @@ various systems are available to researchers.</p>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
+      <h4 class="card-title">Secure Computing for Sensitive Data - ACCORD</h4>
+      <img align="right" src="/images/accord/ACCORD_logo.png" style="max-width:20%;" />
+        <p class="card-text">A web based platform for researchers from different colleges and universities to collaborate, analyze, and store their sensitive data in a central location. ACCORD supports RStudio, JupyterLab, and Theia Python.</p>
+        <a href="/userinfo/accord/overview" class="btn btn-warning" style="color:white;">Get started on ACCORD</a>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="card-group">
+  <div class="card">
+    <div class="card-block">
       <img align="right" src="/images/cloud.png" style="max-width:20%;" />
       <h4 class="card-title">Virtual Machines - Public/Private Cloud</h4>
         <p class="card-text">
