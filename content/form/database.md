@@ -1,6 +1,6 @@
 +++
 date = "2021-04-10T23:59:16-05:00"
-tags = ["database"]
+tags = ["mysql","database"]
 categories = ["forms"]
 images = [""]
 author = "Staff"
@@ -11,67 +11,73 @@ type = "form"
 private = true
 +++
 
-<script src="https://sdk.amazonaws.com/js/aws-sdk-2.885.0.min.js"></script>
-<script type="text/javascript">
-AWS.config.region = "us-east-1";
-AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: "us-east-1:476d3055-6a82-45c9-80f5-c04bfdc47cbd"});
-
-// var AWS = require('aws-sdk');
-
-// Create publish parameters
-var params = {
-  Message: 'MESSAGE_TEXT',
-  TopicArn: 'arn:aws:sns:us-east-1:474683445819:website-db-request',
-};
-
-// Create promise and SNS service object
-function submit(){
-  var publishTextPromise = new AWS.SNS({apiVersion: '2010-03-31'}).publish(params).promise();
-};
-
-// Handle promise's fulfilled/rejected states
-publishTextPromise.then(
-  function(data) {
-    console.log(`Message ${params.Message} sent to the topic ${params.TopicArn}`);
-    console.log("MessageID is " + data.MessageId);
-  }).catch(
-    function(err) {
-    console.error(err, err.stack);
-  });
-
-</script>
-<!-- <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8"> -->
-<form id="request-form" accept-charset="UTF-8" onsubmit="submit();">
+<!-- <p id="support-greeting" style="font-style:italic;font-size:120%;" value=""></p> -->
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
   <input type="hidden" id="category" name="category" value="DCOS">
-  <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
+  <input type="hidden" id="request_title" name="request_title" value="Database Service Request" />
+  <div style="margin-top:-2rem;padding:2rem;border:solid 1px #ccc;background-color:#eee;padding-bottom:1rem;">
+    <p>A <b>Relational Database Service</b> is available for researchers who need such resources in Rivanna or microservice applications. Currently database services are limited to the MySQL RDBMS, and can only be accessed from within the HPC network.</p>
+    <p style="font-weight:bold;">Note that you cannot connect directly to this database service from elsewhere on campus, VPN, etc. but only from Rivanna or other Research Computing systems.</p>
+    <p>Upon approval of this request you will be given the following:
+      <ul>
+        <li>The database host <code>endpoint</code> address</li>
+        <li>A database <code>username</code></li>
+        <li>A database <code>password</code></li>
+      </ul>
+    <p>Connections can then be made over port <code>3306</code> to the endpoint using normal MySQL tools and libraries. A GUI user interface is available at <a href="https://phpmyadmin.uvadcos.io/" target="_new"><b>https://phpmyadmin.uvadcos.io/</b></a> for convenience of management.</p>
+    <p>Databases are automatically backed up nightly, and 7 days are retained.</p>
+    <p>Learn more:</p>
+    <ul>
+      <li><a href="/userinfo/howtos/general/databases/">Database Basics</a></li>
+      <li><a href="/userinfo/rivanna/software/complete-list/">Rivanna Software</a></li>
+    </ul>
+  </div>
+  <hr size=1 />
 {{% form-userinfo %}}
   <hr size=1 />
-  <label class="control-label" for="data-sensitivity-2">Capstone Group Name <span class="form-required" title="This field is required.">*</span></label>
-  <div class="row">
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="groupname" name="groupname" value="" size="20" maxlength="20" />
-    </div>
+  <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
+    <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
+  <div class="form-item form-group form-type-select form-group"> 
+    <label class="control-label" for="classification">Affiliation <span class="form-required" title="This field is required.">*</span></label>
+    <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="classification" name="classification">
+      <option value="" selected="selected">- Select -</option>
+      <option value="cas">College of Arts & Sciences</option>
+      <option value="dsi">School of Data Science</option>
+      <option value="seas">School of Engineering and Applied Sciences</option>
+      <option value="som">School of Medicine</option>
+      <option value="darden">Darden School of Business</option>
+      <option value="health-system">UVA Health System</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <hr size=1 />
   <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="project-summary">Project Summary </label>
+    <label class="control-label" for="project-summary">MySQL Database Use Case </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="10"></textarea>
     </div>
-    <small id="project-summary-Help" class="form-text text-muted">Please describe your project and the datatbase requirements.</small>
+    <small id="project-summary-Help" class="form-text text-muted">Please describe your database requirements and the project they are associated with.</small>
+  </div>
+  <div class="row">
+    <div class="col form-item form-group">
+      <label class="control-label" for="capacity">Anticipated Storage Capacity (GB)</label>
+      <input class="form-control" type="number" min="0" max="20" id="capacity" name="capacity" value="0" style="width:8rem;" />
+      <p class=tiny>The size of storage expected over time. Specify in 1GB increments. This should not exceed 20GB.</p>
+    </div>
+    <div class="col form-item form-group">
+      <label class="control-label" for="capstone">SDS Capstone Group</label>
+      <input class="form-control" type="text" id="capstone" name="capstone" style="" />
+      <p class=tiny>The name of your SDS capstone group, if applicable.</p>
+    </div>
   </div>
   <hr size=1 />
-  <div style="font-size:90%;" class="alert alert-warning"><b>Billing Tiers</b><br /> 
-    Database services count as 1 containerized service and are billed alongside other containers you have running. The lowest tier,
-    1-5 containers, is billed at $5/month total.
-  </div>
-  <div style="font-size:90%;" class="alert alert-danger"><b>Storage Capacity</b><br /> 
-    Database services are limited to 50Gb of storage per database. Capacity beyond this requires dedicated resources that would be
-    created and billed outside of this service offering.
-  </div>
-  <hr size=1 />
+  <h4>Billing</h4>
+  <div style="margin-top:1.4rem;font-size:90%;" class="alert alert-success"><b>Database Billing</b> is paid for by the PI or SDS Capstone Faculty Advisor. Database services currently cost <b>$5/database/month</b> in addition to any charges for other deployed microservices containers.
+  (See <a href="/form/containers/">DCOS billing tiers</a> for more information.) Seven days of backups are automatically stored for each database.</div>
   <label class="control-label" for="data-sensitivity-2">PTAO <span class="form-required" title="This field is required.">*</span></label>
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
@@ -104,18 +110,17 @@ publishTextPromise.then(
     </label>
   </div>
   <div class="form-item form-group">
-    <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
+    <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I agree
   </div>
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
-    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
+    <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
   </div>
 </div>
 </form>
 <div>
 </div>
 
-<!--
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
--->
