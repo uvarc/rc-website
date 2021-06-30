@@ -54,5 +54,7 @@ put
 
 If you are using a SLURM script, add this line:
 {{< code-snippet >}}
-#SBATCH -x udc-ba25-2[3,7,8],udc-ba26-2[3-6],udc-ba27-2[3-4]
+#SBATCH -C "p100|v100|rtx2080"
 {{< /code-snippet >}}
+
+(The constraint argument requires the `"` character which is not yet supported on the JupyterLab form.)
