@@ -34,9 +34,9 @@ Thanks to funding provided by the [National Science Foundation](https://www.nsf.
   </div>
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
-      <h5 class="card-title">Projects</h5>
-      <p class="card-text">Learn how ACCORD manages projects.</p>
-      <a href="/userinfo/accord/projects/"><button class="btn btn-warning">Learn More</button></a>
+      <h5 class="card-title">Support Ticket</h5>
+      <p class="card-text">Open a support ticket for ACCORD</p>
+      <a href="/form/accord/"><button class="btn btn-success">Open a Support Ticket</button></a>
     </div>
   </div>
 </div>
@@ -44,16 +44,16 @@ Thanks to funding provided by the [National Science Foundation](https://www.nsf.
 <div class="card-group">
   <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
     <div class="card-body">
-      <h5 class="card-title">Environments</h5>
-      <p class="card-text">Learn what environments ACCORD supports.</p>
-      <a href="/userinfo/accord/environments/"><button class="btn btn-warning">Learn More</button></a>
+      <h5 class="card-title">Projects</h5>
+      <p class="card-text">Learn how ACCORD manages projects</p>
+      <a href="/userinfo/accord/projects/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
-      <h5 class="card-title">Security</h5>
-      <p class="card-text">Learn about ACCORD's security.</p>
-      <a href="/userinfo/accord/security/"><button class="btn btn-warning">Learn More</button></a>
+      <h5 class="card-title">Environments</h5>
+      <p class="card-text">Learn what environments ACCORD supports</p>
+      <a href="/userinfo/accord/environments/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
 </div>
@@ -61,21 +61,29 @@ Thanks to funding provided by the [National Science Foundation](https://www.nsf.
 <div class="card-group">
   <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
     <div class="card-body">
-      <h5 class="card-title">User Guide</h5>
-      <p class="card-text">Learn how to get started and work on ACCORD.</p>
-      <a href="/userinfo/accord/userguide/"><button class="btn btn-warning">Learn More</button></a>
+      <h5 class="card-title">Security</h5>
+      <p class="card-text">Learn about ACCORD's security</p>
+      <a href="/userinfo/accord/security/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
   <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
     <div class="card-body">
-      <h5 class="card-title">FAQs</h5>
-      <p class="card-text">FAQs about ACCORD.</p>
-      <a href="/userinfo/accord/faq/"><button class="btn btn-warning">Learn More</button></a>
+      <h5 class="card-title">User Guide</h5>
+      <p class="card-text">Learn how to get started and work on ACCORD</p>
+      <a href="/userinfo/accord/userguide/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
 </div>
 
-- - -
+<div class="card-group">
+  <div class="card image-shadow col-md-5 p-3 mb-5 rounded" style="margin-right:3rem;border:solid 3px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">FAQs</h5>
+      <p class="card-text">FAQs about ACCORD</p>
+      <a href="/userinfo/accord/faq/"><button class="btn btn-warning">Learn More</button></a>
+    </div>
+  </div>
+</div>
 
 
 
