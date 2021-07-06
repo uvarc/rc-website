@@ -6,7 +6,7 @@ images = [
   "",
 ]
 date = "2020-02-16T09:55:56-05:00"
-categories = ["howtos"]
+categories = ["howto"]
 tags = [
   "howto",
   "rivanna",

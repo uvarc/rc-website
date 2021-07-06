@@ -3,10 +3,11 @@ type = "rivanna"
 categories = [
   "HPC",
   "software",
-  "chem"
 ]
 date = "2019-06-22T08:37:46-05:00"
-tags = ['mpi',
+tags = [
+  'mpi',
+  "chem"
 ]
 draft = false
 modulename = "gromacs"
