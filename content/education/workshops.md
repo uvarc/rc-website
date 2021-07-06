@@ -5,7 +5,7 @@ title = "Workshops"
 date = "2019-07-21T10:55:28-05:00"
 draft = false
 tags = ["R","python","shiny","cloud","HPC","Rivanna","Ivy"]
-categories = ["education", "workshops","seminars"]
+categories = ["education", "workshops"]
 images = [""]
 
 +++
