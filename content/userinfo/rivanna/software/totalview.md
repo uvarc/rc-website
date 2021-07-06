@@ -2,11 +2,11 @@
 type = "rivanna"
 categories = [
   "HPC",
-  "software",
-  "debugger"
+  "software"
 ]
-date = "2019-06-22T08:37:46-05:00"
+date = "2021-06-04T08:37:46-05:00"
 tags = [
+  "debugger",
   "multi-core",
   "mpi",
   "programming"
