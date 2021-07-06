@@ -1,7 +1,7 @@
 +++
 date = "2016-12-31T23:59:16-05:00"
 tags = ["signup"]
-categories = ["signup"]
+categories = [""]
 images = [""]
 about = true
 author = "Staff"
@@ -9,7 +9,7 @@ description = ""
 title = "Mailing List"
 draft = false
 type = "about"
-
+private = true
 +++
 
 <p class="lead">Keep up to date with our latest news, updates, workshops and service announcements.</p>

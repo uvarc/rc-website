@@ -29,7 +29,8 @@ $(document).ready(function() {
 });
 
 function checkStatusMessages() {
-    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/messages', function(data) {
+    // $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/messages', function(data) {
+    $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages', function(data) {
         var messageData = '';
         $.each(data, function(key, value) {
             var messageBody = value.body;
@@ -47,7 +48,8 @@ function checkStatusMessages() {
 }
 
 function refreshStatusTable(){
-    $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/health', function(data) {
+    // $.getJSON('https://tajhvw17z0.execute-api.us-east-1.amazonaws.com/prod/system/health', function(data) {
+    $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/grid', function(data) {
         var statusData = '';
         $.each(data, function(key, value) {
             statusData += '<tr>';
