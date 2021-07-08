@@ -17,15 +17,8 @@
     <a href="/tags/" style="text-decoration:none;"><i class="fa fa-tag" aria-hidden="true"></i> All tags</a>
   </p>
 
-  <section class="sidebar-module" style="margin-top:2rem;">
-    <p class=lead>System Status</p>
-    <img src="https://img.shields.io/endpoint?url=https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/badge/rivanna&style=for-the-badge" style="margin-bottom:0px;" /> <br />
-    <img src="https://img.shields.io/endpoint?url=https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/badge/ivy&style=for-the-badge" style="margin-bottom:0px;" /> <br />
-    <img src="https://img.shields.io/endpoint?url=https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/badge/dcos&style=for-the-badge" style="margin-bottom:0px;" /> <br />
-    <img src="https://img.shields.io/endpoint?url=https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/badge/skyline&style=for-the-badge" style="margin-bottom:0px;" /> <br />
-    <img src="https://img.shields.io/endpoint?url=https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/badge/project&style=for-the-badge" style="margin-bottom:0px;" /> <br />
-    <img src="https://img.shields.io/endpoint?url=https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/badge/value&style=for-the-badge" style="margin-bottom:0px;" /> <br />
-    <img src="https://img.shields.io/endpoint?url=https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/badge/globus&style=for-the-badge" style="margin-bottom:0px;" /> 
+  <section class="sidebar-module" style="margin-top:2rem;margin-left:-1rem;">
+    {{ partial "status.html" . }}
   </section>
 
   {{ partial "user-help-widget.html" . }}
