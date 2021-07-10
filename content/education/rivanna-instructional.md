@@ -4,12 +4,14 @@ date = "2020-04-24T10:55:28-05:00"
 title = "Instructional Use of Rivanna"
 description = ""
 author = "RC Staff"
-categories = ["education","courses","workshops"]
-tags = ["Rivanna","instructional"]
+categories = ["education","workshops"]
+tags = ["Rivanna","instructional","courses"]
 
 +++
 
 Instructors can request _instructional allocations_ on Rivanna for classes and extended workshops.  These allocations are time-limited and generally allow access to a restricted set of nodes and only one special SLURM partition, but are otherwise equivalent to any allocation.
+
+- - -
 
 # Resource Availability
 
@@ -29,9 +31,13 @@ If Open OnDemand is not adequate, the other recommended interface is [FastX Web]
 
 FastX connects only to a *frontend*.  We significantly restrict the time, memory, and cores available to frontend jobs.  If students are running anything but very short jobs, the Open OnDemand applications should be utilized.  These access the compute nodes and are far less limited.  Open OnDemand provides a remote desktop on compute nodes as well as direct access to JupyterLab, the Matlab Desktop, and Rstudio Server.
 
+- - -
+
 # How to Submit a Request
 
 Instructors planning to use Rivanna should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  If this is the first use, we will create the MyGroups allocation group.  We suggest a group name related to the course rubric and the instructor's name, e.g. `cs5014-mst3k`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester. 
+
+- - -
 
 # Using the Allocation
 
