@@ -59,6 +59,7 @@ private = true
   </div>
   <div class="col" style="width:50%;"></div>
   </div>
+  <div style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted">Dean sponsored allocations expire by default 12 months after they are disbursed.</div>
   <div class="form-item form-group form-item form-type-radios form-group"> <label class="control-label" for="interdisciplinary">
     Will this request be used in support of interdisciplinary research? <span class="form-required" title="This field is required.">*</span></label>
     <div id="for-research" class="form-radios"><div class="form-item form-item-submitted-new-or-renewal form-type-radio radio"> <label class="control-label" for="for-research-1">
