@@ -48,6 +48,7 @@ private = true
       </div>
       <div class="help-block col">If this is your first request, select New.  Otherwise select Renewal.</div>
     </div>
+    <div style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted">Standard allocations expire 12 months after they are disbursed.</div>
   </div>
   <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="yes-or-no">Will you be using <a style="font-weight:bold;" href="/userinfo/rivanna/software/vasp/">VASP</a> or <a style="font-weight:bold;" href="/userinfo/rivanna/software/gaussian/">Gaussian</a> on Rivanna? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row">
