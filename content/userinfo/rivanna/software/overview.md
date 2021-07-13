@@ -64,6 +64,7 @@ Software on Rivanna is accessed via environment **modules** or **containers**.
 * [Debuggers and Profilers](/userinfo/rivanna/software/debuggers)
 * [Containers](/userinfo/rivanna/software/containers)
 * [IDEs and Editors](/userinfo/rivanna/software/ide)
+* [Workflow Managers](/userinfo/rivanna/software/workflow_managers)
 
 ## Access & File Transfer Tools
 
