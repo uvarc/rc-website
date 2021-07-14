@@ -24,6 +24,7 @@
      * [Pushing to Production](#pushing-to-production)
   * [Forms & User Authentication](#forms-and-user-authentication)
   * [Search](#search)
+  * [Status API](#status-api)
 
 ## Developing
 
