@@ -11,9 +11,9 @@ tags = [
   "mpi"
 ]
 draft = false
-modulename = "orca"
-softwarename = "ORCA"
-title = "ORCA on Rivanna"
+modulename = "namd"
+softwarename = "NAMD"
+title = "NAMD on Rivanna"
 author = "RC Staff"
 +++
 
