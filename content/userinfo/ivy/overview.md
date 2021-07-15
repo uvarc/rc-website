@@ -10,15 +10,12 @@ author = "RC Staff"
 
 +++
 
-{{% callout %}}
+![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p><br>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
+<p class=lead>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
 Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA</a>, FERPA, CUI or ITAR requirements.</p>
 
 {{< systems-boilerplate >}}
-
-
-{{% /callout %}}
 
 # Overview
 

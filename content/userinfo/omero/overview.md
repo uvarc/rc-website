@@ -10,6 +10,8 @@ author = "Staff"
 
 +++
 
+![Omero Status](https://img.shields.io/badge/dynamic/json?color=color&label=omero&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fomero&style=for-the-badge)
+
 {{% callout %}}
 <img src="/images/omero/ome-main-nav.svg" alt="OMERO" style="float:right;max-width:35%;margin-left:1rem;" />
 

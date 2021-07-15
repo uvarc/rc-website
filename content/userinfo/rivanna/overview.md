@@ -11,15 +11,15 @@ type = "rivanna"
 
 +++
 
+![Rivanna Status](https://img.shields.io/badge/dynamic/json?color=color&label=Rivanna&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Frivanna&style=for-the-badge)
+
 {{% callout %}}
 <img src="/images/hpc-cluster.jpg" alt="HPC" style="float:right;max-width:35%;margin-left:1rem;" />
-
-Rivanna is the University of Virginia's High-Performance Computing (HPC) system. As a centralized resource it has hundreds of pre-installed software packages available for computational research across many disciplines. Currently the Rivanna supercomputer has {{< rivanna-node-count >}} nodes with over {{< rivanna-core-count >}} cores and {{< rivanna-total-storage >}} of various storage.
+Rivanna is the University of Virginia's High-Performance Computing (HPC) system. As a centralized resource it has hundreds of pre-installed software packages available for computational research across many disciplines. Currently the Rivanna supercomputer has {{< rivanna-node-count >}} nodes with over {{< rivanna-core-count >}} cores and {{< rivanna-total-storage >}} of various storage.</p>
+All UVA faculty, staff, and postdoctoral associates are eligible to use Rivanna, or students when part of faculty research.</p>
+{{% /callout %}}
 
 {{< systems-boilerplate >}}
-
-All UVA faculty, staff, and postdoctoral associates are eligible to use Rivanna, or students when part of faculty research.
-{{% /callout %}}
 
 {{< lead >}}
 The sections below contain important information for new and existing Rivanna users. Please read each carefully.

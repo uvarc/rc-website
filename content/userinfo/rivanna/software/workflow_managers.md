@@ -14,22 +14,22 @@ title = "Workflow Managers on Rivanna"
 author = "RC Staff"
 +++
 
-# Workflow Managers:
+Workflow managers are used to create reproducible and scalable analysis pipelines. These managers are useful when you have a series of scripts that you want to tie together in the form of a pipeline. 
 
-Workflow managers are used to create reproducible and scalable analysis pipelines. The most popular workflow managers on Rivanna are listed below:
+The most popular workflow managers on Rivanna are listed below:
 <br>
 
 <table class="table table-striped">
   <tbody>
     <tr>
-		<th scope="row" style="width:25%;font-weight:bold;">Snakemake</th>
+		<th scope="row" style="width:25%;font-weight:bold;"><a href="/userinfo/rivanna/software/snakemake/">Snakemake</a></th>
 			<td>
-				<img src="/images/snakemake.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+                                <img src="/images/snakemake.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
                                 Snakemake is a workflow management system written in Python. It integrates with both conda environments and singularities.
 			</td>
 		</tr>
 		<tr>
-		<th scope="row" style="width:25%;font-weight:bold;">Cromwell</th>
+		<th scope="row" style="width:25%;font-weight:bold;"><a href="/userinfo/rivanna/software/cromwell/">Cromwell</a></th>
 			<td>
 				<img src="/images/cromwell.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
                                 Cromwell is a Workflow Management System geared towards scientific workflows

@@ -36,8 +36,17 @@ $('form').submit(function() {
     return r;
   };
   
+  if (getCookie("__rc_pkey") == null || getCookie("__rc_pkey") == '') {
+    window.location.replace( "https://auth.rc.virginia.edu/session_dynamo.php" );  
+  }
   if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
-    window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
+    window.location.replace( "https://auth.rc.virginia.edu/session_dynamo.php" );  
+  }
+  if (getCookie("__rc_uid") == null || getCookie("__rc_uid") == '') {
+    window.location.replace( "https://auth.rc.virginia.edu/session_dynamo.php" );  
+  }
+  if (getCookie("__rc_email") == null || getCookie("__rc_email") == '') {
+    window.location.replace( "https://auth.rc.virginia.edu/session_dynamo.php" );  
   }
   
   document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
