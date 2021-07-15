@@ -80,7 +80,7 @@ private = true
   </div>
   <div class="col form-item form-group">
      <div class="alert alert-warning">
-        Instructional allocations come with 50GB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension.
+        Instructional allocations come with 50GB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension.
      	<a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
      </div>
   </div>
