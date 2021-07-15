@@ -36,17 +36,8 @@ $('form').submit(function() {
     return r;
   };
   
-  if (getCookie("__rc_pkey") == null || getCookie("__rc_pkey") == '') {
-    window.location.replace( "https://auth.rc.virginia.edu/session_dynamo.php" );  
-  }
   if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
-    window.location.replace( "https://auth.rc.virginia.edu/session_dynamo.php" );  
-  }
-  if (getCookie("__rc_uid") == null || getCookie("__rc_uid") == '') {
-    window.location.replace( "https://auth.rc.virginia.edu/session_dynamo.php" );  
-  }
-  if (getCookie("__rc_email") == null || getCookie("__rc_email") == '') {
-    window.location.replace( "https://auth.rc.virginia.edu/session_dynamo.php" );  
+    window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
   }
   
   document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
@@ -69,12 +60,4 @@ $('form').submit(function() {
   let email = getCookie("__rc_email");
   let email_dec = decode64(email);
   var set_email = document.getElementById("email").value = email_dec;
-  
-  // // get fname for friendliness
-  // let fname_cookie = getCookie("__rc_fname");
-  // let fname = decode64(fname_cookie);
-  // // var set_greeting = document.getElementById("support-greeting").innerHTML = fname;
-  // var set_greeting = document.getElementById("support-greeting");
-  //   if(set_greeting){
-  //     var set_g = document.getElementById("support-greeting").innerHTML = fname;
-  //   }
+
