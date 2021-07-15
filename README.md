@@ -24,6 +24,7 @@
      * [Pushing to Production](#pushing-to-production)
   * [Forms & User Authentication](#forms-and-user-authentication)
   * [Search](#search)
+  * [Status API](#status-api)
 
 ## Developing
 
@@ -195,4 +196,9 @@ Some additional fields can then be populated by URL queryString, such as the `ca
 
 Site search is provided by Google CSE. Publishing in hugo generates a `/sitemap.xml` file that is bound to Google's crawlers. If you would like to omit a page from search, include `private = true` in the front matter of your page. The crawler generally refreshes every 3-7 days.
 
-[Test]
+## Status API
+
+The status API displayed on the home page of www.rc.virginia.edu and elsewhere is driven by an API Gateway with methods and endpoints derived from an AWS Lambda function.
+Those exist outside of this code, but are consumed by JQuery display divs.
+
+See the [**status-api**](https://github.com/uvarc/status-api) repository for details.

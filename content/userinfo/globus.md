@@ -8,7 +8,9 @@ tags = ["data-transfer","rivanna","storage","ivy","globus","dtn","infrastructure
 categories = ["userinfo"]
 images = [""]
 +++
-<br>
+
+![Globus DTN Status](https://img.shields.io/badge/dynamic/json?color=color&label=Globus%20DTN&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fglobus&style=for-the-badge)
+
 <p class="lead">Globus is a simple, reliable, and <em>fast</em> way to access and move your research data between systems. </p>
 
 <img align="right" alt="Globus DTN" src="/images/globus-logo.png" style="max-width:35%;" />
