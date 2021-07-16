@@ -14,7 +14,7 @@ type = "accord"
 
 1.)  What is the link to the accord portal?
 
-{{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://www.rc.virginia.edu/" >}}
++ {{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://www.rc.virginia.edu/" >}}
 
 2.)  Who can use ACCORD?
 
@@ -36,3 +36,6 @@ type = "accord"
 
 + ACCORD uses [Globus](https://www.globus.org/) to transfer data
 
+7.) How do I learn more about ACCORD?
+
++ {{< button button-class="primary" button-text="Learn more about ACCORD" button-url="https://www.rc.virginia.edu/userinfo/accord/about/" >}}

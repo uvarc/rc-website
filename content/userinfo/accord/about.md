@@ -9,12 +9,10 @@ images = [""]
 author = "Staff"
 type = "accord"
 +++
+
 ![Accord_logo](/images/accord/ACCORD_logo.png)
 
-* [What is it](#what-is-it)
-* [Who can use it](#who-can-use-it)
-* [How do I use it](#how-do-i-use-it)
-* [Who runs it](#who-runs-it)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-jlX6lSyJok" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # What is it
 
