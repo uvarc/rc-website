@@ -60,12 +60,4 @@ $('form').submit(function() {
   let email = getCookie("__rc_email");
   let email_dec = decode64(email);
   var set_email = document.getElementById("email").value = email_dec;
-  
-  // // get fname for friendliness
-  // let fname_cookie = getCookie("__rc_fname");
-  // let fname = decode64(fname_cookie);
-  // // var set_greeting = document.getElementById("support-greeting").innerHTML = fname;
-  // var set_greeting = document.getElementById("support-greeting");
-  //   if(set_greeting){
-  //     var set_g = document.getElementById("support-greeting").innerHTML = fname;
-  //   }
+
