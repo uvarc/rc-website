@@ -2,7 +2,6 @@
 <html lang="{{ .Lang }}">
 
   <head>
-    {{ partial "head-meta.html" . }}
 
     <base href="{{ .Permalink }}">
     <link rel="canonical" href="{{ .Permalink }}">
@@ -15,17 +14,38 @@
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    {{ partial "head-custom.html" . }}
+    <!-- jsPanel CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/jspanel4@4.11.1/dist/jspanel.css" rel="stylesheet">
+    <!-- jsPanel JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.11.1/dist/jspanel.js"></script>
+
+    <!-- optional jsPanel extensions -->
+    <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.11.1/dist/extensions/modal/jspanel.modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.11.1/dist/extensions/tooltip/jspanel.tooltip.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.11.1/dist/extensions/hint/jspanel.hint.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.11.1/dist/extensions/layout/jspanel.layout.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.11.1/dist/extensions/contextmenu/jspanel.contextmenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspanel4@4.11.1/dist/extensions/dock/jspanel.dock.js"></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+    </style>
+
+<script>
+jsPanel.create({
+    content: '<p>Sample content ...</p>',
+    contentSize: '300 200',
+    headerTitle: 'Example panel',
+    theme: 'primary',
+    borderRadius: '.5rem',
+});
+</script>
+
   </head>
 
   <body>
 
-    {{ partial "menu-home.html" . }}
-
-    {{ partial "site-header.html" . }}
-	
-	<section id="main-content" class="main-content" style="margin-top:20px;">
-
+  <section id="main-content" class="main-content" style="margin-top:20px;">
     <div class="container">
       <div class="row">
         <div class="col-sm-8 blog-main">
@@ -36,17 +56,11 @@
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
-        {{ partial "sidebar-resource.html" . }}
-
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}
 	
-	</section>
-	
-    {{ partial "footer.html" . }}
-
+  </section>
   </body>
-
 </html>
 
 {{- /* vim: set ts=2 sw=2 et: */}}
