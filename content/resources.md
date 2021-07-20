@@ -16,7 +16,7 @@ type = "resource"
 function setCookie(key, value, expiry) {
     var expires = new Date();
     expires.setTime(expires.getTime() + (expiry * 60 * 60 * 90));
-    // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
     // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
 };
 
@@ -85,7 +85,7 @@ var profile;
 </table>
 <p style="font-size:85%;font-style:italic;">Allocation counts are updated 1x per day.</p>
 <hr>
-<a href="#"><button class="btn btn-primary btn-sm">Manage Allocations</button></a> &nbsp; 
+<a href="#"><button class="btn btn-primary btn-sm">Request Allocations</button></a> &nbsp; 
 <a href="#"><button class="btn btn-success btn-sm">Learn More</button></a>
 </div>
 
@@ -126,7 +126,7 @@ var profile;
 </table>
 <p style="font-size:85%;font-style:italic;">Storage quotas are updated 1x per day.</p>
 <hr>
-<a href="#"><button class="btn btn-primary btn-sm">Manage Storage</button></a> &nbsp;
+<a href="#"><button class="btn btn-primary btn-sm">Request Storage</button></a> &nbsp;
 <a href="#"><button class="btn btn-success btn-sm">Learn More</button></a>
 </div>
 </div>
