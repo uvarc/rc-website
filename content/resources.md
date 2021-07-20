@@ -30,7 +30,6 @@ async function get(url) {
 var profile;
 (async () => {
   profile = await get(url)
-  console.log(profile)
   document.getElementById("name").innerHTML = "Hello " + profile["fname"];
   document.getElementById("email").innerHTML = "&lt;" + profile["eppn"] + "&gt;";
 })()
