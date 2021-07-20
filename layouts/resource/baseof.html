@@ -11,11 +11,11 @@
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
     {{ "<!-- combined, minified CSS -->" | safeHTML }}
-    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+    <link href="{{ .Site.BaseURL }}css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;500;700&display=swap');
     </style>
 
   </head>
@@ -23,9 +23,23 @@
   <body>
 
   <section id="main-content" class="main-content" style="margin-top:20px;">
-    <div class="container">
+  <div class="container">
       <div class="row">
-        <div class="col-sm-8 blog-main">
+
+        <div class="col-sm-12 blog-main">
+
+          <div style="float:right;">
+          <img src="https://www.rc.virginia.edu/images/logos/uva-logo-horiz-200x50.png" alt="University of Virginia" /><br />
+          <p style="text-align:right;font-family:'Roboto Mono', monospace;font-weight:500; font-size:120%;">Research Computing</p>
+        </div>
+
+        <div>
+          <button class="pb">Home</button>
+          <button class="pb">Get Started</button>
+          <button class="pb">Services</button>
+          <button class="pb">User Info</button>
+          <button class="pb">Support</button>
+        </div>
 
           {{ block "main" . }}
           <!-- The part of the page that begins to differ between templates -->
