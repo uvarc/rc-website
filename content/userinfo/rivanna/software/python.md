@@ -53,9 +53,10 @@ A large number of packages are included in Anaconda.  If you need a package not 
 
 # Package installation with pip
 ```
+module load anaconda
 pip install --user yourpackage
 ```
-The `--user` option will install it into your home directory.  It is bound to a particular version and will have to be reinstalled if Anaconda is upgraded.
+The `--user` option will install it into your home directory.  It is bound to a particular Python version (namely, `X.Y` in `anaconda/****.**-pyX.Y`) and will have to be reinstalled if Anaconda is upgraded. To import pip-installed packages in a Python script, please remember to load the same anaconda module that was used to install the packages.
 
 # Package installation with conda
 Certain Python packages are available pre-bundled via public Conda channels. Conda packages are installed in environments, i.e. specific directories. This is useful to isolate incompatible packages so that they do not conflict with each other. Only one Conda environment can be active at any given time. The Anaconda distribution provides a root environment that contains all of the preinstalled Anaconda packages. In addition, users can create their own Conda environments in their home directory.

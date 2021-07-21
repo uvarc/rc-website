@@ -154,3 +154,21 @@ Singularity> python -m tensorboard.main --logdir=logdir
 ```
 
 Open the resulting URL (of the form `http://localhost:xxxx/`) in Firefox.
+
+# Can I install my own TensorFlow (that works on a GPU)?
+
+Yes, you can do that, but the TF/Python/CUDA versions have to be very specific. We recommend creating a conda environment. Using TensorFlow 1.14 as an example:
+
+1. For your target TF version, look up the supported Python and CUDA versions [here](https://www.tensorflow.org/install/source#gpu). In this example, we find that it is supported by:
+
+    - Python 2.7, 3.3-3.7
+    - CUDA 10.0
+
+1. Load the Anaconda module and create the environment with specific versions.
+
+    ```
+    module load anaconda
+    conda create -n tf1.14 tensorflow-gpu=1.14 cudatoolkit=10.0 python=3.7 -c anaconda -c conda-forge
+    ```
+
+If the versions are incompatible, either the installation will fail or TF will not be able to detect the GPU at runtime.

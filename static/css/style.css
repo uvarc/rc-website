@@ -277,6 +277,25 @@ pre code{
 .control-label {font-weight:bold;}
 .primary {color: #004085;background-color: #cce5ff;border-color: #b8daff;}
 
+.pb {
+  background-color: #103A72;
+  border: none;
+  color: white;
+  padding: 4px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px 24px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size:80%;
+}
+
+.pb:hover {
+  background-color: #164E9A;
+}
+
+
 #scrollBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
