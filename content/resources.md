@@ -70,7 +70,7 @@ fetch(allocation_url)
               const remain_round = parseFloat(remain).toFixed(2);
               return `
                   <tr>
-                      <td><code><a href="https://mygroups.virginia.edu/display-groupinfo.jsp?GroupSelected=${allocation.name}&uva-userid=${allocation.owner}" target="_new">${allocation.name}</a></code></td>
+                      <td><a style="background-color:#efefef;text-decoration:none;padding:2px;" href="https://mygroups.virginia.edu/display-groupinfo.jsp?GroupSelected=${allocation.name}&uva-userid=${allocation.owner}" target="_new">${allocation.name}</a></td>
                       <td><span class="dot-allocation">${allocation.type}</span></td>
                       <td style="text-align:right;">${allocation.remaining}</td>
                       <td style="text-align:right;">${remain_round}%</td>
@@ -101,7 +101,7 @@ fetch(storage_url)
               const records2 = data2.length
               return `
                   <tr>
-                  <td><code>${storage.name}</code></td>
+                  <td><a style="background-color:#efefef;text-decoration:none;padding:2px;" href="https://mygroups.virginia.edu/display-groupinfo.jsp?GroupSelected=${storage.name}&uva-userid=${storage.owner}" target="_new">${storage.name}</a></td>
                   <td><span class="dot-storage">${storage.type}</span></td>
                   <td style="text-align:right;">${storage.purchased} TB</td>
                   </tr>
@@ -112,52 +112,52 @@ fetch(storage_url)
     }).catch(error => {
       console.log(error)
     });
-
-
 </script>
 
+<br clear=all />
 <div id="identity" style="float:right;text-align:right;font-family:'Roboto Mono', monospace;font-size:90%;"></div>
 <h2 id="name">Hello </h2>
 
-<div class="col-12 col-md-6">
-<div class="alert alert-info" role="alert" style="margin:0.1rem;">
-<h4 class="alert-heading">Allocations</h4>
-<p>Review and manage your HPC allocations on Rivanna.</p>
-<table class="table table-striped table-sm" style="font-family:'Roboto Mono', monospace;font-size:90%;">
-  <thead class="">
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th style="text-align:right;">SUs Remain</th>
-      <th style="text-align:right;">% Remain</th>
-    </tr>
-  </thead>
-  <tbody id="allocation-data">
-  </tbody>
-</table>
-<p style="font-size:85%;font-style:italic;">S = Standard  &nbsp;&nbsp; P = Purchased &nbsp;&nbsp; I = Instructional &nbsp;&nbsp; D = Dean<br />Allocation counts are updated 1x per day.</p>
-<hr>
-<a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
-</div>
+<div class="col-12 col-md-6"">
+  <div class="alert alert-primary" role="alert" style="">
+    <h4 class="alert-heading">Allocations</h4>
+    <p>Review and manage your HPC allocations on Rivanna.</p>
+    <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
+      <thead class="">
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th style="text-align:right;">SUs Remain</th>
+          <th style="text-align:right;">% Remain</th>
+        </tr>
+      </thead>
+      <tbody id="allocation-data">
+      </tbody>
+    </table>
+    <p style="font-size:85%;font-style:italic;">S = Standard  &nbsp;&nbsp; P = Purchased &nbsp;&nbsp; I = Instructional &nbsp;&nbsp; D = Dean<br />Allocation counts are updated 1x per day.</p>
+    <hr>
+    <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+  </div>
 </div>
 
 <div class="col-12 col-md-6">
-<div class="alert alert-success" role="alert" style="margin:0.1rem;">
-<h4 class="alert-heading">Storage</h4>
-<p>Review and manage your Project or Value storage shares.</p>
-<table class="table table-striped table-sm" style="font-family:'Roboto Mono', monospace;font-size:90%;">
-  <thead class="">
-    <tr>
-      <th>Group Name</th>
-      <th>Type</th>
-      <th style="text-align:right;">Capacity</th>
-    </tr>
-  </thead>
-  <tbody id="storage-data">
-  </tbody>
-</table>
-<p style="font-size:85%;font-style:italic;">P = Project &nbsp;&nbsp; V = Value<br />Storage quotas are updated 1x per day.</p>
-<hr>
-<a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a> &nbsp;
+  <div class="alert alert-success" role="alert" style="">
+    <h4 class="alert-heading">Storage</h4>
+    <p>Review and manage your Project or Value storage shares.</p>
+    <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
+      <thead class="">
+        <tr>
+          <th>Group Name</th>
+          <th>Type</th>
+          <th style="text-align:right;">Capacity</th>
+        </tr>
+      </thead>
+      <tbody id="storage-data">
+      </tbody>
+    </table>
+    <p style="font-size:85%;font-style:italic;">P = Project &nbsp;&nbsp; V = Value<br />Storage quotas are updated 1x per day.</p>
+    <hr>
+    <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a> &nbsp;
+  </div>
 </div>
-</div>
+
