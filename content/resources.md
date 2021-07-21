@@ -56,16 +56,24 @@ fetch(allocation_url)
     .then(data => {
         const alloc_html = data
             .map(allocation => {
-              const remain = allocation.remaining / allocation.purchased * 100;
-              const remain_round = parseFloat(remain).toFixed(2);
-              return `
-                  <tr>
-                  <td><code>${allocation.name}</code></td>
-                  <td>${allocation.type}</td>
-                  <td style="text-align:right;">${allocation.remaining}</td>
-                  <td style="text-align:right;">${remain_round}%</td>
-                  </tr>
-              `;
+              const records = data.length
+              if (records > 0) {
+                const remain = allocation.remaining / allocation.purchased * 100;
+                const remain_round = parseFloat(remain).toFixed(2);
+                return `
+                    <tr>
+                    <td><code>${allocation.name}</code></td>
+                    <td><span class="dot-allocation">${allocation.type}</span></td>
+                    <td style="text-align:right;">${allocation.remaining}</td>
+                    <td style="text-align:right;">${remain_round}%</td>
+                    </tr>
+                `;
+              } else {
+                return `
+                    <tr>
+                    <td colspan="4">No allocations found</td>
+                    </tr>
+                `;              }
             })
             .join("");
         document.querySelector("#allocation-data").insertAdjacentHTML("afterbegin", alloc_html)
@@ -82,7 +90,7 @@ fetch(storage_url)
               return `
                   <tr>
                   <td><code>${storage.name}</code></td>
-                  <td>${storage.type}</td>
+                  <td><span class="dot-storage">${storage.type}</span></td>
                   <td style="text-align:right;">${storage.purchased} TB</td>
                   </tr>
               `;
