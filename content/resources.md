@@ -50,43 +50,53 @@ var profile;
   document.getElementById("identity").innerHTML = profile["name"] + " | " + profile["uid"] + " | " + profile["eppn"];
 })();
 
-allocation_url = "https://user-resources.uvarc.io/allocations/_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
+all_base_url = "https://user-resources.uvarc.io/allocations/";
+pkey = getCookie("__rc_pkey");
+allocation_url = all_base_url + pkey;
+
 fetch(allocation_url)
     .then(response => response.json())
     .then(data => {
+        const counter = data
+        const records = counter.length
+        if (records == 0) {
+          empty_html = "<tr><td colspan=4>No allocations recorded</td></tr>";
+          document.querySelector("#allocation-data").insertAdjacentHTML("afterbegin", empty_html)
+        } 
         const alloc_html = data
             .map(allocation => {
-              const records = data.length
-              if (records > 0) {
-                const remain = allocation.remaining / allocation.purchased * 100;
-                const remain_round = parseFloat(remain).toFixed(2);
-                return `
-                    <tr>
-                    <td><code>${allocation.name}</code></td>
-                    <td><span class="dot-allocation">${allocation.type}</span></td>
-                    <td style="text-align:right;">${allocation.remaining}</td>
-                    <td style="text-align:right;">${remain_round}%</td>
-                    </tr>
+              const remain = allocation.remaining / allocation.purchased * 100;
+              const remain_round = parseFloat(remain).toFixed(2);
+              return `
+                  <tr>
+                      <td><code>${allocation.name}</code></td>
+                      <td><span class="dot-allocation">${allocation.type}</span></td>
+                      <td style="text-align:right;">${allocation.remaining}</td>
+                      <td style="text-align:right;">${remain_round}%</td>
+                  </tr>
                 `;
-              } else {
-                return `
-                    <tr>
-                    <td colspan="4">No allocations found</td>
-                    </tr>
-                `;              }
-            })
-            .join("");
+              })
+            .join("");       
         document.querySelector("#allocation-data").insertAdjacentHTML("afterbegin", alloc_html)
     }).catch(error => {
       console.log(error)
     });
 
-storage_url = "https://user-resources.uvarc.io/storage/_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
+sto_base_url = "https://user-resources.uvarc.io/storage/";
+pkey = getCookie("__rc_pkey");
+storage_url = sto_base_url + pkey;
 fetch(storage_url)
     .then(response => response.json())
     .then(data2 => {
+        const stocount = data2
+        const records = stocount.length
+        if (records == 0) {
+          empty_html = "<tr><td colspan=4>No storage volumes recorded</td></tr>";
+          document.querySelector("#storage-data").insertAdjacentHTML("afterbegin", empty_html)
+        } 
         const storage_html = data2
             .map(storage => {
+              const records2 = data2.length
               return `
                   <tr>
                   <td><code>${storage.name}</code></td>
