@@ -68,11 +68,12 @@ fetch(allocation_url)
             .map(allocation => {
               const remain = allocation.remaining / allocation.purchased * 100;
               const remain_round = parseFloat(remain).toFixed(2);
+              const remain_commas = allocation.remaining.toLocaleString('en-US')
               return `
                   <tr>
                       <td><a style="background-color:#efefef;text-decoration:none;padding:2px;" href="https://mygroups.virginia.edu/display-groupinfo.jsp?GroupSelected=${allocation.name}&uva-userid=${allocation.owner}" target="_new">${allocation.name}</a></td>
                       <td><span class="dot-allocation">${allocation.type}</span></td>
-                      <td style="text-align:right;">${allocation.remaining}</td>
+                      <td style="text-align:right;">${remain_commas}</td>
                       <td style="text-align:right;">${remain_round}%</td>
                   </tr>
                 `;
