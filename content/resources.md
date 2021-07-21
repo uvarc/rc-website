@@ -9,7 +9,7 @@ description = ""
 title = "Your Resources"
 draft = false
 type = "resource"
-
+private = true
 +++
 
 <script>
@@ -102,7 +102,7 @@ fetch(storage_url)
 <div class="col-12 col-md-6">
 <div class="alert alert-info" role="alert" style="margin:0.1rem;">
 <h4 class="alert-heading">Allocations</h4>
-<p>Review and manage your HPC allocations on Rivanna or Neo.</p>
+<p>Review and manage your HPC allocations on Rivanna.</p>
 <table class="table table-striped table-sm" style="font-family:'Roboto Mono', monospace;font-size:90%;">
   <thead class="">
     <tr>
