@@ -50,9 +50,10 @@ var profile;
   document.getElementById("identity").innerHTML = profile["name"] + " | " + profile["uid"] + " | " + profile["eppn"];
 })();
 
-all_base_url = "https://user-resources.uvarc.io/allocations/";
-pkey = getCookie("__rc_pkey");
-allocation_url = all_base_url + pkey;
+var all_base_url = "https://user-resources.uvarc.io/allocations/";
+// var pkey = getCookie("__rc_pkey");
+var pkey = "_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
+var allocation_url = all_base_url + pkey;
 
 fetch(allocation_url)
     .then(response => response.json())
@@ -82,9 +83,10 @@ fetch(allocation_url)
       console.log(error)
     });
 
-sto_base_url = "https://user-resources.uvarc.io/storage/";
-pkey = getCookie("__rc_pkey");
-storage_url = sto_base_url + pkey;
+var sto_base_url = "https://user-resources.uvarc.io/storage/";
+// var pkey = getCookie("__rc_pkey");
+var pkey = "_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
+var storage_url = sto_base_url + pkey;
 fetch(storage_url)
     .then(response => response.json())
     .then(data2 => {
