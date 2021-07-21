@@ -16,6 +16,7 @@ type = "resource"
 function setCookie(key, value, expiry) {
     var expires = new Date();
     expires.setTime(expires.getTime() + (expiry * 60 * 60 * 90));
+    // Switch lines below before builds
     document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
     // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
 };
@@ -28,6 +29,7 @@ function getCookie(key) {
 var form_url = window.location;
 let referrer = setCookie('__rc_form_referrer', form_url, '24');
 
+// Uncomment before builds
 var pkey_check = getCookie("__rc_pkey");
 if (!pkey_check) {
     window.location.replace("https://auth.rc.virginia.edu/session.php");
@@ -48,13 +50,57 @@ var profile;
   document.getElementById("identity").innerHTML = profile["name"] + " | " + profile["uid"] + " | " + profile["eppn"];
 })();
 
+allocation_url = "https://user-resources.uvarc.io/allocations/_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
+fetch(allocation_url)
+    .then(response => response.json())
+    .then(data => {
+        const alloc_html = data
+            .map(allocation => {
+              const remain = allocation.remaining / allocation.purchased * 100;
+              const remain_round = parseFloat(remain).toFixed(2);
+              return `
+                  <tr>
+                  <td><code>${allocation.name}</code></td>
+                  <td>${allocation.type}</td>
+                  <td style="text-align:right;">${allocation.remaining}</td>
+                  <td style="text-align:right;">${remain_round}%</td>
+                  </tr>
+              `;
+            })
+            .join("");
+        document.querySelector("#allocation-data").insertAdjacentHTML("afterbegin", alloc_html)
+    }).catch(error => {
+      console.log(error)
+    });
+
+storage_url = "https://user-resources.uvarc.io/storage/_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
+fetch(storage_url)
+    .then(response => response.json())
+    .then(data2 => {
+        const storage_html = data2
+            .map(storage => {
+              return `
+                  <tr>
+                  <td><code>${storage.name}</code></td>
+                  <td>${storage.type}</td>
+                  <td style="text-align:right;">${storage.purchased} TB</td>
+                  </tr>
+              `;
+            })
+            .join("");
+        document.querySelector("#storage-data").insertAdjacentHTML("afterbegin", storage_html)
+    }).catch(error => {
+      console.log(error)
+    });
+
+
 </script>
 
 <div id="identity" style="float:right;text-align:right;font-family:'Roboto Mono', monospace;font-size:90%;"></div>
 <h2 id="name">Hello </h2>
 
-<div id="resource-data" style="width:100%;">
-<div class="alert alert-info" role="alert" style="float:left;width:48%;">
+<div class="col-12 col-md-6">
+<div class="alert alert-info" role="alert" style="margin:0.1rem;">
 <h4 class="alert-heading">Allocations</h4>
 <p>Review and manage your HPC allocations on Rivanna or Neo.</p>
 <table class="table table-striped table-sm" style="font-family:'Roboto Mono', monospace;font-size:90%;">
@@ -62,25 +108,11 @@ var profile;
     <tr>
       <th>Name</th>
       <th>Type</th>
-      <th>SUs</th>
+      <th style="text-align:right;">SUs Remain</th>
+      <th style="text-align:right;">% Remain</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td><code>cphg-genomes</code></td>
-      <td>standard</td>
-      <td>46,400</td>
-    </tr>
-    <tr>
-      <td><code>uvarc</code></td>
-      <td>purchased</td>
-      <td>282,814</td>
-    </tr>
-    <tr>
-      <td><code>cs1234</code></td>
-      <td>instructional</td>
-      <td>14,000</td>
-    </tr>
+  <tbody id="allocation-data">
   </tbody>
 </table>
 <p style="font-size:85%;font-style:italic;">Allocation counts are updated 1x per day.</p>
@@ -88,8 +120,10 @@ var profile;
 <a href="#"><button class="btn btn-primary btn-sm">Request Allocations</button></a> &nbsp; 
 <a href="#"><button class="btn btn-success btn-sm">Learn More</button></a>
 </div>
+</div>
 
-<div class="alert alert-success" role="alert" style="float:right;width:48%;">
+<div class="col-12 col-md-6">
+<div class="alert alert-success" role="alert" style="margin:0.1rem;">
 <h4 class="alert-heading">Storage</h4>
 <p>Review and manage your Project or Value storage shares.</p>
 <table class="table table-striped table-sm" style="font-family:'Roboto Mono', monospace;font-size:90%;">
@@ -97,31 +131,10 @@ var profile;
     <tr>
       <th>Group Name</th>
       <th>Type</th>
-      <th>Capacity</th>
+      <th style="text-align:right;">Capacity</th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
-      <td><code>cphg-genomes</code></td>
-      <td>project</td>
-      <td>20TB</td>
-    </tr>
-    <tr>
-      <td><code>uvarc</code></td>
-      <td>project</td>
-      <td>5TB</td>
-    </tr>
-    <tr>
-      <td><code>cs1234</code></td>
-      <td>value</td>
-      <td>50TB</td>
-    </tr>
-    <tr>
-      <td><code>cs9876</code></td>
-      <td>value</td>
-      <td>30TB</td>
-    </tr>
-
+  <tbody id="storage-data">
   </tbody>
 </table>
 <p style="font-size:85%;font-style:italic;">Storage quotas are updated 1x per day.</p>
@@ -130,4 +143,3 @@ var profile;
 <a href="#"><button class="btn btn-success btn-sm">Learn More</button></a>
 </div>
 </div>
-
