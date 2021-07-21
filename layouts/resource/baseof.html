@@ -28,16 +28,16 @@
         <div class="col-sm-12 blog-main">
 
           <div style="float:right;">
-          <img src="https://www.rc.virginia.edu/images/logos/uva-logo-horiz-200x50.png" alt="University of Virginia" /><br />
+          <a href="/"><img src="https://www.rc.virginia.edu/images/logos/uva-logo-horiz-200x50.png" alt="University of Virginia" /></a><br />
           <p style="text-align:right;font-family:'Roboto Mono', monospace;font-weight:500; font-size:120%;">Research Computing</p>
         </div>
 
         <div>
-          <button class="pb">Home</button>
-          <button class="pb">Get Started</button>
-          <button class="pb">Services</button>
-          <button class="pb">User Info</button>
-          <button class="pb">Support</button>
+          <a href="/"><button class="pb">Home</button></a>
+          <a href="/userinfo/systems/"><button class="pb">Get Started</button></a>
+          <a href="/services/"><button class="pb">Services</button></a>
+          <a href="/userinfo/"><button class="pb">User Info</button></a>
+          <a href="/support/"><button class="pb">Support</button></a>
         </div>
 
           {{ block "main" . }}
@@ -48,7 +48,7 @@
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}
-	
+
   </section>
   </body>
 </html>

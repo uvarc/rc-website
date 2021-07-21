@@ -115,10 +115,9 @@ fetch(storage_url)
   <tbody id="allocation-data">
   </tbody>
 </table>
-<p style="font-size:85%;font-style:italic;">Allocation counts are updated 1x per day.</p>
+<p style="font-size:85%;font-style:italic;">S = Standard  &nbsp;&nbsp; P = Purchased &nbsp;&nbsp; I = Instructional &nbsp;&nbsp; D = Dean<br />Allocation counts are updated 1x per day.</p>
 <hr>
-<a href="#"><button class="btn btn-primary btn-sm">Request Allocations</button></a> &nbsp; 
-<a href="#"><button class="btn btn-success btn-sm">Learn More</button></a>
+<a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
 </div>
 </div>
 
@@ -137,9 +136,8 @@ fetch(storage_url)
   <tbody id="storage-data">
   </tbody>
 </table>
-<p style="font-size:85%;font-style:italic;">Storage quotas are updated 1x per day.</p>
+<p style="font-size:85%;font-style:italic;">P = Project &nbsp;&nbsp; V = Value<br />Storage quotas are updated 1x per day.</p>
 <hr>
-<a href="#"><button class="btn btn-primary btn-sm">Request Storage</button></a> &nbsp;
-<a href="#"><button class="btn btn-success btn-sm">Learn More</button></a>
+<a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a> &nbsp;
 </div>
 </div>
