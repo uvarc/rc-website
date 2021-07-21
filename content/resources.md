@@ -70,7 +70,7 @@ fetch(allocation_url)
               const remain_round = parseFloat(remain).toFixed(2);
               return `
                   <tr>
-                      <td><code>${allocation.name}</code></td>
+                      <td><code><a href="https://mygroups.virginia.edu/display-groupinfo.jsp?GroupSelected=${allocation.name}&uva-userid=${allocation.owner}" target="_new">${allocation.name}</a></code></td>
                       <td><span class="dot-allocation">${allocation.type}</span></td>
                       <td style="text-align:right;">${allocation.remaining}</td>
                       <td style="text-align:right;">${remain_round}%</td>
