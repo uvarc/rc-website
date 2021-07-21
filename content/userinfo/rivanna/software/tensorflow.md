@@ -170,3 +170,5 @@ Yes, you can do that, but the TF/Python/CUDA versions have to be very specific. 
     module load anaconda
     conda create -n tf1.14 tensorflow-gpu=1.14 cudatoolkit=10.0 python=3.7 -c anaconda -c conda-forge
     ```
+
+If the versions are incompatible, either the installation will fail or TF will not be able to detect the GPU at runtime.
