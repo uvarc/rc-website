@@ -42,16 +42,16 @@ module spider {{% module-firstversion %}}
 
 # AlphaFold Dockerfile
 
-We prepared a Docker image based on the official Dockerfile with some modifications. The biggest issue is the TensorFlow version and missing cudnn/cusolver libraries as reported [here](https://github.com/deepmind/alphafold/pull/28)
+We prepared a Docker image based on the official Dockerfile with some modifications. The biggest issues are the TensorFlow version and missing cudnn/cusolver libraries as reported [here](https://github.com/deepmind/alphafold/pull/28).
 
 Our current solution is:
 
-- CUDA version kept at 11.0
-- Downgraded Python to 3.8.10
-- Downgraded TensorFlow to 2.4.1
-- Added `libcudnn8` and `libcusolver-11-0` in production stage
+- keep CUDA version at 11.0;
+- downgrade Python to 3.8.10;
+- downgrade TensorFlow to 2.4.1;
+- add `libcudnn8` and `libcusolver-11-0` in production stage.
 
-We did not use TensorFlow 2.5.0 with CUDA 11.2 because our [NVIDIA driver version does not support that](/userinfo/rivanna/software/tensorflow/#can-i-install-my-own-tensorflow-that-works-on-a-gpu).
+We did not use TensorFlow 2.5.0 with CUDA 11.2 because currently our [NVIDIA driver version does not support that](/userinfo/rivanna/software/tensorflow/#can-i-install-my-own-tensorflow-that-works-on-a-gpu).
 
 For details see [here](https://github.com/uvarc/rivanna-docker/tree/master/alphafold/2.0.0).
 
