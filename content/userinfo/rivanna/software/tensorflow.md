@@ -157,12 +157,20 @@ Open the resulting URL (of the form `http://localhost:xxxx/`) in Firefox.
 
 # Can I install my own TensorFlow (that works on a GPU)?
 
-Yes, you can do that, but the TF/Python/CUDA versions have to be very specific. We recommend creating a conda environment. Using TensorFlow 1.14 as an example:
+Yes, but the TF/Python/CUDA versions have to be very specific. We recommend creating a conda environment. Using TensorFlow 1.14 as an example:
 
 1. For your target TF version, look up the supported Python and CUDA versions [here](https://www.tensorflow.org/install/source#gpu). In this example, we find that it is supported by:
 
     - Python 2.7, 3.3-3.7
     - CUDA 10.0
+
+1. Check that the CUDA version is supported on Rivanna:
+    - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
+    - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of July 2021, our GPU nodes support up to CUDA 11.0.3.
+        ```
+        NVIDIA-SMI 450.51.06    Driver Version: 450.51.06    CUDA Version: 11.0
+        ```
+    - In this example 10.0 is less than 11.0.3, so the target version is supported.
 
 1. Load the Anaconda module and create the environment with specific versions.
 
