@@ -66,7 +66,7 @@ fetch(allocation_url)
         } 
         const alloc_html = data
             .map(allocation => {
-              const remain = allocation.remaining / allocation.purchased * 100;
+              const remain = allocation.remaining / allocation.quantity * 100;
               const remain_round = parseFloat(remain).toFixed(2);
               const remain_commas = allocation.remaining.toLocaleString('en-US')
               return `
@@ -115,18 +115,23 @@ fetch(storage_url)
     });
 </script>
 
-<br clear=all />
-<div id="identity" style="float:right;text-align:right;font-family:'Roboto Mono', monospace;font-size:90%;"></div>
-<h2 id="name">Hello </h2>
+<div class="row">
+  <div class="col-12 col-md-6">
+    <h2 id="name">Hello </h2>
+  </div>
+  <div class="col-12 col-md-6">
+    <div id="identity" style="float:right;text-align:right;font-family:'Roboto Mono', monospace;font-size:90%;"></div>
+  </div>
+</div>
 
-<div class="col-12 col-md-6"">
+<div class="col-12 col-md-7">
   <div class="alert alert-primary" role="alert" style="">
     <h4 class="alert-heading">Allocations</h4>
     <p>Review and manage your HPC allocations on Rivanna.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
       <thead class="">
         <tr>
-          <th>Name</th>
+          <th style="width:60%;">Name</th>
           <th>Type</th>
           <th style="text-align:right;">SUs Remain</th>
           <th style="text-align:right;">% Remain</th>
@@ -135,20 +140,20 @@ fetch(storage_url)
       <tbody id="allocation-data">
       </tbody>
     </table>
-    <p style="font-size:85%;font-style:italic;">S = Standard  &nbsp;&nbsp; P = Purchased &nbsp;&nbsp; I = Instructional &nbsp;&nbsp; D = Dean<br />Allocation counts are updated 1x per day.</p>
+    <p style="font-size:80%;font-style:italic;"><span class="dot-allocation">S</span> = Standard  &nbsp;&nbsp; <span class="dot-allocation">P</span> = Purchased &nbsp;&nbsp; <span class="dot-allocation">I</span> = Instructional &nbsp;&nbsp; <span class="dot-allocation">D</span> = Dean<br />Allocation counts are refreshed 1x per day.</p>
     <hr>
     <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
   </div>
 </div>
 
-<div class="col-12 col-md-6">
+<div class="col-12 col-md-5">
   <div class="alert alert-success" role="alert" style="">
     <h4 class="alert-heading">Storage</h4>
     <p>Review and manage your Project or Value storage shares.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
       <thead class="">
         <tr>
-          <th>Group Name</th>
+          <th style="width:70%;">Group Name</th>
           <th>Type</th>
           <th style="text-align:right;">Capacity</th>
         </tr>
@@ -156,7 +161,7 @@ fetch(storage_url)
       <tbody id="storage-data">
       </tbody>
     </table>
-    <p style="font-size:85%;font-style:italic;">P = Project &nbsp;&nbsp; V = Value<br />Storage quotas are updated 1x per day.</p>
+    <p style="font-size:80%;font-style:italic;"><span class="dot-storage">P</span> = Project &nbsp;&nbsp; <span class="dot-storage">V</span> = Value<br />Storage quotas are refreshed 1x per day.</p>
     <hr>
     <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a> &nbsp;
   </div>
