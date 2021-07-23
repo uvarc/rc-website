@@ -14,7 +14,7 @@ type = "accord"
 
 <img src="/images/accord/accord_demo.png" style="float:right;" class="project-inset" />
 
-Welcome to ACCORD (Assuring Controls Compliance of Research Data), a web-based platform which allows researchers from different colleges and universities to analyze and store their sensitive data in a central location. 
+Welcome to ACCORD (Assuring Controls Compliance of Research Data), a web-based platform which allows researchers from different colleges and universities across the state of Virginia to analyze and store their sensitive data in a central location. 
 
 ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data
 
