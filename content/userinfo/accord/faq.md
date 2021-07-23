@@ -18,7 +18,7 @@ type = "accord"
 
 2.)  Who can use ACCORD?
 
-+ Researchers from higher education institutions across the US
++ Researchers from higher education institutions across the state of Virginia. ACCORD is also open to reserachers from other states who are working on COVID related projects
 
 3.)  How much does ACCORD cost?
 
@@ -28,14 +28,10 @@ type = "accord"
 
 + ACCORD gives each project a free 1TB of storage. Additional storage can be purchased
 
-5.)  How powerful is the platform?
-
-+ ACCORD environments are bound to 16 cores / 48GB of memory
-
-6.)  How is data transferred in/out of ACCORD?
+5.)  How is data transferred in/out of ACCORD?
 
 + ACCORD uses [Globus](https://www.globus.org/) to transfer data
 
-7.) How do I learn more about ACCORD?
+6.) How do I learn more about ACCORD?
 
 + {{< button button-class="primary" button-text="Learn more about ACCORD" button-url="https://www.rc.virginia.edu/userinfo/accord/about/" >}}

@@ -16,7 +16,7 @@ type = "accord"
 
 # What is it
 
-ACCORD (Assuring Controls Compliance of Research Data) gives researchers from different colleges and universities access to a single high-performance computing system capable of processing and storing de-identified sensitive data. This is especially important for schools that lack the financial, staffing, or technical resources for such systems. ACCORD is designed to encourage collaborative research partnerships across institutions by managing the risks associated with sensitive data sharing.
+ACCORD (Assuring Controls Compliance of Research Data) gives researchers from different colleges and universities across the state of Virignia access to a single high-performance computing system capable of processing and storing de-identified sensitive data. This is especially important for schools that lack the financial, staffing, or technical resources for such systems. ACCORD is designed to encourage collaborative research partnerships across institutions by managing the risks associated with sensitive data sharing.
 
 ACCORD is project-based, which means that investigators request access
 to the platform, create a project and populate it with co-investigators,
@@ -28,7 +28,7 @@ to perform their computational research.
 
 
 This platform is open for approved academic research on sensitive data. Researchers from
-institutions of higher education across the United States are invited to request access.
+institutions of higher education across the state of Virginia are invited to request access. ACCORD is also open to researchers from other states who are working on COVID related projects.
 
 ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of sensitive data. More
 restrictive levels, such as CUI, FISMA, PCI cannot be satisfied.
