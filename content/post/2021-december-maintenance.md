@@ -21,11 +21,13 @@ Rivanna is expected to return to service by .
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
-    - (?) tensorflow/1.12.0-py27, 2.0.0-py36
+    - tensorflow/1.12.0-py27, 2.0.0-py36
 
 2. The following **upgrades** will take place during the maintenance period. Upgrades to default versions of applications:
+    - salmon/1.2.1 -> 1.5.1
 
 3. **New** modules:
-    - namd/2.14 - Nanoscale Molecular Dynamics
+    - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) - DeepMind's protein structure prediction
+    - [namd/2.14](/userinfo/rivanna/software/namd) - Nanoscale Molecular Dynamics
     - ocaml/3.12.1
     - unrar/6.0.2
