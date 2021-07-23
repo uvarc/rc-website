@@ -14,7 +14,7 @@ type = "accord"
 
 # Security
 
-ACCORD is appropriate for HIPAA, FERPA, and other types of data with moderate security restrictions. ACCORD cannot be used to process highly-restricted data such as CUI, FISMA, and PCI data.
+ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data. ACCORD cannot be used to process highly-restricted data such as CUI, FISMA, and PCI data.
 
 ## Authentication
 
@@ -26,7 +26,7 @@ All members of a project have equal access to the data storage for that project,
 
 ## Closed Environments
 
-ACCORD environments have no outbound connectivity to the Internet other than whitelisted library and tool 
+ACCORD environments have no outbound connectivity to the Internet other than approved library and tool 
 repositories (PyPi, CPAN, CRAN, etc.). Connections to tools such as GitHub and external APIs are not allowed.
 
 ## Encryption

@@ -16,9 +16,9 @@ type = "accord"
 
 Welcome to ACCORD (Assuring Controls Compliance of Research Data), a web-based platform which allows researchers from different colleges and universities to analyze and store their sensitive data in a central location. 
 
-ACCORD is appropriate for de-identified PII (personally identifiable information), FERPA, and other types of sensitive data. ACCORD cannot be used to process highly-restricted data such as CUI, FISMA, and PCI data. 
+ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data
 
-Thanks to funding provided by the [National Science Foundation](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1919667), ACCORD is a **free** service for researchers. ACCORD is project-based, meaning investigators request access to the platform, invite co-investigators, store data (up to 1TB), and use application based computing environments to perform their computational research. Currently, the platform supports RStudio, JupyterLab, and Theia Python, however other applications will be added soon. 
+Thanks to funding provided by the [National Science Foundation](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1919667), ACCORD is a **free** service for researchers. ACCORD is project-based, meaning investigators request access to the platform, invite co-investigators, store data, and use application based computing environments to perform their computational research. Currently, the platform supports RStudio, JupyterLab, and Theia Python, however other applications will be added soon. 
 
 - - -
 
