@@ -165,7 +165,7 @@ Yes, but the TF/Python/CUDA versions have to be very specific. We recommend crea
     - CUDA 10.0
 
 1. Check that the CUDA version is supported on Rivanna:
-    - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
+    - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html).
     - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of July 2021, our GPU nodes support up to CUDA 11.0.3.
         ```
         NVIDIA-SMI 450.51.06    Driver Version: 450.51.06    CUDA Version: 11.0

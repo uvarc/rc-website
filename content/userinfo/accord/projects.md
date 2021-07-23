@@ -17,11 +17,11 @@ type = "accord"
 The fundamental organizing unit for your work in ACCORD is a *project*. A project consists of:
 
 + *Researchers* - a group of approved collaborators.  
-+ *Storage* - import and store up to 1TB of data for your project. 
++ *Storage* - import and store 1TB (more upon request) of data for your project. 
 
 ## Researchers
 
-All Principal Investigators (PI) are carefully vetted and approved by the ACCORD team before they are given access to the ACCORD computing platform. PIs are then free to manage and add additional personnel to their projects, transfer code and data, and control their storage.
+All Principal Investigators (PI) are carefully vetted and approved by the ACCORD team before they are given access to the ACCORD computing platform. PIs manage personnel for their projects, transfer code and data, and control their storage.
 
 Co-investigators are also vetted before they are given access to the ACCORD platform. Once a co-investigator has been onboarded, they can be added to any project by that project’s PI.
 
