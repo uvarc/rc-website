@@ -87,7 +87,7 @@ singularity run -B $ALPHAFOLD_DATA_PATH:/data -B .:/etc --pwd /app/alphafold --n
 
 ### Explanation of AlphaFold flags
 
-1. The default command of the container is `/app/run_alphafold.sh`. *All flags shown above are required* and are passed to `/app/rsun_alphafold.sh`.
+1. The default command of the container is `/app/run_alphafold.sh`. *All flags shown above are required* and are passed to `/app/run_alphafold.sh`.
 1. As a consequence of the Singularity `--pwd` flag, the fasta and output paths must be *full paths* (e.g. `/scratch/$USER/mydir`, not *relative paths* (e.g. `./mydir`).
 1. The `model_names` should be a comma-separated list of `model_*`. See `$ALPHAFOLD_DATA_PATH/params` for the complete set of model names. In [`run_docker.py`](https://github.com/deepmind/alphafold/blob/main/docker/run_docker.py) `model_1,model_2,model_3,model_4,model_5` is used.
 1. The `max_template_date` is of the form `YYYY-MM-DD`.
