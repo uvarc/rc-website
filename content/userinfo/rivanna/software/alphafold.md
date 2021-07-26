@@ -59,7 +59,7 @@ For further details see [here](https://github.com/uvarc/rivanna-docker/tree/mast
 
 ## AlphaFold launch command
 
-The full singularity command to launch AlphaFold looks like this:
+The full Singularity command to launch AlphaFold looks like this:
 
 ```
 singularity run -B $ALPHAFOLD_DATA_PATH:/data -B .:/etc --pwd /app/alphafold --nv $CONTAINERDIR/alphafold-2.0.0.sif \
@@ -95,9 +95,12 @@ singularity run -B $ALPHAFOLD_DATA_PATH:/data -B .:/etc --pwd /app/alphafold --n
 
 ## Launch script `run`
 
-For your convenience, we have prepared a launch script `run` that takes care of the Singularity command and the database paths, since these are unlikely to be customized.
+For your convenience, we have prepared a launch script `run` that takes care of the Singularity command and the database paths, since these are unlikely to change. If you do need to customize anything please use the full Singularity command in the previous section.
+
+# SLURM Script
 
 Please copy and paste the following as a template for your SLURM script. 
+
 ```
 #!/bin/bash
 #SBATCH -A mygroup      # your allocation account
@@ -117,7 +120,7 @@ run --fasta_paths=/full/path/to/fasta \
     --max_template_date=
 ```
 
-Please note that you may need at least 8 CPU cores due to this line printed in the output:
+You may need at least 8 CPU cores due to this line printed in the output:
 ```
 Launching subprocess "/usr/bin/jackhmmer -o /dev/null -A /tmp/tmpys2ocad8/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 ./seq.fasta /share/resources/data/alphafold/mgnify/mgy_clusters.fa"
 ```
