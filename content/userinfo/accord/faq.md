@@ -18,7 +18,8 @@ type = "accord"
 
 2.)  Who can use ACCORD?
 
-+ Researchers from higher education institutions across the state of Virginia. ACCORD is also open to reserachers from other states who are working on COVID related projects
++ Researchers from
+public universities across the state of Virginia are invited to request access. ACCORD is also open to reserachers from other states who are working on COVID related projects
 
 3.)  How much does ACCORD cost?
 
