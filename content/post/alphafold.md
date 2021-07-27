@@ -24,10 +24,10 @@ Simple ZFc protein: Similar results for AlphaFold (brown) and I-TASSER (blue). (
 
 ### FAQ
 
-#### What is AlphaFold?
+**What is AlphaFold?**
 
 AlphaFold is an AI for protein structure prediction developed by Google DeepMind. Watch DeepMind's [video](https://www.youtube.com/watch?v=gg7WjuFs8F4) or read the [Nature article](https://doi.org/10.1038/s41586-019-1923-7).
 
-#### How do I use AlphaFold on Rivanna?
+**How do I use AlphaFold on Rivanna?**
 
 See [here](/userinfo/rivanna/software/alphafold) for installation and usage details. If you are a PI interested in using AlphaFold on Rivanna but do not have an account, please [request an allocation](/userinfo/rivanna/allocations).
