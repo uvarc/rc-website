@@ -50,9 +50,14 @@ You must obtain the values for `ansysliport` (a port number), `flexnetport` (ano
 You can add these lines to your `~/.bashrc` file or you may add them to your SLURM batch scripts.
 
 # Using ANSYS Workbench
-If you wish to run jobs using the Workbench, you should submit an ijob (interactive job).  Log in with FastX, start a terminal, and type
+If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/config/kwinrc` file and add the following line:
 ```
-ijob -c 2 --mem=96000 -p standard -A yourallocation -t 24:00:00
+FocusStealingPreventionLevel=0
+```
+
+The workbench application, runwb2, should be executed as an ijob (interactive job).  Log in with [FastX](/userinfo/rivanna/logintools/fastx), start a terminal, and type
+```
+ijob --mem=96000 -p standard -A yourallocation -t 24:00:00
 ```
 When you are assigned a node, load the desired module and start the workbench with the `runwb2` command.
 ```
