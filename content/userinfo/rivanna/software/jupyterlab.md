@@ -33,6 +33,8 @@ To access JupyterLab, you will begin by connecting to our Open OnDemand portal:
 3. On the top right of the menu bar of the Open OnDemand dashboard, click on `Interactive Apps`.
 4. In the drop-down box, click on `JupyterLab`.
 
+<img src="/images/jupyterlab1.png" style="height:100%;width:100%"></img>
+
 # Requesting an Instance
 Your instance (or copy) of JupyterLab will run on a Rivanna compute node. So it will need a list of resources, such as partition, time, and allocation. If you are new to Rivanna, you may want to read the [Rivanna User Guide](/userinfo/rivanna/overview) to learn more about the partitions.
 
@@ -40,17 +42,34 @@ Your instance (or copy) of JupyterLab will run on a Rivanna compute node. So it 
 2. When done filling in the resources, click on the blue “Launch” button at the bottom of the form.
 3. It will take a few minutes for the system to gather the resources for your instance of JupyterLab.  When the resources are ready a `Connect to Jupyter` button will appear. Click on the button and the Notebook session will open in a new tab.
 
+The following screenshots illustrate the sequeunce of steps decribed above.
+
+<img src="/images/jupyterlab2.png" style="height:100%;width:100%"></img>
+<img src="/images/jupyterlab3.png" style="height:100%;width:100%"></img>
+<img src="/images/jupyterlab4.png" style="height:100%;width:100%"></img>
+<img src="/images/jupyterlab5.png" style="height:100%;width:100%"></img>
+
+Note that under the Work Directory field, the drop-down menu allows you to choose
+either your HOME or SCRATCH directories.
+
+<img src="/images/jupyterlab6.png" style="height:100%;width:100%"></img>
+<img src="/images/jupyterlab7.png" style="height:100%;width:100%"></img>
+
 # Running Notebooks
 The JupyterLab dashboard will have two panes:
 
 * A file browser pane on the left where you will see the files and folders in your Rivanna directory; and
 * A `Launcher` pane on the right with tiles for the available kernels (i.e., underlying software that will run the code in your Notebooks).
 
+<img src="/images/jupyterlab8.png" style="height:100%;width:100%"></img>
+
 If you already have a Jupyter Notebook in your account, you can maneuver to the file in the file-browser pane, and double-click on the file name to open the Notebook.
 
 However, if you want to create a new Notebook, go to the Launcher pane and click on the tile for the desired kernel (e.g., Python 3).
 
 If you are more familiar with the classic Notebook environment, you can change the JupyterLab format by clicking on `Help` and select `Launch Classic Notebook`.
+
+<img src="/images/jupyterlab9.png" style="height:100%;width:100%"></img>
 
 # Extensions
 We provide the following JupyterLab extensions:
