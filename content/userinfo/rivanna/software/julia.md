@@ -48,12 +48,68 @@ One work-around is to force Julia to use your local directory the first time tha
 export JULIA_DEPOT_PATH="~/.julia"
 ```
 Then when you add a package from within Julia, it will be added to the `.julia` folder in your home directory, e.g.
-```
-julia> using Pkg
-julia> Pkg.add("Plots")
-```
 After that first time, it should aways default to /home/$USER/.julia .
 
+The following link is a useful reference for loadin Julia pacakges.
+[Loading Packages](https://aaowens.github.io/julia/2020/01/13/A-Newcomers-Guide-to-the-Julia-Package-Manager.html)
+
+The follwoing code snippet shows the steps used on my Rivanna account to install and verify the SharedArrays package.
+```
+udc-ba34-36-gahlmann$module load julia
+udc-ba34-36-gahlmann$julia
+               _
+   _       _ _(_)_     |  Documentation: https://docs.julialang.org
+  (_)     | (_) (_)    |
+   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
+  | | | | | | |/ _` |  |
+  | | |_| | | | (_| |  |  Version 1.6.0 (2021-03-24)
+ _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
+|__/                   |
+
+julia> using Pkg
+
+(v1.6) pkg> status
+      Status `/sfs/qumulo/qhome/teh1m/.julia/environments/v1.6/Project.toml`
+  [91a5bcdd] Plots v1.19.4
+  [8ba89e20] Distributed
+  [de0858da] Printf
+
+julia>
+
+help?> sdata
+search: isdirpath isdispatchtuple StridedMatrix StridedVecOrMat searchsortedlast
+
+Couldn't find sdata
+Perhaps you meant stat, sort, sort!, sqrt, ispath, lstat, edit, Meta or atan
+  No documentation found.
+
+  Binding sdata does not exist.
+
+(v1.6) pkg> add SharedArrays
+    Updating registry at `~/.julia/registries/General`
+   Resolving package versions...
+    Updating `/sfs/qumulo/qhome/teh1m/.julia/environments/v1.6/Project.toml`
+  [1a1011a3] + SharedArrays
+  No Changes to `/sfs/qumulo/qhome/teh1m/.julia/environments/v1.6/Manifest.toml`
+
+(v1.6) pkg> status
+      Status `/sfs/qumulo/qhome/teh1m/.julia/environments/v1.6/Project.toml`
+  [91a5bcdd] Plots v1.19.4
+  [8ba89e20] Distributed
+  [de0858da] Printf
+  [1a1011a3] SharedArrays
+
+julia> using SharedArrays
+
+help?> sdata
+search: sdata isdirpath isdispatchtuple SharedMatrix StridedMatrix
+
+  sdata(S::SharedArray)
+
+  Returns the actual Array object backing S.
+
+julia>
+```
 You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application. Once you have logged into a frontend node (rivanna1, rivanna2, or rivanna3.hpc.virginia.edu), you can invoke the Atom/Juno IDE (integrated development environment) with the following commands:
 ```
 module load julia/1.5.0
