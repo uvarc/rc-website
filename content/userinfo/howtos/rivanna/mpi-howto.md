@@ -24,6 +24,12 @@ For Intel MPI these use gcc/g++/gfortran by default, which is generally not reco
 * mpiicpc
 * mpiifort
 
+**Note**: At this time, we recommend MPI users build with Intel 18.0 and IntelMPI 18.0
+```no-highlight
+module load intel/18.0
+module load intelmpi/18.0
+```
+
 Most MPI programs are distributed for Linux with a Makefile or a means to create a Makefile, such as `configure` or `cmake`.  If the Makefile can be edited directly, it usually contains variables such as `CC`, `CXX`, `FC` or `F90`, or similar that are set to the compiler to be used.  It is only necessary to use the appropriate wrapper as the compiler.  For `configure` or `cmake`, it may be necessary to export environment variables, e.g.
 ```
 export CC=mpicc
