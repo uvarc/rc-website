@@ -37,7 +37,7 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-## Dockerfile
+# Dockerfile
 
 We cannot use the official Docker image on Rivanna because:
 - the CUDA version is incompatible with our NVIDIA driver version (as of August 2021);
@@ -45,9 +45,9 @@ We cannot use the official Docker image on Rivanna because:
 
 For further details please visit [here](https://github.com/uvarc/rivanna-docker/blob/master/deeplabcut/2.2/Dockerfile).
 
-## Usage
+# Usage
 
-### Python script
+## Python script
 Please submit jobs to the GPU partition. A SLURM script template is provided below.
 
 ```
@@ -65,7 +65,7 @@ module load singularity deeplabcut
 singularity run --nv $CONTAINERDIR/deeplabcut-2.2.sif myscript.py
 ```
 
-### GUI
+## GUI
 Please request a Desktop session on the GPU partition via our Open OnDemand portal. Open a terminal and load the module. Then execute:
 
 {{< code-snippet >}}
