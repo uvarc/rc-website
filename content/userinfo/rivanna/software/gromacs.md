@@ -56,3 +56,5 @@ module load goolfc gromacs
 
 srun gmx_mpi <arguments>
 ```
+
+Please do not run the Intel version on the `gpu` partition.
