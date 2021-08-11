@@ -23,11 +23,16 @@ Rivanna is expected to return to service by .
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
     - tensorflow/1.12.0-py27, 2.0.0-py36
 
-2. The following **upgrades** will take place during the maintenance period. Upgrades to default versions of applications:
+2. The following **upgrades** will take place during the maintenance period.
+    - gromacs/2021.2 - with GPU support; please load `goolfc` first
+   Upgrades to default versions of applications:
     - salmon/1.2.1 -> 1.5.1
 
 3. **New** modules:
     - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) - DeepMind's protein structure prediction
+    - deeplabcut/2.2 - animal pose estimation
     - [namd/2.14](/userinfo/rivanna/software/namd) - Nanoscale Molecular Dynamics
+    - vmd/1.9.4 - Visualization software for NAMD
     - ocaml/3.12.1
+    - pov-ray/3.7.0 - 3D graphics with raytracing
     - unrar/6.0.2
