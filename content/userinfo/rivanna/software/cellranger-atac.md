@@ -3,30 +3,29 @@ type = "rivanna"
 categories = [
   "HPC",
   "software",
+  "bio"
 ]
-date = "2019-06-22T08:37:46-05:00"
-tags = [
-  'mpi',
-  "chem"
-]
+date = "2021-08-11T00:00:00-05:00"
 draft = false
-modulename = "gromacs"
-softwarename = "GROMACS"
-title = "GROMACS on Rivanna"
+modulename = "cellranger-atac"
+softwarename = "Cell Ranger ATAC"
+title = "Cell Ranger ATAC on Rivanna"
 author = "RC Staff"
 +++
 
 # Description
+
 {{% module-description %}}
-<br>
+
 **Software Category:** {{% module-category %}}
 
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
 # Available Versions
 To find the available versions and learn how to load them, run:
+
 ```
-module spider {{% module-name %}}
+module spider {{< module-name >}}
 ```
 
 The output of the command shows the available {{% software-name %}} module versions.
@@ -38,23 +37,6 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-# Usage on GPU
+# Important note on `mkfastq`
 
-The non-Intel version is built with CUDA support. A SLURM script template is provided below.
-
-```
-#!/bin/bash
-#SBATCH -A mygroup            # your allocation account
-#SBATCH -p gpu                # partition
-#SBATCH --gres=gpu:1          # number of GPUs
-#SBATCH -N 1                  # number of nodes
-#SBATCH --ntasks-per-node=10  # number of tasks
-#SBATCH -t 10:00:00           # time
-
-module purge
-module load goolfc gromacs
-
-srun gmx_mpi <arguments>
-```
-
-Please do not run the Intel version on the `gpu` partition.
+If you are using the `mkfastq` subcommand, please do not load the `bcl2fastq2` module. Cell Ranger ATAC requires a statically linked binary of `bcl2fastq`, whereas the `bcl2fastq2` module provides a dynamically linked binary. We have prepared a separate statically linked `bcl2fastq`, which will be made available to you automatically upon loading the `cellranger-atac` module.
