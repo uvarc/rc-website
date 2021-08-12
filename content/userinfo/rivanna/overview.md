@@ -132,7 +132,7 @@ A high performance computing cluster is typically made up of at least four servi
   <area id="login-nodes" alt="Login Nodes" title="Login Nodes" href="/userinfo/rivanna/login/" shape="rect" coords="243,37,555,100" style="outline:none;" class="hpchover" />
   <area id="compute-nodes" alt="Compute Node" title="Compute Node" href="/userinfo/rivanna/queues/" shape="rect" coords="38,150,700,390" style="outline:none;" class="hpchover" />
   <area id="storage" alt="Storage" title="Storage" href="/userinfo/rivanna/storage/" shape="rect" coords="70,440,700,580" style="outline:none;" class="hpchover" />
-  <area id="job-scheduler" alt="Job Scheduler" title="Job Scheduler" href="/userinfo/rivanna/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
+  <area id="resource-manager" alt="Resource Manager" title="Resource Manager" href="/userinfo/rivanna/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
 </map>
 
 
