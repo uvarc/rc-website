@@ -20,7 +20,7 @@ various systems are available to researchers.</p>
     <div class="card-block">
       <img align="right" src="/images/hpc-cluster.png" style="max-width:20%;" />
       <h4 class="card-title">High Performance Computing - Rivanna</h4>
-        <p class="card-text">A traditional high performance cluster with job scheduler, large file system, modules, and MPI processing. </p>
+        <p class="card-text">A traditional high performance cluster with a resource manager, a large file system, modules, and MPI processing. </p>
         <a href="/userinfo/rivanna/overview/" class="btn btn-warning" style="color:white">Get Started on Rivanna</a>
     </div>
   </div>
