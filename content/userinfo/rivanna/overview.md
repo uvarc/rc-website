@@ -121,18 +121,18 @@ New users are invited to attend one of our free orientation sessions ("Introduct
 
 A high performance computing cluster is typically made up of at least four service layers:
 
-1. **Interactive nodes** - Where you log in, interact with data and code, and submit jobs.
-2. **Worker nodes** - Where larger jobs are run. These nodes are heterogenous, with some having higher CPU, some with more memory, some with GPUs. The type of nodes your job runs in is specified by what queue you select.
-3. **Storage** - Where files and data are stored, accessible by all nodes in the cluster.
-4. **Job scheduler** - A management system that takes job requests and optimizes their execution.
+1. **Login nodes** - Where you log in, interact with data and code, and submit jobs.
+2. **Compute nodes** - Where production jobs are run. On Rivanna these nodes are heterogenous; some have more memory, some have GPU devices, and so forth. Partitions are homogeneous so you can select specialty hardware by your partition request, sometimes along with a resource request (gres).
+3. **Storage** - Where files are stored, accessible by all nodes in the cluster.
+4. **Resource Manager** - A software system that accepts job requests, schedules the jobs on a node or set of nodes, then manages their execution.
 
 <p style="margin-top:3rem;">Click on elements of the image to learn more:</p>
 <img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="margin-top:0rem;display:block;" class="hpc-overview" usemap="#hpc_map" data-bg_fill="rgba(244,124,67,0.5)" />
 <map name="hpc_map">
-  <area id="interactive-nodes" alt="Interactive Nodes" title="Interactive Nodes" href="/userinfo/rivanna/login/" shape="rect" coords="243,37,555,120" style="outline:none;" class="hpchover" />
-  <area id="worker-nodes" alt="Worker Nodes" title="Worker Nodes" href="/userinfo/rivanna/queues/" shape="rect" coords="38,150,700,500" style="outline:none;" class="hpchover" />
-  <area id="storage" alt="Storage" title="Storage" href="/userinfo/rivanna/storage/" shape="rect" coords="70,540,700,650" style="outline:none;" class="hpchover" />
-  <area id="job-scheduler" alt="Job Scheduler" title="Job Scheduler" href="/userinfo/rivanna/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
+  <area id="login-nodes" alt="Login Nodes" title="Login Nodes" href="/userinfo/rivanna/login/" shape="rect" coords="243,37,555,100" style="outline:none;" class="hpchover" />
+  <area id="compute-nodes" alt="Compute Node" title="Compute Node" href="/userinfo/rivanna/queues/" shape="rect" coords="38,150,700,390" style="outline:none;" class="hpchover" />
+  <area id="storage" alt="Storage" title="Storage" href="/userinfo/rivanna/storage/" shape="rect" coords="70,440,700,580" style="outline:none;" class="hpchover" />
+  <area id="resource-manager" alt="Resource Manager" title="Resource Manager" href="/userinfo/rivanna/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
 </map>
 
 
@@ -206,9 +206,9 @@ A high performance computing cluster is typically made up of at least four servi
 
 Research computing resources at the University of Virginia are for use by faculty, staff, and students of the University and their collaborators in academic research projects.  Personal use is not permitted.  Users must comply with all University policies for access and security to University resources.  The HPC system has additional usage policies to ensure that this shared environment is managed fairly to all users. UVA's Research Computing (RC) group reserves the right to enact policy changes at any time without prior notice.
 
-## Frontends
+## Login Nodes
 
-Exceeding the limits on the frontend will result in the user’s process(es) being killed. Repeated violations will result in a warning; users who ignore warnings risk losing access privileges.
+Exceeding the limits on the login nodes (frontend) will result in the user’s process(es) being killed. Repeated violations will result in a warning; users who ignore warnings risk losing access privileges.
 
 ## Standard Partition
 
