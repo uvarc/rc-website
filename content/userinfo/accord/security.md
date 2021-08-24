@@ -189,4 +189,3 @@ The device must be password protected, and it must lock automatically if there i
 ### Requirement 5: Whole-Disk Encryption
 
 Whole-disk encryption software must be installed and enabled. Accepted applications include <i>BitLocker</it>, <i>Dell Data Protection</i>, and <i>FileVault</i>.
-
