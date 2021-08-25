@@ -1,6 +1,6 @@
 +++
 description = ""
-title = "Coffee & Coding"
+title = "Coffee&Coding"
 draft = false
 date = "2021-08-23T17:45:12-05:00"
 tags = []
@@ -12,11 +12,20 @@ type = ""
 
 ### Want to learn a new coding skill? 
 
-Join us on Zoom for "Coffee & Coding" every Thursday afternoon between noon and 12:30 for amazing coding tips that will streamline your research! Upcoming topics include "Basic data cleaning with tidyverse", "f strings in Python," and "Joining data with pandas." All are welcome!
+<img src="/images/coffee_coding.png" style="float:right;" class="project-inset" />
 
-Zoom: https://virginia.zoom.us/j/98493871072?pwd=b1ZUdGtiang0R29iTGloNlVHamU0dz09
-
-Below is the schedule for Fall 2021:
+Join us on Zoom for **Coffee&Coding** every Thursday afternoon between noon and 12:30 for amazing coding tips that will streamline your research! 
+<br>
+<br>
+Upcoming topics include *"Basic data cleaning with tidyverse"*, *"f strings in Python"*, and *"Joining data with pandas."* All are welcome!
+<br>
+<br>
+**Time**: Thursday's from 12:00-12:30
+<br>
+**Zoom**: https://virginia.zoom.us/j/98493871072?pwd=b1ZUdGtiang0R29iTGloNlVHamU0dz09
+<br>
+<br>
+Below is the schedule for *Fall 2021*:
 
 <table class="table">
   <thead>
@@ -125,7 +134,7 @@ Below is the schedule for Fall 2021:
       <td>12/9/2021</td>
       <td>List comprehension</td>
       <td>Python</td>
-      <td>Will Rosenow</td>
+      <td>Jackie Huband</td>
     </tr>
   </tbody>
 </table>
