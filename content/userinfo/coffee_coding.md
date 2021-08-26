@@ -17,7 +17,7 @@ type = ""
 Join us on Zoom for **Coffee&Coding** every Thursday afternoon between noon and 12:30 for amazing coding tips that will streamline your research! 
 <br>
 <br>
-Upcoming topics include *"Basic data cleaning with tidyverse"*, *"f strings in Python"*, and *"Joining data with pandas."* All are welcome!
+Topics include *"Basic data cleaning with tidyverse"*, *"f strings in Python"*, and *"Joining data with pandas."* All are welcome! No registration required, but you **must** have a **Gmail/Google account**. 
 <br>
 <br>
 **Time**: Thursday's from 12:00-12:30
