@@ -46,11 +46,11 @@ We have a site license. Please contact us if you need access to the software.
 For research, please load `gaussian`. For course work, please load `gaussian/grads16`.
 
 # GaussView
-The GaussView graphical interface is available on Rivanna.  Users must log in through a client capable of displaying X11 graphics.  We recommend [FastX Web](/userinfo/rivanna/logintools/fastx).  GaussView can be used to create input files for Gaussian jobs which should then be submitted to the compute nodes.  To start GaussView, in an X11-enabled terminal first load the gaussian module as above, then run
+The GaussView graphical interface is available on Rivanna.  Users must log in through a client capable of displaying X11 graphics.  We recommend the Desktop session through [Open OnDemand](/userinfo/rivanna/ood/overview).  GaussView can be used to create input files for Gaussian jobs which should then be submitted to the compute nodes.  To start GaussView, in an X11-enabled terminal first load the gaussian module as above, then run
 ```
 gview &
 ```
-The ampersand (&) returns the terminal to input mode while GaussView is running.  Most use of GaussView will probably fit within the limits for frontend interactive use, but for very long or large GV jobs, please submit an [ijob (interactive job)](/userinfo/rivanna/slurm/#submitting-an-interactive-job).
+The ampersand (&) returns the terminal to input mode while GaussView is running. 
 
 Note: If the above command launches a text editor instead of GaussView, either you have not been granted access or your `PATH` is incorrectly configured. In either case, please run the following commands and send us the output:
 
