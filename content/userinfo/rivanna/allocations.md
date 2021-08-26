@@ -44,14 +44,18 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 # Allocation Types
 
 ## Standard Allocations
-Standard allocations are for 100,000 SUs and require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations can be renewed as long as each renewal request includes a synopsis of results from the original allocation. The maximum number of standard allocations--either new or renewal--a PI can receive in a single fiscal year is 4 (or 400K SUs max). There cannot be more than 1 PI per MyGroups group. Standard allocations expire 12 months after they are disbursed. Available to: Faculty and post-docs using Rivanna for research.
+Standard allocations are for 100,000 SUs and require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations can be renewed as long as each renewal request includes a synopsis of results from the original allocation. The maximum number of standard allocations--either new or renewal--a PI can receive in a single fiscal year is 4 (or 400K SUs max). There cannot be more than 1 PI per MyGroups group. Standard allocations expire 12 months after they are disbursed. 
+
+**Available to:** Faculty and post-docs using Rivanna for research.
 
 [<button class="btn btn-primary">Request New / Renew Standard Allocation</button>](/form/allocation-standard/)
 
 - - -
 
 ## Deans' Allocations
-Deans' Allocations are granted by the research deans who provide funding for Rivanna. A minimum one-page proposal must be included with any type of Deans' Allocation request. Available to: Faculty and postdocs who require very large allocations. Choose one of the following request options based on your school/college/organizational affiliation:
+Deans' Allocations are granted by the research deans who provide funding for Rivanna. A minimum one-page proposal must be included with any type of Deans' Allocation request. Dean sponsored allocations expire by default 12 months after they are disbursed.
+
+**Available to:** Faculty and postdocs who require very large allocations. Choose one of the following request options based on your school/college/organizational affiliation:
 
 <a href="/form/allocation-dean/?sponsor=cas">
   <button class="btn btn-primary">CLAS</button>
@@ -69,7 +73,9 @@ Deans' Allocations are granted by the research deans who provide funding for Riv
 - - -
 
 ## Allocation Purchases
-Time on Rivanna can also be purchased using a PTAO. Purchasers are given a higher priority in the queue and their SUs never expire. Available to: Faculty and postdocs with grants; researchers who need priority access and premium service.
+Time on Rivanna can also be purchased using a PTAO. Purchasers are given a higher priority in the queue and their SUs never expire.
+
+**Available to:** Faculty and postdocs with grants; researchers who need priority access and premium service.
 
 <a href="/form/allocation-purchase/">
   <button class="btn btn-primary">Purchase an Allocation</button>
