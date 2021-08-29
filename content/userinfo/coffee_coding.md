@@ -9,8 +9,9 @@ images = [""]
 author = "Staff"
 type = ""
 +++
+<br>
 
-### Want to learn a new coding skill? 
+**Want to learn a new coding skill?** 
 
 <img src="/images/coffee_coding.png" style="float:right;" class="project-inset" />
 
