@@ -36,6 +36,7 @@ Below is the schedule for *Fall 2021*:
       <th scope="col">Topic</th>
       <th scope="col">Language</th>
       <th scope="col">Instructor</th>
+      <th scope="col">Notebook Link</th>
     </tr>
   </thead>
   <tbody>
@@ -45,6 +46,7 @@ Below is the schedule for *Fall 2021*:
       <td>Reading data in R</td>
       <td>R</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1WCJLU5g4mP12d53VBeHyhTcx8UANT4Oe?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">2</th>
