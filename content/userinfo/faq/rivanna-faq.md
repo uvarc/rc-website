@@ -13,7 +13,7 @@ type = "rivanna"
 
 * [General Usage](#general-usage)
 * [Allocations](#allocations)
-* [Applications](#applications)
+* [Research Software](#research-software)
 * [Job Management](#job-management)
 * [Storage Management](#storage-management)
 * [Data Transfer](#data-transfer)
