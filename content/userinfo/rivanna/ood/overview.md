@@ -51,16 +51,19 @@ The file explorer provides these basic functions:
 Visit our [File Explorer](/userinfo/rivanna/ood/fileexplorer) guide for detailed instructions.
 
 # Interactive Applications
-Open OnDemand provides access to interactive applications that provide a full graphical Rivanna desktop environment (FastX Web), as well as a website where you can check your current allocation and storage usage, JupyterLab for running Jupyter notebooks, RStudio Server for the execution of R scripts, and a simple terminal shell.
+Open OnDemand provides access to interactive applications that provide a full graphical Rivanna desktop environments, JupyterLab for running Jupyter notebooks, RStudio Server, Matlab, a simple terminal shell, and a variety of other research apps.
 
+## Desktop
+The Desktop app provides a full Linux Desktop environment launched on user-specified allocated hardware resources which may include a compute node equipped with graphical processing units (GPUs). **This is the preferred mechanism to start compute intensive applications that require a graphical user interface (GUI).**
+
+Please read the [Open OnDemand Desktop documentation](/userinfo/rivanna/ood/desktop) for detailed instructions on how to specify resources and start a desktop session.
 
 ## FastX Web
-FastX Web enables users to start an X11 desktop environment on a remote system. When launched through Open OnDemand, FastX Web provides access to a Rivanna frontend. The FastX Web desktop environment can be used to open conventional shell terminals or launch applications with a graphical user interface.
+FastX Web enables users to start an X11 desktop environment on a remote system. When launched through Open OnDemand, FastX Web provides access to a Rivanna frontend. The FastX Web desktop environment can be used to open conventional shell terminals or launch applications with a graphical user interface. 
 
 Please read our [FastX Web documentation](/userinfo/rivanna/logintools/fastx) for a detailed description of this remote desktop environment.
 
-## My Rivanna Status
-To see an overview of your current allocations and scratch directory usage, click on the `Interactive Apps` drop-down and select `My Rivanna Status`. The data shown reflect the output obtained when running the `allocations` and `sfsq` commands in a command line terminal.
+**FastX Web sessions are not suitable for running compute intensive applications or code--[Open OnDemand Desktop](/userinfo/rivanna/ood/desktop) is intended for such purpose.**
 
 ## JupyterLab
 JupyerLab provides an environment that has become popular for interactive code development and debugging. JupyterLab sessions run on user-specified allocated hardware resources which may include compute nodes equipped with graphical processing units (GPUs).
