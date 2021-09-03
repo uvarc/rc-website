@@ -64,13 +64,13 @@ chmod +x run_rserver.sh
 {{< /code-snippet >}}
 
 # Launch
-We recommend launching this in a [FastX Web (MATE)](/userinfo/rivanna/logintools/fastx/) session or through the Desktop Interactive App, both of which can be found on our Open OnDemand portal.
+We recommend launching this in a [FastX Web (MATE)](/userinfo/rivanna/logintools/fastx/) session for short runs or debugging on the frontend. For production runs you can request a [Desktop](/userinfo/rivanna/ood/desktop) interactive app. Both FastX and the Desktop can be accessed at our [Open OnDemand](/userinfo/rivanna/ood/overview) [portal](https://rivanna-portal.hpc.virginia.edu).
 
-If you are performing compute-intensive tasks, please [request an ijob](/userinfo/rivanna/slurm/#submitting-an-interactive-job) after getting into FastX Web. This is not necessary in a Desktop session since you will have already requested resources.
-
+Once in either FastX or a remote Desktop, start a terminal window.
 To launch RStudio Server, execute:
 {{< code-snippet >}}
 ./run_rserver.sh
 {{< /code-snippet >}}
 
-Nothing will happen in the terminal which is normal. Open a browser and go to `localhost:8787`.
+Nothing will happen in the terminal, which is normal. Open a browser (Firefox is available through the MATE desktop menu) and go to `localhost:8787`.
+Your server should be running there.

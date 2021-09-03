@@ -55,17 +55,15 @@ If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/
 FocusStealingPreventionLevel=0
 ```
 
-The workbench application, runwb2, should be executed as an ijob (interactive job).  Log in with [FastX](/userinfo/rivanna/logintools/fastx), start a terminal, and type
+The workbench application, runwb2, should be executed as an interactive job through the Open OnDemand [desktop](/userinfo/rivanna/ood/desktop).  
 ```
-ijob --mem=96000 -p standard -A yourallocation -t 24:00:00
+When you are assigned a node, launch the desktop, start a terminal, load the desired module and start the workbench with the `runwb2` command.
 ```
-When you are assigned a node, load the desired module and start the workbench with the `runwb2` command.
-```
-module load ansys/19.2
+module load ansys
 unset SLURM_GTIDS
 runwb2
 ```
-Be sure to type `exit` when your job is completed to release the ijob resources.
+Be sure to delete your Open OnDemand session if you finish before your requested time expires.
 
 # Multi-Core Jobs
 You can write a batch script to run ANSYS jobs.  Please refer to ANSYS documentation for instructions in running from the command line.  These examples use threading to run on multiple cores on a single node.

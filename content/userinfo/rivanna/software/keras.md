@@ -23,7 +23,7 @@ author = "RC Staff"
 # Using Keras with TensorFlow containers
 Like TensorFlow itself, Python code that utlizes the Keras package can be run interactively as Jupyter Notebooks, in interactive shell jobs, or non-interctively as SLURM batch jobs.  Rivanna provides several nodes with graphics processing units (GPUs) that should be used when running Keras code.
 
-As best practice, it is recommended to create a [local copy of the TensorFlow container](/userinfo/rivanna/software/tensorflow/#local-copy-of-container-image) before using the Keras package in SLURM or ijobs.
+As best practice, it is recommended to create a [local copy of the TensorFlow container](/userinfo/rivanna/software/tensorflow/#local-copy-of-container-image) before using the Keras package in SLURM or interactive jobs.
 
 # Example Python Script
 The follwing example script can be found on the [TensorFlow Tutorials](https://www.tensorflow.org/tutorials/) website.  **Note that this script requires TensorFlow 1.12.0.**
@@ -58,6 +58,7 @@ The Keras package can be used for SLURM job batch processing as described in our
 
 # Keras Interactive Jobs (ijob)
 The Keras package can be used for code development in an interactive shell environment as described in our [TensorFlow Interactive Jobs](/userinfo/rivanna/software/tensorflow/#tensorflow-interactive-jobs-ijob) documentation.
+The ijob is for command-line usage; if you require a graphical user interface, including some form of IDE, see the instructions for [Tensorboard](/userinfo/rivanna/software/tensorflow/#tensorboard) or you may use [Jupyterlab](/userinfo/rivanna/software/tensorflow/#tensorflow-jupyter-notebooks).
 
 # Interaction with the Host File System
 The following user directories are overlayed onto each container by default on Rivanna:

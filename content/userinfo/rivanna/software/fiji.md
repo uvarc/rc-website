@@ -42,17 +42,9 @@ module spider {{% module-firstversion %}}
 
 # Interactive Use of Fiji via FastX
 
-We recommend to launch the Graphical User Interface (GUI) of Fiji as an interactive job via FastX.  These are the steps:
+We recommend to launch the Graphical User Interface (GUI) of Fiji as an interactive job via the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) interactive app.  You may request a core count and amount of memory through the text boxes on the Open OnDemand form.  Be sure to supply your allocation account where requested.
 
-1. Create or connect to a FastX session via https://rivanna-desktop.hpc.virginia.edu. If you started a MATE desktop session, open a terminal window.
-
-2. In the terminal window, start an ijob via this command:
-```
-ijob -p standard -A <YOUR_ALLOCTION> -c 8 --mem=32G -t 4:00:00
-```
-In this example we are requesting 8 cpu cores and 32GB of memory for 4 hours. Replace `<YOUR_ALLOCATION>` with your allocation account.
-
-3. Load the `fiji` module and start the application: 
+Once the Desktop is launched, open a terminal window.  Load the `fiji` module and start the application: 
 
 ```
 module load fiji

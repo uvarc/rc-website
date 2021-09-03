@@ -52,14 +52,18 @@ The PGI Server Compilers and tools are licensed for Linux systems.
 module load pgi
 ```
 <br>
-**Available PGI Compilers**
+**Available PGI and NVIDIA Compilers**
 
 {{< module-versions module="pgi" >}}
 
 PGI provides a very capable debugger, `pgdbg`. In its default mode, it is graphical, and it requires that an X server run on the user's local desktop machine. It may be run in command-line mode with the `-text` option; see the manpage for a full list of options. As with all debuggers, the user's program must be compiled with the `-g` flag in order to enable debugging. If you wish to use the graphical debugger and do not have or want to install an X11 server, you can also use FastX. 
 
+{{< module-versions module="nvhpc" >}}
+
+The PGI compiler is transitioning to the NVIDIA HPC SDK tools.  The NVHPC debugger is called `cuda-gdb`.
+
 ## Totalview
-The most powerful debugger available on Rivanna for OpenMP and MPI codes is [Totalview](/userinfo/rivanna/software/totalview).  It is also an excellent general-purpose debugger.  It has a command line interface but is not easy to use in that mode; it is nearly always used through its graphical user interface, which is highly intuitive.  It can be used through [FastX](/userinfo/rivanna/logintools/fastx) and longer debugging runs can occur through an `ijob`.
+The most powerful debugger available on Rivanna for OpenMP and MPI codes is [Totalview](/userinfo/rivanna/software/totalview).  It is also an excellent general-purpose debugger.  It has a command line interface but is not easy to use in that mode; it is nearly always used through its graphical user interface, which is highly intuitive.  For short runs with few processes it can be used on a frontend through [FastX](/userinfo/rivanna/logintools/fastx); longer or otherwise more demanding debugging runs can occur by running an Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop).
 
 ## Valgrind
 [Valgrind](https://valgrind.org) is a framework for dynamic analysis tools. The most widely used tool is probably `memcheck` for detecting memory leaks. Build your code as usual with `-g`, then run it as
