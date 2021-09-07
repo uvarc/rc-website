@@ -55,13 +55,12 @@ The recommended way to run X applications remotely is to enable X11 port forward
 # Using Totalview to Debug MPI Codes
 One of the most powerful features of Totalview is its ability to debug parallel codes.
 
-# Using the Client on the Nodes
-If you have a long debugging job or you want to debug an MPI application, you should run an interactive job using SLURM.  The `ijob` command is most appropriate for this task.  
-
 # Using the Debugger Through FastX
 You can use TotalView via FastX. If your debugging work is sufficiently small to run on the frontend, start TotalView like any other X11 application from the command line:
 ```
 module load totalview
 totalview &
 ```
-Otherwise please see the FastX documentation to start an `ijob` with graphical capabilities.
+
+# Using the Client on Compute Nodes
+If you have a long debugging job or you want to debug an MPI application, you should run an interactive job through SLURM using the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) interactive application.  When the Desktop is launched, start a terminal window and type the above commands as usual.

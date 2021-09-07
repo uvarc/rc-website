@@ -185,11 +185,11 @@ Please check the user manual for your application/container before running on a 
 You submit jobs by writing a SLURM script and submitting it with the  sbatch command.  Please see our SLURM documentation page.
 
 ## How do I submit an interactive job?
-You may use the locally-written ijob command to submit an interactive job. The minimum required options are -A and -c  for allocation and number of cores. Run `ijob -h` for a list of all options.
+If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/rivanna/ood/overview) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/rivanna/ood/desktop) request.  
 
-If you wish to forward X11 in order to use a graphical user interface or to run other graphics programs, on the Rivanna frontend node run `ssh -Y $HOSTNAME` before you run ijob.
+If you will be using the command line for your interactive job you may use the locally-written ijob command. The minimum required options are -A and -c  for allocation and number of cores. Run `ijob -h` for a list of all options.
 
-For more information see the documentation.
+For more information see the [documentation](/userinfo/rivanna/slurm).
 
 ## What queues can I use?
 After logging in, run the command `qlist` to see a list of queues and their availability.  Run `qlimits` for the restrictions on submitting to each queue.

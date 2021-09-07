@@ -2,8 +2,8 @@
 description = ""
 title = "ACCORD"
 draft = false
-date = "2021-06-24T17:45:12-05:00"
-tags = ["supercomputer","storage","infrastructure"]
+date = "2021-08-31T17:45:12-05:00"
+tags = ["services","python","r","jupyter","storage","infrastructure"]
 categories = ["userinfo"]
 images = [""]
 author = "Staff"  

@@ -49,7 +49,9 @@ module spider {{% module-firstversion %}}
 
 You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through SLURM.
 
-If your Matlab job requires user interactions via the Matlab interface, you should use [ijob](https://www.rc.virginia.edu/userinfo/rivanna/slurm/#submitting-an-interactive-job) to request an interactive job or start an interactive session through Rivanna's web portal, [Open OnDemand](/userinfo/rivanna/ood/overview), as described in the next section.
+If your Matlab job requires user interactions via the Matlab interface, you should use [Open OnDemand](/userinfo/rivanna/ood/overview) as described in the next section.
+
+If you will be running MATLAB through the command line but still wish to use an interactive job, you can create an [ijob](/userinfo/rivanna/slurm).
 
 # Interactive Sessions through Rivanna's Open OnDemand Web Portal
 

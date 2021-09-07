@@ -58,38 +58,22 @@ cp $CONTAINERDIR/cellprofiler-3.1.8.sif /scratch/$USER
 
 # Image Pipeline Configuration
 
-## Option A: FastX
 
-1. On you local workstation, start a new Rivanna FastX session as described in our [FastX documentation](/userinfo/rivanna/logintools/fastx).
-
-2. In the FastX window menu, go to Applications > Favorites > Terminal
-
-3. In the terminal window type in this command.
-```
-ssh -Y localhost
-```
-
-4. Continue with instructions under **Starting the interactive CellProfiler job**.
-
-
-
-## Option B: ssh terminal
+## Option A: ssh terminal
 
 1. In a terminal window on your local workstation execute the following command:
 ```
 ssh -Y YOUR_ID@rivanna1.hpc.virginia.edu
 ```
 
-2. Continue with instructions under **Starting the interactive CellProfiler job**.
+2. Continue with instructions under **Starting an interactive CellProfiler job**.
+
+Please note that this option may be very slow.
 
 
+## Option B: Starting an interactive CellProfiler job
 
-## Starting the interactive CellProfiler job
-
-To start an interactive job (ijob) and launch the CellProfiler graphical user interface from within the container, run the following commands in the terminal window (running on one of the Rivanna login nodes):
-```
-ijob -A YOUR_ALLOCATION -c 1 -p standard
-```
+To start an interactive job and launch the CellProfiler graphical user interface from within the container, obtain desktop through the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) app, start a terminal window, then run the following commands
 ```
 module load singularity
 module load cellprofiler/3.1.8

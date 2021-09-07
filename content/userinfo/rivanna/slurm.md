@@ -75,7 +75,7 @@ SLURM refers to processes as "tasks."  A task may be envisioned as an independen
 
 ## Options
 
-Note that most SLURM options have two forms, a short (single-letter) form that is preceded by a single hyphen and followed by a space, and a longer form preceded by a double hyphen and followed by an equals sign.  In a job script these options are preceded by a pseudocomment `#SBATCH`.  They may also be used as command-line options on their own, especially with ijob.
+Note that most SLURM options have two forms, a short (single-letter) form that is preceded by a single hyphen and followed by a space, and a longer form preceded by a double hyphen and followed by an equals sign.  In a job script these options are preceded by a pseudocomment `#SBATCH`.  They may also be used as command-line options on their own.
 
 | Option | Usage |
 |---|---|
@@ -106,7 +106,7 @@ SLURM_JOB_PARTITION
 SLURM_JOB_NODELIST
 ```
 
-SLURM passes all environment variables from the shell in which the `sbatch` or `salloc` (and `ijob`) command was run. To override this behavior in an `sbatch` script, add
+SLURM passes all environment variables from the shell in which the `sbatch` or `salloc` (or `ijob`) command was run. To override this behavior in an `sbatch` script, add
 
 ```
 #SBATCH --export=NONE
@@ -156,36 +156,31 @@ Submitted batch job 18341
 
 # Submitting an Interactive Job
 
-If you wish to run a job directly from the shell that exceeds the limits on the frontends, you can run an interactive job to obtain a login shell on a compute node.  You can also use an interactive job if you wish to use a graphical user interface (GUI) such as the Matlab Desktop, RStudio, or the ANSYS Workbench.  The recommended method is to use the locally-written command ijob:
+If you wish to run a job directly from the shell, you can run an interactive job.
+If you are using any kind of graphical user interface (GUI) you should use one of the [Open OnDemand](/userinfo/rivanna/ood/overview) interactive apps.  This offers direct access to Jupyterlab, Python IDEs (Anaconda Navigator, coming soon), RStudio Server, the MATLAB desktop, and others.  For graphical applications not available through one of the dedicated apps, such as the Totalview debugger or some bioinformatics packages, use the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) app. From the Desktop you can open a terminal window, load modules, and start any application you wish.  Please note that a few GUI applications require a GPU so you must request that partition in the online form.
 
+If you wish to run an interactive job from the command line, you can use our local command `ijob` to obtain a login shell on a compute node.
 ```
 ijob <options>
 ```
-
 ijob is a wrapper around the SLURM commands salloc and srun, set up to start a bash shell on the remote node.  The options are the same as the options to salloc, so most commands that can be used with #SBATCH can be used with ijob.  The request will be placed into the queue specified:
-
 ```
 % ijob -c 1 -A mygroup -p standard --time=1-00:00:00
 salloc: Pending job allocation 25394
 salloc: job 25394 queued and waiting for resources
 ```
-
 There may be some delay for the resource to become available.
-
 ```
 salloc: job 25394 has been allocated resources
 salloc: Granted job allocation 25394
 ```
-
-The allocated node(s) will remain reserved as long as the terminal session is open, up to the walltime limit, so it is extremely important that users exit their interactive sessions as soon as their work is done so that their nodes are returned to the available pool of processors and the user is not charged for unused time.  Also, unlike a batch job, an interactive job will be terminated if you exit your shell for any reason, including shutting down your local computer from which your login originates.
-
+For all interactive jobs, the allocated node(s) will remain reserved as long as the terminal session is open, up to the walltime limit, so it is extremely important that users exit their interactive sessions as soon as their work is done sothat the user is not charged for unused time.  If you are using an interactive app, be sure to `delete session` if you exit the session before time runs out.  In the case of a command-line ijob, the job will be terminated if you exit your shell for any reason, including shutting down the local computer from which your login originates.
 ```
 % exit 
 salloc: Relinquishing job allocation 25394
 ```
 
 A full list of options is available from SchedMD's salloc documentation, or you may run
-
 ```
 ijob --help
 ```
