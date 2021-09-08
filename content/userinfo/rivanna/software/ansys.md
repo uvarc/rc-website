@@ -56,7 +56,6 @@ FocusStealingPreventionLevel=0
 ```
 
 The workbench application, runwb2, should be executed as an interactive job through the Open OnDemand [desktop](/userinfo/rivanna/ood/desktop).  
-```
 When you are assigned a node, launch the desktop, start a terminal, load the desired module and start the workbench with the `runwb2` command.
 ```
 module load ansys
