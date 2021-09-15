@@ -25,7 +25,6 @@ Topics include *"Basic data cleaning with tidyverse"*, *"f strings in Python"*, 
 <br>
 **Zoom**: https://virginia.zoom.us/j/98493871072?pwd=b1ZUdGtiang0R29iTGloNlVHamU0dz09
 <br>
-<br>
 **Calendar Invite**: [Download calendar invite](https://www.rc.virginia.edu/data/c&c_invite.ics)
 <br>
 <br>
@@ -57,6 +56,7 @@ Below is the schedule for *Fall 2021*:
       <td>Basic data cleaning with tidyverse</td>
       <td>R</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1GAwXAxRqLGyeMGryF93wSNKOcZJ5TZfd?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">3</th>
@@ -64,6 +64,7 @@ Below is the schedule for *Fall 2021*:
       <td>across() function</td>
       <td>R</td>
       <td>Marieke Jones</td>
+      <td><a href="https://colab.research.google.com/drive/1dw-20YpV_rPNfbMw5iQLHRqrlUWO6v3r?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">4</th>
