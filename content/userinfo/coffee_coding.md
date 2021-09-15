@@ -26,6 +26,9 @@ Topics include *"Basic data cleaning with tidyverse"*, *"f strings in Python"*, 
 **Zoom**: https://virginia.zoom.us/j/98493871072?pwd=b1ZUdGtiang0R29iTGloNlVHamU0dz09
 <br>
 <br>
+**Calendar Invite**: [Download calendar invite](https://www.rc.virginia.edu/data/c&c_invite.ics)
+<br>
+<br>
 Below is the schedule for *Fall 2021*:
 
 <table class="table">
