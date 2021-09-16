@@ -25,7 +25,9 @@ Rivanna is expected to return to service by .
 
 2. The following **upgrades** will take place during the maintenance period.
     - gromacs/2021.2 - with GPU support; please load `goolfc` first
+
    Upgrades to default versions of applications:
+    - freebayes/0.9.9 -> 1.3.4
     - salmon/1.2.1 -> 1.5.1
 
 3. **New** modules:
