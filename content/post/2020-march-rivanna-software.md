@@ -3,7 +3,7 @@ images = [""]
 author = "Staff"
 description = ""
 date = "2021-09-22T10:18:25-05:00"
-title = "Inaugural Event: Virginia Women in HPC, 6 October 2021"
+title = "Inaugural Event: Virginia Women in HPC, October 6"
 draft = false
 tags = ["rivanna"]
 categories = ["feature"]
@@ -11,9 +11,10 @@ categories = ["feature"]
 
 We are proud to announce the founding of Virginia's first Women in High-Performance Computing (WHPC) program. Join Virginia WHPC for its inaugural event featuring inspiring lightning talks by female faculty of the Commonwealth sharing and discussing how HPC has facilitated their scientific research and professional careers. This virtual event is jointly hosted by Virginia Commonwealth University, George Mason University, Virginia Tech, William & Mary, University of Richmond, and Research Computing at the University of Virginia.
 
-[Register Now!] (https://virginia.zoom.us/meeting/register/tJwtd-utpz8jGdezJxL4gctdSQCRft4bcOZB).
+<a href="https://virginia.zoom.us/meeting/register/tJwtd-utpz8jGdezJxL4gctdSQCRft4bcOZB">REGISTER NOW!</a>
 
 Our speakers:
+
 •	<b>Julie Quinn (UVA)</b>
 
 Julianne Quinn is an Assistant Professor in the Department of Engineering Systems and Environment at the University of Virginia. Her research focuses on advancing simulation and optimization methods used to inform the design and management of water resources systems with the goals of protecting people from nature (floods and droughts), and nature from people (pollution and consumption). She is particularly interested in how advanced sensing and forecasting techniques can be used to inform this optimization.
