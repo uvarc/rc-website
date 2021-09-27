@@ -153,6 +153,8 @@ salloc: job 12345 has been allocated resources
 salloc: Granted job allocation 12345
 ```
 
+If your image starts a graphical user interface or otherwise needs a display, you should use the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) rather than a command-line ijob.  Once the Desktop is launched, start a terminal window and type the commands as in any other shell.
+
 ```
 module purge
 module load singularity

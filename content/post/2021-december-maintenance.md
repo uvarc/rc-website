@@ -25,11 +25,16 @@ Rivanna is expected to return to service by .
 
 2. The following **upgrades** will take place during the maintenance period.
     - gromacs/2021.2 - with GPU support; please load `goolfc` first
+
    Upgrades to default versions of applications:
+    - freebayes/0.9.9 -> 1.3.4
     - salmon/1.2.1 -> 1.5.1
+    - rapids/0.19 -> 21.10
 
 3. **New** modules:
     - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) - DeepMind's protein structure prediction
+    - rosetta/3.13 - computational modeling and analysis of protein structures
+    - cc3d/4.2.5 - CompuCell3D
     - deeplabcut/2.2 - animal pose estimation
     - [namd/2.14](/userinfo/rivanna/software/namd) - Nanoscale Molecular Dynamics
     - vmd/1.9.4 - Visualization software for NAMD
