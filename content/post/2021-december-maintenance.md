@@ -22,6 +22,7 @@ Rivanna is expected to return to service by .
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
     - tensorflow/1.12.0-py27, 2.0.0-py36
+    - IDL/8.4
 
 2. The following **upgrades** will take place during the maintenance period.
     - gromacs/2021.2 - with GPU support; please load `goolfc` first
