@@ -25,9 +25,12 @@ Rivanna is expected to return to service by .
     - IDL/8.4
 
 2. The following **upgrades** will take place during the maintenance period.
+    - gcc/11.2.0 - default: 9.2.0
     - gromacs/2021.2 - with GPU support; please load `goolfc` first
 
    Upgrades to default versions of applications:
+    - nvhpc/20.9 -> 21.9 (includes CUDA 11.4)
+    - amptorch/20210308 -> 0.1
     - freebayes/0.9.9 -> 1.3.4
     - salmon/1.2.1 -> 1.5.1
     - rapids/0.19 -> 21.10
