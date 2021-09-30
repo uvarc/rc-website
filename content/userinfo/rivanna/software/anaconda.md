@@ -116,5 +116,56 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 
 To see all available environments, run `conda env list`.
 
+# Python and MPI
+
+{{< module-description module="mpi4py" >}} On Rivanna, we provide mpi4py libraries via dedicated modules that are built using the GCC compiler and OpenMPI libraries.
+
+{{% module-versions module="mpi4py" %}}
+
+As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install `mpi4py` using any Python/Ancaonda module via `pip install --user mpi4py`.
+
+# Example SLURM script
+## Non-MPI
+
+```
+#!/bin/bash
+#SBATCH -A mygroup
+#SBATCH -p standard
+#SBATCH -N 1
+#SBATCH -c 1
+#SBATCH -t 01:00:00
+#SBATCH -o myprog.out
+
+module purge
+module load anaconda # or anaconda/2019.10-py2.7 for Python 2
+# optional: uncomment next line to use your custom Conda environment; replace 'custom_env' with actual env name
+# source activate custom_env
+
+python myscript.py
+```
+
+## MPI
+
+```
+#!/bin/bash
+#SBATCH -A mygroup
+#SBATCH -p standard
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=10
+#SBATCH -t 01:00:00
+#SBATCH -o myprog.out
+
+module purge
+module load gcc openmpi
+module load mpi4py
+
+# If you installed mpi4py manually, comment out the previous line and uncomment the next two lines.
+# Replace 'custom_env' with the actual env name.
+#module load anaconda
+#source activate custom_env
+
+srun python myscript.py
+```
+
 # More Information
 Please visit the official [Anaconda website] (https://www.anaconda.com/distribution/).
