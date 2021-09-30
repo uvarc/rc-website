@@ -26,7 +26,7 @@ Rivanna is expected to return to service by .
 
 2. The following **upgrades** will take place during the maintenance period.
     - gcc/11.2.0 and libraries:
-        - openmpi/4.1.1
+        - openmpi/
         - openblas/0.3.17
         - scalapack/2.1.0
         - fftw/3.3.10
