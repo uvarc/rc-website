@@ -108,3 +108,9 @@ This will start up Jupyter inside a browser automatically. Use the "Python 3" ke
 The example below estimates the value of pi in a PySpark session running on 16 cores, with the JupyterLab window on the left and the Spark Web UI event timeline on the right.
 
 <img src="/images/pyspark.png" style="height:100%;width:100%"></img>
+
+# Limitations
+
+As of Oct 2021, Spark can only run
+1. in local mode;
+1. on a single node on Rivanna.
