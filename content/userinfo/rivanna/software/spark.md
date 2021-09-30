@@ -54,7 +54,7 @@ Please request an ijob or a Desktop session.
 ### Scala/PySpark
 To start up a Scala or PySpark shell prompt, run `spark-shell` or `pyspark`. For example:
 
-```bash
+```
 $ spark-shell
 ...
 Spark context Web UI available at http://udc-xxxx-xx:4040
@@ -85,7 +85,7 @@ We recommend loading the closest available version.
 
 ## Jupyter notebook/lab
 
-Instead of the default Python shell, you can redirect the `pyspark` to open a Jupyter notebook/lab as follows. First, you need access to the `jupyter` command.
+Instead of the default Python shell, you can redirect `pyspark` to open a Jupyter notebook/lab as follows. First, you need access to the `jupyter` command.
 
 ```
 module load anaconda
