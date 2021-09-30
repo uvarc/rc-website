@@ -47,6 +47,8 @@ The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx
 
 # Using Spark interactively
 
+Please request an ijob or a Desktop session.
+
 ## Shell prompt
 
 ### Scala/PySpark
