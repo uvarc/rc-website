@@ -25,18 +25,24 @@ Rivanna is expected to return to service by .
     - IDL/8.4
 
 2. The following **upgrades** will take place during the maintenance period.
-    - gcc/11.2.0 - default: 9.2.0
+    - gcc/11.2.0 and libraries:
+        - openmpi/4.1.1
+        - openblas/0.3.17
+        - scalapack/2.1.0
+        - fftw/3.3.10
+        - boost/1.77.0
+        **The default version is still 9.2.0.** We plan to upgrade the default to 11.2.0 in June 2022.
     - gromacs/2021.2 - with GPU support; please load `goolfc` first
 
    Upgrades to default versions of applications:
     - nvhpc/20.9 -> 21.9 (includes CUDA 11.4)
+    - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) - 2.0.0 -> 2.0.1
     - amptorch/20210308 -> 0.1
     - freebayes/0.9.9 -> 1.3.4
     - salmon/1.2.1 -> 1.5.1
     - rapids/0.19 -> 21.10
 
 3. **New** modules:
-    - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) - DeepMind's protein structure prediction
     - rosetta/3.13 - computational modeling and analysis of protein structures
     - cc3d/4.2.5 - CompuCell3D
     - deeplabcut/2.2 - animal pose estimation
