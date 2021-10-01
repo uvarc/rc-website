@@ -72,13 +72,15 @@ Below is the schedule for *Fall 2021*:
       <td>Joins with tidyverse</td>
       <td>R</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1muTsriPvRFAq5VBc0qd9M1KF6bMhVfFl?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">5</th>
       <td>9/30/2021</td>
-      <td>Intro to ggplot2</td>
+      <td>ggplot2 and patchwork</td>
       <td>R</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1gQM_4XMax-E64en_LzHmypksXX_4oo_z?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">6</th>
