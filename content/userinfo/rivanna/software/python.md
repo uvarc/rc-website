@@ -36,14 +36,6 @@ module spider anaconda
 
 The module version suffices, e.g. py2.7 and py3.8, indicate the version of the Python interpreter.
 
-# Python and MPI
-
-{{< module-description module="mpi4py" >}} On Rivanna, we provide mpi4py libraries via dedicated modules that are built using the GCC compiler and OpenMPI libraries.
-
-{{% module-versions module="mpi4py" %}}
-
-As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install `mpi4py` using any Python/Ancaonda module via `pip install --user mpi4py`.
-
 # View list of all installed packages
 After loading an `anaconda` module, a list of all installed packages can be viewed by running this command:
 ```
@@ -93,21 +85,4 @@ source activate custom_env
 To switch back to the default root environment, run this command:
 ```
 source deactivate custom_env
-```
-
-# Example SLURM script
-```
-#!/bin/bash
-#SBATCH -n 1
-#SBATCH -t 01:00:00
-#SBATCH -o myprog.out
-#SBATCH -p standard
-#SBATCH -A mygroup
-
-module purge
-module load anaconda # or anaconda/2019.10-py2.7 for Python 2
-# optional: uncomment next line to use your custom Conda environment; replace 'custom_env' with actual env name
-# source activate custom_env
-
-python myscript.py
 ```
