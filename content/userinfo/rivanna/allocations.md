@@ -29,7 +29,7 @@ University of Virginia tenure stream and academic general faculty, research facu
 
 RC staff will create a **MyGroups** account for the faculty or postdoc Principal Investigator (PI) once he/she has submitted an allocation request and will then turn over control of the MyGroups account to the PI. The PI may designate one or more group administrators but must remain a member of the group. Collaborators with UVA Eservices accounts, regardless of status, can be added to the MyGroups group once it has been created. (Collaborators outside of UVA must request a temporary, sponsored Eservices account.) MyGroups group names should consist of lowercase letters, digits, or underscores only and must begin with a letter. Please do not use spaces in the group name.
 
-Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When users are added or deleted, accounts are automatically created. PIs who must keep projects separated, such as to distinguish those funded externally from those granted internally, may have more than one allocation group. 
+Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When users are added or deleted, accounts are automatically created.
 
 [<button class="btn btn-warning">Manage MyGroups</button>](https://mygroups.virginia.edu/)
 
