@@ -27,62 +27,6 @@ Python is an integrated technical computing environment that combines sophistica
 The Research Computing groups offers a free 10-part video series called "Python for Scientists & Engineers". Click [here](https://learning.rc.virginia.edu/courses/programming_python_scientists_engineers/) to start learning Python.
 
 # Python on Rivanna
-The default Python is required for system purposes and is generally too old for applications. We offer Python through the [Anaconda](https://www.anaconda.com) distribution from Continuum Analytics. Anaconda bundles a large number of popular modules and packages, as well as the Spyder IDE, an iPython console, and Jupyter notebooks. To see all available versions, run
-```
-module spider anaconda
-```
+The default Python is required for system purposes and is generally too old for applications. We offer Python through the [Anaconda](https://www.anaconda.com) distribution from Continuum Analytics. Anaconda bundles a large number of popular modules and packages, as well as the Spyder IDE, an iPython console, and Jupyter notebooks. 
 
-{{< module-versions module="anaconda" >}}
-
-The module version suffices, e.g. py2.7 and py3.8, indicate the version of the Python interpreter.
-
-# View list of all installed packages
-After loading an `anaconda` module, a list of all installed packages can be viewed by running this command:
-```
-conda list
-```
-A large number of packages are included in Anaconda.  If you need a package not available in the bundle, you can install it yourself with `pip` or `conda`.
-
-# Package installation with pip
-```
-module load anaconda
-pip install --user yourpackage
-```
-The `--user` option will install it into your home directory.  It is bound to a particular Python version (namely, `X.Y` in `anaconda/****.**-pyX.Y`) and will have to be reinstalled if Anaconda is upgraded. To import pip-installed packages in a Python script, please remember to load the same anaconda module that was used to install the packages.
-
-# Package installation with conda
-Certain Python packages are available pre-bundled via public Conda channels. Conda packages are installed in environments, i.e. specific directories. This is useful to isolate incompatible packages so that they do not conflict with each other. Only one Conda environment can be active at any given time. The Anaconda distribution provides a root environment that contains all of the preinstalled Anaconda packages. In addition, users can create their own Conda environments in their home directory.
-
-Use one of the following two commands to install a particular package provided via a specific Conda channel in your own custom environment.
-
-**Creating a new environment**
-For example, if you want to install the epic package into a new environment named `custom_env` that does not exist yet, run this command:
-```
-module load anaconda
-conda create -n custom_env -c bioconda epic
-```
-
-**Updating an existing environment**
-To install the same package into an existing environment, run:
-```
-conda install -n custom_env -c bioconda epic
-```
-* `-n custom_env`: Specifies the name of the environment where the package(s) will be installed.
-* `-c bioconda`: Specifies that the packages to be installed are provided by the `bioconda` channel.
-* `epic`: The name of the Conda package to be installed. Multiple packages separated by whitespaces can be listed.
-
-The user environments are installed under `~/.conda/envs`.
-
-# Using Conda environments
-After loading an anaconda module on Rivanna, the root environment with default packages is activated.  To list all environments, run this command:
-```
-conda env list
-```
-To use packages in your own environment named `custom_env`, run this command:
-```
-source activate custom_env
-```
-To switch back to the default root environment, run this command:
-```
-source deactivate custom_env
-```
+**View our [Anaconda on Rivanna](/userinfo/rivanna/software/anaconda/) documentation for details.**

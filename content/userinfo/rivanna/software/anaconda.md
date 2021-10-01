@@ -57,8 +57,8 @@ Open the bash terminal, and type:
 1. `pip update package_name --upgrade` (upgrade the package to latest stable version)
 1. `pip list` (list all installed packages)
 
-### **Do not upgrade pip**
-If you see the following message asking you to upgrade your pip version, it is usually safe to ignore it.
+{{% callout %}}
+**Do not upgrade pip**. If you see the following message asking you to upgrade your pip version, it is usually safe to ignore it.
 ```
 You are using pip version x.x.x, however version y.y.y is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
@@ -66,6 +66,7 @@ You should consider upgrading via the 'pip install --upgrade pip' command.
 Doing so may result in broken dependencies.
 
 (As of 01/10/2020, this error message is suppressed.)
+{{% /callout %}}
 
 However, if you must upgrade pip, please do so in a virtual environment, such as conda.
 
