@@ -31,7 +31,9 @@ Rivanna is expected to return to service by .
         - scalapack/2.1.0
         - fftw/3.3.10
         - boost/1.77.0
+
         **The default version is still 9.2.0.** We plan to upgrade the default to 11.2.0 in June 2022.
+
     - gromacs/2021.2 - with GPU support; please load `goolfc` first
 
    Upgrades to default versions of applications:
@@ -43,6 +45,7 @@ Rivanna is expected to return to service by .
     - rapids/0.19 -> 21.10
 
 3. **New** modules:
+    - [spark/3.1.2](/userinfo/rivanna/software/spark)
     - rosetta/3.13 - computational modeling and analysis of protein structures
     - cc3d/4.2.5 - CompuCell3D
     - deeplabcut/2.2 - animal pose estimation
