@@ -106,21 +106,21 @@ nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
 # Run Matlab single core program
-matlab -nodisplay -singleCompThread -r \
-"pcalc2Test1(${nLoops},${nDim},'${SLURM_JOB_ID}'); exit;"
+matlab -nodisplay -r \
+"pcalc2(${nLoops},${nDim},'${SLURM_JOB_ID}'); exit;"
 ```
-The option `-nodisplay` suppresses the Desktop interface and any attempt to run a graphical display. The -singleCompThread option is to ensure that all MATLAB built-in functions use only one thread on one core (cpu). Some MATLAB functions are capable of running on multiple cores. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores, so you would need to request the additional cores in your slurm script.  Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
+The option `-nodisplay` suppresses the Desktop interface and any attempt to run a graphical display. Some MATLAB functions are capable of running on multiple cores. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores, so you would need to request the additional cores in your slurm script.  Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
 
-The `;exit` is important to ensure that the job terminates when the computation is done. The example code `pcalc2Test1.m` is shown below. Note that passing the `SLURM_JOB_ID` variable allows the function to save
+The `;exit` is important to ensure that the job terminates when the computation is done. The example code `pcalc2.m` is shown below. Note that passing the `SLURM_JOB_ID` variable allows the function to save
 output to a job-specific filenames.
 
 ```
-function  [a]=pcalc2Test1(nloop,ndim,jobid)
+function  [a]=pcalc2(nloop,ndim,jobid)
 % Example using the parfor construct to calculate the maximum eignevalue
 % of a random ndim by ndim matrix nloops times
-% nloop: Number of time parfor loop should run
+% nloop: Number of times parfor loop should run
 % ndim: Dimension of the square matrix to create
-% jobid: Slurm job id number
+% jobid: Slurm job id number for unique file name
 
 if ischar(nloop) % checking data type on first input
     nloop=str2num(nloop);
@@ -164,9 +164,9 @@ end
 ## Submitting a batch job using multiple cores on a compute node
 
 If you have a Matlab job that can be structured to run across multiple cores, you can greatly speed up the time to your results. The linear algebraic libraries in Matlab are multi-theaded and will make use of multiple cores on a compute node. The Parallel Computing Toolkit allows you to distribute for loops over multiple cores using parfor and other parallel constructs in MATLAB. For more information on using the Parallel Computing Toolbox in MATLAB see the.
-**<a href="https://www.mathworks.com/products/parallel-computing.html" target="_blank">MathWorks documentation</a>** .
+**<a href="https://www.mathworks.com/solutions/parallel-computing.html" target="_blank">MathWorks documentation</a>** .
 
-The example function `pcalc2Test1.m` above uses a  parallel for loop (parfor)
+The example function `pcalc2.m` above uses a  parallel for loop (parfor)
 in MATLAB. To run your parallel MATLAB code across multiple cores on one compute
 node, you can use a slurm script similar to the following:
 
@@ -200,8 +200,8 @@ nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
 # Run Matlab parallel program program
-matlab -nodisplay -nosplash  \
--r "setPool1;pcalc2Test1(${nLoops},${nDim},'${slurm_ID}');exit;"
+matlab -nodisplay  -r \
+ "setPool1; pcalc2(${nLoops},${nDim},'${slurm_ID}'); exit;"
 ```
 
 The Matlab script `setPool1.m` gets the number of workers allocated by Slurm from
@@ -226,43 +226,6 @@ parpool(pc, str2num(getenv('numWorkers')))
 # Matlab Jobs using SLURM Job Arrays
 The SLURM has a mechanism for launching multiple independent jobs with one
 job script using the `--array` directive.
-
-## Array of Multiple Single-Core Matlab Jobs
-
-The following slurm script shows how to run 10 single core Matlab jobs using
-slurm job arrays.
-
-```
-#!/bin/bash
-# The slurm script file runParallelMultiple.slurm runs
-# multiple single-core Matlab jobs using a Slurm job array
-
-#SBATCH --array=1-5
-#SBATCH -p standard
-#SBATCH -A hpc_build
-#SBATCH --time=00:10:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --job-name=runSingleTest
-#SBATCH --output=runSingleTest_%A_%a.out
-#SBATCH --error=runSingleTest_%A_%a.err
-#SBATCH --ntasks=1
-
-# Load Matlab environment
-module load matlab
-
-# Create and export variable for slurm job and task ids
-slurm_ID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
-
-# Input paramaters
-nLoops=400; # number of iterations to perform
-nDim=400; # Dimension of matrix to create
-
-# Run Matlab parallel program
-matlab -nodisplay -singleCompThread -r \
-"pcalc2Test1(${nLoops},${nDim},'${slurm_ID}'); exit;"
-
-```
 
 ## Array of Multicore Parallel Matlab Jobs
 
@@ -299,8 +262,8 @@ nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
 # Run Matlab parallel program
-matlab -nodisplay -nosplash -r \
-"setPool1; pcalc2Test1(${nLoops},${nDim},'${slurm_ID}');exit;"
+matlab -nodisplay  -r \
+"setPool1; pcalc2(${nLoops},${nDim},'${slurm_ID}');exit;"
 
 ```
 
@@ -358,7 +321,7 @@ the following commands:
 
 ```
 % Launch Matlab parallel code across two compute nodes
-j=pc.batch(@pcalc2Test1,1,{400,400,'myOutput1'},'pool',procs-1);
+j=pc.batch(@pcalc2,1,{400,400,'myOutput1'},'pool',procs-1);
 
 % Arguments of c.batch in order
 
@@ -476,7 +439,7 @@ The following slurm script is for submitting a Matlab job that uses 4 of the K80
 #SBATCH --error=gpuTest_%A.err
 #SBATCH --mail-type=end
 #SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --ntasks-per-node=4 # allocate one cpue for each gpu
+#SBATCH --ntasks-per-node=4 # allocate one cpu for each gpu
 #SBATCH --mem=60000
 
 echo 'slurm allocates gpus ' $CUDA_VISIBLE_DEVICES
@@ -487,8 +450,8 @@ module load matlab/R2020a
 ndim=12000;
 nloop=1000;
 # Run Matlab parallel program program
- matlab -nodisplay -nosplash  \
- -r "gpuTest1(${ndim},${nloop},'${SLURM_JOB_ID}');exit;"
+ matlab -nodisplay -r  \
+  "gpuTest1(${ndim},${nloop},'${SLURM_JOB_ID}');exit;"
 ```
 
 The function `gpuTest1` looks like the following. For further information, see [https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html](https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html)
@@ -538,3 +501,12 @@ save(['gpuTest1_' jobid '.out'],...
 
 end
 ```
+# Matlab Parallel Computing Resources
+
+1. [Parallel Computing Toolbox Documentations](https://www.mathworks.com/help/parallel-computing/index.html)
+
+2. [Parallel and GPU Computing tutorials](https://www.mathworks.com/videos/series/parallel-and-gpu-computing-tutorials-97719.html)
+
+3. [Performance and Memory](https://www.mathworks.com/help/matlab/performance-and-memory.html)
+
+4. [Parallel Computing Toolbox — Examples](https://www.mathworks.com/help/parallel-computing/examples.html?category=index&s_tid=CRUX_topnav)
