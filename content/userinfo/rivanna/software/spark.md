@@ -40,16 +40,16 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-# Web UI
-Spark provides a user interface (UI) for you to monitor your Spark job. If you intend to use the Web UI, you must request a [Desktop session through Open OnDemand](/userinfo/rivanna/ood/desktop).
-
-The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx:4040` where `udc-xxxx-xx` is the hostname of the compute node. You can either right click on the link and select "Open Link," or enter `localhost:4040` in the browser.
-
 # Using Spark interactively
 
 Please request an ijob or a Desktop session.
 
-## Shell prompt
+## Web UI [Desktop]
+Spark provides a user interface (UI) for you to monitor your Spark job. If you intend to use the Web UI, you must request a [Desktop session through Open OnDemand](/userinfo/rivanna/ood/desktop).
+
+The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx:4040` where `udc-xxxx-xx` is the hostname of the compute node. You can either right click on the link and select "Open Link," or enter `localhost:4040` in the browser.
+
+## Shell prompt [ijob/Desktop]
 
 ### Scala/PySpark
 To start up a Scala or PySpark shell prompt, run `spark-shell` or `pyspark`. For example:
@@ -83,7 +83,7 @@ package ‘SparkR’ was built under R version 4.1.0
 
 We recommend loading the closest available version.
 
-## Jupyter notebook/lab
+## Jupyter notebook/lab [Desktop]
 
 Instead of the default Python shell, you can redirect `pyspark` to open a Jupyter notebook/lab as follows. First, you need access to the `jupyter` command.
 
@@ -105,9 +105,46 @@ pyspark
 ```
 This will start up Jupyter inside a browser automatically. Use the "Python 3" kernel.
 
-The example below estimates the value of pi in a PySpark session running on 16 cores, with the JupyterLab window on the left and the Spark Web UI event timeline on the right.
+The example below estimates the value of pi in a PySpark session running on 16 cores, with the JupyterLab window on the left and the Spark Web UI event timeline on the right. Note that the `SparkContext` object `sc` is initialized automatically.
 
 <img src="/images/pyspark.png" style="height:100%;width:100%"></img>
+
+# SLURM Script Templates for Batch Jobs
+
+## Local mode on a single node
+```bash
+#!/bin/bash
+#SBATCH -p standard     # partition
+#SBATCH -A hpc_build    # your allocation
+#SBATCH -N 1            # number of nodes
+#SBATCH -c 10           # number of cores per node
+#SBATCH -t 10:00:00     # time
+
+module purge
+module load spark
+
+spark-submit script.py
+```
+
+You must initialize the `SparkContext` explicitly, e.g.:
+
+```python
+from pyspark import SparkContext
+sc = SparkContext("local[*]")
+```
+
+The Spark log is written to `slurm-<JOB_ID>.out`. After the job is finished, use the `seff <JOB_ID>` command to verify that the cores are used effectively:
+
+```
+$ seff 1232109
+...
+Cores per node: 10
+CPU Utilized: 01:17:16
+CPU Efficiency: 82.20% of 01:34:00 core-walltime
+...
+```
+
+If the CPU efficiency is much lower, please consider using fewer cores for your future jobs.
 
 # Limitations
 
