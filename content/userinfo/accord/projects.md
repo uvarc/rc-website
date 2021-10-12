@@ -1,17 +1,12 @@
 +++
-description = ""
-title = "ACCORD"
+title = "ACCORD Projects"
 draft = false
-date = "2020-06-25T17:45:12-05:00"
-tags = ["supercomputer","storage","infrastructure"]
-categories = ["userinfo"]
+date = "2021-10-11"
 images = [""]
 author = "Staff"
-type = "accord"
 +++
 
-# Projects
-
+***
 <img src="/images/accord/project.png" style="float:right;" class="project-inset" />
 
 The fundamental organizing unit for your work in ACCORD is a *project*. A project consists of:

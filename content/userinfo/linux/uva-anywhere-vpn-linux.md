@@ -61,32 +61,32 @@ draft = false
 
     NetWork Manager may not recognize the `.p12` format.  Extract the key and certificate with the following commands:
 
-{{< code-snippet >}}
+    {{< code-snippet >}}
 openssl pkcs12 -in mst3k.p12 -nocerts -nodes -out mst3k.key
 openssl pkcs12 -in mst3k.p12 -clcerts -nokeys -out mst3k.crt
-{{< /code-snippet >}}
+    {{< /code-snippet >}}
 
 4. Convert the CA certificate
 
     The `.cer` certificate is a Microsoft version of an "X509" certificate.  NetworkManager may not recognize this, but you can convert it to the standard format with
 
-{{< code-snippet >}}
+    {{< code-snippet >}}
 openssl x509 -inform DER -in usher.cer -out usher.crt
-{{< /code-snippet >}}
+    {{< /code-snippet >}}
 
-  This will not remove your original `usher.cer`.
+    This will not remove your original `usher.cer`.
 
 5. Configure with Network Manager
 
     Click the network app in your tray, or go to Settings->Network.  Choose VPN and click the + to add a VPN.
-    <img src="/images/linux/network-manager-linux.png" alt="network-manager" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
+
+    <img src="/images/linux/network-manager-linux.png" alt="network-manager" width=100%>
 
     Select the Cisco Anyconnect compatible VPN option.
 
-    Fill in the blanks for a new VPN.
-    <img src="/images/linux/vpn-setup-linux.png" alt="vpn-setup" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
+    Fill in the blanks for a new VPN.  Please use the More Secure VPN if you have access to it. The gateway is **moresecure-vpn-1.itc.virginia.edu**.  Otherwise, use the UVA Anywhere VPN whose gateway is **uva-anywhere-1.itc.virginia.edu** as shown in the figure.
 
-    Off-Grounds Rivanna users should use the ITS more-secure network. The gateway for that VPN is *moresecure-vpn-1.itc.virginia.edu*.  The UVA-Anywhere gateway can be used by students for other purposes.
+    <img src="/images/linux/vpn-setup-linux.png" alt="vpn-setup" width=80%>
 
     Click "Add."
 
