@@ -222,4 +222,4 @@ You may safely remove these files when your job is done by running:
 find /scratch/$USER -maxdepth 1 -regextype sed \( -name "spark-$USER-*" -o -regex '.*/spark-[0-9a-z]\{8\}-.*' -o -regex '.*/app-[0-9]\{14\}-.*' -o -regex '.*/blockmgr-[0-9a-z]\{8\}-.*' \) -exec rm -rf {} \;
 {{< /code-snippet >}}
 
-Make sure that you do not use this pattern for other filenames!
+Make sure that you do not use this pattern to name other files!
