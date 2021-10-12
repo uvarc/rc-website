@@ -209,7 +209,7 @@ We used a code that estimates the value of pi as a benchmark. The following tabl
 
 ## Cleanup
 
-Temporary files are created during a multinode Spark node inside your scratch directory. They have the form:
+Temporary files are created inside your scratch directory during a multinode Spark job. They have the form:
 
 - `spark-mst3k-org.apache.spark.deploy.master.Master-1-udc-aw33-2c1.out`
 - `spark-8147c5b8-eb70-4b98-809e-19fdbcf3eafb`
