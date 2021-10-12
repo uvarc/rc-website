@@ -1,18 +1,14 @@
 +++
-description = ""
-title = "ACCORD"
+title = "ACCORD Security"
 draft = false
-date = "2020-06-25T17:45:12-05:00"
-tags = ["supercomputer","storage","infrastructure"]
-categories = ["userinfo"]
+date = "2021-10-11"
 images = [""]
 author = "Staff"
-type = "accord"
 +++
 
-![Security](/images/accord/security.png)
+***
 
-# Security
+![Security](/images/accord/security.png)
 
 ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data. ACCORD cannot be used to process highly-restricted data such as CUI, FISMA, and PCI data.
 

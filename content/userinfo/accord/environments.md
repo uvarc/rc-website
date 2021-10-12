@@ -1,16 +1,12 @@
 +++
-description = ""
-title = "ACCORD"
+title = "ACCORD Environments"
 draft = false
-date = "2020-06-25T17:45:12-05:00"
-tags = ["supercomputer","storage","infrastructure"]
-categories = ["userinfo"]
+date = "2021-10-11"
 images = [""]
 author = "Staff"
-type = "accord"
 +++
 
-# Environments
+***
 
 After creating a project and logging into the ACCORD platform, you will next chose an environment. The environments currently available on ACCORD are listed below. We welcome your suggestions for additional environments to be included in the future.
 
@@ -37,6 +33,12 @@ After creating a project and logging into the ACCORD platform, you will next cho
                                 Theia Python is a rich IDE that allows researchers to manage their files and data, write code with an intelligent editor, and execute code within a terminal session.
 			</td>
 		</tr>
+                <th scope="row" style="width:25%;font-weight:bold;">Theia C++</th>
+                        <td>
+                                <img src="/images/accord/c++.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+                                Theia C++ is a rich IDE that allows researchers to compile their own code.
+                        </td>
+                </tr>
 	</tbody>
 </table>
 
