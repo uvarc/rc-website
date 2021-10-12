@@ -1,14 +1,12 @@
 +++
-description = ""
 title = "ACCORD"
 draft = false
-date = "2021-08-31T17:45:12-05:00"
-tags = ["services","python","r","jupyter","storage","infrastructure"]
-categories = ["userinfo"]
+date = "2021-10-11"
 images = [""]
-author = "Staff"  
-type = "accord"
+author = "Staff"
 +++
+
+***
 
 ![Accord_logo](/images/accord/ACCORD_logo.png)
 
