@@ -150,7 +150,7 @@ If the CPU efficiency is much lower, please consider using fewer cores for your 
 
 *We gratefully acknowledge the Pittsburg Supercomputing Center for giving us permission to use their Spark configuration and launch scripts.*
 
-Before using multiple nodes, please make sure that your job can use a full standard node effectively. When you request N nodes in the standalone cluster mode, one node is set aside as the master node and the remaining N-1 nodes are worker nodes. Thus, running on 2 nodes will have the same walltime as running on 1 node.
+Before using multiple nodes, please make sure that your job can use a full standard node effectively. When you request N nodes in the standalone cluster mode, one node is set aside as the master node and the remaining N-1 nodes are worker nodes. Thus, running on 2 nodes will have the same effect as running on 1 node.
 
 ```bash
 #!/bin/bash
@@ -177,7 +177,7 @@ spark-submit --master $MASTERSTRING script.py
 
 In the above SLURM script template, note that:
 
-- Use `parallel` nodes with exclusive access.
+- Request `parallel` nodes with exclusive access.
 - You may reduce the number of cores if the job needs a higher memory per core.
 - Your code should begin with:
 
@@ -201,7 +201,7 @@ In the above SLURM script template, note that:
 We used a code that estimates the value of pi as a benchmark. The following table illustrates good scaling performance across multiple nodes (40 cores per node) on Rivanna.
 
 | Nodes | Worker nodes | Time (s) |
-|---|---|---|
+|--:|--:|--:|
 |1|1|134.4|
 |3|2|71.3|
 |5|4|39.6|
