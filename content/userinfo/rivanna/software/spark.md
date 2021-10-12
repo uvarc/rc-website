@@ -178,7 +178,7 @@ spark-submit --master $MASTERSTRING script.py
 In the above SLURM script template, note that:
 
 - Request `parallel` nodes with exclusive access.
-- You may reduce the number of cores if the job needs a higher memory per core.
+- You may reduce the number of cores if the job needs more memory per core.
 - Your code should begin with:
 
     ```python
