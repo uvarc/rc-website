@@ -214,7 +214,7 @@ Temporary files are created during a multinode Spark node inside your scratch di
 - `spark-mst3k-org.apache.spark.deploy.master.Master-1-udc-aw33-2c1.out`
 - `spark-8147c5b8-eb70-4b98-809e-19fdbcf3eafb`
 - `app-20211012113817-0000`
-- `blockmgr-b41a7c79-cbf4-49f0-b373-f6c6467e9d01
+- `blockmgr-b41a7c79-cbf4-49f0-b373-f6c6467e9d01`
 
 You may safely remove these files when your job is done by running:
 
