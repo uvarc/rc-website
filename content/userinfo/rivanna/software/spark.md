@@ -115,7 +115,7 @@ The example below estimates the value of pi in a PySpark session running on 16 c
 ```bash
 #!/bin/bash
 #SBATCH -p standard     # partition
-#SBATCH -A hpc_build    # your allocation
+#SBATCH -A myaccount    # your allocation
 #SBATCH -N 1            # number of nodes
 #SBATCH -c 10           # number of cores per node
 #SBATCH -t 10:00:00     # time
@@ -156,7 +156,7 @@ Before using multiple nodes, please make sure that your job can use a full stand
 #!/bin/bash
 #SBATCH -p parallel   # do not modify
 #SBATCH --exclusive   # do not modify
-#SBATCH -A hpc_build  # your allocation
+#SBATCH -A myaccount  # your allocation
 #SBATCH -N 3          # number of nodes
 #SBATCH -c 40         # number of cores per node
 #SBATCH -t 3:00:00    # time
