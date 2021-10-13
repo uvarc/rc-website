@@ -186,15 +186,16 @@ In the above SLURM script template, note that:
     from pyspark import SparkContext
     conf = SparkConf()
     sc = SparkContext(conf=conf)
+    spark = SparkSession(sc)
     ```
 
-- The number of partitions should be equal to the total number of cores on worker nodes. This has to be set explicitly in the second argument of `sc.parallelize()`, i.e.:
+- You may need to set the number of partitions explicitly, e.g. in the second argument of `sc.parallelize()`:
 
     ```python
     sc.parallelize(..., os.environ['PARTITIONS'])
     ```
 
-    where the `PARTITIONS` environment variable is defined in the SLURM script for your convenience. Without doing so only one partition will be created on each node.
+    where the `PARTITIONS` environment variable is defined as the total number of cores on worker nodes in the SLURM script for your convenience. Without doing so only one partition will be created on each node.
 
 ## Benchmark
 
