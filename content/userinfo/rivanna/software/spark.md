@@ -85,13 +85,9 @@ We recommend loading the closest available version.
 
 ## Jupyter notebook/lab [Desktop]
 
-Instead of the default Python shell, you can redirect `pyspark` to open a Jupyter notebook/lab as follows. First, you need access to the `jupyter` command.
+Instead of the default Python shell, you can redirect `pyspark` to open a Jupyter notebook/lab as follows. The `jupyter` command is provided by the `anaconda` module which is loaded automatically upon loading `spark`.
 
-```
-module load anaconda
-```
-
-Next, set two environment variables:
+Set two environment variables:
 ```
 export PYSPARK_DRIVER_PYTHON=jupyter
 export PYSPARK_DRIVER_PYTHON_OPTS=lab
