@@ -193,7 +193,7 @@ In the above SLURM script template, note that:
 
     where the `PARTITIONS` environment variable is defined as the total number of cores on worker nodes in the SLURM script for your convenience. Without doing so only one partition will be created on each node.
 
-## Benchmark
+### Benchmark
 
 We used a code that estimates the value of pi as a benchmark. The following table illustrates good scaling performance across multiple nodes (40 cores per node) on Rivanna.
 
@@ -204,7 +204,7 @@ We used a code that estimates the value of pi as a benchmark. The following tabl
 |5|4|39.6|
 |9|8|23.6|
 
-## Cleanup
+### Cleanup
 
 Temporary files are created inside your scratch directory during a multinode Spark job. They have the form:
 
