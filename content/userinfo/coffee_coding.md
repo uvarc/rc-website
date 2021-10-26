@@ -88,6 +88,7 @@ Below is the schedule for *Fall 2021*:
       <td>Annotating a volcano plot</td>
       <td>R</td>
       <td>Marieke Jones</td>
+      <td><a href="https://colab.research.google.com/drive/1GTk0Z08mgZNCNJoHPKkdt6Js7QR_1toX?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">7</th>
@@ -95,6 +96,7 @@ Below is the schedule for *Fall 2021*:
       <td>gtsummary package</td>
       <td>R</td>
       <td>Marieke Jones</td>
+      <td><a href="https://colab.research.google.com/drive/1wsC2JeXSV1GnfeANqeDshacJbyoJVvgw?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">8</th>
@@ -102,6 +104,7 @@ Below is the schedule for *Fall 2021*:
       <td>Apply statements</td>
       <td>R</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1zfAikdjcgi-Wm5vOsZYygHu--I3qkr_c?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">9</th>
@@ -109,13 +112,14 @@ Below is the schedule for *Fall 2021*:
       <td>purr package functions</td>
       <td>R</td>
       <td>David Martin</td>
+      <td><a href="https://colab.research.google.com/drive/1oqvXIre3OJaKeV47q6tg33zyw-_U6ov3?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">10</th>
       <td>11/4/2021</td>
-      <td>Reading data in Python</td>
+      <td>Exploratory data analysis in Python</td>
       <td>Python</td>
-      <td>Will Rosenow</td>
+      <td>Jackie Huband</td>
     </tr>
     <tr>
       <th scope="row">11</th>
