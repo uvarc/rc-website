@@ -85,13 +85,9 @@ We recommend loading the closest available version.
 
 ## Jupyter notebook/lab [Desktop]
 
-Instead of the default Python shell, you can redirect `pyspark` to open a Jupyter notebook/lab as follows. First, you need access to the `jupyter` command.
+Instead of the default Python shell, you can redirect `pyspark` to open a Jupyter notebook/lab as follows. The `jupyter` command is provided by the `anaconda` module which is loaded automatically upon loading `spark`.
 
-```
-module load anaconda
-```
-
-Next, set two environment variables:
+Set two environment variables:
 ```
 export PYSPARK_DRIVER_PYTHON=jupyter
 export PYSPARK_DRIVER_PYTHON_OPTS=lab
@@ -161,6 +157,9 @@ Before using multiple nodes, please make sure that your job can use a full stand
 #SBATCH -c 40         # number of cores per node
 #SBATCH -t 3:00:00    # time
 
+module purge
+module load spark
+
 #---------------------------
 # do not modify this section
 export PARTITIONS=$(( (SLURM_NNODES-1) * SLURM_CPUS_PER_TASK ))
@@ -168,9 +167,6 @@ export MASTERSTRING="spark://$(hostname):7077"
 $SPARK_HOME/scripts/spark-cluster-init.sh &
 sleep 10
 #---------------------------
-
-module purge
-module load spark
 
 spark-submit --master $MASTERSTRING script.py
 ```
@@ -186,17 +182,18 @@ In the above SLURM script template, note that:
     from pyspark import SparkContext
     conf = SparkConf()
     sc = SparkContext(conf=conf)
+    spark = SparkSession(sc)
     ```
 
-- The number of partitions should be equal to the total number of cores on worker nodes. This has to be set explicitly in the second argument of `sc.parallelize()`, i.e.:
+- You may need to set the number of partitions explicitly, e.g. in the second argument of `sc.parallelize()`:
 
     ```python
     sc.parallelize(..., os.environ['PARTITIONS'])
     ```
 
-    where the `PARTITIONS` environment variable is defined in the SLURM script for your convenience. Without doing so only one partition will be created on each node.
+    where the `PARTITIONS` environment variable is defined as the total number of cores on worker nodes in the SLURM script for your convenience. Without doing so only one partition will be created on each node.
 
-## Benchmark
+### Benchmark
 
 We used a code that estimates the value of pi as a benchmark. The following table illustrates good scaling performance across multiple nodes (40 cores per node) on Rivanna.
 
@@ -207,7 +204,7 @@ We used a code that estimates the value of pi as a benchmark. The following tabl
 |5|4|39.6|
 |9|8|23.6|
 
-## Cleanup
+### Cleanup
 
 Temporary files are created inside your scratch directory during a multinode Spark job. They have the form:
 
