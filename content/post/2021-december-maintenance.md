@@ -22,18 +22,12 @@ Rivanna is expected to return to service by .
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
     - tensorflow/1.12.0-py27, 2.0.0-py36
-    - IDL/8.4
     - python/3.8.8 under `gompic` -> moved to `goolfc`
 
 2. The following **upgrades** will take place during the maintenance period.
-    - gcc/11.2.0 and libraries:
-        - openmpi/3.1.6
-        - openblas/0.3.17
-        - scalapack/2.1.0
-        - fftw/3.3.10
-        - boost/1.77.0
+    - gcc/11.2.0 and libraries (openmpi/3.1.6, openblas/0.3.17, scalapack/2.1.0, fftw/3.3.10, boost/1.77.0)
 
-        **The default version is still 9.2.0.** We plan to upgrade the default to 11.2.0 in June 2022 (tentative).
+        **The default version is still 9.2.0.**
 
     - gromacs/2021.2 - with GPU support; please load `goolfc` first
 
@@ -41,7 +35,7 @@ Rivanna is expected to return to service by .
     - nvhpc/20.9 -> 21.9
     - cuda/11.0.228 -> 11.4.2
     - cudnn/7.6.5.32 -> 8.2.4.15
-    - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) - 2.0.0 -> 2.0.1
+    - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) -> 2.1.1
     - amptorch/20210308 -> 0.1
     - freebayes/0.9.9 -> 1.3.4
     - salmon/1.2.1 -> 1.5.1
