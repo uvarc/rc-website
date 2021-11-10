@@ -120,6 +120,7 @@ Below is the schedule for *Fall 2021*:
       <td>Exploratory data analysis in Python</td>
       <td>Python</td>
       <td>Jackie Huband</td>
+      <td><a href="https://drive.google.com/file/d/1yJLP2SKGMQkgXhL1V3ZVCfk2l88nldgH/view?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">11</th>
@@ -131,23 +132,23 @@ Below is the schedule for *Fall 2021*:
     <tr>
       <th scope="row">12</th>
       <td>11/18/2021</td>
-      <td>Joining data with pandas</td>
+      <td>Selecting/filtering data with pandas</td>
       <td>Python</td>
       <td>Will Rosenow</td>
     </tr>
     <tr>
       <th scope="row">13</th>
       <td>12/2/2021</td>
-      <td>Error handling with try and except</td>
+      <td>List comprehension</td>
       <td>Python</td>
-      <td>Will Rosenow</td>
+      <td>Jackie Huband</td>
     </tr>
     <tr>
       <th scope="row">14</th>
       <td>12/9/2021</td>
-      <td>List comprehension</td>
+      <td>Patterns and regular expressions</td>
       <td>Python</td>
-      <td>Jackie Huband</td>
+      <td>Will Rosenow</td>
     </tr>
   </tbody>
 </table>
