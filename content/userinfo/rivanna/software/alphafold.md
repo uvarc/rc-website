@@ -132,7 +132,7 @@ run --fasta_paths=/full/path/to/fasta \
     --max_template_date=
 ```
 
-Please refer to [`run_alphafold.py`](https://github.com/deepmind/alphafold/blob/main/run_alphafold.py) for details.
+Please refer to https://github.com/deepmind/alphafold#api-changes-between-v200-and-v210 for details.
 
 You may need at least 8 CPU cores due to this line printed in the output:
 ```
