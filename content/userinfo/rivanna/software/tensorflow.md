@@ -163,6 +163,7 @@ Yes, but the TF/Python/CUDA versions have to be very specific. We recommend crea
 
     - Python 2.7, 3.3-3.7
     - CUDA 10.0
+    - cuDNN 7.4
 
 1. Check that the CUDA version is supported on Rivanna:
     - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html).
@@ -172,11 +173,13 @@ Yes, but the TF/Python/CUDA versions have to be very specific. We recommend crea
         ```
     - In this example 10.0 is less than 11.0.3, so the target version is supported.
 
+1. Check cuDNN availability on https://anaconda.org. The closest match is 7.3 in the `anaconda` channel.
+
 1. Load the Anaconda module and create the environment with specific versions.
 
     ```
     module load anaconda
-    conda create -n tf1.14 tensorflow-gpu=1.14 cudatoolkit=10.0 python=3.7 -c anaconda -c conda-forge
+    conda create -n tf1.14 tensorflow-gpu=1.14 cudatoolkit=10.0 cudnn=7.3 python=3.7 -c anaconda -c conda-forge
     ```
 
 If the versions are incompatible, either the installation will fail or TF will not be able to detect the GPU at runtime.
