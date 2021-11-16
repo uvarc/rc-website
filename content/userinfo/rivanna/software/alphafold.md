@@ -99,7 +99,7 @@ For your convenience, we have prepared a launch script `run` that takes care of 
 
 # SLURM Script
 
-Please copy and paste the following as a template for your SLURM script. 
+Copy and paste the following as a template for your SLURM script. 
 
 ```
 #!/bin/bash
@@ -113,12 +113,26 @@ Please copy and paste the following as a template for your SLURM script.
 module purge
 module load singularity alphafold
 
+# version 2.0
 run --fasta_paths=/full/path/to/fasta \
     --output_dir=/full/path/to/outdir \
     --model_names= \
-    --preset=[full_dbs|casp14] \
+    --preset= \
     --max_template_date=
 ```
+
+For version 2.1+, use the following `run` command (`model_names` -> `model_preset`; `preset` -> `db_preset`):
+
+```
+# version 2.1
+run --fasta_paths=/full/path/to/fasta \
+    --output_dir=/full/path/to/outdir \
+    --model_preset = \
+    --db_preset= \
+    --max_template_date=
+```
+
+Please refer to https://github.com/deepmind/alphafold#api-changes-between-v200-and-v210 for details.
 
 You may need at least 8 CPU cores due to this line printed in the output:
 ```

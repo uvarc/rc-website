@@ -35,7 +35,7 @@ Rivanna is expected to return to service by .
     - nvhpc/20.9 -> 21.9
     - cuda/11.0.228 -> 11.4.2
     - cudnn/7.6.5.32 -> 8.2.4.15
-    - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) -> 2.1.1
+    - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) -> 2.1.1; note changes to flags!
     - amptorch/20210308 -> 0.1
     - freebayes/0.9.9 -> 1.3.4
     - salmon/1.2.1 -> 1.5.1
