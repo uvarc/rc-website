@@ -44,7 +44,11 @@ module spider {{% module-firstversion %}}
 
 ## Dockerfile
 
-We prepared a Docker image based on the official Dockerfile with some modifications. The biggest issues are the TensorFlow version and missing cudnn/cusolver libraries as reported [here](https://github.com/deepmind/alphafold/pull/28).
+We prepared a Docker image based on the official Dockerfile with some modifications. 
+
+### Version 2.0
+
+The biggest issues are the TensorFlow version and missing cudnn/cusolver libraries as reported [here](https://github.com/deepmind/alphafold/pull/28).
 
 Our current solution is:
 
@@ -56,6 +60,16 @@ Our current solution is:
 We did not use TensorFlow 2.5.0 with CUDA 11.2 because currently our [NVIDIA driver version does not support that](/userinfo/rivanna/software/tensorflow/#can-i-install-my-own-tensorflow-that-works-on-a-gpu).
 
 For further details see [here](https://github.com/uvarc/rivanna-docker/tree/master/alphafold/2.0.0).
+
+### Version 2.1
+
+- AlphaFold does not use TensorFlow on the GPU (instead it uses JAX). See [issue](https://github.com/deepmind/alphafold/issues/88). Changed `tensorflow` to `tensorflow-cpu`.
+- There is no need to have system CUDA libraries since they are already included in the conda environment.
+- Switched to micromamba instead of Miniconda.
+
+With a three-stage build, our Docker image is only 5.4 GB on disk (2.1 GB compressed on DockerHub), almost half the size using the official Dockerfile (10.1 GB).
+
+For further details see [here](https://github.com/uvarc/rivanna-docker/tree/master/alphafold/2.1.1).
 
 ## AlphaFold launch command
 
@@ -89,7 +103,7 @@ singularity run -B $ALPHAFOLD_DATA_PATH:/data -B .:/etc --pwd /app/alphafold --n
 
 1. The default command of the container is `/app/run_alphafold.sh`. *All flags shown above are required* and are passed to `/app/run_alphafold.sh`.
 1. As a consequence of the Singularity `--pwd` flag, the fasta and output paths must be *full paths* (e.g. `/scratch/$USER/mydir`, not *relative paths* (e.g. `./mydir`).
-1. The `model_names` should be a comma-separated list of `model_*`. See `$ALPHAFOLD_DATA_PATH/params` for the complete set of model names. In [`run_docker.py`](https://github.com/deepmind/alphafold/blob/main/docker/run_docker.py) `model_1,model_2,model_3,model_4,model_5` is used.
+1. (Version 2.0 only) The `model_names` should be a comma-separated list of `model_*`. See `$ALPHAFOLD_DATA_PATH/params` for the complete set of model names. In [`run_docker.py`](https://github.com/deepmind/alphafold/blob/main/docker/run_docker.py) `model_1,model_2,model_3,model_4,model_5` is used.
 1. The `max_template_date` is of the form `YYYY-MM-DD`.
 1. For further explanations and additional options please see [`run_alphafold.py`](https://github.com/deepmind/alphafold/blob/main/run_alphafold.py).
 
@@ -132,9 +146,9 @@ run --fasta_paths=/full/path/to/fasta \
     --max_template_date=
 ```
 
-Please refer to https://github.com/deepmind/alphafold#api-changes-between-v200-and-v210 for details.
+Please refer to https://github.com/deepmind/alphafold#api-changes-between-v200-and-v210 for details. You can append more options as needed.
 
-You may need at least 8 CPU cores due to this line printed in the output:
+You may need to request 8 CPU cores due to this line printed in the output:
 ```
 Launching subprocess "/usr/bin/jackhmmer -o /dev/null -A /tmp/tmpys2ocad8/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 ./seq.fasta /share/resources/data/alphafold/mgnify/mgy_clusters.fa"
 ```
