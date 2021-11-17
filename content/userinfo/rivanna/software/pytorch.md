@@ -5,6 +5,8 @@ tags = [
   "rivanna", "software, machine learning"
 ]
 draft = false
+modulename = "pytorch"
+softwarename = "PyTorch"
 title = "PyTorch on Rivanna"
 description = "PyTorch on Rivanna"
 author = "RC Staff"
