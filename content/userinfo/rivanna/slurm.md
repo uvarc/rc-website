@@ -290,9 +290,9 @@ In the output file name, %a is the placeholder for the array ID.  We submit with
 % sbatch --array=1-1000 myjob.sh
 ```
 
-The system automatically submits 1000 jobs, which will all appear under a single job ID with separate array IDs.  The Slurm_ARRAY_TASK_ID environment variable can be used in your command lines to label individal subjobs.
+The system automatically submits 1000 jobs, which will all appear under a single job ID with separate array IDs.  The SLURM_ARRAY_TASK_ID environment variable can be used in your command lines to label individal subjobs.
 
-The placeholder %A stands for the overall job ID number in the #SBATCH preamble lines, while %a represents the individual task number.  These variables can be used with the --output option.  In the body of the script you can use the regular environment variable Slurm_TASK_ID if you wish to differentiate different job IDs and Slurm_ARRAY_TASK_ID for the jobs within the array.
+The placeholder %A stands for the overall job ID number in the #SBATCH preamble lines, while %a represents the individual task number.  These variables can be used with the --output option.  In the body of the script you can use the regular environment variable SLURM_TASK_ID if you wish to differentiate different job IDs and SLURM_ARRAY_TASK_ID for the jobs within the array.
 
 To submit a range of task IDs with an interval
 

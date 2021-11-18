@@ -59,7 +59,7 @@ The workbench application, runwb2, should be executed as an interactive job thro
 When you are assigned a node, launch the desktop, start a terminal, load the desired module and start the workbench with the `runwb2` command.
 ```
 module load ansys
-unset Slurm_GTIDS
+unset SLURM_GTIDS
 runwb2
 ```
 Be sure to delete your Open OnDemand session if you finish before your requested time expires.
