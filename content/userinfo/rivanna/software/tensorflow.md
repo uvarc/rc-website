@@ -39,7 +39,7 @@ This container provides the Python 3.7.5 bindings for:
 ```
 
 # Local Copy of Container Image
-The TensorFlow container images contain all the libraries and software packages required to run TensorFlow.  In order to run SLURM or interactive jobs (ijobs), it is best practice to create a local copy of the container image in your own /home or /scratch directory. The container images can be copied like any other file on Rivanna.
+The TensorFlow container images contain all the libraries and software packages required to run TensorFlow.  In order to run Slurm or interactive jobs (ijobs), it is best practice to create a local copy of the container image in your own /home or /scratch directory. The container images can be copied like any other file on Rivanna.
 
 A library of prepared TensorFlow containers prepared to run on Rivanna's GPU nodes can be accessed through these commands:
 ```
@@ -76,8 +76,8 @@ Review our [Jupyer Lab documentation](/userinfo/rivanna/software/jupyterlab) for
 
 Once the JupyterLab instance has started, you can edit and run your notebook as described here.
 
-# TensorFlow SLURM jobs
-Singularity can make use of the local NVIDIA drivers installed on a host equipped with a GPU device.  The SLURM script needs to include the `#SBATCH -p gpu` and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the Jobs Using a GPU section for details.
+# TensorFlow Slurm jobs
+Singularity can make use of the local NVIDIA drivers installed on a host equipped with a GPU device.  The Slurm script needs to include the `#SBATCH -p gpu` and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the Jobs Using a GPU section for details.
 
 To run commands in an GPU-enabled container image, load the singularity module and add the `--nv` flag when executing the singularity run or singularity exec commands.  Before running the following commands it is assumed that a TensorFlow container image (e.g. `tensorflow-2.1.0-py37.sif`) has been copied to your personal /scratch directory.
 
@@ -92,7 +92,7 @@ singularity exec --nv /scratch/$USER/tensorflow-2.1.0-py37.sif python tf_example
 ```
 The TensorFlow container images were built to include CUDA and cuDNN libraries that are required by TensorFlow.  Since these libraries are provided within each container, we do not need to load the CUDA/cuDNN libraries available on the host.
 
-**Example SLURM Script:**
+**Example Slurm Script:**
 ```
 #!/usr/bin/env bash
 #SBATCH -J tftest
@@ -113,7 +113,7 @@ singularity run --nv $containerdir/tensorflow-2.1.0-py37.sif tf_example.py
 ```
 
 # TensorFlow Interactive Jobs (ijob)
-Just as described for SLURM jobs, it is recommended to copy a TensorFlow container image (e.g. tensorflow-2.1.0-py37.sif) to your personal /scratch directory before starting an ijob.
+Just as described for Slurm jobs, it is recommended to copy a TensorFlow container image (e.g. tensorflow-2.1.0-py37.sif) to your personal /scratch directory before starting an ijob.
 
 Start an ijob.  Note the addition of `-p gpu --gres=gpu` to request access to a GPU node and its GPU device.
 ```
@@ -145,7 +145,7 @@ Due to the overlay, these directories are by default the same inside and outside
 
 # TensorBoard
 
-Request a Desktop session under Interactive Apps via [Open OnDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the SLURM job. Launch the session and open a terminal in the desktop. Enter these commands (using `tensorflow/2.1.0-py37` as an example):
+Request a Desktop session under Interactive Apps via [Open OnDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the Slurm job. Launch the session and open a terminal in the desktop. Enter these commands (using `tensorflow/2.1.0-py37` as an example):
 
 ```
 $ module load singularity tensorflow/2.1.0-py37

@@ -42,7 +42,7 @@ module spider {{% module-firstversion %}}
 
 Users may build their own versions of LAMMPS if they wish to use a different compiler and MPI combination, or to choose individual optional packages.  Instructions are available at the [LAMMPS Getting Started"](http://lammps.sandia.gov/doc/Build.html) page.
 
-# Example SLURM script
+# Example Slurm script
 To run the system version of LAMMPS, a script similar to the following can be used.  LAMMPS has many options so only the most basic is shown.
 <pre>
 #!/bin/bash

@@ -125,7 +125,7 @@ To see all available environments, run `conda env list`.
 
 As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install `mpi4py` using any Python/Ancaonda module via `pip install --user mpi4py`.
 
-# Example SLURM script
+# Example Slurm script
 ## Non-MPI
 
 ```

@@ -42,7 +42,7 @@ module spider {{% module-firstversion %}}
 
 # NAMD with MPI
 
-The NAMD module was built on Rivanna with MPI support. Below is a SLURM script template.
+The NAMD module was built on Rivanna with MPI support. Below is a Slurm script template.
 
 ```
 #!/bin/bash

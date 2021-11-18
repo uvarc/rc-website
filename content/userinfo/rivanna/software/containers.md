@@ -16,7 +16,7 @@ author = "RC Staff"
 
 <img src="/images/rivanna/singularity-logo.png" alt="Singularity HPC Containers" class="project-inset" style="float:right;max-width:30%;" />
 
-Containers bundle an application, the libraries and other executables it may need, and even the data used with the application into portable, self-contained files called images. Containers simplify installation and management of software with complex dependencies and can also be used to package workflows. Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with SLURM and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
+Containers bundle an application, the libraries and other executables it may need, and even the data used with the application into portable, self-contained files called images. Containers simplify installation and management of software with complex dependencies and can also be used to package workflows. Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with Slurm and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
 
 # Creating Singularity Containers
 To create your own image from scratch, you must have root privileges on some computer running Linux (any version).  Follow the instructions at the Singularity site.  If you have only Mac or Windows, you can use the Vagrant environment.  Vagrant is a pre-packed system that runs under several virtual-machine environments, including the free Virtualbox environment.  Singularity provides instructions for installing on Mac or installing on Windows.  Once you have installed Vitrualbox, you install Singularity's Vagrant image, which contains the prerequisites to author images.  You can then follow the instructions for Linux to author your image.
@@ -162,7 +162,7 @@ containerdir=~
 singularity shell --nv $containerdir/tensorflow-2.1.0-py37.sif
 ```
 
-# Running Image Non-Interactively as SLURM jobs
+# Running Image Non-Interactively as Slurm jobs
 
 **Example script:**
 

@@ -47,7 +47,7 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through SLURM.
+You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through Slurm.
 
 If your Matlab job requires user interactions via the Matlab interface, you should use [Open OnDemand](/userinfo/rivanna/ood/overview) as described in the next section.
 
@@ -74,14 +74,14 @@ When you are done, quit the Matlab application.  The interactive session will be
 
 # Running a Matlab Batch Jobs on Rivanna
 
-Rivanna uses the SLURM resource manager to schedule and run jobs on the
-cluster compute nodes. The following are example SLURM scripts for
+Rivanna uses the Slurm resource manager to schedule and run jobs on the
+cluster compute nodes. The following are example Slurm scripts for
 submitting different types of Matlab batch jobs to the Rivanna cluster.
 
 ## Submitting a batch job using a single core of a compute node.
 
 Once your program is debugged, we recommend running in batch mode when possible.
-This runs the job in the background on a compute node. Write a SLURM script similar to the following:
+This runs the job in the background on a compute node. Write a Slurm script similar to the following:
 
 ```
 #!/bin/bash
@@ -223,8 +223,8 @@ parpool(pc, str2num(getenv('numWorkers')))
 
 ```
 
-# Matlab Jobs using SLURM Job Arrays
-The SLURM has a mechanism for launching multiple independent jobs with one
+# Matlab Jobs using Slurm Job Arrays
+The Slurm has a mechanism for launching multiple independent jobs with one
 job script using the `--array` directive.
 
 ## Array of Multicore Parallel Matlab Jobs

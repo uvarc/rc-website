@@ -21,9 +21,9 @@ author = "RC Staff"
 [Keras](https://keras.io/) is a high-level neural networks application programming interface (API), written in Python and capable of running on top of [TensorFlow](https://www.tensorflow.org/), [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/), or [Theano](http://deeplearning.net/software/theano/).  On Rivanna, we provide TensorFlow containers that include the Keras API.  Since version 1.12.0, TensorFlow contains its own Keras API implementation as described on the [TensorFlow](http://www.tensorflow.org/guide/keras) website.
 
 # Using Keras with TensorFlow containers
-Like TensorFlow itself, Python code that utlizes the Keras package can be run interactively as Jupyter Notebooks, in interactive shell jobs, or non-interctively as SLURM batch jobs.  Rivanna provides several nodes with graphics processing units (GPUs) that should be used when running Keras code.
+Like TensorFlow itself, Python code that utlizes the Keras package can be run interactively as Jupyter Notebooks, in interactive shell jobs, or non-interctively as Slurm batch jobs.  Rivanna provides several nodes with graphics processing units (GPUs) that should be used when running Keras code.
 
-As best practice, it is recommended to create a [local copy of the TensorFlow container](/userinfo/rivanna/software/tensorflow/#local-copy-of-container-image) before using the Keras package in SLURM or interactive jobs.
+As best practice, it is recommended to create a [local copy of the TensorFlow container](/userinfo/rivanna/software/tensorflow/#local-copy-of-container-image) before using the Keras package in Slurm or interactive jobs.
 
 # Example Python Script
 The follwing example script can be found on the [TensorFlow Tutorials](https://www.tensorflow.org/tutorials/) website.  **Note that this script requires TensorFlow 1.12.0.**
@@ -53,8 +53,8 @@ model.evaluate(x_test, y_test)
 # Keras Jupyter Notebooks
 The Keras package can be used for interactive code development in Jupyter Notebooks as described in our [TensorFlow Jupyter Notebook](/userinfo/rivanna/software/tensorflow/#tensorflow-jupyter-notebooks) documentation.
 
-# Keras SLURM jobs
-The Keras package can be used for SLURM job batch processing as described in our [TensorFlow SLURM Job](/userinfo/rivanna/software/tensorflow/#tensorflow-slurm-jobs) documentation.
+# Keras Slurm jobs
+The Keras package can be used for Slurm job batch processing as described in our [TensorFlow Slurm Job](/userinfo/rivanna/software/tensorflow/#tensorflow-slurm-jobs) documentation.
 
 # Keras Interactive Jobs (ijob)
 The Keras package can be used for code development in an interactive shell environment as described in our [TensorFlow Interactive Jobs](/userinfo/rivanna/software/tensorflow/#tensorflow-interactive-jobs-ijob) documentation.

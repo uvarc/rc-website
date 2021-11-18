@@ -60,7 +60,7 @@ Documentation for the tutorials is available at the OpenFOAM [site](https://www.
 
 # Parallel Processing
 
-OpenFOAM has been compiled on Rivanna to run with [MPI](/userinfo/rivanna/software/mpi).  Please see our SLURM [documentation](/userinfo/rivanna/slurm) for information about running MPI programs.  
+OpenFOAM has been compiled on Rivanna to run with [MPI](/userinfo/rivanna/software/mpi).  Please see our Slurm [documentation](/userinfo/rivanna/slurm) for information about running MPI programs.  
 
 # PostProcessing
 

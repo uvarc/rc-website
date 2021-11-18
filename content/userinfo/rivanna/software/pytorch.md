@@ -57,9 +57,9 @@ Click `Launch` to start the session.
 
 Once the JupyterLab instance has started, you can edit and run your notebook as described [here](/userinfo/rivanna/software/jupyterlab).
 
-# PyTorch SLURM jobs
+# PyTorch Slurm jobs
 
-The following is a SLURM script template. The commented numbers correspond to the items in the ensuing notes.
+The following is a Slurm script template. The commented numbers correspond to the items in the ensuing notes.
 
 ```
 #!/bin/bash
@@ -80,7 +80,7 @@ singularity run --nv $CONTAINERDIR/pytorch-1.8.1.sif pytorch_example.py # 3
 
 Notes:
 
-1. The SLURM script needs to include the `#SBATCH -p gpu`and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the [Jobs Using a GPU](/userinfo/rivanna/slurm/#jobs-using-a-gpu) section for details.
+1. The Slurm script needs to include the `#SBATCH -p gpu`and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the [Jobs Using a GPU](/userinfo/rivanna/slurm/#jobs-using-a-gpu) section for details.
 
 1. To use the pytorch container, load the singularity and pytorch modules. You may choose a different version (see `module spider` above).
 

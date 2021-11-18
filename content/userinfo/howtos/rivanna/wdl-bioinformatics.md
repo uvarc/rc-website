@@ -19,7 +19,7 @@ WDL (pronounced widdle) is a workflow description language to define tasks and w
 {{% /callout %}}
 
 {{% callout %}}
-CROMWELL is the execution engine (written in Java) that supports running WDL scripts on three types of platforms: local machine (e.g. your laptop), a local cluster/compute farm accessed via a job scheduler (e.g. SLURM, GridEngine) or a cloud platform (e.g. Google Cloud or Amazon AWS).
+CROMWELL is the execution engine (written in Java) that supports running WDL scripts on three types of platforms: local machine (e.g. your laptop), a local cluster/compute farm accessed via a job scheduler (e.g. Slurm, GridEngine) or a cloud platform (e.g. Google Cloud or Amazon AWS).
 
 <a href="http://cromwell.readthedocs.io/en/develop/">Learn More</a>
 {{% /callout %}}
@@ -466,9 +466,9 @@ In order to run each task of our workflow as a slurm job, we need to configure a
 
 Create an empty text file, `cromwell-rivanna.conf`, and copy the contents described in [this post](/userinfo/rivanna/software/cromwell).
 
-## SLURM batch submission script
+## Slurm batch submission script
 
-Finally, we will write a simple SLURM submission script to execute our workflow. Create an empty file submit-bwaAln.sh and copy the below contents to it -
+Finally, we will write a simple Slurm submission script to execute our workflow. Create an empty file submit-bwaAln.sh and copy the below contents to it -
 ```
 #!/bin/bash
 #SBATCH --job-name=bwaAln       # Job name

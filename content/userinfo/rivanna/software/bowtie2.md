@@ -65,9 +65,9 @@ cp -r $EBROOTBOWTIE2/example /scratch/$USER/bowtie_temp
 * The `EBROOTBOWTIE2` environment variable is set to the Bowtie2 installation directory after you load the `bowtie2` module.  
 * Note that you have to preload the `gcc` module before loading bowtie2.
 
-## The SLURM Job Script
+## The Slurm Job Script
 
-The SLURM script defines the Rivanna resources needed to run the Bowtie2 indexing and alignment. Bowtie2 can utilize multiple cpu cores on a single compute node. It does not support execution on multiple nodes.  
+The Slurm script defines the Rivanna resources needed to run the Bowtie2 indexing and alignment. Bowtie2 can utilize multiple cpu cores on a single compute node. It does not support execution on multiple nodes.  
 
 Let's create a textfile that serves as our job script, `alignment.slurm`, with the following content:
 
@@ -138,7 +138,7 @@ Because of parallel processing, the aligned reads might appear in the output SAM
 
 ## Troubleshooting
 
-**Caution:** If you create the SLURM job sscript on a Windows computer and then upload it to Rivanna, you’ll probably get an error when you run it with sbatch that says:
+**Caution:** If you create the Slurm job sscript on a Windows computer and then upload it to Rivanna, you’ll probably get an error when you run it with sbatch that says:
 ```
 sbatch: error: Batch script contains DOS line breaks (\r\n)
 sbatch: error: instead of expected UNIX line breaks (\n).

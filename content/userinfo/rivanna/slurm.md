@@ -1,6 +1,6 @@
 +++
 description = ""
-title = "SLURM Job Manager"
+title = "Slurm Job Manager"
 draft = false
 date = "2019-05-28T17:45:12-05:00"
 tags = ["hpc","rivanna","parallel-computing","supercomputer","allocations","queues","storage"]
@@ -17,7 +17,7 @@ type = "rivanna"
 
 Rivanna is a multi-user, managed environment.  It is divided into login nodes (also called frontends), which are directly accessible by users, and compute nodes, which must be accessed through the _resource manager_.  Users prepare their computational workloads, called _jobs_, on the login nodes and submit them to the job controller, a component of the resource manager that runs on login nodes and is responsible for scheduling jobs and monitoring the status of the compute nodes.
 
-We use **SLURM** (Simple Linux Utility for Resource Management), an open-source tool that manages jobs for Linux clusters. Jobs are submitted to the SLURM controller, which queues them until the system is ready to run them. The controller selects which jobs to run, when to run them, and how to place them on the compute node or nodes, according to a predetermined site policy meant to balance competing user needs and to maximize efficient use of cluster resources. SLURM divides a cluster into logical units called _partitions_ (generally known as queues in other systems). Different partitions may contain different nodes, or they may overlap; they may also impose different resource limitations. The UVA HPC environment provides several partitions and there is no default; each job must request a partition. To determine which queues are available, log in to the HPC System and type 
+We use **SLURM** (Simple Linux Utility for Resource Management), an open-source tool that manages jobs for Linux clusters. Jobs are submitted to the Slurm controller, which queues them until the system is ready to run them. The controller selects which jobs to run, when to run them, and how to place them on the compute node or nodes, according to a predetermined site policy meant to balance competing user needs and to maximize efficient use of cluster resources. Slurm divides a cluster into logical units called _partitions_ (generally known as queues in other systems). Different partitions may contain different nodes, or they may overlap; they may also impose different resource limitations. The UVA HPC environment provides several partitions and there is no default; each job must request a partition. To determine which queues are available, log in to the HPC System and type 
 ``` 
 qlist
 ```
@@ -30,17 +30,17 @@ qlimits
 
 Several queues (partitions) are available for different types of jobs.  One queue is restricted to single-node (serial or threaded) jobs; another for multinode parallel programs, and others are for access to specialty hardware such as large-memory nodes or nodes offering GPUs.  For the current queue configuration and policies on Rivanna please see its homepage. 
 
-# SLURM Architecture
+# Slurm Architecture
 
-SLURM has a controller process (called a daemon) on a head node and a worker daemon on each of the compute nodes. The controller is responsible for queueing jobs, monitoring the state of each node, and allocating resources. The worker daemon gathers information about its node and returns that information to the controller. When assigned a user job by the controller, the worker daemon initiates and manages the job. SLURM provides the interface between the user and the cluster. SLURM performs three primary tasks:
+Slurm has a controller process (called a daemon) on a head node and a worker daemon on each of the compute nodes. The controller is responsible for queueing jobs, monitoring the state of each node, and allocating resources. The worker daemon gathers information about its node and returns that information to the controller. When assigned a user job by the controller, the worker daemon initiates and manages the job. Slurm provides the interface between the user and the cluster. Slurm performs three primary tasks:
 
 1. Manage the queue(s) of jobs and settles contentions for resources;
 1. Allocate a subset of nodes or cores for a set amount of time to a submitted job;
 1. Provide a framework for starting and monitoring jobs on the subset of nodes/cores.
 
-To submit a job to the cluster, you must request the appropriate resources and specify what you want to run with a SLURM Job Command File. In most cases, this batch job file is simply a bash or other shell script containing directives that specify the resource requirements (e.g. the number of cores, the maximum runtime, partition specification, etc.) that your job is requesting along with the set of commands required to execute your workflow on a subset of cluster compute nodes.  Batch job scripts are submitted to the SLURM Controller to be run on the cluster. When the script is submitted to the resource manager, the controller reads the directives, ignoring the rest of the script, and uses them to determine the overall resource request.  It then assigns a priority to the job and places it into the queue.  Once the job is assigned to a worker, the job script is run as an ordinary shell script on the "master" node, in which case the directives are treated as comments.  For this reason it is important to follow the format for directives exactly.
+To submit a job to the cluster, you must request the appropriate resources and specify what you want to run with a Slurm Job Command File. In most cases, this batch job file is simply a bash or other shell script containing directives that specify the resource requirements (e.g. the number of cores, the maximum runtime, partition specification, etc.) that your job is requesting along with the set of commands required to execute your workflow on a subset of cluster compute nodes.  Batch job scripts are submitted to the Slurm Controller to be run on the cluster. When the script is submitted to the resource manager, the controller reads the directives, ignoring the rest of the script, and uses them to determine the overall resource request.  It then assigns a priority to the job and places it into the queue.  Once the job is assigned to a worker, the job script is run as an ordinary shell script on the "master" node, in which case the directives are treated as comments.  For this reason it is important to follow the format for directives exactly.
 
-The remainder of this tutorial will focus on the SLURM command line interface. More detailed information about using SLURM can be found in the [official SLURM documentation](https://slurm.schedmd.com/documentation.html).
+The remainder of this tutorial will focus on the Slurm command line interface. More detailed information about using Slurm can be found in the [official Slurm documentation](https://slurm.schedmd.com/documentation.html).
 
 # Job Scripts
 
@@ -65,17 +65,17 @@ module load gcc/7.1.0
 ./mycode
 ```
 
-In our installation of SLURM, the default starting directory is the directory from which the batch job was submitted, so it may not be necessary to change directories.
+In our installation of Slurm, the default starting directory is the directory from which the batch job was submitted, so it may not be necessary to change directories.
 
 - - - 
 
-# Configurable Options in SLURM
+# Configurable Options in Slurm
 
-SLURM refers to processes as "tasks."  A task may be envisioned as an independent, running process.  SLURM also refers to cores as "cpus" even though modern cpus contain several to many cores.  If your program uses only one core it is a single, sequential task.  If it can use multiple cores on the same node, it is generally regarded as a single task, with multiple cores assigned to that task.  If it is a distributed code that can run on multiple nodes, each process would be a task.
+Slurm refers to processes as "tasks."  A task may be envisioned as an independent, running process.  Slurm also refers to cores as "cpus" even though modern cpus contain several to many cores.  If your program uses only one core it is a single, sequential task.  If it can use multiple cores on the same node, it is generally regarded as a single task, with multiple cores assigned to that task.  If it is a distributed code that can run on multiple nodes, each process would be a task.
 
 ## Options
 
-Note that most SLURM options have two forms, a short (single-letter) form that is preceded by a single hyphen and followed by a space, and a longer form preceded by a double hyphen and followed by an equals sign.  In a job script these options are preceded by a pseudocomment `#SBATCH`.  They may also be used as command-line options on their own.
+Note that most Slurm options have two forms, a short (single-letter) form that is preceded by a single hyphen and followed by a space, and a longer form preceded by a double hyphen and followed by an equals sign.  In a job script these options are preceded by a pseudocomment `#SBATCH`.  They may also be used as command-line options on their own.
 
 | Option | Usage |
 |---|---|
@@ -97,7 +97,7 @@ Note that most SLURM options have two forms, a short (single-letter) form that i
 
 ## Environment variables
 
-These are the most basic; there are many more.  By default SLURM changes to the directory from which the job was submitted, so the `SLURM_SUBMIT_DIR` environment variable is usually not needed.
+These are the most basic; there are many more.  By default Slurm changes to the directory from which the job was submitted, so the `SLURM_SUBMIT_DIR` environment variable is usually not needed.
 
 ```
 SLURM_JOB_ID
@@ -106,7 +106,7 @@ SLURM_JOB_PARTITION
 SLURM_JOB_NODELIST
 ```
 
-SLURM passes all environment variables from the shell in which the `sbatch` or `salloc` (or `ijob`) command was run. To override this behavior in an `sbatch` script, add
+Slurm passes all environment variables from the shell in which the `sbatch` or `salloc` (or `ijob`) command was run. To override this behavior in an `sbatch` script, add
 
 ```
 #SBATCH --export=NONE
@@ -126,7 +126,7 @@ Optionally export and set with
 
 ## Standard Output and Standard Error
 
-By default, SLURM combines standard output and standard error into a single file, which will be named slurm-\<jobid\>.out.  You may rename standard output with
+By default, Slurm combines standard output and standard error into a single file, which will be named slurm-\<jobid\>.out.  You may rename standard output with
 
 ```
 #SBATCH -o <outfile> or --output=<outfile>
@@ -163,7 +163,7 @@ If you wish to run an interactive job from the command line, you can use our loc
 ```
 ijob <options>
 ```
-ijob is a wrapper around the SLURM commands salloc and srun, set up to start a bash shell on the remote node.  The options are the same as the options to salloc, so most commands that can be used with #SBATCH can be used with ijob.  The request will be placed into the queue specified:
+ijob is a wrapper around the Slurm commands salloc and srun, set up to start a bash shell on the remote node.  The options are the same as the options to salloc, so most commands that can be used with #SBATCH can be used with ijob.  The request will be placed into the queue specified:
 ```
 % ijob -c 1 -A mygroup -p standard --time=1-00:00:00
 salloc: Pending job allocation 25394
@@ -228,7 +228,7 @@ To request an estimate of when your pending job will run
 
 # Canceling a Job
 
-SLURM provides the scancel command for deleting jobs from the system using the job identification number:
+Slurm provides the scancel command for deleting jobs from the system using the job identification number:
 
 ```
 % scancel 18341
@@ -268,7 +268,7 @@ To restart (cancel and rerun)
 scontrol requeue <jobid>
 ```
 
-For further information about the squeue command, type `man squeue` on the cluster front-end machine or see the SLURM Documentation.
+For further information about the squeue command, type `man squeue` on the cluster front-end machine or see the Slurm Documentation.
 
 # Job Arrays
 
@@ -290,9 +290,9 @@ In the output file name, %a is the placeholder for the array ID.  We submit with
 % sbatch --array=1-1000 myjob.sh
 ```
 
-The system automatically submits 1000 jobs, which will all appear under a single job ID with separate array IDs.  The SLURM_ARRAY_TASK_ID environment variable can be used in your command lines to label individal subjobs.
+The system automatically submits 1000 jobs, which will all appear under a single job ID with separate array IDs.  The Slurm_ARRAY_TASK_ID environment variable can be used in your command lines to label individal subjobs.
 
-The placeholder %A stands for the overall job ID number in the #SBATCH preamble lines, while %a represents the individual task number.  These variables can be used with the --output option.  In the body of the script you can use the regular environment variable SLURM_TASK_ID if you wish to differentiate different job IDs and SLURM_ARRAY_TASK_ID for the jobs within the array.
+The placeholder %A stands for the overall job ID number in the #SBATCH preamble lines, while %a represents the individual task number.  These variables can be used with the --output option.  In the body of the script you can use the regular environment variable Slurm_TASK_ID if you wish to differentiate different job IDs and Slurm_ARRAY_TASK_ID for the jobs within the array.
 
 To submit a range of task IDs with an interval
 
@@ -345,7 +345,7 @@ A list of tasks
 
 # Specifying Job Dependencies
 
-With the sbatch command, you can invoke options that prevent a job from starting until a previous job has finished. This constraint is especially useful when a job requires an output file from another job in order to perform its tasks. The --dependency option allows for the specification of additional job attributes. For example, suppose that we have two jobs where job_2 must run after job_1 has completed. Using the corresponding SLURM command files, we can submit the jobs as follows:
+With the sbatch command, you can invoke options that prevent a job from starting until a previous job has finished. This constraint is especially useful when a job requires an output file from another job in order to perform its tasks. The --dependency option allows for the specification of additional job attributes. For example, suppose that we have two jobs where job_2 must run after job_1 has completed. Using the corresponding Slurm command files, we can submit the jobs as follows:
 
 ```
 % sbatch job_1.slurm 
@@ -373,7 +373,7 @@ JOBID    PARTITION     NAME      USER     ST     TIME    NODES   NODELIST(REASON
 
 # Job Accounting Data
 
-When submitting a job to the cluster for the first time, the walltime requirement should be overestimated to ensure that SLURM does not terminate the job prematurely. After the job completes, you can use sacct to get the total time that the job took. Without any specified options, the sacct command provides a display which is similar to the following:
+When submitting a job to the cluster for the first time, the walltime requirement should be overestimated to ensure that Slurm does not terminate the job prematurely. After the job completes, you can use sacct to get the total time that the job took. Without any specified options, the sacct command provides a display which is similar to the following:
 
 ```
 JobID    JobName        Partition    Account    AllocCPUS   State       ExitCode
@@ -404,8 +404,8 @@ JobID         JobName     Elapsed    State
 
 The Elapsed time is given in hours, minutes, and seconds, with the default format of hh:mm:ss. The Elapsed time can be used as an estimate for the amount of time that you request in future runs; however, there can be differences in timing for a job that is run several times. In the above example, the job called python took 21 minutes, 27 seconds to run the first time (JobID 18352.0) and 16 minutes, 8 seconds the last time (JobID 18353.2). Because the same job can take varying amounts of time to run, it would be prudent to increase Elapsed time by 10% to 25% for future walltime requests. Requesting a little extra time will help to ensure that the time does not expire before a job completes
 
-# Sample SLURM Command Scripts
-In this section are a selection of sample SLURM command files for different types of jobs.  For more details on running specific software packages, please see the software pages.
+# Sample Slurm Command Scripts
+In this section are a selection of sample Slurm command files for different types of jobs.  For more details on running specific software packages, please see the software pages.
 
 ## Basic Serial Program
 
@@ -459,7 +459,7 @@ python myscript.py
 
 ### R
 
-This is a SLURM job command file to run a serial R batch job.
+This is a Slurm job command file to run a serial R batch job.
 
 ```
 #!/bin/bash
@@ -479,7 +479,7 @@ Rscript myRprog.R
 
 ### Distributed Memory Jobs
 
-If the executable is a parallel program using the Message Passing Interface (MPI), then it will require multiple processors of the cluster to run. This information is specified in the SLURM nodes resource requirement. The script mpiexec is used to invoke the parallel executable. This example is a SLURM job command file to run a parallel (MPI) job using the OpenMPI implementation:
+If the executable is a parallel program using the Message Passing Interface (MPI), then it will require multiple processors of the cluster to run. This information is specified in the Slurm nodes resource requirement. The script mpiexec is used to invoke the parallel executable. This example is a Slurm job command file to run a parallel (MPI) job using the OpenMPI implementation:
 
 ```
 #!/bin/bash
@@ -496,9 +496,9 @@ module load openmpi
 srun ./parallel_executable
 ```
 
-In this example, the SLURM job file is requesting two nodes with sixteen tasks per node (for a total of thirty-two processors).  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from SLURM, so these are not specified.  In general, MPI jobs should use all of a node so we'd recommend ntasks-per-node=20 on the parallel partition, but some codes cannot be distributed in that manner so we are showing a more general example here.
+In this example, the Slurm job file is requesting two nodes with sixteen tasks per node (for a total of thirty-two processors).  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node so we'd recommend ntasks-per-node=20 on the parallel partition, but some codes cannot be distributed in that manner so we are showing a more general example here.
 
-SLURM can also place the job freely if the directives specify only the number of tasks. In this case do not specify a node count.  This is not generally recommended, however, as it can have a significant negative impact on performance.
+Slurm can also place the job freely if the directives specify only the number of tasks. In this case do not specify a node count.  This is not generally recommended, however, as it can have a significant negative impact on performance.
 
 ```
 #!/bin/bash
@@ -533,7 +533,7 @@ srun ./parallel_executable
 
 ### Threaded Jobs (OpenMP or pthreads)
 
-SLURM considers a task to correspond to a process.  Specifying a number of cpus (cores) per node ensures that they are on the same node.  SLURM does not set standard environment variables such as OMP_NUM_THREADS or NTHREADS, so the script must transfer that information explicitly.  This example is for OpenMP:
+Slurm considers a task to correspond to a process.  Specifying a number of cpus (cores) per node ensures that they are on the same node.  Slurm does not set standard environment variables such as OMP_NUM_THREADS or NTHREADS, so the script must transfer that information explicitly.  This example is for OpenMP:
 
 ```
 #!/bin/bash
@@ -592,7 +592,7 @@ python myAI.py
 The second argument to `gres` can be `k80`, `p100`, `v100`, or `rtx2080` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
 # CPU and Memory Usage
-Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate SLURM commands for running jobs and completed jobs.
+Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate Slurm commands for running jobs and completed jobs.
 
 ## Running job
 

@@ -9,7 +9,7 @@ tags = ["Rivanna","instructional","courses"]
 
 +++
 
-Instructors can request _instructional allocations_ on Rivanna for classes and extended workshops.  These allocations are time-limited and generally allow access to a restricted set of nodes and only one special SLURM partition, but are otherwise equivalent to any allocation.
+Instructors can request _instructional allocations_ on Rivanna for classes and extended workshops.  These allocations are time-limited and generally allow access to a restricted set of nodes and only one special Slurm partition, but are otherwise equivalent to any allocation.
 
 - - -
 
@@ -48,7 +48,7 @@ Students, particularly undergraduates, frequently experience password difficulti
 
 ## Partition and Reservations
 
-The allocation will have access to the `instructional` partition.  Students can enter this with the `-p` or `--partition` options to SLURM.
+The allocation will have access to the `instructional` partition.  Students can enter this with the `-p` or `--partition` options to Slurm.
 ```
 #SBATCH -p instructional
 ```
@@ -68,7 +68,7 @@ or it can be added to the job script preamble
 ```
 #SBATCH --reservation=your-reservation
 ```
-For Open OnDemand interactive applications, it should be entered as an additional SLURM option.
+For Open OnDemand interactive applications, it should be entered as an additional Slurm option.
 
 ## Training
 Research Computing staff are available to come to a class session to provide training to the students.  This can be done in-person, when possible, or virtually through Zoom.  

@@ -111,9 +111,9 @@ singularity run -B $ALPHAFOLD_DATA_PATH:/data -B .:/etc --pwd /app/alphafold --n
 
 For your convenience, we have prepared a launch script `run` that takes care of the Singularity command and the database paths, since these are unlikely to change. If you do need to customize anything please use the full Singularity command in the previous section.
 
-# SLURM Script
+# Slurm Script
 
-Copy and paste the following as a template for your SLURM script. 
+Copy and paste the following as a template for your Slurm script. 
 
 ```
 #!/bin/bash

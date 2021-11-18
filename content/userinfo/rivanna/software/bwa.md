@@ -53,7 +53,7 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 
-# SLURM Script Examples
+# Slurm Script Examples
 
 ## Creating a BWA Index for a Reference Genome
 Index files are created with the `bwa index` command. A reference genome sequence in [FASTA format](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=BlastHelp) needs to be provided, e.g. `/scratch/$USER/bwaanalysis/refgenome.fa`

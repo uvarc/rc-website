@@ -62,8 +62,8 @@ which gview
 echo $PATH
 ```
 
-# Single-Core SLURM Script
-This is a SLURM job command file to run a Gaussian 16 batch job. In this example, the Gaussian 16 input is in the file `h2o.com`.  If no output file is specified, it will go to `h2o.log`.  The script assumes it will be submitted from the user's `/scratch` directory and the input file is in the same directory.  Gaussian also tends to use a lot of memory, so we make sure to request the amount per core that is available.  We pass that to g16 with the `-m` flag.  Be sure the value is less than or equal to what you request from SLURM.
+# Single-Core Slurm Script
+This is a Slurm job command file to run a Gaussian 16 batch job. In this example, the Gaussian 16 input is in the file `h2o.com`.  If no output file is specified, it will go to `h2o.log`.  The script assumes it will be submitted from the user's `/scratch` directory and the input file is in the same directory.  Gaussian also tends to use a lot of memory, so we make sure to request the amount per core that is available.  We pass that to g16 with the `-m` flag.  Be sure the value is less than or equal to what you request from Slurm.
 ```
 #!/bin/bash
 #SBATCH --tasks=1
@@ -85,7 +85,7 @@ g16 -m=6gb h2o.com
 # Multicore Gaussian Job
 By default, Gaussian runs on a single core.  However, many jobs can efficiently utilize more than one core on a node.  See the Gaussian documentation for their recommendations.  Not all jobs will scale at all, and some will scale only to a limited number of cores, so it's important to run tests and track the speedup for multicore jobs, so as not to waste resources or service units.
 
-The Gaussian documentation on multicore jobs contains instructions to specify core numbers and they are moving to this system, away from users specifying the number of cores.  However, on a resource-managed system the user **must not** specify core numbers, since these are assigned by SLURM.  Gaussian 16 still provides an option to request a particular number of cores.  The safest way in a resource-managed environment is to use the command-line option with a SLURM environment variable.
+The Gaussian documentation on multicore jobs contains instructions to specify core numbers and they are moving to this system, away from users specifying the number of cores.  However, on a resource-managed system the user **must not** specify core numbers, since these are assigned by Slurm.  Gaussian 16 still provides an option to request a particular number of cores.  The safest way in a resource-managed environment is to use the command-line option with a Slurm environment variable.
 ```
 #!/bin/bash
 #SBATCH --nodes=1
@@ -118,7 +118,7 @@ Only a few very large scale computations should need to use Linda.  If your code
 ```
 To request permission for internode ssh, please [contact us](/support).
 
-Linda does not utilize the high-speed Infiniband network, so it is best to use one Linda worker per node.  You specify the node list using information from SLURM, then use a cpus-per-task directive as for the multicore case above.
+Linda does not utilize the high-speed Infiniband network, so it is best to use one Linda worker per node.  You specify the node list using information from Slurm, then use a cpus-per-task directive as for the multicore case above.
 ```
 #!/bin/bash
 #SBATCH --nodes=2

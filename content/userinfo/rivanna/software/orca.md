@@ -43,9 +43,9 @@ module spider {{% module-firstversion %}}
 # License and Permission
 We have an "ACADEMIA" license. Usage is restricted to academic purposes. Please contact us if you need access to the software.
 
-# SLURM script template
+# Slurm script template
 
-Below is a SLURM script template. Please note that:
+Below is a Slurm script template. Please note that:
 
 - Loading the `orca` module will automatically load `gcc` and `openmpi`. Do not load the latter manually.
 - For your convenience we have defined the environment variable `orcadir` in the module.
@@ -69,7 +69,7 @@ Submit the job in the same directory as `my.inp`.
 
 ## Multi-node
 
-For multi-node jobs, please add this line to your SLURM script:
+For multi-node jobs, please add this line to your Slurm script:
 
 ```
 export RSH_COMMAND=ssh

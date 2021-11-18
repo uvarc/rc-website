@@ -138,7 +138,7 @@ gatk PrintReadsSpark \
     -O output.bam \
     --read_filter MappingQualityZero
 ```
-**Note:** Make sure to request for 8 CPU cores before executing the above command, either by starting an interactive session using `ijob` or by submitting the job via a SLURM batch submission script. 
+**Note:** Make sure to request for 8 CPU cores before executing the above command, either by starting an interactive session using `ijob` or by submitting the job via a Slurm batch submission script. 
 
 Below is an example `gatk-printReadsSpark.slurm.sh` batch submission script for the above job. 
 ```

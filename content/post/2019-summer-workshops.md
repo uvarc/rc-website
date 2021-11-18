@@ -46,7 +46,7 @@ Would you like to learn the basics of high-throughput and parallel computing? Do
 
 * <b>June 6-June 7: Compiled Languages</b> - The basics of C++ and Fortran will be taught in this accelerated two-day course. Prerequisite: experience programming in some language. Mornings will be hands-on and lecture, with afternoon programming labs.
 
-* <b>June 10: Intro to High-Performance Computing</b> - This all-day session is an in-depth introduction to using the Rivanna HPC cluster. Topics covered will include an introduction to the Unix command line, writing SLURM scripts, and high-throughput computing.
+* <b>June 10: Intro to High-Performance Computing</b> - This all-day session is an in-depth introduction to using the Rivanna HPC cluster. Topics covered will include an introduction to the Unix command line, writing Slurm scripts, and high-throughput computing.
 
 * <b>June 10: Scientific Image Processing with Fiji/ImageJ</b> - This hands-on workshop is an introduction to using Fiji, an open-source and enhanced version of the popular ImageJ program used for scientific image processing. During the morning session, participants will be introduced to image processing filters, strategies for image background correction, as well as identification and analysis of image objects of interest using segmentation masks. During the afternoon session, participants will learn how to write scripts for automated execution of image processing pipelines and batch processing of multiple image files in Fiji. Example scripts will be provided using the Python and BeanShell languages. Participants should bring their own laptop with Fiji preinstalled. Instructions for installations of Fiji on Windows, Mac OSX, and Linux can be found on this website: https://fiji.sc/#download
 

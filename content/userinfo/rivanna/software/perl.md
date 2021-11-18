@@ -45,7 +45,7 @@ To load the {{< module-firstversion >}} module, run this command:
 module load {{< module-firstversion >}}
 ```
 
-# Example SLURM Script
+# Example Slurm Script
 ```
 #!/bin/bash
 #SBATCH -N 1

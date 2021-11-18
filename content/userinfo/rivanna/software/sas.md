@@ -38,4 +38,4 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-**Note:** SAS scripts may be run on Rivanna through the SLURM queueing system in batch mode, but production interactive jobs on the frontend are not permitted.
+**Note:** SAS scripts may be run on Rivanna through the Slurm queueing system in batch mode, but production interactive jobs on the frontend are not permitted.

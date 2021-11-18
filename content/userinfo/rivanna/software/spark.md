@@ -105,7 +105,7 @@ The example below estimates the value of pi in a PySpark session running on 16 c
 
 <img src="/images/pyspark.png" style="height:100%;width:100%"></img>
 
-# SLURM Script Templates for Batch Jobs
+# Slurm Script Templates for Batch Jobs
 
 ## Local mode on a single node
 ```bash
@@ -171,7 +171,7 @@ sleep 10
 spark-submit --master $MASTERSTRING script.py
 ```
 
-In the above SLURM script template, note that:
+In the above Slurm script template, note that:
 
 - Request `parallel` nodes with exclusive access.
 - You may reduce the number of cores if the job needs more memory per core.
@@ -191,7 +191,7 @@ In the above SLURM script template, note that:
     sc.parallelize(..., os.environ['PARTITIONS'])
     ```
 
-    where the `PARTITIONS` environment variable is defined as the total number of cores on worker nodes in the SLURM script for your convenience. Without doing so only one partition will be created on each node.
+    where the `PARTITIONS` environment variable is defined as the total number of cores on worker nodes in the Slurm script for your convenience. Without doing so only one partition will be created on each node.
 
 ### Benchmark
 
