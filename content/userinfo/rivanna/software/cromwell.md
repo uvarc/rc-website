@@ -59,7 +59,7 @@ include required(classpath("application"))
 backend {
     default = "SLURM"
     providers {
-        Slurm {
+        SLURM {
             actor-factory = "cromwell.backend.impl.sfs.config.ConfigBackendLifecycleActorFactory"
             config {
                 run-in-background = false
@@ -111,7 +111,7 @@ In our customized `cromwell-rivanna.conf`file, the Slurm backend is specified vi
 backend {
     default = "SLURM"
     providers {
-        Slurm {
+        SLURM {
             actor-factory = "cromwell.backend.impl.sfs.config.ConfigBackendLifecycleActorFactory"
             config {
                 ...
