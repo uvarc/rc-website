@@ -41,7 +41,7 @@ Details on Globus data transfer coming soon
 
 ## Create an environment
 
-{{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://accord-portal.uvarc.io/" >}}
+{{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://accord.uvarc.io/" >}}
 <br>
 
 From the ACCORD console, select the project you want to work with. Next select an environment. Your container should be running within a few seconds and will appear under "Running Environments" on the same page.
