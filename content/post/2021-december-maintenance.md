@@ -60,6 +60,9 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
     - vmd/1.9.4 - Visualization software for NAMD
     - cc3d/4.2.5 - CompuCell3D
     - deeplabcut/2.2 - animal pose estimation
+    - mirdeep2/0.1.3
+    - multiqc/1.11
+    - pbwt/3.0
     - ocaml/3.12.1
     - pov-ray/3.7.0 - 3D graphics with raytracing
     - unrar/6.0.2
