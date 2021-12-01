@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2021-12-03T00:00:00-05:00"
+date = "2021-12-01T00:00:00-05:00"
 title = "Rivanna Maintenance: December 14, 2021"
 # url = "/maintenance"
 draft = false
@@ -10,11 +10,11 @@ tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}Rivanna will be down for maintenance on <strong>Tuesday, December 14, 2021</strong>, beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna and the Globus data transfer nodes (DTNs) will be down for maintenance on <strong>Tuesday, December 14, 2021</strong> beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
-Rivanna is expected to return to service by .
+Users will be unable to transfer data using Globus during the maintenance period. Rivanna and the Globus DTNs are expected to return to service by 6 a.m. on **Wednesday, December 15.**
 
 ## IMPORTANT MAINTENANCE NOTES
 
@@ -30,6 +30,9 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
     - pytorch/1.4.0-py37, 1.5.1 (see section above)
     - tensorflow/1.12.0-py27, 2.0.0-py36
     - python/3.8.8 under `gompic` -> moved to `goolfc`
+    - R/3.2.1, 3.4.4, 3.5.3, 4.0.0, 4.1.0
+
+    **Attention R users**: We will streamline the R modules to include the following versions: 3.6.3, 4.0.3, and 4.1.1. The default version will be 4.0.3. If you have hard-coded an older version of R in your scripts (e.g., R/3.5.3), you will need to update your scripts to specify one of the newer versions. If you need to switch to a newer version of R, your library containing the packages that you have installed will have to be updated. You can attempt this manually, or you can contact hpc-support@virginia.edu for help with automating the installation of your packages.
 
 2. The following **upgrades** will take place during the maintenance period.
     - gcc/11.2.0 and libraries (openmpi/3.1.6, openblas/0.3.17, scalapack/2.1.0, fftw/3.3.10, boost/1.77.0)
@@ -39,6 +42,7 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
     - gromacs/2021.2 - with GPU support; please load `goolfc` first
 
    Upgrades to default versions of applications:
+    - R/3.6.3 -> 4.0.3
     - nvhpc/20.9 -> 21.9
     - cuda/11.0.228 -> 11.4.2
     - cudnn/7.6.5.32 -> 8.2.4.15
