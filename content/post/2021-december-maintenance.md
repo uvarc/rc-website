@@ -18,9 +18,16 @@ Rivanna is expected to return to service by .
 
 ## IMPORTANT MAINTENANCE NOTES
 
+### New GPU
+
+We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. To request an A100 GPU in Slurm scripts, use `--gres=gpu:a100`.
+
+**Attention PyTorch users:** Versions 1.6 and earlier will not be compatible on the A100. They can still run on other GPUs. For this reason, the module versions 1.4.0-py37 and 1.5.1 together with the corresponding Jupyter kernels will be removed. For the sake of reproducibility/continuity of ongoing projects, the containers will be accessible from `/share/resources/containers/singularity/archive` and can be used to [install your own Jupyter kernel](/userinfo/howtos/rivanna/custom-jupyter-kernels).
+
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
+    - pytorch/1.4.0-py37, 1.5.1 (see section above)
     - tensorflow/1.12.0-py27, 2.0.0-py36
     - python/3.8.8 under `gompic` -> moved to `goolfc`
 
@@ -35,6 +42,7 @@ Rivanna is expected to return to service by .
     - nvhpc/20.9 -> 21.9
     - cuda/11.0.228 -> 11.4.2
     - cudnn/7.6.5.32 -> 8.2.4.15
+    - pytorch/1.8.1 -> 1.10.0
     - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) -> 2.1.1; note changes to flags!
     - amptorch/20210308 -> 0.1
     - freebayes/0.9.9 -> 1.3.4
