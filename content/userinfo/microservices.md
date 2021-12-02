@@ -217,7 +217,7 @@ No charges will be incurred for stopped containers or any cluster storage.
 
 Want to run your container within an HPC environment? It can be done, using Singularity! 
 
-Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with SLURM and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
+Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with Slurm and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
 
 [**Learn more about Singularity**](/userinfo/rivanna/software/containers/).
 

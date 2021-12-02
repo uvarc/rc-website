@@ -88,7 +88,7 @@ Or, you can launch RStudio and install the packages as you would on your laptop.
 
 # Submitting a Single-Core Job to the Cluster
 
-After you have developed your R program, you can submit it to the compute nodes by using a SLURM job script similar to the following: 
+After you have developed your R program, you can submit it to the compute nodes by using a Slurm job script similar to the following: 
 
 ```
 #!/bin/bash
@@ -110,7 +110,7 @@ sbatch job.slurm
 ```
 
 # Submitting Multi-Core Jobs to the Cluster
-R programs can be written to use multiple cores on a node.  You will need to ensure that both SLURM and your R code know how many cores they will be using.  In the SLURM script, we recommend using `--cpus-per-task` to specify the number of cores.  For example:
+R programs can be written to use multiple cores on a node.  You will need to ensure that both Slurm and your R code know how many cores they will be using.  In the Slurm script, we recommend using `--cpus-per-task` to specify the number of cores.  For example:
 
 
 ```
@@ -144,12 +144,12 @@ options(mc.cores=numCores)
 
 ```
 
-Do not use the `detectCores()` function, which is often shown in tutorial examples.  It will detect the number of physical cores -- not how many core SLURM is allowing the program to use.
+Do not use the `detectCores()` function, which is often shown in tutorial examples.  It will detect the number of physical cores -- not how many core Slurm is allowing the program to use.
 
 
 # Submitting MPI Jobs to the Cluster
 
-R programs can be distributed across multiple nodes with MPI (message passing interface) and the appropriate MPI packages.  To run a parallel R job that uses MPI, the SLURM script would be similar to the following:
+R programs can be distributed across multiple nodes with MPI (message passing interface) and the appropriate MPI packages.  To run a parallel R job that uses MPI, the Slurm script would be similar to the following:
 
 ```
 #!/bin/bash

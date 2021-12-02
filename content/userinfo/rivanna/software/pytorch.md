@@ -5,43 +5,38 @@ tags = [
   "rivanna", "software, machine learning"
 ]
 draft = false
+modulename = "pytorch"
+softwarename = "PyTorch"
 title = "PyTorch on Rivanna"
-description = "TensorFlow on Rivanna"
+description = "PyTorch on Rivanna"
 author = "RC Staff"
 +++
 
 # Description
-[PyTorch](https://pytorch.org/) is an open source Python package to create deep learning networks.  The latest PyTorch versions are now provided as prebuilt [Singularity](https://www.sylabs.io/singularity/) containers on Rivanna.  The basic concept of running Singularity containers on Rivanna is described [here](/userinfo/rivanna/software/containers).
+{{% module-description %}}
+<br>
+**Software Category:** {{% module-category %}}
 
-Similar to other popular deep learning frameworks like TensorFlow, Theano and CNTK, computations supported by the PyTorch package can be accelerated on general purpose graphics processing units (GPUs).  All PyTorch container images provided on Rivanna require access to a GPU node.  Access to GPU nodes is detailed in the sections below.
+For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
-# PyTorch on Rivanna
-The PyTorch Singularity module is available on Rivanna:
+# Available Versions
+The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
 
 ```
-module load singularity
-module load pytorch/1.4.0-py37
+module spider {{< module-name >}}
 ```
 
-Follow the on-screen instructions to copy the container to your directory.
+The output of the command shows the available {{% software-name %}} module versions.
 
-To learn more about a container, use `run-help`:
+For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
 ```
-singularity run-help pytorch-1.4.0-py37.sif
+module spider {{% module-firstversion %}}
 ```
 
-The output will look like this:
-```
-This container is backed by Anaconda version 2019.10 and provides the Python 3.7 bindings for:
-    * PyTorch 1.4.0
-    * TorchVision 0.5.0
-    * Pandas 1.0.1
-    * CUDA 10.1.243
-    * CuDNN 7.6.5.32
-```
+{{< module-versions >}}
 
 # PyTorch Jupyter Notebooks
-Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. We provide a Jupyter kernel for the aforementioned PyTorch container.
+Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. PyTorch Jupyter kernels are backed by containers in the corresponding modules.
 
 ## Accessing the JupyterLab Portal
 
@@ -62,53 +57,49 @@ Click `Launch` to start the session.
 
 Once the JupyterLab instance has started, you can edit and run your notebook as described [here](/userinfo/rivanna/software/jupyterlab).
 
-# PyTorch SLURM jobs
-Singularity can make use of the local NVIDIA drivers installed on a host equipped with a GPU device.  The SLURM script needs to include the `#SBATCH -p gpu`and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the [Jobs Using a GPU](/userinfo/rivanna/slurm/#jobs-using-a-gpu) section for details.
+# PyTorch Slurm jobs
 
-To run commands in an GPU-enabled container image, load the singularity module and add the `--nv` flag when executing the singularity run or singularity exec commands.  Before running the following commands it is assumed that the container image has been copied to your home directory.
+The following is a Slurm script template. The commented numbers correspond to the items in the ensuing notes.
 
-**For example:**
 ```
-module load singularity
-singularity run --nv ~/pytorch-1.4.0-py37.sif pytorch_example.py
-```
-In the container build script, `python` was defined as the default command to be executed and singularity passes the argument(s) after the image name, i.e. `pytorch_example.py`, to the python interpreter. So the above singularity command is equivalent to
-```
-singularity exec --nv ~/pytorch-1.4.0-py37.sif python pytorch_example.py
-```
-The PyTorch container images were built to include CUDA and cuDNN libraries that are required by PyTorch.  Since these libraries are provided within each container, we do not need to load the CUDA/cuDNN libraries available on the host.
-
-Example SLURM Batch Script
-```
-#!/usr/bin/env bash
+#!/bin/bash
+#SBATCH -A mygroup
+#SBATCH -p gpu          # 1
+#SBATCH --gres=gpu:1    # 1
+#SBATCH -c 1
+#SBATCH -t 00:01:00
 #SBATCH -J pytorchtest
 #SBATCH -o pytorchtest-%A.out
 #SBATCH -e pytorchtest-%A.err
-#SBATCH -p gpu
-#SBATCH --gres=gpu:1
-#SBATCH -c 1
-#SBATCH -t 00:01:00
-#SBATCH -A mygroup
 
 module purge
-module load singularity
+module load singularity pytorch/1.8.1  # 2
 
-# Assuming that the container has been copied to the user's home directory
-singularity run --nv ~/pytorch-1.4.0-py37.sif pytorch_example.py
+singularity run --nv $CONTAINERDIR/pytorch-1.8.1.sif pytorch_example.py # 3
 ```
 
+Notes:
+
+1. The Slurm script needs to include the `#SBATCH -p gpu`and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the [Jobs Using a GPU](/userinfo/rivanna/slurm/#jobs-using-a-gpu) section for details.
+
+1. To use the pytorch container, load the singularity and pytorch modules. You may choose a different version (see `module spider` above).
+
+    Do **not** load the `cuda` or `cudnn` modules since these libraries are included with pytorch.
+
+1. The `--nv` flag sets up the container's environment to use a GPU when running a GPU-enabled application. The `run` command executes the default command defined in the container, which in this case is `python`. What follows after the `*.sif` is passed as arguments. In summary, the singularity command can be translated as: "Use the `python` interpreter inside the pytorch container to execute `pytorch_example.py` with GPU enabled.
+
 # PyTorch Interactive Jobs (ijob)
-Just as described for SLURM jobs, it is recommended to copy the PyTorch container to your home directory before starting an ijob.
 
 Start an [ijob](/userinfo/rivanna/slurm/#submitting-an-interactive-job).  Note the addition of `-p gpu` and `--gres=gpu` to request access to a GPU node and its GPU device.
 
 ```
 ijob  -A mygroup -p gpu --gres=gpu -c 1
 ```
+
 ```
 module purge
-module load singularity
-singularity run --nv ~/pytorch-1.4.0-py37.sif pytorch_example.py
+module load singularity pytorch/1.8.1
+singularity run --nv $CONTAINERDIR/pytorch-1.8.1.sif pytorch_example.py
 ```
 
 # Interaction with the Host File System

@@ -61,9 +61,9 @@ For a detailed description of building and running MPI codes on Rivanna, please 
 
 {{< rivanna-software moduleclasses="mpi" >}}
 
-# Example SLURM Scripts
+# Example Slurm Scripts
 
-This example is a SLURM job command file to run a parallel (MPI) job using the OpenMPI implementation:
+This example is a Slurm job command file to run a parallel (MPI) job using the OpenMPI implementation:
 ```
 #!/bin/bash
 #SBATCH --nodes=2
@@ -78,9 +78,9 @@ module load openmpi
 
 srun ./parallel_executable
 ```
-In this example, the SLURM job file is requesting two nodes with sixteen tasks per node for a total of 32 processes.  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from SLURM, so these are not specified.  In general, MPI jobs should use all of a node, but some codes cannot be distributed in that manner so we are showing a more general example here.
+In this example, the Slurm job file is requesting two nodes with sixteen tasks per node for a total of 32 processes.  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node, but some codes cannot be distributed in that manner so we are showing a more general example here.
 
-SLURM can also place the job freely if the directives specify only the number of tasks. In this case do not specify a node count.  This is not generally recommended, however, as it can have a significant negative impact on performance.
+Slurm can also place the job freely if the directives specify only the number of tasks. In this case do not specify a node count.  This is not generally recommended, however, as it can have a significant negative impact on performance.
 ```
 #!/bin/bash
 #SBATCH --ntasks=8

@@ -19,7 +19,7 @@ During the June maintenance, we made changes to R which **will** affect how your
 
 # 1. The gcc-built versions of R have been updated to goolf-built versions.
 Instead of loading gcc before loading R, you will need to load `goolf` or `gcc openmpi`.  For example:  `module load goolf R/4.0.0`. 
-Remember to update any SLURM scripts that have `module load gcc R` or `module load gcc R/3.x.x`.  
+Remember to update any Slurm scripts that have `module load gcc R` or `module load gcc R/3.x.x`.  
 
 # 2. The locations of the R libraries have been updated.
 We are changing the locations of the R libraries (i.e., the folders where local packages are installed).  This change will create separate folders for different compiler versions of R, which will prevent package corruption.

@@ -36,9 +36,9 @@ author = "RC Staff"
 * [Using a browser](/userinfo/rivanna/login/#web-based-access)
 * [Using FastX](/userinfo/rivanna/login/#remote-desktop-access)
 
-## Jobs / SLURM / Queues
+## Jobs / Slurm / Queues
 
-* [SLURM Overview](/userinfo/rivanna/slurm/)
+* [Slurm Overview](/userinfo/rivanna/slurm/)
 * [Queues](/userinfo/rivanna/queues/)
 
 ## Storage and File Transfer

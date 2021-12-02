@@ -41,7 +41,7 @@ module spider {{% module-firstversion %}}
 # Using SmrtLink
 On Rivanna, Smrtlink tools can be executed only in non-interactive mode without any graphical user interface.  Several Smrtlink tools support code execution on multiple cpu cores. Some of the common tools include [blasr](#running-blasr), [ngmlr](#running-ngmlr), [pbalign](#running-pbalign), and the `pbsv` (pbsv align and pbsv call) commands.
 
-In the SLURM job scripts the number of requested cpu cores (per task) is stored in the envrionment variable `SLURM_CPUS_PER_TASK`.
+In the Slurm job scripts the number of requested cpu cores (per task) is stored in the envrionment variable `SLURM_CPUS_PER_TASK`.
 
 # PacBio BAM files
 The BAM format is a binary compressed format for raw or aligned sequence reads. The associated SAM format is a text representation of the same data ([specifications for BAM/SAM](http://samtools.github.io/hts-specs/SAMv1.pdf)).
@@ -58,14 +58,14 @@ A more detailed description of the PacBio BAM fomat can be found [here](http://p
 The only required inputs to blasr are a file of reads (Fasta, PacBio BAM, bax.h5) and a reference genome (Fasta format). Although reads may be input in FASTA format, the recommended input is [PacBio BAM files](https://arcs.virginia.edu/smrtlink#pacbiobam) because these contain quality value information that is used in the alignment and produce higher quality variant detection.
 
 * `--out` : specifies the output file. Although alignments can be output in various formats, the recommended output format is PacBio BAM using the --bam option.
-* `--nproc`  : sets the number of threads used and is matched to the number of cpu cores requested for the SLURM job.
+* `--nproc`  : sets the number of threads used and is matched to the number of cpu cores requested for the Slurm job.
 
 To get a more complete description of all available command line options run this command:
 ```
 blasr --help
 ```
 
-**SLURM script example**
+**Slurm script example**
 ```
 #SBATCH -A mygroup
 #SBATCH -p standard
@@ -93,7 +93,7 @@ To get a more complete description of all available command line options run thi
 ```
 pbalign --help
 ```
-**SLURM script example**
+**Slurm script example**
 ```
 #SBATCH -A mygroup
 #SBATCH -p standard
@@ -124,7 +124,7 @@ To get a more complete description of all available command line options run thi
 ```
 ngmlr --help
 ```
-**SLURM script example**
+**Slurm script example**
 ```
 #SBATCH -A mygroup
 #SBATCH -p standard

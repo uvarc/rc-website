@@ -43,7 +43,7 @@ module spider {{% module-firstversion %}}
 # Build Your Own Version
 Users may build their own versions of {{% software-name %}} if they wish to use a different compiler/MPI combination. Instructions are available on the [{{% software-name %}} website]({{< module-homepage >}}). If using the Intel compiler, you need to add the `-heap-arrays` flag to the Fortran compiler options.
 
-# SLURM Script Example
+# Slurm Script Example
 To run {{% software-name %}} on Rivanna, a script similar to the following can be used. {{% software-name %}} has many options so only a basic example is shown.
 
 ```

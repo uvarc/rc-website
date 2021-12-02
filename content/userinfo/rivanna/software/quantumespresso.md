@@ -40,7 +40,7 @@ module spider {{% module-firstversion %}}
 
 Users may build their own versions of QE if they wish to use a different compiler+MPI combination, or to choose individual optional packages.  Instructions are available at the installation FAQ.
 
-# Example SLURM script
+# Example Slurm script
 To run the system version of QE, a script similar to the following can be used.  QE has many options so only the most basic is shown.
 ```
 #!/bin/bash

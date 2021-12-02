@@ -10,23 +10,33 @@ author = "Staff"
 
 1.  What is the link to the accord portal?
 
-	+ {{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://accord-portal.uvarc.io/" >}}
+	+ {{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://accord.uvarc.io/" >}}
+<br>
+<br>
 
 2.  Who can use ACCORD?
 
 	+ Researchers from public universities across the state of Virginia are invited to request access. ACCORD is also open to reserachers from other states who are working on COVID related projects
+<br>
+<br>
 
 3.  How much does ACCORD cost?
 
 	+ ACCORD is **free** with 1TB of storage
+<br>
+<br>
 
 4.  How much storage does ACCORD support?
 
 	+ ACCORD gives each project a free 1TB of storage. Additional storage can be purchased
+<br>
+<br>
 
 5.  How is data transferred in/out of ACCORD?
 
 	+ ACCORD uses [Globus](https://www.globus.org/) to transfer data
+<br>
+<br>
 
 6. How do I learn more about ACCORD?
 

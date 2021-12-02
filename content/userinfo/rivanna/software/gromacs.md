@@ -40,7 +40,7 @@ module spider {{% module-firstversion %}}
 
 # Usage on GPU
 
-The non-Intel version is built with CUDA support. A SLURM script template is provided below.
+The non-Intel version is built with CUDA support. A Slurm script template is provided below.
 
 ```
 #!/bin/bash

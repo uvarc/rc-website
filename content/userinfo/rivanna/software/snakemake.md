@@ -130,7 +130,7 @@ rule stringtie_assemble:
 
 - You can add as many rules as you like as long as they are sequential with inputs and outputs
 
-# SLURM for Snakemake:
+# Slurm for Snakemake:
 
 - The Snakemake pipeline can be executed using a `SLURM` script on Rivanna
 - Below is an example script to submit to the standard partition with 8 threads

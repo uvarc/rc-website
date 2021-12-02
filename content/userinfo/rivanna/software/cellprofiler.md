@@ -80,7 +80,7 @@ module load cellprofiler/3.1.8
 singularity run /scratch/$USER/cellprofiler-3.1.8.sif
 ```
 
-# Non-interactive SLURM jobs for batch image processing
+# Non-interactive Slurm jobs for batch image processing
 If you have a large number of images that all need to be processed in the same manner, you can use Rivanna's compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.1.9/help/other_batch.html).
 
 ## Setup
@@ -91,13 +91,13 @@ If you have a large number of images that all need to be processed in the same m
 
 **Note:**  The pipeline batch file created in step 3 contains hardcoded paths to the to-be-processed image files. So steps 2 and 3 need to be repeated when you want to process images in a different directory.
 
-## Create and submit the SLURM job script
+## Create and submit the Slurm job script
 
 A general premise in the batch processing workflow is that processing of images can occur independently from each other in a parallel fashion.  The easiest way to implement parallel image processing with CellProfiler is to create a job array where each job in the array (referred to as job array task) processes a unique subset of the total image set.  
 
-Let us assume that we have a directory with 100 image files to process in `/scratch/$USER/images` and that we completed steps 1-3 as described above.  The following two steps create the SLURM job script and submit it to the cluster:
+Let us assume that we have a directory with 100 image files to process in `/scratch/$USER/images` and that we completed steps 1-3 as described above.  The following two steps create the Slurm job script and submit it to the cluster:
 
-+ Create/edit SLURM job script `/scratch/mstk/cp_jobs/cellprofiler.slurm` (see below).  This script
++ Create/edit Slurm job script `/scratch/mstk/cp_jobs/cellprofiler.slurm` (see below).  This script
 defines a job array with 100 tasks, each task processing a single image,
 loads the `cellprofiler container module` and runs the `CellProfiler.py` script inside the container, and
 passes the `/scratch/$USER/pipelines/Batch_data.h5` file with the image processing definition to the CellProfiler instance
@@ -107,7 +107,7 @@ cd /scratch/$USER/cp_jobs
 sbatch cellprofiler.slurm
 ```
 
-The SLURM job script `cellprofiler.slurm`:
+The Slurm job script `cellprofiler.slurm`:
 ```
 #!/bin/bash
 
@@ -136,4 +136,4 @@ singularity exec /scratch/$USER/cellprofiler-3.1.8.sif cellprofiler -c -r -p $BA
 
 + The directive `#SBATCH --cpus-per-task=1` specifies that each job task, i.e. each CellProfiler instance, runs on a single cpu core since CellProfiler does not support multi-threading.
 
-+ `SLURM_ARRAY_TASK_ID` is a variable set by SLURM when the job is running. For each job array task this variable is set to a unique value between 1 and 100 (job array size). We use it to define for each job array task which image needs to be processed.
++ `SLURM_ARRAY_TASK_ID` is a variable set by Slurm when the job is running. For each job array task this variable is set to a unique value between 1 and 100 (job array size). We use it to define for each job array task which image needs to be processed.

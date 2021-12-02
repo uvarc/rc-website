@@ -21,7 +21,7 @@ author = "RC Staff"
 Many popular software packages for computational chemistry are available on Rivanna.
 
 # General considerations
-Most computational chemistry packages utilize MPI for parallel execution.  Accordingly, the SLURM job scripts should contain the following two SBATCH directives:
+Most computational chemistry packages utilize MPI for parallel execution.  Accordingly, the Slurm job scripts should contain the following two SBATCH directives:
 ```
 #SBATCH -N <M>                  # request M nodes (replace with a number)
 #SBATCH --ntasks-per-node=<L>   # request L MPI processes per node

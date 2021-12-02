@@ -40,7 +40,7 @@ type = "rivanna"
     <td class="tg-dc35">Free</td>
     <td class="tg-dc35">{{% backup-policy rivanna_home %}}</td>
     <td class="tg-dc35">Rivanna</td>
-    <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna interactively. SLURM jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>. The <code>/home</code> directory is a personal storage space that is not shareable with other users.</td>
+    <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna interactively. Slurm jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>. The <code>/home</code> directory is a personal storage space that is not shareable with other users.</td>
   </tr>
   <tr>
     <td class="tg-hy9w"><a href="/userinfo/storage/non-sensitive-data/#scratch"><code>/scratch</code></a></td>

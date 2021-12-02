@@ -64,12 +64,12 @@ source $EBROOTINTEL/parallel_studio_xe_20**.*.***/bin/psxevars.sh}}
 ```
 Fill in the `*` with the actual path.
 
-In your SLURM script, replace `srun myprog` with
+In your Slurm script, replace `srun myprog` with
 ```
 #SBATCH -n <number_of_tasks>
 ...
 mpirun -trace -bootstrap slurm -n ${SLURM_NTASKS} myprog
 ```
-The SLURM variable `${SLURM_NTASKS}` will expand to the `<number_of_tasks>` that you specify in the SBATCH directive.
+The Slurm variable `${SLURM_NTASKS}` will expand to the `<number_of_tasks>` that you specify in the SBATCH directive.
 
 This will write a trace file (`*.stf`) that you can analyze with `traceanalyzer`. You will need to run this on [FastX Web MATE desktop environment](/userinfo/rivanna/logintools/fastx/) (recommended) or add the `-Y` flag when you ssh into Rivanna.

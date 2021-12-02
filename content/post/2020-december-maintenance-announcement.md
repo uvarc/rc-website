@@ -45,7 +45,7 @@ Rivanna is expected to return to service later in the day on December 17. The in
         If you need to use a non-default version of an application, please specify the version when you load the module. Use `module spider` to [find prerequisites](/userinfo/rivanna/software/modules).
  
 1. New nodes and tools:
-    - Two RTX 2080 Ti nodes (10 GPU devices each) in `gpu` partition - use `--gres:rtx2080` in SLURM script
+    - Two RTX 2080 Ti nodes (10 GPU devices each) in `gpu` partition - use `--gres:rtx2080` in Slurm script
     - Visual Studio Code Server on Open OnDemand
     - nvhpc/20.9 - NVIDIA HPC SDK (CUDA 11.0)
     - awscli/2.1.10 - command line interface to Amazon Web Services

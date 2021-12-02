@@ -142,13 +142,13 @@ When you are done, quit the JupyterLab application.  The interactive session wil
 
 # Running a Julia Batch Jobs on Rivanna
 
-Rivanna uses the SLURM resource manager to schedule and run jobs on the
-cluster compute nodes. The following are example SLURM scripts for
+Rivanna uses the Slurm resource manager to schedule and run jobs on the
+cluster compute nodes. The following are example Slurm scripts for
 submitting different types of Julia batch jobs to the Rivanna cluster.
 
 ## Submitting a batch job using a single core of a compute node.
 
-Once your program is debugged, we recommend running in batch mode when possible. This runs the job in the background on a compute node. Write a SLURM script similar to the following:
+Once your program is debugged, we recommend running in batch mode when possible. This runs the job in the background on a compute node. Write a Slurm script similar to the following:
 
 ```
 #!/bin/bash
@@ -176,7 +176,7 @@ msg="hello world"
 println(msg)
 ```
 ## Submitting a batch job using multiple cores on a compute node
-The `Distributed` package can be used to run Julia code across multiple cores of a compute node. The SLURM script in this case would look like the following:
+The `Distributed` package can be used to run Julia code across multiple cores of a compute node. The Slurm script in this case would look like the following:
 ```
 #!/bin/bash
 # This is a slurm script for running Julia across
@@ -237,14 +237,14 @@ Number of workers: 8
 Documentation on distributed computing with Julia can be accessed at the URL
 (https://docs.julialang.org/en/v1/manual/distributed-computing/)[https://docs.julialang.org/en/v1/manual/distributed-computing/]
 
-# Julia Jobs using SLURM Job Arrays
-SLURM has a mechanism for launching multiple independent jobs with one
+# Julia Jobs using Slurm Job Arrays
+Slurm has a mechanism for launching multiple independent jobs with one
 job script using the `--array` directive.
 
 ## Array of Multiple Single-Core Julia Jobs
 
 The following slurm script shows how to run 5 single core Julia jobs using
-SLURM job arrays.
+Slurm job arrays.
 
 ```
 #!/bin/bash
@@ -271,13 +271,13 @@ export SLURM_ARRAY_TASK_ID
 julia jobArray.jl
 ```
 The `jobArray.jl` code can use the `SLURM_ARRAY_TASK_ID` shell variable assigned by
-SLURM for indexing input file.
+Slurm for indexing input file.
 ```
 using Distributed
 num_replication = Base.parse(Int, ENV["SLURM_ARRAY_TASK_ID"])
 @everywhere println("Job array task id: ", num_replication, " on host $(gethostname())")
 ```
-The SLURM script will produce 5 separate output files, each of the form
+The Slurm script will produce 5 separate output files, each of the form
 ```
 Job array task id: 4 on host udc-ba25-33c0
 ```

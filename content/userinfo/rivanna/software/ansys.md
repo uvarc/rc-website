@@ -47,7 +47,7 @@ export ANSYSLMD_LICENSE_FILE=flexnetport@hostname1:flexnetport@hostname2:flexnet
 ```
 You must obtain the values for `ansysliport` (a port number), `flexnetport` (another port number), and the names of the hosts from your group's license administrator.  If you have only a single license server host you need only list the one hostname in each variable.
 
-You can add these lines to your `~/.bashrc` file or you may add them to your SLURM batch scripts.
+You can add these lines to your `~/.bashrc` file or you may add them to your Slurm batch scripts.
 
 # Using ANSYS Workbench
 If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/config/kwinrc` file and add the following line:
@@ -67,7 +67,7 @@ Be sure to delete your Open OnDemand session if you finish before your requested
 # Multi-Core Jobs
 You can write a batch script to run ANSYS jobs.  Please refer to ANSYS documentation for instructions in running from the command line.  These examples use threading to run on multiple cores on a single node.
 
-**ANSYS SLURM Script:**
+**ANSYS Slurm Script:**
 ```
 #!/bin/bash
 #SBATCH --nodes=1
@@ -86,7 +86,7 @@ module load ansys/19.2
 ansys192 -np ${SLURM_CPUS_PER_TASK} -def /scratch/yourpath/yourdef.def -ini-file/scratch/yourpath/yourresfile.res
 ```
 
-**CFX SLURM Script:**
+**CFX Slurm Script:**
 ```
 #!/bin/bash
 #SBATCH --nodes=1
@@ -103,9 +103,9 @@ cfx5solve -double -def /scratch/yourpath/mydef.def -par-local -partition "$SLURM
 # Multi-Node MPI Jobs
 
 You must use IntelMPI.  IBM MPI (Platform) will not work on our system.
-For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using SLURM's task launcher.  Also include the `-slurm` option.  It is generally better with ANSYS and related products to request a total memory over all processes rather than using memory per core, because a process can exceed the allowed memory per core.  You must have access to a license that supports HPC usage.  These examples also show the minimum number of command-line options; you may require more for large jobs.
+For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using Slurm's task launcher.  Also include the `-slurm` option.  It is generally better with ANSYS and related products to request a total memory over all processes rather than using memory per core, because a process can exceed the allowed memory per core.  You must have access to a license that supports HPC usage.  These examples also show the minimum number of command-line options; you may require more for large jobs.
 
-**Fluent SLURM Script:**
+**Fluent Slurm Script:**
 ```
 #!/bin/bash
 #SBATCH --nodes=2
@@ -128,7 +128,7 @@ module load ansys/19.2
 fluent 3ddp -g -t${SLURM_NPROCS} -cnf=hosts -srun -pinfiniband -mpi=intel -ssh -i myjournalfile.jou
 ```
 
-**CFX SLURM script:**
+**CFX Slurm script:**
 ```
 #!/bin/bash
 #SBATCH --nodes=2

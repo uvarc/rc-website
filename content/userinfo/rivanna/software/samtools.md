@@ -67,7 +67,7 @@ Finally, `samtools flagstat` is a good way to get simple statistics from a `BAM`
 samtools flagstat example_sorted.bam
 ```
 
-# SLURM Script Example
+# Slurm Script Example
 To run {{% software-name %}} on Rivanna, a script similar to the following can be used.
 
 ```

@@ -48,7 +48,7 @@ For further details please visit [here](https://github.com/uvarc/rivanna-docker/
 # Usage
 
 ## Python script
-Please submit jobs to the GPU partition. A SLURM script template is provided below.
+Please submit jobs to the GPU partition. A Slurm script template is provided below.
 
 ```
 #!/bin/bash

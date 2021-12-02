@@ -104,9 +104,9 @@ include required(classpath("application"))
 ...
 ```
 
-## SLURM backend
+## Slurm backend
 
-In our customized `cromwell-rivanna.conf`file, the SLURM backend is specified via the `actor-factory` field and should be set to `ConfigBackendLifecycleActorFactory`. 
+In our customized `cromwell-rivanna.conf`file, the Slurm backend is specified via the `actor-factory` field and should be set to `ConfigBackendLifecycleActorFactory`. 
 ```
 backend {
     default = "SLURM"
@@ -190,7 +190,7 @@ Note: The runtime attributes defined in your WDL task will override these defaul
 
 ## The `submit` field
 
-The `<workflow_root>/call-<call_name>/execution/` directory for each call will contain a script file, which will have the SLURM job submission command formed by the submit code-block, using the runtime attributes defined earlier.
+The `<workflow_root>/call-<call_name>/execution/` directory for each call will contain a script file, which will have the Slurm job submission command formed by the submit code-block, using the runtime attributes defined earlier.
 ```
 ...
             config {

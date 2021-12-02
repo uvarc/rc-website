@@ -170,11 +170,11 @@ Please check the user manual for your application/container before running on a 
 
 4. Upload the “executable script” to Rivanna. In Open onDemand dashboard view, on the black ribbon across the top, click on Files > Home Directory.  This will open a page that shows the files that you have in your home directory on Rivanna.  At the top of the page, toward the right, is a button labelled “Upload”.  Click on that button.  In the dialog box that appears, click on “Choose File”.  This will allow you to go to the downloaded file and select it.
 
-5. Create a SLURM script to run your code.  The SLURM script list the resources and instructions that are needed to run your “executable script”.   See the following link:
+5. Create a Slurm script to run your code.  The Slurm script list the resources and instructions that are needed to run your “executable script”.   See the following link:
 
       [https://www.rc.virginia.edu/userinfo/rivanna/slurm/](https://www.rc.virginia.edu/userinfo/rivanna/slurm/)
 
-6. Open a terminal window on Rivanna, and move to the location where your scripts are.  We recommend using the web-based FastX application (see below). Once in a terminal window, type sbatch followed my the name of your SLURM script.
+6. Open a terminal window on Rivanna, and move to the location where your scripts are.  We recommend using the web-based FastX application (see below). Once in a terminal window, type sbatch followed my the name of your Slurm script.
 
       [https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access)
 - - -
@@ -182,7 +182,7 @@ Please check the user manual for your application/container before running on a 
 # Job Management
 
 ## How do I submit jobs?
-You submit jobs by writing a SLURM script and submitting it with the  sbatch command.  Please see our SLURM documentation page.
+You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our Slurm documentation page.
 
 ## How do I submit an interactive job?
 If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/rivanna/ood/overview) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/rivanna/ood/desktop) request.  
@@ -195,7 +195,7 @@ For more information see the [documentation](/userinfo/rivanna/slurm).
 After logging in, run the command `qlist` to see a list of queues and their availability.  Run `qlimits` for the restrictions on submitting to each queue.
 
 ## How do I choose which queue to use?
-Queues (partitions to SLURM) are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  More information about queue policy is at the Rivanna homepage.
+Queues (partitions to Slurm) are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  More information about queue policy is at the Rivanna homepage.
 
 ## How do I check the status of my jobs?
 Run the command `jobq`
@@ -210,7 +210,7 @@ Run
 ```
 squeue -j <jobid> --start
 ```
-SLURM will provide an estimate of the day and time your job will start.
+Slurm will provide an estimate of the day and time your job will start.
 
 ## Why was my job killed?
 Usually this is because you inadvertently submitted the job to run in a location that the compute nodes can't access or is temporarily unavailable.  If your jobs exit immediately this is usually why.  Other common reasons include using too much memory, too many cores, or running past a job's timelimit.
@@ -245,7 +245,7 @@ allocations
 ```
 
 ## Why do I get `sbatch error: Batch script contains DOS line breaks`
-If you use a Windows editor to create SLURM batch scripts, when you try to run them you may encounter an error
+If you use a Windows editor to create Slurm batch scripts, when you try to run them you may encounter an error
 ```
 sbatch: error: Batch script contains DOS line breaks (\r\n)
 sbatch: error: instead of expected UNIX line breaks (\n).

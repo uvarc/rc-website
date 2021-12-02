@@ -63,4 +63,4 @@ totalview &
 ```
 
 # Using the Client on Compute Nodes
-If you have a long debugging job or you want to debug an MPI application, you should run an interactive job through SLURM using the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) interactive application.  When the Desktop is launched, start a terminal window and type the above commands as usual.
+If you have a long debugging job or you want to debug an MPI application, you should run an interactive job through Slurm using the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) interactive application.  When the Desktop is launched, start a terminal window and type the above commands as usual.

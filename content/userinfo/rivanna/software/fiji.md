@@ -51,9 +51,9 @@ module load fiji
 ImageJ-linux --mem=32G &
 ```
 
-# Run a Fiji script as SLURM Job
+# Run a Fiji script as Slurm Job
 
-To execute a Fiji script non-interactively on a compute node, you can use the following SLURM job script template.
+To execute a Fiji script non-interactively on a compute node, you can use the following Slurm job script template.
 
 ```
 #!/bin/bash
