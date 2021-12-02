@@ -30,6 +30,8 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
     - pytorch/1.4.0-py37, 1.5.1 (see section above)
     - tensorflow/1.12.0-py27, 2.0.0-py36
     - python/3.8.8 under `gompic` -> moved to `goolfc`
+    - matlab/R2018b, 2019a, R2019b
+    - mathematica/12.0, 12.1
     - R/3.2.1, 3.4.4, 3.5.3, 4.0.0, 4.1.0
 
     **Attention R users**: We will streamline the R modules to include the following versions: 3.6.3, 4.0.3, and 4.1.1. The default version will be 4.0.3. If you have hard-coded an older version of R in your scripts (e.g., R/3.5.3), you will need to update your scripts to specify one of the newer versions. If you need to switch to a newer version of R, your library containing the packages that you have installed will have to be updated. You can attempt this manually, or you can contact hpc-support@virginia.edu for help with automating the installation of your packages.
@@ -43,6 +45,8 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
 
    Upgrades to default versions of applications:
     - R/3.6.3 -> 4.0.3
+    - matlab/R2021a -> R2021b
+    - mathematica/12.2 -> 12.3
     - nvhpc/20.9 -> 21.9
     - cuda/11.0.228 -> 11.4.2
     - cudnn/7.6.5.32 -> 8.2.4.15
