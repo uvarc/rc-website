@@ -5,13 +5,13 @@ tags = [
   "rivanna", "software", "compiler","gpu"
 ]
 draft = false
-title = "Compiling GPU Applications on Rivanna"
+title = "NVHPC"
 description = "Compiling GPU Applications on Rivanna"
 author = "RC Staff"
 
 +++
 
-# Compiling For a GPU
+# Compiling for a GPU
 
 Using a GPU can accelerate a code, but requires special programming and compiling.  Several options are available for GPU-enabled programs.
 
