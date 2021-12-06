@@ -15,9 +15,14 @@ draft = false
 
 <p class="lead">Efficient and reliable data transfer is a critical component of research computing. A variety of useful tools is available for rapid data transfer, whether you are transferring data from an external site or within different computing environments at UVA. </p>
 
-- - -
+---
 
-# Selecting a Transfer Method
+# Common Scenarios
+
+* Transfer public or not-highly sensitive data between local workstation/laptop and UVA storage
+* Transfer highly-sensitive data to Ivy storage
+* Transfer data between external institutions/supercomputing centers and UVA 
+* [Transfer between Rivanna and Cloud storage](#transfering-data-to-cloud-storage)
 
 The data transfer method you choose heavily relies on the [data sensitivity classification](https://security.virginia.edu/university-data-protection-standards), where the data are currently located and to where you want to transfer the data. Click on a row in the table below to learn more about the data transfer methods available for a specific scenario.
 
@@ -171,7 +176,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
-					<li>Transfer sensitive data collected at another institution to an Ivy Central Storage share at UVA.</li>
+					<li>Transfer public or not-highly sensitive data collected at another institution to UVA storage.</li>
 					<br>
 					<li>Transfer results from an analysis carried out on a remote supercomputer at a national lab or supercomputing center.</li>
 				</ul>
@@ -201,6 +206,68 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<p align="center"><b>Data Transfer Methods</b></p>
 				<ul>
 					<li><a href="#globus">Globus Connect</a></li>
+				</ul>
+			</td>
+		</tr>	
+	</tbody>	
+</table>
+</div>
+
+---
+
+<div>
+<table table table-hover">
+	<col width="25%">
+	<col width="25%">
+	<col width="50%">
+	<thead>
+		<tr>
+			<th class="text-center">System 1</th>
+			<th class="text-center">System 2</th>
+			<th class="text-center">Example Scenario</th>
+		</tr>	
+	</thead>
+	<tbody style="font-size:14px">	
+		<tr data-toggle="collapse" data-target="#accordion4" class="clickable">
+			<td align="center" valign="top">
+				<i class="fas fa-building fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<br>
+				<b>Rivanna Storage</b>
+			</td>
+			<td align="center" valign="top">
+				<i class="fas fa-cloud fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
+				<br>
+				<b>Cloud Storage</b>
+			</td>
+			<td vertical-align="middle" style="padding:25px 10px">
+				<ul>
+					<li>Transfer public or not-highly sensitive data from Project & Value storage or Rivanna home & scratch directories to AWS cloud storage.</li>
+				</ul>
+				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
+			</td><br><br>
+		</tr>
+		<tr id="accordion4" valign="top" class="collapse">
+			<td>
+				<p align="center"><b>Sources</b></p>
+				Any institution that uses Globus, such as:
+				<ul>
+					<li><a href="/userinfo/storage/non-sensitive-data/#home/">/home</a></li>
+					<li><a href="/userinfo/storage/non-sensitive-data/#scratch/">/scratch</a></li>
+					<li><a href="/userinfo/storage/non-sensitive-data/#project/">Project Storage</a></li>
+					<li><a href="/userinfo/storage/research-value/">Value Storage</a></li>
+				</ul>
+			</td>
+			<td>
+				<p align="center"><b>Destinations</b></p>
+				<ul>
+					<li>AWS S3</li>
+					<li>AWS S3 Deep Glacier</li>
+				</ul>
+			</td>
+			<td>
+				<p align="center"><b>Data Transfer Methods</b></p>
+				<ul>
+					<li><a href="/userinfo/howtos/storage/aws-s3/">AWS command line tools</a></li>
 				</ul>
 			</td>
 		</tr>	
@@ -256,7 +323,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
                 <div style="float:right; margin-left:2rem;"><i class="fas fa-6x fa-laptop-code"></i></div>
 			<h6 class="card-subtitle mb-2 text-muted">Transferring Files from a Terminal</h6>
 				<p class="card-text">
-					Researchers who are comfortable with the command line can use a variety of command line tools to transfer their data between their laptops and storage systems. Programs such as <code>scp</code>, <code>sftp</code>, and <code>rsync</code> can be used to quickly transfer files.
+					Researchers who are comfortable with the command line can use a variety of command line tools to transfer their data between their laptops and storage systems. Programs such as <code>scp</code>, <code>sftp</code>, <code>rsync</code> and <code>aws cli</code> can be used to quickly transfer files.
 				</p>
 			<a href="/userinfo/rivanna/logintools/cl-data-transfer" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
 		</div>
@@ -272,4 +339,12 @@ When using a Linux file system, users can invoke generic Linux commands to manag
 - <a href="http://www.linuxplanet.com/linuxplanet/tutorials/6666/1" target="_blank">Navigating the Linux Filesystem</a>
 - <a href="https://swcarpentry.github.io/shell-novice/" target="_blank">Shell Novice</a>
 
-For more help, please feel free to contact RC staff to set up a consultation or visit us during office hours. 
+# Transfering Data to Cloud Storage
+ 
+Several command line tools are available to transfer data from your UVA storage locations to the cloud. On Rivanna we provide the `rsync` and `aws cli` tools to transfer files files from Project, Value and Rivanna home & scratch directories to AWS storage.
+
+[Learn more about the AWS CLI tools](/userinfo/howtos/storage/aws-s3/)
+
+{{% callout %}}
+For more help, please feel free to contact RC staff to set up a consultation or visit us during [office hours](/support/#office-hours). 
+{{% /callout %}}
