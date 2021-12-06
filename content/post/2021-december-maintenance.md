@@ -22,7 +22,7 @@ Users will be unable to transfer data using Globus during the maintenance period
 
 We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. To request an A100 GPU in Slurm scripts, use `--gres=gpu:a100`.
 
-**Attention PyTorch/TensorFlow users:** We are removing several PyTorch and TensorFlow versions, together with the corresponding Jupyter kernels, that are not compatible on the A100. For the sake of reproducibility/continuity of ongoing projects, the containers will be accessible from `/share/resources/containers/singularity/archive` and can be used to [install your own Jupyter kernel](/userinfo/howtos/rivanna/custom-jupyter-kernels). You may use them on other GPUs by excluding the A100 via the Slurm option `-x udc-an28-[1,7]`.
+**Attention PyTorch/TensorFlow users:** We are removing all the non-default PyTorch and TensorFlow versions, together with the corresponding Jupyter kernels, as they are not compatible on the A100, and adding a new version that will replace the current default (1.8.1 -> 1.10.0 for PyTorch; 2.4.1 -> 2.7.0 for TensorFlow). For the sake of reproducibility/continuity of ongoing projects, the deprecated containers will be accessible from `/share/resources/containers/singularity/archive` and can be used to [install your own Jupyter kernel](/userinfo/howtos/rivanna/custom-jupyter-kernels). You may use them on other GPUs by excluding the A100 via the Slurm option `-x udc-an28-[1,7]`.
 
 ### Modules
 
