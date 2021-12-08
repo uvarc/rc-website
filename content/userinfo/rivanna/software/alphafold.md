@@ -81,20 +81,19 @@ singularity run -B $(realpath $ALPHAFOLD_DATA_PATH):/data \
     "$@"
 ```
 
-#### Explanation of Singularity flags
+### Explanation of Singularity flags
 
 1. The database and models are stored in `$ALPHAFOLD_DATA_PATH`.
 1. A cache file `ld.so.cache` will be written to `/etc`, which is not allowed on Rivanna. The workaround is to bind-mount e.g. the current working directory to `/etc` inside the container. `[-B .:/etc]`
 1. You must launch AlphaFold from `/app/alphafold` inside the container due to [this issue](https://github.com/deepmind/alphafold/issues/32). `[--pwd /app/alphafold]`
 1. The `--nv` flag enables GPU support.
 
-#### Explanation of AlphaFold flags
+### Explanation of AlphaFold flags
 
 1. The default command of the container is `/app/run_alphafold.sh`.
 1. As a consequence of the Singularity `--pwd` flag, the fasta and output paths must be *full paths* (e.g. `/scratch/$USER/mydir`, not *relative paths* (e.g. `./mydir`). You may use `$PWD` as demonstrated.
 1. The `max_template_date` is of the form `YYYY-MM-DD`.
 1. Only the database paths in `mark_flags_as_required` of [run_alphafold.py](https://github.com/deepmind/alphafold/blob/main/run_alphafold.py) are included because the optional paths depend on `db_preset` (`full_dbs` or `reduced_dbs`) and `model_preset`.
-```
 
 # Slurm Script
 
