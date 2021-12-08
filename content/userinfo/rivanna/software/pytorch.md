@@ -35,6 +35,9 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
+## A100 GPU compatibility
+Versions 1.6 and older are not compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option `-x udc-an28-[1,7]`.
+
 # PyTorch Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. PyTorch Jupyter kernels are backed by containers in the corresponding modules.
 

@@ -19,24 +19,7 @@ TensorFlow code is provided in two flavors, either with or without support of ge
 Keras is a high-level neural networks application programming interface (API), written in Python and capable of running on top of TensorFlow, CNTK, or Theano.  Since version 1.12.0, TensorFlow contains its own Keras API implementation as described on the TensorFlow website.
 
 # What is inside the TensorFlow containers?
-Most containers provide documentation regarding the main applications that have been installed inside. This information can be queried with the `singularity run-help` command.
-```
-module load singularity
-module load tensorflow/2.1.0-py37
-singularity run-help $CONTAINERDIR/tensorflow-2.1.0-py37.sif
-```
-Example Output:
-```
-This container provides the Python 3.7.5 bindings for:
-    * Tensorflow 2.1.0 with Keras implementation
-    * Keras Visualization Toolkit 0.4
-    # tflearn 0.3.2
-    * scikit-learn 0.22.1
-    * Pandas 1.0.0
-    * OpenCV 4.2.0.32
-    * CUDA 10.1.243
-    * CuDNN 7.6.4.38
-```
+The TensorFlow modules on Rivanna include common Python packages such as Matplotlib and OpenCV. See <https://hub.docker.com/r/uvarc/tensorflow> for details.
 
 # Local Copy of Container Image
 The TensorFlow container images contain all the libraries and software packages required to run TensorFlow.  In order to run Slurm or interactive jobs (ijobs), it is best practice to create a local copy of the container image in your own /home or /scratch directory. The container images can be copied like any other file on Rivanna.
@@ -47,6 +30,9 @@ module load singularity
 module avail tensorflow
 ```
 Loading of any of these container modules produces an on-screen message with instructions on how to copy the TensorFlow container image file, which resides in `$CONTAINERDIR`.
+
+## A100 GPU compatibility
+Older versions may not be compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option `-x udc-an28-[1,7]`.
 
 # TensorFlow Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available:

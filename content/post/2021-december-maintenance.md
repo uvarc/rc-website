@@ -29,6 +29,8 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
     - pytorch/1.4.0-py37, 1.5.1 (see section above)
     - tensorflow/1.12.0-py27, 1.12.0-py36, 2.0.0-py36, 2.1.0-py37 (see section above)
+    - cuda/9.2.148.1, 10.1.168
+    - cudnn/7.4.1.5
     - python/3.8.8 under `gompic` -> moved to `goolfc`
     - matlab/R2018b, 2019a, R2019b
     - mathematica/12.0, 12.1
