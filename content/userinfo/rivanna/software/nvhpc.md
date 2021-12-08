@@ -5,13 +5,13 @@ tags = [
   "rivanna", "software", "compiler","gpu"
 ]
 draft = false
-title = "Compiling GPU Applications on Rivanna"
+title = "NVHPC"
 description = "Compiling GPU Applications on Rivanna"
 author = "RC Staff"
 
 +++
 
-# Compiling For a GPU
+# Compiling for a GPU
 
 Using a GPU can accelerate a code, but requires special programming and compiling.  Several options are available for GPU-enabled programs.
 
@@ -25,26 +25,23 @@ OpenACC is a standard
 
 {{< module-versions module="nvhpc" >}}
 
-## GPU architecture `-arch`
-According to the [CUDA documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list), "in the CUDA naming scheme, GPUs are named `sm_xy`, where `x` denotes the GPU generation number, and `y` the version in that generation." The documentation contains details about the architecture and the corresponding `xy` value. On Rivanna, the GPU nodes are K80, P100, V100, and RTX 2080 Ti, which are Kepler, Pascal, Volta, and Turing, respectively. In summary, please use the following values when compiling CUDA code on Rivanna.
+## GPU architecture
+According to the [CUDA documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list), "in the CUDA naming scheme, GPUs are named `sm_xy`, where `x` denotes the GPU generation number, and `y` the version in that generation." The documentation contains details about the architecture and the corresponding `xy` value. The *compute capability* is `x.y`.
 
-| GPU Type | Architechture | `xy` | CUDA Version |
-| --- | --- | --- | --- |
-| K80 | Kepler | 37 | 5 - 10 (deprecated from 11) |
-| P100 | Pascal | 60 | 8+ |
-| V100 | Volta | 70 | 9+ |
-| RTX 2080 Ti | Turing | 75 | 10+ |
+Please use the following values when compiling CUDA code on Rivanna.
+
+| Type | GPU | Architechture | Compute Capability | CUDA Version |
+| --- | --- |  --- | --- | --- |
+| Data Center |K80 | Kepler | 3.7 | 5 - 11 |
+|             |P100 | Pascal | 6.0 | 8+ |
+|             |V100 | Volta | 7.0 | 9+ |
+|             |A100 | Ampere | 8.0 | 11+ |
+| GeForce     |RTX 2080 Ti | Turing | 7.5 | 10+ |
+|             |RTX 3090 (coming soon) | Ampere | 8.6 | 11+ |
 
 <br>
 
-Therefore, if you need your code to work on all GPU types, please load CUDA version 10:
+As an example, if you are only interested in V100 and A100:
 ```
-module load cuda/10.2.89
-```
-and provide a list of NVCC flags, e.g.
-```
--gencode arch=compute_37,code=sm_37 \
--gencode arch=compute_60,code=sm_60 \
--gencode arch=compute_70,code=sm_70 \
--gencode arch=compute_75,code=sm_75
+-gencode arch=compute_70,code=sm_70 -gencode arch=compute_80,code=sm_80
 ```

@@ -33,7 +33,7 @@ The following examples detail how to transfer data between your local computer a
 - `mygroup_name` is the name of your `/project` directory.
 - `my_directory` is the directory to which you wish to copy the file.
 
-To copy a file:
+## To copy a file
 
 From your computer to `/project` storage:
 
@@ -174,6 +174,12 @@ Have rsync print the list it will transfer without carrying out the tranfers.  E
 ```
 rsync -Pa --delete --dry-run ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
 ```
+
+# AWS CLI
+
+The AWS Command Line Interface (CLI) is a unified tool to manage your AWS services, including data transfer.
+
+[Learn more about the AWS CLI tools](/userinfo/howtos/storage/aws-s3/).
 
 # Globus CLI
 
