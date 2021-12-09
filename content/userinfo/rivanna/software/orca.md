@@ -84,6 +84,10 @@ module load orca
 $orcadir/orca my.inp > my.out
 ```
 
+**Important notes:**
+- The `nprocs` in `*.inp` should be equal to the total number of cores requested in your Slurm script.
+- Do not run multi-node ORCA jobs from value storage. (See [here](https://orcaforum.kofo.mpg.de/viewtopic.php?f=8&t=4188&p=17142&hilit=failed+to+store+the+Coulomb+matrix#p17142).) We recommend scratch.
+
 # References
 
 For more information please visit:
