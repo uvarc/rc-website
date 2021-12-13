@@ -29,11 +29,12 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
     - pytorch/1.4.0-py37, 1.5.1 (see section above)
     - tensorflow/1.12.0-py27, 1.12.0-py36, 2.0.0-py36, 2.1.0-py37 (see section above)
-    - cuda/9.2.148.1, 10.1.168
+    - cuda/9.2.148.1
     - cudnn/7.4.1.5
     - python/3.8.8 under `gompic` -> moved to `goolfc`
     - matlab/R2018b, 2019a, R2019b
     - mathematica/12.0, 12.1
+    - epacts/3.3.0 - replaced by 3.3.2 under `goolf/7.1.0_3.1.4`
     - R/3.2.1, 3.4.4, 3.5.3, 4.0.0, 4.1.0
 
     **Attention R users**: We will streamline the R modules to include the following versions: 3.6.3, 4.0.3, and 4.1.1. The default version will be 4.0.3. If you have hard-coded an older version of R in your scripts (e.g., R/3.5.3), you will need to update your scripts to specify one of the newer versions. If you need to switch to a newer version of R, your library containing the packages that you have installed will have to be updated. You can attempt this manually, or you can contact hpc-support@virginia.edu for help with automating the installation of your packages.
