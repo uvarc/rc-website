@@ -4,6 +4,8 @@ draft = false
 date = "2021-10-11"
 images = [""]
 author = "Staff"
+categories = ["accord"]
+tags = ["accord","python","r","hipaa","sensitive-data"]
 +++
 
 ***
