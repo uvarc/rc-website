@@ -53,8 +53,8 @@ timeout = "60000"
   rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
 
 [params.rivanna]
-  totalNodes = "595"
-  totalCores = "22598"
+  totalNodes = "575"
+  totalCores = "20476"
   scratchCapacity = "1.9PB"
   totalStorageCapacity = "8PB"
 
