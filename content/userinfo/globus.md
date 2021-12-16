@@ -148,12 +148,12 @@ You can share folders to either specific individuals, or to groups that you crea
 1. Open the [Globus web interface](https://www.globus.org/) and log in using UVA Netbadge.
 2. From the Transfer Files interface, log in to the UVA Main-DTN collection as described above.  
 3. Navigate in the folder structure of that collection until you find the folder you want to share. Highlight it.
-4. Next, select the Share link near the top of the files window.
+4. Next, select the Share link on the right side of the files window.
   <img src="/images/globus-shared-endpoint.png" width="700" height="443" alt="create-share">
-6. Globus regards shared folders as collections, so you must create a new collection to share the folder.  Clicking on Share allows you to "Add a Shared Endopint." You can only create and manage shared collections for directories or files that you own and can access. Provide a Display Share Name (required) and a description (optional).
-7. Click CREATE. Your new share will be created.
+6. Globus regards shared folders as collections, so you must create a new collection to share the folder.  Clicking on Share allows you to "Add a Guest Collection." You can only create and manage guest collections for directories or files that you own and can access. Provide a Display Share Name (required) and a description (optional).
+7. Click "Create Share". Your new share will be created.
   <img src="/images/globus-create-share.png" alt="create-share" width="700" height="536">
-8. Now click Add Permissions in the upper right. You _must_ go through this even if you do not change permissions from the default.
+8. Now click "Add Permissions - Share With" in the upper right. You _must_ go through this even if you do not change permissions from the default.
     - **Path** - Leave this set to `/` since it refers to the path relative to the directory you are sharing from.
     - **Share With** - Decide whether you want to share with individual users or with a group. **Please do not** set this to "All Users" or "Public". If you share with an individual user, follow the instructions below. If you choose to share with a group, you will first need to create that and add users to it by using the GROUPS tab at the top of the page.
     - **Identity/E-mail** - You can look up other Globus users by searching for a part of their name or institution. If you cannot find the individual, you should contact them to make sure they have signed into Globus at least once. Generally, users at other colleges and universities can be identified with the simple form of their email address, like `mst3k@virginia.edu` or `jdoe@mit.edu`, etc. Users who are unaffiliated with a university can still sign into Globus using Google (identified as `username@gmail.com`) or by creating a username and password in Globus (identified as `userid@globusid.org`)  

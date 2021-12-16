@@ -46,23 +46,6 @@ module spider {{% module-firstversion %}}
 
 We prepared a Docker image based on the official Dockerfile with some modifications. 
 
-### Version 2.0
-
-The biggest issues are the TensorFlow version and missing cudnn/cusolver libraries as reported [here](https://github.com/deepmind/alphafold/pull/28).
-
-Our current solution is:
-
-- keep CUDA version at 11.0;
-- downgrade Python to 3.8.10;
-- downgrade TensorFlow to 2.4.1;
-- add `libcudnn8` and `libcusolver-11-0` in production stage.
-
-We did not use TensorFlow 2.5.0 with CUDA 11.2 because currently our [NVIDIA driver version does not support that](/userinfo/rivanna/software/tensorflow/#can-i-install-my-own-tensorflow-that-works-on-a-gpu).
-
-For further details see [here](https://github.com/uvarc/rivanna-docker/tree/master/alphafold/2.0.0).
-
-### Version 2.1
-
 - AlphaFold does not use TensorFlow on the GPU (instead it uses JAX). See [issue](https://github.com/deepmind/alphafold/issues/88). Changed `tensorflow` to `tensorflow-cpu`.
 - There is no need to have system CUDA libraries since they are already included in the conda environment.
 - Switched to micromamba instead of Miniconda.
@@ -73,23 +56,29 @@ For further details see [here](https://github.com/uvarc/rivanna-docker/tree/mast
 
 ## AlphaFold launch command
 
-The full Singularity command to launch AlphaFold looks like this:
+Please refer to [run_alphafold.py](https://github.com/deepmind/alphafold/blob/main/run_alphafold.py) for all available options.
+
+### Launch script `run`
+
+For your convenience, we have prepared a launch script `run` that takes care of the Singularity command and the database paths, since these are unlikely to change. If you do need to customize anything please use the full Singularity command.
 
 ```
-singularity run -B $ALPHAFOLD_DATA_PATH:/data -B .:/etc --pwd /app/alphafold --nv $CONTAINERDIR/alphafold-2.0.0.sif \
-    --fasta_paths=/full/path/to/fasta \
-    --output_dir=/full/path/to/outdir \
-    --model_names= \
-    --preset=[full_dbs|casp14] \
-    --max_template_date= \
+singularity run -B $(realpath $ALPHAFOLD_DATA_PATH):/data \
+                -B $(realpath $ALPHAFOLD_DATA_PATH/../bfd):/data/bfd \
+                -B $(realpath $ALPHAFOLD_DATA_PATH/../mgnify):/data/mgnify \
+                -B $(realpath $ALPHAFOLD_DATA_PATH/../pdb70):/data/pdb70 \
+                -B $(realpath $ALPHAFOLD_DATA_PATH/../small_bfd):/data/small_bfd \
+                -B $(realpath $ALPHAFOLD_DATA_PATH/../uniclust30):/data/uniclust30 \
+                -B $(realpath $ALPHAFOLD_DATA_PATH/../uniref90):/data/uniref90 \
+                -B .:/etc \
+                --pwd /app/alphafold \
+                --nv $CONTAINERDIR/alphafold-${EBVERSIONALPHAFOLD}.sif \
     --data_dir=/data \
     --uniref90_database_path=/data/uniref90/uniref90.fasta \
     --mgnify_database_path=/data/mgnify/mgy_clusters.fa \
-    --uniclust30_database_path=/data/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
-    --bfd_database_path=/data/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
-    --pdb70_database_path=/data/pdb70/pdb70 \
     --template_mmcif_dir=/data/pdb_mmcif/mmcif_files \
-    --obsolete_pdbs_path=/data/pdb_mmcif/obsolete.dat
+    --obsolete_pdbs_path=/data/pdb_mmcif/obsolete.dat \
+    "$@"
 ```
 
 ### Explanation of Singularity flags
@@ -101,19 +90,16 @@ singularity run -B $ALPHAFOLD_DATA_PATH:/data -B .:/etc --pwd /app/alphafold --n
 
 ### Explanation of AlphaFold flags
 
-1. The default command of the container is `/app/run_alphafold.sh`. *All flags shown above are required* and are passed to `/app/run_alphafold.sh`.
-1. As a consequence of the Singularity `--pwd` flag, the fasta and output paths must be *full paths* (e.g. `/scratch/$USER/mydir`, not *relative paths* (e.g. `./mydir`).
-1. (Version 2.0 only) The `model_names` should be a comma-separated list of `model_*`. See `$ALPHAFOLD_DATA_PATH/params` for the complete set of model names. In [`run_docker.py`](https://github.com/deepmind/alphafold/blob/main/docker/run_docker.py) `model_1,model_2,model_3,model_4,model_5` is used.
+1. The default command of the container is `/app/run_alphafold.sh`.
+1. As a consequence of the Singularity `--pwd` flag, the fasta and output paths must be *full paths* (e.g. `/scratch/$USER/mydir`, not *relative paths* (e.g. `./mydir`). You may use `$PWD` as demonstrated.
 1. The `max_template_date` is of the form `YYYY-MM-DD`.
-1. For further explanations and additional options please see [`run_alphafold.py`](https://github.com/deepmind/alphafold/blob/main/run_alphafold.py).
-
-## Launch script `run`
-
-For your convenience, we have prepared a launch script `run` that takes care of the Singularity command and the database paths, since these are unlikely to change. If you do need to customize anything please use the full Singularity command in the previous section.
+1. Only the database paths in `mark_flags_as_required` of [run_alphafold.py](https://github.com/deepmind/alphafold/blob/main/run_alphafold.py) are included because the optional paths depend on `db_preset` (`full_dbs` or `reduced_dbs`) and `model_preset`.
 
 # Slurm Script
 
-Copy and paste the following as a template for your Slurm script. 
+Below are some templates for your Slurm script.
+
+## Monomer with `full_dbs`
 
 ```
 #!/bin/bash
@@ -127,28 +113,46 @@ Copy and paste the following as a template for your Slurm script.
 module purge
 module load singularity alphafold
 
-# version 2.0
-run --fasta_paths=/full/path/to/fasta \
-    --output_dir=/full/path/to/outdir \
-    --model_names= \
-    --preset= \
-    --max_template_date=
+run --fasta_paths=$PWD/your_fasta_file \
+    --output_dir=$PWD/outdir \
+    --model_preset=monomer \
+    --db_preset=full_dbs \
+    --bfd_database_path=/data/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
+    --uniclust30_database_path=/data/uniclust30 \
+    --max_template_date= 
 ```
 
-For version 2.1+, use the following `run` command (`model_names` -> `model_preset`; `preset` -> `db_preset`):
+## Multimer with `reduced_dbs`
 
 ```
-# version 2.1
-run --fasta_paths=/full/path/to/fasta \
-    --output_dir=/full/path/to/outdir \
-    --model_preset = \
-    --db_preset= \
-    --max_template_date=
+#!/bin/bash
+#SBATCH -A mygroup      # your allocation account
+#SBATCH -p gpu          # partition
+#SBATCH --gres=gpu:1    # number of GPUs
+#SBATCH -N 1            # number of nodes
+#SBATCH -c 8            # number of cores
+#SBATCH -t 10:00:00     # time
+
+module purge
+module load singularity alphafold
+
+run --fasta_paths=$PWD/your_fasta_file \
+    --output_dir=$PWD/outdir \
+    --model_preset=multimer \
+    --db_preset=reduced_dbs \
+    --pdb_seqres_database_path=/data/pdb_seqres/pdb_seqres.txt \
+    --uniprot_database_path=/data/uniprot/uniprot.fasta \
+    --small_bfd_database_path=/data/small_bfd/bfd-first_non_consensus_sequences.fasta \
+    --max_template_date= 
 ```
 
-Please refer to https://github.com/deepmind/alphafold#api-changes-between-v200-and-v210 for details. You can append more options as needed.
+## Notes
 
-You may need to request 8 CPU cores due to this line printed in the output:
-```
-Launching subprocess "/usr/bin/jackhmmer -o /dev/null -A /tmp/tmpys2ocad8/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 ./seq.fasta /share/resources/data/alphafold/mgnify/mgy_clusters.fa"
-```
+1. AlphaFold 2.0 users please visit [here for API changes in 2.1](https://github.com/deepmind/alphafold#api-changes-between-v200-and-v210) for details.
+
+1. You may need to request 8 CPU cores due to this line printed in the output:
+    ```
+    Launching subprocess "/usr/bin/jackhmmer -o /dev/null -A /tmp/tmpys2ocad8/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 ./seq.fasta /share/resources/data/alphafold/mgnify/mgy_clusters.fa"
+    ```
+
+1. You are not required to use the `run` wrapper script. You can always provide the full singularity command.
