@@ -137,14 +137,14 @@ Examples of the type of support we can provide are:
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Tuesdays 3:00-5:00pm</b><br />
-<a href="https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a><b> No office hours on Dec 28.</b>
+<a href="https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09"><button class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 <!-- Physical Life Sciences Building, Room 430-->
 </div>
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Thursdays 10:00-12:00pm</b><br />
-<a href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button></a><b> No office hours on Dec 30.</b>
+<a href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
 
