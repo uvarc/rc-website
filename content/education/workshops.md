@@ -4,7 +4,7 @@ description = ""
 title = "Workshops"
 date = "2019-07-21T10:55:28-05:00"
 draft = false
-tags = ["R","python","shiny","cloud","HPC","Rivanna","Ivy"]
+tags = ["R","Python","Matlab","Shiny","HPC","Rivanna","Ivy","image processing","bioinformatics","containers","programming"]
 categories = ["education", "workshops"]
 images = [""]
 
@@ -16,7 +16,7 @@ images = [""]
 # Upcoming Workshops
 
 {{% callout %}}
-Workshops for 2021 have been moved to online learning formats due to campus closures from COVID-19. 
+Workshops have been moved to online learning formats due to campus closures from COVID-19. 
 {{% /callout %}}
 
 {{% upcoming-workshops %}}
@@ -38,15 +38,15 @@ Research Computing is partnering with the Research Library and the Health Scienc
 Join us on Zoom for **Coffee&Coding** every Thursday afternoon between noon and 12:30 for amazing coding tips that will streamline your research! 
 <br>
 <br>
-Upcoming topics include *"Basic data cleaning with tidyverse"*, *"f strings in Python"*, and *"Joining data with pandas."* All are welcome!
+Upcoming topics include *"Text parsing/regular expressions"*, *"Error handling with try and except"*, and *"Working with date/time structures"* All are welcome!
 <br>
 <br>
 **Time**: Thursday's from 12:00-12:30
 <br>
-**Zoom**: https://virginia.zoom.us/j/98493871072?pwd=b1ZUdGtiang0R29iTGloNlVHamU0dz09
+**Zoom**: https://virginia.zoom.us/j/96765962746?pwd=NEIwNDkwNUMvNDk0RXk2SkdaSSs4Zz09
 <br>
 <br>
-Below is the schedule for *Fall 2021*:
+Below is the schedule for *Spring 2022*:
 
 <table class="table">
   <thead>
@@ -61,101 +61,94 @@ Below is the schedule for *Fall 2021*:
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>9/2/2021</td>
-      <td>Reading data in R</td>
-      <td>R</td>
+      <td>1/27/2022</td>
+      <td>PrettyPrinter with complex data structures</td>
+      <td>Python</td>
       <td>Will Rosenow</td>
     </tr>
     <tr>
       <th scope="row">2</th>
-      <td>9/9/2021</td>
-      <td>Basic data cleaning with tidyverse</td>
-      <td>R</td>
+      <td>2/3/2022</td>
+      <td>f strings in python</td>
+      <td>Python</td>
       <td>Will Rosenow</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td>9/16/2021</td>
-      <td>across() function</td>
-      <td>R</td>
-      <td>Marieke Jones</td>
+      <td>2/10/2022</td>
+      <td>Plotting with Matplotlib</td>
+      <td>Python</td>
+      <td>Will Rosenow</td>
     </tr>
     <tr>
       <th scope="row">4</th>
-      <td>9/23/2021</td>
-      <td>Joins with tidyverse</td>
-      <td>R</td>
+      <td>2/17/2022</td>
+      <td>Building lists with .append()</td>
+      <td>Python</td>
       <td>Will Rosenow</td>
     </tr>
     <tr>
       <th scope="row">5</th>
-      <td>9/30/2021</td>
-      <td>Intro to ggplot2</td>
-      <td>R</td>
+      <td>2/24/2022</td>
+      <td>Text parsing/regular expressions</td>
+      <td>Python</td>
       <td>Will Rosenow</td>
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td>10/7/2021</td>
-      <td>Annotating a volcano plot</td>
-      <td>R</td>
-      <td>Marieke Jones</td>
-    </tr>
-    <tr>
-      <th scope="row">7</th>
-      <td>10/14/2021</td>
-      <td>gtsummary package</td>
-      <td>R</td>
-      <td>Marieke Jones</td>
-    </tr>
-    <tr>
-      <th scope="row">8</th>
-      <td>10/21/2021</td>
-      <td>Apply statements</td>
-      <td>R</td>
-      <td>Will Rosenow</td>
-    </tr>
-    <tr>
-      <th scope="row">9</th>
-      <td>10/28/2021</td>
-      <td>purr package functions</td>
-      <td>R</td>
-      <td>David Martin</td>
-    </tr>
-    <tr>
-      <th scope="row">10</th>
-      <td>11/4/2021</td>
-      <td>Reading data in Python</td>
-      <td>Python</td>
-      <td>Will Rosenow</td>
-    </tr>
-    <tr>
-      <th scope="row">11</th>
-      <td>11/11/2021</td>
-      <td>f strings in Python</td>
-      <td>Python</td>
-      <td>Will Rosenow</td>
-    </tr>
-    <tr>
-      <th scope="row">12</th>
-      <td>11/18/2021</td>
-      <td>Joining data with pandas</td>
-      <td>Python</td>
-      <td>Will Rosenow</td>
-    </tr>
-    <tr>
-      <th scope="row">13</th>
-      <td>12/2/2021</td>
+      <td>3/3/2022</td>
       <td>Error handling with try and except</td>
       <td>Python</td>
       <td>Will Rosenow</td>
     </tr>
     <tr>
-      <th scope="row">14</th>
-      <td>12/9/2021</td>
-      <td>List comprehension</td>
-      <td>Python</td>
-      <td>Jackie Huband</td>
+      <th scope="row">7</th>
+      <td>3/17/2022</td>
+      <td>Plot annotations with ggplot2</td>
+      <td>R</td>
+      <td>Marieke Jones</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>3/24/2022</td>
+      <td>Mathematical Annotation in R</td>
+      <td>R</td>
+      <td>Clay Ford</td>
+    </tr>
+    <tr>
+      <th scope="row">9</th>
+      <td>3/31/2022</td>
+      <td>Working with Dates in R</td>
+      <td>R</td>
+      <td>Clay Ford</td>
+    </tr>
+    <tr>
+      <th scope="row">10</th>
+      <td>4/7/2022</td>
+      <td>Data cleaning with tidyverse</td>
+      <td>R</td>
+      <td>Will Rosenow</td>
+    </tr>
+    <tr>
+      <th scope="row">11</th>
+      <td>4/14/2022</td>
+      <td>across() function</td>
+      <td>R</td>
+      <td>Marieke Jones</td>
+    </tr>
+    <tr>
+      <th scope="row">12</th>
+      <td>4/21/2022</td>
+      <td>purrr map() function</td>
+      <td>R</td>
+      <td>Marieke Jones</td>
+    </tr>
+    <tr>
+      <th scope="row">13</th>
+      <td>4/28/2022</td>
+      <td>Rolling joins</td>
+      <td>R</td>
+      <td>Clay Ford</td>
     </tr>
   </tbody>
 </table>
