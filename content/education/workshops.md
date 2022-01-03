@@ -4,7 +4,7 @@ description = ""
 title = "Workshops"
 date = "2019-07-21T10:55:28-05:00"
 draft = false
-tags = ["R","python","shiny","cloud","HPC","Rivanna","Ivy"]
+tags = ["R","Python","Matlab","Shiny","HPC","Rivanna","Ivy","image processing","bioinformatics","containers","programming"]
 categories = ["education", "workshops"]
 images = [""]
 
@@ -16,7 +16,7 @@ images = [""]
 # Upcoming Workshops
 
 {{% callout %}}
-Workshops for 2021 have been moved to online learning formats due to campus closures from COVID-19. 
+Workshops have been moved to online learning formats due to campus closures from COVID-19. 
 {{% /callout %}}
 
 {{% upcoming-workshops %}}
