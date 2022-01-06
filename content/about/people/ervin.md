@@ -13,7 +13,6 @@ images = [
 ]
 subjects = [
   "research",
-  "vpr",
 ]
 +++
 
