@@ -338,7 +338,7 @@ software:
        platforms: [Linux]
        installation: none #preinstalled,optional
    category: [Math & Statistics]
-   description: Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
+   description: Eigen is a C++ template library for linear algebra, including matrices, vectors, numerical solvers, and related algorithms.
  - name: FSL
    versions:
      - version: ""
