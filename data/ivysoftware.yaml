@@ -282,3 +282,204 @@ software:
    category: [Database Software]
    description: Microsoft SQL Server is a relational database management system developed by Microsoft.
    license: Installation requires user-provided software license.
+ - name: DaVinci Resolve
+   versions:
+     - version: "17"
+       status: approved # pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: DaVinci Resolve is a software tool that combines editing, color correction, visual effects, motion graphics and audio post production.
+   license: Installation requires user-provided software license.
+ - name: AFNI
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: AFNI (Analysis of Functional NeuroImages) is a software suite of C, Python, R programs and shell scripts primarily developed for the analysis and display of multiple MRI modalities.
+ - name: Bedtools
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Bioinformatics]
+   description: Bedtools utilities are a swiss-army knife of tools for a wide-range of genomics analysis tasks.
+ - name: C-PAC
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: none #preinstalled,optional
+   category: [Image Processing]
+   description: The Configurable Pipeline for the Analysis of Connectomes (C-PAC) is a configurable, open-source, Nipype-based, automated processing pipeline for resting state functional MRI (R-fMRI) data.
+ - name: QIT (Cabeen)
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: QIT is a software package of computational tools for the modeling, analysis, and visualization of scientific imaging data.
+ - name: COMSOL
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none
+   category: [Engineering]
+   description: The COMSOL Multiphysics® software provides specialized functionality for electromagnetics, structural mechanics, acoustics, fluid flow, heat transfer, and chemical engineering.
+ - name: Eigen
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: none #preinstalled,optional
+   category: [Math & Statistics]
+   description: Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
+ - name: FSL
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,optional
+   category: [Image Processing]
+   description: FSL is a comprehensive library of analysis tools for FMRI, MRI and DTI brain imaging data.
+ - name: MRtrix3
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: MRtrix3 provides a large suite of tools for image processing, analysis and visualisation, with a focus on the analysis of white matter using diffusion-weighted MRI.
+ - name: PeakSeq
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Bioinformatics]
+   description: PeakSeq is a program for identifying and ranking peak regions in ChIP-Seq experiments.
+ - name: PLINK
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Bioinformatics]
+   description: PLINK is a free, open-source whole genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner.
+ - name: Ruby
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Language]
+   description: Ruby is a dynamic, open source programming language with a focus on simplicity and productivity.
+ - name: SolidWorks
+   versions:
+     - version: "2019"
+       status: approved #pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none
+   category: [Engineering]
+   description: SolidWorks is a solid modeling computer-aided design and computer-aided engineering computer program.
+ - name: 3D Slicer
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: 3D Slicer is a free, open source and multi-platform software package widely used for medical, biomedical, and related imaging research.
+ - name: ANTs/ANTsR
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: ANTs extracts information from complex datasets that include imaging. Paired with ANTsR (answer), ANTs is useful for managing, interpreting and visualizing multidimensional data.
+ - name: DKE
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: Diffusional Kurtosis Estimator (DKE) is a software tool for post-processing diffusional kurtosis imaging (DKI) datasets that includes a suite of command-line programs along with a graphical user interface (GUI).
+ - name: DSI Studio
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: DSI Studio is a tractography software tool that maps brain connections and correlates findings with neuropsychological disorders.
+ - name: Adobe Acrobat Pro/Reader DC
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none
+   category: [Productivity]
+   description: View, sign, collaborate on and annotate PDF files with Acrobat Reader software. To easily edit and convert PDFs into file formats like Excel and Word, use PDF editor and converter Acrobat Pro DC.
+ - name: Ansys
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none
+   category: [Engineering]
+   description: Ansys is CAE/multiphysics engineering simulation software for product design, testing and operation..
+ - name: AstroGrep
+   versions: 
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none
+   category: [Productivity]
+   description: AstroGrep is a Microsoft Windows grep utility. AstroGrep supports regular expressions, versatile printing options, stores most recently used paths and has a "context" feature for looking at source code.
+ - name: GATK
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Bioinformatics]
+   description: Developed in the Data Sciences Platform at the Broad Institute, the Genome Analysis toolkit (GATK) offers a wide variety of tools with a primary focus on variant discovery and genotyping. 
+ - name: Houdini
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: Houdini is a 3D animation software application developed by SideFX, who adapted it from the PRISMS suite of procedural generation software tools. 
+ - name: PreVent
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Data Analysis]
+   description: PreVent Tools is a set of tools designed to facilitate conversion of physiological data monitoring data to differnet formats.
+ - name: Tesseract
+   versions: 
+     - versions: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Data Analysis]
+   description: Tesseract is an optical character recognition engine for various operating systems.
+ - name: VLC
+   versions:
+     - versions: ""
+       status: approved #pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none
+   category: [Productivity]
+   description: VLC media player is a free and open-source, portable, cross-platform media player software and streaming media server developed by the VideoLAN project.
