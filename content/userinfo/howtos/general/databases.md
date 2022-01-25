@@ -250,6 +250,10 @@ We are frequently asked by researchers how to incorporate databases into their w
   </div>
 </div>
 
+# Learn More
+
+{{% button button-text="redis" button-class="danger" button-url="/userinfo/howtos/general/redis/" %}}
+
 
 # Other Resources
 
