@@ -282,3 +282,60 @@ software:
    category: [Database Software]
    description: Microsoft SQL Server is a relational database management system developed by Microsoft.
    license: Installation requires user-provided software license.
+ - name: DaVinci Resolve
+   versions:
+     - version: "17"
+       status: approved # pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: DaVinci Resolve is a software tool that combines editing, color correction, visual effects, motion graphics and audio post production.
+   license: Installation requires user-provided software license.
+ - name: AFNI
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: AFNI (Analysis of Functional NeuroImages) is a software suite of C, Python, R programs and shell scripts primarily developed for the analysis and display of multiple MRI modalities.
+ - name: Bedtools
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Bioinformatics]
+   description: Bedtools utilities are a swiss-army knife of tools for a wide-range of genomics analysis tasks.
+ - name: C-PAC
+   versions:
+     - version: ""
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: none #preinstalled,optional
+   category: [Image Processing]
+   description: The Configurable Pipeline for the Analysis of Connectomes (C-PAC) is a configurable, open-source, Nipype-based, automated processing pipeline for resting state functional MRI (R-fMRI) data.
+ - name: QIT (Cabeen)
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: optional #preinstalled,none
+   category: [Image Processing]
+   description: QIT is a software package of computational tools for the modeling, analysis, and visualization of scientific imaging data.
+ - name: COMSOL
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Windows]
+       installation: optional #preinstalled,none
+   category: [Engineering]
+   description: The COMSOL Multiphysics® software provides specialized functionality for electromagnetics, structural mechanics, acoustics, fluid flow, heat transfer, and chemical engineering.
+ - name: Eigen
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux]
+       installation: none #preinstalled,optional
+   category: [Math & Statistics]
+   description: Eigen is a C++ template library for linear algebra, including matrices, vectors, numerical solvers, and related algorithms.

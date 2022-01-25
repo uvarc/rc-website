@@ -1,6 +1,6 @@
 +++
 type = "howto"
-date = "2020-03-20T00:00:00-05:00" 
+date = "2022-01-20T00:00:00-05:00" 
 tags = [ "Rivanna", "database", "howto" ] 
 category = ["howtos"]
 draft = false 
@@ -11,26 +11,27 @@ author = "RC Staff"
 
 {{% callout %}}
 <p>
-There are two main families of databases: Relational and NoSQL.
+  There are two main families of databases: Relational and NoSQL.
 </p>
+<ul>
+  <li><b>Relational databases</b> store information in an orderly, column, row, and table schema. They “relate” the tables together to present different views of the data.
+  <li><b>NoSQL databases</b> are much less structured. This means they can store different data alongside each other – which makes things both easier to store but harder to query across.
+</ul>
 <p>
-<b>Relational databases</b> store information in an orderly, column, row, and table schema. They “relate” the tables together to present different views of the data.
-</p>
-<p>
-<b>NoSQL databases</b> are much less structured. This means they can store different data alongside each other – which makes things both easier to store but harder to query across.
+  There are additional types of databases, such as <b>ledger</b>, <b>time-series</b> and others. Those are beyond the scope of this introduction.
 </p>
 {{% /callout %}}
 
 # Relational Databases (RDBMS)
 
-Most users have at least heard of relational databases like:
+Most users have at least heard of relational databases such as:
 
 * MySQL / MariaDB
 * PostgreSQL
 * Microsoft SQL Server
 * Oracle
 
-Relational databases operate on the concepts of tables, relations, indexes, SQL, CRUD operations, and joins.
+Relational databases operate on the concepts of tables, relations, schemas, data types, indices, SQL, joins and basic "CRUD" operations.
 
 	C = Create   (Insert)
 	R = Read     (Select)
