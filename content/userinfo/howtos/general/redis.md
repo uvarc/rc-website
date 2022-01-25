@@ -55,6 +55,11 @@ hello               world
 124a                AGCCCCTCAGGAGTCCGGCCACATGGAAACTCC
 ```
 
+{{% callout %}}
+<b>Note!</b> The "value" half of a Redis key/value pair can be quite large - 512MB.
+This is considerably larger than other popular NoSQL databases such as DynamoDB or MongoDB.
+{{% /callout %}}
+
 To view all keys (once you have established a connection to the Redis server):
 ```
 redis.uvarc.io:6379> keys *
@@ -74,16 +79,40 @@ redis.uvarc.io:6379> get hello
 
 To set a new key/value:
 ```
-redis.uvarc.io:6379> set 
+redis.uvarc.io:6379> set herman melville
+
+OK
+```
+
+Set an expiring key/value (EX in seconds, PX in miliseconds)
+```
+redis.uvarc.io:6379> set jane eyre EX 30
+
+OK
+```
+
+# Working with `redis` in Code
+
+Redis has many available SDKs for most modern languages. Every operation available via the `cli` is available in those SDKs.
+
+Some popular choices:
+
+* [Python](https://redis.io/clients#python)
+* [C++](https://redis.io/clients#c-plus-plus)
+* [R](https://redis.io/clients#r)
+* [Go](https://redis.io/clients#go)
+* [Others](https://redis.io/clients)
 
 # Using `redis` in Your Research
 
 We are frequently asked by researchers how to incorporate databases into their work. Here are four suggestions for how Redis might help your research::
 
-1. Queuing - Have a list of files or batches that need processing? Redis can hold the queue and let you retrieve single values at a time until you work the queue down to zero keys.
-2. Cache - Store interim results or data for use in later computation. This could be a faster and more scalable replacement for temporary text files.
-3. Dictionary - Use an extended key/value store as an in-memory lookup resource.
+1. **Queue** - Have a list of files or batches that need processing? Redis can hold the queue and let you retrieve single values at a time until you work the queue down to zero keys.
+2. **Cache** - Store interim results or data for use in later computation. This could be a faster and more scalable replacement for temporary text files.
+3. **Dictionary** - Use an extended key/value store as an in-memory lookup resource.
 
 # Other Resources
 
+* [Redis Documentation](https://www.redis.io/documentation)
+* [Try Redis Online](https://try.redis.io/)
 * [Redis Cheatsheet](/images/pdfs/redis-cheatsheet.pdf)
