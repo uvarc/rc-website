@@ -4,7 +4,7 @@ date = "2022-01-20T00:00:00-05:00"
 tags = [ "Rivanna", "database", "howto", "redis" ] 
 category = ["howtos"]
 draft = false 
-title = "`redis` - A Key/Value Store" 
+title = "Redis - A Key/Value Store" 
 description = "Basic usage of Redis" 
 author = "RC Staff"
 +++
@@ -31,7 +31,7 @@ Rivanna has access to an open Redis instance:
 redis.uvarc.io
 ```
 
-To work with Redis from the command-line, load the `redis-cli`:
+To work with Redis from the command-line, use the `redis-cli`. In Rivanna, this is a module:
 ```
 $  module load redis-cli
 ```
@@ -72,16 +72,18 @@ redis.uvarc.io:6379> get hello
 "world"
 ```
 
-# Using Databases in Your Research
+To set a new key/value:
+```
+redis.uvarc.io:6379> set 
+
+# Using `redis` in Your Research
 
 We are frequently asked by researchers how to incorporate databases into their work. Here are four suggestions for how Redis might help your research::
 
-1. Tracking
-2. Queuing
-3. Indexing
-4. Dictionary
-
+1. Queuing - Have a list of files or batches that need processing? Redis can hold the queue and let you retrieve single values at a time until you work the queue down to zero keys.
+2. Cache - Store interim results or data for use in later computation. This could be a faster and more scalable replacement for temporary text files.
+3. Dictionary - Use an extended key/value store as an in-memory lookup resource.
 
 # Other Resources
 
-
+* [Redis Cheatsheet](/images/pdfs/redis-cheatsheet.pdf)
