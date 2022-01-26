@@ -1,7 +1,7 @@
 +++
 type = "howto"
-date = "2022-01-20T00:00:00-05:00" 
-tags = [ "Rivanna", "database", "howto", "redis" ] 
+date = "2022-01-25T00:00:00-05:00" 
+tags = [ "Rivanna", "database", "howto", "redis", "data", "nosql" ]
 category = ["howtos"]
 draft = false 
 title = "Redis - A Key/Value Store" 
@@ -34,8 +34,9 @@ Rivanna has access to an open Redis service in the HPC network:
 redis.uvarc.io
 ```
 This service is backed by a pair of servers in HA replication mode. One serves as the primary for READS and WRITES, and
-the read-replica can be used for READ queries only. The endpoint name for the read-replica is `redis-rr.uvarc.io`.
-These endpoints are available only within the HPC networks and cannot be accessed from elsewhere in the UVA WAN.
+the read-replica can be used for READ queries only. The endpoint name for the primary is `redis.uvarc.io` and for 
+read-replica is `redis-rr.uvarc.io`. These endpoints are available only within the HPC networks and cannot be accessed 
+from elsewhere in the UVA WAN.
 
 To use Redis from the command-line, use the `redis-cli`. In Rivanna, this is a module:
 ```
@@ -105,7 +106,7 @@ Redis allows for the creation and management of multiple databases, called "inde
 to index `0` but this can be changed to the integer of another index. Keys/values stored in one index are unavailable to another
 index. Use `select` to move between indexes.
 
-```bash
+```
 redis.uvarc.io:6379> select 0
 OK
 redis.uvarc.io:6379> set hello world
@@ -179,20 +180,23 @@ redis.uvarc.io:6379> LPUSH dbs mongodb
 (integer) 2 
 redis.uvarc.io:6379> LPUSH dbs mysql 
 (integer) 3 
+redis.uvarc.io:6379> LPUSH dbs mysql 
+(integer) 4
 ```
 
-Pushing a new value into a list gives the new value the 0 index of the list. (To add new values
-to the end of the list use the `RPUSH` command.)
+Pushing a new value into a list gives the new value the 0 position of the list. (To add new values
+to the end of the list use the `RPUSH` command.) Note that lists store duplicate entries separately.
 
-Then get a list range by defining the min and max indices you want:
+Get a list range by defining the min and max indices you want:
 ```
 redis.uvarc.io:6379> LRANGE dbs 0 10
 1) "mysql" 
-2) "mongodb" 
-3) "redis"
+2) "mysql"
+3) "mongodb" 
+4) "redis"
 redis.uvarc.io:6379> LRANGE dbs 0 1
 1) "mysql"
-2) "mongodb"
+2) "mysql"
 ```
 
 You can also `LPOP`, `LPUSH`, and `LTRIM` as well as `RPOP`, `RPUSH`, and `RTRIM` with Redis lists.
@@ -280,6 +284,8 @@ Some popular choices:
 * [Python](https://redis.io/clients#python)
 * [C++](https://redis.io/clients#c-plus-plus)
 * [R](https://redis.io/clients#r)
+* [MATLAB](https://redis.io/clients#matlab)
+* [Perl](https://redis.io/clients#perl)
 * [Go](https://redis.io/clients#go)
 * [Others](https://redis.io/clients)
 
