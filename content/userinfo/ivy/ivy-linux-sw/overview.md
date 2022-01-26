@@ -58,7 +58,15 @@ In addition to the preinstalled software, researchers may request installation o
 
 <br>
 
----
+- - -
+
+## Engineering
+
+{{< ivy-approved-sw-detailed os="Linux" installation="optional" category="Engineering" >}}
+
+<br>
+
+- - -
 
 ## Image Processing
 
