@@ -9,8 +9,11 @@ description = "Basic usage of Redis"
 author = "RC Staff"
 +++
 
+<a style="font-size:85%;text-decoration:none;" href="/userinfo/howtos/general/databases/">&laquo; Return to Databases</a>
+
 {{% callout %}}
 <p>
+<img src="/images/logos/redis-logo.png" align="right" style="padding:1rem;" />
 <code>redis</code> is an in-memory, key/value store. Think of it as a dictionary with any number of keys, each of which has a value
 that can be set or retrieved. However, Redis goes beyond a simple key/value store as it is actually a data structures server, 
 supporting different kinds of values. Some fundamental concepts:
@@ -23,7 +26,6 @@ supporting different kinds of values. Some fundamental concepts:
 </ul>
 {{% /callout %}}
 
-<img src="/images/logos/redis-logo.png" align="right" style="" />
 
 # Getting Started
 
