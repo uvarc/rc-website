@@ -103,7 +103,7 @@ Redis allows for the creation and management of multiple databases, called "inde
 to index `0` but this can be changed to the integer of another index. Keys/values stored in one index are unavailable to another
 index. Use `select` to move between indexes.
 
-```sh
+```bash
 redis.uvarc.io:6379> select 0
 OK
 redis.uvarc.io:6379> set hello world
