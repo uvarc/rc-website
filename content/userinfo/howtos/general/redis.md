@@ -151,24 +151,40 @@ Remember that the "value" half of a key/value pair does not have to contain only
 with multiple, separated values, so long as you can anticipate the order, and identity of those values. In this way a
 key/value is akin to a "row" of a comma-separated data file.
 
-To implement this functionality, use a hash. Hashes in Redis store multiple objects within the same key, i.e. sets of key/value pairs within a single key/value pair.
+To implement this functionality, you have two options:
 
-Hashes are named, then fields and their values are defined:
+1. Use a hash. Hashes in Redis store multiple objects within the same key, i.e. sets of key/value pairs within a single key/value pair.
+Hashes are named, then subkeys and their values are defined:
 ```
 redis.uvarc.io:6379> hset hash-key subkey1 value1 subkey2 value2
 OK
 ```
-Then fetch all values, or a specific field:
+Then fetch all values:
 ```
 redis.uvarc.io:6379> hgetall hash-key
 1) "subkey1"
 2) "value1"
 3) "subkey2"
 4) "value2"
-
+```
+Fetch a specific field:
+```
 redis.uvarc.io:6379> hget hash-key subkey2
 "value2"
 ```
+
+2. Store your payload as JSON. Redis will store your JSON data as one long string, which you can then parse:
+```
+redis-cli -h redis.uvarc.io --raw
+redis.uvarc.io:6379> set json_key '{"eventType": "purchase", "amount": 5, "item_id": "XXX"}' 
+OK
+redis.uvarc.io:6379> keys *
+"json_key"
+redis.uvarc.io:6379[5]> get json_key
+{"eventType": "purchase", "amount": 5, "item_id": "XXX"}
+```
+Note the use of the `--raw`` flag when invoking the `redis-cli` tool. This ensures that response data is
+decoded back to UTF-8 instead of bytes.
 
 ## Lists
 
@@ -183,11 +199,10 @@ redis.uvarc.io:6379> LPUSH dbs mysql
 redis.uvarc.io:6379> LPUSH dbs mysql 
 (integer) 4
 ```
-
 Pushing a new value into a list gives the new value the 0 position of the list. (To add new values
-to the end of the list use the `RPUSH` command.) Note that lists store duplicate entries separately.
+to the end of the list use the `RPUSH` command.) List values can be duplicated within the list.
 
-Get a list range by defining the min and max indices you want:
+Get a list range back by defining the min and max indices you want:
 ```
 redis.uvarc.io:6379> LRANGE dbs 0 10
 1) "mysql" 
@@ -198,13 +213,12 @@ redis.uvarc.io:6379> LRANGE dbs 0 1
 1) "mysql"
 2) "mysql"
 ```
-
 You can also `LPOP`, `LPUSH`, and `LTRIM` as well as `RPOP`, `RPUSH`, and `RTRIM` with Redis lists.
 
 
 ## Sets
 
-You can populate a set within a single key. Set members already present are not duplicated within the set:
+You can populate a set within a single key. Set members already present cannot be duplicated within the set:
 ```
 redis.uvarc.io:6379> sadd set1 bananas
 (integer) 1
@@ -237,7 +251,7 @@ redis.uvarc.io:6379> incr counter
 (integer) 3
 ```
 
-Or increment by integers other than `1`:
+Increment by integers other than `1`:
 ```
 redis.uvarc.io:6379> get counter
 1
@@ -274,7 +288,6 @@ redis.uvarc.io:6379> randomkey
 ```
 
 
-
 # Working with `redis` in Code
 
 Redis has many available SDKs for most modern languages. Every operation available via the `cli` is available in those SDKs.
@@ -293,7 +306,7 @@ Some popular choices:
 
 We are frequently asked by researchers how to incorporate databases into their work. Here are four suggestions for how Redis might help your research::
 
-1. **Queue** - Have a list of files or batches that need processing? Redis can hold the queue and let jobs retrieve single values at a time until they work the queue down to empty.
+1. **Queue** - Have a list of files or batches that need processing? Redis can hold the queue and let jobs retrieve single values at a time until they work the queue down to empty. Redis can even be used as a simple Pub/Sub message broker.
 2. **Cache** - Store interim results or data for use in later computation. This could be a faster and more scalable replacement for temporary text files.
 3. **Dictionary or Lookup** - Use an extended key/value store as an in-memory lookup resource for reference values. Where you may have previously stored reference values in a text file or relational DB table, Redis would likely outperform that pattern. Transactions with Redis are also atomic, which means multiple keys can be set, retrieved, or modified at the same time without risking data concurrency.
 
