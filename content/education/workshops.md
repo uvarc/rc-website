@@ -56,6 +56,7 @@ Below is the schedule for *Spring 2022*:
       <th scope="col">Topic</th>
       <th scope="col">Language</th>
       <th scope="col">Instructor</th>
+      <th scope="col">Notebook Link</th>
     </tr>
   </thead>
   <tbody>
@@ -65,6 +66,7 @@ Below is the schedule for *Spring 2022*:
       <td>PrettyPrinter with complex data structures</td>
       <td>Python</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1OQbkTtpLvynr_tkwI7TbGJqfgSIw3a5H?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">2</th>
