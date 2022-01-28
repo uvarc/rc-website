@@ -1,11 +1,11 @@
 +++
 type = "howto"
 date = "2022-01-25T00:00:00-05:00" 
-tags = [ "Rivanna", "database", "howto", "redis", "data", "nosql" ]
+tags = [ "Rivanna", "database", "howto", "rdbms", "data", "mysql" ]
 category = ["howtos"]
 draft = false 
-title = "Redis - A Key/Value Store" 
-description = "Basic usage of Redis" 
+title = "MySQL - A basic relational database" 
+description = "Basic usage of MySQL" 
 author = "RC Staff"
 +++
 
@@ -15,39 +15,48 @@ author = "RC Staff"
 
 {{% callout %}}
 <p>
-<img src="/images/logos/redis-logo.png" align="right" style="padding:1rem;" />
-<code>redis</code> is an in-memory, key/value store. Think of it as a dictionary with any number of keys, each of which has a value
-that can be set or retrieved. However, Redis goes beyond a simple key/value store as it is actually a data structures server, 
-supporting different kinds of values. Some fundamental concepts:
-</p>
+<img src="/images/logos/mysql-logo.png" align="right" style="padding:1rem;" />
+MySQL is an open-source relational database management system. It supports standard SQL syntax and models. Some important
+concepts are:
 <ul>
-  <li>Can be used as a databse, cache, or message broker
-  <li>Supports multiple data types and structures
-  <li>Built-in replication
-  <li>Keys can be up to 512MB in size
+  <li>Tables
+  <li>Rows
+  <li>Keys
+  <li>Schemas
+  <li>Data types
+  <li>Selects
+  <li>Joins
+  <li>Indexes
+  <li>Other CRUD operations
 </ul>
+</p>
 {{% /callout %}}
 
 
 # Getting Started
 
-Rivanna has access to an open Redis service in the HPC network:
+After submitting a request for a MySQL database, a username and password be created for you, this information along with your endpoint name will be sent
+to you via our ticketing system. Store this information somewhere secure, and do not share this information with others.
 ```
-redis.uvarc.io
+User: <your-db-username>
+Pass: <your-db-password>
+Host: <mysql-shared-endpoint-name>
+Port: 3306
 ```
-This service is backed by a pair of servers in HA replication mode. One serves as the primary for READS and WRITES, and
-the read-replica can be used for READ queries only. The endpoint name for the primary is `redis.uvarc.io` and for 
-read-replica is `redis-rr.uvarc.io`. These endpoints are available only within the HPC networks and cannot be accessed 
-from elsewhere in the UVA WAN.
+The MySQL service is backed by a pair of servers in HA replication mode. One serves as the primary for READS and WRITES, and
+the read-replica can be used for READ queries only. These endpoints are available only within the HPC networks and cannot be accessed 
+from elsewhere in the UVA WAN. You cannot use MySQL tools remotely (from University offices, labs, or home offices over VPN).
 
-To use Redis from the command-line, use the `redis-cli`. In Rivanna, this is a module:
+To use MySQL from the command-line, use the `mysqlclient` module in Rivanna:
 ```
-$  module load redis-cli
+$  module load mysqlclient
 ```
+Or use the appropriate library for the language you are coding in to establish a connected client.
 
-You can now create a connection to the server. Use port `6379` (the default port). No password is required:
+You can now create a connection to the server. Use port `3306` (the default port):
 ```
-$  redis-cli -h redis.uvarc.io
+$  mysql -h <mysql-endpoint-name> -u <your-username> -p
+Password: ***********
 ```
 
 # Basic Operations
@@ -288,13 +297,13 @@ redis.uvarc.io:6379> 5 incr counter
 ## Random Keys
 
 Using a database populated with keys and values, some workflows could make use of this as a queue for jobs
-or batches to be processed when order does not matter. Your process can fetch a random key:
+or batches to be processed. Your process could retrieve a random one:
 
 ```
 redis.uvarc.io:6379> randomkey
 "herman"
-redis.uvarc.io:6379> get herman
-"melville"
+redis.uvarc.io:6379> randomkey
+"hello"
 ```
 
 
@@ -316,11 +325,9 @@ Some popular choices:
 
 We are frequently asked by researchers how to incorporate databases into their work. Here are four suggestions for how Redis might help your research::
 
-1. **Queue** - Have a list of datafiles or batches that need processing? Redis supports queues in two ways:
-    * Load a Redis index with identifiers and let jobs retrieve single values at a time. Each job, when complete, removes that key from the table, working its way until the queue is empty.
-    * Use Redis as a simple Pub/Sub message broker. This model de-couples message producers from message receivers, and allows for multiple of each.
-2. **Cache** - Store interim results or data for use in later computation. This is a faster and more scalable replacement for temporary text files.
-3. **Dictionary** - Use an extended key/value store as an in-memory lookup resource for reference values. Where you may have previously stored reference values in a text file or relational DB table, Redis would likely outperform that pattern. Transactions with Redis are also atomic, which means multiple keys can be set, retrieved, or modified at the same time without risking data concurrency.
+1. **Queue** - Have a list of files or batches that need processing? Redis can hold the queue and let jobs retrieve single values at a time until they work the queue down to empty. Redis can even be used as a simple Pub/Sub message broker.
+2. **Cache** - Store interim results or data for use in later computation. This could be a faster and more scalable replacement for temporary text files.
+3. **Dictionary or Lookup** - Use an extended key/value store as an in-memory lookup resource for reference values. Where you may have previously stored reference values in a text file or relational DB table, Redis would likely outperform that pattern. Transactions with Redis are also atomic, which means multiple keys can be set, retrieved, or modified at the same time without risking data concurrency.
 
 # Other Resources
 
