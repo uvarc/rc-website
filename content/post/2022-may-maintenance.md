@@ -20,13 +20,15 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
 
-2. The following **upgrades** will take place during the maintenance period.
+2. **Upgrades**:
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
-    - swig/4.0.2 (under gcc/11.2.0)
+    - swig/4.0.2
 
-   Upgrades to default versions of applications:
+   Default version changes:
     - alphafold/2.1.1 -> 2.1.2
 
 3. **New** modules:
     - pandoc/2.17
+    - trinity/2.13.2
+    - cufflinks/2.2.1
     - redis-cli/6.2.6
