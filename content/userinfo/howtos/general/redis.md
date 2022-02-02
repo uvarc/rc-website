@@ -11,8 +11,6 @@ author = "RC Staff"
 
 <a style="font-size:85%;text-decoration:none;" href="/userinfo/howtos/general/databases/">&laquo; Return to Databases</a>
 
-{{<top-of-page >}}
-
 {{% callout %}}
 <p>
 <img src="/images/logos/redis-logo.png" align="right" style="padding:1rem;" />
@@ -326,4 +324,4 @@ We are frequently asked by researchers how to incorporate databases into their w
 
 * [Redis Documentation](https://www.redis.io/documentation)
 * [Try Redis Online](https://try.redis.io/)
-* [Redis Cheatsheet](/images/pdfs/redis-cheatsheet.pdf)
+* [Redis Cheatsheet](https://cheatography.com/tasjaevan/cheat-sheets/redis/)

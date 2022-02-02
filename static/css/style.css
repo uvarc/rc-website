@@ -6,7 +6,7 @@
 @media (min-width:48em){
 
 /* html{font-size:12px;position:relative;min-height:100%;} */
-html{font-size:11px;min-height:100%;}
+html{scroll-behavior: smooth;font-size:11px;min-height:100%;}
 body{color:#555;font-family:HelveticaNeueLight,Helvetica;}
 html, body { width: 100%; height: 100%; }
 
