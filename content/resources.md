@@ -196,6 +196,7 @@ fetch(db_url)
 <div class="row">
 <div class="col-md-6">
   <div class="alert alert-primary" role="alert" style="">
+    <div style="float:right;"><i class="fas fa-list-alt fa-2x"></i></div>
     <h4 class="alert-heading">Allocations</h4>
     <p>Review and manage your HPC allocations on Rivanna.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
@@ -218,7 +219,7 @@ fetch(db_url)
 
 <div class="col-md-6">
   <div class="alert alert-success" role="alert" style="">
-    <div style="float:right;"><i class="fas fa-hdd fa-2x"></i></div>
+    <div style="float:right;"><i class="fas fa-server fa-2x"></i></div>
     <h4 class="alert-heading">Storage</h4>
     <p>Review and manage your Project or Value storage shares.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
@@ -241,6 +242,7 @@ fetch(db_url)
 
 <div class="col-md-6">
   <div class="alert" role="alert" style="background-color:#efefef;">
+    <div style="float:right;"><img style="max-width:40px;margin-top:0px;" src="/images/docker-bw-icon.png" alt="Docker Container" /></div>
     <h4 class="alert-heading">Container Services</h4>
     <p>Review and manage your microservices.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
@@ -262,6 +264,7 @@ fetch(db_url)
 
 <div class="col-md-6">
   <div class="alert" role="alert" style="background-color:#efefef;">
+    <div style="float:right;"><i class="fas fa-database fa-2x"></i></div>
     <h4 class="alert-heading">Databases</h4>
     <p>Review and manage your databases.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
