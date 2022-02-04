@@ -12,6 +12,7 @@ type = "resource"
 private = true
 +++
 
+<link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"crossorigin="anonymous">
 <script>
 function setCookie(key, value, expiry) {
     var expires = new Date();
