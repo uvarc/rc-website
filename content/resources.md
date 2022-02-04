@@ -275,7 +275,7 @@ fetch(db_url)
     </table>
     <p style="font-size:80%;font-style:italic;">Database inventories are refreshed 1x per day.</p>
     <hr>
-    <a href="/form/containers/"><button class="btn btn-primary btn-sm">Request Microservices</button></a> &nbsp;
+    <a href="/form/database/"><button class="btn btn-primary btn-sm">Request a Database</button></a> &nbsp;
   </div>
 </div>
 </div>
