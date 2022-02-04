@@ -21,25 +21,20 @@ function setCookie(key, value, expiry) {
     document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
     // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
 };
-
 function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
     return keyValue ? keyValue[2] : null;
   };
-
 var form_url = window.location;
 let referrer = setCookie('__rc_form_referrer', form_url, '24');
-
 // Uncomment before builds
 var pkey_check = getCookie("__rc_pkey");
 if (!pkey_check) {
     window.location.replace("https://auth.rc.virginia.edu/session.php");
 };
-
 var purl = "https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/nocache/persona/";
 var pkey = getCookie("__rc_pkey");
 var url = purl + pkey;
-
 async function get(url) {
     let obj = await (await fetch(url)).json();
     return obj;
@@ -50,14 +45,11 @@ var profile;
   document.getElementById("name").innerHTML = "Hello " + profile["fname"];
   document.getElementById("identity").innerHTML = profile["name"] + " | " + profile["uid"] + " | " + profile["eppn"];
 })();
-
-
 // allocations
 var all_base_url = "https://user-resources.uvarc.io/allocations/";
 // var pkey = getCookie("__rc_pkey");
 var pkey = "_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
 var allocation_url = all_base_url + pkey;
-
 fetch(allocation_url)
     .then(response => response.json())
     .then(data => {
@@ -86,8 +78,6 @@ fetch(allocation_url)
     }).catch(error => {
       console.log(error)
     });
-
-
 // storage
 var sto_base_url = "https://user-resources.uvarc.io/storage/";
 // var pkey = getCookie("__rc_pkey");
@@ -118,8 +108,6 @@ fetch(storage_url)
     }).catch(error => {
       console.log(error)
     });
-
-
 // containers
 var con_base_url = "https://user-resources.uvarc.io/containers/";
 // var pkey = getCookie("__rc_pkey");
@@ -150,8 +138,6 @@ fetch(container_url)
     }).catch(error => {
       console.log(error)
     });
-
-
 // databases
 var db_base_url = "https://user-resources.uvarc.io/databases/";
 // var pkey = getCookie("__rc_pkey");
