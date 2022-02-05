@@ -1,6 +1,6 @@
 +++
 type = "howto"
-date = "2022-01-25T00:00:00-05:00" 
+date = "2022-02-02T00:00:00-05:00" 
 tags = [ "Rivanna", "database", "howto", "redis", "data", "nosql" ]
 category = ["howtos"]
 draft = false 
@@ -10,8 +10,6 @@ author = "RC Staff"
 +++
 
 <a style="font-size:85%;text-decoration:none;" href="/userinfo/howtos/general/databases/">&laquo; Return to Databases</a>
-
-{{<top-of-page >}}
 
 {{% callout %}}
 <p>
@@ -27,6 +25,9 @@ supporting different kinds of values. Some fundamental concepts:
   <li>Keys can be up to 512MB in size
 </ul>
 {{% /callout %}}
+
+
+{{< ref "/userinfo/howtos/general/databases.md" >}}
 
 
 # Getting Started
@@ -312,7 +313,7 @@ Some popular choices:
 * [Go](https://redis.io/clients#go)
 * [Others](https://redis.io/clients)
 
-# Using `redis` in Your Research
+# Use `redis` in Your Research
 
 We are frequently asked by researchers how to incorporate databases into their work. Here are four suggestions for how Redis might help your research::
 
@@ -326,4 +327,4 @@ We are frequently asked by researchers how to incorporate databases into their w
 
 * [Redis Documentation](https://www.redis.io/documentation)
 * [Try Redis Online](https://try.redis.io/)
-* [Redis Cheatsheet](/images/pdfs/redis-cheatsheet.pdf)
+* [Redis Cheatsheet](https://cheatography.com/tasjaevan/cheat-sheets/redis/)

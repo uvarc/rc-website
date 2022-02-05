@@ -2,6 +2,8 @@
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
+<button type="button" class="btn btn-light" onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
+
 <article class="blog-post">
   <header>
     <h2 class="blog-post-title" style="margin-top:2rem;margin-bottom:2rem;"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>

@@ -6,6 +6,7 @@ job_title = "Solution Architect"
 lastname = "magee"
 email = "nem2p@virginia.edu"
 github = "nmagee"
+# gscholar = "2qcTM38AAAAJ"
 biolink = true
 type = "people"
 author = "UVARC Staff"

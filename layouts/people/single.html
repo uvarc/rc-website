@@ -35,6 +35,12 @@
     <div style="margin-top:0.4rem;"><i class="fab fa-github"></i> <a target="_new" href="https://github.com/{{ .Params.github }}" style="padding-left:0.5rem;">https://github.com/{{ .Params.github }}</a></div>
   {{ end }}
 
+  {{ if (not (isset .Params "gscholar")) | or (eq .Params.gscholar "") }}
+    <span></span>
+  {{ else }}
+    <div style="margin-top:0.4rem;"><i class="fab fa-google"></i> <a target="_new" href="https://scholar.google.com/citations?user={{ .Params.gscholar }}" style="padding-left:0.5rem;">Google Scholar</a></div>
+  {{ end }}
+
   <hr size=1 />
 
   {{ .Content }}
