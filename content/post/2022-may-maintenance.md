@@ -22,12 +22,18 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 
 2. **Upgrades**:
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
+    - quantumespresso/7.0 - under nvompic; GPU-enabled
     - swig/4.0.2
 
    Default version changes:
     - alphafold/2.1.1 -> 2.1.2
+    - gatk/4.1.6.0 -> 4.2.3.0
+    - igvtools/2.8.9 -> 2.12.0
 
 3. **New** modules:
+    - nvompic/21.9_3.1.6_11.4.2 toolchain (nvhpc/21.9 + openmpi/3.1.6 + cuda/11.4.2)
+        - libraries: zlib, szip, openblas, scalapack, fftw, hdf5
+    - berkeleygw/3.0.1 - under nvompic; GPU-enabled
     - pandoc/2.17
     - trinity/2.13.2
     - cufflinks/2.2.1
