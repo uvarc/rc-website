@@ -319,6 +319,7 @@ We are frequently asked by researchers how to incorporate databases into their w
 
 1. **Queue** - Have a list of datafiles or batches that need processing? Redis supports queues in two ways:
     * Load a Redis index with identifiers and let jobs retrieve single values at a time. Each job, when complete, removes that key from the table, working its way until the queue is empty.
+    * For less demanding processes, write your HPC job to loop through values in a Redis index to fetch identifiers and process them in series as part of one SLURM job.
     * Use Redis as a simple Pub/Sub message broker. This model de-couples message producers from message receivers, and allows for multiple of each.
 2. **Cache** - Store interim results or data for use in later computation. This is a faster and more scalable replacement for temporary text files.
 3. **Dictionary** - Use an extended key/value store as an in-memory lookup resource for reference values. Where you may have previously stored reference values in a text file or relational DB table, Redis would likely outperform that pattern. Transactions with Redis are also atomic, which means multiple keys can be set, retrieved, or modified at the same time without risking data concurrency.
