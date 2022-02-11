@@ -6,6 +6,7 @@ job_title = "Solution Architect"
 lastname = "magee"
 email = "nem2p@virginia.edu"
 github = "nmagee"
+# gscholar = "2qcTM38AAAAJ"
 biolink = true
 type = "people"
 author = "UVARC Staff"
@@ -20,7 +21,11 @@ subjects = [
 ]
 +++
 
-Neal's background is in development and operations, and designs serverless and programmable infrastructure that change dynamically with the needs of an application. He has extensive experience with Python, Linux, public clouds, and architecting dynamic systems that scale and heal automatically. Neal is an AWS Certified Solution Architect and Developer.
+Neal's background is in development and operations, and designs serverless and programmable infrastructure 
+that change dynamically with the needs of an application. He has extensive experience with Python, Linux, 
+public clouds, and architecting dynamic systems that scale and heal automatically. Neal is an AWS 
+Certified Solution Architect and Developer, a member of the AWS Customer Council, and a Github Global 
+Campus Teacher.
 
 **Recent Publications**
 

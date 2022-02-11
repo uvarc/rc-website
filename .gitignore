@@ -10,3 +10,4 @@ npm*
 /.project
 lambda*
 gh-md-toc
+.hugo_build*

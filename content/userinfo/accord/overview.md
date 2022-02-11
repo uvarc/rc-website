@@ -1,7 +1,7 @@
 +++
 title = "ACCORD"
 draft = false
-date = "2021-10-11"
+date = "2022-02-02"
 images = [""]
 author = "Staff"
 categories = ["accord"]
@@ -10,15 +10,53 @@ tags = ["accord","python","r","hipaa","sensitive-data"]
 
 ***
 
-![Accord_logo](/images/accord/ACCORD_logo.png)
+![ACCORD_logo](/images/accord/ACCORD_logo.png)
 
-<img src="/images/accord/accord_demo.png" style="float:right;" class="project-inset" />
+<img src="/images/accord/nsf-logo.jpeg" style="float:right;" class="project-inset" />
 
 Welcome to ACCORD (Assuring Controls Compliance of Research Data), a web-based platform which allows researchers from public universities across the state of Virginia to analyze and store their sensitive data in a central location. 
 
 ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data
 
-Thanks to funding provided by the [National Science Foundation](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1919667), ACCORD is a **free** service for researchers. ACCORD is project-based, meaning investigators request access to the platform, invite co-investigators, store data, and use application based computing environments to perform their computational research. Currently, the platform supports RStudio, JupyterLab, and Theia Python, however other applications will be added soon. 
+Thanks to funding provided by the [National Science Foundation](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1919667) (Award #: 1919667), ACCORD is a **free** service for researchers in the state of Virginia.
+
+Listed below are our partner universities for ACCORD:
+
+<div class="row">
+<div class="col-md-3">
+  <img src="/images/accord/uva-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/uva-wise.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/vt-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/wm-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/vcu-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/jmu-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/odu-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/vsu-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/gm-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/nsu-logo.jpeg" style="width:100%">
+</div>
+<div class="col-md-3">
+  <img src="/images/accord/vmi-logo.jpeg" style="width:100%">
+</div>
+</div>
 
 - - -
 

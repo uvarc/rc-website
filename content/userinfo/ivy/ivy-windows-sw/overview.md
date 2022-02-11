@@ -59,6 +59,15 @@ In addition to the preinstalled software, researchers may request installation o
 <br>
 
 - - -
+
+## Engineering
+
+{{< ivy-approved-sw-detailed os="Windows" installation="optional" category="Engineering" >}}
+
+<br>
+
+- - -
+
 ## Image Processing
 
 {{< ivy-approved-sw-detailed os="Windows" installation="optional" category="Image Processing" >}}

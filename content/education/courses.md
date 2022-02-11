@@ -1,11 +1,11 @@
 +++
 draft = false
-date = "2020-05-19T10:55:28-05:00"
+date = "2022-02-02T10:55:28-05:00"
 title = "Courses"
 description = ""
 author = "RC Staff"
 categories = ["education"]
-tags = ["R","cloud","AWS","DSI","SDS","UVA","BIMS"]
+tags = ["R","cloud","DSI","CS","SDS","UVA","BIMS"]
 
 +++
 
@@ -31,17 +31,9 @@ This graduate course introduces a basic grounding in designing and implementing 
 
 # CS 4740: Cloud Computing
 
-**Spring 2018, Fall 2020**
+**Spring 2018, Fall 2020, Fall 2021**
 
 Investigates the architectural foundations of the various cloud platforms, as well as examining both current cloud computing platforms and modern cloud research. Student assignments utilize the major cloud platforms.
-
------
-
-# Data Science Bootcamp: Computing, Storage & Data Analysis in the Cloud
-
-**Summer 2017**
-
-This 1.5 day course introduces MSDS students to the basics of cloud computing in AWS, and the independent management of code, data, and computing resources in a research environment. Particular concern is given to the concepts of programmable, reusable, scalable resources in the AWS cloud, through hands-on labs in EC2 and S3.
 
 -----
 
@@ -52,3 +44,12 @@ This 1.5 day course introduces MSDS students to the basics of cloud computing in
 Exposes students to contemporary platforms, tools, and pipelines for data analysis through a series of steadily escalating use cases. 
 The course will begin with simple local database construction and evolve to cloud based providers such as AWS or Google Cloud. 
 Attention is given to data lakes and NoSQL as appropriate.
+
+-----
+
+# Data Science Bootcamp: Computing, Storage & Data Analysis in the Cloud
+
+**Summer 2017**
+
+This 1.5 day course introduces MSDS students to the basics of cloud computing in AWS, and the independent management of code, data, and computing resources in a research environment. Particular concern is given to the concepts of programmable, reusable, scalable resources in the AWS cloud, through hands-on labs in EC2 and S3.
+

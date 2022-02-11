@@ -1,5 +1,5 @@
 +++
-date = "2020-12-31T23:59:16-05:00"
+date = "2022-02-02T23:59:16-05:00"
 tags = ["support"]
 categories = ["support"]
 images = [""]
@@ -12,6 +12,7 @@ type = "resource"
 private = true
 +++
 
+<link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"crossorigin="anonymous">
 <script>
 function setCookie(key, value, expiry) {
     var expires = new Date();
@@ -20,25 +21,20 @@ function setCookie(key, value, expiry) {
     document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
     // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
 };
-
 function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
     return keyValue ? keyValue[2] : null;
   };
-
 var form_url = window.location;
 let referrer = setCookie('__rc_form_referrer', form_url, '24');
-
 // Uncomment before builds
 var pkey_check = getCookie("__rc_pkey");
 if (!pkey_check) {
     window.location.replace("https://auth.rc.virginia.edu/session.php");
 };
-
 var purl = "https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/nocache/persona/";
 var pkey = getCookie("__rc_pkey");
 var url = purl + pkey;
-
 async function get(url) {
     let obj = await (await fetch(url)).json();
     return obj;
@@ -49,12 +45,11 @@ var profile;
   document.getElementById("name").innerHTML = "Hello " + profile["fname"];
   document.getElementById("identity").innerHTML = profile["name"] + " | " + profile["uid"] + " | " + profile["eppn"];
 })();
-
+// allocations
 var all_base_url = "https://user-resources.uvarc.io/allocations/";
 // var pkey = getCookie("__rc_pkey");
 var pkey = "_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
 var allocation_url = all_base_url + pkey;
-
 fetch(allocation_url)
     .then(response => response.json())
     .then(data => {
@@ -83,7 +78,7 @@ fetch(allocation_url)
     }).catch(error => {
       console.log(error)
     });
-
+// storage
 var sto_base_url = "https://user-resources.uvarc.io/storage/";
 // var pkey = getCookie("__rc_pkey");
 var pkey = "_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
@@ -113,6 +108,66 @@ fetch(storage_url)
     }).catch(error => {
       console.log(error)
     });
+// containers
+var con_base_url = "https://user-resources.uvarc.io/containers/";
+// var pkey = getCookie("__rc_pkey");
+var pkey = "_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
+var container_url = con_base_url + pkey;
+fetch(container_url)
+    .then(response => response.json())
+    .then(data3 => {
+        const concount = data3
+        const records = concount.length
+        if (records == 0) {
+          empty_html = "<tr><td colspan=4>No containers recorded</td></tr>";
+          document.querySelector("#container-data").insertAdjacentHTML("afterbegin", empty_html)
+        } 
+        const container_html = data3
+            .map(container => {
+              const records3 = data3.length
+              return `
+                  <tr>
+                  <td>${container.service}</td>
+                  <td>${container.image}</td>
+                  <td style="text-align:right;">${container.quantity}</td>
+                  </tr>
+              `;
+            })
+            .join("");
+        document.querySelector("#container-data").insertAdjacentHTML("afterbegin", container_html)
+    }).catch(error => {
+      console.log(error)
+    });
+// databases
+var db_base_url = "https://user-resources.uvarc.io/databases/";
+// var pkey = getCookie("__rc_pkey");
+var pkey = "_d61e71c36c9c8adaece2cfe7dbfebde762aea424315ce02e2ba20fdecbc8fafd";
+var db_url = db_base_url + pkey;
+fetch(db_url)
+    .then(response => response.json())
+    .then(data4 => {
+        const dbcount = data4
+        const records = dbcount.length
+        if (records == 0) {
+          empty_html = "<tr><td colspan=4>No databases recorded</td></tr>";
+          document.querySelector("#database-data").insertAdjacentHTML("afterbegin", empty_html)
+        } 
+        const db_html = data4
+            .map(database => {
+              const records4 = data4.length
+              return `
+                  <tr>
+                  <td>${database.name}</td>
+                  <td>${database.type}</td>
+                  <td>${database.host}</td>
+                  </tr>
+              `;
+            })
+            .join("");
+        document.querySelector("#database-data").insertAdjacentHTML("afterbegin", db_html)
+    }).catch(error => {
+      console.log(error)
+    });
 </script>
 
 <div class="row">
@@ -124,14 +179,16 @@ fetch(storage_url)
   </div>
 </div>
 
-<div class="col-12 col-md-7">
+<div class="row">
+<div class="col-md-6">
   <div class="alert alert-primary" role="alert" style="">
+    <div style="float:right;"><i class="fas fa-list-alt fa-2x"></i></div>
     <h4 class="alert-heading">Allocations</h4>
     <p>Review and manage your HPC allocations on Rivanna.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
       <thead class="">
         <tr>
-          <th style="width:60%;">Name</th>
+          <th style="width:50%;">Name</th>
           <th>Type</th>
           <th style="text-align:right;">SUs Remain</th>
           <th style="text-align:right;">% Remain</th>
@@ -146,8 +203,9 @@ fetch(storage_url)
   </div>
 </div>
 
-<div class="col-12 col-md-5">
+<div class="col-md-6">
   <div class="alert alert-success" role="alert" style="">
+    <div style="float:right;"><i class="fas fa-server fa-2x"></i></div>
     <h4 class="alert-heading">Storage</h4>
     <p>Review and manage your Project or Value storage shares.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
@@ -167,3 +225,48 @@ fetch(storage_url)
   </div>
 </div>
 
+
+<div class="col-md-6">
+  <div class="alert" role="alert" style="background-color:#efefef;">
+    <div style="float:right;"><img style="max-width:40px;margin-top:0px;" src="/images/docker-bw-icon.png" alt="Docker Container" /></div>
+    <h4 class="alert-heading">Container Services</h4>
+    <p>Review and manage your microservices.</p>
+    <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
+      <thead class="">
+        <tr>
+          <th style="">Service</th>
+          <th>Image</th>
+          <th style="text-align:right;">Count</th>
+        </tr>
+      </thead>
+      <tbody id="container-data">
+      </tbody>
+    </table>
+    <p style="font-size:80%;font-style:italic;">Container inventories are refreshed 1x per day.</p>
+    <hr>
+    <a href="/form/containers/"><button class="btn btn-primary btn-sm">Request Microservices</button></a> &nbsp;
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="alert" role="alert" style="background-color:#efefef;">
+    <div style="float:right;"><i class="fas fa-database fa-2x"></i></div>
+    <h4 class="alert-heading">Databases</h4>
+    <p>Review and manage your databases.</p>
+    <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
+      <thead class="">
+        <tr>
+          <th style="">Database</th>
+          <th>Type</th>
+          <th style="">Host</th>
+        </tr>
+      </thead>
+      <tbody id="database-data">
+      </tbody>
+    </table>
+    <p style="font-size:80%;font-style:italic;">Database inventories are refreshed 1x per day.</p>
+    <hr>
+    <a href="/form/database/"><button class="btn btn-primary btn-sm">Request a Database</button></a> &nbsp;
+  </div>
+</div>
+</div>

@@ -7,8 +7,8 @@
           {{ if .Params.summary }}
             {{ .Params.summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
           {{ else }}
-            {{ if gt (len .Summary) 380 }}
-              {{slicestr .Summary 0 380 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+            {{ if gt (len .Summary) 420 }}
+              {{slicestr .Summary 0 420 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
             {{ else }}
               {{ .Summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
             {{ end }}                
