@@ -12,7 +12,6 @@ tags = [
   "ivy",
   "cloud",
   "xsede",
-  "cadre",
   "feature"
 ]
 categories = [
