@@ -23,27 +23,30 @@ draft = false
 
 ---
 
-## [XSEDE Home](https://www.xsede.org)
+# XSEDE Home:
+ - <span>&nbsp;</span><span style="font-size:16pt;color:blue">[www.xsede.org](https://www.xsede.org)</span>
+ - <span>&nbsp;</span><span style="font-size:16pt;color:blue">[www.xsede.org/about/what-we-do](https://www.xsede.org/about/what-we-do)</span>
+# For XSEDE Users:
+ -  <span style="font-size:20pt;">Getting Started: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/getting-started](https://www.xsede.org/for-users/getting-started)</span>
+ -  <span style="font-size:20pt;">Training: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/training](https://www.xsede.org/for-users/training)</span>
+    - [Parallel Computing Concepts, San Diego Supercomputer Center](https://education.sdsc.edu/training/interactive/202201_parallel_computing_concepts/index.html)
+-  <span style="font-size:20pt;">XSEDE User Portal: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/xup](https://www.xsede.org/for-users/xup)</span>
+-  <span style="font-size:20pt;">Extended Support,ECSS: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/ecss](https://www.xsede.org/for-users/ecss)</span>
 
-## [Getting Starting with XSEDE](https://www.xsede.org/for-users/getting-started)
-
-## [XSEDE User Portal](https://www.xsede.org/for-users/xup)
-
-## [XSEDE Resources](https://www.xsede.org/ecosystem/resources)
-
-## [XSEDE Software](https://www.xsede.org/ecosystem/software)
-
-## [XSEDE Campus Champions](https://www.xsede.org/community-engagement/campus-champions)
-
-   - Research Computing has two, Ed Hall and Katherine Holcomb
+# Community Engagement
+-  <span style="font-size:20pt;">Educator Programs: </span><span style="font-size:16pt;color:blue">[www.xsede.org/community-engagement/educator-programs](https://www.xsede.org/community-engagement/educator-programs)</span>
+-  <span style="font-size:20pt;">Campus Champions: </span><span style="font-size:16pt;color:blue">[www.xsede.org/community-engagement/campus-champions](https://www.xsede.org/community-engagement/campus-champions)</span>
+   - UVa Research Computing has two, Ed Hall and Katherine Holcomb
    - Contact hpc-support@virginia.edu
 
-## [XSEDE Training](https://www.xsede.org/for-users/training)
+# XSEDE Ecosystem
+-  <span style="font-size:20pt;">Hardware Resources: </span><span style="font-size:16pt;color:blue">[www.xsede.org/ecosystem/resources](https://www.xsede.org/ecosystem/resources)</span>
+-  <span style="font-size:20pt;">Software Resources: </span><span style="font-size:16pt;color:blue">[www.xsede.org/ecosystem/software](https://www.xsede.org/ecosystem/software)</span>
+-  <span style="font-size:20pt;">Science Gateway Listing: </span><span style="font-size:16pt;color:blue">[www.xsede.org/web/site/ecosystem/science-gateways/gateways-listing](https://www.xsede.org/web/site/ecosystem/science-gateways/gateways-listing)</span>
 
 
-  - Recently Recorded Webinars
 
-    - [Parallel Computing Concepts, San Diego Supercomputer Center](https://education.sdsc.edu/training/interactive/202201_parallel_computing_concepts/index.html)
+
 
 
 
