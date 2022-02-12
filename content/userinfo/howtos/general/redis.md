@@ -107,7 +107,7 @@ OK
 
 Redis allows for the creation and management of multiple databases, called "indexes". By default new connections are attached
 to index `0` but this can be changed to the integer of another index. Keys/values stored in one index are unavailable to another
-index. Use `select` to move between indexes.
+index. Use `select` to move between indexes. There are 64 total indexes in this implementation.
 
 ```
 redis.uvarc.io:6379> select 0
@@ -122,7 +122,7 @@ redis.uvarc.io:6379[1]> get hello
 (nil)
 ```
 
-Indexes need not be created in order. We suggest you select a high arbitrary number for a private index. Populate and empty it
+Indexes need not be created in order. We suggest you select a high arbitrary number (0 to 63) for a private index. Populate and empty it
 as you find necessary. However, in the standard security environment remember that your keys/values are visible to other Rivanna
 users.
 
