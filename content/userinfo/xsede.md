@@ -30,7 +30,7 @@ draft = false
  -  <span style="font-size:20pt;">Getting Started: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/getting-started](https://www.xsede.org/for-users/getting-started)</span>
  -  <span style="font-size:20pt;">Training: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/training](https://www.xsede.org/for-users/training)</span>
     - [Parallel Computing Concepts, San Diego Supercomputer Center](https://education.sdsc.edu/training/interactive/202201_parallel_computing_concepts/index.html)
--  <span style="font-size:20pt;">XSEDE User Portal: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/xup](https://www.xsede.org/for-users/xup)</span>
+-  <span style="font-size:20pt;">User Portal: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/xup](https://www.xsede.org/for-users/xup)</span>
 -  <span style="font-size:20pt;">Extended Support,ECSS: </span><span style="font-size:16pt;color:blue">[www.xsede.org/for-users/ecss](https://www.xsede.org/for-users/ecss)</span>
 
 # Community Engagement
