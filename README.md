@@ -32,9 +32,11 @@
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/uvarc/rc-website/tree/staging)
 
+This will bring up a ready-to-code environment on the `staging` branch, and download and start [hugo](https://gohugo.io) in server mode.
+
 [![Open in Github Editor](https://staging.rc.virginia.edu/images/logos/github-editor-160w.png)](https://github.dev/uvarc/rc-website/tree/staging)
 
-This will bring up a ready-to-code environment on the `staging` branch, and download and start [hugo](https://gohugo.io) in server mode.
+This opens a full web-based IDE for updating content on the `staging` branch, ready for commits, PRs, etc. Does not provide a live preview.
 
 - - -
 
