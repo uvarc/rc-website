@@ -72,12 +72,14 @@ various systems are available to researchers.</p>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Microservices and Containers</h4>
-      <img align="right" src="/images/docker-logo.png" style="max-width:20%;" />
+      <h4 class="card-title">XSEDE</h4>
+      <img align="right" src="/images/xsede-logo.jpg" style="max-width:20%;" />
         <p class="card-text" style="width:90%;">
-        Do you have a containerized service to run for your research project? We host a platform designed for running fleets of containers independently of one another. This includes web applications, databases, specialized tools, and other solutions in support of HPC jobs.
+        The Extreme Science and Engineering Discovery Environment (XSEDE) is an NSF-funded virtual organization that integrates and coordinates the sharing of advanced digital services - including supercomputers and high-end visualization and data analysis resources - with researchers nationally to support science.
         </p>
-      <a href="/userinfo/microservices/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+      <a href="/userinfo/xsede/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
+
+<br>

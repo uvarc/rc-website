@@ -107,7 +107,7 @@ OK
 
 Redis allows for the creation and management of multiple databases, called "indexes". By default new connections are attached
 to index `0` but this can be changed to the integer of another index. Keys/values stored in one index are unavailable to another
-index. Use `select` to move between indexes.
+index. Use `select` to move between indexes. There are 64 total indexes in this implementation.
 
 ```
 redis.uvarc.io:6379> select 0
@@ -122,7 +122,7 @@ redis.uvarc.io:6379[1]> get hello
 (nil)
 ```
 
-Indexes need not be created in order. We suggest you select a high arbitrary number for a private index. Populate and empty it
+Indexes need not be created in order. We suggest you select a high arbitrary number (0 to 63) for a private index. Populate and empty it
 as you find necessary. However, in the standard security environment remember that your keys/values are visible to other Rivanna
 users.
 
@@ -319,6 +319,7 @@ We are frequently asked by researchers how to incorporate databases into their w
 
 1. **Queue** - Have a list of datafiles or batches that need processing? Redis supports queues in two ways:
     * Load a Redis index with identifiers and let jobs retrieve single values at a time. Each job, when complete, removes that key from the table, working its way until the queue is empty.
+    * For less demanding processes, write your HPC job to loop through values in a Redis index to fetch identifiers and process them in series as part of one SLURM job.
     * Use Redis as a simple Pub/Sub message broker. This model de-couples message producers from message receivers, and allows for multiple of each.
 2. **Cache** - Store interim results or data for use in later computation. This is a faster and more scalable replacement for temporary text files.
 3. **Dictionary** - Use an extended key/value store as an in-memory lookup resource for reference values. Where you may have previously stored reference values in a text file or relational DB table, Redis would likely outperform that pattern. Transactions with Redis are also atomic, which means multiple keys can be set, retrieved, or modified at the same time without risking data concurrency.
