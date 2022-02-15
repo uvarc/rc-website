@@ -10,7 +10,7 @@ author = "Staff"
 
 ![Security](/images/accord/security.png)
 
-ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data. ACCORD cannot be used to process highly-restricted data such as CUI, FISMA, and PCI data.
+ACCORD is appropriate for de-identified PII, FERPA, de-identified HIPAA, business confidential, and other types of de-identified sensitive data. ACCORD cannot be used to process highly-restricted data such as CUI, FISMA, iTAR, and PCI data.
 
 ## Authentication
 
