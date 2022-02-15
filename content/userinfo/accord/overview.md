@@ -16,7 +16,7 @@ tags = ["accord","python","r","hipaa","sensitive-data"]
 
 Welcome to ACCORD (Assuring Controls Compliance of Research Data), a web-based platform which allows researchers from public universities across the state of Virginia to analyze and store their sensitive data in a central location. 
 
-ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data
+ACCORD is appropriate for de-identified PII, FERPA, de-identified HIPAA, business confidential, and other types of de-identified sensitive data
 
 Thanks to funding provided by the [National Science Foundation](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1919667) (Award #: 1919667), ACCORD is a **free** service for researchers in the state of Virginia.
 
