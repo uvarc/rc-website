@@ -36,7 +36,7 @@ This will bring up a ready-to-code environment on the `staging` branch, and down
 
 [![Open in Github Editor](https://staging.rc.virginia.edu/images/logos/github-editor-160w.png)](https://github.dev/uvarc/rc-website/tree/staging)
 
-This opens a full web-based IDE for updating content on the `staging` branch, ready for commits, PRs, etc. Does not provide a live preview.
+This opens a full web-based IDE for updating content on the `staging` branch, ready for commits, PRs, etc. Saving your changes essentially pushes back to the branch. Does not provide a live preview.
 
 - - -
 
