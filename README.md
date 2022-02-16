@@ -7,7 +7,7 @@
 | https://staging.rc.virginia.edu/ | https://www.rc.virginia.edu/  |
 
   * [Developing](#developing)
-     * [Using Gitpod](#using-gitpod)
+     * [Using Web IDEs](#using-web-ides)
      * [Local Install](#local-install)
   * [Creating New Content](#creating-new-content)
      * [Methods for creating content](#two-methods-for-creating-content)
@@ -28,11 +28,15 @@
 
 ## Developing
 
-### Using Gitpod
+### Using Web IDEs
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/uvarc/rc-website/tree/staging)
 
 This will bring up a ready-to-code environment on the `staging` branch, and download and start [hugo](https://gohugo.io) in server mode.
+
+[![Open in Github Editor](https://staging.rc.virginia.edu/images/logos/github-editor-160w.png)](https://github.dev/uvarc/rc-website/tree/staging)
+
+This opens a full web-based IDE for updating content on the `staging` branch, ready for commits, PRs, etc. Saving your changes essentially pushes back to the branch. Does not provide a live preview.
 
 - - -
 

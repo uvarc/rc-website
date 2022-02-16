@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2021-10-06T15:25:10-05:00"
+date = "2022-02-12T15:25:10-05:00"
 title = "Neal Magee, PhD"
 job_title = "Solution Architect"
 lastname = "magee"
@@ -21,7 +21,7 @@ subjects = [
 ]
 +++
 
-Neal's background is in development and operations, and designs serverless and programmable infrastructure 
+Neal's background is in development and operations, and he designs serverless and programmable infrastructure 
 that change dynamically with the needs of an application. He has extensive experience with Python, Linux, 
 public clouds, and architecting dynamic systems that scale and heal automatically. Neal is an AWS 
 Certified Solution Architect and Developer, a member of the AWS Customer Council, and a Github Global 
