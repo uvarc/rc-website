@@ -27,7 +27,7 @@ type = "rivanna"
 A faculty or research staff member must first request an allocation on Rivanna. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How do I log on to Rivanna?
-Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/rivanna/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/rivanna/ood/overview) or [FastX](/userinfo/rivanna/logintools/fastx).  
+Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/rivanna/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/rivanna/ood/overview) or [FastX](/userinfo/rivanna/logintools/fastx).
 
 {{% off-campus %}}
 
@@ -56,7 +56,7 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 Both allow you to run applications with graphical user interfaces in a Linux Desktop environment.
 
 [FastX Web:](/userinfo/rivanna/logintools/fastx/)
-* Runs all users' sessions on a single frontend node. 
+* Runs all users' sessions on a single frontend node.
 * Good for light-weight file management, script editing.
 * Requires a VPN connection from off-Grounds locations.
 
@@ -71,24 +71,24 @@ Both allow you to run applications with graphical user interfaces in a Linux Des
 
 ## What is an allocation?
 
-Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [MyGroups](https://mygroups.virginia.edu/) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations). 
+Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [MyGroups](https://mygroups.virginia.edu/) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How can I request an allocation?
 
-The different Service Unit (SU) allocation types are explained in [this article](/userinfo/rivanna/allocations/#allocation-types). It includes links to our allocation request webforms. 
+The different Service Unit (SU) allocation types are explained in [this article](/userinfo/rivanna/allocations/#allocation-types). It includes links to our allocation request webforms.
 
 ## How do I check my allocation status on Rivanna?
 
 Run the `allocations` command.  The output may look like this:
 ```
 
-Name           Balance  Reserved Effective Available 
--------------- -------- -------- --------- --------- 
-rivanna_alloc  9885.811 1000.000  8885.811  8885.811 
+Name           Balance  Reserved Effective Available
+-------------- -------- -------- --------- ---------
+rivanna_alloc  9885.811 1000.000  8885.811  8885.811
 
  for more information about a specific allocation,
  run: 'allocations -a <allocation group>'
- 
+
 ```
 The _Balance_ column shows the total of unused service units (SUs); the _Reserved_ column shows the number of SUs held for current active jobs (pending or running). The _Effective_ and _Available_ columns show the difference of _Balance_ and _Reserved_, i.e. the amount of SUs available for future jobs. **After a job completes, the SUs actually consumed will be deducted from the allocation Balance and any SUs unused by that job will be released from the Reserved pool.**
 
@@ -98,13 +98,13 @@ amount is sufficient to cover the full SU request for the jobs.
 You do not need any allocation service units to access the frontend or files in
 your directories as long as your account is active.
 
-If you don't see your allocation, it may mean that you've been removed from the allocation group or that your allocation has expired. 
+If you don't see your allocation, it may mean that you've been removed from the allocation group or that your allocation has expired.
 
 ## How do I check an allocation's expiration date?
 
 To check an allocation's expiration date run `allocations -a <allocation group>` command.  Alternatively, run `mam-list-allocations`.
 
-Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), [Dean's Allocations](/userinfo/rivanna/allocations/#deans-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire. 
+Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), [Dean's Allocations](/userinfo/rivanna/allocations/#deans-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
 
 ## How are Service Units Reserved?
 
@@ -113,7 +113,7 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/).  
+Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/).
 
 ## How do I add or remove people from my allocations?
 You must use the MyGroups interface to do this, and you must have administrative access to the group.
@@ -124,7 +124,7 @@ Please visit [here](/userinfo/rivanna/slurm/#usage-report) to see how to generat
 ## I submitted a job and receive an error "Insufficient balance. Applying funds failure for JobId=".  What should I do?
 The error indicates that your allocation group does not have enough service units to execute the job. Check your allocation status as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Also verify that your allocation has not expired, see [here](#how-do-i-check-an-allocations-expiration-date).
 
-Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), [Dean's Allocations](/userinfo/rivanna/allocations/#deans-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire. 
+Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), [Dean's Allocations](/userinfo/rivanna/allocations/#deans-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
 
 - - -
 
@@ -185,7 +185,7 @@ Please check the user manual for your application/container before running on a 
 You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our Slurm documentation page.
 
 ## How do I submit an interactive job?
-If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/rivanna/ood/overview) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/rivanna/ood/desktop) request.  
+If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/rivanna/ood/overview) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/rivanna/ood/desktop) request.
 
 If you will be using the command line for your interactive job you may use the locally-written ijob command. The minimum required options are -A and -c  for allocation and number of cores. Run `ijob -h` for a list of all options.
 
@@ -292,6 +292,21 @@ sfsq
 ```
 
 If you have used up too much space, created too many files, or have "old" files you may be regarded as "overallocated". Please note that if you are overallocated, you won't be able to submit any new jobs until you clean up your `/scratch` folder.
+
+## If I'm over my disk quota in either in my `/home` directory or my `/scratch` directory, how can I determine my disk usage?
+You can run the following command from your `/home` or `/scratch` directory to see how your disk usage is distributed
+across subdirectories, and where you need to remove files. You can increase `max-depth` to go further down in the directory structure.
+
+```
+du . -h  --max-depth=1|sort -h -r
+```
+
+## If I'm over my file limit in `/scratch`, how can I determine where all the files are located?
+From your `/scratch` directory, run the following command to determine where you need to remove files.
+
+```
+find . -type f | cut -d/ -f2 | sort | uniq -c
+```
 
 ## How long can I store files in `/scratch`?
 `/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](https://staging.rc.virginia.edu/userinfo/rivanna/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/#public--moderately-sensitive-data-storage).
