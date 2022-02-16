@@ -74,13 +74,15 @@ Below is the schedule for *Spring 2022*:
       <td>f strings in python</td>
       <td>Python</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1-2nNwB_1BxBdY48xej0bURPkpVNWv-R1?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>2/10/2022</td>
-      <td>Plotting with Matplotlib</td>
+      <td>Plotting with Matplotlib & Seaborn</td>
       <td>Python</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1WTKceHQPwD9CE7yx6_ZwZgU6aaVkvjZF?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">4</th>
