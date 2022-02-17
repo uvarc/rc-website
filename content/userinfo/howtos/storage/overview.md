@@ -2,9 +2,10 @@
 type = "howto"
 date = "2020-06-21T15:12:46-05:00"
 tags = [
-  "howtos",
+  "howto",
   "storage",
 ]
+categories = ["howto"]
 draft = false
 title = "How To Tips for Storage "
 description = "How Tos for Storage"

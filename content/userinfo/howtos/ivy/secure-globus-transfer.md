@@ -7,7 +7,7 @@ categories = [
   "ivy",
   "data",
   "globus",
-  "howtos"
+  "howto"
 ]
 date = "2020-03-26T08:37:46-05:00"
 tags = ['howtos']

@@ -5,13 +5,11 @@ images = [
 ]
 categories = [
   "HPC",
-  "Software",
-  "Compilers",
-  "howtos"
+  "software",
+  "howto"
 ]
-date = "2019-06-23T08:37:46-05:00"
-tags = ["compiler"]
-category = ["howtos"]
+date = "2022-02-14T08:37:46-05:00"
+tags = ["compilers","software","hpc"]
 draft = false
 shorttitle = "Make"
 title = "The Make Tool"

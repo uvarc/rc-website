@@ -4,7 +4,7 @@ images = [
   "/2016/10/image.jpg",
 ]
 categories = [
-  "howtos",
+  "howto",
   "storage",
 ]
 date = "2020-02-25T08:37:46-05:00"

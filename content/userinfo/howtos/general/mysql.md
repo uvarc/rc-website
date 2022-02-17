@@ -2,7 +2,7 @@
 type = "howto"
 date = "2022-01-25T00:00:00-05:00" 
 tags = [ "Rivanna", "database", "howto", "rdbms", "data", "mysql" ]
-category = ["howtos"]
+category = ["howto"]
 draft = false 
 title = "MySQL - A basic relational database" 
 description = "Basic usage of MySQL" 

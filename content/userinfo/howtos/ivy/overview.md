@@ -5,7 +5,7 @@ tags = [
   "howto",
   "ivy",
 ]
-categories = ["howtos"]
+categories = ["howto"]
 draft = false
 title = "How To Guides for Ivy Users"
 description = "How Tos for Ivy"

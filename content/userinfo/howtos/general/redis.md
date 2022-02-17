@@ -2,7 +2,7 @@
 type = "howto"
 date = "2022-02-02T00:00:00-05:00" 
 tags = [ "Rivanna", "database", "howto", "redis", "data", "nosql" ]
-category = ["howtos"]
+category = ["howto"]
 draft = false 
 title = "Redis - A Key/Value Store" 
 description = "Basic usage of Redis" 

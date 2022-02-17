@@ -4,7 +4,7 @@ date = "2021-04-01T00:00:00-05:00"
 tags = [
   "rivanna", "software", "python"
 ]
-categories = ["howtos"]
+categories = ["howto"]
 draft = false
 title = "Migrating Python packages"
 description = "How to migrate Python packages from one Python version to another"

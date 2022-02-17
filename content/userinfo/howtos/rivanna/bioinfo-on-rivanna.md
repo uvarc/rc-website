@@ -6,7 +6,7 @@ title = "Bioinformatics Resources on Rivanna"
 date = "2020-02-26T09:48:06-05:00"
 draft = false
 tags = ["bioinformatics","genomics", "rivanna","tools"]
-categories = ["howtos"]
+categories = ["howto"]
 images = [""]
 +++
 

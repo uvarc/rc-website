@@ -4,7 +4,7 @@ date = "2020-03-25T15:12:46-05:00"
 tags = [
   "rivanna", "software"
 ]
-categories = ["howtos"]
+categories = ["howto"]
 draft = false
 title = "Running a Bioinformatics Software Pipeline with Wdl/Cromwell"
 description = "Running a Bioinformatics Software Pipeline with Wdl"

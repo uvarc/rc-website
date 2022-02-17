@@ -4,7 +4,7 @@ date = "2020-11-02T00:00:00-05:00"
 tags = [
   "rivanna", "software", "jupyter"
 ]
-categories = ["howtos"]
+categories = ["howto"]
 draft = false
 title = "Loading Module in Jupyter"
 description = "How to load a module in Jupyter"

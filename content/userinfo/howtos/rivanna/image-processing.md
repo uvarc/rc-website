@@ -6,7 +6,7 @@ images = [
 categories = [
   "HPC",
   "software",
-  "howtos"
+  "howto"
 ]
 date = "2019-08-26T08:37:46-05:00"
 tags = ["vis"
