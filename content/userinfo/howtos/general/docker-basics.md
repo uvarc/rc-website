@@ -2,6 +2,7 @@
 type = "howto"
 date = "2020-03-09T00:00:00-05:00" 
 tags = [ "software", "containers", "howtos" ] 
+categories = ["howtos"]
 draft = false 
 title = "Docker - The Basics" 
 description = "Docker - The Basics" 

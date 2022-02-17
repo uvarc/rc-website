@@ -4,6 +4,7 @@ date = "2021-05-26T00:00:00-05:00"
 tags = [
   "rivanna", "software", "jupyter"
 ]
+categories = ["howtos"]
 draft = false
 title = "Converting a Jupyter Notebook to a PDF"
 description = "Converting a Jupyter Notebook to a PDF"

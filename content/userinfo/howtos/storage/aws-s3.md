@@ -1,7 +1,7 @@
 +++
 type = "howto"
 categories = [
-  "howto",
+  "howtos",
   "storage",
 ]
 date = "2020-12-17T13:53:46-05:00"

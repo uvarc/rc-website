@@ -2,7 +2,7 @@
 type = "howto"
 date = "2020-06-21T15:12:46-05:00"
 tags = [
-  "howto",
+  "howtos",
   "storage",
 ]
 draft = false

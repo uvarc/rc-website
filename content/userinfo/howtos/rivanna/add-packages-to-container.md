@@ -2,6 +2,7 @@
 type = "howto"
 date = "2020-02-21T15:12:46-05:00" 
 tags = [ "rivanna", "software", "containers" ] 
+categories = ["howtos"]
 draft = false 
 title = "How to add packages to a container?"
 description = "How to add packages to a container?"
