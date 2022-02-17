@@ -4,6 +4,7 @@ date = "2020-03-03T00:00:00-05:00"
 tags = [
   "rivanna", "software", "jupyter", "singularity"
 ]
+categories = ["howto"]
 draft = false
 title = "Custom Jupyter Kernels"
 description = "How to create custom Jupyter kernels"

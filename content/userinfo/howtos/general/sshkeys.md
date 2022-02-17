@@ -2,7 +2,7 @@
 type = "howto"
 date = "2020-03-20T00:00:00-05:00" 
 tags = [ "Rivanna", "login", "howto" ] 
-category = ["howtos"]
+category = ["howto"]
 draft = false 
 title = "SSH Keys" 
 description = "Authentication with SSH Keys" 

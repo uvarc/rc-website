@@ -6,7 +6,8 @@ images = [
 categories = [
   "ivy",
   "data",
-  "globus"
+  "globus",
+  "howto"
 ]
 date = "2020-03-26T08:37:46-05:00"
 tags = ['howtos']
@@ -19,7 +20,7 @@ author = "RC Staff"
 +++
 
 
-* Login In to Globus and Choose Ivy Collection 
+1. Login In to Globus and Choose Ivy Collection 
 
    * Disconnect your High Security VPN – it will interfere with the high security network that Globus uses.
    * Open https://www.globus.org/ and sign in through the University of Virginia using NetBadge.
@@ -27,14 +28,15 @@ author = "RC Staff"
    * You will then be asked to authenticate.
    * Once signed in, simply click through the names of your shares until you find the source or destination for your file transfers.
 
-* Navigate to Your Personal Collection
+
+2. Navigate to Your Personal Collection
 
    * In another pane repeat the process of searching for a collection, but use the name of your personal collection.
   _NOTE: Ivy is designed for security for research on sensitive data. Sensitive data should **never** be stored on or transmitted from personal laptops._
    * Once you have moved your data to Ivy Central Storage using Globus, you may need to need to copy it to your Ivy VM Storage. Double-click the Desktop icon labeled “Ivy Central Storage” to see the files you transferred with Globus (a file explorer window will appear). Double-click the Desktop icon labeled “VM Storage” to see the files that currently exist in your VM storage. To copy data from Ivy Central Storage to the VM, you can drag files from the Ivy Central Storage file explorer window to the VM storage file explorer window, or you can use traditional copy+paste functions. The decision to work off of your data on the local hard drive versus on the ICS drive should be driven by the size of your data, and how much your research needs to read from and write to it.
 
 
-* For More Information
+**For More Information**
 
 To learn more about setting up and using a Globus personal collection, please see our [documentation](/userinfo/globus).
 

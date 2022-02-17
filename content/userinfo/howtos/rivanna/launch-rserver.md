@@ -4,6 +4,7 @@ date = "2021-04-05T00:00:00-05:00"
 tags = [
   "rivanna", "software", "r", "singularity"
 ]
+categories = ["howto"]
 draft = false
 title = "Launching RStudio Server from a Singularity Container"
 description = "How to launch RStudio Server from a Singularity container"

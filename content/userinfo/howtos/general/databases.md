@@ -2,7 +2,7 @@
 type = "howto"
 date = "2022-01-20T00:00:00-05:00" 
 tags = [ "Rivanna", "database", "howto" ] 
-category = ["howtos"]
+category = ["howto"]
 draft = false 
 title = "Introduction to Databases" 
 description = "Authentication with SSH Keys" 

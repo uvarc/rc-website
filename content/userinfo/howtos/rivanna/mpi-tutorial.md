@@ -4,6 +4,7 @@ date = "2020-02-21T15:12:46-05:00"
 tags = [
   "rivanna", "software", "mpi"
 ]
+categories = ["howto"]
 draft = false
 title = "A Short MPI Tutorial"
 description = "Beginning MPI"

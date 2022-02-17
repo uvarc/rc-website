@@ -5,6 +5,7 @@ tags = [
   "howto",
   "rivanna",
 ]
+categories = ["howto"]
 draft = false
 title = "How To Guides for Rivanna Users"
 description = "How Tos for Rivanna"
