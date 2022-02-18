@@ -7,7 +7,7 @@ description = ""
 title = "Support Request Submitted"
 draft = false
 type = "about"
-
+private = true
 +++
 
 <div class="alert lead" id="confirmation" hidden="true" role="alert">
