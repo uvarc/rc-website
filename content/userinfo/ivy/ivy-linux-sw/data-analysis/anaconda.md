@@ -1,7 +1,7 @@
 +++
 title = "Preinstalled Python 2 and Python 3 with Anaconda on Ivy Linux VM"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 tags = [

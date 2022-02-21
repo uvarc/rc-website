@@ -1,7 +1,7 @@
 +++
 title = "Preinstalled Java SDK on Ivy Windows VM"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 date = "2018-01-29T15:45:12-05:00"
 images = [""]
 categories = ["userinfo"]

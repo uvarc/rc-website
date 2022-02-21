@@ -1,7 +1,7 @@
 +++
 title = "User Licensed Stata on Ivy Windows VMs"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 date = "2018-02-01T00:45:12-05:00"
 categories = ["userinfo"]

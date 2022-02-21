@@ -1,7 +1,7 @@
 +++
 title = "Research Value Storage"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 date = "2019-10-08T17:45:12-05:00"

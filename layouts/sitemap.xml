@@ -1,11 +1,11 @@
-<xml version="1.0" encoding="UTF-8">
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
   {{ range .Data.Pages }}
     {{ if not .Params.private }}
       <url>
         <loc>https://www.rc.virginia.edu{{ chomp .Permalink }}</loc>
         {{ if not .Lastmod.IsZero }}<lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02" ) }}</lastmod>{{ end }}
-        <name></name>
+        <name>{{ .Name }}</name>
       </url>
     {{ end }}
   {{ end }}

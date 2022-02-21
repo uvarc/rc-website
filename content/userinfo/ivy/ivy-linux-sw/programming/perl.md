@@ -1,7 +1,7 @@
 +++
 title = "Preinstalled Perl on Ivy Linux VMs"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 date = "2018-01-29T15:45:12-05:00"
 categories = ["userinfo"]

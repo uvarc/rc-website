@@ -1,7 +1,7 @@
 +++
 title = "Preinstalled Python 2 and Python 3 with Anaconda on Ivy Windows VM"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 date = "2018-01-18T17:45:12-05:00"
 categories = ["userinfo"]

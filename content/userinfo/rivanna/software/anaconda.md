@@ -1,7 +1,7 @@
 +++
 title = "Anaconda on Rivanna"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 date = "2018-01-18T17:45:12-05:00"
 categories = ["userinfo"]

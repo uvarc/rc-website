@@ -7,7 +7,7 @@ draft = true
 tags = ["bioinformatics","genomics"]
 categories = ["reference"]
 images = [""]
-author = "SOMRC Staff"
+author = "RC Staff"
 type = "reference"
 
 +++

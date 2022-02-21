@@ -1,7 +1,7 @@
 +++
 title = "UVa Licensed SAS on the Ivy Linux VM"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 date = "2018-02-01T00:45:12-05:00"
