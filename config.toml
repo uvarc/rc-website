@@ -91,8 +91,8 @@ timeout = "60000"
   hide = true
 
 [outputs]
-  home = [ "HTML", "JSON"]
-  page = [ "HTML"]
+  home = [ "HTML", "JSON" ]
+  page = [ "HTML" ]
 
 [sitemap]
   changefreq = "daily"
