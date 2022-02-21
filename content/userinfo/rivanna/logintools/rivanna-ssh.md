@@ -2,7 +2,7 @@
 description = ""
 title = "`ssh` on Rivanna"
 draft = false
-date = "2021-01-17 T13:45:12-05:00"
+date = "2022-02-14T11:45:12-05:00"
 tags = ["rivanna","login","hpc","ssh","cli"]
 categories = ["userinfo"]
 images = [""]
