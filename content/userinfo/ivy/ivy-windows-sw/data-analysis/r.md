@@ -1,7 +1,7 @@
 +++
 title = "Preinstalled R on Ivy Windows VM"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 date = "2018-01-19T17:45:12-05:00"
 categories = ["userinfo"]

@@ -2,7 +2,7 @@
 title = "Preinstalled Office 2016 on Ivy Windows VM"
 description = ""
 date = "2017-02-24T10:08:29-05:00"
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 tags = [

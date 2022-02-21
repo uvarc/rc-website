@@ -1,7 +1,7 @@
 +++
 title = "Bioinformatics Packages on Windows VM"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 tags = [

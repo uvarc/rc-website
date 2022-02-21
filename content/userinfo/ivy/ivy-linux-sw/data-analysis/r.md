@@ -1,7 +1,7 @@
 +++
 title = "Preinstalled R on Ivy Linux VM"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 tags = [

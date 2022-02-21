@@ -1,7 +1,7 @@
 +++
 title = "Sensitive Data Storage - Ivy"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 date = "2018-04-19T17:45:12-05:00"

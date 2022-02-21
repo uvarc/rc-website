@@ -13,7 +13,7 @@ draft = false
 date = "2018-01-31T14:18:18-05:00"
 title = "Image Processing Software on Ivy Windows VM"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 
 +++

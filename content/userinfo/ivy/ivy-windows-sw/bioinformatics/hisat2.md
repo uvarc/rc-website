@@ -2,7 +2,7 @@
 title = "HISAT2 on Ivy Windows VM"
 description = ""
 date = "2018-02-01T17:45:12-05:00"
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 tags = [

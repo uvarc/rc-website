@@ -2,7 +2,7 @@
 title = "Sumatra PDF on Ivy Windows VM"
 description = ""
 date = "2018-01-24T10:08:29-05:00"
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 tags = [

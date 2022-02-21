@@ -1,10 +1,10 @@
 +++
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 title = "Cloud Storage Solutions"
-date = "2017-02-24T10:08:29-05:00"
+date = "2022-02-20T10:08:29-05:00"
 draft = false
-tags = ["storage","cloud","aws","gcp"]
+tags = ["storage","cloud","aws","gcp","s3"]
 categories = ["userinfo"]
 images = [""]
 +++

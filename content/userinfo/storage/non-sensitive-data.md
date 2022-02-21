@@ -1,7 +1,7 @@
 +++
 title = "Public and Moderately Sensitive Data Storage"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 date = "2019-10-04T17:45:12-05:00"

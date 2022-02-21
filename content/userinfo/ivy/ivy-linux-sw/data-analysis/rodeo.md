@@ -2,7 +2,7 @@
 title = "Preinstalled Rodeo on Ivy Linux VM"
 date = "2018-01-29T15:45:12-05:00"
 description = ""
-author = "SOMRC Staff"
+author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
 tags = [

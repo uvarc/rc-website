@@ -1,5 +1,5 @@
 +++
-author = "SOMRC Staff"
+author = "RC Staff"
 description = ""
 title = "Bowtie 2"
 draft = true
