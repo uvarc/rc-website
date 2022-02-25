@@ -31,9 +31,9 @@ draft = false
 
 `/home` and `/scratch` space can be obtained by requesting an allocation on Rivanna. The process of getting access to Rivanna is described [here](/userinfo/rivanna/overview/).
 
-# Project Storage
+# Research Project Storage
 
-The **Project Storage** file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS MyGroups system</a>. `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
+The **Research Project Storage** file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS MyGroups system</a>. `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
 
 **How to request `/project` storage space**
 
