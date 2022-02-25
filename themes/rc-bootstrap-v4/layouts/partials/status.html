@@ -19,44 +19,42 @@
 </section>
 
 <script>
-
 $(document).ready(function() {
-    $("#status-message").hide();
-    refreshStatusTable();
-    setInterval(refreshStatusTable, 60000);
-    checkStatusMessages();
-    setInterval(checkStatusMessages, 60000);
+  $("#status-message").hide();
+  refreshStatusTable();
+  setInterval(refreshStatusTable, 60000);
+  checkStatusMessages();
+  setInterval(checkStatusMessages, 60000);
 });
 
 function checkStatusMessages() {
-    $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages', function(data) {
-        var messageData = '';
-        $.each(data, function(key, value) {
-            var messageBody = value.body;
-            var messageLength = messageBody.length;
-            if ( messageLength < 22 ) {
-                $("#status-message").hide();
-            } else {
-                $("#status-message").show();
-                messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
-                messageData += value.body;
-                $('#status-message-content').html(messageData);
-            }
-        });
+  $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages', function(data) {
+    var messageData = '';
+    $.each(data, function(key, value) {
+      var messageBody = value.body;
+      var messageLength = messageBody.length;
+      if ( messageLength < 22 ) {
+        $("#status-message").hide();
+      } else {
+        $("#status-message").show();
+        messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
+        messageData += value.body;
+        $('#status-message-content').html(messageData);
+      }
     });
+  });
 }
 
 function refreshStatusTable(){
-    $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/grid', function(data) {
-        var statusData = '';
-        $.each(data, function(key, value) {
-            statusData += '<tr>';
-            statusData += '<td style="vertical-align:middle;" valign="middle"><a href="'+value.url+'" style="text-decoration:none;color:black;">'+value.title+'</a></td>';
-            statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src='+value.image+' /></td>';
-            statusData += '</tr>';
-        });
-        $('#statusBody').html(statusData);
+  $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/grid', function(data) {
+    var statusData = '';
+    $.each(data, function(key, value) {
+      statusData += '<tr>';
+      statusData += '<td style="vertical-align:middle;" valign="middle"><a href="'+value.url+'" style="text-decoration:none;color:black;">'+value.title+'</a></td>';
+      statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src='+value.image+' /></td>';
+      statusData += '</tr>';
     });
+    $('#statusBody').html(statusData);
+  });
 }
-
 </script>

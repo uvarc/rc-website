@@ -90,6 +90,7 @@ Below is the schedule for *Spring 2022*:
       <td>Building lists with .append()</td>
       <td>Python</td>
       <td>Will Rosenow</td>
+      <td><a href="https://colab.research.google.com/drive/1MCcd8_MPBLgEm_OJvaFK3cJ1zwMPw9qJ?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">5</th>
@@ -97,11 +98,12 @@ Below is the schedule for *Spring 2022*:
       <td>Text parsing/regular expressions</td>
       <td>Python</td>
       <td>Will Rosenow</td>
+      <td><a href="https://drive.google.com/file/d/1QBQyCJoHQit_eV34uRSyQWbjYdOoQYof/view?usp=sharing">Notebook</a></td>
     </tr>
     <tr>
       <th scope="row">6</th>
       <td>3/3/2022</td>
-      <td>Error handling with try and except</td>
+      <td>Numpy arrays</td>
       <td>Python</td>
       <td>Will Rosenow</td>
     </tr>

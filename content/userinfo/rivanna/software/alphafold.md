@@ -120,7 +120,8 @@ run --fasta_paths=$PWD/your_fasta_file \
     --bfd_database_path=/data/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt \
     --pdb70_database_path=/data/pdb70/pdb70 \
     --uniclust30_database_path=/data/uniclust30/uniclust30_2018_08/uniclust30_2018_08 \
-    --max_template_date= 
+    --max_template_date=YYYY-MM-DD \
+    --use_gpu_relax=True
 ```
 
 ## Multimer with `reduced_dbs`
@@ -144,7 +145,8 @@ run --fasta_paths=$PWD/your_fasta_file \
     --pdb_seqres_database_path=/data/pdb_seqres/pdb_seqres.txt \
     --uniprot_database_path=/data/uniprot/uniprot.fasta \
     --small_bfd_database_path=/data/small_bfd/bfd-first_non_consensus_sequences.fasta \
-    --max_template_date= 
+    --max_template_date=YYYY-MM-DD \
+    --use_gpu_relax=True
 ```
 
 ## Notes
