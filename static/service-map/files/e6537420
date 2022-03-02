@@ -2,7 +2,7 @@
  "name": "flare",
  "children": [
   {
-   "name": "Standard Security Zone",
+   "name": "Standard Security",
    "children": [
     {
      "name": "HPC",
@@ -11,7 +11,7 @@
      ]
     },
     {
-     "name": "Containers",
+     "name": "Microservices",
      "children": [
       {"name": "Kubernetes", "value": 4000}
      ]
@@ -32,7 +32,7 @@
    ]
   },
   {
-   "name": "High Security Zone",
+   "name": "High Security",
    "children": [
     {
      "name": "HPC",
@@ -41,7 +41,7 @@
      ]
     },
     {
-     "name": "Containers",
+     "name": "Microservices",
      "children": [
         {"name": "Kubernetes", "value": 2000},
         {"name": "ACCORD", "value": 2000}
