@@ -2,7 +2,7 @@
  "name": "flare",
  "children": [
   {
-   "name": "standard security",
+   "name": "Standard Security Zone",
    "children": [
     {
      "name": "HPC",
@@ -32,7 +32,7 @@
    ]
   },
   {
-   "name": "high security",
+   "name": "High Security Zone",
    "children": [
     {
      "name": "HPC",
