@@ -14,7 +14,7 @@ md`# Research Computing Service Map`
 
   const svg = d3.create("svg")
       .attr("viewBox", [0, 0, width, width])
-      .style("font", "10px sans-serif");
+      .style("font", "100% sans-serif");
 
   const g = svg.append("g")
       .attr("transform", `translate(${width / 2},${width / 2})`);
