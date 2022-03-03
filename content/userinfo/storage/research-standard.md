@@ -41,7 +41,7 @@ _Research Standard_ storage can be drive mapped on a personal computer to enable
 
 
 ### Public and Moderately Sensitive Storage Data Transfer
-<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-nonsecure-apr2018.png" alt="nonsecure-storage-options-overview">
+<img src="/images/storage/storage-nonsecure.jpg" alt="nonsecure-storage-options-overview">
 
 #### Secure Copy (scp)
 `scp` uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. `scp can be used with the following syntax:

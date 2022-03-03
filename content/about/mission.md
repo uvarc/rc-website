@@ -6,7 +6,6 @@ tags = [
   "storage",
   "medicine",
   "research",
-  "cadre",
 ]
 draft = false
 date = "2017-01-15T14:53:45-05:00"
