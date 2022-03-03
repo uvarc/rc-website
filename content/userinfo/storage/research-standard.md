@@ -1,5 +1,5 @@
 +++
-title = "Research Value Storage"
+title = "Research Standard Storage"
 description = ""
 author = "RC Staff"
 images = [""]
@@ -18,25 +18,24 @@ draft = false
 
 Research Computing offers several budget options for storing public and moderately sensitive research data. Information Security at UVA provides details about [data sensitivity classifications](https://security.virginia.edu/university-data-protection-standards).
 
-The Research Value Storage provides users 
-with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
+The _Research Standard_ storage provides users with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
 the team lead or PI. Group membership can be defined and managed through <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS 
-MyGroups system</a>. Value storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
+MyGroups system</a>. Research Standard storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
 mount, allowing for point-and-click file manipulation.
 
-If you are not a researcher, UVA ITS offers Academic Value storage for long-term storage of large scale data. More information about ITS's 
+If you are not a researcher, UVA ITS offers Value storage for long-term storage of large scale data. More information about ITS's 
 various storage options can be found <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" style="font-weight:bold;" target="_blank">on their website</a>.
 
-# Request Research Value Storage
+# Request Research Standard Storage
 
-Research Value Storage can be requested for $45/TB/YR through our [**Storage Request Form**](/form/storage/).
-Users can specify the size and name of the Research Value Storage directory and the name of an existing MyGroups group that can access the space. If the MyGroups group does not yet exist, please create one through the <a href="https://mygroups.virginia.edu/" style="font-weight:bold;" target="_blank">ITS MyGroups system</a> before filling out the value storage request form.
+_Research Standard_ storage can be requested for $45/TB/YR through our [**Storage Request Form**](/form/storage/).
+Users can specify the size and name of the Research Standard Storage directory and the name of an existing MyGroups group that can access the space. If the MyGroups group does not yet exist, please create one through the <a href="https://mygroups.virginia.edu/" style="font-weight:bold;" target="_blank">ITS MyGroups system</a> before filling out the _Research Standard_ storage request form.
 
-When your Research Value Storage share is created, you will receive an email detailing your NFS mount `sammas.storage.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\sammas.storage.virginia.edu\MyGroup_name`.
+When your Research Standard Storage share is created, you will receive an email detailing your NFS mount `sammas.storage.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\sammas.storage.virginia.edu\MyGroup_name`.
 
-# Drive Mapping with Research Value Storage
+# Drive Mapping with Research Standard Storage
 
-Research Value Storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [How To pages](/userinfo/howtos/storage/drive-mapping).
+_Research Standard_ storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [How To pages](/userinfo/howtos/storage/drive-mapping).
 
 # Data transfer
 
@@ -60,9 +59,9 @@ Several packages such as [Filezilla](/userinfo/rivanna/logintools/filezilla), [C
 #### Globus Connect (Large Data Transfers)
 Globus provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found [here](/userinfo/globus/).
 
-# File Manipulation and Navigation with Value Storage
+# File Manipulation and Navigation with Research Standard Storage
  
-Research Value Storage is based on a Linux file system similar to storage spaces on the Rivanna cluster, including [/home](/userinfo/storage/non-sensitive-data/#home) and [/scratch](/userinfo/storage/non-sensitive-data/#scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
+_Research Standard_ storage is based on a Linux file system similar to storage spaces on the Rivanna cluster, including [/home](/userinfo/storage/non-sensitive-data/#home) and [/scratch](/userinfo/storage/non-sensitive-data/#scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 
 - <a href="https://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855" target="_blank">A Gentle Introduction</a>
 - <a href="https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320" target="_blank">10 Essential Linux Commands</a>

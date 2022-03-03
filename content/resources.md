@@ -207,7 +207,7 @@ fetch(db_url)
   <div class="alert alert-success" role="alert" style="">
     <div style="float:right;"><i class="fas fa-server fa-2x"></i></div>
     <h4 class="alert-heading">Storage</h4>
-    <p>Review and manage your Project or Value storage shares.</p>
+    <p>Review and manage your Research Project or Research Standard storage shares.</p>
     <table class="table table-striped" style="font-family:'Roboto Mono', monospace;font-size:90%;">
       <thead class="">
         <tr>

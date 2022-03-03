@@ -4,13 +4,13 @@ description = ""
 title = "Research Data Storage"
 date = "2020-02-03T10:08:29-05:00"
 draft = false
-tags = ["storage","security","qumulo","ivy","rivanna","project"]
+tags = ["storage","security","ivy","rivanna","project","standard"]
 categories = ["userinfo"]
 images = [""]
 +++
 
 ![Project Storage](https://img.shields.io/badge/dynamic/json?color=color&label=Project%20Storage&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fproject&style=for-the-badge)
-![Value Storage](https://img.shields.io/badge/dynamic/json?color=color&label=Value%20Storage&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fvalue&style=for-the-badge)
+![Standard Storage](https://img.shields.io/badge/dynamic/json?color=color&label=Value%20Storage&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fvalue&style=for-the-badge)
 
 <p class="lead">There are a variety of options for storing large-scale research data at UVA. Public and moderately sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Highly sensitive data can be stored and accessed within the <a href="/userinfo/ivy/overview">Ivy</a> secure computing environment. Information Security at UVA provides an overview of the <a href=https://security.virginia.edu/university-data-protection-standards>data sensitivity classifications</a>.  <br /><br />UVA graduate and undergraduate students are not permitted to request storage accounts. This must be done by their faculty advisor[s].</p>
 
@@ -54,10 +54,10 @@ images = [""]
     <td class="">Research project storage is ideal for long-term storage of data to be accessed from Rivanna. Research project storage is ideal for sharing data within a research group and for running jobs with smaller files.</td>
   </tr>
   <tr>
-    <td class=""><a href="/userinfo/storage/research-value">Research Standard Storage</a></td>
+    <td class=""><a href="/userinfo/storage/research-standard">Research Standard Storage</a></td>
     <td class="">1TB increments</td>
-    <td class="">{{% storage-pricing value %}}/TB/yr</td>
-    <td class="">{{% backup-policy value %}}</td>
+    <td class="">{{% storage-pricing standard %}}/TB/yr</td>
+    <td class="">{{% backup-policy standard %}}</td>
     <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
     <td class="">Research standard storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run Slurm jobs against research standard storage unless absolutely necessary. File operations on research standard storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
   </tr>

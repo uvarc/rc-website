@@ -38,7 +38,7 @@ Examples of service areas include:
     <h2 class="card-title">Rivanna</h2>
     <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
     <p class="card-text">
-    Rivanna provides a high-performance computing environment for all user levels with a total of {{< rivanna-node-count >}} nodes and {{< rivanna-core-count >}} cpu cores.  This includes specialty hardware like GPGPUs and large memory nodes. All nodes are supported by a high-performance EDR/FDR Infiniband network using Mellanox hardware. The Rivanna cluster also provides approximately {{< rivanna-scratch-capacity >}} of scratch (temporary) storage on a high-speed Lustre filesystem. Users may also lease space on “Project” and “Value” storage that is mounted to Rivanna, as well as elsewhere. 
+    Rivanna provides a high-performance computing environment for all user levels with a total of {{< rivanna-node-count >}} nodes and {{< rivanna-core-count >}} cpu cores.  This includes specialty hardware like GPGPUs and large memory nodes. All nodes are supported by a high-performance EDR/FDR Infiniband network using Mellanox hardware. The Rivanna cluster also provides approximately {{< rivanna-scratch-capacity >}} of scratch (temporary) storage on a high-speed Lustre filesystem. Users may also lease space on “Research Project” and “Research Standard” storage that are mounted to Rivanna, as well as elsewhere. 
     </p>
     <a href="/userinfo/rivanna/overview" class="card-link"><button class="btn btn-warning">Read more about Rivanna</button></a>
   </div>

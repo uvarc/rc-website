@@ -12,12 +12,12 @@ tags = ["howto","storage","mapping"]
 draft = false
 shorttitle = "Drive Mapping"
 title = "Drive Mapping on Windows or Mac OSX"
-description = "Mapping Value or Project Storage to your Desktop"
+description = "Mapping Research Standard or Research Project Storage to your Desktop"
 author = "RC Staff"
 
 +++
 
-Value and Project storage can be mapped to your Windows or Mac computer as a remote drive.  If you are off Grounds you must be running a VPN, such as the UVA Anywhere or the More Secure VPN from [ITS](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).  We recommend the More Secure VPN if that is available to you.
+_Research Standard_ and _Research Project_ storage can be mapped to your Windows or Mac computer as a remote drive.  If you are off Grounds you must be running a VPN, such as the UVA Anywhere or the More Secure VPN from [ITS](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).  We recommend the More Secure VPN if that is available to you.
 
 # Windows
 

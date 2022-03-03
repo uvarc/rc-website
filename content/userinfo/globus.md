@@ -87,7 +87,7 @@ You can search for the collections to use for your transfer from the File Manage
 
 The official UVA managed collections are:
 
-* `uva#main-DTN` - generally available; maps to Rivanna home directories, scratch, value  & project storage.
+* `uva#main-DTN` - generally available; maps to Rivanna _home_ directories, _scratch_, _Research Standard_ & _Research Project_ storage.
 * `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into Ivy Central Storage.
     **Globus is the *only* permitted data-transfer protocol for highly sensitive data.** To transfer data to Ivy Central Storage, please see the special instructions [here](/userinfo/ivy/overview/#data-transfer-inout-of-ivy).
 

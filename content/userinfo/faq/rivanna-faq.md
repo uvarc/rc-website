@@ -279,7 +279,7 @@ Scratch storage is fast and provides a large quantity of free space.  However, t
 
 
 ## How do I obtain leased storage?
-Research Computing offers two tiers of leased storage, Value and Project. Please see our [storage page](/userinfo/storage) for details.
+Research Computing offers two tiers of leased storage, _Research Standard_ and _Research Project_. Please see our [storage page](/userinfo/storage) for details.
 
 ## How do I check my disk usage?
 Run `hdquota` on a Rivanna frontend.
