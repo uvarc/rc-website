@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = "2022-03-03T10:40:10-05:00"
 title = "Alois D'uston"
 job_title = "Computational Scientist"
