@@ -16,6 +16,7 @@ subjects = [
   "machine learning",
   "optimization",
   "python",
+  "data-science"
 ]
 +++
 
