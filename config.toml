@@ -65,7 +65,7 @@ timeout = "60000"
 [params.backups]
   rivanna_home = "1-week snapshots"
   rivanna_scratch = "No backups"
-  project = "1-week snapshots"
+  project = "daily snapshots for 1 week"
   standard = "No backups"
   zfs = "No backups"
 

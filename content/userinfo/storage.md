@@ -36,35 +36,49 @@ images = [""]
 <table class="table table-striped table-sm" style="font-size:90%;">
   <thead class="thead-dark">
   <tr>
-    <th class="" style="width:16%;">Name</th>
-    <th class="">Quota</th>
-    <th class="">Price</th>
-    <th class="">Data Protection</th>
-    <th class="">Accessible from</th>
-    <th class="">Best Practices</th>
+    <th class="" style="width:16%;">Feature</th>
+    <th class=""><a href="http://localhost:1313/userinfo/storage/non-sensitive-data/#research-project-storage">Research Project Storage</a></th>
+    <th class=""><a href="/userinfo/storage/research-standard">Research Standard Storage</a></th>
   </tr>
   </thead>
   <tbody>
   <tr>
-    <td class=""><a href="/userinfo/storage/non-sensitive-data/#project">Research Project Storage</a></td>
+    <td class="">Quota</td>
     <td class="">1TB increments</td>
-    <td class="">{{% storage-pricing project %}}/TB/yr</td>
-    <td class="">{{% backup-policy project %}}</td>
-    <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-    <td class="">Research project storage is ideal for long-term storage of data to be accessed from Rivanna. Research project storage is ideal for sharing data within a research group and for running jobs with smaller files.</td>
+    <td class="">1TB increments</td>
   </tr>
   <tr>
-    <td class=""><a href="/userinfo/storage/research-standard">Research Standard Storage</a></td>
-    <td class="">1TB increments</td>
+    <td class="">Price</td>
+    <td class="">{{% storage-pricing project %}}/TB/yr</td>
     <td class="">{{% storage-pricing standard %}}/TB/yr</td>
-    <td class="">{{% backup-policy standard %}}</td>
+  </tr>
+  <tr>
+    <td class="">Snapshots</td>
+    <td class="">{{% backup-policy project %}}</td>
+    <td class="">No</td>
+  </tr>
+  <tr>
+    <td class="">Replication</td>
+    <td class="">No</td>
+    <td class="">No</td>
+  </tr>
+  <tr>
+    <td class="">Backup</td>
+    <td class="">No</td>
+    <td class="">No</td>
+  </tr>
+  <tr>
+    <td class="">Access</td>
     <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-    <td class="">Research standard storage is a budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run Slurm jobs against research standard storage unless absolutely necessary. File operations on research standard storage are slower than on <code>/home</code>, <code>/scratch</code>, or <code>/project</code>.</td>
+    <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
+  </tr>
+  <tr>
+    <td class="">Use cases</td>
+    <td class="">Ideal for long-term storage of data to be accessed from Rivanna. Research Project storage is ideal for sharing data within a research group and for running jobs with smaller files.</td>
+    <td class="">Budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run Slurm jobs against research standard storage unless absolutely necessary. File operations on Research Standard storage are slower than on Rivanna <code>/home</code>, <code>/scratch</code>, or <code>Research Project</code> storage.</td>
   </tr>
   </tbody>
 </table>
-
-
 
 - - -
 
@@ -72,22 +86,40 @@ images = [""]
 
 <table class="table table-striped table-sm" style="font-size:90%;">
   <thead class="thead-dark">
-    <tr>
-      <th class="" style="width:16%;">Name</th>
-      <th class="">Quota</th>
-      <th class="">Price</th>
-      <th class="">Mounted On</th>
-      <th class="">Best Practices</th>
-    </tr>
+  <tr>
+    <th class="" style="width:16%;">Feature</th>
+    <th class=""><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></th>
+  </tr>
   </thead>
   <tbody>
-    <tr>
-      <td class=""><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></td>
-      <td class="">1TB increments</td>
-      <td class="">First TB is free, additional space {{% storage-pricing ivy %}} TB/year</td>
-      <td class="">Ivy virtual machine</td>
-      <td class="">ICS is ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
-    </tr>
+  <tr>
+    <td class="">Quota</td>
+    <td class="">1TB increments</td>
+  </tr>
+  <tr>
+    <td class="">Price</td>
+    <td class="">{{% storage-pricing ivy %}}/TB/yr</td>
+  </tr>
+  <tr>
+    <td class="">Snapshots</td>
+    <td class="">No</td>
+  </tr>
+  <tr>
+    <td class="">Replication</td>
+    <td class="">No</td>
+  </tr>
+  <tr>
+    <td class="">Backup</td>
+    <td class="">No</td>
+  </tr>
+  <tr>
+    <td class="">Access</td>
+    <td class="">Ivy Virtual Machine</td>
+  </tr>
+  <tr>
+    <td class="">Use cases</td>
+    <td class="">Ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
+  </tr>
   </tbody>
 </table>
 
