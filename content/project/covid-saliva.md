@@ -7,10 +7,12 @@ images = "/images/projects/covid-saliva.jpg"
 categories = ["projects"]
 tags = [
   "bioinformatics",
-  "covid"
+  "covid-19",
+  "data",
+  "health"
 ]
 draft = false
-projecttype = ["basic-science", "tools"]
+projecttype = ["basic-science", "tools", "clinical-research", "microservices"]
 +++
 
 In cooperation with the UVA Saliva Testing Lab, the UVA Health System, and the Virginia Department of Health, the "Be SAFE" saliva
