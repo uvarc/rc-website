@@ -12,7 +12,7 @@ tags = [
   "health"
 ]
 draft = false
-projecttype = ["basic-science", "tools", "clinical-research", "microservices"]
+projecttype = ["basic-science", "tools", "clinical-research", "containers"]
 +++
 
 In cooperation with the UVA Saliva Testing Lab, the UVA Health System, and the Virginia Department of Health, the "Be SAFE" saliva
