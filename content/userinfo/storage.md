@@ -123,7 +123,7 @@ images = [""]
   </tbody>
 </table>
 
-Researchers who request space on ICS must first request an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Further information on Ivy and the ICS can be found [here](https://staging.rc.virginia.edu/userinfo/storage/sensitive-data/#ivy-central-storage).
+Researchers who request space on ICS must first request an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Further information on Ivy and the ICS can be found [here](/userinfo/storage/sensitive-data/#ivy-central-storage).
 
 Ivy Central Storage is accessible by using [Globus](/userinfo/globus/) and connecting to the Ivy DTN.
 
