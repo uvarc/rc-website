@@ -157,5 +157,6 @@ run --fasta_paths=$PWD/your_fasta_file \
     ```
     Launching subprocess "/usr/bin/jackhmmer -o /dev/null -A /tmp/tmpys2ocad8/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 ./seq.fasta /share/resources/data/alphafold/mgnify/mgy_clusters.fa"
     ```
-
+1. You must provide a value for `--max_template_date`. See <https://github.com/deepmind/alphafold/blob/main/run_alphafold.py#L92-L93>.
+1. The flag `--use_gpu_relax` is only for version 2.1.2 and above.
 1. You are not required to use the `run` wrapper script. You can always provide the full singularity command.

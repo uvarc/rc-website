@@ -65,14 +65,14 @@ timeout = "60000"
 [params.backups]
   rivanna_home = "1-week snapshots"
   rivanna_scratch = "No backups"
-  project = "1-week snapshots"
-  value = "No backups"
+  project = "daily snapshots for 1 week"
+  standard = "No backups"
   zfs = "No backups"
 
 [params.pricing]
   # Set STORAGE / VM PRICES globally below:
   storageProject = 60
-  storageValue = 45
+  storageStandard = 45
   storageZfs = 30
   storageIvy = 45
   ivyVmSmall = 999

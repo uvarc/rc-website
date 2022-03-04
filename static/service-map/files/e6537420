@@ -1,0 +1,66 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "Standard Security",
+   "children": [
+    {
+     "name": "HPC",
+     "children": [
+      {"name": "Rivanna", "value": 4000}
+     ]
+    },
+    {
+     "name": "Microservices",
+     "children": [
+      {"name": "Kubernetes", "value": 4000}
+     ]
+    },
+    {
+     "name": "Storage",
+     "children": [
+      {"name": "Project", "value": 2000},
+      {"name": "Value", "value": 2000}
+     ]
+    },
+    {
+     "name": "Virtual Machines",
+     "children": [
+     {"name": "Skyline", "value": 4000}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "High Security",
+   "children": [
+    {
+     "name": "HPC",
+     "children": [
+      {"name": "ToBeNamed", "value": 4000}
+     ]
+    },
+    {
+     "name": "Microservices",
+     "children": [
+        {"name": "Kubernetes", "value": 2000},
+        {"name": "ACCORD", "value": 2000}
+       ]
+    },
+    {
+        "name": "Virtual Machines",
+        "children": [
+           {"name": "Ivy", "value": 4000}
+          ]
+       },
+    {
+    "name": "Storage",
+    "children": [
+        {"name": "Ivy Central Storage", "value": 2000},
+        {"name": "CEPH", "value": 2000}
+       ]
+    }
+   ]
+  }
+ ]
+}

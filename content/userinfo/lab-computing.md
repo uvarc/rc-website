@@ -25,7 +25,7 @@ Data storage options include:
 
 * ES1 Data Storage
 * ES3 Secured Data Storage
-* Value Storage (Option for Object Storage Backup)
+* Research Standard Storage (Option for Object Storage Backup)
 
 - - -
 

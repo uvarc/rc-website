@@ -52,6 +52,6 @@ The File Explorer in Open OnDemand can be used to upload and download small file
 
 [<button class="btn btn-primary">Open OnDemand</button>](/userinfo/rivanna/ood/fileexplorer/)
 
-# Remote Mounting for /project and /value Storage Shares
+# Remote Mounting for Research Project and Research Standard Storage Shares
 
-Leased storage (/project and /value) can be mounted as remote drives to Windows and Mac OSX computers.
+Leased storage (Research Project and Research Standard) can be mounted as remote drives to Windows and Mac OSX computers.

@@ -33,30 +33,34 @@ images = [""]
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Project</th>
+      <th scope="row">Research Project</th>
       <td>Standard</td>
       <td>{{% storage-pricing project %}} TB/year</td>
     </tr>
     <tr>
-      <th scope="row">Value</th>
+      <th scope="row">Research Standard</th>
       <td>Standard</td>
-      <td>{{% storage-pricing value %}} TB/year</td>
+      <td>{{% storage-pricing standard %}} TB/year</td>
     </tr>
+    <!--
     <tr>
       <th scope="row">ZFS</th>
       <td>Standard</td>
       <td>{{% storage-pricing zfs %}} TB/year</td>
     </tr>
+    -->
     <tr>
       <th scope="row">Ivy Central Storage</th>
       <td>High</td>
       <td>{{% storage-pricing ivy %}} TB/year</td>
     </tr>
+    <!--
     <tr>
       <th scope="row">Ivy NAS Storage</th>
       <td>High</td>
       <td>{{% storage-pricing project %}} TB/year</td>
     </tr>
+    -->
   </tbody>
 </table>
 {{< /rawhtml >}}

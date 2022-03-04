@@ -91,7 +91,7 @@ var user_token = getCookie("__user_token");
 <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
   <div class="card-body">
     <h5 class="card-title">Request Storage</h5>
-    <p class="card-text">Manage your shared project, value, or ZFS storage volumes.</p>
+    <p class="card-text">Manage your shared <i>Research Project</i> or <i>Research Standard</i> storage volumes.</p>
     <div class="support-tiles">
       <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a>
     </div>

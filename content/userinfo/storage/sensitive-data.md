@@ -6,11 +6,9 @@ images = [""]
 categories = ["userinfo"]
 date = "2018-04-19T17:45:12-05:00"
 tags = [
-    "rivanna", 
+    "ivy", 
     "sensitive data",
     "storage",
-    "qumulo",
-    "lustre"
 ]
 draft = false
 +++

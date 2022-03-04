@@ -1,0 +1,14 @@
+{
+  "name": "767d29f03c85877b",
+  "main": "767d29f03c85877b@358.js",
+  "version": "358.0.0",
+  "homepage": "https://observablehq.com/d/767d29f03c85877b",
+  "author": {
+    "name": "Neal Magee",
+    "url": "https://observablehq.com/@nmagee"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

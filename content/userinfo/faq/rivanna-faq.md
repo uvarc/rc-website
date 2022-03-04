@@ -279,7 +279,7 @@ Scratch storage is fast and provides a large quantity of free space.  However, t
 
 
 ## How do I obtain leased storage?
-Research Computing offers two tiers of leased storage, Value and Project. Please see our [storage page](/userinfo/storage) for details.
+Research Computing offers two tiers of leased storage, _Research Standard_ and _Research Project_. Please see our [storage page](/userinfo/storage) for details.
 
 ## How do I check my disk usage?
 Run `hdquota` on a Rivanna frontend.
@@ -319,6 +319,16 @@ If you wish to share data in leased space with a member of your group, be sure t
 - - -
 
 # Data Transfer
+
+## How do I transfer data from UVA Box to my /scratch directory on Rivanna?
+
+Log into Rivanna using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop, in the upper right hand corner of the browser window you should see 3 horizontal bars. Click on that and then select Preferences from the drop down window. In the new window scroll down until you see Downloads and select ‘Always ask you where to save files’.  Then when you go to Box to download, a new window will pop up and if you click on ‘Other locations’, you can navigate to your scratch directory.
+
+## How do I transfer data from my /scratch directory on Rivanna to my UVA Box account?
+
+Log into Rivanna using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop and log into your UVA Box account. Once logged in to box, click on the New + button (upper right) to upload a file/folder. In the left sidebar of the new window, select Other Locations/Computer/scratch/<yourid> to navigate to your scratch directory and select the files/folders you want to upload to your box account.
+
+## What Linux commands can I use to transfer files to/from Rivanna?
 
 Smaller files can be transferred to/from Rivanna using `scp`, `sftp`, and `rsync` as well as standard FTP tools.
 
