@@ -31,13 +31,13 @@ From a security perspective, research data generally breaks down into two types:
 </p>
 
 <p>
-  <a class="btn btn-primary btn-lg" data-toggle="collapse" href="#sszcollapse" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Blue Zone</a>
-  <button class="btn btn-warning btn-lg" type="button" data-toggle="collapse" data-target="#hszcollapse" aria-expanded="false" aria-controls="multiCollapseExample2">Orange Zone</button>
+  <a class="btn btn-primary btn-lg" style="background-color:#084B84;" data-toggle="collapse" href="#sszcollapse" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Blue Zone</a>
+  <button class="btn btn-warning btn-lg" style="background-color:#E47D1E;" type="button" data-toggle="collapse" data-target="#hszcollapse" aria-expanded="false" aria-controls="multiCollapseExample2">Orange Zone</button>
 </p>
 <div class="row" style="margin-top:2rem;">
   <div class="col">
     <div class="collapse multi-collapse" id="sszcollapse">
-      <div class="card-header" style="background-color:#0275d8;color:white;">
+      <div class="card-header" style="background-color:#084B84;color:white;">
         <b>Moderately Sensitive Data</b>
       </div>
       <div class="card card-body">
@@ -52,7 +52,7 @@ From a security perspective, research data generally breaks down into two types:
   </div>
   <div class="col">
     <div class="collapse multi-collapse" id="hszcollapse">
-      <div class="card-header" style="background-color:#f0ad4e;color:white;">
+      <div class="card-header" style="background-color:#E47D1E;color:white;">
         <b>Highly Sensitive Data</b>
       </div>
       <div class="card card-body">
