@@ -42,19 +42,38 @@ Users may build their own versions of QE if they wish to use a different compile
 
 # Example Slurm script
 To run the system version of QE, a script similar to the following can be used.  QE has many options so only the most basic is shown.
+
+Please run the CPU version on non-`gpu` partitions and the GPU version only on the `gpu` partition. In both cases, we highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark/) to decide how many CPU cores and/or GPU devices you should use.
+
+## CPU
 ```
 #!/bin/bash
-#SBATCH --account my_acct
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=16
-#SBATCH --time=3-00:00:00
-#SBATCH --output=nano.out
-#SBATCH --partition=parallel
+#SBATCH -A myallocation        # your allocation
+#SBATCH -p parallel            # partition
+#SBATCH -N 2                   # number of nodes
+#SBATCH --ntasks-per-node=40   # number of tasks
+#SBATCH -t 1-00:00:00          # walltime
 
 module purge
-module load intel/18.0
-module load intelmpi/18.0
+module load intel/18.0 intelmpi/18.0
 module load quantumespresso/6.4.1
 
-srun pw.x -in nano.in
+srun pw.x -in file.in
+```
+
+## GPU
+```
+#!/bin/bash
+#SBATCH -A myallocation        # your allocation
+#SBATCH -p gpu                 # do not change
+#SBATCH --gres=gpu:1           # number of GPU devices
+#SBATCH -C v100|a100           # can only run on V100 and A100
+#SBATCH -N 1                   # number of nodes
+#SBATCH --ntasks-per-node=2    # number of tasks
+#SBATCH -t 1-00:00:00          # walltime
+
+module purge
+module load nvompic quantumespresso/7.0
+
+srun pw.x -in file.in
 ```
