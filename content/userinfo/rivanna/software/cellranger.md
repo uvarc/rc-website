@@ -39,4 +39,4 @@ module spider {{% module-firstversion %}}
 
 # Important note on `mkfastq`
 
-If you are using the `mkfastq` subcommand, please do not load the `bcl2fastq2` module. Cell Ranger requires a statically linked binary of `bcl2fastq`, whereas the `bcl2fastq2` module provides a dynamically linked binary. We have prepared a separate statically linked `bcl2fastq`, which will be made available to you automatically upon loading the `cellranger-atac` module.
+If you are using the `mkfastq` subcommand, please do not load the `bcl2fastq2` module. Cell Ranger requires a statically linked binary of `bcl2fastq`, whereas the `bcl2fastq2` module provides a dynamically linked binary. We have prepared a separate statically linked `bcl2fastq`, which will be made available to you automatically upon loading the `cellranger` module.
