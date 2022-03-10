@@ -47,7 +47,7 @@ To run the system version of QE, a script similar to the following can be used. 
 Please run the CPU version on non-`gpu` partitions and the GPU version only on the `gpu` partition. In both cases, we highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark/) to decide how many CPU cores and/or GPU devices you should use.
 
 ## CPU
-```
+```bash
 #!/bin/bash
 #SBATCH -A myallocation        # your allocation
 #SBATCH -p parallel            # partition
@@ -63,7 +63,7 @@ srun pw.x -in file.in
 ```
 
 ## GPU
-```
+```bash
 #!/bin/bash
 #SBATCH -A myallocation        # your allocation
 #SBATCH -p gpu                 # do not change
