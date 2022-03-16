@@ -21,8 +21,8 @@ subjects = [
 ]
 +++
 
-Neal's background is in development and operations, and he designs serverless and programmable infrastructure 
-that change dynamically with the needs of an application. He has extensive experience with Python, Linux, 
+Neal's background is in development and operations, and he designs both serverless and programmable infrastructure 
+that scale dynamically with the needs of an application. He has extensive experience with Python, Linux, 
 public clouds, and architecting dynamic systems that scale and heal automatically. Neal is an AWS 
 Certified Solution Architect and Developer, a member of the AWS Customer Council, and a Github Global 
 Campus Teacher.
