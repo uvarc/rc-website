@@ -7,7 +7,7 @@ about = true
 author = "Staff"
 description = ""
 title = "Your Resources"
-draft = true
+draft = false
 type = "resource"
 private = true
 +++
@@ -169,7 +169,6 @@ fetch(db_url)
       console.log(error)
     });
 </script>
-
 <div class="row">
   <div class="col-12 col-md-6">
     <h2 id="name">Hello </h2>
@@ -178,7 +177,6 @@ fetch(db_url)
     <div id="identity" style="float:right;text-align:right;font-family:'Roboto Mono', monospace;font-size:90%;"></div>
   </div>
 </div>
-
 <div class="row">
 <div class="col-md-6">
   <div class="alert alert-primary" role="alert" style="">
@@ -202,7 +200,6 @@ fetch(db_url)
     <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
   </div>
 </div>
-
 <div class="col-md-6">
   <div class="alert alert-success" role="alert" style="">
     <div style="float:right;"><i class="fas fa-server fa-2x"></i></div>
@@ -224,8 +221,6 @@ fetch(db_url)
     <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a> &nbsp;
   </div>
 </div>
-
-
 <div class="col-md-6">
   <div class="alert" role="alert" style="background-color:#efefef;">
     <div style="float:right;"><img style="max-width:40px;margin-top:0px;" src="/images/docker-bw-icon.png" alt="Docker Container" /></div>
@@ -247,7 +242,6 @@ fetch(db_url)
     <a href="/form/containers/"><button class="btn btn-primary btn-sm">Request Microservices</button></a> &nbsp;
   </div>
 </div>
-
 <div class="col-md-6">
   <div class="alert" role="alert" style="background-color:#efefef;">
     <div style="float:right;"><i class="fas fa-database fa-2x"></i></div>
