@@ -8,7 +8,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="modal fade bd-example-modal-lg" style="" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal fade search-modal" style="" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" style="margin-top:4rem;">
       <div class="modal-content" style="opacity:80%;">
       <form method="get" action="/search/">
@@ -109,10 +109,16 @@
 
     <!-- BEGIN SEARCH BOX -->
     <div style="float:right;margin-right:1rem;">
-    <button type="button" class="btn btn-default" style="background-color:#232d4b;color:white;border:none;" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-search-plus" style="color:white;margin-right:4px;"></i></button>
+    <button type="button" class="btn btn-default" style="background-color:#232d4b;color:white;border:none;" data-toggle="modal" data-target=".search-modal"><i class="fas fa-search-plus" style="color:white;margin-right:4px;"></i></button>
     </div>
     <!-- END SEARCH BOX -->
 
   </div>
 </div>
 </nav>
+
+<script>
+$('.search-modal').on('shown.bs.modal', function () {
+    $('#qt').focus();
+})
+</script>
