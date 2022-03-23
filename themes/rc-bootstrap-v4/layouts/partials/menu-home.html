@@ -8,14 +8,24 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <div class="modal fade bd-example-modal-lg" style="" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" style="margin-top:4rem;">
+      <div class="modal-content" style="opacity:80%;">
+      <form method="get" action="/search/">
+       <input type=search id=qt name=q class="" placeholder="Enter a search term" style="width:100%;font-size:200%;padding:0px;border:solid 1px #ccc;font-family: 'Roboto Mono', monospace;padding:8px;">
+      </form>
+      </div>
+    </div>
+  </div>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
   <ul class="navbar-nav mr-auto">
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">About</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">ABOUT</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="/about/mission/">Mission</a>
-      <a class="dropdown-item" href="/about/people/">People</a>
+      <a class="dropdown-item" href="/about/mission/">MISSION</a>
+      <a class="dropdown-item" href="/about/people/">PEOPLE</a>
       <!-- REMOVE FOR NOW
       <a class="dropdown-item" href="/about/employment/">Employment</a>
       <div class="dropdown-divider"></div>
@@ -25,60 +35,60 @@
   </li>
 
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Get Started</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">GET STARTED</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="/userinfo/systems/">Choose a System</a>
-      <a class="dropdown-item" href="/userinfo/rivanna/allocations/">Request Access</a>
-      <a class="dropdown-item" href="/userinfo/user-guide/">User Guides</a>
+      <a class="dropdown-item" href="/userinfo/systems/">CHOOSE A SYSTEM</a>
+      <a class="dropdown-item" href="/userinfo/rivanna/allocations/">REQUEST ACCESS</a>
+      <a class="dropdown-item" href="/userinfo/user-guide/">USER GUIDES</a>
     </div>
   </li>
 
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Services</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">SERVICES</a>
     <div class="dropdown-menu">
-      <!-- REMOVE FOR NOW <a class="dropdown-item" href="/service/user-support/">User Support</a>
+      <!-- REMOVE FOR NOW <a class="dropdown-item" href="/service/user-support/">USER SUPPORT</a>
       <div class="dropdown-divider"></div> -->
       <!-- REMOVE FOR NOW <a class="dropdown-item" href="/service/vizlab/">Visualization Lab</a> -->
       <!-- REMOVE FOR NOW <a class="dropdown-item" href="/service/bioinformatics/">Bioinformatics &amp; Genomics</a> -->
-      <a class="dropdown-item" href="/service/high-performance-computing/">High Performance Computing</a>
-      <a class="dropdown-item" href="/service/data-analysis/">Data Analysis</a>
-      <a class="dropdown-item" href="/service/imaging/">Image Processing & Visualization</a>
-      <a class="dropdown-item" href="/service/bioinformatics/">Bioinformatics</a>
-      <a class="dropdown-item" href="/service/cloud/">Cloud Solutions</a>
-      <a class="dropdown-item" href="/userinfo/storage/">Storage</a>
+      <a class="dropdown-item" href="/service/high-performance-computing/">HIGH PERFORMANCE COMPUTING</a>
+      <a class="dropdown-item" href="/service/data-analysis/">DATA ANALYSIS</a>
+      <a class="dropdown-item" href="/service/imaging/">IMAGE PROCESSING & VISUALIZATION</a>
+      <a class="dropdown-item" href="/service/bioinformatics/">BIOINFORMATICS</a>
+      <a class="dropdown-item" href="/service/cloud/">CLOUD SOLUTIONS</a>
+      <a class="dropdown-item" href="/userinfo/storage/">STORAGE</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="/form/support-request/?category=Consultation">Project Consulting</a>
-      <!-- REMOVE FOR NOW <a class="disabled dropdown-item" href="/service/grant-support/">Grant Support</a>
+      <a class="dropdown-item" href="/form/support-request/?category=Consultation">PROJECT CONSULTING</a>
+      <!-- REMOVE FOR NOW <a class="disabled dropdown-item" href="/service/grant-support/">GRANT SUPPORT</a>
       <a class="disabled dropdown-item" href="/service/collaboration/">Collaboration</a> -->
-      <a class="dropdown-item" href="/service/acknowledgement/">Acknowledgement</a>
+      <a class="dropdown-item" href="/service/acknowledgement/">ACKNOWLEDGMENT</a>
     </div>
   </li>
 
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">User Info</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">USER INFO</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="/userinfo/user-guide/">User Guides</a>
-      <a class="dropdown-item" href="/userinfo/faq/overview">FAQ</a>
-      <a class="dropdown-item" href="/userinfo/howtos/overview">HowTos</a>
+      <a class="dropdown-item" href="/userinfo/user-guide/">USER GUIDES</a>
+      <a class="dropdown-item" href="/userinfo/faq/overview">FAQs</a>
+      <a class="dropdown-item" href="/userinfo/howtos/overview">HOW-TOs</a>
       <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="/userinfo/rivanna/overview/">Rivanna</a>
-      <a class="dropdown-item" href="/userinfo/ivy/overview">Ivy</a>
+      <a class="dropdown-item" href="/userinfo/rivanna/overview/">RIVANNA</a>
+      <a class="dropdown-item" href="/userinfo/ivy/overview">IVY</a>
       <a class="dropdown-item" href="/userinfo/accord/overview">ACCORD</a>
-      <a class="dropdown-item" href="/userinfo/microservices/">DCOS Microservices</a>
+      <a class="dropdown-item" href="/userinfo/microservices/">MICROSERVICES</a>
       <a class="dropdown-item" href="/userinfo/xsede/">XSEDE</a>
-      <a class="dropdown-item" href="/userinfo/storage/">Storage</a>
-      <a class="dropdown-item" href="/userinfo/data-transfer/">Data Transfer</a>
-      <a class="dropdown-item" href="/userinfo/omero/overview">Omero Image Database</a>
-      <a class="dropdown-item" href="/userinfo/pricing/">Pricing</a>
+      <a class="dropdown-item" href="/userinfo/storage/">STORAGE</a>
+      <a class="dropdown-item" href="/userinfo/data-transfer/">DATA TRANSFER</a>
+      <a class="dropdown-item" href="/userinfo/omero/overview">OMERO IMAGE DATABASE</a>
+      <a class="dropdown-item" href="/userinfo/pricing/">PRICING</a>
     </div>
   </li>
 
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">Education</a>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;">EDUCATION</a>
     <div class="dropdown-menu">
-      <a class="dropdown-item" href="/education/workshops/">Workshops</a>
-      <a class="dropdown-item" target="_new" href="https://learning.rc.virginia.edu/">Course Material</a>
-      <a class="dropdown-item" href="/education/rivanna-instructional">Using Rivanna for Instruction</a>
+      <a class="dropdown-item" href="/education/workshops/">WORKSHOPS</a>
+      <a class="dropdown-item" target="_new" href="https://learning.rc.virginia.edu/">COURSE MATERIAL</a>
+      <a class="dropdown-item" href="/education/rivanna-instructional">USING RIVANNA FOR INSTRUCTION</a>
       <!--
       <a class="dropdown-item disabled" href="#">Training Materials</a>
       <a class="dropdown-item disabled" href="#">White Papers</a>
@@ -88,20 +98,18 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="/project/" style="color:white;">Projects</a>
+    <a class="nav-link" href="/project/" style="color:white;">PROJECTS</a>
   </li>
 
   <li class="nav-item" style="margin-left:2rem;margin-right:2rem;">
-    <a href="/support/"><button style="background-color:#232d4b;color:white;border:solid 1px #ccc;" class="btn btn-default" type="submit">User Support</button></a>
+    <a href="/support/"><button style="background-color:#232d4b;color:white;border:solid 1px #ccc;" class="btn btn-default" type="submit">USER SUPPORT</button></a>
   </li>
 
   </ul>
 
     <!-- BEGIN SEARCH BOX -->
     <div style="float:right;margin-right:1rem;">
-      <form method="get" action="/search/">
-       <i class="fas fa-search-plus" style="color:white;margin-right:4px;"></i> <input type=search id=qt name=q class="" placeholder="Search" style="font-size:90%;padding:4px;margin-top:0.2rem;margin-bottom:auto;background-color:#232d4b;color:white;border:solid 1px white;">
-      </form>
+    <button type="button" class="btn btn-default" style="background-color:#232d4b;color:white;border:none;" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-search-plus" style="color:white;margin-right:4px;"></i></button>
     </div>
     <!-- END SEARCH BOX -->
 
