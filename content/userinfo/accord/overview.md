@@ -10,6 +10,8 @@ tags = ["accord","python","r","hipaa","sensitive-data"]
 
 ***
 
+![Microservices](https://img.shields.io/badge/dynamic/json?color=color&label=ACCORD&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Faccord&style=for-the-badge)
+
 ![ACCORD_logo](/images/accord/ACCORD_logo.png)
 
 <img src="/images/accord/nsf-logo.jpeg" style="float:right;" class="project-inset" />
