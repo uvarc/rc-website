@@ -49,8 +49,10 @@ timeout = "60000"
   name = "UVA Research Computing"
   description = "Creating innovative solutions for researchers"
   pageNotFoundTitle = "404 - Page not found"
-  rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
-  rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
+  rivannaJsonUrl = "https://s3.amazonaws.com/uvarc-resources/website/rivanna-software.json"
+  # rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
+  rivannaNodesUrl = "https://s3.amazonaws.com/uvarc-resources/website/nodeinfo.csv"
+  # rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
 
 [params.rivanna]
   totalNodes = "575"
