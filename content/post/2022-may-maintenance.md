@@ -19,6 +19,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
+   - mpi4py
 
 2. **Upgrades**:
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
