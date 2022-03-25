@@ -81,7 +81,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 </ol>
 
 
-Browse a list of recent [UVA projects employing microservices](/project?tag=.dcos).
+Browse a list of recent [UVA projects employing microservices](/project?tag=.containers).
 
 - - -
 
