@@ -3,14 +3,14 @@ images = [""]
 author = "Staff"
 description = ""
 date = "2022-05-11T00:00:00-05:00"
-title = "Rivanna Maintenance: May , 2021"
+title = "Rivanna Maintenance: May XX, 2021"
 # url = "/maintenance"
 draft = false
 tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}Rivanna and the Globus data transfer nodes (DTNs) will be down for maintenance on <strong>, May , 2022</strong> beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna and the Globus data transfer nodes (DTNs) will be down for maintenance on <strong>May XX, 2022</strong> beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
