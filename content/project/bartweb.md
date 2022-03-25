@@ -2,7 +2,7 @@
 title = "BART Web"
 author = "RC Staff"
 categories = ["projects"]
-tags = ["tools","containers","hpc","scripts","architecture","code","cphg"]
+tags = ["tools","containers","hpc","scripts","architecture","code","cphg","docker"]
 images = "/images/projects/bart-web.png"
 description = ""
 date = "2018-10-22T17:18:27-04:00"
