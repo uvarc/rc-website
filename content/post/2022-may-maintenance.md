@@ -28,6 +28,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
    Default version changes:
     - alphafold/2.1.1 -> 2.1.2
     - cellprofiler/3.1.8 -> 4.2.1
+    - cuda/11.0.228 -> 11.6.2
     - diamond/0.9.13 -> 2.0.14
     - gatk/4.1.6.0 -> 4.2.3.0
     - igvtools/2.8.9 -> 2.12.0
