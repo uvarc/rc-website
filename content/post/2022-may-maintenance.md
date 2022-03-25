@@ -30,13 +30,13 @@ You may continue to submit jobs until the maintenance period begins, but if the 
     - swig/4.0.2
 
    Default version changes:
-    - alphafold/2.1.1 -> 2.1.2
-    - cellprofiler/3.1.8 -> 4.2.1
-    - cuda/11.0.228 -> 11.6.2
-    - diamond/0.9.13 -> 2.0.14
-    - gatk/4.1.6.0 -> 4.2.3.0
-    - igvtools/2.8.9 -> 2.12.0
-    - metamorpheus/0.0.311-dev -> 0.0.320
+    - alphafold/2.1.1 &rarr; 2.1.2
+    - cellprofiler/3.1.8 &rarr; 4.2.1
+    - cuda/11.0.228 &rarr; 11.6.2
+    - diamond/0.9.13 &rarr; 2.0.14
+    - gatk/4.1.6.0 &rarr; 4.2.3.0
+    - igvtools/2.8.9 &rarr; 2.12.0
+    - metamorpheus/0.0.311-dev &rarr; 0.0.320
 
 3. **New** modules:
     - nvompic/21.9_3.1.6_11.4.2 toolchain (nvhpc/21.9 + openmpi/3.1.6 + cuda/11.4.2)
