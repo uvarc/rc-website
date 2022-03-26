@@ -5,9 +5,10 @@ categories = ["projects"]
 tags = ["tools","containers","hpc","scripts","architecture","code","cphg","docker"]
 images = "/images/projects/bart-web.png"
 description = ""
-date = "2018-10-22T17:18:27-04:00"
+date = "2021-10-22T17:18:27-04:00"
 draft = false
 projecttype = ["basic-science", "tools", "containers"]
+publications = [{authors = "Wenjing Ma, Zhenjia Wang, Yifan Zhang, Neal E Magee, Yayi Feng, Ruoyao Shi, Yang Chen, Chongzhi Zang", title = "BARTweb: a web server for transcriptional regulator association analysis", journal = "NAR Genomics and Bioinformatics", year = "2021", doi = "10.1093/nargab/lqab022"}]
 +++
 
 ## BART (Binding Analysis for Regulation of Transcription) Web
