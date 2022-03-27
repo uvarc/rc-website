@@ -16,15 +16,16 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 
 ## IMPORTANT MAINTENANCE NOTES
 
+- The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you do need to rebuild your code and need assistance, please contact hpc-support@virginia.edu.
+- Slurm 20.11.08
+- NVIDIA Driver 510.47.03
+
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
    - mpi4py
 
 2. **Upgrades**:
-    - The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you do need to rebuild your code and need assistance, please contact hpc-support@virginia.edu.
-    - Slurm 20.11.08
-    - NVIDIA Driver 510.47.03
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
     - tensorflow/2.8.0
     - swig/4.0.2
