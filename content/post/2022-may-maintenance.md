@@ -16,7 +16,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 
 ## IMPORTANT MAINTENANCE NOTES
 
-- The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you do need to rebuild your code and need assistance, please contact hpc-support@virginia.edu.
+- The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you need assistance to rebuild your code, please contact hpc-support@virginia.edu.
 - Slurm 20.11.08
 - NVIDIA Driver 510.47.03
 
