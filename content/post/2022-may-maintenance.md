@@ -38,6 +38,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
     - gatk/4.1.6.0 &rarr; 4.2.3.0
     - igvtools/2.8.9 &rarr; 2.12.0
     - metamorpheus/0.0.311-dev &rarr; 0.0.320
+    - totalview/2019.0.4_linux_x86-64 &rarr; 2021.4.10
 
 3. **New** modules:
     - nvompic/21.9_3.1.6_11.4.2 toolchain (nvhpc/21.9 + openmpi/3.1.6 + cuda/11.4.2)
