@@ -23,7 +23,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
-   - mpi4py
+   - mpi4py/3.0.0-py2.7, 3.0.3 - Load any MPI toolchain (e.g. `gcc openmpi`) and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html)
 
 2. **Upgrades**:
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
@@ -31,7 +31,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
     - swig/4.0.2
 
    Default version changes:
-    - alphafold/2.1.1 &rarr; 2.1.2
+    - alphafold/2.1.1 &rarr; 2.2.0
     - cellprofiler/3.1.8 &rarr; 4.2.1
     - cuda/11.0.228 &rarr; 11.6.2
     - diamond/0.9.13 &rarr; 2.0.14
