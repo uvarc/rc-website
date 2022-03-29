@@ -11,7 +11,7 @@ tags = [
   "gui"
 ]
 draft = false
-projecttype = ["basic-science", "tools"]
+projecttype = ["basic-science",  "image-analysis", "tools"]
 publications = [{authors = "Guagliardo, N.A., Klein, P.M., Gancayco, C.A. et al.", title = "Angiotensin II induces coordinated calcium bursts in aldosterone-producing adrenal rosettes", journal = "Nature Communications", year = "2020", doi = "https://doi.org/10.1038/s41467-020-15408-4"}]
 +++
 

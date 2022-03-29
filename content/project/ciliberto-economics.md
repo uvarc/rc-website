@@ -12,7 +12,7 @@ tags = [
   "parallel-computing"
 ]
 draft = false
-projecttype = ["hpc-computing"]
+projecttype = ["hpc-computing","social-science"]
 +++
 
 While conducting research for a highly-technical study of market behavior, Dr. Ciliberto realized that he needed to parallelize an integration over a sample distribution. RC staff member Ed Hall successfully parallelized Ciliberto’s Matlab code and taught him how to do production runs on the University’s high-performance clusters. “The second stage estimator was computationally intensive,” Ciliberto recalls. “We needed to compute the distribution of the residuals and unobservables for multiple parameter values and at many different points of the distribution, which requires parallelizing the computation. Ed Hall’s expertise in this area was crucial. In fact, without Ed’s contribution, this project could not have been completed.”

@@ -11,7 +11,7 @@ tags = [
   "cancer"
 ]
 draft = false
-projecttype = ["basic-science", "tools"]
+projecttype = ["basic-science", "image-analysis", "tools"]
 publications = [{authors = "Wallrabe H, Svindrych Z, Alam SR, Siller KH, Wang T, Kashatus D, Hu S, Periasamy A", title = "Segmented cell analyses to measure redox states of autofluorescent NAD(P)H, FAD & Trp in cancer cells by FLIM", journal = "Scientific Reports", year = "2018", doi = "https://doi.org/10.1038/s41598-017-18634-x"}]
 +++
 
