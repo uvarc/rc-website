@@ -309,7 +309,7 @@ find . -type f | cut -d/ -f2 | sort | uniq -c
 ```
 
 ## How long can I store files in `/scratch`?
-`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](https://staging.rc.virginia.edu/userinfo/rivanna/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/#public--moderately-sensitive-data-storage).
+`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/rivanna/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/#public--moderately-sensitive-data-storage).
 
 ## How do I share data in my `/scratch` or leased storage with a colleague?
 To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on Rivanna, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.
