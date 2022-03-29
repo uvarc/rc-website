@@ -61,7 +61,7 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
     - salmon/1.2.1 -> 1.5.1
     - rapids/0.19 -> 21.10
 
-3. **New** modules:
+3. New **modules**:
     - [spark/3.1.2](/userinfo/rivanna/software/spark)
     - rosetta/3.13 - computational modeling and analysis of protein structures
     - [namd/2.14](/userinfo/rivanna/software/namd) - Nanoscale Molecular Dynamics

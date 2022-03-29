@@ -2,14 +2,12 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2021-04-04T10:08:29-05:00"
+date = "2022-03-20T10:08:29-05:00"
 draft = false
-tags = ["compute","cloud","hpc","containers","hybrid","infrastructure","docker"]
+tags = ["compute","cloud","hpc","containers","hybrid","infrastructure","docker","kubernetes"]
 categories = ["userinfo"]
 images = [""]
 +++
-
-![Microservices](https://img.shields.io/badge/dynamic/json?color=color&label=DCOS&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fdcos&style=for-the-badge)
 
 <p class=lead>
   <img src="/images/docker-logo.png" style="max-width:30%;" alt="Docker Containers" align="right" />
@@ -83,7 +81,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 </ol>
 
 
-Browse a list of recent [UVA projects employing microservices](/project?tag=.dcos).
+Browse a list of recent [UVA projects employing microservices](/project?tag=.containers).
 
 - - -
 
@@ -107,8 +105,8 @@ Browse a list of recent [UVA projects employing microservices](/project?tag=.dco
         <ul>
           <li>Static HTML <a target="_new" href="http://bioterms.org/" class="badge badge-primary">demo</a>
           <li>Flask or Django apps <a target="_new" href="http://bartweb.org/" class="badge badge-primary">demo</a>
-          <li>RESTful APIs <a target="_new" href="http://refgenomes.databio.org/" class="badge badge-primary">demo</a>
-          <li>Expose Project storage <a target="_new" href="http://qdemo.uvadcos.io/" class="badge badge-primary">demo</a>
+          <li>RESTful APIs <a target="_new" href="http://ids.uvadcos.io/docs" class="badge badge-primary">demo</a>
+          <li>Expose Project storage <a target="_new" href="http://big.databio.org/" class="badge badge-primary">demo</a>
         </ul>
       </td>
     </tr>

@@ -6,7 +6,7 @@
   {{ partial "office-hours.html" . }}
 
 <!-- END WHEN NO WORKSHOPS -->
-{{ $url := "http://apidata.uvarc.io/events.csv" }}
+{{ $url := "https://s3.amazonaws.com/uvarc-resources/website/nodeinfo.csv" }}
 {{ $sep := "," }}
 {{ $dataWorkshops := getCSV $sep $url }}
 {{ if (eq ($dataWorkshops | len) 0) }}
