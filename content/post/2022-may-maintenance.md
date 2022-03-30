@@ -23,7 +23,8 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
-   - mpi4py/3.0.0-py2.7, 3.0.3 - Load any MPI toolchain (e.g. `gcc openmpi`) plus `anaconda` and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html)
+    - gcc/6.5.0 - Fully replaced by 7.1.0 and 9.2.0
+    - mpi4py/3.0.0-py2.7, 3.0.3 - Load any MPI toolchain (e.g. `gcc openmpi`) plus `anaconda` and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html)
 
 2. **Upgrades**:
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
