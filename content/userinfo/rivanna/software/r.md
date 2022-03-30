@@ -91,20 +91,9 @@ Or, you can launch RStudio and install the packages as you would on your laptop.
 
 After you have developed your R program, you can submit it to the compute nodes by using a Slurm job script similar to the following: 
 
-```
-#!/bin/bash
-#SBATCH -n 1
-#SBATCH -t 01:00:00
-#SBATCH -o results.out
-#SBATCH -p standard
-#SBATCH -A mygroup
+{{< pull-code file="/static/scripts/r_job.slurm" lang="no-hightlight" >}}
 
-module purge
-module load goolf/7.1.0_3.1.4  R
-Rscript myRprog.R
-```
-
-This script should be saved in a file, called (for example) job.slurm.  To run your job, you would submit the script by typing:
+This script should be saved in a file, called (for example) r_job.slurm.  To run your job, you would submit the script by typing:
 
 ```
 sbatch job.slurm
@@ -113,24 +102,9 @@ sbatch job.slurm
 # Submitting Multi-Core Jobs to the Cluster
 R programs can be written to use multiple cores on a node.  You will need to ensure that both Slurm and your R code know how many cores they will be using.  In the Slurm script, we recommend using `--cpus-per-task` to specify the number of cores.  For example:
 
-
-```
-#!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=10      #Requests 10 cores
-#SBATCH -t 00:30:00
-#SBATCH -o results.out
-#SBATCH -p standard
-#SBATCH -A mygroup
-
-module purge
-module load goolf/7.1.0_3.1.4  R
-Rscript myRprog.R ${SLURM_CPUS_PER_TASK}
-```
+{{< pull-code file="/static/scripts/r_multicore.slurm" lang="no-hightlight" >}}
 
 For the R code, the number of cores can be passed in with a command-line argument, as shown in the above example with ${SLURM_CPUS_PER_TASK}.  The code will need to be designed to read in the command-line argument and establish the number of available cores.  For example:
-
 
 ```
 cmdArgs <- commandArgs(trailingOnly=TRUE)
@@ -152,20 +126,8 @@ Do not use the `detectCores()` function, which is often shown in tutorial exampl
 
 R programs can be distributed across multiple nodes with MPI (message passing interface) and the appropriate MPI packages.  To run a parallel R job that uses MPI, the Slurm script would be similar to the following:
 
-```
-#!/bin/bash
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=10
-#SBATCH -t 00:30:00
-#SBATCH -o results.out
-#SBATCH -p parallel
-#SBATCH -A mygroup
+{{< pull-code file="/static/scripts/r_mpi.slurm" lang="no-hightlight" >}}
 
-module purge
-module load goolf/7.1.0_3.1.4 R
-
-srun Rscript myRprog.R
-```
 The items to notice in this script are 
 
 i)   the number of nodes; 

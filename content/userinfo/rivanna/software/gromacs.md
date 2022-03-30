@@ -42,19 +42,6 @@ module spider {{% module-firstversion %}}
 
 The non-Intel version is built with CUDA support. A Slurm script template is provided below.
 
-```
-#!/bin/bash
-#SBATCH -A mygroup            # your allocation account
-#SBATCH -p gpu                # partition
-#SBATCH --gres=gpu:1          # number of GPUs
-#SBATCH -N 1                  # number of nodes
-#SBATCH --ntasks-per-node=10  # number of tasks
-#SBATCH -t 10:00:00           # time
-
-module purge
-module load goolfc gromacs
-
-srun gmx_mpi <arguments>
-```
+{{< pull-code file="/static/scripts/gromacs_gpu.slurm" lang="no-hightlight" >}}
 
 Please do not run the Intel version on the `gpu` partition.

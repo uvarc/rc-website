@@ -128,45 +128,11 @@ As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install 
 # Example Slurm script
 ## Non-MPI
 
-```
-#!/bin/bash
-#SBATCH -A mygroup
-#SBATCH -p standard
-#SBATCH -N 1
-#SBATCH -c 1
-#SBATCH -t 01:00:00
-#SBATCH -o myprog.out
-
-module purge
-module load anaconda # or anaconda/2019.10-py2.7 for Python 2
-# optional: uncomment next line to use your custom Conda environment; replace 'custom_env' with actual env name
-# source activate custom_env
-
-python myscript.py
-```
+{{< pull-code file="/static/scripts/anaconda_serial.slurm" lang="no-hightlight" >}}
 
 ## MPI
 
-```
-#!/bin/bash
-#SBATCH -A mygroup
-#SBATCH -p standard
-#SBATCH -N 1
-#SBATCH --ntasks-per-node=10
-#SBATCH -t 01:00:00
-#SBATCH -o myprog.out
-
-module purge
-module load gcc openmpi
-module load mpi4py
-
-# If you installed mpi4py manually, comment out the previous line and uncomment the next two lines.
-# Replace 'custom_env' with the actual env name.
-#module load anaconda
-#source activate custom_env
-
-srun python myscript.py
-```
+{{< pull-code file="/static/scripts/anaconda_serial.slurm" lang="no-hightlight" >}}
 
 # More Information
 Please visit the official [Anaconda website] (https://www.anaconda.com/distribution/).

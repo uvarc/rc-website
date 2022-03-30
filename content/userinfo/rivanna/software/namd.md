@@ -44,17 +44,6 @@ module spider {{% module-firstversion %}}
 
 The NAMD module was built on Rivanna with MPI support. Below is a Slurm script template.
 
-```
-#!/bin/bash
-#SBATCH -A mygroup             # your allocation account
-#SBATCH -p parallel            # partition
-#SBATCH -N 2                   # number of nodes
-#SBATCH --ntasks-per-node=40   # number of tasks
-#SBATCH -t 24:00:00            # time
-
-module purge
-module load goolf namd
-mpiexec namd2 input.namd       # please use mpiexec as the executor for NAMD
-```
+{{< pull-code file="/static/scripts/namd.slurm" lang="no-hightlight" >}}
 
 You may want to benchmark it to see how well it scales for the type of job that you are running. Please refer to [our tutorial](https://learning.rc.virginia.edu/notes/benchmark/) on this topic. 

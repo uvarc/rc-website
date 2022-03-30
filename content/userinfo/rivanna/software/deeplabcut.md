@@ -50,20 +50,7 @@ For further details please visit [here](https://github.com/uvarc/rivanna-docker/
 ## Python script
 Please submit jobs to the GPU partition. A Slurm script template is provided below.
 
-```
-#!/bin/bash
-#SBATCH -A mygroup      # your allocation account
-#SBATCH -p gpu          # partition
-#SBATCH --gres=gpu:1    # number of GPUs
-#SBATCH -N 1            # number of nodes
-#SBATCH -c 1            # number of cores
-#SBATCH -t 10:00:00     # time
-
-module purge
-module load singularity deeplabcut
-
-singularity run --nv $CONTAINERDIR/deeplabcut-2.2.sif myscript.py
-```
+{{< pull-code file="/static/scripts/deeplabcut.slurm" lang="no-hightlight" >}}
 
 ## GUI
 Please request a Desktop session on the GPU partition via our Open OnDemand portal. Open a terminal and load the module. Then execute:

@@ -52,18 +52,7 @@ Below is a Slurm script template. Please note that:
 - The full path to the executable `orca` is thus `$orcadir/orca`.
 - Do not use `srun`/`mpirun`. The software will take care of MPI.
 
-```
-#!/bin/bash
-#SBATCH -A mygroup    # your allocation account
-#SBATCH -p standard   # partition
-#SBATCH -N 1          # number of nodes
-#SBATCH -n 10         # number of tasks
-#SBATCH -t 24:00:00   # time
-
-module purge
-module load orca
-$orcadir/orca my.inp > my.out
-```
+{{< pull-code file="/static/scripts/orca_serial.slurm" lang="no-hightlight" >}}
 
 Submit the job in the same directory as `my.inp`.
 
@@ -71,18 +60,7 @@ Submit the job in the same directory as `my.inp`.
 
 For larger calculations, you may run on multiple nodes. The following example will run on a total of 120 cores:
 
-```
-#!/bin/bash
-#SBATCH -A mygroup            # your allocation account
-#SBATCH -p parallel           # partition
-#SBATCH -N 3                  # number of nodes
-#SBATCH --ntasks-per-node=40  # number of tasks
-#SBATCH -t 24:00:00           # time
-
-module purge
-module load orca
-$orcadir/orca my.inp > my.out
-```
+{{< pull-code file="/static/scripts/orca_serial.slurm" lang="no-hightlight" >}}
 
 **Important notes:**
 - The `nprocs` in `*.inp` should be equal to the total number of cores requested in your Slurm script.

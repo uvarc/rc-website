@@ -66,19 +66,8 @@ blasr --help
 ```
 
 **Slurm script example**
-```
-#SBATCH -A mygroup
-#SBATCH -p standard
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem-per-cpu=6000
-#SBATCH --time=06:00:00
 
-module purge
-module load smrtlink/5.1.0.26412
-blasr reads.bam genome.fasta --bam --out alignment.bam --nproc $SLURM_CPUS_PER_TASK
-```
+{{< pull-code file="/static/scripts/smrtlink_blasr.slurm" lang="no-hightlight" >}}
 
 # Running pbalign
 `pbalign` maps PacBio sequences to references using predefined and selectable alignment algorithms (options are [blasr](#running-blasr), bowtie, or gmap).  The input can be a fasta, pls.h5, bas.h5 or ccs.h5 file or a fofn (file of file names).  The output can be in SAM or BAM format.  If the output is in BAM format, the aligner has to be blasr and QVs will be loaded automatically.
@@ -94,19 +83,8 @@ To get a more complete description of all available command line options run thi
 pbalign --help
 ```
 **Slurm script example**
-```
-#SBATCH -A mygroup
-#SBATCH -p standard
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem-per-cpu=6000
-#SBATCH --time=06:00:00
 
-module purge
-module load smrtlink/5.1.0.26412
-pbalign --nproc $SLURM_CPUS_PER_TASK <inputFilename> <referencePath> <outputFilename>
-```
+{{< pull-code file="/static/scripts/smrtlink_pbalign.slurm" lang="no-hightlight" >}}
 
 # Running ngmlr
 `ngmlr` is a long-read mapper designed to align PacBio or Oxford Nanopore reads to a reference genome. It is optimized for structural variation detection.
@@ -125,19 +103,8 @@ To get a more complete description of all available command line options run thi
 ngmlr --help
 ```
 **Slurm script example**
-```
-#SBATCH -A mygroup
-#SBATCH -p standard
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
-#SBATCH --mem-per-cpu=6000
-#SBATCH --time=06:00:00
 
-module purge
-module load smrtlink/5.1.0.26412
-ngmlr -t $SLURM_CPUS_PER_TASK -r <reference> -q <reads> [-o <output>]
-```
+{{< pull-code file="/static/scripts/smrtlink_ngmlr.slurm" lang="no-hightlight" >}}
 
 # Running sawriter
 `sawriter` creates a suffix array from a single or list Fasta input files for a reference genome. The suffix array provides an additional index that increases the performance during the mapping step (e.g. via [blasr](#running-blasr)). This is particulalry useful when handling large reference files (i.e. larger than bacterial genomes).
@@ -151,16 +118,5 @@ To get a more complete description of all available command line options run thi
 sawriter --help
 ```
 **Slurm script example**
-```
-#SBATCH -A mygroup
-#SBATCH -p standard
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1 # multi-threading not supported
-#SBATCH --mem-per-cpu=6000
-#SBATCH --time=06:00:00
 
-module purge
-module load smrtlink/5.1.0.26412
-sawriter sa_outputfile input1.fasta # or multiple input files: input1.fasta input2.fasta input3.fasta ...]
-```
+{{< pull-code file="/static/scripts/smrtlink_sawriter.slurm" lang="no-hightlight" >}}

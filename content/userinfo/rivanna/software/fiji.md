@@ -55,14 +55,7 @@ ImageJ-linux --mem=32G &
 
 To execute a Fiji script non-interactively on a compute node, you can use the following Slurm job script template.
 
-```
-#!/bin/bash
-#SBATCH --job-name=fiji_example
-#SBATCH --cpus-per-task=8
-#SBATCH --mem=32G
-#SBATCH --time=04:00:00
-#SBATCH --partition=standard
-#SBATCH --account=<YOUR_ALLOCATION>
+{{< pull-code file="/static/scripts/fiji.slurm" lang="no-hightlight" >}}
 
 #Load the Fiji Module
 module load fiji

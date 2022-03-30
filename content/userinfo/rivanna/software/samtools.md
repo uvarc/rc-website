@@ -70,33 +70,8 @@ samtools flagstat example_sorted.bam
 # Slurm Script Example
 To run {{% software-name %}} on Rivanna, a script similar to the following can be used.
 
-```
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH -t 1:00:00
-#SBATCH -p standard
-#SBATCH -A mygroup
-
-module purge
-module load samtools
-
-samtools view -bS example.sam > example.bam
-```
+{{< pull-code file="/static/scripts/samtools.slurm" lang="no-hightlight" >}}
 
 To speed up your code, use multiple cpus per task. Here, we ask for 8 with the `--cpus-per-task` option, but only specify 7 in our `samtools` command to leave one for the manager process:
-```
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH --cpus-per-task=8
-#SBATCH -t 1:00:00
-#SBATCH -p standard
-#SBATCH -A mygroup
 
-module purge
-module load samtools
-
-samtools view -bS -@ 7 example.sam > example.bam
-```
-<br>
+{{< pull-code file="/static/scripts/samtools_threaded.slurm" lang="no-hightlight" >}}

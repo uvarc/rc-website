@@ -68,37 +68,12 @@ Be sure to delete your Open OnDemand session if you finish before your requested
 You can write a batch script to run ANSYS jobs.  Please refer to ANSYS documentation for instructions in running from the command line.  These examples use threading to run on multiple cores on a single node.
 
 **ANSYS Slurm Script:**
-```
-#!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --cpus-per-task
-#SBATCH --time=12:00:00
-#SBATCH --partition=standard
-#SBATCH -J myCFXrun
-#SBATCH -A mygroup
-#SBATCH --mem=96000
-#SBATCH --output=myCFXrun.txt
 
-mkdir /scratch/$USER/myCFXrun
-cd /scratch/$USER/myCFXrun
-
-module load ansys/19.2
-ansys192 -np ${SLURM_CPUS_PER_TASK} -def /scratch/yourpath/yourdef.def -ini-file/scratch/yourpath/yourresfile.res
-```
+{{< pull-code file="/static/scripts/ansys.slurm" lang="no-hightlight" >}}
 
 **CFX Slurm Script:**
-```
-#!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --cpus-per-task=20
-#SBATCH --partition=standard
-#SBATCH -J myCFXrun
-#SBATCH -A mygroup
-#SBATCH --mem=12000
-#SBATCH --output=myCFXrun.txt
 
-cfx5solve -double -def /scratch/yourpath/mydef.def -par-local -partition "$SLURM_CPUS_PER_TASK"
-```
+{{< pull-code file="/static/scripts/cfx.slurm" lang="no-hightlight" >}}
 
 # Multi-Node MPI Jobs
 
@@ -106,59 +81,9 @@ You must use IntelMPI.  IBM MPI (Platform) will not work on our system.
 For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using Slurm's task launcher.  Also include the `-slurm` option.  It is generally better with ANSYS and related products to request a total memory over all processes rather than using memory per core, because a process can exceed the allowed memory per core.  You must have access to a license that supports HPC usage.  These examples also show the minimum number of command-line options; you may require more for large jobs.
 
 **Fluent Slurm Script:**
-```
-#!/bin/bash
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=40
-#SBATCH --time=12:00:00
-#SBATCH --partition=parallel
-#SBATCH -J myFluentrun
-#SBATCH -A mygroup
-#SBATCH --mem=96000
-#SBATCH --output=myFluentrun.txt
 
-for host in $SLURM_JOB_NODELIST; do
-    scontrol show hostname $host >> hosts
-done
-
-IFS=' '
-
-module load intel/18.0
-module load ansys/19.2
-fluent 3ddp -g -t${SLURM_NPROCS} -cnf=hosts -srun -pinfiniband -mpi=intel -ssh -i myjournalfile.jou
-```
+{{< pull-code file="/static/scripts/fluent.slurm" lang="no-hightlight" >}}
 
 **CFX Slurm script:**
-```
-#!/bin/bash
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=20
-#SBATCH --time=12:00:00
-#SBATCH --partition=parallel
-#SBATCH -J myCFXrun
-#SBATCH -A mygroup
-#SBATCH --mem=12000
-#SBATCH --output=myCFXrun.txt
 
-NPARTS=`expr $SLURM_NTASKS_PER_NODE \* $SLURM_NNODES`
-
-for host in $SLURM_JOB_NODELIST; do
-    echo -n $(scontrol show hostname $host)>> hostfile
-done
-
-read -a hosts < hostfile
-
-hostlist=${hosts[0]}","
-
-for (( i=1; i<${#hosts[@]}-1; i++)); do
-    hostlist+=${hosts[$i]}","
-done
-
-hostlist+=${hosts[${#hosts[@]}-1]}
-
-rm hostfile
-module load intel/18.0
-module load ansys/19.2
-
-cfx5solve -double -def /scratch/yourpath/mydef.def -par-dist "$hostlist" -partition "$NPARTS" -start-method "Intel MPI Distributed Parallel"
-```
+{{< pull-code file="/static/scripts/cfx_mpi.slurm" lang="no-hightlight" >}}

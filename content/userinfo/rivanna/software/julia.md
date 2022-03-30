@@ -151,26 +151,8 @@ submitting different types of Julia batch jobs to the Rivanna cluster.
 
 Once your program is debugged, we recommend running in batch mode when possible. This runs the job in the background on a compute node. Write a Slurm script similar to the following:
 
-```
-#!/bin/bash
-# This slurm script file runs
-# a single-core Julia job (on one compute node)
+{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-hightlight" >}}
 
-#SBATCH -p standard
-#SBATCH -A hpc_build
-#SBATCH --time=00:10:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --job-name=SingleTest
-#SBATCH --output=SingleTest_%A.out
-#SBATCH --error=SingleTest_%A.err
-#SBATCH --ntasks=1
-
-# Load  Julia environment
-module load julia/1.5.0
-
-julia hello.jl
-```
 The simple example code `hello.jl` is shown below.
 ```
 msg="hello world"
@@ -178,28 +160,9 @@ println(msg)
 ```
 ## Submitting a batch job using multiple cores on a compute node
 The `Distributed` package can be used to run Julia code across multiple cores of a compute node. The Slurm script in this case would look like the following:
-```
-#!/bin/bash
-# This is a slurm script for running Julia across
-# multiple cores of one compute node
 
-#SBATCH -p standard
-#SBATCH -A hpc_build
-#SBATCH --time=1:00:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --job-name=multipleTest1
-#SBATCH --output=multipleTest1_%A.out
-#SBATCH --error=multipleTest1_%A.err
-#SBATCH --nodes=1                #Number of nodes
-#SBATCH --ntasks-per-node=1     #Number of cores per node
-#SBATCH --cpus-per-task=8     #Number of cores per node
+{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-hightlight" >}}
 
-# Load Julia environment
-module load julia/1.5.0
-
-srun julia helloDistributed.jl
-```
 The Julia code in this case is,
 ```
 using Distributed
@@ -247,30 +210,8 @@ job script using the `--array` directive.
 The following slurm script shows how to run 5 single core Julia jobs using
 Slurm job arrays.
 
-```
-#!/bin/bash
-# This slurm script is an example of submitting job arrays
-# with Julia and passing in the SLURM_ARRAY_TASK_ID variable
-# to the code
+{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-hightlight" >}}
 
-#SBATCH --array=1-5
-#SBATCH -p standard
-#SBATCH -A hpc_build
-#SBATCH --time=00:10:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --job-name=runMultiple
-#SBATCH --output=runMultiple_%A_%a.out
-#SBATCH --error=runMultiple_%A_%a.err
-#SBATCH --ntasks-per-node=1
-
-module purge
-module load julia/1.5.0
-
-export SLURM_ARRAY_TASK_ID
-
-julia jobArray.jl
-```
 The `jobArray.jl` code can use the `SLURM_ARRAY_TASK_ID` shell variable assigned by
 Slurm for indexing input file.
 ```
@@ -283,33 +224,11 @@ The Slurm script will produce 5 separate output files, each of the form
 Job array task id: 4 on host udc-ba25-33c0
 ```
 
-# Parallel Julia on Multiple Compute Nodes
+## Parallel Julia on Multiple Compute Nodes
 
 To run Julia parallel jobs that require more cores than are available on one compute node (e.g. > 40), please use the system MPI libraries. You cannot use the aforementioned Distributed package since it requires SSH permission into compute nodes.
 
-```
-#!/bin/bash
-# This script uses Julia's MPI package that
-# uses the Intel MPI library on Rivanna. See the URL
-# https://juliaparallel.github.io/MPI.jl/stable/configuration/
-
-#SBATCH -p parallel
-#SBATCH -A hpc_build
-#SBATCH --time=00:10:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --job-name=parallelTest1
-#SBATCH --output=parallelTest1_%A.out
-#SBATCH --error=parallelTest1_%A.err
-#SBATCH --nodes=8                #Number of nodes
-#SBATCH --ntasks-per-node=1     #Number of cores per node
-
-# Load Julia environment
-module load julia
-module load intel/18.0 intelmpi/18.0
-
-srun julia helloParallel.jl
-```
+{{< pull-code file="/static/scripts/julia_mpi.slurm" lang="no-hightlight" >}}
 
 This involves importing the Julia MPI module:
 
@@ -346,29 +265,8 @@ Hello! I am 0 of 8 on udc-ba34-10c8
 
 The following slurm script is for submitting a Julia job that uses 1 of the K80 GPUs. For each GPU requested, the script requests one cpu (ntasks-per-node). The article [An Introduction to GPU Programming in Julia](https://nextjournal.com/sdanisch/julia-gpu-programming) provides more details to get started.
 
-```
-#!/bin/bash
-# This slurm script is an example of submitting a Julia
-# code to a gpu
+{{< pull-code file="/static/scripts/julia_gpu.slurm" lang="no-hightlight" >}}
 
-#SBATCH --partition=gpu
-#SBATCH --gres=gpu:k80:1
-#SBATCH -A hpc_build
-#SBATCH --time=1:00:00
-#SBATCH --output=run_gpu_%A.out
-#SBATCH --error=run_gpu_%A.err
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --ntasks-per-node=1 # allocate one cpu for each gpu
-##SBATCH --mem=60000
-
-echo 'slurm allocates gpus ' $CUDA_VISIBLE_DEVICES
-
-module purge
-module load julia/1.5.0  cuda/10.2.89 cudatoolkit/10.1.168-py3.6
-
-julia gpuTest1.jl
-```
 The Julia code is
 ```
 using Flux, CuArrays
