@@ -26,13 +26,16 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 
 | Module | Removed version | Replacement |
 |---|---|---|
-|gcc|6.5.0 | 7.1.0, 9.2.0 |
-|nvhpc|20.9 | 21.9 |
+|gcc       |6.5.0 | 7.1.0, 9.2.0 |
+|nvhpc     |20.9 | 21.9 |
+|alphafold<sup>*</sup> |2.0.0, 2.1.1 | 2.1.2, 2.2.0 |
 |cellranger|2.2.0, 3.0.2, 3.1.0 | 4.0.0, 5.0.0, 6.0.1 |
-|gatk|3.8.1.0, 4.0.0.0, 4.1.6.0 | 4.2.3.0 |
-|mpi4py|3.0.0-py2.7, 3.0.3 | Load any MPI toolchain (e.g. `gcc openmpi`) plus `anaconda` and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html) |
-|picard|2.1.1, 2.18.5, 2.20.6 | 2.23.4 |
-|rapidsai|0.19 | 21.10 |
+|cmake     | 3.5.2, 3.12.3 | 3.6.1, 3.16.5 |
+|gatk      |3.8.1.0, 4.0.0.0, 4.1.6.0 | 4.2.3.0 |
+|mpi4py    |3.0.0-py2.7, 3.0.3 | Load any MPI toolchain (e.g. `gcc openmpi`) plus `anaconda` and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html) |
+|picard    |2.1.1, 2.18.5, 2.20.6 | 2.23.4 |
+|rapidsai<sup>*</sup>  |0.19 | 21.10 |
+: <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
 
 2. **Upgrades**:
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
