@@ -32,6 +32,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 |cellranger|2.2.0, 3.0.2, 3.1.0 | 4.0.0, 5.0.0, 6.0.1 |
 |cmake     | 3.5.2, 3.12.3 | 3.6.1, 3.16.5 |
 |gatk      |3.8.1.0, 4.0.0.0, 4.1.6.0 | 4.2.3.0 |
+|metamorpheus<sup>*</sup>|0.0.311-dev, 0.0.317 | 0.0.320 |
 |mpi4py    |3.0.0-py2.7, 3.0.3 | Load any MPI toolchain (e.g. `gcc openmpi`) plus `anaconda` and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html) |
 |picard    |2.1.1, 2.18.5, 2.20.6 | 2.23.4 |
 |rapidsai<sup>*</sup>  |0.19 | 21.10 |
@@ -49,7 +50,6 @@ You may continue to submit jobs until the maintenance period begins, but if the 
     - cuda/11.0.228 &rarr; 11.6.2
     - diamond/0.9.13 &rarr; 2.0.14
     - igvtools/2.8.9 &rarr; 2.12.0
-    - metamorpheus/0.0.311-dev &rarr; 0.0.320
     - totalview/2019.0.4_linux_x86-64 &rarr; 2021.4.10
 
 3. **New** modules:
