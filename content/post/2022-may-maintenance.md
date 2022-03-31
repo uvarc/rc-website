@@ -35,7 +35,8 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 |mpi4py    |3.0.0-py2.7, 3.0.3 | Load any MPI toolchain (e.g. `gcc openmpi`) plus `anaconda` and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html) |
 |picard    |2.1.1, 2.18.5, 2.20.6 | 2.23.4 |
 |rapidsai<sup>*</sup>  |0.19 | 21.10 |
-: <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
+
+<sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
 
 2. **Upgrades**:
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
