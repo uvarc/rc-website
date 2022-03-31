@@ -14,6 +14,7 @@ subjects = [
   "image-processing",
   "omero",
   "python",
+  "r",
   "data-science",
 ]
 +++
