@@ -44,18 +44,5 @@ Users may build their own versions of LAMMPS if they wish to use a different com
 
 # Example Slurm script
 To run the system version of LAMMPS, a script similar to the following can be used.  LAMMPS has many options so only the most basic is shown.
-<pre>
-#!/bin/bash
-#SBATCH --account my_acct
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=16
-#SBATCH --time=3-00:00:00
-#SBATCH --output=thermo.out
-#SBATCH --partition=parallel
 
-module purge
-module load intel/16.0
-module load intelmpi/16.0_16.0
-module load {{% module-firstversion %}}
-srun lmp_iimpi -in run.in.npt
-</pre>
+{{< pull-code file="/static/scripts/lammps.slurm" lang="no-hightlight" >}}

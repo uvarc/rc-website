@@ -144,13 +144,13 @@ To separate standard error from standard output, you must rename both.
 Job scripts are submitted with the sbatch command, e.g.:
 
 ```
-% sbatch hello.slurm
+$ sbatch hello.slurm
 ```
 
 The job identification number is returned when you submit the job, e.g.:
 
 ```
-% sbatch hello.slurm
+$ sbatch hello.slurm
 Submitted batch job 18341
 ```
 
@@ -161,11 +161,11 @@ If you are using any kind of graphical user interface (GUI) you should use one o
 
 If you wish to run an interactive job from the command line, you can use our local command `ijob` to obtain a login shell on a compute node.
 ```
-ijob <options>
+$ ijob <options>
 ```
 ijob is a wrapper around the Slurm commands salloc and srun, set up to start a bash shell on the remote node.  The options are the same as the options to salloc, so most commands that can be used with #SBATCH can be used with ijob.  The request will be placed into the queue specified:
 ```
-% ijob -c 1 -A mygroup -p standard --time=1-00:00:00
+$ ijob -c 1 -A mygroup -p standard --time=1-00:00:00
 salloc: Pending job allocation 25394
 salloc: job 25394 queued and waiting for resources
 ```
@@ -176,7 +176,7 @@ salloc: Granted job allocation 25394
 ```
 For all interactive jobs, the allocated node(s) will remain reserved as long as the terminal session is open, up to the walltime limit, so it is extremely important that users exit their interactive sessions as soon as their work is done sothat the user is not charged for unused time.  If you are using an interactive app, be sure to `delete session` if you exit the session before time runs out.  In the case of a command-line ijob, the job will be terminated if you exit your shell for any reason, including shutting down the local computer from which your login originates.
 ```
-% exit 
+$ exit 
 salloc: Relinquishing job allocation 25394
 ```
 
@@ -211,19 +211,19 @@ A complete list of job state codes is available here.
 To check on your job's status
 
 ```
-% sstat <jobid>
+$ sstat <jobid>
 ```
 
 For detailed information
 
 ```
-% scontrol show job <jobid>
+$ scontrol show job <jobid>
 ```
 
 To request an estimate of when your pending job will run
 
 ```
-% squeue --start -j <jobid>
+$ squeue --start -j <jobid>
 ```
 
 # Canceling a Job
@@ -231,13 +231,13 @@ To request an estimate of when your pending job will run
 Slurm provides the scancel command for deleting jobs from the system using the job identification number:
 
 ```
-% scancel 18341
+$ scancel 18341
 ```
 
 If you did not note the job identification number (JOBID) when it was submitted, you can use squeue to retrieve it.
 
 ```
-% squeue -u mst3k
+$ squeue -u mst3k
 
 JOBID     PARTITION      NAME         USER     ST    TIME   NODES    NODELIST(REASON)
 -------------------------------------------------------------------------------------
@@ -247,25 +247,25 @@ JOBID     PARTITION      NAME         USER     ST    TIME   NODES    NODELIST(RE
 To cancel all of your jobs
 
 ```
-% scancel -u mst3k
+$ scancel -u mst3k
 ```
 
 To cancel all of your pending jobs
 
 ```
-scancel -t PENDING -u mst3k
+$ scancel -t PENDING -u mst3k
 ```
 
 To cancel all jobs with a specified name
 
 ```
-scancel --name myjob
+$ scancel --name myjob
 ```
 
 To restart (cancel and rerun)
 
 ```
-scontrol requeue <jobid>
+$ scontrol requeue <jobid>
 ```
 
 For further information about the squeue command, type `man squeue` on the cluster front-end machine or see the Slurm Documentation.
@@ -274,20 +274,12 @@ For further information about the squeue command, type `man squeue` on the clust
 
 A large number of jobs can be submitted through one request if all the files used follow a strict pattern.  For example, if input files are named input_1.dat, ... , input_1000.dat, we could write a job script requesting the appropriate resources for a single one of these jobs with
 
-```
-#!/bin/bash
-#SBATCH --ntasks=1
-#SBATCH --time=1:00:00
-#SBATCH --output=result_%a.out
-#SBATCH --partition=standard
-
-/myprogram < input_${SLURM_ARRAY_TASK_ID}.dat
-```
+{{< pull-code file="/static/scripts/job_array.slurm" lang="no-hightlight" >}}
 
 In the output file name, %a is the placeholder for the array ID.  We submit with
 
 ```
-% sbatch --array=1-1000 myjob.sh
+$ sbatch --array=1-1000 myjob.sh
 ```
 
 The system automatically submits 1000 jobs, which will all appear under a single job ID with separate array IDs.  The SLURM_ARRAY_TASK_ID environment variable can be used in your command lines to label individal subjobs.
@@ -297,30 +289,21 @@ The placeholder %A stands for the overall job ID number in the #SBATCH preamble 
 To submit a range of task IDs with an interval
 
 ```
-% sbatch --array=1-1000:2
+$ sbatch --array=1-1000:2
 ```
 
 To submit a list of task IDs
 
 ```
-% sbatch --array=1,3,9,11,22
+$ sbatch --array=1,3,9,11,22
 ```
 
 ## Using Files with Job Arrays
 
 For more complex commands, you can prepare a file containing the text you wish to use. Your job script can read the file line by line.  In the following example, you must number your subtasks starting from 1 sequentially.  You must prepare the `options_file.txt` in advance and each line must be the options you wish to pass to your program.  
-```
-#!/bin/bash
-#
-#SBATCH --ntasks=1
-#SBATCH --partition=standard
-#SBATCH --time=3:00:00
-#SBATCH --array=1-1000
 
-OPTS=$(sed -n "${SLURM_ARRAY_TASK_ID}"p options.txt)
+{{< pull-code file="/static/scripts/job_array_files.slurm" lang="no-hightlight" >}}
 
-./myprogram $OPTS
-```
 The double quotes and curly braces are required.
 
 ## Canceling Individual Tasks in an Array
@@ -328,19 +311,19 @@ The double quotes and curly braces are required.
 One task
 
 ```
-% scancel <jobid>_<taskid>
+$ scancel <jobid>_<taskid>
 ```
 
 A range of tasks
 
 ```
-% scancel <jobid>_[<taskid1>-<taskid2>]
+$ scancel <jobid>_[<taskid1>-<taskid2>]
 ```
 
 A list of tasks
 
 ```
-% scancel <jobid>_[<taskid1>,<taskid2>,<taskid3>]
+$ scancel <jobid>_[<taskid1>,<taskid2>,<taskid3>]
 ```
 
 # Specifying Job Dependencies
@@ -348,9 +331,9 @@ A list of tasks
 With the sbatch command, you can invoke options that prevent a job from starting until a previous job has finished. This constraint is especially useful when a job requires an output file from another job in order to perform its tasks. The --dependency option allows for the specification of additional job attributes. For example, suppose that we have two jobs where job_2 must run after job_1 has completed. Using the corresponding Slurm command files, we can submit the jobs as follows:
 
 ```
-% sbatch job_1.slurm 
+sbatch job_1.slurm 
 Submitted batch job 18375 
-% sbatch --dependency=afterok:18375 job_2.slurm
+sbatch --dependency=afterok:18375 job_2.slurm
 ```
 
 Notice that the --dependency has its own condition, in this case afterok. We want job_2 to start only after the job with id 18375 has completed successfully. The afterok condition specifies that dependency. Other commonly-used conditions include the following:
@@ -411,69 +394,25 @@ In this section are a selection of sample Slurm command files for different type
 
 This example is for running your own serial (single-core) program.  It assumes your program is in the same folder from which your job script was submitted.
 
-```
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH -t 10:00:00
-#SBATCH -p standard
-#SBATCH -A mygroup
-
-./mycode.exe
-```
+{{< pull-code file="/static/scripts/simple_serial_job.slurm" lang="no-hightlight" >}}
 
 ### MATLAB
 
 This example is for a serial (one core) Matlab job.
 
-```
-#!/bin/bash
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH -t 01:00:00
-#SBATCH -o output_filename
-#SBATCH -p standard
-#SBATCH -A mygroup
-
-module load matlab
-
-matlab -nojmv -nodisplay -nosplash -singleCompThread -r "Mymain(myvar1s);exit"
-```
+{{< pull-code file="/static/scripts/simple_matlab_job.slurm" lang="no-hightlight" >}}
 
 ### Python
 
-This script runs a Python (version 3) program.
+This script runs a Python program.
 
-```
-#!/bin/bash
-#SBATCH -n 1
-#SBATCH -t 01:00:00
-#SBATCH -o myRprog.out
-#SBATCH -p standard
-#SBATCH -A mygroup
-
-module load anaconda3
-
-python myscript.py
-```
+{{< pull-code file="/static/scripts/simple_python_job.slurm" lang="no-hightlight" >}}
 
 ### R
 
 This is a Slurm job command file to run a serial R batch job.
 
-```
-#!/bin/bash
-#SBATCH -n 1
-#SBATCH -t 01:00:00
-#SBATCH -o myRprog.out
-#SBATCH -p standard
-#SBATCH -A mygroup
-
-module load R
-
-Rscript myRprog.R
-```
-
+{{< pull-code file="/static/scripts/simple_R_job.slurm" lang="no-hightlight" >}}
 
 ## Job Scripts for Parallel Programs
 
@@ -481,94 +420,31 @@ Rscript myRprog.R
 
 If the executable is a parallel program using the Message Passing Interface (MPI), then it will require multiple processors of the cluster to run. This information is specified in the Slurm nodes resource requirement. The script mpiexec is used to invoke the parallel executable. This example is a Slurm job command file to run a parallel (MPI) job using the OpenMPI implementation:
 
-```
-#!/bin/bash
-#SBATCH --nodes=2 
-#SBATCH --ntasks-per-node=16
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=parallel 
-#SBATCH -A mygroup
+{{< pull-code file="/static/scripts/mpi_job.slurm" lang="no-hightlight" >}}
 
-module load gcc
-module load openmpi
-
-srun ./parallel_executable
-```
-
-In this example, the Slurm job file is requesting two nodes with sixteen tasks per node (for a total of thirty-two processors).  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node so we'd recommend ntasks-per-node=20 on the parallel partition, but some codes cannot be distributed in that manner so we are showing a more general example here.
+In this example, the Slurm job file is requesting two nodes with sixteen tasks per node (for a total of thirty-two processors).  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node so we'd recommend ntasks-per-node=40 on the parallel partition, but some codes cannot be distributed in that manner so we are showing a more general example here.
 
 Slurm can also place the job freely if the directives specify only the number of tasks. In this case do not specify a node count.  This is not generally recommended, however, as it can have a significant negative impact on performance.
 
-```
-#!/bin/bash
-#SBATCH --ntasks=8
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=parallel 
-#SBATCH -A mygroup
-
-module load gcc
-module load openmpi
-
-srun ./parallel_executable
-```
+{{< pull-code file="/static/scripts/mpi_job_free_placement.slurm" lang="no-hightlight" >}}
 
 ### MPI over an odd number of tasks
 
-```
-#!/bin/bash
-#SBATCH --ntasks=97
-#SBATCH --nodes=5
-#SBATCH --ntasks-per-node=20
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=parallel 
-#SBATCH -A mygroup
-
-module load gcc 
-module load openmpi 
-srun ./parallel_executable
-```
+{{< pull-code file="/static/scripts/mpi_job_odd_number.slurm" lang="no-hightlight" >}}
 
 ### Threaded Jobs (OpenMP or pthreads)
 
 Slurm considers a task to correspond to a process.  Specifying a number of cpus (cores) per node ensures that they are on the same node.  Slurm does not set standard environment variables such as OMP_NUM_THREADS or NTHREADS, so the script must transfer that information explicitly.  This example is for OpenMP:
 
-```
-#!/bin/bash
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=20
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=standard
-#SBATCH -A mygroup
-
-module load gcc
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-./threaded_executable
-```
+{{< pull-code file="/static/scripts/openmp_job.slurm" lang="no-hightlight" >}}
 
 ### Hybrid
 
-The following example runs a total of 32 MPI processes, 4 on each node, with each task using 5 cores for threading.  The total number of cores utilized is thus 160.
+The following example runs a total of 32 MPI processes, 8 on each node, with each task using 5 cores for threading.  The total number of cores utilized is thus 160.
 
-```
-#!/bin/bash
-#SBATCH --ntasks=32
-#SBATCH --ntasks-per-node=4
-#SBATCH --cpus-per-task=5
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=parallel
-#SBATCH -A mygroup
+{{< pull-code file="/static/scripts/hybrid_job.slurm" lang="no-hightlight" >}}
 
-module load openmpi/gcc
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-srun ./hybrid_executable
-```
-
-## GPU-Intensive Computation
+## GPU Computations
 
 The `gpu` queue provides access to compute nodes equipped with K80, P100, V100, and RTX2080 NVIDIA GPU devices.
 
@@ -576,19 +452,8 @@ The `gpu` queue provides access to compute nodes equipped with K80, P100, V100, 
    In order to use GPU devices, the jobs must to be submitted to the <b>gpu</b> partition and must include the <b>--gres=gpu</b> option.</alert>
 {{< /highlight >}}
 
-**Example:**
-```
-#!/bin/bash
-#SBATCH --ntasks=1
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH -A mygroup
-#SBATCH --partition=gpu
-#SBATCH --gres=gpu:p100:2
+{{< pull-code file="/static/scripts/gpu_job.slurm" lang="no-hightlight" >}}
 
-module load tensorflow3
-python myAI.py
-```
 The second argument to `gres` can be `k80`, `p100`, `v100`, or `rtx2080` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
 # CPU and Memory Usage

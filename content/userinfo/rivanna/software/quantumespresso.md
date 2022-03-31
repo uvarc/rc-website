@@ -47,34 +47,9 @@ To run the system version of QE, a script similar to the following can be used. 
 Please run the CPU version on non-`gpu` partitions and the GPU version only on the `gpu` partition. In both cases, we highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark/) to decide how many CPU cores and/or GPU devices you should use.
 
 ## CPU
-```bash
-#!/bin/bash
-#SBATCH -A myallocation        # your allocation
-#SBATCH -p parallel            # partition
-#SBATCH -N 2                   # number of nodes
-#SBATCH --ntasks-per-node=40   # number of tasks
-#SBATCH -t 1-00:00:00          # walltime
 
-module purge
-module load intel/18.0 intelmpi/18.0
-module load quantumespresso/6.4.1
-
-srun pw.x -in file.in
-```
+{{< pull-code file="/static/scripts/qe_cpu.slurm" lang="no-hightlight" >}}
 
 ## GPU
-```bash
-#!/bin/bash
-#SBATCH -A myallocation        # your allocation
-#SBATCH -p gpu                 # do not change
-#SBATCH --gres=gpu:1           # number of GPU devices
-#SBATCH -C v100|a100           # can only run on V100 and A100
-#SBATCH -N 1                   # number of nodes
-#SBATCH --ntasks-per-node=2    # number of tasks
-#SBATCH -t 1-00:00:00          # walltime
 
-module purge
-module load nvompic quantumespresso/7.0
-
-srun pw.x -in file.in
-```
+{{< pull-code file="/static/scripts/qe_gpu.slurm" lang="no-hightlight" >}}

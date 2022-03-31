@@ -64,68 +64,22 @@ For a detailed description of building and running MPI codes on Rivanna, please 
 # Example Slurm Scripts
 
 This example is a Slurm job command file to run a parallel (MPI) job using the OpenMPI implementation:
-```
-#!/bin/bash
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=16
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=parallel
-#SBATCH -A mygroup
 
-module load gcc
-module load openmpi
+{{< pull-code file="/static/scripts/mpi_job.slurm" lang="no-hightlight" >}}
 
-srun ./parallel_executable
-```
 In this example, the Slurm job file is requesting two nodes with sixteen tasks per node for a total of 32 processes.  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node, but some codes cannot be distributed in that manner so we are showing a more general example here.
 
 Slurm can also place the job freely if the directives specify only the number of tasks. In this case do not specify a node count.  This is not generally recommended, however, as it can have a significant negative impact on performance.
-```
-#!/bin/bash
-#SBATCH --ntasks=8
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=parallel
-#SBATCH -A mygroup
 
-module load gcc
-module load openmpi
-
-srun ./parallel_executable
-```
+{{< pull-code file="/static/scripts/mpi_job_free_placement.slurm" lang="no-hightlight" >}}
 
 **Example: MPI over an odd number of tasks**
-```
-#!/bin/bash
-#SBATCH --ntasks=97
-#SBATCH --nodes=5
-#SBATCH --ntasks-per-node=20
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=parallel
-#SBATCH -A mygroup
 
-module load gcc
-module load openmpi
-srun ./parallel_executable
-```
+{{< pull-code file="/static/scripts/mpi_job_odd_number.slurm" lang="no-hightlight" >}}
 
 ## MPI with OpenMP
 
-The following example runs a total of 32 MPI processes, 4 on each node, with each task using 5 cores for threading.  The total number of cores utilized is thus 160.
-```
-#!/bin/bash
-#SBATCH --ntasks=32
-#SBATCH --ntasks-per-node=4
-#SBATCH --cpus-per-task=5
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
-#SBATCH --partition=parallel
-#SBATCH -A mygroup
+The following example runs a total of 32 MPI processes, 8 on each node, with each task using 5 cores for threading.  The total number of cores utilized is thus 160.
 
-module load mvapich2/gcc
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-srun ./hybrid_executable
-```
+{{< pull-code file="/static/scripts/hybrid_job.slurm" lang="no-hightlight" >}}
 

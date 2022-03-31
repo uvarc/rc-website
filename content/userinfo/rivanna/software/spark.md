@@ -108,19 +108,8 @@ The example below estimates the value of pi in a PySpark session running on 16 c
 # Slurm Script Templates for Batch Jobs
 
 ## Local mode on a single node
-```bash
-#!/bin/bash
-#SBATCH -p standard     # partition
-#SBATCH -A myaccount    # your allocation
-#SBATCH -N 1            # number of nodes
-#SBATCH -c 10           # number of cores per node
-#SBATCH -t 10:00:00     # time
 
-module purge
-module load spark
-
-spark-submit script.py
-```
+{{< pull-code file="/static/scripts/spark_single_node.slurm" lang="no-hightlight" >}}
 
 You must initialize `SparkContext` explicitly in your script, e.g.:
 
@@ -148,28 +137,7 @@ If the CPU efficiency is much lower, please consider using fewer cores for your 
 
 Before using multiple nodes, please make sure that your job can use a full standard node effectively. When you request N nodes in the standalone cluster mode, one node is set aside as the master node and the remaining N-1 nodes are worker nodes. Thus, running on 2 nodes will have the same effect as running on 1 node.
 
-```bash
-#!/bin/bash
-#SBATCH -p parallel   # do not modify
-#SBATCH --exclusive   # do not modify
-#SBATCH -A myaccount  # your allocation
-#SBATCH -N 3          # number of nodes
-#SBATCH -c 40         # number of cores per node
-#SBATCH -t 3:00:00    # time
-
-module purge
-module load spark
-
-#---------------------------
-# do not modify this section
-export PARTITIONS=$(( (SLURM_NNODES-1) * SLURM_CPUS_PER_TASK ))
-export MASTERSTRING="spark://$(hostname):7077"
-$SPARK_HOME/scripts/spark-cluster-init.sh &
-sleep 10
-#---------------------------
-
-spark-submit --master $MASTERSTRING script.py
-```
+{{< pull-code file="/static/scripts/spark_multinode.slurm" lang="no-hightlight" >}}
 
 In the above Slurm script template, note that:
 

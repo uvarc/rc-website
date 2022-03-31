@@ -45,21 +45,7 @@ Users may build their own versions of BerkeleyGW if they wish to use a different
 
 We built BerkeleyGW with GPU support. It can only run on V100 and A100 GPUs. Please use the following Slurm script as a template.
 
-```bash
-#!/bin/bash
-#SBATCH -A myallocation        # your allocation
-#SBATCH -p gpu                 # do not change
-#SBATCH --gres=gpu:1           # number of GPU devices
-#SBATCH -C v100|a100           # can only run on V100 and A100
-#SBATCH -N 1                   # number of nodes
-#SBATCH --ntasks-per-node=2    # number of tasks
-#SBATCH -t 1-00:00:00          # walltime
 
-module purge
-module load nvompic berkeleygw
-
-# see $BERKELEYGW_ROOT/bin for the available executables
-srun ...
-```
+{{< pull-code file="/static/scripts/berkeleygw.slurm" lang="no-hightlight" >}}
 
 We highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark/) to decide how many CPU cores and/or GPU devices you should use.

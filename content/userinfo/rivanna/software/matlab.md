@@ -15,16 +15,14 @@ tags = [
   "programming"
 ]
 draft = false
-shorttitle = "Matlab"
-softwarename = "Matlab"
+shorttitle = "MATLAB"
+softwarename = "MATLAB"
 modulename = "matlab"
 title = "Matlab on Rivanna"
 description = "Matlab in Rivanna's HPC environment"
 author = "RC Staff"
 toc = true
 +++
-
-# Matlab
 
 MATLAB is an integrated technical computing environment from the MathWorks that combines array-based numeric computation, advanced graphics and visualization, and a high-level programming language. Separately licensed toolboxes provide additional domain-specific functionality.
 
@@ -67,10 +65,10 @@ To launch an instance of {{% software-name %}}, you will begin by connecting to 
 6. When done filling in the resources, click on the blue `Launch` button at the bottom of the form. **Do not click the button multiple times**.
 7. It may take a few minutes for the system to gather the resources for your instance of `{{% software-name %}}`. When the resources are ready a `Connect to {{% software-name %}}` button will appear. Click on the button to start `{{% software-name %}}`.
 
-## Using {{% software-name %}}
+# Using {{% software-name %}}
 When {{% software-name %}} opens in your web browser, it will appear just like the {{% software-name %}} that you have on your laptop or desktop.
 
-## Closing the Interactive Session
+# Closing the Interactive Session
 When you are done, quit the Matlab application.  The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged until the specified time limit is reached.
 
 # Running a Matlab Batch Jobs on Rivanna
@@ -84,32 +82,8 @@ submitting different types of Matlab batch jobs to the Rivanna cluster.
 Once your program is debugged, we recommend running in batch mode when possible.
 This runs the job in the background on a compute node. Write a Slurm script similar to the following:
 
-```
-#!/bin/bash
-# This slurm script file runs
-# a single-core Matlab job (on one compute node)
+{{< pull-code file="/static/scripts/matlab_serial.slurm" lang="no-hightlight" >}}
 
-#SBATCH -p standard
-#SBATCH -A hpc_build
-#SBATCH --time=00:10:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --job-name=runSingleTest
-#SBATCH --output=runSingleTest_%A.out
-#SBATCH --error=runSingleTest_%A.err
-#SBATCH --ntasks=1
-
-# Load Matlab environment
-module load matlab
-
-# Input paramaters for Matlab function
-nLoops=400; # number of iterations to perform
-nDim=400; # Dimension of matrix to create
-
-# Run Matlab single core program
-matlab -nodisplay -r \
-"pcalc2(${nLoops},${nDim},'${SLURM_JOB_ID}'); exit;"
-```
 The option `-nodisplay` suppresses the Desktop interface and any attempt to run a graphical display. Some MATLAB functions are capable of running on multiple cores. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores, so you would need to request the additional cores in your slurm script.  Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
 
 The `;exit` is important to ensure that the job terminates when the computation is done. The example code `pcalc2.m` is shown below. Note that passing the `SLURM_JOB_ID` variable allows the function to save
@@ -171,44 +145,8 @@ The example function `pcalc2.m` above uses a  parallel for loop (parfor)
 in MATLAB. To run your parallel MATLAB code across multiple cores on one compute
 node, you can use a slurm script similar to the following:
 
-```
-#!/bin/bash
-# This slurm script file runs
-# a multi-core parallel Matlab job (on one compute node)
+{{< pull-code file="/static/scripts/matlab_multicore.slurm" lang="no-hightlight" >}}
 
-#SBATCH -p standard
-#SBATCH -A hpc_build
-#SBATCH --time=1:00:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --job-name=runParallelTest
-#SBATCH --output=runParallelTest_%A.out
-#SBATCH --error=runParallelTest_%A.err
-#SBATCH --nodes=1                #Number of nodes
-#SBATCH --ntasks-per-node=8     #Number of cores per node
-
-# Load Matlab environment
-module load matlab
-
-# Create and export variable for slurm job id
-export slurm_ID="${SLURM_JOB_ID}"
-
-# Set workers to one less that number of tasks (leave 1 for master process)
-export numWorkers=$((SLURM_NTASKS-1))
-
-# Input paramaters
-nLoops=400; # number of iterations to perform
-nDim=400; # Dimension of matrix to create
-
-# Run Matlab parallel program program
-matlab -nodisplay  -r \
- "setPool1; pcalc2(${nLoops},${nDim},'${slurm_ID}'); exit;"
-```
-
-The Matlab script `setPool1.m` gets the number of workers allocated by Slurm from
-the `numWorkers` shell variable and uses that to create the pool of Matlab workers.
-
-```
 % Script setPool1.m
 % create a local cluster object
 pc = parcluster('local');
@@ -224,51 +162,18 @@ parpool(pc, str2num(getenv('numWorkers')))
 
 ```
 
-# Matlab Jobs using Slurm Job Arrays
+## Matlab Jobs using Slurm Job Arrays
 The Slurm has a mechanism for launching multiple independent jobs with one
 job script using the `--array` directive.
 
-## Array of Multicore Parallel Matlab Jobs
+### Array of Multicore Parallel Matlab Jobs
 
 The following Slurm script uses job arrays to submit multiple parallel Matlab
 jobs, each running on a nodes of the standard queue.
-```
-#!/bin/bash
-# The slurm script file runParallelMultiple.slurm runs
-# multiple parallel Matlab jobs using a Slurm job array
 
-#SBATCH --array=1-5
-#SBATCH -p standard
-#SBATCH -A hpc_build
-#SBATCH --time=00:10:00
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --job-name=runMultiple
-#SBATCH --output=runMultiple_%A_%a.out
-#SBATCH --error=runMultiple_%A_%a.err
-#SBATCH --ntasks-per-node=8
+{{< pull-code file="/static/scripts/matlab_job_array.slurm" lang="no-hightlight" >}}
 
-module purge
-# Load Matlab environment
-module load matlab
-
-# Create variable for slurm job and task ids
-export slurm_ID="${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}"
-
-# Set workers to one less that number of tasks (leave 1 for master process)
-export numWorkers=$((SLURM_NTASKS-1))
-
-# Input paramaters
-nLoops=400; # number of iterations to perform
-nDim=400; # Dimension of matrix to create
-
-# Run Matlab parallel program
-matlab -nodisplay  -r \
-"setPool1; pcalc2(${nLoops},${nDim},'${slurm_ID}');exit;"
-
-```
-
-# Parallel Matlab on Multiple Compute Nodes
+## Parallel Matlab on Multiple Compute Nodes
 To run Matlab parallel jobs that require more cores than are available on
 one compute node (e.g. > 40), you can launch the Matlab desktop on one of the Rivanna
 login nodes. The following MATLAB setup script will create the cluster profile
@@ -389,6 +294,7 @@ j.diary
 ```
 
 The function `solver_large1` looks like the following:
+
 ```
 function [ firstTenX, errChk2 ] = solver_large1( N, jobid)
 % This function is a simple test of a LU linear solver
@@ -419,7 +325,6 @@ save(['solver_large1_' num2str(jobid) '.out'], ...
       'time','errChk2','firstTenX');
 
 end
-
 ```
 # Utilizing GPUs with Matlab
 
@@ -429,31 +334,7 @@ Once your job has been granted its allocated GPUs, you can use the gpuDevice fun
 
 The following slurm script is for submitting a Matlab job that uses 4 of the K80 GPUs in a `parfor` loop. For each GPU requested, the script requests one cpu (ntasks-per-node).
 
-```
-#!/bin/bash
-
-#SBATCH --partition=gpu
-#SBATCH --gres=gpu:k80:4
-#SBATCH -A hpc_build
-#SBATCH --time=4:00:00
-#SBATCH --output=gpuTest_%A.out
-#SBATCH --error=gpuTest_%A.err
-#SBATCH --mail-type=end
-#SBATCH --mail-user=teh1m@virginia.edu
-#SBATCH --ntasks-per-node=4 # allocate one cpu for each gpu
-#SBATCH --mem=60000
-
-echo 'slurm allocates gpus ' $CUDA_VISIBLE_DEVICES
-
-# Load Matlab environment
-module load matlab/R2020a
-
-ndim=12000;
-nloop=1000;
-# Run Matlab parallel program program
- matlab -nodisplay -r  \
-  "gpuTest1(${ndim},${nloop},'${SLURM_JOB_ID}');exit;"
-```
+{{< pull-code file="/static/scripts/matlab_gpu.slurm" lang="no-hightlight" >}}
 
 The function `gpuTest1` looks like the following. For further information, see [https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html](https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html)
 
