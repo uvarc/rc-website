@@ -18,7 +18,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 
 - The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you need assistance to rebuild your code, please contact hpc-support@virginia.edu.
 - Slurm 20.11.08
-- NVIDIA Driver 510.47.03
+- NVIDIA Driver 470.103.01
 
 ### Modules
 
@@ -47,7 +47,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
    Default version changes:
     - alphafold/2.1.1 &rarr; 2.2.0
     - cellprofiler/3.1.8 &rarr; 4.2.1
-    - cuda/11.0.228 &rarr; 11.6.2
+    - cuda/11.0.228 &rarr; 11.4.2
     - diamond/0.9.13 &rarr; 2.0.14
     - igvtools/2.8.9 &rarr; 2.12.0
     - totalview/2019.0.4_linux_x86-64 &rarr; 2021.4.10
