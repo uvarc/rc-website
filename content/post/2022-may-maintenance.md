@@ -23,8 +23,16 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 ### Modules
 
 1. The following software modules will be **removed** from Rivanna during the maintenance period:
-    - gcc/6.5.0 - Fully replaced by 7.1.0 and 9.2.0
-    - mpi4py/3.0.0-py2.7, 3.0.3 - Load any MPI toolchain (e.g. `gcc openmpi`) plus `anaconda` and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html)
+
+| Module | Removed version | Replacement |
+|---|---|---|
+|gcc|6.5.0 | 7.1.0, 9.2.0 |
+|nvhpc|20.9 | 21.9 |
+|cellranger|2.2.0, 3.0.2, 3.1.0 | 4.0.0, 5.0.0, 6.0.1 |
+|gatk|3.8.1.0, 4.0.0.0, 4.1.6.0 | 4.2.3.0 |
+|mpi4py|3.0.0-py2.7, 3.0.3 | Load any MPI toolchain (e.g. `gcc openmpi`) plus `anaconda` and run `pip install --user mpi4py`; see [here](https://mpi4py.readthedocs.io/en/stable/install.html) |
+|picard|2.1.1, 2.18.5, 2.20.6 | 2.23.4 |
+|rapidsai|0.19 | 21.10 |
 
 2. **Upgrades**:
     - Addition of Matplotlib widget ipympl/0.8.7 to JupyterLab
@@ -36,7 +44,6 @@ You may continue to submit jobs until the maintenance period begins, but if the 
     - cellprofiler/3.1.8 &rarr; 4.2.1
     - cuda/11.0.228 &rarr; 11.6.2
     - diamond/0.9.13 &rarr; 2.0.14
-    - gatk/4.1.6.0 &rarr; 4.2.3.0
     - igvtools/2.8.9 &rarr; 2.12.0
     - metamorpheus/0.0.311-dev &rarr; 0.0.320
     - totalview/2019.0.4_linux_x86-64 &rarr; 2021.4.10
