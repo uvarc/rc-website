@@ -51,6 +51,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
     - diamond/0.9.13 &rarr; 2.0.14
     - igvtools/2.8.9 &rarr; 2.12.0
     - totalview/2019.0.4_linux_x86-64 &rarr; 2021.4.10
+    - zlib/1.2.11 &rarr; 1.2.12 - hidden module; load `zlib/.1.2.12`
 
 3. **New** modules:
     - nvompic/21.9_3.1.6_11.4.2 toolchain (nvhpc/21.9 + openmpi/3.1.6 + cuda/11.4.2)
