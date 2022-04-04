@@ -124,12 +124,7 @@ Once you have completed these three steps, you will be connected to the secure I
 
 A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign into a single VM.
 
-Virtual machines come in two platforms, *CentOS 7 Linux* and *Windows Server 2012R2*. Each platform is available in three instance types. Refer to the grid below for specifics.
-
-{{% callout %}}
-<p>Note that Windows VMs only support concurrent access by 2 users at a time.</p>
-
-{{% /callout %}}
+Virtual machines come in two platforms, *CentOS 7 Linux* and *Windows Server 2019*. Each platform is available in numerous instance types. Refer to the grid below for specifics.
 
 
 {{< ivy-pricing >}}
@@ -175,7 +170,7 @@ To connect to Ivy follow the platform-specific steps below:
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        <b>Windows Server 2012R2</b>
+        <b>Windows Server 2019</b>
       </div>
       <div class="card-block">
         <ul>
