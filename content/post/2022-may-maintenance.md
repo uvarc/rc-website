@@ -29,6 +29,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 |gcc       |6.5.0 | 7.1.0, 9.2.0 |
 |nvhpc     |20.9 | 21.9 |
 |alphafold<sup>*</sup> |2.0.0, 2.1.1 | 2.1.2, 2.2.0 |
+|awscli    |2.1.10 | 2.4.12 |
 |cellranger|2.2.0, 3.0.2, 3.1.0 | 4.0.0, 5.0.0, 6.0.1 |
 |cmake     | 3.5.2, 3.12.3 | 3.6.1, 3.16.5 |
 |gatk      |3.8.1.0, 4.0.0.0, 4.1.6.0 | 4.2.3.0 |
