@@ -2,9 +2,9 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2022-03-20T10:08:29-05:00"
+date = "2022-04-01T10:08:29-05:00"
 draft = false
-tags = ["compute","cloud","hpc","containers","hybrid","infrastructure","docker","kubernetes"]
+tags = ["compute","cloud","hpc","containers","hybrid","infrastructure","docker","kubernetes","api"]
 categories = ["userinfo"]
 images = [""]
 +++
@@ -103,7 +103,7 @@ Browse a list of recent [UVA projects employing microservices](/project?tag=.con
       <td>Public</td>
       <td>A fast web server that can run
         <ul>
-          <li>Static HTML <a target="_new" href="http://bioterms.org/" class="badge badge-primary">demo</a>
+          <li>Static HTML <a target="_new" href="http://innovation.lab.virginia.edu/" class="badge badge-primary">demo</a>
           <li>Flask or Django apps <a target="_new" href="http://bartweb.org/" class="badge badge-primary">demo</a>
           <li>RESTful APIs <a target="_new" href="http://ids.uvadcos.io/docs" class="badge badge-primary">demo</a>
           <li>Expose Project storage <a target="_new" href="http://big.databio.org/" class="badge badge-primary">demo</a>
