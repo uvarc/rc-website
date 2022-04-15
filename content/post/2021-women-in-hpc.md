@@ -2,34 +2,28 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2022-01-03T10:18:25-05:00"
-title = "Virginia Women in HPC - Panel Discussion, April 27"
+date = "2022-01-02T10:18:25-05:00"
+title = "Virginia Women in HPC - Research Highlights Event, Jan. 25"
 draft = false
 tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-Please join us for a lively panel discussion of the high-performance computing infrastructure and support resources available to researchers in the Commonwealth of Virginia. Panelists from Virginia's top research universities will provide an overview of the user base at their home institutions and discuss strategies for helping researchers make better use of existing HPC resources. Attendees are encouraged to share their own experiences and engage with panelists during this interactive Q&A session.
+We are proud to announce the founding of Virginia's first Women in High-Performance Computing (VA-WHPC) program. Join us for our first event of 2022: Female research leaders of the Commonwealth sharing and discussing how HPC has facilitated their scientific research and professional careers.
 
-*Topic: High-performance Computing Resources in the Commonwealth of Virginia
+*Topic: How does HPC help with your scientific research -- Faculty perspectives, Part II* 
 
-*When: April 27, 2022 01:00 PM, Eastern Time (US and Canada)* 
+*When: Jan 25, 2022 01:00 PM, Eastern Time (US and Canada)* 
 
-{{< button button-class="primary" button-text="REGISTER NOW!" button-url="https://virginia.zoom.us/meeting/register/tJ0rduCtrTgjHdF5iNa8xSv9gIagSqsly2Hb" >}}
+{{< button button-class="primary" button-text="REGISTER NOW!" button-url="https://virginia.zoom.us/meeting/register/tJYsdu6gqzkoGNJ0boZJfJl7TJr3IrQpvgwM" >}}
 
 
-## Featured panelists:
+## Our speakers:
 
-* [**Matthew Brown (VT)**](https://arc.vt.edu/about/our-team/matthew-brown.html) 
+* [**Anne Brown (VT)**](https://www.biochem.vt.edu/people/faculty/anne-brown.html) is an Assistant Professor of Biochemistry, Science Informatics Consultant and Health Analytics Coordinator at Virginia Tech. Her research interests include utilizing computational modeling to answer biological questions and aid in drug discovery and the application of computational molecular modeling to elucidate the relationship between structure, function, and dynamics of biomolecules. 
 
-* [**Jayshree Sarma (GMU)**](https://its.gmu.edu/member/jayshree-sarma/)
+* [**Jenna Cann (GMU)**](https://science.gsfc.nasa.gov/sed/bio/jenna.cann) is a postdoctoral fellow at NASA Goddard Space Flight Center. Jenna received a PhD in Physics from George Mason University. Her research focuses on studying black holes in dwarf and low metallicity galaxies, in an effort to constrain the origins of supermassive black holes that can be up to billions of times the mass of our Sun. To do this, they use both theoretical modeling with the Cloudy spectral simulation code and infrared and X-ray observations to determine the most effective ways to find these elusive objects. Jenna currently serves as a co-officer in the NASA Goddard Association for Postdoctoral and Early Career Scholars (NGAPS+) and was a co-founder of the GMU Physics and Astronomy department's diversity, equity, inclusion, and accessibility (DEIA) organization, SPECTRUM.
 
-* [**Jacalyn Huband (UVA)**](https://www.rc.virginia.edu/about/people/huband/)
-
-* [**Eric Walter (W&M)**](https://www.wm.edu/offices/it/about/staff/walter_e.php)
-
-* [**Carol Parish (U. Richmond)**](https://chemistry.richmond.edu/faculty/cparish/)
-
-* [**Mike Davis (VCU)**](https://chipc.vcu.edu/welcome/people/)
+* [**Alexis Edwards (VCU)**](https://vipbg.vcu.edu/people/alexis-edwards/) is an Associate Professor of Psychiatry at Virginia Commonwealth University. Her research focuses on understanding the etiology of substance use disorders, suicidal behavior, and internalizing problems, including how these outcomes are related to one another. 
 
 Virginia WHPC is committed to increasing diversity and inclusion by promoting and encouraging the participation of women in high-performance computing and related fields. 
