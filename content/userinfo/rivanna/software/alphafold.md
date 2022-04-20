@@ -105,7 +105,7 @@ Below are some templates for your Slurm script.
 
 ## Multimer with `reduced_dbs`
 
-{{< pull-code file="/static/scripts/alphafold_monomer.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/alphafold_multimer.slurm" lang="no-hightlight" >}}
 
 ## Notes
 
