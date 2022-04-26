@@ -115,7 +115,7 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 1. Remove an environment:
     `conda remove -n your_env_name_goes_here -all`
 
-To see all available environments, run `conda env list`. Testing, testing.
+To see all available environments, run `conda env list`.
 
 {{% callout %}}
 **Use source activate not conda activate**. After creating a conda enviornment, you'll have to activate it.
