@@ -3,21 +3,21 @@ images = [""]
 author = "Staff"
 description = ""
 date = "2022-05-11T00:00:00-05:00"
-title = "Rivanna Maintenance: May XX, 2021"
+title = "Rivanna Maintenance: May 17, 2022"
 # url = "/maintenance"
 draft = false
 tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}Rivanna and the Globus data transfer nodes (DTNs) will be down for maintenance on <strong>May XX, 2022</strong> beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna and the Globus data transfer nodes (DTNs) will be down for maintenance on <strong>May 17, 2022</strong> beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
 ## IMPORTANT MAINTENANCE NOTES
 
 - The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you need assistance to rebuild your code, please contact hpc-support@virginia.edu.
-- Slurm 20.11.08
+- Slurm 21.x
 - NVIDIA Driver 470.103.01
 
 ### Modules
