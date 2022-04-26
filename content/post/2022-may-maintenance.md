@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2022-05-11T00:00:00-05:00"
+date = "2022-05-02T00:00:00-05:00"
 title = "Rivanna Maintenance: May 17, 2022"
 # url = "/maintenance"
 draft = false
@@ -17,7 +17,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 ## IMPORTANT MAINTENANCE NOTES
 
 - The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you need assistance to rebuild your code, please contact hpc-support@virginia.edu.
-- Slurm 21.x
+- Slurm 21.08.7
 - NVIDIA Driver 470.103.01
 
 ### Modules
