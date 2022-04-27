@@ -14,7 +14,9 @@
     {{ "<!-- combined, minified CSS -->" | safeHTML }}
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
- 
+    <style>
+      .btn-info{margin-right:0rem;}
+    </style> 
     {{ partial "head-custom.html" . }}
 
 <script type="text/javascript">
@@ -103,7 +105,7 @@ $(window).on('load', function(){
 <!--<div class="row isotope portfolioContainer js-layout-masonry" style="position: relative; height: 2535px;">-->
         
         <!-- PAGINATOR GRABS AN EVEN SET OF 16 TILES -->
-        {{ $paginator := .Paginate ((first 17 (where .Data.Pages "Type" "project"))) }}
+        {{ $paginator := .Paginate ((first 16 (where .Data.Pages "Type" "project"))) }}
 	
         {{ range where $paginator.Pages "Params.projecttype" "!=" nil}}	
 
