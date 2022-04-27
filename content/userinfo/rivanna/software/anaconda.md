@@ -117,6 +117,14 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 
 To see all available environments, run `conda env list`.
 
+{{% callout %}}
+**Use source activate not conda activate**. After creating a conda enviornment, you'll have to activate it.
+The default conda command of `conda activate <env>` is incompatible with use on rivanna command line.
+ It's use must be precededby the use of the `conda init bash` command, which itself requires the
+ user to exit the terminal, and thus end their rivanna session,in order to take effect.
+ To avoid this, just use `source conda activate <env>` instead.
+{{% /callout %}}
+
 # Python and MPI
 
 {{< module-description module="mpi4py" >}} On Rivanna, we provide mpi4py libraries via dedicated modules that are built using the GCC compiler and OpenMPI libraries.

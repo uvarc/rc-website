@@ -14,7 +14,9 @@
     {{ "<!-- combined, minified CSS -->" | safeHTML }}
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
- 
+    <style>
+      .btn-info{margin-right:0rem;}
+    </style> 
     {{ partial "head-custom.html" . }}
 
 <script type="text/javascript">
@@ -86,13 +88,14 @@ $(window).on('load', function(){
       <p style="line-height:200%;">
         <a href="#" data-filter="*" class="current"><button class="btn btn-sm btn-warning">All Projects</button></a>
         <a href="#" data-filter=".hpc-computing"><button class="btn btn-sm btn-info">HPC Computing</button></a>
-        <a href="#" data-filter=".containers"><button class="btn btn-sm btn-info">Microservices</button></a>
         <a href="#" data-filter=".basic-science"><button class="btn btn-sm btn-info">Basic Science</button></a>
+        <a href="#" data-filter=".data-science"><button class="btn btn-sm btn-info">Data Science</button></a>
         <a href="#" data-filter=".social-science"><button class="btn btn-sm btn-info">Social Science</button></a>
         <a href="#" data-filter=".clinical-research"><button class="btn btn-sm btn-info">Clinical Research</button></a>
         <a href="#" data-filter=".engineering"><button class="btn btn-sm btn-info">Engineering</button></a>
         <a href="#" data-filter=".image-analysis"><button class="btn btn-sm btn-info">Image Analysis</button></a>
         <a href="#" data-filter=".machine-learning"><button class="btn btn-sm btn-info">Machine Learning</button></a>
+        <a href="#" data-filter=".containers"><button class="btn btn-sm btn-info">Microservices</button></a>
         <a href="#" data-filter=".tools"><button class="btn btn-sm btn-info">Tools & Data</button></a>
       </p>
     </div>
@@ -102,7 +105,7 @@ $(window).on('load', function(){
 <!--<div class="row isotope portfolioContainer js-layout-masonry" style="position: relative; height: 2535px;">-->
         
         <!-- PAGINATOR GRABS AN EVEN SET OF 16 TILES -->
-        {{ $paginator := .Paginate ((first 17 (where .Data.Pages "Type" "project"))) }}
+        {{ $paginator := .Paginate ((first 16 (where .Data.Pages "Type" "project"))) }}
 	
         {{ range where $paginator.Pages "Params.projecttype" "!=" nil}}	
 

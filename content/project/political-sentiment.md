@@ -7,8 +7,7 @@ images = "/images/projects/political-sentiment.png"
 description = ""
 date = "2021-03-28T17:18:27-04:00"
 draft = false
-projecttype = ["social-science", "hpc-computing"]
-#publications = [{authors = "Wenjing Ma, Zhenjia Wang, Yifan Zhang, Neal E Magee, Yayi Feng, Ruoyao Shi, Yang Chen, Chongzhi Zang", title = "BARTweb: a web server for transcriptional regulator association analysis", journal = "NAR Genomics and Bioinformatics", year = "2021", doi = "10.1093/nargab/lqab022"}]
+projecttype = ["social-science", "hpc-computing", "data-science"]
 +++
 
 The nature of political communication has been fundamentally altered by the emergence of social media. In earlier eras, social scientists, journalists, and citizens could focus on static statements by politicians and candidates in order to understand the nature of political discourse. Social scientists studying political communication would design surveys and focus groups to understand which messages were received by citizens, and with what effect. Today, as news moves to digital platforms and as political figures increasingly rely on social media, political communication is fundamentally dynamic. Studying patterns of communication among politicians, their supporters, and their critics requires scholarly focus on the content, sentiment, and framing of posts on various social media platforms. Similarly, making sense of the contours of an election campaign requires that scholars explore the interplay among online messages and real-world events such as endorsements, scandals, and standing in the polls. All of this means that the tools of political analysis must be combined with the tools of data science.
