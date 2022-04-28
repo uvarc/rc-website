@@ -210,7 +210,7 @@ Find out what your data are telling you!
 
 The Viz Lab is conveniently located inside of Fontaine Research Park at 560 Ray C. Hunt Drive.
 
-<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.https://www.google.com/maps/@38.0254648,-78.5266031,17z" allowfullscreen></iframe>
+<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/@38.0254648,-78.5266031,17z" allowfullscreen></iframe>
 
 ## Viz Lab Calendar
 
