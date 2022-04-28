@@ -27,6 +27,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 | Module | Removed version | Replacement |
 |---|---|---|
 |gcc       |6.5.0 | 7.1.0, 9.2.0 |
+|mvapich2  |2.3.1, 2.3.3 | Please use `gcc openmpi` or `intel intelmpi`. |
 |nvhpc     |20.9 | 21.9 |
 |alphafold<sup>*</sup> |2.0.0, 2.1.1 | 2.1.2, 2.2.0 |
 |awscli    |2.1.10 | 2.4.12 |

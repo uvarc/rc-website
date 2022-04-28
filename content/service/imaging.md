@@ -186,8 +186,7 @@ power of visualization in research and education.
 
 By allowing researchers to interactively view data, the Viz Lab helps them find
 innovative ways of translating data into images and see stacks of images as
-three-dimensional models. Discoveries can be made and visual results shared with remote
-collaborators through a Cisco system.
+three-dimensional models.
 
 Find out what your data are telling you!
 
@@ -200,25 +199,20 @@ Find out what your data are telling you!
   with an HTC Vive headset which allows users to experience the wonders of virtual reality.
 </div>
 
-### Visualization Environment (Touch Table I & the Viz Wall)
+### Visualization Environment (Touch Table I)
 <div class="bd-callout bd-callout-warning">
-  Touch Table I consists of a 55" monitor with touch capability that can be used to interact
-  with images on the Viz Wall. It is driven by a computer with 64GB RAM and one NVidia Quadro
-  2000 Graphics card. The Viz Wall is a 4' X 7.5' MicroTile system with a resolution of 7.76
-  Mpixels developed by Christie Digital.
+  Touch Table I consists of a 55" monitor with touch capability. It is driven by a computer with 64GB RAM and one NVidia Quadro
+  2000 Graphics card.
 </div>
 
-### GPU Environment (Escher)
-<div class="bd-callout bd-callout-warning">
-  Escher is a high-end graphics workstation with 64 GB RAM and two NVidia GeForce Titan
-  Graphics cards.  This machine is available to researchers upon request.
-</div>
 
 ## Location
 
-The Viz Lab is conveniently located in Rice Hall on the south end of UVA's historic Grounds.
+The Viz Lab is conveniently located inside of Fontaine Research Park at 560 Ray C. Hunt Drive.
 
-<iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJNVN8Z1uGs4kR7JcEE4iqkGQ&key=AIzaSyDlPVTTX5CpSjoyzqXOpHxxV3xBNbiC2nI" allowfullscreen></iframe>
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3142.9277071886795!2d-78.5266031!3d38.0254648!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1651157195018!5m2!1sen!2sus" 
+width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 ## Viz Lab Calendar
 
