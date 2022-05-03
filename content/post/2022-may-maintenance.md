@@ -10,15 +10,15 @@ tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}Rivanna and the Globus data transfer nodes (DTNs) will be down for maintenance on <strong>May 17, 2022</strong> beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna will be down for maintenance on <strong>May 17, 2022</strong> beginning at 6 a.m.{{< /alert-green >}}
 
-You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
+You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Users will not be able to access the Globus data transfer node (UVA Main-DTN) or Research Project storage during the maintenance period. All systems are expected to return to service by **6 a.m. on Wednesday, May 18**.
 
 ## IMPORTANT MAINTENANCE NOTES
 
 - The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you need assistance to rebuild your code, please contact hpc-support@virginia.edu.
-- Slurm 21.08.7
-- NVIDIA Driver 470.103.01
+- Slurm will be upgraded to 21.08.7, which requires us to rebuild the OpenMPI module. If your code was built with OpenMPI and it no longer works after maintenance, you may need to rebuild it.
+- NVIDIA Driver will be upgraded to 470.103.01. You should not need to rebuild CUDA programs.
 
 ### Modules
 
