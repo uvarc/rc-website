@@ -1,7 +1,7 @@
 +++
 title = "ACCORD Security"
 draft = false
-date = "2021-10-11"
+date = "2022-05-05"
 images = [""]
 author = "Staff"
 +++
@@ -159,7 +159,7 @@ Host-based firewall software must be installed and enabled.
   </div>
 </div>
 
-### Requirement 3: Antimalware Software
+### Requirement 3: Antivirus / Antimalware Software
 At least one antimalware software must be installed and enabled. We recommend the following:
 
 <table class="table table-striped">
@@ -178,6 +178,8 @@ At least one antimalware software must be installed and enabled. We recommend th
                 </tr>
         </tbody>
 </table>
+
+Most common antivirus software is acceptable, except those made by Kaspersky Labs.
 
 ### Requirement 4: Device Password
 The device must be password protected, and it must lock automatically if there is no activity detected for at least 10 minutes. Configure your device to require a password to log in. Also, set your device’s screensaver or security settings to automatically lock after 10 minutes of no activity.
