@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2022-04-01T10:08:29-05:00"
+date = "2022-05-04T23:59:16-05:00"
 draft = false
 tags = ["compute","cloud","hpc","containers","hybrid","infrastructure","docker","kubernetes","api"]
 categories = ["userinfo"]
@@ -23,7 +23,7 @@ images = [""]
 Research Computing runs microservices in a clustered orchestration environment that automates the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. It also has over 300TB of cluster storage and can attach to [project](/userinfo/storage/non-sensitive-data/#project-storage) storage.
 
 {{% highlight-danger %}}
-UVA's microservices platform is hosted in the standard security zone. It is suitable for processing public or moderately sensitive data. Highly sensitive data is not permitted on this platform. 
+UVA's microservices platform is hosted in the standard security zone. It is suitable for processing public or internal use data. Sensitive or highly sensitive data are not permitted on this platform. 
 {{% /highlight-danger %}}
 
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />

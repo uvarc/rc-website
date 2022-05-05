@@ -2,7 +2,7 @@
 description = ""
 title = "Rivanna Storage"
 draft = false
-date = "2019-07-22T17:45:12-05:00"
+date = "2022-05-04T23:59:16-05:00"
 tags = ["storage","scratch","hpc","rivanna","project","qumulo"]
 categories = ["userinfo"]
 images = [""]
@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class="lead">There are a variety of options for storing large-scale research data at UVa. Public and moderately sensitive data storage systems can be accessed from the <a href="/userinfo/rivanna/overview">Rivanna</a> high performance computing system.</p>
+<p class="lead">There are a variety of options for storing large-scale research data at UVa. Public and Internal Use data storage systems can be accessed from the <a href="/userinfo/rivanna/overview">Rivanna</a> high performance computing system.</p>
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -62,7 +62,7 @@ type = "rivanna"
 
 # Request Additional Storage
 
-Researchers can lease additional storage, **Research Standard** or **Research Project** storage, for **sharing public or moderately sensitive data** within a research group. Research Standard and Research Project storage volumes are mounted on Rivanna and can also be accessed from local workstations. [Learn more about our storage offerings](/userinfo/storage/#public--moderately-sensitive-data-storage).
+Researchers can lease additional storage, **Research Standard** or **Research Project** storage, for **sharing public or internal use data** within a research group. Research Standard and Research Project storage volumes are mounted on Rivanna and can also be accessed from local workstations. [Learn more about our storage offerings](/userinfo/storage/#public--moderately-sensitive-data-storage).
 
 Storage requests can be placed through this form:
 
