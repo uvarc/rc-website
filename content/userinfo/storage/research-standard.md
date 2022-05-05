@@ -4,10 +4,11 @@ description = ""
 author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
-date = "2019-10-08T17:45:12-05:00"
+date = "2022-05-04T17:45:12-05:00"
 tags = [
     "rivanna", 
-    "moderately-sensitive data",
+    "public-data",
+    "internal-use-data",
     "storage",
     "research"
 ]
@@ -16,7 +17,8 @@ draft = false
 
 # Overview
 
-Research Computing offers several budget options for storing public and moderately sensitive research data. Information Security at UVA provides details about [data sensitivity classifications](https://security.virginia.edu/university-data-protection-standards).
+Research Computing offers several budget options for storing public and internal use research data. Information Security at UVA provides details about [data sensitivity 
+classifications](https://security.virginia.edu/university-data-protection-standards).
 
 The _Research Standard_ storage provides users with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
 the team lead or PI. Group membership can be defined and managed through <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS 
@@ -37,10 +39,10 @@ When your Research Standard Storage share is created, you will receive an email 
 
 _Research Standard_ storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [How To pages](/userinfo/howtos/storage/drive-mapping).
 
+
 # Data transfer
 
-
-### Public and Moderately Sensitive Storage Data Transfer
+### Public and Internal Use Data Transfer
 <img src="/images/storage/storage-nonsecure.jpg" alt="nonsecure-storage-options-overview">
 
 #### Secure Copy (scp)

@@ -1,5 +1,5 @@
 +++
-date = "2019-07-22T23:59:16-05:00"
+date = "2022-05-04T23:59:16-05:00"
 tags = ["storage"]
 categories = ["forms"]
 images = [""]
@@ -81,8 +81,9 @@ private = true
   </div>
   </div>
   <div class="col form-item form-group">
-    <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Standard / Moderately Sensitive Data</h6>This storage platform is appropriate for public, non-sensitive or moderately sensitive data.</div>
-    <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
+    <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Internal Use / Public Data</h6>This 
+storage platform is appropriate for public or internal use data.</div>
+    <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Sensitive / Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
   </div>
   <hr size=1 />
   <div class="row">

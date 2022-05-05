@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Commercial Data Sharing and Archiving Solutions"
-date = "2017-02-24T10:08:29-05:00"
+date = "2022-05-04T23:59:16-05:00"
 draft = false
 tags = ["storage","personal computing"]
 categories = ["userinfo"]
@@ -16,7 +16,7 @@ images = [""]
     	<h4 class="card-title">Box&reg;</h4>
 	    <h6 class="card-subtitle mb-2 text-muted">Non-sensitive cloud storage</h6>
     	<p class="card-text">
-    		UVA Box is a cloud-based storage and collaboration service that gives eligible members of the University community the ability to access, store, and share up to 1 TB of non-sensitive/moderately sensitive University files securely—anywhere, anytime, on any device.
+    		UVA Box is a cloud-based storage and collaboration service that gives eligible members of the University community the ability to access, store, and share up to 1 TB of public / internal use University files securely—anywhere, anytime, on any device.
     	</p>
     	<a href="http://its.virginia.edu/box/" class="card-link" target="_blank"><button class="btn btn-warning">Read more</button></a>
   	</div>
