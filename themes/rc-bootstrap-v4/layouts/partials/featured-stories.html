@@ -1,4 +1,5 @@
-  <p class=lead>Featured</p>
+<section class="sidebar-module">
+  <p class=lead>News & Announcements</p>
   {{ range first 4 (where .Site.Pages "Type" "post") }}
     {{ if in .Params.categories "feature" }}
       <a href="{{.Permalink}}" style="text-decoration:none;color:black;"><div>
@@ -18,3 +19,4 @@
     {{ end }}
   {{ end }}
   <p style="font-size:90%;"><a href="/post/" style="text-decoration:none;">More Featured Announcements &raquo;</a></p>
+</section>
