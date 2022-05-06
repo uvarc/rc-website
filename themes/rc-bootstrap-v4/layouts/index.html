@@ -55,7 +55,11 @@
         <!-- BEGIN MIDDLE COLUMN -->
         <div class="col-sm-4 blog-main">
 
-        Placeholder text goes here.
+          {{ partial "project-feature.html" . }}
+          <div style="height:1rem;width:100%;"></div>
+          {{ partial "web-access.html" . }}
+          <div style="height:1rem;width:100%;"></div>
+          {{ partial "data-storage.html" . }}
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
         <!-- END MIDDLE COLUMN -->
