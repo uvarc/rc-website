@@ -17,7 +17,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 ## IMPORTANT MAINTENANCE NOTES
 
 - The operating system will be upgraded from CentOS 7.8 to 7.9. This should have no impact on the software built on Rivanna, whether it be modules or your own compiled codes. If you need assistance to rebuild your code, please contact hpc-support@virginia.edu.
-- Slurm will be upgraded to 21.08.7, which requires us to rebuild the OpenMPI module. If your code was built with OpenMPI and it no longer works after maintenance, you may need to rebuild it.
+- Slurm will be upgraded to 21.08.8, which requires us to rebuild the OpenMPI module. If your code was built with OpenMPI and it no longer works after maintenance, you may need to rebuild it.
 - NVIDIA Driver will be upgraded to 470.103.01. You should not need to rebuild CUDA programs.
 
 ### Modules
@@ -52,6 +52,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
     - cuda/11.0.228 &rarr; 11.4.2
     - diamond/0.9.13 &rarr; 2.0.14
     - igvtools/2.8.9 &rarr; 2.12.0
+    - matlab/R2021b &rarr; R2022a
     - totalview/2019.0.4_linux_x86-64 &rarr; 2021.4.10
     - zlib/1.2.11 &rarr; 1.2.12 - hidden module; load `zlib/.1.2.12`
 
