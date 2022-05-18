@@ -42,6 +42,8 @@ $(window).resize(function () {
     stickyHeight = stickySidebar.height();
   }
 });
+
+/*
 isKeyPressed = { 
    'a': false,
    'e': false,
@@ -64,3 +66,4 @@ document.onkeydown = (keyDownEvent) => {
     location.href = '/education/workshops/';
   };
 };
+*/
