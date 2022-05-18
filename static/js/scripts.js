@@ -42,3 +42,25 @@ $(window).resize(function () {
     stickyHeight = stickySidebar.height();
   }
 });
+isKeyPressed = { 
+   'a': false,
+   'e': false,
+   'g': false,
+   'p': false,
+   's': false,
+   'u': false,
+};
+document.onkeydown = (keyDownEvent) => {
+  isKeyPressed[keyDownEvent.key] = true;
+  if (isKeyPressed["u"] && isKeyPressed["s"]) {
+    location.href = '/support/';
+  } else if (isKeyPressed["a"]) {
+    location.href = '/about/mission/';
+  } else if (isKeyPressed["g"] && isKeyPressed["s"]) {
+    location.href = '/userinfo/systems/';
+  } else if (isKeyPressed["p"]) {
+    location.href = '/project/';
+  } else if (isKeyPressed["e"]) {
+    location.href = '/education/workshops/';
+  };
+};
