@@ -29,7 +29,7 @@ document.addEventListener('keydown', function(e) {
 
     // if the last key is reached, activate cheats
     if (konamiCodePosition == konamiCode.length) {
-      activateCheats();
+      activateAward();
       konamiCodePosition = 0;
     }
   } else {
@@ -37,14 +37,27 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-function activateCheats() {
+function activateAward() {
   document.body.style.backgroundImage = "url('/images/vector-bg.png')";
-
   // var audio = new Audio('/data/ok-ikumi-pfeifferhorn.mp3');
   // var audio = new Audio('/data/ok-ikumi-heights.mp3');
   var audio = new Audio('/data/ok-ikumi-rhea.mp3');
   audio.play();
-
   $('#konami-modal').delay(5000).modal('toggle')
-  // alert("Secret UVARC features activated!");
-}
+};
+
+// look for SEARCH key
+var searchKey = {
+  83: 's'
+};  
+document.addEventListener('keydown', function(e) {
+  var key = searchKey[e.keyCode];
+  if (key == 's') {
+    showSearch();
+  } else {
+    // do nothing
+  }
+});
+function showSearch() {
+  $('.search-modal').modal('toggle')
+};
