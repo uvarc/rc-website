@@ -51,11 +51,12 @@ document.addEventListener('keydown', function(e) {
   var key = searchKey[e.keyCode];
   if (key == 's') {
     showSearch();
+    
   } else {
     // do nothing
   }
 });
 function showSearch() {
-  $('.search-modal').modal('toggle')
+  $('.search-modal').modal('show')
 };
 
