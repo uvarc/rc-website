@@ -43,27 +43,19 @@ $(window).resize(function () {
   }
 });
 
-/*
-isKeyPressed = { 
-   'a': false,
-   'e': false,
-   'g': false,
-   'p': false,
-   's': false,
-   'u': false,
+// look for SEARCH key
+var searchKey = {
+  83: 's'
 };
-document.onkeydown = (keyDownEvent) => {
-  isKeyPressed[keyDownEvent.key] = true;
-  if (isKeyPressed["u"] && isKeyPressed["s"]) {
-    location.href = '/support/';
-  } else if (isKeyPressed["a"]) {
-    location.href = '/about/mission/';
-  } else if (isKeyPressed["g"] && isKeyPressed["s"]) {
-    location.href = '/userinfo/systems/';
-  } else if (isKeyPressed["p"]) {
-    location.href = '/project/';
-  } else if (isKeyPressed["e"]) {
-    location.href = '/education/workshops/';
-  };
+document.addEventListener('keydown', function(e) {
+  var key = searchKey[e.keyCode];
+  if (key == 's') {
+    showSearch();
+  } else {
+    // do nothing
+  }
+});
+function showSearch() {
+  $('.search-modal').modal('toggle')
 };
-*/
+
