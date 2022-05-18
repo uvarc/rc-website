@@ -41,7 +41,8 @@ function activateCheats() {
   document.body.style.backgroundImage = "url('/images/vector-bg.png')";
 
   // var audio = new Audio('/data/ok-ikumi-pfeifferhorn.mp3');
-  var audio = new Audio('/data/ok-ikumi-heights.mp3');
+  // var audio = new Audio('/data/ok-ikumi-heights.mp3');
+  var audio = new Audio('/data/ok-ikumi-rhea.mp3');
   audio.play();
 
   $('#konami-modal').delay(5000).modal('toggle')
