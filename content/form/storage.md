@@ -120,35 +120,7 @@ storage platform is appropriate for public or internal use data.</div>
     </div>
   </div>
   <hr size=1 />
-<label class="control-label" for="data-sensitivity-2">PTAO</label>
-  <div class="row">
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao2" name="ptao2" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao3" name="ptao3" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao4" name="ptao4" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-    </div>
-  </div>
-  <!--
-  <div class="form-item form-type-textarea form-group"> 
-    <label class="control-label" for="estimated-cost">Estimated Total Cost </label>
-    <input class="form-control form-text required" type="text" id="estimated-cost" name="estimated-cost" value="$" size="200" maxlength="200" readonly style="width:20%;" />
-  </div>
-  -->
-  <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="financial-contact">Financial Contact </label>
-    <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
-  </div>
+{{% billing %}}
   <hr size=1 />
   <div class="form-check form-item form-group">
     <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>

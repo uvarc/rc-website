@@ -21,25 +21,15 @@ Keras is a high-level neural networks application programming interface (API), w
 # What is inside the TensorFlow containers?
 The TensorFlow modules on Rivanna include common Python packages such as Matplotlib and OpenCV. See <https://hub.docker.com/r/uvarc/tensorflow> for details.
 
-# Local Copy of Container Image
-The TensorFlow container images contain all the libraries and software packages required to run TensorFlow.  In order to run Slurm or interactive jobs (ijobs), it is best practice to create a local copy of the container image in your own /home or /scratch directory. The container images can be copied like any other file on Rivanna.
-
-A library of prepared TensorFlow containers prepared to run on Rivanna's GPU nodes can be accessed through these commands:
-```
-module load singularity
-module avail tensorflow
-```
-Loading of any of these container modules produces an on-screen message with instructions on how to copy the TensorFlow container image file, which resides in `$CONTAINERDIR`.
-
 ## A100 GPU compatibility
-Older versions may not be compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option `-x udc-an28-[1,7]`.
+Versions 2.1 and older may not be compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option `-x udc-an28-[1,7]`.
 
 # TensorFlow Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available:
 
-- 1.12.0 with Python 2.7
-- 1.12.0 with Python 3.6
-- 2.1.0 with Python 3.7
+- 2.4.1 with Python 3.7
+- 2.7.0 with Python 3.9
+- 2.8.0 with Python 3.9
 
 ## Accessing the JupyterLab Portal
 
@@ -69,12 +59,12 @@ To run commands in an GPU-enabled container image, load the singularity module a
 
 For example:
 ```
-module load singularity
-singularity run --nv /scratch/$USER/tensorflow-2.1.0-py37.sif tf_example.py
+module load singularity tensorflow/2.8.0
+singularity run --nv $CONTAINERDIR/tensorflow-2.8.0.sif tf_example.py
 ```
 In the container build script, `python` is defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. `tf_example.py`, to the Python interpreter. So the above singularity command is equivalent to
 ```
-singularity exec --nv /scratch/$USER/tensorflow-2.1.0-py37.sif python tf_example.py
+singularity exec --nv $CONTAINERDIR/tensorflow-2.8.0.sif python tf_example.py
 ```
 The TensorFlow container images were built to include CUDA and cuDNN libraries that are required by TensorFlow.  Since these libraries are provided within each container, we do not need to load the CUDA/cuDNN libraries available on the host.
 
@@ -83,11 +73,9 @@ The TensorFlow container images were built to include CUDA and cuDNN libraries t
 {{< pull-code file="/static/scripts/tensorflow.slurm" lang="no-hightlight" >}}
 
 # TensorFlow Interactive Jobs (ijob)
-Just as described for Slurm jobs, it is recommended to copy a TensorFlow container image (e.g. tensorflow-2.1.0-py37.sif) to your personal /scratch directory before starting an ijob.
-
 Start an ijob.  Note the addition of `-p gpu --gres=gpu` to request access to a GPU node and its GPU device.
 ```
-ijob  -A mygroup -p gpu --gres=gpu -c 1
+ijob -A mygroup -p gpu --gres=gpu -c 1
 ```
 **Console output"**
 ```
@@ -99,8 +87,8 @@ salloc: Granted job allocation 12345
 Now you can load the `singularity` module and execute commands provided by the container. For example:
 ```
 module purge
-module load singularity
-singularity run --nv /scratch/$USER/tensorflow-2.1.0-py37.sif tf_example.py
+module load singularity tensorflow/2.8.0
+singularity run --nv $CONTAINERDIR/tensorflow-2.8.0.sif tf_example.py
 ```
 
 # Interaction with the Host File System
@@ -115,11 +103,11 @@ Due to the overlay, these directories are by default the same inside and outside
 
 # TensorBoard
 
-Request a Desktop session under Interactive Apps via [Open OnDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the Slurm job. Launch the session and open a terminal in the desktop. Enter these commands (using `tensorflow/2.1.0-py37` as an example):
+Request a Desktop session under Interactive Apps via [Open OnDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the Slurm job. Launch the session and open a terminal in the desktop. Enter these commands:
 
 ```
-$ module load singularity tensorflow/2.1.0-py37
-$ singularity shell --nv $CONTAINERDIR/tensorflow-2.1.0-py37.sif
+$ module load singularity tensorflow/2.8.0
+$ singularity shell --nv $CONTAINERDIR/tensorflow-2.8.0.sif
 Singularity> python -m tensorboard.main --logdir=logdir
 ```
 
