@@ -40,4 +40,4 @@ ACCORD offers no SSH, FTP, Remote Desktop, or VNC access.
 
 # Who runs it
 
-The ACCORD project was developed by the [Research Computing Group](https://www.rc.virginia.edu) at the [University of Virginia](https://www.virginia.edu/), under the management of the ACCORD Project Coordinator Will Rosenow and Principal Investigator Ron Hutchins
+The ACCORD project was developed by the [Research Computing Group](https://www.rc.virginia.edu) at the [University of Virginia](https://www.virginia.edu/) and funded through an [NSF grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1919667) awarded to Ron Hutchins who serves as the Principal Investigator.
