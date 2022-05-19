@@ -31,7 +31,7 @@ restrictive levels, such as CUI, FISMA, iTar, and PCI cannot be satisfied.
 
 # How do I use it
 
-ACCORD is entirely web-based, which means it can be easily accessed using a modern browser such as Chrome, Firefox, Edge or Safari. Once you have created a project in ACCORD, you can perform computational research using one of the application environments. Currently we offer RStudio, JupyterLab, Theia C++, and Theia Python. More detailed information can be found in our [User Guide](https://accord-docs.uvarc.io/user-guide.html)
+ACCORD is entirely web-based, which means it can be easily accessed using a modern browser such as Chrome, Firefox, Edge or Safari. Once you have created a project in ACCORD, you can perform computational research using one of the application environments. Currently we offer RStudio, JupyterLab, Theia C++, and Theia Python. More detailed information can be found in our [User Guide](/userinfo/accord/userguide/)
 
 ACCORD offers no SSH, FTP, Remote Desktop, or VNC access.
 
