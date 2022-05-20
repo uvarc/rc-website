@@ -8,9 +8,9 @@
   </header>
   
   {{ if (isset .Params "audio") }}
-  <figure {{ with .Get "class" }}class="{{ . }}"{{ end }}>
-    <audio controls preload="{{ .Get "preload" | default "metadata" }}">
-      {{ with .Get "src" }}<source src="https://zzz-somebucket.s3.amazonaws.com/{{ . | relURL }}" type="audio/mpeg">{{ end }}
+  <figure>
+    <audio controls preload="metadata">
+      <source src="https://s3.amazonaws.com/uvarc-media{{ . | relURL }}" type="audio/mpeg">
     </audio>
   </figure>
   {{ end }}
