@@ -92,9 +92,17 @@ timeout = "60000"
   # Hide the sharing icons on posts? (Default: false)
   hide = true
 
+[mediaTypes]
+  [mediaTypes.'text/plain']
+    suffixes = ['aud']
+
+[outputFormats]
+  [outputFormats.AUD]
+    mediaType = "text/plain"
+
 [outputs]
   home = [ "HTML", "JSON" ]
-  page = [ "HTML" ]
+  page = [ "HTML", "AUD" ]
 
 [sitemap]
   changefreq = "daily"
