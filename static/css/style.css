@@ -33,7 +33,7 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 .p,.tiny{font-size:80%;padding-top:6px;}
 .language-fallback{background-color:transparent;}
 
-.sidebar-module{padding-top:1rem;padding-left:1rem;padding-right:1rem;padding-bottom:0.4rem;background-color:#f8f8f8;}
+.sidebar-module{padding-top:1rem;padding-left:1rem;padding-right:1rem;padding-bottom:0.4rem;}
 .sidebar-module h6{font-weight:bold;}
 .sidebar-module-inset{padding:1rem;background-color:#f5f5f5;border-radius:.25rem}
 .sidebar-module-inset ol:last-child,.sidebar-module-inset p:last-child,.sidebar-module-inset ul:last-child{margin-bottom:0}

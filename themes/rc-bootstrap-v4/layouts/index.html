@@ -27,62 +27,30 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-4 blog-main">
-
-      <!-- begin Featured Stories section -->
-      {{ partial "featured-stories.html" . }}
-      <!-- end Featured Story section -->
-
-      <!-- begin Category drop-down -->
-      <!--
-      <p class=lead>Browse by category:</p>
-      <div class="dropdown" style="float:left;margin-right:20px;">
-        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categories
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height: auto;max-height: 400px;overflow-x: hidden;">
-          {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-            <a class="dropdown-item" href="/categories/{{ $name | urlize }}">{{ $name }}</a>
-          {{ end }}
+        <div class="col-md-4 col-sm-4 blog-main">
+          {{ partial "get-started.html" . }}
+        </div>
+        <div class="col-md-4 col-sm-4 blog-main">
+          {{ partial "project-feature.html" . }}
+        </div>         
+        <div class="col-md-4 col-sm-4 blog-main">
+          {{ partial "status.html" . }}
         </div>
       </div>
-      <br clear=all>
-      <!-- end Category drop-down -->
 
-        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
-        <!-- END LEFT COLUMN -->
-
-        <!-- BEGIN MIDDLE COLUMN -->
-        <div class="col-sm-4 blog-main">
-
-          {{ partial "project-feature.html" . }}
-          <div style="height:1rem;width:100%;"></div>
-          {{ partial "web-access.html" . }}
-          <div style="height:1rem;width:100%;"></div>
-          {{ partial "data-storage.html" . }}
-
-        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
-        <!-- END MIDDLE COLUMN -->
-
-        <!-- BEGIN RIGHT COLUMN -->
-        {{ "<!-- /.blog-sidebar -->" | safeHTML }}
-        <aside class="col-sm-4 blog-sidebar">
-
-        <!-- THE ARTIST FORMERLY KNOWN AS THE SMART SIDEBAR -->
-
-          {{ partial "status.html" . }}
-          <div style="height:1rem;width:100%;"></div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4 blog-main">
+          {{ partial "featured-stories.html" . }}
+        </div>
+        <div class="col-md-4 col-sm-4 blog-main">
           {{ partial "training-events.html" . }}
-          <div style="height:1rem;width:100%;"></div>
+        </div>         
+        <div class="col-md-4 col-sm-4 blog-main">
           {{ partial "office-hours.html" . }}
+        </div>
+      </div>
 
-        <!-- END SMART SIDEBAR -->
-
-        </aside><!-- /.blog-sidebar -->
-
-      </div> {{ "<!-- /.row -->" | safeHTML }}
-
-    </div> {{ "<!-- /.container -->" | safeHTML }}
+    </div>
 
     {{ partial "konami-modal.html" . }}
     {{ partial "footer.html" . }}

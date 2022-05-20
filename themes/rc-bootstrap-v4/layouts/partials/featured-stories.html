@@ -1,16 +1,16 @@
-<section class="">
-  <p class=lead>News & Announcements</p>
-  {{ range first 4 (where .Site.Pages "Type" "post") }}
+<p class=lead>News & Announcements</p>
+<section class="" style="margin-bottom:1rem;">
+  {{ range first 2 (where .Site.Pages "Type" "post") }}
     {{ if in .Params.categories "feature" }}
       <a href="{{.Permalink}}" style="text-decoration:none;color:black;">
-      <div class="sidebar-module card card-shadow" style="margin-bottom:1rem;">
+      <div class="sidebar-module" style="height:24rem;">
         <h5>{{.Title | markdownify }}</h5>
         <p style="font-size:0.9em;margin-bottom:30px;">
           {{ if .Params.summary }}
             {{ .Params.summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
           {{ else }}
             {{ if gt (len .Summary) 420 }}
-              {{slicestr .Summary 0 420 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
+              {{slicestr .Summary 0 500 | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
             {{ else }}
               {{ .Summary | markdownify }} &nbsp; <a href="{{.Permalink}}">[Read More]</a>
             {{ end }}                
@@ -20,5 +20,5 @@
       </a>
     {{ end }}
   {{ end }}
-  <p style="font-size:90%;"><a href="/post/" style="text-decoration:none;">More Featured Announcements &raquo;</a></p>
 </section>
+<p style="font-size:90%;"><a href="/post/" style="text-decoration:none;">More Featured Announcements &raquo;</a></p>

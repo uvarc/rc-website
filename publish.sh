@@ -20,7 +20,7 @@ case $proceed in
     [m]* ) proceedx="1";;
     [s]* ) proceedx="2";;
     [p]* ) proceedx="3";;
-    * ) echo "Please answer m or s";;
+    * ) echo "Please answer [m/s/p]";;
 esac
 
 if [ $proceedx -eq 3 ]
@@ -33,6 +33,11 @@ then
   echo "--- Content cleared"
   hugo -v --ignoreCache    # try without cache
   echo "--- Hugo content generated"
+  yuicompressor --type js static/js/scripts.js > static/js/scripts.min.js
+  yuicompressor --type css static/css/style.css > static/css/style.min.css
+  yuicompressor --type js static/js/user-session.js > static/js/user-session.min.js
+  html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype public/index.html -o public/index.html;
+  html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace --use-short-doctype public/project/index.html -o public/project/index.html;
   aws s3 sync --delete --cache-control max-age=86400 public/ s3://uvarc-website-preview/
   echo "--- Public dir published to AWS"
   echo "Preview URL: http://uvarc-website-preview.s3-website-us-east-1.amazonaws.com/"
