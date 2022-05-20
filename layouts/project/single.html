@@ -7,10 +7,19 @@
     <h2 class="blog-post-title" style="padding-bottom:20px;"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
   </header>
   
+  {{ if (isset .Params "audio") }}
+  <figure {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+    <audio controls preload="{{ .Get "preload" | default "metadata" }}">
+      {{ with .Get "src" }}<source src="https://zzz-somebucket.s3.amazonaws.com/{{ . | relURL }}" type="audio/mpeg">{{ end }}
+    </audio>
+  </figure>
+  {{ end }}
+
   <div class="explainer">
     {{ if .Params.images }}
       <img src="{{ .Params.images }}" alt="{{ .Title }}" class="project-inset" align="right" />
     {{ end }}
+
     {{ .Content }}
     
     {{ partial "publications.html" . }}
