@@ -1,0 +1,2 @@
+{{ .Title | plainify }}
+{{ .Content | plainify }}
