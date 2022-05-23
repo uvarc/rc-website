@@ -7,6 +7,7 @@ images = "/images/projects/political-sentiment.png"
 description = ""
 date = "2021-03-28T17:18:27-04:00"
 draft = false
+audio = true
 projecttype = ["social-science", "hpc-computing", "data-science"]
 +++
 
