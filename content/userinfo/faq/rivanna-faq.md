@@ -52,6 +52,18 @@ rm -rf ~/.mozilla/firefox/*.default/.parentlock
 
 rm -rf ~/.mozilla/firefox/*.default/lock
 
+## How can I view .pdf or .csv files on Rivanna?
+
+For .pdf files, run the command:
+
+     atril filename.pdf
+
+For .csv files, run the command:
+
+     aacalc filename.csv
+
+where filename is a placeholder for the specific filename.
+
 ## When should I use FastX Web, when should I use an Open OnDemand Desktop session?
 Both allow you to run applications with graphical user interfaces in a Linux Desktop environment.
 
