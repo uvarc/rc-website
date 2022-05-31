@@ -2,7 +2,7 @@
 title = "Political Sentiment Analysis"
 author = "RC Staff"
 categories = ["projects"]
-tags = ["hpc", "R", "text analysis"]
+tags = ["hpc", "R", "text analysis","data-science","hpc-computing" ]
 images = "/images/projects/political-sentiment.png"
 description = ""
 date = "2021-03-28T17:18:27-04:00"
