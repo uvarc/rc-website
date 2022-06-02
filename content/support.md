@@ -144,7 +144,7 @@ Examples of the type of support we can provide are:
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Thursdays 10:00-12:00pm</b><br />
-<a href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button></a>
+<a href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button>&nbsp<b>No office hours on June 9th</b></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
 
