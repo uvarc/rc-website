@@ -60,7 +60,7 @@ For .pdf files, run the command:
 
 For .csv files, run the command:
 
-     aacalc filename.csv
+     oocalc filename.csv
 
 where filename is a placeholder for the specific filename.
 
