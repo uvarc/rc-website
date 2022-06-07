@@ -2,7 +2,7 @@
 draft = false
 date = "2022-02-12T15:25:10-05:00"
 title = "Neal Magee, PhD"
-job_title = "Solution Architect"
+job_title = "DevOps & Cloud Services, Director"
 lastname = "magee"
 email = "nem2p@virginia.edu"
 github = "nmagee"
