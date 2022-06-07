@@ -2,7 +2,7 @@
 draft = false
 date = "2019-05-17T15:25:10-05:00"
 title = "Andrew Bell, PhD"
-job_title = "Communications and Business Operations"
+job_title = "Financial & Administrative Services, Director"
 lastname = "bell"
 type = "people"
 biolink = false
