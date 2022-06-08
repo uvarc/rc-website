@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2020-02-14T11:45:12-05:00"
+date = "2022-06-07T11:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -73,7 +73,7 @@ The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both
 <!-- 
 # Pricing
 
-Ivy resources will be provided without a fee for approved projects. Please note that the pricing model is still under evaluation. A valid PTAO is required as part of the account request process, although no charges will be made without advanced notice to the PI.
+Ivy resources will be provided without a fee for approved projects. Please note that the pricing model is still under evaluation. A valid FDM is required as part of the account request process, although no charges will be made without advanced notice to the PI.
 
 {{< ivy-pricing >}}
  -->
