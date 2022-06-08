@@ -15,7 +15,6 @@ Alternate forms with FDM implemented:
 
 * [SU Allocation Purchase](/form/allocation-purchase-fdm/)
 * [Storage Purchase](/form/storage-fdm/)
-* [OMERO Purchase](/form/omero-fdm/)
 
 Ivy FDM needs to be implemented in the SERVICES application:
 
