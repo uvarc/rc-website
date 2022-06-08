@@ -1,43 +1,41 @@
-<div style="width:100%:height:6px;background-color:#ccc;"></div>
 <hr size=1 />
   <div class="row">
     <div class="col form-group">
-      <label class="control-label" for="exampleInputEmail1">Company</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="UVA_207">
-      <small id="emailHelp" class="form-text text-muted">Enter your FDM Company code</small>
+      <label class="control-label" for="company-id">Company</label>
+      <input type="text" class="form-control" id="company-id" aria-describedby="company-id-help" value="UVA_207">
+      <small id="company-id-help" class="form-text text-muted">Enter your FDM Company code</small>
     </div>
     <div class="col form-group">
-      <label class="control-label" for="exampleInputEmail1">Cost Center</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-      <small id="emailHelp" class="form-text text-muted">Enter your FDM Cost Center</small>
+      <label class="control-label" for="cost-center">Cost Center</label>
+      <input type="text" class="form-control" id="cost-center" aria-describedby="cost-center-help" placeholder="">
+      <small id="cost-center-help" class="form-text text-muted">Enter your FDM Cost Center</small>
     </div>
     <div class="col form-group">
-      <label class="control-label" for="exampleInputEmail1">Business Unit</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <small id="emailHelp" class="form-text text-muted">Enter your FDM Business Unit</small>
+      <label class="control-label" for="business-unit">Business Unit</label>
+      <input type="text" class="form-control" id="business-unit" aria-describedby="business-unit-help">
+      <small id="business-unit-help" class="form-text text-muted">Enter your FDM Business Unit</small>
     </div>
   </div>
-
 <!-- TYPE OPTIONS -->
   <hr size=1 />
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
-    <label class="control-label" for="storage-options">Funding Type <span class="form-required" title="This field is required.">*</span></label>
-    <div id="storage-options" class="form-radios">
+    <label class="control-label" for="funding-types">Funding Type <span class="form-required" title="This field is required.">*</span></label>
+    <div id="funding-types" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" />
+        <input required="required" type="radio" id="funding-project" name="funding-type" value="Project" class="form-radio" />
         &nbsp; Project
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" />
+        <input required="required" type="radio" id="funding-gift" name="funding-type" value="Gift" class="form-radio" />
         &nbsp; Gift
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" />
+        <input required="required" type="radio" id="funding-grant" name="funding-type" value="Grant" class="form-radio" />
         &nbsp; Grant
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" />
+        <input required="required" type="radio" id="funding-designated" name="funding-type" value="Designated" class="form-radio" />
         &nbsp; Designated
       </div>
     </div>
@@ -50,42 +48,42 @@
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
       <small>Fund</small>
-      <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
+      <input class="form-control form-text required" type="text" id="fund" name="fund" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Function</small>
-      <input class="form-control form-text required" type="text" id="ptao2" name="ptao2" value="" size="10" maxlength="10" />
+      <input class="form-control form-text required" type="text" id="function" name="function" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Program</small>
-      <input class="form-control form-text required" type="text" id="ptao3" name="ptao3" value="" size="10" maxlength="10" />
+      <input class="form-control form-text required" type="text" id="program" name="program" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Internal Reference</small>
-      <input class="form-control form-text required" type="text" id="ptao4" name="ptao4" value="" size="20" maxlength="20" />
+      <input class="form-control form-text required" type="text" id="internal-reference" name="internal-reference" size="20" />
     </div>
   </div>  
   <div class="row" style="margin-top:0;padding-top:0;">
     <div class="col form-item form-type-textarea form-group">
       <small>Activity</small>
-      <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
+      <input class="form-control form-text required" type="text" id="activity" name="activity" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Loan</small>
-      <input class="form-control form-text required" type="text" id="ptao2" name="ptao2" value="" size="10" maxlength="10" />
+      <input class="form-control form-text required" type="text" id="loan" name="loan" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Location</small>
-      <input class="form-control form-text required" type="text" id="ptao3" name="ptao3" value="" size="10" maxlength="10" />
+      <input class="form-control form-text required" type="text" id="location" name="location" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
     </div>
   </div>  
   <div class="row">
     <div class="col form-group">
-      <label class="control-label" for="exampleInputEmail1">Assignee / Business Contact</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-      <small id="emailHelp" class="form-text text-muted">Enter your FDM assignee</small>
+      <label class="control-label" for="assignee">FDM Assignee / Business Contact</label>
+      <input type="text" class="form-control" id="assignee" aria-describedby="assignee-help" placeholder="">
+      <small id="assignee-help" class="form-text text-muted">Enter your FDM assignee</small>
     </div>
   </div>
 <hr size=1 />
