@@ -11,7 +11,6 @@ type = "form"
 private = true
 +++
 
-<alert style="width:100%;padding:0.6rem;margin-bottom:2rem;" class="alert alert-success">For current allocation pricing please <a href="/userinfo/rivanna/allocations/#allocation-pricing" style="font-weight:bold;">refer to this schedule</a>.</alert>
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
