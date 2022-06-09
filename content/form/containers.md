@@ -1,5 +1,5 @@
 +++
-date = "2021-04-10T23:59:16-05:00"
+date = "2022-06-07T23:59:16-05:00"
 tags = ["microservices","containers","docker"]
 categories = ["forms"]
 images = [""]
@@ -108,32 +108,7 @@ private = true
     </div>
   </div>
   </div>
-  <hr size=1 />
-  <label class="control-label" for="data-sensitivity-2">PTAO <span class="form-required" title="This field is required.">*</span></label>
-  <div class="row">
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao2" name="ptao2" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao3" name="ptao3" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao4" name="ptao4" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-    </div>
-  </div>
-  <div class="form-item form-group form-type-textarea"> 
-    <label class="control-label" for="financial-contact">Financial Contact <span class="form-required" title="This field is required.">*</span></label>
-    <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
-    <small id="financialContactHelp" class="form-text text-muted">Please enter the name and email address of your financial contact.</small>
-  </div>
-  <hr size=1 />
+  {{% billing-fdm %}}
   <div class="form-check form-item form-group">
     <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
     <label class="form-check-label" for="data-agreement">
