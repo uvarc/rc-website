@@ -1,6 +1,12 @@
 <!-- MAIN FDM FIELDS -->
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
+      <label class="control-label" for="financial-contact">Financial Contact <span class="form-required" title="This field is required.">*</span></label>
+      <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" required="required" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="company-id">Company ID <span class="form-required" title="This field is required.">*</span></label>
       <input class="form-control form-text required" type="text" id="company-id" name="company-id" required="required" value="UVA_207" />
     </div>
@@ -16,7 +22,7 @@
 <!-- FDM FUNDING TYPE OPTIONS -->
   <hr size=1 />
   <div class="row">
-  <div class="col form-item form-group form-item form-type-radios form-group"> 
+  <div class="col form-item form-group form-type-radios"> 
     <label class="control-label" for="funding-types">Funding Type <span class="form-required" title="This field is required.">*</span></label>
     <div id="funding-types" class="form-radios">
       <div class="form-item form-type-radio radio">
@@ -36,6 +42,10 @@
         &nbsp; Designated
       </div>
     </div>
+  </div>
+  <div class="col form-item form-group form-type-textarea">
+    <label class="control-label" for="funding-number">Funding Number <span class="form-required" title="This field is required.">*</span></label>
+    <input class="form-control form-text required" type="text" id="funding-number" name="funding-number" size="20" />
   </div>
   </div>
 
@@ -74,11 +84,7 @@
       <input class="form-control form-text required" type="text" id="location" name="location" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
+      <small>Assignee</small>
+      <input class="form-control form-text required" type="text" id="assignee" name="assignee" size="20" />
     </div>
   </div>  
-  <div class="row">
-    <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="assignee-contact">FDM Assignee / Business Contact <span class="form-required" title="This field is required.">*</span></label>
-      <input class="form-control form-text required" type="text" id="assignee-contact" name="assignee-contact" required="required" />
-    </div>
-  </div>
