@@ -101,32 +101,8 @@ private = true
       <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
   </div>
-  <hr size=1 />
-<label class="control-label" for="data-sensitivity-2">PTAO</label>
-  <div class="row">
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao2" name="ptao2" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao3" name="ptao3" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <input class="form-control form-text required" type="text" id="ptao4" name="ptao4" value="" size="10" maxlength="10" />
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-    </div>
-  </div>
-  <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="financial-contact">Financial Contact </label>
-    <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
-  </div>
+  {{% billing-fdm %}}
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
-    <hr size="1" style="" />
     <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>

@@ -6,7 +6,7 @@ images = [""]
 author = "Staff"
 description = ""
 title = "Storage Request"
-draft = false
+draft = true
 type = "form"
 private = true
 +++
@@ -81,7 +81,8 @@ private = true
   </div>
   </div>
   <div class="col form-item form-group">
-    <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Internal Use / Public Data</h6>This storage platform is appropriate for public or internal use data.</div>
+    <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Internal Use / Public Data</h6>This 
+storage platform is appropriate for public or internal use data.</div>
     <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Sensitive / Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
   </div>
   <hr size=1 />
@@ -118,8 +119,10 @@ private = true
       <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
   </div>
-  {{% billing-fdm %}}
-  <div class="form-check form-item form-group" style="margin-top:1rem;">
+  <hr size=1 />
+{{% billing %}}
+  <hr size=1 />
+  <div class="form-check form-item form-group">
     <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
     <label class="form-check-label" for="data-agreement">
       The owner of these services assumes all responsibility for complying with state, federal, and international data retention laws. Researchers may be required to keep data securely stored for years after a project has ended and should plan accordingly. University of Virginia researchers are strongly encouraged to use the <a href="https://recordsmanagement.virginia.edu/urma/overview" target="_new" style="font-weight:bold;">University Records Management Application (URMA)</a>, a web-based tool that automatically tracks when data can be safely transferred or destroyed.
@@ -128,6 +131,20 @@ private = true
   <div class="form-item form-group">
     <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
   </div>
+  <!--
+  <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
+    <div class="row"">
+      <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
+      </div>
+      <div class="form-item form-group col">
+        <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:1rem;padding:6px;font-family:monospace; width:8rem;" />
+        <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
+        <button class="btn btn-default" id="captcha-refresh" type="button" onclick="createCaptcha()"><i class="fas fa-sync fa-1x"></i></button>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="/js/captcha.js"></script>
+  -->
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
@@ -139,5 +156,3 @@ private = true
 <script type="text/javascript" src="/js/storage-request.js"></script>
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
-<script type="text/javascript" src="/js/billing-fdm.js"></script>
-

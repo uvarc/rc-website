@@ -1,25 +1,26 @@
 +++
-date = "2022-05-04T23:59:16-05:00"
-tags = ["storage"]
+date = "2019-07-22T23:59:16-05:00"
+tags = ["omero"]
 categories = ["forms"]
 images = [""]
 author = "Staff"
 description = ""
-title = "Storage Request"
-draft = false
+title = "Omero Image Database Service"
+draft = true
 type = "form"
 private = true
 +++
 
-{{< form-cookies >}}
-<!-- <script type="text/javascript" src="/js/typeahead.js"></script> -->
+<p class="lead">From the microscope to publication, OMERO handles all your images in a secure central repository. You can view, organize, analyze and share your data from anywhere you have internet access. Work with your images from a desktop app (Windows, Mac or Linux), from the web or from 3rd party software. Over 140 image file formats supported, including all major microscope formats.</p>
+<p class="lead">Use the form below to request access for your group or lab to manage and analyze data in our OMERO database service.</p>
+<script type="text/javascript" src="/js/typeahead.js"></script>
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
-  <input type="hidden" id="category" name="category" value="Storage">
-  <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
+  <input type="hidden" id="category" name="category" value="Omero">
+  <input type="hidden" id="request_title" name="request_title" value="Omero Request" />
 {{% form-userinfo %}}
   <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
@@ -40,9 +41,9 @@ private = true
   </div>
   <hr size=1 />
   <div class="row">
-  <div class="col form-item form-group form-item form-type-radios form-group"> 
-    <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
-    <div id="type-of-request" class="form-radios">
+    <div class="col form-item form-group form-item form-type-radios form-group"> 
+      <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
+      <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="type-of-request-1" name="type-of-request" value="new-storage" class="form-radio" /> &nbsp; Create new storage share</label>
       </div>
@@ -55,46 +56,28 @@ private = true
       <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="type-of-request-4" name="type-of-request" value="retire-storage" class="form-radio" /> &nbsp; Retire existing share</label>
       </div>
+      </div>
+    </div>
+    <div class="col form-item form-type-radios form-group"> 
+      <label class="control-label" for="data-sensitivity">Data Sensitivity</label>
+      <div id="data-sensitivity" class="form-radios">
+        <div class="form-item form-type-radio radio">
+          <input required="required" type="radio" id="data-sensitivity-1" name="data-sensitivity" value="moderately-sensitive" class="form-radio" checked />&nbsp; Moderately sensitive / public
+        </div>
+      </div>
     </div>
   </div>
+  <hr size=1 />
+  <div class="row">
     <div class="col form-item form-group">
       <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
       <input class="form-control required" type="number" min="1" max="100" required="required" id="capacity" name="capacity" value="0" style="width:8rem;" />
       <p class=tiny>The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
     </div>
-  </div>
-  <hr size=1 />
-  <div class="row">
-  <div class="col form-item form-group form-item form-type-radios form-group"> 
-    <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
-    <div id="storage-options" class="form-radios">
-      <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" /> &nbsp; Research Project Storage ({{% storage-pricing project %}}/TB/year)</label>
-      </div>
-      <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" /> &nbsp; Research Standard Storage ({{% storage-pricing standard %}}/TB/year)</label>
-      </div>
-      <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="col form-item form-group">
-    <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Internal Use / Public Data</h6>This storage platform is appropriate for public or internal use data.</div>
-    <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%;" class="form-text text-muted"><h6>Sensitive / Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
-  </div>
-  <hr size=1 />
-  <div class="row">
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
       <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
-    </div>
-    <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-      <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
     </div>
   </div>
   <hr size=1 />
@@ -118,26 +101,37 @@ private = true
       <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
   </div>
-  {{% billing-fdm %}}
-  <div class="form-check form-item form-group" style="margin-top:1rem;">
-    <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
-    <label class="form-check-label" for="data-agreement">
-      The owner of these services assumes all responsibility for complying with state, federal, and international data retention laws. Researchers may be required to keep data securely stored for years after a project has ended and should plan accordingly. University of Virginia researchers are strongly encouraged to use the <a href="https://recordsmanagement.virginia.edu/urma/overview" target="_new" style="font-weight:bold;">University Records Management Application (URMA)</a>, a web-based tool that automatically tracks when data can be safely transferred or destroyed.
-    </label>
+  <hr size=1 />
+<label class="control-label" for="data-sensitivity-2">PTAO</label>
+  <div class="row">
+    <div class="col form-item form-type-textarea form-group">
+      <input class="form-control form-text required" type="text" id="ptao1" name="ptao1" value="" size="10" maxlength="10" />
+    </div>
+    <div class="col form-item form-type-textarea form-group">
+      <input class="form-control form-text required" type="text" id="ptao2" name="ptao2" value="" size="10" maxlength="10" />
+    </div>
+    <div class="col form-item form-type-textarea form-group">
+      <input class="form-control form-text required" type="text" id="ptao3" name="ptao3" value="" size="10" maxlength="10" />
+    </div>
+    <div class="col form-item form-type-textarea form-group">
+      <input class="form-control form-text required" type="text" id="ptao4" name="ptao4" value="" size="10" maxlength="10" />
+    </div>
+    <div class="col form-item form-type-textarea form-group">
+    </div>
+    <div class="col form-item form-type-textarea form-group">
+    </div>
   </div>
-  <div class="form-item form-group">
-    <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
+  <div class="form-item form-group form-item form-type-textarea form-group"> 
+    <label class="control-label" for="financial-contact">Financial Contact </label>
+    <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" value="" size="200" maxlength="200" />
   </div>
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
-    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
+    <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>
 </form>
 
-<script type="text/javascript" src="/js/storage-request.js"></script>
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
-<script type="text/javascript" src="/js/billing-fdm.js"></script>
-
