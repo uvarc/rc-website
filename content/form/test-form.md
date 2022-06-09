@@ -20,16 +20,9 @@ private = true
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Purchase" />
   {{% form-userinfo %}}
   <hr size=1 />
-  <div class="form-item form-group" style="margin-top:2rem;margin-bottom:2rem;border:1px solid #ccc;padding:2rem;">
-    <label class="control-label" style="">Allocation Pricing</label>
-    <div class="help-block" style="font-size:85%;color:gray;" id="pricing">
-      {{< allocation-pricing >}}
-    </div>
-  </div>
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="pi-name">Name of PI <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="pi-name" name="pi-name" value="" size="60" maxlength="80" />
   </div>
-  {{% billing-fdm %}}
   <div class="form-item form-type-radios form-group"> 
     <label class="control-label" for="faculty-verify">Is the PI of your account a UVA faculty member? <span class="form-required" title="This field is required.">*</span></label>
     <div id="faculty-verify" class="form-radios">
@@ -74,6 +67,7 @@ private = true
       <input required="required" class="form-control form-text required" type="text" id="su-allocation" name="su-allocation" value="" size="60" maxlength="128" />
     </div>
   </div>
+  {{% billing-fdm %}}
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>

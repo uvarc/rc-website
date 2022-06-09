@@ -118,9 +118,7 @@ private = true
       <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
     </div>
   </div>
-  <hr size=1 />
   {{% billing-fdm %}}
-  <hr size=1 />
   <div class="form-check form-item form-group">
     <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
     <label class="form-check-label" for="data-agreement">
