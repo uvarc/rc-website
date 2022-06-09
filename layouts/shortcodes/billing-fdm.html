@@ -28,19 +28,19 @@
     <label class="control-label" for="funding-types">Funding Type <span class="form-required" title="This field is required.">*</span></label>
     <div id="funding-types" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="funding-project" name="funding-type" value="Project" class="form-radio" />
+        <input required="required" type="radio" id="funding-project" name="funding-type" value="Project" class="form-radio" onclick="projectSel(value)" />
         &nbsp; Project
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="funding-gift" name="funding-type" value="Gift" class="form-radio" />
+        <input required="required" type="radio" id="funding-gift" name="funding-type" value="Gift" class="form-radio" onclick="projectSel(value)" />
         &nbsp; Gift
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="funding-grant" name="funding-type" value="Grant" class="form-radio" />
+        <input required="required" type="radio" id="funding-grant" name="funding-type" value="Grant" class="form-radio" onclick="projectSel(value)" />
         &nbsp; Grant
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="funding-designated" name="funding-type" value="Designated" class="form-radio" />
+        <input required="required" type="radio" id="funding-designated" name="funding-type" value="Designated" class="form-radio" onclick="projectSel(value)" />
         &nbsp; Designated
       </div>
     </div>
