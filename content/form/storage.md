@@ -119,7 +119,7 @@ private = true
     </div>
   </div>
   {{% billing-fdm %}}
-  <div class="form-check form-item form-group">
+  <div class="form-check form-item form-group" style="margin-top:1rem;">
     <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
     <label class="form-check-label" for="data-agreement">
       The owner of these services assumes all responsibility for complying with state, federal, and international data retention laws. Researchers may be required to keep data securely stored for years after a project has ended and should plan accordingly. University of Virginia researchers are strongly encouraged to use the <a href="https://recordsmanagement.virginia.edu/urma/overview" target="_new" style="font-weight:bold;">University Records Management Application (URMA)</a>, a web-based tool that automatically tracks when data can be safely transferred or destroyed.
