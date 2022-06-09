@@ -155,3 +155,5 @@ private = true
 <script type="text/javascript" src="/js/storage-request.js"></script>
 <script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+<script type="text/javascript" src="/js/billing-fdm.js"></script>
+

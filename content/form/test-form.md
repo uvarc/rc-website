@@ -97,3 +97,4 @@ function figureTotal() {
   total.value = sutotal;
 };
 </script>
+<script type="text/javascript" src="/js/billing-fdm.js"></script>
