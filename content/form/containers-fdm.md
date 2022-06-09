@@ -108,9 +108,7 @@ private = true
     </div>
   </div>
   </div>
-  <hr size=1 />
   {{% billing-fdm %}}
-  <hr size=1 />
   <div class="form-check form-item form-group">
     <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
     <label class="form-check-label" for="data-agreement">
