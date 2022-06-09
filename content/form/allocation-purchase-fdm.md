@@ -21,7 +21,8 @@ private = true
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Purchase" />
   {{% form-userinfo %}}
   <hr size=1 />
-  <alert class="success">For current allocation pricing please <a href="/userinfo/rivanna/allocations/#allocation-pricing" style="font-weight:bold;">refer to this schedule</a>.</alert>
+  <alert class="alert alert-success" role="alert">For current allocation pricing please <a href="/userinfo/rivanna/allocations/#allocation-pricing" 
+style="font-weight:bold;">refer to this schedule</a>.</alert>
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="pi-name">Name of PI <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="pi-name" name="pi-name" value="" size="60" maxlength="80" />
   </div>
