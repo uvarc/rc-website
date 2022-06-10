@@ -43,7 +43,7 @@ $(window).resize(function () {
   }
 });
 // Storage FDM field examples
-function projectSel(value) {
+const projectSel = (value) => {
     if (value == 'Project') {
       // alert("Is a project!");
       document.getElementsByName('funding-number')[0].placeholder = 'e.g. PJ01607';
