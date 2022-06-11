@@ -13,24 +13,6 @@ private = true
 
 {{< form-cookies >}}
 <!-- <script type="text/javascript" src="/js/typeahead.js"></script> -->
-<div class="modal" tabindex="-1" role="dialog" id="fdm-notice>
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Billing Updates - FDM</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>The University of Virginia has moved to a new billing model called "FDM" (Foundation Data Model). FDM replaces PTAOs
-          as a chargeback mechanism for purchases. Please provide valid FDM worktags in this form, or consult your Chair's or Dean's
-          office to get a PTAO-to-FDM conversion.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>

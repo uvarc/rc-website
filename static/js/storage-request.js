@@ -19,10 +19,3 @@ $("#storage-options").change(function () {
     $("#sensitive-data").hide(400);
   }
 });
-
-$("#request-form").load(function(){
-  $('#fdm-notice').modal('show')
-});
-// function showFdmNotice() {
-//   $('#fdm-notice').modal('show')
-// }; 
