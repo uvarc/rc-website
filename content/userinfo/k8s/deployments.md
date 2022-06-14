@@ -3,7 +3,7 @@ author = "RC Staff"
 description = ""
 title = "Kubernetes & Deployments"
 date = "2022-06-04T23:59:16-05:00"
-draft = true
+draft = false
 tags = ["compute","containers","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo"]
 images = [""]
@@ -12,8 +12,8 @@ images = [""]
 
 <p class=lead>
   <img src="/images/logos/k8s-icon.png" style="" alt="Kubernetes" align="right" />
-  Kubernetes is a container orchestrator for both short- and long-running jobs. These include web and database servers as well as segments of
-  workflows or pipelines. Containerized applications running in the UVARC Kubernetes cluster are visible to UVA Research networks (and therefore
+  Kubernetes is a container orchestrator for both short-running (such as workflow/pipeline stages) and long-running (such as web and database 
+  servers) jobs. Containerized applications running in the UVARC Kubernetes cluster are visible to UVA Research networks (and therefore
   from Rivanna, Skyline, etc.). Web applications can be made visible to the UVA campus or the public Internet.
 </p>
 
@@ -31,9 +31,7 @@ The Kubernetes research cluster is hosted in the standard security zone. It is s
 
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
-# Deployments
-
-## Basic Principles
+# Design/Deployment Principles
 
 Some guiding principles for the RC Kubernetes cluster:
 
