@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2022-02-12T15:25:10-05:00"
+date = "2022-06-12T15:25:10-05:00"
 title = "Neal Magee, PhD"
 job_title = "DevOps & Cloud Services, Director"
 lastname = "magee"
@@ -23,7 +23,7 @@ subjects = [
 
 Neal's background is in development and operations, and he designs both serverless and programmable infrastructure 
 that scale dynamically with the needs of an application. He has extensive experience with Python, Linux, 
-public clouds, and architecting dynamic systems that scale and heal automatically. Neal is an AWS 
+public clouds, and building systems that scale and heal automatically. Neal is an AWS 
 Certified Solution Architect and Developer, a member of the AWS Customer Council, and a Github Global 
 Campus Teacher.
 

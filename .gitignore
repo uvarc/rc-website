@@ -11,3 +11,4 @@ npm*
 lambda*
 gh-md-toc
 .hugo_build*
+.vscode*
