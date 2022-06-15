@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Workshops"
-date = "2019-07-21T10:55:28-05:00"
+date = "2022-06-14T10:55:28-05:00"
 draft = false
 tags = ["R","Python","Matlab","Shiny","HPC","Rivanna","Ivy","image processing","bioinformatics","containers","programming"]
 categories = ["education", "workshops"]
@@ -16,7 +16,7 @@ images = [""]
 # Upcoming Workshops
 
 {{% callout %}}
-Workshops have been moved to online learning formats due to campus closures from COVID-19. 
+Workshops have been moved to online learning formats due to COVID-19. 
 {{% /callout %}}
 
 {{% upcoming-workshops %}}
