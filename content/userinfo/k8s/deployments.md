@@ -1,8 +1,8 @@
 +++
 author = "RC Staff"
 description = ""
-title = "Kubernetes & Deployments"
-date = "2022-06-04T23:59:16-05:00"
+title = "Microservice Deployments"
+date = "2022-06-14T23:59:16-05:00"
 draft = false
 tags = ["compute","containers","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo"]
@@ -20,9 +20,9 @@ images = [""]
 
 # Kubernetes
 
-Research Computing runs microservices in a clustered orchestration environment that automates the deployment and management of many containers easy and 
-scalable. This cluster will have over 20 instances, >2000 cores and >2TB of memory allocated to running containerized services. It will also have over 
-300TB of cluster storage and can attach to [project](/userinfo/storage/#public-internal-use-data-storage) and 
+Research Computing runs microservices in a Kubernetes cluster that automates the deployment and management of many containers easy and 
+scalable. This cluster will have over 24 instances, >2000 cores and >2TB of memory allocated to running containerized services. It will also have over 
+300TB of cluster storage and can attach to both [project](/userinfo/storage/#public-internal-use-data-storage) and 
 [standard](/userinfo/storage/#public-internal-use-data-storage) storage.
 
 {{% highlight-danger %}}
@@ -31,61 +31,54 @@ The Kubernetes research cluster is hosted in the standard security zone. It is s
 
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
 
-# Design/Deployment Principles
 
-Some guiding principles for the RC Kubernetes cluster:
+# Design Principles
 
-<ol>
-  <li> No direct command-line access - <code>kubectl</code> and <code>helm</code> require the overhead of user authentication, roles, permissions,
-and network connectivity to the control plane. A better alternative employs the GitOps model for defining, updating, and managing deployments in code.
-  <li> Dedicated Build and Deployment pipelines - Containerized applications consist of code, dependencies, and data requirements. The lifecycle of 
-applications themselves is different from, and should be independent from, various deployments of that application. 
-  <li> "Desired state" architecture
-  <li> Code-based deployments - Deployments should be defined in code. Hand-built deployments are as brittle and unreliable as hand-made Docker 
-containers.
-  <li> Git-based permissions
+Deployments within the UVARC Kubernetes cluster are configured with a "Desired State" architecture. This means that deployments are
+described in code (k8s YAML, Helm charts, Jsonnet & Kustomize files) and the cluster maintains the described state all the time. This is
+often called the "GitOps" model, since the deployment files are code that can be tracked and versioned in a Git repository. As researchers
+iterate on their application and build+test their containers, deployments themselves can be managed separately with new container versions.
 
-</ol>
+This model has some distinct advantages for both research users and engineers:
+
+- Deployments should be defined in code. Hand-built deployments are as brittle and unreproducable as hand-made Docker containers. This helps maintain the state of applications as well as for disaster recovery.
+- We no longer grant users command-line access to the K8S API. <code>kubectl</code> and <code>helm</code> require the overhead of user authentication, roles, permissions, and network connectivity to the control plane that are unnecessary.
+- Permissions in the GitOps model can be granted within the Git repository, not at the cluster level.
 
 
-Here's a talk given by Martin Fowler explaining the idea:
+# Deployment Guidelines
 
-{{< youtube "2yko4TbC8cI" >}}
+The lifecycle of applications themselves is different from, and should be independent from, various deployments of that application. 
+Running your containerized application in Kubernetes requires you to think of two separate activities: (1) developing, testing, and building your 
+application and its dependencies; and (2) deploying your application stack in the cluster.
+
+1. **Development** - The first activity is generally well understood by researchers who may write their apps in Python, R, or other languages. As the 
+app evolves, it is containerized using a `Dockerfile` and tested. Finally, more advanced projects will use automation tools such as GitHub Actions or 
+Jenkins to build, test, and deploy the application container(s) to a container registry such as Docker Hub or GitHub Container Registry (GHCR).
+
+2. **Delivery** - The second activity is less understood by researchers, since running `docker` locally for testing is different from cluster 
+deployments. It is our belief that researchers should not be required to learn `kubectl` or other cluster management commands, instead simply defining their
+deployment in code and letting automation tools take it from there. We suggest you use a separate repository for all your deployment files, so
+that these two activities remain entirely separate.
+
+This lifecycle is known to engineers and developers as CI/CD, or Continuous Integration / Continous Delivery, as it describes how modern applications
+are built, packaged, delivered, and deployed - each of which may take more than one form. **Continous Integration** is the process of developers 
+continually iterating on the features, logic, and inner-workings of their application stack. This may be as small as bug fixes and as large as a 
+complete redesign. The final product of the CI stage is a deliverable that can be run in test, user acceptance, or production modes. CI tools help automate the packaging
+and publication of that deliverable. In the case of microservices this is most often a container image that is ready to use. **Continous Delivery** is
+the process of taking that deliverable and running it in an environment such as a public cloud, a server, etc. However, the CD process is normally
+more elegant than stopping the existing version of an application and replacing it. CD tools attempt to gently roll new versions into operation
+without any service disruption. And, using normal performance health checks, if the new version does not gain a healthy state, the CD orchestrator will 
+roll back the container version.
+
+ArgoCD is UVARC's choice for a Kubernetes-based CD tool as it offers the "desired state" model described above, accepts a number of deployment formats, 
+and is robust enough for distributed production clusters.
+
+Here's a brief explanation of ArgoCD and the entire CI/CD lifecycle:
+
+{{< youtube "MeU5_k9ssrs" >}}
 
 <div style="width:100%;height:2rem;"></div>
-
-<p class="lead"><span class="badge badge-default">2</span> The easiest and most common way to run microservices is inside of containers.</p>
-
-- We teach workshops on containers and how to use them. Browse the course overview for <a href="https://learning.rc.virginia.edu/tag/containers/" target="_new">Building Containers for Rivanna</a> at your own pace.
-- Docker provides an excellent [Getting Started](https://docs.docker.com/get-started/) tutorial.
-- Katacoda offers a great [hands-on Docker training series](https://www.katacoda.com/courses/docker) for free.
-- Users may inject `ENV` environment variables and encrypted secrets into containers at runtime. This means sensitive information does not need to be written into your container.
-
-- - -
-
-# Uses for Research
-
-<p class="lead">Microservices are typically used in computational research in one of two ways:</p>
-
-<ol>
-  <li class=lead><b>Standalone microservices or small stacks</b> - Such as interactive or data-driven web applications and APIs, small databases (<100GB), or scheduled task containers. Some examples:</li>
-    <ul style="margin-bottom:2rem;">
-      <li>Simple web container to serve Project files to the research community or as part of a publication.
-      <li>Reference APIs can handle requests based either on static reference data or databases.
-      <li>Shiny Server presents users with interactive plots to engage with your datasets.
-      <li>A scheduled job to retrieve remote datasets, perform initial ETL processing, and stage them for analysis.
-    </ul>
-
-  <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run, such as relational databases, key-value stores, or reference APIs. Some examples:</li>
-    <ul style="margin-bottom:2rem;">
-      <li>Cromwell/WDL pipelines rely on MySQL databases to track job status and state if a portion of your pipeline fails.
-      <li>Key-value stores in Redis can track an index of values or a running count that is updated as part of a job.
-      <li>A scheduled job to refresh a library of reference data from an external source, such as reference genomes or public datasets.
-    </ul>
-</ol>
-
-
-Browse a list of recent [UVA projects employing microservices](/project?tag=.containers).
 
 - - -
 

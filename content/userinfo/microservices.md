@@ -2,12 +2,13 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2022-05-04T23:59:16-05:00"
+date = "2022-06-04T23:59:16-05:00"
 draft = false
-tags = ["compute","cloud","hpc","containers","hybrid","infrastructure","docker","kubernetes","api"]
+tags = ["compute","cloud","containers","hybrid","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo"]
 images = [""]
 +++
+
 
 <p class=lead>
   <img src="/images/docker-logo.png" style="max-width:30%;" alt="Docker Containers" align="right" />
@@ -18,6 +19,14 @@ images = [""]
   Containerized microservices typically run a single process, rather than an entire stack within the same computing environment. 
   This allows portions of your application to be easily replaced or scaled as needed.
 </p>
+
+{{< highlight >}}
+<p><b>Transition to Kubernetes</b> - Research Computing is transitioning away from DCOS for microservice orchestration in favor of Kubernetes, the 
+open-source orchestrator originating from Google. New deployments will be launched directly in Kuberenetes and existing DCOS deployments will be
+migrated over the Summer and Fall of 2022.</p>
+
+<p><a href="/userinfo/k8s/deployments/">Read about the new Kubernetes cluster and user deployments</a>.</p>
+{{< /highlight >}}
 
 # Microservices at UVA
 Research Computing runs microservices in a clustered orchestration environment that automates the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. It also has over 300TB of cluster storage and can attach to [project](/userinfo/storage/non-sensitive-data/#project-storage) storage.
