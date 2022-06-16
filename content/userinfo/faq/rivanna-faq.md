@@ -58,6 +58,8 @@ For .pdf files, run the command:
 
      atril filename.pdf
 
+The atril command can also be used to display image files, e.g. .png and .jpg files.
+
 For .csv files, run the command:
 
      oocalc filename.csv
