@@ -60,11 +60,11 @@ Submit the job in the same directory as `my.inp`.
 
 For larger calculations, you may run on multiple nodes. The following example will run on a total of 120 cores:
 
-{{< pull-code file="/static/scripts/orca_serial.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/orca_multinode.slurm" lang="no-hightlight" >}}
 
 **Important notes:**
 - The `nprocs` in `*.inp` should be equal to the total number of cores requested in your Slurm script.
-- Do not run multi-node ORCA jobs from value storage. (See [here](https://orcaforum.kofo.mpg.de/viewtopic.php?f=8&t=4188&p=17142&hilit=failed+to+store+the+Coulomb+matrix#p17142).) We recommend scratch.
+- Do not run multi-node ORCA jobs from research standard storage `/nv`. (See [here](https://orcaforum.kofo.mpg.de/viewtopic.php?f=8&t=4188&p=17142&hilit=failed+to+store+the+Coulomb+matrix#p17142).) We recommend scratch.
 
 # References
 
