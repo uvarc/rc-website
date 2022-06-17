@@ -9,9 +9,9 @@
   <tbody>
     {{- range $index, $line := $data -}}      
       <tr>
-      {{- if ne $index 0 -}}
+      {{- if and (ne $index 0) (not (in $line "KNL")) -}}
         {{- range $line -}} <td style="text-align:right">{{ . }}</td> {{- end -}}
-      {{- end -}}  
+      {{- end -}}
       </tr>
     {{- end -}}
   </tbody>
