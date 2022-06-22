@@ -272,11 +272,25 @@ It will not hurt to run `dos2unix` on a file that doesn't need it. Sometimes you
 
 
 ## How do I check the efficiency of my completed jobs?
-Run the command `jobe`:
+Run the command `seff` on the Slurm job ID:
 
-![jobe output](/images/rivanna/jobe.png)
+```
+udc-ba34-36-deepLearning$seff 40330441
+Job ID: 40330441
+Cluster: shen
+User/Group: teh1m/users
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 2
+CPU Utilized: 00:15:14
+CPU Efficiency: 89.08% of 00:17:06 core-walltime
+Job Wall-clock time: 00:08:33
+Memory Utilized: 6.89 GB
+Memory Efficiency: 58.76% of 11.72 GB
+udc-ba34-36-deepLearning$
+```
 
-If your rating is low, please contact us; we can help.
+The output of this command is also contained in the email sent by Slurm once your job completes.
 
 - - -
 
