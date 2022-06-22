@@ -373,7 +373,7 @@ You must first generate an ssh key and then copy it to your git repository. Here
 2. Click on the drop-down menu next to my Git profile picture in the upper right corner; Select Settings; Click on SSH and GPG keys in the left column; Click on the New SSH Key button and followed the directions to upload your ssh key.
 Make sure that the ssh key is in your authorized_keys file in your .ssh directory on Rivanna.
 
-2. The next issue is to use the https link to clone the repository, but you need to use the ssh link.  If you have already made a number of changes to your files and don't want to redo them, rename the directory that was created when you first cloned the repository.  Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
+3. The next step is to clone the repository using the ssh link. If you have already cloned the repository using the http link and made a number of changes to your files, you won’t want to redo them.  Rename the directory that was created when you first cloned the repository. Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
 
 
 
