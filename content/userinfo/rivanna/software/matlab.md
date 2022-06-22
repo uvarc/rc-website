@@ -82,7 +82,7 @@ submitting different types of Matlab batch jobs to the Rivanna cluster.
 Once your program is debugged, we recommend running in batch mode when possible.
 This runs the job in the background on a compute node. Write a Slurm script similar to the following:
 
-{{< pull-code file="/static/scripts/matlab_serial.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/matlab_serial.slurm" lang="no-hightlight">}}
 
 The option `-nodisplay` suppresses the Desktop interface and any attempt to run a graphical display. Some MATLAB functions are capable of running on multiple cores. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores, so you would need to request the additional cores in your slurm script.  Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
 
@@ -147,6 +147,9 @@ node, you can use a slurm script similar to the following:
 
 {{< pull-code file="/static/scripts/matlab_multicore.slurm" lang="no-hightlight" >}}
 
+The Matlab script `setPool1.m` creates a local pool of matlab workers on the cores of the compute node.
+
+```
 % Script setPool1.m
 % create a local cluster object
 pc = parcluster('local');
@@ -159,7 +162,6 @@ pc.JobStorageLocation = ...
 % start the matlabpool with the available workers
 % control how many workers by setting ntasks in your sbatch script
 parpool(pc, str2num(getenv('numWorkers')))
-
 ```
 
 ## Matlab Jobs using Slurm Job Arrays
@@ -198,7 +200,7 @@ configCluster % the configuration created is specific to the Matlab version
 
 ```
 % Create a cluster object based on the profile
-pc = parcluster('rivanna R2020a'); % This must correspond to the matlab
+pc = parcluster('rivanna R2022a'); % This must correspond to the matlab
      % version you are using
 
 % Add additional properties related to slurm job parameters
