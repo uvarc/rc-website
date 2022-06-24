@@ -272,11 +272,25 @@ It will not hurt to run `dos2unix` on a file that doesn't need it. Sometimes you
 
 
 ## How do I check the efficiency of my completed jobs?
-Run the command `jobe`:
+Run the command `seff` on the Slurm job ID:
 
-![jobe output](/images/rivanna/jobe.png)
+```
+udc-ba34-36-deepLearning$seff 40330441
+Job ID: 40330441
+Cluster: shen
+User/Group: teh1m/users
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 2
+CPU Utilized: 00:15:14
+CPU Efficiency: 89.08% of 00:17:06 core-walltime
+Job Wall-clock time: 00:08:33
+Memory Utilized: 6.89 GB
+Memory Efficiency: 58.76% of 11.72 GB
+udc-ba34-36-deepLearning$
+```
 
-If your rating is low, please contact us; we can help.
+The output of this command is also contained in the email sent by Slurm once your job completes.
 
 - - -
 
@@ -349,6 +363,17 @@ Smaller files can be transferred to/from Rivanna using `scp`, `sftp`, and `rsync
 Larger files should be moved using [Globus](/userinfo/globus/).
 
 [Read more](/userinfo/data-transfer/) about data transfer.
+
+## I need to push and commit code changes from Rivanna account to my GitHub account. How do I set that up?
+
+You must first generate an ssh key and then copy it to your git repository. Here are the instructions for generating the ssh key and what to do on your git page:
+
+1. To generate an ssh key, see the following link: [ssh key generation](https://www.rc.virginia.edu/userinfo/howtos/general/sshkeys/)
+
+2. Click on the drop-down menu next to my Git profile picture in the upper right corner; Select Settings; Click on SSH and GPG keys in the left column; Click on the New SSH Key button and followed the directions to upload your ssh key.
+Make sure that the ssh key is in your authorized_keys file in your .ssh directory on Rivanna.
+
+3. The next step is to clone the repository using the ssh link. If you have already cloned the repository using the http link and made a number of changes to your files, you won’t want to redo them.  Rename the directory that was created when you first cloned the repository. Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
 
 
 
