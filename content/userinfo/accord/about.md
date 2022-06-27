@@ -14,7 +14,7 @@ author = "Staff"
 
 # What is it
 
-ACCORD (Assuring Controls Compliance of Research Data) gives researchers from public universities across the state of Virignia access to a single high-performance computing system capable of processing and storing de-identified sensitive data. ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data. This is especially important for schools that lack the financial, staffing, or technical resources for such systems. ACCORD is designed to encourage collaborative research partnerships across institutions by managing the risks associated with sensitive data sharing.
+ACCORD (Assuring Controls Compliance of Research Data) gives researchers from public universities across the state of Virignia access to a multicore computing system capable of processing and storing de-identified sensitive data. ACCORD is appropriate for de-identified PII, FERPA, business confidential, and other types of de-identified sensitive data. This is especially important for schools that lack the financial, staffing, or technical resources for such systems. ACCORD is designed to encourage collaborative research partnerships across institutions by managing the risks associated with sensitive data sharing.
 
 ACCORD is project-based, which means that investigators request access
 to the platform, create a project and populate it with co-investigators,
