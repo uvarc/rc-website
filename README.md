@@ -10,7 +10,7 @@
      * [Using Web IDEs](#using-web-ides)
      * [Local Install](#local-install)
   * [Creating New Content](#creating-new-content)
-     * [Methods for creating content](#two-methods-for-creating-content)
+     * [Methods for creating content](#methods-for-creating-content)
      * [Suggestions for creating content](#helpful-notes-about-creating-content)
      * [Front matter](#front-matter)
      * [Future Posts](#future-posts)
@@ -43,7 +43,7 @@ This opens a full web-based IDE for updating content on the `staging` branch, re
 ### Local Install
 
 * [Install](https://gohugo.io/overview/installing/) the HUGO binary on your local computer. For more information, see the Hugo GitHub repo: https://github.com/spf13/hugo
-* Clone this website repository: `git clone git@github.com:uvarc/rc-website.git`.
+* Clone this website repository: `git clone --branch staging git@github.com:uvarc/rc-website.git`.
 
 - - -
 
@@ -67,7 +67,7 @@ Content of this website is contained in a series of markdown files within the `c
 
 ### Methods for creating content:
 
-1. Copy an existing page and modify it.
+1. Copy an existing page and modify it. Or,
 2. Create a new page using the `hugo new` command declaring a path to the .md object you want to create:
   * `hugo new post/here-is-my-post.md`
   * `hugo new top-level-page.md`
@@ -134,14 +134,11 @@ A specific tweet:
 
     {{< tweet 877500564405444608 >}}
 
-A CADRE Education Track tile:
-
-    {{< education-track 279 >}}
 
 Shortcodes using `{{< >}}` simply render the text or HTML within the shortcode. Shortcodes using `{{% %}}` will also render any markdown within the shortcode.
 
 ### Featured Content
-To "feature" a post on the home page (which displays 2 most recent feature posts), simply add a CATEGORY with the value `feature`.
+To "feature" a post on the home page (which displays 3 most recent feature posts), simply add a CATEGORY with the value `feature`.
 
     categories = ["another-category","yet-another-category","feature"]
 
@@ -150,7 +147,7 @@ To "feature" a post on the home page (which displays 2 most recent feature posts
 
 ### Publish content
 Simply push `staging` back to GitHub. GitHub Actions will handle it from there - you can check the 
-build status by clicking the "build status" badge at the top of this page. Pushing your content to 
+build status by clicking the "Hugo Build CI" status badge at the top of this page. Pushing your content to 
 the production website requires a PULL REQUEST.
 
 > Remember that after pushing your changes back to the `staging` branch, the https://staging.rc.virginia.edu/ website will be updated within 1-2 minutes. Hold down the SHIFT key when reloading your browser to refresh your local cache.
@@ -162,7 +159,8 @@ the production website requires a PULL REQUEST.
 
 ### Events Data
 
-The "Training" widget and workshops page are both fed from `static/data/events.csv`. They are updated when the site is published (by hand) or every 24 hours by a cron job.
+The "Training" widget and workshops page are both fed from the `events.csv` hosted in Rivanna. These events are updated in the site 
+whenever it is published (by hand) or every 24 hours by a cron job.
 
 ### Automated Builds
 
@@ -173,7 +171,8 @@ of the contents of `.github/workflows/main.yml` and you will see instructions fo
 * Actions then synchronizes the published HTML, JS, CSS, images and files to Amazon S3.
 * Finally, the build invalidates the CloudFront cache that serves out the actual website.
 
-Build+deployment generally takes 70 seconds and can be monitored using the [GitHub Actions dashboard](https://github.com/uvarc/rc-website/actions) for this repository.
+Build+deployment generally takes approximately 80 seconds and can be monitored using the [GitHub Actions 
+dashboard](https://github.com/uvarc/rc-website/actions) for this repository.
 
 ### Pushing to Production
 
