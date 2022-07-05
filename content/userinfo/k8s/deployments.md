@@ -80,6 +80,18 @@ Here's a brief explanation of ArgoCD and the entire CI/CD lifecycle:
 
 <div style="width:100%;height:2rem;"></div>
 
+- - - 
+
+# Launching Your Application
+
+
+
+# Division of Responsibilities
+
+What we take care of
+
+What you take care of
+
 - - -
 
 # Next Steps
