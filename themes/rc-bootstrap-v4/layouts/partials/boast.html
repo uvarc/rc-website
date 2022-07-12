@@ -1,22 +1,25 @@
 <section class="sidebar-module">
 <p class=lead>Last Month</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-plaza.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js"></script>
 <script>
+window.odometerOptions = {
+  format: '(,ddd).ddd',
+}
 setTimeout(function(){
   odometer1.innerHTML = 4429053;
   odometer2.innerHTML = 111;
   odometer3.innerHTML = 8.254;
-}, 200);
+}, 400);
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/themes/odometer-theme-plaza.min.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.7/odometer.min.js"></script>
 <div id="odometer1" class="odometer" style="font-family:sans-serif;font-size:3rem;width:100%;text-align:left;">000</div>
 <p style="font-size:80%;">HPC Core Hours Used</p>
 <div style="width:100%;">
-  <div style="width:50%;float:right;">
+  <div style="width:40%;float:right;">
     <div id="odometer2" class="odometer" style="font-family:sans-serif;font-size:3rem;text-align:left;">000</div>
     <br /><p style="font-size:80%;">New Accounts</p> 
   </div>
-  <div style="width:50%;">
+  <div style="width:60%;">
     <div id="odometer3" class="odometer" style="font-family:sans-serif;font-size:3rem;text-align:left;">000</div>
     <p style="font-size:80%;">Storage Used (in PB)</p>  
   </div>
