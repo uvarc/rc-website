@@ -6,7 +6,7 @@ function reset_form() {
   };
   function show_submit() {
     var submitadd = document.getElementById("submit-div")
-    submitadd.style.display = 'block';
+    // submitadd.style.display = 'block';
   }
   function selected(cat) {
     console.log(cat)
