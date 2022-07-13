@@ -44,7 +44,7 @@ $('form').submit(function() {
   var form_url = window.location;
   let referrer = setCookie('__rc_form_referrer', form_url, '24');
   
-  var form = document.getElementById('request-form');
+  // var form = document.getElementById('request-form');
   
   // name
   let name = getCookie("__rc_name");

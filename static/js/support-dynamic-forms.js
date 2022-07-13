@@ -6,7 +6,7 @@ function reset_form() {
   };
   function show_submit() {
     var submitadd = document.getElementById("submit-div")
-    // submitadd.style.display = 'block';
+    submitadd.style.display = 'block';
   }
   function selected(cat) {
     console.log(cat)
@@ -54,15 +54,15 @@ function reset_form() {
         </div>
         <div class="form-textarea-wrapper resizable form-group">
           <label class="control-label" for="error_message">Error message received</label>
-          <textarea class="form-control form-textarea" id="error_message" name="error_message" style="font-family:monospace;font-size:90\%;" cols="60" rows="8" maxlength="5000"></textarea>
+          <textarea class="form-control form-textarea" id="error_message" name="error_message" style="font-family:monospace;font-size:90\%;" cols="60" rows="8" maxlength="5000" placeholder="Paste your error here."></textarea>
         </div>
         <div class="form-item form-type-textfield form-group">
           <label class="control-label" for="request_title">SLURM Job ID</label>
-          <input class="form-control form-text" type="text" id="slurm_id" name="slurm_id" value="" style="font-family:monospace;" size="10" maxlength="20" placeholder="" />
+          <input class="form-control form-text" type="text" id="slurm_id" name="slurm_id" value="" style="font-family:monospace;" size="10" maxlength="20" placeholder="e.g. 12345678" />
         </div>
         <div class="form-item form-type-textfield form-group">
           <label class="control-label" for="request_title">Path to your SLURM script</label>
-          <input class="form-control form-text" type="text" id="script_path" name="script_path" value="" style="font-family:monospace;" size="60" maxlength="100" placeholder="" />
+          <input class="form-control form-text" type="text" id="script_path" name="script_path" value="" style="font-family:monospace;" size="60" maxlength="100" placeholder="e.g. /home/mst3k/script.slurm" />
         </div>  
         <div class="form-item form-group form-item form-type-textarea form-group">
           <label id="description_label" class="control-label" for="description">Details of your request *</label>
@@ -95,7 +95,7 @@ function reset_form() {
         </div>
         <div class="form-textarea-wrapper resizable form-group">
           <label class="control-label" for="error_message">Error message received</label>
-          <textarea class="form-control form-textarea" id="error_message" name="error_message" style="font-family:monospace;font-size:90\%;" cols="60" rows="8" maxlength="5000"></textarea>
+          <textarea class="form-control form-textarea" id="error_message" name="error_message" style="font-family:monospace;font-size:90\%;" cols="60" rows="8" maxlength="5000" placeholder="Paste error message here."></textarea>
         </div>
         <div class="form-item form-type-textfield form-group">
           <label class="control-label" for="request_title">Project PI</label>
@@ -107,7 +107,7 @@ function reset_form() {
         </div>    
         <div class="form-item form-type-textfield form-group">
           <label class="control-label" for="request_title">Path to your executable / script</label>
-          <input class="form-control form-text" type="text" id="ivy_executable_path" name="ivy_executable_path" style="font-family:monospace;" value="" size="60" maxlength="100" placeholder="" />
+          <input class="form-control form-text" type="text" id="ivy_executable_path" name="ivy_executable_path" style="font-family:monospace;" value="" size="60" maxlength="100" placeholder="e.g. /home/mst3k/script.sh" />
         </div>
         <div class="form-item form-group form-type-textarea">
           <label id="description_label" class="control-label" for="description">Details of your request *</label>
