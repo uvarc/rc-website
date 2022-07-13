@@ -19,9 +19,10 @@ images = [""]
 Workshops have been moved to online learning formats due to COVID-19. 
 {{% /callout %}}
 
-{{% upcoming-workshops %}}
+{{% upcoming-workshops-smart %}}
 
-Research Computing is partnering with the Research Library and the Health Sciences Library to deliver workshops covering a variety of research computing topics.  
+Research Computing is partnering with the Research Library and the Health Sciences Library to deliver workshops covering a variety of 
+research computing topics.  
 
 <a href="https://data.library.virginia.edu/training/" class="btn btn-warning" target="_new">All Upcoming Workshops from UVA Library Research Data Services</a>
 
