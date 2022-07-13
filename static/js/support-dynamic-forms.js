@@ -37,14 +37,6 @@ function reset_form() {
           <label id="request_title" class="control-label" for="request_title">Please give a brief description of the problem *</label>
           <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
         </div>
-        <div class="form-item form-group form-item form-type-textarea form-group">
-          <label id="description_label" class="control-label" for="description">Details of your request *</label>
-          <div class="form-textarea-wrapper resizable">
-            <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
-            <div id="textarea_feedback" style="font-family:monospace;color:green;font-size:85%;margin-top:0.5rem;float:right;"></div>
-          </div>
-        <br clear=all />
-        </div>
         <div class="form-item form-group">
             <label class="control-label" for="rivanna_category">What do you need help with *</label>
             <select required="required" class="dropdown form-control form-select required" id="rivanna_category" name="rivanna_category">
@@ -71,7 +63,15 @@ function reset_form() {
         <div class="form-item form-type-textfield form-group">
           <label class="control-label" for="request_title">Path to your SLURM script</label>
           <input class="form-control form-text" type="text" id="script_path" name="script_path" value="" style="font-family:monospace;" size="60" maxlength="100" placeholder="" />
-        </div>      
+        </div>  
+        <div class="form-item form-group form-item form-type-textarea form-group">
+          <label id="description_label" class="control-label" for="description">Details of your request *</label>
+          <div class="form-textarea-wrapper resizable">
+            <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
+            <div id="textarea_feedback" style="font-family:monospace;color:green;font-size:85%;margin-top:0.5rem;float:right;"></div>
+          </div>
+        <br clear=all />
+        </div>  
         `;
         show_submit();
     } 
@@ -82,14 +82,6 @@ function reset_form() {
         <div class="form-item form-type-textfield form-group">
           <label id="request_title" class="control-label" for="request_title">Please give a brief description of the problem *</label>
           <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
-        </div>
-        <div class="form-item form-group form-type-textarea">
-          <label id="description_label" class="control-label" for="description">Details of your request *</label>
-          <div class="form-textarea-wrapper resizable">
-            <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
-            <div id="textarea_feedback" style="font-family:monospace;color:green;font-size:85%;margin-top:0.5rem;float:right;"></div>
-          </div>
-        <br clear=all />
         </div>
         <div class="form-item form-group">
             <label class="control-label" for="rivanna_category">What do you need help with *</label>
@@ -116,6 +108,14 @@ function reset_form() {
         <div class="form-item form-type-textfield form-group">
           <label class="control-label" for="request_title">Path to your executable / script</label>
           <input class="form-control form-text" type="text" id="ivy_executable_path" name="ivy_executable_path" style="font-family:monospace;" value="" size="60" maxlength="100" placeholder="" />
+        </div>
+        <div class="form-item form-group form-type-textarea">
+          <label id="description_label" class="control-label" for="description">Details of your request *</label>
+          <div class="form-textarea-wrapper resizable">
+            <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
+            <div id="textarea_feedback" style="font-family:monospace;color:green;font-size:85%;margin-top:0.5rem;float:right;"></div>
+          </div>
+        <br clear=all />
         </div>
         `;
         show_submit();
