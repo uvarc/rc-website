@@ -45,15 +45,17 @@ function reset_form() {
           </div>
         <br clear=all />
         </div>
-        <label class="control-label" for="rivanna_category">What do you need help with *</label>
-        <select required="required" class="dropdown form-control form-select required" id="rivanna_category" name="rivanna_category">
-          <option value="" selected="selected">- Select -</option>
-          <option value="Rivanna access">Rivanna access</option>
-          <option value="Software">Software usage / installation</option>
-          <option value="Error">Error running software</option>
-          <option value="Storage">Storage</option>
-          <option value="OpenOnDemand">OpenOnDemand</option>
-        </select>
+        <div class="form-item form-group">
+            <label class="control-label" for="rivanna_category">What do you need help with *</label>
+            <select required="required" class="dropdown form-control form-select required" id="rivanna_category" name="rivanna_category">
+                <option value="" selected="selected">- Select -</option>
+                <option value="Rivanna access">Rivanna access</option>
+                <option value="Software">Software usage / installation</option>
+                <option value="Error">Error running software</option>
+                <option value="Storage">Storage</option>
+                <option value="OpenOnDemand">OpenOnDemand</option>
+            </select>
+        </div>
         <div class="form-item form-type-textfield form-group">
           <label class="control-label" for="request_title">What software are you trying to use?</label>
           <input class="form-control form-text" type="text" id="rivanna_software" name="rivanna_software" value="" size="60" maxlength="100" placeholder="" />
@@ -81,7 +83,7 @@ function reset_form() {
           <label id="request_title" class="control-label" for="request_title">Please give a brief description of the problem *</label>
           <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
         </div>
-        <div class="form-item form-group form-item form-type-textarea form-group">
+        <div class="form-item form-group form-type-textarea">
           <label id="description_label" class="control-label" for="description">Details of your request *</label>
           <div class="form-textarea-wrapper resizable">
             <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
@@ -89,14 +91,16 @@ function reset_form() {
           </div>
         <br clear=all />
         </div>
-        <label class="control-label" for="rivanna_category">What do you need help with *</label>
-        <select required="required" class="dropdown form-control form-select required" id="rivanna_category" name="rivanna_category">
-          <option value="" selected="selected">- Select -</option>
-          <option value="Ivy access">Ivy access</option>
-          <option value="Software">Software usage / installation</option>
-          <option value="Error">Error running software</option>
-          <option value="Other">Other</option>
-        </select>
+        <div class="form-item form-group">
+            <label class="control-label" for="rivanna_category">What do you need help with *</label>
+            <select required="required" class="dropdown form-control form-select required" id="rivanna_category" name="rivanna_category">
+                <option value="" selected="selected">- Select -</option>
+                <option value="Ivy access">Ivy access</option>
+                <option value="Software">Software usage / installation</option>
+                <option value="Error">Error running software</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
         <div class="form-textarea-wrapper resizable form-group">
           <label class="control-label" for="error_message">Error message received</label>
           <textarea class="form-control form-textarea" id="error_message" name="error_message" style="font-family:monospace;font-size:90\%;" cols="60" rows="8" maxlength="5000"></textarea>
