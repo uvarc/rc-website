@@ -42,5 +42,5 @@ private = true
 </form>
 <script type="text/javascript" src="/js/support-request.js"></script>
 <script type="text/javascript" src="/js/support-dynamic-forms.js"><script>
-<!-- <script type="text/javascript" src="/js/user-session.min.js"></script> -->
+<script type="text/javascript" src="/js/user-session.min.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

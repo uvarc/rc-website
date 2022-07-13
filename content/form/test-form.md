@@ -6,7 +6,7 @@ images = [""]
 author = "Staff"
 description = ""
 title = "Test FDM Form"
-draft = true
+draft = false
 type = "form"
 private = true
 +++
