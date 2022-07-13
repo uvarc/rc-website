@@ -34,7 +34,7 @@ private = true
   <div id="rivanna-fields"></div>
   <div id="ivy-fields"></div>
   <div id="consultation-fields"></div>
-  <div class="form-actions" id="submit-div" style="display:none; margin-top:1rem;">
+  <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
     <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
