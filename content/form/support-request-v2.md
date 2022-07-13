@@ -10,6 +10,8 @@ draft = false
 type = "form"
 private = true
 +++
+
+<script type="text/javascript" src="/js/user-session.min.js"></script>
 <form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
@@ -42,5 +44,4 @@ private = true
 </form>
 <script type="text/javascript" src="/js/support-request.js"></script>
 <script type="text/javascript" src="/js/support-dynamic-forms.js"><script>
-<script type="text/javascript" src="/js/user-session.min.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
