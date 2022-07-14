@@ -21,7 +21,6 @@ private = true
     <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
-<hr size=1 />
 <!-- START NEW CATEGORY BTNS -->
 <div style="width:100%;margin-bottom:4rem;">
 <label class="control-label" for="">Select a support category:</label><br clear=all />
@@ -36,7 +35,7 @@ private = true
   <div id="consultation-fields"></div>
   <div class="form-actions" id="submit-div" style="display:none;margin-top:1rem;">
     <hr size="1" style="" />
-    <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
+    <p style="font-size:85%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>
