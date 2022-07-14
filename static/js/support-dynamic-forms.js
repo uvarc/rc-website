@@ -14,6 +14,7 @@ function reset_form() {
       reset_form();
       var formadd = document.getElementById("support-fields").innerHTML += `
         <input type="hidden" id="category" name="category" value="General">
+        <input type="hidden" id="categories" name="categories" value="General">
         <div class="form-item form-type-textfield form-group">
           <label id="request_title" class="control-label" for="request_title">Describe the nature of your request *</label>
           <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
@@ -33,6 +34,7 @@ function reset_form() {
       reset_form();
       var formadd = document.getElementById("rivanna-fields").innerHTML += `
         <input type="hidden" id="category" name="category" value="Rivanna">
+        <input type="hidden" id="categories" name="categories" value="Rivanna">
         <div class="form-item form-type-textfield form-group">
           <label id="request_title" class="control-label" for="request_title">Please give a brief description of the problem *</label>
           <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
@@ -79,6 +81,7 @@ function reset_form() {
       reset_form();
       var formadd = document.getElementById("ivy-fields").innerHTML += `
         <input type="hidden" id="category" name="category" value="Ivy">
+        <input type="hidden" id="categories" name="categories" value="Ivy">
         <div class="form-item form-type-textfield form-group">
           <label id="request_title" class="control-label" for="request_title">Please give a brief description of the problem *</label>
           <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
@@ -124,6 +127,7 @@ function reset_form() {
       reset_form();
       var formadd = document.getElementById("consultation-fields").innerHTML += `
         <input type="hidden" id="category" name="category" value="Consultation">
+        <input type="hidden" id="categories" name="categories" value="Consultation">
         <div class="form-item form-type-textfield form-group">
           <label id="request_title" class="control-label" for="request_title">Describe the nature of your consultation request *</label>
           <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />

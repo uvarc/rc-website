@@ -16,7 +16,7 @@ private = true
   <p id="form_post_response"></p>
 </div>
 <div>
-{{% form-userinfo %}}
+{{% form-userinfo-v2 %}}
   <div class="form-item form-type-textfield form-group">
     <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
