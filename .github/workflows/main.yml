@@ -60,7 +60,7 @@ jobs:
       env:
         SLACK_CHANNEL: dev
         SLACK_COLOR: '#3278BD'
-        SLACK_ICON: https://staging.rc.virginia.edu/images/logos/github-icon-48px.png
+        SLACK_ICON: https://ca.slack-edge.com/T3NTLDW3S-U01TZJS6EJ3-c35d057d96f4-72
         SLACK_TITLE: BUILD Success - GitHub CI
         SLACK_MESSAGE: 'Successful build of the ${{ github.ref }} branch of the RC website :ballot_box_with_check:'
         SLACK_USERNAME: success-bot
