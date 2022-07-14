@@ -1,19 +1,3 @@
-$('form').submit(function() {
-    $(this).find("button[type='submit']").prop('disabled',true);
-  });
-  
-  //Add a JQuery click event handler onto our checkbox.
-  $('#data-agreement').click(function(){
-      //If the checkbox is checked.
-      if($(this).is(':checked')){
-          //Enable the submit button.
-          $('#submit').attr("disabled", false);
-      } else{
-          //If it is not checked, disable the button.
-          $('#submit').attr("disabled", true);
-      }
-  });
-  
   function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
     return keyValue ? keyValue[2] : null;
