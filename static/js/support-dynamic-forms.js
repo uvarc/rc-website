@@ -3,6 +3,14 @@ function reset_form() {
     document.getElementById("rivanna-fields").innerHTML = "";
     document.getElementById("ivy-fields").innerHTML = "";
     document.getElementById("consultation-fields").innerHTML = "";
+    var supportbtn = document.getElementById("support")
+    supportbtn.style.backgroundColor = '#F8FAFB';
+    var rivannabtn = document.getElementById("rivanna")
+    rivannabtn.style.backgroundColor = '#F8FAFB';
+    var ivybtn = document.getElementById("ivy")
+    ivybtn.style.backgroundColor = '#F8FAFB';
+    var consultbtn = document.getElementById("consultation")
+    consultbtn.style.backgroundColor = '#F8FAFB';
   };
   function show_submit() {
     var submitadd = document.getElementById("submit-div")
@@ -12,6 +20,8 @@ function reset_form() {
     console.log(cat)
     if (cat == 'support') {
       reset_form();
+      var supportbtn = document.getElementById("support")
+      supportbtn.style.backgroundColor = '#D9DBDC';
       var formadd = document.getElementById("support-fields").innerHTML += `
         <input type="hidden" id="category" name="category" value="General">
         <input type="hidden" id="categories" name="categories" value="General">
@@ -32,6 +42,8 @@ function reset_form() {
     } 
     if (cat == 'rivanna') {
       reset_form();
+      var rivannabtn = document.getElementById("rivanna")
+      rivannabtn.style.backgroundColor = '#D9DBDC';
       var formadd = document.getElementById("rivanna-fields").innerHTML += `
         <input type="hidden" id="category" name="category" value="Rivanna">
         <input type="hidden" id="categories" name="categories" value="Rivanna">
@@ -79,6 +91,8 @@ function reset_form() {
     } 
     if (cat == 'ivy') {
       reset_form();
+      var ivybtn = document.getElementById("ivy")
+      ivybtn.style.backgroundColor = '#D9DBDC';
       var formadd = document.getElementById("ivy-fields").innerHTML += `
         <input type="hidden" id="category" name="category" value="Ivy">
         <input type="hidden" id="categories" name="categories" value="Ivy">
@@ -125,6 +139,8 @@ function reset_form() {
     }
     if (cat == 'consultation') {
       reset_form();
+      var consultbtn = document.getElementById("consultation")
+      consultbtn.style.backgroundColor = '#D9DBDC';
       var formadd = document.getElementById("consultation-fields").innerHTML += `
         <input type="hidden" id="category" name="category" value="Consultation">
         <input type="hidden" id="categories" name="categories" value="Consultation">
