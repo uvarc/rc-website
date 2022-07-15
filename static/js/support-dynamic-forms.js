@@ -21,7 +21,7 @@ function show_support() {
     <input type="hidden" id="category" name="category" value="General">
     <input type="hidden" id="categories" name="categories" value="General">
     <div class="form-item form-type-textfield form-group">
-      <label id="request_title" class="control-label" for="request_title">Describe the nature of your request *</label>
+      <label id="request_title" class="control-label" for="request_title">Describe the nature of your support request *</label>
       <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="" />
     </div>
     <div class="form-item form-group form-item form-type-textarea form-group">
@@ -33,6 +33,7 @@ function show_support() {
     <br clear=all />
     </div>
   `);
+  show_submit();
 };
 
 function show_rivanna() {
@@ -80,6 +81,7 @@ function show_rivanna() {
     <br clear=all />
     </div>  
   `);
+  show_submit();
 };
 
 function show_ivy() {
@@ -126,6 +128,7 @@ function show_ivy() {
     <br clear=all />
     </div>
   `);
+  show_submit();
 };
 
 function show_consultation() {
@@ -146,28 +149,25 @@ function show_consultation() {
     <br clear=all />
     </div>
   `);
+  show_submit();
 };
 
 function selected(cat) {
   if (cat == 'support') {
     reset_form();
     show_support();
-    show_submit();
   } 
   if (cat == 'rivanna') {
     reset_form();
     show_rivanna();
-    show_submit();
   } 
   if (cat == 'ivy') {
     reset_form();
     show_ivy();
-    show_submit();
   }
   if (cat == 'consultation') {
     reset_form();
     show_consultation();
-    show_submit();
   }
   else { }
 };
@@ -182,9 +182,9 @@ $( document ).ready(function() {
   // category thrown as URL parameter
   let qparam = decodeURI(getParams()["category"]).toLocaleLowerCase();
   if(qparam != undefined && qparam != "undefined") {
-    if (qparam == "support") {show_support()}
-    if (qparam == "rivanna") {show_rivanna()}
+    if (qparam == "support") {show_support();}
+    if (qparam == "rivanna") {show_rivanna();}
     if (qparam == "ivy") {show_ivy()}
-    if (qparam == "consultation") {show_consultation()}
+    if (qparam == "consultation") {show_consultation();}
   } else {reset_form()}
 });
