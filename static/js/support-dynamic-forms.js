@@ -50,11 +50,11 @@ function show_rivanna() {
         <label class="control-label" for="rivanna_category">What do you need help with *</label>
         <select required="required" onchange="rivannaSubCategory()" class="dropdown form-control form-select required" id="rivanna_category" name="rivanna_category">
             <option value="" selected="selected">- Select -</option>
-            <option value="Rivanna access">Rivanna access</option>
+            <option value="Access">Rivanna access</option>
             <option value="Software">Software usage / installation</option>
             <option value="Error">Error running software</option>
             <option value="Storage">Storage</option>
-            <option value="OpenOnDemand">OpenOnDemand</option>
+            <option value="OOD">OpenOnDemand</option>
         </select>
     </div>
     <div class="form-item form-type-textfield form-group">
@@ -88,9 +88,11 @@ function show_rivanna() {
 
 function rivannaSubCategory() {
   var subcat = document.getElementById("rivanna_category").value;
-  console.log(subcat);
-  $("#slurm_id_div").remove();
-}
+  // console.log(subcat);
+  if (subcat == "OOD") {
+    $("#slurm_id_div").remove();
+  }
+};
 
 function show_ivy() {
   $("#ivy").css("background-color","#D9DBDC");
