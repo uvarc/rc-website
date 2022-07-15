@@ -28,6 +28,7 @@ private = true
   <a href="#" onclick="selected('rivanna')"><button id="rivanna" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-microchip"></i>&nbsp; Rivanna / HPC</button></a>
   <a href="#" onclick="selected('ivy')"><button id="ivy" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-shield-alt"></i>&nbsp; Ivy</button></a>
   <a href="#" onclick="selected('consultation')"><button id="consultation" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;"><i class="fas fa-comments"></i>&nbsp; Consultation</button></a>
+  <a href="#" onclick="reset_form()" style="margin-left:1rem;font-size:85%;text-decoration:none;color:black;">Reset</a>
 </div>
   <div id="support-fields"></div>
   <div id="rivanna-fields"></div>
