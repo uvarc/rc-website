@@ -22,7 +22,7 @@ private = true
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
 <!-- START NEW CATEGORY BTNS -->
-<div style="width:100%;margin-bottom:4rem;">
+<div style="width:100%;margin-bottom:4rem;" id="button-world">
 <label class="control-label" for="">Select a support category:</label><br clear=all />
   <a href="#" onclick="selected('support')"><button id="support" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-question-circle"></i>&nbsp; General Support</button></a>
   <a href="#" onclick="selected('rivanna')"><button id="rivanna" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-microchip"></i>&nbsp; Rivanna / HPC</button></a>
