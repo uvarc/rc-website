@@ -33,6 +33,7 @@ function show_support() {
     <br clear=all />
     </div>
   `);
+  enforce_max();
   show_submit();
 };
 
@@ -47,7 +48,7 @@ function show_rivanna() {
     </div>
     <div class="form-item form-group">
         <label class="control-label" for="rivanna_category">What do you need help with *</label>
-        <select required="required" class="dropdown form-control form-select required" id="rivanna_category" name="rivanna_category">
+        <select required="required" onchange="rivannaSubCategory()" class="dropdown form-control form-select required" id="rivanna_category" name="rivanna_category">
             <option value="" selected="selected">- Select -</option>
             <option value="Rivanna access">Rivanna access</option>
             <option value="Software">Software usage / installation</option>
@@ -64,7 +65,7 @@ function show_rivanna() {
       <label class="control-label" for="error_message">Error message received</label>
       <textarea class="form-control form-textarea" id="error_message" name="error_message" style="font-family:monospace;font-size:90\%;" cols="60" rows="8" maxlength="5000" placeholder="Paste your error here."></textarea>
     </div>
-    <div class="form-item form-type-textfield form-group">
+    <div class="form-item form-type-textfield form-group" id="slurm_id_div">
       <label class="control-label" for="request_title">SLURM Job ID</label>
       <input class="form-control form-text" type="text" id="slurm_id" name="slurm_id" value="" style="font-family:monospace;" size="10" maxlength="20" placeholder="e.g. 12345678" />
     </div>
@@ -79,10 +80,17 @@ function show_rivanna() {
         <div id="textarea_feedback" style="font-family:monospace;color:green;font-size:85%;margin-top:0.5rem;float:right;"></div>
       </div>
     <br clear=all />
-    </div>  
+    </div>
   `);
+  enforce_max();
   show_submit();
 };
+
+function rivannaSubCategory() {
+  var subcat = document.getElementById("rivanna_category").value;
+  console.log(subcat);
+  $("#slurm_id_div").remove();
+}
 
 function show_ivy() {
   $("#ivy").css("background-color","#D9DBDC");
@@ -128,6 +136,7 @@ function show_ivy() {
     <br clear=all />
     </div>
   `);
+  enforce_max();
   show_submit();
 };
 
@@ -149,6 +158,7 @@ function show_consultation() {
     <br clear=all />
     </div>
   `);
+  enforce_max();
   show_submit();
 };
 
@@ -179,6 +189,7 @@ function getParams() {
   return vars;
 };
 $( document ).ready(function() {
+  enforce_max();
   // category thrown as URL parameter
   let qparam = decodeURI(getParams()["category"]).toLocaleLowerCase();
   if(qparam != undefined && qparam != "undefined") {
@@ -188,3 +199,22 @@ $( document ).ready(function() {
     if (qparam == "consultation") {show_consultation();}
   } else {reset_form()}
 });
+
+function enforce_max() {
+  var text_max = 5000;
+  $('#textarea_feedback').html(text_max + ' characters remaining');
+  $('#description').keyup(function() {
+    var text_length = $('#description').val().length;
+    var text_remaining = text_max - text_length;
+    $('#textarea_feedback').html(text_remaining + ' characters remaining');
+    if (text_remaining <=20) {
+      $('#textarea_feedback').css("color","red");
+      $('#textarea_feedback').css("font-weight","bold");
+    } else if (text_remaining <= 0) {
+      $('#textarea_feedback').html("No more room left!");
+    } else {
+      $('#textarea_feedback').css("color","green");
+      $('#textarea_feedback').css("font-weight","normal");
+    }
+  });
+};
