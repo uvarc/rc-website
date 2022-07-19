@@ -54,6 +54,11 @@ timeout = "60000"
   rivannaNodesUrl = "https://s3.amazonaws.com/uvarc-resources/website/nodeinfo.csv"
   # rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
 
+[params.metrics]
+  coreHours = "5023058"
+  storage = "8.254"
+  newAccounts = "79"
+
 [params.rivanna]
   totalNodes = "575"
   totalCores = "20476"
