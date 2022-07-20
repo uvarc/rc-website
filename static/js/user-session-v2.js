@@ -53,3 +53,13 @@
   } else {
     // do nothing;
   };
+
+  function set_department(dept) {
+    key = "__rc_dept";
+    setCookie(key, dept, 8760)
+  };
+
+  function dept_select() {
+    var dept = document.getElementById("department").value;
+    set_department(dept)
+  };
