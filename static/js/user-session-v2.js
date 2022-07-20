@@ -10,13 +10,12 @@
   };
   
   function decode64(str) {
-    var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
-    var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    for(i=0;i<64;i++){e[A.charAt(i)]=i;}
-    for(x=0;x<L;x++){
-      c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
-      while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
-    }
+    r = atob(str);
+    return r;
+  };
+
+  function encode64(str) {
+    r = btoa(str);
     return r;
   };
   
@@ -56,7 +55,8 @@
 
   function set_department(dept) {
     key = "__rc_dept";
-    setCookie(key, dept, 8760)
+    dept_enc = encode64(dept);
+    setCookie(key, dept_enc, 8760)
   };
 
   function dept_select() {
