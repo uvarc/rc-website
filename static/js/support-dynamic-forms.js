@@ -9,6 +9,11 @@ function reset_form() {
     $("#consultation").css("background-color","#F8FAFB");
     hide_submit();
   };
+
+function editdept() {
+  var unlock_dept = document.getElementById("department").readOnly = false;
+};
+
 function show_submit() {
   $("#submit-div").css("display","block");
 };

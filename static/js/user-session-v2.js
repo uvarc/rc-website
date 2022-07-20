@@ -45,3 +45,12 @@
   let email_dec = decode64(email);
   var set_email = document.getElementById("email").value = email_dec;
 
+  // dept
+  let dept = getCookie("__rc_dept");
+  if (dept !== null || dept !== '') {
+    let dept_dec = decode64(dept);
+    var set_dept = document.getElementById("department").value = dept_dec;
+    var lock_dept = document.getElementById("department").readOnly = true;
+  } else {
+    // do nothing;
+  };
