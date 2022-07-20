@@ -10,10 +10,6 @@ function reset_form() {
     hide_submit();
   };
 
-function editdept() {
-  var unlock_dept = document.getElementById("department").readOnly = false;
-};
-
 function show_submit() {
   $("#submit-div").css("display","block");
 };

@@ -62,6 +62,6 @@ jobs:
         SLACK_COLOR: '#3278BD'
         SLACK_ICON: https://ca.slack-edge.com/T3NTLDW3S-U01TZJS6EJ3-c35d057d96f4-72
         SLACK_TITLE: Build SUCCESS - GitHub CI
-        SLACK_MESSAGE: ':ballot_box_with_check: Successful build of the ${{ github.ref }} branch of the RC website. Hey <@U3P12BTG9> take notice.'
-        SLACK_USERNAME: success-bot
+        SLACK_MESSAGE: ':ballot_box_with_check: Successful build of the ${{ github.ref }} branch of the RC website.'
+        SLACK_USERNAME: Success Bot
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
