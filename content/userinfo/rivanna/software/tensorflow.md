@@ -115,7 +115,23 @@ Open the resulting URL (of the form `http://localhost:xxxx/`) in Firefox.
 
 # Can I install my own TensorFlow (that works on a GPU)?
 
-Yes, but the TF/Python/CUDA versions have to be very specific. We recommend creating a conda environment. Using TensorFlow 1.14 as an example:
+Yes, you may either pull the official TensorFlow Docker image or create your own environment. We shall use TensorFlow 1.14 as an example.
+
+## Docker
+
+1. Go to https://hub.docker.com/r/tensorflow/tensorflow/tags and search for the desired version. Use the `-gpu` variant.
+
+1. Note the provided pull command (`docker pull tensorflow/tensorflow:1.14.0-gpu`) and change it into Singularity. The differences are underlined by `^`:
+    ```bash
+    singularity pull docker://tensorflow/tensorflow:1.14.0-gpu
+    ^^^^^^^^^^^      ^^^^^^^^^
+    ```
+
+1. You will find the Singularity image `tensorflow_1.14.0-gpu.sif` in your current directory.
+
+## Conda environment
+
+The Python/CUDA/TensorFlow versions have to be very specific. 
 
 1. For your target TF version, look up the supported Python and CUDA versions [here](https://www.tensorflow.org/install/source#gpu). In this example, we find that it is supported by:
 
@@ -125,11 +141,11 @@ Yes, but the TF/Python/CUDA versions have to be very specific. We recommend crea
 
 1. Check that the CUDA version is supported on Rivanna:
     - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html).
-    - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of July 2021, our GPU nodes support up to CUDA 11.0.3.
+    - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of July 2022, our GPU nodes support up to CUDA 11.4.
         ```
-        NVIDIA-SMI 450.51.06    Driver Version: 450.51.06    CUDA Version: 11.0
+        NVIDIA-SMI 470.103.01   Driver Version: 470.103.01   CUDA Version: 11.4
         ```
-    - In this example 10.0 is less than 11.0.3, so the target version is supported.
+    - In this example 10.0 is less than 11.4, so the target version is supported.
 
 1. Check cuDNN availability on https://anaconda.org. The closest match is 7.3 in the `anaconda` channel.
 
@@ -137,7 +153,7 @@ Yes, but the TF/Python/CUDA versions have to be very specific. We recommend crea
 
     ```
     module load anaconda
-    conda create -n tf1.14 tensorflow-gpu=1.14 cudatoolkit=10.0 cudnn=7.3 python=3.7 -c anaconda -c conda-forge
+    conda create -n tf1.14 python=3.7 cudatoolkit=10.0 cudnn=7.3 tensorflow-gpu=1.14 -c anaconda -c conda-forge
     ```
 
 If the versions are incompatible, either the installation will fail or TF will not be able to detect the GPU at runtime.

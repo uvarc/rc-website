@@ -1,16 +1,14 @@
-#!/usr/bin/env bash
-#SBATCH -J tftest
-#SBATCH -o tftest-%A.out
-#SBATCH -e tftest-%A.err
+#!/bin/bash
+#SBATCH -A mygroup
 #SBATCH -p gpu
 #SBATCH --gres=gpu:1
 #SBATCH -c 1
-#SBATCH -t 00:01:00
-#SBATCH -A mygroup
+#SBATCH -t 01:00:00
+#SBATCH -J tftest
+#SBATCH -o tftest-%A.out
+#SBATCH -e tftest-%A.err
 
 module purge
-module load singularity
+module load singularity tensorflow/2.8.0
 
-# Assuming that the container has been copied to the user's /scratch directory
-containerdir=/scratch/$USER
-singularity run --nv $containerdir/tensorflow-2.1.0-py37.sif tf_example.py
+singularity run --nv $CONTAINERDIR/tensorflow-2.8.0.sif tf_example.py
