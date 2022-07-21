@@ -51,12 +51,12 @@
   if (dept !== null || dept !== '') {
     let dept_dec = decode64(dept);
     var set_dept = document.getElementById("department").value = dept_dec;
+    set_school(dept_dec);
   } else {
     // do nothing;
   };
- 
-  $("#department").on("change",function(){ 
-    var dept = $("#department").val();
+
+  function set_school(dept) {
     if (dept == 'PV-Biocomplexity Initiative') {
       var s = document.getElementById("school").value = 'BIOCOMPLEXITY';
     } else if (dept == 'Data Science') {
@@ -78,4 +78,30 @@
       let schoolval = correlations[schb];
       var s = document.getElementById("school").value = schoolval;
     };
+  };
+ 
+  $("#department").on("change",function(){ 
+    var dept = $("#department").val();
+    // if (dept == 'PV-Biocomplexity Initiative') {
+    //   var s = document.getElementById("school").value = 'BIOCOMPLEXITY';
+    // } else if (dept == 'Data Science') {
+    //   var s = document.getElementById("school").value = 'SDS';      
+    // } else {
+    //   let schb = dept.substring(0, 2);
+    //   let correlations ={
+    //     AS: "CLAS",
+    //     BA: "BATTEN",
+    //     DA: "DARDEN",
+    //     DS: "SDS",
+    //     ED: "SEHD",
+    //     EN: "SEAS",
+    //     LW: "LAW",
+    //     MD: "SOM",
+    //     PV: "PROVOST",
+    //     RS: "RESEARCH"     
+    //   }
+    //   let schoolval = correlations[schb];
+    //   var s = document.getElementById("school").value = schoolval;
+    // };
+    set_school(dept);
   });
