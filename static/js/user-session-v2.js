@@ -54,9 +54,28 @@
   } else {
     // do nothing;
   };
-
-  $("department").change(function () {   
-    var dept = $("department").val();
-    e = atob(dept);
-    setCookie('__rc_dept', e, '8760');
+ 
+  $("#department").on("change",function(){ 
+    var dept = $("#department").val();
+    if (dept == 'PV-Biocomplexity Initiative') {
+      var s = document.getElementById("school").value = 'BIOCOMPLEXITY';
+    } else if (dept == 'Data Science') {
+      var s = document.getElementById("school").value = 'SDS';      
+    } else {
+      let schb = dept.substring(0, 2);
+      let correlations ={
+        AS: "CLAS",
+        BA: "BATTEN",
+        DA: "DARDEN",
+        DS: "SDS",
+        ED: "SEHD",
+        EN: "SEAS",
+        LW: "LAW",
+        MD: "SOM",
+        PV: "PROVOST",
+        RS: "RESEARCH"     
+      }
+      let schoolval = correlations[schb];
+      var s = document.getElementById("school").value = schoolval;
+    };
   });
