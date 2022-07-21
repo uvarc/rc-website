@@ -127,8 +127,8 @@ Yes, you may either pull the official TensorFlow Docker image or create your own
     ^^^^^^^^^^^      ^^^^^^^^^
     ```
 
-1. You will find the Singularity image `tensorflow_1.14.0-gpu.sif` in your current directory.
-
+1. You will find the Singularity image `tensorflow_1.14.0-gpu.sif` in your current directory. Consult the instructions in the previous sections. Remeber to replace `$CONTAINERDIR/tensorflow-2.8.0.sif` with the actual path to your own Singularity image.
+ 
 ## Conda environment
 
 The Python/CUDA/TensorFlow versions have to be very specific. 
