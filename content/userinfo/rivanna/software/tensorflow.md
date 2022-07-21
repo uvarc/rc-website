@@ -55,7 +55,7 @@ Once the JupyterLab instance has started, you can edit and run your notebook as 
 # TensorFlow Slurm jobs
 Singularity can make use of the local NVIDIA drivers installed on a host equipped with a GPU device.  The Slurm script needs to include the `#SBATCH -p gpu` and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the Jobs Using a GPU section for details.
 
-To run commands in an GPU-enabled container image, load the singularity module and add the `--nv` flag when executing the singularity run or singularity exec commands.  Before running the following commands it is assumed that a TensorFlow container image (e.g. `tensorflow-2.1.0-py37.sif`) has been copied to your personal /scratch directory.
+To run commands in an GPU-enabled container image, load the singularity module and add the `--nv` flag when executing the singularity run or singularity exec commands.
 
 For example:
 ```
