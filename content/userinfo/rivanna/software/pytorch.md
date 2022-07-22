@@ -100,14 +100,14 @@ Notes:
 
     Do **not** load the `cuda` or `cudnn` modules since these libraries are included with pytorch.
 
-1. The `--nv` flag sets up the container's environment to use a GPU when running a GPU-enabled application. The `run` command executes the default command defined in the container, which in this case is `python`. What follows after the `*.sif` is passed as arguments. In summary, the singularity command can be translated as: "Use the `python` interpreter inside the pytorch container to execute `pytorch_example.py` with GPU enabled.
+1. The `--nv` flag sets up the container's environment to use a GPU when running a GPU-enabled application. The `run` command executes the default command defined in the container, which in this case is `python`. What follows after the `*.sif` is passed as arguments. In summary, the singularity command can be translated as: "Use the `python` interpreter inside the pytorch container to execute `pytorch_example.py` with GPU enabled."
 
 # PyTorch Interactive Jobs (ijob)
 
 Start an [ijob](/userinfo/rivanna/slurm/#submitting-an-interactive-job).  Note the addition of `-p gpu` and `--gres=gpu` to request access to a GPU node and its GPU device.
 
 ```
-ijob  -A mygroup -p gpu --gres=gpu -c 1
+ijob -A mygroup -p gpu --gres=gpu -c 1
 ```
 
 ```

@@ -6,6 +6,7 @@
   function setCookie(key, value, expiry) {
     var expires = new Date();
     expires.setTime(expires.getTime() + (expiry * 60 * 60 * 1000));
+    // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=localhost';
     document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
   };
   
@@ -23,8 +24,8 @@
   if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
     window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
   }
-  
-  document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+
+  // document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
   var form_url = window.location;
   let referrer = setCookie('__rc_form_referrer', form_url, '24');
   
@@ -45,3 +46,50 @@
   let email_dec = decode64(email);
   var set_email = document.getElementById("email").value = email_dec;
 
+  // dept
+  // let findit = document.cookie.match(/^(.*;)?\s*__rc_dept\s*=\s*[^;]+(.*)?$/);
+  // console.log(findit);
+  // if (findit == null) {
+  //   console.log("findit var is null");
+  // }
+
+  let dept = getCookie("__rc_dept");
+  if (dept !== null || dept !== '') {
+    // let dept_dec = decode64(dept);
+    // var set_dept = document.getElementById("department").value = dept_dec;
+    // set_school(dept_dec);
+  } else if (dept == null) {
+    // do nothing;
+    console.log("The __rc_dept cookie is missing");
+  };
+
+  function set_school(dept) {
+    if (dept == 'PV-Biocomplexity Initiative') {
+      var s = document.getElementById("school").value = 'BII';
+    } else if (dept == 'Data Science') {
+      var s = document.getElementById("school").value = 'SDS';  
+    } else if (dept == 'Other') {
+      var s = document.getElementById("school").value = 'OTHER';      
+    } else {
+      let schb = dept.substring(0, 2);
+      let correlations ={
+        AS: "CLAS",
+        BA: "BATTEN",
+        DA: "DARDEN",
+        DS: "SDS",
+        ED: "SEHD",
+        EN: "SEAS",
+        LW: "LAW",
+        MD: "SOM",
+        PV: "PROVOST",
+        RS: "RESEARCH"     
+      }
+      let schoolval = correlations[schb];
+      var s = document.getElementById("school").value = schoolval;
+    };
+  };
+ 
+  $("#department").on("change",function(){ 
+    var dept = $("#department").val();
+    set_school(dept);
+  });

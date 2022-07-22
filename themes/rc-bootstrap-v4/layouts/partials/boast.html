@@ -6,13 +6,10 @@
 window.odometerOptions = {
   format: '(,ddd).ddd',
 }
-{{ $hours := .Site.Params.metrics.coreHours }}
-{{ $storage := .Site.Params.metrics.storage }}
-{{ $accounts := .Site.Params.metrics.newAccounts }}
 setTimeout(function(){
-  odometer1.innerHTML = {{ $hours }};
-  odometer2.innerHTML = {{ $accounts }};
-  odometer3.innerHTML = {{ $storage }};
+  odometer1.innerHTML = "5023058";
+  odometer2.innerHTML = "79";
+  odometer3.innerHTML = "8.254";
 }, 400);
 </script>
 <div style="width:100%;">
