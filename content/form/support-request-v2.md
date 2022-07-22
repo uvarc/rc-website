@@ -17,19 +17,16 @@ private = true
 </div>
 <div>
 {{% form-userinfo-v2 %}}
-  <div class="form-item form-type-textfield form-group" style="margin-bottom:3rem;">
-    <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
+  <!-- START NEW CATEGORY BTNS -->
+  <div style="width:100%;margin-bottom:4rem;" id="button-world" class="form-group">
+  <label class="control-label form-group" for="">Select a support category:</label><br clear=all />
+    <a href="#" onclick="selected('support')"><button id="support" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-question-circle"></i>&nbsp; General Support</button></a>
+    <a href="#" onclick="selected('rivanna')"><button id="rivanna" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-microchip"></i>&nbsp; Rivanna / HPC</button></a>
+    <a href="#" onclick="selected('ivy')"><button id="ivy" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-shield-alt"></i>&nbsp; Ivy</button></a>
+    <a href="#" onclick="selected('consultation')"><button id="consultation" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;"><i class="fas fa-comments"></i>&nbsp; Consultation</button></a>
+    <a href="#" onclick="reset_form()" style="margin-left:1rem;font-size:85%;text-decoration:none;color:black;">Reset</a>
   </div>
-<!-- START NEW CATEGORY BTNS -->
-<div style="width:100%;margin-bottom:4rem;" id="button-world" class="form-group">
-<label class="control-label form-group" for="">Select a support category:</label><br clear=all />
-  <a href="#" onclick="selected('support')"><button id="support" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-question-circle"></i>&nbsp; General Support</button></a>
-  <a href="#" onclick="selected('rivanna')"><button id="rivanna" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-microchip"></i>&nbsp; Rivanna / HPC</button></a>
-  <a href="#" onclick="selected('ivy')"><button id="ivy" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;margin-right:1rem;"><i class="fas fa-shield-alt"></i>&nbsp; Ivy</button></a>
-  <a href="#" onclick="selected('consultation')"><button id="consultation" type="button" class="btn cat" style="background-color:#F8FAFB;height:4rem;border:solid 1px #ccc;"><i class="fas fa-comments"></i>&nbsp; Consultation</button></a>
-  <a href="#" onclick="reset_form()" style="margin-left:1rem;font-size:85%;text-decoration:none;color:black;">Reset</a>
-</div>
+  <!-- END NEW CATEGORY BUTTONS -->
   <div id="support-fields"></div>
   <div id="rivanna-fields"></div>
   <div id="ivy-fields"></div>

@@ -29,7 +29,10 @@ All systems are expected to return to service by **6 a.m. on , **.
 <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
 
 2. **Upgrades**:
+   - openfoam/v2206 - please load `goolf` first
+
 
    Default version changes:
+   - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
 
 3. **New** modules:
