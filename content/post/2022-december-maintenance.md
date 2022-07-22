@@ -25,6 +25,8 @@ All systems are expected to return to service by **6 a.m. on , **.
 | Module | Removed version | Replacement |
 |---|---|---|
 |drmaa       |1.1.2 | 1.1.3 |
+|gurobi      |9.0.1, 9.1.1 | 9.5.0 |
+|micromamba  |0.7.14| 0.24.0 |
 
 <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
 
