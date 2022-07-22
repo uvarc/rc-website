@@ -47,13 +47,20 @@
   var set_email = document.getElementById("email").value = email_dec;
 
   // dept
+  // let findit = document.cookie.match(/^(.*;)?\s*__rc_dept\s*=\s*[^;]+(.*)?$/);
+  // console.log(findit);
+  // if (findit == null) {
+  //   console.log("findit var is null");
+  // }
+
   let dept = getCookie("__rc_dept");
   if (dept !== null || dept !== '') {
     // let dept_dec = decode64(dept);
     // var set_dept = document.getElementById("department").value = dept_dec;
     // set_school(dept_dec);
-  } else {
+  } else if (dept == null) {
     // do nothing;
+    console.log("The __rc_dept cookie is missing");
   };
 
   function set_school(dept) {
