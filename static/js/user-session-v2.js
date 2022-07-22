@@ -49,9 +49,9 @@
   // dept
   let dept = getCookie("__rc_dept");
   if (dept !== null || dept !== '') {
-    let dept_dec = decode64(dept);
-    var set_dept = document.getElementById("department").value = dept_dec;
-    set_school(dept_dec);
+    // let dept_dec = decode64(dept);
+    // var set_dept = document.getElementById("department").value = dept_dec;
+    // set_school(dept_dec);
   } else {
     // do nothing;
   };
