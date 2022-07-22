@@ -4,6 +4,7 @@ author = "Staff"
 description = ""
 date = "2022-01-02T10:18:25-05:00"
 title = "Virginia Women in HPC - Research Highlights Event, Jan. 25"
+slug = "2022/07/va-whpc-event"
 draft = false
 tags = ["rivanna"]
 categories = ["feature"]
