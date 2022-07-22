@@ -24,7 +24,7 @@
   if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
     window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
   }
-  
+
   // document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
   var form_url = window.location;
   let referrer = setCookie('__rc_form_referrer', form_url, '24');
@@ -60,7 +60,9 @@
     if (dept == 'PV-Biocomplexity Initiative') {
       var s = document.getElementById("school").value = 'BII';
     } else if (dept == 'Data Science') {
-      var s = document.getElementById("school").value = 'SDS';      
+      var s = document.getElementById("school").value = 'SDS';  
+    } else if (dept == 'Other') {
+      var s = document.getElementById("school").value = 'OTHER';      
     } else {
       let schb = dept.substring(0, 2);
       let correlations ={

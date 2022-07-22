@@ -34,6 +34,7 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 .language-fallback{background-color:transparent;}
 
 .selected_category { background-color:red;}
+.form-light { background-color:rgb(250, 250, 250); }
 
 .sidebar-training{padding:1rem;}
 .sidebar-module{padding-left:1rem;padding-right:1rem;padding-bottom:1.4rem;}
