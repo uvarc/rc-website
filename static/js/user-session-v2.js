@@ -60,16 +60,15 @@
     // set_school(dept_dec);
   } else if (dept == null) {
     // do nothing;
-    console.log("The __rc_dept cookie is missing");
   };
 
   function set_school(dept) {
     if (dept == 'PV-Biocomplexity Initiative') {
-      var s = document.getElementById("school").value = 'BII';
+      var f = document.getElementById("school").textContent = 'BII';
     } else if (dept == 'Data Science') {
-      var s = document.getElementById("school").value = 'SDS';  
+      var s = document.getElementById("school").textContent = 'SDS';  
     } else if (dept == 'Other') {
-      var s = document.getElementById("school").value = 'OTHER';      
+      var s = document.getElementById("school").textContent = 'OTHER';      
     } else {
       let schb = dept.substring(0, 2);
       let correlations ={
@@ -85,7 +84,7 @@
         RS: "RESEARCH"     
       }
       let schoolval = correlations[schb];
-      var s = document.getElementById("school").value = schoolval;
+      var s = document.getElementById("school").textContent = schoolval;
     };
   };
  
