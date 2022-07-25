@@ -24,6 +24,7 @@ All systems are expected to return to service by **6 a.m. on , **.
 
 | Module | Removed version | Replacement |
 |---|---|---|
+|blender     |2.78c | 3.2.1 |
 |drmaa       |1.1.2 | 1.1.3 |
 |gurobi      |9.0.1, 9.1.1 | 9.5.0 |
 |micromamba  |0.7.14| 0.24.0 |
