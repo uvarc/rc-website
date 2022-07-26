@@ -37,6 +37,6 @@ All systems are expected to return to service by **6 a.m. on , **.
 
    Default version changes:
    - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
-   - pytorch/1.10 &rarr; 1.12.0
+   - pytorch/1.10.0 &rarr; 1.12.0
 
 3. **New** modules:
