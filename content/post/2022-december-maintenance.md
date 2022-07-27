@@ -25,6 +25,7 @@ All systems are expected to return to service by **6 a.m. on , **.
 | Module | Removed version | Replacement |
 |---|---|---|
 |blender     |2.78c | 3.2.1 |
+|cellranger      |4.0.0 | 5.0.0, 6.0.1 |
 |cellranger-atac |1.2.0 | 2.0.0 |
 |drmaa       |1.1.2 | 1.1.3 |
 |fsl         |6.0.0 | 6.0.5 |
@@ -46,6 +47,7 @@ All systems are expected to return to service by **6 a.m. on , **.
 
 
    Default version changes:
+   - cellranger/5.0.0 &rarr; 6.0.1
    - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
    - pytorch/1.10.0 &rarr; 1.12.0
 
