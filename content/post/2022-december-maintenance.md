@@ -25,9 +25,19 @@ All systems are expected to return to service by **6 a.m. on , **.
 | Module | Removed version | Replacement |
 |---|---|---|
 |blender     |2.78c | 3.2.1 |
+|cellranger-atac |1.2.0 | 2.0.0 |
 |drmaa       |1.1.2 | 1.1.3 |
+|fsl         |6.0.0 | 6.0.5 |
+|gparallel   |20170822 | parallel/20200322 |
 |gurobi      |9.0.1, 9.1.1 | 9.5.0 |
+|htslib      |1.4.1 | 1.7, 1.9 |
+|igvtools    |2.8.9 | 2.12.0 |
+|macs2       |2.1.2 | 2.2.7.1 |
 |micromamba  |0.7.14| 0.24.0 |
+|nextflow    |0.26.0.4715 | 20.10.0 |
+|sratoolkit  |2.8.0, 2.9.1 | 2.10.5 |
+|trimmomatic |0.36  | 0.39 |
+|vcftools    |0.1.15| 0.1.16 |
 
 <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
 
