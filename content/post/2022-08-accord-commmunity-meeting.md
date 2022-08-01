@@ -15,10 +15,14 @@ categories = ["feature","accord"]
  
 UVA is proud to sponsor a community meeting to discuss ACCORD, how far we have come and where we are headed. Due to the rise in the in COVID cases, we have decided to make the meeting all virtual. 
  
+- - -
+
 ## Access the Event:   
 {{% button button-text="Zoom Link" button-url="https://virginia.zoom.us/j/95537720248?pwd=TkNzUnhFTVhVcGtjNk9hRlU2RkhOQT09" button-class="success" %}}
  
 You are welcome to invite colleagues to attend the Community Meeting, especially researchers who are new to ACCORD.  
+
+- - -
 
 ## Agenda 
 
@@ -41,5 +45,7 @@ The same topics will be covered in the two breakout room sessions so that you ma
 - Data Transfers  
 - RUDAs/MOUs  
 - Software Applications  
+
+- - -
 
 Send your questions to [ACCORDSUP@virginia.edu](mailto:ACCORDSUP@virginia.edu). See you on August 5th!
