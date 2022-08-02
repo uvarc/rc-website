@@ -37,12 +37,11 @@ You are welcome to invite colleagues to attend the Community Meeting, especially
 - 2:15 – 2:30 Break 
 - 2:30 – 3:00 Peek into the Future of ACCORD
 
-The same topics will be covered in the two breakout room sessions so that you may attend two of the topics.  
+The same topics will be covered in the two breakout sessions so that you may attend two of the topics.  
 
 ## Breakout Room Topics:
 
 - Security Architecture  
-- Data Transfers  
 - RUDAs/MOUs  
 - Software Applications  
 
