@@ -13,12 +13,15 @@ categories = ["feature","accord"]
 
 **When: Aug 5, 2022 11:00AM-3:00PM, Eastern Time (US and Canada)**
  
-UVA is proud to sponsor a community meeting to discuss ACCORD, how far we have come and where we are headed. Due to the rise in the in COVID cases, we have decided to make the meeting all virtual. 
+UVA is proud to sponsor a community meeting to discuss ACCORD, how far we have come and where we are headed. The event is all virtual, and you may attend any or all of the topics.
  
 - - -
 
-## Access the Event:   
-{{% button button-text="Zoom Link" button-url="https://virginia.zoom.us/j/95537720248?pwd=TkNzUnhFTVhVcGtjNk9hRlU2RkhOQT09" button-class="success" %}}
+## Access the Event:
+
+{{% button button-text="Register for the Event" button-url="https://virginia.zoom.us/meeting/register/tJEodO6vrDsoHtzd0HL42ocfR9hHY1WIivb0" 
+button-class="warning" %}}&nbsp;{{% button button-text="Zoom Link" button-url="https://virginia.zoom.us/j/95537720248?pwd=TkNzUnhFTVhVcGtjNk9hRlU2RkhOQT09" 
+button-class="success" %}}
  
 You are welcome to invite colleagues to attend the Community Meeting, especially researchers who are new to ACCORD.  
 
