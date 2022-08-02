@@ -9,11 +9,11 @@ tags = ["accord","k8s","hipaa","security","nsf"]
 categories = ["feature","accord"]
 +++
 
-**Topic: ACCORD Community Meeting**
-
-**When: Aug 5, 2022 11:00AM-3:00PM, Eastern Time (US and Canada)**
+<p class=lead style="font-weight:bold;">When: Aug 5, 2022 11:00AM-3:00PM, Eastern Time (US and Canada)</p>
  
-UVA is proud to sponsor a community meeting to discuss ACCORD, how far we have come and where we are headed. The event is all virtual, and you may attend any or all of the topics.
+<p class=lead>UVA is proud to sponsor a community meeting to discuss ACCORD, how far we have come and where we are headed. The event is all virtual, and you 
+may attend any or all of the topics.</p>
+
  
 - - -
 
