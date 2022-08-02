@@ -4,6 +4,7 @@ draft = false
 date = "2021-10-11"
 images = [""]
 author = "Staff"
+tags = ["nsf","accord"]
 +++
 
 ***
@@ -24,7 +25,7 @@ A principle investigator requests access to the platform (specifying a project t
 This platform is open for approved academic research on sensitive data. Researchers from
 public universities across the state of Virginia are invited to request access. ACCORD is also open to researchers from other states who are working on COVID related projects.
 
-ACCORD is appropriate for de-identified PHI, FERPA, de-identified HIIPAA, business confidential, and other types of sensitive data. More
+ACCORD is appropriate for de-identified PHI, FERPA, de-identified HIPAA, business confidential, and other types of sensitive data. More
 restrictive levels, such as CUI, FISMA, iTar, and PCI cannot be satisfied.
 
 # How do I use it
