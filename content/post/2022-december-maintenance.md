@@ -48,13 +48,16 @@ All systems are expected to return to service by **6 a.m. on , **.
 <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
 
 2. **Upgrades**:
-   - openfoam/v2206 - under `goolf/9.2.0_3.1.6`
-   - ruby/3.1.2 - under `gcc/9.2.0`
+    - openfoam/v2206 - under `goolf/9.2.0_3.1.6`
+    - ruby/3.1.2 - under `gcc/9.2.0`
 
-
-   Default version changes:
-   - cellranger/5.0.0 &rarr; 6.0.1
-   - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
-   - pytorch/1.10.0 &rarr; 1.12.0
+    Default version changes:
+    - alphafold/2.2.0 &rarr; 2.2.2
+    - cellranger/5.0.0 &rarr; 6.0.1
+    - cmake/3.16.5 &rarr; 3.23.3
+    - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
+    - pytorch/1.10.0 &rarr; 1.12.0
+    - qiime2/2020.8 &rarr; 2022.2
 
 3. **New** modules:
+    - crossftp/1.99.9

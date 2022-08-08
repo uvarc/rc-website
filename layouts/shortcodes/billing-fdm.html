@@ -2,57 +2,56 @@
 <h4>Billing Information</h4>
 <div class="alert alert-danger" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
   <b>PLEASE NOTE:</b> We no longer accept PTAOs as payment for RC services. Please reach out to your fiscal contact for the full FDM 
-accounting string before 
-  submitting a service request.  All worktag values are needed for processing payments, not just the driver worktag. Thank you!
+accounting string before submitting a service request.  All worktag values are needed for processing payments, not just the driver worktag. Thank you!
 </div>
 <!-- MAIN FDM FIELDS -->
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="financial-contact">Financial Contact <span class="form-required" title="This field is required.">*</span></label>
-      <input class="form-control form-text required" type="text" id="financial-contact" name="financial-contact" required="required" />
+      <label class="control-label" for="financial-contact">Financial Contact </label>
+      <input class="form-control form-text" type="text" id="financial-contact" name="financial-contact" />
     </div>
   </div>
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="company-id">Company ID <span class="form-required" title="This field is required.">*</span></label>
-      <input class="form-control form-text required" type="text" id="company-id" name="company-id" required="required" value="UVA_207" />
+      <label class="control-label" for="company-id">Company ID </label>
+      <input class="form-control form-text" type="text" id="company-id" name="company-id" />
     </div>
     <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="cost-center">Cost Center <span class="form-required" title="This field is required.">*</span></label>
-      <input class="form-control form-text required" type="text" id="cost-center" name="cost-center" required="required" />
+      <label class="control-label" for="cost-center">Cost Center </label>
+      <input class="form-control form-text" type="text" id="cost-center" name="cost-center" />
     </div>
     <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="business-unit">Business Unit <span class="form-required" title="This field is required.">*</span></label>
-      <input class="form-control form-text required" type="text" id="business-unit" name="business-unit" required="required" />
+      <label class="control-label" for="business-unit">Business Unit </label>
+      <input class="form-control form-text" type="text" id="business-unit" name="business-unit" />
     </div>
   </div>
 <!-- FDM FUNDING TYPE OPTIONS -->
   <hr size=1 />
   <div class="row">
   <div class="col form-item form-group form-type-radios"> 
-    <label class="control-label" for="funding-types">Funding Type <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" for="funding-types">Funding Type </label>
     <div id="funding-types" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="funding-project" name="funding-type" value="Project" class="form-radio" onclick="projectSel(value)" />
+        <input type="radio" id="funding-project" name="funding-type" value="Project" class="form-radio" onclick="projectSel(value)" />
         &nbsp; Project
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="funding-gift" name="funding-type" value="Gift" class="form-radio" onclick="projectSel(value)" />
+        <input type="radio" id="funding-gift" name="funding-type" value="Gift" class="form-radio" onclick="projectSel(value)" />
         &nbsp; Gift
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="funding-grant" name="funding-type" value="Grant" class="form-radio" onclick="projectSel(value)" />
+        <input type="radio" id="funding-grant" name="funding-type" value="Grant" class="form-radio" onclick="projectSel(value)" />
         &nbsp; Grant
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="funding-designated" name="funding-type" value="Designated" class="form-radio" onclick="projectSel(value)" />
+        <input type="radio" id="funding-designated" name="funding-type" value="Designated" class="form-radio" onclick="projectSel(value)" />
         &nbsp; Designated
       </div>
     </div>
   </div>
   <div class="col form-item form-group form-type-textarea">
-    <label class="control-label" for="funding-number">Funding Number <span class="form-required" title="This field is required.">*</span></label>
-    <input class="form-control form-text required" required="required" type="text" id="funding-number" name="funding-number" size="20" placeholder="e.g. PJ01607" />
+    <label class="control-label" for="funding-number">Funding Number </label>
+    <input class="form-control form-text" type="text" id="funding-number" name="funding-number" size="20" placeholder="e.g. PJ01607" />
   </div>
   </div>
 
@@ -62,37 +61,37 @@ accounting string before
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
       <small>Fund</small>
-      <input class="form-control form-text required" type="text" id="fund" name="fund" size="20" required="required" />
+      <input class="form-control form-text" type="text" id="fund" name="fund" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Function</small>
-      <input class="form-control form-text required" type="text" id="function" name="function" size="20" required="required" />
+      <input class="form-control form-text" type="text" id="function" name="function" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Program</small>
-      <input class="form-control form-text required" type="text" id="program" name="program" size="20" required="required" />
+      <input class="form-control form-text" type="text" id="program" name="program" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Internal Reference</small>
-      <input class="form-control form-text required" type="text" id="internal-reference" name="internal-reference" size="20" required="required" />
+      <input class="form-control form-text" type="text" id="internal-reference" name="internal-reference" size="20" />
     </div>
   </div>  
   <div class="row" style="margin-top:0;padding-top:0;">
     <div class="col form-item form-type-textarea form-group">
       <small>Activity</small>
-      <input class="form-control form-text required" type="text" id="activity" name="activity" size="20" required="required" />
+      <input class="form-control form-text" type="text" id="activity" name="activity" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Loan</small>
-      <input class="form-control form-text required" type="text" id="loan" name="loan" size="20" required="required" />
+      <input class="form-control form-text" type="text" id="loan" name="loan" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Location</small>
-      <input class="form-control form-text required" type="text" id="location" name="location" size="20" required="required" />
+      <input class="form-control form-text" type="text" id="location" name="location" size="20" />
     </div>
     <div class="col form-item form-type-textarea form-group">
       <small>Assignee</small>
-      <input class="form-control form-text required" type="text" id="assignee" name="assignee" size="20" required="required" />
+      <input class="form-control form-text" type="text" id="assignee" name="assignee" size="20" />
     </div>
   </div>  
 <!-- END WRAPPER DIV -->
