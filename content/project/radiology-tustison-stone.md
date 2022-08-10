@@ -10,6 +10,7 @@ tags = [
   "radiology",
   "rivanna"
 ]
+audio = true
 draft = false
 projecttype = ["image-analysis","clinical-research","tools","hpc-computing"]
 +++
