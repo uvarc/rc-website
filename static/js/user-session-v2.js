@@ -64,11 +64,14 @@
 
   function set_school(dept) {
     if (dept == 'PV-Biocomplexity Initiative') {
-      var f = document.getElementById("school").textContent = 'BII';
+      var f = document.getElementById("school_name").textContent = 'BII';
+      var g = document.getElementById("school").value = 'BII';
     } else if (dept == 'Data Science') {
-      var s = document.getElementById("school").textContent = 'SDS';  
+      var s = document.getElementById("school_name").textContent = 'SDS';
+      var g = document.getElementById("school").value = 'SDS'; 
     } else if (dept == 'Other') {
-      var s = document.getElementById("school").textContent = 'OTHER';      
+      var s = document.getElementById("school_name").textContent = 'OTHER';
+      var g = document.getElementById("school").value = 'Other';      
     } else {
       let schb = dept.substring(0, 2);
       let correlations ={
@@ -84,7 +87,8 @@
         RS: "RESEARCH"     
       }
       let schoolval = correlations[schb];
-      var s = document.getElementById("school").textContent = schoolval;
+      var s = document.getElementById("school_name").textContent = schoolval;
+      var g = document.getElementById("school").value = schoolval;
     };
   };
  
