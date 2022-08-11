@@ -205,3 +205,9 @@ The status API displayed on the home page of www.rc.virginia.edu and elsewhere i
 Those exist outside of this code, but are consumed by JQuery display divs.
 
 See the [**status-api**](https://github.com/uvarc/status-api) repository for details.
+
+## Acknowledgments
+
+* [Bootstrap4](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+* [Google CSE](https://cse.google.com/)
+* [Odometer JS](https://github.hubspot.com/odometer/)
