@@ -11,12 +11,12 @@ type = "form"
 private = true
 +++
 
-<form action="https://api.uvarc.io/rest/v2/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
-{{% form-userinfo-v2 %}}
+{{% form-userinfo %}}
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
@@ -90,5 +90,5 @@ if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
 };
 </script>
-<script type="text/javascript" src="/js/user-session-v2.js"></script>
+<script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
