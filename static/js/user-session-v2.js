@@ -51,16 +51,13 @@
   let email_dec = decode64(email);
   var set_email = document.getElementById("email").value = email_dec;
 
+  // department & school
   let deptc = getCookie("__rc_dept");
-  if (deptc !== null || deptc !== '') {
-    let dept_dec = decode64(deptc);
-    $("#department").val(dept_dec);
-    let school_dec = decode64(getCookie("__rc_school"));
-    var school = document.getElementById("school").value = school_dec;
-    var display_school = document.getElementById("school_name").innerHTML = school_dec;
-  } else if (deptc == null) {
-    // do nothing;
-  };
+  let dept_dec = decode64(deptc);
+  $("#department").val(dept_dec);
+  let school_dec = decode64(getCookie("__rc_school"));
+  var school = document.getElementById("school").value = school_dec;
+  var display_school = document.getElementById("school_name").innerHTML = school_dec;
 
   function set_school(dept) {
     if (dept == 'PV-Biocomplexity Initiative') {
