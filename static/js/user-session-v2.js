@@ -67,17 +67,17 @@
       var f = document.getElementById("school_name").textContent = 'BII';
       var g = document.getElementById("school").value = 'BII';
       let sch = encode64('BII');
-      let referrer = setCookie('__rc_school', sch, '24');
+      let referrer = setCookie('__rc_school', sch, '4464');
     } else if (dept == 'Data Science') {
       var s = document.getElementById("school_name").textContent = 'SDS';
       var g = document.getElementById("school").value = 'SDS'; 
       let sch = encode64('SDS');
-      let referrer = setCookie('__rc_school', sch, '24');
+      let referrer = setCookie('__rc_school', sch, '4464');
     } else if (dept == 'Other') {
       var s = document.getElementById("school_name").textContent = 'OTHER';
       var g = document.getElementById("school").value = 'Other'; 
       let sch = encode64('Other'); 
-      let referrer = setCookie('__rc_school', sch, '24');    
+      let referrer = setCookie('__rc_school', sch, '4464');    
     } else {
       let schb = dept.substring(0, 2);
       let correlations ={
@@ -96,13 +96,13 @@
       var s = document.getElementById("school_name").textContent = schoolval;
       var g = document.getElementById("school").value = schoolval;
       let sch = encode64(schoolval);
-      let referrer = setCookie('__rc_school', sch, '24');
+      let referrer = setCookie('__rc_school', sch, '4464');
     };
   };
  
   $("#department").on("change",function(){ 
     var dept = $("#department").val();
     let deptval = encode64(dept);
-    let deptdo = setCookie('__rc_dept', deptval, '24');
+    let deptdo = setCookie('__rc_dept', deptval, '4464');
     set_school(dept);
   });
