@@ -1,5 +1,5 @@
 +++
-date = "2020-12-10T23:59:16-05:00"
+date = "2022-08-16T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -11,7 +11,7 @@ type = "form"
 private = true
 +++
 
-<form action="https://api.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+<form action="https://api.uvarc.io/rest/v2/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
