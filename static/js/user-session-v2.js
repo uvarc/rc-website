@@ -58,12 +58,16 @@
   //   console.log("findit var is null");
   // }
 
-  let dept = getCookie("__rc_dept");
-  if (dept !== null || dept !== '') {
-    // let dept_dec = decode64(dept);
+  let deptc = getCookie("__rc_dept");
+  if (deptc !== null || deptc !== '') {
+    let dept_dec = decode64(deptc);
     // var set_dept = document.getElementById("department").value = dept_dec;
+    $("#department").val(dept_dec);
+    let school_dec = decode64(getCookie("__rc_school"));
+    $("#school").value = school_dec;
+    $("#school_name").value = school_dec;
     // set_school(dept_dec);
-  } else if (dept == null) {
+  } else if (deptc == null) {
     // do nothing;
   };
 
