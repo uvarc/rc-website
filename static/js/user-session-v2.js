@@ -66,12 +66,15 @@
     if (dept == 'PV-Biocomplexity Initiative') {
       var f = document.getElementById("school_name").textContent = 'BII';
       var g = document.getElementById("school").value = 'BII';
+      let referrer = setCookie('__rc_dept', 'BII', '24');
     } else if (dept == 'Data Science') {
       var s = document.getElementById("school_name").textContent = 'SDS';
       var g = document.getElementById("school").value = 'SDS'; 
+      let referrer = setCookie('__rc_dept', 'SDS', '24');
     } else if (dept == 'Other') {
       var s = document.getElementById("school_name").textContent = 'OTHER';
-      var g = document.getElementById("school").value = 'Other';      
+      var g = document.getElementById("school").value = 'Other';  
+      let referrer = setCookie('__rc_dept', 'Other', '24');    
     } else {
       let schb = dept.substring(0, 2);
       let correlations ={
@@ -89,6 +92,7 @@
       let schoolval = correlations[schb];
       var s = document.getElementById("school_name").textContent = schoolval;
       var g = document.getElementById("school").value = schoolval;
+      let referrer = setCookie('__rc_dept', schoolval, '24');
     };
   };
  
