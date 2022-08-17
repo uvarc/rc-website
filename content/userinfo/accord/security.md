@@ -1,42 +1,46 @@
 +++
 title = "ACCORD Security"
 draft = false
-date = "2022-05-05"
+date = "2022-08-11"
 images = [""]
 author = "Staff"
+categories = ["accord"]
+tags = ["accord","security","nsf","hipaa","sensitive-data"]
 +++
 
 ***
 
-![Security](/images/accord/security.png)
+<a href="../overview/" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
 
 ACCORD is appropriate for de-identified PII, FERPA, de-identified HIPAA, business confidential, and other types of de-identified sensitive data. ACCORD cannot be used to process highly-restricted data such as CUI, FISMA, iTAR, and PCI data.
 
-## Authentication
+![Security](/images/accord/security.png)
+
+# Authentication
 
 ACCORD does not have its own user identity store but instead relies upon authentication via your home institution's single sign-on tool.
 
-## Authorization
+# Authorization
 
 All members of a project have equal access to the data storage for that project, without sudo or root privileges. 
 
-## Closed Environments
+# Closed Environments
 
 ACCORD environments have no outbound connectivity to the Internet other than approved library and tool 
 repositories (PyPi, CPAN, CRAN, etc.). Connections to tools such as GitHub and external APIs are not allowed.
 
-## Encryption
+# Encryption
 
 All connectivity to ACCORD environments is encrypted using SSL over HTTPS. 
 
 Data transfers in/out via the Globus DTN meet FIPS 140-2 compliance.
 
-## Isolation
+# Isolation
 
 ACCORD environments cannot have any access to other environments. Environments run within isolated Kubernetes pods and their
 network connectivity is isolated and encrypted.
 
-## Private Environment URLs
+# Private Environment URLs
 
 When you request an ACCORD environment, a unique HTTPS endpoint is created for you and 
 *can only be used by you*. For example:
@@ -45,18 +49,19 @@ When you request an ACCORD environment, a unique HTTPS endpoint is created for y
 
 These environments cannot be shared.
 
-## Logging
+# Logging
 
 All user interactions with ACCORD are logged including account creation, approval, project creation, changes in group membership, the creation of/changes to environments, and file uploads/downloads using a browser or the Globus DTN.
 
-## Client Posture-Checks
+# Client Posture-Checks
 
 Access to ACCORD is restricted to computers that are sufficiently updated and meet minimum security requirements. To verify this, ACCORD uses <b>OPSWAT</b>, a small piece of software that users install on their local computers.
 
-### Step 1: Install the VPN Assessment Application (Opswat)
+## Step 1: Install the VPN Assessment Application (Opswat)
+
 Opswat will be installed during the onboarding process for ACCORD.
 
-### Step 2: Resolve Security Requirement Issues
+## Step 2: Resolve Security Requirement Issues
 
 ### Requirement 1: Operating System
 
@@ -110,6 +115,7 @@ Opswat will be installed during the onboarding process for ACCORD.
 </div>
 
 ### Requirement 2: Host-Based Firewall
+
 Host-based firewall software must be installed and enabled.
 
 <div id="accordion">
@@ -160,28 +166,30 @@ Host-based firewall software must be installed and enabled.
 </div>
 
 ### Requirement 3: Antivirus / Antimalware Software
+
 At least one antimalware software must be installed and enabled. We recommend the following:
 
 <table class="table table-striped">
   <tbody>
     <tr>
-                <th scope="row" style="width:25%;font-weight:bold;">Antivirus for Mac</th>
-                        <td>
-                                We recommend using either <b>Gatekeeper</b> or <b>Microsoft Defender for Endpoint</b> for Macs.
-                        </td>
-                </tr>
-                <tr>
-                <th scope="row" style="width:25%;font-weight:bold;">Antivirus for Windows</th>
-                        <td>
-                                We recommend using either <b>Microsoft Defender</b> or <b>Microsoft Defender for Endpoint</b> for Windows.
-                        </td>
-                </tr>
-        </tbody>
+      <th scope="row" style="width:25%;font-weight:bold;">Antivirus for Mac</th>
+      <td>
+        We recommend using either <b>Gatekeeper</b> or <b>Microsoft Defender for Endpoint</b> for Macs.
+      </td>
+    </tr>
+    <tr>
+      <th scope="row" style="width:25%;font-weight:bold;">Antivirus for Windows</th>
+      <td>
+        We recommend using either <b>Microsoft Defender</b> or <b>Microsoft Defender for Endpoint</b> for Windows.
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 Most common antivirus software is acceptable, except those made by Kaspersky Labs.
 
 ### Requirement 4: Device Password
+
 The device must be password protected, and it must lock automatically if there is no activity detected for at least 10 minutes. Configure your device to require a password to log in. Also, set your device’s screensaver or security settings to automatically lock after 10 minutes of no activity.
 
 ### Requirement 5: Whole-Disk Encryption

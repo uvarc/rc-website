@@ -1,5 +1,5 @@
 +++
-date = "2020-12-10T23:59:16-05:00"
+date = "2022-08-10T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -17,7 +17,6 @@ private = true
 </div>
 <div>
 {{% form-userinfo-v2 %}}
-  <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
@@ -27,7 +26,7 @@ private = true
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="storage" value="Storage">Storage</option>
       <option id="omero" value="Omero">Omero Image Analysis</option>
-      <option id="container" value="Container">Containerized Service</option>
+      <option id="container" value="Container">Container Service</option>
       <option id="consultation" value="Consultation">Consultation request</option>
       <option value="">-----</option>
       <option id="chase" value="Chase">CHASE Accounts/Data</option>
