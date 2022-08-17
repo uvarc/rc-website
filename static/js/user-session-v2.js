@@ -51,22 +51,13 @@
   let email_dec = decode64(email);
   var set_email = document.getElementById("email").value = email_dec;
 
-  // dept
-  // let findit = document.cookie.match(/^(.*;)?\s*__rc_dept\s*=\s*[^;]+(.*)?$/);
-  // console.log(findit);
-  // if (findit == null) {
-  //   console.log("findit var is null");
-  // }
-
   let deptc = getCookie("__rc_dept");
   if (deptc !== null || deptc !== '') {
     let dept_dec = decode64(deptc);
-    // var set_dept = document.getElementById("department").value = dept_dec;
     $("#department").val(dept_dec);
     let school_dec = decode64(getCookie("__rc_school"));
     $("#school").value = school_dec;
     var display_school = document.getElementById("school_name").innerHTML = school_dec;
-    // set_school(dept_dec);
   } else if (deptc == null) {
     // do nothing;
   };
