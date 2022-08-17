@@ -56,7 +56,7 @@
     let dept_dec = decode64(deptc);
     $("#department").val(dept_dec);
     let school_dec = decode64(getCookie("__rc_school"));
-    $("#school").value = school_dec;
+    var school = document.getElementById("school").value = school_dec;
     var display_school = document.getElementById("school_name").innerHTML = school_dec;
   } else if (deptc == null) {
     // do nothing;

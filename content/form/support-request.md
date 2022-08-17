@@ -16,8 +16,7 @@ private = true
   <p id="form_post_response"></p>
 </div>
 <div>
-{{% form-userinfo %}}
-  <hr size=1 />
+{{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
@@ -43,10 +42,6 @@ private = true
   <div class="form-item form-type-textfield form-group">
     <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
-  </div>
-  <div class="form-item form-type-textfield form-group">
-    <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group">
     <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span> </label>
@@ -95,5 +90,5 @@ if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
 };
 </script>
-<script type="text/javascript" src="/js/user-session.js"></script>
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
