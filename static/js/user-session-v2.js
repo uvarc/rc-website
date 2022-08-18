@@ -17,8 +17,13 @@
         }
         c_value = unescape(c_value.substring(c_start, c_end));
     }
+    if (c_value === null) {
+      console.log("That value is null!");
+    } else {
+      // do nothing
+    }
     return c_value;
-}
+  };
   
   function setCookie(key, value, expiry) {
     var expires = new Date();
@@ -27,21 +32,21 @@
     document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
   };
   
-  // function decode64(str) {
-  //   var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
-  //   var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-  //   for(i=0;i<64;i++){e[A.charAt(i)]=i;}
-  //   for(x=0;x<L;x++){
-  //     c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
-  //     while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
-  //   }
-  //   return r;
-  // };
-
   function decode64(str) {
-    var r = btoa(str);
+    var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
+    var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    for(i=0;i<64;i++){e[A.charAt(i)]=i;}
+    for(x=0;x<L;x++){
+      c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
+      while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
+    }
     return r;
   };
+
+  // function decode64(str) {
+  //   var r = btoa(str);
+  //   return r;
+  // };
 
   function encode64(str) {
     var d = window.btoa(unescape(encodeURIComponent(str)));
@@ -74,12 +79,12 @@
   var set_email = document.getElementById("email").value = email_dec;
 
   // department & school
-  let deptc = getCookie("__rc_dept");
-  let dept_dec = decode64(deptc);
-  $("#department").val(dept_dec);
-  let school_dec = decode64(getCookie("__rc_school"));
-  var school = document.getElementById("school").value = school_dec;
-  var display_school = document.getElementById("school_name").innerHTML = school_dec;
+  // let deptc = getCookie("__rc_dept");
+  // let dept_dec = decode64(deptc);
+  // $("#department").val(dept_dec);
+  // let school_dec = decode64(getCookie("__rc_school"));
+  // var school = document.getElementById("school").value = school_dec;
+  // var display_school = document.getElementById("school_name").innerHTML = school_dec;
 
   function set_school(dept) {
     if (dept == 'PV-Biocomplexity Initiative') {
