@@ -1,7 +1,15 @@
 ---
-ports:
-- port: 1313
-  onOpen: open-browser
+# ports:
+# - port: 1313
+#   onOpen: open-browser
+# tasks:
+# - before: /workspace/rc-website/.gitpod/get-hugo.sh
+#   command: /workspace/rc-website/.gitpod/start-hugo.sh
 tasks:
-- before: /workspace/rc-website/.gitpod/get-hugo.sh
-  command: /workspace/rc-website/.gitpod/start-hugo.sh
+  - name: setup
+    command: /workspace/rc-website/.gitpod/get-hugo.sh
+  - name: start
+    command: /workspace/rc-website/.gitpod/start-hugo.sh
+ports:
+  - port: 1313
+    onOpen: open-preview
