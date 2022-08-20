@@ -75,7 +75,7 @@ private = true
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
-      <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
+      <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> management and will be able to add/remove users for your project.</p>
     </div>
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
