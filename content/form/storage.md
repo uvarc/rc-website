@@ -1,5 +1,5 @@
 +++
-date = "2022-05-04T23:59:16-05:00"
+date = "2022-08-04T23:59:16-05:00"
 tags = ["storage"]
 categories = ["forms"]
 images = [""]
@@ -20,29 +20,9 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="Storage">
   <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
-{{% form-userinfo %}}
-  <hr size=1 />
+{{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
-  </div>
-  <div class="form-item form-group form-type-select form-group"> 
-    <label class="control-label" for="classification">Affiliation <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="classification" name="classification">
-      <option value="" selected="selected">- Select -</option>
-      <option value="cas">College of Arts & Sciences</option>
-      <option value="darden">Darden School of Business</option>
-      <option value="batten">Batten School of Leadership</option>
-      <option value="mcintire">McIntire School of Commerce</option>
-      <option value="arch">School of Architecture</option>
-      <option value="dsi">School of Data Science</option>
-      <option value="education">School of Education</option>
-      <option value="seas">School of Engineering</option>
-      <option value="law">School of Law</option>
-      <option value="som">School of Medicine</option>
-      <option value="nursing">School of Nursing</option>
-      <option value="health-system">UVA Health System</option>
-      <option value="other">Other</option>
-    </select>
   </div>
   <hr size=1 />
   <div class="row">
@@ -75,13 +55,13 @@ private = true
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" /> &nbsp; Research Project Storage ({{% storage-pricing project %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" /> &nbsp; Research Project Storage ({{% storage-pricing project %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" /> &nbsp; Research Standard Storage ({{% storage-pricing standard %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" /> &nbsp; Research Standard Storage ({{% storage-pricing standard %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input onclick="getStorageType()" required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
       </div>
     </div>
   </div>
@@ -95,7 +75,7 @@ private = true
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
-      <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the MyGroups management and will be able to add/remove users for your project.</p>
+      <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> management and will be able to add/remove users for your project.</p>
     </div>
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
@@ -143,5 +123,5 @@ private = true
 </form>
 
 <script type="text/javascript" src="/js/storage-request.js"></script>
-<script type="text/javascript" src="/js/user-session.js"></script>
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

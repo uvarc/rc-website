@@ -1,1 +1,17 @@
+<script>
+// When user scrolls 100px from the top of the document, show button
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        document.getElementById("scrollBtn").style.display = "block";
+    } else {
+        document.getElementById("scrollBtn").style.display = "none";
+    }
+};
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+};
+</script>
 <button type="button" class="btn btn-light" onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
