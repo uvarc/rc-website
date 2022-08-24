@@ -40,14 +40,12 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 # Licensing
-UVA has a research license that covers most research needs, and ANSYS on Rivanna uses this by default.  However, some research groups have their own licenses with more capabilities.  If you need to direct ANSYS to a different license server, you must set the `ANSYSLI_SERVERS` and `ANSYSLMD_LICENSE_FILE` environment variables.  The format for these for a three-server license server cluster is
+The current general UVA license is not valid for research; users must provide their own license.  To use such a research license on Rivanna, you must create file called `ansyslmd.ini` with the format
+```no-highlight
+ERVER=1055@myhost.mydept.virginia.edu
+ANSYSLI_SERVERS=2325@myhost.mydept.virginia.edu
 ```
-export ANSYSLI_SERVERS=ansysliport@hostname1:ansysliport@hostname2:ansysliport@hostname3
-export ANSYSLMD_LICENSE_FILE=flexnetport@hostname1:flexnetport@hostname2:flexnetport@hostname3
-```
-You must obtain the values for `ansysliport` (a port number), `flexnetport` (another port number), and the names of the hosts from your group's license administrator.  If you have only a single license server host you need only list the one hostname in each variable.
-
-You can add these lines to your `~/.bashrc` file or you may add them to your Slurm batch scripts.
+You must obtain the full names of the hosts from your group's license administrator.  The numbers in the above lines are the standard ANYSYS ports, but it is possible they may differ for some license servers; consult your license administrator for specific values. 
 
 # Using ANSYS Workbench
 If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/config/kwinrc` file and add the following line:

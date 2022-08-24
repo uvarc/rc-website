@@ -12,6 +12,6 @@ NPARTS=`expr $SLURM_NTASKS_PER_NODE \* $SLURM_NNODES`
 hostlist=$(scontrol show hostname $SLURM_JOB_NODELIST | paste -s -d,)
 
 module load intel/18.0
-module load ansys/19.2
+module load ansys/2021r1
 
 cfx5solve -double -def /scratch/yourpath/mydef.def -par-dist "$hostlist" -partition "$NPARTS" -start-method "Intel MPI Distributed Parallel"
