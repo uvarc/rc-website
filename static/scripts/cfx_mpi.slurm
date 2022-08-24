@@ -9,22 +9,8 @@
 #SBATCH --output=myCFXrun.txt
 
 NPARTS=`expr $SLURM_NTASKS_PER_NODE \* $SLURM_NNODES`
+hostlist=$(scontrol show hostname $SLURM_JOB_NODELIST | paste -s -d,)
 
-for host in $SLURM_JOB_NODELIST; do
-    echo -n $(scontrol show hostname $host)>> hostfile
-done
-
-read -a hosts < hostfile
-
-hostlist=${hosts[0]}","
-
-for (( i=1; i<${#hosts[@]}-1; i++)); do
-    hostlist+=${hosts[$i]}","
-done
-
-hostlist+=${hosts[${#hosts[@]}-1]}
-
-rm hostfile
 module load intel/18.0
 module load ansys/19.2
 
