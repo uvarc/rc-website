@@ -47,6 +47,8 @@ ANSYSLI_SERVERS=2325@myhost.mydept.virginia.edu
 ```
 You must obtain the full names of the hosts from your group's license administrator.  The numbers in the above lines are the standard ANYSYS ports, but it is possible they may differ for some license servers; consult your license administrator for specific values. 
 
+This file should be placed into the `/home/$USER/.ansys` folder.  Please note the period in front of `ansys`; that is required.
+
 # Using ANSYS Workbench
 If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/config/kwinrc` file and add the following line:
 ```
