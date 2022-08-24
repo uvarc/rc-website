@@ -15,5 +15,6 @@ done
 IFS=' '
 
 module load intel/18.0
-module load ansys/19.2
+module load ansys/2021r1
+
 fluent 3ddp -g -t${SLURM_NPROCS} -cnf=hosts -srun -pinfiniband -mpi=intel -ssh -i myjournalfile.jou
