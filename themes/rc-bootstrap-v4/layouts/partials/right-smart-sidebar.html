@@ -1,5 +1,5 @@
 {{- $counter:=0 -}}
-{{- $url := "https://s3.amazonaws.com/uvarc-resources/website/events.csv" -}}
+{{- $url := $.Site.Params.eventsUrl -}}
 {{- $sep := "," -}}
 {{- range $i, $r := getCSV $sep $url -}}
   {{- $scheduled_date:=replace (index $r 1) "/" "-" -}}
