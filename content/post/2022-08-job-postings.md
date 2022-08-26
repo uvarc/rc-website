@@ -19,7 +19,7 @@ categories = ["feature"]
 - Windows Systems administrator to assist with our PHI and CUI VDI private cloud environment. The ideal candidate will have experience with Ansible and Windows.
 - HPC administrator experienced with MPI, Slurm and Infiniband. Must be willing to work with our User Services team to provide support for traditional parallel processing.
 
-{{< button button-class="primary" button-text="CLICK TO LEARN MORE" button-url="https://www.rc.virginia.edu/form/support-request/?category=Other&request_title=RC%20Career%20Opportunties&description=Hello,%20I%27m%20interested%20in%20learning%20more%20about%20current%20job%20openings%20at%20Research%20Computing." >}}
+{{< button button-class="primary" button-text="CLICK TO LEARN MORE" button-url="https://www.rc.virginia.edu/form/support-request/?category=Other&request_title=RC%20Career%20Opportunties&description=Hello,%20I%27m%20interested%20in%20learning%20more%20about%20the%20open%20High-Performance%20Computing%20Engineer%20position." >}}
 
 - - -
 
