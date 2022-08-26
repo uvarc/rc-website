@@ -9,9 +9,11 @@ tags = ["uvarc","infrastructure","user-services"]
 categories = ["feature"]
 +++
 
-We currently have several open positions in two of our groups:
+<p class=lead>We currently have several open positions in two of our groups:</p>
 
-**Infrastructure Services Staff (multiple full-time, permanent positions)**
+- - -
+
+## Infrastructure Services Staff (multiple full-time, permanent positions)
 
 - General Linux administrator with Ansible and ethernet experience.
 - Windows Systems administrator to assist with our PHI and CUI VDI private cloud environment. The ideal candidate will have experience with Ansible and Windows.
@@ -21,9 +23,9 @@ We currently have several open positions in two of our groups:
 
 - - -
 
-**User Services Staff (1 temporary, full-time position)**
+## User Services Staff (1 temporary, full-time position)
 
-## Entry-level Research Computing Associate/Computational Scientist.
+### Entry-level Research Computing Associate/Computational Scientist
 
 The incumbent supports University faculty and researchers, assisting them with UVA Research Computing services to produce computing solutions within their 
 fields of research. The ideal candidate has an outgoing personality with a passion for providing high-quality 
