@@ -80,6 +80,8 @@ You can write a batch script to run ANSYS jobs.  Please refer to ANSYS documenta
 You must use IntelMPI.  IBM MPI (Platform) will not work on our system.
 For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using Slurm's task launcher.  Also include the `-slurm` option.  It is generally better with ANSYS and related products to request a total memory over all processes rather than using memory per core, because a process can exceed the allowed memory per core.  You must have access to a license that supports HPC usage.  These examples also show the minimum number of command-line options; you may require more for large jobs.
 
+You must also set up _passwordless ssh_ between nodes as described [here](/userinfo/rivanna/logintools/rivanna-ssh).
+
 **Fluent Slurm Script:**
 
 {{< pull-code file="/static/scripts/fluent.slurm" lang="no-hightlight" >}}
