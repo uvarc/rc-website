@@ -11,9 +11,10 @@ type = "rivanna"
 
 +++
 
-<p class="lead">`ssh` is the secure shell. It is the primary application used to access Rivanna from the command line.</p>
-
+<p class="lead">
 - - -
+
+The _secure shell_ `ssh` is the primary application used to access Rivanna from the command line.</p>
 
 # Connecting to a Remote Host
 
