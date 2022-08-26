@@ -5,7 +5,7 @@ description = ""
 date = "2022-08-26T01:18:25-05:00"
 title = "RC Job Openings"
 draft = false
-tags = ["uvarc","staff"]
+tags = ["uvarc","infrastructure","user-services"]
 categories = ["feature"]
 +++
 
