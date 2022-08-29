@@ -135,18 +135,69 @@ reach outside resources on the Internet. Most inbound and outbound data transfer
 
 ## Connecting to your VM
 
-To connect to your VM, you must install either an SSH client to connect to your VM using the command-line interface (CentOS VMs only), or
-remote desktop software to connect to the desktop GUI of your VM. These options are outlined below.
+** The first step to connect to your VM is to launch the High Security VPN on your laptop/desktop.
 
-**MacOSX Users:**
+Next, you will need two pieces of information:
+* The type of VM that you have (i.e., Windows or Linux); and
+* The IP address of your VM (e.g., 10.xxx.xxx.xxx).
 
-* Terminal (for SSH, built-in. Can be found in Applications -> Utilities -> Terminal)
-* Microsoft Remote Desktop (for remote desktop to Windows or CentOS VMs, [download here](https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12)
+The steps for connecting to the VM will depend on the operating system of your laptop/desktop (i.e., MacOS or Windows).
 
-**Windows Users:**
 
-* PuTTy (for SSH, [download here](http://www.chiark.greenend.org.uk/~sgtatham/putty/))
-* Microsoft Remote Desktop (built-in, for remote desktop to Windows or CentOS VMs)
+### MacOS Users
+
+** Connecting to a Windows VM **
+
+To connect to a Windows VM from a Mac, you will need the Microsoft Remote Destop application which you can  [download here](https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12) .  
+
+The steps are
+1. Start the Hight Security VPN;
+2. Run the Remote Desktop application;
+3. Enter the IP address for your VM;
+4. Use your Netbadge credentials to log in.
+
+** Connecting to a Linux VM **
+To connect to a Linux VM from a Mac, you have two options: using a web portal or an ssh client.
+
+To connect to the web portal, the steps are
+1. Start the High Security VPN;
+2. Open a web browser and enter your IP address(e.g., https://10.xxx.xxx.xxx) ;
+3. If you get a warning messages, you may need to click on Advanced Settings or a Connent Anyway option, depending on your web browser;
+4. User you Netbadge credentials to log in.
+
+To connect to a terminal window, the steps are
+1. Start the High Security VPN;
+2. Open the Terminal application on your Mac and type:  `ssh mst3k@10.xxx.xxx.xxx`;
+4. When prompted for a password, use your Eservices password.
+
+
+
+
+### Windows Users
+
+** Connecting to a Windows VM **
+
+The steps are
+1. Start the Hight Security VPN;
+2. Run the Remote Desktop application;
+3. Enter the IP address for your VM;
+4. Use your Netbadge credentials to log in.
+
+** Connecting to a Linux VM **
+To connect to a Linux VM from a Windows machine, you have two options: using a web portal or an ssh client.
+
+To connect to the web portal, the steps are
+1. Start the High Security VPN;`
+2. Open a web browser and enter your IP address(e.g., https://10.xxx.xxx.xxx) ;
+3. If you get a warning messages, you may need to click on Advanced Settings or a Connent Anyway option, depending on your web browser;
+4. User you Netbadge credentials to log in.
+
+To connect to a terminal window, the steps are
+1. Start the High Security VPN;
+2. Open the Command Prompt on your PC and type:  `ssh mst3k@10.xxx.xxx.xxx`;
+4. When prompted for a password, use your Eservices password.
+
+
 
 
 To connect to Ivy follow the platform-specific steps below:
