@@ -60,6 +60,7 @@ timeout = "60000"
   coreHours = "6410000"
   storage = "8.254"
   newAccounts = "79"
+  userAccounts = "545"
 
 [params.rivanna]
   totalNodes = "575"

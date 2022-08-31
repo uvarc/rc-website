@@ -7,9 +7,10 @@ window.odometerOptions = {
   format: '(,ddd).ddd',
 }
 setTimeout(function(){
-  odometer1.innerHTML = "5274437";
-  odometer2.innerHTML = "545";
-  odometer3.innerHTML = "8.254";
+  // set these values in config.toml
+  odometer1.innerHTML = {{ .Site.Params.metrics.coreHours }};
+  odometer2.innerHTML = {{ .Site.Params.metrics.userAccounts }};
+  odometer3.innerHTML = {{ .Site.Params.metrics.storage }};
 }, 400);
 </script>
 <div style="width:100%;">
