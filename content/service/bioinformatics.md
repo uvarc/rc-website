@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Bioinformatics & Genomics"
-date = "2020-02-25T09:48:06-05:00"
+date = "2022-08-31T09:48:06-05:00"
 draft = false
 tags = ["bioinformatics","genomics"]
 categories = ["services"]
@@ -13,7 +13,7 @@ images = [""]
 
 <hr size=1 style="padding-bottom:10px;" />
 
-# Next-generation sequence data analyis
+# Next-generation sequence data analysis
 
 RC staff can help you start to use popular bioinformatics software for functions such as
 

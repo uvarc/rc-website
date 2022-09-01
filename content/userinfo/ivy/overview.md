@@ -26,7 +26,7 @@ Ivy consists of both virtual computing environments and secure storage. In order
 3. **Ensure their personal computer meets all High Security VPN requirements.**
 
 * [Requesting Access](#requesting-access)
-* [Training](#training)
+* [Security Training](#training)
 * [High Security VPN](#high-security-vpn)
 * [Virtual Machines](#virtual-machines)
 * [JupyterLab Notebooks](#jupyterlab-notebooks)
@@ -48,7 +48,7 @@ Access to Ivy resources is project-based, limited to PIs and their designees, an
 
 - - -
 
-# Training
+# Security Training
 
 In order to use Ivy, researchers must complete the High Security Awareness Training (HSAT). This training takes approximately 10 minutes to complete.
 
@@ -135,34 +135,32 @@ reach outside resources on the Internet. Most inbound and outbound data transfer
 
 ## Connecting to your VM
 
-To connect to your VM, you must install either an SSH client to connect to your VM using the command-line interface (CentOS VMs only), or
-remote desktop software to connect to the desktop GUI of your VM. These options are outlined below.
+**The first step to connect to your VM is to run the High Security VPN. Make sure that you have the VPN client installed on your laptop/desktop.**
 
-**MacOSX Users:**
+Next, you will need to know two pieces of information:
+* The **type of VM** that you have (i.e., Windows or Linux); and
+* The **IP address** of your VM (e.g., 10.xxx.xxx.xxx).
 
-* Terminal (for SSH, built-in. Can be found in Applications -> Utilities -> Terminal)
-* Microsoft Remote Desktop (for remote desktop to Windows or CentOS VMs, [download here](https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12)
+The steps for connecting to the VM will depend on the type of VM and, to a lesser extent, the operating system of your laptop/desktop (i.e., MacOS or Windows).
 
-**Windows Users:**
-
-* PuTTy (for SSH, [download here](http://www.chiark.greenend.org.uk/~sgtatham/putty/))
-* Microsoft Remote Desktop (built-in, for remote desktop to Windows or CentOS VMs)
+To connect to a Windows VM from a **Mac**, you will need the Microsoft Remote Destop application which you can  [download here](https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12) .  
+Windows laptops/desktops already have the Remote Desktop Connection application installed.
 
 
-To connect to Ivy follow the platform-specific steps below:
+To connect to a VM, follow the steps below for the type of VM that you have:
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        <b>CentOS 7 Linux</b>
+        <b>Connecting to a Windows VM</b>
       </div>
       <div class="card-block">
         <ul>
-          <li>Open your High Security VPN connection</li>
-          <li>Reference the IP address of your Ivy VM.</li>
-          <li>For SSH access:<br />&nbsp;&nbsp;<code>ssh uva-id@ip-address</code></li>
-          <li>For Remote Desktop access: Enter the IP address of your VM in a web browser (https://10.xxx.xxx.xxx) and sign in with your Eservices username and password.</li>
+          <li> Start the High Security VPN
+          <li> Run the Remote Desktop application
+          <li> Enter the IP address for your VM
+          <li> Sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
         </ul>
       </div>
     </div>
@@ -170,18 +168,28 @@ To connect to Ivy follow the platform-specific steps below:
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
-        <b>Windows Server 2019</b>
+        <b>Connecting to a Linux VM</b>
       </div>
       <div class="card-block">
         <ul>
-          <li>Open your High Security VPN connection</li>
-          <li>Reference the IP address of your Ivy VM.</li>
-          <li>For Remote Desktop access: Start an RDP client and point to the IP address of your VM and sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
+          <li> Start the High Security VPN
+          <li> Open a web browser and enter your IP address(e.g., https://10.xxx.xxx.xxx) 
+          <li> If you get a warning message, you may need to click on Advanced Settings or a Connent Anyway option, depending on your web browser
+          <li> Use your Netbadge credentials to log in
         </ul>
       </div>
     </div>
   </div>
 </div>
+
+In addition to connecting to a Linux VM through a web browser, you have the optin of connecting with an ssh client. To do this, follow these steps:
+
+1. Start the High Security VPN
+2. Open the ssh client on your laptop/desktop (Terminal application on a Mac or Command Prompt on a PC) and type:  `ssh mst3k@10.xxx.xxx.xxx`, where mst3k is replaced with your user ID.
+4. When prompted for a password, use your Eservices password.
+
+
+
 
 
 ## Software
