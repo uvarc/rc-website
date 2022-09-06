@@ -21,13 +21,14 @@ _Research Standard_ and _Research Project_ storage can be mapped to your Windows
 
 # Windows
 
-* Open a File Explorer page.  In Windows 10 first select *This PC*. This is not necessary for earlier versions of Windows. When you see the *Computer* tab, select that, then select  *Map Network Drive*.
-* When the dialog box appears, the default drive letter will be *Z*.  You can change this to any other available letter if you wish.
-* In the Folder textbox, type the path you were given when the storage was set up. 
-    * For **Research Standard** storage the path starts with `\\qumulo.rc.virginia.edu\` followed by your storage share name, for example `\\qumulo.rc.virginia.edu\mylab-storage`
-    * For **Research Project** storage the path starts with `\\qumulo.rc.virginia.edu\` or `\\gpfs.hpc.virginia.edu` followed by your storage share name, for example `\\gpfs.hpc.virginia.edu\mylab-storage`. 
+* Open a File Explorer page.  In the left column, right click on *This PC*.  In the drop-down box that appears, look for the *Map Network Drive* option. If you do not see this option, click on *Show more Options*, and then click on *Map network drive...*. 
+* When the *Map Network Drive* dialog box appears, select a letter for the drive.This will be the location on your PC where you will be able to access your storage.
+* Also in the *Map Network Drive* dialog box, type the path for your storage location in the Folder field. 
+    * For **Research Standard** storage, the path starts with `\\qumulo.rc.virginia.edu\` followed by your storage share name, for example `\\qumulo.rc.virginia.edu\mylab-storage`
+    * For **Research Project** storage, the path starts with `\\qumulo.rc.virginia.edu\` or `\\gpfs.hpc.virginia.edu` followed by your storage share name, for example `\\gpfs.hpc.virginia.edu\mylab-storage`. 
     
-* When it asks you to authenticate, use your UVA id (e.g. `mst3k`) and your Eservices password.
+* If you want the mapped drive to remain after a shut-down or reboot, check the box for *Reconnect at sign-in*
+* If your laptop does not use you UVA ID and password for logging in, check the box for *Connect using different credentials*.  When it asks you to authenticate, use your UVA id (e.g. `mst3k`) and your Eservices password.
 * Select *Finish*.
         
 {{% callout %}}
