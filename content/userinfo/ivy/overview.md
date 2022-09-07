@@ -135,10 +135,10 @@ reach outside resources on the Internet. Most inbound and outbound data transfer
 
 ## Connecting to your VM
 
-**The first step to connect to your VM is to run the High Security VPN. Make sure that you have the VPN client installed on your laptop/desktop.**
+**Before connecting to your VM, you must run the the High Security VPN. Make sure that you have the VPN client installed on your laptop/desktop.**
 
 Next, you will need to know two pieces of information:
-* The **type of VM** that you have (i.e., Windows or Linux); and
+* The **type of VM** that you have, either Windows or Linux;
 * The **IP address** of your VM (e.g., 10.xxx.xxx.xxx).
 
 The steps for connecting to the VM will depend on the type of VM and, to a lesser extent, the operating system of your laptop/desktop (i.e., MacOS or Windows).
@@ -147,7 +147,10 @@ To connect to a Windows VM from a **Mac**, you will need the Microsoft Remote De
 Windows laptops/desktops already have the Remote Desktop Connection application installed.
 
 
-To connect to a VM, follow the steps below for the type of VM that you have:
+### Steps to connect to your VM
+
+Follow the steps below for the **type of VM** that you have:
+
 
 <div class="row" style="margin-bottom:2rem;">
   <div class="col-sm-6">
@@ -158,7 +161,7 @@ To connect to a VM, follow the steps below for the type of VM that you have:
       <div class="card-block">
         <ul>
           <li> Start the High Security VPN
-          <li> Run the Remote Desktop application
+          <li> Run the Remote Desktop application (see comment above for installing this application on Macs)
           <li> Enter the IP address for your VM
           <li> Sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
         </ul>
@@ -173,8 +176,8 @@ To connect to a VM, follow the steps below for the type of VM that you have:
       <div class="card-block">
         <ul>
           <li> Start the High Security VPN
-          <li> Open a web browser and enter your IP address(e.g., https://10.xxx.xxx.xxx) 
-          <li> If you get a warning message, you may need to click on Advanced Settings or a Connent Anyway option, depending on your web browser
+          <li> Open a web browser and enter the IP address for your VM (e.g., https://10.xxx.xxx.xxx) 
+          <li> If you get a warning message, you may need to click on Advanced Settings and/or a Connent Anyway option, depending on your web browser
           <li> Use your Netbadge credentials to log in
         </ul>
       </div>
@@ -182,11 +185,11 @@ To connect to a VM, follow the steps below for the type of VM that you have:
   </div>
 </div>
 
-In addition to connecting to a Linux VM through a web browser, you have the optin of connecting with an ssh client. To do this, follow these steps:
+In addition to connecting to a Linux VM through a web browser, you have the option of connecting with an ssh client. To do this, follow these steps:
 
 1. Start the High Security VPN
-2. Open the ssh client on your laptop/desktop (Terminal application on a Mac or Command Prompt on a PC) and type:  `ssh mst3k@10.xxx.xxx.xxx`, where mst3k is replaced with your user ID.
-4. When prompted for a password, use your Eservices password.
+2. Open the ssh client on your laptop/desktop (Terminal application on a Mac or Command Prompt on a Windows PC) and type:  `ssh mst3k@10.xxx.xxx.xxx`, where mst3k is replaced with your user ID.
+3. When prompted for a password, use your Eservices password.
 
 
 
