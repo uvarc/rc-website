@@ -42,7 +42,7 @@ module spider {{% module-firstversion %}}
 # Licensing
 The current general UVA license is not valid for research; users must provide their own license.  To use such a research license on Rivanna, you must create file called `ansyslmd.ini` with the format
 ```no-highlight
-ERVER=1055@myhost.mydept.virginia.edu
+SERVER=1055@myhost.mydept.virginia.edu
 ANSYSLI_SERVERS=2325@myhost.mydept.virginia.edu
 ```
 You must obtain the full names of the hosts from your group's license administrator.  The numbers in the above lines are the standard ANYSYS ports, but it is possible they may differ for some license servers; consult your license administrator for specific values. 
@@ -55,7 +55,7 @@ If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/
 FocusStealingPreventionLevel=0
 ```
 
-The workbench application, runwb2, should be executed as an interactive job through the Open OnDemand [desktop](/userinfo/rivanna/ood/desktop).  
+The workbench application, `runwb2`, should be executed in an interactive [Open OnDemand Desktop](/userinfo/rivanna/ood/desktop) session.  
 When you are assigned a node, launch the desktop, start a terminal, load the desired module and start the workbench with the `runwb2` command.
 ```
 module load ansys
