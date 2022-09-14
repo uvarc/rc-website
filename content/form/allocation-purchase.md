@@ -19,8 +19,7 @@ private = true
   <input type="hidden" id="category" name="category" value="Rivanna HPC">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Purchase" />
-  {{% form-userinfo %}}
-  <hr size=1 />
+  {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="pi-name">Name of PI <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="pi-name" name="pi-name" value="" size="60" maxlength="80" />
   </div>
@@ -94,5 +93,5 @@ function figureTotal() {
 };
 </script>
 
-<script type="text/javascript" src="/js/user-session.js"></script>
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

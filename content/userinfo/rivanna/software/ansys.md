@@ -40,14 +40,14 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 # Licensing
-UVA has a research license that covers most research needs, and ANSYS on Rivanna uses this by default.  However, some research groups have their own licenses with more capabilities.  If you need to direct ANSYS to a different license server, you must set the `ANSYSLI_SERVERS` and `ANSYSLMD_LICENSE_FILE` environment variables.  The format for these for a three-server license server cluster is
+The current general UVA license is not valid for research; users must provide their own license.  To use such a research license on Rivanna, you must create file called `ansyslmd.ini` with the format
+```no-highlight
+SERVER=1055@myhost.mydept.virginia.edu
+ANSYSLI_SERVERS=2325@myhost.mydept.virginia.edu
 ```
-export ANSYSLI_SERVERS=ansysliport@hostname1:ansysliport@hostname2:ansysliport@hostname3
-export ANSYSLMD_LICENSE_FILE=flexnetport@hostname1:flexnetport@hostname2:flexnetport@hostname3
-```
-You must obtain the values for `ansysliport` (a port number), `flexnetport` (another port number), and the names of the hosts from your group's license administrator.  If you have only a single license server host you need only list the one hostname in each variable.
+You must obtain the full names of the hosts from your group's license administrator.  The numbers in the above lines are the standard ANYSYS ports, but it is possible they may differ for some license servers; consult your license administrator for specific values. 
 
-You can add these lines to your `~/.bashrc` file or you may add them to your Slurm batch scripts.
+This file should be placed into the `/home/$USER/.ansys` folder.  Please note the period in front of `ansys`; that is required.
 
 # Using ANSYS Workbench
 If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/config/kwinrc` file and add the following line:
@@ -55,7 +55,7 @@ If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/
 FocusStealingPreventionLevel=0
 ```
 
-The workbench application, runwb2, should be executed as an interactive job through the Open OnDemand [desktop](/userinfo/rivanna/ood/desktop).  
+The workbench application, `runwb2`, should be executed in an interactive [Open OnDemand Desktop](/userinfo/rivanna/ood/desktop) session.  
 When you are assigned a node, launch the desktop, start a terminal, load the desired module and start the workbench with the `runwb2` command.
 ```
 module load ansys
@@ -79,6 +79,8 @@ You can write a batch script to run ANSYS jobs.  Please refer to ANSYS documenta
 
 You must use IntelMPI.  IBM MPI (Platform) will not work on our system.
 For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using Slurm's task launcher.  Also include the `-slurm` option.  It is generally better with ANSYS and related products to request a total memory over all processes rather than using memory per core, because a process can exceed the allowed memory per core.  You must have access to a license that supports HPC usage.  These examples also show the minimum number of command-line options; you may require more for large jobs.
+
+You must also set up _passwordless ssh_ between nodes as described [here](/userinfo/rivanna/logintools/rivanna-ssh).
 
 **Fluent Slurm Script:**
 

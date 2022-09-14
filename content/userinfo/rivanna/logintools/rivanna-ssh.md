@@ -2,7 +2,7 @@
 description = ""
 title = "`ssh` on Rivanna"
 draft = false
-date = "2022-02-14T11:45:12-05:00"
+date = "2022-08-30T11:45:12-05:00"
 tags = ["rivanna","login","hpc","ssh","cli"]
 categories = ["userinfo"]
 images = [""]
@@ -11,9 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class="lead">`ssh` is the secure shell. It is the primary application used to access Rivanna from the command line.</p>
-
-- - -
+<p class="lead">The secure shell <code>ssh</code> is the primary application used to access Rivanna from the command line.</p>
 
 # Connecting to a Remote Host
 
@@ -32,7 +30,10 @@ Mac users will need to install [XQuartz](https://xquartz.org) in order to use gr
 
 # Passwordless `ssh` using keys
 
-Sometimes you will need to enable passwordless `ssh`. We allow passwordless `ssh` to frontend nodes from UVA IP addresses.  
+Sometimes you will need to enable passwordless `ssh`. We allow passwordless `ssh` to frontend nodes from UVA IP addresses. Key 
+authentication works by matching two halves of an encrypted keypair. The "public" key is placed within your home directory on the 
+remote server and the "private" key is kept safely on your own workstation. **You should treat private keys as securely as you would
+any password.**
 
 ## Windows
 
@@ -60,7 +61,7 @@ Note the period in front of `ssh`. Then, using a text editor, open the file `aut
 
 Transfer the `id_rsa.pub` file to Rivanna with scp:
 ```
-scp ~/.ssh/id_rsa.pub mst3k@rivanna.hpc.virginia.edu:~/.ssh/mykey.pub</p>
+scp ~/.ssh/id_rsa.pub mst3k@rivanna.hpc.virginia.edu:~/.ssh/mykey.pub
 ```
 
 Log in to Rivanna through a terminal, then type
@@ -82,14 +83,14 @@ If you are permitted to use passwordless `ssh` between Rivanna compute nodes, su
 ```
 cd ~/.ssh
 ```
-Use a text editor to create a file called `config`. Place the following lines in it
+Use a text editor to create a file called `config`. Place the following lines in it:
 ```
 Host *
    ServerAliveInterval 60
 ```
 There should be one or more spaces at the beginning of the second line.
 
-    - MobaXterm users should see the [documentation](/userinfo/rivanna/logintools/mobaxterm) for instructions to enable KeepAlive.
+- MobaXterm users should see the [documentation](/userinfo/rivanna/logintools/mobaxterm) for instructions to enable KeepAlive.
 
 - When in doubt, you can obtain more information by running `ssh` with the -v (verbose) flag.
 ```
@@ -113,11 +114,4 @@ After that you must either edit the known_hosts file with a text editor to remov
 ```
 open known_hosts
 ```
-(The above command only works on Macs, not Linux.) If you prefer to delete the file, use
-```
-rm known_hosts
-```
-followed in either case by
-```
-cd 
-```
+(The above command only works on Macs, not Linux.)

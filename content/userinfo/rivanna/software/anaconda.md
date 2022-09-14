@@ -127,11 +127,7 @@ The default conda command of `conda activate <env>` is incompatible with use on 
 
 # Python and MPI
 
-{{< module-description module="mpi4py" >}} On Rivanna, we provide mpi4py libraries via dedicated modules that are built using the GCC compiler and OpenMPI libraries.
-
-{{% module-versions module="mpi4py" %}}
-
-As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install `mpi4py` using any Python/Ancaonda module via `pip install --user mpi4py`.
+As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install `mpi4py` using any Python/Anaconda module via `pip install --user mpi4py`. It is important to use a version of OpenMPI built for the cluster so that it will work correctly with Slurm.  You may find it desirable to set up a conda environment for use with mpi4py.
 
 # Example Slurm script
 ## Non-MPI
@@ -140,7 +136,7 @@ As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install 
 
 ## MPI
 
-{{< pull-code file="/static/scripts/anaconda_serial.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/anaconda_mpi.slurm" lang="no-hightlight" >}}
 
 # More Information
 Please visit the official [Anaconda website] (https://www.anaconda.com/distribution/).

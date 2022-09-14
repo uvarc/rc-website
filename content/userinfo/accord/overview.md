@@ -1,7 +1,7 @@
 +++
 title = "ACCORD"
 draft = false
-date = "2022-02-02"
+date = "2022-08-11"
 images = [""]
 author = "Staff"
 categories = ["accord"]
@@ -20,7 +20,10 @@ Welcome to ACCORD (Assuring Controls Compliance of Research Data), a web-based p
 
 ACCORD is appropriate for de-identified PII, FERPA, de-identified HIPAA, business confidential, and other types of de-identified sensitive data
 
-Thanks to funding provided by the [National Science Foundation](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1919667) (Award #: 1919667), ACCORD is a **free** service for researchers in the state of Virginia.
+Thanks to funding provided by the [National Science Foundation](https://www.nsf.gov/awardsearch/showAward?AWD_ID=1919667) (Award #: 1919667), ACCORD is available **at no cost to researchers** in the state of Virginia.
+
+***
+# Partners
 
 Listed below are our partner universities for ACCORD:
 

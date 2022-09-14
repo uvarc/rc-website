@@ -1,7 +1,14 @@
----
-ports:
-- port: 1313
-  onOpen: open-browser
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-- before: /workspace/rc-website/.gitpod/get-hugo.sh
-  command: /workspace/rc-website/.gitpod/start-hugo.sh
+#   - name: Install Hugo dependencies
+#     before: brew install hugo
+#     init: echo "Your version of Hugo is `hugo version`"
+#     command: hugo server -D -F --baseUrl $(gp url 1313) --liveReloadPort=443 --appendPort=false --bind=0.0.0.0
+  - name: Install Hugo dependencies
+    before: /bin/bash /workspace/rc-website/.gitpod/get-hugo.sh
+    init: echo "Your version of Hugo is `hugo version`"
+    command: hugo server -D -F --baseUrl $(gp url 1313) --liveReloadPort=443 --appendPort=false --bind=0.0.0.0
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 1313
+    onOpen: open-preview

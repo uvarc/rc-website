@@ -25,6 +25,9 @@ Karsten's background is in developmental cell biology, genetics and light micros
 
 ##### Selected Publications
 
+* Alam SR, Wallrabe H, Christopher KG, Siller KH, Periasamy A. Characterization of mitochondrial dysfunction due to laser damage by 2-photon FLIM microscopy. Sci Rep. 2022 Jul 13;12:11938.
+[https://doi.org/10.1038/s41598-022-15639-z](https://doi.org/10.1038/s41598-022-15639-z)
+
 * Cao R, Wallrabe H, Siller K, Periasamy A. Optimization of FLIM imaging, fitting and analysis for auto-fluorescent NAD(P)H and FAD in cells and tissues. Methods Appl Fluoresc. 2020 Feb 5;8(2):024001. [doi:10.1088/2050-6120/ab6f25](https://doi.org/10.1088/2050-6120/ab6f25).
 
 * Lauren K Rudenko LK, Wallrabe H, Periasamy A, Siller K, Svindrych Z, Seward ME, Best MN, Bloom GS. Intraneuronal Tau Misfolding Induced by Extracellular Amyloid-β Oligomers. J Alzheimers Dis. 2019;71(4):1125-1138. [doi:10.3233/JAD-190226](https://doi.org/10.3233/jad-190226).

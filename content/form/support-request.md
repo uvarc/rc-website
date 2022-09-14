@@ -1,5 +1,5 @@
 +++
-date = "2020-12-10T23:59:16-05:00"
+date = "2022-08-16T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -17,7 +17,6 @@ private = true
 </div>
 <div>
 {{% form-userinfo %}}
-  <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
@@ -95,5 +94,5 @@ if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
 };
 </script>
-<script type="text/javascript" src="/js/user-session.min.js"></script>
+<script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

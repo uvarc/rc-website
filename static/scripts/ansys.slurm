@@ -11,5 +11,6 @@
 mkdir /scratch/$USER/myCFXrun
 cd /scratch/$USER/myCFXrun
 
-module load ansys/19.2
+module load ansys/2021r1
+
 ansys192 -np ${SLURM_CPUS_PER_TASK} -def /scratch/yourpath/yourdef.def -ini-file/scratch/yourpath/yourresfile.res

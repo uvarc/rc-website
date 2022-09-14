@@ -53,6 +53,14 @@ timeout = "60000"
   # rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
   rivannaNodesUrl = "https://s3.amazonaws.com/uvarc-resources/website/nodeinfo.csv"
   # rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
+  #eventsUrl = "https://s3.amazonaws.com/uvarc-resources/website/events.csv"
+  eventsUrl = "http://apidata.uvarc.io/events.csv"
+
+[params.metrics]
+  coreHours = "6410000"
+  storage = "8.254"
+  newAccounts = "79"
+  userAccounts = "545"
 
 [params.rivanna]
   totalNodes = "575"

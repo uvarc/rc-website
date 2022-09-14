@@ -8,6 +8,8 @@ author = "Staff"
 
 ***
 
+<a href="../overview/" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
+
 1.  What is the link to the accord portal?
 
 	+ {{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://accord.uvarc.io/" >}}
