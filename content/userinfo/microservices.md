@@ -178,6 +178,7 @@ Microservices may not run efficiently for all use cases. Some scenarios that can
   <li>Large (over 100GB) database collections.
   <li>Services (apart from web-based services over HTTP/HTTPS) that need to be accessed from outside the HPC network.
   <li>Services that require licensing, such as Microsoft SQL Server, MATLAB, etc.
+  <li>Services that require GPU to run.
 </ul>
 </div>
 
