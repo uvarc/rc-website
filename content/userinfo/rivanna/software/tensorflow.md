@@ -141,3 +141,4 @@ Yes, but the TF/Python/CUDA versions have to be very specific. We recommend crea
     ```
 
 If the versions are incompatible, either the installation will fail or TF will not be able to detect the GPU at runtime.
+

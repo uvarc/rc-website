@@ -125,3 +125,9 @@ The following user directories are overlayed onto each container by default on R
 + /project
 
 Due to the overlay, these directories are by default the same inside and outside the container with the same read, write, and execute permissions. **This means that file modifications in these directories (e.g. in /home) via processes running inside the container are persistent even after the container instance exits.** The `/nv` and `/project` directories refer to leased storage locations that may not be available to all users.
+
+
+
+
+
+
