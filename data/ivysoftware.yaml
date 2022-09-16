@@ -415,3 +415,19 @@ software:
        installation: optional #preinstalled,none
    category: [Engineering]
    description: SolidWorks is a solid modeling computer-aided design and computer-aided engineering computer program.
+ - name: Madymo
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none
+   category: [Engineering]
+   description: Madymo is the worldwide standard software for analyzing and optimizing vehicle safety designs and consists of a unique combination of MB, FE, and CFD technologies.
+ - name: LS-DYNA
+   versions:
+     - version: ""
+       status: approved #pending,rejected
+       platforms: [Linux,Windows]
+       installation: optional #preinstalled,none
+   category: [Engineering]
+   description: LS-DYNA is a general purpose finite element program capable of simulating complex real world problems. It is used by the automobile, aerospace, construction, military, manufacturing, and bioengineering industries.

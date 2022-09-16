@@ -157,3 +157,4 @@ The Python/CUDA/TensorFlow versions have to be very specific.
     ```
 
 If the versions are incompatible, either the installation will fail or TF will not be able to detect the GPU at runtime.
+
