@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2022-06-04T23:59:16-05:00"
+date = "2022-9-04T23:59:16-05:00"
 draft = false
 tags = ["compute","cloud","containers","hybrid","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo"]
@@ -29,7 +29,10 @@ migrated over the Summer and Fall of 2022.</p>
 {{< /highlight >}}
 
 # Microservices at UVA
-Research Computing runs microservices in a clustered orchestration environment that automates the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. It also has over 300TB of cluster storage and can attach to [project](/userinfo/storage/non-sensitive-data/#project-storage) storage.
+Research Computing runs microservices in a clustered orchestration environment that automates the deployment and 
+management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to 
+running containerized services. It also has over 300TB of cluster storage and can attach to 
+[project](/userinfo/storage/) and [standard](/userinfo/storage/) storage.
 
 {{% highlight-danger %}}
 UVA's microservices platform is hosted in the standard security zone. It is suitable for processing public or internal use data. Sensitive or highly sensitive data are not permitted on this platform. 
@@ -69,8 +72,6 @@ Here's a talk given by Martin Fowler explaining the idea:
 # Uses for Research
 
 <p class="lead">Microservices are typically used in computational research in one of two ways:</p>
-
-
 
 <ol>
   <li class=lead><b>Standalone microservices or small stacks</b> - Such as interactive or data-driven web applications and APIs, small databases (<100GB), or scheduled task containers. Some examples:</li>
