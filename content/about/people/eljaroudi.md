@@ -2,7 +2,7 @@
 draft = false
 date = "2022-08-20T11:10:10-05:00"
 title = "Nadim El-Jaroudi"
-job_title = "Computer Engineer"
+job_title = "Computer Scientist"
 lastname = "eljaroudi"
 email = "nje2n@virginia.edu"
 github = "uvamobiledev"

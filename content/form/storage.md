@@ -88,22 +88,6 @@ private = true
     <label class="control-label" for="project-title">Project Title </label>
     <input class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
   </div>
-  <div class="form-item form-group form-item form-type-textarea form-group"> 
-    <label class="control-label" for="project-summary">Project Summary </label>
-    <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="5"></textarea>
-    </div>
-  </div>
-  <div style="border:solid 1px #ccc;padding:2rem;margin-top:2rem;margin-bottom:2rem;background-color:#eee;">
-    <h5>Grant Summary</h5>
-    <div class="form-item form-type-textarea form-group"> 
-      <label class="control-label" for="grant-agency">Grant Agency </label>
-      <input class="form-control form-text required" type="text" id="grant-agency" name="grant-agency" value="" size="200" maxlength="200" />
-    </div>
-    <div class="form-item form-type-textarea form-group">
-      <label class="control-label" for="grant-number">Grant Number </label>
-      <input class="form-control form-text required" type="text" id="grant-number" name="grant-number" value="" size="200" maxlength="200" />
-    </div>
-  </div>
   {{% billing-fdm %}}
   <div class="form-check form-item form-group" style="margin-top:1rem;">
     <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
