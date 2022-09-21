@@ -23,7 +23,7 @@ Globus allows you to transfer data to and from systems such as:
 - Lab / departmental storage
 - Tape archives
 - Cloud storage
-- Off-campus resources (XSEDE, National Labs)
+- Off-campus resources (ACCESS, National Labs)
 
 Globus can help you share research data with colleagues and co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.
 
