@@ -6,11 +6,19 @@ theme = "rc-bootstrap-v4"
 copyright = " {year} "
 paginate = 20
 disableKinds= ["RSS","404"]
-ignoreCache = true
+# ignoreCache = true
 # date_format = "January 2, 2006"
 summaryLength = 100
 timeout = "60000"
 
+[caches]
+  [caches.getjson]
+    dir = ":cacheDir/:project"
+    maxAge = "10s"
+  [caches.getcsv]
+    dir = ':cacheDir/:project'
+    maxAge = "10s"
+    
 [markup]
   [markup.tableOfContents]
     endLevel = 3
