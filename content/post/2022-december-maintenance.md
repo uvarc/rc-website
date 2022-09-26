@@ -51,6 +51,7 @@ All systems are expected to return to service by **6 a.m. on , **.
     - eccodes/2.26.0 - under `gcc/9.2.0 openmpi/3.1.6`
     - openfoam/v2206 - under `goolf/9.2.0_3.1.6`
     - ruby/3.1.2 - under `gcc/9.2.0`
+    - kraken2/2.1.2 - from `kraken/0.10.5`; note module name change
 
     Default version changes:
     - alphafold/2.2.0 &rarr; 2.2.2
@@ -65,3 +66,4 @@ All systems are expected to return to service by **6 a.m. on , **.
     - crossftp/1.99.9
     - gawk/5.1.1
     - isaacgym/1.0.preview4
+    - rnaeditor/1.1a
