@@ -21,11 +21,6 @@ categories = ["feature"]
 
 - - -
 
-## User Services Staff (1 temporary, full-time position)
-
-- [Research Computing Associate/Computational Scientist](https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs/job/Charlottesville-VA/Temporary-Computational-Scientist-and-System-Engineer-Pool_R0039912)
-
-
 
 
 
