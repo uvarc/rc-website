@@ -59,6 +59,7 @@ All systems are expected to return to service by **6 a.m. on , **.
     - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
     - pytorch/1.10.0 &rarr; 1.12.0
     - qiime2/2020.8 &rarr; 2022.2
+    - tensorflow/2.7.0 &rarr; 2.10.0
 
 3. **New** modules:
     - crossftp/1.99.9
