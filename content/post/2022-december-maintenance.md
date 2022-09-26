@@ -58,7 +58,7 @@ All systems are expected to return to service by **6 a.m. on , **.
     - cellranger/5.0.0 &rarr; 7.0.1
     - cmake/3.16.5 &rarr; 3.23.3
     - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
-    - pytorch/1.10.0 &rarr; 1.12.0
+    - pytorch/1.10.0 &rarr; 1.12.0 (includes PyTorch Geometric)
     - qiime2/2020.8 &rarr; 2022.2
     - tensorflow/2.7.0 &rarr; 2.10.0
 
