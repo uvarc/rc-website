@@ -19,9 +19,9 @@ To transfer data from /oldscratch to local storage like your laptop or lab/depar
 
 {{% /callout %}}
 
-## Transferring Data
+# Transferring Data
 
-### Selecting data from old scratch
+## Selecting data from old scratch
 
 1. Go to https://app.globus.org/file-manager.
 
@@ -43,7 +43,7 @@ To transfer data from /oldscratch to local storage like your laptop or lab/depar
 
     <img src="/images/globus-scratch-4-select-files.png">
 
-### Select destination for files on /scratch
+## Select destination for files on /scratch
 
 7. Click "Transfer or Sync to..." in the menu to open up the second collection panel. You can also do this by clicking the two-panel icon in the Panels menu in the top right-hand corner of the app.
 
@@ -59,7 +59,7 @@ To transfer data from /oldscratch to local storage like your laptop or lab/depar
 
 11. If you have already created new scratch folders you can double-click them to select them as a destination for your old scratch files. If you want the files in the top level of your scratch folder then do not select anything.
 
-### Transfer
+## Transfer
 
 12. Click the highlighted "Start" button to begin the transfer. This should be the "Start" button on the /oldscratch Panel.
 
