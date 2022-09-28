@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Microservice Deployments"
-date = "2022-06-14T23:59:16-05:00"
+date = "2022-09-14T23:59:16-05:00"
 draft = false
 tags = ["compute","containers","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo"]
@@ -12,25 +12,24 @@ images = [""]
 
 <p class=lead>
   <img src="/images/logos/k8s-icon.png" style="" alt="Kubernetes" align="right" />
-  Kubernetes is a container orchestrator for both short-running (such as workflow/pipeline stages) and long-running (such as web and database 
-  servers) jobs. Containerized applications running in the UVARC Kubernetes cluster are visible to UVA Research networks (and therefore
-  from Rivanna, Skyline, etc.). Web applications can be made visible to the UVA campus or the public Internet.
+  Kubernetes is a container orchestrator for both short-running (such as workflow/pipeline stages) jobs and long-running (such as web and 
+  database servers) services. Containerized applications running in the UVARC Kubernetes cluster are visible to UVA Research networks (and 
+  therefore from Rivanna, Skyline, etc.). Web applications can be made visible to the UVA campus or the public Internet.
 </p>
-
 
 # Kubernetes
 
-Research Computing runs microservices in a Kubernetes cluster that automates the deployment and management of many containers easy and 
-scalable. This cluster will have over 24 instances, >2000 cores and >2TB of memory allocated to running containerized services. It will also have over 
-300TB of cluster storage and can attach to both [project](/userinfo/storage/#public-internal-use-data-storage) and 
+Research Computing runs microservices in a Kubernetes cluster that automates the deployment of many containers, making their
+management easy and scalable. This cluster will eventually consist of several dozen instances, >2000 cores and >2TB of memory allocated to 
+running containerized services. It will also have over 300TB of cluster storage and can attach to both [project](/userinfo/storage/#public-internal-use-data-storage) and 
 [standard](/userinfo/storage/#public-internal-use-data-storage) storage.
 
 {{% highlight-danger %}}
-The Kubernetes research cluster is hosted in the standard security zone. It is suitable for processing public or internal use data. Sensitive or highly sensitive data are not permitted on this platform. 
+The research Kubernetes cluster is hosted in the standard security zone. It is suitable for processing standard sensitivity or internal 
+use data. Highly sensitive data (PHI, FERPA, etc.) are not permitted on this platform. 
 {{% /highlight-danger %}}
 
 <img src="/images/microservices/microservice-cluster.jpg" alt="Microservices Architecture" style="" />
-
 
 # Design Principles
 
@@ -42,8 +41,8 @@ iterate on their application and build+test their containers, deployments themse
 This model has some distinct advantages for both research users and engineers:
 
 - Deployments should be defined in code. Hand-built deployments are as brittle and unreproducable as hand-made Docker containers. This helps maintain the state of applications as well as for disaster recovery.
-- We no longer grant users command-line access to the K8S API. <code>kubectl</code> and <code>helm</code> require the overhead of user authentication, roles, permissions, and network connectivity to the control plane that are unnecessary.
-- Permissions in the GitOps model can be granted within the Git repository, not at the cluster level.
+- We do not grant users command-line access to the K8S API. <code>kubectl</code> and <code>helm</code> require the overhead of user authentication, roles, permissions, and network connectivity to the control plane that are unnecessary.
+- Permissions in the GitOps model are granted via the deployment's Git repository, not at the cluster level.
 
 
 # Deployment Guidelines
@@ -84,13 +83,29 @@ Here's a brief explanation of ArgoCD and the entire CI/CD lifecycle:
 
 # Launching Your Application
 
+Service launches generally require the creation of a namespace if users do not already have one. Namespaces serve as logical 
+and organizational dividers, keeping the management of the services of User A isolated from those of User B. Namespaces also
+allow administrators to monitor or limit the maximum consumable resources (i.e. CPU and memory) for all deployments within the
+namespace. This ensures that no one namespace can consume all the cluster resources, and limits a user from inspecting or 
+modifying other user deployments.
 
 
 # Division of Responsibilities
 
-What we take care of
+What we take care of:
+
+- Underlying physical infrastructure: servers, networks, cabling, power, cooling.
+- Underlying hosts: operating system, patching, mounts to cluster/remote storage.
+- Kubernetes API: core k8s services across the cluster, high availability.
+- Kubernetes Ingress: the ability to map traffic to pods. SSL as necessary.
+- Observability Tools: K8S Dashboard, ArgoCD Dashboard, Lens GUI to monitor and inspect your deployments.
+- Deployment templates: to help you get started.
 
 What you take care of
+
+- Creation and maintenance of container images, if necessary.
+- Maintenance of your deployment(s).
+- Debugging as necessary.
 
 - - -
 

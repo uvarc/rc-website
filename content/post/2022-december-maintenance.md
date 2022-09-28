@@ -51,16 +51,19 @@ All systems are expected to return to service by **6 a.m. on , **.
     - eccodes/2.26.0 - under `gcc/9.2.0 openmpi/3.1.6`
     - openfoam/v2206 - under `goolf/9.2.0_3.1.6`
     - ruby/3.1.2 - under `gcc/9.2.0`
+    - kraken2/2.1.2 - from `kraken/0.10.5`; note module name change
 
     Default version changes:
     - alphafold/2.2.0 &rarr; 2.2.2
     - cellranger/5.0.0 &rarr; 7.0.1
     - cmake/3.16.5 &rarr; 3.23.3
     - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
-    - pytorch/1.10.0 &rarr; 1.12.0
+    - pytorch/1.10.0 &rarr; 1.12.0 (includes PyTorch Geometric)
     - qiime2/2020.8 &rarr; 2022.2
+    - tensorflow/2.7.0 &rarr; 2.10.0
 
 3. **New** modules:
     - crossftp/1.99.9
     - gawk/5.1.1
     - isaacgym/1.0.preview4
+    - rnaeditor/1.1a
