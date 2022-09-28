@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2022-09-27T10:18:25-05:00"
+date = "2022-09-28T10:18:25-05:00"
 title = "Scratch Recovery with Globus"
 draft = false
 tags = ["rivanna","scratch","globus","data-transfer"]
@@ -11,7 +11,7 @@ categories = ["feature"]
 
 Globus is a simple, reliable, and fast way to access and move your research data between systems. Researchers can transfer data from their old scratch directories to new scratch via a single web interface - no software download or installation is necessary.
 
-**Old scratch (/oldscratch) directories are now read-only. You will not be able to write new files to /oldscratch or copy files from /oldscratch to /scratch.**
+**Old scratch (/oldscratch) directories are now read-only. You will not be able to write new files to /oldscratch or copy files from /scratch to /oldscratch.**
 
 {{% callout %}}
 
