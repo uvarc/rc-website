@@ -25,6 +25,8 @@ Users who need help using Globus to transfer their /scratch files are invited to
 
 - [Friday, October 7 (10 to 11 a.m.)](https://virginia.zoom.us/j/97500880191?pwd=cXUxREx5eEFqVUtGNnF5ZjBHMVgvdz09)
 
+**The old scratch system will be permanently retired on October 31.**
+
 {{% /callout %}}
 
 # Transferring Data
