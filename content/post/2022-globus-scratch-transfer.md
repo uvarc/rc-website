@@ -15,7 +15,15 @@ Globus is a simple, reliable, and fast way to access and move your research data
 
 {{% callout %}}
 
-To transfer data from /oldscratch to local storage like your laptop or lab/departmental storage, you will need to install Globus on your workstation. Please see our <a href="/userinfo/globus/">documentation</a> for Globus installation and data transfer between systems.
+Users who need help using Globus to transfer their /scratch files are invited to attend one of the following online tutorial sessions:
+
+- [Thursday, September 29 (2 to 4 p.m.)](https://virginia.zoom.us/j/97870810412?pwd=WXd1WVUxbGNYbFhUMjVGS0Q1ajVkUT09)
+
+- [Friday, September 30 (10 to 11 a.m.)](https://virginia.zoom.us/j/97500880191?pwd=cXUxREx5eEFqVUtGNnF5ZjBHMVgvdz09)
+
+- [Monday, October 3 (10 to 11 a.m.)](https://virginia.zoom.us/j/97500880191?pwd=cXUxREx5eEFqVUtGNnF5ZjBHMVgvdz09)
+
+- [Friday, October 7 (10 to 11 a.m.)](https://virginia.zoom.us/j/97500880191?pwd=cXUxREx5eEFqVUtGNnF5ZjBHMVgvdz09)
 
 {{% /callout %}}
 
@@ -66,3 +74,9 @@ To transfer data from /oldscratch to local storage like your laptop or lab/depar
     <img src="/images/globus-scratch-7-start-transfer.png">
 
 13. Your transfer will begin. You can monitor your transfer in the "Activity" tab of the Globus app. You will receive an email when the transfer is complete. 
+
+{{% callout %}}
+
+To transfer data from /oldscratch to local storage like your laptop or lab/departmental storage, you will need to install Globus on your workstation. Please see our <a href="/userinfo/globus/">documentation</a> for Globus installation and data transfer between systems.
+
+{{% /callout %}}
