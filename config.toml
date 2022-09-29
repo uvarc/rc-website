@@ -65,10 +65,10 @@ timeout = "60000"
   eventsUrl = "http://apidata.uvarc.io/events.csv"
 
 [params.metrics]
-  coreHours = "6410000"
+  coreHours = "5290000"
   storage = "8.254"
-  newAccounts = "79"
-  userAccounts = "545"
+  newAccounts = "76"
+  userAccounts = "745"
 
 [params.rivanna]
   totalNodes = "575"
