@@ -1,5 +1,5 @@
 +++
-date = "2016-12-31T23:59:16-05:00"
+date = "2022-10-02T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -33,12 +33,12 @@ private = true
   <div class="form-item form-type-textfield form-group"> <label class="control-label" for="department">Department <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="128" />
   </div>
-  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account (lowercase only, no spaces) <span class="form-required" title="This field is required.">*</span></label>
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a" target="_new">create his/her MyGroups group</a>.</span></label>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
   <div class="col form-item form-group">
      <div class="alert alert-warning">
-        Instructors are responsible for updating the class roster for the chosen account through the <a href="https://mygroups.virginia.edu/">ITS MyGroups portal</a>.
+        Instructors are responsible for creating the class MyGroups group and updating the roster for the chosen account through the <a href="https://mygroups.virginia.edu/">ITS MyGroups portal</a>.
      </div>
   </div>
   <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="new-or-renewal">New or Renewal <span class="form-required" title="This field is required.">*</span></label>
