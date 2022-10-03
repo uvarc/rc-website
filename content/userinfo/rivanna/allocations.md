@@ -2,7 +2,7 @@
 description = ""
 title = "Allocations"
 draft = false
-date = "2019-07-28T17:45:12-05:00"
+date = "2022-10-02T17:45:12-05:00"
 tags = ["hpc","rivanna","supercomputer","allocations"]
 categories = ["userinfo"]
 images = [""]
@@ -27,7 +27,7 @@ var user_token = getCookie("__user_token");
 
 University of Virginia tenure stream and academic general faculty, research faculty, research scientists, and postdoctoral associates may request any type of allocation. The different types of allocations are explained below. UVA graduate and undergraduate students are not permitted to request allocations—this must be done by their faculty advisor[s]. Researchers with sponsored accounts are also prohibited from requesting allocations, but they may use Rivanna as members of a MyGroups account controlled by a PI. UVA staff may request allocations, but are required to provide a detailed project proposal with each request.
 
-RC staff will create a **MyGroups** account for the faculty or postdoc Principal Investigator (PI) once he/she has submitted an allocation request and will then turn over control of the MyGroups account to the PI. The PI may designate one or more group administrators but must remain a member of the group. Collaborators with UVA Eservices accounts, regardless of status, can be added to the MyGroups group once it has been created. (Collaborators outside of UVA must request a temporary, sponsored Eservices account.) MyGroups group names should consist of lowercase letters, digits, or underscores only and must begin with a letter. Please do not use spaces in the group name.
+Each PI should create his/her own MyGroups group using the <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a" target="_new">ITS MyGroups Management Service</a>. The PI may designate one or more group administrators but must remain a member of the group. Collaborators with UVA Eservices accounts, regardless of status, can be added to the MyGroups group once it has been created. (Collaborators outside of UVA must request a temporary, sponsored Eservices account.) MyGroups group names should consist of lowercase letters, digits, or underscores only and must begin with a letter. Please do not use spaces in the group name.
 
 Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When users are added or deleted, accounts are automatically created.
 
