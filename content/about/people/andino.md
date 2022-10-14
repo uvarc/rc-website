@@ -9,7 +9,7 @@ biolink = true
 email = "gka6a@virginia.edu"
 description = ""
 author = "UVARC Staff"
-images = "/images/profiles/profile_gladys_andino.jpg"
+image = "/images/profiles/profile_gladys_andino.jpg"
 subjects = [
   "hpc",
   "bioinformatics",
