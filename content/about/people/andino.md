@@ -5,17 +5,16 @@ title = "Gladys Andino, PhD"
 job_title = "Senior Computational Scientist"
 lastname = "Andino"
 type = "people"
-biolink = false
+biolink = true
+email = "gka6a@virginia.edu"
 description = ""
 author = "UVARC Staff"
-images = [
-  ""
-]
+images = "/images/profiles/profile_gladys_andino.jpg"
 subjects = [
   "hpc",
+  "bioinformatics",
   "rivanna",
-  "parallel-computing",
-  "bioinformatics"
+  "VA-WHPC"
 ]
 +++
 
