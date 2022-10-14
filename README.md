@@ -159,7 +159,7 @@ the production website requires a PULL REQUEST.
 
 ### Events Data
 
-The "Training" widget and workshops page are both fed from the /data/events.csv file. Add new events at the bottom of the file. **Please do not remove past events**. Only upcoming events will be displayed on the website.
+The "Training" widget and workshops page are both fed from the `/static/data/events.csv file`. Add new events at the bottom of the file. **Please do not remove past events**. Only upcoming events will be displayed on the website.
 
 ### Automated Builds
 
