@@ -19,4 +19,4 @@ subjects = [
 ]
 +++
 
-Christina collaborates with researchers on image processing and imaging data management projects. Prior to joining Research Computing, Christina performed brain imaging research at the UVa Department of Radiology and Medical Imaging. She specializes in Matlab programming and is interested in machine learning projects.
+Christina collaborates with researchers on image processing and imaging data management projects. Prior to joining Research Computing, Christina performed brain imaging research at the UVa Department of Radiology and Medical Imaging. She specializes in Matlab programming and is interested in machine learning projects and app development.

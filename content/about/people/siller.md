@@ -14,7 +14,6 @@ subjects = [
   "hpc",
   "rivanna",
   "image-processing",
-  "omero",
   "python",
   "java",
   "containers"
