@@ -42,7 +42,7 @@ This opens a full web-based IDE for updating content on the `staging` branch, re
 
 ### Local Install
 
-* [Install](https://gohugo.io/overview/installing/) the HUGO binary on your local computer. For more information, see the Hugo GitHub repo: https://github.com/spf13/hugo
+* [Install](https://gohugo.io/overview/installing/) the HUGO binary on your local computer. Download the latest extended version https://github.com/gohugoio/hugo/releases.
 * Clone this website repository: `git clone --branch staging git@github.com:uvarc/rc-website.git`.
 
 - - -
@@ -51,7 +51,7 @@ This opens a full web-based IDE for updating content on the `staging` branch, re
 
 The `TL;DR` version:
 
-1. Make your changes to the `staging` branch and be sure to preview locally before you push back to GitHub.
+1. Make your changes to the `staging` branch and be sure to preview locally before you push back to GitHub. You cannot push local changes to the main branch directly, it is protected (see **Pushing to Production** below). 
 2. All website pages are stored within `/content/`
 3. You can use Markdown or HTML (or a mix of both) within pages.
 
@@ -159,8 +159,7 @@ the production website requires a PULL REQUEST.
 
 ### Events Data
 
-The "Training" widget and workshops page are both fed from the `events.csv` hosted in Rivanna. These events are updated in the site 
-whenever it is published (by hand) or every 24 hours by a cron job.
+The "Training" widget and workshops page are both fed from the `/static/data/events.csv file`. Add new events at the bottom of the file. **Please do not remove past events**. Only upcoming events will be displayed on the website.
 
 ### Automated Builds
 
