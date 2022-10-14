@@ -10,7 +10,7 @@ categories = ["feature"]
 +++
 
 Globus is a simple, reliable, and fast way to access and move your research data between systems. Researchers can transfer data from their old scratch directories to new scratch via a single web interface - no software download or installation is necessary.
-
+<!--more-->
 **Old scratch (/oldscratch) directories are now read-only. You will not be able to write new files to /oldscratch or copy files from /scratch to /oldscratch.**
 
 {{% callout %}}
