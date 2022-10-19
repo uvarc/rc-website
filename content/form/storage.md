@@ -64,7 +64,7 @@ private = true
         <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
       </div>
     </div>
-    <div class="alert alert-danger" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
+    <div class="alert alert-primary" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
       <p>None of these storage options offer data backups or replication.</p>
     </div>
 
