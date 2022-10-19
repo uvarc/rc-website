@@ -27,3 +27,15 @@ requesting an installation.
 {{% /callout %}}
 
 You may also request a Stata license from the [UVa Software Gateway](http://its.virginia.edu/software/displayPackages.php?tId=18)
+
+## Installing programs from SSC
+
+Please first run the following commands to use the proxy:
+
+```
+set httpproxy on
+set httpproxyhost "figgis-s.hpc.virginia.edu"
+set httpproxyport 8080
+```
+
+You can now install new packages with the `ssc install` command.
