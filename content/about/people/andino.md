@@ -1,21 +1,20 @@
 +++
 draft = false
 date = "2019-05-17T15:25:10-05:00"
-title = "Gladys Andino Bautista, PhD"
+title = "Gladys Andino, PhD"
 job_title = "Senior Computational Scientist"
-lastname = "bautista"
+lastname = "Andino"
 type = "people"
-biolink = false
+biolink = true
+email = "gka6a@virginia.edu"
 description = ""
 author = "UVARC Staff"
-images = [
-  ""
-]
+image = "/images/profiles/profile_gladys_andino.jpg"
 subjects = [
   "hpc",
+  "bioinformatics",
   "rivanna",
-  "parallel-computing",
-  "bioinformatics"
+  "VA-WHPC"
 ]
 +++
 
