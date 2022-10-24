@@ -15,8 +15,8 @@ subjects = [
   "data-science",
   "biomedical-imaging",
   "image-processing",
-  "pythons",
+  "python",
   "research",
-  "machine-learning",
 ]
 +++
+
