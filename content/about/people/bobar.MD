@@ -5,10 +5,10 @@ title = "Marcus Bobar"
 job_title = "Computational Scientist"
 lastname = "bobar"
 type = "people"
-biolink = true
+biolink = false
 email = "mb5wt@virginia.edu"
 author = "UVARC Staff"
-image = "https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-2.png"
+images = [""]
 subjects = [
   "data-science",
   "biomedical-imaging",

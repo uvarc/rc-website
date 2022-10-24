@@ -127,12 +127,6 @@ categories = [
   </div><!-- /.col-lg-6 -->
 
   <div class="col-lg-6">
-    <img class="rounded-circle" src="https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-2.png" alt="Marcus Bobar" width="140" height="140">
-    <h2>Marcus Bobar</h2>
-    <p><b>Computational Scientist</b></p>
-    {{< expertise subjects="data-science,biomedical-imaging,image-processing,python,research,machine-learning" >}}
-  </div><!-- /.col-lg-6 -->
-  <div class="col-lg-6">
     <img class="rounded-circle" src="/images/profile_alden_stradling.png" alt="Alden Stradling" width="140" height="140">
     <h2>Alden Stradling, PhD</h2>
     <p><b>HPC Systems Specialist</b></p>
