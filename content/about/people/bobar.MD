@@ -12,8 +12,11 @@ images = [
   ""
 ]
 subjects = [
-  "hpc",
-  "rivanna",
-  "parallel-computing"
+  "data-science",
+  "biomedical-imaging",
+  "image-processing",
+  "python",
+  "research",
+  "machine-learning",
 ]
 +++
