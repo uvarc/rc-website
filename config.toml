@@ -10,6 +10,7 @@ disableKinds= ["RSS","404"]
 # date_format = "January 2, 2006"
 summaryLength = 100
 timeout = "60000"
+ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
 
 [caches]
   [caches.getjson]

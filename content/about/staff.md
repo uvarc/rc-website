@@ -4,7 +4,7 @@ tags = [
   "staff",
   "uvarc"
 ]
-draft = true
+draft = false
 date = "2022-07-17T15:25:10-05:00"
 title = "Staff"
 type = "people"

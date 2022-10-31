@@ -153,8 +153,8 @@ A high performance computing cluster is typically made up of at least four servi
       <div class="card-body" style="padding:1rem;">
         Rivanna is a managed resource; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna is Slurm.  Slurm refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
         <p>
-            {{< queues >}}
-		</p>
+          {{< queues >}}
+        </p>
       </div>
     </div>
   </div>
@@ -168,7 +168,7 @@ A high performance computing cluster is typically made up of at least four servi
     </div>
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body" style="padding:1rem;">
-		{{< rivanna-specs >}}
+        {{< rivanna-specs >}}
       </div>
     </div>
   </div>
@@ -235,3 +235,9 @@ Excessive consumption of licenses for commercial software, either in time or num
 Any violation of the University’s security policies, or any behavior that is considered criminal in nature or a legal threat to the University, will result in the immediate termination of access privileges without warning.
 
 <br clear=all />
+
+<script>
+if (window.location.search == '?showHardware') {
+  $('#collapseOne').addClass('show');
+}
+</script>
