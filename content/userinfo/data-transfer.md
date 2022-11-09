@@ -113,7 +113,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td align="center" valign="top">
 				<i class="fas fa-lock fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br>
-				<b>Storage for Highly Sensitive Data</b>
+				<b>Storage for Sensitive and Highly Sensitive Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
