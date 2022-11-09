@@ -49,7 +49,7 @@ All systems are expected to return to service by **6 a.m. on , **.
 
 2. **Upgrades**:
     - eccodes/2.26.0 - under `gcc/9.2.0 openmpi/3.1.6`
-    - hic-pro/3.1.0 - under `singularity/3.7.1`
+    - hic-pro/3.1.0
     - openfoam/v2206 - under `goolf/9.2.0_3.1.6`
     - ruby/3.1.2 - under `gcc/9.2.0`
     - kraken2/2.1.2 - from `kraken/0.10.5`; note module name change
