@@ -33,6 +33,18 @@ images = [""]
 
 # Public & Internal Use Data Storage
 
+**Public data** are intentionally made available to the public. Examples of public data in research computing include: 
+
+- Data intended for a public website
+- Datasets downloaded obtained from a publicly available source
+- Open source code
+
+**Internal use data** are classified as public records available to anyone in accordance with the Virginia Freedom of Information Act (FOIA) but are not intentionally made public. Examples of internal use data within a research computing context include but are not limited to: 
+
+- Files collected or generated from experiments that contain no personally identifying information (PII) or otherwise protected information
+- Models, scripts, and logfiles
+- Preliminary analyses
+
 <table class="table table-striped table-sm" style="font-size:90%;">
   <thead class="thead-dark">
   <tr>
@@ -83,6 +95,19 @@ images = [""]
 - - -
 
 # Sensitive & Highly Sensitive Data Storage
+
+**Highly sensitive data** are data that require restrictions on access under the law or that may be protected from release in accordance with applicable law or regulation. Highly sensitive data (HSD) currently include personal information that can lead to identity theft. HSD also include health information that reveals an individual's health condition and/or medical history. Examples of HSD include, but are not limited to: 
+
+- Personally identifying information (PII) such as social security number, passport number, driver's license number, military identification number
+- Information defined by the Health Insurance Portability and Accountability Act (HIPAA) as protected health information (PHI)
+- Cardholder data (CHD) such as credit card numbers, primary cardholder account numbers, cardholder names, expiration date, and/or service code
+
+**Sensitive data** is the default classification for all data that is not explicitly defined as highly sensitive data, may be held from release under FOIA, or that is not intended to be made publicly available. Examples of sensitive data include:
+
+- University ID numbers
+- FERPA-protected student information not covered by the definition of highly sensitive data
+- Personnel and financial information not covered by the definition of highly sensitive data, but not intended to be public
+- Any information that doesn't fit into the other three categories
 
 <table class="table table-striped table-sm" style="font-size:90%;">
   <thead class="thead-dark">
