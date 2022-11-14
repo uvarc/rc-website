@@ -19,8 +19,8 @@ draft = false
 
 # Common Scenarios
 
-* Transfer public or not-highly sensitive data between local workstation/laptop and UVA storage
-* Transfer highly-sensitive data to Ivy storage
+* Transfer public or internal use data between local workstation/laptop and UVA storage
+* Transfer sensitive or highly sensitive data to Ivy storage
 * Transfer data between external institutions/supercomputing centers and UVA 
 * [Transfer between Rivanna and Cloud storage](#transfering-data-to-cloud-storage)
 
@@ -48,7 +48,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td align="center" valign="top">
 				<i class="fas fa-database fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br>
-				<b>Storage for Public and Moderatively Sensitive Data</b>
+				<b>Storage for Public and Internal Use Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
@@ -70,9 +70,9 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td>
 				<p align="center"><b>Remote System</b></p>
 				<ul>
-					<li><a href="/userinfo/storage/non-sensitive-data/#home/">/home on Rivanna</a></li>
-					<li><a href="/userinfo/storage/non-sensitive-data/#scratch/">/scratch on Rivanna</a></li>
-					<li><a href="/userinfo/storage/non-sensitive-data/#project/">Research Project Storage</a></li>
+					<li>/home on Rivanna</li>
+					<li>/scratch on Rivanna</li>
+					<li>Research Project Storage</li>
 					<li><a href="/userinfo/storage/research-standard/">Research Standard Storage</a></li>
 				</ul>
 			</td>
@@ -113,7 +113,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td align="center" valign="top">
 				<i class="fas fa-lock fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br>
-				<b>Storage for Highly Sensitive Data</b>
+				<b>Storage for Sensitive and Highly Sensitive Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
@@ -195,9 +195,9 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td>
 				<p align="center"><b>Destinations</b></p>
 				<ul>
-					<li><a href="/userinfo/storage/non-sensitive-data/#home/">/home</a></li>
-					<li><a href="/userinfo/storage/non-sensitive-data/#scratch/">/scratch</a></li>
-					<li><a href="/userinfo/storage/non-sensitive-data/#project/">Research Project Storage</a></li>
+					<li>/home</li>
+					<li>/scratch</li>
+					<li>Research Project Storage</li>
 					<li><a href="/userinfo/storage/research-standard/">Research Standard Storage</a></li>
 					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage/">Ivy Central Storage</a></li>
 				</ul>
@@ -251,9 +251,9 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<p align="center"><b>Sources</b></p>
 				Any institution that uses Globus, such as:
 				<ul>
-					<li><a href="/userinfo/storage/non-sensitive-data/#home/">/home</a></li>
-					<li><a href="/userinfo/storage/non-sensitive-data/#scratch/">/scratch</a></li>
-					<li><a href="/userinfo/storage/non-sensitive-data/#project/">Research Project Storage</a></li>
+					<li>/home</li>
+					<li>/scratch</li>
+					<li>Research Project Storage</li>
 					<li><a href="/userinfo/storage/research-standard/">Research Standard Storage</a></li>
 				</ul>
 			</td>

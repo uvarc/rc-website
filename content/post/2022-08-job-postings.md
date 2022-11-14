@@ -21,7 +21,9 @@ categories = ["feature"]
 
 - - -
 
+## User Services Staff (full-time, permanent hybrid postition)
 
+- [Computational Scientist](https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs/job/Charlottesville-VA/Computational-Scientist_R0042178)
 
 
 
