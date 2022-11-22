@@ -3,15 +3,17 @@ type = "howto"
 author = "Staff"
 description = ""
 title = "Bioinformatics Resources on Rivanna"
-date = "2020-02-26T09:48:06-05:00"
+date = "2020-11-17T09:48:06-05:00"
 draft = false
 tags = ["bioinformatics","genomics", "rivanna","tools"]
 categories = ["howto"]
 images = [""]
 +++
 
-<p class=lead>The UVA research community has access to numerous bioinformatics software installed directly or available through the [bioconda](/userinfo/rivanna/software/bioconda) Python modules.
+{{% lead %}}
+The UVA research community has access to numerous bioinformatics software installed directly or available through the [bioconda](/userinfo/rivanna/software/bioconda) Python modules.
 Click [here](/userinfo/rivanna/software/bioinformatics#full-list-of-bioinformatics-software-modules) for a comprehensive list of currently-installed bioinformatics software.
+{{% /lead %}}
 
 # Popular Bioinformatics Software
 
