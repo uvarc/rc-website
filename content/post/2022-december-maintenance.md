@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2022-12-12T00:00:00-05:00"
+date = "2022-12-06T00:00:00-05:00"
 title = "Rivanna Maintenance: December 19, 2022"
 # url = "/maintenance"
 draft = false
@@ -12,13 +12,13 @@ categories = ["feature"]
 
 {{< alert-green >}}Rivanna will be down for maintenance on <strong>December 19, 2022</strong> beginning at 6 a.m.{{< /alert-green >}}
 
-You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
+You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Users will not be able to access the Globus data transfer node during the maintenance period.
 
-All systems are expected to return to service by **6 a.m. on , **.
+All systems are expected to return to service by **6 a.m. on Tuesday, December 20**. Globus users may need to rebuild their shared collections.
 
 ## IMPORTANT MAINTENANCE NOTES
 
-Two new toolchains are now available: `gcc/11.2.0 openmpi/4.1.4` and `intel/2022.11`. The latter is "Intel oneAPI" that contains the Intel compilers, MKL, and MPI. (Note that there is no need to load `intelmpi` from this version onwards.) The default versions have not been changed this time, but an upgrade will likely occur during the next major maintenance in May 2023. Users with their own compiled codes are encouraged to build them with the new toolchains and report any issues.
+Two new toolchains are now available: `goolf/11.2.0_4.1.4` and `intel/2022.11`. The former consists of GCC 11.2.0, OpenMPI 4.1.4, and math libraries. The latter is Intel oneAPI that consists of the Intel compilers, MKL, and MPI. (Note that there is no need to load `intelmpi` from this version onwards.) The default versions have not been upgraded this time. Users with their own compiled codes are encouraged to build them with the new toolchains and report any issues.
 
 ### Modules
 
@@ -52,15 +52,17 @@ Two new toolchains are now available: `gcc/11.2.0 openmpi/4.1.4` and `intel/2022
 2. **Upgrades**:
     - eccodes/2.26.0 - under `gcc/9.2.0 openmpi/3.1.6`
     - hic-pro/3.1.0
-    - openfoam/v2206 - under `goolf/9.2.0_3.1.6`
-    - ruby/3.1.2 - under `gcc/9.2.0`
     - kraken2/2.1.2 - from `kraken/0.10.5`; note module name change
+    - openfoam/v2206 - under `goolf/9.2.0_3.1.6`
+    - R/4.2.1 - under `goolf/9.2.0_3.1.6`
+    - ruby/3.1.2 - under `gcc/9.2.0`
 
     Default version changes:
     - alphafold/2.2.0 &rarr; 2.2.2
     - cellranger/5.0.0 &rarr; 7.0.1
     - cmake/3.16.5 &rarr; 3.23.3
     - deeplabcut/2.2 &rarr; 2.2.1.1-anipose
+    - matlab/R2022a &rarr; R2022b
     - pytorch/1.10.0 &rarr; 1.12.0 (includes PyTorch Geometric)
     - qiime2/2020.8 &rarr; 2022.2
     - tensorflow/2.7.0 &rarr; 2.10.0
