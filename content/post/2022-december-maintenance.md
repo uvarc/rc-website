@@ -18,7 +18,7 @@ All systems are expected to return to service by **6 a.m. on , **.
 
 ## IMPORTANT MAINTENANCE NOTES
 
-Two new toolchains are now available: `gcc/11.2.0 openmpi/4.1.4` and `intel/2022.11`. The latter is "Intel oneAPI" that contains the Intel compilers, MKL, and MPI. (Note that there is no need to load `intelmpi` from this version onwards.) The default versions have not been changed this time, but an upgrade will likely occur during the next major maintenance in May 2023. Users with their own compiled codes are encouraged to build them with the new toolchains and report any issues.
+Two new toolchains are now available: `goolf/11.2.0_4.1.4` and `intel/2022.11`. The former consists of GCC 11.2.0, OpenMPI 4.1.4, and math libraries. The latter is Intel oneAPI that consists of the Intel compilers, MKL, and MPI. (Note that there is no need to load `intelmpi` from this version onwards.) The default versions have not been upgraded this time. Users with their own compiled codes are encouraged to build them with the new toolchains and report any issues.
 
 ### Modules
 
