@@ -12,9 +12,9 @@ categories = ["feature"]
 
 {{< alert-green >}}Rivanna will be down for maintenance on <strong>December 19, 2022</strong> beginning at 6 a.m.{{< /alert-green >}}
 
-You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Users will not be able to access the Globus data transfer node (UVA Main-DTN or Ivy DTN) during the maintenance period.
+You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Users will not be able to access the Globus data transfer node during the maintenance period.
 
-All systems are expected to return to service by **6 a.m. on Tuesday, December 20**. Globus users may need to rebuild their shared connections.
+All systems are expected to return to service by **6 a.m. on Tuesday, December 20**. Globus users may need to rebuild their shared collections.
 
 ## IMPORTANT MAINTENANCE NOTES
 
