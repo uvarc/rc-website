@@ -64,6 +64,7 @@ Two new toolchains are now available: `gcc/11.2.0 openmpi/4.1.4` and `intel/2022
     - pytorch/1.10.0 &rarr; 1.12.0 (includes PyTorch Geometric)
     - qiime2/2020.8 &rarr; 2022.2
     - tensorflow/2.7.0 &rarr; 2.10.0
+    - matlab/R2022a &rarr; R2022b
 
 3. **New** modules:
     - clang/10.0.1
