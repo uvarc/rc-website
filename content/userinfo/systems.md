@@ -25,9 +25,7 @@ various systems are available to researchers.</p>
     </div>
   </div>
 </div>
-
 <br>
-
 <div class="card-group">
   <div class="card">
     <div class="card-block">
@@ -38,9 +36,7 @@ various systems are available to researchers.</p>
     </div>
   </div>
 </div>
-
 <br>
-
 <div class="card-group">
   <div class="card">
     <div class="card-block">
@@ -51,9 +47,7 @@ various systems are available to researchers.</p>
     </div>
   </div>
 </div>
-
 <br>
-
 <div class="card-group">
   <div class="card">
     <div class="card-block">
@@ -66,9 +60,22 @@ various systems are available to researchers.</p>
     </div>
   </div>
 </div>
-
 <br>
-
+<div class="card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Microservices</h4>
+      <img align="right" src="/images/container-cluster.png" style="max-width:20%;" />
+        <p class="card-text" style="width:90%;">
+        Deploying software in containers has grown increasingly useful for research scenarios. Containers are portable, distributable,
+        allowing developers to include both code and dependencies (libraries, modules, etc) in a single bundle. We operate
+        a Kubernetes cluster to support research-oriented microservices.
+        </p>
+      <a href="/userinfo/microservices/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
+  </div>
+</div>
+<br>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
