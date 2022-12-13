@@ -58,7 +58,7 @@ Two new toolchains are now available: `goolf/11.2.0_4.1.4` and `intel/2022.11`. 
     - ruby/3.1.2 - under `gcc/9.2.0`
 
     Default version changes:
-    - alphafold/2.2.0 &rarr; 2.2.2
+    - alphafold/2.2.0 &rarr; 2.3.0
     - cellranger/5.0.0 &rarr; 7.0.1
     - cmake/3.16.5 &rarr; 3.23.3
     - deeplabcut/2.2 &rarr; 2.2.1.1-anipose

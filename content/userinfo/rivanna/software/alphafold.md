@@ -97,7 +97,7 @@ singularity run -B $(realpath $ALPHAFOLD_DATA_PATH):/data \
 
 # Slurm Script
 
-Below are some templates for your Slurm script.
+Below are some Slurm script templates for version 2.3.
 
 ## Monomer with `full_dbs`
 
