@@ -109,7 +109,7 @@ Below are some Slurm script templates for version 2.3.
 
 ## Notes
 
-1. AlphaFold 2.0 users please visit [here for API changes in 2.1](https://github.com/deepmind/alphafold#api-changes-between-v200-and-v210) for details.
+1. Before upgrading to a newer version, please always check the [official repo](https://github.com/deepmind/alphafold) for details, especially on any changes to the parameters, databases, and flags.
 
 1. You may need to request 8 CPU cores due to this line printed in the output:
     ```

@@ -2,9 +2,9 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2022-9-04T23:59:16-05:00"
+date = "2022-12-12T23:59:16-05:00"
 draft = false
-tags = ["compute","cloud","containers","hybrid","infrastructure","docker","kubernetes","api","k8s"]
+tags = ["compute","containers","hybrid","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo"]
 images = [""]
 +++
@@ -12,12 +12,12 @@ images = [""]
 
 <p class=lead>
   <img src="/images/docker-logo.png" style="max-width:30%;" alt="Docker Containers" align="right" />
-  Microservice architecture is an approach to designing and running applications. Such applications are typically run within containers, made popular in the last few years by <a href="https://www.docker.com" target="_new">Docker</a>.
+  Microservice architecture is an approach to designing and running applications as a distributed set of components or layers. Such applications are typically run within containers, made popular in the last few years by <a href="https://www.docker.com" target="_new">Docker</a>.
 </p>
 <p class=lead>
-  Containers are portable, efficient, and disposable, and contain code and any dependencies in a single package.
-  Containerized microservices typically run a single process, rather than an entire stack within the same computing environment. 
-  This allows portions of your application to be easily replaced or scaled as needed.
+  Containers are portable, efficient, disposable, and contain code and any dependencies in a single package.
+  Containerized services typically run a single process, rather than an entire stack within the same computing environment. 
+  This allows developers to replace, scale, or troubleshoot single portions of their entire application at a time.
 </p>
 
 {{< highlight >}}
@@ -35,6 +35,7 @@ running containerized services. It also has over 300TB of cluster storage and ca
 [project](/userinfo/storage/) and [standard](/userinfo/storage/) storage.
 
 {{% highlight-danger %}}
+<div style="float:left;margin:0.5rem 1rem 1rem 0rem;"><i class="fa fa-3x fa-exclamation-triangle" aria-hidden="true"></i></div>
 UVA's microservices platform is hosted in the standard security zone. It is suitable for processing public or internal use data. Sensitive or highly sensitive data are not permitted on this platform. 
 {{% /highlight-danger %}}
 
@@ -167,10 +168,12 @@ Browse a list of recent [UVA projects employing microservices](/project?tag=.con
 To be eligible to run your microservice on our infrastructure, you must meet the following requirements:
 
 <ul>
-  <li>Microservices and custom containers must be for <b>research purposes only</b>.
-  <li>Your container(s) must <b>pass basic security checks</b>. 
-  <li>Containers <b>may not contain passwords</b>, SSH keys, API keys, or other sensitive information. There are secure methods for passing sensitive information into containers.
-  <li>If bringing your own custom container, it must be <b>ready to go</b>! Unfortunately, we cannot create custom containers for you unless it is part of a funded project.
+  <li>Microservices and custom containers must be for <b>research purposes only</b>. We do not run production systems outside the scope 
+of academic research support.
+  <li>Your container(s) must <b>pass basic security checks</b>. Containers <b>may not contain passwords</b>, SSH keys, API keys, or 
+other sensitive information. There are secure methods for passing sensitive information into containers.
+  <li>If bringing your own custom container, it must be <b>ready to go</b>! Unfortunately, we cannot create custom containers for you 
+unless it is part of a funded project.
 </ul>
 
 Microservices may not run efficiently for all use cases. Some scenarios that cannot run successfully in containers include:
