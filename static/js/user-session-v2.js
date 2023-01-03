@@ -127,6 +127,7 @@ function set_school(dept) {
       DS: "SDS",
       ED: "SEHD",
       EN: "SEAS",
+      IT: "ITS",
       LW: "LAW",
       MD: "SOM",
       PV: "PROVOST",
