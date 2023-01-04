@@ -1,7 +1,7 @@
 +++
 draft = false
 date = "2019-05-19T15:25:10-05:00"
-title = "Katherine Holcomb, PhD"
+title = "Katherine Holcomb, Ph.D."
 job_title = "Senior Research Systems Consultant"
 lastname = "holcomb"
 biolink = false

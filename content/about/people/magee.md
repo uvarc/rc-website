@@ -1,7 +1,7 @@
 +++
 draft = false
 date = "2022-10-04T15:25:10-05:00"
-title = "Neal Magee, PhD"
+title = "Neal Magee, Ph.D."
 job_title = "Solutions & DevOps, Director"
 lastname = "magee"
 email = "nem2p@virginia.edu"

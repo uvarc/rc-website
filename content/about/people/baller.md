@@ -1,7 +1,7 @@
 +++
 draft = false
 date = "2023-01-02T15:25:10-05:00"
-title = "Josh Baller, PhD"
+title = "Josh Baller, Ph.D."
 job_title = "Associate Vice President"
 lastname = "Baller"
 type = "people"
