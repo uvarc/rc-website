@@ -1,9 +1,9 @@
 +++
 draft = false
 date = "2023-01-02T15:25:10-05:00"
-title = "Josh Baller, PhD"
-job_title = "Associate Vice President"
-lastname = "Baller"
+title = "Xu Wang, PhD"
+lastname = "wang"
+job_title = "HPC Systems Specialist"
 type = "people"
 biolink = false
 description = ""
@@ -12,9 +12,7 @@ images = [
   ""
 ]
 subjects = [
-  "research",
-  "hpc"
+  "hpc",
+  "rivanna",
 ]
 +++
-
-More about this user goes here.
