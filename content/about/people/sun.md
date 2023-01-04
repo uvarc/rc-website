@@ -1,7 +1,7 @@
 +++
 draft = false
 date = "2019-10-27T11:15:10-05:00"
-title = "Ruoshi Sun, Ph.D."
+title = "Ruoshi Sun, PhD"
 job_title = "Senior Computational Scientist"
 lastname = "sun"
 biolink = true
