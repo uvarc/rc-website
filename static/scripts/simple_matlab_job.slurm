@@ -8,4 +8,4 @@
 
 module load matlab
 
-matlab -nojmv -nodisplay -nosplash -singleCompThread -r "Mymain(myvar1s);exit"
+matlab -nojvm -nodisplay -nosplash -singleCompThread -r "Mymain(myvar1s);exit"
