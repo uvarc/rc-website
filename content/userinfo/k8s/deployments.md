@@ -2,13 +2,12 @@
 author = "RC Staff"
 description = ""
 title = "Microservice Deployments"
-date = "2022-09-14T23:59:16-05:00"
+date = "2023-01-02T23:59:16-05:00"
 draft = false
 tags = ["compute","containers","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo"]
 images = [""]
 +++
-
 
 <p class=lead>
   <img src="/images/logos/k8s-icon.png" style="" alt="Kubernetes" align="right" />
@@ -53,18 +52,22 @@ application and its dependencies; and (2) deploying your application stack in th
 
 1. **Development** - The first activity is generally well understood by researchers who may write their apps in Python, R, or other languages. As the 
 app evolves, it is containerized using a `Dockerfile` and tested. Finally, more advanced projects will use automation tools such as GitHub Actions or 
-Jenkins to build, test, and deploy the application container(s) to a container registry such as Docker Hub or GitHub Container Registry (GHCR).
+Jenkins to build, test, and publish the application container(s) image to a container registry such as Docker Hub or GitHub Container Registry (GHCR).
 
 2. **Delivery** - The second activity is less understood by researchers, since running `docker` locally for testing is different from cluster 
 deployments. It is our belief that researchers should not be required to learn `kubectl` or other cluster management commands, instead simply defining their
 deployment in code and letting automation tools take it from there. We suggest you use a separate repository for all your deployment files, so
 that these two activities remain entirely separate.
 
-This lifecycle is known to engineers and developers as CI/CD, or Continuous Integration / Continous Delivery, as it describes how modern applications
-are built, packaged, delivered, and deployed - each of which may take more than one form. **Continous Integration** is the process of developers 
+This lifecycle is known to engineers and developers as CI/CD, or Continuous Integration / Continuous Delivery, as it describes how modern applications
+are built, packaged, delivered, and deployed - each of which may take more than one form. 
+
+- **Continous Integration** is the process of developers 
 continually iterating on the features, logic, and inner-workings of their application stack. This may be as small as bug fixes and as large as a 
 complete redesign. The final product of the CI stage is a deliverable that can be run in test, user acceptance, or production modes. CI tools help automate the packaging
-and publication of that deliverable. In the case of microservices this is most often a container image that is ready to use. **Continous Delivery** is
+and publication of that deliverable. In the case of microservices this is most often a container image that is ready to use. 
+
+- **Continous Delivery** is
 the process of taking that deliverable and running it in an environment such as a public cloud, a server, etc. However, the CD process is normally
 more elegant than stopping the existing version of an application and replacing it. CD tools attempt to gently roll new versions into operation
 without any service disruption. And, using normal performance health checks, if the new version does not gain a healthy state, the CD orchestrator will 
@@ -94,18 +97,18 @@ modifying other user deployments.
 
 What we take care of:
 
-- Underlying physical infrastructure: servers, networks, cabling, power, cooling.
-- Underlying hosts: operating system, patching, mounts to cluster/remote storage.
-- Kubernetes API: core k8s services across the cluster, high availability.
-- Kubernetes Ingress: the ability to map traffic to pods. SSL as necessary.
+- Underlying physical infrastructure: Servers, networks, cabling, power, cooling.
+- Underlying hosts: Operating system, patching, mounts to cluster/remote storage.
+- Kubernetes API: Core k8s services across the cluster, high availability.
+- Kubernetes Ingress: The ability to map traffic to pods. With SSL as necessary.
 - Observability Tools: K8S Dashboard, ArgoCD Dashboard, Lens GUI to monitor and inspect your deployments.
-- Deployment templates: to help you get started.
+- Deployment templates: To help you get started.
 
 What you take care of
 
-- Creation and maintenance of container images, if necessary.
-- Maintenance of your deployment(s).
-- Debugging as necessary.
+- Creation, versioning and maintenance of container image(s).
+- Maintenance of your deployment's scale, version, `env` variables and secrets.
+- Debugging your application as necessary.
 
 - - -
 
