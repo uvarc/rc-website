@@ -18,16 +18,15 @@ images = [""]
   Microservice architecture is an approach to designing and running applications as a distributed set of components or layers. Such applications are typically run within containers, made popular in the last few years by <a href="https://www.docker.com" target="_new">Docker</a>.
 </p>
 <p class=lead>
-  Containers are portable, efficient, disposable, and contain code and any dependencies in a single package.
-  Containerized services typically run a single process, rather than an entire stack within the same computing environment. 
-  This allows developers to replace, scale, or troubleshoot single portions of their entire application at a time.
+  Containers are portable, efficient, reusable, and contain code and any dependencies in a single package.
+  Containerized services typically run a single process, rather than an entire stack within the same environment. 
+  This allows developers to replace, scale, or troubleshoot portions of their entire application at a time.
 </p>
 
 {{< highlight >}}
-<p><b>General Availability (GA) of Kubernetes</b> - Research Computing has transitioned away from DCOS for 
-microservice orchestration in favor of Kubernetes, the open-source orchestrator originating from Google. 
-New deployments are now launched directly within our Kuberenetes cluster.</p>
-
+<img style="max-width:100px;float:right;" src="/images/logos/k8s-icon.png" />
+<p><b>General Availability (GA) of Kubernetes</b> - Research Computing now manages microservice orchestration
+with Kubernetes, the open-source tool from Google. New deployments are now launched directly within Kuberenetes.</p>
 <p>&raquo; <a href="/userinfo/k8s/deployments/">Read about Kubernetes and user deployments</a>.</p>
 {{< /highlight >}}
 
@@ -35,7 +34,7 @@ New deployments are now launched directly within our Kuberenetes cluster.</p>
 Research Computing runs microservices in a clustered orchestration environment that automates the deployment and 
 management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to 
 running containerized services. It also has over 300TB of cluster storage and can attach to 
-[project](/userinfo/storage/) and [standard](/userinfo/storage/) storage.
+[**project**](/userinfo/storage/) and [**value**](/userinfo/storage/) storage.
 
 {{% highlight-danger %}}
 <div style="float:left;margin:0.5rem 1rem 1rem 0rem;"><i class="fa fa-3x fa-exclamation-triangle" aria-hidden="true"></i></div>

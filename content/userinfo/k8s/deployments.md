@@ -44,7 +44,7 @@ This model has some distinct advantages for both research users and engineers:
 - Permissions in the GitOps model are granted via the deployment's Git repository, not at the cluster level.
 
 
-# Deployment Guidelines
+# Deployment Lifecycle
 
 The lifecycle of applications themselves is different from, and should be independent from, various deployments of that application. 
 Running your containerized application in Kubernetes requires you to think of two separate activities: (1) developing, testing, and building your 
@@ -86,12 +86,62 @@ Here's a brief explanation of ArgoCD and the entire CI/CD lifecycle:
 
 # Launching Your Application
 
+The following ingredients come together to run your application
+
+## Namespace
 Service launches generally require the creation of a namespace if users do not already have one. Namespaces serve as logical 
 and organizational dividers, keeping the management of the services of User A isolated from those of User B. Namespaces also
 allow administrators to monitor or limit the maximum consumable resources (i.e. CPU and memory) for all deployments within the
-namespace. This ensures that no one namespace can consume all the cluster resources, and limits a user from inspecting or 
-modifying other user deployments.
+namespace. 
 
+## Deployment
+
+The basic unit of your running application. This defines what container image to use, what it should be named,
+how many replicas should run, what storage should be mounted and where, as well as resource limits.
+
+## Service
+
+A running deployment that expects incoming requests must be exposed as a service, over a port. This allows Kubernetes
+to route traffic to the container(s).
+
+Some deployments, such as a recurring task or cron job, may not need a service or ingress definition.
+
+## Ingress
+
+For service deployments such as web servers that expect incoming requests, the ingress definition maps a hostname (`example.pods.uvarc.io`)
+with a service. The UVARC cluster runs multiple ingress controllers to handle incoming traffic.
+
+## Secrets / `env` Variables
+
+The best practice for passing sensitive information (usernames, passwords, keys, tokens, credentials) into a running
+container is to pass them in as encrypted environment variables called secrets. We use `kubeseal` for encrypting secrets 
+into plaintext. This text can be added and committed to public repositories since their decryption key is stored privately 
+in the cluster. 
+
+Secrets can be consumed as `env` variables or as files mapped within the file hierarchy of the container.
+
+Normal `env` variables can also be passed to the container by defining them within the deployment spec file or as a
+config map that stores several key-value `env` vars.
+
+## Storage
+
+We offer the ability to mount from three pools of persistent storage:
+
+1. Research Value Storage
+2. Research Project Storage
+3. Local Cluster Storage - priced by TB increments like Project Storage.
+
+## Observability
+
+We provide three levels of access into your microservices:
+
+1. **ArgoCD** - A GUI to check the state of your deployment resources within Kubernetes.
+2. **Lens** - A GUI to view pods, logs, shell into your pods, view storage and secrets, etc. Download Lens [**here**](https://k8slens.dev/)
+3. **`kubectl`** - CLI access to the same resources as Lens.
+
+# Connecting Services
+
+<iframe src="https://grafana.pods.uvarc.io/d-solo/tmsOtSxZk/amazon-ec2?orgId=1&from=1672279844457&to=1672884644457&kiosk=&panelId=2" width="450" height="200" frameborder="0"></iframe>
 
 # Division of Responsibilities
 
