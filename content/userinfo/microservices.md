@@ -2,13 +2,16 @@
 author = "RC Staff"
 description = ""
 title = "Microservices"
-date = "2022-12-12T23:59:16-05:00"
+date = "2023-01-02T23:59:16-05:00"
 draft = false
 tags = ["compute","containers","hybrid","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo"]
 images = [""]
 +++
 
+<!--
+  <img src="/images/carousel/microservice-army.png" alt="Stand out from the pack" />
+-->
 
 <p class=lead>
   <img src="/images/docker-logo.png" style="max-width:30%;" alt="Docker Containers" align="right" />
@@ -21,11 +24,11 @@ images = [""]
 </p>
 
 {{< highlight >}}
-<p><b>Transition to Kubernetes</b> - Research Computing is transitioning away from DCOS for microservice orchestration in favor of Kubernetes, the 
-open-source orchestrator originating from Google. New deployments will be launched directly in Kuberenetes and existing DCOS deployments will be
-migrated over the Summer and Fall of 2022.</p>
+<p><b>General Availability (GA) of Kubernetes</b> - Research Computing has transitioned away from DCOS for 
+microservice orchestration in favor of Kubernetes, the open-source orchestrator originating from Google. 
+New deployments are now launched directly within our Kuberenetes cluster.</p>
 
-<p><a href="/userinfo/k8s/deployments/">Read about the new Kubernetes cluster and user deployments</a>.</p>
+<p>&raquo; <a href="/userinfo/k8s/deployments/">Read about Kubernetes and user deployments</a>.</p>
 {{< /highlight >}}
 
 # Microservices at UVA
