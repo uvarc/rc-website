@@ -15,10 +15,6 @@ images = [""]
 
 # Upcoming Workshops
 
-{{% callout %}}
-Workshops have been moved to online learning formats due to COVID-19. 
-{{% /callout %}}
-
 {{% upcoming-workshops-smart %}}
 
 Research Computing is partnering with the Research Library and the Health Sciences Library to deliver workshops covering a variety of 
