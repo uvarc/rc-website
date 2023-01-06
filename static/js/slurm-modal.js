@@ -6,7 +6,7 @@ document.removeEventListener('keydown', function(e) {
 }); 
 
 // look for SLURM magic
-const keySequence = [
+const keySeq = [
   's',
   'l',
   'u',
@@ -14,16 +14,14 @@ const keySequence = [
   'm',
 ];
 
-let userInput = new Array( keySequence.length );
+let userInput = new Array( keySeq.length );
 
 window.addEventListener( 'keydown', ( { key } ) => {
   userInput = [ ...userInput.slice( 1 ), key ];
 
-  if ( keySequence.every( ( v, k ) => v === userInput[ k ] ) ) {
-      alert( 'Would you like to take a SLURM quiz?' );
+  if ( keySeq.every( ( v, k ) => v === userInput[ k ] ) ) {
+      // alert( 'Would you like to take a SLURM quiz?' );
+      window.location.replace("https://www.rc.virginia.edu/slurm/");
   }
 } );
 
-function showSlurmGame() {
-  $('.slurm-modal').modal('show')
-}; 
