@@ -11,6 +11,8 @@ type = "rivanna"
 
 +++
 
+<script src="/js/slurm-modal.js" type="text/javascript"></script>
+
 # Overview
 
 <img style="margin-left:2rem; margin-bottom:2rem; float:right; max-width:30%;" src="/images/rivanna/slurm-workload-manager.png" />
