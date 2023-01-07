@@ -11,6 +11,20 @@ type = "rivanna"
 
 +++
 
+<!-- Modal -->
+<div class="modal fade" id="slurm-modal" tabindex="-1" role="dialog" aria-labelledby="SlurmTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="background-color:black;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="SlurmTitle" style="color:white;font-family:monospace;">SLURM</h5>
+      </div>
+      <div class="modal-body" style="background-color:black;padding-left:2rem;padding-right:2rem;">
+        <p style="color:white;font-family:monospace;">Would you like to take an interactive SLURM quiz? y/N</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Modal -->
 <script src="/js/slurm-modal.js" type="text/javascript"></script>
 
 # Overview
