@@ -1,7 +1,7 @@
 +++
 date = "2022-01-08T23:59:16-05:00"
-tags = ["quiz","rivanna","hpc"]
-categories = ["quiz"]
+# tags = ["quiz","rivanna","hpc"]
+# categories = ["quiz"]
 images = [""]
 about = true
 author = "Staff"
@@ -26,6 +26,8 @@ shuffle_questions: false
 ---
 shuffle_answers: true
 ---
+
+> Some hint
 
 - [ ] `squeue`
 - [ ] `submit`
