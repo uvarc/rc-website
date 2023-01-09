@@ -9,6 +9,7 @@ description = ""
 title = "SLURM Quiz"
 draft = false
 type = "quiz"
+private = true
 +++
 
 {{< quizdown >}}
@@ -25,8 +26,6 @@ shuffle_questions: false
 ---
 shuffle_answers: true
 ---
-
-> Some hint
 
 - [ ] `squeue`
 - [ ] `submit`
