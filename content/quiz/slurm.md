@@ -17,10 +17,11 @@ type = "quiz"
 primary_color: orange
 secondary_color: lightgray
 text_color: black
-shuffle_questions: true
+shuffle_questions: false
 ---
 
 ## What command submits a SLURM job to the scheduler?
+
 ---
 shuffle_answers: true
 ---
@@ -33,6 +34,7 @@ shuffle_answers: true
 - [x] `sbatch`
 
 ## What command submits an interactive job to SLURM?
+
 ---
 shuffle_answers: true
 ---
@@ -45,6 +47,7 @@ shuffle_answers: true
 - [ ] `sbatch`
 
 ## How do you check for the status of a job?
+
 ---
 shuffle_answers: true
 ---
@@ -57,6 +60,7 @@ shuffle_answers: true
 - [ ] `sbatch <jobid>`
 
 ## How do you cancel a SLURM job?
+
 ---
 shuffle_answers: true
 ---
@@ -69,6 +73,7 @@ shuffle_answers: true
 - [ ] `sbatch -c <jobid>`
 
 ## What command gets accounting data for a job?
+
 ---
 shuffle_answers: true
 ---
