@@ -11,15 +11,39 @@ type = "rivanna"
 
 +++
 
+<script>
+var cursor = true;
+var speed = 280;
+setInterval(() => {
+   if(cursor) {
+     document.getElementById('cursor').style.opacity = 0;
+     cursor = false;
+   }else {
+     document.getElementById('cursor').style.opacity = 1;
+     cursor = true;
+   }
+}, speed);
+</script>
 <!-- Modal -->
-<div class="modal fade" id="slurm-modal" tabindex="-1" role="dialog" aria-labelledby="SlurmTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade" id="slurm-modal" tabindex="-1" role="dialog" aria-labelledby="SlurmTitle" aria-hidden="true" data-backdrop="static">
+<script>
+// Add event listener on keydown
+document.addEventListener('keydown', (event) => {
+  var name = event.key;
+  if ( name === 'y' ) {
+    window.location.href = "/quiz/slurm/";
+  } else if ( name === 'n' ) {
+    $('#slurm-modal').modal('hide');
+  }
+}, false);
+</script>
+  <div class="modal-dialog modal-dialog-centered" role="document" style="font-family:monospace;color:#4AF626;width:800px;">
     <div class="modal-content" style="background-color:black;">
       <div class="modal-header">
-        <h5 class="modal-title" id="SlurmTitle" style="color:white;font-family:monospace;">SLURM</h5>
+        <h5 class="modal-title" id="SlurmTitle" style="font-family:monospace;">SLURM</h5>
       </div>
       <div class="modal-body" style="background-color:black;padding-left:2rem;padding-right:2rem;">
-        <p style="color:white;font-family:monospace;">Would you like to take an interactive SLURM quiz? y/N</p>
+        <p style="font-family:monospace;">Would you like to take an interactive SLURM quiz? y/N&nbsp;<span id=cursor>|</span></p>
       </div>
     </div>
   </div>
