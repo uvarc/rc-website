@@ -21,7 +21,8 @@ window.addEventListener( 'keydown', ( { key } ) => {
 
   if ( keySeq.every( ( v, k ) => v === userInput[ k ] ) ) {
       // alert( 'Would you like to take a SLURM quiz?' );
-      window.location.replace("https://www.rc.virginia.edu/slurm/");
+      // window.location.replace("https://www.rc.virginia.edu/slurm/");
+      $('#slurm-modal').delay(5000).modal('toggle')
   }
 } );
 
