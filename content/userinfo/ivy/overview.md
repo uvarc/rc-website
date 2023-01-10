@@ -401,7 +401,7 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “Ivy Central Storage” (ICS), which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
 
-<img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="https://uvarc-discourse.s3.amazonaws.com/original/1X/95f8dfa70374a538d3e940dc69cf960d9e5ac9a6.png" />
+<img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="/images/ivy-dtn-flow.png" />
 
 ## How to Connect to the DTN and Transfer Files
 
