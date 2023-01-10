@@ -8,7 +8,7 @@ categories = ["userinfo"]
 images = [""]
 author = "Staff"  
 type = "rivanna"
-
+aliases = [ "/rivanna" ]
 +++
 
 ![Rivanna Status](https://img.shields.io/badge/dynamic/json?color=color&label=Rivanna&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Frivanna&style=for-the-badge)

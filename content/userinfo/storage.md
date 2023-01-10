@@ -7,6 +7,7 @@ draft = false
 tags = ["storage","security","ivy","rivanna","project","standard"]
 categories = ["userinfo"]
 images = [""]
+aliases = [ "/storage" ]
 +++
 
 ![Project Storage](https://img.shields.io/badge/dynamic/json?color=color&label=Research%20Project%20Storage&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fproject&style=for-the-badge)
