@@ -15,7 +15,7 @@ author = "Staff"
 images = [
   "/2016/10/image.jpg",
 ]
-
+aliases = ["/cloud"]
 +++
 
 <script>
