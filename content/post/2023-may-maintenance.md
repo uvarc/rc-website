@@ -25,6 +25,7 @@ All systems are expected to return to service by **6 a.m. on , May **.
 | Module | Removed version | Replacement |
 |---|---|---|
 |alphafold<sup>*</sup> | 2.2.0 | 2.1.2, 2.2.2, 2.3.0 |
+|imagemagick | 7.0.7-0 | 7.1.0-57 |
 
 <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
 
