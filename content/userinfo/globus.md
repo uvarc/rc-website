@@ -129,14 +129,14 @@ Here you will see a list of your current and past transfer jobs.  Click on a job
 
 Users are notified via email for both successful and failed transfers. The email looks something like this, and provides a URL for more information:
 
-```TASK DETAILS
-Task ID: 7c0351b4-9c1c-11ed-a29d-8383522b48d9
-Task Type: TRANSFER
-Status: SUCCEEDED
-Source: Gancayco Laptop (e6b14dc6-34a8-11ed-ba40-d5fb255a47cc)
-Destination: UVA Standard Security Storage (e6b338df-213b-4d31-b02c-1bc2c628ca07)
-Label: n/a
-https://app.globus.org/activity/7c0351b4-9c1c-11ed-a29d-8383522b48d9/overview```
+	TASK DETAILS
+	Task ID: 7c0351b4-9c1c-11ed-a29d-8383522b48d9
+	Task Type: TRANSFER
+	Status: SUCCEEDED
+	Source: Gancayco Laptop (e6b14dc6-34a8-11ed-ba40-d5fb255a47cc)
+	Destination: UVA Standard Security Storage (e6b338df-213b-4d31-b02c-1bc2c628ca07)
+	Label: n/a
+	https://app.globus.org/activity/7c0351b4-9c1c-11ed-a29d-8383522b48d9/overview
 
 # Sharing Folders
 
