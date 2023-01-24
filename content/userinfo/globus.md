@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Globus Data Transfer"
-date = "2021-04-10T10:08:29-05:00"
+date = "2023-01-24T10:08:29-05:00"
 draft = false
 tags = ["data-transfer","rivanna","storage","ivy","globus","dtn","infrastructure"]
 categories = ["userinfo"]
@@ -87,7 +87,7 @@ You can search for the collections to use for your transfer from the File Manage
 
 The official UVA managed collections are:
 
-* `uva#main-DTN` - generally available; maps to Rivanna _home_ directories, _scratch_, _Research Standard_ & _Research Project_ storage.
+* `UVA Standard Security Storage` - generally available; maps to Rivanna _home_ directories, _scratch_, _Research Standard_ & _Research Project_ storage.
 * `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into Ivy Central Storage.
     **Globus is the *only* permitted data-transfer protocol for highly sensitive data.** To transfer data to Ivy Central Storage, please see the special instructions [here](/userinfo/ivy/overview/#data-transfer-inout-of-ivy).
 
@@ -129,15 +129,14 @@ Here you will see a list of your current and past transfer jobs.  Click on a job
 
 Users are notified via email for both successful and failed transfers. The email looks something like this, and provides a URL for more information:
 
-    TASK DETAILS
-    Task ID: 4460c25c-72d1-11e7-aa08-22000bf2d287
-    Task Type: TRANSFER
-    Status: SUCCEEDED
-    Source: mst3k Lab MacBook (39e0bf8a-3037-11e7-bcae-22000b9a448b)
-    Destination: uva#portable-DTN (67b9cb38-301c-11e7-bcac-22000b9a448b)
-    Label: n/a
-
-    https://www.globus.org/app/activity/4460c25c-72d1-11e7-aa08-22000bf2d287
+```TASK DETAILS
+Task ID: 7c0351b4-9c1c-11ed-a29d-8383522b48d9
+Task Type: TRANSFER
+Status: SUCCEEDED
+Source: Gancayco Laptop (e6b14dc6-34a8-11ed-ba40-d5fb255a47cc)
+Destination: UVA Standard Security Storage (e6b338df-213b-4d31-b02c-1bc2c628ca07)
+Label: n/a
+https://app.globus.org/activity/7c0351b4-9c1c-11ed-a29d-8383522b48d9/overview```
 
 # Sharing Folders
 
@@ -146,7 +145,7 @@ You can share folders to either specific individuals, or to groups that you crea
 {{% /callout %}}
 
 1. Open the [Globus web interface](https://www.globus.org/) and log in using UVA Netbadge.
-2. From the Transfer Files interface, log in to the UVA Main-DTN collection as described above.  
+2. From the Transfer Files interface, log in to the **UVA Standard Security Storage** collection as described above.  
 3. Navigate in the folder structure of that collection until you find the folder you want to share. Highlight it.
 4. Next, select the Share link on the right side of the files window.
   <img src="/images/globus-shared-endpoint.png" width="700" height="443" alt="create-share">
