@@ -22,7 +22,10 @@ Keras is a high-level neural networks application programming interface (API), w
 The TensorFlow modules on Rivanna include common Python packages such as Matplotlib and OpenCV. See <https://hub.docker.com/r/uvarc/tensorflow> for details.
 
 ## A100 GPU compatibility
-Versions 2.1 and older may not be compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option `-x udc-an28-[1,7]`.
+Versions 2.1 and older may not be compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option
+{{< code-snippet >}}
+-x udc-an28-[1,7],udc-an34-[1,7,13,19],udc-an36-[1,13,19],udc-an37-[1,7,13,19]
+{{< /code-snippet >}}
 
 # TensorFlow Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available:

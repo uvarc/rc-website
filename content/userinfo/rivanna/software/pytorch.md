@@ -40,7 +40,7 @@ module spider {{% module-firstversion %}}
 ### A100
 Versions 1.6 and older are not compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option
 {{< code-snippet >}}
--x udc-an28-[1,7]
+-x udc-an28-[1,7],udc-an34-[1,7,13,19],udc-an36-[1,13,19],udc-an37-[1,7,13,19]
 {{< /code-snippet >}}
 
 ### K80
