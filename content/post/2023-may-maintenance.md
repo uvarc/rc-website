@@ -20,7 +20,7 @@ All systems are expected to return to service by **6 a.m. on , May **.
 
 ### Modules
 
-1. The `gompic` `gcccuda` `goolfc` toolchains will be **removed** from Rivanna during the maintenance period, since gcc/11.2.0 is now a CUDA-aware toolchain. The affected modules have been migrated:
+1. The toolchains `gompic` `gcccuda` `goolfc` will be **removed** from Rivanna during the maintenance period, since we now have CUDA-aware toolchains based on gcc/11.2.0. If you need assistance with rebuilding your own code, please contact us [here](https://www.rc.virginia.edu/form/support-request/). The following affected modules have been migrated:
 
 | Module | Previous toolchain | Replacement |
 |---|---|---|
@@ -28,7 +28,7 @@ All systems are expected to return to service by **6 a.m. on , May **.
 |gromacs/2021.2 | goolfc/9.2.0_3.1.6_11.0.228| 2022.4 under goolf/11.2.0_4.1.4 |
 |mumax3/3.10    | gcccuda/9.2.0_11.0.228     | same version under gcc/11.2.0 |
 
-    The following modules will be **removed** from Rivanna during the maintenance period.
+The following modules will be **removed** from Rivanna during the maintenance period.
 
 | Module | Removed version | Replacement |
 |---|---|---|
