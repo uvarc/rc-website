@@ -20,7 +20,15 @@ All systems are expected to return to service by **6 a.m. on , May **.
 
 ### Modules
 
-1. The following software modules will be **removed** from Rivanna during the maintenance period:
+1. The `gompic` `gcccuda` `goolfc` toolchains will be **removed** from Rivanna during the maintenance period, since gcc/11.2.0 is now a CUDA-aware toolchain. The affected modules have been migrated:
+
+| Module | Previous toolchain | Replacement |
+|---|---|---|
+|gpunufft/2.1.0 | gcccuda/9.2.0_11.0.228     | same version under gcc/11.2.0 |
+|gromacs/2021.2 | goolfc/9.2.0_3.1.6_11.0.228| 2022.4 under goolf/11.2.0_4.1.4 |
+|mumax3/3.10    | gcccuda/9.2.0_11.0.228     | same version under gcc/11.2.0 |
+
+    The following modules will be **removed** from Rivanna during the maintenance period.
 
 | Module | Removed version | Replacement |
 |---|---|---|
@@ -32,11 +40,6 @@ All systems are expected to return to service by **6 a.m. on , May **.
 
 2. **Upgrades**:
 
-    The following modules have been migrated under `gcc/11.2.0`:
-
-    - gpunufft/2.1.0 (previously under `gcccuda/9.2.0_11.0.228`
-    - mumax3/3.10 (previously under `gcccuda/9.2.0_11.0.228`
-
-    Default version changes:
+    **Default version changes:**
 
 3. **New** modules:
