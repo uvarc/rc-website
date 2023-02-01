@@ -1,0 +1,24 @@
+{{ define "main" }}
+  <h3 style="padding-bottom:20px;"><code><i class="fa fa-tag" aria-hidden="true"></i> /{{ .Data.Singular }}/{{ lower .Title }}</code></h3>
+  <ul style="list-style:none;">
+    {{ range .Data.Pages }}
+    <li><a href="{{ .Permalink }}"><h4 style="text-decoration:none;color:#222;">{{ .Title }}</h4></a>
+      <span style="font-size:0.95em;">
+
+          {{ .Summary | markdownify }}
+
+        <div class="row">
+          <div class="col-sm-3">
+            <a style="padding-left:20px;" href="{{ .Permalink }}">{{ i18n "readMore" }}</a>
+          </div>
+          <div class="col-sm-9" style="text-align:right;">
+            {{ partial "meta-terms.html" . }}
+          </div>
+        </div>
+      </span>
+    <hr size=1>
+    </li>
+    {{ end }}
+  </ul>
+
+{{ end }}

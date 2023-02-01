@@ -1,8 +1,8 @@
 baseurl = "/"
-title = "Research Computing"
+title = "RC Feature Site"
 publishdir = "public"
 languageCode = "en-us"
-theme = "rc-bootstrap-v4"
+theme = "rc-bootstrap-v5"
 copyright = " {year} "
 paginate = 20
 disableKinds= ["RSS","404"]

@@ -1,0 +1,47 @@
+{{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+{{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
+
+<button type="button" class="btn btn-light" onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
+
+<article class="blog-post">
+  <header>
+    <h2 class="blog-post-title" style="margin-top:2rem;margin-bottom:2rem;"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
+    <p class="blog-post-meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> &nbsp; | &nbsp; {{ if or (.Params.categories) (.Params.tags) }} {{ partial "meta-terms.html" . }}{{ end }}</p>
+  </header>
+  
+  {{ if .Params.audio }}
+  <figure>
+    <audio controls preload="metadata">
+      <source src="https://s3.amazonaws.com/uvarc-media{{ .Page.RelPermalink }}audio.mp3" type="audio/mpeg">
+    </audio>
+  </figure>
+  {{ end }}
+
+  <div class="explainer">
+    <!-- {{ .TableOfContents }} -->
+    {{ .Content }}
+  </div>
+
+  {{ if .IsTranslated }}
+  <h4>{{ i18n "translations" }}</h4>
+  <ul>
+    {{ range .Translations }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Lang }}: {{ .Title }}{{ if .IsPage }}{{ end }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ if not .Site.Params.sharingicons.hide }}
+  {{ partial "sharing-icons.html" . }}
+  {{ end }}
+</article> <!-- /.blog-post -->
+
+{{ if .Site.DisqusShortname }}
+{{ partial "disqus.html" . }}
+{{ end }}
+
+{{ end }}
+
+{{- /* vim: set ts=2 sw=2 et: */}}

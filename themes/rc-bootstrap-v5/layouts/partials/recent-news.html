@@ -1,0 +1,10 @@
+    <ol class="list-unstyled">
+      {{ range first 6 (where .Site.Pages "Type" "post") }}
+
+        {{ if ne .Title "Posts" }}
+
+          <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
+
+        {{ end }}
+      {{ end }}
+    </ol>

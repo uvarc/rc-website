@@ -1,0 +1,54 @@
+<!-- <aside class="col-sm-3 offset-sm-1 blog-sidebar"> -->
+
+<aside class="col-sm-4 blog-sidebar">
+
+  <div class="sticky">
+    
+  <p style="padding-left:1rem;">
+    <a href="/categories/" style="text-decoration:none;"><i class="fa fa-folder-open" aria-hidden="true"></i> All categories</a> &nbsp;
+    <a href="/tags/" style="text-decoration:none;"><i class="fa fa-tag" aria-hidden="true"></i> All tags</a>
+  </p>
+
+  {{ partial "user-help-widget.html" . }}
+
+<!--  {{ if isset .Site.Params.sidebar "about" }}
+  <section class="sidebar-module sidebar-module-inset">
+    <p class=lead>{{ i18n "about" }} Us</p>
+    <p>{{ .Site.Params.sidebar.about | markdownify }}</p>
+  </section>
+  {{ end }}
+-->
+
+  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+
+  <section class="sidebar-module">
+    <!-- <h4>{{ i18n "recentPosts" }}</h4> -->
+    <p class=lead>Recent News</p>
+    {{ partial "recent-news.html" . }}
+  </section>
+
+  {{ with .Site.Menus.sidebar }}
+  <section class="sidebar-module">
+    <p class=lead>{{ i18n "links" }}</p>
+    <ol class="list-unstyled">
+      {{ range . }}
+      <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+      {{ end }}
+    </ol>
+  </section>
+  {{ end }}
+
+  {{ partial "boast.html" . }}
+
+  <section class="sidebar-module">
+    {{ partial "twitter.html" . }}
+  </section>
+
+  <section class="sidebar-module" style="height:100px;">
+  </section>
+
+  </div>
+
+</aside><!-- /.blog-sidebar -->
+
+{{- /* vim: set ts=2 sw=2 et: */}}

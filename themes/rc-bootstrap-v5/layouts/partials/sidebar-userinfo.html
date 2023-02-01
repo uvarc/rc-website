@@ -1,0 +1,32 @@
+<aside class="col-sm-4 blog-sidebar">
+
+  <div class="sticky">
+
+  {{ partial "page-contents.html" . }}
+
+  {{ partial "user-information.html" . }}
+
+  <div style="width:100%;height:2rem;"></div>
+
+  {{ partial "status.html" . }}
+
+  {{ partial "rivanna-monitoring.html" . }}
+
+<!--
+  <section class="sidebar-module">
+    <p class="lead">Topics</p>
+    <ul id="tags">
+      {{ range .Params.tags }}
+        <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+      {{ end }}
+    </ul>
+  </section>
+-->
+
+  {{ partial "user-help-widget.html" . }}
+
+  </div>
+
+</aside><!-- /.blog-sidebar -->
+
+{{- /* vim: set ts=2 sw=2 et: */}}

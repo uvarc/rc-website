@@ -1,0 +1,11 @@
+{{ if .Params.categories }}
+  <a href="/categories/" style="text-decoration:none;"><i class="fa fa-folder-open" aria-hidden="true"></i></a>
+  &nbsp;{{ range $index, $category := .Params.categories }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" rel="category tag">{{ . }}</a>{{ end }}
+{{ end }}
+&nbsp;
+{{ if .Params.tags }}
+  <a href="/tags/" style="text-decoration:none;"><i class="fa fa-tag" aria-hidden="true"></i></a>
+  &nbsp;{{ range $index, $tag := (sort .Params.tags "value" "asc") }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" rel="tag">{{ . }}</a>{{ end }}
+{{ end }}
+
+{{- /* vim: set ts=2 sw=2 et: */}}

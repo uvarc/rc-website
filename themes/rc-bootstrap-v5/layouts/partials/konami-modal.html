@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div class="modal fade" id="konami-modal" tabindex="-1" role="dialog" aria-labelledby="KonamiTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="KonamiTitle">Congratulations</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="https://api.uvarc.io/rest/konami/" method="post" id="konami-form" accept-charset="UTF-8">
+        <div class="modal-body" style="padding-left:2rem;padding-right:2rem;">
+          <p style="font-family:monospace;">You have unlocked level 1! Continue hunting. In the meantime, send us your email for a free gift.</p>
+          <div class="form-item form-type-webform-email form-group">
+            <input required="required" class="email form-control form-text form-email required" type="email" id="email" name="email" value="" size="60" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" id="submit">Enter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="/js/k-nami.js"></script>
+<!-- /Modal -->

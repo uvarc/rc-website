@@ -1,0 +1,9 @@
+  <section class="sidebar-module">
+    <p class=lead>Featured Stories</p>
+    {{ range $key, $taxonomy := .Site.Taxonomies.featured }}
+    <ol class="list-unstyled">
+      { range $taxonomy.Pages }}
+      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
+      {{ end }}
+    </ol>
+  </section>

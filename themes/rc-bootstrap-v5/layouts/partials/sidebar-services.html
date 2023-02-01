@@ -1,0 +1,26 @@
+<!-- <aside class="col-sm-3 offset-sm-1 blog-sidebar"> -->
+<aside class="col-sm-4 blog-sidebar">
+
+  <div class="sticky">
+
+  {{ partial "page-contents.html" . }}
+
+  <section class="sidebar-module">
+    <p class=lead>Services</p>
+    <ol class="list-unstyled">
+      {{ range (where (where .Site.Pages.ByTitle "Type" "service") ".Params.sidebar" "ne" "hidden") }}
+      <li> <a href="{{.Permalink}}">{{.Title | markdownify }}</a></li>
+      {{ end }}
+    </ol>
+  </section>
+
+  {{ partial "user-help-widget.html" . }}
+
+  <section id="menu" class="sidebar-module">
+  </section>
+
+  </div>
+
+</aside><!-- /.blog-sidebar -->
+
+{{- /* vim: set ts=2 sw=2 et: */}}
