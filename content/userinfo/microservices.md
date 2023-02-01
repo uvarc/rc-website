@@ -1,7 +1,7 @@
 +++
 author = "RC Staff"
 description = ""
-title = "Microservices"
+title = "Container Services"
 date = "2023-01-02T23:59:16-05:00"
 draft = false
 tags = ["compute","containers","hybrid","infrastructure","docker","kubernetes","api","k8s"]
@@ -13,9 +13,9 @@ images = [""]
   <img src="/images/carousel/microservice-army.png" alt="Stand out from the pack" />
 -->
 
-<p class=lead>
+<p class=lead style="margin-top:2rem;">
   <img src="/images/docker-logo.png" style="max-width:30%;" alt="Docker Containers" align="right" />
-  Microservice architecture is an approach to designing and running applications as a distributed set of components or layers. Such applications are typically run within containers, made popular in the last few years by <a href="https://www.docker.com" target="_new">Docker</a>.
+  Container-based architecture, also known as "microservices," is an approach to designing and running applications as a distributed set of components or layers. Such applications are typically run within containers, made popular in the last few years by <a href="https://www.docker.com" target="_new">Docker</a>.
 </p>
 <p class=lead>
   Containers are portable, efficient, reusable, and contain code and any dependencies in a single package.

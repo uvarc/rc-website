@@ -64,7 +64,7 @@ various systems are available to researchers.</p>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Microservices</h4>
+      <h4 class="card-title">Container Services</h4>
       <img align="right" src="/images/container-cluster.png" style="max-width:20%;" />
         <p class="card-text" style="width:90%;">
         Deploying software in containers has grown increasingly useful for research scenarios. Containers are portable, distributable,
