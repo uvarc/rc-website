@@ -5,11 +5,9 @@ draft = false
 date = "2018-05-03T14:33:50-05:00"
 tags = ["genomics","cphg"]
 categories = ["projects"]
-images = "/images/docker-logo.png"
+images = "/images/projects/cphg.png"
 author = "RC Staff"
 +++
-
-<img alt="CPHG Logo" src="/projects/cphg.png" align="right" style="height:100px;width:224px;" />
 
 Coronary artery disease (CAD) is the major cause of morbidity and mortality worldwide. Recent genome wide association studies (GWAS) have revealed more than 50 genomic loci that are associated with increased risk for CAD. However, the pathological mechanisms for majority of the GWAS loci leading to increased susceptibility to this complex disorder are still unclear. Many of the CAD loci appear to act through the vessel wall, presumably affecting smooth muscle cell (SMC) function. 
 

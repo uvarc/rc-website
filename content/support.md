@@ -1,5 +1,5 @@
 +++
-date = "2023-01-08T23:59:16-05:00"
+date = "2023-01-31T23:59:16-05:00"
 tags = ["support"]
 categories = ["support"]
 images = [""]
@@ -17,95 +17,94 @@ aliases = ["/office-hours/"]
 <script>
 var user_token = getCookie("__user_token");
 </script>
-
 <div class="card-deck support-row">
-<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">Submit a Ticket</h5>
-    <p class="card-text">Open a support ticket with your specific questions or issues.<p>
-    <div class="support-tiles">
-      <a href="/form/support-request/"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
+  <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">Request Help</h5>
+      <p class="card-text">Open a support ticket with your specific questions or issues.<p>
+      <div class="support-tiles">
+        <a href="/form/support-request/"><button class="btn btn-primary btn-sm">Open a Support Ticket</button></a>
+      </div>
     </div>
   </div>
-</div>
-<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">User Guides</h5>
-    <p class="card-text">Learn about systems, storage, data transfer, image analysis or tools.</p>
-    <div class="support-tiles">
-      <a href="/userinfo/user-guide/"><button class="btn btn-primary btn-sm">Read the User Guides</button></a>
+  <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">Allocations</h5>
+      <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
+      <div class="support-tiles">
+        <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+      </div>
     </div>
   </div>
-</div>
-<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">Request a Consultation</h5>
-    <p class="card-text">Work directly with RC staff on your project idea or application design.</p>
-    <div class="support-tiles">
-      <a href="/form/support-request/?category=Consultation"><button class="btn btn-primary btn-sm">Request a Consultation</button></a>
+  <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">Storage</h5>
+      <p class="card-text">Manage your shared <i>Research Project</i> or <i>Research Standard</i> storage volumes.</p>
+      <div class="support-tiles">
+        <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a>
+      </div>
     </div>
   </div>
-</div>
-</div>
-
-<div class="card-deck support-row">
-<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">FAQ / Knowledgebase</h5>
-    <p class="card-text">Search topics or post your own related to research computing.</p>
-    <div class="support-tiles">
-      <a href="/userinfo/faq/overview/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
-    </div>
-  </div>
-</div>
-<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">Pricing</h5>
-    <p class="card-text">Read more about pricing for SUs, Ivy virtual machines, storage, and more.</p>
-    <div class="support-tiles">
-      <a href="/userinfo/pricing"><button class="btn btn-primary btn-sm">Learn More</button></a>
-    </div>
-  </div>
-</div>
-<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">Create an Ivy Project</h5>
-    <p class="card-text">Perform your research on a HIPAA-compliant computing platform.</p>
-    <div class="support-tiles">
-      <a href="https://services.rc.virginia.edu/"><button class="btn btn-primary btn-sm">Set up a Project</button></a>
-    </div>
-  </div>
-</div>
 </div>
 
 <div class="card-deck support-row">
-<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">Request an Allocation</h5>
-    <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
-    <div class="support-tiles">
-      <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+  <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">Ivy Projects</h5>
+      <p class="card-text">Perform your research on a HIPAA-compliant computing platform.</p>
+      <div class="support-tiles">
+        <a href="https://services.rc.virginia.edu/"><button class="btn btn-primary btn-sm">Set up a Project</button></a>
+      </div>
+    </div>
+  </div>
+  <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">ACCORD</h5>
+      <p class="card-text">Request information or support for an ACCORD project. <a href="/userinfo/accord/overview/" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
+      <div class="support-tiles">
+        <a href="mailto:accord-support@virginia.edu?Subject=ACCORD Support Request"><button class="btn btn-primary btn-sm">ACCORD Support</button></a>
+      </div>
+    </div>
+  </div>
+  <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">Container Services</h5>
+      <p class="card-text">Run your container-based service in our Kubernetes cluster. <a href="/userinfo/microservices/" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
+      <div class="support-tiles">
+        <a href="/form/containers/"><button class="btn btn-primary btn-sm">Request a Microservice</button></a>
+      </div>
     </div>
   </div>
 </div>
-<div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
-  <div class="card-body">
-    <h5 class="card-title">Request Storage</h5>
-    <p class="card-text">Manage your shared <i>Research Project</i> or <i>Research Standard</i> storage volumes.</p>
-    <div class="support-tiles">
-      <a href="/form/storage/"><button class="btn btn-primary btn-sm">Request Storage</button></a>
+
+<div class="card-deck support-row">
+  <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">User Guides</h5>
+      <p class="card-text">Learn about systems, storage, data transfer, image analysis or tools.</p>
+      <div class="support-tiles">
+        <a href="/userinfo/user-guide/"><button class="btn btn-primary btn-sm">Read the User Guides</button></a>
+      </div>
     </div>
   </div>
-</div>
-<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
-  <div class="card-body">
-    <h5 class="card-title">Request OMERO Access</h5>
-    <p class="card-text">Request or modify access to the OMERO image management database.</p>
-    <div class="support-tiles">
-      <a href="/form/omero/"><button class="btn btn-primary btn-sm">Request OMERO Access</button></a>
+  <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
+    <div class="card-body">
+      <h5 class="card-title">FAQ / Knowledgebase</h5>
+      <p class="card-text">Search topics or post your own related to research computing.</p>
+      <div class="support-tiles">
+        <a href="/userinfo/faq/overview/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
+      </div>
     </div>
   </div>
-</div>
+  <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
+    <div class="card-body">
+      <h5 class="card-title">Pricing</h5>
+      <p class="card-text">Read more about pricing for SUs, Ivy virtual machines, storage, and more.</p>
+      <div class="support-tiles">
+        <a href="/userinfo/pricing"><button class="btn btn-primary btn-sm">Learn More</button></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div style="width:100%;height:2rem;"></div>
