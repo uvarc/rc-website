@@ -1,15 +1,15 @@
-name = "Hugo Bootstrap v4 Blog"
+name = "UVARC Hugo Bootstrap v5"
 license = "GPL-3.0"
 licenselink = "https://github.com/alanorth/hugo-theme-bootstrap4/blob/master/LICENSE.txt"
-description = "A simple Hugo theme based on the Bootstrap v4 blog example."
+description = "A simple Hugo theme based on the Bootstrap v5 blog example."
 homepage = "https://github.com/alanorth/hugo-theme-bootstrap4"
 tags = ["bootstrap", "blog", "fontawesome"]
 features = ["responsive", "blog"]
 min_version = 0.17
 
 [author]
-  name = "Alan Orth"
-  homepage = "https://englishbulgaria.net"
+  name = "Neal Magee"
+  homepage = "https://www.rc.virginia.edu/"
 
 [original]
   author = "mdo"
