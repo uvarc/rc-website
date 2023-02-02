@@ -16,11 +16,12 @@ echo ""
 echo "**********************************************************"
 
 echo ""
-read -p "   Which branch do you want to publish, main or staging? [m/s]: " proceed
+read -p "   Which branch do you want to publish, main/staging/feature? [m/s/f]: " proceed
 case $proceed in
     [m]* ) proceedx="1";;
     [s]* ) proceedx="2";;
-    * ) echo "Please answer m or s";;
+    [f]* ) proceedx="3";;
+    * ) echo "Please answer m/s/f";;
 esac
 
 if [ $proceedx -eq 2 ]
@@ -50,5 +51,19 @@ then
   aws s3 sync --delete --cache-control max-age=86400 public/ s3://uvarc-website/
   echo "--- Public dir published to AWS"
   aws cloudfront create-invalidation --distribution-id "EAQ13XDB9RM7R" --paths "/*"
+  exit 0
+elif [ $proceedx -eq 3 ]
+then
+  git checkout feature
+  echo "You are publishing the FEATURE branch"
+  echo "--- Clear the /public/ dir of all content"
+  rm -Rf public/
+  mkdir public
+  echo "--- Content cleared"
+  hugo -v --ignoreCache    # try without cache
+  echo "--- Hugo content generated"
+  aws s3 sync --delete --cache-control max-age=86400 public/ s3://uvarc-website-feature/
+  echo "--- Public dir published to AWS"
+  aws cloudfront create-invalidation --distribution-id "E30AOR0D11NS3I" --paths "/*"
   exit 0
 fi

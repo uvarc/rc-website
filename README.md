@@ -2,9 +2,9 @@
 
 # UVA Research Computing Website
 
-| Staging URL   | Production URL |
-| ------------- | ------------- |
-| https://staging.rc.virginia.edu/ | https://www.rc.virginia.edu/  |
+| Staging URL   | Production URL |  Feature URL |
+| ------------- | ------------- | ------------- |
+| https://staging.rc.virginia.edu/ | https://www.rc.virginia.edu/  | http://d1r0b2krqmcyzl.cloudfront.net/ |
 
   * [Developing](#developing)
      * [Using Web IDEs](#using-web-ides)
