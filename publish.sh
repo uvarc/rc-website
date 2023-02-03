@@ -62,7 +62,7 @@ then
   echo "--- Content cleared"
   hugo -v --ignoreCache    # try without cache
   echo "--- Hugo content generated"
-  aws s3 sync --delete --cache-control max-age=86400 public/ s3://uvarc-website-feature/
+  aws s3 sync --acl public-read --delete --cache-control max-age=86400 public/ s3://uvarc-website-feature/
   echo "--- Public dir published to AWS"
   aws cloudfront create-invalidation --distribution-id "E30AOR0D11NS3I" --paths "/*"
   exit 0

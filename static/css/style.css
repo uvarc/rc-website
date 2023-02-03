@@ -36,6 +36,9 @@ table.table.table-responsive.status-tbl tr td{width:33%}
 .selected_category { background-color:red;}
 .form-light { background-color:rgb(250, 250, 250); }
 
+.menu-bold {color:white;margin-right:1rem;}
+li a .dropdown-item {font-size:95%;font-weight:700;font-family:'Roboto', sans-serif;background-color:#232d4b;color:white;}
+
 .sidebar-training{padding:1rem;}
 .sidebar-module{padding-left:1rem;padding-right:1rem;padding-bottom:1.4rem;}
 .sidebar-module h6{font-weight:bold;}

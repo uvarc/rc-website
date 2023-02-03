@@ -5,14 +5,95 @@
   </div>
 </div>
 
-<nav class="navbar navbar-toggleable-md navbar-dark" style="background-color:#232d4b;border-radius: 0 !important;">
-  <div class="container">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">   
-      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-    </span>
-  </button>
-
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#232d4b;border-radius: 0 !important;">
+  <div class="container container-fluid">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle menu-bold" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ABOUT
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+            <li><a class="dropdown-item" href="/about/">MISSION</a></li>
+            <li><a class="dropdown-item" href="/about/people/">PEOPLE</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            GET STARTED
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <li><a class="dropdown-item nav-clean" href="/userinfo/systems/">CHOOSE A SYSTEM</a></li>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/rivanna/allocations/">REQUEST ACCESS</a></li>
+            <li><a class="dropdown-item" href="/userinfo/user-guide/">USER GUIDES</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SERVICES
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+            <a class="dropdown-item nav-clean" href="/service/high-performance-computing/">HIGH PERFORMANCE COMPUTING</a>
+            <a class="dropdown-item nav-clean" href="/service/data-analysis/">DATA ANALYSIS</a>
+            <a class="dropdown-item nav-clean" href="/service/imaging/">IMAGE PROCESSING & VISUALIZATION</a>
+            <a class="dropdown-item nav-clean" href="/service/bioinformatics/">BIOINFORMATICS</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/microservices/">CONTAINER SERVICES</a>
+            <a class="dropdown-item nav-clean" href="/service/cloud/">CLOUD SOLUTIONS</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/storage/">STORAGE</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item nav-clean" href="/form/support-request/?category=Consultation">PROJECT CONSULTING</a>
+            <a class="dropdown-item nav-clean" href="/service/acknowledgement/">ACKNOWLEDGMENT</a>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            USER INFO
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
+            <li><a class="dropdown-item nav-clean" href="/userinfo/user-guide/">USER GUIDES</a>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/faq/overview">FAQs</a>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/howtos/overview">HOW-TOs</a>
+            <div class="dropdown-divider"></div>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/rivanna/overview/">RIVANNA</a>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/ivy/overview">IVY</a>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/accord/overview">ACCORD</a>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/microservices/">CONTAINER SERVICES</a>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/access-ci/">NSF ACCESS-CI</a>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/storage/">STORAGE</a>
+            <li><a class="dropdown-item nav-clean" href="/userinfo/data-transfer/">DATA TRANSFER</a>
+            <!-- <a class="dropdown-item nav-clean" href="/userinfo/omero/overview">OMERO IMAGE DATABASE</a> -->
+            <li><a class="dropdown-item nav-clean" href="/userinfo/pricing/">PRICING</a>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown5" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            EDUCATION
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown5">
+            <li><a class="dropdown-item" href="/education/workshops/">WORKSHOPS</a></li>
+            <li><a class="dropdown-item" target="_new" href="https://learning.rc.virginia.edu/">COURSE MATERIAL</a></li>
+            <li><a class="dropdown-item" href="/education/rivanna-instructional">USING RIVANNA FOR INSTRUCTION</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/project/">PROJECTS</a>
+        </li>
+        <li class="nav-item">
+          <a href="/support/"><button style="font-size:95%;font-weight:700;font-family:'Roboto', sans-serif;background-color:#232d4b;color:white;border:solid 1px #ccc;" class="btn btn-default" type="submit">USER SUPPORT</button></a>
+        </li>
+      </ul>
+      <!-- BEGIN SEARCH BOX -->
+      <div style="float:right;">
+        <button type="button" class="btn btn-default" style="background-color:#232d4b;color:white;border:none;" data-toggle="modal" data-target=".search-modal"><i class="fas fa-search" style="font-size:120%;color:white;"></i></button>
+      </div>
+      <!-- END SEARCH BOX -->
+    </div>
+  </div>
+</nav>
   <div class="modal fade search-modal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content" style="opacity:90%;margin-top:50%;">
@@ -22,90 +103,6 @@
       </div>
     </div>
   </div>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-  <ul class="navbar-nav mr-auto">
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">ABOUT</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/about/mission/">MISSION</a>
-      <a class="dropdown-item nav-clean" href="/about/people/">PEOPLE</a>
-    </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">GET STARTED</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/userinfo/systems/">CHOOSE A SYSTEM</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/rivanna/allocations/">REQUEST ACCESS</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/user-guide/">USER GUIDES</a>
-    </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">SERVICES</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/service/high-performance-computing/">HIGH PERFORMANCE COMPUTING</a>
-      <a class="dropdown-item nav-clean" href="/service/data-analysis/">DATA ANALYSIS</a>
-      <a class="dropdown-item nav-clean" href="/service/imaging/">IMAGE PROCESSING & VISUALIZATION</a>
-      <a class="dropdown-item nav-clean" href="/service/bioinformatics/">BIOINFORMATICS</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/microservices/">CONTAINER SERVICES</a>
-      <a class="dropdown-item nav-clean" href="/service/cloud/">CLOUD SOLUTIONS</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/storage/">STORAGE</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item nav-clean" href="/form/support-request/?category=Consultation">PROJECT CONSULTING</a>
-      <a class="dropdown-item nav-clean" href="/service/acknowledgement/">ACKNOWLEDGMENT</a>
-    </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">USER INFO</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/userinfo/user-guide/">USER GUIDES</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/faq/overview">FAQs</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/howtos/overview">HOW-TOs</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item nav-clean" href="/userinfo/rivanna/overview/">RIVANNA</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/ivy/overview">IVY</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/accord/overview">ACCORD</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/microservices/">CONTAINER SERVICES</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/access-ci/">NSF ACCESS-CI</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/storage/">STORAGE</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/data-transfer/">DATA TRANSFER</a>
-      <!-- <a class="dropdown-item nav-clean" href="/userinfo/omero/overview">OMERO IMAGE DATABASE</a> -->
-      <a class="dropdown-item nav-clean" href="/userinfo/pricing/">PRICING</a>
-    </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">EDUCATION</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/education/workshops/">WORKSHOPS</a>
-      <a class="dropdown-item nav-clean" target="_new" href="https://learning.rc.virginia.edu/">COURSE MATERIAL</a>
-      <a class="dropdown-item nav-clean" href="/education/rivanna-instructional">USING RIVANNA FOR INSTRUCTION</a>
-    </div>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link nav-clean" href="/project/" style="color:white;margin-right:2rem;">PROJECTS</a>
-  </li>
-
-  <li class="nav-item">
-    <a href="/support/"><button style="font-size:95%;font-weight:700;font-family:'Roboto', sans-serif;background-color:#232d4b;color:white;border:solid 1px #ccc;" class="btn btn-default" type="submit">USER SUPPORT</button></a>
-  </li>
-
-  </ul>
-
-  <!-- BEGIN SEARCH BOX -->
-  <div style="float:right;">
-    <button type="button" class="btn btn-default" style="background-color:#232d4b;color:white;border:none;" data-toggle="modal" data-target=".search-modal"><i class="fas fa-search" style="font-size:120%;color:white;"></i></button>
-  </div>
-  <!-- END SEARCH BOX -->
-
-  </div>
-</nav>
-
 <script>
 $('.search-modal').on('shown.bs.modal', function () {
     $('#qt').focus();
