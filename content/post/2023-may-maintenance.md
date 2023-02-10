@@ -34,6 +34,7 @@ The following modules will be **removed** from Rivanna during the maintenance pe
 |---|---|---|
 |alphafold<sup>*</sup> | 2.2.0 | 2.1.2, 2.2.2, 2.3.0 |
 |awscli | 2.4.12 | 2.9.17 |
+|gurobi | 9.5.0  | 10.0.1 |
 |imagemagick | 7.0.7-0 | 7.1.0-57 |
 
 <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
@@ -43,3 +44,5 @@ The following modules will be **removed** from Rivanna during the maintenance pe
     **Default version changes:**
 
 3. **New** modules:
+    
+    - optix/6.5.0
