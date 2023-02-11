@@ -8,6 +8,14 @@ type = "people"
 biolink = false
 description = ""
 author = "UVARC Staff"
-images = [""]
-subjects = ["image-processing","biomedical-imaging","data-science","python","research"]
+images = [
+  ""
+]
+subjects = [
+  "image-processing",
+  "biomedical-imaging",
+  "data-science",
+  "python",
+  "research"
+]
 +++
