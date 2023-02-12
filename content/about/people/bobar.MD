@@ -13,7 +13,6 @@ images = [
 ]
 subjects = [
   "image-processing",
-  "biomedical-imaging",
   "data-science",
   "python",
   "research"
