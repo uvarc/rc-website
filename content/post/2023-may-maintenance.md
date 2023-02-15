@@ -18,6 +18,8 @@ All systems are expected to return to service by **6 a.m. on , May **.
 
 ## IMPORTANT MAINTENANCE NOTES
 
+Five RTX3090 nodes (4 GPU devices each) have been added to the `gpu` partition - use `--gres:rtx3090` in Slurm script.
+
 ### Modules
 
 1. The toolchains `gompic` `gcccuda` `goolfc` will be **removed** from Rivanna during the maintenance period, since we now have CUDA-aware toolchains based on gcc/11.2.0. If you need assistance with rebuilding your own code, please contact us [here](https://www.rc.virginia.edu/form/support-request/). The following affected modules have been migrated:
