@@ -18,7 +18,7 @@ All systems are expected to return to service by **6 a.m. on , May **.
 
 ## IMPORTANT MAINTENANCE NOTES
 
-Five RTX3090 nodes (4 GPU devices each) have been added to the `gpu` partition - use `--gres:rtx3090` in Slurm script.
+Five RTX3090 nodes (4 GPU devices each) have been added to the `gpu` partition - use `--gres=gpu:rtx3090` in Slurm script.
 
 ### Modules
 
