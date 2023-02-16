@@ -79,7 +79,7 @@ Listed below are our partner universities for ACCORD:
     <div class="card-body">
       <h5 class="card-title">Support Ticket</h5>
       <p class="card-text">Open a support ticket for ACCORD</p>
-      <a href="/form/support-request/"><button class="btn btn-success">Open a Support Ticket</button></a>
+      <a href="/form/accord/"><button class="btn btn-success">Open a Support Ticket</button></a>
     </div>
   </div>
 </div>
