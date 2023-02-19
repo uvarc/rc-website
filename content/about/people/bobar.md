@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2022-01-01T15:25:10-05:00"
+date = "2023-01-01T15:25:10-05:00"
 title = "Marcus Bobar"
 job_title = "Computational Scientist"
 lastname = "Bobar"
@@ -12,8 +12,10 @@ images = [
   ""
 ]
 subjects = [
-  "image-processing",
+  "biomedical-imaging",
   "data-science",
+  "image-analysis",
+  "machine-learning",
   "python",
   "research"
 ]
