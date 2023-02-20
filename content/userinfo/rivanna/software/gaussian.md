@@ -55,13 +55,13 @@ The ampersand (&) returns the terminal to input mode while GaussView is running.
 Note: If the above command launches a text editor instead of GaussView, either you have not been granted access or your `PATH` is incorrectly configured. In either case, please run the following commands and send us the output:
 
 ```bash
-module load gaussian # or gaussian/grads16, see explanation in previous section
 groups
-# if "gaussian" is not present:
+# if "gaussian" is not present in the output:
 #   - if you are the PI, please contact us for access
 #   - if you are not the PI, please ask your PI to request access for you
 #   - no need to execute the remaining commands
 
+module load gaussian # or gaussian/grads16, see explanation in previous section
 which g16 gview
 echo $PATH
 ```
