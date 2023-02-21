@@ -12,5 +12,11 @@ document.addEventListener('keydown', function(e) {
   }  
 }); 
 function showSearch() {
-  $('.search-modal').modal('show')
+  $('.search-modal').modal('show');
 }; 
+
+$(document).ready(function() {
+  if(window.location.href.indexOf('#search') != -1) {
+    $('.search-modal').modal('show');
+  }
+});
