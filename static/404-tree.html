@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 Page Not Found | UVA Research Computing</title>
+  <link rel="Shortcut Icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+
+  <style>
+    body {
+      font-family:'Roboto Mono';
+      /* background-color:#ECF5F7; */
+    }
+    a {
+      color:#222;
+    }
+    a:hover {
+      background-color:yellow;
+      text-decoration:none;
+    }
+    .list-unstyled li a {
+      font-family:'Roboto Mono';
+      margin-left:0px;
+      padding-left:60px;
+      padding-right:20px;
+      padding-top:4px;
+      padding-bottom:4px;
+    }
+    .playsi {
+      display:none;
+      text-align:left;
+      color:white;
+      width:300px;
+      height:60px;
+      font-size:90%;
+    }
+  </style>
+
+
+</head>
+
+<body style="padding-top:120px;">
+
+  <div class="page-container page-container-responsive" style="width:80%;margin-left:auto;margin-right:auto;">
+  <header class="page-container page-container-responsive" style="">
+      <span class="screen-reader-only" style="font-face:bold;">
+        UVA Research Computing
+      </span>
+  </header>
+    <div class="row space-top-8 space-8 row-table">
+        <div class="col-5 col-middle">
+          <h1 class="text-jumbo" style="font-size:100px;">404</h1>
+          <h2>We can't find the page you're looking for.</h2>
+          <ul class="list-unstyled">
+            <li>Try one of these links instead:</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/search/">Search</a></li>
+            <li><a href="/about/mission/">About Us</a></li>
+            <li><a href="/about/people/">Staff</a></li>
+            <li><a href="/support/">Support</a></li>
+            <li><a href="/userinfo/systems/">Systems</a></li>
+            <li><a href="/userinfo/user-guide/">User Guides</a></li>
+          </ul>
+        </div>
+        <div class="col-5 col-middle text-center">
+          <img src="/images/404/fractal-tree-with-code.gif" width="550" height="333" alt="Recursive Fractal Tree">
+          <!-- <img src="/images/404/process-animated-develop-600x800.gif" alt="Code Typing"> -->
+        </div>
+      </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $(".playsi").delay(30000).fadeIn();
+      $(".playsi").delay(5000).fadeOut();
+      $(".playsi").delay(30000).fadeIn();
+      $(".playsi").delay(5000).fadeOut();
+    });
+  </script>
+
+  <div class="playsi" id="playsi">
+    <p><a href="/play.html">Would you like to play a game?</a></p>
+  </div>
+
+
+
+    </div>
+  </div>
+
+</body>
+</html>

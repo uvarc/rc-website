@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
   <meta charset="utf-8">
@@ -9,7 +8,6 @@
   <link href="/css/style.css" rel="stylesheet">
   <link href="https://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-
   <style>
     body {
       font-family:'Roboto Mono';
@@ -17,80 +15,114 @@
     }
     a {
       color:#222;
+      padding:8px;
     }
     a:hover {
       background-color:yellow;
       text-decoration:none;
     }
-    .list-unstyled li a {
-      font-family:'Roboto Mono';
-      margin-left:0px;
-      padding-left:60px;
-      padding-right:20px;
-      padding-top:4px;
-      padding-bottom:4px;
+    #errorPage {
+      text-align: center;
+      margin-top: 44px;
+      margin-bottom: 57px;
+    }
+    #errorPage h1 {
+      margin: 12px 0;
+    }
+    #errorPage p {
+      line-height: 1.7em;
     }
     .playsi {
       display:none;
-      text-align:left;
       color:white;
       width:300px;
       height:60px;
       font-size:90%;
     }
+.glitch {
+  font-size: 5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+    0.025em 0.04em 0 #fffc00;
+  animation: glitch 725ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 500ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  transform: translate(-0.04em, -0.03em);
+  opacity: 0.75;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translate(0.04em, 0.03em);
+  opacity: 0.75;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  15% {
+    text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+  }
+  16% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+  }
+  50% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  99% {
+    text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+  }
+  100% {
+    text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+      -0.04em -0.025em 0 #fffc00;
+  }
+}
+
   </style>
-
-
 </head>
-
 <body style="padding-top:120px;">
-
-  <div class="page-container page-container-responsive" style="width:80%;margin-left:auto;margin-right:auto;">
-  <header class="page-container page-container-responsive" style="">
+  <div id="errorPage">
+    <header class="" style="">
       <span class="screen-reader-only" style="font-face:bold;">
         UVA Research Computing
       </span>
-  </header>
-    <div class="row space-top-8 space-8 row-table">
-        <div class="col-5 col-middle">
-          <h1 class="text-jumbo" style="font-size:100px;">404</h1>
-          <h2>We can't find the page you're looking for.</h2>
-          <ul class="list-unstyled">
-            <li>Try one of these links instead:</li>
-            <li><a href="/">Home</a></li>
-            <li><a href="/search/">Search</a></li>
-            <li><a href="/about/mission/">About Us</a></li>
-            <li><a href="/about/people/">Staff</a></li>
-            <li><a href="/support/">Support</a></li>
-            <li><a href="/userinfo/systems/">Systems</a></li>
-            <li><a href="/userinfo/user-guide/">User Guides</a></li>
-          </ul>
-        </div>
-        <div class="col-5 col-middle text-center">
-          <img src="/images/404/fractal-tree-with-code.gif" width="550" height="333" alt="Recursive Fractal Tree">
-          <!-- <img src="/images/404/process-animated-develop-600x800.gif" alt="Code Typing"> -->
-        </div>
+    </header>
+    <div class="">
+      <h1 class="text-jumbo" style="font-size:200px;">404</h1>
+        <h2>The resource cannot be found.</h2>
+        <p style="margin-top:2rem;">
+          <a href="/">Home</a>
+          <a href="/search/#search">Search</a>
+          <a href="/about/mission/">About Us</a>
+          <a href="/about/people/">Staff</a>
+          <a href="/support/">Support</a>
+          <a href="/userinfo/systems/">Systems</a>
+          <a href="/userinfo/user-guide/">User Guides</a>
+        </p>
       </div>
-
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
-crossorigin="anonymous"></script>
-  <script>
-    $(function() {
-      $(".playsi").delay(30000).fadeIn();
-      $(".playsi").delay(5000).fadeOut();
-      $(".playsi").delay(30000).fadeIn();
-      $(".playsi").delay(5000).fadeOut();
-    });
-  </script>
-
-  <div class="playsi" id="playsi">
-    <p><a href="/play.html">Would you like to play a game?</a></p>
-  </div>
-
-
-
     </div>
   </div>
-
 </body>
 </html>

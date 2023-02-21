@@ -41,7 +41,7 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 # License and Permission
-We have a site license. Please contact us if you need access to the software.
+We have a site license. Please contact us if you need access to the software. (Non-PIs should ask their PI to send in the request.)
 
 For research, please load `gaussian`. For course work, please load `gaussian/grads16`.
 
@@ -55,10 +55,14 @@ The ampersand (&) returns the terminal to input mode while GaussView is running.
 Note: If the above command launches a text editor instead of GaussView, either you have not been granted access or your `PATH` is incorrectly configured. In either case, please run the following commands and send us the output:
 
 ```bash
+groups
+# if "gaussian" is not present in the output:
+#   - if you are the PI, please contact us for access
+#   - if you are not the PI, please ask your PI to request access for you
+#   - no need to execute the remaining commands
+
 module load gaussian # or gaussian/grads16, see explanation in previous section
-id
-which g16
-which gview
+which g16 gview
 echo $PATH
 ```
 
