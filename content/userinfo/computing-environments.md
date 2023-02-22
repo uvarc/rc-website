@@ -34,7 +34,7 @@ with the intention of providing computing resources for researchers across the c
 home institution. Placed in the High Security Zone alongside Ivy, ACCORD is designed to be a collaborative platform for cross-institutional 
 research. ACCORD is currently approved for deidentified PHI, PII, FERPA, and Business Confidential data.
 
-The ACCORD platform consists of 8 nodes in a Kubernetes cluster, each with approximately 40 cores and 256GB of RAM. Cluster storage is
+The ACCORD platform consists of 8 nodes in a Kubernetes cluster, each with approximately 40 cores and 394GB of RAM. Cluster storage is
 approximately 1PB of IBM Spectrum storage (GPFS), with data transfer capabilities via Globus DTN. GPU capacity is being added in 2023.
 
 PIs may request ACCORD access for their project and team members. Once approved, researchers connect to ACCORD from either their campus
