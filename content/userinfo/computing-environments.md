@@ -2,11 +2,12 @@
 author = "RC Staff"
 description = ""
 title = "Computing Environments at UVA"
-date = "2022-07-10T10:08:29-05:00"
+date = "2023-02-21T10:08:29-05:00"
 draft = false
-tags = ["compute","rivanna","ivy","containers","systems","kubernetes","hipaa","hpc"]
+tags = ["compute","rivanna","ivy","containers","systems","kubernetes","hipaa","hpc","accord"]
 categories = ["userinfo"]
 images = [""]
+aliases = [ "/facilities" ]
 +++
 
 # Rivanna
@@ -26,15 +27,33 @@ Faculty/staff may request Ivy resources in the form of virtual machines (VMs) wi
 
 - - -
 
+# ACCORD
+
+ACCORD is a web-based computing environment for highly sensitive data. This project was funded through a grant from the NSF,
+with the intention of providing computing resources for researchers across the commonwealth who may lack such resources at their
+home institution. Placed in the High Security Zone alongside Ivy, ACCORD is designed to be a collaborative platform for cross-institutional 
+research. ACCORD is currently approved for deidentified PHI, PII, FERPA, and Business Confidential data.
+
+The ACCORD platform consists of 8 nodes in a Kubernetes cluster, each with approximately 40 cores and 256GB of RAM. Cluster storage is
+approximately 1PB of IBM Spectrum storage (GPFS), with data transfer capabilities via Globus DTN. GPU capacity is being added in 2023.
+
+PIs may request ACCORD access for their project and team members. Once approved, researchers connect to ACCORD from either their campus
+or institutional VPN, select an appropriate software interface, and their environment is provisioned immediately. Currently the interfaces
+offered are: Theia Python, Theia C++, Jupyter Notebook, and RStudio. All researchers in a given project are given a home directory that 
+persists across sessions, as well as project storage they share with other team members.
+
+- - -
+
 # Microservices
 
 Microservices enable researchers to run containerized applications in a single managed environment. Researchers bring their
 own containers or multi-container solutions, and UVA Research Computing coordinates their deployment. Once deployed, users
-manage their own services, including versioning, content, scaling, and connectivity to other services.
+manage their own services, including versioning, content, scaling, and connecting to other services.
 
-The UVA microservice platform supported by Research Computing is a multi-node Kubernetes cluster. This platform currently 
-consists of 12 nodes totaling ~860 cores and 4.6TB of memory. The system is located in the UVA Standard Security Zone and
-has full network visibility to other SSZ resources such as the Rivanna HPC system. Included in this cluster are ingress
-controllers for routing inbound requests and SSL management, a secrets manager, namespaces with role-based access, and 
-a GitOps model for service deployment and management. Kubernetes nodes currently have remote access to Research Standard 
+The microservice platform is a multi-node Kubernetes cluster currently 
+consisting of 12 nodes, with approximately 72 cores and 384GB of RAM each. The cluster also includes a single GPU server
+with 4 x A100 NVIDIA GPUs. The system is located in the UVA Standard Security Zone and
+has full network visibility to other SSZ resources such as the Rivanna HPC system. This cluster includes ingress
+controllers, SSL encryption, a secrets manager, namespaces with role-based access, and 
+tools for automated deployment and management. Kubernetes nodes currently have NFS access to Research Standard 
 Storage shares.

@@ -244,7 +244,7 @@ software:
        installation: optional #preinstalled,none  
    category: [Data Analysis]
    description: The SPSS® software platform offers advanced statistical analysis, a vast library of machine learning algorithms, text analysis, and open source extensibility.
-   license: A limited number of SPSS licenses are available on a first-come-first-serve basis.
+   license: The current SPSS license allows for 25 concurrent users within the Ivy computing environment. These seats are available on a first-come-first-serve basis.
  - name: Knime
    versions:
      - version: ""
