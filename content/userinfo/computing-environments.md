@@ -28,11 +28,18 @@ Faculty/staff may request Ivy resources in the form of virtual machines (VMs) wi
 
 # ACCORD
 
-ACCORD is a web-based computing environment for highly sensitive data. Placed in the High Security Zone alongside Ivy, and funded
-through an NSF grant, ACCORD is designed to be a collaborative platform for cross-institutional research.
+ACCORD is a web-based computing environment for highly sensitive data. This project was funded through a grant from the NSF,
+with the intention of providing computing resources for researchers across the commonwealth who may lack such resources at their
+home institution. Placed in the High Security Zone alongside Ivy, ACCORD is designed to be a collaborative platform for cross-institutional 
+research. ACCORD is currently approved for deidentified PHI, PII, FERPA, and Business Confidential data.
 
 The ACCORD platform consists of 8 nodes in a Kubernetes cluster, each with approximately 40 cores and 256GB of RAM. Cluster storage is
 approximately 1PB of IBM Spectrum storage (GPFS), with data transfer capabilities via Globus DTN. GPU capacity is being added in 2023.
+
+PIs may request ACCORD access for their project and team members. Once approved, researchers connect to ACCORD from either their campus
+or institutional VPN, select an appropriate software interface, and their environment is provisioned immediately. Currently the interfaces
+offered are: Theia Python, Theia C++, Jupyter Notebook, and RStudio. All researchers in a given project are given a home directory that 
+persists across sessions, as well as project storage they share with other team members.
 
 - - -
 
