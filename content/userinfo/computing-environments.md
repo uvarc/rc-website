@@ -7,6 +7,7 @@ draft = false
 tags = ["compute","rivanna","ivy","containers","systems","kubernetes","hipaa","hpc","accord"]
 categories = ["userinfo"]
 images = [""]
+aliases = [ "/facilities" ]
 +++
 
 # Rivanna
