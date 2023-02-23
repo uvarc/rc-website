@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Computing Environments at UVA"
-date = "2023-02-21T10:08:29-05:00"
+date = "2023-02-2308:08:29-05:00"
 draft = false
 tags = ["compute","rivanna","ivy","containers","systems","kubernetes","hipaa","hpc","accord"]
 categories = ["userinfo"]
@@ -29,7 +29,7 @@ Faculty/staff may request Ivy resources in the form of virtual machines (VMs) wi
 
 # ACCORD
 
-ACCORD is a web-based computing environment for highly sensitive data. This project was funded through a grant from the NSF,
+ACCORD is a web-based computing environment for sensitive and highly sensitive data. This project was funded through a grant from the NSF,
 with the intention of providing computing resources for researchers across the commonwealth who may lack such resources at their
 home institution. Placed in the High Security Zone alongside Ivy, ACCORD is designed to be a collaborative platform for cross-institutional 
 research. ACCORD is currently approved for deidentified PHI, PII, FERPA, and Business Confidential data.
