@@ -7,7 +7,7 @@ about = true
 author = "Staff"
 description = ""
 title = "Your Resources"
-draft = false
+draft = true
 type = "resource"
 private = true
 +++
