@@ -1,7 +1,7 @@
 +++
 description = ""
 title = "Image Data Management with OMERO"
-draft = false
+draft = true
 date = "2020-02-17T17:45:12-05:00"
 tags = ["omero","image processing","storage","infrastructure"]
 categories = ["userinfo"]

@@ -2,7 +2,7 @@
 title = "Preinstalled Strawberry Perl on Ivy Windows VM"
 description = ""
 author = "RC Staff"
-date = "2018-01-29T15:45:12-05:00"
+date = "2023-02-23T15:45:12-05:00"
 images = [""]
 categories = ["userinfo"]
 tags = [
@@ -64,4 +64,4 @@ Run the following command after installing your module :
 It should output a path to the installed module. 
 
 ## More Information
-For more information on Strawberry Perl, please visit the [official website] (http://strawberryperl.com/support.html).
+For more information on Strawberry Perl, please visit the [**official website**](http://strawberryperl.com/support.html).
