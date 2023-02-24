@@ -2,10 +2,10 @@
 author = "RC Staff"
 description = ""
 title = "Microservice Deployments"
-date = "2023-01-02T23:59:16-05:00"
+date = "2023-02-23T23:59:16-05:00"
 draft = false
 tags = ["compute","containers","infrastructure","docker","kubernetes","api","k8s"]
-categories = ["userinfo"]
+categories = ["userinfo","containers"]
 images = [""]
 +++
 

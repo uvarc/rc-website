@@ -1,0 +1,33 @@
+<div class="modal fade search-modal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="opacity:90%;margin-top:40%;">
+            <div class="modal-header" style="height:3rem;">
+                <h5 class="modal-title">Search</h5>
+                <form method="get" action="/search/">
+                    <input type=search id=qt name=q class="no-highlightzz" placeholder="" style="text-align:left;width:320px;font-size:100%;padding:8px;border:solid 0px #6f6f6f;font-family: 'Roboto Mono', monospace;">
+                </form>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p style="font-weight:bold;font-size:80%;">Suggested Pages</p>
+                <div class="row">
+                    <div class="col-sm">
+                        <p><a style="text-decoration: none; color:#555;" href="/"><i class="fas fa-home"></i>&nbsp; Home</a></p>
+                        <p><a style="text-decoration: none; color:#555;"  href="/userinfo/rivanna/allocations/"><i class="fas fa-th-list"></i>&nbsp; Allocations</a></p>
+                        <p><a style="text-decoration: none; color:#555;"  href="/userinfo/storage/"><i class="fas fa-archive"></i>&nbsp; Storage</a></p>
+                    </div>
+                    <div class="col-sm">
+                        <p><a style="text-decoration: none; color:#555;"  href="/form/support-request/"><i class="fas fa-plus-square"></i>&nbsp; Open a Ticket</a></p>
+                        <p><a style="text-decoration: none; color:#555;"  href="/userinfo/systems/"><i class="fas fa-server"></i>&nbsp; Systems</a></p>
+                        <p><a style="text-decoration: none; color:#555;"  href="/userinfo/user-guide/"><i class="fas fa-book-reader"></i>&nbsp; User Guides</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="height:2rem;">
+                <p style="color:#6f6f6f;font-size:80%;"><code>Esc</code> to exit</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -8,7 +8,7 @@ tags = [
   "containers"
 ]
 draft = false
-date = "2020-07-05T14:18:18-05:00"
+date = "2023-02-23T14:18:18-05:00"
 title = "Cloud Solutions"
 description = ""
 author = "Staff"
@@ -22,6 +22,8 @@ aliases = ["/cloud"]
 // <!--
 var aText = new Array(
 "serverless website",
+"API",
+"scheduled tasks",
 "pipelines",
 "containers",
 "jobs more efficiently"
@@ -213,8 +215,6 @@ systems and development.
 [<button class="btn btn-primary">Request a Consultation</button>](/form/support-request/?category=Consultation)
 
 <hr size=1 style="padding-bottom:10px;" />
-
-{{< education-track "274" >}}
 
 # Training
 
