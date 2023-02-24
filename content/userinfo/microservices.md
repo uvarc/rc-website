@@ -5,7 +5,7 @@ title = "Container Services"
 date = "2023-02-23T23:59:16-05:00"
 draft = false
 tags = ["compute","containers","hybrid","infrastructure","docker","kubernetes","api","k8s"]
-categories = ["userinfo"]
+categories = ["userinfo","containers"]
 images = [""]
 +++
 
