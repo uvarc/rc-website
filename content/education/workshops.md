@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Workshops"
-date = "2022-06-14T10:55:28-05:00"
+date = "2023-02-23T10:55:28-05:00"
 draft = false
 tags = ["R","Python","Matlab","Shiny","HPC","Rivanna","Ivy","image processing","bioinformatics","containers","programming"]
 categories = ["education", "workshops"]
@@ -68,5 +68,4 @@ Course material and exercises are available through a companion site. Feel free 
 - Writing in Functions in R
 
 {{% callout %}}
-Do you need a specific workshop and have a group of people to attend? <a href="//uvarc.io/support" style="font-weight:bold;">Let us know</a>.
-{{% /callout %}}
+Do you need a specific workshop and have a group of people to attend? <a href="/form/support-request/?category=Consultation" style="font-weight:bold;">Let us know</a>.{{% /callout %}}

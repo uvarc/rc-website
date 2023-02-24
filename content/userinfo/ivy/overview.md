@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy Secure Environment"
 draft = false
-date = "2022-06-07T11:45:12-05:00"
+date = "2023-02-23T11:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -441,7 +441,11 @@ The Ivy platform is HIPAA compliant by design. From the <a href="https://researc
 
 Researchers must understand that, in general, the more difficult parts of HIPAA compliance are less technical (networks, computers, and data) than they are human and how users interact with these systems and data. The mishandling of data -- such as storing them on insecure devices or in insecure places -- jeopardizes confidential patient data and UVA's ability to remain a trusted keeper of those data.
 
-All data imported into Ivy must be treated as highly sensitive data. Data and results exported from Ivy must be protected and managed appropriately according to UVA's [data classification guidelines](https://security.virginia.edu/university-data-protection-standards). Guidance regarding these guidelines and data types is available from UVA Information Security, Policy, and Records Office (ISPRO) by emailing [it-security@virginia.edu](it-security@virginia.edu).
+All data imported into Ivy must be treated as highly sensitive data. Data and results exported from Ivy must be protected 
+and managed appropriately according to UVA's [data classification 
+guidelines](https://security.virginia.edu/university-data-protection-standards). Guidance regarding these guidelines and 
+data types is available from UVA Information Security, Policy, and Records Office (ISPRO) by emailing 
+[it-security@virginia.edu](mailto:it-security@virginia.edu).
 
 <button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
 
