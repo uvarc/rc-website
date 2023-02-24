@@ -14,7 +14,7 @@ subjects = [
   "hpc",
   "bioinformatics",
   "rivanna",
-  "VA-WHPC"
+  "va-whpc"
 ]
 +++
 

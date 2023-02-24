@@ -12,7 +12,7 @@ images = [
   ""
 ]
 subjects = [
-  "biomedical-imaging",
+  "imaging",
   "data-science",
   "image-analysis",
   "machine-learning",

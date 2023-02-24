@@ -13,7 +13,7 @@ images = [
 ]
 subjects = [
   "containers",
-  "dcos",
+  "k8s",
   "infrastructure",
   "kubernetes",
   "api",
