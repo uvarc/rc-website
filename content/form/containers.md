@@ -1,6 +1,6 @@
 +++
 date = "2022-06-07T23:59:16-05:00"
-tags = ["microservices","containers","docker"]
+tags = ["microservices","containers","docker","k8s","kubernetes"]
 categories = ["forms"]
 images = [""]
 author = "Staff"
