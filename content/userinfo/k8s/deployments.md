@@ -141,7 +141,7 @@ We provide three levels of access into your microservices:
 
 # Connecting Services
 
-<iframe src="https://grafana.pods.uvarc.io/d-solo/tmsOtSxZk/amazon-ec2?orgId=1&from=1672279844457&to=1672884644457&kiosk=&panelId=2" width="450" height="200" frameborder="0"></iframe>
+
 
 # Division of Responsibilities
 
@@ -159,6 +159,12 @@ What you take care of
 - Creation, versioning and maintenance of container image(s).
 - Maintenance of your deployment's scale, version, `env` variables and secrets.
 - Debugging your application as necessary.
+
+- - -
+
+# Cluster Status
+
+{{% k8s-grafana-embed %}}
 
 - - -
 
