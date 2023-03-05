@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Microservice Deployments"
-date = "2023-02-23T23:59:16-05:00"
+date = "2023-03-04T23:59:16-05:00"
 draft = false
 tags = ["compute","containers","infrastructure","docker","kubernetes","api","k8s"]
 categories = ["userinfo","containers"]
@@ -88,60 +88,64 @@ Here's a brief explanation of ArgoCD and the entire CI/CD lifecycle:
 
 The following ingredients come together to run your application
 
-## Namespace
+1. **Namespace** -
 Service launches generally require the creation of a namespace if users do not already have one. Namespaces serve as logical 
 and organizational dividers, keeping the management of the services of User A isolated from those of User B. Namespaces also
 allow administrators to monitor or limit the maximum consumable resources (i.e. CPU and memory) for all deployments within the
 namespace. 
 
-## Deployment
-
+2. **Deployment** -
 The basic unit of your running application. This defines what container image to use, what it should be named,
 how many replicas should run, what storage should be mounted and where, as well as resource limits.
 
-## Service
-
+3. **Service** -
 A running deployment that expects incoming requests must be exposed as a service, over a port. This allows Kubernetes
-to route traffic to the container(s).
+to route traffic to the container(s). Some deployments, such as a recurring task or cron job, may not need a service 
+or ingress definition.
 
-Some deployments, such as a recurring task or cron job, may not need a service or ingress definition.
-
-## Ingress
-
+4. **Ingress** -
 For service deployments such as web servers that expect incoming requests, the ingress definition maps a hostname (`example.pods.uvarc.io`)
 with a service. The UVARC cluster runs multiple ingress controllers to handle incoming traffic.
 
-## Secrets / `env` Variables
-
+5. **Secrets / `env` Variables** -
 The best practice for passing sensitive information (usernames, passwords, keys, tokens, credentials) into a running
 container is to pass them in as encrypted environment variables called secrets. We use `kubeseal` for encrypting secrets 
 into plaintext. This text can be added and committed to public repositories since their decryption key is stored privately 
-in the cluster. 
-
-Secrets can be consumed as `env` variables or as files mapped within the file hierarchy of the container.
-
+in the cluster. Secrets can be consumed as `env` variables or as files mapped within the file hierarchy of the container.
 Normal `env` variables can also be passed to the container by defining them within the deployment spec file or as a
 config map that stores several key-value `env` vars.
 
-## Storage
-
+6. **Storage** -
 We offer the ability to mount from three pools of persistent storage:
+    1. Research Value Storage
+    2. Research Project Storage
+    3. Local Cluster Storage - priced by TB increments like Project Storage.
 
-1. Research Value Storage
-2. Research Project Storage
-3. Local Cluster Storage - priced by TB increments like Project Storage.
+- - -
 
-## Observability
+# Observability
 
-We provide three levels of access into your microservices:
+Observability is the process of debugging, monitoring, or determining the state of your applications
+behind the scenes. We provide three levels of access into your microservices:
 
-1. **ArgoCD** - A GUI to check the state of your deployment resources within Kubernetes.
+1. **ArgoCD** - A GUI to check the state of your deployments within Kubernetes.
 2. **Lens** - A GUI to view pods, logs, shell into your pods, view storage and secrets, etc. Download Lens [**here**](https://k8slens.dev/)
-3. **`kubectl`** - CLI access to the same resources as Lens.
+3. **`kubectl`** - Programmatic CLI access to the same resources as Lens.
 
 # Connecting Services
 
+Kubernetes offers two simple ways to connect your microservices:
 
+1. **Inter-pod communication** - When launching more than one container in your deployment specification, the
+containers can communicate by name, without a service definition. Your containers would launch in the same
+pod, which means they run on the same physical server and have immediate access to each other.
+
+2. **Service-based communication** - Running pods are assigned an arbitrary internal IP address within the
+cluster, and exposed internally within a namespace through service definitions (see above). Fortunately,
+containers within a namespace are automatically provided with  all service addresses within that namespace
+as `env` variables. This means that one of your pods, (e.g. `MY_API`) will be exposed via that you define
+in its specification (e.g. `MY_API_SERVICE`), that can now be consumed by other pods you run within your 
+namespace, simply by referring to that name.
 
 # Division of Responsibilities
 
