@@ -142,10 +142,10 @@ pod, which means they run on the same physical server and have immediate access 
 
 2. **Service-based communication** - Running pods are assigned an arbitrary internal IP address within the
 cluster, and exposed internally within a namespace through service definitions (see above). Fortunately,
-containers within a namespace are automatically provided with  all service addresses within that namespace
-as `env` variables. This means that one of your pods, (e.g. `MY_API`) will be exposed via that you define
-in its specification (e.g. `MY_API_SERVICE`), that can now be consumed by other pods you run within your 
-namespace, simply by referring to that name.
+containers within a namespace are provided all other service addresses within that namespace
+as `env` variables. This means that one of your pods, (e.g. `MY_API`) will be exposed via the name defined
+in its specification (in all caps, e.g. `MY_API_SERVICE`), that can be consumed by other pods running within 
+that namespace, simply by referring to that variable.
 
 # Division of Responsibilities
 
