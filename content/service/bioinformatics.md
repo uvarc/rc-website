@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Bioinformatics & Genomics"
-date = "2022-08-31T09:48:06-05:00"
+date = "2023-02-23T09:48:06-05:00"
 draft = false
 tags = ["bioinformatics","genomics"]
 categories = ["services"]
@@ -74,10 +74,6 @@ UVA has two computing facilities available to researchers: _Rivanna_, for non-se
 
 We can assist with choosing the right package, developing a workflow, porting it to one of our computing platforms, and running the jobs.
 
-[<button class="btn  btn-primary">Request a Consultation</button>](/service/consult/)
-
-<hr size=1 style="padding-bottom:10px;" />
-
-{{< education-track "281" >}}
+[<button class="btn  btn-primary">Request a Consultation</button>](/form/support-request/?category=Consultation)
 
 {{% top-of-page %}}

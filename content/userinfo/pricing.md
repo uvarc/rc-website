@@ -87,6 +87,7 @@ images = [""]
 - - - 
 -->
 
+<!--
 # OMERO Image Database Service
 
 {{< rawhtml >}}
@@ -111,4 +112,4 @@ images = [""]
 [<button class="btn btn-primary btn-sm">About OMERO</button>](/userinfo/omero/overview/) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request OMERO Access</button>](/form/omero/)
 
 - - -
-
+-->
