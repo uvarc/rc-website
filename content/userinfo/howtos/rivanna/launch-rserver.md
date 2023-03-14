@@ -18,16 +18,15 @@ Rocker provides many software containers for R. Due to the default permission se
 Use Singularity to pull the container. We will use `geospatial` in this example.
 
 ```bash
-module load singularity
 singularity pull docker://rocker/geospatial
 ```
 
 You should see `geospatial_latest.sif` in your current directory.
 
 # One-time setup
-The commands in this section are to be executed as a one-time setup on the frontend.
+The commands in this section are to be executed as a one-time setup on the frontend. You may need to repeat the steps here when running a new rocker container.
 
-You will need to create a directory where you have write permissions, typically somewhere under `$HOME`.
+Create a directory where you have write permissions, e.g. under `$HOME`:
 
 ```bash
 TMPDIR=~/rstudio-tmp # your choice
@@ -56,7 +55,7 @@ singularity exec \
     -B $TMPDIR/var/run:/var/run/rstudio-server \
     -B $TMPDIR/tmp:/tmp \
     $SIF \
-    rserver --www-address=127.0.0.1
+    rserver --www-address=127.0.0.1 --server-user=$USER
 ```
 
 Change the script into an executable:
