@@ -36,15 +36,23 @@ The following modules will be **removed** from Rivanna during the maintenance pe
 |---|---|---|
 |alphafold<sup>*</sup> | 2.2.0 | 2.1.2, 2.2.2, 2.3.0 |
 |awscli | 2.4.12 | 2.9.17 |
+|cellprofiler<sup>*</sup> | 3.1.8 | 4.2.5 |
 |gurobi | 9.5.0  | 10.0.1 |
 |imagemagick | 7.0.7-0 | 7.1.0-57 |
+|pytorch<sup>*</sup> | 1.10.0 | 1.8.0, 1.12.0 |
+|rapidsai<sup>*</sup>  | 21.10 | 23.02 |
+|tensorflow<sup>*</sup> | 2.4.1, 2.8.0 | 2.7.0, 2.10.0 |
 
 <sup>*</sup>Archived containers can be found in `/share/resources/containers/singularity/archive`.
 
 2. **Upgrades**:
 
+    - clang/15.0.7
+
     **Default version changes:**
 
 3. **New** modules:
     
-    - optix/6.5.0
+    - bazel/6.1.1
+    - kubectl/1.26.2
+    - optix/6.5.0, 7.3.0
