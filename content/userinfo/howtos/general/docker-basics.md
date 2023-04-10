@@ -46,7 +46,7 @@ View a list of all container images you have pulled:
 docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-somrc-whalesay      latest              188e03692c84        25 hours ago        277 MB
+whalesay            latest              188e03692c84        25 hours ago        277 MB
 rocker/rstudio      latest              919e13c956b8        2 weeks ago         990 MB
 nginx               latest              6b914bbcb89e        3 weeks ago         182 MB
 hello-world         latest              48b5124b2768        2 months ago        1.84 kB
