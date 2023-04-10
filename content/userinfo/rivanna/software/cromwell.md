@@ -78,7 +78,7 @@ backend {
                     Int cpu = 1
                     Int requested_memory_mb = 8000
                     String queue = "standard"
-                    String allocation = "somrc"
+                    String allocation = "uvarc"
                 """
                 submit = """
                     sbatch -J ${job_name} -D ${cwd} -o ${out} -e ${err} \
