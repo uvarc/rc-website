@@ -31,6 +31,7 @@ function searchFunction() {
   <thead class="thead-dark">
     {{ $gistJ := getJSON .Site.Params.rivannaJsonUrl }}
     {{ $mclasses := .Get "moduleclasses" }}
+    {{ $arch := .Get "arch" }}
     {{ $eclasses := .Get "exclude" }}
     {{ $showhidden := .Get "showhidden" }}
     <tr>
@@ -47,19 +48,25 @@ function searchFunction() {
       {{ end }}
       {{ $firstentrykey := index ($scratch.Get $modulename) 0 }}
       {{ $firstentry := index $entries $firstentrykey }}
-      {{- $category := (index (split (index $firstentry.whatis 2) "Application class: ") 1) -}}
-      {{ if and (or $showhidden (not $firstentry.hidden)) (or (eq "all" $mclasses) (and (ne "" $category) (in $mclasses $category) (not (in $eclasses $category)))) }}
-        <tr>
-          {{ $descr := $firstentry.Description }}
-          {{ $modulesite := (printf "/userinfo/rivanna/software/%s" (lower $modulename) )}}
-          {{ if (fileExists (printf "%s.md" $modulesite)) -}}
+      {{ $thisscope := $firstentry }}
+      {{ if $arch }}
+          {{ $thisscope = $firstentry.propT.arch }}
+      {{ end }}
+      {{ with $thisscope }}
+        {{- $category := (index (split (index $firstentry.whatis 2) "Application class: ") 1) -}}
+        {{ if and (or $showhidden (not $firstentry.hidden)) (or (eq "all" $mclasses) (and (ne "" $category) (in $mclasses $category) (not (in $eclasses $category)))) }}
+          <tr>
+            {{ $descr := $firstentry.Description }}
+            {{ $modulesite := (printf "/userinfo/rivanna/software/%s" (lower $modulename) )}}
+            {{- if (fileExists (printf "%s.md" $modulesite)) -}}
               <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
-          {{ else }}
+            {{ else }}
               <td>{{ $modulename }}</td>
-          {{- end }}
-          <td>{{ $category }}</td>
-          <td>{{ $descr }}</td>
-        </tr>
+            {{- end -}}
+            <td>{{ $category }} {{ $arch }}</td>
+            <td>{{ $descr }}</td>
+          </tr>
+        {{ end }}
       {{ end }}
     {{ end }}
   </tbody>
