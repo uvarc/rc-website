@@ -16,3 +16,5 @@ categories = ["userinfo"]
 +++
 
 {{< rivanna-software moduleclasses="all" arch="gpu" >}}
+
+Please note that certain modules can only run on specific GPU types. This will be displayed in a message upon loading the module.
