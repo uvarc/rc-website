@@ -25,13 +25,15 @@ private = true
       <option value="" selected="selected">- Select -</option>
       <option value="astronomy">Astronomy</option>
       <option value="biochemistry">Biochemistry</option>
+      <option value="bioinformatics">Bioinformatics</option>
       <option value="biology">Biology</option>
       <option value="chemistry">Chemistry</option>
+      <option value="commerce">Commerce</option>
       <option value="computer-science">Computer Science</option>
       <option value="data-science">Data Science</option>
-      <option value="earth-sciences">Earth Sciences</option>
+      <option value="economics">Economics</option>
+      <option value="environmental-science">Environmental Science</option>
       <option value="engineering">Engineering</option>
-      <option value="genetics">Genetics</option>
       <option value="health-sciences">Health Sciences</option>
       <option value="informatics">Informatics</option>
       <option value="physics">Physics</option>
