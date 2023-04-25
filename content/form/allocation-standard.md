@@ -42,6 +42,9 @@ private = true
       <option value="other">Other</option>
     </select>
   </div>
+  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="discipline-other" id="discipline-other-label">Other Academic Discipline</label>
+    <input class="form-control form-text" type="text" id="discipline-other" name="discipline-other" value="" size="60" maxlength="60" />
+  </div>
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
@@ -88,14 +91,12 @@ private = true
       </div>
     </div>
   </div>
-  
   <div class="form-item form-type-textarea form-group"> 
     <label class="control-label"  id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
     <label class="control-label"  id="renewal-descr" for="project-description">Briefly describe how you have used Rivanna in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
     </div>
   </div>
-  
   <!--
   <div class="form-item project-description form-type-textarea form-group"> <label class="control-label" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
