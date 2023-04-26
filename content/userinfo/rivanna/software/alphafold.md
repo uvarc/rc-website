@@ -62,25 +62,6 @@ Please refer to [run_alphafold.py](https://github.com/deepmind/alphafold/blob/ma
 
 For your convenience, we have prepared a launch script `run` that takes care of the Singularity command and the database paths, since these are unlikely to change. If you do need to customize anything please use the full Singularity command.
 
-```
-singularity run -B $(realpath $ALPHAFOLD_DATA_PATH):/data \
-                -B $(realpath $ALPHAFOLD_DATA_PATH/../bfd):/data/bfd \
-                -B $(realpath $ALPHAFOLD_DATA_PATH/../mgnify):/data/mgnify \
-                -B $(realpath $ALPHAFOLD_DATA_PATH/../pdb70):/data/pdb70 \
-                -B $(realpath $ALPHAFOLD_DATA_PATH/../small_bfd):/data/small_bfd \
-                -B $(realpath $ALPHAFOLD_DATA_PATH/../uniclust30):/data/uniclust30 \
-                -B $(realpath $ALPHAFOLD_DATA_PATH/../uniref90):/data/uniref90 \
-                -B .:/etc \
-                --pwd /app/alphafold \
-                --nv $CONTAINERDIR/alphafold-${EBVERSIONALPHAFOLD}.sif \
-    --data_dir=/data \
-    --uniref90_database_path=/data/uniref90/uniref90.fasta \
-    --mgnify_database_path=/data/mgnify/mgy_clusters.fa \
-    --template_mmcif_dir=/data/pdb_mmcif/mmcif_files \
-    --obsolete_pdbs_path=/data/pdb_mmcif/obsolete.dat \
-    "$@"
-```
-
 ### Explanation of Singularity flags
 
 1. The database and models are stored in `$ALPHAFOLD_DATA_PATH`.

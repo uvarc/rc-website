@@ -1,5 +1,5 @@
 +++
-date = "2022-06-07T23:59:16-05:00"
+date = "2023-04-22T23:59:16-05:00"
 tags = ["microservices","containers","docker","k8s","kubernetes"]
 categories = ["forms"]
 images = [""]
@@ -19,9 +19,8 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="DCOS">
   <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
-{{% form-userinfo %}}
-  <hr size=1 />
-  <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
+{{% form-userinfo-v2 %}}
+  <div class="form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
   <div class="form-item form-group form-type-select form-group"> 
@@ -128,5 +127,5 @@ private = true
 <div>
 </div>
 
-<script type="text/javascript" src="/js/user-session.js"></script>
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

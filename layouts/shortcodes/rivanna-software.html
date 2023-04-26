@@ -31,6 +31,7 @@ function searchFunction() {
   <thead class="thead-dark">
     {{ $gistJ := getJSON .Site.Params.rivannaJsonUrl }}
     {{ $mclasses := .Get "moduleclasses" }}
+    {{ $arch := .Get "arch" }}
     {{ $eclasses := .Get "exclude" }}
     {{ $showhidden := .Get "showhidden" }}
     <tr>
@@ -41,25 +42,37 @@ function searchFunction() {
   </thead>
   <tbody>
     {{ range $modulename, $entries := $gistJ }}
-      {{ $scratch := newScratch }}
-      {{ range $k, $v := $entries }}
-          {{ $scratch.Add $modulename (slice $k) }}
+      {{ $modulelisted := false }}
+      {{ $modulesite := (printf "/userinfo/rivanna/software/%s" (lower $modulename)) }}
+      {{ $scratch := newScratch}}
+      {{ $hasArch := not $arch }}
+      {{ range $k, $v := $entries}}
+        {{ if and (ne $arch "*") (ne $arch "") }}
+          {{ with $v.propT.arch }}
+            {{ $hasArch := eq (int (index . $arch)) 1 }}
+            {{ if $hasArch }}
+              {{ $scratch.Set $modulename $v }}
+            {{ end }}
+          {{ end }}
+        {{ else}}
+          {{ $scratch.Set $modulename $v }}
+        {{ end }}
       {{ end }}
-      {{ $firstentrykey := index ($scratch.Get $modulename) 0 }}
-      {{ $firstentry := index $entries $firstentrykey }}
-      {{- $category := (index (split (index $firstentry.whatis 2) "Application class: ") 1) -}}
-      {{ if and (or $showhidden (not $firstentry.hidden)) (or (eq "all" $mclasses) (and (ne "" $category) (in $mclasses $category) (not (in $eclasses $category)))) }}
-        <tr>
-          {{ $descr := $firstentry.Description }}
-          {{ $modulesite := (printf "/userinfo/rivanna/software/%s" (lower $modulename) )}}
-          {{ if (fileExists (printf "%s.md" $modulesite)) -}}
+      {{ range $mname,$v := $scratch.Values }}
+        {{ $category := index (split (index $v.whatis 2) "Application class: ") 1 }}
+        {{ if or (eq $mclasses "all") (in $category $mclasses) }}
+          {{ $category := (printf "%s %s" $category $arch) }}
+          {{ $descr := $v.Description }}
+          <tr>
+            {{ if (fileExists (printf "%s.md" $modulesite)) }}
               <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
-          {{ else }}
+            {{ else }}
               <td>{{ $modulename }}</td>
-          {{- end }}
-          <td>{{ $category }}</td>
-          <td>{{ $descr }}</td>
-        </tr>
+            {{ end }}
+            <td>{{ $category }}</td>
+            <td>{{ $descr }}</td>
+          </tr>
+        {{ end }}
       {{ end }}
     {{ end }}
   </tbody>

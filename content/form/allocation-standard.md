@@ -1,5 +1,5 @@
 +++
-date = "2022-10-02T23:59:16-05:00"
+date = "2023-04-24T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -67,14 +67,12 @@ private = true
       </div>
     </div>
   </div>
-  
   <div class="form-item form-type-textarea form-group"> 
     <label class="control-label"  id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
     <label class="control-label"  id="renewal-descr" for="project-description">Briefly describe how you have used Rivanna in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
     </div>
   </div>
-  
   <!--
   <div class="form-item project-description form-type-textarea form-group"> <label class="control-label" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>

@@ -17,6 +17,35 @@ private = true
 </div>
 <div>
 {{% form-userinfo %}}
+  <div class="form-item form-type-textfield form-group">
+    <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
+  </div>
+  <div class="form-item form-type-select form-group"> <label class="control-label" for="discipline">Academic Discipline <span class="form-required" title="This field is required.">*</span></label>
+    <select required="required" class="form-control form-select required" title="Please identify the academic discipline related to this allocation" data-toggle="tooltip" id="discipline" name="discipline">
+      <option value="" selected="selected">- Select -</option>
+      <option value="astronomy">Astronomy</option>
+      <option value="biochemistry">Biochemistry</option>
+      <option value="bioinformatics">Bioinformatics</option>
+      <option value="biology">Biology</option>
+      <option value="chemistry">Chemistry</option>
+      <option value="commerce">Commerce</option>
+      <option value="computer-science">Computer Science</option>
+      <option value="data-science">Data Science</option>
+      <option value="economics">Economics</option>
+      <option value="environmental-science">Environmental Science</option>
+      <option value="engineering">Engineering</option>
+      <option value="health-sciences">Health Sciences</option>
+      <option value="informatics">Informatics</option>
+      <option value="physics">Physics</option>
+      <option value="social-sciences">Social Sciences</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="discipline-other" id="discipline-other-label">Other Academic Discipline</label>
+    <input class="form-control form-text" type="text" id="discipline-other" name="discipline-other" value="" size="60" maxlength="60" />
+  </div>
+  <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
@@ -42,10 +71,6 @@ private = true
   <div class="form-item form-type-textfield form-group">
     <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>
     <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
-  </div>
-  <div class="form-item form-type-textfield form-group">
-    <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group">
     <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span> </label>
