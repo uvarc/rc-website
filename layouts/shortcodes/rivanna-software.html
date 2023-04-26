@@ -59,17 +59,20 @@ function searchFunction() {
         {{ end }}
       {{ end }}
       {{ range $mname,$v := $scratch.Values }}
-        {{ $category := (printf "%s %s" (index (split (index $v.whatis 2) "Application class: ") 1) $arch) }}
-        {{ $descr := $v.Description }}
-        <tr>
-          {{ if (fileExists (printf "%s.md" $modulesite)) }}
-            <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
-          {{ else }}
-            <td>{{ $modulename }}</td>
-          {{ end }}
-          <td>{{ $category }}</td>
-          <td>{{ $descr }}</td>
-        </tr>
+        {{ $category := index (split (index $v.whatis 2) "Application class: ") 1 }}
+        {{ if or (eq $mclasses "all") (in $category $mclasses) }}
+          {{ $category := (printf "%s %s" $category $arch) }}
+          {{ $descr := $v.Description }}
+          <tr>
+            {{ if (fileExists (printf "%s.md" $modulesite)) }}
+              <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
+            {{ else }}
+              <td>{{ $modulename }}</td>
+            {{ end }}
+            <td>{{ $category }}</td>
+            <td>{{ $descr }}</td>
+          </tr>
+        {{ end }}
       {{ end }}
     {{ end }}
   </tbody>
