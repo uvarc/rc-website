@@ -10,3 +10,17 @@ $("#new-or-renewal-options").change(function () {
     $("#renewal-descr").show(400);
   }
 });
+
+// show extra "other" field if selected for Academic Discipline
+$("#discipline-other").hide();
+$("#discipline-other-label").hide();
+$("#discipline").change(function () {
+  var discval = this.value;
+  if (discval == "other") {
+    $("#discipline-other").show(400);
+    $("#discipline-other-label").show(400);
+  } else {
+    $("#discipline-other").hide(400);
+    $("#discipline-other-label").hide(400);
+  }
+});
