@@ -14,6 +14,20 @@ $('#data-agreement').click(function(){
     }
 });
 
+// show extra "other" field if selected for Academic Discipline
+$("#discipline-other").hide();
+$("#discipline-other-label").hide();
+$("#discipline").on("change",function () {
+  var discval = this.value;
+  if (discval == "other") {
+    $("#discipline-other").show(400);
+    $("#discipline-other-label").show(400);
+  } else {
+    $("#discipline-other").hide(400);
+    $("#discipline-other-label").hide(400);
+  }
+});
+
 function getCookie(c_name) {
   var c_value = document.cookie,
       c_start = c_value.indexOf(" " + c_name + "=");
@@ -147,3 +161,4 @@ $("#department").on("change",function(){
   let deptdo = setCookie('__rc_dept', deptval, '4464');
   set_school(dept);
 });
+

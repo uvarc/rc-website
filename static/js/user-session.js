@@ -61,3 +61,19 @@ $('form').submit(function() {
   let email_dec = decode64(email);
   var set_email = document.getElementById("email").value = email_dec;
 
+
+// show extra "other" field if selected for Academic Discipline
+$("#discipline-other").hide();
+$("#discipline-other-label").hide();
+$("#discipline").change(function () {
+  var discval = this.value;
+  if (discval == "other") {
+    $("#discipline-other").show(400);
+    $("#discipline-other-label").show(400);
+  } else {
+    $("#discipline-other").hide(400);
+    $("#discipline-other-label").hide(400);
+  }
+});
+
+

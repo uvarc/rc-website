@@ -24,10 +24,8 @@ private = true
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Deans Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
 {{% form-userinfo %}}
-  <div class="form-item form-type-select form-group"> <label class="control-label" for="discipline">Academic Discipline <span class="form-required" title="This field is 
-required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please identify the academic discipline related to this allocation" data-toggle="tooltip" 
-id="discipline" name="discipline">
+  <div class="form-item form-type-select form-group"> <label class="control-label" for="discipline">Academic Discipline <span class="form-required" title="This field is required.">*</span></label>
+    <select required="required" class="form-control form-select required" title="Please identify the academic discipline related to this allocation" data-toggle="tooltip" id="discipline" name="discipline">
       <option value="" selected="selected">- Select -</option>
       <option value="astronomy">Astronomy</option>
       <option value="biochemistry">Biochemistry</option>

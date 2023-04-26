@@ -21,30 +21,6 @@ private = true
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Request or Renew a Standard Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Standard" />
   {{% form-userinfo-v2 %}}
-  <div class="form-item form-type-select form-group"> <label class="control-label" for="discipline">Academic Discipline <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please identify the academic discipline related to this allocation" data-toggle="tooltip" id="discipline" name="discipline">
-      <option value="" selected="selected">- Select -</option>
-      <option value="astronomy">Astronomy</option>
-      <option value="biochemistry">Biochemistry</option>
-      <option value="bioinformatics">Bioinformatics</option>
-      <option value="biology">Biology</option>
-      <option value="chemistry">Chemistry</option>
-      <option value="commerce">Commerce</option>
-      <option value="computer-science">Computer Science</option>
-      <option value="data-science">Data Science</option>
-      <option value="economics">Economics</option>
-      <option value="environmental-science">Environmental Science</option>
-      <option value="engineering">Engineering</option>
-      <option value="health-sciences">Health Sciences</option>
-      <option value="informatics">Informatics</option>
-      <option value="physics">Physics</option>
-      <option value="social-sciences">Social Sciences</option>
-      <option value="other">Other</option>
-    </select>
-  </div>
-  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="discipline-other" id="discipline-other-label">Other Academic Discipline</label>
-    <input class="form-control form-text" type="text" id="discipline-other" name="discipline-other" value="" size="60" maxlength="60" />
-  </div>
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
   </div>
