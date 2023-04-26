@@ -42,31 +42,34 @@ function searchFunction() {
   </thead>
   <tbody>
     {{ range $modulename, $entries := $gistJ }}
-      {{ $scratch := newScratch }}
-      {{ range $k, $v := $entries }}
-          {{ $scratch.Add $modulename (slice $k) }}
-      {{ end }}
-      {{ $firstentrykey := index ($scratch.Get $modulename) 0 }}
-      {{ $firstentry := index $entries $firstentrykey }}
-      {{ $thisscope := $firstentry }}
-      {{ if $arch }}
-          {{ $thisscope = $firstentry.propT.arch }}
-      {{ end }}
-      {{ with $thisscope }}
-        {{- $category := (index (split (index $firstentry.whatis 2) "Application class: ") 1) -}}
-        {{ if and (or $showhidden (not $firstentry.hidden)) (or (eq "all" $mclasses) (and (ne "" $category) (in $mclasses $category) (not (in $eclasses $category)))) }}
-          <tr>
-            {{ $descr := $firstentry.Description }}
-            {{ $modulesite := (printf "/userinfo/rivanna/software/%s" (lower $modulename) )}}
-            {{- if (fileExists (printf "%s.md" $modulesite)) -}}
-              <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
-            {{ else }}
-              <td>{{ $modulename }}</td>
-            {{- end -}}
-            <td>{{ $category }} {{ $arch }}</td>
-            <td>{{ $descr }}</td>
-          </tr>
+      {{ $modulelisted := false }}
+      {{ $modulesite := (printf "/userinfo/rivanna/software/%s" (lower $modulename)) }}
+      {{ $scratch := newScratch}}
+      {{ $hasArch := not $arch }}
+      {{ range $k, $v := $entries}}
+        {{ if and (ne $arch "*") (ne $arch "") }}
+          {{ with $v.propT.arch }}
+            {{ $hasArch := eq (int (index . $arch)) 1 }}
+            {{ if $hasArch }}
+              {{ $scratch.Set $modulename $v }}
+            {{ end }}
+          {{ end }}
+        {{ else}}
+          {{ $scratch.Set $modulename $v }}
         {{ end }}
+      {{ end }}
+      {{ range $mname,$v := $scratch.Values }}
+        {{ $category := (printf "%s %s" (index (split (index $v.whatis 2) "Application class: ") 1) $arch) }}
+        {{ $descr := $v.Description }}
+        <tr>
+          {{ if (fileExists (printf "%s.md" $modulesite)) }}
+            <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
+          {{ else }}
+            <td>{{ $modulename }}</td>
+          {{ end }}
+          <td>{{ $category }}</td>
+          <td>{{ $descr }}</td>
+        </tr>
       {{ end }}
     {{ end }}
   </tbody>
