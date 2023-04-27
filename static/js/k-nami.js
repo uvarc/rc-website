@@ -39,9 +39,12 @@ document.addEventListener('keydown', function(e) {
 
 function activateAward() {
   document.body.style.backgroundImage = "url('/images/vector-bg.png')";
+  // https://s3.amazonaws.com/uvarc-media/konami/static_data_ok-ikumi-pfeifferhorn.mp3
+  // https://s3.amazonaws.com/uvarc-media/konami/static_data_ok-ikumi-heights.mp3
   // var audio = new Audio('/data/ok-ikumi-pfeifferhorn.mp3');
   // var audio = new Audio('/data/ok-ikumi-heights.mp3');
-  var audio = new Audio('/data/ok-ikumi-rhea.mp3');
+  // var audio = new Audio('/data/ok-ikumi-rhea.mp3');
+  var audio = new Audio('https://s3.amazonaws.com/uvarc-media/konami/static_data_ok-ikumi-pfeifferhorn.mp3');
   audio.play();
   $('#konami-modal').delay(5000).modal('toggle')
 };

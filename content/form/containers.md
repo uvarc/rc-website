@@ -1,6 +1,6 @@
 +++
 date = "2023-04-22T23:59:16-05:00"
-tags = ["microservices","containers","docker","k8s","kubernetes"]
+tags = []
 categories = ["forms"]
 images = [""]
 author = "Staff"
