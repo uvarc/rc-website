@@ -18,7 +18,6 @@ private = true
 </div>
 <div>
   <input type="hidden" id="category" name="category" value="Support">
-  <input type="hidden" id="request_title" name="request_title" value="Support Request" />
 {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
