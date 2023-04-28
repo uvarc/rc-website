@@ -108,14 +108,17 @@ let email = getCookie("__rc_email");
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
 
-// department & school
-let deptc = getCookie("__rc_dept");
+// department
+let deptc = getCookie("__rc_department");
 let dept_dec = decode64(deptc);
 $("#department").val(dept_dec);
-let school_dec = decode64(getCookie("__rc_school"));
-var school = document.getElementById("school").value = school_dec;
-var display_school = document.getElementById("school_name").innerHTML = school_dec;
 
+// school
+// let school_dec = decode64(getCookie("__rc_school"));
+// var school = document.getElementById("school").value = school_dec;
+// var display_school = document.getElementById("school_name").innerHTML = school_dec;
+
+/* PROB NO LONGER NEEDED
 function set_school(dept) {
   if (dept == 'PV-Biocomplexity Initiative') {
     var f = document.getElementById("school_name").textContent = 'BII';
@@ -154,6 +157,7 @@ function set_school(dept) {
     let referrer = setCookie('__rc_school', sch, '4464');
   };
 };
+*/
 
 $("#department").on("change",function(){ 
   var dept = $("#department").val();
