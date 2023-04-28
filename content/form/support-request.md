@@ -27,17 +27,12 @@ private = true
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="storage" value="Storage">Storage</option>
-      <option id="omero" value="Omero">Omero Image Analysis</option>
       <option id="container" value="Container">Container Service</option>
       <option id="consultation" value="Consultation">Consultation request</option>
-      <option value="">-----</option>
-      <option id="chase" value="Chase">CHASE Accounts/Data</option>
-      <option id="sentinel" value="Sentinel">Sentinel System/Software</option>
       <option id="other" value="Other">Other</option>
     </select>
     <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/#allocation-types" style="font-weight:bold;">Allocation Request</a>.</div>
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="/form/storage/" style="font-weight:bold;">storage request</a>.</div>
-    <div id="omero-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Omero questions. Or <a href="/form/omero/" style="font-weight:bold;">request Omero access</a>.</div>
     <div id="container-help" style="font-size:90%;" class="form-text text-muted">Use this form for general queries about containerized services. Or <a href="/form/container/" style="font-weight:bold;">request a container service</a>.</div>
     <div id="ivy-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Ivy questions. Or submit an <a href="https://services.rc.virginia.edu/ivyvm" style="font-weight:bold;">Ivy Project Request</a>.</div>
   </div>
