@@ -54,12 +54,12 @@ function encode64(str) {
   return d;
 }
 
-// show extra "other" field if selected for Academic Discipline
+// show extra "Other" field if selected for Academic Discipline
 $("#discipline-other").hide();
 $("#discipline-other-label").hide();
 $("#discipline").on("change",function () {
   var discval = this.value;
-  if (discval == "other") {
+  if (discval == "Other") {
     $("#discipline-other").show(400);
     $("#discipline-other-label").show(400);
   } else {
