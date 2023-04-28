@@ -106,9 +106,9 @@ let dept_dec = decode64(deptc);
 $("#department").val(dept_dec);
 
 // discipline
-// let discc = getCookie("__rc_discipline");
-// let disc_dec = decode64(discc);
-// $("#discipline").val(disc_dec);
+let discc = getCookie("__rc_discipline");
+let disc_dec = decode64(discc);
+$("#discipline").val(disc_dec);
 
 // school
 // let school_dec = decode64(getCookie("__rc_school"));
