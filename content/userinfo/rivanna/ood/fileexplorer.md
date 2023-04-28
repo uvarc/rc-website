@@ -20,7 +20,7 @@ The file explorer provides these basic functions:
 + Editing text files
 + Downloading & uploading small files
 
-To see the storage locations that you have access to from within Open OnDemand, click on the `Files` menu. The drop-down list will show your Rivanna `/home` directory and possibly other leased storage volumes like `/project` that your group has access to. **Users' scratch directories are not accessible through the File Explorer interface.** Clicking on any of them will open a new tab with a file browser for that storage location. The user interface is divided into two panes:
+To see the storage locations that you have access to from within Open OnDemand, click on the `Files` menu. The drop-down list will show your Rivanna `/home` directory and possibly other leased storage volumes like `/project` that your group has access to. Clicking on any of them will open a new tab with a file browser for that storage location. The user interface is divided into two panes:
 
 + The left pane shows the directory tree at the current storage location.
 + The right pane shows the content of a particular directory that has been selected in the left window pane. Above the right window pane are rows of buttons that allow you to execute specific file operations.
@@ -40,7 +40,7 @@ Clicking on the `Open Files in Terminal` button opens a terminal window in a new
 # Navigating to other Storage Locations
 To navigate to other file locations on Rivanna, you can use the `Go To` button to enter a specific storage volume and directory path. For example, if you are in your home directory and want to go to your /project directory, enter `/project/` and click `OK`. This will show a list of all project directories including those of other research groups.  You can also enter the full path to your Project storage, e.g. `/project/my-storage`, to go straight to your group's storage. To find out about the full path of all your leased storage locations, run the `hdquota` command in a Rivanna terminal window.
 
-**You can only access project directories associated with your leased storage and MyGroup. Users' personal scratch directories are not accessible through the File Explorer interface.**
+**You can only access project directories associated with your leased storage and MyGroup.**
 
 # File Transfer
 The Open OnDemand file explorer should only be used to transfer small files such as your source code and job scripts.
