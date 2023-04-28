@@ -60,9 +60,6 @@ private = true
 </div>
 </form>
 
-<script type="text/javascript" src="/js/user-session-v2.js"></script>
-<script type="text/javascript" src="/js/support-request.js"></script>
-
 <script>
 function getParams() {
   var vars = {};
@@ -92,5 +89,6 @@ if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
 };
 </script>
-<script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
+<script type="text/javascript" src="/js/support-request.js"></script>
