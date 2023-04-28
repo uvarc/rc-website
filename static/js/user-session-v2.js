@@ -73,7 +73,11 @@ $("#discipline").on("change",function () {
 
 if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
-}
+};
+
+if (getCookie("__rc_department") == null || getCookie("__rc_department") == '') {
+  window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
+};
 
 // document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 var form_url = window.location;
