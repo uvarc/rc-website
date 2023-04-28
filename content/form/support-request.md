@@ -1,6 +1,6 @@
 +++
-date = "2022-08-16T23:59:16-05:00"
-tags = ["search"]
+date = "2023-04-27T23:59:16-05:00"
+tags = []
 categories = ["forms"]
 images = [""]
 author = "Staff"
@@ -11,41 +11,14 @@ type = "form"
 private = true
 +++
 
+{{< form-cookies >}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
-{{% form-userinfo %}}
-  <div class="form-item form-type-textfield form-group">
-    <label class="control-label" for="department">Department/Organization <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="100"/>
-  </div>
-  <div class="form-item form-type-select form-group"> <label class="control-label" for="discipline">Academic Discipline <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please identify the academic discipline related to this allocation" data-toggle="tooltip" id="discipline" name="discipline">
-      <option value="" selected="selected">- Select -</option>
-      <option value="astronomy">Astronomy</option>
-      <option value="biochemistry">Biochemistry</option>
-      <option value="bioinformatics">Bioinformatics</option>
-      <option value="biology">Biology</option>
-      <option value="chemistry">Chemistry</option>
-      <option value="commerce">Commerce</option>
-      <option value="computer-science">Computer Science</option>
-      <option value="data-science">Data Science</option>
-      <option value="economics">Economics</option>
-      <option value="environmental-science">Environmental Science</option>
-      <option value="engineering">Engineering</option>
-      <option value="health-sciences">Health Sciences</option>
-      <option value="informatics">Informatics</option>
-      <option value="physics">Physics</option>
-      <option value="social-sciences">Social Sciences</option>
-      <option value="other">Other</option>
-    </select>
-  </div>
-  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="discipline-other" id="discipline-other-label">Other Academic Discipline</label>
-    <input class="form-control form-text" type="text" id="discipline-other" name="discipline-other" value="" size="60" maxlength="60" />
-  </div>
-  <hr size=1 />
+  <input type="hidden" id="category" name="category" value="Support">
+{{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
@@ -54,17 +27,12 @@ private = true
       <option id="rivanna" value="Rivanna">Rivanna HPC</option>
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="storage" value="Storage">Storage</option>
-      <option id="omero" value="Omero">Omero Image Analysis</option>
-      <option id="container" value="Container">Containerized Service</option>
+      <option id="container" value="Container">Container Service</option>
       <option id="consultation" value="Consultation">Consultation request</option>
-      <option value="">-----</option>
-      <option id="chase" value="Chase">CHASE Accounts/Data</option>
-      <option id="sentinel" value="Sentinel">Sentinel System/Software</option>
       <option id="other" value="Other">Other</option>
     </select>
     <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/#allocation-types" style="font-weight:bold;">Allocation Request</a>.</div>
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="/form/storage/" style="font-weight:bold;">storage request</a>.</div>
-    <div id="omero-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Omero questions. Or <a href="/form/omero/" style="font-weight:bold;">request Omero access</a>.</div>
     <div id="container-help" style="font-size:90%;" class="form-text text-muted">Use this form for general queries about containerized services. Or <a href="/form/container/" style="font-weight:bold;">request a container service</a>.</div>
     <div id="ivy-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Ivy questions. Or submit an <a href="https://services.rc.virginia.edu/ivyvm" style="font-weight:bold;">Ivy Project Request</a>.</div>
   </div>
@@ -87,8 +55,6 @@ private = true
   </div>
 </div>
 </form>
-
-<script type="text/javascript" src="/js/support-request.js"></script>
 
 <script>
 function getParams() {
@@ -119,5 +85,6 @@ if(description != undefined && description != "undefined") {
   var set_description = document.getElementById("description").value = description;
 };
 </script>
-<script type="text/javascript" src="/js/user-session.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
+<script type="text/javascript" src="/js/support-request.js"></script>

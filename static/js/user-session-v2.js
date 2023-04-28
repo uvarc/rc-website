@@ -14,20 +14,6 @@ $('#data-agreement').click(function(){
     }
 });
 
-// show extra "other" field if selected for Academic Discipline
-$("#discipline-other").hide();
-$("#discipline-other-label").hide();
-$("#discipline").on("change",function () {
-  var discval = this.value;
-  if (discval == "other") {
-    $("#discipline-other").show(400);
-    $("#discipline-other-label").show(400);
-  } else {
-    $("#discipline-other").hide(400);
-    $("#discipline-other-label").hide(400);
-  }
-});
-
 function getCookie(c_name) {
   var c_value = document.cookie,
       c_start = c_value.indexOf(" " + c_name + "=");
@@ -58,21 +44,6 @@ function setCookie(key, value, expiry) {
   document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
 };
 
-// 1. switched decode64
-// 2. switched cookie domain
-// 3. uncommented the DEPT/SCHOOL stanza
-//
-// function decode64(str) {
-//   var e={},i,b=0,c,x,l=0,a,r='',w=String.fromCharCode,L=str.length;
-//   var A="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-//   for(i=0;i<64;i++){e[A.charAt(i)]=i;}
-//   for(x=0;x<L;x++){
-//     c=e[str.charAt(x)];b=(b<<6)+c;l+=6;
-//     while(l>=8){((a=(b>>>(l-=8))&0xff)||(x<(L-2)))&&(r+=w(a));}
-//   }
-//   return r;
-// };
-
 function decode64(str) {
   var r = atob(str);
   return r;
@@ -83,9 +54,30 @@ function encode64(str) {
   return d;
 }
 
+// show extra "Other" field if selected for Academic Discipline
+$("#discipline-other").hide();
+$("#discipline-other-label").hide();
+$("#discipline").on("change",function () {
+  var discval = this.value;
+  if (discval == "Other") {
+    $("#discipline-other").show(400);
+    $("#discipline-other-label").show(400);
+  } else {
+    $("#discipline-other").hide(400);
+    $("#discipline-other-label").hide(400);
+  }
+  var discvalx = encode64(discval);
+  let discdo = setCookie('__rc_discipline', discvalx, '4464');
+});
+
+
 if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
-}
+};
+
+if (getCookie("__rc_department") == null || getCookie("__rc_department") == '') {
+  window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
+};
 
 // document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 var form_url = window.location;
@@ -108,57 +100,19 @@ let email = getCookie("__rc_email");
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
 
-// department & school
-let deptc = getCookie("__rc_dept");
+// department
+let deptc = getCookie("__rc_department");
 let dept_dec = decode64(deptc);
 $("#department").val(dept_dec);
-let school_dec = decode64(getCookie("__rc_school"));
-var school = document.getElementById("school").value = school_dec;
-var display_school = document.getElementById("school_name").innerHTML = school_dec;
 
-function set_school(dept) {
-  if (dept == 'PV-Biocomplexity Initiative') {
-    var f = document.getElementById("school_name").textContent = 'BII';
-    var g = document.getElementById("school").value = 'BII';
-    let sch = encode64('BII');
-    let referrer = setCookie('__rc_school', sch, '4464');
-  } else if (dept == 'Data Science') {
-    var s = document.getElementById("school_name").textContent = 'SDS';
-    var g = document.getElementById("school").value = 'SDS'; 
-    let sch = encode64('SDS');
-    let referrer = setCookie('__rc_school', sch, '4464');
-  } else if (dept == 'Other') {
-    var s = document.getElementById("school_name").textContent = 'OTHER';
-    var g = document.getElementById("school").value = 'Other'; 
-    let sch = encode64('Other'); 
-    let referrer = setCookie('__rc_school', sch, '4464');    
-  } else {
-    let schb = dept.substring(0, 2);
-    let correlations ={
-      AS: "CLAS",
-      BA: "BATTEN",
-      DA: "DARDEN",
-      DS: "SDS",
-      ED: "SEHD",
-      EN: "SEAS",
-      IT: "ITS",
-      LW: "LAW",
-      MD: "SOM",
-      PV: "PROVOST",
-      RS: "RESEARCH"     
-    }
-    let schoolval = correlations[schb];
-    var s = document.getElementById("school_name").textContent = schoolval;
-    var g = document.getElementById("school").value = schoolval;
-    let sch = encode64(schoolval);
-    let referrer = setCookie('__rc_school', sch, '4464');
-  };
-};
+// discipline
+let discc = getCookie("__rc_discipline");
+let disc_dec = decode64(discc);
+$("#discipline").val(disc_dec);
 
-$("#department").on("change",function(){ 
-  var dept = $("#department").val();
-  let deptval = encode64(dept);
-  let deptdo = setCookie('__rc_dept', deptval, '4464');
-  set_school(dept);
-});
+// school
+// let school_dec = decode64(getCookie("__rc_school"));
+// var school = document.getElementById("school").value = school_dec;
+// var display_school = document.getElementById("school_name").innerHTML = school_dec;
+
 
