@@ -52,7 +52,7 @@ categories = [
     <img class="rounded-circle" src="https://avatars0.githubusercontent.com/u/17575107" alt="Christina Gancayco" width="140" height="140">
     <h2>Christina Gancayco</h2>
     <p><b>Research Computing Associate</b></p>
-    {{< expertise subjects="matlab,image-processing,data-science,omero,python" >}}
+    {{< expertise subjects="matlab,image-processing,data-science,python" >}}
   </div><!-- /.col-lg-6 -->
   <div class="col-lg-6">
     <img class="rounded-circle" src="/images/profile_katherine_holcomb.png" alt="Katherine Holcomb" width="140" height="140">

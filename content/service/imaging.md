@@ -8,7 +8,6 @@ tags = [
   "vizlab",
   "imaging",
   "image-processing",
-  "omero",
   "radiology",
 ]
 date = "2019-06-24"
@@ -115,21 +114,6 @@ Stay tuned for additional online tutorials as well as in-person workshops listed
 
 - - -
 
-# Imaging Data Management
-
-<img src="/images/omero/ome-main-nav.svg"></img>
-
-With the advent of high-throughput screening, the need for a good imaging data workflow is greater than ever. OMERO allows researchers to organize, view, annotate, analyze, and share their data and metadata--all within the same software environment.
-
-OMERO is a database solution for managing and analyzing imaging data. Using the BioFormats plug-in, OMERO is able to read over 140 proprietary file formats. OMERO is also compatible with third-party analysis software such as Fiji and ImageJ, Python, and MATLAB, so you can analyze images and share results seamlessly from your laptop, laboratory workstations, or UVA's high performance computing platform, [Rivanna](/userinfo/rivanna/overview/).
-
-Read our [OMERO documentation](/userinfo/omero/overview) or submit a [consultation request](/form/support-request/) if you are interested in learning more about OMERO and how it can be incorporated into your current workflow.
-
-[<button class="btn btn-success">Request Access to OMERO</button>](/form/omero/)
-
-
-- - -
-
 # Visualization
 
 ## Overview
@@ -177,8 +161,8 @@ We currently offer several online tutorials for data visualization.
 
 Stay tuned for additional online tutorials as well as our workshops posted on our [workshops page](/education/workshops/)
 
-- - -
 
+<!--
 # Viz Lab
 
 The Viz Lab is a facility designed to help UVA faculty, staff, and students explore the
@@ -219,7 +203,9 @@ width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" re
 The Viz Lab is available by request only.
 To reserve a day/time to use the resources in the Viz Lab, please contact us at [hpc-support@virginia.edu](mailto:hpc-support@virginia.edu).
 The calendar below is updated regularly and shows the days/times the Viz Lab is unavailable.
-
+-->
 <!-- google calendar embedded here-->
 
+<!--
 <iframe frameborder="0" height="600" scrolling="no" src="https://calendar.google.com/calendar/embed?src=dvndpkvnloa8bvt5nre3d5n9as%40group.calendar.google.com&amp;ctz=America/New_York" style="border: 0" width="800"></iframe>
+-->

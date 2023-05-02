@@ -12,7 +12,6 @@ image = "https://avatars0.githubusercontent.com/u/17575107"
 subjects = [
   "matlab",
   "image-processing",
-  "omero",
   "python",
   "r",
   "data-science",
