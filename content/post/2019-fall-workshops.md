@@ -21,7 +21,6 @@ RC staff are teaching a series of free hands-on workshops this fall that are ope
 * Introduction to Parallel R (Oct 1)
 * Machine Learning with MATLAB (Oct 3)
 * Automation of Image Processing with Fiji/ImageJ (Oct 9)
-* Imagining Data Mangement with OMERO (Oct 16)
 * Deep Learning with MATLAB (Oct 17)
 * Moving R Programs to Rivanna (Oct 17)
 

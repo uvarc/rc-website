@@ -8,7 +8,6 @@ tags = [
   "vizlab",
   "imaging",
   "image-processing",
-  "omero",
   "radiology",
 ]
 date = "2019-06-24"
@@ -112,21 +111,6 @@ We currently offer online tutorials for image processing with Fiji/ImageJ.
 * [Fiji/ImageJ: Script Development for Image Processing](https://learning.rc.virginia.edu/tutorials/fiji-scripting/)
 
 Stay tuned for additional online tutorials as well as in-person workshops listed on our [workshops page](/education/workshops/)
-
-- - -
-
-# Imaging Data Management
-
-<img src="/images/omero/ome-main-nav.svg"></img>
-
-With the advent of high-throughput screening, the need for a good imaging data workflow is greater than ever. OMERO allows researchers to organize, view, annotate, analyze, and share their data and metadata--all within the same software environment.
-
-OMERO is a database solution for managing and analyzing imaging data. Using the BioFormats plug-in, OMERO is able to read over 140 proprietary file formats. OMERO is also compatible with third-party analysis software such as Fiji and ImageJ, Python, and MATLAB, so you can analyze images and share results seamlessly from your laptop, laboratory workstations, or UVA's high performance computing platform, [Rivanna](/userinfo/rivanna/overview/).
-
-Read our [OMERO documentation](/userinfo/omero/overview) or submit a [consultation request](/form/support-request/) if you are interested in learning more about OMERO and how it can be incorporated into your current workflow.
-
-[<button class="btn btn-success">Request Access to OMERO</button>](/form/omero/)
-
 
 - - -
 

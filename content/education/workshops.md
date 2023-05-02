@@ -45,7 +45,6 @@ Course material and exercises are available through a companion site. Feel free 
 - Databases and How to Use Them
 - Docker Containers for Scientific Research
 - How to Work With Databases
-- Image Data Management with OMERO
 - Image Processing with Matlab
 - Introduction to Cloud Computing
 - Introduction to Docker Containers
