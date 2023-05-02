@@ -30,7 +30,7 @@ function getCookie(c_name) {
   }
   if (c_value === null) {
     // missing cookie
-    let sch = setCookie('__rc_school', "VVZB", '1');
+    // let sch = setCookie('__rc_school', "VVZB", '1');
   } else {
     // do nothing
   }
