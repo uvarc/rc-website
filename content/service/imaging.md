@@ -161,8 +161,8 @@ We currently offer several online tutorials for data visualization.
 
 Stay tuned for additional online tutorials as well as our workshops posted on our [workshops page](/education/workshops/)
 
-- - -
 
+<!--
 # Viz Lab
 
 The Viz Lab is a facility designed to help UVA faculty, staff, and students explore the
@@ -203,7 +203,9 @@ width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" re
 The Viz Lab is available by request only.
 To reserve a day/time to use the resources in the Viz Lab, please contact us at [hpc-support@virginia.edu](mailto:hpc-support@virginia.edu).
 The calendar below is updated regularly and shows the days/times the Viz Lab is unavailable.
-
+-->
 <!-- google calendar embedded here-->
 
+<!--
 <iframe frameborder="0" height="600" scrolling="no" src="https://calendar.google.com/calendar/embed?src=dvndpkvnloa8bvt5nre3d5n9as%40group.calendar.google.com&amp;ctz=America/New_York" style="border: 0" width="800"></iframe>
+-->
