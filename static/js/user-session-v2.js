@@ -30,7 +30,7 @@ function getCookie(c_name) {
   }
   if (c_value === null) {
     // missing cookie
-    let sch = setCookie('__rc_school', "VVZB", '1');
+    // let sch = setCookie('__rc_school', "VVZB", '1');
   } else {
     // do nothing
   }
@@ -101,9 +101,19 @@ let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
 
 // department
+// populate deparatments
+var durl = "/data/departments.json";
 let deptc = getCookie("__rc_department");
 let dept_dec = decode64(deptc);
-$("#department").val(dept_dec);
+$.getJSON(durl, function (data) {
+  $.each(data, function (index, value) {
+    if (value.name == dept_dec) {
+      $("#department").append('<option selected value="' + dept_dec + '">' + dept_dec + '</option>');
+    } else {
+      $('#department').append('<option value="' + value.name + '">' + value.name + '</option>');
+    }
+  });
+});
 
 // discipline
 let discc = getCookie("__rc_discipline");
