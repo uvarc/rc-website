@@ -119,10 +119,14 @@ To see all available environments, run `conda env list`.
 
 {{% callout %}}
 **Use source activate not conda activate**. After creating a conda enviornment, you'll have to activate it.
-The default conda command of `conda activate <env>` is incompatible with use on rivanna command line.
- It's use must be precededby the use of the `conda init bash` command, which itself requires the
- user to exit the terminal, and thus end their rivanna session,in order to take effect.
- To avoid this, just use `source conda activate <env>` instead.
+The default conda command of `conda activate <env>` is incompatible with use on the Rivanna command line.
+ Its use must be preceded by the use of the `conda init bash` command, which itself requires the
+ user to exit the terminal, and thus end their Rivanna session, in order to take effect.
+ To avoid this, just use `source activate <env>` instead.
+{{% /callout %}}
+
+{{% callout %}}
+**Tip: use `mamba` instead of `conda`.** Anaconda can take a long time to resolve environment dependencies and install packages. A new tool, `mamba`, has been developed to speed up this process considerably. You can load it using `module load micromamba` and then replace `conda` with `mamba` in any commands used to build an environment or install packages. Then you can still call your environment using `source activate <env>`.
 {{% /callout %}}
 
 # Python and MPI
@@ -139,4 +143,4 @@ As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install 
 {{< pull-code file="/static/scripts/anaconda_mpi.slurm" lang="no-hightlight" >}}
 
 # More Information
-Please visit the official [Anaconda website] (https://www.anaconda.com/distribution/).
+Please visit the official [Anaconda website](https://www.anaconda.com/distribution/).

@@ -49,18 +49,14 @@ In order to transfer data to/from a lab or personal computer, you must
 install the Globus Connect Personal application.
 {{% /callout %}}
 
-1. Open a browser and navigate to [https://www.globus.org/](https://www.globus.org/). On the Globus home page, from the "I Want To" menu, select "Enable Globus on my system."
-  <img src="/images/globus-enable-globus.png" width="700" height="550">
-2. Click the "Get Globus Connect Personal" link in the bottom left for "Researchers and other end users".  
-  <img src="/images/globus-connect-personal-get.png" width="700" height="550">
-3. Select your operating system in the "Install Globus Connect Personal" box on the right. Install Globus Connect Personal by following the installation instructions.
-  <img src="/images/globus-personal-endpoint-start.png" width="700" height="550">
-4. Launch the newly installed Globus Connect Personal. 
-5. A box will appear and ask you to login. It will redirect you to a webpage where you will allow access and provide a label for your collection, i.e. your computer. We recommend using something very descriptive, such as `mstk3-laptop` or `smith-genlab-workstation`.  
+1. Open a browser and navigate to [https://www.globus.org/globus-connect-personal](https://www.globus.org/globus-connect-personal/). 
+2. Select your operating system in the "Install Globus Connect Personal" section and click "install now". Follow the installation instructions to install Globus Connect Personal.
+3. Launch the newly installed Globus Connect Personal. 
+4. A box will appear and ask you to login. It will redirect you to a webpage where you will allow access and provide a label for your collection, i.e. your computer. We recommend using something very descriptive, such as `mstk3-laptop` or `smith-genlab-workstation`.  
   <img src="/images/globus-connect-setup.png" width="700" height="550">
-6. After clicking allow, a new page will pop up asking you to provide a collection name and a description. Again, use something descriptive like `mstk3-laptop`. **Do not select the "High Assurance" checkbox.**
+5. After clicking allow, a new page will pop up asking you to provide a collection name and a description. Again, use something descriptive like `mstk3-laptop`. **Do not select the "High Assurance" checkbox.**
   <img src="/images/globus-collection-name.png" width="700" height="550">
-7. Your collection is now set up and ready to use.
+6. Your collection is now set up and ready to use.
 
 On Windows and Mac OSX, the agent will run in the background on your laptop or workstation and will restart when the machine is booted. Click on the agent icon (in the tray for Windows users, in the toolbar for MacOS users) to change your preferences or to see the web console. On Linux you must start the agent manually upon rebooting.
 
