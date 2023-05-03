@@ -12,7 +12,7 @@ categories = ["feature"]
 Rivanna will be taken down for maintenance in 2023 on the following days:
 
 - Tuesday, March 7
-- Tuesday, May 16
+- Tuesday, May 30
 - Tuesday, October 3 or 10 (TBD based on UVA reading days schedule)
 - Monday, December 18
 
