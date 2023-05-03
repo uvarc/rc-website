@@ -51,7 +51,7 @@ In “Optional: Slurm Option” write:
 ```
 
 ## Remarks
-1. Before running multi-node jobs, please make sure it can scale well to 8 GPUs on a single node.
+1. Before running on multiple nodes, please make sure the job can scale well to 8 GPUs on a single node.
 1. Multi-node jobs on the POD should request all GPUs on the nodes, i.e. `--gres=gpu:a100:8`.
 1. You may have already used the POD by simply requesting an A100 node without the constraint, since 10 out of the total 12 A100 nodes are POD nodes.
 1. As we expand our infrastructure, there could be changes to the Slurm directives and job resource limitations in the future. Please keep an eye out for our announcements and documentation.
