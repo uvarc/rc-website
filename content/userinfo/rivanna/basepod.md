@@ -14,7 +14,7 @@ author = "RC Staff"
 
 # Introducing the NVIDIA DGX BasePOD™
 
-The NVIDIA DGX BasePOD™, hereafter referred to as the POD, is comprised of:
+The NVIDIA DGX BasePOD™ on Rivanna, hereafter referred to as the POD, is comprised of:
 - 10 DGX A100 nodes
 - 8 A100 GPU devices and 2 TB local node memory (per node)
 - 80 GB GPU memory (per GPU device)
