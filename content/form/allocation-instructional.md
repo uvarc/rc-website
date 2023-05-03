@@ -21,14 +21,6 @@ private = true
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Instructional" />
   {{% form-userinfo-v2 %}}
-  <div class="form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations." data-toggle="tooltip" id="classification" name="classification">
-    <option value="" selected="selected">- Select -</option>
-    <option value="faculty">Faculty</option>
-    <option value="staff">Staff</option>
-    <option value="postdoc">Postdoctoral Associate</option>
-    <option value="other">Other</option></select>
-  </div>
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a" target="_new">create his/her MyGroups group</a>.</span></label>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
