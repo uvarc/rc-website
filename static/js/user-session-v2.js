@@ -70,6 +70,13 @@ $("#discipline").on("change",function () {
   let discdo = setCookie('__rc_discipline', discvalx, '4464');
 });
 
+// store classification in a freshly baked cookie
+$("#classification").on("change",function () {
+  var classval = this.value;
+  var classvalx = encode64(classval);
+  let classdo = setCookie('__rc_classification', classvalx, '4464');
+});
+
 
 if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
