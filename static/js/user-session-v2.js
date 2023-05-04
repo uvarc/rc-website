@@ -77,7 +77,6 @@ $("#classification").on("change",function () {
   let classdo = setCookie('__rc_classification', classvalx, '4464');
 });
 
-
 if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 };
@@ -89,8 +88,6 @@ if (getCookie("__rc_department") == null || getCookie("__rc_department") == '') 
 // document.cookie = "__rc_form_referrer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
 var form_url = window.location;
 let referrer = setCookie('__rc_form_referrer', form_url, '24');
-
-// var form = document.getElementById('request-form');
 
 // name
 let name = getCookie("__rc_name");
@@ -107,8 +104,7 @@ let email = getCookie("__rc_email");
 let email_dec = decode64(email);
 var set_email = document.getElementById("email").value = email_dec;
 
-// department
-// populate deparatments
+// departments
 var durl = "/data/departments.json";
 let deptc = getCookie("__rc_department");
 let dept_dec = decode64(deptc);
@@ -131,10 +127,3 @@ $("#discipline").val(disc_dec);
 let classc = getCookie("__rc_classification");
 let class_dec = decode64(classc);
 $("#classification").val(class_dec);
-
-// school
-// let school_dec = decode64(getCookie("__rc_school"));
-// var school = document.getElementById("school").value = school_dec;
-// var display_school = document.getElementById("school_name").innerHTML = school_dec;
-
-
