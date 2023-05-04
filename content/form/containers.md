@@ -20,23 +20,6 @@ private = true
   <input type="hidden" id="category" name="category" value="DCOS">
   <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
 {{% form-userinfo-v2 %}}
-  <div class="form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
-  </div>
-  <div class="form-item form-group form-type-select form-group"> 
-    <label class="control-label" for="classification">Affiliation <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please select the UVA school / department with which you are primarily affiliated." data-toggle="tooltip" id="classification" name="classification">
-      <option value="" selected="selected">- Select -</option>
-      <option value="cas">College of Arts & Sciences</option>
-      <option value="dsi">School of Data Science</option>
-      <option value="seas">School of Engineering and Applied Sciences</option>
-      <option value="som">School of Medicine</option>
-      <option value="darden">Darden School of Business</option>
-      <option value="health-system">UVA Health System</option>
-      <option value="other">Other</option>
-    </select>
-  </div>
-  <hr size=1 />
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="10"></textarea>
