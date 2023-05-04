@@ -51,6 +51,8 @@ The following modules will be **removed** from Rivanna during the maintenance pe
 
     **Default version changes:**
 
+    - nextflow/20.10.0 &rarr; 23.04.1
+
 3. **New** modules:
     
     - bazel/6.1.1
