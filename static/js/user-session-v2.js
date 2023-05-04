@@ -127,6 +127,11 @@ let discc = getCookie("__rc_discipline");
 let disc_dec = decode64(discc);
 $("#discipline").val(disc_dec);
 
+// classification
+let classc = getCookie("__rc_classification");
+let class_dec = decode64(classc);
+$("#classification").val(class_dec);
+
 // school
 // let school_dec = decode64(getCookie("__rc_school"));
 // var school = document.getElementById("school").value = school_dec;
