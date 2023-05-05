@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2023-05-29T00:00:00-05:00"
+date = "2023-05-05T00:00:00-05:00"
 title = "Rivanna Maintenance: May 30, 2023"
 # url = "/maintenance"
 draft = false
@@ -14,7 +14,7 @@ categories = ["feature"]
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
-All systems are expected to return to service by **6 a.m. on , May **.
+All systems are expected to return to service by **6 a.m. on Wednesday, May 31**.
 
 ## IMPORTANT MAINTENANCE NOTES
 
