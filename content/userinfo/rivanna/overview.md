@@ -155,6 +155,9 @@ A high performance computing cluster is typically made up of at least four servi
         <p>
           {{< queues >}}
         </p>
+        <p>
+        Each job in the standard partition is restricted to a single node. Users may submit multiple jobs or job arrays, but the maximum aggregate cpu cores allowed for a single user’s running jobs is 1000.
+        </p>
       </div>
     </div>
   </div>
