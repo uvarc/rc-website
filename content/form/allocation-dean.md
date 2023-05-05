@@ -1,5 +1,5 @@
 +++
-date = "2022-10-02T23:59:16-05:00"
+date = "2023-05-04T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -9,7 +9,6 @@ title = "Request a Dean Sponsored Allocation"
 draft = false
 type = "form"
 private = true
-
 +++
 
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
@@ -23,32 +22,8 @@ private = true
   <input type="hidden" id="category" name="category" value="Deans Allocation">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Deans Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
-{{% form-userinfo %}}
-  <div class="form-item form-type-select form-group"> <label class="control-label" for="discipline">Academic Discipline <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" title="Please identify the academic discipline related to this allocation" data-toggle="tooltip" id="discipline" name="discipline">
-      <option value="" selected="selected">- Select -</option>
-      <option value="astronomy">Astronomy</option>
-      <option value="biochemistry">Biochemistry</option>
-      <option value="bioinformatics">Bioinformatics</option>
-      <option value="biology">Biology</option>
-      <option value="chemistry">Chemistry</option>
-      <option value="commerce">Commerce</option>
-      <option value="computer-science">Computer Science</option>
-      <option value="data-science">Data Science</option>
-      <option value="economics">Economics</option>
-      <option value="environmental-science">Environmental Science</option>
-      <option value="engineering">Engineering</option>
-      <option value="health-sciences">Health Sciences</option>
-      <option value="informatics">Informatics</option>
-      <option value="physics">Physics</option>
-      <option value="social-sciences">Social Sciences</option>
-      <option value="other">Other</option>
-    </select>
-  </div>
-  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="discipline-other" id="discipline-other-label">Other Academic Discipline</label>
-    <input class="form-control form-text" type="text" id="discipline-other" name="discipline-other" value="" size="60" maxlength="60" />
-  </div>
-  <div class="form-item form-type-select form-group">
+{{% form-userinfo-v2 %}}
+  <div class="form-item form-type-select form-group" style="margin-top:-2rem;">
     <label class="control-label" for="edit-submitted-classification">Sponsoring Dean
       <span class="form-required" title="This field is required.">*</span>
     </label>
@@ -57,15 +32,9 @@ private = true
       <option value="cas">College of Arts & Sciences</option>
       <option value="hs">Health System</option>
       <option value="seas">School of Engineering & Applied Sciences</option>
-      <option value="dsi">School of Data Science</option>
+      <option value="sds">School of Data Science</option>
       <option value="other">Other</option>
     </select>
-  </div>
-  <div class="form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Department <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="department" name="department" value="" size="60" maxlength="64" />
-  </div>
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a style="text-decoration:underline;color:blue;" href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a" target="_new">create his/her MyGroups group</a>.</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
 <!-- END FIRST SECTION -->
 </div>
@@ -73,11 +42,14 @@ private = true
 <!-- BEGIN SECOND SECTION -->
 <div style="padding:1.4rem;" class="card">
 <h5 class="card-title">About the Request</h5>
-<div class="row">
-  <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Total Request in SUs <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="number" id="su-request" name="su-request" value="" size="20" maxlength="20" />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;font-size:80%;"><br />Lowercase only, no spaces. PI must <a style="text-decoration:underline;color:blue;" href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a" target="_new">create his/her MyGroups group</a>.</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
-  <div class="col" style="width:50%;"></div>
+  <div class="row">
+    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Total Request in SUs <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;font-size:80%;"><br />Integers only</span></label>
+      <input required="required" class="form-control form-text required" type="number" id="su-request" name="su-request" value="" size="20" maxlength="20" />
+    </div>
+    <div class="col" style="width:50%;"></div>
   </div>
   <div style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted">Dean sponsored allocations expire by default 12 months after they are disbursed.</div>
   <div class="spacer-20"></div>
@@ -142,20 +114,6 @@ private = true
   </div>
   <div class="spacer-20"></div>
   <input type="hidden" name="details" />
-  <!--
-  <div class=""> <label class="control-label">Are you a human? <span class="form-required" title="This field is required.">*</span></label>
-    <div class="row"">
-      <div class="form-item form-group col" id="captcha" style="pointer-events:none;margin:1.4rem;width:12rem;">
-      </div>
-      <div class="form-item form-group col">
-        <input type="text" placeholder="Captcha" id="cpatchaTextBox" style="margin-top:1rem;padding:6px;font-family:monospace; width:8rem;" />
-        <button class="btn btn-success" id="captcha-submit" type="button" onclick="validateCaptcha()"><i class="fas fa-check fa-1x"></i></button>
-        <button class="btn btn-default" id="captcha-refresh" type="button" onclick="createCaptcha()"><i class="fas fa-sync fa-1x"></i></button>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript" src="/js/captcha.js"></script>
-  -->
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
@@ -187,5 +145,6 @@ $('[name="faculty-startup"]').click(function(){
   }
 });
 </script>
-<script type="text/javascript" src="/js/user-session.js"></script>
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+<script type="text/javascript" src="/js/allocation-request.js"></script>

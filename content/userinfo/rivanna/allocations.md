@@ -2,13 +2,12 @@
 description = ""
 title = "Allocations"
 draft = false
-date = "2022-10-02T17:45:12-05:00"
+date = "2023-05-04T17:45:12-05:00"
 tags = ["hpc","rivanna","supercomputer","allocations"]
 categories = ["userinfo"]
 images = [""]
 author = "Staff"  
 type = "rivanna"
-
 +++
 
 {{< form-cookies >}}
@@ -66,8 +65,8 @@ Deans' Allocations are granted by the research deans who provide funding for Riv
 <a href="/form/allocation-dean/?sponsor=seas">
   <button class="btn btn-primary">SEAS</button>
 </a>
-<a href="/form/allocation-dean/?sponsor=dsi">
-  <button class="btn btn-primary">SDS / Other</button>
+<a href="/form/allocation-dean/?sponsor=sds">
+  <button class="btn btn-primary">SDS</button>
 </a>
 
 - - -
