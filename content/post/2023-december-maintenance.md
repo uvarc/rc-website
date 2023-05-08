@@ -25,12 +25,12 @@ The NVIDIA driver version is upgraded to 52x.xx (CUDA 12).
 ### Modules
 
 1. Toolchains have been consolidated to the following:
-    - GCC: `gcc/12.2.0`, `gompi/12.2.0_4.1.4`, `goolf/12.2.0_4.1.4` 
+    - GCC: `gcc/12.2.0`, `goolf/12.2.0_4.1.4` 
     - Intel: `intel/2023.1`, `intel/18.0` (for legacy software)
     - NVIDIA: `nvhpc/23.3`
     - Clang: `clang/15.0.7`
 
-2. There are many module version upgrades and deprecation of older versions. Please run `module spider NAME/VERSION` for modules of interest to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
+2. There are many module version upgrades and deprecation of older versions. Please run `module spider NAME/VERSION` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
 
 {{< table title="Replacements" class="table table-striped" >}}
 |Name       |Default version|Other versions|Removed|
