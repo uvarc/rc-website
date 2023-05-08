@@ -1,10 +1,9 @@
 #!/bin/bash
-#SBATCH --ntasks=1
-#SBATCH --time=12:00:00
-#SBATCH --output=output_filename
 #SBATCH -A mygroup
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:p100:2
+#SBATCH --gres=gpu:p100:1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
 
-module load tensorflow3
-python myAI.py
+module load singularity tensorflow/2.10.0
+singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif myAI.py
