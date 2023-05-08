@@ -29,7 +29,7 @@ The NVIDIA driver version is upgraded to 52x.xx (CUDA 12).
     - Intel: `intel/2023.1`, `intel/18.0` (for legacy software)
     - NVIDIA: `nvhpc/23.3`
 
-2. There are many module version upgrades and deprecation of older versions. Please run `module spider NAME/VERSION` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
+2. There are many module version upgrades and deprecation of older versions. Please run `module spider NAME` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
 
 {{< table title="Replacements" class="table table-striped" >}}
 |Name       |Default version|Other versions|Removed|
