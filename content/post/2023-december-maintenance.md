@@ -28,7 +28,6 @@ The NVIDIA driver version is upgraded to 52x.xx (CUDA 12).
     - GCC: `gcc/12.2.0`, `goolf/12.2.0_4.1.4` 
     - Intel: `intel/2023.1`, `intel/18.0` (for legacy software)
     - NVIDIA: `nvhpc/23.3`
-    - Clang: `clang/15.0.7`
 
 2. There are many module version upgrades and deprecation of older versions. Please run `module spider NAME/VERSION` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
 
@@ -37,6 +36,7 @@ The NVIDIA driver version is upgraded to 52x.xx (CUDA 12).
 |---|---|---|---|
 |JupyterLab | 3.6.3 | - | 2.2.9 |
 |anaconda   |2023.03-py3.10 | 2019.10-py2.7 | 2020.11-py3.8|
+|clang      |15.0.7| - | 10.0.1 |
 |cuda       |12.0.1|10.2.89, 11.4.2| 10.1.168, 11.0.228 |
 |julia      |1.8.5 | - | 1.5.3, 1.6.0 |
 |perl       |5.36.0| - | 5.24.0 |
