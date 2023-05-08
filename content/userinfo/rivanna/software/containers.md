@@ -38,25 +38,26 @@ module avail
 Loading any of these container modules produces an on-screen message with instructions on how to copy the container image file to your directory and how to run the container.
 
 # What is Inside the Container?
-To learn more about the applications and libraries installed in a container you can use the `run-help` command:
+
+Use the `shell` command to start up a shell prompt and navigate (more later).
+
+For containers built with Singularity, you can use the `run-help` command to learn more about the applications and libraries:
+
 ```
-module load singularity
-module load tensorflow/2.1.0-py37
-singularity run-help $CONTAINERDIR/tensorflow-2.1.0-py37.sif
+singularity run-help /path/to/sif
 ```
 
-**Output:**
+For containers built with Docker, use the `inspect --runscript` command to find the default execution command. Using the TensorFlow module as an example:
+
+```bash
+$ module load singularity tensorflow/2.10.0
+$ singularity inspect --runscript $CONTAINERDIR/tensorflow-2.10.0.sif
+#!/bin/sh
+OCI_ENTRYPOINT='"python"'
+...
 ```
-This container provides the Python 3.7.5 bindings for:
-    * Tensorflow 2.1.0 with Keras implementation
-    * Keras Visualization Toolkit 0.4
-    # tflearn 0.3.2
-    * scikit-learn 0.22.1
-    * Pandas 1.0.0
-    * OpenCV 4.2.0.32
-    * CUDA 10.1.243
-    * CuDNN 7.6.4.38
-```
+
+This shows that `python` will be executed when you `run` (more later) the container.
 
 # Running non-GPU Images
 If your container does not require a GPU, all that is necessary is to load the singularity module and provide it with a path to the image.
@@ -129,17 +130,17 @@ singularity <CMD> --nv <IMAGE_FILE> <ARGS>
 **Example:**
 
 ```
-containerdir = ~/
-singularity run --nv $containerdir/tensorflow-2.1.0-py37.sif myscript.py
+module load tensorflow/2.10.0.sif
+singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif myscript.py
 ```
 
 In the container build script, `python` was defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. `myscript.py`, to the Python interpreter. So the above singularity command is equivalent to
 
 ```
-singularity exec --nv $containerdir/tensorflow-2.1.0-py37.sif python myscript.py
+singularity exec --nv $CONTAINERDIR/tensorflow-2.10.0.sif python myscript.py
 ```
 
-The `tensorflow-2.1.0-py37.sif` image was built to include CUDA and cuDNN libraries that are required by TensorFlow.  Since these libraries are provided by the container, we do not need to load the CUDA/cuDNN libraries available on the host.
+This image was built to include CUDA and cuDNN libraries that are required by TensorFlow.  Since these libraries are provided by the container, we do not need to load the CUDA/cuDNN libraries available on the host.
 
 # Running Images Interactively
 
@@ -158,8 +159,7 @@ If your image starts a graphical user interface or otherwise needs a display, yo
 ```
 module purge
 module load singularity
-containerdir=~
-singularity shell --nv $containerdir/tensorflow-2.1.0-py37.sif
+singularity shell --nv /path/to/sif
 ```
 
 # Running Image Non-Interactively as Slurm jobs
@@ -178,10 +178,9 @@ singularity shell --nv $containerdir/tensorflow-2.1.0-py37.sif
 #SBATCH -A mygroup
 
 module purge
-module load singularity
+module load singularity tensorflow/2.10.0
 
-containerdir=~
-singularity run --nv $containerdir/tensorflow-2.1.0-py37.sif tensorflowtest.py
+singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif tensorflowtest.py
 ```
 
 # Interaction with the Host File System
