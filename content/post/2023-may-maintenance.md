@@ -63,6 +63,7 @@ The following modules will be **removed** from Rivanna during the maintenance pe
 3. **New** modules:
     
     - `bazel/6.1.1`
+    - `clara-parabricks/4.0.3`
     - `gpumd/3.7`
     - `kubectl/1.26.2`
     - `optix/6.5.0`, `7.3.0`
