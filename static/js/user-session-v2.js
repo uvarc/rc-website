@@ -118,6 +118,10 @@ $.getJSON(durl, function (data) {
   });
 });
 
+// school
+let schoolval = getCookie("__rc_school");
+$("#school").val = schoolval;
+
 // discipline
 let discc = getCookie("__rc_discipline");
 let disc_dec = decode64(discc);
