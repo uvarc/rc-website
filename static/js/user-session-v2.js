@@ -120,8 +120,7 @@ $.getJSON(durl, function (data) {
 
 // school
 let schoolval = getCookie("__rc_school");
-let foo = console.log("School: ", schoolval);
-$("#school").val = schoolval;
+$("#schoolVal").val(schoolval);
 
 // discipline
 let discc = getCookie("__rc_discipline");
