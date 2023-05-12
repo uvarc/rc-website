@@ -41,7 +41,7 @@ function setCookie(key, value, expiry) {
   var expires = new Date();
   expires.setTime(expires.getTime() + (expiry * 60 * 60 * 1000));
   // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=localhost';
-  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
+  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu;secure';
 };
 
 function decode64(str) {
