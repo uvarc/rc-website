@@ -30,7 +30,7 @@ Five RTX3090 nodes (4 GPU devices each) have been added to the `gpu` partition -
 |-----|-----|-----|
 |`gpunufft/2.1.0` | `gcccuda/9.2.0_11.0.228`      | same version under `gcc/11.2.0`     |
 |`gromacs/2021.2` | `goolfc/9.2.0_3.1.6_11.0.228` | `2022.4` under `goolf/11.2.0_4.1.4` |
-|`mumax/33.10`    | `gcccuda/9.2.0_11.0.228`      | same version under `gcc/11.2.0`     |
+|`mumax3/3.10`    | `gcccuda/9.2.0_11.0.228`      | same version under `gcc/11.2.0`     |
 {{< /table >}}
 
 
@@ -63,6 +63,7 @@ The following modules will be **removed** from Rivanna during the maintenance pe
 3. **New** modules:
     
     - `bazel/6.1.1`
+    - `clara-parabricks/4.0.3`
     - `gpumd/3.7`
     - `kubectl/1.26.2`
     - `optix/6.5.0`, `7.3.0`

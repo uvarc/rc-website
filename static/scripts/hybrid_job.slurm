@@ -7,6 +7,6 @@
 #SBATCH --partition=parallel
 #SBATCH -A mygroup
 
-module load openmpi/gcc
+module load gcc openmpi
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 srun ./hybrid_executable
