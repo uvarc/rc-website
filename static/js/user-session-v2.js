@@ -77,6 +77,10 @@ $("#classification").on("change",function () {
   let classdo = setCookie('__rc_classification', classvalx, '4464');
 });
 
+if (getCookie("__rc_set") == null || getCookie("__rc_set") == '') {
+  window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
+};
+
 if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 };
