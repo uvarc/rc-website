@@ -115,7 +115,7 @@ let dept_dec = decode64(deptc);
 $.getJSON(durl, function (data) {
   $.each(data, function (index, value) {
     if (value.name == dept_dec) {
-      $("#department").append('<option selected value="' + dept_dec + '">' + dept_dec + '</option>');
+      $("#department").append('<option selected="selected" value="' + dept_dec + '">' + dept_dec + '</option>');
     } else {
       $('#department').append('<option value="' + value.name + '">' + value.name + '</option>');
     }
