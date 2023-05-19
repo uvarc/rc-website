@@ -41,7 +41,7 @@ function setCookie(key, value, expiry) {
   var expires = new Date();
   expires.setTime(expires.getTime() + (expiry * 60 * 60 * 1000));
   // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=localhost';
-  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
+  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu;secure';
 };
 
 function decode64(str) {
@@ -77,6 +77,10 @@ $("#classification").on("change",function () {
   let classdo = setCookie('__rc_classification', classvalx, '4464');
 });
 
+if (getCookie("__rc_set") == null || getCookie("__rc_set") == '') {
+  window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
+};
+
 if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 };
@@ -111,12 +115,16 @@ let dept_dec = decode64(deptc);
 $.getJSON(durl, function (data) {
   $.each(data, function (index, value) {
     if (value.name == dept_dec) {
-      $("#department").append('<option selected value="' + dept_dec + '">' + dept_dec + '</option>');
+      $("#department").append('<option selected="selected" value="' + dept_dec + '">' + dept_dec + '</option>');
     } else {
       $('#department').append('<option value="' + value.name + '">' + value.name + '</option>');
     }
   });
 });
+
+// school
+let schoolval = getCookie("__rc_school");
+$("#school").val(schoolval);
 
 // discipline
 let discc = getCookie("__rc_discipline");

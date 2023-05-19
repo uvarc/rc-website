@@ -1,5 +1,5 @@
 +++
-date = "2023-04-22T23:59:16-05:00"
+date = "2023-05-11T23:59:16-05:00"
 tags = []
 categories = ["forms"]
 images = [""]
@@ -32,13 +32,13 @@ private = true
     <label class="control-label" for="type-of-request">Tier of Service <span class="form-required" title="This field is required.">*</span></label>
     <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-1" name="dcos-tier" value="dcos-tier-1" class="form-radio" /> &nbsp; <= 5 containers ($5/month total)</label>
+        <input required="required" type="radio" id="tier-1" name="k8s-tier" value="k8s-tier-1" class="form-radio" /> &nbsp; <= 5 containers ($5/month total)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-2" name="dcos-tier" value="dcos-tier-2" class="form-radio" /> &nbsp; 6 - 15 containers ($10/month total)</label>
+        <input required="required" type="radio" id="tier-2" name="k8s-tier" value="k8s-tier-2" class="form-radio" /> &nbsp; 6 - 15 containers ($10/month total)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-3" name="dcos-tier" value="dcos-tier-3" class="form-radio" /> &nbsp; > 15 containers ($48/month total)</label>
+        <input required="required" type="radio" id="tier-3" name="k8s-tier" value="k8s-tier-3" class="form-radio" /> &nbsp; > 15 containers ($48/month total)</label>
       </div>
     </div>
   </div>

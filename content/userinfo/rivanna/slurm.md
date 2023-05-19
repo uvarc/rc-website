@@ -101,7 +101,7 @@ After all resource requests have been established through `#SBATCH`, the script 
 
 ```
 module purge
-module load gcc/7.1.0
+module load gcc
 ./mycode
 ```
 
