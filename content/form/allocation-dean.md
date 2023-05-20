@@ -17,13 +17,16 @@ private = true
 </div>
 <div>
   <!-- BEGIN FIRST SECTION -->
-  <div style="padding:1.4rem;" class="card">
   <h5 class="card-title">About the Requestor</h5>
   <input type="hidden" id="category" name="category" value="Deans Allocation">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Deans Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
 {{% form-userinfo-v2 %}}
-  <div class="form-item form-type-select form-group" style="margin-top:-2rem;">
+<!-- END FIRST SECTION -->
+<h5 class="card-title">About the Request</h5>
+<!-- BEGIN SECOND SECTION -->
+<div style="padding:1.4rem;border:solid 1px #ddd;">
+  <div class="form-item form-type-select form-group">
     <label class="control-label" for="edit-submitted-classification">Sponsoring Dean
       <span class="form-required" title="This field is required.">*</span>
     </label>
@@ -36,12 +39,6 @@ private = true
       <option value="other">Other</option>
     </select>
   </div>
-<!-- END FIRST SECTION -->
-</div>
-<div class="spacer-20"></div>
-<!-- BEGIN SECOND SECTION -->
-<div style="padding:1.4rem;" class="card">
-<h5 class="card-title">About the Request</h5>
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;font-size:80%;"><br />Lowercase only, no spaces. PI must <a style="text-decoration:underline;color:blue;" href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a" target="_new">create his/her MyGroups group</a>.</span></label>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
