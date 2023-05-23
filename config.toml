@@ -66,10 +66,10 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   # eventsUrl = "https://s3.amazonaws.com/uvarc-resources/website/events.csv"
 
 [params.metrics]
-  coreHours = "4391923"
-  storage = "8.225"
-  newAccounts = "75"
-  userAccounts = "768"
+  coreHours = "5399403"
+  storage = "9.5"
+  newAccounts = "95"
+  userAccounts = "716"
 
 [params.rivanna]
   totalNodes = "603"
