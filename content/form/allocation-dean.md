@@ -17,13 +17,16 @@ private = true
 </div>
 <div>
   <!-- BEGIN FIRST SECTION -->
-  <div style="padding:1.4rem;" class="card">
   <h5 class="card-title">About the Requestor</h5>
   <input type="hidden" id="category" name="category" value="Deans Allocation">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Deans Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Dean" />
 {{% form-userinfo-v2 %}}
-  <div class="form-item form-type-select form-group" style="margin-top:-2rem;">
+<!-- END FIRST SECTION -->
+<h5 class="card-title">About the Request</h5>
+<!-- BEGIN SECOND SECTION -->
+<div style="padding:1.4rem;border:solid 1px #ddd;">
+  <div class="form-item form-type-select form-group">
     <label class="control-label" for="edit-submitted-classification">Sponsoring Dean
       <span class="form-required" title="This field is required.">*</span>
     </label>
@@ -36,18 +39,12 @@ private = true
       <option value="other">Other</option>
     </select>
   </div>
-<!-- END FIRST SECTION -->
-</div>
-<div class="spacer-20"></div>
-<!-- BEGIN SECOND SECTION -->
-<div style="padding:1.4rem;" class="card">
-<h5 class="card-title">About the Request</h5>
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;font-size:80%;"><br />Lowercase only, no spaces. PI must <a style="text-decoration:underline;color:blue;" href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a" target="_new">create his/her MyGroups group</a>.</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of MyGroups Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;font-size:80%;"><br />Lowercase only, no spaces. <a style="text-decoration:underline;color:blue;" href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a" target="_new">PIs create and manage their MyGroups group</a>.</span></label>
+    <input required="required" class="form-control form-text required" type="text" style="font-family:monospace;" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
   <div class="row">
     <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="edit-submitted-name">Total Request in SUs <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;font-size:80%;"><br />Integers only</span></label>
-      <input required="required" class="form-control form-text required" type="number" id="su-request" name="su-request" value="" size="20" maxlength="20" />
+      <input required="required" class="form-control form-text required" type="number" id="su-request" name="su-request" value="" size="12" maxlength="12" />
     </div>
     <div class="col" style="width:50%;"></div>
   </div>
@@ -93,8 +90,8 @@ private = true
   <!-- END SECOND SECTION -->
   <div class="spacer-20"></div>
   <!-- BEGIN THIRD SECTION -->
-  <div class="card" style="padding:1.4rem;">
   <h5 class="card-title">About Your Project</h5>
+  <div class="card" style="padding:1.4rem;">
   <div class="form-item form-type-textarea form-group"> <label class="control-label" for="description-of-research">Describe Your Research Project <span class="form-required" title="This field is required.">*</span></label>
   <p style="font-size:85%;font-color:#bbb;">Please describe your research project in the box below (submit additional pages if needed). Be sure to include details of what you did with the startup allocation and how you plan to use the administrative allocation. Also, please provide a brief description of the code(s) and/or software you will be using, along with performance information to justify the resource request.</p>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="description-of-research" name="description-of-research" cols="60" rows="12"></textarea>
