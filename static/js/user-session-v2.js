@@ -124,6 +124,12 @@ let disc_dec = decode64(discc);
 $("#discipline").val(disc_dec);
 
 // show extra "Other" field if selected for Academic Discipline
+$("#discipline-other").on("input",function () {
+  var discothval = $("#discipline-other").val();
+  var discothvalx = encode64(discothval);
+  setCookie('__rc_discipline_other', discothvalx, '4464');
+});
+
 if (disc_dec == "Other") {
   $("#discipline-other").show();
   $("#discipline-other-label").show();
@@ -139,10 +145,15 @@ $("#discipline").on("change",function () {
   } else {
     $("#discipline-other").hide(400);
     $("#discipline-other-label").hide(400);
+    setCookie('__rc_discipline_other', '', '-5');
   }
   var discvalx = encode64(discval);
   let discdo = setCookie('__rc_discipline', discvalx, '4464');
 });
+
+let discother = getCookie("__rc_discipline_other");
+let discotherdec = decode64(discother);
+$("#discipline-other").val(discotherdec);
 
 // classification
 let classc = getCookie("__rc_classification");
