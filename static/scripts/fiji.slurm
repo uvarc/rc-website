@@ -10,4 +10,4 @@
 module load fiji
 
 # Change to temp working directory with example files
-ImageJ-linux --mem=32G --headless <FIJI_SCRIPT> <SCRIPT_ARGS>
+ImageJ-linux64 --mem=32G --headless <FIJI_SCRIPT> <SCRIPT_ARGS>

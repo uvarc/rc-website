@@ -54,22 +54,6 @@ function encode64(str) {
   return d;
 }
 
-// show extra "Other" field if selected for Academic Discipline
-$("#discipline-other").hide();
-$("#discipline-other-label").hide();
-$("#discipline").on("change",function () {
-  var discval = this.value;
-  if (discval == "Other") {
-    $("#discipline-other").show(400);
-    $("#discipline-other-label").show(400);
-  } else {
-    $("#discipline-other").hide(400);
-    $("#discipline-other-label").hide(400);
-  }
-  var discvalx = encode64(discval);
-  let discdo = setCookie('__rc_discipline', discvalx, '4464');
-});
-
 // store classification in a freshly baked cookie
 $("#classification").on("change",function () {
   var classval = this.value;
@@ -77,14 +61,22 @@ $("#classification").on("change",function () {
   let classdo = setCookie('__rc_classification', classvalx, '4464');
 });
 
+// check for primary ID cookie
 if (getCookie("__rc_set") == null || getCookie("__rc_set") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 };
 
-if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
+// check for vital signs - required for basic form
+if (getCookie("__rc_name") == null || 
+    getCookie("__rc_name") == '' || 
+    getCookie("__rc_email") == null || 
+    getCookie("__rc_email") == '' || 
+    getCookie("__rc_uid") == null || 
+    getCookie("__rc_uid") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 };
 
+// check for department
 if (getCookie("__rc_department") == null || getCookie("__rc_department") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 };
@@ -130,6 +122,27 @@ $("#school").val(schoolval);
 let discc = getCookie("__rc_discipline");
 let disc_dec = decode64(discc);
 $("#discipline").val(disc_dec);
+
+// show extra "Other" field if selected for Academic Discipline
+if (disc_dec == "Other") {
+  $("#discipline-other").show();
+  $("#discipline-other-label").show();
+} else {
+  $("#discipline-other").hide();
+  $("#discipline-other-label").hide();
+};
+$("#discipline").on("change",function () {
+  var discval = this.value;
+  if (discval == "Other") {
+    $("#discipline-other").show(400);
+    $("#discipline-other-label").show(400);
+  } else {
+    $("#discipline-other").hide(400);
+    $("#discipline-other-label").hide(400);
+  }
+  var discvalx = encode64(discval);
+  let discdo = setCookie('__rc_discipline', discvalx, '4464');
+});
 
 // classification
 let classc = getCookie("__rc_classification");
