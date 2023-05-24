@@ -152,8 +152,12 @@ $("#discipline").on("change",function () {
 });
 
 let discother = getCookie("__rc_discipline_other");
-let discotherdec = decode64(discother);
-$("#discipline-other").val(discotherdec);
+if (discother == null || discother == '') {
+  $("#discipline-other").val("");
+} else {
+  let discotherdec = decode64(discother);
+  $("#discipline-other").val(discotherdec);
+};
 
 // classification
 let classc = getCookie("__rc_classification");
