@@ -496,6 +496,12 @@ The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX309
 
 The second argument to `gres` can be `rtx2080`, `rtx3090`, `k80`, `p100`, `v100`, or `a100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
+### NVIDIA GPU BasePOD™ Now Available for Rivanna Users
+
+As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna, UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
+
+<a href="/userinfo/rivanna/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
+
 # CPU and Memory Usage
 Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate Slurm commands for running jobs and completed jobs.
 
