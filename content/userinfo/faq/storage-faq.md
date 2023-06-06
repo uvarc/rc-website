@@ -16,11 +16,11 @@ toc = true
 * [Why Lease Storage](#why-should-i-lease-storage)
 * [Leased Storage Options](#what-are-my-options-for-leased-storage)
 * [File Transfer with Globus](#where-can-i-learn-more-about-the-globus-file-transfer-tools)
-* [Permission Denied Error with Globus](#permission-denied-error-globus)
+* [Permission Denied Error with Globus](#i-keep-getting-a-permission-denied-error-when-trying-to-transfer-my-files-through-globus-what-can-i-do)
 
 - - -
 
-# Help! I deleted my files accidentally!  What can I do?
+# Help! I deleted my files accidentally! What can I do?
 * Your home directory contains a hidden directory `.snapshot` which is not visible even with `ls -a`.  Change into that directory to find timestamped versions of your home directory.  Snapshots are created once per day.  
 * For GPFS _Research Project_ (leased) storage, the directory is `/gpfs/gpfs0/project/.snapshots`. For non-GPFS Research Project storage, the directory is `/project/.snapshot`.
 * Neither _Research Standard_ (leased) nor Rivanna scratch storage is backed up in any way.
