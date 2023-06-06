@@ -115,8 +115,12 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 1. Remove an environment:
     `conda remove -n your_env_name_goes_here -all`
 1. To create a JupyterLab tile for your conda environment:
-	Inside of your activated environment: 'conda install -c anaconda ipykernel'
-	Then, create a new kernel: 'python -m ipykernel install --user --name=MyEnvName'
+
+	Inside of your activated environment:
+		'conda install -c anaconda ipykernel'
+	Then, create a new kernel:
+		'python -m ipykernel install --user --name=MyEnvName'
+
 	Your new kernel will show up as an available tile in the launcher screen.
  
 To see all available environments, run `conda env list`.
