@@ -5,7 +5,7 @@ date = "2023-05-30T00:00:00-05:00"
 tags = [
     "hpc","rivanna","parallel-computing","software","containers","singularity"
 ]
-draft = true
+draft = false
 title = "NVIDIA DGX BasePOD™"
 description = ""
 author = "RC Staff"
