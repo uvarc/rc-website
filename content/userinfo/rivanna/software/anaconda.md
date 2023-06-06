@@ -111,7 +111,7 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 	```
 	Now everytime you create a new environment, all those packages listed in `.condarc` will be installed.
 1. To end the current environment session:
-	`source deactivate`
+	`conda deactivate`
 1. Remove an environment:
     `conda remove -n your_env_name_goes_here -all`
 
