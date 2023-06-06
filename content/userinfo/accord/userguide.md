@@ -46,7 +46,7 @@ Details on Globus data transfer coming soon
 {{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://accord.uvarc.io/" >}}
 <br>
 
-From the ACCORD console, select the project you want to work with and the resource tier. We currently offer the following resource tier options:
+From the ACCORD console, select the project you want to work with and the desired resource tier. We currently offer the following resource tier options:
 
 + Small (2 cores & 16 GB RAM)
 + Medium (4 cores & 32 GB RAM)
