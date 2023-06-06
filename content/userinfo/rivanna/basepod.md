@@ -76,7 +76,7 @@ The singularity command is of the form:
 singularity run --nv /path/to/sif python myscript.py
 ```
 
-{{< alert-green >}} **Warning:** Distributed training is not automatic! Your code must be parallelizable. If you are not familiar with this concept, please visit: [TensorFlow distributed training](https://www.tensorflow.org/guide/distributed_training), [PyTorch DDP](https://pytorch.org/docs/stable/notes/ddp.html)
+{{< alert-green >}} <b>Warning:</b> Distributed training is not automatic! Your code must be parallelizable. If you are not familiar with this concept, please visit: <a href="https://www.tensorflow.org/guide/distributed_training">TensorFlow distributed </a>, <a href=https://pytorch.org/docs/stable/notes/ddp.html>PyTorch DDP</a>.
 {{< /alert-green >}}
 
 ## MPI codes
