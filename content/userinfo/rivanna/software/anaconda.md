@@ -118,6 +118,7 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 
 	Inside of your activated environment:
 		'conda install -c anaconda ipykernel'
+	
 	Then, create a new kernel:
 		'python -m ipykernel install --user --name=MyEnvName'
 
