@@ -46,7 +46,14 @@ Details on Globus data transfer coming soon
 {{< button button-class="primary" button-text="Open the ACCORD Platform" button-url="https://accord.uvarc.io/" >}}
 <br>
 
-From the ACCORD console, select the project you want to work with. Next select an environment. Your container should be running within a few seconds and will appear under "Running Environments" on the same page.
+From the ACCORD console, select the project you want to work with and the desired resource tier. We currently offer the following resource tier options:
+
++ Small (2 cores & 16 GB RAM)
++ Medium (4 cores & 32 GB RAM)
++ Large (8 cores, 64 GB RAM)
++ X-Large ( 16 cores & 64 GB RAM)
+
+Next, select an environment. Your container should be running within a few seconds and will appear under "Running Environments" on the same page.
 
 To learn more about your choices of environments, see [Environments](/userinfo/accord/environments)
 

@@ -225,6 +225,10 @@ Users must request a minimum of two nodes and four cpu cores (and no more than 9
 
 The gpu partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). Any job submitted to the gpu partition must request at least one GPU device through the gres option; jobs that do not utilize any GPUs are not allowed in this partition. Users may submit multiple jobs or job arrays, but the maximum aggregate number of GPU devices allowed for a single user’s running jobs is 16.
 
+The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offer high-performance GPUs that brings new AI and ML functionality to support parallel GPu computing and large deep-learning models. 
+
+<a href="/userinfo/rivanna/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
+
 ## Scratch Directory
 
 {{% scratch-policy %}}

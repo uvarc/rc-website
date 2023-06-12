@@ -24,6 +24,8 @@ Karsten's background is in developmental cell biology, genetics and light micros
 
 ##### Selected Publications
 
+* Best MN, Lim Y, Ferenc NN, Kim N, Min L, Wang DB, Sharifi K, Wasserman AE, McTavish SA, Siller KH, Jones MK, Jenkins PM, Mandell JW, Bloom GS. Extracellular Tau Oligomers Damage the Axon Initial Segment. J Alzheimers Dis. 2023 May 9. [doi:10.3233/JAD-221284](https://doi.org/10.3233/JAD-221284). 
+
 * Alam SR, Wallrabe H, Christopher KG, Siller KH, Periasamy A. Characterization of mitochondrial dysfunction due to laser damage by 2-photon FLIM microscopy. Sci Rep. 2022 Jul 13;12:11938.
 [https://doi.org/10.1038/s41598-022-15639-z](https://doi.org/10.1038/s41598-022-15639-z)
 

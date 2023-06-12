@@ -5,7 +5,7 @@ date = "2023-05-30T00:00:00-05:00"
 tags = [
     "hpc","rivanna","parallel-computing","software","containers","singularity"
 ]
-draft = true
+draft = false
 title = "NVIDIA DGX BasePOD™"
 description = ""
 author = "RC Staff"
@@ -13,6 +13,8 @@ author = "RC Staff"
 +++
 
 # Introducing the NVIDIA DGX BasePOD™
+
+As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna, UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
 
 The NVIDIA DGX BasePOD™ on Rivanna, hereafter referred to as the POD, is comprised of:
 - 10 DGX A100 nodes
@@ -74,7 +76,7 @@ The singularity command is of the form:
 singularity run --nv /path/to/sif python myscript.py
 ```
 
-{{< alert-green >}} **Warning:** Distributed training is not automatic! Your code must be parallelizable. If you are not familiar with this concept, please visit: [TensorFlow distributed training](https://www.tensorflow.org/guide/distributed_training), [PyTorch DDP](https://pytorch.org/docs/stable/notes/ddp.html)
+{{< alert-green >}} <b>Warning:</b> Distributed training is not automatic! Your code must be parallelizable. If you are not familiar with this concept, please visit: <a href="https://www.tensorflow.org/guide/distributed_training">TensorFlow distributed </a>, <a href=https://pytorch.org/docs/stable/notes/ddp.html>PyTorch DDP</a>.
 {{< /alert-green >}}
 
 ## MPI codes

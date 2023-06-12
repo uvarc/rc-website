@@ -41,7 +41,7 @@ function setCookie(key, value, expiry) {
   var expires = new Date();
   expires.setTime(expires.getTime() + (expiry * 60 * 60 * 1000));
   // document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=localhost';
-  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu';
+  document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/' + ';domain=rc.virginia.edu;secure';
 };
 
 function decode64(str) {
@@ -54,22 +54,6 @@ function encode64(str) {
   return d;
 }
 
-// show extra "Other" field if selected for Academic Discipline
-$("#discipline-other").hide();
-$("#discipline-other-label").hide();
-$("#discipline").on("change",function () {
-  var discval = this.value;
-  if (discval == "Other") {
-    $("#discipline-other").show(400);
-    $("#discipline-other-label").show(400);
-  } else {
-    $("#discipline-other").hide(400);
-    $("#discipline-other-label").hide(400);
-  }
-  var discvalx = encode64(discval);
-  let discdo = setCookie('__rc_discipline', discvalx, '4464');
-});
-
 // store classification in a freshly baked cookie
 $("#classification").on("change",function () {
   var classval = this.value;
@@ -77,10 +61,22 @@ $("#classification").on("change",function () {
   let classdo = setCookie('__rc_classification', classvalx, '4464');
 });
 
-if (getCookie("__rc_name") == null || getCookie("__rc_name") == '') {
+// check for primary ID cookie
+if (getCookie("__rc_set") == null || getCookie("__rc_set") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 };
 
+// check for vital signs - required for basic form
+if (getCookie("__rc_name") == null || 
+    getCookie("__rc_name") == '' || 
+    getCookie("__rc_email") == null || 
+    getCookie("__rc_email") == '' || 
+    getCookie("__rc_uid") == null || 
+    getCookie("__rc_uid") == '') {
+  window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
+};
+
+// check for department
 if (getCookie("__rc_department") == null || getCookie("__rc_department") == '') {
   window.location.replace( "https://auth.rc.virginia.edu/session.php" );  
 };
@@ -111,17 +107,57 @@ let dept_dec = decode64(deptc);
 $.getJSON(durl, function (data) {
   $.each(data, function (index, value) {
     if (value.name == dept_dec) {
-      $("#department").append('<option selected value="' + dept_dec + '">' + dept_dec + '</option>');
+      $("#department").append('<option selected="selected" value="' + dept_dec + '">' + dept_dec + '</option>');
     } else {
       $('#department').append('<option value="' + value.name + '">' + value.name + '</option>');
     }
   });
 });
 
+// school
+let schoolval = getCookie("__rc_school");
+$("#school").val(schoolval);
+
 // discipline
 let discc = getCookie("__rc_discipline");
 let disc_dec = decode64(discc);
 $("#discipline").val(disc_dec);
+
+// show extra "Other" field if selected for Academic Discipline
+$("#discipline-other").on("input",function () {
+  var discothval = $("#discipline-other").val();
+  var discothvalx = encode64(discothval);
+  setCookie('__rc_discipline_other', discothvalx, '4464');
+});
+
+if (disc_dec == "Other") {
+  $("#discipline-other").show();
+  $("#discipline-other-label").show();
+} else {
+  $("#discipline-other").hide();
+  $("#discipline-other-label").hide();
+};
+$("#discipline").on("change",function () {
+  var discval = this.value;
+  if (discval == "Other") {
+    $("#discipline-other").show(400);
+    $("#discipline-other-label").show(400);
+  } else {
+    $("#discipline-other").hide(400);
+    $("#discipline-other-label").hide(400);
+    setCookie('__rc_discipline_other', '', '-5');
+  }
+  var discvalx = encode64(discval);
+  let discdo = setCookie('__rc_discipline', discvalx, '4464');
+});
+
+let discother = getCookie("__rc_discipline_other");
+if (discother == null || discother == '') {
+  $("#discipline-other").val("");
+} else {
+  let discotherdec = decode64(discother);
+  $("#discipline-other").val(discotherdec);
+};
 
 // classification
 let classc = getCookie("__rc_classification");

@@ -111,10 +111,19 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 	```
 	Now everytime you create a new environment, all those packages listed in `.condarc` will be installed.
 1. To end the current environment session:
-	`source deactivate`
+	`conda deactivate`
 1. Remove an environment:
     `conda remove -n your_env_name_goes_here -all`
+1. To create a JupyterLab tile for your conda environment:
 
+	Install ipykernel inside your activated environment:
+		`conda install -c anaconda ipykernel`
+	
+	Then, create a new kernel:
+		`python -m ipykernel install --user --name=MyEnvName`
+
+	Your new kernel will show up as a tile when you select File-> New Launder in JupyterLab.
+ 
 To see all available environments, run `conda env list`.
 
 {{% callout %}}

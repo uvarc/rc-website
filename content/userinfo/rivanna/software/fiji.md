@@ -48,7 +48,7 @@ Once the Desktop is launched, open a terminal window.  Load the `fiji` module an
 
 ```
 module load fiji
-ImageJ-linux --mem=32G &
+ImageJ-linux64 --mem=32G &
 ```
 
 # Run a Fiji script as Slurm Job
@@ -57,12 +57,6 @@ To execute a Fiji script non-interactively on a compute node, you can use the fo
 
 {{< pull-code file="/static/scripts/fiji.slurm" lang="no-hightlight" >}}
 
-#Load the Fiji Module
-module load fiji
-
-# Change to temp working directory with example files
-ImageJ-linux --mem=32G --headless <FIJI_SCRIPT> <SCRIPT_ARGS>
-```
 
 * Adjust the `--cpus-per-task`, `--mem` and `--time` options as needed. Note that not all built-in Fiji functions or Fiji scripts are designed to utilize multiple cpu cores.
  

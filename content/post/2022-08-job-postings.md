@@ -15,15 +15,9 @@ categories = ["feature"]
 
 ## Infrastructure Services Staff (multiple full-time, permanent positions)
 
-- [HPC Systems Engineer](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/HPC-System-Engineer_R0040037)
 - [Windows Server Engineer](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Windows-Server-Engineer--Research-Computing_R0040018)
 - [Linux Systems Engineer](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Linux-System-Engineer_R0040017)
 
-- - -
-
-## User Services Staff (full-time, permanent hybrid postition)
-
-- [Computational Scientist](https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs/job/Charlottesville-VA/Computational-Scientist_R0042178)
 
 
 
