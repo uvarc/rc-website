@@ -30,9 +30,8 @@ Versions 2.1 and older may not be compatible with the A100 GPU. Deprecated conta
 # TensorFlow Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available:
 
-- 2.4.1 with Python 3.7
 - 2.7.0 with Python 3.9
-- 2.8.0 with Python 3.9
+- 2.10.0 with Python 3.9
 
 ## Accessing the JupyterLab Portal
 
@@ -46,7 +45,7 @@ Jupyter Notebooks can be used for interactive code development and execution of 
 To start a JupyterLab session, fill out the resource request webform.  To request access to a GPU, verify the correct selection for the following parameters:
 
 1. Under Rivanna Partition, choose "GPU".
-2. Under Optional GPU Type, choose "NVIDIA K80", "NVIDIA P100", "NVIDIA V100", "NVIDIA RTX20280", or leave it as "default".
+2. Under Optional GPU Type, choose "NVIDIA K80", "NVIDIA P100", "NVIDIA V100", "NVIDIA A100", "NVIDIA RTX2080", "NVIDIA RTX3090", or leave it as "default".
 3. Click `Launch` to start the session.
 
 Review our [Jupyer Lab documentation](/userinfo/rivanna/software/jupyterlab) for more details..
@@ -62,12 +61,12 @@ To run commands in an GPU-enabled container image, load the singularity module a
 
 For example:
 ```
-module load singularity tensorflow/2.8.0
-singularity run --nv $CONTAINERDIR/tensorflow-2.8.0.sif tf_example.py
+module load singularity tensorflow/2.10.0
+singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif tf_example.py
 ```
 In the container build script, `python` is defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. `tf_example.py`, to the Python interpreter. So the above singularity command is equivalent to
 ```
-singularity exec --nv $CONTAINERDIR/tensorflow-2.8.0.sif python tf_example.py
+singularity exec --nv $CONTAINERDIR/tensorflow-2.10.0.sif python tf_example.py
 ```
 The TensorFlow container images were built to include CUDA and cuDNN libraries that are required by TensorFlow.  Since these libraries are provided within each container, we do not need to load the CUDA/cuDNN libraries available on the host.
 
@@ -90,8 +89,8 @@ salloc: Granted job allocation 12345
 Now you can load the `singularity` module and execute commands provided by the container. For example:
 ```
 module purge
-module load singularity tensorflow/2.8.0
-singularity run --nv $CONTAINERDIR/tensorflow-2.8.0.sif tf_example.py
+module load singularity tensorflow/2.10.0
+singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif tf_example.py
 ```
 
 # Interaction with the Host File System
@@ -109,8 +108,8 @@ Due to the overlay, these directories are by default the same inside and outside
 Request a Desktop session under Interactive Apps via [Open OnDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the Slurm job. Launch the session and open a terminal in the desktop. Enter these commands:
 
 ```
-$ module load singularity tensorflow/2.8.0
-$ singularity shell --nv $CONTAINERDIR/tensorflow-2.8.0.sif
+$ module load singularity tensorflow/2.10.0
+$ singularity shell --nv $CONTAINERDIR/tensorflow-2.10.0.sif
 Singularity> python -m tensorboard.main --logdir=logdir
 ```
 
@@ -130,7 +129,7 @@ Yes, you may either pull the official TensorFlow Docker image or create your own
     ^^^^^^^^^^^      ^^^^^^^^^
     ```
 
-1. You will find the Singularity image `tensorflow_1.14.0-gpu.sif` in your current directory. Consult the instructions in the previous sections. Remember to replace `$CONTAINERDIR/tensorflow-2.8.0.sif` with the actual path to your own Singularity image.
+1. You will find the Singularity image `tensorflow_1.14.0-gpu.sif` in your current directory. Consult the instructions in the previous sections. Remember to replace `$CONTAINERDIR/tensorflow-2.10.0.sif` with the actual path to your own Singularity image.
  
 ## Conda environment
 
