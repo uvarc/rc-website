@@ -1,6 +1,6 @@
 +++
 type = "howto"
-date = "2022-02-02T00:00:00-05:00" 
+date = "2023-06-12T00:00:00-05:00" 
 tags = [ "Rivanna", "databases", "howto", "redis", "data", "nosql" ]
 category = ["howto"]
 draft = false 
@@ -32,14 +32,7 @@ supporting different kinds of values. Some fundamental concepts:
 
 # Getting Started
 
-Rivanna has access to an open Redis service in the HPC network:
-```
-redis.uvarc.io
-```
-This service is backed by a pair of servers in HA replication mode. One serves as the primary for READS and WRITES, and
-the read-replica can be used for READ queries only. The endpoint name for the primary is `redis.uvarc.io` and for 
-read-replica is `redis-rr.uvarc.io`. These endpoints are available only within the HPC networks and cannot be accessed 
-from elsewhere in the UVA WAN.
+Rivanna nodes can connect to external Redis databases hosted in [**Kubernetes**](/userinfo/microservices/) or a public cloud (AWS, Azure, GCP, etc.)
 
 To use Redis from the command-line, use the `redis-cli`. In Rivanna, this is a module:
 ```

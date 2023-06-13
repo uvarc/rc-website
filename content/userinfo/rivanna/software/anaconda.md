@@ -117,12 +117,12 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 1. To create a JupyterLab tile for your conda environment:
 
 	Install ipykernel inside your activated environment:
-		"conda install -c anaconda ipykernel"
+		`conda install -c anaconda ipykernel`
 	
 	Then, create a new kernel:
-		'python -m ipykernel install --user --name=MyEnvName'
+		`python -m ipykernel install --user --name=MyEnvName`
 
-	Your new kernel will show up as an available tile in the launcher screen.
+	Your new kernel will show up as a tile when you select File-> New Launder in JupyterLab.
  
 To see all available environments, run `conda env list`.
 
