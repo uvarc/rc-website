@@ -122,7 +122,7 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 	Then, create a new kernel:
 		`python -m ipykernel install --user --name=MyEnvName`
 
-	Your new kernel will show up as a tile when you select File-> New Launder in JupyterLab.
+	Your new kernel will show up as a tile when you select File-> New Launcher in JupyterLab.
  
 To see all available environments, run `conda env list`.
 
