@@ -27,6 +27,7 @@ We are pleased to announce a new storage system for scratch - Weka. Please copy 
 | Module | Removed version | Replacement |
 |---|---|---|
 |abinit |8.2.2 (intel/18.0), 8.10.3 (intel/20.0) | 8.10.3 (intel/2022.11) |
+|postgresql | 11.3 | 14.5 |
 
 2. **Upgrades**:
 
