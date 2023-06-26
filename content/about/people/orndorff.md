@@ -5,17 +5,17 @@ title = "Paul Orndorff, PhD"
 job_title = "Computational Scientist"
 lastname = "Orndorff"
 type = "people"
-biolink = true
+biolink = false
 description = ""
 author = "UVARC Staff"
 images = [
   ""
 ]
 subjects = [
-  "data-science",
-  "machine-learning",
+  "data-analysis",
+  "chemistry",
   "python",
   "research"
 ]
 +++
-testing
+
