@@ -415,7 +415,7 @@ Before transferring files to Ivy, you will need Globus installed on the computer
 
 4. In one panel, click on the **Collections** field and select your computer. You can then click to the directory that contains the data you want to move, or type the path to the directory in the **Path** field. Click the files or folders you want to transfer to select them.
 
-5. In the remaining panel, click on the **Collections** field and search for and select the **Ivy Secure DTN**. Select the storage share to which you want to transfer data. (Unless you are part of multiple Ivy projects, you should only see one storage folder.)
+5. In the remaining panel, click on the **Collections** field and search for and select the **UVA IVY-DTN**. Select the storage share to which you want to transfer data. (Unless you are part of multiple Ivy projects, you should only see one storage folder.)
 
 6. Click the **Start** button beneath the first panel (should be highlighted) to begin the data transfer.
 
