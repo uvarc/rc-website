@@ -31,6 +31,7 @@ The new scratch is subject to the same 10 TB quota, but the 350k files limit is 
 | Module | Removed version | Replacement |
 |---|---|---|
 |abinit |8.2.2 (intel/18.0), 8.10.3 (intel/20.0) | 8.10.3 (intel/2022.11) |
+|maven | 3.3.9 | 3.9.0 |
 |postgresql | 11.3 | 14.5 |
 
 2. **Upgrades**:
