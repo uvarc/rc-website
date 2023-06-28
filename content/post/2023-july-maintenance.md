@@ -18,7 +18,7 @@ All systems are expected to return to service by **6 a.m. on Wednesday, July 19*
 
 ## IMPORTANT MAINTENANCE NOTES
 
-We are pleased to announce a new storage system for scratch - Weka, which can be accessed at `/scratch/$USER`. The old GPFS scratch at `/oldscratch/$USER` will be retired on <date>. If you wish to retain your old scratch files, we have prepared a Slurm script at <url> to assist you with migration to the new scratch. (You may customize the script if say you only need a subset of the old files.) As we expect a high volume of data migration, please refrain from doing so on the login nodes but instead submit it as a job via the sample script.
+We are pleased to announce a new storage system for scratch - Weka, which can be accessed at `/scratch/$USER`. The old GPFS scratch at `/oldscratch/$USER` will be retired on **DATE**. If you wish to retain your old scratch files, we have prepared a Slurm script at **URL** to assist you with migration to the new scratch. (You may customize the script if say you only need a subset of the old files.) As we expect a high volume of data migration, please refrain from doing so on the login nodes but instead submit it as a job via the sample script.
 
 The DTN has been updated such that Globus transfers are only enabled for the new scratch.
 
