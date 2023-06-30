@@ -18,22 +18,20 @@ All systems are expected to return to service by **6 a.m. on Wednesday, July 19*
 
 ## IMPORTANT MAINTENANCE NOTES
 
-We are pleased to announce a new storage system for scratch - Weka, which can be accessed at `/scratch/$USER`. The old GPFS scratch at `/oldscratch/$USER` will be retired on **DATE**. If you wish to retain your old scratch files, we have prepared a Slurm script at **URL** to assist you with migration to the new scratch. (You may customize the script if say you only need a subset of the old files.) As we expect a high volume of data migration, please refrain from doing so on the login nodes but instead submit it as a job via the sample script.
+### New scratch
 
-The DTN has been updated such that Globus transfers are only enabled for the new scratch.
+We are pleased to announce a new storage system for scratch - Weka, which can be accessed at `/scratch/$USER` after the maintenance. The old GPFS scratch at `/oldscratch/$USER` will be retired on **DATE**. If you wish to retain your old scratch files, we have prepared a Slurm script at **URL** to assist you with migration to the new scratch. (Edit the script if you only need a subset of your old files.) As we expect a high volume of data migration, please refrain from doing so on the login nodes but instead submit it as a job via the provided Slurm script.
+
+During maintenance, the DTN will be updated such that Globus transfers for the old GPFS scratch will be disabled.
 
 The new scratch is subject to the same 10 TB quota, but the 350k files limit is dropped.
 
 ### Modules
 
-1. The following software modules will be **removed** from Rivanna during the maintenance period:
+The following software modules will be **removed** from Rivanna during the maintenance period:
 
 | Module | Removed version | Replacement |
 |---|---|---|
 |abinit |8.2.2 (intel/18.0), 8.10.3 (intel/20.0) | 8.10.3 (intel/2022.11) |
 |maven | 3.3.9 | 3.9.0 |
 |postgresql | 11.3 | 14.5 |
-
-2. **Upgrades**:
-
-3. **New** modules:
