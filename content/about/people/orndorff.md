@@ -12,9 +12,10 @@ images = [
   ""
 ]
 subjects = [
-  "data-science",
-  "machine-learning",
+  "data-analysis",
+  "chemistry",
   "python",
   "research"
 ]
 +++
+
