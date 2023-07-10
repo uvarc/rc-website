@@ -34,7 +34,7 @@ The script will also be available through the Open OnDemand Job Composer:
 1. Enter your own allocation. You may edit the script as needed. Click "Save" when done.
 1. Going back to the "Jobs" page, select `demo-copy-scratch` and click the green "Submit" button.
 
-As we expect a high volume of data migration, please refrain from doing so on the login nodes but instead submit it as a job via the provided Slurm script.
+As we expect a high volume of data migration, please refrain from doing so directly on the login nodes but instead submit it as a job via the provided Slurm script as described above.
 
 The new scratch is subject to the same 10 TB quota and 90-day purge policy. There is no restriction on the number of files. A friendly reminder that scratch is intended as a temporary work directory, not long-term storage space. It is not backed up and old files need to be purged periodically for system stability. RC offers a number of low-cost storage options to researchers. For more information, visit our [storage page](/userinfo/storage).
 
