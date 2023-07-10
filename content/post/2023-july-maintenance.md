@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2023-07-11T00:00:00-05:00"
+date = "2023-07-10T00:00:00-05:00"
 title = "Rivanna Maintenance: July 18, 2023"
 # url = "/maintenance"
 draft = false
