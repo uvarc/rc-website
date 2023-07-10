@@ -22,18 +22,9 @@ All systems are expected to return to service by **6 a.m. on Wednesday, July 19*
 
 RC engineers will be installing a new `/scratch` storage filesystem that can be accessed at `/scratch/$USER` after the end of maintenance.
 
-**The current `/scratch` filesystem will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  We have prepared a sample script for users who wish to transfer files to the new scratch system.  Users should clean up their current `/scratch` directory in preparation, to minimize the load.  You may either copy the script below:
+**The current `/scratch` filesystem will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  We have prepared a sample script for users who wish to transfer files to the new scratch system.  Users should clean up their current `/scratch` directory in preparation, to minimize the load.  The downloadable script will be posted here after maintenance.
 
-```bash
-#!/bin/bash
-#SBATCH -A your_allocation  # to find your allocation, type "allocations"
-#SBATCH -t 12:00:00         # up to 7-00:00:00 (7 days)
-#SBATCH -p standard
-
-rsync -av /gpfs/gpfs0/scratch/$USER/ /scratch/$USER
-```
-
-or submit the job through the Open OnDemand Job Composer:
+The script will also be available through the Open OnDemand Job Composer:
 
 1. Go to [Open OnDemand Job Composer](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard/apps/show/myjobs)
 1. Click: New Job -> From Template
