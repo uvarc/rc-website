@@ -20,7 +20,30 @@ All systems are expected to return to service by **6 a.m. on Wednesday, July 19*
 
 ### New scratch
 
-We are pleased to announce a new storage system for scratch that can be accessed at `/scratch/$USER` after the maintenance. The old GPFS scratch will be retired on **DATE** and **all data will be wiped**. If you wish to retain your old scratch files, we have prepared a Slurm script at **URL** to assist you with migration to the new scratch. (Edit the script if you only need a subset of your old files.) As we expect a high volume of data migration, please refrain from doing so on the login nodes but instead submit it as a job via the provided Slurm script. You will not be able to use Globus to transfer files from old scratch to new scratch.
+RC engineers will be installing a new `/scratch` storage filesystem that can be accessed at `/scratch/$USER` after the end of maintenance.
+
+**The current `/scratch` filesystem will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  We have prepared a sample script for users who wish to transfer files to the new scratch system.  Users should clean up their current `/scratch` directory in preparation, to minimize the load.  You may either copy the script below:
+
+```bash
+#!/bin/bash
+#SBATCH -A your_allocation  # to find your allocation, type "allocations"
+#SBATCH -t 12:00:00         # up to 7-00:00:00 (7 days)
+#SBATCH -p standard
+
+rsync -av /gpfs/gpfs0/scratch/$USER/ /scratch/$USER
+```
+
+or submit the job through the Open OnDemand Job Composer:
+
+1. Go to [Open OnDemand Job Composer](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard/apps/show/myjobs)
+1. Click: New Job -> From Template
+1. Select `demo-copy-scratch`
+1. In the right panel, click "Create New Job"
+1. This will take you to the "Jobs" page. In the "Submit Script" panel at the bottom right, click "Open Editor"
+1. Enter your own allocation. You may edit the script as needed. Click "Save" when done.
+1. Going back to the "Jobs" page, select `demo-copy-scratch` and click the green "Submit" button.
+
+As we expect a high volume of data migration, please refrain from doing so on the login nodes but instead submit it as a job via the provided Slurm script.
 
 The new scratch is subject to the same 10 TB quota and 90-day purge policy. There is no restriction on the number of files. A friendly reminder that scratch is intended as a temporary work directory, not long-term storage space. It is not backed up and old files need to be purged periodically for system stability. RC offers a number of low-cost storage options to researchers. For more information, visit our [storage page](/userinfo/storage).
 
