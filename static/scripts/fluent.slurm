@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --nodes=2
-#SBATCH --ntasks-per-node=40
+#SBATCH --ntasks-per-node=36
 #SBATCH --time=12:00:00
 #SBATCH --partition=parallel
 #SBATCH -J myFluentrun
