@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=abinit
 #SBATCH -N 5
-#SBATCH --mem-per-cpu=6000
+#SBATCH --mem-per-cpu=9000
 #SBATCH --ntasks-per-node=20
 #SBATCH -t 10:00:00
 #SBATCH -p parallel

@@ -2,7 +2,7 @@
 #SBATCH --tasks=1
 #SBATCH -t 160:00:00
 #SBATCH -p standard
-#SBATCH --mem=6000
+#SBATCH --mem=9000
 #SBATCH -A mygroup
 
 module load gaussian/g16
