@@ -2,7 +2,7 @@
 #SBATCH -A mygroup            # your allocation account
 #SBATCH -p parallel           # partition
 #SBATCH -N 3                  # number of nodes
-#SBATCH --ntasks-per-node=40  # number of tasks
+#SBATCH --ntasks-per-node=36  # number of tasks
 #SBATCH -t 24:00:00           # time
 
 module purge
