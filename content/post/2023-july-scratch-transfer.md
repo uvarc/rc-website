@@ -13,10 +13,8 @@ categories = ["feature"]
 {{< alert-green >}}During the July 18th maintenance, RC engineers installed a new /scratch file storage system on Rivanna. We have created sample scripts and instructions to help you transfer your files from the previous file system to the new one.(Expand the link below for details.){{< /alert-green >}}
 
 
-
-
-**The current `/scratch` filesystem will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  
-Users should clean up their current `/scratch` directory in preparation, to minimize the load.  A sample script is posted below.
+**The previous scratch filesystem, now called `/oldscratch`, will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  
+Users should clean up their `/oldscratch` directory in preparation, to minimize the load.  A sample script is posted below.
 
 ## Transfer Instructions
 
