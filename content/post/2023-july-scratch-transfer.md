@@ -15,8 +15,8 @@ categories = ["feature"]
 
 
 
-**The current `/scratch` filesystem will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  
-Users should clean up their current `/scratch` directory in preparation, to minimize the load.  A sample script is posted below.
+**The old scratch filesystem, now called `/oldscratch`, will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  
+Users should clean up their `/oldscratch` directory in preparation, to minimize the load.  A sample script is posted below.
 
 ## Transfer Instructions
 
