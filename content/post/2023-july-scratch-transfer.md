@@ -3,7 +3,7 @@ images = [""]
 author = "Staff"
 description = ""
 date = "2023-07-18T00:00:00-05:00"
-title = "Scratch Replacement: July 18, 2023"
+title = "New Scratch System on Rivanna: July 18, 2023"
 # url = "/maintenance"
 draft = false
 tags = ["rivanna"]
@@ -14,9 +14,10 @@ categories = ["feature"]
 
 
 
-## Transfer Instructions
 
 **The current `/scratch` filesystem will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  We have prepared a sample script for users who wish to transfer files to the new scratch system.  Users should clean up their current `/scratch` directory in preparation, to minimize the load.  A sample script is posted below.
+
+## Transfer Instructions
 
 **Example script to copy files**
 
