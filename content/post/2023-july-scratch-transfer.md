@@ -10,5 +10,5 @@ tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-During the July 18th maintenance, we installed a new `/scratch` file storage system on Rivanna. We have sample scripts and instructions to help you transfer your files from the previous system to the new one. These instructions are available [here](https://www.rc.virginia.edu/2023/07/rivanna-maintenance-july-18-2023/) 
+During the July 18th maintenance, we installed a new `/scratch` file storage system on Rivanna. Instructions to transfer your files from the previous system to the new one are available [here](https://www.rc.virginia.edu/2023/07/rivanna-maintenance-july-18-2023/) 
 
