@@ -11,6 +11,7 @@ categories = ["feature"]
 +++
 
 {{< alert-green >}}During the July 18th maintenance, we installed a new /scratch file storage system on Rivanna. We have created sample scripts and instructions to help you transfer your files from the previous file system to the new one.{{< /alert-green >}}
+(Click on [Read More] for the instructions.)
 
 
 
