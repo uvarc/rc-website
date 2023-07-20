@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account my_acct
 #SBATCH --nodes=8
-#SBATCH --ntasks-per-node=16
+#SBATCH --ntasks-per-node=36
 #SBATCH --time=3-00:00:00
 #SBATCH --output=thermo.out
 #SBATCH --partition=parallel
