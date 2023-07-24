@@ -12,13 +12,13 @@
   <thead class="thead-dark">
     <tr>
       <th class="rotate" scope="col">Partition</th>
-      <th class="rotate" scope="col">Description</th>
-      <th class="rotate" scope="col">Max time / job</th>
-      <th class="rotate" scope="col">Max nodes / job</th>
-      <th class="rotate" scope="col">Max cores / job</th>
-      <th class="rotate" scope="col">Max cores / node</th>
-      <th class="rotate" scope="col">Default memory / core</th>
-      <th class="rotate" scope="col">Max memory / node / job</th>
+      <th class="rotate" scope="col">Purpose</th>
+      <th class="rotate" scope="col" >Max time    / job</th>
+      <th class="rotate" scope="col" width="16%">Max nodes / job</th>
+      <th class="rotate" scope="col" >Max cores / job</th>
+      <th class="rotate" scope="col" width="14%">Max cores / node</th>
+      <th class="rotate" scope="col" >Default memory / core</th>
+      <th class="rotate" scope="col" >Max memory / node / job</th>
       <th class="rotate" scope="col">SU Charge Rate</th>
     </tr>
   </thead>
@@ -47,7 +47,7 @@
     </tr>
     <tr>
       <td class="queue" scope="row"><code>largemem</code></td>
-      <td scope="row">For memory intensive jobs </td>
+      <td scope="row">For memory intensive jobs</td>
       <td scope="row">4&nbsp;days</td>
       <td scope="row">2</td>
       <td scope="row">32</td>
@@ -58,8 +58,8 @@
     </tr>
     <tr>
       <td class="queue" scope="row"><code><a href="/userinfo/rivanna/slurm/#gpu-intensive-computation">gpu</a></code></td>
-      <td scope="row">For jobs that use general purpose graphical processing units</td>
-      <td scope="row">3 days</td>
+      <td scope="row">For jobs using general purpose graphical processing units </td>
+      <td scope="row">3 days</td>      
       <td scope="row">4</td>
       <td scope="row">32GPUs</td>
       <td scope="row">125</td>
@@ -69,7 +69,7 @@
     </tr>
     <tr>
       <td class="queue" scope="row"><code>dev</code></td>
-      <td scope="row">For jobs that are quick tests of code </td>
+      <td scope="row"> For jobs that are quick tests of code </td>
       <td scope="row">1 hour</td>
       <td scope="row">2</td>
       <td scope="row">16</td>
