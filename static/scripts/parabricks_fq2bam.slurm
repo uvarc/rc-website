@@ -9,13 +9,13 @@
 
 # prepare the environment
 module purge
-module load singularity clara-parabricks/4.0.3
+module load singularity clara-parabricks
 
 # run parabricks fq2bam pipeline
 singularity run --nv \
       -B $PWD:/workdir \
       -B $PWD:/outputdir \
-    $CONTAINERDIR/clara-parabricks-4.0.3.sif \
+    $CONTAINERDIR/clara-parabricks-4.1.1.sif \
     pbrun fq2bam \
       --ref /workdir/parabricks_sample/Ref/Homo_sapiens_assembly38.fasta \
       --in-fq /workdir/parabricks_sample/Data/sample_1.fq.gz /workdir/parabricks_sample/Data/sample_2.fq.gz \
