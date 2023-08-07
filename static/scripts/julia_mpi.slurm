@@ -11,8 +11,8 @@
 #SBATCH --job-name=parallelTest1
 #SBATCH --output=parallelTest1_%A.out
 #SBATCH --error=parallelTest1_%A.err
-#SBATCH --nodes=2                #Number of nodes
-#SBATCH --ntasks-per-node=40     #Number of cores per node
+#SBATCH --nodes=8                #Number of nodes
+#SBATCH --ntasks-per-node=1      #Number of cores per node
 
 # Load Julia environment
 module load julia
