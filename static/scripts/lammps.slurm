@@ -7,8 +7,7 @@
 #SBATCH --partition=parallel
 
 module purge
-module load intel/18.0
-module load intelmpi/18.0_18.0
-module load {{% module-firstversion %}}
+module load intel/18.0 intelmpi/18.0_18.0
+module load lammps
 
 srun lmp_iimpi -in run.in.npt
