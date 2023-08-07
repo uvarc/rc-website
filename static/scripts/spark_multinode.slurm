@@ -3,7 +3,7 @@
 #SBATCH --exclusive   # do not modify
 #SBATCH -A myaccount  # your allocation
 #SBATCH -N 3          # number of nodes
-#SBATCH -c 36         # number of cores per node
+#SBATCH -c 40         # number of cores per node
 #SBATCH -t 3:00:00    # time
 
 module purge

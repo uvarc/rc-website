@@ -1,9 +1,8 @@
 #!/bin/bash
-#SBATCH --nodes=2
-#SBATCH -c 20
+#SBATCH -N 2
+#SBATCH -c 40
 #SBATCH -t 48:00:00
 #SBATCH -p parallel
-#SBATCH --mem=120000
 #SBATCH -A mygroup
 
 module load gaussian/g16
@@ -20,6 +19,6 @@ for n in `scontrol show hostname | sort -u`; do
   echo ${n}
 done | paste -s -d, > snodes.$SLURM_JOBID
 
-g16 -m=100gb -p=${SLURM_CPUS_PER_TASK} -w=`cat snodes.$SLURM_JOBID` h2o.com
+g16 -p=${SLURM_CPUS_PER_TASK} -w=`cat snodes.$SLURM_JOBID` h2o.com
 #Clean up
 rm snodes.$SLURM_JOBID
