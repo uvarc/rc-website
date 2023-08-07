@@ -12,10 +12,10 @@
 #SBATCH --output=parallelTest1_%A.out
 #SBATCH --error=parallelTest1_%A.err
 #SBATCH --nodes=8                #Number of nodes
-#SBATCH --ntasks-per-node=1     #Number of cores per node
+#SBATCH --ntasks-per-node=1      #Number of cores per node
 
 # Load Julia environment
 module load julia
-module load intel/18.0 intelmpi/18.0
+module load intel
 
 srun julia helloParallel.jl

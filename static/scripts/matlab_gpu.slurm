@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:k80:4
+#SBATCH --gres=gpu:4
 #SBATCH -A hpc_build
 #SBATCH --time=4:00:00
 #SBATCH --output=gpuTest_%A.out
