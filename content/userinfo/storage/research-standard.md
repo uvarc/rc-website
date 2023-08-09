@@ -22,7 +22,7 @@ classifications](https://security.virginia.edu/university-data-protection-standa
 
 The _Research Standard_ storage provides users with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
 the team lead or PI. Group membership can be defined and managed through <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS 
-MyGroups system</a>. Research Standard storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
+MyGroups system</a> (requires VPN connection). Research Standard storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
 mount, allowing for point-and-click file manipulation.
 
 If you are not a researcher, UVA ITS offers Value storage for long-term storage of large scale data. More information about ITS's 
