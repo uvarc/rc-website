@@ -3,7 +3,7 @@
 # code to a gpu
 
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:k80:1
+#SBATCH --gres=gpu:1
 #SBATCH -A hpc_build
 #SBATCH --time=1:00:00
 #SBATCH --output=run_gpu_%A.out

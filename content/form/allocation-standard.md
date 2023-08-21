@@ -40,18 +40,6 @@ private = true
     </div>
     <div style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted">Standard allocations expire 12 months after they are disbursed.</div>
   </div>
-  <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="yes-or-no">Will you be using <a style="font-weight:bold;" href="/userinfo/rivanna/software/vasp/">VASP</a> or <a style="font-weight:bold;" href="/userinfo/rivanna/software/gaussian/">Gaussian</a> on Rivanna? <span class="form-required" title="This field is required.">*</span></label>
-    <div class="row">
-      <div id="yes-or-no" class="form-radios col">
-        <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-1">
-          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="yes" class="form-radio" />&nbsp;Yes</label>
-        </div>
-        <div class="form-item form-type-radio radio"> <label class="control-label" for="yes-or-no-2">
-          <input required="required" type="radio" id="vasp-gaussian" name="vasp-gaussian" value="no" checked="checked" class="form-radio" />&nbsp;No</label>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="for-capstone">Is this allocation for a School of Data Science Capstone project? <span class="form-required" title="This field is required.">*</span></label>
     <div class="row">
       <div id="for-capstone" class="form-radios col">

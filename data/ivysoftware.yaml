@@ -30,6 +30,10 @@ software:
        status: approved
        platforms: [Windows]
        installation: preinstalled
+     - version: "4.3.1"
+       status: approved
+       platforms: [Windows]
+       installation: preinstalled
    category: [Data Analysis,Programming]
    description: R is a free software environment for statistical computing and graphics.
  - name: RStudio

@@ -26,8 +26,9 @@ For detailed information, visit the [{{% software-name %}} website]({{< module-h
 Local support is not available.
 
 # Available Versions
-The current installation of {{% software-name %}} lags behind the latest release due to license restrictions. To find the available versions and learn how to load them, run:
-```module spider {{% module-name %}}
+To find the available versions and learn how to load them, run:
+```
+module spider {{% module-name %}}
 ```
 
 The output of the command shows the available {{% software-name %}} module versions.
