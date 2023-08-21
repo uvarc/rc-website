@@ -20,7 +20,11 @@
     {{- if $last_date.After (now.AddDate 0 0 -1) -}}
       <tr>
         <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }}<br> {{ end }}</td>
-        <td><a href="{{ $link }}" target="_new">{{ $title }}</a></td>
+        {{- if ne $link "" -}}
+          <td><a href="{{ $link }}" target="_blank">{{ $title }}</a></td>
+        {{- else -}}
+          <td>{{ $title }}</td>
+        {{- end -}}
         <td>{{ $instructor }}</td>
       </tr>
     {{- end -}}  
