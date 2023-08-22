@@ -39,22 +39,3 @@ module spider {{% module-firstversion %}}
 ```
 
 {{< module-versions >}}
-
-# Exclude K80 GPU nodes
-
-RAPIDS requires compute capability 6.0+, which means it cannot work on K80 nodes. To exclude them from JupyterLab,
-fill out the form as you normally would and under
-```
-Optional: Slurm Option
-```
-put
-{{< code-snippet >}}
--x udc-ba25-2[3,7,8],udc-ba26-2[3-6],udc-ba27-2[3-4]
-{{< /code-snippet >}}
-
-If you are using a Slurm script, add this line:
-{{< code-snippet >}}
-#SBATCH -C "p100|v100|rtx2080|rtx3090|a100"
-{{< /code-snippet >}}
-
-(The constraint argument requires the `"` character which is not yet supported on the JupyterLab form.)
