@@ -334,7 +334,7 @@ end
 
 Once your job has been granted its allocated GPUs, you can use the gpuDevice function to initialize a specific GPU for use with Matlab functions that can utilize the architecture of GPUs. For more information see the [MathWorks documentation](https://www.mathworks.com/help/parallel-computing/gpu-computing-in-matlab.html) on GPU Computing in Matlab.
 
-The following slurm script is for submitting a Matlab job that uses 4 of the K80 GPUs in a `parfor` loop. For each GPU requested, the script requests one cpu (ntasks-per-node).
+The following slurm script is for submitting a Matlab job that uses 4 GPUs in a `parfor` loop. For each GPU requested, the script requests one cpu (ntasks-per-node).
 
 {{< pull-code file="/static/scripts/matlab_gpu.slurm" lang="no-hightlight" >}}
 
