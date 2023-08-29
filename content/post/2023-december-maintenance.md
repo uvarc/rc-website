@@ -36,7 +36,7 @@ The NVIDIA driver version is upgraded to 535.54.03 (CUDA 12.2).
 {{< table title="Replacements" class="table table-striped" >}}
 |Name       |Default version|Other versions|Removed|
 |---|---|---|---|
-|JupyterLab | 4.?    | - | 2.2.9 |
+|JupyterLab | 3.6.3  | - | 2.2.9 |
 |anaconda   |2023.07-py3.11 | | 2019.10-py2.7, 2020.11-py3.8|
 |clang      |15.0.7  | - | 10.0.1 |
 |cuda       |12.2.0  |10.2.89, 11.4.2| 10.1.168, 11.0.228 |
