@@ -29,6 +29,7 @@ private = true
       <option id="storage" value="Storage">Storage</option>
       <option id="container" value="Container">Container Service</option>
       <option id="consultation" value="Consultation">Consultation request</option>
+      <option id="workshops" value="Workshops">Workshops</option>
       <option id="other" value="Other">Other</option>
     </select>
     <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/#allocation-types" style="font-weight:bold;">Allocation Request</a>.</div>
