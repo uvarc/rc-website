@@ -486,7 +486,7 @@ The following example runs a total of 32 MPI processes, 8 on each node, with eac
 
 ## GPU Computations
 
-The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, K80, P100, V100, and A100 NVIDIA GPU devices.
+The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, V100, and A100 NVIDIA GPU devices.
 
 {{< highlight >}}
    In order to use GPU devices, the jobs must to be submitted to the <b>gpu</b> partition and must include the <b>--gres=gpu</b> option.</alert>
@@ -494,7 +494,7 @@ The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX309
 
 {{< pull-code file="/static/scripts/gpu_job.slurm" lang="no-hightlight" >}}
 
-The second argument to `gres` can be `rtx2080`, `rtx3090`, `k80`, `p100`, `v100`, or `a100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
+The second argument to `gres` can be `rtx2080`, `rtx3090`, `v100`, or `a100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
 ### NVIDIA GPU BasePOD™ Now Available for Rivanna Users
 

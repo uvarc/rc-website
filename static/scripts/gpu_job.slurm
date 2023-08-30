@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH -A mygroup
 #SBATCH --partition=gpu
-#SBATCH --gres=gpu:p100:1
+#SBATCH --gres=gpu:1
 #SBATCH --ntasks=1
 #SBATCH --time=12:00:00
 

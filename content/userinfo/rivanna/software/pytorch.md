@@ -35,20 +35,6 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-## Compatibility Issues
-
-### A100
-Versions 1.6 and older are not compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option
-{{< code-snippet >}}
--x udc-an28-[1,7],udc-an34-[1,7,13,19],udc-an36-[1,13,19],udc-an37-[1,7,13,19]
-{{< /code-snippet >}}
-
-### K80
-Version 1.8.1 is not compatible with the K80 GPU. You may use it on other GPUs by excluding all K80s via the Slurm option
-{{< code-snippet >}}
--x udc-ba25-2[3,7,8],udc-ba26-2[3-6],udc-ba27-2[3-4]
-{{< /code-snippet >}}
-
 # PyTorch Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. PyTorch Jupyter kernels are backed by containers in the corresponding modules.
 
@@ -64,7 +50,7 @@ Jupyter Notebooks can be used for interactive code development and execution of 
 To start a JupyterLab session, fill out the resource request webform.  To request access to a GPU, verify the correct selection for the following parameters:
 
 1. Under Rivanna Partition, choose "GPU".
-2. Under Optional GPU Type, choose "NVIDIA K80", "NVIDIA P100", "NVIDIA V100", "NVIDIA A100", "NVIDIA RTX2080", "NVIDIA RTX3090" or leave it as "default".
+2. Under Optional GPU Type, choose "NVIDIA V100", "NVIDIA A100", "NVIDIA RTX2080", "NVIDIA RTX3090" or leave it as "default".
 Click `Launch` to start the session.
 
 ## Editing and Running the Notebook

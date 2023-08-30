@@ -29,7 +29,7 @@ software:
      - version: "4.0.4"
        status: approved
        platforms: [Windows]
-       installation: preinstalled
+       installation: optional
      - version: "4.3.1"
        status: approved
        platforms: [Windows]
@@ -167,7 +167,7 @@ software:
        installation: preinstalled # optional,none  
    category: [Data Analysis]
    description: JupyterLab is the next-generation user interface for Project Jupyter offering all the familiar building blocks of the classic Jupyter Notebook (notebook, terminal, text editor, file browser, rich outputs, etc.) in a flexible and powerful user interface.
- - name: Notepad++
+ - name: "Notepad++"
    versions:
      - version: "6.9.2"
        status: approved

@@ -32,9 +32,7 @@ Please use the following values when compiling CUDA code on Rivanna.
 
 | Type | GPU | Architechture | Compute Capability | CUDA Version |
 | --- | --- |  --- | --- | --- |
-| Data Center |K80 | Kepler | 3.7 | 5 - 11 |
-|             |P100 | Pascal | 6.0 | 8+ |
-|             |V100 | Volta | 7.0 | 9+ |
+| Data Center |V100 | Volta | 7.0 | 9+ |
 |             |A100 | Ampere | 8.0 | 11+ |
 | GeForce     |RTX2080Ti | Turing | 7.5 | 10+ |
 |             |RTX3090 | Ampere | 8.6 | 11+ |

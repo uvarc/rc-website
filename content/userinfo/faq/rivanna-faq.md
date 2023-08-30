@@ -69,15 +69,16 @@ where filename is a placeholder for the specific filename.
 ## When should I use FastX Web, when should I use an Open OnDemand Desktop session?
 Both allow you to run applications with graphical user interfaces in a Linux Desktop environment.
 
-[FastX Web:](/userinfo/rivanna/logintools/fastx/)
-* Runs all users' sessions on a single frontend node.
-* Good for light-weight file management, script editing.
-* Requires a VPN connection from off-Grounds locations.
-
 [Open OnDemand Desktop:](/userinfo/rivanna/ood/overview/#desktop)
 * Runs your session on allocated resources on a compute node.
 * Ideal for running compute-intensive single-node applications with graphical user interface.
 * Does not require a VPN connection from off-Grounds locations.
+* Recommended practice for running interactive jobs (particularly for coursework with a reservation).
+
+[FastX Web:](/userinfo/rivanna/logintools/fastx/)
+* Runs all users' sessions on a single frontend node.
+* Good for light-weight file management, script editing.
+* Requires a VPN connection from off-Grounds locations.
 
 - - -
 
