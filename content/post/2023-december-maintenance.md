@@ -64,5 +64,5 @@ The NVIDIA driver version is upgraded to 535.54.03 (CUDA 12.2).
 - **C/C++/Fortran** users who must build code with GCC 7 or older should containerize the application starting with the [official GCC base image](https://hub.docker.com/_/gcc). Contact us if you need assistance.
 - **Intel 18.0** modules are either migrated to the newer version (2023.1) or dropped. Intel users should rebuild code with `intel/2023.1` if possible.
 - **Python 2.7**-dependent modules are completely removed from the software stack. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
-- **Code Server** is now backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions **here**(https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
+- **Code Server** is now backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
 - **Mamba** is now its own module, separated from `anaconda`.
