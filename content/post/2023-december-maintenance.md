@@ -59,4 +59,9 @@ The NVIDIA driver version is upgraded to 535.54.03 (CUDA 12.2).
 |texlive    |2023    | - | 2020  |
 {{< /table >}}
 
-    - Modules that depend on Python 2.7 are dropped. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
+#### Special reminders
+
+- Users who must build C/C++/Fortran code with GCC 7 or older should containerize the application starting with the [official GCC base image](https://hub.docker.com/_/gcc). Contact us if you need assistance.
+- Modules that depend on Intel 18.0 are either migrated to the newer version (`2023.1`) or dropped. Users should rebuild code with `2023.1` if possible.
+- Modules that depend on Python 2.7 are dropped. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
+- The `mamba` module is now separated from `anaconda`.
