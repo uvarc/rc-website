@@ -1,5 +1,5 @@
 +++
-date = "2023-04-22T23:59:16-05:00"
+date = "2023-09-14T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
@@ -68,7 +68,7 @@ private = true
   </div>
   <div class="col form-item form-group">
      <div class="alert alert-warning">
-        Instructional allocations come with 50GB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension.
+        Instructional allocations come with 1TB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension.
      	<a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
      </div>
   </div>
