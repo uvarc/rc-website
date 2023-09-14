@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2020-04-24T10:55:28-05:00"
+date = "2023-09-14T10:55:28-05:00"
 title = "Instructional Use of Rivanna"
 description = ""
 author = "RC Staff"
@@ -17,7 +17,7 @@ Instructors can request _instructional allocations_ on Rivanna for classes and e
 
 ## Hardware and Partition
 
-Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 25,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards.  Instructional allocations come with 50GB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. The standard number of cores is 20 on one node.
+Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards.  Instructional allocations come with 1TB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. The standard number of cores is 20 on one node.
 
 ## Software
 
