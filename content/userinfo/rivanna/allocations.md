@@ -2,7 +2,7 @@
 description = ""
 title = "Allocations"
 draft = false
-date = "2023-05-04T17:45:12-05:00"
+date = "2023-09-14T17:45:12-05:00"
 tags = ["hpc","rivanna","supercomputer","allocations"]
 categories = ["userinfo"]
 images = [""]
@@ -18,7 +18,7 @@ var user_token = getCookie("__user_token");
 
 <div class="bd-callout bd-callout-warning">
 <div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
-<p>Time on Rivanna is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> (requires VPN connection) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. </p>
+<p>Time on Rivanna is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 1M SUs). Allocations are managed through <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> (requires VPN connection) groups that should be created by Principal Investigators (PIs) before they submit an allocation request. </p>
 <p>All UVA faculty, staff, and postdoctoral associates are considered PIs and therefore eligible for an allocation on Rivanna. Students—both graduate and undergraduate—cannot request allocations, but they are allowed to use Rivanna as members of a MyGroups group controlled by a PI. The same applies to researchers with sponsored accounts.</p>
 </div>
 
@@ -43,7 +43,7 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 # Allocation Types
 
 ## Standard Allocations
-Standard allocations are for 100,000 SUs and require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations can be renewed as long as each renewal request includes a synopsis of results from the original allocation. The maximum number of standard allocations--either new or renewal--a PI can receive in a single fiscal year is 4 (or 400K SUs max). There cannot be more than 1 PI per MyGroups group. Standard allocations expire 12 months after they are disbursed. 
+Standard allocations require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations must be renewed annually along with a synopsis of results from the original allocation. There cannot be more than 1 PI per MyGroups group. Standard allocations expire 12 months after they are disbursed. 
 
 **Available to:** Faculty and post-docs using Rivanna for research.
 
@@ -51,28 +51,8 @@ Standard allocations are for 100,000 SUs and require a brief summary of the rese
 
 - - -
 
-## Deans' Allocations
-Deans' Allocations are granted by the research deans who provide funding for Rivanna. A minimum one-page proposal must be included with any type of Deans' Allocation request. Dean sponsored allocations expire by default 12 months after they are disbursed.
-
-**Available to:** Faculty and postdocs who require very large allocations. Choose one of the following request options based on your school/college/organizational affiliation:
-
-<a href="/form/allocation-dean/?sponsor=cas">
-  <button class="btn btn-primary">CLAS</button>
-</a>
-<a href="/form/allocation-dean/?sponsor=hs">
-  <button class="btn btn-primary">HS</button>
-</a>
-<a href="/form/allocation-dean/?sponsor=seas">
-  <button class="btn btn-primary">SEAS</button>
-</a>
-<a href="/form/allocation-dean/?sponsor=sds">
-  <button class="btn btn-primary">SDS</button>
-</a>
-
-- - -
-
 ## Allocation Purchases
-Time on Rivanna can also be purchased using a PTAO. Purchasers are given a higher priority in the queue and their SUs never expire.
+Time on Rivanna can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
 
 **Available to:** Faculty and postdocs with grants; researchers who need priority access and premium service.
 
@@ -83,7 +63,7 @@ Time on Rivanna can also be purchased using a PTAO. Purchasers are given a highe
 - - -
 
 ## Instructional Allocations
-Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014. Instructional allocations come with 50GB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
+Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a MyGroups account name using the class rubric, e.g. cs5014. Instructional allocations come with 1TB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
 <a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
 <a href="/form/allocation-instructional/">
 
