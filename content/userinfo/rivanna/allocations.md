@@ -2,7 +2,7 @@
 description = ""
 title = "Allocations"
 draft = false
-date = "2023-09-14T17:45:12-05:00"
+date = "2023-09-13T17:45:12-05:00"
 tags = ["hpc","rivanna","supercomputer","allocations"]
 categories = ["userinfo"]
 images = [""]
