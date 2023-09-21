@@ -32,7 +32,7 @@ _I need 10 cores and 50 GB memory._ Since this amounts to 5 GB memory per core, 
 #SBATCH -c 10
 ```
 
-_I am not sure how much memory I need._ First submit the job to the `standard` partition without specific memory requests. If the job runs out of memory, resubmit to the largemem partition.
+_I am not sure how much memory I need._ First submit the job to the `standard` partition without specific memory requests. If the job runs out of memory, resubmit to the `largemem` partition.
 
 ### Old scratch permanently retired on October 17
 A reminder that the `/oldscratch` filesystem will be permanently retired on October 17 and all the data it contains will be deleted. A sample script for users who wish to transfer files to the new `/scratch` system can be found [here](https://www.rc.virginia.edu/2023/07/new-scratch-system-on-rivanna-july-18-2023).
