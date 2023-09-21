@@ -38,6 +38,7 @@ The NVIDIA driver version is upgraded to 535.54.03 (CUDA 12.2).
 |---|---|---|---|
 |OOD Code Server | 4.16.1  | - | 3.6.2, 4.5.0 |
 |OOD JupyterLab | 3.6.3  | - | 2.2.9 |
+|OOD QGIS | 3.28.10  | - | 3.10.6 |
 |OOD RStudio Server | 2023.06.2 | - | 1.0.143, 1.1.463, 1.3.1073, 2023.03.0 |
 |anaconda   |2023.07-py3.11 | | 2019.10-py2.7, 2020.11-py3.8|
 |clang      |15.0.7  | - | 10.0.1 |
