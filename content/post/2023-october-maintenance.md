@@ -39,6 +39,9 @@ _I am not sure how much memory I need._ First submit the job to the `standard` p
 ```
 and check the report in your email.
 
+### NVIDIA driver upgrade
+The NVIDIA driver will be upgraded to version 535.104.05 (CUDA 12.2). The default CUDA module version will remain at 11.4.2.
+
 ### Old scratch permanently retired on October 17
 A reminder that the `/oldscratch` filesystem will be permanently retired on October 17 and all the data it contains will be deleted. A sample script for users who wish to transfer files to the new `/scratch` system can be found [here](https://www.rc.virginia.edu/2023/07/new-scratch-system-on-rivanna-july-18-2023).
 

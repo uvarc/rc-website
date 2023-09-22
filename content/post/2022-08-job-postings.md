@@ -25,6 +25,12 @@ We currently have several open positions in our *Infrastructure Services* and *U
 - [Research Computing Facilitator/Research Computing Scientist](https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs/details/Research-Computing-Facilitator-Research-Computing-Scientists_R0051965)
 
 
+## Data Analytics Center Staff (multiple full-time, long-term positions)
+
+- [Research Computing Scientists/Deep Learning Specialists](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Research-Computing-Scientist_R0052597)
+- [Research Computing Scientists/Data Analysts](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Research-Computing-Scientist_R0052598)
+
+
 
 
 
