@@ -38,6 +38,7 @@ The NVIDIA driver version is upgraded to 535.54.03 (CUDA 12.2).
 |---|---|---|---|
 |OOD Code Server | 4.16.1  | - | 3.6.2, 4.5.0 |
 |OOD JupyterLab | 3.6.3  | - | 2.2.9 |
+|OOD QGIS | 3.28.10  | - | 3.10.6 |
 |OOD RStudio Server | 2023.06.2 | - | 1.0.143, 1.1.463, 1.3.1073, 2023.03.0 |
 |anaconda   |2023.07-py3.11 | | 2019.10-py2.7, 2020.11-py3.8|
 |clang      |15.0.7  | - | 10.0.1 |
@@ -64,5 +65,6 @@ The NVIDIA driver version is upgraded to 535.54.03 (CUDA 12.2).
 - **C/C++/Fortran** users who must build code with GCC 7 or older should containerize the application starting with the [official GCC base image](https://hub.docker.com/_/gcc). Contact us if you need assistance.
 - **Intel 18.0** modules are either migrated to the newer version (2023.1) or dropped. Intel users should rebuild code with `intel/2023.1` if possible.
 - **Python 2.7**-dependent modules are completely removed from the software stack. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
-- **Code Server** is now backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
-- **Mamba** is now its own module, separated from `anaconda`.
+- **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
+- **Mamba** is separated from `anaconda` into its own module.
+- **Java** module versions are standardized to 7, 8, 11, 12 (previously 1.7.0, etc.).

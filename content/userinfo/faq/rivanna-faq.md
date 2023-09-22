@@ -247,7 +247,7 @@ You can run `sacct`:
 If it's still not clear why your job was killed, please contact us and send us the output from `sacct`.
 
 ## Why can't I submit jobs anymore?
-In order to be allowed to submit jobs, you must not be overallocated with your `/scratch` usage and you must have some remaining service units. There is a limit of 350,000 files or 10 TB of space used per user in each `/scratch` directory and if you exceed either of those limits, you will not be able to run jobs until you clean up.  To check whether this is the case, run
+In order to be allowed to submit jobs, you must not be overallocated with your `/scratch` usage and you must have some remaining service units. There is a limit of 10 TB of space used per user in each `/scratch` directory and if you exceed either of those limits, you will not be able to run jobs until you clean up.  To check whether this is the case, run
 
 ```
 sfsq
