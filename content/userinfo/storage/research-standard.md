@@ -33,7 +33,7 @@ various storage options can be found <a href="https://virginia.service-now.com/i
 _Research Standard_ storage can be requested for $45/TB/YR through our [**Storage Request Form**](/form/storage/).
 Users can specify the size and name of the Research Standard Storage directory and the name of an existing MyGroups group that can access the space. If the MyGroups group does not yet exist, please create one through the <a href="https://mygroups.virginia.edu/" style="font-weight:bold;" target="_blank">ITS MyGroups system</a> before filling out the _Research Standard_ storage request form.
 
-When your Research Standard Storage share is created, you will receive an email detailing your NFS mount `sammas.storage.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\sammas.storage.virginia.edu\MyGroup_name`.
+When your Research Standard Storage share is created, you will receive an email detailing your NFS mount `standard.hpc.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\standard.hpc.virginia.edu\MyGroup_name`.
 
 # Drive Mapping with Research Standard Storage
 
