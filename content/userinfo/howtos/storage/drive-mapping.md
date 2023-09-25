@@ -24,7 +24,8 @@ _Research Standard_ and _Research Project_ storage can be mapped to your Windows
 * Open a File Explorer page.  In the left column, right click on *This PC*.  In the drop-down box that appears, look for the *Map Network Drive* option. If you do not see this option, click on *Show more Options*, and then click on *Map network drive...*. 
 * When the *Map Network Drive* dialog box appears, select a letter for the drive.This will be the location on your PC where you will be able to access your storage.
 * Also in the *Map Network Drive* dialog box, type the path for your storage location in the Folder field. 
-    * For **Research Standard** storage, the path starts with `\\qumulo.rc.virginia.edu\` followed by your storage share name, for example `\\qumulo.rc.virginia.edu\mylab-storage`
+    * For **Research Standard** storage, the path starts with `\\standard.hpc.virginia.edu\` or `\\qumulo.rc.virginia.edu\` followed by your storage share name, for example `\\qumulo.rc.virginia.edu\mylab-storage`
+      * If you have `ceph` storage (`standard.hpc.virginia.edu`) you may have to enter `ESERVICES\mst3k` (with your own user ID) rather than your user ID alone.
     * For **Research Project** storage, the path starts with `\\qumulo.rc.virginia.edu\` or `\\project.hpc.virginia.edu` followed by your storage share name, for example `\\project.hpc.virginia.edu\mylab-storage`. 
     
 * If you want the mapped drive to remain after a shut-down or reboot, check the box for *Reconnect at sign-in*
@@ -35,7 +36,6 @@ _Research Standard_ and _Research Project_ storage can be mapped to your Windows
 Note that you must use backslashes even if the path provided to you used forward slashes.
 {{% /callout %}}
 
-If you have `sammas` storage you may have to enter `ESERVICES\mst3k` (with your own user ID) rather than your user ID alone.
 
 ---
 
@@ -43,7 +43,7 @@ If you have `sammas` storage you may have to enter `ESERVICES\mst3k` (with your 
 
 * From the Finder menu, select *Go*->*Go To Folder*->*Connect To Server*.  A dialog box should appear with `smb://` filled in. 
 * Type the path you were given.
-    * For **Research Standard** storage the path starts with `//qumulo.rc.virginia.edu/` followed by your storage share name, for example `smb://qumulo.rc.virginia.edu/mylab-storage`
+    * For **Research Standard** storage the path starts with `//standard.hpc.virginia.edu/` or `//qumulo.rc.virginia.edu/` followed by your storage share name, for example `smb://qumulo.rc.virginia.edu/mylab-storage`
     * For **Research Project** storage the path starts with `//qumulo.rc.virginia.edu/` or `//project.hpc.virginia.edu` followed by your storage share name, for example `smb://project.hpc.virginia.edu/mylab-storage`.  
             
 * Enter your Eservices credentials when prompted, then click *Connect*.
