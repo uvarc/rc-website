@@ -39,10 +39,16 @@ _I am not sure how much memory I need._ First submit the job to the `standard` p
 ```
 and check the report in your email.
 
-### NVIDIA driver upgrade
-The NVIDIA driver will be upgraded to version 535.104.05 (CUDA 12.2). The default CUDA module version will remain at 11.4.2.
+### NVIDIA driver upgrade and related modules
+The NVIDIA driver will be upgraded to version 535.104.05 (CUDA 12.2). The default CUDA module version will remain at 11.4.2. New modules will be added:
+
+- cuda/12.2.2
+- pytorch/2.0.1
+- tensorflow/2.13.0
+
+The corresponding Jupyter kernels for PyTorch and TensorFlow will be provided as well.
 
 ### Old scratch permanently retired on October 17
-A reminder that the `/oldscratch` filesystem will be permanently retired on October 17 and all the data it contains will be deleted. A sample script for users who wish to transfer files to the new `/scratch` system can be found [here](https://www.rc.virginia.edu/2023/07/new-scratch-system-on-rivanna-july-18-2023).
+A reminder that the `/oldscratch` (i.e. `/gpfs/gpfs0/scratch`) filesystem will be permanently retired on October 17 and all the data it contains will be deleted. A sample script for users who wish to transfer files to the new `/scratch` system can be found [here](https://www.rc.virginia.edu/2023/07/new-scratch-system-on-rivanna-july-18-2023).
 
 If you have any questions or concerns about the maintenance period, you may contact us [here](https://www.rc.virginia.edu/form/support-request/).
