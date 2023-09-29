@@ -29,6 +29,7 @@ We currently have several open positions in our *Infrastructure Services* and *U
 
 - [Research Computing Scientists/Deep Learning Specialists](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Research-Computing-Scientist_R0052597)
 - [Research Computing Scientists/Data Analysts](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Research-Computing-Scientist_R0052598)
+- [Data Analytics Center Coordinator](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Data-Analytics-Center-Coordinator_R0053196)
 
 
 
