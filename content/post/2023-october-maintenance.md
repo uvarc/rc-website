@@ -39,14 +39,17 @@ _I am not sure how much memory I need._ First submit the job to the `standard` p
 ```
 and check the report in your email.
 
-### NVIDIA driver upgrade and related modules
+### NVIDIA driver upgrade and modules
 The NVIDIA driver will be upgraded to version 535.104.05 (CUDA 12.2). The default CUDA module version will remain at 11.4.2. New modules will be added:
 
 - cuda/12.2.2
+- cudnn/8.9.4.25
 - pytorch/2.0.1
 - tensorflow/2.13.0
 
 The corresponding Jupyter kernels for PyTorch and TensorFlow will be provided as well.
+
+AlphaFold versions 2.1.2, 2.2.2, and their corresponding database will be removed. The 2.3 database will be migrated off of the current `/project` storage and the `ALPHAFOLD_DATA_PATH` environment variable will be updated accordingly.
 
 ### Old scratch permanently retired on October 17
 A reminder that the `/oldscratch` (i.e. `/gpfs/gpfs0/scratch`) filesystem will be permanently retired on October 17 and all the data it contains will be deleted. A sample script for users who wish to transfer files to the new `/scratch` system can be found [here](https://www.rc.virginia.edu/2023/07/new-scratch-system-on-rivanna-july-18-2023).
