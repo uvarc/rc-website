@@ -20,20 +20,21 @@ draft = false
 
 +++
 
-#     -- we\'re not just about data
+ <p style="text-align: center;"><font size=5><bold>-- we're not just about data</bold></font></p>
 
 
-The goal of the Data Analytics Center (DAC) is to help researchers use the **University’s most powerful and sophisticated computing resources** in a cost-efficient manner. 
+The Data Analytics Center (DAC) is here to help researchers use the University’s computing resources for their data-intensive research. 
 
-Many members of our team of research computing scientists hold advanced degrees in the sciences and engineering.  We begin by **listening to you and determining your computational needs**.
-
-Sometimes that means referring you to one of our partner organizations on Grounds that specialize in data analytics; other times it means embedding a DAC staff member in your lab for a fractional effort and pre-determined length of time, saving you the expense and hassle of hiring a full-time employee. 
+* DAC team members can be included as collaborators on grants.
+* **Analytics Research Awards** are available to supplement your research.
+* From basic questons to consultations, we can help with your research.
+* We may reach out to partner organizations on Grounds to support your needs.
 
 {{< rawhtml >}}
 
-   <a href="/form/support-request/?category=Consultation"><img src="/images/dac_consultation_request.png" width=500></a>
-   <a href="/form/support-request/"><img src="/images/dac_questions-upscaled.png" width=500></a>
-   <a href="/education/workshops/"><img src="/images/dac_workshops.png" width=500></a>
-   <a href="/userinfo/user-guide/"><img src="/images/dac_userinfo.png" width=500></a>
+   <a href="/form/support-request/?category=Consultation"><img src="/images/dac_consultation_request.png" width=250></a>
+   <a href="/form/support-request/"><img src="/images/dac_questions-upscaled.png" width=250></a>
+   <a href="/education/workshops/"><img src="/images/dac_workshops.png" width=250></a>
+   <a href="/userinfo/user-guide/"><img src="/images/dac_userinfo.png" width=250></a>
 
 {{< /rawhtml >}}
