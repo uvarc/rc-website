@@ -49,7 +49,7 @@ The POD nodes are contained in the `gpu` partition with a specific Slurm constra
 
 In “Optional: Slurm Option” write:
 ```
--C gpupod
+-Cgpupod
 ```
 
 ## Remarks
