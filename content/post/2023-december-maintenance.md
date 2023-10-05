@@ -27,17 +27,16 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
     - Intel: `intel/2023.1`, `intel/18.0` (for legacy software)
     - NVIDIA: `nvhpc/23.7`, `nvompi/23.7_4.1.5`
 
-1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.)
+1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/rivanna/apptainer) for details.
 
 1. There are many module version upgrades and deprecation of older versions. Run `module spider NAME` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
 
 {{< table title="Replacements" class="table table-striped" >}}
 |Name       |Default version|Other versions|Removed|
 |---|---|---|---|
-|OOD Code Server | 4.16.1  | - | 3.6.2, 4.5.0 |
 |OOD JupyterLab | 3.6.3  | - | 2.2.9 |
 |OOD RStudio Server | 2023.06.2 | - | 1.0.143, 1.1.463, 1.3.1073, 2023.03.0 |
-|anaconda   |2023.07-py3.11 | | 2019.10-py2.7, 2020.11-py3.8|
+|anaconda   |2023.07-py3.11 | - | 2019.10-py2.7, 2020.11-py3.8|
 |clang      |15.0.7  | - | 10.0.1 |
 |cuda       |12.2.2  |10.2.89, 11.4.2| 10.1.168, 11.0.228 |
 |gcc        |11.4.0  | - | 7.1.0, 9.2.0, 11.2.0 |
