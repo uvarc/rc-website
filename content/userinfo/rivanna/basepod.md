@@ -62,19 +62,7 @@ In “Optional: Slurm Option” write:
 
 ## Deep learning
 
-We will be migrating toward NVIDIA’s [NGC containers](https://ngc.nvidia.com/) for deep learning frameworks such as PyTorch and TensorFlow, as they have been heavily optimized to achieve excellent multi-GPU performance. These containers have not yet been installed as modules but can be accessed under `/share/resources/containers/singularity`:
-
-- `pytorch_23.03-py3.sif` (PyTorch 2.0.0)
-- `tensorflow_23.03-tf1-py3.sif` (TensorFlow 1.15.5)
-- `tensorflow_23.03-tf2-py3.sif` (TensorFlow 2.11.0)
-
-(NGC has their own versioning scheme.)
-
-The singularity command is of the form:
-
-```bash
-singularity run --nv /path/to/sif python myscript.py
-```
+As of October 3, 2023 we are migrating toward NVIDIA’s [NGC containers](https://ngc.nvidia.com/) for deep learning frameworks such as PyTorch (2.0+) and TensorFlow (2.13+), as they have been heavily optimized to achieve excellent multi-GPU performance.
 
 {{< alert-green >}} <b>Warning:</b> Distributed training is not automatic! Your code must be parallelizable. If you are not familiar with this concept, please visit: <a href="https://www.tensorflow.org/guide/distributed_training">TensorFlow distributed </a>, <a href=https://pytorch.org/docs/stable/notes/ddp.html>PyTorch DDP</a>.
 {{< /alert-green >}}
