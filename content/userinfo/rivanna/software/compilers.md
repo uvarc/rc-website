@@ -2,7 +2,7 @@
 type = "rivanna"
 date = "2019-04-23T08:37:46-05:00"
 tags = [
-  "rivanna", "software", "compiler"
+  "rivanna", "software", "compiler", "c/c++", "fortran"
 ]
 draft = false
 title = "Compilers on Rivanna"

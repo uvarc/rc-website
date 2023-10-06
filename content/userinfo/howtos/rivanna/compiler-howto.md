@@ -2,7 +2,7 @@
 type = "howto"
 date = "2020-04-01T15:12:46-05:00"
 tags = [
-  "rivanna", "software", "compiler"
+  "rivanna", "software", "compiler", "fortran"
 ]
 categories = ["howto","software","rivanna"]
 draft = false

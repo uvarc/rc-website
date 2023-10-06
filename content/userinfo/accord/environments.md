@@ -3,6 +3,11 @@ title = "ACCORD Environments"
 draft = false
 date = "2021-10-11"
 images = [""]
+tags = [
+    "python", 
+    "R", 
+    "c/c++",
+]
 author = "Staff"
 +++
 
