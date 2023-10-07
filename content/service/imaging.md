@@ -105,10 +105,9 @@ for image processing, such as ANTsR, EBImage, and magick.
 
 ## Additional Resources
 
-We currently offer online tutorials for image processing with Fiji/ImageJ.
+We currently offer an online short course for image processing with Fiji/ImageJ.
 
-* [Introduction to Scientific Image Processing with Fiji/ImageJ](https://learning.rc.virginia.edu/tutorials/fiji-intro/)
-* [Fiji/ImageJ: Script Development for Image Processing](https://learning.rc.virginia.edu/tutorials/fiji-scripting/)
+* [Introduction to Image Processing with Fiji/ImageJ](https://learning.rc.virginia.edu/courses/fiji-image-processing)
 
 Stay tuned for additional online tutorials as well as in-person workshops listed on our [workshops page](/education/workshops/)
 

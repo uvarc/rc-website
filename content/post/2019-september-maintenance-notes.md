@@ -89,5 +89,3 @@ If you have any questions or concerns about these changes, please contact our us
 - - -
 
 {{< button button-class="primary" button-text="About Rivanna HPC" button-url="/userinfo/rivanna/overview/" >}}
-
-{{< button button-class="primary" button-text="XDMOD Metrics" button-url="https://rci.hpc.virginia.edu/xdmod/" >}}

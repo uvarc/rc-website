@@ -14,7 +14,6 @@ images = [
 subjects = [
   "ivy",
   "sensitive-data",
-  "openstack",
   "hpc",
   "rivanna"
 ]
