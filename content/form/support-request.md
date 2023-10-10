@@ -28,7 +28,7 @@ private = true
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="storage" value="Storage">Storage</option>
       <option id="container" value="Container">Container Service</option>
-      <option id="dataanalytics" value="Data Analytics">Data Analytics</option>
+      <option id="dataanalytics" value="Consultation">Data Analytics</option>
       <option id="consultation" value="Consultation">General Consultation Request</option>
       <option id="workshops" value="Workshops">Workshops</option>
       <option id="other" value="Other">Other</option>
