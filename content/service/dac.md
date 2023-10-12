@@ -24,14 +24,14 @@ draft = false
 
 
  
-As part of UVA’s Research Computing group, the Data Analytics Center offers comprehensive computational solutions for your projects, from selecting the right software and computing platforms, to creating new platform configurations to meet your needs.
+As part of UVA’s Research Computing group, the Data Analytics Center (DAC) offers comprehensive computational solutions for your projects, from selecting the right software and computing platforms, to creating new platform configurations to meet your needs.
 
 
-* From image processing to bioinformatics to artificial intelligence, our staff have the experience and expertise to assist with your next data-intensive research project. 
-* DAC team members can be included as collaborators on grants.
-* **<a href=awards> Analytics Resource Awards</a>** are available to supplement your research.
-* From basic questions to consultations, we can help with your research.
-* We may reach out to partner organizations on Grounds to support your needs.
+* Our staff have the experience and expertise to assist with your next data-intensive research project, including image processing, bioinformatics, or artificial intelligence.
+* Need assistance with data collection or analysis? Submit a support or consultation request.
+* For more in-depth support, DAC domain experts can be embedded on projects as collaborators.
+* Haven't included our support in your current grant?  Consider applying for our **<a href=awards> Analytics Resource Awards</a>**. 
+* Want to learn more about a computational topic? Check out our workshops and "user info" web pages,
 
 {{< rawhtml >}}
 
