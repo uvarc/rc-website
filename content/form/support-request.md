@@ -28,7 +28,7 @@ private = true
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="storage" value="Storage">Storage</option>
       <option id="container" value="Container">Container Service</option>
-      <option id="dataanalytics" value="Consultation">Data Analytics</option>
+      <option id="dataanalytics" value="Data Analytics">Data Analytics</option>
       <option id="consultation" value="Consultation">General Consultation Request</option>
       <option id="workshops" value="Workshops">Workshops</option>
       <option id="other" value="Other">Other</option>
@@ -37,7 +37,7 @@ private = true
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="/form/storage/" style="font-weight:bold;">storage request</a>.</div>
     <div id="container-help" style="font-size:90%;" class="form-text text-muted">Use this form for general queries about containerized services. Or <a href="/form/containers/" style="font-weight:bold;">request a container service</a>.</div>
     <div id="ivy-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Ivy questions. Or submit an <a href="https://services.rc.virginia.edu/ivyvm" style="font-weight:bold;">Ivy Project Request</a>.</div>
-    <div id="dataanalytics-help" style="font-size:90%;" class="form-text text-muted">Use this form for queries related to services offered by our Data Analytics Center.</div>
+    <div id="dataanalytics-help" style="font-size:90%;" class="form-text text-muted">Use this form for queries related to services offered by our Data Analytics Center. Learn more about the <a href="https://services.rc.virginia.edu/ivyvm" style="font-weight:bold;">Data Analytics Center</a>.</div>
   </div>
   <div class="form-item form-type-textfield form-group">
     <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>
