@@ -36,7 +36,7 @@ As part of UVA’s Research Computing group, the Data Analytics Center (DAC) off
 {{< rawhtml >}}
 
 
-   <a href="/form/support-request/?category=Data%20Analytics%20Request"><img src="/images/dac_consultation_request.png" width=250></a>
+   <a href="/form/support-request/?category=Data%20Analytics"><img src="/images/dac_consultation_request.png" width=250></a>
    <a href="/service/dac/awards"><img src="/images/dac_awards.png" width=250></a>
    <a href="/education/workshops/"><img src="/images/dac_workshops.png" width=250></a>
    <a href="/userinfo/user-guide/"><img src="/images/dac_userinfo.png" width=250></a>
