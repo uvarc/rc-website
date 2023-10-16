@@ -72,7 +72,9 @@ Recipients of the Awards will receive vouchers that may be used toward the Data 
 * A one-paragraph description of how the Analytics Research Award will support the goals of the project, including the use of vouchers to obtain services.
 * A one-paragraph plan for how the Analytics Research Award will lead to future support for this or subsequent projects. 
 
-<u>Submission Process</u>: A cover letter for the proposal will be sent to DAC_	
+<u>Submission Process</u>: A cover letter for the proposal will be emailed to RC-DAC@virginia.edu.  The subject line for the email will be "Analytics Resource Proposal". The first item in the body of the email will be a OneDrive link to your proposal, in PDF format. 
+
+We encourage you to follow these instructions precisely to ensure that your proposal is received and processed correctly. After your email is received, we will secure a copy of your proposal and review that copy. We will not consider any changes that you make to the proposal after we have received it.
 
 <u>Evaluation Criteria</u>: The proposals will be evaluated on:
 

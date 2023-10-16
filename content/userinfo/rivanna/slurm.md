@@ -486,7 +486,7 @@ The following example runs a total of 32 MPI processes, 8 on each node, with eac
 
 ## GPU Computations
 
-The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, V100, and A100 NVIDIA GPU devices.
+The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, A6000, V100, and A100 NVIDIA GPU devices.
 
 {{< highlight >}}
    In order to use GPU devices, the jobs must to be submitted to the <b>gpu</b> partition and must include the <b>--gres=gpu</b> option.</alert>
