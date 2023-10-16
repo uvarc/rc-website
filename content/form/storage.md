@@ -50,7 +50,7 @@ private = true
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
-      <div class="form-item form-type-radio radio">
+      <div class="form-item form-type-radio radio disabled">
         <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" /> &nbsp; Research Project Storage ({{% storage-pricing project %}}/TB/year)</label>
       </div>
       <div class="form-item form-type-radio radio">
@@ -59,6 +59,9 @@ private = true
       <div class="form-item form-type-radio radio">
         <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
       </div>
+    </div>
+    <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
+      <p>Research Project storage is currently unavailable for new purchases.</p>
     </div>
     <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
       <p>None of these storage options offer data backups or replication.</p>

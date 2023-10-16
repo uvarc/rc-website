@@ -50,7 +50,7 @@ aliases = [ "/storage" ]
   <thead class="thead-dark">
   <tr>
     <th class="" style="width:16%;">Feature</th>
-    <th class=""><a href="/userinfo/storage/non-sensitive-data/#research-project-storage">Research Project Storage</a></th>
+    <th class=""><a href="/userinfo/storage/non-sensitive-data/#research-project-storage">Research Project Storage<br>(currently unavailable)</a></th>
     <th class=""><a href="/userinfo/storage/research-standard">Research Standard Storage</a></th>
   </tr>
   </thead>
@@ -92,6 +92,12 @@ aliases = [ "/storage" ]
   </tr>
   </tbody>
 </table>
+
+{{% highlight %}}
+
+Research Project Storage is currently unavailable for new purchases. Please <a href="/form/support-request/">contact us</a> to discuss your storage needs. 
+
+{{% /highlight %}}
 
 - - -
 
