@@ -19,9 +19,9 @@ Instructors can request _instructional allocations_ on Rivanna for classes and e
 
 Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards.  Instructional allocations come with 1TB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. The standard number of cores is 20 on one node.
 
-## Software
+## Software & Storage Environment
 
-Instructors may submit requests to RC staff for help installing software.  Unless it is of general research interest, the software will be installed to the class shared storage space without a module.  Instructors must provide guidance to the students on how to use the software.  Instructors who are able to install software themselves should consider doing so; RC staff will attempt to fulfill requests quickly, but cannot guarantee as rapid a response as if the instructor installs it himself/herself.
+Research Computing's primary focus is supporting the direct research mission of the University. Instructional allocations are provided in recognition of the many areas where the educational and research missions of the University meet, and in recognition that there is value in providing UVA's diverse communities with experience in an HPC environment. However, staff time is a highly limited resource and instructional use of RC systems as a largely 'as-is' service with standardized software and storage environments. We are unable to provide customization of the environment for specific classes.
 
 ## Interface
 
