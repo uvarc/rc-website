@@ -11,12 +11,28 @@ tags = ["dac","award"]
 
 
 ## Purpose
-To facilitate early access to Data Analytic Center services and/or empower researchers without external grants to advance their research, the UVA Data Analytics Center is seeking proposals that involve data-intensive research. In this context, data can cover a wide range of possibilities, including (but not limited to) text, images, videos, business data, genomic data, sensor data, and geospatial data).
+To facilitate access to the Data Analytics Center services and empower researchers to advance their research, we offer the Analytics Resource Awards.
+
+The focus of the proposal should be projects that 
+
+i) involve data-intensive research, where the data can be text, images, videos, business data, genomic data, senosr data, geospatial data, etc., and 
+
+ii) demonstrate potential for future, external funding.
+
+
+
 
 ## The Award 
-Recipients of the Awards will receive vouchers that may be used toward the Data Analytics Center services or the services at one of UVA’s Research Core Facilities (For a complete list, see Research Core Resources | Research (virginia.edu) ).
+
+
+Initially, DAC will offer small awards (up to $10,000 worth of services). At a later date, we will announce opportunities for larger awards. 
+
+Recipients of the Awards will receive vouchers that may be used toward the Data Analytics Center services, such as the collaboration of DAC team members of the leasing of storage space. 
+ 
+Applications for small awards will be reviewed on a rolling basis with the aim of seamlessly moving forward with proposed projects.  
 
 ### Award Guidelines
+
 <u>Eligibility</u>:  The principal investigator must hold faculty status at UVA to be eligible for an Analytics Research Award.
 
 <u>Funding Limit</u>:  Although the awards will be in the form of vouchers, the use of the voucher may not exceed $10,000.
