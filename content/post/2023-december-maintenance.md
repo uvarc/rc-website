@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2023-12-11T00:00:00-05:00"
+date = "2023-10-23T00:00:00-05:00"
 title = "Rivanna Maintenance: December 18, 2023"
 # url = "/maintenance"
 draft = false
@@ -27,7 +27,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
     - Intel: `intel/2023.1`, `intel/18.0` (for legacy software)
     - NVIDIA: `nvhpc/23.7`, `nvompi/23.7_4.1.5`
 
-1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/rivanna/apptainer) for details.
+1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/rivanna/software/apptainer) for details.
 
 1. There are many module version upgrades and deprecation of older versions. Run `module spider NAME` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
 
