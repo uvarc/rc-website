@@ -39,10 +39,15 @@ Applications for small awards will be reviewed on a rolling basis with the aim o
 
 <u>Maximum Proposal Duration</u>:  18 months
 
-<u>Approved Activities</u>:  The activities in the proposal should be related to the acquisition, storage, and analysis of data as it relates to a research project.
+<u>Approved Activities</u>:  The activities in the proposal should be related to the acquisition, storage, or analysis of data as it relates to a research project.
 
+<u>**New** Early Submission</u>: 
 
+To get access to the DAC services before 2024, we have just created an earlier submission deadline: 13 Nov. 2023.  The review process will be expedited so that the vouchers can be distributed on 15 Dec.
+
+  
 <u>Timelines for 2024</u>: 
+
 
 <table border="1" >
   <colgroup>
@@ -51,7 +56,7 @@ Applications for small awards will be reviewed on a rolling basis with the aim o
     <col style="width: 30%;" />
   </colgroup>
   <tr>
-    <th>Proposal <br> Submission</th>
+    <th>Proposal <br> Deadline</th>
     <th>Award <br> Announcements</th>
     <th>Award <br> Start Date </th>
   </tr>
@@ -83,20 +88,23 @@ Applications for small awards will be reviewed on a rolling basis with the aim o
 
 * The PI’s name, computing ID, and department,
 * A title for the project,
-* A one-paragraph description of the project and its goals
-* A one-paragraph description of the type(s) of data collected for the project and how the data will be used to meet the goals of the project
-* A one-paragraph description of how the Analytics Research Award will support the goals of the project, including the use of vouchers to obtain services.
-* A one-paragraph plan for how the Analytics Research Award will lead to future support for this or subsequent projects. 
+* A description of the project and its goals,
+* A description of the type(s) of data collected for the project and how the data will be used to meet the goals of the project,
+* A description of how the Analytics Research Award will support the goals of the project, including the use of vouchers to obtain services,
+* A plan for how the Analytics Research Award will lead to future support for this or subsequent projects. 
+* An attachment with a budget showing the services and expected costs that the Award would cover.  The attachment will not count toward the two-page limit.
 
-<u>Submission Process</u>: A cover letter for the proposal will be emailed to RC-DAC@virginia.edu.  The subject line for the email will be "Analytics Resource Proposal". The first item in the body of the email will be a OneDrive link to your proposal, in PDF format. 
+
+<u>Submission Process</u>: A cover letter for the proposal will be emailed to RC-DAC@virginia.edu.  The subject line for the email will be "Analytics Resource Proposal". Your proposal, in PDF format,  will be attached to the email. 
 
 We encourage you to follow these instructions precisely to ensure that your proposal is received and processed correctly. After your email is received, we will secure a copy of your proposal and review that copy. We will not consider any changes that you make to the proposal after we have received it.
 
 <u>Evaluation Criteria</u>: The proposals will be evaluated on:
 
-* The completeness and timeliness of the submission
-* The clarity of the descriptions – the reviewers may not be familiar with the PI’s discipline
-* The diversity of the data	
+* The completeness of the submission,
+* The clarity of the descriptions – the reviewers may not be familiar with the PI’s discipline,
+* The diversity of the data,
+* How this Award will advance your research.
 
 ### Voucher Disbursement
 
