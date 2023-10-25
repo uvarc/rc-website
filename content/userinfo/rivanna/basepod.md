@@ -17,9 +17,10 @@ author = "RC Staff"
 As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna, UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
 
 The NVIDIA DGX BasePOD™ on Rivanna, hereafter referred to as the POD, is comprised of:
-- 18 DGX A100 nodes
-- 8 A100 GPU devices and 2 TB local node memory (per node)
-- 80 GB GPU memory (per GPU device)
+- 10 DGX A100 nodes
+- 8 A100 GPU devices and 2 TB local node RAM memory per node
+  - These nodes do not yet have the same interconnect as the 10 DGX nodes but are still very powerful
+- 80 GB GPU memory per GPU device
 
 Compared to the regular GPU nodes, the POD contains **advanced features** such as:
 - NVLink for fast multi-GPU communication
@@ -35,27 +36,27 @@ Detailed specs can be found in the [official document](https://docs.nvidia.com/d
 
 # Accessing the POD
 
-The POD nodes are contained in the `gpu` partition with a specific Slurm constraint.
+The POD nodes are contained in the `gpu` partition with a specific Slurm constraint, requested with `-C` or `--constraint=`.
 
 ## Slurm script
 
 ```bash
 #SBATCH -p gpu
-#SBATCH --gres=gpu:a100:X # replace X with the number of GPUs per node
+#SBATCH --gres=gpu:a100:N # replace N with the number of GPUs per node requested
 #SBATCH -C gpupod
 ```
 
 ## Open OnDemand
 
-In “Optional: Slurm Option” write:
+Select `NVIDIA A100` in the GPU type dropdown.  Select the number requested in the appropriate textbox.  Select `Yes` for `Show Additional Options.` Into the h “Optional: Slurm Option” textbox type:
 ```
--Cgpupod
+-C gpupod
 ```
 
 ## Remarks
 1. Before running on multiple nodes, please make sure the job can scale well to 8 GPUs on a single node.
 1. Multi-node jobs on the POD should request all GPUs on the nodes, i.e. `--gres=gpu:a100:8`.
-1. You may have already used the POD by simply requesting an A100 node without the constraint, since 10 out of the total 12 A100 nodes are POD nodes.
+1. You may have already used the POD by simply requesting an A100 node without the constraint, since 18 out of the total 20 A100 nodes are POD nodes.
 1. As we expand our infrastructure, there could be changes to the Slurm directives and job resource limitations in the future. Please keep an eye out for our announcements and documentation.
 
 # Usage examples
