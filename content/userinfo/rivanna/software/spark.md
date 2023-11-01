@@ -42,14 +42,16 @@ module spider {{% module-firstversion %}}
 
 # Using Spark interactively
 
-Please request an ijob or a Desktop session.
+There are three ways to use Spark interactively:
+1. Shell prompt
+1. Open OnDemand PySpark
+1. Open OnDemand Desktop
 
-## Web UI [Desktop]
-Spark provides a user interface (UI) for you to monitor your Spark job. If you intend to use the Web UI, you must request a [Desktop session through Open OnDemand](/userinfo/rivanna/ood/desktop).
+If you need the Web UI you must use the third method (OOD Desktop).
 
-The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx:4040` where `udc-xxxx-xx` is the hostname of the compute node. You can either right click on the link and select "Open Link," or enter `localhost:4040` in the browser.
+## Shell prompt
 
-## Shell prompt [ijob/Desktop]
+First submit an [ijob](/userinfo/rivanna/slurm/#submitting-an-interactive-job).
 
 ### Scala/PySpark
 To start up a Scala or PySpark shell prompt, run `spark-shell` or `pyspark`. For example:
@@ -83,9 +85,19 @@ package ‘SparkR’ was built under R version 4.1.0
 
 We recommend loading the closest available version.
 
-## Jupyter notebook/lab [Desktop]
+## Open OnDemand PySpark
 
-Instead of the default Python shell, you can redirect `pyspark` to open a Jupyter notebook/lab as follows. The `jupyter` command is provided by the `anaconda` module which is loaded automatically upon loading `spark`.
+Python users can run Spark in a JupyterLab interface via the PySpark Interactive App on [Open OnDemand](/userinfo/rivanna/ood/overview/).
+
+## Open OnDemand Desktop
+
+Spark provides a user interface (UI) for you to monitor your Spark job. If you intend to use the Web UI, you must request a [Desktop session through Open OnDemand](/userinfo/rivanna/ood/desktop).
+
+The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx:4040` where `udc-xxxx-xx` is the hostname of the compute node. You can either right click on the link and select "Open Link," or enter `localhost:4040` in the browser.
+
+### Jupyter notebook/lab
+
+You can redirect `pyspark` to open a Jupyter notebook/lab as follows. The `jupyter` command is provided by the `anaconda` module.
 
 Set two environment variables:
 ```
