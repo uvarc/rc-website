@@ -10,50 +10,40 @@ images = [""]
 aliases = [ "/facilities" ]
 +++
 
-# Rivanna
+Research Computing (UVA-RC) serves as the principal center for computational resources and associated expertise at the University of Virginia (UVA). Each year UVA-RC provides services to over 433 active PIs that sponsor more than 2463 unique users from 14 different schools/organizations at the University, maintaining a breadth of systems to support the computational and data intensive research of UVA’s researchers.  
 
-The primary vehicle for high-performance computing since 2014 has been the Rivanna cluster. Rivanna is a heterogenous system with a total of {{< rivanna-node-count >}} nodes and {{< rivanna-core-count >}} cpu cores. It consists of 527 nodes with 20-40 cores and 128-768GB of RAM each, 11 large memory nodes with 16-48 cores and 1-1.5TB of RAM each, and 37 nodes with a total of 268 NVIDIA GPU accelerators (A100, V100, A6000, RTX3090, RTX2080Ti). These nodes are partitioned for various types of workloads, but include development, parallel, HTC and instructional partitions. All nodes are supported by a high-performance EDR/FDR Infiniband network using Mellanox hardware. The Rivanna cluster also provides approximately {{< rivanna-scratch-capacity >}} of scratch (temporary) storage on a high-speed Lustre filesystem. Users may also lease space on “Reseaarch Project” and “Research Standard” storage that is mounted to Rivanna, as well as elsewhere. 
- 
-Rivanna is allocated by service units (SUs) and is managed under the “hotel” model in which researchers buy SUs rather than physical nodes. Service units generally correspond to core-hours, but in the case of very large memory jobs users must pay at least partially for cores not scheduled by the resource manager on that node due to the additional memory usage. We have also begun implementing a partial “condo” model, in which researchers can purchase time tied to cores or can purchase their own hardware to add to the cluster. This model coexists with the SU model for users who do not wish to make a large expenditure for time, or who can successfully manage their projects through free allocations from RC.
+# High Performance Computing 
 
-- - -
+UVA-RC’s High Performance Computing (HPC) systems are designed with high speed networks, high performance storage, GPUs, and large amounts of memory in order to support modern compute and memory intensive programs. UVA-RC's HPC systems are comprised of over 614 compute nodes, with a total of 20476 X86 64-bit compute cores and 240 TB total RAM. Scheduled using SLURM, these resource can support over 1.5 PFLOP of peak CPU performance. HPC nodes are equipped with between 375 GB and 1 TB of RAM to support applications that require small and large amounts of memory, and 49 nodes include various configurations of the NVidia general purpose GPU accelerators (K80, P100, RTX2080, RTX3090, A6000, V100 and A100), from 4- to 10-way.    
 
-# Ivy
-Ivy is a computing system that meets all Health Insurance Portability and Accountability Act (HIPAA), Family Educational Rights and Privacy Act (FERPA), Controlled Unclassified Information (CUI), and International Traffic in Arms Regulations (ITAR) data security requirements. Ivy satisfies the needs of researchers who must comply with all of the rules and regulations surrounding these directives, but do not have a system that meets the appropriate hardware/software standards. 
+UVA-RC also acquires and maintains capability systems focused on providing novel environments. This includes an 18 node DGX BasePOD system with 8x A100 gpu. The BasePOD provides a shared memory space across all GPUs in the system allowing the system to work collectively on models with memory needs larger than what can be held in a single node.  
 
-The Ivy platform provides ~{{< ivy-core-count >}} cpu cores consisting of approximately 32 x 36-core nodes with 256GB of RAM each, 27 x 20-core nodes with 384GB of RAM, 24 x 40-core nodes with 384GB each. In addition, nodes supporting specialty hardware include 4 nodes with NVIDIA V100 GPGPUs, and 1 node with NVIDIA M60 GPGPUs. All nodes are connected by a 10+10GbE Ethernet network to provide client and external network storage access. A high-performance EDR Infiniband network using Mellanox hardware is available on the 40-core standard compute and V100 GPGPU nodes. Users may also lease space on high security “Project” and “Value” storage that is mounted on Ivy resources and accessible via Globus high security DTN.
+# Interactive Computing and Scientific Visualization 
 
-Faculty/staff may request Ivy resources in the form of virtual machines (VMs) with software customized for their needs. The project PI can create a list of project members who should also be given access to the VM. Ivy VMs are available at different tiers. By default, every Ivy VM is allocated 1TB of storage in Ivy Central Storage (ICS). Transferring data in and out of Ivy is done through a Globus Data Transfer Node. Primarly intended as a computational resource, Ivy was not designed for long-term data storage. 
+UVA-RC supports specialized interfaces (i.e., Open OnDemand, FastX) and hardware for remote visualization and interactive computing.  Interactive HPC systems allow real-time user inputs in order to facilitate code development, real-time data exploration, and visualizations.  Interactive HPC systems are used when data are too large to download to a desktop or laptop, software is difficult or impossible to install on a personal machine, or specialized hardware resources (e.g., GPUs) are needed to visualize large data sets. 
 
-- - -
+# Expertise 
 
-# ACCORD
+UVA-RC aggregates expertise to provide consulting and collaboration services to researchers addressing all levels of the Research Computing technology stack.  
 
-ACCORD is a web-based computing environment for sensitive and highly sensitive data. This project was funded through a grant from the NSF,
-with the intention of providing computing resources for researchers across the commonwealth who may lack such resources at their
-home institution. Placed in the High Security Zone alongside Ivy, ACCORD is designed to be a collaborative platform for cross-institutional 
-research. ACCORD is currently approved for deidentified PHI, PII, FERPA, and Business Confidential data.
+UVA-RCs user support staff provide basic support and general onboarding through helpdesk and regularly scheduled tutorials. Senior support staff have advanced degrees in relevant research domains such as biology, imaging, physics, computer science and material science, enabling in-depth collaboration on complex projects.  For projects that require significant application development work, UVA-RC maintains a Solutions & DevOps team capable of rapid iteration while leveraging non-traditional HPC technologies. Lastly, UVA-RC's Infrastructure Services team enables projects that may require custom hardware or configurations outside of the standard images. Beyond their availability for direct project support, together these teams provide the R&D and operations expertise needed to ensure that UVA-RC is providing a modern research computing ecosystem for UVA researchers. 
 
-The ACCORD platform consists of 8 nodes in a Kubernetes cluster, each with approximately 40 cores and 394GB of RAM. Cluster storage is
-approximately 1PB of IBM Spectrum storage (GPFS), with data transfer capabilities via Globus DTN. GPU capacity is being added in 2023.
+# Cloud Computing 
 
-PIs may request ACCORD access for their project and team members. Once approved, researchers connect to ACCORD from either their campus
-or institutional VPN, select an appropriate software interface, and their environment is provisioned immediately. Currently the interfaces
-offered are: Theia Python, Theia C++, Jupyter Notebook, and RStudio. All researchers in a given project are given a home directory that 
-persists across sessions, as well as project storage they share with other team members.
+Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) backed by a total of 45 nodes and 2048 cores. Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, or CUI requirements. 
 
-- - -
+For standard security projects, UVA-RC supports microservices in a clustered orchestration environment that leverages Kubernetes to automate the deployment and management of many containers in an easy and scalable manner. This cluster has 876 cores and 4.9TB of memory allocated to running containerized services, including one node with 4 x A100 GPUs. It also has over 300TB of cluster storage and can attach to UVA-RC's broader storage offerings. 
 
-# Microservices
+**ACCORD**
 
-Microservices enable researchers to run containerized applications in a single managed environment. Researchers bring their
-own containers or multi-container solutions, and UVA Research Computing coordinates their deployment. Once deployed, users
-manage their own services, including versioning, content, scaling, and connecting to other services.
+The ACCORD project (NSF Award: #1919667) offers flexible web-based interfaces for sensitive and highly sensitive data in a system focused on supporting cross-institutional access and collaboration. The ACCORD platform consists of 8 nodes in a Kubernetes cluster, for a total of 320 cores and ~3.2TB of memory. Cluster storage is approximately 1PB of IBM Spectrum storage (GPFS).  
 
-The microservice platform is a multi-node Kubernetes cluster currently 
-consisting of 12 nodes, with approximately 72 cores and 384GB of RAM each. The cluster also includes a single GPU server
-with 4 x A100 NVIDIA GPUs. The system is located in the UVA Standard Security Zone and
-has full network visibility to other SSZ resources such as the Rivanna HPC system. This cluster includes ingress
-controllers, SSL encryption, a secrets manager, namespaces with role-based access, and 
-tools for automated deployment and management. Kubernetes nodes currently have NFS access to Research Standard 
-Storage shares.
+Researchers from non-UVA institutions can be brought into the ACCORD system through a memorandum of understanding between the researcher’s institution and UVA, security training for the researcher, and a posture-checking client installed on the researcher’s laptop/desktop. 
+
+# Data Storage 
+
+All researchers on UVA-RC's systems have access to a high-performance parallel storage platform. This system provides 8PB (PetaBytes) of storage with sustained read and write speeds of up to 10 GB/sec. The integrity of the data is protected by daily snapshots.  UVA-RC also supports a second-tier storage solution, 3 PB, designed to address the growing need for resources that support data-intensive research by offering a lower cost, scalable solution.  The system is tightly integrated with other UVA-RC storage and computing resources in order to support a wide variety of research data life cycles and data analysis workflows. 
+
+# Data Centers, Network Connectivity, and Office Facilities 
+
+UVA-RC enables interdisciplinary research through its robust data center facilities with over 1.5 MW of IT capacity to support leading edge computational and data storage systems. UVA-RC's equipment occupies a data center near campus, connected to the 10 Gbps campus network.  Dedicated 10 and 100 Gbps links to our regional optical network and Internet2 give our researchers the network capacity and capability needed to collaborate with researchers from around the world. A Globus data transfer node enables data access and transfers to transcend institutional credentials.  Located in the Ivy Translational Research Building of the Fontaine Research Park, UVA-RC’s offices (2,877 sq. ft) are a short shuttle ride away from the central UVA grounds.
