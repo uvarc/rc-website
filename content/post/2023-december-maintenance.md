@@ -60,6 +60,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 
 - **C/C++/Fortran** users who must build code with GCC 7 or older should containerize the application starting with the [official GCC base image](https://hub.docker.com/_/gcc). Contact us if you need assistance.
 - **Intel 18.0** modules are either migrated to the newer version (2023.1) or dropped. Intel users should rebuild code with `intel/2023.1` if possible.
+- **RStudio Server** is now backed by a native module with R as a dependency. R packages installed via the command line will be detected automatically in RStudio Server, and vice versa.
 - **Python 2.7**-dependent modules are completely removed from the software stack. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
 - **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
 - **Mamba** is separated from `anaconda` into its own module.
