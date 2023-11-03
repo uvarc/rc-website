@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2023-12-11T00:00:00-05:00"
+date = "2023-10-23T00:00:00-05:00"
 title = "Rivanna Maintenance: December 18, 2023"
 # url = "/maintenance"
 draft = false
@@ -27,7 +27,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
     - Intel: `intel/2023.1`, `intel/18.0` (for legacy software)
     - NVIDIA: `nvhpc/23.7`, `nvompi/23.7_4.1.5`
 
-1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/rivanna/apptainer) for details.
+1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/rivanna/software/apptainer) for details.
 
 1. There are many module version upgrades and deprecation of older versions. Run `module spider NAME` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
 
@@ -48,7 +48,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 |perl       |5.36.0  | - | 5.24.0 |
 |python     |3.11.4  | 2.7.18, 3.9.16 | 2.7.16, 3.6.6, 3.6.8, 3.7.7, 3.8.8 |
 |pytorch    |2.0.1   | 1.12.0 | 1.8.1 |
-|R          |4.2.3   | - | 3.5.3, 3.6.3, 4.0.3, 4.1.1, 4.2.1 |
+|R          |4.3.1   | - | 3.5.3, 3.6.3, 4.0.3, 4.1.1, 4.2.1 |
 |ruby       |3.1.2   | - | 2.3.4 |
 |rust       |1.66.1  | - | 1.38.0, 1.41.0 |
 |spark      |3.4.1   | - | 3.1.2 |
@@ -60,6 +60,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 
 - **C/C++/Fortran** users who must build code with GCC 7 or older should containerize the application starting with the [official GCC base image](https://hub.docker.com/_/gcc). Contact us if you need assistance.
 - **Intel 18.0** modules are either migrated to the newer version (2023.1) or dropped. Intel users should rebuild code with `intel/2023.1` if possible.
+- **RStudio Server** is now backed by a native module with R as a dependency. R packages installed via the command line will be detected automatically in RStudio Server, and vice versa.
 - **Python 2.7**-dependent modules are completely removed from the software stack. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
 - **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
 - **Mamba** is separated from `anaconda` into its own module.
