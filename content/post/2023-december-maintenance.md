@@ -24,7 +24,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 
 1. Compilers and toolchains have been consolidated to the following:
     - GCC: `gcc/11.4.0`, `goolf/11.4.0_4.1.4` 
-    - Intel: `intel/2023.1`, `intel/18.0` (for legacy software)
+    - Intel: `intel/2023.1` (default), `intel/2024.0` (experimental), `intel/18.0` (legacy)
     - NVIDIA: `nvhpc/23.7`, `nvompi/23.7_4.1.5`
 
 1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/rivanna/software/apptainer) for details.
@@ -40,7 +40,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 |clang      |15.0.7  | - | 10.0.1 |
 |cuda       |12.2.2  |10.2.89, 11.4.2| 10.1.168, 11.0.228 |
 |gcc        |11.4.0  | - | 7.1.0, 9.2.0, 11.2.0 |
-|intel      |2023.1  | 18.0 | 20.0, 2022.11 |
+|intel      |2023.1  | 18.0, 2024.0 | 20.0, 2022.11 |
 |julia      |1.9.2   | - | 1.5.3, 1.6.0 |
 |llvm       |15.0.7  | - | 4.0.0 |
 |netcdf     |4.9.2   | - | 4.6.2, 4.7.3, 4.7.4 |
