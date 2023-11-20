@@ -10,11 +10,11 @@ tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}Rivanna will be down for maintenance on <strong>December 18, 2023</strong> beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna will be down for maintenance on <strong>Monday, December 18, 2023</strong> beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
-All systems are expected to return to service by **6 a.m. on , December **.
+All systems are expected to return to service by **6 a.m. on Tuesday, December 19**.
 
 ## IMPORTANT MAINTENANCE NOTES
 
