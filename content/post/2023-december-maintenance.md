@@ -18,7 +18,7 @@ All systems are expected to return to service by **6 a.m. on Tuesday, December 1
 
 ## IMPORTANT MAINTENANCE NOTES
 
-The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GCC 8.5.0. Due to fundamental changes in system libraries, the entire software stack is rebuilt. **Users should rebuild all in-house codes.** Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need assistance.
+The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GCC 8.5.0. Due to fundamental changes in system libraries, the entire software stack is rebuilt. **Users should rebuild all self-compiled codes and R packages.** Starting Nov 21, users who want early access to the development environment to rebuild/test codes against the new software stack can login by running `ssh udc-ba33-36` on the frontend. (Please be sure not to overwrite your existing codes for the production environment.) Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need assistance.
 
 ### Modules
 
@@ -60,7 +60,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 
 - **C/C++/Fortran** users who must build code with GCC 7 or older should containerize the application starting with the [official GCC base image](https://hub.docker.com/_/gcc). Contact us if you need assistance.
 - **Intel 18.0** modules are either migrated to the newer version (2023.1) or dropped. Intel users should rebuild code with `intel/2023.1` if possible.
-- **RStudio Server** is now backed by a native module with R as a dependency. R packages installed via the command line will be detected automatically in RStudio Server, and vice versa.
+- **RStudio Server** is now backed by a native module with R as a dependency. R packages installed via the command line will be detected automatically in RStudio Server, and vice versa. **All packages will need to be rebuilt.**
 - **Python 2.7**-dependent modules are completely removed from the software stack. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
 - **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
 - **Mamba** is separated from `anaconda` into its own module.
