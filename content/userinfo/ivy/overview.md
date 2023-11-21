@@ -124,7 +124,7 @@ Once you have completed these three steps, you will be connected to the secure I
 
 A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign into a single VM.
 
-Virtual machines come in two platforms, *CentOS 7 Linux* and *Windows Server 2019*. Each platform is available in numerous instance types. Refer to the grid below for specifics.
+Virtual machines come in two platforms, *Rocky 8 Linux* and *Windows Server 2019*. Each platform is available in numerous instance types. Refer to the grid below for specifics.
 
 
 {{< ivy-pricing >}}

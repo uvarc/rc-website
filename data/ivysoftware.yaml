@@ -2,7 +2,7 @@
 software:
  - name: Anaconda
    versions:
-     - version: "(Python 3) 5.2.0"
+     - version: "2023.07-py3.11"
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none
@@ -18,10 +18,6 @@ software:
    description: The open-source Anaconda Distribution is the easiest way to perform Python/R data science and machine learning on Linux, Windows, and Mac OS X.
  - name: R
    versions:
-     - version: "3.6.0"
-       status: approved # pending,rejected
-       platforms: [Linux]
-       installation: preinstalled # optional,none 
      - version: "3.6.1"
        status: approved # pending,rejected
        platforms: [Windows]
@@ -32,16 +28,12 @@ software:
        installation: optional
      - version: "4.3.1"
        status: approved
-       platforms: [Windows]
+       platforms: [Linux,Windows]
        installation: preinstalled
    category: [Data Analysis,Programming]
    description: R is a free software environment for statistical computing and graphics.
  - name: RStudio
    versions:
-     - version: "1.0.136"
-       status: approved # pending,rejected
-       platforms: [Linux]
-       installation: preinstalled # optional,none
      - version: "1.1.414"
        status: approved # pending,rejected
        platforms: [Windows]
@@ -54,7 +46,7 @@ software:
    description: RStudio is an integrated development environment for R, with a console, syntax-highlighting editor that supports direct code execution, and tools for plotting, history, debugging and workspace management.
  - name: RStudio Server
    versions:
-     - version: "1.2.1335"
+     - version: "2023.06.2"
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none
@@ -62,7 +54,7 @@ software:
    description: RStudio Server enables you to provide a browser based interface to a version of R running on a remote Linux server.
  - name: Perl
    versions:
-     - version: "5.16.3"
+     - version: "5.26.3"
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none  
@@ -76,12 +68,16 @@ software:
        installation: preinstalled # optional,none  
    category: [Programming]
    description: Perl is Larry Wall's Practical Extraction and Report Language.
- - name: OpenJDK 8
+ - name: OpenJDK
    versions:
-     - version: "1.8.0"
+     - version: "8"
        status: approved # pending,rejected
        platforms: [Linux,Windows]
        installation: optional # preinstalled,none  
+     - version: "12"
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: preinstalled # preinstalled,none  
    category: [Programming]
    description: Java Platform, Standard Edition (Java SE) lets you develop and deploy Java applications on desktops and servers. 
  - name: Atom Text Editor
@@ -153,7 +149,7 @@ software:
    description: FastX enables users to start an X11 desktop environment on a remote system.
  - name: JupyterHub
    versions:
-     - version: "1.1.0"
+     - version: "3.1.1"
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none  
@@ -161,7 +157,7 @@ software:
    description: JupyterHub is multi-user, multi-notebook server for Jupyter Notebooks.
  - name: JupyterLab
    versions:
-     - version: "0.32.1"
+     - version: "3.6.3"
        status: approved # pending,rejected
        platforms: [Linux]
        installation: preinstalled # optional,none  
@@ -189,7 +185,7 @@ software:
    description: Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences.
  - name: HISAT2
    versions:
-     - version: "2.3.0"
+     - version: "2.2.1"
        status: approved # pending,rejected
        platforms: [Linux,Windows]
        installation: optional #preinstalled,none  
@@ -198,10 +194,10 @@ software:
       (as well as against a single reference genome). 
  - name: Matlab
    versions:
-     - version: ""
+     - version: "2023b"
        status: approved # pending,rejected
        platforms: [Linux,Windows]
-       installation: optional #preinstalled,none  
+       installation: preinstalled #preinstalled,none  
    category: [Data Analysis]
    description: MATLAB is a multi-paradigm numerical computing environment and proprietary programming language developed by MathWorks. 
    license: Matlab usage by UVA affiliates is covered by a site license.
@@ -234,10 +230,10 @@ software:
    license: A limited number of IDL licenses are available on a first-come-first-serve basis.
  - name: Apache cTAKES
    versions:
-     - version: ""
+     - version: "4.0.0.1"
        status: approved # pending,rejected
        platforms: [Linux,Windows]
-       installation: optional #preinstalled,none  
+       installation: preinstalled #preinstalled,none  
    category: [Data Analysis]
    description: cTAKES is an open-source Natural Language Processing system that extracts clinical information from electronic health record unstructured text. 
  - name: SPSS
@@ -251,20 +247,20 @@ software:
    license: The current SPSS license allows for 25 concurrent users within the Ivy computing environment. These seats are available on a first-come-first-serve basis.
  - name: Knime
    versions:
-     - version: ""
+     - version: "3.7.2"
        status: approved # pending,rejected
        platforms: [Linux]
-       installation: optional #preinstalled,none  
+       installation: preinstalled #preinstalled,none  
    category: [Image Processing]
    description: KNIME is a free and open-source data analytics, reporting and integration platform. KNIME integrates various components for machine learning and data mining through its modular data pipelining concept. 
- - name: ImageJ
+ - name: Fiji
    versions:
-     - version: ""
+     - version: "1.53t"
        status: approved # pending,rejected
        platforms: [Linux,Windows]
-       installation: optional #preinstalled,none  
+       installation: preinstalled #preinstalled,none  
    category: [Image Processing]
-   description: ImageJ is a scriptable image processing program, bundling a lot of plugins that facilitate scientific image analysis.
+   description: Fiji is a scriptable image processing program, bundling a lot of plugins that facilitate scientific image analysis.
  - name: OpenCV
    versions:
      - version: ""
@@ -291,10 +287,10 @@ software:
    description: MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.          
  - name: PostgreSQL
    versions:
-     - version: ""
+     - version: "14.5"
        status: approved # pending,rejected
        platforms: [Linux,Windows]
-       installation: optional #preinstalled,none  
+       installation: preinstalled #preinstalled,none  
    category: [Database Software]
    description: PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying.  
  - name: MySQL Workbench
@@ -381,26 +377,26 @@ software:
    description: FSL is a comprehensive library of analysis tools for FMRI, MRI and DTI brain imaging data.
  - name: MRtrix3
    versions:
-     - version: ""
+     - version: "3.0.2"
        status: approved #pending,rejected
        platforms: [Linux,Windows]
-       installation: optional #preinstalled,none
+       installation: preinstalled #preinstalled,none
    category: [Image Processing]
    description: MRtrix3 provides a large suite of tools for image processing, analysis and visualisation, with a focus on the analysis of white matter using diffusion-weighted MRI.
  - name: PeakSeq
    versions:
-     - version: ""
+     - version: "1.31"
        status: approved #pending,rejected
        platforms: [Linux]
-       installation: optional #preinstalled,none
+       installation: preinstalled #preinstalled,none
    category: [Bioinformatics]
    description: PeakSeq is a program for identifying and ranking peak regions in ChIP-Seq experiments.
  - name: PLINK
    versions:
-     - version: ""
+     - version: "2.00a20230303"
        status: approved #pending,rejected
        platforms: [Linux]
-       installation: optional #preinstalled,none
+       installation: preinstalled #preinstalled,none
    category: [Bioinformatics]
    description: PLINK is a free, open-source whole genome association analysis toolset, designed to perform a range of basic, large-scale analyses in a computationally efficient manner.
  - name: Ruby
