@@ -52,9 +52,13 @@ For general information on building code using compilers, please see our How-To 
 
 The Intel compilers are:
 
-- C: `icc`
-- C++: `icpc`
-- Fortran: `ifort`
+{{< table class="table table-striped" >}}
+||<2024|>=2024|
+|---|---|---|
+C| `icc` | `icx` |
+C++| `icpc` | `icpx` |
+Fortran| `ifort` | `ifort` |
+{{< /table >}}
 
 # Tools
 
