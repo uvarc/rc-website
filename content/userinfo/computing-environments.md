@@ -14,9 +14,9 @@ Research Computing (UVA-RC) serves as the principal center for computational r
 
 # High Performance Computing 
 
-UVA-RC’s High Performance Computing (HPC) systems are designed with high speed networks, high performance storage, GPUs, and large amounts of memory in order to support modern compute and memory intensive programs. UVA-RC's HPC systems are comprised of over 614 compute nodes, with a total of 20476 X86 64-bit compute cores and 240 TB total RAM. Scheduled using SLURM, these resource can support over 1.5 PFLOP of peak CPU performance. HPC nodes are equipped with between 375 GB and 1 TB of RAM to support applications that require small and large amounts of memory, and 49 nodes include various configurations of the NVidia general purpose GPU accelerators (K80, P100, RTX2080, RTX3090, A6000, V100 and A100), from 4- to 10-way.    
+UVA-RC’s High Performance Computing (HPC) systems are designed with high speed networks, high performance storage, GPUs, and large amounts of memory in order to support modern compute and memory intensive programs. UVA-RC's HPC systems are comprised of over 614 compute nodes, with a total of 20476 X86 64-bit compute cores and 240 TB total RAM. Scheduled using Slurm, these resource can support over 1.5 PFLOP of peak CPU performance. HPC nodes are equipped with between 375 GB and 1 TB of RAM to support applications that require small and large amounts of memory, and 49 nodes include various configurations of the NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100 and A100), from 4- to 10-way.    
 
-UVA-RC also acquires and maintains capability systems focused on providing novel environments. This includes an 18 node DGX BasePOD system with 8x A100 gpu. The BasePOD provides a shared memory space across all GPUs in the system allowing the system to work collectively on models with memory needs larger than what can be held in a single node.  
+UVA-RC also acquires and maintains capability systems focused on providing novel environments. This includes an 18-node DGX BasePOD system with 8x A100 GPU. The BasePOD provides a shared memory space across all GPUs in the system allowing the system to work collectively on models with memory needs larger than what can be held in a single node.  
 
 # Interactive Computing and Scientific Visualization 
 
