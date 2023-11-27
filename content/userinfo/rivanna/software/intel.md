@@ -40,7 +40,7 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 {{< highlight >}}
-The 2024.0 version is experimental, without the Fortran interface to MKL. Most users should load an older version for the time being.
+The 2024.0 version is experimental. Most users should load an older version for the time being.
 {{< /highlight >}}
 
 # Compiler
