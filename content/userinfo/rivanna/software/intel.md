@@ -40,7 +40,7 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 {{< highlight >}}
-The 2024.0 version is experimental, without the Fortran interface to MKL. Most users should load an older version for the time being.
+The 2024.0 version is experimental. Most users should load an older version for the time being.
 {{< /highlight >}}
 
 # Compiler
@@ -52,9 +52,13 @@ For general information on building code using compilers, please see our How-To 
 
 The Intel compilers are:
 
-- C: `icc`
-- C++: `icpc`
-- Fortran: `ifort`
+{{< table class="table table-striped" >}}
+||<2024|>=2024|
+|---|---|---|
+C| `icc` | `icx` |
+C++| `icpc` | `icpx` |
+Fortran| `ifort` | `ifort` |
+{{< /table >}}
 
 # Tools
 

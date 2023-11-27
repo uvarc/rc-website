@@ -19,12 +19,6 @@ We currently have several open positions in our *Infrastructure Services* and *U
 - [Windows Server Engineer](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Windows-Server-Engineer--Research-Computing_R0040018)
 - [Linux Systems Engineer](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Linux-System-Engineer_R0040017)
 
-## User Services Staff (multiple full-time, permanent positions)
-
-- [Research Computing Facilitator/Research Computing Scientist](https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs/details/Research-Computing-Facilitator-Research-Computing-Scientists_R0051991-1)
-- [Research Computing Facilitator/Research Computing Scientist](https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs/details/Research-Computing-Facilitator-Research-Computing-Scientists_R0051965)
-
-
 ## Data Analytics Center Staff (multiple full-time, long-term positions)
 
 - [Research Computing Scientists/Deep Learning Specialists](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Research-Computing-Scientist_R0052597)
