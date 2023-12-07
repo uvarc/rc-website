@@ -27,7 +27,7 @@ Research computing provides training for the use of our systems.  The training i
 
 
 <div style="margin-left: 5%">
-    <img src="/images/images/dac_tiers_training.jpg" width=350>
+    <img src="/images/dac_tiers_training.jpg" width=350>
 </div>
 
 
@@ -40,7 +40,7 @@ assistance that requires more in-depth support, the team member will advise
 researchers to enter into a collaboration agreement.
 
 <div style="margin-left: 5%">
-   <img src="/images/images/dac_tiers_consultation.jpg" width=350>
+   <img src="/images/dac_tiers_consultation.jpg" width=350>
 </div>
 
 
@@ -53,7 +53,7 @@ grants or apply for <a href="/service/dac/awards">RC DAC awards </a>.
 
 
 <div style="margin-left: 5%">
-   <img src="/images/images/dac_tiers_collaboration.jpg" width=350>
+   <img src="/images/dac_tiers_collaboration.jpg" width=350>
 </div>
  
 
