@@ -35,7 +35,7 @@ Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.vi
 Access to the HPC cluster requires a valid Eservices password. Your Netbadge password is not necessarily the same thing, so if you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  Resetting the Netbadge password should sync it with your Eservices password, which is no longer directly accessible to you. If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
 
 ## What happens to my account when I leave UVA?
-ITS controls access to the University’s computing resources, so when you or your students leave, you/they may lose access to many of these resources. Sponsored accounts allow people who work or volunteer at UVA, but who are not paid by UVA, to access the University’s computing resources. Researchers with sponsored accounts cannot request RC services but they are allowed to use the systems we manage as members of a MyGroups (requires VPN connection) group controlled by a UVA Principal Investigator (PI). Details on sponsored accounts are posted on the [ITS sponsored accounts page](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=8fec94fcdb296b4c2192e6650596199b).
+ITS controls access to the University’s computing resources, so when you or your students leave, you/they may lose access to many of these resources. Sponsored accounts allow people who work or volunteer at UVA, but who are not paid by UVA, to access the University’s computing resources. Researchers with sponsored accounts cannot request RC services but they are allowed to use the systems we manage as members of a Grouper (requires VPN connection) group controlled by a UVA Principal Investigator (PI). Details on sponsored accounts are posted on the [ITS sponsored accounts page](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=8fec94fcdb296b4c2192e6650596199b).
 
 ## Why am I seeing `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` when I log in?
 Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/rivanna/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
@@ -86,7 +86,7 @@ Both allow you to run applications with graphical user interfaces in a Linux Des
 
 ## What is an allocation?
 
-Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [MyGroups](https://mygroups.virginia.edu/) (requires VPN connection) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
+Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How can I request an allocation?
 
@@ -130,8 +130,8 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/).
 
-## How do I add or remove people from my allocations?
-You must use the MyGroups (requires VPN connection) interface to do this, and you must have administrative access to the group.
+## How do I create a group or manage members in my allocations?
+You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
 
 ## How do I check allocation usage of individual group members?
 Please visit [here](/userinfo/rivanna/slurm/#usage-report) to see how to generate an allocation usage report.
