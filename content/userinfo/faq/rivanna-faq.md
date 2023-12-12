@@ -86,7 +86,7 @@ Both allow you to run applications with graphical user interfaces in a Linux Des
 
 ## What is an allocation?
 
-Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
+Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How can I request an allocation?
 
@@ -119,7 +119,7 @@ If you don't see your allocation, it may mean that you've been removed from the 
 
 To check an allocation's expiration date run `allocations -a <allocation group>` command.  Alternatively, run `mam-list-allocations`.
 
-Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), [Dean's Allocations](/userinfo/rivanna/allocations/#deans-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
 
 ## How are Service Units Reserved?
 
@@ -139,7 +139,7 @@ Please visit [here](/userinfo/rivanna/slurm/#usage-report) to see how to generat
 ## I submitted a job and receive an error "Insufficient balance. Applying funds failure for JobId=".  What should I do?
 The error indicates that your allocation group does not have enough service units to execute the job. Check your allocation status as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Also verify that your allocation has not expired, see [here](#how-do-i-check-an-allocations-expiration-date).
 
-Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), [Dean's Allocations](/userinfo/rivanna/allocations/#deans-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
 
 - - -
 
