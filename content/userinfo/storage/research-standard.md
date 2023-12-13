@@ -21,8 +21,7 @@ Research Computing offers several budget options for storing public and internal
 classifications](https://security.virginia.edu/university-data-protection-standards).
 
 The _Research Standard_ storage provides users with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
-the team lead or PI. Group membership can be defined and managed through <a href="http://its.virginia.edu/mygroups/" target="_blank">ITS 
-MyGroups system</a> (requires VPN connection). Research Standard storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
+the team lead or PI. Group membership can be defined and managed through <a href="https://groups.identity.virginia.edu" target="_blank">Grouper</a> (requires VPN connection). Research Standard storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
 mount, allowing for point-and-click file manipulation.
 
 If you are not a researcher, UVA ITS offers Value storage for long-term storage of large scale data. More information about ITS's 
@@ -31,9 +30,9 @@ various storage options can be found <a href="https://virginia.service-now.com/i
 # Request Research Standard Storage
 
 _Research Standard_ storage can be requested for $45/TB/YR through our [**Storage Request Form**](/form/storage/).
-Users can specify the size and name of the Research Standard Storage directory and the name of an existing MyGroups group that can access the space. If the MyGroups group does not yet exist, please create one through the <a href="https://mygroups.virginia.edu/" style="font-weight:bold;" target="_blank">ITS MyGroups system</a> before filling out the _Research Standard_ storage request form.
+Users can specify the size and name of the Research Standard Storage directory and the name of an existing Grouper group that can access the space. If the Grouper group does not yet exist, please create one through the <a href="https://in.virginia.edu/how-to-request-group" style="font-weight:bold;" target="_blank">ITS Group Management System</a> before filling out the _Research Standard_ storage request form.
 
-When your Research Standard Storage share is created, you will receive an email detailing your NFS mount `standard.hpc.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\standard.hpc.virginia.edu\MyGroup_name`.
+When your Research Standard Storage share is created, you will receive an email detailing your NFS mount `standard.hpc.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\standard.hpc.virginia.edu\Grouper_group_name`.
 
 # Drive Mapping with Research Standard Storage
 
@@ -48,7 +47,7 @@ _Research Standard_ storage can be drive mapped on a personal computer to enable
 #### Secure Copy (scp)
 `scp` uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. `scp can be used with the following syntax:
 ```
-scp SourceFile mst3k@rivanna.hpc.virginia.edu:/nv/vol123/MyGroup_name
+scp SourceFile mst3k@rivanna.hpc.virginia.edu:/nv/vol123/Grouper_group_name
 ```
 Detailed instructions and examples for using `scp` are provided [here](/userinfo/rivanna/logintools/cl-data-transfer).
 
