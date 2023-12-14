@@ -12,8 +12,6 @@ images = [
   ""
 ]
 subjects = [
-  "hpc",
-  "rivanna",
   "python",
   "matlab",
   "c/c++"
