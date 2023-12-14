@@ -13,5 +13,8 @@ images = [
 ]
 subjects = [
   "python",
+  "matlab",
+  "materials-science",
+  "hpc"
 ]
 +++
