@@ -46,7 +46,7 @@ To view an up-to-date list of the Python packages provided by a particular bioco
 module load bioconda
 conda list | grep bioconda
 ```
-Each environment contains a large number of packages, most of them to support the software of interest in bioinformatics; the grep command filters the Python package list to only show the Bioconda channel packages. The output may look like this:
+The environment contains a large number of packages, most of them to support the software of interest in bioinformatics. The `grep` command filters the Python package list to only show the Bioconda channel packages. The output may look like this:
 
 ```
 # packages in environment at /apps/software/standard/core/bioconda/py3.10:
