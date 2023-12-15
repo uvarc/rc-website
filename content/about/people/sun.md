@@ -12,7 +12,7 @@ author = "UVARC Staff"
 image = "/images/profiles/profile_ruoshi_sun.png"
 subjects = [
   "compiler",
-  "containers"
+  "containers",
   "hpc",
   "materials-science",
   "parallel-computing",
