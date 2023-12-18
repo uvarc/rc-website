@@ -30,7 +30,7 @@ author = "RC Staff"
 On Rivanna, Clara Parabricks is available as a Apptainer container.  To load the `clara-parabricks` container module, you can type:
 
 ```
-module load singularity clara-parabricks
+module load apptainer clara-parabricks
 ```
 
 The load command will load a default version of Clara Parabricks, unless another version is specified.  To see the available versions, type:
