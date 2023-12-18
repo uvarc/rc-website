@@ -93,11 +93,6 @@ aliases = [ "/storage" ]
   </tbody>
 </table>
 
-{{% highlight %}}
-
-Research Project Storage is currently unavailable for new purchases. Please <a href="/form/support-request/">contact us</a> to discuss your storage needs. 
-
-{{% /highlight %}}
 
 - - -
 
