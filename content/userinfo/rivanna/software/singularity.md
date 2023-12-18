@@ -13,7 +13,7 @@ author = "RC Staff"
 +++
 
 {{< highlight >}}
-On Dec 18, 2023 Singularity on Rivanna will be upgraded to [Apptainer](/userinfo/rivanna/software/apptainer), a continuation of the Singularity project.
+[Deprecated] On Dec 18, 2023 Singularity has been upgraded to [Apptainer](/userinfo/rivanna/software/apptainer), a continuation of the Singularity project.
 {{< /highlight >}}
 
 # Overview
