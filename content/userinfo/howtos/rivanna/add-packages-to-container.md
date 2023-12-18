@@ -14,7 +14,8 @@ author = "RC Staff"
 Strictly speaking, you cannot add packages to an existing container since it is not editable. However, you can try to install missing packages locally. Using python-pip as an example:
 
 ```
-singularity exec <container.sif> python -m pip install --user <package>
+module load apptainer
+apptainer exec <container.sif> python -m pip install --user <package>
 ```
 
 Replace `<container.sif>` with the actual filename of the container and `<package>` with the package name. The Python package will be installed in your home directory under `.local/lib/pythonX.Y` where `X.Y` is the Python version in the container.

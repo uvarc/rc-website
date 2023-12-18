@@ -157,15 +157,15 @@ For help installing research software on your PC, please contact Research Softwa
 Some groups and departments have installed a bundle of software they need into shared space.  Please see your departmental IT support personnel if your department has its own bundle.
 
 ## Can I run this Docker container on Rivanna?
-We do not run Docker on Rivanna.  Instead we use Singularity.  Singularity can run Docker images directly, or you can convert a Docker image to a Singularity image.  To import existing Docker images, use the `singularity pull` command.
+We do not run Docker on Rivanna.  Instead we use Apptainer.  Apptainer can run Docker images directly, or you can convert a Docker image to an Apptainer image.  To import existing Docker images, use the `apptainer pull` command.
 ```
-module load singularity
-singularity pull docker://account/image
+module load apptainer
+apptainer pull docker://account/image
 ```
 
 Software images built by Research Computing are hosted on Docker Hub. For example, to pull our PyTorch 1.5.1 image, run:
 ```
-singularity pull docker://uvarc/pytorch:1.5.1
+apptainer pull docker://uvarc/pytorch:1.5.1
 ```
 
 Please visit [this page](/userinfo/rivanna/software/containers/#container-registries-for-uva-research-computing) for more details.

@@ -2,12 +2,12 @@
 type = "howto"
 date = "2021-04-05T00:00:00-05:00"
 tags = [
-  "rivanna", "software", "r", "singularity"
+  "rivanna", "software", "r"
 ]
 categories = ["howto"]
 draft = false
-title = "Launching RStudio Server from a Singularity Container"
-description = "How to launch RStudio Server from a Singularity container"
+title = "Launching RStudio Server from a Apptainer Container"
+description = "How to launch RStudio Server from a Apptainer container"
 author = "RC Staff"
 
 +++
@@ -15,10 +15,11 @@ author = "RC Staff"
 Rocker provides many software containers for R. Due to the default permission settings of our file system, launching an RStudio Server session is not straightforward. If you are interested in using their containers on Rivanna, please follow these steps.
 
 # Pull container
-Use Singularity to pull the container. We will use `geospatial` in this example.
+Use Apptainer to pull the container. We will use `geospatial` in this example.
 
 ```bash
-singularity pull docker://rocker/geospatial
+module load apptainer
+apptainer pull docker://rocker/geospatial
 ```
 
 You should see `geospatial_latest.sif` in your current directory.
@@ -49,8 +50,8 @@ SIF=$HOME/geospatial_latest.sif
 # specify path to tmp directory created in previous section
 TMPDIR=$HOME/rstudio-tmp
 
-module load singularity
-singularity exec \
+module load apptainer
+apptainer exec \
     -B $TMPDIR/var/lib:/var/lib/rstudio-server \
     -B $TMPDIR/var/run:/var/run/rstudio-server \
     -B $TMPDIR/tmp:/tmp \

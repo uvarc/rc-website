@@ -73,20 +73,20 @@ The following is a Slurm script template. The commented numbers correspond to th
 #SBATCH -e pytorchtest-%A.err
 
 module purge
-module load singularity pytorch/1.8.1  # 2
+module load apptainer pytorch/2.0.1  # 2
 
-singularity run --nv $CONTAINERDIR/pytorch-1.8.1.sif pytorch_example.py # 3
+apptainer run --nv $CONTAINERDIR/pytorch-2.0.1.sif pytorch_example.py # 3
 ```
 
 Notes:
 
 1. The Slurm script needs to include the `#SBATCH -p gpu`and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the [Jobs Using a GPU](/userinfo/rivanna/slurm/#jobs-using-a-gpu) section for details.
 
-1. To use the pytorch container, load the singularity and pytorch modules. You may choose a different version (see `module spider` above).
+1. To use the pytorch container, load the apptainer and pytorch modules. You may choose a different version (see `module spider` above).
 
     Do **not** load the `cuda` or `cudnn` modules since these libraries are included with pytorch.
 
-1. The `--nv` flag sets up the container's environment to use a GPU when running a GPU-enabled application. The `run` command executes the default command defined in the container, which in this case is `python`. What follows after the `*.sif` is passed as arguments. In summary, the singularity command can be translated as: "Use the `python` interpreter inside the pytorch container to execute `pytorch_example.py` with GPU enabled."
+1. The `--nv` flag sets up the container's environment to use a GPU when running a GPU-enabled application. The `run` command executes the default command defined in the container, which in this case is `python`. What follows after the `*.sif` is passed as arguments. In summary, the apptainer command can be translated as: "Use the `python` interpreter inside the pytorch container to execute `pytorch_example.py` with GPU enabled."
 
 # PyTorch Interactive Jobs (ijob)
 
@@ -98,8 +98,8 @@ ijob -A mygroup -p gpu --gres=gpu -c 1
 
 ```
 module purge
-module load singularity pytorch/1.8.1
-singularity run --nv $CONTAINERDIR/pytorch-1.8.1.sif pytorch_example.py
+module load apptainer pytorch/2.0.1
+apptainer run --nv $CONTAINERDIR/pytorch-2.0.1.sif pytorch_example.py
 ```
 
 # Interaction with the Host File System
@@ -108,12 +108,7 @@ The following user directories are overlayed onto each container by default on R
 + /home
 + /scratch
 + /nv
++ /standard
 + /project
 
 Due to the overlay, these directories are by default the same inside and outside the container with the same read, write, and execute permissions. **This means that file modifications in these directories (e.g. in /home) via processes running inside the container are persistent even after the container instance exits.** The `/nv` and `/project` directories refer to leased storage locations that may not be available to all users.
-
-
-
-
-
-

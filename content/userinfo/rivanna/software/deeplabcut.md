@@ -41,7 +41,7 @@ module spider {{% module-firstversion %}}
 
 We cannot use the official Docker image on Rivanna because:
 - the CUDA version is incompatible with our NVIDIA driver version (as of August 2021);
-- at runtime it tries to download pretrained models inside the container, which is not possible via Singularity.
+- at runtime it tries to download pretrained models inside the container, which is not possible via Apptainer.
 
 For further details please visit [here](https://github.com/uvarc/rivanna-docker/blob/master/deeplabcut/2.2/Dockerfile).
 
@@ -56,5 +56,6 @@ Please submit jobs to the GPU partition. A Slurm script template is provided bel
 Please request a Desktop session on the GPU partition via our Open OnDemand portal. Open a terminal and load the module. Then execute:
 
 {{< code-snippet >}}
-singularity run --nv $CONTAINERDIR/deeplabcut-2.2.sif -m deeplabcut
+module load apptainer deeplabcut
+apptainer run --nv $CONTAINERDIR/deeplabcut-2.2.1.1-anipose.sif -m deeplabcut
 {{< /code-snippet >}}
