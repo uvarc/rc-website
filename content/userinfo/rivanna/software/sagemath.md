@@ -33,7 +33,7 @@ The sagemath software provides its own Jupyter notebook. To start sagemath, go t
 [rivanna-desktop.hpc.virginia.edu](https://rivanna-desktop.hpc.virginia.edu)
 and select FastX Web. This will open a desktop environment. Then click the terminal icon in the top toolbar and enter:
 ```
-module load singularity sagemath
+module load apptainer sagemath
 ```
 
 Read the on-screen instructions carefully to see how to start the Jupyter session in a browser.

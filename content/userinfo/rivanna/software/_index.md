@@ -5,7 +5,6 @@ tags = [
   "hpc",
   "research",
   "containers",
-  "singularity"
 ]
 draft = false
 title = "Rivanna HPC Software"

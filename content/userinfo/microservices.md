@@ -224,15 +224,13 @@ No charges will be incurred for stopped containers or any cluster storage.
 
 - - -
 
-# Singularity
+# Apptainer
 
-<img align="right" style="max-width:20%;" src="/images/rivanna/singularity-logo.png" alt="Singularity" />
+Want to run your container within an HPC environment? It can be done, using Apptainer! 
 
-Want to run your container within an HPC environment? It can be done, using Singularity! 
+Apptainer is a container application targeted to multi-user, high-performance computing systems. It interoperates well with Slurm and with the Lmod modules system. It can be used to create and run its own containers, or it can import Docker containers.
 
-Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with Slurm and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
-
-[**Learn more about Singularity**](/userinfo/rivanna/software/containers/).
+[**Learn more about Apptainer**](/userinfo/rivanna/software/apptainer/).
 
 - - -
 

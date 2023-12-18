@@ -60,9 +60,9 @@ Please refer to [run_alphafold.py](https://github.com/deepmind/alphafold/blob/ma
 
 ### Launch script `run`
 
-For your convenience, we have prepared a launch script `run` that takes care of the Singularity command and the database paths, since these are unlikely to change. If you do need to customize anything please use the full Singularity command.
+For your convenience, we have prepared a launch script `run` that takes care of the Apptainer command and the database paths, since these are unlikely to change. If you do need to customize anything please use the full Apptainer command.
 
-### Explanation of Singularity flags
+### Explanation of Apptainer flags
 
 1. The database and models are stored in `$ALPHAFOLD_DATA_PATH`.
 1. A cache file `ld.so.cache` will be written to `/etc`, which is not allowed on Rivanna. The workaround is to bind-mount e.g. the current working directory to `/etc` inside the container. `[-B .:/etc]`
@@ -72,7 +72,7 @@ For your convenience, we have prepared a launch script `run` that takes care of 
 ### Explanation of AlphaFold flags
 
 1. The default command of the container is `/app/run_alphafold.sh`.
-1. As a consequence of the Singularity `--pwd` flag, the fasta and output paths must be *full paths* (e.g. `/scratch/$USER/mydir`, not *relative paths* (e.g. `./mydir`). You may use `$PWD` as demonstrated.
+1. As a consequence of the Apptainer `--pwd` flag, the fasta and output paths must be *full paths* (e.g. `/scratch/$USER/mydir`, not *relative paths* (e.g. `./mydir`). You may use `$PWD` as demonstrated.
 1. The `max_template_date` is of the form `YYYY-MM-DD`.
 1. Only the database paths in `mark_flags_as_required` of [run_alphafold.py](https://github.com/deepmind/alphafold/blob/main/run_alphafold.py) are included because the optional paths depend on `db_preset` (`full_dbs` or `reduced_dbs`) and `model_preset`.
 
@@ -98,4 +98,4 @@ Below are some Slurm script templates for version 2.3.
     ```
 1. You must provide a value for `--max_template_date`. If you are predicting the structure of a protein that is already in PDB and you wish to avoid using it as a template, then `max_template_date` must be set to be before the release date of the structure. If you do not need to specify a date, by default you can set today’s date. For example, if you are running the simulation on August 7th 2021, set `-–max_template_date = 2021-08-07`. See [here](https://nostrumbiodiscovery.github.io/nbd_central_docs/software/alphafold/alphafold.html).
 1. The flag `--use_gpu_relax` is only for version 2.1.2 and above.
-1. You are not required to use the `run` wrapper script. You can always provide the full singularity command.
+1. You are not required to use the `run` wrapper script. You can always provide the full apptainer command.
