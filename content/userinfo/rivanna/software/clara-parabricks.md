@@ -27,7 +27,7 @@ author = "RC Staff"
 [Nvidia Clara Parabricks](https://docs.nvidia.com/clara/parabricks/4.1.0/index.html) is a GPU-accelerated software suite for performing secondary analysis of next generation sequencing (NGS) DNA and RNA data. It contains GPU-enabled versions of popular bioinformatics tools such as the aligners [BWA-Mem](https://www.rc.virginia.edu/userinfo/rivanna/software/bwa/) and STAR.
 
 # Loading the container
-On Rivanna, Clara Parabricks is available as a Apptainer container.  To load the `clara-parabricks` container module, you can type:
+On Rivanna, Clara Parabricks is available as an Apptainer container.  To load the `clara-parabricks` container module, you can type:
 
 ```
 module load apptainer clara-parabricks

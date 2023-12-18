@@ -12,7 +12,7 @@ author = "RC Staff"
 
 +++
 
-You can create custom kernels from an Anaconda environment or a Apptainer container.
+You can create custom kernels from an Anaconda environment or an Apptainer container.
 In both cases you'll need to install the `ipykernel` package.
 
 # Jupyter kernel based on Anaconda environment
