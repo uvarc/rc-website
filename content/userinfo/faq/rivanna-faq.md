@@ -32,7 +32,7 @@ Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.vi
 {{% off-campus %}}
 
 ## How do I reset my current password / obtain a new password?
-Access to the HPC cluster requires a valid Eservices password. Your Netbadge password is not necessarily the same thing, so if you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  Resetting the Netbadge password should sync it with your Eservices password, which is no longer directly accessible to you. If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
+Access to the HPC cluster requires a valid ITS (Netbadge) password. If you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
 
 ## What happens to my account when I leave UVA?
 ITS controls access to the University’s computing resources, so when you or your students leave, you/they may lose access to many of these resources. Sponsored accounts allow people who work or volunteer at UVA, but who are not paid by UVA, to access the University’s computing resources. Researchers with sponsored accounts cannot request RC services but they are allowed to use the systems we manage as members of a Grouper (requires VPN connection) group controlled by a UVA Principal Investigator (PI). Details on sponsored accounts are posted on the [ITS sponsored accounts page](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=8fec94fcdb296b4c2192e6650596199b).
@@ -41,30 +41,16 @@ ITS controls access to the University’s computing resources, so when you or yo
 Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/rivanna/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
 
 ## When I try to log in with ssh, nothing happens when I type my password!
-When you type your passaword, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
+When you type your password, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
 
 ## When running Firefox on Rivanna, I get : "Firefox is already running, but is not responding. To open a new window, you must first close the existing Firefox process, or restart your system." What can I do?
 
-From your home directory on Rivanna, run the commands:
+From a terminal in your home directory on Rivanna, run the commands:
 
-
+```
 rm -rf ~/.mozilla/firefox/*.default/.parentlock
-
 rm -rf ~/.mozilla/firefox/*.default/lock
-
-## How can I view .pdf or .csv files on Rivanna?
-
-For .pdf files, run the command:
-
-     atril filename.pdf
-
-The atril command can also be used to display image files, e.g. .png and .jpg files.
-
-For .csv files, run the command:
-
-     oocalc filename.csv
-
-where filename is a placeholder for the specific filename.
+```
 
 ## When should I use FastX Web, when should I use an Open OnDemand Desktop session?
 Both allow you to run applications with graphical user interfaces in a Linux Desktop environment.
@@ -79,6 +65,22 @@ Both allow you to run applications with graphical user interfaces in a Linux Des
 * Runs all users' sessions on a single frontend node.
 * Good for light-weight file management, script editing.
 * Requires a VPN connection from off-Grounds locations.
+
+## How can I view .pdf or .csv files on Rivanna?
+
+For .pdf files, run the command:
+```
+atril filename.pdf
+```
+You can also open Atril from a FastX or Open OnDemand desktop environment from the Applications->Office menu.
+
+The atril command can also be used to display image files, e.g. .png and .jpg files. Or you may use `eom FILE` (Eye of MATE) from a terminal.  Alternatively, you can open Eye of MATE from the MATE Desktop menu Applications->Graphics.
+
+For .csv files, run the command:
+```
+oocalc filename.csv
+```
+where `filename` is a placeholder for the specific filename. The `oocalc` command invokes the LibreOffice spreadsheet program "Calc."  If logged on to a FastX or Open OnDemand Desktop, use the menu Applicatons->Office to access it.
 
 - - -
 
@@ -213,7 +215,7 @@ After logging in, run the command `qlist` to see a list of queues and their avai
 Queues (partitions to Slurm) are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  More information about queue policy is at the Rivanna homepage.
 
 ## How do I check the status of my jobs?
-Run the command `jobq`
+From a terminal, run the command `jobq`.  From Open OnDemand, use the Job Viewer and select "Your Jobs" as the filter.
 
 If reporting a problem to us about a particular job, please let us know the JobID for the job that you are having a problem with. You can also run `jobq -l` to relate particular jobs to specific submission scripts.
 
@@ -224,6 +226,7 @@ Several things can cause jobs to wait in the queue. Paid allocations have priori
 To request an estimate from the queueing system of your start time, run 
 ```
 squeue -u $USER --start
+```
 for all your jobs, or
 ```
 squeue -j <jobid> --start
@@ -231,12 +234,12 @@ squeue -j <jobid> --start
 for a specific job. Slurm will provide an estimate of the day and time your job will start.
 
 ## Why was my job killed?
-Usually this is because you inadvertently submitted the job to run in a location that the compute nodes can't access or is temporarily unavailable.  If your jobs exit immediately this is usually why.  Other common reasons include using too much memory, too many cores, or running past a job's timelimit.
+Usually this is because you inadvertently submitted the job to run in a location that the compute nodes can't access or is temporarily unavailable.  If your jobs exit immediately this is usually why.  Other common reasons include using too much memory, too many cores, or running past a job's time limit.
 
 You can run `sacct`:
 
 ```
-[aam2y@udc-ba36-27:/root] sacct
+[mst3k@udc-ba36-27:/root] sacct
        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
 ------------ ---------- ---------- ---------- ---------- ---------- --------
 159637       ompi_char+   parallel  hpc_admin         80  COMPLETED      0:0
@@ -307,7 +310,6 @@ If the free storage is not sufficient, you need snapshots of your files, or you 
 
 ## Why should I use /scratch storage?
 Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  [Please review our scratch filesystem policy for details](/userinfo/rivanna/overview/#scratch-directory). If you use or expect to use a large number of files please contact us.
-
 
 
 ## How do I obtain leased storage?
