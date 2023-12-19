@@ -72,15 +72,15 @@ For .pdf files, run the command:
 ```
 atril filename.pdf
 ```
-You can also open Atril from a FastX or Open OnDemand desktop environment from the Applications->Office menu.
+You can also open Atril from a FastX or Open OnDemand desktop environment from the Applications&rarr;ffice menu.
 
-The atril command can also be used to display image files, e.g. .png and .jpg files. Or you may use `eom FILE` (Eye of MATE) from a terminal.  Alternatively, you can open Eye of MATE from the MATE Desktop menu Applications->Graphics.
+The atril command can also be used to display image files, e.g. .png and .jpg files. Or you may use `eom FILE` (Eye of MATE) from a terminal.  Alternatively, you can open Eye of MATE from the MATE Desktop menu Applications&rarr;Graphics.
 
 For .csv files, run the command:
 ```
 oocalc filename.csv
 ```
-where `filename` is a placeholder for the specific filename. The `oocalc` command invokes the LibreOffice spreadsheet program "Calc."  If logged on to a FastX or Open OnDemand Desktop, use the menu Applicatons->Office to access it.
+where `filename` is a placeholder for the specific filename. The `oocalc` command invokes the LibreOffice spreadsheet program "Calc."  If logged on to a FastX or Open OnDemand Desktop, use the menu Applications&rarr;Office to access it.
 
 - - -
 
