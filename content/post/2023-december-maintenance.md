@@ -66,3 +66,18 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 - **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
 - **Mamba** is separated from `anaconda` into its own module.
 - **Java** module versions are standardized to 7, 8, 11, 12 (previously 1.7.0, etc.).
+
+#### Rebuilding R Libraries
+
+Due to changes in the operating system and compilers on Rivanna, your existing R libraries will not work. We have created a command that will help you to rebuild your library for the new version of R.
+The command is ```updateRlib``` and requires two pieces of information:
+
+i) How you run your R code
+
+ii) The version of R that you have been using.
+
+
+For example, if you have been using with RStudio 1.3.1073 - R 4.1.1, you can type:
+```updateRlib OOD 4.1.1```
+This command will capture your packages that were used in your R/4.1 library for Open OnDemand and rebuild to a new library.
+The three options for the how you run your code are: OOD, goolf, or intel. Rebuilt libraries will be installed in ```~/R/goolf/4.3``` for both module and OOD versions.
