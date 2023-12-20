@@ -49,16 +49,15 @@ module spider R
 
 # Loading the RStudio module
 
-RStudio is a development environment for R. We recommend launching RStudio through our web-based portal to Rivanna. For instructions on how to access it, see the [Rstudio Server on Rivanna](
-https://www.rc.virginia.edu/userinfo/rivanna/software/rstudio/).
+RStudio is a development environment for R. We recommend launching RStudio through our web-based portal to Rivanna. For instructions on how to access it, see [RStudio Server on Rivanna](/userinfo/rivanna/software/rstudio/).
 
-For users who must launch it from the commandline, start up a FastX or Open OnDemand Desktop session and run `rstudio-launcher` in the terminal. Then follow the instructions.
+For users who must launch RStudio from the commandline, start up a FastX or Open OnDemand Desktop session and run `rstudio-launcher` in the terminal. Then follow the instructions.
 
 To use your local R packages in RStudio, run:
 ```
 echo "R_LIBS_USER=~/R/goolf/x.y" > ~/.Renviron
 ```
-where `x.y` is the major-minor version. For example, use `4.3` in `R/4.3.1`.
+where `x.y` is the major-minor version, e.g. `4.3`.
 
 # Installing packages
 
