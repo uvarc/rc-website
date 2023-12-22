@@ -111,14 +111,7 @@ search: sdata isdirpath isdispatchtuple SharedMatrix StridedMatrix
 
 julia>
 ```
-You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application. Once you have logged into a frontend node (rivanna1, rivanna2, or rivanna3.hpc.virginia.edu), you can invoke the Atom/Juno IDE (integrated development environment) with the following commands:
-```
-module load julia/1.5.0
-module load gcc/9.2.0 atom/1.45.0
-atom
-```
-You should see the following interface appear:
-<img src="/images/juno.png" style="height:110%;width:110%"></img>
+You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application. 
 
 # Interactive Sessions through Rivanna's Open OnDemand Web Portal
 

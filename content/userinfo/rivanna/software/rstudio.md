@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2023-12-20T00:00:00-05:00"
 tags = [
   "lang",
 ]
@@ -33,6 +33,14 @@ To access RStudio Server, you will begin by connecting to our Open OnDemand port
 3. On the top right of the menu bar of the Open OnDemand dashboard, click on “Interactive Apps”.
 4. In the drop-down box, click on “RStudio Server”.
 
+Note that if you want to use your local R packages installed through the R module, you need to run
+```
+echo "R_LIBS_USER=~/R/goolf/x.y" > ~/.Renviron
+```
+before launching the instance. Here `x.y` is the major-minor version of R, e.g. `4.3`. Alternatively, you may run inside RStudio:
+```
+.libPaths('~/R/goolf/x.y')
+```
 
 # Requesting an Instance
 Your instance (or copy) of RStudio will run on a Rivanna compute node. So, it will need a list of resources, such as partition, time, and allocation. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/queues/) to learn more about the partitions.
