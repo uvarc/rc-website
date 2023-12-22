@@ -66,11 +66,10 @@
   </tbody>
 </table>
 
-<p>
-<hr>
-</p>
 
-<h2 style="margin-bottom:2rem;">Students</h2>          
+<hr>
+
+<h2 style="margin-bottom:2rem;">Student Directory</h2>          
 
 <table class="table table-hover">
   <thead style="" class="table-dark">
@@ -83,7 +82,7 @@
   <tbody>
 
     {{ range (.Pages.ByParam "lastname") }}
-        {{ if eq .Params.job_title "Student Directory" }}
+        {{ if eq .Params.job_title "Student" }}
 
         <tr>
           <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
