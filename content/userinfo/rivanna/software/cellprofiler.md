@@ -41,7 +41,7 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 
-The latest version of CellProfiler is available as a Apptainer container.  Containers encapsulate applications, in this case CellProfiler, and all their required libraries isolated from the application and libraries provided by the system. The basic concepts of software containers, and Apptainer container in particular, are explained [here](/userinfo/rivanna/software/containers).  We recommend using the latest CellProfiler container version whenever possible.  Please contact us for help with this package.
+The latest version of CellProfiler is available as an Apptainer container.  Containers encapsulate applications, in this case CellProfiler, and all their required libraries isolated from the application and libraries provided by the system. The basic concepts of software containers, and Apptainer container in particular, are explained [here](/userinfo/rivanna/software/containers).  We recommend using the latest CellProfiler container version whenever possible.  Please contact us for help with this package.
 
 CellProfiler can be run interactively with a graphical user interface (GUI) or non-interactively without any user interface.  The interactive GUI mode is used to define image analysis pipelines; the non-interactive mode is used for image batch processing based on previosuly configured image analysis pipelines.  
 

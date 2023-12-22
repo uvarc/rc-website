@@ -80,13 +80,13 @@ module list
 module swap
 {{< /code-snippet >}}
 
-For example, if you have loaded gcc/7.1.0 and you wish to switch to intel/18.0
+For example, if you have loaded gcc/11.4.0 and you wish to switch to intel/2023.1
 
 {{< code-snippet >}}
-module swap gcc/7.1.0 intel/18.0
+module swap gcc/11.4.0 intel/2023.1
 {{< /code-snippet >}}
 
-This will unload the `gcc/7.1.0` environment entirely, and load the `intel/18.0` environment. 
+This will unload the `gcc/11.4.0` environment entirely, and load the `intel/2023.1` environment. 
 
 **Clear all modules you have loaded**
 

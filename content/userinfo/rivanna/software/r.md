@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2023-12-20T00:00:00-05:00"
 tags = [
   "lang",
   "programming",
@@ -29,20 +29,16 @@ author = "RC Staff"
 On Rivanna, R is available through our module system.  For example, to load R, you can type:
 
 ```
-module load goolf/7.1.0_3.1.4 R
+module load goolf R
 ```
 
-Notice that we included goolf version 7.1.0_3.1.4 in the load command. There are two reasons why including goolf is important:
+Notice that we included `goolf` in the load command. There are two reasons why including `goolf` is important:
 
-1. R was built with a compiler, an interface to OpenMPI, and other utilities.  The `goolf` module will ensure that each of these items is loaded.  Also, because 7.1.0_3.1.4 is no longer the default version, we must specify the version of `goolf`.
+1. R was built with a compiler, an interface to OpenMPI, and other utilities.  The `goolf` module will ensure that each of these items is loaded.
 
 2. R has many computationally-intensive packages that are built with C, C++, or Fortran. By including goolf, we ensure that the same environment used for building R is loaded for any package installs.
 
-The load command will load a default version of R, unless another version is specified.  For example, you could type:
-
-```
-module load goolf/7.1.0_3.1.4  R/4.0.0
-```
+The load command will load a default version of R, unless another version is specified.
 
 To see the available versions of R, type:
 
@@ -53,28 +49,23 @@ module spider R
 
 # Loading the RStudio module
 
-RStudio is a development environment for R.  It also is supported through its own module, but you must load a version of R first. For example, to load and run Rstudio, you could type the following:
+RStudio is a development environment for R. We recommend launching RStudio through our web-based portal to Rivanna. For instructions on how to access it, see [RStudio Server on Rivanna](/userinfo/rivanna/software/rstudio/).
 
+For users who must launch RStudio from the commandline, start up a FastX or Open OnDemand Desktop session and run `rstudio-launcher` in the terminal. Then follow the instructions.
+
+To use your local R packages in RStudio, run:
 ```
-module load goolf/7.1.0_3.1.4 R
-module load rstudio
-rstudio &
+echo "R_LIBS_USER=~/R/goolf/x.y" > ~/.Renviron
 ```
-
-RStudio is also available through our web-based portal to Rivanna.  For instructions on how to access it, see the [Rstudio Server on Rivanna](
-https://www.rc.virginia.edu/userinfo/rivanna/software/rstudio/).
-
+where `x.y` is the major-minor version, e.g. `4.3`.
 
 # Installing packages
 
 Due to the amount and variability of packages available for R, Research Computing does not maintain R packages beyond the very basic.  If you need a package, you can install it in your account, using a local library.  For example, to install `BiocManager`, you can type:
 
 ```
-module load goolf/7.1.0_3.1.4  R
-```
-
-```
-R
+$ module load goolf R
+$ R
    .
    .
    .
@@ -84,7 +75,7 @@ R
 
 If the R interpreter prompts you about creating a local library, type `yes`.  If it asks you to select a CRAN mirror, scroll down the list it provides and select one of the US sites.
 
-Or, you can launch RStudio and install the packages as you would on your laptop.  However, RStudio Server (launched through Open onDemand) uses a different folders for its libraries.  The libraries are kept separate because RStudio Server runs in a container and has packages installed that are not visible to the versions of R loaded through modules. 
+Or, you can launch RStudio and install the packages as you would on your laptop.
 
 
 # Submitting a Single-Core Job to the Cluster

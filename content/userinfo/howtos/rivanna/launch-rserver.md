@@ -6,8 +6,8 @@ tags = [
 ]
 categories = ["howto"]
 draft = false
-title = "Launching RStudio Server from a Apptainer Container"
-description = "How to launch RStudio Server from a Apptainer container"
+title = "Launching RStudio Server from an Apptainer Container"
+description = "How to launch RStudio Server from an Apptainer container"
 author = "RC Staff"
 
 +++

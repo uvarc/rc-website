@@ -45,7 +45,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 godlovedc/lolcow    latest              577c1fe8e6d8        16 months ago       241MB
 ```
 
-You can build a Apptainer image from it via:
+You can build an Apptainer image from it via:
 ```
 $ apptainer build lolcow_from_docker_cache.sif docker-daemon://godlovedc/lolcow:latest
 INFO:    Starting build...

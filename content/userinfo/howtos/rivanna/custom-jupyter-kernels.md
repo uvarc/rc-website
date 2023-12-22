@@ -2,7 +2,7 @@
 type = "howto"
 date = "2020-03-03T00:00:00-05:00"
 tags = [
-  "rivanna", "software", "jupyter", "singularity"
+  "rivanna", "software", "jupyter", "apptainer"
 ]
 categories = ["howto"]
 draft = false
@@ -12,7 +12,7 @@ author = "RC Staff"
 
 +++
 
-You can create custom kernels from an Anaconda environment or a Apptainer container.
+You can create custom kernels from an Anaconda environment or an Apptainer container.
 In both cases you'll need to install the `ipykernel` package.
 
 # Jupyter kernel based on Anaconda environment
