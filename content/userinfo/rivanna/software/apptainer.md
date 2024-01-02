@@ -1,7 +1,7 @@
 +++
 categories = ["userinfo"]
 type = "rivanna"
-date = "2023-10-23T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "rivanna", "software", "containers", "apptainer"
 ]
@@ -14,7 +14,7 @@ author = "RC Staff"
 
 # Introduction
 
-Apptainer is a continuation of the Singularity project (see [here](https://apptainer.org/news/community-announcement-20211130/)). Effective December 18, 2023 we will be migrating from Singularity to Apptainer.
+Apptainer is a continuation of the Singularity project (see [here](https://apptainer.org/news/community-announcement-20211130/)). On December 18, 2023 we migrated from Singularity to Apptainer.
 
 Containers created by Singularity and Apptainer are mutually compatible as of this writing, although divergence is to be expected.
 

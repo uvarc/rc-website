@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "gurobi",
 ]
@@ -69,20 +69,6 @@ Please replace `python` with `python3.7` in your Slurm scripts. However, note th
 The module supports Python versions 2.7, 3.6 - 3.9. Please follow the instructions in the `module load` message.
 
 To check the version of your `python`, run `python -V`.
-
-- 2.7
-
-    If you are using the system Python (i.e. without loading any Anaconda or Python modules) or the `anaconda/2019.10-py2.7` module, run:
-    {{< code-snippet >}}
-    export PYTHONPATH=$GUROBI_HOME/lib/python2.7_utf32
-    {{< /code-snippet >}}
-
-- 3.8
-
-    Python 3.8 is provided through `anaconda/2020.11-py3.8`. Run:
-    {{< code-snippet >}}
-    export PYTHONPATH=$GUROBI_HOME/lib/python3.8_utf32
-    {{< /code-snippet >}}
 
 If you followed these instructions and still have trouble importing `gurobipy` in your Python script, please use the Gurobi Python `python3.7`.
 

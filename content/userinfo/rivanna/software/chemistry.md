@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = ["chem"
 ]
 draft = false
@@ -45,7 +45,7 @@ module keyword chem
 
 To get more information about a specific module version, run the module spider command, for example:
 ```
-module spider quantumespresso/6.3
+module spider quantumespresso
 ```
 
 <br>
@@ -60,5 +60,5 @@ To use a specific software package, run the `module load` command. The `module l
 
 After loading a module, you are ready to run the application(s) provided by the module. **For example:**
 ```
-module load quantumespresso/6.3
+module load intel quantumespresso
 ```

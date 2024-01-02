@@ -1,6 +1,6 @@
 +++
 type = "rivanna"
-date = "2022-07-21T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "rivanna", "software", "machine learning"
 ]
@@ -22,10 +22,7 @@ Keras is a high-level neural networks application programming interface (API), w
 The TensorFlow modules on Rivanna include common Python packages such as Matplotlib and OpenCV. See <https://hub.docker.com/r/uvarc/tensorflow> for details.
 
 # TensorFlow Jupyter Notebooks
-Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available:
-
-- 2.7.0 with Python 3.9
-- 2.10.0 with Python 3.9
+Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available.
 
 ## Accessing the JupyterLab Portal
 

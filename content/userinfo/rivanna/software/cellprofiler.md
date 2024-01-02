@@ -5,7 +5,7 @@ categories = [
   "software",
   "bio"
 ]
-date = "2020-02-28T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "multi-core",
 ]
@@ -51,13 +51,11 @@ The CellProfiler container image file is provided in a shared user space.  For b
 
 In a Rivanna terminal window execute these commands:
 ```
-module load apptainer
-module load cellprofiler/3.1.8
-cp $CONTAINERDIR/cellprofiler-3.1.8.sif /scratch/$USER
+module load apptainer cellprofiler
+cp $CONTAINERDIR/cellprofiler-4.2.5.sif /scratch/$USER
 ```
 
 # Image Pipeline Configuration
-
 
 ## Option A: ssh terminal
 
@@ -80,7 +78,7 @@ apptainer run $CONTAINERDIR/cellprofiler-4.2.5.sif
 ```
 
 # Non-interactive Slurm jobs for batch image processing
-If you have a large number of images that all need to be processed in the same manner, you can use Rivanna's compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.1.9/help/other_batch.html).
+If you have a large number of images that all need to be processed in the same manner, you can use Rivanna's compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](https://cellprofiler-manual.s3.amazonaws.com/CPmanual/Help_Other%20Features_Batch_Processing.html).
 
 ## Setup
 
