@@ -21,8 +21,8 @@ Compiled languages can be more difficult to debug, and the assistance of a good 
 
 {{< rivanna-software moduleclasses="compiler" exclude="mpi" >}}
 
-# Gnu Compiler
-The [Gnu Compiler Collection](https://gcc.gnu.org) compilers are free, open-source tools. Additional tools included are the gdb debugger and the gprof performance profiler. For detailed documentation, visit the [Gnu](https://gcc.gnu.org/onlinedocs/) website.
+# GNU Compiler
+The [GNU Compiler Collection](https://gcc.gnu.org) compilers are free, open-source tools. Additional tools included are the gdb debugger and the gprof performance profiler. For detailed documentation, visit the [GNU](https://gcc.gnu.org/onlinedocs/) website.
 
 The compilers are:
 
@@ -38,7 +38,7 @@ More information is available from the manpage, e.g.:
 man g++
 ```
 
-The default Gnu compilers on Rivanna are typically fairly old. Newer versions can be invoked through an appropriate [module](/userinfo/rivanna/software/modules). For available versions, please run
+The default GNU compilers on Rivanna are typically fairly old. Newer versions can be invoked through an appropriate [module](/userinfo/rivanna/software/modules). For available versions, please run
 ```
 module spider gcc
 ```
@@ -46,9 +46,9 @@ It is important to load the correct module if you want to use more advanced feat
 ```
 module load gcc
 ```
-It may be necessary to use an older compiler for programs using GPGPUs. The `gcccuda` module will load the correct version.
+It may be necessary to use an older compiler for programs using GPGPUs.
 
-## Available Gnu Compilers
+## Available GNU Compilers
 
 {{< module-versions module="gcc" >}}
 
@@ -99,8 +99,6 @@ If mathematical libraries are needed, we strongly recommend the Intel Math Kerne
 
 The MKL consists of a number of libraries, and which ones to link is not always obvious.  In newer Intel compilers a flag `-mkl` can be added for both compiler and linker.  However, that does not always suffice, so Intel provides a link line advisor at their site. Remember that default integers are 32 bits even on 64-bit systems. The MKL bundled with our compiler suite includes ScaLAPACK.
 
-The Intel compiler should also be used, along with its companion Intel MPI, for Intel Many-Integrated Core systems.  To compile for MIC architectures use the flag -xMIC-AVX512 on your compile line.
-
 # NVIDIA CUDA Compiler
 The NVIDIA HPC SDK C, C++, and Fortran compilers support GPU acceleration of HPC modeling and simulation applications with standard C++ and Fortran, OpenACC directives, and CUDA.
 
@@ -121,33 +119,9 @@ module load nvhpc
 {{< module-versions module="nvhpc" >}}
 
 Please see [here](/userinfo/rivanna/software/nvhpc) for details.
+
 # PGI Compiler
-The PGI Server Compilers and tools are licensed for Linux systems.
-
-PGI compilers are accessed on the HPC cluster by using modules to dynamically set the appropriate environmental variables (e.g. `PATH` and `LD_LIBRARY_PATH`). To initialize your environment to use the PGI compilers, use the command
-```
-module load pgi
-```
-
-## Available PGI Compilers
-
-{{< module-versions module="pgi" >}}
-
-
-After you have modified your environment to access the PGI compilers, you can invoke the compiler on a source code file in one of the following ways.
-
-* Fortran fixed format: pgf77 or pgf90 [options] filename.f
-* Fortran free format: pgf90 [options] filename.f90
-* C: pgcc [options] filename.c
-* C++: pgc++ [options] filename.cpp or pgCC [options] filename.cxx
-
-A list of compiler options can be obtained by invoking the compiler with the `-help` option, e.g.: `pgf90 –help`
-
-More information is available from the manpage, e.g.: `man pgf90`
-
-PGI provides a very capable debugger, `pgdbg`. In its default mode, it is graphical, and it requires that an X server run on the user's local desktop machine. It may be run in command-line mode with the `-text` option; see the manpage for a full list of options. As with all debuggers, the user's program must be compiled with the `-g` flag in order to enable debugging. If you wish to use the graphical debugger and do not have or want to install an X11 server, you can also use FastX. Another option for a graphical debugger is [TotalView](/userinfo/rivanna/software/totalview).
-
-The PGI compilers are particularly strong in their support of OpenACC for programming NVIDIA GPGPUs.
+Please use the `nvhpc` module instead (see previous section).
 
 # Building on Rivanna
 For more information about building your code on Rivanna, please see our [howto](/userinfo/howtos/rivanna/compiler-howto).
