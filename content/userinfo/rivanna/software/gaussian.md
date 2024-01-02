@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-22T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "chem",
   "multi-core",
@@ -63,7 +63,7 @@ groups
 
 module load gaussian # or gaussian/grads16, see explanation in previous section
 which g16 gview
-echo $PATH
+hostname
 ```
 
 # Single-Core Slurm Script

@@ -1,7 +1,7 @@
 +++
 categories = ["userinfo"]
 type = "rivanna"
-date = "2023-12-16T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "rivanna", "software", "docker", "containers", "singularity"
 ]

@@ -3,7 +3,7 @@ title = "Anaconda on Rivanna"
 description = ""
 author = "RC Staff"
 images = [""]
-date = "2018-01-18T17:45:12-05:00"
+date = "2024-01-02T17:45:12-05:00"
 categories = ["userinfo"]
 tags = [
     "HPC",
