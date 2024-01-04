@@ -179,7 +179,7 @@ jobs, each running on a nodes of the standard queue.
 To run Matlab parallel jobs that require more cores than are available on
 one compute node (e.g. > 40), you can launch the Matlab desktop on one of the Rivanna
 login nodes. The following MATLAB setup script will create the cluster profile
-for your account on Rivanna:
+for your account on Rivanna (for versions R2022b or older):
 
 ```
 % The following set of commands are for running parallel Matlab programs
@@ -196,6 +196,10 @@ for your account on Rivanna:
 
 configCluster % the configuration created is specific to the Matlab version
 ```
+For version R2023b, use the Discover Clusters function in the drop down of the Parallel menu to ceate a cluster profile for Rivanna as described in the following link.
+
+[Discover Clusters and Use Cluster Profiles](https://www.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html)
+
 ## `parfor` example
 
 ```
