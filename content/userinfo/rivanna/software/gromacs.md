@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-22T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   'mpi',
   "chem"
@@ -40,8 +40,6 @@ module spider {{% module-firstversion %}}
 
 # Usage on GPU
 
-The non-Intel version is built with CUDA support. A Slurm script template is provided below.
+This module is built with CUDA support. A Slurm script template is provided below.
 
 {{< pull-code file="/static/scripts/gromacs_gpu.slurm" lang="no-hightlight" >}}
-
-Please do not run the Intel version on the `gpu` partition.

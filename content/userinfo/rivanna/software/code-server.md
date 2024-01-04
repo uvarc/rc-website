@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2023-09-08T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "lang",
 ]
@@ -46,7 +46,7 @@ If you are new to Rivanna, you may want to read the [Getting Started Guide](/use
 
 ## Python Setup
 
-Python users should install the `ms-python` extension and select an appropriate interpreter, unless you wish to use the system python (2.7):
+Python users should install the `ms-python` extension and select an appropriate interpreter:
 
 1. Press F1
 1. Search for “python: select interpreter”

@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "lang",
 ]
@@ -77,7 +77,7 @@ We provide the following JupyterLab extensions:
 - [plotly](https://plotly.com/python/getting-started/) is an interactive plotting library
 - [jupyterlab-dash](https://github.com/plotly/jupyterlab-dash) renders Plotly Dash apps as a separate window in JupyterLab
 - [jupyterlab-toc](https://github.com/jupyterlab/jupyterlab-toc) auto-generates a table of contents in the left area
-- [voila](https://voila.readthedocs.io/en/stable/index.html) **(available after June 15, 2021)** allows you to convert a Jupyter Notebook into an interactive dashboard
+- [voila](https://voila.readthedocs.io/en/stable/index.html) allows you to convert a Jupyter Notebook into an interactive dashboard
 
 # FAQ
 ## How to create custom JupyterLab kernels?

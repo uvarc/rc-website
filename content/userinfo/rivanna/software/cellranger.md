@@ -5,7 +5,7 @@ categories = [
   "software",
   "bio"
 ]
-date = "2022-03-09T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 draft = false
 modulename = "cellranger"
 softwarename = "Cell Ranger"
@@ -36,7 +36,3 @@ module spider {{% module-firstversion %}}
 ```
 
 {{< module-versions >}}
-
-# Important note on `mkfastq`
-
-If you are using the `mkfastq` subcommand, please do not load the `bcl2fastq2` module. Cell Ranger requires a statically linked binary of `bcl2fastq`, whereas the `bcl2fastq2` module provides a dynamically linked binary. We have prepared a separate statically linked `bcl2fastq`, which will be made available to you automatically upon loading the `cellranger` module.

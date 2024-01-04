@@ -8,7 +8,7 @@ categories = [
   "software",
   "bioinformatics"
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "lang",
   "programming",
@@ -24,7 +24,7 @@ author = "RC Staff"
 
 # Overview
 
-[Nvidia Clara Parabricks](https://docs.nvidia.com/clara/parabricks/4.1.0/index.html) is a GPU-accelerated software suite for performing secondary analysis of next generation sequencing (NGS) DNA and RNA data. It contains GPU-enabled versions of popular bioinformatics tools such as the aligners [BWA-Mem](https://www.rc.virginia.edu/userinfo/rivanna/software/bwa/) and STAR.
+[Nvidia Clara Parabricks](https://docs.nvidia.com/clara/) is a GPU-accelerated software suite for performing secondary analysis of next generation sequencing (NGS) DNA and RNA data. It contains GPU-enabled versions of popular bioinformatics tools such as the aligners [BWA-Mem](https://www.rc.virginia.edu/userinfo/rivanna/software/bwa/) and STAR.
 
 # Loading the container
 On Rivanna, Clara Parabricks is available as an Apptainer container.  To load the `clara-parabricks` container module, you can type:
@@ -55,7 +55,7 @@ The Clara Parabricks container on Rivanna includes many bioinformatics tools for
 	+ In this case, we are binding the present working directory (`$PWD`) into both `/workdir` and `/outputdir` inside the container.
 - The variable `$CONTAINERDIR` is defined by the container module - you do not need to assign it a value. This line in the script points the apptainer `run` command to the appropriate `.sif` file to call the desired container.
 - The `pbrun` command tells Clara Parabricks you want to run the subsequent tool (in this case, `fq2bam`).
-- The arguments following `pbrun fq2bam` are specific to the Clara Parabricks tool being used. See the `fq2bam` [reference](https://docs.nvidia.com/clara/parabricks/4.1.0/documentation/tooldocs/man_fq2bam.html#man-fq2bam) for more detailed information on these arguments.
+- The arguments following `pbrun fq2bam` are specific to the Clara Parabricks tool being used. See the `fq2bam` [reference](https://docs.nvidia.com/clara/parabricks/documentation/tooldocs/man_fq2bam.html) for more detailed information on these arguments.
 	+ In this case, the reference fasta file (`Homo_sapiens_assembly38.fasta`) and fastq data files (`sample_1.fq.gz` and `sample_2.fq.gz`) were downloaded ahead of time and stored in the referenced subdirectories. You should change these paths and file names as needed to point to your specific reference fasta and data files.
 - This script should be saved in a file, called (for example) `job.slurm`.  To run your job, you would submit the script by typing `sbatch job.slurm`.
 

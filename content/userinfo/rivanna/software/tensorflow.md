@@ -1,6 +1,6 @@
 +++
 type = "rivanna"
-date = "2022-07-21T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "rivanna", "software", "machine learning"
 ]
@@ -22,10 +22,7 @@ Keras is a high-level neural networks application programming interface (API), w
 The TensorFlow modules on Rivanna include common Python packages such as Matplotlib and OpenCV. See <https://hub.docker.com/r/uvarc/tensorflow> for details.
 
 # TensorFlow Jupyter Notebooks
-Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available:
-
-- 2.7.0 with Python 3.9
-- 2.10.0 with Python 3.9
+Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available.
 
 ## Accessing the JupyterLab Portal
 
@@ -129,7 +126,7 @@ Yes, you may either pull the official TensorFlow Docker image or create your own
 
 The Python/CUDA/TensorFlow versions have to be very specific. 
 
-1. For your target TF version, look up the supported Python and CUDA versions [here](https://www.tensorflow.org/install/source#gpu). In this example, we find that it is supported by:
+1. For your target TF version, look up the supported Python and CUDA versions [here](https://www.tensorflow.org/install/source#gpu). Using 1.14.0 as an example, we find that it is supported by:
 
     - Python 2.7, 3.3-3.7
     - CUDA 10.0
@@ -137,11 +134,11 @@ The Python/CUDA/TensorFlow versions have to be very specific.
 
 1. Check that the CUDA version is supported on Rivanna:
     - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html).
-    - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of July 2022, our GPU nodes support up to CUDA 11.4.
+    - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of Jan 2024, our GPU nodes support up to CUDA 12.2.
         ```
-        NVIDIA-SMI 470.103.01   Driver Version: 470.103.01   CUDA Version: 11.4
+        NVIDIA-SMI 535.104.12             Driver Version: 535.104.12   CUDA Version: 12.2  
         ```
-    - In this example 10.0 is less than 11.4, so the target version is supported.
+    - In this example 10.0 is less than 12.2, so the target version is supported.
 
 1. Check cuDNN availability on https://anaconda.org. The closest match is 7.3 in the `anaconda` channel.
 
