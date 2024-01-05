@@ -42,7 +42,7 @@ module spider {{% module-firstversion %}}
 # Interactive Sessions through Rivanna's Web Portal
 
 Interactive sessions of {{% software-name %}} can be launched through Rivanna's web portal, [Open OnDemand](/userinfo/rivanna/ood/overview).
-If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/queues/) to learn more about the partitions.
+If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/overview/#get-started) to learn more about the partitions.
 
 ## Python Setup
 

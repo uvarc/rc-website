@@ -43,7 +43,7 @@ before launching the instance. Here `x.y` is the major-minor version of R, e.g. 
 ```
 
 # Requesting an Instance
-Your instance (or copy) of RStudio will run on a Rivanna compute node. So, it will need a list of resources, such as partition, time, and allocation. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/queues/) to learn more about the partitions.
+Your instance (or copy) of RStudio will run on a Rivanna compute node. So, it will need a list of resources, such as partition, time, and allocation. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/overview/#job-queues) to learn more about the partitions.
 
 1. After connecting to RStudio through Open OnDemand, a form will appear where you can fill in the resources for RStudio.
 2. When done filling in the resources, click on the blue “Launch” button at the bottom of the form.
