@@ -41,7 +41,7 @@ author = "RC Staff"
 ## Jobs / Slurm / Queues
 
 * [Slurm Overview](/userinfo/rivanna/slurm/)
-* [Queues](/userinfo/rivanna/queues/)
+* [Queues](/userinfo/rivanna/overview/#job-queues)
 
 ## Storage and File Transfer
 

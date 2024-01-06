@@ -130,7 +130,7 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/).
+Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/rivanna/overview/#job-queues/).
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). To manage groups created before November 28th, 2023, visit the legacy [MyGroups portal](https://mygroups.virginia.edu/).
@@ -173,7 +173,7 @@ apptainer pull docker://uvarc/pytorch:1.5.1
 Please visit [this page](/userinfo/rivanna/software/containers/#container-registries-for-uva-research-computing) for more details.
 
 ## Can I run application/container X on a GPU?
-Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/)) and prevent other users from using the GPUs.
+Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](/userinfo/rivanna/overview/#job-queues)) and prevent other users from using the GPUs.
 
 [https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support](https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support)
 
