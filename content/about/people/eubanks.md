@@ -2,9 +2,9 @@
 draft = false
 date = "2023-12-27T10:25:10-05:00"
 title = "Adam Eubanks"
-job_title = "Content Creation Specialist"
+job_title = "student"
 lastname = "Eubanks"
-biolink = false
+biolink = true
 type = "people"
 description = ""
 author = "UVARC Staff"
