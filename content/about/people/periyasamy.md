@@ -2,7 +2,7 @@
 draft = false
 date = "2023-12-24T11:15:10-05:00"
 title = "Hariprasad Periyasamy"
-job_title = "Undergraduate Student Worker"
+job_title = "Student"
 lastname = "periyasamy"
 biolink = true
 email = "sfb3jj@virginia.edu"
