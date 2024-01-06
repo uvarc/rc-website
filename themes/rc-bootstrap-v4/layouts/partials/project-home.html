@@ -3,7 +3,7 @@
     <div style="width:100%;">
 
     <!-- Looks through all pages in the content folder of type project and shuffles them -->
-    {{ $projects := where .Site.Pages "Type" "project"}}
+    {{ $projects := where (where .Site.Pages "Type" "project") "Params.draft" "!=" true }}
     <!-- Initializing an empty slice, which will hold valid projects-->
     {{ $projectsWithImages := slice }}
 
