@@ -8,9 +8,7 @@ biolink = true
 type = "people"
 description = ""
 author = "UVARC Staff"
-images = [
-  "/images/profiles/profile_adam_eubanks.jpeg"
-]
+image = "/images/profiles/profile_adam_eubanks.jpeg"
 email = "ucn5xj@virginia.edu"
 subjects = [
   "video editing/recording",
