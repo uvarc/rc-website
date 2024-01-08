@@ -42,7 +42,7 @@
   <tbody>
 
     {{ range (.Pages.ByParam "lastname") }}
-        {{ if ne .Params.job_title "Student" }}
+        {{ if ne (lower .Params.job_title) "student" }}
 
         <tr>
           <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
@@ -51,7 +51,7 @@
           {{ else }}
             <th scope="row">{{ .Title }}</th>
           {{ end }}
-          <td>{{ .Params.job_title }}</td>
+          <td>{{ title .Params.job_title }}</td>
           <td>
             {{ $subjects := .Params.subjects }}
             {{ range first 6 ( sort $subjects ) }}
@@ -82,7 +82,7 @@
   <tbody>
 
     {{ range (.Pages.ByParam "lastname") }}
-        {{ if eq .Params.job_title "Student" }}
+        {{ if eq (lower .Params.job_title) "student" }}
 
         <tr>
           <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
@@ -91,7 +91,7 @@
           {{ else }}
             <th scope="row">{{ .Title }}</th>
           {{ end }}
-          <td>{{ .Params.job_title }}</td>
+          <td>{{ title .Params.job_title }}</td>
           <td>
             {{ $subjects := .Params.subjects }}
             {{ range first 6 ( sort $subjects ) }}
