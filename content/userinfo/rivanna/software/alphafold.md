@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2021-07-21T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "chem",
   "multi-core",
@@ -19,7 +19,7 @@ author = "RC Staff"
 
 # Description
 {{% module-description %}}
-<br>
+
 **Software Category:** {{% module-category %}}
 
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
@@ -97,5 +97,4 @@ Below are some Slurm script templates for version 2.3.
     Launching subprocess "/usr/bin/jackhmmer -o /dev/null -A /tmp/tmpys2ocad8/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 ./seq.fasta /share/resources/data/alphafold/mgnify/mgy_clusters.fa"
     ```
 1. You must provide a value for `--max_template_date`. If you are predicting the structure of a protein that is already in PDB and you wish to avoid using it as a template, then `max_template_date` must be set to be before the release date of the structure. If you do not need to specify a date, by default you can set today’s date. For example, if you are running the simulation on August 7th 2021, set `-–max_template_date = 2021-08-07`. See [here](https://nostrumbiodiscovery.github.io/nbd_central_docs/software/alphafold/alphafold.html).
-1. The flag `--use_gpu_relax` is only for version 2.1.2 and above.
 1. You are not required to use the `run` wrapper script. You can always provide the full apptainer command.

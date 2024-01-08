@@ -33,18 +33,20 @@ Example output:
 ```
 You will need to load all module(s) on any one of the lines below before the
 "{{< module-firstversion modulename="openmpi" >}}" module is available to load.
-   gcc/system
-   gcc/5.4.0
-   gcc/7.1.0  
+   gcc/11.4.0
 ```
-This shows that OpenMPI version {{< module-firstversion modulename="openmpi" >}} is available for the gcc system (4.8.5), 5.4.0, and 7.1.0 compilers.
+This shows that OpenMPI version {{< module-firstversion modulename="openmpi" >}} is available for gcc 11.4.0.
 
-Once a choice of compiler and MPI implementation have been made, the modules must be loaded.  First load the compiler, then the MPI.  For instance, to use OpenMPI with gcc 7.1.0, run
+Once a choice of compiler and MPI implementation have been made, the modules must be loaded.  First load the compiler, then the MPI.  For instance, to use OpenMPI with gcc 11.4.0, run
 ```
-module load gcc/7.1.0
+module load gcc/11.4.0
 module load openmpi
 ```
-To load the Intel compiler version 18.0 and its IntelMPI version, run
+To load the Intel compiler version and its IntelMPI version, run
+```
+module load intel
+```
+However, for Intel 18.0, run:
 ```
 module load intel/18.0
 module load intelmpi/18.0
