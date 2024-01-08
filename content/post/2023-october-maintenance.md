@@ -12,7 +12,8 @@ categories = ["feature"]
 
 Rivanna will be taken down for maintenance in 2024 on the following days: 
 
-<- Tuesday, February 6
+<- 
+- Tuesday, February 6
 - Monday, May 27
 - Tuesday, October 8 or 15 (reading days TBD)
 - Thursday, December 12
