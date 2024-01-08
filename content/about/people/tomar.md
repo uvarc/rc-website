@@ -23,4 +23,4 @@ As a Research Computing Student Worker, Diya has mainly focused on converting wo
 ##### Education
 
 - B.A. Computer Science
-  Ubiversity of Virginia (Expected 2026)
+  University of Virginia (Expected 2026)
