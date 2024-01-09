@@ -9,7 +9,7 @@ email = "bzf9sj@virginia.edu"
 type = "people"
 description = ""
 author = "UVARC Staff"
-image = "/imagess/profiles/profile_juwon_park.png"
+image = "/images/profiles/profile_juwon_park.png"
 subjects = ["data-analysis","statistics","r","python"]
 +++
 Juwon is a third year student at the University of Virginia pursuing a major in Applied Statistics and a minor in Data Science. She contributes to the development of a program that rebuilds R libraries for users. She has experience performing data analysis and creating data visualizations in R, Python, and SAS, and is passionate about utilizing data to make meaningful interpretations in the world.
