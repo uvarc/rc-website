@@ -82,6 +82,19 @@ oocalc filename.csv
 ```
 where `filename` is a placeholder for the specific filename. The `oocalc` command invokes the LibreOffice spreadsheet program "Calc."  If logged on to a FastX or Open OnDemand Desktop, use the menu Applications&rarr;Office to access it.
 
+## Why does it hang on log in? Why do OpenOnDemand interactive apps give conflicting package errors?
+
+It could be that your .bashrc file is loading too many or conflicting modules respectively. See our [Modules](/userinfo/rivanna/software/modules/) page on how to load modules within best practices. If your .bashrc file is getting too crowded, you should replace it with the default here:
+```
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+    fi
+
+    PS1="\s-\v\$"
+    alias vi='vim'# Source global definitions
+```
+
 - - -
 
 # Allocations
