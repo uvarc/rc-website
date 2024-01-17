@@ -38,9 +38,9 @@ module load apptainer
 apptainer build myimage.sif myimage.def
 ```
 
-For non-trivial containers we recommend that you perform the build on a compute node in the `largemem` partition, either through a batch job or an interactive job.
+For containers larger than several GBs we recommend that you perform the build on a compute node in the `largemem` partition, either through a batch job or an interactive job. Building such containers on the frontend will likely fail silently due to insufficient memory.
 
-Details on how to write a definition file will be provided in a forthcoming workshop in 2024.
+Details on how to write a definition file will be provided in [this forthcoming workshop](https://cal.lib.virginia.edu/event/11891417).
 
 # What is Inside the Container?
 
