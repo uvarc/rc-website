@@ -152,6 +152,8 @@ Rivanna is a managed resource; users must submit jobs to queues controlled by a 
 
 {{< rivanna-queue >}}
 
+Note: `gpu` charge rate = #cores + 2 x #GPUs
+
 **Standard Partition**
 
 Each job in the standard partition is restricted to a single node. Users may submit multiple jobs or job arrays, but the maximum aggregate cpu cores allowed for a single user’s running jobs is 1000.
