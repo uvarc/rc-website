@@ -159,6 +159,24 @@ module load R/3.6.3
 More about these commands can be found in [the documentation](https://lmod.readthedocs.io/en/latest/).
 
 - - -
+# Modules Best Practices
+Whenever several modules are loaded at the same time, there is the potential for modules to conflict with one another. Conflicting modules can cause code dependent on these modules to not work. Here are some ways to commit to best practices when using modules:
+
+**Start with a clean slate**
+
+`module purge` before beginning your workflow. If you need to switch what you are doing within the current session, like changing from working in Python to R, purge and load your new modules so there is no chance for conflicts.
+
+**Know what you are loading**
+
+When loading modules, it is best to specify what version you are using instead of using the default. If you commit to using the default option each time, you may miss when we our default changes and load modules that are no longer compatible with your workflow.
+
+**Advanced Usage**
+
+If you are consistently loading the same modules on startup, you might find it convenient to load your modules using your .bashrc file. This is **NOT** within best practices. Interactive apps like Jupyter Labs and RStudio automatically load some modules that they are dependent on. Your .bashrc file still executes on startup within those settings, thus leading to potential conflicts.
+
+A better way to load modules more efficiently is to use bash scripting. Writing a bash script that will load all your necessary modules with an aliased command. Whenever you need to switch to a new workflow, module purge then execute your other script. Remember to change your scripts whenever we offer different versions of the modules that you use so your scripts are not out of date.
+
+- - -
 # Modules in Job Scripts
 After the definition of job variables, and before the command line to run the program, add `module load` lines for every application that you want included in your run environment.  Although it is not required, we also recommend that you clear your module environment before your job starts executing.  For example, to run R version 3.6.3 in the module environment described above, your job script should resemble the following:
 

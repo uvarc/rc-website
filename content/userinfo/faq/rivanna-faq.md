@@ -82,6 +82,19 @@ oocalc filename.csv
 ```
 where `filename` is a placeholder for the specific filename. The `oocalc` command invokes the LibreOffice spreadsheet program "Calc."  If logged on to a FastX or Open OnDemand Desktop, use the menu Applications&rarr;Office to access it.
 
+## Why does it hang on log in? Why do OpenOnDemand interactive apps give conflicting package errors?
+
+It could be that your .bashrc file is loading too many or conflicting modules respectively. See our [Modules](/userinfo/rivanna/software/modules/) page on how to load modules within best practices. If your .bashrc file is getting too crowded, you should replace it with the default here:
+```
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+    fi
+
+    PS1="\s-\v\$"
+    alias vi='vim'# Source global definitions
+```
+
 - - -
 
 # Allocations
@@ -212,7 +225,15 @@ For more information see the [documentation](/userinfo/rivanna/slurm).
 After logging in, run the command `qlist` to see a list of queues and their availability.  Run `qlimits` for the restrictions on submitting to each queue.
 
 ## How do I choose which queue to use?
-Queues (partitions to Slurm) are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  More information about queue policy is at the Rivanna homepage.
+Queues are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  
+
+- Serial jobs requiring only 1 compute node: **standard**
+- Parallel jobs requiring up to 50 compute notes: **parallel**
+- Jobs requiring a large amount of memory (60GB+): **largemem**
+- Jobs requiring the use of GPUs: **gpu**
+- Short jobs taking up to an hour, quick code tests: **dev**
+
+More information about queue policy is at the [Rivanna homepage](/userinfo/rivanna/overview/#job-queues).
 
 ## How do I check the status of my jobs?
 From a terminal, run the command `jobq`.  From Open OnDemand, use the Job Viewer and select "Your Jobs" as the filter.
