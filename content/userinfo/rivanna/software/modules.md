@@ -168,13 +168,13 @@ Whenever several modules are loaded at the same time, there is the potential for
 
 **Know what you are loading**
 
-When loading modules, it is best to specify what version you are using instead of using the default. If you commit to using the default option each time, you may miss when we our default changes and load modules that are no longer compatible with your workflow.
+When loading modules, it is best to specify what version you are using instead of using the default. If you commit to using the default option each time, you may miss when we our default changes and load modules that are no longer compatible with your workflow. Use `module spider` to see what versions of each module we offer.
 
 **Advanced Usage**
 
 If you are consistently loading the same modules on startup, you might find it convenient to load your modules using your .bashrc file. This is **NOT** within best practices. Interactive apps like Jupyter Labs and RStudio automatically load some modules that they are dependent on. Your .bashrc file still executes on startup within those settings, thus leading to potential conflicts.
 
-A better way to load modules more efficiently is to use bash scripting. Writing a bash script that will load all your necessary modules with an aliased command. Whenever you need to switch to a new workflow, module purge then execute your other script. Remember to change your scripts whenever we offer different versions of the modules that you use so your scripts are not out of date.
+A better way to load modules efficiently is to use a bash script. Writing a bash script that will load all your necessary modules with an aliased command falls more within best practices than filling your .bashrc file. Whenever you need to switch to a new workflow, module purge then execute your other script. Remember to change your scripts whenever we offer different versions of the modules that you use so your scripts are not out of date.
 
 - - -
 # Modules in Job Scripts
