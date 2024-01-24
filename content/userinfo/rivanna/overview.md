@@ -152,14 +152,16 @@ Rivanna is a managed resource; users must submit jobs to queues controlled by a 
 
 {{< rivanna-queue >}}
 
-Remarks:
-- `standard` maximum aggregate CPU cores allowed for a single user’s running jobs is 1000.
-- `parallel` requires at least 2 nodes and 4 CPU cores.
-- `gpu` charge rate = #cores + 2 x #GPUs
+### Remarks
 
-The gpu partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). Any job submitted to the gpu partition must request at least one GPU device through `--gres=gpu`; jobs that do not utilize any GPUs are not allowed in this partition.
+- `standard` maximum *aggregate* CPU cores allowed for a single user’s running jobs is 1000.
+- `parallel` requires *at least* 2 nodes and 4 CPU cores.
+- `gpu` SU charge rate = #cores + 2 x #GPUs, which is at least 1 + 2x1 = 3.
+- Slurm's default memory unit is in MB. Different units may be specified, e.g. `--mem=100G`, where 1G = 1024M.
 
-The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offer high-performance GPUs that brings new AI and ML functionality to support parallel GPu computing and large deep-learning models. 
+The `gpu` partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). In Slurm scripts you must request at least one GPU device through `--gres=gpu`. Jobs that do not utilize any GPUs are not allowed in this partition.
+
+The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offers high-performance GPUs that brings new AI and ML functionality to support parallel GPU computing and large deep-learning models. 
 
 <a href="/userinfo/rivanna/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
