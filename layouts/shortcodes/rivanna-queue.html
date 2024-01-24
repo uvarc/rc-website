@@ -1,0 +1,18 @@
+{{- $data := getCSV "," .Site.Params.rivannaQueueUrl -}}
+{{- $header := index $data 0 }}
+<table class="table" style="font-weight:normal;">
+  <thead>
+     <tr>
+        {{- range $header -}} <th style="text-align:right" scope="col">{{ . }}</th> {{- end -}}
+     </tr>   
+  </thead>
+  <tbody>
+    {{- range $index, $line := $data -}}      
+      <tr>
+      {{- if and (ne $index 0) (not (in $line "KNL")) -}}
+        {{- range $line -}} <td style="text-align:right">{{ . }}</td> {{- end -}}
+      {{- end -}}
+      </tr>
+    {{- end -}}
+  </tbody>
+</table>

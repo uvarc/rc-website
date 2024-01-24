@@ -62,6 +62,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   # rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
   rivannaNodesUrl = "https://s3.amazonaws.com/uvarc-resources/website/nodeinfo.csv"
   # rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
+  rivannaQueueUrl = "https://s3.amazonaws.com/uvarc-resources/website/qinfo.csv"
   eventsUrl = "/static/data/events.csv"
   # eventsUrl = "https://s3.amazonaws.com/uvarc-resources/website/events.csv"
 

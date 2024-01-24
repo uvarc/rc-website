@@ -150,25 +150,18 @@ A high performance computing cluster is typically made up of at least four servi
 
 Rivanna is a managed resource; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna is Slurm.  Slurm refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
 
-{{< queues >}}
+{{< rivanna-queue >}}
 
-**Standard Partition**
+### Remarks
 
-Each job in the standard partition is restricted to a single node. Users may submit multiple jobs or job arrays, but the maximum aggregate cpu cores allowed for a single user’s running jobs is 1000.
+- `standard` maximum *aggregate* CPU cores allowed for a single user’s running jobs is 1000.
+- `parallel` requires *at least* 2 nodes and 4 CPU cores.
+- `gpu` SU charge rate = #cores + 2 x #GPUs, which is at least 1 + 2x1 = 3.
+- Slurm's default memory unit is in MB. Different units may be specified, e.g. `--mem=100G`, where 1G = 1024M.
 
-**Parallel Partition**
+The `gpu` partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). In Slurm scripts you must request at least one GPU device through `--gres=gpu`. Jobs that do not utilize any GPUs are not allowed in this partition.
 
-Users must request a minimum of two nodes and four cpu cores (and no more than 900 cpu cores) when submitting a job to the parallel partition.
-
-**Largemem Partition**
-
-The largemem partition is configured for memory-intensive jobs. Usage is limited to two nodes per job. 
-
-**GPU Partition**
-
-The gpu partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). Any job submitted to the gpu partition must request at least one GPU device through the gres option; jobs that do not utilize any GPUs are not allowed in this partition. Users may submit multiple jobs or job arrays, but the maximum aggregate number of GPU devices allowed for a single user’s running jobs is 16.
-
-The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offer high-performance GPUs that brings new AI and ML functionality to support parallel GPu computing and large deep-learning models. 
+The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offers high-performance GPUs that brings new AI and ML functionality to support parallel GPU computing and large deep-learning models. 
 
 <a href="/userinfo/rivanna/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
