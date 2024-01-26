@@ -76,6 +76,11 @@ private = true
 </div>
 </form>
 
+<div style="border: solid 1px #ccc; padding:1rem; background-color:#e8dda9; font-size:90%;" class="form-text text-muted">
+For new groups, specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation. You will need to add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
+</div>
+
+
 <script>
 function figureTotal() {
   var total = document.getElementById('fdm-total');
