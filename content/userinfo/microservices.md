@@ -79,12 +79,12 @@ Here's a talk given by Martin Fowler explaining the idea:
   <li class=lead><b>Standalone microservices or small stacks</b> - Such as interactive or data-driven web applications and APIs or scheduled task containers. Some examples:</li>
     <ul style="margin-bottom:2rem;">
       <li>Simple web container to serve Project files to the research community or as part of a publication.
-      <li>Reference APIs can handle requests based either on static reference data.
+      <li>Reference APIs can handle requests based either on static reference data or databases.
       <li>Shiny Server presents users with interactive plots to engage with your datasets.
       <li>A scheduled job to retrieve remote datasets, perform initial ETL processing, and stage them for analysis.
     </ul>
 
-  <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run such as key-value stores or reference APIs.
+  <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run such as relational databses, key-value stores or reference APIs.
 </ol>
 
 
