@@ -277,7 +277,7 @@ If it's still not clear why your job was killed, please contact us and send us t
 In order to be allowed to submit jobs, you must not be overallocated with your `/scratch` usage and you must have some remaining service units. There is a limit of 10 TB of space used per user in each `/scratch` directory and if you exceed either of those limits, you will not be able to run jobs until you clean up.  To check whether this is the case, run
 
 ```
-sfsq
+hdquota -s
 ```
 
 If you have not exceeded the limits on `/scratch`, check whether your account has allocation units remaining by running
@@ -340,10 +340,10 @@ Research Computing offers two tiers of leased storage, _Research Standard_ and _
 Run `hdquota` on a Rivanna frontend.
 
 ## How do I check my `/scratch` usage on Rivanna?
-Run the command `sfsq`:
+Run the command `hdquota -s`:
 
 ```
-sfsq
+hdquota -s
 ```
 
 If you have used up too much space, created too many files, or have "old" files you may be regarded as "overallocated". Please note that if you are overallocated, you won't be able to submit any new jobs until you clean up your `/scratch` folder.
