@@ -29,7 +29,7 @@ The Data Analytics Center is the hub for assisting researchers across Grounds wi
 	<a href="#how-to-request-support"><button class="btn btn-warning">How To Request<br>DAC Support</button></a>
   </div>
   <div class="column", style="width:33%">
-	<a href="#how-to-include-dac-support-in-your-grant-budget"><button class="btn btn-warning">Include DAC Support<br>in Your Grant Budget</button></a>
+	<a href="#include-dac-support-in-your-grant-budget"><button class="btn btn-warning">Include DAC Support<br>in Your Grant Budget</button></a>
   </div>
   <div class="column", style="width:30%">
 	<a href="#dac-analytics-resource-awards"><button class="btn btn-warning">DAC Analytics<br>Resource Awards</button></a>
