@@ -20,19 +20,19 @@ draft = false
 
 +++
 
-The Data Analytics Center (DAC) within Research Computing provides support for UVA researchers.  
+The Data Analytics Center is the hub for assisting researchers across Grounds with the management and analysis of large datasets on Research Computing platforms.  
 
 ##### Quick Links
 
 <div class="row">
-  <div class="column", style="width:33%; margin-left:15px">
+  <div class="column", style="width:29%; margin-left:15px">
 	<a href="#how-to-request-support"><button class="btn btn-warning">How To Request<br>DAC Support</button></a>
   </div>
   <div class="column", style="width:33%">
-	<a href="#dac-analytics-resource-awards"><button class="btn btn-warning">DAC Analytics<br>Resource Awards</button></a>
-  </div>
-    <div class="column", style="width:30%">
 	<a href="#how-to-include-dac-support-in-your-grant-budget"><button class="btn btn-warning">Include DAC Support<br>in Your Grant Budget</button></a>
+  </div>
+  <div class="column", style="width:30%">
+	<a href="#dac-analytics-resource-awards"><button class="btn btn-warning">DAC Analytics<br>Resource Awards</button></a>
   </div>
 </div>
 <br>
@@ -47,14 +47,14 @@ We offer comprehensive computational solutions for your research projects includ
 * machine learning and artificial intelligence support.
 
 ##### Areas of Expertise
-Our [staff](/about/people/) have a variety of experience and expertise to assist with your next research project and many are former researchers.  We have expertise in 
+Our [staff](/about/people/) have a variety of experience and expertise to assist with your next research project and many have been academic researchers.  We have expertise in 
 * artificial intelligence and machine learning,
 * bioinformatics,
 * image processing,
 * others...  
 
 ##### Past Collaborations
-A few of our past collaborations with UVA researchers are below.  To see more examples, visit our [Projects](/project/) page.
+We have years of experience with collaborations. A few of our past collaborations with UVA researchers are below.  To see more examples, visit our [Projects](/project/) page.
 
 
 <div class="row">
@@ -102,35 +102,29 @@ A few of our past collaborations with UVA researchers are below.  To see more ex
 <br>
 
 ##### How to Request Support
-The DAC provides [three tiers of support](/service/tiers) that can each be requested through a [support request](/form/support-request/?category=Data%20Analytics). 
+We provide [three tiers of support](/service/tiers) that can each be requested through a [support request](/form/support-request/?category=Data%20Analytics). 
 
-* _**<font size=4>Tier 1: Training & Technical Support: </font>**_  
-Research computing provides training for the use of our systems.  The training includes onboarding, introductory sessions, and computational workshops. Additionally, we provide technical support to researchers through our <a href="/form/support-request/?category=Data%20Analytics"> online support request form </a> and <a href="/support/#office-hours"> virtual office hours.</a> Through these formats, we are able to assist researchers with system access issues and troubleshooting computational problems on our systems. These are services that are provided at no-charge to researchers. 
+* Tier 1: Training & Technical Support 
+* Tier 2: Consultation   
+* Tier 3: Collaboration  
 
-* _**<font size=4>Tier 2: Consultation: </font>**_  
-Initial project consultation and assessment are provided at no charge. If determined 
-feasible, the DAC team member will advise the researcher of the specific support 
-activities that can be offered at no charge (capped at 20h, at ≤ 8h/week).  For 
-assistance that requires more in-depth support, the team member will advise 
-researchers to enter into a collaboration agreement.
-
-* _**<font size=4>Tier 3: Collaboration: </font>**_  
-A collaboration is an in-depth engagement in a project, resulting in a custom solution 
-within a specific domain. This involves a Statement-of-Work document that defines the 
-scope, timeline, DAC member’s level of effort and deliverables for the specific project. 
-However, these DAC activities are chargeable. PIs may budget for our personnel in their 
-grants or apply for <a href="/service/dac/awards">DAC Analytics Resource Awards </a>.
-
+<!--
 <div style="display: flex; justify-content: center">
     {{< button button-url="/form/support-request/?category=Data%20Analytics" button-class="primary" button-text="Request DAC Support" >}}
 </div>
 <br>
+-->
+
+##### Include DAC Support in Your Grant Budget   
+
+PIs may budget for DAC support in their grants.  To ensure that DAC support is included in your upcoming grant proposal, we recommend that you schedule a consultation to explore the ways in which we can assist you.  Our services and resources range from embedding one of our team members in your project and creating custom workflows to leasing storage and purchasing time on our high-performance cluster.
+
+We are here to support your research.
 
 ##### DAC Analytics Resource Awards
 
-As mentioned above, for a Tier 3 Collaboration, PIs may budget for DAC support in their grants.  However, if you already have a grant and need DAC support that you did not budget for, you can apply for a DAC Analytics Resource Award. These awards are for DAC services of up to $10,000.  A proposal is necessary to apply for this award. More information and how to apply is available [here](/service/dac/awards).
+If you already have a grant and need DAC support that you did not budget for, you can apply for a DAC Analytics Resource Award. Currently, the awards will cover up to $10,000 of DAC services.  A proposal is necessary to apply for this award. More information and how to apply is available [here](/service/dac/awards).
 
-##### How to Include DAC Support in Your Grant Budget   
-List guidelines or advice here on how to do this...give examples of how much work dollar amounts will get you...
+
 
 
