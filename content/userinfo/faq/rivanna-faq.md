@@ -17,6 +17,7 @@ type = "rivanna"
 * [Job Management](#job-management)
 * [Storage Management](#storage-management)
 * [Data Transfer](#data-transfer)
+* [Downloading Files](#downloading-files)
 * [Other Questions](#other-questions)
 
 - - -
@@ -402,7 +403,41 @@ Make sure that the ssh key is in your authorized_keys file in your .ssh director
 
 3. The next step is to clone the repository using the ssh link. If you have already cloned the repository using the http link and made a number of changes to your files, you won’t want to redo them.  Rename the directory that was created when you first cloned the repository. Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
 
+# Downloading Files
 
+## What command-line tools are available on Rivanna for downloading files from web?
+
+#### wget
+
+wget can be used to download files over HTTP,HTTPS and FTP protocols. You can use wget to download files from a single URL or multiple URLs. For example to download a file from a website you can use the following command:
+```bash
+wget https://example.com/file.zip
+```
+#### curl
+
+In addition to what mentioned for wget, curl can be used to upload files to a server as well. To download a file from a website, you can use the following command:
+```bash
+curl -O https://example.com/file.zip
+```
+
+#### axel
+
+axel not only downloads files over different protocols, but accelrates the process by using multiple connections to retrieve files from the destination. Axel is availale on Rivanna through `module load axel`.
+The syntax for using axel over 10 connections is as follows:
+```bash
+axel -n 10 http://example.com/file.zip
+```
+
+## wget, curl or axel?
+
+For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommneded to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna:
+
+
+| tool | 100MB | 1GB |
+|------|------|------|
+| wget | ~5s | 36s |
+| curl | ~5s | 35s |
+| axel | ~2s | 8s |  
 
 # Other Questions
 What if my question doesn't appear here? Take a look at our User Guide.  If your answer isn't there, contact us.
