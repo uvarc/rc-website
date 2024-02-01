@@ -1,4 +1,4 @@
-	+++
++++
 title = "Data Analytics Center"
 description = ""
 author = "RC Staff"
@@ -8,7 +8,7 @@ images = [
 categories = [
   "userinfo",
 ]
-date = "2023-10-12T20:58:21-05:00"
+date = "2024-02-01T17:57:24-05:00"
 tags = [
   "userinfo",
   "services",
@@ -42,7 +42,9 @@ We offer comprehensive computational solutions for your research projects includ
 * workflow development, 
 * software and computing platforms selection, 
 * new platform configuration,
-* coding assistance,
+* containerization,
+* coding assistance, 
+* code optimization and parallelization,
 * data collection and analysis, and
 * machine learning and artificial intelligence support.
 
@@ -50,8 +52,9 @@ We offer comprehensive computational solutions for your research projects includ
 Our [staff](/about/people/) have a variety of experience and expertise to assist with your next research project and many have been academic researchers.  We have expertise in 
 * artificial intelligence and machine learning,
 * bioinformatics,
-* image processing,
-* others...  
+* data science, 
+* image processing, and
+* parallel computing. 
 
 ##### Past Collaborations
 We have years of experience with collaborations. A few of our past collaborations with UVA researchers are below.  To see more examples, visit our [Projects](/project/) page.
@@ -123,7 +126,7 @@ We are here to support your research.
 
 ##### DAC Analytics Resource Awards
 
-If you already have a grant and need DAC support that you did not budget for, you can apply for a DAC Analytics Resource Award. Currently, the awards will cover up to $10,000 of DAC services.  A proposal is necessary to apply for this award. More information and how to apply is available [here](/service/dac/awards).
+If you have not yet budgeted for DAC support in a current funding source, you can apply for a DAC Analytics Resource Award. Currently, the awards will cover up to $10,000 of DAC services.  A proposal is necessary to apply for this award. More information and how to apply is available [here](/service/dac/awards).
 
 
 
