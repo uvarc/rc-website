@@ -1,5 +1,5 @@
 +++
-title = "DAC Analytic Resource Awards"
+title = "DAC Analytics Resource Awards"
 draft = false
 date = "2023-10-10"
 images = [""]
@@ -15,7 +15,7 @@ To facilitate access to the Data Analytics Center services and empower researche
 
 The focus of the proposal should be projects that 
 
-i) involve data-intensive research, where the data can be text, images, videos, business data, genomic data, senosr data, geospatial data, etc., and 
+i) involve data-intensive research, where the data can be text, images, videos, business data, genomic data, sensor data, geospatial data, etc., and 
 
 ii) demonstrate potential for future, external funding.
 
