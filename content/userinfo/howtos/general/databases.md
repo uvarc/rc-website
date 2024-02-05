@@ -249,9 +249,9 @@ We are frequently asked by researchers how to incorporate databases into their w
   </div>
 </div>
 
-# Learn More
+<br>
 
-{{% button button-text="redis" button-class="danger" button-url="/userinfo/howtos/general/redis/" %}}
+**Note:** Research Computing may be able to provide support for your database needs. Please schedule a consulation request on our website by filling out [this form](https://www.rc.virginia.edu/form/support-request/?category=Consultation). 
 
 
 # Other Resources

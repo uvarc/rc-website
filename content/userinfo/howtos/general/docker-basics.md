@@ -9,6 +9,10 @@ description = "Docker - The Basics"
 author = "RC Staff"
 +++
 
+{{% callout %}}
+Note that Docker requires `sudo` privilege and therefore it is not supported on Rivanna. To use a Docker image you will need to convert it into Apptainer. More information can be found [here](https://www.rc.virginia.edu/userinfo/howtos/rivanna/docker-images-on-rivanna/) on our website.
+{{% /callout %}}
+
 # What Is Docker?
 
 "Docker is a set of platform-as-a-service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating-system kernel and are thus more lightweight than virtual machines. The service has both free and premium tiers. The software that hosts..."
