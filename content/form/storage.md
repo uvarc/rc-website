@@ -61,7 +61,7 @@ private = true
       </div>
     </div>
     <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
-      <p>None of these storage options offer data backups or replication.</p>
+      <p>None of these storage options offer data backups or replication. Research Project storage provides week long snapshots of data. Snapshots are not available on Research Standard storage</p>
     </div>
 
   </div>
