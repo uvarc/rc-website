@@ -20,7 +20,7 @@ Please refer to the following pages for further information.
 
 - [Singularity](/userinfo/rivanna/software/singularity) (before Dec 18, 2023)
 - [Apptainer](/userinfo/rivanna/software/apptainer) (after Dec 18, 2023)
-- [Short course: Software Containers for HPC](https://learning.rc.virginia.edu/courses/containters-for-hpc/)
+- [Short course: Software Containers for HPC](https://learning.rc.virginia.edu/courses/containers-for-hpc/)
 
 # Container Registries for UVA Research Computing
 
