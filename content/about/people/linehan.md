@@ -2,7 +2,7 @@
 draft = false
 date = "2024-01-25T12:55:18-05:00"
 title = "Kathryn Linehan"
-job_title = "Research Computing Scientist"
+job_title = "Computational Research Scientist"
 lastname = "linehan"
 biolink = true
 email = "kjl5t@virginia.edu"
