@@ -1,0 +1,5 @@
+{{ $height := default "500px" (.Get "height") }}
+
+<div style="height:{{ .Get "height" }}; overflow-y: auto;" >
+    {{ .Inner }}
+</div>
