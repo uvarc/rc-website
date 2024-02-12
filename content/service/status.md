@@ -32,7 +32,7 @@ Data migration from the previous Research Project storage filesystem to the new 
 - New Project storage is operating without any known issues.
 - Rivanna and RC’s other storage services, Scratch and Research Standard, also continue to operate normally.
 
-**2024-02-10:** A total of X PB out Y PB has been migrated from old to new Project storage (zz %). This reflects an estimated NN % of actively used data.
+**2024-02-10:** A total of X PB out of Y PB has been migrated from old to new Project storage (zz %). This reflects an estimated NN % of actively used data.
 {{% /callout %}}
 
 ## FAQ
@@ -57,13 +57,13 @@ All files will be migrated eventually. Questions about the data migration proces
 {{% /accordion-item %}}
 
 {{% accordion-item title="Some of my Project storage files disappeared. Where did they go?" id="three" %}}
-Up until Feb 26, users connect to the new filesystem. Files on the old Project storage filesystem that haven not been copied over are presented as zero-length stub files on the new system. These stub files get transferred automatically on-demand as they are accessed for the first time. 
+Up until Feb 26, when users connect to the New Project folders, their files on the Old Project storage that haven not yet been copied over appear as zero-length stub files on the new system. These stub files get transferred automatically on-demand as they are accessed for the first time. 
 
-On Feb 26. these empty stub file will be deleted on the new Project storage filesystem.  **The original files still exist and are secure on the old filesystem.** See "How do I find out what files are on old Project storage GPFS?"
+On Feb 26. these empty stub file will be deleted on the New Project storage.  **The original files still exist and are secure on the Old Project system.** See "How do I find out what files are on Old Project storage GPFS?"
 {{% /accordion-item %}}
 
-{{% accordion-item title="How do I find out what files are on old Project storage GPFS?"  id="four" %}}
-On Feb 26, the old Project storage filesystem will be mounted as /oldproject on the Rivanna frontends in read-only mode. You can traverse directories and run ls commands in an ssh terminal session or Open OnDemand, [see here](/userinfo/rivanna/ood/overview/#command-line-interface-shell).  
+{{% accordion-item title="How do I find out what files are on Old Project storage GPFS?"  id="four" %}}
+On Feb 26, the Old Project storage filesystem will be mounted as /oldproject on the Rivanna frontends in read-only mode. You can go through folders and run ls commands in an ssh terminal session or you can use Open OnDemand, [see here](/userinfo/rivanna/ood/overview/#command-line-interface-shell).  
 {{% /accordion-item %}}
 
 {{% accordion-item title="How do I get an estimate of when my files will be transferred?"  id="five" %}}
@@ -85,15 +85,15 @@ On February 26, RC engineers will disconnect the Active File Management (AFM) te
 {{% scrollable height="500px" %}}
 
 - **2022-02-09, 06:22 PM**
-SMB/NFS exports have been enabled for new Project storage. Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance. 
+SMB/NFS exports have been enabled for new Project storage. Data migration from Old Project storage to New Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create New Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance. 
 
 - **2022-02-08, 08:05 AM**
-Rivanna is back in service following maintenance. Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance.
+Rivanna is back in service following maintenance. Data migration from Old Project storage to New Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance.
 
 - **2022-02-07, 06:00 AM**
 Rivanna, Research Project storage, and Research Standard storage will be down for maintenance on Tuesday, February 6 beginning at 6 a.m. All systems are expected to return to service by 6 a.m. on Wednesday, February 7.
 
 - **2022-02-05, 07:55 AM**
-Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is currently significantly slower than normal. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as feasible. Directory listings and traversals in these new top level directories is expected to show better performance. NFS and SMB mounts for new Project storage will be enabled on February 6. New Project storage will be made available through the Open OnDemand file browser at the same time.
+Data migration from Old Project storage to New Project storage is ongoing. First-time access of old files and old directory listings is currently significantly slower than normal. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as feasible. Directory listings and traversals in these new top level directories is expected to show better performance. NFS and SMB mounts for new Project storage will be enabled on February 6. New Project storage will be made available through the Open OnDemand file browser at the same time.
 
 {{% /scrollable %}}
