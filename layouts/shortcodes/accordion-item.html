@@ -9,7 +9,7 @@
 	<div id="{{ printf "collapse%s" (.Get "id" ) }}" class="collapse" aria-labelledby="{{ printf "heading%s" (.Get "id" ) }}" data-parent="#accordion">
 		<div class="card-body">
 			<p>
-				{{- .Inner | markdownify -}}
+				{{- .Inner -}}
 			</p>
 		</div>
 	</div>

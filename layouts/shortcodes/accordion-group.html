@@ -1,3 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card-body a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+.card-body a:visited {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+.card-body a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.card-body a:active {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
 <div id="accordion">
-    {{ .Inner | markdownify}}
+    {{ .Inner }}
 </div>
+</body>
+</html>
