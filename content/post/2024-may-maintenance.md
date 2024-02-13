@@ -25,6 +25,7 @@ All systems are expected to return to service by **6 a.m. on May 29.**
 | Module | Removed version | Replacement |
 |---|---|---|
 |gatk     |4.2.3.0 | 4.3.0.0 |
+|gurobi   |10.0.1  | 11.0.0 |
 |picard   |2.23.4  | 2.27.5 |
 
 2. **Upgrades**:
