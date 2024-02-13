@@ -93,7 +93,7 @@ aliases = [ "/storage" ]
   </tbody>
 </table>
 
-<sup>1</sup>Snapshot files are uneditable backup copies of all the files and folders in your account, taken at a daily interval. The system keeps these snapshots for a week. Snapshot files are deleted sequentially after a week has passed. This saving method is useful for human error prevention as any accidentally deleted files may be recovered. Look to our FAQ page to learn how to access your snapshots.
+<sup>1</sup>Snapshot files are uneditable backup copies of all the files and folders in your account, taken at a daily interval. The system keeps these snapshots for a week. Snapshot files are deleted sequentially after a week has passed. This saving method is useful for human error prevention as any accidentally deleted files may be recovered. Look to our [FAQ](/userinfo/faq/storage-faq/) page to learn how to access your snapshots.
 
 <sup>2</sup>Replication is a data management process that stores copies of data fragments over a distributed cluster or database. By having replicated data across each node or server on a given database, data can be accessed more reliably than data that only resides on a single server. This saving method is useful for disaster scenarios where if data is stored on multiple disks, and one disk fails, the data is still accessible.
 
