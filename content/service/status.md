@@ -32,7 +32,7 @@ Data migration from the previous Research Project storage filesystem to the new 
 - New Project storage is operating without any known issues.
 - Rivanna and RC’s other storage services, Scratch and Research Standard, also continue to operate normally.
 
-**2024-02-10:** A total of X PB out of Y PB has been migrated from old to new Project storage (zz %). This reflects an estimated NN % of actively used data.
+**2024-02-10:** A total of 0.5 PB out of 1.5 PB have been copied from old to new Project storage (33%).
 {{% /callout %}}
 
 ## FAQ
@@ -43,6 +43,9 @@ Data migration from the previous Research Project storage filesystem to the new 
 No. We are prioritizing transfer of files that you actively need for your research. You may reach out to us to provide a specific list of your high priority, essential directories and files. 
 
 **The more selective this list, the better we can help you with this transition.**
+
+Once the transfer process has been stabilized, engineers will begin synchronizing any remaining files that users did not explicitly request to be moved.
+
 
 See "How can I get help with migration of my data?"
 
@@ -63,10 +66,14 @@ On Feb 26 these empty stub file will be deleted on the New Project storage.  **T
 {{% /accordion-item %}}
 
 {{% accordion-item title="How do I find out what files are on Old Project storage GPFS?"  id="four" %}}
-On Feb 26, the Old Project storage filesystem will be mounted as /oldproject on the Rivanna frontends in read-only mode. You can go through folders and run ls commands in an <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">ssh terminal session</a> or you can use Open OnDemand, <a href="/userinfo/rivanna/ood/overview/#command-line-interface-shell" target="_blank">see here</a>.  
+On Feb 26, we will make a list available of your directories and files that are still on Old Project storage and have not been migrated yet. You will not be able to connect to Old Project storage. Old Project storage will only be accessible for RC staff for managed file transfer operations. This ensures that progress of file transfers will not be negatively impacted by unnecessary file explorations. **The original files still exist and are secure on the Old Project system.**
 {{% /accordion-item %}}
 
-{{% accordion-item title="How do I get an estimate of when my files will be transferred?"  id="five" %}}
+{{% accordion-item title="Where on New Project storage are you copying my missing files?"  id="five" %}}
+Your missing files will be copied from your Old Project storage to same-named directories on your New Project share. **If a newer file with the same name is detected in the New Project destination directory, the copy process will skip over that file to leave the newer copy unaltered.**
+{{% /accordion-item %}}
+
+{{% accordion-item title="How do I get an estimate of when my files will be transferred?"  id="six" %}}
 While the new Project storage provides vastly improved performance, the overall transfer from old to new Project storage is limited by the degraded performance of the old filesystem. 
 
 We anticipate that actively used data that are needed for current ongoing research will be transferred by mm/dd. Migration of all Project storage data is expected to conclude by mm/dd.  We will post weekly progress of data migration on this page.
