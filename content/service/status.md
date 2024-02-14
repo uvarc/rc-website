@@ -46,17 +46,19 @@ Research Computing will reach out to all known users of this storage system with
 
 ## What to expect on February 26
 
-Currently, your `/project` folder contains a mix of files, including including those that have already been transferred and those that still reside physically on the old Project storage system. Files that are still on the old system present as empty stub files in the new system. Because the old and new systems are still connected, if you try to access a file that is still on the old system, the empty stub file is replaced by the original file as it is transferred on-demand to the new system.  
+Before February 26, your `/project` folder contains a mix of files, including those that have already been transferred and those that still reside physically on the old Project storage system. Files that are still on the old system present as empty stub files in the new system. Because the old and new systems are still connected, if you try to access a file that is still on the old system, the empty stub file is replaced by the original file as it is transferred on-demand to the new system.  
 
-On Feb 26, the old and new Project storage systems will be disconnected. Researchers will not have any direct access to old Project storage. The current `/project` folder on the new storage system should perform optimally without the tether to the old storage system. We will begin deleting the empty stub files on `/project`. These are empty files not needed for the new migration process. **The original files are still intact and secure on the old system.** 
+On February 26, the old and new Project storage systems will be disconnected. Researchers will not have any direct access to old Project storage. The current `/project` folder on the new storage system should perform optimally without the tether to the old storage system. We will begin deleting the empty stub files on `/project`. These are empty files not needed for the new migration process. **The original files are still intact and secure on the old system.** 
 
 A new filesystem `/stagedproject` will be mounted read-only on <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a> and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). This folder will not be available on compute nodes. This folder will be used as target to stage your data as it is being transferred from the old system to the new system. Setting up a new destination for the not yet transferred files prevents potential interference with your active work in `/project`. 
 
-**Your Project storage folders on Feb 26** (“MY_SHARE” refers to your personal project name):
+**Your Project storage folders on February 26:**
 
 * `/project/MY_SHARE`: This is located on the new storage system. It contains files that have already been transferred since Fall 2023 as well as newly-created files. 
 
 * `/stagedproject/MY_SHARE`: This is a new share set up on the new storage system. It will be empty initially. Files will begin to appear here as they are transferred, starting Feb 26.  
+
+    <small>“MY_SHARE” refers to your personal project name</small>
 
 **Note: The `/stagedproject/MY_SHARE` folder will only be created for you if you have folders/files on the old storage system that still need to be migrated.** 
 
@@ -154,22 +156,22 @@ All files will be transferred eventually. Questions about the data migration pro
 
 ## Technical Details
 
-On February 26, RC engineers will disconnect the Active File Management (AFM) tether, remount the old Project storage system (GPFS) separately, and purge all "stub files" (files that are staged on new storage system and appear in a directory listing, but have not yet been transferred from Old Project). This will allow a clear differentiation between transferred and un-transferred data. Data already transferred to the New Project storage are expected to perform optimally without any issues, while un-transferred data on the old system will need to be manually transferred by RC staff. Staff will continue to respond to data transfer requests on a first come, first serve basis. Once the transfer process has been stabilized, engineers will begin synchronizing any remaining files that users did not explicitly request to be moved.
+On February 26, RC engineers will disconnect the Active File Management (AFM) tether, remount the old Project storage system (GPFS) separately, and purge all "stub files" (files that are staged on new storage system and appear in a directory listing, but have not yet been transferred from old Project). This will allow a clear differentiation between transferred and un-transferred data. Data already transferred to the new Project storage system are expected to perform optimally without any issues, while un-transferred data on the old system will need to be manually transferred by RC staff. Staff will continue to respond to data transfer requests on a first come, first serve basis. Once the transfer process has been stabilized, engineers will begin transferring any remaining files that users did not explicitly request to be moved.
 
 # Incident Status Log
 
 {{% scrollable height="500px" %}}
 
 - **2022-02-09, 06:22 PM**
-SMB/NFS exports have been enabled for new Project storage. Data migration from Old Project storage to New Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create New Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance. 
+SMB/NFS exports have been enabled for new Project storage. Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance. 
 
 - **2022-02-08, 08:05 AM**
-Rivanna is back in service following maintenance. Data migration from Old Project storage to New Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance.
+Rivanna is back in service following maintenance. Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance.
 
 - **2022-02-07, 06:00 AM**
 Rivanna, Research Project storage, and Research Standard storage will be down for maintenance on Tuesday, February 6 beginning at 6 a.m. All systems are expected to return to service by 6 a.m. on Wednesday, February 7.
 
 - **2022-02-05, 07:55 AM**
-Data migration from Old Project storage to New Project storage is ongoing. First-time access of old files and old directory listings is currently significantly slower than normal. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as feasible. Directory listings and traversals in these new top level directories is expected to show better performance. NFS and SMB mounts for new Project storage will be enabled on February 6. New Project storage will be made available through the Open OnDemand file browser at the same time.
+Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is currently significantly slower than normal. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as feasible. Directory listings and traversals in these new top level directories is expected to show better performance. NFS and SMB mounts for new Project storage will be enabled on February 6. new Project storage will be made available through the Open OnDemand file browser at the same time.
 
 {{% /scrollable %}}
