@@ -8,7 +8,7 @@ images = [
 categories = [
   "service", "status"
 ]
-date = "2022-02-13T06:27:21-05:00"
+date = "2022-02-14T06:27:21-05:00"
 tags = [
   "service",
   "status",
@@ -38,7 +38,19 @@ Data migration from the previous Research Project storage filesystem to the new 
 
 ## What to expect on Feb 26
 
+Currently, your `/project` folder contains a mix of files that have already been migrated and so called "stub" files. Stub files are visible on the new storage system but have not been transferred yet. They still reside physically on Old Project. 
 
+On Feb 26, the old and new Project storage systems will be disconnected. Researchers will not have any direct access to old Project storage. Current `/project` on the new storage system should perform optimally without the tether to the old storage system. We will begin deleting the empty stub files on `/project`. These are empty files not needed for the new migration process. **The original files are still secure on the old system.** 
+
+A new filesystem `/stagedproject` will be mounted read-only on <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a> and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). It will not be available on compute nodes. This folder will be used as target to stage your data as it is being migrated from Old Project storage to the new storage system. Setting up a new destination for the to-be-migrated files prevents potential conflict with interfering with your active work in `/project`. 
+
+**Your Project storage folders on Feb 26:** 
+
+* `/project/MY_SHARE`: This is located on the new storage system. It contains files that have already been migrated since Fall 2023. 
+
+* `/stagedproject_MY_SHARE`: This is a new share set up on the new storage system. It will be empty initially. Files will begin to appear here as they are migrated, starting Feb 26.  
+
+**Note: The `/stagedproject/MY_SHARE` folder will only be created for you if you have folders/files on the old storage system that still need to be migrated.** 
 
 ## FAQ
 
