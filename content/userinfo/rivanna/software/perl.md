@@ -45,6 +45,16 @@ To load the {{< module-firstversion >}} module, run this command:
 module load {{< module-firstversion >}}
 ```
 
+# CPAN Modules
+
+Users can install their own Perl modules from CPAN via the `cpanm` command. For instance:
+
+```
+cpanm Test::More
+```
+
+Run `cpanm --help` for further help.
+
 # Example Slurm Script
 ```
 #!/bin/bash
