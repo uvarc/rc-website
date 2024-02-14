@@ -36,9 +36,21 @@ Data migration from the previous Research Project storage filesystem to the new 
 **2024-02-14:** A total of 0.5 PB out of 1.5 PB have been copied from old to new Project storage (33%).
 {{% /callout %}}
 
+## What to expect on Feb 26
+
+
+
 ## FAQ
 
 {{% accordion-group title="Group" %}}
+
+{{% accordion-item title="How should I prepare for Feb 26?" id="ten" %}}
+If you have already reached out to us to prioritize transfer of a specific subset of your folders or files, no further action is required. These files will be copied to same-named folder in your active `/project` share on the New Project storage system.  
+
+If there are additional folders and files that you urgently need for your active work, please reach out to RC with a specific list of those folders/files and we will add them to the file transfer queue. See here *"How can I get help with migration of my data?"*. 
+
+Questions about the data migration process should be directed to our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>. 
+{{% /accordion-item %}}
 
 {{% accordion-item title="Some of my Project storage files disappeared. Where did they go?" id="one" %}}
 Up until Feb 26, when users connect to the New Project folders, their files on the Old Project storage that haven not yet been copied over appear as empty stub files on the new system. When accessed for the first time, an empty stub file gets replaced by the original file that is being transferred on-demand from the Old Project to New Project storage.  
@@ -49,9 +61,9 @@ See *"How do I find out what files are on Old Project storage?"*
 {{% /accordion-item %}}
 
 {{% accordion-item title="Where are you copying my missing files?"  id="two" %}}
-Starting on Feb 26, your missing files will be copied from your Old Project storage to same-named directories in `/stagedproject`. Your folder in `/stagedproject` will be set up empty on Feb 26. This folder will gradually fill up over time with your files. 
+**Currently and til Feb 26**, files that you have requested to be transferred will be copied to same-named folder in your active `/project` share on the New Project storage system.  
 
-Setting up a new destination for the to-be-migrated files prevents potential interference with your active work in `/project`.
+**Starting on Feb 26**, your missing files will be copied from your Old Project storage to same-named directories in `/stagedproject`. Your folder in `/stagedproject` will be set up empty on Feb 26. This folder will gradually fill up over time with your files. Setting up a new destination for the to-be-migrated files prevents potential interference with your active work in `/project`.
 {{% /accordion-item %}}
 
 {{% accordion-item title="Why can I not access the Old Project storage directly to copy files myself?" id="three" %}}
@@ -94,12 +106,13 @@ See *"How can I get help with migration of my data?"*
 {{% accordion-item title="How do I get an estimate of when my files will be transferred?"  id="seven" %}}
 While the new Project storage provides vastly improved performance, the overall transfer from old to new Project storage is limited by the degraded performance of the old storage system. 
 
-We anticipate that the majority of the actively used data needed for current ongoing research will be transferred by the end of [month]. You can facilitate this process by providing us a narrowed down list of files that you need for your research over the next few months. This will allow us to deprioritize less urgently needed files. 
+We anticipate that the majority of the actively used data needed for current ongoing research will be transferred by the end of [month]. **You can facilitate this process by providing us a narrowed down list of files that you need for your research over the next few months. This will allow us to deprioritize less urgently needed files.** 
 
 See *"How can I get help with migration of my data?"*
 
 Eventually all data will be migrated but this process is expected to take several months to complete. We will post weekly progress of data migration on this page. 
-      
+
+We will notify the PI of the storage allocation when all their folders have been copied over. **We will not purge any files on Old Project storage til the PI had an opportunity to verify that all their files have been migrated to the New Project storage system.**
 {{% /accordion-item %}}
 
 {{% accordion-item title="Where can I access the new /stagedproject folder?"  id="eight" %}}
@@ -109,7 +122,7 @@ On Feb 26, a new folder `/stagedproject` will become available **read-only** on 
 {{% accordion-item title="How can I work with the files that have been transferred into my /stagedproject folder?"  id="nine" %}}
 On Feb 26, your folder in `/stagedproject` is set up as **read-only** on the <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a> and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). It is *not* available on any  compute nodes. 
 
-![](/images/service/StorageOverview.png)
+<img src="/images/service/StorageOverview.png" alt="Project storage" width="100%"/>
 <small>*AFM: Active File Management</small>
 
 For compute jobs, you should copy files from `/stagedproject` into your `/project` or `/scratch` folder. Then launch compute jobs reading and writing files using the `/project` or `/scratch` folders as you usually do. You could copy files to your `/home` folder as well, but be aware of the limited 50GB per user quota which makes this impractical.
