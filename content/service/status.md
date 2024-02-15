@@ -79,7 +79,7 @@ Until February 26, all files are shown in the new Project storage system, includ
 
 On February 26, the empty stub files will be deleted from the new system as they are not needed for the new migration process. This is a gradual process that may take a few weeks to complete, so you may see different files, depending on when you access the new system. **However, the original files behind the stub files still exist and are secure on the Old Project system.** 
 
-See *"How do I find out what files are on Old Project storage?"*
+See *"How do I find out what files are on the old Project storage system?"*
 {{% /accordion-item %}}
 
 {{% accordion-item title="Where are you copying my files?" id="two" %}}
@@ -142,6 +142,18 @@ See *“Can I pick which of my files are transferred first?"* for details.
 All data will be migrated eventually, but this process is expected to take several months to complete. We will post weekly progress of data migration on this page. 
 
 We will notify the PI of the storage allocation when all their folders have been copied over. **We will not purge any files on old Project storage system until the PI has had an opportunity to verify that their files have been migrated to the new Project storage system.** 
+{{% /accordion-item %}}
+
+{{% accordion-item title="Why is the transfer of folders to the new Project storage system taking longer than expected?"  id="thirteen" %}}
+The old Project storage hardware (GPFS) is in a degraded state. Due to this state, transferring data from the system is unusually slow even in otherwise ideal conditions. With a wide range of researchers and research workflows attempting to simultaneously access the system, the system becomes overloaded resulting in the “IO Error” and similar errors that researchers have been experiencing. As the system gets overloaded the transfer rates drop even further.  
+
+By having RC manage the data transfer from the old to the new system we will be able to limit the load on the system and keep it closer to ideal conditions in order to maximize the transfer rate going forward. 
+{{% /accordion-item %}}
+
+{{% accordion-item title="What caused this issue with the old Project storage file system?"  id="fourteen" %}}
+The support contracts for the old Project storage hardware (GPFS) ended 2 years ago. While a support renewal was theoretically possible, the cost of renewal was not possible within RC’s budget. The quoted renewal costs were particularly high due to the hardware vendor viewing the system as past its end-of-life.  
+
+With an increase in RC’s budget this fiscal year, RC was able to invest in replacement hardware, but support renewal remained prohibitively expensive. Unfortunately, a form of filesystem corruption occurred in the old hardware before the new hardware could be brought online. This corruption has left the system with "phantom hard drives", drives that do not actually exist, but the filesystem believes exist. Parallel filesystems like GPFS carefully balance data across a wide array of hard drives to maximize performance and protect data against lost as hard drives fail. The presence of these phantom drives has caused the filesystem to have many internal errors as it attempts to balance data. These errors are significantly worse when new data is written to the system, but even in read-only mode they hamper the normal operation of the system. Actions to forcibly remove the drive records from the system run the risk of data loss or further destabilization of the system. 
 {{% /accordion-item %}}
 
 {{% accordion-item title="How can I get help with the data migration process?"  id="five" %}}
