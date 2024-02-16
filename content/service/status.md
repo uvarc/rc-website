@@ -174,16 +174,16 @@ On February 26, RC engineers will disconnect the Active File Management (AFM) te
 
 {{% scrollable height="500px" %}}
 
-- **2022-02-09, 06:22 PM**
+- **2024-02-09, 06:22 PM**
 SMB/NFS exports have been enabled for new Project storage. Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance. 
 
-- **2022-02-08, 08:05 AM**
+- **2024-02-08, 08:05 AM**
 Rivanna is back in service following maintenance. Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance.
 
-- **2022-02-07, 06:00 AM**
+- **2024-02-07, 06:00 AM**
 Rivanna, Research Project storage, and Research Standard storage will be down for maintenance on Tuesday, February 6 beginning at 6 a.m. All systems are expected to return to service by 6 a.m. on Wednesday, February 7.
 
-- **2022-02-05, 07:55 AM**
+- **2024-02-05, 07:55 AM**
 Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is currently significantly slower than normal. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as feasible. Directory listings and traversals in these new top level directories is expected to show better performance. NFS and SMB mounts for new Project storage will be enabled on February 6. new Project storage will be made available through the Open OnDemand file browser at the same time.
 
 {{% /scrollable %}}
