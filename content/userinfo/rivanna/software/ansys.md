@@ -40,14 +40,17 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 # Licensing
-The current general UVA license can be used for research but is limited in the size of the models it can use, and it cannot use multinode (MPI) mode.  Users who have their own research licenses with greater capabilities must specify that license.  To use such a research license on Rivanna, you must create file called `ansyslmd.ini` with the format
+The current general UVA license can be used for research but is limited in the size of the models it can use, and it cannot use multinode (MPI) mode.  Users who have their own research licenses with greater capabilities must specify that license.  To use such a research license on Rivanna, before running ANSYS set the following environment variable
 ```no-highlight
-SERVER=1055@myhost.mydept.virginia.edu
-ANSYSLI_SERVERS=2325@myhost.mydept.virginia.edu
+export ANSYSLMD_LICENSE_FILE=1055@myhost.mydept.virginia.edu
 ```
-You must obtain the full names of the hosts from your group's license administrator.  The numbers in the above lines are the standard ANYSYS ports, but it is possible they may differ for some license servers; consult your license administrator for specific values. 
+You may also need
+```no-highlight
+export ANSYSLI_SERVERS=2325@myhost.mydept.virginia.edu
+```
+You must obtain the full names of the hosts and the port numbers from your group's license administrator.  The numbers in the above lines are the standard ANYSYS ports, but it is possible they may differ for some license servers; consult your license administrator for specific values. The ANSYSLI_SERVERS environment variable is generally not necessary if the default port is used, but ANSYSLMD_LICENSE_FILE will always be required.
 
-This file should be placed into the `/home/$USER/.ansys` folder.  Please note the period in front of `ansys`; that is required.  It will override the general, more restricted, license.
+These environment variables must be set in each shell and in every Slurm script that invokes ANSYS.
 
 # Using ANSYS Workbench
 If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/config/kwinrc` file and add the following line:
