@@ -224,7 +224,7 @@ On February 26, RC engineers will disconnect the Active File Management (AFM) te
 
 {{% scrollable height="500px" %}}
 
-- **2024-02-19, 01:22 PM**
+- **2024-02-19, 02:00 PM**
 Project storage is currently unavailable on Open OnDemand. On 26 February at 9:00 am EST, RC engineers will switch to an alternate data transfer mechanism between the legacy Research Project Storage filesystem and the new Project Storage system. As a result, users will no longer have direct access to the legacy system. Files will be staged to an intermediate location for users to copy. To facilitate the migration process, please indicate which directories or files should be prioritized for transfer using our data transfer request form. Additional information about the file transfer efforts and Project Storage system status is available on our Data Migration status page. 
 
 - **2024-02-16, 01:22 PM**
