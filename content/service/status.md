@@ -37,12 +37,51 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 - Though the new Project storage system is operating with expected performance, the transfer of all data from the old storage system will take several months. The severe performance degradation of the old storage system will remain a bottleneck regardless of the change in data transfer method.
 - Rivanna and RC’s other storage services, Scratch and Research Standard, continue to operate normally.
 
-**2024-02-14:** A total of 1.5 PB out of 4.3 PB have been copied from old to new Project storage (35%).
+**2024-02-19:** A total of 1.7 PB out of 4.3 PB have been copied from old to new Project storage (40%).
 {{% /callout %}}
 
 ## Incident Response 
 
 Research Computing will reach out to all known users of this storage system with instructions for accessing data before and after February 26, and for assistance prioritizing files for transfer.  
+
+{{% accordion-group title="Group" %}}
+
+{{% accordion-item title="Email communications" id="one" %}}
+
+**2024-02-16**
+
+Dear Colleagues,  
+ 
+As previously shared, efforts are still underway to transfer data in the Project Storage file system from the legacy GPFS hardware to the new, upgraded hardware. To date, we have successfully transferred about 35% of Project Storage files. These files were transferred because they were either needed for a scheduled research project, or they had been recently accessed. However, now we are finding that the Active File Management (AFM) connection being used to transfer files is causing too great of a system load for the legacy hardware, as the old system continues to degrade. This is causing additional disruptions and file access issues. Although there are issues with access, rest assured that **all files remain safe and secure**, and will be transferred to the new system by fall.  
+ 
+**What we are doing now**  
+**On Monday, 2/26, we will move from the AFM connection to a new, manual process to transfer the remaining data.** As part of this manual process, we have launched a high priority transfer request for files actively needed for your research.  As part of this manual process, we are prioritizing files identified as actively needed for current research projects. If you need to access files on the legacy system for active project work, **please indicate which directories or files should be prioritized for transfer using our data transfer request form.** You can also use this form to request a list of your files that remain on the old system.  Please note that we cannot guarantee a timeline for transferring prioritized files due to the uncertainty of the old hardware. Prioritized file transfer may still take weeks to months to complete. 
+ 
+If you have already reached out to prioritize file transfer or do not anticipate immediate use of these files, no further action is required.  
+ 
+**What you may experience now until the transfer is complete** 
+Today, when you log in to Project Storage, you will see your complete file list in your directory. Although the file list is complete, it is possible that some files in your directory have already been migrated to the new hardware and are readily available for use, while others remain on the old cluster. Accessing files that remain on the old cluster will likely result in excessively slow access speeds or a “file not found” error. This “file not found” error only indicates that your file has not yet been transferred.   
+ 
+On 2/26, we will move to the new, manual file transfer process. Because this process is manual and no longer based on the file connection method, file names of files not yet transferred to the new system will be removed from your /Project storage directory. These file names will automatically repopulate in your directory under a new /stagedproject folder as they are transferred to the new hardware.   
+ 
+**Additional information about the file transfer efforts and system status is available on our new Data Migration status page (this page).** We will provide ongoing updates at this location.
+ 
+I understand the impact these disruptions may have had on your work, and I share in your frustrations. Our mission is to provide excellent service and support for a seamless research computing experience.   
+ 
+We are committed to working diligently until data transfer is complete and the legacy system is decommissioned. Our help desk and technical support teams will continue to be available to you to address any concerns.  
+ 
+Thank you for your continued patience and partnership.  
+ 
+With regards,  
+
+Joshua Baller, PhD<br>
+Associate Vice President for Research Computing<br>
+Information Technology Services<br>
+University of Virginia
+
+{{% /accordion-item %}}
+
+{{% /accordion-group %}}
 
 ## What to expect on February 26
 
@@ -184,6 +223,12 @@ On February 26, RC engineers will disconnect the Active File Management (AFM) te
 # Incident Status Log
 
 {{% scrollable height="500px" %}}
+
+- **2024-02-19, 01:22 PM**
+Project storage is currently unavailable on Open OnDemand. On 26 February at 9:00 am EST, RC engineers will switch to an alternate data transfer mechanism between the legacy Research Project Storage filesystem and the new Project Storage system. As a result, users will no longer have direct access to the legacy system. Files will be staged to an intermediate location for users to copy. To facilitate the migration process, please indicate which directories or files should be prioritized for transfer using our data transfer request form. Additional information about the file transfer efforts and Project Storage system status is available on our Data Migration status page. 
+
+- **2024-02-16, 01:22 PM**
+On 26 February at 9:00 am EST, RC engineers will switch to an alternate data transfer mechanism between the legacy Research Project Storage filesystem and the new Project Storage system. As a result, users will no longer have direct access to the legacy system. Files will be staged to an intermediate location for users to copy. To facilitate the migration process, please indicate which directories or files should be prioritized for transfer using our data transfer request form. Additional information about the file transfer efforts and Project Storage system status is available on our Data Migration status page. 
 
 - **2024-02-09, 06:22 PM**
 SMB/NFS exports have been enabled for new Project storage. Data migration from old Project storage to new Project storage is ongoing. First-time access of old files and old directory listings is significantly slower than normal. Users may encounter on occasion “OSError: [Errno 5] Input/output errors” which should be reported through our support webform https://www.rc.virginia.edu/form/support-request/. For their ongoing work users should create new Project storage directories that are as close to the top level directory of their storage share as possible. Directory listings and traversals in these new top level directories is expected to show better performance. 
