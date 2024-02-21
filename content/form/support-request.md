@@ -18,6 +18,9 @@ private = true
 </div>
 <div>
   <input type="hidden" id="category" name="category" value="Support">
+
+{{% support-msg %}}
+
 {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
@@ -29,8 +32,8 @@ private = true
       <option id="storage" value="Storage">Storage</option>
       <option id="container" value="Container">Container Service</option>
       <option id="dac" value="Data Analytics">Data Analytics Center</option>
-      <option id="consultation" value="Consultation">General Consultation Request</option>
-      <option id="workshops" value="Workshops">Workshops</option>
+      <!-- <option id="consultation" value="Consultation">General Consultation Request</option> -->
+      <!-- <option id="workshops" value="Workshops">Workshops</option> -->
       <option id="other" value="Other">Other</option>
     </select>
     <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Rivanna support questions. Or submit an <a href="/userinfo/rivanna/allocations/#allocation-types" style="font-weight:bold;">Allocation Request</a>.</div>
