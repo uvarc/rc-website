@@ -27,7 +27,7 @@ If you would like to participate in the poster session, please fill out the <a h
 
 
 
-
+<br>
 *Key dates for poster session participants:
 
 <strong>March 15:</strong> Intent to Participate Form Due
