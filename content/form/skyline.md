@@ -21,6 +21,9 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="Skyline">
   <input type="hidden" id="request_title" name="request_title" value="Skyline VM Service Request" />
+
+{{% support-msg %}}
+
 {{% form-userinfo %}}
   <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
