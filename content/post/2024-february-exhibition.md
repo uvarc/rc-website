@@ -74,4 +74,3 @@ If you would like to participate in the poster session, please fill out the <a h
 </table>
 
 <br>
-We look forward to your participation in this event! Please contact <a href="mailto:rc-pr@virginia.edu">rc-pr@virginia.edu</a> with any questions.
