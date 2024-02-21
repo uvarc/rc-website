@@ -25,7 +25,14 @@ The Research Computing Exhibition will be held on <strong>Tuesday, April 23, 202
 </ul>
 If you would like to participate in the poster session, please fill out the <a href="https://forms.office.com/r/6qaztRZTbD">Intent to Participate Form</a> by <strong>Friday, March 15</strong>.
 
-### Schedule
+Key dates for poster session participants:
+<strong>March 15:</strong>Intent to Participate Form Due
+
+<strong>April 5:</strong>Final PDF version of Poster Due
+
+<strong>April 23:</strong>Research Computing Exhibition (finalists will be notified prior to the event)
+
+### Event Schedule
 <style>
   table {
     border-collapse: collapse;
