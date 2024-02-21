@@ -12,21 +12,18 @@ draft = false
 
 +++
 
-The UVA Computational Research Exhibition will be held on Tuesday, April 23, 2024 in the Newcomb Hall Ballroom. The event will include:
-
-•	A panel discussion made up of academic scientific computing experts and research computing faculty and staff.
-•	Judged poster session with prizes (1st place: $3,000 travel voucher, 2nd place: $2,000 travel voucher, 3rd place: $1,000 travel voucher).
-•	Light refreshments
-
-If you would like to participate in the poster session, please fill out the <a href="https://forms.office.com/r/6qaztRZTbD">Intent to Participate</a> Form by Friday, March 15. 
-
 ## Dear Researcher,
 UVA Research Computing, in partnership with the Data Analytics Center 
 (DAC), is proud to announce the <strong>first annual UVA Computational 
-Research Exhibition</strong> on <strong>Tuesday, April 23, 2024 from 11:30 a.m. – 4:00 
-p.m.</strong> in the *Newcomb Hall Ballroom*. This exhibition includes a judged poster 
-competition with travel awards presented to the finalists.
-<br>  
+Research Exhibition</strong> on <strong>Tuesday, April 23, 2024 from <br> 11:30 a.m. – 4:00 
+p.m.</strong> in the *Newcomb Hall Ballroom*. This event will include: 
+
+<ul>
+    <li>A panel discussion made up of academic scientific computing experts and research computing faculty and staff
+    <li> Judged poster competition with travel awards presented to the finalists
+     <li>Light Refreshments
+</ul>
+
 All researchers using Research Computing resources are encouraged to 
 submit posters. Research Computing resources include systems, software, 
 and support such as how you use the Rivanna, Ivy, or other Research 
