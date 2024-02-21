@@ -1,5 +1,5 @@
 +++
-title = "UVA Computational Research Exhibition: April 23, 2024"
+title = "UVA Research Computing Exhibition: April 23, 2024"
 description = ""
 author = "RC Staff"
 images = [
@@ -68,7 +68,7 @@ If you would like to participate in the poster session, please fill out the <a h
     <td> Judges cluster to decide 1st, 2nd, and 3rd place winners</td>
   </tr>
   <tr>
-    <td class="no-wrap">2:45-3:00</td>
+    <td class="no-wrap">2:45-4:00</td>
     <td>Announcement of poster competition winners and farewell remarks</td>
   </tr>
 </table>
