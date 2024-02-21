@@ -19,6 +19,9 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="DCOS">
   <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
+
+{{% support-msg %}}
+
 {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-summary">Project Summary </label>

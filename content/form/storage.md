@@ -20,7 +20,11 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="Storage">
   <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
+
+{{% support-msg %}}
+
 {{% form-userinfo-v2 %}}
+
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
