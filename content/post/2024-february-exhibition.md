@@ -27,13 +27,14 @@ If you would like to participate in the poster session, please fill out the <a h
 
 
 
-<br>*Key dates for poster session participants:</br>
+### Key dates for poster session participants:
 
-<strong>March 15:</strong> Intent to Participate Form Due
 
-<strong>April 5:</strong> Final PDF version of Poster Due
+* <strong>March 15:</strong> Intent to Participate Form Due
 
-<strong>April 23:</strong> Research Computing Exhibition (finalists will be notified prior to the event)
+* <strong>April 5:</strong> Final PDF version of Poster Due
+
+* <strong>April 23:</strong> Research Computing Exhibition (finalists will be notified prior to the event)
 
 ### Event Schedule
 <style>
