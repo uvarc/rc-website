@@ -44,9 +44,9 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 
 Research Computing will reach out to all known users of this storage system with instructions for accessing data before and after February 26, and for assistance prioritizing files for transfer.  
 
-{{% accordion-group title="Group" %}}
+{{% accordion-group title="Communications" %}}
 
-{{% accordion-item title="Email communications" id="one" %}}
+{{% accordion-item title="Email communications" id="twenty" %}}
 
 **2024-02-16**
 
