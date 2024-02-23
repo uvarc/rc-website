@@ -6,7 +6,7 @@
 			</button>
 		</h5>
 	</div>
-	<div id="{{ printf "collapse%s" (.Get "id" ) }}" class="collapse" aria-labelledby="{{ printf "heading%s" (.Get "id" ) }}" data-parent="#accordion">
+	<div id="{{ printf "collapse%s" (.Get "id" ) }}" class="collapse" aria-labelledby="{{ printf "heading%s" (.Get "id" ) }}" data-parent="{{ printf "#%s" (.Parent.Get "id") }}">
 		<div class="card-body">
 			<p>
 				{{- .Inner -}}
