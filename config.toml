@@ -90,7 +90,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   zfs = "No backups"
 
 [params.pricing]
-  # Set STORAGE / VM PRICES globally below:
+  # Set SU / STORAGE / VM PRICES globally below:
   paidSUs = 0.01
   storageProject = 60
   storageStandard = 45
