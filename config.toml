@@ -91,6 +91,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
 
 [params.pricing]
   # Set STORAGE / VM PRICES globally below:
+  paidSUs = 0.01
   storageProject = 60
   storageStandard = 45
   storageZfs = 30
