@@ -44,11 +44,34 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 
 Research Computing will reach out to all known users of this storage system with instructions for accessing data before and after February 26, and for assistance prioritizing files for transfer.  
 
-{{% accordion-group title="Communications" %}}
+{{% accordion-group title="Email Communications" id="commgroup" %}}
 
-{{% accordion-item title="Email communications" id="twenty" %}}
+{{% accordion-item title="Email Communications" id="emails" %}}
 
-**2024-02-16**
+{{% accordion-group title="Emails" id="emailgroup" %}}
+
+{{% accordion-item title="Feb 22, 2024 - Reminder: Upcoming Changes to Data Transfer Process for Project Storage File System" id="emailtwo" %}}
+
+Dear Colleagues,  
+ 
+This email serves as a friendly reminder of the upcoming changes to the Research Project Storage data transfer process that take effect on Monday, February 26 at 9 a.m. EST. For your convenience, a copy of the initial announcement that was released on February 16 is included below.   
+ 
+You can find detailed documentation of the planned changes, previous email communications, and sections for frequently asked questions on our Data Migration status page (this page).  
+ 
+We are committed to working diligently until data transfer is complete and the legacy system is decommissioned. Our technical support teams will continue to be available to you to answer questions and address any concerns.  
+ 
+Thank you for your continued patience and partnership.  
+ 
+With regards,  
+ 
+Karsten Siller<br>
+Director, Research Computing User Services<br>
+Information Technology Services<br>
+University of Virginia<br>
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="Feb 16, 2024 - Upcoming Changes to Data Transfer Process for Project Storage File System" id="emailone" %}}
 
 Dear Colleagues,  
  
@@ -85,6 +108,10 @@ University of Virginia
 
 {{% /accordion-group %}}
 
+{{% /accordion-item %}}
+
+{{% /accordion-group %}}
+
 ## What to expect on February 26
 
 Before February 26, your <nobr>`/project`</nobr> folder contains a mix of files, including those that have already been transferred and those that still reside physically on the old Project storage system. Files that are still on the old system appear as empty "stub files" in the new system. Because the old and new systems are still connected, if you try to access a file that is still on the old system, the empty stub file is replaced by the original file as it is transferred on-demand to the new system.  
@@ -105,7 +132,7 @@ A new filesystem <nobr>`/stagedproject`</nobr> will be mounted read-only on <a h
 
 ## FAQ
 
-{{% accordion-group title="Group" %}}
+{{% accordion-group title="Group" id="faqgroup"%}}
 
 {{% accordion-item title="How should I prepare for the changes coming on February 26?" id="ten" %}}
 If you have already reached out to us to prioritize transfer of a specific subset of your folders or files, no further action is required. These files will be copied to same-named folder in your active <nobr>`/project`</nobr> share on the new Project storage system.  
