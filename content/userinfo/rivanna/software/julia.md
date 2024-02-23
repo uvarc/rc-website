@@ -111,19 +111,12 @@ search: sdata isdirpath isdispatchtuple SharedMatrix StridedMatrix
 
 julia>
 ```
-You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application. Once you have logged into a frontend node (rivanna1, rivanna2, or rivanna3.hpc.virginia.edu), you can invoke the Atom/Juno IDE (integrated development environment) with the following commands:
-```
-module load julia/1.5.0
-module load gcc/9.2.0 atom/1.45.0
-atom
-```
-You should see the following interface appear:
-<img src="/images/juno.png" style="height:110%;width:110%"></img>
+You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application. 
 
 # Interactive Sessions through Rivanna's Open OnDemand Web Portal
 
 ## Starting an Interactive Session
-To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/queues/) to learn more about the partitions.
+To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/overview/#job-queues) to learn more about the partitions.
 
 1. Open a web browser and go to URL:  https://rivanna-portal.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.

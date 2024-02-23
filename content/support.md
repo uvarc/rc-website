@@ -157,7 +157,7 @@ We offer Rivanna orientation sessions on Wednesdays (appointment required).
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
-<b>Wednesdays 3:00-4:00pm (no Intro to Rivanna sessions on Nov 15 and Nov 22)</b>
+<b>Wednesdays 3:00-4:00pm </b>
 <a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to Rivanna" 
 session</button></a>
 <!-- Health Sciences Library, MILL Room -->

@@ -5,5 +5,5 @@
 #SBATCH --ntasks=1
 #SBATCH --time=12:00:00
 
-module load singularity tensorflow/2.10.0
-singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif myAI.py
+module load apptainer tensorflow/2.13.0
+apptainer run --nv $CONTAINERDIR/tensorflow-2.13.0.sif myAI.py

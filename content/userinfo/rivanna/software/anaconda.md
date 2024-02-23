@@ -3,7 +3,7 @@ title = "Anaconda on Rivanna"
 description = ""
 author = "RC Staff"
 images = [""]
-date = "2018-01-18T17:45:12-05:00"
+date = "2024-01-02T17:45:12-05:00"
 categories = ["userinfo"]
 tags = [
     "HPC",
@@ -127,15 +127,7 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 To see all available environments, run `conda env list`.
 
 {{% callout %}}
-**Use source activate not conda activate**. After creating a conda enviornment, you'll have to activate it.
-The default conda command of `conda activate <env>` is incompatible with use on the Rivanna command line.
- Its use must be preceded by the use of the `conda init bash` command, which itself requires the
- user to exit the terminal, and thus end their Rivanna session, in order to take effect.
- To avoid this, just use `source activate <env>` instead.
-{{% /callout %}}
-
-{{% callout %}}
-**Tip: use `mamba` instead of `conda`.** Anaconda can take a long time to resolve environment dependencies and install packages. A new tool, `mamba`, has been developed to speed up this process considerably. You can load it using `module load micromamba` and then replace `conda` with `mamba` in any commands used to build an environment or install packages. Then you can still call your environment using `source activate <env>`.
+**Tip: use `mamba` instead of `conda`.** Anaconda can take a long time to resolve environment dependencies and install packages. A new tool, `mamba`, has been developed to speed up this process considerably. You can load it using `module load mamba` and then replace `conda` with `mamba` in any commands used to build an environment or install packages. Then you can still call your environment using `source activate <env>`.
 {{% /callout %}}
 
 # Python and MPI

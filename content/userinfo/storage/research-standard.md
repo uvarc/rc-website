@@ -34,6 +34,13 @@ Users can specify the size and name of the Research Standard Storage directory a
 
 When your Research Standard Storage share is created, you will receive an email detailing your NFS mount `standard.hpc.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\standard.hpc.virginia.edu\Grouper_group_name`.
 
+{{% callout %}}
+Note for PI's creating a new Grouper group:
+
+* Specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation.
+
+{{% /callout %}}
+
 # Drive Mapping with Research Standard Storage
 
 _Research Standard_ storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [How To pages](/userinfo/howtos/storage/drive-mapping).

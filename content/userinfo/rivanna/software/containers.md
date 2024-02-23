@@ -20,7 +20,7 @@ Please refer to the following pages for further information.
 
 - [Singularity](/userinfo/rivanna/software/singularity) (before Dec 18, 2023)
 - [Apptainer](/userinfo/rivanna/software/apptainer) (after Dec 18, 2023)
-- [Short course: Software Containers for HPC](https://learning.rc.virginia.edu/courses/containters-for-hpc/)
+- [Short course: Software Containers for HPC](https://learning.rc.virginia.edu/courses/containers-for-hpc/)
 
 # Container Registries for UVA Research Computing
 
@@ -36,12 +36,13 @@ In the summer of 2020, we switched to [Docker Hub](https://hub.docker.com/). A c
 
 We do not use the `latest` tag. Specify the exact version when pulling an image. For example:
 ```
-singularity pull docker://uvarc/pytorch:1.5.1
+module load apptainer
+apptainer pull docker://uvarc/pytorch:1.5.1
 ```
 
 Images that contain `ipykernel` can be added to your list of Jupyter kernels. To verify:
 ```
-singularity exec <container_name>.sif python -m pip list | grep ipykernel
+apptainer exec <container_name>.sif python -m pip list | grep ipykernel
 ```
 If this returns `ipykernel    <version>`, proceed [here](/userinfo/howtos/rivanna/custom-jupyter-kernels).
 

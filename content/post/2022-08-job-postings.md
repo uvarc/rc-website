@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2023-08-30T01:18:25-05:00"
+date = "2024-02-19T01:18:25-05:00"
 title = "RC Job Openings"
 draft = false
 tags = ["uvarc","infrastructure","user-services"]
@@ -19,11 +19,9 @@ We currently have several open positions in our *Infrastructure Services* and *U
 - [Windows Server Engineer](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Windows-Server-Engineer--Research-Computing_R0040018)
 - [Linux Systems Engineer](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Linux-System-Engineer_R0040017)
 
-## Data Analytics Center Staff (multiple full-time, long-term positions)
+## Data Analytics Center Staff (full-time, long-term position)
 
-- [Research Computing Scientists/Deep Learning Specialists](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Research-Computing-Scientist_R0052597)
-- [Research Computing Scientists/Data Analysts](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Research-Computing-Scientist_R0052598)
-- [Data Analytics Center Coordinator](https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Data-Analytics-Center-Coordinator_R0053196)
+- [Deep Learning Research Scientist](https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs/job/Deep-Learning-Research-Scientist_R0057078)
 
 
 

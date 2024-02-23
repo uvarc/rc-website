@@ -2,7 +2,7 @@
 description = ""
 title = "Rivanna"
 draft = false
-date = "2019-06-30T17:45:12-05:00"
+date = "2024-01-24T00:00:00-05:00"
 tags = ["hpc","rivanna","parallel-computing","supercomputer","allocations","queues","storage","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -91,9 +91,9 @@ New users are invited to attend one of our free orientation sessions ("Introduct
 <div class="card-group">
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;">
     <div class="card-body">
-      <h5 class="card-title">Queues</h5>
+      <h5 class="card-title">Job Queues</h5>
       <p class="card-text">Determine the best queue (or “partition”) for running your jobs.</p>
-      <a href="/userinfo/rivanna/queues/"><button class="btn btn-warning">Learn More</button></a>
+      <a href="#job-queues"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
@@ -130,7 +130,7 @@ A high performance computing cluster is typically made up of at least four servi
 <img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="margin-top:0rem;display:block;" class="hpc-overview" usemap="#hpc_map" data-bg_fill="rgba(244,124,67,0.5)" />
 <map name="hpc_map">
   <area id="login-nodes" alt="Login Nodes" title="Login Nodes" href="/userinfo/rivanna/login/" shape="rect" coords="243,37,555,100" style="outline:none;" class="hpchover" />
-  <area id="compute-nodes" alt="Compute Node" title="Compute Node" href="/userinfo/rivanna/queues/" shape="rect" coords="38,150,700,390" style="outline:none;" class="hpchover" />
+  <area id="compute-nodes" alt="Compute Node" title="Compute Node" href="/userinfo/rivanna/overview/#job-queues" shape="rect" coords="38,150,700,390" style="outline:none;" class="hpchover" />
   <area id="storage" alt="Storage" title="Storage" href="/userinfo/rivanna/storage/" shape="rect" coords="70,440,700,580" style="outline:none;" class="hpchover" />
   <area id="resource-manager" alt="Resource Manager" title="Resource Manager" href="/userinfo/rivanna/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
 </map>
@@ -140,68 +140,28 @@ A high performance computing cluster is typically made up of at least four servi
 
 # System Details
 
-<div id="accordion" style="margin-top:4rem;margin-bottom:4rem;">
-  <div class="card">
-    <div class="card-header" id="headingTwo">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration:none;color:black;font-weight:bold;">
-          Queuing Policies
-        </button>
-      </h5>
-    </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-      <div class="card-body" style="padding:1rem;">
-        Rivanna is a managed resource; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna is Slurm.  Slurm refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
-        <p>
-          {{< queues >}}
-        </p>
-        <p>
-        Each job in the standard partition is restricted to a single node. Users may submit multiple jobs or job arrays, but the maximum aggregate cpu cores allowed for a single user’s running jobs is 1000.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header" id="headingOne">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration:none;color:black;font-weight:bold;">
-          Hardware Configuration
-        </button>
-      </h5>
-    </div>
-    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-      <div class="card-body" style="padding:1rem;">
-        {{< rivanna-specs >}}
-      </div>
-    </div>
-  </div>
-<!--
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h5 class="mb-0">
-        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-decoration:none;color:black;font-weight:bold;font-size:110%;">
-          Storage Options
-        </button>
-      </h5>
-    </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-      <div class="card-body" style="padding:1rem;">
-      <p>A more complete description of storage options and policies is at our <a href="/userinfo/rivanna/storage/">HPC storage page</a>.</p>
-      <h4>Home Directories</h4>
-      <p>Each user has a home directory.  This storage is accessed as <code>/home/$USER</code>, where <code>$USER</code> is an environment variable set by the system that corresponds to the user's login ID.</p>
-      <p>The <code>hdquota</code> command shows usage of space for the home directory only.</p>
-      <h4>Scratch Storage</h4>
-      <p>All nodes share a high-speed Lustre filesystem for temporary storage with up to 1.4PB of storage space for all users.   Each user is assigned space with a default quota of 10TB of storage per user.   This storage is accessed as <code>/scratch/$USER</code>.</p>
-      <h4>Long-Term Storage</h4>
-      <p>Groups may lease permanent storage from ITS which can be mounted to Rivanna.</p>
-      </div>
-    </div>
-  </div>
-  -->
-</div>
+## Hardware Configuration
+
+{{< rivanna-specs >}}
 
 {{< systems-boilerplate >}}
 
+## Job Queues
+
+Rivanna is a managed resource; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna is Slurm.  Slurm refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
+
+{{< rivanna-queue >}}
+
+### Remarks
+
+- `standard` maximum *aggregate* CPU cores allowed for a single user’s running jobs is 1000.
+- `parallel` requires *at least* 2 nodes and 4 CPU cores.
+- Slurm's default memory unit is in MB. Different units may be specified, e.g. `--mem=100G`, where 1G = 1024M.
+- The `gpu` partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). In Slurm scripts you must request at least one GPU device through `--gres=gpu`. Jobs that do not utilize any GPUs are not allowed in this partition.  
+The maximum *aggregate* GPUs allowed for a single user’s running jobs is 32.  
+SU charge rate = #cores + 2 x #GPUs, which is *at least* 1 + 2x1 = 3.
+- The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offers high-performance GPUs that brings new AI and ML functionality to support parallel GPU computing and large deep-learning models.  
+<a href="/userinfo/rivanna/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
 - - -
 
@@ -212,22 +172,6 @@ Research computing resources at the University of Virginia are for use by facult
 ## Login Nodes
 
 Exceeding the limits on the login nodes (frontend) will result in the user’s process(es) being killed. Repeated violations will result in a warning; users who ignore warnings risk losing access privileges.
-
-## Standard Partition
-
-Each job in the standard partition is restricted to a single node. Users may submit multiple jobs or job arrays, but the maximum aggregate cpu cores allowed for a single user’s running jobs is 1000.
-
-## Parallel Partition
-
-Users must request a minimum of two nodes and four cpu cores (and no more than 900 cpu cores) when submitting a job to the parallel partition.
-
-## GPU Partition
-
-The gpu partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). Any job submitted to the gpu partition must request at least one GPU device through the gres option; jobs that do not utilize any GPUs are not allowed in this partition. Users may submit multiple jobs or job arrays, but the maximum aggregate number of GPU devices allowed for a single user’s running jobs is 16.
-
-The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offer high-performance GPUs that brings new AI and ML functionality to support parallel GPu computing and large deep-learning models. 
-
-<a href="/userinfo/rivanna/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
 ## Scratch Directory
 

@@ -61,6 +61,6 @@ VERSIONS=
 to contain only one of `std`, `gam`, or `ncl`, and then running the build process for each one.
 
 # Example Slurm script
-To run VASP, the user prepares a group of input files with predetermined names.  The path to the vasp binary must be provided to the Slurm process manager `srun`; in the example below we assume it is in a directory `bin` at the same level as the directory from which the job is submitted.  All input and potential files must be located in the same directory as the Slurm job script in this example.
+To run VASP, the user prepares a group of input files with predetermined names.  The path to the vasp binary must be provided to the Slurm process manager `srun`; in the example below we assume it is in a directory `bin` under the user's home directory.  All input and potential files must be located in the same directory as the Slurm job script in this example.
 
 {{< pull-code file="/static/scripts/vasp.slurm" lang="no-hightlight" >}}

@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2024-02-14T00:00:00-05:00"
 tags = [
   "programming"
 ]
@@ -24,7 +24,7 @@ author = "RC Staff"
 Perl is a general-purpose interpreted programming language, originally developed for text manipulation and now used for a wide range of tasks including system administration, web development, network programming, GUI development, and bioinformatics.
 
 # Available Versions
-To find the available versions and learn how to load them, run:
+The default Perl is required for system purposes and is generally too old for applications. We offer more recent versions of Perl as modules. To find the available versions and learn how to load them, run:
 ```
 module spider {{% module-name %}}
 ```
@@ -38,12 +38,15 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-The default Perl is required for system purposes and is generally too old for applications. We offer more recent versions of Perl as modules. To see all available versions, run
+# CPAN Modules
 
-To load the {{< module-firstversion >}} module, run this command:
+Users can install their own Perl modules from CPAN via the `cpanm` command. For instance:
+
 ```
-module load {{< module-firstversion >}}
+cpanm Test::More
 ```
+
+Run `cpanm --help` for further help.
 
 # Example Slurm Script
 ```
@@ -55,7 +58,7 @@ module load {{< module-firstversion >}}
 #SBATCH -p standard
 #SBATCH -A mygroup
 
-module load perl
+module load gcc perl
 
 perl myscript.pl
 ```

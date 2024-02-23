@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2023-09-08T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "lang",
 ]
@@ -42,11 +42,11 @@ module spider {{% module-firstversion %}}
 # Interactive Sessions through Rivanna's Web Portal
 
 Interactive sessions of {{% software-name %}} can be launched through Rivanna's web portal, [Open OnDemand](/userinfo/rivanna/ood/overview).
-If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/queues/) to learn more about the partitions.
+If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/overview/#get-started) to learn more about the partitions.
 
 ## Python Setup
 
-Python users should install the `ms-python` extension and select an appropriate interpreter, unless you wish to use the system python (2.7):
+Python users should install the `ms-python` extension and select an appropriate interpreter:
 
 1. Press F1
 1. Search for “python: select interpreter”

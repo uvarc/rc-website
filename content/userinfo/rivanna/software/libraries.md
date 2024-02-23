@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "lib",
 ]
@@ -28,7 +28,7 @@ module keyword lib
 
 To get more information about a specific module version, run the module spider command, for example:
 ```
-module spider hdf5/1.10.4
+module spider hdf5
 ```
 
 <br>

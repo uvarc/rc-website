@@ -1,6 +1,6 @@
 +++
 type = "rivanna"
-date = "2022-07-21T00:00:00-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "rivanna", "software", "machine learning"
 ]
@@ -11,7 +11,7 @@ author = "RC Staff"
 
 +++
 # Overview
-TensorFlow is an open source software library for high performance numerical computation.  It has become a very popular tool for machine learning and in particular for the creation of deep neural networks.  The latest TensorFlow versions are now provided as prebuilt Singularity containers on Rivanna.  The basic concept of running Singularity containers on Rivanna is described here.
+TensorFlow is an open source software library for high performance numerical computation.  It has become a very popular tool for machine learning and in particular for the creation of deep neural networks.  The latest TensorFlow versions are now provided as prebuilt Apptainer containers on Rivanna.  The basic concept of running Apptainer containers on Rivanna is described here.
 
 TensorFlow code is provided in two flavors, either with or without support of general purpose graphics processing units (GPUs).  All TensorFlow container images provided on Rivanna require access to a GPU node.  Access to GPU nodes is detailed in the sections below.
 
@@ -21,17 +21,8 @@ Keras is a high-level neural networks application programming interface (API), w
 # What is inside the TensorFlow containers?
 The TensorFlow modules on Rivanna include common Python packages such as Matplotlib and OpenCV. See <https://hub.docker.com/r/uvarc/tensorflow> for details.
 
-## A100 GPU compatibility
-Versions 2.1 and older may not be compatible with the A100 GPU. Deprecated containers are hosted in `/share/resources/containers/singularity/archive`. You may continue to use them on other GPUs by excluding the A100 via the Slurm option
-{{< code-snippet >}}
--x udc-an28-[1,7],udc-an34-[1,7,13,19],udc-an36-[1,13,19],udc-an37-[1,7,13,19]
-{{< /code-snippet >}}
-
 # TensorFlow Jupyter Notebooks
-Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available:
-
-- 2.7.0 with Python 3.9
-- 2.10.0 with Python 3.9
+Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available.
 
 ## Accessing the JupyterLab Portal
 
@@ -55,18 +46,18 @@ Review our [Jupyer Lab documentation](/userinfo/rivanna/software/jupyterlab) for
 Once the JupyterLab instance has started, you can edit and run your notebook as described here.
 
 # TensorFlow Slurm jobs
-Singularity can make use of the local NVIDIA drivers installed on a host equipped with a GPU device.  The Slurm script needs to include the `#SBATCH -p gpu` and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the Jobs Using a GPU section for details.
+Apptainer can make use of the local NVIDIA drivers installed on a host equipped with a GPU device.  The Slurm script needs to include the `#SBATCH -p gpu` and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the Jobs Using a GPU section for details.
 
-To run commands in an GPU-enabled container image, load the singularity module and add the `--nv` flag when executing the singularity run or singularity exec commands.
+To run commands in an GPU-enabled container image, load the apptainer module and add the `--nv` flag when executing the apptainer run or apptainer exec commands.
 
 For example:
 ```
-module load singularity tensorflow/2.10.0
-singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif tf_example.py
+module load apptainer tensorflow/2.10.0
+apptainer run --nv $CONTAINERDIR/tensorflow-2.10.0.sif tf_example.py
 ```
-In the container build script, `python` is defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. `tf_example.py`, to the Python interpreter. So the above singularity command is equivalent to
+In the container build script, `python` is defined as the default command to be excuted and Apptainer passes the argument(s) after the image name, i.e. `tf_example.py`, to the Python interpreter. So the above apptainer command is equivalent to
 ```
-singularity exec --nv $CONTAINERDIR/tensorflow-2.10.0.sif python tf_example.py
+apptainer exec --nv $CONTAINERDIR/tensorflow-2.10.0.sif python tf_example.py
 ```
 The TensorFlow container images were built to include CUDA and cuDNN libraries that are required by TensorFlow.  Since these libraries are provided within each container, we do not need to load the CUDA/cuDNN libraries available on the host.
 
@@ -86,11 +77,11 @@ salloc: job 12345 queued and waiting for resources
 salloc: job 12345 has been allocated resources
 salloc: Granted job allocation 12345
 ```
-Now you can load the `singularity` module and execute commands provided by the container. For example:
+Now you can load the `apptainer` module and execute commands provided by the container. For example:
 ```
 module purge
-module load singularity tensorflow/2.10.0
-singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif tf_example.py
+module load apptainer tensorflow/2.13.0
+apptainer run --nv $CONTAINERDIR/tensorflow-2.13.0.sif tf_example.py
 ```
 
 # Interaction with the Host File System
@@ -108,9 +99,9 @@ Due to the overlay, these directories are by default the same inside and outside
 Request a Desktop session under Interactive Apps via [Open OnDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the Slurm job. Launch the session and open a terminal in the desktop. Enter these commands:
 
 ```
-$ module load singularity tensorflow/2.10.0
-$ singularity shell --nv $CONTAINERDIR/tensorflow-2.10.0.sif
-Singularity> python -m tensorboard.main --logdir=logdir
+$ module load apptainer tensorflow/2.13.0
+$ apptainer shell --nv $CONTAINERDIR/tensorflow-2.13.0.sif
+Apptainer> python -m tensorboard.main --logdir=logdir
 ```
 
 Open the resulting URL (of the form `http://localhost:xxxx/`) in Firefox.
@@ -123,19 +114,19 @@ Yes, you may either pull the official TensorFlow Docker image or create your own
 
 1. Go to https://hub.docker.com/r/tensorflow/tensorflow/tags and search for the desired version. Use the `-gpu` variant.
 
-1. Note the provided pull command (`docker pull tensorflow/tensorflow:1.14.0-gpu`) and change it into Singularity. The differences are underlined by `^`:
+1. Note the provided pull command (`docker pull tensorflow/tensorflow:1.14.0-gpu`) and change it into Apptainer. The differences are underlined by `^`:
     ```bash
-    singularity pull docker://tensorflow/tensorflow:1.14.0-gpu
+    apptainer pull docker://tensorflow/tensorflow:1.14.0-gpu
     ^^^^^^^^^^^      ^^^^^^^^^
     ```
 
-1. You will find the Singularity image `tensorflow_1.14.0-gpu.sif` in your current directory. Consult the instructions in the previous sections. Remember to replace `$CONTAINERDIR/tensorflow-2.10.0.sif` with the actual path to your own Singularity image.
+1. You will find the Apptainer image `tensorflow_1.14.0-gpu.sif` in your current directory. Consult the instructions in the previous sections. Remember to replace `$CONTAINERDIR/tensorflow-2.13.0.sif` with the actual path to your own Apptainer image.
  
 ## Conda environment
 
 The Python/CUDA/TensorFlow versions have to be very specific. 
 
-1. For your target TF version, look up the supported Python and CUDA versions [here](https://www.tensorflow.org/install/source#gpu). In this example, we find that it is supported by:
+1. For your target TF version, look up the supported Python and CUDA versions [here](https://www.tensorflow.org/install/source#gpu). Using 1.14.0 as an example, we find that it is supported by:
 
     - Python 2.7, 3.3-3.7
     - CUDA 10.0
@@ -143,11 +134,11 @@ The Python/CUDA/TensorFlow versions have to be very specific.
 
 1. Check that the CUDA version is supported on Rivanna:
     - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html).
-    - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of July 2022, our GPU nodes support up to CUDA 11.4.
+    - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of Jan 2024, our GPU nodes support up to CUDA 12.2.
         ```
-        NVIDIA-SMI 470.103.01   Driver Version: 470.103.01   CUDA Version: 11.4
+        NVIDIA-SMI 535.104.12             Driver Version: 535.104.12   CUDA Version: 12.2  
         ```
-    - In this example 10.0 is less than 11.4, so the target version is supported.
+    - In this example 10.0 is less than 12.2, so the target version is supported.
 
 1. Check cuDNN availability on https://anaconda.org. The closest match is 7.3 in the `anaconda` channel.
 

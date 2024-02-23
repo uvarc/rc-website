@@ -50,7 +50,7 @@ module spider {{% module-firstversion %}}
 
 - Snakemake is a workflow management system used to create reproducible and scalable data analyses
 - Workflows are written in Python and can be deployed in parallel on Rivanna
-- Workflows can be executed in containerized environments: Conda or Singularity
+- Workflows can be executed in containerized environments: Conda or Apptainer
 
 # Snakemake rules:
 

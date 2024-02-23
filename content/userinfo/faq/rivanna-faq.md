@@ -17,6 +17,7 @@ type = "rivanna"
 * [Job Management](#job-management)
 * [Storage Management](#storage-management)
 * [Data Transfer](#data-transfer)
+* [Downloading Files](#downloading-files)
 * [Other Questions](#other-questions)
 
 - - -
@@ -32,7 +33,7 @@ Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.vi
 {{% off-campus %}}
 
 ## How do I reset my current password / obtain a new password?
-Access to the HPC cluster requires a valid Eservices password. Your Netbadge password is not necessarily the same thing, so if you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  Resetting the Netbadge password should sync it with your Eservices password, which is no longer directly accessible to you. If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
+Access to the HPC cluster requires a valid ITS (Netbadge) password. If you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
 
 ## What happens to my account when I leave UVA?
 ITS controls access to the University’s computing resources, so when you or your students leave, you/they may lose access to many of these resources. Sponsored accounts allow people who work or volunteer at UVA, but who are not paid by UVA, to access the University’s computing resources. Researchers with sponsored accounts cannot request RC services but they are allowed to use the systems we manage as members of a Grouper (requires VPN connection) group controlled by a UVA Principal Investigator (PI). Details on sponsored accounts are posted on the [ITS sponsored accounts page](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=8fec94fcdb296b4c2192e6650596199b).
@@ -41,30 +42,16 @@ ITS controls access to the University’s computing resources, so when you or yo
 Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/rivanna/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
 
 ## When I try to log in with ssh, nothing happens when I type my password!
-When you type your passaword, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
+When you type your password, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
 
 ## When running Firefox on Rivanna, I get : "Firefox is already running, but is not responding. To open a new window, you must first close the existing Firefox process, or restart your system." What can I do?
 
-From your home directory on Rivanna, run the commands:
+From a terminal in your home directory on Rivanna, run the commands:
 
-
+```
 rm -rf ~/.mozilla/firefox/*.default/.parentlock
-
 rm -rf ~/.mozilla/firefox/*.default/lock
-
-## How can I view .pdf or .csv files on Rivanna?
-
-For .pdf files, run the command:
-
-     atril filename.pdf
-
-The atril command can also be used to display image files, e.g. .png and .jpg files.
-
-For .csv files, run the command:
-
-     oocalc filename.csv
-
-where filename is a placeholder for the specific filename.
+```
 
 ## When should I use FastX Web, when should I use an Open OnDemand Desktop session?
 Both allow you to run applications with graphical user interfaces in a Linux Desktop environment.
@@ -80,13 +67,42 @@ Both allow you to run applications with graphical user interfaces in a Linux Des
 * Good for light-weight file management, script editing.
 * Requires a VPN connection from off-Grounds locations.
 
+## How can I view .pdf or .csv files on Rivanna?
+
+For .pdf files, run the command:
+```
+atril filename.pdf
+```
+You can also open Atril from a FastX or Open OnDemand desktop environment from the Applications&rarr;ffice menu.
+
+The atril command can also be used to display image files, e.g. .png and .jpg files. Or you may use `eom FILE` (Eye of MATE) from a terminal.  Alternatively, you can open Eye of MATE from the MATE Desktop menu Applications&rarr;Graphics.
+
+For .csv files, run the command:
+```
+oocalc filename.csv
+```
+where `filename` is a placeholder for the specific filename. The `oocalc` command invokes the LibreOffice spreadsheet program "Calc."  If logged on to a FastX or Open OnDemand Desktop, use the menu Applications&rarr;Office to access it.
+
+## Why does it hang on log in? Why do OpenOnDemand interactive apps give conflicting package errors?
+
+It could be that your .bashrc file is loading too many or conflicting modules respectively. See our [Modules](/userinfo/rivanna/software/modules/) page on how to load modules within best practices. If your .bashrc file is getting too crowded, you should replace it with the default here:
+```
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+    fi
+
+PS1="\s-\v\$"
+alias vi='vim'
+```
+
 - - -
 
 # Allocations
 
 ## What is an allocation?
 
-Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups that are automatically created for Principal Investigators (PIs) when they submit an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
+Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How can I request an allocation?
 
@@ -119,7 +135,7 @@ If you don't see your allocation, it may mean that you've been removed from the 
 
 To check an allocation's expiration date run `allocations -a <allocation group>` command.  Alternatively, run `mam-list-allocations`.
 
-Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), [Dean's Allocations](/userinfo/rivanna/allocations/#deans-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
 
 ## How are Service Units Reserved?
 
@@ -128,10 +144,10 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/).
+Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/rivanna/overview/#job-queues/).
 
 ## How do I create a group or manage members in my allocations?
-You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
+You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). To manage groups created before November 28th, 2023, visit the legacy [MyGroups portal](https://mygroups.virginia.edu/).
 
 ## How do I check allocation usage of individual group members?
 Please visit [here](/userinfo/rivanna/slurm/#usage-report) to see how to generate an allocation usage report.
@@ -139,7 +155,7 @@ Please visit [here](/userinfo/rivanna/slurm/#usage-report) to see how to generat
 ## I submitted a job and receive an error "Insufficient balance. Applying funds failure for JobId=".  What should I do?
 The error indicates that your allocation group does not have enough service units to execute the job. Check your allocation status as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Also verify that your allocation has not expired, see [here](#how-do-i-check-an-allocations-expiration-date).
 
-Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), [Dean's Allocations](/userinfo/rivanna/allocations/#deans-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
 
 - - -
 
@@ -157,21 +173,21 @@ For help installing research software on your PC, please contact Research Softwa
 Some groups and departments have installed a bundle of software they need into shared space.  Please see your departmental IT support personnel if your department has its own bundle.
 
 ## Can I run this Docker container on Rivanna?
-We do not run Docker on Rivanna.  Instead we use Singularity.  Singularity can run Docker images directly, or you can convert a Docker image to a Singularity image.  To import existing Docker images, use the `singularity pull` command.
+We do not run Docker on Rivanna.  Instead we use Apptainer.  Apptainer can run Docker images directly, or you can convert a Docker image to an Apptainer image.  To import existing Docker images, use the `apptainer pull` command.
 ```
-module load singularity
-singularity pull docker://account/image
+module load apptainer
+apptainer pull docker://account/image
 ```
 
 Software images built by Research Computing are hosted on Docker Hub. For example, to pull our PyTorch 1.5.1 image, run:
 ```
-singularity pull docker://uvarc/pytorch:1.5.1
+apptainer pull docker://uvarc/pytorch:1.5.1
 ```
 
 Please visit [this page](/userinfo/rivanna/software/containers/#container-registries-for-uva-research-computing) for more details.
 
 ## Can I run application/container X on a GPU?
-Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](https://www.rc.virginia.edu/userinfo/rivanna/queues/)) and prevent other users from using the GPUs.
+Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](/userinfo/rivanna/overview/#job-queues)) and prevent other users from using the GPUs.
 
 [https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support](https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support)
 
@@ -210,30 +226,42 @@ For more information see the [documentation](/userinfo/rivanna/slurm).
 After logging in, run the command `qlist` to see a list of queues and their availability.  Run `qlimits` for the restrictions on submitting to each queue.
 
 ## How do I choose which queue to use?
-Queues (partitions to Slurm) are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  More information about queue policy is at the Rivanna homepage.
+Queues are set up to emphasize one-core (serial or threaded), multi-node parallel, and specialty hardware including large-memory nodes and GPUs.  
+
+- Serial jobs requiring only 1 compute node: **standard**
+- Parallel jobs requiring up to 50 compute notes: **parallel**
+- Jobs requiring a large amount of memory (60GB+): **largemem**
+- Jobs requiring the use of GPUs: **gpu**
+- Short jobs taking up to an hour, quick code tests: **dev**
+
+More information about queue policy is at the [Rivanna homepage](/userinfo/rivanna/overview/#job-queues).
 
 ## How do I check the status of my jobs?
-Run the command `jobq`
+From a terminal, run the command `jobq`.  From Open OnDemand, use the Job Viewer and select "Your Jobs" as the filter.
 
 If reporting a problem to us about a particular job, please let us know the JobID for the job that you are having a problem with. You can also run `jobq -l` to relate particular jobs to specific submission scripts.
 
 ## Why is my job not starting?
-Several things can cause jobs to wait in the queue. If you request a resource combination we do not have, such as 28 cores on a parallel node, the queueing system will not recognize that this condition will not be met and will leave the job pending (PD). You may also have run a large number of jobs in the recent past and the "fair share" algorithm is allowing other users higher priority. Finally, the queue you requested may simply be very busy.  If your job is pending there will be another field with the reason; if it is Resources that means that the resource you requested isn't available, either because it is busy or because you requested a nonexistent resource.  If the reason is "Priority" it means that a job with higher priority than yours is running.  Your job will rise in priority as it waits so it will start eventually.  To request an estimate from the queueing system of your start time, run `squeue -u <mst3k> --start` (substitute your own login for mst3k).
+Several things can cause jobs to wait in the queue. Paid allocations have priority over standard allocations. If members of your group under the same PI using the same quality of service level (i.e. paid or standard) have consumed a large amount of compute time in the recent past, the “fair share” algorithm will give other users outside of your group higher priority access ahead of you. Finally, the queue you requested may simply be very busy. If your job is pending there will be another field with the reason; if it is “Resources” that means that the resource you requested isn’t available. If the reason is “Priority” it means that a job with higher priority than yours is running. Your job will rise in priority as it waits so it will start eventually. 
 
 ## How can I check when my job will start?
-Run
+To request an estimate from the queueing system of your start time, run 
+```
+squeue -u $USER --start
+```
+for all your jobs, or
 ```
 squeue -j <jobid> --start
 ```
-Slurm will provide an estimate of the day and time your job will start.
+for a specific job. Slurm will provide an estimate of the day and time your job will start.
 
 ## Why was my job killed?
-Usually this is because you inadvertently submitted the job to run in a location that the compute nodes can't access or is temporarily unavailable.  If your jobs exit immediately this is usually why.  Other common reasons include using too much memory, too many cores, or running past a job's timelimit.
+Usually this is because you inadvertently submitted the job to run in a location that the compute nodes can't access or is temporarily unavailable.  If your jobs exit immediately this is usually why.  Other common reasons include using too much memory, too many cores, or running past a job's time limit.
 
 You can run `sacct`:
 
 ```
-[aam2y@udc-ba36-27:/root] sacct
+[mst3k@udc-ba36-27:/root] sacct
        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
 ------------ ---------- ---------- ---------- ---------- ---------- --------
 159637       ompi_char+   parallel  hpc_admin         80  COMPLETED      0:0
@@ -250,7 +278,7 @@ If it's still not clear why your job was killed, please contact us and send us t
 In order to be allowed to submit jobs, you must not be overallocated with your `/scratch` usage and you must have some remaining service units. There is a limit of 10 TB of space used per user in each `/scratch` directory and if you exceed either of those limits, you will not be able to run jobs until you clean up.  To check whether this is the case, run
 
 ```
-sfsq
+hdquota -s
 ```
 
 If you have not exceeded the limits on `/scratch`, check whether your account has allocation units remaining by running
@@ -306,7 +334,6 @@ If the free storage is not sufficient, you need snapshots of your files, or you 
 Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  [Please review our scratch filesystem policy for details](/userinfo/rivanna/overview/#scratch-directory). If you use or expect to use a large number of files please contact us.
 
 
-
 ## How do I obtain leased storage?
 Research Computing offers two tiers of leased storage, _Research Standard_ and _Research Project_. Please see our [storage page](/userinfo/storage) for details.
 
@@ -314,10 +341,10 @@ Research Computing offers two tiers of leased storage, _Research Standard_ and _
 Run `hdquota` on a Rivanna frontend.
 
 ## How do I check my `/scratch` usage on Rivanna?
-Run the command `sfsq`:
+Run the command `hdquota -s`:
 
 ```
-sfsq
+hdquota -s
 ```
 
 If you have used up too much space, created too many files, or have "old" files you may be regarded as "overallocated". Please note that if you are overallocated, you won't be able to submit any new jobs until you clean up your `/scratch` folder.
@@ -376,7 +403,41 @@ Make sure that the ssh key is in your authorized_keys file in your .ssh director
 
 3. The next step is to clone the repository using the ssh link. If you have already cloned the repository using the http link and made a number of changes to your files, you won’t want to redo them.  Rename the directory that was created when you first cloned the repository. Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
 
+# Downloading Files
 
+## What command-line tools are available on Rivanna for downloading files from web?
+
+#### wget
+
+wget can be used to download files over HTTP,HTTPS and FTP protocols. You can use wget to download files from a single URL or multiple URLs. For example to download a file from a website you can use the following command:
+```bash
+wget https://example.com/file.zip
+```
+#### curl
+
+In addition to what mentioned for wget, curl can be used to upload files to a server as well. To download a file from a website, you can use the following command:
+```bash
+curl -O https://example.com/file.zip
+```
+
+#### axel
+
+axel not only downloads files over different protocols, but accelrates the process by using multiple connections to retrieve files from the destination. Axel is availale on Rivanna through `module load axel`.
+The syntax for using axel over 10 connections is as follows:
+```bash
+axel -n 10 http://example.com/file.zip
+```
+
+## wget, curl or axel?
+
+For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommneded to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna:
+
+
+| tool | 100MB | 1GB |
+|------|------|------|
+| wget | ~5s | 36s |
+| curl | ~5s | 35s |
+| axel | ~2s | 8s |  
 
 # Other Questions
 What if my question doesn't appear here? Take a look at our User Guide.  If your answer isn't there, contact us.

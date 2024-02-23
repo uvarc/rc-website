@@ -5,7 +5,7 @@ categories = [
   "software",
   "bio"
 ]
-date = "2020-02-28T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "multi-core",
 ]
@@ -41,7 +41,7 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 
-The latest version of CellProfiler is available as a Singularity container.  Containers encapsulate applications, in this case CellProfiler, and all their required libraries isolated from the application and libraries provided by the system. The basic concepts of software containers, and Singularity container in particular, are explained [here](/userinfo/rivanna/software/containers).  We recommend using the latest CellProfiler container version whenever possible.  Please contact us for help with this package.
+The latest version of CellProfiler is available as an Apptainer container.  Containers encapsulate applications, in this case CellProfiler, and all their required libraries isolated from the application and libraries provided by the system. The basic concepts of software containers, and Apptainer container in particular, are explained [here](/userinfo/rivanna/software/containers).  We recommend using the latest CellProfiler container version whenever possible.  Please contact us for help with this package.
 
 CellProfiler can be run interactively with a graphical user interface (GUI) or non-interactively without any user interface.  The interactive GUI mode is used to define image analysis pipelines; the non-interactive mode is used for image batch processing based on previosuly configured image analysis pipelines.  
 
@@ -51,13 +51,11 @@ The CellProfiler container image file is provided in a shared user space.  For b
 
 In a Rivanna terminal window execute these commands:
 ```
-module load singularity
-module load cellprofiler/3.1.8
-cp $CONTAINERDIR/cellprofiler-3.1.8.sif /scratch/$USER
+module load apptainer cellprofiler
+cp $CONTAINERDIR/cellprofiler-4.2.5.sif /scratch/$USER
 ```
 
 # Image Pipeline Configuration
-
 
 ## Option A: ssh terminal
 
@@ -75,13 +73,12 @@ Please note that this option may be very slow.
 
 To start an interactive job and launch the CellProfiler graphical user interface from within the container, obtain desktop through the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) app, start a terminal window, then run the following commands
 ```
-module load singularity
-module load cellprofiler/3.1.8
-singularity run /scratch/$USER/cellprofiler-3.1.8.sif
+module load apptainer cellprofiler
+apptainer run $CONTAINERDIR/cellprofiler-4.2.5.sif
 ```
 
 # Non-interactive Slurm jobs for batch image processing
-If you have a large number of images that all need to be processed in the same manner, you can use Rivanna's compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](http://cellprofiler-manual.s3.amazonaws.com/CellProfiler-3.1.9/help/other_batch.html).
+If you have a large number of images that all need to be processed in the same manner, you can use Rivanna's compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](https://cellprofiler-manual.s3.amazonaws.com/CPmanual/Help_Other%20Features_Batch_Processing.html).
 
 ## Setup
 

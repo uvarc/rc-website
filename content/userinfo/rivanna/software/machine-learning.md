@@ -1,6 +1,6 @@
 +++
 type = "rivanna"
-date = "2019-04-23T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = [
   "rivanna", "software", "machine-learning"
 ]
@@ -19,9 +19,7 @@ Rivanna has several nodes that are equipped with GPU devices.  These nodes are a
 Several machine learning software packages are installed on Rivanna.  The most commonly used ones are:
 
 * [TensorFlow](/userinfo/rivanna/software/tensorflow)
-* [Keras](/userinfo/rivanna/software/keras)
 * [PyTorch](/userinfo/rivanna/software/pytorch)
-* Caffe2
 
 Other less frequently used software packages include:
 

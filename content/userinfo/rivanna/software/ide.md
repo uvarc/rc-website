@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-08-22T08:37:46-05:00"
+date = "2024-01-02T00:00:00-05:00"
 tags = []
 draft = false
 shorttitle = "IDEs and Editors"
@@ -62,24 +62,8 @@ module load geany
 {{% module-versions module="geany" %}}
 
 
-## Code::Blocks
+## Code Server
 
-[Code::Blocks](http://www.codeblocks.org/) is a more powerful IDE for C/C++ and
-Fortran.  It assumes that each coding project is in a separate folder.  It
-manages compiling and can be utilized with the `gdb` debugger.  Manuals are
-available [here](http://www.codeblocks.org/user-manual).
+See [here](/userinfo/rivanna/software/code-server)
 
-The module is codeblocks (without the colons)
-```
-module load codeblocks
-```
-
-{{% module-versions module="codeblocks" %}}
-
-## Eclipse
-
-The [Eclipse](https://www.eclipse.org/ide/) IDE is a sophisticated programming
-environment with a nontrivial learning curve.  It is particularly powerful
-for Java programming.  A guide to getting started is [here](https://www.eclipse.org/getting_started/).
-
-{{% module-versions module="eclipse" %}}
+{{% module-versions module="code-server" %}}

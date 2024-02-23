@@ -50,7 +50,7 @@ aliases = [ "/storage" ]
   <thead class="thead-dark">
   <tr>
     <th class="" style="width:16%;">Feature</th>
-    <th class=""><a href="/userinfo/storage/non-sensitive-data/#research-project-storage">Research Project Storage<br>(currently unavailable)</a></th>
+    <th class=""><a href="/userinfo/storage/non-sensitive-data/#research-project-storage">Research Project Storage</a></th>
     <th class=""><a href="/userinfo/storage/research-standard">Research Standard Storage</a></th>
   </tr>
   </thead>
@@ -66,17 +66,17 @@ aliases = [ "/storage" ]
     <td class="">{{% storage-pricing standard %}}/TB/yr</td>
   </tr>
   <tr>
-    <td class="">Snapshots</td>
+    <td class="">Snapshots<sup>1</sup></td>
     <td class="">{{% backup-policy project %}}</td>
     <td class="">No</td>
   </tr>
   <tr>
-    <td class="">Replication</td>
+    <td class="">Replication<sup>2</sup></td>
     <td class="">No</td>
     <td class="">No</td>
   </tr>
   <tr>
-    <td class="">Backup</td>
+    <td class="">Backup<sup>3</sup></td>
     <td class="">No</td>
     <td class="">No</td>
   </tr>
@@ -93,11 +93,11 @@ aliases = [ "/storage" ]
   </tbody>
 </table>
 
-{{% highlight %}}
+<sup>1</sup>Snapshot files are uneditable backup copies of all the files and folders in your account, taken at a daily interval. The system keeps these snapshots for a week. Snapshot files are deleted sequentially after a week has passed. This saving method is useful for human error prevention as any accidentally deleted files may be recovered. Look to our [FAQ](/userinfo/faq/storage-faq/) page to learn how to access your snapshots.
 
-Research Project Storage is currently unavailable for new purchases. Please <a href="/form/support-request/">contact us</a> to discuss your storage needs. 
+<sup>2</sup>Replication is a data management process that stores copies of data fragments over a distributed cluster or database. By having replicated data across each node or server on a given database, data can be accessed more reliably than data that only resides on a single server. This saving method is useful for disaster scenarios where if data is stored on multiple disks, and one disk fails, the data is still accessible.
 
-{{% /highlight %}}
+<sup>3</sup>Backup files are copies of files that are stored on a separate disk storage than that of the original copies. Files may be backed up on a separate disk storage or within cloud storage. Backed up files are not synced with their original, so any edits to the original are not reflected on the backup. This saving method is useful for disaster scenarios where if the original disk storage is unsavable, the backups may still be accessible.
 
 - - -
 

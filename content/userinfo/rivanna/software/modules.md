@@ -80,13 +80,13 @@ module list
 module swap
 {{< /code-snippet >}}
 
-For example, if you have loaded gcc/7.1.0 and you wish to switch to intel/18.0
+For example, if you have loaded gcc/11.4.0 and you wish to switch to intel/2023.1
 
 {{< code-snippet >}}
-module swap gcc/7.1.0 intel/18.0
+module swap gcc/11.4.0 intel/2023.1
 {{< /code-snippet >}}
 
-This will unload the `gcc/7.1.0` environment entirely, and load the `intel/18.0` environment. 
+This will unload the `gcc/11.4.0` environment entirely, and load the `intel/2023.1` environment. 
 
 **Clear all modules you have loaded**
 
@@ -157,6 +157,24 @@ module load R/3.6.3
 ```
 
 More about these commands can be found in [the documentation](https://lmod.readthedocs.io/en/latest/).
+
+- - -
+# Modules Best Practices
+Whenever several modules are loaded at the same time, there is the potential for modules to conflict with one another. Conflicting modules can cause code dependent on these modules to not work. Here are some ways to commit to best practices when using modules:
+
+**Start with a clean slate**
+
+`module purge` before beginning your workflow. If you need to switch what you are doing within the current session, like changing from working in Python to R, purge and load your new modules so there is no chance for conflicts.
+
+**Know what you are loading**
+
+When loading modules, it is best to specify what version you are using instead of using the default. If you commit to using the default option each time, you may miss when we our default changes and load modules that are no longer compatible with your workflow. Use `module spider` to see what versions of each module we offer.
+
+**Advanced Usage**
+
+If you are consistently loading the same modules on startup, you might find it convenient to load your modules using your .bashrc file. This is **NOT** within best practices. Interactive apps like Jupyter Labs and RStudio automatically load some modules that they are dependent on. Your .bashrc file still executes on startup within those settings, thus leading to potential conflicts.
+
+A better way to load modules efficiently is to use a bash script. Writing a bash script that will load all your necessary modules with an aliased command falls more within best practices than filling your .bashrc file. Whenever you need to switch to a new workflow, module purge then execute your other script. Remember to change your scripts whenever we offer different versions of the modules that you use so your scripts are not out of date.
 
 - - -
 # Modules in Job Scripts
