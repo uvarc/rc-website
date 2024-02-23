@@ -34,7 +34,6 @@ private = true
       </div>
       <div class="form-item form-type-radio radio"> <label class="control-label" for="faculty-verify-no">
         <input required="required" type="radio" id="faculty-verify-no" name="faculty-verify" value="no" class="form-radio" /> &nbsp;No</label>
-        &nbsp;(Non-UVA personnel are charged {{$.Site.Params.pricing.paidSUs.external.current.price}}/SU)
       </div>
     </div>
   </div>
@@ -88,12 +87,10 @@ function figureTotal() {
   var sus = document.getElementById('sus-requested').value;
   var susi = parseInt(sus, 10);
   if ( susi < 1000000) {
-    var sureq = sus * 0.015;
+    var sureq = sus * 0.01;
   } else {
     var sureq = sus * 0.01;
   }
-  // if sus < 1M = 0.015 per
-  // if sus >= 1M = 0.01 per
   var sutotal = parseInt(sureq, 10);
   total.value = sutotal;
 };
