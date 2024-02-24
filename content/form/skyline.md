@@ -22,7 +22,6 @@ private = true
   <input type="hidden" id="category" name="category" value="Skyline">
   <input type="hidden" id="request_title" name="request_title" value="Skyline VM Service Request" />
 
-{{% support-msg %}}
 
 {{% form-userinfo %}}
   <hr size=1 />

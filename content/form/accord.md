@@ -19,7 +19,6 @@ private = true
   <input type="hidden" id="category" name="category" value="Accord Support">
   <input type="hidden" id="request_title" name="request_title" value="ACCORD Support Request" />
 
-  {{% support-msg %}}
 
   <div class="row">
     <div class="col-xs-6 col-md-6 form-item form-group form-item form-item-submitted-name form-type-textfield form-group"> 

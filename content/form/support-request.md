@@ -19,7 +19,6 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="Support">
 
-{{% support-msg %}}
 
 {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
