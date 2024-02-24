@@ -20,7 +20,6 @@ private = true
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Purchase" />
 
-  {{% support-msg %}}
 
   {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="pi-name">Name of PI <span class="form-required" title="This field is required.">*</span></label>

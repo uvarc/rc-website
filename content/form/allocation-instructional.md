@@ -21,7 +21,6 @@ private = true
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Instructional" />
 
-  {{% support-msg %}}
 
   {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of Grouper Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create his/her Grouper group</a>.</span></label>

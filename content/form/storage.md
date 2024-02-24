@@ -21,7 +21,6 @@ private = true
   <input type="hidden" id="category" name="category" value="Storage">
   <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
 
-{{% support-msg %}}
 
 {{% form-userinfo-v2 %}}
 
