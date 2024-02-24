@@ -12,6 +12,7 @@ private = true
 +++
 
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+<fieldset disabled="disabled">
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
@@ -34,7 +35,6 @@ private = true
       </div>
       <div class="form-item form-type-radio radio"> <label class="control-label" for="faculty-verify-no">
         <input required="required" type="radio" id="faculty-verify-no" name="faculty-verify" value="no" class="form-radio" /> &nbsp;No</label>
-        &nbsp;(Non-UVA personnel are charged $0.07/SU)
       </div>
     </div>
   </div>
@@ -80,6 +80,7 @@ For new groups, specify "This group will be used for Rivanna access" in the desc
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>
+</fieldset>
 </form>
 
 <script>
@@ -88,12 +89,10 @@ function figureTotal() {
   var sus = document.getElementById('sus-requested').value;
   var susi = parseInt(sus, 10);
   if ( susi < 1000000) {
-    var sureq = sus * 0.015;
+    var sureq = sus * 0.01;
   } else {
     var sureq = sus * 0.01;
   }
-  // if sus < 1M = 0.015 per
-  // if sus >= 1M = 0.01 per
   var sutotal = parseInt(sureq, 10);
   total.value = sutotal;
 };

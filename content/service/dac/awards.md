@@ -13,7 +13,7 @@ tags = ["dac","award"]
 ## Purpose
 To facilitate access to the Data Analytics Center services and empower researchers to advance their research, we offer the Analytics Resource Awards.
 
-The focus of the Award should be projects that 
+The focus of the Award will be on projects that 
 
 i) involve data-intensive research, where the data can be text, images, videos, business data, genomic data, sensor data, geospatial data, etc., and 
 
@@ -80,7 +80,9 @@ Recipients of the Awards will receive vouchers that may be used toward the Data 
 <br>
 <br>
 <u>Before you apply</u>:  We highly recommend that you have a consultation meeting with a DAC member to discuss the services that you are planning and what the budget will look like for those services. You can request a consltation by submitting this 
- <a href="/form/support-request/?category=Data%20Analytics"> online support request form  </a>
+ <a href="/form/support-request/?category=Data%20Analytics"> online support request form  </a>.
+
+<br>
 
 
 <u>Application Requirements</u>:  To apply for the Analytics Research Award, the PI will submit a proposal (2 pages maximum, Calibri 11 pt. font) that includes:
