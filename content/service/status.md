@@ -182,7 +182,9 @@ RC will work with you to prioritize the list of your files so that those files m
 {{% accordion-item title="How do I find out what files are on the old Project storage system?" id="four" %}}
 After February 26, you will not be able to connect to the old Project storage system. See *"Why can't I access the old Project storage system directly to copy my own files?"*
 
-However, you can reach out to RC to <a href="/form/support-request/?category=Storage&request_title=Old%20Project%20Storage:%20File%20List%20Request&description=Please%20send%20me%20a%20list%20of%20my%20files%20on%20old%20Project%20storage" taregt="_blank">request a list</a> of your files on the old Project storage system. We will place a txt file containing that file list in the top-level folder of your new share on <nobr>`/stagedproject`</nobr>.
+However, we have placed a list of your old Project storage files in the top-level folder of your new share on <nobr>`/stagedproject`</nobr> (i.e. /stagedproject/my_share/old-project-file-list.txt). You may use this list to prioritize folders and files for your data migration (see "Can I pick which of my files are transferred first?").
+
+Please keep in mind that the list in old-project-file-list.txt represents all your files stored on the old Project storage system, some of which have already been transferred to the new system. Eventually all files will be transferred from the old to the new Project storage system. If you already have all the data needed for your active work on the new Project storage system, no action is required.
 {{% /accordion-item %}}
 
 {{% accordion-item title="Are all files being transferred to the new Project storage system at once?"  id="six" %}}
