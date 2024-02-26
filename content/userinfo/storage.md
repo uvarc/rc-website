@@ -20,6 +20,10 @@ aliases = [ "/storage" ]
   Information Technology Services (ITS) also provides <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" target="_new"><b>multiple tiers of data storage</b></a> for personal and non-research storage needs.</alert>
 {{< /highlight >}}
 
+{{% alert %}}
+2024-02-26 9:00 am EST: <br> Project storage is currently unavailable on Open OnDemand. On 26 February at 9:00 am EST, RC engineers will switch to an alternate data transfer mechanism between the legacy Research Project Storage filesystem and the new Project Storage system. As a result, users will no longer have direct access to the legacy system. Files will be staged to an intermediate location for users to copy. To facilitate the migration process, a text file with a complete list of your old Project storage files has been placed into a new /stagedproject folder on Rivanna. You may use that list to indicate which folders or files should be prioritized for transfer using our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration&description=Please%20indicate%20as%20precisely%20as%20possible%20which%20directories%20or%20files%20should%20be%20transferred%20first:">data transfer request form</a>. Additional information about the file transfer efforts and Project Storage system status is available on our <a href="https://www.rc.virginia.edu/service/status/">Data Migration status page.</a>
+{{% /alert %}}
+
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
