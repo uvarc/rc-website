@@ -37,7 +37,13 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 - Though the new Project storage system is operating with expected performance, the transfer of all data from the old storage system will take several months. The severe performance degradation of the old storage system will remain a bottleneck regardless of the change in data transfer method.
 - Rivanna and RC’s other storage services, Scratch and Research Standard, continue to operate normally.
 
-**2024-02-19:** A total of 1.7 PB out of 4.3 PB have been copied from old to new Project storage (40%).
+
+
+**2024-02-27:** 7:03 AM: About 33% of all stub files have been deleted on the new Project storage system. A subset of the stub files are still visible on the new system. Access of these stub files will produce File Not Found Errors since they don’t physically exist on the new storage system and are uncoupled from the old system now. All stub files will be deleted through an automated process eventually over the next days and weeks.<br>
+**2024-02-26:** 05:32 PM: The new Project storage was remounted on all Rivanna nodes and the UVA Standard Security Storage data transfer node (DTN). Deletion of stub files was initiated.<br>
+**2024-02-26:** 04:15 PM: The old and new Project storage systems were unmounted on all Rivanna nodes and the UVA Standard Security Storage data transfer node (DTN) to complete the disconnection process.<br>
+**2024-02-26:** 09:00 AM: Engineers began to disconnect the old and new Project storage systems.<br>
+**2024-02-19:** A total of 1.7 PB out of 4.3 PB have been copied from old to new Project storage (40%).<br>
 {{% /callout %}}
 
 ## Incident Response 
