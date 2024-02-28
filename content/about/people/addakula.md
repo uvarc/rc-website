@@ -1,9 +1,9 @@
 +++
 draft = false
-date = "2019-05-17T15:25:10-05:00"
-title = "Ravi Chamakuri, PMP"
-job_title = "DevOps Manager"
-lastname = "chamakuri"
+date = "2022-05-26T15:25:10-05:00"
+title = "Praveen Kumar Addakula"
+job_title = "DevOps Developer"
+lastname = "addakula"
 biolink = false
 type = "people"
 description = ""
@@ -12,13 +12,11 @@ images = [
   ""
 ]
 subjects = [
-  "api",
-  "databases",
   "containers",
-  "python",
-  "docker",
+  "infrastructure",
   "kubernetes",
-  "development"
+  "api",
+  "prometheus"
 ]
 +++
 
