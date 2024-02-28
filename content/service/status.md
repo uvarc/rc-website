@@ -245,6 +245,11 @@ If you need help with your file prioritization, you may reach out to RC to <a hr
 All files will be transferred eventually. Questions about the data migration process should be directed to our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>.
 {{% /accordion-item %}}
 
+{{% accordion-item title="Why do I get File Not Found Errors when accessing some of my files in my /project subfolders?" id="eighteen" %}}
+
+Stub files may be present which link the new system to the legacy system. As a part of the data migration process, stub files linking to the legacy system were also attempted to be deleted. A subset of these stub files remains visible on the new system, but attempting to access them will result in File Not Found Errors, as they are no longer coupled with the old system. These files are scheduled for deletion through an automated process eventually.
+{{% /accordion-item %}}
+
 {{% /accordion-group %}}
 
 ## Technical Details
@@ -254,6 +259,8 @@ On February 26, RC engineers will disconnect the Active File Management (AFM) te
 # Incident Status Log
 
 {{% scrollable height="500px" %}}
+
+- **2024-02-27, 2:51 PM** The /stagedproject folder is now available read-only on Rivanna login nodes.
 
 - **2024-02-27, 7:03 AM** About 33% of all stub files have been deleted on the new Project storage system. A subset of the stub files are still visible on the new system. Access of these stub files will produce File Not Found Errors since they don’t physically exist on the new storage system and are uncoupled from the old system now. All stub files will be deleted through an automated process eventually over the next days and weeks.
 
