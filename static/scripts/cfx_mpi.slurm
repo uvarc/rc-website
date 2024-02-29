@@ -1,17 +1,17 @@
 #!/bin/bash
-#SBATCH --nodes=2
-#SBATCH --ntasks-per-node=40
-#SBATCH --time=12:00:00
-#SBATCH --partition=parallel
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=20
+#SBATCH --partition=standard
 #SBATCH -J myCFXrun
 #SBATCH -A mygroup
-#SBATCH --mem=12000
 #SBATCH --output=myCFXrun.txt
 
-NPARTS=`expr $SLURM_NTASKS_PER_NODE \* $SLURM_NNODES`
-hostlist=$(scontrol show hostname $SLURM_JOB_NODELIST | paste -s -d,)
+module load ansys/2023r1
 
-module load intel/18.0
-module load ansys/2021r1
+#Convert the node information into format for CFX host list
+nodes=$(srun -s hostname | sort | \
+uniq -c | \
+awk '{print $2 "*" $1}' | \
+paste -sd, -)
 
-cfx5solve -double -def /scratch/yourpath/mydef.def -par-dist "$hostlist" -partition "$NPARTS" -start-method "Intel MPI Distributed Parallel"
+cfx5solve -batch -def /scratch/yourpath/mydef.def  -par-dist $nodes -start-method "Intel MPI Distributed Parallel"
