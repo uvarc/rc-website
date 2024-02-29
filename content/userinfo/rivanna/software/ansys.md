@@ -40,7 +40,7 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 # Licensing
-The current general UVA license can be used for research but is limited in the size of the models it can use, and it cannot use multinode (MPI) mode.  Users who have their own research licenses with greater capabilities must specify that license.  To use such a research license on Rivanna, before running ANSYS set the following environment variable
+The current general UVA license can be used for research but is limited in the size of the models it can use, and some of the more advanced features are not available.  Users who have their own research licenses with greater capabilities must specify that license.  To use such a research license on Rivanna, before running ANSYS set the following environment variable
 ```no-highlight
 export ANSYSLMD_LICENSE_FILE=1055@myhost.mydept.virginia.edu
 ```
@@ -68,7 +68,9 @@ runwb2
 Be sure to delete your Open OnDemand session if you finish before your requested time expires.
 
 # Multi-Core Jobs
-You can write a batch script to run ANSYS jobs.  Please refer to ANSYS documentation for instructions in running from the command line.  These examples use threading to run on multiple cores on a single node.
+It is possible to run multicore jobs through Open OnDemand. In a terminal, load the ansys module and then run the appropriate package frontend: for general ANSYS applications, including CFX, that is the Workbench; for Fluent run `fluent` to start its graphical interface.  Choose the "Parallel Options" tab to set up a run.  Be sure to use only the number of cores you requested when you launched the OOD Desktop.
+
+For longer jobs, and for all multinode jobs, you should run in batch mode using  a Slurm script.  Please refer to ANSYS documentation for instructions in running from the command line.  These examples use threading to run on multiple cores on a single node.
 
 **ANSYS Slurm Script:**
 
@@ -80,14 +82,17 @@ You can write a batch script to run ANSYS jobs.  Please refer to ANSYS documenta
 
 # Multi-Node MPI Jobs
 
-You must use IntelMPI.  IBM MPI (Platform) will not work on our system.
-For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using Slurm's task launcher.  Also include the `-slurm` option.  It is generally better with ANSYS and related products to request a total memory over all processes rather than using memory per core, because a process can exceed the allowed memory per core.  You must have access to a license that supports HPC usage.  These examples also show the minimum number of command-line options; you may require more for large jobs.
+For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using Slurm's task launcher. If more than the default memory per core is required, it is generally better with ANSYS and related products to request a total memory over all processes rather than using `--mem-per-cpu`, because a process can exceed the allowed memory per core.  Please refer to our [documentation](/userinfo/rivanna/overview/#job-queues) for current information about default memory per core in each partition.
 
-You must also set up _passwordless ssh_ between nodes as described [here](/userinfo/rivanna/logintools/rivanna-ssh).
+These examples also show the minimum number of command-line options; you may require more for large jobs.
+
+<!--- You must also set up _passwordless ssh_ between nodes as described [here](/userinfo/rivanna/logintools/rivanna-ssh). -->
 
 **Fluent Slurm Script:**
 
 {{< pull-code file="/static/scripts/fluent.slurm" lang="no-hightlight" >}}
+
+The syntax for CFX is different and includes a "start-method." We recommend Intel MPI. Please refer to documentation for other options that may be required.
 
 **CFX Slurm script:**
 
