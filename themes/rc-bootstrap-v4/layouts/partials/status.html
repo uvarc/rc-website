@@ -15,6 +15,8 @@
   </div>
 </div>
 </section>
+<script src="//cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.js"></script>
 <script>
 $(document).ready(function() {
   $("#status-message").hide();
@@ -24,9 +26,10 @@ $(document).ready(function() {
   setInterval(checkStatusMessages, 60000);
 });
 function checkStatusMessages() {
-  $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages', function(data) {
+  $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages' , function(data) {
     var messageData = '';
     $.each(data, function(key, value) {
+      var converter = new Markdown.getSanitizingConverter();
       var messageBody = value.body;
       var messageLength = messageBody.length;
       if ( messageLength < 22 ) {
@@ -34,11 +37,9 @@ function checkStatusMessages() {
       } else {
         $("#status-message").show();
         messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
-        /*
-        messageData += value.body;
-        */
-          messageData += '2024-03-01 10:00 am EST: <br>On February 26 at 9:00 am EST, RC engineers switched to an alternate data transfer mechanism between the legacy Research Project Storage filesystem and the new Project Storage system. To aid in the data transfer process, a text file containing a comprehensive list of old Project storage files has been deposited into a new /stagedproject folder on Rivanna. Users can utilize this list to specify which folders or files should be prioritized for transfer by completing our <a href="https://rc.virginia.edu/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration&description=Please%20indicate%20as%20precisely%20as%20possible%20which%20directories%20or%20files%20should%20be%20transferred%20first:">data transfer request form</a>. For further details regarding the file transfer efforts and the status of the Project Storage system, users can refer to our <a href="https://www.rc.virginia.edu/service/status/">Data Migration status page</a>.'
-        $('#status-message-content').html(messageData);
+        
+        messageData += messageBody;
+        $('#status-message-content').html(converter.makeHtml(messageData));
       }
     });
   });
