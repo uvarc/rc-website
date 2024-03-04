@@ -12,7 +12,7 @@ draft = false
 
 +++
 
-<img class="card-img-top" src="/images/RC_posters_image.png" alt="" style="max-width:500px;max-height:350px;">
+<img class="card-img-top" src="/images/RC_posters_image.png" alt="" style="float: right;">
 
 ## About This Event:
 The Research Computing Exhibition will be held on <strong>Tuesday, April 23, 2024</strong> in the <strong>Newcomb Hall Ballroom</strong>. The event will include:
@@ -26,6 +26,9 @@ The Research Computing Exhibition will be held on <strong>Tuesday, April 23, 202
   </ul>
   <li>Light refreshments
 </ul>
+
+<br><br>
+
 If you would like to participate in the poster session, please fill out the <a href="https://forms.office.com/r/6qaztRZTbD">Intent to Participate Form</a> by <strong>Friday, March 15</strong>.
 
 
