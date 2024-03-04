@@ -72,7 +72,7 @@ If you would like to participate in the poster session, please fill out the <a h
   </tr>
   <tr>
     <td class="no-wrap">12:45-2:15</td>
-    <td> Judges review posters and interview participants. Participants speak for approximately 3-5 minutes. Event attendees may view posters/ask participants questions.<br><em>*Will breakdown into 3 timeslots*</em></td>
+    <td> Event attendees and participants circulate among posters. Participants will be assigned specific time slots they need to be next to their posters. Judges circulate and interview finalists about their posters.<br><em>*Will breakdown into 3 timeslots*</em></td>
   </tr>
   <tr>
     <td class="no-wrap">2:15-2:45</td>
