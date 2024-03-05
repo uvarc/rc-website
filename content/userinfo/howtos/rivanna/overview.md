@@ -19,6 +19,7 @@ author = "RC Staff"
 * [Using `make`](/userinfo/howtos/rivanna/make)
 * [Building and running MPI Code](/userinfo/howtos/rivanna/mpi-howto)
 * [Bioinformatics on Rivanna](/userinfo/howtos/rivanna/bioinfo-on-rivanna)
+* [Clear OOD Session Files](/userinfo/howtos/rivanna/clear-ood-session-files)
 * [Convert Jupyter Notebook to PDF](/userinfo/howtos/rivanna/convert-jupyter-pdf)
 * [Convert Jupyter Notebook to Python Script](/userinfo/howtos/rivanna/jupyter-to-python-script)
 * [Custom Jupyter kernels](/userinfo/howtos/rivanna/custom-jupyter-kernels)
