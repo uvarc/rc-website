@@ -309,11 +309,11 @@ The script will also be available through the Open OnDemand Job Composer:
 
 1. Go to Open OnDemand Job Composer 
 2. Click: New Job -> From Template 
-3. Select demo-copy-stagedproject 
+3. Select demo-copy-stagedproject.slurm 
 4. In the right panel, click “Create New Job” 
 5. This will take you to the “Jobs” page. In the “Submit Script” panel at the bottom right, click “Open Editor” 
 6. Enter your own allocation. Edit the MY_SHARE placeholder in the script as needed. Click “Save” when done. 
-7. Going back to the “Jobs” page, select demo-copy-stagedproject and click the green “Submit” button. 
+7. Going back to the “Jobs” page, select demo-copy-stagedproject.slurm and click the green “Submit” button. 
 
 As we expect a high volume of data migration, please refrain from doing so directly on the login nodes but instead submit it as a job via the provided Slurm script as described above. 
 
