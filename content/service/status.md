@@ -278,7 +278,7 @@ This produces two files, `regular-files.log` and `stubfiles.log`. The `stubfiles
 Stub files may be present which are placeholders that linked the new storage system to the legacy storage system. As a part of the data migration process, stub files linking to the legacy system were also attempted to be deleted. A subset of these stub files remains visible on the new system, but attempting to access them will result in File Not Found Errors, as they are no longer coupled with the old system. These files are scheduled for deletion through an automated process eventually.
 {{% /accordion-item %}}
 
-{{% accordion-item title="How can I verify that all my old project storage files are now in /stagedproject?" id="nineteen" %}}
+{{% accordion-item title="How can I verify that all my old project storage files are now in /stagedproject?" id="twenty" %}}
 
 To create a list of files in `/stagedproject` you can run the following command:
 
