@@ -288,6 +288,39 @@ This command lists all files within your `/stagedproject` share and writes to `~
 
 {{% /accordion-item %}}
 
+{{% accordion-item title="How can I consolidate my files in /stagedproject and /project?" id="twentyone" %}}
+
+Submit the following script to copy large directories in bulk:
+
+```
+#!/bin/bash
+#SBATCH -A your_allocation  # to find your allocation, type "allocations"
+#SBATCH -t 12:00:00   # up to 7-00:00:00 (7 days)
+#SBATCH -p standard
+
+
+STAGEDPROJECTFOLDER=/stagedproject/MYSHARE/      #replace MYSHARE  with your share name
+PROJECTFOLDER=/project/MYSHARE/                  #replace MYSHARE with your share name
+
+rsync -av ${STAGEDPROJECTFOLDER} ${PROJECTFOLDER} 1> ~/rsync.log 2> ~/rsync-error.log
+```
+
+The script will also be available through the Open OnDemand Job Composer: 
+
+1. Go to Open OnDemand Job Composer 
+2. Click: New Job -> From Template 
+3. Select demo-copy-stagedproject 
+4. In the right panel, click “Create New Job” 
+5. This will take you to the “Jobs” page. In the “Submit Script” panel at the bottom right, click “Open Editor” 
+6. Enter your own allocation. Edit the MY_SHARE placeholder in the script as needed. Click “Save” when done. 
+7. Going back to the “Jobs” page, select demo-copy-stagedproject and click the green “Submit” button. 
+
+As we expect a high volume of data migration, please refrain from doing so directly on the login nodes but instead submit it as a job via the provided Slurm script as described above. 
+
+
+{{% /accordion-item %}}
+
+
 {{% accordion-item title="How can I get help with the data migration process?"  id="five" %}}
 We have placed a list of your old Project storage files in the top-level folder of your new share on /stagedproject (i.e. /stagedproject/my_share/old-project-file-list.txt). You may use this list to prioritize folders and files for your data migration (see *“Can I pick which of my files are transferred first?”*).
 
