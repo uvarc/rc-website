@@ -259,20 +259,17 @@ At this time, about 35% of files have been successfully migrated. These files we
 The prioritized datasets were known to be actively used and were prime candidates to transfer when extra transfer capacity was available. 
 {{% /accordion-item %}}
 
-{{% accordion-item title="How can I get help with the data migration process?"  id="five" %}}
-We have placed a list of your old Project storage files in the top-level folder of your new share on /stagedproject (i.e. /stagedproject/my_share/old-project-file-list.txt). You may use this list to prioritize folders and files for your data migration (see *“Can I pick which of my files are transferred first?”*).
+{{% accordion-item title="What are stub files and how can I find them?" id="nineteen" %}}
+ 
+Stub files are "placeholders” for files that exist on the old project storage system but had not been copied over to the new project storage system. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
 
-Researchers with an urgent need to access files that have not been migrated to the new Project storage system yet may submit a support request through our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration&description=Please%20indicate%20as%20precisely%20as%20possible%20which%20directories%20or%20files%20should%20be%20transferred%20first:" target="_blank">webform</a>. **Please indicate as precisely as possible which folders or files should be transferred first so we can prioritize these items.**
+You may create a list of stub files currently present in your /project folder by running this command: 
 
-All files will be transferred eventually. 
+```
+find /project/MY_SHARE -ls > regular-files.log 2> stubfiles.log
+``` 
 
-{{% highlight %}}
-
-**Do you have additional questions?** 
-
-Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual storage support office hours](https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09) every Wednesday, 2-3 p.m., starting March 6.
-
-{{% /highlight %}}
+This produces two files, `regular-files.log` and `stubfiles.log`. The `stubfiles.log` contains all files that the system cannot list which is indicative of being stub files. 
 
 {{% /accordion-item %}}
 
@@ -288,6 +285,23 @@ To create a list of files in `/stagedproject` you can run the following command:
 ```find /stagedproject/your_share > ~/file-list.txt```
 
 This command lists all files within your `/stagedproject` share and writes to `~/file-list.txt`. This file will change While your data transfer is still in progress. The share's owner will be notified once all the data is transferred.
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="How can I get help with the data migration process?"  id="five" %}}
+We have placed a list of your old Project storage files in the top-level folder of your new share on /stagedproject (i.e. /stagedproject/my_share/old-project-file-list.txt). You may use this list to prioritize folders and files for your data migration (see *“Can I pick which of my files are transferred first?”*).
+
+Researchers with an urgent need to access files that have not been migrated to the new Project storage system yet may submit a support request through our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration&description=Please%20indicate%20as%20precisely%20as%20possible%20which%20directories%20or%20files%20should%20be%20transferred%20first:" target="_blank">webform</a>. **Please indicate as precisely as possible which folders or files should be transferred first so we can prioritize these items.**
+
+All files will be transferred eventually. 
+
+{{% highlight %}}
+
+**Do you have additional questions?** 
+
+Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual storage support office hours](https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09) every Wednesday, 2-3 p.m., starting March 6.
+
+{{% /highlight %}}
 
 {{% /accordion-item %}}
 
