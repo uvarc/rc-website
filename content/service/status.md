@@ -282,9 +282,9 @@ Stub files may be present which are placeholders that linked the new storage sys
 
 To create a list of files in `/stagedproject` you can run the following command:
 
-```find /stagedproject/your_share > ~/file-list.txt```
+`find /stagedproject/your_share > ~/file-list.txt`
 
-This command lists all files within your `/stagedproject` share and writes to `~/file-list.txt`. This file will change While your data transfer is still in progress. The share's owner will be notified once all the data is transferred.
+This command lists all files within your `/stagedproject` share and writes to `~/file-list.txt`. This file will change While your data transfer is still in progress. The share’s owner will be notified once all the data is transferred.
 
 {{% /accordion-item %}}
 
@@ -309,11 +309,11 @@ The script will also be available through the Open OnDemand Job Composer:
 
 1. Go to Open OnDemand Job Composer 
 2. Click: New Job -> From Template 
-3. Select demo-copy-stagedproject.slurm 
+3. Select demo-copy-stagedproject
 4. In the right panel, click “Create New Job” 
 5. This will take you to the “Jobs” page. In the “Submit Script” panel at the bottom right, click “Open Editor” 
 6. Enter your own allocation. Edit the MY_SHARE placeholder in the script as needed. Click “Save” when done. 
-7. Going back to the “Jobs” page, select demo-copy-stagedproject.slurm and click the green “Submit” button. 
+7. Going back to the “Jobs” page, select demo-copy-stagedproject and click the green “Submit” button. 
 
 As we expect a high volume of data migration, please refrain from doing so directly on the login nodes but instead submit it as a job via the provided Slurm script as described above. 
 
