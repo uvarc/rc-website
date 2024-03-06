@@ -281,6 +281,16 @@ Please contact our <a href="/form/support-request/?category=Storage&request_titl
 Stub files may be present which are placeholders that linked the new storage system to the legacy storage system. As a part of the data migration process, stub files linking to the legacy system were also attempted to be deleted. A subset of these stub files remains visible on the new system, but attempting to access them will result in File Not Found Errors, as they are no longer coupled with the old system. These files are scheduled for deletion through an automated process eventually.
 {{% /accordion-item %}}
 
+{{% accordion-item title="How can I verify that all my old project storage files are now in /stagedproject?" id="nineteen" %}}
+
+To create a list of files in `/stagedproject` you can run the following command:
+
+```find /stagedproject/your_share > ~/file-list.txt```
+
+This command lists all files within your `/stagedproject` share and writes to `~/file-list.txt`. This file will change While your data transfer is still in progress. The share's owner will be notified once all the data is transferred.
+
+{{% /accordion-item %}}
+
 {{% /accordion-group %}}
 
 ## Technical Details
