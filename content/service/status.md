@@ -175,15 +175,19 @@ On Feb 26, your folder in <nobr>`/stagedproject`</nobr> is set up as **read-only
 
 <img src="/images/service/StorageOverview-3-5.png" alt="Project storage" width="100%"/>
 
-**Option 1 (preferred):** For compute jobs we recommend you copy files from `/stagedproject` into your `/project` or `/scratch` folder first. For transfer of large folders see *“How to consolidate files from /stagedproject to /project?”*. 
+**Option 1 (preferred):** 
+
+For compute jobs we recommend you *first* copy files from `/stagedproject` into your `/project` or `/scratch` folder. For transfer of large folders see *“How can I consolidate my files in /stagedproject and /project?”*. 
 
 {{% highlight %}}
-**Note:** A subset of files may not copy over because of existing stub files on the `/project` storage system. These files are "placeholders” of files that exist on the old project storage system but had not been copied over to the new project storage system yet, see “What are stub files and how can I find them?”. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
+**Note:** A subset of files may not copy over because of existing "stub files" on the `/project` storage system. Stub files are "placeholders” for files that exist on the old project storage system but had not been copied over to the new project storage system. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
 {{% /highlight %}}
 
-If you do not need any of the files affected by the failed copy operation immediately, you may continue to work out of `/project` and `/scratch` folders as usual. We will inform you when all stub files have been deleted and you may consolidate the remaining files from `/stagedproject` to `/project` then, following the copy instructions one more time,  see “How to consolidate files from /stagedproject to /project?” 
+If you do not need any of the files affected by any failed copy operation immediately, you may continue to work out of `/project` and `/scratch` folders as usual. We will inform you when all stub files have been deleted and you may consolidate the remaining files from `/stagedproject` to `/project` then, following the copy instructions one more time. See *“How can I consolidate my files in /stagedproject and /project?”* 
  
-**Option 2:** If the copy of any needed files to `/project` fails, you can update your job scripts to read the necessary input files from your `/stagedproject` folder and write the output to a new folder in your existing `/project` share. We will inform you when all stub files have been deleted and you may consolidate the remaining files from `/stagedproject` to `/project` then by following the copy instructions one more time, see *“How to consolidate files from /stagedproject to /project?”*. 
+**Option 2:**
+
+If the copy of any needed files to `/project` fails, you can update your job scripts to read the necessary input files from your `/stagedproject` folder and write the output to a new folder in your existing `/project` share. We will inform you when all stub files have been deleted and you may consolidate the remaining files from `/stagedproject` to `/project` then by following the copy instructions one more time, See *“How to consolidate files from /stagedproject to /project?”*. 
  
 {{% /accordion-item %}}
 
