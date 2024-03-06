@@ -42,6 +42,14 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 - **Since February 26:** A total of 216.5 TB out of 4.3 PB have been copied from old Project storage to the /stagedproject folder on the new storage system since February 26 (5%). This dataset will eventually comprise a complete duplicate of all files on the old Project storage system.
 {{% /callout %}}
 
+{{% highlight %}}
+
+**Do you have additional questions?** 
+
+Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual storage support office hours](https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09) every Wednesday, 2-3 p.m., starting March 6.
+
+{{% /highlight %}}
+
 ## Incident Response 
 
 Research Computing will reach out to all known users of this storage system with instructions for accessing data before and after February 26, and for assistance prioritizing files for transfer.  
@@ -120,7 +128,7 @@ Before February 26, your <nobr>`/project`</nobr> folder contains a mix of files,
 
 On February 26, the old and new Project storage systems will be disconnected. Researchers will not have any direct access to the old Project storage. The current <nobr>`/project`</nobr> folder on the new storage system should perform optimally without the tether to the old storage system. We will begin deleting the empty stub files on <nobr>`/project`</nobr>. These are empty files and are not needed for the new migration process. **The original files are still intact and secure on the old system.** 
 
-A new filesystem <nobr>`/stagedproject`</nobr> will be mounted read-only on <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a> and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). This folder will not be available on compute nodes. This folder will be used as a target to stage your data as it is being transferred from the old system to the new system. Setting up a new destination for the not yet transferred files prevents potential interference with your active work in <nobr>`/project`</nobr>. 
+A new filesystem <nobr>`/stagedproject`</nobr> will be mounted read-only on <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a>, compute nodes, and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). This folder will be used as a target to stage your data as it is being transferred from the old system to the new system. Setting up a new destination for the not yet transferred files prevents potential interference with your active work in <nobr>`/project`</nobr>. 
 
 **Your Project storage folders on February 26:**
 
@@ -163,12 +171,20 @@ On February 26, a new <nobr>`/stagedproject`</nobr> folder will become available
 {{% /accordion-item %}}
 
 {{% accordion-item title="How can I work with the files that have been transferred into my /stagedproject folder?"  id="nine" %}}
-On Feb 26, your folder in <nobr>`/stagedproject`</nobr> is set up as **read-only** on the <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a> and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). It is *not* available on any  compute nodes. 
+On Feb 26, your folder in <nobr>`/stagedproject`</nobr> is set up as **read-only** on the <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a>, compute nodes, and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN).
 
-<img src="/images/service/StorageOverview.png" alt="Project storage" width="100%"/>
-<small>&#42;AFM: Active File Management</small>
+<img src="/images/service/StorageOverview-3-5.png" alt="Project storage" width="100%"/>
 
-For compute jobs, you should copy files from <nobr>`/stagedproject`</nobr> into your <nobr>`/project`</nobr> or <nobr>`/scratch`</nobr> folder. Then launch compute jobs reading and writing files using the <nobr>`/project`</nobr> or <nobr>`/scratch`</nobr> folders as you usually do. You could copy files to your <nobr>`/home`</nobr> folder as well, but be aware of the limited 50GB per user quota which makes this impractical.
+**Option 1 (preferred):** For compute jobs we recommend you copy files from `/stagedproject` into your `/project` or `/scratch` folder first. For transfer of large folders see *“How to consolidate files from /stagedproject to /project?”*. 
+
+{{% highlight %}}
+**Note:** A subset of files may not copy over because of existing stub files on the `/project` storage system. These files are "placeholders” of files that exist on the old project storage system but had not been copied over to the new project storage system yet, see “What are stub files and how can I find them?”. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
+{{% /highlight %}}
+
+If you do not need any of the files affected by the failed copy operation immediately, you may continue to work out of `/project` and `/scratch` folders as usual. We will inform you when all stub files have been deleted and you may consolidate the remaining files from `/stagedproject` to `/project` then, following the copy instructions one more time,  see “How to consolidate files from /stagedproject to /project?” 
+ 
+**Option 2:** If the copy of any needed files to `/project` fails, you can update your job scripts to read the necessary input files from your `/stagedproject` folder and write the output to a new folder in your existing `/project` share. We will inform you when all stub files have been deleted and you may consolidate the remaining files from `/stagedproject` to `/project` then by following the copy instructions one more time, see *“How to consolidate files from /stagedproject to /project?”*. 
+ 
 {{% /accordion-item %}}
 
 {{% accordion-item title="Why can't I access the old Project storage system directly to copy my own files?" id="three" %}}
@@ -240,16 +256,25 @@ The prioritized datasets were known to be actively used and were prime candidate
 {{% /accordion-item %}}
 
 {{% accordion-item title="How can I get help with the data migration process?"  id="five" %}}
+We have placed a list of your old Project storage files in the top-level folder of your new share on /stagedproject (i.e. /stagedproject/my_share/old-project-file-list.txt). You may use this list to prioritize folders and files for your data migration (see *“Can I pick which of my files are transferred first?”*).
+
 Researchers with an urgent need to access files that have not been migrated to the new Project storage system yet may submit a support request through our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration&description=Please%20indicate%20as%20precisely%20as%20possible%20which%20directories%20or%20files%20should%20be%20transferred%20first:" target="_blank">webform</a>. **Please indicate as precisely as possible which folders or files should be transferred first so we can prioritize these items.**
 
-If you need help with your file prioritization, you may reach out to RC to <a href="/form/support-request/?category=Storage&request_title=Old%20Project%20Storage:%20File%20List%20Request&description=Please%20send%20me%20a%20list%20of%20my%20files%20on%20old%20Project%20storage." class="card-link" target="_blank">request a list of files</a> that you still have on the old Project storage system.
+All files will be transferred eventually. 
 
-All files will be transferred eventually. Questions about the data migration process should be directed to our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>.
+{{% highlight %}}
+
+**Do you have additional questions?** 
+
+Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual storage support office hours](https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09) every Wednesday, 2-3 p.m., starting March 6.
+
+{{% /highlight %}}
+
 {{% /accordion-item %}}
 
 {{% accordion-item title="Why do I get File Not Found Errors when accessing some of my files in my /project subfolders?" id="eighteen" %}}
 
-Stub files may be present which link the new system to the legacy system. As a part of the data migration process, stub files linking to the legacy system were also attempted to be deleted. A subset of these stub files remains visible on the new system, but attempting to access them will result in File Not Found Errors, as they are no longer coupled with the old system. These files are scheduled for deletion through an automated process eventually.
+Stub files may be present which are placeholders that linked the new storage system to the legacy storage system. As a part of the data migration process, stub files linking to the legacy system were also attempted to be deleted. A subset of these stub files remains visible on the new system, but attempting to access them will result in File Not Found Errors, as they are no longer coupled with the old system. These files are scheduled for deletion through an automated process eventually.
 {{% /accordion-item %}}
 
 {{% /accordion-group %}}
