@@ -39,7 +39,7 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 
 **Update: 2024-03-01** 
 - **Before February 26:** A total of 1.7 PB out of 4.3 PB were copied from old Project storage to /project folder on the new storage system using the automated migration process before February 26 (40%).
-- **Since February 26:** A total of 216.5 TB out of 4.3 PB have been copied from old Project storage to the /stagedproject folder on the new storage system since February 26 (5%). This dataset will eventually comprise a complete duplicate of all files on the old Project storage system.
+- **Since February 26:** A total of 218.5 TB out of 4.3 PB have been copied from old Project storage to the /stagedproject folder on the new storage system since February 26 (5%). This dataset will eventually comprise a complete duplicate of all files on the old Project storage system.
 {{% /callout %}}
 
 {{% highlight %}}
@@ -259,6 +259,68 @@ At this time, about 35% of files have been successfully migrated. These files we
 The prioritized datasets were known to be actively used and were prime candidates to transfer when extra transfer capacity was available. 
 {{% /accordion-item %}}
 
+{{% accordion-item title="What are stub files and how can I find them?" id="nineteen" %}}
+ 
+Stub files are "placeholders” for files that exist on the old project storage system but had not been copied over to the new project storage system. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
+
+You may create a list of stub files currently present in your /project folder by running this command: 
+
+```
+find /project/MY_SHARE -ls > regular-files.log 2> stubfiles.log
+``` 
+
+This produces two files, `regular-files.log` and `stubfiles.log`. The `stubfiles.log` contains all files that the system cannot list which is indicative of being stub files. 
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="Why do I get File Not Found Errors when accessing some of my files in my /project subfolders?" id="eighteen" %}}
+
+Stub files may be present which are placeholders that linked the new storage system to the legacy storage system. As a part of the data migration process, stub files linking to the legacy system were also attempted to be deleted. A subset of these stub files remains visible on the new system, but attempting to access them will result in File Not Found Errors, as they are no longer coupled with the old system. These files are scheduled for deletion through an automated process eventually.
+{{% /accordion-item %}}
+
+{{% accordion-item title="How can I verify that all my old project storage files are now in /stagedproject?" id="twenty" %}}
+
+To create a list of files in `/stagedproject` you can run the following command:
+
+`find /stagedproject/your_share > ~/file-list.txt`
+
+This command lists all files within your `/stagedproject` share and writes to `~/file-list.txt`. This file will change While your data transfer is still in progress. The share’s owner will be notified once all the data is transferred.
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="How can I consolidate my files in /stagedproject and /project?" id="twentyone" %}}
+
+Submit the following script to copy large directories in bulk:
+
+```
+#!/bin/bash
+#SBATCH -A your_allocation  # to find your allocation, type "allocations"
+#SBATCH -t 12:00:00   # up to 7-00:00:00 (7 days)
+#SBATCH -p standard
+
+
+STAGEDPROJECTFOLDER=/stagedproject/MYSHARE/      #replace MYSHARE  with your share name
+PROJECTFOLDER=/project/MYSHARE/                  #replace MYSHARE with your share name
+
+rsync -av ${STAGEDPROJECTFOLDER} ${PROJECTFOLDER} 1> ~/rsync.log 2> ~/rsync-error.log
+```
+
+The script will also be available through the Open OnDemand Job Composer: 
+
+1. Go to Open OnDemand Job Composer 
+2. Click: New Job -> From Template 
+3. Select demo-copy-stagedproject
+4. In the right panel, click “Create New Job” 
+5. This will take you to the “Jobs” page. In the “Submit Script” panel at the bottom right, click “Open Editor” 
+6. Enter your own allocation. Edit the MY_SHARE placeholder in the script as needed. Click “Save” when done. 
+7. Going back to the “Jobs” page, select demo-copy-stagedproject and click the green “Submit” button. 
+
+As we expect a high volume of data migration, please refrain from doing so directly on the login nodes but instead submit it as a job via the provided Slurm script as described above. 
+
+
+{{% /accordion-item %}}
+
+
 {{% accordion-item title="How can I get help with the data migration process?"  id="five" %}}
 We have placed a list of your old Project storage files in the top-level folder of your new share on /stagedproject (i.e. /stagedproject/my_share/old-project-file-list.txt). You may use this list to prioritize folders and files for your data migration (see *“Can I pick which of my files are transferred first?”*).
 
@@ -273,21 +335,6 @@ All files will be transferred eventually.
 Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual storage support office hours](https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09) every Wednesday, 2-3 p.m., starting March 6.
 
 {{% /highlight %}}
-
-{{% /accordion-item %}}
-
-{{% accordion-item title="Why do I get File Not Found Errors when accessing some of my files in my /project subfolders?" id="eighteen" %}}
-
-Stub files may be present which are placeholders that linked the new storage system to the legacy storage system. As a part of the data migration process, stub files linking to the legacy system were also attempted to be deleted. A subset of these stub files remains visible on the new system, but attempting to access them will result in File Not Found Errors, as they are no longer coupled with the old system. These files are scheduled for deletion through an automated process eventually.
-{{% /accordion-item %}}
-
-{{% accordion-item title="How can I verify that all my old project storage files are now in /stagedproject?" id="nineteen" %}}
-
-To create a list of files in `/stagedproject` you can run the following command:
-
-```find /stagedproject/your_share > ~/file-list.txt```
-
-This command lists all files within your `/stagedproject` share and writes to `~/file-list.txt`. This file will change While your data transfer is still in progress. The share's owner will be notified once all the data is transferred.
 
 {{% /accordion-item %}}
 
