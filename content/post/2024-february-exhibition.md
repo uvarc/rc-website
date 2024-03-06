@@ -29,7 +29,7 @@ The Research Computing Exhibition will be held on <strong>Tuesday, April 23, 202
 
 <br><br>
 
-If you would like to participate in the poster session, please fill out the <a href="https://forms.office.com/r/6qaztRZTbD">Intent to Participate Form</a> by <strong>Friday, March 15</strong>.
+If you would like to participate in the poster session, please fill out the <a href="https://forms.office.com/r/6qaztRZTbD">Intent to Participate Form</a> by <strong>Friday, March 15</strong>. While all are welcome to present a poster during the exhibition, only UVA affiliated non-faculty submissions will be eligible for the award prizes.
 
 
 
