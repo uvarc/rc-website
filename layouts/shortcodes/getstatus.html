@@ -1,0 +1,8 @@
+{{- $gistJ := getJSON "https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages" -}}
+{{- range $gistJ -}}
+   {{- range $key,$values := . -}}
+       {{- if eq $key "body" -}}
+           {{ $values }}
+       {{- end -}}
+   {{- end -}}
+{{- end -}}
