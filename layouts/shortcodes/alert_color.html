@@ -1,0 +1,3 @@
+<div style="background-color: #FFCABE; color: #333; padding: 10px;">
+    {{ .Inner | replaceRE "<br>|&lt;br&gt;" "" | markdownify | safeHTML }}
+</div>

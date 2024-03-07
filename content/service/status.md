@@ -8,7 +8,7 @@ images = [
 categories = [
   "service", "status"
 ]
-date = "2024-02-16T08:55:21-05:00"
+date = "2024-03-07T08:55:21-05:00"
 tags = [
   "service",
   "status",
@@ -37,7 +37,7 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 - Though the new Project storage system is operating with expected performance, the transfer of all data from the old storage system will take several months. The severe performance degradation of the old storage system will remain a bottleneck regardless of the change in data transfer method.
 - Rivanna and RC’s other storage services, Scratch and Research Standard, continue to operate normally.
 
-**Update: 2024-03-01** 
+**Update: 2024-03-07** 
 - **Before February 26:** A total of 1.7 PB out of 4.3 PB were copied from old Project storage to /project folder on the new storage system using the automated migration process before February 26 (40%).
 - **Since February 26:** A total of 218.5 TB out of 4.3 PB have been copied from old Project storage to the /stagedproject folder on the new storage system since February 26 (5%). This dataset will eventually comprise a complete duplicate of all files on the old Project storage system.
 {{% /callout %}}
@@ -280,11 +280,13 @@ Stub files may be present which are placeholders that linked the new storage sys
 
 {{% accordion-item title="How can I verify that all my old project storage files are now in /stagedproject?" id="twenty" %}}
 
-To create a list of files in `/stagedproject` you can run the following command:
+To verify the list of files in `/stagedproject` you can run the following on the command line:
 
-`find /stagedproject/your_share > ~/file-list.txt`
+`check_stagedproject MYSHARE`
 
-This command lists all files within your `/stagedproject` share and writes to `~/file-list.txt`. This file will change While your data transfer is still in progress. The share’s owner will be notified once all the data is transferred.
+Replace MYSHARE with the name of your project's share. This will create `~/stagedproject-file-list.txt` which contains a list of files that have been copied from `/oldproject` to `/stagedproject`. This list is compared with `/stagedproject/MYSHARE/old-project-file-list.txt` to ensure that all files have been transferred from `/oldproject`.
+
+`~/stagedproject-file-list.txt` will change if your data transfer is still in progress. The share's owner will be notified once all the data is transferred.
 
 {{% /accordion-item %}}
 
