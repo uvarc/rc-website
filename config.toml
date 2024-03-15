@@ -28,6 +28,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+      hardWraps = true
   [markup.highlight]
     codeFences = true
     guessSyntax = false
