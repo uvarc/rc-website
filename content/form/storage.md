@@ -11,6 +11,8 @@ type = "form"
 private = true
 +++
 
+{{% jira-msg %}}
+
 {{< form-cookies >}}
 <!-- <script type="text/javascript" src="/js/typeahead.js"></script> -->
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
