@@ -18,9 +18,10 @@ All systems are expected to return to service by **6 a.m. on May 29.**
 
 ## IMPORTANT MAINTENANCE NOTES
 
-The operating system will be upgraded from Rocky 8.7 to 8.9. There should be no need to rebuild your own code.
-
-The NVIDIA driver will be upgraded to 550.54.14.
+### System upgrades
+1. **Operating System:** Rocky 8.7 &rarr; 8.9. There should be no need to rebuild your own code.
+1. **Slurm:** 21.08.8 &rarr; 23.02.7. Job-related commands remain the same.
+1. **NVIDIA driver:** 535.104.12 &rarr; 550.54.14.
 
 ### Modules
 
