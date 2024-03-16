@@ -22,10 +22,9 @@ aliases = [ "/storage" ]
 
 {{% alert %}}
 
-{{% getstatus type="storage" %}}
+{{% getstatus keywords="storage" %}}
 
 {{% /alert %}}
-
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
