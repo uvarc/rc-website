@@ -12,8 +12,6 @@ private = true
 
 +++
 
-{{% jira-msg %}}
-
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
