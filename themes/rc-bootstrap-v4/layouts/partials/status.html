@@ -41,7 +41,7 @@ function checkStatusMessages() {
         messageData += messageBody;
         $('#status-message-content').html(converter.makeHtml(messageData));
         var msgarray = messageData.split("<br>");
-        var keywords = ["storage","jira"];
+        const keywords = ["storage","jira","rivanna","ivy","microservices","accord","globus"];
         for (let j = 0; j < keywords.length; j++) {
           var msg = "";
           for (let i = 0; i < msgarray.length; i++) {
@@ -50,14 +50,12 @@ function checkStatusMessages() {
             }
           }
           $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
-          if ( msg.length < 22 ) {
+          if ( msg.length == 0 ) {
             $('#status-message-'+keywords[j]).hide()
           } else {
             $('#status-message-'+keywords[j]).show()
           }
         }
-        $('#status-message-test').html(converter.makeHtml("Test"));
-        $("#status-message-test").hide()
       }
     });
   });
