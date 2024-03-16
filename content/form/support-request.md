@@ -15,7 +15,6 @@ private = true
 
 {{< form-cookies >}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
-<fieldset disabled="disabled">
 
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
@@ -64,7 +63,6 @@ private = true
   </div>
 </div>
 
-</fieldset>
 </form>
 
 <script>

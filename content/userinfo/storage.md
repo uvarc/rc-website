@@ -20,9 +20,11 @@ aliases = [ "/storage" ]
   Information Technology Services (ITS) also provides <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" target="_new"><b>multiple tiers of data storage</b></a> for personal and non-research storage needs.</alert>
 {{< /highlight >}}
 
-{{< alert_color >}}
-2024-03-15 07:42:15  **On February 26 at 9:00 am EST**, RC engineers switched to an alternate data transfer mechanism between the legacy Research Project Storage filesystem and the new Project Storage system. To aid in the data transfer process, a text file containing a comprehensive list of old Project storage files has been deposited into a new /stagedproject folder on Rivanna. Users can utilize this list to specify which folders or files should be prioritized for transfer by completing our [data transfer request form](https://rc.virginia.edu/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration&description=Please%20indicate%20as%20precisely%20as%20possible%20which%20directories%20or%20files%20should%20be%20transferred%20first:). For further details regarding the file transfer efforts and the status of the Project Storage system, users can refer to our [Data Migration status page](https://www.rc.virginia.edu/service/status/)
-{{< /alert_color >}}
+{{% alert %}}
+
+{{% getstatus keywords="storage" %}}
+
+{{% /alert %}}
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}

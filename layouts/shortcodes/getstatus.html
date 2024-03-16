@@ -1,8 +1,16 @@
+{{ $keywords := default "all" (.Get "keywords") }}
 {{- $gistJ := getJSON "https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages" -}}
 {{- range $gistJ -}}
    {{- range $key,$values := . -}}
        {{- if eq $key "body" -}} 
-           {{ $values | markdownify }}
+           {{- range (split $values "<br>") -}}
+               {{- if eq $keywords "all" -}}
+                   {{ . | markdownify }}
+               {{- else if in . $keywords -}}
+                   {{ . | markdownify }}
+               {{- end -}} 
+
+           {{- end -}}
        {{- end -}}
    {{- end -}}
 {{- end -}}
