@@ -20,11 +20,7 @@ aliases = [ "/storage" ]
   Information Technology Services (ITS) also provides <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" target="_new"><b>multiple tiers of data storage</b></a> for personal and non-research storage needs.</alert>
 {{< /highlight >}}
 
-{{% alert %}}
-
-{{% getstatus keywords="storage" %}}
-
-{{% /alert %}}
+{{% getstatus keyword="storage" %}}
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}

@@ -1,16 +1,3 @@
-{{ $keywords := default "all" (.Get "keywords") }}
-{{- $gistJ := getJSON "https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages" -}}
-{{- range $gistJ -}}
-   {{- range $key,$values := . -}}
-       {{- if eq $key "body" -}} 
-           {{- range (split $values "<br>") -}}
-               {{- if eq $keywords "all" -}}
-                   {{ . | markdownify }}
-               {{- else if in . $keywords -}}
-                   {{ . | markdownify }}
-               {{- end -}} 
-
-           {{- end -}}
-       {{- end -}}
-   {{- end -}}
-{{- end -}}
+<div>
+<p id={{ printf "status-message-%s" (default "all" (.Get "keyword" | lower)) }} class="alert alert-danger" role="alert" style="margin:0; padding:10;"></p>
+</div>
