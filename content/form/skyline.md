@@ -11,10 +11,6 @@ type = "form"
 private = true
 +++
 
-{{% getstatus keyword="jira" %}}
-
----
-
 {{< form-cookies >}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 
@@ -27,8 +23,9 @@ private = true
   <input type="hidden" id="category" name="category" value="Skyline">
   <input type="hidden" id="request_title" name="request_title" value="Skyline VM Service Request" />
 
+  {{% getstatus keyword="jira" %}}
 
-{{% form-userinfo %}}
+  {{% form-userinfo %}}
   <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>

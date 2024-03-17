@@ -12,10 +12,6 @@ private = true
 
 +++
 
-{{% getstatus keyword="jira" %}}
-
----
-
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
@@ -26,6 +22,7 @@ private = true
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Instructional Allocation">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Instructional" />
 
+  {{% getstatus keyword="jira" %}}
 
   {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of Grouper Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create his/her Grouper group</a>.</span></label>

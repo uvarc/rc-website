@@ -11,10 +11,6 @@ type = "form"
 private = true
 +++
 
-{{% getstatus keyword="jira" %}}
-
----
-
 <!-- <p id="support-greeting" style="font-style:italic;font-size:120%;" value=""></p> -->
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 
@@ -25,8 +21,9 @@ private = true
   <input type="hidden" id="category" name="category" value="DCOS">
   <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
 
+  {{% getstatus keyword="jira" %}}
 
-{{% form-userinfo-v2 %}}
+  {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="10"></textarea>

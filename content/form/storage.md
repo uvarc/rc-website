@@ -11,10 +11,6 @@ type = "form"
 private = true
 +++
 
-{{% getstatus keyword="jira" %}}
-
----
-
 {{< form-cookies >}}
 <!-- <script type="text/javascript" src="/js/typeahead.js"></script> -->
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
@@ -26,8 +22,9 @@ private = true
   <input type="hidden" id="category" name="category" value="Storage">
   <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
 
+  {{% getstatus keyword="jira" %}}
 
-{{% form-userinfo-v2 %}}
+  {{% form-userinfo-v2 %}}
 
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 

@@ -53,11 +53,11 @@ function checkStatusMessages() {
           }
         }
         if ( msg.length == 0 ) {
-          $('#status-message-'+keywords[j]).hide()
+          $('#status-message-'+keywords[j]).hide();
         } else {
-          $('#status-message-'+keywords[j]).show()
-          $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
-        }
+          $('#status-message-'+keywords[j]).show();
+        } 
+        $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
       }
     });
   });

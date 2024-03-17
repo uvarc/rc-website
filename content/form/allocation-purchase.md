@@ -11,10 +11,6 @@ type = "form"
 private = true
 +++
 
-{{% getstatus keyword="jira" %}}
-
----
-
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
@@ -26,6 +22,7 @@ private = true
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Purchase Service Units">
   <input type="hidden" id="request_title" name="request_title" value="Allocation Request: Purchase" />
 
+  {{% getstatus keyword="jira" %}}
 
   {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="pi-name">Name of PI <span class="form-required" title="This field is required.">*</span></label>
