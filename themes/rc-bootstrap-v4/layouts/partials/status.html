@@ -29,32 +29,34 @@ function checkStatusMessages() {
   $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages' , function(data) {
     var messageData = '';
     $.each(data, function(key, value) {
-      var converter = new Markdown.getSanitizingConverter();
+      var converter = Markdown.getSanitizingConverter();
       var messageBody = value.body;
       var messageLength = messageBody.length;
       if ( messageLength < 22 ) {
         $("#status-message").hide();
       } else {
         $("#status-message").show();
-        messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
-        
-        messageData += messageBody;
-        $('#status-message-content').html(converter.makeHtml(messageData));
-        var msgarray = messageData.split("<br>");
-        const keywords = ["storage","jira","rivanna","ivy","microservices","accord","globus"];
-        for (let j = 0; j < keywords.length; j++) {
-          var msg = "";
-          for (let i = 0; i < msgarray.length; i++) {
-            if (msgarray[i].search(keywords[j]) != -1) {
-              msg += msgarray[i];
-            }
+        //messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
+        messageData += converter.makeHtml(messageBody);
+        $('#status-message-content').html(messageData);
+      }
+      // break up message by paragraphs, then extract and create service specific message components 
+      var msgarray = messageBody.split("<br>");
+      const keywords = ["storage","jira","rivanna","ivy","microservices","accord","globus"];
+      for (let j = 0; j < keywords.length; j++) {
+        var msg = '';
+        // iterate over message paragraphs
+        for (let i = 0; i < msgarray.length; i++) {
+          if (msgarray[i].toLowerCase().search(keywords[j]) != -1) {
+            // only add to service specific message if it contains the service keyword
+            msg += msgarray[i];
           }
+        }
+        if ( msg.length == 0 ) {
+          $('#status-message-'+keywords[j]).hide()
+        } else {
+          $('#status-message-'+keywords[j]).show()
           $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
-          if ( msg.length == 0 ) {
-            $('#status-message-'+keywords[j]).hide()
-          } else {
-            $('#status-message-'+keywords[j]).show()
-          }
         }
       }
     });
