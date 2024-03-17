@@ -21,8 +21,9 @@ private = true
   <input type="hidden" id="category" name="category" value="DCOS">
   <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
 
+  {{% getstatus keyword="jira" %}}
 
-{{% form-userinfo-v2 %}}
+  {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="10"></textarea>

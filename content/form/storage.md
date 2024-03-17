@@ -22,8 +22,9 @@ private = true
   <input type="hidden" id="category" name="category" value="Storage">
   <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
 
+  {{% getstatus keyword="jira" %}}
 
-{{% form-userinfo-v2 %}}
+  {{% form-userinfo-v2 %}}
 
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
