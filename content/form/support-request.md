@@ -11,9 +11,6 @@ type = "form"
 private = true
 +++
 
-{{% getstatus keyword="jira" %}}
-
----
 
 {{< form-cookies >}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
@@ -23,6 +20,8 @@ private = true
 </div>
 <div>
   <input type="hidden" id="category" name="category" value="Support">
+
+{{% getstatus keyword="jira" %}}
 
 
 {{% form-userinfo-v2 %}}
