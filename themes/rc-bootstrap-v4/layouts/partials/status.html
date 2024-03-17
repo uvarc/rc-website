@@ -44,7 +44,7 @@ function checkStatusMessages() {
       var msgarray = messageBody.split("<br>");
       const keywords = ["storage","jira","rivanna","ivy","microservices","accord","globus"];
       for (let j = 0; j < keywords.length; j++) {
-        var msg = '';
+        var msg = ''
         // iterate over message paragraphs
         for (let i = 0; i < msgarray.length; i++) {
           if (msgarray[i].toLowerCase().search(keywords[j]) != -1) {
@@ -56,7 +56,8 @@ function checkStatusMessages() {
           $('#status-message-'+keywords[j]).hide();
         } else {
           $('#status-message-'+keywords[j]).show();
-        } 
+        }
+        msg = messageBody.substr(0,19) + " <br> " + msg; // add original timestamp 
         $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
       }
     });
