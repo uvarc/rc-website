@@ -30,7 +30,7 @@ function checkStatusMessages() {
     var messageData = '';
     $.each(data, function(key, value) {
       var converter = Markdown.getSanitizingConverter();
-      var messageBody = value.body;
+      var messageBody = value.body.replace("&lt;br&gt;", "<br>");
       var messageLength = messageBody.length;
       if ( messageLength < 22 ) {
         $("#status-message").hide();
