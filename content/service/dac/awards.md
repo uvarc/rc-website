@@ -17,7 +17,7 @@ The focus of the Award will be on projects that
 
 i) involve data-intensive research, where the data can be text, images, videos, business data, genomic data, sensor data, geospatial data, etc., and 
 
-ii) demonstrate potential for future, external funding.
+ii) demonstrate potential for future funding.
 
 
 
@@ -92,7 +92,7 @@ Recipients of the Awards will receive vouchers that may be used toward the Data 
 * A description of the project and its goals,
 * A description of the type(s) of data collected for the project and how the data will be used to meet the goals of the project,
 * A description of how the Analytics Research Award will support the goals of the project, including the use of vouchers to obtain services,
-* A plan for how the Analytics Research Award will lead to future support for this or subsequent projects. 
+* A plan for how the Analytics Research Award will lead to future support (e.g., external grants or other funding) for this or subsequent projects. 
 * An attachment with a budget showing the services and expected costs that the Award would cover.  The attachment will not count toward the two-page limit.
 
 
