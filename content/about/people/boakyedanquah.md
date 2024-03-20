@@ -20,7 +20,7 @@ subjects = [
 ]
 +++
 
-
+Angela is a computational scientist in the Data Analytics Center at RC. She supports faculty and community members' machine and deep learning research. Angela is experienced in working in HPC and Cloud computing environments. 
 
 
 
