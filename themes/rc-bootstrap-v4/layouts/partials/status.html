@@ -52,12 +52,14 @@ function checkStatusMessages() {
             msg += msgarray[i];
           }
         }
-        if ( msg.length == 0 ) {
+        if ( msg.length <= 19 ) {
           $('#status-message-'+keywords[j]).hide();
         } else {
           $('#status-message-'+keywords[j]).show();
+          if (msg.substr(0,19) !== messageBody.substr(0,19)) {
+            msg = messageBody.substr(0,19) + " " + msg; // add original timestamp 
+          }
         }
-        msg = messageBody.substr(0,19) + " <br> " + msg; // add original timestamp 
         $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
       }
     });
