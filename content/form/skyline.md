@@ -11,8 +11,12 @@ type = "form"
 private = true
 +++
 
+{{% jira-msg %}}
+
+
 {{< form-cookies >}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+<fieldset disabled="disabled">
 
 <div>Skyline Virtual Machines (VMs) are designated for computation that involves public and moderately-sensitive data. <b>Processing of highly sensitive data is not permitted.</b> <a href="/userinfo/ivy/overview">Learn about our Ivy environment</a> for processing and storage of highly sensitive data that have HIPAA, ITAR, or CUI requirements.
 </div>
@@ -166,6 +170,8 @@ private = true
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
   </div>
 </div>
+
+</fieldset>
 
 </form>
 <div>

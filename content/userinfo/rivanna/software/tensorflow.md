@@ -117,7 +117,7 @@ Yes, you may either pull the official TensorFlow Docker image or create your own
 1. Note the provided pull command (`docker pull tensorflow/tensorflow:1.14.0-gpu`) and change it into Apptainer. The differences are underlined by `^`:
     ```bash
     apptainer pull docker://tensorflow/tensorflow:1.14.0-gpu
-    ^^^^^^^^^^^      ^^^^^^^^^
+    ^^^^^^^^^      ^^^^^^^^^
     ```
 
 1. You will find the Apptainer image `tensorflow_1.14.0-gpu.sif` in your current directory. Consult the instructions in the previous sections. Remember to replace `$CONTAINERDIR/tensorflow-2.13.0.sif` with the actual path to your own Apptainer image.
