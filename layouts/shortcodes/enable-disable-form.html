@@ -1,0 +1,7 @@
+{{- if .Site.Params.support.enableForms -}}
+    <fieldset>
+{{- else -}}
+    <fieldset disabled>
+{{- end -}}   
+{{ .Inner }}
+</fieldset>
