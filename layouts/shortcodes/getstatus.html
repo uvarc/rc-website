@@ -1,3 +1,56 @@
 <div>
     <p id={{ printf "status-message-%s" (default "content" (.Get "keyword" | lower)) }} class="alert alert-danger" role="alert" style="font-size:80%; margin:0; padding:10;"></p>
 </div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.js"></script>
+
+<script>
+
+$(document).ready(function() {
+  $("#status-message").hide();
+  updateStatusMessages();
+  setInterval(checkStatusMessages, 6000);
+});
+function updateStatusMessages() {
+  $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages' , function(data) {
+    var messageData = '';
+    $.each(data, function(key, value) {
+      var converter = Markdown.getSanitizingConverter();
+      var messageBody = value.body.replace("&lt;br&gt;", "<br>");
+      var messageLength = messageBody.length;
+      if ( messageLength < 22 ) {
+        $("#status-message").hide();
+      } else {
+        $("#status-message").show();
+        //messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
+        messageData += converter.makeHtml(messageBody);
+        $('#status-message-content').html(messageData);
+      }
+      // break up message by paragraphs, then extract and create service specific message components 
+      var msgarray = messageBody.split("<br>");
+      const keywords = ["storage","jira","rivanna","ivy","microservices","accord","globus"];
+      for (let j = 0; j < keywords.length; j++) {
+        var msg = ''
+        // iterate over message paragraphs
+        for (let i = 0; i < msgarray.length; i++) {
+          if (msgarray[i].toLowerCase().search(keywords[j]) != -1) {
+            // only add to service specific message if it contains the service keyword
+            msg += msgarray[i];
+          }
+        }
+        if ( msg.length <= 19 ) {
+          $('#status-message-'+keywords[j]).hide();
+        } else {
+          $('#status-message-'+keywords[j]).show();
+          if (msg.substr(0,19) !== messageBody.substr(0,19)) {
+            msg = messageBody.substr(0,19) + " " + msg; // add original timestamp 
+          }
+        }
+        $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
+      }
+    });
+  });
+};
+
+</script>

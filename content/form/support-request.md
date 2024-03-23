@@ -13,9 +13,10 @@ private = true
 
 {{% jira-msg %}}
 
-
 {{< form-cookies >}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+
+{{< enable-disable-form >}}
 
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
@@ -23,9 +24,10 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="Support">
 
-{{% getstatus keyword="jira" %}}
+  {{% getstatus keyword="jira" %}}
 
-{{% form-userinfo-v2 %}}
+  {{% form-userinfo-v2 %}}
+  
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
@@ -64,6 +66,8 @@ private = true
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>
+
+{{< /enable-disable-form >}}
 
 </form>
 

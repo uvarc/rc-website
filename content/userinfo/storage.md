@@ -12,7 +12,7 @@ aliases = [ "/storage" ]
 
 <br>
 
-{{% getstatus keyword="storage" %}}
+{{< getstatus keyword="storage" >}}
 
 ---
 

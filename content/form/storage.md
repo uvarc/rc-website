@@ -18,6 +18,8 @@ private = true
 <!-- <script type="text/javascript" src="/js/typeahead.js"></script> -->
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 
+{{< enable-disable-form >}}
+
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
@@ -115,6 +117,8 @@ For new groups, specify "This group will be used for Rivanna access" in the desc
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
   </div>
 </div>
+
+{{< /enable-disable-form >}}
 
 </form>
 
