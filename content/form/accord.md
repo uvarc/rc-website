@@ -13,8 +13,7 @@ private = true
 
 {{% jira-msg %}}
 
-{{< getstatus keyword="storage" >}}
-
+{{< getstatus keyword="jira" >}}
 
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 

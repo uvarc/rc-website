@@ -22,7 +22,10 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="Support">
 
-{{% form-userinfo-v2 %}}
+  {{% getstatus keyword="storage" %}}
+
+  {{% form-userinfo-v2 %}}
+  
   <div class="form-item form-group form-item form-type-select form-group" style="margin-bottom:1.6rem;">
     <label class="control-label" for="category">Support Category <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
