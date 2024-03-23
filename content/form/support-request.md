@@ -24,7 +24,7 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="Support">
 
-  {{% getstatus keyword="storage" %}}
+  {{% getstatus keyword="jira" %}}
 
   {{% form-userinfo-v2 %}}
   
