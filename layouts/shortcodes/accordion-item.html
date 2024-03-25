@@ -1,12 +1,12 @@
 <div class="card">
 	<div class="card-header" id="{{ printf "heading%s" (.Get "id" ) }}">
 		<h5 class="mb-0">
-			<button class="btn btn-link" data-toggle="collapse" data-target="{{ printf "#collapse%s" (.Get "id" ) }}" aria-expanded="false" aria-controls="{{ printf "collapse%s" (.Get "id" ) }}">
+			<button class="btn btn-link" data-toggle="collapse" data-target="{{ printf "#%s" (.Get "id" ) }}" aria-expanded="false" aria-controls="{{ printf "%s" (.Get "id" ) }}">
 				{{- .Get "title" -}}
 			</button>
 		</h5>
 	</div>
-	<div id="{{ printf "collapse%s" (.Get "id" ) }}" class="collapse" aria-labelledby="{{ printf "heading%s" (.Get "id" ) }}" data-parent="{{ printf "#%s" (.Parent.Get "id") }}">
+	<div id="{{ printf "%s" (.Get "id" ) }}" class="collapse" aria-labelledby="{{ printf "heading%s" (.Get "id" ) }}" data-parent="{{ printf "#%s" (.Parent.Get "id") }}">
 		<div class="card-body">
 			<p>
 				{{- .Inner -}}
