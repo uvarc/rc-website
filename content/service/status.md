@@ -292,6 +292,14 @@ Replace MYSHARE with the name of your project's share. This will create `~/stage
 
 {{% accordion-item title="18. How can I consolidate my files in /stagedproject and /project?" id="faq-18" %}}
 
+To organize your files efficiently: 
+
+1. If you relocated files to new folders to avoid issues with file access performance issues, or if you have duplicates in project storage, please put them back in their original folders using the "mv" command. This keeps things neat and prevents duplicates. Be cautious not to overwrite newer files with older ones while moving them.
+
+2. Use the "rsync" command to copy files from the /stagedproject folder to the main project folder (/project). This ensures that all essential files are consolidated in one location (/project). 
+
+If you require assistance with these steps, please contact us via our [support webform](<https://www.rc.virginia.edu/form/support-request/?category=Storage&amp;request_title=Project%20storage%20data%20migration&amp;description=Please%20indicate%20as%20precisely%20as%20possible%20which%20directories%20or%20files%20should%20be%20transferred%20first:>) or during office hours for help. 
+
 Submit the following script to copy large directories in bulk:
 
 ```
