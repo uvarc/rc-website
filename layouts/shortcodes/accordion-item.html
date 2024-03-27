@@ -1,12 +1,12 @@
 <div class="card">
-	<div class="card-header" id="{{ printf "heading%s" (.Get "id" ) }}">
-		<h5 class="mb-0">
+	<div class="card-header" id="{{ printf "heading-%s" (.Get "id" ) }}">
+		<h3 class="mb-0">
 			<button class="btn btn-link" data-toggle="collapse" data-target="{{ printf "#%s" (.Get "id" ) }}" aria-expanded="false" aria-controls="{{ printf "%s" (.Get "id" ) }}">
 				{{- .Get "title" -}}
 			</button>
 		</h5>
 	</div>
-	<div id="{{ printf "%s" (.Get "id" ) }}" class="collapse" aria-labelledby="{{ printf "heading%s" (.Get "id" ) }}" data-parent="{{ printf "#%s" (.Parent.Get "id") }}">
+	<div id="{{ printf "%s" (.Get "id" ) }}" class="collapse" aria-labelledby="{{ printf "heading-%s" (.Get "id" ) }}" data-parent="{{ printf "#%s" (.Parent.Get "id") }}">
 		<div class="card-body">
 			<p>
 				{{- .Inner -}}
@@ -17,6 +17,10 @@
 
 <script> 
 	if (location.hash !== null && location.hash !== "") { 
-			$(location.hash + ".collapse").collapse("show"); 
-	} 
+		$(location.hash + ".collapse").collapse("show"); 
+    	if (location.hash === "#collapseeighteen") {
+    	    var newhash = "#faq-18";
+	        location.hash = newhash
+	    } 
+	}
 </script>
