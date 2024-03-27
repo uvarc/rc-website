@@ -39,7 +39,7 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 
 **Update: 2024-03-26** 
 - **Before February 26:** A total of 1.7 PB out of 4.3 PB were copied from old Project storage to /project folder on the new storage system using the automated migration process before February 26 (40%).
-- **Since February 26:** A total of 1.76 PB out of 4.3 PB have been copied from old Project storage to the /stagedproject folder on the new storage system since February 26 (41.0%). This dataset will eventually comprise a complete duplicate of all files on the old Project storage system.
+- **Since February 26:** A total of 1.80 PB out of 4.3 PB have been copied from old Project storage to the /stagedproject folder on the new storage system since February 26 (41.9%). This dataset will eventually comprise a complete duplicate of all files on the old Project storage system.
 {{% /callout %}}
 
 {{% highlight %}}
