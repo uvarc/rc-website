@@ -378,7 +378,11 @@ Once installed on your VM, packages will persist and you will not need to instal
 ## Storage
 
 Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
+## Scheduled Maintenance
 
+Beginning Sunday, April 14, your Ivy virtual machine (VM) will be rebooted on the 2nd Sunday of each month between 5:00 a.m. and 6:00 a.m. EST while RC engineers install security updates. Any sessions running during this period will be terminated. Windows and Linux VMs will be rebooted at the same time.
+
+If you have any questions or problems with your software applications after the security updates have been installed, you may [contact our user services team](https://www.rc.virginia.edu/form/support-request/?category=Ivy).
 - - -
 
 # JupyterLab Notebooks
