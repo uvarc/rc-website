@@ -27,10 +27,11 @@ All systems are expected to return to service by **6 a.m. on May 29.**
 
 1. [For NVHPC users only] The compiler toolchain `nvhpc` and `nvompi` will be upgraded to `24.1` and `24.1_4.1.6`, respectively. The previous versions `23.7` and `23.7_4.1.4` will be removed. All modules under this toolchain will be rebuilt. There should be no need to rebuild your own code.
 
-1. The following modules will be **removed** from Rivanna during the maintenance period:
+1. The following modules will be **removed** from Rivanna during the maintenance period.
 
 | Module | Removed version | Replacement |
 |---|---|---|
-|gatk     |4.2.3.0 | 4.3.0.0 |
-|gpumd    |3.7     | 3.9.1   |
-|picard   |2.23.4  | 2.27.5 |
+|cellranger|7.2.0   | 8.0.0 |
+|gatk      |4.2.3.0 | 4.3.0.0 |
+|gpumd     |3.7     | 3.9.1   |
+|picard    |2.23.4  | 2.27.5 |
