@@ -11,7 +11,6 @@ author = "RC Staff"
 +++
 
 - [User Guides](/userinfo/user-guide)
-- [Databases](/userinfo/howtos/general/databases)
 <!--  - MySQL
   - [Redis](/userinfo/howtos/general/redis)
   - MongoDB -->
