@@ -73,7 +73,11 @@ If you would like to participate in the poster session, please fill out the <a h
     <td> Poster Setup</td>
   </tr>
   <tr>
-    <td class="no-wrap">11:30-12:45</td>
+    <td class="no-wrap">11:30-11:45</td>
+    <td> Opening Remarks, Kelly Doney, Vice President & Chief Information Officer, UVA</td>
+  </tr>
+  <tr>
+    <td class="no-wrap">11:45-12:45</td>
     <td> Panel Discussion; "Employment in HPC"</td>
   </tr>
   <tr>
