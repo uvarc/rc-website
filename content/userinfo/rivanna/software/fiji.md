@@ -5,7 +5,7 @@ categories = [
   "software",
   "viz"
 ]
-date = "2019-06-22T08:37:46-05:00"
+date = "2024-04-09T00:00:00-05:00"
 tags = [
   "image processing",
 ]
@@ -63,3 +63,11 @@ To execute a Fiji script non-interactively on a compute node, you can use the fo
 * Replace `<YOUR_ALLOCATION>` with your allocation account.
 
 * Replace `<FIJI_SCRIPT>` and `<SCRIPT_ARGS>` with your custom Fiji script and add script arguments as required by the particular Fiji script.
+
+# Custom Plugins
+
+Users can install their own plugins in their home directory. First create the directory via
+```bash
+mkdir ~/.plugins
+```
+Then follow the instructions [here](https://imagej.net/plugins/#installing-plugins-manually), replacing the destination with your local plugin directory.
