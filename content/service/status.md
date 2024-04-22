@@ -60,6 +60,32 @@ Research Computing will reach out to all known users of this storage system with
 
 {{% accordion-group title="Emails" id="emailgroup" %}}
 
+{{% accordion-item title="Apr 22, 2024 - Project Storage Update" id="email-3" %}}
+
+
+Dear Research Project storage user:
+
+We are pleased to report that our new Project storage filesystem is performing as expected.
+
+A majority of the data on the legacy Project filesystem has been successfully copied to /stagedproject on the new system, enabling researchers to access their data via /stagedproject or /project. We are e-mailing individual share owners as soon as their groups’ data have been transferred. The /stagedproject shares were provisioned as a temporary accommodation free of charge to expedite file transfers to the new storage system while allowing active work in /project.
+
+**Please note: If you don’t have a /stagedproject share, no further action will be required. Otherwise users will need to consolidate all of their files from /stagedproject to /project storage. Step-by-step instructions are available on the RC website ([“How can I consolidate my files in /stagedproject and /project?”](https://www.rc.virginia.edu/service/status/#faq-18)). If you need assistance with consolidating your files, you may reach out to us during [office hours](https://www.rc.virginia.edu/support/#office-hours) or contact our user services team. 
+
+In addition, monthly billing for Research Project storage quotas will resume on May 1st. Billing was suspended in October 2023 due to the filesystem’s performance issues. These bills will be based on quotas on the ‘new’ /project storage space which has been working with expected performance for the past 2 months. Usage on /stagedproject and the legacy system will not be charged. Billing questions should be directed to RC_Billing@virginia.edu.
+
+Detailed documentation on the Project storage incident, including previous email communications and frequently asked questions, is available on our [Data Migration status page](https://www.rc.virginia.edu/service/status/). We are committed to working diligently until the data transfer is complete and the legacy system is decommissioned. Our technical support teams will continue to be available to you to answer questions and address any concerns.
+
+
+With regards,
+
+Karsten Siller
+Director, Research Computing User Services
+Information Technology Services
+University of Virginia
+
+{{% /accordion-item %}}
+
+
 {{% accordion-item title="Feb 22, 2024 - Reminder: Upcoming Changes to Data Transfer Process for Project Storage File System" id="email-2" %}}
 
 Dear Colleagues,  
