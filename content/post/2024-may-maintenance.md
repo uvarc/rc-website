@@ -33,16 +33,17 @@ All systems are expected to return to service by **6 a.m. on May 29.**
     |cesm/2.1.3     | 2.2.2  | intel | 
     |chemps2/1.8.12 | -      | gomkl |
     |cp2k/2023.1    | 2024.1 | intel |
+    |elpa/2023.05.001| -     | goolf |
     |esmf/8.4.1     | -      | gomkl |
     |fltk/1.3.8     | -      | gcc |
     |neuron/8.2.2   | -      | gompi |
     |p3dfft/2.7.9   | -      | gompi |
-    |pcmsolver/1.30 | -      | gompi |
+    |pcmsolver/1.3.0| -      | gompi |
     |raxml/8.2.12   | -      | gompi |
     |readosm/1.1.0a | -      | gcc |
     |relion/4.0.1   | -      | gomkl |
     |shapelib/1.5.0 | -      | gcc |
-    |#siesta/4.1.5   | -      | gomkl |
+    |siesta/4.1.5   | -      | goolf |
     |viennarna/2.5.1| -      | gcc |
 
     The `gompi` toolchain is equivalent to `gcc openmpi`. The `gomkl` toolchain is the former plus Intel MKL. Intel modules not listed above have the same version and toolchain as before; in other words, you can use the same module load command.
@@ -51,10 +52,10 @@ All systems are expected to return to service by **6 a.m. on May 29.**
 
 1. The following modules will be **removed** from Rivanna during the maintenance period.
 
-| Module | Removed version | Replacement |
-|---|---|---|
-|cellranger|7.2.0   | 8.0.0 |
-|fiji      |1.53t   | 2.14.0 |
-|gatk      |4.2.3.0 | 4.3.0.0 |
-|gpumd     |3.7     | 3.9.1   |
-|picard    |2.23.4  | 2.27.5 |
+    | Module | Removed version | Replacement |
+    |---|---|---|
+    |cellranger|6.0.1,7.2.0| 8.0.0 |
+    |fiji      |1.53t   | 2.14.0 |
+    |gatk      |4.2.3.0 | 4.3.0.0 |
+    |gpumd     |3.7     | 3.9.1   |
+    |picard    |2.23.4  | 2.27.5 |
