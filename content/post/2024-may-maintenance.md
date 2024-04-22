@@ -30,7 +30,6 @@ All systems are expected to return to service by **6 a.m. on May 29.**
     | Module | New verison | Toolchain|
     |---|---|---|
     |alamode/1.4.2  | -      | gomkl |
-    |boost/1.79.0   | -      | gcc/gompi |
     |cesm/2.1.3     | 2.2.2  | intel | 
     |chemps2/1.8.12 | -      | gomkl |
     |cp2k/2023.1    | 2024.1 | intel |
