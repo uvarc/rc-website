@@ -30,21 +30,27 @@ All systems are expected to return to service by **6 a.m. on May 29.**
     | Module | New verison | Toolchain|
     |---|---|---|
     |alamode/1.4.2  | -      | gomkl |
+    |boost/1.79.0   | -      | gcc, gompi |
     |cesm/2.1.3     | 2.2.2  | intel | 
     |chemps2/1.8.12 | -      | gomkl |
     |cp2k/2023.1    | 2024.1 | intel |
     |elpa/2023.05.001| -     | goolf |
     |esmf/8.4.1     | -      | gomkl |
     |fltk/1.3.8     | -      | gcc |
+    |gmp/6.2.0      | -      | gcc |
+    |kim-api/2.3.0  | -      | gcc |
+    |mpfr/4.2.0     | -      | gcc |
     |neuron/8.2.2   | -      | gompi |
     |p3dfft/2.7.9   | -      | gompi |
     |pcmsolver/1.3.0| -      | gompi |
+    |pcre2/10.42    | -      | gcc |
     |raxml/8.2.12   | -      | gompi |
     |readosm/1.1.0a | -      | gcc |
     |relion/4.0.1   | -      | gomkl |
     |shapelib/1.5.0 | -      | gcc |
     |siesta/4.1.5   | -      | goolf |
     |viennarna/2.5.1| -      | gcc |
+    |voro++/0.4.6   | -      | gcc |
 
     The `gompi` toolchain is equivalent to `gcc openmpi`. The `gomkl` toolchain is the former plus Intel MKL. Intel modules not listed above have the same version and toolchain as before; in other words, you can use the same module load command.
 
