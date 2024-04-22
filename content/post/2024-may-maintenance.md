@@ -27,25 +27,25 @@ All systems are expected to return to service by **6 a.m. on May 29.**
 
 1. **Attn Intel users** In anticipation of the new Afton nodes that are based on the AMD EPYC architecture, we have reorganized and rebuilt all modules under the `intel` toolchain. If you used `-x` (e.g. `-xavx`) to build your own code, you should rebuild it with `-march=skylake-avx512` for it to run on both AMD and Intel hardware. Below we list all the modules that are upgraded or moved to a different toolchain and hence requires a new module load command:
 
-| Module | New verison | Toolchain|
-|---|---|---|
-|alamode/1.4.2  | -      | gomkl |
-|cesm/2.1.3     | 2.2.2  | intel | 
-|chemps2/1.8.12 | -      | gomkl |
-|cp2k/2023.1    | 2024.1 | intel |
-|esmf/8.4.1     | -      | gomkl |
-|fltk/1.3.8     | -      | gcc |
-|neuron/8.2.2   | -      | gompi |
-|p3dfft/2.7.9   | -      | gompi |
-|pcmsolver/1.30 | -      | gompi |
-|raxml/8.2.12   | -      | gompi |
-|readosm/1.1.0a | -      | gcc |
-|relion/4.0.1   | -      | gomkl |
-|shapelib/1.5.0 | -      | gcc |
-|#siesta/4.1.5   | -      | gomkl |
-|viennarna/2.5.1| -      | gcc |
+    | Module | New verison | Toolchain|
+    |---|---|---|
+    |alamode/1.4.2  | -      | gomkl |
+    |cesm/2.1.3     | 2.2.2  | intel | 
+    |chemps2/1.8.12 | -      | gomkl |
+    |cp2k/2023.1    | 2024.1 | intel |
+    |esmf/8.4.1     | -      | gomkl |
+    |fltk/1.3.8     | -      | gcc |
+    |neuron/8.2.2   | -      | gompi |
+    |p3dfft/2.7.9   | -      | gompi |
+    |pcmsolver/1.30 | -      | gompi |
+    |raxml/8.2.12   | -      | gompi |
+    |readosm/1.1.0a | -      | gcc |
+    |relion/4.0.1   | -      | gomkl |
+    |shapelib/1.5.0 | -      | gcc |
+    |#siesta/4.1.5   | -      | gomkl |
+    |viennarna/2.5.1| -      | gcc |
 
-The `gompi` toolchain is equivalent to `gcc openmpi`. The `gomkl` toolchain is the former plus Intel MKL. Intel modules not listed above have the same version and toolchain as before; in other words, you can use the same module load command.
+    The `gompi` toolchain is equivalent to `gcc openmpi`. The `gomkl` toolchain is the former plus Intel MKL. Intel modules not listed above have the same version and toolchain as before; in other words, you can use the same module load command.
 
 1. **Attn NVHPC users** The compiler toolchain `nvhpc` and `nvompi` will be upgraded to `24.1` and `24.1_4.1.6`, respectively. The previous versions `23.7` and `23.7_4.1.4` will be removed. All modules under this toolchain will be rebuilt. There should be no need to rebuild your own code.
 
