@@ -29,6 +29,7 @@ All systems are expected to return to service by **6 a.m. on May 29.**
 
     | Module | New verison | Toolchain|
     |---|---|---|
+    |abinit/8.10.3, 9.8.3| 10.0.3 | intel |
     |alamode/1.4.2  | -      | gomkl |
     |cesm/2.1.3     | 2.2.2  | gomkl | 
     |chemps2/1.8.12 | -      | gomkl |
