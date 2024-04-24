@@ -21,7 +21,7 @@ We currently have several open positions in our *Infrastructure Services* and *U
 
 ## Data Analytics Center Staff (full-time, long-term position)
 
-- Data Manager (Coming soon)
+- [Data Manager] (https://uva.wd1.myworkdayjobs.com/UVAJobs/job/Charlottesville-VA/Data-Manager_R0059978)
 
 
 
