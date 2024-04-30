@@ -66,6 +66,7 @@ All systems are expected to return to service by **6 a.m. on May 29.**
     |---|---|---|
     |cellranger|6.0.1, 7.2.0| 8.0.0 |
     |fiji      |1.53t   | 2.14.0 |
+    |fsl       |6.0.5   | 6.0.7.6|
     |gatk      |4.2.3.0 | 4.3.0.0 |
     |gpumd     |3.7     | 3.9.1   |
     |picard    |2.23.4  | 2.27.5 |
