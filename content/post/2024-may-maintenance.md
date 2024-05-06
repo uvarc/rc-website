@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-05-06T00:00:00-05:00"
+date = "2024-05-21T00:00:00-05:00"
 title = "Rivanna Maintenance: May 28, 2024"
 # url = "/maintenance"
 draft = false
@@ -10,7 +10,7 @@ tags = ["rivanna"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}Rivanna will be down for maintenance on <strong>May 28, 2024</strong> beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}Rivanna will be down for maintenance on <strong>Tuesday, May 28, 2024</strong> beginning at 6 a.m.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Users will not be able to access the Globus data transfer node during the maintenance period.
 
