@@ -12,9 +12,9 @@ categories = ["feature"]
 
 {{< alert-green >}}Rivanna will be down for maintenance on <strong>Tuesday, May 28, 2024</strong> beginning at 6 a.m.{{< /alert-green >}}
 
-You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Users will not be able to access the Globus data transfer node during the maintenance period.
+You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service.
 
-All systems are expected to return to service by **6 a.m. on May 29.**
+All systems are expected to return to service by **6 a.m. on Thursday, May 30.**
 
 ## IMPORTANT MAINTENANCE NOTES
 
