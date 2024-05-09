@@ -12,9 +12,9 @@ categories = ["feature"]
 
 {{< alert-green >}}Rivanna will be down for maintenance on <strong>Tuesday, May 28, 2024</strong> beginning at 6 a.m.{{< /alert-green >}}
 
-You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. Globus and storage will remain functional.
+You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. While drive mapping and project storage will be unavailable, other storage will remain accessible through Globus.
 
-All systems are expected to return to service by **6 a.m. on Thursday, May 30.**
+All systems are expected to return to service by **Thursday, May 30 at 6 a.m.**
 
 ## IMPORTANT MAINTENANCE NOTES
 
@@ -25,7 +25,7 @@ All systems are expected to return to service by **6 a.m. on Thursday, May 30.**
 
 ### Modules
 
-1. **Attn Intel users** In anticipation of the new Afton nodes that are based on the AMD EPYC architecture, we have reorganized and rebuilt all modules under the `intel` toolchain. If you used `-x` (e.g. `-xavx`) to build your own code, you should rebuild it with `-march=skylake-avx512` for it to run on both AMD and Intel hardware. Below we list all the modules that are upgraded or moved to a different toolchain. (Intel modules not listed can be loaded the same way as before.) The toolchain needs to be loaded before the module, e.g. `module load gcc gmp`.
+1. **Attn Intel users** In anticipation of the new Afton nodes that are based on the AMD EPYC architecture, we have reorganized and rebuilt all modules under the `intel` toolchain. Below we list all the modules that are upgraded or moved to a different toolchain. (Intel modules not listed can be loaded the same way as before.) The toolchain needs to be loaded before the module, e.g. `module load gcc gmp`.
 
     | Module | New version | Toolchain|
     |---|---|---|
