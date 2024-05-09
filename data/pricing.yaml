@@ -25,6 +25,20 @@ service:
         cost: "Free"
         su_expiration: "2 weeks after last training session"
 
+    
+ivy:
+  mini: 4
+  small: 12
+  medium: 48
+  large: 96
+  xlarge: 176
+
+storage:
+  project: 60
+  standard: 45
+  ivy: 45
+  zfs: 30
+
 # TOML File Data
 # [rivanna_allocations_standard]
 #     name = "Standard"
