@@ -1,0 +1,65 @@
+service:
+  - name: "Rivanna"
+    security_zone: "SSZ"
+    tags: "HPC"
+    label: "Allocations"
+    columns: 
+      - "Type"
+      - "SU Limits"
+      - "Cost"
+      - "SU Expiration"
+    options:
+      - type: "Standard"
+        link: "/userinfo/rivanna/allocations/#standard-allocations"
+        su_limits: "None"
+        cost: "Free"
+        su_expiration: "12 months"
+      - type: "Purchased"
+        link: "/userinfo/rivanna/allocations/#allocation-purchases"
+        su_limits: "None"
+        cost: "$0.01"
+        su_expiration: "Forever"
+      - type: "Instructional"
+        link: "/userinfo/rivanna/allocations/#instructional-allocations"
+        su_limits: "100,000"
+        cost: "Free"
+        su_expiration: "2 weeks after last training session"
+
+# TOML File Data
+# [rivanna_allocations_standard]
+#     name = "Standard"
+#     su_limits = "None"
+#     cost = "Free"
+#     su_lifetime = "12 months"
+
+# [rivanna_allocations_purchased] 
+#     name = "Purchased"
+#     su_limits = "None"
+#     cost = "$0.01"
+#     su_lifetime = "Forever"
+
+# [rivanna_allocations_instructional] 
+#     name = "Instructional"
+#     su_limits = "100,000"
+#     cost = "Free"
+#     su_lifetime = "2 weeks after last teaching session"
+
+# [microservices]
+#     light = 5
+#     medium = 10
+#     heavy = 48
+
+# [storage]
+#     project = 60
+#     standard = 45
+#     ivy = 45
+#     zfs = 30
+
+# [ivy]
+#     mini = 4
+#     small = 12
+#     medium = 48
+#     large = 96
+#     xlarge = 176
+  
+# omero = 60

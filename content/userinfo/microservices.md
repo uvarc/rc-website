@@ -173,32 +173,7 @@ Microservices may not run efficiently for all use cases. Some scenarios that can
 
 Container services hosted by UVA Research Computing fall under this pricing structure:
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Tier</th>
-      <th scope="col">Containers</th>
-      <th scope="col">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Light Tier</th>
-      <td>1 - 5</td>
-      <td>$5 / month</td>
-    </tr>
-    <tr>
-      <th scope="row">Medium Tier</th>
-      <td>6 - 15</td>
-      <td>$10 / month</td>
-    </tr>
-    <tr>
-      <th scope="row">Heavy Tier</th>
-      <td>> 15 containers</td>
-      <td>$48 / month</td>
-    </tr>
-  </tbody>
-</table>
+{{< pricing microservices >}}
 
 No charges will be incurred for stopped containers or any cluster storage.
 

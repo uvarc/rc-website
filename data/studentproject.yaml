@@ -1,0 +1,8 @@
+- name: "Matthew Galitz"
+  project-name: "Rivanna Utilization"
+  projectdesc: "Matthew contributed to the Rivanna Utilization Statistics project.
+  This initiative enhanced the efficiency of generating usage statistics and allocation reports for UVA’s Rivanna high-performance 
+  computing system. By developing scripts that aggregate and analyze computational resource utilization, 
+  his work supports strategic planning of resource allocation and infrastructure upgrades."
+  imagepath: "/images/student-work/Poster-Matthew-Galitz.jpg"
+

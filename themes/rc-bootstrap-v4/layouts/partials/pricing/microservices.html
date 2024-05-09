@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Tier</th>
+        <th scope="col">Containers</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Light Tier</th>
+        <td>1 - 5</td>
+        <td>${{ $.Site.Data.pricing.microservices.light}} / month</td>
+      </tr>
+      <tr>
+        <th scope="row">Medium Tier</th>
+        <td>6 - 15</td>
+        <td>${{ $.Site.Data.pricing.microservices.medium}} / month</td>
+      </tr>
+      <tr>
+        <th scope="row">Heavy Tier</th>
+        <td>> 15 containers</td>
+        <td>${{ $.Site.Data.pricing.microservices.heavy}} / month</td>
+      </tr>
+    </tbody>
+  </table>
