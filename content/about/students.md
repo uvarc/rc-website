@@ -22,7 +22,7 @@ The Research Computing Student Worker Program is dedicated to supporting RC staf
 
 <p>
 <strong  style="font-size: 18px;"> Student Manager: </strong> Gladys K. Andino, PhD, <strong> Strategic Services and Education Manager </strong>  <br>
-for any questions, please email <a href="mailto:rc-studentjobs@virginia.edu">rc-studentjobs@virginia.edu</a>
+For any questions, please email <a href="mailto:rc-studentjobs@virginia.edu">rc-studentjobs@virginia.edu.</a>
 </p>
 
 <strong style="font-size: 24px;">Check out our Student Workers!</strong>
