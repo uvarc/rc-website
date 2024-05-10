@@ -1,0 +1,35 @@
+{{ $standard_option := index (index (index $.Site.Data.pricing.service 0) "options") 0 }}
+{{ $purchased_option:= index (index (index $.Site.Data.pricing.service 0) "options") 1 }}
+{{ $instructional_option:= index (index (index $.Site.Data.pricing.service 0) "options") 2 }}
+<table class="table" style="margin-top:2rem;">
+    <thead class="thead-dark" style="">
+      <tr>
+        {{ $options := index (index $.Site.Data.pricing.service 0) "columns" }}
+        {{ range $key, $value := index $options }}
+            <th scope="col">{{ $value }}</th>
+        {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><a href='{{index $standard_option "link"}}'>{{ index $standard_option "type" }}</a></th>
+        <td>{{ index $standard_option "su_limits" }}</td>
+        <td>{{ index $standard_option "cost" }}</td>
+        <td>{{ index $standard_option "su_expiration" }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href='{{index $purchased_option "link"}}'>{{ index $purchased_option "type" }}</a></th>
+        <td>{{ index $purchased_option "su_limits" }}</td>
+        <td>{{ index $purchased_option "cost" }}</td>
+        <td>{{ index $purchased_option "su_expiration" }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href='{{index $instructional_option "link"}}'>{{ index $instructional_option "type" }}</a></th>
+        <td>{{ index $instructional_option "su_limits" }}</td>
+        <td>{{ index $instructional_option "cost" }}</td>
+        <td>{{ index $instructional_option "su_expiration" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  

@@ -127,7 +127,7 @@ A virtual machine (VM) is a computing instance dedicated to your project. Multip
 Virtual machines come in two platforms, *Rocky 8 Linux* and *Windows Server 2019*. Each platform is available in numerous instance types. Refer to the grid below for specifics.
 
 
-{{< ivy-pricing >}}
+{{< pricing ivy >}}
 
 Once created, your instance will be assigned a private IP address that you will use to connect to it (in the format `10.xx.xx.xx`). VMs exist in a private, secure network and cannot
 reach outside resources on the Internet. Most inbound and outbound data transfer is managed through the Data Transfer Node (see below).
