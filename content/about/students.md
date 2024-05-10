@@ -6,7 +6,7 @@ tags = [
 ]
 draft = false
 date = "2022-08-06T14:53:45-05:00"
-title = "Researh Computing Student Workers"
+title = "Research Computing Student Workers"
 about = true
 author = "UVARC Staff"
 description = "The mission of UVA Research Computing"
