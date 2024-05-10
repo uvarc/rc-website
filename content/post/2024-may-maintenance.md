@@ -30,7 +30,7 @@ All systems are expected to return to service by **Thursday, May 30 at 6 a.m.**
 
 ### Modules
 
-1. **Attn Intel users** With the addition of the Afton nodes based on the AMD EPYC architecture, we have reorganized and rebuilt all modules under the `intel` toolchain. Below we list all the modules that are upgraded or moved to a different toolchain. (Intel modules not listed can be loaded the same way as before.) The toolchain needs to be loaded before the module, e.g. `module load gcc gmp`.
+1. **Attn Intel users** With the addition of the Afton nodes based on the AMD EPYC architecture, we have reorganized and rebuilt all modules under the `intel` toolchain. If you used `-x` (e.g. `-xavx`) to build your own code, you should rebuild it with `-march=skylake-avx512` for it to run on both AMD and Intel hardware. Below we list all the modules that are upgraded or moved to a different toolchain. (Intel modules not listed can be loaded the same way as before.) The toolchain needs to be loaded before the module, e.g. `module load gcc gmp`.
 
     | Module | New version | Toolchain|
     |---|---|---|
