@@ -18,6 +18,14 @@ All systems are expected to return to service by **Thursday, May 30 at 6 a.m.**
 
 ## IMPORTANT MAINTENANCE NOTES
 
+### New nodes
+
+#### "Afton"
+We are pleased to announce the addition of 300 nodes based on the AMD EPYC 9454 architecture. For the time being, these new nodes are placed into its own partition `afton`, in which each user can request up to 6000 cores. (The full release is scheduled for July, where the nodes will be integrated into the existing partitions. More information to follow.)
+
+#### GPU
+Four NVIDIA A40 GPUs will be added to the `gpu` partition.
+
 ### System upgrades
 1. **Operating System:** Rocky 8.7 &rarr; 8.9. There is no need to rebuild your own code. (Intel users may need to do so but for a different reason; see below.)
 1. **Slurm:** 21.08.8 &rarr; 23.02.7. Job-related commands remain the same.
@@ -25,7 +33,7 @@ All systems are expected to return to service by **Thursday, May 30 at 6 a.m.**
 
 ### Modules
 
-1. **Attn Intel users** In anticipation of the new Afton nodes that are based on the AMD EPYC architecture, we have reorganized and rebuilt all modules under the `intel` toolchain. Below we list all the modules that are upgraded or moved to a different toolchain. (Intel modules not listed can be loaded the same way as before.) The toolchain needs to be loaded before the module, e.g. `module load gcc gmp`.
+1. **Attn Intel users** With the addition of the Afton nodes based on the AMD EPYC architecture, we have reorganized and rebuilt all modules under the `intel` toolchain. Below we list all the modules that are upgraded or moved to a different toolchain. (Intel modules not listed can be loaded the same way as before.) The toolchain needs to be loaded before the module, e.g. `module load gcc gmp`.
 
     | Module | New version | Toolchain|
     |---|---|---|
