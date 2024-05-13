@@ -20,8 +20,10 @@ All systems are expected to return to service by **Thursday, May 30 at 6 a.m.**
 
 ### New nodes
 
-1. **"Afton":** We are pleased to announce the addition of 300 nodes, 96 cores each, based on the AMD EPYC 9454 architecture. For the time being, these new nodes are placed into their own partition `afton`, in which each user can request up to 6000 cores in aggregate. (The full release is scheduled for July, where the nodes will be integrated into the existing partitions. More information to follow.)
+1. **"Afton":** We are pleased to announce the addition of 300 nodes, 96 cores each, based on the AMD EPYC 9454 architecture. For the time being, these new nodes are placed into their own partition `afton`, in which each user can request up to 6000 cores in aggregate. There is some chance that 100 nodes will be available initially, in which case the core limit will be adjusted to 2000. (The full release is scheduled for July, where the nodes will be integrated into the existing partitions. More information to follow.)
 1. **GPU:** Four NVIDIA A40 (48 GB) nodes, 8 GPUs each, will be added to the `gpu` partition.
+
+Please report any issues with the new hardware by [contacting us](https://www.rc.virginia.edu/form/support-request/).
 
 ### System upgrades
 1. **Operating System:** Rocky 8.7 &rarr; 8.9. There is no need to rebuild your own code. (Intel users may need to do so but for a different reason; see below.)
