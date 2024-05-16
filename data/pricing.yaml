@@ -1,5 +1,8 @@
 service:
   - name: "Rivanna"
+    description: "A traditional high performance cluster with 
+    a resource manager, a large file system, modules, 
+    and MPI processing"
     security_zone: "SSZ"
     tags: "HPC"
     label: "Allocations"
@@ -24,8 +27,6 @@ service:
         su_limits: "100,000"
         cost: "Free"
         su_expiration: "2 weeks after last training session"
-
-    
 ivy:
   mini: 4
   small: 12
@@ -34,8 +35,8 @@ ivy:
   xlarge: 176
 
 storage:
-  project: 60
-  standard: 45
+  project: "$45/TB (<strong>effective July 1</strong>: first 10TB free of charge)"
+  standard: "$60/TB (<strong>effective July 1</strong>: $70)"
   ivy: 45
   zfs: 30
 
