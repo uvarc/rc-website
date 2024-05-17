@@ -35,8 +35,8 @@ ivy:
   xlarge: 176
 
 storage:
-  standard: "$45/TB (<strong>effective July 1</strong>: first 10TB free of charge)"
-  project: "$60/TB (<strong>effective July 1</strong>: $70/TB)"
+  standard: "$45/TB per year (<strong>effective July 1</strong>: first 10TB provided to each PI free of charge)"
+  project: "$60/TB per year (<strong>effective July 1</strong>: $70/TB)"
   ivy: 45
   zfs: 30
 
