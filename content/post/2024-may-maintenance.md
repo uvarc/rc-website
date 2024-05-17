@@ -35,6 +35,7 @@ Please report any issues with the new hardware by [contacting us](https://www.rc
 
 1. **Attn Intel users:** With the addition of the Afton nodes based on the AMD EPYC architecture, we have reorganized and rebuilt all modules under the `intel` toolchain. If you used `-x` (e.g. `-xavx`) to build your own code, you should rebuild it with `-march=skylake-avx512` for it to run on both AMD and Intel hardware. Below we list all the modules that are upgraded or moved to a different toolchain. (Intel modules not listed can be loaded the same way as before.) The toolchain needs to be loaded before the module, e.g. `module load gcc gmp`.
 
+{{< table title="intel" class="table table-striped" >}}
     | Module | New version | Toolchain|
     |---|---|---|
     |abinit/8.10.3, 9.8.3| 10.0.3 | intel |
@@ -55,6 +56,7 @@ Please report any issues with the new hardware by [contacting us](https://www.rc
     |shapelib/1.5.0 | -      | gcc |
     |viennarna/2.5.1| -      | gcc |
     |voro++/0.4.6   | -      | gcc |
+{{< /table >}}
 
     The `gompi` toolchain is equivalent to `gcc openmpi`. There is no impact on the existing modules built with GCC.
 
@@ -62,6 +64,7 @@ Please report any issues with the new hardware by [contacting us](https://www.rc
 
 1. The following modules will be **removed** from Rivanna during the maintenance period.
 
+{{< table title="replacement" class="table table-striped" >}}
     | Module | Removed version | Replacement |
     |---|---|---|
     |aocc      |4.1.0   | 4.2.0 |
@@ -71,3 +74,4 @@ Please report any issues with the new hardware by [contacting us](https://www.rc
     |gatk      |4.2.3.0 | 4.3.0.0 |
     |gpumd     |3.7     | 3.9.1   |
     |picard    |2.23.4  | 2.27.5 |
+{{< /table >}}
