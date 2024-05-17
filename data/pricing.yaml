@@ -36,7 +36,7 @@ ivy:
 
 storage:
   standard: "$45/TB per year (<strong>effective July 1</strong>: with 10TB provided to each PI free of charge)"
-  project: "$60/TB per year (<strong>effective July 1</strong>: $70/TB)"
+  project: "$60/TB per year (<strong>effective July 1</strong>: $70/TB per year)"
   ivy: 45
   zfs: 30
 
