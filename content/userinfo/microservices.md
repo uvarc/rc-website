@@ -175,8 +175,6 @@ Container services hosted by UVA Research Computing fall under this pricing stru
 
 {{< pricing microservices >}}
 
-No charges will be incurred for stopped containers or any cluster storage.
-
 - - -
 
 # Apptainer

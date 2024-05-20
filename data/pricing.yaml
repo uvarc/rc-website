@@ -6,6 +6,7 @@ service:
     security_zone: "SSZ"
     tags: "HPC"
     label: "Allocations"
+    footnote: "A service unit (SU) resembles usage of a trackable hardware resource for a specified amount of time. In its simplest form 1 SU = 1 core hour, but the SU charge rate can vary based on the specific hardware used. Resources like GPUs and memory may incur additional SU charges."
     columns: 
       - "Type"
       - "SU Limits"
@@ -27,18 +28,96 @@ service:
         su_limits: "100,000"
         cost: "Free"
         su_expiration: "2 weeks after last training session"
-ivy:
-  mini: 4
-  small: 12
-  medium: 48
-  large: 96
-  xlarge: 176
 
-storage:
-  standard: "$45/TB per year (<strong>effective July 1</strong>: first 10TB provided to each PI free of charge)"
-  project: "$60/TB per year (<strong>effective July 1</strong>: $70/TB)"
-  ivy: 45
-  zfs: 30
+  - name: "Storage"
+    label: "Storage"
+    footnote: ""
+    columns:
+      - "Name"
+      - "Security"
+      - "Cost"
+    options:
+      - name: "Research Project"
+        security: "Standard"
+        cost: "$60/TB per year (<strong>effective July&nbsp;1</strong>: $70/TB)"
+        quota: "1TB increments"
+        snapshots: "daily snapshots for 1 week"
+        replication: "No"
+        backup: "No"
+        access: "Rivanna, <a href=\"/userinfo/howtos/storage/drive-mapping/\">mountable on local workstation</a>"
+        use_cases: "Ideal for long-term storage of data to be accessed from Rivanna. Research Project storage is ideal for sharing data within a research group and for running jobs with smaller files."
+      - name: "Research Standard"
+        security: "Standard"
+        cost: "$45/TB per year (<strong>effective July&nbsp;1</strong>: first 10TB provided to each PI free of charge)"
+        quota: "1TB increments"
+        snapshots: "No"
+        replication: "No"
+        backup: "No"
+        access: "Rivanna, <a href=\"/userinfo/howtos/storage/drive-mapping/\">mountable on local workstation</a>"
+        use_cases: "Budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run Slurm jobs against research standard storage unless absolutely necessary. File operations on Research Standard storage are slower than on Rivanna <code>/home</code>, <code>/scratch</code>, or <code>Research Project</code> storage."
+      - name: "Ivy Central Storage"
+        security: "High"
+        cost: "$45 TB/year"
+        quota: "1TB increments"
+        snapshots: "No"
+        replication: "No"
+        backup: "No"
+        access: "Ivy Virtual Machine"
+        use_cases: "Ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only."
+  - name: "IvyVM"
+    label: "Virtual Machine"
+    footnote: ""
+    columns: 
+      - "Type"
+      - "Specs"
+      - "Cost"
+    options: 
+      - type: "Mini"  
+        specs: "2 cores / 2GB mem"
+        cost: "$4/month"
+      - type: "Small"
+        specs: "4 cores / 16GB mem"
+        cost: "$12/month"
+      - type: "Medium"
+        specs: "8 cores / 32GB mem"
+        cost: "$48/month"
+      - type: "Large"
+        specs: "16 cores / 64GB mem"
+        cost: "$96/month"
+      - type: "Xlarge"
+        specs: "16 cores / 124GB mem"
+        cost: "$176/month"
+  - name: "Microservices"
+    label: "Container Service"
+    footnote: "No charges will be incurred for stopped containers or any cluster storage."
+    columns:
+      - "Tier"
+      - "Containers"
+      - "Price"
+    options: 
+      - tier: "Light Tier"
+        containers: "1 - 5"
+        price: "$5 / month"
+      - tier: "Medium Tier"
+        containers: "6 - 15"
+        price: "$10 / month"
+      - tier: "Heavy Tier"
+        containers: "> 15 containers"
+        price: "$48 / month"
+
+
+       
+# ivy:
+#   mini: 4
+#   small: 12
+#   medium: 48
+#   large: 96
+#   xlarge: 176
+
+# storage:
+#   standard: "$45/TB per year (<strong>effective July 1</strong>: first 10TB provided to each PI free of charge)"
+#   project: "$60/TB per year (<strong>effective July 1</strong>: $70/TB)"
+#   ivy: 45
 
 # TOML File Data
 # [rivanna_allocations_standard]
@@ -59,10 +138,10 @@ storage:
 #     cost = "Free"
 #     su_lifetime = "2 weeks after last teaching session"
 
-# [microservices]
-#     light = 5
-#     medium = 10
-#     heavy = 48
+# microservices:
+#     light: 5
+#     medium: 10
+#     heavy: 48
 
 # [storage]
 #     project = 60

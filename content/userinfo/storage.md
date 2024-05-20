@@ -53,52 +53,7 @@ aliases = [ "/storage" ]
 - Models, scripts, and logfiles
 - Preliminary analyses
 
-<table class="table table-striped table-sm" style="font-size:90%;">
-  <thead class="thead-dark">
-  <tr>
-    <th class="" style="width:16%;">Feature</th>
-    <th class=""><a href="/userinfo/storage/non-sensitive-data/#research-project-storage">Research Project Storage</a></th>
-    <th class=""><a href="/userinfo/storage/research-standard">Research Standard Storage</a></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td class="">Quota</td>
-    <td class="">1TB increments</td>
-    <td class="">1TB increments</td>
-  </tr>
-  <tr>
-    <td class="">Price</td>
-    <td class="">{{% storage-pricing project %}}/TB/yr</td>
-    <td class="">{{% storage-pricing standard %}}/TB/yr</td>
-  </tr>
-  <tr>
-    <td class="">Snapshots<sup>1</sup></td>
-    <td class="">{{% backup-policy project %}}</td>
-    <td class="">No</td>
-  </tr>
-  <tr>
-    <td class="">Replication<sup>2</sup></td>
-    <td class="">No</td>
-    <td class="">No</td>
-  </tr>
-  <tr>
-    <td class="">Backup<sup>3</sup></td>
-    <td class="">No</td>
-    <td class="">No</td>
-  </tr>
-  <tr>
-    <td class="">Access</td>
-    <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-    <td class="">Rivanna, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a></td>
-  </tr>
-  <tr>
-    <td class="">Use cases</td>
-    <td class="">Ideal for long-term storage of data to be accessed from Rivanna. Research Project storage is ideal for sharing data within a research group and for running jobs with smaller files.</td>
-    <td class="">Budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run Slurm jobs against research standard storage unless absolutely necessary. File operations on Research Standard storage are slower than on Rivanna <code>/home</code>, <code>/scratch</code>, or <code>Research Project</code> storage.</td>
-  </tr>
-  </tbody>
-</table>
+{{< storage_main_page_first >}}
 
 <sup>1</sup>Snapshot files are uneditable backup copies of all the files and folders in your account, taken at a daily interval. The system keeps these snapshots for a week. Snapshot files are deleted sequentially after a week has passed. This saving method is useful for human error prevention as any accidentally deleted files may be recovered. Look to our [FAQ](/userinfo/faq/storage-faq/) page to learn how to access your snapshots.
 
@@ -123,44 +78,7 @@ aliases = [ "/storage" ]
 - Personnel and financial information not covered by the definition of highly sensitive data, but not intended to be public
 - Any information that doesn't fit into the other three categories
 
-<table class="table table-striped table-sm" style="font-size:90%;">
-  <thead class="thead-dark">
-  <tr>
-    <th class="" style="width:16%;">Feature</th>
-    <th class=""><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage (ICS)</a></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td class="">Quota</td>
-    <td class="">1TB increments</td>
-  </tr>
-  <tr>
-    <td class="">Price</td>
-    <td class="">{{% storage-pricing ivy %}}/TB/yr</td>
-  </tr>
-  <tr>
-    <td class="">Snapshots</td>
-    <td class="">No</td>
-  </tr>
-  <tr>
-    <td class="">Replication</td>
-    <td class="">No</td>
-  </tr>
-  <tr>
-    <td class="">Backup</td>
-    <td class="">No</td>
-  </tr>
-  <tr>
-    <td class="">Access</td>
-    <td class="">Ivy Virtual Machine</td>
-  </tr>
-  <tr>
-    <td class="">Use cases</td>
-    <td class="">Ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only.</td>
-  </tr>
-  </tbody>
-</table>
+{{< storage_main_page_second >}}
 
 Researchers who request space on ICS must first request an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Further information on Ivy and the ICS can be found [here](/userinfo/storage/sensitive-data/#ivy-central-storage).
 
