@@ -1,26 +1,43 @@
+{{ $services := $.Site.Data.pricing.service }}
+{{ $microservice_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.name "Microservices" }}
+    {{ $microservice_index = $i }}
+  {{ end }}
+{{ end }}
+
+{{ $options := index (index $services $microservice_index) "options" }}
+
+{{ $light_tier := index (where $options "tier" "Light Tier") 0 }}
+{{ $medium_tier := index (where $options "tier" "Medium Tier") 0 }}
+{{ $heavy_tier := index (where $options "tier" "Heavy Tier") 0 }}
+
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Tier</th>
-        <th scope="col">Containers</th>
-        <th scope="col">Price</th>
+        {{ $columns := index (index $services $microservice_index) "columns" }}
+        {{ range $key, $value := index $columns }}
+            <th scope="col">{{ $value }}</th>
+        {{ end }}
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">Light Tier</th>
-        <td>1 - 5</td>
-        <td>${{ $.Site.Data.pricing.microservices.light}} / month</td>
+        <th scope="row"> {{ index $light_tier "tier" }}</th>
+        <td> {{ index $light_tier "containers" }}</td>
+        <td>{{ index $light_tier "price" }}</td>
       </tr>
       <tr>
-        <th scope="row">Medium Tier</th>
-        <td>6 - 15</td>
-        <td>${{ $.Site.Data.pricing.microservices.medium}} / month</td>
+        <th scope="row"> {{ index $medium_tier "tier" }}</th>
+        <td> {{ index $medium_tier "containers" }}</td>
+        <td>{{ index $medium_tier "price" }}</td>
       </tr>
       <tr>
-        <th scope="row">Heavy Tier</th>
-        <td>> 15 containers</td>
-        <td>${{ $.Site.Data.pricing.microservices.heavy}} / month</td>
+        <th scope="row"> {{ index $heavy_tier "tier" }}</th>
+        <td> {{ index $heavy_tier "containers" }}</td>
+        <td>{{ index $heavy_tier "price" }}</td>
       </tr>
     </tbody>
   </table>
+
+  <span style="display:block; margin-bottom: 0.5rem;"> {{ index (index $services $microservice_index) "footnote"}}</span>
