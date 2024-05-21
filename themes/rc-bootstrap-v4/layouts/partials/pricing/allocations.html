@@ -1,11 +1,25 @@
-{{ $standard_option := index (index (index $.Site.Data.pricing.service 0) "options") 0 }}
-{{ $purchased_option:= index (index (index $.Site.Data.pricing.service 0) "options") 1 }}
-{{ $instructional_option:= index (index (index $.Site.Data.pricing.service 0) "options") 2 }}
+<!-- Determine index of Rivanna Entry -->
+{{ $services := $.Site.Data.pricing.service }}
+{{ $rivanna_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.name "Rivanna" }}
+    {{ $rivanna_index = $i }}
+  {{ end }}
+{{ end }}
+
+<!-- Access Different Types -->
+{{ $options := index (index $services $rivanna_index) "options" }}
+
+{{ $standard_option := index (where $options "type" "Standard") 0 }}
+{{ $purchased_option := index (where $options "type" "Purchased") 0 }}
+{{ $instructional_option := index (where $options "type" "Instructional") 0 }}
+
+
 <table class="table" style="margin-top:2rem;">
     <thead class="thead-dark" style="">
       <tr>
-        {{ $options := index (index $.Site.Data.pricing.service 0) "columns" }}
-        {{ range $key, $value := index $options }}
+        {{ $columns := index (index $services $rivanna_index) "columns" }}
+        {{ range $key, $value := index $columns }}
             <th scope="col">{{ $value }}</th>
         {{ end }}
       </tr>
@@ -31,5 +45,7 @@
       </tr>
     </tbody>
   </table>
+
+  <span style="display:block; margin-bottom: 0.5rem;"> {{ index (index $services $rivanna_index) "footnote"}}</span>
   
   

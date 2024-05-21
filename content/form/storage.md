@@ -61,13 +61,13 @@ private = true
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio disabled">
-        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" /> &nbsp; Research Project Storage ({{% storage-pricing project %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" /> &nbsp; Research Project Storage ({{< extract_storage_cost type="project" >}})</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" /> &nbsp; Research Standard Storage ({{% storage-pricing standard %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" /> &nbsp; Research Standard Storage ({{< extract_storage_cost type="standard" >}})</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{< extract_storage_cost type="ivy" >}})</label>
       </div>
     </div>
     <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">

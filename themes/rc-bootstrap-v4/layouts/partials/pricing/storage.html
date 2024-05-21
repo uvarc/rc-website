@@ -1,21 +1,37 @@
+<!-- Determine index of Rivanna Entry -->
+{{ $services := $.Site.Data.pricing.service }}
+{{ $storage_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.name "Storage" }}
+    {{ $storage_index = $i }}
+  {{ end }}
+{{ end }}
+
+{{ $options := index (index $services $storage_index) "options" }}
+
+{{ $standard_storage := index (where $options "name" "Research Standard") 0 }}
+{{ $project_storage := index (where $options "name" "Research Project") 0 }}
+{{ $ivy_central_storage := index (where $options "name" "Ivy Central Storage") 0 }}
+
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Security</th>
-        <th scope="col">Cost</th>
+        {{ $columns := index (index $services $storage_index) "columns" }}
+        {{ range $key, $value := index $columns }}
+            <th scope="col">{{ $value }}</th>
+        {{ end }}
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row">Research Project</th>
-        <td>Standard</td>
-        <td>{{ .Site.Data.pricing.storage.project | markdownify }}</td>
+        <th scope="row"> {{ index $project_storage "name" }}</th>
+        <td> {{ index $project_storage "security" }}</td>
+        <td>{{ index $project_storage "cost" | markdownify}}</td>
       </tr>
       <tr>
-        <th scope="row">Research Standard</th>
-        <td>Standard</td>
-        <td>{{ $.Site.Data.pricing.storage.standard | markdownify}}</td>
+        <th scope="row"> {{ index $standard_storage "name" }}</th>
+        <td>{{ index $standard_storage "security" }}</td>
+        <td>{{ index $standard_storage "cost" | markdownify}}</td>
       </tr>
       <!--
       <tr>
@@ -25,9 +41,9 @@
       </tr>
       -->
       <tr>
-        <th scope="row">Ivy Central Storage</th>
-        <td>High</td>
-        <td>${{ $.Site.Data.pricing.storage.ivy}} TB/year</td>
+        <th scope="row">{{ index $ivy_central_storage "name" }}</th>
+        <td>{{ index $ivy_central_storage "security" }}</td>
+        <td>{{ index $ivy_central_storage "cost" }}</td>
       </tr>
       <!--
       <tr>
