@@ -29,6 +29,7 @@ service:
         cost: "Free"
         su_expiration: "2 weeks after last training session"
 
+
   - name: "Storage"
     label: "Storage"
     footnote: ""
@@ -104,7 +105,6 @@ service:
       - tier: "Heavy Tier"
         containers: "> 15 containers"
         price: "$48 / month"
-
 
        
 # ivy:
