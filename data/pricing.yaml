@@ -29,6 +29,7 @@ service:
         cost: "Free"
         su_expiration: "2 weeks after last training session"
 
+
   - name: "Storage"
     label: "Storage"
     footnote: ""
@@ -117,7 +118,6 @@ service:
 #   standard: "$45/TB per year (<strong>effective July 1</strong>: first 10TB provided to each PI free of charge)"
 #   project: "$60/TB per year (<strong>effective July 1</strong>: $70/TB)"
 #   ivy: 45
->>>>>>> ddb1998c8fb2bb6a7133202e76512c9bdda3f62d
 
 # TOML File Data
 # [rivanna_allocations_standard]
