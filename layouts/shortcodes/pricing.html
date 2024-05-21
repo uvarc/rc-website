@@ -1,5 +1,9 @@
-<!-- 4 variables of pricing-->
-
+<!-- 5 variables of pricing
+1) Storage Table on Pricing Page
+2) Microservice Table on Microservices Page
+3) Ivy Table on Pricing Page
+4) Allocations Table on Pricing Page
+-->
 {{ $storage := false }}
 {{ $microservice := false }}
 {{ $ivy := false }}
@@ -8,7 +12,7 @@
 <!-- Creates subsets of pricing -->
 
 {{ range $key, $value := .Params }}
-    {{ if eq $value "microservice" }}
+    {{ if eq $value "microservices" }}
         {{ $microservice = true }}
     {{ end }}
     {{ if eq $value "ivy" }}
