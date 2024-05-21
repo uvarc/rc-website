@@ -68,7 +68,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   # eventsUrl = "https://s3.amazonaws.com/uvarc-resources/website/events.csv"
 
 [params.support]
-  enableForms = false
+  enableForms = true
   
 [params.metrics]
   coreHours = "5399403"
