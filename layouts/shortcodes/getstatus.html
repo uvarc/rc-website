@@ -17,9 +17,10 @@ function updateStatusMessages() {
     var messageData = '';
     $.each(data, function(key, value) {
       var converter = Markdown.getSanitizingConverter();
-      var messageBody = value.body.replace("&lt;br&gt;", "<br>");
+      var timestamp = value.body.substr(0,19);
+      var messageBody = value.body.substring(timestamp.length+1).replace("&lt;br&gt;", "<br>");
       var messageLength = messageBody.length;
-      if ( messageLength < 22 ) {
+      if ( messageLength < timestamp.length) {
         $("#status-message").hide();
       } else {
         $("#status-message").show();
@@ -31,23 +32,35 @@ function updateStatusMessages() {
       var msgarray = messageBody.split("<br>");
       const keywords = ["storage","jira","rivanna","ivy","microservices","accord","globus"];
       for (let j = 0; j < keywords.length; j++) {
-        var msg = ''
         // iterate over message paragraphs
+        var msg = '';
         for (let i = 0; i < msgarray.length; i++) {
           if (msgarray[i].toLowerCase().search(keywords[j]) != -1) {
             // only add to service specific message if it contains the service keyword
             msg += msgarray[i];
           }
         }
-        if ( msg.length <= 19 ) {
+
+        if ( msg.length <= timestamp.length ) {
           $('#status-message-'+keywords[j]).hide();
         } else {
           $('#status-message-'+keywords[j]).show();
-          if (msg.substr(0,19) !== messageBody.substr(0,19)) {
-            msg = messageBody.substr(0,19) + " " + msg; // add original timestamp 
-          }
+		  var post_date = new Date(timestamp);
+		  post_date = new Date(post_date.getFullYear(), post_date.getMonth(), post_date.getDate())
+		  if (!isNaN(post_date)) {
+			var now = new Date();//new Date().getTime() + 2*86400000);
+			now = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+			const millisPerDay = 86400000;
+			// check if timestamp is from previous day(s). if so replace with current time, otherwise keep posted timestamp
+			if (now - post_date >= millisPerDay) {
+				var datestr = now.toDateString();
+			} else {
+				var datestr = post_date.toDateString();
+			}
+			msg = "[" + datestr + "] "+ msg;
+		  }
         }
-        $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
+      $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
       }
     });
   });

@@ -37,8 +37,23 @@ function checkStatusMessages() {
       } else {
         $("#status-message").show();
         //messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
-        messageData += converter.makeHtml(messageBody);
-        $('#status-message-content').html(messageData);
+		var post_date = new Date(messageBody.substring(0, 19));
+		post_date = new Date(post_date.getFullYear(), post_date.getMonth(), post_date.getDate())
+		if (!isNaN(post_date)) {
+			var now = new Date();//new Date().getTime() + 2*86400000);
+			now = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+			const millisPerDay = 86400000;
+			// check if timestamp is from previous day(s). if so replace with current time
+			if (now - post_date >= millisPerDay) {
+				var datestr = now.toDateString();
+			} else {
+				var datestr = post_date.toDateString();
+			}
+			messageData += "[" + datestr + "] "+ messageBody.substr(20);
+		} else {
+			messageData += messageBody;
+		}
+        $('#status-message-content').html(converter.makeHtml(messageData));
       }
     });
   });
