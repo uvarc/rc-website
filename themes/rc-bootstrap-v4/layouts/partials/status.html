@@ -49,7 +49,7 @@ function checkStatusMessages() {
 			} else {
 				var datestr = post_date.toDateString();
 			}
-			messageData += "TEST [" + datestr + "] "+ messageBody.substr(20);
+			messageData += "[" + datestr + "] "+ messageBody.substr(20);
 		} else {
 			messageData += messageBody;
 		}
