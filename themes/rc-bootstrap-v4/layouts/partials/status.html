@@ -31,12 +31,12 @@ function checkStatusMessages() {
     $.each(data, function(key, value) {
       var converter = Markdown.getSanitizingConverter();
       var messageBody = value.body.replace("&lt;br&gt;", "<br>");
+      var messageBody = "[Tue May 28 2024] Research Project storage, Research Standard storage and Rivanna, including all login nodes and the Open OnDemand and FastX portals, will be down for maintenance from **Tuesday, May 28 at 6 a.m.** through **Thursday, May 30 6 a.m.**.You may continue to submit jobs to Rivanna until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until Rivanna is returned to service. See [maintenance announcement](https://www.rc.virginia.edu/2024/05/rivanna-maintenance-may-28-2024/) for details."
       var messageLength = messageBody.length;
       if ( messageLength < 22 ) {
         $("#status-message").hide();
       } else {
         $("#status-message").show();
-        //messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
 		var post_date = new Date(messageBody.substring(0, 19));
 		post_date = new Date(post_date.getFullYear(), post_date.getMonth(), post_date.getDate())
 		if (!isNaN(post_date)) {
@@ -49,7 +49,7 @@ function checkStatusMessages() {
 			} else {
 				var datestr = post_date.toDateString();
 			}
-			messageData += "[" + datestr + "] "+ messageBody.substr(20);
+			messageData += "TEST [" + datestr + "] "+ messageBody.substr(20);
 		} else {
 			messageData += messageBody;
 		}
@@ -64,7 +64,11 @@ function refreshStatusTable(){
     $.each(data, function(key, value) {
       statusData += '<tr>';
       statusData += '<td style="vertical-align:middle;" valign="middle"><a href="'+value.url+'" style="text-decoration:none;color:black;">'+value.title+'</a></td>';
+      if (value.system == "standard") {
+          statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src=/images/status/red.png /></td>';
+      } else {
       statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src='+value.image+' /></td>';
+      }
       statusData += '</tr>';
     });
     $('#statusBody').html(statusData);
