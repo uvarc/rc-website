@@ -338,7 +338,7 @@ Submit the following script to copy large directories in bulk:
 STAGEDPROJECTFOLDER=/stagedproject/MYSHARE/      #replace MYSHARE  with your share name
 PROJECTFOLDER=/project/MYSHARE/                  #replace MYSHARE with your share name
 
-rsync -av ${STAGEDPROJECTFOLDER} ${PROJECTFOLDER} 1> ~/rsync.log 2> ~/rsync-error.log
+rsync -uav ${STAGEDPROJECTFOLDER} ${PROJECTFOLDER} 1> ~/rsync.log 2> ~/rsync-error.log
 ```
 
 The script will also be available through the Open OnDemand Job Composer: 
@@ -353,6 +353,12 @@ The script will also be available through the Open OnDemand Job Composer:
 
 As we expect a high volume of data migration, please refrain from doing so directly on the login nodes but instead submit it as a job via the provided Slurm script as described above. 
 
+{{% callout %}}
+If you have problems with errors in the above rsync command you can try adding the following flags: --no-owner --no-group --no-perms --no-times. E.g.
+```
+rsync -uav  --no-owner --no-group --no-perms --no-times ${STAGEDPROJECTFOLDER} ${PROJECTFOLDER} 1> ~/rsync.log 2> ~/rsync-error.log
+```
+{{% /callout %}}
 
 {{% /accordion-item %}}
 
