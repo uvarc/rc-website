@@ -145,7 +145,7 @@ If the CPU efficiency is much lower, please consider using fewer cores for your 
 
 ## Standalone cluster mode using multiple nodes
 
-**As of 5/29/2024 this is no longer working.**
+**As of 5/29/2024 this is no longer working. We will update as soon as we have a solution.**
 
 *We gratefully acknowledge the Pittsburg Supercomputing Center for giving us permission to use their Spark configuration and launch scripts.*
 
