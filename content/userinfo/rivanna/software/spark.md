@@ -145,6 +145,8 @@ If the CPU efficiency is much lower, please consider using fewer cores for your 
 
 ## Standalone cluster mode using multiple nodes
 
+**As of 5/29/2024 this is no longer working.**
+
 *We gratefully acknowledge the Pittsburg Supercomputing Center for giving us permission to use their Spark configuration and launch scripts.*
 
 Before using multiple nodes, please make sure that your job can use a full standard node effectively. When you request N nodes in the standalone cluster mode, one node is set aside as the master node and the remaining N-1 nodes are worker nodes. Thus, running on 2 nodes will have the same effect as running on 1 node.
