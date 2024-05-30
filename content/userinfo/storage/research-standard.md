@@ -45,28 +45,6 @@ Note for PI's creating a new Grouper group:
 
 _Research Standard_ storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [How To pages](/userinfo/howtos/storage/drive-mapping).
 
-
-# Data transfer
-
-### Public and Internal Use Data Transfer
-<img src="/images/storage/storage-nonsecure.jpg" alt="nonsecure-storage-options-overview">
-
-#### Secure Copy (scp)
-`scp` uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. `scp can be used with the following syntax:
-```
-scp SourceFile mst3k@rivanna.hpc.virginia.edu:/nv/vol123/Grouper_group_name
-```
-Detailed instructions and examples for using `scp` are provided [here](/userinfo/rivanna/logintools/cl-data-transfer).
-
-#### Secure File Transfer Protocol (SFTP)
-`sftp` is a network protocol for secure file management. Instructions and examples for using `sftp` are located [here](/userinfo/rivanna/logintools/cl-data-transfer).
-
-#### Graphical Data Transfer Packages
-Several packages such as [Filezilla](/userinfo/rivanna/logintools/filezilla), [Cyberduck](/userinfo/rivanna/logintools/cyberduck), and [MobaXterm](/userinfo/rivanna/logintools/mobaxterm) are available for users who want a graphical user interface for file transfers.  See [here](userinfo/rivanna/logintools/sftp-clients) for an overview.
-
-#### Globus Connect (Large Data Transfers)
-Globus provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found [here](/userinfo/globus/).
-
 # File Manipulation and Navigation with Research Standard Storage
  
 _Research Standard_ storage is based on a Linux file system similar to storage spaces on the Rivanna cluster, including [/home](/userinfo/storage/non-sensitive-data/#home) and [/scratch](/userinfo/storage/non-sensitive-data/#scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
