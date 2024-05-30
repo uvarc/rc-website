@@ -10,12 +10,13 @@ tags = [
     "public-data",
     "internal-use-data",
     "storage",
-    "research"
+    "research",
+    "research-project"
 ]
 draft = false
 +++
 
-# Research Project Storage
+# Overview
 
 The **Research Project Storage** file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="https://groups.identity.virginia.edu" target="_blank">Grouper</a> (requires VPN connection). `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
 
