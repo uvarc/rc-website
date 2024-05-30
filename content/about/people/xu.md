@@ -15,7 +15,7 @@ subjects = [
 ]
 +++
 
-Xinyue is currently a second-year UVA master student in computer science. With a diverse background in computer science, she is proficient in Python and C++, and has experience with data science and cloud deployments. Xinyue is familiar with machine learning algorthm, applying it across various fields such as autonomous navigation for ROSbot cars and bioinformatics for cancer survival analysis. Her diverse expertise and innovative applications of machine learning highlight her strong potential in the tech industry.
+Xinyue is currently a second-year UVA master student in computer science. With a diverse background in computer science, she is proficient in Python and C++, and has experience with data science and cloud deployments. Xinyue is familiar with machine learning algorthms, applying them across various fields such as autonomous navigation for ROSbot cars and bioinformatics for cancer survival analysis. Her diverse expertise and passion for technology keep her moving forward.
 
 ##### Education
 
