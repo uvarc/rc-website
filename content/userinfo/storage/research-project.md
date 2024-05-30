@@ -8,7 +8,7 @@ date = "2019-10-04T17:45:12-05:00"
 tags = [
     "rivanna",
     "public-data",
-    "internal-use-data
+    "internal-use-data",
     "storage",
     "research"
 ]
