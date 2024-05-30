@@ -196,7 +196,7 @@ for your account on Rivanna (for versions R2022b or older):
 
 configCluster % the configuration created is specific to the Matlab version
 ```
-For version R2023b, use the Discover Clusters function in the drop down of the Parallel menu to ceate a cluster profile for Rivanna as described in the following link.
+**For version R2023b or newer**, use the Discover Clusters function in the drop down of the Parallel menu to ceate a cluster profile for Rivanna as described in the following link.
 
 [Discover Clusters and Use Cluster Profiles](https://www.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html)
 
@@ -204,7 +204,7 @@ For version R2023b, use the Discover Clusters function in the drop down of the P
 
 ```
 % Create a cluster object based on the profile
-pc = parcluster('rivanna R2022a'); % This must correspond to the matlab
+pc = parcluster('Rivanna_cluster'); % This must correspond to the matlab
      % version you are using
 
 % Add additional properties related to slurm job parameters
@@ -218,14 +218,12 @@ pc.AdditionalProperties  % confirm above properties are set
 
 % email address for Slurm to send email
 pc.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
-% send email when job ends
-pc.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
+% send email when job ends and specify number of nodes and processes per node
+pc.AdditionalProperties.AdditionalSubmitArgs = ...
+'--mail-type=end --nodes=2 --ntasks-per-node=4'
 
 % specify the total number of processes
-% and number of processes (cores) per node
 procs=8;
-procsPerNode=4;
-pc.AdditionalProperties.ProcsPerNode=procsPerNode;
 
 ```
 Once this configuration is complete you can submit jobs to the cluster using
@@ -264,7 +262,7 @@ of equations (Ax=b) across multiple compute nodes using distributed arrays.
 
 ```
 % create a cluster object
-pc = parcluster('rivanna R2020a'); % This must correspond to the matlab
+pc = parcluster('Rivanna_cluster'); % This must correspond to the matlab
      % version you are using
 pc.AdditionalProperties.AccountName = 'hpc_build'
 pc.AdditionalProperties.WallTime = '04:00:00';
@@ -272,15 +270,12 @@ pc.AdditionalProperties.QueueName = 'parallel';
 
 % email address for Slurm to send email
 pc.AdditionalProperties.EmailAddress ='teh1m@virginia.edu'
-% send email when job ends
-pc.AdditionalProperties.AdditionalSubmitArgs ='--mail-type=end'
+% send email when job ends and specify number of nodes and processes per node
+pc.AdditionalProperties.AdditionalSubmitArgs = ...
+'--mail-type=end --nodes=2 --ntasks-per-node=4'
 
 % specify the total number of processes
-% and number of processes (cores) per node
 procs=8;
-procsPerNode=4;
-pc.AdditionalProperties.ProcsPerNode=procsPerNode;
-pc.saveProfile;
 
 % specify additional submit arguments
 pc.AdditionalProperties.AdditionalSubmitArgs='--mem-per-cpu=30000';
