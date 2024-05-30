@@ -8,7 +8,9 @@ date = "2019-10-04T17:45:12-05:00"
 tags = [
     "rivanna",
     "research",
-    "storage"
+    "storage",
+    "public-data",
+    "internal-use-data"
 ]
 draft = false
 +++
