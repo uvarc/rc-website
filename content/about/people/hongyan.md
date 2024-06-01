@@ -18,4 +18,4 @@ subjects = [
 ]
 +++
 
-Hongyan Wu is an graduate student at the University of Virginia studying Computer Science.
+Hongyan Wu is an graduate student at the University of Virginia studying Computer Science. He specialize in Machine Learning, Reinforcement Learning and Robotics. Apart from that, he also work as a summer intern at T-Mobile for the Android mobile app development
