@@ -9,7 +9,7 @@
     {{ "<!-- combined, minified CSS -->" | safeHTML }}
     <link href="{{ .Site.BaseURL }}css/style.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    {{ template "_internal/google_analytics_async.html" . }}
+    {{ template "_internal/google_analytics.html" . }}
     {{ partial "head-custom.html" . }}
     <script src="/js/search-modal.js"></script>
   </head>
