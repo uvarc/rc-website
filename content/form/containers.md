@@ -41,13 +41,13 @@ private = true
     <label class="control-label" for="type-of-request">Tier of Service <span class="form-required" title="This field is required.">*</span></label>
     <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-1" name="k8s-tier" value="k8s-tier-1" class="form-radio" /> &nbsp; <= 5 containers ($5/month total)</label>
+        <input required="required" type="radio" id="tier-1" name="k8s-tier" value="k8s-tier-1" class="form-radio" /> &nbsp; <= 5 containers ({{< extract_microservices_cost tier=light >}} total)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-2" name="k8s-tier" value="k8s-tier-2" class="form-radio" /> &nbsp; 6 - 15 containers ($10/month total)</label>
+        <input required="required" type="radio" id="tier-2" name="k8s-tier" value="k8s-tier-2" class="form-radio" /> &nbsp; 6 - 15 containers ({{< extract_microservices_cost tier=medium >}} total)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-3" name="k8s-tier" value="k8s-tier-3" class="form-radio" /> &nbsp; > 15 containers ($48/month total)</label>
+        <input required="required" type="radio" id="tier-3" name="k8s-tier" value="k8s-tier-3" class="form-radio" /> &nbsp; > 15 containers ({{< extract_microservices_cost tier=heavy >}} total)</label>
       </div>
     </div>
   </div>
