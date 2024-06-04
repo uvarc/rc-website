@@ -232,9 +232,13 @@ Queues are set up to emphasize one-core (serial or threaded), multi-node paralle
 - Parallel jobs requiring up to 50 compute notes: **parallel**
 - Jobs requiring a large amount of memory (60GB+): **largemem**
 - Jobs requiring the use of GPUs: **gpu**
-- Short jobs taking up to an hour, quick code tests: **dev**
+- Jobs for interactive sessions or quick tests of code:  **interactive**
 
 More information about queue policy is at the [Rivanna homepage](/userinfo/rivanna/overview/#job-queues).
+
+## How do I use the interactive queue?
+
+The interactive queue is ideal for code development or other short interactive jobs that require active monitoring. Examples include Slurm ijobs and OOD interactive apps like JupyterLab, RStudio Server, MATLAB, etc. The interactive queue has a time limit of 12 hours per job, and users can request up to a maximum of 24 CPU cores or 2 GPUs and up to 216G of CPU memory across all jobs. For example, you can run 24 serial jobs or one 24-core job. To request a GPU on with OOD apps, you'll be asked if you want to use a GPU. If yes is selected you can choose one or two GPUs. In slurm, the user must specify the `--gres=gpu` flag for GPU access. If two GPUs are desired in Slurm, you can specify `--gres=gpu:2`.
 
 ## How do I check the status of my jobs?
 From a terminal, run the command `jobq`.  From Open OnDemand, use the Job Viewer and select "Your Jobs" as the filter.
