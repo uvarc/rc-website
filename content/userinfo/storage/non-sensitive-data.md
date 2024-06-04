@@ -7,9 +7,10 @@ categories = ["userinfo"]
 date = "2019-10-04T17:45:12-05:00"
 tags = [
     "rivanna",
-    "sensitive data",
+    "research",
     "storage",
-    "ivy"
+    "public-data",
+    "internal-use-data"
 ]
 draft = false
 +++
@@ -47,35 +48,6 @@ Note for PI's creating a new Grouper group:
 * Specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation.
 
 {{% /callout %}}
-
-# Data transfer
-
-## Public & Moderately Sensitive Data Transfer
-
-![Non-Sensitive Data Transfer](/images/storage/storage-nonsecure.jpg)
-
-## Secure Copy (`scp`)
-
-`scp` uses secure shell (SSH) protocol to transfer files between your local machine and a remote host. <code>scp</code> can be used with the following syntax:
-
-```scp [source] [destination]```
-
-```scp SourceFile mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k```
-
-```scp SourceFile mst3k@rivanna.hpc.virginia.edu:/project/Grouper_group_name```
-
-Detailed instructions and examples for using `scp` are listed <a href ="/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
-
-## Secure File Transfer Protocol (`sftp`)
-
-`sftp` is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
-
-## Graphical File-Transfer Applications
-
-<a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, and <a ref="https://mobaxterm.mobatek.net">MobaXterm</a> are examples of open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="/userinfo/rivanna/logintools/graphical-sftp" target="_blank">here</a>.
-
-## Globus Connect (Large Data Transfer)
-<p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="/userinfo/globus" target="_blank">here</a>.</p>
 
 # Public & Moderately Sensitive Data Storage Systems
 
