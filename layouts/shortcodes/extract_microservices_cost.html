@@ -1,0 +1,25 @@
+{{ $services := $.Site.Data.pricing.service }}
+{{ $microservices_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.name "Microservices" }}
+    {{ $microservices_index = $i }}
+  {{ end }}
+{{ end }}
+
+{{ $options := index (index $services $microservices_index) "options" }}
+
+{{ $light_tier := index (where $options "tier" "Light Tier") 0 }}
+{{ $medium_tier := index (where $options "tier" "Medium Tier") 0 }}
+{{ $heavy_tier := index (where $options "tier" "Heavy Tier") 0 }}
+
+{{ with .Get "tier" }}
+  {{ if eq . "light" }}
+    {{ index $light_tier "price" | markdownify}}
+  {{ else if eq . "medium" }}
+    {{ index $medium_tier "price" | markdownify}}
+  {{ else if eq . "heavy" }}
+    {{ index $heavy_tier "price" | markdownify}}
+  {{ else }}
+    Unknown Microservice Type
+  {{ end }}
+{{ end }}
