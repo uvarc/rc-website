@@ -28,7 +28,7 @@ type = "rivanna"
 A faculty or research staff member must first request an allocation on Rivanna. Full details can be found [here](/userinfo/rivanna/allocations).
 
 ## How do I log on to Rivanna?
-Use an SSH client from a campus-connected machine and connect to `rivanna.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/rivanna/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/rivanna/ood/overview) or [FastX](/userinfo/rivanna/logintools/fastx).
+Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/rivanna/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/rivanna/ood/overview) or [FastX](/userinfo/rivanna/logintools/fastx).
 
 {{% off-campus %}}
 

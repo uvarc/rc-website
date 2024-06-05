@@ -27,7 +27,7 @@ Run the installer as directed.
 
     ![alt text](/images/rivanna/mobax-2.png)
 
-- Remember to connect to `rivanna.hpc.virginia.edu` with your Eservices username and password. SSH key authentication is also supported.
+- Remember to connect to `login.hpc.virginia.edu` with your Eservices username and password. SSH key authentication is also supported.
 
 - You can prevent premature ssh timeouts by accessing Settings->SSH and making sure the box labeled "SSH keepalive" is checked.
 
