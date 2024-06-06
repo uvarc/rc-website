@@ -28,7 +28,7 @@ draft = false
 
 2. Enter Your Credentials. Fill in the Host, Username, Password, and Port fields.
 ```
-    Host: rivanna.hpc.virginia.edu
+    Host: login.hpc.virginia.edu
     Username: your computing ID
     Password: your Eservices password
     Port: 22

@@ -27,7 +27,7 @@ Open OnDemand is a graphical user interface that allows access to Rivanna via a 
 
 # Secure Shell Access (SSH)
 
-Rivanna is accessible through **ssh** (Secure Shell) connections using the hostname `rivanna.hpc.virginia.edu`.
+Rivanna is accessible through **ssh** (Secure Shell) connections using the hostname `login.hpc.virginia.edu`.
 
 ## <i class="fab fa-windows fa-1x"></i> Windows
 
@@ -40,7 +40,7 @@ Windows users must install an ssh client application. We recommend [MobaXterm](/
 OSX and Linux users may connect through a terminal using the command
 
 ```
-ssh -Y mst3k@rivanna.hpc.virginia.edu  
+ssh -Y mst3k@login.hpc.virginia.edu  
 ```
 
 [SSH key authentication](/userinfo/rivanna/logintools/rivanna-ssh) is also permissible. 
