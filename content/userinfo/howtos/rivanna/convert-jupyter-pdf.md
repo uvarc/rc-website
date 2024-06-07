@@ -22,7 +22,7 @@ module load anaconda/2020 texlive
 jupyter nbconvert --to pdf you_script.ipynb 
 ```
 
-2. If you want to use  GUI, please request a [desktop session](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sys/uva_desktop/session_contexts/new). 
+2. If you want to use  GUI, please request a [desktop session](https://ood.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sys/uva_desktop/session_contexts/new). 
 Fill out the form as you normally would for JupyterLab. After you get to a desktop, open a terminal (black box next to Firefox in the top bar) and type these commands:
 
 ```

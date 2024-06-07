@@ -32,7 +32,7 @@ RC engineers will be installing a new `/scratch` storage filesystem that can be 
 
 The script will also be available through the Open OnDemand Job Composer:
 
-1. Go to [Open OnDemand Job Composer](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard/apps/show/myjobs)
+1. Go to [Open OnDemand Job Composer](https://ood.hpc.virginia.edu/pun/sys/dashboard/apps/show/myjobs)
 1. Click: New Job -> From Template
 1. Select `demo-copy-scratch`
 1. In the right panel, click "Create New Job"
