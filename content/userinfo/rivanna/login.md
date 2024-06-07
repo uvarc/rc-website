@@ -61,7 +61,7 @@ For more details and for troubleshooting information, please see our [`ssh`](/us
 
 # Remote Desktop Access
 
-Users who wish to run X11 graphical applications may prefer the [FastX](/userinfo/rivanna/logintools/fastx) remote desktop web interface.  The FastX web client is accessible at `rivanna-desktop.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
+Users who wish to run X11 graphical applications may prefer the [FastX](/userinfo/rivanna/logintools/fastx) remote desktop web interface.  The FastX web client is accessible at `fastx.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
 
-[<button class="btn btn-primary">Connect to FastX via Web</button>](https://rivanna-desktop.hpc.virginia.edu:8000/auth/ssh)
+[<button class="btn btn-primary">Connect to FastX via Web</button>](https://fastx.hpc.virginia.edu:8000/auth/ssh)
 [<button class="btn btn-primary">Learn more about FastX Web</button>](/userinfo/rivanna/logintools/fastx/)
