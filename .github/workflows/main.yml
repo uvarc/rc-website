@@ -32,6 +32,17 @@ jobs:
       run: docker pull ghcr.io/uvarc/hugo-build:v2
     - name: Run HUGO container
       run: docker run -e BRANCH=$BRANCH_NAME -e TRAVIS_BRANCH=$BRANCH_NAME -e BUCKET_NAME=${{ secrets.BUCKET_NAME }} -e DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }} -e BUCKET_NAME_STAGING=${{ secrets.BUCKET_NAME_STAGING }} -e STAGING_DISTRIBUTION_ID=${{ secrets.STAGING_DISTRIBUTION_ID }} -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -e MAX_AGE=${{ secrets.MAX_AGE}} ghcr.io/uvarc/hugo-build:v2 /root/build-site.sh uvarc/rc-website hugo-0.80.0-ext
+  # Broken Link Checker using Broken Link Checker Action provided by technote-space
+  Broken_Link_Checker:
+    name: Broken Link Check
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run Broken Link Checker
+        uses: technote-space/broken-link-checker-action@v2
+    
   Slack:
     name: Error Notification
     if: ${{ failure() }}
