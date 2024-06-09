@@ -1,5 +1,5 @@
 +++
-title = "Public and Moderately Sensitive Data Storage"
+title = "Research Project Storage"
 description = ""
 author = "RC Staff"
 images = [""]
@@ -7,32 +7,16 @@ categories = ["userinfo"]
 date = "2019-10-04T17:45:12-05:00"
 tags = [
     "rivanna",
-    "research",
-    "storage",
     "public-data",
-    "internal-use-data"
+    "internal-use-data",
+    "storage",
+    "research",
+    "research-project"
 ]
 draft = false
 +++
 
-# `/home`
-
-`/home` is a free 50GB space provided to users of the Rivanna HPC system and is visible from the Rivanna login and compute nodes. `/home` is the default working directory when logging on to Rivanna. Users can also access their home directory at `/home/$USER`, where `$USER` is an individual's UVa computing ID.
-
-# `/scratch`
-
-`/scratch` is a Lustre high performance parallel filesystem accessible via the Rivanna login and compute nodes.
-
-{{% callout %}}
-{{% scratch-policy %}}
-{{% /callout %}}
-
-
-**How to request `/home` and `/scratch` space**
-
-`/home` and `/scratch` space can be obtained by requesting an allocation on Rivanna. The process of getting access to Rivanna is described [here](/userinfo/rivanna/overview/).
-
-# Research Project Storage
+# Overview
 
 The **Research Project Storage** file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="https://groups.identity.virginia.edu" target="_blank">Grouper</a> (requires VPN connection). `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
 
