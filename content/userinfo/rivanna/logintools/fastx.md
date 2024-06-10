@@ -17,7 +17,7 @@ FastX is a commercial solution that enables users to start an X11 desktop enviro
 # Using FastX for the Web
 We recommend that most users access FastX through its Web interface. To connect, point a browser to:
 
-[<button class="btn btn-success">https://rivanna-desktop.hpc.virginia.edu</button>](https://rivanna-desktop.hpc.virginia.edu)
+[<button class="btn btn-success">https://fastx.hpc.virginia.edu</button>](https://fastx.hpc.virginia.edu)
 
 {{< off-campus >}}
 

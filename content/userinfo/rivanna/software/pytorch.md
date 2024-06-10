@@ -40,7 +40,7 @@ Jupyter Notebooks can be used for interactive code development and execution of 
 
 ## Accessing the JupyterLab Portal
 
-1. Open a web browser and go to:  [https://rivanna-portal.hpc.virginia.edu](https://rivanna-portal.hpc.virginia.edu).
+1. Open a web browser and go to:  [https://ood.hpc.virginia.edu](https://ood.hpc.virginia.edu).
 2. Use your “Netbadge” credentials to log in.
 3. On the top right of the menu bar of the Open OnDemand dashboard, click on `Interactive Apps`.
 4. In the drop-down box, click on `JupyterLab`.

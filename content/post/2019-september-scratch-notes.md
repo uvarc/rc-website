@@ -27,7 +27,7 @@ To transfer your files, we recommend using the `rsync` command within a shell (i
 
 If you normally use Open on-Demand or JupyterLab, you can open a Terminal Window by
 
-- logging into Open on-Demand (https://rivanna-portal.hpc.virginia.edu);
+- logging into Open on-Demand (https://ood.hpc.virginia.edu);
 
 - clicking on Files > Home Directory ;
 

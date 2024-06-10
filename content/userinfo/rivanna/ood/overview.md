@@ -16,7 +16,7 @@ Open OnDemand is a graphical user interface that allows access to Rivanna via a 
 
 
 # Logging in to Rivanna
-Rivanna is accessible through the Open OnDemand web client at https://rivanna-portal.hpc.virginia.edu. Your login is your UVA computing ID and your password is your Netbadge password. Some services, such as FastX Web, require the Eservices password. If you do not know your Eservices password you must change it through ITS by changing your Netbadge password ([see instructions](/userinfo/faq/rivanna-faq/#how-do-i-reset-my-current-password-obtain-a-new-password)).
+Rivanna is accessible through the Open OnDemand web client at https://ood.hpc.virginia.edu. Your login is your UVA computing ID and your password is your Netbadge password. Some services, such as FastX Web, require the Eservices password. If you do not know your Eservices password you must change it through ITS by changing your Netbadge password ([see instructions](/userinfo/faq/rivanna-faq/#how-do-i-reset-my-current-password-obtain-a-new-password)).
 
 <div class="alert alert-success">
   <div style="float:left;padding:0 1rem 0 0;"><i style="" class="fas fa-3x fa-map-marked-alt"></i></div>

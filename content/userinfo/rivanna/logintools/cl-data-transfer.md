@@ -38,19 +38,19 @@ The following examples detail how to transfer data between your local computer a
 From your computer to `/project` storage:
 
 ```
-scp my_file mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name
+scp my_file mst3k@login.hpc.virginia.edu:/project/mygroup_name
 ```
 
 From `/project` storage to `my_directory` on your computer:
 
 ```
-scp mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name/my_file /my_directory
+scp mst3k@login.hpc.virginia.edu:/project/mygroup_name/my_file /my_directory
 ```
 
 `scp` accepts wildcards.  In this example, the mycode directory must exist in your scratch directory.
 
 ```
-scp *cxx mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k/mycode
+scp *cxx mst3k@login.hpc.virginia.edu:/scratch/mst3k/mycode
 ```
 
 ## `scp` Options
@@ -60,13 +60,13 @@ The `-r` option recursively copies directories.
 From your computer to /project storage:
 
 ```
-scp -r my_directory mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name
+scp -r my_directory mst3k@login.hpc.virginia.edu:/project/mygroup_name
 ```
 
 From `/project` storage to your computer:
 
 ```
-scp -r mst3k@rivanna.hpc.virginia.edu:/project/mygroup_name /target_directory
+scp -r mst3k@login.hpc.virginia.edu:/project/mygroup_name /target_directory
 ```
 
 The `-p` option preserves modification time, access time, and ownership from the original file.
@@ -80,7 +80,7 @@ Secure FTP or `sfpt` is an interface built on top of `scp` to mimic the behavior
 To connect to Rivanna with `sftp`, execute the following in the command line interface:
 
 ```
-sftp mst3k@rivanna.hpc.virginia.edu
+sftp mst3k@login.hpc.virginia.edu
 ```
 
 When prompted, enter your password. Once the connection succeeds, you will see the `sftp` prompt:
@@ -144,7 +144,7 @@ Remote sync is a powerful tool for copying files.  It is most widely used to tra
 In this example, we have a local directory `ldir` and a remote directory `rdir` and we wish to copy the contents of ldir to rdir. 
 
 ```
-rsync -r ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
+rsync -r ldir/ mst3k@login.hpc.virginia.edu:rdir
 ```
 
 The trailing `/` after ldir is important.  Without it, ldir and its contents would be placed under `rdir`.
@@ -154,25 +154,25 @@ Unlike `scp`, if the target directory does not exist, `rsync` will create it.
 It is more common to use the `-a` (archive) option.  This option preserves symbolic links, special files, ownership, permissions, and timestamps.
 
 ```
-rsync -a ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
+rsync -a ldir/ mst3k@login.hpc.virginia.edu:rdir
 ```
 
 Show a progress bar and keep partially transferred files
 
 ```
-rsync -Pa ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
+rsync -Pa ldir/ mst3k@login.hpc.virginia.edu:rdir
 ```
 
 Delete files not present on the source directory if they are present on the target directory
 
 ```
-rsync -Pa --delete ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
+rsync -Pa --delete ldir/ mst3k@login.hpc.virginia.edu:rdir
 ```
 
 Have rsync print the list it will transfer without carrying out the tranfers.  Especially important when using `--delete`.
 
 ```
-rsync -Pa --delete --dry-run ldir/ mst3k@rivanna.hpc.virginia.edu:rdir
+rsync -Pa --delete --dry-run ldir/ mst3k@login.hpc.virginia.edu:rdir
 ```
 
 # AWS CLI
