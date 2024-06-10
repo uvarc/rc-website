@@ -30,7 +30,7 @@ draft = false
 2. Enter Your Credentials. From the drop-down menu, select SFTP (SSH File Transfer Protocol. Then enter the appropriate information in the following fields:
 
 ```
-    Host: rivanna.hpc.virginia.edu
+    Host: login.hpc.virginia.edu
     Username: your computing ID
     Password: your Rivanna password
     Port: 22

@@ -28,7 +28,7 @@ Research Computing provides a web portal where RStudio Server can be accessed on
 # Accessing RStudio Server
 To access RStudio Server, you will begin by connecting to our Open OnDemand portal:
 
-1. Open a web browser and go to URL:  https://rivanna-portal.hpc.virginia.edu.
+1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your “Netbadge” credentials to log in.
 3. On the top right of the menu bar of the Open OnDemand dashboard, click on “Interactive Apps”.
 4. In the drop-down box, click on “RStudio Server”.

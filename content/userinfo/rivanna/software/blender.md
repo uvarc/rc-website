@@ -51,7 +51,7 @@ Interactive sessions of {{% software-name %}} can be launched through Rivanna's 
 To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a Rivanna GPU node. In addition, you need to specify required resources, e.g. time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/overview/#job-queues) to learn more about the partitions.
 
 ## Starting an Interactive Session
-1. Open a web browser and go to URL:  https://rivanna-portal.hpc.virginia.edu.
+1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
 3. On the top banner of the Open OnDemand dashboard, click on `Interactive Apps`.
 4. In the drop-down box, click on `{{% software-name %}}`.
