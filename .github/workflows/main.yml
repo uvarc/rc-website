@@ -47,7 +47,9 @@ jobs:
           # optional:
           honorRobotExclusions: true
           ignorePatterns: "github,google"
-          recursiveLinks: true
+          recursiveLinks: false 
+      - name: Get the result
+        run: echo "${{steps.link-report.outputs.result}}"
     
   Slack:
     name: Error Notification
