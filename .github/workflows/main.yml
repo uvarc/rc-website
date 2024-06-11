@@ -39,17 +39,10 @@ jobs:
     needs: Build
     steps:
       - name: Run Broken Link Checker
-        id: link-report
-        uses: celinekurpershoek/link-checker@v1.0.2
+        uses: ruzickap/action-my-broken-link-checker@v2
         with:
-          # Required:
-          url: "https://staging.rc.virginia.edu/"
-          # optional:
-          honorRobotExclusions: true
-          ignorePatterns: "github,google,rci"
-          recursiveLinks: false 
-      - name: Get the result
-        run: echo "${{steps.link-report.outputs.result}}"
+          url: https://staging.rc.virginia.edu
+          cmd_params: "-e rci.hpc"
     
   Slack:
     name: Error Notification
