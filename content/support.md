@@ -144,7 +144,7 @@ via Zoom</button></a>
 <div class="alert alert-success" role="alert">
 <b>Wednesdays 2:00-3:00pm</b>
 <a>- Questions about Research Project Storage?</a>
-<a><br><b>- No session on Jun 19 due to University holiday.</b></a>
+<a><br><b>- No session on June 19 due to University holiday.</b></a>
 <a style="float:right;" href="https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button></a>
 </div>
 
@@ -165,7 +165,7 @@ We offer Rivanna orientation sessions on Wednesdays (appointment required).
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Wednesdays 3:00-4:00pm </b>
-<a><br><b>- No session on Jun 19 due to University holiday.</b></a>
+<a><br><b>- No session on June 19 due to University holiday.</b></a>
 <a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to Rivanna" 
 session</button></a>
 <!-- Health Sciences Library, MILL Room -->
