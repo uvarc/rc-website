@@ -4,7 +4,7 @@
 {{- $.Scratch.Set "nextavailable" (now.AddDate 0 0 $dayoffset) -}}
 
 <!-- blockout dates -->
-{{- $blockout:=slice (time "2020-12-16") (time "2020-12-23") (time "2020-12-30")  -}}
+{{- $blockout:=slice (time "2020-12-16") (time "2020-12-23") (time "2020-12-30") (time "2024-06-19") -}}
 {{ range $blockout }}
     {{- $next:=$.Scratch.Get "nextavailable" -}}
     {{- if in $blockout (time ($next.Format "2006-01-02")) -}}
@@ -15,7 +15,7 @@
 <!-- construct smart URL -->
 {{- $category:="Rivanna" -}}
 {{- $req_title:="Intro to Rivanna Orientation Session" -}}
-{{- $description:=printf "I'd like to reserve a seat for the next \"Intro to Rivanna\" orientation session on %s, 3-4pm." (($.Scratch.Get "nextavailable").Format "Monday January 2") -}}
+{{- $description:=printf "I'd like to reserve a seat for the next \"Intro to HPC\" orientation session on %s, 3-4pm." (($.Scratch.Get "nextavailable").Format "Monday January 2") -}}
 {{- $smart_url:=printf "/form/support-request/?category=%s&request_title=%s&description=%s" $category $req_title $description -}}
 
 {{- $smart_url:=replace $smart_url " " "%20" -}}
