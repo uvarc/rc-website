@@ -26,9 +26,9 @@ draft = false
 
 ```scp [source] [destination]```
 
-```scp SourceFile mst3k@rivanna.hpc.virginia.edu:/scratch/mst3k```
+```scp SourceFile mst3k@login.hpc.virginia.edu:/scratch/mst3k```
 
-```scp SourceFile mst3k@rivanna.hpc.virginia.edu:/project/Grouper_group_name```
+```scp SourceFile mst3k@login.hpc.virginia.edu:/project/Grouper_group_name```
 
 Detailed instructions and examples for using `scp` are listed <a href ="/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
 

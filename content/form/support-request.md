@@ -33,7 +33,7 @@ private = true
     <select required="required" class="dropdown form-control form-select required" title="Please select a general category for your support request. " data-toggle="tooltip" id="categories" name="categories">
       <option value="" selected="selected">- Select -</option>
       <option id="general" value="General">General research computing question</option>
-      <option id="rivanna" value="Rivanna">Rivanna HPC</option>
+      <option id="rivanna" value="Rivanna">HPC (Afton & Rivanna)</option>
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="storage" value="Storage">Storage</option>
       <option id="container" value="Container">Container Service</option>

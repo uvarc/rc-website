@@ -26,7 +26,7 @@ Jupyter Notebooks can be used for interactive code development and execution of 
 
 ## Accessing the JupyterLab Portal
 
-1. Open a web browser and go to URL:  https://rivanna-portal.hpc.virginia.edu
+1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu
 2. Use your `Netbadge` credentials to log in.
 3. On the top right of the menu bar of the Open OnDemand dashboard, click on “Interactive Apps”.
 4. In the drop-down box, click on `JupyterLab`.
@@ -96,7 +96,7 @@ Due to the overlay, these directories are by default the same inside and outside
 
 # TensorBoard
 
-Request a Desktop session under Interactive Apps via [Open OnDemand](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the Slurm job. Launch the session and open a terminal in the desktop. Enter these commands:
+Request a Desktop session under Interactive Apps via [Open OnDemand](https://ood.hpc.virginia.edu/pun/sys/dashboard). Fill out the form to submit the Slurm job. Launch the session and open a terminal in the desktop. Enter these commands:
 
 ```
 $ module load apptainer tensorflow/2.13.0

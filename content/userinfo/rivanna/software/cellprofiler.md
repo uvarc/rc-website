@@ -61,7 +61,7 @@ cp $CONTAINERDIR/cellprofiler-4.2.5.sif /scratch/$USER
 
 1. In a terminal window on your local workstation execute the following command:
 ```
-ssh -Y YOUR_ID@rivanna1.hpc.virginia.edu
+ssh -Y YOUR_ID@login1.hpc.virginia.edu
 ```
 
 2. Continue with instructions under **Starting an interactive CellProfiler job**.

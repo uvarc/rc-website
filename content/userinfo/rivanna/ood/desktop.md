@@ -28,7 +28,7 @@ This is the preferred mechanism to start compute intensive applications that req
 # Accessing the Desktop App
 To access the app and start a desktop session, connect to our Open OnDemand portal:
 
-1. Open a web browser and go to https://rivanna-portal.hpc.virginia.edu.
+1. Open a web browser and go to https://ood.hpc.virginia.edu.
 2. Use your `Netbadge` credentials to log in.
 3. On the top right of the menu bar of the Open OnDemand dashboard, click on `Interactive Apps`.
 4. In the drop-down box, click on `Desktop`.

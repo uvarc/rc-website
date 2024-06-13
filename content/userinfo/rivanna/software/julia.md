@@ -118,7 +118,7 @@ You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](http
 ## Starting an Interactive Session
 To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/overview/#job-queues) to learn more about the partitions.
 
-1. Open a web browser and go to URL:  https://rivanna-portal.hpc.virginia.edu.
+1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
 3. On the top banner of the Open OnDemand dashboard, click on `Interactive Apps`.
 4. In the drop-down box, click on `JupyterLab`.

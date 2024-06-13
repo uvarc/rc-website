@@ -19,7 +19,7 @@ For Windows, [MobaXterm](/userinfo/rivanna/logintools/mobaxterm) is our recommen
 
 Mac OSX and Linux users access the cluster from a terminal through OpenSSH, which are preinstalled on these operating systems. Open a terminal (on OSX, the Terminal application) and type
 ```
-ssh -Y mst3k@rivanna.hpc.virginia.edu
+ssh -Y mst3k@login.hpc.virginia.edu
 ```
 
 where `mst3k` should be replaced by your user ID. You will generally need to use this format unless you set up your user account on your Mac or Linux system with your UVA ID. 
@@ -61,7 +61,7 @@ Note the period in front of `ssh`. Then, using a text editor, open the file `aut
 
 Transfer the `id_rsa.pub` file to Rivanna with scp:
 ```
-scp ~/.ssh/id_rsa.pub mst3k@rivanna.hpc.virginia.edu:~/.ssh/mykey.pub
+scp ~/.ssh/id_rsa.pub mst3k@login.hpc.virginia.edu:~/.ssh/mykey.pub
 ```
 
 Log in to Rivanna through a terminal, then type
@@ -94,7 +94,7 @@ There should be one or more spaces at the beginning of the second line.
 
 - When in doubt, you can obtain more information by running `ssh` with the -v (verbose) flag.
 ```
-ssh -v -Y mst3k@rivanna.hpc.virginia.edu
+ssh -v -Y mst3k@login.hpc.virginia.edu
 ```
 - A common error message from `ssh` is when a host key changes, such as after an upgrade. This will appear as a message containing lines such as
 ```

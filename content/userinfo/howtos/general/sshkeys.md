@@ -52,17 +52,17 @@ To use your SSH keypair for authentication, you need to do two things:
 **Use key authentication for SSH connections** - Second, when you invoke the ssh client from your local workstation, use the -i flag to specify your identity file (i.e. ssh key). So while a normal SSH connection looks like this (prompting you for a password):
 
 ```
-ssh foo9b@rivanna.hpc.virginia.edu
+ssh foo9b@login.hpc.virginia.edu
 ```
 You should now instead use something like this (that requires no password):
 
 ```
-ssh -i ~/path/to/file foo9b@rivanna.hpc.virginia.edu
+ssh -i ~/path/to/file foo9b@login.hpc.virginia.edu
 ```
 
 You can add an alias in as a new line in your .bashrc file for easy logins, for example:
 ```
-rivanna='ssh -i ~/path/to/file foo9b@rivanna.hpc.virginia.edu'
+rivanna='ssh -i ~/path/to/file foo9b@login.hpc.virginia.edu'
 ```
 
 # Key Expiration
