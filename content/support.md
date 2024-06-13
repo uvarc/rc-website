@@ -30,7 +30,7 @@ var user_token = getCookie("__user_token");
   <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Allocations</h5>
-      <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
+      <p class="card-text">Request, purchase, or modify your Afton/Rivanna HPC allocations.</p>
       <div class="support-tiles">
         <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
       </div>
@@ -160,7 +160,7 @@ via Zoom</button></a>
 
 ### New to High-Performance Computing?  
 
-We offer Rivanna orientation sessions on Wednesdays (appointment required).
+We offer orientation sessions to introduce you to the Afton & Rivanna HPC systems on Wednesdays (appointment required).
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->

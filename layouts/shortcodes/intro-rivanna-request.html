@@ -14,7 +14,7 @@
 
 <!-- construct smart URL -->
 {{- $category:="Rivanna" -}}
-{{- $req_title:="Intro to Rivanna Orientation Session" -}}
+{{- $req_title:="Intro to HPC Orientation Session" -}}
 {{- $description:=printf "I'd like to reserve a seat for the next \"Intro to HPC\" orientation session on %s, 3-4pm." (($.Scratch.Get "nextavailable").Format "Monday January 2") -}}
 {{- $smart_url:=printf "/form/support-request/?category=%s&request_title=%s&description=%s" $category $req_title $description -}}
 
