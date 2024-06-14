@@ -24,15 +24,15 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 {{% callout %}}
 ## What to expect after the maintenance on July 3?
 
-- **New hardware:** On May 28, a total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454 architecture have been added to UVA's HPC environment as the new Afton system. The new Afton hardware provides additional capacity for serial, parallel and GPU computing side-by-side with the existing Rivanna system. See .
+- **New hardware:** On May 28, a total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454 architecture have been added to UVA's HPC environment as the new Afton system. The new Afton hardware provides additional capacity for serial, parallel and GPU computing side-by-side with the existing Rivanna system.
 
-- **Access:** The Rivanna and Afton systems are accessible via the existing and shared Open OnDemand, FastX and ssh access points. (add link)
+- **Access:** The Rivanna and Afton systems are accessible via the existing and shared Open OnDemand, FastX and ssh access points.
 
-- **Configuration:** The hardware partition definitions will be reconfigured to optimize effective use of existing Rivanna and new Afton hardware.  (add link).
+- **Configuration:** The hardware partition definitions will be reconfigured to optimize effective use of existing Rivanna and new Afton hardware.
 
 - **Software, Code, and Job Submissions:** The shared software stack and modules have been tested during the pre-release phase. In some cases users may need to update their Slurm job scripts or recompile their own code.
 
-- **Policy:** A new charge rate policy will be implemented on July 2 to reflect more closely the actual hardware cost.  (add link)
+- **Policy:** A new charge rate policy will be implemented on July 2 to reflect more closely the actual hardware cost.
 
 {{% /callout %}}
 
