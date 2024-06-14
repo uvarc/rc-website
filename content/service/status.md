@@ -46,7 +46,7 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 
 **Do you have additional questions?** 
 
-Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual storage support office hours](https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09) every Wednesday, 2-3 p.m., starting March 6.
+Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m. starting March 6.
 
 {{% /highlight %}}
 
@@ -374,7 +374,7 @@ All files will be transferred eventually.
 
 **Do you have additional questions?** 
 
-Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual storage support office hours](https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09) every Wednesday, 2-3 p.m., starting March 6.
+Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m. starting March 6.
 
 {{% /highlight %}}
 

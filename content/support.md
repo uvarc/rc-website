@@ -142,13 +142,6 @@ via Zoom</button></a>
 </div>
 
 <div class="alert alert-success" role="alert">
-<b>Wednesdays 2:00-3:00pm</b>
-<a>- Questions about Research Project Storage?</a>
-<a><br><b>- No session on June 19 due to University holiday.</b></a>
-<a style="float:right;" href="https://virginia.zoom.us/j/97700615530?pwd=SjdFamRjSUU0aGFGckM2RCtBNGhBdz09"><button  class="btn btn-primary btn-sm">Join us via Zoom</button></a>
-</div>
-
-<div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Thursdays 10:00-12:00pm</b>
 <a style="float:right;" href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button  class="btn btn-primary btn-sm">Join us 
