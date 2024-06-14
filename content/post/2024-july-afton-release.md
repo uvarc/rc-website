@@ -78,8 +78,8 @@ Most users should be able to submit jobs without changing their Slurm scripts, u
     - *Example:* A job submitted to `largemem` will become invalid since the partition is removed. One should submit to `standard` with `--mem=...` to specify the memory.
 - cost considerations (see *FAQ: How is compute time charged on the Rivanna and Afton systems?*)
     - *Example:* Instead of running a light GPU job on an A100 in `gpu`, request an RTX2080 or RTX3090 in `interactive` via `--gres=gpu`.
-- need specific Rivanna vs Afton hardware for performance/reproducibility/benchmarking reasons 
-    - *Example:* For instance, to request a `standard` job be run on the new Afton hardware, provide a constraint (`-C`):
+- need specific Rivanna vs Afton hardware for performance/reproducibility/benchmarking reasons (only relevant for `standard` and `interactive`) 
+    - *Example:* To restrict a `standard` job to run on the new Afton hardware, provide a constraint (`-C`):
 ```
 #SBATCH -p standard
 #SBATCH -C afton
@@ -89,7 +89,6 @@ and likewise for Rivanna hardware:
 #SBATCH -p standard
 #SBATCH -C rivanna
 ```
-The last item is only relevant in the `standard` and `interactive` partitions. 
 {{% /accordion-item %}}
 
 {{% accordion-item title="Do I need to recompile my code?" id="faq-8" %}}
@@ -160,10 +159,6 @@ Please contact our <a href="/form/support-request/?category=Storage&request_titl
 {{% /accordion-item %}}
 
 {{% /accordion-group %}}
-
-## Technical Details
-
-< Ruoshi >
 
 ## Afton Release Announcements 
 
