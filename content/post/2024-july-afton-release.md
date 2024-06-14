@@ -114,9 +114,36 @@ Charlottesville 22902
 {{% /accordion-group %}}
 
 
-## What to expect on July 3?
+## What to expect after maintenance?
 
-< add more description of changes >
+The two biggest changes are partition hardware changes and charge rate policy.
+
+### Partition hardware changes
+- The `afton` partition will be removed. The nodes will be placed in other partitions. 
+- The `parallel` partition will be completely replaced with 200 Afton nodes. The existing nodes will be placed in `standard`.
+- The `largemem` partition will be removed. All 750GB nodes in the existing `largemem` partition will be placed in the `standard` partition. 
+- All RTX3090 nodes from the `gpu` partition` will be placed in the `interactive` partition.
+
+### Charge rate policy
+
+A new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory. For GPU jobs (i.e. all `gpu` jobs and `interactive` GPU jobs), the charge rate will be based on the amount of GPU devices.
+
+{{< table title="charge-rate" class="table table-striped" >}}
+| Partition | Hardware | Charge rate | 
+|---|---|---|
+|standard| Rivanna | |
+|standard| Afton   | |
+|parallel| Afton   | |
+|gpu     | A40     | |
+|gpu     | A6000   | |
+|gpu     | V100    | |
+|gpu     | A100 (40G)| |
+|gpu     | A100 (80G)| |
+|interactive| Rivanna | |
+|interactive| Afton   | |
+|interactive| RTX2080 | |
+|interactive| RTX3090 | |
+{{< /table >}}
 
 ## FAQ
 
