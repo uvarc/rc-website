@@ -105,7 +105,7 @@ If you have already done this for the Afton pre-release testing then no. Otherwi
 
 - Did you use the `-x` flag (e.g. `-xavx`)?
     - No &rarr; **no**
-    - Yes &rarr; **yes**, rebuild with `-march=skylake-avx512`
+    - Yes &rarr; **yes**, rebuild with `-march=skylake-avx512` instead of `-x...`
 
 {{% /accordion-item %}}
 
