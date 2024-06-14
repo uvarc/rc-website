@@ -96,7 +96,7 @@ and likewise for Rivanna hardware:
 If you have already done this for the Afton pre-release testing then no. Otherwise please use the following flowchart.
 
 - Which compiler did you use to build your code?
-    - Not Intel (e.g. GCC, NVIDIA) &rarr; **no**
+    - Not Intel (e.g. GCC `gcc`, NVIDIA `nvhpc`) &rarr; **no**
     - Intel &rarr; **continue**
 
 - Do you intend to run your code on Afton hardware? (Please note the `parallel` partition will be completely replaced by Afton hardware.)
