@@ -73,10 +73,6 @@ On May 28, total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454
 
 {{% accordion-item title="Do I need to update my Slurm job scripts?" id="faq-7" %}}
 
-{{% /accordion-item %}}
-
-{{% accordion-item title="Do I need to recompile my code?" id="faq-8" %}}
-
 Most users should be able to submit jobs without changing their Slurm scripts, unless:
 - invalid request due to partition changes (see #1)
 - cost considerations (see #2), e.g. running a light GPU job on an RTX instead of an A100
@@ -92,6 +88,25 @@ and likewise for Rivanna hardware:
 #SBATCH -p standard
 #SBATCH -C rivanna
 ```
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="Do I need to recompile my code?" id="faq-8" %}}
+
+If you have already done this for the Afton pre-release testing then no. Otherwise please use the following flowchart.
+
+- Which compiler did you use to build your code?
+    - Not Intel (e.g. GCC, NVIDIA) &rarr; **no**
+    - Intel &rarr; **continue**
+
+- Do you intend to run your code on Afton hardware? (Please note the `parallel` partition will be completely replaced by Afton hardware.)
+    - No &rarr; **no**
+    - Yes &rarr; **continue**
+
+- Did you use the `-x` flag (e.g. `-xavx`)?
+    - No &rarr; **no**
+    - Yes &rarr; **yes**, rebuild with `-march=skylake-avx512`
+
 {{% /accordion-item %}}
 
 {{% accordion-item title="What are hardware features? What are the hardware feature defaults for each partition?" id="faq-9" %}}
