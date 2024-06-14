@@ -128,7 +128,7 @@ and likewise for Rivanna hardware:
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="Do I need to recompile my code?" id="faq-8" %}}
+{{% accordion-item title="Do I need to recompile my code?" id="faq-9" %}}
 
 If you have already done this for the Afton pre-release testing then no. Otherwise please use the following flowchart.
 
@@ -146,7 +146,7 @@ If you have already done this for the Afton pre-release testing then no. Otherwi
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="What are hardware features? What are the hardware feature defaults for each partition?" id="faq-9" %}}
+{{% accordion-item title="What are hardware features? What are the hardware feature defaults for each partition?" id="faq-10" %}}
 
 {{% /accordion-item %}}
 
@@ -177,7 +177,7 @@ A new charge rate policy will be implemented to reflect more closely the actual 
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="Why are there different charge rates for Rivanna and Afton hardware?" id="faq-13" %}}
+{{% accordion-item title="Why are there different charge rates for Rivanna, Afton, and GPU hardware?" id="faq-13" %}}
 
 {{% /accordion-item %}}
 
