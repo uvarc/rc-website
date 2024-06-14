@@ -115,18 +115,19 @@ Charlottesville 22902
 
 The two biggest changes are partition hardware changes and charge rate policy.
 
-### Partition hardware changes
-- The `afton` partition will be removed. The nodes will be placed in other partitions. 
-- The `parallel` partition will be completely replaced with 200 Afton nodes. The existing nodes will be placed in `standard`.
-- The `largemem` partition will be removed. All 750GB nodes in the existing `largemem` partition will be placed in the `standard` partition. 
-- All RTX3090 nodes from the `gpu` partition` will be placed in the `interactive` partition.
+**1. Partition hardware changes**
 
-### Charge rate policy
+- The pre-release `afton` partition will be removed. The nodes will be placed in other partitions. 
+- The `parallel` partition will be completely replaced with 200 Afton nodes. The original nodes will be placed in `standard`.
+- The `largemem` partition will be removed. All 750GB nodes will be placed in the `standard` partition. 
+- All RTX3090 nodes from the `gpu` partition will be placed in the `interactive` partition.
 
-A new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory. For GPU jobs (i.e. all `gpu` jobs and `interactive` GPU jobs), the charge rate will be based on the amount of GPU devices.
+**2. Charge rate policy**
+
+A new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices.
 
 {{< table title="charge-rate" class="table table-striped" >}}
-| Partition | Hardware | Charge rate | 
+| Partition | Hardware | Charge rate (per core or GPU)| 
 |---|---|---|
 |standard| Rivanna | |
 |standard| Afton   | |
@@ -141,6 +142,24 @@ A new charge rate policy will be implemented to reflect more closely the actual 
 |interactive| RTX2080 | |
 |interactive| RTX3090 | |
 {{< /table >}}
+
+### Slurm script
+
+Most users should be able to submit jobs without changing their Slurm scripts, unless:
+- invalid request due to partition changes (see #1)
+- cost considerations (see #2), e.g. running a light GPU job on an RTX instead of an A100
+- need specific Rivanna vs Afton hardware, e.g. for consistency/reproducibility or benchmarking reasons 
+
+The last item is only relevant in the `standard` and `interactive` partitions. For instance, to request a `standard` job be run on the new Afton hardware, use a constraint (`-C`):
+```
+#SBATCH -p standard
+#SBATCH -C afton
+```
+and vice versa:
+```
+#SBATCH -p standard
+#SBATCH -C rivanna
+```
 
 ## FAQ
 
