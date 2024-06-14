@@ -14,7 +14,7 @@ categories = ["feature"]
 
 {{< alert-green >}}The HPC system in the standard security zone, including <i>Rivanna</i>, will be down on <strong>Tuesday, July 2, 2024</strong> beginning at 6 a.m. During the downtime RC engineers will implement final configuration changes in preparation of the <b>full production release of the new <i>Afton HPC system</i></b>.{{< /alert-green >}}
 
-You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until the HPC systems are returned to service. While drive mapping and project storage will be unavailable, other storage will remain accessible through Globus.
+You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until the HPC systems are returned to service.
 
 The *Rivanna* and *Afton* production systems are expected to return to service by **Wednesday, July 3 at 6 a.m.**
 
@@ -37,9 +37,6 @@ Please contact our <a href="/form/support-request/?category=Storage&request_titl
 
 ## Afton Release Announcements 
 
-Research Computing will reach out to all known users of this storage system with instructions for accessing data before and after February 26, and for assistance prioritizing files for transfer.  
-
-
 {{% accordion-group title="Comms" id="commsgroup" %}}
 
 {{% accordion-item title="May 30, 2024 - Afton is available in pre-release configuration" id="comm-3" %}}
@@ -49,7 +46,7 @@ Research Computing will reach out to all known users of this storage system with
 {{% /accordion-item %}}
 
 
-{{% accordion-item title="May 20, 2024 - Reminder: Rivanna maintenance, Tuesday, May 28" id="comm-1" %}}
+{{% accordion-item title="May 20, 2024 - Reminder: Rivanna maintenance and Afton pre-release" id="comm-1" %}}
 
 Dear Rivanna user: 
   
@@ -81,7 +78,7 @@ Charlottesville 22902
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="May 14, 2024 - Rivanna Maintenance, Tuesday May 28" id="comm-2" %}}
+{{% accordion-item title="May 14, 2024 - Rivanna maintenance and Afton pre-release" id="comm-2" %}}
 
 Dear Rivanna user: 
   
@@ -126,7 +123,7 @@ Charlottesville 22902
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="How can I get access to the Afton system?" id="faq-2" %}}
+{{% accordion-item title="How can I get access to the Afton system? Do I need a new allocation?" id="faq-2" %}}
 
 {{% /accordion-item %}}
 
