@@ -150,12 +150,12 @@ Most users should be able to submit jobs without changing their Slurm scripts, u
 - cost considerations (see #2), e.g. running a light GPU job on an RTX instead of an A100
 - need specific Rivanna vs Afton hardware, e.g. for consistency/reproducibility or benchmarking reasons 
 
-The last item is only relevant in the `standard` and `interactive` partitions. For instance, to request a `standard` job be run on the new Afton hardware, use a constraint (`-C`):
+The last item is only relevant in the `standard` and `interactive` partitions. For instance, to request a `standard` job be run on the new Afton hardware, provide a constraint (`-C`):
 ```
 #SBATCH -p standard
 #SBATCH -C afton
 ```
-and vice versa:
+and likewise for Rivanna hardware:
 ```
 #SBATCH -p standard
 #SBATCH -C rivanna
