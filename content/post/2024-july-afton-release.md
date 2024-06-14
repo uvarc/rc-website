@@ -110,11 +110,12 @@ The `dev` and `instructional` partitions have been merged and replaced with a si
 {{% accordion-item title="Do I need to update my Slurm job scripts?" id="faq-8" %}}
 
 Most users should be able to submit jobs without changing their Slurm scripts, unless:
-- invalid request due to partition changes (see #1)
-- cost considerations (see #2), e.g. running a light GPU job on an RTX instead of an A100
-- need specific Rivanna vs Afton hardware, e.g. for consistency/reproducibility or benchmarking reasons 
-
-The last item is only relevant in the `standard` and `interactive` partitions. For instance, to request a `standard` job be run on the new Afton hardware, provide a constraint (`-C`):
+- invalid request due to partition changes (see ["What are the changes to the partitions?"](#faq-6))
+    - *Example:* A job submitted to `largemem` will become invalid since the partition is removed. One should submit to `standard` with `--mem=...` to specify the memory.
+- cost considerations (see *FAQ: How is compute time charged on the Rivanna and Afton systems?*)
+    - *Example:* Instead of running a light GPU job on an A100 in `gpu`, request an RTX2080 or RTX3090 in `interactive` via `--gres=gpu`.
+- need specific Rivanna vs Afton hardware for performance/reproducibility/benchmarking reasons (only relevant for `standard` and `interactive`) 
+    - *Example:* To restrict a `standard` job to run on the new Afton hardware, provide a constraint (`-C`):
 ```
 #SBATCH -p standard
 #SBATCH -C afton
@@ -127,12 +128,12 @@ and likewise for Rivanna hardware:
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="Do I need to recompile my code?" id="faq-9" %}}
+{{% accordion-item title="Do I need to recompile my code?" id="faq-8" %}}
 
 If you have already done this for the Afton pre-release testing then no. Otherwise please use the following flowchart.
 
 - Which compiler did you use to build your code?
-    - Not Intel (e.g. GCC, NVIDIA) &rarr; **no**
+    - Not Intel (e.g. GCC `gcc`, NVIDIA `nvhpc`) &rarr; **no**
     - Intel &rarr; **continue**
 
 - Do you intend to run your code on Afton hardware? (Please note the `parallel` partition will be completely replaced by Afton hardware.)
@@ -142,10 +143,10 @@ If you have already done this for the Afton pre-release testing then no. Otherwi
 - Did you use the `-x` flag (e.g. `-xavx`)?
     - No &rarr; **no**
     - Yes &rarr; **yes**, rebuild with `-march=skylake-avx512` instead of `-x...`
-    
+
 {{% /accordion-item %}}
 
-{{% accordion-item title="What are hardware features? What are the hardware feature defaults for each partition?" id="faq-10" %}}
+{{% accordion-item title="What are hardware features? What are the hardware feature defaults for each partition?" id="faq-9" %}}
 
 {{% /accordion-item %}}
 
@@ -180,7 +181,7 @@ A new charge rate policy will be implemented to reflect more closely the actual 
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="How do use of different hardware and service units burn rates affect my fair share?" id="faq-14" %}}
+{{% accordion-item title="How do the use of different hardware and service unit burn rates affect my fair share?" id="faq-14" %}}
 
 {{% /accordion-item %}}
 
