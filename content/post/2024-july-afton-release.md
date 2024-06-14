@@ -58,7 +58,7 @@ On May 28, total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="What are the new hardware partitions?" id="faq-5" %}}
+{{% accordion-item title="What are the changes to the partitions?" id="faq-5" %}}
 
 - The pre-release `afton` partition will be removed. The nodes will be placed in other partitions. 
 - The `parallel` partition will be completely replaced with 200 Afton nodes. The original nodes will be placed in `standard`.
@@ -74,11 +74,12 @@ On May 28, total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454
 {{% accordion-item title="Do I need to update my Slurm job scripts?" id="faq-7" %}}
 
 Most users should be able to submit jobs without changing their Slurm scripts, unless:
-- invalid request due to partition changes (see #1)
-- cost considerations (see #2), e.g. running a light GPU job on an RTX instead of an A100
-- need specific Rivanna vs Afton hardware, e.g. for consistency/reproducibility or benchmarking reasons 
-
-The last item is only relevant in the `standard` and `interactive` partitions. For instance, to request a `standard` job be run on the new Afton hardware, provide a constraint (`-C`):
+- invalid request due to partition changes (see *FAQ: What are the changes to the partitions?*)
+    - *Example:* A job submitted to `largemem` will become invalid since the partition is removed. One should submit to `standard` with `--mem=...` to specify the memory.
+- cost considerations (see *FAQ: How is compute time charged on the Rivanna and Afton systems?*)
+    - *Example:* Instead of running a light GPU job on an A100 in `gpu`, request an RTX2080 or RTX3090 in `interactive` via `--gres=gpu`.
+- need specific Rivanna vs Afton hardware for performance/reproducibility/benchmarking reasons 
+    - *Example:* For instance, to request a `standard` job be run on the new Afton hardware, provide a constraint (`-C`):
 ```
 #SBATCH -p standard
 #SBATCH -C afton
@@ -88,7 +89,7 @@ and likewise for Rivanna hardware:
 #SBATCH -p standard
 #SBATCH -C rivanna
 ```
-
+The last item is only relevant in the `standard` and `interactive` partitions. 
 {{% /accordion-item %}}
 
 {{% accordion-item title="Do I need to recompile my code?" id="faq-8" %}}
