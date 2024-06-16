@@ -48,4 +48,4 @@ We built BerkeleyGW with GPU support. It can only run on V100 and A100 GPUs. Ple
 
 {{< pull-code file="/static/scripts/berkeleygw.slurm" lang="no-hightlight" >}}
 
-We highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark/) to decide how many CPU cores and/or GPU devices you should use.
+We highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark-parallel-programs/) to decide how many CPU cores and/or GPU devices you should use.

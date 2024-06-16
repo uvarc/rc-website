@@ -255,7 +255,7 @@ Add command …
 }
 ```
 {{% callout %}}
-<b>Note: <a href="/userinfo/rivanna/sofware/picard">picard</a> is available as a module on Rivanna.</b> When you load the module to your environment (using module load picard), it also defines the $EBROOTPICARD environment variable, which defines the full path to the jar file for calling picard utilities.
+<b>Note: <a href="/userinfo/rivanna/software/picard">picard</a> is available as a module on Rivanna.</b> When you load the module to your environment (using module load picard), it also defines the $EBROOTPICARD environment variable, which defines the full path to the jar file for calling picard utilities.
 {{% /callout %}}
 
 Add output …

@@ -37,4 +37,4 @@ Please consult with us before requesting SPSS.
 
 ### More Information
 
-For detailed documentation on SPSS, please visit the official website [here](http://www-01.ibm.com/support/docview.wss?uid=swg27047033#en)
+For detailed documentation on SPSS, please visit the official website [here](https://www.ibm.com/docs/en/spss-statistics)

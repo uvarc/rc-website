@@ -46,4 +46,4 @@ The NAMD module was built on Rivanna with MPI support. Below is a Slurm script t
 
 {{< pull-code file="/static/scripts/namd.slurm" lang="no-hightlight" >}}
 
-You may want to benchmark it to see how well it scales for the type of job that you are running. Please refer to [our tutorial](https://learning.rc.virginia.edu/notes/benchmark/) on this topic. 
+You may want to benchmark it to see how well it scales for the type of job that you are running. Please refer to [our tutorial](https://learning.rc.virginia.edu/tutorials/benchmark-parallel-programs/) on this topic. 

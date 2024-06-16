@@ -21,7 +21,7 @@ author = "RC Staff"
 <br>
 **Software Category:** {{% module-category %}}
 
-For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
+For detailed information, visit the {{% software-name %}} website
 
 Local support is not available.
 

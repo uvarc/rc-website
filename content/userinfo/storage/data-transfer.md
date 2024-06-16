@@ -38,7 +38,7 @@ Detailed instructions and examples for using `scp` are listed <a href ="/userinf
 
 ## Graphical File-Transfer Applications
 
-<a href="https://filezilla-project.org/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, and <a ref="https://mobaxterm.mobatek.net">MobaXterm</a> are examples of open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="/userinfo/rivanna/logintools/graphical-sftp" target="_blank">here</a>.
+<a href="https://sourceforge.net/projects/filezilla/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, and <a ref="https://mobaxterm.mobatek.net">MobaXterm</a> are examples of open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="/userinfo/rivanna/logintools/graphical-sftp" target="_blank">here</a>.
 
 ## Globus Connect (Large Data Transfer)
 <p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="/userinfo/globus" target="_blank">here</a>.</p>
@@ -50,5 +50,6 @@ Detailed instructions and examples for using `scp` are listed <a href ="/userinf
 - <a href="https://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855" target="_blank">A Gentle Introduction</a>
 - <a href="https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320" target="_blank">10 Essential Linux Commands</a>
 - <a href="https://www.howtogeek.com/107808/how-to-manage-files-from-the-linux-terminal-11-commands-you-need-to-know/" target="_blank">How To Manage Files From The Linux Terminal</a>
-- <a href="http://www.linuxplanet.com/linuxplanet/tutorials/6666/1" target="_blank">Navigating the Linux Filesystem</a>
+<!-- No Longer Active -->
+<!-- - <a href="http://www.linuxplanet.com/linuxplanet/tutorials/6666/1" target="_blank">Navigating the Linux Filesystem</a> -->
 - <a href="https://swcarpentry.github.io/shell-novice/" target="_blank">Shell Novice</a>

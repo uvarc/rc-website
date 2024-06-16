@@ -14,6 +14,6 @@ type = "accord"
 
 Jupyter Lab allows for interactive, notebook-based analysis of data. A good choice for pulling quick results or refining your code in numerous languages including Python, R, Julia, bash, and others.
 
-![Jupyter](/images/accord/jupyter_sample.png)
+![Jupyter](/images/accord/jupyterlab.png)
 
 Learn more about [Jupyter Lab](https://jupyter.org/)

@@ -134,7 +134,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td>
 				<p align="center"><b>Destination</b></p>
 				<ul>
-					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage/">Ivy Central Storage</a></li>
+					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage</a></li>
 				</ul>
 			</td>
 			<td>
@@ -199,7 +199,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 					<li>/scratch</li>
 					<li>Research Project Storage</li>
 					<li><a href="/userinfo/storage/research-standard/">Research Standard Storage</a></li>
-					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage/">Ivy Central Storage</a></li>
+					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage</a></li>
 				</ul>
 			</td>
 			<td>
@@ -334,10 +334,14 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
  
 When using a Linux file system, users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 
-- <a href="https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320" target="_blank">10 Essential Linux Commands</a>
-- <a href="https://www.howtogeek.com/107808/how-to-manage-files-from-the-linux-terminal-11-commands-you-need-to-know/" target="_blank">How To Manage Files From The Linux Terminal</a>
-- <a href="http://www.linuxplanet.com/linuxplanet/tutorials/6666/1" target="_blank">Navigating the Linux Filesystem</a>
-- <a href="https://swcarpentry.github.io/shell-novice/" target="_blank">Shell Novice</a>
+<ul>
+    <li><a href="https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320" target="_blank">10 Essential Linux Commands</a></li>
+    <li><a href="https://www.howtogeek.com/107808/how-to-manage-files-from-the-linux-terminal-11-commands-you-need-to-know/" target="_blank">How To Manage Files From The Linux Terminal</a></li>
+    <!-- No Longer Active -->
+    <!-- <li><a href="http://www.linuxplanet.com/linuxplanet/tutorials/6666/1" target="_blank">Navigating the Linux Filesystem</a></li> -->
+    <li><a href="https://swcarpentry.github.io/shell-novice/" target="_blank">Shell Novice</a></li>
+</ul>
+
 
 # Transfering Data to Cloud Storage
  

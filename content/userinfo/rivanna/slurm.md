@@ -454,7 +454,7 @@ This is a Slurm job command file to run a serial R batch job.
 
 {{< pull-code file="/static/scripts/simple_R_job.slurm" lang="no-hightlight" >}}
 
-## Job Scripts for Parallel Programs
+## Job Scripts for Parallel Programs {#jobs-using-a-gpu} 
 
 ### Distributed Memory Jobs
 
@@ -484,7 +484,7 @@ The following example runs a total of 32 MPI processes, 8 on each node, with eac
 
 {{< pull-code file="/static/scripts/hybrid_job.slurm" lang="no-hightlight" >}}
 
-## GPU Computations
+## GPU Computations {#gpu-intensive-computation} 
 
 The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, A6000, V100, and A100 NVIDIA GPU devices.
 

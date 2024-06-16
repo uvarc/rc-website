@@ -191,8 +191,7 @@ Number of workers: 8
 8 11651 udc-ba26-19
 9 11652 udc-ba26-19
 ```
-Documentation on distributed computing with Julia can be accessed at the URL
-(https://docs.julialang.org/en/v1/manual/distributed-computing/)[https://docs.julialang.org/en/v1/manual/distributed-computing/]
+Documentation on distributed computing with Julia can be accessed at the [URL](https://docs.julialang.org/en/v1/stdlib/Distributed/)
 
 # Julia Jobs using Slurm Job Arrays
 Slurm has a mechanism for launching multiple independent jobs with one
@@ -237,9 +236,7 @@ MPI.Finalize()
 ```
 
 To take advantage of the fast network interfaces between compute node, use the
-system-provided MPI implementations. See the documentation on 'Using a system-provided MPI'
-at
-(https://juliaparallel.github.io/MPI.jl/stable/configuration/)[https://juliaparallel.github.io/MPI.jl/stable/configuration/]
+system-provided MPI implementations. See the documentation on [using a system-provided MPI](https://juliaparallel.org/MPI.jl/stable/configuration/).
 The output of this program should look like,
 ```
 Hello! I am 6 of 8 on udc-ba34-16c4
@@ -254,7 +251,7 @@ Hello! I am 0 of 8 on udc-ba34-10c8
 
 # Utilizing GPUs with Julia
 
-[General guidelines on requesting GPUs on Rivanna](https://www.rc.virginia.edu/userinfo/rivanna/slurm/#gpu-intensive-computation)
+[General guidelines on requesting GPUs on Rivanna](/userinfo/rivanna/slurm/#gpu-intensive-computation)
 
 The following slurm script is for submitting a Julia job that uses 1 GPU. For each GPU requested, the script requests one cpu (ntasks-per-node). The article [An Introduction to GPU Programming in Julia](https://nextjournal.com/sdanisch/julia-gpu-programming) provides more details to get started.
 

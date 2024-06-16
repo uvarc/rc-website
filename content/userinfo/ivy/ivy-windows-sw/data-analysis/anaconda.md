@@ -48,7 +48,7 @@ From the Start menu, open a new Command Prompt (or Anaconda Prompt) window and t
 3. ```pip update package_name --upgrade``` (upgrade the package to latest stable version)
 4. ```pip list``` (list all installed packages)
 
-## Running Python2 and Python3 using Virtual Environments
+## Running Python2 and Python3 using Virtual Environments {#running-python2-and-python3-using-virtual-environments}
 
 You can specify which version of Python you want to run using conda. This can be done 
 on a project-by-project basis, and is part of what is called a "Virtual Environment". 

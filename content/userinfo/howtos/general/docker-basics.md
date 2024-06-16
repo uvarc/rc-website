@@ -33,7 +33,7 @@ There are thousands of pre-built containers already available for common use cas
 Here are some good places to search for container images or docker files.
 
 - [Docker Hub](https://hub.docker.com/)
-- [BioContainer](http://biocontainers.pro/registry/#/)
+- [BioContainer](http://biocontainers.pro/registry/)
 - [GitHub](https://github.com/search?utf8=%E2%9C%93&q=docker&type=)
 
 # Running Containers
@@ -151,7 +151,8 @@ docker build -t mycontainer .
 
 [Docker Training](https://docs.docker.com/engine/getstarted/) - Docker documents this process in great detail, and provides a step-by-step overview of their container system.
 
-[Katacoda Interactive Labs](https://www.katacoda.com/courses/docker) - Katacoda offers a free series of interactive trainings that build sequentially. The tutorials require you to engage with the Docker command-line as you progress.
+<!-- Service is offically closed -->
+<!-- [Katacoda Interactive Labs](https://www.katacoda.com/courses/docker) - Katacoda offers a free series of interactive trainings that build sequentially. The tutorials require you to engage with the Docker command-line as you progress. -->
 
 # Next Steps
 
