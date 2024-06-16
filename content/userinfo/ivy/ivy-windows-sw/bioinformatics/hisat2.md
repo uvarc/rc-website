@@ -41,7 +41,8 @@ Please refer to our [Globus user guide](/userinfo/globus) for help on how to do 
 
 # More information
 
-For more information, please refer to HISAT2 [manual] (https://ccb.jhu.edu/software/hisat2/manual.shtml).
+For detailed information, please refer to HISAT2 [manual](https://daehwankimlab.github.io/hisat2/manual/).
+
 
 # Citation
 

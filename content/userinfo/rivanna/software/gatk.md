@@ -111,7 +111,7 @@ The output will be written to the file - `output.raw.snps.indels.vcf`, in the [V
 
 # Parallelism in GATK4 
 
-The concepts involved and their application within GATK are well explained in this [article](https://software.broadinstitute.org/gatk/documentation/article?id=11059). 
+The concepts involved and their application within GATK are well explained in this [article](https://gatk.broadinstitute.org/hc/en-us/articles/360035532012-Parallelism-Multithreading-Scatter-Gather9). 
 
 + In GATK3, there were two options for tools that supported multi-threading, controlled by  the arguments `-nt/--num_threads` and `-nct/--num_cpu_threads_per_data_thread`.
 + In GATK4, tools take advantage of an open-source industry-standard [Apache Spark](https://spark.apache.org/) software library.  

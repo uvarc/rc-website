@@ -44,7 +44,7 @@ Users may build their own versions of QE if they wish to use a different compile
 # Example Slurm script
 To run the system version of QE, a script similar to the following can be used.  QE has many options so only the most basic is shown.
 
-Please run the CPU version on non-`gpu` partitions and the GPU version only on the `gpu` partition. In both cases, we highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark/) to decide how many CPU cores and/or GPU devices you should use.
+Please run the CPU version on non-`gpu` partitions and the GPU version only on the `gpu` partition. In both cases, we highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark-parallel-programs/) to decide how many CPU cores and/or GPU devices you should use.
 
 ## CPU
 

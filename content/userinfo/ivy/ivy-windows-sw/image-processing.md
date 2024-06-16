@@ -24,7 +24,7 @@ The following software packages are pre-approved for image processing on an Ivy 
 
 ## Axiovision
 
-[Axiovision](https://www.zeiss.com/microscopy/us/products/microscope-software/axiovision.html) is software for microscopy image processing and analysis.
+[Axiovision](https://www.micro-shop.zeiss.com/en/us/system/software-axiovision+software-products/1007/) is software for microscopy image processing and analysis.
 
 Axiovision is highly configurableto meet the needs of your individual workflows.
 
@@ -37,7 +37,7 @@ processing techniques such as registration, segmentation, and feature extraction
 
 ## ImageJ
 
-[ImageJ](https://imagej.nih.gov/ij/) is a Java-based image processing program developed at the NIH. 
+[ImageJ](https://imagej.net/) is a Java-based image processing program developed at the NIH. 
 
 ImageJ can be used interactively through a graphical user interface or automatically with Java.
 

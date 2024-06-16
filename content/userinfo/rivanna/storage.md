@@ -62,7 +62,7 @@ type = "rivanna"
 
 # Request Additional Storage
 
-Researchers can lease additional storage, **Research Standard** or **Research Project** storage, for **sharing public or internal use data** within a research group. Research Standard and Research Project storage volumes are mounted on Rivanna and can also be accessed from local workstations. [Learn more about our storage offerings](/userinfo/storage/#public--moderately-sensitive-data-storage).
+Researchers can lease additional storage, **Research Standard** or **Research Project** storage, for **sharing public or internal use data** within a research group. Research Standard and Research Project storage volumes are mounted on Rivanna and can also be accessed from local workstations. [Learn more about our storage offerings](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
 
 Storage requests can be placed through this form:
 

@@ -15,11 +15,11 @@ draft = false
 
 +++
 
-<p class=lead><a href="https://filezilla-project.org">Filezilla</a> is a cross-platform data transfer tool.  The free version supports FTP, FTPS, and SFTP.  Only SFTP can be used with Rivanna.</p>
+<p class=lead><a href="https://sourceforge.net/projects/filezilla/">Filezilla</a> is a cross-platform data transfer tool.  The free version supports FTP, FTPS, and SFTP.  Only SFTP can be used with Rivanna.</p>
 
 # Download 
 
-[<button class="btn btn-primary">Download Filezilla</button>](https://filezilla-project.org/download.php?type=client)
+[<button class="btn btn-primary">Download Filezilla</button>](https://sourceforge.net/projects/filezilla/)
 
 # Connecting to Rivanna and File Transfer
 

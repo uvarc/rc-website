@@ -15,7 +15,9 @@ Please join us for a lively panel discussion of the high-performance computing i
 
 *When: April 27, 2022 01:00 PM, Eastern Time (US and Canada)* 
 
-{{< button button-class="primary" button-text="REGISTER NOW!" button-url="https://virginia.zoom.us/meeting/register/tJ0rduCtrTgjHdF5iNa8xSv9gIagSqsly2Hb" >}}
+<!-- No Longer Active -->
+<!-- 
+{{< button button-class="primary" button-text="REGISTER NOW!" button-url="https://virginia.zoom.us/meeting/register/tJ0rduCtrTgjHdF5iNa8xSv9gIagSqsly2Hb" >}} -->
 
 
 ## Featured panelists:

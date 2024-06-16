@@ -70,7 +70,7 @@ Doing so may result in broken dependencies.
 
 However, if you must upgrade pip, please do so in a virtual environment, such as conda.
 
-## Using `conda`
+## Using `conda` {#package-installation-with-conda}
 
 You can specify which version of Python you want to run using conda. This can be done 
 on a project-by-project basis, and is part of what is called a "Virtual Environment". 
@@ -144,4 +144,4 @@ As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install 
 {{< pull-code file="/static/scripts/anaconda_mpi.slurm" lang="no-hightlight" >}}
 
 # More Information
-Please visit the official [Anaconda website](https://www.anaconda.com/distribution/).
+Please visit the official [Anaconda website](https://www.anaconda.com/download).
