@@ -43,7 +43,6 @@ jobs:
   #       with:
   #         url: https://staging.rc.virginia.edu
   #         cmd_params: "-e rci.hpc -e rci.hpc -e stats.pingdom -e fastx.hpc -e groups -e ansys -e innovation.lab -e tags -e https://www.howtogeek.com/107808/how-to-manage-files-from-the-linux-terminal-11-commands-you-need-to-know/ -e https://uvarc.io/support -e http://uvasinklab.org/ -e http://druzgallab.com -e https://www.knime.com/community/image-processing --buffer-size=8192 --max-connections=10 --accepted-status-codes=200,403,999 --skip-tls-verification --timeout=20"
-
   Slack:
     name: Error Notification
     if: ${{ failure() }}
