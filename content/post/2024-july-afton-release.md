@@ -2,15 +2,23 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-06-14T00:00:00-05:00"
+date = "2024-06-17T00:00:00-05:00"
 title = "Production Release of the Afton HPC System: July 2, 2024"
 # url = "/maintenance"
-draft = false
+draft = true
 tags = ["afton"]
 categories = ["feature"]
 +++
 
+<p class="lead">
+We have completed testing and configuration of our new supercomputer, “Afton,” and it is now available for general use. This represents the first major expansion of RC’s core computing resources since Rivanna's hardware refresh in 2019. A large homogenous system simplifies maintenance and will help RC provide a consistent and reliable experience to the UVA research community.
+</p>
 
+<p class="lead">
+Afton represents a substantial increase in the High-Performance Computing (HPC) capabilities available at UVA, more than doubling the CPU time available. Each of the 300 compute nodes in the core system has 96 compute cores, an increase from a maximum of 32 cores per node in Rivanna.  This increase in core counts enables many workflows that once needed to use Message Passing Interface (MPI), or similar tools, to leverage sufficient resources to simplify and work within a single node. This is further enabled by nodes with up to 1.5 Terabytes (TB) of memory. The large amount of per node memory allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines.
+</p>
+
+# Maintenance: July 2, 2024
 
 {{< alert-green >}}The HPC system in the standard security zone, including <i>Rivanna</i>, will be down on <strong>Tuesday, July 2, 2024</strong> beginning at 6 a.m. During the downtime RC engineers will implement final configuration changes in preparation of the <b>full production release of the new <i>Afton HPC system</i></b>.{{< /alert-green >}}
 
