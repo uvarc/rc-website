@@ -59,7 +59,7 @@ Below are some popular tools and useful links for their documentation and usage:
     <td class="tg-dc35" style="width:500px">BEDTools utilities allow one to intersect, merge, count, complement, and shuffle genomic intervals from multiple files in widely-used genomic file formats such as BAM, BED, GFF/GTF, VCF.</td>
 	<td class="tg-dc35-nw" style="width:105px">
       <a href="http://bedtools.readthedocs.io/en/latest/" target="blank" style="color:#0275d8">Homepage</a><br/>
-      <a href="http://quinlanlab.org/tutorials/bedtools/bedtools.html" target="blank" style="color:#0275d8">Tutorial</a><br/>
+      <a href="http://quinlanlab.org/tutorials/bedtools.html" target="blank" style="color:#0275d8">Tutorial</a><br/>
     </td>
   </tr>
   <tr>
@@ -127,7 +127,7 @@ Below are some popular tools and useful links for their documentation and usage:
     <td class="tg-dc35" style="width:500px">SPAdes provide pipelines for assembling genomes from Illumina and IonTorrent reads, as well as hybrid assemblies using PacBio, Oxford Nanopore and Sanger reads. It supports paired-end reads, mate-pairs and unpaired reads. </td>
 	<td class="tg-dc35-nw" style="width:105px">
       <a href="http://bioinf.spbau.ru/spades" target="blank" style="color:#0275d8">Homepage</a><br/>
-      <a href="http://spades.bioinf.spbau.ru/release3.11.1/manual.html" target="blank" style="color:#0275d8">Manual</a><br/>
+      <a href="https://bioinf.spbau.ru/en/spadesmanual" target="blank" style="color:#0275d8">Manual</a><br/>
     </td>
   </tr>
   <tr>

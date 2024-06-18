@@ -21,8 +21,13 @@ aliases = [ "/storage" ]
 ![Standard Storage](https://img.shields.io/badge/dynamic/json?color=color&label=Research%20Standard%20Storage&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fstandard&style=for-the-badge)
 -->
 
-<p class="lead">There are a variety of options for storing research data at UVA. Public and internal use data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Sensitive and highly sensitive data can be stored and accessed within the <a href="/userinfo/ivy/overview">Ivy</a> secure computing environment. Information Security at UVA provides an overview of the <a href=https://security.virginia.edu/university-data-protection-standards>data sensitivity classifications</a>.  <br /><br />UVA graduate and undergraduate students are not permitted to request storage accounts. This must be done by their faculty advisor[s].</p>
+<p class="lead">There are a variety of options for storing research data at UVA. Public and internal use data storage systems can be accessed from the <a href="/userinfo/rivanna/overview/">Rivanna</a> high performance computing system. Sensitive and highly sensitive data can be stored and accessed within the <a href="/userinfo/ivy/overview">Ivy</a> secure computing environment. Information Security at UVA provides an overview of the <a href=https://security.virginia.edu/university-data-protection-standards>data sensitivity classifications</a>.</p>  
 
+{{% highlight %}}
+
+{{% pi-eligibility %}}
+
+{{% /highlight %}}
 
 {{< highlight >}}
   Information Technology Services (ITS) also provides <a href="https://virginia.service-now.com/its?id=kb_article&sys_id=2ca18093db7ac744f032f1f51d9619eb" target="_new"><b>multiple tiers of data storage</b></a> for personal and non-research storage needs.</alert>
@@ -39,7 +44,7 @@ aliases = [ "/storage" ]
 
 - - -
 
-# Public & Internal Use Data Storage
+# Public & Internal Use Data Storage {#public-internal-use-data-storage}
 
 **Public data** are intentionally made available to the public. Examples of public data in research computing include: 
 

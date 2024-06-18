@@ -156,7 +156,7 @@ in augmented and virtual reality.
 
 We currently offer several online tutorials for data visualization.
 
-* [MATLAB Data Processing and Visualization](https://learning.rc.virginia.edu/tutorials/matlab-data-viz/)
+* [MATLAB Data Processing and Visualization](https://learning.rc.virginia.edu/workshops/matlab-data-viz/)
 
 Stay tuned for additional online tutorials as well as our workshops posted on our [workshops page](/education/workshops/)
 

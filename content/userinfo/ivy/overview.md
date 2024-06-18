@@ -48,7 +48,7 @@ Access to Ivy resources is project-based, limited to PIs and their designees, an
 
 - - -
 
-# Security Training
+# Security Training {#training}
 
 In order to use Ivy, researchers must complete the High Security Awareness Training (HSAT). This training takes approximately 10 minutes to complete.
 
@@ -401,7 +401,7 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 - - -
 
-# Data Transfer In/Out of Ivy
+# Data Transfer In/Out of Ivy {#data-transfer-in-out-of-ivy}
 
 Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “Ivy Central Storage” (ICS), which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
 

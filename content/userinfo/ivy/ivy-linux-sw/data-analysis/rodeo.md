@@ -44,7 +44,7 @@ All commands can be viewed under the ```History``` tab
 
 ## More Information
 
-For more information, please visit the official [Rodeo website] (http://rodeo.yhat.com/)
+For more information, please visit the official [Rodeo website] (https://github.com/yhat/rodeo)
 
 
 

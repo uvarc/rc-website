@@ -80,7 +80,7 @@ The following table shows the detailed version changes for all affected modules.
 - The Python version is upgraded to 3.8.8 unless otherwise stated.
 - The new version replaces the current default. If the new version is `-`, that means the module version remains the same.
 - In some cases, the module load command is different. Check `module spider <module>/<version>` if you cannot load a module.
-- If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/rivanna/software/anaconda/#running-python2-and-python3-using-virtual-environments).
+- If you must use a particular module with an older Python version, please [create your own conda environment](/userinfo/ivy/ivy-windows-sw/data-analysis/anaconda/#running-python2-and-python3-using-virtual-environments).
 
 | Module | Version | Python| NEW version  | NEW Python | Removed versions |
 |---|---|---|---|---|---|
