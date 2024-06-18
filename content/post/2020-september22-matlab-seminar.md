@@ -13,7 +13,8 @@ categories = ["feature"]
 MathWorks engineers will offer a free live webinar on September 22th from 2:00 to 3:30 Eastern time.
 <!--more-->
 
-[REGISTER HERE](https://www.mathworks.com/company/events/seminars/deep-learning-neuroscience-3152926.html) if you'd like to attend - there's no cost and the presenter will be a MathWorks engineer with an advanced degree - not a marketing or sales person.
+<!-- No Longer Active -->
+<!-- [REGISTER HERE](https://www.mathworks.com/company/events/seminars/deep-learning-neuroscience-3152926.html) if you'd like to attend - there's no cost and the presenter will be a MathWorks engineer with an advanced degree - not a marketing or sales person. -->
 
 ## Overview
 

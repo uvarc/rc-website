@@ -32,7 +32,7 @@ Use an SSH client from a campus-connected machine and connect to `login.hpc.virg
 
 {{% off-campus %}}
 
-## How do I reset my current password / obtain a new password?
+## How do I reset my current password / obtain a new password? {#how-do-i-reset-my-current-password-obtain-a-new-password}
 Access to the HPC cluster requires a valid ITS (Netbadge) password. If you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
 
 ## What happens to my account when I leave UVA?
@@ -144,7 +144,7 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/rivanna/overview/#job-queues/).
+Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/rivanna/overview/#job-queues).
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). To manage groups created before November 28th, 2023, visit the legacy [MyGroups portal](https://mygroups.virginia.edu/).
@@ -369,7 +369,7 @@ find . -type f | cut -d/ -f2 | sort | uniq -c
 ```
 
 ## How long can I store files in `/scratch`?
-`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/rivanna/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/#public--moderately-sensitive-data-storage).
+`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/rivanna/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
 
 ## How do I share data in my `/scratch` or leased storage with a colleague?
 To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on Rivanna, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.

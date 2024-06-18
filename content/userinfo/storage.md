@@ -44,7 +44,7 @@ aliases = [ "/storage" ]
 
 - - -
 
-# Public & Internal Use Data Storage
+# Public & Internal Use Data Storage {#public-internal-use-data-storage}
 
 **Public data** are intentionally made available to the public. Examples of public data in research computing include: 
 

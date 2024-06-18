@@ -28,7 +28,7 @@ UVA-RC aggregates expertise to provide consulting and collaboration services to 
 
 UVA-RCs user support staff provide basic support and general onboarding through helpdesk and regularly scheduled tutorials. Senior support staff have advanced degrees in relevant research domains such as biology, imaging, physics, computer science and material science, enabling in-depth collaboration on complex projects.  For projects that require significant application development work, UVA-RC maintains a Solutions & DevOps team capable of rapid iteration while leveraging non-traditional HPC technologies. Lastly, UVA-RC's Infrastructure Services team enables projects that may require custom hardware or configurations outside of the standard images. Beyond their availability for direct project support, together these teams provide the R&D and operations expertise needed to ensure that UVA-RC is providing a modern research computing ecosystem for UVA researchers. 
 
-# Cloud Computing 
+# Cloud Computing {#ivy}
 
 Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) backed by a total of 45 nodes and 2048 cores. Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, or CUI requirements. 
 

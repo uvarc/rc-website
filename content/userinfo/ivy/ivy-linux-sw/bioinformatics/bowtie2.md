@@ -41,7 +41,8 @@ The alignment results in SAM format are written to the file ```output.sam```
 
 # More Information 
 
-For detailed information, please refer to the Bowtie2 [manual] (http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml).
+For more information, please refer to the Bowtie2 [manual](https://bowtie-bio.sourceforge.net/bowtie2/manual.shtml).
+
 
 # Citation: 
 

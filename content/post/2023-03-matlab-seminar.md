@@ -13,7 +13,8 @@ Medical images come from multiple sources such as MRI, CT, X-ray, ultrasound, an
 
 **When:** March 16, 2023, 3-4PM EDT
 
-Register for the seminar using this [link](https://www.mathworks.com/company/events/seminars/medical-image-analysis-and-ai-workflows-3995600.html)!
+<!-- Link No longer active -->
+<!-- Register for the seminar using this [link](https://www.mathworks.com/company/events/seminars/medical-image-analysis-and-ai-workflows-3995600.html)! -->
 
 
 

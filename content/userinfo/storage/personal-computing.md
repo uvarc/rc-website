@@ -30,16 +30,16 @@ images = [""]
     	<p class="card-text">
     		If you plan on storing highly sensitive data such as PHI or PII, UVA Health System offers a secure encrypted storage for Health System affiliated researchers, students, and staff. "DropBox Sookasa" is a free cloud-based service hosted on <a href="https://www.dropbox.com/business" style="color: #0275d8" target="_blank">Dropbox</a> that can be accessed over the internet on any device. Highly sensitive data such as a HIPAA compliant dataset or PHI/PII must be stored in a Sookasa folder. It can be used to share files between Health System users. 
     	</p>
-    	<p class="card-text">
+    	<!-- <p class="card-text">
     		<h5 class="card-subtitle mb-2 text-muted">User Manual</h5>
     		To read more details about the service, please refer to Health System IT's official documentation on Dropbox Sookasa by
     		<a href="http://hit.healthsystem.virginia.edu/index.cfm/departments/security/guides-tools-and-forms/dropbox-guide/" style="color: #0275d8" target="_blank">clicking on this link.</a>
-    	</p>
+    	</p> -->
     	<h5 class="card-subtitle mb-2 text-muted">Requesting your DropBox account</h5>
     	<p class="card-text">
     		You have to make a request to Health System IT in order to gain access to the UVA HS DropBox Sookasa service. 
     		<ul>
-			<li><a href="https://www.healthsystem.virginia.edu/alive/computing/forms/Security/OAR2/AccessRequest.cfm?" style="color: #0275d8" target="_blank">Click here to access the request form on the HIT website</a></li>
+			<li><a href="https://hit.healthsystem.virginia.edu/?display=login?" style="color: #0275d8" target="_blank">Click here to access the request form on the HIT website</a></li>
 			<li>Login using your Health System username and password</li>
 			<li>Click on the green colored "Account Request" icon</li>
 			<li>Underneath the System menu select "Dropbox"</li>

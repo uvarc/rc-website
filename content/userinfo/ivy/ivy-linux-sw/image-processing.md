@@ -33,7 +33,7 @@ used alongside ImageJ.
 
 ## ImageJ
 
-[ImageJ](https://imagej.nih.gov/ij/) is a Java-based image processing program developed at the NIH.
+[ImageJ](https://imagej.net/) is a Java-based image processing program developed at the NIH.
 
 ImageJ can be used interactively through a graphical user interface or automatically with Java.
 

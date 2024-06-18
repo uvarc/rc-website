@@ -14,6 +14,6 @@ type = "accord"
 
 RStudio is the standard IDE for research using the R programming language.
 
-![RStudio](/images/accord/rstudio_example.png)
+![RStudio](/images/accord/rstudio.png)
 
 Learn more about [RStudio](https://rstudio.com/)
