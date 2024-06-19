@@ -41,7 +41,7 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 
-The latest version of CellProfiler is available as an Apptainer container.  Containers encapsulate applications, in this case CellProfiler, and all their required libraries isolated from the application and libraries provided by the system. The basic concepts of software containers, and Apptainer container in particular, are explained [here](/userinfo/rivanna/software/containers).  We recommend using the latest CellProfiler container version whenever possible.  Please contact us for help with this package.
+The latest version of CellProfiler is available as an Apptainer container.  Containers encapsulate applications, in this case CellProfiler, and all their required libraries isolated from the application and libraries provided by the system. The basic concepts of software containers, and Apptainer container in particular, are explained [here](/userinfo/hpc/software/containers).  We recommend using the latest CellProfiler container version whenever possible.  Please contact us for help with this package.
 
 CellProfiler can be run interactively with a graphical user interface (GUI) or non-interactively without any user interface.  The interactive GUI mode is used to define image analysis pipelines; the non-interactive mode is used for image batch processing based on previosuly configured image analysis pipelines.  
 
@@ -71,7 +71,7 @@ Please note that this option may be very slow.
 
 ## Option B: Starting an interactive CellProfiler job
 
-To start an interactive job and launch the CellProfiler graphical user interface from within the container, obtain desktop through the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) app, start a terminal window, then run the following commands
+To start an interactive job and launch the CellProfiler graphical user interface from within the container, obtain desktop through the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop) app, start a terminal window, then run the following commands
 ```
 module load apptainer cellprofiler
 apptainer run $CONTAINERDIR/cellprofiler-4.2.5.sif

@@ -49,7 +49,7 @@ It is very similar to Notepad++ on Windows and can do syntax coloring.
 An Integrated Development Environment (IDE) provides more features than a
 text editor.  They are nearly all graphical in nature and so must be used
 through a graphics-capable frontend.  On Rivanna we recommend using them
-via [FastX](/userinfo/rivanna/logintools/fastx).
+via [FastX](/userinfo/hpc/logintools/fastx).
 
 ## Geany
 
@@ -64,6 +64,6 @@ module load geany
 
 ## Code Server
 
-See [here](/userinfo/rivanna/software/code-server)
+See [here](/userinfo/hpc/software/code-server)
 
 {{% module-versions module="code-server" %}}

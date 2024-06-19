@@ -29,7 +29,7 @@ Please see our [HowTo](/userinfo/howtos/rivanna/bioinfo-on-rivanna) for more inf
 
 If a particular package is not available, several options are available.  If it is sufficiently widely used, Research Computing staff will install it as a new module.  If we determine that it is too specialized, you can install it yourself. Please use permanent storage such as your home directory to install software.  If you have difficulty we can assist you to install the package.
 
-Please see [below](#full-list-of-bioinformatics-software-modules) for a full listing of available bioinformatics software.  If you do not find it there, please check the [bioconda](/userinfo/rivanna/software/bioconda) package before requesting that we install it.
+Please see [below](#full-list-of-bioinformatics-software-modules) for a full listing of available bioinformatics software.  If you do not find it there, please check the [bioconda](/userinfo/hpc/software/bioconda) package before requesting that we install it.
 
 # Reference Genomes
 
@@ -37,7 +37,7 @@ Research Computing makes some standard reference genomes available. For a listin
 
 # Full List of Bioinformatics Software Modules
 
-Below is a list of software installed as separate modules. Other packages that are based on Python are available in the [bioconda](/userinfo/rivanna/software/bioconda) environment.  Please see the bioconda page for a listing of those packages.
+Below is a list of software installed as separate modules. Other packages that are based on Python are available in the [bioconda](/userinfo/hpc/software/bioconda) environment.  Please see the bioconda page for a listing of those packages.
 
 {{< rivanna-software moduleclasses="bio" >}}
 

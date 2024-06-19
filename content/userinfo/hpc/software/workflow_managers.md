@@ -22,14 +22,14 @@ The most popular workflow managers on Rivanna are listed below:
 <table class="table table-striped">
   <tbody>
     <tr>
-		<th scope="row" style="width:25%;font-weight:bold;"><a href="/userinfo/rivanna/software/snakemake/">Snakemake</a></th>
+		<th scope="row" style="width:25%;font-weight:bold;"><a href="/userinfo/hpc/software/snakemake/">Snakemake</a></th>
 			<td>
                                 <img src="/images/snakemake.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
                                 Snakemake is a workflow management system written in Python. It integrates with both conda environments and singularities.
 			</td>
 		</tr>
 		<tr>
-		<th scope="row" style="width:25%;font-weight:bold;"><a href="/userinfo/rivanna/software/cromwell/">Cromwell</a></th>
+		<th scope="row" style="width:25%;font-weight:bold;"><a href="/userinfo/hpc/software/cromwell/">Cromwell</a></th>
 			<td>
 				<img src="/images/cromwell.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
                                 Cromwell is a Workflow Management System geared towards scientific workflows

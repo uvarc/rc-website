@@ -47,8 +47,8 @@ module spider {{% module-firstversion %}}
 
 # Interactive Sessions through Rivanna's Web Portal
 
-Interactive sessions of {{% software-name %}} can be launched through Rivanna's web portal, [Open OnDemand](/userinfo/rivanna/ood/overview).
-To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a Rivanna GPU node. In addition, you need to specify required resources, e.g. time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/overview/#job-queues) to learn more about the partitions.
+Interactive sessions of {{% software-name %}} can be launched through Rivanna's web portal, [Open OnDemand](/userinfo/hpc/ood/overview).
+To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a Rivanna GPU node. In addition, you need to specify required resources, e.g. time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
 
 ## Starting an Interactive Session
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.

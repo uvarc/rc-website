@@ -80,4 +80,4 @@ mpirun -trace -bootstrap slurm -n ${SLURM_NTASKS} myprog
 ```
 The Slurm variable `${SLURM_NTASKS}` will expand to the `<number_of_tasks>` that you specify in the SBATCH directive.
 
-This will write a trace file (`*.stf`) that you can analyze with `traceanalyzer`. You will need to run this on [FastX Web MATE desktop environment](/userinfo/rivanna/logintools/fastx/) (recommended) or add the `-Y` flag when you ssh into Rivanna.
+This will write a trace file (`*.stf`) that you can analyze with `traceanalyzer`. You will need to run this on [FastX Web MATE desktop environment](/userinfo/hpc/logintools/fastx/) (recommended) or add the `-Y` flag when you ssh into Rivanna.

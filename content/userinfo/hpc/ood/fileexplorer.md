@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-[Open OnDemand](/userinfo/rivanna/ood/overview) provides an integrated file explorer to browse and manage small files. Rivanna has multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage ([/scratch](/userinfo/storage/non-sensitive-data/#scratch)) where large data sets can be staged for job processing. Researchers can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage website](/userinfo/storage) for more information.
+[Open OnDemand](/userinfo/hpc/ood/overview) provides an integrated file explorer to browse and manage small files. Rivanna has multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage ([/scratch](/userinfo/storage/non-sensitive-data/#scratch)) where large data sets can be staged for job processing. Researchers can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage website](/userinfo/storage) for more information.
 
 The file explorer provides these basic functions:
 
@@ -35,7 +35,7 @@ To view existing text and image files (.png, .tif, etc.), select the file in the
 To edit an existing text file, e.g. source code file or a job script, select the file in the right window pane and click the `Edit` button. The file is opened in a new browser tab labelled as Editor. The editor shows line numbers and supports syntax highlighting for common programming languages (e.g. Python, R, Matlab, XML, markdown, Bash, etc.). A specific syntax highlighting can be chosen under the `Mode` drop-down menu. To save any changes, click on the `Save` button in the top left corner of the Editor tab.
 
 # Opening Files in Terminal
-Clicking on the `Open Files in Terminal` button opens a terminal window in a new web browser tab. The current directory is set to the location directory or file that was selected in the File Explorer's left or right window pane.  Note that this terminal is not able to start graphical applications such as the Matlab desktop; for applications such as those you must use [FastX](/userinfo/rivanna/logintools/fastx).
+Clicking on the `Open Files in Terminal` button opens a terminal window in a new web browser tab. The current directory is set to the location directory or file that was selected in the File Explorer's left or right window pane.  Note that this terminal is not able to start graphical applications such as the Matlab desktop; for applications such as those you must use [FastX](/userinfo/hpc/logintools/fastx).
 
 # Navigating to other Storage Locations
 To navigate to other file locations on Rivanna, you can use the `Go To` button to enter a specific storage volume and directory path. For example, if you are in your home directory and want to go to your /project directory, enter `/project/` and click `OK`. This will show a list of all project directories including those of other research groups.  You can also enter the full path to your Project storage, e.g. `/project/my-storage`, to go straight to your group's storage. To find out about the full path of all your leased storage locations, run the `hdquota` command in a Rivanna terminal window.

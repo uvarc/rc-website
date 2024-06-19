@@ -30,15 +30,15 @@ draft = false
 
 ```scp SourceFile mst3k@login.hpc.virginia.edu:/project/Grouper_group_name```
 
-Detailed instructions and examples for using `scp` are listed <a href ="/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
+Detailed instructions and examples for using `scp` are listed <a href ="/userinfo/hpc/logintools/cl-data-transfer" target="_blank">here</a>.
 
 ## Secure File Transfer Protocol (`sftp`)
 
-`sftp` is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "/userinfo/rivanna/logintools/cl-data-transfer" target="_blank">here</a>.
+`sftp` is a network protocol for secure file management. Instructions and examples for using <code>sftp</code> are located <a href = "/userinfo/hpc/logintools/cl-data-transfer" target="_blank">here</a>.
 
 ## Graphical File-Transfer Applications
 
-<a href="https://sourceforge.net/projects/filezilla/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, and <a ref="https://mobaxterm.mobatek.net">MobaXterm</a> are examples of open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="/userinfo/rivanna/logintools/graphical-sftp" target="_blank">here</a>.
+<a href="https://sourceforge.net/projects/filezilla/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, and <a ref="https://mobaxterm.mobatek.net">MobaXterm</a> are examples of open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="/userinfo/hpc/logintools/graphical-sftp" target="_blank">here</a>.
 
 ## Globus Connect (Large Data Transfer)
 <p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="/userinfo/globus" target="_blank">here</a>.</p>

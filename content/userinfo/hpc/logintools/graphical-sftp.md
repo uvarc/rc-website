@@ -20,7 +20,7 @@ type = "rivanna"
 <img alt="MobaXterm" src="/images/rivanna/mobax-logo.png" align="right" style="max-width:20%;">
 MobaXterm is a Windows application that combines an ssh client for logging in, a graphical secure-copy client for easy drag-and-drop file transfer, and an X11 server for displaying graphical applications.
 
-[<button class="btn btn-primary">MobaXterm</button>](/userinfo/rivanna/logintools/mobaxterm/)
+[<button class="btn btn-primary">MobaXterm</button>](/userinfo/hpc/logintools/mobaxterm/)
 
 - - -
 
@@ -30,7 +30,7 @@ MobaXterm is a Windows application that combines an ssh client for logging in, a
 
 FileZilla is a cross-platform application for drag-and-drop data transfer.  It is available for Windows, Mac OSX, and Linux.
 
-[<button class="btn btn-primary">FileZilla</button>](/userinfo/rivanna/logintools/filezilla/)
+[<button class="btn btn-primary">FileZilla</button>](/userinfo/hpc/logintools/filezilla/)
 
 - - -
 
@@ -40,7 +40,7 @@ FileZilla is a cross-platform application for drag-and-drop data transfer.  It i
 
 Cyberduck is another cross-platform application for drag-and-drop data transfer.  It is available for Mac OSX and Windows.
 
-[<button class="btn btn-primary">Cyberduck</button>](/userinfo/rivanna/logintools/cyberduck/)
+[<button class="btn btn-primary">Cyberduck</button>](/userinfo/hpc/logintools/cyberduck/)
 
 - - -
 
@@ -50,7 +50,7 @@ Cyberduck is another cross-platform application for drag-and-drop data transfer.
 
 The File Explorer in Open OnDemand can be used to upload and download small files.  Open OnDemand can be accessed from any Web browser through Netbadge, and does not require the installation of an application, but the number and size of files that can be transferred is limited.
 
-[<button class="btn btn-primary">Open OnDemand</button>](/userinfo/rivanna/ood/fileexplorer/)
+[<button class="btn btn-primary">Open OnDemand</button>](/userinfo/hpc/ood/fileexplorer/)
 
 # Remote Mounting for Research Project and Research Standard Storage Shares
 

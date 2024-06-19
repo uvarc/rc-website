@@ -88,4 +88,4 @@ If you have any questions or concerns about these changes, please contact our us
 
 - - -
 
-{{< button button-class="primary" button-text="About Rivanna HPC" button-url="/userinfo/rivanna/overview/" >}}
+{{< button button-class="primary" button-text="About Rivanna HPC" button-url="/userinfo/hpc/overview/" >}}

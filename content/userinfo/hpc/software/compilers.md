@@ -13,9 +13,9 @@ author = "RC Staff"
 
 Rivanna offers multiple compiler bundles for C, C++, and Fortran.  Different compilers have different strengths and weaknesses and different error messaging and debugging features, so users should be willing to try another one when appropriate.  The modules system manages the compiler environment and ensures that only compatible libraries are available for loading.
 
-Many users of compiled languages are working with codes that can employ MPI for multinode parallel runs.  MPI users should first understand how their chosen compiler works, then see the MPI instructions at our [parallel programming](/userinfo/rivanna/software/mpi) page.
+Many users of compiled languages are working with codes that can employ MPI for multinode parallel runs.  MPI users should first understand how their chosen compiler works, then see the MPI instructions at our [parallel programming](/userinfo/hpc/software/mpi) page.
 
-Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our [debuggers and utilities](/userinfo/rivanna/software/debuggers) page.
+Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our [debuggers and utilities](/userinfo/hpc/software/debuggers) page.
 
 # Available Compilers on Rivanna
 
@@ -38,7 +38,7 @@ More information is available from the manpage, e.g.:
 man g++
 ```
 
-The default GNU compilers on Rivanna are typically fairly old. Newer versions can be invoked through an appropriate [module](/userinfo/rivanna/software/modules). For available versions, please run
+The default GNU compilers on Rivanna are typically fairly old. Newer versions can be invoked through an appropriate [module](/userinfo/hpc/software/modules). For available versions, please run
 ```
 module spider gcc
 ```
@@ -118,7 +118,7 @@ module load nvhpc
 
 {{< module-versions module="nvhpc" >}}
 
-Please see [here](/userinfo/rivanna/software/nvhpc) for details.
+Please see [here](/userinfo/hpc/software/nvhpc) for details.
 
 # PGI Compiler
 Please use the `nvhpc` module instead (see previous section).

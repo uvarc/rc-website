@@ -310,7 +310,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<p class="card-text">
 					Programs such as MobaXterm, Filezilla, and Cyberduck provide a graphical user interface to transfer data between a local computer and a remote storage location that permits <code>scp</code> or <code>sftp</code>. These applications allow drag-and-drop file manipulation.
 				</p>
-			<a href="/userinfo/rivanna/logintools/graphical-sftp" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
+			<a href="/userinfo/hpc/logintools/graphical-sftp" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
 		</div>
 	</div>
 </div>
@@ -325,7 +325,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<p class="card-text">
 					Researchers who are comfortable with the command line can use a variety of command line tools to transfer their data between their laptops and storage systems. Programs such as <code>scp</code>, <code>sftp</code>, <code>rsync</code> and <code>aws cli</code> can be used to quickly transfer files.
 				</p>
-			<a href="/userinfo/rivanna/logintools/cl-data-transfer" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
+			<a href="/userinfo/hpc/logintools/cl-data-transfer" class="card-link" target="_blank"><button class="btn btn-warning">Learn more</button></a>
 		</div>
 	</div>
 </div>

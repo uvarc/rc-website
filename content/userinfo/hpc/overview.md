@@ -42,14 +42,14 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">Access / Allocations</h5>
       <p class="card-text">Learn how to request an allocation and add collaborators.</p>
-      <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary">Request an Allocation</button></a>
+      <a href="/userinfo/hpc/allocations/"><button class="btn btn-primary">Request an Allocation</button></a>
     </div>
   </div>
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Logging In</h5>
       <p class="card-text">Log in through a Web browser or a command-line tool.</p>
-      <a href="/userinfo/rivanna/login/"><button class="btn btn-warning">Learn More</button></a>
+      <a href="/userinfo/hpc/login/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
 </div>
@@ -66,7 +66,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">Software</h5>
       <p class="card-text">See a listing of available software.</p>
-      <a href="/userinfo/rivanna/software/overview/"><button class="btn btn-warning">Learn More</button></a>
+      <a href="/userinfo/hpc/software/overview/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
 </div>
@@ -76,14 +76,14 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">Storage</h5>
       <p class="card-text">Options for free short-term and leased long-term storage</p>
-      <a href="/userinfo/rivanna/storage/"><button class="btn btn-warning">Learn More</button></a>
+      <a href="/userinfo/hpc/storage/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Running Jobs in Slurm</h5>
       <p class="card-text">Submitting jobs to Rivanna through the Slurm resource manager</p>
-      <a href="/userinfo/rivanna/slurm/"><button class="btn btn-warning">Learn More</button></a>
+      <a href="/userinfo/hpc/slurm/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
 </div>
@@ -100,7 +100,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">Usage Policies</h5>
       <p class="card-text">Understand the terms and conditions for using Rivanna.</p>
-      <a href="/userinfo/rivanna/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
+      <a href="/userinfo/hpc/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
 </div>
@@ -129,10 +129,10 @@ A high performance computing cluster is typically made up of at least four servi
 <p style="margin-top:3rem;">Click on elements of the image to learn more:</p>
 <img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="margin-top:0rem;display:block;" class="hpc-overview" usemap="#hpc_map" data-bg_fill="rgba(244,124,67,0.5)" />
 <map name="hpc_map">
-  <area id="login-nodes" alt="Login Nodes" title="Login Nodes" href="/userinfo/rivanna/login/" shape="rect" coords="243,37,555,100" style="outline:none;" class="hpchover" />
-  <area id="compute-nodes" alt="Compute Node" title="Compute Node" href="/userinfo/rivanna/overview/#job-queues" shape="rect" coords="38,150,700,390" style="outline:none;" class="hpchover" />
-  <area id="storage" alt="Storage" title="Storage" href="/userinfo/rivanna/storage/" shape="rect" coords="70,440,700,580" style="outline:none;" class="hpchover" />
-  <area id="resource-manager" alt="Resource Manager" title="Resource Manager" href="/userinfo/rivanna/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
+  <area id="login-nodes" alt="Login Nodes" title="Login Nodes" href="/userinfo/hpc/login/" shape="rect" coords="243,37,555,100" style="outline:none;" class="hpchover" />
+  <area id="compute-nodes" alt="Compute Node" title="Compute Node" href="/userinfo/hpc/overview/#job-queues" shape="rect" coords="38,150,700,390" style="outline:none;" class="hpchover" />
+  <area id="storage" alt="Storage" title="Storage" href="/userinfo/hpc/storage/" shape="rect" coords="70,440,700,580" style="outline:none;" class="hpchover" />
+  <area id="resource-manager" alt="Resource Manager" title="Resource Manager" href="/userinfo/hpc/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
 </map>
 
 
@@ -162,7 +162,7 @@ The maximum *aggregate* GPUs allowed for a single user’s running jobs is 32.
 SU charge rate = #cores + 2 x #GPUs, which is *at least* 1 + 2x1 = 3.
 - `interactive` maximum *aggregate* CPU cores (GPUs) is 24 (2) for a single user. The charge rates for cores and GPUs are the same as the other partitions.
 - The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offers high-performance GPUs that brings new AI and ML functionality to support parallel GPU computing and large deep-learning models.  
-<a href="/userinfo/rivanna/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
+<a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
 - - -
 

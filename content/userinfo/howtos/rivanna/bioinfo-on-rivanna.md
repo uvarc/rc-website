@@ -11,8 +11,8 @@ images = [""]
 +++
 
 {{% lead %}}
-The UVA research community has access to numerous bioinformatics software installed directly or available through the [bioconda](/userinfo/rivanna/software/bioconda) Python modules.
-Click [here](/userinfo/rivanna/software/bioinformatics#full-list-of-bioinformatics-software-modules) for a comprehensive list of currently-installed bioinformatics software.
+The UVA research community has access to numerous bioinformatics software installed directly or available through the [bioconda](/userinfo/hpc/software/bioconda) Python modules.
+Click [here](/userinfo/hpc/software/bioinformatics#full-list-of-bioinformatics-software-modules) for a comprehensive list of currently-installed bioinformatics software.
 {{% /lead %}}
 
 # Popular Bioinformatics Software

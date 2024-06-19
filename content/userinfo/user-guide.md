@@ -27,7 +27,7 @@ quell_footer = true
       <p class="card-text">Standard and high security HPC to run your code, generally written in R, Python or shell scripts.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/userinfo/rivanna/overview/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/hpc/overview/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>

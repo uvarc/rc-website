@@ -55,7 +55,7 @@ Click `Launch` to start the session.
 
 ## Editing and Running the Notebook
 
-Once the JupyterLab instance has started, you can edit and run your notebook as described [here](/userinfo/rivanna/software/jupyterlab).
+Once the JupyterLab instance has started, you can edit and run your notebook as described [here](/userinfo/hpc/software/jupyterlab).
 
 # PyTorch Slurm jobs
 
@@ -80,7 +80,7 @@ apptainer run --nv $CONTAINERDIR/pytorch-2.0.1.sif pytorch_example.py # 3
 
 Notes:
 
-1. The Slurm script needs to include the `#SBATCH -p gpu`and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the [Jobs Using a GPU](/userinfo/rivanna/slurm/#jobs-using-a-gpu) section for details.
+1. The Slurm script needs to include the `#SBATCH -p gpu`and `#SBATCH --gres=gpu` directives in order to request access to a GPU node and its GPU device.  Please visit the [Jobs Using a GPU](/userinfo/hpc/slurm/#jobs-using-a-gpu) section for details.
 
 1. To use the pytorch container, load the apptainer and pytorch modules. You may choose a different version (see `module spider` above).
 
@@ -90,7 +90,7 @@ Notes:
 
 # PyTorch Interactive Jobs (ijob)
 
-Start an [ijob](/userinfo/rivanna/slurm/#submitting-an-interactive-job).  Note the addition of `-p gpu` and `--gres=gpu` to request access to a GPU node and its GPU device.
+Start an [ijob](/userinfo/hpc/slurm/#submitting-an-interactive-job).  Note the addition of `-p gpu` and `--gres=gpu` to request access to a GPU node and its GPU device.
 
 ```
 ijob -A mygroup -p gpu --gres=gpu -c 1

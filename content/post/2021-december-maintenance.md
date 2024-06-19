@@ -55,16 +55,16 @@ We are pleased to announce the addition of DGX A100 GPU to the `gpu` partition. 
     - cudnn/7.6.5.32 -> 8.2.4.15
     - pytorch/1.8.1 -> 1.10.0
     - tensorflow/2.4.1 -> 2.7.0
-    - [alphafold/2.0.0](/userinfo/rivanna/software/alphafold) -> 2.1.1; note changes to flags!
+    - [alphafold/2.0.0](/userinfo/hpc/software/alphafold) -> 2.1.1; note changes to flags!
     - amptorch/20210308 -> 0.1
     - freebayes/0.9.9 -> 1.3.4
     - salmon/1.2.1 -> 1.5.1
     - rapids/0.19 -> 21.10
 
 3. New **modules**:
-    - [spark/3.1.2](/userinfo/rivanna/software/spark)
+    - [spark/3.1.2](/userinfo/hpc/software/spark)
     - rosetta/3.13 - computational modeling and analysis of protein structures
-    - [namd/2.14](/userinfo/rivanna/software/namd) - Nanoscale Molecular Dynamics
+    - [namd/2.14](/userinfo/hpc/software/namd) - Nanoscale Molecular Dynamics
     - vmd/1.9.4 - Visualization software for NAMD
     - cc3d/4.2.5 - CompuCell3D
     - deeplabcut/2.2 - animal pose estimation
