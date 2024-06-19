@@ -5,7 +5,7 @@ description = ""
 date = "2024-06-17T00:00:00-05:00"
 title = "Production Release of the Afton HPC System: July 2, 2024"
 # url = "/maintenance"
-draft = true
+draft = false
 tags = ["afton"]
 categories = ["feature"]
 +++
