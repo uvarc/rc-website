@@ -25,10 +25,10 @@ type = "rivanna"
 # General Usage
 
 ## How do I gain access to Rivanna?
-A faculty or research staff member must first request an allocation on Rivanna. Full details can be found [here](/userinfo/rivanna/allocations).
+A faculty or research staff member must first request an allocation on Rivanna. Full details can be found [here](/userinfo/hpc/allocations).
 
 ## How do I log on to Rivanna?
-Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/rivanna/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/rivanna/ood/overview) or [FastX](/userinfo/rivanna/logintools/fastx).
+Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/hpc/ood/overview) or [FastX](/userinfo/hpc/logintools/fastx).
 
 {{% off-campus %}}
 
@@ -39,7 +39,7 @@ Access to the HPC cluster requires a valid ITS (Netbadge) password. If you are u
 ITS controls access to the University’s computing resources, so when you or your students leave, you/they may lose access to many of these resources. Sponsored accounts allow people who work or volunteer at UVA, but who are not paid by UVA, to access the University’s computing resources. Researchers with sponsored accounts cannot request RC services but they are allowed to use the systems we manage as members of a Grouper (requires VPN connection) group controlled by a UVA Principal Investigator (PI). Details on sponsored accounts are posted on the [ITS sponsored accounts page](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=8fec94fcdb296b4c2192e6650596199b).
 
 ## Why am I seeing `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` when I log in?
-Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/rivanna/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
+Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/hpc/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
 
 ## When I try to log in with ssh, nothing happens when I type my password!
 When you type your password, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
@@ -56,13 +56,13 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 ## When should I use FastX Web, when should I use an Open OnDemand Desktop session?
 Both allow you to run applications with graphical user interfaces in a Linux Desktop environment.
 
-[Open OnDemand Desktop:](/userinfo/rivanna/ood/overview/#desktop)
+[Open OnDemand Desktop:](/userinfo/hpc/ood/overview/#desktop)
 * Runs your session on allocated resources on a compute node.
 * Ideal for running compute-intensive single-node applications with graphical user interface.
 * Does not require a VPN connection from off-Grounds locations.
 * Recommended practice for running interactive jobs (particularly for coursework with a reservation).
 
-[FastX Web:](/userinfo/rivanna/logintools/fastx/)
+[FastX Web:](/userinfo/hpc/logintools/fastx/)
 * Runs all users' sessions on a single frontend node.
 * Good for light-weight file management, script editing.
 * Requires a VPN connection from off-Grounds locations.
@@ -85,7 +85,7 @@ where `filename` is a placeholder for the specific filename. The `oocalc` comman
 
 ## Why does it hang on log in? Why do OpenOnDemand interactive apps give conflicting package errors?
 
-It could be that your .bashrc file is loading too many or conflicting modules respectively. See our [Modules](/userinfo/rivanna/software/modules/) page on how to load modules within best practices. If your .bashrc file is getting too crowded, you should replace it with the default here:
+It could be that your .bashrc file is loading too many or conflicting modules respectively. See our [Modules](/userinfo/hpc/software/modules/) page on how to load modules within best practices. If your .bashrc file is getting too crowded, you should replace it with the default here:
 ```
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -102,11 +102,11 @@ alias vi='vim'
 
 ## What is an allocation?
 
-Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/rivanna/allocations).
+Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/hpc/allocations).
 
 ## How can I request an allocation?
 
-The different Service Unit (SU) allocation types are explained in [this article](/userinfo/rivanna/allocations/#allocation-types). It includes links to our allocation request webforms.
+The different Service Unit (SU) allocation types are explained in [this article](/userinfo/hpc/allocations/#allocation-types). It includes links to our allocation request webforms.
 
 ## How do I check my allocation status on Rivanna?
 
@@ -135,7 +135,7 @@ If you don't see your allocation, it may mean that you've been removed from the 
 
 To check an allocation's expiration date run `allocations -a <allocation group>` command.  Alternatively, run `mam-list-allocations`.
 
-Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations) and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/hpc/allocations/#standard-allocations) and [Instructional Allocations](/userinfo/hpc/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/allocations/#allocation-purchases) never expire.
 
 ## How are Service Units Reserved?
 
@@ -144,25 +144,25 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/rivanna/overview/#job-queues).
+Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/overview/#job-queues).
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). To manage groups created before November 28th, 2023, visit the legacy [MyGroups portal](https://mygroups.virginia.edu/).
 
 ## How do I check allocation usage of individual group members?
-Please visit [here](/userinfo/rivanna/slurm/#usage-report) to see how to generate an allocation usage report.
+Please visit [here](/userinfo/hpc/slurm/#usage-report) to see how to generate an allocation usage report.
 
 ## I submitted a job and receive an error "Insufficient balance. Applying funds failure for JobId=".  What should I do?
 The error indicates that your allocation group does not have enough service units to execute the job. Check your allocation status as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Also verify that your allocation has not expired, see [here](#how-do-i-check-an-allocations-expiration-date).
 
-Only [Standard Allocations](/userinfo/rivanna/allocations/#standard-allocations), and [Instructional Allocations](/userinfo/rivanna/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/rivanna/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/hpc/allocations/#standard-allocations), and [Instructional Allocations](/userinfo/hpc/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/allocations/#allocation-purchases) never expire.
 
 - - -
 
 # Research Software
 
 ## How do I use research software that's already installed?
-We use the `lmod` system for managing software environments. [Learn more about how to use `lmod`](/userinfo/rivanna/software/modules/).
+We use the `lmod` system for managing software environments. [Learn more about how to use `lmod`](/userinfo/hpc/software/modules/).
 
 ## Does RC install research software?
 Our staff will install software onto Rivanna if it is of wide applicability to the user community. Software used by one group should be installed by the group members, ideally onto leased storage for the group.  We can provide assistance for individual installations.
@@ -184,10 +184,10 @@ Software images built by Research Computing are hosted on Docker Hub. For exampl
 apptainer pull docker://uvarc/pytorch:1.5.1
 ```
 
-Please visit [this page](/userinfo/rivanna/software/containers/#container-registries-for-uva-research-computing) for more details.
+Please visit [this page](/userinfo/hpc/software/containers/#container-registries-for-uva-research-computing) for more details.
 
 ## Can I run application/container X on a GPU?
-Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](/userinfo/rivanna/overview/#job-queues)) and prevent other users from using the GPUs.
+Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](/userinfo/hpc/overview/#job-queues)) and prevent other users from using the GPUs.
 
 [https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support](https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support)
 
@@ -203,11 +203,11 @@ Please check the user manual for your application/container before running on a 
 
 5. Create a Slurm script to run your code.  The Slurm script list the resources and instructions that are needed to run your “executable script”.   See the following link:
 
-      [https://www.rc.virginia.edu/userinfo/rivanna/slurm/](https://www.rc.virginia.edu/userinfo/rivanna/slurm/)
+      [https://www.rc.virginia.edu/userinfo/hpc/slurm/](https://www.rc.virginia.edu/userinfo/hpc/slurm/)
 
 6. Open a terminal window on Rivanna, and move to the location where your scripts are.  We recommend using the web-based FastX application (see below). Once in a terminal window, type sbatch followed my the name of your Slurm script.
 
-      [https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access)
+      [https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access)
 - - -
 
 # Job Management
@@ -216,11 +216,11 @@ Please check the user manual for your application/container before running on a 
 You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our Slurm documentation page.
 
 ## How do I submit an interactive job?
-If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/rivanna/ood/overview) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/rivanna/ood/desktop) request.
+If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/hpc/ood/overview) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/hpc/ood/desktop) request.
 
 If you will be using the command line for your interactive job you may use the locally-written ijob command. The minimum required options are -A and -c  for allocation and number of cores. Run `ijob -h` for a list of all options.
 
-For more information see the [documentation](/userinfo/rivanna/slurm).
+For more information see the [documentation](/userinfo/hpc/slurm).
 
 ## What queues can I use?
 After logging in, run the command `qlist` to see a list of queues and their availability.  Run `qlimits` for the restrictions on submitting to each queue.
@@ -234,7 +234,7 @@ Queues are set up to emphasize one-core (serial or threaded), multi-node paralle
 - Jobs requiring the use of GPUs: **gpu**
 - Jobs for interactive sessions or quick tests of code:  **interactive**
 
-More information about queue policy is at the [Rivanna homepage](/userinfo/rivanna/overview/#job-queues).
+More information about queue policy is at the [Rivanna homepage](/userinfo/hpc/overview/#job-queues).
 
 ## How do I use the interactive queue?
 
@@ -335,7 +335,7 @@ All users are provided a 50-GB home directory for longer-term storage.  This dir
 If the free storage is not sufficient, you need snapshots of your files, or you wish to share space among a research group, the group should lease storage.
 
 ## Why should I use /scratch storage?
-Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  [Please review our scratch filesystem policy for details](/userinfo/rivanna/overview/#scratch-directory). If you use or expect to use a large number of files please contact us.
+Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  [Please review our scratch filesystem policy for details](/userinfo/hpc/overview/#scratch-directory). If you use or expect to use a large number of files please contact us.
 
 
 ## How do I obtain leased storage?
@@ -369,7 +369,7 @@ find . -type f | cut -d/ -f2 | sort | uniq -c
 ```
 
 ## How long can I store files in `/scratch`?
-`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/rivanna/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
+`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/hpc/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
 
 ## How do I share data in my `/scratch` or leased storage with a colleague?
 To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on Rivanna, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.

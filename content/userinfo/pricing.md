@@ -17,7 +17,7 @@ images = [""]
 
 {{< pricing allocations >}}
 
-[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/rivanna/allocations/)
+[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/hpc/allocations/)
 
 - - -
 

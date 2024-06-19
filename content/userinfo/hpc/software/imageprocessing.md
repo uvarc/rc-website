@@ -38,7 +38,7 @@ module spider blender/2.78c
 
 # Running Interactive Visualizations
 
-Many of the provided image processing and visualization applications provide a graphical user interface (GUI). In order to use a GUI on Rivanna, users must log in through a client capable of displaying X11 graphics.  We recommend [FastX Web](/userinfo/rivanna/logintools/fastx) which provides a GPU to accelerate rendering.
+Many of the provided image processing and visualization applications provide a graphical user interface (GUI). In order to use a GUI on Rivanna, users must log in through a client capable of displaying X11 graphics.  We recommend [FastX Web](/userinfo/hpc/logintools/fastx) which provides a GPU to accelerate rendering.
 
 To start an applications GUI in an X11-enabled terminal, first load the software module and then run the GUI application executable, e.g.
 ```

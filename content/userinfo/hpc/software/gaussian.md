@@ -46,7 +46,7 @@ We have a site license. Please contact us if you need access to the software. (N
 For research, please load `gaussian`. For course work, please load `gaussian/grads16`.
 
 # GaussView
-The GaussView graphical interface is available on Rivanna.  Users must log in through a client capable of displaying X11 graphics.  We recommend the Desktop session through [Open OnDemand](/userinfo/rivanna/ood/overview).  GaussView can be used to create input files for Gaussian jobs which should then be submitted to the compute nodes.  To start GaussView, in an X11-enabled terminal first load the gaussian module as above, then run
+The GaussView graphical interface is available on Rivanna.  Users must log in through a client capable of displaying X11 graphics.  We recommend the Desktop session through [Open OnDemand](/userinfo/hpc/ood/overview).  GaussView can be used to create input files for Gaussian jobs which should then be submitted to the compute nodes.  To start GaussView, in an X11-enabled terminal first load the gaussian module as above, then run
 ```
 gview &
 ```

@@ -111,12 +111,12 @@ search: sdata isdirpath isdispatchtuple SharedMatrix StridedMatrix
 
 julia>
 ```
-You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/rivanna/login/#remote-desktop-access) for this application. 
+You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access) for this application. 
 
 # Interactive Sessions through Rivanna's Open OnDemand Web Portal
 
 ## Starting an Interactive Session
-To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/rivanna/overview/#job-queues) to learn more about the partitions.
+To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
 
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
@@ -251,7 +251,7 @@ Hello! I am 0 of 8 on udc-ba34-10c8
 
 # Utilizing GPUs with Julia
 
-[General guidelines on requesting GPUs on Rivanna](/userinfo/rivanna/slurm/#gpu-intensive-computation)
+[General guidelines on requesting GPUs on Rivanna](/userinfo/hpc/slurm/#gpu-intensive-computation)
 
 The following slurm script is for submitting a Julia job that uses 1 GPU. For each GPU requested, the script requests one cpu (ntasks-per-node). The article [An Introduction to GPU Programming in Julia](https://nextjournal.com/sdanisch/julia-gpu-programming) provides more details to get started.
 

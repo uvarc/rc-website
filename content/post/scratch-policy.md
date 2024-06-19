@@ -17,4 +17,4 @@ RC offers several low-cost storage options to researchers.
 For more information about research computing storage options:
 
 - Visit our [**Storage Overview**](/userinfo/storage/) page.
-- Learn more about specific [**storage features of Rivanna HPC**](/userinfo/rivanna/storage/).
+- Learn more about specific [**storage features of Rivanna HPC**](/userinfo/hpc/storage/).

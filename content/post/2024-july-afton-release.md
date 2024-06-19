@@ -68,7 +68,7 @@ On May 28, total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454
 
 {{% accordion-item title="How can I get an account to access the Afton system? Can I use my Rivanna allocation?" id="faq-3" %}}
 
-The service unit allocations are shared for Rivanna and Afton. If you already have an active Rivanna allocation, no action is required. If you'd like to start using Afton or Rivanna, please [follow the instructions here](/userinfo/rivanna/allocations/#allocation-types).
+The service unit allocations are shared for Rivanna and Afton. If you already have an active Rivanna allocation, no action is required. If you'd like to start using Afton or Rivanna, please [follow the instructions here](/userinfo/hpc/allocations/#allocation-types).
 
 {{% callout %}}
 **Please note:** {{% pi-eligibility %}}.
@@ -86,7 +86,7 @@ The login access points are shared for the Afton and Rivanna systems.
 
 - **Option 3:** Secure Shell (ssh) session
 
-See [here for details](/userinfo/rivanna/login/). You have to be a member of an active HPC allocation before you can log in.
+See [here for details](/userinfo/hpc/login/). You have to be a member of an active HPC allocation before you can log in.
 
 {{% /accordion-item %}}
 

@@ -15,4 +15,4 @@ Commands such as `allocations` will remain but will reflect the new accounting. 
 are deducted from the allocation balance. That means that fewer SUs will be available while jobs are running. Details are explained in our [FAQ](/userinfo/faq/rivanna-faq/#allocations) section.
 
 Learn more:
-- [Rivanna Overview](/userinfo/rivanna/overview/)
+- [Rivanna Overview](/userinfo/hpc/overview/)

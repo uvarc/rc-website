@@ -18,7 +18,7 @@ categories = ["userinfo"]
 <p class="lead">The <code>lmod</code> modules system on Rivanna enables users to easily set their environments for selected software and to choose versions if appropriate.</p>
 <p class="lead">The <code>lmod</code> system is hierarchical; not every module is available in every environment.  We provide a core environment which contains most of the software installed by Research Computing staff, but software that requires a compiler or MPI is not in that environment and a compiler must first be loaded.</p>
 
-{{< button button-class="primary" button-text="View All Modules" button-url="/userinfo/rivanna/software/complete-list/" >}}
+{{< button button-class="primary" button-text="View All Modules" button-url="/userinfo/hpc/software/complete-list/" >}}
 
 
 - - -

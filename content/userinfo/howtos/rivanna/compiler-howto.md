@@ -24,7 +24,7 @@ Compilers are invoked on source files with a line such as
 
 You must know the name of the compiler you wish to use as well as its options. Most compilers offer a large number of options that can control very detailed properties of the resulting executable, but the average user need only know a few of them.
 
-Please see our compiler [documentation](/userinfo/rivanna/software/compilers) for information about the available compilers on Rivanna.  For building and running parallel code, see the [documentation](/userinfo/rivanna/software/mpi).
+Please see our compiler [documentation](/userinfo/hpc/software/compilers) for information about the available compilers on Rivanna.  For building and running parallel code, see the [documentation](/userinfo/hpc/software/mpi).
 
 ## Debugging and Profiling
 
@@ -39,7 +39,7 @@ gfortran -g -fbounds-check mycode.f90
 ```
 Options for profiling vary more by compiler.  For Gnu compilers it is a combination flag `-pg`.  Intel uses separate options `-p -g`.  The PGI compiler uses `-Mprof`.
 
-Using debuggers and profilers is covered separately [here](/userinfo/rivanna/software/debuggers).  If you write your own code, profiling is useful to increase the performance of your code.
+Using debuggers and profilers is covered separately [here](/userinfo/hpc/software/debuggers).  If you write your own code, profiling is useful to increase the performance of your code.
 
 ## Optimizing
 Once your code is working, you should remove all debugging flags and compile from source.  Debugging flags inhibit optimizations and can cause your code to waste SUs.  The general optimization flag for all compilers is `-O`.  With no integer it will set optimization at the default level, which varies by compiler.  You can specify different levels of optimization (including none) with an integer immedately after `O`.  The number of available levels and where the default lies varies by compiler.  Gnu and Intel have three levels and the default is -O1.  PGI has four levels and the default is `-O2`.  The flag `-O0` disables all optimizations, which can be useful for debugging; the `-g` flag may or may not imply `-O0`.

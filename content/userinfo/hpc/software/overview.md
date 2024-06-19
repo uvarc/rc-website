@@ -27,49 +27,49 @@ type = "rivanna"
 Software on Rivanna is accessed via environment **modules** or **containers**.
 
 {{< rawhtml >}}
-<a href="/userinfo/rivanna/software/modules/"><button class="btn btn-primary"">Learn about Modules</button></a> &nbsp;
-<a href="/userinfo/rivanna/software/containers/"><button class="btn btn-primary"">Learn about Containers</button></a>
+<a href="/userinfo/hpc/software/modules/"><button class="btn btn-primary"">Learn about Modules</button></a> &nbsp;
+<a href="/userinfo/hpc/software/containers/"><button class="btn btn-primary"">Learn about Containers</button></a>
 {{< /rawhtml >}}
 
 # Software by Category
 
 ## Popular Software Packages and Libraries by Domain
 
-* [Biology & Bioinformatics](/userinfo/rivanna/software/bioinformatics)
-* [Chemistry](/userinfo/rivanna/software/chemistry)
-* [Data Science & Machine Learning](/userinfo/rivanna/software/machine-learning)
-* [Engineering](/userinfo/rivanna/software/engineering)
-* [Image Processing & Scientific Visualization](/userinfo/rivanna/software/imageprocessing)
-* [Math & Statistics](/userinfo/rivanna/software/math-statistics)
+* [Biology & Bioinformatics](/userinfo/hpc/software/bioinformatics)
+* [Chemistry](/userinfo/hpc/software/chemistry)
+* [Data Science & Machine Learning](/userinfo/hpc/software/machine-learning)
+* [Engineering](/userinfo/hpc/software/engineering)
+* [Image Processing & Scientific Visualization](/userinfo/hpc/software/imageprocessing)
+* [Math & Statistics](/userinfo/hpc/software/math-statistics)
 
 {{< rawhtml >}}
-<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-primary"">Full list of all software and library modules</button></a>
+<a href="/userinfo/hpc/software/complete-list/"><button class="btn btn-primary"">Full list of all software and library modules</button></a>
 {{< /rawhtml >}}
 
 
 ## Programming Languages & Tools
 
-* [Python](/userinfo/rivanna/software/python)
-* [Perl](/userinfo/rivanna/software/perl)
-* [Julia](/userinfo/rivanna/software/julia)
-* [Matlab](/userinfo/rivanna/software/matlab)
-* [Mathematica](/userinfo/rivanna/software/mathematica)
-* [sageMath](/userinfo/rivanna/software/sagemath)
-* [R & RStudio](/userinfo/rivanna/software/r)
-* [Jupyter Lab](/userinfo/rivanna/software/jupyterlab)
-* [Compilers](/userinfo/rivanna/software/compilers)
-* [Parallel & MPI](/userinfo/rivanna/software/mpi)
-* [Libraries](/userinfo/rivanna/software/libraries)
-* [Debuggers and Profilers](/userinfo/rivanna/software/debuggers)
-* [Containers](/userinfo/rivanna/software/containers)
-* [IDEs and Editors](/userinfo/rivanna/software/ide)
-* [Workflow Managers](/userinfo/rivanna/software/workflow_managers)
+* [Python](/userinfo/hpc/software/python)
+* [Perl](/userinfo/hpc/software/perl)
+* [Julia](/userinfo/hpc/software/julia)
+* [Matlab](/userinfo/hpc/software/matlab)
+* [Mathematica](/userinfo/hpc/software/mathematica)
+* [sageMath](/userinfo/hpc/software/sagemath)
+* [R & RStudio](/userinfo/hpc/software/r)
+* [Jupyter Lab](/userinfo/hpc/software/jupyterlab)
+* [Compilers](/userinfo/hpc/software/compilers)
+* [Parallel & MPI](/userinfo/hpc/software/mpi)
+* [Libraries](/userinfo/hpc/software/libraries)
+* [Debuggers and Profilers](/userinfo/hpc/software/debuggers)
+* [Containers](/userinfo/hpc/software/containers)
+* [IDEs and Editors](/userinfo/hpc/software/ide)
+* [Workflow Managers](/userinfo/hpc/software/workflow_managers)
 
 ## Access & File Transfer Tools
 
-* [Open OnDemand](/userinfo/rivanna/login/#web-based-access)
-* [FastX](/userinfo/rivanna/login/#remote-desktop-access)
-* [MobaXterm](/userinfo/rivanna/logintools/mobaxterm/)
-* [SSH](/userinfo/rivanna/login/#secure-shell-access-ssh)
+* [Open OnDemand](/userinfo/hpc/login/#web-based-access)
+* [FastX](/userinfo/hpc/login/#remote-desktop-access)
+* [MobaXterm](/userinfo/hpc/logintools/mobaxterm/)
+* [SSH](/userinfo/hpc/login/#secure-shell-access-ssh)
 * [Data Transfer](/userinfo/data-transfer)
 * [Globus](/userinfo/globus/)

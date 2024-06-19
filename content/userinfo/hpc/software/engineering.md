@@ -21,7 +21,7 @@ author = "RC Staff"
 Several software packages for computer-aided engineering are available on Rivanna.
 
 # General considerations
-Some engineering software packages utilize single node, multi-core or multi-node [MPI](/userinfo/rivanna/software/mpi) for parallel execution.  Accordingly, the Slurm job scripts should contain either of the following two SBATCH directives:
+Some engineering software packages utilize single node, multi-core or multi-node [MPI](/userinfo/hpc/software/mpi) for parallel execution.  Accordingly, the Slurm job scripts should contain either of the following two SBATCH directives:
 
 **Single Node Multi-Core**
 ```

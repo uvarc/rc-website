@@ -276,7 +276,7 @@ Run this command:
 globus login
 {{< /code >}}
 
-You will then be given an Oauth2 login URL. Start a Web browser, either through [FastX](/userinfo/rivanna/logintools/fastx) or through an X11 server on your local computer.  Copy and paste this URL into the web browser, and authorize your connection as instructed in the topic above.
+You will then be given an Oauth2 login URL. Start a Web browser, either through [FastX](/userinfo/hpc/logintools/fastx) or through an X11 server on your local computer.  Copy and paste this URL into the web browser, and authorize your connection as instructed in the topic above.
 
 Be sure to give your authorization a useful name, such as <userid>-rivanna, i.e. mst3k-rivanna. This will help you distinguish it in your list of Globus authorizations.
 

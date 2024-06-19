@@ -22,7 +22,7 @@ All systems are expected to return to service by **6 a.m. on Wednesday, July 19*
 
 RC engineers will be installing a new `/scratch` storage filesystem that can be accessed at `/scratch/$USER` after the end of maintenance.
 
-**Modified queue limits will be implemented to provide maximum read/write performance of the new `/scratch` filesystem.** Users are encouraged to consult our [updated documentation](/userinfo/rivanna/overview/#job-queues) and adjust their job scripts accordingly.
+**Modified queue limits will be implemented to provide maximum read/write performance of the new `/scratch` filesystem.** Users are encouraged to consult our [updated documentation](/userinfo/hpc/overview/#job-queues) and adjust their job scripts accordingly.
 
 **The current `/scratch` filesystem will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  We have prepared a sample script for users who wish to transfer files to the new scratch system.  Users should clean up their current `/scratch` directory in preparation, to minimize the load.  A sample script is posted below.
 

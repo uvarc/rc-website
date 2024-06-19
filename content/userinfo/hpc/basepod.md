@@ -82,4 +82,4 @@ For documentation and demos, refer to the “Resources” section at the bottom 
 
 ## GPU-enabled modules
 
-A complete list of GPU-enabled modules on Rivanna can be found [here](https://www.rc.virginia.edu/userinfo/rivanna/software/gpu/). Please refer to their respective pages and/or module load messages (if any) for usage instructions.
+A complete list of GPU-enabled modules on Rivanna can be found [here](https://www.rc.virginia.edu/userinfo/hpc/software/gpu/). Please refer to their respective pages and/or module load messages (if any) for usage instructions.

@@ -13,7 +13,7 @@ author = "RC Staff"
 +++
 
 # Building an MPI Code
-All implementations provide wrappers around the underlying [compilers](/userinfo/rivanna/software/compilers) that simplify compilation.   As it is very important to use the headers that correspond to a given library, users are urged to make use of the wrappers whenever possible.   For OpenMPI and MVAPICH2 these are:
+All implementations provide wrappers around the underlying [compilers](/userinfo/hpc/software/compilers) that simplify compilation.   As it is very important to use the headers that correspond to a given library, users are urged to make use of the wrappers whenever possible.   For OpenMPI and MVAPICH2 these are:
 
 * mpicc \(C)
 * mpicxx (C++)
@@ -53,7 +53,7 @@ mpirun -np 4 ./mycode
 ```
 On the frontends the processes will not be assigned to specific cores and may be competing with other processes, so performance may be poor.
 
-To use a debugger with an MPI program, compile with the `-g` flag as for a serial code.  We provide the [Totalview](/userinfo/rivanna/software/totalview) graphical debugger for MPI and OpenMP applications. Totalview requires that the `mpiexec` executor be in your path before you invoke it.  If you need to debug for a longer time, with a large number of cores, or with multiple nodes, you can use Totalview through the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop). Please request all cores for the node whether you use them or not, because Totalview cannot use the `srun` command as the executor.
+To use a debugger with an MPI program, compile with the `-g` flag as for a serial code.  We provide the [Totalview](/userinfo/hpc/software/totalview) graphical debugger for MPI and OpenMP applications. Totalview requires that the `mpiexec` executor be in your path before you invoke it.  If you need to debug for a longer time, with a large number of cores, or with multiple nodes, you can use Totalview through the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop). Please request all cores for the node whether you use them or not, because Totalview cannot use the `srun` command as the executor.
 
 # Running Under Slurm
 When running with Slurm, the `srun` command **must** be used as the executor.  Load the appropriate modules in your script, then invoke
@@ -79,6 +79,6 @@ srun ./parallel_executable
 ```
 In this example, the Slurm job file is requesting two nodes with sixteen tasks per node for a total of 32 processes.  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node so we'd recommend `--ntasks-per-node=20` on the parallel partition, but some codes cannot be distributed in that manner so we are showing a more general example here.
 
-Please see our MPI [software page](/userinfo/rivanna/software/mpi) for examples of Slurm scripts for more complex situations, including running hybrid MPI/OpenMP codes.
+Please see our MPI [software page](/userinfo/hpc/software/mpi) for examples of Slurm scripts for more complex situations, including running hybrid MPI/OpenMP codes.
 
 For more detailed instructions on building and running compiled codes on Rivanna, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).

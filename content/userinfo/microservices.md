@@ -183,7 +183,7 @@ Want to run your container within an HPC environment? It can be done, using Appt
 
 Apptainer is a container application targeted to multi-user, high-performance computing systems. It interoperates well with Slurm and with the Lmod modules system. It can be used to create and run its own containers, or it can import Docker containers.
 
-[**Learn more about Apptainer**](/userinfo/rivanna/software/apptainer/).
+[**Learn more about Apptainer**](/userinfo/hpc/software/apptainer/).
 
 - - -
 

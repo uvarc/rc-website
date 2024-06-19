@@ -49,7 +49,7 @@ module spider R
 
 # Loading the RStudio module
 
-RStudio is a development environment for R. We recommend launching RStudio through our web-based portal to Rivanna. For instructions on how to access it, see [RStudio Server on Rivanna](/userinfo/rivanna/software/rstudio/).
+RStudio is a development environment for R. We recommend launching RStudio through our web-based portal to Rivanna. For instructions on how to access it, see [RStudio Server on Rivanna](/userinfo/hpc/software/rstudio/).
 
 For users who must launch RStudio from the commandline, start up a FastX or Open OnDemand Desktop session and run `rstudio-launcher` in the terminal. Then follow the instructions.
 
