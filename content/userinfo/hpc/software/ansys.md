@@ -58,7 +58,7 @@ If you wish to run jobs using the Workbench, you need to edit the `~/.kde/share/
 FocusStealingPreventionLevel=0
 ```
 
-The workbench application, `runwb2`, should be executed in an interactive [Open OnDemand Desktop](/userinfo/rivanna/ood/desktop) session.  
+The workbench application, `runwb2`, should be executed in an interactive [Open OnDemand Desktop](/userinfo/hpc/ood/desktop) session.  
 When you are assigned a node, launch the desktop, start a terminal, load the desired module and start the workbench with the `runwb2` command.
 ```
 module load ansys
@@ -82,11 +82,11 @@ For longer jobs, and for all multinode jobs, you should run in batch mode using 
 
 # Multi-Node MPI Jobs
 
-For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using Slurm's task launcher. If more than the default memory per core is required, it is generally better with ANSYS and related products to request a total memory over all processes rather than using `--mem-per-cpu`, because a process can exceed the allowed memory per core.  Please refer to our [documentation](/userinfo/rivanna/overview/#job-queues) for current information about default memory per core in each partition.
+For Fluent specify `-mpi=intel` along with the flag `-srun` to dispatch the MPI tasks using Slurm's task launcher. If more than the default memory per core is required, it is generally better with ANSYS and related products to request a total memory over all processes rather than using `--mem-per-cpu`, because a process can exceed the allowed memory per core.  Please refer to our [documentation](/userinfo/hpc/overview/#job-queues) for current information about default memory per core in each partition.
 
 These examples also show the minimum number of command-line options; you may require more for large jobs.
 
-<!--- You must also set up _passwordless ssh_ between nodes as described [here](/userinfo/rivanna/logintools/rivanna-ssh). -->
+<!--- You must also set up _passwordless ssh_ between nodes as described [here](/userinfo/hpc/logintools/rivanna-ssh). -->
 
 **Fluent Slurm Script:**
 

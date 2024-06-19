@@ -26,7 +26,7 @@ python -m ipykernel install --user --name myenv --display-name "My Env"
 
 Note:
 - You can customize the display name for your kernel. It is shown when you hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
-- For more information on Anaconda, please visit [here](/userinfo/rivanna/software/python/).
+- For more information on Anaconda, please visit [here](/userinfo/hpc/software/python/).
 
 # Jupyter kernel based on Apptainer container
 For this to work, the `ipykernel` Python package must be installed within the Apptainer container. To create a Jupyter kernel for the container, you can either use our automated script `jkrollout` or do it manually.

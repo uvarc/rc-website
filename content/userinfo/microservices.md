@@ -127,7 +127,7 @@ Browse a list of recent [UVA projects employing microservices](/project?tag=.con
       <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/shiny-server.png" /></th>
       <td style="font-weight:bold;">Shiny Server</td>
       <td>Public</td>
-      <td>Runs R-based web applications and offers a dynamic, data-driven user interface. See a <a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new" class="badge badge-primary">demo</a> or try using <a target="_new" href="http://lolaweb.databio.org/" class="badge badge-primary"><b>LOLAweb</a></td>
+      <td>Runs R-based web applications and offers a dynamic, data-driven user interface. See a <a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new" class="badge badge-primary">demo</a> or try using <a target="_new" href="https://github.com/databio/LOLAweb" class="badge badge-primary"><b>LOLAweb</a></td>
     </tr>
     <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/bash_512x512.png" /></th>
@@ -183,7 +183,7 @@ Want to run your container within an HPC environment? It can be done, using Appt
 
 Apptainer is a container application targeted to multi-user, high-performance computing systems. It interoperates well with Slurm and with the Lmod modules system. It can be used to create and run its own containers, or it can import Docker containers.
 
-[**Learn more about Apptainer**](/userinfo/rivanna/software/apptainer/).
+[**Learn more about Apptainer**](/userinfo/hpc/software/apptainer/).
 
 - - -
 

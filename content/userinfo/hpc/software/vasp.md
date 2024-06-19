@@ -52,7 +52,7 @@ This `makefile.include` is preconfigured to use the Intel compiler, IntelMPI, an
 1. VASP is written primarily in Fortran and on Rivanna the compiler option `-heap-arrays` should be added to the `makefile.include`. This can be added to the FFLAGS variable, e.g. `FFLAGS = -heap-arrays -assume byterecl -w`
 2. It is advisable to change the SCALAPACK library name to `-lmkl_scalapack_lp64.so`.
 
-To use [OpenMPI](/userinfo/rivanna/software/mpi), the user must also change the Fortran compiler to `FC=mpif90` and the `BLACS` library to `-lmkl_blacs_openmpi_lp64` while leaving `SCALAPACK = -lmkl_scalapack_lp64.a`.
+To use [OpenMPI](/userinfo/hpc/software/mpi), the user must also change the Fortran compiler to `FC=mpif90` and the `BLACS` library to `-lmkl_blacs_openmpi_lp64` while leaving `SCALAPACK = -lmkl_scalapack_lp64.a`.
 
 The VASP suite consists of three executables: `vasp_std`, `vasp_gam`, and `vasp_ncl`.  The default `makefile.include` will attempt to build all three consecutively. Users may find it works best to compile these individually, by editing the line
 ```

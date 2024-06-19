@@ -1,6 +1,6 @@
 +++
 description = ""
-title = "Logging In"
+title = "Logging in to the UVA HPC systems"
 draft = false
 date = "2019-05-28T17:45:12-05:00"
 tags = ["hpc","rivanna","supercomputer","login","ssh","openondemand"]
@@ -19,10 +19,10 @@ type = "rivanna"
 
 <img alt="OpenOnDemand" src="/images/ood.png" align="right" style="max-width:30%;">
 
-Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser.  The Open OnDemand access point is ood.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our [Open OnDemand documentation](/userinfo/rivanna/ood/overview) page.
+Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser.  The Open OnDemand access point is ood.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our [Open OnDemand documentation](/userinfo/hpc/ood/overview) page.
 
 [<button class="btn btn-primary">Launch Open OnDemand</button>](https://ood.hpc.virginia.edu/)
-[<button class="btn btn-primary">Learn more about Open OnDemand</button>](/userinfo/rivanna/ood/overview/)
+[<button class="btn btn-primary">Learn more about Open OnDemand</button>](/userinfo/hpc/ood/overview/)
 - - -
 
 # Secure Shell Access (SSH)
@@ -31,9 +31,9 @@ Rivanna is accessible through **ssh** (Secure Shell) connections using the hostn
 
 ## <i class="fab fa-windows fa-1x"></i> Windows
 
-Windows users must install an ssh client application. We recommend [MobaXterm](/userinfo/rivanna/logintools/mobaxterm/), but you may also use other clients such as [PuTTY](https://www.putty.org/).
+Windows users must install an ssh client application. We recommend [MobaXterm](/userinfo/hpc/logintools/mobaxterm/), but you may also use other clients such as [PuTTY](https://www.putty.org/).
 
-[<button class="btn btn-primary">Install MobaXterm</button>](/userinfo/rivanna/logintools/mobaxterm/)
+[<button class="btn btn-primary">Install MobaXterm</button>](/userinfo/hpc/logintools/mobaxterm/)
 
 ## <i class="fab fa-apple fa-1x"></i> Mac OSX and Linux
 
@@ -43,7 +43,7 @@ OSX and Linux users may connect through a terminal using the command
 ssh -Y mst3k@login.hpc.virginia.edu  
 ```
 
-[SSH key authentication](/userinfo/rivanna/logintools/rivanna-ssh) is also permissible. 
+[SSH key authentication](/userinfo/hpc/logintools/rivanna-ssh) is also permissible. 
 
 ## <i class="fas fa-terminal"></i> Using X11 Applications with `ssh`
 
@@ -53,15 +53,15 @@ Windows users who install MobaXterm do not need to add `-Y` in an `ssh` session 
 
 Mac users must install [XQuartz](https://xquartz.org) in order to be able to run graphical (X11) applications locally.  
 
-Graphical X11 applications may be slow through a standard `ssh` login. For extensive use of graphical applications we recommend [FastX](/userinfo/rivanna/logintools/fastx).
+Graphical X11 applications may be slow through a standard `ssh` login. For extensive use of graphical applications we recommend [FastX](/userinfo/hpc/logintools/fastx).
 
-For more details and for troubleshooting information, please see our [`ssh`](/userinfo/rivanna/logintools/rivanna-ssh) page.
+For more details and for troubleshooting information, please see our [`ssh`](/userinfo/hpc/logintools/rivanna-ssh) page.
 
 - - -
 
 # Remote Desktop Access
 
-Users who wish to run X11 graphical applications may prefer the [FastX](/userinfo/rivanna/logintools/fastx) remote desktop web interface.  The FastX web client is accessible at `fastx.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
+Users who wish to run X11 graphical applications may prefer the [FastX](/userinfo/hpc/logintools/fastx) remote desktop web interface.  The FastX web client is accessible at `fastx.hpc.virginia.edu`. Your login credentials are your UVA computing ID and your Eservices password.
 
 [<button class="btn btn-primary">Connect to FastX via Web</button>](https://fastx.hpc.virginia.edu:8000/auth/ssh)
-[<button class="btn btn-primary">Learn more about FastX Web</button>](/userinfo/rivanna/logintools/fastx/)
+[<button class="btn btn-primary">Learn more about FastX Web</button>](/userinfo/hpc/logintools/fastx/)

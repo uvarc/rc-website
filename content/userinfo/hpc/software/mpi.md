@@ -17,7 +17,7 @@ MPI stands for Message Passing Interface. The MPI standard is defined by the Mes
 MPI is a standard that describes the behavior of a library.  It is intended to be used with compiled languages (C/C++/Fortran).  Several implementations of this standard exist.  Rivanna supports OpenMPI for all our compilers and IntelMPI for the Intel compiler.   MPI can also be used with the interpreted languages R and Python through packages that link to an implementation; on Rivanna these languages use OpenMPI.  
 
 # Selecting Compiler and Implementation
-An MPI implementation must be built with a specific [compiler](/userinfo/rivanna/software/compilers). Consequently, only compilers for which MPI has been prepared can be used with it. All versions of the Intel compiler will have a corresponding IntelMPI. For OpenMPI run
+An MPI implementation must be built with a specific [compiler](/userinfo/hpc/software/compilers). Consequently, only compilers for which MPI has been prepared can be used with it. All versions of the Intel compiler will have a corresponding IntelMPI. For OpenMPI run
 ```
 module spider openmpi
 ```

@@ -197,7 +197,7 @@ Submitted batch job 18341
 # Submitting an Interactive Job
 
 If you wish to run a job directly from the shell, you can run an interactive job.
-If you are using any kind of graphical user interface (GUI) you should use one of the [Open OnDemand](/userinfo/rivanna/ood/overview) interactive apps.  This offers direct access to Jupyterlab, Python IDEs (Anaconda Navigator, coming soon), RStudio Server, the MATLAB desktop, and others.  For graphical applications not available through one of the dedicated apps, such as the Totalview debugger or some bioinformatics packages, use the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) app. From the Desktop you can open a terminal window, load modules, and start any application you wish.  Please note that a few GUI applications require a GPU so you must request that partition in the online form.
+If you are using any kind of graphical user interface (GUI) you should use one of the [Open OnDemand](/userinfo/hpc/ood/overview) interactive apps.  This offers direct access to Jupyterlab, Python IDEs (Anaconda Navigator, coming soon), RStudio Server, the MATLAB desktop, and others.  For graphical applications not available through one of the dedicated apps, such as the Totalview debugger or some bioinformatics packages, use the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop) app. From the Desktop you can open a terminal window, load modules, and start any application you wish.  Please note that a few GUI applications require a GPU so you must request that partition in the online form.
 
 If you wish to run an interactive job from the command line, you can use our local command `ijob` to obtain a login shell on a compute node.
 ```
@@ -506,7 +506,7 @@ This is in addition to requesting an `a100` in the `gres` option.
 
 As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna, UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
 
-<a href="/userinfo/rivanna/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
+<a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
 # CPU and Memory Usage
 Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate Slurm commands for running jobs and completed jobs.

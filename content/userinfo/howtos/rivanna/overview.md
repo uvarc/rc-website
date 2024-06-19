@@ -35,20 +35,20 @@ author = "RC Staff"
 
 ## Connecting
 
-* [Using SSH](/userinfo/rivanna/login/#secure-shell-access-ssh)
-* [Using a browser](/userinfo/rivanna/login/#web-based-access)
-* [Using FastX](/userinfo/rivanna/login/#remote-desktop-access)
+* [Using SSH](/userinfo/hpc/login/#secure-shell-access-ssh)
+* [Using a browser](/userinfo/hpc/login/#web-based-access)
+* [Using FastX](/userinfo/hpc/login/#remote-desktop-access)
 
 ## Jobs / Slurm / Queues
 
-* [Slurm Overview](/userinfo/rivanna/slurm/)
-* [Queues](/userinfo/rivanna/overview/#job-queues)
+* [Slurm Overview](/userinfo/hpc/slurm/)
+* [Queues](/userinfo/hpc/overview/#job-queues)
 
 ## Storage and File Transfer
 
-* [Storage overview](/userinfo/rivanna/storage/)
+* [Storage overview](/userinfo/hpc/storage/)
 * [Data transfer methods](/userinfo/data-transfer/)
 
 ## Allocations
 
-* [Allocations Overview](/userinfo/rivanna/allocations/)
+* [Allocations Overview](/userinfo/hpc/allocations/)

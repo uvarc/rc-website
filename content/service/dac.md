@@ -22,7 +22,7 @@ draft = false
 
 The Data Analytics Center is the hub for assisting researchers across Grounds with the management and analysis of large datasets on Research Computing platforms.  
 
-##### Quick Links
+# Quick Links
 
 <div class="row">
   <div class="column", style="width:29%; margin-left:15px">
@@ -37,7 +37,7 @@ The Data Analytics Center is the hub for assisting researchers across Grounds wi
 </div>
 <br>
 
-##### Services 
+# Services 
 We offer comprehensive computational solutions for your research projects including  
 * workflow development, 
 * software and computing platforms selection, 
@@ -48,7 +48,7 @@ We offer comprehensive computational solutions for your research projects includ
 * data collection and analysis, and
 * machine learning and artificial intelligence support.
 
-##### Areas of Expertise
+# Areas of Expertise
 Our [staff](/about/people/) have a variety of experience and expertise to assist with your next research project and many have been academic researchers.  We have expertise in 
 * artificial intelligence and machine learning,
 * bioinformatics,
@@ -56,7 +56,7 @@ Our [staff](/about/people/) have a variety of experience and expertise to assist
 * image processing, and
 * parallel computing. 
 
-##### Past Collaborations
+# Past Collaborations
 We have years of experience with collaborations. A few of our past collaborations with UVA researchers are below.  To see more examples, visit our [Projects](/project/) page.
 
 
@@ -104,7 +104,7 @@ We have years of experience with collaborations. A few of our past collaboration
 </div>
 <br>
 
-##### How to Request Support
+# How to Request Support
 We provide [three tiers of support](/service/tiers) that can each be requested through a [support request](/form/support-request/?category=Data%20Analytics). 
 
 * Tier 1: Training & Technical Support 
@@ -118,13 +118,13 @@ We provide [three tiers of support](/service/tiers) that can each be requested t
 <br>
 -->
 
-##### Include DAC Support in Your Grant Budget   
+# Include DAC Support in Your Grant Budget   
 
 PIs may budget for DAC support in their grants.  To ensure that DAC support is included in your upcoming grant proposal, we recommend that you schedule a consultation to explore the ways in which we can assist you.  Our services and resources range from embedding one of our team members in your project and creating custom workflows to leasing storage and purchasing time on our high-performance cluster.
 
 We are here to support your research.
 
-##### DAC Analytics Resource Awards
+# DAC Analytics Resource Awards
 
 If you have not yet budgeted for DAC support in a current funding source, you can apply for a DAC Analytics Resource Award. Currently, the awards will cover up to $10,000 of DAC services.  A proposal is necessary to apply for this award. More information and how to apply is available [here](/service/dac/awards).
 

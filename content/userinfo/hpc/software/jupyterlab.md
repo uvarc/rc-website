@@ -36,7 +36,7 @@ To access JupyterLab, you will begin by connecting to our Open OnDemand portal:
 <img src="/images/jupyterlab1.png" style="height:100%;width:100%"></img>
 
 # Requesting an Instance
-Your instance (or copy) of JupyterLab will run on a Rivanna compute node. So it will need a list of resources, such as partition, time, and allocation. If you are new to Rivanna, you may want to read the [Rivanna User Guide](/userinfo/rivanna/overview) to learn more about the partitions.
+Your instance (or copy) of JupyterLab will run on a Rivanna compute node. So it will need a list of resources, such as partition, time, and allocation. If you are new to Rivanna, you may want to read the [Rivanna User Guide](/userinfo/hpc/overview) to learn more about the partitions.
 
 1. After connecting to JupyterLab through Open OnDemand, a form will appear where you can fill in the resources for JupyterLab.
 2. When done filling in the resources, click on the blue “Launch” button at the bottom of the form.

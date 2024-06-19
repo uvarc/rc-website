@@ -61,7 +61,7 @@ Index files are created with the `bwa index` command. A reference genome sequenc
 {{< pull-code file="/static/scripts/bwa.slurm" lang="no-hightlight" >}}
 
 ## Alignment of Sequence Reads to a Reference Genome
-BWA provides three basic alignment algorithms to align sequence reads to a reference genome, BWA-backtrack, BWA-SW, and BWA-MEM.  Below we show an example for using the BWA-MEM algorithm (command `bwa mem`), which can process short Illumina reads (70bp) as well as longer reads up to 1 MB.  The alignment output is saved in SAM file format.  The use of SAMtools on Rivanna is documented [here](/userinfo/rivanna/software/samtools).  
+BWA provides three basic alignment algorithms to align sequence reads to a reference genome, BWA-backtrack, BWA-SW, and BWA-MEM.  Below we show an example for using the BWA-MEM algorithm (command `bwa mem`), which can process short Illumina reads (70bp) as well as longer reads up to 1 MB.  The alignment output is saved in SAM file format.  The use of SAMtools on Rivanna is documented [here](/userinfo/hpc/software/samtools).  
 
 **Specification of files**
 
@@ -99,7 +99,7 @@ You should **_NOT_** do your computational processing on the head node. In order
 ```
 ijob -N 1 -n 1 -A <YOUR_ALLOCATION> -p standard -c 20 --mem=20000
 ```
-Replace `<YOUR_ALLOCATION>` with your account name to charge SUs. The arguments for `-c` and `--mem` options depend on the resources you will use for the alignment step. For more details about submitting interactive jobs please see [here](/userinfo/rivanna/slurm).
+Replace `<YOUR_ALLOCATION>` with your account name to charge SUs. The arguments for `-c` and `--mem` options depend on the resources you will use for the alignment step. For more details about submitting interactive jobs please see [here](/userinfo/hpc/slurm).
 
 ### Load module
 First, let us load the bwa module:

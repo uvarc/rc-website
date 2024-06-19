@@ -27,7 +27,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
     - Intel: `intel/2023.1` (default), `intel/2024.0` (experimental), `intel/18.0` (legacy)
     - NVIDIA: `nvhpc/23.7`, `nvompi/23.7_4.1.5`
 
-1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/rivanna/software/apptainer) for details.
+1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/hpc/software/apptainer) for details.
 
 1. There are many module version upgrades and deprecation of older versions. Run `module spider NAME` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
 
@@ -63,7 +63,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 - **Intel 18.0** modules are either migrated to the newer version (2023.1) or dropped. Intel users should rebuild code with `intel/2023.1` if possible.
 - **RStudio Server** is now backed by a native module with R as a dependency. R packages installed via the `R` module will be detected automatically in RStudio Server, and vice versa. **All R packages will need to be rebuilt.**
 - **Python 2.7**-dependent modules are completely removed from the software stack. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
-- **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
+- **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/hpc/software/code-server/#python-setup).
 - **Mamba** is separated from `anaconda` into its own module.
 - **Java** module versions are standardized to 7, 8, 11, 12 (previously 1.7.0, etc.).
 
