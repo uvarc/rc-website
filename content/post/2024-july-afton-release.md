@@ -194,23 +194,23 @@ If you have already done this for the Afton pre-release testing then no. Otherwi
 
 {{% accordion-item title="12. How is compute time charged on the Rivanna and Afton systems?" id="faq-12" %}}
 
-Starting on Jul 3, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices allocated.
+Starting on Jul 3, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the number and type of GPU devices allocated.
 
 {{< table title="charge-rate" class="table table-striped" >}}
-| Partition | Hardware | Charge rate (per core or GPU)| 
-|---|---|---|
-|standard| Rivanna | |
-|standard| Afton   | |
-|parallel| Afton   | |
-|gpu     | A40     | |
-|gpu     | A6000   | |
-|gpu     | V100    | |
-|gpu     | A100 (40G)| |
-|gpu     | A100 (80G)| |
-|interactive| Rivanna | |
-|interactive| Afton   | |
-|interactive| RTX2080 | |
-|interactive| RTX3090 | |
+| Partition | Hardware | Charge per core | Charge per GB memory | Charge per GPU device| 
+|---|---|---|---|---| 
+|standard| Rivanna | | | n/a |
+|standard| Afton   | | | n/a |
+|parallel| Afton   | | | n/a |
+|gpu     | A40     | n/a | n/a | |
+|gpu     | A6000   | n/a | n/a | |
+|gpu     | V100    | n/a | n/a | |
+|gpu     | A100 (40G)| n/a | n/a | |
+|gpu     | A100 (80G)| n/a | n/a | |
+|interactive | Rivanna (non-GPU) | | | n/a |
+|interactive | Afton (non-GPU) | | | n/a |
+|interactive| RTX2080 (GPU) | | | |
+|interactive| RTX3090 (GPU) | | | |
 {{< /table >}}
 
 {{% /accordion-item %}}
