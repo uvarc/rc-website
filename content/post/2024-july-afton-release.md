@@ -11,11 +11,7 @@ categories = ["feature"]
 +++
 
 <p class="lead">
-We have completed testing and configuration of our new supercomputer, “Afton,” and it is now available for general use. This represents the first major expansion of RC’s core computing resources since Rivanna's hardware refresh in 2019. A large homogenous system simplifies maintenance and will help RC provide a consistent and reliable experience to the UVA research community.
-</p>
-
-<p class="lead">
-Afton represents a substantial increase in the High-Performance Computing (HPC) capabilities available at UVA, more than doubling the CPU time available. Each of the 300 compute nodes in the core system has 96 compute cores, an increase from a maximum of 32 cores per node in Rivanna.  This increase in core counts enables many workflows that once needed to use Message Passing Interface (MPI), or similar tools, to leverage sufficient resources to simplify and work within a single node. This is further enabled by nodes with up to 1.5 Terabytes (TB) of memory. The large amount of per node memory allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines.
+Our new supercomputer, “Afton,” is now available for general use. This represents the first major expansion of RC’s computing resources since Rivanna's last hardware refresh in 2019. Afton represents a substantial increase in the High-Performance Computing (HPC) capabilities available at UVA, more than doubling the available core hours. Each of the 300 compute nodes in the new system has 96 compute cores, an increase from a maximum of 48 cores per node in Rivanna. The increase in core count is augmented by a significant increase in memory per node. Each Afton node boasts a minimum of 785GB of memory, with some supporting up to 1.5 Terabytes (TB) of RAM memory. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines.
 </p>
 
 # Maintenance: July 2, 2024
@@ -34,9 +30,9 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 - **New hardware:** On May 28, a total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454 architecture have been added to UVA's HPC environment as the new Afton system. The new Afton hardware provides additional capacity for serial, parallel and GPU computing side-by-side with the existing Rivanna system.
 
-- **Access:** The Rivanna and Afton systems are accessible via the existing and shared Open OnDemand, FastX and ssh access points.
+- **Configuration:** The hardware partition definitions will be reconfigured to optimize effective use of the new Afton and existing Rivanna systems.
 
-- **Configuration:** The hardware partition definitions will be reconfigured to optimize effective use of existing Rivanna and new Afton hardware.
+- **Access:** The Rivanna and Afton systems are accessible via the existing and shared Open OnDemand, FastX and ssh access points.
 
 - **Software, Code, and Job Submissions:** The shared software stack and modules have been tested during the pre-release phase. In some cases users may need to update their Slurm job scripts or recompile their own code.
 
@@ -48,13 +44,13 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 {{% accordion-group title="Group" id="faqgroup"%}}
 
-{{% accordion-item title="Is Afton replacing the older Rivanna system?" id="faq-1" %}}
+{{% accordion-item title="1. Is Afton replacing the older Rivanna system?" id="faq-1" %}}
 
 No, the new Afton system exists side-by-side with the existing Rivanna system. The hardware to both systems can be accessed through shared login access points, see ["How do I login to the Afton system?"](#faq-4).
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="What compute capabilities does the new Afton hardware offer?" id="faq-2" %}}
+{{% accordion-item title="2. What compute capabilities does the new Afton hardware offer?" id="faq-2" %}}
 
 On May 28, total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454 architecture have been added to UVA’s HPC environment. The added nodes expand UVA's HPC capabilities in the following areas:
 
@@ -66,7 +62,7 @@ On May 28, total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="How can I get an account to access the Afton system? Can I use my Rivanna allocation?" id="faq-3" %}}
+{{% accordion-item title="3. How can I get an account to access the Afton system? Can I use my Rivanna allocation?" id="faq-3" %}}
 
 The service unit allocations are shared for Rivanna and Afton. If you already have an active Rivanna allocation, no action is required. If you'd like to start using Afton or Rivanna, please [follow the instructions here](/userinfo/hpc/allocations/#allocation-types).
 
@@ -76,7 +72,7 @@ The service unit allocations are shared for Rivanna and Afton. If you already ha
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="How do I log in to the Afton system?" id="faq-4" %}}
+{{% accordion-item title="4. How do I log in to the Afton system?" id="faq-4" %}}
 
 The login access points are shared for the Afton and Rivanna systems.
 
@@ -90,24 +86,34 @@ See [here for details](/userinfo/hpc/login/). You have to be a member of an acti
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="Can I still use Rivanna?" id="faq-5" %}}
+{{% accordion-item title="5. Can I still use Rivanna?" id="faq-5" %}}
 
-Yes. Login access points are shared for the Rivanna and Acton systems. We added new hardware feature tags that allow you to specifically request Rivanna resources for your compute jobs. 
+Yes. Login access points are shared for the Rivanna and Afton systems. We added new hardware feature tags that allow you to specifically request Rivanna resources for your compute jobs. 
 
 See ["What are the changes to the hardware partitions?"](#faq-6) and ["What are hardware features? What are the hardware feature defaults for each partition?"](#faq-10).
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="What are the changes to the hardware partitions?" id="faq-6" %}}
+{{% accordion-item title="6. What are the changes to the hardware partitions?" id="faq-6" %}}
 
+The following partition changes are taking place on July 2:
+ 
 - The pre-release `afton` partition will be removed. The nodes will be placed in other partitions. 
 - The `parallel` partition will be completely replaced with 200 Afton nodes. The original nodes will be placed in `standard`.
 - The `largemem` partition will be removed. All 750GB nodes will be placed in the `standard` partition. 
 - All RTX3090 nodes from the `gpu` partition will be placed in the `interactive` partition.
 
+New partition configuration:
+| Partition | Rivanna Nodes | Afton Nodes | Use Cases | 
+| --- | --- | --- | --- |
+| `standard` | yes | yes | For jobs on a single compute node, including those with large memory requirements. |
+| `parallel` | no| yes | For large parallel mult-node jobs. |
+| `gpu` | yes | yes | For jobs using general purpose graphical processing units, e.g. for machine learning/deep learning. |
+| `interactive` | yes | yes | For quick interactive sessions, code development, and instructional use. It includes a small number of lower-end GPU nodes. |
+
 {{% /accordion-item %}}
 
-{{% accordion-item title="What happened to the largemem, dev, and instructional partitions?" id="faq-7" %}}
+{{% accordion-item title="7. What happened to the largemem, dev, and instructional partitions?" id="faq-7" %}}
 
 Nodes of the `largemem` partition have been moved to the `standard` partition. See ["What are the changes to the hardware partitions?"](#faq-6)
 
@@ -115,13 +121,37 @@ The `dev` and `instructional` partitions have been merged and replaced with a si
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="Do I need to update my Slurm job scripts?" id="faq-8" %}}
+{{% accordion-item title="8. What are hardware feature constraints? What are the default hardware feature constraints for each partition?" id="faq-8" %}}
 
-Most users should be able to submit jobs without changing their Slurm scripts, unless:
-- invalid request due to partition changes (see ["What are the changes to the partitions?"](#faq-6))
+Features constraints and generic resources (GRES) allow you to request specific hardware within a given partition. **Through feature constraints you can specify if a job should be scheduled on the new Afton hardware or the older Rivanna system.**
+
+Features constraints are optional; you may submit jobs without feature constraints. If no feature constraint is specified, the Slurm scheduler will place your job on available partition hardware following a default priority order.
+
+**Note:** Not all features are available in every partition. This table lists the available features for each partition, including the default if no feature is specified. 
+
+| Partition | Available Features Constraints | GRES | Default Priority Order | Notes |
+| --- | --- | --- | --- | --- | 
+| `standard` | `afton`, `rivanna` | None | `rivanna` > `afton` | If not specified, the scheduler will attempt to place the job on Rivanna hardware first or Afton hardware as second alternative. |
+| `parallel` | None | None | n/a | The entire partition is configured with new Afton nodes. No feature constraint is required.
+| `gpu` | None | `v100`, `a40`, `a6000`, `a100_40gb`, `a100_80gb` | `v100` > `a6000` > `a40` >  `a100_40gb` > `a100_80gb`  | If no GRES request is specified, the scheduler will attempt to place the job on a V100 node first and A100 80GB nodes (i.e. the BasesPOD) hardware as last alternative.The A40 nodes were purchased along with the new Afton hardware. | 
+| `interactive` | `afton`, `rivanna` | `rivanna` > `afton` | `rtx2080`, `rtx3090` | If not specified, the scheduler will attempt to place the job on Rivanna hardware first or Afton hardware as second alternative. |
+
+<br>
+
+See ["How do I use Afton for my Slurm job? Do I need to update my job scripts?"](#faq-9) and ["How can I use the new Afton hardware in Open OnDemand?"](#faq-10) for instructions to use these feature constraints in your job submission scripts or Open OnDemand.
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="9. How do I use Afton for my Slurm job? Do I need to update my job scripts?" id="faq-9" %}}
+
+Most users should be able to submit jobs without changing their Slurm job scripts, unless:
+- invalid request due to partition changes (see ["What are the changes to the hardware partitions?"](#faq-6))
+
     - *Example:* A job submitted to `largemem` will become invalid since the partition is removed. One should submit to `standard` with `--mem=...` to specify the memory.
-- cost considerations (see *FAQ: How is compute time charged on the Rivanna and Afton systems?*)
+
+- cost considerations (see [How is compute time charged on the Rivanna and Afton systems?](#faq-12))
     - *Example:* Instead of running a light GPU job on an A100 in `gpu`, request an RTX2080 or RTX3090 in `interactive` via `--gres=gpu`.
+
 - need specific Rivanna vs Afton hardware for performance/reproducibility/benchmarking reasons (only relevant for `standard` and `interactive`) 
     - *Example:* To restrict a `standard` job to run on the new Afton hardware, provide a constraint (`-C`):
 ```
@@ -136,7 +166,15 @@ and likewise for Rivanna hardware:
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="Do I need to recompile my code?" id="faq-9" %}}
+{{% accordion-item title="10. How can I use the new Afton hardware in Open OnDemand?" id="faq-10" %}}
+
+When setting up an *Interactive App* session in Open Ondemand you may enter the `afton` or `rivanna` feature constraint in `Optional: Slurm Option ( Reservation, Constraint )` field.
+
+Available feature constraints are listed here: ["What are hardware features? What are the default hardware features for each partition?"](#faq-10).  
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="11. Do I need to recompile my code?" id="faq-11" %}}
 
 If you have already done this for the Afton pre-release testing then no. Otherwise please use the following flowchart.
 
@@ -154,17 +192,9 @@ If you have already done this for the Afton pre-release testing then no. Otherwi
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="What are hardware features? What are the hardware feature defaults for each partition?" id="faq-10" %}}
+{{% accordion-item title="12. How is compute time charged on the Rivanna and Afton systems?" id="faq-12" %}}
 
-{{% /accordion-item %}}
-
-{{% accordion-item title="How do I run jobs on the new Afton hardware?" id="faq-11" %}}
-
-{{% /accordion-item %}}
-
-{{% accordion-item title="How is compute time charged on the Rivanna and Afton systems?" id="faq-12" %}}
-
-A new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices.
+Starting on Jul 3, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices allocated.
 
 {{< table title="charge-rate" class="table table-striped" >}}
 | Partition | Hardware | Charge rate (per core or GPU)| 
@@ -185,19 +215,31 @@ A new charge rate policy will be implemented to reflect more closely the actual 
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="Why are there different charge rates for Rivanna, Afton, and GPU hardware?" id="faq-13" %}}
+{{% accordion-item title="13. Why are there different charge rates for Rivanna, Afton, and GPU hardware?" id="faq-13" %}}
+
+Starting on Jul 3, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices allocated.
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="How do the use of different hardware and service unit burn rates affect my fair share?" id="faq-14" %}}
+{{% accordion-item title="14. What is fair share?" id="faq-14" %}}
+
+To ensure fair access to the HPC environment for all research groups, we utilize Slurm's job accounting and fairshare system. This system influences job placement priority, with a higher fairshare value typically resulting in a higher queue priority. However, the fairshare value decreases as more service units are consumed.
+
+Crucially, fairshare values are linked to the Principal Investigator (PI) of the allocation being utilized. This connection prevents any single group from dominating the resources in the six-hour partition and maintains fairness among owner groups, especially those who have not utilized their fairshare allocation for an extended period.
+
+Paid service units place fairshare values and job priority above those of users utilizing instructional or standard allocations. 
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="What is fair share?" id="faq-15" %}}
+{{% accordion-item title="15. How do use of different hardware and service unit burn rates affect my fair share?" id="faq-15" %}}
+
+The high performance new Afton hardware as well as the higher-end GPU hardware incur higher service unit (SU) burn rates. For example, use allocation of 40 cores and 256GB of memory on an older Rivanna node consumes more service units than the same cpu core and memory allocation on a newer Afton node. Similarly, use of an NVIDIA A100 80GB GPU device incurs a higher SU charge per hour compared to a lower-end NVIDIA A6000 GPU device.
+
+The more SUs have been consumed, the lower the fairshare value drops. This will impact the user's priority when submitting new jobs with the same allocation.
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="How can I get help?" id="faq-16" %}}
+{{% accordion-item title="16. How can I get help?" id="faq-16" %}}
 
 Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m. starting March 6.
 
