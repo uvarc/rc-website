@@ -209,8 +209,8 @@ Starting on Jul 3, a new charge rate policy will be implemented to reflect more 
 |gpu     | A100 (80G)| n/a | n/a | |
 |interactive | Rivanna (non-GPU) | | | n/a |
 |interactive | Afton (non-GPU) | | | n/a |
-|interactive| RTX2080 (GPU) | | | |
-|interactive| RTX3090 (GPU) | | | |
+|interactive| RTX2080 (GPU) | n/a | n/a | |
+|interactive| RTX3090 (GPU) | n/a | n/a | |
 {{< /table >}}
 
 {{% /accordion-item %}}
