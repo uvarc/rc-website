@@ -22,7 +22,7 @@ You may continue to submit jobs until the maintenance period begins, but if the 
 
 The *Rivanna* and *Afton* production systems are expected to return to service by **Wednesday, July 3 at 6 a.m.**
 
-**Questions:** Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m. starting March 6.
+**Questions:** Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m..
 
 
 {{% callout %}}
@@ -46,7 +46,7 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 {{% accordion-item title="1. Is Afton replacing the older Rivanna system?" id="faq-1" %}}
 
-No, the new Afton system exists side-by-side with the existing Rivanna system. The hardware to both systems can be accessed through shared login access points, see ["How do I login to the Afton system?"](#faq-4).
+No, the new Afton system exists side-by-side with the existing Rivanna system. The hardware to both systems can be accessed through shared login access points, see ["How do I login to the Afton system?"](#faq-4). [test](/userinfo/hpc/overview/)
 
 {{% /accordion-item %}}
 
@@ -249,7 +249,7 @@ Use of Afton hardware may allow jobs to complete faster but may consume more SUs
 
 {{% accordion-item title="16. How can I get help?" id="faq-16" %}}
 
-Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m. starting March 6.
+Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m..
 
 {{% /accordion-item %}}
 
