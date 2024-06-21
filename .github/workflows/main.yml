@@ -44,7 +44,7 @@ jobs:
         uses: ruzickap/action-my-broken-link-checker@v2
         with:
           url: https://staging.rc.virginia.edu
-          cmd_params: |
+          cmd_params: >
             -e http://ctan.org
             -e https://ood.hpc.virginia.edu/pun/sys/dashboard
             -e http://www.htslib.org/
