@@ -1,0 +1,19 @@
+{{ $services := $.Site.Data.service.service }}
+{{ $allocations_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.label "Allocations" }}
+    {{ $allocations_index = $i }}
+  {{ end }}
+{{ end }}
+
+{{ $systems := index (index $services $allocations_index) "systems" }}
+
+{{ $name := .Get "name" }}
+{{ $summary := "" }}
+{{ range $service := $systems }}
+  {{ if eq $service.name $name }}
+    {{ $summary = $service.summary }}
+  {{ end }}
+{{ end }}
+
+{{ $summary }}  

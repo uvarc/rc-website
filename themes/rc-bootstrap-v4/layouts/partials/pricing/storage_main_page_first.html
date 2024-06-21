@@ -1,5 +1,5 @@
 <!-- Determine index of Storage Entry -->
-{{ $services := $.Site.Data.pricing.service }}
+{{ $services := $.Site.Data.service.service }}
 {{ $storage_index := -1 }}
 {{ range $i, $service := $services }}
   {{ if eq $service.name "Storage" }}

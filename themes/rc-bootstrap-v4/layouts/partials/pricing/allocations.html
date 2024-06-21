@@ -1,14 +1,14 @@
 <!-- Determine index of Rivanna Entry -->
-{{ $services := $.Site.Data.pricing.service }}
-{{ $rivanna_index := -1 }}
+{{ $services := $.Site.Data.service.service }}
+{{ $allocations_index := -1 }}
 {{ range $i, $service := $services }}
-  {{ if eq $service.name "Rivanna" }}
-    {{ $rivanna_index = $i }}
+  {{ if eq $service.label "Allocations" }}
+    {{ $allocations_index = $i }}
   {{ end }}
 {{ end }}
 
 <!-- Access Different Types -->
-{{ $options := index (index $services $rivanna_index) "options" }}
+{{ $options := index (index $services $allocations_index) "options" }}
 
 {{ $standard_option := index (where $options "type" "Standard") 0 }}
 {{ $purchased_option := index (where $options "type" "Purchased") 0 }}
@@ -18,7 +18,7 @@
 <table class="table" style="margin-top:2rem;">
     <thead class="thead-dark" style="">
       <tr>
-        {{ $columns := index (index $services $rivanna_index) "columns" }}
+        {{ $columns := index (index $services $allocations_index) "columns" }}
         {{ range $key, $value := index $columns }}
             <th scope="col">{{ $value }}</th>
         {{ end }}
@@ -46,6 +46,6 @@
     </tbody>
   </table>
 
-  <span style="display:block; margin-bottom: 0.5rem;"> {{ index (index $services $rivanna_index) "footnote"}}</span>
+  <span style="display:block; margin-bottom: 0.5rem;"> {{ index (index $services $allocations_index) "footnote"}}</span>
   
   
