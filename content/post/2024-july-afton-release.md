@@ -104,12 +104,14 @@ The following partition changes are taking place on July 2:
 - All RTX3090 nodes from the `gpu` partition will be placed in the `interactive` partition.
 
 New partition configuration:
+{{< table title="partition-config" class="table table-striped" >}}
 | Partition | Rivanna Nodes | Afton Nodes | Use Cases | 
 | --- | --- | --- | --- |
 | `standard` | yes | yes | For jobs on a single compute node, including those with large memory requirements. |
 | `parallel` | no| yes | For large parallel multi-node jobs. |
 | `gpu` | yes | yes | For jobs using general purpose graphical processing units, e.g. for machine learning/deep learning. |
 | `interactive` | yes | yes | For quick interactive sessions, code development, and instructional use. It includes a small number of lower-end GPU nodes. |
+{{< /table >}}
 
 {{% /accordion-item %}}
 
@@ -129,12 +131,14 @@ Features constraints are optional; you may submit jobs without feature constrain
 
 **Note:** Not all features are available in every partition. This table lists the available features for each partition, including the default if no feature is specified. 
 
+{{< table title="feature-constraints-and-gres" class="table table-striped" >}}
 | Partition | Available Features Constraints | GRES | Default Priority Order | Notes |
 | --- | --- | --- | --- | --- | 
 | `standard` | `afton`, `rivanna` | None | `rivanna` > `afton` | If not specified, the scheduler will attempt to place the job on Rivanna hardware first or Afton hardware as second alternative. |
 | `parallel` | None | None | n/a | The entire partition is configured with new Afton nodes. No feature constraint is required.
-| `gpu` | None | `v100`, `a40`, `a6000`, `a100_40gb`, `a100_80gb` | `v100` > `a6000` > `a40` >  `a100_40gb` > `a100_80gb`  | If no GRES request is specified, the scheduler will attempt to place the job on a V100 node first and A100 80GB nodes (i.e. the BasePOD) hardware as last alternative.The A40 nodes were purchased along with the new Afton hardware. | 
+| `gpu` | None | `v100`, `a40`, `a6000`, `a100_40gb`, `a100_80gb` | `v100` > `a6000` > `a40` >  `a100_40gb`> `a100_80gb`  | If no GRES request is specified, the scheduler will attempt to place the job on a V100 node first and A100 80GB nodes (i.e. the BasePOD) hardware as last alternative. The A40 nodes were purchased along with the new Afton hardware. | 
 | `interactive` | `afton`, `rivanna` | `rtx2080`, `rtx3090` | `rivanna` > `afton` | If not specified, the scheduler will attempt to place the job on Rivanna hardware first or Afton hardware as second alternative. |
+{{< /table >}}
 
 <br>
 
