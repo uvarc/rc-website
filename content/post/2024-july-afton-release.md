@@ -194,7 +194,7 @@ If you have already done this for the Afton pre-release testing then no. Otherwi
 
 {{% accordion-item title="12. How is compute time charged on the Rivanna and Afton systems?" id="faq-12" %}}
 
-Starting on Jul 3, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the number and type of GPU devices allocated.
+Starting on Jul 2, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the number and type of GPU devices allocated.
 
 {{< table title="charge-rate" class="table table-striped" >}}
 | Partition | Hardware | Charge per core | Charge per GB memory | Charge per GPU device| 
@@ -217,7 +217,7 @@ Starting on Jul 3, a new charge rate policy will be implemented to reflect more 
 
 {{% accordion-item title="13. Why are there different charge rates for Rivanna, Afton, and GPU hardware?" id="faq-13" %}}
 
-Starting on Jul 3, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices allocated.
+Starting on Jul 2, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices allocated.
 
 Use of Afton hardware may allow jobs to complete faster but may consume more SUs overall due to a higher burn rate.
 
