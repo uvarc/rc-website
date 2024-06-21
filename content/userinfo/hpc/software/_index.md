@@ -22,37 +22,37 @@ For help installing research software on your PC, please contact Research Softwa
 
 # Software Modules and Containers
 
-Software on Rivanna is provided via environment [modules](/userinfo/rivanna/software/modules) or as [containers](/userinfo/rivanna/software/containers).
+Software on Rivanna is provided via environment [modules](/userinfo/hpc/software/modules) or as [containers](/userinfo/hpc/software/containers).
 
-<a href="/userinfo/rivanna/software/complete-list/"><button class="btn btn-sm btn-primary"">Complete List of Rivanna Software &rsaquo;</button></a>
+<a href="/userinfo/hpc/software/complete-list/"><button class="btn btn-sm btn-primary"">Complete List of Rivanna Software &rsaquo;</button></a>
 
 # Software by Category
 
 ## Research Domains
 
-* [Data Science & Machine Learning](/userinfo/rivanna/software/machine-learning)
-* [Chemistry](/userinfo/rivanna/software/chemistry)
-* [Engineering](/userinfo/rivanna/software/engineering)
-* [Bioinformatics](/userinfo/rivanna/software/bioinformatics)
-* [Image Processing](/userinfo/rivanna/software/imageprocessing)
-* [Data Visualization](/userinfo/rivanna/software/visualization)
+* [Data Science & Machine Learning](/userinfo/hpc/software/machine-learning)
+* [Chemistry](/userinfo/hpc/software/chemistry)
+* [Engineering](/userinfo/hpc/software/engineering)
+* [Bioinformatics](/userinfo/hpc/software/bioinformatics)
+* [Image Processing](/userinfo/hpc/software/imageprocessing)
+* [Data Visualization](/userinfo/hpc/software/visualization)
 
 ## Programming Languages & Tools
 
-* [Python](/userinfo/rivanna/software/python)
-* [Perl](/userinfo/rivanna/software/perl)
-* [Matlab](/userinfo/rivanna/software/matlab)
-* [R & RStudio](/userinfo/rivanna/software/R)
-* [Jupyter Lab](//userinfo/rivanna/software/jupyterlab)
-* [Compilers](/userinfo/rivanna/software/compilers)
-* [Parallel & MPI](/userinfo/rivanna/software/mpi)
-* [Debuggers and Profilers](/userinfo/rivanna/software/debuggers)
-* [Containers](/userinfo/rivanna/software/containers)
+* [Python](/userinfo/hpc/software/python)
+* [Perl](/userinfo/hpc/software/perl)
+* [Matlab](/userinfo/hpc/software/matlab)
+* [R & RStudio](/userinfo/hpc/software/R)
+* [Jupyter Lab](//userinfo/hpc/software/jupyterlab)
+* [Compilers](/userinfo/hpc/software/compilers)
+* [Parallel & MPI](/userinfo/hpc/software/mpi)
+* [Debuggers and Profilers](/userinfo/hpc/software/debuggers)
+* [Containers](/userinfo/hpc/software/containers)
 
 ## Access & File Transfer Tools
 
-* [Open OnDemand](/userinfo/rivanna/access/openondemand)
-* [FastX](/userinfo/rivanna/access/fastx)
-* [MobaXterm](/userinfo/rivanna/access/mobaxterm)
-* [SSH](/userinfo/rivanna/access/ssh)
-* [Globus](/userinfo/rivanna/filetransfer/globus)
+* [Open OnDemand](/userinfo/hpc/access/openondemand)
+* [FastX](/userinfo/hpc/access/fastx)
+* [MobaXterm](/userinfo/hpc/access/mobaxterm)
+* [SSH](/userinfo/hpc/access/ssh)
+* [Globus](/userinfo/hpc/filetransfer/globus)

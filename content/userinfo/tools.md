@@ -20,7 +20,7 @@ images = [""]
         <p class="card-text">
         LOLAweb is a web server and interactive results viewer for enrichment of overlap between a user-provided query region set (a bed file) and a database of region sets. It provides an interactive result explorer to visualize the highest ranked enrichments from the database. LOLAweb is a web interface to the LOLA R package.
         </p>
-    <a href="http://lolaweb.databio.org/" target="_new" class="card-link"><button class="btn btn-warning">Launch LOLAweb</button></a>
+    <a href="https://github.com/databio/LOLAweb" target="_new" class="card-link"><button class="btn btn-warning">Launch LOLAweb</button></a>
   </div>
 </div>
 </div>

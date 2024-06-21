@@ -45,12 +45,12 @@ module load totalview
 totalview
 ```
 
-Totalview is normally used with its X11-based graphical user interface and to use it directly, you must have an X server running on your local system or use [FastX](/userinfo/rivanna/logintools/fastx). Computers running Linux will automatically have an X server available.
+Totalview is normally used with its X11-based graphical user interface and to use it directly, you must have an X server running on your local system or use [FastX](/userinfo/hpc/logintools/fastx). Computers running Linux will automatically have an X server available.
 
 * On Mac OS X you will need to install `XQuartz`.
 * Windows users must also install an X server; we recommend `XminGW`.
 
-The recommended way to run X applications remotely is to enable X11 port forwarding in your ssh client (SecureCRT, PuTTY, etc.) and run the X server in the background (passively). Another option is the [FastX client](/userinfo/rivanna/logintools/fastx) which can be installed on the user's local system to open a desktop on the cluster frontend.
+The recommended way to run X applications remotely is to enable X11 port forwarding in your ssh client (SecureCRT, PuTTY, etc.) and run the X server in the background (passively). Another option is the [FastX client](/userinfo/hpc/logintools/fastx) which can be installed on the user's local system to open a desktop on the cluster frontend.
 
 # Using Totalview to Debug MPI Codes
 One of the most powerful features of Totalview is its ability to debug parallel codes.
@@ -63,4 +63,4 @@ totalview &
 ```
 
 # Using the Client on Compute Nodes
-If you have a long debugging job or you want to debug an MPI application, you should run an interactive job through Slurm using the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) interactive application.  When the Desktop is launched, start a terminal window and type the above commands as usual.
+If you have a long debugging job or you want to debug an MPI application, you should run an interactive job through Slurm using the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop) interactive application.  When the Desktop is launched, start a terminal window and type the above commands as usual.

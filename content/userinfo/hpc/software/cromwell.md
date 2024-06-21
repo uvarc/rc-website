@@ -47,7 +47,7 @@ module spider {{% module-firstversion %}}
 
 # The Backend Configuration
 
-In order to allow Cromwell to interact with Rivanna (via [SLURM](/userinfo/rivanna/slurm/)), we need to define a backend to dispatch jobs. A Cromwell configuration file, written in HOCON syntax, can be used to define the execution behavior of the pipeline and its integration with a job scheduler, in this case [SLURM](/userinfo/rivanna/slurm/).
+In order to allow Cromwell to interact with Rivanna (via [SLURM](/userinfo/hpc/slurm/)), we need to define a backend to dispatch jobs. A Cromwell configuration file, written in HOCON syntax, can be used to define the execution behavior of the pipeline and its integration with a job scheduler, in this case [SLURM](/userinfo/hpc/slurm/).
 
 The following configuration can be used as a base, you can save it as `cromwell-rivanna.conf` in your Rivanna home directory.
 

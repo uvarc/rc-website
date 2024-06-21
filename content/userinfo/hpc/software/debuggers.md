@@ -63,7 +63,7 @@ PGI provides a very capable debugger, `pgdbg`. In its default mode, it is graphi
 The PGI compiler is transitioning to the NVIDIA HPC SDK tools.  The NVHPC debugger is called `cuda-gdb`.
 
 ## Totalview
-The most powerful debugger available on Rivanna for OpenMP and MPI codes is [Totalview](/userinfo/rivanna/software/totalview).  It is also an excellent general-purpose debugger.  It has a command line interface but is not easy to use in that mode; it is nearly always used through its graphical user interface, which is highly intuitive.  For short runs with few processes it can be used on a frontend through [FastX](/userinfo/rivanna/logintools/fastx); longer or otherwise more demanding debugging runs can occur by running an Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop).
+The most powerful debugger available on Rivanna for OpenMP and MPI codes is [Totalview](/userinfo/hpc/software/totalview).  It is also an excellent general-purpose debugger.  It has a command line interface but is not easy to use in that mode; it is nearly always used through its graphical user interface, which is highly intuitive.  For short runs with few processes it can be used on a frontend through [FastX](/userinfo/hpc/logintools/fastx); longer or otherwise more demanding debugging runs can occur by running an Open OnDemand [Desktop](/userinfo/hpc/ood/desktop).
 
 ## Valgrind
 [Valgrind](https://valgrind.org) is a framework for dynamic analysis tools. The most widely used tool is probably `memcheck` for detecting memory leaks. Build your code as usual with `-g`, then run it as

@@ -21,7 +21,7 @@ Containers created by Singularity and Apptainer are mutually compatible as of th
 One advantage of Apptainer is that users can now build container images natively on Rivanna.
 
 # Apptainer on Rivanna (after 12/18/2023)
-Apptainer is available as a [module](/userinfo/rivanna/software/modules). The RC staff has also curated a library of pre-prepared Apptainer container images for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the `module avail` and `module spider` commands.
+Apptainer is available as a [module](/userinfo/hpc/software/modules). The RC staff has also curated a library of pre-prepared Apptainer container images for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the `module avail` and `module spider` commands.
 
 ```
 module load apptainer
@@ -158,7 +158,7 @@ salloc: job 12345 has been allocated resources
 salloc: Granted job allocation 12345
 ```
 
-If your image starts a graphical user interface or otherwise needs a display, you should use the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) rather than a command-line ijob.  Once the Desktop is launched, start a terminal window and type the commands as in any other shell.
+If your image starts a graphical user interface or otherwise needs a display, you should use the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop) rather than a command-line ijob.  Once the Desktop is launched, start a terminal window and type the commands as in any other shell.
 
 ```
 module purge

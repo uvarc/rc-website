@@ -10,7 +10,7 @@ tags = ["dac","award"]
 ***
 
 
-## Purpose
+# Purpose
 To facilitate access to the Data Analytics Center services and empower researchers to advance their research, we offer the Analytics Resource Awards.
 
 The focus of the Award will be on projects that 
@@ -22,7 +22,7 @@ ii) demonstrate potential for future funding.
 
 
 
-## The Award 
+# The Award 
 
 
 Initially, DAC will offer small awards (up to $10,000 worth of services). At a later date, we will announce opportunities for larger awards. 
@@ -30,7 +30,7 @@ Initially, DAC will offer small awards (up to $10,000 worth of services). At a l
 Recipients of the Awards will receive vouchers that may be used toward the Data Analytics Center services, such as the collaboration of DAC team members. 
  
 
-### Award Guidelines
+## Award Guidelines
 
 <u>Eligibility</u>:  The principal investigator must hold faculty status at UVA to be eligible for an Analytics Research Award.
 
@@ -107,11 +107,11 @@ We encourage you to follow these instructions precisely to ensure that your prop
 * The diversity of the data,
 * How this Award will advance your research.
 
-### Voucher Disbursement
+## Voucher Disbursement
 
 After the Awards recipients have been announced, the Data Analytics Center will work with the PI to determine the disbursement of the Award vouchers.
 
-### Publicity & Communication
+## Publicity & Communication
 * The PI must acknowledge Research Computing in any publication, presentation, or poster that results from the work done on the Award.
 * At the end of the Award, the PI must agree to have a blurb about the research project posted on the Research Computing website
 

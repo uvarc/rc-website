@@ -42,7 +42,7 @@ module spider {{% module-firstversion %}}
 
 # Interactive Use of Fiji via FastX
 
-We recommend to launch the Graphical User Interface (GUI) of Fiji as an interactive job via the Open OnDemand [Desktop](/userinfo/rivanna/ood/desktop) interactive app.  You may request a core count and amount of memory through the text boxes on the Open OnDemand form.  Be sure to supply your allocation account where requested.
+We recommend to launch the Graphical User Interface (GUI) of Fiji as an interactive job via the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop) interactive app.  You may request a core count and amount of memory through the text boxes on the Open OnDemand form.  Be sure to supply your allocation account where requested.
 
 Once the Desktop is launched, open a terminal window.  Load the `fiji` module and start the application: 
 

@@ -48,16 +48,16 @@ The tasks are joined together using linear chaining, with output from bwa step u
 
 **Rivanna modules:**
 
-* [wdltool](/userinfo/rivanna/software/wdltool)
-* [cromwell](/userinfo/rivanna/software/cromwell)
-* [bwa](/userinfo/rivanna/software/bwa)
-* [picard](/userinfo/rivanna/software/picard)
+* [wdltool](/userinfo/hpc/software/wdltool)
+* [cromwell](/userinfo/hpc/software/cromwell)
+* [bwa](/userinfo/hpc/software/bwa)
+* [picard](/userinfo/hpc/software/picard)
 
 - - -
 
 # Setup your Working Environment
 
-1. **[Login to Rivanna](/userinfo/rivanna/login)** and create a root working directory in your `/scratch` folder:
+1. **[Login to Rivanna](/userinfo/hpc/login)** and create a root working directory in your `/scratch` folder:
 
 ```
 cd /scratch/$USER/
@@ -255,7 +255,7 @@ Add command …
 }
 ```
 {{% callout %}}
-<b>Note: <a href="/userinfo/rivanna/software/picard">picard</a> is available as a module on Rivanna.</b> When you load the module to your environment (using module load picard), it also defines the $EBROOTPICARD environment variable, which defines the full path to the jar file for calling picard utilities.
+<b>Note: <a href="/userinfo/hpc/software/picard">picard</a> is available as a module on Rivanna.</b> When you load the module to your environment (using module load picard), it also defines the $EBROOTPICARD environment variable, which defines the full path to the jar file for calling picard utilities.
 {{% /callout %}}
 
 Add output …
@@ -450,7 +450,7 @@ Output in terminal:
 
 # Execute
 
-At the moment, Cromwell is the only fully-featured execution engine that supports WDL. It is available as a [module](/userinfo/rivanna/software/cromwell) on Rivanna.
+At the moment, Cromwell is the only fully-featured execution engine that supports WDL. It is available as a [module](/userinfo/hpc/software/cromwell) on Rivanna.
 
 ```
 module load cromwell
@@ -464,7 +464,7 @@ java -jar $CROMWELLPATH/cromwell-30.1.jar <action> <parameters>
 
 In order to run each task of our workflow as a slurm job, we need to configure a SLRUM backend.
 
-Create an empty text file, `cromwell-rivanna.conf`, and copy the contents described in [this post](/userinfo/rivanna/software/cromwell).
+Create an empty text file, `cromwell-rivanna.conf`, and copy the contents described in [this post](/userinfo/hpc/software/cromwell).
 
 ## Slurm batch submission script
 
@@ -494,7 +494,7 @@ java -Xmx8g -Dconfig.file=~/rivanna-cromwell.conf \
 	--inputs bwaAln.inputs.json 
 ```
 
-**Note:** This assumes that the `rivanna-crowell.conf` backend configuration file is located in your home directory. Learn more about how to create this Cromwell configuration file [here](/userinfo/rivanna/software/cromwell).
+**Note:** This assumes that the `rivanna-crowell.conf` backend configuration file is located in your home directory. Learn more about how to create this Cromwell configuration file [here](/userinfo/hpc/software/cromwell).
 
 ## Submit the job
 

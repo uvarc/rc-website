@@ -12,7 +12,7 @@ type = "rivanna"
 +++
 
 # Overview
-Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser. Within the Open OnDemand environment users have access to a file explorer; interactive applications like [JupyterLab](/userinfo/rivanna/software/jupyterlab), [RStudio Server](/userinfo/rivanna/software/rstudio) & [FastX Web](/userinfo/rivanna/logintools/fastx); a command line interface; and a job composer and job monitor.
+Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser. Within the Open OnDemand environment users have access to a file explorer; interactive applications like [JupyterLab](/userinfo/hpc/software/jupyterlab), [RStudio Server](/userinfo/hpc/software/rstudio) & [FastX Web](/userinfo/hpc/logintools/fastx); a command line interface; and a job composer and job monitor.
 
 
 # Logging in to Rivanna
@@ -48,7 +48,7 @@ The file explorer provides these basic functions:
 + Editing of text files
 + Downloading & uploading of small files
 
-Visit our [File Explorer](/userinfo/rivanna/ood/fileexplorer) guide for detailed instructions.
+Visit our [File Explorer](/userinfo/hpc/ood/fileexplorer) guide for detailed instructions.
 
 # Interactive Applications
 Open OnDemand provides access to interactive applications that provide a full graphical Rivanna desktop environments, JupyterLab for running Jupyter notebooks, RStudio Server, Matlab, a simple terminal shell, and a variety of other research apps.
@@ -56,54 +56,54 @@ Open OnDemand provides access to interactive applications that provide a full gr
 ## Desktop
 The Desktop app provides a full Linux Desktop environment launched on user-specified allocated hardware resources which may include a compute node equipped with graphical processing units (GPUs). **This is the preferred mechanism to start compute intensive applications that require a graphical user interface (GUI).**
 
-Please read the [Open OnDemand Desktop documentation](/userinfo/rivanna/ood/desktop) for detailed instructions on how to specify resources and start a desktop session.
+Please read the [Open OnDemand Desktop documentation](/userinfo/hpc/ood/desktop) for detailed instructions on how to specify resources and start a desktop session.
 
 ## FastX Web
 FastX Web enables users to start an X11 desktop environment on a remote system. When launched through Open OnDemand, FastX Web provides access to a Rivanna frontend. The FastX Web desktop environment can be used to open conventional shell terminals or launch applications with a graphical user interface. 
 
-Please read our [FastX Web documentation](/userinfo/rivanna/logintools/fastx) for a detailed description of this remote desktop environment.
+Please read our [FastX Web documentation](/userinfo/hpc/logintools/fastx) for a detailed description of this remote desktop environment.
 
-**FastX Web sessions are not suitable for running compute intensive applications or code--[Open OnDemand Desktop](/userinfo/rivanna/ood/desktop) is intended for such purpose.**
+**FastX Web sessions are not suitable for running compute intensive applications or code--[Open OnDemand Desktop](/userinfo/hpc/ood/desktop) is intended for such purpose.**
 
 ## JupyterLab
 JupyerLab provides an environment that has become popular for interactive code development and debugging. JupyterLab sessions run on user-specified allocated hardware resources which may include compute nodes equipped with graphical processing units (GPUs).
 
-Please read the [JupyterLab documentation](/userinfo/rivanna/software/jupyterlab) for detailed instructions on how to start JupyerLab sessions and specify hardware resource requests.
+Please read the [JupyterLab documentation](/userinfo/hpc/software/jupyterlab) for detailed instructions on how to start JupyerLab sessions and specify hardware resource requests.
 
 After starting a JupyterLab session, you're taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## RStudio Server
 RStudio provides an environment specifically designed for interactive R script development and debugging.
 
-Please read the [RStudio Server documentation](/userinfo/rivanna/software/rstudio) for detailed instructions on how to start RStudio sessions and specify hardware resource requests.
+Please read the [RStudio Server documentation](/userinfo/hpc/software/rstudio) for detailed instructions on how to start RStudio sessions and specify hardware resource requests.
 
 After starting an RStudio session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Matlab
 The Matlab interface provides an environment for interactive Matlab script development and debugging.
 
-Please read the [Matlab documentation](/userinfo/rivanna/software/matlab) for detailed instructions on how to start Matlab sessions and specify hardware resource requests.
+Please read the [Matlab documentation](/userinfo/hpc/software/matlab) for detailed instructions on how to start Matlab sessions and specify hardware resource requests.
 
 After starting an interactive Matlab session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Blender
 Through this interface users can run interactive Blender sessions on a dedicated GPU node.
 
-Please read the [Blender documentation](/userinfo/rivanna/software/blender) for detailed instructions on how to start Blender sessions and specify hardware resource requests.
+Please read the [Blender documentation](/userinfo/hpc/software/blender) for detailed instructions on how to start Blender sessions and specify hardware resource requests.
 
 After starting an interactive Blender session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## ParaView
 Through this interface users can run interactive ParaView sessions on a dedicated GPU node.
 
-Please read the [ParaView documentation](/userinfo/rivanna/software/paraview) for detailed instructions on how to start ParaView sessions and specify hardware resource requests.
+Please read the [ParaView documentation](/userinfo/hpc/software/paraview) for detailed instructions on how to start ParaView sessions and specify hardware resource requests.
 
 After starting an interactive ParaView session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Command Line Interface (Shell)
-To open a conventional command line terminal window, click on the `Clusters` drop-down menu and select `Rivanna Shell Access`. A new tab opens that provides a Bash command line environment.  This is similar to logging in through ssh but with the limitation that it cannot start graphical (X11) applications.  You must use [FastX](/userinfo/rivanna/logintools/fastx) for X11 applications such as the Matlab desktop.
+To open a conventional command line terminal window, click on the `Clusters` drop-down menu and select `Rivanna Shell Access`. A new tab opens that provides a Bash command line environment.  This is similar to logging in through ssh but with the limitation that it cannot start graphical (X11) applications.  You must use [FastX](/userinfo/hpc/logintools/fastx) for X11 applications such as the Matlab desktop.
 
 # Job Composer
 The Job Composer is an easy way to submit general-purpose jobs.  You can copy pre-existing templates and modify them for your application, then submit a job at the click of a few buttons.  It works with the File Explorer to allow you to upload or move files you need for your job, and to download your results.
 
-Visit our [Job Composer](/userinfo/rivanna/ood/jobcomposer) documentation for details.
+Visit our [Job Composer](/userinfo/hpc/ood/jobcomposer) documentation for details.

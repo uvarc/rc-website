@@ -91,4 +91,4 @@ module load apptainer
 apptainer run|exec|shell image.sif
 ```
 
-Please visit [this page](/userinfo/rivanna/software/containers) for more information on `run`, `shell`, and `exec`.
+Please visit [this page](/userinfo/hpc/software/containers) for more information on `run`, `shell`, and `exec`.

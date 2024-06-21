@@ -65,7 +65,7 @@ chmod +x run_rserver.sh
 {{< /code-snippet >}}
 
 # Launch
-We recommend launching this in a [FastX Web (MATE)](/userinfo/rivanna/logintools/fastx/) session for short runs or debugging on the frontend. For production runs you can request a [Desktop](/userinfo/rivanna/ood/desktop) interactive app. Both FastX and the Desktop can be accessed at our [Open OnDemand](/userinfo/rivanna/ood/overview) [portal](https://ood.hpc.virginia.edu).
+We recommend launching this in a [FastX Web (MATE)](/userinfo/hpc/logintools/fastx/) session for short runs or debugging on the frontend. For production runs you can request a [Desktop](/userinfo/hpc/ood/desktop) interactive app. Both FastX and the Desktop can be accessed at our [Open OnDemand](/userinfo/hpc/ood/overview) [portal](https://ood.hpc.virginia.edu).
 
 Once in either FastX or a remote Desktop, start a terminal window.
 To launch RStudio Server, execute:

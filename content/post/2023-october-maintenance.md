@@ -32,7 +32,7 @@ _I need 10 cores and 50 GB memory._ Since this amounts to 5 GB memory per core, 
 #SBATCH -c 10
 ```
 
-_I am not sure how much memory I need._ First submit the job to the `standard` partition without specific memory requests. If the job runs out of memory, resubmit to the `largemem` partition. To check the memory usage of a completed job, you may either [run the seff command](/userinfo/rivanna/slurm/#completed-job) or add to your Slurm script:
+_I am not sure how much memory I need._ First submit the job to the `standard` partition without specific memory requests. If the job runs out of memory, resubmit to the `largemem` partition. To check the memory usage of a completed job, you may either [run the seff command](/userinfo/hpc/slurm/#completed-job) or add to your Slurm script:
 ```bash
 #SBATCH --mail-user=your_computing_id@virginia.edu
 #SBATCH --mail-type=end

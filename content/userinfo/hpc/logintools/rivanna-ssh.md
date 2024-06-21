@@ -15,7 +15,7 @@ type = "rivanna"
 
 # Connecting to a Remote Host
 
-For Windows, [MobaXterm](/userinfo/rivanna/logintools/mobaxterm) is our recommended `ssh` client; this package also provides an SFTP client and an X11 server in one bundle.
+For Windows, [MobaXterm](/userinfo/hpc/logintools/mobaxterm) is our recommended `ssh` client; this package also provides an SFTP client and an X11 server in one bundle.
 
 Mac OSX and Linux users access the cluster from a terminal through OpenSSH, which are preinstalled on these operating systems. Open a terminal (on OSX, the Terminal application) and type
 ```
@@ -90,7 +90,7 @@ Host *
 ```
 There should be one or more spaces at the beginning of the second line.
 
-- MobaXterm users should see the [documentation](/userinfo/rivanna/logintools/mobaxterm) for instructions to enable KeepAlive.
+- MobaXterm users should see the [documentation](/userinfo/hpc/logintools/mobaxterm) for instructions to enable KeepAlive.
 
 - When in doubt, you can obtain more information by running `ssh` with the -v (verbose) flag.
 ```

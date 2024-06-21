@@ -8,7 +8,7 @@ images = [
 categories = [
   "service", "status"
 ]
-date = "2024-05-13T00:00:00-00:01"
+date = "2024-06-20T00:00:00-00:01"
 tags = [
   "service",
   "status",
@@ -37,9 +37,9 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 - Though the new Project storage system is operating with expected performance, the transfer of all data from the old storage system will take several months. The severe performance degradation of the old storage system will remain a bottleneck regardless of the change in data transfer method.
 - Rivanna and RC’s other storage services, Scratch and Research Standard, continue to operate normally.
 
-**Update: 2024-05-13** 
+**Update: 2024-06-20** 
 - **Before February 26:** A total of 1.7 PB out of 4.3 PB were copied from old Project storage to /project folder on the new storage system using the automated migration process before February 26 (40%).
-- **Since February 26:** A total of 3.68 PB out of 4.3 PB have been copied and are now available in the /stagedproject or /project folders on the new storage system (85.6 %)
+- **Since February 26:** A total of 4.25 PB out of 4.3 PB have been copied and are now available in the /stagedproject or /project folders on the new storage system (98.8 %)
 {{% /callout %}}
 
 {{% highlight %}}
@@ -154,7 +154,7 @@ Before February 26, your <nobr>`/project`</nobr> folder contains a mix of files,
 
 On February 26, the old and new Project storage systems will be disconnected. Researchers will not have any direct access to the old Project storage. The current <nobr>`/project`</nobr> folder on the new storage system should perform optimally without the tether to the old storage system. We will begin deleting the empty stub files on <nobr>`/project`</nobr>. These are empty files and are not needed for the new migration process. **The original files are still intact and secure on the old system.** 
 
-A new filesystem <nobr>`/stagedproject`</nobr> will be mounted read-only on <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a>, compute nodes, and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). This folder will be used as a target to stage your data as it is being transferred from the old system to the new system. Setting up a new destination for the not yet transferred files prevents potential interference with your active work in <nobr>`/project`</nobr>. 
+A new filesystem <nobr>`/stagedproject`</nobr> will be mounted read-only on <a href="/userinfo/hpc/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a>, compute nodes, and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). This folder will be used as a target to stage your data as it is being transferred from the old system to the new system. Setting up a new destination for the not yet transferred files prevents potential interference with your active work in <nobr>`/project`</nobr>. 
 
 **Your Project storage folders on February 26:**
 
@@ -193,11 +193,11 @@ Beginning February 26, all your files, including files that are still on the old
 {{% /accordion-item %}}
 
 {{% accordion-item title="4. How do I access the new /stagedproject folder?"  id="faq-4" %}}
-On February 26, a new <nobr>`/stagedproject`</nobr> folder will become available in **read-only** mode on the <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a> and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). It will not be available on compute nodes. This folder will be used as destination to stage data transferred from your old Project storage to the new storage system. 
+On February 26, a new <nobr>`/stagedproject`</nobr> folder will become available in **read-only** mode on the <a href="/userinfo/hpc/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a> and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN). It will not be available on compute nodes. This folder will be used as destination to stage data transferred from your old Project storage to the new storage system. 
 {{% /accordion-item %}}
 
 {{% accordion-item title="5. How can I work with the files that have been transferred into my /stagedproject folder?"  id="faq-5" %}}
-On Feb 26, your folder in <nobr>`/stagedproject`</nobr> is set up as **read-only** on the <a href="/userinfo/rivanna/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a>, compute nodes, and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN).
+On Feb 26, your folder in <nobr>`/stagedproject`</nobr> is set up as **read-only** on the <a href="/userinfo/hpc/login/#secure-shell-access-ssh" target="_blank">Rivanna login nodes</a>, compute nodes, and the <a href="/userinfo/globus/#transferring-files" target="_blank">UVA Standard Security Storage</a> data transfer node (DTN).
 
 <img src="/images/service/StorageOverview-3-5.png" alt="Project storage" width="100%"/>
 
