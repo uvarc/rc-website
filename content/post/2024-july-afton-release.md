@@ -249,7 +249,7 @@ Use of Afton hardware may allow jobs to complete faster but may consume more SUs
 
 {{% accordion-item title="16. How can I get help?" id="faq-16" %}}
 
-Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m. starting March 6.
+Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m..
 
 {{% /accordion-item %}}
 
