@@ -52,13 +52,13 @@ No, the new Afton system exists side-by-side with the existing Rivanna system. B
 
 {{% accordion-item title="2. What compute capabilities does the new Afton hardware offer?" id="faq-2" %}}
 
-On May 28, total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454 architecture have been added to UVA’s HPC environment. The added nodes expand UVA's HPC capabilities in the following areas:
+On May 28, a total of 300 compute nodes with 96 cores each, based on the AMD EPYC 9454 architecture, have been added to UVA’s HPC environment. The added nodes expand UVA's HPC capabilities in the following areas:
 
 - A complete hardware refresh of the `parallel` partition that roughly doubles its capacity (based on aggregated cpu core count).
 
 - Expanded capacity of the `standard` partition for single node jobs and high-throughput computing, including new largemem nodes.
 
-- Addition of new nodes with general purpose graphics processing units (GPUs) accommodate more ML/DL computing in the `gpu` partition.
+- Addition of new nodes with general purpose graphics processing units (GPUs) to accommodate more ML/DL computing in the `gpu` partition.
 
 {{% /accordion-item %}}
 
@@ -82,7 +82,7 @@ The login access points are shared for the Afton and Rivanna systems.
 
 - **Option 3:** Secure Shell (ssh) session
 
-See [here for details](/userinfo/hpc/login/). You have to be a member of an active HPC allocation before you can log in.
+See [here for details](/userinfo/hpc/login/). You must be a member of an active HPC allocation before you can log in.
 
 {{% /accordion-item %}}
 
@@ -99,7 +99,7 @@ See ["What are the changes to the hardware partitions?"](#faq-6) and ["What are 
 The following partition changes are taking place on July 2:
  
 - The pre-release `afton` partition will be removed. The nodes will be placed in other partitions. 
-- The `parallel` partition will be completely replaced with 200 Afton nodes. The original nodes will be placed in `standard`.
+- The nodes making up the `parallel` partition will be completely replaced with 200 Afton nodes. The original nodes will be placed into `standard`.
 - The `largemem` partition will be removed. All 750GB nodes will be placed in the `standard` partition. 
 - All RTX3090 nodes from the `gpu` partition will be placed in the `interactive` partition.
 
@@ -119,7 +119,7 @@ New partition configuration:
 
 Nodes of the `largemem` partition have been moved to the `standard` partition. See ["What are the changes to the hardware partitions?"](#faq-6)
 
-The `dev` and `instructional` partitions have been merged and replaced with a single `interactive` partition during the *Afton pre-release* on May 30.
+The `dev` and `instructional` partitions were merged and replaced with a single `interactive` partition during the *Afton pre-release* on May 30.
 
 {{% /accordion-item %}}
 
@@ -127,7 +127,7 @@ The `dev` and `instructional` partitions have been merged and replaced with a si
 
 Features constraints and generic resources (GRES) allow you to request specific hardware within a given partition. **Through feature constraints you can specify if a job should be scheduled on the new Afton hardware or the older Rivanna system.**
 
-Features constraints are optional; you may submit jobs without feature constraints. If no feature constraint is specified, the Slurm scheduler will place your job on available partition hardware following a default priority order.
+Feature constraints are optional; you may submit jobs without feature constraints. If no feature constraint is specified, the Slurm scheduler will place your job on available partition hardware following a default priority order.
 
 **Note:** Not all features are available in every partition. This table lists the available features for each partition, including the default if no feature is specified. 
 
@@ -142,7 +142,7 @@ Features constraints are optional; you may submit jobs without feature constrain
 
 <br>
 
-See ["How do I use Afton for my Slurm job? Do I need to update my job scripts?"](#faq-9) and ["How can I use the new Afton hardware in Open OnDemand?"](#faq-10) for instructions to use these feature constraints in your job submission scripts or Open OnDemand.
+See ["How do I use Afton for my Slurm job? Do I need to update my job scripts?"](#faq-9) and ["How can I use the new Afton hardware in Open OnDemand?"](#faq-10) for instructions on using these feature constraints in your job submission scripts or Open OnDemand.
 
 {{% /accordion-item %}}
 
@@ -151,13 +151,13 @@ See ["How do I use Afton for my Slurm job? Do I need to update my job scripts?"]
 Most users should be able to submit jobs without changing their Slurm job scripts, unless:
 - invalid request due to partition changes (see ["What are the changes to the hardware partitions?"](#faq-6))
 
-    - *Example:* A job submitted to `largemem` will become invalid since the partition is removed. One should submit to `standard` with `--mem=...` to specify the memory.
+    - *Example:* A job submitted to `largemem` will become invalid since the partition has been removed. One should submit to `standard` with `--mem=...` to specify the memory.
 
 - cost considerations (see [How is compute time charged on the Rivanna and Afton systems?](#faq-12))
     - *Example:* Instead of running a light GPU job on an A100 in `gpu`, request an RTX2080 or RTX3090 in `interactive` via `--gres=gpu`.
 
-- need specific Rivanna vs Afton hardware for performance/reproducibility/benchmarking reasons (only relevant for `standard` and `interactive`) 
-    - *Example:* To restrict a `standard` job to run on the new Afton hardware, provide a constraint (`-C`):
+- a need for specific Rivanna vs Afton hardware for performance/reproducibility/benchmarking reasons (only relevant for `standard` and `interactive`) 
+    - *Example:* To restrict a `standard` job to run on the new Afton hardware, provide a constraint (`--constraint=` or `-C`):
 ```
 #SBATCH -p standard
 #SBATCH --constraint=afton
