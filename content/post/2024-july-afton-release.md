@@ -76,11 +76,11 @@ The service unit allocations are shared for Rivanna and Afton. If you already ha
 
 The login access points are shared for the Afton and Rivanna systems.
 
-- **Option 1:** Web access via Open OnDemand
+- **Option 1:** Web access via Open OnDemand: [https://ood.hpc.virginia.edu](https://ood.hpc.virginia.edu)
 
-- **Option 2:** Remote Desktop via FastX
+- **Option 2:** Remote Desktop via FastX: [https://fastx.hpc.virginia.edu](https://fastx.hpc.virginia.edu)
 
-- **Option 3:** Secure Shell (ssh) session
+- **Option 3:** Secure Shell (ssh) session: <user_id_>@login.hpc.virginia.edu
 
 See [here for details](/userinfo/hpc/login/). You must be a member of an active HPC allocation before you can log in.
 
