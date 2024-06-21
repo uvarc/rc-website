@@ -67,7 +67,7 @@ On May 28, total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454
 The service unit allocations are shared for Rivanna and Afton. If you already have an active Rivanna allocation, no action is required. If you'd like to start using Afton or Rivanna, please [follow the instructions here](/userinfo/hpc/allocations/#allocation-types).
 
 {{% callout %}}
-**Please note:** {{% pi-eligibility %}}.
+**Please note:** {{% pi-eligibility %}}
 {{% /callout %}}
 
 {{% /accordion-item %}}
@@ -88,7 +88,7 @@ See [here for details](/userinfo/hpc/login/). You have to be a member of an acti
 
 {{% accordion-item title="5. Can I still use Rivanna?" id="faq-5" %}}
 
-Yes. Login access points are shared for the Rivanna and Afton systems. We added new hardware feature tags that allow you to specifically request Rivanna resources for your compute jobs. 
+Yes. Login access points are shared for the Rivanna and Afton systems. We added new hardware feature tags that allow you to specifically request Rivanna resources for your compute jobs once logged in. 
 
 See ["What are the changes to the hardware partitions?"](#faq-6) and ["What are hardware features? What are the hardware feature defaults for each partition?"](#faq-10).
 
@@ -223,23 +223,23 @@ Use of Afton hardware may allow jobs to complete faster but may consume more SUs
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="14. What is fair share?" id="faq-14" %}}
+{{% accordion-item title="14. What is fairshare?" id="faq-14" %}}
 
 To ensure fair access to the HPC environment for all research groups, we utilize Slurm's job accounting and fairshare system. This system influences job placement priority, with a higher fairshare value typically resulting in a higher queue priority. However, the fairshare value decreases as more service units are consumed.
 
-Crucially, fairshare values are linked to the Principal Investigator (PI) of the allocation being utilized. This connection prevents any single group from dominating the resources in the six-hour partition and maintains fairness among owner groups, especially those who have not utilized their fairshare allocation for an extended period.
+Crucially, fairshare values are linked to the Principal Investigator (PI) of the allocation being utilized. This connection prevents any single group from dominating the resources and maintains fairness across PI groups, especially those who have not utilized their fairshare allocation for an extended period.
 
 Paid service units place fairshare values and job priority above those of users utilizing instructional or standard allocations. 
 
 {{% /accordion-item %}}
 
-{{% accordion-item title="15. How do use of different hardware and service unit burn rates affect my fair share?" id="faq-15" %}}
+{{% accordion-item title="15. How do use of different hardware and service unit burn rates affect my fairshare?" id="faq-15" %}}
 
-The high performance new Afton hardware as well as the higher-end GPU hardware incur higher service unit (SU) burn rates. For example, use allocation of 40 cores and 256GB of memory on an older Rivanna node consumes more service units than the same cpu core and memory allocation on a newer Afton node. Similarly, use of an NVIDIA A100 80GB GPU device incurs a higher SU charge per hour compared to a lower-end NVIDIA A6000 GPU device.
+The high performance new Afton hardware as well as the higher-end GPU hardware incur higher service unit (SU) burn rates. For example, allocation of 40 cores and 256GB of memory on a new Afton node consumes more service units per hour than the same cpu core and memory allocation on an older Rivanna node. Similarly, use of an NVIDIA A100 80GB GPU device incurs a higher SU charge per hour compared to a lower-end NVIDIA A6000 GPU device.
 
 The more SUs have been consumed, the lower the fairshare value drops. This will impact the user's priority when submitting new jobs with the same allocation.
 
-Use of Afton hardware may allow jobs to complete faster but may consume more SUs overall due to a higher burn rate.
+Use of Afton hardware may allow jobs to complete faster but may consume more SUs overall due to a higher burn rate. See ["How is compute time charged on the Rivanna and Afton systems?"](#faq-12).
 
 {{% /accordion-item %}}
 
