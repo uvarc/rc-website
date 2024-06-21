@@ -46,7 +46,7 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 {{% accordion-item title="1. Is Afton replacing the older Rivanna system?" id="faq-1" %}}
 
-No, the new Afton system exists side-by-side with the existing Rivanna system. Both systems are accessible through shared login nodes, see ["How do I login to the Afton system?"](/userinfo/#faq-4). [test](/2024/06/production-release-of-the-afton-hpc-system-july-2-2024/#faq-4)
+No, the new Afton system exists side-by-side with the existing Rivanna system. Both systems are accessible through shared login nodes, see ["How do I login to the Afton system?"](/userinfo/#faq-4).
 
 {{% /accordion-item %}}
 
