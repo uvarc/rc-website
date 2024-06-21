@@ -54,11 +54,11 @@ No, the new Afton system exists side-by-side with the existing Rivanna system. B
 
 On May 28, a total of 300 compute nodes with 96 cores each, based on the AMD EPYC 9454 architecture, have been added to UVA’s HPC environment. The added nodes expand UVA's HPC capabilities in the following areas:
 
-- A complete hardware refresh of the `parallel` partition that roughly doubles its capacity (based on aggregated cpu core count).
+- A complete hardware refresh of the `parallel` partition with 96-core nodes that roughly doubles its capacity (based on aggregated cpu core count).
 
-- Expanded capacity of the `standard` partition for single node jobs and high-throughput computing, including new largemem nodes.
+- Expanded capacity of the `standard` partition for single node jobs and high-throughput computing with up to 96 cores and 1.5TB of memory per node.
 
-- Addition of new nodes with general purpose graphics processing units (GPUs) to accommodate more ML/DL computing in the `gpu` partition.
+- Addition of new nodes with NVIDIA A40 general purpose graphics processing units (GPUs) to accommodate more ML/DL computing in the `gpu` partition.
 
 {{% /accordion-item %}}
 
