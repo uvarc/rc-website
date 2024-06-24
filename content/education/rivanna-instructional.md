@@ -44,7 +44,7 @@ Instructors planning to use HPC should fill out the [form](https://www.rc.virgin
 Prior to the first class use, instructors should test the allocation and the software applications required during class.  Please do not wait until multiple students are attempting to use it.  
 
 ## Passwords
-Students, particularly undergraduates, frequently experience password difficulties.  Rivanna and Aftor use the Eservices password to authenticate, but few students know this password.  Instructors are urged to communicate to students that they should go to the ITS [password page](https://virginia.service-now.com/its?id=itsweb_services&category_id=869613f3db9fc7c0f032f1f51d9619ce) at least several hours in advance and change their Netbadge password before using the system.  Changing the Netbadge password will sync the Eservices password with it.
+Students, particularly undergraduates, frequently experience password difficulties.  Rivanna and Afton use the Eservices password to authenticate, but few students know this password.  Instructors are urged to communicate to students that they should go to the ITS [password page](https://virginia.service-now.com/its?id=itsweb_services&category_id=869613f3db9fc7c0f032f1f51d9619ce) at least several hours in advance and change their Netbadge password before using the system.  Changing the Netbadge password will sync the Eservices password with it.
 
 ## Partition and Reservations
 
