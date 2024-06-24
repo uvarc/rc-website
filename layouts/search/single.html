@@ -1,19 +1,24 @@
 {{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "head-extra" }}<style>
+    .card-group .card a {
+        text-decoration:none;
+    }
+</style>{{end}}
 {{ define "main" }}
-{{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
-<article class="blog-post">
-  <header>
-    <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
-<!--    <p class="blog-post-meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> by {{ .Params.author | default .Site.Params.author }}{{ if or (.Params.categories) (.Params.tags) }} in {{ partial "meta-terms.html" . }}{{ end }}</p> -->
-  </header>
-
-  <div class="explainer">
-    {{ .TableOfContents }}  
-    {{ .Content }}
-  </div>
-
-</article> <!-- /.blog-post -->
+<h2>Search Results</h2>
+<script>
+  (function() {
+    var cx = '009070394138504404541:6d4gc6cb7oi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchresults-only linktarget="_parent"></gcse:searchresults-only>
 
 {{ end }}
 
