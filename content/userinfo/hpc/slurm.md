@@ -55,7 +55,7 @@ document.addEventListener('keydown', (event) => {
 
 <img style="margin-left:2rem; margin-bottom:2rem; float:right; max-width:30%;" src="/images/rivanna/slurm-workload-manager.png" />
 
-Rivanna is a multi-user, managed environment.  It is divided into login nodes (also called frontends), which are directly accessible by users, and compute nodes, which must be accessed through the _resource manager_.  Users prepare their computational workloads, called _jobs_, on the login nodes and submit them to the job controller, a component of the resource manager that runs on login nodes and is responsible for scheduling jobs and monitoring the status of the compute nodes.
+UVA HPC is a multi-user, managed environment.  It is divided into login nodes (also called frontends), which are directly accessible by users, and compute nodes, which must be accessed through the _resource manager_.  Users prepare their computational workloads, called _jobs_, on the login nodes and submit them to the job controller, a component of the resource manager that runs on login nodes and is responsible for scheduling jobs and monitoring the status of the compute nodes.
 
 We use **Slurm**, an open-source tool that manages jobs for Linux clusters. Jobs are submitted to the Slurm controller, which queues them until the system is ready to run them. The controller selects which jobs to run, when to run them, and how to place them on the compute node or nodes, according to a predetermined site policy meant to balance competing user needs and to maximize efficient use of cluster resources. Slurm divides a cluster into logical units called _partitions_ (generally known as queues in other systems). Different partitions may contain different nodes, or they may overlap; they may also impose different resource limitations. The UVA HPC environment provides several partitions and there is no default; each job must request a partition. To determine which queues are available, log in to the HPC System and type 
 ``` 
@@ -68,7 +68,7 @@ qlimits
 
 # Local Queue Configuration
 
-Several queues (partitions) are available for different types of jobs.  One queue is restricted to single-node (serial or threaded) jobs; another for multinode parallel programs, and others are for access to specialty hardware such as large-memory nodes or nodes offering GPUs.  For the current queue configuration and policies on Rivanna please see its homepage. 
+Several queues (partitions) are available for different types of jobs.  One queue is restricted to single-node (serial or threaded) jobs; another for multinode parallel programs, and others are for access to specialty hardware such as large-memory nodes or nodes offering GPUs.  For the current queue configuration and policies on UVA HPC please see its homepage. 
 
 # Slurm Architecture
 
@@ -502,9 +502,9 @@ Two models of NVIDIA A100 GPUs are available; 2 nodes with 40GB of GPU memory pe
 ```
 This is in addition to requesting an `a100` in the `gres` option.
 
-### NVIDIA GPU BasePOD™ Now Available for Rivanna Users
+### NVIDIA GPU BasePOD™ Now Available for Rivanna and Afton Users
 
-As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna, UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
+As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna and Afton, UVA's High-Performance Computing (HPC) systems. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
 
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 

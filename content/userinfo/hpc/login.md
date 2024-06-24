@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class=lead>Rivanna is accessible through a web portal, secure shell terminals, or a remote desktop environment.  For of all of these access points, your login is your UVA computing ID and your password is your Eservices password.  If you do not know your Eservices password you must change it through ITS.</p>
+<p class=lead>The UVA HPC systems (Rivanna and Afton) are accessible through a web portal, secure shell terminals, or a remote desktop environment.  For of all of these access points, your login is your UVA computing ID and your password is your Eservices password.  If you do not know your Eservices password you must change it through ITS.</p>
 
 {{< off-campus >}}
 
@@ -19,7 +19,7 @@ type = "rivanna"
 
 <img alt="OpenOnDemand" src="/images/ood.png" align="right" style="max-width:30%;">
 
-Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser.  The Open OnDemand access point is ood.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our [Open OnDemand documentation](/userinfo/hpc/ood/overview) page.
+Open OnDemand is a graphical user interface that allows access to HPC via a web browser.  The Open OnDemand access point is ood.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna cluster.  Detailed instructions can be found on our [Open OnDemand documentation](/userinfo/hpc/ood/overview) page.
 
 [<button class="btn btn-primary">Launch Open OnDemand</button>](https://ood.hpc.virginia.edu/)
 [<button class="btn btn-primary">Learn more about Open OnDemand</button>](/userinfo/hpc/ood/overview/)
@@ -27,7 +27,7 @@ Open OnDemand is a graphical user interface that allows access to Rivanna via a 
 
 # Secure Shell Access (SSH)
 
-Rivanna is accessible through **ssh** (Secure Shell) connections using the hostname `login.hpc.virginia.edu`.
+UVA HPC is accessible through **ssh** (Secure Shell) connections using the hostname `login.hpc.virginia.edu`.
 
 ## <i class="fab fa-windows fa-1x"></i> Windows
 

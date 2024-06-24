@@ -63,7 +63,7 @@ Content of this website is contained in a series of markdown files within the `c
 * `post` - General posts like features, announcements.
 * `project` - The series of recent projects featured in tiles.
 * `service` - Services offered by our staff.
-* `userinfo` - Systems and information we support: Rivanna, Ivy, Skyline, etc., and detailed user information.
+* `userinfo` - Systems and information we support: Rivanna, Afton, Ivy, Skyline, etc., and detailed user information.
 
 ### Methods for creating content:
 

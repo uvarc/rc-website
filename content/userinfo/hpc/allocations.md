@@ -18,7 +18,7 @@ var user_token = getCookie("__user_token");
 
 <div class="bd-callout bd-callout-warning">
 <div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
-<p>Time on Rivanna is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 1M SUs). Allocations are managed through <a href="https://groups.identity.virginia.edu" target="_new" style="font-weight:bold;">Grouper</a> (requires VPN connection) groups that should be created by Principal Investigators (PIs) before they submit an allocation request. </p>
+<p>Time on Rivanna/Afton is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 1M SUs). Allocations are managed through <a href="https://groups.identity.virginia.edu" target="_new" style="font-weight:bold;">Grouper</a> (requires VPN connection) groups that should be created by Principal Investigators (PIs) before they submit an allocation request. </p>
 </div>
 
 # Eligibility and Account Creation
@@ -58,7 +58,7 @@ Standard allocations require a brief summary of the research project along with 
 - - -
 
 ## Allocation Purchases
-Time on Rivanna can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
+Time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
 
 **Available to:** [Eligible PIs](#eligibility-and-account-creation) who need priority access and premium service.
 
@@ -69,7 +69,7 @@ Time on Rivanna can also be purchased using an FDM. Purchasers are given a highe
 - - -
 
 ## Instructional Allocations
-Instructional allocations provide limited access to Rivanna and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a Grouper account name using the class rubric, e.g. cs5014. Instructional allocations come with 1TB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
+Instructional allocations provide limited access to Rivanna and Afton and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a Grouper account name using the class rubric, e.g. cs5014. Instructional allocations come with 1TB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
 
 **Available to:** Faculty who intend to use HPC resources in their class. 
 

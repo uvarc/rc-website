@@ -25,15 +25,15 @@ aliases = [ "/rivanna" ]
 {{< systems-boilerplate >}}
 
 {{< lead >}}
-The sections below contain important information for new and existing Rivanna users. Please read each carefully.
+The sections below contain important information for new and existing Rivanna and Afton users. Please read each carefully.
 {{< /lead >}}
 
 {{< lead >}}
-New users are invited to attend one of our free orientation sessions ("Introduction to Rivanna") held throughout the year.
+New users are invited to attend one of our free orientation sessions ("Introduction to HPC") held throughout the year.
 {{< /lead >}}
 
 <div>
-<a href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-md">Sign up for an "Intro to Rivanna" session</button></a>
+<a href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-md">Sign up for an "Intro to HPC" session</button></a>
 </div>
 
 - - -
@@ -61,7 +61,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="margin-right:3rem;border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">File Transfer</h5>
-      <p class="card-text">Moving files between Rivanna and other systems.</p>
+      <p class="card-text">Moving files between Rivanna/Afton and other systems.</p>
       <a href="/userinfo/data-transfer/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
@@ -85,7 +85,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Running Jobs in Slurm</h5>
-      <p class="card-text">Submitting jobs to Rivanna through the Slurm resource manager</p>
+      <p class="card-text">Submitting jobs to Rivanna/Afton through the Slurm resource manager</p>
       <a href="/userinfo/hpc/slurm/"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
@@ -102,7 +102,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;">
     <div class="card-body">
       <h5 class="card-title">Usage Policies</h5>
-      <p class="card-text">Understand the terms and conditions for using Rivanna.</p>
+      <p class="card-text">Understand the terms and conditions for using Rivanna/Afton.</p>
       <a href="/userinfo/hpc/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
@@ -125,7 +125,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
 A high performance computing cluster is typically made up of at least four service layers:
 
 1. **Login nodes** - Where you log in, interact with data and code, and submit jobs.
-2. **Compute nodes** - Where production jobs are run. On Rivanna these nodes are heterogenous; some have more memory, some have GPU devices, and so forth. Partitions are homogeneous so you can select specialty hardware by your partition request, sometimes along with a resource request (gres).
+2. **Compute nodes** - Where production jobs are run. On Rivanna and Afton these nodes are heterogenous; some have more memory, some have GPU devices, and so forth. Partitions are homogeneous so you can select specialty hardware by your partition request, sometimes along with a resource request (gres).
 3. **Storage** - Where files are stored, accessible by all nodes in the cluster.
 4. **Resource Manager** - A software system that accepts job requests, schedules the jobs on a node or set of nodes, then manages their execution.
 
@@ -151,7 +151,7 @@ A high performance computing cluster is typically made up of at least four servi
 
 ## Job Queues
 
-Rivanna is a managed resource; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna is Slurm.  Slurm refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
+Rivanna and Afton are managed resources; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna and Afton is Slurm.  Slurm refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
 
 {{< rivanna-queue >}}
 

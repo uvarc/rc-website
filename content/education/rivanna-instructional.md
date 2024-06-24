@@ -1,7 +1,7 @@
 +++
 draft = false
 date = "2023-09-13T10:55:28-05:00"
-title = "Instructional Use of Rivanna"
+title = "Instructional Use of High Performance Computing"
 description = ""
 author = "RC Staff"
 categories = ["education","workshops"]
@@ -9,7 +9,7 @@ tags = ["Rivanna","instructional","courses"]
 
 +++
 
-Instructors can request _instructional allocations_ on Rivanna for classes and extended workshops.  These allocations are time-limited and generally allow access to a restricted set of nodes and only one special Slurm partition, but are otherwise equivalent to any allocation.
+Instructors can request _instructional allocations_ on Rivanna and Afton for classes and extended workshops.  These allocations are time-limited and generally allow access to a restricted set of nodes and only one special Slurm partition, but are otherwise equivalent to any allocation.
 
 - - -
 
@@ -35,7 +35,7 @@ FastX connects only to a *frontend*.  We significantly restrict the time, memory
 
 # How to Submit a Request
 
-Instructors planning to use Rivanna should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a group name related to the course rubric and the instructor's name, e.g. `cs5014-mst3k`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester. 
+Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a group name related to the course rubric and the instructor's name, e.g. `cs5014-mst3k`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester. 
 
 - - -
 
@@ -44,7 +44,7 @@ Instructors planning to use Rivanna should fill out the [form](https://www.rc.vi
 Prior to the first class use, instructors should test the allocation and the software applications required during class.  Please do not wait until multiple students are attempting to use it.  
 
 ## Passwords
-Students, particularly undergraduates, frequently experience password difficulties.  Rivanna uses the Eservices password to authenticate, but few students know this password.  Instructors are urged to communicate to students that they should go to the ITS [password page](https://virginia.service-now.com/its?id=itsweb_services&category_id=869613f3db9fc7c0f032f1f51d9619ce) at least several hours in advance and change their Netbadge password before using the system.  Changing the Netbadge password will sync the Eservices password with it.
+Students, particularly undergraduates, frequently experience password difficulties.  Rivanna and Aftor use the Eservices password to authenticate, but few students know this password.  Instructors are urged to communicate to students that they should go to the ITS [password page](https://virginia.service-now.com/its?id=itsweb_services&category_id=869613f3db9fc7c0f032f1f51d9619ce) at least several hours in advance and change their Netbadge password before using the system.  Changing the Netbadge password will sync the Eservices password with it.
 
 ## Partition and Reservations
 
