@@ -12,13 +12,13 @@ tags = ["chem"
 ]
 draft = false
 shorttitle = "Chemistry"
-title = "Chemistry on Rivanna"
-description = "Chemistry Software in Rivanna's HPC environment"
+title = "Chemistry and UVA HPC"
+description = "Chemistry Software in the HPC environment"
 author = "RC Staff"
 
 +++
 # Overview
-Many popular software packages for computational chemistry are available on Rivanna.
+Many popular software packages for computational chemistry are available on Rivanna and Afton.
 
 # General considerations
 Most computational chemistry packages utilize MPI for parallel execution.  Accordingly, the Slurm job scripts should contain the following two SBATCH directives:
@@ -33,12 +33,12 @@ srun pw.x -in mymol.in
 Please see the page of the particular package you wish to use for more details.
 
 **VASP Users**
-The Vienna Ab-Initio Simulation Package, is licensed by individual groups and we do not have a common installation.  We have basic instructions for building VASP on Rivanna at its page.
+The Vienna Ab-Initio Simulation Package, is licensed by individual groups and we do not have a common installation.  We have basic instructions for building VASP on the HPC system at its page.
 
 
 # Available Chemistry Software
 
-To get an up-to-date list of the installed chemistry applications, log on to Rivanna and run the following command in a terminal window:
+To get an up-to-date list of the installed chemistry applications, log on to UVA HPC and run the following command in a terminal window:
 ```
 module keyword chem
 ```

@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "vasp"
 softwarename = "VASP"
-title = "VASP on Rivanna"
+title = "VASP and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -49,7 +49,7 @@ cp arch/makefile.include.linux_intel ./makefile.include
 ```
 This `makefile.include` is preconfigured to use the Intel compiler, IntelMPI, and the Intel MKL libraries. We recommend a few local modifications:
 
-1. VASP is written primarily in Fortran and on Rivanna the compiler option `-heap-arrays` should be added to the `makefile.include`. This can be added to the FFLAGS variable, e.g. `FFLAGS = -heap-arrays -assume byterecl -w`
+1. VASP is written primarily in Fortran and on the HPC system the compiler option `-heap-arrays` should be added to the `makefile.include`. This can be added to the FFLAGS variable, e.g. `FFLAGS = -heap-arrays -assume byterecl -w`
 2. It is advisable to change the SCALAPACK library name to `-lmkl_scalapack_lp64.so`.
 
 To use [OpenMPI](/userinfo/hpc/software/mpi), the user must also change the Fortran compiler to `FC=mpif90` and the `BLACS` library to `-lmkl_blacs_openmpi_lp64` while leaving `SCALAPACK = -lmkl_scalapack_lp64.a`.

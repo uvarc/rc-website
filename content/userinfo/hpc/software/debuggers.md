@@ -6,7 +6,7 @@ tags = [
 ]
 draft = false
 title = "Debuggers and Profilers"
-description = "Debuggers and Profilers on Rivanna"
+description = "Debuggers and Profilers and UVA HPC"
 author = "RC Staff"
 
 +++
@@ -63,7 +63,7 @@ PGI provides a very capable debugger, `pgdbg`. In its default mode, it is graphi
 The PGI compiler is transitioning to the NVIDIA HPC SDK tools.  The NVHPC debugger is called `cuda-gdb`.
 
 ## Totalview
-The most powerful debugger available on Rivanna for OpenMP and MPI codes is [Totalview](/userinfo/hpc/software/totalview).  It is also an excellent general-purpose debugger.  It has a command line interface but is not easy to use in that mode; it is nearly always used through its graphical user interface, which is highly intuitive.  For short runs with few processes it can be used on a frontend through [FastX](/userinfo/hpc/logintools/fastx); longer or otherwise more demanding debugging runs can occur by running an Open OnDemand [Desktop](/userinfo/hpc/ood/desktop).
+The most powerful debugger available on the HPC system for OpenMP and MPI codes is [Totalview](/userinfo/hpc/software/totalview).  It is also an excellent general-purpose debugger.  It has a command line interface but is not easy to use in that mode; it is nearly always used through its graphical user interface, which is highly intuitive.  For short runs with few processes it can be used on a frontend through [FastX](/userinfo/hpc/logintools/fastx); longer or otherwise more demanding debugging runs can occur by running an Open OnDemand [Desktop](/userinfo/hpc/ood/desktop).
 
 ## Valgrind
 [Valgrind](https://valgrind.org) is a framework for dynamic analysis tools. The most widely used tool is probably `memcheck` for detecting memory leaks. Build your code as usual with `-g`, then run it as
@@ -97,5 +97,5 @@ The Intel Trace Analyzer, which is focused on MPI codes, is included with our In
 
 [Open|SpeedShop](https://openspeedshop.org) is a profiler capable of operating in several different modes, for different "experiments." Unlike many profilers, it requires that only the `-g` flag be enabled.
 
-# Building on Rivanna
-For general information about building your code on Rivanna, please see our [howto](/userinfo/howtos/rivanna/compiler-howto)
+# Building on the HPC system
+For general information about building your code on the HPC system, please see our [howto](/userinfo/howtos/rivanna/compiler-howto)

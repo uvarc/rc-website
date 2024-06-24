@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "orca"
 softwarename = "ORCA"
-title = "ORCA on Rivanna"
+title = "ORCA and UVA HPC"
 author = "RC Staff"
 +++
 

@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "gromacs"
 softwarename = "GROMACS"
-title = "GROMACS on Rivanna"
+title = "GROMACS and UVA HPC"
 author = "RC Staff"
 +++
 

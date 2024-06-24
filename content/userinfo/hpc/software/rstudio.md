@@ -13,8 +13,8 @@ tags = [
 ]
 draft = false
 shorttitle = "RStudio Server"
-title = "RStudio Server on Rivanna"
-description = "RStudio Server in Rivanna's HPC environment"
+title = "RStudio Server and UVA HPC"
+description = "RStudio Server in the HPC environment"
 author = "RC Staff"
 
 +++
@@ -22,7 +22,7 @@ author = "RC Staff"
 # Overview
 RStudio Server is a web-based interface to RStudio -- a development environment for R programming.
 
-Research Computing provides a web portal where RStudio Server can be accessed on Rivanna. However, to use RStudio Server, you must have an account on Rivanna. Instructions for setting up an acccount can be found [here](/userinfo/hpc/overview/#get-started).
+Research Computing provides a web portal where RStudio Server can be accessed on the HPC system. However, to use RStudio Server, you must have an account on UVA HPC. Instructions for setting up an acccount can be found [here](/userinfo/hpc/overview/#get-started).
 
 
 # Accessing RStudio Server
@@ -43,7 +43,7 @@ before launching the instance. Here `x.y` is the major-minor version of R, e.g. 
 ```
 
 # Requesting an Instance
-Your instance (or copy) of RStudio will run on a Rivanna compute node. So, it will need a list of resources, such as partition, time, and allocation. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
+Your instance (or copy) of RStudio will run on a compute node. So, it will need a list of resources, such as partition, time, and allocation. If you are new to UVA HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
 
 1. After connecting to RStudio through Open OnDemand, a form will appear where you can fill in the resources for RStudio.
 2. When done filling in the resources, click on the blue “Launch” button at the bottom of the form.

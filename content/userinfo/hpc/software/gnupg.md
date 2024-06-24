@@ -13,7 +13,7 @@ draft = false
 shorttitle = "GnuPG"
 modulename = "gnupg"
 softwarename = "GnuPG"
-title = "GnuPG on Rivanna"
+title = "GnuPG and UVA HPC"
 author = "RC Staff"
 
 +++

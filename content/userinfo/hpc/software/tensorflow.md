@@ -5,21 +5,21 @@ tags = [
   "rivanna", "software", "machine learning"
 ]
 draft = false
-title = "TensorFlow on Rivanna"
-description = "TensorFlow on Rivanna"
+title = "TensorFlow and UVA HPC"
+description = "TensorFlow and UVA HPC"
 author = "RC Staff"
 
 +++
 # Overview
-TensorFlow is an open source software library for high performance numerical computation.  It has become a very popular tool for machine learning and in particular for the creation of deep neural networks.  The latest TensorFlow versions are now provided as prebuilt Apptainer containers on Rivanna.  The basic concept of running Apptainer containers on Rivanna is described here.
+TensorFlow is an open source software library for high performance numerical computation.  It has become a very popular tool for machine learning and in particular for the creation of deep neural networks.  The latest TensorFlow versions are now provided as prebuilt Apptainer containers on the HPC system.  The basic concept of running Apptainer containers on the HPC system is described here.
 
-TensorFlow code is provided in two flavors, either with or without support of general purpose graphics processing units (GPUs).  All TensorFlow container images provided on Rivanna require access to a GPU node.  Access to GPU nodes is detailed in the sections below.
+TensorFlow code is provided in two flavors, either with or without support of general purpose graphics processing units (GPUs).  All TensorFlow container images provided on the HPC system require access to a GPU node.  Access to GPU nodes is detailed in the sections below.
 
 # TensorFlow and Keras
 Keras is a high-level neural networks application programming interface (API), written in Python and capable of running on top of TensorFlow, CNTK, or Theano.  Since version 1.12.0, TensorFlow contains its own Keras API implementation as described on the TensorFlow website.
 
 # What is inside the TensorFlow containers?
-The TensorFlow modules on Rivanna include common Python packages such as Matplotlib and OpenCV. See <https://hub.docker.com/r/uvarc/tensorflow> for details.
+The TensorFlow modules on the HPC system include common Python packages such as Matplotlib and OpenCV. See <https://hub.docker.com/r/uvarc/tensorflow> for details.
 
 # TensorFlow Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. A few TensorFlow kernels are available.
@@ -85,7 +85,7 @@ apptainer run --nv $CONTAINERDIR/tensorflow-2.13.0.sif tf_example.py
 ```
 
 # Interaction with the Host File System
-The following user directories are overlayed onto each container by default on Rivanna:
+The following user directories are overlayed onto each container by default on the HPC system:
 
 * /home
 * /scratch

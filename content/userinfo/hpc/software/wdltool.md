@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "wdltool"
 softwarename = "WDLTool"
-title = "WDLTool on Rivanna"
+title = "WDLTool and UVA HPC"
 author = "RC Staff"
 +++
 

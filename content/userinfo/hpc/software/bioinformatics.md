@@ -13,17 +13,17 @@ tags = ["bio"
 ]
 draft = false
 shorttitle = "Bioinformatics"
-title = "Bioinformatics on Rivanna"
-description = "Bioinformatics Software in Rivanna's HPC environment"
+title = "Bioinformatics and UVA HPC"
+description = "Bioinformatics Software in the HPC environment"
 author = "RC Staff"
 
 +++
 
 # Overview
 
-Many commonly used bioinformatics software packages on Rivanna are available as individual modules or as Python packages bundled in the bioconda modules. 
+Many commonly used bioinformatics software packages on the HPC clusters are available as individual modules or as Python packages bundled in the bioconda modules. 
 
-Please see our [HowTo](/userinfo/howtos/rivanna/bioinfo-on-rivanna) for more information about using this software on Rivanna.
+Please see our [HowTo](/userinfo/howtos/rivanna/bioinfo-on-rivanna) for more information about using this software on the HPC system.
 
 # Software Availability 
 

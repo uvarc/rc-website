@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "texlive"
 softwarename = "TeX Live"
-title = "TeX Live on Rivanna"
+title = "TeX Live and UVA HPC"
 author = "RC Staff"
 +++
 

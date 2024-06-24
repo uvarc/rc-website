@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "lammps"
 softwarename = "LAMMPS"
-title = "LAMMPS on Rivanna"
+title = "LAMMPS and UVA HPC"
 author = "RC Staff"
 +++
 

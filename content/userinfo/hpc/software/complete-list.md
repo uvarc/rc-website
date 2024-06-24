@@ -9,7 +9,7 @@ tags = [
 ]
 draft = false
 title = "Rivanna Software List"
-description = "List of all Software Modules on Rivanna"
+description = "List of all Software Modules on the UVA HPC System"
 author = "RC Staff"
 categories = ["userinfo"]
 

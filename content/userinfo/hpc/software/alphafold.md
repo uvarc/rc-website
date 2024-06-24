@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "alphafold"
 softwarename = "AlphaFold"
-title = "AlphaFold on Rivanna"
+title = "AlphaFold and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -65,7 +65,7 @@ For your convenience, we have prepared a launch script `run` that takes care of 
 ### Explanation of Apptainer flags
 
 1. The database and models are stored in `$ALPHAFOLD_DATA_PATH`.
-1. A cache file `ld.so.cache` will be written to `/etc`, which is not allowed on Rivanna. The workaround is to bind-mount e.g. the current working directory to `/etc` inside the container. `[-B .:/etc]`
+1. A cache file `ld.so.cache` will be written to `/etc`, which is not allowed on the HPC system. The workaround is to bind-mount e.g. the current working directory to `/etc` inside the container. `[-B .:/etc]`
 1. You must launch AlphaFold from `/app/alphafold` inside the container due to [this issue](https://github.com/deepmind/alphafold/issues/32). `[--pwd /app/alphafold]`
 1. The `--nv` flag enables GPU support.
 

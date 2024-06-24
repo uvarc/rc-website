@@ -15,7 +15,7 @@ categories = ["userinfo"]
 
 +++
 
-<p class="lead">The <code>lmod</code> modules system on Rivanna enables users to easily set their environments for selected software and to choose versions if appropriate.</p>
+<p class="lead">The <code>lmod</code> modules system on the HPC system enables users to easily set their environments for selected software and to choose versions if appropriate.</p>
 <p class="lead">The <code>lmod</code> system is hierarchical; not every module is available in every environment.  We provide a core environment which contains most of the software installed by Research Computing staff, but software that requires a compiler or MPI is not in that environment and a compiler must first be loaded.</p>
 
 {{< button button-class="primary" button-text="View All Modules" button-url="/userinfo/hpc/software/complete-list/" >}}
@@ -208,7 +208,7 @@ The first step is to create a directory to store the modulefiles used by `lmod`.
 mkdir $HOME/modulefiles
 {{< /code-snippet >}}
 
-Next, download the software package for which you would like to create a module. Carefully follow the instructions to install your software.  Remember that most packages assume you can install as an administrator, and that is not permitted on Rivanna, so you must change your installation directory.  If you are compiling software you can find a tutorial at our [training site](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
+Next, download the software package for which you would like to create a module. Carefully follow the instructions to install your software.  Remember that most packages assume you can install as an administrator, and that is not permitted on the HPC system, so you must change your installation directory.  If you are compiling software you can find a tutorial at our [training site](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
 
 In the following example we are installing a version of `git` according to its instructions:
 
