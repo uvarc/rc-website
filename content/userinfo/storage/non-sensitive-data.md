@@ -42,12 +42,7 @@ The **Research Project Storage** file system provides users with a collaborative
 
 Once the request has been submitted, the PI will receive a notification that the `/project` space has been provisioned within 24 hours. Once the space becomes available, the PI can grant access to lab members by adding them to the Grouper group. Users in the Grouper group will see the directory (`/project/Grouper_group_name`) after logging into Rivanna. Addition and removal of users is managed by the PI of the group.
 
-{{% callout %}}
-Note for PI's creating a new Grouper group:
-
-* Specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation.
-
-{{% /callout %}}
+{{% group_creation_tip %}}
 
 # Public & Moderately Sensitive Data Storage Systems {#public--moderately-sensitive-data-storage}
 

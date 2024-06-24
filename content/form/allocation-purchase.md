@@ -75,9 +75,7 @@ private = true
     <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="su-allocation">Apply this purchase to which allocation <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="su-allocation" name="su-allocation" value="" size="60" maxlength="128" />
     </div>
-    <div style="border: solid 1px #ccc; padding:1rem; background-color:#e8dda9; font-size:90%;" class="form-text text-muted">
-For new groups, specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation. You will need to add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
-    </div>
+      {{% group_creation_tip %}}
   </div>
   <hr size=1 />
   {{% billing-fdm %}}

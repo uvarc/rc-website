@@ -37,13 +37,7 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). To manage groups created before November 28th, 2023, visit the legacy [MyGroups portal](https://mygroups.virginia.edu/).
 {{% /callout %}}
 
-{{% callout %}}
-Note for PI's creating a new Grouper group:
-
-* Specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation.
-
-* You will need to add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
-{{% /callout %}}
+{{% group_creation_tip %}}
 
 - - -
 

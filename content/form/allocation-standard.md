@@ -31,9 +31,7 @@ private = true
 
   {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of Grouper Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create his/her Grouper group</a>.</span></label>
-  <div style="border: solid 1px #ccc; padding:1rem; background-color:#e8dda9; font-size:90%;" class="form-text text-muted">
-For new groups, specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation. You will need to add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
-</div>
+  {{% group_creation_tip %}}
   </div>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
