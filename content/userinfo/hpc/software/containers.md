@@ -32,7 +32,7 @@ Due to storage limits we can no longer add Singularity images to [Singularity Li
 
 ## Docker Hub
 
-In the summer of 2020, we switched to [Docker Hub](https://hub.docker.com/). A complete list of images along with their Dockerfiles can be found in our [rivanna-docker GitHub repository](https://github.com/uvarc/rivanna-docker). These images may or may not be installed as modules on Rivanna.
+In the summer of 2020, we switched to [Docker Hub](https://hub.docker.com/). A complete list of images along with their Dockerfiles can be found in our [rivanna-docker GitHub repository](https://github.com/uvarc/rivanna-docker). These images may or may not be installed as modules on the HPC system.
 
 We do not use the `latest` tag. Specify the exact version when pulling an image. For example:
 ```

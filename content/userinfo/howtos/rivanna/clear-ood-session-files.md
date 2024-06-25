@@ -11,7 +11,7 @@ description = "How to clear your Open on Demand session files."
 author = "RC Staff"
 
 +++
-To clear OOD Session files, Rivanna will need to be accessed via a terminal. See [documentation](/userinfo/hpc/login/) for information on how to access via SSH. 
+To clear OOD Session files, the HPC system will need to be accessed via a terminal. See [documentation](/userinfo/hpc/login/) for information on how to access via SSH. 
 
 You can find the session files and logs for all Open on Demand apps at:
 

@@ -92,9 +92,7 @@ private = true
       <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
       <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the Grouper group associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
     </div>
-    <div style="border: solid 1px #ccc; padding:1rem; background-color:#e8dda9; font-size:90%;" class="form-text text-muted">
-For new groups, specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation.
-    </div>          
+    {{% group_creation_tip %}}          
   </div>
   <hr size=1 />
   <div class="form-item form-group form-item form-type-textarea form-group"> 

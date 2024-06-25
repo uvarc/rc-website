@@ -13,7 +13,7 @@ draft = false
 shorttitle = "OpenFoam"
 modulename = "openfoam"
 softwarename = "OpenFOAM"
-title = "OpenFoam on Rivanna"
+title = "OpenFoam and UVA HPC"
 author = "RC Staff"
 
 +++
@@ -60,11 +60,11 @@ Documentation for the tutorials is available at the OpenFOAM [site](https://www.
 
 # Parallel Processing
 
-OpenFOAM has been compiled on Rivanna to run with [MPI](/userinfo/hpc/software/mpi).  Please see our Slurm [documentation](/userinfo/hpc/slurm) for information about running MPI programs.  
+OpenFOAM has been compiled on the HPC system to run with [MPI](/userinfo/hpc/software/mpi).  Please see our Slurm [documentation](/userinfo/hpc/slurm) for information about running MPI programs.  
 
 # PostProcessing
 
-OpenFOAM uses [ParaView](https://www.paraview.org) for visualization of results.  You must use the version of Paraview that has been compiled to be compatible with OpenFOAM.  It will be loaded automatically when you load the openfoam module. It is invoked through the `paraFoam` command.  You must use our [FastX](/userinfo/hpc/logintools/fastx) Web access on Rivanna in order to run Paraview.  To invoke paraFoam, start a terminal on the MATE desktop and run
+OpenFOAM uses [ParaView](https://www.paraview.org) for visualization of results.  You must use the version of Paraview that has been compiled to be compatible with OpenFOAM.  It will be loaded automatically when you load the openfoam module. It is invoked through the `paraFoam` command.  You must use our [FastX](/userinfo/hpc/logintools/fastx) Web access on UVA HPC in order to run Paraview.  To invoke paraFoam, start a terminal on the MATE desktop and run
 ```
 vglrun -c proxy paraFoam
 ```

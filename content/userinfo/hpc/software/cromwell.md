@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "cromwell"
 softwarename = "Cromwell"
-title = "Cromwell on Rivanna"
+title = "Cromwell and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -47,9 +47,9 @@ module spider {{% module-firstversion %}}
 
 # The Backend Configuration
 
-In order to allow Cromwell to interact with Rivanna (via [SLURM](/userinfo/hpc/slurm/)), we need to define a backend to dispatch jobs. A Cromwell configuration file, written in HOCON syntax, can be used to define the execution behavior of the pipeline and its integration with a job scheduler, in this case [SLURM](/userinfo/hpc/slurm/).
+In order to allow Cromwell to interact with the HPC system (via [SLURM](/userinfo/hpc/slurm/)), we need to define a backend to dispatch jobs. A Cromwell configuration file, written in HOCON syntax, can be used to define the execution behavior of the pipeline and its integration with a job scheduler, in this case [SLURM](/userinfo/hpc/slurm/).
 
-The following configuration can be used as a base, you can save it as `cromwell-rivanna.conf` in your Rivanna home directory.
+The following configuration can be used as a base, you can save it as `cromwell-rivanna.conf` in your home directory on the system.
 
 ```
 # include statement

@@ -10,13 +10,13 @@ tags = [
   "multi-core",
 ]
 draft = false
-title = "Workflow Managers on Rivanna"
+title = "Workflow Managers and UVA HPC"
 author = "RC Staff"
 +++
 
 Workflow managers are used to create reproducible and scalable analysis pipelines. These managers are useful when you have a series of scripts that you want to tie together in the form of a pipeline. 
 
-The most popular workflow managers on Rivanna are listed below:
+The most popular workflow managers on the HPC system are listed below:
 <br>
 
 <table class="table table-striped">

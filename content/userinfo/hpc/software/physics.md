@@ -13,8 +13,8 @@ tags = [
 ]
 draft = false
 shorttitle = "Physics"
-title = "Physics on Rivanna"
-description = "Physics Software in Rivanna's HPC environment"
+title = "Physics and UVA HPC"
+description = "Physics Software in the HPC environment"
 author = "RC Staff"
 
 +++

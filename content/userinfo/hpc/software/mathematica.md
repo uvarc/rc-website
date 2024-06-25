@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "mathematica"
 softwarename = "Mathematica"
-title = "Mathematica on Rivanna"
+title = "Mathematica and UVA HPC"
 author = "RC Staff"
 +++
 

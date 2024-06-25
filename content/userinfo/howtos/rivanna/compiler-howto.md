@@ -6,8 +6,8 @@ tags = [
 ]
 categories = ["howto","software","rivanna"]
 draft = false
-title = "Building Your Code on Rivanna"
-description = "Building on Rivanna"
+title = "Building Your Code on the HPC System"
+description = "Building on the HPC System"
 author = "RC Staff"
 
 +++
@@ -24,7 +24,7 @@ Compilers are invoked on source files with a line such as
 
 You must know the name of the compiler you wish to use as well as its options. Most compilers offer a large number of options that can control very detailed properties of the resulting executable, but the average user need only know a few of them.
 
-Please see our compiler [documentation](/userinfo/hpc/software/compilers) for information about the available compilers on Rivanna.  For building and running parallel code, see the [documentation](/userinfo/hpc/software/mpi).
+Please see our compiler [documentation](/userinfo/hpc/software/compilers) for information about the available compilers on the HPC system.  For building and running parallel code, see the [documentation](/userinfo/hpc/software/mpi).
 
 ## Debugging and Profiling
 
@@ -52,7 +52,7 @@ gfortran -O0 mycode.f90
 ```
 As noted above, it is particularly important for Fortran programmers to remove the bounds-checking flag for production runs, as that can slow down execution considerably.
 
-Compilers have many more options to fine-tune optimization levels.  However, users should be clear on what they need and why, and should avoid flags like -fast that may bind the executable too tightly to a specific architecture, since Rivanna nodes are of different ages and architectures.
+Compilers have many more options to fine-tune optimization levels.  However, users should be clear on what they need and why, and should avoid flags like -fast that may bind the executable too tightly to a specific architecture, since HPC nodes are of different ages and architectures.
 
 ## Renaming the Executable
 Unless otherwise specified, the name of your executable will be `a.out`.  To change that, add the flag `-o <name>`.  It is critical to include the name between the `-o` and the source file, or the compiler will overwrite your source file.
@@ -102,7 +102,7 @@ Options to the configure script will vary depending on the software package.  To
 ```
 ./configure --help
 ```
-The default installation prefix is usually `/usr` or `/usr/local`.  Rivanna users are not allowed to write to either of these directories, so an alternative must be provided.   Normally you should use a directory in your home directory.  The minimum configure command would thus be
+The default installation prefix is usually `/usr` or `/usr/local`.  UVA HPC users are not allowed to write to either of these directories, so an alternative must be provided.   Normally you should use a directory in your home directory.  The minimum configure command would thus be
 ```
 ./configure --prefix=/home/yourid/your/directory/path
 ```
@@ -159,7 +159,7 @@ make install
 ```
 is generally the recipe to build and install the program.
 
-The default `cmake` on Rivanna is fairly old and most users will need to load a newer `cmake` module.  If any newer version will work, `module load` will suffice.  Otherwise `module spider cmake` will show the options.
+The default `cmake` on the HPC system is fairly old and most users will need to load a newer `cmake` module.  If any newer version will work, `module load` will suffice.  Otherwise `module spider cmake` will show the options.
 
-For more detailed instructions on building and running compiled codes on Rivanna, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
+For more detailed instructions on building and running compiled codes on the HPC system, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
 

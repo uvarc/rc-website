@@ -21,7 +21,7 @@ author = "Staff"
 
 # Overview
 
-With the advent of high-throughput screening, the need for efficient image management tools is greater than ever. From the microscope to publication, [OMERO](https://www.openmicroscopy.org/omero/) is a database solution that handles all your images in a secure central repository. You can view, organize, analyze and share your data from anywhere you have internet access. Work with your images from a desktop app (Windows, Mac or Linux), on [UVA's high performance computing platform (Rivanna)](/userinfo/rivanna/overview), from the web, or through 3rd party software like Fiji and ImageJ, Python, and MATLAB. OMERO is able to read over 140 proprietary file formats, including all major microscope formats. 
+With the advent of high-throughput screening, the need for efficient image management tools is greater than ever. From the microscope to publication, [OMERO](https://www.openmicroscopy.org/omero/) is a database solution that handles all your images in a secure central repository. You can view, organize, analyze and share your data from anywhere you have internet access. Work with your images from a desktop app (Windows, Mac or Linux), on [UVA's high performance computing platform (Rivanna and Afton)](/userinfo/rivanna/overview), from the web, or through 3rd party software like Fiji and ImageJ, Python, and MATLAB. OMERO is able to read over 140 proprietary file formats, including all major microscope formats. 
 
 - - -
 
@@ -42,9 +42,9 @@ data. Group members can make annotations on each other's data, but cannot modify
 
 Once you have an OMERO account you can log in and begin importing images. You can log into your OMERO account on your computer using the [OMERO.insight desktop client](#logging-in-with-omero-insight), or you can use the [OMERO web interface](#logging-in-with-omero-web) through your web browser. 
 
-<!-- You can also run OMERO directly on Rivanna using FastX using either OMERO.insight *or* the 
+<!-- You can also run OMERO directly on Rivanna and Afton using FastX using either OMERO.insight *or* the 
 web client. Since images are imported into centralized storage that is mounted directly on 
-Rivanna, large images and movie files are rendered more quickly when using OMERO on Rivanna. -->
+the HPC system, large images and movie files are rendered more quickly when using OMERO on the HPC system. -->
 
 <div class="alert alert-success">
 <p>When off Grounds, you have to connect through the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">UVA VPN</a> in order to access the OMERO database. <b>We recommend to connect to the UVA More Secure Network if available.</b> The UVA Anywhere VPN should only be used if the UVA More Secure Network is not available.</p>

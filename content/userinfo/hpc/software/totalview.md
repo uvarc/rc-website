@@ -14,7 +14,7 @@ tags = [
 draft = false
 modulename = "totalview"
 softwarename = "TotalView"
-title = "Code Debugging on Rivanna"
+title = "Code Debugging and UVA HPC"
 author = "RC Staff"
 +++
 

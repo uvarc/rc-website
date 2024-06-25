@@ -9,7 +9,7 @@ date = "2024-01-02T00:00:00-05:00"
 draft = false
 modulename = "cellranger"
 softwarename = "Cell Ranger"
-title = "Cell Ranger on Rivanna"
+title = "Cell Ranger and UVA HPC"
 author = "RC Staff"
 +++
 

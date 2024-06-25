@@ -15,8 +15,8 @@ draft = false
 modulename = "bioconda"
 softwarename = "Bioconda"
 shorttitle = "Bioconda"
-title = "The Bioconda Environment on Rivanna"
-description = "Bioconda Software in Rivanna's HPC environment"
+title = "The Bioconda Environment and UVA HPC"
+description = "Bioconda Software in the HPC environment"
 author = "RC Staff"
 
 +++

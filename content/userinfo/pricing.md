@@ -13,7 +13,7 @@ images = [""]
 
 - - -
 
-# Rivanna Allocations
+# High Performance Computing Allocations
 
 {{< pricing allocations >}}
 

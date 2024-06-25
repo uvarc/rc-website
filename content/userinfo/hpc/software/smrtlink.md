@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "smrtlink"
 softwarename = "SmrtLink"
-title = "SmrtLink on Rivanna"
+title = "SmrtLink and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -39,7 +39,7 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 # Using SmrtLink
-On Rivanna, Smrtlink tools can be executed only in non-interactive mode without any graphical user interface.  Several Smrtlink tools support code execution on multiple cpu cores. Some of the common tools include [blasr](#running-blasr), [ngmlr](#running-ngmlr), [pbalign](#running-pbalign), and the `pbsv` (pbsv align and pbsv call) commands.
+On the HPC system, Smrtlink tools can be executed only in non-interactive mode without any graphical user interface.  Several Smrtlink tools support code execution on multiple cpu cores. Some of the common tools include [blasr](#running-blasr), [ngmlr](#running-ngmlr), [pbalign](#running-pbalign), and the `pbsv` (pbsv align and pbsv call) commands.
 
 In the Slurm job scripts the number of requested cpu cores (per task) is stored in the envrionment variable `SLURM_CPUS_PER_TASK`.
 

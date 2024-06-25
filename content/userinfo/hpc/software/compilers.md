@@ -5,19 +5,19 @@ tags = [
   "rivanna", "software", "compiler", "c/c++", "fortran"
 ]
 draft = false
-title = "Compilers on Rivanna"
-description = "Compilers on Rivanna"
+title = "Compilers and UVA HPC"
+description = "Compilers and UVA HPC"
 author = "RC Staff"
 
 +++
 
-Rivanna offers multiple compiler bundles for C, C++, and Fortran.  Different compilers have different strengths and weaknesses and different error messaging and debugging features, so users should be willing to try another one when appropriate.  The modules system manages the compiler environment and ensures that only compatible libraries are available for loading.
+UVA HPC offers multiple compiler bundles for C, C++, and Fortran.  Different compilers have different strengths and weaknesses and different error messaging and debugging features, so users should be willing to try another one when appropriate.  The modules system manages the compiler environment and ensures that only compatible libraries are available for loading.
 
 Many users of compiled languages are working with codes that can employ MPI for multinode parallel runs.  MPI users should first understand how their chosen compiler works, then see the MPI instructions at our [parallel programming](/userinfo/hpc/software/mpi) page.
 
-Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our [debuggers and utilities](/userinfo/hpc/software/debuggers) page.
+Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on the HPC system can be found at our [debuggers and utilities](/userinfo/hpc/software/debuggers) page.
 
-# Available Compilers on Rivanna
+# Available Compilers on The HPC System
 
 {{< rivanna-software moduleclasses="compiler" exclude="mpi" >}}
 
@@ -38,7 +38,7 @@ More information is available from the manpage, e.g.:
 man g++
 ```
 
-The default GNU compilers on Rivanna are typically fairly old. Newer versions can be invoked through an appropriate [module](/userinfo/hpc/software/modules). For available versions, please run
+The default GNU compilers on the HPC system are typically fairly old. Newer versions can be invoked through an appropriate [module](/userinfo/hpc/software/modules). For available versions, please run
 ```
 module spider gcc
 ```
@@ -57,7 +57,7 @@ The [Intel Linux Fortran and C/C++ compilers](https://software.intel.com/en-us/c
 
 For detailed information, review the documentation on the [Intel C/C++](https://software.intel.com/en-us/articles/intel-c-compiler-professional-edition-for-linux-documentation/) and [Fortran compiler](https://software.intel.com/en-us/fortran-compiler-developer-guide-and-reference) website.
 
-The Intel compilers are accessed on the Rivanna cluster by using the modules software to dynamically set the appropriate environmental variables (e.g. `PATH` and `LD_LIBRARY_PATH`). To initialize your environment to use the Intel compilers, use the command:
+The Intel compilers are accessed on the cluster by using the modules software to dynamically set the appropriate environmental variables (e.g. `PATH` and `LD_LIBRARY_PATH`). To initialize your environment to use the Intel compilers, use the command:
 
 ```
 module load intel
@@ -123,5 +123,5 @@ Please see [here](/userinfo/hpc/software/nvhpc) for details.
 # PGI Compiler
 Please use the `nvhpc` module instead (see previous section).
 
-# Building on Rivanna
-For more information about building your code on Rivanna, please see our [howto](/userinfo/howtos/rivanna/compiler-howto).
+# Building on the HPC System
+For more information about building your code on UVA HPC, please see our [howto](/userinfo/howtos/rivanna/compiler-howto).

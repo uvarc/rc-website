@@ -15,7 +15,7 @@ draft = false
 shorttitle = "Blender"
 modulename = "blender"
 softwarename = "Blender"
-title = "Blender on Rivanna"
+title = "Blender and UVA HPC"
 author = "RC Staff"
 
 +++
@@ -45,10 +45,10 @@ module spider {{% module-firstversion %}}
 {{< module-versions >}}
 
 
-# Interactive Sessions through Rivanna's Web Portal
+# Interactive Sessions through Open Ondemand
 
-Interactive sessions of {{% software-name %}} can be launched through Rivanna's web portal, [Open OnDemand](/userinfo/hpc/ood/overview).
-To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a Rivanna GPU node. In addition, you need to specify required resources, e.g. time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
+Interactive sessions of {{% software-name %}} can be launched through the HPC system's web portal, [Open OnDemand](/userinfo/hpc/ood/overview).
+To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a Rivanna/Afton GPU node. In addition, you need to specify required resources, e.g. time, your HPC allocation, etc.. If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
 
 ## Starting an Interactive Session
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.

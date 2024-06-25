@@ -10,7 +10,7 @@ author = "RC Staff"
 +++
 
 {{% callout %}}
-Note that Docker requires `sudo` privilege and therefore it is not supported on Rivanna. To use a Docker image you will need to convert it into Apptainer. More information can be found [here](https://www.rc.virginia.edu/userinfo/howtos/rivanna/docker-images-on-rivanna/) on our website.
+Note that Docker requires `sudo` privilege and therefore it is not supported on the HPC system. To use a Docker image you will need to convert it into Apptainer. More information can be found [here](https://www.rc.virginia.edu/userinfo/howtos/rivanna/docker-images-on-rivanna/) on our website.
 {{% /callout %}}
 
 # What Is Docker?
@@ -158,4 +158,4 @@ docker build -t mycontainer .
 
 - Learn about [Docker Swarms](https://docs.docker.com/get-started/part4/) for deploying containers in high availability.
 - Design [Docker Stacks](https://docs.docker.com/get-started/part5/) for complex solutions of services.
-- Learn how to [convert Docker images into Apptainer](/userinfo/howtos/rivanna/docker-images-on-rivanna) to run on Rivanna.
+- Learn how to [convert Docker images into Apptainer](/userinfo/howtos/rivanna/docker-images-on-rivanna) to run on the HPC system.

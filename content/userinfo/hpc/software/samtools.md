@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "samtools"
 softwarename = "Samtools"
-title = "Samtools on Rivanna"
+title = "Samtools and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -68,7 +68,7 @@ samtools flagstat example_sorted.bam
 ```
 
 # Slurm Script Example
-To run {{% software-name %}} on Rivanna, a script similar to the following can be used.
+To run {{% software-name %}} on the HPC system, a script similar to the following can be used.
 
 {{< pull-code file="/static/scripts/samtools.slurm" lang="no-hightlight" >}}
 

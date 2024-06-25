@@ -5,7 +5,7 @@
     <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
     <p class="blog-post-meta"><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format $dateFormat }}</time> | {{ partial "meta-terms.html" . }}</p>
   </header>
-  {{ .Summary | markdownify }}
+  {{ .Summary }}
   <a href='{{ .Permalink }}'>{{ i18n "readMore" }}</a>
 </article> <!-- /.blog-post -->
 

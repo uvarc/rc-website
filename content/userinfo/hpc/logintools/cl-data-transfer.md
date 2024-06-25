@@ -12,7 +12,7 @@ title = "Command Line Data Transfer"
 draft = false
 +++
 
-<p class="lead">Standard Linux tools can efficiently transfer a small to moderate quantity of data to or from Rivanna.</p>
+<p class="lead">Standard Linux tools can efficiently transfer a small to moderate quantity of data to or from Rivanna/Afton.</p>
 
 - - -
 
@@ -26,7 +26,7 @@ By default, `scp` works from the level of the directory in which it is invoked.
 - Copying from local to remote: `scp source_file mst3k@hostaddress:target_file`
 - Copying from remote to local: `scp mst3k@hostaddress:source_file target_file`
 
-The following examples detail how to transfer data between your local computer and /project storage on Rivanna. In these examples
+The following examples detail how to transfer data between your local computer and /project storage on Rivanna/Afton. In these examples
 
 - `my_file` is the file you would like to transfer
 - `mst3k` is your computing ID
@@ -77,7 +77,7 @@ The `-q` option suppresses the progress and debugging messages. Useful for scrip
 
 Secure FTP or `sfpt` is an interface built on top of `scp` to mimic the behavior of `ftp`.
 
-To connect to Rivanna with `sftp`, execute the following in the command line interface:
+To connect to UVA HPC with `sftp`, execute the following in the command line interface:
 
 ```
 sftp mst3k@login.hpc.virginia.edu
@@ -101,13 +101,13 @@ You can access both your local and remote file systems with `sftp`. The followin
 
 ## File Transfer from Local to Remote
 
-To transfer files from your computer to the Rivanna file system, use the put command:
+To transfer files from your computer to the Rivanna/Afton file system, use the put command:
 
 ```
 sftp> put my_file
 ```
 
-To transfer a folder from your computer to Rivanna, use `put -r`. A folder with the same name must also exist on Rivanna. An example is shown below:
+To transfer a folder from your computer to Rivanna/Afton, use `put -r`. A folder with the same name must also exist on Rivanna. An example is shown below:
 
 ```
 sftp> mkdir /project/mygroup_name/my_folder
@@ -117,13 +117,13 @@ sftp> put -r my_folder
 
 ## File Transfer from Remote to Local
 
-To transfer files from Rivanna to your computer, use the get command:
+To transfer files from Rivanna/Afton to your computer, use the get command:
 
 ```
 sftp> get my_file
 ```
 
-To transfer a folder from Rivanna to your computer, use `get -r`:
+To transfer a folder from Rivanna/Afton to your computer, use `get -r`:
 
 ```
 sftp> get my_folder

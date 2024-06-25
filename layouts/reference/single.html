@@ -1,4 +1,10 @@
 {{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "sidebar" }}{{ partial "sidebar.html" . }}{{ end }}
+{{ define "head-extra" }}<style>
+  pre code {
+    background-color:#f6f6f6;
+  }
+</style>{{ end }}
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 

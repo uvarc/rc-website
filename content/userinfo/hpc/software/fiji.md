@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "fiji"
 softwarename = "Fiji"
-title = "Image Processing with Fiji on Rivanna"
+title = "Image Processing with Fiji and UVA HPC"
 author = "RC Staff"
 +++
 

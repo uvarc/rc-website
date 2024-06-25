@@ -4,12 +4,12 @@ date = "2020-02-21T15:12:46-05:00"
 tags = [ "rivanna", "software", "containers" ] 
 categories = ["howto"]
 draft = false 
-title = "Docker Images on Rivanna" 
-description = "How to use Docker images on Rivanna" 
+title = "Docker Images on the HPC System" 
+description = "How to use Docker images on the HPC System" 
 author = "RC Staff"
 +++
 
-Docker requires `sudo` privilege and therefore it is not supported on Rivanna. To use a Docker image you will need to convert it into Apptainer.
+Docker requires `sudo` privilege and therefore it is not supported on the HPC system. To use a Docker image you will need to convert it into Apptainer.
 
 # Convert a Docker image
 
@@ -70,7 +70,7 @@ INFO:    Creating SIF file...
 INFO:    Build complete: lolcow_from_docker_cache.sif
 ```
 
-Note that this requires `sudo` privilege. You can then transfer the image to Rivanna.
+Note that this requires `sudo` privilege. You can then transfer the image to the HPC system.
 
 ## Definition file
 

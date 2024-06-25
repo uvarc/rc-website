@@ -45,7 +45,7 @@ Run the installer as directed.
 
 - This can be slow, especially off Grounds, so for extensive work with graphical applications you may prefer [FastX](/userinfo/hpc/login/#remote-desktop-access).
 
-- When you are logged in to a Unix system such as Rivanna, MobaXterm will utilize the Unix X11 convention for cut and paste.  Hightlighting text with the left mouse button selects it automatically.  Clicking the middle mouse button pastes it.  If you do not have a middle mouse button or scroll wheel, such as on a laptop, clicking both left and right buttons simultaneously emulates a middle mouse button.
+- When you are logged in to a Unix system (like the UVA HPC system), MobaXterm will utilize the Unix X11 convention for cut and paste.  Hightlighting text with the left mouse button selects it automatically.  Clicking the middle mouse button pastes it.  If you do not have a middle mouse button or scroll wheel, such as on a laptop, clicking both left and right buttons simultaneously emulates a middle mouse button.
 
 # Access from Off Grounds
 

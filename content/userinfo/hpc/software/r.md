@@ -16,8 +16,8 @@ draft = false
 modulename = "R"
 softwarename = "R"
 shorttitle = "R & RStudio"
-title = "R and RStudio on Rivanna"
-description = "R and RStudio in Rivanna's HPC environment"
+title = "R and RStudio and UVA HPC"
+description = "R and RStudio in the HPC environment"
 author = "RC Staff"
 +++
 
@@ -26,7 +26,7 @@ author = "RC Staff"
 [R](https://www.r-project.org/) is a programming language that often is used for data analytics, statistical programming, and graphical visualization.
 
 # Loading the R module
-On Rivanna, R is available through our module system.  For example, to load R, you can type:
+On the UVA HPC system, R is available through our module system.  For example, to load R, you can type:
 
 ```
 module load goolf R
@@ -49,7 +49,7 @@ module spider R
 
 # Loading the RStudio module
 
-RStudio is a development environment for R. We recommend launching RStudio through our web-based portal to Rivanna. For instructions on how to access it, see [RStudio Server on Rivanna](/userinfo/hpc/software/rstudio/).
+RStudio is a development environment for R. We recommend launching RStudio through our web-based portal to the HPC system. For instructions on how to access it, see [RStudio Server on the HPC system](/userinfo/hpc/software/rstudio/).
 
 For users who must launch RStudio from the commandline, start up a FastX or Open OnDemand Desktop session and run `rstudio-launcher` in the terminal. Then follow the instructions.
 
@@ -131,4 +131,4 @@ iv)  the `srun` before the command to run the R code.
 
 
 
-If you have questions about running your R code on Rivanna or would like a consultation to optimize or parallelize your code, contact hpc-support@virginia.edu.
+If you have questions about running your R code on the HPC system or would like a consultation to optimize or parallelize your code, contact hpc-support@virginia.edu.

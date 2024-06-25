@@ -96,7 +96,7 @@ From a security perspective, research data generally breaks down into two types:
       </div>
       <div class="card card-body">
         <ul>
-          <li>HPC - Rivanna, our primary high performance cluster. Includes over 12k cores across 
+          <li>HPC - Rivanna and Afton, our high performance clusters. Includes over 12k cores across 
           <li>Storage
           <li>Virtual Machines
           <li>Microservices
@@ -127,7 +127,7 @@ From a security perspective, research data generally breaks down into two types:
             <div class="card l-bg-cherry">
                 <div class="card-statistic-3 p-4">
                     <div class="mb-4">
-                        <h5 class="card-title mb-0"><span class="fa-solid fa-server"></span> HPC</h5>
+                        <h5 class="card-title mb-0"><span class="fa-solid fa-server"></span>HPC</h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                       Computing with over 12k cores.

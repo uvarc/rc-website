@@ -14,13 +14,13 @@ tags = [
 ]
 draft = false
 shorttitle = "Math & Statistics"
-title = "Math & Statistics on Rivanna"
-description = "Math & Statistics Software in Rivanna's HPC environment"
+title = "Math & Statistics and UVA HPC"
+description = "Math & Statistics Software in the HPC environment"
 author = "RC Staff"
 
 +++
 # Overview
-Many popular math and statistics software packages are available on Rivanna.
+Many popular math and statistics software packages are available on the HPC system.
 
 # General considerations
 
@@ -28,7 +28,7 @@ Many popular math and statistics software packages are available on Rivanna.
 
 # Available Math & Statistics Software
 
-To get an up-to-date list of the installed math applications, log on to Rivanna and run the following command in a terminal window:
+To get an up-to-date list of the installed math applications, log on to UVA HPC and run the following command in a terminal window:
 ```
 module keyword math
 ```

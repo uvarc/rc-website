@@ -1,4 +1,6 @@
 {{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "col-width" }} <div class="col-sm-12 blog-main" style=""> {{ end }}
+{{ define "sidebar }}{{ end }}
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 

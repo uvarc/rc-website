@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "berkeleygw"
 softwarename = "BerkeleyGW"
-title = "BerkeleyGW on Rivanna"
+title = "BerkeleyGW and UVA HPC"
 author = "RC Staff"
 +++
 

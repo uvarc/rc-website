@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "cellprofiler"
 softwarename = "CellProfiler"
-title = "CellProfiler on Rivanna"
+title = "CellProfiler and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -49,7 +49,7 @@ CellProfiler can be run interactively with a graphical user interface (GUI) or n
 # Preparation
 The CellProfiler container image file is provided in a shared user space.  For best performance it is recommended that users copy this container to their individual /scratch storage location.  This has to be done only once and the following steps describe this process.
 
-In a Rivanna terminal window execute these commands:
+In a terminal window on the HPC system execute these commands:
 ```
 module load apptainer cellprofiler
 cp $CONTAINERDIR/cellprofiler-4.2.5.sif /scratch/$USER
@@ -78,11 +78,11 @@ apptainer run $CONTAINERDIR/cellprofiler-4.2.5.sif
 ```
 
 # Non-interactive Slurm jobs for batch image processing
-If you have a large number of images that all need to be processed in the same manner, you can use Rivanna's compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](https://cellprofiler-manual.s3.amazonaws.com/CPmanual/Help_Other%20Features_Batch_Processing.html).
+If you have a large number of images that all need to be processed in the same manner, you can use compute nodes for efficient non-interactive batch image processing. The details of CellProfiler's batch processing strategy are explained [here](https://cellprofiler-manual.s3.amazonaws.com/CPmanual/Help_Other%20Features_Batch_Processing.html).
 
 ## Setup
 
-1. Move image files to be processed to a directory accessible on Rivanna (ideally /scratch).
+1. Move image files to be processed to a directory accessible on the HPC system (ideally /scratch).
 2. Use an interactive CellProfiler session to define a CellProfiler image analysis pipeline file (.cppipe) that defines how those particular images are to be processed,  see Interactive Jobs with Graphical User Interface for Image Pipeline Configuration.
 3. In the interactive CellProfiler session, add the `CreateBatchFiles` module to the end of your pipeline and click `Analyze Images`. This will create the file `Batch_data.h5` which defines the entire image processing step including paths to the images.
 

@@ -12,7 +12,7 @@ draft = false
 shorttitle = "Code Server"
 modulename = "code-server"
 softwarename = "Code Server"
-title = "Code Server on Rivanna"
+title = "Code Server and UVA HPC"
 author = "RC Staff"
 
 +++
@@ -39,10 +39,10 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-# Interactive Sessions through Rivanna's Web Portal
+# Interactive Sessions through Open Ondemand
 
-Interactive sessions of {{% software-name %}} can be launched through Rivanna's web portal, [Open OnDemand](/userinfo/hpc/ood/overview).
-If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#get-started) to learn more about the partitions.
+Interactive sessions of {{% software-name %}} can be launched through the HPC web portal, [Open OnDemand](/userinfo/hpc/ood/overview).
+If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#get-started) to learn more about the partitions.
 
 ## Python Setup
 

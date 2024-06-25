@@ -31,9 +31,7 @@ private = true
 
   {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of Grouper Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create his/her Grouper group</a>.</span></label>
-  <div style="border: solid 1px #ccc; padding:1rem; background-color:#e8dda9; font-size:90%;" class="form-text text-muted">
-For new groups, specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation. You will need to add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
-</div>
+  {{% group_creation_tip %}}
   </div>
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
@@ -67,7 +65,7 @@ For new groups, specify "This group will be used for Rivanna access" in the desc
   </div>
   <div class="form-item form-type-textarea form-group"> 
     <label class="control-label"  id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-    <label class="control-label"  id="renewal-descr" for="project-description">Briefly describe how you have used Rivanna in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label"  id="renewal-descr" for="project-description">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
     </div>
   </div>
@@ -100,7 +98,6 @@ For new groups, specify "This group will be used for Rivanna access" in the desc
     <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
-</div>
 
 {{< /enable-disable-form >}}
 

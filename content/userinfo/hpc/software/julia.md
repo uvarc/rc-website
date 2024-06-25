@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "julia"
 softwarename = "julia"
-title = "Julia on Rivanna"
+title = "Julia and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -54,7 +54,7 @@ After that first time, it should aways default to /home/$USER/.julia .
 The following link is a useful reference for loadin Julia pacakges.
 [Loading Packages](https://aaowens.github.io/julia/2020/01/13/A-Newcomers-Guide-to-the-Julia-Package-Manager.html)
 
-The follwoing code snippet shows the steps used on my Rivanna account to install and verify the SharedArrays package.
+The follwoing code snippet shows the steps used on my UVA HPC account to install and verify the SharedArrays package.
 ```
 udc-ba34-36-gahlmann$module load julia
 udc-ba34-36-gahlmann$julia
@@ -111,12 +111,12 @@ search: sdata isdirpath isdispatchtuple SharedMatrix StridedMatrix
 
 julia>
 ```
-You can work with Julia on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access) for this application. 
+You can work with Julia on the UVA HPC frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access) for this application. 
 
-# Interactive Sessions through Rivanna's Open OnDemand Web Portal
+# Interactive Sessions through the Open OnDemand Web Portal
 
 ## Starting an Interactive Session
-To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
+To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc.. If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
 
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
@@ -134,11 +134,9 @@ If you double-click on one of the Julia kernels, an IPython notebook will open c
 ## Closing the Interactive Session
 When you are done, quit the JupyterLab application.  The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged until the specified time limit is reached.
 
-# Running a Julia Batch Jobs on Rivanna
+# Running a Julia Batch Jobs on the HPC System
 
-Rivanna uses the Slurm resource manager to schedule and run jobs on the
-cluster compute nodes. The following are example Slurm scripts for
-submitting different types of Julia batch jobs to the Rivanna cluster.
+The UVA HPC system uses the Slurm resource manager to schedule and run jobs on the cluster compute nodes. The following are example Slurm scripts for submitting different types of Julia batch jobs to the cluster.
 
 ## Submitting a batch job using a single core of a compute node.
 
@@ -251,7 +249,7 @@ Hello! I am 0 of 8 on udc-ba34-10c8
 
 # Utilizing GPUs with Julia
 
-[General guidelines on requesting GPUs on Rivanna](/userinfo/hpc/slurm/#gpu-intensive-computation)
+[General guidelines on requesting GPUs on UVA HPC](/userinfo/hpc/slurm/#gpu-intensive-computation)
 
 The following slurm script is for submitting a Julia job that uses 1 GPU. For each GPU requested, the script requests one cpu (ntasks-per-node). The article [An Introduction to GPU Programming in Julia](https://nextjournal.com/sdanisch/julia-gpu-programming) provides more details to get started.
 
