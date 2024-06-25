@@ -12,11 +12,11 @@ type = "rivanna"
 +++
 
 # Overview
-Open OnDemand is a graphical user interface that allows access to Rivanna via a web browser. Within the Open OnDemand environment users have access to a file explorer; interactive applications like [JupyterLab](/userinfo/hpc/software/jupyterlab), [RStudio Server](/userinfo/hpc/software/rstudio) & [FastX Web](/userinfo/hpc/logintools/fastx); a command line interface; and a job composer and job monitor.
+Open OnDemand is a graphical user interface that allows access to UVA HPC via a web browser. Within the Open OnDemand environment users have access to a file explorer; interactive applications like [JupyterLab](/userinfo/hpc/software/jupyterlab), [RStudio Server](/userinfo/hpc/software/rstudio) & [FastX Web](/userinfo/hpc/logintools/fastx); a command line interface; and a job composer and job monitor.
 
 
-# Logging in to Rivanna
-Rivanna is accessible through the Open OnDemand web client at https://ood.hpc.virginia.edu. Your login is your UVA computing ID and your password is your Netbadge password. Some services, such as FastX Web, require the Eservices password. If you do not know your Eservices password you must change it through ITS by changing your Netbadge password ([see instructions](/userinfo/faq/rivanna-faq/#how-do-i-reset-my-current-password-obtain-a-new-password)).
+# Logging in to UVA HPC
+The HPC system is accessible through the Open OnDemand web client at https://ood.hpc.virginia.edu. Your login is your UVA computing ID and your password is your Netbadge password. Some services, such as FastX Web, require the Eservices password. If you do not know your Eservices password you must change it through ITS by changing your Netbadge password ([see instructions](/userinfo/faq/rivanna-faq/#how-do-i-reset-my-current-password-obtain-a-new-password)).
 
 <div class="alert alert-success">
   <div style="float:left;padding:0 1rem 0 0;"><i style="" class="fas fa-3x fa-map-marked-alt"></i></div>
@@ -39,7 +39,7 @@ These services and applications are accessible through drop-down boxes on the me
 
 
 # File Explorer
-File Explorer makes browsing and managing small files easy. Rivanna has multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage ([/scratch](/userinfo/storage/non-sensitive-data/#scratch)) where large data sets can be staged for job processing. Users can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage page](/userinfo/storage) for more information.
+File Explorer makes browsing and managing small files easy. Rivanna and Afton have multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage ([/scratch](/userinfo/storage/non-sensitive-data/#scratch)) where large data sets can be staged for job processing. Users can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage page](/userinfo/storage) for more information.
 
 The file explorer provides these basic functions:
 
@@ -51,7 +51,7 @@ The file explorer provides these basic functions:
 Visit our [File Explorer](/userinfo/hpc/ood/fileexplorer) guide for detailed instructions.
 
 # Interactive Applications
-Open OnDemand provides access to interactive applications that provide a full graphical Rivanna desktop environments, JupyterLab for running Jupyter notebooks, RStudio Server, Matlab, a simple terminal shell, and a variety of other research apps.
+Open OnDemand provides access to interactive applications that provide a full graphical HPC desktop environments, JupyterLab for running Jupyter notebooks, RStudio Server, Matlab, a simple terminal shell, and a variety of other research apps.
 
 ## Desktop
 The Desktop app provides a full Linux Desktop environment launched on user-specified allocated hardware resources which may include a compute node equipped with graphical processing units (GPUs). **This is the preferred mechanism to start compute intensive applications that require a graphical user interface (GUI).**
@@ -59,7 +59,7 @@ The Desktop app provides a full Linux Desktop environment launched on user-speci
 Please read the [Open OnDemand Desktop documentation](/userinfo/hpc/ood/desktop) for detailed instructions on how to specify resources and start a desktop session.
 
 ## FastX Web
-FastX Web enables users to start an X11 desktop environment on a remote system. When launched through Open OnDemand, FastX Web provides access to a Rivanna frontend. The FastX Web desktop environment can be used to open conventional shell terminals or launch applications with a graphical user interface. 
+FastX Web enables users to start an X11 desktop environment on a remote system. When launched through Open OnDemand, FastX Web provides access to a HPC frontend. The FastX Web desktop environment can be used to open conventional shell terminals or launch applications with a graphical user interface. 
 
 Please read our [FastX Web documentation](/userinfo/hpc/logintools/fastx) for a detailed description of this remote desktop environment.
 

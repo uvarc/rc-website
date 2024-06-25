@@ -49,7 +49,7 @@ private = true
           <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />&nbsp;Renewal</label>
         </div>
       </div>
-      <div class="help-block col">If you have taught this same class before using Rivanna, select Renewal.</div>
+      <div class="help-block col">If you have taught this same class before using Rivanna/Afton, select Renewal.</div>
     </div>
   </div>  
   <div class="row">

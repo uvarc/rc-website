@@ -44,10 +44,10 @@ quell_footer = true
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h2 class="card-title">Rivanna</h2>
-          <p class="card-text">High Performance Computing platform</p>
+          <h2 class="card-title">Rivanna and Afton</h2>
+          <p class="card-text">High Performance Computing platforms</p>
           <div style="margin-bottom:1rem;">
-            <a href="/userinfo/howtos/rivanna/overview"><button class="btn btn-sm btn-primary">Rivanna HowTos &rsaquo;</button></a>
+            <a href="/userinfo/howtos/rivanna/overview"><button class="btn btn-sm btn-primary">HPC HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>

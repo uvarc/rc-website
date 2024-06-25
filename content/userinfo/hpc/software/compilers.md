@@ -15,7 +15,7 @@ UVA HPC offers multiple compiler bundles for C, C++, and Fortran.  Different com
 
 Many users of compiled languages are working with codes that can employ MPI for multinode parallel runs.  MPI users should first understand how their chosen compiler works, then see the MPI instructions at our [parallel programming](/userinfo/hpc/software/mpi) page.
 
-Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on Rivanna can be found at our [debuggers and utilities](/userinfo/hpc/software/debuggers) page.
+Compiled languages can be more difficult to debug, and the assistance of a good debugger can be essential.  Descriptions of debuggers available on the HPC system can be found at our [debuggers and utilities](/userinfo/hpc/software/debuggers) page.
 
 # Available Compilers on The HPC System
 

@@ -8,7 +8,7 @@ tags = [
   "hpc"
 ]
 draft = false
-title = "Rivanna Software List"
+title = "UVA HPC Software List"
 description = "List of all Software Modules on the UVA HPC System"
 author = "RC Staff"
 categories = ["userinfo"]

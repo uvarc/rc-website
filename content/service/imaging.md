@@ -32,7 +32,7 @@ Image processing encompasses a variety of techniques to prepare images for analy
 
 ## Common Image Processing Techniques
 
-The following techniques are commonly employed in imaging research. All of these processes can be automated and run locally on your computer or on Rivanna, UVa's high performance computing (HPC) cluster. With the parallelization capabilities of HPC, it is possible to fully process and analyze a large imaging data set in a few hours or less!
+The following techniques are commonly employed in imaging research. All of these processes can be automated and run locally on your computer or on UVa's high performance computing (HPC) cluster. With the parallelization capabilities of HPC, it is possible to fully process and analyze a large imaging data set in a few hours or less!
 
 <table class="table table-striped">
   <tbody>

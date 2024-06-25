@@ -132,7 +132,7 @@ The Python/CUDA/TensorFlow versions have to be very specific.
     - CUDA 10.0
     - cuDNN 7.4
 
-1. Check that the CUDA version is supported on Rivanna:
+1. Check that the CUDA version is supported on the HPC cluster:
     - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html).
     - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of Jan 2024, our GPU nodes support up to CUDA 12.2.
         ```

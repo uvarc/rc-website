@@ -28,7 +28,7 @@ CROMWELL is the execution engine (written in Java) that supports running WDL scr
 
 **Pre-requisites:** This tutorial assumes that you have an understanding of the basic structure of a WDL script. [Learn here](https://software.broadinstitute.org/wdl/documentation/structure)
 
-This tutorial will walk you through steps for creating a WDL script, and executing it on Rivanna. For the purpose of this document, we will write a (very) basic real-world workflow that does something useful!
+This tutorial will walk you through steps for creating a WDL script, and executing it on the HPC system. For the purpose of this document, we will write a (very) basic real-world workflow that does something useful!
 
 **Our workflow:**
 The processing with `bwa-mem` contains two tasks:
@@ -46,7 +46,7 @@ The tasks are joined together using linear chaining, with output from bwa step u
 * Sample paired-end FASTQ files
 * hg38 reference fasta and BWA index files
 
-**Rivanna modules:**
+**UVA HPC modules:**
 
 * [wdltool](/userinfo/hpc/software/wdltool)
 * [cromwell](/userinfo/hpc/software/cromwell)
@@ -57,7 +57,7 @@ The tasks are joined together using linear chaining, with output from bwa step u
 
 # Setup your Working Environment
 
-1. **[Login to Rivanna](/userinfo/hpc/login)** and create a root working directory in your `/scratch` folder:
+1. **[Login to UVA HPC](/userinfo/hpc/login)** and create a root working directory in your `/scratch` folder:
 
 ```
 cd /scratch/$USER/
@@ -67,7 +67,7 @@ cd wdl_tutorial
 
 2. **Get the Sample FASTQ files.** Copy the sample paired-end fastq files to this folder. For this tutorila, we will use reads for NA12878, downloaded from [here](http://www.internationalgenome.org/data-portal/sample/NA12878). You can download the dataset, or use DNA-seq data for any sample of your choice.
 
-3. **Get the reference genome files.** We will use the hg38 reference fasta and BWA indexes from the genomes repo on Rivanna at `/project/genomes/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/`. All Rivanna users have read access to these reference genomes, no need to download/copy them to the working directory!
+3. **Get the reference genome files.** We will use the hg38 reference fasta and BWA indexes from the genomes repo on the HPC system at `/project/genomes/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/`. All UVA HPC users have read access to these reference genomes, no need to download/copy them to the working directory!
 
 - - -
 
@@ -255,7 +255,7 @@ Add command …
 }
 ```
 {{% callout %}}
-<b>Note: <a href="/userinfo/hpc/software/picard">picard</a> is available as a module on Rivanna.</b> When you load the module to your environment (using module load picard), it also defines the $EBROOTPICARD environment variable, which defines the full path to the jar file for calling picard utilities.
+<b>Note: <a href="/userinfo/hpc/software/picard">picard</a> is available as a module on the HPC system.</b> When you load the module to your environment (using module load picard), it also defines the $EBROOTPICARD environment variable, which defines the full path to the jar file for calling picard utilities.
 {{% /callout %}}
 
 Add output …
@@ -268,7 +268,7 @@ Add output …
 ....
 ```
 
-For this task, we don’t need custom runtime attributes, and will be using the default described in the backend configuration file for Rivanna!
+For this task, we don’t need custom runtime attributes, and will be using the default described in the backend configuration file for UVA HPC!
 
 The complete `sortSam` task definition should look like this:
 ```
@@ -389,7 +389,7 @@ task sortSam{
 # Validate
 
 Next, we will validate our script, make sure there are no syntax errors.
-We will use wdltool utility toolkit that includes a syntax validation function. It is available as a module on Rivanna
+We will use wdltool utility toolkit that includes a syntax validation function. It is available as a module on the HPC system
 
 ```
 module load wdltool
@@ -450,7 +450,7 @@ Output in terminal:
 
 # Execute
 
-At the moment, Cromwell is the only fully-featured execution engine that supports WDL. It is available as a [module](/userinfo/hpc/software/cromwell) on Rivanna.
+At the moment, Cromwell is the only fully-featured execution engine that supports WDL. It is available as a [module](/userinfo/hpc/software/cromwell) on the HPC system.
 
 ```
 module load cromwell

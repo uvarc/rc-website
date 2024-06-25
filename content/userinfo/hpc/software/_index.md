@@ -7,7 +7,7 @@ tags = [
   "containers",
 ]
 draft = false
-title = "Rivanna HPC Software"
+title = "UVA HPC Software"
 description = "High Performance Computing"
 author = "RC Staff"
 type = "rivanna"
@@ -16,13 +16,13 @@ type = "rivanna"
 
 # Overview
 
-Research Computing at UVA offers a variety of standard software packages for all Rivanna users. We also install requested software based on the needs of the HPC community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group. Departments with a set of widely-used software packages may install them to the lsp_apps space. The Research Computing group also provides limited assistance for individual installations.
+Research Computing at UVA offers a variety of standard software packages for all UVA HPC users. We also install requested software based on the needs of the HPC community as a whole. Software used by a single group should be installed by that group’s members, ideally on leased storage controlled by the group. Departments with a set of widely-used software packages may install them to the lsp_apps space. The Research Computing group also provides limited assistance for individual installations.
 
 For help installing research software on your PC, please contact Research Software Support at <a href="mailto:res-consult@virginia.edu">res-consult@virginia.edu</a>.
 
 # Software Modules and Containers
 
-Software on Rivanna is provided via environment [modules](/userinfo/hpc/software/modules) or as [containers](/userinfo/hpc/software/containers).
+Software on the HPC system is provided via environment [modules](/userinfo/hpc/software/modules) or as [containers](/userinfo/hpc/software/containers).
 
 <a href="/userinfo/hpc/software/complete-list/"><button class="btn btn-sm btn-primary"">Complete List of Rivanna Software &rsaquo;</button></a>
 

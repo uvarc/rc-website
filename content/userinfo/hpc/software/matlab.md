@@ -324,7 +324,7 @@ end
 ```
 # Utilizing GPUs with Matlab
 
-[General guidelines on requesting GPUs on Rivanna](/userinfo/hpc/slurm/#gpu-intensive-computation)
+[General guidelines on requesting GPUs on the HPC system](/userinfo/hpc/slurm/#gpu-intensive-computation)
 
 Once your job has been granted its allocated GPUs, you can use the gpuDevice function to initialize a specific GPU for use with Matlab functions that can utilize the architecture of GPUs. For more information see the [MathWorks documentation](https://www.mathworks.com/help/parallel-computing/gpu-computing-in-matlab.html) on GPU Computing in Matlab.
 

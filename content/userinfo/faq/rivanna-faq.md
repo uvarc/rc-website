@@ -1,6 +1,6 @@
 +++
 description = ""
-title = "Rivanna FAQs"
+title = "Rivanna and Afton FAQs"
 draft = false
 date = "2020-02-14T01:45:12-05:00"
 tags = ["hpc","rivanna","faqs","supercomputer"]
@@ -24,11 +24,11 @@ type = "rivanna"
 
 # General Usage
 
-## How do I gain access to Rivanna?
-A faculty member must first request an allocation on Rivanna. Full details can be found [here](/userinfo/hpc/allocations).
+## How do I gain access to Rivanna/Afton?
+A faculty member must first request an allocation on the HPC system. Full details can be found [here](/userinfo/hpc/allocations).
 
-## How do I log on to Rivanna?
-Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access Rivanna through our Web-based interface [Open OnDemand](/userinfo/hpc/ood/overview) or [FastX](/userinfo/hpc/logintools/fastx).
+## How do I log on to Rivanna/Afton?
+Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access the HPC system through our Web-based interface [Open OnDemand](/userinfo/hpc/ood/overview) or [FastX](/userinfo/hpc/logintools/fastx).
 
 {{% off-campus %}}
 
@@ -44,9 +44,9 @@ Some users logging in through ssh may encounter this error message. If you recei
 ## When I try to log in with ssh, nothing happens when I type my password!
 When you type your password, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
 
-## When running Firefox on Rivanna, I get : "Firefox is already running, but is not responding. To open a new window, you must first close the existing Firefox process, or restart your system." What can I do?
+## When running Firefox on the HPC system, I get : "Firefox is already running, but is not responding. To open a new window, you must first close the existing Firefox process, or restart your system." What can I do?
 
-From a terminal in your home directory on Rivanna, run the commands:
+From a terminal in your home directory on the HPC system, run the commands:
 
 ```
 rm -rf ~/.mozilla/firefox/*.default/.parentlock
@@ -67,7 +67,7 @@ Both allow you to run applications with graphical user interfaces in a Linux Des
 * Good for light-weight file management, script editing.
 * Requires a VPN connection from off-Grounds locations.
 
-## How can I view .pdf or .csv files on Rivanna?
+## How can I view .pdf or .csv files on Rivanna/Afton?
 
 For .pdf files, run the command:
 ```
@@ -102,13 +102,13 @@ alias vi='vim'
 
 ## What is an allocation?
 
-Time on Rivanna is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/hpc/allocations).
+Time on the HPC system is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/hpc/allocations).
 
 ## How can I request an allocation?
 
 The different Service Unit (SU) allocation types are explained in [this article](/userinfo/hpc/allocations/#allocation-types). It includes links to our allocation request webforms.
 
-## How do I check my allocation status on Rivanna?
+## How do I check my allocation status on Rivanna/Afton?
 
 Run the `allocations` command.  The output may look like this:
 ```
@@ -140,11 +140,11 @@ Only [Standard Allocations](/userinfo/hpc/allocations/#standard-allocations) and
 ## How are Service Units Reserved?
 
 When a job is submitted the account manager calculates the required maximum amount of Service Units (SUs) using the assumption that the job will run the full amount of time requested. These SUs are held in reserve as a "lien" against the allocation charged for the job.  When the job completes the lien is released and the _actual_ SUs consumed
-are deducted from the allocation balance. See [How do I check my allocation status on Rivanna?](/userinfo/faq/rivanna-faq/#how-do-i-check-my-allocation-status-on-rivanna) for specifics.
+are deducted from the allocation balance. See [How do I check my allocation status on Rivanna/Afton?](/userinfo/faq/rivanna-faq/#how-do-i-check-my-allocation-status-on-rivanna) for specifics.
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on Rivanna. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/overview/#job-queues).
+Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/overview/#job-queues).
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). To manage groups created before November 28th, 2023, visit the legacy [MyGroups portal](https://mygroups.virginia.edu/).
@@ -165,15 +165,15 @@ Only [Standard Allocations](/userinfo/hpc/allocations/#standard-allocations), an
 We use the `lmod` system for managing software environments. [Learn more about how to use `lmod`](/userinfo/hpc/software/modules/).
 
 ## Does RC install research software?
-Our staff will install software onto Rivanna if it is of wide applicability to the user community. Software used by one group should be installed by the group members, ideally onto leased storage for the group.  We can provide assistance for individual installations.
+Our staff will install software onto the HPC system if it is of wide applicability to the user community. Software used by one group should be installed by the group members, ideally onto leased storage for the group.  We can provide assistance for individual installations.
 
 For help installing research software on your PC, please contact Research Software Support at [res-consult@virginia.edu](mailto:res-consult@virginia.edu).
 
 ## Is there any other way to install research software that I need?
 Some groups and departments have installed a bundle of software they need into shared space.  Please see your departmental IT support personnel if your department has its own bundle.
 
-## Can I run this Docker container on Rivanna?
-We do not run Docker on Rivanna.  Instead we use Apptainer.  Apptainer can run Docker images directly, or you can convert a Docker image to an Apptainer image.  To import existing Docker images, use the `apptainer pull` command.
+## Can I run this Docker container on Rivanna/Afton?
+We do not run Docker on the HPC system.  Instead we use Apptainer.  Apptainer can run Docker images directly, or you can convert a Docker image to an Apptainer image.  To import existing Docker images, use the `apptainer pull` command.
 ```
 module load apptainer
 apptainer pull docker://account/image
@@ -191,7 +191,7 @@ Please check the user manual for your application/container before running on a 
 
 [https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support](https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support)
 
-## How can I make my Jupyter notebook from JupyterLab to run as a batch job on Rivanna?
+## How can I make my Jupyter notebook from JupyterLab to run as a batch job on Rivanna/Afton?
 
 1. Capture the information that you use to start up a JupyterLab session.  It helps to take a screenshot of the web form where you enter the partition, number of cores, amount of memory, etc.  You will need that information for requesting resources on a compute node.
 
@@ -199,13 +199,13 @@ Please check the user manual for your application/container before running on a 
 
 3. Convert the notebook to a regular script.  To do this, go into the notebook that you want to convert.  In the upper left corner, click on File > Export Notebook As > Export Notebook to Executable Script .  This will download the script onto your laptop.   On my computer, this leaves a blank window on my screen.  But, if I close that tab on my browser, the tab with the notebook returns.  I’m now down with the notebook and can terminate the session.
 
-4. Upload the “executable script” to Rivanna. In Open onDemand dashboard view, on the black ribbon across the top, click on Files > Home Directory.  This will open a page that shows the files that you have in your home directory on Rivanna.  At the top of the page, toward the right, is a button labelled “Upload”.  Click on that button.  In the dialog box that appears, click on “Choose File”.  This will allow you to go to the downloaded file and select it.
+4. Upload the “executable script” to the HPC system. In Open onDemand dashboard view, on the black ribbon across the top, click on Files > Home Directory.  This will open a page that shows the files that you have in your home directory on Rivanna.  At the top of the page, toward the right, is a button labelled “Upload”.  Click on that button.  In the dialog box that appears, click on “Choose File”.  This will allow you to go to the downloaded file and select it.
 
 5. Create a Slurm script to run your code.  The Slurm script list the resources and instructions that are needed to run your “executable script”.   See the following link:
 
       [https://www.rc.virginia.edu/userinfo/hpc/slurm/](https://www.rc.virginia.edu/userinfo/hpc/slurm/)
 
-6. Open a terminal window on Rivanna, and move to the location where your scripts are.  We recommend using the web-based FastX application (see below). Once in a terminal window, type sbatch followed my the name of your Slurm script.
+6. Open a terminal window on the HPC system, and move to the location where your scripts are.  We recommend using the web-based FastX application (see below). Once in a terminal window, type sbatch followed my the name of your Slurm script.
 
       [https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access)
 - - -
@@ -234,7 +234,7 @@ Queues are set up to emphasize one-core (serial or threaded), multi-node paralle
 - Jobs requiring the use of GPUs: **gpu**
 - Jobs for interactive sessions or quick tests of code:  **interactive**
 
-More information about queue policy is at the [Rivanna homepage](/userinfo/hpc/overview/#job-queues).
+More information about queue policy is at the [HPC homepage](/userinfo/hpc/overview/#job-queues).
 
 ## How do I use the interactive queue?
 
@@ -297,7 +297,7 @@ If you use a Windows editor to create Slurm batch scripts, when you try to run t
 sbatch: error: Batch script contains DOS line breaks (\r\n)
 sbatch: error: instead of expected UNIX line breaks (\n).
 ```
-Windows and Linux use different conventions to mark the end of each line.  Many applications on Rivanna, such as compilers, Matlab, etc., understand Windows end-of-line markers, but the shell does not.  This is easy to fix by running the `dos2unix` commmand
+Windows and Linux use different conventions to mark the end of each line.  Many applications on the HPC system, such as compilers, Matlab, etc., understand Windows end-of-line markers, but the shell does not.  This is easy to fix by running the `dos2unix` commmand
 ```
 dos2unix myscript.slurm
 ```
@@ -329,7 +329,7 @@ The output of this command is also contained in the email sent by Slurm once you
 
 # Storage Management
 
-## What storage options are available to me to use on Rivanna?
+## What storage options are available to me to use on Rivanna/Afton?
 All users are provided a 50-GB home directory for longer-term storage.  This directory provides "snapshots" though it is not backed up.  Each user also is provided 10TB of temporary "scratch" storage accessible as `/scratch/$USER` where `$USER` will stand for your ID.  Scratch storage is fast but is not backed up in any way.
 
 If the free storage is not sufficient, you need snapshots of your files, or you wish to share space among a research group, the group should lease storage.
@@ -342,9 +342,9 @@ Scratch storage is fast and provides a large quantity of free space.  However, t
 Research Computing offers two tiers of leased storage, _Research Standard_ and _Research Project_. Please see our [storage page](/userinfo/storage) for details.
 
 ## How do I check my disk usage?
-Run `hdquota` on a Rivanna frontend.
+Run `hdquota` on a HPC frontend.
 
-## How do I check my `/scratch` usage on Rivanna?
+## How do I check my `/scratch` usage on Rivanna/Afton?
 Run the command `hdquota -s`:
 
 ```
@@ -372,7 +372,7 @@ find . -type f | cut -d/ -f2 | sort | uniq -c
 `/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/hpc/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
 
 ## How do I share data in my `/scratch` or leased storage with a colleague?
-To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on Rivanna, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.
+To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on UVA HPC, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.
 
 If you wish to share data in leased space with a member of your group, be sure that permissions are set so that the group member can access your subdirectory.  The college can then simply use the data directly, or copy it elsewhere.  If you wish to share data from your leased storage to a colleague who is not a member of the group, use Globus sharing in the same manner as sharing `/scratch`.
 
@@ -380,36 +380,36 @@ If you wish to share data in leased space with a member of your group, be sure t
 
 # Data Transfer
 
-## How do I transfer data from UVA Box to my /scratch directory on Rivanna?
+## How do I transfer data from UVA Box to my /scratch directory on Rivanna/Afton?
 
-Log into Rivanna using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop, in the upper right hand corner of the browser window you should see 3 horizontal bars. Click on that and then select Preferences from the drop down window. In the new window scroll down until you see Downloads and select ‘Always ask you where to save files’.  Then when you go to Box to download, a new window will pop up and if you click on ‘Other locations’, you can navigate to your scratch directory.
+Log into UVA HPC using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop, in the upper right hand corner of the browser window you should see 3 horizontal bars. Click on that and then select Preferences from the drop down window. In the new window scroll down until you see Downloads and select ‘Always ask you where to save files’.  Then when you go to Box to download, a new window will pop up and if you click on ‘Other locations’, you can navigate to your scratch directory.
 
-## How do I transfer data from my /scratch directory on Rivanna to my UVA Box account?
+## How do I transfer data from my /scratch directory on Rivanna/Afton to my UVA Box account?
 
-Log into Rivanna using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop and log into your UVA Box account. Once logged in to box, click on the New + button (upper right) to upload a file/folder. In the left sidebar of the new window, select Other Locations/Computer/scratch/<yourid> to navigate to your scratch directory and select the files/folders you want to upload to your box account.
+Log into UVA HPC using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop and log into your UVA Box account. Once logged in to box, click on the New + button (upper right) to upload a file/folder. In the left sidebar of the new window, select Other Locations/Computer/scratch/<yourid> to navigate to your scratch directory and select the files/folders you want to upload to your box account.
 
-## What Linux commands can I use to transfer files to/from Rivanna?
+## What Linux commands can I use to transfer files to/from Rivanna/Afton?
 
-Smaller files can be transferred to/from Rivanna using `scp`, `sftp`, and `rsync` as well as standard FTP tools.
+Smaller files can be transferred to/from Rivanna/Afton using `scp`, `sftp`, and `rsync` as well as standard FTP tools.
 
 Larger files should be moved using [Globus](/userinfo/globus/).
 
 [Read more](/userinfo/data-transfer/) about data transfer.
 
-## I need to push and commit code changes from Rivanna account to my GitHub account. How do I set that up?
+## I need to push and commit code changes from Rivanna/Afton to my GitHub account. How do I set that up?
 
 You must first generate an ssh key and then copy it to your git repository. Here are the instructions for generating the ssh key and what to do on your git page:
 
 1. To generate an ssh key, see the following link: [ssh key generation](https://www.rc.virginia.edu/userinfo/howtos/general/sshkeys/)
 
 2. Click on the drop-down menu next to my Git profile picture in the upper right corner; Select Settings; Click on SSH and GPG keys in the left column; Click on the New SSH Key button and followed the directions to upload your ssh key.
-Make sure that the ssh key is in your authorized_keys file in your .ssh directory on Rivanna.
+Make sure that the ssh key is in your authorized_keys file in your .ssh directory on Rivanna/Afton.
 
 3. The next step is to clone the repository using the ssh link. If you have already cloned the repository using the http link and made a number of changes to your files, you won’t want to redo them.  Rename the directory that was created when you first cloned the repository. Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
 
 # Downloading Files
 
-## What command-line tools are available on Rivanna for downloading files from web?
+## What command-line tools are available on Rivanna/Afton for downloading files from web?
 
 #### wget
 
@@ -426,7 +426,7 @@ curl -O https://example.com/file.zip
 
 #### axel
 
-axel not only downloads files over different protocols, but accelrates the process by using multiple connections to retrieve files from the destination. Axel is availale on Rivanna through `module load axel`.
+axel not only downloads files over different protocols, but accelrates the process by using multiple connections to retrieve files from the destination. Axel is availale on Rivanna/Afton through `module load axel`.
 The syntax for using axel over 10 connections is as follows:
 ```bash
 axel -n 10 http://example.com/file.zip
@@ -434,7 +434,7 @@ axel -n 10 http://example.com/file.zip
 
 ## wget, curl or axel?
 
-For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommneded to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna:
+For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommneded to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna/Afton:
 
 
 | tool | 100MB | 1GB |

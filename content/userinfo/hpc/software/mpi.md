@@ -11,7 +11,7 @@ author = "RC Staff"
 
 +++
 # Overview
-MPI stands for Message Passing Interface. The MPI standard is defined by the Message Passing Interface Forum. The standard defines the interface for a set of functions that can be used to pass messages between processes on the same computer or on different computers. MPI can be used to program shared memory or distributed memory computers. There is a large number of implementations of MPI from various computer vendors and academic groups. MPI is supported on the Rivanna cluster.
+MPI stands for Message Passing Interface. The MPI standard is defined by the Message Passing Interface Forum. The standard defines the interface for a set of functions that can be used to pass messages between processes on the same computer or on different computers. MPI can be used to program shared memory or distributed memory computers. There is a large number of implementations of MPI from various computer vendors and academic groups. MPI is supported on the HPC clusters.
 
 # MPI On the HPC System
 MPI is a standard that describes the behavior of a library.  It is intended to be used with compiled languages (C/C++/Fortran).  Several implementations of this standard exist.  UVA HPC supports OpenMPI for all our compilers and IntelMPI for the Intel compiler.   MPI can also be used with the interpreted languages R and Python through packages that link to an implementation; on the HPC system these languages use OpenMPI.  
