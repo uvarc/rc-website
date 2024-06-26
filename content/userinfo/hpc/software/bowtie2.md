@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "bowtie2"
 softwarename = "Bowtie2"
-title = "Bowtie2 on Rivanna"
+title = "Bowtie2 and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -47,7 +47,7 @@ module spider {{% module-firstversion %}}
 
 # Bowtie2 Example
 
-The following example demonstrates how to run a Bowtie sequence alignment on multiple cpu cores on a single Rivanna node. More details information about the aligner can be found [here](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#the-bowtie2-aligner).
+The following example demonstrates how to run a Bowtie sequence alignment on multiple cpu cores on a single HPC node. More details information about the aligner can be found [here](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#the-bowtie2-aligner).
 
 **Note that Bowtie cannot be executed across multiple nodes.** 
 
@@ -67,13 +67,13 @@ cp -r $EBROOTBOWTIE2/example /scratch/$USER/bowtie_temp
 
 ## The Slurm Job Script
 
-The Slurm script defines the Rivanna resources needed to run the Bowtie2 indexing and alignment. Bowtie2 can utilize multiple cpu cores on a single compute node. It does not support execution on multiple nodes.  
+The Slurm script defines the HPC resources needed to run the Bowtie2 indexing and alignment. Bowtie2 can utilize multiple cpu cores on a single compute node. It does not support execution on multiple nodes.  
 
 Let's create a textfile that serves as our job script, `alignment.slurm`, with the following content:
 
 {{< pull-code file="/static/scripts/bowtie2.slurm" lang="no-hightlight" >}}
 
-* You need to replace `<YOUR_ALLOCATION>` with your own Rivanna allocation name.
+* You need to replace `<YOUR_ALLOCATION>` with your own HPC allocation name.
 
 * The `$USER` variable will expand to your computing ID so you'll be using your personal scratch directory.  
 
@@ -111,7 +111,7 @@ Because of parallel processing, the aligned reads might appear in the output SAM
 
 ## Troubleshooting
 
-**Caution:** If you create the Slurm job sscript on a Windows computer and then upload it to Rivanna, you’ll probably get an error when you run it with sbatch that says:
+**Caution:** If you create the Slurm job script on a Windows computer and then upload it to the HPC system, you’ll probably get an error when you run it with sbatch that says:
 ```
 sbatch: error: Batch script contains DOS line breaks (\r\n)
 sbatch: error: instead of expected UNIX line breaks (\n).

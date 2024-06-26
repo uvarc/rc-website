@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "snakemake"
 softwarename = "Snakemake"
-title = "Snakemake on Rivanna"
+title = "Snakemake and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -49,7 +49,7 @@ module spider {{% module-firstversion %}}
 # Snakemake workflow:
 
 - Snakemake is a workflow management system used to create reproducible and scalable data analyses
-- Workflows are written in Python and can be deployed in parallel on Rivanna
+- Workflows are written in Python and can be deployed in parallel on the HPC system
 - Workflows can be executed in containerized environments: Conda or Apptainer
 
 # Snakemake rules:
@@ -132,7 +132,7 @@ rule stringtie_assemble:
 
 # Slurm for Snakemake:
 
-- The Snakemake pipeline can be executed using a `SLURM` script on Rivanna
+- The Snakemake pipeline can be executed using a `SLURM` script on the HPC system
 - Below is an example script to submit to the standard partition with 8 threads
 - This script is using a `conda` environment called rnaseq
 

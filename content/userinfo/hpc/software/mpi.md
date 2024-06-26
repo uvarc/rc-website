@@ -5,16 +5,16 @@ tags = [
   "rivanna", "software", "mpi"
 ]
 draft = false
-title = "Message Passing Interface (MPI) on Rivanna"
-description = "Distributed Memory and Message Passing Interface on Rivanna"
+title = "Message Passing Interface (MPI) and UVA HPC"
+description = "Distributed Memory and Message Passing Interface and UVA HPC"
 author = "RC Staff"
 
 +++
 # Overview
-MPI stands for Message Passing Interface. The MPI standard is defined by the Message Passing Interface Forum. The standard defines the interface for a set of functions that can be used to pass messages between processes on the same computer or on different computers. MPI can be used to program shared memory or distributed memory computers. There is a large number of implementations of MPI from various computer vendors and academic groups. MPI is supported on the Rivanna cluster.
+MPI stands for Message Passing Interface. The MPI standard is defined by the Message Passing Interface Forum. The standard defines the interface for a set of functions that can be used to pass messages between processes on the same computer or on different computers. MPI can be used to program shared memory or distributed memory computers. There is a large number of implementations of MPI from various computer vendors and academic groups. MPI is supported on the HPC clusters.
 
-# MPI On Rivanna
-MPI is a standard that describes the behavior of a library.  It is intended to be used with compiled languages (C/C++/Fortran).  Several implementations of this standard exist.  Rivanna supports OpenMPI for all our compilers and IntelMPI for the Intel compiler.   MPI can also be used with the interpreted languages R and Python through packages that link to an implementation; on Rivanna these languages use OpenMPI.  
+# MPI On the HPC System
+MPI is a standard that describes the behavior of a library.  It is intended to be used with compiled languages (C/C++/Fortran).  Several implementations of this standard exist.  UVA HPC supports OpenMPI for all our compilers and IntelMPI for the Intel compiler.   MPI can also be used with the interpreted languages R and Python through packages that link to an implementation; on the HPC system these languages use OpenMPI.  
 
 # Selecting Compiler and Implementation
 An MPI implementation must be built with a specific [compiler](/userinfo/hpc/software/compilers). Consequently, only compilers for which MPI has been prepared can be used with it. All versions of the Intel compiler will have a corresponding IntelMPI. For OpenMPI run
@@ -56,7 +56,7 @@ It is also possible to combine these into one line, as long as the compiler is s
 module load gcc openmpi
 ```
 
-For a detailed description of building and running MPI codes on Rivanna, please see our [HowTo](/userinfo/howtos/rivanna/mpi-howto).
+For a detailed description of building and running MPI codes on the HPC system, please see our [HowTo](/userinfo/howtos/rivanna/mpi-howto).
 
 <br>
 **Available MPI library modules**

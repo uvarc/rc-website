@@ -18,20 +18,15 @@ draft = false
 
 # Overview
 
-The **Research Project Storage** file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="https://groups.identity.virginia.edu" target="_blank">Grouper</a> (requires VPN connection). `/project` storage is mounted on the Rivanna HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
+The **Research Project Storage** file system provides users with a collaborative space for data storage and sharing. Members in the same group have access to a shared directory created by the team lead or PI. Group membership can be defined and managed through the <a href="https://groups.identity.virginia.edu" target="_blank">Grouper</a> (requires VPN connection). `/project` storage is mounted on the HPC cluster and runs on a new <a href="http://whatis.techtarget.com/definition/scale-out-storage" target="_blank">scale-out</a> NAS file system.
 
 **How to request `/project` storage space**
 
 `/project` storage can be purchased for {{% storage-pricing project %}}/TB/YR by using [this form](/form/storage/). When filling out the form, the PI can specify the size of the `/project` directory and the name of an existing or new Grouper group that can access this space. We recommend choosing a Grouper group name specific to your group or collaboration for the `/project` directory. This will reduce confusion in the future if you manage multiple Grouper groups and directories on other storage systems.
 
-Once the request has been submitted, the PI will receive a notification that the `/project` space has been provisioned within 24 hours. Once the space becomes available, the PI can grant access to lab members by adding them to the Grouper group. Users in the Grouper group will see the directory (`/project/Grouper_group_name`) after logging into Rivanna. Addition and removal of users is managed by the PI of the group.
+Once the request has been submitted, the PI will receive a notification that the `/project` space has been provisioned within 24 hours. Once the space becomes available, the PI can grant access to lab members by adding them to the Grouper group. Users in the Grouper group will see the directory (`/project/Grouper_group_name`) after logging into UVA HPC. Addition and removal of users is managed by the PI of the group.
 
-{{% callout %}}
-Note for PI's creating a new Grouper group:
-
-* Specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation.
-
-{{% /callout %}}
+{{% group_creation_tip %}}
 
 # Public & Moderately Sensitive Data Storage Systems
 

@@ -6,7 +6,7 @@ tags = [
 ]
 draft = false
 title = "NVHPC"
-description = "Compiling GPU Applications on Rivanna"
+description = "Compiling GPU Applications and UVA HPC"
 author = "RC Staff"
 
 +++
@@ -28,7 +28,7 @@ OpenACC is a standard
 ## GPU architecture
 According to the [CUDA documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html#gpu-feature-list), "in the CUDA naming scheme, GPUs are named `sm_xy`, where `x` denotes the GPU generation number, and `y` the version in that generation." The documentation contains details about the architecture and the corresponding `xy` value. The *compute capability* is `x.y`.
 
-Please use the following values when compiling CUDA code on Rivanna.
+Please use the following values when compiling CUDA code on the HPC system.
 
 | Type | GPU | Architechture | Compute Capability | CUDA Version |
 | --- | --- |  --- | --- | --- |

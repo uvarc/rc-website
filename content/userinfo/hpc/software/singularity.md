@@ -25,13 +25,13 @@ Singularity is a container application targeted to multi-user, high-performance 
 # Creating Singularity Containers
 To create your own image from scratch, you must have root privileges on some computer running Linux (any version).  Follow the instructions at the Singularity site.  If you have only Mac or Windows, you can use the Vagrant environment.  Vagrant is a pre-packed system that runs under several virtual-machine environments, including the free Virtualbox environment.  Singularity provides instructions for installing on Mac or installing on Windows.  Once you have installed Vitrualbox, you install Singularity's Vagrant image, which contains the prerequisites to author images.  You can then follow the instructions for Linux to author your image.
 
-## How to use a Docker image on Rivanna?
+## How to use a Docker image on the HPC System?
 You will need to convert the Docker image into Singularity. Please visit our [how-to page](/userinfo/howtos/rivanna/docker-images-on-rivanna) for instructions.
 
-If you do not have the ability to create your own image for Rivanna or to use a Docker image, contact us for assistance.
+If you do not have the ability to create your own image for the HPC system or to use a Docker image, contact us for assistance.
 
 
-# Singularity on Rivanna
+# Singularity on the HPC system
 Singularity is available as a [module](/userinfo/hpc/software/modules). The RC staff has also curated a library of pre-prepared Singularity container images for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the `module avail` and `module spider` commands.
 
 ```
@@ -196,7 +196,7 @@ Each container provides its own file system.  In addition, directories of the ho
 * `/sys`
 * `/dev`
 
-In addition, the following user directories are overlayed onto each container by default on Rivanna:
+In addition, the following user directories are overlayed onto each container by default on the HPC system:
 
 * `/home`
 * `/scratch`

@@ -8,8 +8,8 @@ tags = [
   "hpc"
 ]
 draft = false
-title = "GPU-enabled Software on Rivanna"
-description = "List of GPU-enabled Software Modules on Rivanna"
+title = "GPU-enabled Software and UVA HPC"
+description = "List of GPU-enabled Software Modules on the UVA HPC System"
 author = "RC Staff"
 categories = ["userinfo"]
 

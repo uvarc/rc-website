@@ -6,8 +6,8 @@ tags = [
   "rivanna", "software", "containers", "apptainer"
 ]
 draft = false
-title = "Apptainer on Rivanna"
-description = "Apptainer on Rivanna"
+title = "Apptainer and UVA HPC"
+description = "Apptainer and UVA HPC"
 author = "RC Staff"
 
 +++
@@ -18,9 +18,9 @@ Apptainer is a continuation of the Singularity project (see [here](https://appta
 
 Containers created by Singularity and Apptainer are mutually compatible as of this writing, although divergence is to be expected.
 
-One advantage of Apptainer is that users can now build container images natively on Rivanna.
+One advantage of Apptainer is that users can now build container images natively on the UVA HPC system.
 
-# Apptainer on Rivanna (after 12/18/2023)
+# Apptainer and UVA HPC (after 12/18/2023)
 Apptainer is available as a [module](/userinfo/hpc/software/modules). The RC staff has also curated a library of pre-prepared Apptainer container images for popular applications as part of the shared software stack.  Descriptions for these shared containers can be found via the `module avail` and `module spider` commands.
 
 ```
@@ -196,7 +196,7 @@ Each container provides its own file system.  In addition, directories of the ho
 * `/sys`
 * `/dev`
 
-In addition, the following user directories are overlayed onto each container by default on Rivanna:
+In addition, the following user directories are overlayed onto each container by default on the HPC system:
 
 * `/home`
 * `/scratch`

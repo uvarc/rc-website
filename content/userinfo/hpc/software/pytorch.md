@@ -7,8 +7,8 @@ tags = [
 draft = false
 modulename = "pytorch"
 softwarename = "PyTorch"
-title = "PyTorch on Rivanna"
-description = "PyTorch on Rivanna"
+title = "PyTorch and UVA HPC"
+description = "PyTorch and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -103,7 +103,7 @@ apptainer run --nv $CONTAINERDIR/pytorch-2.0.1.sif pytorch_example.py
 ```
 
 # Interaction with the Host File System
-The following user directories are overlayed onto each container by default on Rivanna:
+The following user directories are overlayed onto each container by default on the HPC system:
 
 + /home
 + /scratch

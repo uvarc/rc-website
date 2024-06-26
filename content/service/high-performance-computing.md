@@ -31,7 +31,18 @@ Examples of service areas include:
 
 - - -
 
-<p class=lead>UVA has two local computational facilities available to researchers: <b>Rivanna</b> and <b>Ivy</b>. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.</p>
+<p class=lead>UVA has three local computational facilities available to researchers: <b>Rivanna</b>, <b>Afton</b>, and <b>Ivy</b>. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.</p>
+
+<div class="card" style="margin:2rem;">
+  <div class="card-block">
+    <h2 class="card-title">Afton</h2>
+    <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
+    <p class="card-text">
+      {{< get_allocation_blurb name="Afton" >}}
+    </p>
+    <a href="/userinfo/hpc/overview" class="card-link"><button class="btn btn-warning">Read more about Afton</button></a>
+  </div>
+</div>
 
 <div class="card" style="margin:2rem;">
   <div class="card-block">

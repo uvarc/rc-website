@@ -22,7 +22,7 @@ draft = false
 * Transfer public or internal use data between local workstation/laptop and UVA storage
 * Transfer sensitive or highly sensitive data to Ivy storage
 * Transfer data between external institutions/supercomputing centers and UVA 
-* [Transfer between Rivanna and Cloud storage](#transfering-data-to-cloud-storage)
+* [Transfer between UVA HPC and Cloud storage](#transfering-data-to-cloud-storage)
 
 The data transfer method you choose heavily relies on the [data sensitivity classification](https://security.virginia.edu/university-data-protection-standards), where the data are currently located and to where you want to transfer the data. Click on a row in the table below to learn more about the data transfer methods available for a specific scenario.
 
@@ -54,7 +54,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<ul>
 					<li>Copy data from a lab workstation to a <code>/project</code> storage share.</li>
 					<br>
-					<li>Copy result files from a <code>/scratch</code> directory on Rivanna.</li>
+					<li>Copy result files from a <code>/scratch</code> directory on Rivanna or Afton.</li>
 				</ul>
 				<span style="float:right;font-size:85%;margin-bottom:-8px;margin-right:-4px;"><i class="fas fa-angle-double-down"></i> Expand</span>
 			</td>
@@ -70,8 +70,8 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td>
 				<p align="center"><b>Remote System</b></p>
 				<ul>
-					<li>/home on Rivanna</li>
-					<li>/scratch on Rivanna</li>
+					<li>/home on Rivanna or Afton</li>
+					<li>/scratch on Rivanna or Afton</li>
 					<li>Research Project Storage</li>
 					<li><a href="/userinfo/storage/research-standard/">Research Standard Storage</a></li>
 				</ul>
@@ -232,7 +232,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td align="center" valign="top">
 				<i class="fas fa-building fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br>
-				<b>Rivanna Storage</b>
+				<b>Rivanna/Afton Storage</b>
 			</td>
 			<td align="center" valign="top">
 				<i class="fas fa-cloud fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
@@ -241,7 +241,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
-					<li>Transfer public or not-highly sensitive data from <i>Research Project<i> & <i>Research Standard</i> storage or Rivanna home & scratch directories to AWS cloud storage.</li>
+					<li>Transfer public or not-highly sensitive data from <i>Research Project<i> & <i>Research Standard</i> storage or Rivanna/Afton home & scratch directories to AWS cloud storage.</li>
 				</ul>
 				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
 			</td><br><br>
@@ -287,7 +287,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<h6 class="card-subtitle mb-2 text-muted">Large-scale research data transfer</h6>
                         <img src="/images/globus-logo.png" alt="Globus" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
 				<p class="card-text">
-					Transferring large amounts of research data is fast and simple with Globus Connect. Globus gives researchers unified access to their data through an easy-to-use web interface, and can be used to transfer data between your laptop and storage systems mounted on the Rivanna HPC system. Globus can also be used to transfer data from other universities or supercomputing facilities.
+					Transferring large amounts of research data is fast and simple with Globus Connect. Globus gives researchers unified access to their data through an easy-to-use web interface, and can be used to transfer data between your laptop and storage systems mounted on the HPC system. Globus can also be used to transfer data from other universities or supercomputing facilities.
 				</p>
 			<a href="/userinfo/globus" class="card-link"><button class="btn btn-warning">Learn more</button></a> &nbsp;
 			<a href="https://www.globus.org/" class="card-link" target="_blank"><button class="btn btn-primary">Access Globus</button></a>
@@ -345,7 +345,7 @@ When using a Linux file system, users can invoke generic Linux commands to manag
 
 # Transfering Data to Cloud Storage
  
-Several command line tools are available to transfer data from your UVA storage locations to the cloud. On Rivanna we provide the `rsync` and `aws cli` tools to transfer files files from _Research Project_, _Research Standard_ and Rivanna home & scratch directories to AWS storage.
+Several command line tools are available to transfer data from your UVA storage locations to the cloud. On the HPC system we provide the `rsync` and `aws cli` tools to transfer files files from _Research Project_, _Research Standard_ and Rivanna/Afton home & scratch directories to AWS storage.
 
 [Learn more about the AWS CLI tools](/userinfo/howtos/storage/aws-s3/)
 

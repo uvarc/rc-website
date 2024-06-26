@@ -21,7 +21,7 @@ Research Computing offers several budget options for storing public and internal
 classifications](https://security.virginia.edu/university-data-protection-standards).
 
 The _Research Standard_ storage provides users with a solution for research data storage and collaboration. Members in the same group have access to a shared directory created by 
-the team lead or PI. Group membership can be defined and managed through <a href="https://groups.identity.virginia.edu" target="_blank">Grouper</a> (requires VPN connection). Research Standard storage is mounted on the Rivanna HPC cluster and can also be accessed on a personal computer with an SMB 
+the team lead or PI. Group membership can be defined and managed through <a href="https://groups.identity.virginia.edu" target="_blank">Grouper</a> (requires VPN connection). Research Standard storage is mounted on the HPC cluster and can also be accessed on a personal computer with an SMB 
 mount, allowing for point-and-click file manipulation.
 
 If you are not a researcher, UVA ITS offers Value storage for long-term storage of large scale data. More information about ITS's 
@@ -34,12 +34,7 @@ Users can specify the size and name of the Research Standard Storage directory a
 
 When your Research Standard Storage share is created, you will receive an email detailing your NFS mount `standard.hpc.virginia.edu:vol###`, where `###` refers to the specific volume number, and the SMB map `\\standard.hpc.virginia.edu\Grouper_group_name`.
 
-{{% callout %}}
-Note for PI's creating a new Grouper group:
-
-* Specify "This group will be used for Rivanna access" in the description section of the Service Now request form to expedite group creation.
-
-{{% /callout %}}
+{{% group_creation_tip %}}
 
 # Drive Mapping with Research Standard Storage
 
@@ -47,7 +42,7 @@ _Research Standard_ storage can be drive mapped on a personal computer to enable
 
 # File Manipulation and Navigation with Research Standard Storage
  
-_Research Standard_ storage is based on a Linux file system similar to storage spaces on the Rivanna cluster, including [/home](/userinfo/storage/non-sensitive-data/#home) and [/scratch](/userinfo/storage/non-sensitive-data/#scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
+_Research Standard_ storage is based on a Linux file system similar to storage spaces on the cluster, including [/home](/userinfo/storage/non-sensitive-data/#home) and [/scratch](/userinfo/storage/non-sensitive-data/#scratch). Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 
 <ul>
     <li><a href="https://computers.tutsplus.com/tutorials/navigating-the-terminal-a-gentle-introduction--mac-3855" target="_blank">A Gentle Introduction</a></li>

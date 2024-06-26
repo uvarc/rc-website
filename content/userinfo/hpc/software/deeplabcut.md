@@ -9,7 +9,7 @@ date = "2021-08-11T00:00:00-05:00"
 draft = false
 modulename = "deeplabcut"
 softwarename = "DeepLabCut"
-title = "DeepLabCut on Rivanna"
+title = "DeepLabCut and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -39,7 +39,7 @@ module spider {{% module-firstversion %}}
 
 # Dockerfile
 
-We cannot use the official Docker image on Rivanna because:
+We cannot use the official Docker image on the UVA HPC system because:
 - the CUDA version is incompatible with our NVIDIA driver version (as of August 2021);
 - at runtime it tries to download pretrained models inside the container, which is not possible via Apptainer.
 

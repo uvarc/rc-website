@@ -18,8 +18,8 @@ draft = false
 shorttitle = "MATLAB"
 softwarename = "MATLAB"
 modulename = "matlab"
-title = "Matlab on Rivanna"
-description = "Matlab in Rivanna's HPC environment"
+title = "Matlab and UVA HPC"
+description = "Matlab in the HPC environment"
 author = "RC Staff"
 toc = true
 +++
@@ -46,16 +46,16 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-You can work in the MATLAB desktop on the Rivanna frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through Slurm.
+You can work in the MATLAB desktop on the UVA HPC frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through Slurm.
 
 If your Matlab job requires user interactions via the Matlab interface, you should use [Open OnDemand](/userinfo/hpc/ood/overview) as described in the next section.
 
 If you will be running MATLAB through the command line but still wish to use an interactive job, you can create an [ijob](/userinfo/hpc/slurm).
 
-# Interactive Sessions through Rivanna's Open OnDemand Web Portal
+# Interactive Sessions through Open OnDemand
 
 ## Starting an Interactive Session
-To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
+To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc.. If you are new to UVA HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
 
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
@@ -71,11 +71,9 @@ When {{% software-name %}} opens in your web browser, it will appear just like t
 # Closing the Interactive Session
 When you are done, quit the Matlab application.  The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged until the specified time limit is reached.
 
-# Running a Matlab Batch Jobs on Rivanna
+# Running a Matlab Batch Jobs on the HPC System
 
-Rivanna uses the Slurm resource manager to schedule and run jobs on the
-cluster compute nodes. The following are example Slurm scripts for
-submitting different types of Matlab batch jobs to the Rivanna cluster.
+The HPC system uses the Slurm resource manager to schedule and run jobs on the cluster compute nodes. The following are example Slurm scripts for submitting different types of Matlab batch jobs to the cluster.
 
 ## Submitting a batch job using a single core of a compute node.
 
@@ -176,14 +174,11 @@ jobs, each running on a nodes of the standard queue.
 {{< pull-code file="/static/scripts/matlab_job_array.slurm" lang="no-hightlight" >}}
 
 ## Parallel Matlab on Multiple Compute Nodes
-To run Matlab parallel jobs that require more cores than are available on
-one compute node (e.g. > 40), you can launch the Matlab desktop on one of the Rivanna
-login nodes. The following MATLAB setup script will create the cluster profile
-for your account on Rivanna (for versions R2022b or older):
+To run Matlab parallel jobs that require more cores than are available on one compute node (e.g. > 40), you can launch the Matlab desktop on one of the HPC login nodes. The following MATLAB setup script will create the cluster profile for your account on UVA HPC (for versions R2022b or older):
 
 ```
 % The following set of commands are for running parallel Matlab programs
-% across multiple compute nodes of the Rivanna cluster.
+% across multiple compute nodes of the cluster.
 
 % Load the module for Matlab from the Linux command line.
 % module load matlab
@@ -191,7 +186,7 @@ for your account on Rivanna (for versions R2022b or older):
 % The following commands are executed from within Matlab
 
 % set up initial configuration for running multi-node Matlab parallel jobs
-% on Rivanna. This just needs to be done once, and its saved in Matlab’s
+% on the HPC system. This just needs to be done once, and its saved in Matlab’s
 % parallel profiles.
 
 configCluster % the configuration created is specific to the Matlab version
@@ -329,7 +324,7 @@ end
 ```
 # Utilizing GPUs with Matlab
 
-[General guidelines on requesting GPUs on Rivanna](/userinfo/hpc/slurm/#gpu-intensive-computation)
+[General guidelines on requesting GPUs on the HPC system](/userinfo/hpc/slurm/#gpu-intensive-computation)
 
 Once your job has been granted its allocated GPUs, you can use the gpuDevice function to initialize a specific GPU for use with Matlab functions that can utilize the architecture of GPUs. For more information see the [MathWorks documentation](https://www.mathworks.com/help/parallel-computing/gpu-computing-in-matlab.html) on GPU Computing in Matlab.
 

@@ -41,7 +41,7 @@ Detailed instructions and examples for using `scp` are listed <a href ="/userinf
 <a href="https://sourceforge.net/projects/filezilla/" target="_blank">Filezilla</a> and <a href="https://cyberduck.io/" target="_blank">Cyberduck</a>, and <a ref="https://mobaxterm.mobatek.net">MobaXterm</a> are examples of open source SFTP client software for file management through an interactive graphical user interface. Instructions for using these SFTP clients can be found <a href ="/userinfo/hpc/logintools/graphical-sftp" target="_blank">here</a>.
 
 ## Globus Connect (Large Data Transfer)
-<p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Rivanna file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="/userinfo/globus" target="_blank">here</a>.</p>
+<p><a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and HPC file systems, as well as external institutions and facilities. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found <a href ="/userinfo/globus" target="_blank">here</a>.</p>
 
 # Public & Moderately Sensitive Data Storage Systems
 

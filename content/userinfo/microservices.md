@@ -31,10 +31,7 @@ with Kubernetes, the open-source tool from Google. New deployments are now launc
 {{< /highlight >}}
 
 # Microservices at UVA
-Research Computing runs microservices in a clustered orchestration environment that automates the deployment and 
-management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to 
-running containerized services. It also has over 300TB of cluster storage and can attach to 
-[**project**](/userinfo/storage/) and [**value**](/userinfo/storage/) storage.
+Research Computing runs microservices in a clustered orchestration environment that automates the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. It also has over 300TB of cluster storage and can attach to [**project**](/userinfo/storage/) and [**value**](/userinfo/storage/) storage.
 
 {{% highlight-danger %}}
 <div style="float:left;margin:0.5rem 1rem 1rem 0rem;"><i class="fa fa-3x fa-exclamation-triangle" aria-hidden="true"></i></div>
@@ -65,7 +62,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 
 <p class="lead"><span class="badge badge-default">2</span> The easiest and most common way to run microservices is inside of containers.</p>
 
-- We teach workshops on containers and how to use them. Browse the course overview for <a href="https://learning.rc.virginia.edu/tag/containers/" target="_new">Building Containers for Rivanna</a> at your own pace.
+- We teach workshops on containers and how to use them. Browse the course overview for <a href="https://learning.rc.virginia.edu/tag/containers/" target="_new">Building Containers for the HPC System</a> at your own pace.
 - Docker provides an excellent [Getting Started](https://docs.docker.com/get-started/) tutorial.
 - Users may inject `ENV` environment variables and encrypted secrets into containers at runtime. This means sensitive information does not need to be written into your container.
 

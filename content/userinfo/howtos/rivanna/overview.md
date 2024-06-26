@@ -7,8 +7,8 @@ tags = [
 ]
 categories = ["howto"]
 draft = false
-title = "How To Guides for Rivanna Users"
-description = "How Tos for Rivanna"
+title = "How To Guides for UVA HPC Users"
+description = "How Tos for UVA HPC"
 author = "RC Staff"
 
 +++
@@ -18,13 +18,13 @@ author = "RC Staff"
 * [Building compiled code](/userinfo/howtos/rivanna/compiler-howto)
 * [Using `make`](/userinfo/howtos/rivanna/make)
 * [Building and running MPI Code](/userinfo/howtos/rivanna/mpi-howto)
-* [Bioinformatics on Rivanna](/userinfo/howtos/rivanna/bioinfo-on-rivanna)
+* [Bioinformatics on UVA HPC](/userinfo/howtos/rivanna/bioinfo-on-rivanna)
 * [Clear OOD Session Files](/userinfo/howtos/rivanna/clear-ood-session-files)
 * [Convert Jupyter Notebook to PDF](/userinfo/howtos/rivanna/convert-jupyter-pdf)
 * [Convert Jupyter Notebook to Python Script](/userinfo/howtos/rivanna/jupyter-to-python-script)
 * [Custom Jupyter kernels](/userinfo/howtos/rivanna/custom-jupyter-kernels)
 * [Loading Modules in Jupyter](/userinfo/howtos/rivanna/load-module-in-jupyter)
-* [Docker images on Rivanna](/userinfo/howtos/rivanna/docker-images-on-rivanna)
+* [Docker images on UVA HPC](/userinfo/howtos/rivanna/docker-images-on-rivanna)
 * [Adding packages to a container](/userinfo/howtos/rivanna/add-packages-to-container)
 * [Migrate Python packages](/userinfo/howtos/rivanna/migrate-python)
 * [Launch RStudio Server from an Apptainer container](/userinfo/howtos/rivanna/launch-rserver)

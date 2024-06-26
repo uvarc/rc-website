@@ -11,7 +11,7 @@ tags = [
 draft = false
 modulename = "intel"
 softwarename = "Intel"
-title = "Intel on Rivanna"
+title = "Intel and UVA HPC"
 description = "Intel compilers and tools"
 author = "RC Staff"
 
@@ -47,7 +47,7 @@ The 2024.0 version is experimental. Most users should load an older version for 
 
 For general information on building code using compilers, please see our How-To pages:
 
-- [Building Your Code on Rivanna](/userinfo/howtos/rivanna/compiler-howto/)
+- [Building Your Code on UVA HPC](/userinfo/howtos/rivanna/compiler-howto/)
 - [Building and Running MPI Code](/userinfo/howtos/rivanna/mpi-howto/)
 
 The Intel compilers are:
@@ -80,4 +80,4 @@ mpirun -trace -bootstrap slurm -n ${SLURM_NTASKS} myprog
 ```
 The Slurm variable `${SLURM_NTASKS}` will expand to the `<number_of_tasks>` that you specify in the SBATCH directive.
 
-This will write a trace file (`*.stf`) that you can analyze with `traceanalyzer`. You will need to run this on [FastX Web MATE desktop environment](/userinfo/hpc/logintools/fastx/) (recommended) or add the `-Y` flag when you ssh into Rivanna.
+This will write a trace file (`*.stf`) that you can analyze with `traceanalyzer`. You will need to run this on [FastX Web MATE desktop environment](/userinfo/hpc/logintools/fastx/) (recommended) or add the `-Y` flag when you ssh into the HPC system.

@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "sagemath"
 softwarename = "SageMath"
-title = "SageMath on Rivanna"
+title = "SageMath and UVA HPC"
 author = "RC Staff"
 +++
 

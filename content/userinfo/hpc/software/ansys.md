@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "ansys"
 softwarename = "ANSYS"
-title = "ANSYS on Rivanna"
+title = "ANSYS and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -40,7 +40,7 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 # Licensing
-The current general UVA license can be used for research but is limited in the size of the models it can use, and some of the more advanced features are not available.  Users who have their own research licenses with greater capabilities must specify that license.  To use such a research license on Rivanna, before running ANSYS set the following environment variable
+The current general UVA license can be used for research but is limited in the size of the models it can use, and some of the more advanced features are not available.  Users who have their own research licenses with greater capabilities must specify that license.  To use such a research license on the UVA HPC system, before running ANSYS set the following environment variable
 ```no-highlight
 export ANSYSLMD_LICENSE_FILE=1055@myhost.mydept.virginia.edu
 ```

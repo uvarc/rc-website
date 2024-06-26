@@ -1,6 +1,6 @@
 +++
 description = ""
-title = "`ssh` on Rivanna"
+title = "`ssh` on UVA HPC"
 draft = false
 date = "2022-08-30T11:45:12-05:00"
 tags = ["rivanna","login","hpc","ssh","cli"]
@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class="lead">The secure shell <code>ssh</code> is the primary application used to access Rivanna from the command line.</p>
+<p class="lead">The secure shell <code>ssh</code> is the primary application used to access the HPC system from the command line.</p>
 
 # Connecting to a Remote Host
 
@@ -50,7 +50,7 @@ Accept all defaults. When it asks for a passphrase, hit Enter to keep it blank. 
 
 ## Graphical Installation, All Operating Systems
 
-Log in to Rivanna,
+Log in to UVA HPC,
 ```
 cd .ssh
 ```
@@ -59,19 +59,19 @@ Note the period in front of `ssh`. Then, using a text editor, open the file `aut
 
 ## Command-Line Transfer (Mac and Linux)
 
-Transfer the `id_rsa.pub` file to Rivanna with scp:
+Transfer the `id_rsa.pub` file to the HPC system with scp:
 ```
 scp ~/.ssh/id_rsa.pub mst3k@login.hpc.virginia.edu:~/.ssh/mykey.pub
 ```
 
-Log in to Rivanna through a terminal, then type
+Log in to UVA HPC through a terminal, then type
 ```
 cat ~/.ssh/mykey.pub >> ~/.ssh/authorized_keys
 ```
 
 ## Passwordless `ssh` Between Nodes
 
-If you are permitted to use passwordless `ssh` between Rivanna compute nodes, such as for ANSYS, follow the instructions for Mac and Linux but generate the key directly on a Rivanna frontend. Use the cat command to append the key to your authorized_keys file.</p>
+If you are permitted to use passwordless `ssh` between HPC compute nodes, such as for ANSYS, follow the instructions for Mac and Linux but generate the key directly on a UVA HPC frontend. Use the cat command to append the key to your authorized_keys file.</p>
 
 # Troubleshooting
 
@@ -105,7 +105,7 @@ IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
 Someone could be eavesdropping on you right now (man-in-the-middle attack)!
 It is also possible that a host key has just been changed.
 ```
-MobaXterm will typically detect this and ask whether you want to change the host key; you may answer `yes`. On Mac OSX or Linux, from a terminal go to your `~/.ssh` directory and use a text editor to open the file `known_hosts`. Remove all lines that might refer to Rivanna. Alternatively, just delete the entire file; it will be recreated as you log in to different hosts. If you are unfamiliar with using a command line on Mac, you must
+MobaXterm will typically detect this and ask whether you want to change the host key; you may answer `yes`. On Mac OSX or Linux, from a terminal go to your `~/.ssh` directory and use a text editor to open the file `known_hosts`. Remove all lines that might refer to UVA HPC. Alternatively, just delete the entire file; it will be recreated as you log in to different hosts. If you are unfamiliar with using a command line on Mac, you must
 ```
 cd 
 cd .ssh

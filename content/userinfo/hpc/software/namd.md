@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "namd"
 softwarename = "NAMD"
-title = "NAMD on Rivanna"
+title = "NAMD and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -42,7 +42,7 @@ module spider {{% module-firstversion %}}
 
 # NAMD with MPI
 
-The NAMD module was built on Rivanna with MPI support. Below is a Slurm script template.
+The NAMD module was built on the HPC system with MPI support. Below is a Slurm script template.
 
 {{< pull-code file="/static/scripts/namd.slurm" lang="no-hightlight" >}}
 

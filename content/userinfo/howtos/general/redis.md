@@ -32,9 +32,9 @@ supporting different kinds of values. Some fundamental concepts:
 
 # Getting Started
 
-Rivanna nodes can connect to external Redis databases hosted in [**Kubernetes**](/userinfo/microservices/) or a public cloud (AWS, Azure, GCP, etc.)
+HPC nodes can connect to external Redis databases hosted in [**Kubernetes**](/userinfo/microservices/) or a public cloud (AWS, Azure, GCP, etc.)
 
-To use Redis from the command-line, use the `redis-cli`. In Rivanna, this is a module:
+To use Redis from the command-line, use the `redis-cli`. In the HPC system, this is a module:
 ```
 $  module load redis-cli
 ```
@@ -116,7 +116,7 @@ redis.uvarc.io:6379[1]> get hello
 ```
 
 Indexes need not be created in order. We suggest you select a high arbitrary number (0 to 63) for a private index. Populate and empty it
-as you find necessary. However, in the standard security environment remember that your keys/values are visible to other Rivanna
+as you find necessary. However, in the standard security environment remember that your keys/values are visible to other UVA HPC
 users.
 
 To connect to the Redis endpoint and specify an index other than `0`, use the `-n` flag with the integer of the index. The `redis-cli`

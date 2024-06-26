@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "blast"
 softwarename = "NCBI Blast"
-title = "NCBI Blast on Rivanna"
+title = "NCBI Blast and UVA HPC"
 author = "RC Staff"
 +++
 

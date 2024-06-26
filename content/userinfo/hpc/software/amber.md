@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "amber"
 softwarename = "Amber"
-title = "Amber on Rivanna"
+title = "Amber and UVA HPC"
 author = "RC Staff"
 +++
 
