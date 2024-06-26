@@ -108,7 +108,7 @@ Time on the HPC system is allocated as Service Units (SUs). One SU corresponds t
 
 The different Service Unit (SU) allocation types are explained in [this article](/userinfo/hpc/allocations/#allocation-types). It includes links to our allocation request webforms.
 
-## How do I check my allocation status on Rivanna/Afton?
+## How do I check my allocation status on Rivanna/Afton? {#how-do-i-check-my-allocation-status-on-rivanna}
 
 Run the `allocations` command.  The output may look like this:
 ```

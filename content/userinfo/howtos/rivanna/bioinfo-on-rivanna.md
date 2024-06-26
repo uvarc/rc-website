@@ -252,7 +252,7 @@ biofoo -n ${SLURM_CPUS_PER_TASK}
 
 You should only deviate from this general resource request format if you are absolutely certain that the software package supports execution on more than one compute node.
 
-# Reference Genomes on the HPC system
+# Reference Genomes on the HPC system {#reference-genomes-on-hpc-system}
 
 Research Computing provides a set of ready-to-use reference sequences and annotations for commonly analyzed organisms in a convenient, accessible location on Rivanna: 
 
@@ -262,6 +262,6 @@ The majority of files have been downloaded from Illumina's genomes repository (<
 
 Click the radio button for the genome of your choice, then click the clipboard icon to copy it.  On Rivanna please use the right click method to paste.
 
-{{% reference-genomes %}}
+{{% reference-genomes %}} 
 
 <hr size=1 />
