@@ -33,7 +33,7 @@ Please see [below](#full-list-of-bioinformatics-software-modules) for a full lis
 
 # Reference Genomes
 
-Research Computing makes some standard reference genomes available. For a listing and information about how to copy them, please see our [HowTo](/userinfo/howtos/rivanna/bioinfo-on-rivanna#reference-genomes-on-rivanna).
+Research Computing makes some standard reference genomes available. For a listing and information about how to copy them, please see our [HowTo](/userinfo/howtos/rivanna/bioinfo-on-rivanna#reference-genomes-on-hpc-system).
 
 # Full List of Bioinformatics Software Modules
 

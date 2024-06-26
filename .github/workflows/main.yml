@@ -56,7 +56,7 @@ jobs:
         with:
           url: ${{ env.URL }}
           cmd_params: >
-            -e http://ctan.org
+            -e http://ctan.org/
             -e https://ood.hpc.virginia.edu/pun/sys/dashboard
             -e http://www.htslib.org/
             -e rci.hpc
@@ -68,6 +68,8 @@ jobs:
             -e https://openspeedshop.org
             -e https://k8slens.dev/
             -e https://www.abinit.org/ 
+            -e https://www.openfoam.com/ 
+            -e https://www.nv5geospatialsoftware.com/
             -e tags
             -e https://www.howtogeek.com/107808/how-to-manage-files-from-the-linux-terminal-11-commands-you-need-to-know/
             -e https://uvarc.io/support
@@ -77,7 +79,7 @@ jobs:
             -e https://shibidp.its.virginia.edu/idp/profile/SAML2/Redirect/SSO?SAMLRequest=fZJfb4IwFMW%2FCum7FPDvGiFh%2BjATN4mwPexlqeUiTaBlvcVt334ouugefL09%2FZ17TjtHXlcNi1tbqi18toDW%2Ba4rhex0EJLWKKY5SmSK14DMCpbGz2sWuB5rjLZa6Io4MSIYK7VaaIVtDSYFc5ACXrfrkJTWNsgoxX6GrhHuQZq9VJK7kLc0LeVupyuwpYuo6ZEf0GSTZsRZdgtJxY%2FoK1Cnl3njSou3oG5Iu6UKWcGZsoVcGhCWpumGOKtlSD5GecFn4HuziS%2FGkyIYT6e5KDifjXMPHoazTobYwkqh5cqGJPCC0cCbDAIvC3w2HDJv%2Bk6c5Jz9Uapcqv39ona9CNlTliWDPtkbGDyl6gQkmh%2FrZidjc%2FUA97H80jqJLtU0WirBDbjciH%2Fl4F%2FLc3rl1ls37KXDr5aJrqT4ceKq0l8LA9xCSHxCo%2F7K7UeJfgE%3D&RelayState=ss%3Amem%3A0d1eed72c7f039be8380ecc39d14c1ff6326a542b1ea004365f76afbf4e6459b&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=a69c65gbD5KGU0E6Xxg%2BWPpromO7qgTYVFUnVgaPuAAgVbGThXlUYUtl6GcF8SR7Nq0ULcneKHMsQwP0muzMg5DP19I30q%2BDbP%2FmTDaXlhhBpz1FLSxskRH7xloqP%2Ffr88K1gwbax2oiKcqB3Lw689j7K3%2BNAHadCbPX1aYPNVitPxnr9jf73ciMOoHOsfjfJxNw%2BoIbtRDmMB1G3DKpv6IlJvSpnWZI27PQsgJTlkoSCBjakATfeuPQk47j9%2F7ZY3JVD8xABRvSOIZ%2FR1XM1pUcSor4lCW9n9QG4psoxRN%2BcNE9shXQ5yG4MHbgtPEFk3TVenqCyeHxNibf1RPqcKCyC9mADnqm4I%2BKv%2B%2F9MpNSPC28smKQhzOFQeNHT6b22tfnwBFULSrCq4yo5iqgPu9zfJHj0w3yoCmHQEG7ml90WrEa%2Fyow2rS5Eusr2llYwN3QfAwavTly%2FkoIN6sWAPssE0Grw89EEobn8SAg1zSgsmIclRGOXNlCaa9EEFdR
             --buffer-size=8192
             --max-connections=10
-            --accepted-status-codes=200-300,403,999,429
+            --accepted-status-codes=200..300,403,999,429
             --skip-tls-verification
             --timeout=60
     
