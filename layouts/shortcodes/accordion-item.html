@@ -29,13 +29,16 @@
 			if (hash) {
 				var element = document.getElementById(hash);
 				if (element) {
-					if (!$(element).hasClass('collapsing')) {
-						$(element).collapse('show');
+					// Add an event listener for the 'shown.bs.collapse' event
+					$(element).on('shown.bs.collapse', function () {
 						element.scrollIntoView({
 							behavior: 'smooth',
 							block: 'start'
 						});
-					}
+					});
+
+					// Show the collapsible content
+					$(element).collapse('show');
 				}
 			}
 		}
