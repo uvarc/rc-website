@@ -29,13 +29,15 @@
 			if (hash) {
 				var element = document.getElementById(hash);
 				if (element) {
-					if (!$(element).hasClass('collapsing')) {
-						$(element).collapse('show');
+					$(element).on('shown.bs.collapse', function () {
 						element.scrollIntoView({
 							behavior: 'smooth',
 							block: 'start'
 						});
-					}
+					});
+
+					// Show the collapsible content
+					$(element).collapse('show');
 				}
 			}
 		}

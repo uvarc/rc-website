@@ -46,6 +46,17 @@ Examples of service areas include:
 
 <div class="card" style="margin:2rem;">
   <div class="card-block">
+    <h2 class="card-title">Afton</h2>
+    <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
+    <p class="card-text">
+      {{< get_allocation_blurb name="Afton" >}}
+    </p>
+    <a href="/userinfo/hpc/overview" class="card-link"><button class="btn btn-warning">Read more about Afton</button></a>
+  </div>
+</div>
+
+<div class="card" style="margin:2rem;">
+  <div class="card-block">
     <h2 class="card-title">Rivanna</h2>
     <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
     <p class="card-text">
