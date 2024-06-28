@@ -211,8 +211,8 @@ Starting on Jul 2, a new service unit (SU) charge rate policy will be implemente
 |interactive (GPU)    | RTX2080   | 0 | 0 | 48 |
 |interactive (GPU)    | RTX3090   | 0 | 0 | 65 |
 |gpu                  | V100      | 0 | 0 |  3 |
-|gpu                  | A40       | 0 | 0 |    |
 |gpu                  | A6000     | 0 | 0 | 85 |
+|gpu                  | A40       | 0 | 0 |119 |
 |gpu                  | A100 (40G)| 0 | 0 |267 |
 |gpu                  | A100 (80G)| 0 | 0 |434 |
 {{< /table >}}
