@@ -203,18 +203,18 @@ Starting on Aug 5 (tentative), a new service unit (SU) charge rate policy will b
 {{< table title="charge-rate" class="table table-striped" >}}
 | Partition | Hardware | Charge per core | Charge per GB memory | Charge per GPU device| 
 |---|---|---|---|---| 
-|standard             | Rivanna   | 1 | 0.5 | - |
-|standard             | Afton     | 6 | 1   | - |
-|parallel             | Afton     | 6 | 1   | - |
-|interactive (non-GPU)| Rivanna   | 1 | 0.5 | - |
-|interactive (non-GPU)| Afton     | 6 | 1   | - |
-|interactive (GPU)    | RTX2080   | 0 | 0 | 48 |
-|interactive (GPU)    | RTX3090   | 0 | 0 | 65 |
-|gpu                  | V100      | 0 | 0 |  3 |
-|gpu                  | A6000     | 0 | 0 | 85 |
-|gpu                  | A40       | 0 | 0 |119 |
-|gpu                  | A100 (40G)| 0 | 0 |267 |
-|gpu                  | A100 (80G)| 0 | 0 |434 |
+|standard             | Rivanna   |   |     | - |
+|standard             | Afton     |   |     | - |
+|parallel             | Afton     |   |     | - |
+|interactive (non-GPU)| Rivanna   |   |     | - |
+|interactive (non-GPU)| Afton     |   |     | - |
+|interactive (GPU)    | RTX2080   | - | - | |
+|interactive (GPU)    | RTX3090   | - | - | |
+|gpu                  | V100      | - | - | |
+|gpu                  | A6000     | - | - | |
+|gpu                  | A40       | - | - | |
+|gpu                  | A100 (40G)| - | - | |
+|gpu                  | A100 (80G)| - | - | |
 {{< /table >}}
 
 {{% /accordion-item %}}
