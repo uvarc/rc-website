@@ -203,11 +203,11 @@ Starting on Jul 2, a new service unit (SU) charge rate policy will be implemente
 {{< table title="charge-rate" class="table table-striped" >}}
 | Partition | Hardware | Charge per core | Charge per GB memory | Charge per GPU device| 
 |---|---|---|---|---| 
-|standard             | Rivanna   | 1 | 0.5 | 0 |
-|standard             | Afton     | 6 | 1   | 0 |
-|parallel             | Afton     | 6 | 1   | 0 |
-|interactive (non-GPU)| Rivanna   | 1 | 0.5 | 0 |
-|interactive (non-GPU)| Afton     | 6 | 1   | 0 |
+|standard             | Rivanna   | 1 | 0.5 | - |
+|standard             | Afton     | 6 | 1   | - |
+|parallel             | Afton     | 6 | 1   | - |
+|interactive (non-GPU)| Rivanna   | 1 | 0.5 | - |
+|interactive (non-GPU)| Afton     | 6 | 1   | - |
 |interactive (GPU)    | RTX2080   | 0 | 0 | 48 |
 |interactive (GPU)    | RTX3090   | 0 | 0 | 65 |
 |gpu                  | V100      | 0 | 0 |  3 |
