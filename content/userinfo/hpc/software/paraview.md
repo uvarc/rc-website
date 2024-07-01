@@ -15,7 +15,7 @@ draft = false
 shorttitle = "ParaView"
 modulename = "paraview"
 softwarename = "ParaView"
-title = "ParaView on Rivanna"
+title = "ParaView and UVA HPC"
 author = "RC Staff"
 
 +++
@@ -42,10 +42,9 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-# Interactive Sessions through Rivanna's Web Portal
+# Interactive Sessions through Open Ondemand
 
-Interactive sessions of {{% software-name %}} can be launched through Rivanna's web portal, [Open OnDemand](/userinfo/hpc/ood/overview).
-To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a Rivanna GPU node. In addition, you need to specify required resources, e.g. time, your Rivanna allocation, etc.. If you are new to Rivanna, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
+Interactive sessions of {{% software-name %}} can be launched through the HPC web portal, [Open OnDemand](/userinfo/hpc/ood/overview). To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a GPU node. In addition, you need to specify required resources, e.g. time, your UVA HPC allocation, etc.. If you are new to UVA HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
 
 ## Starting an Interactive Session
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.

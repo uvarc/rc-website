@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "bwa"
 softwarename = "BWA"
-title = "BWA on Rivanna"
+title = "BWA and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -61,7 +61,7 @@ Index files are created with the `bwa index` command. A reference genome sequenc
 {{< pull-code file="/static/scripts/bwa.slurm" lang="no-hightlight" >}}
 
 ## Alignment of Sequence Reads to a Reference Genome
-BWA provides three basic alignment algorithms to align sequence reads to a reference genome, BWA-backtrack, BWA-SW, and BWA-MEM.  Below we show an example for using the BWA-MEM algorithm (command `bwa mem`), which can process short Illumina reads (70bp) as well as longer reads up to 1 MB.  The alignment output is saved in SAM file format.  The use of SAMtools on Rivanna is documented [here](/userinfo/hpc/software/samtools).  
+BWA provides three basic alignment algorithms to align sequence reads to a reference genome, BWA-backtrack, BWA-SW, and BWA-MEM.  Below we show an example for using the BWA-MEM algorithm (command `bwa mem`), which can process short Illumina reads (70bp) as well as longer reads up to 1 MB.  The alignment output is saved in SAM file format.  The use of SAMtools on the HPC system is documented [here](/userinfo/hpc/software/samtools).  
 
 **Specification of files**
 

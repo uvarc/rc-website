@@ -35,7 +35,7 @@ pip install --user globus-cli
 
 The project is open source, so you can also download the source at [https://github.com/globus/globus-cli](https://github.com/globus/globus-cli)
 
-If you would like to use the CLI from Rivanna, please follow these directions [below](#use-the-globus-cli-from-your-rivanna-account).
+If you would like to use the CLI from UVA HPC, please follow these directions [below](#use-the-globus-cli-from-your-hpc-account).
 
 # Authenticate using the Globus CLI
 
@@ -132,7 +132,7 @@ For transfers and file operations, reference endpoints by their unique ID. Names
 
 ## Traverse Directory Trees using the Globus CLI
 
-Once you know the ID of a specific endpoint, you can list directories visible to you. Here are some paths open to users of the Rivanna HPC cluster:
+Once you know the ID of a specific endpoint, you can list directories visible to you. Here are some paths open to users of the HPC cluster:
 
 {{< code >}}
 globus ls c4d80096-7612-11e7-8b5e-22000b9923ef
@@ -260,7 +260,7 @@ Task ID: 5ffe3058-5543-11e8-90ce-0a6d4e044368
 * For other technical details, see Globus [Documentation](https://docs.globus.org/how-to/).
 
 
-# Use the Globus-CLI from your Rivanna Account
+# Use the Globus-CLI from your UVA HPC {#use-the-globus-cli-from-your-hpc-account}
 
 1. Load the globus-cli module and its dependencies:
 
@@ -290,4 +290,4 @@ When referencing the globus binary in scripts, you may want to issue a `which gl
 globus=`which globus`
 {{< /code >}}
 
-Please note that users are not permitted to run cron jobs on Rivanna.  Scheduling should be done from another system.
+Please note that users are not permitted to run cron jobs on the HPC system.  Scheduling should be done from another system.

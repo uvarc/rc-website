@@ -15,8 +15,8 @@ draft = false
 modulename = "perl"
 softwarename = "Perl"
 shorttitle = "Perl"
-title = "Perl on Rivanna"
-description = "Perl in Rivanna's HPC environment"
+title = "Perl and UVA HPC"
+description = "Perl in the HPC environment"
 author = "RC Staff"
 
 +++

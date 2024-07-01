@@ -1,5 +1,5 @@
 +++
-title = "Anaconda on Rivanna"
+title = "Anaconda and UVA HPC"
 description = ""
 author = "RC Staff"
 images = [""]
@@ -15,17 +15,9 @@ draft = false
 +++
 
 # Overview
-Built to complement the rich, open source Python community, the Anaconda platform provides an
-enterprise-ready data analytics platform that empowers companies to adopt a modern open data science
-analytics architecture.
+Built to complement the rich, open source Python community, the Anaconda platform provides an enterprise-ready data analytics platform that empowers companies to adopt a modern open data science analytics architecture.
 
-Rivanna has Python 2 and 3 available as part of the Anaconda 
-distribution. Anaconda comes installed with many packages best suited 
-for scientific computing, data processing, and data analysis, while making deployment
-very simple. Its package manager **conda** installs and updates python packages and 
-dependencies, keeping different package versions isolated on a project-by-project basis.
-Anaconda is available as open source under the New BSD license. It also ships 
-with **pip**, the common python package manager. 
+The UVA HPC system has Python 2 and 3 available as part of the Anaconda distribution. Anaconda comes installed with many packages best suited for scientific computing, data processing, and data analysis, while making deployment very simple. Its package manager **conda** installs and updates python packages and dependencies, keeping different package versions isolated on a project-by-project basis. Anaconda is available as open source under the New BSD license. It also ships with **pip**, the common python package manager. 
 
 # Available Versions
 The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
@@ -72,13 +64,7 @@ However, if you must upgrade pip, please do so in a virtual environment, such as
 
 ## Using `conda` {#package-installation-with-conda}
 
-You can specify which version of Python you want to run using conda. This can be done 
-on a project-by-project basis, and is part of what is called a "Virtual Environment". 
-A Virtual Environment is simply your isolated copy of Python in which you maintain your
-own version of files and directories. It enables you to keep other projects unaffected.
-With projects that have similar dependencies, you can freely install different versions
-of the same package without worry on two different Virtual Environments. In order to jump
-between two VE's, you simply activate or deactivate your environment. Follow the steps below:
+You can specify which version of Python you want to run using conda. This can be done on a project-by-project basis, and is part of what is called a "Virtual Environment". A Virtual Environment is simply your isolated copy of Python in which you maintain your own version of files and directories. It enables you to keep other projects unaffected. With projects that have similar dependencies, you can freely install different versions of the same package without worry on two different Virtual Environments. In order to jump between two VE's, you simply activate or deactivate your environment. Follow the steps below:
 
 1.  Set up your Virtual Environment:
 
@@ -100,8 +86,7 @@ between two VE's, you simply activate or deactivate your environment. Follow the
 
 	OR (even better)
 
-	In your home directory or Conda installation folder, create a file called `.condarc` (if not already there)
-	Inside the file write the following:
+	In your home directory or Conda installation folder, create a file called `.condarc` (if not already there) Inside the file write the following:
 	```
 	create_default_packages
 		- your_package_name_goes_here

@@ -37,7 +37,7 @@ pip install --user awscli
 The project is open source, so you can also download the source at https://github.com/aws/aws-cli
 
 {{% alert-green %}}
-<p><b>Rivanna Users</b> have two options:</p>
+<p><b>UVA HPC Users</b> have two options:</p>
 <ol>
   <li>Load the <code>awscli</code> module:<br /><br />
 {{< code-snippet >}}

@@ -7,6 +7,7 @@
     <base href="{{ .Permalink }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+    <meta type="{{ .Type }}" />
 
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
@@ -15,29 +16,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     {{ partial "head-custom.html" . }}
+
+    {{ block "head-extra" . }}{{ end }}
   </head>
 
   <body>
+    <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
+      Press 'S' to search
+    </div>
 
     {{ partial "menu-home.html" . }}
 
     {{ partial "site-header.html" . }}
-
+    <section id="main-content" class="main-content" style="margin-top:20px;">
     <div class="container">
       <div class="row">
+        {{ block "col-width" .}}
         <div class="col-sm-8 blog-main" style="">
-
+        {{ end }}
           {{ block "main" . }}
           <!-- The part of the page that begins to differ between templates -->
           {{ end }}
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
-        {{ partial "sidebar.html" . }}
+        {{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{end}}
 
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}
-
+    </section>
     {{ partial "footer.html" . }}
 
   </body>

@@ -12,13 +12,13 @@ tags = ["cae"
 ]
 draft = false
 shorttitle = "Engineering"
-title = "Engineering on Rivanna"
-description = "Engineering Software in Rivanna's HPC environment"
+title = "Engineering and UVA HPC"
+description = "Engineering Software in the HPC environment"
 author = "RC Staff"
 
 +++
 # Overview
-Several software packages for computer-aided engineering are available on Rivanna.
+Several software packages for computer-aided engineering are available on the UVA HPC system.
 
 # General considerations
 Some engineering software packages utilize single node, multi-core or multi-node [MPI](/userinfo/hpc/software/mpi) for parallel execution.  Accordingly, the Slurm job scripts should contain either of the following two SBATCH directives:
@@ -43,12 +43,12 @@ srun pw.x -in mymol.in
 Please see the page of the particular package you wish to use for more details.
 
 **VASP Users**
-The Vienna Ab-Initio Simulation Package, is licensed by individual groups and we do not have a common installation.  We have basic instructions for building VASP on Rivanna at its page.
+The Vienna Ab-Initio Simulation Package, is licensed by individual groups and we do not have a common installation.  We have basic instructions for building VASP on the HPC system at its page.
 
 
 # Available Engineering Software
 
-To get an up-to-date list of the installed engineering applications, log on to Rivanna and run the following command in a terminal window:
+To get an up-to-date list of the installed engineering applications, log on to UVA HPC and run the following command in a terminal window:
 ```
 module keyword cae
 ```

@@ -68,8 +68,8 @@ Our suffix rule could then be expressed as
 ```
 Variables make it easy to
 
-# Make on Rivanna
-Users who write their own code and need to generate a Makefile can start with the makemake script.  It is local to Rivanna and should automatically be in the path so it is sufficient to type
+# Make on the HPC system
+Users who write their own code and need to generate a Makefile can start with the makemake script.  It is local to the HPC system and should automatically be in the path so it is sufficient to type
 ```
 makemake
 ```
@@ -79,7 +79,7 @@ PROG=myexec
 ```
 Usually it will also be necessary to change the compiler names to that actually used, especially for Fortran programs.
 
-The version of makemake installed on Rivanna attempts to create a Makefile valid for C, C++, and Fortran programs.  Any lines in the Makefile not pertinent to the user's application (such as C++ for a Fortran program or vice versa) may be deleted.
+The version of makemake installed on the HPC system attempts to create a Makefile valid for C, C++, and Fortran programs.  Any lines in the Makefile not pertinent to the user's application (such as C++ for a Fortran program or vice versa) may be deleted.
 
 It is important to note that makemake is not intelligent.  It simply collects all files it finds in a directory that end in the suffices .f, .f90, .c, .cxx, and a few others.  Any of those files that are not compilable, for example because they are included into another source file, must be removed from the SRCS and OBJS lists.
 

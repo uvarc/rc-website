@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class="lead">There are a variety of options for storing large-scale research data at UVa. Public and Internal Use data storage systems can be accessed from the <a href="/userinfo/hpc/overview">Rivanna</a> high performance computing system.</p>
+<p class="lead">There are a variety of options for storing large-scale research data at UVa. Public and Internal Use data storage systems can be accessed from the <a href="/userinfo/hpc/overview">Rivanna and Afton</a> high performance computing systems.</p>
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
@@ -39,15 +39,15 @@ type = "rivanna"
     <td class="tg-dc35">50GB</td>
     <td class="tg-dc35">Free</td>
     <td class="tg-dc35">{{% backup-policy rivanna_home %}}</td>
-    <td class="tg-dc35">Rivanna</td>
-    <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna interactively. Slurm jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>. The <code>/home</code> directory is a personal storage space that is not shareable with other users.</td>
+    <td class="tg-dc35">Rivanna/Afton</td>
+    <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna/Afton interactively. Slurm jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>. The <code>/home</code> directory is a personal storage space that is not shareable with other users.</td>
   </tr>
   <tr>
     <td class="tg-hy9w"><a href="/userinfo/storage/non-sensitive-data/#scratch"><code>/scratch</code></a></td>
     <td class="tg-hy9w">10TB</td>
     <td class="tg-hy9w">Free</td>
     <td class="tg-hy9w">{{% backup-policy rivanna_scratch %}}, Data removed 90 days after last file access time</td>
-    <td class="tg-hy9w">Rivanna</td>
+    <td class="tg-hy9w">Rivanna/Afton</td>
     <td class="tg-hy9w"><code>/scratch</code> is a high performance parallel filesystem that is suitable for large scale computational work. Data should be moved from <code>/scratch</code> for long-term storage. The <code>/scratch</code> directory is for personal use and not shared with other users.<br /><br />
   </tr>
 </table>
@@ -62,7 +62,7 @@ type = "rivanna"
 
 # Request Additional Storage
 
-Researchers can lease additional storage, **Research Standard** or **Research Project** storage, for **sharing public or internal use data** within a research group. Research Standard and Research Project storage volumes are mounted on Rivanna and can also be accessed from local workstations. [Learn more about our storage offerings](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
+Researchers can lease additional storage, **Research Standard** or **Research Project** storage, for **sharing public or internal use data** within a research group. Research Standard and Research Project storage volumes are mounted on Rivanna/Afton and can also be accessed from local workstations. [Learn more about our storage offerings](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
 
 Storage requests can be placed through this form:
 

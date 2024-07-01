@@ -1,5 +1,5 @@
 <!-- Determine index of Rivanna Entry -->
-{{ $services := $.Site.Data.pricing.service }}
+{{ $services := $.Site.Data.service.service }}
 {{ $ivy_index := -1 }}
 {{ range $i, $service := $services }}
   {{ if eq $service.name "IvyVM" }}

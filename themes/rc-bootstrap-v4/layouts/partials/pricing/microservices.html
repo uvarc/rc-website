@@ -1,4 +1,4 @@
-{{ $services := $.Site.Data.pricing.service }}
+{{ $services := $.Site.Data.service.service }}
 {{ $microservice_index := -1 }}
 {{ range $i, $service := $services }}
   {{ if eq $service.name "Microservices" }}

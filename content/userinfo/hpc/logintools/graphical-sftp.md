@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class=lead>Several options are available to transfer data files between a local computer and Rivanna through user-friendly, graphical methods.</p>
+<p class=lead>Several options are available to transfer data files between a local computer and the HPC system through user-friendly, graphical methods.</p>
 
 {{< off-campus >}}
 

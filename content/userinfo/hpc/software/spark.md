@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "spark"
 softwarename = "Spark"
-title = "Spark on Rivanna"
+title = "Spark and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -177,7 +177,7 @@ In the above Slurm script template, note that:
 
 ### Benchmark
 
-We used a code that estimates the value of pi as a benchmark. The following table illustrates good scaling performance across multiple nodes (40 cores per node) on Rivanna.
+We used a code that estimates the value of pi as a benchmark. The following table illustrates good scaling performance across multiple nodes (40 cores per node) on the HPC system.
 
 | Nodes | Worker nodes | Time (s) |
 |--:|--:|--:|

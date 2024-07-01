@@ -13,7 +13,7 @@ draft = false
 shorttitle = "RAPIDS"
 modulename = "rapidsai"
 softwarename = "RAPIDS"
-title = "RAPIDS on Rivanna"
+title = "RAPIDS and UVA HPC"
 author = "RC Staff"
 
 +++

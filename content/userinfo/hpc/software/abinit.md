@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "abinit"
 softwarename = "Abinit"
-title = "Abinit on Rivanna"
+title = "Abinit and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -46,7 +46,7 @@ Users may build their own versions of {{% software-name %}} if they wish to use 
 
 # Slurm Script Example
 
-To run {{% software-name %}} on Rivanna, a script similar to the following can be used. {{% software-name %}} has many options so only a basic example is shown.
+To run {{% software-name %}} on the HPC system, a script similar to the following can be used. {{% software-name %}} has many options so only a basic example is shown.
 
 {{% pull-code file="/static/scripts/abinit.slurm" lang="no-hightlight" %}}
 

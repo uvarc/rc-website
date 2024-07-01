@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "quantumespresso"
 softwarename = "QuantumEspresso"
-title = "QuantumEspresso on Rivanna"
+title = "QuantumEspresso and UVA HPC"
 author = "RC Staff"
 +++
 

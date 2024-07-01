@@ -12,7 +12,7 @@ author = "RC Staff"
 
 +++
 
-Rocker provides many software containers for R. Due to the default permission settings of our file system, launching an RStudio Server session is not straightforward. If you are interested in using their containers on Rivanna, please follow these steps.
+Rocker provides many software containers for R. Due to the default permission settings of our file system, launching an RStudio Server session is not straightforward. If you are interested in using their containers on the HPC system, please follow these steps.
 
 # Pull container
 Use Apptainer to pull the container. We will use `geospatial` in this example.

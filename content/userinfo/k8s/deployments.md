@@ -13,7 +13,7 @@ images = [""]
   <img src="/images/logos/k8s-icon.png" style="" alt="Kubernetes" align="right" />
   Kubernetes is a container orchestrator for both short-running (such as workflow/pipeline stages) jobs and long-running (such as web and 
   database servers) services. Containerized applications running in the UVARC Kubernetes cluster are visible to UVA Research networks (and 
-  therefore from Rivanna, Skyline, etc.). Web applications can be made visible to the UVA campus or the public Internet.
+  therefore from Rivanna, Afton, Skyline, etc.). Web applications can be made visible to the UVA campus or the public Internet.
 </p>
 
 # Kubernetes

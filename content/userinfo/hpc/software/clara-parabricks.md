@@ -17,8 +17,8 @@ draft = false
 modulename = "clara-parabricks"
 softwarename = "clara-parabricks"
 shorttitle = "Clara Parabricks"
-title = "Nvidia Clara Parabricks"
-description = "GPU-enabled bioinformatics on Rivanna"
+title = "Nvidia Clara Parabricks and UVA HPC"
+description = "GPU-enabled bioinformatics and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -27,7 +27,7 @@ author = "RC Staff"
 [Nvidia Clara Parabricks](https://docs.nvidia.com/clara/) is a GPU-accelerated software suite for performing secondary analysis of next generation sequencing (NGS) DNA and RNA data. It contains GPU-enabled versions of popular bioinformatics tools such as the aligners [BWA-Mem](https://www.rc.virginia.edu/userinfo/hpc/software/bwa/) and STAR.
 
 # Loading the container
-On Rivanna, Clara Parabricks is available as an Apptainer container.  To load the `clara-parabricks` container module, you can type:
+On the HPC system, Clara Parabricks is available as an Apptainer container.  To load the `clara-parabricks` container module, you can type:
 
 ```
 module load apptainer clara-parabricks
@@ -42,7 +42,7 @@ module spider clara-parabricks
 
 # Running Clara Parabricks tools
 
-The Clara Parabricks container on Rivanna includes many bioinformatics tools for genomics and transcriptomics. Each tool must be accessed using the Apptainer `run` command to activate the container, followed by the Clara Parabricks `pbrun` command to call the designated tool, followed by arguments specific to each tool. See below for an example using the `fq2bam` pipeline tool, which does a `BWA-Mem` alignment, sorts reads by coordinates, marks duplicate reads with `GATK MarkDuplicates`, and optionally generates a `BQSR` report. 
+The Clara Parabricks container on the HPC system includes many bioinformatics tools for genomics and transcriptomics. Each tool must be accessed using the Apptainer `run` command to activate the container, followed by the Clara Parabricks `pbrun` command to call the designated tool, followed by arguments specific to each tool. See below for an example using the `fq2bam` pipeline tool, which does a `BWA-Mem` alignment, sorts reads by coordinates, marks duplicate reads with `GATK MarkDuplicates`, and optionally generates a `BQSR` report. 
 
 
 {{< pull-code file="/static/scripts/parabricks_fq2bam.slurm" lang="no-highlight" >}}

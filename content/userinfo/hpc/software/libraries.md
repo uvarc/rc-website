@@ -13,15 +13,15 @@ tags = [
 ]
 draft = false
 shorttitle = "Libraries"
-title = "Libraries on Rivanna"
-description = "Libraries in Rivanna's HPC environment"
+title = "Libraries and UVA HPC"
+description = "Libraries in the HPC environment"
 author = "RC Staff"
 
 +++
 
 # Available Software Libraries
 
-To get an up-to-date list of the installed software libraries, log on to Rivanna and run the following command in a terminal window:
+To get an up-to-date list of the installed software libraries, log on to UVA HPC and run the following command in a terminal window:
 ```
 module keyword lib
 ```

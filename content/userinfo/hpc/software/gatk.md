@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "gatk"
 softwarename = "GATK"
-title = "GATK on Rivanna"
+title = "GATK and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -126,7 +126,7 @@ The "sparkified" versions have the suffix "Spark" at the end of their names. Man
 
 **You DO NOT need a Spark cluster to run Spark-enabled GATK tools!** 
 
-While working on Rivanna's compute node (with multiple CPU cores), the GATK engine can use Spark to create a virtual standalone cluster in place, for its multi-threaded processing. 
+While working on a compute node (with multiple CPU cores), the GATK engine can use Spark to create a virtual standalone cluster in place, for its multi-threaded processing. 
 
 ## "local"-Spark Usage Example: 
 The `PrintReads` tool we explored above has a Spark version called: `PrintReadsSpark`. In order to set up a local Spark environment to run the same job using 8 threads, we can use the `--spark-master` argument. 

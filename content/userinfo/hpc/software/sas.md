@@ -12,7 +12,7 @@ tags = [
 draft = false
 modulename = "sas"
 softwarename = "SAS"
-title = "SAS on Rivanna"
+title = "SAS and UVA HPC"
 author = "RC Staff"
 +++
 
@@ -38,4 +38,4 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-**Note:** SAS scripts may be run on Rivanna through the Slurm queueing system in batch mode, but production interactive jobs on the frontend are not permitted.
+**Note:** SAS scripts may be run on the HPC system through the Slurm queueing system in batch mode, but production interactive jobs on the frontend are not permitted.

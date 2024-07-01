@@ -13,17 +13,17 @@ tags = [
 ]
 draft = false
 shorttitle = "Jupyter Lab"
-title = "Jupyter Lab on Rivanna"
-description = "Jupyter Lab in Rivanna's HPC environment"
+title = "Jupyter Lab and UVA HPC"
+description = "Jupyter Lab in the HPC environment"
 author = "RC Staff"
 
 +++
 # Overview
 Jupyter Notebooks are documents which can combine executable code, formatted text, and interactive graphics into a single file.  Because Notebooks can be shared, they provide developers with a tool for capturing and explaining their computational results.  To use a Jupyter Notebook, a web application, such as JupyterLab, is needed.
 
-We now provide a web portal where JupyterLab can be accessed on Rivanna.
+We now provide a web portal where JupyterLab can be accessed on Rivanna and Afton.
 
-However, to use JupyterLab, you must have an account on Rivanna.
+However, to use JupyterLab, you must have an account on UVA HPC.
 
 # Accessing JupyterLab
 To access JupyterLab, you will begin by connecting to our Open OnDemand portal:
@@ -36,7 +36,7 @@ To access JupyterLab, you will begin by connecting to our Open OnDemand portal:
 <img src="/images/jupyterlab1.png" style="height:100%;width:100%"></img>
 
 # Requesting an Instance
-Your instance (or copy) of JupyterLab will run on a Rivanna compute node. So it will need a list of resources, such as partition, time, and allocation. If you are new to Rivanna, you may want to read the [Rivanna User Guide](/userinfo/hpc/overview) to learn more about the partitions.
+Your instance (or copy) of JupyterLab will run on a compute node. So it will need a list of resources, such as partition, time, and allocation. If you are new to UVA HPC, you may want to read the [HPC User Guide](/userinfo/hpc/overview) to learn more about the partitions.
 
 1. After connecting to JupyterLab through Open OnDemand, a form will appear where you can fill in the resources for JupyterLab.
 2. When done filling in the resources, click on the blue “Launch” button at the bottom of the form.
@@ -58,7 +58,7 @@ either your HOME or SCRATCH directories.
 # Running Notebooks
 The JupyterLab dashboard will have two panes:
 
-* A file browser pane on the left where you will see the files and folders in your Rivanna directory; and
+* A file browser pane on the left where you will see the files and folders in your HPC directory; and
 * A `Launcher` pane on the right with tiles for the available kernels (i.e., underlying software that will run the code in your Notebooks).
 
 <img src="/images/jupyterlab8.png" style="height:100%;width:100%"></img>

@@ -13,7 +13,7 @@ tags = [
 draft = false
 modulename = "yambo"
 softwarename = "Yambo"
-title = "Yambo on Rivanna"
+title = "Yambo and UVA HPC"
 author = "RC Staff"
 +++
 

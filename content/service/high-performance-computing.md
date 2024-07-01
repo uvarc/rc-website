@@ -31,14 +31,36 @@ Examples of service areas include:
 
 - - -
 
-<p class=lead>UVA has two local computational facilities available to researchers: <b>Rivanna</b> and <b>Ivy</b>. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.</p>
+<p class=lead>UVA has three local computational facilities available to researchers: <b>Rivanna</b>, <b>Afton</b>, and <b>Ivy</b>. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.</p>
+
+<div class="card" style="margin:2rem;">
+  <div class="card-block">
+    <h2 class="card-title">Afton</h2>
+    <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
+    <p class="card-text">
+      {{< get_allocation_blurb name="Afton" >}}
+    </p>
+    <a href="/userinfo/hpc/overview" class="card-link"><button class="btn btn-warning">Read more about Afton</button></a>
+  </div>
+</div>
+
+<div class="card" style="margin:2rem;">
+  <div class="card-block">
+    <h2 class="card-title">Afton</h2>
+    <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
+    <p class="card-text">
+      {{< get_allocation_blurb name="Afton" >}}
+    </p>
+    <a href="/userinfo/hpc/overview" class="card-link"><button class="btn btn-warning">Read more about Afton</button></a>
+  </div>
+</div>
 
 <div class="card" style="margin:2rem;">
   <div class="card-block">
     <h2 class="card-title">Rivanna</h2>
     <h5 class="card-subtitle mb-2">Standard Security HPC Cluster</h5>
     <p class="card-text">
-    Rivanna provides a high-performance computing environment for all user levels with a total of {{< rivanna-node-count >}} nodes and {{< rivanna-core-count >}} cpu cores.  This includes specialty hardware like GPGPUs and large memory nodes. All nodes are supported by a high-performance EDR/FDR Infiniband network using Mellanox hardware. The Rivanna cluster also provides approximately {{< rivanna-scratch-capacity >}} of scratch (temporary) storage on a high-speed Lustre filesystem. Users may also lease space on “Research Project” and “Research Standard” storage that are mounted to Rivanna, as well as elsewhere. 
+      {{< get_allocation_blurb name="Rivanna" >}}
     </p>
     <a href="/userinfo/hpc/overview" class="card-link"><button class="btn btn-warning">Read more about Rivanna</button></a>
   </div>

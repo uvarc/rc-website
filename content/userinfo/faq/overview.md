@@ -42,8 +42,8 @@ quell_footer = true
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h2 class="card-title">Rivanna</h2>
-          <p class="card-text">High Performance Computing Platform</p>
+          <h2 class="card-title">Rivanna and Afton</h2>
+          <p class="card-text">High Performance Computing Platforms</p>
           <div style="margin-bottom:1rem;">
             <a href="/userinfo/faq/rivanna-faq/"><button class="btn btn-sm btn-primary">Read our FAQ &rsaquo;</button></a>
           </div>

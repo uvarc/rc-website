@@ -8,7 +8,7 @@ images = [
 categories = [
   "service", "status"
 ]
-date = "2024-06-20T00:00:00-00:01"
+date = "2024-07-01T00:00:00-00:01"
 tags = [
   "service",
   "status",
@@ -37,9 +37,9 @@ To mitigate these issues, Research Computing engineers are switching to an alter
 - Though the new Project storage system is operating with expected performance, the transfer of all data from the old storage system will take several months. The severe performance degradation of the old storage system will remain a bottleneck regardless of the change in data transfer method.
 - Rivanna and RC’s other storage services, Scratch and Research Standard, continue to operate normally.
 
-**Update: 2024-06-20** 
+**Update: 2024-07-01** 
 - **Before February 26:** A total of 1.7 PB out of 4.3 PB were copied from old Project storage to /project folder on the new storage system using the automated migration process before February 26 (40%).
-- **Since February 26:** A total of 4.25 PB out of 4.3 PB have been copied and are now available in the /stagedproject or /project folders on the new storage system (98.8 %)
+- **Since February 26:** 100% of the data from old /project has been copied and is now available in the /stagedproject or /project folders on the new storage system.
 {{% /callout %}}
 
 {{% highlight %}}

@@ -17,13 +17,7 @@ toc = true
 +++
 
 <p class="lead">
-<b>Image Processing</b> and <b>Scientific Visualization</b> are two separate processes
-within the scientific research lifecycle, yet the two concepts often play off of one
-another. Image processing refers to the enhancement and transformation of images to
-prepare them for quantitative analysis. Scientific visualization is the graphical communication
-of data so that trends and anomalies can be more easily recognized. UVa Research Computing
-offers many services and resources to help researchers augment their work with image
-processing and scientific visualization techniques.
+<b>Image Processing</b> and <b>Scientific Visualization</b> are two separate processes within the scientific research lifecycle, yet the two concepts often play off of one another. Image processing refers to the enhancement and transformation of images to prepare them for quantitative analysis. Scientific visualization is the graphical communication of data so that trends and anomalies can be more easily recognized. UVa Research Computing offers many services and resources to help researchers augment their work with image processing and scientific visualization techniques.
 </p>
 
 - - -
@@ -34,20 +28,11 @@ processing and scientific visualization techniques.
 
 <img src="/images/image-processing.jpg" style="float:right;" class="project-inset" />
 
-Image processing encompasses a variety of techniques to prepare images for analysis.
-Researchers often need to remove noise artifacts from their imaging data, or they need to
-analyze particular regions of interest. While manual image manipulation can easily yield
-the desired results, this can be time-consuming or even impossible with the amount of data
-we are able to collect with high throughput screening. By automating image processing steps
-such as noise filtering and segmentation, researchers are able to perform their work faster
-and for larger quantities of data.
+Image processing encompasses a variety of techniques to prepare images for analysis. Researchers often need to remove noise artifacts from their imaging data, or they need to analyze particular regions of interest. While manual image manipulation can easily yield the desired results, this can be time-consuming or even impossible with the amount of data we are able to collect with high throughput screening. By automating image processing steps such as noise filtering and segmentation, researchers are able to perform their work faster and for larger quantities of data.
 
 ## Common Image Processing Techniques
 
-The following techniques are commonly employed in imaging research. All of these processes
-can be automated and run locally on your computer or on Rivanna, UVa's high performance
-computing (HPC) cluster. With the parallelization capabilities of HPC, it is possible to
-fully process and analyze a large imaging data set in a few hours or less!
+The following techniques are commonly employed in imaging research. All of these processes can be automated and run locally on your computer or on UVa's high performance computing (HPC) cluster. With the parallelization capabilities of HPC, it is possible to fully process and analyze a large imaging data set in a few hours or less!
 
 <table class="table table-striped">
   <tbody>
@@ -83,25 +68,15 @@ fully process and analyze a large imaging data set in a few hours or less!
 
 ## Popular Software
 
-* **ImageJ/Fiji** - ImageJ is a Java-based image processing program developed at the NIH.
-ImageJ can be used interactively through a graphical user interface or automatically with
-Java. Fiji is ImageJ with common plugins pre-installed for scientific image analysis.
+* **ImageJ/Fiji** - ImageJ is a Java-based image processing program developed at the NIH. ImageJ can be used interactively through a graphical user interface or automatically with Java. Fiji is ImageJ with common plugins pre-installed for scientific image analysis.
 
-* **MATLAB** - Matlab is a numerical computing environment with its own proprietary
-programming language. Matlab provides an extensive Image Processing Toolbox for with
-built-in functions for image registration, segmentation, and analysis.
+* **MATLAB** - Matlab is a numerical computing environment with its own proprietary programming language. Matlab provides an extensive Image Processing Toolbox for with built-in functions for image registration, segmentation, and analysis.
 
-* **Python** - Python is a powerful high-level programming language for general purpose
-programming. There are several open source packages available in Python for image
-processing, including: OpenCV, scikit-image, and Python Imaging Library.
+* **Python** - Python is a powerful high-level programming language for general purpose programming. There are several open source packages available in Python for image processing, including: OpenCV, scikit-image, and Python Imaging Library.
 
-* **ANTs** - ANTs, or Advanced Normalization Tools, is a state-of-the-art medical image
-registration and segmentation toolkit. ANTs works in conjunction with Insight Toolkit
-(ITK) to read and visualize multidimensional imaging data.
+* **ANTs** - ANTs, or Advanced Normalization Tools, is a state-of-the-art medical image registration and segmentation toolkit. ANTs works in conjunction with Insight Toolkit(ITK) to read and visualize multidimensional imaging data.
 
-* **R** - R is an open source programming language and computing environment for
-statistical analysis and data visualization. There are a variety of R packages available
-for image processing, such as ANTsR, EBImage, and magick.
+* **R** - R is an open source programming language and computing environment for statistical analysis and data visualization. There are a variety of R packages available for image processing, such as ANTsR, EBImage, and magick.
 
 ## Additional Resources
 
@@ -117,39 +92,19 @@ Stay tuned for additional online tutorials as well as in-person workshops listed
 
 ## Overview
 
-Visualization is the conversion of data into plots or images in order to view various
-features of the data. As humans, we are able to absorb large amounts of information through
-sight. We can use visualizations as an exploratory tool to gain insight into the data we
-collect and to create hypotheses for relationships. We can also use visualizations to
-communicate ideas to others.
+Visualization is the conversion of data into plots or images in order to view various features of the data. As humans, we are able to absorb large amounts of information through sight. We can use visualizations as an exploratory tool to gain insight into the data we collect and to create hypotheses for relationships. We can also use visualizations to communicate ideas to others.
 
 ## Popular Software
 
-<!-- * **R** - R is popular among data scientists for its plethora of data manipulation and
-analysis packages, but it is also widely used for its visualization tools such as **ggplot2**.
-**ggplot2** is part of the R tidyverse, a collection of packages dedicated to data science.
+* **MATLAB** - MATLAB contains many built-in functions for data visualization, including those for 3D surfaces and meshes. MATLAB is also capable of medical image visualization and is compatible with DICOM and NIFTI filetypes.
 
-* **Python** - Python has a variety of popular data visualization packages including **matplotlib**,
-**seaborn**, and **bokeh**. These packages work well Python's other data science packages, such as
-**pandas** for data manipulation and **TensorFlow** for machine learning. -->
+* **ParaView** - ParaView is an open-source application for visualization and analysis of data defined on meshes or grids. It allows for visualization of 2D or 3D data and is good for general purpose, rapid visualization.
 
-* **MATLAB** - MATLAB contains many built-in functions for data visualization, including those
-for 3D surfaces and meshes. MATLAB is also capable of medical image visualization and is
-compatible with DICOM and NIFTI filetypes.
+* **VisIt** - VisIt is software for the visualization of data defined on meshes or grids. It is compatible with file types that have an underlying HDF5 format.
 
-* **ParaView** - ParaView is an open-source application for visualization and analysis of
-data defined on meshes or grids. It allows for visualization of 2D or 3D data and is good
-for general purpose, rapid visualization.
+* **Blender** - Blender is a 3D graphics software that can be used for creating 3D objects and animations. It can be used for 3D modeling, rendering, motion tracking, and video editing.
 
-* **VisIt** - VisIt is software for the visualization of data defined on meshes or grids. It is
-compatible with file types that have an underlying HDF5 format.
-
-* **Blender** - Blender is a 3D graphics software that can be used for creating 3D objects and
-animations. It can be used for 3D modeling, rendering, motion tracking, and video
-editing.
-
-* **Unity** - Unity is a cross-platform software application for the creation of visualizations
-in augmented and virtual reality.
+* **Unity** - Unity is a cross-platform software application for the creation of visualizations in augmented and virtual reality.
 
 
 ## Additional Resources
@@ -164,12 +119,9 @@ Stay tuned for additional online tutorials as well as our workshops posted on ou
 <!--
 # Viz Lab
 
-The Viz Lab is a facility designed to help UVA faculty, staff, and students explore the
-power of visualization in research and education.
+The Viz Lab is a facility designed to help UVA faculty, staff, and students explore the power of visualization in research and education.
 
-By allowing researchers to interactively view data, the Viz Lab helps them find
-innovative ways of translating data into images and see stacks of images as
-three-dimensional models.
+By allowing researchers to interactively view data, the Viz Lab helps them find innovative ways of translating data into images and see stacks of images as three-dimensional models.
 
 Find out what your data are telling you!
 

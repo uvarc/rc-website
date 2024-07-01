@@ -15,8 +15,8 @@ draft = false
 shorttitle = "Gurobi"
 softwarename = "Gurobi"
 modulename = "gurobi"
-title = "Gurobi on Rivanna"
-description = "Gurobi in Rivanna's HPC environment"
+title = "Gurobi and UVA HPC"
+description = "Gurobi in the HPC environment"
 author = "RC Staff"
 toc = true
 +++
@@ -45,7 +45,7 @@ module spider {{% module-firstversion %}}
 
 # License and Permission
 
-We have an academic site license that allows UVA faculty, staff, and students to use Gurobi on Rivanna. The license is restricted to academic use and all use for commercial purposes is forbidden.
+We have an academic site license that allows UVA faculty, staff, and students to use Gurobi on the HPC system. The license is restricted to academic use and all use for commercial purposes is forbidden.
 
 Please submit a ticket if you are UVA faculty/staff/student and need access to the software.
 

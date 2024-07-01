@@ -1,12 +1,21 @@
-# Pricing yaml file 
+# Information about services for pricing, descriptions, etc.
 service:
-  - name: "Rivanna"
-    description: "A traditional high performance cluster with 
-    a resource manager, a large file system, modules, 
-    and MPI processing"
+  - label: "Allocations"
+    systems: 
+      - name: "Afton"
+        summary: "Afton is the University of Virginia's newest High-Performance Computing system. 
+                  The Afton supercomputer is comprised of 300 compute node each with 96 compute cores based on the AMD EPYC 
+                  9454 architecture for a total of 28,800 cores. The increase in core count is augmented by a significant increase 
+                  in memory per node compared to Rivanna. Each Afton node boasts a minimum of 750 Gigabytes of memory, with some supporting up to 1.5 
+                  Terabytes of RAM memory. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines. 
+                  The Afton and Rivanna systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, and A100), including an NVIDIA BasePOD. 
+                  The Afton and Rivanna platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
+      - name: "Rivanna"
+        summary: "Rivanna is one of the University of Virginia's High-Performance Computing (HPC) systems. After hardware upgrades and expansions in 2019, the Rivanna supercomputer currently has 603 nodes with over 20,476 compute cores. 
+                  The Rivanna and Afton systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, and A100), including an NVIDIA BasePOD. 
+                  Both platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
     security_zone: "SSZ"
     tags: "HPC"
-    label: "Allocations"
     footnote: "A service unit (SU) resembles usage of a trackable hardware resource for a specified amount of time. In its simplest form 1 SU = 1 core hour, but the SU charge rate can vary based on the specific hardware used. Resources like GPUs and memory may incur additional SU charges."
     columns: 
       - "Type"
@@ -29,8 +38,6 @@ service:
         su_limits: "100,000"
         cost: "Free"
         su_expiration: "2 weeks after last training session"
-
-
   - name: "Storage"
     label: "Storage"
     footnote: ""

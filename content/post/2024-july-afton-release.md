@@ -26,7 +26,7 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 
 {{% callout %}}
-## What to expect after the maintenance on July 3?
+## What to expect after the maintenance?
 
 - **New hardware:** On May 28, a total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454 architecture have been added to UVA's HPC environment as the new Afton system. The new Afton hardware provides additional capacity for serial, parallel and GPU computing side-by-side with the existing Rivanna system.
 
@@ -36,7 +36,7 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 - **Software, Code, and Job Submissions:** The shared software stack and modules have been tested during the pre-release phase. **In most cases users can utilize the system without any changes to their job submission scripts.** In some instances users may need to update their Slurm job scripts or recompile their own code. The RC team is available to help with the transition.
 
-- **Policy:** A new charge rate policy will be implemented on July 2 to reflect more closely the actual hardware cost.
+- **Policy:** A new charge rate policy will be implemented on Aug 5 to reflect more closely the actual hardware cost.
 
 {{% /callout %}}
 
@@ -198,30 +198,30 @@ If you have already done this for the Afton pre-release testing then no. Otherwi
 
 {{% accordion-item title="12. How is compute time charged on the Rivanna and Afton systems?" id="faq-12" %}}
 
-Starting on Jul 2, a new service unit (SU) charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the SU charge rate will be based on the amount and type of CPU cores (Intel on Rivanna, AMD on Afton) plus memory allocated. For GPU jobs (in `gpu` and `interactive`), the SU charge rate will be based on the number and type of GPU devices allocated.
+Starting on Aug 5 (tentative), a new service unit (SU) charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the SU charge rate will be based on the amount and type of CPU cores (Intel on Rivanna, AMD on Afton) plus memory allocated. For GPU jobs (in `gpu` and `interactive`), the SU charge rate will be based on the number and type of GPU devices allocated.
 
 {{< table title="charge-rate" class="table table-striped" >}}
 | Partition | Hardware | Charge per core | Charge per GB memory | Charge per GPU device| 
 |---|---|---|---|---| 
-|standard| Rivanna | | | n/a |
-|standard| Afton   | | | n/a |
-|parallel| Afton   | | | n/a |
-|gpu     | A40     | n/a | n/a | |
-|gpu     | A6000   | n/a | n/a | |
-|gpu     | V100    | n/a | n/a | |
-|gpu     | A100 (40G)| n/a | n/a | |
-|gpu     | A100 (80G)| n/a | n/a | |
-|interactive | Rivanna (non-GPU) | | | n/a |
-|interactive | Afton (non-GPU) | | | n/a |
-|interactive| RTX2080 (GPU) | n/a | n/a | |
-|interactive| RTX3090 (GPU) | n/a | n/a | |
+|standard             | Rivanna   |   |     | - |
+|standard             | Afton     |   |     | - |
+|parallel             | Afton     |   |     | - |
+|interactive (non-GPU)| Rivanna   |   |     | - |
+|interactive (non-GPU)| Afton     |   |     | - |
+|interactive (GPU)    | RTX2080   | - | - | |
+|interactive (GPU)    | RTX3090   | - | - | |
+|gpu                  | V100      | - | - | |
+|gpu                  | A6000     | - | - | |
+|gpu                  | A40       | - | - | |
+|gpu                  | A100 (40G)| - | - | |
+|gpu                  | A100 (80G)| - | - | |
 {{< /table >}}
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="13. Why are there different charge rates for Rivanna, Afton, and GPU hardware?" id="faq-13" %}}
 
-Starting on Jul 2, a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices allocated.
+Starting on Aug 5 (tentative), a new charge rate policy will be implemented to reflect more closely the actual hardware cost. For all non-GPU jobs, the charge rate will be based on the amount of CPU cores and memory allocated. For GPU jobs (in `gpu` and `interactive`), the charge rate will be based on the amount of GPU devices allocated.
 
 Use of Afton hardware may allow jobs to complete faster but may consume more SUs overall due to a higher burn rate.
 

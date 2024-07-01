@@ -7,7 +7,7 @@ tags = [
 categories = ["howto"]
 draft = false
 title = "Building and Running MPI Code"
-description = "MPI on Rivanna"
+description = "MPI on the HPC System"
 author = "RC Staff"
 
 +++
@@ -47,7 +47,7 @@ MPI programs are invoked under the control of an executor; without invoking an e
 # Running on Uncontrolled Systems
 On a system not controlled by Slurm, the executors are usually `mpirun` or `mpiexec` (these are typically equivalent). They take a number of options, including the number of processes and a file containing a list of the hostnames on which to run them.
 
-Users are permitted to run short (approximately 10 minutes or less), small (4-8 processes) testing/debugging runs on the Rivanna frontends.  Multi-node frontend runs are not permitted.  It is not necessary to specify a `hostfile` if all processes are run on the same system.  To run a test job on a frontend with four processes, first load the appropriate modules and then type
+Users are permitted to run short (approximately 10 minutes or less), small (4-8 processes) testing/debugging runs on the UVA HPC frontends.  Multi-node frontend runs are not permitted.  It is not necessary to specify a `hostfile` if all processes are run on the same system.  To run a test job on a frontend with four processes, first load the appropriate modules and then type
 ```
 mpirun -np 4 ./mycode
 ```
@@ -81,4 +81,4 @@ In this example, the Slurm job file is requesting two nodes with sixteen tasks p
 
 Please see our MPI [software page](/userinfo/hpc/software/mpi) for examples of Slurm scripts for more complex situations, including running hybrid MPI/OpenMP codes.
 
-For more detailed instructions on building and running compiled codes on Rivanna, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
+For more detailed instructions on building and running compiled codes on the HPC system, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).

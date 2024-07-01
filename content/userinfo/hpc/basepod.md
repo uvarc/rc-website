@@ -14,9 +14,9 @@ author = "RC Staff"
 
 # Introducing the NVIDIA DGX BasePOD™
 
-As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna, UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
+As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
 
-The NVIDIA DGX BasePOD™ on Rivanna, hereafter referred to as the POD, is comprised of:
+The NVIDIA DGX BasePOD™ on Rivanna and Afton, hereafter referred to as the POD, is comprised of:
 - 10 DGX A100 nodes with
   - 2TB of RAM memory per node
   - 80 GB GPU memory per GPU device
@@ -82,4 +82,4 @@ For documentation and demos, refer to the “Resources” section at the bottom 
 
 ## GPU-enabled modules
 
-A complete list of GPU-enabled modules on Rivanna can be found [here](https://www.rc.virginia.edu/userinfo/hpc/software/gpu/). Please refer to their respective pages and/or module load messages (if any) for usage instructions.
+A complete list of GPU-enabled modules on the HPC system can be found [here](https://www.rc.virginia.edu/userinfo/hpc/software/gpu/). Please refer to their respective pages and/or module load messages (if any) for usage instructions.
