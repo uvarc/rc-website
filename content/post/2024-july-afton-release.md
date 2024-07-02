@@ -11,7 +11,7 @@ categories = ["feature"]
 +++
 
 <p class="lead">
-Our new supercomputer, “Afton,” is now available for general use. This represents the first major expansion of RC’s computing resources since Rivanna's last hardware refresh in 2019. Afton represents a substantial increase in the High-Performance Computing (HPC) capabilities available at UVA, more than doubling the available compute capacity. Each of the 300 compute nodes in the new system has 96 compute cores, an increase from a maximum of 48 cores per node in Rivanna. The increase in core count is augmented by a significant increase in memory per node. Each Afton node boasts a minimum of 750GB of memory, with some supporting up to 1.5 Terabytes (TB) of RAM memory. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines.
+Our new supercomputer, “Afton,” is now available for general use. This represents the first major expansion of RC’s computing resources since Rivanna's last hardware refresh in 2019. Afton represents a substantial increase in the High-Performance Computing (HPC) capabilities available at UVA, more than doubling the available compute capacity. Each of the 300 compute nodes in the new system has 96 compute cores, an increase from a maximum of 48 cores per node in Rivanna. The increase in core count is augmented by a significant increase in memory per node. Each Afton node boasts a minimum of 750GB of memory, with some supporting up to 1.5TB. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines.
 </p>
 
 # Maintenance: July 2, 2024
