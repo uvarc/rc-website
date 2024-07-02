@@ -88,7 +88,7 @@ See [here for details](/userinfo/hpc/login/). You must be a member of an active 
 
 {{% accordion-item title="5. Can I still use Rivanna?" id="faq-5" %}}
 
-Yes. Login access points are shared for the Rivanna and Afton systems. We added new hardware feature tags that allow you to specifically request Rivanna resources for your compute jobs once logged in. 
+Yes, login access points are shared for the Rivanna and Afton systems. We added new hardware feature tags that allow you to specifically request Rivanna resources for your compute jobs once logged in. 
 
 See ["What are the changes to the hardware partitions?"](#faq-6) and ["What are hardware features? What are the hardware feature defaults for each partition?"](#faq-10).
 
