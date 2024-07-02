@@ -151,7 +151,7 @@ See ["How do I use Afton for my Slurm job? Do I need to update my job scripts?"]
 Most users should be able to submit jobs without changing their Slurm job scripts, unless:
 - invalid request due to partition changes (see ["What are the changes to the hardware partitions?"](#faq-6))
 
-    - *Example:* A job submitted to `largemem` will become invalid since the partition has been removed. One should submit to `standard` with `--mem=...` to specify the memory.
+    - *Example:* A job submitted to `largemem` will become invalid since the partition has been removed. One should submit to `standard` with `--mem=...` (up to 1462G) to specify the memory.
 
 - cost considerations (see [How is compute time charged on the Rivanna and Afton systems?](#faq-12))
     - *Example:* Instead of running a light GPU job on an A100 in `gpu`, request an RTX2080 or RTX3090 in `interactive` via `--gres=gpu`.
