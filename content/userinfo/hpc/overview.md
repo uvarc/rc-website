@@ -164,7 +164,7 @@ Rivanna and Afton are managed resources; users must submit jobs to queues contro
 The maximum *aggregate* GPUs allowed for a single user’s running jobs is 32.  
 SU charge rate = #cores + 2 x #GPUs, which is *at least* 1 + 2x1 = 3.
 - `interactive` maximum *aggregate* CPU cores (GPUs) is 24 (2) for a single user. The charge rates for cores and GPUs are the same as the other partitions.
-- The NVIDIA DGX BasePOD is a recent addition to UVA's High-Performance Computing (HPC) system. It offers high-performance GPUs that brings new AI and ML functionality to support parallel GPU computing and large deep-learning models.  
+- The NVIDIA DGX BasePOD offers high-performance GPUs that brings new AI and ML functionality to support parallel GPU computing and large deep-learning models.  
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
 - - -

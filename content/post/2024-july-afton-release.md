@@ -36,7 +36,7 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 - **Software, Code, and Job Submissions:** The shared software stack and modules have been tested during the pre-release phase. **In most cases users can utilize the system without any changes to their job submission scripts.** In some instances users may need to update their Slurm job scripts or recompile their own code. The RC team is available to help with the transition.
 
-- **Policy:** A new charge rate policy will be implemented on Aug 5 to reflect more closely the actual hardware cost.
+- **Policy:** A new charge rate policy will be implemented on Aug 5 (tentative) to reflect more closely the actual hardware cost.
 
 {{% /callout %}}
 
