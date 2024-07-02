@@ -52,7 +52,7 @@ The directory structure of `~/texmf/tex/latex` should be the same as
 ls $EBROOTTEXLIVE/texmf-dist/tex/latex
 ```
 
-Each package should reside in its own directory. Create a subdirectory for your package under `~/texmf/tex/latex` and copy the `*.sty` file from [ctan.org](http://ctan.org) into the subdirectory. (If the package does not provide a `*.sty`, please follow the installation instructions. Typically, `latex *.dtx` or `latex *.ins` should produce the `*.sty` file.)
+Each package should reside in its own directory. Create a subdirectory for your package under `~/texmf/tex/latex` and copy the `*.sty` file from [ctan.org](https://ctan.org) into the subdirectory. (If the package does not provide a `*.sty`, please follow the installation instructions. Typically, `latex *.dtx` or `latex *.ins` should produce the `*.sty` file.)
 
 Then run:
 
