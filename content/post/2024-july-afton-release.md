@@ -30,7 +30,7 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 - **New hardware:** On May 28, a total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454 architecture have been added to UVA's HPC environment as the new Afton system. The new Afton hardware provides additional capacity for serial, parallel and GPU computing side-by-side with the existing Rivanna system.
 
-- **Configuration:** The hardware partition definitions will be reconfigured to optimize effective use of the new Afton and existing Rivanna systems.
+- **Configuration:** The hardware partition definitions will be reconfigured to optimize effective use of the new Afton and existing Rivanna systems. (The Weka scratch filesystem will be mounted in non-dedicated mode, which means all cores will be available. Previously 3 cores per node were dedicated to Weka.)
 
 - **Access:** The Rivanna and Afton systems are accessible via the existing and shared Open OnDemand, FastX and ssh access points.
 
