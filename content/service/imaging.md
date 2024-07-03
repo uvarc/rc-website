@@ -111,7 +111,7 @@ Visualization is the conversion of data into plots or images in order to view va
 
 We currently offer several online tutorials for data visualization.
 
-* [MATLAB Data Processing and Visualization](https://learning.rc.virginia.edu/workshops/matlab-data-viz/)
+* [MATLAB Data Processing and Visualization](https://learning.rc.virginia.edu/tutorials/matlab-data-viz/)
 
 Stay tuned for additional online tutorials as well as our workshops posted on our [workshops page](/education/workshops/)
 

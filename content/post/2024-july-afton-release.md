@@ -11,7 +11,7 @@ categories = ["feature"]
 +++
 
 <p class="lead">
-Our new supercomputer, “Afton,” is now available for general use. This represents the first major expansion of RC’s computing resources since Rivanna's last hardware refresh in 2019. Afton represents a substantial increase in the High-Performance Computing (HPC) capabilities available at UVA, more than doubling the available compute capacity. Each of the 300 compute nodes in the new system has 96 compute cores, an increase from a maximum of 48 cores per node in Rivanna. The increase in core count is augmented by a significant increase in memory per node. Each Afton node boasts a minimum of 750GB of memory, with some supporting up to 1.5 Terabytes (TB) of RAM memory. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines.
+Our new supercomputer, “Afton,” is now available for general use. This represents the first major expansion of RC’s computing resources since Rivanna's last hardware refresh in 2019. Afton represents a substantial increase in the High-Performance Computing (HPC) capabilities available at UVA, more than doubling the available compute capacity. Each of the 300 compute nodes in the new system has 96 compute cores, an increase from a maximum of 48 cores per node in Rivanna. The increase in core count is augmented by a significant increase in memory per node. Each Afton node boasts a minimum of 750GB of memory, with some supporting up to 1.5TB. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines.
 </p>
 
 # Maintenance: July 2, 2024
@@ -30,13 +30,13 @@ The *Rivanna* and *Afton* production systems are expected to return to service b
 
 - **New hardware:** On May 28, a total of 300 compute nodes, 96 cores each, based on the AMD EPYC 9454 architecture have been added to UVA's HPC environment as the new Afton system. The new Afton hardware provides additional capacity for serial, parallel and GPU computing side-by-side with the existing Rivanna system.
 
-- **Configuration:** The hardware partition definitions will be reconfigured to optimize effective use of the new Afton and existing Rivanna systems.
+- **Configuration:** The hardware partition definitions will be reconfigured to optimize effective use of the new Afton and existing Rivanna systems. (The Weka scratch filesystem will be mounted in non-dedicated mode, which means all cores will be available. Previously 3 cores per node were dedicated to Weka.)
 
 - **Access:** The Rivanna and Afton systems are accessible via the existing and shared Open OnDemand, FastX and ssh access points.
 
 - **Software, Code, and Job Submissions:** The shared software stack and modules have been tested during the pre-release phase. **In most cases users can utilize the system without any changes to their job submission scripts.** In some instances users may need to update their Slurm job scripts or recompile their own code. The RC team is available to help with the transition.
 
-- **Policy:** A new charge rate policy will be implemented on Aug 5 to reflect more closely the actual hardware cost.
+- **Policy:** A new charge rate policy will be implemented on Aug 5 (tentative) to reflect more closely the actual hardware cost.
 
 {{% /callout %}}
 
@@ -88,7 +88,7 @@ See [here for details](/userinfo/hpc/login/). You must be a member of an active 
 
 {{% accordion-item title="5. Can I still use Rivanna?" id="faq-5" %}}
 
-Yes. Login access points are shared for the Rivanna and Afton systems. We added new hardware feature tags that allow you to specifically request Rivanna resources for your compute jobs once logged in. 
+Yes, login access points are shared for the Rivanna and Afton systems. We added new hardware feature tags that allow you to specifically request Rivanna resources for your compute jobs once logged in. 
 
 See ["What are the changes to the hardware partitions?"](#faq-6) and ["What are hardware features? What are the hardware feature defaults for each partition?"](#faq-10).
 
@@ -151,7 +151,7 @@ See ["How do I use Afton for my Slurm job? Do I need to update my job scripts?"]
 Most users should be able to submit jobs without changing their Slurm job scripts, unless:
 - invalid request due to partition changes (see ["What are the changes to the hardware partitions?"](#faq-6))
 
-    - *Example:* A job submitted to `largemem` will become invalid since the partition has been removed. One should submit to `standard` with `--mem=...` to specify the memory.
+    - *Example:* A job submitted to `largemem` will become invalid since the partition has been removed. One should submit to `standard` with `--mem=...` (up to 1462G) to specify the memory.
 
 - cost considerations (see [How is compute time charged on the Rivanna and Afton systems?](#faq-12))
     - *Example:* Instead of running a light GPU job on an A100 in `gpu`, request an RTX2080 or RTX3090 in `interactive` via `--gres=gpu`.
