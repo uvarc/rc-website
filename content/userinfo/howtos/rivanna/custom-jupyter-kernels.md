@@ -26,6 +26,7 @@ python -m ipykernel install --user --name myenv --display-name "My Env"
 
 Note:
 - You can customize the display name for your kernel. It is shown when you hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
+- Avoid creating your custom kernel from the terminal within an interactive JupyterLab session. This will create the kernel with an incorrect file path causing the kernel to not be selectable in the JupyerLab interface. Create your kernel from the command line accessible from the Open OnDemand interface or SSH connection to avoid this issue.
 - For more information on Anaconda, please visit [here](/userinfo/hpc/software/python/).
 
 # Jupyter kernel based on Apptainer container
