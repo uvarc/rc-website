@@ -64,3 +64,19 @@ to contain only one of `std`, `gam`, or `ncl`, and then running the build proces
 To run VASP, the user prepares a group of input files with predetermined names.  The path to the vasp binary must be provided to the Slurm process manager `srun`; in the example below we assume it is in a directory `bin` under the user's home directory.  All input and potential files must be located in the same directory as the Slurm job script in this example.
 
 {{< pull-code file="/static/scripts/vasp.slurm" lang="no-hightlight" >}}
+
+# Known issues
+
+## `vasp_gam` on AMD node
+When running `vasp_gam` on AMD nodes (i.e. all nodes in `parallel`, Afton nodes in `standard`), ScaLAPACK must be disabled or else it may hang at the first electronic step. In `INCAR`:
+
+```
+LSCAPACK = .FALSE.
+```
+
+Alternatively, if your job fits on 40 cores or less, you can choose not to disable ScaLAPACK and run it in `standard` with the `rivanna` constraint so that it will not land on an AMD node:
+
+```
+#SBATCH -p standard
+#SBATCH -C rivanna
+```
