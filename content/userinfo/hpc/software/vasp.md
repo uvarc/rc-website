@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software"
 ]
-date = "2019-06-22T08:37:46-05:00"
+date = "2024-07-11T00:00:00-05:00"
 tags = [
   "multi-core",
   "chem"
@@ -68,7 +68,7 @@ To run VASP, the user prepares a group of input files with predetermined names. 
 # Known issues
 
 ## `vasp_gam` on AMD node
-When running `vasp_gam` on AMD nodes (i.e. all nodes in `parallel`, Afton nodes in `standard`), ScaLAPACK must be disabled or else it may hang at the first electronic step. In `INCAR`:
+When running `vasp_gam` on AMD nodes (i.e. all nodes in `parallel`, Afton nodes in `standard`), ScaLAPACK must be disabled or else your job may hang at the first electronic step. In `INCAR`:
 
 ```
 LSCAPACK = .FALSE.
