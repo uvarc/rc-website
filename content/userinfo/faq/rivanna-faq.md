@@ -152,6 +152,11 @@ You must use the Grouper (requires VPN connection) interface to create the group
 ## How do I check allocation usage of individual group members?
 Please visit [here](/userinfo/hpc/slurm/#usage-report) to see how to generate an allocation usage report.
 
+## I submitted a job and received an error “Invalid account or account/partition combination specified”. What should I do?
+All resource requests through the Open OnDemand interactive apps or through slurm batch jobs require you to specify an allocation for your job. If you do not input an allocation name, you will get this error.
+
+If you are experiencing this error and you have input an allocation, verify what allocations you are a part of as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Verify that you are inputting the allocation name exactly as you see it all in lowercase.
+
 ## I submitted a job and receive an error "Insufficient balance. Applying funds failure for JobId=".  What should I do?
 The error indicates that your allocation group does not have enough service units to execute the job. Check your allocation status as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Also verify that your allocation has not expired, see [here](#how-do-i-check-an-allocations-expiration-date).
 
