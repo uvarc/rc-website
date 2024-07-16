@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software"
 ]
-date = "2024-07-11T00:00:00-05:00"
+date = "2024-07-16T00:00:00-05:00"
 tags = [
   "multi-core",
   "chem"
@@ -71,7 +71,7 @@ To run VASP, the user prepares a group of input files with predetermined names. 
 When running `vasp_gam` on AMD nodes (i.e. all nodes in `parallel`, Afton nodes in `standard`), ScaLAPACK must be disabled or else your job may hang at the first electronic step. In `INCAR`:
 
 ```
-LSCAPACK = .FALSE.
+LSCALAPACK = .FALSE.
 ```
 
 Alternatively, if your job fits on 40 cores or less, you can choose not to disable ScaLAPACK and run it in `standard` with the `rivanna` constraint so that it will not land on an AMD node:
