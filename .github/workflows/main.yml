@@ -56,9 +56,9 @@ jobs:
         with:
           url: ${{ env.URL }}
           cmd_params: >
-            -e http://ctan.org/
+            -e https://ctan.org/
             -e https://ood.hpc.virginia.edu/pun/sys/dashboard
-            -e http://www.htslib.org/
+            -e https://www.htslib.org/
             -e rci.hpc
             -e stats.pingdom
             -e fastx.hpc
