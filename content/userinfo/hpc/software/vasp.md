@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software"
 ]
-date = "2019-06-22T08:37:46-05:00"
+date = "2024-07-16T00:00:00-05:00"
 tags = [
   "multi-core",
   "chem"
@@ -54,13 +54,25 @@ This `makefile.include` is preconfigured to use the Intel compiler, IntelMPI, an
 
 To use [OpenMPI](/userinfo/hpc/software/mpi), the user must also change the Fortran compiler to `FC=mpif90` and the `BLACS` library to `-lmkl_blacs_openmpi_lp64` while leaving `SCALAPACK = -lmkl_scalapack_lp64.a`.
 
-The VASP suite consists of three executables: `vasp_std`, `vasp_gam`, and `vasp_ncl`.  The default `makefile.include` will attempt to build all three consecutively. Users may find it works best to compile these individually, by editing the line
-```
-VERSIONS=
-```
-to contain only one of `std`, `gam`, or `ncl`, and then running the build process for each one.
+Installation details can be found on the VASP wiki: [5.x](https://www.vasp.at/wiki/index.php/Installing_VASP.5.X.X#How_to_make_VASP), [6.x](https://www.vasp.at/wiki/index.php/Installing_VASP.6.X.X).
 
 # Example Slurm script
 To run VASP, the user prepares a group of input files with predetermined names.  The path to the vasp binary must be provided to the Slurm process manager `srun`; in the example below we assume it is in a directory `bin` under the user's home directory.  All input and potential files must be located in the same directory as the Slurm job script in this example.
 
 {{< pull-code file="/static/scripts/vasp.slurm" lang="no-hightlight" >}}
+
+# Known issues
+
+## `vasp_gam` on AMD node
+When running `vasp_gam` on AMD nodes (i.e. all nodes in `parallel`, Afton nodes in `standard`), ScaLAPACK must be disabled or else your job may hang at the first electronic step. In `INCAR`:
+
+```
+LSCALAPACK = .FALSE.
+```
+
+Alternatively, if your job fits on 40 cores or less, you can choose not to disable ScaLAPACK and run it in `standard` with the `rivanna` constraint so that it will not land on an AMD node:
+
+```
+#SBATCH -p standard
+#SBATCH -C rivanna
+```
