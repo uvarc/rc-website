@@ -30,7 +30,7 @@ draft = false
 
 **How to request `/home` and `/scratch` space**
 
-`/home` and `/scratch` space can be obtained by requesting an allocation on UVA HPC. The process of getting access to Rivanna is described [here](/userinfo/hpc/overview/).
+`/home` and `/scratch` space can be obtained by requesting an allocation on UVA HPC. The process of getting access to Rivanna is described [here](/userinfo/hpc).
 
 # Research Project Storage
 

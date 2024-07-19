@@ -10,7 +10,7 @@ tags = ["accord","security","nsf","hipaa","sensitive-data"]
 
 ***
 
-<a href="../overview/" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
+<a href="../" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
 
 ACCORD is appropriate for de-identified PII, FERPA, de-identified HIPAA, business confidential, and other types of de-identified sensitive data. ACCORD cannot be used to process highly-restricted data such as CUI, FISMA, iTAR, and PCI data.
 

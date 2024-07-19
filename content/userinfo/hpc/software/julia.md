@@ -116,7 +116,7 @@ You can work with Julia on the UVA HPC frontend nodes; we recommend [FastX](http
 # Interactive Sessions through the Open OnDemand Web Portal
 
 ## Starting an Interactive Session
-To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc.. If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
+To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc.. If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/#job-queues) to learn more about the partitions.
 
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.

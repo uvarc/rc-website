@@ -31,8 +31,6 @@ Please contact our <a href="/form/support-request/?category=Storage&request_titl
 
 {{% /highlight %}}
 
-## Incident Response 
-
 {{% accordion-group title="Email Communications" id="commgroup" %}}
 
 {{% accordion-item title="Email Communications" id="emails" %}}

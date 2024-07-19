@@ -19,10 +19,10 @@ type = "rivanna"
 
 <img alt="OpenOnDemand" src="/images/ood.png" align="right" style="max-width:30%;">
 
-Open OnDemand is a graphical user interface that allows access to HPC via a web browser.  The Open OnDemand access point is ood.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna and Afton clusters.  Detailed instructions can be found on our [Open OnDemand documentation](/userinfo/hpc/ood/overview) page.
+Open OnDemand is a graphical user interface that allows access to HPC via a web browser.  The Open OnDemand access point is ood.hpc.virginia.edu.  Within the Open OnDemand environment users have access to a file explorer; interactive applications like JupyterLab, RStudio Server & FastX Web; a command line interface; and a job composer and job monitor to submit jobs to the Rivanna and Afton clusters.  Detailed instructions can be found on our [Open OnDemand documentation](/userinfo/hpc/ood) page.
 
 [<button class="btn btn-primary">Launch Open OnDemand</button>](https://ood.hpc.virginia.edu/)
-[<button class="btn btn-primary">Learn more about Open OnDemand</button>](/userinfo/hpc/ood/overview/)
+[<button class="btn btn-primary">Learn more about Open OnDemand</button>](/userinfo/hpc/ood)
 - - -
 
 # Secure Shell Access (SSH)

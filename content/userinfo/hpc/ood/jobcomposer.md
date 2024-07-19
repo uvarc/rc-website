@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-[Open OnDemand](/userinfo/hpc/ood/overview) allows you to submit Slurm jobs to the cluster without using shell commands.
+[Open OnDemand](/userinfo/hpc/ood) allows you to submit Slurm jobs to the cluster without using shell commands.
 
 The job composer simplifies the process of:
 
