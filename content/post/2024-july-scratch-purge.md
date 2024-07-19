@@ -84,6 +84,6 @@ RC offers several low-cost storage options to researchers. Home directory storag
 {{% /accordion-item %}}
 
 {{% accordion-item title="8. How can I get help? " id="faq-8" %}}
-If you have any questions, please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m. starting March 6.
+If you have any questions, please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m..
 {{% /accordion-item %}}
 
