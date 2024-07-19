@@ -5,12 +5,12 @@ description = ""
 date = "2024-07-18T00:00:00-05:00"
 title = "Reinstatement of file purging of personal /scratch files on Afton and Rivanna"
 # url = "/maintenance"
-draft = true
-tags = ["scratch"]
+draft = false
+tags = ["scratch", "afton", "rivanna"]
 categories = ["feature"]
 +++
 
-On Sep 1, 2024 RC system engineers will reinstate a file purging policy for personal <code> /scratch</code> files and folders. From Sep 1 forward, files not accessed for over 90 days will be permanently deleted on a daily rolling basis.  
+On **Sep 1, 2024** RC system engineers will reinstate a file purging policy for personal <code>/scratch</code> folders on the Afton and Rivanna high-performance computing (HPC) systems. From Sep 1 forward, scratch files that have not been accessed for over 90 days will be permanently deleted on a daily rolling basis. This is not a new policy; it is a reactivation of an established policy that follows general HPC best practices.   
 
 The <code> /scratch</code> filesystem is intended as a temporary work directory. It is not backed up and old files must be removed periodically to maintain a stable HPC environment. 
 
