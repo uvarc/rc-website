@@ -19,7 +19,7 @@ The <code> /scratch</code> filesystem is intended as a temporary work directory.
 
 - Purging of personal scratch files will start on Sep 1, 2024. Files that have not been accessed since Jun 3, 2024 will be deleted on that day. 
 - Directories that have been emptied as part of the file purging process will be removed as well. 
-- Scratch data should be backed up to other storage options. Eligible PIs can request 10TB of Research Standard storage at no charge. [Learn more about all storage options](/userinfo/storage).  
+- The /scratch filesystem is not backed up. Important scratch data should be backed up regularly to other storage options. Eligible PIs can request 10TB of Research Standard storage at no charge. [Learn more about all storage options](/userinfo/storage).  
 
 {{% /callout %}}
 
@@ -27,7 +27,7 @@ The <code> /scratch</code> filesystem is intended as a temporary work directory.
 
 **Do you have additional questions?** 
 
-Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m. starting March 6.
+Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m..
 
 {{% /highlight %}}
 
