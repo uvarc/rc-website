@@ -18,7 +18,7 @@ layout = "single"
 Each Windows Virtual Machine (VM) comes with a set of preinstalled software applications.  Each VM can further be customized via installation of optional software packages.
 {{% /callout %}}
 
-An overview of available software packages for Linux VMs is provided [here](/userinfo/ivy/ivy-linux-sw/overview).
+An overview of available software packages for Linux VMs is provided [here](/userinfo/ivy/ivy-linux-sw).
 
 
 # Preinstalled Software 

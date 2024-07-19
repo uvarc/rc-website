@@ -10,7 +10,7 @@ author = "Staff"
 type = "accord"
 +++
 
-<a href="../overview/" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
+<a href="../" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
 
 Theia Python is a rich IDE that allows researchers to manage their files and data, write code with an intelligent editor, and execute code within a terminal session.
 

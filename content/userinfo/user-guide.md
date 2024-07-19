@@ -27,7 +27,7 @@ quell_footer = true
       <p class="card-text">Standard and high security HPC to run your code, generally written in R, Python or shell scripts.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/userinfo/hpc/overview/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/hpc/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@ quell_footer = true
       <p class="card-text">Secure virtual machines and interactive notebooks for processing HIPAA and other highly sensitive data.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/userinfo/ivy/overview/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/ivy"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>

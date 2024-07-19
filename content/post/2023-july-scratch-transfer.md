@@ -16,7 +16,7 @@ categories = ["feature"]
 **The previous scratch filesystem, now called `/oldscratch`, will be permanently retired on October 17, 2023 and all the data it contains will be deleted.**  
 Users should clean up their `/oldscratch` directory in preparation, to minimize the load.  A sample script is posted below.
 
-**Modified queue limits have been implemented to provide maximum read/write performance of the new /scratch filesystem.** Please refer to our [updated documentation](/userinfo/hpc/overview/#job-queues) and adjust your job scripts accordingly.
+**Modified queue limits have been implemented to provide maximum read/write performance of the new /scratch filesystem.** Please refer to our [updated documentation](/userinfo/hpc/#job-queues) and adjust your job scripts accordingly.
 
 ## Transfer Instructions
 

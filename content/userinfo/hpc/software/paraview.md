@@ -44,7 +44,7 @@ module spider {{% module-firstversion %}}
 
 # Interactive Sessions through Open Ondemand
 
-Interactive sessions of {{% software-name %}} can be launched through the HPC web portal, [Open OnDemand](/userinfo/hpc/ood/overview). To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a GPU node. In addition, you need to specify required resources, e.g. time, your UVA HPC allocation, etc.. If you are new to UVA HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
+Interactive sessions of {{% software-name %}} can be launched through the HPC web portal, [Open OnDemand](/userinfo/hpc/ood). To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. Your {{% software-name %}} session will run on a GPU node. In addition, you need to specify required resources, e.g. time, your UVA HPC allocation, etc.. If you are new to UVA HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/#job-queues) to learn more about the partitions.
 
 ## Starting an Interactive Session
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.

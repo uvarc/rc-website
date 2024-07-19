@@ -87,7 +87,7 @@ We recommend loading the closest available version.
 
 ## Open OnDemand PySpark
 
-Python users can run Spark in a JupyterLab interface via the PySpark Interactive App on [Open OnDemand](/userinfo/hpc/ood/overview/).
+Python users can run Spark in a JupyterLab interface via the PySpark Interactive App on [Open OnDemand](/userinfo/hpc/ood).
 
 ## Open OnDemand Desktop
 

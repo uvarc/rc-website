@@ -38,7 +38,7 @@ images = [""]
 
 {{< pricing ivy >}}
 
-[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy/overview) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](https://services.rc.virginia.edu/)
+[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](https://services.rc.virginia.edu/)
 
 - - -
 
@@ -74,7 +74,7 @@ images = [""]
 </table>  
 {{< /rawhtml >}}
 
-[<button class="btn btn-primary btn-sm">About OMERO</button>](/userinfo/omero/overview/) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request OMERO Access</button>](/form/omero/)
+[<button class="btn btn-primary btn-sm">About OMERO</button>](/userinfo/omero) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request OMERO Access</button>](/form/omero/)
 
 - - -
 -->

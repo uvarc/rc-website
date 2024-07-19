@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-[Open OnDemand](/userinfo/hpc/ood/overview) provides an integrated file explorer to browse and manage small files. Rivanna and Afton have multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage ([/scratch](/userinfo/storage/non-sensitive-data/#scratch)) where large data sets can be staged for job processing. Researchers can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage website](/userinfo/storage) for more information.
+[Open OnDemand](/userinfo/hpc/ood) provides an integrated file explorer to browse and manage small files. Rivanna and Afton have multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage ([/scratch](/userinfo/storage/non-sensitive-data/#scratch)) where large data sets can be staged for job processing. Researchers can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage website](/userinfo/storage) for more information.
 
 The file explorer provides these basic functions:
 

@@ -9,7 +9,7 @@ tags = ["nsf","accord"]
 
 ***
 
-<a href="../overview/" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
+<a href="../" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
 
 ![Accord_logo](/images/accord/ACCORD_logo.png)
 

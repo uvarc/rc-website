@@ -41,8 +41,8 @@ module spider {{% module-firstversion %}}
 
 # Interactive Sessions through Open Ondemand
 
-Interactive sessions of {{% software-name %}} can be launched through the HPC web portal, [Open OnDemand](/userinfo/hpc/ood/overview).
-If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#get-started) to learn more about the partitions.
+Interactive sessions of {{% software-name %}} can be launched through the HPC web portal, [Open OnDemand](/userinfo/hpc/ood).
+If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/#get-started) to learn more about the partitions.
 
 ## Python Setup
 
