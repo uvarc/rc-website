@@ -58,13 +58,11 @@ A file’s last access corresponds to the date and time that file was last opene
 {{% /accordion-item %}}
 
 {{% accordion-item title="4. How can I find out what files will be purged? " id="faq-4" %}}
-From the Open OnDemand interface find the CheckScratchForPurge application under the System tab 
-
-Alternatively, from the command line, run:
+[Log in to Afton/Rivanna](/userinfo/hpc/login/) and from the command line, run:
 
 <code> check-scratch-for-purge > outfile </code>
 
-where outfile is the path of the file to which you wish to save the results. 
+where <code>outfile</code> is the path of the file to which you wish to save the results. 
 {{% /accordion-item %}}
 
 {{% accordion-item title="5. What should I do with files that I still need? " id="faq-5" %}}
