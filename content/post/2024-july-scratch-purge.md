@@ -17,7 +17,7 @@ The <code> /scratch</code> filesystem is intended as a temporary work directory.
 {{% callout %}}
 ## Key Points:
 
-- Purging of personal scratch files will start on 9/1/24. Files that have not been accessed since Jun 1, 2024 will be deleted on that day. 
+- Purging of personal scratch files will start on Sep 1, 2024. Files that have not been accessed since Jun 3, 2024 will be deleted on that day. 
 - Directories that have been emptied as part of the file purging process will be removed as well. 
 - Scratch data should be backed up to other storage options. [Learn more about storage options](/userinfo/storage).  
 
@@ -46,7 +46,7 @@ Please contact our <a href="/form/support-request/?category=Storage&request_titl
 {{% accordion-group title="Group" id="faqgroup"%}}
 
 {{% accordion-item title="1. Why are files being deleted? " id="faq-1" %}}
-Scratch is intended as a temporary work directory, not for long-term storage. It is not backed up, and old files need to be purged periodically to maintain system stability and filesystem performance. This is generally an accepted best practice at HPC centers. 
+Scratch is intended as a temporary work directory, not for long-term storage. It is not backed up, and old files need to be purged periodically to maintain system stability and filesystem performance. This is generally an established best practice at HPC centers. 
 {{% /accordion-item %}}
 
 {{% accordion-item title="2. How does the file purging work? " id="faq-2" %}}
