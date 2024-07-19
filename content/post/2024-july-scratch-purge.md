@@ -19,7 +19,7 @@ The <code> /scratch</code> filesystem is intended as a temporary work directory.
 
 - Purging of personal scratch files will start on Sep 1, 2024. Files that have not been accessed since Jun 3, 2024 will be deleted on that day. 
 - Directories that have been emptied as part of the file purging process will be removed as well. 
-- Scratch data should be backed up to other storage options. [Learn more about storage options](/userinfo/storage).  
+- Scratch data should be backed up to other storage options. Eligible PIs can request 10TB of Research Standard storage at no charge. [Learn more about all storage options](/userinfo/storage).  
 
 {{% /callout %}}
 
@@ -68,7 +68,9 @@ where outfile is the path of the file to which you wish to save the results.
 {{% /accordion-item %}}
 
 {{% accordion-item title="5. What should I do with files that I still need? " id="faq-5" %}}
-We encourage users to back up their important data. Data can be transferred to either your home storage (50G) or leased storage (if applicable). Learn more about available [data transfer tools](/userinfo/data-transfer/). 
+We encourage users to back up their important data. Data can be transferred to either your home storage (50G) or leased storage (if applicable). For more details, see *"What storage options does RC provide?"*
+
+Learn more about available [data transfer tools](/userinfo/data-transfer/). 
 {{% /accordion-item %}}
 
 {{% accordion-item title="6. Can deleted files be restored if needed later? " id="faq-6" %}}
@@ -76,7 +78,7 @@ No. Scratch is a high-performance filesystem without any snapshots or backups. D
 {{% /accordion-item %}}
 
 {{% accordion-item title="7. What storage options does RC provide? " id="faq-7" %}}
-RC offers several low-cost storage options to researchers. Home directory storage provides up to 50G with daily and weekly snapshots of data. Eligible PIs can request 10TB of free Research Standard storage. PIs also have the option to purchase additional leased storage. 
+RC offers several low-cost storage options to researchers. Home directory storage provides up to 50G with daily and weekly snapshots of data. Eligible PIs can request 10TB of Research Standard storage at no charge. PIs also have the option to purchase additional leased storage. 
 
 [Learn more about storage options and how to purchase storage.](/userinfo/storage/)
 {{% /accordion-item %}}
