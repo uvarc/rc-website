@@ -48,14 +48,14 @@ module spider {{% module-firstversion %}}
 
 You can work in the MATLAB desktop on the UVA HPC frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through Slurm.
 
-If your Matlab job requires user interactions via the Matlab interface, you should use [Open OnDemand](/userinfo/hpc/ood/overview) as described in the next section.
+If your Matlab job requires user interactions via the Matlab interface, you should use [Open OnDemand](/userinfo/hpc/ood) as described in the next section.
 
 If you will be running MATLAB through the command line but still wish to use an interactive job, you can create an [ijob](/userinfo/hpc/slurm).
 
 # Interactive Sessions through Open OnDemand
 
 ## Starting an Interactive Session
-To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc.. If you are new to UVA HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/overview/#job-queues) to learn more about the partitions.
+To launch an instance of {{% software-name %}}, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc.. If you are new to UVA HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/#job-queues) to learn more about the partitions.
 
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.

@@ -42,7 +42,7 @@ layout = "single"
 ## Jobs / Slurm / Queues
 
 * [Slurm Overview](/userinfo/hpc/slurm/)
-* [Queues](/userinfo/hpc/overview/#job-queues)
+* [Queues](/userinfo/hpc/#job-queues)
 
 ## Storage and File Transfer
 

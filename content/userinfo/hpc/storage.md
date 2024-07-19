@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-<p class="lead">There are a variety of options for storing large-scale research data at UVa. Public and Internal Use data storage systems can be accessed from the <a href="/userinfo/hpc/overview">Rivanna and Afton</a> high performance computing systems.</p>
+<p class="lead">There are a variety of options for storing large-scale research data at UVa. Public and Internal Use data storage systems can be accessed from the <a href="/userinfo/hpc">Rivanna and Afton</a> high performance computing systems.</p>
 
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}

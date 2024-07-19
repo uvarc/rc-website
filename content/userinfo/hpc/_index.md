@@ -70,7 +70,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">Software</h5>
       <p class="card-text">See a listing of available software.</p>
-      <a href="/userinfo/hpc/software/overview/"><button class="btn btn-warning">Learn More</button></a>
+      <a href="/userinfo/hpc/software"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
 </div>
@@ -104,7 +104,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">Usage Policies</h5>
       <p class="card-text">Understand the terms and conditions for using Rivanna/Afton.</p>
-      <a href="/userinfo/hpc/overview/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
+      <a href="/userinfo/hpc/#usage-policies"><button class="btn btn-warning">Learn More</button></a>
     </div>
   </div>
 </div>
@@ -134,7 +134,7 @@ A high performance computing cluster is typically made up of at least four servi
 <img src="/images/hpc-overview.png" alt="Parts of a High Performance Computing cluster" style="margin-top:0rem;display:block;" class="hpc-overview" usemap="#hpc_map" data-bg_fill="rgba(244,124,67,0.5)" />
 <map name="hpc_map">
   <area id="login-nodes" alt="Login Nodes" title="Login Nodes" href="/userinfo/hpc/login/" shape="rect" coords="243,37,555,100" style="outline:none;" class="hpchover" />
-  <area id="compute-nodes" alt="Compute Node" title="Compute Node" href="/userinfo/hpc/overview/#job-queues" shape="rect" coords="38,150,700,390" style="outline:none;" class="hpchover" />
+  <area id="compute-nodes" alt="Compute Node" title="Compute Node" href="/userinfo/hpc/#job-queues" shape="rect" coords="38,150,700,390" style="outline:none;" class="hpchover" />
   <area id="storage" alt="Storage" title="Storage" href="/userinfo/hpc/storage/" shape="rect" coords="70,440,700,580" style="outline:none;" class="hpchover" />
   <area id="resource-manager" alt="Resource Manager" title="Resource Manager" href="/userinfo/hpc/slurm/" shape="rect" coords="500,38,650,138" style="outline:none;" class="hpchover" />
 </map>

@@ -34,9 +34,9 @@ UVA has three computing facilities available to researchers: _Rivanna_ and _Afto
     <h4 class="card-title">Rivanna and Afton</h4>
     <h6 class="card-subtitle mb-2 text-muted">High-performance Computing Clusters</h6>
     <p class="card-text">
-	Rivanna and Afton are the university's high-performance computing systems for high-throughput multithreaded jobs, parallel jobs, and memory intensive large-scale data analyses. The architecture is specifically suited for large scale distributed genomic data analysis, with many <a href="https://www.rc.virginia.edu/userinfo/rivanna/software/bioinformatics" style="color:#0275d8";>100+</a> bioinformatics software packages installed and ready to use.   
+	Rivanna and Afton are the university's high-performance computing systems for high-throughput multithreaded jobs, parallel jobs, and memory intensive large-scale data analyses. The architecture is specifically suited for large scale distributed genomic data analysis, with many <a href="/userinfo/hpc" style="color:#0275d8";>100+</a> bioinformatics software packages installed and ready to use.   
     </p>
-	<a href="https://www.rc.virginia.edu/userinfo/rivanna/overview/" class="card-link" target="_blank"><button class="btn  btn-primary">Learn more</button></a>
+	<a href="/userinfo/hpc" class="card-link" target="_blank"><button class="btn  btn-primary">Learn more</button></a>
   </div>
 </div>
 
@@ -49,7 +49,7 @@ UVA has three computing facilities available to researchers: _Rivanna_ and _Afto
     <p class="card-text">
 	Ivy is a HIPAA and CUI compliant cluster at UVA for working with sensitive data. Researchers have access to a group of bioinformatics software on Ivy Linux VMs.  
     </p>
-	<a href="/userinfo/ivy/overview" class="card-link"><button class="btn  btn-primary">Learn more</button></a>
+	<a href="/userinfo/ivy" class="card-link"><button class="btn  btn-primary">Learn more</button></a>
   </div>
 </div>
 
