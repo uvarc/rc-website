@@ -18,4 +18,4 @@ While providing scientific programming and data analysis support for this projec
 - Developed a series of scripts to programmatically normalize and summarize experimental data
 - Created interactive and static data visualizations
 - Performed statistical hypothesis tests
-- Provided guidance on the use of the local high-performance computing cluster ([Rivanna](http://www.rc.virginia.edu/userinfo/rivanna/overview/))
+- Provided guidance on the use of the local high-performance computing cluster ([Rivanna](/userinfo/hpc))
