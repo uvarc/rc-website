@@ -25,7 +25,7 @@ Research Computing's primary focus is supporting the direct research mission of 
 
 ## Interface
 
-For most classes, we recommend the [Open OnDemand](https://www.rc.virginia.edu/userinfo/rivanna/ood/overview/) interface if it suits the expected usage.  This does not require knowledge of Unix and greatly reduces the training burden.  The Open OnDemand interface requires only Netbadge credentials and can be accessed without a VPN from off Grounds.
+For most classes, we recommend the [Open OnDemand](/userinfo/hpc/ood) interface if it suits the expected usage.  This does not require knowledge of Unix and greatly reduces the training burden.  The Open OnDemand interface requires only Netbadge credentials and can be accessed without a VPN from off Grounds.
 
 If Open OnDemand is not adequate, the other recommended interface is [FastX Web](https://www.rc.virginia.edu/userinfo/rivanna/logintools/fastx/).  This is a remote desktop application and requires the students to be able to navigate a Unix desktop system.  Access from off Grounds via FastX requires a VPN connection.
 
