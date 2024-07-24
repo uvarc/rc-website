@@ -10,7 +10,7 @@ draft = false
 title = "How To Tips for Storage "
 description = "How Tos for Storage"
 author = "RC Staff"
-
+layout = "single"
 +++
 
 * [Map your Research Standard or Research Project Storage to your Desktop](/userinfo/howtos/storage/drive-mapping)

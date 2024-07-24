@@ -8,6 +8,7 @@ categories = ["userinfo"]
 images = [""]
 author = "Staff"  
 type = "rivanna"
+layout = "single"
 
 +++
 

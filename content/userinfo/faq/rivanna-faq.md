@@ -28,7 +28,7 @@ type = "rivanna"
 A faculty member must first request an allocation on the HPC system. Full details can be found [here](/userinfo/hpc/allocations).
 
 ## How do I log on to Rivanna/Afton?
-Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access the HPC system through our Web-based interface [Open OnDemand](/userinfo/hpc/ood/overview) or [FastX](/userinfo/hpc/logintools/fastx).
+Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access the HPC system through our Web-based interface [Open OnDemand](/userinfo/hpc/ood) or [FastX](/userinfo/hpc/logintools/fastx).
 
 {{% off-campus %}}
 
@@ -56,7 +56,7 @@ rm -rf ~/.mozilla/firefox/*.default/lock
 ## When should I use FastX Web, when should I use an Open OnDemand Desktop session?
 Both allow you to run applications with graphical user interfaces in a Linux Desktop environment.
 
-[Open OnDemand Desktop:](/userinfo/hpc/ood/overview/#desktop)
+[Open OnDemand Desktop:](/userinfo/hpc/ood/#desktop)
 * Runs your session on allocated resources on a compute node.
 * Ideal for running compute-intensive single-node applications with graphical user interface.
 * Does not require a VPN connection from off-Grounds locations.
@@ -108,7 +108,7 @@ Time on the HPC system is allocated as Service Units (SUs). One SU corresponds t
 
 The different Service Unit (SU) allocation types are explained in [this article](/userinfo/hpc/allocations/#allocation-types). It includes links to our allocation request webforms.
 
-## How do I check my allocation status on Rivanna/Afton?
+## How do I check my allocation status on Rivanna/Afton? {#how-do-i-check-my-allocation-status-on-rivanna}
 
 Run the `allocations` command.  The output may look like this:
 ```
@@ -144,13 +144,18 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/overview/#job-queues).
+Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). To manage groups created before November 28th, 2023, visit the legacy [MyGroups portal](https://mygroups.virginia.edu/).
 
 ## How do I check allocation usage of individual group members?
 Please visit [here](/userinfo/hpc/slurm/#usage-report) to see how to generate an allocation usage report.
+
+## I submitted a job and received an error “Invalid account or account/partition combination specified”. What should I do?
+All resource requests through the Open OnDemand interactive apps or through slurm batch jobs require you to specify an allocation for your job. If you do not input an allocation name, you will get this error.
+
+If you are experiencing this error and you have input an allocation, verify what allocations you are a part of as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Verify that you are inputting the allocation name exactly as you see it all in lowercase.
 
 ## I submitted a job and receive an error "Insufficient balance. Applying funds failure for JobId=".  What should I do?
 The error indicates that your allocation group does not have enough service units to execute the job. Check your allocation status as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Also verify that your allocation has not expired, see [here](#how-do-i-check-an-allocations-expiration-date).
@@ -187,7 +192,7 @@ apptainer pull docker://uvarc/pytorch:1.5.1
 Please visit [this page](/userinfo/hpc/software/containers/#container-registries-for-uva-research-computing) for more details.
 
 ## Can I run application/container X on a GPU?
-Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](/userinfo/hpc/overview/#job-queues)) and prevent other users from using the GPUs.
+Please check the user manual for your application/container before running on a GPU. For instance, scikit-learn does not have GPU support; hence using GPUs for scikit-learn will not help with your job performance but will only cost you more service units (see SU charge rate [here](/userinfo/hpc/#job-queues)) and prevent other users from using the GPUs.
 
 [https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support](https://scikit-learn.org/stable/faq.html#will-you-add-gpu-support)
 
@@ -216,7 +221,7 @@ Please check the user manual for your application/container before running on a 
 You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our Slurm documentation page.
 
 ## How do I submit an interactive job?
-If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/hpc/ood/overview) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/hpc/ood/desktop) request.
+If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/hpc/ood) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/hpc/ood/desktop) request.
 
 If you will be using the command line for your interactive job you may use the locally-written ijob command. The minimum required options are -A and -c  for allocation and number of cores. Run `ijob -h` for a list of all options.
 
@@ -234,7 +239,7 @@ Queues are set up to emphasize one-core (serial or threaded), multi-node paralle
 - Jobs requiring the use of GPUs: **gpu**
 - Jobs for interactive sessions or quick tests of code:  **interactive**
 
-More information about queue policy is at the [HPC homepage](/userinfo/hpc/overview/#job-queues).
+More information about queue policy is at the [HPC homepage](/userinfo/hpc/#job-queues).
 
 ## How do I use the interactive queue?
 
@@ -335,7 +340,7 @@ All users are provided a 50-GB home directory for longer-term storage.  This dir
 If the free storage is not sufficient, you need snapshots of your files, or you wish to share space among a research group, the group should lease storage.
 
 ## Why should I use /scratch storage?
-Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  [Please review our scratch filesystem policy for details](/userinfo/hpc/overview/#scratch-directory). If you use or expect to use a large number of files please contact us.
+Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  [Please review our scratch filesystem policy for details](/userinfo/hpc/#scratch-directory). If you use or expect to use a large number of files please contact us.
 
 
 ## How do I obtain leased storage?
@@ -369,7 +374,7 @@ find . -type f | cut -d/ -f2 | sort | uniq -c
 ```
 
 ## How long can I store files in `/scratch`?
-`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/hpc/overview/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
+`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/hpc/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
 
 ## How do I share data in my `/scratch` or leased storage with a colleague?
 To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on UVA HPC, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.

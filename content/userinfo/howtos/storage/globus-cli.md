@@ -35,7 +35,7 @@ pip install --user globus-cli
 
 The project is open source, so you can also download the source at [https://github.com/globus/globus-cli](https://github.com/globus/globus-cli)
 
-If you would like to use the CLI from UVA HPC, please follow these directions [below](#use-the-globus-cli-from-your-rivanna-account).
+If you would like to use the CLI from UVA HPC, please follow these directions [below](#use-the-globus-cli-from-your-hpc-account).
 
 # Authenticate using the Globus CLI
 
@@ -260,7 +260,7 @@ Task ID: 5ffe3058-5543-11e8-90ce-0a6d4e044368
 * For other technical details, see Globus [Documentation](https://docs.globus.org/how-to/).
 
 
-# Use the Globus-CLI from your UVA HPC
+# Use the Globus-CLI from your UVA HPC {#use-the-globus-cli-from-your-hpc-account}
 
 1. Load the globus-cli module and its dependencies:
 

@@ -7,7 +7,7 @@ tags = ["omero","image processing","storage","infrastructure"]
 categories = ["userinfo"]
 images = [""]
 author = "Staff"  
-
+layout = "single"
 +++
 
 ![Omero Status](https://img.shields.io/badge/dynamic/json?color=color&label=omero&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fomero&style=for-the-badge)
@@ -21,7 +21,7 @@ author = "Staff"
 
 # Overview
 
-With the advent of high-throughput screening, the need for efficient image management tools is greater than ever. From the microscope to publication, [OMERO](https://www.openmicroscopy.org/omero/) is a database solution that handles all your images in a secure central repository. You can view, organize, analyze and share your data from anywhere you have internet access. Work with your images from a desktop app (Windows, Mac or Linux), on [UVA's high performance computing platform (Rivanna and Afton)](/userinfo/rivanna/overview), from the web, or through 3rd party software like Fiji and ImageJ, Python, and MATLAB. OMERO is able to read over 140 proprietary file formats, including all major microscope formats. 
+With the advent of high-throughput screening, the need for efficient image management tools is greater than ever. From the microscope to publication, [OMERO](https://www.openmicroscopy.org/omero/) is a database solution that handles all your images in a secure central repository. You can view, organize, analyze and share your data from anywhere you have internet access. Work with your images from a desktop app (Windows, Mac or Linux), on [UVA's high performance computing platform (Rivanna and Afton)](/userinfo/rivanna), from the web, or through 3rd party software like Fiji and ImageJ, Python, and MATLAB. OMERO is able to read over 140 proprietary file formats, including all major microscope formats. 
 
 - - -
 

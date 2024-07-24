@@ -295,7 +295,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 				<p class="card-text">	
 					For transferring highly sensitive data such as HIPAA or CUI data to the Ivy secure computing environment, researchers <b>must</b> use the secure Globus data transfer node (DTN).
 				</p>
-			<a href="/userinfo/ivy/overview#data-transfer-in-out-of-ivy" class="card-link" 1target="_blank"><button class="btn btn-warning">Learn more</button></a>
+			<a href="/userinfo/ivy/#data-transfer-in-out-of-ivy" class="card-link" 1target="_blank"><button class="btn btn-warning">Learn more</button></a>
 		</div>
 	</div>
 </div>

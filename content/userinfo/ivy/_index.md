@@ -8,6 +8,7 @@ categories = ["userinfo"]
 images = [""]
 author = "RC Staff"  
 aliases = [ "/ivy" ]
+layout = "single"
 +++
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
@@ -252,14 +253,14 @@ and regulatory compliance and, if approved, will be installed for you.
         <i>Click on each for more information:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/overview" style="color: #0275d8;">All Packages</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#database-software" style="color: #0275d8;">Database Software</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw" style="color: #0275d8;">All Packages</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/#database-software" style="color: #0275d8;">Database Software</a></li>
+            <li><a href="/userinfo/ivy/ivy-linux-sw/#image-processing" style="color: #0275d8;">Image Processing</a></li>
           </ul>
         </p>
-        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-linux-sw/overview';"">Software Details for Linux</button>
+        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-linux-sw';"">Software Details for Linux</button>
       </div>
     </div>
   </div>
@@ -272,14 +273,14 @@ and regulatory compliance and, if approved, will be installed for you.
         <i>Click on each for more information:</i>
         <p class="card-text">
           <ul>
-            <li><a href="/userinfo/ivy/ivy-windows-sw/overview" style="color: #0275d8;">All Packages</a></li>
-            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
-            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#database-software" style="color: #0275d8;">Database Software</a></li>
-            <li><a href="/userinfo/ivy/ivy-windows-sw/overview#image-processing" style="color: #0275d8;">Image Processing</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw" style="color: #0275d8;">All Packages</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/#database-software" style="color: #0275d8;">Database Software</a></li>
+            <li><a href="/userinfo/ivy/ivy-windows-sw/#image-processing" style="color: #0275d8;">Image Processing</a></li>
          </ul>
         </p>
-        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-windows-sw/overview';"">Software Details for Windows</button>
+        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-windows-sw';"">Software Details for Windows</button>
       </div>
     </div>
   </div>

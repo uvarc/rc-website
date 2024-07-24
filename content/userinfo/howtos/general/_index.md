@@ -7,7 +7,7 @@ draft = false
 title = "General How To Guides"
 description = "Tips and Tricks"
 author = "RC Staff"
-
+layout = "single"
 +++
 
 - [User Guides](/userinfo/user-guide)

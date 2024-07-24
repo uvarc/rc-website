@@ -60,7 +60,7 @@ var user_token = getCookie("__user_token");
   <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
     <div class="card-body">
       <h5 class="card-title">ACCORD</h5>
-      <p class="card-text">Request information or support for an ACCORD project. <a href="/userinfo/accord/overview/" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
+      <p class="card-text">Request information or support for an ACCORD project. <a href="/userinfo/accord" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
       <div class="support-tiles">
         <a href="mailto:accord-support@virginia.edu?Subject=ACCORD Support Request"><button class="btn btn-primary btn-sm">ACCORD Support</button></a>
       </div>
@@ -92,7 +92,7 @@ var user_token = getCookie("__user_token");
       <h5 class="card-title">FAQ / Knowledgebase</h5>
       <p class="card-text">Search topics or post your own related to research computing.</p>
       <div class="support-tiles">
-        <a href="/userinfo/faq/overview/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
+        <a href="/userinfo/faq" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
       </div>
     </div>
   </div>

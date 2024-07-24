@@ -11,13 +11,14 @@ tags = [
 ]
 date = "2020-01-19T17:45:12-05:00"
 draft = false
+layout = "single"
 +++
 
 {{% callout %}}
 Each Linux Virtual Machine (VM) comes with a set of preinstalled software applications.  Each VM can further be customized via installation of optional software packages.
 {{% /callout %}}
 
-An overview of available software packages for Windows VMs is provided [here](/userinfo/ivy/ivy-windows-sw/overview/).
+An overview of available software packages for Windows VMs is provided [here](/userinfo/ivy/ivy-windows-sw).
 
 
 # Preinstalled Software 

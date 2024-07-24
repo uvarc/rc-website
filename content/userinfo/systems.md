@@ -21,7 +21,7 @@ various systems are available to researchers.</p>
       <img align="right" src="/images/hpc-cluster.png" style="max-width:20%;" />
       <h4 class="card-title">High Performance Computing - Rivanna and Afton</h4>
         <p class="card-text">A traditional high performance cluster with a resource manager, a large file system, modules, and MPI processing. </p>
-        <a href="/userinfo/hpc/overview/" class="btn btn-warning" style="color:white">Get Started with UVA HPC</a>
+        <a href="/userinfo/hpc" class="btn btn-warning" style="color:white">Get Started with UVA HPC</a>
     </div>
   </div>
 </div>
@@ -32,7 +32,7 @@ various systems are available to researchers.</p>
       <img align="right" src="/images/ivy-leaf.png" style="max-width:20%;" />
       <h4 class="card-title">Secure Computing for Highly Sensitive Data - Ivy</h4>
         <p class="card-text">A multi-platform, HIPAA-compliant system for secure data that includes dedicated virtual machines (Linux and Windows), JupyterLab Notebooks, and Apache Spark.</p>
-        <a href="/userinfo/ivy/overview" class="btn btn-warning" style="color:white;">Get started on Ivy</a>
+        <a href="/userinfo/ivy" class="btn btn-warning" style="color:white;">Get started on Ivy</a>
     </div>
   </div>
 </div>
@@ -43,7 +43,7 @@ various systems are available to researchers.</p>
       <h4 class="card-title">Secure Computing for Sensitive Data - ACCORD</h4>
       <img align="right" src="/images/accord/ACCORD_logo.png" style="max-width:20%;" />
         <p class="card-text">A web based platform for researchers from different colleges and universities to collaborate, analyze, and store their sensitive data in a central location. ACCORD supports RStudio, JupyterLab, and Theia Python.</p>
-        <a href="/userinfo/accord/overview" class="btn btn-warning" style="color:white;">Get started on ACCORD</a>
+        <a href="/userinfo/accord" class="btn btn-warning" style="color:white;">Get started on ACCORD</a>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@ draft = false
 title = "How To Guides for UVA HPC Users"
 description = "How Tos for UVA HPC"
 author = "RC Staff"
-
+layout = "single"
 +++
 
 # Guides
@@ -42,7 +42,7 @@ author = "RC Staff"
 ## Jobs / Slurm / Queues
 
 * [Slurm Overview](/userinfo/hpc/slurm/)
-* [Queues](/userinfo/hpc/overview/#job-queues)
+* [Queues](/userinfo/hpc/#job-queues)
 
 ## Storage and File Transfer
 

@@ -40,7 +40,7 @@ Examples of service areas include:
     <p class="card-text">
       {{< get_allocation_blurb name="Afton" >}}
     </p>
-    <a href="/userinfo/hpc/overview" class="card-link"><button class="btn btn-warning">Read more about Afton</button></a>
+    <a href="/userinfo/hpc" class="card-link"><button class="btn btn-warning">Read more about Afton</button></a>
   </div>
 </div>
 
@@ -51,7 +51,7 @@ Examples of service areas include:
     <p class="card-text">
       {{< get_allocation_blurb name="Rivanna" >}}
     </p>
-    <a href="/userinfo/hpc/overview" class="card-link"><button class="btn btn-warning">Read more about Rivanna</button></a>
+    <a href="/userinfo/hpc" class="card-link"><button class="btn btn-warning">Read more about Rivanna</button></a>
   </div>
 </div>
 
@@ -62,7 +62,7 @@ Examples of service areas include:
     <p class="card-text">
     Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) backed by a total of {{< ivy-node-count >}} nodes and approximately {{< ivy-core-count >}} cpu cores. Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, CUI or ITAR requirements.
     </p>
-    <a href="/userinfo/ivy/overview" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
+    <a href="/userinfo/ivy" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
   </div>
 </div>
 

@@ -6,6 +6,7 @@ images = [""]
 author = "Staff"
 categories = ["accord"]
 tags = ["accord","python","r","hipaa","sensitive-data"]
+layout = "single"
 +++
 
 ***

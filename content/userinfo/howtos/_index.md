@@ -1,21 +1,23 @@
 +++
-title = "Frequently Asked Questions"
+title = "How To"
 description = ""
 author = "RC Staff"
 images = [
   "",
 ]
 date = "2020-02-16T09:55:56-05:00"
-categories = ["userinfo"]
+categories = ["howto"]
 tags = [
-  "hpc",
+  "howto",
+  "rivanna",
   "ivy",
   "storage",
+  "general",
   "cloud",
 ]
 draft = false
 quell_footer = true
-
+layout = "single"
 +++
 
 <div class="card-group" style="margin-top:2rem;">
@@ -27,9 +29,9 @@ quell_footer = true
       <div class="col-md-8">
         <div class="card-body">
           <h2 class="card-title">General</h2>
-          <p class="card-text">Do you have a general computing question?</p>
+          <p class="card-text">General tips and tricks for computational research.</p>
           <div style="margin-bottom:1rem;">
-            <a href="/userinfo/user-guide/"><button class="btn btn-sm btn-primary">Read our FAQ&rsaquo;</button></a>
+            <a href="/userinfo/howtos/general"><button class="btn btn-sm btn-primary">General HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>
@@ -43,9 +45,9 @@ quell_footer = true
       <div class="col-md-8">
         <div class="card-body">
           <h2 class="card-title">Rivanna and Afton</h2>
-          <p class="card-text">High Performance Computing Platforms</p>
+          <p class="card-text">High Performance Computing platforms</p>
           <div style="margin-bottom:1rem;">
-            <a href="/userinfo/faq/rivanna-faq/"><button class="btn btn-sm btn-primary">Read our FAQ &rsaquo;</button></a>
+            <a href="/userinfo/howtos/rivanna"><button class="btn btn-sm btn-primary">HPC HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>
@@ -63,7 +65,7 @@ quell_footer = true
           <h2 class="card-title">Ivy</h2>
           <p class="card-text">Secure Data Computing Platform</p>
           <div style="margin-bottom:1rem;">
-            <a href="/userinfo/ivy/overview"><button class="btn btn-sm btn-primary">Read our FAQ &rsaquo;</button></a>
+            <a href="/userinfo/howtos/ivy"><button class="btn btn-sm btn-primary">Ivy HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>
@@ -79,10 +81,11 @@ quell_footer = true
           <h2 class="card-title">Storage</h2>
           <p class="card-text">Research Data Storage & Transfer</p>
           <div style="margin-bottom:1rem;">
-            <a href="/userinfo/faq/storage-faq/"><button class="btn btn-sm btn-primary">Read our FAQ &rsaquo;</button></a>
+            <a href="/userinfo/howtos/storage"><button class="btn btn-sm btn-primary">Storage HowTos &rsaquo;</button></a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>

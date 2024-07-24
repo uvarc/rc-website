@@ -21,7 +21,7 @@ aliases = [ "/storage" ]
 ![Standard Storage](https://img.shields.io/badge/dynamic/json?color=color&label=Research%20Standard%20Storage&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fstandard&style=for-the-badge)
 -->
 
-<p class="lead">There are a variety of options for storing research data at UVA. Public and internal use data storage systems can be accessed from the <a href="/userinfo/hpc/overview/">Rivanna and Afton</a> high performance computing systems. Sensitive and highly sensitive data can be stored and accessed within the <a href="/userinfo/ivy/overview">Ivy</a> secure computing environment. Information Security at UVA provides an overview of the <a href=https://security.virginia.edu/university-data-protection-standards>data sensitivity classifications</a>.</p>  
+<p class="lead">There are a variety of options for storing research data at UVA. Public and internal use data storage systems can be accessed from the <a href="/userinfo/hpc">Rivanna and Afton</a> high performance computing systems. Sensitive and highly sensitive data can be stored and accessed within the <a href="/userinfo/ivy">Ivy</a> secure computing environment. Information Security at UVA provides an overview of the <a href=https://security.virginia.edu/university-data-protection-standards>data sensitivity classifications</a>.</p>  
 
 {{% highlight %}}
 
@@ -60,11 +60,15 @@ aliases = [ "/storage" ]
 
 {{< storage_main_page_first >}}
 
-<sup>1</sup>Snapshot files are uneditable backup copies of all the files and folders in your account, taken at a daily interval. The system keeps these snapshots for a week. Snapshot files are deleted sequentially after a week has passed. This saving method is useful for human error prevention as any accidentally deleted files may be recovered. Look to our [FAQ](/userinfo/faq/storage-faq/) page to learn how to access your snapshots.
+<sup>1</sup>{{% pi-eligibility %}}
 
-<sup>2</sup>Replication is a data management process that stores copies of data fragments over a distributed cluster or database. By having replicated data across each node or server on a given database, data can be accessed more reliably than data that only resides on a single server. This saving method is useful for disaster scenarios where if data is stored on multiple disks, and one disk fails, the data is still accessible.
+<sup>2</sup>For PIs with existing Research Standard Storage, the charges will be adjusted accordingly. PIs without existing Research Standard Storage will need to submit a request for the storage.
 
-<sup>3</sup>Backup files are copies of files that are stored on a separate disk storage than that of the original copies. Files may be backed up on a separate disk storage or within cloud storage. Backed up files are not synced with their original, so any edits to the original are not reflected on the backup. This saving method is useful for disaster scenarios where if the original disk storage is unsavable, the backups may still be accessible.
+<sup>3</sup>Snapshot files are uneditable backup copies of all the files and folders in your account, taken at a daily interval. The system keeps these snapshots for a week. Snapshot files are deleted sequentially after a week has passed. This saving method is useful for human error prevention as any accidentally deleted files may be recovered. Look to our [FAQ](/userinfo/faq/storage-faq/) page to learn how to access your snapshots.
+
+<sup>4</sup>Replication is a data management process that stores copies of data fragments over a distributed cluster or database. By having replicated data across each node or server on a given database, data can be accessed more reliably than data that only resides on a single server. This saving method is useful for disaster scenarios where if data is stored on multiple disks, and one disk fails, the data is still accessible.
+
+<sup>5</sup>Backup files are copies of files that are stored on a separate disk storage than that of the original copies. Files may be backed up on a separate disk storage or within cloud storage. Backed up files are not synced with their original, so any edits to the original are not reflected on the backup. This saving method is useful for disaster scenarios where if the original disk storage is unsavable, the backups may still be accessible.
 
 - - -
 

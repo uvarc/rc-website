@@ -10,7 +10,7 @@ draft = false
 title = "How To Guides for Ivy Users"
 description = "How Tos for Ivy"
 author = "RC Staff"
-
+layout = "single"
 +++
 
 * [Transfer Files to or from Ivy Using Globus](/userinfo/howtos/ivy/secure-globus-transfer)
