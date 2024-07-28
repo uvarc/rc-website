@@ -15,7 +15,7 @@ draft = false
 
 # Java SDK Overview
 
-Ivy Linux VMs are installed with Java SDK 1.8. Java is a popular Object Oriented programming
+Ivy Linux VMs are installed with Java SDK 1.8. Java is a popular Object-Oriented programming
 language and is used in a multitude of scenarios. It is available under the GNU General Public
 License for all users. The SDK consists of a large number of tools such as ```javac``` that 
 help in application development. 

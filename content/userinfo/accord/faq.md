@@ -18,7 +18,7 @@ author = "Staff"
 
 1.  Who can use ACCORD?
 
-	+ Researchers from public universities across the state of Virginia are invited to request access. ACCORD is also open to reserachers from other states who are working on COVID related projects
+	+ Researchers from public universities across the state of Virginia are invited to request access. ACCORD is also open to researchers from other states who are working on COVID related projects
 <br>
 <br>
 

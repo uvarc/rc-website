@@ -59,7 +59,7 @@ UVA has three computing facilities available to researchers: _Rivanna_ and _Afto
   <div class="card-block">
     <h4 class="card-title">Cloud Computing</h4>
     <p class="card-text">
-	We can explore the possibility of using cloud infrastucture (AWS/GCP) for your bioinformatics analysis and data storage. For certain applications, the 'elasticity' of cloud computing may prove beneficial for saving time and reducing costs of data analysis and sharing. The RC team is available for consultation on your project needs.      
+	We can explore the possibility of using cloud infrastructure (AWS/GCP) for your bioinformatics analysis and data storage. For certain applications, the 'elasticity' of cloud computing may prove beneficial for saving time and reducing costs of data analysis and sharing. The RC team is available for consultation on your project needs.      
     </p>
 	<a href="/service/cloud/" class="card-link"><button class="btn  btn-primary">Learn more</button></a>
   </div>

@@ -28,10 +28,10 @@ Co-investigators are also vetted before they are given access to the ACCORD plat
 <img src="/images/accord/globus.png" style="float:right;" class="project-inset" />
 
 Data can be transferred using the Globus federated GridFTP platform. The ACCORD DTN (data transfer node) endpoint
-address can be found once you sign into the ACCORD Console.
+address can be found once you sign in to the ACCORD Console.
 
 ACCORD user access is non-hierarchical and makes no distinction between various project personnel when granting permissions. 
-All project members have equal access to project data, i.e. there is no priviledged user or access for any given project.
+All project members have equal access to project data, i.e. there is no privileged user or access for any given project.
 
 ## Storage
 

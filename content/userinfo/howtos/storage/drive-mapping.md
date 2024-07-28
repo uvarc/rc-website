@@ -21,7 +21,7 @@ _Research Standard_ and _Research Project_ storage can be mapped to your Windows
 
 # Windows
 
-* Open a File Explorer page.  In the left column, right click on *This PC*.  In the drop-down box that appears, look for the *Map Network Drive* option. If you do not see this option, click on *Show more Options*, and then click on *Map network drive...*. 
+* Open a File Explorer page.  In the left column, right-click on *This PC*.  In the drop-down box that appears, look for the *Map Network Drive* option. If you do not see this option, click on *Show more Options*, and then click on *Map network drive...*. 
 * When the *Map Network Drive* dialog box appears, select a letter for the drive.This will be the location on your PC where you will be able to access your storage.
 * Also in the *Map Network Drive* dialog box, type the path for your storage location in the Folder field. 
     * For **Research Standard** storage, the path starts with `\\standard.hpc.virginia.edu\` followed by your storage share name, for example `\\standard.hpc.virginia.edu\mylab-storage`

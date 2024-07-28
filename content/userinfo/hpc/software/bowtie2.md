@@ -71,7 +71,7 @@ The Slurm script defines the HPC resources needed to run the Bowtie2 indexing an
 
 Let's create a textfile that serves as our job script, `alignment.slurm`, with the following content:
 
-{{< pull-code file="/static/scripts/bowtie2.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/bowtie2.slurm" lang="no-highlight" >}}
 
 * You need to replace `<YOUR_ALLOCATION>` with your own HPC allocation name.
 

@@ -345,7 +345,7 @@ When using a Linux file system, users can invoke generic Linux commands to manag
 
 # Transfering Data to Cloud Storage
  
-Several command line tools are available to transfer data from your UVA storage locations to the cloud. On the HPC system we provide the `rsync` and `aws cli` tools to transfer files files from _Research Project_, _Research Standard_ and Rivanna/Afton home & scratch directories to AWS storage.
+Several command line tools are available to transfer data from your UVA storage locations to the cloud. On the HPC system we provide the `rsync` and `aws cli` tools to transfer files from _Research Project_, _Research Standard_ and Rivanna/Afton home & scratch directories to AWS storage.
 
 [Learn more about the AWS CLI tools](/userinfo/howtos/storage/aws-s3/)
 

@@ -31,7 +31,7 @@ private = true
       </div>
       <div class="form-item form-type-radio radio"> <label class="control-label" for="faculty-verify-no">
         <input required="required" type="radio" id="faculty-verify-no" name="faculty-verify" value="no" class="form-radio" /> &nbsp;No</label>
-        &nbsp;(Non-UVA personnel are chaged $0.07/SU)
+        &nbsp;(Non-UVA personnel are charged $0.07/SU)
       </div>
     </div>
   </div>

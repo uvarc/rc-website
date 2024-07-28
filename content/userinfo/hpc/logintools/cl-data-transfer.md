@@ -169,7 +169,7 @@ Delete files not present on the source directory if they are present on the targ
 rsync -Pa --delete ldir/ mst3k@login.hpc.virginia.edu:rdir
 ```
 
-Have rsync print the list it will transfer without carrying out the tranfers.  Especially important when using `--delete`.
+Have rsync print the list it will transfer without carrying out the transfers.  Especially important when using `--delete`.
 
 ```
 rsync -Pa --delete --dry-run ldir/ mst3k@login.hpc.virginia.edu:rdir

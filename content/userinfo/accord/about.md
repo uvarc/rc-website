@@ -17,10 +17,10 @@ tags = ["nsf","accord"]
 
 # What is it
 
-ACCORD (Assuring Controls Compliance of Research Data) gives researchers from public universities across the state of Virignia access to a multicore computing system capable of processing and storing de-identified sensitive data. ACCORD is appropriate for de-identified PHI, FERPA, business confidential, and other types of de-identified sensitive data. This is especially important for schools that lack the financial, staffing, or technical resources for such systems. ACCORD is designed to encourage collaborative research partnerships across institutions by managing the risks associated with sensitive data sharing.
+ACCORD (Assuring Controls Compliance of Research Data) gives researchers from public universities across the state of Virginia access to a multicore computing system capable of processing and storing de-identified sensitive data. ACCORD is appropriate for de-identified PHI, FERPA, business confidential, and other types of de-identified sensitive data. This is especially important for schools that lack the financial, staffing, or technical resources for such systems. ACCORD is designed to encourage collaborative research partnerships across institutions by managing the risks associated with sensitive data sharing.
 
 ACCORD is project-based, which means use of the platform centers on individual projects.   
-A principle investigator requests access to the platform (specifying a project title and level of sensitivity), populates the project with co-investigators,  and imports data. Each of the investigators can create and use computing environments to run analysis on the data. When done with the analysis, the investigators can spin down the pla/tform to free the resources.  
+A principal investigator requests access to the platform (specifying a project title and level of sensitivity), populates the project with co-investigators,  and imports data. Each of the investigators can create and use computing environments to run analysis on the data. When done with the analysis, the investigators can spin down the pla/tform to free the resources.  
 
 # Who can use it
 

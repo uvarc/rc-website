@@ -136,7 +136,7 @@ rule stringtie_assemble:
 - Below is an example script to submit to the standard partition with 8 threads
 - This script is using a `conda` environment called rnaseq
 
-{{< pull-code file="/static/scripts/snakemake.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/snakemake.slurm" lang="no-highlight" >}}
 
 # Dry Runs:
 

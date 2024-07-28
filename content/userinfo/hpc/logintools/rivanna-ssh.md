@@ -75,7 +75,7 @@ If you are permitted to use passwordless `ssh` between HPC compute nodes, such a
 
 # Troubleshooting
 
-- When you log in to a new host, `ssh` will ask whether you wish to accept the host key. You must answer yes explicitly in order to procede.
+- When you log in to a new host, `ssh` will ask whether you wish to accept the host key. You must answer yes explicitly in order to proceed.
 
 - When off Grounds, you must use the [UVA Anywhere](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0) client in order to connect to on-Grounds resources. If you do not, your attempt to use `ssh` will hang with no messages.
 

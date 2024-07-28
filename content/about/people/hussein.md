@@ -13,4 +13,4 @@ email = "fmh7pvuj@virginia.edu"
 subjects = ["r","python", "sql", "machine learning"]
 +++
 
-Fadumo Hussein is an graduate student at the University of Virginia studying Data Science. Equipped with experience in Python, R, SQL, and SAS, Fadumo excels in conducting data analysis, model development, and visualization, all aimed at supporting organizational objectives and fostering positive outcomes. Outside of Research Computing, she enjoys spending time outdoors in nature and indulging in reading.
+Fadumo Hussein is a graduate student at the University of Virginia studying Data Science. Equipped with experience in Python, R, SQL, and SAS, Fadumo excels in conducting data analysis, model development, and visualization, all aimed at supporting organizational objectives and fostering positive outcomes. Outside of Research Computing, she enjoys spending time outdoors in nature and indulging in reading.

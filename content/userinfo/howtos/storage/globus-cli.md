@@ -45,7 +45,7 @@ Log in against your institutional authentication provider. In the case of UVA, w
 globus login
 {{< /code >}}
 
-This will open a page in your web browser where you select your institution and proceed to login:
+This will open a page in your web browser where you select your institution and proceed to log in:
 
 <img alt="Globus CLI login" src="/images/globus-cli-login.png" align="right" style="max-width:20%;">
 
@@ -249,7 +249,7 @@ Task ID: 5ffe3058-5543-11e8-90ce-0a6d4e044368
 
 ## Automating your scripts
 
-* In a Unix/Linux/MacOS environment, you can set any script or application to run on any schedule using cron.
+* In a Unix/Linux/macOS environment, you can set any script or application to run on any schedule using cron.
 * In Windows, we recommend writing the above into a PowerShell script, which can then be scheduled using the “Task Scheduler” tool from the Windows menu.
 
 # More Information
