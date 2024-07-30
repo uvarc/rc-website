@@ -36,9 +36,9 @@ Rather than approach your research with a specific technology or platform in min
   <div class="dropdown-menu">
     <a class="dropdown-item" href="/support">User Support</a>
     <hr/>
-    <a class="dropdown-item" href="/userinfo/rivanna/software/bioinformatics">Bioinformatics &amp; Genomics</a>
+    <a class="dropdown-item" href="/userinfo/hpc/software/bioinformatics">Bioinformatics &amp; Genomics</a>
     <a class="dropdown-item" href="/service/cloud">Cloud Solutions</a>
-    <a class="dropdown-item" href="/service/data-analysis">Data Analysis</a>
+    <a class="dropdown-item" href="/service/dac">Data Analysis</a>
     <a class="dropdown-item" href="/service/high-performance-computing/">High Performance Computing</a>
     <a class="dropdown-item" href="/service/imaging/">Image Processing</a>
     <hr/>

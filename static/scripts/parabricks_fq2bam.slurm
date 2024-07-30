@@ -9,10 +9,10 @@
 
 # prepare the environment
 module purge
-module load singularity clara-parabricks
+module load apptainer clara-parabricks
 
 # run parabricks fq2bam pipeline
-singularity run --nv \
+apptainer run --nv \
       -B $PWD:/workdir \
       -B $PWD:/outputdir \
     $CONTAINERDIR/clara-parabricks-4.1.1.sif \

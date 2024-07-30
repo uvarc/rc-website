@@ -136,8 +136,8 @@ Many researchers use Glacier to store terabytes of source data to fulfill grants
 To get an idea of how public or private cloud resources are used in real-world and research scenarios, visit one of these **Solution Architecture References**:
 
 - <a style="font-weight:bold;" href="https://aws.amazon.com/architecture/" target="_new">AWS Architecture Center</a>.
-- <a style="font-weight:bold;" href="https://gcp.solutions" target="_new">Google Cloud Solutions Architecture Reference</a> | <a href="https://cloud.google.com/docs/tutorials" target="_new" style="font-weight:bold;">GCP Builder Tutorials</a>.
-- <a style="font-weight:bold;" href="https://azure.microsoft.com/en-us/solutions/architecture/" target="_new">Azure Solution Architecture</a> | <a style="font-weight:bold;" href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/" target="_new">Azure Reference Architectures</a>.
+- <a style="font-weight:bold;" href="https://cloud.google.com/architecture/all-reference-architectures" target="_new">Google Cloud Solutions Architecture Reference</a> | <a href="https://cloud.google.com/docs/tutorials" target="_new" style="font-weight:bold;">GCP Builder Tutorials</a>.
+- <a style="font-weight:bold;" href="https://learn.microsoft.com/en-us/azure/architecture/browse/" target="_new">Azure Solution Architecture</a> | <a style="font-weight:bold;" href="https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/" target="_new">Azure Reference Architectures</a>.
 
 <small id="emailHelp" class="form-text text-muted">Some examples from AWS:</small>
 

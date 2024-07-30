@@ -6,5 +6,5 @@
 #SBATCH -A mygroup
 
 module purge
-module load goolf/7.1.0_3.1.4  R
+module load goolf R
 Rscript myRprog.R

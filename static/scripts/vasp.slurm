@@ -6,6 +6,6 @@
 #SBATCH --output=thermo.out
 #SBATCH --partition=parallel
 
-module load intel intelmpi
+module load intel
 
-srun ../bin/vasp_std
+srun ~/bin/vasp_std

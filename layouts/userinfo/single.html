@@ -1,4 +1,10 @@
 {{ define "title" }}{{ .Title | markdownify }} | {{ .Site.Title }}{{ end }}
+{{ define "sidebar" }}{{ partial "sidebar-userinfo.html" . }}{{ end }}
+{{ define "head-extra" }}<style>
+  .card-group .card a {
+    text-decoration:none;
+  }
+</style>{{end}}
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 

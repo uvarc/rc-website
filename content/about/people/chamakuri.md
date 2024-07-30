@@ -2,7 +2,7 @@
 draft = false
 date = "2019-05-17T15:25:10-05:00"
 title = "Ravi Chamakuri, PMP"
-job_title = "Full Stack Developer"
+job_title = "DevOps Manager"
 lastname = "chamakuri"
 biolink = false
 type = "people"
@@ -16,6 +16,9 @@ subjects = [
   "databases",
   "containers",
   "python",
+  "docker",
+  "kubernetes",
+  "development"
 ]
 +++
 

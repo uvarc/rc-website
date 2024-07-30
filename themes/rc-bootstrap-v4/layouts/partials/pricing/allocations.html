@@ -1,0 +1,51 @@
+<!-- Determine index of Rivanna Entry -->
+{{ $services := $.Site.Data.service.service }}
+{{ $allocations_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.label "Allocations" }}
+    {{ $allocations_index = $i }}
+  {{ end }}
+{{ end }}
+
+<!-- Access Different Types -->
+{{ $options := index (index $services $allocations_index) "options" }}
+
+{{ $standard_option := index (where $options "type" "Standard") 0 }}
+{{ $purchased_option := index (where $options "type" "Purchased") 0 }}
+{{ $instructional_option := index (where $options "type" "Instructional") 0 }}
+
+
+<table class="table" style="margin-top:2rem;">
+    <thead class="thead-dark" style="">
+      <tr>
+        {{ $columns := index (index $services $allocations_index) "columns" }}
+        {{ range $key, $value := index $columns }}
+            <th scope="col">{{ $value }}</th>
+        {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><a href='{{index $standard_option "link"}}'>{{ index $standard_option "type" }}</a></th>
+        <td>{{ index $standard_option "su_limits" }}</td>
+        <td>{{ index $standard_option "cost" }}</td>
+        <td>{{ index $standard_option "su_expiration" }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href='{{index $purchased_option "link"}}'>{{ index $purchased_option "type" }}</a></th>
+        <td>{{ index $purchased_option "su_limits" }}</td>
+        <td>{{ index $purchased_option "cost" }}</td>
+        <td>{{ index $purchased_option "su_expiration" }}</td>
+      </tr>
+      <tr>
+        <th scope="row"><a href='{{index $instructional_option "link"}}'>{{ index $instructional_option "type" }}</a></th>
+        <td>{{ index $instructional_option "su_limits" }}</td>
+        <td>{{ index $instructional_option "cost" }}</td>
+        <td>{{ index $instructional_option "su_expiration" }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <span style="display:block; margin-bottom: 0.5rem;"> {{ index (index $services $allocations_index) "footnote"}}</span>
+  
+  

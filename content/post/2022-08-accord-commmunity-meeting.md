@@ -19,9 +19,10 @@ may attend any or all of the topics.</p>
 
 ## Access the Event:
 
-{{% button button-text="Register for the Event" button-url="https://virginia.zoom.us/meeting/register/tJEodO6vrDsoHtzd0HL42ocfR9hHY1WIivb0" 
+<!-- Zoom Link is no longer active -->
+<!-- {{% button button-text="Register for the Event" button-url="https://virginia.zoom.us/meeting/register/tJEodO6vrDsoHtzd0HL42ocfR9hHY1WIivb0" 
 button-class="warning" %}}&nbsp;{{% button button-text="Zoom Link" button-url="https://virginia.zoom.us/j/95537720248?pwd=TkNzUnhFTVhVcGtjNk9hRlU2RkhOQT09" 
-button-class="success" %}}
+button-class="success" %}} -->
  
 You are welcome to invite colleagues to attend the Community Meeting, especially researchers who are new to ACCORD.  
 

@@ -11,16 +11,26 @@ type = "form"
 private = true
 +++
 
+{{% jira-msg %}}
+
+
 {{< form-cookies >}}
 <!-- <script type="text/javascript" src="/js/typeahead.js"></script> -->
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+
+{{< enable-disable-form >}}
+
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
   <input type="hidden" id="category" name="category" value="Storage">
   <input type="hidden" id="request_title" name="request_title" value="Storage Request" />
-{{% form-userinfo-v2 %}}
+
+  {{% getstatus keyword="jira" %}}
+
+  {{% form-userinfo-v2 %}}
+
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 
     <label class="control-label" for="type-of-request">Type of Request <span class="form-required" title="This field is required.">*</span></label>
@@ -51,20 +61,17 @@ private = true
     <label class="control-label" for="storage-options">Storage Platform <span class="form-required" title="This field is required.">*</span></label>
     <div id="storage-options" class="form-radios">
       <div class="form-item form-type-radio radio disabled">
-        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" /> &nbsp; Research Project Storage ({{% storage-pricing project %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" /> &nbsp; Research Project Storage ({{< extract_storage_cost type="project" >}})</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" /> &nbsp; Research Standard Storage ({{% storage-pricing standard %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" /> &nbsp; Research Standard Storage ({{< extract_storage_cost type="standard" >}})</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{% storage-pricing ivy %}}/TB/year)</label>
+        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{< extract_storage_cost type="ivy" >}})</label>
       </div>
     </div>
     <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
-      <p>Research Project storage is currently unavailable for new purchases.</p>
-    </div>
-    <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
-      <p>None of these storage options offer data backups or replication.</p>
+      <p>None of these storage options offer data backups or replication. Research Project storage provides week long snapshots of data. Snapshots are not available on Research Standard storage</p>
     </div>
 
   </div>
@@ -76,15 +83,16 @@ private = true
   <hr size=1 />
   <div class="row">
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
-      <label class="control-label" for="mygroup-ownership">MyGroup Ownership <span class="form-required" title="This field is required.">*</span></label>
+      <label class="control-label" for="mygroup-ownership">Grouper Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
-      <p class=tiny>MyGroups name under your Eservices user ID. If you don’t have one, we can create one for you. You will have access to the <a href="https://mygroups.virginia.edu/" target="_new" style="font-weight:bold;">MyGroups</a> management and will be able to add/remove users for your project.</p>
+      <p class=tiny>Grouper group name under your Eservices user ID. You will have access to the <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> management and will be able to add/remove users for your project.</p>
     </div>
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-      <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the MyGroups associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
+      <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the Grouper group associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
     </div>
+    {{% group_creation_tip %}}          
   </div>
   <hr size=1 />
   <div class="form-item form-group form-item form-type-textarea form-group"> 
@@ -107,6 +115,9 @@ private = true
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
   </div>
 </div>
+
+{{< /enable-disable-form >}}
+
 </form>
 
 <script type="text/javascript" src="/js/user-session-v2.js"></script>

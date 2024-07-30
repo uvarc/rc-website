@@ -1,0 +1,36 @@
+<section class="sidebar-module">
+    <p class="lead"><a style="text-decoration:none;color:black;" href="/project/">Featured Research</a></p>
+    <div style="width:100%;">
+
+    <!-- Looks through all pages in the content folder of type project and shuffles them -->
+    {{ $projects := where (where .Site.Pages "Type" "project") "Params.draft" "!=" true }}
+    <!-- Initializing an empty slice, which will hold valid projects-->
+    {{ $projectsWithImages := slice }}
+
+    <!-- Loop through all relevant projects, ultimately filtering the invalid project (doesn't have image parameter)-->
+    {{ range $projects }}
+        {{ if isset .Params "images" }}
+            {{ $projectsWithImages = $projectsWithImages | append . }}
+        {{ end }}
+    {{ end }}
+
+    <!-- Shuffle the available projects -->
+    {{ $filteredProjects := shuffle $projectsWithImages }}
+    <!-- Based on the shuffle, we select the first index (simulating randomization)-->
+    {{ $randomProject := index $filteredProjects 0 }} 
+        
+        <div class = "basic-science containers engineering tools">
+            <a href ="{{ $randomProject.Permalink }}" style="color:black; text-decoration:none;">
+                <div class="card card-shadow" style="margin:8px; max-height:20em; min-height:20em; text-align:center; padding:4px;">
+                    <div class="image-container" style="display: flex; justify-content: center; align-items: center;">
+                        <img class="card-img-top" src="{{ $randomProject.Params.images }}" alt="{{ $randomProject.Title }}" style="max-width: 240px; max-height: 240px;">
+                    </div>
+                    <div class="card-body" style="margin-top:auto;margin-bottom:auto;">
+                        <h5 class="card-title" style="font-size:18px; margin-top:auto;margin-bottom:auto;"> {{ $randomProject.Title }}</h5>
+                    </div>           
+                </div>
+            </a>
+        </div>
+      </div>
+</section>
+

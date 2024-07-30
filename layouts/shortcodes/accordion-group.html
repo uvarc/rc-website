@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card-body {
+  padding: 0 18px;
+}
+.card-body a:link {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+.card-body a:visited {
+  color: blue;
+  background-color: transparent;
+  text-decoration: none;
+}
+.card-body a:hover {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.card-body a:active {
+  color: blue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.btn.btn-link {
+  text-align: left;
+  white-space: normal;
+  width: 100%;
+}
+.btn-link:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+</style>
+</head>
+<body>
+<div class="accordion" id={{ .Get "id" }}>
+    {{ .Inner }}
+</div>
+</body>
+</html>

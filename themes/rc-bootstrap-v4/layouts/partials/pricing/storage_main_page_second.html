@@ -1,0 +1,51 @@
+<!-- Determine index of Storage Entry -->
+{{ $services := $.Site.Data.service.service }}
+{{ $storage_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.name "Storage" }}
+    {{ $storage_index = $i }}
+  {{ end }}
+{{ end }}
+
+{{ $options := index (index $services $storage_index) "options" }}
+
+{{ $ivy_central_storage := index (where $options "name" "Ivy Central Storage") 0 }}
+
+<table class="table table-striped table-sm" style="font-size:90%;">
+    <thead class="thead-dark">
+    <tr>
+      <th class="" style="width:16%;">Feature</th>
+      <th class=""><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">{{ index $ivy_central_storage "name" }} (ICS)</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td class="">Quota</td>
+      <td class="">{{ index $ivy_central_storage "quota" }}</td>
+    </tr>
+    <tr>
+      <td class="">Price</td>
+      <td class="">{{ index $ivy_central_storage "cost" }}</td>
+    </tr>
+    <tr>
+      <td class="">Snapshots</td>
+      <td class="">{{ index $ivy_central_storage "snapshots" }}</td>
+    </tr>
+    <tr>
+      <td class="">Replication</td>
+      <td class="">{{ index $ivy_central_storage "replication" }}</td>
+    </tr>
+    <tr>
+      <td class="">Backup</td>
+      <td class="">{{ index $ivy_central_storage "backup" }}</td>
+    </tr>
+    <tr>
+      <td class="">Access</td>
+      <td class="">{{ index $ivy_central_storage "access" }}</td>
+    </tr>
+    <tr>
+      <td class="">Use cases</td>
+      <td class="">{{ index $ivy_central_storage "use_cases" }}</td>
+    </tr>
+    </tbody>
+  </table>

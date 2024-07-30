@@ -10,11 +10,10 @@
 #SBATCH --mem-per-cpu=9000
 
 module purge
-module load singularity
-module load cellprofiler/3.1.8
+module load apptainer cellprofiler
 
 FIRST_IMG_INDEX=$SLURM_ARRAY_TASK_ID
 LAST_IMG_INDEX=$SLURM_ARRAY_TASK_ID
 BATCH_FILE=/scratch/$USER/pipelines/Batch_data.h5
 
-singularity exec /scratch/$USER/cellprofiler-3.1.8.sif cellprofiler -c -r -p $BATCH_FILE -f $FIRST_IMG_INDEX -l $LAST_IMG_INDEX
+apptainer exec /scratch/$USER/cellprofiler-4.2.5.sif cellprofiler -c -r -p $BATCH_FILE -f $FIRST_IMG_INDEX -l $LAST_IMG_INDEX

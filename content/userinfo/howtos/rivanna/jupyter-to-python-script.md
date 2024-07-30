@@ -18,7 +18,7 @@ Sometimes it may be useful to convert a Jupyter notebook into a Python executabl
 
 This will download a Python executable with a '.py' extension into your local computer's Downloads folder. Your notebook may also show "Download as" instead of "Export Notebook As ...". Either of these selections will allow you to download a Python executable.
 
-This script can be copied to Rivanna in the working directory where JupyterLab was accessing the notebook. Information on transferring files to and from Rivanna can be found [here](https://www.rc.virginia.edu/userinfo/data-transfer/).
+This script can be copied to the HPC system in the working directory where JupyterLab was accessing the notebook. Information on transferring files to and from Rivanna can be found [here](https://www.rc.virginia.edu/userinfo/data-transfer/).
 
 Notebooks can also be converted directly on the command line. This can be done by loading anaconda, installing ```jsonschema```, then running ```jupyter nbconvert --to script /path/to/ipynb```, where ``` /path/to/ipynb``` is the location of the notebook file:
 ```
@@ -31,7 +31,7 @@ A Slurm submission script is required to execute the Python executable. JupyterL
 
 <img src="/images/howtos/jupyter-to-python/jupyter-web-form.png">
 
-We see that the form requests a partition, the time in hours, the number of cores, the requested memory, the working directory, and your Rivanna allocation. Once you click "Launch", your job is submitted and requests these specifications on a compute node. The same can be done by writing a Slurm submission script. The script below mirrors the specifications set in the web form. We'll call this script ```submit_jup.slurm```.
+We see that the form requests a partition, the time in hours, the number of cores, the requested memory, the working directory, and your UVA HPC allocation. Once you click "Launch", your job is submitted and requests these specifications on a compute node. The same can be done by writing a Slurm submission script. The script below mirrors the specifications set in the web form. We'll call this script ```submit_jup.slurm```.
 
 ```
 #!/bin/bash
@@ -54,7 +54,7 @@ Hello World with 3.8.8 | packaged by conda-forge | (default, Feb 20 2021, 16:22:
 [GCC 9.3.0]
 ```
 
-More information on using Slurm on Rivanna can be found [here](https://www.rc.virginia.edu/userinfo/rivanna/slurm/).
+More information on using Slurm on the HPC system can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/).
 
 If your code requires a specific anaconda environment to be run, you can specify ```source activate <environment name>``` below the module commands in the Slurm script to activate the environment:
 

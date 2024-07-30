@@ -1,0 +1,167 @@
+# Information about services for pricing, descriptions, etc.
+service:
+  - label: "Allocations"
+    systems: 
+      - name: "Afton"
+        summary: "Afton is the University of Virginia's newest High-Performance Computing system. 
+                  The Afton supercomputer is comprised of 300 compute node each with 96 compute cores based on the AMD EPYC 
+                  9454 architecture for a total of 28,800 cores. The increase in core count is augmented by a significant increase 
+                  in memory per node compared to Rivanna. Each Afton node boasts a minimum of 750 Gigabytes of memory, with some supporting up to 1.5 
+                  Terabytes of RAM memory. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines. 
+                  The Afton and Rivanna systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, and A100), including an NVIDIA BasePOD. 
+                  The Afton and Rivanna platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
+      - name: "Rivanna"
+        summary: "Rivanna is one of the University of Virginia's High-Performance Computing (HPC) systems. After hardware upgrades and expansions in 2019, the Rivanna supercomputer currently has 603 nodes with over 20,476 compute cores. 
+                  The Rivanna and Afton systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, and A100), including an NVIDIA BasePOD. 
+                  Both platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
+    security_zone: "SSZ"
+    tags: "HPC"
+    footnote: "A service unit (SU) resembles usage of a trackable hardware resource for a specified amount of time. In its simplest form 1 SU = 1 core hour, but the SU charge rate can vary based on the specific hardware used. Resources like GPUs and memory may incur additional SU charges."
+    columns: 
+      - "Type"
+      - "SU Limits"
+      - "Cost"
+      - "SU Expiration"
+    options:
+      - type: "Standard"
+        link: "/userinfo/hpc/allocations/#standard-allocations"
+        su_limits: "None"
+        cost: "Free"
+        su_expiration: "12 months"
+      - type: "Purchased"
+        link: "/userinfo/hpc/allocations/#allocation-purchases"
+        su_limits: "None"
+        cost: "$0.01"
+        su_expiration: "Never"
+      - type: "Instructional"
+        link: "/userinfo/hpc/allocations/#instructional-allocations"
+        su_limits: "100,000"
+        cost: "Free"
+        su_expiration: "2 weeks after last training session"
+  - name: "Storage"
+    label: "Storage"
+    footnote: ""
+    columns:
+      - "Name"
+      - "Security"
+      - "Cost"
+    options:
+      - name: "Research Project"
+        security: "Standard"
+        cost: "$60/TB per year (<strong>effective July&nbsp;1, 2024</strong>: $70/TB)"
+        quota: "1TB increments"
+        snapshots: "daily snapshots for 1 week"
+        replication: "No"
+        backup: "No"
+        access: "Rivanna, <a href=\"/userinfo/howtos/storage/drive-mapping/\">mountable on local workstation</a>"
+        use_cases: "Ideal for long-term storage of data to be accessed from Rivanna. Research Project storage is ideal for sharing data within a research group and for running jobs with smaller files."
+      - name: "Research Standard"
+        security: "Standard"
+        cost: "$45/TB per year (<strong>effective July&nbsp;1, 2024</strong>: Each PI<sup>1</sup> with an RC account will be granted up to 10 TB of Research Standard Storage at no charge<sup>2</sup>)"
+        quota: "1TB increments"
+        snapshots: "No"
+        replication: "No"
+        backup: "No"
+        access: "Rivanna, <a href=\"/userinfo/howtos/storage/drive-mapping/\">mountable on local workstation</a>"
+        use_cases: "Budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run Slurm jobs against research standard storage unless absolutely necessary. File operations on Research Standard storage are slower than on Rivanna <code>/home</code>, <code>/scratch</code>, or <code>Research Project</code> storage."
+      - name: "Ivy Central Storage"
+        security: "High"
+        cost: "$45 TB/year"
+        quota: "1TB increments"
+        snapshots: "No"
+        replication: "No"
+        backup: "No"
+        access: "Ivy Virtual Machine"
+        use_cases: "Ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in ICS are read-write only."
+  - name: "IvyVM"
+    label: "Virtual Machine"
+    footnote: ""
+    columns: 
+      - "Type"
+      - "Specs"
+      - "Cost"
+    options: 
+      - type: "Mini"  
+        specs: "2 cores / 2GB mem"
+        cost: "$4/month"
+      - type: "Small"
+        specs: "4 cores / 16GB mem"
+        cost: "$12/month"
+      - type: "Medium"
+        specs: "8 cores / 32GB mem"
+        cost: "$48/month"
+      - type: "Large"
+        specs: "16 cores / 64GB mem"
+        cost: "$96/month"
+      - type: "Xlarge"
+        specs: "16 cores / 124GB mem"
+        cost: "$176/month"
+  - name: "Microservices"
+    label: "Container Service"
+    footnote: "No charges will be incurred for stopped containers or any cluster storage."
+    columns:
+      - "Tier"
+      - "Containers"
+      - "Price"
+    options: 
+      - tier: "Light Tier"
+        containers: "1 - 5"
+        price: "$5 / month"
+      - tier: "Medium Tier"
+        containers: "6 - 15"
+        price: "$10 / month"
+      - tier: "Heavy Tier"
+        containers: "> 15 containers"
+        price: "$48 / month"
+
+       
+# ivy:
+#   mini: 4
+#   small: 12
+#   medium: 48
+#   large: 96
+#   xlarge: 176
+
+# storage:
+#   standard: "$45/TB per year (<strong>effective July 1</strong>: first 10TB provided to each PI free of charge)"
+#   project: "$60/TB per year (<strong>effective July 1</strong>: $70/TB)"
+#   ivy: 45
+
+# TOML File Data
+# [rivanna_allocations_standard]
+#     name = "Standard"
+#     su_limits = "None"
+#     cost = "Free"
+#     su_lifetime = "12 months"
+
+# [rivanna_allocations_purchased] 
+#     name = "Purchased"
+#     su_limits = "None"
+#     cost = "$0.01"
+#     su_lifetime = "Forever"
+
+# [rivanna_allocations_instructional] 
+#     name = "Instructional"
+#     su_limits = "100,000"
+#     cost = "Free"
+#     su_lifetime = "2 weeks after last teaching session"
+
+# microservices:
+#     light: 5
+#     medium: 10
+#     heavy: 48
+
+# [storage]
+#     project = 60
+#     standard = 45
+#     ivy = 45
+#     zfs = 30
+
+# [ivy]
+#     mini = 4
+#     small = 12
+#     medium = 48
+#     large = 96
+#     xlarge = 176
+  
+# omero = 60

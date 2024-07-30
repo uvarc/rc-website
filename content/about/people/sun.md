@@ -2,7 +2,7 @@
 draft = false
 date = "2019-10-27T11:15:10-05:00"
 title = "Ruoshi Sun, PhD"
-job_title = "Senior Computational Scientist"
+job_title = "Lead Scientist, Scientific Computing"
 lastname = "sun"
 biolink = true
 email = "rs7wz@virginia.edu"
@@ -12,15 +12,15 @@ author = "UVARC Staff"
 image = "/images/profiles/profile_ruoshi_sun.png"
 subjects = [
   "compiler",
+  "containers",
   "hpc",
   "materials-science",
   "parallel-computing",
   "python",
-  "singularity"
 ]
 +++
 
-Ruoshi is experienced in electronic structure codes for computational materials science. He takes part in managing the Rivanna software stack, building Singularity/Docker containers, and providing user support/research consultation.
+Ruoshi is experienced in electronic structure codes for computational materials science. He takes part in managing the Rivanna software stack, building Apptainer/Docker containers, and providing user support/research consultation.
 
 He is a volunteer pianist at the University Hospital through the "Music for Healing" program.
 

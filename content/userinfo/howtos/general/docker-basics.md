@@ -9,6 +9,10 @@ description = "Docker - The Basics"
 author = "RC Staff"
 +++
 
+{{% callout %}}
+Note that Docker requires `sudo` privilege and therefore it is not supported on the HPC system. To use a Docker image you will need to convert it into Apptainer. More information can be found [here](https://www.rc.virginia.edu/userinfo/howtos/rivanna/docker-images-on-rivanna/) on our website.
+{{% /callout %}}
+
 # What Is Docker?
 
 "Docker is a set of platform-as-a-service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. All containers are run by a single operating-system kernel and are thus more lightweight than virtual machines. The service has both free and premium tiers. The software that hosts..."
@@ -29,7 +33,7 @@ There are thousands of pre-built containers already available for common use cas
 Here are some good places to search for container images or docker files.
 
 - [Docker Hub](https://hub.docker.com/)
-- [BioContainer](http://biocontainers.pro/registry/#/)
+- [BioContainer](http://biocontainers.pro/registry/)
 - [GitHub](https://github.com/search?utf8=%E2%9C%93&q=docker&type=)
 
 # Running Containers
@@ -147,10 +151,11 @@ docker build -t mycontainer .
 
 [Docker Training](https://docs.docker.com/engine/getstarted/) - Docker documents this process in great detail, and provides a step-by-step overview of their container system.
 
-[Katacoda Interactive Labs](https://www.katacoda.com/courses/docker) - Katacoda offers a free series of interactive trainings that build sequentially. The tutorials require you to engage with the Docker command-line as you progress.
+<!-- Service is offically closed -->
+<!-- [Katacoda Interactive Labs](https://www.katacoda.com/courses/docker) - Katacoda offers a free series of interactive trainings that build sequentially. The tutorials require you to engage with the Docker command-line as you progress. -->
 
 # Next Steps
 
 - Learn about [Docker Swarms](https://docs.docker.com/get-started/part4/) for deploying containers in high availability.
 - Design [Docker Stacks](https://docs.docker.com/get-started/part5/) for complex solutions of services.
-- Learn how to [convert Docker images into Singularity](/userinfo/howtos/rivanna/docker-images-on-rivanna) to run on Rivanna.
+- Learn how to [convert Docker images into Apptainer](/userinfo/howtos/rivanna/docker-images-on-rivanna) to run on the HPC system.

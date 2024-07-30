@@ -1,5 +1,5 @@
 +++
-title = "DAC Analytic Resource Awards"
+title = "DAC Analytics Resource Awards"
 draft = false
 date = "2023-10-10"
 images = [""]
@@ -10,28 +10,27 @@ tags = ["dac","award"]
 ***
 
 
-## Purpose
+# Purpose
 To facilitate access to the Data Analytics Center services and empower researchers to advance their research, we offer the Analytics Resource Awards.
 
-The focus of the proposal should be projects that 
+The focus of the Award will be on projects that 
 
-i) involve data-intensive research, where the data can be text, images, videos, business data, genomic data, senosr data, geospatial data, etc., and 
+i) involve data-intensive research, where the data can be text, images, videos, business data, genomic data, sensor data, geospatial data, etc., and 
 
-ii) demonstrate potential for future, external funding.
-
-
+ii) demonstrate potential for future funding.
 
 
-## The Award 
+
+
+# The Award 
 
 
 Initially, DAC will offer small awards (up to $10,000 worth of services). At a later date, we will announce opportunities for larger awards. 
 
-Recipients of the Awards will receive vouchers that may be used toward the Data Analytics Center services, such as the collaboration of DAC team members of the leasing of storage space. 
+Recipients of the Awards will receive vouchers that may be used toward the Data Analytics Center services, such as the collaboration of DAC team members. 
  
-Applications for small awards will be reviewed on a rolling basis with the aim of seamlessly moving forward with proposed projects.  
 
-### Award Guidelines
+## Award Guidelines
 
 <u>Eligibility</u>:  The principal investigator must hold faculty status at UVA to be eligible for an Analytics Research Award.
 
@@ -39,11 +38,7 @@ Applications for small awards will be reviewed on a rolling basis with the aim o
 
 <u>Maximum Proposal Duration</u>:  18 months
 
-<u>Approved Activities</u>:  The activities in the proposal should be related to the acquisition, storage, or analysis of data as it relates to a research project.
-
-<u>**New** Early Submission</u>: 
-
-To get access to the DAC services before 2024, we have just created an earlier submission deadline: 13 Nov. 2023.  The review process will be expedited so that the vouchers can be distributed on 15 Dec.
+<u>Approved Activities</u>:  The activities in the proposal should be related to the acquisition, storage, or analysis of data as it relates to a research project. Priority will be given to proposals that request collaborative services of the Research Computing team.
 
   
 <u>Timelines for 2024</u>: 
@@ -84,6 +79,12 @@ To get access to the DAC services before 2024, we have just created an earlier s
 
 <br>
 <br>
+<u>Before you apply</u>:  We highly recommend that you have a consultation meeting with a DAC member to discuss the services that you are planning and what the budget will look like for those services. You can request a consltation by submitting this 
+ <a href="/form/support-request/?category=Data%20Analytics"> online support request form  </a>.
+
+<br>
+
+
 <u>Application Requirements</u>:  To apply for the Analytics Research Award, the PI will submit a proposal (2 pages maximum, Calibri 11 pt. font) that includes:
 
 * The PI’s name, computing ID, and department,
@@ -91,11 +92,11 @@ To get access to the DAC services before 2024, we have just created an earlier s
 * A description of the project and its goals,
 * A description of the type(s) of data collected for the project and how the data will be used to meet the goals of the project,
 * A description of how the Analytics Research Award will support the goals of the project, including the use of vouchers to obtain services,
-* A plan for how the Analytics Research Award will lead to future support for this or subsequent projects. 
+* A plan for how the Analytics Research Award will lead to future support (e.g., external grants or other funding) for this or subsequent projects. 
 * An attachment with a budget showing the services and expected costs that the Award would cover.  The attachment will not count toward the two-page limit.
 
 
-<u>Submission Process</u>: A cover letter for the proposal will be emailed to RC-DAC@virginia.edu.  The subject line for the email will be "Analytics Resource Proposal". Your proposal, in PDF format,  will be attached to the email. 
+<u>Submission Process</u>: Email your proposal, in PDF format, to RC-DAC@virginia.edu.  The subject line for the email must be "Analytics Resource Proposal". You may include a brief cover letter in the body of the email.
 
 We encourage you to follow these instructions precisely to ensure that your proposal is received and processed correctly. After your email is received, we will secure a copy of your proposal and review that copy. We will not consider any changes that you make to the proposal after we have received it.
 
@@ -106,11 +107,11 @@ We encourage you to follow these instructions precisely to ensure that your prop
 * The diversity of the data,
 * How this Award will advance your research.
 
-### Voucher Disbursement
+## Voucher Disbursement
 
 After the Awards recipients have been announced, the Data Analytics Center will work with the PI to determine the disbursement of the Award vouchers.
 
-### Publicity & Communication
+## Publicity & Communication
 * The PI must acknowledge Research Computing in any publication, presentation, or poster that results from the work done on the Award.
 * At the end of the Award, the PI must agree to have a blurb about the research project posted on the Research Computing website
 

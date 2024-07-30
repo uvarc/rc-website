@@ -11,15 +11,24 @@ type = "form"
 private = true
 +++
 
+{{% jira-msg %}}
+
+
 <!-- <p id="support-greeting" style="font-style:italic;font-size:120%;" value=""></p> -->
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+
+{{< enable-disable-form >}}
+
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
 <div>
   <input type="hidden" id="category" name="category" value="DCOS">
   <input type="hidden" id="request_title" name="request_title" value="Container Service Request" />
-{{% form-userinfo-v2 %}}
+
+  {{% getstatus keyword="jira" %}}
+
+  {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textarea form-group"> 
     <label class="control-label" for="project-summary">Project Summary </label>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea" id="project-summary" name="project-summary" cols="60" rows="10"></textarea>
@@ -32,13 +41,13 @@ private = true
     <label class="control-label" for="type-of-request">Tier of Service <span class="form-required" title="This field is required.">*</span></label>
     <div id="type-of-request" class="form-radios">
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-1" name="k8s-tier" value="k8s-tier-1" class="form-radio" /> &nbsp; <= 5 containers ($5/month total)</label>
+        <input required="required" type="radio" id="tier-1" name="k8s-tier" value="k8s-tier-1" class="form-radio" /> &nbsp; <= 5 containers ({{< extract_microservices_cost tier=light >}} total)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-2" name="k8s-tier" value="k8s-tier-2" class="form-radio" /> &nbsp; 6 - 15 containers ($10/month total)</label>
+        <input required="required" type="radio" id="tier-2" name="k8s-tier" value="k8s-tier-2" class="form-radio" /> &nbsp; 6 - 15 containers ({{< extract_microservices_cost tier=medium >}} total)</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="tier-3" name="k8s-tier" value="k8s-tier-3" class="form-radio" /> &nbsp; > 15 containers ($48/month total)</label>
+        <input required="required" type="radio" id="tier-3" name="k8s-tier" value="k8s-tier-3" class="form-radio" /> &nbsp; > 15 containers ({{< extract_microservices_cost tier=heavy >}} total)</label>
       </div>
     </div>
   </div>
@@ -106,6 +115,9 @@ private = true
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
   </div>
 </div>
+
+{{< /enable-disable-form >}}
+
 </form>
 <div>
 </div>

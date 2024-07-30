@@ -9,6 +9,6 @@
 #SBATCH -e tftest-%A.err
 
 module purge
-module load singularity tensorflow/2.8.0
+module load apptainer tensorflow/2.13.0
 
-singularity run --nv $CONTAINERDIR/tensorflow-2.8.0.sif tf_example.py
+apptainer run --nv $CONTAINERDIR/tensorflow-2.13.0.sif tf_example.py

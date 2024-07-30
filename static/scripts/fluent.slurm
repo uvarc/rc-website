@@ -5,16 +5,11 @@
 #SBATCH --partition=parallel
 #SBATCH -J myFluentrun
 #SBATCH -A mygroup
-#SBATCH --mem=96000
 #SBATCH --output=myFluentrun.txt
 
-for host in $SLURM_JOB_NODELIST; do
-    scontrol show hostname $host >> hosts
-done
+NODEFILE="$(pwd)/slurmhosts.$SLURM_JOB_ID.txt"
+srun hostname -s >> $NODEFILE
 
-IFS=' '
+module load ansys/2023r1
 
-module load intel/18.0
-module load ansys/2021r1
-
-fluent 3ddp -g -t${SLURM_NPROCS} -cnf=hosts -srun -pinfiniband -mpi=intel -ssh -i myjournalfile.jou
+fluent 3ddp -g -t${SLURM_NTASKS} -cnf=$FLUENTNODES -srun -pinfiniband -mpi=intel -i myjournalfile.jou

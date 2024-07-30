@@ -1,0 +1,54 @@
+<div class="card">
+	<div class="card-header" id="{{ printf "heading-%s" (.Get "id" ) }}">
+		<h3 class="mb-0">
+			<button class="btn btn-link" data-toggle="collapse" data-target="{{ printf "#%s" (.Get "id" ) }}" aria-expanded="true" aria-controls="{{ printf "%s" (.Get "id" ) }}">
+				{{- .Get "title" -}}
+			</button>
+		</h3> <!-- Corrected closing tag to </h3> -->
+	</div>
+	<div id="{{ printf "%s" (.Get "id" ) }}" class="collapse" aria-labelledby="{{ printf "heading-%s" (.Get "id" ) }}" data-parent="{{ printf "#%s" (.Parent.Get "id") }}">
+		<div class="card-body">
+			<p>
+				{{- .Inner -}}
+			</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		function handleHashChange() {
+			var hash = window.location.hash.substring(1);
+
+			// Handle special case for #collapseeighteen
+			if (hash === "collapseeighteen") {
+				hash = "faq-18";
+				history.replaceState(null, null, "#faq-18");
+			}
+
+			if (hash) {
+				var element = document.getElementById(hash);
+				if (element) {
+					$(element).on('shown.bs.collapse', function () {
+						element.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					});
+
+					// Show the collapsible content
+					$(element).collapse('show');
+				}
+			}
+		}
+		setTimeout(handleHashChange, 0);
+	
+		window.addEventListener('hashchange', handleHashChange);
+
+		$('.collapse').on('hidden.bs.collapse', function () {
+			if (window.location.hash) {
+				history.replaceState(null, null, ' ');
+			}
+		});
+	});
+</script>

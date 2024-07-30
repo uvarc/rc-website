@@ -3,7 +3,7 @@ type = "howto"
 date = "2023-06-10T00:00:00-05:00" 
 tags = [ "rivanna", "databases", "howto", "rdbms", "data", "mysql" ]
 category = ["howto"]
-draft = false 
+draft = true 
 title = "MySQL - A basic relational database" 
 description = "Basic usage of MySQL" 
 author = "RC Staff"
@@ -47,7 +47,7 @@ The MySQL service is backed by a pair of servers in HA replication mode. One ser
 the read-replica can be used for READ queries only. These endpoints are available only within the HPC networks and cannot be accessed 
 from elsewhere in the UVA WAN. You cannot use MySQL tools remotely (from University offices, labs, or home offices over VPN).
 
-To use MySQL from the command-line, use the `mysqlclient` module in Rivanna:
+To use MySQL from the command-line, use the `mysqlclient` module on the HPC system:
 ```
 $  module load mysqlclient
 ```

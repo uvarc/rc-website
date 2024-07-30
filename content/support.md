@@ -30,9 +30,9 @@ var user_token = getCookie("__user_token");
   <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Allocations</h5>
-      <p class="card-text">Request, purchase, or modify your Rivanna HPC allocations.</p>
+      <p class="card-text">Request, purchase, or modify your Afton/Rivanna HPC allocations.</p>
       <div class="support-tiles">
-        <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+        <a href="/userinfo/hpc/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
       </div>
     </div>
   </div>
@@ -60,7 +60,7 @@ var user_token = getCookie("__user_token");
   <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
     <div class="card-body">
       <h5 class="card-title">ACCORD</h5>
-      <p class="card-text">Request information or support for an ACCORD project. <a href="/userinfo/accord/overview/" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
+      <p class="card-text">Request information or support for an ACCORD project. <a href="/userinfo/accord" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
       <div class="support-tiles">
         <a href="mailto:accord-support@virginia.edu?Subject=ACCORD Support Request"><button class="btn btn-primary btn-sm">ACCORD Support</button></a>
       </div>
@@ -92,7 +92,7 @@ var user_token = getCookie("__user_token");
       <h5 class="card-title">FAQ / Knowledgebase</h5>
       <p class="card-text">Search topics or post your own related to research computing.</p>
       <div class="support-tiles">
-        <a href="/userinfo/faq/overview/" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
+        <a href="/userinfo/faq" target="_new"><button class="btn btn-primary btn-sm">Have a Question?</button></a>
       </div>
     </div>
   </div>
@@ -151,14 +151,15 @@ via Zoom</button></a>
 
 ---
 
-## New to Rivanna?  
+### New to High-Performance Computing?  
 
-We offer Rivanna orientation sessions on Wednesdays (appointment required).
+We offer orientation sessions to introduce you to the Afton & Rivanna HPC systems on Wednesdays (appointment required).
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
-<b>Wednesdays 3:00-4:00pm (no Intro to Rivanna sessions on Nov 15 and Nov 22)</b>
-<a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to Rivanna" 
+<b>Wednesdays 3:00-4:00pm </b>
+<a><br><b>- No session on June 19 due to University holiday.</b></a>
+<a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to HPC" 
 session</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>

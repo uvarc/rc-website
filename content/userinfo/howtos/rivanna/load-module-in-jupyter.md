@@ -12,10 +12,10 @@ author = "RC Staff"
 
 +++
 
-Users cannot load modules inside a JupyterLab session. If you need access to modules, please request a [desktop session](https://rivanna-portal.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sys/uva_desktop/session_contexts/new) instead of JupyterLab. Fill out the form as you normally would for JupyterLab. After you get to a desktop, open a terminal (next to Firefox in the top bar) and type these commands:
+Users cannot load modules inside a JupyterLab session. If you need access to modules, please request a [desktop session](https://ood.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sys/uva_desktop/session_contexts/new) instead of JupyterLab. Fill out the form as you normally would for JupyterLab. After you get to a desktop, open a terminal (next to Firefox in the top bar) and type these commands:
 
 ```
-module load gcc jupyter_conda/.2020.11-py3.8
+module load anaconda
 module load ... # your modules here
 jupyter-lab
 ```

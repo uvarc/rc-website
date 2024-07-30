@@ -6,7 +6,6 @@
 #SBATCH -t 1-00:00:00          # walltime
 
 module purge
-module load intel/18.0 intelmpi/18.0
-module load quantumespresso/6.4.1
+module load intel quantumespresso
 
 srun pw.x -in file.in

@@ -1,0 +1,15 @@
+<ul>
+    <!-- Loops through all pages located in the About Section -->
+    {{ range  (where (.Site.RegularPages.ByParam "lastname") "Section" "about") }}
+        <!-- Grabs the front matter and checks if they are a student -->
+        {{ $job_title := lower .Params.job_title}}
+        {{ if eq $job_title "student" }}
+            <li style="margin-bottom: 10px;">
+                <a href="/about/people/{{.File.BaseFileName}}"> 
+                    {{ .Params.title }}
+                </a>
+            </li>
+        {{ end }}
+    {{ end }}
+</ul>
+

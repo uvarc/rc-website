@@ -1,0 +1,46 @@
+<!-- 5 variables of pricing
+1) Storage Table on Pricing Page
+2) Microservice Table on Microservices Page
+3) Ivy Table on Pricing Page
+4) Allocations Table on Pricing Page
+-->
+{{ $storage := false }}
+{{ $microservice := false }}
+{{ $ivy := false }}
+{{ $allocations := false }}
+
+<!-- Creates subsets of pricing -->
+
+{{ range $key, $value := .Params }}
+    {{ if eq $value "microservices" }}
+        {{ $microservice = true }}
+    {{ end }}
+    {{ if eq $value "ivy" }}
+        {{ $ivy = true }}
+    {{ end }}
+    {{ if eq $value "allocations" }}
+        {{ $allocations = true }}
+    {{ end }}
+    {{ if eq $value "storage" }}
+        {{ $storage = true }}
+    {{ end }}
+    {{ if eq $value "all" }}
+        {{ $storage = true }}
+        {{ $microservice = true }}
+        {{ $ivy = true }}
+        {{ $allocations = true }}
+    {{ end }}
+    {{ if $allocations }}
+        {{ partial "pricing/allocations.html" (dict "Site" $.Site) }}
+    {{ end }}
+    {{ if $storage }}
+        {{ partial "pricing/storage.html" (dict "Site" $.Site) }}
+    {{ end }}
+    {{ if $microservice }}
+        {{ partial "pricing/microservices.html" (dict "Site" $.Site) }}
+    {{ end }}
+    {{ if $ivy }}
+        {{ partial "pricing/ivyvm.html" (dict "Site" $.Site) }}
+    {{ end }}
+
+{{ end }}

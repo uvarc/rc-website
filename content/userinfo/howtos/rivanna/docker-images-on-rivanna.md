@@ -4,12 +4,12 @@ date = "2020-02-21T15:12:46-05:00"
 tags = [ "rivanna", "software", "containers" ] 
 categories = ["howto"]
 draft = false 
-title = "Docker Images on Rivanna" 
-description = "How to use Docker images on Rivanna" 
+title = "Docker Images on the HPC System" 
+description = "How to use Docker images on the HPC System" 
 author = "RC Staff"
 +++
 
-Docker requires `sudo` privilege and therefore it is not supported on Rivanna. To use a Docker image you will need to convert it into Singularity.
+Docker requires `sudo` privilege and therefore it is not supported on the HPC system. To use a Docker image you will need to convert it into Apptainer.
 
 # Convert a Docker image
 
@@ -23,20 +23,20 @@ Instructions are provided in each of the following sections.
 
 ## Docker Hub
 
-Docker images hosted on Docker Hub can be downloaded and converted in one step via the `singularity pull` command:
+Docker images hosted on Docker Hub can be downloaded and converted in one step via the `apptainer pull` command:
 
 ```
-module load singularity
-singularity pull docker://account/image
+module load apptainer
+apptainer pull docker://account/image
 ```
 
 Use the exact same command as you would for `docker pull`.
 
 ## Docker daemon
 
-(Taken from Singularity 3.5 User Guide)
+(Taken from Apptainer 3.5 User Guide)
 
-You can convert local Docker images into Singularity (e.g. on your personal computer).
+You can convert local Docker images into Apptainer (e.g. on your personal computer).
 Suppose you have the `godlovedc/lolcow:latest` image cached by Docker:
 
 ```
@@ -45,9 +45,9 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 godlovedc/lolcow    latest              577c1fe8e6d8        16 months ago       241MB
 ```
 
-You can build a Singularity image from it via:
+You can build an Apptainer image from it via:
 ```
-$ sudo singularity build lolcow_from_docker_cache.sif docker-daemon://godlovedc/lolcow:latest
+$ apptainer build lolcow_from_docker_cache.sif docker-daemon://godlovedc/lolcow:latest
 INFO:    Starting build...
 Getting image source signatures
 Copying blob sha256:a2022691bf950a72f9d2d84d557183cb9eee07c065a76485f1695784855c5193
@@ -70,7 +70,7 @@ INFO:    Creating SIF file...
 INFO:    Build complete: lolcow_from_docker_cache.sif
 ```
 
-Note that this requires `sudo` privilege. You can then transfer the image to Rivanna.
+Note that this requires `sudo` privilege. You can then transfer the image to the HPC system.
 
 ## Definition file
 
@@ -84,11 +84,11 @@ From: account/image:version
 
 # Use a Docker image
 
-After you have obtained the converted `*.sif` Singularity image, you can use it by:
+After you have obtained the converted `*.sif` Apptainer image, you can use it by:
 
 ```
-module load singularity
-singularity run|exec|shell image.sif
+module load apptainer
+apptainer run|exec|shell image.sif
 ```
 
-Please visit [this page](/userinfo/rivanna/software/containers) for more information on `run`, `shell`, and `exec`.
+Please visit [this page](/userinfo/hpc/software/containers) for more information on `run`, `shell`, and `exec`.

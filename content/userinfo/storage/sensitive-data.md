@@ -14,10 +14,10 @@ draft = false
 +++
 
 # Overview
-The [Ivy](/userinfo/ivy/overview) secure computing environment meets both HIPAA- and CUI-compliance standards and is ideal for storing highly sensitive research data. Ivy offers several storage options to fit your research computing needs.
+The [Ivy](/userinfo/ivy) secure computing environment meets both HIPAA- and CUI-compliance standards and is ideal for storing highly sensitive research data. Ivy offers several storage options to fit your research computing needs.
 
-# Ivy Central Storage
-Ivy Central Storage (ICS) is a highly sensitive data parking zone and central storage pool with a capacity greater than 1PB. This storage space is available for researchers with highly sensitive data and can be mounted on an [Ivy virtual machine](/userinfo/ivy/overview#virtual-machines) (VM). For added security, files stored on ICS are read & write only. Executable files can be moved from ICS to VM storage.
+# Ivy Central Storage {#ivy-central-storage}
+Ivy Central Storage (ICS) is a highly sensitive data parking zone and central storage pool with a capacity greater than 1PB. This storage space is available for researchers with highly sensitive data and can be mounted on an [Ivy virtual machine](/userinfo/ivy/#virtual-machines) (VM). For added security, files stored on ICS are read & write only. Executable files can be moved from ICS to VM storage.
 
 Researchers can request space on ICS by first requesting an Ivy account using the <a href="https://services.rc.virginia.edu/ivyvm" target="_blank">Ivy request form</a>. Users are granted 1TB of space for free, and additional space can be requested in 1TB increments.
 

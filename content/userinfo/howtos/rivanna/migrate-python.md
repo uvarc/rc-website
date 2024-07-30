@@ -89,4 +89,4 @@ Run `conda list -n myenv` to get a list of all packages in `myenv`. You can use 
 conda list -n myenv | awk '{if($1 !~ /^#/) print $1}' | tr '\n' ' '
 {{< /code-snippet >}}
 
-Please also visit [this page](/userinfo/rivanna/software/python/#package-installation-with-conda) for more information.
+Please also visit [this page](/userinfo/hpc/software/anaconda/#package-installation-with-conda) for more information.

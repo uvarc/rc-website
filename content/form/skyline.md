@@ -11,8 +11,14 @@ type = "form"
 private = true
 +++
 
+{{% jira-msg %}}
+
+
 {{< form-cookies >}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+
+{{< enable-disable-form >}}
+
 <div>Skyline Virtual Machines (VMs) are designated for computation that involves public and moderately-sensitive data. <b>Processing of highly sensitive data is not permitted.</b> <a href="/userinfo/ivy/overview">Learn about our Ivy environment</a> for processing and storage of highly sensitive data that have HIPAA, ITAR, or CUI requirements.
 </div>
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
@@ -21,7 +27,10 @@ private = true
 <div>
   <input type="hidden" id="category" name="category" value="Skyline">
   <input type="hidden" id="request_title" name="request_title" value="Skyline VM Service Request" />
-{{% form-userinfo %}}
+
+  {{% getstatus keyword="jira" %}}
+
+  {{% form-userinfo %}}
   <hr size=1 />
   <div class="form-item form-group form-item form-type-select form-group"> <label class="control-label" for="classification">Classification <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" title="Faculty, postdoctoral associates, and full-time research staff are eligible to request allocations.  " data-toggle="tooltip" id="classification" name="classification"><option value="" selected="selected">- Select -</option><option value="faculty">Faculty</option><option value="staff">Staff</option><option value="postdoc">Postdoctoral Associate</option><option value="other">Other</option></select>
@@ -162,6 +171,9 @@ private = true
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>
   </div>
 </div>
+
+{{< /enable-disable-form >}}
+
 </form>
 <div>
 </div>

@@ -7,6 +7,6 @@
 #SBATCH -t 10:00:00     # time
 
 module purge
-module load singularity deeplabcut
+module load apptainer deeplabcut
 
-singularity run --nv $CONTAINERDIR/deeplabcut-2.2.sif myscript.py
+apptainer run --nv $CONTAINERDIR/deeplabcut-2.2.1.1-anipose.sif myscript.py

@@ -2,23 +2,24 @@
 type = "howto"
 date = "2021-04-05T00:00:00-05:00"
 tags = [
-  "rivanna", "software", "r", "singularity"
+  "rivanna", "software", "r"
 ]
 categories = ["howto"]
 draft = false
-title = "Launching RStudio Server from a Singularity Container"
-description = "How to launch RStudio Server from a Singularity container"
+title = "Launching RStudio Server from an Apptainer Container"
+description = "How to launch RStudio Server from an Apptainer container"
 author = "RC Staff"
 
 +++
 
-Rocker provides many software containers for R. Due to the default permission settings of our file system, launching an RStudio Server session is not straightforward. If you are interested in using their containers on Rivanna, please follow these steps.
+Rocker provides many software containers for R. Due to the default permission settings of our file system, launching an RStudio Server session is not straightforward. If you are interested in using their containers on the HPC system, please follow these steps.
 
 # Pull container
-Use Singularity to pull the container. We will use `geospatial` in this example.
+Use Apptainer to pull the container. We will use `geospatial` in this example.
 
 ```bash
-singularity pull docker://rocker/geospatial
+module load apptainer
+apptainer pull docker://rocker/geospatial
 ```
 
 You should see `geospatial_latest.sif` in your current directory.
@@ -49,8 +50,8 @@ SIF=$HOME/geospatial_latest.sif
 # specify path to tmp directory created in previous section
 TMPDIR=$HOME/rstudio-tmp
 
-module load singularity
-singularity exec \
+module load apptainer
+apptainer exec \
     -B $TMPDIR/var/lib:/var/lib/rstudio-server \
     -B $TMPDIR/var/run:/var/run/rstudio-server \
     -B $TMPDIR/tmp:/tmp \
@@ -64,7 +65,7 @@ chmod +x run_rserver.sh
 {{< /code-snippet >}}
 
 # Launch
-We recommend launching this in a [FastX Web (MATE)](/userinfo/rivanna/logintools/fastx/) session for short runs or debugging on the frontend. For production runs you can request a [Desktop](/userinfo/rivanna/ood/desktop) interactive app. Both FastX and the Desktop can be accessed at our [Open OnDemand](/userinfo/rivanna/ood/overview) [portal](https://rivanna-portal.hpc.virginia.edu).
+We recommend launching this in a [FastX Web (MATE)](/userinfo/hpc/logintools/fastx/) session for short runs or debugging on the frontend. For production runs you can request a [Desktop](/userinfo/hpc/ood/desktop) interactive app. Both FastX and the Desktop can be accessed at our [Open OnDemand](/userinfo/hpc/ood) [portal](https://ood.hpc.virginia.edu).
 
 Once in either FastX or a remote Desktop, start a terminal window.
 To launch RStudio Server, execute:

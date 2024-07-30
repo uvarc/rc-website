@@ -6,8 +6,8 @@ tags = [
 ]
 categories = ["howto","software","rivanna"]
 draft = false
-title = "Building Your Code on Rivanna"
-description = "Building on Rivanna"
+title = "Building Your Code on the HPC System"
+description = "Building on the HPC System"
 author = "RC Staff"
 
 +++
@@ -24,7 +24,7 @@ Compilers are invoked on source files with a line such as
 
 You must know the name of the compiler you wish to use as well as its options. Most compilers offer a large number of options that can control very detailed properties of the resulting executable, but the average user need only know a few of them.
 
-Please see our compiler [documentation](/userinfo/rivanna/software/compilers) for information about the available compilers on Rivanna.  For building and running parallel code, see the [documentation](/userinfo/rivanna/software/mpi).
+Please see our compiler [documentation](/userinfo/hpc/software/compilers) for information about the available compilers on the HPC system.  For building and running parallel code, see the [documentation](/userinfo/hpc/software/mpi).
 
 ## Debugging and Profiling
 
@@ -39,7 +39,7 @@ gfortran -g -fbounds-check mycode.f90
 ```
 Options for profiling vary more by compiler.  For Gnu compilers it is a combination flag `-pg`.  Intel uses separate options `-p -g`.  The PGI compiler uses `-Mprof`.
 
-Using debuggers and profilers is covered separately [here](/userinfo/rivanna/software/debuggers).  If you write your own code, profiling is useful to increase the performance of your code.
+Using debuggers and profilers is covered separately [here](/userinfo/hpc/software/debuggers).  If you write your own code, profiling is useful to increase the performance of your code.
 
 ## Optimizing
 Once your code is working, you should remove all debugging flags and compile from source.  Debugging flags inhibit optimizations and can cause your code to waste SUs.  The general optimization flag for all compilers is `-O`.  With no integer it will set optimization at the default level, which varies by compiler.  You can specify different levels of optimization (including none) with an integer immedately after `O`.  The number of available levels and where the default lies varies by compiler.  Gnu and Intel have three levels and the default is -O1.  PGI has four levels and the default is `-O2`.  The flag `-O0` disables all optimizations, which can be useful for debugging; the `-g` flag may or may not imply `-O0`.
@@ -52,7 +52,7 @@ gfortran -O0 mycode.f90
 ```
 As noted above, it is particularly important for Fortran programmers to remove the bounds-checking flag for production runs, as that can slow down execution considerably.
 
-Compilers have many more options to fine-tune optimization levels.  However, users should be clear on what they need and why, and should avoid flags like -fast that may bind the executable too tightly to a specific architecture, since Rivanna nodes are of different ages and architectures.
+Compilers have many more options to fine-tune optimization levels.  However, users should be clear on what they need and why, and should avoid flags like -fast that may bind the executable too tightly to a specific architecture, since HPC nodes are of different ages and architectures.
 
 ## Renaming the Executable
 Unless otherwise specified, the name of your executable will be `a.out`.  To change that, add the flag `-o <name>`.  It is critical to include the name between the `-o` and the source file, or the compiler will overwrite your source file.
@@ -102,7 +102,7 @@ Options to the configure script will vary depending on the software package.  To
 ```
 ./configure --help
 ```
-The default installation prefix is usually `/usr` or `/usr/local`.  Rivanna users are not allowed to write to either of these directories, so an alternative must be provided.   Normally you should use a directory in your home directory.  The minimum configure command would thus be
+The default installation prefix is usually `/usr` or `/usr/local`.  UVA HPC users are not allowed to write to either of these directories, so an alternative must be provided.   Normally you should use a directory in your home directory.  The minimum configure command would thus be
 ```
 ./configure --prefix=/home/yourid/your/directory/path
 ```
@@ -159,7 +159,7 @@ make install
 ```
 is generally the recipe to build and install the program.
 
-The default `cmake` on Rivanna is fairly old and most users will need to load a newer `cmake` module.  If any newer version will work, `module load` will suffice.  Otherwise `module spider cmake` will show the options.
+The default `cmake` on the HPC system is fairly old and most users will need to load a newer `cmake` module.  If any newer version will work, `module load` will suffice.  Otherwise `module spider cmake` will show the options.
 
-For more detailed instructions on building and running compiled codes on Rivanna, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
+For more detailed instructions on building and running compiled codes on the HPC system, please see our online [tutorial](https://learning.rc.virginia.edu/tutorials/building-running-c-cpp-fortran/).
 

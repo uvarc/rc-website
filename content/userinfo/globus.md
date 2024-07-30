@@ -18,14 +18,14 @@ images = [""]
 Globus allows you to transfer data to and from systems such as:
 
 - Laptops & personal workstations
-- Rivanna HPC cluster
+- Rivanna/Afton HPC clusters
 - Ivy Central Storage
 - Lab / departmental storage
 - Tape archives
 - Cloud storage
 - Off-campus resources (ACCESS, National Labs)
 
-Globus can help you share research data with colleagues and co-investigators, or to move data back and forth between a lab workstation and Rivanna or your personal computer.
+Globus can help you share research data with colleagues and co-investigators, or to move data back and forth between a lab workstation and Rivanna/Afton or your personal computer.
 
 Are your data stored at a different institution? At a supercomputing facility? All you need is your institution's login credentials.
 
@@ -37,7 +37,7 @@ Before you are able to transfer files from or to your personal laptop/workstatio
 
 - Your local workstation,
 - A departmental server,
-- A "DTN" (Data Transfer Node) connected to Rivanna or Ivy Central Storage, or
+- A "DTN" (Data Transfer Node) connected to Rivanna, Afton, or Ivy Central Storage, or
 - A server operated by another university or by a national computing center.
 
 {{% /callout %}}
@@ -83,9 +83,9 @@ You can search for the collections to use for your transfer from the File Manage
 
 The official UVA managed collections are:
 
-* `UVA Standard Security Storage` - generally available; maps to Rivanna _home_ directories, _scratch_, _Research Standard_ & _Research Project_ storage.
+* `UVA Standard Security Storage` - generally available; maps to Rivanna/Afton _home_ directories, _scratch_, _Research Standard_ & _Research Project_ storage.
 * `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into Ivy Central Storage.
-    **Globus is the *only* permitted data-transfer protocol for highly sensitive data.** To transfer data to Ivy Central Storage, please see the special instructions [here](/userinfo/ivy/overview/#data-transfer-inout-of-ivy).
+    **Globus is the *only* permitted data-transfer protocol for highly sensitive data.** To transfer data to Ivy Central Storage, please see the special instructions [here](/userinfo/ivy/#data-transfer-in-out-of-ivy).
 
 You can transfer files to or from your personal collection to a managed collection, one run either by UVA or by another institution.  You can transfer files between two managed collections.  You cannot transfer files from one personal collection to another personal collection.  If you wish to do this, contact Research Computing to convert at least one personal collection to a Globus Plus collection.
 

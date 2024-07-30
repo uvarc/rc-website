@@ -1,0 +1,56 @@
+<!-- Determine index of Rivanna Entry -->
+{{ $services := $.Site.Data.service.service }}
+{{ $ivy_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.name "IvyVM" }}
+    {{ $ivy_index = $i }}
+  {{ end }}
+{{ end }}
+
+<!-- Access Different Types -->
+{{ $options := index (index $services $ivy_index) "options" }}
+
+{{ $mini_option := index (where $options "type" "Mini") 0 }}
+{{ $small_option := index (where $options "type" "Small") 0 }}
+{{ $medium_option := index (where $options "type" "Medium") 0 }}
+{{ $large_option := index (where $options "type" "Large") 0 }}
+{{ $x_large_option := index (where $options "type" "Xlarge") 0 }}
+
+<table class="table">
+    <thead>
+      <tr>
+        {{ $columns := index (index $services $ivy_index) "columns" }}
+        {{ range $key, $value := index $columns }}
+            <th>{{ $value }}</th>
+        {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-weight:bold;">{{ index $mini_option "type" }}</td>
+        <td>{{ index $mini_option "specs" }}</td>
+        <td>{{ index $mini_option "cost" }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;">{{ index $small_option "type" }}</td>
+        <td>{{ index $small_option "specs" }}</td>
+        <td>{{ index $small_option "cost" }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;">{{ index $medium_option "type" }}</td>
+        <td>{{ index $medium_option "specs" }}</td>
+        <td>{{ index $medium_option "cost" }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;">{{ index $large_option "type" }}</td>
+        <td>{{ index $large_option "specs" }}</td>
+        <td>{{ index $large_option "cost" }}</td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;">{{ index $x_large_option "type" }}</td>
+        <td>{{ index $x_large_option "specs" }}</td>
+        <td>{{ index $x_large_option "cost" }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

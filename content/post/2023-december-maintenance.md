@@ -27,7 +27,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
     - Intel: `intel/2023.1` (default), `intel/2024.0` (experimental), `intel/18.0` (legacy)
     - NVIDIA: `nvhpc/23.7`, `nvompi/23.7_4.1.5`
 
-1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/rivanna/software/apptainer) for details.
+1. Singularity has been renamed to Apptainer. Load the `apptainer/1.2.2` module for containers. (The `singularity` command is provided as an alias.) All users can now build containers directly on Rivanna; see [here](/userinfo/hpc/software/apptainer) for details.
 
 1. There are many module version upgrades and deprecation of older versions. Run `module spider NAME` to check the available versions and the corresponding load command. Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need a different version. Only the most important changes are listed below:
 
@@ -40,6 +40,7 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 |clang      |15.0.7  | - | 10.0.1 |
 |cuda       |12.2.2  |10.2.89, 11.4.2| 10.1.168, 11.0.228 |
 |gcc        |11.4.0  | - | 7.1.0, 9.2.0, 11.2.0 |
+|go         |1.21.4  | - | 1.18.4, 1.19.4 |
 |intel      |2023.1  | 18.0, 2024.0 | 20.0, 2022.11 |
 |julia      |1.9.2   | - | 1.5.3, 1.6.0 |
 |llvm       |15.0.7  | - | 4.0.0 |
@@ -62,6 +63,21 @@ The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GC
 - **Intel 18.0** modules are either migrated to the newer version (2023.1) or dropped. Intel users should rebuild code with `intel/2023.1` if possible.
 - **RStudio Server** is now backed by a native module with R as a dependency. R packages installed via the `R` module will be detected automatically in RStudio Server, and vice versa. **All R packages will need to be rebuilt.**
 - **Python 2.7**-dependent modules are completely removed from the software stack. Users of legacy Python code can create a custom environment using the `anaconda` or `mamba` (recommended) module.
-- **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/rivanna/software/code-server/#python-setup).
+- **Code Server** is backed by a native module instead of a container. This allows usage of compilers and interpreters on Rivanna. Python users please see instructions [here](https://www.rc.virginia.edu/userinfo/hpc/software/code-server/#python-setup).
 - **Mamba** is separated from `anaconda` into its own module.
 - **Java** module versions are standardized to 7, 8, 11, 12 (previously 1.7.0, etc.).
+
+#### Rebuilding R Libraries
+
+Due to changes in the operating system and compilers on Rivanna, your existing R libraries will not work. We have created a command that will help you to rebuild your library for the new version of R.
+The command is ```updateRlib``` and requires two pieces of information:
+
+i) How you run your R code
+
+ii) The version of R that you have been using.
+
+
+For example, if you have been using with RStudio 1.3.1073 - R 4.1.1, you can type:
+```updateRlib OOD 4.1.1```
+This command will capture your packages that were used in your R/4.1 library for Open OnDemand and rebuild to a new library.
+The three options for the how you run your code are: OOD, goolf, or intel. Rebuilt libraries will be installed in ```~/R/goolf/4.3``` for both module and OOD versions.

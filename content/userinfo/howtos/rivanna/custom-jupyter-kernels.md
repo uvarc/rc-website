@@ -2,7 +2,7 @@
 type = "howto"
 date = "2020-03-03T00:00:00-05:00"
 tags = [
-  "rivanna", "software", "jupyter", "singularity"
+  "rivanna", "software", "jupyter", "apptainer"
 ]
 categories = ["howto"]
 draft = false
@@ -12,7 +12,7 @@ author = "RC Staff"
 
 +++
 
-You can create custom kernels from an Anaconda environment or a Singularity container.
+You can create custom kernels from an Anaconda environment or an Apptainer container.
 In both cases you'll need to install the `ipykernel` package.
 
 # Jupyter kernel based on Anaconda environment
@@ -26,10 +26,10 @@ python -m ipykernel install --user --name myenv --display-name "My Env"
 
 Note:
 - You can customize the display name for your kernel. It is shown when you hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
-- For more information on Anaconda, please visit [here](/userinfo/rivanna/software/python/).
+- For more information on Anaconda, please visit [here](/userinfo/hpc/software/python/).
 
-# Jupyter kernel based on Singularity container
-For this to work, the `ipykernel` Python package must be installed within the Singularity container. To create a Jupyter kernel for the container, you can either use our automated script `jkrollout` or do it manually.
+# Jupyter kernel based on Apptainer container
+For this to work, the `ipykernel` Python package must be installed within the Apptainer container. To create a Jupyter kernel for the container, you can either use our automated script `jkrollout` or do it manually.
 
 ## Automated script
 Replace `/path/to/sif` with the actual image name or path:
@@ -69,14 +69,14 @@ Create two files in that directory, `kernel.json` and `init.sh`. (The former mus
 `init.sh`:
 ```
 #!/bin/bash
-module load singularity
-singularity exec /path/to/singularity/image python -m ipykernel $@
+module load apptainer
+apptainer exec /path/to/apptainer/image python -m ipykernel $@
 ```
-(Remember to use the actual path of your Singularity image.)
+(Remember to use the actual path of your Apptainer image.)
 
 If the container has GPU support, add a `--nv` flag in the last line:
 ```
-singularity exec --nv /path/to/singularity/image python -m ipykernel $@
+apptainer exec --nv /path/to/apptainer/image python -m ipykernel $@
 ```
 Change `init.sh` into an executable:
 ```

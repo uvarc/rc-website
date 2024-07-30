@@ -1,0 +1,69 @@
+<div>
+    <p id={{ printf "status-message-%s" (default "content" (.Get "keyword" | lower)) }} class="alert alert-danger" role="alert" style="font-size:80%; margin:0; padding:10;"></p>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Converter.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/pagedown/1.0/Markdown.Sanitizer.js"></script>
+
+<script>
+
+$(document).ready(function() {
+  $("#status-message").hide();
+  updateStatusMessages();
+  setInterval(checkStatusMessages, 6000);
+});
+function updateStatusMessages() {
+  $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages' , function(data) {
+    var messageData = '';
+    $.each(data, function(key, value) {
+      var converter = Markdown.getSanitizingConverter();
+      var timestamp = value.body.substr(0,19);
+      var messageBody = value.body.substring(timestamp.length+1).replace("&lt;br&gt;", "<br>");
+      var messageLength = messageBody.length;
+      if ( messageLength < timestamp.length) {
+        $("#status-message").hide();
+      } else {
+        $("#status-message").show();
+        //messageData += '<span style="color:tomato;padding-right:4px;"><i class="fas fa-exclamation-triangle"></i></span>';
+        messageData += converter.makeHtml(messageBody);
+        $('#status-message-content').html(messageData);
+      }
+      // break up message by paragraphs, then extract and create service specific message components 
+      var msgarray = messageBody.split("<br>");
+      const keywords = ["storage","jira","rivanna","ivy","microservices","accord","globus"];
+      for (let j = 0; j < keywords.length; j++) {
+        // iterate over message paragraphs
+        var msg = '';
+        for (let i = 0; i < msgarray.length; i++) {
+          if (msgarray[i].toLowerCase().search(keywords[j]) != -1) {
+            // only add to service specific message if it contains the service keyword
+            msg += msgarray[i];
+          }
+        }
+
+        if ( msg.length <= timestamp.length ) {
+          $('#status-message-'+keywords[j]).hide();
+        } else {
+          $('#status-message-'+keywords[j]).show();
+		  var post_date = new Date(timestamp);
+		  post_date = new Date(post_date.getFullYear(), post_date.getMonth(), post_date.getDate())
+		  if (!isNaN(post_date)) {
+			var now = new Date();//new Date().getTime() + 2*86400000);
+			now = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+			const millisPerDay = 86400000;
+			// check if timestamp is from previous day(s). if so replace with current time, otherwise keep posted timestamp
+			if (now - post_date >= millisPerDay) {
+				var datestr = now.toDateString();
+			} else {
+				var datestr = post_date.toDateString();
+			}
+			msg = "[" + datestr + "] "+ msg;
+		  }
+        }
+      $('#status-message-'+keywords[j]).html(converter.makeHtml(msg));
+      }
+    });
+  });
+};
+
+</script>

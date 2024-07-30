@@ -13,56 +13,21 @@ images = [""]
 
 - - -
 
-# Rivanna Allocations
+# High Performance Computing Allocations
 
-{{< allocation-pricing >}}
+{{< pricing allocations >}}
 
-[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/rivanna/allocations/)
+[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/hpc/allocations/)
 
 - - -
 
 # Storage
+<!-- {{< rawhtml >}}
+{{< storagetable-pricing >}}
+{{< /rawhtml >}} -->
+
 {{< rawhtml >}}
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Security</th>
-      <th scope="col">Cost</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Research Project</th>
-      <td>Standard</td>
-      <td>{{% storage-pricing project %}} TB/year</td>
-    </tr>
-    <tr>
-      <th scope="row">Research Standard</th>
-      <td>Standard</td>
-      <td>{{% storage-pricing standard %}} TB/year</td>
-    </tr>
-    <!--
-    <tr>
-      <th scope="row">ZFS</th>
-      <td>Standard</td>
-      <td>{{% storage-pricing zfs %}} TB/year</td>
-    </tr>
-    -->
-    <tr>
-      <th scope="row">Ivy Central Storage</th>
-      <td>High</td>
-      <td>{{% storage-pricing ivy %}} TB/year</td>
-    </tr>
-    <!--
-    <tr>
-      <th scope="row">Ivy NAS Storage</th>
-      <td>High</td>
-      <td>{{% storage-pricing project %}} TB/year</td>
-    </tr>
-    -->
-  </tbody>
-</table>
+  {{< pricing storage >}}
 {{< /rawhtml >}}
 
 [<button class="btn btn-primary btn-sm">Storage Details</button>](/userinfo/storage/)  &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Storage</button>](/form/storage/)
@@ -71,9 +36,9 @@ images = [""]
 
 # Ivy Virtual Machines
 
-{{< ivy-pricing >}}
+{{< pricing ivy >}}
 
-[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy/overview) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](https://services.rc.virginia.edu/)
+[<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](https://services.rc.virginia.edu/)
 
 - - -
 
@@ -109,7 +74,7 @@ images = [""]
 </table>  
 {{< /rawhtml >}}
 
-[<button class="btn btn-primary btn-sm">About OMERO</button>](/userinfo/omero/overview/) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request OMERO Access</button>](/form/omero/)
+[<button class="btn btn-primary btn-sm">About OMERO</button>](/userinfo/omero) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request OMERO Access</button>](/form/omero/)
 
 - - -
 -->

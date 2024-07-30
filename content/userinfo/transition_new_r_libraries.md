@@ -13,7 +13,7 @@ categories = ["userinfo"]
 The recommended steps for transitioning your R programs after the June maintenance are as follows:
 
 1. Determine which version of R you will be using (e.g., R/3.6.3).
-2. Open a terminal window on Rivanna and load the version of R that you chose in step #1 (e.g., `module load goolf R/3.6.3`).
+2. Open a terminal window on the HPC system and load the version of R that you chose in step #1 (e.g., `module load goolf R/3.6.3`).
 3. (Optional) Run our script to rebuild your existing R library for the newer version of R.  For example, if you had been using R/3.5.1 and are switching to R/3.6.3, type the following in the terminal window:  ` updateRlib 3.5.1 ` .  Make sure that you have loaded any other modules (e.g., curl, gdal) that your packages may need.
 4. Update your Slurm scripts to load the newer version of R.
 

@@ -2,7 +2,7 @@
 type = "howto"
 author = "Staff"
 description = ""
-title = "Bioinformatics Resources on Rivanna"
+title = "Bioinformatics Resources and UVA HPC"
 date = "2020-11-17T09:48:06-05:00"
 draft = false
 tags = ["bioinformatics","genomics", "rivanna","tools"]
@@ -11,8 +11,8 @@ images = [""]
 +++
 
 {{% lead %}}
-The UVA research community has access to numerous bioinformatics software installed directly or available through the [bioconda](/userinfo/rivanna/software/bioconda) Python modules.
-Click [here](/userinfo/rivanna/software/bioinformatics#full-list-of-bioinformatics-software-modules) for a comprehensive list of currently-installed bioinformatics software.
+The UVA research community has access to numerous bioinformatics software installed directly or available through the [bioconda](/userinfo/hpc/software/bioconda) Python modules.
+Click [here](/userinfo/hpc/software/bioinformatics#full-list-of-bioinformatics-software-modules) for a comprehensive list of currently-installed bioinformatics software.
 {{% /lead %}}
 
 # Popular Bioinformatics Software
@@ -59,7 +59,7 @@ Below are some popular tools and useful links for their documentation and usage:
     <td class="tg-dc35" style="width:500px">BEDTools utilities allow one to intersect, merge, count, complement, and shuffle genomic intervals from multiple files in widely-used genomic file formats such as BAM, BED, GFF/GTF, VCF.</td>
 	<td class="tg-dc35-nw" style="width:105px">
       <a href="http://bedtools.readthedocs.io/en/latest/" target="blank" style="color:#0275d8">Homepage</a><br/>
-      <a href="http://quinlanlab.org/tutorials/bedtools/bedtools.html" target="blank" style="color:#0275d8">Tutorial</a><br/>
+      <a href="http://quinlanlab.org/tutorials/bedtools.html" target="blank" style="color:#0275d8">Tutorial</a><br/>
     </td>
   </tr>
   <tr>
@@ -127,7 +127,7 @@ Below are some popular tools and useful links for their documentation and usage:
     <td class="tg-dc35" style="width:500px">SPAdes provide pipelines for assembling genomes from Illumina and IonTorrent reads, as well as hybrid assemblies using PacBio, Oxford Nanopore and Sanger reads. It supports paired-end reads, mate-pairs and unpaired reads. </td>
 	<td class="tg-dc35-nw" style="width:105px">
       <a href="http://bioinf.spbau.ru/spades" target="blank" style="color:#0275d8">Homepage</a><br/>
-      <a href="http://spades.bioinf.spbau.ru/release3.11.1/manual.html" target="blank" style="color:#0275d8">Manual</a><br/>
+      <a href="https://bioinf.spbau.ru/en/spadesmanual" target="blank" style="color:#0275d8">Manual</a><br/>
     </td>
   </tr>
   <tr>
@@ -171,7 +171,7 @@ function myFunction() {
 
 # Bioinformatics Modules
 
-To get an up-to-date list of the installed bioinformatics applications, log on to Rivanna and run the following command in a terminal window:
+To get an up-to-date list of the installed bioinformatics applications, log on to UVA HPC and run the following command in a terminal window:
 ```
 module keyword bio
 ```
@@ -243,7 +243,7 @@ Some software is multi-threaded.  Usually it communicates the number of threads 
 #SBATCH -N 1                    # request single node
 #SBATCH --cpus-per-task=<X>     # request multiple cpu cores
 ```
-Replace `<X>` with the actual number of cpu cores to be requested. Requesting more than 8 cpu cores does not provide any significant performance gain for many bioinformatics packages. This is a limitation due to code design rather than a Rivanna constraint.
+Replace `<X>` with the actual number of cpu cores to be requested. Requesting more than 8 cpu cores does not provide any significant performance gain for many bioinformatics packages. This is a limitation due to code design rather than a UVA HPC constraint.
 
 Please be certain that the number of cores you request matches the number you communicate to the software.  To be certain, you can often use the environment variable `SLURM_CPUS_PER_TASK`.  For example,
 ```
@@ -252,7 +252,7 @@ biofoo -n ${SLURM_CPUS_PER_TASK}
 
 You should only deviate from this general resource request format if you are absolutely certain that the software package supports execution on more than one compute node.
 
-# Reference Genomes on Rivanna
+# Reference Genomes on the HPC system {#reference-genomes-on-hpc-system}
 
 Research Computing provides a set of ready-to-use reference sequences and annotations for commonly analyzed organisms in a convenient, accessible location on Rivanna: 
 
@@ -262,6 +262,6 @@ The majority of files have been downloaded from Illumina's genomes repository (<
 
 Click the radio button for the genome of your choice, then click the clipboard icon to copy it.  On Rivanna please use the right click method to paste.
 
-{{% reference-genomes %}}
+{{% reference-genomes %}} 
 
 <hr size=1 />

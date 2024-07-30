@@ -30,4 +30,4 @@ AlphaFold is an AI for protein structure prediction developed by Google DeepMind
 
 **How do I use AlphaFold on Rivanna?**
 
-See [here](/userinfo/rivanna/software/alphafold) for installation and usage details. If you are a PI interested in using AlphaFold on Rivanna but do not have an account, please [request an allocation](/userinfo/rivanna/allocations).
+See [here](/userinfo/hpc/software/alphafold) for installation and usage details. If you are a PI interested in using AlphaFold on Rivanna but do not have an account, please [request an allocation](/userinfo/hpc/allocations).

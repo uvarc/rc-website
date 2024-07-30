@@ -28,6 +28,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+      hardWraps = true
   [markup.highlight]
     codeFences = true
     guessSyntax = false
@@ -62,14 +63,18 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   # rivannaJsonUrl = "http://apidata.uvarc.io/rivanna-software.json"
   rivannaNodesUrl = "https://s3.amazonaws.com/uvarc-resources/website/nodeinfo.csv"
   # rivannaNodesUrl = "http://apidata.uvarc.io/nodeinfo.csv"
+  rivannaQueueUrl = "https://s3.amazonaws.com/uvarc-resources/website/qinfo.csv"
   eventsUrl = "/static/data/events.csv"
   # eventsUrl = "https://s3.amazonaws.com/uvarc-resources/website/events.csv"
 
+[params.support]
+  enableForms = true
+  
 [params.metrics]
-  coreHours = "5399403"
+  coreHours = "6817198"
   storage = "9.5"
-  newAccounts = "95"
-  userAccounts = "716"
+  newAccounts = "94"
+  userAccounts = "714"
 
 [params.rivanna]
   totalNodes = "603"
@@ -89,7 +94,8 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   zfs = "No backups"
 
 [params.pricing]
-  # Set STORAGE / VM PRICES globally below:
+  # Set SU / STORAGE / VM PRICES globally below:
+  paidSUs = 0.01
   storageProject = 60
   storageStandard = 45
   storageZfs = 30

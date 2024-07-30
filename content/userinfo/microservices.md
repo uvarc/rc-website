@@ -31,10 +31,7 @@ with Kubernetes, the open-source tool from Google. New deployments are now launc
 {{< /highlight >}}
 
 # Microservices at UVA
-Research Computing runs microservices in a clustered orchestration environment that automates the deployment and 
-management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to 
-running containerized services. It also has over 300TB of cluster storage and can attach to 
-[**project**](/userinfo/storage/) and [**value**](/userinfo/storage/) storage.
+Research Computing runs microservices in a clustered orchestration environment that automates the deployment and management of many containers easy and scalable. This cluster has >1000 cores and ~1TB of memory allocated to running containerized services. It also has over 300TB of cluster storage and can attach to [**project**](/userinfo/storage/) and [**value**](/userinfo/storage/) storage.
 
 {{% highlight-danger %}}
 <div style="float:left;margin:0.5rem 1rem 1rem 0rem;"><i class="fa fa-3x fa-exclamation-triangle" aria-hidden="true"></i></div>
@@ -65,7 +62,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 
 <p class="lead"><span class="badge badge-default">2</span> The easiest and most common way to run microservices is inside of containers.</p>
 
-- We teach workshops on containers and how to use them. Browse the course overview for <a href="https://learning.rc.virginia.edu/tag/containers/" target="_new">Building Containers for Rivanna</a> at your own pace.
+- We teach workshops on containers and how to use them. Browse the course overview for <a href="https://learning.rc.virginia.edu/tag/containers/" target="_new">Building Containers for the HPC System</a> at your own pace.
 - Docker provides an excellent [Getting Started](https://docs.docker.com/get-started/) tutorial.
 - Users may inject `ENV` environment variables and encrypted secrets into containers at runtime. This means sensitive information does not need to be written into your container.
 
@@ -76,7 +73,7 @@ Here's a talk given by Martin Fowler explaining the idea:
 <p class="lead">Microservices are typically used in computational research in one of two ways:</p>
 
 <ol>
-  <li class=lead><b>Standalone microservices or small stacks</b> - Such as interactive or data-driven web applications and APIs, small databases (<100GB), or scheduled task containers. Some examples:</li>
+  <li class=lead><b>Standalone microservices or small stacks</b> - Such as interactive or data-driven web applications and APIs or scheduled task containers. Some examples:</li>
     <ul style="margin-bottom:2rem;">
       <li>Simple web container to serve Project files to the research community or as part of a publication.
       <li>Reference APIs can handle requests based either on static reference data or databases.
@@ -84,12 +81,7 @@ Here's a talk given by Martin Fowler explaining the idea:
       <li>A scheduled job to retrieve remote datasets, perform initial ETL processing, and stage them for analysis.
     </ul>
 
-  <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run, such as relational databases, key-value stores, or reference APIs. Some examples:</li>
-    <ul style="margin-bottom:2rem;">
-      <li>Cromwell/WDL pipelines rely on MySQL databases to track job status and state if a portion of your pipeline fails.
-      <li>Key-value stores in Redis can track an index of values or a running count that is updated as part of a job.
-      <li>A scheduled job to refresh a library of reference data from an external source, such as reference genomes or public datasets.
-    </ul>
+  <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run such as relational databses, key-value stores or reference APIs.
 </ol>
 
 
@@ -132,25 +124,7 @@ Browse a list of recent [UVA projects employing microservices](/project?tag=.con
       <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/shiny-server.png" /></th>
       <td style="font-weight:bold;">Shiny Server</td>
       <td>Public</td>
-      <td>Runs R-based web applications and offers a dynamic, data-driven user interface. See a <a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new" class="badge badge-primary">demo</a> or try using <a target="_new" href="http://lolaweb.databio.org/" class="badge badge-primary"><b>LOLAweb</a></td>
-    </tr>
-    <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:4.5rem;" src="/images/microservices/mysql_PNG9.png" /></th>
-      <td style="font-weight:bold;">MySQL Database</td>
-      <td>HPC networks</td>
-      <td>A stable, easy to use relational database. Run MySQL in support of your HPC projects in Rivanna or web containers.</td>
-    </tr>
-    <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:6rem;" src="/images/microservices/mongodb.png" /></th>
-      <td style="font-weight:bold;">mongoDB Database</td>
-      <td>HPC networks</td>
-      <td>A popular NoSQL database. Use mongo in support of your Rivanna jobs or web containers. <a href="https://mongoplayground.net/" target="_new" class="badge badge-primary">Try Mongo</a></td>
-    </tr>
-    <tr>
-      <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/redis.svg" /></th>
-      <td style="font-weight:bold;">Redis Database</td>
-      <td>HPC networks</td>
-      <td>An extremely fast, durable, key-value database. Use Redis in support of Rivanna jobs or other processes you run. <a href="https://try.redis.io/" target="_new" class="badge badge-primary">Try <b>Redis</b></a></td>
+      <td>Runs R-based web applications and offers a dynamic, data-driven user interface. See a <a href="https://www.rstudio.com/products/shiny/shiny-user-showcase/" target="_new" class="badge badge-primary">demo</a> or try using <a target="_new" href="https://github.com/databio/LOLAweb" class="badge badge-primary"><b>LOLAweb</a></td>
     </tr>
     <tr>
       <th scope="row" style="text-align:center;"><img style="max-width:4rem;" src="/images/microservices/bash_512x512.png" /></th>
@@ -162,6 +136,10 @@ Browse a list of recent [UVA projects employing microservices](/project?tag=.con
 </table>
 
 - - - 
+
+# Database Hosting
+
+Research computing may be able to provide support for your database hosting needs. Please schedule a consultation request on our website. Follow the link [here](https://www.rc.virginia.edu/form/support-request/?category=Consultation) and fill out the form under "Consultation Request" on the right hand side of the page under "All Forms".
 
 # Service Eligibility & Limitations
 
@@ -180,7 +158,6 @@ unless it is part of a funded project.
 Microservices may not run efficiently for all use cases. Some scenarios that cannot run successfully in containers include:
 
 <ul>
-  <li>Large (over 100GB) database collections.
   <li>Services (apart from web-based services over HTTP/HTTPS) that need to be accessed from outside the HPC network.
   <li>Services that require licensing, such as Microsoft SQL Server, MATLAB, etc.
   <li>Services that require GPU to run.
@@ -193,46 +170,17 @@ Microservices may not run efficiently for all use cases. Some scenarios that can
 
 Container services hosted by UVA Research Computing fall under this pricing structure:
 
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Tier</th>
-      <th scope="col">Containers</th>
-      <th scope="col">Price</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Light Tier</th>
-      <td>1 - 5</td>
-      <td>$5 / month</td>
-    </tr>
-    <tr>
-      <th scope="row">Medium Tier</th>
-      <td>6 - 15</td>
-      <td>$10 / month</td>
-    </tr>
-    <tr>
-      <th scope="row">Heavy Tier</th>
-      <td>> 15 containers</td>
-      <td>$48 / month</td>
-    </tr>
-  </tbody>
-</table>
-
-No charges will be incurred for stopped containers or any cluster storage.
+{{< pricing microservices >}}
 
 - - -
 
-# Singularity
+# Apptainer
 
-<img align="right" style="max-width:20%;" src="/images/rivanna/singularity-logo.png" alt="Singularity" />
+Want to run your container within an HPC environment? It can be done, using Apptainer! 
 
-Want to run your container within an HPC environment? It can be done, using Singularity! 
+Apptainer is a container application targeted to multi-user, high-performance computing systems. It interoperates well with Slurm and with the Lmod modules system. It can be used to create and run its own containers, or it can import Docker containers.
 
-Singularity is a container application targeted to multi-user, high-performance computing systems. It interoperates well with Slurm and with the Lmod modules system. Singularity can be used to create and run its own containers, or it can import Docker containers.
-
-[**Learn more about Singularity**](/userinfo/rivanna/software/containers/).
+[**Learn more about Apptainer**](/userinfo/hpc/software/apptainer/).
 
 - - -
 

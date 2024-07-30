@@ -8,7 +8,7 @@
 #SBATCH -t 10:00:00     # time
 
 module purge
-module load singularity alphafold
+module load apptainer alphafold
 
 run --fasta_paths=$PWD/your_fasta_file \
     --output_dir=$PWD/outdir \
