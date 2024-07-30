@@ -246,9 +246,9 @@ More information about queue policy is at the [HPC homepage](/userinfo/hpc/#job-
 The interactive queue is ideal for code development or other short interactive jobs that require active monitoring. Examples include Slurm ijobs and OOD interactive apps like JupyterLab, RStudio Server, MATLAB, etc. The interactive queue has a time limit of 12 hours per job, and users can request up to a maximum of 24 CPU cores or 2 GPUs and up to 216G of CPU memory across all jobs. For example, you can run 24 serial jobs or one 24-core job. To request a GPU on with OOD apps, you'll be asked if you want to use a GPU. If yes is selected you can choose one or two GPUs. In slurm, the user must specify the `--gres=gpu` flag for GPU access. If two GPUs are desired in Slurm, you can specify `--gres=gpu:2`.
 
 ## How do I check the status of my jobs?
-From a terminal, run the command `jobq`.  From Open OnDemand, use the Job Viewer and select "Your Jobs" as the filter.
+From a terminal, run the command `squeue -u computingID`. Replace computingID with your specific UVA computing ID.  From Open OnDemand, use the Job Viewer and select "Your Jobs" as the filter.
 
-If reporting a problem to us about a particular job, please let us know the JobID for the job that you are having a problem with. You can also run `jobq -l` to relate particular jobs to specific submission scripts.
+If reporting a problem to us about a particular job, please let us know the JobID for the job that you are having a problem with.
 
 ## Why is my job not starting?
 Several things can cause jobs to wait in the queue. Paid allocations have priority over standard allocations. If members of your group under the same PI using the same quality of service level (i.e. paid or standard) have consumed a large amount of compute time in the recent past, the “fair share” algorithm will give other users outside of your group higher priority access ahead of you. Finally, the queue you requested may simply be very busy. If your job is pending there will be another field with the reason; if it is “Resources” that means that the resource you requested isn’t available. If the reason is “Priority” it means that a job with higher priority than yours is running. Your job will rise in priority as it waits so it will start eventually. 
