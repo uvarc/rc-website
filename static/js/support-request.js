@@ -2,6 +2,8 @@ $("#rivanna-help").hide();
 $("#ivy-help").hide();
 $("#storage-help").hide();
 $("#container-help").hide();
+$("#dac-help").hide();
+$("#dtc-help").hide();
 $("#categories").change(function () {
   var cat = this.value;
   if (cat == "Storage") {
@@ -10,36 +12,50 @@ $("#categories").change(function () {
     $("#ivy-help").hide(200);
     $("#container-help").hide(200);
     $("#dac-help").hide(200);
+    $("#dtc-help").hide(200);
   } else if (cat == "Rivanna") {
     $("#rivanna-help").show(400);
     $("#ivy-help").hide(200);
     $("#storage-help").hide(200);
     $("#container-help").hide(200);
     $("#dac-help").hide(200);
+    $("#dtc-help").hide(200);
   } else if (cat == "Ivy") {
     $("#ivy-help").show(400);
     $("#rivanna-help").hide(200);
     $("#storage-help").hide(200);
     $("#container-help").hide(200);
     $("#dac-help").hide(200);
+    $("#dtc-help").hide(200);
   } else if (cat == "Container") {
+    $("#container-help").show(400);
     $("#ivy-help").hide(200);
     $("#rivanna-help").hide(200);
     $("#storage-help").hide(200);
-    $("#container-help").show(200);
     $("#dac-help").hide(200);
+    $("#dtc-help").hide(200);
   } else if (cat == "Data Analytics") {
-    $("#dac-help").show(200);
+    $("#dac-help").show(400);
     $("#ivy-help").hide(200);
     $("#rivanna-help").hide(200);
     $("#storage-help").hide(200);
     $("#container-help").hide(200);
-  } else {
+    $("#dtc-help").hide(200);
+  } else if (cat == "Digital Technology Core"){
+    $("#dtc-help").show(400);
     $("#rivanna-help").hide(200);
     $("#ivy-help").hide(200);
     $("#storage-help").hide(200);
     $("#container-help").hide(200);
     $("#dac-help").hide(200);
+  }
+  else {
+    $("#rivanna-help").hide(200);
+    $("#ivy-help").hide(200);
+    $("#storage-help").hide(200);
+    $("#container-help").hide(200);
+    $("#dac-help").hide(200);
+    $("#dtc-help").hide(200);
   }
 });
 var text_max = 5000;
