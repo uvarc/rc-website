@@ -37,7 +37,7 @@ Make is often used in conjunction with `autoconf`.  Autoconf uses a script calle
 Another popular build system is [cmake](https://cmake.org/).  Cmake is more similar to autoconf than to make, since on Unix it creates a Makefile which must then be executed.
 
 Basics of Make
-The Makefile must follow a rigid format.  The target must start in the first column of a line and must be terminated with a colon (:).  Any dependencies, i.e. files required to create this target, must follow the colon as a space-separated list on a single line.  The rules required to create the target from the dependences **must** follow on separate lines and each rule line **must** begin with a tab character.
+The Makefile must follow a rigid format.  The target must start in the first column of a line and must be terminated with a colon (:).  Any dependencies, i.e. files required to create this target, must follow the colon as a space-separated list on a single line.  The rules required to create the target from the dependencies **must** follow on separate lines and each rule line **must** begin with a tab character.
 
 **Example:**
 ```

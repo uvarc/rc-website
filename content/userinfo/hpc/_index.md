@@ -126,7 +126,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
 A high performance computing cluster is typically made up of at least four service layers:
 
 1. **Login nodes** - Where you log in, interact with data and code, and submit jobs.
-2. **Compute nodes** - Where production jobs are run. On Rivanna and Afton these nodes are heterogenous; some have more memory, some have GPU devices, and so forth. Partitions are homogeneous so you can select specialty hardware by your partition request, sometimes along with a resource request (gres).
+2. **Compute nodes** - Where production jobs are run. On Rivanna and Afton these nodes are heterogeneous; some have more memory, some have GPU devices, and so forth. Partitions are homogeneous so you can select specialty hardware by your partition request, sometimes along with a resource request (gres).
 3. **Storage** - Where files are stored, accessible by all nodes in the cluster.
 4. **Resource Manager** - A software system that accepts job requests, schedules the jobs on a node or set of nodes, then manages their execution.
 

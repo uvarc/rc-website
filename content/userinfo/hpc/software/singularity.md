@@ -138,7 +138,7 @@ module load tensorflow/2.10.0.sif
 singularity run --nv $CONTAINERDIR/tensorflow-2.10.0.sif myscript.py
 ```
 
-In the container build script, `python` was defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. `myscript.py`, to the Python interpreter. So the above singularity command is equivalent to
+In the container build script, `python` was defined as the default command to be executed and singularity passes the argument(s) after the image name, i.e. `myscript.py`, to the Python interpreter. So the above singularity command is equivalent to
 
 ```
 singularity exec --nv $CONTAINERDIR/tensorflow-2.10.0.sif python myscript.py

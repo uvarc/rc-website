@@ -82,11 +82,11 @@ Below are some Slurm script templates for version 2.3.
 
 ## Monomer with `full_dbs`
 
-{{< pull-code file="/static/scripts/alphafold_monomer.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/alphafold_monomer.slurm" lang="no-highlight" >}}
 
 ## Multimer with `reduced_dbs`
 
-{{< pull-code file="/static/scripts/alphafold_multimer.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/alphafold_multimer.slurm" lang="no-highlight" >}}
 
 ## Notes
 

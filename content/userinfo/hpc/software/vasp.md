@@ -59,7 +59,7 @@ Installation details can be found on the VASP wiki: [5.x](https://www.vasp.at/wi
 # Example Slurm script
 To run VASP, the user prepares a group of input files with predetermined names.  The path to the vasp binary must be provided to the Slurm process manager `srun`; in the example below we assume it is in a directory `bin` under the user's home directory.  All input and potential files must be located in the same directory as the Slurm job script in this example.
 
-{{< pull-code file="/static/scripts/vasp.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/vasp.slurm" lang="no-highlight" >}}
 
 # Known issues
 
@@ -70,7 +70,7 @@ When running `vasp_gam` on AMD nodes (i.e. all nodes in `parallel`, Afton nodes 
 LSCALAPACK = .FALSE.
 ```
 
-Alternatively, if your job fits on 40 cores or less, you can choose not to disable ScaLAPACK and run it in `standard` with the `rivanna` constraint so that it will not land on an AMD node:
+Alternatively, if your job fits on 40 cores or fewer, you can choose not to disable ScaLAPACK and run it in `standard` with the `rivanna` constraint so that it will not land on an AMD node:
 
 ```
 #SBATCH -p standard

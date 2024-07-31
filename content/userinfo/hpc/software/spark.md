@@ -93,7 +93,7 @@ Python users can run Spark in a JupyterLab interface via the PySpark Interactive
 
 Spark provides a user interface (UI) for you to monitor your Spark job. If you intend to use the Web UI, you must request a [Desktop session through Open OnDemand](/userinfo/hpc/ood/desktop).
 
-The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx:4040` where `udc-xxxx-xx` is the hostname of the compute node. You can either right click on the link and select "Open Link," or enter `localhost:4040` in the browser.
+The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx:4040` where `udc-xxxx-xx` is the hostname of the compute node. You can either right-click on the link and select "Open Link," or enter `localhost:4040` in the browser.
 
 ### Jupyter notebook/lab
 
@@ -121,7 +121,7 @@ The example below estimates the value of pi in a PySpark session running on 16 c
 
 ## Local mode on a single node
 
-{{< pull-code file="/static/scripts/spark_single_node.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/spark_single_node.slurm" lang="no-highlight" >}}
 
 You must initialize `SparkContext` explicitly in your script, e.g.:
 
@@ -151,7 +151,7 @@ If the CPU efficiency is much lower, please consider using fewer cores for your 
 
 Before using multiple nodes, please make sure that your job can use a full standard node effectively. When you request N nodes in the standalone cluster mode, one node is set aside as the master node and the remaining N-1 nodes are worker nodes. Thus, running on 2 nodes will have the same effect as running on 1 node.
 
-{{< pull-code file="/static/scripts/spark_multinode.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/spark_multinode.slurm" lang="no-highlight" >}}
 
 In the above Slurm script template, note that:
 

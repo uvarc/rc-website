@@ -10,7 +10,7 @@ tags = ["rivanna","Matlab","education","workshops","feature"]
 categories = ["feature"]
 +++
 
-MathWorks engineers will offer a free live webinar on September 22th from 2:00 to 3:30 Eastern time.
+MathWorks engineers will offer a free live webinar on September 22nd from 2:00 to 3:30 Eastern time.
 <!--more-->
 
 <!-- No Longer Active -->
@@ -20,7 +20,7 @@ MathWorks engineers will offer a free live webinar on September 22th from 2:00 t
 
 Deep learning can achieve humanlike accuracy at tasks such as naming objects in a scene or recognizing optimal paths in an environment.  Sometimes it can even exceed human performance, recognizing non-obvious patterns in image or signal data.
 
-In this new neuroscience seminar, we’ll illustrate the fundamentals of deep learning in MATLAB.  Using an age-labeled BIDS dataset from the OpenNeuro repository, we’ll train a deep network to accurately classify the age range of normalized human MRI brain images, not obviously discernable by human inspection.
+In this new neuroscience seminar, we’ll illustrate the fundamentals of deep learning in MATLAB.  Using an age-labeled BIDS dataset from the OpenNeuro repository, we’ll train a deep network to accurately classify the age range of normalized human MRI brain images, not obviously discernible by human inspection.
 
 ## Highlights
 

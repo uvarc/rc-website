@@ -42,7 +42,7 @@ Options for profiling vary more by compiler.  For Gnu compilers it is a combinat
 Using debuggers and profilers is covered separately [here](/userinfo/hpc/software/debuggers).  If you write your own code, profiling is useful to increase the performance of your code.
 
 ## Optimizing
-Once your code is working, you should remove all debugging flags and compile from source.  Debugging flags inhibit optimizations and can cause your code to waste SUs.  The general optimization flag for all compilers is `-O`.  With no integer it will set optimization at the default level, which varies by compiler.  You can specify different levels of optimization (including none) with an integer immedately after `O`.  The number of available levels and where the default lies varies by compiler.  Gnu and Intel have three levels and the default is -O1.  PGI has four levels and the default is `-O2`.  The flag `-O0` disables all optimizations, which can be useful for debugging; the `-g` flag may or may not imply `-O0`.
+Once your code is working, you should remove all debugging flags and compile from source.  Debugging flags inhibit optimizations and can cause your code to waste SUs.  The general optimization flag for all compilers is `-O`.  With no integer it will set optimization at the default level, which varies by compiler.  You can specify different levels of optimization (including none) with an integer immediately after `O`.  The number of available levels and where the default lies varies by compiler.  Gnu and Intel have three levels and the default is -O1.  PGI has four levels and the default is `-O2`.  The flag `-O0` disables all optimizations, which can be useful for debugging; the `-g` flag may or may not imply `-O0`.
 
 **Examples:**
 ```

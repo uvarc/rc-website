@@ -22,7 +22,7 @@ author = "RC Staff"
 # Overview
 RStudio Server is a web-based interface to RStudio -- a development environment for R programming.
 
-Research Computing provides a web portal where RStudio Server can be accessed on the HPC system. However, to use RStudio Server, you must have an account on UVA HPC. Instructions for setting up an acccount can be found [here](/userinfo/hpc/#get-started).
+Research Computing provides a web portal where RStudio Server can be accessed on the HPC system. However, to use RStudio Server, you must have an account on UVA HPC. Instructions for setting up an account can be found [here](/userinfo/hpc/#get-started).
 
 
 # Accessing RStudio Server

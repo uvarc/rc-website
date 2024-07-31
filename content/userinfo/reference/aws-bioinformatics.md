@@ -13,7 +13,7 @@ type = "reference"
 +++
 
 
-Setting up computational infrastructure on AWS is a well defined, though somewhat time consuming process. This introduction is designed to explain some of the terminology, define the steps required to setup AWS, and point the user to some excellent tutorials/resources created for bioinformatics and genomics.  
+Setting up computational infrastructure on AWS is a well-defined, though somewhat time-consuming process. This introduction is designed to explain some of the terminology, define the steps required to set up AWS, and point the user to some excellent tutorials/resources created for bioinformatics and genomics.  
 
 Setting up a server on AWS involves making decisions on the following broad categories.
 
@@ -22,7 +22,7 @@ Setting up a server on AWS involves making decisions on the following broad cate
 
 An excellent tutorial that covers the steps for creating an EC2 (Elastic Compute Cloud) instance (up to logging into your EC2) along with a myriad of questions such as pricing and what kind of computing and storage resources to choose from geared towards bioinformatics and genomics is available [here](https://github.com/griffithlab/rnaseq_tutorial/wiki/Intro-to-AWS-Cloud-Computing). Broadly speaking, setting up a server (EC2 instance) requires the following steps.
 
-* AWS user account: The user account can be your own, or you could be part of a group user account (e.g., your lab’s account on AWS). You (or the administrator of the account) can setup permissions for you, such as whether you are allowed to stop instances started by other members of the lab. AWS calls it an IAM Role. See [here](https://aws.amazon.com/iam/) for AWS policies and sign-up procedures for user accounts.
+* AWS user account: The user account can be your own, or you could be part of a group user account (e.g., your lab’s account on AWS). You (or the administrator of the account) can set up permissions for you, such as whether you are allowed to stop instances started by other members of the lab. AWS calls it an IAM Role. See [here](https://aws.amazon.com/iam/) for AWS policies and sign-up procedures for user accounts.
 
 * Amazon Machine Image (AMI): [AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) is an operating system with or without pre-defined computational power, memory, hard disk, or software tools. If you start from scratch, you will choose all the elements step-by-step. We recommend using Ubuntu as your operating system as quite a few community bioinformatics tools are built for Ubuntu. At this time, NCBI BLAST is available as a [community AMI](https://aws.amazon.com/marketplace/pp/B00N44P7L6?qid=1487694350159&sr=0-1&ref_=srh_res_product_title) on Amazon, and we expect more to be available over time.  
 
@@ -50,7 +50,7 @@ To install SRA Toolkit, scroll down to the section SRA Toolkit [here](http://fen
 
 # Considerations when using AWS
 
-* If you are trying to ssh into your instance and you get “operation timed out” error, check in the EC2 Dashboard on AWS that the instance is running. Another reason for getting the error could be that the EC2 instance only accepts inbound network connections from a specific IP, so if you change your wifi networks your laptop’s IP may not be recognized. Go to EC2 Dashboard, click on Running Instances, click on the instance you are trying to connect to, under Description click on Security groups, click on Inbound, and Edit to add a connection with Source “MyIP.” 
+* If you are trying to ssh into your instance and you get “operation timed out” error, check in the EC2 Dashboard on AWS that the instance is running. Another reason for getting the error could be that the EC2 instance only accepts inbound network connections from a specific IP, so if you change your Wi-Fi networks your laptop’s IP may not be recognized. Go to EC2 Dashboard, click on Running Instances, click on the instance you are trying to connect to, under Description click on Security groups, click on Inbound, and Edit to add a connection with Source “MyIP.” 
 
 * Some of the bioinformatics software is available on apt-get but not yum. Hence, we recommend using Ubuntu as the operating system over Amazon Linux. 
 

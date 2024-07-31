@@ -19,7 +19,7 @@ images = [
 
 +++
 
-<p class=lead>Research Computing supports all UVA researchers who are interested in writing code to address their scientific inquiries. Whether these programming tasks are implemented interactively, in a series of scripts or as an open-source software package, services are available to provide guidance and enable collaborative development. RC has specific expertise in object oriented programming in <b>Matlab</b>, <b>R</b>, and <b>Python</b>.</p>
+<p class=lead>Research Computing supports all UVA researchers who are interested in writing code to address their scientific inquiries. Whether these programming tasks are implemented interactively, in a series of scripts or as an open-source software package, services are available to provide guidance and enable collaborative development. RC has specific expertise in object-oriented programming in <b>Matlab</b>, <b>R</b>, and <b>Python</b>.</p>
 
 Examples of service areas include:
 

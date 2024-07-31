@@ -50,7 +50,7 @@ For further details please visit [here](https://github.com/uvarc/rivanna-docker/
 ## Python script
 Please submit jobs to the GPU partition. A Slurm script template is provided below.
 
-{{< pull-code file="/static/scripts/deeplabcut.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/deeplabcut.slurm" lang="no-highlight" >}}
 
 ## GUI
 Please request a Desktop session on the GPU partition via our Open OnDemand portal. Open a terminal and load the module. Then execute:

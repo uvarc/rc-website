@@ -74,11 +74,11 @@ For longer jobs, and for all multinode jobs, you should run in batch mode using 
 
 **ANSYS Slurm Script:**
 
-{{< pull-code file="/static/scripts/ansys.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/ansys.slurm" lang="no-highlight" >}}
 
 **CFX Slurm Script:**
 
-{{< pull-code file="/static/scripts/cfx.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/cfx.slurm" lang="no-highlight" >}}
 
 # Multi-Node MPI Jobs
 
@@ -90,10 +90,10 @@ These examples also show the minimum number of command-line options; you may req
 
 **Fluent Slurm Script:**
 
-{{< pull-code file="/static/scripts/fluent.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/fluent.slurm" lang="no-highlight" >}}
 
 The syntax for CFX is different and includes a "start-method." We recommend Intel MPI. Please refer to documentation for other options that may be required.
 
 **CFX Slurm script:**
 
-{{< pull-code file="/static/scripts/cfx_mpi.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/cfx_mpi.slurm" lang="no-highlight" >}}
