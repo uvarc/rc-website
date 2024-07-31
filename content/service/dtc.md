@@ -62,7 +62,7 @@ We have years of experience with collaborations. A few of our past collaboration
 <br>
 
 # How to Request Support
-We provide [three tiers of support](/service/tiers) that can each be requested through a [support request](/form/support-request/?category=Digital%20Technology). 
+We provide [three tiers of support](/service/tiers) that can each be requested through a [support request](/form/support-request/?category=Digital%20Technology%20Core).
 
 * Tier 1: Training & Technical Support 
 * Tier 2: Consultation   
