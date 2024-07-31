@@ -46,7 +46,7 @@ Users may build their own versions of LAMMPS if they wish to use a different com
 To run the system version of LAMMPS, a script similar to the following can be used.  LAMMPS has many options so only the most basic is shown.
 
 ## CPU
-{{< pull-code file="/static/scripts/lammps-cpu.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/lammps-cpu.slurm" lang="no-highlight" >}}
 
 ## GPU
-{{< pull-code file="/static/scripts/lammps-gpu.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/lammps-gpu.slurm" lang="no-highlight" >}}

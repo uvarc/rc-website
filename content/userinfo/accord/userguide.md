@@ -63,7 +63,7 @@ Once you have created an environment, click on the "CONNECT" button for the appr
 
 ## Terminate an environment
 
-When you are finished with your envionment, please terminate it. Using the "Running Environments" section of the ACCORD console, find the environment you wish to terminate.
+When you are finished with your environment, please terminate it. Using the "Running Environments" section of the ACCORD console, find the environment you wish to terminate.
 On the far right will be a red "Terminate" button. Clicking this will terminate your environment.
 Note that your saved files and storage are never terminated or destroyed in this process. 
 
@@ -81,7 +81,7 @@ environments you have run before. Click the orange "Run" button next to an envir
 ## Software requirements
 
 + A modern web browser such as Chrome, Firefox, Safari, or Edge.
-+ Access to your intitution's VPN
++ Access to your institution's VPN
 + Install and register OPSWAT, a posture-checking client.
 
 {{< button button-class="primary" button-text="Learn More About OPSWAT" button-url="https://www.opswat.com/" >}}

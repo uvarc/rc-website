@@ -81,7 +81,7 @@ Here's a talk given by Martin Fowler explaining the idea:
       <li>A scheduled job to retrieve remote datasets, perform initial ETL processing, and stage them for analysis.
     </ul>
 
-  <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run such as relational databses, key-value stores or reference APIs.
+  <li class=lead><b>Microservices in support of HPC jobs</b> - Some workflows in HPC jobs require supplemental services in order to run such as relational databases, key-value stores or reference APIs.
 </ol>
 
 

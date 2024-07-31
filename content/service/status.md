@@ -206,7 +206,7 @@ On Feb 26, your folder in <nobr>`/stagedproject`</nobr> is set up as **read-only
 For compute jobs we recommend you *first* copy files from `/stagedproject` into your `/project` or `/scratch` folder. For transfer of large folders see *“How can I consolidate my files in /stagedproject and /project?”*. 
 
 {{% highlight %}}
-**Note:** A subset of files may not copy over because of existing "stub files" on the `/project` storage system. Stub files are "placeholders” for files that exist on the old project storage system but had not been copied over to the new project storage system. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
+**Note:** A subset of files may not copy over because of existing "stub files" on the `/project` storage system. Stub files are "placeholders" for files that exist on the old project storage system but had not been copied over to the new project storage system. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
 {{% /highlight %}}
 
 If you do not need any of the files affected by any failed copy operation immediately, you may continue to work out of `/project` and `/scratch` folders as usual. We will inform you when all stub files have been deleted and you may consolidate the remaining files from `/stagedproject` to `/project` then, following the copy instructions one more time. See *“How can I consolidate my files in /stagedproject and /project?”* 
@@ -238,7 +238,7 @@ Please keep in mind that the list in old-project-file-list.txt represents all yo
 {{% accordion-item title="8. Are all files being transferred to the new Project storage system at once?"  id="faq-8" %}}
 No. We are prioritizing transfer of files that you actively need for your research. You may <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration&description=Please%20indicate%20as%20precisely%20as%20possible%20which%20directories%20or%20files%20should%20be%20transferred%20first:" target="blank_">reach out to us</a> to provide a specific list of your high priority, essential folders and files. 
 
-The severe performance degradation of the old storage system will remain a bottleneck regardless of the change in data transfer method. **However, the more selective this list, the better we can help you with this transition.** See *“Can I pick which of my files are transferred first?"* for details. 
+The severe performance degradation of the old storage system will remain a bottleneck regardless of the change in data transfer method. **However, the more selective this list, the better we can help you with this transition.** See *"Can I pick which of my files are transferred first?"* for details. 
 
 Once the transfer process has been stabilized, engineers will begin transferring any remaining files that users did not explicitly request to be moved.
 {{% /accordion-item %}}
@@ -254,7 +254,7 @@ Though the new Project storage system provides vastly improved performance, the 
 
 **However, you can facilitate the data transfer process by providing us with a narrowed down list of files that you need for your research over the next few months. This will allow us to deprioritize less urgently needed files.** 
 
-See *“Can I pick which of my files are transferred first?"* for details.
+See *"Can I pick which of my files are transferred first?"* for details.
 
 All data will be migrated eventually, but this process is expected to take several months to complete. We will post weekly progress of data migration on this page. 
 
@@ -287,7 +287,7 @@ The prioritized datasets were known to be actively used and were prime candidate
 
 {{% accordion-item title="15. What are stub files and how can I find them?" id="faq-15" %}}
  
-Stub files are "placeholders” for files that exist on the old project storage system but had not been copied over to the new project storage system. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
+Stub files are "placeholders" for files that exist on the old project storage system but had not been copied over to the new project storage system. They are not needed for the new data migration process. We began with deletion of these empty placeholder stub files on February 26. This process is still ongoing. The original files are still intact and secure on the old system. 
 
 You may create a list of stub files currently present in your /project folder by running this command: 
 
@@ -384,7 +384,7 @@ Please contact our <a href="/form/support-request/?category=Storage&request_titl
 
 ## Technical Details
 
-On February 26, RC engineers will disconnect the Active File Management (AFM) tether, remount the old Project storage system (GPFS) separately, and purge all "stub files" (files that are staged on new storage system and appear in a directory listing, but have not yet been transferred from old Project). This will allow a clear differentiation between transferred and un-transferred data. Data already transferred to the new Project storage system are expected to perform optimally without any issues, while un-transferred data on the old system will need to be manually transferred by RC staff. Staff will continue to respond to data transfer requests on a first come, first serve basis. Once the transfer process has been stabilized, engineers will begin transferring any remaining files that users did not explicitly request to be moved.
+On February 26, RC engineers will disconnect the Active File Management (AFM) tether, remount the old Project storage system (GPFS) separately, and purge all "stub files" (files that are staged on new storage system and appear in a directory listing, but have not yet been transferred from old Project). This will allow a clear differentiation between transferred and un-transferred data. Data already transferred to the new Project storage system are expected to perform optimally without any issues, while un-transferred data on the old system will need to be manually transferred by RC staff. Staff will continue to respond to data transfer requests on a first come, first served basis. Once the transfer process has been stabilized, engineers will begin transferring any remaining files that users did not explicitly request to be moved.
 
 # Incident Status Log
 

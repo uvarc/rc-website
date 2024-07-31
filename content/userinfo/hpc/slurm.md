@@ -240,7 +240,7 @@ JOBID     PARTITION     NAME       USER    ST  TIME      NODES    NODELIST(REASO
 12346     standard      bash       mst3k   R   2:44      1        udc-ba30-5
 ```
 
-The fields of the display are clearly labeled, and most are self-explanatory. The TIME field indicates the elapsed walltime (hrs:min:secs) that the job has been running. Note that JOBID 12346 has the name bash, which indicates it is an interactive job. In that case, the TIME field provides the amount of walltime during which the interactive session has be open (and resources have been allocated). The ST field lists a code which indicates the state of the job. Commonly listed states include:
+The fields of the display are clearly labeled, and most are self-explanatory. The TIME field indicates the elapsed walltime (hrs:min:secs) that the job has been running. Note that JOBID 12346 has the name bash, which indicates it is an interactive job. In that case, the TIME field provides the amount of walltime during which the interactive session has to be open (and resources have been allocated). The ST field lists a code which indicates the state of the job. Commonly listed states include:
 
 * PD PENDING: Job is waiting for resources;
 * R RUNNING: Job has the allocated resources and is running;
@@ -314,7 +314,7 @@ For further information about the squeue command, type `man squeue` on the clust
 
 A large number of jobs can be submitted through one request if all the files used follow a strict pattern.  For example, if input files are named input_1.dat, ... , input_1000.dat, we could write a job script requesting the appropriate resources for a single one of these jobs with
 
-{{< pull-code file="/static/scripts/job_array.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/job_array.slurm" lang="no-highlight" >}}
 
 In the output file name, %a is the placeholder for the array ID.  We submit with
 
@@ -322,7 +322,7 @@ In the output file name, %a is the placeholder for the array ID.  We submit with
 $ sbatch --array=1-1000 myjob.sh
 ```
 
-The system automatically submits 1000 jobs, which will all appear under a single job ID with separate array IDs.  The SLURM_ARRAY_TASK_ID environment variable can be used in your command lines to label individal subjobs.
+The system automatically submits 1000 jobs, which will all appear under a single job ID with separate array IDs.  The SLURM_ARRAY_TASK_ID environment variable can be used in your command lines to label individual subjobs.
 
 The placeholder %A stands for the overall job ID number in the #SBATCH preamble lines, while %a represents the individual task number.  These variables can be used with the --output option.  In the body of the script you can use the regular environment variable SLURM_TASK_ID if you wish to differentiate different job IDs and SLURM_ARRAY_TASK_ID for the jobs within the array.
 
@@ -434,25 +434,25 @@ In this section are a selection of sample Slurm command files for different type
 
 This example is for running your own serial (single-core) program.  It assumes your program is in the same folder from which your job script was submitted.
 
-{{< pull-code file="/static/scripts/simple_serial_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/simple_serial_job.slurm" lang="no-highlight" >}}
 
 ### MATLAB
 
 This example is for a serial (one core) Matlab job.
 
-{{< pull-code file="/static/scripts/simple_matlab_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/simple_matlab_job.slurm" lang="no-highlight" >}}
 
 ### Python
 
 This script runs a Python program.
 
-{{< pull-code file="/static/scripts/simple_python_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/simple_python_job.slurm" lang="no-highlight" >}}
 
 ### R
 
 This is a Slurm job command file to run a serial R batch job.
 
-{{< pull-code file="/static/scripts/simple_R_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/simple_R_job.slurm" lang="no-highlight" >}}
 
 ## Job Scripts for Parallel Programs {#jobs-using-a-gpu} 
 
@@ -460,29 +460,29 @@ This is a Slurm job command file to run a serial R batch job.
 
 If the executable is a parallel program using the Message Passing Interface (MPI), then it will require multiple processors of the cluster to run. This information is specified in the Slurm nodes resource requirement. The script mpiexec is used to invoke the parallel executable. This example is a Slurm job command file to run a parallel (MPI) job using the OpenMPI implementation:
 
-{{< pull-code file="/static/scripts/mpi_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/mpi_job.slurm" lang="no-highlight" >}}
 
 In this example, the Slurm job file is requesting two nodes with sixteen tasks per node (for a total of thirty-two processors).  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node so we'd recommend ntasks-per-node=40 on the parallel partition, but some codes cannot be distributed in that manner so we are showing a more general example here.
 
 Slurm can also place the job freely if the directives specify only the number of tasks. In this case do not specify a node count.  This is not generally recommended, however, as it can have a significant negative impact on performance.
 
-{{< pull-code file="/static/scripts/mpi_job_free_placement.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/mpi_job_free_placement.slurm" lang="no-highlight" >}}
 
 ### MPI over an odd number of tasks
 
-{{< pull-code file="/static/scripts/mpi_job_odd_number.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/mpi_job_odd_number.slurm" lang="no-highlight" >}}
 
 ### Threaded Jobs (OpenMP or pthreads)
 
 Slurm considers a task to correspond to a process.  Specifying a number of cpus (cores) per node ensures that they are on the same node.  Slurm does not set standard environment variables such as OMP_NUM_THREADS or NTHREADS, so the script must transfer that information explicitly.  This example is for OpenMP:
 
-{{< pull-code file="/static/scripts/openmp_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/openmp_job.slurm" lang="no-highlight" >}}
 
 ### Hybrid
 
 The following example runs a total of 32 MPI processes, 8 on each node, with each task using 5 cores for threading.  The total number of cores utilized is thus 160.
 
-{{< pull-code file="/static/scripts/hybrid_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/hybrid_job.slurm" lang="no-highlight" >}}
 
 ## GPU Computations {#gpu-intensive-computation} 
 
@@ -492,7 +492,7 @@ The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX309
    In order to use GPU devices, the jobs must to be submitted to the <b>gpu</b> partition and must include the <b>--gres=gpu</b> option.</alert>
 {{< /highlight >}}
 
-{{< pull-code file="/static/scripts/gpu_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/gpu_job.slurm" lang="no-highlight" >}}
 
 The second argument to `gres` can be `rtx2080`, `rtx3090`, `v100`, or `a100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 

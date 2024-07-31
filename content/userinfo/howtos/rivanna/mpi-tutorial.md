@@ -17,7 +17,7 @@ A helpful online tutorial is available from the Lawrence Livermore National Labo
 
 * Parallel Programming with MPI by Peter Pacheco.
 * Using MPI : Portable Parallel Programming With the Message-Passing Interface by William Gropp, Ewing Lusk, and Anthony Skjellum.
-* Using MPI-2: Advanced Features of the Message- Passing Interface by William Gropp, Ewing Lusk, and Rajeev Thakur.
+* Using MPI-2: Advanced Features of the Message-Passing Interface by William Gropp, Ewing Lusk, and Rajeev Thakur.
 * MPI: The Complete Reference : The MPI Core by Marc Snir, Steve Otto, Steven Huss-Lederman, David Walker, and Jack Dongarra.
 * MPI: The Complete Reference : The MPI-2 Extensions by William Gropp, Steven Huss-Lederman, Andrew Lumsdaine, Ewing Lusk, Bill Nitzberg, and Marc Snir. A free HTML version of the first edition of the Complete Reference is available at Netlib.
 

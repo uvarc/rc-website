@@ -18,7 +18,7 @@ All systems are expected to return to service by **6 a.m. on Tuesday, December 1
 
 ## IMPORTANT MAINTENANCE NOTES
 
-The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GCC 8.5.0. Due to fundamental changes in system libraries, the entire software stack is rebuilt. **Users should rebuild all self-compiled codes and R packages.** Starting Nov 21, users who want early access to the development environment to rebuild/test codes against the new software stack can login by running `ssh udc-ba33-36` on the frontend. (Please be sure not to overwrite your existing codes for the production environment.) Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need assistance.
+The operating system will be upgraded to Rocky 8.7 with system glibc 2.28 and GCC 8.5.0. Due to fundamental changes in system libraries, the entire software stack is rebuilt. **Users should rebuild all self-compiled codes and R packages.** Starting Nov 21, users who want early access to the development environment to rebuild/test codes against the new software stack can log in by running `ssh udc-ba33-36` on the frontend. (Please be sure not to overwrite your existing codes for the production environment.) Contact us [here](https://www.rc.virginia.edu/form/support-request/) if you need assistance.
 
 ### Modules
 
@@ -80,4 +80,4 @@ ii) The version of R that you have been using.
 For example, if you have been using with RStudio 1.3.1073 - R 4.1.1, you can type:
 ```updateRlib OOD 4.1.1```
 This command will capture your packages that were used in your R/4.1 library for Open OnDemand and rebuild to a new library.
-The three options for the how you run your code are: OOD, goolf, or intel. Rebuilt libraries will be installed in ```~/R/goolf/4.3``` for both module and OOD versions.
+The three options for how you run your code are: OOD, goolf, or intel. Rebuilt libraries will be installed in ```~/R/goolf/4.3``` for both module and OOD versions.

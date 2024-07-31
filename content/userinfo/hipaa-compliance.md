@@ -28,7 +28,7 @@ From a compliance perspective, RC offers three levels of review/assessment:
 
 2. **Security Review** - If you have a security plan in place already we can help you verify that your computing resources are functioning as documented in your security plan. As part of security review, we will do a risk analyst and provide you a list of recommended enhancements.
 
-3. **Risk Assessment** - This is the systematic process of evaluating the potential security risks/hazards and any business impact they could present.  We analyze the likelyhood of events occurring. As we conduct a risk assessment we look for vulnerabilities and weaknesses that could your system more susceptible to an event. We will provide list of finds and either work with your local support person or other resources to help mitigate the risk.  
+3. **Risk Assessment** - This is the systematic process of evaluating the potential security risks/hazards and any business impact they could present.  We analyze the likelihood of events occurring. As we conduct a risk assessment we look for vulnerabilities and weaknesses that could your system more susceptible to an event. We will provide list of finds and either work with your local support person or other resources to help mitigate the risk.  
 
 - - -
 
@@ -56,7 +56,7 @@ B. All geographic subdivisions smaller than a state, including street address, c
 
   2. The initial three digits of a ZIP code for all such geographic units containing 20,000 or fewer people is changed to 000
 
-C. All elements of dates (except year) for dates that are directly related to an individual, including birth date, admission date, discharge date, death date, and all ages over 89 and all elements of dates (including year) indicative of such age, except that such ages and elements may be aggregated into a single category of age 90 or older
+C. All elements of dates (except year) for dates that are directly related to an individual, including birthdate, admission date, discharge date, death date, and all ages over 89 and all elements of dates (including year) indicative of such age, except that such ages and elements may be aggregated into a single category of age 90 or older
 
 D. Telephone numbers
 
@@ -76,7 +76,7 @@ K. Internet Protocol (IP) addresses
 
 L. Medical record numbers
 
-M. Biometric identifiers, including finger and voice prints
+M. Biometric identifiers, including finger- and voice-prints
 
 N. Health plan beneficiary numbers
 

@@ -151,7 +151,7 @@ docker build -t mycontainer .
 
 [Docker Training](https://docs.docker.com/engine/getstarted/) - Docker documents this process in great detail, and provides a step-by-step overview of their container system.
 
-<!-- Service is offically closed -->
+<!-- Service is officially closed -->
 <!-- [Katacoda Interactive Labs](https://www.katacoda.com/courses/docker) - Katacoda offers a free series of interactive trainings that build sequentially. The tutorials require you to engage with the Docker command-line as you progress. -->
 
 # Next Steps

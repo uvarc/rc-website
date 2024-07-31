@@ -1,1 +1,1 @@
-{{< pull-code file="/static/scripts/abinit.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/abinit.slurm" lang="no-highlight" >}}

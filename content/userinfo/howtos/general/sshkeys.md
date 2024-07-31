@@ -17,13 +17,13 @@ Users can authenticate their SSH sessions using either a password or an ssh key.
 
 SSH keys are a pair of encrypted files that are meant to go together. One half of the pair is called the “private” key, and the other half is the “public” key. When users use the private key to connect to a server that is configured with the public key, the match can be verified and the user is signed in. Or, put it more simply, when data is encrypted using one half of the key, it can be decrypted using the other half.
 
-The most important thing to remember about SSH key pairs is to NEVER share or distribute the private half. That should remain safely and securely with you. Anyone with possession of that key can potentially sign into other systems as you.
+The most important thing to remember about SSH key pairs is to NEVER share or distribute the private half. That should remain safely and securely with you. Anyone with possession of that key can potentially sign in to other systems as you.
 
 Public keys, by contrast, can be shared widely.
 
 # Create an SSH keypair
 
-From a terminal or command prompt (Linux and MacOS) issue this command:
+From a terminal or command prompt (Linux and macOS) issue this command:
 
 ```
 ssh-keygen

@@ -15,7 +15,7 @@ layout = "single"
 {{% callout %}}
 <img src="/images/omero/ome-main-nav.svg" alt="OMERO" style="float:right;max-width:35%;margin-left:1rem;" />
 
-<p>OMERO is a database for management of imaging data. UVA is is hosting a centralized OMERO database instance backed by centralized storage that facilitates sharing, processing and annotating images for your research group and invited collaborators.</p>
+<p>OMERO is a database for management of imaging data. UVA is hosting a centralized OMERO database instance backed by centralized storage that facilitates sharing, processing and annotating images for your research group and invited collaborators.</p>
 
 {{% /callout %}}
 
@@ -52,7 +52,7 @@ the HPC system, large images and movie files are rendered more quickly when usin
 
 ## Logging in with OMERO.insight
 
-**Setup the Software on your Computer**
+**Set up the Software on your Computer**
 
 1. The UVA server is running OMERO 5.4.10.  In order to connect to that server you need to install the compatible Windows, Mac, or Linux client.
 
@@ -62,7 +62,7 @@ the HPC system, large images and movie files are rendered more quickly when usin
 
     <br>Please download the .zip file appropriate for your computer and install the client following these [installation instructions](https://help.openmicroscopy.org/getting-started-5.html#installing).
 
-2. Open OMERO.insight and follow the [configuration instructions](https://help.openmicroscopy.org/getting-started-5.html#server) to setup the connection to the UVA OMERO server. Under step 3 of the instructions, enter `omero.hpc.virginia.edu` as the server address. The `port` address needs to be set to `4064`.
+2. Open OMERO.insight and follow the [configuration instructions](https://help.openmicroscopy.org/getting-started-5.html#server) to set up the connection to the UVA OMERO server. Under step 3 of the instructions, enter `omero.hpc.virginia.edu` as the server address. The `port` address needs to be set to `4064`.
 
 3. To log in, enter your computing ID (e.g. `mst3k`) in the *Username* field. For *Password*, enter the password emailed to you after your initial account request (you will be able to change this after logging in for the first time). **The OMERO database password is not the same as your Eservices or Netbadge password.** Click **Login**.
 
@@ -124,7 +124,7 @@ will open the Group settings menu.
 
 <br>
 
-There are several different permissions settings, which are described below. By default, 
+There are several permissions settings, which are described below. By default, 
 all group permissions are set to **Read-Annotate**.
 
 <table class="table table-striped" id="moduleTable">

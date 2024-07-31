@@ -57,5 +57,5 @@ Please consult with us before requesting IDL.
 
 ## More Information
 
-For more Information on IDL, please consult the IDL documentation on its [offical website] (https://www.nv5geospatialsoftware.com/Products/IDL#language)
+For more Information on IDL, please consult the IDL documentation on its [official website] (https://www.nv5geospatialsoftware.com/Products/IDL#language)
 
