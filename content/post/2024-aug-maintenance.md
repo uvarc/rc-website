@@ -16,6 +16,6 @@ The following nodes will be unavailable during this period:
 - `afton` nodes in `standard` and `interactive`
 - A40 GPU nodes in `gpu`
 
-The nodes are expected to return to service by **Wednesday,**
+The nodes are expected to return to service by **Wednesday, Aug 14** at 6 a.m.
 
 There is no impact on other nodes or services. Jobs on other nodes will continue to run.
