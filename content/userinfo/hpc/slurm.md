@@ -178,6 +178,10 @@ To separate standard error from standard output, you must rename both.
 #SBATCH -e <errfile> or --error=<errfile>
 ```
 
+# Slurm Script Generator 
+
+If you would like assistance in generating Slurm scripts, please check out our [Slurm Script Generator](/userinfo/hpc/slurm-script-generator). Simply input the parameters of your job to get a fully-working Slurm script.
+
 
 # Submitting a Job
 

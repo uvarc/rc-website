@@ -218,7 +218,9 @@ Please check the user manual for your application/container before running on a 
 # Job Management
 
 ## How do I submit jobs?
-You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our Slurm documentation page.
+You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our [Slurm documentation](/userinfo/hpc/slurm).
+
+If you would like assistance in generating Slurm scripts, please check out our [Slurm Script Generator](/userinfo/hpc/slurm-script-generator). Simply input the parameters of your job to get a fully-working Slurm script.
 
 ## How do I submit an interactive job?
 If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/hpc/ood) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/hpc/ood/desktop) request.
