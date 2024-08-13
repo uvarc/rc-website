@@ -44,6 +44,7 @@ Note that you must use backslashes even if the path provided to you used forward
 * From the Finder menu, select *Go*->*Go To Folder*->*Connect To Server*.  A dialog box should appear with `smb://` filled in. 
 * Type the path you were given.
     * For **Research Standard** storage the path starts with `//standard.hpc.virginia.edu/` followed by your storage share name, for example `smb://standard.hpc.virginia.edu/mylab-storage`
+            * If you have `ceph` storage (`standard.hpc.virginia.edu`) you may have to enter `eservices\mst3k` (with your own user ID) rather than your user ID alone.
     * For **Research Project** storage the path starts with `//project.hpc.virginia.edu` followed by your storage share name, for example `smb://project.hpc.virginia.edu/mylab-storage`.  
             
 * Enter your Eservices credentials when prompted, then click *Connect*.
