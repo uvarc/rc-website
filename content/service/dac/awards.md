@@ -79,7 +79,7 @@ Recipients of the Awards will receive vouchers that may be used toward the Data 
 
 <br>
 <br>
-<u>Before you apply</u>:  We highly recommend that you have a consultation meeting with a DAC member to discuss the services that you are planning and what the budget will look like for those services. You can request a consltation by submitting this 
+<u>Before you apply</u>:  We highly recommend that you have a consultation meeting with a DAC member to discuss the services that you are planning and what the budget will look like for those services. You can request a consultation by submitting this 
  <a href="/form/support-request/?category=Data%20Analytics"> online support request form  </a>.
 
 <br>

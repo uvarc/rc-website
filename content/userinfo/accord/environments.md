@@ -15,7 +15,7 @@ author = "Staff"
 
 <a href="../" style="float:right;width:100%;text-align:right;margin-bottom:2rem;" class="small">Back to Overview</a>
 
-After creating a project and logging into the ACCORD platform, you will next chose an environment. The environments currently available on ACCORD are listed below. We welcome your suggestions for additional environments to be included in the future.
+After creating a project and logging into the ACCORD platform, you will next choose an environment. The environments currently available on ACCORD are listed below. We welcome your suggestions for additional environments to be included in the future.
 
 <table class="table table-striped">
   <tbody>

@@ -48,8 +48,8 @@ Please run the CPU version on non-`gpu` partitions and the GPU version only on t
 
 ## CPU
 
-{{< pull-code file="/static/scripts/qe_cpu.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/qe_cpu.slurm" lang="no-highlight" >}}
 
 ## GPU
 
-{{< pull-code file="/static/scripts/qe_gpu.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/qe_gpu.slurm" lang="no-highlight" >}}

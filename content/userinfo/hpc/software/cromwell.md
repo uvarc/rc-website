@@ -227,7 +227,7 @@ java -Dconfig.file=~/cromwell-rivanna.conf \
     -i myWorkflow.inputs.json
 ```  
 
-An example of how to run a bioinformatis pipeline is documented [here](/userinfo/howtos/rivanna/wdl-bioinformatics).
+An example of how to run a bioinformatics pipeline is documented [here](/userinfo/howtos/rivanna/wdl-bioinformatics).
  
 # Additional Documentation
 

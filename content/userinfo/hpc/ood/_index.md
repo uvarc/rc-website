@@ -67,39 +67,39 @@ Please read our [FastX Web documentation](/userinfo/hpc/logintools/fastx) for a 
 **FastX Web sessions are not suitable for running compute intensive applications or code--[Open OnDemand Desktop](/userinfo/hpc/ood/desktop) is intended for such purpose.**
 
 ## JupyterLab
-JupyerLab provides an environment that has become popular for interactive code development and debugging. JupyterLab sessions run on user-specified allocated hardware resources which may include compute nodes equipped with graphical processing units (GPUs).
+JupyterLab provides an environment that has become popular for interactive code development and debugging. JupyterLab sessions run on user-specified allocated hardware resources which may include compute nodes equipped with graphical processing units (GPUs).
 
-Please read the [JupyterLab documentation](/userinfo/hpc/software/jupyterlab) for detailed instructions on how to start JupyerLab sessions and specify hardware resource requests.
+Please read the [JupyterLab documentation](/userinfo/hpc/software/jupyterlab) for detailed instructions on how to start JupyterLab sessions and specify hardware resource requests.
 
-After starting a JupyterLab session, you're taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting a JupyterLab session, you're taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## RStudio Server
 RStudio provides an environment specifically designed for interactive R script development and debugging.
 
 Please read the [RStudio Server documentation](/userinfo/hpc/software/rstudio) for detailed instructions on how to start RStudio sessions and specify hardware resource requests.
 
-After starting an RStudio session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting an RStudio session, you are automatically taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Matlab
 The Matlab interface provides an environment for interactive Matlab script development and debugging.
 
 Please read the [Matlab documentation](/userinfo/hpc/software/matlab) for detailed instructions on how to start Matlab sessions and specify hardware resource requests.
 
-After starting an interactive Matlab session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting an interactive Matlab session, you are automatically taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Blender
 Through this interface users can run interactive Blender sessions on a dedicated GPU node.
 
 Please read the [Blender documentation](/userinfo/hpc/software/blender) for detailed instructions on how to start Blender sessions and specify hardware resource requests.
 
-After starting an interactive Blender session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting an interactive Blender session, you are automatically taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## ParaView
 Through this interface users can run interactive ParaView sessions on a dedicated GPU node.
 
 Please read the [ParaView documentation](/userinfo/hpc/software/paraview) for detailed instructions on how to start ParaView sessions and specify hardware resource requests.
 
-After starting an interactive ParaView session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting an interactive ParaView session, you are automatically taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Command Line Interface (Shell)
 To open a conventional command line terminal window, click on the `Clusters` drop-down menu and select `Rivanna Shell Access`. A new tab opens that provides a Bash command line environment.  This is similar to logging in through ssh but with the limitation that it cannot start graphical (X11) applications.  You must use [FastX](/userinfo/hpc/logintools/fastx) for X11 applications such as the Matlab desktop.

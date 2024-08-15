@@ -39,7 +39,7 @@ iterate on their application and build+test their containers, deployments themse
 
 This model has some distinct advantages for both research users and engineers:
 
-- Deployments should be defined in code. Hand-built deployments are as brittle and unreproducable as hand-made Docker containers. This helps maintain the state of applications as well as for disaster recovery.
+- Deployments should be defined in code. Hand-built deployments are as brittle and unreproducible as hand-made Docker containers. This helps maintain the state of applications as well as for disaster recovery.
 - We do not grant users command-line access to the K8S API. <code>kubectl</code> and <code>helm</code> require the overhead of user authentication, roles, permissions, and network connectivity to the control plane that are unnecessary.
 - Permissions in the GitOps model are granted via the deployment's Git repository, not at the cluster level.
 
@@ -62,12 +62,12 @@ that these two activities remain entirely separate.
 This lifecycle is known to engineers and developers as CI/CD, or Continuous Integration / Continuous Delivery, as it describes how modern applications
 are built, packaged, delivered, and deployed - each of which may take more than one form. 
 
-- **Continous Integration** is the process of developers 
+- **Continuous Integration** is the process of developers 
 continually iterating on the features, logic, and inner-workings of their application stack. This may be as small as bug fixes and as large as a 
 complete redesign. The final product of the CI stage is a deliverable that can be run in test, user acceptance, or production modes. CI tools help automate the packaging
 and publication of that deliverable. In the case of microservices this is most often a container image that is ready to use. 
 
-- **Continous Delivery** is
+- **Continuous Delivery** is
 the process of taking that deliverable and running it in an environment such as a public cloud, a server, etc. However, the CD process is normally
 more elegant than stopping the existing version of an application and replacing it. CD tools attempt to gently roll new versions into operation
 without any service disruption. And, using normal performance health checks, if the new version does not gain a healthy state, the CD orchestrator will 

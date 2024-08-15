@@ -23,7 +23,7 @@ it is open source and available for free.
 
 ## Launching Rodeo
 
-You can launch Rodeo from the Start menu. It is a self contained IDE that would not require any knowledge of the command line.
+You can launch Rodeo from the Start menu. It is a self-contained IDE that would not require any knowledge of the command line.
 Rodeo can be used in the same manner as any other Python IDE such as iPython Notebook or Jupyter Notebook. 
 
 ## Basic Rodeo Usage

@@ -68,7 +68,7 @@ aliases = [ "/storage" ]
 
 <sup>4</sup>Replication is a data management process that stores copies of data fragments over a distributed cluster or database. By having replicated data across each node or server on a given database, data can be accessed more reliably than data that only resides on a single server. This saving method is useful for disaster scenarios where if data is stored on multiple disks, and one disk fails, the data is still accessible.
 
-<sup>5</sup>Backup files are copies of files that are stored on a separate disk storage than that of the original copies. Files may be backed up on a separate disk storage or within cloud storage. Backed up files are not synced with their original, so any edits to the original are not reflected on the backup. This saving method is useful for disaster scenarios where if the original disk storage is unsavable, the backups may still be accessible.
+<sup>5</sup>Backup files are copies of files that are stored on a separate disk storage than that of the original copies. Files may be backed up on a separate disk storage or within cloud storage. Backed up files are not synced with their original, so any edits to the original are not reflected on the backup. This saving method is useful for disaster scenarios where if the original disk storage is unsalvageable, the backups may still be accessible.
 
 - - -
 

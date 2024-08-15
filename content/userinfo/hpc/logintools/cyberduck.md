@@ -27,7 +27,7 @@ draft = false
 1. Launch Cyberduck. After launching Cyberduck, the user interface will open. To initiate a connection to UVA HPC, click the Open Connection button.
 <img src="/images/rivanna/cyberduck-login-page.png" alt="login" height="550" width="700">
 
-2. Enter Your Credentials. From the drop-down menu, select SFTP (SSH File Transfer Protocol. Then enter the appropriate information in the following fields:
+2. Enter Your Credentials. From the drop-down menu, select SFTP (SSH File Transfer Protocol). Then enter the appropriate information in the following fields:
 
 ```
     Host: login.hpc.virginia.edu

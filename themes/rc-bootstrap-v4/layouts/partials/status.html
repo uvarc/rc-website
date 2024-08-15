@@ -62,8 +62,12 @@ function refreshStatusTable(){
   $.getJSON('https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/grid', function(data) {
     var statusData = '';
     $.each(data, function(key, value) {
+      var title = value.title;
+      if (title === 'Rivanna') {
+        title = 'Afton/'+title;
+      }
       statusData += '<tr>';
-      statusData += '<td style="vertical-align:middle;" valign="middle"><a href="'+value.url+'" style="text-decoration:none;color:black;">'+value.title+'</a></td>';
+      statusData += '<td style="vertical-align:middle;" valign="middle"><a href="'+value.url+'" style="text-decoration:none;color:black;">'+title+'</a></td>';
       //if (value.system == "standard") {
       //    statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src=/images/status/red.png /></td>';
       //} else {

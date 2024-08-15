@@ -44,6 +44,6 @@ module spider {{% module-firstversion %}}
 
 The NAMD module was built on the HPC system with MPI support. Below is a Slurm script template.
 
-{{< pull-code file="/static/scripts/namd.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/namd.slurm" lang="no-highlight" >}}
 
 You may want to benchmark it to see how well it scales for the type of job that you are running. Please refer to [our tutorial](https://learning.rc.virginia.edu/tutorials/benchmark-parallel-programs/) on this topic. 

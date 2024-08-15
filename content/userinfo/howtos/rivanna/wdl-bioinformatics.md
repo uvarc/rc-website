@@ -55,7 +55,7 @@ The tasks are joined together using linear chaining, with output from bwa step u
 
 - - -
 
-# Setup your Working Environment
+# Set up your Working Environment
 
 1. **[Login to UVA HPC](/userinfo/hpc/login)** and create a root working directory in your `/scratch` folder:
 
@@ -65,7 +65,7 @@ mkdir wdl_tutorial
 cd wdl_tutorial
 ```
 
-2. **Get the Sample FASTQ files.** Copy the sample paired-end fastq files to this folder. For this tutorila, we will use reads for NA12878, downloaded from [here](http://www.internationalgenome.org/data-portal/sample/NA12878). You can download the dataset, or use DNA-seq data for any sample of your choice.
+2. **Get the Sample FASTQ files.** Copy the sample paired-end fastq files to this folder. For this tutorial, we will use reads for NA12878, downloaded from [here](http://www.internationalgenome.org/data-portal/sample/NA12878). You can download the dataset, or use DNA-seq data for any sample of your choice.
 
 3. **Get the reference genome files.** We will use the hg38 reference fasta and BWA indexes from the genomes repo on the HPC system at `/project/genomes/Homo_sapiens/UCSC/hg38/Sequence/BWAIndex/`. All UVA HPC users have read access to these reference genomes, no need to download/copy them to the working directory!
 

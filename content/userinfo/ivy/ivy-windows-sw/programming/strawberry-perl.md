@@ -18,8 +18,7 @@ draft = false
 Our VMs have Strawberry Perl 5.24 available as part of the Windows 
 VM, as of the last writing. Licensed as open source under the GPL, it is most often used 
 to develop mission critical software, and has excellent integration
-with markup languages such as HTML, XML, amongst others. Since it is both Object
-Oriented as well as procedural, it could be used within a multitude
+with markup languages such as HTML, XML, amongst others. Since it is both Object-Oriented and procedural, it could be used within a multitude
 of programming projects. It includes built in database integration via
 its DBI module. Other than DBI, it has thousands of modules, making it
 one of the most extensible languages. Due to its interpreted nature, 
@@ -53,7 +52,7 @@ window:
 This would start the installation of the module. Ivy is able to download modules from CPAN using this method. 
 
 &#42; *You could manually install a module from its compressed file, once you have transferred the file 
-into Ivy. However, using the process above downloads the modules's dependencies as well.*  
+into Ivy. However, using the process above downloads the module's dependencies as well.*  
 
 ## Verifying if a module is installed
 

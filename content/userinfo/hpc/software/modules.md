@@ -54,7 +54,7 @@ If you do not specify a version, the system default is loaded.  For example, to 
 module load anaconda
 {{< /code-snippet >}}
 
-If you do not wish to use the default version chosen by the modules environment, you must specify the version explicitly. For example, to select a different version of anaconda:
+If you do not wish to use the default version chosen by the module's environment, you must specify the version explicitly. For example, to select a different version of anaconda:
 
 {{< code-snippet >}}
 module load anaconda/2019.10-py2.7
@@ -94,7 +94,7 @@ This will unload the `gcc/11.4.0` environment entirely, and load the `intel/2023
 module purge
 ```
 
-**Finding prequisites**
+**Finding prerequisites**
 
 Use "module spider" to find all possible modules.  Once you determine the name of the software you want to use, spider will also show you all available versions.
 
@@ -168,7 +168,7 @@ Whenever several modules are loaded at the same time, there is the potential for
 
 **Know what you are loading**
 
-When loading modules, it is best to specify what version you are using instead of using the default. If you commit to using the default option each time, you may miss when we our default changes and load modules that are no longer compatible with your workflow. Use `module spider` to see what versions of each module we offer.
+When loading modules, it is best to specify what version you are using instead of using the default. If you commit to using the default option each time, you may miss when our default changes and load modules that are no longer compatible with your workflow. Use `module spider` to see what versions of each module we offer.
 
 **Advanced Usage**
 

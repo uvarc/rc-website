@@ -17,7 +17,7 @@ ITS at UVA is a phenomenal place to lead, grow, and deliver impact. It's an orga
 
 This is an entry-level position. As a member of the RC User Services team, you will further our organization’s mission by teaching research computing best practices, directly working with university faculty and researchers, and engage with them to produce new computing solutions within their fields of research.
 
-As an ideal candidate, you have an outgoing personality with a passion for providing high-quality services, enjoy supporting and educating academic researchers, have some experience with academic computing, and are able to apply those skills to UVA’s research computing environment. We seek an energetic self-starter and quick learner who enjoys technical problem solving and working on multiple projects simultaneously, has strong communication skills, and is a team player.
+As an ideal candidate, you have an outgoing personality with a passion for providing high-quality services, enjoy supporting and educating academic researchers, have some experience with academic computing, and are able to apply those skills to UVA’s research computing environment. We seek an energetic self-starter and quick learner who enjoys technical problem-solving and working on multiple projects simultaneously, has strong communication skills, and is a team player.
 
 Funding is available for a limited amount of travel for professional development.
 

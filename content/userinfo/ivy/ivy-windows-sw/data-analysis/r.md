@@ -18,7 +18,7 @@ R is an open source programming language, used by Data Miners, Scientists, Data 
 and Statisticians. It is available under the GNU GPL V2 license from the [Comprehensive R 
 Archive Network](https://www.r-project.org/)
 
-R can be used for many statistical, modeling, and graphical solutions. It is very Object Oriented in nature and is 
+R can be used for many statistical, modeling, and graphical solutions. It is very Object-Oriented in nature and is 
 easily extensible. 
 
 ## Running Rstudio from the desktop

@@ -103,7 +103,7 @@ Opswat will be installed during the onboarding process for ACCORD.
           <li>Open <b>Windows Update</b> by clicking the <b>Start</b> button in the lower left corner. In the search box, type "Update", and then, in the list of results, click either <i>Windows Update</i> or <i>Check for updates</i>.</li>
           <li>Click the <i>Check for updates</i> button and then wait while Windows looks for the latest updates for your computer.</li>
           <li>If you see a message telling you that important updates are available, or telling you to review important updates, click the message to view and select the important updates to install.</li>
-          <li>In the list, click the important updates for more information. Select the check boxes for any updates that you want to install, and then click "OK".</li>
+          <li>In the list, click the important updates for more information. Select the checkboxes for any updates that you want to install, and then click "OK".</li>
           <li>Click <i>Install</i> updates.</li>
         </ol>
         <br>

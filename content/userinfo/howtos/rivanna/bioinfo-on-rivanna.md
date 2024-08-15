@@ -238,7 +238,7 @@ You will need to include the appropriate module load commands into your Slurm sc
 
 Most bioinformatics software packages are designed to run on a single compute node with varying support for multi-threading and utilization of multiple cpu cores.  Many can run on only one core.  In that case, please request only a single task.
 
-Some software is multi-threaded.  Usually it communicates the number of threads requested through a command-line option.  In this case the Slurm job scripts should contain the following two SBATCH directives:
+Some software is multithreaded.  Usually it communicates the number of threads requested through a command-line option.  In this case the Slurm job scripts should contain the following two SBATCH directives:
 ```
 #SBATCH -N 1                    # request single node
 #SBATCH --cpus-per-task=<X>     # request multiple cpu cores
