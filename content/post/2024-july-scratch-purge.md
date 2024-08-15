@@ -91,7 +91,10 @@ A file’s last access corresponds to the date and time that file was last opene
 
 <code> check-scratch-for-purge > outfile </code>
 
-where <code>outfile</code> is the path of the file to which you wish to save the results. 
+where <code>outfile</code> is the path of the file to which you wish to save the results.
+
+Alternatively, you can access the **Check Scratch For Purge** tool available in the *Utilities* dropdown on Open OnDemand. From there, you can view a list of files being purged and save the list to `/home`, `/scratch`, or download it locally.
+
 {{% /accordion-item %}}
 
 {{% accordion-item title="5. What should I do with files that I still need? " id="faq-5" %}}
