@@ -12,6 +12,7 @@ images = [""]
 
 <p class=lead>UVA Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by experts and are freely available to UVa faculty, staff and students.</p>
 
+
 # New to High-Performance Computing?  
 
 We offer orientation sessions to introduce you to the Afton & Rivanna HPC systems on Wednesdays (appointment required).
