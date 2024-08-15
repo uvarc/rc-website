@@ -69,7 +69,7 @@ Time on Rivanna and Afton can also be purchased using an FDM. Purchasers are giv
 - - -
 
 ## Instructional Allocations
-Instructional allocations provide limited access to Rivanna and Afton and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a Grouper account name using the class rubric, e.g. cs5014. Instructional allocations come with 1TB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
+Instructional allocations provide limited access to Rivanna and Afton and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a Grouper account name using the class rubric, e.g. cs5014. Service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
 
 **Available to:** Faculty who intend to use HPC resources in their class. 
 

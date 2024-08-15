@@ -48,7 +48,7 @@ Users may build their own versions of {{% software-name %}} if they wish to use 
 
 To run {{% software-name %}} on the HPC system, a script similar to the following can be used. {{% software-name %}} has many options so only a basic example is shown.
 
-{{% pull-code file="/static/scripts/abinit.slurm" lang="no-hightlight" %}}
+{{% pull-code file="/static/scripts/abinit.slurm" lang="no-highlight" %}}
 
 For this example, the text file `files` has the following content:
 

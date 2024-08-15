@@ -49,12 +49,12 @@ One work-around is to force Julia to use your local directory the first time tha
 export JULIA_DEPOT_PATH="~/.julia"
 ```
 Then when you add a package from within Julia, it will be added to the `.julia` folder in your home directory, e.g.
-After that first time, it should aways default to /home/$USER/.julia .
+After that first time, it should always default to /home/$USER/.julia .
 
-The following link is a useful reference for loadin Julia pacakges.
+The following link is a useful reference for loading Julia packages.
 [Loading Packages](https://aaowens.github.io/julia/2020/01/13/A-Newcomers-Guide-to-the-Julia-Package-Manager.html)
 
-The follwoing code snippet shows the steps used on my UVA HPC account to install and verify the SharedArrays package.
+The following code snippet shows the steps used on my UVA HPC account to install and verify the SharedArrays package.
 ```
 udc-ba34-36-gahlmann$module load julia
 udc-ba34-36-gahlmann$julia
@@ -116,7 +116,7 @@ You can work with Julia on the UVA HPC frontend nodes; we recommend [FastX](http
 # Interactive Sessions through the Open OnDemand Web Portal
 
 ## Starting an Interactive Session
-To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc.. If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/#job-queues) to learn more about the partitions.
+To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc. If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/#job-queues) to learn more about the partitions.
 
 1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
 2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
@@ -142,7 +142,7 @@ The UVA HPC system uses the Slurm resource manager to schedule and run jobs on t
 
 Once your program is debugged, we recommend running in batch mode when possible. This runs the job in the background on a compute node. Write a Slurm script similar to the following:
 
-{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-highlight" >}}
 
 The simple example code `hello.jl` is shown below.
 ```
@@ -152,7 +152,7 @@ println(msg)
 ## Submitting a batch job using multiple cores on a compute node
 The `Distributed` package can be used to run Julia code across multiple cores of a compute node. The Slurm script in this case would look like the following:
 
-{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-highlight" >}}
 
 The Julia code in this case is,
 ```
@@ -200,7 +200,7 @@ job script using the `--array` directive.
 The following slurm script shows how to run 5 single core Julia jobs using
 Slurm job arrays.
 
-{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/julia_serial.slurm" lang="no-highlight" >}}
 
 The `jobArray.jl` code can use the `SLURM_ARRAY_TASK_ID` shell variable assigned by
 Slurm for indexing input file.
@@ -218,7 +218,7 @@ Job array task id: 4 on host udc-ba25-33c0
 
 To run Julia parallel jobs that require more cores than are available on one compute node (e.g. > 40), please use the system MPI libraries. You cannot use the aforementioned Distributed package since it requires SSH permission into compute nodes.
 
-{{< pull-code file="/static/scripts/julia_mpi.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/julia_mpi.slurm" lang="no-highlight" >}}
 
 This involves importing the Julia MPI module:
 
@@ -253,7 +253,7 @@ Hello! I am 0 of 8 on udc-ba34-10c8
 
 The following slurm script is for submitting a Julia job that uses 1 GPU. For each GPU requested, the script requests one cpu (ntasks-per-node). The article [An Introduction to GPU Programming in Julia](https://nextjournal.com/sdanisch/julia-gpu-programming) provides more details to get started.
 
-{{< pull-code file="/static/scripts/julia_gpu.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/julia_gpu.slurm" lang="no-highlight" >}}
 
 The Julia code is
 ```

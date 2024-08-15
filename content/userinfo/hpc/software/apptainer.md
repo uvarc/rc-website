@@ -138,7 +138,7 @@ module load tensorflow/2.10.0.sif
 apptainer run --nv $CONTAINERDIR/tensorflow-2.10.0.sif myscript.py
 ```
 
-In the container build script, `python` was defined as the default command to be excuted and apptainer passes the argument(s) after the image name, i.e. `myscript.py`, to the Python interpreter. So the above apptainer command is equivalent to
+In the container build script, `python` was defined as the default command to be executed and apptainer passes the argument(s) after the image name, i.e. `myscript.py`, to the Python interpreter. So the above apptainer command is equivalent to
 
 ```
 apptainer exec --nv $CONTAINERDIR/tensorflow-2.10.0.sif python myscript.py

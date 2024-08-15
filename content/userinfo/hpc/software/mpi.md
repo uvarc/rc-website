@@ -51,7 +51,7 @@ However, for Intel 18.0, run:
 module load intel/18.0
 module load intelmpi/18.0
 ```
-It is also possible to combine these into one line, as long as the compiler is specified first (this can result in errors if you not using the default compiler, however)
+It is also possible to combine these into one line, as long as the compiler is specified first (this can result in errors if you are not using the default compiler, however)
 ```
 module load gcc openmpi
 ```
@@ -67,21 +67,21 @@ For a detailed description of building and running MPI codes on the HPC system, 
 
 This example is a Slurm job command file to run a parallel (MPI) job using the OpenMPI implementation:
 
-{{< pull-code file="/static/scripts/mpi_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/mpi_job.slurm" lang="no-highlight" >}}
 
 In this example, the Slurm job file is requesting two nodes with sixteen tasks per node for a total of 32 processes.  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node, but some codes cannot be distributed in that manner so we are showing a more general example here.
 
 Slurm can also place the job freely if the directives specify only the number of tasks. In this case do not specify a node count.  This is not generally recommended, however, as it can have a significant negative impact on performance.
 
-{{< pull-code file="/static/scripts/mpi_job_free_placement.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/mpi_job_free_placement.slurm" lang="no-highlight" >}}
 
 **Example: MPI over an odd number of tasks**
 
-{{< pull-code file="/static/scripts/mpi_job_odd_number.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/mpi_job_odd_number.slurm" lang="no-highlight" >}}
 
 ## MPI with OpenMP
 
 The following example runs a total of 32 MPI processes, 8 on each node, with each task using 5 cores for threading.  The total number of cores utilized is thus 160.
 
-{{< pull-code file="/static/scripts/hybrid_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/hybrid_job.slurm" lang="no-highlight" >}}
 

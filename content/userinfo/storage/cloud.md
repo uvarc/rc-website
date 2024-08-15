@@ -18,7 +18,7 @@ images = [""]
       <b>Amazon S3</b> and <b>Glacier</b> offer cloud-based, affordable, unlimited capacity for storage from anywhere. Advanced
       features include scalability, lifecycle management, encryption, and sharing. S3 is ideal for static files that
       need to be retrieved from any location (PDFs, images, video, etc.). Glacier is archival storage, perfect for
-      grant compliance that reqires data retention.
+      grant compliance that requires data retention.
     <br /><br />
       <strong>How RC can help:</strong>
         <ul>

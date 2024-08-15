@@ -68,7 +68,7 @@ The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both
     Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa" target="_blank">UVA ITS Software Gateway</a>.
     
 3. **Install Anti-malware software (Windows Defender recommended)**.
-    Anti-malware software must be installed on your machine. Windows Defender is behavioral-based antimalware software and meets UVA's HSVPN requirements. Windows Defender can downloaded from the <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=2bee0fd3dbc4a4d005fff49eae9619ee" target="_blank">UVA ITS Software Gateway</a>.
+    Anti-malware software must be installed on your machine. Windows Defender is behavioral-based antimalware software and meets UVA's HSVPN requirements. Windows Defender can be downloaded from the <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=2bee0fd3dbc4a4d005fff49eae9619ee" target="_blank">UVA ITS Software Gateway</a>.
     
 
 <!-- 
@@ -123,7 +123,7 @@ Once you have completed these three steps, you will be connected to the secure I
 
 # Virtual Machines
 
-A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign into a single VM.
+A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign in to a single VM.
 
 Virtual machines come in two platforms, *Rocky 8 Linux* and *Windows Server 2019*. Each platform is available in numerous instance types. Refer to the grid below for specifics.
 
@@ -136,7 +136,7 @@ reach outside resources on the Internet. Most inbound and outbound data transfer
 
 ## Connecting to your VM
 
-**Before connecting to your VM, you must run the the High Security VPN. Make sure that you have the VPN client installed on your laptop/desktop.**
+**Before connecting to your VM, you must run the High Security VPN. Make sure that you have the VPN client installed on your laptop/desktop.**
 
 Next, you will need to know two pieces of information:
 * The **type of VM** that you have, either Windows or Linux;
@@ -164,7 +164,7 @@ Follow the steps below for the **type of VM** that you have:
           <li> Start the High Security VPN
           <li> Run the Remote Desktop application (see comment above for installing this application on Macs)
           <li> Enter the IP address for your VM
-          <li> Sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the user name (i.e. <code>ESERVICES\mst3k</code>)</li>
+          <li> Sign in with your Eservices password and your computing ID prefixed by <em>ESERVICES</em> as the username (i.e. <code>ESERVICES\mst3k</code>)</li>
         </ul>
       </div>
     </div>
@@ -295,7 +295,7 @@ To request installation of optional software packages, please use the web reques
 
 ### Creating a Conda Environment
 
-Researchers often require Python packages that are not included in the base install of Anaconda. Users can install additional Python packages on their VMs using conda environments. Conda environments allows users to install packages in isolated environments to avoid version conflicts with other users on the VM.
+Researchers often require Python packages that are not included in the base installation of Anaconda. Users can install additional Python packages on their VMs using conda environments. Conda environments allows users to install packages in isolated environments to avoid version conflicts with other users on the VM.
 
 #### Windows
 
@@ -430,7 +430,7 @@ Before transferring files to Ivy, you will need Globus installed on the computer
 
 # HIPAA Compliance
 
-The Ivy platform is HIPAA compliant by design. From the <a href="https://research.virginia.edu/irb-hsr/protected-health-information-hipaa-regulations-and-research" target="_new">UVA Institutional Review Board for Health Sciences Research</a> (IRB-HSR):
+The Ivy platform is HIPAA-compliant by design. From the <a href="https://research.virginia.edu/irb-hsr/protected-health-information-hipaa-regulations-and-research" target="_new">UVA Institutional Review Board for Health Sciences Research</a> (IRB-HSR):
 
 <div class="bd-callout bd-callout-warning">
 <p>HIPAA affects only that research which uses, creates, or discloses PHI. Researchers have legitimate needs to use, access, and disclose PHI to carry out a wide range of health research studies.</p>

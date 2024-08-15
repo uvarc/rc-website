@@ -7,8 +7,8 @@ tags = [
 ]
 categories = ["howto"]
 draft = false
-title = "How To Guides for UVA HPC Users"
-description = "How Tos for UVA HPC"
+title = "How-To Guides for UVA HPC Users"
+description = "How-Tos for UVA HPC"
 author = "RC Staff"
 layout = "single"
 +++

@@ -42,4 +42,4 @@ module spider {{% module-firstversion %}}
 
 This module is built with CUDA support. A Slurm script template is provided below.
 
-{{< pull-code file="/static/scripts/gromacs_gpu.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/gromacs_gpu.slurm" lang="no-highlight" >}}

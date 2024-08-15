@@ -18,7 +18,7 @@ You can find the session files and logs for all Open on Demand apps at:
 ```
 ~/ondemand/data/sys/dashboard/batch_connect/sys
 ```
-Under this directory you will see subdirectories for the Open on Demand applications that you have used before. Under each sub directory you can find the files that are created when you launch a new session. 
+Under this directory you will see subdirectories for the Open on Demand applications that you have used before. Under each subdirectory you can find the files that are created when you launch a new session. 
 
 To quickly clear all session files for OnDemand from your /home directory run:
 

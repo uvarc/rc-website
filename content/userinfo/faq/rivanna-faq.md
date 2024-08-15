@@ -223,7 +223,7 @@ You submit jobs by writing a Slurm script and submitting it with the  sbatch com
 If you would like assistance in generating Slurm scripts, please check out our [Slurm Script Generator](/userinfo/hpc/slurm-script-generator). Simply input the parameters of your job to get a fully-working Slurm script.
 
 ## How do I submit an interactive job?
-If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/hpc/ood) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/hpc/ood/desktop) request.
+If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/hpc/ood) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactive [Desktop](/userinfo/hpc/ood/desktop) request.
 
 If you will be using the command line for your interactive job you may use the locally-written ijob command. The minimum required options are -A and -c  for allocation and number of cores. Run `ijob -h` for a list of all options.
 
@@ -304,7 +304,7 @@ If you use a Windows editor to create Slurm batch scripts, when you try to run t
 sbatch: error: Batch script contains DOS line breaks (\r\n)
 sbatch: error: instead of expected UNIX line breaks (\n).
 ```
-Windows and Linux use different conventions to mark the end of each line.  Many applications on the HPC system, such as compilers, Matlab, etc., understand Windows end-of-line markers, but the shell does not.  This is easy to fix by running the `dos2unix` commmand
+Windows and Linux use different conventions to mark the end of each line.  Many applications on the HPC system, such as compilers, Matlab, etc., understand Windows end-of-line markers, but the shell does not.  This is easy to fix by running the `dos2unix` command
 ```
 dos2unix myscript.slurm
 ```
@@ -389,7 +389,7 @@ If you wish to share data in leased space with a member of your group, be sure t
 
 ## How do I transfer data from UVA Box to my /scratch directory on Rivanna/Afton?
 
-Log into UVA HPC using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop, in the upper right hand corner of the browser window you should see 3 horizontal bars. Click on that and then select Preferences from the drop down window. In the new window scroll down until you see Downloads and select ‘Always ask you where to save files’.  Then when you go to Box to download, a new window will pop up and if you click on ‘Other locations’, you can navigate to your scratch directory.
+Log into UVA HPC using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop, in the upper right hand corner of the browser window you should see 3 horizontal bars. Click on that and then select Preferences from the drop-down window. In the new window scroll down until you see Downloads and select ‘Always ask you where to save files’.  Then when you go to Box to download, a new window will pop up and if you click on ‘Other locations’, you can navigate to your scratch directory.
 
 ## How do I transfer data from my /scratch directory on Rivanna/Afton to my UVA Box account?
 
@@ -433,7 +433,7 @@ curl -O https://example.com/file.zip
 
 #### axel
 
-axel not only downloads files over different protocols, but accelrates the process by using multiple connections to retrieve files from the destination. Axel is availale on Rivanna/Afton through `module load axel`.
+axel not only downloads files over different protocols, but accelerates the process by using multiple connections to retrieve files from the destination. Axel is available on Rivanna/Afton through `module load axel`.
 The syntax for using axel over 10 connections is as follows:
 ```bash
 axel -n 10 http://example.com/file.zip
@@ -441,7 +441,7 @@ axel -n 10 http://example.com/file.zip
 
 ## wget, curl or axel?
 
-For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommneded to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna/Afton:
+For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommended to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna/Afton:
 
 
 | tool | 100MB | 1GB |

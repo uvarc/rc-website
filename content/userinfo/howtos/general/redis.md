@@ -19,7 +19,7 @@ that can be set or retrieved. However, Redis goes beyond a simple key/value stor
 supporting different kinds of values. Some fundamental concepts:
 </p>
 <ul>
-  <li>Can be used as a databse, cache, or message broker
+  <li>Can be used as a database, cache, or message broker
   <li>Supports multiple data types and structures
   <li>Built-in replication
   <li>Keys can be up to 512MB in size
@@ -84,7 +84,7 @@ redis.uvarc.io:6379> set herman melville
 OK
 ```
 
-Set an expiring key/value (EX in seconds, PX in miliseconds)
+Set an expiring key/value (EX in seconds, PX in milliseconds)
 ```
 redis.uvarc.io:6379> set jane eyre EX 30
 OK

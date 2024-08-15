@@ -42,7 +42,7 @@ module spider {{% module-firstversion %}}
 Users may build their own versions of {{% software-name %}} if they wish to use a different compiler or software version. Instructions are available on the [{{% software-name %}} website]({{< module-homepage >}}).
 
 # Convert SAM to BAM with Samtools
-`samtools view` can convert human-readable `SAM` files to binary `BAM` files. Below is a simple command to convert `SAM` files to `BAM` files. Th `-S` option specifies that the input is in SAM format, while the `-b` option outputs to a BAM file:
+`samtools view` can convert human-readable `SAM` files to binary `BAM` files. Below is a simple command to convert `SAM` files to `BAM` files. The `-S` option specifies that the input is in SAM format, while the `-b` option outputs to a BAM file:
 ```
 samtools view -bS example.sam > example.bam
 ```
@@ -70,8 +70,8 @@ samtools flagstat example_sorted.bam
 # Slurm Script Example
 To run {{% software-name %}} on the HPC system, a script similar to the following can be used.
 
-{{< pull-code file="/static/scripts/samtools.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/samtools.slurm" lang="no-highlight" >}}
 
 To speed up your code, use multiple cpus per task. Here, we ask for 8 with the `--cpus-per-task` option, but only specify 7 in our `samtools` command to leave one for the manager process:
 
-{{< pull-code file="/static/scripts/samtools_threaded.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/samtools_threaded.slurm" lang="no-highlight" >}}

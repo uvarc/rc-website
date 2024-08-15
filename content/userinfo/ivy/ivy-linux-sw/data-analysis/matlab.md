@@ -50,7 +50,7 @@ and hit Enter/Return. the result shows up on the Command Window as ```Ans = 6```
 
 ### Variables
 
-To create a variable, type the name of a the variable, followed by the equals sign (assignment operator) and the value. Hit Enter/Return to store the value.
+To create a variable, type the name of the variable, followed by the equals sign (assignment operator) and the value. Hit Enter/Return to store the value.
 
 	x = 12
 

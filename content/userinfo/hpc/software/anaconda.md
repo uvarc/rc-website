@@ -46,7 +46,7 @@ Open the bash terminal, and type:
 1. `module load anaconda`
 1. `pip search package_name` (search for a package by name)
 1. `pip install --user package_name` (install a package)
-1. `pip update package_name --upgrade` (upgrade the package to latest stable version)
+1. `pip update package_name --upgrade` (upgrade the package to the latest stable version)
 1. `pip list` (list all installed packages)
 
 {{% callout %}}
@@ -122,11 +122,11 @@ As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install 
 # Example Slurm script
 ## Non-MPI
 
-{{< pull-code file="/static/scripts/anaconda_serial.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/anaconda_serial.slurm" lang="no-highlight" >}}
 
 ## MPI
 
-{{< pull-code file="/static/scripts/anaconda_mpi.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/anaconda_mpi.slurm" lang="no-highlight" >}}
 
 # More Information
 Please visit the official [Anaconda website](https://www.anaconda.com/download).
