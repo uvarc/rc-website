@@ -26,7 +26,7 @@ at the moment.
 ## Common Usage
 
 For this example we will use a common scenario from SAS Clinical Standards Toolkit, which is used for supporting clinical
-research activiites. The SAS Clinical Standards Toolkit initially focuses on standards defined by the Clinical Data 
+research activities. The SAS Clinical Standards Toolkit initially focuses on standards defined by the Clinical Data 
 Interchange Standards Consortium (CDISC). CDISC is a global, open, multidisciplinary, nonprofit organization that 
 has established standards to support the acquisition, exchange, submission, and archival of clinical research data and metadata. 
 

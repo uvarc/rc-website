@@ -39,7 +39,7 @@ To start a JupyterLab session, fill out the resource request webform.  To reques
 2. Under Optional GPU Type, choose a GPU type or leave it as "default" (first available).
 3. Click `Launch` to start the session.
 
-Review our [Jupyer Lab documentation](/userinfo/hpc/software/jupyterlab) for more details..
+Review our [Jupyter Lab documentation](/userinfo/hpc/software/jupyterlab) for more details..
 
 ## Editing and Running the Notebook
 
@@ -55,7 +55,7 @@ For example:
 module load apptainer tensorflow/2.10.0
 apptainer run --nv $CONTAINERDIR/tensorflow-2.10.0.sif tf_example.py
 ```
-In the container build script, `python` is defined as the default command to be excuted and Apptainer passes the argument(s) after the image name, i.e. `tf_example.py`, to the Python interpreter. So the above apptainer command is equivalent to
+In the container build script, `python` is defined as the default command to be executed and Apptainer passes the argument(s) after the image name, i.e. `tf_example.py`, to the Python interpreter. So the above apptainer command is equivalent to
 ```
 apptainer exec --nv $CONTAINERDIR/tensorflow-2.10.0.sif python tf_example.py
 ```
@@ -63,7 +63,7 @@ The TensorFlow container images were built to include CUDA and cuDNN libraries t
 
 **Example Slurm Script:**
 
-{{< pull-code file="/static/scripts/tensorflow.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/tensorflow.slurm" lang="no-highlight" >}}
 
 # TensorFlow Interactive Jobs (ijob)
 Start an ijob.  Note the addition of `-p gpu --gres=gpu` to request access to a GPU node and its GPU device.

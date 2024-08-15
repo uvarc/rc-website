@@ -16,7 +16,7 @@ draft = false
 
 # Stata Overview
 
-Stata is a graphical data analysis tool developed by StataCorp, and is short for *Statiscs and Data*. It 
+Stata is a graphical data analysis tool developed by StataCorp, and is short for *Statistics and Data*. It 
 is used in various disciplines, including biomedicine, economics, epidemiology, among others. It is capable
 of performing statistical analysis, simulations, regression, and data management. Besides the standard version
 Stata also ships with the *MP* version (multi=processing), and *SE* for large databases. 

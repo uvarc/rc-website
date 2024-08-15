@@ -58,7 +58,7 @@ module spider {{% module-firstversion %}}
 ## Creating a BWA Index for a Reference Genome
 Index files are created with the `bwa index` command. A reference genome sequence in [FASTA format](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=BlastHelp) needs to be provided, e.g. `/scratch/$USER/bwaanalysis/refgenome.fa`
 
-{{< pull-code file="/static/scripts/bwa.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/bwa.slurm" lang="no-highlight" >}}
 
 ## Alignment of Sequence Reads to a Reference Genome
 BWA provides three basic alignment algorithms to align sequence reads to a reference genome, BWA-backtrack, BWA-SW, and BWA-MEM.  Below we show an example for using the BWA-MEM algorithm (command `bwa mem`), which can process short Illumina reads (70bp) as well as longer reads up to 1 MB.  The alignment output is saved in SAM file format.  The use of SAMtools on the HPC system is documented [here](/userinfo/hpc/software/samtools).  

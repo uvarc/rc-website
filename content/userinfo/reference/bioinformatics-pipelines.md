@@ -13,7 +13,7 @@ type = "reference"
 +++
 
 
-The fast pace of innovation, data generation, and collaboration in genomics and bioinformatics has necessitated in new data processing frameworks. This guide is aimed at introducing bioinformatics researchers to some of the latest innovations in pipeline development on desktops, AWS, and HPC systems. The number of tools available to researchers and the pros and cons of each can be somewhat daunting. This post is a minimalistic introduction so as to serve as a quick reference to the state-of-the-art. 
+The fast pace of innovation, data generation, and collaboration in genomics and bioinformatics has necessitated in new data processing frameworks. This guide is aimed at introducing bioinformatics researchers to some of the latest innovations in pipeline development on desktops, AWS, and HPC systems. The number of tools available to researchers and the pros and cons of each can be somewhat daunting. This post is a minimalistic introduction that serves as a quick reference to the state-of-the-art. 
 
 There are three major categories of data processing innovations happening in the bioinformatics community. One is to string together known tools and best practices in packages that can be run with little programming from the researcher. The other is to come up with scripting languages that can be used to develop a fully custom pipeline. Scripting languages provide advantages that range from determining failure points in the pipeline to automating resource management. The third is in a way a hybrid of the two, where the pipelines can be customized to an extent, but also don't need significant programming from the researcher.
 
@@ -21,7 +21,7 @@ As an important aside, a number of pipeline packages are being built around the 
 
 # Prebuilt Pipelines
 
-Most of the Next-Gen anaylyses revolve around conducting analyses using the best practices codified over time. For RNA-Seq, ChIP-Seq, cancer variant calling, etc. bcbio-nextgen and Omics Pipe are two solutions that provide easy setup, automated analysis, and easy maintenance of a pipeline. The pipeline can be set to take advantage of cluster resources by running on the StarCluster. 
+Most of the Next-Gen analyses revolve around conducting analyses using the best practices codified over time. For RNA-Seq, ChIP-Seq, cancer variant calling, etc. bcbio-nextgen and Omics Pipe are two solutions that provide easy setup, automated analysis, and easy maintenance of a pipeline. The pipeline can be set to take advantage of cluster resources by running on the StarCluster. 
 
 # Scripting Languages
 

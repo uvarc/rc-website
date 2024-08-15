@@ -129,7 +129,7 @@ Find out what your data are telling you!
 
 ### Virtual Reality Environment (Touch Table II & HTC Vive)      
 <div class="bd-callout bd-callout-warning">
-  Touch Table II is a 65" ultra high-definition monitor with capacitative touch that is
+  Touch Table II is a 65" ultra high-definition monitor with capacitive touch that is
   driven by a computer with 64GB RAM and two NVidia GeForce 970 Graphics cards. It interacts
   with an HTC Vive headset which allows users to experience the wonders of virtual reality.
 </div>

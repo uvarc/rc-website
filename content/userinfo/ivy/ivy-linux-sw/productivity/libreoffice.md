@@ -36,7 +36,7 @@ LibreOffice Impress is the presentation maker component of LibreOffice. It can s
 
 ## LibreOffice Draw
 
-LibreOffice Draw is the vector graphics component of LibreOffice. It can save files in various grpahical formats such as SVG and others. 
+LibreOffice Draw is the vector graphics component of LibreOffice. It can save files in various graphical formats such as SVG and others. 
 
 ## LibreOffice Base
 

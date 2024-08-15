@@ -58,7 +58,7 @@ install the Globus Connect Personal application.
   <img src="/images/globus-collection-name.png" width="700" height="550">
 6. Your collection is now set up and ready to use.
 
-On Windows and Mac OSX, the agent will run in the background on your laptop or workstation and will restart when the machine is booted. Click on the agent icon (in the tray for Windows users, in the toolbar for MacOS users) to change your preferences or to see the web console. On Linux you must start the agent manually upon rebooting.
+On Windows and Mac OSX, the agent will run in the background on your laptop or workstation and will restart when the machine is booted. Click on the agent icon (in the tray for Windows users, in the toolbar for macOS users) to change your preferences or to see the web console. On Linux you must start the agent manually upon rebooting.
 
 Your local computer is now able to serve as a Globus Collection.
 
@@ -91,7 +91,7 @@ You can transfer files to or from your personal collection to a managed collecti
 
 To transfer a file:
 
-1. From the File Manager page, select an collection by clicking on the "Collection" link near the top of the screen ("start here, select a collection").  Start typing the name of the collection to see the options containing the string as you type.
+1. From the File Manager page, select a collection by clicking on the "Collection" link near the top of the screen ("start here, select a collection").  Start typing the name of the collection to see the options containing the string as you type.
 <img src="/images/globus-collection-search.png" alt="collection-search" height="550" width="700">
 
 2. Once the collection is found, click on its link.  Wait while it finds your folders.  When complete, click on "Transfer or sync to..." on the right sidebar.  If you do not remember the exact name of the second collection, click the magnifying glass to search.  If your second collection is one you have registered with Globus, you may also click Your Collections.  This will open a second pane.  Either pane may be the source or destination.
@@ -151,7 +151,7 @@ You can share folders to either specific individuals, or to groups that you crea
 8. Now click "Add Permissions - Share With" in the upper right. You _must_ go through this even if you do not change permissions from the default.
     - **Path** - Leave this set to `/` since it refers to the path relative to the directory you are sharing from.
     - **Share With** - Decide whether you want to share with individual users or with a group. **Please do not** set this to "All Users" or "Public". If you share with an individual user, follow the instructions below. If you choose to share with a group, you will first need to create that and add users to it by using the GROUPS tab at the top of the page.
-    - **Identity/E-mail** - You can look up other Globus users by searching for a part of their name or institution. If you cannot find the individual, you should contact them to make sure they have signed into Globus at least once. Generally, users at other colleges and universities can be identified with the simple form of their email address, like `mst3k@virginia.edu` or `jdoe@mit.edu`, etc. Users who are unaffiliated with a university can still sign into Globus using Google (identified as `username@gmail.com`) or by creating a username and password in Globus (identified as `userid@globusid.org`)  
+    - **Identity/E-mail** - You can look up other Globus users by searching for a part of their name or institution. If you cannot find the individual, you should contact them to make sure they have signed in to Globus at least once. Generally, users at other colleges and universities can be identified with the simple form of their email address, like `mst3k@virginia.edu` or `jdoe@mit.edu`, etc. Users who are unaffiliated with a university can still sign in to Globus using Google (identified as `username@gmail.com`) or by creating a username and password in Globus (identified as `userid@globusid.org`)  
     --If you enter your collaborator's email address, it _must_ exactly match the one associated with the recipient's Globus ID.
     - **Permissions** - You can specify whether this user has access to read or write to your share.  Keep in mind that permission to write to the folder also grants the recipient the ability to delete files within in.
 9. Add a message if you wish, then click "Add Permission" whether you made any changes or not.

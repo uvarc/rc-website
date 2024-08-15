@@ -58,7 +58,7 @@ Would you like to learn the basics of high-throughput and parallel computing? Do
 
 * <b>June 12: Bioinformatics</b> - Next-generation sequencing technology has evolved dramatically to enable investigation of genome/transcriptome/epigenome of any organism. Sessions in this track will introduce researchers to basic skills needed to analyze sequencing data using Rivanna, UVA's HPC cluster.
 
-* <b>June 13: Accelerating and Parallelizing MATLAB Code</b> - Covers a variety of techniques for making your MATLAB code run faster. You will identify and remove computational bottle-necks using techniques like preallocation and vectorization. On top of that, you will take advantage of multiple cores on your computer by parallelizing for-loops with Parallel Computing Toolbox, and scale up across multiple computers using MATLAB Parallel Server. 
+* <b>June 13: Accelerating and Parallelizing MATLAB Code</b> - Covers a variety of techniques for making your MATLAB code run faster. You will identify and remove computational bottlenecks using techniques like preallocation and vectorization. On top of that, you will take advantage of multiple cores on your computer by parallelizing for-loops with Parallel Computing Toolbox, and scale up across multiple computers using MATLAB Parallel Server. 
 
 * <b>June 14: Parallel Programming with OpenMP and Accelerators</b> - OpenMP is a programming model based upon threads that run over multiple cores of one node. OpenMP can also be used to program general-purpose graphical processing units (GPGPUs). OpenACC, another compiler-based model for GPGPUs, will also be discussed.
 

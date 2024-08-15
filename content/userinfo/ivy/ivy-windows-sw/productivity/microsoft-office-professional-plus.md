@@ -19,7 +19,7 @@ The Ivy Windows VMs are installed with Microsoft Office 2016. Features such as O
 since Ivy is not connected to the public internet. Therefore in order to load documents in and out of the 
 VM, you would have to use the [Globus DTN](/userinfo/globus). 
 
-## Softwares available
+## Available Software
 
 The following software packages are available for use on the Ivy Windows VM:
 

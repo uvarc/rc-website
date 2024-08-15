@@ -38,7 +38,7 @@ When your Research Standard Storage share is created, you will receive an email 
 
 # Drive Mapping with Research Standard Storage
 
-_Research Standard_ storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [How To pages](/userinfo/howtos/storage/drive-mapping).
+_Research Standard_ storage can be drive mapped on a personal computer to enable drag-and-drop file manipulation and transfer between your PC and your value storage share. Detailed instructions for mapping network drives on Windows and Mac machines can be found on the UVa Research Computing [How-To pages](/userinfo/howtos/storage/drive-mapping).
 
 # File Manipulation and Navigation with Research Standard Storage
  

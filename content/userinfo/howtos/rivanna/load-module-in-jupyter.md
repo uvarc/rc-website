@@ -20,7 +20,7 @@ module load ... # your modules here
 jupyter-lab
 ```
 
-This should start up Firefox shortly. If you accidentally close the window, right click on the link in the terminal and choose "open link" to restart.
+This should start up Firefox shortly. If you accidentally close the window, right-click on the link in the terminal and choose "open link" to restart.
 
 An example of using LaTeX inside a JupyterLab session is shown in the screenshot below.
 

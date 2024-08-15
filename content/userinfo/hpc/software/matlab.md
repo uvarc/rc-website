@@ -80,9 +80,9 @@ The HPC system uses the Slurm resource manager to schedule and run jobs on the c
 Once your program is debugged, we recommend running in batch mode when possible.
 This runs the job in the background on a compute node. Write a Slurm script similar to the following:
 
-{{< pull-code file="/static/scripts/matlab_serial.slurm" lang="no-hightlight">}}
+{{< pull-code file="/static/scripts/matlab_serial.slurm" lang="no-highlight">}}
 
-The option `-nodisplay` suppresses the Desktop interface and any attempt to run a graphical display. Some MATLAB functions are capable of running on multiple cores. If your code uses linear algebraic operations, those can be multi-threaded across multiple cores, so you would need to request the additional cores in your slurm script.  Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
+The option `-nodisplay` suppresses the Desktop interface and any attempt to run a graphical display. Some MATLAB functions are capable of running on multiple cores. If your code uses linear algebraic operations, those can be multithreaded across multiple cores, so you would need to request the additional cores in your slurm script.  Unless you are sure you can use multiple cores effectively it's generally best to restrict your job to one core.
 
 The `;exit` is important to ensure that the job terminates when the computation is done. The example code `pcalc2.m` is shown below. Note that passing the `SLURM_JOB_ID` variable allows the function to save
 output to a job-specific filenames.
@@ -136,14 +136,14 @@ end
 
 ## Submitting a batch job using multiple cores on a compute node
 
-If you have a Matlab job that can be structured to run across multiple cores, you can greatly speed up the time to your results. The linear algebraic libraries in Matlab are multi-theaded and will make use of multiple cores on a compute node. The Parallel Computing Toolkit allows you to distribute for loops over multiple cores using parfor and other parallel constructs in MATLAB. For more information on using the Parallel Computing Toolbox in MATLAB see the.
+If you have a Matlab job that can be structured to run across multiple cores, you can greatly speed up the time to your results. The linear algebraic libraries in Matlab are multithreaded and will make use of multiple cores on a compute node. The Parallel Computing Toolkit allows you to distribute for loops over multiple cores using parfor and other parallel constructs in MATLAB. For more information on using the Parallel Computing Toolbox in MATLAB see the.
 **<a href="https://www.mathworks.com/solutions/parallel-computing.html" target="_blank">MathWorks documentation</a>** .
 
 The example function `pcalc2.m` above uses a  parallel for loop (parfor)
 in MATLAB. To run your parallel MATLAB code across multiple cores on one compute
 node, you can use a slurm script similar to the following:
 
-{{< pull-code file="/static/scripts/matlab_multicore.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/matlab_multicore.slurm" lang="no-highlight" >}}
 
 The Matlab script `setPool1.m` creates a local pool of matlab workers on the cores of the compute node.
 
@@ -171,7 +171,7 @@ job script using the `--array` directive.
 The following Slurm script uses job arrays to submit multiple parallel Matlab
 jobs, each running on a nodes of the standard queue.
 
-{{< pull-code file="/static/scripts/matlab_job_array.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/matlab_job_array.slurm" lang="no-highlight" >}}
 
 ## Parallel Matlab on Multiple Compute Nodes
 To run Matlab parallel jobs that require more cores than are available on one compute node (e.g. > 40), you can launch the Matlab desktop on one of the HPC login nodes. The following MATLAB setup script will create the cluster profile for your account on UVA HPC (for versions R2022b or older):
@@ -191,7 +191,7 @@ To run Matlab parallel jobs that require more cores than are available on one co
 
 configCluster % the configuration created is specific to the Matlab version
 ```
-**For version R2023b or newer**, use the Discover Clusters function in the drop down of the Parallel menu to ceate a cluster profile for Rivanna as described in the following link.
+**For version R2023b or newer**, use the Discover Clusters function in the drop-down of the Parallel menu to create a cluster profile for Rivanna as described in the following link.
 
 [Discover Clusters and Use Cluster Profiles](https://www.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html)
 
@@ -330,7 +330,7 @@ Once your job has been granted its allocated GPUs, you can use the gpuDevice fun
 
 The following slurm script is for submitting a Matlab job that uses 4 GPUs in a `parfor` loop. For each GPU requested, the script requests one cpu (ntasks-per-node).
 
-{{< pull-code file="/static/scripts/matlab_gpu.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/matlab_gpu.slurm" lang="no-highlight" >}}
 
 The function `gpuTest1` looks like the following. For further information, see [https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html](https://www.mathworks.com/help/parallel-computing/examples/run-matlab-functions-on-multiple-gpus.html)
 

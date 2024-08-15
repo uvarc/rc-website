@@ -45,6 +45,6 @@ Users may build their own versions of Yambo if they wish to use a different comp
 
 We built Yambo with GPU support. It can only run on V100 and A100 GPUs. Please use the following Slurm script as a template.
 
-{{< pull-code file="/static/scripts/yambo.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/yambo.slurm" lang="no-highlight" >}}
 
 We highly recommend running a [benchmark](https://learning.rc.virginia.edu/tutorials/benchmark-parallel-programs/) to decide how many CPU cores and/or GPU devices you should use.

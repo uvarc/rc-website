@@ -18,7 +18,7 @@ These services include:
 # Data Migration & Storage
 
 Assist in migration of data from legacy and non-managed data storage equipment to managed infrastructure storage on 
-UVA Secured and Non Secured networks. Ensure that labs, workers and managers have full access to their
+UVA Secured and Non-Secured networks. Ensure that labs, workers and managers have full access to their
 data from all locations in a secure and stable environment.
 	
 Data storage options include:
@@ -37,7 +37,7 @@ tested Open Source technologies and long-used tools.
 These tools provide for:
 
 * Synchronized and itemized data transfers for file syncs of live data
-* Multi-threaded rapid moves of data from Lab Storage to Managed Central Storage options
+* Multithreaded rapid moves of data from Lab Storage to Managed Central Storage options
 * Legacy platform data migration from older operating system platforms
 * Data storage comparison to ensure all data copies have been tallied between multiple points
 

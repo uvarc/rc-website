@@ -67,42 +67,63 @@ Please read our [FastX Web documentation](/userinfo/hpc/logintools/fastx) for a 
 **FastX Web sessions are not suitable for running compute intensive applications or code--[Open OnDemand Desktop](/userinfo/hpc/ood/desktop) is intended for such purpose.**
 
 ## JupyterLab
-JupyerLab provides an environment that has become popular for interactive code development and debugging. JupyterLab sessions run on user-specified allocated hardware resources which may include compute nodes equipped with graphical processing units (GPUs).
+JupyterLab provides an environment that has become popular for interactive code development and debugging. JupyterLab sessions run on user-specified allocated hardware resources which may include compute nodes equipped with graphical processing units (GPUs).
 
-Please read the [JupyterLab documentation](/userinfo/hpc/software/jupyterlab) for detailed instructions on how to start JupyerLab sessions and specify hardware resource requests.
+Please read the [JupyterLab documentation](/userinfo/hpc/software/jupyterlab) for detailed instructions on how to start JupyterLab sessions and specify hardware resource requests.
 
-After starting a JupyterLab session, you're taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting a JupyterLab session, you're taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## RStudio Server
 RStudio provides an environment specifically designed for interactive R script development and debugging.
 
 Please read the [RStudio Server documentation](/userinfo/hpc/software/rstudio) for detailed instructions on how to start RStudio sessions and specify hardware resource requests.
 
-After starting an RStudio session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting an RStudio session, you are automatically taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Matlab
 The Matlab interface provides an environment for interactive Matlab script development and debugging.
 
 Please read the [Matlab documentation](/userinfo/hpc/software/matlab) for detailed instructions on how to start Matlab sessions and specify hardware resource requests.
 
-After starting an interactive Matlab session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting an interactive Matlab session, you are automatically taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Blender
 Through this interface users can run interactive Blender sessions on a dedicated GPU node.
 
 Please read the [Blender documentation](/userinfo/hpc/software/blender) for detailed instructions on how to start Blender sessions and specify hardware resource requests.
 
-After starting an interactive Blender session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting an interactive Blender session, you are automatically taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## ParaView
 Through this interface users can run interactive ParaView sessions on a dedicated GPU node.
 
 Please read the [ParaView documentation](/userinfo/hpc/software/paraview) for detailed instructions on how to start ParaView sessions and specify hardware resource requests.
 
-After starting an interactive ParaView session, you are automatically taken to the My Interactive Sessions page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
+After starting an interactive ParaView session, you are automatically taken to the "My Interactive Sessions" page. To return to the Open OnDemand dashboard, click on the Home link in the top left corner of the site just below the Research Computing banner.
 
 ## Command Line Interface (Shell)
 To open a conventional command line terminal window, click on the `Clusters` drop-down menu and select `Rivanna Shell Access`. A new tab opens that provides a Bash command line environment.  This is similar to logging in through ssh but with the limitation that it cannot start graphical (X11) applications.  You must use [FastX](/userinfo/hpc/logintools/fastx) for X11 applications such as the Matlab desktop.
+
+# Utilities
+
+In addition to interactive apps, UVARC offers several static applications found in the 'Utilities' dropdown menu on Open OnDemand. These applications serve as wrappers for existing bash commands and scripts users can run in the shell.
+
+## Disk Usage
+
+The Disk Usage app provides information on the remaining storage in each project directory available to the user, as well as in their `/home` and `/scratch` directories. Acting as a wrapper for the `hdquota` command, it displays the size and available storage in each quota.
+
+## Queue Status
+
+The Queue Status app provides detailed information on jobs queued and running in each partition. It acts as a wrapper for the `qlist` command and displays data on the total cores, free cores, jobs running, jobs pending, time limits, and SU charges for each partition.
+
+
+## Check Scratch For Purge
+
+According to [UVA RC policy](/2024/07/reinstatement-of-file-purging-of-personal-/scratch-files-on-afton-and-rivanna), files in the `/scratch` directory that have not been accessed for over 90 days will be permanently deleted or 'purged'. The Check Scratch For Purge app allows you to see which files are at risk of being purged and download a list of their filenames. It displays the output of the command `check-scratch-for-purge`.
+
+## Slurm Script Generator
+
+The Slurm Script Generator helps users write   Slurm scripts for their jobs. It is available on Open OnDemand and the [RC Website](/userinfo/hpc/slurm-script-generator/). This tool assists users in creating a Slurm script tailored to the specifications of a given job. It also calculates the estimated amount of Standard Units (SUs) needed to run the job.
 
 # Job Composer
 The Job Composer is an easy way to submit general-purpose jobs.  You can copy pre-existing templates and modify them for your application, then submit a job at the click of a few buttons.  It works with the File Explorer to allow you to upload or move files you need for your job, and to download your results.

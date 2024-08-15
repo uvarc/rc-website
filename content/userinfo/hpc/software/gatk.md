@@ -126,7 +126,7 @@ The "sparkified" versions have the suffix "Spark" at the end of their names. Man
 
 **You DO NOT need a Spark cluster to run Spark-enabled GATK tools!** 
 
-While working on a compute node (with multiple CPU cores), the GATK engine can use Spark to create a virtual standalone cluster in place, for its multi-threaded processing. 
+While working on a compute node (with multiple CPU cores), the GATK engine can use Spark to create a virtual standalone cluster in place, for its multithreaded processing. 
 
 ## "local"-Spark Usage Example: 
 The `PrintReads` tool we explored above has a Spark version called: `PrintReadsSpark`. In order to set up a local Spark environment to run the same job using 8 threads, we can use the `--spark-master` argument. 
@@ -142,7 +142,7 @@ gatk PrintReadsSpark \
 
 Below is an example `gatk-printReadsSpark.slurm.sh` batch submission script for the above job. 
 
-{{< pull-code file="/static/scripts/gatk.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/gatk.slurm" lang="no-highlight" >}}
 
 **Note:** replace `<YOUR_ALLOCATION>` with your allocation group.
 

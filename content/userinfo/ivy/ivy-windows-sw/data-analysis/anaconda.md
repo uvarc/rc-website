@@ -36,7 +36,7 @@ From the Start menu, open a new Command Prompt (or Anaconda prompt) window, and 
 
 1. ```conda search package_name``` (search for a package by name)
 2. ```conda install package_name``` (install a package)
-3. ```conda update package_name --upgrade``` (upgrade the package to latest stable version)
+3. ```conda update package_name --upgrade``` (upgrade the package to the latest stable version)
 4. ```conda list``` (list all installed packages)
 
 B) Using ```pip```
@@ -45,7 +45,7 @@ From the Start menu, open a new Command Prompt (or Anaconda Prompt) window and t
 
 1. ```pip search package_name``` (search for a package by name)
 2. ```pip install package_name``` (install a package)
-3. ```pip update package_name --upgrade``` (upgrade the package to latest stable version)
+3. ```pip update package_name --upgrade``` (upgrade the package to the latest stable version)
 4. ```pip list``` (list all installed packages)
 
 ## Running Python2 and Python3 using Virtual Environments {#running-python2-and-python3-using-virtual-environments}

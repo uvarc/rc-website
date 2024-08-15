@@ -91,7 +91,7 @@ VTune is a powerful profiler for code built with Intel compilers.  A getting-sta
 
 ### Intel Trace Analyzer
 
-The Intel Trace Analyzer, which is focused on MPI codes, is included with our Intel compiler licenses.  Intel provides a tutorial [here](https://software.intel.com/en-us/get-started-with-itac-for-linux).  Some modifications are needed to run under Slurm.  Add a flag `-bootstrap=slurm` to the mpirun commmand, and use `-n $SLURM_NTASKS} rather than hard-coding a value.  
+The Intel Trace Analyzer, which is focused on MPI codes, is included with our Intel compiler licenses.  Intel provides a tutorial [here](https://software.intel.com/en-us/get-started-with-itac-for-linux).  Some modifications are needed to run under Slurm.  Add a flag `-bootstrap=slurm` to the mpirun command, and use `-n $SLURM_NTASKS} rather than hard-coding a value.  
 
 ## Open|SpeedShop
 

@@ -51,5 +51,5 @@ Attention is given to data lakes and NoSQL as appropriate.
 
 **Summer 2017**
 
-This 1.5 day course introduces MSDS students to the basics of cloud computing in AWS, and the independent management of code, data, and computing resources in a research environment. Particular concern is given to the concepts of programmable, reusable, scalable resources in the AWS cloud, through hands-on labs in EC2 and S3.
+This 1.5-day course introduces MSDS students to the basics of cloud computing in AWS, and the independent management of code, data, and computing resources in a research environment. Particular concern is given to the concepts of programmable, reusable, scalable resources in the AWS cloud, through hands-on labs in EC2 and S3.
 

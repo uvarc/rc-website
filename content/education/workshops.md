@@ -47,7 +47,7 @@ Course material and exercises are available through a companion site. Feel free 
 - Image Processing with Matlab
 - Introduction to Cloud Computing
 - Introduction to Docker Containers
-- Introduction to Git and Github
+- Introduction to Git and GitHub
 - Introduction to High Performance Computing (Rivanna)
 - Introduction to Highly-Sensitive Data Analysis (Ivy)
 - Introduction to Matlab

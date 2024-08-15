@@ -15,20 +15,20 @@ author = "RC Staff"
 # Training Deep learning models on GPU(s)
 
 Running large scale machine learning models typically requires the user leverage GPU's to speed up 
-compution. In this how-to we overview how to use gpu's , and in particular multiple gpu's, to run large
+computation. In this how-to we overview how to use gpu's , and in particular multiple gpu's, to run large
 tensorflow and pytorch machine learning models more efficiently.
 
 ## Tensorflow
 
 Tensorflow is capable of automatically detecting if there are GPU devices available, and will run on them by default.
-To check what devices, including GPU's, are available to tensorflow in a given computing enviorntment,
+To check what devices, including GPU's, are available to tensorflow in a given computing environment,
 you can run  
 
 ```
 device_list = tf.config.list_physical_devices(device_type=None)
 ```
 Then specify which device you want to run computations on, merely set the 
-enviornmental variable `CUDA_VISIBLE_DEVICES` to the index of the device 
+environment variable `CUDA_VISIBLE_DEVICES` to the index of the device 
 you want to run on in the devices list. ex: 
 ```
 device_list = [PhysicalDevice(name='/physical_device:CPU:0', device_type='CPU'),
@@ -60,7 +60,7 @@ def define_model():
     return model
 ```
 
-In order to distirbute this model onto mutliple GPU's it suffices to wrap our model defenition in the 
+In order to distribute this model onto multiple GPU's it suffices to wrap our model definition in the 
 mirrored_strategy.scope() class provided by Tf.distribute, as below:
 
 
@@ -84,13 +84,13 @@ To run on selected GPU's pass a list containing those device names into the Mirr
 
 Ex: `mirrored_strategy = tf.distribute.MirroredStrategy([["GPU:0", "GPU:1"]])`
  
-The 'strategy' in `MirroredStrategy` refers to a paritucular way of distributing computations between devices.
+The 'strategy' in `MirroredStrategy` refers to a particular way of distributing computations between devices.
 mirror_strategy will be the most common used in mutli_gpu training, it creates a version of each model variable
-on each device, and assigns some subset of the data to each. All mirror versions of each variable are used collectivly 
-to update the aggregate 'full model' version of the vaiable.
-There are other such strategies availabe throught the API, including `TPUStrategy` for training on TPU's
+on each device, and assigns some subset of the data to each. All mirror versions of each variable are used collectively 
+to update the aggregate 'full model' version of the variable.
+There are other such strategies available through the API, including `TPUStrategy` for training on TPU's
 `MultiWorkerMirroredStrategy`, which is like `MirroredStrategy` except every worker can be assigned to more than 1 GPU,
-and others. `tf.distribute` is typipically used with the `model.fit` training functionality from
+and others. `tf.distribute` is typically used with the `model.fit` training functionality from
 keras, but also provides supports custom training loops thought this 
 requires more extensive code modification. For instruction on using `tf.distribute` with custom 
  training loops, as well as other additional docs, see : [tf.distribute docs](https://www.tensorflow.org/guide/distributed_training)
@@ -153,8 +153,8 @@ def train_model(epochs = 5):
 
 ### Pytorch multi-gpu with Pytorch_Lightning
 
-The easiest way to parallelize training of pytorch models to multiple GPU's and even mutliple nodes is to 
-use the Pytorch lighting API. This is a wrapper on top of pytorch which automates allot of the boiler and 
+The easiest way to parallelize training of pytorch models to multiple GPU's and even multiple nodes is to 
+use the Pytorch lighting API. This is a wrapper on top of pytorch which automates a lot of the boiler and 
 facilitates parallelization. We explain the structure of Pytorch lighting code below.
  
 
@@ -187,9 +187,7 @@ class My_NN(pl.LightningModule):
 
 ```
 
-The basis for the code is to create an our model as a derived class of the 
-pl.LightningModule class we include the standard init and forward methods, as 
-as well as other methods delineated by pytorch lightning.
+The basis for the code is to create our model as a derived class of the pl.LightningModule class we include the standard init and forward methods, as well as other methods delineated by pytorch lightning.
 
 ```
     def training_step(self, batch, batch_idx):  
@@ -232,7 +230,7 @@ def train_model(epochs = 5):
 ```
 
 
-The training_step method delineats the content of the training loop, including last minute pre processing
+The training_step method delineates the content of the training loop, including last minute pre-processing
 the forward pass of a batch of data through the model, and calculation of loss. The backward pass is taken care of
 automatically.
 
@@ -249,8 +247,8 @@ automatically.
         # Takes place on all gpu's
 
 ```
-The setup and prepare_data methods are used in paralellization. prepare_data is called once, on one device. This shoud
-be used for any computationaly intensive data preprocessing or aquasition which should not be reapeated on all devices/gpu's.
+The setup and prepare_data methods are used in paralellization. prepare_data is called once, on one device. This should
+be used for any computationally intensive data preprocessing or acquisition which should not be repeated on all devices/gpu's.
 The setup method is called on every GPU. Its function is to set up that gpu's instance of the data. 
 
 ```

@@ -55,7 +55,7 @@ ImageJ-linux64 --mem=32G &
 
 To execute a Fiji script non-interactively on a compute node, you can use the following Slurm job script template.
 
-{{< pull-code file="/static/scripts/fiji.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/fiji.slurm" lang="no-highlight" >}}
 
 
 * Adjust the `--cpus-per-task`, `--mem` and `--time` options as needed. Note that not all built-in Fiji functions or Fiji scripts are designed to utilize multiple cpu cores.

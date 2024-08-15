@@ -82,7 +82,7 @@ Or, you can launch RStudio and install the packages as you would on your laptop.
 
 After you have developed your R program, you can submit it to the compute nodes by using a Slurm job script similar to the following: 
 
-{{< pull-code file="/static/scripts/r_job.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/r_job.slurm" lang="no-highlight" >}}
 
 This script should be saved in a file, called (for example) r_job.slurm.  To run your job, you would submit the script by typing:
 
@@ -93,7 +93,7 @@ sbatch job.slurm
 # Submitting Multi-Core Jobs to the Cluster
 R programs can be written to use multiple cores on a node.  You will need to ensure that both Slurm and your R code know how many cores they will be using.  In the Slurm script, we recommend using `--cpus-per-task` to specify the number of cores.  For example:
 
-{{< pull-code file="/static/scripts/r_multicore.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/r_multicore.slurm" lang="no-highlight" >}}
 
 For the R code, the number of cores can be passed in with a command-line argument, as shown in the above example with ${SLURM_CPUS_PER_TASK}.  The code will need to be designed to read in the command-line argument and establish the number of available cores.  For example:
 
@@ -117,7 +117,7 @@ Do not use the `detectCores()` function, which is often shown in tutorial exampl
 
 R programs can be distributed across multiple nodes with MPI (message passing interface) and the appropriate MPI packages.  To run a parallel R job that uses MPI, the Slurm script would be similar to the following:
 
-{{< pull-code file="/static/scripts/r_mpi.slurm" lang="no-hightlight" >}}
+{{< pull-code file="/static/scripts/r_mpi.slurm" lang="no-highlight" >}}
 
 The items to notice in this script are 
 

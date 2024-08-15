@@ -45,7 +45,7 @@ IDL is a programming language used widely in the areas of medicine, physics, and
 Users can use it on the VM using its command line based
 interface. 
 
-&#42; *Limited licenses available, for more informationon IDL and licensing, please click [here](/userinfo/ivy/ivy-linux-sw/data-analysis/idl)*
+&#42; *Limited licenses available, for more information IDL and licensing, please click [here](/userinfo/ivy/ivy-linux-sw/data-analysis/idl)*
 
 ## [Apache cTAKES](/userinfo/ivy/ivy-linux-sw/data-analysis/ctakes)
 

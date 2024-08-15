@@ -218,10 +218,12 @@ Please check the user manual for your application/container before running on a 
 # Job Management
 
 ## How do I submit jobs?
-You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our Slurm documentation page.
+You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our [Slurm documentation](/userinfo/hpc/slurm).
+
+If you would like assistance in generating Slurm scripts, please check out our [Slurm Script Generator](/userinfo/hpc/slurm-script-generator). Simply input the parameters of your job to get a fully-working Slurm script.
 
 ## How do I submit an interactive job?
-If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/hpc/ood) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactvie [Desktop](/userinfo/hpc/ood/desktop) request.
+If you wish to run a program that requires a graphical user interface or generates other graphics for display, such as a plot or chemical model, use one of the [Open OnDemand](/userinfo/hpc/ood) interactive apps.  Several are available, but if you one you wish to use isn't in the list, submit an interactive [Desktop](/userinfo/hpc/ood/desktop) request.
 
 If you will be using the command line for your interactive job you may use the locally-written ijob command. The minimum required options are -A and -c  for allocation and number of cores. Run `ijob -h` for a list of all options.
 
@@ -246,9 +248,9 @@ More information about queue policy is at the [HPC homepage](/userinfo/hpc/#job-
 The interactive queue is ideal for code development or other short interactive jobs that require active monitoring. Examples include Slurm ijobs and OOD interactive apps like JupyterLab, RStudio Server, MATLAB, etc. The interactive queue has a time limit of 12 hours per job, and users can request up to a maximum of 24 CPU cores or 2 GPUs and up to 216G of CPU memory across all jobs. For example, you can run 24 serial jobs or one 24-core job. To request a GPU on with OOD apps, you'll be asked if you want to use a GPU. If yes is selected you can choose one or two GPUs. In slurm, the user must specify the `--gres=gpu` flag for GPU access. If two GPUs are desired in Slurm, you can specify `--gres=gpu:2`.
 
 ## How do I check the status of my jobs?
-From a terminal, run the command `jobq`.  From Open OnDemand, use the Job Viewer and select "Your Jobs" as the filter.
+From a terminal, run the command `squeue -u computingID`. Replace computingID with your specific UVA computing ID.  From Open OnDemand, use the Job Viewer and select "Your Jobs" as the filter.
 
-If reporting a problem to us about a particular job, please let us know the JobID for the job that you are having a problem with. You can also run `jobq -l` to relate particular jobs to specific submission scripts.
+If reporting a problem to us about a particular job, please let us know the JobID for the job that you are having a problem with.
 
 ## Why is my job not starting?
 Several things can cause jobs to wait in the queue. Paid allocations have priority over standard allocations. If members of your group under the same PI using the same quality of service level (i.e. paid or standard) have consumed a large amount of compute time in the recent past, the “fair share” algorithm will give other users outside of your group higher priority access ahead of you. Finally, the queue you requested may simply be very busy. If your job is pending there will be another field with the reason; if it is “Resources” that means that the resource you requested isn’t available. If the reason is “Priority” it means that a job with higher priority than yours is running. Your job will rise in priority as it waits so it will start eventually. 
@@ -302,7 +304,7 @@ If you use a Windows editor to create Slurm batch scripts, when you try to run t
 sbatch: error: Batch script contains DOS line breaks (\r\n)
 sbatch: error: instead of expected UNIX line breaks (\n).
 ```
-Windows and Linux use different conventions to mark the end of each line.  Many applications on the HPC system, such as compilers, Matlab, etc., understand Windows end-of-line markers, but the shell does not.  This is easy to fix by running the `dos2unix` commmand
+Windows and Linux use different conventions to mark the end of each line.  Many applications on the HPC system, such as compilers, Matlab, etc., understand Windows end-of-line markers, but the shell does not.  This is easy to fix by running the `dos2unix` command
 ```
 dos2unix myscript.slurm
 ```
@@ -387,7 +389,7 @@ If you wish to share data in leased space with a member of your group, be sure t
 
 ## How do I transfer data from UVA Box to my /scratch directory on Rivanna/Afton?
 
-Log into UVA HPC using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop, in the upper right hand corner of the browser window you should see 3 horizontal bars. Click on that and then select Preferences from the drop down window. In the new window scroll down until you see Downloads and select ‘Always ask you where to save files’.  Then when you go to Box to download, a new window will pop up and if you click on ‘Other locations’, you can navigate to your scratch directory.
+Log into UVA HPC using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop, in the upper right hand corner of the browser window you should see 3 horizontal bars. Click on that and then select Preferences from the drop-down window. In the new window scroll down until you see Downloads and select ‘Always ask you where to save files’.  Then when you go to Box to download, a new window will pop up and if you click on ‘Other locations’, you can navigate to your scratch directory.
 
 ## How do I transfer data from my /scratch directory on Rivanna/Afton to my UVA Box account?
 
@@ -431,7 +433,7 @@ curl -O https://example.com/file.zip
 
 #### axel
 
-axel not only downloads files over different protocols, but accelrates the process by using multiple connections to retrieve files from the destination. Axel is availale on Rivanna/Afton through `module load axel`.
+axel not only downloads files over different protocols, but accelerates the process by using multiple connections to retrieve files from the destination. Axel is available on Rivanna/Afton through `module load axel`.
 The syntax for using axel over 10 connections is as follows:
 ```bash
 axel -n 10 http://example.com/file.zip
@@ -439,7 +441,7 @@ axel -n 10 http://example.com/file.zip
 
 ## wget, curl or axel?
 
-For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommneded to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna/Afton:
+For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommended to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna/Afton:
 
 
 | tool | 100MB | 1GB |
