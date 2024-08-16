@@ -17,7 +17,7 @@ Instructors can request _instructional allocations_ on Rivanna and Afton for cla
 
 ## Hardware and Partition
 
-Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards.  Instructional allocations come with 1TB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. The standard number of cores is 20 on one node.
+Instructional allocations may use `interactive` partition.  The standard allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards. RC offers several low-cost storage options to researchers, including 10TB of Research Standard storage for each eligible PI at no charge. Instructors are encouraged to utilize this 10TB of storage for both research and teaching activities. For more detailed descriptions of our storage options, visit https://www.rc.virginia.edu/userinfo/storage/. 
 
 ## Software & Storage Environment
 
@@ -48,13 +48,13 @@ Students, particularly undergraduates, frequently experience password difficulti
 
 ## Partition and Reservations
 
-The allocation will have access to the `instructional` partition.  Students can enter this with the `-p` or `--partition` options to Slurm.
+The allocation will have access to the `interactive` partition.  Students can enter this with the `-p` or `--partition` options to Slurm.
 ```
-#SBATCH -p instructional
+#SBATCH -p interactive
 ```
 or
 ```
-#SBATCH --partition=instructional
+#SBATCH --partition=interactive
 ```
 If students use the Open OnDemand interface, they will enter this into the appropriate textbox when starting their interactive job application.
 
