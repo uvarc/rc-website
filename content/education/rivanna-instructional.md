@@ -17,7 +17,7 @@ Instructors can request _instructional allocations_ on Rivanna and Afton for cla
 
 ## Hardware and Partition
 
-Instructional allocations may use `interactive` partition.  The standard allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards. RC offers several low-cost storage options to researchers, including 10TB of Research Standard storage for each eligible PI at no charge. Instructors are encouraged to utilize this 10TB of storage for both research and teaching activities. For more detailed descriptions of our storage options, visit https://www.rc.virginia.edu/userinfo/storage/. 
+Instructional allocations may use `interactive` partition.  The instructional allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards. RC offers several low-cost storage options to researchers, including 10TB of Research Standard storage for each eligible PI at no charge. Instructors are encouraged to utilize this 10TB of storage for both research and teaching activities. For more detailed descriptions of our storage options, visit https://www.rc.virginia.edu/userinfo/storage/. 
 
 ## Software & Storage Environment
 
