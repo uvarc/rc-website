@@ -5,22 +5,25 @@ description = ""
 date = "2024-08-19T00:00:00-05:00"
 title = "Research Computing Open House 2024"
 # url = "/maintenance"
-draft = true
+draft = false
 tags = ["afton", "rivanna", "hpc"]
 categories = ["feature"]
 +++
 
-Please join us at the Research Computing Open House on Tuesday, September 17, 2024, from [time range]p.m. in [location].  We are excited to host the UVA community to share updates on a new supercomputer and services that we are offering. 
+Please join us at the Research Computing Open House on Tuesday, September 17, 2024, from 2-5 p.m. in the Commonwealth Room at Newcomb Hall. We are excited to host the UVA community to share updates on a new supercomputer and services that we are offering. 
 
 ## Why Attend? 
 
 <ul>
     <li> Hear from and ask questions to research computing experts and staff </li>
-    <li> Receive the latest information on research computing at UVA, including Afton, UVA’s new supercomputer </li>
-    <li> High-Performance Computing (HPC) </li>
-    <li> Large dataset management and analytics services </li>
-    <li> Smartwatch, smartphone and other device integration services </li> 
-    <li> Secure compute & storage solutions </li>
+    <li> Receive the latest information on research computing at UVA, including </li>
+    <ul>
+        <li> Afton, UVA’s new supercomputer </li>
+        <li> High-Performance Computing (HPC) </li>
+        <li> Large dataset management and analytics services </li>
+        <li> Smartwatch, smartphone and other device integration services </li> 
+        <li> Secure compute & storage solutions </li>
+    </ul>
     <li> View project posters from student workers </li>
     <li> Enjoy light refreshments </li>
 </ul>
@@ -29,16 +32,17 @@ Please join us at the Research Computing Open House on Tuesday, September 17, 20
 
 You are welcome to drop in anytime during the event and stay as long as you would like.   
 
-If you are planning to attend, please RSVP for the Open House in advance. Those who RSVP and attend will be entered into a drawing for a [prize]! 
+If you are planning to attend, please RSVP for the Open House in advance. Those who RSVP and attend will be entered into a drawing for for one of three prizes totaling $150! 
 
-<“RSVP for the Open House“ button> 
+<a style="display:flex; justify-content:center" href="https://forms.office.com/r/sU21zpidFq"><button  class="btn btn-primary btn-sm">RSVP for the Open House</button></a>
+
 
 ### Time & Location: 
 
 <ul>
     <li> Tuesday, September 17 </li>
-    <li> [time range] p.m. </li>
-    <li> [location] </li>
+    <li> 2-5 p.m. </li>
+    <li> Commonwealth Room at Newcomb Hall </li>
 </ul>
 
 
@@ -70,18 +74,17 @@ If you are planning to attend, please RSVP for the Open House in advance. Those 
     <th>Activity</th>
   </tr>
   <tr>
-    <td class="no-wrap">10:00-11:15</td>
+    <td class="no-wrap">2:05-2:20</td>
     <td> <strong> Opening Remarks: </strong>
-        Presented by Josh Baller, Associate Vice President for Research Computing 
+        Presented by Joshua Baller, Associate Vice President for Research Computing 
     </td>
   </tr>
   <tr>
-    <td class="no-wrap">11:30-11:45</td>
+    <td class="no-wrap">2:20-5:00</td>
     <td> <strong> Networking and Information Tables: </strong>
          Explore information tables and student research posters. Research Computing staff will be available to answer questions. 
     </td>
   </tr>
- 
 </table>
 
 ## Have a Question?
