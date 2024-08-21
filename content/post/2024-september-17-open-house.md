@@ -36,6 +36,7 @@ If you are planning to attend, please RSVP for the Open House in advance. Those 
 
 <a style="display:flex; justify-content:center" href="https://forms.office.com/r/sU21zpidFq"><button  class="btn btn-primary btn-sm">RSVP for the Open House</button></a>
 
+
 ### Time & Location: 
 
 <ul>
@@ -84,7 +85,6 @@ If you are planning to attend, please RSVP for the Open House in advance. Those 
          Explore information tables and student research posters. Research Computing staff will be available to answer questions. 
     </td>
   </tr>
- 
 </table>
 
 ## Have a Question?
