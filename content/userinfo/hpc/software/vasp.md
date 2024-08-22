@@ -63,6 +63,13 @@ To run VASP, the user prepares a group of input files with predetermined names. 
 
 # Known issues
 
+## Slow `CHGCAR` file write
+We have received a few reports that a VASP job may occasionally appear to hang at the end during the "writing wavefunction" step. The slowness actually happens to `CHGCAR` instead of `WAVECAR` (the cause of which is unclear). You can disable the file write in `INCAR`:
+
+```
+LCHARG = .FALSE.
+```
+
 ## `vasp_gam` on AMD node
 When running `vasp_gam` on AMD nodes (i.e. all nodes in `parallel`, Afton nodes in `standard`), ScaLAPACK must be disabled or else your job may hang at the first electronic step. In `INCAR`:
 
