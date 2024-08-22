@@ -27,7 +27,7 @@ Research Computing's primary focus is supporting the direct research mission of 
 
 For most classes, we recommend the [Open OnDemand](/userinfo/hpc/ood) interface if it suits the expected usage.  This does not require knowledge of Unix and greatly reduces the training burden.  The Open OnDemand interface requires only Netbadge credentials and can be accessed without a VPN from off Grounds.
 
-If Open OnDemand is not adequate, the other recommended interface is [FastX Web](https://www.rc.virginia.edu/userinfo/rivanna/logintools/fastx/).  This is a remote desktop application and requires the students to be able to navigate a Unix desktop system.  Access from off Grounds via FastX requires a VPN connection.
+If Open OnDemand is not adequate, the other recommended interface is [FastX Web](/userinfo/hpc/logintools/fastx/).  This is a remote desktop application and requires the students to be able to navigate a Unix desktop system.  Access from off Grounds via FastX requires a VPN connection.
 
 FastX connects only to a *frontend*.  We significantly restrict the time, memory, and cores available to frontend jobs.  If students are running anything but very short jobs, the Open OnDemand applications should be utilized.  These access the compute nodes and are far less limited.  Open OnDemand provides a remote desktop on compute nodes as well as direct access to JupyterLab, the Matlab Desktop, and Rstudio Server.
 
