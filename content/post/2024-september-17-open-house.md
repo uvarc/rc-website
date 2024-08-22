@@ -15,16 +15,17 @@ Please join us at the Research Computing Open House on Tuesday, September 17, 20
 ## Why Attend? 
 
 <ul>
-    <li> Hear from and ask questions to research computing experts and staff </li>
+    <li> Talk with research computing experts and staff.  Have your questions answered. </li>
     <li> Receive the latest information on research computing at UVA, including </li>
     <ul>
-        <li> Afton, UVA’s new supercomputer </li>
-        <li> High-Performance Computing (HPC) </li>
-        <li> Large dataset management and analytics services </li>
-        <li> Smartwatch, smartphone and other device integration services </li> 
-        <li> Secure compute & storage solutions </li>
+        <li> Afton, UVA’s new supercomputer, and other high-performance computing resources </li>
+		<li> Secure compute & storage solutions </li>
+        <li> Research collaboration and grant support services </li>
+        <li> the <a href="https://www.rc.virginia.edu/service/dac/">Data Analytics Center</a>: dataset management and analytics including AI </li>
+        <li> the <a href="https://www.rc.virginia.edu/service/dtc/">Digital Technology Core</a>: use of wearables, smartwatches, smartphones or IoT devices in your research </li> 
+		<li> Upcoming <a href="https://www.rc.virginia.edu/education/workshops/">RC workshops</a> </li>
     </ul>
-    <li> View project posters from student workers </li>
+    <li> Learn about our student workers program </li>
     <li> Enjoy light refreshments </li>
 </ul>
 
@@ -82,14 +83,14 @@ If you are planning to attend, please RSVP for the Open House in advance. Those 
   <tr>
     <td class="no-wrap">2:20-5:00</td>
     <td> <strong> Networking and Information Tables: </strong>
-         Explore information tables and student research posters. Research Computing staff will be available to answer questions. 
+         Explore information tables and interactive demos. Research Computing staff will be available to answer questions. 
     </td>
   </tr>
 </table>
 
 ## Have a Question?
 
-Contact Research Computing at hpcsupport@virginia.edu. 
+Contact Research Computing at hpc-support@virginia.edu. 
 
 
 
