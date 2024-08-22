@@ -74,7 +74,7 @@ publishTextPromise.then(
     <h4 class="alert-heading">Allocations</h4>
     <p>Review and manage your HPC allocations on Rivanna.</p>
     <hr>
-    <a href="/userinfo/rivanna/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+    <a href="/userinfo/hpc/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
   </div>
 </div>
 </div>
