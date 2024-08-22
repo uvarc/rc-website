@@ -12,14 +12,14 @@ images = [""]
 
 <p class=lead>UVA Research Computing provides training opportunities covering a variety of data analysis, basic programming and computational topics. All of the classes listed below are taught by experts and are freely available to UVa faculty, staff and students.</p>
 
-### New to High-Performance Computing?  
+
+# New to High-Performance Computing?  
 
 We offer orientation sessions to introduce you to the Afton & Rivanna HPC systems on Wednesdays (appointment required).
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Wednesdays 3:00-4:00pm </b>
-<a><br><b>- No session on June 19 due to University holiday.</b></a>
 <a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to HPC" 
 session</button></a>
 <!-- Health Sciences Library, MILL Room -->
