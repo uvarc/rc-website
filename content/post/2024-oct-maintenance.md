@@ -26,7 +26,8 @@ All systems are expected to return to service by **Wednesday, Oct 16.**
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Removed version | Replacement |
 |---|---|---|
-|anaconda  | 2023.07-py3.11 | miniforge/24.3.0-py3.11 |
-|deeptools | 3.5.1          | 3.5.5 |
-|mamba     | 22.11.1-4      | miniforge/24.3.0-py3.11 |
+|anaconda   | 2023.07-py3.11 | miniforge/24.3.0-py3.11 |
+|code-server| 4.16.1         | 4.92.2 |
+|deeptools  | 3.5.1          | 3.5.5 |
+|mamba      | 22.11.1-4      | miniforge/24.3.0-py3.11 |
 {{< /table >}}
