@@ -52,7 +52,7 @@ It will take a few minutes for the system to gather the resources for your insta
 
 
 # Using RStudio
-When RStudio opens in your web browser, it will appear just like the RStudio that you have on your laptop or desktop.  You can use it just as you always have, including installing packages.  (If you have not used RStudio in the past, you may wish to review this [tutorial](https://dss.princeton.edu/training/RStudio101.pdf).)
+When RStudio opens in your web browser, it will appear just like the RStudio that you have on your laptop or desktop.  You can use it just as you always have, including installing packages.  (If you have not used RStudio in the past, you may wish to review this [tutorial](https://posit.cloud/learn/recipes).)
 
 # Closing the Interactive Session
 When you are done, quit the RStudio Server application and terminate the session. The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged until the specified time limit is reached.

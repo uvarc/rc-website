@@ -43,7 +43,7 @@ function searchFunction() {
   <tbody>
     {{ range $modulename, $entries := $gistJ }}
       {{ $modulelisted := false }}
-      {{ $modulesite := (printf "/userinfo/rivanna/software/%s" (lower $modulename)) }}
+      {{ $modulesite := (printf "/userinfo/hpc/software/%s" (lower $modulename)) }}
       {{ $scratch := newScratch}}
       {{ $hasArch := not $arch }}
       {{ range $k, $v := $entries}}
