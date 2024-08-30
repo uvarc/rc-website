@@ -35,7 +35,7 @@ FastX connects only to a *frontend*.  We significantly restrict the time, memory
 
 # How to Submit a Request
 
-Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a group name related to the course rubric and the instructor's name, e.g. `cs5014-mst3k`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester. 
+Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a generic group name related to the course rubric, e.g. `cs5014`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors will need to submit an instructional allocation renewal request at the start of each semester. 
 
 - - -
 
