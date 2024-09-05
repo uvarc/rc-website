@@ -30,4 +30,5 @@ All systems are expected to return to service by **Wednesday, Oct 16.**
 |code-server| 4.16.1         | 4.92.2 |
 |deeptools  | 3.5.1          | 3.5.5 |
 |mamba      | 22.11.1-4      | miniforge/24.3.0-py3.11 |
+|maestro    | 1.3.0          | 1.5.1 |
 {{< /table >}}
