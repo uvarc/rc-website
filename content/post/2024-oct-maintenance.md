@@ -29,6 +29,7 @@ All systems are expected to return to service by **Wednesday, Oct 16.**
 |anaconda   | 2023.07-py3.11 | miniforge/24.3.0-py3.11 |
 |anvio      | 6.2            | 8 |
 |code-server| 4.16.1         | 4.92.2 |
+|deeplabcut | 2.2.1.1-anipose| 3.0.0rc4 |
 |deeptools  | 3.5.1          | 3.5.5 |
 |maestro    | 1.3.0          | 1.5.1 |
 |mamba      | 22.11.1-4      | miniforge/24.3.0-py3.11 |
