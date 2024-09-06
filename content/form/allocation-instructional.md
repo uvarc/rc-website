@@ -78,7 +78,7 @@ private = true
   </div>
   <div class="col form-item form-group">
      <div class="alert alert-warning">
-        Instructional allocations come with 1TB of temporary project storage space. Class data and service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension.
+         PIs are eligible for 10TB of Research Standard storage at no charge. Instructors are encouraged to utilize this 10TB of storage for both research and teaching activities. 
      	<a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
      </div>
   </div>
