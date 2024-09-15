@@ -13,9 +13,16 @@ images = [
   ""
 ]
 subjects = [
-  "hpc",
   "computational chemistry",
   "computational biophysics",
+  "data analysis",
+  "drug discovery",
+  "amber", 
+  "namd",
+  "rosetta",
+  "dock",
+  "python",
+  "hpc",
   "rivanna",
   "va-whpc"
 ]
