@@ -83,14 +83,14 @@ private = true
   <hr size=1 />
   <div class="row">
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
-      <label class="control-label" for="mygroup-ownership">Grouper Ownership <span class="form-required" title="This field is required.">*</span></label>
+      <label class="control-label" for="mygroup-ownership">Grouper/MyGroups Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
-      <p class=tiny>Grouper group name under your Eservices user ID. You will have access to the <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> management and will be able to add/remove users for your project.</p>
+      <p class=tiny>Grouper or MyGroups group name under your Eservices user ID. You will have access to the <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> or <a href="https://mygroups.virginia.edu/groups/" target="_new" style="font-weight:bold;"> MyGroups</a> management and will be able to add/remove users for your project.</p>
     </div>
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-      <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the Grouper group associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
+      <p class=tiny>This is the name to be applied to your shared storage space. By default, the space will be named according to the Grouper/MyGroups group associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
     </div>
     {{% group_creation_tip %}}          
   </div>

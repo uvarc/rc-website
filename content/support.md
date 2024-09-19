@@ -135,7 +135,7 @@ Examples of the type of support we can provide are:
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
-<b>Tuesdays 3:00-5:00pm</b>
+<b>Tuesdays 3:00-5:00pm (There will be no office hours on Tuesday, September 17th due to the <a href="https://rc.virginia.edu/2024/08/research-computing-open-house-2024/" target="_new" style="font-weight:bold;">RC Open House</a>. Please attend the Open House to discuss any matters with RC staff.)</b>
 <a style="float:right;" href="https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09"><button class="btn btn-primary btn-sm">Join us 
 via Zoom</button></a>
 <!-- Physical Life Sciences Building, Room 430-->
@@ -158,7 +158,7 @@ We offer orientation sessions to introduce you to the Afton & Rivanna HPC system
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Wednesdays 3:00-4:00pm </b>
-<a><br><b>- No session on June 19 due to University holiday.</b></a>
+<a></a>
 <a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to HPC" 
 session</button></a>
 <!-- Health Sciences Library, MILL Room -->
