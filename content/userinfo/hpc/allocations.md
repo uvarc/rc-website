@@ -34,7 +34,7 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 [<button class="btn btn-warning">Manage Grouper</button>](https://groups.identity.virginia.edu/)
 
 {{% callout %}}
-Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). To manage groups created before November 28th, 2023, visit the legacy [MyGroups portal](https://mygroups.virginia.edu/).
+Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). Legacy MyGroups groups created before November 28th, 2023, can be accessed through the "Legacy MyGroups" folder on  [Grouper](https://groups.identity.virginia.edu/).
 {{% /callout %}}
 
 {{% group_creation_tip %}}
