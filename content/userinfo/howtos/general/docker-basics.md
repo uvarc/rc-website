@@ -92,7 +92,7 @@ You can also run containers interactively (i.e. logging in) instead of running a
 docker run -it nginx /bin/bash
 ```
 
-This runs the container interactively (`-i`) in a pseudo-TTY (`-t`), and instantiates a shell for your session to use. Once you are done, simply exit the shell and you will leave the container and return to your local computer’s shell. If you have made any changes to the container, be sure to save it using `docker commit` (see [here](https://docs.docker.com/engine/reference/commandline/commit/) for more info).
+This runs the container interactively (`-i`) in a pseudo-TTY (`-t`), and instantiates a shell for your session to use. Once you are done, simply exit the shell and you will leave the container and return to your local computer’s shell. If you have made any changes to the container, be sure to save it using `docker commit` (see [here](https://docs.docker.com/reference/cli/docker/container/commit/) for more info).
 
 [https://asciinema.org/a/108394](https://asciinema.org/a/108394)
 
@@ -108,7 +108,7 @@ If you cannot find just the right container, you can always build your own. Ther
 
     - Finally, when you exit the container and stop it, save it using the `docker commit` command. At this point your updated container is versioned (much like a git repository) and can be pushed to Docker Hub if you want to share or store it.
 
-2. **Write your own Dockerfile** - Alternatively, you can write a custom Dockerfile and build the container from scratch, using `docker build`. More on Docker files and builds can be found at [https://docs.docker.com/engine/getstarted/step_four/](https://docs.docker.com/engine/getstarted/step_four/). This allows Dockerfiles to be shared as snippets of code rather than as full container images, comparable to a bootstrapping script you might use when instantiating a virtual server instance.
+2. **Write your own Dockerfile** - Alternatively, you can write a custom Dockerfile and build the container from scratch, using `docker build`. More on Docker files and builds can be found at [https://docs.docker.com/reference/dockerfile/](https://docs.docker.com/reference/dockerfile/). This allows Dockerfiles to be shared as snippets of code rather than as full container images, comparable to a bootstrapping script you might use when instantiating a virtual server instance.
 
     - **Step 1** - Create a text file called `Dockerfile` with contents such as:
 
@@ -149,7 +149,7 @@ docker build -t mycontainer .
 
 [Docker for Beginners](https://github.com/docker/labs/blob/master/beginner/readme.md) - Covers the basics of container management, execution, modification, etc.
 
-[Docker Training](https://docs.docker.com/engine/getstarted/) - Docker documents this process in great detail, and provides a step-by-step overview of their container system.
+[Docker Training](https://docs.docker.com/get-started/introduction/) - Docker documents this process in great detail, and provides a step-by-step overview of their container system.
 
 <!-- Service is officially closed -->
 <!-- [Katacoda Interactive Labs](https://www.katacoda.com/courses/docker) - Katacoda offers a free series of interactive trainings that build sequentially. The tutorials require you to engage with the Docker command-line as you progress. -->

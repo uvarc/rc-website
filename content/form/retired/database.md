@@ -33,7 +33,7 @@ private = true
     <p>Learn more:</p>
     <ul>
       <li><a href="/userinfo/howtos/general/databases/">Database Basics</a></li>
-      <li><a href="/userinfo/rivanna/software/complete-list/">Rivanna Software</a></li>
+      <li><a href="/userinfo/hpc/software/complete-list/">Rivanna Software</a></li>
     </ul>
   </div>
   <hr size=1 />

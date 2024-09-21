@@ -1,4 +1,4 @@
-<!-- Determine index of Storage Entry -->
+<!-- Determine index of Storage Entry located in /data/service.yaml -->
 {{ $services := $.Site.Data.service.service }}
 {{ $storage_index := -1 }}
 {{ range $i, $service := $services }}
@@ -32,17 +32,17 @@
       <td class="">{{ index $standard_storage "cost" | markdownify}}</td>
     </tr>
     <tr>
-      <td class="">Snapshots<sup>3</sup></td>
+      <td class="">Snapshots<sup>2</sup></td>
       <td class=""> {{ index $project_storage "snapshots" }}</td>
       <td class=""> {{ index $standard_storage "snapshots" }} </td>
     </tr>
     <tr>
-      <td class="">Replication<sup>4</sup></td>
+      <td class="">Replication<sup>3</sup></td>
       <td class=""> {{ index $project_storage "replication" }}</td>
       <td class=""> {{ index $standard_storage "replication" }} </td>
     </tr>
     <tr>
-      <td class="">Backup<sup>5</sup></td>
+      <td class="">Backup<sup>4</sup></td>
       <td class=""> {{ index $project_storage "backup" }}</td>
       <td class=""> {{ index $standard_storage "backup" }} </td>
     </tr>
@@ -50,6 +50,11 @@
       <td class="">Access</td>
       <td class=""> {{ index $project_storage "access" | markdownify}}</td>
       <td class=""> {{ index $standard_storage "access" | markdownify}} </td>
+    </tr>
+    <tr>
+      <td class=""> Highly Sensitive Data Storage Compliant</td>
+      <td class=""> {{ index $project_storage "highly-sens-ds-compliant" | markdownify}}</td>
+      <td class=""> {{ index $standard_storage "highly-sens-ds-compliant" | markdownify}} </td>
     </tr>
     <tr>
       <td class="">Use cases</td>

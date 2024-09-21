@@ -17,7 +17,7 @@ Instructors can request _instructional allocations_ on Rivanna and Afton for cla
 
 ## Hardware and Partition
 
-Instructional allocations use a dedicated `instructional` partition.  The standard allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards.  Instructional allocations come with 1TB of temporary project storage space. Data kept in the temporary project storage space will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. The standard number of cores is 20 on one node.
+Instructional allocations may use `interactive` partition.  The instructional allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards. RC offers several low-cost storage options to researchers, including 10TB of Research Standard storage for each eligible PI at no charge. Instructors are encouraged to utilize this 10TB of storage for both research and teaching activities. For more detailed descriptions of our storage options, visit https://www.rc.virginia.edu/userinfo/storage/. 
 
 ## Software & Storage Environment
 
@@ -27,7 +27,7 @@ Research Computing's primary focus is supporting the direct research mission of 
 
 For most classes, we recommend the [Open OnDemand](/userinfo/hpc/ood) interface if it suits the expected usage.  This does not require knowledge of Unix and greatly reduces the training burden.  The Open OnDemand interface requires only Netbadge credentials and can be accessed without a VPN from off Grounds.
 
-If Open OnDemand is not adequate, the other recommended interface is [FastX Web](https://www.rc.virginia.edu/userinfo/rivanna/logintools/fastx/).  This is a remote desktop application and requires the students to be able to navigate a Unix desktop system.  Access from off Grounds via FastX requires a VPN connection.
+If Open OnDemand is not adequate, the other recommended interface is [FastX Web](/userinfo/hpc/logintools/fastx/).  This is a remote desktop application and requires the students to be able to navigate a Unix desktop system.  Access from off Grounds via FastX requires a VPN connection.
 
 FastX connects only to a *frontend*.  We significantly restrict the time, memory, and cores available to frontend jobs.  If students are running anything but very short jobs, the Open OnDemand applications should be utilized.  These access the compute nodes and are far less limited.  Open OnDemand provides a remote desktop on compute nodes as well as direct access to JupyterLab, the Matlab Desktop, and Rstudio Server.
 
@@ -35,7 +35,7 @@ FastX connects only to a *frontend*.  We significantly restrict the time, memory
 
 # How to Submit a Request
 
-Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a group name related to the course rubric and the instructor's name, e.g. `cs5014-mst3k`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester. 
+Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a generic group name related to the course rubric, e.g. `cs5014`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors will need to submit an instructional allocation renewal request at the start of each semester. 
 
 - - -
 
@@ -48,13 +48,13 @@ Students, particularly undergraduates, frequently experience password difficulti
 
 ## Partition and Reservations
 
-The allocation will have access to the `instructional` partition.  Students can enter this with the `-p` or `--partition` options to Slurm.
+The allocation will have access to the `interactive` partition.  Students can enter this with the `-p` or `--partition` options to Slurm.
 ```
-#SBATCH -p instructional
+#SBATCH -p interactive
 ```
 or
 ```
-#SBATCH --partition=instructional
+#SBATCH --partition=interactive
 ```
 If students use the Open OnDemand interface, they will enter this into the appropriate textbox when starting their interactive job application.
 

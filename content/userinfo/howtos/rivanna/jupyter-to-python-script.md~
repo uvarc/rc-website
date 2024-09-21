@@ -54,7 +54,7 @@ Hello World with 3.8.8 | packaged by conda-forge | (default, Feb 20 2021, 16:22:
 [GCC 9.3.0]
 ```
 
-More information on using Slurm on Rivanna can be found [here](https://www.rc.virginia.edu/userinfo/rivanna/slurm/).
+More information on using Slurm on Rivanna can be found [here](/userinfo/hpc/slurm/).
 
 If your code requires a specific anaconda environment to be run, you can specify ```source activate <environment name>``` below the module commands in the Slurm script to activate the environment:
 
