@@ -9,11 +9,11 @@ tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}The HPC cluster will be down for maintenance on <strong>Tuesday, Oct 15, 2024</strong> beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}The HPC cluster will be down for maintenance on <strong>Tuesday, Oct 15, 2024</strong> beginning at 6 am.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until the cluster is returned to service.
 
-All systems are expected to return to service by **Wednesday, Oct 16.**
+All systems are expected to return to service by **Wednesday, Oct 16** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
 
@@ -21,7 +21,7 @@ All systems are expected to return to service by **Wednesday, Oct 16.**
 
 ### Modules
 
-- The following modules will be **removed** from Rivanna during the maintenance period.
+- The following modules will be **removed** during the maintenance period.
 
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Removed version | Replacement |
