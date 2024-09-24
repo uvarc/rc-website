@@ -26,6 +26,7 @@ All systems are expected to return to service by **Wednesday,**
 |---|---|---|
 |amber   | 22.0    | 24-CUDA-12.2.2 |
 |gatk    | 4.3.0.0, 4.5.0.0 | 4.6.0.0 |
+|kraken2 | 2.1.2   | 2.1.3 |
 |orca    | 5.0.2   | 5.0.4 |
 |rust    | 1.66.1  | 1.79.0 |
 {{< /table >}}
