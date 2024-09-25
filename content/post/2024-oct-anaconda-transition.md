@@ -16,11 +16,9 @@ Due to the new licensing restrictions by Anaconda  on research usage, the licens
 
 # Maintenance: Oct 15, 2024
 
-{{< alert-green >}}The HPC system in the standard security zone, including <i>Rivanna</i>, will be down on <strong>Tuesday, July 2, 2024</strong> beginning at 6 a.m. During the downtime RC engineers will implement final configuration changes in preparation of the <b>full production release of the new <i>Afton HPC system</i></b>.{{< /alert-green >}}
+{{< alert-green >}}The UVA high-performance computing (HPC) system will be down for maintenance on **Tuesday, Oct 15, 2024,** beginning at 6 a.m. The HPC systems are expected to return to full service by 6 a.m. on **Wednesday, Oct 16.**{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until the HPC systems are returned to service.
-
-The *Rivanna* and *Afton* production systems are expected to return to service by **Wednesday, July 3 at 6 a.m.**
 
 **Questions:** Please contact our <a href="/form/support-request/?category=Storage&request_title=Project%20storage%20data%20migration" class="card-link" target="_blank">user services team</a>, or join us for our [virtual office hours](/support/#office-hours) every Tuesday, 3-5 p.m. and Thursday, 10-12 p.m..
 
