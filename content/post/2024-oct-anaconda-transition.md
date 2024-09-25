@@ -2,11 +2,11 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-10-15T00:00:00-05:00"
-title = "Transition from Anaconda to Miniforge module: October 1, 2024"
+date = "2024-09-24T00:00:00-05:00"
+title = "Transition from Anaconda to Miniforge module: October 15, 2024"
 # url = "/maintenance"
 draft = false
-tags = ["anaconda"],["miniforge"]
+tags = ["anaconda"]
 categories = ["feature"]
 +++
 
