@@ -29,7 +29,7 @@ iii) cultivate communities of researchers with shared interests in data and anal
 The DAC offers two types of Awards:  Small Awards (up to $10,000 worth of services) and Large Awards (up to $100,000).
 While the Small Awards are intended to support research tasks for an individual PI or lab, the large Awards are designed to benefit a broader community.
 
-Recipients of the Awards will receive vouchers that may be used toward RC services, such as collaborations with DAC team members or purchase of data storage. 
+Recipients of the Awards will receive vouchers that may be used toward RC services, such as collaborations with DAC team members or purchase of data storage, or for support from any of the UVA Cores.
  
 
 ## Award Guidelines
@@ -115,6 +115,8 @@ To apply for the Small Analytics Research Award, the PI will submit a proposal (
 
 
 <u>Application Requirements for Large Awards</u>:  
+
+The objective of the Large Award is to develop comprehensive data resources that will foster a collaborative spirit among researchers at UVA.  Therefore, preference will be given to projects that include principal investigators or co-investigators from diverse fields.
 
 For the Large Analytics Research Award, the proposal must include the following:
 
