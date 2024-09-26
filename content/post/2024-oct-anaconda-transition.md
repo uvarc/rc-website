@@ -61,16 +61,86 @@ answer to faq3
 {{% callout %}}
 **Please note:** {{% pi-eligibility %}}
 {{% /callout %}}
+{{% /accordion-item %}}
 
+{{% accordion-item title="4. Why are we switching from Anaconda to Miniforge?" id="faq-4" %}}
+
+answer to faq4
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="5. Will I lose access to any packages that I had with Anaconda?" id="faq-5" %}}
+
+answer to faq5
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="6. How do I install Anaconda packages if I need them (e.g., licensed or proprietary ones)?" id="faq-6" %}}
+
+answer to faq6
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="7. Can I still use `pip` to install non-Conda packages with Miniforge?" id="faq-7" %}}
+
+answer to faq7
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="8. Will my existing Conda environments work with Miniforge?" id="faq-8" %}}
+
+answer to faq8
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="9. How do I update packages and environments in Miniforge?" id="faq-9" %}}
+
+answer to faq9
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="10. Will my scripts that depend on specific Anaconda packages break when switching to Miniforge?" id="faq-10" %}}
+
+answer to faq10
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="11. What channels are available by default in Miniforge?" id="faq-11" %}}
+
+answer to faq11
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="12. Can I still use the Anaconda repository with Miniforge?" id="faq-12" %}}
+
+answer to faq12
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="13. How do I migrate my existing Anaconda environments to Miniforge?" id="faq-13" %}}
+
+answer to faq13
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="14. How do I get help if I encounter problems during the transition?" id="faq-14" %}}
+
+answer to faq14
+
+{{% /accordion-item %}}
+
+{{% accordion-item title="15. Will miniforge be compatible OOD JupyterLab ?" id="faq-15" %}}
+
+answer to faq15
+
+{{% /accordion-item %}}
 
 {{% /accordion-group %}}
+
 
 ## Announcements 
 
 {{% accordion-group title="Comms" id="commsgroup" %}}
-
-
-{{% /accordion-item %}}
 
 
 {{% accordion-item title="Aug 27, 2024 - Change to Anaconda Module on Our System" id="comm-1" %}}
@@ -109,5 +179,6 @@ University of Virginia
 P.O. Box 400231
 Charlottesville 22902
 
+{{% /accordion-item %}}
 
 {{% /accordion-group %}}
