@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'staging_onprem'
+  workflow_dispatch:
 jobs:
   build-for-git:
     runs-on: ubuntu-latest
