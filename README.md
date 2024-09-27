@@ -1,6 +1,6 @@
 ![Hugo Build CI](https://github.com/uvarc/rc-website/workflows/Hugo%20Build%20CI/badge.svg)
 
-# UVA Research Computing Website -
+# UVA Research Computing Website test -
 
 | Staging URL   | Production URL |
 | ------------- | ------------- |
