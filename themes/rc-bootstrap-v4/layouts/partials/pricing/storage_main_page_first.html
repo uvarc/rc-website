@@ -52,6 +52,11 @@
       <td class=""> {{ index $standard_storage "access" | markdownify}} </td>
     </tr>
     <tr>
+      <td class="">Filesystem Location</td>
+      <td class="">{{ index $project_storage "filesystem_location" | markdownify}}</td>
+      <td class="">{{ index $standard_storage "filesystem_location" | markdownify}}</td>
+    </tr>
+    <tr>
       <td class=""> Highly Sensitive Data Storage Compliant</td>
       <td class=""> {{ index $project_storage "highly-sens-ds-compliant" | markdownify}}</td>
       <td class=""> {{ index $standard_storage "highly-sens-ds-compliant" | markdownify}} </td>
