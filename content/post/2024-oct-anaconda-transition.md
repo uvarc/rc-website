@@ -65,19 +65,19 @@ answer to faq3
 
 {{% accordion-item title="4. Why are we switching from Anaconda to Miniforge?" id="faq-4" %}}
 
-answer to faq4
+Miniforge avoids violating Anaconda's Terms of Service because it pulls packages from the conda-forge channel by default. Conda-forge is a community led collection of recipes, build infrastructure and distributions for the conda package manager and is free to use.
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="5. Will I lose access to any packages that I had with Anaconda?" id="faq-5" %}}
 
-answer to faq5
+No. The packages that you had installed previously will not disappear or become inaccessible.
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="6. How do I install Anaconda packages if I need them (e.g., licensed or proprietary ones)?" id="faq-6" %}}
 
-answer to faq6
+The Miniforge module includes the conda package management system. You can use `conda install <package-name>` as you may have done previously using the Anaconda module. Miniforge uses the conda-forge channel by default.
 
 {{% /accordion-item %}}
 
