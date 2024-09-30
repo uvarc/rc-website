@@ -5,7 +5,7 @@ description = ""
 date = "2024-10-04T00:00:00-05:00"
 title = "Transition from Anaconda to Miniforge module: October 15, 2024"
 # url = "/maintenance"
-draft = true
+draft = false
 tags = ["anaconda"]
 categories = ["feature"]
 +++
