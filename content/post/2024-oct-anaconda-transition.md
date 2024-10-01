@@ -44,19 +44,38 @@ We understand that these changes may cause inconvenience, but these changes are 
 
 {{% accordion-item title="1. How miniforge is different from Anaconda?" id="faq-1" %}}
 
-answer to faq1
+Miniforge and Anaconda are both popular tools for managing Python environments and packages, but they differ in a few key ways:
+
+### 1. **Size and Preinstalled Packages**:
+   - Anaconda base environment came with a large number of preinstalled data science libraries. However, miniforge only includes the essential Conda and Mamba package managers along with commonly used packages such as numpy, pandas, matplotlib, etc., from the conda-forge channel.
+
+### 2. **Default Package Channels**:
+   - **Anaconda**: Uses Anaconda’s proprietary channels (Anaconda repository) for package installations by default. These packages may have specific licensing restrictions.
+   - **Miniforge**: Uses `conda-forge` as its default channel, an open-source community-driven repository, ensuring more transparency and flexibility without proprietary limitations.
+
+### 3. **Licensing**:
+   - **Anaconda**: The default Anaconda distribution has licensing restrictions for commercial and research use, requiring a paid license for certain types of usage.
+   - **Miniforge**: Has no such restrictions since it uses `conda-forge`, which provides fully open-source packages.
+
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="2. Can I still use my conda environements?" id="faq-2" %}}
 
-answer to faq2
+The use of your existing environments should not be affected by this change. For instructional use you may continue to install python packages from the licensed Anaconda default channels as shown in the example below.
+
+`conda install -n path-to-my-conda-enf seaborn -c anaconda`
+
+However, any use of such environment for research purposes is a violation of the Anaconda license unless you obtained your own license. Therefore, for research use, it is expected to replace packages installed through the anaconda restricted channels with packages from non-proprietary channels such as conda-forge.   
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="3. How to use miniforge to create conda envs?" id="faq-3" %}}
 
-answer to faq3
+The process and commands to create conda environments through miniforge is completely identical and the only difference is to load the miniforge module in place of anaconda module on our system. Basically,
+
+```module load miniforge
+conda create -n your_env_name_goes_here (default Python version: use conda info to find out)```
 
 {{% callout %}}
 **Please note:** {{% pi-eligibility %}}
