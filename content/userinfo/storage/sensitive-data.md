@@ -1,5 +1,5 @@
 +++
-title = "Sensitive Data Storage - Ivy"
+title = "Highly Sensitive Data Storage - Ivy"
 description = ""
 author = "RC Staff"
 images = [""]
