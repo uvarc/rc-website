@@ -11,7 +11,7 @@ categories = ["feature"]
 +++
 
 <p class="lead">
-Due to the new licensing restrictions by Anaconda  on research usage, the licensed Anaconda distribution will be removed from the system on October 15, 2024. The current anaconda/2023.07-py3.11 module will redirect to the miniforge/24.3.0-py3.11 module, switching to conda-forge as the default package installation channel with fewer preinstalled packages. Existing environments will not be affected. However, using Anaconda default channels for research without a personal license will violate the Anaconda license. For instructional use, package installation from licensed channels is still allowed
+Due to the new [licensing restrictions by Anaconda](https://legal.anaconda.com/policies/en?name=terms-of-service#terms-of-service)  on research usage, the licensed Anaconda distribution will be removed from the system on October 15, 2024. The current anaconda/2023.07-py3.11 module will redirect to the miniforge/24.3.0-py3.11 module, switching to conda-forge as the default package installation channel with fewer preinstalled packages. Existing environments will not be affected. However, using Anaconda default channels for research without a personal license will violate the Anaconda license. For instructional use, package installation from licensed channels is still allowed
 </p>
 
 # Maintenance: Oct 15, 2024
@@ -78,9 +78,6 @@ The process and commands for creating conda environments using Miniforge are exa
 
 `conda create -n your_env_name_goes_here (default Python version: use conda info to find out)`
 
-{{% callout %}}
-**Please note:** {{% pi-eligibility %}}
-{{% /callout %}}
 {{% /accordion-item %}}
 
 {{% accordion-item title="4. Why are we switching from Anaconda to Miniforge?" id="faq-4" %}}
@@ -93,12 +90,14 @@ Miniforge avoids violating Anaconda's Terms of Service because it pulls packages
 
 No. The packages that you had installed previously will not disappear or become inaccessible.
 
+
 {{% /accordion-item %}}
 
 {{% accordion-item title="6. How do I install Anaconda packages if I need them (e.g., licensed or proprietary ones)?" id="faq-6" %}}
 
 The Miniforge module includes the conda package management system. You can use `conda install <package-name>` as you may have done previously using the Anaconda module. Miniforge uses the conda-forge channel by default.
 
+<!--
 {{% /accordion-item %}}
 
 {{% accordion-item title="7. Can I still use `pip` to install non-Conda packages with Miniforge?" id="faq-7" %}}
@@ -155,6 +154,7 @@ answer to faq15
 
 {{% /accordion-item %}}
 
+-->
 {{% /accordion-group %}}
 
 
