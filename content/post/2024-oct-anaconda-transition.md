@@ -72,10 +72,11 @@ However, any use of such environment for research purposes is a violation of the
 
 {{% accordion-item title="3. How to use miniforge to create conda envs?" id="faq-3" %}}
 
-The process and commands to create conda environments through miniforge is completely identical and the only difference is to load the miniforge module in place of anaconda module on our system. Basically,
+The process and commands for creating conda environments using Miniforge are exactly the same. The only difference is that you need to load the Miniforge module instead of the Anaconda module on our system.Basically,
 
-```module load miniforge
-conda create -n your_env_name_goes_here (default Python version: use conda info to find out)```
+`module load miniforge`
+
+`conda create -n your_env_name_goes_here (default Python version: use conda info to find out)`
 
 {{% callout %}}
 **Please note:** {{% pi-eligibility %}}
