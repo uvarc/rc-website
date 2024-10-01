@@ -78,9 +78,6 @@ The process and commands for creating conda environments using Miniforge are exa
 
 `conda create -n your_env_name_goes_here (default Python version: use conda info to find out)`
 
-{{% callout %}}
-**Please note:** {{% pi-eligibility %}}
-{{% /callout %}}
 {{% /accordion-item %}}
 
 {{% accordion-item title="4. Why are we switching from Anaconda to Miniforge?" id="faq-4" %}}
