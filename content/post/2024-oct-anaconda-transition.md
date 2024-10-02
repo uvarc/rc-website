@@ -97,26 +97,34 @@ No. The packages that you had installed previously will not disappear or become 
 
 The Miniforge module includes the conda package management system. You can use `conda install <package-name>` as you may have done previously using the Anaconda module. Miniforge uses the conda-forge channel by default.
 
-<!--
+
 {{% /accordion-item %}}
 
 {{% accordion-item title="7. Can I still use `pip` to install non-Conda packages with Miniforge?" id="faq-7" %}}
 
-answer to faq7
+Yes. Miniforge supports installation of non-Conda packages with pip and uses the same syntax. 
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="8. Will my existing Conda environments work with Miniforge?" id="faq-8" %}}
 
-answer to faq8
+Yes. Miniforge supports installation of non-Conda packages with pip and uses the same syntax. 
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="9. How do I update packages and environments in Miniforge?" id="faq-9" %}}
 
-answer to faq9
+Once the environment is activated you an update packages and environments in the same fashion as you would with Anaconda. To activate all packages run:
+
+`conda update --all `
+
+To activate a single package you would run:
+
+`conda update <name>`
 
 {{% /accordion-item %}}
+
+<!--
 
 {{% accordion-item title="10. Will my scripts that depend on specific Anaconda packages break when switching to Miniforge?" id="faq-10" %}}
 
@@ -138,23 +146,36 @@ answer to faq12
 
 {{% accordion-item title="13. How do I migrate my existing Anaconda environments to Miniforge?" id="faq-13" %}}
 
-answer to faq13
+First, you'll need to load the Miniforge module and activate the environment
+
+```
+module load miniforge
+source activate <env_name>
+```
+
+Next, you'll need to export the existing environment to a yaml which will be used for rebuilding, then remove the existing environment. You'll need to deactivate the environment prior to removing:
+
+```
+conda env create -f <env_name>.yml
+conda deactivate
+conda env remove --name <env_name>
+```
+
+You can then recreate the environment with Miniforge using the following: 
+
+`conda env create -f <env_name>.yml `
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="14. How do I get help if I encounter problems during the transition?" id="faq-14" %}}
 
-answer to faq14
-
-{{% /accordion-item %}}
-
-{{% accordion-item title="15. Will miniforge be compatible OOD JupyterLab ?" id="faq-15" %}}
-
-answer to faq15
+You can either submit a support request on [our website ](https://rc.virginia.edu/form/support-request/) or you can attend one of our office hour sessions. We meet virtually over Zoom on Tuesdays (3-5PM) and Thursdays (10AM-12PM) via Zoom. Links to the sessions can be found at the bottom of [this page](https://rc.virginia.edu/support/) on our website. 
 
 {{% /accordion-item %}}
 
 {{% /accordion-group %}}
+
+
 
 -->
 
