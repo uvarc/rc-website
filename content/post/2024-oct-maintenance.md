@@ -44,4 +44,10 @@ We understand that these changes may cause inconvenience, but these changes are 
 |deeptools  | 3.5.1          | 3.5.5 |
 |maestro    | 1.3.0          | 1.5.1 |
 |mamba      | 22.11.1-4      | miniforge/24.3.0-py3.11 |
+|matlab     | R2020a         | R2024a |
+|matlab     | R2020b         | R2024a |
+|matlab     | R2021a         | R2024a |
+|matlab     | R2021b         | R2024a |
+|matlab     | R2022a         | R2024a |
+|matlab     | R2022b         | R2024a |
 {{< /table >}}
