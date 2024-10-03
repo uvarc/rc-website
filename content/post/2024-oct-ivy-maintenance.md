@@ -9,7 +9,7 @@ tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}he Ivy Virtual Machines (VMs) and high security zone HPC system will be down for storage maintenance on <strong>Tuesday, Oct 15, 2024</strong>, beginning at 6 a.m.  
+{{< alert-green >}}The Ivy Virtual Machines (VMs) and high security zone HPC system will be down for storage maintenance on <strong>Tuesday, Oct 15, 2024</strong>, beginning at 6 a.m.  
 
 The system is expected to return to full service by 6 a.m. on <strong>Wednesday, Oct 16..</strong>{{< /alert-green >}}
 
