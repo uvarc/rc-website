@@ -5,6 +5,7 @@
 #SBATCH -c 1
 #SBATCH -t 01:00:00
 #SBATCH -o myprog.out
+#SBATCH --export=NONE
 
 module purge
 module load anaconda

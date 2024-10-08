@@ -332,6 +332,16 @@ udc-ba34-36-deepLearning$
 
 The output of this command is also contained in the email sent by Slurm once your job completes.
 
+## My jobs are failing due to an incorrect environment setup, but I am loading my modules and/or conda environments correctly in my job script. What is wrong?
+
+When submitting jobs using sbatch, Slurm will remember the environment that you were working in. This means that loaded modules, activated conda environments, and generally all the environment variables set in the terminal prior to job submission will follow through into your job. A way to avoid this issue from happening is to include the following line into your Slurm script:
+
+```
+#SBATCH --export=NONE
+```
+
+This makes it so that Slurm does not carry over any environment variables into your running job. Be sure to include the necessary `module load` or `conda activate` commands in your script to run your code. If you are using srun in your Slurm script, see an example script [here](/userinfo/hpc/software/anaconda/#mpi)
+
 - - -
 
 # Storage Management

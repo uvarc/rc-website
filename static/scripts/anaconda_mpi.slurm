@@ -5,6 +5,7 @@
 #SBATCH --ntasks-per-node=10
 #SBATCH -t 01:00:00
 #SBATCH -o myprog.out
+#SBATCH --export=NONE
 
 module purge
 module load gcc openmpi
@@ -13,5 +14,5 @@ module load gcc openmpi
 module load anaconda
 source activate custom_env
 
-srun python myscript.py
+srun --export=ALL python myscript.py
 

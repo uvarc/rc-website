@@ -36,4 +36,5 @@ To ensure that files are always secure, data can only be transferred to Ivy thro
   Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
-<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-secure-apr2018.png" alt="secure-storage-options-overview">
+
+<img src="/images/hs_standard_schematic.png" />
