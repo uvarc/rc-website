@@ -97,6 +97,7 @@ No. The packages that you had installed previously will not disappear or become 
 
 The Miniforge module includes the conda package management system. You can use `conda install <package-name>` as you may have done previously using the Anaconda module. Miniforge uses the conda-forge channel by default.
 
+If you are using Anaconda for instructional use or have your own license, you can install packages from the anaconda channel using `conda install -c anaconda <package-name>`
 
 {{% /accordion-item %}}
 
