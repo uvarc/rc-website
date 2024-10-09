@@ -88,8 +88,7 @@ Miniforge avoids violating Anaconda's Terms of Service because it pulls packages
 
 {{% accordion-item title="5. Will I lose access to any packages that I had with Anaconda?" id="faq-5" %}}
 
-No. The packages that you had installed previously will not disappear or become inaccessible.
-
+Existing environments will not be removed, however, any packages installed in your conda environments via the Anaconda default (proprietary) channel will need to be reinstalled through a different channel or tool such as conda-forge or pip.
 
 {{% /accordion-item %}}
 
