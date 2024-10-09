@@ -125,25 +125,27 @@ To activate a single package you would run:
 
 {{% /accordion-item %}}
 
-<!--
+
 
 {{% accordion-item title="10. Will my scripts that depend on specific Anaconda packages break when switching to Miniforge?" id="faq-10" %}}
 
-answer to faq10
+Yes, you will need to reinstall any packages previously installed from the Anaconda channel.
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="11. What channels are available by default in Miniforge?" id="faq-11" %}}
 
-answer to faq11
+The conda-forge channel is set as the default (and only) channel for Miniforge.
 
 {{% /accordion-item %}}
 
 {{% accordion-item title="12. Can I still use the Anaconda repository with Miniforge?" id="faq-12" %}}
 
-answer to faq12
+No, the Anaconda repository can no longer be used. Instead, you would use the conda-forge channel or another non-license restricted channel like the bioconda channel.
 
 {{% /accordion-item %}}
+
+<!--
 
 {{% accordion-item title="13. How do I migrate my existing Anaconda environments to Miniforge?" id="faq-13" %}}
 
@@ -176,9 +178,8 @@ You can either submit a support request on [our website ](https://rc.virginia.ed
 
 {{% /accordion-group %}}
 
-
-
 -->
+
 
 ## Announcements 
 
