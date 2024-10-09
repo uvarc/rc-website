@@ -145,7 +145,6 @@ No, the Anaconda repository can no longer be used. Instead, you would use the co
 
 {{% /accordion-item %}}
 
-<!--
 
 {{% accordion-item title="13. How do I migrate my existing Anaconda environments to Miniforge?" id="faq-13" %}}
 
@@ -178,7 +177,7 @@ You can either submit a support request on [our website ](https://rc.virginia.ed
 
 {{% /accordion-group %}}
 
--->
+
 
 
 ## Announcements 
