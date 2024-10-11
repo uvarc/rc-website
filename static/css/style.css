@@ -644,3 +644,26 @@ img {
   cursor: pointer;
   opacity: 0;}
 .mt-100{margin-top:100px;}
+}
+
+/*
+ * Forms
+ */
+
+ .invalid-field-highlight {
+  background-color: #ffeeee !important; /* Light red background */
+  border-color: #dc3545 !important; /* Red border */
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important; /* Red glow */
+}
+
+.invalid-feedback {
+  color: #dc3545!important;
+  display: block!important;
+  margin-top: 0.25rem!important;
+  font-size: 80%;
+}
+
+.is-valid {
+  border-color: #28a745 !important;
+  background-color: #f0fff0 !important; /* Light green background for valid fields */
+}
