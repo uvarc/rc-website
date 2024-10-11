@@ -128,7 +128,7 @@ To activate a single package you would run:
 
 {{% accordion-item title="10. Will my scripts that depend on specific Anaconda packages break when switching to Miniforge?" id="faq-10" %}}
 
-Scripts using Anaconda packages that are also available within miniforge may not break. However, any Anaconda packages that are not used soley for instructional purposes would be violating of the Anaconda license terms, so they would need to be reinstalled through a different channel or tool such as conda-forge or pip.
+Scripts using Anaconda packages that are also available within miniforge may not break. However, any Anaconda packages that are not used soley for instructional purposes would be violating the Anaconda license terms, so they would need to be reinstalled through a different channel or tool such as conda-forge or pip.
 
 {{% /accordion-item %}}
 
