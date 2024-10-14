@@ -12,8 +12,8 @@ tags = [
   "programming"
 ]
 draft = false
-modulename = "anaconda"
-softwarename = "Anaconda"
+modulename = "python"
+softwarename = "Python"
 shorttitle = "Python"
 title = "Python and UVA HPC"
 description = "Python in the HPC environment"
@@ -27,6 +27,6 @@ Python is an integrated technical computing environment that combines sophistica
 Research Computing offers an online "Introduction to Programming in Python" course. Click [here](https://learning.rc.virginia.edu/courses/python-introduction/) to start learning Python.
 
 # Python on the HPC System
-The default Python is required for system purposes and is generally too old for applications. We offer Python through the [Anaconda](https://www.anaconda.com) distribution from Continuum Analytics. Anaconda bundles a large number of popular modules and packages, as well as the Spyder IDE, an iPython console, and Jupyter notebooks. 
+The default Python is required for system purposes and is generally too old for applications. We offer Python through the [Miniforge](https://github.com/conda-forge/miniforge) distribution.
 
 **View our [Anaconda on the HPC System](/userinfo/hpc/software/anaconda/) documentation for details.**
