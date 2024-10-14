@@ -48,16 +48,16 @@ module key bio
 module load thepackage
 {{< /code-snippet >}}
 
-If you do not specify a version, the system default is loaded.  For example, to load the default version of the anaconda Python distribution, run
+If you do not specify a version, the system default is loaded.  For example, to load the default version of our Python distribution, run
 
 {{< code-snippet >}}
-module load anaconda
+module load miniforge
 {{< /code-snippet >}}
 
-If you do not wish to use the default version chosen by the module's environment, you must specify the version explicitly. For example, to select a different version of anaconda:
+If you do not wish to use the default version chosen by the module's environment, you must specify the version explicitly. For example, to select a version of the gcc compiler suite that is different from the default:
 
 {{< code-snippet >}}
-module load anaconda/2019.10-py2.7
+module load gcc/13.3.0
 {{< /code-snippet >}}
 
 Note that the 'default' version of a module may change, so if you are developing applications yourself we highly recommend that you load explicit versions of modules; that is, do not invoke the default package, but specify a version.  If the version is eventually dropped for newer versions, loading the module will fail, which will make you aware that you will need to update your application appropriately.
