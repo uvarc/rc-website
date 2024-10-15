@@ -201,7 +201,7 @@ Submitted batch job 18341
 # Submitting an Interactive Job
 
 If you wish to run a job directly from the shell, you can run an interactive job.
-If you are using any kind of graphical user interface (GUI) you should use one of the [Open OnDemand](/userinfo/hpc/ood) interactive apps.  This offers direct access to Jupyterlab, Python IDEs (Anaconda Navigator, coming soon), RStudio Server, the MATLAB desktop, and others.  For graphical applications not available through one of the dedicated apps, such as the Totalview debugger or some bioinformatics packages, use the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop) app. From the Desktop you can open a terminal window, load modules, and start any application you wish.  Please note that a few GUI applications require a GPU so you must request that partition in the online form.
+If you are using any kind of graphical user interface (GUI) you should use one of the [Open OnDemand](/userinfo/hpc/ood) interactive apps.  This offers direct access to Jupyterlab, VSCode Server, RStudio Server, the MATLAB desktop, and others.  For graphical applications not available through one of the dedicated apps, such as the Totalview debugger or some bioinformatics packages, use the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop) app. From the Desktop you can open a terminal window, load modules, and start any application you wish.  Please note that a few GUI applications require a GPU so you must request that partition in the online form.
 
 If you wish to run an interactive job from the command line, you can use our local command `ijob` to obtain a login shell on a compute node.
 ```

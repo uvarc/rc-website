@@ -11,7 +11,7 @@ module purge
 module load gcc openmpi
 
 # Replace 'custom_env' with the actual env name.
-module load anaconda
+module load miniforge
 source activate custom_env
 
 srun --export=ALL python myscript.py
