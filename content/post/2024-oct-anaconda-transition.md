@@ -157,7 +157,7 @@ source activate <env_name>
 Next, you'll need to export the existing environment to a yaml which will be used for rebuilding, then remove the existing environment. You'll need to deactivate the environment prior to removing:
 
 ```
-conda env create -f <env_name>.yml
+conda env export -f <env_name>.yml
 conda deactivate
 conda env remove --name <env_name>
 ```
