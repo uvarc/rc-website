@@ -88,8 +88,7 @@ Miniforge avoids violating Anaconda's Terms of Service because it pulls packages
 
 {{% accordion-item title="5. Will I lose access to any packages that I had with Anaconda?" id="faq-5" %}}
 
-No. The packages that you had installed previously will not disappear or become inaccessible.
-
+Existing environments will not be removed, however, any packages installed in your conda environments via the Anaconda default (proprietary) channel will need to be reinstalled through a different channel or tool such as conda-forge or pip.
 
 {{% /accordion-item %}}
 
@@ -97,6 +96,7 @@ No. The packages that you had installed previously will not disappear or become 
 
 The Miniforge module includes the conda package management system. You can use `conda install <package-name>` as you may have done previously using the Anaconda module. Miniforge uses the conda-forge channel by default.
 
+If you are using Anaconda for instructional use or have your own license, you can install packages from the anaconda channel using `conda install -c anaconda <package-name>`
 
 {{% /accordion-item %}}
 
@@ -144,7 +144,6 @@ No, the Anaconda repository can no longer be used. Instead, you would use the co
 
 {{% /accordion-item %}}
 
-<!--
 
 {{% accordion-item title="13. How do I migrate my existing Anaconda environments to Miniforge?" id="faq-13" %}}
 
@@ -177,7 +176,7 @@ You can either submit a support request on [our website ](https://rc.virginia.ed
 
 {{% /accordion-group %}}
 
--->
+
 
 
 ## Announcements 
