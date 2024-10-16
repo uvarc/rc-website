@@ -13,7 +13,7 @@ date = "2020-03-26T08:37:46-05:00"
 tags = ['howtos']
 draft = false
 shorttitle = "Secure DTN"
-title = "Sensitive Data Transfer with Globus"
+title = "Highly Sensitive Data Transfer with Globus"
 description = "Using the secure DTN to transfer data to Ivy"
 author = "RC Staff"
 
