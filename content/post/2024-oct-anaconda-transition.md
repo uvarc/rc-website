@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-10-01T00:00:00-05:00"
+date = "2024-10-16T00:00:00-05:00"
 title = "Transition from Anaconda to Miniforge: October 15, 2024"
 # url = "/maintenance"
 draft = false
@@ -128,7 +128,7 @@ To activate a single package you would run:
 
 {{% accordion-item title="10. Will my scripts that depend on specific Anaconda packages break when switching to Miniforge?" id="faq-10" %}}
 
-Yes, you will need to reinstall any packages previously installed from the Anaconda channel.
+Scripts using Anaconda packages that are also available within Miniforge may not break. However, any Anaconda packages that are not used soley for instructional purposes would be violating the Anaconda license terms, so they would need to be reinstalled through a different channel or tool such as conda-forge or pip.
 
 {{% /accordion-item %}}
 
@@ -140,7 +140,7 @@ The conda-forge channel is set as the default (and only) channel for Miniforge.
 
 {{% accordion-item title="12. Can I still use the Anaconda repository with Miniforge?" id="faq-12" %}}
 
-No, the Anaconda repository can no longer be used. Instead, you would use the conda-forge channel or another non-license restricted channel like the bioconda channel.
+The Anaconda repository can only be used with miniforge provided that the packages are used strictly for instructional purposes.
 
 {{% /accordion-item %}}
 
@@ -157,7 +157,7 @@ source activate <env_name>
 Next, you'll need to export the existing environment to a yaml which will be used for rebuilding, then remove the existing environment. You'll need to deactivate the environment prior to removing:
 
 ```
-conda env create -f <env_name>.yml
+conda env export -f <env_name>.yml
 conda deactivate
 conda env remove --name <env_name>
 ```
