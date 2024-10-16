@@ -81,7 +81,7 @@ private = true
   </div>
 
   <!-- Allocation Request Fields -->
-  <div id="allocation-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc">
+  <div id="allocation-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <h3>Allocation Request</h3> 
     <hr size="1" />
     <fieldset class="form-item form-group form-type-radios form-group">
@@ -180,7 +180,7 @@ private = true
   </div>
 
   <!-- Storage Request Fields -->
-  <div id="storage-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc">
+  <div id="storage-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <h3>Storage Request</h3>
     <hr size="1" />
     <div class="row">
@@ -316,7 +316,7 @@ private = true
   </div>
 
   <!-- Data Agreement and Submit Button (outside of both allocation and storage fields) -->
-  <div id="common-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc">
+  <div id="common-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <div class="form-check form-item form-group" style="margin-top:1rem;">
       <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
       <label class="form-check-label" for="data-agreement">
