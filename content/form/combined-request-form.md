@@ -339,8 +339,6 @@ private = true
 {{< /enable-disable-form >}}
 </form>
 
-<script type="text/javascript" src="/js/user-session-v2.js"></script>
-<script type="text/javascript" src="/js/response-message.js"></script>
-<!-- <script type="text/javascript" src="/js/combined-form-scroll-fix.js"></script> -->
-<script type="text/javascript" src="/js/combined-request-form.js"></script>
-<script type="text/javascript" src="/js/allocation-request.js"></script>
+<script type="text/javascript" src="/static/js/user-session-v2.js"></script>
+<script type="text/javascript" src="/static/js/response-message.js"></script>
+<script type="text/javascript" src="/static/js/combined-request-form.js"></script>
