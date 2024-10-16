@@ -1,5 +1,13 @@
 $(document).ready(function () {
+    console.log("Script started");
+    alert("Script started");
     console.log("Combined request form JS loaded");
+
+    window.debugToggle = function() {
+    console.log("Debug toggle called");
+    toggleRequestFields();
+    console.log("Toggle completed");
+   }
 
     function toggleRequestFields() {
         var requestType = $('input[name="request-type"]:checked').val();
