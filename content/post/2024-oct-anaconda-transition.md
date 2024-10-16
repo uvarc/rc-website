@@ -154,13 +154,15 @@ module load miniforge
 source activate <env_name>
 ```
 
-Next, you'll need to export the existing environment to a yaml which will be used for rebuilding, then remove the existing environment. You'll need to deactivate the environment prior to removing:
+Next, you'll need to export the existing environment to a yaml file which will be used for rebuilding, then remove the existing environment. You'll need to deactivate the environment prior to removing:
 
 ```
 conda env export -f <env_name>.yml
 conda deactivate
 conda env remove --name <env_name>
 ```
+
+Use an editor to remove the proprietary channels (e.g. *defaults*) from the yaml file. You might encounter issues with resolving dependencies in which case you might need to leave out the versions of the packages in the yaml file and automatically install the most recent compatible versions. You can use the command `conda env export | cut -f 1 -d "=" | grep -v "prefix" > <env_name>.yml` in place of the above command to remove the versioning information of packages while exporting the environment into a yaml file.  
 
 You can then recreate the environment with Miniforge using the following: 
 
