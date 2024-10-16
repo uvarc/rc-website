@@ -10,13 +10,9 @@ draft = false
 type = "form"
 private = true
 +++
-
 {{% jira-msg %}}
-
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="combined-request-form" class="needs-validation" novalidate accept-charset="UTF-8">
-
 {{< enable-disable-form >}}
-
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
@@ -25,53 +21,45 @@ private = true
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Combined Allocation and Storage Request">
   <input type="hidden" id="request_title" name="request_title" value="Combined Request: Allocation or Storage" />
 
-  {{% getstatus keyword="jira" %}}
+{{% getstatus keyword="jira" %}}
 
-  {{% form-userinfo-v2 %}}
+{{% form-userinfo-v2 %}}
 
-<!-- Requestor Information -->
-<div class="form-item form-group form-type-textfield form-group">
-  <label class="control-label" for="pi-uva-id">PI/Owner UVA ID <span class="form-required" title="This field is required.">*</span></label>
-  <input required="required" class="form-control form-text required" type="text" id="pi-uva-id" name="pi-uva-id" value="" size="60" maxlength="128" />
-</div>
-
-<div class="form-item form-group form-item form-type-select form-group"> 
-  <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
-  <span style="font-weight:normal;"><br />PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create his/her Grouper group</a> for new allocations.</span>
-  <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
-    <option value="">- Select a group -</option>
-    <option value="it_research_group1">IT Research Group 1</option>
-    <option value="it_research_group2">IT Research Group 2</option>
-    <option value="it_dev_team1">IT Development Team 1</option>
-    <option value="it_security_team">IT Security Team</option>
-    <option value="it_infrastructure_group">IT Infrastructure Group</option>
-  </select>
-  {{% group_creation_tip %}}
-</div>
-
-<div class="form-item form-group form-type-textfield form-group">
-  <label class="control-label" for="requestor-id">Requestor ID (if different from User ID above)</label>
-  <input class="form-control form-text" type="text" id="requestor-id" name="requestor-id" value="" size="60" maxlength="128" />
-</div>
-
-<div class="container" style="padding:2rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
-  <div class="row">
-    <!-- Request Type selection -->
-    <div class="col-md-6">
-      <div class="form-item form-group form-type-radios"> 
-        <label class="control-label">Request Type <span class="form-required" title="This field is required.">*</span></label>
-        <div id="request-type-options" class="form-radios">
-          <div class="form-check">
-            <input required="required" type="radio" id="request-type-allocation" name="request-type" value="allocation" class="form-check-input" />
-            <label class="form-check-label" for="request-type-allocation">Allocation Request</label>
-          </div>
-          <div class="form-check">
-            <input required="required" type="radio" id="request-type-storage" name="request-type" value="storage" class="form-check-input" />
-            <label class="form-check-label" for="request-type-storage">Storage Request</label>
+  <!-- Requestor Information -->
+  <div class="form-item form-group form-type-textfield form-group">
+    <label class="control-label" for="pi-uva-id">PI/Owner UVA ID <span class="form-required" title="This field is required.">*</span></label>
+    <input required="required" class="form-control form-text required" type="text" id="pi-uva-id" name="pi-uva-id" value="" size="60" maxlength="128" />
+  </div>
+  <div class="form-item form-group form-item form-type-select form-group"> 
+    <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
+    <span style="font-weight:normal;"><br />PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create his/her Grouper group</a> for new allocations.</span>
+    <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
+      <option value="">- Select a group -</option>
+    </select>
+    {{% group_creation_tip %}}
+  </div>
+  <div class="form-item form-group form-type-textfield form-group">
+    <label class="control-label" for="requestor-id">Requestor ID (if different from User ID above)</label>
+    <input class="form-control form-text" type="text" id="requestor-id" name="requestor-id" value="" size="60" maxlength="128" />
+  </div>
+  <div class="container" style="padding:2rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+    <div class="row">
+      <!-- Request Type selection -->
+      <div class="col-md-6">
+        <div class="form-item form-group form-type-radios"> 
+          <label class="control-label">Request Type <span class="form-required" title="This field is required.">*</span></label>
+          <div id="request-type-options" class="form-radios">
+            <div class="form-check">
+              <input required="required" type="radio" id="request-type-allocation" name="request-type" value="allocation" class="form-check-input" checked="checked" />
+              <label class="form-check-label" for="request-type-allocation">Allocation Request</label>
+            </div>
+            <div class="form-check">
+              <input required="required" type="radio" id="request-type-storage" name="request-type" value="storage" class="form-check-input" />
+              <label class="form-check-label" for="request-type-storage">Storage Request</label>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
     <!-- Common fields for both Allocation and Storage requests -->
     <div class="col-md-6">
@@ -90,7 +78,6 @@ private = true
       </div>
     </div>
   </div>
-</div>
 
 <!-- Allocation Request Fields -->
 <div id="allocation-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc">
@@ -183,14 +170,14 @@ private = true
 
   <div class="form-item form-type-textarea form-group"> 
     <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-    <label class="control-label" id="renewal-descr" for="project-description" style="display: none; margin-top:1em;"">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+    <label class="control-label" id="renewal-descr" for="project-description" style="display: none; margin-top:1em;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
     <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
     </div>
   </div>
 </div>
 
 <!-- Storage Request Fields -->
-<div id="storage-fields" style="display: none; margin-top:1em; padding:2rem;background-color#eee;border:solid 1px #ccc">
+<div id="storage-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc">
   <h3>Storage Request</h3>
   <hr size="1" />
   <div class="row">
@@ -303,7 +290,7 @@ private = true
 </div>
 
 <!-- Billing Information Section (Initially hidden) -->
-<div id="billing-information" style="display: none; margin-top:1em; padding:2rem;background-color#eee;border:solid 1px #ccc;">
+<div id="billing-information" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
   <h3>Payment Information</h3>
   <hr size="1" />
   <div class="form-item form-group form-type-textfield form-group">
@@ -314,7 +301,7 @@ private = true
 </div>
 
 <!-- Data Agreement and Submit Button (outside of both allocation and storage fields) -->
-<div id="common-fields" style="display: none; margin-top:1em; padding:2rem;background-color#eee;border:solid 1px #ccc">
+<div id="common-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc">
   <div class="form-check form-item form-group" style="margin-top:1rem;">
     <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
     <label class="form-check-label" for="data-agreement">
