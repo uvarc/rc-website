@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-10-16T00:00:00-05:00"
+date = "2024-10-01T00:00:00-05:00"
 title = "Transition from Anaconda to Miniforge: October 15, 2024"
 # url = "/maintenance"
 draft = false
@@ -11,7 +11,7 @@ categories = ["feature"]
 +++
 
 <p class="lead">
-Due to the new [licensing restrictions by Anaconda](https://legal.anaconda.com/policies/en?name=terms-of-service#terms-of-service)  on research usage, the licensed Anaconda distribution will be removed from the system on October 15, 2024. The current anaconda/2023.07-py3.11 module will redirect to the miniforge/24.3.0-py3.11 module, switching to conda-forge as the default package installation channel with fewer preinstalled packages. Existing environments will not be affected. However, using Anaconda default channels for research without a personal license will violate the Anaconda license. For instructional use, package installation from licensed channels is still allowed
+Due to the new <a href=https://legal.anaconda.com/policies/en?name=terms-of-service#terms-of-service>licensing restrictions by Anaconda</a>  on research usage, the licensed Anaconda distribution will be removed from the system on October 15, 2024. The current anaconda/2023.07-py3.11 module will redirect to the miniforge/24.3.0-py3.11 module, switching to conda-forge as the default package installation channel with fewer preinstalled packages. Existing environments will not be affected. However, using Anaconda default channels for research without a personal license will violate the Anaconda license. For instructional use, package installation from licensed channels is still allowed
 </p>
 
 # Maintenance: Oct 15, 2024
@@ -154,19 +154,22 @@ module load miniforge
 source activate <env_name>
 ```
 
-Next, you'll need to export the existing environment to a yaml file which will be used for rebuilding, then remove the existing environment. You'll need to deactivate the environment prior to removing:
+Next, you'll need to export the existing environment to a yaml which will be used for rebuilding, then remove the existing environment. You'll need to deactivate the environment prior to removing:
 
 ```
 conda env export -f <env_name>.yml
 conda deactivate
 conda env remove --name <env_name>
 ```
+{{% callout %}}
+Note: Use an editor to remove the proprietary channels (e.g. `defaults` or `anaconda`) from the yaml file.
+{{% /callout %}}
 
-Use an editor to remove the proprietary channels (e.g. *defaults*) from the yaml file. You might encounter issues with resolving dependencies in which case you might need to leave out the versions of the packages in the yaml file and automatically install the most recent compatible versions. You can use the command `conda env export | cut -f 1 -d "=" | grep -v "prefix" > <env_name>.yml` in place of the above command to remove the versioning information of packages while exporting the environment into a yaml file.  
+You might encounter issues with resolving dependencies in which case you might need to leave out the versions of the packages in the yaml file and automatically install the most recent compatible versions. You can use the command `conda env export | cut -f 1 -d "=" | grep -v "prefix" > <env_name>.yml` in place of the above command to remove the versioning information of packages while exporting the environment into a yaml file.
 
-You can then recreate the environment with Miniforge using the following: 
+You can then recreate the environment with Miniforge using the following:
 
-`conda env create -f <env_name>.yml `
+`conda env create -f <env_name>.yml`
 
 {{% /accordion-item %}}
 
