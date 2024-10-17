@@ -162,12 +162,14 @@ conda deactivate
 conda env remove --name <env_name>
 ```
 {{% callout %}}
-Note: Remove `anaconda` and `defaults` among the list of channels in your `<env_name>.yml` file.
+Note: Use an editor to remove the proprietary channels (e.g. defaults) from the yaml file.
 {{% /callout %}}
 
-You can then recreate the environment with Miniforge using the following: 
+You might encounter issues with resolving dependencies in which case you might need to leave out the versions of the packages in the yaml file and automatically install the most recent compatible versions. You can use the command `conda env export | cut -f 1 -d "=" | grep -v "prefix" > <env_name>.yml` in place of the above command to remove the versioning information of packages while exporting the environment into a yaml file.
 
-`conda env create -f <env_name>.yml `
+You can then recreate the environment with Miniforge using the following:
+
+`conda env create -f <env_name>.yml`
 
 {{% /accordion-item %}}
 
