@@ -1,19 +1,24 @@
 $(document).ready(function () {
+    console.log("Script started");
+    alert("Script started");
     console.log("Combined request form JS loaded");
+
+    window.debugToggle = function() {
+    console.log("Debug toggle called");
+    toggleRequestFields();
+    console.log("Toggle completed");
+   }
 
     function toggleRequestFields() {
         var requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected request type:", requestType);
+        $('#allocation-fields, #storage-fields, #common-fields').hide();
         if (requestType === 'allocation') {
             $('#allocation-fields, #common-fields').show();
-            $('#storage-fields').hide();
             $('#category').val('Rivanna HPC');
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
-            $('#allocation-fields').hide();
             $('#category').val('Storage');
-        } else {
-            $('#allocation-fields, #storage-fields, #common-fields').hide();
         }
         logVisibility();
         toggleFreeOrPaid();
@@ -221,6 +226,7 @@ $(document).ready(function () {
 
     // Initial calls
     console.log("Initial call to toggle functions");
+    $('#allocation-fields, #storage-fields, #common-fields').hide();
     toggleRequestFields();
     toggleFreeOrPaid();
     toggleAllocationFields();

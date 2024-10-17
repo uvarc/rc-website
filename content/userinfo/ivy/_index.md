@@ -404,7 +404,7 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 # Data Transfer In/Out of Ivy {#data-transfer-in-out-of-ivy}
 
-Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “Ivy Central Storage” (ICS), which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
+Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “High-Security Research Standard Storage”, which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
 
 <img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="/images/ivy-dtn-flow.png" />
 
@@ -424,7 +424,7 @@ Before transferring files to Ivy, you will need Globus installed on the computer
 
 6. Click the **Start** button beneath the first panel (should be highlighted) to begin the data transfer.
 
-7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **ICS** shortcut on your VM's desktop.
+7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **High-Security Research Standard Storage** shortcut on your VM's desktop.
 
 - - -
 
