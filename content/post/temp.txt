@@ -1,0 +1,16 @@
+{{< rawhtml >}}
+.left, .right {
+  display: inline-block;
+}
+
+<figure class="left">
+  <img class="top" src="../../static/images/NCSA_1985.jpg" width="400" height="300"/>
+  <figcaption>Cray 1 at NCSA (National Center for Supercomputing Applications), October 1985</figcaption>
+</figure>
+
+<figure class="right">
+  <img class="average" src="../../static/images/TACC_2019.jpg" width="400" height="300"/>
+  <figcaption>Frontera at TACC (Texas Advanced Computing Center), August 2019 </figcaption>
+</figure>
+{{< /rawhtml >}}
+
