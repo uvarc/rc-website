@@ -5,7 +5,7 @@ description = ""
 date = "2024-10-15T00:00:00-05:00"
 title = "Afton Cluster Dedicated to Prof. John Hawley"
 draft = false
-tags = ["hpc"]
+tags = ["afton","hpc"]
 categories = ["feature"]
 +++
 
