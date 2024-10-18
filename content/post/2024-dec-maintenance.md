@@ -29,4 +29,5 @@ All systems are expected to return to service by **Wednesday,**
 |kraken2 | 2.1.2   | 2.1.3 |
 |orca    | 5.0.2   | 5.0.4 |
 |rust    | 1.66.1  | 1.79.0 |
+|star    | 2.7.9a  | 2.7.11b |
 {{< /table >}}
