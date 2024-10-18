@@ -28,6 +28,7 @@ All systems are expected to return to service by **Wednesday,**
 |gatk    | 4.3.0.0, 4.5.0.0 | 4.6.0.0 |
 |kraken2 | 2.1.2   | 2.1.3 |
 |orca    | 5.0.2   | 5.0.4 |
+|rapidsai| 23.10   | 24.06 |
 |rust    | 1.66.1  | 1.79.0 |
 |star    | 2.7.9a  | 2.7.11b |
 {{< /table >}}
