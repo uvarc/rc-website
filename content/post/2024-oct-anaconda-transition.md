@@ -11,7 +11,7 @@ categories = ["feature"]
 +++
 
 <p class="lead">
-Due to the new <a href=https://legal.anaconda.com/policies/en?name=terms-of-service#terms-of-service>licensing restrictions by Anaconda</a>  on research usage, the licensed Anaconda distribution will be removed from the system on October 15, 2024. The current anaconda/2023.07-py3.11 module will redirect to the miniforge/24.3.0-py3.11 module, switching to conda-forge as the default package installation channel with fewer preinstalled packages. Existing environments will not be affected. However, using Anaconda default channels for research without a personal license will violate the Anaconda license. For instructional use, package installation from licensed channels is still allowed
+Due to the new <a href=https://legal.anaconda.com/policies/en?name=terms-of-service#terms-of-service>licensing restrictions by Anaconda</a>  on research usage, the licensed Anaconda distribution was removed from the system on October 15, 2024. The current anaconda/2023.07-py3.11 module will redirect to the miniforge/24.3.0-py3.11 module, switching to conda-forge as the default package installation channel with fewer preinstalled packages. Existing environments will not be affected. However, using Anaconda default channels for research without a personal license will violate the Anaconda license. For instructional use, package installation from licensed channels is still allowed
 </p>
 
 # Maintenance: Oct 15, 2024
