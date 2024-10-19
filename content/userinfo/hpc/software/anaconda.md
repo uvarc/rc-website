@@ -122,11 +122,11 @@ As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install 
 # Example Slurm script
 ## Non-MPI
 
-{{< pull-code file="/static/scripts/anaconda_serial.slurm" lang="no-highlight" >}}
+{{< pull-code file="/static/scripts/python_serial.slurm" lang="no-highlight" >}}
 
 ## MPI
 
-{{< pull-code file="/static/scripts/anaconda_mpi.slurm" lang="no-highlight" >}}
+{{< pull-code file="/static/scripts/python_mpi.slurm" lang="no-highlight" >}}
 
 # More Information
 Please visit the official [Anaconda website](https://www.anaconda.com/download).

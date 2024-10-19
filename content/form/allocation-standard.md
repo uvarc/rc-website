@@ -51,18 +51,6 @@ private = true
     </div>
     <div style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted">Standard allocations expire 12 months after they are disbursed.</div>
   </div>
-  <div class="form-item form-group form-type-radios form-group"> <label class="control-label" for="for-capstone">Is this allocation for a School of Data Science Capstone project? <span class="form-required" title="This field is required.">*</span></label>
-    <div class="row">
-      <div id="for-capstone" class="form-radios col">
-        <div class="form-item form-type-radio radio"> <label class="control-label" for="for-capstone-yes">
-          <input required="required" type="radio" id="for-capstone" name="for-capstone" value="yes" class="form-radio" />&nbsp;Yes</label>
-        </div>
-        <div class="form-item form-type-radio radio"> <label class="control-label" for="for-capstone-no">
-          <input required="required" type="radio" id="for-capstone" name="for-capstone" value="no" checked="checked" class="form-radio" />&nbsp;No</label>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="form-item form-type-textarea form-group"> 
     <label class="control-label"  id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
     <label class="control-label"  id="renewal-descr" for="project-description">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>

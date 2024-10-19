@@ -7,12 +7,9 @@ author = "Staff"
 tags = ["dac","award"]
 +++
 
-***
-
-
 # Purpose
 
-The mission of the DAC is to provide UVA researchers with support for the management and analysis of large datasets on Research Computing platforms.
+The mission of the Data Analytics Center (DAC) is to provide UVA researchers with support for the management and analysis of large datasets on Research Computing platforms.
 
 To fulfill this mission and to empower faculty in advancing their research, we offer Awards for access to Research Comuting (RC) resources.  These Awards aim to 
 
@@ -23,16 +20,22 @@ ii) promote interdisciplinary collaborations,
 iii) cultivate communities of researchers with shared interests in data and analysis methods.
 
 
-
 # The Awards 
 
 The DAC offers two types of Awards:  Small Awards (up to $10,000 worth of services) and Large Awards (up to $100,000).
-While the Small Awards are intended to support research tasks for an individual PI or lab, the large Awards are designed to benefit a broader community.
 
-Recipients of the Awards will receive vouchers that may be used toward RC services, such as collaborations with DAC team members or purchase of data storage. 
+Recipients of the Awards will receive vouchers that may be used toward RC services, such as collaborations with DAC team members or purchase of data storage, or for support from any of the UVA Cores.
  
+## Small Data Analytics Resource Awards
 
-## Award Guidelines
+The Small Analytics Resource Awards are intended to support research tasks for an individual PI or lab. 
+
+## Large Data Analytics Resource Awards
+
+The Large Analytics Resource Awards are aimed to build data or analytics infrastructure with the potential to impact multiple researchers at UVA. Funding up to $100,000 in resources, this award aims to enable the hosting of data collections, the movement of data or the development of analytics infrastructure that will enable the research workflows of a broad community at UVA. In addition award funds may be allocated for in-depth collaborations with DAC team members.
+
+
+# Award Guidelines
 
 <u>Eligibility</u>:  The principal investigator must hold faculty status at UVA to be eligible for an Analytics Research Award.
 
@@ -116,6 +119,8 @@ To apply for the Small Analytics Research Award, the PI will submit a proposal (
 
 <u>Application Requirements for Large Awards</u>:  
 
+The objective of the Large Award is to develop comprehensive data resources that will foster a collaborative spirit among researchers at UVA.  Therefore, preference will be given to projects that include principal investigators or co-investigators from diverse fields.
+
 For the Large Analytics Research Award, the proposal must include the following:
 
 1.  A cover page that includes the project title, and name, title, department, and e-mail address of each the PI(s) and Co-I(s). The Principal Investigator(s) will be the individual(s) responsible for the scientific or technical direction of the project. If more than one PI is included, the first one listed will have primary responsibility for communications with the DAC and the submission of reports. Any listed Co-Is will not have overall responsibility or spending authority as the PI. 
@@ -147,11 +152,11 @@ We encourage you to follow these instructions precisely to ensure that your prop
 * The diversity of the data,
 * How this Award will advance your research or will enhance the community of researchers at UVA.
 
-## Voucher Disbursement
+# Voucher Disbursement
 
 After the Awards recipients have been announced, the Data Analytics Center will work with the PI to determine the disbursement of the Award vouchers.
 
-## Publicity & Communication
+# Publicity & Communication
 * The PI must acknowledge Research Computing in any publication, presentation, or poster that results from the work done on the Award.
 * At the end of the Award, the PI must agree to have a blurb about the research project posted on the Research Computing website
 

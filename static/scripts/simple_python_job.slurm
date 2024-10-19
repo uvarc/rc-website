@@ -5,6 +5,6 @@
 #SBATCH -p standard
 #SBATCH -A mygroup
 
-module load anaconda
+module load miniforge
 
 python myscript.py

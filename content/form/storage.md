@@ -67,7 +67,7 @@ private = true
         <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" /> &nbsp; Research Standard Storage ({{< extract_storage_cost type="standard" >}})</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" /> &nbsp; Ivy Central Storage ({{< extract_storage_cost type="ivy" >}})</label>
+        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="High-Security Research Standard" class="form-radio" /> &nbsp; High-Security Research Standard Storage ({{< extract_storage_cost type="hsz standard" >}})</label>
       </div>
     </div>
     <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
@@ -85,7 +85,8 @@ private = true
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">Grouper/MyGroups Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
-      <p class=tiny>Grouper or MyGroups group name under your Eservices user ID. You will have access to the <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> or <a href="https://mygroups.virginia.edu/groups/" target="_new" style="font-weight:bold;"> MyGroups</a> management and will be able to add/remove users for your project.</p>
+      <p class=tiny>Grouper or MyGroups group name under your Eservices user ID. You will have access to <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> management and will be able to add/remove users for your project.  Legacy MyGroups groups created before November 28th, 2023, can be accessed through the “Legacy MyGroups” folder on <a href="https://mygroups.virginia.edu/groups/" target="_new" style="font-weight:bold;"> Grouper</a>.</p>
+      
     </div>
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>

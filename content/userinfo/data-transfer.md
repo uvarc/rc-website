@@ -117,7 +117,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
-					<li>Transfer HIPAA data from a Health Systems workstation to Ivy Central Storage.</li>
+					<li>Transfer HIPAA data from a Health Systems workstation to High-Security Research Standard Storage.</li>
 				</ul>
 				<p>&nbsp;</p>
 				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
@@ -134,7 +134,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td>
 				<p align="center"><b>Destination</b></p>
 				<ul>
-					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage</a></li>
+					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">High-Security Research Standard Storage</a></li>
 				</ul>
 			</td>
 			<td>
@@ -199,7 +199,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 					<li>/scratch</li>
 					<li>Research Project Storage</li>
 					<li><a href="/userinfo/storage/research-standard/">Research Standard Storage</a></li>
-					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">Ivy Central Storage</a></li>
+					<li><a href="/userinfo/storage/sensitive-data/#ivy-central-storage">High-Security Research Standard Storage</a></li>
 				</ul>
 			</td>
 			<td>
