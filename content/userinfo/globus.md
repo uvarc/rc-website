@@ -19,7 +19,7 @@ Globus allows you to transfer data to and from systems such as:
 
 - Laptops & personal workstations
 - Rivanna/Afton HPC clusters
-- Ivy Central Storage
+- High-Security Research Standard Storage
 - Lab / departmental storage
 - Tape archives
 - Cloud storage
@@ -37,7 +37,7 @@ Before you are able to transfer files from or to your personal laptop/workstatio
 
 - Your local workstation,
 - A departmental server,
-- A "DTN" (Data Transfer Node) connected to Rivanna, Afton, or Ivy Central Storage, or
+- A "DTN" (Data Transfer Node) connected to Rivanna, Afton, or High-Security Research Standard Storage, or
 - A server operated by another university or by a national computing center.
 
 {{% /callout %}}
@@ -84,8 +84,8 @@ You can search for the collections to use for your transfer from the File Manage
 The official UVA managed collections are:
 
 * `UVA Standard Security Storage` - generally available; maps to Rivanna/Afton _home_ directories, _scratch_, _Research Standard_ & _Research Project_ storage.
-* `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into Ivy Central Storage.
-    **Globus is the *only* permitted data-transfer protocol for highly sensitive data.** To transfer data to Ivy Central Storage, please see the special instructions [here](/userinfo/ivy/#data-transfer-in-out-of-ivy).
+* `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into High-Security Research Standard Storage.
+    **Globus is the *only* permitted data-transfer protocol for highly sensitive data.** To transfer data to High-Security Research Standard Storage, please see the special instructions [here](/userinfo/ivy/#data-transfer-in-out-of-ivy).
 
 You can transfer files to or from your personal collection to a managed collection, one run either by UVA or by another institution.  You can transfer files between two managed collections.  You cannot transfer files from one personal collection to another personal collection.  If you wish to do this, contact Research Computing to convert at least one personal collection to a Globus Plus collection.
 

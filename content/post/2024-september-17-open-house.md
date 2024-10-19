@@ -10,6 +10,22 @@ tags = ["afton", "rivanna", "hpc"]
 categories = ["feature"]
 +++
 
+UPDATE: The Research Computing Open House was held on a blustery, rainy day, but the spirits of the staff and attendees were not dampened.  Turnout was above expectations despite the wet weather.  Attendees enjoyed the buffet and their interactions with RC staff.  
+
+The winners of the random-drawing prizes were
+* Maria Luana Morais, SOM
+* Matt Panzer, SEAS
+* Artun Duransoy, SEAS
+
+{{< rawhtml >}}
+<figure class="half" style="display:flex">
+    <img style="width:300px" "height:200px" src="/images/OpenHouse1_2024.jpg">
+    <img style="width:300px" "height:200px" src="/images/OpenHouse2_2024.jpg">
+</figure>
+{{< /rawhtml >}}
+
+---
+
 Please join us at the Research Computing Open House on Tuesday, September 17, 2024, from 2-5 p.m. in the Commonwealth Room at Newcomb Hall. We are excited to host the UVA community to share updates on a new supercomputer and services that we are offering. 
 
 ## Why Attend? 

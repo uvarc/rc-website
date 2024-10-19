@@ -69,13 +69,13 @@ aliases = [ "/storage" ]
 
 {{< storage_main_page_first >}}
 
-<sup>2</sup>For PIs with existing Research Standard Storage, the charges will be adjusted accordingly. PIs without existing Research Standard Storage will need to submit a request for the storage.
+<sup>1</sup>For PIs with existing Research Standard Storage, the charges will be adjusted accordingly. PIs without existing Research Standard Storage will need to submit a request for the storage.
 
-<sup>3</sup>Snapshot files are uneditable backup copies of all the files and folders in your account, taken at a daily interval. The Research Project Storage system keeps these snapshots for a week. Snapshot files are deleted sequentially after a week has passed. This saving method is useful for human error prevention as any accidentally deleted files may be recovered. Look to our [FAQ](/userinfo/faq/storage-faq/) page to learn how to access your snapshots.
+<sup>2</sup>Snapshot files are uneditable backup copies of all the files and folders in your account, taken at a daily interval. The Research Project Storage system keeps these snapshots for a week. Snapshot files are deleted sequentially after a week has passed. This saving method is useful for human error prevention as any accidentally deleted files may be recovered. Look to our [FAQ](/userinfo/faq/storage-faq/) page to learn how to access your snapshots.
 
-<sup>4</sup>Replication is a data management process that stores copies of data fragments over a distributed cluster or database. By having replicated data across each node or server on a given database, data can be accessed more reliably than data that only resides on a single server. This saving method is useful for disaster scenarios where if data is stored on multiple disks, and one disk fails, the data is still accessible.
+<sup>3</sup>Replication is a data management process that stores copies of data fragments over a distributed cluster or database. By having replicated data across each node or server on a given database, data can be accessed more reliably than data that only resides on a single server. This saving method is useful for disaster scenarios where if data is stored on multiple disks, and one disk fails, the data is still accessible.
 
-<sup>5</sup>Backup files are copies of files that are stored on a separate disk storage than that of the original copies. Files may be backed up on a separate disk storage or within cloud storage. Backed up files are not synced with their original, so any edits to the original are not reflected on the backup. This saving method is useful for disaster scenarios where if the original disk storage is unsalvageable, the backups may still be accessible.
+<sup>4</sup>Backup files are copies of files that are stored on a separate disk storage than that of the original copies. Files may be backed up on a separate disk storage or within cloud storage. Backed up files are not synced with their original, so any edits to the original are not reflected on the backup. This saving method is useful for disaster scenarios where if the original disk storage is unsalvageable, the backups may still be accessible.
 
 - - -
 
@@ -89,9 +89,13 @@ aliases = [ "/storage" ]
 
 {{< storage_main_page_second >}}
 
-Researchers who request space on ICS must first request an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Further information on Ivy and the ICS can be found [here](/userinfo/storage/sensitive-data/#ivy-central-storage).
+Researchers who request space on High-Security Research Standard must first request an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Further information on Ivy and the High-Security Research storage can be found [here](/userinfo/storage/sensitive-data/#hs-standard-storage).
 
-Ivy Central Storage is accessible by using [Globus](/userinfo/globus/) and connecting to the Ivy DTN.
+High-Security Research Standard Storage is accessible by using [Globus](/userinfo/globus/) and connecting to the High-Security DTN.
+
+## Ivy Central Storage (ICS)
+
+Ivy Central Storage has been replaced by High-Security Research Standard storage.
 
 - - -
 

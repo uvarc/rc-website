@@ -119,7 +119,7 @@ The Queue Status app provides detailed information on jobs queued and running in
 
 ## Check Scratch For Purge
 
-According to [UVA RC policy](/2024/07/reinstatement-of-file-purging-of-personal-/scratch-files-on-afton-and-rivanna), files in the `/scratch` directory that have not been accessed for over 90 days will be permanently deleted or 'purged'. The Check Scratch For Purge app allows you to see which files are at risk of being purged and download a list of their filenames. It displays the output of the command `check-scratch-for-purge`.
+According to [UVA RC policy](/2024/07/reinstatement-of-file-purging-of-personal-/scratch-files-on-afton-and-rivanna), files in the `/scratch` directory that have not been accessed for over 90 days will be permanently deleted or 'purged'. The Check Scratch For Purge app allows you to see which files are at risk of being purged and download a list of their filenames. It displays the output of the command `check-scratch-for-purge`, showing a list of files ordered from the oldest last accessed to the most recently accessed.
 
 ## Slurm Script Generator
 
