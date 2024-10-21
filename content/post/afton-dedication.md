@@ -24,10 +24,12 @@ John continued to serve on committees such as UCIT (University Committee for Inf
 Even with his strong advocacy for hardware, John was an even stronger champion of developing a professional support group for research computing.  He often stated that while hardware was important, what really mattered was people.  The University has responded by building Research Computing into the acclaimed group it is today.
 
 {{< rawhtml >}}
-<figure class="half" style="display:flex">
-    <img style="width:300px" "height:200px" src="/images/NCSA_1985.jpg">
-    <img style="width:300px" "height:200px" src="/images/TACC_2019.jpg">
-    <figcaption>Left: Cray-1 at NCSA, October 1985. Right: Frontera at TACC, August 2019.</figcaption>
-</figure>
+    <div>
+        <div style="display: flex; justify-content: space-between;">
+            <img style="width:300px; height:200px;" src="/images/NCSA_1985.jpg">
+            <img style="width:300px; height:200px;" src="/images/TACC_2019.jpg">
+        </div>
+        <figcaption style="text-align: center;">Left: Cray-1 at NCSA, October 1985. Right: Frontera at TACC, August 2019.</figcaption>
+    </div>
 {{< /rawhtml >}}
 
