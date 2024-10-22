@@ -34,6 +34,7 @@ We understand that these changes may cause inconvenience, but these changes are 
 
 ## What to expect after the December 12?
 
+We will be removing the dummy module `anaconda/2023.07-py3.11` from our system on December 12. The Conda package manager, along with a base environment, will only be available by loading the `miniforge/24.3.0-py3.11` module. Please refer to the FAQ for further instructions on how to use the Miniforge module."
 
 
 {{% /callout %}}

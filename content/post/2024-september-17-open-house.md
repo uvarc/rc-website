@@ -51,7 +51,8 @@ You are welcome to drop in anytime during the event and stay as long as you woul
 
 If you are planning to attend, please RSVP for the Open House in advance. Those who RSVP and attend will be entered into a drawing for for one of three prizes totaling $150! 
 
-<a style="display:flex; justify-content:center" href="https://forms.office.com/r/sU21zpidFq"><button  class="btn btn-primary btn-sm">RSVP for the Open House</button></a>
+<!-- Removed RSVP button -->
+<!-- <a style="display:flex; justify-content:center" href="https://forms.office.com/r/sU21zpidFq"><button  class="btn btn-primary btn-sm">RSVP for the Open House</button></a> -->
 
 
 ### Time & Location: 
