@@ -36,7 +36,7 @@ type = "rivanna"
   </tr>
   <tr>
     <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#home"><code>/home</code></a></td>
-    <td class="tg-dc35">50GB</td>
+    <td class="tg-dc35"200GB</td>
     <td class="tg-dc35">Free</td>
     <td class="tg-dc35">{{% backup-policy rivanna_home %}}</td>
     <td class="tg-dc35">Rivanna/Afton</td>
