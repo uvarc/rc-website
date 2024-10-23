@@ -1,6 +1,6 @@
 $(document).ready(function () {
     console.log("Script started");
-    alert("Script started");
+    // alert("Script started");
     console.log("Combined request form JS loaded");
 
     window.debugToggle = function() {
