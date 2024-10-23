@@ -117,7 +117,31 @@ To see all available environments, run `conda env list`.
 
 # Python and MPI
 
-As long as an MPI toolchain (e.g. `gcc` + `openmpi`) is loaded, you can install `mpi4py` using any Python module via `pip install --user mpi4py`. It is important to use a version of OpenMPI built for the cluster so that it will work correctly with Slurm.  You may find it desirable to set up a conda environment for use with mpi4py.
+The most widely used MPI library for Python is `mpi4py`. We recommend creating an environment for it.  When installing on the cluster, please do not use `conda install` since this will install prebuilt binaries, including a version of MPICH that does not communicate correctly with our Slurm resource manager.  The best practice is to install from the conda-forge channel using their `external` versions of an MPI library.  These are simply bindings to an MPI package provided by the underlying system.  For our system we will use OpenMPI.
+
+First load a compiler and a corresponding version of OpenMPI.
+```
+module load gcc openmpi
+```
+For the above example, with the versions of gcc available on our system, this is gcc 11.4.0. Now check the version of OpenMPI.
+```bash
+module list
+```
+In this example it is OpenMPI 4.1.4.  Be aware that specific version numbers will change with time.
+
+Now view the available external versions of OpenMPI from conda-forge
+```bash
+conda search -f openmpi -c conda-forge
+```
+Install the bindings
+```bash
+conda install -c conda-forge "openmpi=4.1.4=external_*"
+```
+
+Now you can install mpi4py
+```bash
+conda install -c conda-forge mpi4py
+```
 
 # Example Slurm script
 ## Non-MPI
