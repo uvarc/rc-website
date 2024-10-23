@@ -122,32 +122,8 @@ Yes, you may either pull the official TensorFlow Docker image or create your own
 
 1. You will find the Apptainer image `tensorflow_1.14.0-gpu.sif` in your current directory. Consult the instructions in the previous sections. Remember to replace `$CONTAINERDIR/tensorflow-2.13.0.sif` with the actual path to your own Apptainer image.
  
-## Conda environment
+## Pip
 
-The Python/CUDA/TensorFlow versions have to be very specific. 
+Please read the [manual](https://www.tensorflow.org/install/pip) for instructions. Especially note the `[and-cuda]` part of the pip install comand.
 
-1. For your target TF version, look up the supported Python and CUDA versions [here](https://www.tensorflow.org/install/source#gpu). Using 1.14.0 as an example, we find that it is supported by:
-
-    - Python 2.7, 3.3-3.7
-    - CUDA 10.0
-    - cuDNN 7.4
-
-1. Check that the CUDA version is supported on the HPC cluster:
-    - Find the corresponding NVIDIA driver version [here](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html).
-    - Start an ijob on a GPU node and run `nvidia-smi`. Look for the first line in the table. As of Jan 2024, our GPU nodes support up to CUDA 12.2.
-        ```
-        NVIDIA-SMI 535.104.12             Driver Version: 535.104.12   CUDA Version: 12.2  
-        ```
-    - In this example 10.0 is less than 12.2, so the target version is supported.
-
-1. Check cuDNN availability on https://anaconda.org. The closest match is 7.3 in the `anaconda` channel.
-
-1. Load the Anaconda module and create the environment with specific versions.
-
-    ```
-    module load anaconda
-    conda create -n tf1.14 python=3.7 cudatoolkit=10.0 cudnn=7.3 tensorflow-gpu=1.14 -c anaconda -c conda-forge
-    ```
-
-If the versions are incompatible, either the installation will fail or TF will not be able to detect the GPU at runtime.
-
+You may consider creating a conda environment (see [miniforge](/userinfo/hpc/software/miniforge)) for your local installation.
