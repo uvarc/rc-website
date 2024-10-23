@@ -10,6 +10,11 @@ draft = false
 type = "form"
 private = true
 +++
+
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
+<script type="text/javascript" src="/js/response-message.js"></script>
+<script type="text/javascript" src="/js/combined-request-form.js"></script>
+
 {{% jira-msg %}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="combined-request-form" class="needs-validation" novalidate accept-charset="UTF-8">
 {{< enable-disable-form >}}
@@ -338,7 +343,3 @@ private = true
 
 {{< /enable-disable-form >}}
 </form>
-
-<script type="text/javascript" src="/js/user-session-v2.js"></script>
-<script type="text/javascript" src="/js/response-message.js"></script>
-<script type="text/javascript" src="/js/combined-request-form.js"></script>
