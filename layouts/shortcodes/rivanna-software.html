@@ -58,7 +58,7 @@ function searchFunction() {
           {{ $scratch.Set $modulename $v }}
         {{ end }}
       {{ end }}
-      {{ range $mname,$v := $scratch.Get "modules" }}
+      {{ range $mname,$v := $scratch.Values }}
         {{ $category := index (split (index $v.whatis 2) "Application class: ") 1 }}
         {{ if or (eq $mclasses "all") (in $category $mclasses) }}
           {{ $category := (printf "%s %s" $category $arch) }}
