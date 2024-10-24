@@ -63,7 +63,7 @@ gurobi.sh
 To import `gurobipy` as a Python module, you can use either Gurobi's own `python3.7` executable or a different `python`. gurobi/10.0.1 uses `python3.7` and gurobi/11.0.0 uses `python3.11`.
 
 ### Gurobi Python
-Please replace `python` with `python3.7` or `python3.11` in your Slurm scripts. However, note that Gurobi does not provide `pip`. If you need additional Python packages please use a non-Gurobi Python (e.g. via `module load anaconda`). See next section.
+Please replace `python` with `python3.7` or `python3.11` in your Slurm scripts. However, note that Gurobi does not provide `pip`. If you need additional Python packages please use a non-Gurobi Python (e.g. via `module load miniforge`). See next section.
 
 ### Non-Gurobi Python
 Gurobi/10.0.1 supports Python versions 2.7, 3.6 - 3.9. Please follow the instructions in the `module load` message.

@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2019-06-23T08:37:46-05:00"
+date = "2024-10-23T00:00:00-05:00"
 tags = [
   "programming"
 ]
@@ -29,4 +29,4 @@ Research Computing offers an online "Introduction to Programming in Python" cour
 # Python on the HPC System
 The default Python is required for system purposes and is generally too old for applications. We offer Python through the [Miniforge](https://github.com/conda-forge/miniforge) distribution.
 
-**View our [Anaconda on the HPC System](/userinfo/hpc/software/anaconda/) documentation for details.**
+**View our [Miniforge on the HPC System](/userinfo/hpc/software/miniforge/) documentation for details.**
