@@ -34,6 +34,8 @@ All systems are expected to return to service by **Wednesday,**
 |orca     | 5.0.2   | 5.0.4 |
 |rapidsai | 23.10   | 24.06 |
 |rust     | 1.66.1  | 1.79.0 |
+|scons    | 4.2.0 | 4.5.2 |
 |smrtlink | 12.0.0.177059 | 13.1.0.221970 |
+|spaceranger | 2.0.1 | 3.1.1 |
 |star     | 2.7.9a  | 2.7.11b |
 {{< /table >}}
