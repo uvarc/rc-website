@@ -31,22 +31,27 @@ private = true
   {{% form-userinfo-v2 %}}
 
   <!-- Requestor Information -->
-  <div class="form-item form-group form-type-textfield form-group">
-    <label class="control-label" for="pi-uva-id">PI/Owner UVA ID <span class="form-required" title="This field is required.">*</span></label>
-    <input required="required" class="form-control form-text required" type="text" id="pi-uva-id" name="pi-uva-id" value="" size="60" maxlength="128" />
+  <div class="form-item form-group form-type-textfield form-group" style="display: none;">
+    <label class="control-label" for="pi-uva-id">PI/Owner UVA ID</label>
+    <input class="form-control form-text" type="text" id="pi-uva-id" name="pi-uva-id" value="" size="60" maxlength="128" />
   </div>
+
   <div class="form-item form-group form-item form-type-select form-group"> 
     <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
-    <span style="font-weight:normal;"><br />PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create his/her Grouper group</a> for new allocations.</span>
     <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
       <option value="">- Select a group -</option>
     </select>
-    {{% group_creation_tip %}}
+    <!-- Helper text for camelCase format -->
+    <small class="helper-text">Group names must be in camelCase format (e.g., researchLab1, dataScience2)</small>
+    <!-- Validation message container -->
+    <div id="camelcase-validation-message" class="validation-message"></div>
   </div>
-  <div class="form-item form-group form-type-textfield form-group">
+
+  <div class="form-item form-group form-type-textfield form-group" style="display: none;">
     <label class="control-label" for="requestor-id">Requestor ID (if different from User ID above)</label>
     <input class="form-control form-text" type="text" id="requestor-id" name="requestor-id" value="" size="60" maxlength="128" />
   </div>
+
   <div class="container" style="padding:2rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
     <div class="row">
       <!-- Request Type selection -->
@@ -84,11 +89,52 @@ private = true
       </div>
     </div>
   </div>
-
-  <!-- Allocation Request Fields -->
+<!-- Allocation Request Fields -->
   <div id="allocation-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <h3>Allocation Request</h3> 
     <hr size="1" />
+    
+    <!-- Existing Projects for Allocation -->
+    <div id="existing-projects-allocation" style="margin-top:1em;">
+        <fieldset>
+            <legend class="control-label">Your Existing Projects</legend>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Project Name</th>
+                        <th>Number of SUs</th>
+                    </tr>
+                </thead>
+                <tbody id="allocation-projects-tbody">
+                    <!-- Will be populated by API but currently being populated with sample data in the JS -->
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+
+    <!-- Tier Options for Allocation -->
+    <div id="allocation-tier" style="margin-top:1em;">
+        <fieldset class="col form-item form-group form-item form-type-radios form-group">
+            <legend class="control-label">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
+            <small class="helper-text">For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">Allocation Types Documentation</a>.</small>
+            <div id="allocation-tier-options" class="form-radios mt-2">
+                <div class="form-item form-type-radio radio">
+                    <input required="required" type="radio" id="allocation-choice1" name="allocation-choice" value="Standard" class="form-radio" checked="checked" />
+                    <label for="allocation-choice1">Standard</label>
+                </div>
+                <div class="form-item form-type-radio radio">
+                    <input required="required" type="radio" id="allocation-choice2" name="allocation-choice" value="Paid" class="form-radio" />
+                    <label for="allocation-choice2">Paid</label>
+                </div>
+                <div class="form-item form-type-radio radio">
+                    <input required="required" type="radio" id="allocation-choice3" name="allocation-choice" value="Instructional" class="form-radio" />
+                    <label for="allocation-choice3">Instructional</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
     <fieldset class="form-item form-group form-type-radios form-group">
       <legend class="control-label">New or Renewal <span class="form-required" title="This field is required.">*</span></legend>
       <div class="row">
@@ -106,7 +152,7 @@ private = true
       </div>
     </fieldset>
     
-    <!-- Project Name for New Allocation (Initially hidden) -->
+    <!-- Project Name for New Allocation -->
     <div id="new-project-name-container" style="display: none; margin-top:1em;">
       <div class="form-item form-group form-type-textfield form-group">
         <label class="control-label" for="new-project-name">Project Name <span class="form-required" title="This field is required.">*</span></label>
@@ -114,72 +160,11 @@ private = true
       </div>
     </div>
 
-    <!-- Existing Projects for Renewal (Initially hidden) -->
-    <div id="existing-projects-allocation" style="display: none; margin-top:1em;">
-      <fieldset>
-        <legend class="control-label">Select Existing Project <span class="form-required" title="This field is required.">*</span></legend>
-        <table class="table table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Select</th>
-              <th>Project Name</th>
-              <th>Number of SUs</th>
-              <th>Data Science Capstone</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="project-row" data-project="project1">
-              <td>
-                <input type="radio" id="project1-allocation" name="existing-project-allocation" value="project1" class="form-radio project-select">
-              </td>
-              <td><label for="project1-allocation">Project 1</label></td>
-              <td>50,000</td>
-              <td>Yes</td>
-            </tr>
-            <tr class="project-row" data-project="project2">
-              <td>
-                <input type="radio" id="project2-allocation" name="existing-project-allocation" value="project2" class="form-radio project-select">
-              </td>
-              <td><label for="project2-allocation">Project 2</label></td>
-              <td>100,000</td>
-              <td>No</td>
-            </tr>
-            <tr class="project-row" data-project="project3">
-              <td>
-                <input type="radio" id="project3-allocation" name="existing-project-allocation" value="project3" class="form-radio project-select">
-              </td>
-              <td><label for="project3-allocation">Project 3</label></td>
-              <td>75,000</td>
-              <td>Yes</td>
-            </tr>
-          </tbody>
-        </table>
-      </fieldset>
-    </div>
-
-    <!-- School of Data Science Capstone project field -->
-    <div id="capstone-project-container" style="display: none; margin-top:1em;">
-      <fieldset class="form-item form-group form-type-radios form-group">
-        <legend class="control-label">Is this allocation for a School of Data Science Capstone project? <span class="form-required" title="This field is required.">*</span></legend>
-        <div class="row">
-          <div id="for-capstone" class="form-radios col">
-            <div class="form-item form-type-radio radio">
-              <input required="required" type="radio" id="for-capstone-yes" name="for-capstone" value="yes" class="form-radio" />
-              <label class="control-label" for="for-capstone-yes">Yes</label>
-            </div>
-            <div class="form-item form-type-radio radio">
-              <input required="required" type="radio" id="for-capstone-no" name="for-capstone" value="no" checked="checked" class="form-radio" />
-              <label class="control-label" for="for-capstone-no">No</label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-
     <div class="form-item form-type-textarea form-group"> 
       <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-      <label class="control-label" id="renewal-descr" for="project-description" style="display: none; margin-top:1em;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
-      <div class="form-textarea-wrapper resizable"><textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
+      <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+      <div class="form-textarea-wrapper resizable">
+        <textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
       </div>
     </div>
   </div>
@@ -188,6 +173,27 @@ private = true
   <div id="storage-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <h3>Storage Request</h3>
     <hr size="1" />
+
+    <!-- Existing Projects for Storage -->
+    <div id="existing-projects-storage" style="margin-top:1em;">
+        <fieldset>
+            <legend class="control-label">Your Existing Projects</legend>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Project Name</th>
+                        <th>Shared Allocation Space</th>
+                        <th>Current Storage Size</th>
+                    </tr>
+                </thead>
+                <tbody id="storage-projects-tbody">
+                    <!-- Will be populated by API but currently being populated with sample data in the JS -->
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+
     <div class="row">
       <div class="col form-item form-group form-item form-type-radios form-group">
         <fieldset>
@@ -219,79 +225,37 @@ private = true
       </div>
     </div>
 
-    <!-- Existing Projects for Storage (Initially hidden) -->
-    <div id="existing-projects-storage" style="display: none; margin-top:1em;">
-      <fieldset>
-        <legend class="control-label">Select Existing Project <span class="form-required" title="This field is required.">*</span></legend>
-        <table class="table table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>Select</th>
-              <th>Project Name</th>
-              <th>Shared Allocation Space</th>
-              <th>Current Storage Size</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <input type="radio" id="project1-storage" name="existing-project-storage" value="project1" class="form-radio">
-              </td>
-              <td><label for="project1-storage">Project 1</label></td>
-              <td>researchLab1</td>
-              <td>50 TB</td>
-            </tr>
-            <tr>
-              <td>
-                <input type="radio" id="project2-storage" name="existing-project-storage" value="project2" class="form-radio">
-              </td>
-<td><label for="project2-storage">Project 2</label></td>
-              <td>dataScience2</td>
-              <td>1 TB</td>
-            </tr>
-            <tr>
-              <td>
-                <input type="radio" id="project3-storage" name="existing-project-storage" value="project3" class="form-radio">
-              </td>
-              <td><label for="project3-storage">Project 3</label></td>
-              <td>bioInformatics3</td>
-              <td>2 TB</td>
-            </tr>
-          </tbody>
-        </table>
-      </fieldset>
-    </div>
-   
-    <!-- Storage Platform (Initially hidden) -->
+    <!-- Tier Options for Storage -->
     <div id="storage-platform" style="display: none; margin-top:1em;">
       <fieldset class="col form-item form-group form-item form-type-radios form-group">
-        <legend class="control-label">Storage Platform <span class="form-required" title="This field is required.">*</span></legend>
-        <div id="storage-options" class="form-radios">
+        <legend class="control-label">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
+        <small class="helper-text">For detailed information about each storage tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/storage/" target="_blank">Storage Documentation</a>.</small>
+        <div id="storage-options" class="form-radios mt-2">
           <div class="form-item form-type-radio radio disabled">
-            <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="Research Project" class="form-radio" />
-            <label for="storage-choice1">Research Project Storage ({{< extract_storage_cost type="project" >}})</label>
+            <input required="required" type="radio" id="storage-choice1" name="storage-choice" value="SSZ Research Project" class="form-radio" />
+            <label for="storage-choice1">SSZ Research Project ({{< extract_storage_cost type="project" >}})</label>
           </div>
           <div class="form-item form-type-radio radio">
-            <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="Research Standard" class="form-radio" checked="checked" />
-            <label for="storage-choice3">Research Standard Storage ({{< extract_storage_cost type="standard" >}})</label>
+            <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="SSZ Research Standard" class="form-radio" checked="checked" />
+            <label for="storage-choice3">SSZ Research Standard ({{< extract_storage_cost type="standard" >}})</label>
           </div>
           <div class="form-item form-type-radio radio">
-            <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="High-Security Research Standard" class="form-radio" />
-            <label for="storage-choice4">High-Security Research Standard Storage ({{< extract_storage_cost type="high-security-standard" >}})</label>
-          </div>
-          <div class="form-item form-type-radio radio">
-            <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="ivy" class="form-radio" />
-            <label for="storage-choice2">Ivy Central Storage ({{< extract_storage_cost type="ivy" >}})</label>
+            <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="High Security Research Standard" class="form-radio" />
+            <label for="storage-choice4">High Security Research Standard ({{< extract_storage_cost type="high-security-standard" >}})</label>
           </div>
         </div>
       </fieldset>
       <div class="col form-item form-group">
-        <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted"><h6>Internal Use / Public Data</h6>This storage platform is appropriate for public or internal use data.</div>
-        <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%; display: none;" class="form-text text-muted"><h6>Sensitive / Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.</div>
+        <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted">
+          <h6>Internal Use / Public Data</h6>This storage platform is appropriate for public or internal use data.
+        </div>
+        <div id="sensitive-data" style="border: solid 1px #ccc; padding:1rem; background-color:#e6caca; font-size:90%; display: none;" class="form-text text-muted">
+          <h6>Sensitive / Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.
+        </div>
       </div>
     </div>
 
-    <!-- Shared Space Name (Initially hidden) -->
+    <!-- Shared Space Name -->
     <div id="shared-space-name-container" style="display: none; margin-top:1em;">
       <div class="form-item form-type-textarea form-group">
         <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
@@ -300,7 +264,7 @@ private = true
       </div>
     </div>
 
-    <!-- Project Title (Initially hidden) -->
+    <!-- Project Title -->
     <div id="project-title-container" style="display: none; margin-top:1em;">
       <div class="form-item form-group form-item form-type-textarea form-group"> 
         <label class="control-label" for="project-title">Project Title <span class="form-required" title="This field is required.">*</span></label>
@@ -309,7 +273,7 @@ private = true
     </div>
   </div>
 
-  <!-- Billing Information Section (Initially hidden) -->
+  <!-- Billing Information Section -->
   <div id="billing-information" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <h3>Payment Information</h3>
     <hr size="1" />
@@ -320,7 +284,7 @@ private = true
     {{% billing-fdm %}}
   </div>
 
-  <!-- Data Agreement and Submit Button (outside of both allocation and storage fields) -->
+  <!-- Data Agreement and Submit Button -->
   <div id="common-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <div class="form-check form-item form-group" style="margin-top:1rem;">
       <label class="control-label" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
