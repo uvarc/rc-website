@@ -21,8 +21,8 @@ toc = true
 - - -
 
 # Help! I deleted my files accidentally! What can I do?
-* For your home storage, the directory is `/home/.snapshots/<computing_id>` . Snapshots are created once per day.  
-* For GPFS _Research Project_ (leased) storage, the directory is `/gpfs/gpfs0/project/.snapshots`. For non-GPFS Research Project storage, the directory is `/project/.snapshot`.
+* For your home storage, the directory is `/home/.snapshots` . Snapshots are created once per day. Find the date you wish to find the snapshot for and navigate to your computing id. 
+* For GPFS _Research Project_ (leased) storage, the directory is `/gpfs/gpfs0/project/.snapshots`.
 * Neither _Research Standard_ (leased) nor scratch storage is backed up in any way.
 
 # Why should I lease storage?
