@@ -76,7 +76,7 @@ private = true
   <div class="container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
     <fieldset class="form-item form-group form-type-radios">
       <legend class="control-label h6 mb-2">Request Type <span class="form-required" title="This field is required.">*</span></legend>
-      <div id="request-type-options" class="form-radios d-flex">
+      <div id="request-type-options" class="form-radios d-flex" style="justify-content: space-evenly;">
         <div class="form-check me-4">
           <input required="required" type="radio" id="request-type-allocation" name="request-type" value="allocation" class="form-check-input" checked="checked" />
           <label class="form-check-label" for="request-type-allocation">Allocation Request</label>
