@@ -8,6 +8,15 @@ $(document).ready(function () {
             #mygroups-group option.text-muted { 
                 color: #6c757d !important; 
             }
+            #mygroups-group option:disabled {
+                color: #adb5bd !important;
+                font-style: italic;
+                background-color: #f8f9fa !important;
+                cursor: not-allowed;
+            }
+            #mygroups-group option:disabled::before {
+                content: "⚠️ ";
+            }
             .helper-text {
                 color: #495057;
                 font-size: 0.875rem;
@@ -37,6 +46,13 @@ $(document).ready(function () {
                 margin-top: 0.25rem;
                 display: none;
             }
+            .invalid-format-message {
+                color: #856404;
+                font-size: 0.875rem;
+                font-style: italic;
+                margin-top: 0.25rem;
+                display: none;
+            }
             .project-row {
                 cursor: pointer;
                 transition: background-color 0.2s;
@@ -47,8 +63,47 @@ $(document).ready(function () {
             .project-row.selected {
                 background-color: #FDDA24 !important;
             }
+            .project-group {
+                font-family: monospace;
+                color: #0056b3;
+            }
+            .project-tier {
+                font-weight: 500;
+            }
+            .tier-note {
+                font-size: 0.875rem;
+                color: #666;
+                margin-top: 0.25rem;
+                font-style: italic;
+            }
         `)
         .appendTo('head');
+
+    // Constants for tier types and their properties
+    const TIER_TYPES = {
+        // Allocation tiers
+        'Standard': { isPaid: false },
+        'Paid': { isPaid: true },
+        'Instructional': { isPaid: false },
+        // Storage tiers
+        'SSZ Research Project': { isPaid: true },
+        'SSZ Research Standard': { 
+            isPaid: (currentSize) => currentSize > 10, // Function to determine if paid based on size
+            freeLimit: 10 // TB
+        },
+        'High Security Research Standard': { isPaid: true }
+    };
+
+    // Function to check if storage tier should be paid based on current usage
+    function isTierPaid(tierName, currentSize = 0) {
+        const tier = TIER_TYPES[tierName];
+        if (!tier) return false;
+        
+        if (typeof tier.isPaid === 'function') {
+            return tier.isPaid(currentSize);
+        }
+        return tier.isPaid;
+    }
 
     window.debugToggle = function() {
         console.log("Debug toggle called");
@@ -66,16 +121,22 @@ $(document).ready(function () {
                 {
                     id: 'uvarc-alloc-1',
                     name: 'Genomics Research Project',
+                    group: 'genomeResearchLab1',
+                    tier: 'Standard',
                     serviceUnits: '100,000'
                 },
                 {
                     id: 'uvarc-alloc-2',
                     name: 'Climate Model Analysis',
+                    group: 'climateModelData2',
+                    tier: 'Paid',
                     serviceUnits: '75,000'
                 },
                 {
                     id: 'uvarc-alloc-3',
                     name: 'Neural Network Training',
+                    group: 'neuralNetworks3',
+                    tier: 'Instructional',
                     serviceUnits: '150,000'
                 }
             ],
@@ -83,107 +144,32 @@ $(document).ready(function () {
                 {
                     id: 'uvarc-store-1',
                     name: 'Genomics Research Project',
+                    group: 'genomeResearchLab1',
+                    tier: 'SSZ Research Project',
                     sharedSpace: 'genomeResearchLab1',
                     currentSize: '50'
                 },
                 {
                     id: 'uvarc-store-2',
                     name: 'Climate Model Analysis',
+                    group: 'climateModelData2',
+                    tier: 'SSZ Research Standard',
                     sharedSpace: 'climateModelData2',
-                    currentSize: '100'
+                    currentSize: '8'
                 },
                 {
                     id: 'uvarc-store-3',
                     name: 'Neural Network Training',
+                    group: 'neuralNetworks3',
+                    tier: 'High Security Research Standard',
                     sharedSpace: 'neuralNetworks3',
                     currentSize: '75'
                 }
-            ]
+            ],
+            userStorageUsage: {
+                'SSZ Research Standard': 8 // Current total TB used for this tier
+            }
         };
-    }
-
-    async function loadUserProjects() {
-        try {
-            const projects = await fetchUserProjects();
-            
-            // Populate Allocation Projects
-            const allocationTableBody = $('#allocation-projects-tbody');
-            allocationTableBody.empty();
-            
-            if (projects.allocationProjects.length === 0) {
-                allocationTableBody.append(`
-                    <tr>
-                        <td colspan="3" class="text-center">No existing allocation projects found</td>
-                    </tr>
-                `);
-            } else {
-                projects.allocationProjects.forEach(project => {
-                    const row = $('<tr>').addClass('project-row');
-                    row.append(`
-                        <td>
-                            <input type="radio" name="existing-project-allocation" 
-                                   value="${project.id}" class="form-radio project-select">
-                        </td>
-                        <td>${project.name}</td>
-                        <td>${project.serviceUnits}</td>
-                    `);
-                    allocationTableBody.append(row);
-                });
-            }
-
-            // Populate Storage Projects
-            const storageTableBody = $('#storage-projects-tbody');
-            storageTableBody.empty();
-            
-            if (projects.storageProjects.length === 0) {
-                storageTableBody.append(`
-                    <tr>
-                        <td colspan="4" class="text-center">No existing storage projects found</td>
-                    </tr>
-                `);
-            } else {
-                projects.storageProjects.forEach(project => {
-                    const row = $('<tr>').addClass('project-row');
-                    row.append(`
-                        <td>
-                            <input type="radio" name="existing-project-storage" 
-                                   value="${project.id}" class="form-radio project-select">
-                        </td>
-                        <td>${project.name}</td>
-                        <td>${project.sharedSpace}</td>
-                        <td>${project.currentSize} TB</td>
-                    `);
-                    storageTableBody.append(row);
-                });
-            }
-
-            // Make entire row clickable
-            $('.project-row').click(function(e) {
-                if (!$(e.target).is('input[type="radio"]')) {
-                    $(this).find('input[type="radio"]').prop('checked', true).trigger('change');
-                }
-            });
-
-            // Add hover effect
-            $('.project-row').hover(
-                function() { $(this).css('background-color', '#f5f5f5'); },
-                function() { 
-                    if (!$(this).find('input[type="radio"]').is(':checked')) {
-                        $(this).css('background-color', ''); 
-                    }
-                }
-            );
-
-        } catch (error) {
-            console.error('Error loading user projects:', error);
-            $('#allocation-projects-tbody, #storage-projects-tbody').empty().append(`
-                <tr>
-                    <td colspan="4" class="text-center text-danger">
-                        Error loading projects. Please try again later.
-                    </td>
-                </tr>
-            `);
-        }
     }
     // CamelCase validation function
     function isCamelCase(str) {
@@ -204,17 +190,60 @@ $(document).ready(function () {
             loadUserProjects();
         }
         logVisibility();
-        toggleFreeOrPaid();
         toggleAllocationFields();
         toggleStorageFields();
+        updateBillingVisibility();
     }
 
-    function toggleFreeOrPaid() {
-        var freeOrPaid = $('input[name="free-or-paid"]:checked').val();
-        console.log("Selected free or paid:", freeOrPaid);
-        $('#billing-information').toggle(freeOrPaid === 'paid');
-        $('#billing-information input, #billing-information select').prop('required', freeOrPaid === 'paid');
-        console.log("Billing information visible:", $('#billing-information').is(":visible"));
+    async function updateBillingVisibility() {
+        try {
+            const projects = await fetchUserProjects();
+            const currentStorageUsage = projects.userStorageUsage['SSZ Research Standard'] || 0;
+            const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
+            const selectedAllocationTier = $('input[name="allocation-choice"]:checked').val();
+            const requestedStorageSize = parseInt($('#capacity').val()) || 0;
+
+            let shouldShowBilling = false;
+            let tierNote = '';
+
+            // Check allocation tier if it's an allocation request
+            if ($('#allocation-fields').is(':visible') && selectedAllocationTier) {
+                shouldShowBilling = isTierPaid(selectedAllocationTier);
+            }
+
+            // Check storage tier if it's a storage request
+            if ($('#storage-fields').is(':visible') && selectedStorageTier) {
+                if (selectedStorageTier === 'SSZ Research Standard') {
+                    const totalSize = currentStorageUsage + requestedStorageSize;
+                    shouldShowBilling = totalSize > TIER_TYPES['SSZ Research Standard'].freeLimit;
+                    
+                    if (shouldShowBilling) {
+                        tierNote = `Note: You have already used ${currentStorageUsage} TB of your free 10 TB allocation. This request will exceed the free limit.`;
+                    } else {
+                        tierNote = `Note: You have used ${currentStorageUsage} TB of your free 10 TB allocation.`;
+                    }
+                } else {
+                    shouldShowBilling = isTierPaid(selectedStorageTier);
+                }
+            }
+
+            // Update UI
+            $('#billing-information').toggle(shouldShowBilling);
+            $('#billing-information input, #billing-information select').prop('required', shouldShowBilling);
+
+            // Update or create tier note
+            if (tierNote) {
+                if ($('#tier-note').length === 0) {
+                    $('#storage-platform').append(`<div id="tier-note" class="tier-note">${tierNote}</div>`);
+                } else {
+                    $('#tier-note').html(tierNote);
+                }
+            } else {
+                $('#tier-note').remove();
+            }
+        } catch (error) {
+            console.error('Error updating billing visibility:', error);
+        }
     }
 
     function toggleAllocationFields() {
@@ -254,6 +283,7 @@ $(document).ready(function () {
         var isHighSecurity = selectedStorage === 'High Security Research Standard';
         $('#sensitive-data').toggle(isHighSecurity);
         $('#standard-data').toggle(!isHighSecurity);
+        updateBillingVisibility();
         logVisibility();
     }
 
@@ -274,6 +304,8 @@ $(document).ready(function () {
         dropdown.empty();
         dropdown.append('<option value="">- Select a group -</option>');
         
+        var validOptionsCount = 0;
+        
         $.each(groups, function(key, value) {
             var option = $('<option></option>')
                 .attr('value', value.id)
@@ -281,18 +313,37 @@ $(document).ready(function () {
             
             if (!isCamelCase(value.name)) {
                 option.addClass('text-muted')
-                     .css('background-color', '#f8f9fa')
-                     .attr('title', 'This group name is not in camelCase format')
-                     .data('camelcase', false);
+                     .prop('disabled', true)
+                     .attr('title', '⚠️ This group name is not in camelCase format')
+                     .data('camelcase', false)
+                     .text('⚠️ ' + value.name + ' (Invalid format)');
             } else {
                 option.data('camelcase', true);
+                validOptionsCount++;
             }
             
             dropdown.append(option);
         });
 
-        if ($('#camelcase-validation-message').length === 0) {
-            dropdown.after('<div id="camelcase-validation-message" class="validation-message">Please select a group with a valid camelCase name</div>');
+        if ($('#group-selection-messages').length === 0) {
+            dropdown.after('<div id="group-selection-messages"></div>');
+        }
+
+        var messagesContainer = $('#group-selection-messages');
+        messagesContainer.empty();
+
+        messagesContainer.append('<div id="camelcase-validation-message" class="validation-message">Please select a group with a valid camelCase name</div>');
+
+        if (groups.length - validOptionsCount > 0) {
+            messagesContainer.append(`
+                <div class="invalid-format-message" style="display: block;">
+                    ${groups.length - validOptionsCount} group(s) are not in valid camelCase format and have been disabled
+                </div>
+            `);
+        }
+
+        if (validOptionsCount === 0) {
+            dropdown.addClass('is-invalid');
         }
     }
 
@@ -386,12 +437,12 @@ $(document).ready(function () {
 
     // Event listeners
     $('input[name="request-type"]').change(toggleRequestFields);
-    $('input[name="free-or-paid"]').change(toggleFreeOrPaid);
     $('input[name="new-or-renewal"]').change(toggleAllocationFields);
     $('input[name="type-of-request"]').change(toggleStorageFields);
-    $('input[name="storage-choice"]').change(toggleTierOptions);  // Handles SSZ and High Security tier selections
+    $('input[name="storage-choice"]').change(toggleTierOptions);
     $('input[name="allocation-choice"]').change(function() {
         console.log("Selected allocation tier:", $(this).val());
+        updateBillingVisibility();
     });
 
     $('#mygroups-group').change(function() {
@@ -409,9 +460,14 @@ $(document).ready(function () {
         if (validateForm()) {
             $(this).find("button[type='submit']").prop('disabled', true);
             console.log('Form submitted successfully');
-            // Here you would typically send the form data to the server
         } else {
             console.log('Form validation failed');
+        }
+    });
+
+    $('#capacity').on('input change', function() {
+        if ($('#storage-fields').is(':visible')) {
+            updateBillingVisibility();
         }
     });
 
@@ -432,10 +488,11 @@ $(document).ready(function () {
     console.log("Initial call to toggle functions");
     $('#allocation-fields, #storage-fields, #common-fields').hide();
     toggleRequestFields();
-    toggleFreeOrPaid();
     toggleAllocationFields();
     toggleStorageFields();
     toggleTierOptions();
     loadUserProjects();
     fetchAndPopulateGroups();
+    updateBillingVisibility();
 });
+    

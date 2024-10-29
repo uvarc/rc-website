@@ -70,23 +70,6 @@ private = true
           </div>
         </fieldset>
       </div>
-
-      <!-- Common fields for both Allocation and Storage requests -->
-      <div class="col-md-6">
-        <fieldset class="form-item form-group form-type-radios">
-          <legend class="control-label">Free or Paid <span class="form-required" title="This field is required.">*</span></legend>
-          <div id="free-or-paid-options" class="form-radios">
-            <div class="form-check">
-              <input required="required" type="radio" id="free-option" name="free-or-paid" value="free" class="form-check-input" />
-              <label class="form-check-label" for="free-option">Free</label>
-            </div>
-            <div class="form-check">
-              <input required="required" type="radio" id="paid-option" name="free-or-paid" value="paid" class="form-check-input" />
-              <label class="form-check-label" for="paid-option">Paid</label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
     </div>
   </div>
 <!-- Allocation Request Fields -->
@@ -97,12 +80,14 @@ private = true
     <!-- Existing Projects for Allocation -->
     <div id="existing-projects-allocation" style="margin-top:1em;">
         <fieldset>
-            <legend class="control-label">Your Existing Projects</legend>
+            <legend class="control-label">Your Existing Allocations</legend>
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
                         <th>Select</th>
                         <th>Project Name</th>
+                        <th>Group</th>
+                        <th>Tier</th>
                         <th>Number of SUs</th>
                     </tr>
                 </thead>
@@ -177,12 +162,14 @@ private = true
     <!-- Existing Projects for Storage -->
     <div id="existing-projects-storage" style="margin-top:1em;">
         <fieldset>
-            <legend class="control-label">Your Existing Projects</legend>
+            <legend class="control-label">Your Existing Storage</legend>
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
                         <th>Select</th>
                         <th>Project Name</th>
+                        <th>Group</th>
+                        <th>Tier</th>
                         <th>Shared Allocation Space</th>
                         <th>Current Storage Size</th>
                     </tr>
