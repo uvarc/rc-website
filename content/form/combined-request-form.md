@@ -53,8 +53,8 @@ private = true
   </div>
 
   <div class="container" style="padding:2rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+    <!-- Request Type and Preview Section -->
     <div class="row">
-      <!-- Request Type selection -->
       <div class="col-md-6">
         <fieldset class="form-item form-group form-type-radios">
           <legend class="control-label">Request Type <span class="form-required" title="This field is required.">*</span></legend>
@@ -71,32 +71,31 @@ private = true
         </fieldset>
       </div>
     </div>
+
+    <!-- Combined Preview Table -->
+    <div id="existing-resources-preview" class="mt-4">
+      <h4>Your Current Resources</h4>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Project/Class</th>
+            <th>Group</th>
+            <th>Tier</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody id="combined-preview-tbody">
+          <!-- Will be populated by API but currently being populated with sample data in the JS -->
+        </tbody>
+      </table>
+    </div>
   </div>
-<!-- Allocation Request Fields -->
+  <!-- Allocation Request Fields -->
   <div id="allocation-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <h3>Allocation Request</h3> 
     <hr size="1" />
     
-    <!-- Existing Projects for Allocation -->
-    <div id="existing-projects-allocation" style="margin-top:1em;">
-        <fieldset>
-            <legend class="control-label">Your Existing Allocations</legend>
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Select</th>
-                        <th>Project/Class</th>
-                        <th>Group</th>
-                        <th>Tier</th>
-                    </tr>
-                </thead>
-                <tbody id="allocation-projects-tbody">
-                    <!-- Will be populated by API but currently being populated with sample data in the JS -->
-                </tbody>
-            </table>
-        </fieldset>
-    </div>
-
     <!-- Tier Options for Allocation -->
     <div id="allocation-tier" style="margin-top:1em;">
         <fieldset class="col form-item form-group form-item form-type-radios form-group">
@@ -135,6 +134,26 @@ private = true
         <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
       </div>
     </fieldset>
+
+    <!-- Existing Projects for Allocation (Only visible for Renewal) -->
+    <div id="existing-projects-allocation" style="display: none; margin-top:1em;">
+        <fieldset>
+            <legend class="control-label">Your Existing Allocations</legend>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Project/Class</th>
+                        <th>Group</th>
+                        <th>Tier</th>
+                    </tr>
+                </thead>
+                <tbody id="allocation-projects-tbody">
+                    <!-- Will be populated by API but currently being populated with sample data in the JS -->
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
     
     <!-- Project/Class Name for New Allocation -->
     <div id="new-project-name-container" style="display: none; margin-top:1em;">
@@ -152,33 +171,10 @@ private = true
       </div>
     </div>
   </div>
-
   <!-- Storage Request Fields -->
   <div id="storage-fields" style="display: none; margin-top:1em; padding:2rem;background-color:#eee;border:solid 1px #ccc;">
     <h3>Storage Request</h3>
     <hr size="1" />
-
-    <!-- Existing Projects/Class for Storage -->
-    <div id="existing-projects-storage" style="margin-top:1em;">
-        <fieldset>
-            <legend class="control-label">Your Existing Storage</legend>
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Select</th>
-                        <th>Project/Class</th>
-                        <th>Group</th>
-                        <th>Tier</th>
-                        <th>Shared Space</th>
-                        <th>Current Size</th>
-                    </tr>
-                </thead>
-                <tbody id="storage-projects-tbody">
-                    <!-- Will be populated by API but currently being populated with sample data in the JS -->
-                </tbody>
-            </table>
-        </fieldset>
-    </div>
 
     <div class="row">
       <div class="col form-item form-group form-item form-type-radios form-group">
@@ -209,6 +205,28 @@ private = true
         <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
         <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>
+    </div>
+
+    <!-- Existing Projects/Class for Storage (Only visible for increase/decrease/retire) -->
+    <div id="existing-projects-storage" style="display: none; margin-top:1em;">
+        <fieldset>
+            <legend class="control-label">Your Existing Storage</legend>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Project/Class</th>
+                        <th>Group</th>
+                        <th>Tier</th>
+                        <th>Shared Space</th>
+                        <th>Current Size</th>
+                    </tr>
+                </thead>
+                <tbody id="storage-projects-tbody">
+                    <!-- Will be populated by API but currently being populated with sample data in the JS -->
+                </tbody>
+            </table>
+        </fieldset>
     </div>
 
     <!-- Tier Options for Storage -->
