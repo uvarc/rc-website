@@ -88,8 +88,8 @@ $(document).ready(function () {
         // Storage tiers
         'SSZ Research Project': { isPaid: true },
         'SSZ Research Standard': { 
-            isPaid: (currentSize) => currentSize > 10, // Function to determine if paid based on size
-            freeLimit: 10 // TB
+            isPaid: (currentSize) => currentSize > 10,
+            freeLimit: 10
         },
         'High Security Research Standard': { isPaid: true }
     };
@@ -105,12 +105,6 @@ $(document).ready(function () {
         return tier.isPaid;
     }
 
-    window.debugToggle = function() {
-        console.log("Debug toggle called");
-        toggleRequestFields();
-        console.log("Toggle completed");
-    }
-
     // Sample data function instead of API call
     async function fetchUserProjects() {
         // Simulate API delay for realistic testing
@@ -119,50 +113,47 @@ $(document).ready(function () {
         return {
             allocationProjects: [
                 {
-                    id: 'uvarc-alloc-1',
-                    name: 'Genomics Research Project',
-                    group: 'genomeResearchLab1',
-                    tier: 'Standard',
-                    serviceUnits: '100,000'
+                    id: 'alloc-1',
+                    name: 'RNA Sequencing Analysis',
+                    group: 'bioResearchLab1',
+                    tier: 'Standard'
                 },
                 {
-                    id: 'uvarc-alloc-2',
-                    name: 'Climate Model Analysis',
-                    group: 'climateModelData2',
-                    tier: 'Paid',
-                    serviceUnits: '75,000'
+                    id: 'alloc-2',
+                    name: 'ML in Climate Research',
+                    group: 'climateAI2',
+                    tier: 'Paid'
                 },
                 {
-                    id: 'uvarc-alloc-3',
-                    name: 'Neural Network Training',
-                    group: 'neuralNetworks3',
-                    tier: 'Instructional',
-                    serviceUnits: '150,000'
+                    id: 'alloc-3',
+                    name: 'CS 5999 Advanced Computing',
+                    group: 'csClass3',
+                    tier: 'Instructional'
                 }
             ],
             storageProjects: [
                 {
-                    id: 'uvarc-store-1',
-                    name: 'Genomics Research Project',
-                    group: 'genomeResearchLab1',
+                    id: 'store-1',
+                    name: 'Genomics Data Analysis',
+                    group: 'bioResearchLab1',
                     tier: 'SSZ Research Project',
-                    sharedSpace: 'genomeResearchLab1',
+                    sharedSpace: 'genomicsData',
                     currentSize: '50'
                 },
                 {
-                    id: 'uvarc-store-2',
-                    name: 'Climate Model Analysis',
-                    group: 'climateModelData2',
+                    id: 'store-2',
+                    name: 'Climate Modeling Results',
+                    group: 'climateAI2',
                     tier: 'SSZ Research Standard',
-                    sharedSpace: 'climateModelData2',
+                    sharedSpace: 'climateData',
                     currentSize: '8'
                 },
                 {
-                    id: 'uvarc-store-3',
-                    name: 'Neural Network Training',
-                    group: 'neuralNetworks3',
+                    id: 'store-3',
+                    name: 'Clinical Trial Data',
+                    group: 'medResearch3',
                     tier: 'High Security Research Standard',
-                    sharedSpace: 'neuralNetworks3',
+                    sharedSpace: 'clinicalData',
                     currentSize: '75'
                 }
             ],
@@ -170,6 +161,93 @@ $(document).ready(function () {
                 'SSZ Research Standard': 8 // Current total TB used for this tier
             }
         };
+    }
+
+    async function loadUserProjects() {
+        try {
+            const projects = await fetchUserProjects();
+            
+            // Populate Allocation Projects
+            const allocationTableBody = $('#allocation-projects-tbody');
+            allocationTableBody.empty();
+            
+            if (projects.allocationProjects.length === 0) {
+                allocationTableBody.append(`
+                    <tr>
+                        <td colspan="4" class="text-center">No existing allocations found</td>
+                    </tr>
+                `);
+            } else {
+                projects.allocationProjects.forEach(project => {
+                    const row = $('<tr>').addClass('project-row');
+                    row.append(`
+                        <td>
+                            <input type="radio" name="existing-project-allocation" 
+                                   value="${project.id}" class="form-radio project-select">
+                        </td>
+                        <td>${project.name}</td>
+                        <td class="project-group">${project.group}</td>
+                        <td class="project-tier">${project.tier}</td>
+                    `);
+                    allocationTableBody.append(row);
+                });
+            }
+
+            // Populate Storage Projects
+            const storageTableBody = $('#storage-projects-tbody');
+            storageTableBody.empty();
+            
+            if (projects.storageProjects.length === 0) {
+                storageTableBody.append(`
+                    <tr>
+                        <td colspan="6" class="text-center">No existing storage found</td>
+                    </tr>
+                `);
+            } else {
+                projects.storageProjects.forEach(project => {
+                    const row = $('<tr>').addClass('project-row');
+                    row.append(`
+                        <td>
+                            <input type="radio" name="existing-project-storage" 
+                                   value="${project.id}" class="form-radio project-select">
+                        </td>
+                        <td>${project.name}</td>
+                        <td class="project-group">${project.group}</td>
+                        <td class="project-tier">${project.tier}</td>
+                        <td>${project.sharedSpace}</td>
+                        <td>${project.currentSize} TB</td>
+                    `);
+                    storageTableBody.append(row);
+                });
+            }
+
+            // Make entire row clickable
+            $('.project-row').click(function(e) {
+                if (!$(e.target).is('input[type="radio"]')) {
+                    $(this).find('input[type="radio"]').prop('checked', true).trigger('change');
+                }
+            });
+
+            // Add hover effect
+            $('.project-row').hover(
+                function() { $(this).css('background-color', '#f5f5f5'); },
+                function() { 
+                    if (!$(this).find('input[type="radio"]').is(':checked')) {
+                        $(this).css('background-color', ''); 
+                    }
+                }
+            );
+
+        } catch (error) {
+            console.error('Error loading user projects:', error);
+            $('#allocation-projects-tbody, #storage-projects-tbody').empty().append(`
+                <tr>
+                    <td colspan="6" class="text-center text-danger">
+                        Error loading projects. Please try again later.
+                    </td>
+                </tr>
+            `);
+        }
     }
     // CamelCase validation function
     function isCamelCase(str) {
@@ -190,9 +268,9 @@ $(document).ready(function () {
             loadUserProjects();
         }
         logVisibility();
+        updateBillingVisibility();
         toggleAllocationFields();
         toggleStorageFields();
-        updateBillingVisibility();
     }
 
     async function updateBillingVisibility() {
@@ -228,8 +306,14 @@ $(document).ready(function () {
             }
 
             // Update UI
-            $('#billing-information').toggle(shouldShowBilling);
-            $('#billing-information input, #billing-information select').prop('required', shouldShowBilling);
+            console.log("Should show billing:", shouldShowBilling);
+            if (shouldShowBilling) {
+                $('#billing-information').slideDown();
+                $('#billing-information input, #billing-information select').prop('required', true);
+            } else {
+                $('#billing-information').slideUp();
+                $('#billing-information input, #billing-information select').prop('required', false);
+            }
 
             // Update or create tier note
             if (tierNote) {
@@ -275,6 +359,9 @@ $(document).ready(function () {
         var selectedType = $('input[name="type-of-request"]:checked').val();
         var isRetire = selectedType === 'retire-storage';
         $('#capacity').prop('disabled', isRetire).val(isRetire ? '0' : '');
+        if (!isRetire) {
+            updateBillingVisibility();
+        }
     }
 
     function toggleTierOptions() {
@@ -297,6 +384,7 @@ $(document).ready(function () {
         console.log("Existing projects storage visible:", $('#existing-projects-storage').is(":visible"));
         console.log("Sensitive data message visible:", $('#sensitive-data').is(":visible"));
         console.log("Standard data message visible:", $('#standard-data').is(":visible"));
+        console.log("Billing information visible:", $('#billing-information').is(":visible"));
     }
 
     function populateGrouperMyGroupsDropdown(groups) {
@@ -367,11 +455,11 @@ $(document).ready(function () {
 
     function fetchAndPopulateGroups() {
         var mockApiResponse = [
-            { id: 'research_group1', name: 'researchLab1' },
-            { id: 'research_group2', name: 'dataScience2' },
-            { id: 'dev_team1', name: 'dev-team-1' },
-            { id: 'security_team', name: 'SecurityTeam' },
-            { id: 'infrastructure', name: 'infrastructure' }
+            { id: 'research_group1', name: 'bioResearchLab1' },
+            { id: 'research_group2', name: 'climateAI2' },
+            { id: 'class_group1', name: 'csClass3' },
+            { id: 'invalid_group1', name: 'invalid-group-1' },
+            { id: 'invalid_group2', name: 'InvalidGroup2' }
         ];
 
         populateGrouperMyGroupsDropdown(mockApiResponse);
@@ -495,4 +583,3 @@ $(document).ready(function () {
     fetchAndPopulateGroups();
     updateBillingVisibility();
 });
-    

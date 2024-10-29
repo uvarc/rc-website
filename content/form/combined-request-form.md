@@ -85,10 +85,9 @@ private = true
                 <thead>
                     <tr>
                         <th>Select</th>
-                        <th>Project Name</th>
+                        <th>Project/Class</th>
                         <th>Group</th>
                         <th>Tier</th>
-                        <th>Number of SUs</th>
                     </tr>
                 </thead>
                 <tbody id="allocation-projects-tbody">
@@ -137,10 +136,10 @@ private = true
       </div>
     </fieldset>
     
-    <!-- Project Name for New Allocation -->
+    <!-- Project/Class Name for New Allocation -->
     <div id="new-project-name-container" style="display: none; margin-top:1em;">
       <div class="form-item form-group form-type-textfield form-group">
-        <label class="control-label" for="new-project-name">Project Name <span class="form-required" title="This field is required.">*</span></label>
+        <label class="control-label" for="new-project-name">Project/Class Name <span class="form-required" title="This field is required.">*</span></label>
         <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
       </div>
     </div>
@@ -159,7 +158,7 @@ private = true
     <h3>Storage Request</h3>
     <hr size="1" />
 
-    <!-- Existing Projects for Storage -->
+    <!-- Existing Projects/Class for Storage -->
     <div id="existing-projects-storage" style="margin-top:1em;">
         <fieldset>
             <legend class="control-label">Your Existing Storage</legend>
@@ -167,11 +166,11 @@ private = true
                 <thead>
                     <tr>
                         <th>Select</th>
-                        <th>Project Name</th>
+                        <th>Project/Class</th>
                         <th>Group</th>
                         <th>Tier</th>
-                        <th>Shared Allocation Space</th>
-                        <th>Current Storage Size</th>
+                        <th>Shared Space</th>
+                        <th>Current Size</th>
                     </tr>
                 </thead>
                 <tbody id="storage-projects-tbody">
