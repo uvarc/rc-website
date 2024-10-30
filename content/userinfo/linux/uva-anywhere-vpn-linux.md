@@ -26,7 +26,7 @@ draft = false
 
     You must install some software using `yum`,`dnf`, or `apt-get`.  Note the slight difference in naming convention between distributions.
 
-    - Centos/RedHat/Fedora
+    - Rocy/Alma/RedHat/Fedora
 
         These distributions need the following packages:
 
@@ -49,32 +49,16 @@ draft = false
 
 2. Obtain a Certificate
 
-    Go to this unpublicized Web location to obtain a certificate for an [unknown device](https://cloud.securew2.com/public/82116/limited/?device=Unknown).  Fill out the form.  
-<img src="/images/linux/cert-unknown-os.png" alt="personal-cert" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
+    Go to this unpublicized Web location to obtain a certificate for n [non-specific OS](https://cloud.securew2.com/public/82116/limited/?device=Unknown). You will be required to sign in with Netbadge. Once authenticated, fill out the form.  
+<img src="/images/linux/cert-nonspecific-os.png" alt="personal-cert" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" >
 
     Your passphrase need not be related to your Netbadge password, and it _must_ be 15 characters or fewer.  The MAC address of your system is optional for UVA Anywhere.
-    You will receive a file ending in `.p12`.  In this example we will assume it is named `mst3k.p12`.
 
-    Download the Usher [certificate](https://download.its.virginia.edu/local-auth/universal/usher.cer).  This is the CA (Certificate Authority) certificate.
+    Click the link to _download_ the certificate.  You will receive a file ending in `.p12`.  In this example we will assume it is named `mst3k.p12`.
 
-3. Extract Key and Certificate
+ <img src="/images/linux/download-cert.png" alt="download-cert" style="max-width:30%; margin-bottom:2rem;" >
 
-    NetWork Manager may not recognize the `.p12` format.  Extract the key and certificate with the following commands:
-
-    {{< code-snippet >}}
-openssl pkcs12 -in mst3k.p12 -nocerts -nodes -out mst3k.key
-openssl pkcs12 -in mst3k.p12 -clcerts -nokeys -out mst3k.crt
-    {{< /code-snippet >}}
-
-4. Convert the CA certificate
-
-    The `.cer` certificate is a Microsoft version of an "X509" certificate.  NetworkManager may not recognize this, but you can convert it to the standard format with
-
-    {{< code-snippet >}}
-openssl x509 -inform DER -in usher.cer -out usher.crt
-    {{< /code-snippet >}}
-
-    This will not remove your original `usher.cer`.
+Do not click the Next button.  You may now close the tab for the certificate site.
 
 5. Configure with Network Manager
 
@@ -84,7 +68,11 @@ openssl x509 -inform DER -in usher.cer -out usher.crt
 
     Select the Cisco Anyconnect compatible VPN option.
 
-    Fill in the blanks for a new VPN.  Please use the More Secure VPN if you have access to it. The gateway is **moresecure-vpn-1.itc.virginia.edu**.  Otherwise, use the UVA Anywhere VPN whose gateway is **uva-anywhere-1.itc.virginia.edu** as shown in the figure.
+    <img src="/images/linux/add-vpn.png" alt="network-manager" width=100%>
+
+    Fill in the blanks for a new VPN.  Please use the More Secure VPN if you have access to it. The gateway is **moresecure-vpn-1.itc.virginia.edu**.  Otherwise, use the UVA Anywhere VPN whose gateway is **uva-anywhere-1.itc.virginia.edu** as shown in the figure below.
+
+    NetWork Manager may not recognize the `.p12` format.  You can use the file manager of your desktop system to drag and drop the file into both the "User Certificate" and the "Private Key" boxes.
 
     <img src="/images/linux/vpn-setup-linux.png" alt="vpn-setup" width=80%>
 
@@ -94,9 +82,11 @@ openssl x509 -inform DER -in usher.cer -out usher.crt
 
 # Connecting to the VPN
 
-<img src="/images/linux/running-uva-anywhere.png" alt="personal-cert" style="max-width:30%; float:right; margin-left:2rem; margin-bottom:2rem;" />
+Start the VPN through the Network Manager, either through the applet in the tray (Ubuntu) or in the Notifications section of the taskbar (Rocky/Alma/Fedora).  The state can be controlled through the right arrow.
 
-Start the VPN through the Network Manager, either through the applet in the tray (Ubuntu) or in the Notifications section of the taskbar (Centos/Fedora).  The state can be controlled through the right arrow.
+For the first connection, you may need to go through the Settings application to connect.  After that, log out.  When you log back in, your VPN should appear in the taskbar or tray (the illustration was taken from a Rocky Linux installation).
+
+<img src="/images/linux/running-uva-anywhere.png" alt="start-stop-vpn" style="max-width:30%; float:center; margin-bottom:2rem;" />
 
 <br clear=all />
 
