@@ -19,6 +19,8 @@ draft = false
 Miniforge provides the Conda and Mamba package managers, with the default channel being conda-forge.
 (Mamba is a reimplementation of the Conda package manager in C++ that uses a state-of-the-art library "libsolv" for much faster dependency solving.)
 
+We have transitioned from Anaconda to Miniforge on Oct 15, 2024. See [here](https://www.rc.virginia.edu/2024/10/transition-from-anaconda-to-miniforge-october-15-2024) for details.
+
 # Available Versions
 The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
 
