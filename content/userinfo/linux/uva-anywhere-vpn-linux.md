@@ -56,25 +56,29 @@ draft = false
 
     Click the link to _download_ the certificate.  You will receive a file ending in `.p12`.  In this example we will assume it is named `mst3k.p12`.
 
- <img src="/images/linux/download-cert.png" alt="download-cert" style="max-width:30%; margin-bottom:2rem;" >
+    Do not click the Next button. Once the download is completed, you may close the tab for the certificate site.
 
-Do not click the Next button.  You may now close the tab for the certificate site.
+ {{< figure src="/images/linux/download-cert.png" alt="download-cert" width=30% >}}
 
-5. Configure with Network Manager
+<br>
+
+
+
+3. Configure with Network Manager
 
     Click the network app in your tray, or go to Settings->Network.  Choose VPN and click the + to add a VPN.
 
-    <img src="/images/linux/network-manager-linux.png" alt="network-manager" width=100%>
+   <img src="/images/linux/network-manager-linux.png" alt="network-manager" width=100%>
 
     Select the Cisco Anyconnect compatible VPN option.
 
-    <img src="/images/linux/add-vpn.png" alt="network-manager" width=100%>
+   <img src="/images/linux/add-vpn.png" alt="network-manager" width=100%>
 
     Fill in the blanks for a new VPN.  Please use the More Secure VPN if you have access to it. The gateway is **moresecure-vpn-1.itc.virginia.edu**.  Otherwise, use the UVA Anywhere VPN whose gateway is **uva-anywhere-1.itc.virginia.edu** as shown in the figure below.
 
     NetWork Manager may not recognize the `.p12` format.  You can use the file manager of your desktop system to drag and drop the file into both the "User Certificate" and the "Private Key" boxes.
 
-    <img src="/images/linux/vpn-setup-linux.png" alt="vpn-setup" width=80%>
+   <img src="/images/linux/vpn-setup-linux.png" alt="vpn-setup" width=80%>
 
     Click "Add."
 
