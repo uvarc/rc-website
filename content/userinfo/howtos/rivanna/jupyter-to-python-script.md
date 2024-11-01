@@ -20,10 +20,9 @@ This will download a Python executable with a '.py' extension into your local co
 
 This script can be copied to the HPC system in the working directory where JupyterLab was accessing the notebook. Information on transferring files to and from Rivanna can be found [here](https://www.rc.virginia.edu/userinfo/data-transfer/).
 
-Notebooks can also be converted directly on the command line. This can be done by loading anaconda, installing ```jsonschema```, then running ```jupyter nbconvert --to script /path/to/ipynb```, where ``` /path/to/ipynb``` is the location of the notebook file:
+Notebooks can also be converted directly on the command line. This can be done by loading jupyterlab and running ```jupyter nbconvert --to script /path/to/ipynb```, where ``` /path/to/ipynb``` is the location of the notebook file:
 ```
-module load anaconda
-pip install --user jsonschema
+module load jupyterlab
 jupyter nbconvert --to script /path/to/ipynb
 ```
 
@@ -42,7 +41,7 @@ We see that the form requests a partition, the time in hours, the number of core
 #SBATCH -A hpc_build
 
 module purge
-module load anaconda/2020.11-py3.8
+module load miniforge
 
 python JupyterNotebook_script.py
 ```
@@ -56,7 +55,7 @@ Hello World with 3.8.8 | packaged by conda-forge | (default, Feb 20 2021, 16:22:
 
 More information on using Slurm on the HPC system can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/).
 
-If your code requires a specific anaconda environment to be run, you can specify ```source activate <environment name>``` below the module commands in the Slurm script to activate the environment:
+If your code requires a specific conda environment, you can specify ```source activate <environment name>``` below the module commands in the Slurm script to activate the environment:
 
 
 ```
@@ -68,7 +67,7 @@ If your code requires a specific anaconda environment to be run, you can specify
 #SBATCH -A hpc_build
 
 module purge
-module load anaconda/2020.11-py3.8
+module load miniforge
 
 source activate <environment name>
 
