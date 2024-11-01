@@ -1,6 +1,6 @@
 +++
 type = "howto"
-date = "2020-11-02T00:00:00-05:00"
+date = "2024-11-01T00:00:00-05:00"
 tags = [
   "rivanna", "software", "jupyter"
 ]
@@ -15,7 +15,7 @@ author = "RC Staff"
 Users cannot load modules inside a JupyterLab session. If you need access to modules, please request a [desktop session](https://ood.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sys/uva_desktop/session_contexts/new) instead of JupyterLab. Fill out the form as you normally would for JupyterLab. After you get to a desktop, open a terminal (next to Firefox in the top bar) and type these commands:
 
 ```
-module load anaconda
+module load jupyterlab
 module load ... # your modules here
 jupyter-lab
 ```
