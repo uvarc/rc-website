@@ -35,7 +35,7 @@ type = "rivanna"
     <th class="tg-0qmj">Best Practices</th>
   </tr>
   <tr>
-    <td class="tg-dc35"><a href="/userinfo/storage/non-sensitive-data/#home"><code>/home</code></a></td>
+    <td class="tg-dc35"><code>/home</code></td>
     <td class="tg-dc35">200GB</td>
     <td class="tg-dc35">Free</td>
     <td class="tg-dc35">{{% backup-policy rivanna_home %}}</td>
@@ -43,7 +43,7 @@ type = "rivanna"
     <td class="tg-dc35"><code>/home</code> is best used as a working directory when using Rivanna/Afton interactively. Slurm jobs run against <code>/home</code> will be slower than those run against <code>/scratch</code>. The <code>/home</code> directory is a personal storage space that is not shareable with other users.</td>
   </tr>
   <tr>
-    <td class="tg-hy9w"><a href="/userinfo/storage/non-sensitive-data/#scratch"><code>/scratch</code></a></td>
+    <td class="tg-hy9w"><code>/scratch</code></td>
     <td class="tg-hy9w">10TB</td>
     <td class="tg-hy9w">Free</td>
     <td class="tg-hy9w">{{% backup-policy rivanna_scratch %}}, Data removed 90 days after last file access time</td>
@@ -62,7 +62,7 @@ type = "rivanna"
 
 # Request Additional Storage
 
-Researchers can lease additional storage, **Research Standard** or **Research Project** storage, for **sharing public or internal use data** within a research group. Research Standard and Research Project storage volumes are mounted on Rivanna/Afton and can also be accessed from local workstations. [Learn more about our storage offerings](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
+Researchers can lease additional storage, **Research Standard** or **Research Project** storage, for **sharing public or internal use data** within a research group. Research Standard and Research Project storage volumes are mounted on Rivanna/Afton and can also be accessed from local workstations. [Learn more about our storage offerings](/userinfo/storage/#public-internal-use-sensitive-data-storage).
 
 Storage requests can be placed through this form:
 
