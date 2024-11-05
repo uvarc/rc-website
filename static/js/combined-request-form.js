@@ -209,10 +209,20 @@ $(document).ready(function () {
     // API Integration
     async function fetchAndPopulateGroups() {
         try {
-            // Get computing ID from user session
-            const computingId = window.user_session.uid;
-            console.log("Fetching groups for user:", computingId);
-
+            // Try multiple sources for computing ID
+            const computingId = window.user_session?.uid || 
+                               $('[name="user_id"]').val() || 
+                               $('[data-computing-id]').data('computing-id');
+            
+            console.log("Attempting to get computing ID...");
+            console.log("window.user_session?.uid:", window.user_session?.uid);
+            console.log("form user_id:", $('[name="user_id"]').val());
+            console.log("data attribute:", $('[data-computing-id]').data('computing-id'));
+            console.log("Final computingId:", computingId);
+    
+            if (!computingId) {
+                throw new Error('Unable to determine computing ID');
+            }
             // Make API request
             const response = await fetch(
                 `${API_CONFIG.baseUrl}/${computingId}`,
@@ -221,7 +231,6 @@ $(document).ready(function () {
                     headers: API_CONFIG.headers
                 }
             );
-
             // Parse response - API returns [data, statusCode]
             const [data, statusCode] = await utils.handleApiResponse(response);
             console.log('Groups data:', data);
@@ -230,7 +239,6 @@ $(document).ready(function () {
             if (statusCode !== 200) {
                 throw new Error(`API returned status code ${statusCode}`);
             }
-
             // Check eligibility
             if (!data.is_user_resource_request_elligible) {
                 console.log('User is not eligible for resource requests');
@@ -280,7 +288,6 @@ $(document).ready(function () {
         });
 
         updateGroupValidationMessages(validCount, invalidCount);
-        
         // If no valid groups are available, disable the dropdown
         if (validCount === 0) {
             dropdown.prop('disabled', true);
@@ -500,7 +507,6 @@ $(document).ready(function () {
         // Toggle Grouper requirement only for new requests
         $('#mygroups-group-container').toggle(isNew);
         $('#mygroups-group').prop('required', isNew);
-        
         // Update description labels with fade effect
         if (isNew) {
             $("#new-descr").fadeIn(400);
@@ -791,7 +797,6 @@ $(document).ready(function () {
             validateField($(this));
             updateFormValidation();
         });
-
         $('#new-project-name, #shared-space-name').on('input', _.debounce(function() {
             validateField($(this));
         }, 300));

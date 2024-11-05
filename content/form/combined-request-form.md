@@ -18,9 +18,8 @@ private = true
       method="post" 
       id="combined-request-form" 
       class="needs-validation" 
-      novalidate 
-      accept-charset="UTF-8"
-      data-computing-id="{{< get_computing_id >}}">
+      novalidate
+      accept-charset="UTF-8">
 
 {{< enable-disable-form >}}
 
