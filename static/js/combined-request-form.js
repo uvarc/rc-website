@@ -209,10 +209,21 @@ $(document).ready(function () {
     // API Integration
     async function fetchAndPopulateGroups() {
         try {
-            // Get computing ID from user session
-            const computingId = window.user_session.uid;
-            console.log("Fetching groups for user:", computingId);
-
+            // Try multiple sources for computing ID
+            const computingId = window.user_session?.uid || 
+                               $('[name="user_id"]').val() || 
+                               $('[data-computing-id]').data('computing-id');
+            
+            console.log("Attempting to get computing ID...");
+            console.log("window.user_session?.uid:", window.user_session?.uid);
+            console.log("form user_id:", $('[name="user_id"]').val());
+            console.log("data attribute:", $('[data-computing-id]').data('computing-id'));
+            console.log("Final computingId:", computingId);
+    
+            if (!computingId) {
+                throw new Error('Unable to determine computing ID');
+            }
+    
             // Make API request
             const response = await fetch(
                 `${API_CONFIG.baseUrl}/${computingId}`,
@@ -221,29 +232,35 @@ $(document).ready(function () {
                     headers: API_CONFIG.headers
                 }
             );
-
+    
             // Parse response - API returns [data, statusCode]
             const [data, statusCode] = await utils.handleApiResponse(response);
             console.log('Groups data:', data);
             console.log('Status code:', statusCode);
-
+    
             if (statusCode !== 200) {
                 throw new Error(`API returned status code ${statusCode}`);
             }
-
+    
             // Check eligibility
             if (!data.is_user_resource_request_elligible) {
                 console.log('User is not eligible for resource requests');
                 handleNonEligibleUser();
                 return;
             }
-
+    
             // Populate groups dropdown
             populateGrouperMyGroupsDropdown(data.user_groups);
-
+    
         } catch (error) {
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
+            // Add specific error handling for missing computing ID
+            if (error.message.includes('computing ID')) {
+                $('#mygroups-group')
+                    .prop('disabled', true)
+                    .after('<div class="alert alert-danger mt-2">Unable to load user information. Please refresh the page or contact support.</div>');
+            }
         }
     }
 
