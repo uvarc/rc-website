@@ -1,4 +1,4 @@
-// Combined Request Form - Part 1: Initial Setup and User Session
+// Combined Request Form - Part 1: Initial Setup and Constants
 $(document).ready(function () {
     console.log("Script started");
     console.log("Combined request form JS loaded");
@@ -74,7 +74,7 @@ $(document).ready(function () {
 
     // Validation patterns
     const VALIDATION = {
-        groupName: /^[a-zA-Z0-9\-_]+$/,
+        groupName: /^[a-zA-Z0-9\-_]+$/,  // Updated to allow only alphanumeric, dashes, and underscores
         projectName: /^[\w\-\s]{3,128}$/,
         sharedSpaceName: /^[\w\-]{3,40}$/
     };
@@ -112,7 +112,7 @@ $(document).ready(function () {
             return tier.isPaid;
         },
 
-        // Updated API helper functions
+        // API helper functions
         handleApiResponse: async (response) => {
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
@@ -145,7 +145,7 @@ $(document).ready(function () {
             $('.api-waiting-message').remove();
         }
     };
-    // Part 2: API Integration and Data Management
+    // Part 2: API Integration and Group Handling
 
     // API Integration with User Session
     async function fetchAndPopulateGroups() {
@@ -192,64 +192,6 @@ $(document).ready(function () {
         }
     }
 
-    // Preview table loading
-    async function loadPreviewTable() {
-        try {
-            // Clear existing content
-            const previewTableBody = $('#combined-preview-tbody');
-            previewTableBody.empty();
-
-            // Try to get user projects
-            const projects = await fetchUserProjects();
-
-            if (projects.allocationProjects.length > 0 || projects.storageProjects.length > 0) {
-                // Add allocation projects
-                projects.allocationProjects.forEach(project => {
-                    previewTableBody.append(`
-                        <tr class="resource-row">
-                            <td><span class="resource-type-su">Service Unit</span></td>
-                            <td>${project.name}</td>
-                            <td class="group-name">${project.group}</td>
-                            <td class="font-weight-medium">${project.tier}</td>
-                            <td>${project.description}</td>
-                        </tr>
-                    `);
-                });
-
-                // Add storage projects
-                projects.storageProjects.forEach(project => {
-                    previewTableBody.append(`
-                        <tr class="resource-row">
-                            <td><span class="resource-type-storage">Storage</span></td>
-                            <td>${project.name}</td>
-                            <td class="group-name">${project.group}</td>
-                            <td class="font-weight-medium">${project.tier}</td>
-                            <td>${project.currentSize} TB - ${project.description}</td>
-                        </tr>
-                    `);
-                });
-            } else {
-                previewTableBody.append(`
-                    <tr>
-                        <td colspan="5" class="text-center text-muted">
-                            No existing resources found
-                        </td>
-                    </tr>
-                `);
-            }
-        } catch (error) {
-            console.error('Error loading preview table:', error);
-            const previewTableBody = $('#combined-preview-tbody');
-            previewTableBody.html(`
-                <tr>
-                    <td colspan="5" class="text-center text-danger">
-                        Error loading resources. Please try refreshing the page.
-                    </td>
-                </tr>
-            `);
-        }
-    }
-
     function populateGrouperMyGroupsDropdown(groups) {
         const dropdown = $('#mygroups-group');
         dropdown.empty();
@@ -288,52 +230,36 @@ $(document).ready(function () {
         if (validCount === 0) {
             dropdown.prop('disabled', true);
         }
+
+        // Hide the group container initially - will be shown by toggle functions
+        $('#mygroups-group-container').hide();
     }
 
-    // Mock data for testing (will be replaced with API)
-    async function fetchUserProjects() {
-        try {
-            // Ensure we have a user ID before proceeding
-            await waitForUserSession();
-            
-            // Simulate API delay
-            await new Promise(resolve => setTimeout(resolve, 300));
-            
-            return {
-                allocationProjects: [
-                    {
-                        id: 'alloc-1',
-                        name: 'RNA Sequencing Analysis',
-                        group: 'bioResearchLab1',
-                        tier: 'Standard',
-                        description: 'RNA-seq data analysis for cancer research'
-                    },
-                    {
-                        id: 'alloc-2',
-                        name: 'Climate Model Simulations',
-                        group: 'climateAI2',
-                        tier: 'Paid',
-                        description: 'High-resolution climate modeling'
-                    }
-                ],
-                storageProjects: [
-                    {
-                        id: 'store-1',
-                        name: 'Genomics Data Repository',
-                        group: 'bioResearchLab1',
-                        tier: 'SSZ Research Project',
-                        sharedSpace: 'genomicsData',
-                        currentSize: '50',
-                        description: 'Genomic sequencing data storage'
-                    }
-                ],
-                userStorageUsage: {
-                    'SSZ Research Standard': 133
-                }
-            };
-        } catch (error) {
-            console.error('Error fetching user projects:', error);
-            throw new Error('Failed to fetch user projects');
+    function updateGroupValidationMessages(validCount, invalidCount) {
+        const messagesContainer = $('#group-validation-message');
+        messagesContainer.empty();
+
+        if (invalidCount > 0) {
+            messagesContainer.append(`
+                <div class="warning-message">
+                    <p>${invalidCount} group(s) have invalid names and are disabled.</p>
+                    <p>Group names must contain only:</p>
+                    <ul class="mb-0">
+                        <li>Letters (a-z, A-Z)</li>
+                        <li>Numbers (0-9)</li>
+                        <li>Dashes (-)</li>
+                        <li>Underscores (_)</li>
+                    </ul>
+                </div>
+            `);
+        }
+
+        if (validCount === 0) {
+            messagesContainer.append(`
+                <div class="validation-message" style="display: block;">
+                    No valid groups available. Please contact Research Computing Support to create a properly formatted group.
+                </div>
+            `);
         }
     }
 
@@ -393,34 +319,108 @@ $(document).ready(function () {
             .addClass('is-invalid');
     }
 
-    function updateGroupValidationMessages(validCount, invalidCount) {
-        const messagesContainer = $('#group-validation-message');
-        messagesContainer.empty();
-
-        if (invalidCount > 0) {
-            messagesContainer.append(`
-                <div class="warning-message">
-                    <p>${invalidCount} group(s) have invalid names and are disabled.</p>
-                    <p>Group names must contain only:</p>
-                    <ul class="mb-0">
-                        <li>Letters (a-z, A-Z)</li>
-                        <li>Numbers (0-9)</li>
-                        <li>Dashes (-)</li>
-                        <li>Underscores (_)</li>
-                    </ul>
-                </div>
-            `);
-        }
-
-        if (validCount === 0) {
-            messagesContainer.append(`
-                <div class="validation-message" style="display: block;">
-                    No valid groups available. Please contact Research Computing Support to create a properly formatted group.
-                </div>
-            `);
+    // User projects data management (mock data for now)
+    async function fetchUserProjects() {
+        try {
+            // Ensure we have a user ID before proceeding
+            await waitForUserSession();
+            
+            // This will be replaced with actual API call
+            await new Promise(resolve => setTimeout(resolve, 300));
+            
+            return {
+                allocationProjects: [
+                    {
+                        id: 'alloc-1',
+                        name: 'RNA Sequencing Analysis',
+                        group: 'bioResearchLab1',
+                        tier: 'Standard',
+                        description: 'RNA-seq data analysis for cancer research'
+                    },
+                    {
+                        id: 'alloc-2',
+                        name: 'Climate Model Simulations',
+                        group: 'climateAI2',
+                        tier: 'Paid',
+                        description: 'High-resolution climate modeling'
+                    }
+                ],
+                storageProjects: [
+                    {
+                        id: 'store-1',
+                        name: 'Genomics Data Repository',
+                        group: 'bioResearchLab1',
+                        tier: 'SSZ Research Project',
+                        sharedSpace: 'genomicsData',
+                        currentSize: '50',
+                        description: 'Genomic sequencing data storage'
+                    }
+                ],
+                userStorageUsage: {
+                    'SSZ Research Standard': 133
+                }
+            };
+        } catch (error) {
+            console.error('Error fetching user projects:', error);
+            throw new Error('Failed to fetch user projects');
         }
     }
     // Part 3: UI Toggles and Form Logic
+
+    // Preview table loading
+    async function loadPreviewTable() {
+        try {
+            const previewTableBody = $('#combined-preview-tbody');
+            previewTableBody.empty();
+
+            const projects = await fetchUserProjects();
+            
+            if (projects.allocationProjects.length > 0 || projects.storageProjects.length > 0) {
+                // Add allocation projects
+                projects.allocationProjects.forEach(project => {
+                    previewTableBody.append(`
+                        <tr class="resource-row">
+                            <td><span class="resource-type-su">Service Unit</span></td>
+                            <td>${project.name}</td>
+                            <td class="group-name">${project.group}</td>
+                            <td class="font-weight-medium">${project.tier}</td>
+                            <td>${project.description}</td>
+                        </tr>
+                    `);
+                });
+
+                // Add storage projects
+                projects.storageProjects.forEach(project => {
+                    previewTableBody.append(`
+                        <tr class="resource-row">
+                            <td><span class="resource-type-storage">Storage</span></td>
+                            <td>${project.name}</td>
+                            <td class="group-name">${project.group}</td>
+                            <td class="font-weight-medium">${project.tier}</td>
+                            <td>${project.currentSize} TB - ${project.description}</td>
+                        </tr>
+                    `);
+                });
+            } else {
+                previewTableBody.append(`
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">
+                            No existing resources found
+                        </td>
+                    </tr>
+                `);
+            }
+        } catch (error) {
+            console.error('Error loading preview table:', error);
+            $('#combined-preview-tbody').html(`
+                <tr>
+                    <td colspan="5" class="text-center text-danger">
+                        Error loading resources. Please try refreshing the page.
+                    </td>
+                </tr>
+            `);
+        }
+    }
 
     // Form section visibility management
     function toggleRequestFields() {
@@ -429,27 +429,24 @@ $(document).ready(function () {
         
         // Hide all sections first
         $('#allocation-fields, #storage-fields, #common-fields').hide();
+        $('#mygroups-group-container').hide();  // Always hide group selection first
         
         // Show relevant sections based on request type
         if (requestType === 'service-unit') {
             $('#allocation-fields, #common-fields').show();
             $('#category').val('Rivanna HPC');
+            loadUserProjects();
             
             // Show New/Renewal first, then handle tier options visibility
             toggleAllocationFields();
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
             $('#category').val('Storage');
+            loadUserProjects();
+            toggleStorageFields();
         }
 
-        // Handle dependent sections
-        loadUserProjects().catch(error => {
-            console.error('Error loading user projects:', error);
-            showErrorMessage('Error loading your current resources');
-        });
-        
         updateBillingVisibility();
-        toggleStorageFields();
     }
 
     // Allocation (Service Unit) field toggles
@@ -506,10 +503,7 @@ $(document).ready(function () {
             .prop('min', isRetiring ? '0' : '1');
         
         if (isModifyingExisting) {
-            updateStorageModificationFields(typeOfRequest).catch(error => {
-                console.error('Error updating storage fields:', error);
-                showErrorMessage('Error updating storage options');
-            });
+            updateStorageModificationFields(typeOfRequest);
         }
         
         updateBillingVisibility();
@@ -571,7 +565,7 @@ $(document).ready(function () {
             }
         } catch (error) {
             console.error('Error updating storage modification fields:', error);
-            throw error;  // Let the caller handle the error
+            showErrorMessage('Error updating storage options');
         }
     }
 
@@ -621,41 +615,7 @@ $(document).ready(function () {
         }
     }
 
-    // Form validation functions
-    function validateForm() {
-        resetValidationState();
-        let isValid = true;
-        let firstInvalidField = null;
-
-        // Special handling for Grouper group selection
-        const isNewRequest = $('input[name="new-or-renewal"]:checked').val() === 'new' ||
-                           $('input[name="type-of-request"]:checked').val() === 'new-storage';
-        
-        if (isNewRequest && !validateGroupSelection()) {
-            isValid = false;
-            firstInvalidField = $('#mygroups-group');
-        }
-
-        // Validate required fields
-        $('input:visible[required], select:visible[required], textarea:visible[required]').each(function() {
-            if (!validateField($(this))) {
-                isValid = false;
-                firstInvalidField = firstInvalidField || $(this);
-            }
-        });
-
-        // Handle validation result
-        handleValidationResult(isValid, firstInvalidField);
-        return isValid;
-    }
-
     // UI helper functions
-    function validateGroupSelection() {
-        const selectedOption = $('#mygroups-group option:selected');
-        if (!selectedOption.val()) return true; // Skip validation if no selection (handled by required attribute)
-        return selectedOption.data('valid') === true;
-    }
-
     function updateTierNote(message) {
         const $tierNote = $('#tier-note');
         if ($tierNote.length === 0) {
@@ -669,30 +629,6 @@ $(document).ready(function () {
         $('.is-invalid').removeClass('is-invalid');
         $('.invalid-feedback').remove();
         $('.invalid-field-highlight').removeClass('invalid-field-highlight');
-    }
-
-    function handleValidationResult(isValid, firstInvalidField) {
-        if (!isValid && firstInvalidField) {
-            firstInvalidField.focus();
-            $('html, body').animate({
-                scrollTop: firstInvalidField.offset().top - 100
-            }, 500);
-            
-            if ($('#form-error-message').length === 0) {
-                $('#combined-request-form').prepend(
-                    '<div id="form-error-message" class="alert alert-danger">' +
-                    'Please correct the highlighted errors and try again.</div>'
-                );
-            }
-        } else {
-            $('#form-error-message').remove();
-        }
-    }
-
-    function updateFormValidation() {
-        const form = document.getElementById('combined-request-form');
-        const isValid = form.checkValidity();
-        $('#submit').prop('disabled', !isValid || !$('#data-agreement').is(':checked'));
     }
     // Part 4: Event Handlers and Initialization
 
@@ -758,6 +694,7 @@ $(document).ready(function () {
         setupRealTimeValidation();
     }
 
+    // Form validation
     function setupRealTimeValidation() {
         const fieldsToValidate = '#combined-request-form input:not([type="radio"]), #combined-request-form select, #combined-request-form textarea';
         
@@ -776,6 +713,40 @@ $(document).ready(function () {
                 updateFormValidation();
             }, 300);
         });
+    }
+
+    function validateForm() {
+        resetValidationState();
+        let isValid = true;
+        let firstInvalidField = null;
+
+        // Special handling for group selection in new requests
+        const isNewRequest = ($('input[name="request-type"]:checked').val() === 'service-unit' && 
+                            $('input[name="new-or-renewal"]:checked').val() === 'new') ||
+                           ($('input[name="request-type"]:checked').val() === 'storage' && 
+                            $('input[name="type-of-request"]:checked').val() === 'new-storage');
+
+        if (isNewRequest && !validateGroupSelection()) {
+            isValid = false;
+            firstInvalidField = $('#mygroups-group');
+        }
+
+        // Validate required fields
+        $('input:visible[required], select:visible[required], textarea:visible[required]').each(function() {
+            if (!validateField($(this))) {
+                isValid = false;
+                firstInvalidField = firstInvalidField || $(this);
+            }
+        });
+
+        handleValidationResult(isValid, firstInvalidField);
+        return isValid;
+    }
+
+    function validateGroupSelection() {
+        const selectedOption = $('#mygroups-group option:selected');
+        if (!selectedOption.val()) return true; // Skip validation if no selection
+        return selectedOption.data('valid') === true;
     }
 
     function validateField($field) {
@@ -813,6 +784,30 @@ $(document).ready(function () {
         $field.next('.invalid-feedback').remove();
     }
 
+    function updateFormValidation() {
+        const form = document.getElementById('combined-request-form');
+        const isValid = form.checkValidity();
+        $('#submit').prop('disabled', !isValid || !$('#data-agreement').is(':checked'));
+    }
+
+    function handleValidationResult(isValid, firstInvalidField) {
+        if (!isValid && firstInvalidField) {
+            firstInvalidField.focus();
+            $('html, body').animate({
+                scrollTop: firstInvalidField.offset().top - 100
+            }, 500);
+            
+            if ($('#form-error-message').length === 0) {
+                $('#combined-request-form').prepend(
+                    '<div id="form-error-message" class="alert alert-danger">' +
+                    'Please correct the highlighted errors and try again.</div>'
+                );
+            }
+        } else {
+            $('#form-error-message').remove();
+        }
+    }
+
     async function handleFormSubmission(event) {
         event.preventDefault();
         
@@ -839,7 +834,6 @@ $(document).ready(function () {
             $submitButton.prop('disabled', true)
                         .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
 
-            // Log form data before submission
             console.log('Form data to be submitted:', formData);
 
             // Show success message
@@ -899,15 +893,15 @@ $(document).ready(function () {
             $('#allocation-fields, #storage-fields, #common-fields').hide();
             $('#submit').prop('disabled', true);
             $('#mygroups-group-container').hide();  // Hide group selection by default
-    
+
             // Update labels
             $('#request-type-allocation').next('label').text('Service Unit (SU)');
             $('#request-type-storage').next('label').text('Storage');
             $('#storage-choice4').next('label').text('Highly Sensitive Data');
-    
+
             // Setup event handlers first
             setupEventHandlers();
-    
+
             // Wait for form-userinfo-v2 to be ready
             console.log("Waiting for user information to load...");
             await new Promise((resolve, reject) => {
@@ -925,7 +919,7 @@ $(document).ready(function () {
                     }
                 }, 100);
             });
-    
+
             // Load data after user info is available
             await fetchAndPopulateGroups();
             await loadPreviewTable();
