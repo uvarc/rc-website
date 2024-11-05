@@ -147,6 +147,42 @@ $(document).ready(function () {
     };
     // Part 2: API Integration and Group Handling
 
+// Part 2: API Integration and Group Handling
+
+    // Preview and Projects Management
+    async function loadPreviewTable() {
+        try {
+            const previewTableBody = $('#combined-preview-tbody');
+            previewTableBody.empty();
+
+            previewTableBody.append(`
+                <tr>
+                    <td colspan="5" class="text-center text-muted">
+                        Loading resources...
+                    </td>
+                </tr>
+            `);
+
+            // For now, we'll show a placeholder since we don't have project data from API yet
+            previewTableBody.html(`
+                <tr>
+                    <td colspan="5" class="text-center text-muted">
+                        No existing resources found
+                    </td>
+                </tr>
+            `);
+        } catch (error) {
+            console.error('Error loading preview table:', error);
+            $('#combined-preview-tbody').html(`
+                <tr>
+                    <td colspan="5" class="text-center text-danger">
+                        Error loading resources. Please try refreshing the page.
+                    </td>
+                </tr>
+            `);
+        }
+    }
+
     // API Integration with User Session
     async function fetchAndPopulateGroups() {
         const waitingMessage = utils.showWaitingMessage();
@@ -435,17 +471,17 @@ $(document).ready(function () {
         if (requestType === 'service-unit') {
             $('#allocation-fields, #common-fields').show();
             $('#category').val('Rivanna HPC');
-            loadUserProjects();
+            loadPreviewTable();  // Changed from loadUserProjects
             
             // Show New/Renewal first, then handle tier options visibility
             toggleAllocationFields();
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
             $('#category').val('Storage');
-            loadUserProjects();
+            loadPreviewTable();  // Changed from loadUserProjects
             toggleStorageFields();
         }
-
+    
         updateBillingVisibility();
     }
 
