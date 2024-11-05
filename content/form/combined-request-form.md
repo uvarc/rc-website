@@ -11,40 +11,51 @@ type = "form"
 private = true
 +++
 
-<script type="text/javascript" src="/js/user-session-v2.js"></script>
-<script type="text/javascript" src="/js/response-message.js"></script>
 <script type="text/javascript" src="/js/combined-request-form.js"></script>
 
 {{% jira-msg %}}
-<form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="combined-request-form" class="needs-validation" novalidate accept-charset="UTF-8">
+<form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" 
+      method="post" 
+      id="combined-request-form" 
+      class="needs-validation" 
+      novalidate 
+      accept-charset="UTF-8"
+      data-computing-id="{{< get_computing_id >}}">
+
 {{< enable-disable-form >}}
+
+<!-- Response Messages -->
 <div class="alert" id="response_message" role="alert" style="padding-bottom:0px;">
   <p id="form_post_response"></p>
 </div>
+<div class="alert" id="api_error_message" role="alert" style="display:none;">
+  <p id="api_error_response"></p>
+</div>
+
+<!-- Hidden Fields -->
 <div>
   <input type="hidden" id="category" name="category" value="">
   <input type="hidden" id="allocation_type" name="Allocation Type" value="Combined Allocation and Storage Request">
-  <input type="hidden" id="request_title" name="request_title" value="Combined Request: Allocation or Storage" />
+  <input type="hidden" id="request_title" name="request_title" value="Combined Request: Service Unit or Storage" />
 
   {{% getstatus keyword="jira" %}}
-
   {{% form-userinfo-v2 %}}
-
   <!-- Requestor Information -->
   <div class="form-item form-group form-type-textfield form-group" style="display: none;">
     <label class="control-label" for="pi-uva-id">PI/Owner UVA ID</label>
     <input class="form-control form-text" type="text" id="pi-uva-id" name="pi-uva-id" value="" size="60" maxlength="128" />
   </div>
 
-  <div class="form-item form-group form-item form-type-select form-group"> 
+  <!-- Grouper/MyGroups Selection - Updated for API integration -->
+  <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only"> 
     <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
     <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
       <option value="">- Select a group -</option>
     </select>
-    <!-- Helper text for camelCase format -->
-    <small class="helper-text">Group names must be in camelCase format (e.g., researchLab1, dataScience2)</small>
+    <!-- Helper text for group format -->
+    <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
     <!-- Validation message container -->
-    <div id="camelcase-validation-message" class="validation-message"></div>
+    <div id="group-validation-message" class="validation-message"></div>
   </div>
 
   <div class="form-item form-group form-type-textfield form-group" style="display: none;">
@@ -52,52 +63,70 @@ private = true
     <input class="form-control form-text" type="text" id="requestor-id" name="requestor-id" value="" size="60" maxlength="128" />
   </div>
 
-  <!-- Your Current Resources Section -->
+  <!-- Current Resources Preview -->
   <div class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
     <div id="existing-resources-preview">
-        <h5 class="mb-3">Your Current Resources</h5>
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Project/Class</th>
-                    <th>Group</th>
-                    <th>Tier</th>
-                    <th>Details</th>
-                </tr>
-            </thead>
-            <tbody id="combined-preview-tbody">
-                <!-- Will be populated by API but currently being populated with sample data in the JS -->
-            </tbody>
-        </table>
+      <h5 class="mb-3">Your Current Resources</h5>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Project/Class</th>
+            <th>Group</th>
+            <th>Tier</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody id="combined-preview-tbody">
+          <!-- Will be populated by API -->
+        </tbody>
+      </table>
     </div>
   </div>
-  <!-- Request Type Section -->
+
+  <!-- Resource Type Selection -->
   <div class="container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
     <fieldset class="form-item form-group form-type-radios">
-      <legend class="control-label h6 mb-2">Request Type <span class="form-required" title="This field is required.">*</span></legend>
+      <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
       <div id="request-type-options" class="form-radios d-flex" style="justify-content: space-evenly;">
         <div class="form-check me-4">
-          <input required="required" type="radio" id="request-type-allocation" name="request-type" value="allocation" class="form-check-input" checked="checked" />
-          <label class="form-check-label" for="request-type-allocation">Allocation Request</label>
+          <input required="required" type="radio" id="request-type-allocation" name="request-type" value="service-unit" class="form-check-input" checked="checked" />
+          <label class="form-check-label" for="request-type-allocation">Service Unit (SU)</label>
         </div>
         <div class="form-check">
           <input required="required" type="radio" id="request-type-storage" name="request-type" value="storage" class="form-check-input" />
-          <label class="form-check-label" for="request-type-storage">Storage Request</label>
+          <label class="form-check-label" for="request-type-storage">Storage</label>
         </div>
       </div>
     </fieldset>
   </div>
-
   <!-- Form Fields Container -->
   <div style="margin-bottom:1rem;">
-    <!-- Allocation Request Fields -->
+    <!-- Service Unit (SU) Request Fields -->
     <div id="allocation-fields" style="display: none;padding:1.5rem;background-color:#eee;border:solid 1px #ccc;">
-      <h5 class="mb-3">Allocation Request</h5>
+      <h5 class="mb-3">Service Unit (SU) Request</h5>
       <hr size="1" />
+
+      <!-- New or Renewal (First section for SU requests) -->
+      <fieldset class="form-item form-group form-type-radios form-group">
+        <legend class="control-label h6 mb-2">New or Renewal <span class="form-required" title="This field is required.">*</span></legend>
+        <div class="row">
+          <div id="new-or-renewal-options" class="form-radios col">
+            <div class="form-item form-type-radio radio">
+              <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" checked="checked" class="form-radio" />
+              <label class="control-label" for="new-or-renewal-1">New</label>
+            </div>
+            <div class="form-item form-type-radio radio">
+              <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />
+              <label class="control-label" for="new-or-renewal-2">Renewal</label>
+            </div>
+          </div>
+          <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
+        </div>
+      </fieldset>
       
-      <!-- Tier Options for Allocation -->
-      <div id="allocation-tier" style="margin-top:1em;">
+      <!-- Tier Options (Only shown for New requests) -->
+      <div id="allocation-tier" style="margin-top:1em;display:none;" class="new-request-only">
         <fieldset class="col form-item form-group form-item form-type-radios form-group">
           <legend class="control-label h6 mb-2">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
           <small class="helper-text">For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">Allocation Types Documentation</a>.</small>
@@ -118,27 +147,10 @@ private = true
         </fieldset>
       </div>
 
-      <fieldset class="form-item form-group form-type-radios form-group">
-        <legend class="control-label h6 mb-2">New or Renewal <span class="form-required" title="This field is required.">*</span></legend>
-        <div class="row">
-          <div id="new-or-renewal-options" class="form-radios col">
-            <div class="form-item form-type-radio radio">
-              <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" checked="checked" class="form-radio" />
-              <label class="control-label" for="new-or-renewal-1">New</label>
-            </div>
-            <div class="form-item form-type-radio radio">
-              <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />
-              <label class="control-label" for="new-or-renewal-2">Renewal</label>
-            </div>
-          </div>
-          <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
-        </div>
-      </fieldset>
-
-      <!-- Existing Projects for Allocation (Only visible for Renewal) -->
+      <!-- Existing Projects for Service Units (Only visible for Renewal) -->
       <div id="existing-projects-allocation" style="display: none; margin-top:1em;">
         <fieldset>
-          <legend class="control-label h6 mb-2">Your Existing Allocations</legend>
+          <legend class="control-label h6 mb-2">Your Existing Service Units</legend>
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
@@ -149,20 +161,21 @@ private = true
               </tr>
             </thead>
             <tbody id="allocation-projects-tbody">
-              <!-- Will be populated by API but currently being populated with sample data in the JS -->
+              <!-- Will be populated by API -->
             </tbody>
           </table>
         </fieldset>
       </div>
       
-      <!-- Project/Class Name for New Allocation -->
-      <div id="new-project-name-container" style="display: none; margin-top:1em;">
+      <!-- Project/Class Name (Only for New requests) -->
+      <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
         <div class="form-item form-group form-type-textfield form-group">
           <label class="control-label" for="new-project-name">Project/Class Name <span class="form-required" title="This field is required.">*</span></label>
           <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
         </div>
       </div>
 
+      <!-- Project Description -->
       <div class="form-item form-type-textarea form-group"> 
         <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
         <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
@@ -177,6 +190,7 @@ private = true
       <hr size="1" />
 
       <div class="row">
+        <!-- Storage Request Type -->
         <div class="col form-item form-group form-item form-type-radios form-group">
           <fieldset>
             <legend class="control-label h6 mb-2">New or Change Existing<span class="form-required" title="This field is required.">*</span></legend>
@@ -200,6 +214,7 @@ private = true
             </div>
           </fieldset>
         </div>
+        <!-- Storage Capacity -->
         <div class="col form-item form-group">
           <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
           <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
@@ -207,7 +222,7 @@ private = true
         </div>
       </div>
 
-      <!-- Existing Projects/Class for Storage (Only visible for increase/decrease/retire) -->
+      <!-- Existing Projects for Storage (Only visible for increase/decrease/retire) -->
       <div id="existing-projects-storage" style="display: none; margin-top:1em;">
         <fieldset>
           <legend class="control-label h6 mb-2">Your Existing Storage</legend>
@@ -223,14 +238,14 @@ private = true
               </tr>
             </thead>
             <tbody id="storage-projects-tbody">
-              <!-- Will be populated by API but currently being populated with sample data in the JS -->
+              <!-- Will be populated by API -->
             </tbody>
           </table>
         </fieldset>
       </div>
 
-      <!-- Tier Options for Storage -->
-      <div id="storage-platform" style="display: none; margin-top:1em;">
+      <!-- Storage Tier Options -->
+      <div id="storage-platform" style="display: none; margin-top:1em;" class="new-request-only">
         <fieldset class="col form-item form-group form-item form-type-radios form-group">
           <legend class="control-label h6 mb-2">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
           <small class="helper-text">For detailed information about each storage tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/storage/" target="_blank">Storage Documentation</a>.</small>
@@ -244,11 +259,12 @@ private = true
               <label for="storage-choice3">SSZ Research Standard ({{< extract_storage_cost type="standard" >}})</label>
             </div>
             <div class="form-item form-type-radio radio">
-              <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="High Security Research Standard" class="form-radio" />
-              <label for="storage-choice4">High Security Research Standard ({{< extract_storage_cost type="high-security-standard" >}})</label>
+              <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="Highly Sensitive Data" class="form-radio" />
+              <label for="storage-choice4">Highly Sensitive Data ({{< extract_storage_cost type="high-security-standard" >}})</label>
             </div>
           </div>
         </fieldset>
+        <!-- Storage Type Information -->
         <div class="col form-item form-group">
           <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted">
             <h6>Internal Use / Public Data</h6>This storage platform is appropriate for public or internal use data.
@@ -260,7 +276,7 @@ private = true
       </div>
 
       <!-- Shared Space Name -->
-      <div id="shared-space-name-container" style="display: none; margin-top:1em;">
+      <div id="shared-space-name-container" style="display: none; margin-top:1em;" class="new-request-only">
         <div class="form-item form-type-textarea form-group">
           <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
           <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
@@ -269,14 +285,13 @@ private = true
       </div>
 
       <!-- Project Title -->
-      <div id="project-title-container" style="display: none; margin-top:1em;">
+      <div id="project-title-container" style="display: none; margin-top:1em;" class="new-request-only">
         <div class="form-item form-group form-item form-type-textarea form-group"> 
           <label class="control-label" for="project-title">Project Title <span class="form-required" title="This field is required.">*</span></label>
           <input required="required" class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
         </div>
       </div>
     </div>
-
     <!-- Billing Information Section -->
     <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem;background-color:#eee;border:solid 1px #ccc;">
       <h5 class="mb-3">Payment Information</h5>
@@ -288,8 +303,9 @@ private = true
       {{% billing-fdm %}}
     </div>
 
-    <!-- Data Agreement and Submit Button -->
+    <!-- Data Agreement and Submit Button Section -->
     <div id="common-fields" style="display: none; margin-top:1em; padding:1.5rem;background-color:#eee;border:solid 1px #ccc;">
+      <!-- Data Agreement -->
       <div class="form-check form-item form-group" style="margin-top:1rem;">
         <label class="control-label h6 mb-2" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
         <label class="form-check-label" for="data-agreement">
@@ -300,8 +316,13 @@ private = true
         <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
       </div>
 
+      <!-- Submit Section -->
       <div class="form-actions" id="submit-div" style="margin-top:1rem;">
         <hr size="1" style="">
+        <div id="api-status" class="alert alert-info" style="display: none;">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          <span class="ms-2">Checking eligibility and loading groups...</span>
+        </div>
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
         <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled="">Submit</button>
       </div>
@@ -309,5 +330,9 @@ private = true
   </div>
 </div>
 
+<!-- Form close tags -->
 {{< /enable-disable-form >}}
 </form>
+
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
+<script type="text/javascript" src="/js/response-message.js"></script>
