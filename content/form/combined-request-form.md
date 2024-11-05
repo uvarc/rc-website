@@ -89,6 +89,17 @@ private = true
       </div>
     </fieldset>
   </div>
+
+  <!-- Grouper/MyGroups Selection -->
+  <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only"> 
+    <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
+    <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
+      <option value="">- Select a group -</option>
+    </select>
+    <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
+    <div id="group-validation-message" class="validation-message"></div>
+  </div>
+
   <!-- Form Fields Container -->
   <div style="margin-bottom:1rem;">
     <!-- Service Unit (SU) Request Fields -->
@@ -291,18 +302,6 @@ private = true
       </div>
       {{% billing-fdm %}}
     </div>
-
-    <!-- Grouper/MyGroups Selection - Updated for API integration -->
-      <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only"> 
-        <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
-        <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
-          <option value="">- Select a group -</option>
-        </select>
-        <!-- Helper text for group format -->
-        <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
-        <!-- Validation message container -->
-        <div id="group-validation-message" class="validation-message"></div>
-      </div>
 
     <!-- Data Agreement and Submit Button Section -->
     <div id="common-fields" style="display: none; margin-top:1em; padding:1.5rem;background-color:#eee;border:solid 1px #ccc;">
