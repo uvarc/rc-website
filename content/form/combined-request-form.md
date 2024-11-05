@@ -11,6 +11,8 @@ type = "form"
 private = true
 +++
 
+<!-- Core scripts needed for form functionality -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="/js/combined-request-form.js"></script>
 
 {{% jira-msg %}}
@@ -344,5 +346,6 @@ private = true
 {{< /enable-disable-form >}}
 </form>
 
+<!-- Session and response scripts loaded last -->
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
