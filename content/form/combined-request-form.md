@@ -18,7 +18,7 @@ private = true
       method="post" 
       id="combined-request-form" 
       class="needs-validation" 
-      novalidate
+      novalidate 
       accept-charset="UTF-8">
 
 {{< enable-disable-form >}}
@@ -39,22 +39,10 @@ private = true
 
   {{% getstatus keyword="jira" %}}
   {{% form-userinfo-v2 %}}
-  <!-- Requestor Information -->
+  <!-- PI Requestor Information (temporarily disabled)-->
   <div class="form-item form-group form-type-textfield form-group" style="display: none;">
     <label class="control-label" for="pi-uva-id">PI/Owner UVA ID</label>
     <input class="form-control form-text" type="text" id="pi-uva-id" name="pi-uva-id" value="" size="60" maxlength="128" />
-  </div>
-
-  <!-- Grouper/MyGroups Selection - Updated for API integration -->
-  <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only"> 
-    <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
-      <option value="">- Select a group -</option>
-    </select>
-    <!-- Helper text for group format -->
-    <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
-    <!-- Validation message container -->
-    <div id="group-validation-message" class="validation-message"></div>
   </div>
 
   <div class="form-item form-group form-type-textfield form-group" style="display: none;">
@@ -123,6 +111,18 @@ private = true
           <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
         </div>
       </fieldset>
+
+        <!-- Grouper/MyGroups Selection - Updated for API integration -->
+      <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only"> 
+        <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
+        <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
+          <option value="">- Select a group -</option>
+        </select>
+        <!-- Helper text for group format -->
+        <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
+        <!-- Validation message container -->
+        <div id="group-validation-message" class="validation-message"></div>
+      </div>
       
       <!-- Tier Options (Only shown for New requests) -->
       <div id="allocation-tier" style="margin-top:1em;display:none;" class="new-request-only">
@@ -272,6 +272,17 @@ private = true
             <h6>Sensitive / Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.
           </div>
         </div>
+      </div>
+        <!-- Grouper/MyGroups Selection - Updated for API integration -->
+      <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only"> 
+        <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
+        <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
+          <option value="">- Select a group -</option>
+        </select>
+        <!-- Helper text for group format -->
+        <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
+        <!-- Validation message container -->
+        <div id="group-validation-message" class="validation-message"></div>
       </div>
 
       <!-- Shared Space Name -->
