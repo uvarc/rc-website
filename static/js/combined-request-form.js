@@ -6,18 +6,22 @@ $(document).ready(function () {
     // User Session Management
     async function waitForUserSession() {
         let attempts = 0;
-        const maxAttempts = 50; // 5 seconds total (50 * 100ms)
+        const maxAttempts = 100; // 10 seconds total
         
+        // First wait for form_user_info div to exist
         while (attempts < maxAttempts) {
-            const userIdField = document.querySelector('#form_user_info [name="user_id"]');
-            if (userIdField && userIdField.value) {
-                console.log("User ID found:", userIdField.value);
-                return userIdField.value;
+            const userInfoDiv = document.getElementById('form_user_info');
+            if (userInfoDiv) {
+                const userIdField = userInfoDiv.querySelector('[name="user_id"]');
+                if (userIdField && userIdField.value) {
+                    console.log("User ID found:", userIdField.value);
+                    return userIdField.value;
+                }
             }
             await new Promise(resolve => setTimeout(resolve, 100));
             attempts++;
             if (attempts % 10 === 0) {
-                console.log(`Waiting for user session... Attempt ${attempts}`);
+                console.log(`Waiting for user session... Attempt ${attempts}/100`);
             }
         }
         throw new Error('Could not get user ID after waiting');
@@ -74,48 +78,6 @@ $(document).ready(function () {
         projectName: /^[\w\-\s]{3,128}$/,
         sharedSpaceName: /^[\w\-]{3,40}$/
     };
-
-    // CSS Styles definition
-    $('<style>')
-        .text(`
-            /* Dropdown Styling */
-            .group-dropdown option {
-                padding: 8px;
-                margin: 2px;
-                border-radius: 4px;
-            }
-            .group-dropdown option.text-muted { 
-                color: #6c757d !important;
-                background-color: #f8f9fa;
-            }
-            .group-dropdown option:disabled {
-                color: #adb5bd !important;
-                font-style: italic;
-                background-color: #f8f9fa !important;
-                cursor: not-allowed;
-            }
-
-            /* API Status Messages */
-            .api-error-message {
-                margin-bottom: 1rem;
-                padding: 1rem;
-                border-radius: 0.25rem;
-                border: 1px solid #f5c6cb;
-                background-color: #f8d7da;
-                color: #721c24;
-            }
-            .api-waiting-message {
-                margin-bottom: 1rem;
-                padding: 1rem;
-                border-radius: 0.25rem;
-                border: 1px solid #b8daff;
-                background-color: #cce5ff;
-                color: #004085;
-            }
-
-            /* Your other CSS styles... */
-        `)
-        .appendTo('head');
 
     // Utility functions
     const utils = {
@@ -183,7 +145,7 @@ $(document).ready(function () {
             $('.api-waiting-message').remove();
         }
     };
-    // Part 2: API Integration and Group Handling
+    // Part 2: API Integration and Data Management
 
     // API Integration with User Session
     async function fetchAndPopulateGroups() {
@@ -230,6 +192,64 @@ $(document).ready(function () {
         }
     }
 
+    // Preview table loading
+    async function loadPreviewTable() {
+        try {
+            // Clear existing content
+            const previewTableBody = $('#combined-preview-tbody');
+            previewTableBody.empty();
+
+            // Try to get user projects
+            const projects = await fetchUserProjects();
+
+            if (projects.allocationProjects.length > 0 || projects.storageProjects.length > 0) {
+                // Add allocation projects
+                projects.allocationProjects.forEach(project => {
+                    previewTableBody.append(`
+                        <tr class="resource-row">
+                            <td><span class="resource-type-su">Service Unit</span></td>
+                            <td>${project.name}</td>
+                            <td class="group-name">${project.group}</td>
+                            <td class="font-weight-medium">${project.tier}</td>
+                            <td>${project.description}</td>
+                        </tr>
+                    `);
+                });
+
+                // Add storage projects
+                projects.storageProjects.forEach(project => {
+                    previewTableBody.append(`
+                        <tr class="resource-row">
+                            <td><span class="resource-type-storage">Storage</span></td>
+                            <td>${project.name}</td>
+                            <td class="group-name">${project.group}</td>
+                            <td class="font-weight-medium">${project.tier}</td>
+                            <td>${project.currentSize} TB - ${project.description}</td>
+                        </tr>
+                    `);
+                });
+            } else {
+                previewTableBody.append(`
+                    <tr>
+                        <td colspan="5" class="text-center text-muted">
+                            No existing resources found
+                        </td>
+                    </tr>
+                `);
+            }
+        } catch (error) {
+            console.error('Error loading preview table:', error);
+            const previewTableBody = $('#combined-preview-tbody');
+            previewTableBody.html(`
+                <tr>
+                    <td colspan="5" class="text-center text-danger">
+                        Error loading resources. Please try refreshing the page.
+                    </td>
+                </tr>
+            `);
+        }
+    }
+
     function populateGrouperMyGroupsDropdown(groups) {
         const dropdown = $('#mygroups-group');
         dropdown.empty();
@@ -270,6 +290,53 @@ $(document).ready(function () {
         }
     }
 
+    // Mock data for testing (will be replaced with API)
+    async function fetchUserProjects() {
+        try {
+            // Ensure we have a user ID before proceeding
+            await waitForUserSession();
+            
+            // Simulate API delay
+            await new Promise(resolve => setTimeout(resolve, 300));
+            
+            return {
+                allocationProjects: [
+                    {
+                        id: 'alloc-1',
+                        name: 'RNA Sequencing Analysis',
+                        group: 'bioResearchLab1',
+                        tier: 'Standard',
+                        description: 'RNA-seq data analysis for cancer research'
+                    },
+                    {
+                        id: 'alloc-2',
+                        name: 'Climate Model Simulations',
+                        group: 'climateAI2',
+                        tier: 'Paid',
+                        description: 'High-resolution climate modeling'
+                    }
+                ],
+                storageProjects: [
+                    {
+                        id: 'store-1',
+                        name: 'Genomics Data Repository',
+                        group: 'bioResearchLab1',
+                        tier: 'SSZ Research Project',
+                        sharedSpace: 'genomicsData',
+                        currentSize: '50',
+                        description: 'Genomic sequencing data storage'
+                    }
+                ],
+                userStorageUsage: {
+                    'SSZ Research Standard': 133
+                }
+            };
+        } catch (error) {
+            console.error('Error fetching user projects:', error);
+            throw new Error('Failed to fetch user projects');
+        }
+    }
+
     function handleNonEligibleUser() {
         const message = `
             <div class="alert alert-danger" role="alert">
@@ -285,7 +352,6 @@ $(document).ready(function () {
             </div>
         `;
         
-        // Display message and disable form
         $('#combined-request-form')
             .prepend(message)
             .find(':input')
@@ -354,53 +420,6 @@ $(document).ready(function () {
             `);
         }
     }
-
-    // User projects data management
-    async function fetchUserProjects() {
-        try {
-            // Ensure we have a user ID before proceeding
-            await waitForUserSession();
-            
-            // This will be replaced with actual API call
-            await new Promise(resolve => setTimeout(resolve, 300));
-            
-            return {
-                allocationProjects: [
-                    {
-                        id: 'alloc-1',
-                        name: 'RNA Sequencing Analysis',
-                        group: 'bioResearchLab1',
-                        tier: 'Standard',
-                        description: 'RNA-seq data analysis for cancer research'
-                    },
-                    {
-                        id: 'alloc-2',
-                        name: 'Climate Model Simulations',
-                        group: 'climateAI2',
-                        tier: 'Paid',
-                        description: 'High-resolution climate modeling'
-                    }
-                ],
-                storageProjects: [
-                    {
-                        id: 'store-1',
-                        name: 'Genomics Data Repository',
-                        group: 'bioResearchLab1',
-                        tier: 'SSZ Research Project',
-                        sharedSpace: 'genomicsData',
-                        currentSize: '50',
-                        description: 'Genomic sequencing data storage'
-                    }
-                ],
-                userStorageUsage: {
-                    'SSZ Research Standard': 133
-                }
-            };
-        } catch (error) {
-            console.error('Error fetching user projects:', error);
-            throw new Error('Failed to fetch user projects');
-        }
-    }
     // Part 3: UI Toggles and Form Logic
 
     // Form section visibility management
@@ -415,16 +434,20 @@ $(document).ready(function () {
         if (requestType === 'service-unit') {
             $('#allocation-fields, #common-fields').show();
             $('#category').val('Rivanna HPC');
-            loadUserProjects();
             
             // Show New/Renewal first, then handle tier options visibility
             toggleAllocationFields();
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
             $('#category').val('Storage');
-            loadUserProjects();
         }
 
+        // Handle dependent sections
+        loadUserProjects().catch(error => {
+            console.error('Error loading user projects:', error);
+            showErrorMessage('Error loading your current resources');
+        });
+        
         updateBillingVisibility();
         toggleStorageFields();
     }
@@ -483,7 +506,10 @@ $(document).ready(function () {
             .prop('min', isRetiring ? '0' : '1');
         
         if (isModifyingExisting) {
-            updateStorageModificationFields(typeOfRequest);
+            updateStorageModificationFields(typeOfRequest).catch(error => {
+                console.error('Error updating storage fields:', error);
+                showErrorMessage('Error updating storage options');
+            });
         }
         
         updateBillingVisibility();
@@ -494,7 +520,6 @@ $(document).ready(function () {
         const selectedStorage = $('input[name="storage-choice"]:checked').val();
         console.log("Selected storage tier:", selectedStorage);
         
-        // Updated to use new name for highly sensitive data
         const isHighlySensitive = selectedStorage === 'Highly Sensitive Data';
         
         // Toggle security level messages
@@ -546,7 +571,7 @@ $(document).ready(function () {
             }
         } catch (error) {
             console.error('Error updating storage modification fields:', error);
-            showErrorMessage('Error updating storage options');
+            throw error;  // Let the caller handle the error
         }
     }
 
@@ -625,6 +650,12 @@ $(document).ready(function () {
     }
 
     // UI helper functions
+    function validateGroupSelection() {
+        const selectedOption = $('#mygroups-group option:selected');
+        if (!selectedOption.val()) return true; // Skip validation if no selection (handled by required attribute)
+        return selectedOption.data('valid') === true;
+    }
+
     function updateTierNote(message) {
         const $tierNote = $('#tier-note');
         if ($tierNote.length === 0) {
@@ -657,6 +688,12 @@ $(document).ready(function () {
             $('#form-error-message').remove();
         }
     }
+
+    function updateFormValidation() {
+        const form = document.getElementById('combined-request-form');
+        const isValid = form.checkValidity();
+        $('#submit').prop('disabled', !isValid || !$('#data-agreement').is(':checked'));
+    }
     // Part 4: Event Handlers and Initialization
 
     // Event handler setup
@@ -671,14 +708,18 @@ $(document).ready(function () {
             }
             
             toggleRequestFields();
-            loadPreviewTable();
+            loadPreviewTable().catch(error => {
+                console.error('Error loading preview table:', error);
+            });
         });
 
         // Service Unit specific handlers
         $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
         $('input[name="allocation-choice"]').on('change', function() {
             console.log("Selected SU tier:", $(this).val());
-            updateBillingVisibility();
+            updateBillingVisibility().catch(error => {
+                console.error('Error updating billing visibility:', error);
+            });
         });
 
         // Storage specific handlers
@@ -692,7 +733,9 @@ $(document).ready(function () {
         
         $('#capacity').on('input change', function() {
             if ($('#storage-fields').is(':visible')) {
-                updateBillingVisibility();
+                updateBillingVisibility().catch(error => {
+                    console.error('Error updating billing visibility:', error);
+                });
             }
         });
 
@@ -722,13 +765,15 @@ $(document).ready(function () {
             validateField($(this));
             updateFormValidation();
         });
-    
-        // Replace debounce with simple timeout
+
+        // Simple timeout-based validation for text inputs
         let validationTimeout;
         $('#new-project-name, #shared-space-name').on('input', function() {
+            const $field = $(this);
             clearTimeout(validationTimeout);
             validationTimeout = setTimeout(() => {
-                validateField($(this));
+                validateField($field);
+                updateFormValidation();
             }, 300);
         });
     }
@@ -853,32 +898,52 @@ $(document).ready(function () {
             // Initial setup
             $('#allocation-fields, #storage-fields, #common-fields').hide();
             $('#submit').prop('disabled', true);
-
+            $('#mygroups-group-container').hide();  // Hide group selection by default
+    
             // Update labels
             $('#request-type-allocation').next('label').text('Service Unit (SU)');
             $('#request-type-storage').next('label').text('Storage');
             $('#storage-choice4').next('label').text('Highly Sensitive Data');
-
+    
             // Setup event handlers first
             setupEventHandlers();
-
-            // Wait for user session and load data
+    
+            // Wait for form-userinfo-v2 to be ready
+            console.log("Waiting for user information to load...");
+            await new Promise((resolve, reject) => {
+                let attempts = 0;
+                const maxAttempts = 50;
+                const checkUserInfo = setInterval(() => {
+                    attempts++;
+                    if (document.getElementById('form_user_info')) {
+                        clearInterval(checkUserInfo);
+                        console.log("User information loaded");
+                        resolve();
+                    } else if (attempts >= maxAttempts) {
+                        clearInterval(checkUserInfo);
+                        reject(new Error("Timeout waiting for user information"));
+                    }
+                }, 100);
+            });
+    
+            // Load data after user info is available
             await fetchAndPopulateGroups();
             await loadPreviewTable();
             
-            // Initial toggle states
-            toggleRequestFields();
-            toggleAllocationFields();
-            toggleStorageFields();
-            toggleStorageTierOptions();
+            // Force initial toggle of fields based on default selection
+            const defaultResourceType = $('input[name="request-type"]:checked').val();
+            if (defaultResourceType === 'service-unit') {
+                $('#allocation-fields, #common-fields').show();
+                toggleAllocationFields();
+            }
             
             // Update billing visibility
-            updateBillingVisibility();
+            await updateBillingVisibility();
             
             console.log("Form initialization complete");
         } catch (error) {
             console.error("Error during form initialization:", error);
-            showErrorMessage("Failed to initialize form properly. Please try logging out and back in, then refresh the page.");
+            showErrorMessage("Failed to initialize form properly. Please try refreshing the page.");
         }
     }
 
