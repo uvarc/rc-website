@@ -28,6 +28,7 @@ All systems are expected to return to service by **Wednesday,**
 |---|---|---|
 |amber    | 22.0    | 24-CUDA-12.2.2 |
 |apptainer| 1.2.2   | 1.3.4 |
+|blender  | 3.2.1, 3.4.1 | 3.6.17 |
 |diamond  | 2.0.14  | 2.1.6 |
 |freesurfer| 6.0.1  | 7.2.0 |
 |gatk     | 4.3.0.0, 4.5.0.0 | 4.6.0.0 |

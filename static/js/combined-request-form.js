@@ -223,7 +223,6 @@ $(document).ready(function () {
             if (!computingId) {
                 throw new Error('Unable to determine computing ID');
             }
-    
             // Make API request
             const response = await fetch(
                 `${API_CONFIG.baseUrl}/${computingId}`,
@@ -232,35 +231,27 @@ $(document).ready(function () {
                     headers: API_CONFIG.headers
                 }
             );
-    
             // Parse response - API returns [data, statusCode]
             const [data, statusCode] = await utils.handleApiResponse(response);
             console.log('Groups data:', data);
             console.log('Status code:', statusCode);
-    
+
             if (statusCode !== 200) {
                 throw new Error(`API returned status code ${statusCode}`);
             }
-    
             // Check eligibility
             if (!data.is_user_resource_request_elligible) {
                 console.log('User is not eligible for resource requests');
                 handleNonEligibleUser();
                 return;
             }
-    
+
             // Populate groups dropdown
             populateGrouperMyGroupsDropdown(data.user_groups);
-    
+
         } catch (error) {
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
-            // Add specific error handling for missing computing ID
-            if (error.message.includes('computing ID')) {
-                $('#mygroups-group')
-                    .prop('disabled', true)
-                    .after('<div class="alert alert-danger mt-2">Unable to load user information. Please refresh the page or contact support.</div>');
-            }
         }
     }
 
@@ -297,7 +288,6 @@ $(document).ready(function () {
         });
 
         updateGroupValidationMessages(validCount, invalidCount);
-        
         // If no valid groups are available, disable the dropdown
         if (validCount === 0) {
             dropdown.prop('disabled', true);
@@ -517,7 +507,6 @@ $(document).ready(function () {
         // Toggle Grouper requirement only for new requests
         $('#mygroups-group-container').toggle(isNew);
         $('#mygroups-group').prop('required', isNew);
-        
         // Update description labels with fade effect
         if (isNew) {
             $("#new-descr").fadeIn(400);
@@ -808,7 +797,6 @@ $(document).ready(function () {
             validateField($(this));
             updateFormValidation();
         });
-
         $('#new-project-name, #shared-space-name').on('input', _.debounce(function() {
             validateField($(this));
         }, 300));
