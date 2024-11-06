@@ -357,72 +357,15 @@ $(document).ready(function () {
         // Sort groups alphabetically
         const sortedGroups = [...groups].sort((a, b) => a.localeCompare(b));
         
-        // Comment out validation counting
-        // let validCount = 0;
-        // let invalidCount = 0;
-        
+        // Add all groups directly without validation
         sortedGroups.forEach(groupName => {
             const option = $('<option>')
                 .val(groupName)
-                .text(groupName);
-            
-        // Comment out validation logic
-                /*
-                if (utils.isValidGroupFormat(groupName)) {
-                    validCount++;
-                    option.data('valid', true);
-                } else {
-                    invalidCount++;
-                    option
-                        .addClass('text-muted')
-                        .prop('disabled', true)
-                        .attr('title', 'Group name can only contain letters, numbers, dashes, and underscores')
-                        .text(`${groupName} (Invalid format)`)
-                        .data('valid', false);
-                }
-                */
-            
-            // Instead, just add all groups as valid
-            option.data('valid', true);
+                .text(groupName)
+                .data('valid', true);  // Set all groups as valid
             
             dropdown.append(option);
         });
-    /*
-        updateGroupValidationMessages(validCount, invalidCount);
-        
-        // If no valid groups are available, disable the dropdown
-        if (validCount === 0) {
-            dropdown.prop('disabled', true);
-        }
-    }
-
-    function updateGroupValidationMessages(validCount, invalidCount) {
-        const messagesContainer = $('#group-validation-message');
-        messagesContainer.empty();
-
-        if (invalidCount > 0) {
-            messagesContainer.append(`
-                <div class="warning-message">
-                    <p>${invalidCount} group(s) have invalid names and are disabled.</p>
-                    <p>Group names must contain only:</p>
-                    <ul class="mb-0">
-                        <li>Letters (a-z, A-Z)</li>
-                        <li>Numbers (0-9)</li>
-                        <li>Dashes (-)</li>
-                        <li>Underscores (_)</li>
-                    </ul>
-                </div>
-            `);
-        }
-
-        if (validCount === 0) {
-            messagesContainer.append(`
-                <div class="validation-message" style="display: block;">
-                    No valid groups available. Please contact Research Computing Support to create a properly formatted group.
-                </div>
-            `);
-        }
-        */
     }
     function handleNonEligibleUser() {
         const message = `
