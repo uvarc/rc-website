@@ -68,6 +68,86 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
+
+    // Error handling utility functions
+    const ErrorHandler = {
+        showUserMessage: (message, type = 'error', duration = 5000) => {
+            const alertClass = type === 'error' ? 'alert-danger' : 'alert-warning';
+            const errorDiv = $('<div>')
+                .addClass(`alert ${alertClass} alert-dismissible fade show`)
+                .html(`
+                    <strong>${type === 'error' ? 'Error' : 'Warning'}:</strong> ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `)
+                .prependTo('#combined-request-form');
+
+            if (duration) {
+                setTimeout(() => errorDiv.fadeOut('slow', function() {
+                    $(this).remove();
+                }), duration);
+            }
+            return errorDiv;
+        },
+
+        handleApiError: (error, context) => {
+            console.error(`API Error (${context}):`, error);
+            let message;
+            
+            if (error.message.includes('user ID') || error.message.includes('user session')) {
+                message = `
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Session Not Available</h4>
+                        <p>Unable to load your user information. This could be because:</p>
+                        <ul>
+                            <li>The page is still loading</li>
+                            <li>Your session has expired</li>
+                            <li>You are not properly logged in</li>
+                        </ul>
+                        <hr>
+                        <p class="mb-0">Please try:
+                            <ol>
+                                <li>Waiting a few moments and refreshing the page</li>
+                                <li>Logging out and back in</li>
+                                <li>Clearing your browser cache if the problem persists</li>
+                            </ol>
+                        </p>
+                    </div>
+                `;
+            } else if (error.message.includes('status code')) {
+                message = `
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Service Unavailable</h4>
+                        <p>There was a problem connecting to the service. This could be temporary.</p>
+                        <hr>
+                        <p class="mb-0">Please try again in a few minutes. If the problem persists, contact Research Computing Support.</p>
+                    </div>
+                `;
+            } else {
+                message = `
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Unable to Load Information</h4>
+                        <p>An unexpected error occurred while loading your information.</p>
+                        <hr>
+                        <p class="mb-0">Please try refreshing the page. If the problem persists, contact Research Computing Support.</p>
+                    </div>
+                `;
+            }
+            
+            $('#combined-request-form').prepend(message);
+            $('#mygroups-group')
+                .prop('disabled', true)
+                .addClass('is-invalid');
+        },
+
+        disableForm: (message = 'Form is currently unavailable') => {
+            $('#combined-request-form')
+                .find(':input')
+                .prop('disabled', true);
+            
+            ErrorHandler.showUserMessage(message, 'warning', 0);
+        }
+    };
+
     // User Session Management
     async function waitForUserSession() {
         let attempts = 0;
@@ -191,84 +271,6 @@ $(document).ready(function () {
         groupName: /^[a-zA-Z0-9\-_]+$/,
         projectName: /^[\w\-\s]{3,128}$/,
         sharedSpaceName: /^[\w\-]{3,40}$/
-    };
-    // Error handling utility functions
-    const ErrorHandler = {
-        showUserMessage: (message, type = 'error', duration = 5000) => {
-            const alertClass = type === 'error' ? 'alert-danger' : 'alert-warning';
-            const errorDiv = $('<div>')
-                .addClass(`alert ${alertClass} alert-dismissible fade show`)
-                .html(`
-                    <strong>${type === 'error' ? 'Error' : 'Warning'}:</strong> ${message}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                `)
-                .prependTo('#combined-request-form');
-
-            if (duration) {
-                setTimeout(() => errorDiv.fadeOut('slow', function() {
-                    $(this).remove();
-                }), duration);
-            }
-            return errorDiv;
-        },
-
-        handleApiError: (error, context) => {
-            console.error(`API Error (${context}):`, error);
-            let message;
-            
-            if (error.message.includes('user ID') || error.message.includes('user session')) {
-                message = `
-                    <div class="alert alert-warning" role="alert">
-                        <h4 class="alert-heading">Session Not Available</h4>
-                        <p>Unable to load your user information. This could be because:</p>
-                        <ul>
-                            <li>The page is still loading</li>
-                            <li>Your session has expired</li>
-                            <li>You are not properly logged in</li>
-                        </ul>
-                        <hr>
-                        <p class="mb-0">Please try:
-                            <ol>
-                                <li>Waiting a few moments and refreshing the page</li>
-                                <li>Logging out and back in</li>
-                                <li>Clearing your browser cache if the problem persists</li>
-                            </ol>
-                        </p>
-                    </div>
-                `;
-            } else if (error.message.includes('status code')) {
-                message = `
-                    <div class="alert alert-warning" role="alert">
-                        <h4 class="alert-heading">Service Unavailable</h4>
-                        <p>There was a problem connecting to the service. This could be temporary.</p>
-                        <hr>
-                        <p class="mb-0">Please try again in a few minutes. If the problem persists, contact Research Computing Support.</p>
-                    </div>
-                `;
-            } else {
-                message = `
-                    <div class="alert alert-warning" role="alert">
-                        <h4 class="alert-heading">Unable to Load Information</h4>
-                        <p>An unexpected error occurred while loading your information.</p>
-                        <hr>
-                        <p class="mb-0">Please try refreshing the page. If the problem persists, contact Research Computing Support.</p>
-                    </div>
-                `;
-            }
-            
-            $('#combined-request-form').prepend(message);
-            $('#mygroups-group')
-                .prop('disabled', true)
-                .addClass('is-invalid');
-        },
-
-        disableForm: (message = 'Form is currently unavailable') => {
-            $('#combined-request-form')
-                .find(':input')
-                .prop('disabled', true);
-            
-            ErrorHandler.showUserMessage(message, 'warning', 0);
-        }
     };
 
     // Utility functions
@@ -813,6 +815,43 @@ $(document).ready(function () {
             }
         } else {
             $('#form-error-message').remove();
+        }
+    }
+
+    function resetForm() {
+        $('#combined-request-form')[0].reset();
+        resetValidationState();
+        setupInitialFormState();
+        $('#submit').prop('disabled', true);
+    }
+
+    async function handleFormSubmission(event) {
+        event.preventDefault();
+        
+        try {
+            // Ensure user session is available before submission
+            await waitForUserSession();
+            
+            if (validateForm()) {
+                const $submitButton = $('#submit');
+                const originalText = $submitButton.text();
+                
+                // Disable submit button and show loading state
+                $submitButton.prop('disabled', true)
+                            .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
+
+                // Here you would normally send the form data to your server
+                console.log('Form data ready to submit:', $('#combined-request-form').serialize());
+
+                // Show success message
+                ErrorHandler.showUserMessage('Your request has been submitted successfully.', 'success');
+                
+                // Reset form after successful submission
+                resetForm();
+            }
+        } catch (error) {
+            console.error('Error during form submission:', error);
+            ErrorHandler.showUserMessage('Unable to submit form. Please ensure you are logged in and try again.');
         }
     }
 
