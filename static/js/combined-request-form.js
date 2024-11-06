@@ -422,8 +422,8 @@ $(document).ready(function () {
                 </div>
             `);
         }
+        */
     }
-*/
     function handleNonEligibleUser() {
         const message = `
             <div class="alert alert-danger" role="alert">
