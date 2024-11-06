@@ -78,17 +78,37 @@ $(document).ready(function () {
             const userInfoDiv = document.getElementById('form_user_info');
             const userIdField = document.querySelector('[name="user_id"]');
             
+            console.log("Session Check Attempt", attempts + 1, {
+                userInfoDiv: !!userInfoDiv,
+                userIdField: !!userIdField,
+                userIdValue: userIdField?.value
+            });
+            
             // Also check if the value is actually populated
             if (userInfoDiv && userIdField && userIdField.value) {
                 console.log("User ID found:", userIdField.value);
                 return userIdField.value;
             }
+            
             // More detailed logging
             if (attempts % 10 === 0) {
                 console.log(`Waiting for user session... Attempt ${attempts + 1}/${maxAttempts}`);
                 console.log('User info div present:', !!userInfoDiv);
                 console.log('User ID field present:', !!userIdField);
                 console.log('User ID value:', userIdField?.value);
+                
+                // Add HTML inspection
+                if (userInfoDiv) {
+                    console.log('User info div contents:', userInfoDiv.innerHTML);
+                }
+                if (userIdField) {
+                    console.log('User ID field attributes:', {
+                        type: userIdField.type,
+                        name: userIdField.name,
+                        value: userIdField.value,
+                        visibility: userIdField.style.display
+                    });
+                }
             }
             await new Promise(resolve => setTimeout(resolve, 100));
             attempts++;
@@ -103,6 +123,33 @@ $(document).ready(function () {
             'Accept': 'application/json'
         }
     };
+
+        // Is the API endpoint accessible:
+    async function testAPIEndpoint() {
+        try {
+            const computingId = await waitForUserSession();
+            console.log("TEST - Computing ID:", computingId);
+            
+            const apiUrl = `${API_CONFIG.baseUrl}/${computingId}`;
+            console.log("TEST - API URL:", apiUrl);
+            
+            const response = await fetch(apiUrl, {
+                method: 'GET',
+                headers: API_CONFIG.headers
+            });
+            
+            console.log("TEST - Response Status:", response.status);
+            const responseText = await response.text();
+            console.log("TEST - Response Body:", responseText);
+        } catch (error) {
+            console.error("TEST - API Error:", error);
+        }
+    }
+
+    // Then call it during initialization:
+    initialize().then(() => {
+        testAPIEndpoint();
+    });
 
     // Constants for resource types and their properties
     const RESOURCE_TYPES = {
