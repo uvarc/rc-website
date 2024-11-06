@@ -315,24 +315,36 @@ $(document).ready(function () {
         const waitingMessage = utils.showWaitingMessage();
         
         try {
+            // Log the start of the function
+            console.log("Starting fetchAndPopulateGroups");
+
             const computingId = await waitForUserSession();
-            console.log("Attempting API call with computing ID:", computingId);
+            console.log("User session found, computing ID:", computingId);
+
+            // Log the API URL being called
+            const apiUrl = `${API_CONFIG.baseUrl}/${computingId}`;
+            console.log("Making API call to:", apiUrl);
 
             const response = await fetch(
-                `${API_CONFIG.baseUrl}/${computingId}`,
+                apiUrl,
                 {
                     method: 'GET',
                     headers: API_CONFIG.headers
                 }
             );
+            
+            // Log the raw response
+            console.log('Raw API response:', response);
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
 
-            const [data, statusCode] = await utils.handleApiResponse(response);
-            console.log('Groups data:', data);
-            console.log('Status code:', statusCode);
+            // Try to get the response text first for debugging
+            const responseText = await response.text();
+            console.log('Response text:', responseText);
 
-            if (statusCode !== 200) {
-                throw new Error(`API returned status code ${statusCode}`);
-            }
+            // Parse the text as JSON
+            const data = JSON.parse(responseText);
+            console.log('Parsed groups data:', data);
 
             if (!data.is_user_resource_request_elligible) {
                 console.log('User is not eligible for resource requests');
@@ -340,9 +352,15 @@ $(document).ready(function () {
                 return;
             }
 
+            // Log the groups before populating dropdown
+            console.log('Groups to be added to dropdown:', data.user_groups);
+
             populateGrouperMyGroupsDropdown(data.user_groups);
+            console.log('Dropdown populated successfully');
 
         } catch (error) {
+            console.error('Detailed error in fetchAndPopulateGroups:', error);
+            console.error('Error stack:', error.stack);
             utils.logApiError(error, 'fetchAndPopulateGroups');
         } finally {
             utils.removeWaitingMessage();
