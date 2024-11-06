@@ -151,50 +151,101 @@ $(document).ready(function () {
     // User Session Management
     async function waitForUserSession() {
         let attempts = 0;
-        const maxAttempts = 150; // Increased to 15 seconds total
+        const maxAttempts = 150; // 15 seconds total
+        
+        function getCookie(c_name) {
+            var c_value = document.cookie,
+                c_start = c_value.indexOf(" " + c_name + "=");
+            if (c_start == -1) c_start = c_value.indexOf(c_name + "=");
+            if (c_start == -1) {
+                c_value = null;
+            } else {
+                c_start = c_value.indexOf("=", c_start) + 1;
+                var c_end = c_value.indexOf(";", c_start);
+                if (c_end == -1) {
+                    c_end = c_value.length;
+                }
+                c_value = unescape(c_value.substring(c_start, c_end));
+            }
+            return c_value;
+        }
+    
+        function decode64(str) {
+            return str ? atob(str) : null;
+        }
         
         while (attempts < maxAttempts) {
-            // Check for both form_user_info div and user_id field
-            const userInfoDiv = document.getElementById('form_user_info');
-            const userIdField = document.querySelector('[name="user_id"]');
-            
-            console.log("Session Check Attempt", attempts + 1, {
-                userInfoDiv: !!userInfoDiv,
-                userIdField: !!userIdField,
-                userIdValue: userIdField?.value
-            });
-            
-            // Also check if the value is actually populated
-            if (userInfoDiv && userIdField && userIdField.value) {
-                console.log("User ID found:", userIdField.value);
-                return userIdField.value;
+            // Check for uid cookie
+            const encodedUid = getCookie("__rc_uid");
+            if (encodedUid) {
+                const uid = decode64(encodedUid);
+                if (uid) {
+                    console.log("User ID found from cookie:", uid);
+                    return uid;
+                }
             }
+    
+            // Check other required cookies
+            const hasName = getCookie("__rc_name");
+            const hasEmail = getCookie("__rc_email");
+            const hasDepartment = getCookie("__rc_department");
             
-            // More detailed logging
             if (attempts % 10 === 0) {
-                console.log(`Waiting for user session... Attempt ${attempts + 1}/${maxAttempts}`);
-                console.log('User info div present:', !!userInfoDiv);
-                console.log('User ID field present:', !!userIdField);
-                console.log('User ID value:', userIdField?.value);
-                
-                // Add HTML inspection
-                if (userInfoDiv) {
-                    console.log('User info div contents:', userInfoDiv.innerHTML);
-                }
-                if (userIdField) {
-                    console.log('User ID field attributes:', {
-                        type: userIdField.type,
-                        name: userIdField.name,
-                        value: userIdField.value,
-                        visibility: userIdField.style.display
-                    });
-                }
+                console.log("Session check status:", {
+                    attempt: attempts + 1,
+                    hasUid: !!encodedUid,
+                    hasName: !!hasName,
+                    hasEmail: !!hasEmail,
+                    hasDepartment: !!hasDepartment
+                });
             }
+    
+            if (!hasName || !hasEmail || !encodedUid || !hasDepartment) {
+                console.log("Missing required cookies, redirecting to auth...");
+                window.location.replace("https://auth.rc.virginia.edu/session.php");
+                return;
+            }
+    
             await new Promise(resolve => setTimeout(resolve, 100));
             attempts++;
         }
+    
+        console.error("Session timeout reached. Cookie state:", {
+            uid: !!getCookie("__rc_uid"),
+            name: !!getCookie("__rc_name"),
+            email: !!getCookie("__rc_email"),
+            department: !!getCookie("__rc_department"),
+            set: !!getCookie("__rc_set")
+        });
+    
         throw new Error('Could not get user ID after waiting - user session not available');
     }
+
+    // Check session immediately on page load
+(function checkInitialSession() {
+    // check for primary ID cookie
+    if (getCookie("__rc_set") == null || getCookie("__rc_set") == '') {
+        window.location.replace("https://auth.rc.virginia.edu/session.php");
+        return;
+    }
+
+    // check for vital signs
+    if (getCookie("__rc_name") == null || 
+        getCookie("__rc_name") == '' || 
+        getCookie("__rc_email") == null || 
+        getCookie("__rc_email") == '' || 
+        getCookie("__rc_uid") == null || 
+        getCookie("__rc_uid") == '') {
+        window.location.replace("https://auth.rc.virginia.edu/session.php");
+        return;
+    }
+
+    // check for department
+    if (getCookie("__rc_department") == null || getCookie("__rc_department") == '') {
+        window.location.replace("https://auth.rc.virginia.edu/session.php");
+        return;
+    }
+})();
 
     // API Configuration
     const API_CONFIG = {
