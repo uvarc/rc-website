@@ -357,30 +357,37 @@ $(document).ready(function () {
         // Sort groups alphabetically
         const sortedGroups = [...groups].sort((a, b) => a.localeCompare(b));
         
-        let validCount = 0;
-        let invalidCount = 0;
+        // Comment out validation counting
+        // let validCount = 0;
+        // let invalidCount = 0;
         
         sortedGroups.forEach(groupName => {
             const option = $('<option>')
                 .val(groupName)
                 .text(groupName);
             
-            if (utils.isValidGroupFormat(groupName)) {
-                validCount++;
-                option.data('valid', true);
-            } else {
-                invalidCount++;
-                option
-                    .addClass('text-muted')
-                    .prop('disabled', true)
-                    .attr('title', 'Group name can only contain letters, numbers, dashes, and underscores')
-                    .text(`${groupName} (Invalid format)`)
-                    .data('valid', false);
-            }
+        // Comment out validation logic
+                /*
+                if (utils.isValidGroupFormat(groupName)) {
+                    validCount++;
+                    option.data('valid', true);
+                } else {
+                    invalidCount++;
+                    option
+                        .addClass('text-muted')
+                        .prop('disabled', true)
+                        .attr('title', 'Group name can only contain letters, numbers, dashes, and underscores')
+                        .text(`${groupName} (Invalid format)`)
+                        .data('valid', false);
+                }
+                */
+            
+            // Instead, just add all groups as valid
+            option.data('valid', true);
             
             dropdown.append(option);
         });
-    
+    /*
         updateGroupValidationMessages(validCount, invalidCount);
         
         // If no valid groups are available, disable the dropdown
@@ -416,7 +423,7 @@ $(document).ready(function () {
             `);
         }
     }
-
+*/
     function handleNonEligibleUser() {
         const message = `
             <div class="alert alert-danger" role="alert">
@@ -440,9 +447,15 @@ $(document).ready(function () {
 
     // Group validation
     function validateGroupSelection() {
+        // Temporarily return true for all selections
+        return true;
+    
+        // Original validation code commented out
+        /*
         const selectedOption = $('#mygroups-group option:selected');
         if (!selectedOption.val()) return true; // Skip validation if no selection
         return selectedOption.data('valid') === true;
+        */
     }
     // Form section visibility management
     function toggleRequestFields() {
