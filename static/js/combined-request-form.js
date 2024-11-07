@@ -210,28 +210,31 @@ $(document).ready(function () {
 
     // API Integration and Group Management
 
-        async function fetchUserResourceEligibility(userId) {
-            try {
-                const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    }
-                });
-        
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+    async function fetchUserResourceEligibility(userId) {
+        try {
+            const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json, text/javascript, */*; q=0.01',
+                    'Content-Type': 'application/json',
+                    'x-requested-with': 'XMLHttpRequest',
+                    'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36',
+                    'Referer': 'https://staging.rc.virginia.edu/form/combined-request-form/'
                 }
-        
-                const data = await response.json();
-                return data;
-            } catch (error) {
-                console.error('Error fetching user resource eligibility:', error);
-                ErrorHandler.handleApiError(error, 'fetchUserResourceEligibility');
-                return null;
+            });
+    
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
-        }    
+    
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error fetching user resource eligibility:', error);
+            ErrorHandler.handleApiError(error, 'fetchUserResourceEligibility');
+            return null;
+        }
+    }
 
     async function fetchUserProjects() {
         // Return empty data structure for new users
@@ -605,6 +608,7 @@ $(document).ready(function () {
     // Initialize form
     async function initialize() {
         try {
+            console.log("Initializing form..."); // Log start of initialization
             const loadingMessage = $('<div>')
                 .addClass('alert alert-info')
                 .html(`
@@ -616,15 +620,17 @@ $(document).ready(function () {
                     </div>
                 `)
                 .prependTo('#combined-request-form');
-
+    
             setupEventHandlers();
             setupInitialFormState();
-
+    
             try {
                 const userId = await waitForUserSession();
-                
+                console.log("User ID:", userId); // Log user ID
+    
                 // Fetch user resource data and directly populate groups
                 const userEligibility = await fetchUserResourceEligibility(userId);
+                console.log("User Eligibility Data:", userEligibility); // Log eligibility data
                 
                 // Populate the dropdown with user groups regardless of eligibility status
                 if (userEligibility) {
@@ -632,21 +638,26 @@ $(document).ready(function () {
                 } else {
                     ErrorHandler.showUserMessage("User groups could not be loaded.", "warning");
                 }
-
+    
             } catch (error) {
+                console.error("Session Error:", error);
                 ErrorHandler.handleApiError(error, 'session');
             }
-
+    
             loadingMessage.fadeOut('slow', function() {
                 $(this).remove();
             });
-
+    
         } catch (error) {
+            console.error("Initialization Error:", error);
             ErrorHandler.handleApiError(error, 'initialization');
             $('.alert.alert-info').remove();
         }
-    }
+    }    
 
     // Start initialization
     initialize();
+
+    console.log("Initializing form...");
+
 });
