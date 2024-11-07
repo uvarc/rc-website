@@ -723,9 +723,15 @@ $(document).ready(function () {
             updateFormValidation();
         });
 
-        $('#new-project-name, #shared-space-name').on('input', _.debounce(function() {
-            validateField($(this));
-        }, 300));
+        // Replace _.debounce with a setTimeout implementation
+        let timeoutId;
+        $('#new-project-name, #shared-space-name').on('input', function() {
+            const $field = $(this);
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                validateField($field);
+            }, 300);
+        });
     }
 
     function validateField($field) {
