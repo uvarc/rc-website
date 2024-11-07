@@ -415,52 +415,34 @@ $(document).ready(function () {
         const waitingMessage = utils.showWaitingMessage();
         
         try {
-            // Log the start of the function
-            console.log("Starting fetchAndPopulateGroups");
-
             const computingId = await waitForUserSession();
-            console.log("User session found, computing ID:", computingId);
-
-            // Log the API URL being called
-            const apiUrl = `${API_CONFIG.baseUrl}/${computingId}`;
-            console.log("Making API call to:", apiUrl);
-
+            console.log("Attempting API call with computing ID:", computingId);
+    
             const response = await fetch(
-                apiUrl,
+                `${API_CONFIG.baseUrl}/${computingId}`,
                 {
                     method: 'GET',
                     headers: API_CONFIG.headers
                 }
             );
-            
-            // Log the raw response
-            console.log('Raw API response:', response);
-            console.log('Response status:', response.status);
-            console.log('Response headers:', response.headers);
-
-            // Try to get the response text first for debugging
-            const responseText = await response.text();
-            console.log('Response text:', responseText);
-
-            // Parse the text as JSON
-            const data = JSON.parse(responseText);
-            console.log('Parsed groups data:', data);
-
-            if (!data.is_user_resource_request_elligible) {
-                console.log('User is not eligible for resource requests');
-                handleNonEligibleUser();
-                return;
+    
+            const [data, statusCode] = await utils.handleApiResponse(response);
+            console.log('Groups data:', data);
+            console.log('Status code:', statusCode);
+    
+            if (statusCode !== 200) {
+                throw new Error(`API returned status code ${statusCode}`);
             }
-
-            // Log the groups before populating dropdown
-            console.log('Groups to be added to dropdown:', data.user_groups);
-
+    
+            // Show eligibility message if user is not a researcher
+            if (!data.is_user_resource_request_elligible) {
+                handleNonEligibleUser();
+            }
+    
+            // Always populate groups regardless of eligibility
             populateGrouperMyGroupsDropdown(data.user_groups);
-            console.log('Dropdown populated successfully');
-
+    
         } catch (error) {
-            console.error('Detailed error in fetchAndPopulateGroups:', error);
-            console.error('Error stack:', error.stack);
             utils.logApiError(error, 'fetchAndPopulateGroups');
         } finally {
             utils.removeWaitingMessage();
@@ -487,23 +469,15 @@ $(document).ready(function () {
     }
     function handleNonEligibleUser() {
         const message = `
-            <div class="alert alert-danger" role="alert">
-                <h4 class="alert-heading">Not Eligible for Resource Requests</h4>
-                <p>You are currently not eligible to make resource requests. This could be due to:</p>
-                <ul>
-                    <li>Missing required training or certifications</li>
-                    <li>Account status issues</li>
-                    <li>Prior requests pending review</li>
-                </ul>
-                <hr>
-                <p class="mb-0">Please contact Research Computing Support for more information about your eligibility status.</p>
+            <div class="alert alert-warning" role="alert">
+                <h4 class="alert-heading">Resource Request Information</h4>
+                <p>Please note: You have been identified as a non-researcher user. While you can still submit requests, additional verification may be required.</p>
+                <p>If you believe this is incorrect, please contact Research Computing Support.</p>
             </div>
         `;
         
-        $('#combined-request-form')
-            .prepend(message)
-            .find(':input')
-            .prop('disabled', true);
+        // Only show the message, don't disable the form
+        $('#combined-request-form').prepend(message);
     }
 
     // Group validation
