@@ -213,45 +213,55 @@ $(document).ready(function () {
         const waitingMessage = utils.showWaitingMessage();
         
         try {
-            // Wait for user ID to be available
             const computingId = await waitForUserSession();
             console.log("Attempting API call with computing ID:", computingId);
-
-            // Make API request
+    
+            // Add required headers
             const response = await fetch(
                 `${API_CONFIG.baseUrl}/${computingId}`,
                 {
                     method: 'GET',
-                    headers: API_CONFIG.headers
+                    headers: {
+                        ...API_CONFIG.headers,
+                        'Accept': 'application/json',
+                        'Origin': window.location.origin
+                    },
+                    credentials: 'include' // Include cookies if needed
                 }
             );
-
-            // Parse response - API returns [data, statusCode]
+    
+            console.log("API Response status:", response.status);
+            console.log("API Response headers:", Object.fromEntries(response.headers));
+    
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("API Error Response:", errorText);
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+    
             const [data, statusCode] = await utils.handleApiResponse(response);
             console.log('Groups data:', data);
             console.log('Status code:', statusCode);
-
+    
             if (statusCode !== 200) {
                 throw new Error(`API returned status code ${statusCode}`);
             }
-
-            // Check eligibility
+    
             if (!data.is_user_resource_request_elligible) {
                 console.log('User is not eligible for resource requests');
                 handleNonEligibleUser();
                 return;
             }
-
-            // Populate groups dropdown
+    
             populateGrouperMyGroupsDropdown(data.user_groups);
-
+    
         } catch (error) {
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
         } finally {
             utils.removeWaitingMessage();
         }
-    }
+    }    
 
     function populateGrouperMyGroupsDropdown(groups) {
         const dropdown = $('#mygroups-group');
@@ -422,6 +432,33 @@ $(document).ready(function () {
         } catch (error) {
             console.error('Error fetching user projects:', error);
             throw new Error('Failed to fetch user projects');
+        }
+    }
+
+    async function loadUserProjects() {
+        try {
+            // Ensure we have a user ID before proceeding
+            await waitForUserSession();
+            
+            // This will be replaced with actual API call
+            await new Promise(resolve => setTimeout(resolve, 300));
+            
+            return {
+                allocationProjects: [],  // Empty arrays for now
+                storageProjects: [],
+                userStorageUsage: {
+                    'SSZ Research Standard': 0
+                }
+            };
+        } catch (error) {
+            console.error('Error fetching user projects:', error);
+            return {
+                allocationProjects: [],
+                storageProjects: [],
+                userStorageUsage: {
+                    'SSZ Research Standard': 0
+                }
+            };
         }
     }
     // Part 3: UI Toggles and Form Logic
