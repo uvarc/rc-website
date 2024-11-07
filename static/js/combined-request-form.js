@@ -216,23 +216,27 @@ $(document).ready(function () {
             const computingId = await waitForUserSession();
             console.log("Attempting API call with computing ID:", computingId);
     
-            // More detailed logging of request
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
             console.log("Request URL:", requestUrl);
     
+            // Headers that will trigger a preflight request
             const requestHeaders = {
                 'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
                 'Origin': window.location.origin,
-                'Referer': window.location.href
+                'Access-Control-Request-Method': 'GET',
+                'Access-Control-Request-Headers': 'Content-Type, Accept'
             };
+            
             console.log("Request Headers:", requestHeaders);
     
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: requestHeaders,
-                mode: 'cors',  // Explicitly set CORS mode
-                credentials: 'include',  // Include credentials like cookies
-                cache: 'no-cache'  // Prevent caching issues
+                mode: 'cors',
+                credentials: 'include',
+                cache: 'no-cache'
             });
     
             console.log("Response status:", response.status);
