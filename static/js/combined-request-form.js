@@ -209,6 +209,30 @@ $(document).ready(function () {
     }
 
     // API Integration and Group Management
+
+        async function fetchUserResourceEligibility(userId) {
+            try {
+                const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+        
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+        
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching user resource eligibility:', error);
+                ErrorHandler.handleApiError(error, 'fetchUserResourceEligibility');
+                return null;
+            }
+        }    
+
     async function fetchUserProjects() {
         // Return empty data structure for new users
         return {
@@ -598,10 +622,17 @@ $(document).ready(function () {
 
             try {
                 const userId = await waitForUserSession();
-                await Promise.all([
-                    fetchAndPopulateGroups(),
-                    loadPreviewTable()
-                ]);
+                
+                // Fetch user resource data and directly populate groups
+                const userEligibility = await fetchUserResourceEligibility(userId);
+                
+                // Populate the dropdown with user groups regardless of eligibility status
+                if (userEligibility) {
+                    populateGrouperMyGroupsDropdown(userEligibility[0].user_groups);
+                } else {
+                    ErrorHandler.showUserMessage("User groups could not be loaded.", "warning");
+                }
+
             } catch (error) {
                 ErrorHandler.handleApiError(error, 'session');
             }
