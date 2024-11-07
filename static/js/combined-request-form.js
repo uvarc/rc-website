@@ -9,18 +9,35 @@ $(document).ready(function () {
         const maxAttempts = 50; // 5 seconds total (50 * 100ms)
         
         while (attempts < maxAttempts) {
-            const userIdField = document.querySelector('#form_user_info [name="user_id"]');
+            // Try both possible selectors for user ID
+            const userIdField = document.querySelector('#form_user_info [name="user_id"]') || 
+                              document.querySelector('[name="user_id"]');
+            
             if (userIdField && userIdField.value) {
                 console.log("User ID found:", userIdField.value);
                 return userIdField.value;
             }
-            await new Promise(resolve => setTimeout(resolve, 100));
-            attempts++;
+            
+            // Log more detailed information about what we're finding
             if (attempts % 10 === 0) {
                 console.log(`Waiting for user session... Attempt ${attempts}`);
+                console.log("Current userIdField:", userIdField);
+                if (userIdField) {
+                    console.log("Current value:", userIdField.value);
+                }
             }
+            
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
         }
-        throw new Error('Could not get user ID after waiting');
+        
+        // More detailed error message
+        const error = new Error('Could not get user ID after waiting');
+        error.details = {
+            foundField: document.querySelector('#form_user_info [name="user_id"]') !== null,
+            formExists: document.querySelector('#form_user_info') !== null
+        };
+        throw error;
     }
 
     // API Configuration
@@ -659,7 +676,7 @@ $(document).ready(function () {
     }
     // Part 4: Event Handlers and Initialization
 
-    // Event handler setup
+    // 1. Primary Event Handler Setup
     function setupEventHandlers() {
         // Resource type selection
         $('input[name="request-type"]').on('change', function() {
@@ -715,25 +732,7 @@ $(document).ready(function () {
         setupRealTimeValidation();
     }
 
-    function setupRealTimeValidation() {
-        const fieldsToValidate = '#combined-request-form input:not([type="radio"]), #combined-request-form select, #combined-request-form textarea';
-        
-        $(fieldsToValidate).on('blur change', function() {
-            validateField($(this));
-            updateFormValidation();
-        });
-
-        // Replace _.debounce with a setTimeout implementation
-        let timeoutId;
-        $('#new-project-name, #shared-space-name').on('input', function() {
-            const $field = $(this);
-            clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                validateField($field);
-            }, 300);
-        });
-    }
-
+    // 2. Validation Functions Group
     function validateField($field) {
         if (!$field[0].checkValidity()) {
             markFieldInvalid($field, 'This field is required.');
@@ -769,6 +768,26 @@ $(document).ready(function () {
         $field.next('.invalid-feedback').remove();
     }
 
+    function setupRealTimeValidation() {
+        const fieldsToValidate = '#combined-request-form input:not([type="radio"]), #combined-request-form select, #combined-request-form textarea';
+        
+        $(fieldsToValidate).on('blur change', function() {
+            validateField($(this));
+            updateFormValidation();
+        });
+
+        // Replace _.debounce with a setTimeout implementation
+        let timeoutId;
+        $('#new-project-name, #shared-space-name').on('input', function() {
+            const $field = $(this);
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => {
+                validateField($field);
+            }, 300);
+        });
+    }
+
+    // 3. Form Submission Group
     async function handleFormSubmission(event) {
         event.preventDefault();
         
@@ -812,6 +831,7 @@ $(document).ready(function () {
         }
     }
 
+    // 4. UI Feedback Functions Group
     function showSuccessMessage(message) {
         const $alert = $('<div>')
             .addClass('alert alert-success alert-dismissible fade show')
@@ -846,7 +866,7 @@ $(document).ready(function () {
         $('#submit').prop('disabled', true);
     }
 
-    // Initialize everything
+    // 5. Initialization
     async function initialize() {
         console.log("Initializing form...");
         
