@@ -65,6 +65,8 @@ $(document).ready(function () {
             }
         `)
         .appendTo('head');
+    setupEventHandlers();
+    initialize();
 });
 
 // Error handler
@@ -304,6 +306,4 @@ function populateGrouperMyGroupsDropdown(groups) {
 
 // Start initialization
 document.addEventListener('DOMContentLoaded', function() {
-    setupEventHandlers();
-    initialize();
 });
