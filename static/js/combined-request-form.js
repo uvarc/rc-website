@@ -216,30 +216,46 @@ $(document).ready(function () {
             const computingId = await waitForUserSession();
             console.log("Attempting API call with computing ID:", computingId);
     
-            // Add required headers
-            const response = await fetch(
-                `${API_CONFIG.baseUrl}/${computingId}`,
-                {
-                    method: 'GET',
-                    headers: {
-                        ...API_CONFIG.headers,
-                        'Accept': 'application/json',
-                        'Origin': window.location.origin
-                    },
-                    credentials: 'include' // Include cookies if needed
-                }
-            );
+            // More detailed logging of request
+            const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
+            console.log("Request URL:", requestUrl);
     
-            console.log("API Response status:", response.status);
-            console.log("API Response headers:", Object.fromEntries(response.headers));
+            const requestHeaders = {
+                'Accept': 'application/json',
+                'Origin': window.location.origin,
+                'Referer': window.location.href
+            };
+            console.log("Request Headers:", requestHeaders);
+    
+            const response = await fetch(requestUrl, {
+                method: 'GET',
+                headers: requestHeaders,
+                mode: 'cors',  // Explicitly set CORS mode
+                credentials: 'include',  // Include credentials like cookies
+                cache: 'no-cache'  // Prevent caching issues
+            });
+    
+            console.log("Response status:", response.status);
+            console.log("Response headers:", Object.fromEntries(response.headers));
     
             if (!response.ok) {
-                const errorText = await response.text();
-                console.error("API Error Response:", errorText);
-                throw new Error(`API request failed with status ${response.status}`);
+                const errorBody = await response.text();
+                console.error("Error response body:", errorBody);
+                throw new Error(`API request failed with status ${response.status}: ${errorBody}`);
             }
     
-            const [data, statusCode] = await utils.handleApiResponse(response);
+            const rawResponse = await response.text();
+            console.log("Raw response:", rawResponse);
+    
+            let data, statusCode;
+            try {
+                [data, statusCode] = JSON.parse(rawResponse);
+            } catch (parseError) {
+                console.error("JSON Parse Error:", parseError);
+                console.error("Failed to parse:", rawResponse);
+                throw new Error('Invalid JSON response from server');
+            }
+    
             console.log('Groups data:', data);
             console.log('Status code:', statusCode);
     
@@ -256,12 +272,13 @@ $(document).ready(function () {
             populateGrouperMyGroupsDropdown(data.user_groups);
     
         } catch (error) {
+            console.error("Detailed fetch error:", error);
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
         } finally {
             utils.removeWaitingMessage();
         }
-    }    
+    }
 
     function populateGrouperMyGroupsDropdown(groups) {
         const dropdown = $('#mygroups-group');
