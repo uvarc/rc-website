@@ -65,8 +65,6 @@ $(document).ready(function () {
             }
         `)
         .appendTo('head');
-    setupEventHandlers();
-    initialize();
 });
 
 // Error handler
@@ -248,40 +246,52 @@ async function initialize() {
         ErrorHandler.handleApiError(error, 'initialization');
         $('.alert.alert-info').remove();
     }
-
-    // Call setupEventHandlers after initialization
-    setupEventHandlers();
 }
 
 function setupEventHandlers() {
     console.log("Setting up event handlers...");
     $('input[name="request-type"]').on('change', function () {
+        console.log("Request type changed");
         toggleRequestFields();
     });
-    $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
+    $('input[name="new-or-renewal"]').on('change', function () {
+        console.log("New or renewal option changed");
+        toggleAllocationFields();
+    });
     $('input[name="allocation-choice"]').on('change', function () {
+        console.log("Allocation choice changed");
         updateBillingVisibility();
     });
-    $('input[name="type-of-request"]').on('change', toggleStorageFields);
+    $('input[name="type-of-request"]').on('change', function () {
+        console.log("Type of request changed");
+        toggleStorageFields();
+    });
     $('input[name="storage-choice"]').on('change', function () {
+        console.log("Storage choice changed");
         if (this.value === 'Highly Sensitive Data') {
             $(this).next('label').text('Highly Sensitive Data');
         }
         toggleStorageTierOptions();
     });
     $('#capacity').on('input change', function () {
+        console.log("Capacity changed");
         if ($('#storage-fields').is(':visible')) {
             updateBillingVisibility();
         }
     });
     $('#mygroups-group').on('change', function () {
+        console.log("Group selection changed");
         validateGroupSelection();
         updateFormValidation();
     });
     $('#data-agreement').on('change', function () {
+        console.log("Data agreement changed");
         updateFormValidation();
     });
-    $('#combined-request-form').on('submit', handleFormSubmission);
+    $('#combined-request-form').on('submit', function (e) {
+        console.log("Form submitted");
+        handleFormSubmission(e);
+    });
 
     setupValidationHandlers();
     setupProjectTableHandlers();
@@ -306,4 +316,6 @@ function populateGrouperMyGroupsDropdown(groups) {
 
 // Start initialization
 document.addEventListener('DOMContentLoaded', function() {
+    initialize();
+    setupEventHandlers();
 });
