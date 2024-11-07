@@ -9,9 +9,9 @@ $(document).ready(function () {
         const maxAttempts = 50; // 5 seconds total (50 * 100ms)
         
         while (attempts < maxAttempts) {
-            // Try both possible selectors for user ID
-            const userIdField = document.querySelector('#form_user_info [name="user_id"]') || 
-                              document.querySelector('[name="user_id"]');
+            // Look for field with name="uid" or id="uid"
+            const userIdField = document.querySelector('input[name="uid"]') || 
+                              document.querySelector('#uid');
             
             if (userIdField && userIdField.value) {
                 console.log("User ID found:", userIdField.value);
@@ -34,10 +34,16 @@ $(document).ready(function () {
         // More detailed error message
         const error = new Error('Could not get user ID after waiting');
         error.details = {
-            foundField: document.querySelector('#form_user_info [name="user_id"]') !== null,
-            formExists: document.querySelector('#form_user_info') !== null
+            foundField: document.querySelector('input[name="uid"]') !== null,
+            fieldExists: document.querySelector('#uid') !== null
         };
         throw error;
+    }
+    
+    // Add the missing loadPreviewTable function if it's not already defined
+    function loadPreviewTable() {
+        console.log("Loading preview table");
+        return Promise.resolve(); // Return a resolved promise for now
     }
 
     // API Configuration
