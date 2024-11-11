@@ -144,7 +144,7 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
+Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and interactive queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). Legacy MyGroups groups created before November 28th, 2023, can be accessed through the "Legacy MyGroups" folder on  [Grouper](https://groups.identity.virginia.edu/).
@@ -237,7 +237,6 @@ Queues are set up to emphasize one-core (serial or threaded), multi-node paralle
 
 - Serial jobs requiring only 1 compute node: **standard**
 - Parallel jobs requiring up to 50 compute notes: **parallel**
-- Jobs requiring a large amount of memory (60GB+): **largemem**
 - Jobs requiring the use of GPUs: **gpu**
 - Jobs for interactive sessions or quick tests of code:  **interactive**
 
@@ -347,7 +346,7 @@ This makes it so that Slurm does not carry over any environment variables into y
 # Storage Management
 
 ## What storage options are available to me to use on Rivanna/Afton?
-All users are provided a 50-GB home directory for longer-term storage.  This directory provides "snapshots" though it is not backed up.  Each user also is provided 10TB of temporary "scratch" storage accessible as `/scratch/$USER` where `$USER` will stand for your ID.  Scratch storage is fast but is not backed up in any way.
+All users are provided a 200-GB home directory for longer-term storage.  This directory provides "snapshots" though it is not backed up.  Each user also is provided 10TB of temporary "scratch" storage accessible as `/scratch/$USER` where `$USER` will stand for your ID.  Scratch storage is fast but is not backed up in any way.
 
 If the free storage is not sufficient, you need snapshots of your files, or you wish to share space among a research group, the group should lease storage.
 

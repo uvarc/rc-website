@@ -97,7 +97,7 @@ The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx
 
 ### Jupyter notebook/lab
 
-You can redirect `pyspark` to open a Jupyter notebook/lab as follows. The `jupyter` command is provided by the `anaconda` module.
+You can redirect `pyspark` to open a Jupyter notebook/lab as follows. The `jupyter` command is provided by the `jupyterlab` module.
 
 Set two environment variables:
 ```

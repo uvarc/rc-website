@@ -50,7 +50,7 @@ Python users should install the `ms-python` extension and select an appropriate 
 
 1. Press F1
 1. Search for “python: select interpreter”
-1. Choose the anaconda python or any other python in your custom environments.
+1. Choose the miniforge python or any other python in your custom environments.
 
 ## Closing the Interactive Session
 When you are done, delete the {{% software-name %}} session from the "My Interactive Sessions" tab and the allocated resources will be released.
