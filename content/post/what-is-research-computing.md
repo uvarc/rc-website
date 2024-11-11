@@ -42,7 +42,7 @@ Rather than approach your research with a specific technology or platform in min
     <a class="dropdown-item" href="/service/high-performance-computing/">High Performance Computing</a>
     <a class="dropdown-item" href="/service/imaging/">Image Processing</a>
     <hr/>
-    <a class="dropdown-item" href="/form/support-request/?category=Consultation">Collaboration</a>
+    <a class="dropdown-item" href="/form/support-request/">Collaboration</a>
     <a class="dropdown-item" href="/service/acknowledgement">Citations</a>
   </div>
 </div>
