@@ -13,6 +13,7 @@ image = "/images/profiles/profile_mohan_s.JPG"
 subjects = [
   "HPC", "Python", "DFT"
 ]
+active = true
 +++
 
 Mohan is currently a first-year graduate student pursuing chemical engineering with a focus on computational catalysis. Primarily, he uses Python, density functional theory (DFT) software like VASP and Gaussian, and machine learning models like [FLARE](https://github.com/mir-group/flare) and [ALLEGRO](https://github.com/mir-group/allegro) for his work.
