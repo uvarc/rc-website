@@ -15,6 +15,7 @@ subjects = [
   "python",
   "web development"
 ]
+active = false
 +++
 
 Diya is a 2nd year student at the University of Virginia and is pursuing a degree in Computer Science with a minor in Data Science. She has been programing since 7th grade and has been involved in robotics during middle and high school. She has experience in languages like Python and C++, and has worked on web development projects.
