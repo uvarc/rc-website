@@ -1,0 +1,79 @@
+<script>
+//<!--
+function searchFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("moduleTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = (td.textContent || td.innerText);
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+// -->
+</script>
+
+
+<input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search for software...  " style="margin-bottom:1rem; width:30%;">
+
+<table class="table table-striped" id="moduleTable">
+  <thead class="thead-dark">
+    {{ $gistJ := getJSON .Site.Params.hszJsonUrl }}
+    {{ $mclasses := .Get "moduleclasses" }}
+    {{ $arch := .Get "arch" }}
+    {{ $eclasses := .Get "exclude" }}
+    {{ $showhidden := .Get "showhidden" }}
+    <tr>
+      <th scope="col">Module</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $modulename, $entries := $gistJ }}
+      {{ $modulelisted := false }}
+      {{ $modulesite := (printf "/userinfo/ivy/ivy-linux-sw/%s" (lower $modulename)) }}
+      {{ $scratch := newScratch}}
+      {{ $hasArch := not $arch }}
+      {{ range $k, $v := $entries}}
+        {{ if and (ne $arch "*") (ne $arch "") }}
+          {{ with $v.propT.arch }}
+            {{ $hasArch := eq (int (index . $arch)) 1 }}
+            {{ if $hasArch }}
+              {{ $scratch.Set $modulename $v }}
+            {{ end }}
+          {{ end }}
+        {{ else}}
+          {{ $scratch.Set $modulename $v }}
+        {{ end }}
+      {{ end }}
+      {{ range $mname,$v := $scratch.Values }}
+        {{ $category := index (split (index $v.whatis 2) "Application class: ") 1 }}
+        {{ if or (eq $mclasses "all") (in $category $mclasses) }}
+          {{ $category := (printf "%s %s" $category $arch) }}
+          {{ $descr := $v.Description }}
+          <tr>
+            {{ if (fileExists (printf "%s.md" $modulesite)) }}
+              <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
+            {{ else }}
+              <td>{{ $modulename }}</td>
+            {{ end }}
+            <td>{{ $category }}</td>
+            <td>{{ $descr }}</td>
+          </tr>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </tbody>
+</table>
