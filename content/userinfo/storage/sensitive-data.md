@@ -1,5 +1,5 @@
 +++
-title = "Sensitive Data Storage - Ivy"
+title = "Highly Sensitive Data Storage - Ivy"
 description = ""
 author = "RC Staff"
 images = [""]
@@ -14,20 +14,27 @@ draft = false
 +++
 
 # Overview
-The [Ivy](/userinfo/ivy) secure computing environment meets both HIPAA- and CUI-compliance standards and is ideal for storing highly sensitive research data. Ivy offers several storage options to fit your research computing needs.
+Residing within the High Security Zone (HSZ), the [Ivy](/userinfo/ivy/) secure computing environment is designed to fit your [highly sensitive](https://security.virginia.edu/definitions/highly-sensitive-data) research computing needs and meets HIPAA, FERPA, CUI and ITAR compliance standards. Within the HSZ, researchers can store their highly sensitive research data in High-Security Research Standard Storage. 
 
 # Ivy Central Storage {#ivy-central-storage}
-Ivy Central Storage (ICS) is a highly sensitive data parking zone and central storage pool with a capacity greater than 1PB. This storage space is available for researchers with highly sensitive data and can be mounted on an [Ivy virtual machine](/userinfo/ivy/#virtual-machines) (VM). For added security, files stored on ICS are read & write only. Executable files can be moved from ICS to VM storage.
+Ivy Central Storage (ICS) was an HSD parking zone and central storage pool with a capacity greater than 1PB. This storage space was available for researchers with highly sensitive data and could be mounted on an Ivy Virtual Machine. 
 
-Researchers can request space on ICS by first requesting an Ivy account using the <a href="https://services.rc.virginia.edu/ivyvm" target="_blank">Ivy request form</a>. Users are granted 1TB of space for free, and additional space can be requested in 1TB increments.
+As of 10/15/24, ICS will be upgraded to High-Security Research Standard Storage.
+
+# High-Security Research Standard Storage
+
+High-Security Research Standard Storage is an HSD storage area within the HSZ with a capacity greater than 6PB. High-Security Research Standard Storage is similar to Research Standard Storage, however it is integrated with the High-Security Data Transfer Node and mounted on an [Ivy virtual machine](/userinfo/ivy/) (VM) to create a highly secure environment. For added security, files stored on High-Security Research Standard Storage are read & write only. Note: snapshots, backup, and replication are not provided. 
+
+Researchers can request space on High-Security Research Standard Storage by first requesting an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Researchers are granted 1TB of space at no-cost, and additional space can be requested in 1TB increments using our [Storage Request](/form/storage/) form.
 
 
 # Data Transfer to Ivy
 
-To ensure that files are always secure, data can only be transferred to Ivy through the Ivy secure data transfer node (DTN) using Globus Connect. <a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and Ivy Central Storage, Ivy's data parking zone. Data can then be moved between ICS and VM NAS or block storage as needed. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found [here](/userinfo/data-transfer).
+To ensure that files are always secure, data can only be transferred to Ivy through the High-Security Data Transfer Node using Globus Connect. <a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and HSZ storage. Data can then be moved between HSZ storage as needed. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found [here](/userinfo/data-transfer).
 
 <h3>
   Sensitive Storage Data Transfer
   <small class="text-muted">High level Overview</small>
 </h3>
-<img src="https://s3.amazonaws.com/uvasom-assets/imgs/somrc-storage-secure-apr2018.png" alt="secure-storage-options-overview">
+
+<img src="/images/hs_standard_schematic.png" />

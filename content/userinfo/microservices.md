@@ -139,7 +139,7 @@ Browse a list of recent [UVA projects employing microservices](/project?tag=.con
 
 # Database Hosting
 
-Research computing may be able to provide support for your database hosting needs. Please schedule a consultation request on our website. Follow the link [here](https://www.rc.virginia.edu/form/support-request/?category=Consultation) and fill out the form under "Consultation Request" on the right hand side of the page under "All Forms".
+Research computing may be able to provide support for your database hosting needs. Please schedule a consultation request on our website. Follow the link [here](https://www.rc.virginia.edu/form/support-request/) and fill out the form under "Consultation Request" on the right hand side of the page under "All Forms".
 
 # Service Eligibility & Limitations
 

@@ -74,6 +74,6 @@ UVA has three computing facilities available to researchers: _Rivanna_ and _Afto
 
 We can assist with choosing the right package, developing a workflow, porting it to one of our computing platforms, and running the jobs.
 
-[<button class="btn  btn-primary">Request a Consultation</button>](/form/support-request/?category=Consultation)
+[<button class="btn  btn-primary">Request a Consultation</button>](/form/support-request/)
 
 {{% top-of-page %}}
