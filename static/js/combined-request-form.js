@@ -104,15 +104,15 @@ $(document).ready(function () {
         validateGroupName: (name) => {
             return VALIDATION.groupName.test(name);
         },
-
+    
         validateProjectName: (name) => {
             return VALIDATION.projectName.test(name);
         },
-
+    
         validateSharedSpaceName: (name) => {
             return VALIDATION.sharedSpaceName.test(name);
         },
-
+    
         isTierPaid: (tierName, currentSize = 0) => {
             const tier = RESOURCE_TYPES[tierName];
             if (!tier) return false;
@@ -122,7 +122,7 @@ $(document).ready(function () {
             }
             return tier.isPaid;
         },
-
+    
         handleApiResponse: async (response) => {
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
@@ -131,12 +131,12 @@ $(document).ready(function () {
             console.log('API Response:', data);
             return data;
         },
-
+    
         logApiError: (error, context) => {
             console.error(`API Error (${context}):`, error);
             return error;
         },
-
+    
         showWaitingMessage: () => {
             return $('<div>')
                 .addClass('api-waiting-message')
@@ -145,12 +145,12 @@ $(document).ready(function () {
                         <div class="spinner-border spinner-border-sm me-2" role="status">
                             <span class="visually-hidden">Loading...</span>
                         </div>
-                        <div>Loading user information...</div>
+                        <div>Loading your groups...</div>
                     </div>
                 `)
                 .prependTo('#combined-request-form');
         },
-
+    
         removeWaitingMessage: () => {
             $('.api-waiting-message').remove();
         }
@@ -176,8 +176,8 @@ $(document).ready(function () {
     function handleApiError(error) {
         console.error('API Error:', error);
         
-        const message = 'There was an error loading your information. ' +
-                       'Please try refreshing the page or contact support if the problem persists.';
+        const message = 'There was an error loading your groups. ' +
+                       'Please try refreshing the page.';
         
         $('#combined-request-form').prepend(
             $('<div>')
@@ -190,6 +190,7 @@ $(document).ready(function () {
         const $dropdown = $('#mygroups-group');
         $dropdown.empty();
         
+        // Add default option
         $dropdown.append(
             $('<option>', {
                 value: '',
@@ -200,7 +201,10 @@ $(document).ready(function () {
         );
         
         if (Array.isArray(groups) && groups.length > 0) {
+            console.log(`Populating dropdown with ${groups.length} groups`);
+            
             groups.forEach(group => {
+                console.log(`Adding group: ${group.name}`);
                 $dropdown.append(
                     $('<option>', {
                         value: group.name,
@@ -212,18 +216,25 @@ $(document).ready(function () {
             
             $dropdown.prop('disabled', false);
         } else {
+            console.log('No groups found to populate');
             $dropdown.append(
                 $('<option>', {
                     value: '',
-                    text: 'No available groups found',
+                    text: 'No groups available - contact support',
                     disabled: true
                 })
             );
             $dropdown.prop('disabled', true);
         }
         
+        // Enable form elements that were disabled during loading
+        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+            .not('#mygroups-group')
+            .prop('disabled', false);
+        
         $dropdown.trigger('change');
     }
+
     // 3. API and Data Functions
     async function waitForUserSession() {
         let attempts = 0;
@@ -240,23 +251,14 @@ $(document).ready(function () {
             
             if (attempts % 10 === 0) {
                 console.log(`Waiting for user session... Attempt ${attempts}`);
-                console.log("Current userIdField:", userIdField);
-                if (userIdField) {
-                    console.log("Current value:", userIdField.value);
-                }
             }
             
             await new Promise(resolve => setTimeout(resolve, 100));
             attempts++;
         }
         
-        const error = new Error('Could not get user ID after waiting');
-        error.details = {
-            foundField: document.querySelector('input[name="uid"]') !== null,
-            fieldExists: document.querySelector('#uid') !== null
-        };
-        throw error;
-    }
+        throw new Error('Could not get user ID - please ensure you are logged in');
+    }    
 
     async function fetchAndPopulateGroups() {
         const waitingMessage = utils.showWaitingMessage();
@@ -264,36 +266,34 @@ $(document).ready(function () {
         try {
             const computingId = await waitForUserSession();
             console.log("Attempting API call with computing ID:", computingId);
-
+    
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
             console.log("Request URL:", requestUrl);
-
+    
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: API_CONFIG.headers,
                 credentials: 'include'
             });
-
+    
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
-
+    
             const data = await response.json();
             console.log("API Response data:", data);
-
+    
+            // Check if data is an array with two elements (data and status code)
             if (Array.isArray(data) && data.length === 2) {
                 const [responseData, statusCode] = data;
-
+    
                 if (statusCode !== 200) {
                     throw new Error(`API returned status code ${statusCode}`);
                 }
-
-                if (!responseData.is_user_resource_request_elligible) {
-                    handleNonEligibleUser();
-                    return;
-                }
-
+    
+                // Bypass eligibility check and directly process groups
                 if (responseData.user_groups) {
+                    console.log("Found user groups:", responseData.user_groups);
                     populateGrouperMyGroupsDropdown(responseData.user_groups);
                 } else {
                     console.warn('No user groups found in API response');
@@ -302,13 +302,45 @@ $(document).ready(function () {
             } else {
                 throw new Error('Invalid API response format');
             }
-
+    
         } catch (error) {
             console.error("Detailed fetch error:", error);
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
         } finally {
             utils.removeWaitingMessage();
+        }
+    }
+    
+    // Also update the initialize function to match
+    async function initialize() {
+        console.log("Initializing form...");
+        
+        try {
+            $('#allocation-fields, #storage-fields, #common-fields').hide();
+            $('#submit').prop('disabled', true);
+    
+            $('#request-type-allocation').next('label').text('Service Unit (SU)');
+            $('#request-type-storage').next('label').text('Storage');
+            $('#storage-choice4').next('label').text('Highly Sensitive Data');
+    
+            setupEventHandlers();
+    
+            // Fetch and populate groups for any valid Computing ID
+            await fetchAndPopulateGroups();
+            await loadPreviewTable();
+            
+            toggleRequestFields();
+            toggleAllocationFields();
+            toggleStorageFields();
+            toggleStorageTierOptions();
+            
+            updateBillingVisibility();
+            
+            console.log("Form initialization complete");
+        } catch (error) {
+            console.error("Error during form initialization:", error);
+            showErrorMessage("Failed to initialize form properly. Please try refreshing the page.");
         }
     }
 
@@ -833,6 +865,14 @@ $(document).ready(function () {
         
         const dataAgreementChecked = $('#data-agreement').is(':checked');
         $submitBtn.prop('disabled', hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked);
+        
+        if ($submitBtn.is(':disabled')) {
+            console.log('Submit button disabled due to:', {
+                hasInvalidFields,
+                requiredFieldsFilled,
+                dataAgreementChecked
+            });
+        }
     }
 
     // 8. Initialization
