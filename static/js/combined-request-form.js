@@ -320,30 +320,33 @@ $(document).ready(function () {
         }
     }
     
-    // Also update the initialize function to match
+    // Initialize Function
     async function initialize() {
         console.log("Initializing form...");
         
         try {
+            // Hide all fields initially
             $('#allocation-fields, #storage-fields, #common-fields').hide();
             $('#submit').prop('disabled', true);
     
+            // Set labels
             $('#request-type-allocation').next('label').text('Service Unit (SU)');
             $('#request-type-storage').next('label').text('Storage');
             $('#storage-choice4').next('label').text('Highly Sensitive Data');
     
+            // Pre-select Service Unit (SU) but remove other default selections
+            $('#request-type-allocation').prop('checked', true);
+            $('input[name="new-or-renewal"]').prop('checked', false);
+            $('input[name="allocation-choice"]').prop('checked', false);
+    
             setupEventHandlers();
     
-            // Fetch and populate groups for any valid Computing ID
             await fetchAndPopulateGroups();
             await loadPreviewTable();
             
-            toggleRequestFields();
-            toggleAllocationFields();
-            toggleStorageFields();
-            toggleStorageTierOptions();
-            
-            updateBillingVisibility();
+            // Show the appropriate fields based on Service Unit selection
+            $('#allocation-fields, #common-fields').show();
+            $('#category').val('Rivanna HPC');
             
             console.log("Form initialization complete");
         } catch (error) {
@@ -511,7 +514,7 @@ $(document).ready(function () {
     }
 
     // 5. UI Toggle Functions
-    function toggleRequestFields() {
+    function toggleRequestFields(   ) {
         const requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected resource type:", requestType);
         
@@ -521,15 +524,13 @@ $(document).ready(function () {
             $('#allocation-fields, #common-fields').show();
             $('#category').val('Rivanna HPC');
             loadUserProjects();
-            toggleAllocationFields();
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
             $('#category').val('Storage');
             loadUserProjects();
         }
-
+    
         updateBillingVisibility();
-        toggleStorageFields();
     }
 
     function toggleAllocationFields() {
