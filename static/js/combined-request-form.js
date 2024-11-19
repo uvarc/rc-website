@@ -203,13 +203,15 @@ $(document).ready(function () {
         if (Array.isArray(groups) && groups.length > 0) {
             console.log(`Populating dropdown with ${groups.length} groups`);
             
+            // Handle both string arrays and object arrays
             groups.forEach(group => {
-                console.log(`Adding group: ${group.name}`);
+                const groupName = typeof group === 'string' ? group : group.name;
+                console.log(`Adding group: ${groupName}`);
+                
                 $dropdown.append(
                     $('<option>', {
-                        value: group.name,
-                        text: group.name,
-                        'data-description': group.description || ''
+                        value: groupName,
+                        text: groupName
                     })
                 );
             });
@@ -293,19 +295,9 @@ $(document).ready(function () {
                 
                 if (responseData.user_groups) {
                     console.log('Number of groups found:', responseData.user_groups.length);
-                    console.table(responseData.user_groups); // This will show groups in a table format
+                    console.table(responseData.user_groups);
                     
-                    // Detailed group information
-                    console.group('Detailed Group Information');
-                    responseData.user_groups.forEach((group, index) => {
-                        console.log(`Group ${index + 1}:`, {
-                            name: group.name,
-                            description: group.description || 'No description',
-                            other_properties: { ...group }
-                        });
-                    });
-                    console.groupEnd();
-                    
+                    // Direct pass of user_groups array to populate function
                     populateGrouperMyGroupsDropdown(responseData.user_groups);
                 } else {
                     console.warn('No user groups found in API response');
