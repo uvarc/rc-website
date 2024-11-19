@@ -265,7 +265,7 @@ $(document).ready(function () {
         
         try {
             const computingId = await waitForUserSession();
-            console.log("Attempting API call with computing ID:", computingId);
+            console.log("%c Attempting API call for user: " + computingId, "color: blue; font-weight: bold");
     
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
             console.log("Request URL:", requestUrl);
@@ -281,30 +281,46 @@ $(document).ready(function () {
             }
     
             const data = await response.json();
-            console.log("API Response data:", data);
+            console.log("%c Full API Response:", "color: green; font-weight: bold");
+            console.log(data);
     
             // Check if data is an array with two elements (data and status code)
             if (Array.isArray(data) && data.length === 2) {
                 const [responseData, statusCode] = data;
     
-                if (statusCode !== 200) {
-                    throw new Error(`API returned status code ${statusCode}`);
-                }
-    
-                // Bypass eligibility check and directly process groups
+                console.group('%c User Groups Data', 'color: purple; font-weight: bold');
+                console.log('Status Code:', statusCode);
+                
                 if (responseData.user_groups) {
-                    console.log("Found user groups:", responseData.user_groups);
+                    console.log('Number of groups found:', responseData.user_groups.length);
+                    console.table(responseData.user_groups); // This will show groups in a table format
+                    
+                    // Detailed group information
+                    console.group('Detailed Group Information');
+                    responseData.user_groups.forEach((group, index) => {
+                        console.log(`Group ${index + 1}:`, {
+                            name: group.name,
+                            description: group.description || 'No description',
+                            other_properties: { ...group }
+                        });
+                    });
+                    console.groupEnd();
+                    
                     populateGrouperMyGroupsDropdown(responseData.user_groups);
                 } else {
                     console.warn('No user groups found in API response');
+                    console.log('Full response data:', responseData);
                     populateGrouperMyGroupsDropdown([]);
                 }
+                console.groupEnd();
             } else {
+                console.error('Invalid API response format:', data);
                 throw new Error('Invalid API response format');
             }
     
         } catch (error) {
-            console.error("Detailed fetch error:", error);
+            console.error("%c Error fetching groups:", "color: red; font-weight: bold");
+            console.error(error);
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
         } finally {
