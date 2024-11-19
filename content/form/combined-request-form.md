@@ -113,7 +113,7 @@ private = true
         <div class="row">
           <div id="new-or-renewal-options" class="form-radios col">
             <div class="form-item form-type-radio radio">
-              <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" checked="checked" class="form-radio" />
+              <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" class="form-radio" />
               <label class="control-label" for="new-or-renewal-1">New</label>
             </div>
             <div class="form-item form-type-radio radio">
@@ -132,7 +132,7 @@ private = true
           <small class="helper-text">For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">Allocation Types Documentation</a>.</small>
           <div id="allocation-tier-options" class="form-radios mt-2">
             <div class="form-item form-type-radio radio">
-              <input required="required" type="radio" id="allocation-choice1" name="allocation-choice" value="Standard" class="form-radio" checked="checked" />
+              <input required="required" type="radio" id="allocation-choice1" name="allocation-choice" value="Standard" class="form-radio" />
               <label for="allocation-choice1">Standard</label>
             </div>
             <div class="form-item form-type-radio radio">
@@ -255,7 +255,7 @@ private = true
               <label for="storage-choice1">SSZ Research Project ({{< extract_storage_cost type="project" >}})</label>
             </div>
             <div class="form-item form-type-radio radio">
-              <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="SSZ Research Standard" class="form-radio" checked="checked" />
+              <input required="required" type="radio" id="storage-choice3" name="storage-choice" value="SSZ Research Standard" class="form-radio" />
               <label for="storage-choice3">SSZ Research Standard ({{< extract_storage_cost type="standard" >}})</label>
             </div>
             <div class="form-item form-type-radio radio">
