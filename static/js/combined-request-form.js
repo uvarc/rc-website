@@ -890,25 +890,10 @@ $(document).ready(function () {
         
         if (isModifyingExisting) {
             updateStorageModificationFields(typeOfRequest);
-    }
-
-    function updateStorageUsageMessage(currentUsage, freeLimit, totalSize) {
-        // Remove any existing usage message
-        $('.storage-usage-warning').remove();
-    
-        // Create the warning message for SSZ Research Standard
-        const usageMessage = `
-            <div class="storage-info-box storage-usage-warning">
-                <h6>Storage Usage</h6>
-                Current usage: ${currentUsage} TB of ${freeLimit} TB free allocation.
-                ${totalSize > freeLimit ? 
-                    `<br>This request will exceed the free limit by ${totalSize - freeLimit} TB.` : 
-                    ''}
-            </div>
-        `;
-    
-        // Insert after the standard data info box
-        $('#standard-data').after(usageMessage);
+        }
+        
+        updateBillingVisibility();
+        toggleStorageTierOptions();
     }
 
     function toggleStorageTierOptions() {
@@ -997,9 +982,6 @@ $(document).ready(function () {
                     shouldShowBilling = utils.isTierPaid(selectedStorageTier);
                     // Remove usage message if it exists
                     $('.storage-usage-warning').remove();
-    
-                    updateBillingVisibility();
-                    toggleStorageTierOptions();
                 }
             }
     
