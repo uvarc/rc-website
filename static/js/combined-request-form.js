@@ -1081,9 +1081,10 @@ $(document).ready(function () {
         const formData = {
             requestType: $('input[name="request-type"]:checked').val(),
             userId: document.querySelector('#uid').value,
-            category: $('#category').val()
+            category: $('#category').val(),
+            shouldShowBilling: $('#billing-information').is(':visible')
         };
-
+    
         if (formData.requestType === 'service-unit') {
             formData.newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
             if (formData.newOrRenewal === 'new') {
@@ -1094,38 +1095,119 @@ $(document).ready(function () {
                 formData.existingProject = $('input[name="existing-project-allocation"]:checked').val();
             }
         }
-
+    
         if (formData.requestType === 'storage') {
             formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
             if (formData.typeOfRequest === 'new-storage') {
                 formData.storageTier = $('input[name="storage-choice"]:checked').val();
-                formData.sharedSpaceName = $('#shared-space-name').val();
                 formData.group = $('#mygroups-group').val();
             } else {
                 formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
             }
             formData.capacity = $('#capacity').val();
         }
-
+    
         return formData;
     }
+
     async function submitForm(formData) {
         try {
+            const computingId = await waitForUserSession();
             const $submitButton = $('#submit');
-            const originalText = $submitButton.text();
-            
             $submitButton.prop('disabled', true)
                         .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
-
-            console.log('Form data to be submitted:', formData);
+    
+            // Build request payload
+            const payload = [{
+                group_name: formData.group,
+                project_name: formData.projectName || "",
+                project_desc: $('#project-description').val() || "",
+                data_agreement_signed: $('#data-agreement').is(':checked'),
+                pi_uid: "",
+                resources: {}
+            }];
+    
+            const billingInfo = formData.shouldShowBilling ? {
+                billing_details: {
+                    fdm_billing_info: [{
+                        company: $('#company').val() || '',
+                        business_unit: $('#business-unit').val() || '',
+                        cost_center: $('#cost-center').val() || '',
+                        fund: $('#fund').val() || '',
+                        gift: $('#gift').val() || '',
+                        grant: $('#grant').val() || '',
+                        designated: $('#designated').val() || '',
+                        project: $('#project').val() || '',
+                        program_code: $('#program-code').val() || '',
+                        function: $('#function').val() || '',
+                        activity: $('#activity').val() || '',
+                        assignee: $('#assignee').val() || ''
+                    }]
+                }
+            } : {};
+    
+            // Handle Service Units request
+            if (formData.requestType === 'service-unit') {
+                payload[0].resources.hpc_service_units = {
+                    [formData.group]: {
+                        tier: getTierEnum(formData.allocationTier),
+                        request_count: formData.requestCount || "0",
+                        ...billingInfo
+                    }
+                };
+            }
+            // Handle Storage request
+            else if (formData.requestType === 'storage') {
+                payload[0].resources.storage = {
+                    [formData.group]: {
+                        tier: getStorageTierEnum(formData.storageTier),
+                        request_size: formData.capacity.toString(),
+                        ...billingInfo
+                    }
+                };
+            }
+    
+            const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+                method: 'POST',
+                headers: {
+                    ...API_CONFIG.headers,
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include',
+                body: JSON.stringify(payload)
+            });
+    
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+    
             showSuccessMessage('Your request has been submitted successfully.');
             resetForm();
         } catch (error) {
             console.error('Error submitting form:', error);
-            showErrorMessage('Failed to submit form. Please try again later.', false);
+            showErrorMessage('Failed to submit form. Please try again later.');
         } finally {
-            $('#submit').prop('disabled', false).text(originalText);
+            $('#submit').prop('disabled', false).text('Submit');
         }
+    }
+
+    // Helper function to convert tier names to enum values
+    function getTierEnum(tier) {
+        const tierMap = {
+            'Standard': 'ssz_standard',
+            'Instructional': 'ssz_instructional',
+            'Paid': 'ssz_paid'
+        };
+        return tierMap[tier] || 'ssz_standard';
+    }
+
+    function getStorageTierEnum(tier) {
+        const tierMap = {
+            'SSZ Research Standard': 'ssz_standard',
+            'SSZ Research Project': 'ssz_project',
+            'Highly Sensitive Data': 'hsz_standard'
+        };
+        return tierMap[tier] || 'ssz_standard';
     }
 
     function showSuccessMessage(message) {
