@@ -7,6 +7,7 @@ $(document).ready(function () {
         baseUrl: 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
         headers: {
             'Accept': 'application/json',
+            'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest'
         }
     };
@@ -1307,6 +1308,94 @@ $(document).ready(function () {
             console.error("Error during form initialization:", error);
             showErrorMessage("Failed to initialize form properly. Please try logging out and back in, then refresh the page.");
         }
+    }
+
+    async function submitForm(formData) {
+        try {
+            const computingId = await waitForUserSession();
+            const $submitButton = $('#submit');
+            $submitButton.prop('disabled', true)
+                        .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
+    
+            // Build request payload
+            const payload = [{
+                group_name: formData.group,
+                project_name: formData.projectName || "",
+                project_desc: $('#project-description').val() || "",
+                data_agreement_signed: $('#data-agreement').is(':checked'),
+                pi_uid: document.querySelector('#uid').value || "",
+                resources: {}
+            }];
+    
+            // Handle Service Units request
+            if (formData.requestType === 'service-unit') {
+                const groupName = formData.group;
+                payload[0].resources.hpc_service_units = {
+                    [groupName]: {
+                        tier: getTierEnum(formData.allocationTier),
+                        request_count: "1000", // Default value, adjust as needed
+                        billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+                    }
+                };
+            }
+            // Handle Storage request
+            else if (formData.requestType === 'storage') {
+                const groupName = formData.group;
+                payload[0].resources.storage = {
+                    [groupName]: {
+                        tier: getStorageTierEnum(formData.storageTier),
+                        request_size: formData.capacity.toString(),
+                        billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+                    }
+                };
+            }
+    
+            console.log('Submitting payload:', payload);
+    
+            const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                credentials: 'include',
+                body: JSON.stringify(payload)
+            });
+    
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('API Error Response:', errorText);
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+    
+            showSuccessMessage('Your request has been submitted successfully.');
+            resetForm();
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            showErrorMessage('Failed to submit form. Please try again later.');
+        } finally {
+            $('#submit').prop('disabled', false).text('Submit');
+        }
+    }
+    
+    function getBillingDetails() {
+        return {
+            fdm_billing_info: [{
+                company: $('#fdm-company').val() || '',
+                business_unit: $('#fdm-business-unit').val() || '',
+                cost_center: $('#fdm-cost-center').val() || '',
+                fund: $('#fdm-fund').val() || '',
+                gift: $('#fdm-gift').val() || '',
+                grant: $('#fdm-grant').val() || '',
+                designated: $('#fdm-designated').val() || '',
+                project: $('#fdm-project').val() || '',
+                program_code: $('#fdm-program-code').val() || '',
+                function: $('#fdm-function').val() || '',
+                activity: $('#fdm-activity').val() || '',
+                assignee: $('#fdm-assignee').val() || ''
+            }]
+        };
     }
 
     // Start initialization when document is ready
