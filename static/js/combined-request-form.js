@@ -576,9 +576,9 @@ $(document).ready(function () {
                         <i class="fas fa-cube"></i>
                         <p>No Active Service Units Found</p>
                         <div class="empty-state-help">
-                            You currently don't have any active Service Unit allocations.
+                            This section will display your active Service Unit allocations once they are approved.
                             <br>
-                            Select "New" above to request your first allocation.
+                            Use the form above to request new Service Units or manage existing ones.
                         </div>
                     </div>
                 `);
@@ -614,100 +614,9 @@ $(document).ready(function () {
                         <i class="fas fa-hdd"></i>
                         <p>No Active Storage Found</p>
                         <div class="empty-state-help">
-                            You currently don't have any active storage allocations.
+                            This section will display your active storage allocations once they are approved.
                             <br>
-                            Select "Create new storage share" above to request storage.
-                        </div>
-                    </div>
-                `);
-            }
-    
-            return projects;
-        } catch (error) {
-            console.error('Error loading user projects:', error);
-            return {
-                allocationProjects: [],
-                storageProjects: [],
-                userStorageUsage: {
-                    'SSZ Research Standard': 0
-                }
-            };
-        }
-    }
-
-    async function loadUserProjects() {
-        try {
-            const projects = await fetchUserProjects();
-    
-            // Handle Service Units (Allocations)
-            const allocationTbody = $('#allocation-projects-tbody');
-            if (projects.allocationProjects && projects.allocationProjects.length > 0) {
-                allocationTbody.empty();
-                projects.allocationProjects.forEach(project => {
-                    allocationTbody.append(`
-                        <tr>
-                            <td>
-                                <input type="radio" name="existing-project-allocation" 
-                                       value="${escapeHtml(project.id)}" required>
-                            </td>
-                            <td>${escapeHtml(project.name)}</td>
-                            <td>${escapeHtml(project.group)}</td>
-                            <td>${escapeHtml(project.tier)}</td>
-                        </tr>
-                    `);
-                });
-                $('#existing-projects-allocation table').show();
-                $('#existing-projects-allocation .allocation-empty-state').remove();
-            } else {
-                // Show empty state for allocations
-                $('#existing-projects-allocation table').hide();
-                $('#existing-projects-allocation .allocation-empty-state').remove();
-                $('#existing-projects-allocation').append(`
-                    <div class="allocation-empty-state">
-                        <i class="fas fa-cube"></i>
-                        <p>No Active Service Units Found</p>
-                        <div class="empty-state-help">
-                            You currently don't have any active Service Unit allocations.
-                            <br>
-                            Select "New" above to request your first allocation.
-                        </div>
-                    </div>
-                `);
-            }
-    
-            // Handle Storage Projects
-            const storageTbody = $('#storage-projects-tbody');
-            if (projects.storageProjects && projects.storageProjects.length > 0) {
-                storageTbody.empty();
-                projects.storageProjects.forEach(project => {
-                    storageTbody.append(`
-                        <tr>
-                            <td>
-                                <input type="radio" name="existing-project-storage" 
-                                       value="${escapeHtml(project.id)}" required>
-                            </td>
-                            <td>${escapeHtml(project.name)}</td>
-                            <td>${escapeHtml(project.group)}</td>
-                            <td>${escapeHtml(project.tier)}</td>
-                            <td>${escapeHtml(project.sharedSpace)}</td>
-                            <td>${escapeHtml(project.currentSize)} TB</td>
-                        </tr>
-                    `);
-                });
-                $('#existing-projects-storage table').show();
-                $('#existing-projects-storage .storage-empty-state').remove();
-            } else {
-                // Show empty state for storage
-                $('#existing-projects-storage table').hide();
-                $('#existing-projects-storage .storage-empty-state').remove();
-                $('#existing-projects-storage').append(`
-                    <div class="storage-empty-state">
-                        <i class="fas fa-hdd"></i>
-                        <p>No Active Storage Found</p>
-                        <div class="empty-state-help">
-                            You currently don't have any active storage allocations.
-                            <br>
-                            Select "Create new storage share" above to request storage.
+                            Use the form above to request new storage or manage existing ones.
                         </div>
                     </div>
                 `);
