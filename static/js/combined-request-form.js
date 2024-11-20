@@ -530,41 +530,108 @@ $(document).ready(function () {
             await waitForUserSession();
             await new Promise(resolve => setTimeout(resolve, 300));
             
+            // Return empty data structure
             return {
-                allocationProjects: [
-                    {
-                        id: 'alloc-1',
-                        name: 'RNA Sequencing Analysis',
-                        group: 'bioResearchLab1',
-                        tier: 'Standard',
-                        description: 'RNA-seq data analysis for cancer research'
-                    },
-                    {
-                        id: 'alloc-2',
-                        name: 'Climate Model Simulations',
-                        group: 'climateAI2',
-                        tier: 'Paid',
-                        description: 'High-resolution climate modeling'
-                    }
-                ],
-                storageProjects: [
-                    {
-                        id: 'store-1',
-                        name: 'Genomics Data Repository',
-                        group: 'bioResearchLab1',
-                        tier: 'SSZ Research Project',
-                        sharedSpace: 'genomicsData',
-                        currentSize: '50',
-                        description: 'Genomic sequencing data storage'
-                    }
-                ],
+                allocationProjects: [],
+                storageProjects: [],
                 userStorageUsage: {
-                    'SSZ Research Standard': 133
+                    'SSZ Research Standard': 0
                 }
             };
         } catch (error) {
             console.error('Error fetching user projects:', error);
             throw new Error('Failed to fetch user projects');
+        }
+    }
+    
+    async function loadUserProjects() {
+        try {
+            const projects = await fetchUserProjects();
+    
+            // Handle Service Units (Allocations)
+            const allocationTbody = $('#allocation-projects-tbody');
+            if (projects.allocationProjects && projects.allocationProjects.length > 0) {
+                allocationTbody.empty();
+                projects.allocationProjects.forEach(project => {
+                    allocationTbody.append(`
+                        <tr>
+                            <td>
+                                <input type="radio" name="existing-project-allocation" 
+                                       value="${escapeHtml(project.id)}" required>
+                            </td>
+                            <td>${escapeHtml(project.name)}</td>
+                            <td>${escapeHtml(project.group)}</td>
+                            <td>${escapeHtml(project.tier)}</td>
+                        </tr>
+                    `);
+                });
+                $('#existing-projects-allocation table').show();
+                $('#existing-projects-allocation .allocation-empty-state').remove();
+            } else {
+                // Show empty state for allocations
+                $('#existing-projects-allocation table').hide();
+                $('#existing-projects-allocation .allocation-empty-state').remove();
+                $('#existing-projects-allocation').append(`
+                    <div class="allocation-empty-state">
+                        <i class="fas fa-cube"></i>
+                        <p>No Active Service Units Found</p>
+                        <div class="empty-state-help">
+                            You currently don't have any active Service Unit allocations.
+                            <br>
+                            Select "New" above to request your first allocation.
+                        </div>
+                    </div>
+                `);
+            }
+    
+            // Handle Storage Projects
+            const storageTbody = $('#storage-projects-tbody');
+            if (projects.storageProjects && projects.storageProjects.length > 0) {
+                storageTbody.empty();
+                projects.storageProjects.forEach(project => {
+                    storageTbody.append(`
+                        <tr>
+                            <td>
+                                <input type="radio" name="existing-project-storage" 
+                                       value="${escapeHtml(project.id)}" required>
+                            </td>
+                            <td>${escapeHtml(project.name)}</td>
+                            <td>${escapeHtml(project.group)}</td>
+                            <td>${escapeHtml(project.tier)}</td>
+                            <td>${escapeHtml(project.sharedSpace)}</td>
+                            <td>${escapeHtml(project.currentSize)} TB</td>
+                        </tr>
+                    `);
+                });
+                $('#existing-projects-storage table').show();
+                $('#existing-projects-storage .storage-empty-state').remove();
+            } else {
+                // Show empty state for storage
+                $('#existing-projects-storage table').hide();
+                $('#existing-projects-storage .storage-empty-state').remove();
+                $('#existing-projects-storage').append(`
+                    <div class="storage-empty-state">
+                        <i class="fas fa-hdd"></i>
+                        <p>No Active Storage Found</p>
+                        <div class="empty-state-help">
+                            You currently don't have any active storage allocations.
+                            <br>
+                            Select "Create new storage share" above to request storage.
+                        </div>
+                    </div>
+                `);
+            }
+    
+            return projects;
+        } catch (error) {
+            console.error('Error loading user projects:', error);
+            return {
+                allocationProjects: [],
+                storageProjects: [],
+                userStorageUsage: {
+                    'SSZ Research Standard': 0
+                }
+            };
         }
     }
 
