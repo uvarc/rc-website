@@ -2,7 +2,7 @@ $(document).ready(function () {
     console.log("Script started");
     console.log("Combined request form JS loaded");
 
-    // 1. Constants and Configuration
+    // Constants and Configuration
     const API_CONFIG = {
         baseUrl: 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
         headers: {
@@ -53,7 +53,7 @@ $(document).ready(function () {
         sharedSpaceName: /^[\w\-]{3,40}$/
     };
 
-    // Add CSS Styles
+    // CSS Styles
     $('<style>')
         .text(`
             .group-dropdown option {
@@ -87,10 +87,187 @@ $(document).ready(function () {
                 background-color: #cce5ff;
                 color: #004085;
             }
+            #existing-resources-preview table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-bottom: 1rem;
+                background-color: white;
+            }
+            #existing-resources-preview th,
+            #existing-resources-preview td {
+                border: 1px solid #dee2e6;
+                padding: 0.75rem;
+                vertical-align: middle;
+            }
+            #existing-resources-preview th {
+                background-color: #f8f9fa;
+                border-bottom: 2px solid #dee2e6;
+                font-weight: 600;
+            }
+            #existing-resources-preview tbody tr:hover {
+                background-color: rgba(0,0,0,.075);
+            }
+            .resource-empty-state {
+                text-align: center;
+                padding: 2rem;
+                background-color: #f8f9fa;
+                border: 1px dashed #dee2e6;
+                border-radius: 0.25rem;
+                margin: 1rem 0;
+            }
+            .resource-empty-state i {
+                display: block;
+                font-size: 2rem;
+                color: #6c757d;
+                margin-bottom: 1rem;
+            }
+            .resource-empty-state p {
+                margin-bottom: 0.5rem;
+                color: #6c757d;
+            }
+            .resource-empty-state .empty-state-help {
+                font-size: 0.875rem;
+                color: #6c757d;
+            }
         `)
         .appendTo('head');
 
-    // 2. Utility Functions
+        // Existing User Resources
+
+        function processUserResources(apiResponse) {
+            const [responseData, statusCode] = apiResponse;
+            const previewTableBody = $('#combined-preview-tbody');
+            previewTableBody.empty();
+    
+            if (!responseData.user_resources || !Array.isArray(responseData.user_resources)) {
+                console.warn('No user resources found in API response');
+                const emptyState = `
+                    <div class="resource-empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <p>No Active Resources Found</p>
+                        <div class="empty-state-help">
+                            This section will display your active allocations and storage resources once they are approved.
+                            <br>
+                            Use the form below to request new resources or manage existing ones.
+                        </div>
+                    </div>
+                `;
+                $('#existing-resources-preview table').hide();
+                $('#existing-resources-preview').append(emptyState);
+                return;
+            }
+    
+            // Show table and remove any existing empty state
+            $('#existing-resources-preview table').show();
+            $('.resource-empty-state').remove();
+    
+            // Process each group's resources
+            responseData.user_resources.forEach(groupResource => {
+                const resources = groupResource.resources || {};
+                
+                // Process HPC Service Units
+                if (resources.hpc_service_units) {
+                    Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
+                        if (details.request_status === 'active') {
+                            const row = createResourceRow({
+                                type: 'Service Units',
+                                projectClass: allocationName,
+                                group: groupResource.group_name,
+                                tier: formatTierName(details.tier),
+                                details: `Expires: ${formatDate(details.request_expiry_date)}`
+                            });
+                            previewTableBody.append(row);
+                        }
+                    });
+                }
+    
+                // Process Storage
+                if (resources.storage) {
+                    Object.entries(resources.storage).forEach(([storageName, details]) => {
+                        if (details.request_status === 'active') {
+                            const row = createResourceRow({
+                                type: 'Storage',
+                                projectClass: groupResource.project_name || storageName,
+                                group: groupResource.group_name,
+                                tier: formatTierName(details.tier),
+                                details: `${details.request_size}TB, Expires: ${formatDate(details.request_expiry_date)}`
+                            });
+                            previewTableBody.append(row);
+                        }
+                    });
+                }
+            });
+    
+            // If no active resources were found, show empty state
+            if (previewTableBody.children().length === 0) {
+                $('#existing-resources-preview table').hide();
+                const emptyState = `
+                    <div class="resource-empty-state">
+                        <i class="fas fa-inbox"></i>
+                        <p>No Active Resources Found</p>
+                        <div class="empty-state-help">
+                            This section will display your active allocations and storage resources once they are approved.
+                            <br>
+                            Use the form below to request new resources or manage existing ones.
+                        </div>
+                    </div>
+                `;
+                $('#existing-resources-preview').append(emptyState);
+            }
+        }
+    
+        // Helper functions for resource preview
+        function createResourceRow({ type, projectClass, group, tier, details }) {
+            return `
+                <tr>
+                    <td>${escapeHtml(type)}</td>
+                    <td>${escapeHtml(projectClass)}</td>
+                    <td>${escapeHtml(group)}</td>
+                    <td>${escapeHtml(tier)}</td>
+                    <td>${escapeHtml(details)}</td>
+                </tr>
+            `;
+        }
+    
+        function formatTierName(tier) {
+            const tierMap = {
+                'ssz_standard': 'Standard',
+                'ssz_instructional': 'Instructional',
+                'ssz_paid': 'Paid',
+                'ssz_project': 'Project',
+                'hsz_standard': 'High Security Standard',
+                'hsz_paid': 'High Security Paid',
+                'hsz_project': 'High Security Project'
+            };
+            return tierMap[tier] || tier;
+        }
+    
+        function formatDate(dateString) {
+            if (!dateString) return 'N/A';
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+            } catch (e) {
+                console.error('Error formatting date:', e);
+                return dateString;
+            }
+        }
+    
+        function escapeHtml(unsafe) {
+            if (typeof unsafe !== 'string') return '';
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+    // Utility Functions
     const utils = {
         formatBytes: (bytes, decimals = 2) => {
             if (bytes === 0) return '0 TB';
@@ -237,7 +414,7 @@ $(document).ready(function () {
         $dropdown.trigger('change');
     }
 
-    // 3. API and Data Functions
+    // API and Data Functions
     async function waitForUserSession() {
         let attempts = 0;
         const maxAttempts = 50;
@@ -268,50 +445,40 @@ $(document).ready(function () {
         try {
             const computingId = await waitForUserSession();
             console.log("%c Attempting API call for user: " + computingId, "color: blue; font-weight: bold");
-    
+
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
             console.log("Request URL:", requestUrl);
-    
+
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: API_CONFIG.headers,
                 credentials: 'include'
             });
-    
+
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
-    
+
             const data = await response.json();
             console.log("%c Full API Response:", "color: green; font-weight: bold");
             console.log(data);
-    
-            // Check if data is an array with two elements (data and status code)
-            if (Array.isArray(data) && data.length === 2) {
-                const [responseData, statusCode] = data;
-    
-                console.group('%c User Groups Data', 'color: purple; font-weight: bold');
-                console.log('Status Code:', statusCode);
-                
-                if (responseData.user_groups) {
-                    console.log('Number of groups found:', responseData.user_groups.length);
-                    console.table(responseData.user_groups);
-                    
-                    // Direct pass of user_groups array to populate function
-                    populateGrouperMyGroupsDropdown(responseData.user_groups);
-                } else {
-                    console.warn('No user groups found in API response');
-                    console.log('Full response data:', responseData);
-                    populateGrouperMyGroupsDropdown([]);
-                }
-                console.groupEnd();
-            } else {
-                console.error('Invalid API response format:', data);
-                throw new Error('Invalid API response format');
+
+            // Check if user is eligible
+            if (data[0].is_user_resource_request_elligible === false) {
+                handleNonEligibleUser();
+                return;
             }
-    
+
+            // Process groups for dropdown
+            if (data[0].user_groups) {
+                populateGrouperMyGroupsDropdown(data[0].user_groups);
+            }
+
+            // Process and display user resources - THIS IS THE NEW LINE
+            processUserResources(data);
+
         } catch (error) {
-            console.error("%c Error fetching groups:", "color: red; font-weight: bold");
+            console.error("%c Error fetching data:", "color: red; font-weight: bold");
             console.error(error);
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
@@ -427,7 +594,7 @@ $(document).ready(function () {
         return Promise.resolve();
     }
 
-    // 4. UI Validation Functions
+    // UI Validation Functions
     function validateField($field) {
         if (!$field[0].checkValidity()) {
             markFieldInvalid($field, 'This field is required.');
@@ -681,7 +848,7 @@ $(document).ready(function () {
             showErrorMessage('Error determining billing requirements');
         }
     }
-    // 6. Event Handlers
+    // Event Handlers
     function setupEventHandlers() {
         $('input[name="request-type"]').on('change', function() {
             const $label = $(this).next('label');
@@ -748,7 +915,7 @@ $(document).ready(function () {
         });
     }
 
-    // 7. Form Submission and UI Feedback
+    // Form Submission and UI Feedback
     async function handleFormSubmission(event) {
         event.preventDefault();
         
@@ -884,7 +1051,7 @@ $(document).ready(function () {
         }
     }
 
-    // 8. Initialization
+    // Initialization
     async function initialize() {
         console.log("Initializing form...");
         
