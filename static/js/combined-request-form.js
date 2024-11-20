@@ -204,6 +204,31 @@ $(document).ready(function () {
                     padding: 1.5rem;
                 }
             }
+                .storage-info-box {
+                border: solid 1px #ccc;
+                padding: 1rem;
+                margin-top: 0.5rem;
+                font-size: 90%;
+            }
+
+            .storage-type-standard {
+                background-color: #cae6d2;
+            }
+
+            .storage-type-sensitive {
+                background-color: #e6caca;
+            }
+
+            .storage-usage-warning {
+                background-color: #fff3cd;
+                border-color: #ffeeba;
+                margin-top: 0.5rem;
+            }
+
+            .storage-info-box h6 {
+                margin-top: 0;
+                margin-bottom: 0.5rem;
+            }
         `)
         .appendTo('head');
 
@@ -865,10 +890,25 @@ $(document).ready(function () {
         
         if (isModifyingExisting) {
             updateStorageModificationFields(typeOfRequest);
-        }
-        
-        updateBillingVisibility();
-        toggleStorageTierOptions();
+    }
+
+    function updateStorageUsageMessage(currentUsage, freeLimit, totalSize) {
+        // Remove any existing usage message
+        $('.storage-usage-warning').remove();
+    
+        // Create the warning message for SSZ Research Standard
+        const usageMessage = `
+            <div class="storage-info-box storage-usage-warning">
+                <h6>Storage Usage</h6>
+                Current usage: ${currentUsage} TB of ${freeLimit} TB free allocation.
+                ${totalSize > freeLimit ? 
+                    `<br>This request will exceed the free limit by ${totalSize - freeLimit} TB.` : 
+                    ''}
+            </div>
+        `;
+    
+        // Insert after the standard data info box
+        $('#standard-data').after(usageMessage);
     }
 
     function toggleStorageTierOptions() {
@@ -936,34 +976,36 @@ $(document).ready(function () {
             const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
             const selectedAllocationTier = $('input[name="allocation-choice"]:checked').val();
             const requestedStorageSize = parseInt($('#capacity').val()) || 0;
-
+    
             let shouldShowBilling = false;
-            let tierNote = '';
-
+            let showUsageWarning = false;
+    
             if ($('#allocation-fields').is(':visible') && selectedAllocationTier) {
                 shouldShowBilling = utils.isTierPaid(selectedAllocationTier);
             }
-
+    
             if ($('#storage-fields').is(':visible') && selectedStorageTier) {
                 if (selectedStorageTier === 'SSZ Research Standard') {
                     const totalSize = currentStorageUsage + requestedStorageSize;
                     const freeLimit = RESOURCE_TYPES['SSZ Research Standard'].freeLimit;
                     shouldShowBilling = totalSize > freeLimit;
+                    showUsageWarning = true;
                     
-                    tierNote = `Current usage: ${currentStorageUsage} TB of ${freeLimit} TB free allocation.` +
-                              (shouldShowBilling ? ' This request will exceed the free limit.' : '');
+                    // Update storage usage message
+                    updateStorageUsageMessage(currentStorageUsage, freeLimit, totalSize);
                 } else {
                     shouldShowBilling = utils.isTierPaid(selectedStorageTier);
+                    // Remove usage message if it exists
+                    $('.storage-usage-warning').remove();
+    
+                    updateBillingVisibility();
+                    toggleStorageTierOptions();
                 }
             }
-
+    
             $('#billing-information').slideToggle(shouldShowBilling);
             $('#billing-information input, #billing-information select')
                 .prop('required', shouldShowBilling);
-
-            if (tierNote) {
-                updateTierNote(tierNote);
-            }
         } catch (error) {
             console.error('Error updating billing visibility:', error);
             showErrorMessage('Error determining billing requirements');
