@@ -590,6 +590,62 @@ $(document).ready(function () {
             utils.removeWaitingMessage();
         }
     }
+
+    // Update Existing Resources
+
+    async function updateExistingResource(formData) {
+        try {
+            const computingId = await waitForUserSession();
+            const $submitButton = $('#submit');
+            $submitButton.prop('disabled', true)
+                .html('<span class="spinner-border spinner-border-sm"></span> Updating...');
+    
+            const payload = [{
+                group_name: formData.group,
+                project_name: formData.projectName || "",
+                project_desc: $('#project-description').val() || "",
+                data_agreement_signed: $('#data-agreement').is(':checked'),
+                pi_uid: document.querySelector('#uid').value || "",
+                resources: {}
+            }];
+    
+            if (formData.requestType === 'service-unit') {
+                payload[0].resources.hpc_service_units = {
+                    [formData.existingProject]: {
+                        tier: getTierEnum(formData.allocationTier),
+                        request_count: "1000"
+                    }
+                };
+            } else if (formData.requestType === 'storage') {
+                payload[0].resources.storage = {
+                    [formData.existingProject]: {
+                        tier: getStorageTierEnum(formData.storageTier),
+                        request_size: formData.capacity.toString()
+                    }
+                };
+            }
+    
+            const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+                method: 'PUT',
+                headers: API_CONFIG.headers,
+                credentials: 'include',
+                body: JSON.stringify(payload)
+            });
+    
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+    
+            showSuccessMessage('Your resource has been updated successfully.');
+            resetForm();
+            await fetchAndPopulateGroups();
+        } catch (error) {
+            console.error('Error updating resource:', error);
+            showErrorMessage('Failed to update resource. Please try again.');
+        } finally {
+            $('#submit').prop('disabled', false).text('Submit');
+        }
+    }
     
     // Initialize Function
     async function initialize() {
@@ -1066,15 +1122,20 @@ $(document).ready(function () {
         event.preventDefault();
         
         try {
-            await waitForUserSession();
-            
             if (validateForm()) {
                 const formData = collectFormData();
-                await submitForm(formData);
+                const isNewRequest = formData.newOrRenewal === 'new' || 
+                                   formData.typeOfRequest === 'new-storage';
+    
+                if (isNewRequest) {
+                    await submitForm(formData);
+                } else {
+                    await updateExistingResource(formData);
+                }
             }
         } catch (error) {
-            console.error('Error during form submission:', error);
-            showErrorMessage('Unable to submit form. Please ensure you are logged in and try again.');
+            console.error('Form submission error:', error);
+            showErrorMessage('Unable to process request. Please try again.');
         }
     }
 
