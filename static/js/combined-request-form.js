@@ -56,6 +56,7 @@ $(document).ready(function () {
     // CSS Styles
     $('<style>')
         .text(`
+            /* Existing dropdown styles */
             .group-dropdown option {
                 padding: 8px;
                 margin: 2px;
@@ -71,6 +72,8 @@ $(document).ready(function () {
                 background-color: #f8f9fa !important;
                 cursor: not-allowed;
             }
+
+            /* Existing message styles */
             .api-error-message {
                 margin-bottom: 1rem;
                 padding: 1rem;
@@ -87,47 +90,119 @@ $(document).ready(function () {
                 background-color: #cce5ff;
                 color: #004085;
             }
-            #existing-resources-preview table {
+
+            /* Common table styles for all sections */
+            #existing-resources-preview table,
+            #existing-projects-allocation table,
+            #existing-projects-storage table {
                 border-collapse: collapse;
                 width: 100%;
                 margin-bottom: 1rem;
                 background-color: white;
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
             }
+
+            /* Common cell styles */
             #existing-resources-preview th,
-            #existing-resources-preview td {
+            #existing-resources-preview td,
+            #existing-projects-allocation th,
+            #existing-projects-allocation td,
+            #existing-projects-storage th,
+            #existing-projects-storage td {
                 border: 1px solid #dee2e6;
                 padding: 0.75rem;
                 vertical-align: middle;
             }
-            #existing-resources-preview th {
+
+            /* Common header styles */
+            #existing-resources-preview th,
+            #existing-projects-allocation th,
+            #existing-projects-storage th {
                 background-color: #f8f9fa;
                 border-bottom: 2px solid #dee2e6;
                 font-weight: 600;
             }
-            #existing-resources-preview tbody tr:hover {
+
+            /* Common hover effects */
+            #existing-resources-preview tbody tr:hover,
+            #existing-projects-allocation tbody tr:hover,
+            #existing-projects-storage tbody tr:hover {
                 background-color: rgba(0,0,0,.075);
+                transition: background-color 0.15s ease-in-out;
             }
-            .resource-empty-state {
+
+            /* Common empty state styles */
+            .resource-empty-state,
+            .allocation-empty-state,
+            .storage-empty-state {
                 text-align: center;
                 padding: 2rem;
                 background-color: #f8f9fa;
                 border: 1px dashed #dee2e6;
                 border-radius: 0.25rem;
                 margin: 1rem 0;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+                animation: fadeIn 0.3s ease-in;
             }
-            .resource-empty-state i {
+
+            /* Common icon styles */
+            .resource-empty-state i,
+            .allocation-empty-state i,
+            .storage-empty-state i {
                 display: block;
                 font-size: 2rem;
                 color: #6c757d;
                 margin-bottom: 1rem;
             }
-            .resource-empty-state p {
+
+            /* Common message styles */
+            .resource-empty-state p,
+            .allocation-empty-state p,
+            .storage-empty-state p {
                 margin-bottom: 0.5rem;
                 color: #6c757d;
+                font-size: 1.1rem;
+                font-weight: 500;
             }
-            .resource-empty-state .empty-state-help {
+
+            /* Common help text styles */
+            .resource-empty-state .empty-state-help,
+            .allocation-empty-state .empty-state-help,
+            .storage-empty-state .empty-state-help {
                 font-size: 0.875rem;
                 color: #6c757d;
+                line-height: 1.5;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 0 1rem;
+            }
+
+            /* Animation keyframes */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* Container spacing */
+            #existing-resources-preview,
+            #existing-projects-allocation,
+            #existing-projects-storage {
+                margin: 1.5rem 0;
+            }
+
+            /* Responsive adjustments */
+            @media (max-width: 768px) {
+                .resource-empty-state,
+                .allocation-empty-state,
+                .storage-empty-state {
+                    padding: 1.5rem;
+                }
             }
         `)
         .appendTo('head');
