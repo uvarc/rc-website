@@ -23,5 +23,5 @@ B.S. Computer Science
 University of Virginia (Expected Graduation: 2026)
 
 **Summer 2024 Presentation:**
-{{< youtube aKg1mgU_cKI >}}
+{{< youtube Wz86jF-d5F4 >}}
 
