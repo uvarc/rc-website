@@ -41,7 +41,10 @@ A summary description of the Ivy environment suitable for **grant applications**
 
 # Requesting Access
 
-University of Virginia tenure stream and academic general faculty, research faculty, research scientists, and postdoctoral associates may request an account on Ivy. UVA graduate and undergraduate students are not permitted to request accounts—this must be done by their faculty advisor(s).
+<!-- University of Virginia tenure stream and academic general faculty, research faculty, research scientists, and postdoctoral associates may request an account on Ivy. UVA graduate and undergraduate students are not permitted to request accounts—this must be done by their faculty advisor(s). -->
+{{% highlight %}}
+  {{% pi-eligibility %}}
+{{% /highlight %}}
 
 Access to Ivy resources is project-based, limited to PIs and their designees, and requires approval. Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
 
