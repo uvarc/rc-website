@@ -66,7 +66,12 @@ The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both
     
 2. **Install Opswat.**
     Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa" target="_blank">UVA ITS Software Gateway</a>.
-    
+
+{{% callout %}}
+If your personal machine's operating system is no longer supported and does not allow for disk encryption, having OPSWAT installed will not resolve the issue. The recommended solution is to upgrade the operating system or acquire a device with an updated OS that meets these security requirements.
+{{% /callout %}}
+
+
 3. **Install Anti-malware software (Windows Defender recommended)**.
     Anti-malware software must be installed on your machine. Windows Defender is behavioral-based antimalware software and meets UVA's HSVPN requirements. Windows Defender can be downloaded from the <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=2bee0fd3dbc4a4d005fff49eae9619ee" target="_blank">UVA ITS Software Gateway</a>.
     
@@ -404,7 +409,7 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 # Data Transfer In/Out of Ivy {#data-transfer-in-out-of-ivy}
 
-Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “Ivy Central Storage” (ICS), which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
+Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “High-Security Research Standard Storage”, which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
 
 <img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="/images/ivy-dtn-flow.png" />
 
@@ -424,7 +429,7 @@ Before transferring files to Ivy, you will need Globus installed on the computer
 
 6. Click the **Start** button beneath the first panel (should be highlighted) to begin the data transfer.
 
-7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **ICS** shortcut on your VM's desktop.
+7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **High-Security Research Standard Storage** shortcut on your VM's desktop.
 
 - - -
 

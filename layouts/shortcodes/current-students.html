@@ -1,15 +1,67 @@
-<ul>
+<div class="people-container">
     <!-- Loops through all pages located in the About Section -->
-    {{ range  (where (.Site.RegularPages.ByParam "lastname") "Section" "about") }}
-        <!-- Grabs the front matter and checks if they are a student -->
-        {{ $job_title := lower .Params.job_title}}
-        {{ if eq $job_title "student" }}
-            <li style="margin-bottom: 10px;">
-                <a href="/about/people/{{.File.BaseFileName}}"> 
-                    {{ .Params.title }}
-                </a>
-            </li>
+    {{ range (where (.Site.RegularPages.ByParam "lastname") "Section" "about") }}
+        <!-- Grabs the front matter and checks if they are an active student -->
+        {{ $job_title := lower .Params.job_title }}
+        {{ $active_status := .Params.active }}
+        {{ if and (eq $job_title "student") (eq $active_status true) }}
+            <div class="person-card">
+                <img src="{{ .Params.image }}" alt="{{ .Params.title }}" class="person-image"/>
+                <div class="person-info">
+                    <a href="/about/people/{{ .File.BaseFileName }}" class="person-name">
+                        {{ .Params.title }}
+                    </a>
+                </div>
+            </div>
         {{ end }}
     {{ end }}
-</ul>
+</div>
 
+<style>
+    .people-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; 
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+
+    .person-card {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        max-width: 300px;
+        flex: 1 1 250px; 
+    }
+
+    /* Image styling */
+    .person-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 10px;
+    }
+
+    .person-info {
+        flex-grow: 1;
+        text-align: left; 
+    }
+
+    .person-name {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+        .people-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+</style>
