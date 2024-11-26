@@ -17,6 +17,8 @@ All systems are expected to return to service by **Wednesday, Jan 8** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
 
+### Dedicated Compute/Charge Rate
+
 ### Modules
 
 - Apptainer will be upgraded from 1.2.2 to 1.3.4. There is no change to the containers themselves, and users do not need to rebuild their own containers.
