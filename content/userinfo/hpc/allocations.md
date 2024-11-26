@@ -18,28 +18,25 @@ var user_token = getCookie("__user_token");
 
 <div class="bd-callout bd-callout-warning">
 <div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
-<p>Time on Rivanna/Afton is allocated in two primary forms.
+<p>Compute time on Rivanna/Afton is available through two service models.
 
-<b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 1M SUs).
+<b>Service Unit (SU) Allocations</b>. One SU corresponds to one core-hour. Multiple SUs make up what is called an SU allocation (e.g., a new allocation = 1M SUs).
 
-<b>Dedicate Computing</b>. This service allows researchers to lease hardware managed by Research Computing (RC) as an alternative to purchasing their own equipment. It provides dedicated access to HPC resources with no wait times, ensuring consistent availability.
+<b>Dedicated Computing</b>. This model allows researchers to lease hardware managed by Research Computing (RC) as an alternative to purchasing their own equipment. It provides dedicated access to HPC resources with no wait times.
 
-Access for both forms is managed through <a href="https://groups.identity.virginia.edu" target="_new" style="font-weight:bold;">Grouper</a> which requires VPN connection. PIs must create the necessary Grouper groups before submitting a service request. </p>
+Below, you’ll find information on eligibility for access, account creation, and the various types of SU allocations along with their pricing.</div>
 
-{{% highlight %}}
-Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). Legacy MyGroups groups created before November 28th, 2023, can be accessed through the "Legacy MyGroups" folder on  [Grouper](https://groups.identity.virginia.edu/). For new groups, specify "This group will be used for Rivanna/Afton access" in the description section of the Service Now request form to expedite group creation. You will need to add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
-{{% /highlight %}}
+# PI Eligibility
 
-</div>
-
-
-# Eligibility and Account Creation
-
-{{% highlight %}}
 {{% pi-eligibility %}}
-{{% /highlight %}}
+
+# Account Creation
 
 Each PI should create his/her own Grouper group using the <a href="https://in.virginia.edu/how-to-request-group">ITS Group Management Service</a>. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. The PI may designate one or more group administrators but must remain a member of the group. Collaborators with UVA Eservices accounts, regardless of status, can be added to the Grouper group once it has been created. (Collaborators outside of UVA must request a temporary, sponsored Eservices account.) Grouper group names should consist of lowercase letters, digits, or underscores only and must begin with a letter. Please do not use spaces in the group name.
+
+{{% highlight %}}
+Whether you need to set up a new group, modify a group or access the legacy MyGroups groups, go to [Grouper](https://groups.identity.virginia.edu/) which requires VPN connection. For new groups, specify "This group will be used for Rivanna/Afton access" in the description section of the Service Now request form to expedite group creation. Please add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
+{{% /highlight %}}
 
 Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When users are added or deleted, accounts are automatically created. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
 
@@ -48,12 +45,12 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 - - -
 # SU Allocations
 
-## Allocation Pricing
+## Pricing
 
 {{< pricing allocations>}}
 - - -
 
-## Allocation Types
+## Types
 
 ### Standard Allocations
 Standard allocations require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations must be renewed annually along with a synopsis of results from the original allocation. There cannot be more than 1 PI per Grouper group. Standard allocations expire 12 months after they are disbursed. 
@@ -99,7 +96,7 @@ Dedicated computing is an alternative to self-managed lab systems and condominiu
   <button class="btn btn-primary">Request Dedicated Computing</button>
 </a>
 
-## Dedicated Computing Pricing
+## Pricing
 
 {{< pricing allocations>}}
 
