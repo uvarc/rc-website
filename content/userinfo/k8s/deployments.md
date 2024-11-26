@@ -20,8 +20,8 @@ images = [""]
 
 Research Computing runs microservices in a Kubernetes cluster that automates the deployment of many containers, making their
 management easy and scalable. This cluster will eventually consist of several dozen instances, >2000 cores and >2TB of memory allocated to 
-running containerized services. It will also have over 300TB of cluster storage and can attach to both [project](/userinfo/storage/#public-internal-use-data-storage) and 
-[standard](/userinfo/storage/#public-internal-use-data-storage) storage.
+running containerized services. It will also have over 300TB of cluster storage and can attach to both [project](/userinfo/storage/#public-internal-use-sensitive-data-storage) and 
+[standard](/userinfo/storage/#public-internal-use-sensitive-data-storage) storage.
 
 {{% highlight-danger %}}
 The research Kubernetes cluster is hosted in the standard security zone. It is suitable for processing standard sensitivity or internal 
