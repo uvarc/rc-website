@@ -13,7 +13,15 @@ images = [""]
 
 - - -
 
-# High Performance Computing Allocations
+# High Performance Computing SU Allocations
+
+{{< pricing allocations >}}
+
+[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/hpc/allocations/)
+
+- - -
+
+# HPC Dedicated Computing
 
 {{< pricing allocations >}}
 

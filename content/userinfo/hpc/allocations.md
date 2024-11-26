@@ -45,22 +45,17 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 
 [<button class="btn btn-warning">Manage Grouper</button>](https://groups.identity.virginia.edu/)
 
-{{% callout %}}
-Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). Legacy MyGroups groups created before November 28th, 2023, can be accessed through the "Legacy MyGroups" folder on  [Grouper](https://groups.identity.virginia.edu/).
-{{% /callout %}}
-
-{{% group_creation_tip %}}
-
 - - -
+# SU Allocations
 
-# Allocation Pricing
+## Allocation Pricing
 
 {{< pricing allocations>}}
 - - -
 
-# Allocation Types
+## Allocation Types
 
-## Standard Allocations
+### Standard Allocations
 Standard allocations require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations must be renewed annually along with a synopsis of results from the original allocation. There cannot be more than 1 PI per Grouper group. Standard allocations expire 12 months after they are disbursed. 
 
 **Available to:** [Eligible PIs](#eligibility-and-account-creation)
@@ -69,7 +64,7 @@ Standard allocations require a brief summary of the research project along with 
 
 - - -
 
-## Allocation Purchases
+### Allocation Purchases
 Time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
 iAs an alternative to purchasing SU's, RC offers dedicated computing which allows researchers to request exclusive access to a subset of HPC nodes for extended periods. See below for more information.
 
@@ -81,7 +76,7 @@ iAs an alternative to purchasing SU's, RC offers dedicated computing which allow
 
 - - -
 
-## Instructional Allocations
+### Instructional Allocations
 Instructional allocations provide limited access to Rivanna and Afton and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a Grouper account name using the class rubric, e.g. cs5014. Service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
 
 **Available to:** Faculty who intend to use HPC resources in their class. 
@@ -92,7 +87,7 @@ Instructional allocations provide limited access to Rivanna and Afton and are av
   <button class="btn btn-primary">Request an Instructional Allocation</button>
 </a>
 
-## Dedicated Computing
+# Dedicated Computing
 Dedicated computing is an alternative to self-managed lab systems and condominium nodes. This option provides researchers with exclusive access to HPC resources without wait times, eliminating the need for RC to manage the lifecycle of hardware purchased by researchers. Dedicated Computing involves nodes that RC has procured as part of its large-scale HPC acquisitions being “leased” to researchers for a term of one year or longer. These leased nodes are configured with the same system image as the primary HPC environment, ensuring consistency and minimizing support overhead. Once the lease term ends, dedicated nodes are returned to the public queues, making them available for general HPC use.
 
 **Available to:** [Eligible PIs](#eligibility-and-account-creation) who need exclusive access to a subset of HPC nodes for extended periods.
@@ -103,4 +98,9 @@ Dedicated computing is an alternative to self-managed lab systems and condominiu
 
   <button class="btn btn-primary">Request Dedicated Computing</button>
 </a>
+
+## Dedicated Computing Pricing
+
+{{< pricing allocations>}}
+
 
