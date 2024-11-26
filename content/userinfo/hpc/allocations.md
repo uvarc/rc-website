@@ -1,6 +1,6 @@
 +++
 description = ""
-title = "Allocations"
+title = "Access to HPC Resources"
 draft = false
 date = "2023-09-12T17:45:12-05:00"
 tags = ["hpc","rivanna","supercomputer","allocations"]
@@ -18,8 +18,20 @@ var user_token = getCookie("__user_token");
 
 <div class="bd-callout bd-callout-warning">
 <div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
-<p>Time on Rivanna/Afton is allocated as <b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 1M SUs). Allocations are managed through <a href="https://groups.identity.virginia.edu" target="_new" style="font-weight:bold;">Grouper</a> (requires VPN connection) groups that should be created by Principal Investigators (PIs) before they submit an allocation request. </p>
+<p>Time on Rivanna/Afton is allocated in two primary forms.
+
+<b>Service Units</b> (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 1M SUs).
+
+<b>Dedicate Computing</b>. This service allows researchers to lease hardware managed by Research Computing (RC) as an alternative to purchasing their own equipment. It provides dedicated access to HPC resources with no wait times, ensuring consistent availability.
+
+Access for both forms is managed through <a href="https://groups.identity.virginia.edu" target="_new" style="font-weight:bold;">Grouper</a> which requires VPN connection. PIs must create the necessary Grouper groups before submitting a service request. </p>
+
+{{% highlight %}}
+Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). Legacy MyGroups groups created before November 28th, 2023, can be accessed through the "Legacy MyGroups" folder on  [Grouper](https://groups.identity.virginia.edu/). For new groups, specify "This group will be used for Rivanna/Afton access" in the description section of the Service Now request form to expedite group creation. You will need to add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
+{{% /highlight %}}
+
 </div>
+
 
 # Eligibility and Account Creation
 
@@ -59,6 +71,7 @@ Standard allocations require a brief summary of the research project along with 
 
 ## Allocation Purchases
 Time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
+iAs an alternative to purchasing SU's, RC offers dedicated computing which allows researchers to request exclusive access to a subset of HPC nodes for extended periods. See below for more information.
 
 **Available to:** [Eligible PIs](#eligibility-and-account-creation) who need priority access and premium service.
 
@@ -78,3 +91,16 @@ Instructional allocations provide limited access to Rivanna and Afton and are av
 
   <button class="btn btn-primary">Request an Instructional Allocation</button>
 </a>
+
+## Dedicated Computing
+Dedicated computing is an alternative to self-managed lab systems and condominium nodes. This option provides researchers with exclusive access to HPC resources without wait times, eliminating the need for RC to manage the lifecycle of hardware purchased by researchers. Dedicated Computing involves nodes that RC has procured as part of its large-scale HPC acquisitions being “leased” to researchers for a term of one year or longer. These leased nodes are configured with the same system image as the primary HPC environment, ensuring consistency and minimizing support overhead. Once the lease term ends, dedicated nodes are returned to the public queues, making them available for general HPC use.
+
+**Available to:** [Eligible PIs](#eligibility-and-account-creation) who need exclusive access to a subset of HPC nodes for extended periods.
+
+<a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for PIs.</a>
+
+<a href="/form/support-request/">
+
+  <button class="btn btn-primary">Request Dedicated Computing</button>
+</a>
+
