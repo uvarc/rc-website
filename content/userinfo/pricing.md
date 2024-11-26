@@ -13,7 +13,7 @@ images = [""]
 
 - - -
 
-# High Performance Computing SU Allocations
+# HPC SU Allocations
 
 {{< pricing allocations >}}
 
