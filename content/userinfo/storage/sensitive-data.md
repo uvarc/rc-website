@@ -21,7 +21,7 @@ Ivy Central Storage (ICS) was an HSD parking zone and central storage pool with 
 
 As of 10/15/24, ICS will be upgraded to High-Security Research Standard Storage.
 
-# High-Security Research Standard Storage
+# High-Security Research Standard Storage {#hs-standard-storage}
 
 High-Security Research Standard Storage is an HSD storage area within the HSZ with a capacity greater than 6PB. High-Security Research Standard Storage is similar to Research Standard Storage, however it is integrated with the High-Security Data Transfer Node and mounted on an [Ivy virtual machine](/userinfo/ivy/) (VM) to create a highly secure environment. For added security, files stored on High-Security Research Standard Storage are read & write only. Note: snapshots, backup, and replication are not provided. 
 
