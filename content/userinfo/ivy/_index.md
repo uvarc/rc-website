@@ -69,7 +69,12 @@ The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both
     
 2. **Install Opswat.**
     Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa" target="_blank">UVA ITS Software Gateway</a>.
-    
+
+{{% callout %}}
+If your personal machine's operating system is no longer supported and does not allow for disk encryption, having OPSWAT installed will not resolve the issue. The recommended solution is to upgrade the operating system or acquire a device with an updated OS that meets these security requirements.
+{{% /callout %}}
+
+
 3. **Install Anti-malware software (Windows Defender recommended)**.
     Anti-malware software must be installed on your machine. Windows Defender is behavioral-based antimalware software and meets UVA's HSVPN requirements. Windows Defender can be downloaded from the <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=2bee0fd3dbc4a4d005fff49eae9619ee" target="_blank">UVA ITS Software Gateway</a>.
     
