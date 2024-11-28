@@ -1,0 +1,36 @@
+<!-- Determine index of Rivanna Entry -->
+{{ $services := $.Site.Data.service.service }}
+{{ $dedicated_computing_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.label "Dedicated Computing" }}
+    {{ $dedicated_computing_index = $i }}
+  {{ end }}
+{{ end }}
+
+{{ $dedicated_computing := index $services $dedicated_computing_index}}
+{{ $columns := index $dedicated_computing "columns" }}
+{{ $options := index $dedicated_computing "options" }}
+
+<table class="table" style="margin-top:2rem;">
+    <thead class="thead-dark" style="">
+      <tr>
+        {{ range $columns }}
+            <th scope="col">{{ . }}</th>
+        {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+         {{ range $options }}
+         <tr>
+             <td> {{ .hardware }} </td>
+             <td> {{ .cores_per_node }} </td>
+             <td> {{ .mem_per_node }} </td>
+             <td> {{ .gpu_mem }} </td>
+             <td> {{ .yearly_rate }} </td>
+         </tr>
+        {{ end }}
+      </tr>
+    </tbody>
+  </table>
+  

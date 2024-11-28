@@ -48,6 +48,13 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 ## Pricing
 
 {{< pricing allocations>}}
+
+- - -
+
+# Dedicated Computing
+
+{{< pricing dedicated_computing >}}
+
 - - -
 
 ## Types

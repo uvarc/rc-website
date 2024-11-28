@@ -50,6 +50,10 @@ images = [""]
 
 - - -
 
+# Dedicated Computing
+
+{{< pricing dedicated_computing >}}
+
 <!--
 # Skyline Virtual Machines
 
