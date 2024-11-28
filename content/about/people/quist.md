@@ -23,4 +23,4 @@ Wright is a 4th-year computer science student at UVA studying computer science a
   University of Virginia SEAS (Expected Graduation: 2025)
 
 **Summer 2024 Presentation:**
-{{< youtube 9wN1wL_uN6I >}}
+{{< youtube XYQduJCkrWY >}}
