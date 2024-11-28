@@ -44,6 +44,13 @@ Note that If you need to set up a new group or modify a group that was created a
 # Allocation Pricing
 
 {{< pricing allocations>}}
+
+- - -
+
+# Dedicated Computing
+
+{{< pricing dedicated_computing >}}
+
 - - -
 
 # Allocation Types
