@@ -69,7 +69,7 @@
 
 <hr>
 
-<h2 style="margin-bottom:2rem;">Student Directory</h2>          
+<h2 style="margin-bottom:2rem;"> Active Student Directory</h2>          
 
 <table class="table table-hover">
   <thead style="" class="table-dark">
@@ -82,7 +82,44 @@
   <tbody>
 
     {{ range (.Pages.ByParam "lastname") }}
-        {{ if eq (lower .Params.job_title) "student" }}
+      {{ if and (eq (lower .Params.job_title) "student") (eq .Params.active true) }}
+
+        <tr>
+          <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
+          {{ if .Params.biolink }}
+            <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th>
+          {{ else }}
+            <th scope="row">{{ .Title }}</th>
+          {{ end }}
+          <td>{{ title .Params.job_title }}</td>
+          <td>
+            {{ $subjects := .Params.subjects }}
+            {{ range first 6 ( sort $subjects ) }}
+              <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
+            {{ end }}
+          </td>
+        </tr>
+        {{ end }}
+
+    {{ end }}
+
+  </tbody>
+</table>
+
+<h2 style="margin-bottom:2rem;">Former Student Directory</h2>   
+
+<table class="table table-hover">
+  <thead style="" class="table-dark">
+    <tr>
+      <th scope="col" style="width:25%;">Name</th>
+      <th scope="col">Position</th>
+      <th scope="col">Areas of Focus</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{ range (.Pages.ByParam "lastname") }}
+        {{ if and (eq (lower .Params.job_title) "student") (eq .Params.active false) }}
 
         <tr>
           <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
