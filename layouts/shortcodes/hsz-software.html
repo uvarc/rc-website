@@ -29,7 +29,7 @@ function searchFunction() {
 
 <table class="table table-striped" id="moduleTable">
   <thead class="thead-dark">
-    {{ $gistJ := getJSON .Site.Params.rivannaJsonUrl }}
+    {{ $gistJ := getJSON .Site.Params.hszJsonUrl }}
     {{ $mclasses := .Get "moduleclasses" }}
     {{ $arch := .Get "arch" }}
     {{ $eclasses := .Get "exclude" }}
@@ -43,7 +43,7 @@ function searchFunction() {
   <tbody>
     {{ range $modulename, $entries := $gistJ }}
       {{ $modulelisted := false }}
-      {{ $modulesite := (printf "/userinfo/hpc/software/%s" (lower $modulename)) }}
+      {{ $modulesite := (printf "/userinfo/ivy/ivy-linux-sw/%s" (lower $modulename)) }}
       {{ $scratch := newScratch}}
       {{ $hasArch := not $arch }}
       {{ range $k, $v := $entries}}
