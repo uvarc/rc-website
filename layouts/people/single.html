@@ -4,6 +4,10 @@
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
+{{ $students := .Site.Data.studentproject.students}}
+{{ $student_entry := index (where $students "name" .Title) 0 }}
+{{ $student_projects := $student_entry.projects }}
+
 
 <div class="container">
   <div class="row">
@@ -46,6 +50,33 @@
   <hr size=1 />
 
   {{ .Content }}
+
+  <hr size=1 />
+
+  {{ if eq (lower .Params.job_title) "student" }}
+    <h2> <u> Projects: </u> </h2>
+    {{ with $student_projects }}
+      {{ $hasProjects := false }}
+      {{ range . }}
+        {{ if and (eq (lower .type) "poster") (eq .archived false) }}
+          {{ $hasProjects = true }}
+          {{ partial "student-project-poster.html" (dict "student_entry" $student_entry "project" .) }}
+        {{ end }}
+        {{ if and (eq (lower .type) "video") (eq .archived false) }}
+          {{ $hasProjects = true }}
+          <!-- Video Partial -->
+        {{ end }}
+      {{ end }}
+      {{ if not $hasProjects }}
+        <p>No projects currently available</p>
+        <hr size="4px" />   
+      {{ end }}
+    {{ else }}
+    <p>No projects currently available</p>
+    <hr size="4px" />   
+  {{ end }}
+{{ end }}
+
 
   {{ $subjects := .Params.subjects }}
   {{ range $subjects }}

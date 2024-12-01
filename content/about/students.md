@@ -31,9 +31,3 @@ For any questions, please email <a href="mailto:rc-studentjobs@virginia.edu">rc-
   {{< current-students >}}
 {{< /rawhtml >}}
 
-<strong style="font-size: 24px;"> Recent Projects </strong>
-
-{{< rawhtml >}}
-  {{< student-projects >}}
-{{< /rawhtml >}}
-
