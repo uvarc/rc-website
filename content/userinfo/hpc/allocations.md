@@ -51,18 +51,12 @@ Each PI is ultimately responsible for managing the roster of users in his/her gr
 
 - - -
 
-# Dedicated Computing
-
-{{< pricing dedicated_computing >}}
-
-- - -
-
 ## Types
 
 ### Standard Allocations
 Standard allocations require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations must be renewed annually along with a synopsis of results from the original allocation. There cannot be more than 1 PI per Grouper group. Standard allocations expire 12 months after they are disbursed. 
 
-**Available to:** [Eligible PIs](#eligibility-and-account-creation)
+**Available to:** [Eligible PIs](#pi-eligibility)
 
 [<button class="btn btn-primary">Request New / Renew Standard Allocation</button>](/form/allocation-standard/)
 
@@ -72,7 +66,7 @@ Standard allocations require a brief summary of the research project along with 
 Time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
 iAs an alternative to purchasing SU's, RC offers dedicated computing which allows researchers to request exclusive access to a subset of HPC nodes for extended periods. See below for more information.
 
-**Available to:** [Eligible PIs](#eligibility-and-account-creation) who need priority access and premium service.
+**Available to:** [Eligible PIs](#pi-eligibility) who need priority access and premium service.
 
 <a href="/form/allocation-purchase/">
   <button class="btn btn-primary">Purchase an Allocation</button>
@@ -94,9 +88,7 @@ Instructional allocations provide limited access to Rivanna and Afton and are av
 # Dedicated Computing
 Dedicated computing is an alternative to self-managed lab systems and condominium nodes. This option provides researchers with exclusive access to HPC resources without wait times, eliminating the need for RC to manage the lifecycle of hardware purchased by researchers. Dedicated Computing involves nodes that RC has procured as part of its large-scale HPC acquisitions being “leased” to researchers for a term of one year or longer. These leased nodes are configured with the same system image as the primary HPC environment, ensuring consistency and minimizing support overhead. Once the lease term ends, dedicated nodes are returned to the public queues, making them available for general HPC use.
 
-**Available to:** [Eligible PIs](#eligibility-and-account-creation) who need exclusive access to a subset of HPC nodes for extended periods.
-
-<a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for PIs.</a>
+**Available to:** [Eligible PIs](#pi-eligibility) who need exclusive access to a subset of HPC nodes for extended periods.
 
 <a href="/form/support-request/">
 
@@ -105,6 +97,5 @@ Dedicated computing is an alternative to self-managed lab systems and condominiu
 
 ## Pricing
 
-{{< pricing allocations>}}
-
+{{< pricing dedicated_computing >}}
 

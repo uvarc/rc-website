@@ -23,9 +23,7 @@ images = [""]
 
 # HPC Dedicated Computing
 
-{{< pricing allocations >}}
-
-[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/hpc/allocations/)
+{{< pricing dedicated_computing >}}
 
 - - -
 
@@ -49,10 +47,6 @@ images = [""]
 [<button class="btn btn-primary btn-sm">Ivy Details</button>](/userinfo/ivy) &nbsp;&nbsp; [<button class="btn btn-primary btn-sm">Request Ivy Resources</button>](https://services.rc.virginia.edu/)
 
 - - -
-
-# Dedicated Computing
-
-{{< pricing dedicated_computing >}}
 
 <!--
 # Skyline Virtual Machines
