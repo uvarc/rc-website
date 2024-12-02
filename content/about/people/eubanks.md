@@ -11,11 +11,11 @@ author = "UVARC Staff"
 image = "/images/profiles/profile_adam_eubanks.jpeg"
 email = "ucn5xj@virginia.edu"
 subjects = [
-  "video editing/recording",
   "machine learning",
-  "python",
-  "content creation"
+  "Open OnDemand",
+  "Docker"
 ]
+active = true
 +++
 
-Adam Eubanks is an undergraduate student at the University of Virginia studying Computer Science and French. He specializes in content creation for the RC Learning Team, creating text and video tutorials for the RC Learning Portal. His interests include machine learning, human language, and volleyball.
+Adam Eubanks is an undergraduate student at Brigham Young University studying Applied Math. He specializes in Open OnDemand app development and machine learning with HPC, as well as containerization.
