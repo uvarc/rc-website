@@ -336,6 +336,12 @@ dos2unix myscript.slurm
 ```
 It will not hurt to run `dos2unix` on a file that doesn't need it. Sometimes you get `{^M}` character at the end of every line when the file was imported from Windows environment. `dos2unix` usually takes care of the problem, but not 100% all the time.
 
+## How do I check how much SU's my job has burnt?
+
+Including more options within the `sacct` command will show more detailed info about a specific job as shown below.
+```
+sacct -j <jobID> --format=JobID,JobName,User,Account,Partition,NCPUS,State,Elapse,ReqTRES%50
+```
 
 ## How do I check the efficiency of my completed jobs?
 Run the command `seff` on the Slurm job ID:
