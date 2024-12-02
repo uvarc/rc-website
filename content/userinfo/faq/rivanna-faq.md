@@ -98,6 +98,33 @@ alias vi='vim'
 
 - - -
 
+# Dedicated Computing Vs SU Allocations
+
+## Can I still get access to HPC allocations without having to pay?
+
+Yes, standard and instructional allocations remain available free of charge.
+
+## What will happen to my unused SUs that I purchased before Jan 7, 2025?
+
+The service unit balance of your paid allocation will carry forward as is. Please be aware of the new service unit consumption rates which are more directly tied to the hardware type number of cpu cores, memory, and specialty hardware (e.g. GPUs) requested. 
+
+## How is my "Fairshare" impacted by the changed SU charge rates?
+
+Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value. 
+
+## What hardware options are available under the Dedicated Computing services? 
+
+See <link to table>
+
+## Can the node I purchased under the Dedicated Computing model be configured as my personal login node to the HPC system? 
+
+No. Dedicated computing hardware is configured as compute nodes only. 
+
+## How do I use the Dedicated Computing node(s) I purchased?
+
+ 
+
+- - -
 # Allocations
 
 ## What is an allocation?
