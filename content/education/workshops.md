@@ -79,4 +79,4 @@ Course material and exercises are available through a companion site. Feel free 
 - Writing in Functions in R
 
 {{% callout %}}
-Do you need a specific workshop and have a group of people to attend? <a href="/form/support-request/?category=Consultation" style="font-weight:bold;">Let us know</a>.{{% /callout %}}
+Do you need a specific workshop and have a group of people to attend? <a href="/form/support-request" style="font-weight:bold;">Let us know</a>.{{% /callout %}}
