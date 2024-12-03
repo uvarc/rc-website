@@ -98,7 +98,11 @@ alias vi='vim'
 
 - - -
 
-# Dedicated Computing Vs SU Allocations
+# Dedicated Computing
+
+## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
+
+<link to userinfo/hpc/access page>  
 
 ## Can I still get access to HPC allocations without having to pay?
 
@@ -122,9 +126,8 @@ No. Dedicated computing hardware is configured as compute nodes only.
 
 ## How do I use the Dedicated Computing node(s) I purchased?
 
- 
-
 - - -
+
 # Allocations
 
 ## What is an allocation?
@@ -178,6 +181,10 @@ You must use the Grouper (requires VPN connection) interface to create the group
 
 ## How do I check allocation usage of individual group members?
 Please visit [here](/userinfo/hpc/slurm/#usage-report) to see how to generate an allocation usage report.
+
+## How can I estimate the expected SU consumption for a new job?
+
+We have developed a utility in Open OnDemand (OOD) called the [Slurm Script Generator](https://ood.hpc.virginia.edu/pun/sys/UVASlurmScriptGenerator). This tool generates a Slurm script based on the parameters specified by the user. Additionally, it estimates the number of Service Units (SUs) that will be billed based on the time requested in the script.
 
 ## I submitted a job and received an error “Invalid account or account/partition combination specified”. What should I do?
 All resource requests through the Open OnDemand interactive apps or through slurm batch jobs require you to specify an allocation for your job. If you do not input an allocation name, you will get this error.
