@@ -345,9 +345,9 @@ It will not hurt to run `dos2unix` on a file that doesn't need it. Sometimes you
 
 ## How do I check how much SU's my job has burnt?
 
-Including more options within the `sacct` command will show more detailed info about a specific job as shown below.
+To find out how many Service Units (SUs) a specific job has consumed, users can run the following command. Here the value under the `Amount` column shows the amount of SUs consumed. The time-frame can be controlled using the `-s`(starting time) and `-e`(end time) flags.
 ```
-sacct -j <jobID> --format=JobID,JobName,User,Account,Partition,NCPUS,State,Elapse,ReqTRES%50
+$  mam-list-transactions -a <allocation-name> -s 2024-11-01 -e 2024-12-03  # -s:starting date   -e: end date
 ```
 
 ## How do I check the efficiency of my completed jobs?
