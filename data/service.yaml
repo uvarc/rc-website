@@ -148,10 +148,10 @@ service:
       mem_per_node: "1464GB"
       gpu_mem: 
       yearly_rate: "$6,458.46"
-    - hardware: "Afton-A40"
+    - hardware: "Afton-Nvidia A40 (8 GPUs)"
       cores_per_node: 96
       mem_per_node: "1464GB"
-      gpu_mem: "48GB*8"
+      gpu_mem: "48GB/GPU"
       yearly_rate: "$17,682.24"
 
 
