@@ -3,10 +3,10 @@ images = [""]
 author = "Staff"
 description = ""
 date = "2025-01-01T00:00:00-05:00"
-title = "Rivanna Maintenance Schedule for 2025"
+title = "Rivanna/Afton Maintenance Schedule for 2025"
 # url = "/maintenance"
 draft = false
-tags = ["rivanna"]
+tags = ["rivanna","afton"]
 categories = ["feature"]
 +++
 
