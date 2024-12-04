@@ -102,7 +102,7 @@ alias vi='vim'
 
 ## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
 
-<link to userinfo/hpc/access page>  
+Plese see [here](https://www.rc.virginia.edu/userinfo/hpc/allocations/)
 
 ## Can I still get access to HPC allocations without having to pay?
 
@@ -118,13 +118,11 @@ Your Fairshare value is driven by your SU consumption and affects the priority o
 
 ## What hardware options are available under the Dedicated Computing services? 
 
-See <link to table>
+See [here](https://www.rc.virginia.edu/userinfo/hpc/allocations/#dedicated-computing).
 
 ## Can the node I purchased under the Dedicated Computing model be configured as my personal login node to the HPC system? 
 
 No. Dedicated computing hardware is configured as compute nodes only. 
-
-## How do I use the Dedicated Computing node(s) I purchased?
 
 - - -
 
