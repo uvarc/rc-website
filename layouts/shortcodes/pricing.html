@@ -8,6 +8,7 @@
 {{ $microservice := false }}
 {{ $ivy := false }}
 {{ $allocations := false }}
+{{ $dedicated_computing := false}}
 
 <!-- Creates subsets of pricing -->
 
@@ -24,11 +25,15 @@
     {{ if eq $value "storage" }}
         {{ $storage = true }}
     {{ end }}
+    {{ if eq $value "dedicated_computing"}}
+        {{ $dedicated_computing = true}}
+    {{ end }}
     {{ if eq $value "all" }}
         {{ $storage = true }}
         {{ $microservice = true }}
         {{ $ivy = true }}
         {{ $allocations = true }}
+        {{ $dedicated_computing = true }}
     {{ end }}
     {{ if $allocations }}
         {{ partial "pricing/allocations.html" (dict "Site" $.Site) }}
@@ -41,6 +46,9 @@
     {{ end }}
     {{ if $ivy }}
         {{ partial "pricing/ivyvm.html" (dict "Site" $.Site) }}
+    {{ end }}
+    {{ if eq $value "dedicated_computing"}}
+        {{ partial "pricing/dedicated_computing.html" (dict "Site" $.Site) }}
     {{ end }}
 
 {{ end }}
