@@ -2,15 +2,15 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-05-13T00:00:00-05:00"
-title = "Rivanna Maintenance Schedule for 2024"
+date = "2024-12-03T00:00:00-05:00"
+title = "HPC Maintenance Schedule for 2024"
 # url = "/maintenance"
 draft = false
-tags = ["rivanna"]
+tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
 
-Rivanna will be taken down for maintenance in 2024 on the following days: 
+Rivanna/Afton will be taken down for maintenance in 2024 on the following days: 
 
 - Tuesday, February 6
 - Tuesday & Wednesday, May 28 & 29
