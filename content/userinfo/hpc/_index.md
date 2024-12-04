@@ -2,7 +2,7 @@
 description = ""
 title = "Using UVA’s High-Performance Computing Systems"
 draft = false
-date = "2024-01-24T00:00:00-05:00"
+date = "2024-12-03T00:00:00-05:00"
 tags = ["hpc","rivanna","parallel-computing","supercomputer","allocations","queues","storage","infrastructure"]
 categories = ["userinfo"]
 images = [""]

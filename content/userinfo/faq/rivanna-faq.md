@@ -2,7 +2,7 @@
 description = ""
 title = "Rivanna and Afton FAQs"
 draft = false
-date = "2020-02-14T01:45:12-05:00"
+date = "2024-12-03T01:45:12-05:00"
 tags = ["hpc","rivanna","faqs","supercomputer"]
 categories = ["userinfo"]
 images = [""]

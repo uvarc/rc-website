@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Pricing"
-date = "2021-01-18T10:08:29-05:00"
+date = "2024-12-03T10:08:29-05:00"
 draft = false
 tags = ["compute","rivanna","ivy","hpc","allocations","storage"]
 categories = ["userinfo"]
