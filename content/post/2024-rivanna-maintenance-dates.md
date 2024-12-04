@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-05-13T00:00:00-05:00"
+date = "2024-12-03T00:00:00-05:00"
 title = "HPC Maintenance Schedule for 2024"
 # url = "/maintenance"
 draft = false
