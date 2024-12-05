@@ -592,12 +592,17 @@ mst3k  100      200.000
 ```
 
 ## Non-PI
+
 Regular users can run the previous command, but it will only show your own usage. You may use the `sreport` command for the total _CPU time_ of your group members:
 
 ```
 $ sreport cluster UserUtilizationByAccount Start=2020-08-01 Accounts=<your_allocation> -t Hours
 ```
-
 Note that this may be different from the actual allocation usage, since `sreport` is unaware of our SU charge policy, but can serve as an estimate.
+
+To find out how many Service Units (SUs) a specific job has consumed, users can run the following command. Here the value under the `Amount` column shows the amount of SUs consumed. The time-frame can be controlled using the `-s`(starting time) and `-e`(end time) flags.
+```
+$  mam-list-transactions -a <allocation-name> -s 2024-11-01 -e 2024-12-03  # -s:starting date   -e: end date
+```
 
 [Documentation](https://slurm.schedmd.com/sreport.html)

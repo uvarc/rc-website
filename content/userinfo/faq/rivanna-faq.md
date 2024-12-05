@@ -2,7 +2,7 @@
 description = ""
 title = "Rivanna and Afton FAQs"
 draft = false
-date = "2020-02-14T01:45:12-05:00"
+date = "2024-12-03T01:45:12-05:00"
 tags = ["hpc","rivanna","faqs","supercomputer"]
 categories = ["userinfo"]
 images = [""]
@@ -98,6 +98,34 @@ alias vi='vim'
 
 - - -
 
+# Dedicated Computing
+
+## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
+
+Plese see [here](https://www.rc.virginia.edu/userinfo/hpc/allocations/)
+
+## Can I still get access to HPC allocations without having to pay?
+
+Yes, standard and instructional allocations remain available free of charge.
+
+## What will happen to my unused SUs that I purchased before Jan 7, 2025?
+
+The service unit balance of your paid allocation will carry forward as is. Please be aware of the new service unit consumption rates which are more directly tied to the hardware type number of cpu cores, memory, and specialty hardware (e.g. GPUs) requested. 
+
+## How is my "Fairshare" impacted by the changed SU charge rates?
+
+Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value. 
+
+## What hardware options are available under the Dedicated Computing services? 
+
+See [here](https://www.rc.virginia.edu/userinfo/hpc/allocations/#dedicated-computing).
+
+## Can the node I purchased under the Dedicated Computing model be configured as my personal login node to the HPC system? 
+
+No. Dedicated computing hardware is configured as compute nodes only. 
+
+- - -
+
 # Allocations
 
 ## What is an allocation?
@@ -151,6 +179,10 @@ You must use the Grouper (requires VPN connection) interface to create the group
 
 ## How do I check allocation usage of individual group members?
 Please visit [here](/userinfo/hpc/slurm/#usage-report) to see how to generate an allocation usage report.
+
+## How can I estimate the expected SU consumption for a new job?
+
+We have developed a utility in Open OnDemand (OOD) called the [Slurm Script Generator](https://ood.hpc.virginia.edu/pun/sys/UVASlurmScriptGenerator). This tool generates a Slurm script based on the parameters specified by the user. Additionally, it estimates the number of Service Units (SUs) that will be billed based on the time requested in the script.
 
 ## I submitted a job and received an error “Invalid account or account/partition combination specified”. What should I do?
 All resource requests through the Open OnDemand interactive apps or through slurm batch jobs require you to specify an allocation for your job. If you do not input an allocation name, you will get this error.
@@ -309,6 +341,12 @@ dos2unix myscript.slurm
 ```
 It will not hurt to run `dos2unix` on a file that doesn't need it. Sometimes you get `{^M}` character at the end of every line when the file was imported from Windows environment. `dos2unix` usually takes care of the problem, but not 100% all the time.
 
+## How do I check how much SU's my job has burnt?
+
+To find out how many Service Units (SUs) a specific job has consumed, users can run the following command. Here the value under the `Amount` column shows the amount of SUs consumed. The time-frame can be controlled using the `-s`(starting time) and `-e`(end time) flags.
+```
+$  mam-list-transactions -a <allocation-name> -s 2024-11-01 -e 2024-12-03  # -s:starting date   -e: end date
+```
 
 ## How do I check the efficiency of my completed jobs?
 Run the command `seff` on the Slurm job ID:
