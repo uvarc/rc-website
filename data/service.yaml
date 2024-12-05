@@ -16,7 +16,7 @@ service:
                   Both platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
     security_zone: "SSZ"
     tags: "HPC"
-    footnote: "A service unit (SU) resembles usage of a trackable hardware resource for a specified amount of time. In its simplest form 1 SU = 1 core hour, but the SU charge rate can vary based on the specific hardware used. Resources like GPUs and memory may incur additional SU charges."
+    footnote: "A service unit (SU) resembles usage of a trackable hardware resource for a specified amount of time. The SU charge rate can vary based on the specific hardware used. Resources like GPUs and memory may incur additional SU charges. See [here](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration) for more information."
     columns: 
       - "Type"
       - "SU Limits"
