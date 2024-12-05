@@ -108,7 +108,7 @@ The following table might help you decide which model suits you the best.
 |---|---|---|
 | Description | Flexible access to variety number of cores and node types | Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores |
 | Lifetime | 1 year (standard alloc), unlimited (paid) | 5 year (expected hardware EOL) |
-| Queue times | yes, system load dependent; (free: default priority  system load dependent; paid: shorter than free allocation; no preemption| none |
+| Queue times | yes, system load dependent; (free: default priority  paid: shorter than free allocation; no preemption| none |
 | Max walltime |3-7d| none |
 | Ideal workload | even or bursty | even
 | Access to GPU or largemem |yes| If that node type was purchased (can be expensive!) | 
