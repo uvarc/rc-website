@@ -104,14 +104,14 @@ alias vi='vim'
 
 The following table might help you decide which model suits you the best.
 
-|| SU Allocations | Hardware Condo |
+|| SU Allocations | Dedicated Computing |
 |---|---|---|
-| Description | Flexible access to variety number of cores and node types | Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores |
-| Lifetime | 1 year (standard alloc), unlimited (paid) | 5 year (expected hardware EOL) |
-| Queue times | yes, system load dependent; (free: default priority  paid: shorter than free allocation; no preemption| none |
+| Description | Access to variety number of cores and node types | Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores |
+| Lifetime | standard alloc: 1 year; paid alloc: unlimited | 5 year (expected hardware EOL) |
+| Queue times | system load dependent; standard alloc: default priority;  paid alloc: shorter than standard allocation; no preemption| none |
 | Max walltime |3-7d| none |
 | Ideal workload | even or bursty | even
-| Access to GPU or largemem |yes| If that node type was purchased (can be expensive!) | 
+| GPU or largemem |yes| If that node type was purchased (can be expensive!) | 
 
 
 To learn about RC's service models and how to request and access each, plese refer to [here](/userinfo/hpc/access).
