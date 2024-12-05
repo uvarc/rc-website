@@ -129,7 +129,7 @@ private = true
       <div id="allocation-tier" style="margin-top:1em;display:none;" class="new-request-only">
         <fieldset class="col form-item form-group form-item form-type-radios form-group">
           <legend class="control-label h6 mb-2">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
-          <small class="helper-text">For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">Allocation Types Documentation</a>.</small>
+          <small class="helper-text">For detailed information about each allocation tier option, please visit our <a href="/userinfo/hpc/access/#allocation-types" target="_blank">Allocation Types Documentation</a>.</small>
           <div id="allocation-tier-options" class="form-radios mt-2">
             <div class="form-item form-type-radio radio">
               <input required="required" type="radio" id="allocation-choice1" name="allocation-choice" value="Standard" class="form-radio" />

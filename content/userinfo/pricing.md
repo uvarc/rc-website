@@ -17,7 +17,7 @@ images = [""]
 
 {{< pricing allocations >}}
 
-[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/hpc/allocations/)
+[<button class="btn btn-primary btn-sm">About Allocations</button>](/userinfo/hpc/access/)
 
 - - -
 

@@ -46,7 +46,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">Access / Allocations</h5>
       <p class="card-text">Learn how to request an allocation and add collaborators.</p>
-      <a href="/userinfo/hpc/allocations/"><button class="btn btn-primary">Request an Allocation</button></a>
+      <a href="/userinfo/hpc/access/"><button class="btn btn-primary">Request an Allocation</button></a>
     </div>
   </div>
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
