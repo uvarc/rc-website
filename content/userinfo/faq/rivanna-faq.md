@@ -102,7 +102,19 @@ alias vi='vim'
 
 ## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
 
-Plese see [here](/userinfo/hpc/access)
+The following table might help you decide which model suits you the best.
+
+|| SU Allocations | Dedicated Computing |
+|---|---|---|
+| Description | Access to variety number of cores and node types | Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores |
+| Lifetime | standard alloc: 1 year; paid alloc: unlimited | 5 year (expected hardware EOL) |
+| Queue times | system load dependent; standard alloc: default priority;  paid alloc: shorter than standard allocation; no preemption| none |
+| Max walltime |3-7d| none |
+| Ideal workload | even or bursty | even
+| GPU or largemem |yes| If that node type was purchased (can be expensive!) | 
+
+
+To learn about RC's service models and how to request and access each, plese refer to [here](/userinfo/hpc/access).
 
 ## Can I still get access to HPC allocations without having to pay?
 
