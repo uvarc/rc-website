@@ -144,7 +144,7 @@ A high performance computing cluster is typically made up of at least four servi
 
 # System Details
 
-## Hardware Configuration
+## Hardware Configuration {#hardware-configuration}
 
 {{< new-rivanna-specs >}}
 

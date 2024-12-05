@@ -58,7 +58,7 @@ jobs:
           cmd_params: >
             -e https://ctan.org/
             -e https://ood.hpc.virginia.edu/pun/sys/dashboard
-            -e https://www.htslib.org/
+            -e http://www.htslib.org/
             -e rci.hpc
             -e stats.pingdom
             -e fastx.hpc

@@ -102,7 +102,53 @@ alias vi='vim'
 
 ## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
 
-Plese see [here](/userinfo/hpc/access)
+The following table might help you decide which model suits you the best.
+
+<table class="table" style="margin-top:2rem;">
+    <thead class="thead-dark" style="">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">SU Allocations</th>
+        <th scope="col">Dedicated Computing</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Description</th>
+        <td>Access to variety number of cores and node types</td>
+        <td>Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores</td>
+      </tr>
+      <tr>
+        <th scope="row">Lifetime</th>
+        <td>Standard alloc: 1 year; paid alloc: unlimited</td>
+        <td>5 year (expected hardware EOL)</td>
+      </tr>
+      <tr>
+        <th scope="row">Queue times</th>
+        <td>System load dependent; standard alloc: default priority; paid alloc: shorter than standard allocation; no preemption</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <th scope="row">Max walltime</th>
+        <td>3-7d</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <th scope="row">Ideal workload</th>
+        <td>Even or bursty</td>
+        <td>Even</td>
+      </tr>
+      <tr>
+        <th scope="row">GPU or largemem</th>
+        <td>Yes</td>
+        <td>If that node type was purchased (can be expensive!)</td>
+      </tr>
+    </tbody>
+</table>
+
+
+
+To learn about RC's service models and how to request and access each, plese refer to [here](/userinfo/hpc/access).
 
 ## Can I still get access to HPC allocations without having to pay?
 
