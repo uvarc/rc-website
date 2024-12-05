@@ -104,15 +104,15 @@ alias vi='vim'
 
 The following table might help you decide which model suits you the best.
 
-|| Hotel Model -- Free Allocation | Hotel Model -- Paid Allocation | Virtual Condo | Hardware Condo |
+|| Free Allocation | Paid Allocation | Hardware Condo |
 |---|---|---|---|---|
-| Description | Flexible access to variety number of cores and node types | Flexible access to variety number of cores and node types | Guaranteed access to preset number of cores; not tied to any particular node | Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores |
-| Lifetime | 1 year (standard alloc) | unlimited | 5 years | 5 year (expected hardware EOL) |
-| Queue times | yes, system load dependent; default priority | yes, system load dependent; shorter than free allocation; no preemption | essentially none (top priority) | none |
-| Max walltime | 3-7d | 3-7d | none | none |
-| Ideal workload | even or bursty | even or bursty | even | even
-| Access to GPU or largemem | yes | yes | no, standard nodes only | If that node type was purchased (can be expensive!) | 
-| Special purpose (DB host, frontend) | no | no | no | no |
+| Description | Flexible access to variety number of cores and node types | Flexible access to variety number of cores and node types | Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores |
+| Lifetime | 1 year (standard alloc) | unlimited | 5 year (expected hardware EOL) |
+| Queue times | yes, system load dependent; default priority | yes, system load dependent; shorter than free allocation; no preemption| none |
+| Max walltime | 3-7d | 3-7d| none |
+| Ideal workload | even or bursty | even or bursty | even
+| Access to GPU or largemem | yes | yes| If that node type was purchased (can be expensive!) | 
+
 
 To learn about RC's service models and how to request and access each, plese refer to [here](/userinfo/hpc/access).
 
