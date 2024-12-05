@@ -25,7 +25,7 @@ type = "rivanna"
 # General Usage
 
 ## How do I gain access to Rivanna/Afton?
-A faculty member must first request an allocation on the HPC system. Full details can be found [here](/userinfo/hpc/allocations).
+A faculty member must first request an allocation on the HPC system. Full details can be found [here](/userinfo/hpc/access).
 
 ## How do I log on to Rivanna/Afton?
 Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access the HPC system through our Web-based interface [Open OnDemand](/userinfo/hpc/ood) or [FastX](/userinfo/hpc/logintools/fastx).
@@ -102,7 +102,7 @@ alias vi='vim'
 
 ## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
 
-Plese see [here](https://www.rc.virginia.edu/userinfo/hpc/allocations/)
+Plese see [here](/userinfo/hpc/access)
 
 ## Can I still get access to HPC allocations without having to pay?
 
@@ -118,7 +118,7 @@ Your Fairshare value is driven by your SU consumption and affects the priority o
 
 ## What hardware options are available under the Dedicated Computing services? 
 
-See [here](https://www.rc.virginia.edu/userinfo/hpc/allocations/#dedicated-computing).
+See [here](/userinfo/hpc/access/#dedicated-computing).
 
 ## Can the node I purchased under the Dedicated Computing model be configured as my personal login node to the HPC system? 
 
@@ -130,11 +130,11 @@ No. Dedicated computing hardware is configured as compute nodes only.
 
 ## What is an allocation?
 
-Time on the HPC system is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/hpc/allocations).
+Time on the HPC system is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/hpc/access).
 
 ## How can I request an allocation?
 
-The different Service Unit (SU) allocation types are explained in [this article](/userinfo/hpc/allocations/#allocation-types). It includes links to our allocation request webforms.
+The different Service Unit (SU) allocation types are explained in [this article](/userinfo/hpc/access/#allocation-types). It includes links to our allocation request webforms.
 
 ## How do I check my allocation status on Rivanna/Afton? {#how-do-i-check-my-allocation-status-on-rivanna}
 
@@ -163,7 +163,7 @@ If you don't see your allocation, it may mean that you've been removed from the 
 
 To check an allocation's expiration date run `allocations -a <allocation group>` command.  Alternatively, run `mam-list-allocations`.
 
-Only [Standard Allocations](/userinfo/hpc/allocations/#standard-allocations) and [Instructional Allocations](/userinfo/hpc/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/hpc/access/#standard-allocations) and [Instructional Allocations](/userinfo/hpc/access/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/access/#allocation-purchases) never expire.
 
 ## How are Service Units Reserved?
 
@@ -192,7 +192,7 @@ If you are experiencing this error and you have input an allocation, verify what
 ## I submitted a job and receive an error "Insufficient balance. Applying funds failure for JobId=".  What should I do?
 The error indicates that your allocation group does not have enough service units to execute the job. Check your allocation status as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Also verify that your allocation has not expired, see [here](#how-do-i-check-an-allocations-expiration-date).
 
-Only [Standard Allocations](/userinfo/hpc/allocations/#standard-allocations), and [Instructional Allocations](/userinfo/hpc/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/hpc/access/#standard-allocations), and [Instructional Allocations](/userinfo/hpc/access/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/access/#allocation-purchases) never expire.
 
 - - -
 

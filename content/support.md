@@ -32,7 +32,7 @@ var user_token = getCookie("__user_token");
       <h5 class="card-title">Allocations</h5>
       <p class="card-text">Request, purchase, or modify your Afton/Rivanna HPC allocations.</p>
       <div class="support-tiles">
-        <a href="/userinfo/hpc/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+        <a href="/userinfo/hpc/access/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
       </div>
     </div>
   </div>
