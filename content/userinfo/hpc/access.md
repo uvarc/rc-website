@@ -100,7 +100,7 @@ Dedicated computing is an alternative to self-managed lab systems and condominiu
 
 **Available to:** [Eligible PIs](#pi-eligibility) who need exclusive access to a subset of HPC nodes for extended periods.
 
-<a href="/form/support-request/">
+<a href="/form/support-request/?category=Rivanna&request_title=Dedicated%20Computing">
 
   <button class="btn btn-primary">Request Dedicated Computing</button>
 </a>
