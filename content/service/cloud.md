@@ -192,7 +192,7 @@ They currently support deployments in Amazon Web Services and Microsoft Azure, a
 
 With an AWS account in hand, you will need some training. ITS can provide you with links to self-paced training for both AWS and Azure. Research Computing
 
-If you need help with how to design your project in a cloud environment, or thinking through how to migrate your existing projects, [contact us](/form/support-request/?category=Consultation) for a consultation.
+If you need help with how to design your project in a cloud environment, or thinking through how to migrate your existing projects, [contact us](/form/support-request/) for a consultation.
 
 ## Sensitive Data in the Cloud
 
@@ -212,7 +212,7 @@ If you have a project and would like to discuss options, pricing, design, or imp
 Our staff includes an AWS certified solution architect, and the RC team uses AWS for our own internal 
 systems and development.
 
-[<button class="btn btn-primary">Request a Consultation</button>](/form/support-request/?category=Consultation)
+[<button class="btn btn-primary">Request a Consultation</button>](/form/support-request/)
 
 <hr size=1 style="padding-bottom:10px;" />
 

@@ -16,6 +16,7 @@ subjects = [
   "python",
   "software engineering"
 ]
+active = false
 +++
 
 Hongyan Wu is a graduate student at the University of Virginia studying Computer Science. He specializes in Machine Learning, Reinforcement Learning and Robotics. Apart from that, he also work as a summer intern at T-Mobile for the Android mobile app development

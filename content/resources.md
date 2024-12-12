@@ -197,7 +197,7 @@ fetch(db_url)
     </table>
     <p style="font-size:80%;font-style:italic;"><span class="dot-allocation">S</span> = Standard  &nbsp;&nbsp; <span class="dot-allocation">P</span> = Purchased &nbsp;&nbsp; <span class="dot-allocation">I</span> = Instructional &nbsp;&nbsp; <span class="dot-allocation">D</span> = Dean<br />Allocation counts are refreshed 1x per day.</p>
     <hr>
-    <a href="/userinfo/hpc/allocations/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
+    <a href="/userinfo/hpc/access/"><button class="btn btn-primary btn-sm">Request Allocations</button></a>
   </div>
 </div>
 <div class="col-md-6">

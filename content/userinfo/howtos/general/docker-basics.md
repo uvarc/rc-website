@@ -157,5 +157,5 @@ docker build -t mycontainer .
 # Next Steps
 
 - Learn about [Docker Swarms](https://docs.docker.com/get-started/part4/) for deploying containers in high availability.
-- Design [Docker Stacks](https://docs.docker.com/get-started/part5/) for complex solutions of services.
+- Design [Docker Stacks](https://docs.docker.com/engine/swarm/stack-deploy/) for complex solutions of services.
 - Learn how to [convert Docker images into Apptainer](/userinfo/howtos/rivanna/docker-images-on-rivanna) to run on the HPC system.

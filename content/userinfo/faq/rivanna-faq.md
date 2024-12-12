@@ -2,7 +2,7 @@
 description = ""
 title = "Rivanna and Afton FAQs"
 draft = false
-date = "2020-02-14T01:45:12-05:00"
+date = "2024-12-03T01:45:12-05:00"
 tags = ["hpc","rivanna","faqs","supercomputer"]
 categories = ["userinfo"]
 images = [""]
@@ -25,7 +25,7 @@ type = "rivanna"
 # General Usage
 
 ## How do I gain access to Rivanna/Afton?
-A faculty member must first request an allocation on the HPC system. Full details can be found [here](/userinfo/hpc/allocations).
+A faculty member must first request an allocation on the HPC system. Full details can be found [here](/userinfo/hpc/access).
 
 ## How do I log on to Rivanna/Afton?
 Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access the HPC system through our Web-based interface [Open OnDemand](/userinfo/hpc/ood) or [FastX](/userinfo/hpc/logintools/fastx).
@@ -98,15 +98,89 @@ alias vi='vim'
 
 - - -
 
+# Dedicated Computing
+
+## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
+
+The following table might help you decide which model suits you the best.
+
+<table class="table" style="margin-top:2rem;">
+    <thead class="thead-dark" style="">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">SU Allocations</th>
+        <th scope="col">Dedicated Computing</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Description</th>
+        <td>Access to variety number of cores and node types</td>
+        <td>Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores</td>
+      </tr>
+      <tr>
+        <th scope="row">Lifetime</th>
+        <td>Standard alloc: 1 year; paid alloc: unlimited</td>
+        <td>5 year (expected hardware EOL)</td>
+      </tr>
+      <tr>
+        <th scope="row">Queue times</th>
+        <td>System load dependent; standard alloc: default priority; paid alloc: shorter than standard allocation; no preemption</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <th scope="row">Max walltime</th>
+        <td>3-7d</td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <th scope="row">Ideal workload</th>
+        <td>Even or bursty</td>
+        <td>Even</td>
+      </tr>
+      <tr>
+        <th scope="row">GPU or largemem</th>
+        <td>Yes</td>
+        <td>If that node type was purchased (can be expensive!)</td>
+      </tr>
+    </tbody>
+</table>
+
+
+
+To learn about RC's service models and how to request and access each, plese refer to [here](/userinfo/hpc/access).
+
+## Can I still get access to HPC allocations without having to pay?
+
+Yes, standard and instructional allocations remain available free of charge.
+
+## What will happen to my unused SUs that I purchased before Jan 7, 2025?
+
+The service unit balance of your paid allocation will carry forward as is. Please be aware of the new service unit consumption rates which are more directly tied to the hardware type number of cpu cores, memory, and specialty hardware (e.g. GPUs) requested. 
+
+## How is my "Fairshare" impacted by the changed SU charge rates?
+
+Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value. 
+
+## What hardware options are available under the Dedicated Computing services? 
+
+See [here](/userinfo/hpc/access/#dedicated-computing).
+
+## Can the node I purchased under the Dedicated Computing model be configured as my personal login node to the HPC system? 
+
+No. Dedicated computing hardware is configured as compute nodes only. 
+
+- - -
+
 # Allocations
 
 ## What is an allocation?
 
-Time on the HPC system is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/hpc/allocations).
+Time on the HPC system is allocated as Service Units (SUs). One SU corresponds to one core-hour. Multiple SUs make up what is called an allocation (e.g., a new allocation = 100K SUs). Allocations are managed through [Grouper](https://groups.identity.virginia.edu/) (requires VPN connection) groups. These groups must be created by the Principal Investigators (PIs) prior to submitting an allocation request. Full details can be found [here](/userinfo/hpc/access).
 
 ## How can I request an allocation?
 
-The different Service Unit (SU) allocation types are explained in [this article](/userinfo/hpc/allocations/#allocation-types). It includes links to our allocation request webforms.
+The different Service Unit (SU) allocation types are explained in [this article](/userinfo/hpc/access/#allocation-types). It includes links to our allocation request webforms.
 
 ## How do I check my allocation status on Rivanna/Afton? {#how-do-i-check-my-allocation-status-on-rivanna}
 
@@ -135,7 +209,7 @@ If you don't see your allocation, it may mean that you've been removed from the 
 
 To check an allocation's expiration date run `allocations -a <allocation group>` command.  Alternatively, run `mam-list-allocations`.
 
-Only [Standard Allocations](/userinfo/hpc/allocations/#standard-allocations) and [Instructional Allocations](/userinfo/hpc/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/hpc/access/#standard-allocations) and [Instructional Allocations](/userinfo/hpc/access/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/access/#allocation-purchases) never expire.
 
 ## How are Service Units Reserved?
 
@@ -144,13 +218,17 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
-Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and largemem queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
+Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and interactive queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). Legacy MyGroups groups created before November 28th, 2023, can be accessed through the "Legacy MyGroups" folder on  [Grouper](https://groups.identity.virginia.edu/).
 
 ## How do I check allocation usage of individual group members?
 Please visit [here](/userinfo/hpc/slurm/#usage-report) to see how to generate an allocation usage report.
+
+## How can I estimate the expected SU consumption for a new job?
+
+We have developed a utility in Open OnDemand (OOD) called the [Slurm Script Generator](https://ood.hpc.virginia.edu/pun/sys/UVASlurmScriptGenerator). This tool generates a Slurm script based on the parameters specified by the user. Additionally, it estimates the number of Service Units (SUs) that will be billed based on the time requested in the script.
 
 ## I submitted a job and received an error “Invalid account or account/partition combination specified”. What should I do?
 All resource requests through the Open OnDemand interactive apps or through slurm batch jobs require you to specify an allocation for your job. If you do not input an allocation name, you will get this error.
@@ -160,7 +238,7 @@ If you are experiencing this error and you have input an allocation, verify what
 ## I submitted a job and receive an error "Insufficient balance. Applying funds failure for JobId=".  What should I do?
 The error indicates that your allocation group does not have enough service units to execute the job. Check your allocation status as described [here](#how-do-i-check-my-allocation-status-on-rivanna). Also verify that your allocation has not expired, see [here](#how-do-i-check-an-allocations-expiration-date).
 
-Only [Standard Allocations](/userinfo/hpc/allocations/#standard-allocations), and [Instructional Allocations](/userinfo/hpc/allocations/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/allocations/#allocation-purchases) never expire.
+Only [Standard Allocations](/userinfo/hpc/access/#standard-allocations), and [Instructional Allocations](/userinfo/hpc/access/#instructional-allocations) have an expiration date. PIs may request renewal of their expired allocation. [Purchased Allocations](/userinfo/hpc/access/#allocation-purchases) never expire.
 
 - - -
 
@@ -237,7 +315,6 @@ Queues are set up to emphasize one-core (serial or threaded), multi-node paralle
 
 - Serial jobs requiring only 1 compute node: **standard**
 - Parallel jobs requiring up to 50 compute notes: **parallel**
-- Jobs requiring a large amount of memory (60GB+): **largemem**
 - Jobs requiring the use of GPUs: **gpu**
 - Jobs for interactive sessions or quick tests of code:  **interactive**
 
@@ -310,6 +387,12 @@ dos2unix myscript.slurm
 ```
 It will not hurt to run `dos2unix` on a file that doesn't need it. Sometimes you get `{^M}` character at the end of every line when the file was imported from Windows environment. `dos2unix` usually takes care of the problem, but not 100% all the time.
 
+## How do I check how much SU's my job has burnt?
+
+To find out how many Service Units (SUs) a specific job has consumed, users can run the following command. Here the value under the `Amount` column shows the amount of SUs consumed. The time-frame can be controlled using the `-s`(starting time) and `-e`(end time) flags.
+```
+$  mam-list-transactions -a <allocation-name> -s 2024-11-01 -e 2024-12-03  # -s:starting date   -e: end date
+```
 
 ## How do I check the efficiency of my completed jobs?
 Run the command `seff` on the Slurm job ID:
@@ -332,12 +415,22 @@ udc-ba34-36-deepLearning$
 
 The output of this command is also contained in the email sent by Slurm once your job completes.
 
+## My jobs are failing due to an incorrect environment setup, but I am loading my modules and/or conda environments correctly in my job script. What is wrong?
+
+When submitting jobs using sbatch, Slurm will remember the environment that you were working in. This means that loaded modules, activated conda environments, and generally all the environment variables set in the terminal prior to job submission will follow through into your job. A way to avoid this issue from happening is to include the following line into your Slurm script:
+
+```
+#SBATCH --export=NONE
+```
+
+This makes it so that Slurm does not carry over any environment variables into your running job. Be sure to include the necessary `module load` or `conda activate` commands in your script to run your code. If you are using srun in your Slurm script, see an example script [here](/userinfo/hpc/software/miniforge/#mpi)
+
 - - -
 
 # Storage Management
 
 ## What storage options are available to me to use on Rivanna/Afton?
-All users are provided a 50-GB home directory for longer-term storage.  This directory provides "snapshots" though it is not backed up.  Each user also is provided 10TB of temporary "scratch" storage accessible as `/scratch/$USER` where `$USER` will stand for your ID.  Scratch storage is fast but is not backed up in any way.
+All users are provided a 200-GB home directory for longer-term storage.  This directory provides "snapshots" though it is not backed up.  Each user also is provided 10TB of temporary "scratch" storage accessible as `/scratch/$USER` where `$USER` will stand for your ID.  Scratch storage is fast but is not backed up in any way.
 
 If the free storage is not sufficient, you need snapshots of your files, or you wish to share space among a research group, the group should lease storage.
 
@@ -376,7 +469,7 @@ find . -type f | cut -d/ -f2 | sort | uniq -c
 ```
 
 ## How long can I store files in `/scratch`?
-`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/hpc/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/storage/non-sensitive-data/#public--moderately-sensitive-data-storage).
+`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/hpc/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/hpc/storage).
 
 ## How do I share data in my `/scratch` or leased storage with a colleague?
 To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on UVA HPC, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.

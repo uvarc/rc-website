@@ -11,11 +11,12 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_hariprasad_periyasamy.jpeg"
 subjects = [
-  "web-development", "hugo"
+  "python, software"
 ]
+active = true
 +++
 
-Hari is currently a second-year UVA student pursuing computer science and applied stats with a concentration in data science. Primarily, his experience has been web development, specifically with TypeScript, React and Tailwind applications. At Research computing, he has been helping out with the websites by working with Hugo. In the future, he is hoping to branch out into machine learning and statistical analysis, falling in line with his area of focus. 
+Hari is currently a third-year UVA student pursuing computer science and applied statistics with a concentration in data science. At Research computing, he has helped out with the maintenance of the website, which is based in Hugo. He has also helped out on the software development side of research computing to create some Flask-based APIs in python. In the future, he is hoping to explore machine learning and statistical analysis, falling in line with his area of focus. 
 
 ##### Education
 

@@ -40,7 +40,7 @@ These services and applications are accessible through drop-down boxes on the me
 
 
 # File Explorer
-File Explorer makes browsing and managing small files easy. Rivanna and Afton have multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage ([/scratch](/userinfo/storage/non-sensitive-data/#scratch)) where large data sets can be staged for job processing. Users can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage page](/userinfo/storage) for more information.
+File Explorer makes browsing and managing small files easy. Rivanna and Afton have multiple locations to store your files with different limits and policies. Specifically, each user has a relatively small amount of permanent storage in his/her home directory and a large amount of temporary storage ([/scratch](/userinfo/hpc/storage)) where large data sets can be staged for job processing. Users can also lease storage that is accessible on Rivanna. [Contact Research Computing](/support) or visit the [storage page](/userinfo/storage) for more information.
 
 The file explorer provides these basic functions:
 
@@ -119,7 +119,7 @@ The Queue Status app provides detailed information on jobs queued and running in
 
 ## Check Scratch For Purge
 
-According to [UVA RC policy](/2024/07/reinstatement-of-file-purging-of-personal-/scratch-files-on-afton-and-rivanna), files in the `/scratch` directory that have not been accessed for over 90 days will be permanently deleted or 'purged'. The Check Scratch For Purge app allows you to see which files are at risk of being purged and download a list of their filenames. It displays the output of the command `check-scratch-for-purge`.
+According to [UVA RC policy](/2024/07/reinstatement-of-file-purging-of-personal-/scratch-files-on-afton-and-rivanna), files in the `/scratch` directory that have not been accessed for over 90 days will be permanently deleted or 'purged'. The Check Scratch For Purge app allows you to see which files are at risk of being purged and download a list of their filenames. It displays the output of the command `check-scratch-for-purge`, showing a list of files ordered from the oldest last accessed to the most recently accessed.
 
 ## Slurm Script Generator
 

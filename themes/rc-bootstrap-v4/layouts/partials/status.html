@@ -63,17 +63,19 @@ function refreshStatusTable(){
     var statusData = '';
     $.each(data, function(key, value) {
       var title = value.title;
-      if (title === 'Rivanna') {
-        title = 'Afton/'+title;
+      if (title !== 'Skyline' ) {
+        if (title === 'Rivanna') {
+          title = 'Afton/'+title;
+        }
+        statusData += '<tr>';
+        statusData += '<td style="vertical-align:middle;" valign="middle"><a href="'+value.url+'" style="text-decoration:none;color:black;">'+title+'</a></td>';
+        //if (value.system == "standard") {
+        //    statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src=/images/status/red.png /></td>';
+        //} else {
+        statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src='+value.image+' /></td>';
+        //}
+        statusData += '</tr>';
       }
-      statusData += '<tr>';
-      statusData += '<td style="vertical-align:middle;" valign="middle"><a href="'+value.url+'" style="text-decoration:none;color:black;">'+title+'</a></td>';
-      //if (value.system == "standard") {
-      //    statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src=/images/status/red.png /></td>';
-      //} else {
-      statusData += '<td class="" style="vertical-align:middle;" valign="middle" align="center"><img style="" src='+value.image+' /></td>';
-      //}
-      statusData += '</tr>';
     });
     $('#statusBody').html(statusData);
   });

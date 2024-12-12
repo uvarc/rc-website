@@ -44,7 +44,7 @@ Once the request has been submitted, the PI will receive a notification that the
 
 {{% group_creation_tip %}}
 
-# Public & Moderately Sensitive Data Storage Systems {#public--moderately-sensitive-data-storage}
+# Public & Moderately Sensitive Data Storage Systems {#public-moderately-sensitive-data-storage}
 
 `/home`, `/scratch`, and `/project` storage are based on a Linux file system. Users can invoke generic Linux commands to manage files and directories (`mv`, `cp`, `mkdir`), manage permissions (`chmod`, `chown`) and navigate the file system (`cd`, `ls`, `pwd`).  If you or your collaborators are unfamiliar with some of these commands, we encourage you to take time to review some of the material below:
 

@@ -7,7 +7,7 @@
 #SBATCH -n 9
 
 module purge
-module load anaconda
+module load miniforge
 source activate rnaseq
 
 snakemake -p -j 8

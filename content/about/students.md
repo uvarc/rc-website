@@ -31,9 +31,13 @@ For any questions, please email <a href="mailto:rc-studentjobs@virginia.edu">rc-
   {{< current-students >}}
 {{< /rawhtml >}}
 
-<strong style="font-size: 24px;"> Recent Projects </strong>
+<h3 style="margin-top: 2rem; margin-bottom: 2rem">Interested in Becoming a Student Worker?</h3>
 
-{{< rawhtml >}}
-  {{< student-projects >}}
-{{< /rawhtml >}}
+{{< button 
+   button-url="https://uva.wd1.myworkdayjobs.com/UVAStudentJobs/job/Charlottesville-VA/Research-Computing-Student-Worker--Student-Wage-_R0066673" 
+   button-class="primary" 
+   button-text="Apply for the Student Worker Position" 
+>}}
+
+
 
