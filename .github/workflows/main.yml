@@ -83,7 +83,7 @@ jobs:
             --max-connections=10
             --accepted-status-codes=200..300,301,403,999,429
             --skip-tls-verification
-            --timeout=60
+            --timeout=200
     
   Slack:
     name: Error Notification
