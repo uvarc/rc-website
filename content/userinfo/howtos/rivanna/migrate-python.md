@@ -19,7 +19,7 @@ You have installed Python packages locally in one version and now wish to use th
 You will need to load the module for the newer Python version. For this example,
 
 {{< code-snippet >}}
-module load anaconda/2020.11-py3.8
+module load miniforge
 {{< /code-snippet >}}
 
 # Pip
@@ -62,7 +62,7 @@ pip install --user -r requirements.txt
 
 # Conda
 
-Despite the `-py3.8` suffix in the Anaconda module, you can create/load a conda environment that uses a different Python version. Suppose the environment name is `myenv`. You can either update the existing environment or create a new one.
+You can create/load a conda environment that uses a different Python version with the Miniforge module. Suppose the environment name is `myenv`. You can either update the existing environment or create a new one.
 
 ## Update Python in the old environment
 
