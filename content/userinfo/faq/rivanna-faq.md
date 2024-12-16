@@ -32,13 +32,14 @@ Use an SSH client from a campus-connected machine and connect to `login.hpc.virg
 
 Please note that the old Domain Name System (DNS) entries for logging into Rivanna/Afton HPC have been removed. Please refer to the table below for the updated login names.
 
+{{% off-campus %}}
+
 |Old|New|
 |---|---|
-|rivanna.hpc.virginia.edu|login.hpc.virginia.edu|
-|rivanna-desktop.hpc.virginia.edu|fastx.hpc.virginia.edu|
-|rivanna-portal.hpc.virginia.edu| ood.hpc.virginia.edu|
+|rivanna.hpc.virginia.edu -> | login.hpc.virginia.edu|
+|rivanna-desktop.hpc.virginia.edu -> | fastx.hpc.virginia.edu|
+|rivanna-portal.hpc.virginia.edu -> | ood.hpc.virginia.edu|
 
-{{% off-campus %}}
 
 ## How do I reset my current password / obtain a new password? {#how-do-i-reset-my-current-password-obtain-a-new-password}
 Access to the HPC cluster requires a valid ITS (Netbadge) password. If you are unable to log in, you should first try resetting your ITS password [here](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=2f47ff87dbf6c744f032f1f51d961967).  If the problem persists, contact ITS through their online [Helpdesk](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=15ff3b8fdb3ac744f032f1f51d9619c9).  Keep in mind that ITS requires annual resetting of your password.  If you see a "password expired" message, you will need to change it through ITS.
