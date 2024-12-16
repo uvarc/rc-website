@@ -1,0 +1,34 @@
+{{ $hardware := index $.Site.Data.service.hardware 0}}
+{{ $columns := index $hardware "columns" }}
+{{ $options := index $hardware "options" }}
+
+<table class="table" style="margin-top:2rem;">
+    <thead class="thead-dark" style="">
+      <tr>
+        {{ range $columns }}
+            <th scope="col">{{ . }}</th>
+        {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+         {{ range $options }}
+         <tr>
+             <td>{{ .system }}</td>
+             <td>{{ .cores_per_node }}</td>
+             <td>{{ .memory_per_node }}</td>
+             <td>{{ .speciality_hardware }}</td>
+             <td>{{ .gpu_memory_per_device }}</td>
+             <td>{{ .gpu_devices_per_node }}</td>
+             <td>{{ .number_of_nodes }}</td>
+             <td>{{ .su_per_cpu_hour }}</td>
+             <td>{{ .su_per_gb_hour }}</td>
+             <td>{{ .su_per_gpu_hour }}</td>
+         </tr>
+        {{ end }}
+      </tr>
+    </tbody>
+  </table>
+
+  
+  

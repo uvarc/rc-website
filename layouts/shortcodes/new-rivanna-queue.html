@@ -1,0 +1,32 @@
+{{ $job_queues := index $.Site.Data.service.job_queues 0}}
+{{ $columns := index $job_queues "columns" }}
+{{ $options := index $job_queues "options" }}
+
+<table class="table" style="margin-top:2rem;">
+    <thead class="thead-dark" style="">
+      <tr>
+        {{ range $columns }}
+            <th scope="col">{{ . }}</th>
+        {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+         {{ range $options }}
+         <tr>
+             <td> {{ .partition }} </td>
+             <td> {{ .purpose }} </td>
+             <td> {{ .max_time_per_job }} </td>
+             <td> {{ .max_nodes_per_job }} </td>
+             <td> {{ .max_cores_per_job }} </td>
+             <td> {{ .max_cores_per_node }} </td>
+             <td> {{ .default_mem_per_core }} </td>
+             <td> {{ .max_mem_per_node_per_job }}</td>
+         </tr>
+        {{ end }}
+      </tr>
+    </tbody>
+  </table>
+
+  
+  

@@ -18,6 +18,6 @@ The Biocomplexity Institute at the University of Virginia has been at the forefr
 
 <https://nssac.bii.virginia.edu/covid-19/dashboard/>
 
-Other COVID-19 resources from the UVA Biocomplexity Institute:
-
-<https://covid19.biocomplexity.virginia.edu/>
+<!-- Other COVID-19 resources from the UVA Biocomplexity Institute:
+Dead Link
+<https://covid19.biocomplexity.virginia.edu/> -->

@@ -2,20 +2,22 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-12-04T00:00:00-05:00"
-title = "HPC Maintenance:  , 202"
+date = "2025-01-01T00:00:00-05:00"
+title = "HPC Maintenance: Jan 7, 2025"
 draft = true
 tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}The HPC cluster will be down for maintenance on <strong>Tuesday, Dec 12, 2024</strong> beginning at 6 a.m.{{< /alert-green >}}
+{{< alert-green >}}The HPC cluster will be down for maintenance on <strong>Tuesday, Jan 7, 2025</strong> beginning at 6 am.{{< /alert-green >}}
 
 You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until the cluster is returned to service.
 
-All systems are expected to return to service by **Wednesday,**
+All systems are expected to return to service by **Wednesday, Jan 8** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
+
+### Dedicated Compute/Charge Rate
 
 ### Modules
 

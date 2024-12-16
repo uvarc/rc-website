@@ -44,7 +44,7 @@ Your instance of the Desktop app will run on a HPC compute node. So it will need
 
     * **Partition:** UVA HPC has different types of compute nodes that are organized in [partitions](/userinfo/hpc/#job-queues) based on the type of processing they can do.  Most of the time you will select the `Standard` or `Dev` partition.  If you are running machine or deeplearning models that support GPUs, you will want to use the `GPU` partition.
     * **Number of hours:** The number of hours defines the amount of time that your session will be active.  Beware--when time runs out the session will end without warning.
-    * **Allocation (SUs):** An [allocation](/userinfo/hpc/allocations) is a special Grouper (requires VPN connection) group that holds the service units you may use for your computation.  You may be a member of multiple allocation groups.
+    * **Allocation (SUs):** An [allocation](/userinfo/hpc/access) is a special Grouper (requires VPN connection) group that holds the service units you may use for your computation.  You may be a member of multiple allocation groups.
 
       When done filling in the resources, click on the blue “Launch” button at the bottom of the form.
 

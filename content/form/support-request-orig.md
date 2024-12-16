@@ -62,7 +62,7 @@ private = true
       <option id="sentinel" value="Sentinel">Sentinel System/Software</option>
       <option id="other" value="Other">Other</option>
     </select>
-    <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general HPC support questions. Or submit an <a href="/userinfo/hpc/allocations/#allocation-types" style="font-weight:bold;">Allocation Request</a>.</div>
+    <div id="rivanna-help" style="font-size:90%;" class="form-text text-muted">Use this form for general HPC support questions. Or submit an <a href="/userinfo/hpc/access/#allocation-types" style="font-weight:bold;">Allocation Request</a>.</div>
     <div id="storage-help" style="font-size:90%;" class="form-text text-muted">Use this form for storage questions. Or submit a <a href="/form/storage/" style="font-weight:bold;">storage request</a>.</div>
     <div id="omero-help" style="font-size:90%;" class="form-text text-muted">Use this form for general Omero questions. Or <a href="/form/omero/" style="font-weight:bold;">request Omero access</a>.</div>
     <div id="container-help" style="font-size:90%;" class="form-text text-muted">Use this form for general queries about containerized services. Or <a href="/form/container/" style="font-weight:bold;">request a container service</a>.</div>
