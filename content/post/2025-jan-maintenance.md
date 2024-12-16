@@ -19,6 +19,15 @@ All systems are expected to return to service by **Wednesday, Jan 8** at 6 am.
 
 ### Dedicated Compute/Charge Rate
 
+### Removed old DNS names
+
+The old Domain Name System (DNS) entries for logging into Rivanna/HPC have been removed. Please refer to the table below for the updated login names.
+|Old|New|
+|---|---|
+|rivanna.hpc.virginia.edu|login.hpc.virginia.edu|
+|rivanna-desktop.hpc.virginia.edu|fastx.hpc.virginia.edu|
+|rivanna-portal.hpc.virginia.edu| ood.hpc.virginia.edu|
+
 ### Modules
 
 - Apptainer will be upgraded from 1.2.2 to 1.3.4. There is no change to the containers themselves, and users do not need to rebuild their own containers.
