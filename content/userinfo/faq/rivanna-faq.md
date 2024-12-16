@@ -126,7 +126,7 @@ The following table might help you decide which model suits you the best.
       <tr>
         <th scope="row">Queue times</th>
         <td>System load dependent; standard alloc: default priority; paid alloc: shorter than standard allocation; no preemption</td>
-        <td>None(assuming no contention for the dedicated by other group members</td>
+        <td>None(assuming no contention for the dedicated resources by other group members)</td>
       </tr>
       <tr>
         <th scope="row">Max walltime</th>
