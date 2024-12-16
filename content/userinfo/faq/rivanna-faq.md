@@ -126,12 +126,12 @@ The following table might help you decide which model suits you the best.
       <tr>
         <th scope="row">Queue times</th>
         <td>System load dependent; standard alloc: default priority; paid alloc: shorter than standard allocation; no preemption</td>
-        <td>None</td>
+        <td>None(assuming no contention for the dedicated by other group members</td>
       </tr>
       <tr>
         <th scope="row">Max walltime</th>
         <td>3-7d</td>
-        <td>None</td>
+        <td>Typically 1 to 5 years</td>
       </tr>
       <tr>
         <th scope="row">Ideal workload</th>
