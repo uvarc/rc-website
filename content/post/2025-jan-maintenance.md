@@ -21,7 +21,8 @@ All systems are expected to return to service by **Wednesday, Jan 8** at 6 am.
 
 ### Removed old DNS names
 
-The old Domain Name System (DNS) entries for logging into Rivanna/HPC have been removed. Please refer to the table below for the updated login names.
+The old Domain Name System (DNS) entries for logging into Rivanna/Afton HPC have been removed. Please refer to the table below for the updated login names.
+
 |Old|New|
 |---|---|
 |rivanna.hpc.virginia.edu|login.hpc.virginia.edu|
