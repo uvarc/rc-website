@@ -51,23 +51,8 @@ The Large Analytics Resource Awards are aimed to build data or analytics infrast
 <u>Timelines for Small Awards</u>:
 
 
-<table border="1" >
-  <colgroup>
-    <col style="width: 30%;" />
-    <col style="width: 40%;" />
-    <col style="width: 30%;" />
-  </colgroup>
-  <tr>
-    <th>Proposal <br> Deadline</th>
-    <th>Award <br> Announcements</th>
-    <th>Award <br> Start Date </th>
-  </tr>
-  <tr>
-    <td>7 Oct. 2024</td>
-    <td>4 Nov. 2024</td>
-    <td>1 Dec. 2024</td>
-  </tr>
-</table>
+We now are accepting Small Award proposals at any time throughout the year.
+
 
 <br>
   

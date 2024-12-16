@@ -51,4 +51,4 @@ layout = "single"
 
 ## Allocations
 
-* [Allocations Overview](/userinfo/hpc/allocations/)
+* [Allocations Overview](/userinfo/hpc/access/)

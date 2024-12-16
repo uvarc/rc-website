@@ -2,7 +2,7 @@
 description = ""
 title = "Using UVA’s High-Performance Computing Systems"
 draft = false
-date = "2024-01-24T00:00:00-05:00"
+date = "2024-12-03T00:00:00-05:00"
 tags = ["hpc","rivanna","parallel-computing","supercomputer","allocations","queues","storage","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -46,7 +46,7 @@ New users are invited to attend one of our free orientation sessions ("Introduct
     <div class="card-body">
       <h5 class="card-title">Access / Allocations</h5>
       <p class="card-text">Learn how to request an allocation and add collaborators.</p>
-      <a href="/userinfo/hpc/allocations/"><button class="btn btn-primary">Request an Allocation</button></a>
+      <a href="/userinfo/hpc/access/"><button class="btn btn-primary">Request an Allocation</button></a>
     </div>
   </div>
   <div class="card image-shadow col-md-5 p-3 mb-5 bg-white rounded" style="border:solid 1px #ccc;"">
@@ -144,9 +144,9 @@ A high performance computing cluster is typically made up of at least four servi
 
 # System Details
 
-## Hardware Configuration
+## Hardware Configuration {#hardware-configuration}
 
-{{< rivanna-specs >}}
+{{< new-rivanna-specs >}}
 
 {{< systems-boilerplate >}}
 
@@ -154,7 +154,7 @@ A high performance computing cluster is typically made up of at least four servi
 
 Rivanna and Afton are managed resources; users must submit jobs to queues controlled by a resource manager, also known as a queueing system.  The manager in use on Rivanna and Afton is Slurm.  Slurm refers to queues as partitions because they divide the machine into sets of resources.  There is no default partition and each job must request a specific partition.  Partitions and access policies are subject to change, but the following table shows the current structure.  Note that memory may be requested per core or for the overall job.  If the total memory required for the job is greater than the number of cores requested multiplied by the maximum memory per core, the job will be charged for the additional cores whether they are used or not.  In addition, jobs running on more than one core may still require a request of total memory rather than memory per core, since memory per core is enforced by the system but some multicore software packages (ANSYS, for example) may exceed that for a short time even though they never exceed cores x memory/core.
 
-{{< rivanna-queue >}}
+{{< new-rivanna-queue >}}
 
 ### Remarks
 

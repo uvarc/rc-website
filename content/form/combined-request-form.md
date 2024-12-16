@@ -90,16 +90,6 @@ private = true
     </fieldset>
   </div>
 
-  <!-- Grouper/MyGroups Selection -->
-  <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only"> 
-    <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
-    <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
-      <option value="">- Select a group -</option>
-    </select>
-    <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
-    <div id="group-validation-message" class="validation-message"></div>
-  </div>
-
   <!-- Form Fields Container -->
   <div style="margin-bottom:1rem;">
     <!-- Service Unit (SU) Request Fields -->
@@ -124,6 +114,16 @@ private = true
           <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
         </div>
       </fieldset>
+
+      <!-- Grouper/MyGroups Selection -->
+      <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em;"> 
+        <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
+        <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
+          <option value="">- Select a group -</option>
+        </select>
+        <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
+        <div id="group-validation-message" class="validation-message"></div>
+      </div>
       
       <!-- Tier Options (Only shown for New requests) -->
       <div id="allocation-tier" style="margin-top:1em;display:none;" class="new-request-only">
@@ -220,6 +220,16 @@ private = true
           <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
           <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
         </div>
+      </div>
+
+      <!-- Grouper/MyGroups Selection -->
+      <div id="storage-mygroups-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em;"> 
+        <label class="control-label" for="storage-mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
+        <select required="required" class="form-control form-select required" id="storage-mygroups-group" name="storage-mygroups-group">
+          <option value="">- Select a group -</option>
+        </select>
+        <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
+        <div id="storage-group-validation-message" class="validation-message"></div>
       </div>
 
       <!-- Existing Projects for Storage (Only visible for increase/decrease/retire) -->

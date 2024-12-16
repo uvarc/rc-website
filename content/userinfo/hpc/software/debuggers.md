@@ -95,7 +95,7 @@ The Intel Trace Analyzer, which is focused on MPI codes, is included with our In
 
 ## Open|SpeedShop
 
-[Open|SpeedShop](https://openspeedshop.org) is a profiler capable of operating in several different modes, for different "experiments." Unlike many profilers, it requires that only the `-g` flag be enabled.
+[Open|SpeedShop](https://github.com/OpenSpeedShop) is a profiler capable of operating in several different modes, for different "experiments." Unlike many profilers, it requires that only the `-g` flag be enabled.
 
 # Building on the HPC system
 For general information about building your code on the HPC system, please see our [howto](/userinfo/howtos/rivanna/compiler-howto)
