@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-01-01T00:00:00-05:00"
+date = "2025-12-17T00:00:00-05:00"
 title = "HPC Maintenance Schedule for 2025"
 # url = "/maintenance"
 draft = false
@@ -12,7 +12,7 @@ categories = ["feature"]
 
 Rivanna/Afton will be taken down for maintenance in 2025 on the following days: 
 
-- Winter: Tuesday, January 7
+- [Winter: Tuesday, January 7](https://www.rc.virginia.edu/2024/12/hpc-maintenance-jan-7-2025/)
 - Spring: TBD
 - Summer: TBD
 - Fall: TBD
