@@ -468,54 +468,59 @@ $(document).ready(function () {
     }
 
     function populateGrouperMyGroupsDropdown(groups) {
-        const $dropdown = $('#mygroups-group');
-        $dropdown.empty();
+        // Select both dropdowns
+        const $dropdowns = $('#mygroups-group, #storage-mygroups-group');
         
-        // Add default option
-        $dropdown.append(
-            $('<option>', {
-                value: '',
-                text: '- Select a group -',
-                selected: true,
-                disabled: true
-            })
-        );
-        
-        if (Array.isArray(groups) && groups.length > 0) {
-            console.log(`Populating dropdown with ${groups.length} groups`);
+        $dropdowns.each(function() {
+            const $dropdown = $(this);
+            $dropdown.empty();
             
-            // Handle both string arrays and object arrays
-            groups.forEach(group => {
-                const groupName = typeof group === 'string' ? group : group.name;
-                console.log(`Adding group: ${groupName}`);
-                
-                $dropdown.append(
-                    $('<option>', {
-                        value: groupName,
-                        text: groupName
-                    })
-                );
-            });
-            
-            $dropdown.prop('disabled', false);
-        } else {
-            console.log('No groups found to populate');
+            // Add default option
             $dropdown.append(
                 $('<option>', {
                     value: '',
-                    text: 'No groups available - contact support',
+                    text: '- Select a group -',
+                    selected: true,
                     disabled: true
                 })
             );
-            $dropdown.prop('disabled', true);
-        }
+            
+            if (Array.isArray(groups) && groups.length > 0) {
+                console.log(`Populating dropdown with ${groups.length} groups`);
+                
+                // Handle both string arrays and object arrays
+                groups.forEach(group => {
+                    const groupName = typeof group === 'string' ? group : group.name;
+                    console.log(`Adding group: ${groupName}`);
+                    
+                    $dropdown.append(
+                        $('<option>', {
+                            value: groupName,
+                            text: groupName
+                        })
+                    );
+                });
+                
+                $dropdown.prop('disabled', false);
+            } else {
+                console.log('No groups found to populate');
+                $dropdown.append(
+                    $('<option>', {
+                        value: '',
+                        text: 'No groups available - contact support',
+                        disabled: true
+                    })
+                );
+                $dropdown.prop('disabled', true);
+            }
+        });
         
         // Enable form elements that were disabled during loading
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .not('#mygroups-group')
+            .not('#mygroups-group, #storage-mygroups-group')
             .prop('disabled', false);
         
-        $dropdown.trigger('change');
+        $dropdowns.trigger('change');
     }
 
     // API and Data Functions

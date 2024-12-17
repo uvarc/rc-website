@@ -126,7 +126,7 @@ service:
     - "Cores/Node"
     - "Memory/Node"
     - "GPU Memory"
-    - "Yearly Rate"
+    - "Yearly Rate/Node"
     options:
     - hardware: "Rivanna-375"
       cores_per_node: 40

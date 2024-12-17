@@ -30,6 +30,14 @@ A faculty member must first request an allocation on the HPC system. Full detail
 ## How do I log on to Rivanna/Afton?
 Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access the HPC system through our Web-based interface [Open OnDemand](/userinfo/hpc/ood) or [FastX](/userinfo/hpc/logintools/fastx).
 
+Please note that the old Domain Name System (DNS) entries for logging into Rivanna/Afton HPC have been removed. Please refer to the table below for the updated login names.
+
+|Old|New|
+|---|---|
+|rivanna.hpc.virginia.edu -> | login.hpc.virginia.edu|
+|rivanna-desktop.hpc.virginia.edu -> | fastx.hpc.virginia.edu|
+|rivanna-portal.hpc.virginia.edu -> | ood.hpc.virginia.edu|
+
 {{% off-campus %}}
 
 ## How do I reset my current password / obtain a new password? {#how-do-i-reset-my-current-password-obtain-a-new-password}
@@ -40,6 +48,7 @@ ITS controls access to the University’s computing resources, so when you or yo
 
 ## Why am I seeing `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` when I log in?
 Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/hpc/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
+
 
 ## When I try to log in with ssh, nothing happens when I type my password!
 When you type your password, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
@@ -126,12 +135,12 @@ The following table might help you decide which model suits you the best.
       <tr>
         <th scope="row">Queue times</th>
         <td>System load dependent; standard alloc: default priority; paid alloc: shorter than standard allocation; no preemption</td>
-        <td>None</td>
+        <td>None(assuming no contention for the dedicated resources by other group members)</td>
       </tr>
       <tr>
         <th scope="row">Max walltime</th>
         <td>3-7d</td>
-        <td>None</td>
+        <td>Typically 1 to 5 years</td>
       </tr>
       <tr>
         <th scope="row">Ideal workload</th>

@@ -12,13 +12,13 @@ author = "RC Staff"
 
 +++
 
-You can create custom kernels from an Anaconda environment or an Apptainer container.
+You can create custom kernels from a conda environment or an Apptainer container.
 In both cases you'll need to install the `ipykernel` package.
 
-# Jupyter kernel based on Anaconda environment
-To create a custom kernel of the Anaconda environment `myenv` that uses Python 3.7:
+# Jupyter kernel based on a conda environment
+To create a custom kernel of the conda environment `myenv` that uses Python 3.7:
 ```
-module load anaconda
+module load miniforge
 conda create -n myenv python=3.7 ipykernel <other_packages>
 source activate myenv
 python -m ipykernel install --user --name myenv --display-name "My Env"
@@ -27,7 +27,7 @@ python -m ipykernel install --user --name myenv --display-name "My Env"
 Note:
 - You can customize the display name for your kernel. It is shown when you hover over a tile in JupyterLab. If you do not specify a display name, the default `Python [conda env:<ENV_NAME>]` will be shown.
 - A custom kernel cannot be created from the terimnal within an interactive JupyterLab session. This will create the kernel in an incorrect folder and the new tile will not be visible. Perform the above commands either in a FastX terminal, SSH connection, or using HPC Shell Access within Open OnDemand.
-- For more information on Anaconda, please visit [here](/userinfo/hpc/software/python/).
+- For more information on Miniforge, please visit [here](/userinfo/hpc/software/python/).
 
 # Jupyter kernel based on Apptainer container
 For this to work, the `ipykernel` Python package must be installed within the Apptainer container. To create a Jupyter kernel for the container, you can either use our automated script `jkrollout` or do it manually.
