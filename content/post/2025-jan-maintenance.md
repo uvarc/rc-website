@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-01-01T00:00:00-05:00"
+date = "2024-12-17T00:00:00-05:00"
 title = "HPC Maintenance: Jan 7, 2025"
 draft = true
 tags = ["rivanna", "afton"]
@@ -17,7 +17,17 @@ All systems are expected to return to service by **Wednesday, Jan 8** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
 
-### Dedicated Compute/Charge Rate
+### How should I prepare and what to expect on Jan 7, 2025? 
+
+You may continue submitting jobs to the HPC system until the maintenance period begins. However, if the system determines your job won't finish in time, it will not start until the system is back online. The maintenance will involve upgrading the storage client, requiring all compute and login nodes, including the Open OnDemand and FastX portals, to be taken offline. Additionally, Research Project Storage and home directories will be inaccessible. Research Standard Storage will remain accessible via SMB and NFS mounts. The UVA Standard Security Storage Data Transfer Node (DTN) will remain operational throughout the maintenance period.
+
+### Reminder: New Service Unit pricing and consumption rates 
+
+Effective January 8, 2025, Research Computing will implement a new Service Unit (SU) and pricing schedule for HPC services. Standard and instructional SU allocations will remain free of charge. Jobs that start after the maintenance period will be charged based on the updated SU consumption rates determined by the type of hardware utilized. For details on the changes, see the [pricing table](https://www.rc.virginia.edu/userinfo/pricing/)  and [SU consumption rates](https://www.rc.virginia.edu/userinfo/hpc/). Additionally, the default memory allocation per CPU core will decrease to 4GB, reflecting typical usage patterns and aligning with the updated SU model. This change provides more granular control, as SU charges will now account separately for CPU, memory, and specialty hardware like GPUs. If your job encounters an "Out-of-Memory" error, [adjust your memory request accordingly](https://www.rc.virginia.edu/userinfo/hpc/slurm/#configurable-options-in-slurm). 
+
+### Reminder: “Dedicated Computing” as a new service model 
+
+This model allows researchers to lease hardware managed by Research Computing (RC) as an alternative to purchasing their own equipment. It provides dedicated access to HPC resources with no wait times. [See here](https://www.rc.virginia.edu/userinfo/hpc/allocations/#dedicated-computing). 
 
 ### Removed old DNS names
 
@@ -25,9 +35,9 @@ The old Domain Name System (DNS) entries for logging into Rivanna/Afton HPC have
 
 |Old|New|
 |---|---|
-|rivanna.hpc.virginia.edu|login.hpc.virginia.edu|
-|rivanna-desktop.hpc.virginia.edu|fastx.hpc.virginia.edu|
-|rivanna-portal.hpc.virginia.edu| ood.hpc.virginia.edu|
+|rivanna.hpc.virginia.edu ->|login.hpc.virginia.edu|
+|rivanna-desktop.hpc.virginia.edu ->|fastx.hpc.virginia.edu|
+|rivanna-portal.hpc.virginia.edu ->| ood.hpc.virginia.edu|
 
 ### Modules
 
