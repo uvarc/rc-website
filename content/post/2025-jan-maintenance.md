@@ -4,7 +4,7 @@ author = "Staff"
 description = ""
 date = "2024-12-17T00:00:00-05:00"
 title = "HPC Maintenance: Jan 7, 2025"
-draft = true
+draft = false
 tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
