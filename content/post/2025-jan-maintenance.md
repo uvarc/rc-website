@@ -11,8 +11,6 @@ categories = ["feature"]
 
 {{< alert-green >}}The HPC cluster will be down for maintenance on <strong>Tuesday, Jan 7, 2025</strong> beginning at 6 am.{{< /alert-green >}}
 
-You may continue to submit jobs until the maintenance period begins, but if the system determines your job will not have time to finish, it will not start until the cluster is returned to service.
-
 All systems are expected to return to service by **Wednesday, Jan 8** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
@@ -23,7 +21,7 @@ You may continue submitting jobs to the HPC system until the maintenance period 
 
 ### Reminder: New Service Unit pricing and consumption rates 
 
-Effective January 8, 2025, Research Computing will implement a new Service Unit (SU) and pricing schedule for HPC services. Standard and instructional SU allocations will remain free of charge. Jobs that start after the maintenance period will be charged based on the updated SU consumption rates determined by the type of hardware utilized. For details on the changes, see the [pricing table](https://www.rc.virginia.edu/userinfo/pricing/)  and [SU consumption rates](https://www.rc.virginia.edu/userinfo/hpc/). Additionally, the default memory allocation per CPU core will decrease to 4GB, reflecting typical usage patterns and aligning with the updated SU model. This change provides more granular control, as SU charges will now account separately for CPU, memory, and specialty hardware like GPUs. If your job encounters an "Out-of-Memory" error, [adjust your memory request accordingly](https://www.rc.virginia.edu/userinfo/hpc/slurm/#configurable-options-in-slurm). 
+Effective January 8, 2025, Research Computing will implement a new Service Unit (SU) and pricing schedule for HPC services. Standard and instructional SU allocations will remain free of charge. Jobs that start after the maintenance period will be charged based on the updated SU consumption rates determined by the type of hardware utilized. For details on the changes, see the [pricing table](https://www.rc.virginia.edu/userinfo/pricing/)  and [SU consumption rates](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration). Additionally, the default memory allocation per CPU core will decrease to 4GB, reflecting typical usage patterns and aligning with the updated SU model. This change provides more granular control, as SU charges will now account separately for CPU, memory, and specialty hardware like GPUs. If your job encounters an "Out-of-Memory" error, [adjust your memory request accordingly](https://www.rc.virginia.edu/userinfo/hpc/slurm/#configurable-options-in-slurm). 
 
 ### Reminder: “Dedicated Computing” as a new service model 
 
