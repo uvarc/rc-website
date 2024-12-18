@@ -167,10 +167,6 @@ Yes, standard and instructional allocations remain available free of charge.
 
 The service unit balance of your paid allocation will carry forward as is. Please be aware of the new service unit consumption rates which are more directly tied to the hardware type number of cpu cores, memory, and specialty hardware (e.g. GPUs) requested. 
 
-## How is my "Fairshare" impacted by the changed SU charge rates?
-
-Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value. 
-
 ## What hardware options are available under the Dedicated Computing services? 
 
 See [here](/userinfo/hpc/access/#dedicated-computing).
@@ -228,6 +224,10 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
 Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and interactive queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
+
+## How is my "Fairshare" impacted by the changed SU charge rates?
+
+Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value.
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). Legacy MyGroups groups created before November 28th, 2023, can be accessed through the "Legacy MyGroups" folder on  [Grouper](https://groups.identity.virginia.edu/).
