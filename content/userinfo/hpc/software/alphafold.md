@@ -106,15 +106,15 @@ For your convenience, we have prepared a launch script `run` that takes care of 
 
 Below are some Slurm script templates for version 2.3.
 
-## Monomer with `full_dbs`
+### Monomer with `full_dbs`
 
 {{< pull-code file="/static/scripts/alphafold_monomer.slurm" lang="no-highlight" >}}
 
-## Multimer with `reduced_dbs`
+### Multimer with `reduced_dbs`
 
 {{< pull-code file="/static/scripts/alphafold_multimer.slurm" lang="no-highlight" >}}
 
-## Notes
+### Notes
 
 1. Before upgrading to a newer version, please always check the [official repo](https://github.com/deepmind/alphafold) for details, especially on any changes to the parameters, databases, and flags.
 
