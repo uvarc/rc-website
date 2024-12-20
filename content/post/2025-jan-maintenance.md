@@ -54,10 +54,12 @@ The old Domain Name System (DNS) entries for logging into Rivanna/Afton HPC have
 |gatk     | 4.3.0.0, 4.5.0.0 | 4.6.0.0 |
 |irfinder | 1.3.1   | 2.0.1 |
 |kraken2  | 2.1.2   | 2.1.3 |
+|ncbi-vdb | 3.0.2   | 3.1.1 |
 |orca     | 5.0.2   | 5.0.4, 6.0.0 |
 |rapidsai | 23.10   | 24.06 |
 |rust     | 1.66.1  | 1.79.0 |
 |scons    | 4.2.0   | 4.5.2 |
 |smrtlink | 12.0.0.177059 | 13.1.0.221970 |
 |spaceranger| 2.0.1 | 3.1.1 |
+|sratoolkit| 3.0.3 | 3.1.1 |
 {{< /table >}}
