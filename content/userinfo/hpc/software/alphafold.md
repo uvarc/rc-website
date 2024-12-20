@@ -41,7 +41,7 @@ module spider {{% module-firstversion %}}
 
 ## Model Parameters
 
-The AlphaFold 3 model parameters are subject to the Terms of Use defined [here](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md). **Our module does not contain the model parameters; instead, each user must submit their own request to DeepMind.** Visit [here](https://github.com/google-deepmind/alphafold3?tab=readme-ov-file#obtaining-model-parameters) for further instructions.
+The AlphaFold 3 model parameters are subject to the Terms of Use defined [here](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md). **Our module does not contain the model parameters; instead, each user must submit their own request to DeepMind.** Visit [here](https://github.com/google-deepmind/alphafold3#obtaining-model-parameters) for further instructions.
 
 Upon approval you will receive a download url for the file `af3.bin.zst` (~1 GB). Place it in a directory that is not shared with others, e.g. `~/af3`.
 
