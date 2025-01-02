@@ -4,11 +4,11 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2024-01-02T00:00:00-05:00"
+date = "2024-12-19T00:00:00-05:00"
 tags = [
-  "chem",
+  "bio",
   "multi-core",
-  "mpi"
+  "gpu"
 ]
 draft = false
 modulename = "alphafold"
@@ -25,24 +25,50 @@ author = "RC Staff"
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
 # Available Versions
-The current installation of {{% software-name %}} incorporates the most popular packages. To find the available versions and learn how to load them, run:
-
+To find the available versions, run:
 ```
 module spider {{< module-name >}}
 ```
 
-The output of the command shows the available {{% software-name %}} module versions.
-
-For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
+For detailed information about a particular version, including the load command, run `module spider <name/version>`. __For example__:
 ```
 module spider {{% module-firstversion %}}
 ```
 
 {{< module-versions >}}
 
-# AlphaFold Installation Details
+# AlphaFold 3
 
-## Dockerfile
+## Model Parameters
+
+The AlphaFold 3 model parameters are subject to the Terms of Use defined [here](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md). **Our module does not contain the model parameters; instead, each user must submit their own request to DeepMind.** Visit [here](https://github.com/google-deepmind/alphafold3#obtaining-model-parameters) for further instructions.
+
+Upon approval you will receive a download url for the file `af3.bin.zst` (~1 GB). Place it in a directory that is not shared with others, e.g. `~/af3`.
+
+```bash
+DIR=~/af3
+mkdir $DIR
+cd $DIR
+wget <your_download_url>
+unzstd af3.bin.zst
+```
+
+The last command will extract the file into `af3.bin`.
+
+## Slurm Script
+
+{{< pull-code file="/static/scripts/alphafold3.slurm" lang="no-highlight" >}}
+
+If you put the model parameters in a different location, change the value of `--model_dir`. To see the complete list of flags run:
+```
+python $EBROOTALPHAFOLD/app/alphafold/run_alphafold.py --help
+```
+
+Refer to the [official documentation](https://github.com/google-deepmind/alphafold3) for more information.
+
+# AlphaFold 2
+
+## Installation details
 
 We prepared a Docker image based on the official Dockerfile with some modifications. 
 
@@ -76,19 +102,19 @@ For your convenience, we have prepared a launch script `run` that takes care of 
 1. The `max_template_date` is of the form `YYYY-MM-DD`.
 1. Only the database paths in `mark_flags_as_required` of [run_alphafold.py](https://github.com/deepmind/alphafold/blob/main/run_alphafold.py) are included because the optional paths depend on `db_preset` (`full_dbs` or `reduced_dbs`) and `model_preset`.
 
-# Slurm Script
+## Slurm Script
 
 Below are some Slurm script templates for version 2.3.
 
-## Monomer with `full_dbs`
+### Monomer with `full_dbs`
 
 {{< pull-code file="/static/scripts/alphafold_monomer.slurm" lang="no-highlight" >}}
 
-## Multimer with `reduced_dbs`
+### Multimer with `reduced_dbs`
 
 {{< pull-code file="/static/scripts/alphafold_multimer.slurm" lang="no-highlight" >}}
 
-## Notes
+### Notes
 
 1. Before upgrading to a newer version, please always check the [official repo](https://github.com/deepmind/alphafold) for details, especially on any changes to the parameters, databases, and flags.
 

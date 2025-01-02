@@ -30,6 +30,14 @@ A faculty member must first request an allocation on the HPC system. Full detail
 ## How do I log on to Rivanna/Afton?
 Use an SSH client from a campus-connected machine and connect to `login.hpc.virginia.edu`. Instructions for using ssh and other login tools, as well as recommended clients for different operating systems, are [here](/userinfo/hpc/login). You can also access the HPC system through our Web-based interface [Open OnDemand](/userinfo/hpc/ood) or [FastX](/userinfo/hpc/logintools/fastx).
 
+Please note that the old Domain Name System (DNS) entries for logging into Rivanna/Afton HPC have been removed. Please refer to the table below for the updated login names.
+
+|Old|New|
+|---|---|
+|rivanna.hpc.virginia.edu -> | login.hpc.virginia.edu|
+|rivanna-desktop.hpc.virginia.edu -> | fastx.hpc.virginia.edu|
+|rivanna-portal.hpc.virginia.edu -> | ood.hpc.virginia.edu|
+
 {{% off-campus %}}
 
 ## How do I reset my current password / obtain a new password? {#how-do-i-reset-my-current-password-obtain-a-new-password}
@@ -40,6 +48,7 @@ ITS controls access to the University’s computing resources, so when you or yo
 
 ## Why am I seeing `WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED` when I log in?
 Some users logging in through ssh may encounter this error message. If you receive this message, please see [our instructions](/userinfo/hpc/logintools/rivanna-ssh/#troubleshooting) on how to clear this error.
+
 
 ## When I try to log in with ssh, nothing happens when I type my password!
 When you type your password, the ssh program does not echo your typing or move your cursor.  This is normal behavior.
@@ -126,12 +135,12 @@ The following table might help you decide which model suits you the best.
       <tr>
         <th scope="row">Queue times</th>
         <td>System load dependent; standard alloc: default priority; paid alloc: shorter than standard allocation; no preemption</td>
-        <td>None</td>
+        <td>None(assuming no contention for the dedicated resources by other group members)</td>
       </tr>
       <tr>
         <th scope="row">Max walltime</th>
         <td>3-7d</td>
-        <td>None</td>
+        <td>Typically 1 to 5 years</td>
       </tr>
       <tr>
         <th scope="row">Ideal workload</th>
@@ -157,10 +166,6 @@ Yes, standard and instructional allocations remain available free of charge.
 ## What will happen to my unused SUs that I purchased before Jan 7, 2025?
 
 The service unit balance of your paid allocation will carry forward as is. Please be aware of the new service unit consumption rates which are more directly tied to the hardware type number of cpu cores, memory, and specialty hardware (e.g. GPUs) requested. 
-
-## How is my "Fairshare" impacted by the changed SU charge rates?
-
-Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value. 
 
 ## What hardware options are available under the Dedicated Computing services? 
 
@@ -219,6 +224,10 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 ## How are Service Units charged for specialty hardware, e.g. GPU and large memory nodes?
 
 Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and interactive queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
+
+## How is my "Fairshare" impacted by the changed SU charge rates?
+
+Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value.
 
 ## How do I create a group or manage members in my allocations?
 You must use the Grouper (requires VPN connection) interface to create the group, and you must have administrative access to the group. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group. Note that If you need to set up a new group or modify a group that was created after November 28th, 2023, go to [Grouper](https://groups.identity.virginia.edu/). Legacy MyGroups groups created before November 28th, 2023, can be accessed through the "Legacy MyGroups" folder on  [Grouper](https://groups.identity.virginia.edu/).
