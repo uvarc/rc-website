@@ -9,7 +9,6 @@ draft = false
 title = "Slurm Script Generator"
 description = ""
 author = "RC Staff"
-
 +++
 <style>
     iframe {
@@ -18,4 +17,4 @@ author = "RC Staff"
         border: none;
     }
 </style>
-<iframe src="https://adameubanks.github.io/UVASlurmScriptGenerator/"></iframe>
+<iframe src="https://uvarc.github.io/SlurmScriptGenerator/"></iframe>

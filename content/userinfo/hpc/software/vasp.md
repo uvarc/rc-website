@@ -70,11 +70,23 @@ We have received a few reports that a VASP job may occasionally appear to hang a
 LCHARG = .FALSE.
 ```
 
+Alternatively, if you set up VASP jobs using ASE's Python package, you can disbale `CHGCAR` writing using:
+
+```
+lcharg = False
+```
+
 ## `vasp_gam` on AMD node
 When running `vasp_gam` on AMD nodes (i.e. all nodes in `parallel`, Afton nodes in `standard`), ScaLAPACK must be disabled or else your job may hang at the first electronic step. In `INCAR`:
 
 ```
 LSCALAPACK = .FALSE.
+```
+
+The ASE Python pacakge disables ScaLAPACK through the line:
+
+```
+lscalapack = False
 ```
 
 Alternatively, if your job fits on 40 cores or fewer, you can choose not to disable ScaLAPACK and run it in `standard` with the `rivanna` constraint so that it will not land on an AMD node:
@@ -83,3 +95,5 @@ Alternatively, if your job fits on 40 cores or fewer, you can choose not to disa
 #SBATCH -p standard
 #SBATCH -C rivanna
 ```
+
+All ASE tags for the `INCAR` can be found in the [GitHub repository](https://github.com/qsnake/ase/blob/master/ase/calculators/vasp.py) for ASE's VASP calculator.
