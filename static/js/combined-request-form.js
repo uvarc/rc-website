@@ -238,7 +238,19 @@ $(document).ready(function () {
         function processUserResources(apiResponse) {
             const [responseData, statusCode] = apiResponse;
             const previewTableBody = $('#combined-preview-tbody');
-            previewTableBody.empty();
+            const previewTable = $('#existing-resources-preview table');
+            
+            // Show loading state
+            previewTableBody.html(`
+                <tr>
+                    <td colspan="5" class="text-center py-4">
+                        <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        Loading resources...
+                    </td>
+                </tr>
+            `);
         
             // Parse the user_resources JSON string if it's a string
             let userResources;
@@ -246,86 +258,104 @@ $(document).ready(function () {
                 userResources = typeof responseData.user_resources === 'string' 
                     ? JSON.parse(responseData.user_resources) 
                     : responseData.user_resources;
+                    
+                console.log('Parsed user resources:', userResources);
             } catch (error) {
                 console.error('Error parsing user_resources:', error);
-                userResources = [];
-            }
-        
-            if (!userResources || !Array.isArray(userResources) || userResources.length === 0) {
-                console.warn('No user resources found in API response');
-                const emptyState = `
-                    <div class="resource-empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No Active Resources Found</p>
-                        <div class="empty-state-help">
-                            This section will display your active allocations and storage resources once they are approved.
-                            <br>
-                            Use the form below to request new resources or manage existing ones.
-                        </div>
-                    </div>
-                `;
-                $('#existing-resources-preview table').hide();
-                $('#existing-resources-preview').append(emptyState);
+                showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
                 return;
             }
         
-            // Show table and remove any existing empty state
-            $('#existing-resources-preview table').show();
-            $('.resource-empty-state').remove();
+            // Clear loading state
+            previewTableBody.empty();
+        
+            if (!userResources || !Array.isArray(userResources) || userResources.length === 0) {
+                showEmptyState(previewTableBody);
+                return;
+            }
         
             // Process each group's resources
+            let hasResources = false;
             userResources.forEach(groupResource => {
-                const resources = groupResource.resources || {};
+                if (!groupResource || !groupResource.resources) return;
+                
+                const resources = groupResource.resources;
                 
                 // Process HPC Service Units
                 if (resources.hpc_service_units) {
                     Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
+                        const formattedStatus = formatStatus(details.request_status);
                         const row = createResourceRow({
                             type: 'Service Units',
                             projectClass: groupResource.project_name || allocationName.split('-').pop(),
                             group: groupResource.group_name,
                             tier: formatTierName(details.tier),
-                            details: `Status: ${details.request_status}, ` +
-                                    `Requested: ${details.request_count} SUs, ` +
-                                    `Date: ${formatDate(details.request_date)}`
+                            details: `${formattedStatus}${details.request_count ? `, ${details.request_count} SUs` : ''}, Updated: ${formatDate(details.update_date || details.request_date)}`
                         });
                         previewTableBody.append(row);
+                        hasResources = true;
                     });
                 }
         
                 // Process Storage
                 if (resources.storage) {
                     Object.entries(resources.storage).forEach(([storageName, details]) => {
+                        const formattedStatus = formatStatus(details.request_status);
                         const row = createResourceRow({
                             type: 'Storage',
                             projectClass: groupResource.project_name || storageName,
                             group: groupResource.group_name,
                             tier: formatTierName(details.tier),
-                            details: `${details.request_size}TB, ` +
-                                    `Status: ${details.request_status}, ` +
-                                    `Date: ${formatDate(details.request_date)}`
+                            details: `${formattedStatus}${details.request_size ? `, ${details.request_size}TB` : ''}, Updated: ${formatDate(details.update_date || details.request_date)}`
                         });
                         previewTableBody.append(row);
+                        hasResources = true;
                     });
                 }
             });
         
-            // If no resources were found after processing, show empty state
-            if (previewTableBody.children().length === 0) {
-                $('#existing-resources-preview table').hide();
-                const emptyState = `
-                    <div class="resource-empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No Active Resources Found</p>
-                        <div class="empty-state-help">
-                            This section will display your active allocations and storage resources once they are approved.
+            // Show empty state if no resources were found after processing
+            if (!hasResources) {
+                showEmptyState(previewTableBody);
+            } else {
+                previewTable.show();
+            }
+        }
+        
+        function formatStatus(status) {
+            const statusMap = {
+                'active': '<span class="badge bg-success">Active</span>',
+                'pending': '<span class="badge bg-warning text-dark">Pending</span>',
+                'expired': '<span class="badge bg-danger">Expired</span>'
+            };
+            return statusMap[status?.toLowerCase()] || `<span class="badge bg-secondary">${status || 'Unknown'}</span>`;
+        }
+        
+        function showEmptyState(tableBody) {
+            tableBody.html(`
+                <tr>
+                    <td colspan="5" class="text-center py-4">
+                        <i class="fas fa-inbox d-block mb-3" style="font-size: 2rem; color: #6c757d;"></i>
+                        <p class="mb-1">No Resources Found</p>
+                        <small class="text-muted">
+                            This section will display your allocations and storage resources once they are approved.
                             <br>
                             Use the form below to request new resources or manage existing ones.
-                        </div>
-                    </div>
-                `;
-                $('#existing-resources-preview').append(emptyState);
-            }
+                        </small>
+                    </td>
+                </tr>
+            `);
+        }
+        
+        function showErrorState(tableBody, message) {
+            tableBody.html(`
+                <tr>
+                    <td colspan="5" class="text-center py-4">
+                        <i class="fas fa-exclamation-triangle d-block mb-3 text-warning" style="font-size: 2rem;"></i>
+                        <p class="text-danger mb-1">${message}</p>
+                    </td>
+                </tr>
+            `);
         }
     
         // Helper functions for resource preview
