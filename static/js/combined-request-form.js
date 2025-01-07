@@ -367,6 +367,44 @@ $(document).ready(function () {
                 .replace(/"/g, "&quot;")
                 .replace(/'/g, "&#039;");
         }
+    
+        function formatTierName(tier) {
+            const tierMap = {
+                'ssz_standard': 'Standard',
+                'ssz_instructional': 'Instructional',
+                'ssz_paid': 'Paid',
+                'ssz_project': 'Project',
+                'hsz_standard': 'High Security Standard',
+                'hsz_paid': 'High Security Paid',
+                'hsz_project': 'High Security Project'
+            };
+            return tierMap[tier] || tier;
+        }
+    
+        function formatDate(dateString) {
+            if (!dateString) return 'N/A';
+            try {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+            } catch (e) {
+                console.error('Error formatting date:', e);
+                return dateString;
+            }
+        }
+    
+        function escapeHtml(unsafe) {
+            if (typeof unsafe !== 'string') return '';
+            return unsafe
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
 
     // Utility Functions
     const utils = {
