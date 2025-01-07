@@ -572,11 +572,15 @@ $(document).ready(function () {
             console.log("%c Full API Response:", "color: green; font-weight: bold");
             console.log(data);
 
-            // // Check if user is eligible
-            // if (data[0].is_user_resource_request_elligible === false) {
-            //     handleNonEligibleUser();
-            //     return;
-            // }
+            // Check if user is eligible
+            if (data[0].is_user_resource_request_elligible === false) {
+                // Check if user's group is "its-cacs" or "its-all-access"
+                if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
+                    data[0].is_user_resource_request_elligible = true;
+                }
+                handleNonEligibleUser();
+                return;
+            }
 
             // Process groups for dropdown
             if (data[0].user_groups) {
