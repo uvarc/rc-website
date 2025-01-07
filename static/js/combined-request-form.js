@@ -237,6 +237,12 @@ $(document).ready(function () {
 
         function processUserResources(apiResponse) {
             console.log('Processing API Response:', apiResponse);
+            
+            if (!Array.isArray(apiResponse) || apiResponse.length !== 2) {
+                console.error('Invalid API response format:', apiResponse);
+                return;
+            }
+            
             const [responseData, statusCode] = apiResponse;
             const previewTableBody = $('#combined-preview-tbody');
             const previewTable = $('#existing-resources-preview table');
@@ -256,14 +262,18 @@ $(document).ready(function () {
             // Parse the user_resources JSON string
             let userResources;
             try {
-                // First, get the string from responseData
-                const userResourcesStr = responseData.user_resources;
-                console.log('User resources string:', userResourcesStr);
-                
-                // Parse the string into an array
-                userResources = JSON.parse(userResourcesStr);
+                // Handle the case where user_resources might be an array or a string
+                if (typeof responseData.user_resources === 'string') {
+                    userResources = JSON.parse(responseData.user_resources);
+                } else {
+                    userResources = responseData.user_resources;
+                }
                 console.log('Parsed user resources:', userResources);
                 
+                // Ensure userResources is an array
+                if (!Array.isArray(userResources)) {
+                    userResources = [userResources];
+                }
             } catch (error) {
                 console.error('Error parsing user_resources:', error);
                 showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
@@ -273,30 +283,29 @@ $(document).ready(function () {
             // Clear loading state
             previewTableBody.empty();
         
-            if (!userResources || !Array.isArray(userResources) || userResources.length === 0) {
-                showEmptyState(previewTableBody);
-                return;
-            }
-        
-            // Process each group's resources
+            // Process resources
             let hasResources = false;
             userResources.forEach(groupResource => {
                 console.log('Processing group resource:', groupResource);
                 
-                if (!groupResource || !groupResource.resources) return;
+                if (!groupResource || !groupResource.resources) {
+                    console.log('Skipping invalid group resource');
+                    return;
+                }
+        
                 const resources = groupResource.resources;
                 
                 // Process HPC Service Units
                 if (resources.hpc_service_units) {
                     Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
                         console.log('Processing SU allocation:', allocationName, details);
-                        const formattedStatus = formatStatus(details.request_status);
+                        const statusBadge = formatStatus(details.request_status);
                         const row = createResourceRow({
                             type: 'Service Units',
                             projectClass: groupResource.project_name || allocationName.split('-').pop(),
                             group: groupResource.group_name,
                             tier: formatTierName(details.tier),
-                            details: `${formattedStatus}${details.request_count ? `, ${details.request_count} SUs` : ''}, Updated: ${formatDate(details.update_date || details.request_date)}`
+                            details: `${statusBadge} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date || details.request_date)}`
                         });
                         previewTableBody.append(row);
                         hasResources = true;
@@ -307,13 +316,13 @@ $(document).ready(function () {
                 if (resources.storage && Object.keys(resources.storage).length > 0) {
                     Object.entries(resources.storage).forEach(([storageName, details]) => {
                         console.log('Processing storage:', storageName, details);
-                        const formattedStatus = formatStatus(details.request_status);
+                        const statusBadge = formatStatus(details.request_status);
                         const row = createResourceRow({
                             type: 'Storage',
                             projectClass: groupResource.project_name || storageName,
                             group: groupResource.group_name,
                             tier: formatTierName(details.tier),
-                            details: `${formattedStatus}${details.request_size ? `, ${details.request_size}TB` : ''}, Updated: ${formatDate(details.update_date || details.request_date)}`
+                            details: `${statusBadge} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date || details.request_date)}`
                         });
                         previewTableBody.append(row);
                         hasResources = true;
@@ -321,12 +330,68 @@ $(document).ready(function () {
                 }
             });
         
-            // Show empty state if no resources were found after processing
+            // Update display
             if (!hasResources) {
                 showEmptyState(previewTableBody);
             } else {
                 previewTable.show();
+                $('.resource-empty-state').remove();
             }
+        }
+        
+        function formatStatus(status) {
+            if (!status) return '<span class="badge bg-secondary">Unknown</span>';
+            
+            const statusMap = {
+                'active': '<span class="badge bg-success">Active</span>',
+                'pending': '<span class="badge bg-warning text-dark">Pending</span>',
+                'expired': '<span class="badge bg-danger">Expired</span>',
+                'approved': '<span class="badge bg-success">Approved</span>'
+            };
+            return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
+        }
+        
+        function formatDate(dateObj) {
+            if (!dateObj) return 'N/A';
+            try {
+                const timestamp = dateObj.$date || dateObj;
+                const date = new Date(parseInt(timestamp));
+                return date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+            } catch (e) {
+                console.error('Error formatting date:', e);
+                return 'N/A';
+            }
+        }
+        
+        function showEmptyState(tableBody) {
+            tableBody.html(`
+                <tr>
+                    <td colspan="5" class="text-center py-4">
+                        <i class="fas fa-inbox d-block mb-3" style="font-size: 2rem; color: #6c757d;"></i>
+                        <p class="mb-1">No Resources Found</p>
+                        <small class="text-muted">
+                            This section will display your allocations and storage resources once they are approved.
+                            <br>
+                            Use the form below to request new resources or manage existing ones.
+                        </small>
+                    </td>
+                </tr>
+            `);
+        }
+        
+        function showErrorState(tableBody, message) {
+            tableBody.html(`
+                <tr>
+                    <td colspan="5" class="text-center py-4 text-danger">
+                        <i class="fas fa-exclamation-triangle d-block mb-3" style="font-size: 2rem;"></i>
+                        <p class="mb-1">${message}</p>
+                    </td>
+                </tr>
+            `);
         }
         
         function formatStatus(status) {
