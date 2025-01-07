@@ -436,23 +436,23 @@ $(document).ready(function () {
 
     // New Error Handling Functions
 
-    //Eligibility Check
+    // Eligibility Check
 
-    // function handleNonEligibleUser() {
-    //     const message = 'You are not eligible to make resource requests at this time. ' +
-    //                    'Please ensure you have completed all required training and agreements.';
+    function handleNonEligibleUser() {
+        const message = 'You are not eligible to make resource requests at this time. ' +
+                       'Please ensure you have completed all required training and agreements.';
         
-    //     $('#combined-request-form').prepend(
-    //         $('<div>')
-    //             .addClass('alert alert-warning')
-    //             .text(message)
-    //     );
+        $('#combined-request-form').prepend(
+            $('<div>')
+                .addClass('alert alert-warning')
+                .text(message)
+        );
         
-    //     $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-    //         .prop('disabled', true);
+        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+            .prop('disabled', true);
         
-    //     $('#submit').prop('disabled', true);
-    // }
+        $('#submit').prop('disabled', true);
+    }
 
     function handleApiError(error) {
         console.error('API Error:', error);
@@ -574,10 +574,10 @@ $(document).ready(function () {
 
             // Check if user is eligible
             if (data[0].is_user_resource_request_elligible === false) {
-                // Check if user's group is "its-cacs" or "its-all-access"
-                if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
-                    data[0].is_user_resource_request_elligible = true;
-                }
+                // // Check if user's group is "its-cacs" or "its-all-access"
+                // if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
+                //     data[0].is_user_resource_request_elligible = true;
+                // }
                 handleNonEligibleUser();
                 return;
             }
@@ -587,7 +587,7 @@ $(document).ready(function () {
                 populateGrouperMyGroupsDropdown(data[0].user_groups);
             }
 
-            // Process and display user resources - THIS IS THE NEW LINE
+            // Process and display user resources
             processUserResources(data);
 
         } catch (error) {
