@@ -233,310 +233,200 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
-        // Existing User Resources
+    // Existing User Resources
+    function processUserResources(apiResponse) {
+        console.log('Processing API Response:', apiResponse);
+        
+        if (!Array.isArray(apiResponse) || apiResponse.length !== 2) {
+            console.error('Invalid API response format:', apiResponse);
+            return;
+        }
+        
+        const [responseData, statusCode] = apiResponse;
+        const previewTableBody = $('#combined-preview-tbody');
+        const previewTable = $('#existing-resources-preview table');
+        
+        // Show loading state
+        previewTableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4">
+                    <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Loading resources...
+                </td>
+            </tr>
+        `);
 
-        function processUserResources(apiResponse) {
-            console.log('Processing API Response:', apiResponse);
-            
-            if (!Array.isArray(apiResponse) || apiResponse.length !== 2) {
-                console.error('Invalid API response format:', apiResponse);
-                return;
-            }
-            
-            const [responseData, statusCode] = apiResponse;
-            const previewTableBody = $('#combined-preview-tbody');
-            const previewTable = $('#existing-resources-preview table');
-            
-            // Show loading state
-            previewTableBody.html(`
-                <tr>
-                    <td colspan="5" class="text-center py-4">
-                        <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
-                            <span class="visually-hidden">Loading...</span>
-                        </div>
-                        Loading resources...
-                    </td>
-                </tr>
-            `);
-        
-            // Parse the user_resources JSON string
-            let userResources;
-            try {
-                // Handle the case where user_resources might be an array or a string
-                if (typeof responseData.user_resources === 'string') {
-                    userResources = JSON.parse(responseData.user_resources);
-                } else {
-                    userResources = responseData.user_resources;
-                }
-                console.log('Parsed user resources:', userResources);
-                
-                // Ensure userResources is an array
-                if (!Array.isArray(userResources)) {
-                    userResources = [userResources];
-                }
-            } catch (error) {
-                console.error('Error parsing user_resources:', error);
-                showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
-                return;
-            }
-        
-            // Clear loading state
-            previewTableBody.empty();
-        
-            // Process resources
-            let hasResources = false;
-            userResources.forEach(groupResource => {
-                console.log('Processing group resource:', groupResource);
-                
-                if (!groupResource || !groupResource.resources) {
-                    console.log('Skipping invalid group resource');
-                    return;
-                }
-        
-                const resources = groupResource.resources;
-                
-                // Process HPC Service Units
-                if (resources.hpc_service_units) {
-                    Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
-                        console.log('Processing SU allocation:', allocationName, details);
-                        const statusBadge = formatStatus(details.request_status);
-                        const row = createResourceRow({
-                            type: 'Service Units',
-                            projectClass: groupResource.project_name || allocationName.split('-').pop(),
-                            group: groupResource.group_name,
-                            tier: formatTierName(details.tier),
-                            details: `${statusBadge} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date || details.request_date)}`
-                        });
-                        previewTableBody.append(row);
-                        hasResources = true;
-                    });
-                }
-        
-                // Process Storage
-                if (resources.storage && Object.keys(resources.storage).length > 0) {
-                    Object.entries(resources.storage).forEach(([storageName, details]) => {
-                        console.log('Processing storage:', storageName, details);
-                        const statusBadge = formatStatus(details.request_status);
-                        const row = createResourceRow({
-                            type: 'Storage',
-                            projectClass: groupResource.project_name || storageName,
-                            group: groupResource.group_name,
-                            tier: formatTierName(details.tier),
-                            details: `${statusBadge} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date || details.request_date)}`
-                        });
-                        previewTableBody.append(row);
-                        hasResources = true;
-                    });
-                }
-            });
-        
-            // Update display
-            if (!hasResources) {
-                showEmptyState(previewTableBody);
+        // Parse the user_resources JSON string
+        let userResources;
+        try {
+            // Handle the case where user_resources might be an array or a string
+            if (typeof responseData.user_resources === 'string') {
+                userResources = JSON.parse(responseData.user_resources);
             } else {
-                previewTable.show();
-                $('.resource-empty-state').remove();
+                userResources = responseData.user_resources;
             }
-        }
-        
-        function formatStatus(status) {
-            if (!status) return '<span class="badge bg-secondary">Unknown</span>';
+            console.log('Parsed user resources:', userResources);
             
-            const statusMap = {
-                'active': '<span class="badge bg-success">Active</span>',
-                'pending': '<span class="badge bg-warning text-dark">Pending</span>',
-                'expired': '<span class="badge bg-danger">Expired</span>',
-                'approved': '<span class="badge bg-success">Approved</span>'
-            };
-            return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
-        }
-        
-        function formatDate(dateObj) {
-            if (!dateObj) return 'N/A';
-            try {
-                const timestamp = dateObj.$date || dateObj;
-                const date = new Date(parseInt(timestamp));
-                return date.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                });
-            } catch (e) {
-                console.error('Error formatting date:', e);
-                return 'N/A';
+            // Ensure userResources is an array
+            if (!Array.isArray(userResources)) {
+                userResources = [userResources];
             }
+        } catch (error) {
+            console.error('Error parsing user_resources:', error);
+            showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
+            return;
         }
-        
-        function showEmptyState(tableBody) {
-            tableBody.html(`
-                <tr>
-                    <td colspan="5" class="text-center py-4">
-                        <i class="fas fa-inbox d-block mb-3" style="font-size: 2rem; color: #6c757d;"></i>
-                        <p class="mb-1">No Resources Found</p>
-                        <small class="text-muted">
-                            This section will display your allocations and storage resources once they are approved.
-                            <br>
-                            Use the form below to request new resources or manage existing ones.
-                        </small>
-                    </td>
-                </tr>
-            `);
-        }
-        
-        function showErrorState(tableBody, message) {
-            tableBody.html(`
-                <tr>
-                    <td colspan="5" class="text-center py-4 text-danger">
-                        <i class="fas fa-exclamation-triangle d-block mb-3" style="font-size: 2rem;"></i>
-                        <p class="mb-1">${message}</p>
-                    </td>
-                </tr>
-            `);
-        }
-        
-        function formatStatus(status) {
-            if (!status) return '<span class="badge bg-secondary">Unknown</span>';
+
+        // Clear loading state
+        previewTableBody.empty();
+
+        // Process resources
+        let hasResources = false;
+        userResources.forEach(groupResource => {
+            console.log('Processing group resource:', groupResource);
             
-            const statusMap = {
-                'active': '<span class="badge bg-success">Active</span>',
-                'pending': '<span class="badge bg-warning text-dark">Pending</span>',
-                'expired': '<span class="badge bg-danger">Expired</span>'
-            };
-            return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
-        }
-        
-        function formatDate(dateObj) {
-            if (!dateObj) return 'N/A';
-            try {
-                // Handle MongoDB $date objects
-                const timestamp = dateObj.$date || dateObj;
-                const date = new Date(timestamp);
-                return date.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                });
-            } catch (e) {
-                console.error('Error formatting date:', e);
-                return 'N/A';
+            if (!groupResource || !groupResource.resources) {
+                console.log('Skipping invalid group resource');
+                return;
             }
-        }
-        
-        function showEmptyState(tableBody) {
-            tableBody.html(`
-                <tr>
-                    <td colspan="5" class="text-center py-4">
-                        <i class="fas fa-inbox d-block mb-3" style="font-size: 2rem; color: #6c757d;"></i>
-                        <p class="mb-1">No Resources Found</p>
-                        <small class="text-muted">
-                            This section will display your allocations and storage resources once they are approved.
-                            <br>
-                            Use the form below to request new resources or manage existing ones.
-                        </small>
-                    </td>
-                </tr>
-            `);
-        }
-        
-        function showErrorState(tableBody, message) {
-            tableBody.html(`
-                <tr>
-                    <td colspan="5" class="text-center py-4 text-danger">
-                        <i class="fas fa-exclamation-triangle d-block mb-3" style="font-size: 2rem;"></i>
-                        <p class="mb-1">${message}</p>
-                    </td>
-                </tr>
-            `);
-        }
-    
-        // Helper functions for resource preview
-        function createResourceRow({ type, projectClass, group, tier, details }) {
-            return `
-                <tr>
-                    <td>${escapeHtml(type)}</td>
-                    <td>${escapeHtml(projectClass)}</td>
-                    <td>${escapeHtml(group)}</td>
-                    <td>${escapeHtml(tier)}</td>
-                    <td>${escapeHtml(details)}</td>
-                </tr>
-            `;
-        }
-    
-        function formatTierName(tier) {
-            const tierMap = {
-                'ssz_standard': 'Standard',
-                'ssz_instructional': 'Instructional',
-                'ssz_paid': 'Paid',
-                'ssz_project': 'Project',
-                'hsz_standard': 'High Security Standard',
-                'hsz_paid': 'High Security Paid',
-                'hsz_project': 'High Security Project'
-            };
-            return tierMap[tier] || tier;
-        }
-    
-        function formatDate(dateObj) {
-            if (!dateObj) return 'N/A';
-            try {
-                const date = new Date(typeof dateObj === 'object' ? dateObj.$date : dateObj);
-                return date.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
+
+            const resources = groupResource.resources;
+            
+            // Process HPC Service Units
+            if (resources.hpc_service_units) {
+                Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
+                    console.log('Processing SU allocation:', allocationName, details);
+                    const statusBadge = formatStatus(details.request_status);
+                    const row = createResourceRow({
+                        type: 'Service Units',
+                        projectClass: groupResource.project_name || allocationName.split('-').pop(),
+                        group: groupResource.group_name,
+                        tier: formatTierName(details.tier),
+                        details: `${statusBadge} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date || details.request_date)}`
+                    });
+                    previewTableBody.append(row);
+                    hasResources = true;
                 });
-            } catch (e) {
-                console.error('Error formatting date:', e);
-                return 'N/A';
             }
-        }
-    
-        function escapeHtml(unsafe) {
-            if (typeof unsafe !== 'string') return '';
-            return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        }
-    
-        function formatTierName(tier) {
-            const tierMap = {
-                'ssz_standard': 'Standard',
-                'ssz_instructional': 'Instructional',
-                'ssz_paid': 'Paid',
-                'ssz_project': 'Project',
-                'hsz_standard': 'High Security Standard',
-                'hsz_paid': 'High Security Paid',
-                'hsz_project': 'High Security Project'
-            };
-            return tierMap[tier] || tier;
-        }
-    
-        function formatDate(dateObj) {
-            if (!dateObj) return 'N/A';
-            try {
-                const date = new Date(typeof dateObj === 'object' ? dateObj.$date : dateObj);
-                return date.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
+
+            // Process Storage
+            if (resources.storage && Object.keys(resources.storage).length > 0) {
+                Object.entries(resources.storage).forEach(([storageName, details]) => {
+                    console.log('Processing storage:', storageName, details);
+                    const statusBadge = formatStatus(details.request_status);
+                    const row = createResourceRow({
+                        type: 'Storage',
+                        projectClass: groupResource.project_name || storageName,
+                        group: groupResource.group_name,
+                        tier: formatTierName(details.tier),
+                        details: `${statusBadge} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date || details.request_date)}`
+                    });
+                    previewTableBody.append(row);
+                    hasResources = true;
                 });
-            } catch (e) {
-                console.error('Error formatting date:', e);
-                return 'N/A';
             }
+        });
+
+        // Update display
+        if (!hasResources) {
+            showEmptyState(previewTableBody);
+        } else {
+            previewTable.show();
+            $('.resource-empty-state').remove();
         }
-    
-        function escapeHtml(unsafe) {
-            if (typeof unsafe !== 'string') return '';
-            return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+    }
+
+    function formatStatus(status) {
+        if (!status) return '<span class="badge bg-secondary">Unknown</span>';
+        
+        const statusMap = {
+            'active': '<span class="badge bg-success">Active</span>',
+            'pending': '<span class="badge bg-warning text-dark">Pending</span>',
+            'expired': '<span class="badge bg-danger">Expired</span>',
+            'approved': '<span class="badge bg-success">Approved</span>'
+        };
+        return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
+    }
+
+    function formatDate(dateObj) {
+        if (!dateObj) return 'N/A';
+        try {
+            const timestamp = dateObj.$date || dateObj;
+            const date = new Date(parseInt(timestamp));
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        } catch (e) {
+            console.error('Error formatting date:', e);
+            return 'N/A';
         }
+    }
+
+    function showEmptyState(tableBody) {
+        tableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4">
+                    <i class="fas fa-inbox d-block mb-3" style="font-size: 2rem; color: #6c757d;"></i>
+                    <p class="mb-1">No Resources Found</p>
+                    <small class="text-muted">
+                        This section will display your allocations and storage resources once they are approved.
+                        <br>
+                        Use the form below to request new resources or manage existing ones.
+                    </small>
+                </td>
+            </tr>
+        `);
+    }
+
+    function showErrorState(tableBody, message) {
+        tableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4 text-danger">
+                    <i class="fas fa-exclamation-triangle d-block mb-3" style="font-size: 2rem;"></i>
+                    <p class="mb-1">${message}</p>
+                </td>
+            </tr>
+        `);
+    }
+
+    function createResourceRow({ type, projectClass, group, tier, details }) {
+        return `
+            <tr>
+                <td>${escapeHtml(type)}</td>
+                <td>${escapeHtml(projectClass)}</td>
+                <td>${escapeHtml(group)}</td>
+                <td>${escapeHtml(tier)}</td>
+                <td>${details}</td>
+            </tr>
+        `;
+    }
+
+    function formatTierName(tier) {
+        const tierMap = {
+            'ssz_standard': 'Standard',
+            'ssz_instructional': 'Instructional',
+            'ssz_paid': 'Paid',
+            'ssz_project': 'Project',
+            'hsz_standard': 'High Security Standard',
+            'hsz_paid': 'High Security Paid',
+            'hsz_project': 'High Security Project'
+        };
+        return tierMap[tier] || tier;
+    }
+
+    function escapeHtml(unsafe) {
+        if (typeof unsafe !== 'string') return '';
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
 
     // Utility Functions
     const utils = {

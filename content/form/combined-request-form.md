@@ -52,37 +52,30 @@ private = true
     <input class="form-control form-text" type="text" id="requestor-id" name="requestor-id" value="" size="60" maxlength="128" />
   </div>
 
-  <!-- Current Resources Preview -->
-  <div class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
-    <div id="existing-resources-preview">
-        <h5 class="mb-3">Your Current Resources</h5>
-        <div id="resources-loading" class="text-center mb-3" style="display: none;">
-            <div class="spinner-border spinner-border-sm text-primary" role="status">
-                <span class="visually-hidden">Loading resources...</span>
-            </div>
-            <span class="ms-2">Loading your resources...</span>
+<!-- Current Resources Preview -->
+<div id="existing-resources-preview" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+    <h5 class="mb-3">Your Current Resources</h5>
+    <div id="resources-loading" class="text-center mb-3">
+        <div class="spinner-border spinner-border-sm text-primary" role="status">
+            <span class="visually-hidden">Loading resources...</span>
         </div>
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Type</th>
-                    <th scope="col">Project/Class</th>
-                    <th scope="col">Group</th>
-                    <th scope="col">Tier</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody id="combined-preview-tbody">
-                <!-- Initial loading state row -->
-                <tr class="table-placeholder">
-                    <td colspan="5" class="text-center text-muted py-4">
-                        Loading your resources...
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <span class="ms-2">Loading resources...</span>
     </div>
-  </div>
+    <table class="table table-bordered table-hover resource-preview-table">
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Project/Class</th>
+                <th scope="col">Group</th>
+                <th scope="col">Tier</th>
+                <th scope="col">Details</th>
+            </tr>
+        </thead>
+        <tbody id="combined-preview-tbody">
+            <!-- Will be populated by JS -->
+        </tbody>
+    </table>
+</div>
 
   <!-- Resource Type Selection -->
   <div class="container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
