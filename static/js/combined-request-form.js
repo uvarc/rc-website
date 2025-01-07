@@ -236,6 +236,7 @@ $(document).ready(function () {
         // Existing User Resources
 
         function processUserResources(apiResponse) {
+            console.log('Processing API Response:', apiResponse);
             const [responseData, statusCode] = apiResponse;
             const previewTableBody = $('#combined-preview-tbody');
             const previewTable = $('#existing-resources-preview table');
@@ -252,14 +253,17 @@ $(document).ready(function () {
                 </tr>
             `);
         
-            // Parse the user_resources JSON string if it's a string
+            // Parse the user_resources JSON string
             let userResources;
             try {
-                userResources = typeof responseData.user_resources === 'string' 
-                    ? JSON.parse(responseData.user_resources) 
-                    : responseData.user_resources;
-                    
+                // First, get the string from responseData
+                const userResourcesStr = responseData.user_resources;
+                console.log('User resources string:', userResourcesStr);
+                
+                // Parse the string into an array
+                userResources = JSON.parse(userResourcesStr);
                 console.log('Parsed user resources:', userResources);
+                
             } catch (error) {
                 console.error('Error parsing user_resources:', error);
                 showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
@@ -277,13 +281,15 @@ $(document).ready(function () {
             // Process each group's resources
             let hasResources = false;
             userResources.forEach(groupResource => {
-                if (!groupResource || !groupResource.resources) return;
+                console.log('Processing group resource:', groupResource);
                 
+                if (!groupResource || !groupResource.resources) return;
                 const resources = groupResource.resources;
                 
                 // Process HPC Service Units
                 if (resources.hpc_service_units) {
                     Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
+                        console.log('Processing SU allocation:', allocationName, details);
                         const formattedStatus = formatStatus(details.request_status);
                         const row = createResourceRow({
                             type: 'Service Units',
@@ -298,8 +304,9 @@ $(document).ready(function () {
                 }
         
                 // Process Storage
-                if (resources.storage) {
+                if (resources.storage && Object.keys(resources.storage).length > 0) {
                     Object.entries(resources.storage).forEach(([storageName, details]) => {
+                        console.log('Processing storage:', storageName, details);
                         const formattedStatus = formatStatus(details.request_status);
                         const row = createResourceRow({
                             type: 'Storage',
@@ -323,12 +330,31 @@ $(document).ready(function () {
         }
         
         function formatStatus(status) {
+            if (!status) return '<span class="badge bg-secondary">Unknown</span>';
+            
             const statusMap = {
                 'active': '<span class="badge bg-success">Active</span>',
                 'pending': '<span class="badge bg-warning text-dark">Pending</span>',
                 'expired': '<span class="badge bg-danger">Expired</span>'
             };
-            return statusMap[status?.toLowerCase()] || `<span class="badge bg-secondary">${status || 'Unknown'}</span>`;
+            return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
+        }
+        
+        function formatDate(dateObj) {
+            if (!dateObj) return 'N/A';
+            try {
+                // Handle MongoDB $date objects
+                const timestamp = dateObj.$date || dateObj;
+                const date = new Date(timestamp);
+                return date.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                });
+            } catch (e) {
+                console.error('Error formatting date:', e);
+                return 'N/A';
+            }
         }
         
         function showEmptyState(tableBody) {
@@ -350,9 +376,9 @@ $(document).ready(function () {
         function showErrorState(tableBody, message) {
             tableBody.html(`
                 <tr>
-                    <td colspan="5" class="text-center py-4">
-                        <i class="fas fa-exclamation-triangle d-block mb-3 text-warning" style="font-size: 2rem;"></i>
-                        <p class="text-danger mb-1">${message}</p>
+                    <td colspan="5" class="text-center py-4 text-danger">
+                        <i class="fas fa-exclamation-triangle d-block mb-3" style="font-size: 2rem;"></i>
+                        <p class="mb-1">${message}</p>
                     </td>
                 </tr>
             `);
