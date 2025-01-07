@@ -239,8 +239,19 @@ $(document).ready(function () {
             const [responseData, statusCode] = apiResponse;
             const previewTableBody = $('#combined-preview-tbody');
             previewTableBody.empty();
-    
-            if (!responseData.user_resources || !Array.isArray(responseData.user_resources)) {
+        
+            // Parse the user_resources JSON string if it's a string
+            let userResources;
+            try {
+                userResources = typeof responseData.user_resources === 'string' 
+                    ? JSON.parse(responseData.user_resources) 
+                    : responseData.user_resources;
+            } catch (error) {
+                console.error('Error parsing user_resources:', error);
+                userResources = [];
+            }
+        
+            if (!userResources || !Array.isArray(userResources) || userResources.length === 0) {
                 console.warn('No user resources found in API response');
                 const emptyState = `
                     <div class="resource-empty-state">
@@ -257,49 +268,49 @@ $(document).ready(function () {
                 $('#existing-resources-preview').append(emptyState);
                 return;
             }
-    
+        
             // Show table and remove any existing empty state
             $('#existing-resources-preview table').show();
             $('.resource-empty-state').remove();
-    
+        
             // Process each group's resources
-            responseData.user_resources.forEach(groupResource => {
+            userResources.forEach(groupResource => {
                 const resources = groupResource.resources || {};
                 
                 // Process HPC Service Units
                 if (resources.hpc_service_units) {
                     Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
-                        if (details.request_status === 'active') {
-                            const row = createResourceRow({
-                                type: 'Service Units',
-                                projectClass: allocationName,
-                                group: groupResource.group_name,
-                                tier: formatTierName(details.tier),
-                                details: `Expires: ${formatDate(details.request_expiry_date)}`
-                            });
-                            previewTableBody.append(row);
-                        }
+                        const row = createResourceRow({
+                            type: 'Service Units',
+                            projectClass: groupResource.project_name || allocationName.split('-').pop(),
+                            group: groupResource.group_name,
+                            tier: formatTierName(details.tier),
+                            details: `Status: ${details.request_status}, ` +
+                                    `Requested: ${details.request_count} SUs, ` +
+                                    `Date: ${formatDate(details.request_date)}`
+                        });
+                        previewTableBody.append(row);
                     });
                 }
-    
+        
                 // Process Storage
                 if (resources.storage) {
                     Object.entries(resources.storage).forEach(([storageName, details]) => {
-                        if (details.request_status === 'active') {
-                            const row = createResourceRow({
-                                type: 'Storage',
-                                projectClass: groupResource.project_name || storageName,
-                                group: groupResource.group_name,
-                                tier: formatTierName(details.tier),
-                                details: `${details.request_size}TB, Expires: ${formatDate(details.request_expiry_date)}`
-                            });
-                            previewTableBody.append(row);
-                        }
+                        const row = createResourceRow({
+                            type: 'Storage',
+                            projectClass: groupResource.project_name || storageName,
+                            group: groupResource.group_name,
+                            tier: formatTierName(details.tier),
+                            details: `${details.request_size}TB, ` +
+                                    `Status: ${details.request_status}, ` +
+                                    `Date: ${formatDate(details.request_date)}`
+                        });
+                        previewTableBody.append(row);
                     });
                 }
             });
-    
-            // If no active resources were found, show empty state
+        
+            // If no resources were found after processing, show empty state
             if (previewTableBody.children().length === 0) {
                 $('#existing-resources-preview table').hide();
                 const emptyState = `
@@ -343,10 +354,10 @@ $(document).ready(function () {
             return tierMap[tier] || tier;
         }
     
-        function formatDate(dateString) {
-            if (!dateString) return 'N/A';
+        function formatDate(dateObj) {
+            if (!dateObj) return 'N/A';
             try {
-                const date = new Date(dateString);
+                const date = new Date(typeof dateObj === 'object' ? dateObj.$date : dateObj);
                 return date.toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'short',
@@ -354,7 +365,7 @@ $(document).ready(function () {
                 });
             } catch (e) {
                 console.error('Error formatting date:', e);
-                return dateString;
+                return 'N/A';
             }
         }
     
@@ -381,10 +392,10 @@ $(document).ready(function () {
             return tierMap[tier] || tier;
         }
     
-        function formatDate(dateString) {
-            if (!dateString) return 'N/A';
+        function formatDate(dateObj) {
+            if (!dateObj) return 'N/A';
             try {
-                const date = new Date(dateString);
+                const date = new Date(typeof dateObj === 'object' ? dateObj.$date : dateObj);
                 return date.toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'short',
@@ -392,7 +403,7 @@ $(document).ready(function () {
                 });
             } catch (e) {
                 console.error('Error formatting date:', e);
-                return dateString;
+                return 'N/A';
             }
         }
     
