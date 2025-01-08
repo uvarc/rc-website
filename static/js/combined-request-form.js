@@ -527,11 +527,11 @@ $(document).ready(function () {
             console.log(data);
 
             // Check if user is eligible
-            if (data[0].is_user_resource_request_elligible === false) {
-                // // Check if user's group is "its-cacs" or "its-all-access"
-                // if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
-                //     data[0].is_user_resource_request_elligible = true;
-                // }
+            if (data[0].is_user_resource_request_eligible === false) {
+                // Check if user's group is "its-cacs" or "its-all-access"
+                if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
+                    data[0].is_user_resource_request_elligible = true;
+                }
                 handleNonEligibleUser();
                 return;
             }
