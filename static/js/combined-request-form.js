@@ -233,140 +233,200 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
-        // Existing User Resources
-
-        function processUserResources(apiResponse) {
-            const [responseData, statusCode] = apiResponse;
-            const previewTableBody = $('#combined-preview-tbody');
-            previewTableBody.empty();
-    
-            if (!responseData.user_resources || !Array.isArray(responseData.user_resources)) {
-                console.warn('No user resources found in API response');
-                const emptyState = `
-                    <div class="resource-empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No Active Resources Found</p>
-                        <div class="empty-state-help">
-                            This section will display your active allocations and storage resources once they are approved.
-                            <br>
-                            Use the form below to request new resources or manage existing ones.
-                        </div>
+    // Existing User Resources
+    function processUserResources(apiResponse) {
+        console.log('Processing API Response:', apiResponse);
+        
+        if (!Array.isArray(apiResponse) || apiResponse.length !== 2) {
+            console.error('Invalid API response format:', apiResponse);
+            return;
+        }
+        
+        const [responseData, statusCode] = apiResponse;
+        const previewTableBody = $('#combined-preview-tbody');
+        const previewTable = $('#existing-resources-preview table');
+        
+        // Show loading state
+        previewTableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4">
+                    <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
-                `;
-                $('#existing-resources-preview table').hide();
-                $('#existing-resources-preview').append(emptyState);
+                    Loading resources...
+                </td>
+            </tr>
+        `);
+
+        // Parse the user_resources JSON string
+        let userResources;
+        try {
+            // Handle the case where user_resources might be an array or a string
+            if (typeof responseData.user_resources === 'string') {
+                userResources = JSON.parse(responseData.user_resources);
+            } else {
+                userResources = responseData.user_resources;
+            }
+            console.log('Parsed user resources:', userResources);
+            
+            // Ensure userResources is an array
+            if (!Array.isArray(userResources)) {
+                userResources = [userResources];
+            }
+        } catch (error) {
+            console.error('Error parsing user_resources:', error);
+            showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
+            return;
+        }
+
+        // Clear loading state
+        previewTableBody.empty();
+
+        // Process resources
+        let hasResources = false;
+        userResources.forEach(groupResource => {
+            console.log('Processing group resource:', groupResource);
+            
+            if (!groupResource || !groupResource.resources) {
+                console.log('Skipping invalid group resource');
                 return;
             }
-    
-            // Show table and remove any existing empty state
-            $('#existing-resources-preview table').show();
-            $('.resource-empty-state').remove();
-    
-            // Process each group's resources
-            responseData.user_resources.forEach(groupResource => {
-                const resources = groupResource.resources || {};
-                
-                // Process HPC Service Units
-                if (resources.hpc_service_units) {
-                    Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
-                        if (details.request_status === 'active') {
-                            const row = createResourceRow({
-                                type: 'Service Units',
-                                projectClass: allocationName,
-                                group: groupResource.group_name,
-                                tier: formatTierName(details.tier),
-                                details: `Expires: ${formatDate(details.request_expiry_date)}`
-                            });
-                            previewTableBody.append(row);
-                        }
+
+            const resources = groupResource.resources;
+            
+            // Process HPC Service Units
+            if (resources.hpc_service_units) {
+                Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
+                    console.log('Processing SU allocation:', allocationName, details);
+                    const statusBadge = formatStatus(details.request_status);
+                    const row = createResourceRow({
+                        type: 'Service Units',
+                        projectClass: groupResource.project_name || allocationName.split('-').pop(),
+                        group: groupResource.group_name,
+                        tier: formatTierName(details.tier),
+                        details: `${statusBadge} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date || details.request_date)}`
                     });
-                }
-    
-                // Process Storage
-                if (resources.storage) {
-                    Object.entries(resources.storage).forEach(([storageName, details]) => {
-                        if (details.request_status === 'active') {
-                            const row = createResourceRow({
-                                type: 'Storage',
-                                projectClass: groupResource.project_name || storageName,
-                                group: groupResource.group_name,
-                                tier: formatTierName(details.tier),
-                                details: `${details.request_size}TB, Expires: ${formatDate(details.request_expiry_date)}`
-                            });
-                            previewTableBody.append(row);
-                        }
-                    });
-                }
-            });
-    
-            // If no active resources were found, show empty state
-            if (previewTableBody.children().length === 0) {
-                $('#existing-resources-preview table').hide();
-                const emptyState = `
-                    <div class="resource-empty-state">
-                        <i class="fas fa-inbox"></i>
-                        <p>No Active Resources Found</p>
-                        <div class="empty-state-help">
-                            This section will display your active allocations and storage resources once they are approved.
-                            <br>
-                            Use the form below to request new resources or manage existing ones.
-                        </div>
-                    </div>
-                `;
-                $('#existing-resources-preview').append(emptyState);
-            }
-        }
-    
-        // Helper functions for resource preview
-        function createResourceRow({ type, projectClass, group, tier, details }) {
-            return `
-                <tr>
-                    <td>${escapeHtml(type)}</td>
-                    <td>${escapeHtml(projectClass)}</td>
-                    <td>${escapeHtml(group)}</td>
-                    <td>${escapeHtml(tier)}</td>
-                    <td>${escapeHtml(details)}</td>
-                </tr>
-            `;
-        }
-    
-        function formatTierName(tier) {
-            const tierMap = {
-                'ssz_standard': 'Standard',
-                'ssz_instructional': 'Instructional',
-                'ssz_paid': 'Paid',
-                'ssz_project': 'Project',
-                'hsz_standard': 'High Security Standard',
-                'hsz_paid': 'High Security Paid',
-                'hsz_project': 'High Security Project'
-            };
-            return tierMap[tier] || tier;
-        }
-    
-        function formatDate(dateString) {
-            if (!dateString) return 'N/A';
-            try {
-                const date = new Date(dateString);
-                return date.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
+                    previewTableBody.append(row);
+                    hasResources = true;
                 });
-            } catch (e) {
-                console.error('Error formatting date:', e);
-                return dateString;
             }
+
+            // Process Storage
+            if (resources.storage && Object.keys(resources.storage).length > 0) {
+                Object.entries(resources.storage).forEach(([storageName, details]) => {
+                    console.log('Processing storage:', storageName, details);
+                    const statusBadge = formatStatus(details.request_status);
+                    const row = createResourceRow({
+                        type: 'Storage',
+                        projectClass: groupResource.project_name || storageName,
+                        group: groupResource.group_name,
+                        tier: formatTierName(details.tier),
+                        details: `${statusBadge} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date || details.request_date)}`
+                    });
+                    previewTableBody.append(row);
+                    hasResources = true;
+                });
+            }
+        });
+
+        // Update display
+        if (!hasResources) {
+            showEmptyState(previewTableBody);
+        } else {
+            previewTable.show();
+            $('.resource-empty-state').remove();
         }
-    
-        function escapeHtml(unsafe) {
-            if (typeof unsafe !== 'string') return '';
-            return unsafe
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+    }
+
+    function formatStatus(status) {
+        if (!status) return '<span class="badge bg-secondary">Unknown</span>';
+        
+        const statusMap = {
+            'active': '<span class="badge bg-success">Active</span>',
+            'pending': '<span class="badge bg-warning text-dark">Pending</span>',
+            'expired': '<span class="badge bg-danger">Expired</span>',
+            'approved': '<span class="badge bg-success">Approved</span>'
+        };
+        return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
+    }
+
+    function formatDate(dateObj) {
+        if (!dateObj) return 'N/A';
+        try {
+            const timestamp = dateObj.$date || dateObj;
+            const date = new Date(parseInt(timestamp));
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        } catch (e) {
+            console.error('Error formatting date:', e);
+            return 'N/A';
         }
+    }
+
+    function showEmptyState(tableBody) {
+        tableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4">
+                    <i class="fas fa-inbox d-block mb-3" style="font-size: 2rem; color: #6c757d;"></i>
+                    <p class="mb-1">No Resources Found</p>
+                    <small class="text-muted">
+                        This section will display your allocations and storage resources once they are approved.
+                        <br>
+                        Use the form below to request new resources or manage existing ones.
+                    </small>
+                </td>
+            </tr>
+        `);
+    }
+
+    function showErrorState(tableBody, message) {
+        tableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4 text-danger">
+                    <i class="fas fa-exclamation-triangle d-block mb-3" style="font-size: 2rem;"></i>
+                    <p class="mb-1">${message}</p>
+                </td>
+            </tr>
+        `);
+    }
+
+    function createResourceRow({ type, projectClass, group, tier, details }) {
+        return `
+            <tr>
+                <td>${escapeHtml(type)}</td>
+                <td>${escapeHtml(projectClass)}</td>
+                <td>${escapeHtml(group)}</td>
+                <td>${escapeHtml(tier)}</td>
+                <td>${details}</td>
+            </tr>
+        `;
+    }
+
+    function formatTierName(tier) {
+        const tierMap = {
+            'ssz_standard': 'Standard',
+            'ssz_instructional': 'Instructional',
+            'ssz_paid': 'Paid',
+            'ssz_project': 'Project',
+            'hsz_standard': 'High Security Standard',
+            'hsz_paid': 'High Security Paid',
+            'hsz_project': 'High Security Project'
+        };
+        return tierMap[tier] || tier;
+    }
+
+    function escapeHtml(unsafe) {
+        if (typeof unsafe !== 'string') return '';
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
 
     // Utility Functions
     const utils = {
@@ -436,23 +496,23 @@ $(document).ready(function () {
 
     // New Error Handling Functions
 
-    //Eligibility Check
+    // Eligibility Check
 
-    // function handleNonEligibleUser() {
-    //     const message = 'You are not eligible to make resource requests at this time. ' +
-    //                    'Please ensure you have completed all required training and agreements.';
+    function handleNonEligibleUser() {
+        const message = 'You are not eligible to make resource requests at this time. ' +
+                       'Please ensure you have completed all required training and agreements.';
         
-    //     $('#combined-request-form').prepend(
-    //         $('<div>')
-    //             .addClass('alert alert-warning')
-    //             .text(message)
-    //     );
+        $('#combined-request-form').prepend(
+            $('<div>')
+                .addClass('alert alert-warning')
+                .text(message)
+        );
         
-    //     $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-    //         .prop('disabled', true);
+        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+            .prop('disabled', true);
         
-    //     $('#submit').prop('disabled', true);
-    // }
+        $('#submit').prop('disabled', true);
+    }
 
     function handleApiError(error) {
         console.error('API Error:', error);
@@ -572,18 +632,22 @@ $(document).ready(function () {
             console.log("%c Full API Response:", "color: green; font-weight: bold");
             console.log(data);
 
-            // // Check if user is eligible
-            // if (data[0].is_user_resource_request_elligible === false) {
-            //     handleNonEligibleUser();
-            //     return;
-            // }
+            // Check if user is eligible
+            if (data[0].is_user_resource_request_elligible === false) {
+                // // Check if user's group is "its-cacs" or "its-all-access"
+                // if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
+                //     data[0].is_user_resource_request_elligible = true;
+                // }
+                handleNonEligibleUser();
+                return;
+            }
 
             // Process groups for dropdown
             if (data[0].user_groups) {
                 populateGrouperMyGroupsDropdown(data[0].user_groups);
             }
 
-            // Process and display user resources - THIS IS THE NEW LINE
+            // Process and display user resources
             processUserResources(data);
 
         } catch (error) {

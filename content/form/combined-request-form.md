@@ -52,26 +52,30 @@ private = true
     <input class="form-control form-text" type="text" id="requestor-id" name="requestor-id" value="" size="60" maxlength="128" />
   </div>
 
-  <!-- Current Resources Preview -->
-  <div class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
-    <div id="existing-resources-preview">
-      <h5 class="mb-3">Your Current Resources</h5>
-      <table class="table table-bordered table-hover">
+<!-- Current Resources Preview -->
+<div id="existing-resources-preview" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+    <h5 class="mb-3">Your Current Resources</h5>
+    <div id="resources-loading" class="text-center mb-3">
+        <div class="spinner-border spinner-border-sm text-primary" role="status">
+            <span class="visually-hidden">Loading resources...</span>
+        </div>
+        <span class="ms-2">Loading resources...</span>
+    </div>
+    <table class="table table-bordered table-hover resource-preview-table">
         <thead>
-          <tr>
-            <th>Type</th>
-            <th>Project/Class</th>
-            <th>Group</th>
-            <th>Tier</th>
-            <th>Details</th>
-          </tr>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Project/Class</th>
+                <th scope="col">Group</th>
+                <th scope="col">Tier</th>
+                <th scope="col">Details</th>
+            </tr>
         </thead>
         <tbody id="combined-preview-tbody">
-          <!-- Will be populated by API -->
+            <!-- Will be populated by JS -->
         </tbody>
-      </table>
-    </div>
-  </div>
+    </table>
+</div>
 
   <!-- Resource Type Selection -->
   <div class="container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
