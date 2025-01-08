@@ -233,7 +233,7 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
-    // Existing User Resources
+    // Existing User Resources Preview
     function processUserResources(apiResponse) {
         console.log('Processing API Response:', apiResponse);
         
@@ -437,6 +437,53 @@ $(document).ready(function () {
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
     }
+
+    //Existing SU Projects Allocation Preview
+
+    function processAllocationProjects(apiResponse) {
+        console.log("Processing Allocation Projects:", apiResponse);
+    
+        // Extract allocation projects from API response
+        const allocationProjects = apiResponse?.allocationProjects || [];
+        const allocationTbody = $('#allocation-projects-tbody');
+        allocationTbody.empty();
+    
+        if (allocationProjects.length === 0) {
+            // Show empty state
+            $('#existing-projects-allocation table').hide();
+            $('#existing-projects-allocation .allocation-empty-state').remove();
+            $('#existing-projects-allocation').append(`
+                <div class="allocation-empty-state">
+                    <i class="fas fa-cube"></i>
+                    <p>No Active Service Units Found</p>
+                    <div class="empty-state-help">
+                        This section will display your active Service Unit allocations once they are approved.
+                        <br>
+                        Use the form above to request new Service Units or manage existing ones.
+                    </div>
+                </div>
+            `);
+            return;
+        }
+    
+        // Populate the table with allocation projects
+        allocationProjects.forEach(project => {
+            allocationTbody.append(`
+                <tr>
+                    <td>
+                        <input type="radio" name="existing-project-allocation" 
+                               value="${escapeHtml(project.id)}" required>
+                    </td>
+                    <td>${escapeHtml(project.name)}</td>
+                    <td>${escapeHtml(project.group)}</td>
+                    <td>${escapeHtml(project.tier)}</td>
+                </tr>
+            `);
+        });
+    
+        $('#existing-projects-allocation table').show();
+        $('#existing-projects-allocation .allocation-empty-state').remove();
+    }    
 
     // Utility Functions
     const utils = {
@@ -785,78 +832,22 @@ $(document).ready(function () {
             const projects = await fetchUserProjects();
     
             // Handle Service Units (Allocations)
-            const allocationTbody = $('#allocation-projects-tbody');
-            if (projects.allocationProjects && projects.allocationProjects.length > 0) {
-                allocationTbody.empty();
-                projects.allocationProjects.forEach(project => {
-                    allocationTbody.append(`
-                        <tr>
-                            <td>
-                                <input type="radio" name="existing-project-allocation" 
-                                       value="${escapeHtml(project.id)}" required>
-                            </td>
-                            <td>${escapeHtml(project.name)}</td>
-                            <td>${escapeHtml(project.group)}</td>
-                            <td>${escapeHtml(project.tier)}</td>
-                        </tr>
-                    `);
-                });
-                $('#existing-projects-allocation table').show();
-                $('#existing-projects-allocation .allocation-empty-state').remove();
-            } else {
-                // Show empty state for allocations
-                $('#existing-projects-allocation table').hide();
-                $('#existing-projects-allocation .allocation-empty-state').remove();
-                $('#existing-projects-allocation').append(`
-                    <div class="allocation-empty-state">
-                        <i class="fas fa-cube"></i>
-                        <p>No Active Service Units Found</p>
-                        <div class="empty-state-help">
-                            This section will display your active Service Unit allocations once they are approved.
-                            <br>
-                            Use the form above to request new Service Units or manage existing ones.
-                        </div>
-                    </div>
-                `);
-            }
+            populateTableOrEmptyState(
+                projects.allocationProjects,
+                '#allocation-projects-tbody',
+                '#existing-projects-allocation',
+                'No Active Service Units Found',
+                'This section will display your active Service Unit allocations once they are approved.'
+            );
     
             // Handle Storage Projects
-            const storageTbody = $('#storage-projects-tbody');
-            if (projects.storageProjects && projects.storageProjects.length > 0) {
-                storageTbody.empty();
-                projects.storageProjects.forEach(project => {
-                    storageTbody.append(`
-                        <tr>
-                            <td>
-                                <input type="radio" name="existing-project-storage" 
-                                       value="${escapeHtml(project.id)}" required>
-                            </td>
-                            <td>${escapeHtml(project.name)}</td>
-                            <td>${escapeHtml(project.group)}</td>
-                            <td>${escapeHtml(project.tier)}</td>
-                            <td>${escapeHtml(project.sharedSpace)}</td>
-                            <td>${escapeHtml(project.currentSize)} TB</td>
-                        </tr>
-                    `);
-                });
-                $('#existing-projects-storage table').show();
-                $('#existing-projects-storage .storage-empty-state').remove();
-            } else {
-                // Show empty state for storage
-                $('#existing-projects-storage table').hide();
-                $('#existing-projects-storage .storage-empty-state').remove();
-                $('#existing-projects-storage').append(`
-                    <div class="storage-empty-state">
-                        <i class="fas fa-hdd"></i>
-                        <p>No Active Storage Found</p>
-                        <div class="empty-state-help">
-                            This section will display your active storage allocations once they are approved.
-                            <br>
-                            Use the form above to request new storage or manage existing ones.
-                        </div>
-                    </div>
-                `);
-            }
+            populateTableOrEmptyState(
+                projects.storageProjects,
+                '#storage-projects-tbody',
+                '#existing-projects-storage',
+                'No Active Storage Found',
+                'This section will display your active storage allocations once they are approved.'
+            );
     
             return projects;
         } catch (error) {
@@ -865,11 +856,57 @@ $(document).ready(function () {
                 allocationProjects: [],
                 storageProjects: [],
                 userStorageUsage: {
-                    'SSZ Research Standard': 0
-                }
+                    'SSZ Research Standard': 0,
+                },
             };
         }
     }
+    
+    /**
+     * Populates a table or displays an empty state.
+     * @param {Array} projects - The list of projects to populate.
+     * @param {string} tableBodySelector - Selector for the table's <tbody>.
+     * @param {string} containerSelector - Selector for the table's container.
+     * @param {string} emptyMessage - The message to display when no data exists.
+     * @param {string} emptyHelp - The help text to display with the empty message.
+     */
+    function populateTableOrEmptyState(projects, tableBodySelector, containerSelector, emptyMessage, emptyHelp) {
+        const tbody = $(tableBodySelector);
+        const container = $(containerSelector);
+    
+        if (projects && projects.length > 0) {
+            tbody.empty();
+            projects.forEach(project => {
+                tbody.append(`
+                    <tr>
+                        <td>
+                            <input type="radio" name="existing-project-${containerSelector.includes('allocation') ? 'allocation' : 'storage'}" 
+                                   value="${escapeHtml(project.id)}" required>
+                        </td>
+                        <td>${escapeHtml(project.name)}</td>
+                        <td>${escapeHtml(project.group)}</td>
+                        <td>${escapeHtml(project.tier)}</td>
+                        ${tableBodySelector === '#storage-projects-tbody' ? `
+                            <td>${escapeHtml(project.sharedSpace)}</td>
+                            <td>${escapeHtml(project.currentSize)} TB</td>
+                        ` : ''}
+                    </tr>
+                `);
+            });
+            $(`${containerSelector} table`).show();
+            $(`${containerSelector} .allocation-empty-state, .storage-empty-state`).remove();
+        } else {
+            $(`${containerSelector} table`).hide();
+            $(`${containerSelector} .allocation-empty-state, .storage-empty-state`).remove();
+            container.append(`
+                <div class="${containerSelector.includes('allocation') ? 'allocation-empty-state' : 'storage-empty-state'}">
+                    <i class="fas ${containerSelector.includes('allocation') ? 'fa-cube' : 'fa-hdd'}"></i>
+                    <p>${emptyMessage}</p>
+                    <div class="empty-state-help">${emptyHelp}</div>
+                </div>
+            `);
+        }
+    }    
 
     function loadPreviewTable() {
         console.log("Loading preview table");
