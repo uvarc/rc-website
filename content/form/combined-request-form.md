@@ -55,12 +55,16 @@ private = true
 <!-- Current Resources Preview -->
 <div id="existing-resources-preview" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
     <h5 class="mb-3">Your Current Resources</h5>
-    <div id="resources-loading" class="text-center mb-3">
+
+    <!-- Loading Indicator -->
+    <div id="resources-loading" class="text-center mb-3" style="display:none;">
         <div class="spinner-border spinner-border-sm text-primary" role="status">
             <span class="visually-hidden">Loading resources...</span>
         </div>
-        <!-- <span class="ms-2">Loading resources...</span> -->
+        <span>Loading resources...</span>
     </div>
+
+    <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
         <thead>
             <tr>
@@ -72,7 +76,7 @@ private = true
             </tr>
         </thead>
         <tbody id="combined-preview-tbody">
-            <!-- Will be populated by JS -->
+            <!-- Rows will be dynamically injected by JavaScript -->
         </tbody>
     </table>
 </div>
