@@ -234,6 +234,44 @@ $(document).ready(function () {
         .appendTo('head');
 
     // Existing User Resources
+
+        /**
+     * Creates a table row (<tr>) for the resources preview table.
+     * @param {Object} resource - Resource data.
+     * @param {string} resource.type - The type of resource (e.g., "Service Units", "Storage").
+     * @param {string} resource.projectClass - The project/class name for the resource.
+     * @param {string} resource.group - The group name associated with the resource.
+     * @param {string} resource.tier - The tier level for the resource (e.g., "Standard").
+     * @param {string} resource.details - Additional details about the resource.
+     * @returns {string} - The HTML string for the table row.
+     */
+    function createResourceRow({ type, projectClass, group, tier, details }) {
+        return `
+            <tr>
+                <td>${escapeHtml(type)}</td>
+                <td>${escapeHtml(projectClass)}</td>
+                <td>${escapeHtml(group)}</td>
+                <td>${escapeHtml(tier)}</td>
+                <td>${details}</td>
+            </tr>
+        `;
+    }
+
+    /**
+     * Escapes HTML characters to prevent XSS attacks.
+     * @param {string} unsafe - The string to sanitize.
+     * @returns {string} - The sanitized string.
+     */
+    function escapeHtml(unsafe) {
+        if (typeof unsafe !== 'string') return '';
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
     function processUserResources(apiResponse) {
         console.log('Processing API Response:', apiResponse);
     
@@ -392,21 +430,21 @@ $(document).ready(function () {
 
     // Eligibility Check
 
-    function handleNonEligibleUser() {
-        const message = 'You are not eligible to make resource requests at this time. ' +
-                       'Please ensure you have completed all required training and agreements.';
+    // function handleNonEligibleUser() {
+    //     const message = 'You are not eligible to make resource requests at this time. ' +
+    //                    'Please ensure you have completed all required training and agreements.';
         
-        $('#combined-request-form').prepend(
-            $('<div>')
-                .addClass('alert alert-warning')
-                .text(message)
-        );
+    //     $('#combined-request-form').prepend(
+    //         $('<div>')
+    //             .addClass('alert alert-warning')
+    //             .text(message)
+    //     );
         
-        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .prop('disabled', true);
+    //     $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+    //         .prop('disabled', true);
         
-        $('#submit').prop('disabled', true);
-    }
+    //     $('#submit').prop('disabled', true);
+    // }
 
     function handleApiError(error) {
         console.error('API Error:', error);
@@ -530,7 +568,7 @@ $(document).ready(function () {
             if (data[0].is_user_resource_request_eligible === false) {
                 // Check if user's group is "its-cacs" or "its-all-access"
                 if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
-                    data[0].is_user_resource_request_elligible = true;
+                    data[0].is_user_resource_request_eligible = true;
                 }
                 handleNonEligibleUser();
                 return;
