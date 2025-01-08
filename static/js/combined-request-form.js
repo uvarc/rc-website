@@ -234,17 +234,175 @@ $(document).ready(function () {
         .appendTo('head');
 
     // Existing User Resources
+    function processUserResources(apiResponse) {
+        console.log('Processing API Response:', apiResponse);
+        
+        if (!Array.isArray(apiResponse) || apiResponse.length !== 2) {
+            console.error('Invalid API response format:', apiResponse);
+            return;
+        }
+        
+        const [responseData, statusCode] = apiResponse;
+        const previewTableBody = $('#combined-preview-tbody');
+        const previewTable = $('#existing-resources-preview table');
+        
+        // Show loading state
+        previewTableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4">
+                    <div class="spinner-border spinner-border-sm text-primary me-2" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Loading resources...
+                </td>
+            </tr>
+        `);
+    
+        // Parse the user_resources JSON string
+        let userResources;
+        try {
+            userResources = JSON.parse(responseData.user_resources);
+            console.log('Successfully parsed userResources:', userResources);
+        } catch (error) {
+            console.error('Error parsing user_resources:', error);
+            showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
+            return;
+        }
+    
+        // Ensure userResources is an array
+        if (!Array.isArray(userResources)) {
+            userResources = [userResources];
+        }
+    
+        // Clear loading state
+        previewTableBody.empty();
+        let hasResources = false;
+    
+        // Process each resource
+        userResources.forEach(resource => {
+            console.log('Processing resource:', resource);
+    
+            if (!resource || !resource.resources) return;
+    
+            const { resources, group_name, project_name } = resource;
+    
+            // Process HPC Service Units
+            if (resources.hpc_service_units) {
+                Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
+                    console.log('Found HPC allocation:', details);
+                    const statusBadge = formatStatus(details.request_status);
+                    const row = createResourceRow({
+                        type: 'Service Units',
+                        projectClass: project_name || allocationName.split('-').pop(),
+                        group: group_name,
+                        tier: formatTierName(details.tier),
+                        details: `${statusBadge} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date || details.request_date)}`
+                    });
+                    console.log('Created row:', row);
+                    previewTableBody.append(row);
+                    hasResources = true;
+                });
+            }
+    
+            // Process Storage
+            if (resources.storage && Object.keys(resources.storage).length > 0) {
+                Object.entries(resources.storage).forEach(([storageName, details]) => {
+                    console.log('Found storage:', details);
+                    const statusBadge = formatStatus(details.request_status);
+                    const row = createResourceRow({
+                        type: 'Storage',
+                        projectClass: project_name || storageName,
+                        group: group_name,
+                        tier: formatTierName(details.tier),
+                        details: `${statusBadge} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date || details.request_date)}`
+                    });
+                    console.log('Created row:', row);
+                    previewTableBody.append(row);
+                    hasResources = true;
+                });
+            }
+        });
+    
+        // Update display
+        if (!hasResources) {
+            console.log('No resources found after processing');
+            showEmptyState(previewTableBody);
+        } else {
+            console.log('Resources found, showing table');
+            previewTable.show();
+            $('.resource-empty-state').remove();
+        }
+    }
+    
+    // Helper function updates
+    function createResourceRow({ type, projectClass, group, tier, details }) {
+        // Don't escape details since it contains HTML for the badge
+        return `
+            <tr>
+                <td>${escapeHtml(type)}</td>
+                <td>${escapeHtml(projectClass)}</td>
+                <td>${escapeHtml(group)}</td>
+                <td>${escapeHtml(tier)}</td>
+                <td>${details}</td>
+            </tr>
+        `;
+    }
+    
+    function formatStatus(status) {
+        if (!status) return '<span class="badge bg-secondary">Unknown</span>';
+        
+        const statusMap = {
+            'active': '<span class="badge bg-success">Active</span>',
+            'pending': '<span class="badge bg-warning text-dark">Pending</span>',
+            'expired': '<span class="badge bg-danger">Expired</span>',
+            'approved': '<span class="badge bg-success">Approved</span>'
+        };
+        return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
+    }
+    
+    function formatDate(dateObj) {
+        if (!dateObj) return 'N/A';
+        try {
+            const timestamp = dateObj.$date || dateObj;
+            const date = new Date(parseInt(timestamp));
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+        } catch (e) {
+            console.error('Error formatting date:', e);
+            return 'N/A';
+        }
+    }
 
-        /**
-     * Creates a table row (<tr>) for the resources preview table.
-     * @param {Object} resource - Resource data.
-     * @param {string} resource.type - The type of resource (e.g., "Service Units", "Storage").
-     * @param {string} resource.projectClass - The project/class name for the resource.
-     * @param {string} resource.group - The group name associated with the resource.
-     * @param {string} resource.tier - The tier level for the resource (e.g., "Standard").
-     * @param {string} resource.details - Additional details about the resource.
-     * @returns {string} - The HTML string for the table row.
-     */
+    function showEmptyState(tableBody) {
+        tableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4">
+                    <i class="fas fa-inbox d-block mb-3" style="font-size: 2rem; color: #6c757d;"></i>
+                    <p class="mb-1">No Resources Found</p>
+                    <small class="text-muted">
+                        This section will display your allocations and storage resources once they are approved.
+                        <br>
+                        Use the form below to request new resources or manage existing ones.
+                    </small>
+                </td>
+            </tr>
+        `);
+    }
+
+    function showErrorState(tableBody, message) {
+        tableBody.html(`
+            <tr>
+                <td colspan="5" class="text-center py-4 text-danger">
+                    <i class="fas fa-exclamation-triangle d-block mb-3" style="font-size: 2rem;"></i>
+                    <p class="mb-1">${message}</p>
+                </td>
+            </tr>
+        `);
+    }
+
     function createResourceRow({ type, projectClass, group, tier, details }) {
         return `
             <tr>
@@ -257,11 +415,19 @@ $(document).ready(function () {
         `;
     }
 
-    /**
-     * Escapes HTML characters to prevent XSS attacks.
-     * @param {string} unsafe - The string to sanitize.
-     * @returns {string} - The sanitized string.
-     */
+    function formatTierName(tier) {
+        const tierMap = {
+            'ssz_standard': 'Standard',
+            'ssz_instructional': 'Instructional',
+            'ssz_paid': 'Paid',
+            'ssz_project': 'Project',
+            'hsz_standard': 'High Security Standard',
+            'hsz_paid': 'High Security Paid',
+            'hsz_project': 'High Security Project'
+        };
+        return tierMap[tier] || tier;
+    }
+
     function escapeHtml(unsafe) {
         if (typeof unsafe !== 'string') return '';
         return unsafe
@@ -271,94 +437,6 @@ $(document).ready(function () {
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#039;");
     }
-
-    function processUserResources(apiResponse) {
-        console.log('Processing API Response:', apiResponse);
-    
-        // Extract user_resources from the response
-        const userResourcesString = apiResponse[0]?.user_resources;
-    
-        if (!userResourcesString) {
-            console.error('No user resources found in the response.');
-            showErrorState($('#combined-preview-tbody'), 'No resources found for this user.');
-            return;
-        }
-    
-        let userResources;
-        try {
-            // Parse the JSON string
-            userResources = JSON.parse(userResourcesString);
-            console.log('Parsed user resources:', userResources);
-    
-            // Ensure the parsed data is an array
-            if (!Array.isArray(userResources)) {
-                userResources = [userResources];
-            }
-        } catch (error) {
-            console.error('Error parsing user_resources:', error);
-            showErrorState($('#combined-preview-tbody'), 'Failed to load resources. Invalid data format.');
-            return;
-        }
-    
-        const tableBody = $('#combined-preview-tbody');
-        tableBody.empty(); // Clear the table body
-    
-        let hasResources = false;
-    
-        // Process each resource group
-        userResources.forEach(groupResource => {
-            console.log('Processing group resource:', groupResource);
-    
-            if (!groupResource || !groupResource.resources) {
-                console.warn('Skipping invalid group resource.');
-                return;
-            }
-    
-            const resources = groupResource.resources;
-    
-            // Process HPC Service Units
-            if (resources.hpc_service_units) {
-                Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
-                    console.log('Processing HPC Service Unit:', allocationName, details);
-    
-                    const row = createResourceRow({
-                        type: 'Service Units',
-                        projectClass: groupResource.project_name || allocationName.split('-').pop(),
-                        group: groupResource.group_name,
-                        tier: formatTierName(details.tier),
-                        details: `${formatStatus(details.request_status)} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date?.$date || details.request_date?.$date)}`
-                    });
-                    tableBody.append(row);
-                    hasResources = true;
-                });
-            }
-    
-            // Process Storage
-            if (resources.storage && Object.keys(resources.storage).length > 0) {
-                Object.entries(resources.storage).forEach(([storageName, details]) => {
-                    console.log('Processing storage:', storageName, details);
-    
-                    const row = createResourceRow({
-                        type: 'Storage',
-                        projectClass: groupResource.project_name || storageName,
-                        group: groupResource.group_name,
-                        tier: formatTierName(details.tier),
-                        details: `${formatStatus(details.request_status)} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date?.$date || details.request_date?.$date)}`
-                    });
-                    tableBody.append(row);
-                    hasResources = true;
-                });
-            }
-        });
-    
-        // Show a message if no resources are found
-        if (!hasResources) {
-            showEmptyState(tableBody);
-        } else {
-            $('#existing-resources-preview table').show();
-            $('.resource-empty-state').remove();
-        }
-    }    
 
     // Utility Functions
     const utils = {
@@ -430,21 +508,21 @@ $(document).ready(function () {
 
     // Eligibility Check
 
-    // function handleNonEligibleUser() {
-    //     const message = 'You are not eligible to make resource requests at this time. ' +
-    //                    'Please ensure you have completed all required training and agreements.';
+    function handleNonEligibleUser() {
+        const message = 'You are not eligible to make resource requests at this time. ' +
+                       'Please ensure you have completed all required training and agreements.';
         
-    //     $('#combined-request-form').prepend(
-    //         $('<div>')
-    //             .addClass('alert alert-warning')
-    //             .text(message)
-    //     );
+        $('#combined-request-form').prepend(
+            $('<div>')
+                .addClass('alert alert-warning')
+                .text(message)
+        );
         
-    //     $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-    //         .prop('disabled', true);
+        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+            .prop('disabled', true);
         
-    //     $('#submit').prop('disabled', true);
-    // }
+        $('#submit').prop('disabled', true);
+    }
 
     function handleApiError(error) {
         console.error('API Error:', error);
@@ -542,51 +620,55 @@ $(document).ready(function () {
 
     async function fetchAndPopulateGroups() {
         const waitingMessage = utils.showWaitingMessage();
-        const previewTableBody = $("#combined-preview-tbody");
-        previewTableBody.empty(); // Clear any existing rows
-    
+        
         try {
-            // Wait for user session or ID
             const computingId = await waitForUserSession();
-            console.log(`Fetching groups for user: ${computingId}`);
-    
-            // Build API request URL
+            console.log("%c Attempting API call for user: " + computingId, "color: blue; font-weight: bold");
+
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
+            console.log("Request URL:", requestUrl);
+
             const response = await fetch(requestUrl, {
-                method: "GET",
+                method: 'GET',
                 headers: API_CONFIG.headers,
-                credentials: "include",
+                credentials: 'include'
             });
-    
+
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
-    
+
             const data = await response.json();
-            console.log("Full API Response:", data);
-    
-            // // Ensure user is eligible
-            // if (data[0]?.is_user_resource_request_elligible === false) {
-            //     handleNonEligibleUser();
-            //     return;
-            // }
-    
-            // Process and display user resources
-            if (data[0]?.user_resources) {
-                processUserResources(data);
-            } else {
-                console.warn("No user_resources found in API response.");
-                showEmptyState(previewTableBody);
+            console.log("%c Full API Response:", "color: green; font-weight: bold");
+            console.log(data);
+
+            // Check if user is eligible
+            if (data[0].is_user_resource_request_elligible === false) {
+                // // Check if user's group is "its-cacs" or "its-all-access"
+                // if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
+                //     data[0].is_user_resource_request_elligible = true;
+                // }
+                handleNonEligibleUser();
+                return;
             }
+
+            // Process groups for dropdown
+            if (data[0].user_groups) {
+                populateGrouperMyGroupsDropdown(data[0].user_groups);
+            }
+
+            // Process and display user resources
+            processUserResources(data);
+
         } catch (error) {
-            console.error("Error fetching data:", error);
-            utils.logApiError(error, "fetchAndPopulateGroups");
+            console.error("%c Error fetching data:", "color: red; font-weight: bold");
+            console.error(error);
+            utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
-            showErrorState(previewTableBody, "Failed to load data. Please refresh or contact support.");
         } finally {
             utils.removeWaitingMessage();
         }
-    }    
+    }
 
     // Update Existing Resources
 
