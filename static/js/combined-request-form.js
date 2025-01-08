@@ -233,24 +233,38 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
-        // Global variable to hold API response data
-        let consoleData = [];
+    // Global variable to hold API response data
+    let consoleData = [];
+    function parseConsoleData(data) {
+        if (!Array.isArray(data) || data.length === 0) {
+            console.error("Invalid consoleData format or empty data:", data);
+            return null;
+        }
 
+        const userGroups = data[0]?.user_groups || [];
+        const userResources = (() => {
+            try {
+                return typeof data[0]?.user_resources === 'string'
+                    ? JSON.parse(data[0]?.user_resources)
+                    : data[0]?.user_resources || [];
+            } catch (error) {
+                console.error("Error parsing user_resources:", error);
+                return [];
+            }
+        })();
+
+        console.log("Parsed user groups:", userGroups);
+        console.log("Parsed user resources:", userResources);
+
+        return { userGroups, userResources };
+    }
 
     // Existing User Resources Preview
     function processUserResources(apiResponse) {
-        console.log('Processing API Response:', apiResponse);
-        
-        if (!Array.isArray(apiResponse) || apiResponse.length !== 2) {
-            console.error('Invalid API response format:', apiResponse);
-            return;
-        }
-        
-        const [responseData, statusCode] = apiResponse;
+        const { userResources } = parseConsoleData(apiResponse);
         const previewTableBody = $('#combined-preview-tbody');
         const previewTable = $('#existing-resources-preview table');
-        
-        // Show loading state
+    
         previewTableBody.html(`
             <tr>
                 <td colspan="5" class="text-center py-4">
@@ -262,38 +276,19 @@ $(document).ready(function () {
             </tr>
         `);
     
-        // Parse the user_resources JSON string
-        let userResources;
-        try {
-            userResources = JSON.parse(responseData.user_resources);
-            console.log('Successfully parsed userResources:', userResources);
-        } catch (error) {
-            console.error('Error parsing user_resources:', error);
-            showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
+        if (!userResources.length) {
+            showEmptyState(previewTableBody);
             return;
         }
     
-        // Ensure userResources is an array
-        if (!Array.isArray(userResources)) {
-            userResources = [userResources];
-        }
-    
-        // Clear loading state
         previewTableBody.empty();
-        let hasResources = false;
-    
-        // Process each resource
         userResources.forEach(resource => {
-            console.log('Processing resource:', resource);
-    
             if (!resource || !resource.resources) return;
     
             const { resources, group_name, project_name } = resource;
     
-            // Process HPC Service Units
             if (resources.hpc_service_units) {
                 Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
-                    console.log('Found HPC allocation:', details);
                     const statusBadge = formatStatus(details.request_status);
                     const row = createResourceRow({
                         type: 'Service Units',
@@ -302,16 +297,12 @@ $(document).ready(function () {
                         tier: formatTierName(details.tier),
                         details: `${statusBadge} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date || details.request_date)}`
                     });
-                    console.log('Created row:', row);
                     previewTableBody.append(row);
-                    hasResources = true;
                 });
             }
     
-            // Process Storage
-            if (resources.storage && Object.keys(resources.storage).length > 0) {
+            if (resources.storage) {
                 Object.entries(resources.storage).forEach(([storageName, details]) => {
-                    console.log('Found storage:', details);
                     const statusBadge = formatStatus(details.request_status);
                     const row = createResourceRow({
                         type: 'Storage',
@@ -320,22 +311,12 @@ $(document).ready(function () {
                         tier: formatTierName(details.tier),
                         details: `${statusBadge} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date || details.request_date)}`
                     });
-                    console.log('Created row:', row);
                     previewTableBody.append(row);
-                    hasResources = true;
                 });
             }
         });
     
-        // Update display
-        if (!hasResources) {
-            console.log('No resources found after processing');
-            showEmptyState(previewTableBody);
-        } else {
-            console.log('Resources found, showing table');
-            previewTable.show();
-            $('.resource-empty-state').remove();
-        }
+        previewTable.show();
     }
     
     // Helper function updates
@@ -589,58 +570,45 @@ $(document).ready(function () {
     }
 
     function populateGrouperMyGroupsDropdown(groups) {
-        // Select both dropdowns
         const $dropdowns = $('#mygroups-group, #storage-mygroups-group');
-        
-        $dropdowns.each(function() {
+    
+        $dropdowns.each(function () {
             const $dropdown = $(this);
             $dropdown.empty();
-            
-            // Add default option
+    
             $dropdown.append(
                 $('<option>', {
                     value: '',
                     text: '- Select a group -',
                     selected: true,
-                    disabled: true
+                    disabled: true,
                 })
             );
-            
-            if (Array.isArray(groups) && groups.length > 0) {
-                console.log(`Populating dropdown with ${groups.length} groups`);
-                
-                // Handle both string arrays and object arrays
+    
+            if (groups.length) {
                 groups.forEach(group => {
                     const groupName = typeof group === 'string' ? group : group.name;
-                    console.log(`Adding group: ${groupName}`);
-                    
                     $dropdown.append(
                         $('<option>', {
                             value: groupName,
-                            text: groupName
+                            text: groupName,
                         })
                     );
                 });
-                
+    
                 $dropdown.prop('disabled', false);
             } else {
-                console.log('No groups found to populate');
                 $dropdown.append(
                     $('<option>', {
                         value: '',
                         text: 'No groups available - contact support',
-                        disabled: true
+                        disabled: true,
                     })
                 );
                 $dropdown.prop('disabled', true);
             }
         });
-        
-        // Enable form elements that were disabled during loading
-        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .not('#mygroups-group, #storage-mygroups-group')
-            .prop('disabled', false);
-        
+    
         $dropdowns.trigger('change');
     }
 
@@ -682,7 +650,7 @@ $(document).ready(function () {
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: API_CONFIG.headers,
-                credentials: 'include'
+                credentials: 'include',
             });
     
             if (!response.ok) {
@@ -690,14 +658,21 @@ $(document).ready(function () {
             }
     
             // Store API response in consoleData
-            consoleData = await response.json(); 
+            consoleData = await response.json();
             console.log("Full API Response:", consoleData);
     
-            if (consoleData[0]?.user_groups) {
-                populateGrouperMyGroupsDropdown(consoleData[0].user_groups);
+            const { userGroups, userResources } = parseConsoleData(consoleData);
+            if (!userGroups.length) {
+                console.warn("No user groups found.");
+            } else {
+                populateGrouperMyGroupsDropdown(userGroups);
             }
     
-            processUserResources(consoleData); // Use consoleData for processing resources
+            if (!userResources.length) {
+                console.warn("No user resources found.");
+            } else {
+                processUserResources(consoleData);
+            }
         } catch (error) {
             console.error("Error fetching data:", error);
             utils.logApiError(error, 'fetchAndPopulateGroups');
@@ -705,7 +680,7 @@ $(document).ready(function () {
         } finally {
             utils.removeWaitingMessage();
         }
-    }    
+    }
 
     // Update Existing Resources
 
@@ -768,7 +743,7 @@ $(document).ready(function () {
         console.log("Initializing form...");
     
         try {
-            // Hide fields and disable submit button initially
+            // Hide fields and disable the submit button initially
             $('#allocation-fields, #storage-fields, #common-fields').hide();
             $('#submit').prop('disabled', true);
     
@@ -777,35 +752,41 @@ $(document).ready(function () {
             $('#request-type-storage').next('label').text('Storage');
             $('#storage-choice4').next('label').text('Highly Sensitive Data');
     
-            // Pre-select Service Unit (SU) but remove other default selections
+            // Pre-select Service Unit (SU) but clear other default selections
             $('#request-type-allocation').prop('checked', true);
             $('input[name="new-or-renewal"]').prop('checked', false);
             $('input[name="allocation-choice"]').prop('checked', false);
     
-            // Register event handlers
+            // Register event handlers for form interactions
             setupEventHandlers();
     
-            // Fetch and display groups
+            // Fetch and display groups and user resources
+            console.log("Fetching and populating groups...");
             await fetchAndPopulateGroups();
     
-            // Remove or replace loadPreviewTable
-            // await loadPreviewTable(); // Remove if unnecessary
-    
-            // Handle UI toggles for request type and billing visibility
+            // Toggle fields and update the UI based on form state
+            console.log("Toggling fields and UI...");
             toggleRequestFields();
             toggleAllocationFields();
             toggleStorageFields();
             toggleStorageTierOptions();
     
-            // Ensure billing visibility is updated based on current selections
+            // Update billing visibility based on current selections
             updateBillingVisibility();
     
-            console.log("Form initialization complete");
+            console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
+    
+            // Show error message and ensure fields are re-enabled
             showErrorMessage("Failed to initialize form properly. Please try refreshing the page.");
+            $('#allocation-fields, #storage-fields, #common-fields').show();
+            $('#submit').prop('disabled', false);
+        } finally {
+            // Ensure the submit button is enabled regardless of success or failure
+            $('#submit').prop('disabled', false);
         }
-    }    
+    }
 
     function processUserProjectsFromConsole(apiResponse) {
         console.log("Processing projects from console response:", apiResponse);
