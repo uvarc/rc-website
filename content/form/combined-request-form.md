@@ -59,7 +59,7 @@ private = true
         <div class="spinner-border spinner-border-sm text-primary" role="status">
             <span class="visually-hidden">Loading resources...</span>
         </div>
-        <span class="ms-2">Loading resources...</span>
+        <!-- <span class="ms-2">Loading resources...</span> -->
     </div>
     <table class="table table-bordered table-hover resource-preview-table">
         <thead>
