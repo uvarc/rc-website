@@ -257,87 +257,97 @@ $(document).ready(function () {
                 </td>
             </tr>
         `);
-
+    
         // Parse the user_resources JSON string
         let userResources;
         try {
-            // Handle the case where user_resources might be an array or a string
-            if (typeof responseData.user_resources === 'string') {
-                userResources = JSON.parse(responseData.user_resources);
-            } else {
-                userResources = responseData.user_resources;
-            }
-            console.log('Parsed user resources:', userResources);
-            
-            // Ensure userResources is an array
-            if (!Array.isArray(userResources)) {
-                userResources = [userResources];
-            }
+            userResources = JSON.parse(responseData.user_resources);
+            console.log('Successfully parsed userResources:', userResources);
         } catch (error) {
             console.error('Error parsing user_resources:', error);
             showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
             return;
         }
-
+    
+        // Ensure userResources is an array
+        if (!Array.isArray(userResources)) {
+            userResources = [userResources];
+        }
+    
         // Clear loading state
         previewTableBody.empty();
-
-        // Process resources
         let hasResources = false;
-        userResources.forEach(groupResource => {
-            console.log('Processing group resource:', groupResource);
-            
-            if (!groupResource || !groupResource.resources) {
-                console.log('Skipping invalid group resource');
-                return;
-            }
-
-            const resources = groupResource.resources;
-            
+    
+        // Process each resource
+        userResources.forEach(resource => {
+            console.log('Processing resource:', resource);
+    
+            if (!resource || !resource.resources) return;
+    
+            const { resources, group_name, project_name } = resource;
+    
             // Process HPC Service Units
             if (resources.hpc_service_units) {
                 Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
-                    console.log('Processing SU allocation:', allocationName, details);
+                    console.log('Found HPC allocation:', details);
                     const statusBadge = formatStatus(details.request_status);
                     const row = createResourceRow({
                         type: 'Service Units',
-                        projectClass: groupResource.project_name || allocationName.split('-').pop(),
-                        group: groupResource.group_name,
+                        projectClass: project_name || allocationName.split('-').pop(),
+                        group: group_name,
                         tier: formatTierName(details.tier),
                         details: `${statusBadge} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date || details.request_date)}`
                     });
+                    console.log('Created row:', row);
                     previewTableBody.append(row);
                     hasResources = true;
                 });
             }
-
+    
             // Process Storage
             if (resources.storage && Object.keys(resources.storage).length > 0) {
                 Object.entries(resources.storage).forEach(([storageName, details]) => {
-                    console.log('Processing storage:', storageName, details);
+                    console.log('Found storage:', details);
                     const statusBadge = formatStatus(details.request_status);
                     const row = createResourceRow({
                         type: 'Storage',
-                        projectClass: groupResource.project_name || storageName,
-                        group: groupResource.group_name,
+                        projectClass: project_name || storageName,
+                        group: group_name,
                         tier: formatTierName(details.tier),
                         details: `${statusBadge} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date || details.request_date)}`
                     });
+                    console.log('Created row:', row);
                     previewTableBody.append(row);
                     hasResources = true;
                 });
             }
         });
-
+    
         // Update display
         if (!hasResources) {
+            console.log('No resources found after processing');
             showEmptyState(previewTableBody);
         } else {
+            console.log('Resources found, showing table');
             previewTable.show();
             $('.resource-empty-state').remove();
         }
     }
-
+    
+    // Helper function updates
+    function createResourceRow({ type, projectClass, group, tier, details }) {
+        // Don't escape details since it contains HTML for the badge
+        return `
+            <tr>
+                <td>${escapeHtml(type)}</td>
+                <td>${escapeHtml(projectClass)}</td>
+                <td>${escapeHtml(group)}</td>
+                <td>${escapeHtml(tier)}</td>
+                <td>${details}</td>
+            </tr>
+        `;
+    }
+    
     function formatStatus(status) {
         if (!status) return '<span class="badge bg-secondary">Unknown</span>';
         
@@ -349,7 +359,7 @@ $(document).ready(function () {
         };
         return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
     }
-
+    
     function formatDate(dateObj) {
         if (!dateObj) return 'N/A';
         try {
