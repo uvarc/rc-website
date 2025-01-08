@@ -542,55 +542,51 @@ $(document).ready(function () {
 
     async function fetchAndPopulateGroups() {
         const waitingMessage = utils.showWaitingMessage();
-        
+        const previewTableBody = $("#combined-preview-tbody");
+        previewTableBody.empty(); // Clear any existing rows
+    
         try {
+            // Wait for user session or ID
             const computingId = await waitForUserSession();
-            console.log("%c Attempting API call for user: " + computingId, "color: blue; font-weight: bold");
-
+            console.log(`Fetching groups for user: ${computingId}`);
+    
+            // Build API request URL
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
-            console.log("Request URL:", requestUrl);
-
             const response = await fetch(requestUrl, {
-                method: 'GET',
+                method: "GET",
                 headers: API_CONFIG.headers,
-                credentials: 'include'
+                credentials: "include",
             });
-
+    
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
-
+    
             const data = await response.json();
-            console.log("%c Full API Response:", "color: green; font-weight: bold");
-            console.log(data);
-
-            // Check if user is eligible
-            if (data[0].is_user_resource_request_eligible === false) {
-                // Check if user's group is "its-cacs" or "its-all-access"
-                if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
-                    data[0].is_user_resource_request_eligible = true;
-                }
+            console.log("Full API Response:", data);
+    
+            // Ensure user is eligible
+            if (data[0]?.is_user_resource_request_elligible === false) {
                 handleNonEligibleUser();
                 return;
             }
-
-            // Process groups for dropdown
-            if (data[0].user_groups) {
-                populateGrouperMyGroupsDropdown(data[0].user_groups);
-            }
-
+    
             // Process and display user resources
-            processUserResources(data);
-
+            if (data[0]?.user_resources) {
+                processUserResources(data);
+            } else {
+                console.warn("No user_resources found in API response.");
+                showEmptyState(previewTableBody);
+            }
         } catch (error) {
-            console.error("%c Error fetching data:", "color: red; font-weight: bold");
-            console.error(error);
-            utils.logApiError(error, 'fetchAndPopulateGroups');
+            console.error("Error fetching data:", error);
+            utils.logApiError(error, "fetchAndPopulateGroups");
             handleApiError(error);
+            showErrorState(previewTableBody, "Failed to load data. Please refresh or contact support.");
         } finally {
             utils.removeWaitingMessage();
         }
-    }
+    }    
 
     // Update Existing Resources
 
