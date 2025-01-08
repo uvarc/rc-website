@@ -953,18 +953,45 @@ $(document).ready(function () {
     // UI Validation Functions
     function validateField($field) {
         if (!$field[0].checkValidity()) {
-            markFieldInvalid($field, 'This field is required.');
+            const fieldLabel = $field.prev('label').text() || $field.attr('placeholder') || 'This field';
+            markFieldInvalid($field, `${fieldLabel} is required.`);
             return false;
         }
 
         const fieldId = $field.attr('id');
-        if (fieldId === 'new-project-name' && !utils.validateProjectName($field.val())) {
-            markFieldInvalid($field, 'Project name must be 3-128 characters long and contain only letters, numbers, spaces, and hyphens.');
-            return false;
-        }
-        if (fieldId === 'shared-space-name' && !utils.validateSharedSpaceName($field.val())) {
-            markFieldInvalid($field, 'Shared space name must be 3-40 characters long and contain only letters, numbers, and hyphens.');
-            return false;
+        const fieldValue = $field.val();
+
+        console.log(`Validating field: ${fieldId}, Value: ${fieldValue}`);
+
+        switch (fieldId) {
+            case 'new-project-name':
+                if (!utils.validateProjectName(fieldValue)) {
+                    markFieldInvalid($field, 'Project name must be 3-128 characters long and contain only letters, numbers, spaces, and hyphens.');
+                    return false;
+                }
+                break;
+
+            case 'shared-space-name':
+                if (!utils.validateSharedSpaceName(fieldValue)) {
+                    markFieldInvalid($field, 'Shared space name must be 3-40 characters long and contain only letters, numbers, and hyphens.');
+                    return false;
+                }
+                break;
+
+            case 'capacity':
+                const capacity = parseInt(fieldValue, 10);
+                const minCapacity = parseInt($field.attr('min'), 10) || 0;
+                const maxCapacity = parseInt($field.attr('max'), 10) || Infinity;
+
+                if (isNaN(capacity) || capacity < minCapacity || capacity > maxCapacity) {
+                    markFieldInvalid($field, `Capacity must be between ${minCapacity}TB and ${maxCapacity}TB.`);
+                    return false;
+                }
+                break;
+
+            default:
+                // No additional validation required for this field
+                break;
         }
 
         markFieldValid($field);
@@ -974,12 +1001,14 @@ $(document).ready(function () {
     function validateGroupSelection() {
         const $groupSelect = $('#mygroups-group');
         const selectedGroup = $groupSelect.val();
-        
+
+        console.log(`Validating group selection: ${selectedGroup}`);
+
         if (!selectedGroup) {
-            markFieldInvalid($groupSelect, 'Please select a group');
+            markFieldInvalid($groupSelect, 'Please select a group.');
             return false;
         }
-        
+
         markFieldValid($groupSelect);
         return true;
     }
@@ -990,14 +1019,16 @@ $(document).ready(function () {
         let firstInvalidField = null;
 
         const isNewRequest = $('input[name="new-or-renewal"]:checked').val() === 'new' ||
-                           $('input[name="type-of-request"]:checked').val() === 'new-storage';
-        
+                            $('input[name="type-of-request"]:checked').val() === 'new-storage';
+
+        console.log(`Is New Request: ${isNewRequest}`);
+
         if (isNewRequest && !validateGroupSelection()) {
             isValid = false;
             firstInvalidField = $('#mygroups-group');
         }
 
-        $('input:visible[required], select:visible[required], textarea:visible[required]').each(function() {
+        $('input:visible[required], select:visible[required], textarea:visible[required]').each(function () {
             if (!validateField($(this))) {
                 isValid = false;
                 firstInvalidField = firstInvalidField || $(this);
@@ -1009,30 +1040,46 @@ $(document).ready(function () {
     }
 
     function markFieldInvalid($field, message) {
+        console.log(`Field Invalid: ${$field.attr('id')}, Reason: ${message}`);
         $field.addClass('is-invalid').removeClass('is-valid');
-        const $feedback = $field.next('.invalid-feedback');
+
+        let $feedback = $field.siblings('.invalid-feedback');
         if ($feedback.length === 0) {
-            $field.after(`<div class="invalid-feedback">${message}</div>`);
+            $feedback = $('<div>')
+                .addClass('invalid-feedback')
+                .css({ marginTop: '0.5rem', color: '#dc3545', fontSize: '0.875rem' }) // Styled for inline messages
+                .text(message);
+            $field.after($feedback);
         } else {
             $feedback.text(message);
         }
     }
 
     function markFieldValid($field) {
+        console.log(`Field Valid: ${$field.attr('id')}`);
         $field.addClass('is-valid').removeClass('is-invalid');
-        $field.next('.invalid-feedback').remove();
+
+        const $feedback = $field.siblings('.invalid-feedback');
+        if ($feedback.length > 0) {
+            $feedback.remove();
+        }
     }
 
     function resetValidationState() {
+        console.log('Resetting validation state...');
         $('.is-invalid').removeClass('is-invalid');
+        $('.is-valid').removeClass('is-valid');
         $('.invalid-feedback').remove();
-        $('.invalid-field-highlight').removeClass('invalid-field-highlight');
     }
 
     function handleValidationResult(isValid, firstInvalidField) {
         if (!isValid && firstInvalidField) {
+            console.log(`Form is invalid. Focusing on the first invalid field: ${firstInvalidField.attr('id')}`);
             firstInvalidField.focus();
+        } else {
+            console.log('Form is valid.');
         }
+
         updateFormValidation();
     }
 
