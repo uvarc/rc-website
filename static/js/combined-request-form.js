@@ -565,11 +565,11 @@ $(document).ready(function () {
             const data = await response.json();
             console.log("Full API Response:", data);
     
-            // Ensure user is eligible
-            if (data[0]?.is_user_resource_request_elligible === false) {
-                handleNonEligibleUser();
-                return;
-            }
+            // // Ensure user is eligible
+            // if (data[0]?.is_user_resource_request_elligible === false) {
+            //     handleNonEligibleUser();
+            //     return;
+            // }
     
             // Process and display user resources
             if (data[0]?.user_resources) {
