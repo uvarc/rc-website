@@ -234,6 +234,44 @@ $(document).ready(function () {
         .appendTo('head');
 
     // Existing User Resources
+
+        /**
+     * Creates a table row (<tr>) for the resources preview table.
+     * @param {Object} resource - Resource data.
+     * @param {string} resource.type - The type of resource (e.g., "Service Units", "Storage").
+     * @param {string} resource.projectClass - The project/class name for the resource.
+     * @param {string} resource.group - The group name associated with the resource.
+     * @param {string} resource.tier - The tier level for the resource (e.g., "Standard").
+     * @param {string} resource.details - Additional details about the resource.
+     * @returns {string} - The HTML string for the table row.
+     */
+    function createResourceRow({ type, projectClass, group, tier, details }) {
+        return `
+            <tr>
+                <td>${escapeHtml(type)}</td>
+                <td>${escapeHtml(projectClass)}</td>
+                <td>${escapeHtml(group)}</td>
+                <td>${escapeHtml(tier)}</td>
+                <td>${details}</td>
+            </tr>
+        `;
+    }
+
+    /**
+     * Escapes HTML characters to prevent XSS attacks.
+     * @param {string} unsafe - The string to sanitize.
+     * @returns {string} - The sanitized string.
+     */
+    function escapeHtml(unsafe) {
+        if (typeof unsafe !== 'string') return '';
+        return unsafe
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
     function processUserResources(apiResponse) {
         console.log('Processing API Response:', apiResponse);
     
@@ -392,21 +430,21 @@ $(document).ready(function () {
 
     // Eligibility Check
 
-    function handleNonEligibleUser() {
-        const message = 'You are not eligible to make resource requests at this time. ' +
-                       'Please ensure you have completed all required training and agreements.';
+    // function handleNonEligibleUser() {
+    //     const message = 'You are not eligible to make resource requests at this time. ' +
+    //                    'Please ensure you have completed all required training and agreements.';
         
-        $('#combined-request-form').prepend(
-            $('<div>')
-                .addClass('alert alert-warning')
-                .text(message)
-        );
+    //     $('#combined-request-form').prepend(
+    //         $('<div>')
+    //             .addClass('alert alert-warning')
+    //             .text(message)
+    //     );
         
-        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .prop('disabled', true);
+    //     $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+    //         .prop('disabled', true);
         
-        $('#submit').prop('disabled', true);
-    }
+    //     $('#submit').prop('disabled', true);
+    // }
 
     function handleApiError(error) {
         console.error('API Error:', error);
@@ -504,55 +542,51 @@ $(document).ready(function () {
 
     async function fetchAndPopulateGroups() {
         const waitingMessage = utils.showWaitingMessage();
-        
+        const previewTableBody = $("#combined-preview-tbody");
+        previewTableBody.empty(); // Clear any existing rows
+    
         try {
+            // Wait for user session or ID
             const computingId = await waitForUserSession();
-            console.log("%c Attempting API call for user: " + computingId, "color: blue; font-weight: bold");
-
+            console.log(`Fetching groups for user: ${computingId}`);
+    
+            // Build API request URL
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
-            console.log("Request URL:", requestUrl);
-
             const response = await fetch(requestUrl, {
-                method: 'GET',
+                method: "GET",
                 headers: API_CONFIG.headers,
-                credentials: 'include'
+                credentials: "include",
             });
-
+    
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
-
+    
             const data = await response.json();
-            console.log("%c Full API Response:", "color: green; font-weight: bold");
-            console.log(data);
-
-            // Check if user is eligible
-            if (data[0].is_user_resource_request_eligible === false) {
-                // Check if user's group is "its-cacs" or "its-all-access"
-                if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
-                    data[0].is_user_resource_request_elligible = true;
-                }
+            console.log("Full API Response:", data);
+    
+            // Ensure user is eligible
+            if (data[0]?.is_user_resource_request_elligible === false) {
                 handleNonEligibleUser();
                 return;
             }
-
-            // Process groups for dropdown
-            if (data[0].user_groups) {
-                populateGrouperMyGroupsDropdown(data[0].user_groups);
-            }
-
+    
             // Process and display user resources
-            processUserResources(data);
-
+            if (data[0]?.user_resources) {
+                processUserResources(data);
+            } else {
+                console.warn("No user_resources found in API response.");
+                showEmptyState(previewTableBody);
+            }
         } catch (error) {
-            console.error("%c Error fetching data:", "color: red; font-weight: bold");
-            console.error(error);
-            utils.logApiError(error, 'fetchAndPopulateGroups');
+            console.error("Error fetching data:", error);
+            utils.logApiError(error, "fetchAndPopulateGroups");
             handleApiError(error);
+            showErrorState(previewTableBody, "Failed to load data. Please refresh or contact support.");
         } finally {
             utils.removeWaitingMessage();
         }
-    }
+    }    
 
     // Update Existing Resources
 
