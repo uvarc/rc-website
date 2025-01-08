@@ -233,6 +233,10 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
+        // Global variable to hold API response data
+        let consoleData = [];
+
+
     // Existing User Resources Preview
     function processUserResources(apiResponse) {
         console.log('Processing API Response:', apiResponse);
@@ -665,57 +669,43 @@ $(document).ready(function () {
         throw new Error('Could not get user ID - please ensure you are logged in');
     }    
 
+    // Fetch & Populate Groups
     async function fetchAndPopulateGroups() {
         const waitingMessage = utils.showWaitingMessage();
-        
         try {
             const computingId = await waitForUserSession();
-            console.log("%c Attempting API call for user: " + computingId, "color: blue; font-weight: bold");
-
+            console.log(`Attempting API call for user: ${computingId}`);
+    
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
             console.log("Request URL:", requestUrl);
-
+    
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: API_CONFIG.headers,
                 credentials: 'include'
             });
-
+    
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
-
-            const data = await response.json();
-            console.log("%c Full API Response:", "color: green; font-weight: bold");
-            console.log(data);
-
-            // // Check if user is eligible
-            // if (data[0].is_user_resource_request_elligible === false) {
-            //     // // Check if user's group is "its-cacs" or "its-all-access"
-            //     // if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
-            //     //     data[0].is_user_resource_request_elligible = true;
-            //     // }
-            //     handleNonEligibleUser();
-            //     return;
-            // }
-
-            // Process groups for dropdown
-            if (data[0].user_groups) {
-                populateGrouperMyGroupsDropdown(data[0].user_groups);
+    
+            // Store API response in consoleData
+            consoleData = await response.json(); 
+            console.log("Full API Response:", consoleData);
+    
+            if (consoleData[0]?.user_groups) {
+                populateGrouperMyGroupsDropdown(consoleData[0].user_groups);
             }
-
-            // Process and display user resources
-            processUserResources(data);
-
+    
+            processUserResources(consoleData); // Use consoleData for processing resources
         } catch (error) {
-            console.error("%c Error fetching data:", "color: red; font-weight: bold");
-            console.error(error);
+            console.error("Error fetching data:", error);
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
         } finally {
             utils.removeWaitingMessage();
         }
-    }
+    }    
 
     // Update Existing Resources
 
@@ -776,46 +766,46 @@ $(document).ready(function () {
     // Consolidated Initialize Function
     async function initialize() {
         console.log("Initializing form...");
-
+    
         try {
             // Hide fields and disable submit button initially
             $('#allocation-fields, #storage-fields, #common-fields').hide();
             $('#submit').prop('disabled', true);
-
+    
             // Set default labels and pre-selections
             $('#request-type-allocation').next('label').text('Service Unit (SU)');
             $('#request-type-storage').next('label').text('Storage');
             $('#storage-choice4').next('label').text('Highly Sensitive Data');
-
+    
             // Pre-select Service Unit (SU) but remove other default selections
             $('#request-type-allocation').prop('checked', true);
             $('input[name="new-or-renewal"]').prop('checked', false);
             $('input[name="allocation-choice"]').prop('checked', false);
-
+    
             // Register event handlers
             setupEventHandlers();
-
+    
             // Fetch and display groups
             await fetchAndPopulateGroups();
-
-            // Load and display the preview table
-            await loadPreviewTable();
-
+    
+            // Remove or replace loadPreviewTable
+            // await loadPreviewTable(); // Remove if unnecessary
+    
             // Handle UI toggles for request type and billing visibility
             toggleRequestFields();
             toggleAllocationFields();
             toggleStorageFields();
             toggleStorageTierOptions();
-
+    
             // Ensure billing visibility is updated based on current selections
             updateBillingVisibility();
-
+    
             console.log("Form initialization complete");
         } catch (error) {
             console.error("Error during form initialization:", error);
             showErrorMessage("Failed to initialize form properly. Please try refreshing the page.");
         }
-    }
+    }    
 
     function processUserProjectsFromConsole(apiResponse) {
         console.log("Processing projects from console response:", apiResponse);
@@ -1046,25 +1036,26 @@ $(document).ready(function () {
         updateFormValidation();
     }
 
-    // 5. UI Toggle Functions
-    function toggleRequestFields(   ) {
+    // UI Toggle Functions
+    function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected resource type:", requestType);
         
         $('#allocation-fields, #storage-fields, #common-fields').hide();
-        
+    
         if (requestType === 'service-unit') {
             $('#allocation-fields, #common-fields').show();
             $('#category').val('Rivanna HPC');
-            loadUserProjects();
+            processUserProjectsFromConsole(consoleData); // Replace loadUserProjects
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
             $('#category').val('Storage');
-            loadUserProjects();
+            processUserProjectsFromConsole(consoleData); // Replace loadUserProjects
         }
     
         updateBillingVisibility();
     }
+    
 
     function toggleAllocationFields() {
         const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
