@@ -1313,21 +1313,40 @@ $(document).ready(function () {
         // Handle changes in request type (e.g., Service Unit vs Storage)
         $('input[name="request-type"]').on('change', function () {
             console.log(`Request type changed to: ${$(this).val()}`);
-            toggleRequestFields();
+            toggleRequestFields(); // Dynamically toggle SU and Storage fields
+        });
+    
+        // Handle New or Renewal selection for Service Unit
+        $('input[name="new-or-renewal"]').on('change', function () {
+            console.log(`New or Renewal selected: ${$(this).val()}`);
+            toggleAllocationFields(); // Dynamically toggle fields for SU based on New or Renewal
+        });
+    
+        // Handle Type of Request selection for Storage
+        $('input[name="type-of-request"]').on('change', function () {
+            console.log(`Storage request type selected: ${$(this).val()}`);
+            toggleStorageFields(); // Dynamically toggle fields for Storage based on request type
         });
     
         // Handle group selection changes for SU and Storage
         $(document).on('change', '#mygroups-group, #storage-mygroups-group', function () {
             const selectedGroup = $(this).val();
             console.log(`Group selected: ${selectedGroup}`);
-            updateFormValidation();
+            validateGroupSelection(); // Validate group selection dynamically
+            updateFormValidation(); // Update the entire form validation state
+        });
+    
+        // Handle Storage Tier selection changes
+        $('input[name="storage-choice"]').on('change', function () {
+            console.log(`Storage tier selected: ${$(this).val()}`);
+            toggleStorageTierOptions(); // Dynamically toggle tier-specific options
         });
     
         // Handle data agreement checkbox state changes
         $('#data-agreement').on('change', function () {
             const isChecked = $(this).is(':checked');
             console.log(`Data agreement checkbox state: ${isChecked}`);
-            updateFormValidation();
+            updateFormValidation(); // Update validation when data agreement changes
         });
     
         console.log('Event handlers successfully set up.');
