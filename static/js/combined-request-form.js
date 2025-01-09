@@ -348,8 +348,8 @@ $(document).ready(function () {
     function formatDate(dateObj) {
         if (!dateObj) return 'N/A';
         try {
-            const timestamp = dateObj.$date || dateObj;
-            const date = new Date(parseInt(timestamp));
+            // Directly create a Date object from the input
+            const date = new Date(dateObj);
             return date.toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'short',
