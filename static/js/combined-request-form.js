@@ -569,12 +569,13 @@ $(document).ready(function () {
     }
 
     function populateGrouperMyGroupsDropdown(groups) {
-        const $dropdowns = $('#mygroups-group, #storage-mygroups-group');
+        const $dropdowns = $('#mygroups-group, #storage-mygroups-group'); // Select all relevant dropdowns
     
         $dropdowns.each(function () {
             const $dropdown = $(this);
-            $dropdown.empty();
+            $dropdown.empty(); // Clear any existing options
     
+            // Add a default "Select a group" option
             $dropdown.append(
                 $('<option>', {
                     value: '',
@@ -584,9 +585,11 @@ $(document).ready(function () {
                 })
             );
     
+            // Populate the dropdown with groups
             if (groups.length) {
+                console.log("Populating dropdown with groups:", groups);
                 groups.forEach(group => {
-                    const groupName = typeof group === 'string' ? group : group.name;
+                    const groupName = typeof group === 'string' ? group : group.name; // Handle object or string groups
                     $dropdown.append(
                         $('<option>', {
                             value: groupName,
@@ -595,8 +598,9 @@ $(document).ready(function () {
                     );
                 });
     
-                $dropdown.prop('disabled', false);
+                $dropdown.prop('disabled', false); // Enable the dropdown after population
             } else {
+                console.warn("No groups found to populate.");
                 $dropdown.append(
                     $('<option>', {
                         value: '',
@@ -606,9 +610,14 @@ $(document).ready(function () {
                 );
                 $dropdown.prop('disabled', true);
             }
-        });
     
-        $dropdowns.trigger('change');
+            // Trigger a change event to ensure validation updates
+            $dropdown.trigger('change');
+
+            // Log populated options in console
+        console.log('Dropdown options:', $dropdown.find('option').toArray().map(option => option.value));
+        });
+        
     }
 
     // API and Data Functions
@@ -642,32 +651,35 @@ $(document).ready(function () {
         try {
             const computingId = await waitForUserSession();
             console.log(`Attempting API call for user: ${computingId}`);
-    
+        
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
             console.log("Request URL:", requestUrl);
-    
+        
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: API_CONFIG.headers,
                 credentials: 'include',
             });
-    
+        
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
-    
+        
             consoleData = await response.json();
             console.log("Full API Response:", consoleData);
-    
+        
             const { userGroups, userResources } = parseConsoleData(consoleData);
-    
-            if (userGroups.length > 0) {
+        
+            if (Array.isArray(userGroups) && userGroups.length > 0) {
+                console.log("Populating dropdown with user groups:", userGroups);
                 populateGrouperMyGroupsDropdown(userGroups);
             } else {
                 console.warn("No user groups found.");
+                populateGrouperMyGroupsDropdown([]); // Ensure dropdown is cleared if no groups are found
             }
-    
+        
             if (Array.isArray(userResources) && userResources.length > 0) {
+                console.log("Processing user resources...");
                 processUserResources(consoleData);
             } else {
                 console.warn("No user resources found.");
@@ -990,6 +1002,7 @@ $(document).ready(function () {
         const selectedGroup = $groupSelect.val();
     
         console.log(`Validating group selection: ${selectedGroup}`);
+        console.log('Dropdown options:', $('#mygroups-group option').toArray().map(option => option.value));
     
         if (!selectedGroup) {
             console.log('No group selected.');
@@ -1308,7 +1321,7 @@ $(document).ready(function () {
         });
     
         // Handle group selection from dropdown
-        $('#mygroups-group').on('change', function () {
+        $(document).on('change', '#mygroups-group', function () {
             const selectedGroup = $(this).val();
             console.log(`Group selected: ${selectedGroup}`);
             updateFormValidation();
@@ -1546,11 +1559,15 @@ $(document).ready(function () {
         const requiredFields = $form.find('input[required]:visible, select[required]:visible, textarea[required]:visible');
         const requiredFieldsFilled = requiredFields.toArray().every(field => !!$(field).val()?.trim());
     
-        // Additional specific checks
+        // Validate group selection
         const isGroupSelected = !!$('#mygroups-group').val();
-        const isCapacityValid = !!$('#capacity').val()?.trim();
+        console.log(`Is group selected? ${isGroupSelected}`);
     
-        // Logging to debug field states
+        // Additional checks
+        const isCapacityValid = !!$('#capacity').val()?.trim();
+        const dataAgreementChecked = $('#data-agreement').is(':checked');
+    
+        // Debugging logs
         console.log('Validating required fields...');
         requiredFields.each((_, field) => {
             console.log(`Field "${field.name || field.id}" value:`, $(field).val());
@@ -1562,13 +1579,10 @@ $(document).ready(function () {
         if (!isGroupSelected) console.warn('Group selection is missing.');
         if (!isCapacityValid) console.warn('Capacity is invalid or empty.');
     
-        const dataAgreementChecked = $('#data-agreement').is(':checked');
-    
         // Final validation result
         const shouldDisableSubmit = hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked || !isGroupSelected || !isCapacityValid;
         $submitBtn.prop('disabled', shouldDisableSubmit);
     
-        // Logging for debugging
         console.log('Submit button disabled due to:', {
             hasInvalidFields,
             requiredFieldsFilled,
