@@ -23,7 +23,7 @@ private = true
 </div>
 <div>
 
-  <input type="hidden" id="category" name="category" value="Rivanna HPC">
+  <input type="hidden" id="category" name="category" value="Dedicated Resources">
   <input type="hidden" id="request_title" name="request_title" value="Dedicated Computing Request" />
 
   {{% getstatus keyword="jira" %}}
