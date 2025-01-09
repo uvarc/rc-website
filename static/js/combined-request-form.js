@@ -998,7 +998,7 @@ $(document).ready(function () {
     }
 
     function validateGroupSelection() {
-        const requestType = $('input[name="request-type"]:checked').val(); // Check the selected request type
+        const requestType = $('input[name="request-type"]:checked').val();
         const groupSelectId = requestType === 'service-unit' ? '#mygroups-group' : '#storage-mygroups-group';
         const $groupSelect = $(groupSelectId);
         const selectedGroup = $groupSelect.val();
@@ -1099,20 +1099,23 @@ $(document).ready(function () {
         const requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected resource type:", requestType);
     
-        $('#allocation-fields, #storage-fields, #common-fields').hide(); // Hide all initially
+        // Hide all sections initially
+        $('#allocation-fields, #storage-fields, #common-fields').hide();
+        $('#mygroups-group-container').hide(); // Hide by default
     
         if (requestType === 'service-unit') {
-            $('#allocation-fields, #common-fields').show();
-            $('#category').val('Rivanna HPC');
-            processUserProjectsFromConsole(consoleData);
+            console.log("Displaying Service Unit fields...");
+            $('#allocation-fields, #common-fields').show(); // Show SU-specific fields
+            $('#mygroups-group-container').show(); // Ensure the MyGroups dropdown is visible for SU
         } else if (requestType === 'storage') {
-            $('#storage-fields, #common-fields').show();
-            $('#category').val('Storage');
-            processUserProjectsFromConsole(consoleData);
+            console.log("Displaying Storage fields...");
+            $('#storage-fields, #common-fields').show(); // Show Storage-specific fields
+            $('#mygroups-group-container').show(); // Show MyGroups dropdown for Storage
         } else {
             console.warn("Unknown request type:", requestType);
         }
     
+        // Update billing visibility and other dependent states
         updateBillingVisibility();
     }
     
@@ -1286,13 +1289,13 @@ $(document).ready(function () {
     
     // Event Handlers
     function setupEventHandlers() {
-        // Handle changes in request type (e.g., service unit vs storage)
+        // Handle changes in request type (e.g., Service Unit vs Storage)
         $('input[name="request-type"]').on('change', function () {
             console.log(`Request type changed to: ${$(this).val()}`);
             toggleRequestFields();
         });
     
-        // Handle group selection for SU and Storage
+        // Handle group selection changes for SU and Storage
         $(document).on('change', '#mygroups-group, #storage-mygroups-group', function () {
             const selectedGroup = $(this).val();
             console.log(`Group selected: ${selectedGroup}`);
@@ -1306,7 +1309,6 @@ $(document).ready(function () {
             updateFormValidation();
         });
     
-        // Other event handlers...
         console.log('Event handlers successfully set up.');
     }
 
@@ -1550,24 +1552,11 @@ $(document).ready(function () {
     
         const dataAgreementChecked = $('#data-agreement').is(':checked');
     
-        // Debugging logs
-        console.log('Validating required fields...');
-        requiredFields.each((_, field) => {
-            console.log(`Field "${field.name || field.id}" value:`, $(field).val());
-            if (!$(field).val()?.trim()) {
-                console.warn(`Field "${field.name || field.id}" is invalid or empty.`);
-            }
-        });
-    
-        if (!isGroupSelected) console.warn('Group selection is missing.');
-        if (requestType === 'storage' && !isCapacityValid) console.warn('Capacity is invalid or empty.');
-    
         // Final validation result
         const shouldDisableSubmit = !requiredFieldsFilled || !dataAgreementChecked || !isGroupSelected || (requestType === 'storage' && !isCapacityValid);
         $submitBtn.prop('disabled', shouldDisableSubmit);
     
         console.log('Submit button disabled due to:', {
-            hasInvalidFields: false, // Assuming fields with .is-invalid are properly tracked elsewhere
             requiredFieldsFilled,
             dataAgreementChecked,
             isGroupSelected,
