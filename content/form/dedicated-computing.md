@@ -74,5 +74,5 @@ private = true
 </form>
 
 
-<!-- <script type="text/javascript" src="/js/user-session-v2.js"></script> -->
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
