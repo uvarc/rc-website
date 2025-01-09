@@ -233,20 +233,38 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
-    // Existing User Resources
-    function processUserResources(apiResponse) {
-        console.log('Processing API Response:', apiResponse);
-        
-        if (!Array.isArray(apiResponse) || apiResponse.length !== 2) {
-            console.error('Invalid API response format:', apiResponse);
-            return;
+    // Global variable to hold API response data
+    let consoleData = [];
+    function parseConsoleData(data) {
+        if (!Array.isArray(data) || data.length === 0) {
+            console.error("Invalid consoleData format or empty data:", data);
+            return null;
         }
-        
-        const [responseData, statusCode] = apiResponse;
+
+        const userGroups = data[0]?.user_groups || [];
+        const userResources = (() => {
+            try {
+                return typeof data[0]?.user_resources === 'string'
+                    ? JSON.parse(data[0]?.user_resources)
+                    : data[0]?.user_resources || [];
+            } catch (error) {
+                console.error("Error parsing user_resources:", error);
+                return [];
+            }
+        })();
+
+        console.log("Parsed user groups:", userGroups);
+        console.log("Parsed user resources:", userResources);
+
+        return { userGroups, userResources };
+    }
+
+    // Existing User Resources Preview
+    function processUserResources(apiResponse) {
+        const { userResources } = parseConsoleData(apiResponse);
         const previewTableBody = $('#combined-preview-tbody');
         const previewTable = $('#existing-resources-preview table');
-        
-        // Show loading state
+    
         previewTableBody.html(`
             <tr>
                 <td colspan="5" class="text-center py-4">
@@ -257,87 +275,64 @@ $(document).ready(function () {
                 </td>
             </tr>
         `);
-
-        // Parse the user_resources JSON string
-        let userResources;
-        try {
-            // Handle the case where user_resources might be an array or a string
-            if (typeof responseData.user_resources === 'string') {
-                userResources = JSON.parse(responseData.user_resources);
-            } else {
-                userResources = responseData.user_resources;
-            }
-            console.log('Parsed user resources:', userResources);
-            
-            // Ensure userResources is an array
-            if (!Array.isArray(userResources)) {
-                userResources = [userResources];
-            }
-        } catch (error) {
-            console.error('Error parsing user_resources:', error);
-            showErrorState(previewTableBody, 'Error loading resources. Please try refreshing the page.');
+    
+        if (!Array.isArray(userResources) || userResources.length === 0) {
+            showEmptyState(previewTableBody);
             return;
         }
-
-        // Clear loading state
+    
         previewTableBody.empty();
-
-        // Process resources
-        let hasResources = false;
-        userResources.forEach(groupResource => {
-            console.log('Processing group resource:', groupResource);
-            
-            if (!groupResource || !groupResource.resources) {
-                console.log('Skipping invalid group resource');
-                return;
-            }
-
-            const resources = groupResource.resources;
-            
-            // Process HPC Service Units
+        userResources.forEach(resource => {
+            if (!resource || !resource.resources) return;
+    
+            const { resources, group_name, project_name } = resource;
+    
             if (resources.hpc_service_units) {
                 Object.entries(resources.hpc_service_units).forEach(([allocationName, details]) => {
-                    console.log('Processing SU allocation:', allocationName, details);
                     const statusBadge = formatStatus(details.request_status);
                     const row = createResourceRow({
                         type: 'Service Units',
-                        projectClass: groupResource.project_name || allocationName.split('-').pop(),
-                        group: groupResource.group_name,
+                        projectClass: project_name || allocationName.split('-').pop(),
+                        group: group_name,
                         tier: formatTierName(details.tier),
                         details: `${statusBadge} | ${details.request_count || 0} SUs | Updated: ${formatDate(details.update_date || details.request_date)}`
                     });
                     previewTableBody.append(row);
-                    hasResources = true;
                 });
             }
-
-            // Process Storage
-            if (resources.storage && Object.keys(resources.storage).length > 0) {
+    
+            if (resources.storage) {
                 Object.entries(resources.storage).forEach(([storageName, details]) => {
-                    console.log('Processing storage:', storageName, details);
                     const statusBadge = formatStatus(details.request_status);
                     const row = createResourceRow({
                         type: 'Storage',
-                        projectClass: groupResource.project_name || storageName,
-                        group: groupResource.group_name,
+                        projectClass: project_name || storageName,
+                        group: group_name,
                         tier: formatTierName(details.tier),
                         details: `${statusBadge} | ${details.request_size || 0}TB | Updated: ${formatDate(details.update_date || details.request_date)}`
                     });
                     previewTableBody.append(row);
-                    hasResources = true;
                 });
             }
         });
-
-        // Update display
-        if (!hasResources) {
-            showEmptyState(previewTableBody);
-        } else {
-            previewTable.show();
-            $('.resource-empty-state').remove();
-        }
+    
+        previewTable.show();
     }
-
+    
+    // Helper function updates
+    function createResourceRow({ type, projectClass, group, tier, details }) {
+        // Don't escape details since it contains HTML for the badge
+        return `
+            <tr>
+                <td>${escapeHtml(type)}</td>
+                <td>${escapeHtml(projectClass)}</td>
+                <td>${escapeHtml(group)}</td>
+                <td>${escapeHtml(tier)}</td>
+                <td>${details}</td>
+            </tr>
+        `;
+    }
+    
     function formatStatus(status) {
         if (!status) return '<span class="badge bg-secondary">Unknown</span>';
         
@@ -349,7 +344,7 @@ $(document).ready(function () {
         };
         return statusMap[status.toLowerCase()] || `<span class="badge bg-secondary">${status}</span>`;
     }
-
+    
     function formatDate(dateObj) {
         if (!dateObj) return 'N/A';
         try {
@@ -428,6 +423,53 @@ $(document).ready(function () {
             .replace(/'/g, "&#039;");
     }
 
+    //Existing SU Projects Allocation Preview
+
+    function processAllocationProjects(apiResponse) {
+        console.log("Processing Allocation Projects:", apiResponse);
+    
+        // Extract allocation projects from API response
+        const allocationProjects = apiResponse?.allocationProjects || [];
+        const allocationTbody = $('#allocation-projects-tbody');
+        allocationTbody.empty();
+    
+        if (allocationProjects.length === 0) {
+            // Show empty state
+            $('#existing-projects-allocation table').hide();
+            $('#existing-projects-allocation .allocation-empty-state').remove();
+            $('#existing-projects-allocation').append(`
+                <div class="allocation-empty-state">
+                    <i class="fas fa-cube"></i>
+                    <p>No Active Service Units Found</p>
+                    <div class="empty-state-help">
+                        This section will display your active Service Unit allocations once they are approved.
+                        <br>
+                        Use the form above to request new Service Units or manage existing ones.
+                    </div>
+                </div>
+            `);
+            return;
+        }
+    
+        // Populate the table with allocation projects
+        allocationProjects.forEach(project => {
+            allocationTbody.append(`
+                <tr>
+                    <td>
+                        <input type="radio" name="existing-project-allocation" 
+                               value="${escapeHtml(project.id)}" required>
+                    </td>
+                    <td>${escapeHtml(project.name)}</td>
+                    <td>${escapeHtml(project.group)}</td>
+                    <td>${escapeHtml(project.tier)}</td>
+                </tr>
+            `);
+        });
+    
+        $('#existing-projects-allocation table').show();
+        $('#existing-projects-allocation .allocation-empty-state').remove();
+    }    
+
     // Utility Functions
     const utils = {
         formatBytes: (bytes, decimals = 2) => {
@@ -501,17 +543,16 @@ $(document).ready(function () {
     function handleNonEligibleUser() {
         const message = 'You are not eligible to make resource requests at this time. ' +
                        'Please ensure you have completed all required training and agreements.';
-        
+    
         $('#combined-request-form').prepend(
             $('<div>')
                 .addClass('alert alert-warning')
                 .text(message)
         );
-        
+    
+        $('#submit').prop('disabled', true); // Keep only the submit button disabled
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .prop('disabled', true);
-        
-        $('#submit').prop('disabled', true);
+            .removeAttr('disabled'); // Allow interaction with all fields
     }
 
     function handleApiError(error) {
@@ -528,58 +569,45 @@ $(document).ready(function () {
     }
 
     function populateGrouperMyGroupsDropdown(groups) {
-        // Select both dropdowns
         const $dropdowns = $('#mygroups-group, #storage-mygroups-group');
-        
-        $dropdowns.each(function() {
+    
+        $dropdowns.each(function () {
             const $dropdown = $(this);
             $dropdown.empty();
-            
-            // Add default option
+    
             $dropdown.append(
                 $('<option>', {
                     value: '',
                     text: '- Select a group -',
                     selected: true,
-                    disabled: true
+                    disabled: true,
                 })
             );
-            
-            if (Array.isArray(groups) && groups.length > 0) {
-                console.log(`Populating dropdown with ${groups.length} groups`);
-                
-                // Handle both string arrays and object arrays
+    
+            if (groups.length) {
                 groups.forEach(group => {
                     const groupName = typeof group === 'string' ? group : group.name;
-                    console.log(`Adding group: ${groupName}`);
-                    
                     $dropdown.append(
                         $('<option>', {
                             value: groupName,
-                            text: groupName
+                            text: groupName,
                         })
                     );
                 });
-                
+    
                 $dropdown.prop('disabled', false);
             } else {
-                console.log('No groups found to populate');
                 $dropdown.append(
                     $('<option>', {
                         value: '',
                         text: 'No groups available - contact support',
-                        disabled: true
+                        disabled: true,
                     })
                 );
                 $dropdown.prop('disabled', true);
             }
         });
-        
-        // Enable form elements that were disabled during loading
-        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .not('#mygroups-group, #storage-mygroups-group')
-            .prop('disabled', false);
-        
+    
         $dropdowns.trigger('change');
     }
 
@@ -608,51 +636,44 @@ $(document).ready(function () {
         throw new Error('Could not get user ID - please ensure you are logged in');
     }    
 
+    // Fetch & Populate Groups
     async function fetchAndPopulateGroups() {
         const waitingMessage = utils.showWaitingMessage();
-        
         try {
             const computingId = await waitForUserSession();
-            console.log("%c Attempting API call for user: " + computingId, "color: blue; font-weight: bold");
-
+            console.log(`Attempting API call for user: ${computingId}`);
+    
             const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
             console.log("Request URL:", requestUrl);
-
+    
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: API_CONFIG.headers,
-                credentials: 'include'
+                credentials: 'include',
             });
-
+    
             if (!response.ok) {
                 throw new Error(`API request failed with status ${response.status}`);
             }
-
-            const data = await response.json();
-            console.log("%c Full API Response:", "color: green; font-weight: bold");
-            console.log(data);
-
-            // Check if user is eligible
-            if (data[0].is_user_resource_request_elligible === false) {
-                // // Check if user's group is "its-cacs" or "its-all-access"
-                // if (data[0].user_groups.includes("its-cacs") || data[0].user_groups.includes("its-all-access")) {
-                //     data[0].is_user_resource_request_elligible = true;
-                // }
-                handleNonEligibleUser();
-                return;
+    
+            consoleData = await response.json();
+            console.log("Full API Response:", consoleData);
+    
+            const { userGroups, userResources } = parseConsoleData(consoleData);
+    
+            if (userGroups.length > 0) {
+                populateGrouperMyGroupsDropdown(userGroups);
+            } else {
+                console.warn("No user groups found.");
             }
-
-            // Process groups for dropdown
-            if (data[0].user_groups) {
-                populateGrouperMyGroupsDropdown(data[0].user_groups);
+    
+            if (Array.isArray(userResources) && userResources.length > 0) {
+                processUserResources(consoleData);
+            } else {
+                console.warn("No user resources found.");
             }
-
-            // Process and display user resources
-            processUserResources(data);
-
         } catch (error) {
-            console.error("%c Error fetching data:", "color: red; font-weight: bold");
-            console.error(error);
+            console.error("Error fetching data:", error);
             utils.logApiError(error, 'fetchAndPopulateGroups');
             handleApiError(error);
         } finally {
@@ -716,154 +737,186 @@ $(document).ready(function () {
         }
     }
     
-    // Initialize Function
+    // Consolidated Initialize Function
     async function initialize() {
         console.log("Initializing form...");
-        
+    
         try {
-            // Hide all fields initially
+            // Hide specific sections, but do not disable the whole form
             $('#allocation-fields, #storage-fields, #common-fields').hide();
-            $('#submit').prop('disabled', true);
+            $('#billing-information').hide();
     
-            // Set labels
-            $('#request-type-allocation').next('label').text('Service Unit (SU)');
-            $('#request-type-storage').next('label').text('Storage');
-            $('#storage-choice4').next('label').text('Highly Sensitive Data');
-    
-            // Pre-select Service Unit (SU) but remove other default selections
+            // Default selections
             $('#request-type-allocation').prop('checked', true);
             $('input[name="new-or-renewal"]').prop('checked', false);
             $('input[name="allocation-choice"]').prop('checked', false);
     
+            // Register event handlers
             setupEventHandlers();
     
+            // Fetch and populate data
+            console.log("Fetching and populating groups...");
             await fetchAndPopulateGroups();
-            await loadPreviewTable();
-            
-            // Show the appropriate fields based on Service Unit selection
-            $('#allocation-fields, #common-fields').show();
-            $('#category').val('Rivanna HPC');
-            
-            console.log("Form initialization complete");
+    
+            // Update UI based on the current state
+            console.log("Toggling fields and UI...");
+            toggleRequestFields();
+            toggleAllocationFields();
+            toggleStorageFields();
+            toggleStorageTierOptions();
+    
+            // Update billing visibility based on selections
+            updateBillingVisibility();
+    
+            console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
-            showErrorMessage("Failed to initialize form properly. Please try refreshing the page.");
+            showErrorMessage("Failed to initialize form. Please refresh the page.");
         }
     }
 
-    async function fetchUserProjects() {
-        try {
-            await waitForUserSession();
-            await new Promise(resolve => setTimeout(resolve, 300));
-            
-            // Return empty data structure
-            return {
-                allocationProjects: [],
-                storageProjects: [],
-                userStorageUsage: {
-                    'SSZ Research Standard': 0
-                }
-            };
-        } catch (error) {
-            console.error('Error fetching user projects:', error);
-            throw new Error('Failed to fetch user projects');
+    function processUserProjectsFromConsole(apiResponse) {
+        console.log("Processing projects from console response:", apiResponse);
+    
+        // Extract and parse user_resources
+        const userResources = (() => {
+            try {
+                return typeof apiResponse[0]?.user_resources === 'string'
+                    ? JSON.parse(apiResponse[0]?.user_resources)
+                    : apiResponse[0]?.user_resources || [];
+            } catch (error) {
+                console.error("Error parsing user resources:", error);
+                return [];
+            }
+        })();
+
+        if (!Array.isArray(userResources) || userResources.length === 0) {
+            console.error("No user resources found in API response.");
+            showEmptyState("#existing-projects-allocation", "No Active Service Units Found", "This section will display your active Service Unit allocations once they are approved.");
+            showEmptyState("#existing-projects-storage", "No Active Storage Found", "This section will display your active storage allocations once they are approved.");
+            return;
         }
+
+        console.log("Parsed user resources:", userResources);
+    
+        // Process allocations (Service Units)
+        const allocationProjects = [];
+        userResources.forEach(resource => {
+            if (resource.resources?.hpc_service_units) {
+                Object.entries(resource.resources.hpc_service_units).forEach(([key, details]) => {
+                    allocationProjects.push({
+                        id: key,
+                        name: resource.project_name || "Unknown Project",
+                        group: resource.group_name || "Unknown Group",
+                        tier: formatTierName(details.tier),
+                    });
+                });
+            }
+        });
+        populateTableOrEmptyState(
+            allocationProjects,
+            "#allocation-projects-tbody",
+            "#existing-projects-allocation",
+            "No Active Service Units Found",
+            "This section will display your active Service Unit allocations once they are approved."
+        );
+    
+        // Process storage projects
+        const storageProjects = [];
+        userResources.forEach(resource => {
+            if (resource.resources?.storage && Object.keys(resource.resources.storage).length > 0) {
+                Object.entries(resource.resources.storage).forEach(([key, details]) => {
+                    storageProjects.push({
+                        id: key,
+                        name: resource.project_name || "Unknown Project",
+                        group: resource.group_name || "Unknown Group",
+                        tier: details.tier || "Unknown Tier",
+                        sharedSpace: details.sharedSpace || "N/A",
+                        currentSize: details.currentSize || "0",
+                    });
+                });
+            }
+        });
+        populateTableOrEmptyState(
+            storageProjects,
+            "#storage-projects-tbody",
+            "#existing-projects-storage",
+            "No Active Storage Found",
+            "This section will display your active storage allocations once they are approved."
+        );
     }
     
-    async function loadUserProjects() {
-        try {
-            const projects = await fetchUserProjects();
+    /**
+     * Populates a table or displays an empty state.
+     * @param {Array} projects - The list of projects to populate.
+     * @param {string} tableBodySelector - Selector for the table's <tbody>.
+     * @param {string} containerSelector - Selector for the table's container.
+     * @param {string} emptyMessage - The message to display when no data exists.
+     * @param {string} emptyHelp - The help text to display with the empty message.
+     */
+    function populateTableOrEmptyState(projects, tableBodySelector, containerSelector, emptyMessage, emptyHelp) {
+        const tbody = $(tableBodySelector);
+        const container = $(containerSelector);
     
-            // Handle Service Units (Allocations)
-            const allocationTbody = $('#allocation-projects-tbody');
-            if (projects.allocationProjects && projects.allocationProjects.length > 0) {
-                allocationTbody.empty();
-                projects.allocationProjects.forEach(project => {
-                    allocationTbody.append(`
-                        <tr>
-                            <td>
-                                <input type="radio" name="existing-project-allocation" 
-                                       value="${escapeHtml(project.id)}" required>
-                            </td>
-                            <td>${escapeHtml(project.name)}</td>
-                            <td>${escapeHtml(project.group)}</td>
-                            <td>${escapeHtml(project.tier)}</td>
-                        </tr>
-                    `);
-                });
-                $('#existing-projects-allocation table').show();
-                $('#existing-projects-allocation .allocation-empty-state').remove();
-            } else {
-                // Show empty state for allocations
-                $('#existing-projects-allocation table').hide();
-                $('#existing-projects-allocation .allocation-empty-state').remove();
-                $('#existing-projects-allocation').append(`
-                    <div class="allocation-empty-state">
-                        <i class="fas fa-cube"></i>
-                        <p>No Active Service Units Found</p>
-                        <div class="empty-state-help">
-                            This section will display your active Service Unit allocations once they are approved.
-                            <br>
-                            Use the form above to request new Service Units or manage existing ones.
-                        </div>
-                    </div>
-                `);
-            }
-    
-            // Handle Storage Projects
-            const storageTbody = $('#storage-projects-tbody');
-            if (projects.storageProjects && projects.storageProjects.length > 0) {
-                storageTbody.empty();
-                projects.storageProjects.forEach(project => {
-                    storageTbody.append(`
-                        <tr>
-                            <td>
-                                <input type="radio" name="existing-project-storage" 
-                                       value="${escapeHtml(project.id)}" required>
-                            </td>
-                            <td>${escapeHtml(project.name)}</td>
-                            <td>${escapeHtml(project.group)}</td>
-                            <td>${escapeHtml(project.tier)}</td>
+        if (projects.length > 0) {
+            tbody.empty();
+            projects.forEach(project => {
+                tbody.append(`
+                    <tr>
+                        <td>
+                            <input type="radio" name="existing-project-${containerSelector.includes("allocation") ? "allocation" : "storage"}" 
+                                   value="${escapeHtml(project.id)}" required>
+                        </td>
+                        <td>${escapeHtml(project.name)}</td>
+                        <td>${escapeHtml(project.group)}</td>
+                        <td>${escapeHtml(project.tier)}</td>
+                        ${tableBodySelector === "#storage-projects-tbody" ? `
                             <td>${escapeHtml(project.sharedSpace)}</td>
                             <td>${escapeHtml(project.currentSize)} TB</td>
-                        </tr>
-                    `);
-                });
-                $('#existing-projects-storage table').show();
-                $('#existing-projects-storage .storage-empty-state').remove();
-            } else {
-                // Show empty state for storage
-                $('#existing-projects-storage table').hide();
-                $('#existing-projects-storage .storage-empty-state').remove();
-                $('#existing-projects-storage').append(`
-                    <div class="storage-empty-state">
-                        <i class="fas fa-hdd"></i>
-                        <p>No Active Storage Found</p>
-                        <div class="empty-state-help">
-                            This section will display your active storage allocations once they are approved.
-                            <br>
-                            Use the form above to request new storage or manage existing ones.
-                        </div>
-                    </div>
+                        ` : ""}
+                    </tr>
                 `);
-            }
-    
-            return projects;
-        } catch (error) {
-            console.error('Error loading user projects:', error);
-            return {
-                allocationProjects: [],
-                storageProjects: [],
-                userStorageUsage: {
-                    'SSZ Research Standard': 0
-                }
-            };
+            });
+            $(`${containerSelector} table`).show();
+            $(`${containerSelector} .allocation-empty-state, .storage-empty-state`).remove();
+        } else {
+            showEmptyState(containerSelector, emptyMessage, emptyHelp);
         }
     }
-
-    function loadPreviewTable() {
-        console.log("Loading preview table");
-        return Promise.resolve();
+    
+    /**
+     * Displays an empty state message in a container.
+     * @param {string} containerSelector - Selector for the container to update.
+     * @param {string} message - The message to display.
+     * @param {string} helpText - The help text to display with the message.
+     */
+    function showEmptyState(containerSelector, message, helpText) {
+        const container = $(containerSelector);
+        container.find("table").hide();
+        container.find(".allocation-empty-state, .storage-empty-state").remove();
+        container.append(`
+            <div class="${containerSelector.includes("allocation") ? "allocation-empty-state" : "storage-empty-state"}">
+                <i class="fas ${containerSelector.includes("allocation") ? "fa-cube" : "fa-hdd"}"></i>
+                <p>${message}</p>
+                <div class="empty-state-help">${helpText}</div>
+            </div>
+        `);
+    }
+    
+    /**
+     * Formats tier names for display.
+     * @param {string} tier - The raw tier name.
+     * @returns {string} - The formatted tier name.
+     */
+    function formatTierName(tier) {
+        switch (tier) {
+            case "ssz_standard":
+                return "Standard";
+            case "ssz_premium":
+                return "Premium";
+            default:
+                return tier || "Unknown Tier";
+        }
     }
 
     // UI Validation Functions
@@ -952,72 +1005,64 @@ $(document).ready(function () {
         updateFormValidation();
     }
 
-    // 5. UI Toggle Functions
-    function toggleRequestFields(   ) {
+    // UI Toggle Functions
+    function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected resource type:", requestType);
-        
-        $('#allocation-fields, #storage-fields, #common-fields').hide();
-        
+    
+        $('#allocation-fields, #storage-fields, #common-fields').hide(); // Hide all initially
+    
         if (requestType === 'service-unit') {
             $('#allocation-fields, #common-fields').show();
             $('#category').val('Rivanna HPC');
-            loadUserProjects();
+            processUserProjectsFromConsole(consoleData);
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
             $('#category').val('Storage');
-            loadUserProjects();
+            processUserProjectsFromConsole(consoleData);
+        } else {
+            console.warn("Unknown request type:", requestType);
         }
     
         updateBillingVisibility();
     }
-
+    
     function toggleAllocationFields() {
         const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
         console.log("Selected new or renewal:", newOrRenewal);
+    
         const isNew = newOrRenewal === 'new';
-        
+    
         $('#new-project-name-container').toggle(isNew);
         $('#existing-projects-allocation').toggle(!isNew);
         $('#allocation-tier').toggle(isNew);
         $('#mygroups-group-container').toggle(isNew);
-        $('#mygroups-group').prop('required', isNew);
-        
-        if (isNew) {
-            $("#new-descr").fadeIn(400);
-            $("#renewal-descr").fadeOut(400);
-        } else {
-            $("#new-descr").fadeOut(400);
-            $("#renewal-descr").fadeIn(400);
-        }
-
+    
         resetValidationState();
         updateFormValidation();
     }
-
+    
     function toggleStorageFields() {
         const typeOfRequest = $('input[name="type-of-request"]:checked').val();
         console.log("Selected type of storage request:", typeOfRequest);
-        
+    
         const isNewStorage = typeOfRequest === 'new-storage';
         const isModifyingExisting = ['increase-storage', 'decrease-storage', 'retire-storage'].includes(typeOfRequest);
         const isRetiring = typeOfRequest === 'retire-storage';
-        
+    
         $('#storage-platform, #shared-space-name-container, #project-title-container').toggle(isNewStorage);
         $('#existing-projects-storage').toggle(isModifyingExisting);
         $('#mygroups-group-container').toggle(isNewStorage);
-        $('#mygroups-group').prop('required', isNewStorage);
-        
+    
         const capacityField = $('#capacity');
         capacityField
-            .prop('disabled', isRetiring)
             .val(isRetiring ? '0' : '')
             .prop('min', isRetiring ? '0' : '1');
-        
+    
         if (isModifyingExisting) {
             updateStorageModificationFields(typeOfRequest);
         }
-        
+    
         updateBillingVisibility();
         toggleStorageTierOptions();
     }
@@ -1025,12 +1070,17 @@ $(document).ready(function () {
     function toggleStorageTierOptions() {
         const selectedStorage = $('input[name="storage-choice"]:checked').val();
         console.log("Selected storage tier:", selectedStorage);
-        
+    
+        if (!selectedStorage) {
+            console.warn("No storage tier selected.");
+            return;
+        }
+    
         const isHighlySensitive = selectedStorage === 'Highly Sensitive Data';
-        
+    
         $('#sensitive-data').toggle(isHighlySensitive);
         $('#standard-data').toggle(!isHighlySensitive);
-        
+    
         updateCapacityLimits(selectedStorage);
         updateBillingVisibility();
     }
@@ -1057,14 +1107,39 @@ $(document).ready(function () {
         try {
             const selectedProjectId = $('input[name="existing-project-storage"]:checked').val();
             if (!selectedProjectId) return;
-
-            const projects = await fetchUserProjects();
-            const selectedProject = projects.storageProjects.find(p => p.id === selectedProjectId);
-            
+    
+            // Parse user_resources from the console response
+            const userResourcesString = consoleData[0]?.user_resources; // Use actual console response variable
+            if (!userResourcesString) {
+                console.error("No user_resources data found.");
+                return;
+            }
+    
+            const userResources = JSON.parse(userResourcesString);
+    
+            // Extract storage projects from user_resources
+            const storageProjects = [];
+            userResources.forEach(resource => {
+                if (resource.resources?.storage && Object.keys(resource.resources.storage).length > 0) {
+                    Object.entries(resource.resources.storage).forEach(([key, details]) => {
+                        storageProjects.push({
+                            id: key,
+                            name: resource.project_name || "Unknown Project",
+                            group: resource.group_name || "Unknown Group",
+                            tier: details.tier || "Unknown Tier",
+                            currentSize: parseInt(details.currentSize || "0"),
+                        });
+                    });
+                }
+            });
+    
+            // Find the selected project
+            const selectedProject = storageProjects.find(p => p.id === selectedProjectId);
+    
             if (selectedProject) {
                 const capacityField = $('#capacity');
-                const currentSize = parseInt(selectedProject.currentSize);
-                
+                const currentSize = selectedProject.currentSize;
+    
                 if (requestType === 'decrease-storage') {
                     capacityField.attr('max', currentSize - 1);
                     capacityField.attr('min', '1');
@@ -1073,99 +1148,62 @@ $(document).ready(function () {
                     capacityField.attr('max', maxLimit - currentSize);
                     capacityField.attr('min', '1');
                 }
+            } else {
+                console.warn(`Selected project with ID ${selectedProjectId} not found.`);
             }
         } catch (error) {
             console.error('Error updating storage modification fields:', error);
             showErrorMessage('Error updating storage options');
         }
-    }
+    }    
 
     async function updateBillingVisibility() {
         try {
-            const projects = await fetchUserProjects();
-            const currentStorageUsage = projects.userStorageUsage['SSZ Research Standard'] || 0;
+            const userResources = Array.isArray(consoleData[0]?.user_resources)
+                ? consoleData[0]?.user_resources
+                : [];
+    
+            if (userResources.length === 0) {
+                console.error("No valid user_resources data found.");
+                return;
+            }
+    
             const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
             const selectedAllocationTier = $('input[name="allocation-choice"]:checked').val();
-            const requestedStorageSize = parseInt($('#capacity').val()) || 0;
+            const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
             let shouldShowBilling = false;
-            let showUsageWarning = false;
     
             if ($('#allocation-fields').is(':visible') && selectedAllocationTier) {
                 shouldShowBilling = utils.isTierPaid(selectedAllocationTier);
             }
     
             if ($('#storage-fields').is(':visible') && selectedStorageTier) {
-                if (selectedStorageTier === 'SSZ Research Standard') {
-                    const totalSize = currentStorageUsage + requestedStorageSize;
-                    const freeLimit = RESOURCE_TYPES['SSZ Research Standard'].freeLimit;
-                    shouldShowBilling = totalSize > freeLimit;
-                    showUsageWarning = true;
-                    
-                    // Update storage usage message
-                    updateStorageUsageMessage(currentStorageUsage, freeLimit, totalSize);
+                if (selectedStorageTier === "SSZ Research Standard") {
+                    const currentUsage = calculateStorageUsage(userResources, "SSZ Research Standard");
+                    const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit;
+                    shouldShowBilling = (currentUsage + requestedStorageSize) > freeLimit;
                 } else {
                     shouldShowBilling = utils.isTierPaid(selectedStorageTier);
-                    // Remove usage message if it exists
-                    $('.storage-usage-warning').remove();
                 }
             }
     
-            $('#billing-information').slideToggle(shouldShowBilling);
-            $('#billing-information input, #billing-information select')
-                .prop('required', shouldShowBilling);
+            $('#billing-information').toggle(shouldShowBilling);
         } catch (error) {
             console.error('Error updating billing visibility:', error);
-            showErrorMessage('Error determining billing requirements');
         }
     }
+    
     // Event Handlers
     function setupEventHandlers() {
-        $('input[name="request-type"]').on('change', function() {
-            const $label = $(this).next('label');
-            if (this.value === 'service-unit') {
-                $label.text('Service Unit (SU)');
-            } else if (this.value === 'storage') {
-                $label.text('Storage');
-            }
-            
-            toggleRequestFields();
-            loadPreviewTable();
-        });
-
+        $('input[name="request-type"]').on('change', toggleRequestFields);
         $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
-        $('input[name="allocation-choice"]').on('change', function() {
-            console.log("Selected SU tier:", $(this).val());
-            updateBillingVisibility();
-        });
-
+        $('input[name="allocation-choice"]').on('change', updateBillingVisibility);
         $('input[name="type-of-request"]').on('change', toggleStorageFields);
-        $('input[name="storage-choice"]').on('change', function() {
-            if (this.value === 'Highly Sensitive Data') {
-                $(this).next('label').text('Highly Sensitive Data');
-            }
-            toggleStorageTierOptions();
-        });
-        
-        $('#capacity').on('input change', function() {
-            if ($('#storage-fields').is(':visible')) {
-                updateBillingVisibility();
-            }
-        });
-
-        $('#mygroups-group').on('change', function() {
-            console.log("Selected Grouper/MyGroups account:", $(this).val());
-            validateGroupSelection();
-            updateFormValidation();
-        });
-
-        $('#data-agreement').on('change', function() {
-            $('#submit').prop('disabled', !$(this).is(':checked'));
-        });
-
-        $('#combined-request-form').on('submit', handleFormSubmission);
-
-        setupRealTimeValidation();
+        $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
+        $('#capacity').on('input change', updateBillingVisibility);
+        $('#mygroups-group').on('change', updateFormValidation);
+        $('#data-agreement').on('change', updateFormValidation);
     }
 
     function setupRealTimeValidation() {
@@ -1387,59 +1425,34 @@ $(document).ready(function () {
     function updateFormValidation() {
         const $form = $('#combined-request-form');
         const $submitBtn = $('#submit');
+        
+        // Check if there are any invalid fields
         const hasInvalidFields = $form.find('.is-invalid').length > 0;
-        let requiredFieldsFilled = true;
         
-        $form.find('input[required]:visible, select[required]:visible, textarea[required]:visible').each(function() {
-            if (!$(this).val()) {
-                requiredFieldsFilled = false;
-                return false;
-            }
-        });
+        // Ensure all required fields are filled
+        const requiredFieldsFilled = $form
+            .find('input[required]:visible, select[required]:visible, textarea[required]:visible')
+            .toArray()
+            .every(field => !!$(field).val()?.trim()); // Check for non-empty, trimmed values
         
+        // Check if the data agreement checkbox is checked
         const dataAgreementChecked = $('#data-agreement').is(':checked');
-        $submitBtn.prop('disabled', hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked);
         
-        if ($submitBtn.is(':disabled')) {
+        // Update submit button state
+        const shouldDisableSubmit = hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked;
+        $submitBtn.prop('disabled', shouldDisableSubmit);
+        
+        // Log the state for debugging
+        if (shouldDisableSubmit) {
             console.log('Submit button disabled due to:', {
                 hasInvalidFields,
                 requiredFieldsFilled,
-                dataAgreementChecked
+                dataAgreementChecked,
             });
+        } else {
+            console.log('Submit button enabled. All validations passed.');
         }
     }
-
-    // Initialization
-    async function initialize() {
-        console.log("Initializing form...");
-        
-        try {
-            $('#allocation-fields, #storage-fields, #common-fields').hide();
-            $('#submit').prop('disabled', true);
-
-            $('#request-type-allocation').next('label').text('Service Unit (SU)');
-            $('#request-type-storage').next('label').text('Storage');
-            $('#storage-choice4').next('label').text('Highly Sensitive Data');
-
-            setupEventHandlers();
-
-            await fetchAndPopulateGroups();
-            await loadPreviewTable();
-            
-            toggleRequestFields();
-            toggleAllocationFields();
-            toggleStorageFields();
-            toggleStorageTierOptions();
-            
-            updateBillingVisibility();
-            
-            console.log("Form initialization complete");
-        } catch (error) {
-            console.error("Error during form initialization:", error);
-            showErrorMessage("Failed to initialize form properly. Please try logging out and back in, then refresh the page.");
-        }
-    }
-
     async function submitForm(formData) {
         try {
             const computingId = await waitForUserSession();

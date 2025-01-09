@@ -5,8 +5,8 @@ categories = ["forms"]
 images = [""]
 author = "Staff"
 description = ""
-title = "Purchase Service Units"
-draft = false
+title = "Request Dedicated Resources"
+draft = true
 type = "form"
 private = true
 +++
@@ -56,12 +56,10 @@ private = true
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="award-title">Title of Award (if applicable) </label>
     <input class="form-control form-text" type="text" id="award-title" name="award-title" value="" size="60" maxlength="128" />
   </div>
-  <div class="row">
-    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="sus-requested">Total number of SUs requested <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="number" id="sus-requested" name="sus-requested" value="" size="60" maxlength="128" onfocusout="figureTotal()" />
-    </div>
-    <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="fdm-total">Total amount to be charged to FDM <span class="form-required" title="This field is required.">*</span></label>
-      <div>
+     
+<div class="col form-item form-type-textfield form-group"> <label class="control-label" for="fdm-total">Total amount to be charged to FDM <span class="form-required" title="This field is required.">*</span></label>
+
+     
         <div style="float:left;width:1.4rem;font-size:120%;padding-top:4px;margin:auto;">$</div>
         <input class="form-control form-text" type="text" id="fdm-total" name="fdm-total" value="0" size="60" maxlength="128" readonly style="text-align:right;width:90%;" />
       </div>
