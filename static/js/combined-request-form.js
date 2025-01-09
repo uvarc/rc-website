@@ -1793,15 +1793,8 @@ $(document).ready(function () {
                 };
             }
     
-            // Validate and log the payload
-            console.log('Validating payload before submission...');
+            // Log the final payload before sending
             console.log('Payload to be submitted:', JSON.stringify(payload, null, 2));
-    
-            if (!payload[0].group_name || !payload[0].resources || Object.keys(payload[0].resources).length === 0) {
-                console.error('Invalid payload:', payload);
-                showErrorMessage('Invalid request. Please ensure all required fields are filled.');
-                return;
-            }
     
             // Send the payload to the API
             const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
@@ -1815,16 +1808,23 @@ $(document).ready(function () {
                 body: JSON.stringify(payload)
             });
     
+            // Log detailed response information
             if (!response.ok) {
-                const errorText = await response.text();
-                console.error('API Error Response:', errorText);
+                const errorText = await response.text().catch(() => 'Unable to retrieve error details');
+                console.error('API Error Response:', {
+                    status: response.status,
+                    statusText: response.statusText,
+                    errorBody: errorText,
+                    headers: [...response.headers]
+                });
                 throw new Error(`API request failed with status ${response.status}`);
             }
     
-            console.log('API Response Successful');
+            console.log('API Response Successful:', await response.json());
             showSuccessMessage('Your request has been submitted successfully.');
             resetForm();
         } catch (error) {
+            // Log all error details for debugging
             console.error('Error during form submission:', error);
             showErrorMessage('Failed to submit form. Please try again later.');
         } finally {
