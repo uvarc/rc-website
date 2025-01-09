@@ -998,9 +998,9 @@ $(document).ready(function () {
     }
 
     function validateGroupSelection() {
-        const requestType = $('input[name="request-type"]:checked').val();
+        const requestType = $('input[name="request-type"]:checked').val(); // Determine the current request type
         const groupSelectId = requestType === 'service-unit' ? '#mygroups-group' : '#storage-mygroups-group';
-        const $groupSelect = $(groupSelectId);
+        const $groupSelect = $(groupSelectId); // Dynamically select the correct group field
         const selectedGroup = $groupSelect.val();
     
         console.log(`Validating group selection for request type "${requestType}": ${selectedGroup}`);
@@ -1582,7 +1582,7 @@ $(document).ready(function () {
             return !!value;
         });
     
-        // Validate group selection dynamically
+        // Dynamically validate group selection
         const isGroupSelected = validateGroupSelection();
     
         // Additional checks
