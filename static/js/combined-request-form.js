@@ -550,7 +550,7 @@ $(document).ready(function () {
                 .text(message)
         );
     
-        $('#submit').prop('disabled', true); // Keep only the submit button disabled
+        // $('#submit').prop('disabled', true); // Keep only the submit button disabled
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
             .removeAttr('disabled'); // Allow interaction with all fields
     }
@@ -764,9 +764,9 @@ $(document).ready(function () {
         } catch (error) {
             console.error('Error during resource update:', error);
             showErrorMessage('Failed to update resource. Please check your inputs and try again.');
-        } finally {
-            $('#submit').prop('disabled', false).text('Submit');
-        }
+        } //finally {
+        //     $('#submit').prop('disabled', false).text('Submit');
+        // }
     }
 
     function calculateStorageUsage(userResources, tier, group) {
@@ -1620,7 +1620,7 @@ $(document).ready(function () {
         $('#combined-request-form')[0].reset();
         resetValidationState();
         toggleRequestFields();
-        $('#submit').prop('disabled', true);
+        // $('#submit').prop('disabled', true);
     }
 
     function updateFormValidation() {
