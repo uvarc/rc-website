@@ -1094,23 +1094,40 @@ $(document).ready(function () {
         updateFormValidation();
     }
 
-    // UI Toggle Functions
+    // General Toggle Functions
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected resource type:", requestType);
     
         // Hide all sections initially
-        $('#allocation-fields, #storage-fields, #common-fields').hide();
-        $('#mygroups-group-container').hide(); // Hide by default
+        $('#allocation-fields, #storage-fields, #common-fields, #allocation-tier, #storage-platform').hide();
     
         if (requestType === 'service-unit') {
             console.log("Displaying Service Unit fields...");
             $('#allocation-fields, #common-fields').show(); // Show SU-specific fields
-            $('#mygroups-group-container').show(); // Ensure the MyGroups dropdown is visible for SU
+    
+            // Check New or Renewal for SU
+            const isNewRequest = $('input[name="new-or-renewal"]:checked').val() === 'new';
+            if (isNewRequest) {
+                console.log("New request selected for SU");
+                $('#allocation-tier').show(); // Show Tier Options for New SU request
+            } else {
+                console.log("Renewal selected for SU");
+                $('#existing-projects-allocation').show(); // Show Existing Projects table for SU Renewal
+            }
         } else if (requestType === 'storage') {
             console.log("Displaying Storage fields...");
             $('#storage-fields, #common-fields').show(); // Show Storage-specific fields
-            $('#mygroups-group-container').show(); // Show MyGroups dropdown for Storage
+    
+            // Check New or Modify Existing for Storage
+            const storageRequestType = $('input[name="type-of-request"]:checked').val();
+            if (storageRequestType === 'new-storage') {
+                console.log("New storage request selected");
+                $('#storage-platform').show(); // Show Tier Options for New Storage
+            } else if (['increase-storage', 'decrease-storage', 'retire-storage'].includes(storageRequestType)) {
+                console.log("Modifying existing storage request selected");
+                $('#existing-projects-storage').show(); // Show Existing Projects table for modifying storage
+            }
         } else {
             console.warn("Unknown request type:", requestType);
         }
@@ -1119,6 +1136,8 @@ $(document).ready(function () {
         updateBillingVisibility();
     }
     
+    // SU or Storage Request Specific Toggle Functions
+
     function toggleAllocationFields() {
         const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
         console.log("Selected new or renewal:", newOrRenewal);
@@ -1176,6 +1195,8 @@ $(document).ready(function () {
         updateCapacityLimits(selectedStorage);
         updateBillingVisibility(); // Ensure billing visibility is updated whenever the tier changes
     }
+
+    // Capacity Limits
 
     function updateCapacityLimits(tierType) {
         const capacityField = $('#capacity');
