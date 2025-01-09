@@ -1147,7 +1147,7 @@ $(document).ready(function () {
         $('#standard-data').toggle(!isHighlySensitive);
     
         updateCapacityLimits(selectedStorage);
-        updateBillingVisibility();
+        updateBillingVisibility(); // Ensure billing visibility is updated whenever the tier changes
     }
 
     function updateCapacityLimits(tierType) {
@@ -1244,12 +1244,17 @@ $(document).ready(function () {
                     const currentUsage = calculateStorageUsage(userResources, "SSZ Research Standard", selectedGroup);
                     const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
                     shouldShowBilling = (currentUsage + requestedStorageSize) > freeLimit;
+                    console.log(`Current usage: ${currentUsage} TB, Requested size: ${requestedStorageSize} TB, Free limit: ${freeLimit} TB`);
                 } else if (selectedStorageTier === "SSZ Research Project" || selectedStorageTier === "Highly Sensitive Data") {
                     shouldShowBilling = true;
+                    console.log(`Billing required for storage tier: ${selectedStorageTier}`);
                 }
+            } else {
+                console.warn("Storage tier or group is not selected.");
             }
     
             $('#billing-information').toggle(shouldShowBilling);
+            console.log(`Billing information visibility: ${shouldShowBilling}`);
         } catch (error) {
             console.error('Error updating billing visibility:', error);
         }
@@ -1265,6 +1270,10 @@ $(document).ready(function () {
         $('#capacity').on('input change', updateBillingVisibility);
         $('#mygroups-group').on('change', updateFormValidation);
         $('#data-agreement').on('change', updateFormValidation);
+        $('#data-agreement').on('change', function() {
+            console.log('Data agreement checkbox state:', $(this).is(':checked'));
+            updateFormValidation();
+        });
     }
 
     function setupRealTimeValidation() {
@@ -1465,34 +1474,46 @@ $(document).ready(function () {
     function updateFormValidation() {
         const $form = $('#combined-request-form');
         const $submitBtn = $('#submit');
-        
-        // Check if there are any invalid fields
+    
+        // Check for invalid fields
         const hasInvalidFields = $form.find('.is-invalid').length > 0;
-        
-        // Ensure all required fields are filled
-        const requiredFieldsFilled = $form
-            .find('input[required]:visible, select[required]:visible, textarea[required]:visible')
-            .toArray()
-            .every(field => !!$(field).val()?.trim()); // Check for non-empty, trimmed values
-        
-        // Check if the data agreement checkbox is checked
+    
+        // Check required fields
+        const requiredFields = $form.find('input[required]:visible, select[required]:visible, textarea[required]:visible');
+        const requiredFieldsFilled = requiredFields.toArray().every(field => !!$(field).val()?.trim());
+    
+        // Additional specific checks
+        const isGroupSelected = !!$('#mygroups-group').val();
+        const isCapacityValid = !!$('#capacity').val()?.trim();
+    
+        // Logging to debug field states
+        console.log('Validating required fields...');
+        requiredFields.each((_, field) => {
+            console.log(`Field "${field.name || field.id}" value:`, $(field).val());
+            if (!$(field).val()?.trim()) {
+                console.warn(`Field "${field.name || field.id}" is invalid.`);
+            }
+        });
+    
+        if (!isGroupSelected) console.warn('Group selection is missing.');
+        if (!isCapacityValid) console.warn('Capacity is invalid or empty.');
+    
         const dataAgreementChecked = $('#data-agreement').is(':checked');
-        
-        // Update submit button state
-        const shouldDisableSubmit = hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked;
+    
+        // Final validation result
+        const shouldDisableSubmit = hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked || !isGroupSelected || !isCapacityValid;
         $submitBtn.prop('disabled', shouldDisableSubmit);
-        
-        // Log the state for debugging
-        if (shouldDisableSubmit) {
-            console.log('Submit button disabled due to:', {
-                hasInvalidFields,
-                requiredFieldsFilled,
-                dataAgreementChecked,
-            });
-        } else {
-            console.log('Submit button enabled. All validations passed.');
-        }
+    
+        // Logging for debugging
+        console.log('Submit button disabled due to:', {
+            hasInvalidFields,
+            requiredFieldsFilled,
+            dataAgreementChecked,
+            isGroupSelected,
+            isCapacityValid,
+        });
     }
+
     async function submitForm(formData) {
         try {
             console.log('Submitting form with formData:', formData); // Log the incoming form data
