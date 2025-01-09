@@ -592,8 +592,8 @@ $(document).ready(function () {
                     const groupName = typeof group === 'string' ? group : group.name; // Handle object or string groups
                     $dropdown.append(
                         $('<option>', {
-                            value: groupName,
-                            text: groupName,
+                            value: groupName.trim(),
+                            text: groupName.trim(),
                         })
                     );
                 });
@@ -613,11 +613,13 @@ $(document).ready(function () {
     
             // Trigger a change event to ensure validation updates
             $dropdown.trigger('change');
-
+    
             // Log populated options in console
-        console.log('Dropdown options:', $dropdown.find('option').toArray().map(option => option.value));
+            console.log('Dropdown options:', $dropdown.find('option').toArray().map(option => option.value));
         });
-        
+    
+        // Ensure the correct group is validated post-population
+        validateGroupSelection();
     }
 
     // API and Data Functions
@@ -776,27 +778,25 @@ $(document).ready(function () {
             $('#allocation-fields, #storage-fields, #common-fields').hide();
             $('#billing-information').hide();
     
-            // Default selections
-            $('#request-type-allocation').prop('checked', true);
-            $('input[name="new-or-renewal"]').prop('checked', false);
-            $('input[name="allocation-choice"]').prop('checked', false);
+            // Fetch and populate groups
+            console.log("Fetching and populating groups...");
+            await fetchAndPopulateGroups();
+    
+            // Trigger change event after populating dropdowns
+            $('#storage-mygroups-group').trigger('change');
     
             // Register event handlers
             setupEventHandlers();
     
-            // Fetch and populate data
-            console.log("Fetching and populating groups...");
-            await fetchAndPopulateGroups();
-    
-            // Update UI based on the current state
+            // Toggle fields and UI
             console.log("Toggling fields and UI...");
             toggleRequestFields();
             toggleAllocationFields();
             toggleStorageFields();
             toggleStorageTierOptions();
     
-            // Update billing visibility based on selections
-            updateBillingVisibility();
+            // Final validation check
+            updateFormValidation();
     
             console.log("Form initialization complete.");
         } catch (error) {
@@ -998,13 +998,13 @@ $(document).ready(function () {
     }
 
     function validateGroupSelection() {
-        const requestType = $('input[name="request-type"]:checked').val(); // Determine the current request type
+        const requestType = $('input[name="request-type"]:checked').val();
         const groupSelectId = requestType === 'service-unit' ? '#mygroups-group' : '#storage-mygroups-group';
-        const $groupSelect = $(groupSelectId); // Dynamically select the correct group field
+        const $groupSelect = $(groupSelectId);
     
-        // Ensure group dropdown exists before proceeding
-        if (!$groupSelect.length) {
-            console.error(`Group dropdown not found for request type: ${requestType}`);
+        // Ensure the dropdown is visible and active
+        if (!$groupSelect.length || !$groupSelect.is(':visible')) {
+            console.error(`Group dropdown not found or not visible for request type: ${requestType}`);
             return false;
         }
     
@@ -1313,48 +1313,55 @@ $(document).ready(function () {
             console.error('Error updating billing visibility:', error);
         }
     }
-    
     // Event Handlers
     function setupEventHandlers() {
         // Handle changes in request type (e.g., Service Unit vs Storage)
-        $('input[name="request-type"]').on('change', function () {
+        $('input[name="request-type"]').off('change').on('change', function () {
             console.log(`Request type changed to: ${$(this).val()}`);
             toggleRequestFields(); // Dynamically toggle SU and Storage fields
         });
-    
+
         // Handle New or Renewal selection for Service Unit
-        $('input[name="new-or-renewal"]').on('change', function () {
+        $('input[name="new-or-renewal"]').off('change').on('change', function () {
             console.log(`New or Renewal selected: ${$(this).val()}`);
             toggleAllocationFields(); // Dynamically toggle fields for SU based on New or Renewal
         });
-    
+
         // Handle Type of Request selection for Storage
-        $('input[name="type-of-request"]').on('change', function () {
+        $('input[name="type-of-request"]').off('change').on('change', function () {
             console.log(`Storage request type selected: ${$(this).val()}`);
             toggleStorageFields(); // Dynamically toggle fields for Storage based on request type
         });
-    
+
         // Handle group selection changes for SU and Storage
-        $(document).on('change', '#mygroups-group, #storage-mygroups-group', function () {
+        $('#mygroups-group, #storage-mygroups-group').off('change').on('change', function () {
             const selectedGroup = $(this).val();
             console.log(`Group selected: ${selectedGroup}`);
             validateGroupSelection(); // Validate group selection dynamically
             updateFormValidation(); // Update the entire form validation state
         });
-    
+
         // Handle Storage Tier selection changes
-        $('input[name="storage-choice"]').on('change', function () {
+        $('input[name="storage-choice"]').off('change').on('change', function () {
             console.log(`Storage tier selected: ${$(this).val()}`);
             toggleStorageTierOptions(); // Dynamically toggle tier-specific options
         });
-    
+
         // Handle data agreement checkbox state changes
-        $('#data-agreement').on('change', function () {
+        $('#data-agreement').off('change').on('change', function () {
             const isChecked = $(this).is(':checked');
             console.log(`Data agreement checkbox state: ${isChecked}`);
             updateFormValidation(); // Update validation when data agreement changes
         });
-    
+
+        // Add blur and change listeners for real-time validation on input fields
+        $('#combined-request-form input:not([type="radio"]), #combined-request-form select, #combined-request-form textarea')
+            .off('blur change')
+            .on('blur change', function () {
+                validateField($(this));
+                updateFormValidation();
+            });
+
         console.log('Event handlers successfully set up.');
     }
 
