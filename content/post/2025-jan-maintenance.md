@@ -61,5 +61,5 @@ The old Domain Name System (DNS) entries for logging into Rivanna/Afton HPC have
 |scons    | 4.2.0   | 4.5.2 |
 |smrtlink | 12.0.0.177059 | 13.1.0.221970 |
 |spaceranger| 2.0.1 | 3.1.1 |
-|sratoolkit| 3.0.3 | 3.1.1 |
+|sratoolkit| 3.0.2, 3.0.3 | 3.1.1 |
 {{< /table >}}
