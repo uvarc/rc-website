@@ -988,14 +988,16 @@ $(document).ready(function () {
     function validateGroupSelection() {
         const $groupSelect = $('#mygroups-group');
         const selectedGroup = $groupSelect.val();
-
+    
         console.log(`Validating group selection: ${selectedGroup}`);
-
+    
         if (!selectedGroup) {
+            console.log('No group selected.');
             markFieldInvalid($groupSelect, 'Please select a group.');
             return false;
         }
-
+    
+        console.log('Group selection is valid.');
         markFieldValid($groupSelect);
         return true;
     }
@@ -1004,24 +1006,31 @@ $(document).ready(function () {
         resetValidationState();
         let isValid = true;
         let firstInvalidField = null;
-
+    
         const isNewRequest = $('input[name="new-or-renewal"]:checked').val() === 'new' ||
-                            $('input[name="type-of-request"]:checked').val() === 'new-storage';
-
+                             $('input[name="type-of-request"]:checked').val() === 'new-storage';
+    
         console.log(`Is New Request: ${isNewRequest}`);
-
-        if (isNewRequest && !validateGroupSelection()) {
-            isValid = false;
-            firstInvalidField = $('#mygroups-group');
+    
+        if (isNewRequest) {
+            console.log("New request detected. Validating group selection...");
+            if (!validateGroupSelection()) {
+                console.log("Group selection validation failed.");
+                isValid = false;
+                firstInvalidField = $('#mygroups-group');
+            } else {
+                console.log("Group selection validation passed.");
+            }
         }
-
+    
         $('input:visible[required], select:visible[required], textarea:visible[required]').each(function () {
             if (!validateField($(this))) {
+                console.log(`Field validation failed: ${$(this).attr('id') || $(this).attr('name')}`);
                 isValid = false;
                 firstInvalidField = firstInvalidField || $(this);
             }
         });
-
+    
         handleValidationResult(isValid, firstInvalidField);
         return isValid;
     }
@@ -1043,9 +1052,9 @@ $(document).ready(function () {
     }
 
     function markFieldValid($field) {
-        console.log(`Field Valid: ${$field.attr('id')}`);
+        console.log(`Marking field valid: ${$field.attr('id') || $field.attr('name')}`);
         $field.addClass('is-valid').removeClass('is-invalid');
-
+    
         const $feedback = $field.siblings('.invalid-feedback');
         if ($feedback.length > 0) {
             $feedback.remove();
@@ -1296,24 +1305,39 @@ $(document).ready(function () {
 
     // Form Submission and UI Feedback
     async function handleFormSubmission(event) {
-        console.log('Form submitted. Validating...');
-        event.preventDefault();
-        
-        try {
-            if (validateForm()) {
-                const formData = collectFormData();
-                const isNewRequest = formData.newOrRenewal === 'new' || 
-                                   formData.typeOfRequest === 'new-storage';
+        console.log('Form submission started...');
+        event.preventDefault(); // Prevent default form submission behavior
     
+        try {
+            // Validate the form first
+            console.log('Validating the form...');
+            if (validateForm()) {
+                console.log('Form validation passed.');
+    
+                // Collect form data
+                const formData = collectFormData();
+                console.log('Collected form data:', formData);
+    
+                // Determine if this is a new request or an update
+                const isNewRequest = formData.newOrRenewal === 'new' || 
+                                     formData.typeOfRequest === 'new-storage';
+                console.log(`Is this a new request? ${isNewRequest}`);
+    
+                // Handle form submission based on the request type
                 if (isNewRequest) {
-                    await submitForm(formData);
+                    console.log('Submitting a new request...');
+                    await submitForm(formData); // Call the function to submit a new request
                 } else {
-                    await updateExistingResource(formData);
+                    console.log('Updating an existing resource...');
+                    await updateExistingResource(formData); // Call the function to update an existing resource
                 }
+            } else {
+                console.warn('Form validation failed. Fix the highlighted fields and try again.');
             }
         } catch (error) {
+            // Handle errors gracefully
             console.error('Form submission error:', error);
-            showErrorMessage('Unable to process request. Please try again.');
+            showErrorMessage('Unable to process the request. Please try again.');
         }
     }
 
