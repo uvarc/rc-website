@@ -569,13 +569,15 @@ $(document).ready(function () {
     }
 
     function populateGrouperMyGroupsDropdown(groups) {
-        const $dropdowns = $('#mygroups-group, #storage-mygroups-group'); // Select all relevant dropdowns
+        const $dropdowns = $('#mygroups-group, #storage-mygroups-group');
     
         $dropdowns.each(function () {
             const $dropdown = $(this);
-            $dropdown.empty(); // Clear any existing options
+            $dropdown.empty();
     
-            // Add a default "Select a group" option
+            console.log(`Populating dropdown: ${$dropdown.attr('id')} with groups:`, groups);
+    
+            // Add default "Select a group" option
             $dropdown.append(
                 $('<option>', {
                     value: '',
@@ -585,11 +587,9 @@ $(document).ready(function () {
                 })
             );
     
-            // Populate the dropdown with groups
             if (groups.length) {
-                console.log("Populating dropdown with groups:", groups);
                 groups.forEach(group => {
-                    const groupName = typeof group === 'string' ? group : group.name; // Handle object or string groups
+                    const groupName = typeof group === 'string' ? group : group.name;
                     $dropdown.append(
                         $('<option>', {
                             value: groupName.trim(),
@@ -598,7 +598,7 @@ $(document).ready(function () {
                     );
                 });
     
-                $dropdown.prop('disabled', false); // Enable the dropdown after population
+                $dropdown.prop('disabled', false);
             } else {
                 console.warn("No groups found to populate.");
                 $dropdown.append(
@@ -611,15 +611,10 @@ $(document).ready(function () {
                 $dropdown.prop('disabled', true);
             }
     
-            // Trigger a change event to ensure validation updates
-            $dropdown.trigger('change');
-    
-            // Log populated options in console
-            console.log('Dropdown options:', $dropdown.find('option').toArray().map(option => option.value));
+            $dropdown.trigger('change'); // Ensure validation triggers after population
         });
     
-        // Ensure the correct group is validated post-population
-        validateGroupSelection();
+        console.log('Dropdowns populated successfully.');
     }
 
     // API and Data Functions
@@ -1002,9 +997,16 @@ $(document).ready(function () {
         const groupSelectId = requestType === 'service-unit' ? '#mygroups-group' : '#storage-mygroups-group';
         const $groupSelect = $(groupSelectId);
     
-        // Ensure the dropdown is visible and active
-        if (!$groupSelect.length || !$groupSelect.is(':visible')) {
-            console.error(`Group dropdown not found or not visible for request type: ${requestType}`);
+        console.log(`Checking group dropdown for request type: ${requestType}`);
+        console.log(`Dropdown element:`, $groupSelect);
+    
+        // Ensure the dropdown exists and is visible
+        if (!$groupSelect.length) {
+            console.error(`Group dropdown not found for request type: ${requestType}`);
+            return false;
+        }
+        if (!$groupSelect.is(':visible')) {
+            console.error(`Group dropdown is not visible for request type: ${requestType}`);
             return false;
         }
     
@@ -1104,14 +1106,14 @@ $(document).ready(function () {
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected resource type:", requestType);
-    
+
         // Hide all sections initially
-        $('#allocation-fields, #storage-fields, #common-fields, #allocation-tier, #storage-platform').hide();
-    
+        $('#allocation-fields, #storage-fields, #common-fields, #allocation-tier, #storage-platform, #existing-projects-allocation, #existing-projects-storage').hide();
+
         if (requestType === 'service-unit') {
             console.log("Displaying Service Unit fields...");
             $('#allocation-fields, #common-fields').show(); // Show SU-specific fields
-    
+
             // Check New or Renewal for SU
             const isNewRequest = $('input[name="new-or-renewal"]:checked').val() === 'new';
             if (isNewRequest) {
@@ -1124,12 +1126,12 @@ $(document).ready(function () {
         } else if (requestType === 'storage') {
             console.log("Displaying Storage fields...");
             $('#storage-fields, #common-fields').show(); // Show Storage-specific fields
-    
+
             // Check New or Modify Existing for Storage
             const storageRequestType = $('input[name="type-of-request"]:checked').val();
             if (storageRequestType === 'new-storage') {
                 console.log("New storage request selected");
-                $('#storage-platform').show(); // Show Tier Options for New Storage
+                $('#storage-platform, #shared-space-name-container, #project-title-container').show(); // Show Tier Options and related fields for New Storage
             } else if (['increase-storage', 'decrease-storage', 'retire-storage'].includes(storageRequestType)) {
                 console.log("Modifying existing storage request selected");
                 $('#existing-projects-storage').show(); // Show Existing Projects table for modifying storage
@@ -1137,7 +1139,7 @@ $(document).ready(function () {
         } else {
             console.warn("Unknown request type:", requestType);
         }
-    
+
         // Update billing visibility and other dependent states
         updateBillingVisibility();
     }
@@ -1593,9 +1595,7 @@ $(document).ready(function () {
             return !!value;
         });
     
-        // Validate group selection dynamically
         const isGroupSelected = validateGroupSelection();
-    
         const isCapacityValid = requestType === 'storage' 
             ? !!$('#capacity:visible').val()?.trim() 
             : true;
