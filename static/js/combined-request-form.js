@@ -276,7 +276,7 @@ $(document).ready(function () {
             </tr>
         `);
     
-        if (!userResources.length) {
+        if (!isValidUserResources(userResources)) {
             showEmptyState(previewTableBody);
             return;
         }
@@ -485,6 +485,10 @@ $(document).ready(function () {
             return VALIDATION.groupName.test(name);
         },
     
+        isValidUserResources: (userResources) => {
+            return Array.isArray(userResources) && userResources.length > 0;
+        },
+    
         validateProjectName: (name) => {
             return VALIDATION.projectName.test(name);
         },
@@ -668,7 +672,7 @@ $(document).ready(function () {
                 populateGrouperMyGroupsDropdown(userGroups);
             }
     
-            if (!userResources.length) {
+            if (!isValidUserResources(userResources)) {
                 console.warn("No user resources found.");
             } else {
                 processUserResources(consoleData);
@@ -792,24 +796,25 @@ $(document).ready(function () {
         console.log("Processing projects from console response:", apiResponse);
     
         // Extract and parse user_resources
-        const userResourcesString = apiResponse[0]?.user_resources;
-        if (!userResourcesString) {
+        const userResources = (() => {
+            try {
+                return typeof apiResponse[0]?.user_resources === 'string'
+                    ? JSON.parse(apiResponse[0]?.user_resources)
+                    : apiResponse[0]?.user_resources || [];
+            } catch (error) {
+                console.error("Error parsing user resources:", error);
+                return [];
+            }
+        })();
+
+        if (!isValidUserResources(userResources)) {
             console.error("No user resources found in API response.");
             showEmptyState("#existing-projects-allocation", "No Active Service Units Found", "This section will display your active Service Unit allocations once they are approved.");
             showEmptyState("#existing-projects-storage", "No Active Storage Found", "This section will display your active storage allocations once they are approved.");
             return;
         }
-    
-        let userResources;
-        try {
-            userResources = JSON.parse(userResourcesString);
-            console.log("Parsed user resources:", userResources);
-        } catch (error) {
-            console.error("Error parsing user resources:", error);
-            showEmptyState("#existing-projects-allocation", "Failed to Load Service Units", "Please refresh the page or contact support.");
-            showEmptyState("#existing-projects-storage", "Failed to Load Storage", "Please refresh the page or contact support.");
-            return;
-        }
+
+        console.log("Parsed user resources:", userResources);
     
         // Process allocations (Service Units)
         const allocationProjects = [];
@@ -1022,16 +1027,31 @@ $(document).ready(function () {
         const requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected resource type:", requestType);
         
+        // Hide all fields initially
         $('#allocation-fields, #storage-fields, #common-fields').hide();
     
         if (requestType === 'service-unit') {
             $('#allocation-fields, #common-fields').show();
             $('#category').val('Rivanna HPC');
-            processUserProjectsFromConsole(consoleData); // Replace loadUserProjects
+    
+            if (consoleData && consoleData.length > 0) {
+                console.log("Processing Service Unit projects...");
+                processUserProjectsFromConsole(consoleData);
+            } else {
+                console.error("consoleData is empty or not loaded.");
+            }
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
             $('#category').val('Storage');
-            processUserProjectsFromConsole(consoleData); // Replace loadUserProjects
+    
+            if (consoleData && consoleData.length > 0) {
+                console.log("Processing Storage projects...");
+                processUserProjectsFromConsole(consoleData);
+            } else {
+                console.error("consoleData is empty or not loaded.");
+            }
+        } else {
+            console.warn("Unknown request type:", requestType);
         }
     
         updateBillingVisibility();
@@ -1041,14 +1061,20 @@ $(document).ready(function () {
     function toggleAllocationFields() {
         const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
         console.log("Selected new or renewal:", newOrRenewal);
+    
+        if (!newOrRenewal) {
+            console.warn("No selection made for new or renewal.");
+            return;
+        }
+    
         const isNew = newOrRenewal === 'new';
-        
+    
         $('#new-project-name-container').toggle(isNew);
         $('#existing-projects-allocation').toggle(!isNew);
         $('#allocation-tier').toggle(isNew);
         $('#mygroups-group-container').toggle(isNew);
         $('#mygroups-group').prop('required', isNew);
-        
+    
         if (isNew) {
             $("#new-descr").fadeIn(400);
             $("#renewal-descr").fadeOut(400);
@@ -1056,7 +1082,7 @@ $(document).ready(function () {
             $("#new-descr").fadeOut(400);
             $("#renewal-descr").fadeIn(400);
         }
-
+    
         resetValidationState();
         updateFormValidation();
     }
@@ -1064,26 +1090,35 @@ $(document).ready(function () {
     function toggleStorageFields() {
         const typeOfRequest = $('input[name="type-of-request"]:checked').val();
         console.log("Selected type of storage request:", typeOfRequest);
-        
+    
+        if (!typeOfRequest) {
+            console.warn("No storage request type selected.");
+            return;
+        }
+    
         const isNewStorage = typeOfRequest === 'new-storage';
         const isModifyingExisting = ['increase-storage', 'decrease-storage', 'retire-storage'].includes(typeOfRequest);
         const isRetiring = typeOfRequest === 'retire-storage';
-        
+    
         $('#storage-platform, #shared-space-name-container, #project-title-container').toggle(isNewStorage);
         $('#existing-projects-storage').toggle(isModifyingExisting);
         $('#mygroups-group-container').toggle(isNewStorage);
         $('#mygroups-group').prop('required', isNewStorage);
-        
+    
         const capacityField = $('#capacity');
         capacityField
             .prop('disabled', isRetiring)
             .val(isRetiring ? '0' : '')
             .prop('min', isRetiring ? '0' : '1');
-        
+    
         if (isModifyingExisting) {
-            updateStorageModificationFields(typeOfRequest);
+            if (consoleData && consoleData.length > 0) {
+                updateStorageModificationFields(typeOfRequest);
+            } else {
+                console.error("consoleData is empty or not loaded for storage modification.");
+            }
         }
-        
+    
         updateBillingVisibility();
         toggleStorageTierOptions();
     }
@@ -1091,12 +1126,17 @@ $(document).ready(function () {
     function toggleStorageTierOptions() {
         const selectedStorage = $('input[name="storage-choice"]:checked').val();
         console.log("Selected storage tier:", selectedStorage);
-        
+    
+        if (!selectedStorage) {
+            console.warn("No storage tier selected.");
+            return;
+        }
+    
         const isHighlySensitive = selectedStorage === 'Highly Sensitive Data';
-        
+    
         $('#sensitive-data').toggle(isHighlySensitive);
         $('#standard-data').toggle(!isHighlySensitive);
-        
+    
         updateCapacityLimits(selectedStorage);
         updateBillingVisibility();
     }
@@ -1176,21 +1216,29 @@ $(document).ready(function () {
     async function updateBillingVisibility() {
         try {
             // Parse user_resources from the console response
-            const userResourcesString = consoleData[0]?.user_resources; // Use the actual console response variable
-            if (!userResourcesString) {
-                console.error("No user_resources data found.");
+            const userResources = (() => {
+                try {
+                    return typeof consoleData[0]?.user_resources === 'string'
+                        ? JSON.parse(consoleData[0]?.user_resources)
+                        : consoleData[0]?.user_resources || [];
+                } catch (error) {
+                    console.error("Error parsing user_resources:", error);
+                    return [];
+                }
+            })();
+    
+            if (!userResources || userResources.length === 0) {
+                console.error("No valid user_resources data found.");
                 return;
             }
-    
-            const userResources = JSON.parse(userResourcesString);
     
             // Extract user storage usage from user_resources
             let currentStorageUsage = 0;
             userResources.forEach(resource => {
-                if (resource.resources?.storage && Object.keys(resource.resources.storage).length > 0) {
+                if (resource.resources?.storage) {
                     Object.entries(resource.resources.storage).forEach(([key, details]) => {
                         if (details.tier === "SSZ Research Standard") {
-                            currentStorageUsage += parseInt(details.currentSize || "0");
+                            currentStorageUsage += parseInt(details.currentSize || "0", 10);
                         }
                     });
                 }
@@ -1199,7 +1247,7 @@ $(document).ready(function () {
             // Get user selections and inputs
             const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
             const selectedAllocationTier = $('input[name="allocation-choice"]:checked').val();
-            const requestedStorageSize = parseInt($('#capacity').val()) || 0;
+            const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
             let shouldShowBilling = false;
             let showUsageWarning = false;
@@ -1230,6 +1278,7 @@ $(document).ready(function () {
             $('#billing-information').slideToggle(shouldShowBilling);
             $('#billing-information input, #billing-information select')
                 .prop('required', shouldShowBilling);
+    
         } catch (error) {
             console.error('Error updating billing visibility:', error);
             showErrorMessage('Error determining billing requirements');
@@ -1504,20 +1553,28 @@ $(document).ready(function () {
     function updateFormValidation() {
         const $form = $('#combined-request-form');
         const $submitBtn = $('#submit');
-        const hasInvalidFields = $form.find('.is-invalid').length > 0;
-        let requiredFieldsFilled = true;
         
+        // Check for invalid fields
+        const hasInvalidFields = $form.find('.is-invalid').length > 0;
+        
+        // Check if all required fields are filled
+        let requiredFieldsFilled = true;
         $form.find('input[required]:visible, select[required]:visible, textarea[required]:visible').each(function() {
-            if (!$(this).val()) {
+            if (!$(this).val() || $(this).is(':invalid')) {
                 requiredFieldsFilled = false;
-                return false;
+                return false; // Break loop
             }
         });
         
+        // Check if the Data Agreement checkbox is checked
         const dataAgreementChecked = $('#data-agreement').is(':checked');
-        $submitBtn.prop('disabled', hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked);
         
-        if ($submitBtn.is(':disabled')) {
+        // Enable or disable the submit button based on validation
+        const isFormValid = !hasInvalidFields && requiredFieldsFilled && dataAgreementChecked;
+        $submitBtn.prop('disabled', !isFormValid);
+        
+        // Log reasons if the submit button is disabled
+        if (!isFormValid) {
             console.log('Submit button disabled due to:', {
                 hasInvalidFields,
                 requiredFieldsFilled,
