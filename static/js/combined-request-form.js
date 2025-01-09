@@ -992,38 +992,38 @@ $(document).ready(function () {
         return true;
     }
 
-    function validateGroupSelection() {
-        const requestType = $('input[name="request-type"]:checked').val();
-        const groupSelectId = requestType === 'service-unit' ? '#mygroups-group' : '#storage-mygroups-group';
-        const $groupSelect = $(groupSelectId);
+    // function validateGroupSelection() {
+    //     const requestType = $('input[name="request-type"]:checked').val();
+    //     const groupSelectId = requestType === 'service-unit' ? '#mygroups-group' : '#storage-mygroups-group';
+    //     const $groupSelect = $(groupSelectId);
     
-        console.log(`Checking group dropdown for request type: ${requestType}`);
-        console.log(`Dropdown element:`, $groupSelect);
+    //     console.log(`Checking group dropdown for request type: ${requestType}`);
+    //     console.log(`Dropdown element:`, $groupSelect);
     
-        // Ensure the dropdown exists and is visible
-        if (!$groupSelect.length) {
-            console.error(`Group dropdown not found for request type: ${requestType}`);
-            return false;
-        }
-        if (!$groupSelect.is(':visible')) {
-            console.error(`Group dropdown is not visible for request type: ${requestType}`);
-            return false;
-        }
+    //     // Ensure the dropdown exists and is visible
+    //     if (!$groupSelect.length) {
+    //         console.error(`Group dropdown not found for request type: ${requestType}`);
+    //         return false;
+    //     }
+    //     if (!$groupSelect.is(':visible')) {
+    //         console.error(`Group dropdown is not visible for request type: ${requestType}`);
+    //         return false;
+    //     }
     
-        const selectedGroup = $groupSelect.val()?.trim();
-        console.log(`Validating group selection for request type "${requestType}": ${selectedGroup}`);
-        console.log('Dropdown options:', $groupSelect.find('option').toArray().map(option => option.value));
+    //     const selectedGroup = $groupSelect.val()?.trim();
+    //     console.log(`Validating group selection for request type "${requestType}": ${selectedGroup}`);
+    //     console.log('Dropdown options:', $groupSelect.find('option').toArray().map(option => option.value));
     
-        if (!selectedGroup || selectedGroup === '') {
-            console.log('No group selected.');
-            markFieldInvalid($groupSelect, 'Please select a group.');
-            return false;
-        }
+    //     if (!selectedGroup || selectedGroup === '') {
+    //         console.log('No group selected.');
+    //         markFieldInvalid($groupSelect, 'Please select a group.');
+    //         return false;
+    //     }
     
-        console.log('Group selection is valid.');
-        markFieldValid($groupSelect);
-        return true;
-    }
+    //     console.log('Group selection is valid.');
+    //     markFieldValid($groupSelect);
+    //     return true;
+    // }
 
     function validateForm() {
         resetValidationState();
@@ -1340,7 +1340,6 @@ $(document).ready(function () {
         $('#mygroups-group, #storage-mygroups-group').off('change').on('change', function () {
             const selectedGroup = $(this).val();
             console.log(`Group selected: ${selectedGroup}`);
-            validateGroupSelection(); // Validate group selection dynamically
             updateFormValidation(); // Update the entire form validation state
         });
 
@@ -1596,7 +1595,7 @@ $(document).ready(function () {
             return !!value;
         });
     
-        const isGroupSelected = validateGroupSelection();
+        // const isGroupSelected = validateGroupSelection();
         const isCapacityValid = requestType === 'storage' 
             ? !!$('#capacity:visible').val()?.trim() 
             : true;
