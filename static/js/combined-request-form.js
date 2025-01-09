@@ -1001,12 +1001,18 @@ $(document).ready(function () {
         const requestType = $('input[name="request-type"]:checked').val(); // Determine the current request type
         const groupSelectId = requestType === 'service-unit' ? '#mygroups-group' : '#storage-mygroups-group';
         const $groupSelect = $(groupSelectId); // Dynamically select the correct group field
-        const selectedGroup = $groupSelect.val();
     
+        // Ensure group dropdown exists before proceeding
+        if (!$groupSelect.length) {
+            console.error(`Group dropdown not found for request type: ${requestType}`);
+            return false;
+        }
+    
+        const selectedGroup = $groupSelect.val()?.trim();
         console.log(`Validating group selection for request type "${requestType}": ${selectedGroup}`);
         console.log('Dropdown options:', $groupSelect.find('option').toArray().map(option => option.value));
     
-        if (!selectedGroup) {
+        if (!selectedGroup || selectedGroup === '') {
             console.log('No group selected.');
             markFieldInvalid($groupSelect, 'Please select a group.');
             return false;
@@ -1566,11 +1572,9 @@ $(document).ready(function () {
         const $form = $('#combined-request-form');
         const $submitBtn = $('#submit');
     
-        // Determine the current request type (e.g., Service Unit or Storage)
         const requestType = $('input[name="request-type"]:checked').val();
         console.log(`Current request type: ${requestType}`);
     
-        // Find visible fields within the relevant container
         const visibleFieldsSelector = requestType === 'service-unit' 
             ? '#allocation-fields input[required]:visible, #allocation-fields select[required]:visible, #allocation-fields textarea[required]:visible' 
             : '#storage-fields input[required]:visible, #storage-fields select[required]:visible, #storage-fields textarea[required]:visible';
@@ -1582,17 +1586,15 @@ $(document).ready(function () {
             return !!value;
         });
     
-        // Dynamically validate group selection
+        // Validate group selection dynamically
         const isGroupSelected = validateGroupSelection();
     
-        // Additional checks
         const isCapacityValid = requestType === 'storage' 
             ? !!$('#capacity:visible').val()?.trim() 
-            : true; // Skip capacity validation for Service Unit requests
+            : true;
     
         const dataAgreementChecked = $('#data-agreement').is(':checked');
     
-        // Final validation result
         const shouldDisableSubmit = !requiredFieldsFilled || !dataAgreementChecked || !isGroupSelected || (requestType === 'storage' && !isCapacityValid);
         $submitBtn.prop('disabled', shouldDisableSubmit);
     
