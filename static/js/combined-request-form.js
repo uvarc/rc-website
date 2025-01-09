@@ -1271,18 +1271,58 @@ $(document).ready(function () {
     
     // Event Handlers
     function setupEventHandlers() {
-        $('input[name="request-type"]').on('change', toggleRequestFields);
-        $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
-        $('input[name="allocation-choice"]').on('change', updateBillingVisibility);
-        $('input[name="type-of-request"]').on('change', toggleStorageFields);
-        $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
-        $('#capacity').on('input change', updateBillingVisibility);
-        $('#mygroups-group').on('change', updateFormValidation);
-        $('#data-agreement').on('change', updateFormValidation);
-        $('#data-agreement').on('change', function() {
-            console.log('Data agreement checkbox state:', $(this).is(':checked'));
+        // Handle changes in request type (e.g., service unit vs storage)
+        $('input[name="request-type"]').on('change', function () {
+            console.log(`Request type changed to: ${$(this).val()}`);
+            toggleRequestFields();
+        });
+    
+        // Handle new vs renewal selection for allocation requests
+        $('input[name="new-or-renewal"]').on('change', function () {
+            console.log(`New or Renewal selected: ${$(this).val()}`);
+            toggleAllocationFields();
+        });
+    
+        // Handle allocation tier selection changes
+        $('input[name="allocation-choice"]').on('change', function () {
+            console.log(`Allocation choice selected: ${$(this).val()}`);
+            updateBillingVisibility();
+        });
+    
+        // Handle storage request type changes
+        $('input[name="type-of-request"]').on('change', function () {
+            console.log(`Storage request type changed to: ${$(this).val()}`);
+            toggleStorageFields();
+        });
+    
+        // Handle storage tier selection changes
+        $('input[name="storage-choice"]').on('change', function () {
+            console.log(`Storage tier selected: ${$(this).val()}`);
+            toggleStorageTierOptions();
+        });
+    
+        // Handle capacity input changes
+        $('#capacity').on('input change', function () {
+            console.log(`Capacity changed to: ${$(this).val()}`);
+            updateBillingVisibility();
+        });
+    
+        // Handle group selection from dropdown
+        $('#mygroups-group').on('change', function () {
+            const selectedGroup = $(this).val();
+            console.log(`Group selected: ${selectedGroup}`);
             updateFormValidation();
         });
+    
+        // Handle data agreement checkbox state changes
+        $('#data-agreement').on('change', function () {
+            const isChecked = $(this).is(':checked');
+            console.log(`Data agreement checkbox state: ${isChecked}`);
+            updateFormValidation();
+        });
+    
+        // Add additional logging for unexpected issues
+        console.log('Event handlers successfully set up.');
     }
 
     function setupRealTimeValidation() {
