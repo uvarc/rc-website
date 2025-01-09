@@ -44,7 +44,7 @@ private = true
 
 <div class="form-item form-group form-type-checkbox">
   <label class="control-label" for="lease-dates">
-    Lease Date
+    Proposed Start Date (Subject to Resource Availability)
   </label>
 
   <div id="lease-dates" style="margin-top: 10px; border: 1px solid #ccc; padding: 20px; background-color: #f9f9f9; border-radius: 8px;">
