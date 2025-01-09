@@ -276,7 +276,7 @@ $(document).ready(function () {
             </tr>
         `);
     
-        if (!utils.isValidUserResources(userResources)) {
+        if (!Array.isArray(userResources) || userResources.length === 0) {
             showEmptyState(previewTableBody);
             return;
         }
@@ -485,10 +485,6 @@ $(document).ready(function () {
             return VALIDATION.groupName.test(name);
         },
     
-        isValidUserResources: (userResources) => {
-            return Array.isArray(userResources) && userResources.length > 0;
-        },
-    
         validateProjectName: (name) => {
             return VALIDATION.projectName.test(name);
         },
@@ -661,21 +657,21 @@ $(document).ready(function () {
                 throw new Error(`API request failed with status ${response.status}`);
             }
     
-            // Store API response in consoleData
             consoleData = await response.json();
             console.log("Full API Response:", consoleData);
     
             const { userGroups, userResources } = parseConsoleData(consoleData);
-            if (!userGroups.length) {
-                console.warn("No user groups found.");
-            } else {
+    
+            if (userGroups.length > 0) {
                 populateGrouperMyGroupsDropdown(userGroups);
+            } else {
+                console.warn("No user groups found.");
             }
     
-            if (!isValidUserResources(userResources)) {
-                console.warn("No user resources found.");
-            } else {
+            if (Array.isArray(userResources) && userResources.length > 0) {
                 processUserResources(consoleData);
+            } else {
+                console.warn("No user resources found.");
             }
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -747,38 +743,36 @@ $(document).ready(function () {
         console.log("Initializing form...");
     
         try {
-            // Hide fields and set default visibility, no disabling
+            // Hide specific sections, but do not disable the whole form
             $('#allocation-fields, #storage-fields, #common-fields').hide();
-            $('#billing-information').hide(); // Default hidden
+            $('#billing-information').hide();
     
-            // Pre-select Service Unit (SU) but clear other default selections
+            // Default selections
             $('#request-type-allocation').prop('checked', true);
             $('input[name="new-or-renewal"]').prop('checked', false);
             $('input[name="allocation-choice"]').prop('checked', false);
     
-            // Register event handlers for form interactions
+            // Register event handlers
             setupEventHandlers();
     
-            // Fetch and display groups and user resources
+            // Fetch and populate data
             console.log("Fetching and populating groups...");
             await fetchAndPopulateGroups();
     
-            // Toggle fields and update the UI based on form state
+            // Update UI based on the current state
             console.log("Toggling fields and UI...");
             toggleRequestFields();
             toggleAllocationFields();
             toggleStorageFields();
             toggleStorageTierOptions();
     
-            // Update billing visibility based on current selections
+            // Update billing visibility based on selections
             updateBillingVisibility();
     
             console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
-    
-            // Show error message
-            showErrorMessage("Failed to initialize form properly. Please try refreshing the page.");
+            showErrorMessage("Failed to initialize form. Please refresh the page.");
         }
     }
 
@@ -797,7 +791,7 @@ $(document).ready(function () {
             }
         })();
 
-        if (!utils.isValidUserResources(userResources)) {
+        if (!Array.isArray(userResources) || userResources.length === 0) {
             console.error("No user resources found in API response.");
             showEmptyState("#existing-projects-allocation", "No Active Service Units Found", "This section will display your active Service Unit allocations once they are approved.");
             showEmptyState("#existing-projects-storage", "No Active Storage Found", "This section will display your active storage allocations once they are approved.");
@@ -1213,9 +1207,11 @@ $(document).ready(function () {
 
     async function updateBillingVisibility() {
         try {
-            const userResources = utils.parseUserResources(consoleData[0]?.user_resources || []);
+            const userResources = Array.isArray(consoleData[0]?.user_resources)
+                ? consoleData[0]?.user_resources
+                : [];
     
-            if (!userResources.length) {
+            if (userResources.length === 0) {
                 console.error("No valid user_resources data found.");
                 return;
             }
@@ -1248,51 +1244,14 @@ $(document).ready(function () {
     
     // Event Handlers
     function setupEventHandlers() {
-        $('input[name="request-type"]').on('change', function() {
-            const $label = $(this).next('label');
-            if (this.value === 'service-unit') {
-                $label.text('Service Unit (SU)');
-            } else if (this.value === 'storage') {
-                $label.text('Storage');
-            }
-            
-            toggleRequestFields();
-            loadPreviewTable();
-        });
-
+        $('input[name="request-type"]').on('change', toggleRequestFields);
         $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
-        $('input[name="allocation-choice"]').on('change', function() {
-            console.log("Selected SU tier:", $(this).val());
-            updateBillingVisibility();
-        });
-
+        $('input[name="allocation-choice"]').on('change', updateBillingVisibility);
         $('input[name="type-of-request"]').on('change', toggleStorageFields);
-        $('input[name="storage-choice"]').on('change', function() {
-            if (this.value === 'Highly Sensitive Data') {
-                $(this).next('label').text('Highly Sensitive Data');
-            }
-            toggleStorageTierOptions();
-        });
-        
-        $('#capacity').on('input change', function() {
-            if ($('#storage-fields').is(':visible')) {
-                updateBillingVisibility();
-            }
-        });
-
-        $('#mygroups-group').on('change', function() {
-            console.log("Selected Grouper/MyGroups account:", $(this).val());
-            validateGroupSelection();
-            updateFormValidation();
-        });
-
-        $('#data-agreement').on('change', function() {
-            $('#submit').prop('disabled', !$(this).is(':checked'));
-        });
-
-        $('#combined-request-form').on('submit', handleFormSubmission);
-
-        setupRealTimeValidation();
+        $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
+        $('#capacity').on('input change', updateBillingVisibility);
+        $('#mygroups-group').on('change', updateFormValidation);
+        $('#data-agreement').on('change', updateFormValidation);
     }
 
     function setupRealTimeValidation() {
@@ -1495,7 +1454,10 @@ $(document).ready(function () {
         const $submitBtn = $('#submit');
     
         const hasInvalidFields = $form.find('.is-invalid').length > 0;
-        const requiredFieldsFilled = $form.find('input[required]:visible, select[required]:visible, textarea[required]:visible').toArray().every(field => $(field).val());
+        const requiredFieldsFilled = $form
+            .find('input[required]:visible, select[required]:visible, textarea[required]:visible')
+            .toArray()
+            .every(field => $(field).val());
         const dataAgreementChecked = $('#data-agreement').is(':checked');
     
         $submitBtn.prop('disabled', hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked);
@@ -1508,7 +1470,6 @@ $(document).ready(function () {
             });
         }
     }
-
     async function submitForm(formData) {
         try {
             console.log('Submitting form with formData:', formData); // Log the incoming form data
