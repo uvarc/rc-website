@@ -1336,12 +1336,12 @@ $(document).ready(function () {
             toggleStorageFields(); // Dynamically toggle fields for Storage based on request type
         });
 
-        // Handle group selection changes for SU and Storage
-        $('#mygroups-group, #storage-mygroups-group').off('change').on('change', function () {
-            const selectedGroup = $(this).val();
-            console.log(`Group selected: ${selectedGroup}`);
-            updateFormValidation(); // Update the entire form validation state
-        });
+        // // Handle group selection changes for SU and Storage
+        // $('#mygroups-group, #storage-mygroups-group').off('change').on('change', function () {
+        //     const selectedGroup = $(this).val();
+        //     console.log(`Group selected: ${selectedGroup}`);
+        //     updateFormValidation(); // Update form validation without isGroupSelected
+        // });
 
         // Handle Storage Tier selection changes
         $('input[name="storage-choice"]').off('change').on('change', function () {
@@ -1602,13 +1602,12 @@ $(document).ready(function () {
     
         const dataAgreementChecked = $('#data-agreement').is(':checked');
     
-        const shouldDisableSubmit = !requiredFieldsFilled || !dataAgreementChecked || !isGroupSelected || (requestType === 'storage' && !isCapacityValid);
-        $submitBtn.prop('disabled', shouldDisableSubmit);
+        const shouldDisableSubmit = !requiredFieldsFilled || !dataAgreementChecked || (requestType === 'storage' && !isCapacityValid);
     
         console.log('Submit button disabled due to:', {
             requiredFieldsFilled,
             dataAgreementChecked,
-            isGroupSelected,
+            // isGroupSelected,
             isCapacityValid,
         });
     }
