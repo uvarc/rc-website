@@ -694,36 +694,56 @@ $(document).ready(function () {
 
     async function updateExistingResource(formData) {
         try {
+            console.log('Starting resource update with formData:', formData);
+    
+            // Wait for the user session to retrieve the computing ID
             const computingId = await waitForUserSession();
+    
+            // Disable and update the submit button while processing
             const $submitButton = $('#submit');
             $submitButton.prop('disabled', true)
-                .html('<span class="spinner-border spinner-border-sm"></span> Updating...');
+                .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Updating...');
     
+            // Construct the payload
             const payload = [{
                 group_name: formData.group,
                 project_name: formData.projectName || "",
                 project_desc: $('#project-description').val() || "",
                 data_agreement_signed: $('#data-agreement').is(':checked'),
-                pi_uid: document.querySelector('#uid').value || "",
+                pi_uid: document.querySelector('#uid')?.value || computingId,
                 resources: {}
             }];
     
+            // Add service units or storage based on the request type
             if (formData.requestType === 'service-unit') {
+                if (!formData.existingProject || !formData.allocationTier) {
+                    throw new Error('Missing required fields for service unit update.');
+                }
+    
                 payload[0].resources.hpc_service_units = {
                     [formData.existingProject]: {
                         tier: getTierEnum(formData.allocationTier),
-                        request_count: "1000"
+                        request_count: "1000" // Default for update
                     }
                 };
             } else if (formData.requestType === 'storage') {
+                if (!formData.existingProject || !formData.storageTier || !formData.capacity) {
+                    throw new Error('Missing required fields for storage update.');
+                }
+    
                 payload[0].resources.storage = {
                     [formData.existingProject]: {
                         tier: getStorageTierEnum(formData.storageTier),
                         request_size: formData.capacity.toString()
                     }
                 };
+            } else {
+                throw new Error('Unsupported request type.');
             }
     
+            console.log('Payload for update:', JSON.stringify(payload, null, 2));
+    
+            // Send the update request to the API
             const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
                 method: 'PUT',
                 headers: API_CONFIG.headers,
@@ -732,15 +752,18 @@ $(document).ready(function () {
             });
     
             if (!response.ok) {
+                const errorText = await response.text();
+                console.error('API Error Response:', errorText);
                 throw new Error(`API request failed with status ${response.status}`);
             }
     
+            console.log('Update successful.');
             showSuccessMessage('Your resource has been updated successfully.');
             resetForm();
-            await fetchAndPopulateGroups();
+            await fetchAndPopulateGroups(); // Refresh data on the page
         } catch (error) {
-            console.error('Error updating resource:', error);
-            showErrorMessage('Failed to update resource. Please try again.');
+            console.error('Error during resource update:', error);
+            showErrorMessage('Failed to update resource. Please check your inputs and try again.');
         } finally {
             $('#submit').prop('disabled', false).text('Submit');
         }
@@ -1456,64 +1479,87 @@ $(document).ready(function () {
         return formData;
     }
 
-    async function submitForm(formData) {
-        try {
-            console.log('Preparing to submit form data:', formData);
-            const computingId = await waitForUserSession();
-            const $submitButton = $('#submit');
-            $submitButton.prop('disabled', true)
-                        .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
+    // async function submitForm(formData) {
+    //     try {
+    //         console.log('Submitting form with formData:', formData); // Log the incoming form data
+        
+    //         const computingId = await waitForUserSession();
+    //         const $submitButton = $('#submit');
+    //         $submitButton.prop('disabled', true)
+    //                      .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
+        
+    //         // Build request payload
+    //         const payload = [{
+    //             group_name: formData.group || "Unknown Group",
+    //             project_name: formData.projectName || "",
+    //             project_desc: $('#project-description').val() || "",
+    //             data_agreement_signed: $('#data-agreement').is(':checked'),
+    //             pi_uid: document.querySelector('#uid')?.value || computingId,
+    //             resources: {}
+    //         }];
+        
+    //         // Handle Service Units request
+    //         if (formData.requestType === 'service-unit') {
+    //             const groupName = formData.group || "Default Group";
+    //             payload[0].resources.hpc_service_units = {
+    //                 [groupName]: {
+    //                     tier: getTierEnum(formData.allocationTier),
+    //                     request_count: formData.requestCount || "1000", // Default SU count
+    //                     billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+    //                 }
+    //             };
+    //         }
+    //         // Handle Storage request
+    //         else if (formData.requestType === 'storage') {
+    //             const groupName = formData.group || "Default Group";
+    //             payload[0].resources.storage = {
+    //                 [groupName]: {
+    //                     tier: getStorageTierEnum(formData.storageTier),
+    //                     request_size: formData.capacity?.toString() || "0", // Default size
+    //                     billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+    //                 }
+    //             };
+    //         }
+        
+    //         // Validate and log the payload
+    //         console.log('Validating payload before submission...');
+    //         console.log('Payload to be submitted:', JSON.stringify(payload, null, 2)); // Log payload in readable format
     
-            // Build request payload
-            const payload = [{
-                group_name: formData.group,
-                project_name: formData.projectName || "",
-                project_desc: $('#project-description').val() || "",
-                data_agreement_signed: $('#data-agreement').is(':checked'),
-                pi_uid: computingId,
-                resources: {}
-            }];
-    
-            if (formData.requestType === 'service-unit') {
-                payload[0].resources.hpc_service_units = {
-                    [formData.group]: {
-                        tier: getTierEnum(formData.allocationTier),
-                        request_count: formData.requestCount || "0"
-                    }
-                };
-            } else if (formData.requestType === 'storage') {
-                payload[0].resources.storage = {
-                    [formData.group]: {
-                        tier: getStorageTierEnum(formData.storageTier),
-                        request_size: formData.capacity.toString()
-                    }
-                };
-            }
-    
-            console.log('Submitting payload:', payload);
-    
-            const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
-                method: 'POST',
-                headers: API_CONFIG.headers,
-                credentials: 'include',
-                body: JSON.stringify(payload)
-            });
-    
-            if (!response.ok) {
-                const errorText = await response.text();
-                console.error('API Error Response:', errorText);
-                throw new Error(`API request failed with status ${response.status}`);
-            }
-    
-            showSuccessMessage('Your request has been submitted successfully.');
-            resetForm();
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            showErrorMessage('Failed to submit form. Please try again later.');
-        } finally {
-            $('#submit').prop('disabled', false).text('Submit');
-        }
-    }
+    //         if (!payload[0].group_name || !payload[0].resources || Object.keys(payload[0].resources).length === 0) {
+    //             console.error('Invalid payload:', payload); // Log invalid payload for debugging
+    //             showErrorMessage('Invalid request. Please ensure all required fields are filled.');
+    //             return;
+    //         }
+        
+    //         console.log('Payload validation passed. Submitting...');
+        
+    //         const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Accept': 'application/json',
+    //                 'Content-Type': 'application/json',
+    //                 'X-Requested-With': 'XMLHttpRequest'
+    //             },
+    //             credentials: 'include',
+    //             body: JSON.stringify(payload)
+    //         });
+        
+    //         if (!response.ok) {
+    //             const errorText = await response.text();
+    //             console.error('API Error Response:', errorText);
+    //             throw new Error(`API request failed with status ${response.status}`);
+    //         }
+        
+    //         console.log('API Response Successful'); // Log success for debugging
+    //         showSuccessMessage('Your request has been submitted successfully.');
+    //         resetForm(); // Reset the form after successful submission
+    //     } catch (error) {
+    //         console.error('Error submitting form:', error);
+    //         showErrorMessage('Failed to submit form. Please try again later.');
+    //     } finally {
+    //         $('#submit').prop('disabled', false).text('Submit'); // Re-enable the submit button
+    //     }
+    // }
 
     // Helper function to convert tier names to enum values
     function getTierEnum(tier) {
@@ -1612,77 +1658,77 @@ $(document).ready(function () {
         });
     }
 
-    async function submitForm(formData) {
-        try {
-            console.log('Submitting form with formData:', formData); // Log the incoming form data
+    // async function submitForm(formData) {
+    //     try {
+    //         console.log('Submitting form with formData:', formData); // Log the incoming form data
     
-            const computingId = await waitForUserSession();
-            const $submitButton = $('#submit');
-            $submitButton.prop('disabled', true)
-                         .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
+    //         const computingId = await waitForUserSession();
+    //         const $submitButton = $('#submit');
+    //         $submitButton.prop('disabled', true)
+    //                      .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
     
-            // Build request payload
-            const payload = [{
-                group_name: formData.group || "Unknown Group",
-                project_name: formData.projectName || "",
-                project_desc: $('#project-description').val() || "",
-                data_agreement_signed: $('#data-agreement').is(':checked'),
-                pi_uid: document.querySelector('#uid')?.value || computingId,
-                resources: {}
-            }];
+    //         // Build request payload
+    //         const payload = [{
+    //             group_name: formData.group || "Unknown Group",
+    //             project_name: formData.projectName || "",
+    //             project_desc: $('#project-description').val() || "",
+    //             data_agreement_signed: $('#data-agreement').is(':checked'),
+    //             pi_uid: document.querySelector('#uid')?.value || computingId,
+    //             resources: {}
+    //         }];
     
-            // Handle Service Units request
-            if (formData.requestType === 'service-unit') {
-                const groupName = formData.group || "Default Group";
-                payload[0].resources.hpc_service_units = {
-                    [groupName]: {
-                        tier: getTierEnum(formData.allocationTier),
-                        request_count: formData.requestCount || "1000", // Default SU count
-                        billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
-                    }
-                };
-            }
-            // Handle Storage request
-            else if (formData.requestType === 'storage') {
-                const groupName = formData.group || "Default Group";
-                payload[0].resources.storage = {
-                    [groupName]: {
-                        tier: getStorageTierEnum(formData.storageTier),
-                        request_size: formData.capacity?.toString() || "0", // Default size
-                        billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
-                    }
-                };
-            }
+    //         // Handle Service Units request
+    //         if (formData.requestType === 'service-unit') {
+    //             const groupName = formData.group || "Default Group";
+    //             payload[0].resources.hpc_service_units = {
+    //                 [groupName]: {
+    //                     tier: getTierEnum(formData.allocationTier),
+    //                     request_count: formData.requestCount || "1000", // Default SU count
+    //                     billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+    //                 }
+    //             };
+    //         }
+    //         // Handle Storage request
+    //         else if (formData.requestType === 'storage') {
+    //             const groupName = formData.group || "Default Group";
+    //             payload[0].resources.storage = {
+    //                 [groupName]: {
+    //                     tier: getStorageTierEnum(formData.storageTier),
+    //                     request_size: formData.capacity?.toString() || "0", // Default size
+    //                     billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+    //                 }
+    //             };
+    //         }
     
-            console.log('Submitting payload:', payload); // Log the payload before sending
+    //         console.log('Submitting payload:', payload); // Log the payload before sending
     
-            const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest'
-                },
-                credentials: 'include',
-                body: JSON.stringify(payload)
-            });
+    //         const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Accept': 'application/json',
+    //                 'Content-Type': 'application/json',
+    //                 'X-Requested-With': 'XMLHttpRequest'
+    //             },
+    //             credentials: 'include',
+    //             body: JSON.stringify(payload)
+    //         });
     
-            if (!response.ok) {
-                const errorText = await response.text();
-                console.error('API Error Response:', errorText);
-                throw new Error(`API request failed with status ${response.status}`);
-            }
+    //         if (!response.ok) {
+    //             const errorText = await response.text();
+    //             console.error('API Error Response:', errorText);
+    //             throw new Error(`API request failed with status ${response.status}`);
+    //         }
     
-            console.log('API Response Successful'); // Log success for debugging
-            showSuccessMessage('Your request has been submitted successfully.');
-            resetForm(); // Reset the form after successful submission
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            showErrorMessage('Failed to submit form. Please try again later.');
-        } finally {
-            $('#submit').prop('disabled', false).text('Submit'); // Re-enable the submit button
-        }
-    }
+    //         console.log('API Response Successful'); // Log success for debugging
+    //         showSuccessMessage('Your request has been submitted successfully.');
+    //         resetForm(); // Reset the form after successful submission
+    //     } catch (error) {
+    //         console.error('Error submitting form:', error);
+    //         showErrorMessage('Failed to submit form. Please try again later.');
+    //     } finally {
+    //         $('#submit').prop('disabled', false).text('Submit'); // Re-enable the submit button
+    //     }
+    // }
     
     function getBillingDetails() {
         return {
@@ -1701,6 +1747,89 @@ $(document).ready(function () {
                 assignee: $('#fdm-assignee').val() || ''
             }]
         };
+    }
+
+    // Consolidated Submit Form function
+
+    async function submitForm(formData) {
+        try {
+            console.log('Submitting form with formData:', formData);
+    
+            const computingId = await waitForUserSession();
+            const $submitButton = $('#submit');
+            $submitButton.prop('disabled', true)
+                         .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
+    
+            // Build the payload
+            const payload = [{
+                group_name: formData.group || "Unknown Group",
+                project_name: formData.projectName || "",
+                project_desc: $('#project-description').val() || "",
+                data_agreement_signed: $('#data-agreement').is(':checked'),
+                pi_uid: document.querySelector('#uid')?.value || computingId,
+                resources: {}
+            }];
+    
+            // Handle Service Unit requests
+            if (formData.requestType === 'service-unit') {
+                const groupName = formData.group || "Default Group";
+                payload[0].resources.hpc_service_units = {
+                    [groupName]: {
+                        tier: getTierEnum(formData.allocationTier),
+                        request_count: formData.requestCount || "1000",
+                        billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+                    }
+                };
+            }
+            // Handle Storage requests
+            else if (formData.requestType === 'storage') {
+                const groupName = formData.group || "Default Group";
+                payload[0].resources.storage = {
+                    [groupName]: {
+                        tier: getStorageTierEnum(formData.storageTier),
+                        request_size: formData.capacity?.toString() || "0",
+                        billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+                    }
+                };
+            }
+    
+            // Validate and log the payload
+            console.log('Validating payload before submission...');
+            console.log('Payload to be submitted:', JSON.stringify(payload, null, 2));
+    
+            if (!payload[0].group_name || !payload[0].resources || Object.keys(payload[0].resources).length === 0) {
+                console.error('Invalid payload:', payload);
+                showErrorMessage('Invalid request. Please ensure all required fields are filled.');
+                return;
+            }
+    
+            // Send the payload to the API
+            const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                credentials: 'include',
+                body: JSON.stringify(payload)
+            });
+    
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('API Error Response:', errorText);
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+    
+            console.log('API Response Successful');
+            showSuccessMessage('Your request has been submitted successfully.');
+            resetForm();
+        } catch (error) {
+            console.error('Error during form submission:', error);
+            showErrorMessage('Failed to submit form. Please try again later.');
+        } finally {
+            $submitButton.prop('disabled', false).text('Submit');
+        }
     }
 
     // Start initialization when document is ready
