@@ -543,17 +543,16 @@ $(document).ready(function () {
     function handleNonEligibleUser() {
         const message = 'You are not eligible to make resource requests at this time. ' +
                        'Please ensure you have completed all required training and agreements.';
-        
+    
         $('#combined-request-form').prepend(
             $('<div>')
                 .addClass('alert alert-warning')
                 .text(message)
         );
-        
+    
+        $('#submit').prop('disabled', true); // Keep only the submit button disabled
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .prop('disabled', true);
-        
-        $('#submit').prop('disabled', true);
+            .removeAttr('disabled'); // Allow interaction with all fields
     }
 
     function handleApiError(error) {
@@ -1452,22 +1451,32 @@ $(document).ready(function () {
     function updateFormValidation() {
         const $form = $('#combined-request-form');
         const $submitBtn = $('#submit');
-    
+        
+        // Check if there are any invalid fields
         const hasInvalidFields = $form.find('.is-invalid').length > 0;
+        
+        // Ensure all required fields are filled
         const requiredFieldsFilled = $form
             .find('input[required]:visible, select[required]:visible, textarea[required]:visible')
             .toArray()
-            .every(field => $(field).val());
+            .every(field => !!$(field).val()?.trim()); // Check for non-empty, trimmed values
+        
+        // Check if the data agreement checkbox is checked
         const dataAgreementChecked = $('#data-agreement').is(':checked');
-    
-        $submitBtn.prop('disabled', hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked);
-    
-        if ($submitBtn.is(':disabled')) {
+        
+        // Update submit button state
+        const shouldDisableSubmit = hasInvalidFields || !requiredFieldsFilled || !dataAgreementChecked;
+        $submitBtn.prop('disabled', shouldDisableSubmit);
+        
+        // Log the state for debugging
+        if (shouldDisableSubmit) {
             console.log('Submit button disabled due to:', {
                 hasInvalidFields,
                 requiredFieldsFilled,
                 dataAgreementChecked,
             });
+        } else {
+            console.log('Submit button enabled. All validations passed.');
         }
     }
     async function submitForm(formData) {
