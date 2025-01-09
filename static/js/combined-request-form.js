@@ -969,48 +969,10 @@ $(document).ready(function () {
 
     // UI Validation Functions
     function validateField($field) {
-        if (!$field[0].checkValidity()) {
-            const fieldLabel = $field.prev('label').text() || $field.attr('placeholder') || 'This field';
-            markFieldInvalid($field, `${fieldLabel} is required.`);
+        if (!$field.val()) {
+            markFieldInvalid($field, 'This field is required.');
             return false;
         }
-
-        const fieldId = $field.attr('id');
-        const fieldValue = $field.val();
-
-        console.log(`Validating field: ${fieldId}, Value: ${fieldValue}`);
-
-        switch (fieldId) {
-            case 'new-project-name':
-                if (!utils.validateProjectName(fieldValue)) {
-                    markFieldInvalid($field, 'Project name must be 3-128 characters long and contain only letters, numbers, spaces, and hyphens.');
-                    return false;
-                }
-                break;
-
-            case 'shared-space-name':
-                if (!utils.validateSharedSpaceName(fieldValue)) {
-                    markFieldInvalid($field, 'Shared space name must be 3-40 characters long and contain only letters, numbers, and hyphens.');
-                    return false;
-                }
-                break;
-
-            case 'capacity':
-                const capacity = parseInt(fieldValue, 10);
-                const minCapacity = parseInt($field.attr('min'), 10) || 0;
-                const maxCapacity = parseInt($field.attr('max'), 10) || Infinity;
-
-                if (isNaN(capacity) || capacity < minCapacity || capacity > maxCapacity) {
-                    markFieldInvalid($field, `Capacity must be between ${minCapacity}TB and ${maxCapacity}TB.`);
-                    return false;
-                }
-                break;
-
-            default:
-                // No additional validation required for this field
-                break;
-        }
-
         markFieldValid($field);
         return true;
     }
@@ -1051,33 +1013,17 @@ $(document).ready(function () {
     function validateForm() {
         resetValidationState();
         let isValid = true;
-        let firstInvalidField = null;
-    
-        const isNewRequest = $('input[name="new-or-renewal"]:checked').val() === 'new' ||
-                             $('input[name="type-of-request"]:checked').val() === 'new-storage';
-    
-        console.log(`Is New Request: ${isNewRequest}`);
-    
-        if (isNewRequest) {
-            console.log("New request detected. Validating group selection...");
-            if (!validateGroupSelection()) {
-                console.log("Group selection validation failed.");
-                isValid = false;
-                firstInvalidField = $('#mygroups-group');
-            } else {
-                console.log("Group selection validation passed.");
-            }
-        }
     
         $('input:visible[required], select:visible[required], textarea:visible[required]').each(function () {
-            if (!validateField($(this))) {
-                console.log(`Field validation failed: ${$(this).attr('id') || $(this).attr('name')}`);
+            const $field = $(this);
+            if (!$field.val()) {
+                markFieldInvalid($field, 'This field is required.');
                 isValid = false;
-                firstInvalidField = firstInvalidField || $(this);
+            } else {
+                markFieldValid($field);
             }
         });
     
-        handleValidationResult(isValid, firstInvalidField);
         return isValid;
     }
 
@@ -1751,84 +1697,140 @@ $(document).ready(function () {
 
     // Consolidated Submit Form function
 
+    // async function submitForm(formData) {
+    //     try {
+    //         console.log('Submitting form with formData:', formData);
+    
+    //         const computingId = await waitForUserSession();
+    //         const $submitButton = $('#submit');
+    //         $submitButton.prop('disabled', true)
+    //                      .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
+    
+    //         // Build the payload
+    //         const payload = [{
+    //             group_name: formData.group || "Unknown Group",
+    //             project_name: formData.projectName || "",
+    //             project_desc: $('#project-description').val() || "",
+    //             data_agreement_signed: $('#data-agreement').is(':checked'),
+    //             pi_uid: document.querySelector('#uid')?.value || computingId,
+    //             resources: {}
+    //         }];
+    
+    //         // Handle Service Unit requests
+    //         if (formData.requestType === 'service-unit') {
+    //             const groupName = formData.group || "Default Group";
+    //             payload[0].resources.hpc_service_units = {
+    //                 [groupName]: {
+    //                     tier: getTierEnum(formData.allocationTier),
+    //                     request_count: formData.requestCount || "1000",
+    //                     billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+    //                 }
+    //             };
+    //         }
+    //         // Handle Storage requests
+    //         else if (formData.requestType === 'storage') {
+    //             const groupName = formData.group || "Default Group";
+    //             payload[0].resources.storage = {
+    //                 [groupName]: {
+    //                     tier: getStorageTierEnum(formData.storageTier),
+    //                     request_size: formData.capacity?.toString() || "0",
+    //                     billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+    //                 }
+    //             };
+    //         }
+    
+    //         // Log the final payload before sending
+    //         console.log('Payload to be submitted:', JSON.stringify(payload, null, 2));
+    
+    //         // Send the payload to the API
+    //         const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Accept': 'application/json',
+    //                 'Content-Type': 'application/json',
+    //                 'X-Requested-With': 'XMLHttpRequest'
+    //             },
+    //             credentials: 'include',
+    //             body: JSON.stringify(payload)
+    //         });
+    
+    //         // Log detailed response information
+    //         if (!response.ok) {
+    //             const errorText = await response.text().catch(() => 'Unable to retrieve error details');
+    //             console.error('API Error Response:', {
+    //                 status: response.status,
+    //                 statusText: response.statusText,
+    //                 errorBody: errorText,
+    //                 headers: [...response.headers]
+    //             });
+    //             throw new Error(`API request failed with status ${response.status}`);
+    //         }
+    
+    //         console.log('API Response Successful:', await response.json());
+    //         showSuccessMessage('Your request has been submitted successfully.');
+    //         resetForm();
+    //     } catch (error) {
+    //         // Log all error details for debugging
+    //         console.error('Error during form submission:', error);
+    //         showErrorMessage('Failed to submit form. Please try again later.');
+    //     } finally {
+    //         $submitButton.prop('disabled', false).text('Submit');
+    //     }
+    // }
+
     async function submitForm(formData) {
         try {
             console.log('Submitting form with formData:', formData);
     
             const computingId = await waitForUserSession();
-            const $submitButton = $('#submit');
-            $submitButton.prop('disabled', true)
-                         .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Submitting...');
-    
-            // Build the payload
             const payload = [{
                 group_name: formData.group || "Unknown Group",
                 project_name: formData.projectName || "",
                 project_desc: $('#project-description').val() || "",
                 data_agreement_signed: $('#data-agreement').is(':checked'),
-                pi_uid: document.querySelector('#uid')?.value || computingId,
+                pi_uid: computingId,
                 resources: {}
             }];
     
-            // Handle Service Unit requests
+            // Handle Service Units
             if (formData.requestType === 'service-unit') {
-                const groupName = formData.group || "Default Group";
                 payload[0].resources.hpc_service_units = {
-                    [groupName]: {
+                    [formData.group]: {
                         tier: getTierEnum(formData.allocationTier),
-                        request_count: formData.requestCount || "1000",
-                        billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
-                    }
-                };
-            }
-            // Handle Storage requests
-            else if (formData.requestType === 'storage') {
-                const groupName = formData.group || "Default Group";
-                payload[0].resources.storage = {
-                    [groupName]: {
-                        tier: getStorageTierEnum(formData.storageTier),
-                        request_size: formData.capacity?.toString() || "0",
-                        billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+                        request_count: formData.requestCount || "0",
                     }
                 };
             }
     
-            // Log the final payload before sending
+            // Handle Storage
+            if (formData.requestType === 'storage') {
+                payload[0].resources.storage = {
+                    [formData.group]: {
+                        tier: getStorageTierEnum(formData.storageTier),
+                        request_size: formData.capacity.toString(),
+                    }
+                };
+            }
+    
             console.log('Payload to be submitted:', JSON.stringify(payload, null, 2));
     
-            // Send the payload to the API
             const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
                 method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest'
-                },
+                headers: API_CONFIG.headers,
                 credentials: 'include',
-                body: JSON.stringify(payload)
+                body: JSON.stringify(payload),
             });
     
-            // Log detailed response information
             if (!response.ok) {
-                const errorText = await response.text().catch(() => 'Unable to retrieve error details');
-                console.error('API Error Response:', {
-                    status: response.status,
-                    statusText: response.statusText,
-                    errorBody: errorText,
-                    headers: [...response.headers]
-                });
                 throw new Error(`API request failed with status ${response.status}`);
             }
     
-            console.log('API Response Successful:', await response.json());
+            console.log('API Response Successful');
             showSuccessMessage('Your request has been submitted successfully.');
             resetForm();
         } catch (error) {
-            // Log all error details for debugging
-            console.error('Error during form submission:', error);
-            showErrorMessage('Failed to submit form. Please try again later.');
-        } finally {
-            $submitButton.prop('disabled', false).text('Submit');
+            console.error('Error submitting form:', error);
+            showErrorMessage('Failed to submit the form. Please try again later.');
         }
     }
 
