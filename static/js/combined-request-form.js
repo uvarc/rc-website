@@ -276,7 +276,7 @@ $(document).ready(function () {
             </tr>
         `);
     
-        if (!isValidUserResources(userResources)) {
+        if (!utils.isValidUserResources(userResources)) {
             showEmptyState(previewTableBody);
             return;
         }
@@ -807,7 +807,7 @@ $(document).ready(function () {
             }
         })();
 
-        if (!isValidUserResources(userResources)) {
+        if (!utils.isValidUserResources(userResources)) {
             console.error("No user resources found in API response.");
             showEmptyState("#existing-projects-allocation", "No Active Service Units Found", "This section will display your active Service Unit allocations once they are approved.");
             showEmptyState("#existing-projects-storage", "No Active Storage Found", "This section will display your active storage allocations once they are approved.");
