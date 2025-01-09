@@ -736,6 +736,24 @@ $(document).ready(function () {
             $('#submit').prop('disabled', false).text('Submit');
         }
     }
+
+    function calculateStorageUsage(userResources, tier, group) {
+        if (!Array.isArray(userResources)) return 0;
+    
+        let totalUsage = 0;
+    
+        userResources.forEach(resource => {
+            if (resource.resources?.storage) {
+                Object.entries(resource.resources.storage).forEach(([key, details]) => {
+                    if (details.tier === tier && resource.group_name === group) {
+                        totalUsage += parseFloat(details.currentSize || 0); // Add the current size of the storage
+                    }
+                });
+            }
+        });
+    
+        return totalUsage;
+    }
     
     // Consolidated Initialize Function
     async function initialize() {
@@ -1216,22 +1234,18 @@ $(document).ready(function () {
             }
     
             const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
-            const selectedAllocationTier = $('input[name="allocation-choice"]:checked').val();
+            const selectedGroup = $('#mygroups-group').val();
             const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
             let shouldShowBilling = false;
     
-            if ($('#allocation-fields').is(':visible') && selectedAllocationTier) {
-                shouldShowBilling = utils.isTierPaid(selectedAllocationTier);
-            }
-    
-            if ($('#storage-fields').is(':visible') && selectedStorageTier) {
+            if ($('#storage-fields').is(':visible') && selectedStorageTier && selectedGroup) {
                 if (selectedStorageTier === "SSZ Research Standard") {
-                    const currentUsage = calculateStorageUsage(userResources, "SSZ Research Standard");
-                    const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit;
+                    const currentUsage = calculateStorageUsage(userResources, "SSZ Research Standard", selectedGroup);
+                    const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
                     shouldShowBilling = (currentUsage + requestedStorageSize) > freeLimit;
-                } else {
-                    shouldShowBilling = utils.isTierPaid(selectedStorageTier);
+                } else if (selectedStorageTier === "SSZ Research Project" || selectedStorageTier === "Highly Sensitive Data") {
+                    shouldShowBilling = true;
                 }
             }
     
