@@ -1106,14 +1106,14 @@ $(document).ready(function () {
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
         console.log("Selected resource type:", requestType);
-
+    
         // Hide all sections initially
         $('#allocation-fields, #storage-fields, #common-fields, #allocation-tier, #storage-platform, #existing-projects-allocation, #existing-projects-storage').hide();
-
+    
         if (requestType === 'service-unit') {
             console.log("Displaying Service Unit fields...");
             $('#allocation-fields, #common-fields').show(); // Show SU-specific fields
-
+    
             // Check New or Renewal for SU
             const isNewRequest = $('input[name="new-or-renewal"]:checked').val() === 'new';
             if (isNewRequest) {
@@ -1126,12 +1126,13 @@ $(document).ready(function () {
         } else if (requestType === 'storage') {
             console.log("Displaying Storage fields...");
             $('#storage-fields, #common-fields').show(); // Show Storage-specific fields
-
+    
             // Check New or Modify Existing for Storage
             const storageRequestType = $('input[name="type-of-request"]:checked').val();
             if (storageRequestType === 'new-storage') {
                 console.log("New storage request selected");
-                $('#storage-platform, #shared-space-name-container, #project-title-container').show(); // Show Tier Options and related fields for New Storage
+                // Ensure all relevant fields, including MyGroups container, are shown
+                $('#storage-platform, #shared-space-name-container, #project-title-container, #storage-mygroups-container').show();
             } else if (['increase-storage', 'decrease-storage', 'retire-storage'].includes(storageRequestType)) {
                 console.log("Modifying existing storage request selected");
                 $('#existing-projects-storage').show(); // Show Existing Projects table for modifying storage
@@ -1139,7 +1140,7 @@ $(document).ready(function () {
         } else {
             console.warn("Unknown request type:", requestType);
         }
-
+    
         // Update billing visibility and other dependent states
         updateBillingVisibility();
     }
