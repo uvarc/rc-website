@@ -696,77 +696,82 @@ $(document).ready(function () {
         try {
             console.log('Starting resource update with formData:', formData);
     
-            // Wait for the user session to retrieve the computing ID
             const computingId = await waitForUserSession();
     
-            // Disable and update the submit button while processing
-            const $submitButton = $('#submit');
-            $submitButton.prop('disabled', true)
-                .html('<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Updating...');
+            // Fetch the original resource data via GET
+            const getResponse = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+                method: 'GET',
+                headers: API_CONFIG.headers,
+                credentials: 'include',
+            });
     
-            // Construct the payload
-            const payload = [{
-                group_name: formData.group,
-                project_name: formData.projectName || "",
-                project_desc: $('#project-description').val() || "",
-                data_agreement_signed: $('#data-agreement').is(':checked'),
-                pi_uid: document.querySelector('#uid')?.value || computingId,
-                resources: {}
-            }];
-    
-            // Add service units or storage based on the request type
-            if (formData.requestType === 'service-unit') {
-                if (!formData.existingProject || !formData.allocationTier) {
-                    throw new Error('Missing required fields for service unit update.');
-                }
-    
-                payload[0].resources.hpc_service_units = {
-                    [formData.existingProject]: {
-                        tier: getTierEnum(formData.allocationTier),
-                        request_count: "1000" // Default for update
-                    }
-                };
-            } else if (formData.requestType === 'storage') {
-                if (!formData.existingProject || !formData.storageTier || !formData.capacity) {
-                    throw new Error('Missing required fields for storage update.');
-                }
-    
-                payload[0].resources.storage = {
-                    [formData.existingProject]: {
-                        tier: getStorageTierEnum(formData.storageTier),
-                        request_size: formData.capacity.toString()
-                    }
-                };
-            } else {
-                throw new Error('Unsupported request type.');
+            if (!getResponse.ok) {
+                throw new Error(`Failed to fetch existing resource data with status ${getResponse.status}`);
             }
     
-            console.log('Payload for update:', JSON.stringify(payload, null, 2));
+            const existingResources = await getResponse.json();
+            console.log("Existing Resources Fetched:", existingResources);
     
-            // Send the update request to the API
-            const response = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
+            // Validate GET response
+            if (!Array.isArray(existingResources) || existingResources.length === 0) {
+                throw new Error('GET response returned no resources.');
+            }
+    
+            existingResources.forEach(resource => {
+                if (!resource.resources) {
+                    throw new Error(`Missing "resources" field in resource: ${JSON.stringify(resource)}`);
+                }
+    
+                if (formData.requestType === 'service-unit' && !resource.resources.hpc_service_units) {
+                    throw new Error(`Missing "hpc_service_units" in resource: ${JSON.stringify(resource)}`);
+                }
+    
+                if (formData.requestType === 'storage' && !resource.resources.storage) {
+                    throw new Error(`Missing "storage" in resource: ${JSON.stringify(resource)}`);
+                }
+            });
+    
+            // Prepare the payload by modifying the fetched data
+            const payload = existingResources.map(resource => {
+                if (formData.requestType === 'service-unit' && resource.resources?.hpc_service_units) {
+                    const key = formData.existingProject; // Use the key provided in formData
+                    if (resource.resources.hpc_service_units[key]) {
+                        resource.resources.hpc_service_units[key].request_count = formData.requestCount || "1000";
+                        resource.resources.hpc_service_units[key].billing_details = formData.billingDetails || getBillingDetails();
+                    }
+                } else if (formData.requestType === 'storage' && resource.resources?.storage) {
+                    const key = formData.existingProject; // Use the key provided in formData
+                    if (resource.resources.storage[key]) {
+                        resource.resources.storage[key].request_size = formData.capacity?.toString() || "0";
+                        resource.resources.storage[key].billing_details = formData.billingDetails || getBillingDetails();
+                    }
+                }
+                return resource;
+            });
+    
+            console.log("Updated Payload for PUT Request:", JSON.stringify(payload, null, 2));
+    
+            // Send the updated payload via PUT
+            const putResponse = await fetch(`${API_CONFIG.baseUrl}/${computingId}`, {
                 method: 'PUT',
                 headers: API_CONFIG.headers,
                 credentials: 'include',
-                body: JSON.stringify(payload)
+                body: JSON.stringify(payload),
             });
     
-            if (!response.ok) {
-                const errorText = await response.text();
+            if (!putResponse.ok) {
+                const errorText = await putResponse.text();
                 console.error('API Error Response:', errorText);
-                throw new Error(`API request failed with status ${response.status}`);
+                throw new Error(`API PUT request failed with status ${putResponse.status}`);
             }
     
             console.log('Update successful.');
             showSuccessMessage('Your resource has been updated successfully.');
             resetForm();
-            await fetchAndPopulateGroups(); // Refresh data on the page
         } catch (error) {
             console.error('Error during resource update:', error);
             showErrorMessage('Failed to update resource. Please check your inputs and try again.');
-        } //finally {
-        //     $('#submit').prop('disabled', false).text('Submit');
-        // }
+        }
     }
 
     function calculateStorageUsage(userResources, tier, group) {
@@ -1677,9 +1682,9 @@ $(document).ready(function () {
     // }
     
     function getBillingDetails() {
-        return {
+        const billingDetails = {
             fdm_billing_info: [{
-                company: $('#fdm-company').val() || '',
+                company: $('#fdm-company').val() || '', // Ensure default empty string
                 business_unit: $('#fdm-business-unit').val() || '',
                 cost_center: $('#fdm-cost-center').val() || '',
                 fund: $('#fdm-fund').val() || '',
@@ -1693,6 +1698,9 @@ $(document).ready(function () {
                 assignee: $('#fdm-assignee').val() || ''
             }]
         };
+    
+        console.log('Generated Billing Details:', JSON.stringify(billingDetails, null, 2)); // Debugging log
+        return billingDetails;
     }
 
     // Consolidated Submit Form function
