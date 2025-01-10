@@ -3,7 +3,7 @@ $(document).ready(function () {
     console.log("Updated Combined Request Form JS loaded");
 
     // Constants and Configuration
-    
+
     const API_CONFIG = {
         baseUrl: 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
         headers: {
@@ -99,6 +99,71 @@ $(document).ready(function () {
         markFieldValid($field);
         return true;
     }
+
+    const utils = {
+        formatBytes: (bytes, decimals = 2) => {
+            if (bytes === 0) return '0 TB';
+            const k = 1024;
+            const dm = decimals < 0 ? 0 : decimals;
+            const sizes = ['TB', 'PB', 'EB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+        },
+        
+        validateGroupName: (name) => {
+            return VALIDATION.groupName.test(name);
+        },
+    
+        validateProjectName: (name) => {
+            return VALIDATION.projectName.test(name);
+        },
+    
+        validateSharedSpaceName: (name) => {
+            return VALIDATION.sharedSpaceName.test(name);
+        },
+    
+        isTierPaid: (tierName, currentSize = 0) => {
+            const tier = RESOURCE_TYPES[tierName];
+            if (!tier) return false;
+            
+            if (typeof tier.isPaid === 'function') {
+                return tier.isPaid(currentSize);
+            }
+            return tier.isPaid;
+        },
+    
+        handleApiResponse: async (response) => {
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+            const data = await response.json();
+            console.log('API Response:', data);
+            return data;
+        },
+    
+        logApiError: (error, context) => {
+            console.error(`API Error (${context}):`, error);
+            return error;
+        },
+    
+        showWaitingMessage: () => {
+            return $('<div>')
+                .addClass('api-waiting-message')
+                .html(`
+                    <div class="d-flex align-items-center">
+                        <div class="spinner-border spinner-border-sm me-2" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div>Loading your groups...</div>
+                    </div>
+                `)
+                .prependTo('#combined-request-form');
+        },
+    
+        removeWaitingMessage: () => {
+            $('.api-waiting-message').remove();
+        }
+    };
 
     // Error Handling
     function showErrorMessage(message) {
