@@ -547,6 +547,57 @@ $(document).ready(function () {
         });
     }
 
+    function populateGrouperMyGroupsDropdown(groups) {
+        const $dropdowns = $('#mygroups-group, #storage-mygroups-group');
+    
+        $dropdowns.each(function () {
+            const $dropdown = $(this);
+            $dropdown.empty(); // Clear existing options
+    
+            console.log(`Populating dropdown: ${$dropdown.attr('id')} with groups:`, groups);
+    
+            // Add a default "Select a group" option
+            $dropdown.append(
+                $('<option>', {
+                    value: '',
+                    text: '- Select a group -',
+                    selected: true,
+                    disabled: true,
+                })
+            );
+    
+            // Populate the dropdown with the fetched groups
+            if (groups.length) {
+                groups.forEach(group => {
+                    const groupName = typeof group === 'string' ? group : group.name;
+                    $dropdown.append(
+                        $('<option>', {
+                            value: groupName.trim(),
+                            text: groupName.trim(),
+                        })
+                    );
+                });
+    
+                $dropdown.prop('disabled', false);
+            } else {
+                console.warn("No groups found to populate.");
+                $dropdown.append(
+                    $('<option>', {
+                        value: '',
+                        text: 'No groups available - contact support',
+                        disabled: true,
+                    })
+                );
+                $dropdown.prop('disabled', true);
+            }
+    
+            // Trigger change event for validation or dependent logic
+            $dropdown.trigger('change');
+        });
+    
+        console.log('Dropdowns populated successfully.');
+    }
+
     // Update Form Validation
 
     function updateFormValidation() {
