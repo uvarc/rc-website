@@ -91,168 +91,176 @@ $(document).ready(function () {
 
     // Utility and Helper Function
 
-    async function waitForUserSession() {
-        let attempts = 0;
-        const maxAttempts = 50;
-        
-        while (attempts < maxAttempts) {
-            const userIdField = document.querySelector('input[name="uid"]') || 
-                              document.querySelector('#uid');
-            
-            if (userIdField && userIdField.value) {
-                console.log("User ID found:", userIdField.value);
-                return userIdField.value;
-            }
-            
-            if (attempts % 10 === 0) {
-                console.log(`Waiting for user session... Attempt ${attempts}`);
-            }
-            
-            await new Promise(resolve => setTimeout(resolve, 100));
-            attempts++;
+        /// Core Helper Functions
+
+        function markFieldValid($field) {
+            console.log(`Marking field valid: ${$field.attr('id') || $field.attr('name')}`);
+            $field.addClass('is-valid').removeClass('is-invalid');
+            $field.siblings('.invalid-feedback').remove();
         }
         
-        throw new Error('Could not get user ID - please ensure you are logged in');
-    }
-
-    function markFieldValid($field) {
-        console.log(`Marking field valid: ${$field.attr('id') || $field.attr('name')}`);
-        $field.addClass('is-valid').removeClass('is-invalid');
-        $field.siblings('.invalid-feedback').remove();
-    }
-    
-    function markFieldInvalid($field, message) {
-        console.log(`Marking field invalid: ${$field.attr('id') || $field.attr('name')}, Reason: ${message}`);
-        $field.addClass('is-invalid').removeClass('is-valid');
-        
-        let $feedback = $field.siblings('.invalid-feedback');
-        if ($feedback.length === 0) {
-            $feedback = $('<div>')
-                .addClass('invalid-feedback')
-                .text(message);
-            $field.after($feedback);
-        } else {
-            $feedback.text(message);
-        }
-    }
-
-    function validateField($field) {
-        if (!$field.val()) {
-            markFieldInvalid($field, 'This field is required.');
-            return false;
-        }
-        markFieldValid($field);
-        return true;
-    }
-
-    const utils = {
-        formatBytes: (bytes, decimals = 2) => {
-            if (bytes === 0) return '0 TB';
-            const k = 1024;
-            const dm = decimals < 0 ? 0 : decimals;
-            const sizes = ['TB', 'PB', 'EB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-        },
-        
-        validateGroupName: (name) => {
-            return VALIDATION.groupName.test(name);
-        },
-    
-        validateProjectName: (name) => {
-            return VALIDATION.projectName.test(name);
-        },
-    
-        validateSharedSpaceName: (name) => {
-            return VALIDATION.sharedSpaceName.test(name);
-        },
-    
-        isTierPaid: (tierName, currentSize = 0) => {
-            const tier = RESOURCE_TYPES[tierName];
-            if (!tier) return false;
+        function markFieldInvalid($field, message) {
+            console.log(`Marking field invalid: ${$field.attr('id') || $field.attr('name')}, Reason: ${message}`);
+            $field.addClass('is-invalid').removeClass('is-valid');
             
-            if (typeof tier.isPaid === 'function') {
-                return tier.isPaid(currentSize);
+            let $feedback = $field.siblings('.invalid-feedback');
+            if ($feedback.length === 0) {
+                $feedback = $('<div>')
+                    .addClass('invalid-feedback')
+                    .text(message);
+                $field.after($feedback);
+            } else {
+                $feedback.text(message);
             }
-            return tier.isPaid;
-        },
-    
-        handleApiResponse: async (response) => {
-            if (!response.ok) {
-                throw new Error(`API request failed with status ${response.status}`);
+        }
+
+        function validateField($field) {
+            if (!$field.val()) {
+                markFieldInvalid($field, 'This field is required.');
+                return false;
             }
-            const data = await response.json();
-            console.log('API Response:', data);
-            return data;
-        },
-    
-        logApiError: (error, context) => {
-            console.error(`API Error (${context}):`, error);
-            return error;
-        },
-    
-        showWaitingMessage: () => {
-            return $('<div>')
-                .addClass('api-waiting-message')
-                .html(`
-                    <div class="d-flex align-items-center">
-                        <div class="spinner-border spinner-border-sm me-2" role="status">
-                            <span class="visually-hidden">Loading...</span>
+            markFieldValid($field);
+            return true;
+        }
+
+        /// Session and Data Handling
+
+        async function waitForUserSession() {
+            let attempts = 0;
+            const maxAttempts = 50;
+            
+            while (attempts < maxAttempts) {
+                const userIdField = document.querySelector('input[name="uid"]') || 
+                                document.querySelector('#uid');
+                
+                if (userIdField && userIdField.value) {
+                    console.log("User ID found:", userIdField.value);
+                    return userIdField.value;
+                }
+                
+                if (attempts % 10 === 0) {
+                    console.log(`Waiting for user session... Attempt ${attempts}`);
+                }
+                
+                await new Promise(resolve => setTimeout(resolve, 100));
+                attempts++;
+            }
+            
+            throw new Error('Could not get user ID - please ensure you are logged in');
+        }
+
+        function collectFormData() {
+            const formData = {
+                requestType: $('input[name="request-type"]:checked').val(),
+                group: $('#mygroups-group').val(),
+                projectName: $('#new-project-name').val(),
+                capacity: $('#capacity').val(),
+                allocationTier: $('input[name="allocation-choice"]:checked').val(),
+                storageTier: $('input[name="storage-choice"]:checked').val(),
+                shouldShowBilling: $('#billing-information').is(':visible'),
+            };
+        
+            if (formData.requestType === 'service-unit') {
+                formData.newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
+                if (formData.newOrRenewal === 'renewal') {
+                    formData.existingProject = $('input[name="existing-project-allocation"]:checked').val();
+                }
+            } else if (formData.requestType === 'storage') {
+                formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
+                if (formData.typeOfRequest !== 'new-storage') {
+                    formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
+                }
+            }
+        
+            return formData;
+        }
+
+        /// Enum Mappings
+
+        function getTierEnum(tier) {
+            const tierMap = {
+                'Standard': 'ssz_standard',
+                'Instructional': 'ssz_instructional',
+                'Paid': 'ssz_paid',
+            };
+            return tierMap[tier] || 'ssz_standard';
+        }
+
+        function getStorageTierEnum(tier) {
+            const tierMap = {
+                'SSZ Research Standard': 'ssz_standard',
+                'SSZ Research Project': 'ssz_project',
+                'Highly Sensitive Data': 'hsz_standard',
+            };
+            return tierMap[tier] || 'ssz_standard'; // Default to 'ssz_standard' if no match
+        }
+
+        /// Utils Object
+
+        const utils = {
+            formatBytes: (bytes, decimals = 2) => {
+                if (bytes === 0) return '0 TB';
+                const k = 1024;
+                const dm = decimals < 0 ? 0 : decimals;
+                const sizes = ['TB', 'PB', 'EB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+            },
+            
+            validateGroupName: (name) => {
+                return VALIDATION.groupName.test(name);
+            },
+        
+            validateProjectName: (name) => {
+                return VALIDATION.projectName.test(name);
+            },
+        
+            validateSharedSpaceName: (name) => {
+                return VALIDATION.sharedSpaceName.test(name);
+            },
+        
+            isTierPaid: (tierName, currentSize = 0) => {
+                const tier = RESOURCE_TYPES[tierName];
+                if (!tier) return false;
+                
+                if (typeof tier.isPaid === 'function') {
+                    return tier.isPaid(currentSize);
+                }
+                return tier.isPaid;
+            },
+        
+            handleApiResponse: async (response) => {
+                if (!response.ok) {
+                    throw new Error(`API request failed with status ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('API Response:', data);
+                return data;
+            },
+        
+            logApiError: (error, context) => {
+                console.error(`API Error (${context}):`, error);
+                return error;
+            },
+        
+            showWaitingMessage: () => {
+                return $('<div>')
+                    .addClass('api-waiting-message')
+                    .html(`
+                        <div class="d-flex align-items-center">
+                            <div class="spinner-border spinner-border-sm me-2" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <div>Loading your groups...</div>
                         </div>
-                        <div>Loading your groups...</div>
-                    </div>
-                `)
-                .prependTo('#combined-request-form');
-        },
-    
-        removeWaitingMessage: () => {
-            $('.api-waiting-message').remove();
-        }
-    }
-
-    function collectFormData() {
-        const formData = {
-            requestType: $('input[name="request-type"]:checked').val(),
-            group: $('#mygroups-group').val(),
-            projectName: $('#new-project-name').val(),
-            capacity: $('#capacity').val(),
-            allocationTier: $('input[name="allocation-choice"]:checked').val(),
-            storageTier: $('input[name="storage-choice"]:checked').val(),
-            shouldShowBilling: $('#billing-information').is(':visible'),
-        };
-    
-        if (formData.requestType === 'service-unit') {
-            formData.newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
-            if (formData.newOrRenewal === 'renewal') {
-                formData.existingProject = $('input[name="existing-project-allocation"]:checked').val();
-            }
-        } else if (formData.requestType === 'storage') {
-            formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
-            if (formData.typeOfRequest !== 'new-storage') {
-                formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
+                    `)
+                    .prependTo('#combined-request-form');
+            },
+        
+            removeWaitingMessage: () => {
+                $('.api-waiting-message').remove();
             }
         }
-    
-        return formData;
-    }
-
-    function getTierEnum(tier) {
-        const tierMap = {
-            'Standard': 'ssz_standard',
-            'Instructional': 'ssz_instructional',
-            'Paid': 'ssz_paid',
-        };
-        return tierMap[tier] || 'ssz_standard';
-    }
-
-    function getStorageTierEnum(tier) {
-        const tierMap = {
-            'SSZ Research Standard': 'ssz_standard',
-            'SSZ Research Project': 'ssz_project',
-            'Highly Sensitive Data': 'hsz_standard',
-        };
-        return tierMap[tier] || 'ssz_standard'; // Default to 'ssz_standard' if no match
-    }
 
     // Error Handling
 
@@ -540,43 +548,6 @@ $(document).ready(function () {
         return { userGroups, userResources };
     }
 
-    function processUserResources(apiResponse) {
-        const { userResources } = parseConsoleData(apiResponse);
-        const previewTableBody = $('#combined-preview-tbody');
-        previewTableBody.empty();
-    
-        if (!Array.isArray(userResources) || userResources.length === 0) {
-            showEmptyState(previewTableBody);
-            return;
-        }
-    
-        userResources.forEach(resource => {
-            if (resource.resources?.hpc_service_units) {
-                Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
-                    const row = createResourceRow({
-                        type: 'Service Units',
-                        group: resource.group_name,
-                        tier: details.tier,
-                        details: `${details.request_count || 0} SUs | Updated: ${details.update_date}`
-                    });
-                    previewTableBody.append(row);
-                });
-            }
-    
-            if (resource.resources?.storage) {
-                Object.entries(resource.resources.storage).forEach(([storageName, details]) => {
-                    const row = createResourceRow({
-                        type: 'Storage',
-                        group: resource.group_name,
-                        tier: details.tier,
-                        details: `${details.request_size || 0}TB | Updated: ${details.update_date}`
-                    });
-                    previewTableBody.append(row);
-                });
-            }
-        });
-    }
-
     function populateGrouperMyGroupsDropdown(groups) {
         const $dropdowns = $('#mygroups-group, #storage-mygroups-group');
     
@@ -627,7 +598,7 @@ $(document).ready(function () {
     
         console.log('Dropdowns populated successfully.');
     }
-
+    
     function createResourceRow({ type, group, tier, details }) {
         return `
             <tr>
@@ -637,6 +608,43 @@ $(document).ready(function () {
                 <td>${details}</td>
             </tr>
         `;
+    }
+
+    function processUserResources(apiResponse) {
+        const { userResources } = parseConsoleData(apiResponse);
+        const previewTableBody = $('#combined-preview-tbody');
+        previewTableBody.empty();
+    
+        if (!Array.isArray(userResources) || userResources.length === 0) {
+            showEmptyState(previewTableBody);
+            return;
+        }
+    
+        userResources.forEach(resource => {
+            if (resource.resources?.hpc_service_units) {
+                Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
+                    const row = createResourceRow({
+                        type: 'Service Units',
+                        group: resource.group_name,
+                        tier: details.tier,
+                        details: `${details.request_count || 0} SUs | Updated: ${details.update_date}`
+                    });
+                    previewTableBody.append(row);
+                });
+            }
+    
+            if (resource.resources?.storage) {
+                Object.entries(resource.resources.storage).forEach(([storageName, details]) => {
+                    const row = createResourceRow({
+                        type: 'Storage',
+                        group: resource.group_name,
+                        tier: details.tier,
+                        details: `${details.request_size || 0}TB | Updated: ${details.update_date}`
+                    });
+                    previewTableBody.append(row);
+                });
+            }
+        });
     }
 
     // Update Form Validation
