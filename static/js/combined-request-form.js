@@ -236,7 +236,26 @@ $(document).ready(function () {
         return formData;
     }
 
+    function getTierEnum(tier) {
+        const tierMap = {
+            'Standard': 'ssz_standard',
+            'Instructional': 'ssz_instructional',
+            'Paid': 'ssz_paid',
+        };
+        return tierMap[tier] || 'ssz_standard';
+    }
+
+    function getStorageTierEnum(tier) {
+        const tierMap = {
+            'SSZ Research Standard': 'ssz_standard',
+            'SSZ Research Project': 'ssz_project',
+            'Highly Sensitive Data': 'hsz_standard',
+        };
+        return tierMap[tier] || 'ssz_standard'; // Default to 'ssz_standard' if no match
+    }
+
     // Error Handling
+
     function showErrorMessage(message) {
         const errorDiv = $('<div>').addClass('alert alert-danger').text(message);
         $('#combined-request-form').prepend(errorDiv);
@@ -289,6 +308,17 @@ $(document).ready(function () {
         $('#sensitive-data').toggle(isHighlySensitive);
         $('#standard-data').toggle(!isHighlySensitive);
         updateCapacityLimits(selectedStorage);
+    }
+
+    function toggleAllocationFields() {
+        const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
+        const isNew = newOrRenewal === 'new';
+    
+        $('#new-project-name-container').toggle(isNew);
+        $('#existing-projects-allocation').toggle(!isNew);
+        $('#allocation-tier').toggle(isNew);
+    
+        updateFormValidation();
     }
 
     // Event Handlers
@@ -596,6 +626,17 @@ $(document).ready(function () {
         });
     
         console.log('Dropdowns populated successfully.');
+    }
+
+    function createResourceRow({ type, group, tier, details }) {
+        return `
+            <tr>
+                <td>${type}</td>
+                <td>${group}</td>
+                <td>${tier}</td>
+                <td>${details}</td>
+            </tr>
+        `;
     }
 
     // Update Form Validation
