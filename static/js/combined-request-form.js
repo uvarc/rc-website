@@ -115,10 +115,20 @@ $(document).ready(function () {
         }
 
         function validateField($field) {
-            if (!$field.val()) {
-                markFieldInvalid($field, 'This field is required.');
-                return false;
+            const isCheckbox = $field.is(':checkbox');
+        
+            if (isCheckbox) {
+                if (!$field.is(':checked')) {
+                    markFieldInvalid($field, 'This field is required.');
+                    return false;
+                }
+            } else {
+                if (!$field.val()?.trim()) {
+                    markFieldInvalid($field, 'This field is required.');
+                    return false;
+                }
             }
+        
             markFieldValid($field);
             return true;
         }
@@ -331,41 +341,89 @@ $(document).ready(function () {
 
     // Event Handlers
 
-    function setupEventHandlers() {
-        $('input[name="request-type"]').on('change', function () {
-            toggleRequestFields();
-            updatePayloadPreview();
-        });
+        /// Setup Event Handlers
 
-        $('input[name="new-or-renewal"]').on('change', function () {
-            toggleAllocationFields();
-            updatePayloadPreview();
-        });
+        function setupEventHandlers() {
+            $('input[name="request-type"]').on('change', function () {
+                toggleRequestFields();
+                updatePayloadPreview();
+            });
 
-        $('input[name="type-of-request"]').on('change', function () {
-            toggleStorageFields();
-            updatePayloadPreview();
-        });
+            $('input[name="new-or-renewal"]').on('change', function () {
+                toggleAllocationFields();
+                updatePayloadPreview();
+            });
 
-        $('input[name="storage-choice"]').on('change', function () {
-            toggleStorageTierOptions();
-            updatePayloadPreview();
-        });
+            $('input[name="type-of-request"]').on('change', function () {
+                toggleStorageFields();
+                updatePayloadPreview();
+            });
 
-        $('#data-agreement').on('change', function () {
-            updateFormValidation();
-            updatePayloadPreview();
-        });
+            $('input[name="storage-choice"]').on('change', function () {
+                toggleStorageTierOptions();
+                updatePayloadPreview();
+            });
 
-        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .on('input change', function () {
-                validateField($(this));
+            $('#data-agreement').on('change', function () {
                 updateFormValidation();
                 updatePayloadPreview();
             });
 
-        console.log('Event handlers successfully set up.');
-    }
+            $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+                .on('input change', function () {
+                    validateField($(this));
+                    updateFormValidation();
+                    updatePayloadPreview();
+                });
+
+            console.log('Event handlers successfully set up.');
+        }
+
+        /// Form Submission Handler
+        $('#combined-request-form').on('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            console.log("Form submission triggered.");
+
+            // Build the payload and validate it
+            const payload = buildPayloadPreview();
+            const errors = validatePayload(payload);
+
+            if (errors.length > 0) {
+                console.error("Validation errors:", errors);
+                showErrorMessage("Please fix the errors before submitting.");
+                return; // Exit without submitting the form
+            }
+
+            console.log("Submitting payload:", JSON.stringify(payload, null, 2));
+
+            // Submit the payload via AJAX
+            try {
+                const response = await fetch($(this).attr('action'), {
+                    method: $(this).attr('method'),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                });
+
+                if (!response.ok) {
+                    const errorMessage = await response.text();
+                    console.error("Submission failed:", errorMessage);
+                    showErrorMessage("Submission failed. Please try again.");
+                    return;
+                }
+
+                const responseData = await response.json();
+                console.log("Form submitted successfully:", responseData);
+                alert("Your request was submitted successfully!");
+            } catch (error) {
+                console.error("Error during form submission:", error);
+                showErrorMessage("An error occurred while submitting the form. Please try again.");
+            }
+        });
+
 
     // Capacity Limits and Billing Visibility
     
@@ -454,13 +512,25 @@ $(document).ready(function () {
     }
 
     function validatePayload(payload) {
-        const errors = [];
-        if (!payload[0].group_name) errors.push("Group name is missing.");
-        if (!payload[0].project_name) errors.push("Project name is missing.");
-        if (!payload[0].data_agreement_signed) errors.push("Data agreement must be signed.");
-        if (!payload[0].resources.hpc_service_units && !payload[0].resources.storage) {
-            errors.push("At least one resource type must be included.");
-        }
+    const errors = [];
+
+    if (!payload[0].group_name || payload[0].group_name === "Unknown Group") {
+        errors.push("Group name is required.");
+    }
+
+    if (!payload[0].project_name) {
+        errors.push("Project name is missing.");
+    }
+
+    if (!payload[0].data_agreement_signed) {
+        errors.push("Data agreement must be signed.");
+    }
+
+    if (Object.keys(payload[0].resources.hpc_service_units).length === 0 &&
+        Object.keys(payload[0].resources.storage).length === 0) {
+        errors.push("At least one resource type must be included.");
+    }
+
         return errors;
     }
 
@@ -598,7 +668,7 @@ $(document).ready(function () {
     
         console.log('Dropdowns populated successfully.');
     }
-    
+
     function createResourceRow({ type, group, tier, details }) {
         return `
             <tr>
