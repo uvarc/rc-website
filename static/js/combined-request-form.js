@@ -115,6 +115,27 @@ $(document).ready(function () {
         throw new Error('Could not get user ID - please ensure you are logged in');
     }
 
+    function markFieldValid($field) {
+        console.log(`Marking field valid: ${$field.attr('id') || $field.attr('name')}`);
+        $field.addClass('is-valid').removeClass('is-invalid');
+        $field.siblings('.invalid-feedback').remove();
+    }
+    
+    function markFieldInvalid($field, message) {
+        console.log(`Marking field invalid: ${$field.attr('id') || $field.attr('name')}, Reason: ${message}`);
+        $field.addClass('is-invalid').removeClass('is-valid');
+        
+        let $feedback = $field.siblings('.invalid-feedback');
+        if ($feedback.length === 0) {
+            $feedback = $('<div>')
+                .addClass('invalid-feedback')
+                .text(message);
+            $field.after($feedback);
+        } else {
+            $feedback.text(message);
+        }
+    }
+
     function validateField($field) {
         if (!$field.val()) {
             markFieldInvalid($field, 'This field is required.');
@@ -187,7 +208,33 @@ $(document).ready(function () {
         removeWaitingMessage: () => {
             $('.api-waiting-message').remove();
         }
-    };
+    }
+
+    function collectFormData() {
+        const formData = {
+            requestType: $('input[name="request-type"]:checked').val(),
+            group: $('#mygroups-group').val(),
+            projectName: $('#new-project-name').val(),
+            capacity: $('#capacity').val(),
+            allocationTier: $('input[name="allocation-choice"]:checked').val(),
+            storageTier: $('input[name="storage-choice"]:checked').val(),
+            shouldShowBilling: $('#billing-information').is(':visible'),
+        };
+    
+        if (formData.requestType === 'service-unit') {
+            formData.newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
+            if (formData.newOrRenewal === 'renewal') {
+                formData.existingProject = $('input[name="existing-project-allocation"]:checked').val();
+            }
+        } else if (formData.requestType === 'storage') {
+            formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
+            if (formData.typeOfRequest !== 'new-storage') {
+                formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
+            }
+        }
+    
+        return formData;
+    }
 
     // Error Handling
     function showErrorMessage(message) {
@@ -438,6 +485,30 @@ $(document).ready(function () {
     }
 
     // Resource Processing Functions
+
+    function parseConsoleData(data) {
+        if (!Array.isArray(data) || data.length === 0) {
+            console.error("Invalid consoleData format or empty data:", data);
+            return { userGroups: [], userResources: [] };
+        }
+    
+        const userGroups = data[0]?.user_groups || [];
+        const userResources = (() => {
+            try {
+                return typeof data[0]?.user_resources === 'string'
+                    ? JSON.parse(data[0]?.user_resources)
+                    : data[0]?.user_resources || [];
+            } catch (error) {
+                console.error("Error parsing user_resources:", error);
+                return [];
+            }
+        })();
+    
+        console.log("Parsed user groups:", userGroups);
+        console.log("Parsed user resources:", userResources);
+    
+        return { userGroups, userResources };
+    }
 
     function processUserResources(apiResponse) {
         const { userResources } = parseConsoleData(apiResponse);
