@@ -91,6 +91,30 @@ $(document).ready(function () {
 
     // Utility and Helper Function
 
+    async function waitForUserSession() {
+        let attempts = 0;
+        const maxAttempts = 50;
+        
+        while (attempts < maxAttempts) {
+            const userIdField = document.querySelector('input[name="uid"]') || 
+                              document.querySelector('#uid');
+            
+            if (userIdField && userIdField.value) {
+                console.log("User ID found:", userIdField.value);
+                return userIdField.value;
+            }
+            
+            if (attempts % 10 === 0) {
+                console.log(`Waiting for user session... Attempt ${attempts}`);
+            }
+            
+            await new Promise(resolve => setTimeout(resolve, 100));
+            attempts++;
+        }
+        
+        throw new Error('Could not get user ID - please ensure you are logged in');
+    }
+
     function validateField($field) {
         if (!$field.val()) {
             markFieldInvalid($field, 'This field is required.');
