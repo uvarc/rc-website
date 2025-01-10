@@ -1784,31 +1784,36 @@ $(document).ready(function () {
     
             const computingId = await waitForUserSession();
             const payload = [{
-                group_name: formData.group || "Unknown Group",
-                project_name: formData.projectName || "",
-                project_desc: $('#project-description').val() || "",
                 data_agreement_signed: $('#data-agreement').is(':checked'),
+                delegates_uid: "",
+                group_id: "",
+                group_name: formData.group || "Unknown Group",
                 pi_uid: computingId,
-                resources: {}
+                project_desc: $('#project-description').val() || "",
+                project_name: formData.projectName || "",
+                resources: {
+                    hpc_service_units: {},
+                    storage: {}
+                }
             }];
     
-            // Handle Service Units
             if (formData.requestType === 'service-unit') {
-                payload[0].resources.hpc_service_units = {
-                    [formData.group]: {
-                        tier: getTierEnum(formData.allocationTier),
-                        request_count: formData.requestCount || "0",
-                    }
+                const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
+                payload[0].resources.hpc_service_units[key] = {
+                    tier: getTierEnum(formData.allocationTier),
+                    request_count: formData.requestCount || "1000",
+                    request_date: new Date().toISOString(),
+                    request_status: "pending",
+                    update_date: new Date().toISOString()
                 };
-            }
-    
-            // Handle Storage
-            if (formData.requestType === 'storage') {
-                payload[0].resources.storage = {
-                    [formData.group]: {
-                        tier: getStorageTierEnum(formData.storageTier),
-                        request_size: formData.capacity.toString(),
-                    }
+            } else if (formData.requestType === 'storage') {
+                const key = `${formData.group}-${getStorageTierEnum(formData.storageTier)}`;
+                payload[0].resources.storage[key] = {
+                    tier: getStorageTierEnum(formData.storageTier),
+                    request_size: formData.capacity?.toString() || "0",
+                    request_date: new Date().toISOString(),
+                    request_status: "pending",
+                    update_date: new Date().toISOString()
                 };
             }
     
@@ -1822,6 +1827,8 @@ $(document).ready(function () {
             });
     
             if (!response.ok) {
+                const errorText = await response.text();
+                console.error('API Error Response:', errorText);
                 throw new Error(`API request failed with status ${response.status}`);
             }
     
