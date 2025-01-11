@@ -312,8 +312,11 @@ $(document).ready(function () {
     function toggleStorageFields() {
         const typeOfRequest = $('input[name="type-of-request"]:checked').val();
         const isNewStorage = typeOfRequest === 'new-storage';
+    
         $('#storage-platform, #shared-space-name-container').toggle(isNewStorage);
         $('#existing-projects-storage').toggle(!isNewStorage);
+        $('#storage-mygroups-container').toggle(isNewStorage); // Show for new storage share
+    
         updateFormValidation();
     }
 
@@ -333,6 +336,7 @@ $(document).ready(function () {
         const isNew = newOrRenewal === 'new';
     
         $('#new-project-name-container').toggle(isNew);
+        $('#mygroups-group-container').toggle(isNew); // Show for new SU request
         $('#existing-projects-allocation').toggle(!isNew);
         $('#allocation-tier').toggle(isNew);
     
@@ -722,13 +726,14 @@ $(document).ready(function () {
     function updateFormValidation() {
         const $form = $('#combined-request-form');
         const requestType = $('input[name="request-type"]:checked').val();
-        const visibleFieldsSelector = requestType === 'service-unit' 
+        const visibleFieldsSelector = requestType === 'service-unit'
             ? '#allocation-fields input[required]:visible, #allocation-fields select[required]:visible'
             : '#storage-fields input[required]:visible, #storage-fields select[required]:visible';
     
         const requiredFields = $form.find(visibleFieldsSelector);
-        const isFormValid = requiredFields.toArray().every(field => !!$(field).val()?.trim());
-        $('#submit').prop('disabled', !isFormValid);
+        const isFormValid = requiredFields.toArray().every(field => validateField($(field)));
+    
+        $('#submit').prop('disabled', !isFormValid); // Disable button if form is invalid
     }
 
       // Initialization Function
