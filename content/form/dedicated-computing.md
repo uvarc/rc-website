@@ -57,9 +57,14 @@ private = true
         <label for="lease-end-date" class="form-check-label">End Date</label>
         <input type="date" class="form-control" id="lease-end-date" name="lease-end-date" required style="width: 100%;">
       </div>
-    </div>
+    </div>  
   </div>
 </div>
+
+<!-- Error message for date validation -->
+  <div class="alert alert-danger" id="date-error" style="display:none; margin-top: 10px;">
+    <p>End date cannot be earlier than the start date. Please select valid dates.</p>
+  </div>
 
   <hr size=1 />
   {{% billing-fdm %}}
@@ -76,3 +81,26 @@ private = true
 
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+
+<!-- Date Validation Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('request-form');
+    const startDateInput = document.getElementById('lease-start-date');
+    const endDateInput = document.getElementById('lease-end-date');
+    const dateError = document.getElementById('date-error');
+
+    form.addEventListener('submit', function (event) {
+      const startDate = new Date(startDateInput.value);
+      const endDate = new Date(endDateInput.value);
+
+      if (endDate < startDate) {
+        event.preventDefault(); 
+        dateError.style.display = 'block'; 
+        return false;
+      } else {
+        dateError.style.display = 'none';
+      }
+    });
+  });
+</script>
