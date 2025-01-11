@@ -97,7 +97,7 @@ private = true
       if (endDate < startDate) {
         event.preventDefault(); 
         dateError.style.display = 'block'; 
-        return false;
+        dateError.scrollIntoView({ behavior: 'smooth' });
       } else {
         dateError.style.display = 'none';
       }
