@@ -63,7 +63,7 @@ private = true
 
 <!-- Error message for date validation -->
   <div class="alert alert-danger" id="date-error" style="display:none; margin-top: 10px;">
-    <p>End date cannot be earlier than the start date. Please select valid dates.</p>
+    <p> Please select a valid start and end date. </p>
   </div>
 
   <hr size=1 />
@@ -89,6 +89,7 @@ private = true
     const startDateInput = document.getElementById('lease-start-date');
     const endDateInput = document.getElementById('lease-end-date');
     const dateError = document.getElementById('date-error');
+    const submitButton = document.getElementById('submit');
 
     form.addEventListener('submit', function (event) {
       const startDate = new Date(startDateInput.value);
@@ -98,6 +99,7 @@ private = true
         event.preventDefault(); 
         dateError.style.display = 'block'; 
         dateError.scrollIntoView({ behavior: 'smooth' });
+        submitButton.disabled = false; 
       } else {
         dateError.style.display = 'none';
       }
