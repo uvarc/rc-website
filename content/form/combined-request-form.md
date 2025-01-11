@@ -124,13 +124,18 @@ private = true
       </fieldset>
 
       <!-- Grouper/MyGroups Selection -->
-      <div id="mygroups-group-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em;"> 
-        <label class="control-label" for="mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
-        <select required="required" class="form-control form-select required" id="mygroups-group" name="mygroups-group">
-          <option value="">- Select a group -</option>
+      <div id="mygroups-group-container" style="display: none;">
+        <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
+        <select id="mygroups-group" class="form-control" required>
+            <option value="">- Select a group -</option>
         </select>
-        <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
-        <div id="group-validation-message" class="validation-message"></div>
+      </div>
+
+      <div id="storage-mygroups-group-container" style="display: none;">
+          <label for="storage-mygroups-group">Storage Grouper/MyGroups Account *</label>
+          <select id="storage-mygroups-group" class="form-control" required>
+              <option value="">- Select a group -</option>
+          </select>
       </div>
       
       <!-- Tier Options (Only shown for New requests) -->
@@ -342,7 +347,7 @@ private = true
           <span class="ms-2">Checking eligibility and loading groups...</span>
         </div>
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
-        <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled="">Submit</button>
+        <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
       </div>
     </div>
   </div>
