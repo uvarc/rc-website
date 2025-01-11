@@ -21,7 +21,7 @@
                 data-hardware="{{ .hardware }}" 
                 name="hardware[]" 
                 value="{{ .hardware }}">
-            <label class="form-check-label" for="{{ .hardware }}">{{ .hardware }}</label>
+            <label class="form-check-label" for="{{ .hardware }}">{{ .hardware }} ({{ .cores_per_node}} cores, {{ .mem_per_node}}) </label>
             <!-- Placeholder for dynamic input -->
             <div id="{{ .hardware }}-input-container" style="margin-left: 25px; margin-top: 10px;"></div>
         </div>
