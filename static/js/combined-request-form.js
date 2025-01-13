@@ -385,50 +385,50 @@ $(document).ready(function () {
 
         /// Form Submission Handler
         $('#combined-request-form').on('submit', async function (event) {
-            event.preventDefault(); // Prevent default form submission behavior
-        
-            console.log("Form submission triggered.");
-        
-            const payload = buildPayloadPreview();
-            const errors = validatePayload(payload);
-        
-            if (errors.length > 0) {
-                console.error("Validation errors:", errors);
-                showErrorMessage("Please fix the errors before submitting.");
-                return; // Exit without submitting the form
-            }
-        
-            const userId = $('#uid').val() || "Unknown"; // Dynamically fetch the user ID
-        
-            console.log("Submitting payload for user:", userId);
-            console.log("Payload:", JSON.stringify(payload, null, 2));
-        
-            try {
-                // Use the dynamically fetched user ID in the URL
-                const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
-                    method: 'POST', // Set to POST
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(payload),
-                    credentials: 'include', // Include cookies for authentication
-                });
-        
-                if (!response.ok) {
-                    const errorMessage = await response.text();
-                    console.error("Submission failed:", errorMessage);
-                    showErrorMessage("Submission failed. Please try again.");
-                    return;
-                }
-        
-                const responseData = await response.json();
-                console.log("Form submitted successfully:", responseData);
-                alert("Your request was submitted successfully!");
-            } catch (error) {
-                console.error("Error during form submission:", error);
-                showErrorMessage("An error occurred while submitting the form. Please try again.");
-            }
+    event.preventDefault(); // Prevent default form submission behavior
+
+    console.log("Form submission triggered.");
+
+    const payload = buildPayloadPreview();
+    const errors = validatePayload(payload);
+
+    if (errors.length > 0) {
+        console.error("Validation errors:", errors);
+        showErrorMessage("Please fix the errors before submitting.");
+        return; // Exit without submitting the form
+    }
+
+    const userId = $('#uid').val() || "Unknown"; // Dynamically fetch the user ID
+
+    console.log("Submitting payload for user:", userId);
+    console.log("Payload:", JSON.stringify(payload, null, 2));
+
+    try {
+        // Use the dynamically fetched user ID in the URL
+        const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
+            method: 'POST', // Set to POST
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+            credentials: 'include', // Include cookies for authentication
         });
+
+        if (!response.ok) {
+            const errorMessage = await response.text();
+            console.error("Submission failed:", errorMessage);
+            showErrorMessage("Submission failed. Please try again.");
+            return;
+        }
+
+        const responseData = await response.json();
+        console.log("Form submitted successfully:", responseData);
+        alert("Your request was submitted successfully!");
+    } catch (error) {
+        console.error("Error during form submission:", error);
+        showErrorMessage("An error occurred while submitting the form. Please try again.");
+    }
+});
 
 
     // Capacity Limits and Billing Visibility
@@ -460,6 +460,40 @@ $(document).ready(function () {
         $('#billing-information').toggle(shouldShowBilling);
     }
 
+    function getBillingDetails() {
+        const financialContact = $('#financial-contact').val()?.trim() || '';
+        const companyId = $('#company-id').val()?.trim() || '';
+        const costCenter = $('#cost-center').val()?.trim() || '';
+        const businessUnit = $('#business-unit').val()?.trim() || '';
+        const fundingType = $('input[name="funding-type"]:checked').val() || '';
+        const fundingNumber = $('#funding-number').val()?.trim() || '';
+        const fund = $('#fund').val()?.trim() || '';
+        const functionCode = $('#function').val()?.trim() || '';
+        const program = $('#program').val()?.trim() || '';
+        const activity = $('#activity').val()?.trim() || '';
+        const assignee = $('#assignee').val()?.trim() || '';
+    
+        return {
+            fdm_billing_info: [
+                {
+                    financial_contact: financialContact,
+                    company: companyId,
+                    business_unit: businessUnit,
+                    cost_center: costCenter,
+                    fund: fund,
+                    gift: fundingType === 'Gift' ? fundingNumber : '',
+                    grant: fundingType === 'Grant' ? fundingNumber : '',
+                    designated: fundingType === 'Designated' ? fundingNumber : '',
+                    project: fundingType === 'Project' ? fundingNumber : '',
+                    program_code: program,
+                    function: functionCode,
+                    activity: activity,
+                    assignee: assignee,
+                }
+            ]
+        };
+    }
+
     // Real-Time Payload Preview
 
     function setupPayloadPreviewUpdater() {
@@ -485,58 +519,88 @@ $(document).ready(function () {
     function buildPayloadPreview() {
         const formData = collectFormData();
         const computingId = $('#uid').val() || "Unknown";
-
+    
         const payload = [{
             data_agreement_signed: $('#data-agreement').is(':checked'),
             group_name: formData.group || "Unknown Group",
             pi_uid: computingId,
             project_desc: $('#project-description').val() || "",
             project_name: formData.projectName || "",
+            delegates_uid: "",
+            group_id: "",
             resources: {
                 hpc_service_units: {},
                 storage: {}
             }
         }];
-
+    
         if (formData.requestType === 'service-unit') {
             const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
             payload[0].resources.hpc_service_units[key] = {
                 tier: getTierEnum(formData.allocationTier),
                 request_count: formData.requestCount || "1000",
-                billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+                billing_details: getBillingDetails(), // Include billing details
+                update_date: new Date().toISOString(),
             };
         } else if (formData.requestType === 'storage') {
             const key = `${formData.group}-${getStorageTierEnum(formData.storageTier)}`;
+            const isBillingExempt = (
+                formData.storageTier === 'SSZ Research Standard' &&
+                formData.capacity < 10 &&
+                formData.typeOfRequest === 'new-storage'
+            );
+    
             payload[0].resources.storage[key] = {
                 tier: getStorageTierEnum(formData.storageTier),
                 request_size: formData.capacity?.toString() || "0",
-                billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+                billing_details: !isBillingExempt ? getBillingDetails() : undefined,
+                update_date: new Date().toISOString(),
             };
         }
-
+    
+        console.log("Built payload:", JSON.stringify(payload, null, 2)); // Debugging log
         return payload;
     }
 
     function validatePayload(payload) {
-    const errors = [];
-
-    if (!payload[0].group_name || payload[0].group_name === "Unknown Group") {
-        errors.push("Group name is required.");
-    }
-
-    if (!payload[0].project_name) {
-        errors.push("Project name is missing.");
-    }
-
-    if (!payload[0].data_agreement_signed) {
-        errors.push("Data agreement must be signed.");
-    }
-
-    if (Object.keys(payload[0].resources.hpc_service_units).length === 0 &&
-        Object.keys(payload[0].resources.storage).length === 0) {
-        errors.push("At least one resource type must be included.");
-    }
-
+        const errors = [];
+    
+        if (!payload[0].group_name || payload[0].group_name === "Unknown Group") {
+            errors.push("Group name is required.");
+        }
+    
+        if (!payload[0].project_name) {
+            errors.push("Project name is missing.");
+        }
+    
+        if (!payload[0].data_agreement_signed) {
+            errors.push("Data agreement must be signed.");
+        }
+    
+        if (Object.keys(payload[0].resources.hpc_service_units).length === 0 &&
+            Object.keys(payload[0].resources.storage).length === 0) {
+            errors.push("At least one resource type must be included.");
+        }
+    
+        const hpcBillingRequired = Object.values(payload[0].resources.hpc_service_units).some(unit => {
+            return unit.billing_details === undefined;
+        });
+    
+        const storageBillingRequired = Object.values(payload[0].resources.storage).some(storage => {
+            return storage.billing_details === undefined && !(
+                storage.tier === "ssz_standard" &&
+                parseInt(storage.request_size) < 10
+            );
+        });
+    
+        if (hpcBillingRequired || storageBillingRequired) {
+            errors.push("Billing details are required for this request.");
+        }
+    
+        if (errors.length > 0) {
+            console.error("Payload validation errors:", errors);
+        }
+    
         return errors;
     }
 
