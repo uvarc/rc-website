@@ -91,6 +91,14 @@ $(document).ready(function () {
 
     // Utility and Helper Function
 
+        /// Get UserID
+
+        function getUserId() {
+            const userId = $('#uid').val() || "Unknown"; // Fetch the user ID dynamically
+            console.log("User ID:", userId);
+            return userId;
+        }
+
         /// Core Helper Functions
 
         function markFieldValid($field) {
@@ -394,42 +402,47 @@ $(document).ready(function () {
         /// Form Submission Handler
 
         $('#combined-request-form').on('submit', async function (event) {
-            event.preventDefault(); //// Prevent default form submission behavior
-
+            event.preventDefault(); // Prevent the default form submission
+        
             console.log("Form submission triggered.");
-
+        
+            // Build the payload
             const payload = buildPayloadPreview();
             const errors = validatePayload(payload);
-
+        
+            // Handle validation errors
             if (errors.length > 0) {
                 console.error("Validation errors:", errors);
                 showErrorMessage("Please fix the errors before submitting.");
-                return; //// Exit without submitting the form
+                return; // Stop the submission process
             }
-
-            const userId = $('#uid').val() || "Unknown"; //// Dynamically fetch the user ID
-
-            console.log("Submitting payload for user:", userId);
-            console.log("Payload:", JSON.stringify(payload, null, 2));
-
+        
             try {
-                //// Use the dynamically fetched user ID in the URL
-                const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
-                    method: 'POST', //// Set to POST
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(payload),
-                    credentials: 'include', //// Include cookies for authentication
+                // Dynamically fetch the user ID using the helper function
+                const userId = getUserId();
+                console.log("Submitting payload for user:", userId);
+        
+                // Use the headers from API_CONFIG for consistency
+                const headers = {
+                    ...API_CONFIG.headers, // Include all GET headers
+                };
+        
+                // Perform the POST request
+                const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+                    method: 'POST',
+                    headers: headers, // Use the unified headers
+                    body: JSON.stringify(payload), // Stringify the payload before sending
+                    credentials: 'include', // Include credentials for cross-origin requests
                 });
-
+        
+                // Handle response
                 if (!response.ok) {
                     const errorMessage = await response.text();
                     console.error("Submission failed:", errorMessage);
                     showErrorMessage("Submission failed. Please try again.");
-                    return;
+                    return; // Exit on failure
                 }
-
+        
                 const responseData = await response.json();
                 console.log("Form submitted successfully:", responseData);
                 alert("Your request was submitted successfully!");
@@ -527,11 +540,11 @@ $(document).ready(function () {
 
     function buildPayloadPreview() {
         const formData = collectFormData();
-        const computingId = $('#uid').val() || "Unknown";
+        const userId = getUserId(); // Use the centralized helper function for dynamic user ID retrieval
     
         const payload = [{
             is_user_resource_request_elligible: true, // Assume eligibility unless verified elsewhere
-            user_groups: formData.group ? [formData.group] : [], // Use selected group
+            user_groups: formData.group ? [formData.group] : [], // Use selected group or an empty array
             user_resources: []
         }];
     
@@ -543,9 +556,9 @@ $(document).ready(function () {
                 delegates_uid: "",
                 group_id: "",
                 group_name: formData.group || "Unknown Group",
-                pi_uid: computingId,
-                project_desc: $('#project-description').val() || "",
-                project_name: formData.projectName || "",
+                pi_uid: userId,
+                project_desc: $('#project-description').val()?.trim() || "",
+                project_name: formData.projectName?.trim() || "",
                 resources: {
                     hpc_service_units: {
                         [key]: {
@@ -554,7 +567,7 @@ $(document).ready(function () {
                             request_date: new Date().toISOString(),
                             request_status: "pending",
                             update_date: new Date().toISOString(),
-                            billing_details: getBillingDetails() // Include billing details
+                            billing_details: getBillingDetails() // Include billing details dynamically
                         }
                     },
                     storage: {}
@@ -577,9 +590,9 @@ $(document).ready(function () {
                 delegates_uid: "",
                 group_id: "",
                 group_name: formData.group || "Unknown Group",
-                pi_uid: computingId,
-                project_desc: $('#project-description').val() || "",
-                project_name: formData.projectName || "",
+                pi_uid: userId,
+                project_desc: $('#project-description').val()?.trim() || "",
+                project_name: formData.projectName?.trim() || "",
                 resources: {
                     hpc_service_units: {},
                     storage: {
@@ -655,32 +668,37 @@ $(document).ready(function () {
         const waitingMessage = utils?.showWaitingMessage?.() || $('<div>').text('Loading...').prependTo('#combined-request-form');
         
         try {
-            // Ensure the user session is established
-            const computingId = await waitForUserSession();
-            console.log(`Attempting API call for user: ${computingId}`);
-
+            // Dynamically fetch the user ID using the helper function
+            const userId = getUserId(); 
+            console.log(`Attempting API call for user: ${userId}`);
+        
             // Construct the API request URL
-            const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
+            const requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
             console.log("Request URL:", requestUrl);
-
+        
             // Perform the fetch call with credentials included
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: API_CONFIG.headers,
                 credentials: 'include', // Required for cross-origin requests with cookies
             });
-
+        
+            // Handle non-OK responses
             if (!response.ok) {
-                throw new Error(`API request failed with status ${response.status}`);
+                const errorMessage = `API request failed with status ${response.status}: ${response.statusText}`;
+                console.error(errorMessage);
+                handleApiError(new Error(errorMessage));
+                return;
             }
-
+        
             // Parse the JSON response
-            consoleData = await response.json();
+            const jsonResponse = await response.json();
+            consoleData = jsonResponse; // Save to global variable for further use
             console.log("Fetched groups and resources:", consoleData);
-
+        
             // Parse and populate user groups and resources
-            const { userGroups, userResources } = parseConsoleData(consoleData);
-
+            const { userGroups, userResources } = parseConsoleData(jsonResponse);
+        
             // Populate dropdowns for user groups
             if (Array.isArray(userGroups) && userGroups.length > 0) {
                 console.log("Populating user groups:", userGroups);
@@ -689,11 +707,11 @@ $(document).ready(function () {
                 console.warn("No user groups found.");
                 populateGrouperMyGroupsDropdown([]);
             }
-
+        
             // Process user resources if available
             if (Array.isArray(userResources) && userResources.length > 0) {
                 console.log("Processing user resources...");
-                processUserResources(consoleData);
+                processUserResources(jsonResponse);
             } else {
                 console.warn("No user resources found.");
             }
