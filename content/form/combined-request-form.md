@@ -317,12 +317,6 @@ private = true
     </div>
     <!-- Billing Information Section -->
     <div id="billing-information" style="margin-top:1em; padding:1.5rem;background-color:#eee;border:solid 1px #ccc;">
-      <h5 class="mb-3">Payment Information</h5>
-      <hr size="1" />
-      <div class="form-item form-group form-type-textfield form-group">
-        <label class="control-label" for="fdm-id">FDM ID <span class="form-required" title="This field is required.">*</span></label>
-        <input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" />
-      </div>
       {{% billing-fdm %}}
     </div>
 
