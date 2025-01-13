@@ -588,38 +588,43 @@ $(document).ready(function () {
     function validatePayload(payload) {
         const errors = [];
     
-        if (!payload[0].group_name || payload[0].group_name === "Unknown Group") {
-            errors.push("Group name is required.");
-        }
+        // Ensure the payload structure is valid
+        const userResources = payload[0]?.user_resources || [];
     
-        if (!payload[0].project_name) {
-            errors.push("Project name is missing.");
-        }
+        // Iterate through each resource to validate
+        userResources.forEach((resource, index) => {
+            // Check general resource fields
+            if (!resource.group_name || resource.group_name === "Unknown Group") {
+                errors.push(`Resource ${index + 1}: Group name is required.`);
+            }
     
-        if (!payload[0].data_agreement_signed) {
-            errors.push("Data agreement must be signed.");
-        }
+            if (!resource.project_name) {
+                errors.push(`Resource ${index + 1}: Project name is required.`);
+            }
     
-        if (Object.keys(payload[0].resources.hpc_service_units).length === 0 &&
-            Object.keys(payload[0].resources.storage).length === 0) {
-            errors.push("At least one resource type must be included.");
-        }
+            if (!resource.data_agreement_signed) {
+                errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
+            }
     
-        const hpcBillingRequired = Object.values(payload[0].resources.hpc_service_units).some(unit => {
-            return unit.billing_details === undefined;
+            // Validate HPC service units if they exist
+            const hpcServiceUnits = resource.resources?.hpc_service_units || {};
+            const hpcBillingRequired = Object.values(hpcServiceUnits).some(unit => {
+                return unit.billing_details === undefined;
+            });
+    
+            // Validate storage resources if they exist
+            const storage = resource.resources?.storage || {};
+            const storageBillingRequired = Object.values(storage).some(item => {
+                const isBillingExempt = item.tier === "ssz_standard" && parseInt(item.request_size, 10) <= 10;
+                return !isBillingExempt && !item.billing_details;
+            });
+    
+            if (hpcBillingRequired || storageBillingRequired) {
+                errors.push(`Resource ${index + 1}: Billing details are required for this request.`);
+            }
         });
     
-        const storageBillingRequired = Object.values(payload[0].resources.storage).some(storage => {
-            return storage.billing_details === undefined && !(
-                storage.tier === "ssz_standard" &&
-                parseInt(storage.request_size) < 10
-            );
-        });
-    
-        if (hpcBillingRequired || storageBillingRequired) {
-            errors.push("Billing details are required for this request.");
-        }
-    
+        // Log errors if any
         if (errors.length > 0) {
             console.error("Payload validation errors:", errors);
         }
