@@ -189,7 +189,7 @@ private = true
       </div>
 
       <!-- Project Description -->
-      <div class="form-item form-type-textarea form-group"> 
+      <div id="project-description" class="form-item form-type-textarea form-group"> 
         <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
         <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
         <div class="form-textarea-wrapper resizable">
@@ -228,7 +228,7 @@ private = true
           </fieldset>
         </div>
         <!-- Storage Capacity -->
-        <div class="col form-item form-group">
+        <div id="storage-capacity" class="col form-item form-group">
           <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
           <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
           <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
