@@ -386,39 +386,41 @@ $(document).ready(function () {
         /// Form Submission Handler
         $('#combined-request-form').on('submit', async function (event) {
             event.preventDefault(); // Prevent default form submission behavior
-
+        
             console.log("Form submission triggered.");
-
-            // Build the payload and validate it
+        
             const payload = buildPayloadPreview();
             const errors = validatePayload(payload);
-
+        
             if (errors.length > 0) {
                 console.error("Validation errors:", errors);
                 showErrorMessage("Please fix the errors before submitting.");
                 return; // Exit without submitting the form
             }
-
-            console.log("Submitting payload:", JSON.stringify(payload, null, 2));
-
-            // Submit the payload via AJAX
+        
+            const userId = $('#uid').val() || "Unknown"; // Dynamically fetch the user ID
+        
+            console.log("Submitting payload for user:", userId);
+            console.log("Payload:", JSON.stringify(payload, null, 2));
+        
             try {
-                const response = await fetch($(this).attr('action'), {
-                    method: $(this).attr('method'),
+                // Use the dynamically fetched user ID in the URL
+                const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
+                    method: 'POST', // Set to POST
                     headers: {
                         'Content-Type': 'application/json',
-                        'Accept': 'application/json',
                     },
                     body: JSON.stringify(payload),
+                    credentials: 'include', // Include cookies for authentication
                 });
-
+        
                 if (!response.ok) {
                     const errorMessage = await response.text();
                     console.error("Submission failed:", errorMessage);
                     showErrorMessage("Submission failed. Please try again.");
                     return;
                 }
-
+        
                 const responseData = await response.json();
                 console.log("Form submitted successfully:", responseData);
                 alert("Your request was submitted successfully!");
