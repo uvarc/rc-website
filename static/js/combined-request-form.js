@@ -295,18 +295,30 @@ $(document).ready(function () {
     }
 
     // UI Toggles
-    
+
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
         $('#allocation-fields, #storage-fields, #common-fields').hide();
-
+    
         if (requestType === 'service-unit') {
             $('#allocation-fields, #common-fields').show();
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
         }
-
+    
         updateBillingVisibility();
+    }
+
+    function toggleAllocationFields() {
+        const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
+        const isNew = newOrRenewal === 'new';
+    
+        $('#new-project-name-container').toggle(isNew);
+        $('#mygroups-group-container').toggle(isNew); // Show for new SU request
+        $('#existing-projects-allocation').toggle(!isNew);
+        $('#allocation-tier').toggle(isNew);
+    
+        updateFormValidation();
     }
 
     function toggleStorageFields() {
@@ -331,97 +343,101 @@ $(document).ready(function () {
         updateCapacityLimits(selectedStorage);
     }
 
-    function toggleAllocationFields() {
-        const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
-        const isNew = newOrRenewal === 'new';
-    
-        $('#new-project-name-container').toggle(isNew);
-        $('#mygroups-group-container').toggle(isNew); // Show for new SU request
-        $('#existing-projects-allocation').toggle(!isNew);
-        $('#allocation-tier').toggle(isNew);
-    
-        updateFormValidation();
-    }
-
     // Event Handlers
 
         /// Setup Event Handlers
 
         function setupEventHandlers() {
+            //// Handle changes to Service Unit vs. Storage request type
             $('input[name="request-type"]').on('change', function () {
-                toggleRequestFields();
-                updatePayloadPreview();
-                updateBillingVisibility(); // Update billing visibility
+                toggleRequestFields(); ///// Update the main container visibility
+                updatePayloadPreview(); ///// Update the payload preview
+                updateBillingVisibility(); ///// Update billing visibility logic
             });
-        
+
+            //// Handle New vs. Renewal selection for Service Unit requests
+            $('input[name="new-or-renewal"]').on('change', function () {
+                toggleAllocationFields(); ///// Update fields within #allocation-fields
+                updatePayloadPreview(); ///// Update the payload preview
+            });
+
+            //// Handle Storage request type changes (e.g., "Create new storage share")
             $('input[name="type-of-request"]').on('change', function () {
-                toggleStorageFields();
-                updatePayloadPreview();
-                updateBillingVisibility(); // Update billing visibility
+                toggleStorageFields(); ///// Update fields within #storage-fields
+                updatePayloadPreview(); ///// Update the payload preview
             });
-        
-            $('input[name="storage-choice"], #capacity').on('change input', function () {
-                updateBillingVisibility(); // Update billing visibility
-                updatePayloadPreview();
+
+            //// Handle changes to Storage Tier options (e.g., "SSZ Research Standard")
+            $('input[name="storage-choice"]').on('change', function () {
+                toggleStorageTierOptions(); ///// Update tier-specific fields
+                updatePayloadPreview(); ///// Update the payload preview
             });
-        
+
+            //// Handle changes to capacity and other fields impacting billing visibility
+            $('#capacity').on('input change', function () {
+                updateBillingVisibility(); ///// Ensure billing information is toggled correctly
+                updatePayloadPreview(); ///// Update the payload preview
+            });
+
+            //// General input, select, and textarea validation and updates
             $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
                 .on('input change', function () {
-                    validateField($(this));
-                    updateFormValidation();
-                    updatePayloadPreview();
-                    updateBillingVisibility(); // Update billing visibility
+                    validateField($(this)); ///// Validate individual fields
+                    updateFormValidation(); ///// Check overall form validation
+                    updatePayloadPreview(); ///// Update the payload preview
+                    updateBillingVisibility(); ///// Reassess billing visibility
                 });
-        
+
             console.log('Event handlers successfully set up.');
         }
 
         /// Form Submission Handler
+
         $('#combined-request-form').on('submit', async function (event) {
-    event.preventDefault(); // Prevent default form submission behavior
+            event.preventDefault(); //// Prevent default form submission behavior
 
-    console.log("Form submission triggered.");
+            console.log("Form submission triggered.");
 
-    const payload = buildPayloadPreview();
-    const errors = validatePayload(payload);
+            const payload = buildPayloadPreview();
+            const errors = validatePayload(payload);
 
-    if (errors.length > 0) {
-        console.error("Validation errors:", errors);
-        showErrorMessage("Please fix the errors before submitting.");
-        return; // Exit without submitting the form
-    }
+            if (errors.length > 0) {
+                console.error("Validation errors:", errors);
+                showErrorMessage("Please fix the errors before submitting.");
+                return; //// Exit without submitting the form
+            }
 
-    const userId = $('#uid').val() || "Unknown"; // Dynamically fetch the user ID
+            const userId = $('#uid').val() || "Unknown"; //// Dynamically fetch the user ID
 
-    console.log("Submitting payload for user:", userId);
-    console.log("Payload:", JSON.stringify(payload, null, 2));
+            console.log("Submitting payload for user:", userId);
+            console.log("Payload:", JSON.stringify(payload, null, 2));
 
-    try {
-        // Use the dynamically fetched user ID in the URL
-        const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
-            method: 'POST', // Set to POST
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(payload),
-            credentials: 'include', // Include cookies for authentication
+            try {
+                //// Use the dynamically fetched user ID in the URL
+                const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
+                    method: 'POST', //// Set to POST
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                    credentials: 'include', //// Include cookies for authentication
+                });
+
+                if (!response.ok) {
+                    const errorMessage = await response.text();
+                    console.error("Submission failed:", errorMessage);
+                    showErrorMessage("Submission failed. Please try again.");
+                    return;
+                }
+
+                const responseData = await response.json();
+                console.log("Form submitted successfully:", responseData);
+                alert("Your request was submitted successfully!");
+            } catch (error) {
+                console.error("Error during form submission:", error);
+                showErrorMessage("An error occurred while submitting the form. Please try again.");
+            }
         });
-
-        if (!response.ok) {
-            const errorMessage = await response.text();
-            console.error("Submission failed:", errorMessage);
-            showErrorMessage("Submission failed. Please try again.");
-            return;
-        }
-
-        const responseData = await response.json();
-        console.log("Form submitted successfully:", responseData);
-        alert("Your request was submitted successfully!");
-    } catch (error) {
-        console.error("Error during form submission:", error);
-        showErrorMessage("An error occurred while submitting the form. Please try again.");
-    }
-});
 
 
     // Capacity Limits and Billing Visibility
