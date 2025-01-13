@@ -316,7 +316,7 @@ private = true
       </div>
     </div>
     <!-- Billing Information Section -->
-    <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem;background-color:#eee;border:solid 1px #ccc;">
+    <div id="billing-information" style="margin-top:1em; padding:1.5rem;background-color:#eee;border:solid 1px #ccc;">
       <h5 class="mb-3">Payment Information</h5>
       <hr size="1" />
       <div class="form-item form-group form-type-textfield form-group">

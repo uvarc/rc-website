@@ -514,41 +514,71 @@ $(document).ready(function () {
         const computingId = $('#uid').val() || "Unknown";
     
         const payload = [{
-            data_agreement_signed: $('#data-agreement').is(':checked'),
-            group_name: formData.group || "Unknown Group",
-            pi_uid: computingId,
-            project_desc: $('#project-description').val() || "",
-            project_name: formData.projectName || "",
-            delegates_uid: "",
-            group_id: "",
-            resources: {
-                hpc_service_units: {},
-                storage: {}
-            }
+            is_user_resource_request_elligible: true, // Assume eligibility unless verified elsewhere
+            user_groups: formData.group ? [formData.group] : [], // Use selected group
+            user_resources: []
         }];
     
+        // Build user resources for service-unit requests
         if (formData.requestType === 'service-unit') {
             const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
-            payload[0].resources.hpc_service_units[key] = {
-                tier: getTierEnum(formData.allocationTier),
-                request_count: formData.requestCount || "1000",
-                billing_details: getBillingDetails(), // Include billing details
-                update_date: new Date().toISOString(),
+            const userResource = {
+                data_agreement_signed: $('#data-agreement').is(':checked'),
+                delegates_uid: "",
+                group_id: "",
+                group_name: formData.group || "Unknown Group",
+                pi_uid: computingId,
+                project_desc: $('#project-description').val() || "",
+                project_name: formData.projectName || "",
+                resources: {
+                    hpc_service_units: {
+                        [key]: {
+                            tier: getTierEnum(formData.allocationTier),
+                            request_count: formData.requestCount || "1000",
+                            request_date: new Date().toISOString(),
+                            request_status: "pending",
+                            update_date: new Date().toISOString(),
+                            billing_details: getBillingDetails() // Include billing details
+                        }
+                    },
+                    storage: {}
+                }
             };
-        } else if (formData.requestType === 'storage') {
+            payload[0].user_resources.push(userResource);
+        }
+    
+        // Build user resources for storage requests
+        if (formData.requestType === 'storage') {
             const key = `${formData.group}-${getStorageTierEnum(formData.storageTier)}`;
             const isBillingExempt = (
                 formData.storageTier === 'SSZ Research Standard' &&
-                formData.capacity < 10 &&
+                formData.capacity <= 10 &&
                 formData.typeOfRequest === 'new-storage'
             );
     
-            payload[0].resources.storage[key] = {
-                tier: getStorageTierEnum(formData.storageTier),
-                request_size: formData.capacity?.toString() || "0",
-                billing_details: !isBillingExempt ? getBillingDetails() : undefined,
-                update_date: new Date().toISOString(),
+            const userResource = {
+                data_agreement_signed: $('#data-agreement').is(':checked'),
+                delegates_uid: "",
+                group_id: "",
+                group_name: formData.group || "Unknown Group",
+                pi_uid: computingId,
+                project_desc: $('#project-description').val() || "",
+                project_name: formData.projectName || "",
+                resources: {
+                    hpc_service_units: {},
+                    storage: {
+                        [key]: {
+                            tier: getStorageTierEnum(formData.storageTier),
+                            request_size: formData.capacity?.toString() || "0",
+                            request_date: new Date().toISOString(),
+                            request_status: "pending",
+                            update_date: new Date().toISOString(),
+                            billing_details: !isBillingExempt ? getBillingDetails() : undefined
+                        }
+                    }
+                }
             };
+            payload[0].user_resources.push(userResource);
         }
     
         console.log("Built payload:", JSON.stringify(payload, null, 2)); // Debugging log
