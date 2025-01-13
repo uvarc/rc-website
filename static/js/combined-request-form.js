@@ -351,35 +351,28 @@ $(document).ready(function () {
             $('input[name="request-type"]').on('change', function () {
                 toggleRequestFields();
                 updatePayloadPreview();
+                updateBillingVisibility(); // Update billing visibility
             });
-
-            $('input[name="new-or-renewal"]').on('change', function () {
-                toggleAllocationFields();
-                updatePayloadPreview();
-            });
-
+        
             $('input[name="type-of-request"]').on('change', function () {
                 toggleStorageFields();
                 updatePayloadPreview();
+                updateBillingVisibility(); // Update billing visibility
             });
-
-            $('input[name="storage-choice"]').on('change', function () {
-                toggleStorageTierOptions();
+        
+            $('input[name="storage-choice"], #capacity').on('change input', function () {
+                updateBillingVisibility(); // Update billing visibility
                 updatePayloadPreview();
             });
-
-            $('#data-agreement').on('change', function () {
-                updateFormValidation();
-                updatePayloadPreview();
-            });
-
+        
             $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
                 .on('input change', function () {
                     validateField($(this));
                     updateFormValidation();
                     updatePayloadPreview();
+                    updateBillingVisibility(); // Update billing visibility
                 });
-
+        
             console.log('Event handlers successfully set up.');
         }
 
@@ -444,17 +437,17 @@ $(document).ready(function () {
     }
 
     function updateBillingVisibility() {
+        const requestType = $('input[name="request-type"]:checked').val();
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
-        const selectedGroup = $('#mygroups-group').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
-        let shouldShowBilling = false;
+        let shouldShowBilling = true; // Default to show billing
     
-        if (selectedStorageTier === "SSZ Research Standard") {
-            const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
-            shouldShowBilling = requestedStorageSize > freeLimit;
-        } else if (["SSZ Research Project", "Highly Sensitive Data"].includes(selectedStorageTier)) {
-            shouldShowBilling = true;
+        if (requestType === 'storage') {
+            if (selectedStorageTier === "SSZ Research Standard") {
+                const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
+                shouldShowBilling = requestedStorageSize > freeLimit; // Show billing only if above the free limit
+            }
         }
     
         $('#billing-information').toggle(shouldShowBilling);
