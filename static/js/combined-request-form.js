@@ -166,6 +166,16 @@ $(document).ready(function () {
         /// Fetch Metadata
 
         async function fetchMetadata() {
+            const loadingMessage = $('<div>')
+                .addClass('alert alert-info d-flex align-items-center')
+                .attr('id', 'loading-metadata')
+                .html(`
+                    <div class="spinner-border spinner-border-sm me-2" role="status">
+                        <span class="visually-hidden">Loading user resources...</span>
+                    </div>
+                `)
+                .prependTo('#combined-request-form');
+        
             try {
                 const response = await fetch(`${API_CONFIG.baseUrl}/metadata`, {
                     method: 'GET',
@@ -184,18 +194,19 @@ $(document).ready(function () {
                 return metadata;
             } catch (error) {
                 console.error("Error fetching metadata:", error);
-                showErrorMessage("Failed to load metadata. Retrying...");
         
                 // Retry logic
                 for (let attempt = 1; attempt <= 3; attempt++) {
                     console.log(`Retrying metadata fetch (Attempt ${attempt})...`);
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds between retries
+        
                     try {
                         const response = await fetch(`${API_CONFIG.baseUrl}/metadata`, {
                             method: 'GET',
                             headers: { ...API_CONFIG.headers },
                             credentials: 'include'
                         });
+        
                         if (response.ok) {
                             const metadata = await response.json();
                             console.log("Fetched metadata on retry:", metadata);
@@ -206,7 +217,9 @@ $(document).ready(function () {
                     }
                 }
         
-                return null; // Return null if all retries fail
+                throw new Error('Failed to load metadata after multiple attempts.');
+            } finally {
+                loadingMessage.remove(); // Remove the loading message
             }
         }
 
@@ -468,10 +481,6 @@ $(document).ready(function () {
             $('#storage-fields, #common-fields').show();
         }
     
-        // Clear hidden fields
-        $('#allocation-fields input, #storage-fields input').val('');
-        $('#allocation-fields select, #storage-fields select').prop('selectedIndex', 0);
-    
         updateBillingVisibility();
     }
 
@@ -484,14 +493,7 @@ $(document).ready(function () {
         $('#existing-projects-allocation').toggle(!isNew);
         $('#allocation-tier').toggle(isNew);
     
-        // Clear hidden fields
-        if (isNew) {
-            $('#existing-projects-allocation input').val('');
-        } else {
-            $('#new-project-name-container input, #allocation-tier select').val('');
-            $('#mygroups-group').prop('selectedIndex', 0);
-        }
-    
+        // Do not clear dropdowns or hidden fields
         updateFormValidation();
     }
 
@@ -502,14 +504,6 @@ $(document).ready(function () {
         $('#storage-platform, #shared-space-name-container').toggle(isNewStorage);
         $('#existing-projects-storage').toggle(!isNewStorage);
         $('#storage-mygroups-container').toggle(isNewStorage); // Show for new storage share
-    
-        // Clear hidden fields
-        if (isNewStorage) {
-            $('#existing-projects-storage input').val('');
-        } else {
-            $('#storage-platform input, #shared-space-name-container input, #storage-mygroups-container select').val('');
-            $('#storage-mygroups-container select').prop('selectedIndex', 0);
-        }
     
         updateFormValidation();
     }
@@ -914,19 +908,37 @@ $(document).ready(function () {
     
         $dropdowns.each(function () {
             const $dropdown = $(this);
-            clearDropdown($dropdown, '- Select a group -');
+            
+            // Save the current selected value
+            const currentValue = $dropdown.val();
+    
+            // Clear existing options but retain the placeholder
+            $dropdown.empty();
+            $dropdown.append(
+                $('<option>', {
+                    value: '',
+                    text: '- Select a group -',
+                    selected: true,
+                    disabled: true
+                })
+            );
     
             console.log(`Populating dropdown: ${$dropdown.attr('id')} with groups:`, groups);
     
             if (groups.length) {
                 groups.forEach(group => {
                     const groupName = typeof group === 'string' ? group : group.name;
-                    $dropdown.append(
-                        $('<option>', {
-                            value: groupName.trim(),
-                            text: groupName.trim(),
-                        })
-                    );
+                    const option = $('<option>', {
+                        value: groupName.trim(),
+                        text: groupName.trim(),
+                    });
+    
+                    // Restore previous selection if the value exists
+                    if (groupName.trim() === currentValue) {
+                        option.prop('selected', true);
+                    }
+    
+                    $dropdown.append(option);
                 });
     
                 $dropdown.prop('disabled', false);
@@ -1023,8 +1035,13 @@ $(document).ready(function () {
             $('#allocation-fields, #storage-fields, #common-fields').hide();
             $('#billing-information').hide();
     
-            // Fetch metadata and store it globally
-            apiMetadata = await fetchMetadata();
+            // Add a timeout for metadata loading
+            const metadataTimeout = new Promise((_, reject) => {
+                setTimeout(() => reject(new Error('Metadata loading timed out.')), 15000);
+            });
+    
+            // Attempt to fetch metadata with timeout
+            apiMetadata = await Promise.race([fetchMetadata(), metadataTimeout]);
     
             if (!apiMetadata) {
                 // Fallback Metadata
@@ -1061,7 +1078,7 @@ $(document).ready(function () {
             console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
-            showErrorMessage("Failed to initialize form. Please refresh the page.");
+            showErrorMessage("Failed to load metadata after multiple attempts. Please refresh the page.");
         }
     }
 
