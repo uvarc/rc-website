@@ -511,32 +511,45 @@ $(document).ready(function () {
 
     function toggleAllocationFields() {
         const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
-        const isNew = newOrRenewal === 'new';
     
+        if (!newOrRenewal) {
+            console.error("New or Renewal selection is missing.");
+            return;
+        }
+    
+        const isNew = newOrRenewal === 'new';
         console.log(`Toggle allocation fields: New=${isNew}, Renewal=${!isNew}`);
     
-        // Toggle visibility for New and Renewal fields
-        $('#new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').toggle(isNew);
-        $('#existing-projects-allocation').toggle(!isNew);
+        if (isNew) {
+            $('#new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').show();
+            $('#existing-projects-allocation').hide();
+        } else {
+            $('#new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').hide();
+            $('#existing-projects-allocation').show();
+        }
     
-        // Revalidate the form after toggling
         updateFormValidation();
     }
 
     function toggleStorageFields() {
         const typeOfRequest = $('input[name="type-of-request"]:checked').val();
-        const isNewStorage = typeOfRequest === 'new-storage';
     
+        if (!typeOfRequest) {
+            console.error("Type of storage request selection is missing.");
+            return;
+        }
+    
+        const isNewStorage = typeOfRequest === 'new-storage';
         console.log(`Toggle storage fields: New=${isNewStorage}, Existing=${!isNewStorage}`);
     
-        // Toggle visibility for "Create new storage share"
-        $('#storage-mygroups-container, #storage-capacity, #storage-platform, #shared-space-name-container, #project-title-container')
-            .toggle(isNewStorage);
+        if (isNewStorage) {
+            $('#storage-mygroups-container, #storage-capacity, #storage-platform, #shared-space-name-container, #project-title-container').show();
+            $('#existing-projects-storage').hide();
+        } else {
+            $('#storage-mygroups-container, #storage-capacity, #storage-platform, #shared-space-name-container, #project-title-container').hide();
+            $('#existing-projects-storage').show();
+        }
     
-        // Toggle visibility for existing storage options
-        $('#existing-projects-storage').toggle(!isNewStorage);
-    
-        // Revalidate the form after toggling
         updateFormValidation();
     }
 
@@ -558,8 +571,9 @@ $(document).ready(function () {
     function setupEventHandlers() {
         // Handle changes to Service Unit vs. Storage request type
         $('input[name="request-type"]').off('change').on('change', function () {
-            toggleRequestFields(); // Show either allocation or storage fields
-            updatePayloadPreview(); // Update real-time payload based on the toggle
+            console.log("Request type changed:", $(this).val());
+            toggleRequestFields();
+            updatePayloadPreview();
         });
     
         // Handle New vs. Renewal selection for Service Unit requests
