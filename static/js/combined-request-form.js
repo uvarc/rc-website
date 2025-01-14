@@ -507,7 +507,6 @@ $(document).ready(function () {
         $('#existing-projects-allocation').toggle(!isNew);
         $('#allocation-tier').toggle(isNew);
     
-        // Do not clear dropdowns or hidden fields
         updateFormValidation();
     }
 
@@ -596,11 +595,20 @@ $(document).ready(function () {
             const errors = validatePayload(payload);
         
             if (errors.length > 0) {
+                // Show errors only during submission
+                const errorDiv = $('<div>')
+                    .addClass('alert alert-danger')
+                    .html(`
+                        <strong>Validation Errors:</strong>
+                        <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+                    `);
+                $('#combined-request-form').prepend(errorDiv);
+                setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
                 console.error("Validation errors:", errors);
-                showErrorMessage("Please fix the errors before submitting.");
                 return; // Stop submission on validation errors
             }
         
+            // Proceed with the form submission logic
             try {
                 const userId = getUserId();
                 const userEmail = `${userId}@virginia.edu`; // Construct the user's email
@@ -786,37 +794,24 @@ $(document).ready(function () {
     }
 
     function validatePayload(payload) {
-        const errors = [];
-    
-        // Validate user resources
-        const userResources = payload[0]?.user_resources || [];
-        userResources.forEach((resource, index) => {
-            if (!resource.group_name || resource.group_name === "Unknown Group") {
-                errors.push(`Resource ${index + 1}: Group name is required.`);
-            }
-            if (!resource.project_name) {
-                errors.push(`Resource ${index + 1}: Project name is required.`);
-            }
-            if (!resource.data_agreement_signed) {
-                errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
-            }
-        });
-    
-        // Show errors in UI
-        if (errors.length > 0) {
-            console.error("Payload validation errors:", errors);
-            const errorDiv = $('<div>')
-                .addClass('alert alert-danger')
-                .html(`
-                    <strong>Validation Errors:</strong>
-                    <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
-                `);
-            $('#combined-request-form').prepend(errorDiv);
-            setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+    const errors = [];
+
+    // Validate user resources
+    const userResources = payload[0]?.user_resources || [];
+    userResources.forEach((resource, index) => {
+        if (!resource.group_name || resource.group_name === "Unknown Group") {
+            errors.push(`Resource ${index + 1}: Group name is required.`);
         }
-    
-        return errors;
-    }
+        if (!resource.project_name) {
+            errors.push(`Resource ${index + 1}: Project name is required.`);
+        }
+        if (!resource.data_agreement_signed) {
+            errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
+        }
+    });
+
+    return errors; // Return errors for use during submission
+}
 
     // ===================================
     // Fetch and Populate Groups
