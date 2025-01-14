@@ -50,8 +50,10 @@ $(document).ready(function () {
     };
 
     // ===================================
-    // Holds API Data
+    // Fetches and Holds API Data
     // ===================================
+
+    let apiMetadata = {};
 
     let consoleData = [];
 
@@ -155,6 +157,78 @@ $(document).ready(function () {
         
             markFieldValid($field);
             return true;
+        }
+
+        /// Fetch Metadata
+
+        async function fetchMetadata() {
+            try {
+                const response = await fetch(`${API_CONFIG.baseUrl}/metadata`, {
+                    method: 'GET',
+                    headers: {
+                        ...API_CONFIG.headers
+                    },
+                    credentials: 'include'
+                });
+        
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch metadata: ${response.statusText}`);
+                }
+        
+                const metadata = await response.json();
+                console.log("Fetched metadata:", metadata);
+                return metadata;
+            } catch (error) {
+                console.error("Error fetching metadata:", error);
+                showErrorMessage("Failed to load metadata. Retrying...");
+        
+                // Retry logic
+                for (let attempt = 1; attempt <= 3; attempt++) {
+                    console.log(`Retrying metadata fetch (Attempt ${attempt})...`);
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    try {
+                        const response = await fetch(`${API_CONFIG.baseUrl}/metadata`, {
+                            method: 'GET',
+                            headers: { ...API_CONFIG.headers },
+                            credentials: 'include'
+                        });
+                        if (response.ok) {
+                            const metadata = await response.json();
+                            console.log("Fetched metadata on retry:", metadata);
+                            return metadata;
+                        }
+                    } catch (retryError) {
+                        console.warn(`Retry ${attempt} failed.`);
+                    }
+                }
+        
+                return null; // Return null if all retries fail
+            }
+        }
+
+        /// Update Form Using Metadata
+
+        function updateFormUsingMetadata(metadata) {
+            if (!metadata || typeof metadata !== 'object') {
+                console.warn("No valid metadata available to update the form.");
+                return;
+            }
+        
+            // Example: Update capacity limits based on metadata
+            const storageLimits = metadata.storageTiers || {};
+            Object.keys(storageLimits).forEach(tier => {
+                const limits = storageLimits[tier];
+                $(`#${tier}-capacity`).attr('max', limits.max || 200);
+            });
+        
+            // Example: Populate tier-specific descriptions
+            const allocationDescriptions = metadata.allocationTiers || {};
+            Object.keys(allocationDescriptions).forEach(tier => {
+                const description = allocationDescriptions[tier].description || "No description available.";
+                $(`#${tier}-description`).text(description);
+            });
+        
+            console.log("Form updated using metadata:", metadata);
         }
 
         /// Session and Data Handling
@@ -330,6 +404,12 @@ $(document).ready(function () {
 
         /// Success Message
 
+        function showErrorMessage(message) {
+            const errorDiv = $('<div>').addClass('alert alert-danger').text(message);
+            $('#combined-request-form').prepend(errorDiv);
+            setTimeout(() => errorDiv.remove(), 10000); // Set consistent timeout
+        }
+        
         function showSuccessMessage(message) {
             const successDiv = $('<div>')
                 .addClass('alert alert-success alert-dismissible fade show')
@@ -341,14 +421,9 @@ $(document).ready(function () {
                     </button>
                 `);
         
-            // Add the success message to the top of the form
             $('#combined-request-form').prepend(successDiv);
-        
-            // Scroll the page to the top
             $('html, body').animate({ scrollTop: 0 }, 'slow');
-        
-            // Automatically remove the success message after 10 seconds
-            setTimeout(() => successDiv.remove(), 10000); // Use .remove() instead of .alert('close')
+            setTimeout(() => successDiv.remove(), 10000); // Set consistent timeout
         }
 
     // ===================================
@@ -358,7 +433,7 @@ $(document).ready(function () {
     function showErrorMessage(message) {
         const errorDiv = $('<div>').addClass('alert alert-danger').text(message);
         $('#combined-request-form').prepend(errorDiv);
-        setTimeout(() => errorDiv.remove(), 5000);
+        setTimeout(() => errorDiv.remove(), 10000); // Set consistent timeout
     }
 
     function handleApiError(error) {
@@ -388,6 +463,10 @@ $(document).ready(function () {
         } else if (requestType === 'storage') {
             $('#storage-fields, #common-fields').show();
         }
+    
+        // Clear hidden fields
+        $('#allocation-fields input, #storage-fields input').val('');
+        $('#allocation-fields select, #storage-fields select').prop('selectedIndex', 0);
     
         updateBillingVisibility();
     }
@@ -542,12 +621,19 @@ $(document).ready(function () {
     
     function updateCapacityLimits(tierType) {
         const capacityField = $('#capacity');
-        const maxLimits = {
-            'SSZ Research Standard': 200,
-            'Highly Sensitive Data': 100,
-            'SSZ Research Project': 500
-        };
-        capacityField.attr('max', maxLimits[tierType] || 200);
+    
+        if (!apiMetadata || !apiMetadata.storageTiers) {
+            console.warn("No metadata available for capacity limits.");
+            return;
+        }
+    
+        const tierData = apiMetadata.storageTiers[tierType];
+        if (tierData) {
+            capacityField.attr('max', tierData.max || 200);
+            console.log(`Updated capacity limits for ${tierType}:`, tierData);
+        } else {
+            console.warn(`No limits found for storage tier: ${tierType}`);
+        }
     }
 
     function updateBillingVisibility() {
@@ -638,6 +724,9 @@ $(document).ready(function () {
     
         if (formData.requestType === 'service-unit') {
             const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
+            const tierData = apiMetadata.allocationTiers?.[formData.allocationTier] || {};
+            const requestCount = formData.requestCount || tierData.defaultRequestCount || "0";
+    
             const userResource = {
                 data_agreement_signed: $('#data-agreement').is(':checked'),
                 delegates_uid: "",
@@ -650,47 +739,14 @@ $(document).ready(function () {
                     hpc_service_units: {
                         [key]: {
                             tier: getTierEnum(formData.allocationTier),
-                            request_count: formData.requestCount || "0", // Ensure request_count is populated
-                            request_date: new Date().toISOString(), // Add request_date
-                            request_status: "pending", // Add request_status
-                            update_date: new Date().toISOString(), // Add update_date
+                            request_count: requestCount,
+                            request_date: new Date().toISOString(),
+                            request_status: "pending",
+                            update_date: new Date().toISOString(),
                             billing_details: getBillingDetails()
                         }
                     },
                     storage: {}
-                }
-            };
-            payload[0].user_resources.push(userResource);
-        }
-    
-        if (formData.requestType === 'storage') {
-            const key = `${formData.group}-${getStorageTierEnum(formData.storageTier)}`;
-            const isBillingExempt = (
-                formData.storageTier === 'SSZ Research Standard' &&
-                formData.capacity <= 10 &&
-                formData.typeOfRequest === 'new-storage'
-            );
-    
-            const userResource = {
-                data_agreement_signed: $('#data-agreement').is(':checked'),
-                delegates_uid: "",
-                group_id: "",
-                group_name: formData.group || "Unknown Group",
-                pi_uid: userId,
-                project_desc: $('#project-description').val()?.trim() || "",
-                project_name: formData.projectName?.trim() || "",
-                resources: {
-                    hpc_service_units: {},
-                    storage: {
-                        [key]: {
-                            tier: getStorageTierEnum(formData.storageTier),
-                            request_size: formData.capacity?.toString() || "0",
-                            request_date: new Date().toISOString(), // Add request_date
-                            request_status: "pending", // Add request_status
-                            update_date: new Date().toISOString(), // Add update_date
-                            billing_details: !isBillingExempt ? getBillingDetails() : undefined
-                        }
-                    }
                 }
             };
             payload[0].user_resources.push(userResource);
@@ -703,45 +759,31 @@ $(document).ready(function () {
     function validatePayload(payload) {
         const errors = [];
     
-        // Ensure the payload structure is valid
+        // Validate user resources
         const userResources = payload[0]?.user_resources || [];
-    
-        // Iterate through each resource to validate
         userResources.forEach((resource, index) => {
-            // Check general resource fields
             if (!resource.group_name || resource.group_name === "Unknown Group") {
                 errors.push(`Resource ${index + 1}: Group name is required.`);
             }
-    
             if (!resource.project_name) {
                 errors.push(`Resource ${index + 1}: Project name is required.`);
             }
-    
             if (!resource.data_agreement_signed) {
                 errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
             }
-    
-            // Validate HPC service units if they exist
-            const hpcServiceUnits = resource.resources?.hpc_service_units || {};
-            const hpcBillingRequired = Object.values(hpcServiceUnits).some(unit => {
-                return unit.billing_details === undefined;
-            });
-    
-            // Validate storage resources if they exist
-            const storage = resource.resources?.storage || {};
-            const storageBillingRequired = Object.values(storage).some(item => {
-                const isBillingExempt = item.tier === "ssz_standard" && parseInt(item.request_size, 10) <= 10;
-                return !isBillingExempt && !item.billing_details;
-            });
-    
-            if (hpcBillingRequired || storageBillingRequired) {
-                errors.push(`Resource ${index + 1}: Billing details are required for this request.`);
-            }
         });
     
-        // Log errors if any
+        // Show errors in UI
         if (errors.length > 0) {
             console.error("Payload validation errors:", errors);
+            const errorDiv = $('<div>')
+                .addClass('alert alert-danger')
+                .html(`
+                    <strong>Validation Errors:</strong>
+                    <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+                `);
+            $('#combined-request-form').prepend(errorDiv);
+            setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
         }
     
         return errors;
@@ -970,20 +1012,42 @@ $(document).ready(function () {
             // Hide specific sections initially
             $('#allocation-fields, #storage-fields, #common-fields').hide();
             $('#billing-information').hide();
-
+    
+            // Fetch metadata and store it globally
+            apiMetadata = await fetchMetadata();
+    
+            if (!apiMetadata) {
+                // Fallback Metadata
+                apiMetadata = {
+                    storageTiers: {
+                        "SSZ Research Standard": { max: 10 },
+                        "SSZ Research Project": { max: 200 },
+                        "Highly Sensitive Data": { max: 50 }
+                    },
+                    allocationTiers: {
+                        "Standard": { defaultRequestCount: 1000 },
+                        "Instructional": { defaultRequestCount: 500 },
+                        "Paid": { defaultRequestCount: 5000 }
+                    }
+                };
+                console.warn("Using fallback metadata.");
+            } else {
+                updateFormUsingMetadata(apiMetadata);
+            }
+    
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
-
+    
             // Setup event handlers
             setupEventHandlers();
-
+    
             // Setup real-time payload preview
             setupPayloadPreviewUpdater();
-
+    
             // Initialize UI toggles
             toggleRequestFields();
             updateFormValidation();
-
+    
             console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
