@@ -487,44 +487,62 @@ $(document).ready(function () {
 
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
-    
+
         // Show common fields
         $('#common-fields').show();
-    
-        // Toggle primary sections
-        $('#allocation-fields').toggle(requestType === 'service-unit');
-        $('#storage-fields').toggle(requestType === 'storage');
-    
-        // Trigger nested toggles
+
+        // Explicitly show or hide primary sections
         if (requestType === 'service-unit') {
-            toggleAllocationFields();
+            $('#allocation-fields').show();
+            $('#storage-fields').hide();
+            toggleAllocationFields(); // Handle nested toggles for service-unit
         } else if (requestType === 'storage') {
-            toggleStorageFields();
+            $('#allocation-fields').hide();
+            $('#storage-fields').show();
+            toggleStorageFields(); // Handle nested toggles for storage
+        } else {
+            // Default case: hide both sections
+            $('#allocation-fields, #storage-fields').hide();
         }
     }
-    
+
     function toggleAllocationFields() {
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
-    
-        // Toggle new vs renewal fields
-        $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').toggle(isNew);
-        $('#allocation-fields #existing-projects-allocation').toggle(!isNew);
+
+        // Explicitly show or hide new vs renewal fields
+        if (isNew) {
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
+            $('#allocation-fields #existing-projects-allocation').hide();
+        } else {
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
+            $('#allocation-fields #existing-projects-allocation').show();
+        }
     }
-    
+
     function toggleStorageFields() {
         const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
-    
-        // Toggle new vs existing storage fields
-        $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').toggle(isNewStorage);
-        $('#storage-fields #existing-projects-storage').toggle(!isNewStorage);
+
+        // Explicitly show or hide new vs existing storage fields
+        if (isNewStorage) {
+            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
+            $('#storage-fields #existing-projects-storage').hide();
+        } else {
+            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
+            $('#storage-fields #existing-projects-storage').show();
+        }
     }
-    
+
     function toggleStorageTierOptions() {
         const isHighlySensitive = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
-    
-        // Toggle storage tier-specific sections
-        $('#storage-tier-options #sensitive-data').toggle(isHighlySensitive);
-        $('#storage-tier-options #standard-data').toggle(!isHighlySensitive);
+
+        // Explicitly show or hide tier-specific sections
+        if (isHighlySensitive) {
+            $('#storage-tier-options #sensitive-data').show();
+            $('#storage-tier-options #standard-data').hide();
+        } else {
+            $('#storage-tier-options #sensitive-data').hide();
+            $('#storage-tier-options #standard-data').show();
+        }
     }
 
     // ===================================
@@ -532,7 +550,6 @@ $(document).ready(function () {
     // ===================================
 
     function setupEventHandlers() {
-        
         // Handle toggling for request type (Service Unit vs Storage)
         $('input[name="request-type"]').on('change', toggleRequestFields);
 
@@ -544,6 +561,7 @@ $(document).ready(function () {
 
         // Handle toggling for Storage Tier options (Sensitive vs Standard)
         $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
+    }
 
         // General input, select, and textarea validation and updates
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
