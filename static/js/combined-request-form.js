@@ -488,35 +488,45 @@ $(document).ready(function () {
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
     
-        // Show or hide top-level containers
-        $('#allocation-fields').toggle(requestType === 'service-unit');
-        $('#storage-fields').toggle(requestType === 'storage');
+        // Always display #common-fields
+        $('#common-fields').show();
     
-        // Trigger corresponding toggle functions to handle nested fields
-        if (requestType === 'service-unit') {
-            toggleAllocationFields(); // Update allocation fields
-        } else if (requestType === 'storage') {
-            toggleStorageFields(); // Update storage fields
+        // Show or hide top-level containers
+        const isServiceUnit = requestType === 'service-unit';
+        const isStorage = requestType === 'storage';
+    
+        $('#allocation-fields').toggle(isServiceUnit);
+        $('#storage-fields').toggle(isStorage);
+    
+        // Trigger corresponding toggle functions for nested fields
+        if (isServiceUnit) {
+            toggleAllocationFields(); // Update allocation fields for SU requests
+        } else if (isStorage) {
+            toggleStorageFields(); // Update storage fields for Storage requests
         }
     
-        updateFormValidation(); // Revalidate the form after toggling
+        // Revalidate the form after toggling
+        updateFormValidation();
     }
 
     function toggleAllocationFields() {
         const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
         const isNew = newOrRenewal === 'new';
     
-        // Toggle fields for New vs. Renewal
-        $('#new-project-name-container, #project-description').toggle(isNew);
+        console.log(`Toggle allocation fields: New=${isNew}, Renewal=${!isNew}`);
+    
+        // Toggle visibility for New and Renewal fields
+        $('#new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').toggle(isNew);
         $('#existing-projects-allocation').toggle(!isNew);
     
-        // Hide unused fields
+        // Clear values of hidden fields
         if (isNew) {
-            $('#existing-projects-allocation input').val('');
+            $('#existing-projects-allocation input').prop('checked', false);
         } else {
-            $('#new-project-name-container input, #project-description textarea').val('');
+            $('#new-project-name-container input, #project-description textarea, #allocation-tier input').val('');
         }
     
+        // Revalidate the form after toggling
         updateFormValidation();
     }
 
@@ -524,19 +534,24 @@ $(document).ready(function () {
         const typeOfRequest = $('input[name="type-of-request"]:checked').val();
         const isNewStorage = typeOfRequest === 'new-storage';
     
-        // Toggle fields for "Create new storage share" vs. other Storage types
+        console.log(`Toggle storage fields: New=${isNewStorage}, Existing=${!isNewStorage}`);
+    
+        // Toggle visibility for "Create new storage share"
         $('#storage-mygroups-container, #storage-capacity, #storage-platform, #shared-space-name-container, #project-title-container')
             .toggle(isNewStorage);
     
+        // Toggle visibility for existing storage options
         $('#existing-projects-storage').toggle(!isNewStorage);
     
-        // Hide unused fields
+        // Clear values of hidden fields
         if (isNewStorage) {
-            $('#existing-projects-storage input').val('');
+            $('#existing-projects-storage input').prop('checked', false);
         } else {
-            $('#storage-mygroups-container select, #storage-capacity input, #storage-platform select, #shared-space-name-container input, #project-title-container input').val('');
+            $('#storage-mygroups-container select, #storage-capacity input, #storage-platform select, #shared-space-name-container input, #project-title-container input')
+                .val('');
         }
     
+        // Revalidate the form after toggling
         updateFormValidation();
     }
 
@@ -559,31 +574,31 @@ $(document).ready(function () {
         // Handle changes to Service Unit vs. Storage request type
         $('input[name="request-type"]').off('change').on('change', function () {
             toggleRequestFields(); // Show either allocation or storage fields
-            updatePayloadPreview();
+            updatePayloadPreview(); // Update real-time payload based on the toggle
         });
     
         // Handle New vs. Renewal selection for Service Unit requests
         $('input[name="new-or-renewal"]').off('change').on('change', function () {
             toggleAllocationFields(); // Show fields based on New or Renewal
-            updatePayloadPreview();
+            updatePayloadPreview(); // Update payload for new/renewal changes
         });
     
         // Handle Storage request type changes (e.g., "Create new storage share")
         $('input[name="type-of-request"]').off('change').on('change', function () {
             toggleStorageFields(); // Show fields based on storage request type
-            updatePayloadPreview();
+            updatePayloadPreview(); // Update payload for storage changes
         });
     
         // Handle changes to Storage Tier options (e.g., "SSZ Research Standard")
         $('input[name="storage-choice"]').off('change').on('change', function () {
             toggleStorageTierOptions(); // Update visibility of storage tier-specific fields
-            updatePayloadPreview();
+            updatePayloadPreview(); // Update payload for tier changes
         });
     
         // Handle changes to capacity and other fields impacting billing visibility
         $('#capacity').off('input change').on('input change', function () {
             updateBillingVisibility(); // Update billing information visibility
-            updatePayloadPreview();
+            updatePayloadPreview(); // Update the payload preview
         });
     
         // General input, select, and textarea validation and updates
@@ -595,6 +610,73 @@ $(document).ready(function () {
                 updatePayloadPreview(); // Update the real-time payload preview
                 updateBillingVisibility(); // Update billing visibility
             });
+    
+        // Submit the form with custom logic
+        $('#combined-request-form').off('submit').on('submit', async function (event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            console.log("Form submission triggered.");
+    
+            const formData = collectFormData(); // Collect data from the form
+            const payload = buildPayloadPreview(); // Build payload for submission
+            const errors = validatePayload(payload); // Validate the payload
+    
+            if (errors.length > 0) {
+                // Show errors only during submission
+                const errorDiv = $('<div>')
+                    .addClass('alert alert-danger')
+                    .html(`
+                        <strong>Validation Errors:</strong>
+                        <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+                    `);
+                $('#combined-request-form').prepend(errorDiv);
+                setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+                console.error("Validation errors:", errors);
+                return; // Stop submission on validation errors
+            }
+    
+            // Proceed with the form submission logic
+            try {
+                const userId = getUserId();
+                const userEmail = `${userId}@virginia.edu`; // Construct the user's email
+                console.log("Submitting payload for user:", userId);
+                console.log("User email:", userEmail);
+    
+                const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
+    
+                const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+                    method: method,
+                    headers: {
+                        ...API_CONFIG.headers, // Use existing headers
+                    },
+                    body: JSON.stringify(payload),
+                    credentials: 'include',
+                });
+    
+                if (!response.ok) {
+                    const errorMessage = await response.text();
+                    console.error(`Submission failed (${method}):`, errorMessage);
+                    showErrorMessage("Submission failed. Please try again.");
+                    return;
+                }
+    
+                const responseData = await response.json();
+                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+    
+                // Email the user with the submitted information
+                sendUserEmail(userEmail, payload);
+    
+                // Clear the form fields
+                clearFormFields();
+    
+                // Display success message and scroll to the top
+                showSuccessMessage("Your request has been submitted successfully!");
+    
+            } catch (error) {
+                console.error("Error during form submission:", error);
+                showErrorMessage("An error occurred while submitting the form. Please try again.");
+            }
+        });
     
         console.log('Event handlers successfully set up.');
     }
@@ -1055,42 +1137,64 @@ $(document).ready(function () {
 
       async function initialize() {
         console.log("Initializing form...");
+    
         try {
-            // Hide specific sections initially
-            $('#allocation-fields, #storage-fields, #common-fields').hide();
-            $('#billing-information').hide();
+            // Hide sections initially to avoid flickering
+            $('#allocation-fields, #storage-fields, #common-fields, #billing-information').hide();
     
-            // Add a timeout for metadata loading
-            const metadataTimeout = new Promise((_, reject) => {
-                setTimeout(() => reject(new Error('Metadata loading timed out.')), 15000);
-            });
+            // Display a loading spinner during metadata and user data fetch
+            const loadingMessage = $('<div>')
+                .addClass('alert alert-info d-flex align-items-center')
+                .attr('id', 'loading-message')
+                .html(`
+                    <div class="spinner-border spinner-border-sm me-2" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Initializing the form. Please wait...
+                `)
+                .prependTo('#combined-request-form');
     
-            // Attempt to fetch metadata with timeout
+            // Set a timeout for metadata loading
+            const metadataTimeout = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Metadata loading timed out.')), 15000)
+            );
+    
+            // Attempt to fetch metadata with a timeout
             apiMetadata = await Promise.race([fetchMetadata(), metadataTimeout]);
     
             if (!apiMetadata) {
                 throw new Error("Metadata fetch failed.");
             }
     
+            console.log("Metadata successfully fetched:", apiMetadata);
+    
+            // Update form elements using fetched metadata
             updateFormUsingMetadata(apiMetadata);
     
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
     
-            // Setup event handlers
+            // Set up event handlers for dynamic interactivity
             setupEventHandlers();
     
-            // Setup real-time payload preview
+            // Set up real-time payload preview
             setupPayloadPreviewUpdater();
     
-            // Initialize UI toggles
+            // Initialize visibility of fields based on initial state
             toggleRequestFields();
             updateFormValidation();
     
             console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
-            showErrorMessage("Failed to load user information. Please try again later.");
+    
+            // Display a user-friendly error message
+            showErrorMessage(
+                "Failed to load user information. Please refresh the page or contact support if the issue persists."
+            );
+        } finally {
+            // Ensure the loading spinner is removed
+            $('#loading-message').remove();
         }
     }
 
