@@ -487,25 +487,35 @@ $(document).ready(function () {
 
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
-        $('#allocation-fields, #storage-fields, #common-fields').hide();
     
+        // Show or hide top-level containers
+        $('#allocation-fields').toggle(requestType === 'service-unit');
+        $('#storage-fields').toggle(requestType === 'storage');
+    
+        // Trigger corresponding toggle functions to handle nested fields
         if (requestType === 'service-unit') {
-            $('#allocation-fields, #common-fields').show();
+            toggleAllocationFields(); // Update allocation fields
         } else if (requestType === 'storage') {
-            $('#storage-fields, #common-fields').show();
+            toggleStorageFields(); // Update storage fields
         }
     
-        updateBillingVisibility();
+        updateFormValidation(); // Revalidate the form after toggling
     }
 
     function toggleAllocationFields() {
         const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
         const isNew = newOrRenewal === 'new';
     
-        $('#new-project-name-container').toggle(isNew);
-        $('#mygroups-group-container').toggle(isNew); // Show for new SU request
+        // Toggle fields for New vs. Renewal
+        $('#new-project-name-container, #project-description').toggle(isNew);
         $('#existing-projects-allocation').toggle(!isNew);
-        $('#allocation-tier').toggle(isNew);
+    
+        // Hide unused fields
+        if (isNew) {
+            $('#existing-projects-allocation input').val('');
+        } else {
+            $('#new-project-name-container input, #project-description textarea').val('');
+        }
     
         updateFormValidation();
     }
@@ -514,9 +524,18 @@ $(document).ready(function () {
         const typeOfRequest = $('input[name="type-of-request"]:checked').val();
         const isNewStorage = typeOfRequest === 'new-storage';
     
-        $('#storage-platform, #shared-space-name-container').toggle(isNewStorage);
+        // Toggle fields for "Create new storage share" vs. other Storage types
+        $('#storage-mygroups-container, #storage-capacity, #storage-platform, #shared-space-name-container, #project-title-container')
+            .toggle(isNewStorage);
+    
         $('#existing-projects-storage').toggle(!isNewStorage);
-        $('#storage-mygroups-container').toggle(isNewStorage); // Show for new storage share
+    
+        // Hide unused fields
+        if (isNewStorage) {
+            $('#existing-projects-storage input').val('');
+        } else {
+            $('#storage-mygroups-container select, #storage-capacity input, #storage-platform select, #shared-space-name-container input, #project-title-container input').val('');
+        }
     
         updateFormValidation();
     }
@@ -536,52 +555,49 @@ $(document).ready(function () {
     // Event Handlers
     // ===================================
 
-        /// Setup Event Handlers
-
-        function setupEventHandlers() {
-            // Handle changes to Service Unit vs. Storage request type
-            $('input[name="request-type"]').off('change').on('change', function () {
-                toggleRequestFields();
-                updatePayloadPreview();
-                updateBillingVisibility();
+    function setupEventHandlers() {
+        // Handle changes to Service Unit vs. Storage request type
+        $('input[name="request-type"]').off('change').on('change', function () {
+            toggleRequestFields(); // Show either allocation or storage fields
+            updatePayloadPreview();
+        });
+    
+        // Handle New vs. Renewal selection for Service Unit requests
+        $('input[name="new-or-renewal"]').off('change').on('change', function () {
+            toggleAllocationFields(); // Show fields based on New or Renewal
+            updatePayloadPreview();
+        });
+    
+        // Handle Storage request type changes (e.g., "Create new storage share")
+        $('input[name="type-of-request"]').off('change').on('change', function () {
+            toggleStorageFields(); // Show fields based on storage request type
+            updatePayloadPreview();
+        });
+    
+        // Handle changes to Storage Tier options (e.g., "SSZ Research Standard")
+        $('input[name="storage-choice"]').off('change').on('change', function () {
+            toggleStorageTierOptions(); // Update visibility of storage tier-specific fields
+            updatePayloadPreview();
+        });
+    
+        // Handle changes to capacity and other fields impacting billing visibility
+        $('#capacity').off('input change').on('input change', function () {
+            updateBillingVisibility(); // Update billing information visibility
+            updatePayloadPreview();
+        });
+    
+        // General input, select, and textarea validation and updates
+        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+            .off('input change')
+            .on('input change', function () {
+                validateField($(this)); // Validate individual fields
+                updateFormValidation(); // Validate the overall form
+                updatePayloadPreview(); // Update the real-time payload preview
+                updateBillingVisibility(); // Update billing visibility
             });
-        
-            // Handle New vs. Renewal selection for Service Unit requests
-            $('input[name="new-or-renewal"]').off('change').on('change', function () {
-                toggleAllocationFields();
-                updatePayloadPreview();
-            });
-        
-            // Handle Storage request type changes (e.g., "Create new storage share")
-            $('input[name="type-of-request"]').off('change').on('change', function () {
-                toggleStorageFields();
-                updatePayloadPreview();
-            });
-        
-            // Handle changes to Storage Tier options (e.g., "SSZ Research Standard")
-            $('input[name="storage-choice"]').off('change').on('change', function () {
-                toggleStorageTierOptions();
-                updatePayloadPreview();
-            });
-        
-            // Handle changes to capacity and other fields impacting billing visibility
-            $('#capacity').off('input change').on('input change', function () {
-                updateBillingVisibility();
-                updatePayloadPreview();
-            });
-        
-            // General input, select, and textarea validation and updates
-            $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-                .off('input change')
-                .on('input change', function () {
-                    validateField($(this));
-                    updateFormValidation();
-                    updatePayloadPreview();
-                    updateBillingVisibility();
-                });
-        
-            console.log('Event handlers successfully set up.');
-        }
+    
+        console.log('Event handlers successfully set up.');
+    }
 
         /// Form Submission Handler
 
