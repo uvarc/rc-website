@@ -402,50 +402,42 @@ $(document).ready(function () {
         /// Form Submission Handler
 
         $('#combined-request-form').on('submit', async function (event) {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault(); // Prevent default form submission
         
             console.log("Form submission triggered.");
         
-            // Build the payload
             const payload = buildPayloadPreview();
             const errors = validatePayload(payload);
         
-            // Handle validation errors
             if (errors.length > 0) {
                 console.error("Validation errors:", errors);
                 showErrorMessage("Please fix the errors before submitting.");
-                return; // Stop the submission process
+                return; // Stop submission on validation errors
             }
         
             try {
-                // Dynamically fetch the user ID using the helper function
                 const userId = getUserId();
                 console.log("Submitting payload for user:", userId);
         
-                // Use the headers from API_CONFIG for consistency
-                const headers = {
-                    ...API_CONFIG.headers, // Include all GET headers
-                };
+                const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
         
-                // Perform the POST request
                 const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-                    method: 'POST',
-                    headers: headers, // Use the unified headers
-                    body: JSON.stringify(payload), // Stringify the payload before sending
-                    credentials: 'include', // Include credentials for cross-origin requests
+                    method: method,
+                    headers: headers, // Include headers with dynamic origin
+                    body: JSON.stringify(payload),
+                    credentials: 'include'
                 });
         
-                // Handle response
                 if (!response.ok) {
                     const errorMessage = await response.text();
-                    console.error("Submission failed:", errorMessage);
+                    console.error(`Submission failed (${method}):`, errorMessage);
                     showErrorMessage("Submission failed. Please try again.");
-                    return; // Exit on failure
+                    return;
                 }
         
                 const responseData = await response.json();
-                console.log("Form submitted successfully:", responseData);
-                alert("Your request was submitted successfully!");
+                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+                alert(`Your request was ${method === 'PUT' ? 'updated' : 'submitted'} successfully!`);
             } catch (error) {
                 console.error("Error during form submission:", error);
                 showErrorMessage("An error occurred while submitting the form. Please try again.");
@@ -540,15 +532,14 @@ $(document).ready(function () {
 
     function buildPayloadPreview() {
         const formData = collectFormData();
-        const userId = getUserId(); // Use the centralized helper function for dynamic user ID retrieval
+        const userId = getUserId();
     
         const payload = [{
-            is_user_resource_request_elligible: true, // Assume eligibility unless verified elsewhere
-            user_groups: formData.group ? [formData.group] : [], // Use selected group or an empty array
+            is_user_resource_request_elligible: true,
+            user_groups: formData.group ? [formData.group] : [],
             user_resources: []
         }];
     
-        // Build user resources for service-unit requests
         if (formData.requestType === 'service-unit') {
             const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
             const userResource = {
@@ -563,11 +554,8 @@ $(document).ready(function () {
                     hpc_service_units: {
                         [key]: {
                             tier: getTierEnum(formData.allocationTier),
-                            request_count: formData.requestCount || "1000",
-                            request_date: new Date().toISOString(),
-                            request_status: "pending",
-                            update_date: new Date().toISOString(),
-                            billing_details: getBillingDetails() // Include billing details dynamically
+                            request_count: formData.requestCount || "0", // Ensure this field is dynamic
+                            billing_details: getBillingDetails()
                         }
                     },
                     storage: {}
@@ -576,7 +564,6 @@ $(document).ready(function () {
             payload[0].user_resources.push(userResource);
         }
     
-        // Build user resources for storage requests
         if (formData.requestType === 'storage') {
             const key = `${formData.group}-${getStorageTierEnum(formData.storageTier)}`;
             const isBillingExempt = (
@@ -598,10 +585,7 @@ $(document).ready(function () {
                     storage: {
                         [key]: {
                             tier: getStorageTierEnum(formData.storageTier),
-                            request_size: formData.capacity?.toString() || "0",
-                            request_date: new Date().toISOString(),
-                            request_status: "pending",
-                            update_date: new Date().toISOString(),
+                            request_size: formData.capacity?.toString() || "0", // Ensure this field is dynamic
                             billing_details: !isBillingExempt ? getBillingDetails() : undefined
                         }
                     }
@@ -610,7 +594,7 @@ $(document).ready(function () {
             payload[0].user_resources.push(userResource);
         }
     
-        console.log("Built payload:", JSON.stringify(payload, null, 2)); // Debugging log
+        console.log("Built payload:", JSON.stringify(payload, null, 2));
         return payload;
     }
 
@@ -679,8 +663,8 @@ $(document).ready(function () {
             // Perform the fetch call with credentials included
             const response = await fetch(requestUrl, {
                 method: 'GET',
-                headers: API_CONFIG.headers,
-                credentials: 'include', // Required for cross-origin requests with cookies
+                headers: headers,
+                credentials: 'include'
             });
         
             // Handle non-OK responses
