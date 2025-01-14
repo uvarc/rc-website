@@ -488,79 +488,43 @@ $(document).ready(function () {
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
     
-        // Always display #common-fields
+        // Show common fields
         $('#common-fields').show();
     
-        // Show or hide top-level containers
-        const isServiceUnit = requestType === 'service-unit';
-        const isStorage = requestType === 'storage';
+        // Toggle primary sections
+        $('#allocation-fields').toggle(requestType === 'service-unit');
+        $('#storage-fields').toggle(requestType === 'storage');
     
-        $('#allocation-fields').toggle(isServiceUnit);
-        $('#storage-fields').toggle(isStorage);
-    
-        // Trigger corresponding toggle functions for nested fields
-        if (isServiceUnit) {
-            toggleAllocationFields(); // Update allocation fields for SU requests
-        } else if (isStorage) {
-            toggleStorageFields(); // Update storage fields for Storage requests
+        // Trigger nested toggles
+        if (requestType === 'service-unit') {
+            toggleAllocationFields();
+        } else if (requestType === 'storage') {
+            toggleStorageFields();
         }
-    
-        // Revalidate the form after toggling
-        updateFormValidation();
     }
-
+    
     function toggleAllocationFields() {
-        const newOrRenewal = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val();
+        const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
     
-        if (!newOrRenewal) {
-            console.error("New or Renewal selection is missing.");
-            return;
-        }
-    
-        const isNew = newOrRenewal === 'new';
-        if (isNew) {
-            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
-            $('#allocation-fields #existing-projects-allocation').hide();
-        } else {
-            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
-            $('#allocation-fields #existing-projects-allocation').show();
-        }
-    
-        updateFormValidation();
+        // Toggle new vs renewal fields
+        $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').toggle(isNew);
+        $('#allocation-fields #existing-projects-allocation').toggle(!isNew);
     }
-
+    
     function toggleStorageFields() {
-        const typeOfRequest = $('#storage-fields input[name="type-of-request"]:checked').val();
-
-        if (!typeOfRequest) {
-            console.error("Type of storage request selection is missing.");
-            return;
-        }
-
-        const isNewStorage = typeOfRequest === 'new-storage';
+        const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
+    
+        // Toggle new vs existing storage fields
         $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').toggle(isNewStorage);
         $('#storage-fields #existing-projects-storage').toggle(!isNewStorage);
-    
-        if (isNewStorage) {
-            $('#storage-mygroups-container, #storage-capacity, #storage-platform, #shared-space-name-container, #project-title-container').show();
-            $('#existing-projects-storage').hide();
-        } else {
-            $('#storage-mygroups-container, #storage-capacity, #storage-platform, #shared-space-name-container, #project-title-container').hide();
-            $('#existing-projects-storage').show();
-        }
-    
-        updateFormValidation();
     }
-
+    
     function toggleStorageTierOptions() {
-        const selectedStorage = $('#storage-tier-options input[name="storage-choice"]:checked').val();
-
-        if (!selectedStorage) return;
-
-        const isHighlySensitive = selectedStorage === 'Highly Sensitive Data';
+        const isHighlySensitive = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
+    
+        // Toggle storage tier-specific sections
         $('#storage-tier-options #sensitive-data').toggle(isHighlySensitive);
         $('#storage-tier-options #standard-data').toggle(!isHighlySensitive);
-        updateCapacityLimits(selectedStorage);
     }
 
     // ===================================
@@ -568,37 +532,19 @@ $(document).ready(function () {
     // ===================================
 
     function setupEventHandlers() {
-        // Handle changes to Service Unit vs. Storage request type
-        $('input[name="request-type"]').off('change').on('change', function () {
-            console.log("Request type changed:", $(this).val());
-            toggleRequestFields();
-            updatePayloadPreview();
-        });
-    
-        // Handle New vs. Renewal selection for Service Unit requests
-        $('input[name="new-or-renewal"]').off('change').on('change', function () {
-            toggleAllocationFields(); // Show fields based on New or Renewal
-            updatePayloadPreview(); // Update payload for new/renewal changes
-        });
-    
-        // Handle Storage request type changes (e.g., "Create new storage share")
-        $('input[name="type-of-request"]').off('change').on('change', function () {
-            toggleStorageFields(); // Show fields based on storage request type
-            updatePayloadPreview(); // Update payload for storage changes
-        });
-    
-        // Handle changes to Storage Tier options (e.g., "SSZ Research Standard")
-        $('input[name="storage-choice"]').off('change').on('change', function () {
-            toggleStorageTierOptions(); // Update visibility of storage tier-specific fields
-            updatePayloadPreview(); // Update payload for tier changes
-        });
-    
-        // Handle changes to capacity and other fields impacting billing visibility
-        $('#capacity').off('input change').on('input change', function () {
-            updateBillingVisibility(); // Update billing information visibility
-            updatePayloadPreview(); // Update the payload preview
-        });
-    
+        
+        // Handle toggling for request type (Service Unit vs Storage)
+        $('input[name="request-type"]').on('change', toggleRequestFields);
+
+        // Handle toggling for New vs Renewal (Service Unit)
+        $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
+
+        // Handle toggling for Storage request type (New vs Existing)
+        $('input[name="type-of-request"]').on('change', toggleStorageFields);
+
+        // Handle toggling for Storage Tier options (Sensitive vs Standard)
+        $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
+
         // General input, select, and textarea validation and updates
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
             .off('input change')
