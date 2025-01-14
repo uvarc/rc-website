@@ -135,6 +135,10 @@ $(document).ready(function () {
         }
 
         function validateField($field) {
+            if (!$field.is(':visible')) {
+                return true; // Skip validation for hidden fields
+            }
+        
             const isCheckbox = $field.is(':checkbox');
             const isDropdown = $field.is('select');
         
@@ -480,6 +484,14 @@ $(document).ready(function () {
         $('#existing-projects-allocation').toggle(!isNew);
         $('#allocation-tier').toggle(isNew);
     
+        // Clear hidden fields
+        if (isNew) {
+            $('#existing-projects-allocation input').val('');
+        } else {
+            $('#new-project-name-container input, #allocation-tier select').val('');
+            $('#mygroups-group').prop('selectedIndex', 0);
+        }
+    
         updateFormValidation();
     }
 
@@ -490,6 +502,14 @@ $(document).ready(function () {
         $('#storage-platform, #shared-space-name-container').toggle(isNewStorage);
         $('#existing-projects-storage').toggle(!isNewStorage);
         $('#storage-mygroups-container').toggle(isNewStorage); // Show for new storage share
+    
+        // Clear hidden fields
+        if (isNewStorage) {
+            $('#existing-projects-storage input').val('');
+        } else {
+            $('#storage-platform input, #shared-space-name-container input, #storage-mygroups-container select').val('');
+            $('#storage-mygroups-container select').prop('selectedIndex', 0);
+        }
     
         updateFormValidation();
     }
@@ -512,46 +532,47 @@ $(document).ready(function () {
         /// Setup Event Handlers
 
         function setupEventHandlers() {
-            //// Handle changes to Service Unit vs. Storage request type
-            $('input[name="request-type"]').on('change', function () {
-                toggleRequestFields(); ///// Update the main container visibility
-                updatePayloadPreview(); ///// Update the payload preview
-                updateBillingVisibility(); ///// Update billing visibility logic
+            // Handle changes to Service Unit vs. Storage request type
+            $('input[name="request-type"]').off('change').on('change', function () {
+                toggleRequestFields();
+                updatePayloadPreview();
+                updateBillingVisibility();
             });
-
-            //// Handle New vs. Renewal selection for Service Unit requests
-            $('input[name="new-or-renewal"]').on('change', function () {
-                toggleAllocationFields(); ///// Update fields within #allocation-fields
-                updatePayloadPreview(); ///// Update the payload preview
+        
+            // Handle New vs. Renewal selection for Service Unit requests
+            $('input[name="new-or-renewal"]').off('change').on('change', function () {
+                toggleAllocationFields();
+                updatePayloadPreview();
             });
-
-            //// Handle Storage request type changes (e.g., "Create new storage share")
-            $('input[name="type-of-request"]').on('change', function () {
-                toggleStorageFields(); ///// Update fields within #storage-fields
-                updatePayloadPreview(); ///// Update the payload preview
+        
+            // Handle Storage request type changes (e.g., "Create new storage share")
+            $('input[name="type-of-request"]').off('change').on('change', function () {
+                toggleStorageFields();
+                updatePayloadPreview();
             });
-
-            //// Handle changes to Storage Tier options (e.g., "SSZ Research Standard")
-            $('input[name="storage-choice"]').on('change', function () {
-                toggleStorageTierOptions(); ///// Update tier-specific fields
-                updatePayloadPreview(); ///// Update the payload preview
+        
+            // Handle changes to Storage Tier options (e.g., "SSZ Research Standard")
+            $('input[name="storage-choice"]').off('change').on('change', function () {
+                toggleStorageTierOptions();
+                updatePayloadPreview();
             });
-
-            //// Handle changes to capacity and other fields impacting billing visibility
-            $('#capacity').on('input change', function () {
-                updateBillingVisibility(); ///// Ensure billing information is toggled correctly
-                updatePayloadPreview(); ///// Update the payload preview
+        
+            // Handle changes to capacity and other fields impacting billing visibility
+            $('#capacity').off('input change').on('input change', function () {
+                updateBillingVisibility();
+                updatePayloadPreview();
             });
-
-            //// General input, select, and textarea validation and updates
+        
+            // General input, select, and textarea validation and updates
             $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+                .off('input change')
                 .on('input change', function () {
-                    validateField($(this)); ///// Validate individual fields
-                    updateFormValidation(); ///// Check overall form validation
-                    updatePayloadPreview(); ///// Update the payload preview
-                    updateBillingVisibility(); ///// Reassess billing visibility
+                    validateField($(this));
+                    updateFormValidation();
+                    updatePayloadPreview();
+                    updateBillingVisibility();
                 });
-
+        
             console.log('Event handlers successfully set up.');
         }
 
@@ -893,21 +914,10 @@ $(document).ready(function () {
     
         $dropdowns.each(function () {
             const $dropdown = $(this);
-            $dropdown.empty(); // Clear existing options
+            clearDropdown($dropdown, '- Select a group -');
     
             console.log(`Populating dropdown: ${$dropdown.attr('id')} with groups:`, groups);
     
-            // Add a default "Select a group" option
-            $dropdown.append(
-                $('<option>', {
-                    value: '',
-                    text: '- Select a group -',
-                    selected: true,
-                    disabled: true, // Disabled until the user selects a value
-                })
-            );
-    
-            // Populate the dropdown with the fetched groups
             if (groups.length) {
                 groups.forEach(group => {
                     const groupName = typeof group === 'string' ? group : group.name;
