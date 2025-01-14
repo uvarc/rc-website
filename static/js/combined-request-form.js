@@ -561,7 +561,6 @@ $(document).ready(function () {
 
         // Handle toggling for Storage Tier options (Sensitive vs Standard)
         $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
-    }
 
         // General input, select, and textarea validation and updates
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
@@ -709,7 +708,7 @@ $(document).ready(function () {
                 showErrorMessage("An error occurred while submitting the form. Please try again.");
             }
         });
-
+    }
 
     // ===================================
     // Capacity and Visibility
