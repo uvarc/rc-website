@@ -331,8 +331,6 @@ $(document).ready(function () {
         /// Success Message
 
         function showSuccessMessage(message) {
-    
-            //// Create the success message div
             const successDiv = $('<div>')
                 .addClass('alert alert-success alert-dismissible fade show')
                 .attr('role', 'alert')
@@ -342,15 +340,15 @@ $(document).ready(function () {
                         <span aria-hidden="true">&times;</span>
                     </button>
                 `);
-
+        
             // Add the success message to the top of the form
             $('#combined-request-form').prepend(successDiv);
-
+        
             // Scroll the page to the top
             $('html, body').animate({ scrollTop: 0 }, 'slow');
-
+        
             // Automatically remove the success message after 10 seconds
-            setTimeout(() => successDiv.alert('close'), 10000);
+            setTimeout(() => successDiv.remove(), 10000); // Use .remove() instead of .alert('close')
         }
 
     // ===================================
@@ -652,7 +650,10 @@ $(document).ready(function () {
                     hpc_service_units: {
                         [key]: {
                             tier: getTierEnum(formData.allocationTier),
-                            request_count: formData.requestCount || "0", // Ensure this field is dynamic
+                            request_count: formData.requestCount || "0", // Ensure request_count is populated
+                            request_date: new Date().toISOString(), // Add request_date
+                            request_status: "pending", // Add request_status
+                            update_date: new Date().toISOString(), // Add update_date
                             billing_details: getBillingDetails()
                         }
                     },
@@ -683,7 +684,10 @@ $(document).ready(function () {
                     storage: {
                         [key]: {
                             tier: getStorageTierEnum(formData.storageTier),
-                            request_size: formData.capacity?.toString() || "0", // Ensure this field is dynamic
+                            request_size: formData.capacity?.toString() || "0",
+                            request_date: new Date().toISOString(), // Add request_date
+                            request_status: "pending", // Add request_status
+                            update_date: new Date().toISOString(), // Add update_date
                             billing_details: !isBillingExempt ? getBillingDetails() : undefined
                         }
                     }
