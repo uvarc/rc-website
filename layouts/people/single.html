@@ -64,7 +64,7 @@
         {{ end }}
         {{ if and (eq (lower .type) "video") (eq .archived false) }}
           {{ $hasProjects = true }}
-          <!-- Video Partial -->
+          {{ partial "student-project-video.html" (dict "student_entry" $student_entry "project" .) }}
         {{ end }}
       {{ end }}
       {{ if not $hasProjects }}
