@@ -465,6 +465,8 @@ $(document).ready(function () {
         
             console.log("Form submission triggered.");
         
+            // Collect form data
+            const formData = collectFormData(); // Initialize formData from the form
             const payload = buildPayloadPreview();
             const errors = validatePayload(payload);
         
