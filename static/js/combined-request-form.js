@@ -2,7 +2,9 @@ $(document).ready(function () {
     console.log("Script started");
     console.log("Updated Combined Request Form JS loaded");
 
+    // ===================================
     // Constants and Configuration
+    // ===================================
 
     const API_CONFIG = {
         baseUrl: 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
@@ -15,43 +17,47 @@ $(document).ready(function () {
     
     const RESOURCE_TYPES = {
         'Standard': { 
-            isPaid: false,
+            isPaid: false, // Free allocation
             description: 'Standard allocation for research projects',
             category: 'Rivanna HPC'
         },
         'Paid': { 
-            isPaid: true,
+            isPaid: true, // Paid allocation
             description: 'Paid allocation for additional computing needs',
             category: 'Rivanna HPC'
         },
         'Instructional': { 
-            isPaid: false,
+            isPaid: false, // Free for educational use
             description: 'Allocation for teaching and educational purposes',
             category: 'Rivanna HPC'
         },
         'SSZ Research Project': { 
-            isPaid: true,
+            isPaid: true, // Always paid
             description: 'High-performance project storage',
             category: 'Storage'
         },
         'SSZ Research Standard': { 
-            isPaid: (currentSize) => currentSize > 10,
+            isPaid: (currentSize) => currentSize > 10, // Free up to 10TB
             freeLimit: 10,
             description: 'Standard research storage (first 10TB free)',
             category: 'Storage'
         },
         'Highly Sensitive Data': {
-            isPaid: true,
+            isPaid: true, // Always paid
             description: 'Secure storage for sensitive data',
             category: 'Storage'
         }
     };
 
-    // Holds API response data
+    // ===================================
+    // Holds API Data
+    // ===================================
 
     let consoleData = [];
 
+    // ===================================
     // CSS Styles
+    // ===================================
 
     $('<style>')
         .text(`
@@ -81,7 +87,9 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
+    // ===================================
     // Validation Patterns
+    // ===================================
 
     const VALIDATION = {
         groupName: /^[a-zA-Z0-9\-_]+$/,
@@ -89,7 +97,9 @@ $(document).ready(function () {
         sharedSpaceName: /^[\w\-]{3,40}$/
     };
 
-    // Utility and Helper Function
+    // ===================================
+    // Utility and Helper Functions
+    // ===================================
 
         /// Get UserID
 
@@ -279,8 +289,53 @@ $(document).ready(function () {
                 $('.api-waiting-message').remove();
             }
         }
+    
+        /// Send Email to User
 
+        function sendUserEmail(email, payload) {
+            const emailSubject = "Your Resource Request Submission";
+            const emailBody = `
+                Hello,
+        
+                Thank you for submitting your request. Here are the details:
+        
+                ${JSON.stringify(payload, null, 2)}
+        
+                Best regards,
+                Research Computing Team
+            `;
+        
+            // Replace with backend email API
+            console.log(`Simulating email to ${email}`);
+            console.log(`Subject: ${emailSubject}`);
+            console.log(`Body:\n${emailBody}`);
+        }
+
+        /// Clear Form Fields
+
+        function clearFormFields() {
+            $('#combined-request-form')[0].reset(); // Reset the form fields
+            updateFormValidation(); // Revalidate the form to disable the submit button
+            console.log("Form fields cleared.");
+        }
+
+        /// Success Message
+
+        function showSuccessMessage(message) {
+            const successDiv = $('<div>')
+                .addClass('alert alert-success')
+                .css({ margin: '20px 0', fontSize: '1rem' })
+                .text(message);
+        
+            $('#combined-request-form').prepend(successDiv);
+        
+            // Automatically remove the message after 5 seconds
+            setTimeout(() => successDiv.remove(), 5000);
+        }
+
+    // ===================================
     // Error Handling
+    // ===================================
 
     function showErrorMessage(message) {
         const errorDiv = $('<div>').addClass('alert alert-danger').text(message);
@@ -289,7 +344,7 @@ $(document).ready(function () {
     }
 
     function handleApiError(error) {
-        const message = 'There was an error processing your request. Please try again.';
+        const message = `There was an error processing your request. (${error.message || "Unknown error"})`;
         console.error("API Error:", error);
         $('#combined-request-form').prepend(
             $('<div>')
@@ -302,7 +357,9 @@ $(document).ready(function () {
         console.error(`API Error (${context}):`, error);
     }
 
+    // ===================================
     // UI Toggles
+    // ===================================
 
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
@@ -351,7 +408,9 @@ $(document).ready(function () {
         updateCapacityLimits(selectedStorage);
     }
 
+    // ===================================
     // Event Handlers
+    // ===================================
 
         /// Setup Event Handlers
 
@@ -402,50 +461,55 @@ $(document).ready(function () {
         /// Form Submission Handler
 
         $('#combined-request-form').on('submit', async function (event) {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault(); // Prevent default form submission
         
             console.log("Form submission triggered.");
         
-            // Build the payload
             const payload = buildPayloadPreview();
             const errors = validatePayload(payload);
         
-            // Handle validation errors
             if (errors.length > 0) {
                 console.error("Validation errors:", errors);
                 showErrorMessage("Please fix the errors before submitting.");
-                return; // Stop the submission process
+                return; // Stop submission on validation errors
             }
         
             try {
-                // Dynamically fetch the user ID using the helper function
                 const userId = getUserId();
+                const userEmail = `${userId}@virginia.edu`; // Construct the user's email
                 console.log("Submitting payload for user:", userId);
+                console.log("User email:", userEmail);
         
-                // Use the headers from API_CONFIG for consistency
-                const headers = {
-                    ...API_CONFIG.headers, // Include all GET headers
-                };
+                const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
         
-                // Perform the POST request
                 const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-                    method: 'POST',
-                    headers: headers, // Use the unified headers
-                    body: JSON.stringify(payload), // Stringify the payload before sending
-                    credentials: 'include', // Include credentials for cross-origin requests
+                    method: method,
+                    headers: {
+                        ...API_CONFIG.headers, // Use existing headers
+                    },
+                    body: JSON.stringify(payload),
+                    credentials: 'include',
                 });
         
-                // Handle response
                 if (!response.ok) {
                     const errorMessage = await response.text();
-                    console.error("Submission failed:", errorMessage);
+                    console.error(`Submission failed (${method}):`, errorMessage);
                     showErrorMessage("Submission failed. Please try again.");
-                    return; // Exit on failure
+                    return;
                 }
         
                 const responseData = await response.json();
-                console.log("Form submitted successfully:", responseData);
-                alert("Your request was submitted successfully!");
+                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+        
+                // Email the user with the submitted information
+                sendUserEmail(userEmail, payload);
+        
+                // Clear the form fields
+                clearFormFields();
+        
+                // Display success message on the page
+                showSuccessMessage("Your request has been submitted successfully!");
+        
             } catch (error) {
                 console.error("Error during form submission:", error);
                 showErrorMessage("An error occurred while submitting the form. Please try again.");
@@ -453,7 +517,9 @@ $(document).ready(function () {
         });
 
 
-    // Capacity Limits and Billing Visibility
+    // ===================================
+    // Capacity and Visibility
+    // ===================================
     
     function updateCapacityLimits(tierType) {
         const capacityField = $('#capacity');
@@ -516,7 +582,9 @@ $(document).ready(function () {
         };
     }
 
+    // ===================================
     // Real-Time Payload Preview
+    // ===================================
 
     function setupPayloadPreviewUpdater() {
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
@@ -540,15 +608,14 @@ $(document).ready(function () {
 
     function buildPayloadPreview() {
         const formData = collectFormData();
-        const userId = getUserId(); // Use the centralized helper function for dynamic user ID retrieval
+        const userId = getUserId();
     
         const payload = [{
-            is_user_resource_request_elligible: true, // Assume eligibility unless verified elsewhere
-            user_groups: formData.group ? [formData.group] : [], // Use selected group or an empty array
+            is_user_resource_request_elligible: true,
+            user_groups: formData.group ? [formData.group] : [],
             user_resources: []
         }];
     
-        // Build user resources for service-unit requests
         if (formData.requestType === 'service-unit') {
             const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
             const userResource = {
@@ -563,11 +630,8 @@ $(document).ready(function () {
                     hpc_service_units: {
                         [key]: {
                             tier: getTierEnum(formData.allocationTier),
-                            request_count: formData.requestCount || "1000",
-                            request_date: new Date().toISOString(),
-                            request_status: "pending",
-                            update_date: new Date().toISOString(),
-                            billing_details: getBillingDetails() // Include billing details dynamically
+                            request_count: formData.requestCount || "0", // Ensure this field is dynamic
+                            billing_details: getBillingDetails()
                         }
                     },
                     storage: {}
@@ -576,7 +640,6 @@ $(document).ready(function () {
             payload[0].user_resources.push(userResource);
         }
     
-        // Build user resources for storage requests
         if (formData.requestType === 'storage') {
             const key = `${formData.group}-${getStorageTierEnum(formData.storageTier)}`;
             const isBillingExempt = (
@@ -598,10 +661,7 @@ $(document).ready(function () {
                     storage: {
                         [key]: {
                             tier: getStorageTierEnum(formData.storageTier),
-                            request_size: formData.capacity?.toString() || "0",
-                            request_date: new Date().toISOString(),
-                            request_status: "pending",
-                            update_date: new Date().toISOString(),
+                            request_size: formData.capacity?.toString() || "0", // Ensure this field is dynamic
                             billing_details: !isBillingExempt ? getBillingDetails() : undefined
                         }
                     }
@@ -610,7 +670,7 @@ $(document).ready(function () {
             payload[0].user_resources.push(userResource);
         }
     
-        console.log("Built payload:", JSON.stringify(payload, null, 2)); // Debugging log
+        console.log("Built payload:", JSON.stringify(payload, null, 2));
         return payload;
     }
 
@@ -661,7 +721,9 @@ $(document).ready(function () {
         return errors;
     }
 
-    // Fetch & Populate Groups
+    // ===================================
+    // Fetch and Populate Groups
+    // ===================================
 
     async function fetchAndPopulateGroups() {
         // Show a waiting message (use utility function if available)
@@ -679,8 +741,8 @@ $(document).ready(function () {
             // Perform the fetch call with credentials included
             const response = await fetch(requestUrl, {
                 method: 'GET',
-                headers: API_CONFIG.headers,
-                credentials: 'include', // Required for cross-origin requests with cookies
+                headers: headers,
+                credentials: 'include'
             });
         
             // Handle non-OK responses
@@ -724,7 +786,9 @@ $(document).ready(function () {
         }
     }
 
+    // ===================================
     // Resource Processing Functions
+    // ===================================
 
     function parseConsoleData(data) {
         if (!Array.isArray(data) || data.length === 0) {
@@ -849,7 +913,9 @@ $(document).ready(function () {
         });
     }
 
+    // ===================================
     // Update Form Validation
+    // ===================================
 
     function updateFormValidation() {
         const $form = $('#combined-request-form');
@@ -893,6 +959,8 @@ $(document).ready(function () {
         }
     }
 
-    // Start Initialization
+    // ===================================
+    // Start Initiation
+    // ===================================
     initialize();
 });
