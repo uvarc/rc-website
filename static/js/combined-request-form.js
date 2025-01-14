@@ -519,13 +519,6 @@ $(document).ready(function () {
         $('#new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').toggle(isNew);
         $('#existing-projects-allocation').toggle(!isNew);
     
-        // Clear values of hidden fields
-        if (isNew) {
-            $('#existing-projects-allocation input').prop('checked', false);
-        } else {
-            $('#new-project-name-container input, #project-description textarea, #allocation-tier input').val('');
-        }
-    
         // Revalidate the form after toggling
         updateFormValidation();
     }
@@ -542,14 +535,6 @@ $(document).ready(function () {
     
         // Toggle visibility for existing storage options
         $('#existing-projects-storage').toggle(!isNewStorage);
-    
-        // Clear values of hidden fields
-        if (isNewStorage) {
-            $('#existing-projects-storage input').prop('checked', false);
-        } else {
-            $('#storage-mygroups-container select, #storage-capacity input, #storage-platform select, #shared-space-name-container input, #project-title-container input')
-                .val('');
-        }
     
         // Revalidate the form after toggling
         updateFormValidation();
