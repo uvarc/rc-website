@@ -11,7 +11,8 @@ $(document).ready(function () {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
+            'X-Requested-With': 'XMLHttpRequest',
+            'Origin': window.location.origin
         }
     };
     
@@ -107,6 +108,11 @@ $(document).ready(function () {
 
         function getUserId() {
             const userId = $('#uid').val() || "Unknown"; // Fetch the user ID dynamically
+            if (userId === "Unknown") {
+                console.error("User ID is not available. Please ensure you are logged in.");
+                showErrorMessage("Failed to retrieve user information. Please log in and refresh the page.");
+                throw new Error("User ID is unknown.");
+            }
             console.log("User ID:", userId);
             return userId;
         }
@@ -166,21 +172,26 @@ $(document).ready(function () {
         /// Fetch Metadata
 
         async function fetchMetadata() {
+            const userId = getUserId(); // Dynamically fetch the UserID
+            const metadataUrl = `${API_CONFIG.baseUrl}/${userId}`; // Construct the correct URL
+        
             const loadingMessage = $('<div>')
                 .addClass('alert alert-info d-flex align-items-center')
                 .attr('id', 'loading-metadata')
                 .html(`
                     <div class="spinner-border spinner-border-sm me-2" role="status">
-                        <span class="visually-hidden">Loading user resources...</span>
+                        <span class="visually-hidden">Loading Resources...</span>
                     </div>
+                    ...Please wait.
                 `)
                 .prependTo('#combined-request-form');
         
             try {
-                const response = await fetch(`${API_CONFIG.baseUrl}/metadata`, {
+                const response = await fetch(metadataUrl, {
                     method: 'GET',
                     headers: {
-                        ...API_CONFIG.headers
+                        ...API_CONFIG.headers,
+                        'Origin': window.location.origin, // Dynamically include origin
                     },
                     credentials: 'include'
                 });
@@ -201,9 +212,12 @@ $(document).ready(function () {
                     await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds between retries
         
                     try {
-                        const response = await fetch(`${API_CONFIG.baseUrl}/metadata`, {
+                        const response = await fetch(metadataUrl, {
                             method: 'GET',
-                            headers: { ...API_CONFIG.headers },
+                            headers: {
+                                ...API_CONFIG.headers,
+                                'Origin': window.location.origin,
+                            },
                             credentials: 'include'
                         });
         
@@ -1044,23 +1058,10 @@ $(document).ready(function () {
             apiMetadata = await Promise.race([fetchMetadata(), metadataTimeout]);
     
             if (!apiMetadata) {
-                // Fallback Metadata
-                apiMetadata = {
-                    storageTiers: {
-                        "SSZ Research Standard": { max: 10 },
-                        "SSZ Research Project": { max: 200 },
-                        "Highly Sensitive Data": { max: 50 }
-                    },
-                    allocationTiers: {
-                        "Standard": { defaultRequestCount: 1000 },
-                        "Instructional": { defaultRequestCount: 500 },
-                        "Paid": { defaultRequestCount: 5000 }
-                    }
-                };
-                console.warn("Using fallback metadata.");
-            } else {
-                updateFormUsingMetadata(apiMetadata);
+                throw new Error("Metadata fetch failed.");
             }
+    
+            updateFormUsingMetadata(apiMetadata);
     
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
@@ -1078,7 +1079,7 @@ $(document).ready(function () {
             console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
-            showErrorMessage("Failed to load metadata after multiple attempts. Please refresh the page.");
+            showErrorMessage("Failed to load user information. Please try again later.");
         }
     }
 
