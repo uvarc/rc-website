@@ -733,18 +733,24 @@ $(document).ready(function () {
             // Dynamically fetch the user ID using the helper function
             const userId = getUserId(); 
             console.log(`Attempting API call for user: ${userId}`);
-        
+            
             // Construct the API request URL
             const requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
             console.log("Request URL:", requestUrl);
-        
+    
+            // Define headers dynamically, including the current origin
+            const headers = {
+                ...API_CONFIG.headers,
+                'Origin': window.location.origin // Dynamically set the origin
+            };
+    
             // Perform the fetch call with credentials included
             const response = await fetch(requestUrl, {
                 method: 'GET',
                 headers: headers,
                 credentials: 'include'
             });
-        
+    
             // Handle non-OK responses
             if (!response.ok) {
                 const errorMessage = `API request failed with status ${response.status}: ${response.statusText}`;
@@ -752,15 +758,15 @@ $(document).ready(function () {
                 handleApiError(new Error(errorMessage));
                 return;
             }
-        
+    
             // Parse the JSON response
             const jsonResponse = await response.json();
             consoleData = jsonResponse; // Save to global variable for further use
             console.log("Fetched groups and resources:", consoleData);
-        
+    
             // Parse and populate user groups and resources
             const { userGroups, userResources } = parseConsoleData(jsonResponse);
-        
+    
             // Populate dropdowns for user groups
             if (Array.isArray(userGroups) && userGroups.length > 0) {
                 console.log("Populating user groups:", userGroups);
@@ -769,7 +775,7 @@ $(document).ready(function () {
                 console.warn("No user groups found.");
                 populateGrouperMyGroupsDropdown([]);
             }
-        
+    
             // Process user resources if available
             if (Array.isArray(userResources) && userResources.length > 0) {
                 console.log("Processing user resources...");
