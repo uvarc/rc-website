@@ -1083,6 +1083,7 @@ $(document).ready(function () {
     function updateFormValidation() {
         const $form = $('#combined-request-form');
         const requestType = $('input[name="request-type"]:checked').val();
+    
         const visibleFieldsSelector = requestType === 'service-unit'
             ? '#allocation-fields input[required]:visible, #allocation-fields select[required]:visible'
             : '#storage-fields input[required]:visible, #storage-fields select[required]:visible';
@@ -1092,10 +1093,9 @@ $(document).ready(function () {
     
         $('#submit').prop('disabled', !isFormValid); // Disable button if form is invalid
     }
-
-      // Initialization Function
-
-      async function initialize() {
+    
+    // Initialization Function
+    async function initialize() {
         console.log("Initializing form...");
     
         try {
@@ -1157,7 +1157,7 @@ $(document).ready(function () {
             $('#loading-message').remove();
         }
     }
-
+    
     // ===================================
     // Start Initiation
     // ===================================
