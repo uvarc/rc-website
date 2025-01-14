@@ -143,7 +143,7 @@ private = true
       </div>
       
       <!-- Tier Options (Only shown for New requests) -->
-      <!-- <div id="allocation-tier" style="margin-top:1em;display:none;" class="new-request-only">
+      <div id="allocation-tier" style="margin-top:1em;display:none;" class="new-request-only">
         <fieldset class="col form-item form-group form-item form-type-radios form-group">
           <legend class="control-label h6 mb-2">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
           <small class="helper-text">For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">Allocation Types Documentation</a>.</small>
@@ -160,15 +160,6 @@ private = true
               <input required="required" type="radio" id="allocation-choice3" name="allocation-choice" value="Instructional" class="form-radio" />
               <label for="allocation-choice3">Instructional</label>
             </div>
-          </div>
-        </fieldset>
-      </div> -->
-      <div id="allocation-tier" style="margin-top:1em;display:none;" class="new-request-only">
-        <fieldset class="col form-item form-group form-item form-type-radios form-group">
-          <legend class="control-label h6 mb-2">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
-          <small class="helper-text">For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">Allocation Types Documentation</a>.</small>
-          <div id="allocation-tier-options" class="form-radios mt-2">
-            <!-- Tier options will be dynamically injected here -->
           </div>
         </fieldset>
       </div>
@@ -281,7 +272,7 @@ private = true
       </div>
 
       <!-- Storage Tier Options -->
-      <!-- <div id="storage-platform" style="display: none; margin-top:1em;" class="new-request-only">
+      <div id="storage-platform" style="display: none; margin-top:1em;" class="new-request-only">
         <fieldset class="col form-item form-group form-item form-type-radios form-group">
           <legend class="control-label h6 mb-2">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
           <small class="helper-text">For detailed information about each storage tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/storage/" target="_blank">Storage Documentation</a>.</small>
@@ -300,7 +291,6 @@ private = true
             </div>
           </div>
         </fieldset>
-
         <!-- Storage Type Information -->
         <div class="col form-item form-group">
           <div id="standard-data" style="border: solid 1px #ccc; padding:1rem; background-color:#cae6d2; font-size:90%;" class="form-text text-muted">
@@ -310,15 +300,6 @@ private = true
             <h6>Sensitive / Highly Sensitive Data</h6>This storage platform is appropriate for highly sensitive data such as HIPAA, FERPA, CUI, etc.
           </div>
         </div>
-      </div> -->
-      <div id="storage-platform" style="display: none; margin-top:1em;" class="new-request-only">
-        <fieldset class="col form-item form-group form-item form-type-radios form-group">
-          <legend class="control-label h6 mb-2">Tier Options <span class="form-required" title="This field is required.">*</span></legend>
-          <small class="helper-text">For detailed information about each storage tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/storage/" target="_blank">Storage Documentation</a>.</small>
-          <div id="storage-options" class="form-radios mt-2">
-            <!-- Storage options will be dynamically injected here -->
-          </div>
-        </fieldset>
       </div>
 
       <!-- Shared Space Name -->
@@ -366,13 +347,14 @@ private = true
       <div class="form-actions" id="submit-div" style="margin-top:1rem;">
         <hr size="1" style="">
         <div id="api-status" class="alert alert-info d-flex align-items-center" style="display:none;">
-            <div class="spinner-border spinner-border-sm me-2" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <span>Connecting to the server. Please wait...</span>
+        <div class="spinner-border spinner-border-sm me-2" role="status">
+            <span class="visually-hidden">Loading...</span>
         </div>
+        <span>Connecting to the server. Please wait...</span>
+    </div>
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
-        <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled>Submit</button>      </div>
+        <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled="">Submit</button>
+      </div>
     </div>
   </div>
 </div>
