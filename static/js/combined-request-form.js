@@ -510,7 +510,7 @@ $(document).ready(function () {
     }
 
     function toggleAllocationFields() {
-        const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
+        const newOrRenewal = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val();
     
         if (!newOrRenewal) {
             console.error("New or Renewal selection is missing.");
@@ -518,29 +518,28 @@ $(document).ready(function () {
         }
     
         const isNew = newOrRenewal === 'new';
-        console.log(`Toggle allocation fields: New=${isNew}, Renewal=${!isNew}`);
-    
         if (isNew) {
-            $('#new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').show();
-            $('#existing-projects-allocation').hide();
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
+            $('#allocation-fields #existing-projects-allocation').hide();
         } else {
-            $('#new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').hide();
-            $('#existing-projects-allocation').show();
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
+            $('#allocation-fields #existing-projects-allocation').show();
         }
     
         updateFormValidation();
     }
 
     function toggleStorageFields() {
-        const typeOfRequest = $('input[name="type-of-request"]:checked').val();
-    
+        const typeOfRequest = $('#storage-fields input[name="type-of-request"]:checked').val();
+
         if (!typeOfRequest) {
             console.error("Type of storage request selection is missing.");
             return;
         }
-    
+
         const isNewStorage = typeOfRequest === 'new-storage';
-        console.log(`Toggle storage fields: New=${isNewStorage}, Existing=${!isNewStorage}`);
+        $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').toggle(isNewStorage);
+        $('#storage-fields #existing-projects-storage').toggle(!isNewStorage);
     
         if (isNewStorage) {
             $('#storage-mygroups-container, #storage-capacity, #storage-platform, #shared-space-name-container, #project-title-container').show();
@@ -554,13 +553,13 @@ $(document).ready(function () {
     }
 
     function toggleStorageTierOptions() {
-        const selectedStorage = $('input[name="storage-choice"]:checked').val();
-    
+        const selectedStorage = $('#storage-tier-options input[name="storage-choice"]:checked').val();
+
         if (!selectedStorage) return;
-    
+
         const isHighlySensitive = selectedStorage === 'Highly Sensitive Data';
-        $('#sensitive-data').toggle(isHighlySensitive);
-        $('#standard-data').toggle(!isHighlySensitive);
+        $('#storage-tier-options #sensitive-data').toggle(isHighlySensitive);
+        $('#storage-tier-options #standard-data').toggle(!isHighlySensitive);
         updateCapacityLimits(selectedStorage);
     }
 
