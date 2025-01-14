@@ -134,10 +134,16 @@ $(document).ready(function () {
 
         function validateField($field) {
             const isCheckbox = $field.is(':checkbox');
+            const isDropdown = $field.is('select');
         
             if (isCheckbox) {
                 if (!$field.is(':checked')) {
                     markFieldInvalid($field, 'This field is required.');
+                    return false;
+                }
+            } else if (isDropdown) {
+                if (!$field.val() || $field.val().trim() === '') {
+                    markFieldInvalid($field, 'Please select an option.');
                     return false;
                 }
             } else {
@@ -299,13 +305,13 @@ $(document).ready(function () {
         
                 Thank you for submitting your request. Here are the details:
         
-                ${JSON.stringify(payload, null, 2)}
+                ${JSON.stringify(payload, null, 2).replace(/[$begin:math:display$$end:math:display$]/g, '')}
         
                 Best regards,
                 Research Computing Team
             `;
         
-            // Replace with backend email API
+            // Simulate sending email (replace with API call for production)
             console.log(`Simulating email to ${email}`);
             console.log(`Subject: ${emailSubject}`);
             console.log(`Body:\n${emailBody}`);
@@ -314,23 +320,37 @@ $(document).ready(function () {
         /// Clear Form Fields
 
         function clearFormFields() {
-            $('#combined-request-form')[0].reset(); // Reset the form fields
-            updateFormValidation(); // Revalidate the form to disable the submit button
+            const $form = $('#combined-request-form');
+            $form[0].reset(); // Reset all form fields
+            $form.find('.is-valid, .is-invalid').removeClass('is-valid is-invalid'); // Remove validation styles
+            $form.find('.invalid-feedback').remove(); // Remove error messages
+            updateFormValidation(); // Revalidate to disable the submit button
             console.log("Form fields cleared.");
         }
 
         /// Success Message
 
         function showSuccessMessage(message) {
+    
+            //// Create the success message div
             const successDiv = $('<div>')
-                .addClass('alert alert-success')
-                .css({ margin: '20px 0', fontSize: '1rem' })
-                .text(message);
-        
+                .addClass('alert alert-success alert-dismissible fade show')
+                .attr('role', 'alert')
+                .html(`
+                    ${message}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                `);
+
+            // Add the success message to the top of the form
             $('#combined-request-form').prepend(successDiv);
-        
-            // Automatically remove the message after 5 seconds
-            setTimeout(() => successDiv.remove(), 5000);
+
+            // Scroll the page to the top
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+
+            // Automatically remove the success message after 10 seconds
+            setTimeout(() => successDiv.alert('close'), 10000);
         }
 
     // ===================================
@@ -465,7 +485,6 @@ $(document).ready(function () {
         
             console.log("Form submission triggered.");
         
-            // Collect form data
             const formData = collectFormData(); // Initialize formData from the form
             const payload = buildPayloadPreview();
             const errors = validatePayload(payload);
@@ -509,7 +528,7 @@ $(document).ready(function () {
                 // Clear the form fields
                 clearFormFields();
         
-                // Display success message on the page
+                // Display success message and scroll to the top
                 showSuccessMessage("Your request has been submitted successfully!");
         
             } catch (error) {
@@ -548,6 +567,7 @@ $(document).ready(function () {
         }
     
         $('#billing-information').toggle(shouldShowBilling);
+        console.log(`Billing visibility updated: ${shouldShowBilling}`);
     }
 
     function getBillingDetails() {
@@ -837,7 +857,7 @@ $(document).ready(function () {
                     value: '',
                     text: '- Select a group -',
                     selected: true,
-                    disabled: true,
+                    disabled: true, // Disabled until the user selects a value
                 })
             );
     
