@@ -641,7 +641,6 @@ $(document).ready(function () {
         });
     
         console.log('Event handlers successfully set up.');
-    }
 
         /// Form Submission Handler
 
