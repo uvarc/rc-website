@@ -14,9 +14,17 @@ Research Computing (UVA-RC) serves as the principal center for computational res
 
 # High Performance Computing 
 
-UVA-RC’s High Performance Computing (HPC) systems are designed with high-speed networks, high performance storage, GPUs, and large amounts of memory in order to support modern compute and memory intensive programs. UVA-RC operates two HPC systems, Rivanna and Afton. In total these systems are comprised of over 900 compute nodes, with a total of more than 48,000 X86 64-bit compute cores. Scheduled using SLURM, these resources can support over 1.5 PFLOP of peak CPU performance. HPC nodes are equipped with between 375 GB and 1.5 TB of RAM to support applications that require small and large amounts of memory, and 55 nodes include various configurations of the NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, and A100), from 4- to 10-way.
+## Standard Security Zone
+
+UVA-RC’s High Performance Computing (HPC) systems are designed with high-speed networks, high performance storage, GPUs, and large amounts of memory in order to support modern compute and memory intensive programs. UVA-RC operates two HPC systems within the standard security zone, Rivanna and Afton. In total these systems are comprised of over 900 compute nodes, with a total of more than 48,000 X86 64-bit compute cores. Scheduled using SLURM, these resources can support over 1.5 PFLOP of peak CPU performance. HPC nodes are equipped with between 375 GB and 1.5 TB of RAM to support applications that require small and large amounts of memory, and 55 nodes include various configurations of the NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, and A100), from 4- to 10-way.
 
 UVA-RC also acquires and maintains capability systems focused on providing novel environments. This includes an 18 node DGX BasePOD system with 8x A100 GPU devices per node. The BasePOD provides a shared memory space across all GPUs in the system allowing the system to work collectively on models with memory needs larger than what can be held in a single node.
+
+## High Security Zone
+
+The High-Security HPC (Rio) cluster is a high-performance computing system specifically designed for the processing and analysis of controlled-access and highly sensitive data. It features high-speed networks, high-performance storage, and GPUs to support demanding computational tasks. Rio consists of over 40 compute nodes, offering a combined total of more than 1,600 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. 
+
+Situated within the high-security zone, Rio can only be accessed through Ivy Linux virtual machines, ensuring compliance with stringent security requirements for data storage and processing. Compute time is managed through service unit allocations and fairshare models, with SLURM serving as the job scheduler. This architecture provides a secure, efficient, and robust environment for handling sensitive research workloads.
 
 # Interactive Computing and Scientific Visualization 
 
