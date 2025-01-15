@@ -31,7 +31,7 @@ Examples of service areas include:
 
 - - -
 
-<p class=lead>UVA has three local computational facilities available to researchers: <b>Rivanna</b>, <b>Afton</b>, and <b>Ivy</b>. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.</p>
+<p class=lead>UVA has four local computational facilities available to researchers: <b>Rivanna</b>, <b>Afton</b>, <b>Rio</b> and <b>Ivy</b>. Depending upon your use case, privacy requirements, and the application(s) you need to run, we can help you create an account and start processing your data.</p>
 
 <div class="card" style="margin:2rem;">
   <div class="card-block">
@@ -52,6 +52,17 @@ Examples of service areas include:
       {{< get_allocation_blurb name="Rivanna" >}}
     </p>
     <a href="/userinfo/hpc" class="card-link"><button class="btn btn-warning">Read more about Rivanna</button></a>
+  </div>
+</div>
+
+<div class="card" style="margin:2rem;">
+  <div class="card-block">
+    <h2 class="card-title">Rio</h2>
+    <h5 class="card-subtitle mb-2">High-Security HPC Cluster</h5>
+    <p class="card-text">
+Rio is one of the recent University of Virginia’s High-Performance Computing (HPC) systems, specifically designed for the processing and analysis of controlled-access and highly sensitive data. Rio consists of over 40 HPC nodes, each equipped with 375 GB of RAM and offering a combined total of more than 1,600 x86 64-bit compute cores. Researchers can use Rio to process and store sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, ITAR requirements.     
+</p>
+    <a href="/userinfo/ivy" class="card-link"><button class="btn btn-warning">Read more about Rio</button></a>
   </div>
 </div>
 
