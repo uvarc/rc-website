@@ -22,7 +22,7 @@ UVA-RC also acquires and maintains capability systems focused on providing novel
 
 ## High Security Zone
 
-The High-Security HPC (Rio) cluster is a high-performance computing system specifically designed for the processing and analysis of controlled-access and highly sensitive data. It features high-speed networks, high-performance storage, and GPUs to support demanding computational tasks. Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. 
+The High-Security HPC (Rio) cluster is a high-performance computing system specifically designed for the processing and analysis of controlled-access and highly sensitive data. It features high-speed networks, high-performance storage, and GPUs to support demanding computational tasks. Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future. 
 
 Situated within the high-security zone, Rio can only be accessed through Ivy Linux virtual machines, ensuring compliance with stringent security requirements for data storage and processing. Compute time is managed through service unit allocations and fairshare models, with SLURM serving as the job scheduler. This architecture provides a secure, efficient, and robust environment for handling sensitive research workloads.
 
