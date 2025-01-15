@@ -1,6 +1,6 @@
 +++
 description = ""
-title = "Ivy Secure Environment"
+title = "Ivy and Rio Secure Environment"
 draft = false
 date = "2023-02-23T11:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
@@ -13,8 +13,8 @@ layout = "single"
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p class=lead>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
-Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA</a>, FERPA, CUI or ITAR requirements.</p>
+<p class=lead>The UVA secure environment consits of Ivy virtual machines (Linux and Windows) and Rio HPC.
+Researchers can use Ivy and Rio to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA</a>, FERPA, CUI (Rio excluded) or ITAR requirements. To access the High security Rio HPC, researchers need to request an Ivy Linux VM which serves as a login node.</p>
 
 {{< systems-boilerplate >}}
 
