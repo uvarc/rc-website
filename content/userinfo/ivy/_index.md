@@ -129,6 +129,10 @@ Once you have completed these three steps, you will be connected to the secure I
 
 - - -
 
+# Storage
+
+Ivy VM and Rio HPC have a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to either of these environments. Virtual machines do not come with any significant disk storage of their own. 
+
 # Virtual Machines
 
 A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign in to a single VM.
@@ -384,9 +388,7 @@ After creating your conda environment, you can install additional libraries with
     
 Once installed on your VM, packages will persist and you will not need to install them again. You will only need to import them again in your code.
 
-## Storage
-
-Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
+ 
 ## Scheduled Maintenance
 
 Beginning Sunday, April 14, your Ivy virtual machine (VM) will be rebooted on the 2nd Sunday of each month between 5:00 a.m. and 6:00 a.m. EST while RC engineers install security updates. Any sessions running during this period will be terminated. Windows and Linux VMs will be rebooted at the same time.
@@ -394,7 +396,7 @@ Beginning Sunday, April 14, your Ivy virtual machine (VM) will be rebooted on th
 If you have any questions or problems with your software applications after the security updates have been installed, you may [contact our user services team](https://www.rc.virginia.edu/form/support-request/?category=Ivy).
 - - -
 
-# JupyterLab Notebooks
+## JupyterLab Notebooks
 
 <div class="alert alert-danger">
   As of August 31, 2019 Domino Data Lab will no longer be available within Ivy. Existing projects should be migrated to a virtual machine.
@@ -410,9 +412,27 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 - - -
 
-# Data Transfer In/Out of Ivy {#data-transfer-in-out-of-ivy}
+# Using the Rio HPC System
 
-Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “High-Security Research Standard Storage”, which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
+## Access
+
+Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above.
+
+As outlined above, VMs are available in various sizes. Please request a VM that is appropriately sized for your specific workflow. For larger groups or projects involving computationally intensive tasks, we recommend selecting a larger VM, with a preference for Small or above. 
+  
+## System Details
+
+### Hardware Configuration
+
+Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future.
+
+### Job Queues
+
+Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/).
+
+# Data Transfer In/Out of Ivy/Rio {#data-transfer-in-out-of-ivy}
+
+Moving sensitive data into the Ivy VM platform (and Rio) is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “High-Security Research Standard Storage”, which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
 
 <img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="/images/ivy-dtn-flow.png" />
 
