@@ -29,8 +29,9 @@ Ivy consists of both virtual computing environments and secure storage. In order
 * [Requesting Access](#requesting-access)
 * [Security Training](#training)
 * [High Security VPN](#high-security-vpn)
+* [Storage](#storage)
 * [Virtual Machines](#virtual-machines)
-* [JupyterLab Notebooks](#jupyterlab-notebooks)
+* [Using the Rio HPC System](#using-the-rio-hpc-system)
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
 * [HIPAA Compliance](#hipaa-compliance)
 
@@ -203,8 +204,6 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 1. Start the High Security VPN
 2. Open the ssh client on your laptop/desktop (Terminal application on a Mac or Command Prompt on a Windows PC) and type:  `ssh mst3k@10.xxx.xxx.xxx`, where mst3k is replaced with your user ID.
 3. When prompted for a password, use your Eservices password.
-
-
 
 
 
