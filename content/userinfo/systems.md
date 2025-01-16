@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Computing Systems"
-date = "2021-04-10T10:08:29-05:00"
+date = "2025-01-15T10:08:29-05:00"
 draft = false
 tags = ["compute","rivanna","ivy","cloud","aws","hpc","containers"]
 categories = ["userinfo"]
