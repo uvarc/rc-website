@@ -33,7 +33,7 @@ Ivy consists of both virtual computing environments and secure storage. In order
 * [Virtual Machines](#virtual-machines)
 * [Using the Rio HPC System](#using-the-rio-hpc-system)
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
-* [HIPAA Compliance](#hipaa-compliance)
+<!-- * [HIPAA Compliance](#hipaa-compliance)-->
 
 A summary description of the Ivy environment suitable for **grant applications** is available [here](/userinfo/computing-environments#ivy). 
 
@@ -209,9 +209,7 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 
 ## Software
 
-Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by
-providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation
-upon request. See the lists below for options.
+Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation upon request. See the lists below for options.
 
 ### Preinstalled Software
 
@@ -250,8 +248,7 @@ upon request. See the lists below for options.
 
 ### Additional Approved Software (Available by Request)
 
-If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security
-and regulatory compliance and, if approved, will be installed for you.
+If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security and regulatory compliance and, if approved, will be installed for you.
 
 
 <div class="row" style="margin-bottom:2rem;">
@@ -449,7 +446,7 @@ Before transferring files to Ivy, you will need Globus installed on the computer
 7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **High-Security Research Standard Storage** shortcut on your VM's desktop.
 
 - - -
-
+<!--
 # HIPAA Compliance
 
 The Ivy platform is HIPAA-compliant by design. From the <a href="https://research.virginia.edu/irb-hsr/protected-health-information-hipaa-regulations-and-research" target="_new">UVA Institutional Review Board for Health Sciences Research</a> (IRB-HSR):
@@ -472,8 +469,6 @@ All data imported into Ivy must be treated as highly sensitive data. Data and re
 
 <button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
 
-
-<!--
 
 # Coming Soon - Secure HPC
 
