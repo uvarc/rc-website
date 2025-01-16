@@ -397,11 +397,6 @@ If you have any questions or problems with your software applications after the 
 
 ## JupyterLab Notebooks
 
-<div class="alert alert-danger">
-  As of August 31, 2019 Domino Data Lab will no longer be available within Ivy. Existing projects should be migrated to a virtual machine.
-  Interactive data sessions will be available using Jupyter Notebooks (coming soon!)
-</div>
-
 {{% callout %}}
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" align="right" style="max-width:20%;" />
 JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones.
