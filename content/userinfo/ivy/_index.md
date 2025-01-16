@@ -20,7 +20,7 @@ Researchers can use Ivy and Rio to process and store sensitive data with the con
 
 # Overview
 
-Ivy consists of both virtual computing environments and secure storage. In order to obtain access to either system, users must 
+Ivy provides virtual computing environments (virtual machines) specifically designed for interactive and small-scale analysis of highly sensitive data. Ivy Linux VMs can also act as a frontend for accessing the Rio HPC environment, which is optimized for large-scale analysis of sensitive data. Project-specific storage volumes are seamlessly mounted to the VMs and made accessible on the HPC system, facilitating smooth transitions between tasks performed on the VM and the HPC environment. In order to obtain access to either system, users must 
 
 1. **Submit an account request,**
 2. **Complete the Information Security Awareness Training, and**
@@ -34,9 +34,6 @@ Ivy consists of both virtual computing environments and secure storage. In order
 * [Using the Rio HPC System](#using-the-rio-hpc-system)
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
 <!-- * [HIPAA Compliance](#hipaa-compliance)-->
-
-A summary description of the Ivy environment suitable for **grant applications** is available [here](/userinfo/computing-environments#ivy). 
-
 
 - - -
 
