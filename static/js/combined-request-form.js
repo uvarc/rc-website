@@ -2,56 +2,65 @@ $(document).ready(function () {
     console.log("Script started");
     console.log("Updated Combined Request Form JS loaded");
 
+    // ===================================test
     // Constants and Configuration
+    // ===================================
 
     const API_CONFIG = {
         baseUrl: 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
+            'X-Requested-With': 'XMLHttpRequest',
+            'Origin': window.location.origin
         }
     };
     
     const RESOURCE_TYPES = {
         'Standard': { 
-            isPaid: false,
+            isPaid: false, // Free allocation
             description: 'Standard allocation for research projects',
             category: 'Rivanna HPC'
         },
         'Paid': { 
-            isPaid: true,
+            isPaid: true, // Paid allocation
             description: 'Paid allocation for additional computing needs',
             category: 'Rivanna HPC'
         },
         'Instructional': { 
-            isPaid: false,
+            isPaid: false, // Free for educational use
             description: 'Allocation for teaching and educational purposes',
             category: 'Rivanna HPC'
         },
         'SSZ Research Project': { 
-            isPaid: true,
+            isPaid: true, // Always paid
             description: 'High-performance project storage',
             category: 'Storage'
         },
         'SSZ Research Standard': { 
-            isPaid: (currentSize) => currentSize > 10,
+            isPaid: (currentSize) => currentSize > 10, // Free up to 10TB
             freeLimit: 10,
             description: 'Standard research storage (first 10TB free)',
             category: 'Storage'
         },
         'Highly Sensitive Data': {
-            isPaid: true,
+            isPaid: true, // Always paid
             description: 'Secure storage for sensitive data',
             category: 'Storage'
         }
     };
 
-    // Holds API response data
+    // ===================================
+    // Fetches and Holds API Data
+    // ===================================
+
+    let apiMetadata = {};
 
     let consoleData = [];
 
+    // ===================================
     // CSS Styles
+    // ===================================
 
     $('<style>')
         .text(`
@@ -81,7 +90,9 @@ $(document).ready(function () {
         `)
         .appendTo('head');
 
+    // ===================================
     // Validation Patterns
+    // ===================================
 
     const VALIDATION = {
         groupName: /^[a-zA-Z0-9\-_]+$/,
@@ -89,7 +100,22 @@ $(document).ready(function () {
         sharedSpaceName: /^[\w\-]{3,40}$/
     };
 
-    // Utility and Helper Function
+    // ===================================
+    // Utility and Helper Functions
+    // ===================================
+
+        /// Get UserID
+
+        function getUserId() {
+            const userId = $('#uid').val() || "Unknown"; // Fetch the user ID dynamically
+            if (userId === "Unknown") {
+                console.error("User ID is not available. Please ensure you are logged in.");
+                showErrorMessage("Failed to retrieve user information. Please log in and refresh the page.");
+                throw new Error("User ID is unknown.");
+            }
+            console.log("User ID:", userId);
+            return userId;
+        }
 
         /// Core Helper Functions
 
@@ -115,11 +141,21 @@ $(document).ready(function () {
         }
 
         function validateField($field) {
+            if (!$field.is(':visible')) {
+                return true; // Skip validation for hidden fields
+            }
+        
             const isCheckbox = $field.is(':checkbox');
+            const isDropdown = $field.is('select');
         
             if (isCheckbox) {
                 if (!$field.is(':checked')) {
                     markFieldInvalid($field, 'This field is required.');
+                    return false;
+                }
+            } else if (isDropdown) {
+                if (!$field.val() || $field.val().trim() === '') {
+                    markFieldInvalid($field, 'Please select an option.');
                     return false;
                 }
             } else {
@@ -131,6 +167,99 @@ $(document).ready(function () {
         
             markFieldValid($field);
             return true;
+        }
+
+        /// Fetch Metadata
+
+        async function fetchMetadata() {
+            const userId = getUserId(); // Dynamically fetch the UserID
+            const metadataUrl = `${API_CONFIG.baseUrl}/${userId}`; // Construct the correct URL
+        
+            const loadingMessage = $('<div>')
+                .addClass('alert alert-info d-flex align-items-center')
+                .attr('id', 'loading-metadata')
+                .html(`
+                    <div class="spinner-border spinner-border-sm me-2" role="status">
+                        <span class="visually-hidden">Loading Resources...</span>
+                    </div>
+                    ...Please wait.
+                `)
+                .prependTo('#combined-request-form');
+        
+            try {
+                const response = await fetch(metadataUrl, {
+                    method: 'GET',
+                    headers: {
+                        ...API_CONFIG.headers,
+                        'Origin': window.location.origin, // Dynamically include origin
+                    },
+                    credentials: 'include'
+                });
+        
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch metadata: ${response.statusText}`);
+                }
+        
+                const metadata = await response.json();
+                console.log("Fetched metadata:", metadata);
+                return metadata;
+            } catch (error) {
+                console.error("Error fetching metadata:", error);
+        
+                // Retry logic
+                for (let attempt = 1; attempt <= 3; attempt++) {
+                    console.log(`Retrying metadata fetch (Attempt ${attempt})...`);
+                    await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds between retries
+        
+                    try {
+                        const response = await fetch(metadataUrl, {
+                            method: 'GET',
+                            headers: {
+                                ...API_CONFIG.headers,
+                                'Origin': window.location.origin,
+                            },
+                            credentials: 'include'
+                        });
+        
+                        if (response.ok) {
+                            const metadata = await response.json();
+                            console.log("Fetched metadata on retry:", metadata);
+                            return metadata;
+                        }
+                    } catch (retryError) {
+                        console.warn(`Retry ${attempt} failed.`);
+                    }
+                }
+        
+                throw new Error('Failed to load metadata after multiple attempts.');
+            } finally {
+                loadingMessage.remove(); // Remove the loading message
+            }
+        }
+
+        /// Update Form Using Metadata
+
+        function updateFormUsingMetadata(metadata) {
+            if (!metadata || typeof metadata !== 'object') {
+                console.warn("No valid metadata available to update the form.");
+                return;
+            }
+        
+            // Example: Update capacity limits based on metadata
+            const storageLimits = metadata.storageTiers || {};
+            Object.keys(storageLimits).forEach(tier => {
+                const limits = storageLimits[tier];
+                $(`#${tier}-capacity`).attr('max', limits.max || 200);
+            });
+        
+            // Example: Populate tier-specific descriptions
+            const allocationDescriptions = metadata.allocationTiers || {};
+            Object.keys(allocationDescriptions).forEach(tier => {
+                const description = allocationDescriptions[tier].description || "No description available.";
+                $(`#${tier}-description`).text(description);
+            });
+        
+            console.log("Form updated using metadata:", metadata);
         }
 
         /// Session and Data Handling
@@ -271,17 +400,75 @@ $(document).ready(function () {
                 $('.api-waiting-message').remove();
             }
         }
+    
+        /// Send Email to User
 
+        function sendUserEmail(email, payload) {
+            const emailSubject = "Your Resource Request Submission";
+            const emailBody = `
+                Hello,
+        
+                Thank you for submitting your request. Here are the details:
+        
+                ${JSON.stringify(payload, null, 2).replace(/[$begin:math:display$$end:math:display$]/g, '')}
+        
+                Best regards,
+                Research Computing Team
+            `;
+        
+            // Simulate sending email (replace with API call for production)
+            console.log(`Simulating email to ${email}`);
+            console.log(`Subject: ${emailSubject}`);
+            console.log(`Body:\n${emailBody}`);
+        }
+
+        /// Clear Form Fields
+
+        function clearFormFields() {
+            const $form = $('#combined-request-form');
+            $form[0].reset(); // Reset all form fields
+            $form.find('.is-valid, .is-invalid').removeClass('is-valid is-invalid'); // Remove validation styles
+            $form.find('.invalid-feedback').remove(); // Remove error messages
+            updateFormValidation(); // Revalidate to disable the submit button
+            console.log("Form fields cleared.");
+        }
+
+        /// Success Message
+
+        function showErrorMessage(message) {
+            const errorDiv = $('<div>').addClass('alert alert-danger').text(message);
+            $('#combined-request-form').prepend(errorDiv);
+            setTimeout(() => errorDiv.remove(), 10000); // Set consistent timeout
+        }
+        
+        function showSuccessMessage(message) {
+            const successDiv = $('<div>')
+                .addClass('alert alert-success alert-dismissible fade show')
+                .attr('role', 'alert')
+                .html(`
+                    ${message}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                `);
+        
+            $('#combined-request-form').prepend(successDiv);
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+            setTimeout(() => successDiv.remove(), 10000); // Set consistent timeout
+        }
+
+    // ===================================
     // Error Handling
+    // ===================================
 
     function showErrorMessage(message) {
         const errorDiv = $('<div>').addClass('alert alert-danger').text(message);
         $('#combined-request-form').prepend(errorDiv);
-        setTimeout(() => errorDiv.remove(), 5000);
+        setTimeout(() => errorDiv.remove(), 10000); // Set consistent timeout
     }
 
     function handleApiError(error) {
-        const message = 'There was an error processing your request. Please try again.';
+        const message = `There was an error processing your request. (${error.message || "Unknown error"})`;
         console.error("API Error:", error);
         $('#combined-request-form').prepend(
             $('<div>')
@@ -294,173 +481,311 @@ $(document).ready(function () {
         console.error(`API Error (${context}):`, error);
     }
 
+    // ===================================
     // UI Toggles
-    
+    // ===================================
+
     function toggleRequestFields() {
         const requestType = $('input[name="request-type"]:checked').val();
-        $('#allocation-fields, #storage-fields, #common-fields').hide();
 
+        // Show common fields
+        $('#common-fields').show();
+
+        // Explicitly show or hide primary sections
         if (requestType === 'service-unit') {
-            $('#allocation-fields, #common-fields').show();
+            $('#allocation-fields').show();
+            $('#storage-fields').hide();
+            toggleAllocationFields(); // Handle nested toggles for service-unit
         } else if (requestType === 'storage') {
-            $('#storage-fields, #common-fields').show();
+            $('#allocation-fields').hide();
+            $('#storage-fields').show();
+            toggleStorageFields(); // Handle nested toggles for storage
+        } else {
+            // Default case: hide both sections
+            $('#allocation-fields, #storage-fields').hide();
         }
-
-        updateBillingVisibility();
-    }
-
-    function toggleStorageFields() {
-        const typeOfRequest = $('input[name="type-of-request"]:checked').val();
-        const isNewStorage = typeOfRequest === 'new-storage';
-    
-        $('#storage-platform, #shared-space-name-container').toggle(isNewStorage);
-        $('#existing-projects-storage').toggle(!isNewStorage);
-        $('#storage-mygroups-container').toggle(isNewStorage); // Show for new storage share
-    
-        updateFormValidation();
-    }
-
-    function toggleStorageTierOptions() {
-        const selectedStorage = $('input[name="storage-choice"]:checked').val();
-    
-        if (!selectedStorage) return;
-    
-        const isHighlySensitive = selectedStorage === 'Highly Sensitive Data';
-        $('#sensitive-data').toggle(isHighlySensitive);
-        $('#standard-data').toggle(!isHighlySensitive);
-        updateCapacityLimits(selectedStorage);
     }
 
     function toggleAllocationFields() {
-        const newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
-        const isNew = newOrRenewal === 'new';
-    
-        $('#new-project-name-container').toggle(isNew);
-        $('#mygroups-group-container').toggle(isNew); // Show for new SU request
-        $('#existing-projects-allocation').toggle(!isNew);
-        $('#allocation-tier').toggle(isNew);
-    
-        updateFormValidation();
+        const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
+
+        // Explicitly show or hide new vs renewal fields
+        if (isNew) {
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
+            $('#allocation-fields #existing-projects-allocation').hide();
+        } else {
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
+            $('#allocation-fields #existing-projects-allocation').show();
+        }
     }
 
-    // Event Handlers
+    function toggleStorageFields() {
+        const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
 
-        /// Setup Event Handlers
-
-        function setupEventHandlers() {
-            $('input[name="request-type"]').on('change', function () {
-                toggleRequestFields();
-                updatePayloadPreview();
-            });
-
-            $('input[name="new-or-renewal"]').on('change', function () {
-                toggleAllocationFields();
-                updatePayloadPreview();
-            });
-
-            $('input[name="type-of-request"]').on('change', function () {
-                toggleStorageFields();
-                updatePayloadPreview();
-            });
-
-            $('input[name="storage-choice"]').on('change', function () {
-                toggleStorageTierOptions();
-                updatePayloadPreview();
-            });
-
-            $('#data-agreement').on('change', function () {
-                updateFormValidation();
-                updatePayloadPreview();
-            });
-
-            $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-                .on('input change', function () {
-                    validateField($(this));
-                    updateFormValidation();
-                    updatePayloadPreview();
-                });
-
-            console.log('Event handlers successfully set up.');
+        // Explicitly show or hide new vs existing storage fields
+        if (isNewStorage) {
+            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
+            $('#storage-fields #existing-projects-storage').hide();
+        } else {
+            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
+            $('#storage-fields #existing-projects-storage').show();
         }
+    }
 
-        /// Form Submission Handler
-        $('#combined-request-form').on('submit', async function (event) {
-            event.preventDefault(); // Prevent default form submission behavior
-        
+    function toggleStorageTierOptions() {
+        const isHighlySensitive = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
+
+        // Explicitly show or hide tier-specific sections
+        if (isHighlySensitive) {
+            $('#storage-tier-options #sensitive-data').show();
+            $('#storage-tier-options #standard-data').hide();
+        } else {
+            $('#storage-tier-options #sensitive-data').hide();
+            $('#storage-tier-options #standard-data').show();
+        }
+    }
+
+    // ===================================
+    // Event Handlers
+    // ===================================
+
+    function setupEventHandlers() {
+        // Handle toggling for request type (Service Unit vs Storage)
+        $('input[name="request-type"]').on('change', toggleRequestFields);
+
+        // Handle toggling for New vs Renewal (Service Unit)
+        $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
+
+        // Handle toggling for Storage request type (New vs Existing)
+        $('input[name="type-of-request"]').on('change', toggleStorageFields);
+
+        // Handle toggling for Storage Tier options (Sensitive vs Standard)
+        $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
+
+        // General input, select, and textarea validation and updates
+        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+            .off('input change')
+            .on('input change', function () {
+                validateField($(this)); // Validate individual fields
+                updateFormValidation(); // Validate the overall form
+                updatePayloadPreview(); // Update the real-time payload preview
+                updateBillingVisibility(); // Update billing visibility
+            });
+    
+        // Submit the form with custom logic
+        $('#combined-request-form').off('submit').on('submit', async function (event) {
+            event.preventDefault(); // Prevent the default form submission
+    
             console.log("Form submission triggered.");
-        
-            const payload = buildPayloadPreview();
-            const errors = validatePayload(payload);
-        
+    
+            const formData = collectFormData(); // Collect data from the form
+            const payload = buildPayloadPreview(); // Build payload for submission
+            const errors = validatePayload(payload); // Validate the payload
+    
             if (errors.length > 0) {
+                // Show errors only during submission
+                const errorDiv = $('<div>')
+                    .addClass('alert alert-danger')
+                    .html(`
+                        <strong>Validation Errors:</strong>
+                        <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+                    `);
+                $('#combined-request-form').prepend(errorDiv);
+                setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
                 console.error("Validation errors:", errors);
-                showErrorMessage("Please fix the errors before submitting.");
-                return; // Exit without submitting the form
+                return; // Stop submission on validation errors
             }
-        
-            const userId = $('#uid').val() || "Unknown"; // Dynamically fetch the user ID
-        
-            console.log("Submitting payload for user:", userId);
-            console.log("Payload:", JSON.stringify(payload, null, 2));
-        
+    
+            // Proceed with the form submission logic
             try {
-                // Use the dynamically fetched user ID in the URL
-                const response = await fetch(`https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/${userId}`, {
-                    method: 'POST', // Set to POST
+                const userId = getUserId();
+                const userEmail = `${userId}@virginia.edu`; // Construct the user's email
+                console.log("Submitting payload for user:", userId);
+                console.log("User email:", userEmail);
+    
+                const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
+    
+                const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+                    method: method,
                     headers: {
-                        'Content-Type': 'application/json',
+                        ...API_CONFIG.headers, // Use existing headers
                     },
                     body: JSON.stringify(payload),
-                    credentials: 'include', // Include cookies for authentication
+                    credentials: 'include',
                 });
-        
+    
                 if (!response.ok) {
                     const errorMessage = await response.text();
-                    console.error("Submission failed:", errorMessage);
+                    console.error(`Submission failed (${method}):`, errorMessage);
                     showErrorMessage("Submission failed. Please try again.");
                     return;
                 }
-        
+    
                 const responseData = await response.json();
-                console.log("Form submitted successfully:", responseData);
-                alert("Your request was submitted successfully!");
+                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+    
+                // Email the user with the submitted information
+                sendUserEmail(userEmail, payload);
+    
+                // Clear the form fields
+                clearFormFields();
+    
+                // Display success message and scroll to the top
+                showSuccessMessage("Your request has been submitted successfully!");
+    
             } catch (error) {
                 console.error("Error during form submission:", error);
                 showErrorMessage("An error occurred while submitting the form. Please try again.");
             }
         });
+    
+        console.log('Event handlers successfully set up.');
 
+        /// Form Submission Handler
 
-    // Capacity Limits and Billing Visibility
+        $('#combined-request-form').on('submit', async function (event) {
+            event.preventDefault(); // Prevent default form submission
+        
+            console.log("Form submission triggered.");
+        
+            const formData = collectFormData(); // Initialize formData from the form
+            const payload = buildPayloadPreview();
+            const errors = validatePayload(payload);
+        
+            if (errors.length > 0) {
+                // Show errors only during submission
+                const errorDiv = $('<div>')
+                    .addClass('alert alert-danger')
+                    .html(`
+                        <strong>Validation Errors:</strong>
+                        <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+                    `);
+                $('#combined-request-form').prepend(errorDiv);
+                setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+                console.error("Validation errors:", errors);
+                return; // Stop submission on validation errors
+            }
+        
+            // Proceed with the form submission logic
+            try {
+                const userId = getUserId();
+                const userEmail = `${userId}@virginia.edu`; // Construct the user's email
+                console.log("Submitting payload for user:", userId);
+                console.log("User email:", userEmail);
+        
+                const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
+        
+                const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+                    method: method,
+                    headers: {
+                        ...API_CONFIG.headers, // Use existing headers
+                    },
+                    body: JSON.stringify(payload),
+                    credentials: 'include',
+                });
+        
+                if (!response.ok) {
+                    const errorMessage = await response.text();
+                    console.error(`Submission failed (${method}):`, errorMessage);
+                    showErrorMessage("Submission failed. Please try again.");
+                    return;
+                }
+        
+                const responseData = await response.json();
+                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+        
+                // Email the user with the submitted information
+                sendUserEmail(userEmail, payload);
+        
+                // Clear the form fields
+                clearFormFields();
+        
+                // Display success message and scroll to the top
+                showSuccessMessage("Your request has been submitted successfully!");
+        
+            } catch (error) {
+                console.error("Error during form submission:", error);
+                showErrorMessage("An error occurred while submitting the form. Please try again.");
+            }
+        });
+    }
+
+    // ===================================
+    // Capacity and Visibility
+    // ===================================
     
     function updateCapacityLimits(tierType) {
         const capacityField = $('#capacity');
-        const maxLimits = {
-            'SSZ Research Standard': 200,
-            'Highly Sensitive Data': 100,
-            'SSZ Research Project': 500
-        };
-        capacityField.attr('max', maxLimits[tierType] || 200);
+    
+        if (!apiMetadata || !apiMetadata.storageTiers) {
+            console.warn("No metadata available for capacity limits.");
+            return;
+        }
+    
+        const tierData = apiMetadata.storageTiers[tierType];
+        if (tierData) {
+            capacityField.attr('max', tierData.max || 200);
+            console.log(`Updated capacity limits for ${tierType}:`, tierData);
+        } else {
+            console.warn(`No limits found for storage tier: ${tierType}`);
+        }
     }
 
     function updateBillingVisibility() {
+        const requestType = $('input[name="request-type"]:checked').val();
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
-        const selectedGroup = $('#mygroups-group').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
-        let shouldShowBilling = false;
+        let shouldShowBilling = true; // Default to show billing
     
-        if (selectedStorageTier === "SSZ Research Standard") {
-            const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
-            shouldShowBilling = requestedStorageSize > freeLimit;
-        } else if (["SSZ Research Project", "Highly Sensitive Data"].includes(selectedStorageTier)) {
-            shouldShowBilling = true;
+        if (requestType === 'storage') {
+            if (selectedStorageTier === "SSZ Research Standard") {
+                const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
+                shouldShowBilling = requestedStorageSize > freeLimit; // Show billing only if above the free limit
+            }
         }
     
         $('#billing-information').toggle(shouldShowBilling);
+        console.log(`Billing visibility updated: ${shouldShowBilling}`);
     }
 
+    function getBillingDetails() {
+        const financialContact = $('#financial-contact').val()?.trim() || '';
+        const companyId = $('#company-id').val()?.trim() || '';
+        const costCenter = $('#cost-center').val()?.trim() || '';
+        const businessUnit = $('#business-unit').val()?.trim() || '';
+        const fundingType = $('input[name="funding-type"]:checked').val() || '';
+        const fundingNumber = $('#funding-number').val()?.trim() || '';
+        const fund = $('#fund').val()?.trim() || '';
+        const functionCode = $('#function').val()?.trim() || '';
+        const program = $('#program').val()?.trim() || '';
+        const activity = $('#activity').val()?.trim() || '';
+        const assignee = $('#assignee').val()?.trim() || '';
+    
+        return {
+            fdm_billing_info: [
+                {
+                    financial_contact: financialContact,
+                    company: companyId,
+                    business_unit: businessUnit,
+                    cost_center: costCenter,
+                    fund: fund,
+                    gift: fundingType === 'Gift' ? fundingNumber : '',
+                    grant: fundingType === 'Grant' ? fundingNumber : '',
+                    designated: fundingType === 'Designated' ? fundingNumber : '',
+                    project: fundingType === 'Project' ? fundingNumber : '',
+                    program_code: program,
+                    function: functionCode,
+                    activity: activity,
+                    assignee: assignee,
+                }
+            ]
+        };
+    }
+
+    // ===================================
     // Real-Time Payload Preview
+    // ===================================
 
     function setupPayloadPreviewUpdater() {
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
@@ -484,95 +809,114 @@ $(document).ready(function () {
 
     function buildPayloadPreview() {
         const formData = collectFormData();
-        const computingId = $('#uid').val() || "Unknown";
-
+        const userId = getUserId();
+    
         const payload = [{
-            data_agreement_signed: $('#data-agreement').is(':checked'),
-            group_name: formData.group || "Unknown Group",
-            pi_uid: computingId,
-            project_desc: $('#project-description').val() || "",
-            project_name: formData.projectName || "",
-            resources: {
-                hpc_service_units: {},
-                storage: {}
-            }
+            is_user_resource_request_elligible: true,
+            user_groups: formData.group ? [formData.group] : [],
+            user_resources: []
         }];
-
+    
         if (formData.requestType === 'service-unit') {
             const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
-            payload[0].resources.hpc_service_units[key] = {
-                tier: getTierEnum(formData.allocationTier),
-                request_count: formData.requestCount || "1000",
-                billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
+            const tierData = apiMetadata.allocationTiers?.[formData.allocationTier] || {};
+            const requestCount = formData.requestCount || tierData.defaultRequestCount || "0";
+    
+            const userResource = {
+                data_agreement_signed: $('#data-agreement').is(':checked'),
+                delegates_uid: "",
+                group_id: "",
+                group_name: formData.group || "Unknown Group",
+                pi_uid: userId,
+                project_desc: $('#project-description').val()?.trim() || "",
+                project_name: formData.projectName?.trim() || "",
+                resources: {
+                    hpc_service_units: {
+                        [key]: {
+                            tier: getTierEnum(formData.allocationTier),
+                            request_count: requestCount,
+                            request_date: new Date().toISOString(),
+                            request_status: "pending",
+                            update_date: new Date().toISOString(),
+                            billing_details: getBillingDetails()
+                        }
+                    },
+                    storage: {}
+                }
             };
-        } else if (formData.requestType === 'storage') {
-            const key = `${formData.group}-${getStorageTierEnum(formData.storageTier)}`;
-            payload[0].resources.storage[key] = {
-                tier: getStorageTierEnum(formData.storageTier),
-                request_size: formData.capacity?.toString() || "0",
-                billing_details: formData.shouldShowBilling ? getBillingDetails() : undefined
-            };
+            payload[0].user_resources.push(userResource);
         }
-
+    
+        console.log("Built payload:", JSON.stringify(payload, null, 2));
         return payload;
     }
 
     function validatePayload(payload) {
     const errors = [];
 
-    if (!payload[0].group_name || payload[0].group_name === "Unknown Group") {
-        errors.push("Group name is required.");
-    }
+    // Validate user resources
+    const userResources = payload[0]?.user_resources || [];
+    userResources.forEach((resource, index) => {
+        if (!resource.group_name || resource.group_name === "Unknown Group") {
+            errors.push(`Resource ${index + 1}: Group name is required.`);
+        }
+        if (!resource.project_name) {
+            errors.push(`Resource ${index + 1}: Project name is required.`);
+        }
+        if (!resource.data_agreement_signed) {
+            errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
+        }
+    });
 
-    if (!payload[0].project_name) {
-        errors.push("Project name is missing.");
-    }
+    return errors; // Return errors for use during submission
+}
 
-    if (!payload[0].data_agreement_signed) {
-        errors.push("Data agreement must be signed.");
-    }
-
-    if (Object.keys(payload[0].resources.hpc_service_units).length === 0 &&
-        Object.keys(payload[0].resources.storage).length === 0) {
-        errors.push("At least one resource type must be included.");
-    }
-
-        return errors;
-    }
-
-    // Fetch & Populate Groups
+    // ===================================
+    // Fetch and Populate Groups
+    // ===================================
 
     async function fetchAndPopulateGroups() {
         // Show a waiting message (use utility function if available)
         const waitingMessage = utils?.showWaitingMessage?.() || $('<div>').text('Loading...').prependTo('#combined-request-form');
         
         try {
-            // Ensure the user session is established
-            const computingId = await waitForUserSession();
-            console.log(`Attempting API call for user: ${computingId}`);
-
+            // Dynamically fetch the user ID using the helper function
+            const userId = getUserId(); 
+            console.log(`Attempting API call for user: ${userId}`);
+            
             // Construct the API request URL
-            const requestUrl = `${API_CONFIG.baseUrl}/${computingId}`;
+            const requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
             console.log("Request URL:", requestUrl);
-
+    
+            // Define headers dynamically, including the current origin
+            const headers = {
+                ...API_CONFIG.headers,
+                'Origin': window.location.origin // Dynamically set the origin
+            };
+    
             // Perform the fetch call with credentials included
             const response = await fetch(requestUrl, {
                 method: 'GET',
-                headers: API_CONFIG.headers,
-                credentials: 'include', // Required for cross-origin requests with cookies
+                headers: headers,
+                credentials: 'include'
             });
-
+    
+            // Handle non-OK responses
             if (!response.ok) {
-                throw new Error(`API request failed with status ${response.status}`);
+                const errorMessage = `API request failed with status ${response.status}: ${response.statusText}`;
+                console.error(errorMessage);
+                handleApiError(new Error(errorMessage));
+                return;
             }
-
+    
             // Parse the JSON response
-            consoleData = await response.json();
+            const jsonResponse = await response.json();
+            consoleData = jsonResponse; // Save to global variable for further use
             console.log("Fetched groups and resources:", consoleData);
-
+    
             // Parse and populate user groups and resources
-            const { userGroups, userResources } = parseConsoleData(consoleData);
-
+            const { userGroups, userResources } = parseConsoleData(jsonResponse);
+    
             // Populate dropdowns for user groups
             if (Array.isArray(userGroups) && userGroups.length > 0) {
                 console.log("Populating user groups:", userGroups);
@@ -581,11 +925,11 @@ $(document).ready(function () {
                 console.warn("No user groups found.");
                 populateGrouperMyGroupsDropdown([]);
             }
-
+    
             // Process user resources if available
             if (Array.isArray(userResources) && userResources.length > 0) {
                 console.log("Processing user resources...");
-                processUserResources(consoleData);
+                processUserResources(jsonResponse);
             } else {
                 console.warn("No user resources found.");
             }
@@ -598,7 +942,9 @@ $(document).ready(function () {
         }
     }
 
+    // ===================================
     // Resource Processing Functions
+    // ===================================
 
     function parseConsoleData(data) {
         if (!Array.isArray(data) || data.length === 0) {
@@ -629,30 +975,37 @@ $(document).ready(function () {
     
         $dropdowns.each(function () {
             const $dropdown = $(this);
-            $dropdown.empty(); // Clear existing options
+            
+            // Save the current selected value
+            const currentValue = $dropdown.val();
     
-            console.log(`Populating dropdown: ${$dropdown.attr('id')} with groups:`, groups);
-    
-            // Add a default "Select a group" option
+            // Clear existing options but retain the placeholder
+            $dropdown.empty();
             $dropdown.append(
                 $('<option>', {
                     value: '',
                     text: '- Select a group -',
                     selected: true,
-                    disabled: true,
+                    disabled: true
                 })
             );
     
-            // Populate the dropdown with the fetched groups
+            console.log(`Populating dropdown: ${$dropdown.attr('id')} with groups:`, groups);
+    
             if (groups.length) {
                 groups.forEach(group => {
                     const groupName = typeof group === 'string' ? group : group.name;
-                    $dropdown.append(
-                        $('<option>', {
-                            value: groupName.trim(),
-                            text: groupName.trim(),
-                        })
-                    );
+                    const option = $('<option>', {
+                        value: groupName.trim(),
+                        text: groupName.trim(),
+                    });
+    
+                    // Restore previous selection if the value exists
+                    if (groupName.trim() === currentValue) {
+                        option.prop('selected', true);
+                    }
+    
+                    $dropdown.append(option);
                 });
     
                 $dropdown.prop('disabled', false);
@@ -723,11 +1076,14 @@ $(document).ready(function () {
         });
     }
 
+    // ===================================
     // Update Form Validation
+    // ===================================
 
     function updateFormValidation() {
         const $form = $('#combined-request-form');
         const requestType = $('input[name="request-type"]:checked').val();
+    
         const visibleFieldsSelector = requestType === 'service-unit'
             ? '#allocation-fields input[required]:visible, #allocation-fields select[required]:visible'
             : '#storage-fields input[required]:visible, #storage-fields select[required]:visible';
@@ -737,36 +1093,73 @@ $(document).ready(function () {
     
         $('#submit').prop('disabled', !isFormValid); // Disable button if form is invalid
     }
-
-      // Initialization Function
-
-      async function initialize() {
+    
+    // Initialization Function
+    async function initialize() {
         console.log("Initializing form...");
+    
         try {
-            // Hide specific sections initially
-            $('#allocation-fields, #storage-fields, #common-fields').hide();
-            $('#billing-information').hide();
-
+            // Hide sections initially to avoid flickering
+            $('#allocation-fields, #storage-fields, #common-fields, #billing-information').hide();
+    
+            // Display a loading spinner during metadata and user data fetch
+            const loadingMessage = $('<div>')
+                .addClass('alert alert-info d-flex align-items-center')
+                .attr('id', 'loading-message')
+                .html(`
+                    <div class="spinner-border spinner-border-sm me-2" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    Initializing the form. Please wait...
+                `)
+                .prependTo('#combined-request-form');
+    
+            // Set a timeout for metadata loading
+            const metadataTimeout = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Metadata loading timed out.')), 15000)
+            );
+    
+            // Attempt to fetch metadata with a timeout
+            apiMetadata = await Promise.race([fetchMetadata(), metadataTimeout]);
+    
+            if (!apiMetadata) {
+                throw new Error("Metadata fetch failed.");
+            }
+    
+            console.log("Metadata successfully fetched:", apiMetadata);
+    
+            // Update form elements using fetched metadata
+            updateFormUsingMetadata(apiMetadata);
+    
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
-
-            // Setup event handlers
+    
+            // Set up event handlers for dynamic interactivity
             setupEventHandlers();
-
-            // Setup real-time payload preview
+    
+            // Set up real-time payload preview
             setupPayloadPreviewUpdater();
-
-            // Initialize UI toggles
+    
+            // Initialize visibility of fields based on initial state
             toggleRequestFields();
             updateFormValidation();
-
+    
             console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
-            showErrorMessage("Failed to initialize form. Please refresh the page.");
+    
+            // Display a user-friendly error message
+            showErrorMessage(
+                "Failed to load user information. Please refresh the page or contact support if the issue persists."
+            );
+        } finally {
+            // Ensure the loading spinner is removed
+            $('#loading-message').remove();
         }
     }
-
-    // Start Initialization
+    
+    // ===================================
+    // Start Initiation
+    // ===================================
     initialize();
 });
