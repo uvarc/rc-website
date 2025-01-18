@@ -24,7 +24,7 @@ draft = false
 </style>
 
 <!-- Version w/out Rio -->
-<table class="table table-sm table-striped" style="font-size:90%; margin-top: 1rem;">
+<!-- <table class="table table-sm table-striped" style="font-size:90%; margin-top: 1rem;">
   <thead class="thead-dark">
     <tr>
         <th></th>
@@ -40,10 +40,10 @@ draft = false
     </tr>
     <tr>
       <th style="width:16%;">Data Classification</th>
-      <th style="width:12%;">Research Project Storage (/project)</th>
-      <th style="width:12%;">Research Standard Storage (/standard)</th>
+      <th style="width:12%;">Research Project (/project)</th>
+      <th style="width:12%;">Research Standard (/standard)</th>
       <th style="width:12%;">Rivanna/Afton (/home &amp; /scratch)</th>
-      <th style="width:12%;">High-Security Research Standard Storage</th>
+      <th style="width:12%;">High-Security Research Standard </th>
       <th style="width:12%;">Ivy VM (/home)</th>
       <th style="width:12%;">ACCORD</th>
     </tr>
@@ -149,10 +149,10 @@ draft = false
       <td>❌</td>
     </tr>
   </tbody>
-</table>
+</table> -->
 
 <!-- Version w/ Rio -->
-<!-- <table class="table table-sm table-striped" style="font-size:90%; margin-top: 1rem;">
+<table class="table table-sm table-striped" style="font-size:90%; margin-top: 1rem;">
   <thead class="thead-dark">
     <tr>
         <th></th>
@@ -168,10 +168,10 @@ draft = false
     </tr>
     <tr>
       <th style="width:16%;">Data Classification</th>
-      <th style="width:12%;">Research Project Storage (/project)</th>
-      <th style="width:12%;">Research Standard Storage (/standard)</th>
+      <th style="width:12%;">Research Project (/project)</th>
+      <th style="width:12%;">Research Standard (/standard)</th>
       <th style="width:12%;">Rivanna/Afton (/home &amp; /scratch)</th>
-      <th style="width:12%;">High-Security Research Standard Storage</th>
+      <th style="width:12%;">High-Security Research Standard </th>
       <th style="width:12%;">Ivy VM (/home)</th>
       <th style="width:12%;">Rio (/home &amp; /scratch)</th>
       <th style="width:12%;">ACCORD</th>
@@ -289,7 +289,7 @@ draft = false
       <td>❌</td>
     </tr>
   </tbody>
-</table> -->
+</table>
 
 <style>
         .footnote {
