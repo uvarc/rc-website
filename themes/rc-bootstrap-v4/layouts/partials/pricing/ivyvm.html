@@ -10,7 +10,6 @@
 <!-- Access Different Types -->
 {{ $options := index (index $services $ivy_index) "options" }}
 
-{{ $mini_option := index (where $options "type" "Mini") 0 }}
 {{ $small_option := index (where $options "type" "Small") 0 }}
 {{ $medium_option := index (where $options "type" "Medium") 0 }}
 {{ $large_option := index (where $options "type" "Large") 0 }}
@@ -26,11 +25,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td style="font-weight:bold;">{{ index $mini_option "type" }}</td>
-        <td>{{ index $mini_option "specs" }}</td>
-        <td>{{ index $mini_option "cost" }}</td>
-      </tr>
       <tr>
         <td style="font-weight:bold;">{{ index $small_option "type" }}</td>
         <td>{{ index $small_option "specs" }}</td>
