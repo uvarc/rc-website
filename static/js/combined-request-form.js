@@ -1,8 +1,4 @@
-$(document).ready(function () {
-    console.log("Script started");
-    console.log("Updated Combined Request Form JS loaded");
-
-    // ===================================test
+    // ===================================
     // Constants and Configuration
     // ===================================
 
@@ -549,32 +545,185 @@ $(document).ready(function () {
     // Event Handlers
     // ===================================
 
+    // function setupEventHandlers() {
+    //     // Handle toggling for request type (Service Unit vs Storage)
+    //     $('input[name="request-type"]').on('change', toggleRequestFields);
+
+    //     // Handle toggling for New vs Renewal (Service Unit)
+    //     $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
+
+    //     // Handle toggling for Storage request type (New vs Existing)
+    //     $('input[name="type-of-request"]').on('change', toggleStorageFields);
+
+    //     // Handle toggling for Storage Tier options (Sensitive vs Standard)
+    //     $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
+
+    //     // General input, select, and textarea validation and updates
+    //     $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+    //         .off('input change')
+    //         .on('input change', function () {
+    //             // validateField($(this)); // Validate individual fields
+    //             // updateFormValidation(); // Validate the overall form
+    //             updatePayloadPreview(); // Update the real-time payload preview
+    //             updateBillingVisibility(); // Update billing visibility
+    //         });
+    
+    //     // Submit the form with custom logic
+    //     $('#combined-request-form').off('submit').on('submit', async function (event) {
+    //         event.preventDefault(); // Prevent the default form submission
+    
+    //         console.log("Form submission triggered.");
+    
+    //         const formData = collectFormData(); // Collect data from the form
+    //         const payload = buildPayloadPreview(); // Build payload for submission
+    //         const errors = validatePayload(payload); // Validate the payload
+    
+    //         if (errors.length > 0) {
+    //             // Show errors only during submission
+    //             const errorDiv = $('<div>')
+    //                 .addClass('alert alert-danger')
+    //                 .html(`
+    //                     <strong>Validation Errors:</strong>
+    //                     <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+    //                 `);
+    //             $('#combined-request-form').prepend(errorDiv);
+    //             setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+    //             console.error("Validation errors:", errors);
+    //             return; // Stop submission on validation errors
+    //         }
+    
+    //         // Proceed with the form submission logic
+    //         try {
+    //             const userId = getUserId();
+    //             const userEmail = `${userId}@virginia.edu`; // Construct the user's email
+    //             console.log("Submitting payload for user:", userId);
+    //             console.log("User email:", userEmail);
+    
+    //             const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
+    
+    //             const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+    //                 method: method,
+    //                 headers: {
+    //                     ...API_CONFIG.headers, // Use existing headers
+    //                 },
+    //                 body: JSON.stringify(payload),
+    //                 credentials: 'include',
+    //             });
+    
+    //             if (!response.ok) {
+    //                 const errorMessage = await response.text();
+    //                 console.error(`Submission failed (${method}):`, errorMessage);
+    //                 showErrorMessage("Submission failed. Please try again.");
+    //                 return;
+    //             }
+    
+    //             const responseData = await response.json();
+    //             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+    
+    //             // Email the user with the submitted information
+    //             sendUserEmail(userEmail, payload);
+    
+    //             // Clear the form fields
+    //             clearFormFields();
+    
+    //             // Display success message and scroll to the top
+    //             showSuccessMessage("Your request has been submitted successfully!");
+    
+    //         } catch (error) {
+    //             console.error("Error during form submission:", error);
+    //             showErrorMessage("An error occurred while submitting the form. Please try again.");
+    //         }
+    //     });
+    
+    //     console.log('Event handlers successfully set up.');
+
+    //     /// Form Submission Handler
+
+    //     $('#combined-request-form').on('submit', async function (event) {
+    //         event.preventDefault(); // Prevent default form submission
+        
+    //         console.log("Form submission triggered.");
+        
+    //         const formData = collectFormData(); // Initialize formData from the form
+    //         const payload = buildPayloadPreview();
+    //         const errors = validatePayload(payload);
+        
+    //         if (errors.length > 0) {
+    //             // Show errors only during submission
+    //             const errorDiv = $('<div>')
+    //                 .addClass('alert alert-danger')
+    //                 .html(`
+    //                     <strong>Validation Errors:</strong>
+    //                     <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+    //                 `);
+    //             $('#combined-request-form').prepend(errorDiv);
+    //             setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+    //             console.error("Validation errors:", errors);
+    //             return; // Stop submission on validation errors
+    //         }
+        
+    //         // Proceed with the form submission logic
+    //         try {
+    //             const userId = getUserId();
+    //             const userEmail = `${userId}@virginia.edu`; // Construct the user's email
+    //             console.log("Submitting payload for user:", userId);
+    //             console.log("User email:", userEmail);
+        
+    //             const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
+        
+    //             const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+    //                 method: method,
+    //                 headers: {
+    //                     ...API_CONFIG.headers, // Use existing headers
+    //                 },
+    //                 body: JSON.stringify(payload),
+    //                 credentials: 'include',
+    //             });
+        
+    //             if (!response.ok) {
+    //                 const errorMessage = await response.text();
+    //                 console.error(`Submission failed (${method}):`, errorMessage);
+    //                 showErrorMessage("Submission failed. Please try again.");
+    //                 return;
+    //             }
+        
+    //             const responseData = await response.json();
+    //             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+        
+    //             // Email the user with the submitted information
+    //             sendUserEmail(userEmail, payload);
+        
+    //             // Clear the form fields
+    //             clearFormFields();
+        
+    //             // Display success message and scroll to the top
+    //             showSuccessMessage("Your request has been submitted successfully!");
+        
+    //         } catch (error) {
+    //             console.error("Error during form submission:", error);
+    //             showErrorMessage("An error occurred while submitting the form. Please try again.");
+    //         }
+    //     });
+    // }
+
     function setupEventHandlers() {
-        // Handle toggling for request type (Service Unit vs Storage)
-        $('input[name="request-type"]').on('change', toggleRequestFields);
-
-        // Handle toggling for New vs Renewal (Service Unit)
-        $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
-
-        // Handle toggling for Storage request type (New vs Existing)
-        $('input[name="type-of-request"]').on('change', toggleStorageFields);
-
-        // Handle toggling for Storage Tier options (Sensitive vs Standard)
-        $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
-
+        // Use event delegation for dynamically added inputs
+        $(document).on('change', 'input[name="request-type"]', toggleRequestFields);
+        $(document).on('change', 'input[name="new-or-renewal"]', toggleAllocationFields);
+        $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
+        $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
+    
         // General input, select, and textarea validation and updates
-        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .off('input change')
-            .on('input change', function () {
-                validateField($(this)); // Validate individual fields
-                updateFormValidation(); // Validate the overall form
-                updatePayloadPreview(); // Update the real-time payload preview
-                updateBillingVisibility(); // Update billing visibility
-            });
+        $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function () {
+            // validateField($(this)); // Validate individual fields
+            // updateFormValidation(); // Validate the overall form
+            updatePayloadPreview(); // Update the real-time payload preview
+            updateBillingVisibility(); // Update billing visibility
+        });
     
         // Submit the form with custom logic
-        $('#combined-request-form').off('submit').on('submit', async function (event) {
-            event.preventDefault(); // Prevent the default form submission
+        $(document).on('submit', '#combined-request-form', async function (event) {
+            event.preventDefault(); // Prevent default form submission
     
             console.log("Form submission triggered.");
     
@@ -640,74 +789,6 @@ $(document).ready(function () {
         });
     
         console.log('Event handlers successfully set up.');
-
-        /// Form Submission Handler
-
-        $('#combined-request-form').on('submit', async function (event) {
-            event.preventDefault(); // Prevent default form submission
-        
-            console.log("Form submission triggered.");
-        
-            const formData = collectFormData(); // Initialize formData from the form
-            const payload = buildPayloadPreview();
-            const errors = validatePayload(payload);
-        
-            if (errors.length > 0) {
-                // Show errors only during submission
-                const errorDiv = $('<div>')
-                    .addClass('alert alert-danger')
-                    .html(`
-                        <strong>Validation Errors:</strong>
-                        <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
-                    `);
-                $('#combined-request-form').prepend(errorDiv);
-                setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
-                console.error("Validation errors:", errors);
-                return; // Stop submission on validation errors
-            }
-        
-            // Proceed with the form submission logic
-            try {
-                const userId = getUserId();
-                const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-                console.log("Submitting payload for user:", userId);
-                console.log("User email:", userEmail);
-        
-                const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
-        
-                const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-                    method: method,
-                    headers: {
-                        ...API_CONFIG.headers, // Use existing headers
-                    },
-                    body: JSON.stringify(payload),
-                    credentials: 'include',
-                });
-        
-                if (!response.ok) {
-                    const errorMessage = await response.text();
-                    console.error(`Submission failed (${method}):`, errorMessage);
-                    showErrorMessage("Submission failed. Please try again.");
-                    return;
-                }
-        
-                const responseData = await response.json();
-                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-        
-                // Email the user with the submitted information
-                sendUserEmail(userEmail, payload);
-        
-                // Clear the form fields
-                clearFormFields();
-        
-                // Display success message and scroll to the top
-                showSuccessMessage("Your request has been submitted successfully!");
-        
-            } catch (error) {
-                console.error("Error during form submission:", error);
-                showErrorMessage("An error occurred while submitting the form. Please try again.");
-            }
-        });
     }
 
     // ===================================
@@ -1157,9 +1238,13 @@ $(document).ready(function () {
             $('#loading-message').remove();
         }
     }
+
+    $(document).ready(function () {
+        console.log("Script started");
+        console.log("Updated Combined Request Form JS loaded");
     
-    // ===================================
-    // Start Initiation
-    // ===================================
-    initialize();
-});
+        // ===================================
+        // Start Initiation
+        // ===================================
+        initialize();
+    });
