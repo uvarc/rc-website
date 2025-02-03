@@ -2,7 +2,13 @@ $(document).ready(function () {
     console.log("Script started");
     console.log("Updated Combined Request Form JS loaded");
 
-    // ===================================test
+    // ===================================
+    // Start Initiation
+    // ===================================
+    initialize();
+});
+
+    // ===================================
     // Constants and Configuration
     // ===================================
 
@@ -1157,9 +1163,3 @@ $(document).ready(function () {
             $('#loading-message').remove();
         }
     }
-    
-    // ===================================
-    // Start Initiation
-    // ===================================
-    initialize();
-});
