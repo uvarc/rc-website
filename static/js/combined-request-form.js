@@ -407,26 +407,26 @@ $(document).ready(function () {
             }
         }
     
-        /// Send Email to User
+        // /// Send Email to User
 
-        function sendUserEmail(email, payload) {
-            const emailSubject = "Your Resource Request Submission";
-            const emailBody = `
-                Hello,
+        // function sendUserEmail(email, payload) {
+        //     const emailSubject = "Your Resource Request Submission";
+        //     const emailBody = `
+        //         Hello,
         
-                Thank you for submitting your request. Here are the details:
+        //         Thank you for submitting your request. Here are the details:
         
-                ${JSON.stringify(payload, null, 2).replace(/[$begin:math:display$$end:math:display$]/g, '')}
+        //         ${JSON.stringify(payload, null, 2).replace(/[$begin:math:display$$end:math:display$]/g, '')}
         
-                Best regards,
-                Research Computing Team
-            `;
+        //         Best regards,
+        //         Research Computing Team
+        //     `;
         
-            // Simulate sending email (replace with API call for production)
-            console.log(`Simulating email to ${email}`);
-            console.log(`Subject: ${emailSubject}`);
-            console.log(`Body:\n${emailBody}`);
-        }
+        //     // Simulate sending email (replace with API call for production)
+        //     console.log(`Simulating email to ${email}`);
+        //     console.log(`Subject: ${emailSubject}`);
+        //     console.log(`Body:\n${emailBody}`);
+        // }
 
         /// Clear Form Fields
 
@@ -574,7 +574,7 @@ $(document).ready(function () {
             .on('input change', function () {
                 validateField($(this)); // Validate individual fields
                 updateFormValidation(); // Validate the overall form
-                updatePayloadPreview(); // Update the real-time payload preview
+                // updatePayloadPreview(); // Update the real-time payload preview
                 updateBillingVisibility(); // Update billing visibility
             });
     
@@ -584,9 +584,9 @@ $(document).ready(function () {
     
             console.log("Form submission triggered.");
     
-            const formData = collectFormData(); // Collect data from the form
-            const payload = buildPayloadPreview(); // Build payload for submission
-            const errors = validatePayload(payload); // Validate the payload
+            // const formData = collectFormData(); // Collect data from the form
+            // const payload = buildPayloadPreview(); // Build payload for submission
+            // const errors = validatePayload(payload); // Validate the payload
     
             if (errors.length > 0) {
                 // Show errors only during submission
@@ -606,7 +606,7 @@ $(document).ready(function () {
             try {
                 const userId = getUserId();
                 const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-                console.log("Submitting payload for user:", userId);
+                // console.log("Submitting payload for user:", userId);
                 console.log("User email:", userEmail);
     
                 const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
@@ -616,7 +616,7 @@ $(document).ready(function () {
                     headers: {
                         ...API_CONFIG.headers, // Use existing headers
                     },
-                    body: JSON.stringify(payload),
+                    // body: JSON.stringify(payload),
                     credentials: 'include',
                 });
     
@@ -631,7 +631,7 @@ $(document).ready(function () {
                 console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
     
                 // Email the user with the submitted information
-                sendUserEmail(userEmail, payload);
+                // sendUserEmail(userEmail, payload);
     
                 // Clear the form fields
                 clearFormFields();
@@ -655,8 +655,8 @@ $(document).ready(function () {
             console.log("Form submission triggered.");
         
             const formData = collectFormData(); // Initialize formData from the form
-            const payload = buildPayloadPreview();
-            const errors = validatePayload(payload);
+            // const payload = buildPayloadPreview();
+            // const errors = validatePayload(payload);
         
             if (errors.length > 0) {
                 // Show errors only during submission
@@ -676,7 +676,7 @@ $(document).ready(function () {
             try {
                 const userId = getUserId();
                 const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-                console.log("Submitting payload for user:", userId);
+                // console.log("Submitting payload for user:", userId);
                 console.log("User email:", userEmail);
         
                 const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
@@ -686,7 +686,7 @@ $(document).ready(function () {
                     headers: {
                         ...API_CONFIG.headers, // Use existing headers
                     },
-                    body: JSON.stringify(payload),
+                    // body: JSON.stringify(payload),
                     credentials: 'include',
                 });
         
@@ -701,7 +701,7 @@ $(document).ready(function () {
                 console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
         
                 // Email the user with the submitted information
-                sendUserEmail(userEmail, payload);
+                // sendUserEmail(userEmail, payload);
         
                 // Clear the form fields
                 clearFormFields();
@@ -793,89 +793,89 @@ $(document).ready(function () {
     // Real-Time Payload Preview
     // ===================================
 
-    function setupPayloadPreviewUpdater() {
-        $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-            .on('input change', function () {
-                updatePayloadPreview();
-            });
-        console.log("Payload preview updater initialized.");
-    }
+//     function setupPayloadPreviewUpdater() {
+//         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
+//             .on('input change', function () {
+//                 updatePayloadPreview();
+//             });
+//         console.log("Payload preview updater initialized.");
+//     }
 
-    function updatePayloadPreview() {
-        const payload = buildPayloadPreview();
-        const errors = validatePayload(payload);
-        console.log("Payload Preview:", JSON.stringify(payload, null, 2));
+//     function updatePayloadPreview() {
+//         const payload = buildPayloadPreview();
+//         const errors = validatePayload(payload);
+//         console.log("Payload Preview:", JSON.stringify(payload, null, 2));
 
-        if (errors.length > 0) {
-            console.error("Payload Errors:", errors);
-        } else {
-            console.log("Payload Valid.");
-        }
-    }
+//         if (errors.length > 0) {
+//             console.error("Payload Errors:", errors);
+//         } else {
+//             console.log("Payload Valid.");
+//         }
+//     }
 
-    function buildPayloadPreview() {
-        const formData = collectFormData();
-        const userId = getUserId();
+//     function buildPayloadPreview() {
+//         const formData = collectFormData();
+//         const userId = getUserId();
     
-        const payload = [{
-            is_user_resource_request_elligible: true,
-            user_groups: formData.group ? [formData.group] : [],
-            user_resources: []
-        }];
+//         const payload = [{
+//             is_user_resource_request_elligible: true,
+//             user_groups: formData.group ? [formData.group] : [],
+//             user_resources: []
+//         }];
     
-        if (formData.requestType === 'service-unit') {
-            const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
-            const tierData = apiMetadata.allocationTiers?.[formData.allocationTier] || {};
-            const requestCount = formData.requestCount || tierData.defaultRequestCount || "0";
+//         if (formData.requestType === 'service-unit') {
+//             const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
+//             const tierData = apiMetadata.allocationTiers?.[formData.allocationTier] || {};
+//             const requestCount = formData.requestCount || tierData.defaultRequestCount || "0";
     
-            const userResource = {
-                data_agreement_signed: $('#data-agreement').is(':checked'),
-                delegates_uid: "",
-                group_id: "",
-                group_name: formData.group || "Unknown Group",
-                pi_uid: userId,
-                project_desc: $('#project-description').val()?.trim() || "",
-                project_name: formData.projectName?.trim() || "",
-                resources: {
-                    hpc_service_units: {
-                        [key]: {
-                            tier: getTierEnum(formData.allocationTier),
-                            request_count: requestCount,
-                            request_date: new Date().toISOString(),
-                            request_status: "pending",
-                            update_date: new Date().toISOString(),
-                            billing_details: getBillingDetails()
-                        }
-                    },
-                    storage: {}
-                }
-            };
-            payload[0].user_resources.push(userResource);
-        }
+//             const userResource = {
+//                 data_agreement_signed: $('#data-agreement').is(':checked'),
+//                 delegates_uid: "",
+//                 group_id: "",
+//                 group_name: formData.group || "Unknown Group",
+//                 pi_uid: userId,
+//                 project_desc: $('#project-description').val()?.trim() || "",
+//                 project_name: formData.projectName?.trim() || "",
+//                 resources: {
+//                     hpc_service_units: {
+//                         [key]: {
+//                             tier: getTierEnum(formData.allocationTier),
+//                             request_count: requestCount,
+//                             request_date: new Date().toISOString(),
+//                             request_status: "pending",
+//                             update_date: new Date().toISOString(),
+//                             billing_details: getBillingDetails()
+//                         }
+//                     },
+//                     storage: {}
+//                 }
+//             };
+//             payload[0].user_resources.push(userResource);
+//         }
     
-        console.log("Built payload:", JSON.stringify(payload, null, 2));
-        return payload;
-    }
+//         console.log("Built payload:", JSON.stringify(payload, null, 2));
+//         return payload;
+//     }
 
-    function validatePayload(payload) {
-    const errors = [];
+//     function validatePayload(payload) {
+//     const errors = [];
 
-    // Validate user resources
-    const userResources = payload[0]?.user_resources || [];
-    userResources.forEach((resource, index) => {
-        if (!resource.group_name || resource.group_name === "Unknown Group") {
-            errors.push(`Resource ${index + 1}: Group name is required.`);
-        }
-        if (!resource.project_name) {
-            errors.push(`Resource ${index + 1}: Project name is required.`);
-        }
-        if (!resource.data_agreement_signed) {
-            errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
-        }
-    });
+//     // Validate user resources
+//     const userResources = payload[0]?.user_resources || [];
+//     userResources.forEach((resource, index) => {
+//         if (!resource.group_name || resource.group_name === "Unknown Group") {
+//             errors.push(`Resource ${index + 1}: Group name is required.`);
+//         }
+//         if (!resource.project_name) {
+//             errors.push(`Resource ${index + 1}: Project name is required.`);
+//         }
+//         if (!resource.data_agreement_signed) {
+//             errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
+//         }
+//     });
 
-    return errors; // Return errors for use during submission
-}
+//     return errors; // Return errors for use during submission
+// }
 
     // ===================================
     // Fetch and Populate Groups
