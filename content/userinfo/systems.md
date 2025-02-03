@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Computing Systems"
-date = "2021-04-10T10:08:29-05:00"
+date = "2025-01-15T10:08:29-05:00"
 draft = false
 tags = ["compute","rivanna","ivy","cloud","aws","hpc","containers"]
 categories = ["userinfo"]
@@ -22,6 +22,17 @@ various systems are available to researchers.</p>
       <h4 class="card-title">High Performance Computing - Rivanna and Afton</h4>
         <p class="card-text">A traditional high performance cluster with a resource manager, a large file system, modules, and MPI processing. </p>
         <a href="/userinfo/hpc" class="btn btn-warning" style="color:white">Get Started with UVA HPC</a>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card-group">
+  <div class="card">
+    <div class="card-block">
+      <img align="right" src="/images/hpc-cluster.png" style="max-width:20%;" />
+      <h4 class="card-title">Secure High Performance Computing - Rio</h4>
+        <p class="card-text">A high performance cluster designed to process and store secure data accessed via ivy dedicated virtual machines.</p>
+        <a href="/userinfo/ivy" class="btn btn-warning" style="color:white;">Get started on Rio</a>
     </div>
   </div>
 </div>
