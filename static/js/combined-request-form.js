@@ -562,8 +562,8 @@
         $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
             .off('input change')
             .on('input change', function () {
-                validateField($(this)); // Validate individual fields
-                updateFormValidation(); // Validate the overall form
+                // validateField($(this)); // Validate individual fields
+                // updateFormValidation(); // Validate the overall form
                 updatePayloadPreview(); // Update the real-time payload preview
                 updateBillingVisibility(); // Update billing visibility
             });
