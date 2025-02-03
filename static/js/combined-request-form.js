@@ -1,13 +1,3 @@
-$(document).ready(function () {
-    console.log("Script started");
-    console.log("Updated Combined Request Form JS loaded");
-
-    // ===================================
-    // Start Initiation
-    // ===================================
-    initialize();
-});
-
     // ===================================
     // Constants and Configuration
     // ===================================
@@ -1163,3 +1153,13 @@ $(document).ready(function () {
             $('#loading-message').remove();
         }
     }
+
+    $(document).ready(function () {
+        console.log("Script started");
+        console.log("Updated Combined Request Form JS loaded");
+    
+        // ===================================
+        // Start Initiation
+        // ===================================
+        initialize();
+    });
