@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2024-12-17T00:00:00-05:00"
+date = "2025-02-03T00:00:00-05:00"
 title = "Future of Research Computing’s Training Initiatives: Workshops Survey"
 draft = false
 tags = ["rivanna", "afton","python","hpc"]
