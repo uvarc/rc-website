@@ -5,7 +5,7 @@ author = "RC Staff"
 images = [
   "/2016/10/image.jpg",
 ]
-date = "2025-02-01T17:57:24-05:00"
+date = "2025-02-04T12:57:24-05:00"
 tags = ["rc"]
 categories = ["feature"]
 draft = false
@@ -14,7 +14,6 @@ draft = false
 
 <img class="card-img-top" src="/images/RC_posters_image.png" alt="" style="float: right;">
 
-## About This Event:
 
 Save the date: <strong>RC Exhibition on April 22, 2025</strong> 
 
