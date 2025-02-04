@@ -3,55 +3,40 @@
         <thead class="thead-inverse">
             <tr>
                 <th scope="row">DATE RELEASED</th>
-                <th style="width:50%;text-align:left;">WORKSHOP</th>
+                <th style="width:50%;text-align:left;">  TUTORIAL </th>
                 <th>CREATORS</th>
             </tr>
         </thead>
-        {{- $counter := 0 -}}
         {{- $url := $.Site.Params.newTutorialsUrl -}} <!-- Change to the new-tutorials.csv URL -->
         {{- $sep := "," -}}
         {{- $csv := getCSV $sep $url -}}
-        {{- range $i, $r := $csv -}}
-            {{- if gt $i 0 -}} <!-- Skip the first line -->
-                {{- $release_date := replace (index $r 1) "/" "-" -}}
-                {{- $parsed_date := time $release_date -}}
-                {{- if and (ge $parsed_date (now.AddDate 0 0 -30)) (lt $parsed_date (now)) -}}
-                    {{ $counter = add $counter 1 }}
-                {{- end -}}
-            {{- end -}}
-        {{- end -}}
-        {{- if (lt $counter 1) -}}
+        {{- if (gt (len $csv) 1) -}} <!-- Ensure there is more than just the header row -->
             <tbody>
-                <tr>
-                    <td colspan="3">There are currently no new tutorials. Please check back soon!</td>
-                </tr>
-            </tbody>
-        {{- else -}}
-            <tbody>
-                {{- $counter2 := 0 -}}
                 {{- range $i, $r := $csv -}}
                     {{- if gt $i 0 -}} <!-- Skip the first line -->
                         {{- $title := index $r 0 -}}
                         {{- $release_date := replace (index $r 1) "/" "-" -}}
                         {{- $link := index $r 2 -}}
                         {{- $creators := index $r 3 -}}
-                        {{- $parsed_date := time $release_date -}}
-                        {{- if and (ge $parsed_date (now.AddDate 0 0 -30)) (lt $parsed_date (now)) -}}
-                            <tr>
-                                <td>{{ $parsed_date.Format "Jan 2, 2006" }}</td>
-                                {{- if ne $link "" -}}
-                                    <td><a href="{{ $link }}" target="_blank">{{ $title }}</a></td>
-                                {{- else -}}
-                                    <td>{{ $title }}</td>
-                                {{- end -}}
-                                <td>{{ $creators }}</td>
-                            </tr>
-                            {{ $counter2 = add $counter2 1 }}
-                        {{- end -}}
+                        <tr>
+                            <td>{{ $release_date }}</td>
+                            {{- if ne $link "" -}}
+                                <td><a href="{{ $link }}" target="_blank">{{ $title }}</a></td>
+                            {{- else -}}
+                                <td>{{ $title }}</td>
+                            {{- end -}}
+                            <td>{{ $creators }}</td>
+                        </tr>
                     {{- end -}}
                 {{- end -}}
+            </tbody>
+        {{- else -}}
+            <tbody>
+                <tr>
+                    <td colspan="3">There are currently no tutorials available. Please check back soon!</td>
+                </tr>
             </tbody>
         {{- end -}}
     </table>
 </div>
-<div style="width:100%;height:2rem;"></div>
+<div style="width:100%;height:2rem;"></div> 

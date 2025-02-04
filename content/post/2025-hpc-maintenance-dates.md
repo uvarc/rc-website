@@ -13,7 +13,7 @@ categories = ["feature"]
 Rivanna/Afton will be taken down for maintenance in 2025 on the following days: 
 
 - [Winter: Tuesday, January 7](https://www.rc.virginia.edu/2024/12/hpc-maintenance-jan-7-2025/)
-- Spring: TBD
+- Spring: March 11, 2025 (Tentative)
 - Summer: TBD
 - Fall: TBD
 
