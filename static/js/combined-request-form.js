@@ -575,13 +575,20 @@
         const payload = buildPayloadPreview(); // Build payload for submission
         const errors = validatePayload(payload); // Validate the payload
     
+        // Verify payload before submission
+        console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
+    
         if (errors.length > 0) {
             displayValidationErrors(errors);
             return; // Stop submission on validation errors
         }
     
         try {
-            await submitForm(formData, payload);
+            const responseData = await submitForm(formData, payload);
+    
+            // Log API response after submission
+            console.log("API Response:", responseData);
+    
         } catch (error) {
             console.error("Error during form submission:", error);
             showErrorMessage("An error occurred while submitting the form. Please try again.");
@@ -616,119 +623,51 @@
     
         const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
     
-        const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-            method: method,
-            headers: {
-                ...API_CONFIG.headers, // Use existing headers
-            },
-            body: JSON.stringify(payload),
-            credentials: 'include',
-        });
+        try {
+            const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+                method: method,
+                headers: {
+                    ...API_CONFIG.headers, // Use existing headers
+                },
+                body: JSON.stringify(payload),
+                // credentials: 'include',
+                // Remove credentials to test
+            });
     
-        if (!response.ok) {
-            const errorMessage = await response.text();
-            console.error(`Submission failed (${method}):`, errorMessage);
-            showErrorMessage("Submission failed. Please try again.");
-            return;
-        }
-    
-        const responseData = await response.json();
-        console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-    
-        // Email the user with the submitted information
-        sendUserEmail(userEmail, payload);
-    
-        // Clear the form fields
-        clearFormFields();
-    
-        // Display success message and scroll to the top
-        showSuccessMessage("Your request has been submitted successfully!");
-    }
+            // Log raw API response
+            console.log(`Raw API Response (${method}):`, response);
 
-    // function setupEventHandlers() {
-    //     // Use event delegation for dynamically added inputs
-    //     $(document).on('change', 'input[name="request-type"]', toggleRequestFields);
-    //     $(document).on('change', 'input[name="new-or-renewal"]', toggleAllocationFields);
-    //     $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
-    //     $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
+            // Log the response text to check for error details
+            const responseText = await response.text(); 
+            console.log(`API Response Text: ${responseText}`);
     
-    //     // General input, select, and textarea validation and updates
-    //     $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function () {
-    //         // validateField($(this)); // Validate individual fields
-    //         // updateFormValidation(); // Validate the overall form
-    //         updatePayloadPreview(); // Update the real-time payload preview
-    //         updateBillingVisibility(); // Update billing visibility
-    //     });
+            if (!response.ok) {
+                const errorMessage = await response.text();
+                console.error(`Submission failed (${method}):`, errorMessage);
+                showErrorMessage("Submission failed. Please try again.");
+                return;
+            }
     
-    //     // Submit the form with custom logic
-    //     $(document).on('submit', '#combined-request-form', async function (event) {
-    //         event.preventDefault(); // Prevent default form submission
+            const responseData = await response.json();
     
-    //         console.log("Form submission triggered.");
+            // Log parsed API response data
+            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
     
-    //         const formData = collectFormData(); // Collect data from the form
-    //         const payload = buildPayloadPreview(); // Build payload for submission
-    //         const errors = validatePayload(payload); // Validate the payload
+            // Email the user with the submitted information
+            sendUserEmail(userEmail, payload);
     
-    //         if (errors.length > 0) {
-    //             // Show errors only during submission
-    //             const errorDiv = $('<div>')
-    //                 .addClass('alert alert-danger')
-    //                 .html(`
-    //                     <strong>Validation Errors:</strong>
-    //                     <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
-    //                 `);
-    //             $('#combined-request-form').prepend(errorDiv);
-    //             setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
-    //             console.error("Validation errors:", errors);
-    //             return; // Stop submission on validation errors
-    //         }
+            // Clear the form fields
+            clearFormFields();
     
-    //         // Proceed with the form submission logic
-    //         try {
-    //             const userId = getUserId();
-    //             const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-    //             console.log("Submitting payload for user:", userId);
-    //             console.log("User email:", userEmail);
+            // Display success message and scroll to the top
+            showSuccessMessage("Your request has been submitted successfully!");
     
-    //             const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
-    
-    //             const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-    //                 method: method,
-    //                 headers: {
-    //                     ...API_CONFIG.headers, // Use existing headers
-    //                 },
-    //                 body: JSON.stringify(payload),
-    //                 credentials: 'include',
-    //             });
-    
-    //             if (!response.ok) {
-    //                 const errorMessage = await response.text();
-    //                 console.error(`Submission failed (${method}):`, errorMessage);
-    //                 showErrorMessage("Submission failed. Please try again.");
-    //                 return;
-    //             }
-    
-    //             const responseData = await response.json();
-    //             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-    
-    //             // Email the user with the submitted information
-    //             sendUserEmail(userEmail, payload);
-    
-    //             // Clear the form fields
-    //             clearFormFields();
-    
-    //             // Display success message and scroll to the top
-    //             showSuccessMessage("Your request has been submitted successfully!");
-    
-    //         } catch (error) {
-    //             console.error("Error during form submission:", error);
-    //             showErrorMessage("An error occurred while submitting the form. Please try again.");
-    //         }
-    //     });
-    
-    //     console.log('Event handlers successfully set up.');
-    // }
+            return responseData; // Return response for logging in `handleFormSubmit`
+        } catch (error) {
+            console.error("Error during form submission:", error);
+            showErrorMessage("An error occurred while submitting the form. Please try again.");
+        }
+    }
 
     // ===================================
     // Capacity and Visibility
@@ -815,15 +754,33 @@
         console.log("Payload preview updater initialized.");
     }
 
+    // Store previous payload and errors to reduce redundant logs
+    let previousPayloadString = "";
+    let previousErrorsString = "";
+
     function updatePayloadPreview() {
         const payload = buildPayloadPreview();
         const errors = validatePayload(payload);
-        console.log("Payload Preview:", JSON.stringify(payload, null, 2));
 
-        if (errors.length > 0) {
-            console.error("Payload Errors:", errors);
-        } else {
-            console.log("Payload Valid.");
+        // Convert to JSON strings for comparison
+        const payloadString = JSON.stringify(payload, null, 2);
+        const errorsString = JSON.stringify(errors, null, 2);
+
+        // Only log if the payload has changed
+        if (payloadString !== previousPayloadString) {
+            console.clear(); // Clears the console to reduce clutter
+            console.log("✅ Updated Payload Preview:", payload);
+            previousPayloadString = payloadString;
+        }
+
+        // Only log errors if they have changed
+        if (errorsString !== previousErrorsString) {
+            if (errors.length > 0) {
+                console.warn("Validation Errors:", errors);
+            } else {
+                console.log("Payload is valid.");
+            }
+            previousErrorsString = errorsString;
         }
     }
 
@@ -831,65 +788,133 @@
         const formData = collectFormData();
         const userId = getUserId();
     
-        const payload = [{
-            is_user_resource_request_elligible: true,
-            user_groups: formData.group ? [formData.group] : [],
-            user_resources: []
-        }];
-    
-        if (formData.requestType === 'service-unit') {
-            const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
-            const tierData = apiMetadata.allocationTiers?.[formData.allocationTier] || {};
-            const requestCount = formData.requestCount || tierData.defaultRequestCount || "0";
-    
-            const userResource = {
-                data_agreement_signed: $('#data-agreement').is(':checked'),
-                delegates_uid: "",
-                group_id: "",
-                group_name: formData.group || "Unknown Group",
-                pi_uid: userId,
-                project_desc: $('#project-description').val()?.trim() || "",
-                project_name: formData.projectName?.trim() || "",
-                resources: {
-                    hpc_service_units: {
-                        [key]: {
-                            tier: getTierEnum(formData.allocationTier),
-                            request_count: requestCount,
-                            request_date: new Date().toISOString(),
-                            request_status: "pending",
-                            update_date: new Date().toISOString(),
-                            billing_details: getBillingDetails()
-                        }
-                    },
-                    storage: {}
+        // Convert group_name and user_groups to lowercase
+        const groupName = formData.group ? formData.group.toLowerCase() : "";
+        
+        // The API expects an array at the root level
+        const payload = [
+            {
+                "group_name": groupName,  // Ensure lowercase group name
+                "user_groups": [groupName],  // Ensure user_groups is lowercase
+                "project_name": formData.projectName?.trim() || "",
+                "project_desc": $('#project-description').val()?.trim() || "",
+                "data_agreement_signed": $('#data-agreement').is(':checked'),
+                "pi_uid": userId,
+                "resources": {
+                    "hpc_service_units": {},
+                    "storage": {}
                 }
+            }
+        ];
+    
+        // If the request type is "service-unit", populate hpc_service_units
+        if (formData.requestType === 'service-unit') {
+            const key = `${groupName}-ssz_standard`;  // Dynamically generate the key
+            payload[0].resources.hpc_service_units[key] = {
+                "tier": getTierEnum(formData.allocationTier),
+                "request_count": formData.requestCount || "1000",
+                "request_date": new Date().toISOString(),
+                "request_status": "pending",
+                "update_date": new Date().toISOString(),
+                "billing_details": getBillingDetails()  // Fetch billing details dynamically
             };
-            payload[0].user_resources.push(userResource);
         }
     
-        console.log("Built payload:", JSON.stringify(payload, null, 2));
+        // If the request type is "storage", populate storage resources
+        if (formData.requestType === 'storage') {
+            const storageKey = `${groupName}-ssz_standard`;
+            payload[0].resources.storage[storageKey] = {
+                "tier": "ssz_standard",
+                "request_size": formData.capacity || "1000",
+                "billing_details": getBillingDetails()  // Attach billing details dynamically
+            };
+        }
+    
+        console.log("✅ Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
     }
 
     function validatePayload(payload) {
-    const errors = [];
-
-    // Validate user resources
-    const userResources = payload[0]?.user_resources || [];
-    userResources.forEach((resource, index) => {
-        if (!resource.group_name || resource.group_name === "Unknown Group") {
-            errors.push(`Resource ${index + 1}: Group name is required.`);
+        const errors = [];
+    
+        // Ensure payload is an array
+        if (!Array.isArray(payload) || payload.length === 0) {
+            errors.push("Payload must be a non-empty array.");
+            return errors;
         }
-        if (!resource.project_name) {
-            errors.push(`Resource ${index + 1}: Project name is required.`);
-        }
-        if (!resource.data_agreement_signed) {
-            errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
-        }
-    });
-
-    return errors; // Return errors for use during submission
-}
+    
+        // Validate each user resource in the array
+        payload.forEach((resource, index) => {
+            const resourceLabel = `Resource ${index + 1}`;
+    
+            // Ensure group_name exists and is lowercase
+            if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
+                errors.push(`${resourceLabel}: Group name is required and must be a lowercase string.`);
+            } else if (resource.group_name !== resource.group_name.toLowerCase()) {
+                errors.push(`${resourceLabel}: Group name must be lowercase.`);
+            }
+    
+            // Ensure user_groups is an array containing the lowercase group name
+            if (!Array.isArray(resource.user_groups) || resource.user_groups.length === 0) {
+                errors.push(`${resourceLabel}: User groups must be a non-empty array.`);
+            } else if (resource.user_groups.some(g => g !== g.toLowerCase())) {
+                errors.push(`${resourceLabel}: All user group names must be lowercase.`);
+            }
+    
+            // Ensure project_name exists
+            if (!resource.project_name || resource.project_name.trim() === "") {
+                errors.push(`${resourceLabel}: Project name is required.`);
+            }
+    
+            // Ensure PI UID is present
+            if (!resource.pi_uid || resource.pi_uid.trim() === "") {
+                errors.push(`${resourceLabel}: PI UID (user ID) is required.`);
+            }
+    
+            // Ensure data agreement is signed
+            if (typeof resource.data_agreement_signed !== "boolean") {
+                errors.push(`${resourceLabel}: Data agreement signed field must be true or false.`);
+            }
+    
+            // Ensure "resources" exist
+            if (!resource.resources || typeof resource.resources !== "object") {
+                errors.push(`${resourceLabel}: Resources section is missing.`);
+                return;
+            }
+    
+            // Validate HPC service units
+            if (resource.resources.hpc_service_units && Object.keys(resource.resources.hpc_service_units).length > 0) {
+                Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
+                    if (!unit.request_count || isNaN(parseInt(unit.request_count))) {
+                        errors.push(`${resourceLabel} - Service Unit ${key}: Request count must be a valid number.`);
+                    }
+                    if (!unit.tier || unit.tier.trim() === "") {
+                        errors.push(`${resourceLabel} - Service Unit ${key}: Tier is required.`);
+                    }
+                    if (!unit.billing_details || !unit.billing_details.fdm_billing_info || unit.billing_details.fdm_billing_info.length === 0) {
+                        errors.push(`${resourceLabel} - Service Unit ${key}: Billing details are required.`);
+                    }
+                });
+            }
+    
+            // Validate Storage Requests
+            if (resource.resources.storage && Object.keys(resource.resources.storage).length > 0) {
+                Object.entries(resource.resources.storage).forEach(([key, storage]) => {
+                    if (!storage.request_size || isNaN(parseInt(storage.request_size))) {
+                        errors.push(`${resourceLabel} - Storage ${key}: Request size must be a valid number.`);
+                    }
+                    if (!storage.tier || storage.tier.trim() === "") {
+                        errors.push(`${resourceLabel} - Storage ${key}: Tier is required.`);
+                    }
+                    if (!storage.billing_details || !storage.billing_details.fdm_billing_info || storage.billing_details.fdm_billing_info.length === 0) {
+                        errors.push(`${resourceLabel} - Storage ${key}: Billing details are required.`);
+                    }
+                });
+            }
+        });
+    
+        return errors; // Return errors for form validation
+    }
 
     // ===================================
     // Fetch and Populate Groups
