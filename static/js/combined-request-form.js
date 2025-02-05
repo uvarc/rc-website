@@ -575,13 +575,20 @@
         const payload = buildPayloadPreview(); // Build payload for submission
         const errors = validatePayload(payload); // Validate the payload
     
+        // Verify payload before submission
+        console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
+    
         if (errors.length > 0) {
             displayValidationErrors(errors);
             return; // Stop submission on validation errors
         }
     
         try {
-            await submitForm(formData, payload);
+            const responseData = await submitForm(formData, payload);
+    
+            // Log API response after submission
+            console.log("API Response:", responseData);
+    
         } catch (error) {
             console.error("Error during form submission:", error);
             showErrorMessage("An error occurred while submitting the form. Please try again.");
@@ -616,119 +623,46 @@
     
         const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
     
-        const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-            method: method,
-            headers: {
-                ...API_CONFIG.headers, // Use existing headers
-            },
-            body: JSON.stringify(payload),
-            credentials: 'include',
-        });
+        try {
+            const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+                method: method,
+                headers: {
+                    ...API_CONFIG.headers, // Use existing headers
+                },
+                body: JSON.stringify(payload),
+                credentials: 'include',
+            });
     
-        if (!response.ok) {
-            const errorMessage = await response.text();
-            console.error(`Submission failed (${method}):`, errorMessage);
-            showErrorMessage("Submission failed. Please try again.");
-            return;
+            // Log raw API response
+            console.log(`Raw API Response (${method}):`, response);
+    
+            if (!response.ok) {
+                const errorMessage = await response.text();
+                console.error(`Submission failed (${method}):`, errorMessage);
+                showErrorMessage("Submission failed. Please try again.");
+                return;
+            }
+    
+            const responseData = await response.json();
+    
+            // Log parsed API response data
+            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+    
+            // Email the user with the submitted information
+            sendUserEmail(userEmail, payload);
+    
+            // Clear the form fields
+            clearFormFields();
+    
+            // Display success message and scroll to the top
+            showSuccessMessage("Your request has been submitted successfully!");
+    
+            return responseData; // Return response for logging in `handleFormSubmit`
+        } catch (error) {
+            console.error("Error during form submission:", error);
+            showErrorMessage("An error occurred while submitting the form. Please try again.");
         }
-    
-        const responseData = await response.json();
-        console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-    
-        // Email the user with the submitted information
-        sendUserEmail(userEmail, payload);
-    
-        // Clear the form fields
-        clearFormFields();
-    
-        // Display success message and scroll to the top
-        showSuccessMessage("Your request has been submitted successfully!");
     }
-
-    // function setupEventHandlers() {
-    //     // Use event delegation for dynamically added inputs
-    //     $(document).on('change', 'input[name="request-type"]', toggleRequestFields);
-    //     $(document).on('change', 'input[name="new-or-renewal"]', toggleAllocationFields);
-    //     $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
-    //     $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
-    
-    //     // General input, select, and textarea validation and updates
-    //     $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function () {
-    //         // validateField($(this)); // Validate individual fields
-    //         // updateFormValidation(); // Validate the overall form
-    //         updatePayloadPreview(); // Update the real-time payload preview
-    //         updateBillingVisibility(); // Update billing visibility
-    //     });
-    
-    //     // Submit the form with custom logic
-    //     $(document).on('submit', '#combined-request-form', async function (event) {
-    //         event.preventDefault(); // Prevent default form submission
-    
-    //         console.log("Form submission triggered.");
-    
-    //         const formData = collectFormData(); // Collect data from the form
-    //         const payload = buildPayloadPreview(); // Build payload for submission
-    //         const errors = validatePayload(payload); // Validate the payload
-    
-    //         if (errors.length > 0) {
-    //             // Show errors only during submission
-    //             const errorDiv = $('<div>')
-    //                 .addClass('alert alert-danger')
-    //                 .html(`
-    //                     <strong>Validation Errors:</strong>
-    //                     <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
-    //                 `);
-    //             $('#combined-request-form').prepend(errorDiv);
-    //             setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
-    //             console.error("Validation errors:", errors);
-    //             return; // Stop submission on validation errors
-    //         }
-    
-    //         // Proceed with the form submission logic
-    //         try {
-    //             const userId = getUserId();
-    //             const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-    //             console.log("Submitting payload for user:", userId);
-    //             console.log("User email:", userEmail);
-    
-    //             const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
-    
-    //             const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-    //                 method: method,
-    //                 headers: {
-    //                     ...API_CONFIG.headers, // Use existing headers
-    //                 },
-    //                 body: JSON.stringify(payload),
-    //                 credentials: 'include',
-    //             });
-    
-    //             if (!response.ok) {
-    //                 const errorMessage = await response.text();
-    //                 console.error(`Submission failed (${method}):`, errorMessage);
-    //                 showErrorMessage("Submission failed. Please try again.");
-    //                 return;
-    //             }
-    
-    //             const responseData = await response.json();
-    //             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-    
-    //             // Email the user with the submitted information
-    //             sendUserEmail(userEmail, payload);
-    
-    //             // Clear the form fields
-    //             clearFormFields();
-    
-    //             // Display success message and scroll to the top
-    //             showSuccessMessage("Your request has been submitted successfully!");
-    
-    //         } catch (error) {
-    //             console.error("Error during form submission:", error);
-    //             showErrorMessage("An error occurred while submitting the form. Please try again.");
-    //         }
-    //     });
-    
-    //     console.log('Event handlers successfully set up.');
-    // }
 
     // ===================================
     // Capacity and Visibility
@@ -827,15 +761,59 @@
         }
     }
 
+    // function buildPayloadPreview() {
+    //     const formData = collectFormData();
+    //     const userId = getUserId();
+    
+    //     const payload = [{
+    //         is_user_resource_request_elligible: true,
+    //         user_groups: formData.group ? [formData.group] : [],
+    //         user_resources: []
+    //     }];
+    
+    //     if (formData.requestType === 'service-unit') {
+    //         const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
+    //         const tierData = apiMetadata.allocationTiers?.[formData.allocationTier] || {};
+    //         const requestCount = formData.requestCount || tierData.defaultRequestCount || "0";
+    
+    //         const userResource = {
+    //             data_agreement_signed: $('#data-agreement').is(':checked'),
+    //             delegates_uid: "",
+    //             group_id: "",
+    //             group_name: formData.group || "Unknown Group",
+    //             pi_uid: userId,
+    //             project_desc: $('#project-description').val()?.trim() || "",
+    //             project_name: formData.projectName?.trim() || "",
+    //             resources: {
+    //                 hpc_service_units: {
+    //                     [key]: {
+    //                         tier: getTierEnum(formData.allocationTier),
+    //                         request_count: requestCount,
+    //                         request_date: new Date().toISOString(),
+    //                         request_status: "pending",
+    //                         update_date: new Date().toISOString(),
+    //                         billing_details: getBillingDetails()
+    //                     }
+    //                 },
+    //                 storage: {}
+    //             }
+    //         };
+    //         payload[0].user_resources.push(userResource);
+    //     }
+    
+    //     console.log("Built payload:", JSON.stringify(payload, null, 2));
+    //     return payload;
+    // }
+
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
     
-        const payload = [{
+        const payload = {
             is_user_resource_request_elligible: true,
             user_groups: formData.group ? [formData.group] : [],
             user_resources: []
-        }];
+        };
     
         if (formData.requestType === 'service-unit') {
             const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
@@ -845,7 +823,7 @@
             const userResource = {
                 data_agreement_signed: $('#data-agreement').is(':checked'),
                 delegates_uid: "",
-                group_id: "",
+                group_id: "", // Ensure this is populated if required
                 group_name: formData.group || "Unknown Group",
                 pi_uid: userId,
                 project_desc: $('#project-description').val()?.trim() || "",
@@ -857,14 +835,19 @@
                             request_count: requestCount,
                             request_date: new Date().toISOString(),
                             request_status: "pending",
-                            update_date: new Date().toISOString(),
-                            billing_details: getBillingDetails()
+                            update_date: new Date().toISOString()
                         }
                     },
                     storage: {}
                 }
             };
-            payload[0].user_resources.push(userResource);
+    
+            // Attach billing details if applicable
+            if ($('#billing-information').is(':visible')) {
+                userResource.resources.billing_details = getBillingDetails();
+            }
+    
+            payload.user_resources.push(userResource);
         }
     
         console.log("Built payload:", JSON.stringify(payload, null, 2));
