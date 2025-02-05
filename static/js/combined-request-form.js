@@ -630,11 +630,16 @@
                     ...API_CONFIG.headers, // Use existing headers
                 },
                 body: JSON.stringify(payload),
-                credentials: 'include',
+                // credentials: 'include',
+                // Remove credentials to test
             });
     
             // Log raw API response
             console.log(`Raw API Response (${method}):`, response);
+
+            // Log the response text to check for error details
+            const responseText = await response.text(); 
+            console.log(`API Response Text: ${responseText}`);
     
             if (!response.ok) {
                 const errorMessage = await response.text();
@@ -809,70 +814,112 @@
         const formData = collectFormData();
         const userId = getUserId();
     
-        const payload = {
-            is_user_resource_request_elligible: true,
-            user_groups: formData.group ? [formData.group] : [],
-            user_resources: []
-        };
-    
-        if (formData.requestType === 'service-unit') {
-            const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
-            const tierData = apiMetadata.allocationTiers?.[formData.allocationTier] || {};
-            const requestCount = formData.requestCount || tierData.defaultRequestCount || "0";
-    
-            const userResource = {
-                data_agreement_signed: $('#data-agreement').is(':checked'),
-                delegates_uid: "",
-                group_id: "", // Ensure this is populated if required
-                group_name: formData.group || "Unknown Group",
-                pi_uid: userId,
-                project_desc: $('#project-description').val()?.trim() || "",
-                project_name: formData.projectName?.trim() || "",
-                resources: {
-                    hpc_service_units: {
-                        [key]: {
-                            tier: getTierEnum(formData.allocationTier),
-                            request_count: requestCount,
-                            request_date: new Date().toISOString(),
-                            request_status: "pending",
-                            update_date: new Date().toISOString()
-                        }
-                    },
-                    storage: {}
+        // Ensure the payload is an array at the root level, as expected by the API
+        const payload = [
+            {
+                "group_name": formData.group || "",  // Dynamically set group name
+                "group_id": formData.group || "",   // Dynamically set group ID
+                "project_name": formData.projectName?.trim() || "",
+                "project_desc": $('#project-description').val()?.trim() || "",
+                "data_agreement_signed": $('#data-agreement').is(':checked'),
+                "pi_uid": userId,  // Ensure this dynamically captures the correct user ID
+                "resources": {
+                    "hpc_service_units": {},
+                    "storage": {}
                 }
-            };
-    
-            // Attach billing details if applicable
-            if ($('#billing-information').is(':visible')) {
-                userResource.resources.hpc_service_units[key].billing_details = getBillingDetails();
             }
+        ];
     
-            payload.user_resources.push(userResource);
+        // If the request type is "service-unit", populate hpc_service_units
+        if (formData.requestType === 'service-unit') {
+            const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;  // Dynamically generate the key
+            payload[0].resources.hpc_service_units[key] = {
+                "tier": getTierEnum(formData.allocationTier),
+                "request_count": formData.requestCount || "0",  // Ensure request count is captured
+                "request_date": new Date().toISOString(),
+                "request_status": "pending",
+                "update_date": new Date().toISOString(),
+                "billing_details": getBillingDetails()  // Fetch billing details dynamically
+            };
         }
     
-        console.log("Built payload:", JSON.stringify(payload, null, 2));
+        // If the request type is "storage", populate storage resources
+        if (formData.requestType === 'storage') {
+            const storageKey = `${formData.group}-${getStorageTierEnum(formData.storageTier)}`;
+            payload[0].resources.storage[storageKey] = {
+                "tier": getStorageTierEnum(formData.storageTier),
+                "request_size": formData.capacity || "0",  // Ensure storage size is dynamically set
+                "billing_details": getBillingDetails()  // Attach billing details dynamically
+            };
+        }
+    
+        console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
     }
 
     function validatePayload(payload) {
-    const errors = [];
-
-    // Validate user resources
-    const userResources = payload[0]?.user_resources || [];
-    userResources.forEach((resource, index) => {
-        if (!resource.group_name || resource.group_name === "Unknown Group") {
-            errors.push(`Resource ${index + 1}: Group name is required.`);
+        const errors = [];
+    
+        // Ensure payload is an array
+        if (!Array.isArray(payload) || payload.length === 0) {
+            errors.push("Payload must be a non-empty array.");
+            return errors;
         }
-        if (!resource.project_name) {
-            errors.push(`Resource ${index + 1}: Project name is required.`);
-        }
-        if (!resource.data_agreement_signed) {
-            errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
-        }
-    });
-
-    return errors; // Return errors for use during submission
-}
+    
+        // Validate each user resource
+        payload.forEach((resource, index) => {
+            if (!resource.group_name || resource.group_name.trim() === "") {
+                errors.push(`Resource ${index + 1}: Group name is required.`);
+            }
+            if (!resource.project_name || resource.project_name.trim() === "") {
+                errors.push(`Resource ${index + 1}: Project name is required.`);
+            }
+            if (!resource.pi_uid || resource.pi_uid.trim() === "") {
+                errors.push(`Resource ${index + 1}: PI UID (user ID) is required.`);
+            }
+            if (!resource.data_agreement_signed) {
+                errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
+            }
+    
+            // Ensure "resources" exist
+            if (!resource.resources || typeof resource.resources !== "object") {
+                errors.push(`Resource ${index + 1}: Resources section is missing.`);
+                return;
+            }
+    
+            // Validate HPC service units
+            if (resource.resources.hpc_service_units && Object.keys(resource.resources.hpc_service_units).length > 0) {
+                Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
+                    if (!unit.request_count || isNaN(parseInt(unit.request_count))) {
+                        errors.push(`Service Unit ${key}: Request count must be a valid number.`);
+                    }
+                    if (!unit.tier || unit.tier.trim() === "") {
+                        errors.push(`Service Unit ${key}: Tier is required.`);
+                    }
+                    if (!unit.billing_details || !unit.billing_details.fdm_billing_info || unit.billing_details.fdm_billing_info.length === 0) {
+                        errors.push(`Service Unit ${key}: Billing details are required.`);
+                    }
+                });
+            }
+    
+            // Validate Storage Requests
+            if (resource.resources.storage && Object.keys(resource.resources.storage).length > 0) {
+                Object.entries(resource.resources.storage).forEach(([key, storage]) => {
+                    if (!storage.request_size || isNaN(parseInt(storage.request_size))) {
+                        errors.push(`Storage ${key}: Request size must be a valid number.`);
+                    }
+                    if (!storage.tier || storage.tier.trim() === "") {
+                        errors.push(`Storage ${key}: Tier is required.`);
+                    }
+                    if (!storage.billing_details || !storage.billing_details.fdm_billing_info || storage.billing_details.fdm_billing_info.length === 0) {
+                        errors.push(`Storage ${key}: Billing details are required.`);
+                    }
+                });
+            }
+        });
+    
+        return errors; // Return errors for use during submission
+    }
 
     // ===================================
     // Fetch and Populate Groups
