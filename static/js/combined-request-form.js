@@ -844,7 +844,7 @@
     
             // Attach billing details if applicable
             if ($('#billing-information').is(':visible')) {
-                userResource.resources.billing_details = getBillingDetails();
+                userResource.resources.hpc_service_units[key].billing_details = getBillingDetails();
             }
     
             payload.user_resources.push(userResource);
