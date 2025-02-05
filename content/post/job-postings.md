@@ -11,9 +11,9 @@ categories = ["feature"]
 
 **Data Analytics Center Positions**
 
-* Research Scientist (AI Specialist):   https://www.jobs.virginia.gov/jobs/research-scientist-AI-specialist-charlottesville-virginia-united-states
+* Research Scientist (AI Specialist):   https://jobs.virginia.edu/us/en/job/R0068331/Research-Scientist-AI-specialist
 
-* Research Scientisit (Image Processing Specialist):  https://www.jobs.virginia.gov/jobs/research-scientist-image-processing-specialist-charlottesville-virginia-united-states
+* Research Scientisit (Image Processing Specialist): https://jobs.virginia.edu/us/en/job/R0068333/Research-Scientist-Image-Processing-Specialist 
 
 
 
