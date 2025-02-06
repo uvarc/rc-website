@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2023-12-27T10:25:10-05:00"
+date = "2025-02-03T10:25:10-05:00"
 title = "Adam Eubanks"
 job_title = "student"
 lastname = "Eubanks"
@@ -15,7 +15,7 @@ subjects = [
   "Open OnDemand",
   "Docker"
 ]
-active = true
+active = false
 +++
 
 Adam Eubanks is an undergraduate student at Brigham Young University studying Applied Math. He specializes in Open OnDemand app development and machine learning with HPC, as well as containerization.
