@@ -795,16 +795,19 @@
         const userGroups = userData.user_groups || [];
         const existingResources = (userData.user_resources || []).map(res => res.group_name.toLowerCase());
     
+        // ✅ Define selectedGroup first before using it!
+        const selectedGroup = formData.group ? formData.group.trim() : "";
+    
         // Ensure the selected group is valid
         if (!userGroups.includes(selectedGroup)) {
-            console.error(`Invalid group selection: ${selectedGroup} is not in user_groups.`);
+            console.error(`❌ Invalid group selection: ${selectedGroup} is not in user_groups.`);
             showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
             return null;
         }
     
         // Ensure the selected group does NOT already exist in user_resources (for new SU requests)
         if (existingResources.includes(selectedGroup.toLowerCase())) {
-            console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
+            console.error(`❌ Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
             showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
             return null;
         }
@@ -820,7 +823,7 @@
                     {
                         "data_agreement_signed": $('#data-agreement').is(':checked'),
                         "delegates_uid": "",
-                        "group_id": "",  // If this is required, it should be dynamically assigned
+                        "group_id": "",
                         "group_name": selectedGroup, // Ensure correct group name from user selection
                         "pi_uid": userId,
                         "project_desc": $('#project-description').val()?.trim() || "",
@@ -835,7 +838,7 @@
                                     "update_date": new Date().toISOString()
                                 }
                             },
-                            "storage": {} // Always included, as per the successful payload
+                            "storage": {}
                         }
                     }
                 ]
