@@ -784,55 +784,69 @@
         }
     }
 
+    // Build Payload and Preview
+
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
     
-        // Convert group_name and user_groups to lowercase
-        const groupName = formData.group ? formData.group.toLowerCase() : "";
-        
-        // The API expects an array at the root level
+        // Get user data from the last API call (ensure it's loaded)
+        const userData = consoleData[0] || {};
+        const userGroups = userData.user_groups || [];
+        const existingResources = (userData.user_resources || []).map(res => res.group_name.toLowerCase());
+    
+        // Ensure the selected group is valid
+        if (!userGroups.includes(selectedGroup)) {
+            console.error(`Invalid group selection: ${selectedGroup} is not in user_groups.`);
+            showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
+            return null;
+        }
+    
+        // Ensure the selected group does NOT already exist in user_resources (for new SU requests)
+        if (existingResources.includes(selectedGroup.toLowerCase())) {
+            console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
+            showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
+            return null;
+        }
+    
+        // Get the correct tier (SSZ Standard) and build the key dynamically
+        const tier = "ssz_standard";
+        const hpcKey = `${selectedGroup}-ssz_standard`;
+    
+        // Build the exact payload structure
         const payload = [
             {
-                "group_name": groupName,  // Ensure lowercase group name
-                "user_groups": [groupName],  // Ensure user_groups is lowercase
-                "project_name": formData.projectName?.trim() || "",
-                "project_desc": $('#project-description').val()?.trim() || "",
-                "data_agreement_signed": $('#data-agreement').is(':checked'),
-                "pi_uid": userId,
-                "resources": {
-                    "hpc_service_units": {},
-                    "storage": {}
-                }
+                "user_resources": [
+                    {
+                        "data_agreement_signed": $('#data-agreement').is(':checked'),
+                        "delegates_uid": "",
+                        "group_id": "",  // If this is required, it should be dynamically assigned
+                        "group_name": selectedGroup, // Ensure correct group name from user selection
+                        "pi_uid": userId,
+                        "project_desc": $('#project-description').val()?.trim() || "",
+                        "project_name": formData.projectName?.trim() || "",
+                        "resources": {
+                            "hpc_service_units": {
+                                [hpcKey]: {
+                                    "request_count": formData.requestCount || "1000",
+                                    "request_date": new Date().toISOString(),
+                                    "request_status": "pending",
+                                    "tier": tier,
+                                    "update_date": new Date().toISOString()
+                                }
+                            },
+                            "storage": {} // Always included, as per the successful payload
+                        }
+                    }
+                ]
             }
         ];
-    
-        // If the request type is "service-unit", populate hpc_service_units
-        if (formData.requestType === 'service-unit') {
-            const key = `${groupName}-ssz_standard`;  // Dynamically generate the key
-            payload[0].resources.hpc_service_units[key] = {
-                "tier": getTierEnum(formData.allocationTier),
-                "request_count": formData.requestCount || "1000",
-                "request_date": new Date().toISOString(),
-                "request_status": "pending",
-                "update_date": new Date().toISOString(),
-                "billing_details": getBillingDetails()  // Fetch billing details dynamically
-            };
-        }
-    
-        // If the request type is "storage", populate storage resources
-        if (formData.requestType === 'storage') {
-            const storageKey = `${groupName}-ssz_standard`;
-            payload[0].resources.storage[storageKey] = {
-                "tier": "ssz_standard",
-                "request_size": formData.capacity || "1000",
-                "billing_details": getBillingDetails()  // Attach billing details dynamically
-            };
-        }
     
         console.log("✅ Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
     }
+
+    // Validate Payload
 
     function validatePayload(payload) {
         const errors = [];
