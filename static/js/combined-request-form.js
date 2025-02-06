@@ -795,19 +795,19 @@
         const userGroups = userData.user_groups || [];
         const existingResources = (userData.user_resources || []).map(res => res.group_name.toLowerCase());
     
-        // ✅ Define selectedGroup first before using it!
+        // Define selectedGroup first before using it!
         const selectedGroup = formData.group ? formData.group.trim() : "";
     
         // Ensure the selected group is valid
         if (!userGroups.includes(selectedGroup)) {
-            console.error(`❌ Invalid group selection: ${selectedGroup} is not in user_groups.`);
+            console.error(`Invalid group selection: ${selectedGroup} is not in user_groups.`);
             showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
             return null;
         }
     
         // Ensure the selected group does NOT already exist in user_resources (for new SU requests)
         if (existingResources.includes(selectedGroup.toLowerCase())) {
-            console.error(`❌ Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
+            console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
             showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
             return null;
         }
@@ -854,79 +854,81 @@
     function validatePayload(payload) {
         const errors = [];
     
-        // Ensure payload is an array
-        if (!Array.isArray(payload) || payload.length === 0) {
-            errors.push("Payload must be a non-empty array.");
+        // ✅ Ensure payload is an array with exactly one object
+        if (!Array.isArray(payload) || payload.length !== 1) {
+            errors.push("Payload must be an array containing a single object.");
             return errors;
         }
     
-        // Validate each user resource in the array
-        payload.forEach((resource, index) => {
-            const resourceLabel = `Resource ${index + 1}`;
+        // ✅ Validate the first and only object inside the array
+        const resourceWrapper = payload[0];
     
-            // Ensure group_name exists and is lowercase
-            if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
-                errors.push(`${resourceLabel}: Group name is required and must be a lowercase string.`);
-            } else if (resource.group_name !== resource.group_name.toLowerCase()) {
-                errors.push(`${resourceLabel}: Group name must be lowercase.`);
-            }
+        if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
+            errors.push("The 'user_resources' array is required and cannot be empty.");
+            return errors;
+        }
     
-            // Ensure user_groups is an array containing the lowercase group name
-            if (!Array.isArray(resource.user_groups) || resource.user_groups.length === 0) {
-                errors.push(`${resourceLabel}: User groups must be a non-empty array.`);
-            } else if (resource.user_groups.some(g => g !== g.toLowerCase())) {
-                errors.push(`${resourceLabel}: All user group names must be lowercase.`);
-            }
+        // ✅ Validate each user resource inside "user_resources"
+        resourceWrapper.user_resources.forEach((resource, resIndex) => {
+            const resourceLabel = `Resource ${resIndex + 1}`;
     
-            // Ensure project_name exists
-            if (!resource.project_name || resource.project_name.trim() === "") {
-                errors.push(`${resourceLabel}: Project name is required.`);
-            }
-    
-            // Ensure PI UID is present
-            if (!resource.pi_uid || resource.pi_uid.trim() === "") {
-                errors.push(`${resourceLabel}: PI UID (user ID) is required.`);
-            }
-    
-            // Ensure data agreement is signed
+            // ✅ Ensure "data_agreement_signed" is a boolean
             if (typeof resource.data_agreement_signed !== "boolean") {
-                errors.push(`${resourceLabel}: Data agreement signed field must be true or false.`);
+                errors.push(`${resourceLabel}: 'data_agreement_signed' must be true or false.`);
             }
     
-            // Ensure "resources" exist
+            // ✅ "delegates_uid" and "group_id" are optional, so we do NOT validate them
+    
+            // ✅ Ensure "group_name" exists (API allows uppercase)
+            if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
+                errors.push(`${resourceLabel}: 'group_name' is required.`);
+            }
+    
+            // ✅ Ensure "pi_uid" exists
+            if (!resource.pi_uid || typeof resource.pi_uid !== "string" || resource.pi_uid.trim() === "") {
+                errors.push(`${resourceLabel}: 'pi_uid' (user ID) is required.`);
+            }
+    
+            // ✅ Ensure "project_desc" exists (API allows empty string)
+            if (typeof resource.project_desc !== "string") {
+                errors.push(`${resourceLabel}: 'project_desc' must be a string (can be empty).`);
+            }
+    
+            // ✅ Ensure "project_name" exists (API allows empty string)
+            if (typeof resource.project_name !== "string" || resource.project_name.trim() === "") {
+                errors.push(`${resourceLabel}: 'project_name' is required.`);
+            }
+    
+            // ✅ Ensure "resources" exist (should be an object)
             if (!resource.resources || typeof resource.resources !== "object") {
-                errors.push(`${resourceLabel}: Resources section is missing.`);
+                errors.push(`${resourceLabel}: 'resources' section is required.`);
                 return;
             }
     
-            // Validate HPC service units
-            if (resource.resources.hpc_service_units && Object.keys(resource.resources.hpc_service_units).length > 0) {
+            // ✅ Validate "hpc_service_units" if present
+            if (resource.resources.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
                     if (!unit.request_count || isNaN(parseInt(unit.request_count))) {
-                        errors.push(`${resourceLabel} - Service Unit ${key}: Request count must be a valid number.`);
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_count' must be a valid number.`);
                     }
-                    if (!unit.tier || unit.tier.trim() === "") {
-                        errors.push(`${resourceLabel} - Service Unit ${key}: Tier is required.`);
+                    if (!unit.tier || typeof unit.tier !== "string" || unit.tier.trim() === "") {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'tier' is required.`);
                     }
-                    if (!unit.billing_details || !unit.billing_details.fdm_billing_info || unit.billing_details.fdm_billing_info.length === 0) {
-                        errors.push(`${resourceLabel} - Service Unit ${key}: Billing details are required.`);
+                    if (!unit.request_date || isNaN(Date.parse(unit.request_date))) {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_date' must be a valid ISO date string.`);
+                    }
+                    if (!unit.update_date || isNaN(Date.parse(unit.update_date))) {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'update_date' must be a valid ISO date string.`);
+                    }
+                    if (!unit.request_status || typeof unit.request_status !== "string" || unit.request_status.trim() === "") {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_status' is required.`);
                     }
                 });
             }
     
-            // Validate Storage Requests
-            if (resource.resources.storage && Object.keys(resource.resources.storage).length > 0) {
-                Object.entries(resource.resources.storage).forEach(([key, storage]) => {
-                    if (!storage.request_size || isNaN(parseInt(storage.request_size))) {
-                        errors.push(`${resourceLabel} - Storage ${key}: Request size must be a valid number.`);
-                    }
-                    if (!storage.tier || storage.tier.trim() === "") {
-                        errors.push(`${resourceLabel} - Storage ${key}: Tier is required.`);
-                    }
-                    if (!storage.billing_details || !storage.billing_details.fdm_billing_info || storage.billing_details.fdm_billing_info.length === 0) {
-                        errors.push(`${resourceLabel} - Storage ${key}: Billing details are required.`);
-                    }
-                });
+            // ✅ Ensure "storage" exists (API accepts `{}` as valid)
+            if (!resource.resources.storage || typeof resource.resources.storage !== "object") {
+                errors.push(`${resourceLabel}: 'storage' must be an object (empty {} is valid).`);
             }
         });
     
