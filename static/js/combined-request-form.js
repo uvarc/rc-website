@@ -611,63 +611,75 @@
         console.error("Validation errors:", errors);
     }
     
-    // ===================================
-    // Submit Form
-    // ===================================
+// ===================================
+// Submit Form
+// ===================================
 
-    async function submitForm(formData, payload) {
-        const userId = getUserId();
-        const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-        console.log("Submitting payload for user:", userId);
-        console.log("User email:", userEmail);
-    
-        const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
-    
+async function submitForm(formData, payload) {
+    const userId = getUserId();
+    const userEmail = `${userId}@virginia.edu`; // Construct the user's email
+    console.log("Submitting payload for user:", userId);
+    console.log("User email:", userEmail);
+
+    const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
+
+    try {
+        const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
+            method: method,
+            headers: {
+                ...API_CONFIG.headers, // Use existing headers
+            },
+            body: JSON.stringify(payload),
+        });
+
+        // Log raw API response
+        console.log(`Raw API Response (${method}):`, response);
+
+        // Read the response only ONCE
+        let responseText;
         try {
-            const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-                method: method,
-                headers: {
-                    ...API_CONFIG.headers, // Use existing headers
-                },
-                body: JSON.stringify(payload),
-                // credentials: 'include',
-                // Remove credentials to test
-            });
-    
-            // Log raw API response
-            console.log(`Raw API Response (${method}):`, response);
-
-            // Log the response text to check for error details
-            const responseText = await response.text(); 
+            responseText = await response.text();
             console.log(`API Response Text: ${responseText}`);
-    
-            if (!response.ok) {
-                const errorMessage = await response.text();
-                console.error(`Submission failed (${method}):`, errorMessage);
-                showErrorMessage("Submission failed. Please try again.");
-                return;
-            }
-    
-            const responseData = await response.json();
-    
-            // Log parsed API response data
-            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-    
-            // Email the user with the submitted information
-            sendUserEmail(userEmail, payload);
-    
-            // Clear the form fields
-            clearFormFields();
-    
-            // Display success message and scroll to the top
-            showSuccessMessage("Your request has been submitted successfully!");
-    
-            return responseData; // Return response for logging in `handleFormSubmit`
-        } catch (error) {
-            console.error("Error during form submission:", error);
-            showErrorMessage("An error occurred while submitting the form. Please try again.");
+        } catch (readError) {
+            console.error("Error reading API response:", readError);
+            showErrorMessage("Error processing server response. Please try again.");
+            return;
         }
+
+        // Try parsing the text as JSON (if applicable)
+        let responseData;
+        try {
+            responseData = JSON.parse(responseText);
+        } catch (jsonError) {
+            console.warn("Could not parse response as JSON. Returning raw text.");
+            responseData = responseText;
+        }
+
+        // Log parsed API response
+        console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+
+        // Handle API errors properly
+        if (!response.ok) {
+            console.error(`Submission failed (${method}):`, responseData);
+            showErrorMessage("Submission failed. Please try again.");
+            return;
+        }
+
+        // Email the user with the submitted information
+        sendUserEmail(userEmail, payload);
+
+        // Clear the form fields
+        clearFormFields();
+
+        // Display success message and scroll to the top
+        showSuccessMessage("Your request has been submitted successfully!");
+
+        return responseData; // Return responseData for logging
+    } catch (error) {
+        console.error("Error during form submission:", error);
+        showErrorMessage("An error occurred while submitting the form. Please try again.");
     }
+}
 
     // ===================================
     // Capacity and Visibility
