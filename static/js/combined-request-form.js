@@ -171,6 +171,7 @@
             const userId = getUserId(); // Dynamically fetch the UserID
             const metadataUrl = `${API_CONFIG.baseUrl}/${userId}`; // Construct the correct URL
         
+            // Show a loading message
             const loadingMessage = $('<div>')
                 .addClass('alert alert-info d-flex align-items-center')
                 .attr('id', 'loading-metadata')
@@ -183,45 +184,40 @@
                 .prependTo('#combined-request-form');
         
             try {
-                const response = await fetch(metadataUrl, {
-                    method: 'GET',
+                // jQuery AJAX request
+                let metadata = await $.ajax({
+                    url: metadataUrl,
+                    method: "GET",
                     headers: {
                         ...API_CONFIG.headers,
-                        'Origin': window.location.origin, // Dynamically include origin
+                        'Origin': window.location.origin // Dynamically include origin
                     },
                     credentials: 'include'
                 });
         
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch metadata: ${response.statusText}`);
-                }
-        
-                const metadata = await response.json();
                 console.log("Fetched metadata:", metadata);
                 return metadata;
             } catch (error) {
                 console.error("Error fetching metadata:", error);
         
-                // Retry logic
+                // ✅ Retry logic (3 attempts)
                 for (let attempt = 1; attempt <= 3; attempt++) {
                     console.log(`Retrying metadata fetch (Attempt ${attempt})...`);
-                    await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds between retries
+                    await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retry
         
                     try {
-                        const response = await fetch(metadataUrl, {
-                            method: 'GET',
+                        let retryMetadata = await $.ajax({
+                            url: metadataUrl,
+                            method: "GET",
                             headers: {
                                 ...API_CONFIG.headers,
-                                'Origin': window.location.origin,
+                                'Origin': window.location.origin
                             },
                             credentials: 'include'
                         });
         
-                        if (response.ok) {
-                            const metadata = await response.json();
-                            console.log("Fetched metadata on retry:", metadata);
-                            return metadata;
-                        }
+                        console.log("Fetched metadata on retry:", retryMetadata);
+                        return retryMetadata;
                     } catch (retryError) {
                         console.warn(`Retry ${attempt} failed.`);
                     }
@@ -542,169 +538,8 @@
     }
 
     // ===================================
-    // Event Handlers
+    // Setup Event Handlers
     // ===================================
-
-    // function setupEventHandlers() {
-    //     // Handle toggling for request type (Service Unit vs Storage)
-    //     $('input[name="request-type"]').on('change', toggleRequestFields);
-
-    //     // Handle toggling for New vs Renewal (Service Unit)
-    //     $('input[name="new-or-renewal"]').on('change', toggleAllocationFields);
-
-    //     // Handle toggling for Storage request type (New vs Existing)
-    //     $('input[name="type-of-request"]').on('change', toggleStorageFields);
-
-    //     // Handle toggling for Storage Tier options (Sensitive vs Standard)
-    //     $('input[name="storage-choice"]').on('change', toggleStorageTierOptions);
-
-    //     // General input, select, and textarea validation and updates
-    //     $('#combined-request-form input, #combined-request-form select, #combined-request-form textarea')
-    //         .off('input change')
-    //         .on('input change', function () {
-    //             // validateField($(this)); // Validate individual fields
-    //             // updateFormValidation(); // Validate the overall form
-    //             updatePayloadPreview(); // Update the real-time payload preview
-    //             updateBillingVisibility(); // Update billing visibility
-    //         });
-    
-    //     // Submit the form with custom logic
-    //     $('#combined-request-form').off('submit').on('submit', async function (event) {
-    //         event.preventDefault(); // Prevent the default form submission
-    
-    //         console.log("Form submission triggered.");
-    
-    //         const formData = collectFormData(); // Collect data from the form
-    //         const payload = buildPayloadPreview(); // Build payload for submission
-    //         const errors = validatePayload(payload); // Validate the payload
-    
-    //         if (errors.length > 0) {
-    //             // Show errors only during submission
-    //             const errorDiv = $('<div>')
-    //                 .addClass('alert alert-danger')
-    //                 .html(`
-    //                     <strong>Validation Errors:</strong>
-    //                     <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
-    //                 `);
-    //             $('#combined-request-form').prepend(errorDiv);
-    //             setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
-    //             console.error("Validation errors:", errors);
-    //             return; // Stop submission on validation errors
-    //         }
-    
-    //         // Proceed with the form submission logic
-    //         try {
-    //             const userId = getUserId();
-    //             const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-    //             console.log("Submitting payload for user:", userId);
-    //             console.log("User email:", userEmail);
-    
-    //             const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
-    
-    //             const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-    //                 method: method,
-    //                 headers: {
-    //                     ...API_CONFIG.headers, // Use existing headers
-    //                 },
-    //                 body: JSON.stringify(payload),
-    //                 credentials: 'include',
-    //             });
-    
-    //             if (!response.ok) {
-    //                 const errorMessage = await response.text();
-    //                 console.error(`Submission failed (${method}):`, errorMessage);
-    //                 showErrorMessage("Submission failed. Please try again.");
-    //                 return;
-    //             }
-    
-    //             const responseData = await response.json();
-    //             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-    
-    //             // Email the user with the submitted information
-    //             sendUserEmail(userEmail, payload);
-    
-    //             // Clear the form fields
-    //             clearFormFields();
-    
-    //             // Display success message and scroll to the top
-    //             showSuccessMessage("Your request has been submitted successfully!");
-    
-    //         } catch (error) {
-    //             console.error("Error during form submission:", error);
-    //             showErrorMessage("An error occurred while submitting the form. Please try again.");
-    //         }
-    //     });
-    
-    //     console.log('Event handlers successfully set up.');
-
-    //     /// Form Submission Handler
-
-    //     $('#combined-request-form').on('submit', async function (event) {
-    //         event.preventDefault(); // Prevent default form submission
-        
-    //         console.log("Form submission triggered.");
-        
-    //         const formData = collectFormData(); // Initialize formData from the form
-    //         const payload = buildPayloadPreview();
-    //         const errors = validatePayload(payload);
-        
-    //         if (errors.length > 0) {
-    //             // Show errors only during submission
-    //             const errorDiv = $('<div>')
-    //                 .addClass('alert alert-danger')
-    //                 .html(`
-    //                     <strong>Validation Errors:</strong>
-    //                     <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
-    //                 `);
-    //             $('#combined-request-form').prepend(errorDiv);
-    //             setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
-    //             console.error("Validation errors:", errors);
-    //             return; // Stop submission on validation errors
-    //         }
-        
-    //         // Proceed with the form submission logic
-    //         try {
-    //             const userId = getUserId();
-    //             const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-    //             console.log("Submitting payload for user:", userId);
-    //             console.log("User email:", userEmail);
-        
-    //             const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
-        
-    //             const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-    //                 method: method,
-    //                 headers: {
-    //                     ...API_CONFIG.headers, // Use existing headers
-    //                 },
-    //                 body: JSON.stringify(payload),
-    //                 credentials: 'include',
-    //             });
-        
-    //             if (!response.ok) {
-    //                 const errorMessage = await response.text();
-    //                 console.error(`Submission failed (${method}):`, errorMessage);
-    //                 showErrorMessage("Submission failed. Please try again.");
-    //                 return;
-    //             }
-        
-    //             const responseData = await response.json();
-    //             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-        
-    //             // Email the user with the submitted information
-    //             sendUserEmail(userEmail, payload);
-        
-    //             // Clear the form fields
-    //             clearFormFields();
-        
-    //             // Display success message and scroll to the top
-    //             showSuccessMessage("Your request has been submitted successfully!");
-        
-    //         } catch (error) {
-    //             console.error("Error during form submission:", error);
-    //             showErrorMessage("An error occurred while submitting the form. Please try again.");
-    //         }
-    //     });
-    // }
 
     function setupEventHandlers() {
         // Use event delegation for dynamically added inputs
@@ -715,80 +550,105 @@
     
         // General input, select, and textarea validation and updates
         $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function () {
-            // validateField($(this)); // Validate individual fields
-            // updateFormValidation(); // Validate the overall form
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
     
-        // Submit the form with custom logic
-        $(document).on('submit', '#combined-request-form', async function (event) {
-            event.preventDefault(); // Prevent default form submission
+        // Attach submit event handler
+        $(document).on('submit', '#combined-request-form', handleFormSubmit);
+    }
     
-            console.log("Form submission triggered.");
+    // ===================================
+    // Submission Handlers
+    // ===================================
+
+    async function handleFormSubmit(event) {
+        event.preventDefault(); // Prevent default form submission
     
-            const formData = collectFormData(); // Collect data from the form
-            const payload = buildPayloadPreview(); // Build payload for submission
-            const errors = validatePayload(payload); // Validate the payload
+        console.log("Form submission triggered.");
     
-            if (errors.length > 0) {
-                // Show errors only during submission
-                const errorDiv = $('<div>')
-                    .addClass('alert alert-danger')
-                    .html(`
-                        <strong>Validation Errors:</strong>
-                        <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
-                    `);
-                $('#combined-request-form').prepend(errorDiv);
-                setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
-                console.error("Validation errors:", errors);
-                return; // Stop submission on validation errors
-            }
+        const formData = collectFormData(); // Collect data from the form
+        const payload = buildPayloadPreview(); // Build payload for submission
+        const errors = validatePayload(payload); // Validate the payload
     
-            // Proceed with the form submission logic
-            try {
-                const userId = getUserId();
-                const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-                console.log("Submitting payload for user:", userId);
-                console.log("User email:", userEmail);
+        // Verify payload before submission
+        console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
     
-                const method = formData.isUpdate ? 'PUT' : 'POST'; // Dynamically determine the method
+        if (errors.length > 0) {
+            displayValidationErrors(errors);
+            return; // Stop submission on validation errors
+        }
     
-                const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-                    method: method,
-                    headers: {
-                        ...API_CONFIG.headers, // Use existing headers
-                    },
-                    body: JSON.stringify(payload),
-                    credentials: 'include',
-                });
+        try {
+            const responseData = await submitForm(formData, payload);
     
-                if (!response.ok) {
-                    const errorMessage = await response.text();
-                    console.error(`Submission failed (${method}):`, errorMessage);
-                    showErrorMessage("Submission failed. Please try again.");
-                    return;
-                }
+            // Log API response after submission
+            console.log("API Response:", responseData);
     
-                const responseData = await response.json();
-                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
+        } catch (error) {
+            console.error("Error during form submission:", error);
+            showErrorMessage("An error occurred while submitting the form. Please try again.");
+        }
+    }
     
-                // Email the user with the submitted information
+    // ===================================
+    // Error Handlers
+    // ===================================
+
+    function displayValidationErrors(errors) {
+        const errorDiv = $('<div>')
+            .addClass('alert alert-danger')
+            .html(`
+                <strong>Validation Errors:</strong>
+                <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
+            `);
+        $('#combined-request-form').prepend(errorDiv);
+        setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+        console.error("Validation errors:", errors);
+    }
+    
+    // ===================================
+    // Submit Form (Using jQuery AJAX)
+    // ===================================
+
+    async function submitForm(formData, payload) {
+        const userId = getUserId();
+        const userEmail = `${userId}@virginia.edu`; // Construct the user's email
+        console.log("Submitting payload for user:", userId);
+        console.log("User email:", userEmail);
+
+        const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
+
+        // jQuery AJAX request settings (Matching Backend Developer's Format)
+        var settings = {
+            "url": `${API_CONFIG.baseUrl}/${userId}`, // Use dynamic userId
+            "method": method, // Dynamically choose POST or PUT
+            "timeout": 0, // Matches backend (ensures no premature timeout)
+            "headers": {
+                "Origin": window.location.origin, // Matches backend (Dynamically set Origin)
+                "Content-Type": "application/json"
+            },
+            "data": JSON.stringify(payload) // Ensures correct JSON format
+        };
+
+        // Execute AJAX request
+        $.ajax(settings)
+            .done(function (response) {
+                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
+                
+                // Simulate sending an email
                 sendUserEmail(userEmail, payload);
-    
+
                 // Clear the form fields
                 clearFormFields();
-    
-                // Display success message and scroll to the top
+
+                // Show success message
                 showSuccessMessage("Your request has been submitted successfully!");
-    
-            } catch (error) {
-                console.error("Error during form submission:", error);
-                showErrorMessage("An error occurred while submitting the form. Please try again.");
-            }
-        });
-    
-        console.log('Event handlers successfully set up.');
+            })
+            .fail(function (xhr, status, error) {
+                console.error(`Submission failed (${method}):`, xhr.responseText || error);
+                showErrorMessage("Submission failed. Please try again.");
+            });
     }
 
     // ===================================
@@ -876,81 +736,186 @@
         console.log("Payload preview updater initialized.");
     }
 
+    // Store previous payload and errors to reduce redundant logs
+    let previousPayloadString = "";
+    let previousErrorsString = "";
+
     function updatePayloadPreview() {
         const payload = buildPayloadPreview();
         const errors = validatePayload(payload);
-        console.log("Payload Preview:", JSON.stringify(payload, null, 2));
 
-        if (errors.length > 0) {
-            console.error("Payload Errors:", errors);
-        } else {
-            console.log("Payload Valid.");
+        // Convert to JSON strings for comparison
+        const payloadString = JSON.stringify(payload, null, 2);
+        const errorsString = JSON.stringify(errors, null, 2);
+
+        // Only log if the payload has changed
+        if (payloadString !== previousPayloadString) {
+            console.clear(); // Clears the console to reduce clutter
+            console.log("✅ Updated Payload Preview:", payload);
+            previousPayloadString = payloadString;
+        }
+
+        // Only log errors if they have changed
+        if (errorsString !== previousErrorsString) {
+            if (errors.length > 0) {
+                console.warn("Validation Errors:", errors);
+            } else {
+                console.log("Payload is valid.");
+            }
+            previousErrorsString = errorsString;
         }
     }
+
+    // Build Payload and Preview
 
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
     
-        const payload = [{
-            is_user_resource_request_elligible: true,
-            user_groups: formData.group ? [formData.group] : [],
-            user_resources: []
-        }];
+        // Get user data from the last API call (ensure it's loaded)
+        const userData = consoleData[0] || {};
+        const userGroups = userData.user_groups || [];
+        const existingResources = (userData.user_resources || []).map(res => res.group_name.toLowerCase());
     
-        if (formData.requestType === 'service-unit') {
-            const key = `${formData.group}-${getTierEnum(formData.allocationTier)}`;
-            const tierData = apiMetadata.allocationTiers?.[formData.allocationTier] || {};
-            const requestCount = formData.requestCount || tierData.defaultRequestCount || "0";
+        // Define selectedGroup first before using it!
+        const selectedGroup = formData.group ? formData.group.trim() : "";
     
-            const userResource = {
-                data_agreement_signed: $('#data-agreement').is(':checked'),
-                delegates_uid: "",
-                group_id: "",
-                group_name: formData.group || "Unknown Group",
-                pi_uid: userId,
-                project_desc: $('#project-description').val()?.trim() || "",
-                project_name: formData.projectName?.trim() || "",
-                resources: {
-                    hpc_service_units: {
-                        [key]: {
-                            tier: getTierEnum(formData.allocationTier),
-                            request_count: requestCount,
-                            request_date: new Date().toISOString(),
-                            request_status: "pending",
-                            update_date: new Date().toISOString(),
-                            billing_details: getBillingDetails()
-                        }
-                    },
-                    storage: {}
-                }
-            };
-            payload[0].user_resources.push(userResource);
+        // Ensure the selected group is valid
+        if (!userGroups.includes(selectedGroup)) {
+            console.error(`Invalid group selection: ${selectedGroup} is not in user_groups.`);
+            showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
+            return null;
         }
     
-        console.log("Built payload:", JSON.stringify(payload, null, 2));
+        // Ensure the selected group does NOT already exist in user_resources (for new SU requests)
+        if (existingResources.includes(selectedGroup.toLowerCase())) {
+            console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
+            showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
+            return null;
+        }
+    
+        // Get the correct tier (SSZ Standard) and build the key dynamically
+        const tier = "ssz_standard";
+        const hpcKey = `${selectedGroup}-ssz_standard`;
+    
+        // Build the exact payload structure
+        const payload = [
+            {
+                "user_resources": [
+                    {
+                        "data_agreement_signed": $('#data-agreement').is(':checked'),
+                        "delegates_uid": "",
+                        "group_id": "",
+                        "group_name": selectedGroup, // Ensure correct group name from user selection
+                        "pi_uid": userId,
+                        "project_desc": $('#project-description').val()?.trim() || "",
+                        "project_name": formData.projectName?.trim() || "",
+                        "resources": {
+                            "hpc_service_units": {
+                                [hpcKey]: {
+                                    "request_count": formData.requestCount || "1000",
+                                    "request_date": new Date().toISOString(),
+                                    "request_status": "pending",
+                                    "tier": tier,
+                                    "update_date": new Date().toISOString()
+                                }
+                            },
+                            "storage": {}
+                        }
+                    }
+                ]
+            }
+        ];
+    
+        console.log("✅ Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
     }
 
+    // Validate Payload
+
     function validatePayload(payload) {
-    const errors = [];
-
-    // Validate user resources
-    const userResources = payload[0]?.user_resources || [];
-    userResources.forEach((resource, index) => {
-        if (!resource.group_name || resource.group_name === "Unknown Group") {
-            errors.push(`Resource ${index + 1}: Group name is required.`);
+        const errors = [];
+    
+        // ✅ Ensure payload is an array with exactly one object
+        if (!Array.isArray(payload) || payload.length !== 1) {
+            errors.push("Payload must be an array containing a single object.");
+            return errors;
         }
-        if (!resource.project_name) {
-            errors.push(`Resource ${index + 1}: Project name is required.`);
+    
+        // ✅ Validate the first and only object inside the array
+        const resourceWrapper = payload[0];
+    
+        if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
+            errors.push("The 'user_resources' array is required and cannot be empty.");
+            return errors;
         }
-        if (!resource.data_agreement_signed) {
-            errors.push(`Resource ${index + 1}: Data agreement must be signed.`);
-        }
-    });
-
-    return errors; // Return errors for use during submission
-}
+    
+        // ✅ Validate each user resource inside "user_resources"
+        resourceWrapper.user_resources.forEach((resource, resIndex) => {
+            const resourceLabel = `Resource ${resIndex + 1}`;
+    
+            // ✅ Ensure "data_agreement_signed" is a boolean
+            if (typeof resource.data_agreement_signed !== "boolean") {
+                errors.push(`${resourceLabel}: 'data_agreement_signed' must be true or false.`);
+            }
+    
+            // ✅ "delegates_uid" and "group_id" are optional, so we do NOT validate them
+    
+            // ✅ Ensure "group_name" exists (API allows uppercase)
+            if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
+                errors.push(`${resourceLabel}: 'group_name' is required.`);
+            }
+    
+            // ✅ Ensure "pi_uid" exists
+            if (!resource.pi_uid || typeof resource.pi_uid !== "string" || resource.pi_uid.trim() === "") {
+                errors.push(`${resourceLabel}: 'pi_uid' (user ID) is required.`);
+            }
+    
+            // ✅ Ensure "project_desc" exists (API allows empty string)
+            if (typeof resource.project_desc !== "string") {
+                errors.push(`${resourceLabel}: 'project_desc' must be a string (can be empty).`);
+            }
+    
+            // ✅ Ensure "project_name" exists (API allows empty string)
+            if (typeof resource.project_name !== "string" || resource.project_name.trim() === "") {
+                errors.push(`${resourceLabel}: 'project_name' is required.`);
+            }
+    
+            // ✅ Ensure "resources" exist (should be an object)
+            if (!resource.resources || typeof resource.resources !== "object") {
+                errors.push(`${resourceLabel}: 'resources' section is required.`);
+                return;
+            }
+    
+            // ✅ Validate "hpc_service_units" if present
+            if (resource.resources.hpc_service_units) {
+                Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
+                    if (!unit.request_count || isNaN(parseInt(unit.request_count))) {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_count' must be a valid number.`);
+                    }
+                    if (!unit.tier || typeof unit.tier !== "string" || unit.tier.trim() === "") {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'tier' is required.`);
+                    }
+                    if (!unit.request_date || isNaN(Date.parse(unit.request_date))) {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_date' must be a valid ISO date string.`);
+                    }
+                    if (!unit.update_date || isNaN(Date.parse(unit.update_date))) {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'update_date' must be a valid ISO date string.`);
+                    }
+                    if (!unit.request_status || typeof unit.request_status !== "string" || unit.request_status.trim() === "") {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_status' is required.`);
+                    }
+                });
+            }
+    
+            // ✅ Ensure "storage" exists (API accepts `{}` as valid)
+            if (!resource.resources.storage || typeof resource.resources.storage !== "object") {
+                errors.push(`${resourceLabel}: 'storage' must be an object (empty {} is valid).`);
+            }
+        });
+    
+        return errors; // Return errors for form validation
+    }
 
     // ===================================
     // Fetch and Populate Groups
@@ -959,7 +924,7 @@
     async function fetchAndPopulateGroups() {
         // Show a waiting message (use utility function if available)
         const waitingMessage = utils?.showWaitingMessage?.() || $('<div>').text('Loading...').prependTo('#combined-request-form');
-        
+    
         try {
             // Dynamically fetch the user ID using the helper function
             const userId = getUserId(); 
@@ -969,30 +934,19 @@
             const requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
             console.log("Request URL:", requestUrl);
     
-            // Define headers dynamically, including the current origin
-            const headers = {
-                ...API_CONFIG.headers,
-                'Origin': window.location.origin // Dynamically set the origin
-            };
-    
-            // Perform the fetch call with credentials included
-            const response = await fetch(requestUrl, {
-                method: 'GET',
-                headers: headers,
+            // Perform the AJAX call using jQuery
+            const jsonResponse = await $.ajax({
+                url: requestUrl,
+                method: "GET",
+                headers: {
+                    ...API_CONFIG.headers,
+                    'Origin': window.location.origin // Dynamically set the origin
+                },
                 credentials: 'include'
             });
     
-            // Handle non-OK responses
-            if (!response.ok) {
-                const errorMessage = `API request failed with status ${response.status}: ${response.statusText}`;
-                console.error(errorMessage);
-                handleApiError(new Error(errorMessage));
-                return;
-            }
-    
-            // Parse the JSON response
-            const jsonResponse = await response.json();
-            consoleData = jsonResponse; // Save to global variable for further use
+            // Save to global variable for further use
+            consoleData = jsonResponse; 
             console.log("Fetched groups and resources:", consoleData);
     
             // Parse and populate user groups and resources
