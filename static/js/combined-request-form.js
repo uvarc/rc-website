@@ -171,6 +171,7 @@
             const userId = getUserId(); // Dynamically fetch the UserID
             const metadataUrl = `${API_CONFIG.baseUrl}/${userId}`; // Construct the correct URL
         
+            // Show a loading message
             const loadingMessage = $('<div>')
                 .addClass('alert alert-info d-flex align-items-center')
                 .attr('id', 'loading-metadata')
@@ -183,45 +184,40 @@
                 .prependTo('#combined-request-form');
         
             try {
-                const response = await fetch(metadataUrl, {
-                    method: 'GET',
+                // ✅ jQuery AJAX request
+                let metadata = await $.ajax({
+                    url: metadataUrl,
+                    method: "GET",
                     headers: {
                         ...API_CONFIG.headers,
-                        'Origin': window.location.origin, // Dynamically include origin
+                        'Origin': window.location.origin // Dynamically include origin
                     },
                     credentials: 'include'
                 });
         
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch metadata: ${response.statusText}`);
-                }
-        
-                const metadata = await response.json();
                 console.log("Fetched metadata:", metadata);
                 return metadata;
             } catch (error) {
                 console.error("Error fetching metadata:", error);
         
-                // Retry logic
+                // ✅ Retry logic (3 attempts)
                 for (let attempt = 1; attempt <= 3; attempt++) {
                     console.log(`Retrying metadata fetch (Attempt ${attempt})...`);
-                    await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds between retries
+                    await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retry
         
                     try {
-                        const response = await fetch(metadataUrl, {
-                            method: 'GET',
+                        let retryMetadata = await $.ajax({
+                            url: metadataUrl,
+                            method: "GET",
                             headers: {
                                 ...API_CONFIG.headers,
-                                'Origin': window.location.origin,
+                                'Origin': window.location.origin
                             },
                             credentials: 'include'
                         });
         
-                        if (response.ok) {
-                            const metadata = await response.json();
-                            console.log("Fetched metadata on retry:", metadata);
-                            return metadata;
-                        }
+                        console.log("Fetched metadata on retry:", retryMetadata);
+                        return retryMetadata;
                     } catch (retryError) {
                         console.warn(`Retry ${attempt} failed.`);
                     }
@@ -611,75 +607,49 @@
         console.error("Validation errors:", errors);
     }
     
-// ===================================
-// Submit Form
-// ===================================
+    // ===================================
+    // Submit Form (Using jQuery AJAX)
+    // ===================================
 
-async function submitForm(formData, payload) {
-    const userId = getUserId();
-    const userEmail = `${userId}@virginia.edu`; // Construct the user's email
-    console.log("Submitting payload for user:", userId);
-    console.log("User email:", userEmail);
+    async function submitForm(formData, payload) {
+        const userId = getUserId();
+        const userEmail = `${userId}@virginia.edu`; // Construct the user's email
+        console.log("Submitting payload for user:", userId);
+        console.log("User email:", userEmail);
 
-    const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
+        const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
 
-    try {
-        const response = await fetch(`${API_CONFIG.baseUrl}/${userId}`, {
-            method: method,
-            headers: {
-                ...API_CONFIG.headers, // Use existing headers
+        // ✅ jQuery AJAX equivalent of fetch()
+        var settings = {
+            "url": `${API_CONFIG.baseUrl}/${userId}`,
+            "method": method,
+            "timeout": 0,
+            "headers": {
+                "Origin": window.location.origin, // Dynamically set Origin
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(payload),
-        });
+            "data": JSON.stringify(payload), // Convert payload to JSON string
+        };
 
-        // Log raw API response
-        console.log(`Raw API Response (${method}):`, response);
+        // Execute AJAX request
+        $.ajax(settings)
+            .done(function (response) {
+                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
+                
+                // Simulate sending an email
+                sendUserEmail(userEmail, payload);
 
-        // Read the response only ONCE
-        let responseText;
-        try {
-            responseText = await response.text();
-            console.log(`API Response Text: ${responseText}`);
-        } catch (readError) {
-            console.error("Error reading API response:", readError);
-            showErrorMessage("Error processing server response. Please try again.");
-            return;
-        }
+                // Clear the form fields
+                clearFormFields();
 
-        // Try parsing the text as JSON (if applicable)
-        let responseData;
-        try {
-            responseData = JSON.parse(responseText);
-        } catch (jsonError) {
-            console.warn("Could not parse response as JSON. Returning raw text.");
-            responseData = responseText;
-        }
-
-        // Log parsed API response
-        console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, responseData);
-
-        // Handle API errors properly
-        if (!response.ok) {
-            console.error(`Submission failed (${method}):`, responseData);
-            showErrorMessage("Submission failed. Please try again.");
-            return;
-        }
-
-        // Email the user with the submitted information
-        sendUserEmail(userEmail, payload);
-
-        // Clear the form fields
-        clearFormFields();
-
-        // Display success message and scroll to the top
-        showSuccessMessage("Your request has been submitted successfully!");
-
-        return responseData; // Return responseData for logging
-    } catch (error) {
-        console.error("Error during form submission:", error);
-        showErrorMessage("An error occurred while submitting the form. Please try again.");
+                // Show success message
+                showSuccessMessage("Your request has been submitted successfully!");
+            })
+            .fail(function (xhr, status, error) {
+                console.error(`Submission failed (${method}):`, xhr.responseText || error);
+                showErrorMessage("Submission failed. Please try again.");
+            });
     }
-}
 
     // ===================================
     // Capacity and Visibility
@@ -954,7 +924,7 @@ async function submitForm(formData, payload) {
     async function fetchAndPopulateGroups() {
         // Show a waiting message (use utility function if available)
         const waitingMessage = utils?.showWaitingMessage?.() || $('<div>').text('Loading...').prependTo('#combined-request-form');
-        
+    
         try {
             // Dynamically fetch the user ID using the helper function
             const userId = getUserId(); 
@@ -964,30 +934,19 @@ async function submitForm(formData, payload) {
             const requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
             console.log("Request URL:", requestUrl);
     
-            // Define headers dynamically, including the current origin
-            const headers = {
-                ...API_CONFIG.headers,
-                'Origin': window.location.origin // Dynamically set the origin
-            };
-    
-            // Perform the fetch call with credentials included
-            const response = await fetch(requestUrl, {
-                method: 'GET',
-                headers: headers,
+            // Perform the AJAX call using jQuery
+            const jsonResponse = await $.ajax({
+                url: requestUrl,
+                method: "GET",
+                headers: {
+                    ...API_CONFIG.headers,
+                    'Origin': window.location.origin // Dynamically set the origin
+                },
                 credentials: 'include'
             });
     
-            // Handle non-OK responses
-            if (!response.ok) {
-                const errorMessage = `API request failed with status ${response.status}: ${response.statusText}`;
-                console.error(errorMessage);
-                handleApiError(new Error(errorMessage));
-                return;
-            }
-    
-            // Parse the JSON response
-            const jsonResponse = await response.json();
-            consoleData = jsonResponse; // Save to global variable for further use
+            // Save to global variable for further use
+            consoleData = jsonResponse; 
             console.log("Fetched groups and resources:", consoleData);
     
             // Parse and populate user groups and resources
