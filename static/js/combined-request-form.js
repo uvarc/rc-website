@@ -200,7 +200,7 @@
             } catch (error) {
                 console.error("Error fetching metadata:", error);
         
-                // ✅ Retry logic (3 attempts)
+                // Retry logic (3 attempts)
                 for (let attempt = 1; attempt <= 3; attempt++) {
                     console.log(`Retrying metadata fetch (Attempt ${attempt})...`);
                     await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retry
@@ -616,21 +616,23 @@
         const userEmail = `${userId}@virginia.edu`; // Construct the user's email
         console.log("Submitting payload for user:", userId);
         console.log("User email:", userEmail);
-
+    
         const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
-
-        // jQuery AJAX request settings (Matching Backend Developer's Format)
+    
+        // Updated jQuery AJAX request settings (Fixed "Origin" header issue)
         var settings = {
             "url": `${API_CONFIG.baseUrl}/${userId}`, // Use dynamic userId
             "method": method, // Dynamically choose POST or PUT
-            "timeout": 0, // Matches backend (ensures no premature timeout)
+            "timeout": 0, // Prevent timeout issues
             "headers": {
-                "Origin": window.location.origin, // Matches backend (Dynamically set Origin)
-                "Content-Type": "application/json"
+                "Content-Type": "application/json" // Removed "Origin" header (Handled automatically by browser)
             },
-            "data": JSON.stringify(payload) // Ensures correct JSON format
+            "data": JSON.stringify(payload), // Ensures correct JSON format
+            "xhrFields": {
+                withCredentials: true // Ensures cookies and authentication are included (if needed)
+            }
         };
-
+    
         // Execute AJAX request
         $.ajax(settings)
             .done(function (response) {
@@ -638,10 +640,10 @@
                 
                 // Simulate sending an email
                 sendUserEmail(userEmail, payload);
-
+    
                 // Clear the form fields
                 clearFormFields();
-
+    
                 // Show success message
                 showSuccessMessage("Your request has been submitted successfully!");
             })
@@ -751,7 +753,7 @@
         // Only log if the payload has changed
         if (payloadString !== previousPayloadString) {
             console.clear(); // Clears the console to reduce clutter
-            console.log("✅ Updated Payload Preview:", payload);
+            console.log("Updated Payload Preview:", payload);
             previousPayloadString = payloadString;
         }
 
@@ -827,7 +829,7 @@
             }
         ];
     
-        console.log("✅ Final Payload Before Submission:", JSON.stringify(payload, null, 2));
+        console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
     }
 
@@ -836,13 +838,13 @@
     function validatePayload(payload) {
         const errors = [];
     
-        // ✅ Ensure payload is an array with exactly one object
+        // Ensure payload is an array with exactly one object
         if (!Array.isArray(payload) || payload.length !== 1) {
             errors.push("Payload must be an array containing a single object.");
             return errors;
         }
     
-        // ✅ Validate the first and only object inside the array
+        // Validate the first and only object inside the array
         const resourceWrapper = payload[0];
     
         if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
@@ -850,44 +852,44 @@
             return errors;
         }
     
-        // ✅ Validate each user resource inside "user_resources"
+        // Validate each user resource inside "user_resources"
         resourceWrapper.user_resources.forEach((resource, resIndex) => {
             const resourceLabel = `Resource ${resIndex + 1}`;
     
-            // ✅ Ensure "data_agreement_signed" is a boolean
+            // Ensure "data_agreement_signed" is a boolean
             if (typeof resource.data_agreement_signed !== "boolean") {
                 errors.push(`${resourceLabel}: 'data_agreement_signed' must be true or false.`);
             }
     
-            // ✅ "delegates_uid" and "group_id" are optional, so we do NOT validate them
+            // "delegates_uid" and "group_id" are optional, so we do NOT validate them
     
-            // ✅ Ensure "group_name" exists (API allows uppercase)
+            // Ensure "group_name" exists (API allows uppercase)
             if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
                 errors.push(`${resourceLabel}: 'group_name' is required.`);
             }
     
-            // ✅ Ensure "pi_uid" exists
+            // Ensure "pi_uid" exists
             if (!resource.pi_uid || typeof resource.pi_uid !== "string" || resource.pi_uid.trim() === "") {
                 errors.push(`${resourceLabel}: 'pi_uid' (user ID) is required.`);
             }
     
-            // ✅ Ensure "project_desc" exists (API allows empty string)
+            // Ensure "project_desc" exists (API allows empty string)
             if (typeof resource.project_desc !== "string") {
                 errors.push(`${resourceLabel}: 'project_desc' must be a string (can be empty).`);
             }
     
-            // ✅ Ensure "project_name" exists (API allows empty string)
+            // Ensure "project_name" exists (API allows empty string)
             if (typeof resource.project_name !== "string" || resource.project_name.trim() === "") {
                 errors.push(`${resourceLabel}: 'project_name' is required.`);
             }
     
-            // ✅ Ensure "resources" exist (should be an object)
+            // Ensure "resources" exist (should be an object)
             if (!resource.resources || typeof resource.resources !== "object") {
                 errors.push(`${resourceLabel}: 'resources' section is required.`);
                 return;
             }
     
-            // ✅ Validate "hpc_service_units" if present
+            // Validate "hpc_service_units" if present
             if (resource.resources.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
                     if (!unit.request_count || isNaN(parseInt(unit.request_count))) {
@@ -908,7 +910,7 @@
                 });
             }
     
-            // ✅ Ensure "storage" exists (API accepts `{}` as valid)
+            // Ensure "storage" exists (API accepts `{}` as valid)
             if (!resource.resources.storage || typeof resource.resources.storage !== "object") {
                 errors.push(`${resourceLabel}: 'storage' must be an object (empty {} is valid).`);
             }
