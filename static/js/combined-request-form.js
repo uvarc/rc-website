@@ -571,8 +571,10 @@
         const payload = buildPayloadPreview(); // Build payload for submission
         const errors = validatePayload(payload); // Validate the payload
     
-        // Verify payload before submission
-        console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
+        // Remove duplicate logging (Keep only one)
+        if (payload) {
+            console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
+        }
     
         if (errors.length > 0) {
             displayValidationErrors(errors);
@@ -582,7 +584,7 @@
         try {
             const responseData = await submitForm(formData, payload);
     
-            // Log API response after submission
+            // Explicitly log API response
             console.log("API Response:", responseData);
     
         } catch (error) {
@@ -619,7 +621,7 @@
     
         const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
     
-        // Updated jQuery AJAX request settings (Fixed "Origin" header issue)
+        // jQuery AJAX request settings (Fixed "Origin" header issue)
         var settings = {
             "url": `${API_CONFIG.baseUrl}/${userId}`, // Use dynamic userId
             "method": method, // Dynamically choose POST or PUT
@@ -634,10 +636,13 @@
         };
     
         // Execute AJAX request
-        $.ajax(settings)
+        return $.ajax(settings)
             .done(function (response) {
                 console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
                 
+                // Explicitly log API response
+                console.log("API Response:", response);
+    
                 // Simulate sending an email
                 sendUserEmail(userEmail, payload);
     
@@ -646,6 +651,8 @@
     
                 // Show success message
                 showSuccessMessage("Your request has been submitted successfully!");
+    
+                return response; // Ensure response is returned
             })
             .fail(function (xhr, status, error) {
                 console.error(`Submission failed (${method}):`, xhr.responseText || error);
