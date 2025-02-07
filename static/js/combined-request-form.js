@@ -184,7 +184,7 @@
                 .prependTo('#combined-request-form');
         
             try {
-                // ✅ jQuery AJAX request
+                // jQuery AJAX request
                 let metadata = await $.ajax({
                     url: metadataUrl,
                     method: "GET",
@@ -619,16 +619,16 @@
 
         const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
 
-        // ✅ jQuery AJAX equivalent of fetch()
+        // jQuery AJAX request settings (Matching Backend Developer's Format)
         var settings = {
-            "url": `${API_CONFIG.baseUrl}/${userId}`,
-            "method": method,
-            "timeout": 0,
+            "url": `${API_CONFIG.baseUrl}/${userId}`, // Use dynamic userId
+            "method": method, // Dynamically choose POST or PUT
+            "timeout": 0, // Matches backend (ensures no premature timeout)
             "headers": {
-                "Origin": window.location.origin, // Dynamically set Origin
+                "Origin": window.location.origin, // Matches backend (Dynamically set Origin)
                 "Content-Type": "application/json"
             },
-            "data": JSON.stringify(payload), // Convert payload to JSON string
+            "data": JSON.stringify(payload) // Ensures correct JSON format
         };
 
         // Execute AJAX request
