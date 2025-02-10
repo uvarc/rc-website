@@ -772,7 +772,7 @@
         // Get user data from the last API call
         const userData = consoleData[0] || {};
         const userGroups = userData.user_groups || [];
-        const existingResources = (userData.user_resources || []).map(res => res.group_name.toLowerCase());
+        let existingResources = userData.user_resources || [];
     
         // Ensure selected group is valid
         const selectedGroup = formData.group ? formData.group.trim() : "";
@@ -783,48 +783,45 @@
         }
     
         // Ensure group does not already exist (for new SU requests)
-        if (existingResources.includes(selectedGroup.toLowerCase())) {
+        if (existingResources.some(res => res.group_name.toLowerCase() === selectedGroup.toLowerCase())) {
             console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
             showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
             return null;
         }
     
-        // Get the correct tier and construct the HPC key
-        const tier = "ssz_standard";
-        const hpcKey = `${selectedGroup}-ssz_standard`;
+        // Construct the new resource object
+        const newResource = {
+            "data_agreement_signed": $('#data-agreement').is(':checked'),
+            "delegates_uid": "",
+            "group_id": "",
+            "group_name": selectedGroup, // Ensure correct group name
+            "pi_uid": userId,
+            "project_desc": $('#project-description').val()?.trim() || "",
+            "project_name": formData.projectName?.trim() || "",
+            "resources": {
+                "hpc_service_units": {
+                    [`${selectedGroup}-ssz_standard`]: {
+                        "request_count": formData.requestCount || "1000",
+                        "request_date": new Date().toISOString(),
+                        "request_status": "pending",
+                        "tier": "ssz_standard",
+                        "update_date": new Date().toISOString(),
+                        "billing_details": getBillingDetails() // Ensure billing is included
+                    }
+                },
+                "storage": {}
+            }
+        };
     
-        // Include Billing Information
-        const billingDetails = getBillingDetails();
+        // ✅ Append the new resource instead of overwriting
+        existingResources.push(newResource);
     
-        // Ensure `is_user_resource_request_elligible` is included
+        // Construct the final payload with **all user resources** (including the new one)
         const payload = [
             {
-                "is_user_resource_request_elligible": true,  // Ensure this field is included
-                "user_groups": userGroups,                  // Include all user groups
-                "user_resources": [
-                    {
-                        "data_agreement_signed": $('#data-agreement').is(':checked'),
-                        "delegates_uid": "",
-                        "group_id": "",
-                        "group_name": selectedGroup, // Ensure correct group name
-                        "pi_uid": userId,
-                        "project_desc": $('#project-description').val()?.trim() || "",
-                        "project_name": formData.projectName?.trim() || "",
-                        "resources": {
-                            "hpc_service_units": {
-                                [hpcKey]: {
-                                    "request_count": formData.requestCount || "1000",
-                                    "request_date": new Date().toISOString(),
-                                    "request_status": "pending",
-                                    "tier": tier,
-                                    "update_date": new Date().toISOString(),
-                                    "billing_details": billingDetails // Ensure billing is included
-                                }
-                            },
-                            "storage": {}
-                        }
-                    }
-                ]
+                "is_user_resource_request_elligible": true,
+                "user_groups": userGroups, 
+                "user_resources": existingResources // ✅ Keeps existing resources and appends new one
             }
         ];
     
