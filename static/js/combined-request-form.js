@@ -619,31 +619,40 @@
         console.log("Submitting payload for user:", userId);
         console.log("User email:", userEmail);
     
-        // Use `PUT` to update instead of `POST`
-        const method = formData.isUpdate ? 'PUT' : 'PUT'; // Always use PUT for appending
+        const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
     
-        // jQuery AJAX request settings
+        // jQuery AJAX request settings (Fixed "Origin" header issue)
         var settings = {
-            "url": `${API_CONFIG.baseUrl}/${userId}`,
-            "method": method, 
-            "timeout": 0, 
+            "url": `${API_CONFIG.baseUrl}/${userId}`, // Use dynamic userId
+            "method": method, // Dynamically choose POST or PUT
+            "timeout": 0, // Prevent timeout issues
             "headers": {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json" // Removed "Origin" header (Handled automatically by browser)
             },
-            "data": JSON.stringify(payload),
+            "data": JSON.stringify(payload), // Ensures correct JSON format
             "xhrFields": {
-                withCredentials: true
+                withCredentials: true // Ensures cookies and authentication are included (if needed)
             }
         };
     
+        // Execute AJAX request
         return $.ajax(settings)
             .done(function (response) {
                 console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
+                
+                // Explicitly log API response
                 console.log("API Response:", response);
+    
+                // Simulate sending an email
                 sendUserEmail(userEmail, payload);
+    
+                // Clear the form fields
                 clearFormFields();
+    
+                // Show success message
                 showSuccessMessage("Your request has been submitted successfully!");
-                return response;
+    
+                return response; // Ensure response is returned
             })
             .fail(function (xhr, status, error) {
                 console.error(`Submission failed (${method}):`, xhr.responseText || error);
@@ -804,7 +813,7 @@
             }
         };
     
-        // Append the new resource instead of overwriting
+        // ✅ Append the new resource instead of overwriting
         existingResources.push(newResource);
     
         // Construct the final payload with **all user resources** (including the new one)
@@ -812,7 +821,7 @@
             {
                 "is_user_resource_request_elligible": true,
                 "user_groups": userGroups, 
-                "user_resources": existingResources // Keeps existing resources and appends new one
+                "user_resources": existingResources // ✅ Keeps existing resources and appends new one
             }
         ];
     
