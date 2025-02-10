@@ -700,34 +700,22 @@
     }
 
     function getBillingDetails() {
-        const financialContact = $('#financial-contact').val()?.trim() || '';
-        const companyId = $('#company-id').val()?.trim() || '';
-        const costCenter = $('#cost-center').val()?.trim() || '';
-        const businessUnit = $('#business-unit').val()?.trim() || '';
-        const fundingType = $('input[name="funding-type"]:checked').val() || '';
-        const fundingNumber = $('#funding-number').val()?.trim() || '';
-        const fund = $('#fund').val()?.trim() || '';
-        const functionCode = $('#function').val()?.trim() || '';
-        const program = $('#program').val()?.trim() || '';
-        const activity = $('#activity').val()?.trim() || '';
-        const assignee = $('#assignee').val()?.trim() || '';
-    
         return {
             fdm_billing_info: [
                 {
-                    financial_contact: financialContact,
-                    company: companyId,
-                    business_unit: businessUnit,
-                    cost_center: costCenter,
-                    fund: fund,
-                    gift: fundingType === 'Gift' ? fundingNumber : '',
-                    grant: fundingType === 'Grant' ? fundingNumber : '',
-                    designated: fundingType === 'Designated' ? fundingNumber : '',
-                    project: fundingType === 'Project' ? fundingNumber : '',
-                    program_code: program,
-                    function: functionCode,
-                    activity: activity,
-                    assignee: assignee,
+                    financial_contact: $('#financial-contact').val()?.trim() || '',
+                    company: $('#company-id').val()?.trim() || '',
+                    business_unit: $('#business-unit').val()?.trim() || '',
+                    cost_center: $('#cost-center').val()?.trim() || '',
+                    fund: $('#fund').val()?.trim() || '',
+                    gift: $('input[name="funding-type"]:checked').val() === 'Gift' ? $('#funding-number').val()?.trim() || '' : '',
+                    grant: $('input[name="funding-type"]:checked').val() === 'Grant' ? $('#funding-number').val()?.trim() || '' : '',
+                    designated: $('input[name="funding-type"]:checked').val() === 'Designated' ? $('#funding-number').val()?.trim() || '' : '',
+                    project: $('input[name="funding-type"]:checked').val() === 'Project' ? $('#funding-number').val()?.trim() || '' : '',
+                    program_code: $('#program').val()?.trim() || '',
+                    function: $('#function').val()?.trim() || '',
+                    activity: $('#activity').val()?.trim() || '',
+                    assignee: $('#assignee').val()?.trim() || '',
                 }
             ]
         };
@@ -781,41 +769,44 @@
         const formData = collectFormData();
         const userId = getUserId();
     
-        // Get user data from the last API call (ensure it's loaded)
+        // Get user data from the last API call
         const userData = consoleData[0] || {};
         const userGroups = userData.user_groups || [];
         const existingResources = (userData.user_resources || []).map(res => res.group_name.toLowerCase());
     
-        // Define selectedGroup first before using it!
+        // Ensure selected group is valid
         const selectedGroup = formData.group ? formData.group.trim() : "";
-    
-        // Ensure the selected group is valid
         if (!userGroups.includes(selectedGroup)) {
             console.error(`Invalid group selection: ${selectedGroup} is not in user_groups.`);
             showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
             return null;
         }
     
-        // Ensure the selected group does NOT already exist in user_resources (for new SU requests)
+        // Ensure group does not already exist (for new SU requests)
         if (existingResources.includes(selectedGroup.toLowerCase())) {
             console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
             showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
             return null;
         }
     
-        // Get the correct tier (SSZ Standard) and build the key dynamically
+        // Get the correct tier and construct the HPC key
         const tier = "ssz_standard";
         const hpcKey = `${selectedGroup}-ssz_standard`;
     
-        // Build the exact payload structure
+        // Include Billing Information
+        const billingDetails = getBillingDetails();
+    
+        // Ensure `is_user_resource_request_elligible` is included
         const payload = [
             {
+                "is_user_resource_request_elligible": true,  // Ensure this field is included
+                "user_groups": userGroups,                  // Include all user groups
                 "user_resources": [
                     {
                         "data_agreement_signed": $('#data-agreement').is(':checked'),
                         "delegates_uid": "",
                         "group_id": "",
-                        "group_name": selectedGroup, // Ensure correct group name from user selection
+                        "group_name": selectedGroup, // Ensure correct group name
                         "pi_uid": userId,
                         "project_desc": $('#project-description').val()?.trim() || "",
                         "project_name": formData.projectName?.trim() || "",
@@ -826,7 +817,8 @@
                                     "request_date": new Date().toISOString(),
                                     "request_status": "pending",
                                     "tier": tier,
-                                    "update_date": new Date().toISOString()
+                                    "update_date": new Date().toISOString(),
+                                    "billing_details": billingDetails // Ensure billing is included
                                 }
                             },
                             "storage": {}
