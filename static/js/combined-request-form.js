@@ -1218,7 +1218,7 @@
             );
         } finally {
             // Ensure the loading spinner is removed
-            $('#loading-message').remove();
+            $('#loading-message').fadeOut(300, function() { $(this).remove(); });
         }
     }
 
