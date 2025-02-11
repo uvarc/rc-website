@@ -792,12 +792,12 @@
         const formData = collectFormData();
         const userId = getUserId();
     
-        // Fetch user data from the last API response
+        // Fetch user data from last GET API call
         const userData = consoleData[0] || {};
         const userGroups = userData.user_groups || [];
         let existingResources = userData.user_resources || [];
     
-        // Ensure selected group exists in `user_groups`
+        // Ensure selected group is valid
         const selectedGroup = formData.group ? formData.group.trim() : "";
         if (!userGroups.includes(selectedGroup)) {
             console.error(`Invalid group selection: ${selectedGroup} is not in user_groups.`);
@@ -805,41 +805,56 @@
             return null;
         }
     
-        // Ensure group does not already exist in `user_resources`
-        if (existingResources.some(res => res.group_name.toLowerCase() === selectedGroup.toLowerCase())) {
-            console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
-            showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
+        // Ensure tier option is selected
+        const selectedTier = getTierEnum(formData.allocationTier);
+        if (!selectedTier) {
+            console.error(`No valid tier selected.`);
+            showErrorMessage(`Please select a valid tier.`);
             return null;
         }
     
-        // Set `hpcServiceUnitKey` to exactly match `group_name`
-        const hpcServiceUnitKey = selectedGroup;  
-    
-        // Get dynamic billing details
+        // Ensure billing information is included if required
         const billingDetails = getBillingDetails();
     
-        // Build the new resource object
+        // Construct HPC Service Unit Key
+        const hpcServiceUnitKey = selectedGroup;
+    
+        // Check if this (group_name + tier) combination already exists
+        let isRenewal = existingResources.some(resource => 
+            resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
+            resource.resources.hpc_service_units &&
+            resource.resources.hpc_service_units[hpcServiceUnitKey]?.tier === selectedTier
+        );
+    
+        // 🚨 Show pop-up warning if it's a duplicate (Renewal case)
+        if (isRenewal) {
+            showErrorMessage(`⚠ This Group and Tier already exist. Please submit a Renewal instead.`);
+            console.warn(`🔄 Renewal detected: ${selectedGroup} - ${selectedTier}. Please update instead of creating a new request.`);
+            return null; // Stop form submission
+        }
+    
+        // Construct the new resource object (Matching Backend Format)
         const newResource = {
             "group_name": selectedGroup,
             "project_name": formData.projectName?.trim() || "Test Project",
-            "project_desc": $('#project-description').val()?.trim() || "This is a test project for verification.",
+            "project_desc": $('#project-description').val()?.trim() || "This is free text",
             "data_agreement_signed": $('#data-agreement').is(':checked'),
             "pi_uid": userId,
             "resources": {
                 "hpc_service_units": {
-                    [hpcServiceUnitKey]: {  // Now exactly matches `group_name`
-                        "tier": getTierEnum(formData.allocationTier),
+                    [hpcServiceUnitKey]: {  
+                        "tier": selectedTier,
                         "request_count": formData.requestCount || "50000", 
-                        "billing_details": billingDetails // Dynamically fetched billing details
+                        "billing_details": billingDetails // Ensure billing is always included
                     }
                 }
             }
         };
     
-        // Append the new resource to `user_resources`
+        // Append new resource instead of overwriting
         existingResources.push(newResource);
     
-        // Construct the final payload
+        // Construct the final payload with all resources (Including New One)
         const payload = [
             {
                 "is_user_resource_request_elligible": true,
@@ -870,7 +885,7 @@
             return errors;
         }
     
-        const seenGroups = new Set();
+        const seenGroupTiers = new Set();
     
         // Validate each resource
         resourceWrapper.user_resources.forEach((resource, resIndex) => {
@@ -882,12 +897,6 @@
     
             if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
                 errors.push(`${resourceLabel}: 'group_name' is required.`);
-            } else {
-                const lowerGroup = resource.group_name.toLowerCase();
-                if (seenGroups.has(lowerGroup)) {
-                    errors.push(`${resourceLabel}: Duplicate group name '${resource.group_name}' detected.`);
-                }
-                seenGroups.add(lowerGroup);
             }
     
             if (!resource.pi_uid || typeof resource.pi_uid !== "string" || resource.pi_uid.trim() === "") {
@@ -903,11 +912,18 @@
                 return;
             }
     
-            // Ensure billing details exist
             if (!resource.resources.hpc_service_units) {
                 errors.push(`${resourceLabel}: 'hpc_service_units' is required.`);
             } else {
                 Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
+                    const groupTierKey = `${resource.group_name.toLowerCase()}-${unit.tier}`;
+    
+                    if (seenGroupTiers.has(groupTierKey)) {
+                        errors.push(`${resourceLabel}: Duplicate request for Group '${resource.group_name}' and Tier '${unit.tier}' detected.`);
+                    } else {
+                        seenGroupTiers.add(groupTierKey);
+                    }
+    
                     if (!unit.billing_details || !unit.billing_details.fdm_billing_info) {
                         errors.push(`${resourceLabel} - ${key}: 'billing_details' is required.`);
                     }
@@ -1086,27 +1102,63 @@
         }
     
         userResources.forEach(resource => {
+            const projectName = resource.project_name || "N/A";
+            const groupName = resource.group_name || "N/A";
+    
             if (resource.resources?.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
-                    const row = createResourceRow({
-                        type: 'Service Units',
-                        group: resource.group_name,
-                        tier: details.tier,
-                        details: `${details.request_count || 0} SUs | Updated: ${details.update_date}`
-                    });
+                    const tier = details.tier || "N/A";
+                    const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
+                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : "No update available";
+    
+                    const row = `
+                        <tr>
+                            <td>${projectName}</td> 
+                            <td>${groupName}</td>
+                            <td>${tier}</td>
+                            <td>${requestCount} | ${updateDate}</td>
+                        </tr>
+                    `;
                     previewTableBody.append(row);
                 });
             }
+        });
     
-            if (resource.resources?.storage) {
-                Object.entries(resource.resources.storage).forEach(([storageName, details]) => {
-                    const row = createResourceRow({
-                        type: 'Storage',
-                        group: resource.group_name,
-                        tier: details.tier,
-                        details: `${details.request_size || 0}TB | Updated: ${details.update_date}`
-                    });
-                    previewTableBody.append(row);
+        // Also update the existing SU table for Renewals
+        populateExistingServiceUnitsTable(apiResponse);
+    }
+
+    function populateExistingServiceUnitsTable(apiResponse) {
+        const { userResources } = parseConsoleData(apiResponse);
+        const suTableBody = $('#existing-su-tbody');
+        suTableBody.empty();
+    
+        if (!Array.isArray(userResources) || userResources.length === 0) {
+            suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
+            return;
+        }
+    
+        userResources.forEach(resource => {
+            const projectName = resource.project_name || "N/A";
+            const groupName = resource.group_name || "N/A";
+    
+            if (resource.resources?.hpc_service_units) {
+                Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
+                    const tier = details.tier || "N/A";
+                    const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
+                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : "No update available";
+    
+                    const row = `
+                        <tr>
+                            <td>
+                                <input type="radio" name="selected-su" value="${groupName}-${tier}" data-group="${groupName}" data-tier="${tier}">
+                            </td>
+                            <td>${projectName}</td> 
+                            <td>${groupName}</td>
+                            <td>${tier}</td>
+                        </tr>
+                    `;
+                    suTableBody.append(row);
                 });
             }
         });
