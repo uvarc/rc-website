@@ -792,12 +792,12 @@
         const formData = collectFormData();
         const userId = getUserId();
     
-        // Get user data from the last API call
+        // Fetch user data from the last API response
         const userData = consoleData[0] || {};
         const userGroups = userData.user_groups || [];
         let existingResources = userData.user_resources || [];
     
-        // Ensure selected group is valid
+        // Ensure selected group exists in `user_groups`
         const selectedGroup = formData.group ? formData.group.trim() : "";
         if (!userGroups.includes(selectedGroup)) {
             console.error(`Invalid group selection: ${selectedGroup} is not in user_groups.`);
@@ -805,38 +805,41 @@
             return null;
         }
     
-        // Ensure group does not already exist (case-insensitive check)
+        // Ensure group does not already exist in `user_resources`
         if (existingResources.some(res => res.group_name.toLowerCase() === selectedGroup.toLowerCase())) {
             console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
             showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
             return null;
         }
     
-        // Use `group_name` as the key for `hpc_service_units`
-        const hpcServiceUnitKey = selectedGroup; 
+        // Set `hpcServiceUnitKey` to exactly match `group_name`
+        const hpcServiceUnitKey = selectedGroup;  
     
-        // Construct the new resource object (Matching Backend Format)
+        // Get dynamic billing details
+        const billingDetails = getBillingDetails();
+    
+        // Build the new resource object
         const newResource = {
             "group_name": selectedGroup,
             "project_name": formData.projectName?.trim() || "Test Project",
-            "project_desc": $('#project-description').val()?.trim() || "This is free text",
+            "project_desc": $('#project-description').val()?.trim() || "This is a test project for verification.",
             "data_agreement_signed": $('#data-agreement').is(':checked'),
             "pi_uid": userId,
             "resources": {
                 "hpc_service_units": {
-                    [hpcServiceUnitKey]: {  
+                    [hpcServiceUnitKey]: {  // Now exactly matches `group_name`
                         "tier": getTierEnum(formData.allocationTier),
                         "request_count": formData.requestCount || "50000", 
-                        "billing_details": getBillingDetails() // Ensure billing is always included
+                        "billing_details": billingDetails // Dynamically fetched billing details
                     }
                 }
             }
         };
     
-        // Append new resource instead of overwriting
+        // Append the new resource to `user_resources`
         existingResources.push(newResource);
     
-        // Construct the final payload with all resources (Including New One)
+        // Construct the final payload
         const payload = [
             {
                 "is_user_resource_request_elligible": true,
