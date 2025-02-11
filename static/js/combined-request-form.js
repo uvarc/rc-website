@@ -512,14 +512,15 @@
 
     function toggleAllocationFields() {
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
-
-        // Explicitly show or hide new vs renewal fields
+    
         if (isNew) {
+            // Hide the renewal table when "New" is selected
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
-            $('#allocation-fields #existing-projects-allocation').hide();
+            $('#existing-projects-allocation').hide();
         } else {
+            // Show the renewal table only when "Renewal" is selected
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
-            $('#allocation-fields #existing-projects-allocation').show();
+            $('#existing-projects-allocation').show();
         }
     }
 
@@ -556,7 +557,10 @@
     function setupEventHandlers() {
         // Use event delegation for dynamically added inputs
         $(document).on('change', 'input[name="request-type"]', toggleRequestFields);
-        $(document).on('change', 'input[name="new-or-renewal"]', toggleAllocationFields);
+        $(document).on('change', 'input[name="new-or-renewal"]', function () {
+            toggleAllocationFields(); // Existing function for showing/hiding fields
+            toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
+        });
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
     
