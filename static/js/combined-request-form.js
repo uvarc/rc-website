@@ -428,25 +428,34 @@
         /// Success Message
 
         function showErrorMessage(message) {
-            const errorDiv = $('<div>').addClass('alert alert-danger').text(message);
+            $('.alert-danger').remove(); // Remove old errors
+            const errorDiv = $('<div>')
+                .addClass('alert alert-danger')
+                .text(message);
             $('#combined-request-form').prepend(errorDiv);
-            setTimeout(() => errorDiv.remove(), 10000); // Set consistent timeout
+            setTimeout(() => errorDiv.remove(), 10000);
         }
         
         function showSuccessMessage(message) {
-            const successDiv = $('<div>')
-                .addClass('alert alert-success alert-dismissible fade show')
-                .attr('role', 'alert')
-                .html(`
-                    ${message}
+            // Remove any existing success messages to avoid duplication
+            $('.alert-success').remove();
+        
+            // Create a new success message with Bootstrap dismissible alert
+            const successDiv = $(`
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success!</strong> ${message}
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                `);
+                </div>
+            `);
         
+            // Prepend the success message to the form and scroll to top smoothly
             $('#combined-request-form').prepend(successDiv);
             $('html, body').animate({ scrollTop: 0 }, 'slow');
-            setTimeout(() => successDiv.remove(), 10000); // Set consistent timeout
+        
+            // Automatically remove the message after 10 seconds
+            setTimeout(() => successDiv.fadeOut(500, () => successDiv.remove()), 10000);
         }
 
     // ===================================
@@ -454,9 +463,12 @@
     // ===================================
 
     function showErrorMessage(message) {
-        const errorDiv = $('<div>').addClass('alert alert-danger').text(message);
+        $('.alert-danger').remove(); // Remove old errors
+        const errorDiv = $('<div>')
+            .addClass('alert alert-danger')
+            .text(message);
         $('#combined-request-form').prepend(errorDiv);
-        setTimeout(() => errorDiv.remove(), 10000); // Set consistent timeout
+        setTimeout(() => errorDiv.remove(), 10000);
     }
 
     function handleApiError(error) {
@@ -618,45 +630,40 @@
         const userEmail = `${userId}@virginia.edu`; // Construct the user's email
         console.log("Submitting payload for user:", userId);
         console.log("User email:", userEmail);
-    
+
         const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
-    
-        // jQuery AJAX request settings (Fixed "Origin" header issue)
+
+        // Remove "Origin" header (Handled automatically by browser)
         var settings = {
-            "url": `${API_CONFIG.baseUrl}/${userId}`, // Use dynamic userId
-            "method": method, // Dynamically choose POST or PUT
-            "timeout": 0, // Prevent timeout issues
+            "url": `${API_CONFIG.baseUrl}/${userId}`, 
+            "method": method, 
+            "timeout": 0, 
             "headers": {
-                "Content-Type": "application/json" // Removed "Origin" header (Handled automatically by browser)
+                "Content-Type": "application/json"
             },
-            "data": JSON.stringify(payload), // Ensures correct JSON format
-            "xhrFields": {
-                withCredentials: true // Ensures cookies and authentication are included (if needed)
+            "data": JSON.stringify(payload), 
+            "xhrFields": { 
+                withCredentials: true // Ensure authentication and cookies are included
             }
         };
-    
-        // Execute AJAX request
+
+        // Properly handle success and failure to prevent infinite loading state
         return $.ajax(settings)
             .done(function (response) {
                 console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
-                
-                // Explicitly log API response
+
+                // Ensure response is logged and displayed
                 console.log("API Response:", response);
-    
-                // Simulate sending an email
-                sendUserEmail(userEmail, payload);
-    
-                // Clear the form fields
-                clearFormFields();
-    
-                // Show success message
                 showSuccessMessage("Your request has been submitted successfully!");
-    
-                return response; // Ensure response is returned
+
+                // Remove the loading state and enable form resubmission
+                $('#submit').prop('disabled', false);
+                clearFormFields();
             })
             .fail(function (xhr, status, error) {
                 console.error(`Submission failed (${method}):`, xhr.responseText || error);
                 showErrorMessage("Submission failed. Please try again.");
+                $('#submit').prop('disabled', false); // Allow retry
             });
     }
 
@@ -768,12 +775,12 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-    
+
         // Get user data from the last API call
         const userData = consoleData[0] || {};
         const userGroups = userData.user_groups || [];
         let existingResources = userData.user_resources || [];
-    
+
         // Ensure selected group is valid
         const selectedGroup = formData.group ? formData.group.trim() : "";
         if (!userGroups.includes(selectedGroup)) {
@@ -781,50 +788,47 @@
             showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
             return null;
         }
-    
+
         // Ensure group does not already exist (for new SU requests)
         if (existingResources.some(res => res.group_name.toLowerCase() === selectedGroup.toLowerCase())) {
             console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
             showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
             return null;
         }
-    
-        // Construct the new resource object
+
+        // `hpc_service_units` should use the `group_name` as the key.
+        const hpcServiceUnitKey = selectedGroup; 
+
+        // Construct the new resource object (Now Matches Backend Format)
         const newResource = {
+            "group_name": selectedGroup,  // Ensure correct `group_name`
+            "project_name": formData.projectName?.trim() || "Test Project",
+            "project_desc": $('#project-description').val()?.trim() || "This is free text",
             "data_agreement_signed": $('#data-agreement').is(':checked'),
-            "delegates_uid": "",
-            "group_id": "",
-            "group_name": selectedGroup, // Ensure correct group name
             "pi_uid": userId,
-            "project_desc": $('#project-description').val()?.trim() || "",
-            "project_name": formData.projectName?.trim() || "",
             "resources": {
                 "hpc_service_units": {
-                    [`${selectedGroup}-ssz_standard`]: {
-                        "request_count": formData.requestCount || "1000",
-                        "request_date": new Date().toISOString(),
-                        "request_status": "pending",
-                        "tier": "ssz_standard",
-                        "update_date": new Date().toISOString(),
-                        "billing_details": getBillingDetails() // Ensure billing is included
+                    [hpcServiceUnitKey]: {  // Use `group_name` as key
+                        "tier": getTierEnum(formData.allocationTier),
+                        "request_count": formData.requestCount || "50000", // Default to 50000 if empty
+                        "billing_details": getBillingDetails() // Ensure billing is always included
                     }
-                },
-                "storage": {}
+                }
             }
         };
-    
-        // ✅ Append the new resource instead of overwriting
+
+        // Append the new resource instead of overwriting
         existingResources.push(newResource);
-    
+
         // Construct the final payload with **all user resources** (including the new one)
         const payload = [
             {
                 "is_user_resource_request_elligible": true,
                 "user_groups": userGroups, 
-                "user_resources": existingResources // ✅ Keeps existing resources and appends new one
+                "user_resources": existingResources // Keeps existing resources and appends new one
             }
         ];
-    
+
         console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
     }
@@ -833,85 +837,112 @@
 
     function validatePayload(payload) {
         const errors = [];
-    
+
         // Ensure payload is an array with exactly one object
         if (!Array.isArray(payload) || payload.length !== 1) {
             errors.push("Payload must be an array containing a single object.");
             return errors;
         }
-    
+
         // Validate the first and only object inside the array
         const resourceWrapper = payload[0];
-    
+
         if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
             errors.push("The 'user_resources' array is required and cannot be empty.");
             return errors;
         }
-    
+
         // Validate each user resource inside "user_resources"
         resourceWrapper.user_resources.forEach((resource, resIndex) => {
             const resourceLabel = `Resource ${resIndex + 1}`;
-    
-            // Ensure "data_agreement_signed" is a boolean
+
+            // Ensure "data_agreement_signed" is explicitly a boolean
             if (typeof resource.data_agreement_signed !== "boolean") {
                 errors.push(`${resourceLabel}: 'data_agreement_signed' must be true or false.`);
             }
-    
-            // "delegates_uid" and "group_id" are optional, so we do NOT validate them
-    
-            // Ensure "group_name" exists (API allows uppercase)
+
+            // Ensure "group_name" is present and lowercased
             if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
                 errors.push(`${resourceLabel}: 'group_name' is required.`);
+            } else {
+                resource.group_name = resource.group_name.toLowerCase();
             }
-    
+
             // Ensure "pi_uid" exists
             if (!resource.pi_uid || typeof resource.pi_uid !== "string" || resource.pi_uid.trim() === "") {
                 errors.push(`${resourceLabel}: 'pi_uid' (user ID) is required.`);
             }
-    
-            // Ensure "project_desc" exists (API allows empty string)
+
+            // Ensure "project_name" is required
+            if (!resource.project_name || typeof resource.project_name !== "string" || resource.project_name.trim() === "") {
+                errors.push(`${resourceLabel}: 'project_name' is required.`);
+            }
+
+            // Ensure "project_desc" exists (can be empty but must be a string)
             if (typeof resource.project_desc !== "string") {
                 errors.push(`${resourceLabel}: 'project_desc' must be a string (can be empty).`);
             }
-    
-            // Ensure "project_name" exists (API allows empty string)
-            if (typeof resource.project_name !== "string" || resource.project_name.trim() === "") {
-                errors.push(`${resourceLabel}: 'project_name' is required.`);
-            }
-    
-            // Ensure "resources" exist (should be an object)
+
+            // Ensure "resources" exist and are correctly structured
             if (!resource.resources || typeof resource.resources !== "object") {
                 errors.push(`${resourceLabel}: 'resources' section is required.`);
                 return;
             }
-    
+
             // Validate "hpc_service_units" if present
             if (resource.resources.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
+                    
+                    // Ensure "request_count" is a valid number
                     if (!unit.request_count || isNaN(parseInt(unit.request_count))) {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_count' must be a valid number.`);
                     }
+
+                    // Ensure "tier" exists
                     if (!unit.tier || typeof unit.tier !== "string" || unit.tier.trim() === "") {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'tier' is required.`);
                     }
+
+                    // Ensure "request_date" is a valid ISO string
                     if (!unit.request_date || isNaN(Date.parse(unit.request_date))) {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_date' must be a valid ISO date string.`);
                     }
+
+                    // Ensure "update_date" is a valid ISO string
                     if (!unit.update_date || isNaN(Date.parse(unit.update_date))) {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'update_date' must be a valid ISO date string.`);
                     }
+
+                    // Ensure "request_status" is present
                     if (!unit.request_status || typeof unit.request_status !== "string" || unit.request_status.trim() === "") {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_status' is required.`);
                     }
+
+                    // Ensure "billing_details" exists and is structured properly
+                    if (!unit.billing_details || typeof unit.billing_details !== "object" || !unit.billing_details.fdm_billing_info) {
+                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'billing_details' is required.`);
+                    } else {
+                        // Validate each "fdm_billing_info" entry
+                        unit.billing_details.fdm_billing_info.forEach((billingInfo, billingIndex) => {
+                            const billingLabel = `Billing Entry ${billingIndex + 1} for ${key}`;
+                            
+                            // Ensure required billing fields are present
+                            ["company", "business_unit", "cost_center", "fund"].forEach(field => {
+                                if (!billingInfo[field] || typeof billingInfo[field] !== "string" || billingInfo[field].trim() === "") {
+                                    errors.push(`${resourceLabel} - ${billingLabel}: '${field}' is required.`);
+                                }
+                            });
+                        });
+                    }
                 });
             }
-    
+
             // Ensure "storage" exists (API accepts `{}` as valid)
             if (!resource.resources.storage || typeof resource.resources.storage !== "object") {
                 errors.push(`${resourceLabel}: 'storage' must be an object (empty {} is valid).`);
             }
         });
-    
+
         return errors; // Return errors for form validation
     }
 
