@@ -1139,8 +1139,8 @@
 
     function populateExistingServiceUnitsTable(apiResponse) {
         const { userResources } = parseConsoleData(apiResponse);
-        const suTableBody = $('#existing-su-tbody');
-        suTableBody.empty();
+        const suTableBody = $('#allocation-projects-tbody'); // Make sure this is the correct ID
+        suTableBody.empty(); // Clear previous entries
     
         if (!Array.isArray(userResources) || userResources.length === 0) {
             suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
@@ -1148,7 +1148,7 @@
         }
     
         userResources.forEach(resource => {
-            const projectName = resource.project_name || "N/A";
+            const projectName = resource.project_name || "N/A"; 
             const groupName = resource.group_name || "N/A";
     
             if (resource.resources?.hpc_service_units) {
@@ -1160,7 +1160,8 @@
                     const row = `
                         <tr>
                             <td>
-                                <input type="radio" name="selected-su" value="${groupName}-${tier}" data-group="${groupName}" data-tier="${tier}">
+                                <input type="radio" name="selected-su" value="${groupName}-${tier}" 
+                                    data-group="${groupName}" data-tier="${tier}">
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
@@ -1171,6 +1172,8 @@
                 });
             }
         });
+    
+        console.log("Existing Service Units table updated!");
     }
 
     // ===================================
