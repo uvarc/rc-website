@@ -879,16 +879,23 @@
 
         // Only validate user_resources if this is a renewal
         if (isRenewal) {
-            if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
-                errors.push("The 'user_resources' array is required and cannot be empty for renewals.");
-            }
+            const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
+                // Only check `user_resources` if it's a renewal
+                if (isRenewal) {
+                    if (!Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
+                        errors.push("The 'user_resources' array is required and cannot be empty for renewals.");
+                    }
+                }
         }
     
         const seenGroupTiers = new Set();
     
         // Validate each resource
-        resourceWrapper.user_resources.forEach((resource, resIndex) => {
-            const resourceLabel = `Resource ${resIndex + 1}`;
+        if (!Array.isArray(resourceWrapper.user_resources)) {
+            resourceWrapper.user_resources = []; // Ensure it's always an array
+        }
+        
+        resourceWrapper.user_resources.forEach((resource, resIndex) => {            const resourceLabel = `Resource ${resIndex + 1}`;
     
             if (typeof resource.data_agreement_signed !== "boolean") {
                 errors.push(`${resourceLabel}: 'data_agreement_signed' must be true or false.`);
