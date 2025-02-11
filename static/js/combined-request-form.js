@@ -874,9 +874,14 @@
     
         const resourceWrapper = payload[0];
     
-        if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
-            errors.push("The 'user_resources' array is required and cannot be empty.");
-            return errors;
+        // Determine if the request is a renewal based on form data
+        const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
+
+        // Only validate user_resources if this is a renewal
+        if (isRenewal) {
+            if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
+                errors.push("The 'user_resources' array is required and cannot be empty for renewals.");
+            }
         }
     
         const seenGroupTiers = new Set();
