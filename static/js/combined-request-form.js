@@ -806,18 +806,24 @@
             return null;
         }
     
-        // Extract displayed existing resources from the table (What the user sees)
-        let existingResources = $('#combined-preview-tbody tr').map(function () {
+        // Extract displayed existing resources from the UI table
+        let displayedResources = $('#combined-preview-tbody tr').map(function () {
             return {
                 group_name: $(this).find("td:eq(2)").text().trim(), // Column index for Group
                 tier: $(this).find("td:eq(3)").text().trim() // Column index for Tier
             };
         }).get();
     
-        // Check if the selected Group + Tier already exists
-        let isRenewal = existingResources.some(resource =>
+        // Extract existing resources from `consoleData` (from backend GET request)
+        let existingBackendResources = consoleData[0]?.user_resources || [];
+    
+        // Check if the Group + Tier already exists in backend (not just in the table)
+        let isRenewal = existingBackendResources.some(resource =>
             resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-            resource.tier.toLowerCase() === selectedTier.toLowerCase()
+            resource.resources?.hpc_service_units &&
+            Object.values(resource.resources.hpc_service_units).some(unit => 
+                unit.tier.toLowerCase() === selectedTier.toLowerCase()
+            )
         );
     
         // If renewal detected, show a warning and stop submission
@@ -848,16 +854,8 @@
             }
         };
     
-        existingResources.push(newResource);
-    
-        // Final Payload
-        const payload = [
-            {
-                "is_user_resource_request_elligible": true,
-                "user_groups": consoleData[0]?.user_groups || [],
-                "user_resources": existingResources
-            }
-        ];
+        // Ensure only the new request is included (not merging existing ones)
+        const payload = [newResource];
     
         console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
