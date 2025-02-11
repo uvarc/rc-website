@@ -775,12 +775,12 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-
+    
         // Get user data from the last API call
         const userData = consoleData[0] || {};
         const userGroups = userData.user_groups || [];
         let existingResources = userData.user_resources || [];
-
+    
         // Ensure selected group is valid
         const selectedGroup = formData.group ? formData.group.trim() : "";
         if (!userGroups.includes(selectedGroup)) {
@@ -788,17 +788,22 @@
             showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
             return null;
         }
-
-        // Ensure group does not already exist (for new SU requests)
-        if (existingResources.some(res => res.group_name.toLowerCase() === selectedGroup.toLowerCase())) {
+    
+        // ✅ Extract all existing group names in lowercase
+        const existingGroupNames = existingResources
+            .filter(res => res.group_name) // Ensure group_name is defined
+            .map(res => res.group_name.toLowerCase());
+    
+        // ✅ Check for duplicate group name before adding new resource
+        if (existingGroupNames.includes(selectedGroup.toLowerCase())) {
             console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
-            showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
+            showErrorMessage(`Group "${selectedGroup}" already has an allocation. Please choose a different group.`);
             return null;
         }
-
+    
         // `hpc_service_units` should use the `group_name` as the key.
-        const hpcServiceUnitKey = selectedGroup; 
-
+        const hpcServiceUnitKey = selectedGroup;
+    
         // Construct the new resource object (Now Matches Backend Format)
         const newResource = {
             "group_name": selectedGroup,  // Ensure correct `group_name`
@@ -816,10 +821,10 @@
                 }
             }
         };
-
+    
         // Append the new resource instead of overwriting
         existingResources.push(newResource);
-
+    
         // Construct the final payload with **all user resources** (including the new one)
         const payload = [
             {
@@ -828,7 +833,7 @@
                 "user_resources": existingResources // Keeps existing resources and appends new one
             }
         ];
-
+    
         console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
     }
@@ -837,58 +842,56 @@
 
     function validatePayload(payload) {
         const errors = [];
-
+    
         // Ensure payload is an array with exactly one object
         if (!Array.isArray(payload) || payload.length !== 1) {
             errors.push("Payload must be an array containing a single object.");
             return errors;
         }
-
+    
         // Validate the first and only object inside the array
         const resourceWrapper = payload[0];
-
+    
         if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
             errors.push("The 'user_resources' array is required and cannot be empty.");
             return errors;
         }
-
+    
         // Validate each user resource inside "user_resources"
         resourceWrapper.user_resources.forEach((resource, resIndex) => {
             const resourceLabel = `Resource ${resIndex + 1}`;
-
+    
             // Ensure "data_agreement_signed" is explicitly a boolean
             if (typeof resource.data_agreement_signed !== "boolean") {
                 errors.push(`${resourceLabel}: 'data_agreement_signed' must be true or false.`);
             }
-
-            // Ensure "group_name" is present and lowercased
+    
+            // Ensure "group_name" is present without modifying its case
             if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
                 errors.push(`${resourceLabel}: 'group_name' is required.`);
-            } else {
-                resource.group_name = resource.group_name.toLowerCase();
             }
-
+    
             // Ensure "pi_uid" exists
             if (!resource.pi_uid || typeof resource.pi_uid !== "string" || resource.pi_uid.trim() === "") {
                 errors.push(`${resourceLabel}: 'pi_uid' (user ID) is required.`);
             }
-
+    
             // Ensure "project_name" is required
             if (!resource.project_name || typeof resource.project_name !== "string" || resource.project_name.trim() === "") {
                 errors.push(`${resourceLabel}: 'project_name' is required.`);
             }
-
+    
             // Ensure "project_desc" exists (can be empty but must be a string)
             if (typeof resource.project_desc !== "string") {
                 errors.push(`${resourceLabel}: 'project_desc' must be a string (can be empty).`);
             }
-
+    
             // Ensure "resources" exist and are correctly structured
             if (!resource.resources || typeof resource.resources !== "object") {
                 errors.push(`${resourceLabel}: 'resources' section is required.`);
                 return;
             }
-
+    
             // Validate "hpc_service_units" if present
             if (resource.resources.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
@@ -897,27 +900,27 @@
                     if (!unit.request_count || isNaN(parseInt(unit.request_count))) {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_count' must be a valid number.`);
                     }
-
+    
                     // Ensure "tier" exists
                     if (!unit.tier || typeof unit.tier !== "string" || unit.tier.trim() === "") {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'tier' is required.`);
                     }
-
+    
                     // Ensure "request_date" is a valid ISO string
                     if (!unit.request_date || isNaN(Date.parse(unit.request_date))) {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_date' must be a valid ISO date string.`);
                     }
-
+    
                     // Ensure "update_date" is a valid ISO string
                     if (!unit.update_date || isNaN(Date.parse(unit.update_date))) {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'update_date' must be a valid ISO date string.`);
                     }
-
+    
                     // Ensure "request_status" is present
                     if (!unit.request_status || typeof unit.request_status !== "string" || unit.request_status.trim() === "") {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_status' is required.`);
                     }
-
+    
                     // Ensure "billing_details" exists and is structured properly
                     if (!unit.billing_details || typeof unit.billing_details !== "object" || !unit.billing_details.fdm_billing_info) {
                         errors.push(`${resourceLabel} - HPC Unit ${key}: 'billing_details' is required.`);
@@ -936,13 +939,13 @@
                     }
                 });
             }
-
+    
             // Ensure "storage" exists (API accepts `{}` as valid)
             if (!resource.resources.storage || typeof resource.resources.storage !== "object") {
                 errors.push(`${resourceLabel}: 'storage' must be an object (empty {} is valid).`);
             }
         });
-
+    
         return errors; // Return errors for form validation
     }
 
