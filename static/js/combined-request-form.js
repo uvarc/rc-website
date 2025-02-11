@@ -745,26 +745,42 @@
     let previousErrorsString = "";
 
     function updatePayloadPreview() {
+        console.log("updatePayloadPreview() triggered.");
+    
+        // Ensure Data Agreement is checked before proceeding
+        const isDataAgreementChecked = $('#data-agreement').is(':checked');
+        if (!isDataAgreementChecked) {
+            console.warn("⚠ Data Agreement checkbox is NOT checked. Skipping payload validation.");
+            $('#submit').prop('disabled', true); // Disable submit button
+            return; // Exit function early
+        }
+    
         const payload = buildPayloadPreview();
+        if (!payload) {
+            console.warn("⚠ Payload generation failed. No preview available.");
+            return; // Stop execution if payload is null
+        }
+    
         const errors = validatePayload(payload);
-
+    
         // Convert to JSON strings for comparison
         const payloadString = JSON.stringify(payload, null, 2);
         const errorsString = JSON.stringify(errors, null, 2);
-
-        // Only log if the payload has changed
+    
+        // Only log payload if it has changed
         if (payloadString !== previousPayloadString) {
-            console.clear(); // Clears the console to reduce clutter
             console.log("Updated Payload Preview:", payload);
             previousPayloadString = payloadString;
         }
-
+    
         // Only log errors if they have changed
         if (errorsString !== previousErrorsString) {
             if (errors.length > 0) {
-                console.warn("Validation Errors:", errors);
+                console.warn("⚠ Validation Errors:", errors);
+                $('#submit').prop('disabled', true); // Keep submit button disabled if errors exist
             } else {
                 console.log("Payload is valid.");
+                $('#submit').prop('disabled', false); // Enable submit button
             }
             previousErrorsString = errorsString;
         }
@@ -775,12 +791,12 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-
+    
         // Get user data from the last API call
         const userData = consoleData[0] || {};
         const userGroups = userData.user_groups || [];
         let existingResources = userData.user_resources || [];
-
+    
         // Ensure selected group is valid
         const selectedGroup = formData.group ? formData.group.trim() : "";
         if (!userGroups.includes(selectedGroup)) {
@@ -788,47 +804,47 @@
             showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
             return null;
         }
-
-        // Ensure group does not already exist (for new SU requests)
+    
+        // Ensure group does not already exist (case-insensitive check)
         if (existingResources.some(res => res.group_name.toLowerCase() === selectedGroup.toLowerCase())) {
             console.error(`Group ${selectedGroup} already exists in user_resources. Cannot create a duplicate.`);
             showErrorMessage(`Group ${selectedGroup} already has an allocation. Please choose a different group.`);
             return null;
         }
-
-        // `hpc_service_units` should use the `group_name` as the key.
+    
+        // Use `group_name` as the key for `hpc_service_units`
         const hpcServiceUnitKey = selectedGroup; 
-
-        // Construct the new resource object (Now Matches Backend Format)
+    
+        // Construct the new resource object (Matching Backend Format)
         const newResource = {
-            "group_name": selectedGroup,  // Ensure correct `group_name`
+            "group_name": selectedGroup,
             "project_name": formData.projectName?.trim() || "Test Project",
             "project_desc": $('#project-description').val()?.trim() || "This is free text",
             "data_agreement_signed": $('#data-agreement').is(':checked'),
             "pi_uid": userId,
             "resources": {
                 "hpc_service_units": {
-                    [hpcServiceUnitKey]: {  // Use `group_name` as key
+                    [hpcServiceUnitKey]: {  
                         "tier": getTierEnum(formData.allocationTier),
-                        "request_count": formData.requestCount || "50000", // Default to 50000 if empty
+                        "request_count": formData.requestCount || "50000", 
                         "billing_details": getBillingDetails() // Ensure billing is always included
                     }
                 }
             }
         };
-
-        // Append the new resource instead of overwriting
+    
+        // Append new resource instead of overwriting
         existingResources.push(newResource);
-
-        // Construct the final payload with **all user resources** (including the new one)
+    
+        // Construct the final payload with all resources (Including New One)
         const payload = [
             {
                 "is_user_resource_request_elligible": true,
                 "user_groups": userGroups, 
-                "user_resources": existingResources // Keeps existing resources and appends new one
+                "user_resources": existingResources
             }
         ];
-
+    
         console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
         return payload;
     }
@@ -837,113 +853,66 @@
 
     function validatePayload(payload) {
         const errors = [];
-
+    
         // Ensure payload is an array with exactly one object
         if (!Array.isArray(payload) || payload.length !== 1) {
             errors.push("Payload must be an array containing a single object.");
             return errors;
         }
-
-        // Validate the first and only object inside the array
+    
         const resourceWrapper = payload[0];
-
+    
         if (!resourceWrapper.user_resources || !Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
             errors.push("The 'user_resources' array is required and cannot be empty.");
             return errors;
         }
-
-        // Validate each user resource inside "user_resources"
+    
+        const seenGroups = new Set();
+    
+        // Validate each resource
         resourceWrapper.user_resources.forEach((resource, resIndex) => {
             const resourceLabel = `Resource ${resIndex + 1}`;
-
-            // Ensure "data_agreement_signed" is explicitly a boolean
+    
             if (typeof resource.data_agreement_signed !== "boolean") {
                 errors.push(`${resourceLabel}: 'data_agreement_signed' must be true or false.`);
             }
-
-            // Ensure "group_name" is present and lowercased
+    
             if (!resource.group_name || typeof resource.group_name !== "string" || resource.group_name.trim() === "") {
                 errors.push(`${resourceLabel}: 'group_name' is required.`);
             } else {
-                resource.group_name = resource.group_name.toLowerCase();
+                const lowerGroup = resource.group_name.toLowerCase();
+                if (seenGroups.has(lowerGroup)) {
+                    errors.push(`${resourceLabel}: Duplicate group name '${resource.group_name}' detected.`);
+                }
+                seenGroups.add(lowerGroup);
             }
-
-            // Ensure "pi_uid" exists
+    
             if (!resource.pi_uid || typeof resource.pi_uid !== "string" || resource.pi_uid.trim() === "") {
                 errors.push(`${resourceLabel}: 'pi_uid' (user ID) is required.`);
             }
-
-            // Ensure "project_name" is required
+    
             if (!resource.project_name || typeof resource.project_name !== "string" || resource.project_name.trim() === "") {
                 errors.push(`${resourceLabel}: 'project_name' is required.`);
             }
-
-            // Ensure "project_desc" exists (can be empty but must be a string)
-            if (typeof resource.project_desc !== "string") {
-                errors.push(`${resourceLabel}: 'project_desc' must be a string (can be empty).`);
-            }
-
-            // Ensure "resources" exist and are correctly structured
+    
             if (!resource.resources || typeof resource.resources !== "object") {
                 errors.push(`${resourceLabel}: 'resources' section is required.`);
                 return;
             }
-
-            // Validate "hpc_service_units" if present
-            if (resource.resources.hpc_service_units) {
+    
+            // Ensure billing details exist
+            if (!resource.resources.hpc_service_units) {
+                errors.push(`${resourceLabel}: 'hpc_service_units' is required.`);
+            } else {
                 Object.entries(resource.resources.hpc_service_units).forEach(([key, unit]) => {
-                    
-                    // Ensure "request_count" is a valid number
-                    if (!unit.request_count || isNaN(parseInt(unit.request_count))) {
-                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_count' must be a valid number.`);
-                    }
-
-                    // Ensure "tier" exists
-                    if (!unit.tier || typeof unit.tier !== "string" || unit.tier.trim() === "") {
-                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'tier' is required.`);
-                    }
-
-                    // Ensure "request_date" is a valid ISO string
-                    if (!unit.request_date || isNaN(Date.parse(unit.request_date))) {
-                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_date' must be a valid ISO date string.`);
-                    }
-
-                    // Ensure "update_date" is a valid ISO string
-                    if (!unit.update_date || isNaN(Date.parse(unit.update_date))) {
-                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'update_date' must be a valid ISO date string.`);
-                    }
-
-                    // Ensure "request_status" is present
-                    if (!unit.request_status || typeof unit.request_status !== "string" || unit.request_status.trim() === "") {
-                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'request_status' is required.`);
-                    }
-
-                    // Ensure "billing_details" exists and is structured properly
-                    if (!unit.billing_details || typeof unit.billing_details !== "object" || !unit.billing_details.fdm_billing_info) {
-                        errors.push(`${resourceLabel} - HPC Unit ${key}: 'billing_details' is required.`);
-                    } else {
-                        // Validate each "fdm_billing_info" entry
-                        unit.billing_details.fdm_billing_info.forEach((billingInfo, billingIndex) => {
-                            const billingLabel = `Billing Entry ${billingIndex + 1} for ${key}`;
-                            
-                            // Ensure required billing fields are present
-                            ["company", "business_unit", "cost_center", "fund"].forEach(field => {
-                                if (!billingInfo[field] || typeof billingInfo[field] !== "string" || billingInfo[field].trim() === "") {
-                                    errors.push(`${resourceLabel} - ${billingLabel}: '${field}' is required.`);
-                                }
-                            });
-                        });
+                    if (!unit.billing_details || !unit.billing_details.fdm_billing_info) {
+                        errors.push(`${resourceLabel} - ${key}: 'billing_details' is required.`);
                     }
                 });
             }
-
-            // Ensure "storage" exists (API accepts `{}` as valid)
-            if (!resource.resources.storage || typeof resource.resources.storage !== "object") {
-                errors.push(`${resourceLabel}: 'storage' must be an object (empty {} is valid).`);
-            }
         });
-
-        return errors; // Return errors for form validation
+    
+        return errors;
     }
 
     // ===================================
