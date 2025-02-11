@@ -796,48 +796,41 @@
         const formData = collectFormData();
         const userId = getUserId();
     
-        // Fetch user data from last GET API call
-        const userData = consoleData[0] || {};
-        const userGroups = userData.user_groups || [];
-        let existingResources = userData.user_resources || [];
-    
-        // Ensure selected group is valid
+        // Fetch the selected Group and Tier
         const selectedGroup = formData.group ? formData.group.trim() : "";
-        if (!userGroups.includes(selectedGroup)) {
-            console.error(`Invalid group selection: ${selectedGroup} is not in user_groups.`);
-            showErrorMessage(`Invalid group selection: ${selectedGroup}. Please select a valid group.`);
-            return null;
-        }
-    
-        // Ensure tier option is selected
         const selectedTier = getTierEnum(formData.allocationTier);
-        if (!selectedTier) {
-            console.error(`No valid tier selected.`);
-            showErrorMessage(`Please select a valid tier.`);
+    
+        if (!selectedGroup || !selectedTier) {
+            console.error(`⚠ Missing required values: Group: ${selectedGroup}, Tier: ${selectedTier}`);
+            showErrorMessage("⚠ Please select a valid Group and Tier.");
             return null;
         }
     
-        // Ensure billing information is included if required
-        const billingDetails = getBillingDetails();
+        // Extract displayed existing resources from the table (What the user sees)
+        let existingResources = $('#combined-preview-tbody tr').map(function () {
+            return {
+                group_name: $(this).find("td:eq(2)").text().trim(), // Column index for Group
+                tier: $(this).find("td:eq(3)").text().trim() // Column index for Tier
+            };
+        }).get();
     
-        // Construct HPC Service Unit Key
-        const hpcServiceUnitKey = selectedGroup;
-    
-        // Check if this (group_name + tier) combination already exists
-        let isRenewal = existingResources.some(resource => 
+        // Check if the selected Group + Tier already exists
+        let isRenewal = existingResources.some(resource =>
             resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-            resource.resources.hpc_service_units &&
-            resource.resources.hpc_service_units[hpcServiceUnitKey]?.tier === selectedTier
+            resource.tier.toLowerCase() === selectedTier.toLowerCase()
         );
     
-        // 🚨 Show pop-up warning if it's a duplicate (Renewal case)
+        // If renewal detected, show a warning and stop submission
         if (isRenewal) {
             showErrorMessage(`⚠ This Group and Tier already exist. Please submit a Renewal instead.`);
             console.warn(`🔄 Renewal detected: ${selectedGroup} - ${selectedTier}. Please update instead of creating a new request.`);
             return null; // Stop form submission
         }
     
-        // Construct the new resource object (Matching Backend Format)
+        // Continue building the payload for new requests
+        const billingDetails = getBillingDetails();
+        const hpcServiceUnitKey = selectedGroup; // Ensure this matches expected backend format
+    
         const newResource = {
             "group_name": selectedGroup,
             "project_name": formData.projectName?.trim() || "Test Project",
@@ -846,23 +839,22 @@
             "pi_uid": userId,
             "resources": {
                 "hpc_service_units": {
-                    [hpcServiceUnitKey]: {  
+                    [hpcServiceUnitKey]: {
                         "tier": selectedTier,
-                        "request_count": formData.requestCount || "50000", 
-                        "billing_details": billingDetails // Ensure billing is always included
+                        "request_count": formData.requestCount || "50000",
+                        "billing_details": billingDetails
                     }
                 }
             }
         };
     
-        // Append new resource instead of overwriting
         existingResources.push(newResource);
     
-        // Construct the final payload with all resources (Including New One)
+        // Final Payload
         const payload = [
             {
                 "is_user_resource_request_elligible": true,
-                "user_groups": userGroups, 
+                "user_groups": consoleData[0]?.user_groups || [],
                 "user_resources": existingResources
             }
         ];
