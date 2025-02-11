@@ -1105,6 +1105,14 @@
             const projectName = resource.project_name || "N/A";
             const groupName = resource.group_name || "N/A";
     
+            // Determine the Type (SU or Storage)
+            let resourceType = "Unknown";
+            if (resource.resources?.hpc_service_units) {
+                resourceType = "SU"; // If it has HPC service units, set type to "SU"
+            } else if (resource.resources?.storage) {
+                resourceType = "Storage"; // If it has Storage, set type to "Storage"
+            }
+    
             if (resource.resources?.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
@@ -1113,6 +1121,7 @@
     
                     const row = `
                         <tr>
+                            <td>${resourceType}</td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
                             <td>${tier}</td>
@@ -1124,7 +1133,7 @@
             }
         });
     
-        // Also update the existing SU table for Renewals
+        // Also update the Existing Service Units table for Renewals
         populateExistingServiceUnitsTable(apiResponse);
     }
 
