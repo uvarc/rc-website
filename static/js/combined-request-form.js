@@ -598,11 +598,24 @@
         }
     
         try {
-            const responseData = await submitForm(formData, payload);
+            const isRenewal = formData.newOrRenewal === 'renewal';
+            const method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
     
-            // Explicitly log API response
-            console.log("API Response:", responseData);
+            console.log(`Submitting ${isRenewal ? 'Renewal (PUT)' : 'New Request (POST)'}...`);
     
+            const responseData = await submitForm(formData, payload, method);
+    
+            if (responseData) {
+                console.log("API Response:", responseData);
+                showSuccessMessage("Your request has been submitted successfully!");
+    
+                // Update the updated_date for the selected SU if it's a renewal**
+                if (isRenewal) {
+                    updateServiceUnitTimestamp(formData.existingProject);
+                }
+    
+                clearFormFields(); // Reset form after successful submission
+            }
         } catch (error) {
             console.error("Error during form submission:", error);
             showErrorMessage("An error occurred while submitting the form. Please try again.");
@@ -634,12 +647,24 @@
         const userEmail = `${userId}@virginia.edu`; // Construct the user's email
         console.log("Submitting payload for user:", userId);
         console.log("User email:", userEmail);
-
-        const method = formData.isUpdate ? 'PUT' : 'POST'; // Determine HTTP method dynamically
-
+    
+        // Check if it's a renewal by detecting the selected existing SU
+        const isRenewal = formData.newOrRenewal === 'renewal';
+    
+        // Set the correct HTTP method
+        const method = isRenewal ? 'PUT' : 'POST';
+    
+        console.log(`Submitting ${method} request for ${isRenewal ? "Renewal" : "New Request"}...`);
+    
+        // Ensure correct URL for PUT (Renewals)
+        let requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
+        if (isRenewal && formData.existingProject) {
+            requestUrl += `/${formData.existingProject}`;
+        }
+    
         // Remove "Origin" header (Handled automatically by browser)
-        var settings = {
-            "url": `${API_CONFIG.baseUrl}/${userId}`, 
+        const settings = {
+            "url": requestUrl, 
             "method": method, 
             "timeout": 0, 
             "headers": {
@@ -650,25 +675,37 @@
                 withCredentials: true // Ensure authentication and cookies are included
             }
         };
-
-        // Properly handle success and failure to prevent infinite loading state
-        return $.ajax(settings)
-            .done(function (response) {
-                console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
-
-                // Ensure response is logged and displayed
-                console.log("API Response:", response);
-                showSuccessMessage("Your request has been submitted successfully!");
-
-                // Remove the loading state and enable form resubmission
-                $('#submit').prop('disabled', false);
-                clearFormFields();
-            })
-            .fail(function (xhr, status, error) {
-                console.error(`Submission failed (${method}):`, xhr.responseText || error);
-                showErrorMessage("Submission failed. Please try again.");
-                $('#submit').prop('disabled', false); // Allow retry
-            });
+    
+        try {
+            const response = await $.ajax(settings);
+            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
+            
+            // Show success message
+            showSuccessMessage("Your request has been submitted successfully!");
+    
+            // If renewal, update the "Updated" timestamp for the selected SU**
+            if (isRenewal && formData.existingProject) {
+                updateServiceUnitTimestamp(formData.existingProject);
+            }
+    
+            // Re-enable Submit Button**
+            $('#submit').prop('disabled', false);
+    
+            // Clear form after successful submission**
+            clearFormFields();
+    
+            return response;
+        } catch (error) {
+            console.error(`Submission failed (${method}):`, error.responseText || error);
+            
+            // Show error message
+            showErrorMessage("Submission failed. Please try again.");
+    
+            // Re-enable Submit Button for retries**
+            $('#submit').prop('disabled', false);
+    
+            return null;
+        }
     }
 
     // ===================================
@@ -1197,6 +1234,30 @@
         });
     
         console.log("Existing Service Units table updated!");
+    }
+
+    function updateServiceUnitTimestamp(selectedSU) {
+        if (!selectedSU) {
+            console.warn("⚠ No selected service unit to update timestamp.");
+            return;
+        }
+    
+        const now = new Date().toISOString(); // Get current timestamp
+    
+        $('#allocation-projects-tbody tr').each(function () {
+            const group = $(this).find("td:eq(2)").text().trim();
+            const tier = $(this).find("td:eq(3)").text().trim();
+            const matchValue = `${group}-${tier}`;
+    
+            if (matchValue === selectedSU) {
+                console.log(`Updating timestamp for renewal: ${matchValue}`);
+    
+                // Update the "Updated" date in the table
+                $(this).find("td:eq(4)").text(`Updated: ${now}`);
+            }
+        });
+    
+        console.log("Service Unit timestamp updated.");
     }
 
     // ===================================
