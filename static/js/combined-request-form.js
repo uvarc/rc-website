@@ -834,8 +834,26 @@
         const userId = getUserId();
     
         // Fetch the selected Group and Tier
-        const selectedGroup = formData.group ? formData.group.trim() : "";
-        const selectedTier = getTierEnum(formData.allocationTier);
+        let selectedGroup, selectedTier;
+
+        if (formData.newOrRenewal === "renewal") {
+            // Extract from the selected SU in the renewal table
+            const selectedSU = $('input[name="selected-su"]:checked').val();
+            if (selectedSU) {
+                [selectedGroup, selectedTier] = selectedSU.split('-'); // Split into Group and Tier
+            }
+        } else {
+            // New Requests: Get Group and Tier from form dropdowns
+            selectedGroup = formData.group ? formData.group.trim() : "";
+            selectedTier = getTierEnum(formData.allocationTier);
+        }
+
+        // Validate that Group and Tier are correctly retrieved
+        if (!selectedGroup || !selectedTier) {
+            console.error(`⚠ Missing required values: Group: ${selectedGroup}, Tier: ${selectedTier}`);
+            showErrorMessage("⚠ Please select a valid Group and Tier.");
+            return null;
+        }
     
         if (!selectedGroup || !selectedTier) {
             console.error(`⚠ Missing required values: Group: ${selectedGroup}, Tier: ${selectedTier}`);
