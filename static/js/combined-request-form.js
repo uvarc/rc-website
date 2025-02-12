@@ -833,27 +833,19 @@
         const formData = collectFormData();
         const userId = getUserId();
     
-        // Fetch the selected Group and Tier
         let selectedGroup, selectedTier;
-
+    
         if (formData.newOrRenewal === "renewal") {
             // Extract from the selected SU in the renewal table
             const selectedSU = $('input[name="selected-su"]:checked').val();
             if (selectedSU) {
-                [selectedGroup, selectedTier] = selectedSU.split('-'); // Split into Group and Tier
+                [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
             }
         } else {
             // New Requests: Get Group and Tier from form dropdowns
             selectedGroup = formData.group ? formData.group.trim() : "";
             selectedTier = getTierEnum(formData.allocationTier);
         }
-
-        // Validate that Group and Tier are correctly retrieved
-        if (!selectedGroup || !selectedTier) {
-            console.error(`⚠ Missing required values: Group: ${selectedGroup}, Tier: ${selectedTier}`);
-            showErrorMessage("⚠ Please select a valid Group and Tier.");
-            return null;
-        }
     
         if (!selectedGroup || !selectedTier) {
             console.error(`⚠ Missing required values: Group: ${selectedGroup}, Tier: ${selectedTier}`);
@@ -861,40 +853,48 @@
             return null;
         }
     
-        // Extract displayed existing resources from the UI table
-        let displayedResources = $('#combined-preview-tbody tr').map(function () {
-            return {
-                group_name: $(this).find("td:eq(2)").text().trim(), // Column index for Group
-                tier: $(this).find("td:eq(3)").text().trim() // Column index for Tier
+        // Handle Renewals: Check if the resource exists in the API response
+        if (formData.newOrRenewal === "renewal") {
+            let existingResource = consoleData[0]?.user_resources?.find(resource => 
+                resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
+                resource.resources?.hpc_service_units?.[selectedGroup]?.tier.toLowerCase() === selectedTier.toLowerCase()
+            );
+    
+            if (!existingResource) {
+                showErrorMessage(`⚠ The selected Group and Tier do not match any existing resources.`);
+                return null;
+            }
+    
+            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Sending minimal PUT payload.`);
+    
+            // Get existing request count to avoid changes
+            const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
+    
+            // Construct minimal payload for PUT (Renewal)
+            const renewalPayload = {
+                "group_name": selectedGroup,
+                "project_name": existingResource.project_name,
+                "project_desc": existingResource.project_desc,
+                "data_agreement_signed": existingResource.data_agreement_signed,
+                "pi_uid": userId,
+                "resources": {
+                    "hpc_service_units": {
+                        [selectedGroup]: {
+                            "tier": selectedTier,
+                            "request_count": existingRequestCount, // Keep the same
+                            "update_date": new Date().toISOString() // Set new timestamp
+                        }
+                    }
+                }
             };
-        }).get();
     
-        // Extract existing resources from `consoleData` (from backend GET request)
-        let existingBackendResources = consoleData[0]?.user_resources || [];
-    
-        // Check if the Group + Tier already exists in backend (not just in the table)
-        let isRenewal = existingBackendResources.some(resource =>
-            resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-            resource.resources?.hpc_service_units &&
-            Object.values(resource.resources.hpc_service_units).some(unit => 
-                unit.tier.toLowerCase() === selectedTier.toLowerCase()
-            )
-        );
-    
-        // If renewal detected, show a warning and stop submission
-        if (isRenewal) {
-            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Updating timestamp instead.`);
-        
-            // Update only the "update_date" for the selected resource
-            updateServiceUnitTimestamp(`${selectedGroup}-${selectedTier}`);
-        
-            showSuccessMessage(`Renewal submitted successfully for ${selectedGroup} - ${selectedTier}.`);
-            return null; // Stop full payload submission
+            console.log("Final Renewal Payload (PUT):", JSON.stringify(renewalPayload, null, 2));
+            return [renewalPayload]; // Return as an array for consistency
         }
     
-        // Continue building the payload for new requests
+        // Handle New Requests
         const billingDetails = getBillingDetails();
-        const hpcServiceUnitKey = selectedGroup; // Ensure this matches expected backend format
+        const hpcServiceUnitKey = selectedGroup;
     
         const newResource = {
             "group_name": selectedGroup,
@@ -906,20 +906,15 @@
                 "hpc_service_units": {
                     [hpcServiceUnitKey]: {
                         "tier": selectedTier,
-                        "request_count": formData.newOrRenewal === "renewal" 
-                            ? existingRequestCount // Preserve the existing value
-                            : (formData.requestCount || "1000"), // Only default for new requests
+                        "request_count": formData.requestCount || "1000",
                         "billing_details": billingDetails
                     }
                 }
             }
         };
     
-        // Ensure only the new request is included (not merging existing ones)
-        const payload = [newResource];
-    
-        console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
-        return payload;
+        console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
+        return [newResource]; // Return as an array
     }
 
     // Validate Payload
@@ -934,29 +929,32 @@
         }
     
         const resourceWrapper = payload[0];
-    
-        // Determine if the request is a renewal based on form data
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
-
-        // Only validate user_resources if this is a renewal
+    
+        // **If it's a renewal, user_resources array should NOT be validated for new entries**
         if (isRenewal) {
-            const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
-                // Only check `user_resources` if it's a renewal
-                if (isRenewal) {
-                    if (!Array.isArray(resourceWrapper.user_resources) || resourceWrapper.user_resources.length === 0) {
-                        errors.push("The 'user_resources' array is required and cannot be empty for renewals.");
-                    }
-                }
+            if (!resourceWrapper.group_name || !resourceWrapper.resources?.hpc_service_units) {
+                errors.push("Renewal request must include a valid Group and existing HPC Service Unit.");
+            }
+    
+            // Ensure the update_date field is present for renewal
+            const hpcKeys = Object.keys(resourceWrapper.resources?.hpc_service_units || {});
+            if (hpcKeys.length === 0 || !resourceWrapper.resources.hpc_service_units[hpcKeys[0]].update_date) {
+                errors.push("Renewal request must include an update_date field.");
+            }
+    
+            return errors; // Skip other validations for renewals
         }
     
+        // **For New Requests (POST)**
         const seenGroupTiers = new Set();
     
-        // Validate each resource
         if (!Array.isArray(resourceWrapper.user_resources)) {
             resourceWrapper.user_resources = []; // Ensure it's always an array
         }
-        
-        resourceWrapper.user_resources.forEach((resource, resIndex) => {            const resourceLabel = `Resource ${resIndex + 1}`;
+    
+        resourceWrapper.user_resources.forEach((resource, resIndex) => {
+            const resourceLabel = `Resource ${resIndex + 1}`;
     
             if (typeof resource.data_agreement_signed !== "boolean") {
                 errors.push(`${resourceLabel}: 'data_agreement_signed' must be true or false.`);
