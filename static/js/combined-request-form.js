@@ -1107,23 +1107,31 @@
             return;
         }
     
+        // **Sort resources by most recent `update_date` (or fallback to `request_date`)**
+        userResources.sort((a, b) => {
+            const dateA = new Date(a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.update_date || 
+                                   a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.request_date || 0);
+            const dateB = new Date(b.resources?.hpc_service_units?.[Object.keys(b.resources.hpc_service_units)[0]]?.update_date || 
+                                   b.resources?.hpc_service_units?.[Object.keys(b.resources.hpc_service_units)[0]]?.request_date || 0);
+            return dateB - dateA; // Sort descending (newest first)
+        });
+    
         userResources.forEach(resource => {
             const projectName = resource.project_name || "N/A";
             const groupName = resource.group_name || "N/A";
     
-            // Determine the Type (SU or Storage)
             let resourceType = "Unknown";
             if (resource.resources?.hpc_service_units) {
-                resourceType = "SU"; // If it has HPC service units, set type to "SU"
+                resourceType = "SU";
             } else if (resource.resources?.storage) {
-                resourceType = "Storage"; // If it has Storage, set type to "Storage"
+                resourceType = "Storage";
             }
     
             if (resource.resources?.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
-                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : "No update available";
+                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : `Requested: ${details.request_date || "No date available"}`;
     
                     const row = `
                         <tr>
@@ -1145,23 +1153,32 @@
 
     function populateExistingServiceUnitsTable(apiResponse) {
         const { userResources } = parseConsoleData(apiResponse);
-        const suTableBody = $('#allocation-projects-tbody'); // Make sure this is the correct ID
-        suTableBody.empty(); // Clear previous entries
+        const suTableBody = $('#allocation-projects-tbody');
+        suTableBody.empty();
     
         if (!Array.isArray(userResources) || userResources.length === 0) {
             suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
             return;
         }
     
+        // **Sort resources by most recent `update_date` (or fallback to `request_date`)**
+        userResources.sort((a, b) => {
+            const dateA = new Date(a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.update_date || 
+                                   a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.request_date || 0);
+            const dateB = new Date(b.resources?.hpc_service_units?.[Object.keys(b.resources.hpc_service_units)[0]]?.update_date || 
+                                   b.resources?.hpc_service_units?.[Object.keys(b.resources.hpc_service_units)[0]]?.request_date || 0);
+            return dateB - dateA; // Sort descending (newest first)
+        });
+    
         userResources.forEach(resource => {
-            const projectName = resource.project_name || "N/A"; 
+            const projectName = resource.project_name || "N/A";
             const groupName = resource.group_name || "N/A";
     
             if (resource.resources?.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
-                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : "No update available";
+                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : `Requested: ${details.request_date || "No date available"}`;
     
                     const row = `
                         <tr>
