@@ -112,3 +112,61 @@ Fetched data is stored in `consoleData` and updates:
         }
     }
 ]
+```
+### **Renewal Requests (PUT)**
+- The user selects an **existing SU** instead of filling in a new group.
+- The only change allowed is updating the `update_date`.
+- The API payload includes the **existing group**, **tier**, and **updated timestamp**.
+```json
+[
+    {
+        "group_name": "CACS_Staff",
+        "project_name": "Existing Project",
+        "resources": {
+            "hpc_service_units": {
+                "CACS_Staff-ssz_standard": {
+                    "tier": "ssz_standard",
+                    "request_count": "50000",
+                    "update_date": "2025-02-12T10:30:00Z"
+                }
+            }
+        }
+    }
+]
+```
+---
+
+## 6. Form Submission & API Communication  
+
+The `submitForm()` function determines whether to **POST** or **PUT** based on the selected **New vs Renewal** option.
+
+- **New Requests →** `POST` to:  
+  `https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/{userId}`
+
+- **Renewal Requests →** `PUT` to:  
+  `https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user/{userId}/{resource_id}`
+
+---
+
+## 7. Validation & Error Handling  
+
+Before submission, `validatePayload(payload)` checks for:
+
+- Missing required fields (**group, tier, request count**).
+- Duplicate **group/tier** combinations.
+- Correct formatting of **billing details** (when required).
+
+Errors trigger `showErrorMessage()`, and invalid fields are **marked red**.
+
+---
+
+## 8. UI Behaviors & Additional Features  
+
+### ✅ **Real-Time Payload Preview**
+- The function `updatePayloadPreview()` shows the request payload before submission.
+
+### ✅ **Billing Visibility**
+- The form automatically hides/shows **billing details** based on the selected **SU** or **Storage** option.
+
+### ✅ **Sorting of Existing SU Table**
+- **Newest allocations appear first** in the **Existing SU** table.
