@@ -865,9 +865,13 @@
     
         // If renewal detected, show a warning and stop submission
         if (isRenewal) {
-            showErrorMessage(`⚠ This Group and Tier already exist. Please submit a Renewal instead.`);
-            console.warn(`🔄 Renewal detected: ${selectedGroup} - ${selectedTier}. Please update instead of creating a new request.`);
-            return null; // Stop form submission
+            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Updating timestamp instead.`);
+        
+            // Update only the "update_date" for the selected resource
+            updateServiceUnitTimestamp(`${selectedGroup}-${selectedTier}`);
+        
+            showSuccessMessage(`Renewal submitted successfully for ${selectedGroup} - ${selectedTier}.`);
+            return null; // Stop full payload submission
         }
     
         // Continue building the payload for new requests
@@ -884,7 +888,9 @@
                 "hpc_service_units": {
                     [hpcServiceUnitKey]: {
                         "tier": selectedTier,
-                        "request_count": formData.requestCount || "50000",
+                        "request_count": formData.newOrRenewal === "renewal" 
+                            ? existingRequestCount // Preserve the existing value
+                            : (formData.requestCount || "1000"), // Only default for new requests
                         "billing_details": billingDetails
                     }
                 }
