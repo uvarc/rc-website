@@ -127,7 +127,7 @@ ii)  the number of tasks;
 
 iii) the parallel partition; and 
 
-iv)  the `srun` before the command to run the R code.
+iv)  the `mpirun` before the command to run the R code.
 
 
 
