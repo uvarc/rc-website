@@ -60,14 +60,6 @@ private = true
 <div id="existing-resources-preview" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
     <h5 class="mb-3">Your Current Resources</h5>
 
-    <!-- Loading Indicator -->
-    <div id="loading-message" class="alert alert-info d-flex align-items-center" style="display:none;">
-        <div class="spinner-border spinner-border-sm me-2" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-        <span>Initializing the form. Please wait...</span>
-    </div>
-
     <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
         <thead>
@@ -345,13 +337,6 @@ private = true
 
       <!-- Submit Section -->
       <div class="form-actions" id="submit-div" style="margin-top:1rem;">
-        <hr size="1" style="">
-        <div id="api-status" class="alert alert-info d-flex align-items-center" style="display:none;">
-        <div class="spinner-border spinner-border-sm me-2" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-        <span>Connecting to the server. Please wait...</span>
-    </div>
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
         <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled="">Submit</button>
       </div>

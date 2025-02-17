@@ -8,4 +8,4 @@
 module purge
 module load goolf lammps/2Aug2023
 
-srun lmp -in run.in.npt
+mpirun lmp -in run.in.npt

@@ -9,4 +9,4 @@
 
 module load gcc openmpi
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-srun ./hybrid_executable
+mpirun ./hybrid_executable
