@@ -53,14 +53,14 @@ mpirun -np 4 ./mycode
 ```
 On the frontends the processes will not be assigned to specific cores and may be competing with other processes, so performance may be poor.
 
-To use a debugger with an MPI program, compile with the `-g` flag as for a serial code.  We provide the [Totalview](/userinfo/hpc/software/totalview) graphical debugger for MPI and OpenMP applications. Totalview requires that the `mpiexec` executor be in your path before you invoke it.  If you need to debug for a longer time, with a large number of cores, or with multiple nodes, you can use Totalview through the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop). Please request all cores for the node whether you use them or not, because Totalview cannot use the `srun` command as the executor.
+To use a debugger with an MPI program, compile with the `-g` flag as for a serial code.  We provide the [Totalview](/userinfo/hpc/software/totalview) graphical debugger for MPI and OpenMP applications. Totalview requires that the `mpiexec` executor be in your path before you invoke it.  If you need to debug for a longer time, with a large number of cores, or with multiple nodes, you can use Totalview through the Open OnDemand [Desktop](/userinfo/hpc/ood/desktop). Please request all cores for the node whether you use them or not, because Totalview cannot use the `mpirun` command as the executor.
 
 # Running Under Slurm
-When running with Slurm, the `srun` command **must** be used as the executor.  Load the appropriate modules in your script, then invoke
+When running with Slurm, the `mpirun` command **must** be used as the executor.  Load the appropriate modules in your script, then invoke
 ```
-srun ./mycode
+mpirun ./mycode
 ```
-Do not specify the number of processes or the list of hosts since `srun` will obtain that information from your request to Slurm and will distribute your processes on the nodes and cores to which your job was assigned.
+Do not specify the number of processes or the list of hosts since `mpirun` will obtain that information from your request to Slurm and will distribute your processes on the nodes and cores to which your job was assigned.
 
 This example is a Slurm job command file to run a parallel (MPI) job using the OpenMPI implementation:
 ```
@@ -75,7 +75,7 @@ This example is a Slurm job command file to run a parallel (MPI) job using the O
 module load gcc
 module load openmpi
 
-srun ./parallel_executable
+mpirun ./parallel_executable
 ```
 In this example, the Slurm job file is requesting two nodes with sixteen tasks per node for a total of 32 processes.  Both OpenMPI and IntelMPI are able to obtain the number of processes and the host list from Slurm, so these are not specified.  In general, MPI jobs should use all of a node so we'd recommend `--ntasks-per-node=20` on the parallel partition, but some codes cannot be distributed in that manner so we are showing a more general example here.
 

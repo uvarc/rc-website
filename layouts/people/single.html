@@ -27,8 +27,11 @@
     <h2 style="margin-bottom:2rem;"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
   </header>
 
-  <h5>{{ title .Params.job_title }}</h5>
-  
+  {{ if (not (isset .Params "student_year")) | or (not (isset .Params "student_type")) }}
+    <h5>{{ title .Params.job_title }}</h5>
+  {{ else }}
+    <h5> {{ .Params.student_year }} {{ .Params.student_type }} {{ title .Params.job_title }}</h5>
+  {{ end }}
   {{ if (not (isset .Params "email")) | or (eq .Params.email "") }}
     <span></span>
   {{ else }}
