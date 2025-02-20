@@ -141,23 +141,23 @@ Fetched data is stored in `consoleData` and updates:
                     "update_date": "2025-02-12T10:30:00Z"
                     "billing_details": {
                         "fdm_billing_info": [
-                          {
-                            "financial_contact": "First Name Last Name",
-                            "company": "234324",
-                            "business_unit": "3",
-                            "cost_center": "224",
-                            "fund": "a Fund",
-                            "gift": "",
-                            "grant": "",
-                            "designated": "",
-                            "project": "",
-                            "program_code": "a program",
-                            "function": "A Function",
-                            "activity": "an activity",
-                            "assignee": "an assignee"
-                          }
+                            {
+                                "financial_contact": "First Name Last Name",
+                                "company": "234324",
+                                "business_unit": "3",
+                                "cost_center": "224",
+                                "fund": "a Fund",
+                                "gift": "",
+                                "grant": "",
+                                "designated": "",
+                                "project": "",
+                                "program_code": "a program",
+                                "function": "A Function",
+                                "activity": "an activity",
+                                "assignee": "an assignee"
+                            }
                         ]
-                  }
+                    }
                 }
             }
         }
