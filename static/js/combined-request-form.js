@@ -301,6 +301,9 @@
             } else if (formData.requestType === 'storage') {
                 formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
                 formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
+                formData.sharedSpaceName = $('#shared-space-name').val();//
+                formData.project_title = $('#project-title').val();
+                formData.storage_size = $('#capacity').val();
                 if (formData.typeOfRequest !== 'new-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
                 }
