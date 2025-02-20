@@ -87,30 +87,41 @@ Fetched data is stored in `consoleData` and updates:
 4. **Payload structure:**
 ```json
 [
-    {
-        "group_name": "CACS_Staff",
-        "project_name": "Test Project",
-        "project_desc": "Description here",
-        "data_agreement_signed": true,
-        "pi_uid": "kc2bj",
-        "resources": {
-            "hpc_service_units": {
-                "CACS_Staff": {
-                    "tier": "ssz_paid",
-                    "request_count": "12000",
-                    "billing_details": {
-                        "fdm_billing_info": [
-                            {
-                                "company": "UVA_207",
-                                "cost_center": "CC2153",
-                                "fund": "FD068"
-                            }
-                        ]
-                    }
-                }
-            }
+  {
+    "group_name": "RC_Staff",
+    "project_name": "Test Project",
+    "project_desc": "This is free text",
+    "data_agreement_signed": true,
+    "pi_uid": "UVAComputingID",
+    "resources": {
+      "hpc_service_units": {
+        "CACS_Staff": {
+          "tier": "ssz_project",
+          "request_count": "1000",
+          "billing_details": {
+            "fdm_billing_info": [
+              {
+                "financial_contact": "First Name Last Name",
+                "company": "234324",
+                "business_unit": "3",
+                "cost_center": "224",
+                "fund": "a Fund",
+                "gift": "",
+                "grant": "",
+                "designated": "",
+                "project": "",
+                "program_code": "a program",
+                "function": "A Function",
+                "activity": "an activity",
+                "assignee": "an assignee"
+              }
+            ]
+          }
         }
-    }
+      }
+    },
+    "user_resources": []
+  }
 ]
 ```
 ### **Renewal Requests (PUT)**
@@ -120,7 +131,7 @@ Fetched data is stored in `consoleData` and updates:
 ```json
 [
     {
-        "group_name": "CACS_Staff",
+        "group_name": "RC_Staff",
         "project_name": "Existing Project",
         "resources": {
             "hpc_service_units": {
@@ -128,6 +139,25 @@ Fetched data is stored in `consoleData` and updates:
                     "tier": "ssz_standard",
                     "request_count": "50000",
                     "update_date": "2025-02-12T10:30:00Z"
+                    "billing_details": {
+                        "fdm_billing_info": [
+                          {
+                            "financial_contact": "First Name Last Name",
+                            "company": "234324",
+                            "business_unit": "3",
+                            "cost_center": "224",
+                            "fund": "a Fund",
+                            "gift": "",
+                            "grant": "",
+                            "designated": "",
+                            "project": "",
+                            "program_code": "a program",
+                            "function": "A Function",
+                            "activity": "an activity",
+                            "assignee": "an assignee"
+                          }
+                        ]
+                  }
                 }
             }
         }
