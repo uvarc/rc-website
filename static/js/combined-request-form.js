@@ -915,7 +915,7 @@
                         [hpcServiceUnitKey]: {
                             "tier": selectedTier,
                             "shared_space_name": formData.sharedSpaceName?.trim() || "Shared Space",
-                            "storage_size": formData.storageSize || "0",
+                            "storage_size": formData.storage_size || "0",
                             "project_title": formData.project_title?.trim() || "Project Title",                            
                             "billing_details": billingDetails
                         }
