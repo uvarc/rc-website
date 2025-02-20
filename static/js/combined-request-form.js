@@ -904,8 +904,27 @@
         // Handle New Requests
         const billingDetails = getBillingDetails();
         const hpcServiceUnitKey = selectedGroup;
-    
-        const newResource = {
+        var newResource = {};
+        if(formData.requestType === "storage"){
+             newResource = {
+                "group_name": selectedGroup,                
+                "data_agreement_signed": $('#data-agreement').is(':checked'),
+                "pi_uid": userId,
+                "resources": {
+                    "storage": {
+                        [hpcServiceUnitKey]: {
+                            "tier": selectedTier,
+                            "shared_space_name": formData.sharedSpaceName?.trim() || "Shared Space",
+                            "storage_size": formData.storageSize || "0",
+                            "project_title": formData.project_title?.trim() || "Project Title",                            
+                            "billing_details": billingDetails
+                        }
+                    }
+                }
+            };
+        }
+        else{
+         newResource = {
             "group_name": selectedGroup,
             "project_name": formData.projectName?.trim() || "Test Project",
             "project_desc": $('#project-description').val()?.trim() || "This is free text",
@@ -921,7 +940,7 @@
                 }
             }
         };
-    
+        }
         console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
         return [newResource]; // Return as an array
     }
