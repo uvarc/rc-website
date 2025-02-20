@@ -844,6 +844,9 @@
             if (selectedSU) {
                 [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
             }
+        }else if(formData.requestType === "storage") {
+            selectedGroup = formData.group ? formData.group.trim() : "";
+            selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
         } else {
             // New Requests: Get Group and Tier from form dropdowns
             selectedGroup = formData.group ? formData.group.trim() : "";
