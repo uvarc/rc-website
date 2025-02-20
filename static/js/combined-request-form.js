@@ -734,14 +734,14 @@
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
-        let shouldShowBilling = true; // Default to show billing
+        let shouldShowBilling = true; // Default to show billing. put the commented out back when we're ready for free logic
     
-        if (requestType === 'storage') {
-            if (selectedStorageTier === "SSZ Research Standard") {
-                const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
-                shouldShowBilling = requestedStorageSize > freeLimit; // Show billing only if above the free limit
-            }
-        }
+        //if (requestType === 'storage') {
+         //   if (selectedStorageTier === "SSZ Research Standard") {
+         //       const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
+         //       shouldShowBilling = requestedStorageSize > freeLimit; // Show billing only if above the free limit
+         //   }
+       // }
     
         $('#billing-information').toggle(shouldShowBilling);
         console.log(`Billing visibility updated: ${shouldShowBilling}`);

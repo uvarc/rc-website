@@ -98,7 +98,7 @@ private = true
   <div style="margin-bottom:1rem;">
     <!-- Service Unit (SU) Request Fields -->
     <div id="allocation-fields" style="display: none; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
-      <h5 class="mb-3">Service Unit (SU) Request TEST</h5>
+      <h5 class="mb-3">Service Unit (SU) Request</h5>
       <hr size="1" />
 
       <!-- New or Renewal (First section for SU requests) -->
@@ -128,8 +128,8 @@ private = true
       </div>
 
       <div id="storage-mygroups-group-container" style="display: none;">
-          <label for="storage-mygroups-group">Storage Grouper/MyGroups Account *</label>
-          <select id="storage-mygroups-group" class="form-control" required>
+          <label for="storage-mygroups-group-old">Storage Grouper/MyGroups Account *</label>
+          <select id="storage-mygroups-group-old" class="form-control" required>
               <option value="">- Select a group -</option>
           </select>
       </div>
