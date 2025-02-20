@@ -281,6 +281,7 @@
         }
 
         function collectFormData() {
+            
             const formData = {
                 requestType: $('input[name="request-type"]:checked').val(),
                 group: $('#mygroups-group').val(),
@@ -296,8 +297,10 @@
                 if (formData.newOrRenewal === 'renewal') {
                     formData.existingProject = $('input[name="existing-project-allocation"]:checked').val();
                 }
+                
             } else if (formData.requestType === 'storage') {
                 formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
+                formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
                 if (formData.typeOfRequest !== 'new-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
                 }
