@@ -15,7 +15,7 @@ draft = false
 <img class="card-img-top" src="/images/RC_posters_image.png" alt="" style="float: right;">
 
 
-Save the date: <strong>RC Exhibition on April 22, 2025</strong> 
+Save the date: <strong>RC Exhibition on April 23, 2025</strong> 
 
 Students & Postdocs: Start preparing your posters on how you use RC resources in your research!
 
