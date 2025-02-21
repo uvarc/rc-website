@@ -27,6 +27,7 @@ export numWorkers=$((SLURM_NTASKS-1))
 nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
-# Run Matlab parallel program
-matlab -nodisplay  -r \
+# Run Matlab parallel program 
+# Use matlab-batch for using multiple cores on a single compute node
+matlab-batch \
 "setPool1; pcalc2(${nLoops},${nDim},'${slurm_ID}');exit;"

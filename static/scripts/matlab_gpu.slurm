@@ -19,5 +19,5 @@ module load matlab/R2020a
 ndim=12000;
 nloop=1000;
 # Run Matlab parallel program program
- matlab -nodisplay -r  \
+ matlab -batch \
   "gpuTest1(${ndim},${nloop},'${SLURM_JOB_ID}');exit;"

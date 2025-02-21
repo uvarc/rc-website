@@ -20,5 +20,5 @@ nLoops=400; # number of iterations to perform
 nDim=400; # Dimension of matrix to create
 
 # Run Matlab single core program
-matlab -nodisplay -r "pcalc2(${nLoops},${nDim},'${SLURM_JOB_ID}'); exit;"
+matlab -batch "pcalc2(${nLoops},${nDim},'${SLURM_JOB_ID}'); exit;"
 

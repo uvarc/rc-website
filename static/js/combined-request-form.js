@@ -281,6 +281,7 @@
         }
 
         function collectFormData() {
+            
             const formData = {
                 requestType: $('input[name="request-type"]:checked').val(),
                 group: $('#mygroups-group').val(),
@@ -296,8 +297,13 @@
                 if (formData.newOrRenewal === 'renewal') {
                     formData.existingProject = $('input[name="existing-project-allocation"]:checked').val();
                 }
+                
             } else if (formData.requestType === 'storage') {
                 formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
+                formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
+                formData.sharedSpaceName = $('#shared-space-name').val();//
+                formData.project_title = $('#project-title').val();
+                formData.storage_size = $('#capacity').val();
                 if (formData.typeOfRequest !== 'new-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
                 }
@@ -734,14 +740,14 @@
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
-        let shouldShowBilling = true; // Default to show billing
+        let shouldShowBilling = true; // Default to show billing. put the commented out back when we're ready for free logic
     
-        if (requestType === 'storage') {
-            if (selectedStorageTier === "SSZ Research Standard") {
-                const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
-                shouldShowBilling = requestedStorageSize > freeLimit; // Show billing only if above the free limit
-            }
-        }
+        //if (requestType === 'storage') {
+         //   if (selectedStorageTier === "SSZ Research Standard") {
+         //       const freeLimit = RESOURCE_TYPES["SSZ Research Standard"].freeLimit || 10;
+         //       shouldShowBilling = requestedStorageSize > freeLimit; // Show billing only if above the free limit
+         //   }
+       // }
     
         $('#billing-information').toggle(shouldShowBilling);
         console.log(`Billing visibility updated: ${shouldShowBilling}`);
@@ -841,6 +847,9 @@
             if (selectedSU) {
                 [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
             }
+        }else if(formData.requestType === "storage") {
+            selectedGroup = formData.group ? formData.group.trim() : "";
+            selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
         } else {
             // New Requests: Get Group and Tier from form dropdowns
             selectedGroup = formData.group ? formData.group.trim() : "";
@@ -895,8 +904,29 @@
         // Handle New Requests
         const billingDetails = getBillingDetails();
         const hpcServiceUnitKey = selectedGroup;
-    
-        const newResource = {
+        var newResource = {};
+        if(formData.requestType === "storage"){
+             newResource = {
+                "group_name": selectedGroup,                
+                "data_agreement_signed": $('#data-agreement').is(':checked'),
+                "pi_uid": userId,
+                "project_name":"",
+                "project_desc":"",
+                "resources": {
+                    "storage": {
+                        [hpcServiceUnitKey]: {
+                            "tier": selectedTier,
+                            "shared_space_name": formData.sharedSpaceName?.trim() || "Shared Space",
+                            "storage_size": formData.storage_size || "0",
+                            "project_title": formData.project_title?.trim() || "Project Title",                            
+                            "billing_details": billingDetails
+                        }
+                    }
+                }
+            };
+        }
+        else{
+         newResource = {
             "group_name": selectedGroup,
             "project_name": formData.projectName?.trim() || "Test Project",
             "project_desc": $('#project-description').val()?.trim() || "This is free text",
@@ -912,7 +942,7 @@
                 }
             }
         };
-    
+        }
         console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
         return [newResource]; // Return as an array
     }
