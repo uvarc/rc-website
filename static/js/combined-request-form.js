@@ -910,6 +910,8 @@
                 "group_name": selectedGroup,                
                 "data_agreement_signed": $('#data-agreement').is(':checked'),
                 "pi_uid": userId,
+                "project_name":"",
+                "project_desc":"",
                 "resources": {
                     "storage": {
                         [hpcServiceUnitKey]: {
