@@ -960,7 +960,8 @@
     
         const resourceWrapper = payload[0];
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
-    
+        var isStorage = $('input[name="request-type"]:checked').val() === 'storage';
+        
         // **If it's a renewal, user_resources array should NOT be validated for new entries**
         if (isRenewal) {
             if (!resourceWrapper.group_name || !resourceWrapper.resources?.hpc_service_units) {
@@ -1210,16 +1211,23 @@
             const groupName = resource.group_name || "N/A";
     
             let resourceType = "Unknown";
-            if (resource.resources?.hpc_service_units) {
+            if ( resource.resources?.hpc_service_units &&
+                Object.keys(resource.resources.hpc_service_units).length > 0) {
                 resourceType = "SU";
-            } else if (resource.resources?.storage) {
+            } else if (resource.resources?.storage &&
+                Object.keys(resource.resources.storage).length > 0) {
                 resourceType = "Storage";
             }
     
-            if (resource.resources?.hpc_service_units) {
+           
                 Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
-                    const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
+                    var requestCount;
+                    if(resourceType === "SU"){
+                         requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
+                    }else if(resourceType === "Storage"){
+                         requestCount = details.storage_size ? `${details.storage_size} TB` : "N/A";
+                    }
                     const updateDate = details.update_date ? `Updated: ${details.update_date}` : `Requested: ${details.request_date || "No date available"}`;
     
                     const row = `
@@ -1233,7 +1241,7 @@
                     `;
                     previewTableBody.append(row);
                 });
-            }
+            
         });
     
         // Also update the Existing Service Units table for Renewals
