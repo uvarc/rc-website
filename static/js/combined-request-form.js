@@ -1261,7 +1261,56 @@
         // Also update the Existing Service Units table for Renewals
         populateExistingServiceUnitsTable(apiResponse);
     }
-
+    function populateExistingStorageTable(apiResponse) {
+        const { userResources } = parseConsoleData(apiResponse);
+        const suTableBody = $('#storage-projects-tbody');
+        suTableBody.empty();
+    
+        if (!Array.isArray(userResources) || userResources.length === 0) {
+            suTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
+            return;
+        }
+    
+        // **Sort resources by most recent `update_date` (or fallback to `request_date`)**
+        userResources.sort((a, b) => {storage-projects-tbody
+            const dateA = new Date(a.resources?.storage?.[Object.keys(a.resources.storage)[0]]?.update_date || 
+                                   a.resources?.storage?.[Object.keys(a.resources.storage)[0]]?.request_date || 0);
+            const dateB = new Date(b.resources?.storage?.[Object.keys(b.resources.storage)[0]]?.update_date || 
+                                   b.resources?.storage?.[Object.keys(b.resources.storage)[0]]?.request_date || 0);
+            return dateB - dateA; // Sort descending (newest first)
+        });
+    
+        userResources.forEach(resource => {
+            const projectName = resource.project_name || "N/A";
+            const groupName = resource.group_name || "N/A";
+    
+            if (resource.resources?.storage) {
+                Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
+                    const tier = details.tier || "N/A";
+                    const storageSize = details.storage_size? `${details.storage_size} TB` : "N/A";
+                    var shortDate=formatDateToEST(details.update_date || details.request_date);
+                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+                    const sharedSpace = details.shared_space_name ? `${details.shared_space_name}` : "N/A";
+                    const row = `
+                        <tr>
+                            <td>
+                                <input type="radio" name="selected-su" value="${groupName}-${tier}" 
+                                    data-group="${groupName}" data-tier="${tier}">
+                            </td>
+                            <td>${projectName}</td> 
+                            <td>${groupName}</td>
+                            <td>${tier}</td>
+                            <td>${sharedSpace}</td>
+                            <td>${storageSize}</td>
+                        </tr>
+                    `;
+                    suTableBody.append(row);
+                });
+            }
+        });
+    
+        console.log("Existing Service Units table updated!");
+    }
     function populateExistingServiceUnitsTable(apiResponse) {
         const { userResources } = parseConsoleData(apiResponse);
         const suTableBody = $('#allocation-projects-tbody');
