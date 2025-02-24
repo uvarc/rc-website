@@ -1273,7 +1273,7 @@
         }
     
         // **Sort resources by most recent `update_date` (or fallback to `request_date`)**
-        userResources.sort((a, b) => {storage-projects-tbody
+        userResources.sort((a, b) => {
             const dateA = new Date(a.resources?.storage?.[Object.keys(a.resources.storage)[0]]?.update_date || 
                                    a.resources?.storage?.[Object.keys(a.resources.storage)[0]]?.request_date || 0);
             const dateB = new Date(b.resources?.storage?.[Object.keys(b.resources.storage)[0]]?.update_date || 
