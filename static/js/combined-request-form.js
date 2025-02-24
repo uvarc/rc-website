@@ -1260,6 +1260,7 @@
     
         // Also update the Existing Service Units table for Renewals
         populateExistingServiceUnitsTable(apiResponse);
+        populateExistingStorageTable(apiResponse);
     }
     function populateExistingStorageTable(apiResponse) {
         const { userResources } = parseConsoleData(apiResponse);
