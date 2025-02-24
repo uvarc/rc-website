@@ -1219,16 +1219,12 @@
                 resourceType = "Storage";
             }
     
-           
+            if (resourceType==="SU" && resource.resources?.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
-                    var requestCount;
-                    if(resourceType === "SU"){
-                         requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
-                    }else if(resourceType === "Storage"){
-                         requestCount = details.storage_size ? `${details.storage_size} TB` : "N/A";
-                    }
-                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : `Requested: ${details.request_date || "No date available"}`;
+                    const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
+                    var shortDate=formatDateToEST(details.update_date || details.request_date);
+                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
     
                     const row = `
                         <tr>
@@ -1241,7 +1237,25 @@
                     `;
                     previewTableBody.append(row);
                 });
-            
+            }else if(resourceType==="Storage" && resource.resources?.storage) {
+                Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
+                    const tier = details.tier || "N/A";
+                    const storageSize = details.storage_size ? `${details.storage_size} TB` : "N/A";
+                    var shortDate=formatDateToEST(details.update_date || details.request_date);
+                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+    
+                    const row = `
+                        <tr>
+                            <td>${resourceType}</td>
+                            <td>${projectName}</td> 
+                            <td>${groupName}</td>
+                            <td>${tier}</td>
+                            <td>${storageSize} | ${updateDate}</td>
+                        </tr>
+                    `;
+                    previewTableBody.append(row);
+                });
+            }
         });
     
         // Also update the Existing Service Units table for Renewals
@@ -1401,6 +1415,28 @@
             $('#loading-message').fadeOut(300, function() { $(this).remove(); });
         }
     }
+
+    function formatDateToEST(isoDateStr) {
+        // Create a Date object from the ISO string
+        const dateObj = new Date(isoDateStr);
+        
+        // Define options for a short, formatted date
+        const options = {
+          timeZone: "America/New_York", // Eastern Time
+          year: "2-digit",              // Two-digit year
+          month: "numeric",             // Numeric month
+          day: "numeric",               // Numeric day
+          hour: "numeric",              // Numeric hour
+          minute: "numeric",            // Numeric minute
+          hour12: true                  // 12-hour format
+        };
+      
+        // Format the date for Eastern Time
+        const formatted = dateObj.toLocaleString("en-US", options);
+        
+        // If needed, append the EST label (ensure you handle daylight saving if necessary)
+        return `${formatted} EST`;
+      }
 
     $(document).ready(function () {
         console.log("Script started");
