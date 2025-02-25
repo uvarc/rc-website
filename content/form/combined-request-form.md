@@ -128,8 +128,8 @@ private = true
       </div>
 
       <div id="storage-mygroups-group-container" style="display: none;">
-          <label for="storage-mygroups-group">Storage Grouper/MyGroups Account *</label>
-          <select id="storage-mygroups-group" class="form-control" required>
+          <label for="storage-mygroups-group-old">Storage Grouper/MyGroups Account *</label>
+          <select id="storage-mygroups-group-old" class="form-control" required>
               <option value="">- Select a group -</option>
           </select>
       </div>
