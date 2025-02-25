@@ -539,19 +539,21 @@
 
     function toggleStorageFields() {
         const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
-
+    
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage) {
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
             $('#storage-fields #existing-projects-storage').hide();
         } else {
-            if($('#storage-fields input[name="type-of-request"]:checked').val()==='increase-storage' || $('#storage-fields input[name="type-of-request"]:checked').val()==='decrease-storage'){ {
+            if ($('#storage-fields input[name="type-of-request"]:checked').val() === 'increase-storage' ||
+                $('#storage-fields input[name="type-of-request"]:checked').val() === 'decrease-storage') {
                 $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
             }
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
             $('#storage-fields #existing-projects-storage').show();
         }
     }
+    
 
     function toggleStorageTierOptions() {
         const isHighlySensitive = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
