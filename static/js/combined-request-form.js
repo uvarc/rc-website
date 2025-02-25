@@ -595,35 +595,28 @@
         $(document).on("change", 'input[name="selected-su"]', function () {
             const selectedSU = $(this).val();
             if (!selectedSU) return;
-        
             console.log(`Selected SU for renewal: ${selectedSU}`);
         
             // Extract group and tier from selected value
             const [selectedGroup, selectedTier] = selectedSU.split('-');
-        
             if (!selectedGroup || !selectedTier) {
                 console.warn("⚠ Selected SU value is missing required parts.");
                 return;
             }
-        
             // Find the corresponding SU details in consoleData
             let existingResource = consoleData[0]?.user_resources?.find(resource =>
                 resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
                 resource.resources?.hpc_service_units?.[`${selectedGroup}-${selectedTier}`]
             );
-        
             if (!existingResource) {
                 console.warn("⚠ No matching resource found for selected SU.");
                 return;
             }
-        
             const existingSU = existingResource.resources.hpc_service_units[`${selectedGroup}-${selectedTier}`];
-        
             if (!existingSU) {
                 console.warn("⚠ No SU details found in resource.");
                 return;
             }
-        
             console.log("Auto-filling UI with existing SU billing details:", existingSU);
         
             if (!existingSU.billing_details) {
