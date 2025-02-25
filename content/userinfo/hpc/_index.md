@@ -190,6 +190,10 @@ Excessive consumption of licenses for commercial software, either in time or num
 
 Any violation of the University’s security policies, or any behavior that is considered criminal in nature or a legal threat to the University, will result in the immediate termination of access privileges without warning.
 
+## Other
+
+[DeepSeek](https://uvapolicy.virginia.edu/policy/irm-002)
+
 <br clear=all />
 
 <script>
