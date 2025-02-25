@@ -299,11 +299,19 @@
                 }
                 
             } else if (formData.requestType === 'storage') {
+                
                 formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
-                formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
-                formData.sharedSpaceName = $('#shared-space-name').val();//
-                formData.project_title = $('#project-title').val();
-                formData.storage_size = $('#capacity').val();
+                if(formData.typeOfRequest === 'new-storage') {
+                    formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
+                    formData.sharedSpaceName = $('#shared-space-name').val();//
+                    formData.project_title = $('#project-title').val();
+                    formData.storage_size = $('#capacity').val();
+                }else if(formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage') {
+                    formData.storage_size = $('#capacity').val();
+                    var checkedRadio=$('input[name="selected-su"]:checked')               
+                    formData.sharedSpaceName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
+                    formData.storage_size = $('#capacity').val();
+                }
                 if (formData.typeOfRequest !== 'new-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
                 }
@@ -537,7 +545,10 @@
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
             $('#storage-fields #existing-projects-storage').hide();
         } else {
-            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
+            if($('#storage-fields input[name="type-of-request"]:checked').val()==='increase-storage' || $('#storage-fields input[name="type-of-request"]:checked').val()==='decrease-storage'){ {
+                $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
+            }
+            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
             $('#storage-fields #existing-projects-storage').show();
         }
     }
@@ -599,8 +610,10 @@
     
         try {
             const isRenewal = formData.newOrRenewal === 'renewal';
-            const method = isRenewal ? 'PUT' : 'POST';
-    
+            var method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
+            if(formData.requestType==="storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')){
+                method = 'PUT'; // Use PUT for storage changes
+            }
             console.log(`Submitting ${isRenewal ? 'Renewal (PUT)' : 'New Request (POST)'}...`);
     
             const responseData = await submitForm(formData, payload, method);
@@ -846,7 +859,8 @@
             if (selectedSU) {
                 [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
             }
-        } else if (formData.requestType === "storage") {
+        }else if(formData.requestType === "storage") {
+            
             selectedGroup = formData.group ? formData.group.trim() : "";
             selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
         } else {
@@ -899,6 +913,23 @@
     
             console.log("Final Renewal Payload (PUT):", JSON.stringify(renewalPayload, null, 2));
             return [renewalPayload]; // Return as an array for consistency
+        }
+        //handle storage adjustments
+        if(formData.requestType==="storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')){
+            // Construct minimal payload for PUT (change)
+            const changePayload = {
+              
+                "storage": {
+                    [formData.sharedSpaceName]: {
+                        
+                            "tier": selectedTier,
+                            "request_size": formData.capacity                                                  
+                    }
+                }
+            };
+    
+            console.log("Final Storage Change Payload (PUT):", JSON.stringify(changePayload, null, 2));
+            return [changePayload]; // Return as an array for consistency
         }
     
         // Handle New Requests (Unchanged)
