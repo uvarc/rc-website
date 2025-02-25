@@ -852,7 +852,7 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-    
+        const storageChange=formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
         let selectedGroup, selectedTier;
     
         if (formData.newOrRenewal === "renewal") {
@@ -871,7 +871,7 @@
             selectedTier = getTierEnum(formData.allocationTier);
         }
     
-        if (!selectedGroup || !selectedTier) {
+        if (!storageChange && (!selectedGroup || !selectedTier)) {
             console.error(`⚠ Missing required values: Group: ${selectedGroup}, Tier: ${selectedTier}`);
             showErrorMessage("⚠ Please select a valid Group and Tier.");
             return null;
