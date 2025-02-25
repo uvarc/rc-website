@@ -591,6 +591,52 @@
     
         // Attach submit event handler
         $(document).on('submit', '#combined-request-form', handleFormSubmit);
+
+        $(document).on("change", 'input[name="selected-su"]', function () {
+            const selectedSU = $(this).val();
+            if (!selectedSU) return;
+    
+            console.log(`Selected SU for renewal: ${selectedSU}`);
+    
+            // Extract group and tier from selected value
+            const [selectedGroup, selectedTier] = selectedSU.split('-');
+    
+            if (!selectedGroup || !selectedTier) {
+                console.warn("⚠ Selected SU value is missing required parts.");
+                return;
+            }
+    
+            // Find the corresponding SU details in consoleData
+            let existingResource = consoleData[0]?.user_resources?.find(resource =>
+                resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
+                resource.resources?.hpc_service_units?.[`${selectedGroup}-${selectedTier}`]
+            );
+    
+            if (!existingResource) {
+                console.warn("⚠ No matching resource found for selected SU.");
+                return;
+            }
+    
+            const existingSU = existingResource.resources.hpc_service_units[`${selectedGroup}-${selectedTier}`];
+    
+            if (!existingSU) {
+                console.warn("⚠ No SU details found in resource.");
+                return;
+            }
+    
+            console.log("Auto-filling UI with existing SU billing details:", existingSU);
+    
+            // Auto-fill billing information but keep it editable
+            $('#financial-contact').val(existingSU.billing_details?.financial_contact || "");
+            $('#company-id').val(existingSU.billing_details?.company_id || "");
+            $('#cost-center').val(existingSU.billing_details?.cost_center || "");
+            $('#business-unit').val(existingSU.billing_details?.business_unit || "");
+    
+            // Ensure fields are still editable
+            $('#financial-contact, #company-id, #cost-center, #business-unit').prop('readonly', false);
+    
+            console.log("Billing fields auto-filled but remain editable.");
+        });
     }
     
     // ===================================
@@ -853,7 +899,7 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-        const storageChange=formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
+        const storageChange = formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
         let selectedGroup, selectedTier;
     
         if (formData.newOrRenewal === "renewal") {
@@ -862,8 +908,7 @@
             if (selectedSU) {
                 [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
             }
-        }else if(formData.requestType === "storage") {
-            
+        } else if (formData.requestType === "storage") {
             selectedGroup = formData.group ? formData.group.trim() : "";
             selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
         } else {
@@ -880,7 +925,7 @@
     
         // Handle Renewals: Check if the resource exists in the API response
         if (formData.newOrRenewal === "renewal") {
-            let existingResource = consoleData[0]?.user_resources?.find(resource => 
+            let existingResource = consoleData[0]?.user_resources?.find(resource =>
                 resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
                 resource.resources?.hpc_service_units?.[selectedGroup]?.tier.toLowerCase() === selectedTier.toLowerCase()
             );
@@ -890,10 +935,20 @@
                 return null;
             }
     
-            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Sending minimal PUT payload.`);
+            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Fetching existing SU details.`);
     
             // Get existing request count to avoid unintended changes
             const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
+    
+            // Retrieve existing billing details & merge with updated user input
+            const updatedBillingDetails = {
+                "financial_contact": $('#financial-contact').val().trim() || existingResource.billing_details?.financial_contact || "",
+                "company_id": $('#company-id').val().trim() || existingResource.billing_details?.company_id || "",
+                "cost_center": $('#cost-center').val().trim() || existingResource.billing_details?.cost_center || "",
+                "business_unit": $('#business-unit').val().trim() || existingResource.billing_details?.business_unit || ""
+            };
+    
+            console.log("Updated Billing Details for Renewal:", updatedBillingDetails);
     
             // Construct minimal payload for PUT (Renewal)
             const renewalPayload = {
@@ -907,26 +962,26 @@
                         [selectedGroup]: {
                             "tier": selectedTier,
                             "request_count": existingRequestCount, // Keep the same
+                            "billing_details": updatedBillingDetails, // ✅ Updated billing details
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
                     }
                 },
-                "trigger_notification": true // ✅ Add a flag to indicate renewal notification
+                "trigger_notification": true // Add a flag to indicate renewal notification
             };
     
             console.log("Final Renewal Payload (PUT):", JSON.stringify(renewalPayload, null, 2));
             return [renewalPayload]; // Return as an array for consistency
         }
-        //handle storage adjustments
-        if(formData.requestType==="storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')){
+    
+        // Handle storage adjustments (no changes)
+        if (formData.requestType === "storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')) {
             // Construct minimal payload for PUT (change)
             const changePayload = {
-              
                 "storage": {
                     [formData.sharedSpaceName]: {
-                        
-                            "tier": selectedTier,
-                            "request_size": formData.capacity                                                  
+                        "tier": selectedTier,
+                        "request_size": formData.capacity
                     }
                 }
             };
