@@ -520,13 +520,12 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
     
         if (isNew) {
-            // Hide the renewal table when "New" is selected
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
         } else {
-            // Show the renewal table only when "Renewal" is selected
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
+            populateExistingServiceUnitsTable(consoleData);
         }
     }
 
@@ -589,23 +588,18 @@
     
         console.log("Form submission triggered.");
     
-        const formData = collectFormData(); // Collect data from the form
-        const payload = buildPayloadPreview(); // Build payload for submission
-        const errors = validatePayload(payload); // Validate the payload
-    
-        // Remove duplicate logging (Keep only one)
-        if (payload) {
-            console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
-        }
+        const formData = collectFormData();
+        const payload = buildPayloadPreview();
+        const errors = validatePayload(payload);
     
         if (errors.length > 0) {
             displayValidationErrors(errors);
-            return; // Stop submission on validation errors
+            return;
         }
     
         try {
             const isRenewal = formData.newOrRenewal === 'renewal';
-            const method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
+            const method = isRenewal ? 'PUT' : 'POST';
     
             console.log(`Submitting ${isRenewal ? 'Renewal (PUT)' : 'New Request (POST)'}...`);
     
@@ -615,12 +609,11 @@
                 console.log("API Response:", responseData);
                 showSuccessMessage("Your request has been submitted successfully!");
     
-                // Update the updated_date for the selected SU if it's a renewal**
                 if (isRenewal) {
                     updateServiceUnitTimestamp(formData.existingProject);
                 }
     
-                clearFormFields(); // Reset form after successful submission
+                clearFormFields();
             }
         } catch (error) {
             console.error("Error during form submission:", error);
@@ -659,13 +652,17 @@
     
         // Set the correct HTTP method
         const method = isRenewal ? 'PUT' : 'POST';
-    
         console.log(`Submitting ${method} request for ${isRenewal ? "Renewal" : "New Request"}...`);
     
         // Ensure correct URL for PUT (Renewals)
         let requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
         if (isRenewal && formData.existingProject) {
             requestUrl += `/${formData.existingProject}`;
+        }
+    
+        // Check for `trigger_notification` flag in payload
+        if (isRenewal && payload.length > 0 && payload[0].trigger_notification) {
+            console.log("Triggering notification for renewal request.");
         }
     
         // Remove "Origin" header (Handled automatically by browser)
@@ -687,12 +684,15 @@
             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
             
             // Show success message
-            showSuccessMessage("Your request has been submitted successfully!");
+            showSuccessMessage(isRenewal ? "Your renewal request has been submitted successfully!" : "Your request has been submitted successfully!");
     
             // If renewal, update the "Updated" timestamp for the selected SU**
             if (isRenewal && formData.existingProject) {
                 updateServiceUnitTimestamp(formData.existingProject);
             }
+    
+            // Ensure UI updates immediately after submission
+            updateFormUsingMetadata(await fetchMetadata());
     
             // Re-enable Submit Button**
             $('#submit').prop('disabled', false);
@@ -703,13 +703,12 @@
             return response;
         } catch (error) {
             console.error(`Submission failed (${method}):`, error.responseText || error);
-            
+    
             // Show error message
             showErrorMessage("Submission failed. Please try again.");
     
             // Re-enable Submit Button for retries**
             $('#submit').prop('disabled', false);
-    
             return null;
         }
     }
@@ -847,7 +846,7 @@
             if (selectedSU) {
                 [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
             }
-        }else if(formData.requestType === "storage") {
+        } else if (formData.requestType === "storage") {
             selectedGroup = formData.group ? formData.group.trim() : "";
             selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
         } else {
@@ -876,7 +875,7 @@
     
             console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Sending minimal PUT payload.`);
     
-            // Get existing request count to avoid changes
+            // Get existing request count to avoid unintended changes
             const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
     
             // Construct minimal payload for PUT (Renewal)
@@ -894,24 +893,26 @@
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
                     }
-                }
+                },
+                "trigger_notification": true // ✅ Add a flag to indicate renewal notification
             };
     
             console.log("Final Renewal Payload (PUT):", JSON.stringify(renewalPayload, null, 2));
             return [renewalPayload]; // Return as an array for consistency
         }
     
-        // Handle New Requests
+        // Handle New Requests (Unchanged)
         const billingDetails = getBillingDetails();
         const hpcServiceUnitKey = selectedGroup;
-        var newResource = {};
-        if(formData.requestType === "storage"){
-             newResource = {
+        let newResource = {};
+    
+        if (formData.requestType === "storage") {
+            newResource = {
                 "group_name": selectedGroup,                
                 "data_agreement_signed": $('#data-agreement').is(':checked'),
                 "pi_uid": userId,
-                "project_name":"",
-                "project_desc":"",
+                "project_name": "",
+                "project_desc": "",
                 "resources": {
                     "storage": {
                         [hpcServiceUnitKey]: {
@@ -924,25 +925,25 @@
                     }
                 }
             };
-        }
-        else{
-         newResource = {
-            "group_name": selectedGroup,
-            "project_name": formData.projectName?.trim() || "Test Project",
-            "project_desc": $('#project-description').val()?.trim() || "This is free text",
-            "data_agreement_signed": $('#data-agreement').is(':checked'),
-            "pi_uid": userId,
-            "resources": {
-                "hpc_service_units": {
-                    [hpcServiceUnitKey]: {
-                        "tier": selectedTier,
-                        "request_count": formData.requestCount || "1000",
-                        "billing_details": billingDetails
+        } else {
+            newResource = {
+                "group_name": selectedGroup,
+                "project_name": formData.projectName?.trim() || "Test Project",
+                "project_desc": $('#project-description').val()?.trim() || "This is free text",
+                "data_agreement_signed": $('#data-agreement').is(':checked'),
+                "pi_uid": userId,
+                "resources": {
+                    "hpc_service_units": {
+                        [hpcServiceUnitKey]: {
+                            "tier": selectedTier,
+                            "request_count": formData.requestCount || "1000",
+                            "billing_details": billingDetails
+                        }
                     }
                 }
-            }
-        };
+            };
         }
+    
         console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
         return [newResource]; // Return as an array
     }
@@ -1312,53 +1313,46 @@
     
         console.log("Existing Service Units table updated!");
     }
+
     function populateExistingServiceUnitsTable(apiResponse) {
-        const { userResources } = parseConsoleData(apiResponse);
-        const suTableBody = $('#allocation-projects-tbody');
-        suTableBody.empty();
-    
-        if (!Array.isArray(userResources) || userResources.length === 0) {
-            suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
-            return;
-        }
-    
-        // **Sort resources by most recent `update_date` (or fallback to `request_date`)**
-        userResources.sort((a, b) => {
-            const dateA = new Date(a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.update_date || 
-                                   a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.request_date || 0);
-            const dateB = new Date(b.resources?.hpc_service_units?.[Object.keys(b.resources.hpc_service_units)[0]]?.update_date || 
-                                   b.resources?.hpc_service_units?.[Object.keys(b.resources.hpc_service_units)[0]]?.request_date || 0);
-            return dateB - dateA; // Sort descending (newest first)
-        });
-    
-        userResources.forEach(resource => {
-            const projectName = resource.project_name || "N/A";
-            const groupName = resource.group_name || "N/A";
-    
-            if (resource.resources?.hpc_service_units) {
-                Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
-                    const tier = details.tier || "N/A";
-                    const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
-                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : `Requested: ${details.request_date || "No date available"}`;
-    
-                    const row = `
-                        <tr>
-                            <td>
-                                <input type="radio" name="selected-su" value="${groupName}-${tier}" 
-                                    data-group="${groupName}" data-tier="${tier}">
-                            </td>
-                            <td>${projectName}</td> 
-                            <td>${groupName}</td>
-                            <td>${tier}</td>
-                        </tr>
-                    `;
-                    suTableBody.append(row);
-                });
-            }
-        });
-    
-        console.log("Existing Service Units table updated!");
+    const { userResources } = parseConsoleData(apiResponse);
+    const suTableBody = $('#allocation-projects-tbody');
+    suTableBody.empty();
+
+    if (!Array.isArray(userResources) || userResources.length === 0) {
+        suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
+        return;
     }
+
+    userResources.forEach(resource => {
+        const projectName = resource.project_name || "N/A";
+        const groupName = resource.group_name || "N/A";
+
+        if (resource.resources?.hpc_service_units) {
+            Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
+                const tier = details.tier || "N/A";
+                const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
+                const updateDate = details.update_date ? `Updated: ${formatDateToEST(details.update_date)}` : `Requested: ${formatDateToEST(details.request_date)}`;
+
+                const row = `
+                    <tr>
+                        <td>
+                            <input type="radio" name="selected-su" value="${groupName}-${tier}" 
+                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName}">
+                        </td>
+                        <td>${projectName}</td> 
+                        <td>${groupName}</td>
+                        <td>${tier}</td>
+                        <td>${requestCount} | ${updateDate}</td>
+                    </tr>
+                `;
+                suTableBody.append(row);
+            });
+        }
+    });
+
+    console.log("Existing Service Units table updated!");
+}
 
     function updateServiceUnitTimestamp(selectedSU) {
         if (!selectedSU) {
