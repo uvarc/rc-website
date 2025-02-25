@@ -190,9 +190,9 @@ Excessive consumption of licenses for commercial software, either in time or num
 
 Any violation of the University’s security policies, or any behavior that is considered criminal in nature or a legal threat to the University, will result in the immediate termination of access privileges without warning.
 
-## Other
+## Acceptable Use of the University’s Information Technology Resources
 
-[DeepSeek](https://uvapolicy.virginia.edu/policy/irm-002)
+According to UVA policy, users are prohibited from downloading or using applications such as TikTok, WeChat, DeepSeek, and similar software on any RC resources. For more details, please see [here](https://uvapolicy.virginia.edu/policy/irm-002).
 
 <br clear=all />
 
