@@ -595,47 +595,74 @@
         $(document).on("change", 'input[name="selected-su"]', function () {
             const selectedSU = $(this).val();
             if (!selectedSU) return;
-    
             console.log(`Selected SU for renewal: ${selectedSU}`);
-    
+        
             // Extract group and tier from selected value
             const [selectedGroup, selectedTier] = selectedSU.split('-');
-    
             if (!selectedGroup || !selectedTier) {
                 console.warn("⚠ Selected SU value is missing required parts.");
                 return;
             }
-    
             // Find the corresponding SU details in consoleData
             let existingResource = consoleData[0]?.user_resources?.find(resource =>
                 resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
                 resource.resources?.hpc_service_units?.[`${selectedGroup}-${selectedTier}`]
             );
-    
             if (!existingResource) {
                 console.warn("⚠ No matching resource found for selected SU.");
                 return;
             }
-    
             const existingSU = existingResource.resources.hpc_service_units[`${selectedGroup}-${selectedTier}`];
-    
             if (!existingSU) {
                 console.warn("⚠ No SU details found in resource.");
                 return;
             }
-    
             console.log("Auto-filling UI with existing SU billing details:", existingSU);
-    
-            // Auto-fill billing information but keep it editable
-            $('#financial-contact').val(existingSU.billing_details?.financial_contact || "");
-            $('#company-id').val(existingSU.billing_details?.company_id || "");
-            $('#cost-center').val(existingSU.billing_details?.cost_center || "");
-            $('#business-unit').val(existingSU.billing_details?.business_unit || "");
-    
-            // Ensure fields are still editable
-            $('#financial-contact, #company-id, #cost-center, #business-unit').prop('readonly', false);
-    
-            console.log("Billing fields auto-filled but remain editable.");
+        
+            if (!existingSU.billing_details) {
+                console.warn("⚠ No billing details found in the existing SU.");
+                return;
+            }
+        
+            // Extract billing details from API response
+            const updatedBillingDetails = {
+                financial_contact: existingSU.billing_details?.financial_contact || "",
+                company_id: existingSU.billing_details?.company || "",
+                cost_center: existingSU.billing_details?.cost_center || "",
+                business_unit: existingSU.billing_details?.business_unit || "",
+                funding_number: existingSU.billing_details?.funding_number || "",
+                funding_type: existingSU.billing_details?.funding_type || "",
+                fdm: existingSU.billing_details?.fdm_billing_info?.[0] || {} // Handle FDM Billing
+            };
+        
+            console.log("Updated Billing Details for Autofill:", updatedBillingDetails);
+        
+            // Ensure form fields are updated
+            $('#financial-contact').val(updatedBillingDetails.financial_contact).trigger("change").trigger("input");
+            $('#company-id').val(updatedBillingDetails.company_id).trigger("change").trigger("input");
+            $('#cost-center').val(updatedBillingDetails.cost_center).trigger("change").trigger("input");
+            $('#business-unit').val(updatedBillingDetails.business_unit).trigger("change").trigger("input");
+        
+            // Ensure funding number autofills
+            $('#funding-number').val(updatedBillingDetails.funding_number).trigger("change").trigger("input");
+        
+            // Select correct funding type radio button if available
+            if (updatedBillingDetails.funding_type) {
+                $(`input[name="funding-type"][value="${updatedBillingDetails.funding_type}"]`).prop("checked", true);
+            }
+        
+            // Autofill FDM Billing Information
+            $('#fund').val(updatedBillingDetails.fdm.fund || "").trigger("change").trigger("input");
+            $('#function').val(updatedBillingDetails.fdm.function || "").trigger("change").trigger("input");
+            $('#program').val(updatedBillingDetails.fdm.program || "").trigger("change").trigger("input");
+            $('#activity').val(updatedBillingDetails.fdm.activity || "").trigger("change").trigger("input");
+            $('#assignee').val(updatedBillingDetails.fdm.assignee || "").trigger("change").trigger("input");
+        
+            // Ensure fields are editable
+            $('#financial-contact, #company-id, #cost-center, #business-unit, #funding-number, #fund, #function, #program, #activity, #assignee')
+                .prop('readonly', false);
+        
+            console.log("Billing fields successfully autofilled in the UI.");
         });
     }
     
@@ -962,7 +989,7 @@
                         [selectedGroup]: {
                             "tier": selectedTier,
                             "request_count": existingRequestCount, // Keep the same
-                            "billing_details": updatedBillingDetails, // ✅ Updated billing details
+                            "billing_details": updatedBillingDetails, // Updated billing details
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
                     }
