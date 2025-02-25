@@ -310,6 +310,7 @@
                     formData.storage_size = $('#capacity').val();
                     var checkedRadio=$('input[name="selected-su"]:checked')               
                     formData.sharedSpaceName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
+                    formData.selectedTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
                     formData.storage_size = $('#capacity').val();
                 }
                 if (formData.typeOfRequest !== 'new-storage') {
