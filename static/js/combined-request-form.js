@@ -571,13 +571,14 @@
 
     function toggleExistingProjectsAllocation() {
         const isRenewalSelected = $('#new-or-renewal-2').is(':checked');
+        const isNewSelected = $('#new-or-renewal-1').is(':checked');
+    
         if (isRenewalSelected) {
-            $('#existing-projects-allocation').show(); // Show the div
+            $('#existing-projects-allocation').show(); // Show when "Renewal" is selected
         } else {
-            $('#existing-projects-allocation').hide(); // Hide the div
+            $('#existing-projects-allocation').hide(); // Hide when "New" is selected or nothing is selected
         }
     }
-
     // ===================================
     // Setup Event Handlers
     // ===================================
@@ -595,31 +596,34 @@
     
         // General input, select, and textarea validation and updates
         $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function (event) {
-            if ($(event.target).is('input[name="selected-su"]')) {
+           // if ($(event.target).is('input[name="selected-su"]')) {
                 // Get the currently checked radio button (in case of multiple triggers)
-                const $selectedRadio = $('input[name="selected-su"]:checked');
+               // const $selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
-                const $parentRow = $selectedRadio.closest('tr');
+               // const $parentRow = $selectedRadio.closest('tr');
                 // Retrieve the data-additional attribute
-                const additionalData = $parentRow.attr('data-additional');
+                //const additionalData = $parentRow.attr('data-additional');
                 
                 // Parse it to an object (if needed)
-                let billingData;
-                try {
-                    billingData = JSON.parse(additionalData);
-                } catch (e) {
-                    console.error("Failed to parse billing data:", e);
-                }
+               // let billingData;
+               // try {
+                //    billingData = JSON.parse(additionalData);
+                //} catch (e) {
+                //    console.error("Failed to parse billing data:", e);
+               // }
                 
                 // Call your updateBilling method with the parsed data
-                updateBilling(billingData);
-            }
+                //updateBilling(billingData);
+            //}
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
     
         // Attach submit event handler
         $(document).on('submit', '#combined-request-form', handleFormSubmit);
+
+        // Ensure visibility of Existing Allocations is set correctly on page load
+        toggleExistingProjectsAllocation();
 
         $(document).on("change", 'input[name="selected-su"]', function () {
             const selectedSU = $(this).val();
