@@ -568,15 +568,6 @@
             $('#storage-tier-options #standard-data').show();
         }
     }
-
-    function toggleExistingProjectsAllocation() {
-        const isRenewalSelected = $('input[name="new-or-renewal"]:checked').val() === "renewal";
-        if (isRenewalSelected) {
-            $('#existing-projects-allocation').show(); // Show when "Renewal" is selected
-        } else {
-            $('#existing-projects-allocation').hide(); // Hide when "New" is selected or nothing is selected
-        }
-    }
     
     // ===================================
     // Setup Event Handlers
@@ -588,7 +579,6 @@
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
             toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
-            toggleExistingProjectsAllocation(); // Show/hide existing projects allocation based on selection
         });
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
@@ -620,9 +610,6 @@
     
         // Attach submit event handler
         $(document).on('submit', '#combined-request-form', handleFormSubmit);
-
-        // Ensure visibility of Existing Allocations is set correctly on page load
-        toggleExistingProjectsAllocation();
 
         $(document).on("change", 'input[name="selected-su"]', function () {
             const selectedSU = $(this).val();
