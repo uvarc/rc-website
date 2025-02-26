@@ -569,6 +569,15 @@
         }
     }
 
+    function toggleExistingProjectsAllocation() {
+        const isRenewalSelected = $('#new-or-renewal-2').is(':checked');
+        if (isRenewalSelected) {
+            $('#existing-projects-allocation').show(); // Show the div
+        } else {
+            $('#existing-projects-allocation').hide(); // Hide the div
+        }
+    }
+
     // ===================================
     // Setup Event Handlers
     // ===================================
@@ -579,6 +588,7 @@
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
             toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
+            toggleExistingProjectsAllocation(); // Show/hide existing projects allocation based on selection
         });
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
@@ -609,6 +619,79 @@
     
         // Attach submit event handler
         $(document).on('submit', '#combined-request-form', handleFormSubmit);
+
+        $(document).on("change", 'input[name="selected-su"]', function () {
+            const selectedSU = $(this).val();
+            if (!selectedSU) return;
+            console.log(`Selected SU for renewal: ${selectedSU}`);
+        
+            // Extract group and tier from selected value
+            const [selectedGroup, selectedTier] = selectedSU.split('-');
+            if (!selectedGroup || !selectedTier) {
+                console.warn("⚠ Selected SU value is missing required parts.");
+                return;
+            }
+            // Find the corresponding SU details in consoleData
+            let existingResource = consoleData[0]?.user_resources?.find(resource =>
+                resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
+                resource.resources?.hpc_service_units?.[`${selectedGroup}-${selectedTier}`]
+            );
+            if (!existingResource) {
+                console.warn("⚠ No matching resource found for selected SU.");
+                return;
+            }
+            const existingSU = existingResource.resources.hpc_service_units[`${selectedGroup}-${selectedTier}`];
+            if (!existingSU) {
+                console.warn("⚠ No SU details found in resource.");
+                return;
+            }
+            console.log("Auto-filling UI with existing SU billing details:", existingSU);
+        
+            if (!existingSU.billing_details) {
+                console.warn("⚠ No billing details found in the existing SU.");
+                return;
+            }
+        
+            // Extract billing details from API response
+            const updatedBillingDetails = {
+                financial_contact: existingSU.billing_details?.financial_contact || "",
+                company_id: existingSU.billing_details?.company || "",
+                cost_center: existingSU.billing_details?.cost_center || "",
+                business_unit: existingSU.billing_details?.business_unit || "",
+                funding_number: existingSU.billing_details?.funding_number || "",
+                funding_type: existingSU.billing_details?.funding_type || "",
+                fdm: existingSU.billing_details?.fdm_billing_info?.[0] || {} // Handle FDM Billing
+            };
+        
+            console.log("Updated Billing Details for Autofill:", updatedBillingDetails);
+        
+            // Ensure form fields are updated
+            $('#financial-contact').val(updatedBillingDetails.financial_contact).trigger("change").trigger("input");
+            $('#company-id').val(updatedBillingDetails.company_id).trigger("change").trigger("input");
+            $('#cost-center').val(updatedBillingDetails.cost_center).trigger("change").trigger("input");
+            $('#business-unit').val(updatedBillingDetails.business_unit).trigger("change").trigger("input");
+        
+            // Ensure funding number autofills
+            $('#funding-number').val(updatedBillingDetails.funding_number).trigger("change").trigger("input");
+        
+            // Select correct funding type radio button if available
+            if (updatedBillingDetails.funding_type) {
+                $(`input[name="funding-type"][value="${updatedBillingDetails.funding_type}"]`).prop("checked", true);
+            }
+        
+            // Autofill FDM Billing Information
+            $('#fund').val(updatedBillingDetails.fdm.fund || "").trigger("change").trigger("input");
+            $('#function').val(updatedBillingDetails.fdm.function || "").trigger("change").trigger("input");
+            $('#program').val(updatedBillingDetails.fdm.program || "").trigger("change").trigger("input");
+            $('#activity').val(updatedBillingDetails.fdm.activity || "").trigger("change").trigger("input");
+            $('#assignee').val(updatedBillingDetails.fdm.assignee || "").trigger("change").trigger("input");
+        
+            // Ensure fields are editable
+            $('#financial-contact, #company-id, #cost-center, #business-unit, #funding-number, #fund, #function, #program, #activity, #assignee')
+                .prop('readonly', false);
+        
+            console.log("Billing fields successfully autofilled in the UI.");
+        });
     }
     
     // ===================================
@@ -886,7 +969,7 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-        const storageChange=formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
+        const storageChange = formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
         let selectedGroup, selectedTier;
     
         if (formData.newOrRenewal === "renewal") {
@@ -895,8 +978,7 @@
             if (selectedSU) {
                 [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
             }
-        }else if(formData.requestType === "storage") {
-            
+        } else if (formData.requestType === "storage") {
             selectedGroup = formData.group ? formData.group.trim() : "";
             selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
         } else {
@@ -913,7 +995,7 @@
     
         // Handle Renewals: Check if the resource exists in the API response
         if (formData.newOrRenewal === "renewal") {
-            let existingResource = consoleData[0]?.user_resources?.find(resource => 
+            let existingResource = consoleData[0]?.user_resources?.find(resource =>
                 resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
                 resource.resources?.hpc_service_units?.[selectedGroup]?.tier.toLowerCase() === selectedTier.toLowerCase()
             );
@@ -923,10 +1005,20 @@
                 return null;
             }
     
-            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Sending minimal PUT payload.`);
+            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Fetching existing SU details.`);
     
             // Get existing request count to avoid unintended changes
             const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
+    
+            // Retrieve existing billing details & merge with updated user input
+            const updatedBillingDetails = {
+                "financial_contact": $('#financial-contact').val().trim() || existingResource.billing_details?.financial_contact || "",
+                "company_id": $('#company-id').val().trim() || existingResource.billing_details?.company_id || "",
+                "cost_center": $('#cost-center').val().trim() || existingResource.billing_details?.cost_center || "",
+                "business_unit": $('#business-unit').val().trim() || existingResource.billing_details?.business_unit || ""
+            };
+    
+            console.log("Updated Billing Details for Renewal:", updatedBillingDetails);
     
             // Construct minimal payload for PUT (Renewal)
             const renewalPayload = {
@@ -940,26 +1032,26 @@
                         [selectedGroup]: {
                             "tier": selectedTier,
                             "request_count": existingRequestCount, // Keep the same
+                            "billing_details": updatedBillingDetails, // Updated billing details
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
                     }
                 },
-                "trigger_notification": true // ✅ Add a flag to indicate renewal notification
+                "trigger_notification": true // Add a flag to indicate renewal notification
             };
     
             console.log("Final Renewal Payload (PUT):", JSON.stringify(renewalPayload, null, 2));
             return [renewalPayload]; // Return as an array for consistency
         }
-        //handle storage adjustments
-        if(formData.requestType==="storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')){
+    
+        // Handle storage adjustments (no changes)
+        if (formData.requestType === "storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')) {
             // Construct minimal payload for PUT (change)
             const changePayload = {
-              
                 "storage": {
                     [formData.sharedSpaceName]: {
-                        
-                            "tier": selectedTier,
-                            "request_size": formData.capacity                                                  
+                        "tier": selectedTier,
+                        "request_size": formData.capacity
                     }
                 }
             };
