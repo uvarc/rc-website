@@ -584,105 +584,13 @@
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
     
         // General input, select, and textarea validation and updates
-        $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function (event) {
-           // if ($(event.target).is('input[name="selected-su"]')) {
-                // Get the currently checked radio button (in case of multiple triggers)
-               // const $selectedRadio = $('input[name="selected-su"]:checked');
-                // Traverse to the parent <tr>
-               // const $parentRow = $selectedRadio.closest('tr');
-                // Retrieve the data-additional attribute
-                //const additionalData = $parentRow.attr('data-additional');
-                
-                // Parse it to an object (if needed)
-               // let billingData;
-               // try {
-                //    billingData = JSON.parse(additionalData);
-                //} catch (e) {
-                //    console.error("Failed to parse billing data:", e);
-               // }
-                
-                // Call your updateBilling method with the parsed data
-                //updateBilling(billingData);
-            //}
+        $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function () {
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
     
         // Attach submit event handler
         $(document).on('submit', '#combined-request-form', handleFormSubmit);
-
-        $(document).on("change", 'input[name="selected-su"]', function () {
-            const selectedSU = $(this).val();
-            if (!selectedSU) return;
-            console.log(`Selected SU for renewal: ${selectedSU}`);
-        
-            // Extract group and tier from selected value
-            const [selectedGroup, selectedTier] = selectedSU.split('-');
-            if (!selectedGroup || !selectedTier) {
-                console.warn("⚠ Selected SU value is missing required parts.");
-                return;
-            }
-            // Find the corresponding SU details in consoleData
-            let existingResource = consoleData[0]?.user_resources?.find(resource =>
-                resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                resource.resources?.hpc_service_units?.[`${selectedGroup}-${selectedTier}`]
-            );
-            if (!existingResource) {
-                console.warn("⚠ No matching resource found for selected SU.");
-                return;
-            }
-            const existingSU = existingResource.resources.hpc_service_units[`${selectedGroup}-${selectedTier}`];
-            if (!existingSU) {
-                console.warn("⚠ No SU details found in resource.");
-                return;
-            }
-            console.log("Auto-filling UI with existing SU billing details:", existingSU);
-        
-            if (!existingSU.billing_details) {
-                console.warn("⚠ No billing details found in the existing SU.");
-                return;
-            }
-        
-            // Extract billing details from API response
-            const updatedBillingDetails = {
-                financial_contact: existingSU.billing_details?.financial_contact || "",
-                company_id: existingSU.billing_details?.company || "",
-                cost_center: existingSU.billing_details?.cost_center || "",
-                business_unit: existingSU.billing_details?.business_unit || "",
-                funding_number: existingSU.billing_details?.funding_number || "",
-                funding_type: existingSU.billing_details?.funding_type || "",
-                fdm: existingSU.billing_details?.fdm_billing_info?.[0] || {} // Handle FDM Billing
-            };
-        
-            console.log("Updated Billing Details for Autofill:", updatedBillingDetails);
-        
-            // Ensure form fields are updated
-            $('#financial-contact').val(updatedBillingDetails.financial_contact).trigger("change").trigger("input");
-            $('#company-id').val(updatedBillingDetails.company_id).trigger("change").trigger("input");
-            $('#cost-center').val(updatedBillingDetails.cost_center).trigger("change").trigger("input");
-            $('#business-unit').val(updatedBillingDetails.business_unit).trigger("change").trigger("input");
-        
-            // Ensure funding number autofills
-            $('#funding-number').val(updatedBillingDetails.funding_number).trigger("change").trigger("input");
-        
-            // Select correct funding type radio button if available
-            if (updatedBillingDetails.funding_type) {
-                $(`input[name="funding-type"][value="${updatedBillingDetails.funding_type}"]`).prop("checked", true);
-            }
-        
-            // Autofill FDM Billing Information
-            $('#fund').val(updatedBillingDetails.fdm.fund || "").trigger("change").trigger("input");
-            $('#function').val(updatedBillingDetails.fdm.function || "").trigger("change").trigger("input");
-            $('#program').val(updatedBillingDetails.fdm.program || "").trigger("change").trigger("input");
-            $('#activity').val(updatedBillingDetails.fdm.activity || "").trigger("change").trigger("input");
-            $('#assignee').val(updatedBillingDetails.fdm.assignee || "").trigger("change").trigger("input");
-        
-            // Ensure fields are editable
-            $('#financial-contact, #company-id, #cost-center, #business-unit, #funding-number, #fund, #function, #program, #activity, #assignee')
-                .prop('readonly', false);
-        
-            console.log("Billing fields successfully autofilled in the UI.");
-        });
     }
     
     // ===================================
