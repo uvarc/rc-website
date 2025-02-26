@@ -595,25 +595,25 @@
     
         // General input, select, and textarea validation and updates
         $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function (event) {
-            if ($(event.target).is('input[name="selected-su"]')) {
+           // if ($(event.target).is('input[name="selected-su"]')) {
                 // Get the currently checked radio button (in case of multiple triggers)
-                const $selectedRadio = $('input[name="selected-su"]:checked');
+               // const $selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
-                const $parentRow = $selectedRadio.closest('tr');
+               // const $parentRow = $selectedRadio.closest('tr');
                 // Retrieve the data-additional attribute
-                const additionalData = $parentRow.attr('data-additional');
+                //const additionalData = $parentRow.attr('data-additional');
                 
                 // Parse it to an object (if needed)
-                let billingData;
-                try {
-                    billingData = JSON.parse(additionalData);
-                } catch (e) {
-                    console.error("Failed to parse billing data:", e);
-                }
+               // let billingData;
+               // try {
+                //    billingData = JSON.parse(additionalData);
+                //} catch (e) {
+                //    console.error("Failed to parse billing data:", e);
+               // }
                 
                 // Call your updateBilling method with the parsed data
-                updateBilling(billingData);
-            }
+                //updateBilling(billingData);
+            //}
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
