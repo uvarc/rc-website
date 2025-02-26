@@ -569,6 +569,15 @@
         }
     }
 
+    function toggleExistingProjectsAllocation() {
+        const isRenewalSelected = $('#new-or-renewal-2').is(':checked');
+        if (isRenewalSelected) {
+            $('#existing-projects-allocation').show(); // Show the div
+        } else {
+            $('#existing-projects-allocation').hide(); // Hide the div
+        }
+    }
+
     // ===================================
     // Setup Event Handlers
     // ===================================
@@ -579,6 +588,7 @@
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
             toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
+            toggleExistingProjectsAllocation(); // Show/hide existing projects allocation based on selection
         });
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
