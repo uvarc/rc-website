@@ -594,7 +594,25 @@
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
     
         // General input, select, and textarea validation and updates
-        $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function () {
+        $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function (event) {
+            if ($(event.target).is('input[name="selected-su"]')) {
+                // Get the currently checked radio button (in case of multiple triggers)
+                const $selectedRadio = $('input[name="selected-su"]:checked');
+                // Traverse to the parent <tr>
+                const $parentRow = $selectedRadio.closest('tr');
+                // Retrieve the data-additional attribute
+                const additionalData = $parentRow.attr('data-additional');
+                
+                // Parse it to an object (if needed)
+                let billingData;
+                try {
+                    billingData = JSON.parse(additionalData);
+                } catch (e) {
+                    console.error("Failed to parse billing data:", e);
+                }
+                
+                // Call your updateBilling method with the parsed data
+                updateBilling(billingData);
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
@@ -830,6 +848,21 @@
             console.log(`Updated capacity limits for ${tierType}:`, tierData);
         } else {
             console.warn(`No limits found for storage tier: ${tierType}`);
+        }
+    }
+    function updateBilling(billingData) {
+        if (billingData) {
+            $('#financial-contact').val(billingData.financial_contact || '');
+            $('#company-id').val(billingData.company || '');
+            $('#business-unit').val(billingData.business_unit || '');
+            $('#cost-center').val(billingData.cost_center || '');
+            $('#fund').val(billingData.fund || '');
+            $('#funding-number').val(billingData.funding_number || '');
+            $('#program').val(billingData.program_code || '');
+            $('#function').val(billingData.function || '');
+            $('#activity').val(billingData.activity || '');
+            $('#assignee').val(billingData.assignee || '');
+            console.log("Billing data updated from existing line:", billingData);
         }
     }
 
@@ -1419,8 +1452,9 @@
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
                     const sharedSpace = details.shared_space_name ? `${details.shared_space_name}` : "N/A";
+                    const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const row = `
-                        <tr>
+                        <tr data-additional='${billingJson}'>
                             <td>
                                 <input type="radio" name="selected-su" value="${groupName}-${tier}" 
                                     data-group="${groupName}" data-tier="${tier}">
@@ -1459,9 +1493,9 @@
                 const tier = details.tier || "N/A";
                 const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                 const updateDate = details.update_date ? `Updated: ${formatDateToEST(details.update_date)}` : `Requested: ${formatDateToEST(details.request_date)}`;
-
+                const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                 const row = `
-                    <tr>
+                    <tr data-additional='${billingJson}'>
                         <td>
                             <input type="radio" name="selected-su" value="${groupName}-${tier}" 
                                 data-group="${groupName}" data-tier="${tier}" data-project="${projectName}">
