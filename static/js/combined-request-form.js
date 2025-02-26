@@ -853,16 +853,16 @@
     }
     function updateBilling(billingData) {
         if (billingData) {
-            $('#financial-contact').val(billingData.financial_contact || '');
-            $('#company-id').val(billingData.company || '');
-            $('#business-unit').val(billingData.business_unit || '');
-            $('#cost-center').val(billingData.cost_center || '');
-            $('#fund').val(billingData.fund || '');
-            $('#funding-number').val(billingData.funding_number || '');
-            $('#program').val(billingData.program_code || '');
-            $('#function').val(billingData.function || '');
-            $('#activity').val(billingData.activity || '');
-            $('#assignee').val(billingData.assignee || '');
+            $('#financial-contact').val(billingData[0].financial_contact || '');
+            $('#company-id').val(billingData[0].company || '');
+            $('#business-unit').val(billingData[0].business_unit || '');
+            $('#cost-center').val(billingData[0].cost_center || '');
+            $('#fund').val(billingData[0].fund || '');
+            $('#funding-number').val(billingData[0].funding_number || '');
+            $('#program').val(billingData[0].program_code || '');
+            $('#function').val(billingData[0].function || '');
+            $('#activity').val(billingData[0].activity || '');
+            $('#assignee').val(billingData[0].assignee || '');
             console.log("Billing data updated from existing line:", billingData);
         }
     }
