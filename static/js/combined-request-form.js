@@ -570,15 +570,14 @@
     }
 
     function toggleExistingProjectsAllocation() {
-        const isRenewalSelected = $('#new-or-renewal-2').is(':checked');
-        const isNewSelected = $('#new-or-renewal-1').is(':checked');
-    
+        const isRenewalSelected = $('input[name="new-or-renewal"]:checked').val() === "renewal";
         if (isRenewalSelected) {
             $('#existing-projects-allocation').show(); // Show when "Renewal" is selected
         } else {
             $('#existing-projects-allocation').hide(); // Hide when "New" is selected or nothing is selected
         }
     }
+    
     // ===================================
     // Setup Event Handlers
     // ===================================
