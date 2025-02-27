@@ -595,9 +595,9 @@
     
         // General input, select, and textarea validation and updates
         $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function (event) {
-            if ($(event.target).is('input[name="selected-su"]')) {
+            if ($(event.target).is('input[name="selected-st"]')) {
                 // Get the currently checked radio button (in case of multiple triggers)
-                const $selectedRadio = $('input[name="selected-su"]:checked');
+                const $selectedRadio = $('input[name="selected-st"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
                 // Retrieve the data-additional attribute
@@ -1457,7 +1457,7 @@
                     const row = `
                         <tr data-additional='${billingJson}'>
                             <td>
-                                <input type="radio" name="selected-su" value="${groupName}-${tier}" 
+                                <input type="radio" name="selected-st" value="${groupName}-${tier}" 
                                     data-group="${groupName}" data-tier="${tier}">
                             </td>
                             <td>${projectName}</td> 
