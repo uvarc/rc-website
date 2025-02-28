@@ -157,7 +157,7 @@ private = true
       </div>
 
       <!-- Existing Projects for Service Units (Only visible for Renewal) -->
-      <div id="existing-projects-allocation" style="display: none; margin-top:1em;">
+      <div id="existing-projects-allocation" style="display:none; margin-top:1em;">
         <fieldset>
           <legend class="control-label h6 mb-2">Your Existing Service Units</legend>
           <table class="table table-bordered table-hover">
