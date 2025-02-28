@@ -587,7 +587,7 @@
         $(document).on('change', 'input[name="request-type"]', toggleRequestFields);
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
-            toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
+            //toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
             toggleExistingProjectsAllocation(); // Show/hide existing projects allocation based on selection
         });
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
@@ -824,7 +824,7 @@
             $('#activity').val(billingData[0].activity || '');
             $('#assignee').val(billingData[0].assignee || '');
             console.log("Billing data updated from existing line:", billingData);
-            $('#financial-contact').val(updatedBillingDetails.financial_contact).trigger("change").trigger("input"); //trigger the form update
+            $('#financial-contact').trigger("change").trigger("input"); //trigger the form update
         }
     }
 
