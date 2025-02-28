@@ -527,11 +527,11 @@
 
     function toggleAllocationFields() {
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
-    
-        if (isNew) {
+        const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
+        if (isNew && !isRenew) {
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
-        } else {
+        } else if(!isNew && isRenew) {
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
             populateExistingServiceUnitsTable(consoleData);
@@ -569,14 +569,7 @@
         }
     }
 
-    function toggleExistingProjectsAllocation() {
-        const isRenewalSelected = $('#new-or-renewal-2').is(':checked');
-        if (isRenewalSelected) {
-            $('#existing-projects-allocation').show(); // Show the div
-        } else {
-            $('#existing-projects-allocation').hide(); // Hide the div
-        }
-    }
+    
 
     // ===================================
     // Setup Event Handlers
@@ -588,7 +581,7 @@
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
             //toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
-            toggleExistingProjectsAllocation(); // Show/hide existing projects allocation based on selection
+            
         });
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
