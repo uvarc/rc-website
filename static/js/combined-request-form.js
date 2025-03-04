@@ -739,10 +739,10 @@
         if (isRenewal && payload.length > 0 && payload[0].trigger_notification) {
             console.log("Triggering notification for renewal request.");
         }
-    
+        var settings = {};
         if(!isRetire){
         // Remove "Origin" header (Handled automatically by browser)
-        const settings = {
+         settings = {
             "url": requestUrl, 
             "method": method, 
             "timeout": 0, 
@@ -755,7 +755,7 @@
             }
         };
         }else{
-            const settings = {
+             settings = {
                 "url": requestUrl, 
                 "method": method, 
                 "timeout": 0, 
