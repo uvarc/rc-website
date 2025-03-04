@@ -1116,7 +1116,7 @@
             return errors; // Skip other validations for renewals
         }
         if(isStorage){
-            Object.values(data.resources.storage).forEach((group, index) => {
+            Object.values(payload[0].resources.storage).forEach((group, index) => {
                 // Check for required properties
                 if (!group.tier) {
                   console.log(`You must select a storage tier.`);
