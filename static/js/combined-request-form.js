@@ -945,6 +945,7 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
+        const billingDetails = getBillingDetails();
         const storageChange = formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
         let selectedGroup, selectedTier;
     
@@ -968,7 +969,7 @@
             showErrorMessage("⚠ Please select a valid Group and Tier.");
             return null;
         }
-    
+       
         // Handle Renewals: Check if the resource exists in the API response
         if (formData.newOrRenewal === "renewal") {
             let existingResource = consoleData[0]?.user_resources?.find(resource =>
@@ -985,7 +986,7 @@
     
             // Get existing request count to avoid unintended changes
             const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
-            const billingDetails = getBillingDetails();
+            
             // Retrieve existing billing details & merge with updated user input
             //const updatedBillingDetails = {
                // "financial_contact": $('#financial-contact').val().trim() || existingResource.billing_details?.financial_contact || "",
@@ -1038,7 +1039,7 @@
         }
     
         // Handle New Requests (Unchanged)
-        const billingDetails = getBillingDetails();
+        
         const hpcServiceUnitKey = selectedGroup;
         let newResource = {};
     
