@@ -985,14 +985,14 @@
     
             // Get existing request count to avoid unintended changes
             const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
-    
+            const billingDetails = getBillingDetails();
             // Retrieve existing billing details & merge with updated user input
-            const updatedBillingDetails = {
-                "financial_contact": $('#financial-contact').val().trim() || existingResource.billing_details?.financial_contact || "",
-                "company_id": $('#company-id').val().trim() || existingResource.billing_details?.company_id || "",
-                "cost_center": $('#cost-center').val().trim() || existingResource.billing_details?.cost_center || "",
-                "business_unit": $('#business-unit').val().trim() || existingResource.billing_details?.business_unit || ""
-            };
+            //const updatedBillingDetails = {
+               // "financial_contact": $('#financial-contact').val().trim() || existingResource.billing_details?.financial_contact || "",
+               // "company_id": $('#company-id').val().trim() || existingResource.billing_details?.company_id || "",
+               // "cost_center": $('#cost-center').val().trim() || existingResource.billing_details?.cost_center || "",
+               // "business_unit": $('#business-unit').val().trim() || existingResource.billing_details?.business_unit || ""
+           // };
     
             console.log("Updated Billing Details for Renewal:", updatedBillingDetails);
     
@@ -1008,7 +1008,7 @@
                         [selectedGroup]: {
                             "tier": selectedTier,
                             "request_count": existingRequestCount, // Keep the same
-                            "billing_details": updatedBillingDetails, // Updated billing details
+                            "billing_details": billingDetails, // Updated billing details
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
                     }
@@ -1027,7 +1027,8 @@
                 "storage": {
                     [formData.sharedSpaceName]: {
                         "tier": selectedTier,
-                        "request_size": formData.capacity
+                        "request_size": formData.capacity,
+                        "billing_details": billingDetails
                     }
                 }
             };
