@@ -994,7 +994,7 @@
                // "business_unit": $('#business-unit').val().trim() || existingResource.billing_details?.business_unit || ""
            // };
     
-            console.log("Updated Billing Details for Renewal:", updatedBillingDetails);
+            //console.log("Updated Billing Details for Renewal:", updatedBillingDetails);
     
             // Construct minimal payload for PUT (Renewal)
             const renewalPayload = {
