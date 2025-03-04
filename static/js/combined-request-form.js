@@ -731,8 +731,9 @@
         }
         if(isRetire ){
             const requestType= formData.requestType==="storage" ? "storage" : "hpc_service-units";
-            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim() + $('input[name="selected-st"]:checked').closest('tr').find('td').eq(4).text().trim();
-            requestUrl += `?group_name=${formData.group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
+            const group=$('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim();
+            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim() +'-'+ $('input[name="selected-st"]:checked').closest('tr').find('td').eq(4).text().trim();
+            requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
         }
         // Check for `trigger_notification` flag in payload
         if (isRenewal && payload.length > 0 && payload[0].trigger_notification) {
