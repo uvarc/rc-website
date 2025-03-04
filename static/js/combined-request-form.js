@@ -1086,7 +1086,9 @@
 
     function validatePayload(payload) {
         const errors = [];
-    
+        if($('input[name="type-of-request"]:checked').val() === 'retire-storage'){
+            return errors;
+        }
         // Ensure payload is an array with exactly one object
         if (!Array.isArray(payload) || payload.length !== 1) {
             errors.push("Payload must be an array containing a single object.");
