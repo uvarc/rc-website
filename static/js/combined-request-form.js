@@ -716,9 +716,12 @@
     
         // Check if it's a renewal by detecting the selected existing SU
         const isRenewal = formData.newOrRenewal === 'renewal';
-    
+        const isRetire = formData.typeOfRequest === 'retire-storage'
         // Set the correct HTTP method
-        const method = isRenewal ? 'PUT' : 'POST';
+        var method = isRenewal ? 'PUT' : 'POST';
+        if(isRetire){
+            method = 'DELETE'; // Use DELETE for retiring storage
+        }
         console.log(`Submitting ${method} request for ${isRenewal ? "Renewal" : "New Request"}...`);
     
         // Ensure correct URL for PUT (Renewals)
@@ -726,12 +729,17 @@
         if (isRenewal && formData.existingProject) {
             requestUrl += `/${formData.existingProject}`;
         }
-    
+        if(isRetire ){
+            const requestType= formData.requestType==="storage" ? "storage" : "hpc_service-units";
+            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim() + $('input[name="selected-st"]:checked').closest('tr').find('td').eq(4).text().trim();
+            requestUrl += `?group_name=${formData.group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
+        }
         // Check for `trigger_notification` flag in payload
         if (isRenewal && payload.length > 0 && payload[0].trigger_notification) {
             console.log("Triggering notification for renewal request.");
         }
     
+        if(!isRetire){
         // Remove "Origin" header (Handled automatically by browser)
         const settings = {
             "url": requestUrl, 
@@ -745,7 +753,19 @@
                 withCredentials: true // Ensure authentication and cookies are included
             }
         };
-    
+        }else{
+            const settings = {
+                "url": requestUrl, 
+                "method": method, 
+                "timeout": 0, 
+                "headers": {
+                    "Content-Type": "application/json"
+                },                
+                "xhrFields": { 
+                    withCredentials: true // Ensure authentication and cookies are included
+                }
+            };
+        }
         try {
             const response = await $.ajax(settings);
             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
@@ -1076,7 +1096,7 @@
         const resourceWrapper = payload[0];
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
         var isStorage = $('input[name="request-type"]:checked').val() === 'storage';
-        
+        var isStorageChange=$('input[name="type-of-request"]:checked').val() === 'increase-storage' || $('input[name="type-of-request"]:checked').val() === 'decrease-storage';
         // **If it's a renewal, user_resources array should NOT be validated for new entries**
         if (isRenewal) {
             if (!resourceWrapper.group_name || !resourceWrapper.resources?.hpc_service_units) {
@@ -1091,7 +1111,24 @@
     
             return errors; // Skip other validations for renewals
         }
+        if(isStorage){
+            Object.values(data.resources.storage).forEach((group, index) => {
+                // Check for required properties
+                if (!group.tier) {
+                  console.log(`You must select a storage tier.`);
+                } 
+                if(!group.storage_size || group.storage_size === "0") {
+                    console.log(`You must have a storage size > 0.`);
+                }
+                if(isStorageChange){
+                    if(!group.request_size || group.request_size === "0") {
+                        console.log(`You must have a request size > 0.`);
+                    }
+                }
+              });
     
+            return errors; // Skip other validations for storage
+        }
         // **For New Requests (POST)**
         const seenGroupTiers = new Set();
     
