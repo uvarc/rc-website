@@ -1368,7 +1368,7 @@
         userResources.forEach(resourceGroup => {
             const projectName = resourceGroup.project_name || "N/A";
             const groupName = resourceGroup.group_name || "N/A";
-            resourceGroup.forEach(resource => {
+            resourceGroup.resources.forEach(resource => {
             let resourceType = "Unknown";
             if ( resource?.hpc_service_units &&
                 Object.keys(resource.hpc_service_units).length > 0) {
