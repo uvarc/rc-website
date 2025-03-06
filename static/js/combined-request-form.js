@@ -949,11 +949,12 @@
         const userId = getUserId();
         const billingDetails = getBillingDetails();
         const storageChange = formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
+        const selectedSU = "n/a";
         let selectedGroup, selectedTier;
     
         if (formData.newOrRenewal === "renewal") {
             // Extract from the selected SU in the renewal table
-            const selectedSU = $('input[name="selected-su"]:checked').val();
+            selectedSU = $('input[name="selected-su"]:checked').val();
             if (selectedSU) {
                 var checkedRadio=$('input[name="selected-su"]:checked')               
                 selectedTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
@@ -978,7 +979,7 @@
         if (formData.newOrRenewal === "renewal") {
             let existingResource = consoleData[0]?.user_resources?.find(resource =>
                 resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                resource.resources?.hpc_service_units?.[selectedGroup]?.tier.toLowerCase() === selectedTier.toLowerCase()
+                resource.resources?.hpc_service_units?.[selectedSU]?.tier.toLowerCase() === selectedTier.toLowerCase()
             );
     
             if (!existingResource) {
