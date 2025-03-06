@@ -279,7 +279,7 @@ private = true
             </div>
             <div class="form-item form-type-radio radio">
               <input required="required" type="radio" id="storage-choice4" name="storage-choice" value="Highly Sensitive Data" class="form-radio" />
-              <label for="storage-choice4">Highly Sensitive Data ({{< extract_storage_cost type="high-security-standard" >}})</label>
+              <label for="storage-choice4">High-Security Research Standard Storage ({{< extract_storage_cost type="hsz standard" >}})</label>
             </div>
           </div>
         </fieldset>
