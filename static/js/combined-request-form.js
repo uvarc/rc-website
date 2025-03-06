@@ -530,10 +530,10 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
         if (isNew && !isRenew) {
-            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
+            $('#allocation-fields #new-project-name-container,#su-capacity, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
-            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
+            $('#allocation-fields #new-project-name-container,#su-capacity, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
             populateExistingServiceUnitsTable(consoleData);
         }
@@ -1365,21 +1365,21 @@
             return dateB - dateA; // Sort descending (newest first)
         });
     
-        userResources.forEach(resource => {
+        userResources.forEach(resourceGroup => {
             const projectName = resource.project_name || "N/A";
             const groupName = resource.group_name || "N/A";
-    
+            resourceGroup.forEach(resource => {
             let resourceType = "Unknown";
-            if ( resource.resources?.hpc_service_units &&
-                Object.keys(resource.resources.hpc_service_units).length > 0) {
+            if ( resource?.hpc_service_units &&
+                Object.keys(resource.hpc_service_units).length > 0) {
                 resourceType = "SU";
-            } else if (resource.resources?.storage &&
-                Object.keys(resource.resources.storage).length > 0) {
+            } else if (resource?.storage &&
+                Object.keys(resource.storage).length > 0) {
                 resourceType = "Storage";
             }
     
-            if (resourceType==="SU" && resource.resources?.hpc_service_units) {
-                Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
+            if (resourceType==="SU" && resource?.hpc_service_units) {
+                Object.entries(resource.hpc_service_units).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
@@ -1396,8 +1396,8 @@
                     `;
                     previewTableBody.append(row);
                 });
-            }else if(resourceType==="Storage" && resource.resources?.storage) {
-                Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
+            }else if(resourceType==="Storage" && resource?.storage) {
+                Object.entries(resource.storage).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
                     const storageSize = details.storage_size ? `${details.storage_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
@@ -1415,6 +1415,7 @@
                     previewTableBody.append(row);
                 });
             }
+            });
         });
     
         // Also update the Existing Service Units table for Renewals
