@@ -949,7 +949,7 @@
         const userId = getUserId();
         const billingDetails = getBillingDetails();
         const storageChange = formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
-        const selectedSU = "n/a";
+        var selectedSU = "n/a";
         let selectedGroup, selectedTier;
     
         if (formData.newOrRenewal === "renewal") {
