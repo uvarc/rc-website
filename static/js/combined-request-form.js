@@ -283,7 +283,7 @@
         function collectFormData() {
             
             const formData = {
-                requestType: $('input[name="request-type"]:checked').val(),
+                requestType: $('select[name="request-type"]').val(),
                 group: $('#mygroups-group').val(),
                 projectName: $('#new-project-name').val(),
                 requestCount: $('#su-quantity').val(),                
@@ -506,7 +506,7 @@
     // ===================================
 
     function toggleRequestFields() {
-        const requestType = $('select[name="request-type"]').val() || $('input[name="request-type"]:checked').val();
+        const requestType = $('select[name="request-type"]').val();
 
         // Show common fields
         $('#common-fields').show();
@@ -845,7 +845,7 @@
     }
 
     function updateBillingVisibility() {
-        const requestType = $('input[name="request-type"]:checked').val();
+        const requestType = $('select[name="request-type"]').val();
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
@@ -1102,7 +1102,7 @@
     
         const resourceWrapper = payload[0];
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
-        var isStorage = $('input[name="request-type"]:checked').val() === 'storage';
+        var isStorage = $('select[name="request-type"]').val() === 'storage';
         var isStorageChange=$('input[name="type-of-request"]:checked').val() === 'increase-storage' || $('input[name="type-of-request"]:checked').val() === 'decrease-storage';
         // **If it's a renewal, user_resources array should NOT be validated for new entries**
         if (isRenewal) {
@@ -1551,7 +1551,7 @@
 
     function updateFormValidation() {
         const $form = $('#combined-request-form');
-        const requestType = $('input[name="request-type"]:checked').val();
+        const requestType = $('select[name="request-type"]').val();
     
         const visibleFieldsSelector = requestType === 'service-unit'
             ? '#allocation-fields input[required]:visible, #allocation-fields select[required]:visible'
