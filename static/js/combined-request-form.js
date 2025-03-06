@@ -955,7 +955,7 @@
             // Extract from the selected SU in the renewal table
             const selectedSU = $('input[name="selected-su"]:checked').val();
             if (selectedSU) {
-                var checkedRadio=$('input[name="selected-st"]:checked')               
+                var checkedRadio=$('input[name="selected-su"]:checked')               
                 selectedTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
                 selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();                
             }
