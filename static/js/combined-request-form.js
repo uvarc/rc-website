@@ -309,7 +309,7 @@
                     formData.storage_size = $('#capacity').val();
                 }else if(formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage') {
                     formData.storage_size = $('#capacity').val();
-                    var checkedRadio=$('input[name="selected-su"]:checked')               
+                    var checkedRadio=$('input[name="selected-st"]:checked')               
                     formData.sharedSpaceName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
                     formData.storageTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
                     formData.storage_size = $('#capacity').val();
@@ -955,7 +955,9 @@
             // Extract from the selected SU in the renewal table
             const selectedSU = $('input[name="selected-su"]:checked').val();
             if (selectedSU) {
-                [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
+                var checkedRadio=$('input[name="selected-su"]:checked')               
+                selectedTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
+                selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();                
             }
         } else if (formData.requestType === "storage") {
             selectedGroup = formData.group ? formData.group.trim() : "";
