@@ -286,7 +286,7 @@
                 requestType: $('input[name="request-type"]:checked').val(),
                 group: $('#mygroups-group').val(),
                 projectName: $('#new-project-name').val(),
-                suQuantity: $('#su-quantity').val(),
+                requestCount: $('#su-quantity').val(),                
                 capacity: $('#capacity').val(),
                 allocationTier: $('input[name="allocation-choice"]:checked').val(),
                 storageTier: $('input[name="storage-choice"]:checked').val(),
@@ -1380,6 +1380,7 @@
                     const tier = details.tier || "N/A";
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
+                    const request_status=details.request_status || "N/A";
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
     
                     const row = `
@@ -1388,7 +1389,9 @@
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
                             <td>${tier}</td>
-                            <td>${requestCount} | ${updateDate}</td>
+                            <td>${requestCount}</td>
+                            <td>${request_status}</td>
+                            <td>${updateDate}</td>
                         </tr>
                     `;
                     previewTableBody.append(row);
@@ -1403,6 +1406,7 @@
                     const tier = details.tier || "N/A";
                     const storageSize = details.storage_size ? `${details.storage_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
+                    const request_status=details.request_status || "N/A";
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
     
                     const row = `
@@ -1411,7 +1415,9 @@
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
                             <td>${tier}</td>
-                            <td>${storageSize} | ${updateDate}</td>
+                            <td>${storageSize}</td>
+                            <td>${request_status}</td>
+                            <td>${updateDate}</td>
                         </tr>
                     `;
                     previewTableBody.append(row);

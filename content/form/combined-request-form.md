@@ -68,7 +68,9 @@ private = true
                 <th scope="col">Project/Class</th>
                 <th scope="col">Group</th>
                 <th scope="col">Tier</th>
-                <th scope="col">Details</th>
+                <th scope="col">Size/Count</th>
+                <th scope="col">Status</th>
+                <th scope="col">Update Date</th>
             </tr>
         </thead>
         <tbody id="combined-preview-tbody">
