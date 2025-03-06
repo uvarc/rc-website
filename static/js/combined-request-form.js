@@ -1365,21 +1365,18 @@
             return dateB - dateA; // Sort descending (newest first)
         });
     
-        userResources.forEach(resourceGroup => {
-            const projectName = resourceGroup.project_name || "N/A";
-            const groupName = resourceGroup.group_name || "N/A";
-            Object.values(resourceGroup.resources).forEach(resource => {
+        userResources.forEach(resource => {
+            const projectName = resource.project_name || "N/A";
+            const groupName = resource.group_name || "N/A";
+            
             let resourceType = "Unknown";
-            if ( resource?.hpc_service_units &&
-                Object.keys(resource.hpc_service_units).length > 0) {
+            if ( resource.resources?.hpc_service_units &&
+                Object.keys(resource.resources.hpc_service_units).length > 0) {
                 resourceType = "SU";
-            } else if (resource?.storage &&
-                Object.keys(resource.storage).length > 0) {
-                resourceType = "Storage";
-            }
+            } 
     
-            if (resourceType==="SU" && resource?.hpc_service_units) {
-                Object.entries(resource.hpc_service_units).forEach(([allocationName, details]) => {
+            if (resourceType==="SU" && resource.resources?.hpc_service_units) {
+                Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
@@ -1396,8 +1393,13 @@
                     `;
                     previewTableBody.append(row);
                 });
-            }else if(resourceType==="Storage" && resource?.storage) {
-                Object.entries(resource.storage).forEach(([allocationName, details]) => {
+            } 
+            if (resource.resources?.storage &&
+                Object.keys(resource.resources.storage).length > 0) {
+                resourceType = "Storage";
+            }
+            if(resourceType==="Storage" && resource.resources?.storage) {
+                Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
                     const storageSize = details.storage_size ? `${details.storage_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
@@ -1415,7 +1417,6 @@
                     previewTableBody.append(row);
                 });
             }
-            });
         });
     
         // Also update the Existing Service Units table for Renewals
