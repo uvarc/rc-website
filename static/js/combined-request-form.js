@@ -286,6 +286,7 @@
                 requestType: $('input[name="request-type"]:checked').val(),
                 group: $('#mygroups-group').val(),
                 projectName: $('#new-project-name').val(),
+                suQuantity: $('#su-quantity').val(),
                 capacity: $('#capacity').val(),
                 allocationTier: $('input[name="allocation-choice"]:checked').val(),
                 storageTier: $('input[name="storage-choice"]:checked').val(),
@@ -505,7 +506,7 @@
     // ===================================
 
     function toggleRequestFields() {
-        const requestType = $('input[name="request-type"]:checked').val();
+        const requestType = $('select[name="request-type"]').val() || $('input[name="request-type"]:checked').val();
 
         // Show common fields
         $('#common-fields').show();
@@ -576,8 +577,9 @@
     // ===================================
 
     function setupEventHandlers() {
+       
         // Use event delegation for dynamically added inputs
-        $(document).on('change', 'input[name="request-type"]', toggleRequestFields);
+        $(document).on('change', '#request-type', toggleRequestFields);
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
             //toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
