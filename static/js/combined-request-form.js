@@ -1121,7 +1121,7 @@
     
             return errors; // Skip other validations for renewals
         }
-        if(isStorage){
+        if(isStorage && !isStorageChange){
             Object.values(payload[0].resources.storage).forEach((group, index) => {
                 // Check for required properties
                 if (!group.tier) {
