@@ -56,39 +56,39 @@ private = true
     <input class="form-control form-text" type="text" id="requestor-id" name="requestor-id" value="" size="60" maxlength="128" />
   </div>
 
-  <!-- Current Resources Preview -->
-  <div id="existing-resources-preview" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+<!-- Current Resources Preview -->
+<div id="existing-resources-preview" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
     <h5 class="mb-3">Your Current Resources</h5>
 
     <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
-      <thead>
-        <tr>
-          <th scope="col">Type</th>
-          <th scope="col">Project/Class</th>
-          <th scope="col">Group</th>
-          <th scope="col">Tier</th>
-          <th scope="col">Size/Count</th>
-          <th scope="col">Status</th>
-          <th scope="col">Update Date</th>
-        </tr>
-      </thead>
-      <tbody id="combined-preview-tbody">
-        <!-- Rows will be dynamically injected by JavaScript -->
-      </tbody>
+        <thead>
+            <tr>
+                <th scope="col">Type</th>
+                <th scope="col">Project/Class</th>
+                <th scope="col">Group</th>
+                <th scope="col">Tier</th>
+                <th scope="col">Size/Count</th>
+                <th scope="col">Status</th>
+                <th scope="col">Update Date</th>
+            </tr>
+        </thead>
+        <tbody id="combined-preview-tbody">
+            <!-- Rows will be dynamically injected by JavaScript -->
+        </tbody>
     </table>
-  </div>
+</div>
 
   <!-- Resource Type Selection -->
   <div class="container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
-    <fieldset class="form-item form-group form-type-select">
-      <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
-      <select name="request-type" id="request-type" class="form-control" required>
-        <option value="service-unit">Service Unit (SU)</option>
-        <option value="storage">Storage</option>
-      </select>
-    </fieldset>
-  </div>
+  <fieldset class="form-item form-group form-type-select">
+    <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
+    <select name="request-type" id="request-type" class="form-control" required>
+      <option value="service-unit">Service Unit (SU)</option>
+      <option value="storage">Storage</option>
+    </select>
+  </fieldset>
+</div>
 
   <!-- Form Fields Container -->
   <div style="margin-bottom:1rem;">
@@ -114,24 +114,24 @@ private = true
           <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
         </div>
       </fieldset>
-      <div id="su-capacity" class="col form-item form-group">
-        <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
-        <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
-        <p class="tiny">The number of SU's requested.</p>
-      </div>
+<div id="su-capacity" class="col form-item form-group">
+          <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
+          <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
+          <p class="tiny">The number of SU's requested.</p>
+        </div>
       <!-- Grouper/MyGroups Selection -->
       <div id="mygroups-group-container" style="display: none;">
         <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
         <select id="mygroups-group" class="form-control" required>
-          <option value="">- Select a group -</option>
+            <option value="">- Select a group -</option>
         </select>
       </div>
 
       <div id="storage-mygroups-group-container" style="display: none;">
-        <label for="storage-mygroups-group-old">Storage Grouper/MyGroups Account *</label>
-        <select id="storage-mygroups-group-old" class="form-control" required>
-          <option value="">- Select a group -</option>
-        </select>
+          <label for="storage-mygroups-group-old">Storage Grouper/MyGroups Account *</label>
+          <select id="storage-mygroups-group-old" class="form-control" required>
+              <option value="">- Select a group -</option>
+          </select>
       </div>
       
       <!-- Tier Options (Only shown for New requests) -->
@@ -311,42 +311,16 @@ private = true
         </div>
       </div>
     </div>
-    <!-- Billing Information Section (Refactored for multiple payment blocks) -->
+    <!-- Billing Information Section -->
     <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <h5 class="mb-3">Payment Information</h5>
       <hr size="1" />
-      <!-- Container where billing blocks will be added -->
-      <div id="billing-container"></div>
-      <!-- Button to add a new billing block -->
-      <button type="button" id="add-billing-block" class="btn btn-secondary" style="margin-top:1em;">Add Payment Info</button>
-    </div>
-
-    <!-- Hidden Billing Block Template -->
-    <template id="billing-block-template">
-      <div class="billing-block" data-index="__INDEX__" style="border: 1px solid #ccc; padding: 1rem; margin-bottom: 1rem;">
-        <div class="form-item form-group form-type-textfield">
-          <label class="control-label" for="fdm-id-__INDEX__">FDM ID <span class="form-required" title="This field is required.">*</span></label>
-          <input required type="text" class="form-control" id="fdm-id-__INDEX__" name="fdm-id-__INDEX__" value="" size="60" maxlength="128" />
-        </div>
-        <div class="form-item form-group form-type-textfield">
-          <label class="control-label" for="company-id-__INDEX__">Company</label>
-          <input type="text" class="form-control" id="company-id-__INDEX__" name="company-id-__INDEX__" value="" size="60" maxlength="128" />
-        </div>
-        <div class="form-item form-group form-type-textfield">
-          <label class="control-label" for="business-unit-__INDEX__">Business Unit</label>
-          <input type="text" class="form-control" id="business-unit-__INDEX__" name="business-unit-__INDEX__" value="" size="60" maxlength="128" />
-        </div>
-        <div class="form-item form-group form-type-textfield">
-          <label class="control-label" for="cost-center-__INDEX__">Cost Center</label>
-          <input type="text" class="form-control" id="cost-center-__INDEX__" name="cost-center-__INDEX__" value="" size="60" maxlength="128" />
-        </div>
-        <div class="form-item form-group form-type-textfield">
-          <label class="control-label" for="fund-__INDEX__">Fund</label>
-          <input type="text" class="form-control" id="fund-__INDEX__" name="fund-__INDEX__" value="" size="60" maxlength="128" />
-        </div>
-        <!-- Additional billing fields can be added here -->
+      <div class="form-item form-group form-type-textfield form-group">
+        <!-- <label class="control-label" for="fdm-id">FDM ID <span class="form-required" title="This field is required.">*</span></label> -->
+        <input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" />
       </div>
-    </template>
+      {{% billing-fdm %}}
+    </div>
 
     <!-- Data Agreement and Submit Button Section -->
     <div id="common-fields" style="display: block; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
