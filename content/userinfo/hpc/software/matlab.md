@@ -174,24 +174,9 @@ jobs, each running on a nodes of the standard queue.
 {{< pull-code file="/static/scripts/matlab_job_array.slurm" lang="no-highlight" >}}
 
 ## Parallel Matlab on Multiple Compute Nodes
-To run Matlab parallel jobs that require more cores than are available on one compute node (e.g. > 40), you can launch the Matlab desktop on one of the HPC login nodes. The following MATLAB setup script will create the cluster profile for your account on UVA HPC (for versions R2022b or older):
+To run Matlab parallel jobs that require more cores than are available on one compute node (e.g. > 40), you can launch the Matlab desktop on one of the HPC login nodes. The following procedure will create the cluster profile for your account on UVA HPC:
 
-```
-% The following set of commands are for running parallel Matlab programs
-% across multiple compute nodes of the cluster.
-
-% Load the module for Matlab from the Linux command line.
-% module load matlab
-
-% The following commands are executed from within Matlab
-
-% set up initial configuration for running multi-node Matlab parallel jobs
-% on the HPC system. This just needs to be done once, and its saved in Matlab’s
-% parallel profiles.
-
-configCluster % the configuration created is specific to the Matlab version
-```
-**For version R2023b or newer**, use the Discover Clusters function in the drop-down of the Parallel menu to create a cluster profile for Rivanna as described in the following link.
+**For version R2023a or newer**, use the Discover Clusters function in the drop-down of the Parallel menu to create a cluster profile for Rivanna as described in the following link.
 
 [Discover Clusters and Use Cluster Profiles](https://www.mathworks.com/help/parallel-computing/discover-clusters-and-use-cluster-profiles.html)
 

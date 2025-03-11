@@ -1,5 +1,5 @@
 +++
-title = "UVA Research Computing Exhibition: April 22, 2025"
+title = "UVA Research Computing Exhibition: April 23, 2025"
 description = ""
 author = "RC Staff"
 images = [
