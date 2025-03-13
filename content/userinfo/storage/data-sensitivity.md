@@ -285,18 +285,18 @@ draft = false
       <td>❌</td>
       <td>✅</td>
       <td>✅</td>
-      <td>❌</td>>
+      <td>❌</td>
       <td>❌</td>
     </tr>
      <tr>
        <td>PCI-DSS<sup> <a href="#footnote7"> 8 </a> </sup></td>
        <td>❌</td> 
-       <td>❌</td>>
-       <td>❌</td>>
-       <td>❌</td>>
-       <td>❌</td>>
        <td>❌</td>
-       <td>❌</td>>
+       <td>❌</td>
+       <td>❌</td>
+       <td>❌</td>
+       <td>❌</td>
+       <td>❌</td>
      </tr>
   </tbody>
 </table>
