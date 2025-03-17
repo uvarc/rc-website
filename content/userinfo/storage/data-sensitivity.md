@@ -4,7 +4,7 @@ description = ""
 author = "RC Staff"
 images = [""]
 categories = ["userinfo"]
-date = "2024-12-12T17:45:12-05:00"
+date = "2025-03-13T17:45:12-05:00"
 tags = [
     "rivanna",
     "hpc",
@@ -285,9 +285,19 @@ draft = false
       <td>❌</td>
       <td>✅</td>
       <td>✅</td>
-      <td>✅</td>
+      <td>❌</td>
       <td>❌</td>
     </tr>
+     <tr>
+       <td>PCI-DSS<sup> <a href="#footnote7"> 8 </a> </sup></td>
+       <td>❌</td> 
+       <td>❌</td>
+       <td>❌</td>
+       <td>❌</td>
+       <td>❌</td>
+       <td>❌</td>
+       <td>❌</td>
+     </tr>
   </tbody>
 </table>
 
@@ -309,4 +319,6 @@ draft = false
     Projects with a data use agreements approved after 1/25/25 are required to protect controlled-access data acquired from a controlled-access repository in compliance with NIST 800-171 security controls. More information can be found <a href="https://sharing.nih.gov/sites/default/files/flmngr/NIH-Security-BPs-for-Users-of-Controlled-Access-Data.pdf" target="_blank"> here. </a> </footer> <br>
     <footer id="footnote6" class="footnote"> <sup>6</sup> Family Educational Rights & Privacy Act (FERPA). FERPA is a federal law that governs access to student education records. This includes personally identifiable information (PII) like name, SSN, date of birth, grades, and course schedules. More information can be found <a href="https://uvapolicy.virginia.edu/policy/STU-002" target="_blank"> here. </a> </footer> <br>
     <footer id="footnote7" class="footnote"> <sup>7</sup> International Traffic in Arms Regulations (ITAR). This includes military technology and software, technical data, and services. More information can be found <a href="https://security.research.virginia.edu/export-controls/export-controls-regulations" target="_blank"> here. </a> </footer> <br>
+    <footer id="footnote8" class="footnote"> <sup>8</sup> Payment Card Industry Data Security Standards (PCI-DSS). PCI-DSS is a set of security standards that define how payment card data should be protected. This includes data containing debit card or credit card information. More details can be found <a href="https://uvapolicy.virginia.edu/policy/FIN-037" target="_blank"> here. </a> </footer> <br> 
+
 </p>

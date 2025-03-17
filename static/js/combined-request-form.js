@@ -1503,7 +1503,10 @@
                 const tier = details.tier || "N/A";
                 const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                 const updateDate = details.update_date ? `Updated: ${formatDateToEST(details.update_date)}` : `Requested: ${formatDateToEST(details.request_date)}`;
+                if (details.billing_details && details.billing_details.fdm_billing_info &&
+                    Object.values(details.billing_details.fdm_billing_info).every(val => val !== null)) {
                 const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
+                    
                 const row = `
                     <tr data-additional='${billingJson}'>
                         <td>
@@ -1517,6 +1520,7 @@
                     </tr>
                 `;
                 suTableBody.append(row);
+                    }
             });
         }
     });
