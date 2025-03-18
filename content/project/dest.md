@@ -8,7 +8,9 @@ caption = "Artwork by Roberto Torres, CC BY"
 categories = ["projects"]
 tags = [
   "bioinformatics",
-  "data"
+  "data",
+  "hpc",
+  "parallel-computing"
 ]
 draft = false
 projecttype = ["hpc-computing", "tools", "basic-science"]
