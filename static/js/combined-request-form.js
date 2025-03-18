@@ -990,7 +990,7 @@
             console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Fetching existing SU details.`);
     
             // Get existing request count to avoid unintended changes
-            const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
+            const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedSU]?.request_count || "50000";
             
             // Retrieve existing billing details & merge with updated user input
             //const updatedBillingDetails = {
@@ -1018,8 +1018,7 @@
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
                     }
-                },
-                "trigger_notification": true // Add a flag to indicate renewal notification
+                }                
             };
     
             console.log("Final Renewal Payload (PUT):", JSON.stringify(renewalPayload, null, 2));
