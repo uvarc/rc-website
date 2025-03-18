@@ -15,16 +15,12 @@ draft = false
 <img class="card-img-top" src="/images/RC_posters_image.png" alt="" style="float: right;">
 
 
-Save the date: <strong>RC Exhibition on April 23, 2025</strong> 
+UVA Research Computing, along with the Data Analytics Center and the Digital Technology Core, is proud to announce our <strong>Annual Research Computing Exhibition</strong> on Wednesday, April 23, from 10:00 a.m. – 2:00 p.m. in the Newcomb Hall Ballroom.
+Our Exhibition includes a judged poster competition with travel awards presented to finalists. If you have used Research Computing resources to support your research, we invite you to submit a poster! Posters should reflect how you have used these resources to support your research.
 
-Students & Postdocs: Start preparing your posters on how you use RC resources in your research!
+Details for submitting a poster are available [here](https://rc.virginia.edu/2025/03/rc-exhibition-call-for-posters-march-28-2025/).
 
 Prizes, speakers, and light refreshments will be on hand. 
 
 <strong>Everyone is welcome to attend</strong>. 
-
-More details will be coming here soon. 
-
-
-
 

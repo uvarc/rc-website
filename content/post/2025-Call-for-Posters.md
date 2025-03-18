@@ -14,18 +14,15 @@ draft = false
 
 <img class="card-img-top" src="/images/RC_posters_image.png" alt="" style="float: right;">
 
+<strong>Important Dates</strong>
+<strong>March 28, 2025</strong>:   Poster Submissions Due 
+<strong>April 23, 2025</strong>:   UVA RC Exhibition 
 
-Poster Submissions Due March 28 for pre-judging (See below for submission instructions.)
-
-<strong>UVA Research Computing Exhibition April 23, 2025</strong> 
-
-Prizes, speakers, and light refreshments will be on hand at the event. 
 `
-<strong>Everyone is welcome to attend</strong>. 
+<strong>Everyone is welcome to attend the Exhibition on April 23rd, at the Newcomb Hall Ballroom, 10:00am - 2:00pm</strong>. 
 
 
-UVA Research Computing, along with the Data Analytics Center and the Digital Technology Core, is proud to announce our <strong>Annual Research Computing Exhibition</strong> on Wednesday, April 23, from 10:00 a.m. – 2:00 p.m. in the Newcomb Hall Ballroom.  
-Our Exhibition includes a judged poster competition with travel awards presented to finalists. If you have used Research Computing resources to support your research, we invite you to submit a poster! Posters should reflect how you have used these resources to support your research. 
+Our Exhibition includes a judged poster competition with travel awards presented to the winning finalists. If you have used Research Computing resources to support your research, we invite you to submit a poster! Posters should reflect how you have used these resources to support your research. 
 
 Three finalists will be recognized with a travel award that can be used for professional travel such as conferences, meetings of professional associations, or other travel related to your research.  
 
