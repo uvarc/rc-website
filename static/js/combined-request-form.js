@@ -1011,7 +1011,7 @@
                 "pi_uid": userId,
                 "resources": {
                     "hpc_service_units": {
-                        [selectedGroup]: {
+                        [selectedSU]: {
                             "tier": selectedTier,
                             "request_count": existingRequestCount, // Keep the same
                             "billing_details": billingDetails, // Updated billing details
