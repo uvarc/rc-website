@@ -12,7 +12,7 @@ tags = [
   "machine-learning"
 ]
 draft = false
-projecttype = ["clinical-research", "machine-learning"]
+projecttype = ["clinical-research", "machine-learning", "dac"]
 +++
 
 Endoscopic retrograde cholangiopancreatography (ERCP) is a procedure in which an endoscope is guided into the first part of the small bowel for various instruments to be passed into the biliary and pancreatic ducts to remove obstructions, drain infectious collections or diagnose diseases of the bile ducts.  ERCP is associated with higher rates of complications than other endoscopic procedures, one of the most severe being post-ERCP pancreatitis which is thought to take place in up to 10% of patients.
