@@ -1,6 +1,6 @@
 +++
 title = "Thermal properties of materials from first-principles"
-date = "2024-09-23T00:00:00-05:00"
+date = "2025-03-20T00:00:00-05:00"
 author = "RC Staff"
 images = "/images/projects/esfarjani.png"
 categories = ["projects"]
