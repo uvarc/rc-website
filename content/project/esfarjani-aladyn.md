@@ -14,7 +14,7 @@ draft = false
 projecttype = ["hpc-computing","engineering"]
 publications = [{
     authors = "Keivan Esfarjani, Harold Stokes, Safoura Nayeb Sadeghi, Yuan Liang, Bikash Timalsina, Han Meng, Junichiro Shiomi, Bolin Liao, Ruoshi Sun",
-    title = "ALADYN: a set of Anharmonic LAttice DYNamics codes to compute thermodynamic and thermal transport properties of crystalline solids"
+    title = "ALADYN: a set of Anharmonic LAttice DYNamics codes to compute thermodynamic and thermal transport properties of crystalline solids",
     journal = "Computer Programs in Physics", volume = "?", issue = "?", month="?", year = "2025", pages = "?", doi = "10.1016/j.cpc.2025.109575"
 }]
 +++
