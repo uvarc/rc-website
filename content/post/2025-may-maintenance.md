@@ -28,5 +28,6 @@ Slurm will be upgraded to 24.11.3.
 |go         | 1.21.4 | 1.23.6 |
 |intel      | 2024.0 | 2025.0 |
 |multiqc    | 1.14 | 1.27.1 |
+|openmpi    | 4.1.4-nofabric-withoutverbs | 4.1.4 |
 |trimgalore | 0.6.4 | 0.6.10 |
 {{< /table >}}
