@@ -25,7 +25,7 @@ on Wednesday, April 23, from 10:00am – 2:00pm in the Newcomb Hall Ballroom.
 <br>
 Our Exhibition includes a judged poster competition with travel awards presented to finalists. If you have used Research Computing resources to support your research, we invite you to submit a poster! Posters should reflect how you have used these resources to support your research.
 
-Details for submitting a poster are available [here](https://rc.virginia.edu/2025/03/rc-exhibition-call-for-posters-march-28-2025/).
+Details for submitting a poster are available [here](https://rc.virginia.edu/2025/03/rc-exhibition-call-for-posters-march-28-2025/).  <strong>Note that the new deadline is March 31st at 8:00am.</strong>
 
 Prizes, speakers, and light refreshments will be on hand. 
 
