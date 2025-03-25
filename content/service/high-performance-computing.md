@@ -60,7 +60,7 @@ Examples of service areas include:
     <h2 class="card-title">Rio</h2>
     <h5 class="card-subtitle mb-2">High-Security HPC Cluster</h5>
     <p class="card-text">
-Rio is one of the recent University of Virginia’s High-Performance Computing (HPC) systems, specifically designed for the processing and analysis of controlled-access and highly sensitive data. Currenlty, Rio consists of 39 HPC nodes, each equipped with 375 GB of RAM and offering a combined total of 1,560 x86 64-bit compute cores. Researchers can use Rio to process and store sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, ITAR requirements.     
+Rio is one of the recent University of Virginia’s High-Performance Computing (HPC) systems, specifically designed for the processing and analysis of controlled-access and highly sensitive data. Currenlty, Rio consists of 39 HPC nodes, each equipped with 375 GB of RAM and offering a combined total of 1,560 x86 64-bit compute cores. Researchers can use Rio to process and store sensitive data with the confidence that the environment is secure and meets HIPAA and FERPA requirements.     
 </p>
     <a href="/userinfo/ivy" class="card-link"><button class="btn btn-warning">Read more about Rio</button></a>
   </div>

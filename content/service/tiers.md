@@ -46,9 +46,9 @@ researchers to enter into a collaboration agreement.
 
 # Tier 3: Collaboration
 A collaboration is an in-depth engagement in a project, resulting in a custom solution 
-within a specific domain. This involves a Statement-of-Work document that defines the 
+within a specific domain. This could involve a Statement-of-Work document that defines the 
 scope, timeline, team member’s level of effort and deliverables for the specific project. 
-However, these RC-DAC activities are chargeable. PIs may budget for our personnel in their 
+However, these RC-DAC activities may be chargeable. PIs may budget for our personnel in their 
 grants or apply for <a href="/service/dac/awards">RC DAC awards </a>.
 
 
