@@ -57,9 +57,9 @@ Awards will be given in two categories: Biological & Health Sciences and Enginee
 
 <strong>Submission Deadline: March 31 </strong>
 
-View poster requirements > 
+[View poster requirements](https://rc.virginia.edu/2025/03/rc-exhibition-call-for-posters-march-31-2025/) > 
 
-Submit your poster > 
+[Submit your poster](https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=26c2154183&e=7a592fe565) > 
 
 ## Exhibition Agenda 
 
