@@ -6,7 +6,7 @@ tags = [
     "hpc","rivanna","parallel-computing","software","containers"
 ]
 draft = false
-title = "NVIDIA DGX BasePOD™"
+title = "NVIDIA DGX BasePOD™ and HGX H200"
 description = ""
 author = "RC Staff"
 
@@ -83,3 +83,31 @@ For documentation and demos, refer to the “Resources” section at the bottom 
 ## GPU-enabled modules
 
 A complete list of GPU-enabled modules on the HPC system can be found [here](https://www.rc.virginia.edu/userinfo/hpc/software/gpu/). Please refer to their respective pages and/or module load messages (if any) for usage instructions.
+
+# HGX H200 Nodes
+
+We’re excited to announce the beta release of our newest high-performance compute nodes featuring the NVIDIA HGX H200 platform. These nodes are built on the Dell PowerEdge XE9680 server model, and we currently have two servers available for testing.
+
+Each node is equipped with dual Intel Xeon Platinum 8468 CPUs, offering a total of 96 cores running at 2.1GHz, and comes with a massive 2TB of memory. This addition features eight NVIDIA HGX H200 GPUs per server, based on the NVIDIA Hopper architecture.
+
+Each H200 GPU includes 141 GB of memory and delivers up to 4.8 TB/s of memory bandwidth. High-speed communication between GPUs is supported via 900 GB/s NVLink, while connectivity between CPU and GPU uses PCIe Gen5, providing up to 128 GB/s bi-directional bandwidth. More information can be found [here](https://www.nvidia.com/en-us/data-center/h200/).
+
+These nodes are now integrated into our SLURM scheduler and can be accessed using the `gpu` partition. To request them specifically, users can either include `--gres=gpu:h200` or add the SLURM feature constraint `--constraint=h200` in their job scripts. For example
+```
+#SBATCH -p gpu
+#SBATCH --gres=gpu:h200
+```
+or
+```
+#SBATCH -p gpu
+#SBATCH --contraint=h200
+```
+
+{{% callout %}}
+Note:
+GPUs can only be accessed through Slurm batch jobs and are not available through Open OnDemand.
+{{% /callout %}}
+
+Information for accounting and scheduling purposes can be found [here](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration).
+
+We invite users with GPU-intensive workflows to take advantage of these powerful nodes and provide feedback during the beta testing phase.
