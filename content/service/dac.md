@@ -157,51 +157,6 @@ We have years of experience with collaborations. To see more examples, visit our
 
 {{< dac-featured >}}
 
-<!-- <div class="row">
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/calcium-oscillations" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/cell-rosettes.png" alt="Quantifying Calcium Oscillations" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Quantifying Calcium Oscillations</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/ciliberto-economics" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/market-trends.jpg" alt="Economic Market Behavior" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Economic<br>Market<br>Behavior</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/nicu-bpd" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/infant-rn.jpg" alt="Bradycardia and Desaturation Events in Infants" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Bradycardia and Desaturation Events in Infants</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/arctic" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/weather-station.png" alt="Integrated Sensor Networks in Arctic Alaska" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Integrated Sensor Networks in Arctic Alaska</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-</div>
-<br> -->
-
-
 # Team
 
 * [Jacalyn Huband, PhD](/about/people/huband/): Assistant Director of the Data Analytics Center
