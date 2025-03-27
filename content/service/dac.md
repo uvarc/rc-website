@@ -155,8 +155,9 @@ The DAC has the following awards currently available.  Faculty can apply for the
 
 We have years of experience with collaborations. To see more examples, visit our [Projects](/project/) page.
 
+{{< dac-featured >}}
 
-<div class="row">
+<!-- <div class="row">
   <div class="column", style="width:20%; margin-left:15px">
 	<a href="/project/calcium-oscillations" class="card-link">
 		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
@@ -198,7 +199,7 @@ We have years of experience with collaborations. To see more examples, visit our
 	</a>
   </div>
 </div>
-<br>
+<br> -->
 
 
 # Team

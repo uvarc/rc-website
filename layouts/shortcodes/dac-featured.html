@@ -1,0 +1,21 @@
+<div class="row">
+    {{ $projects := where .Site.Pages "Type" "project" }}
+    {{ $projects := sort $projects "Params.date" "desc" }}
+    {{ $featured := where $projects "Params.categories" "intersect" (slice "feature") }}
+    {{ $featured := first 4 $featured }}
+    {{ range $featured }}
+        <div class="column" style="width:20%; margin-left:15px">
+            <a href="{{ .Permalink }}" class="card-link">
+                <div class="card card-shadow"
+                    style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
+                    <img class="card-img-top" src="{{ .Params.images }}" alt="{{ .Params.title }}"
+                        style="max-width:96px;max-height:96px;">
+                    <div class="card-body" style="margin-top:auto;margin-bottom:auto;">
+                        <h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">{{ .Params.title }}
+                        </h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {{ end }}
+</div>
