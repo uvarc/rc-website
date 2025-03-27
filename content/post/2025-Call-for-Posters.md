@@ -36,7 +36,7 @@ Although all researchers using Research Computing resources are invited to parti
  
 
 
-Submit your poster PDF on the [Poster Competition Submission Form](https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=26c2154183&e=7a592fe565) by 8:00am on March 31st in one of the following categories: Biological and Health Sciences, Physical and Health Sciences, Social Sciences and Humanities, or Other. Participants must print their poster for the event day.  
+Submit your poster PDF on the [Poster Competition Submission Form](https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=26c2154183&e=7a592fe565) on or before March 31st in one of the following categories: Biological and Health Sciences, Physical and Health Sciences, Social Sciences and Humanities, or Other. Participants must print their poster for the event day.  
  
 
 Judging Information 
