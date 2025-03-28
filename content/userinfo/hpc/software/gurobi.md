@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2024-01-02T00:00:00-05:00"
+date = "2025-03-28T00:00:00-05:00"
 tags = [
   "gurobi",
 ]
