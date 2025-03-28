@@ -23,6 +23,7 @@ Slurm will be upgraded to 24.11.3.
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
+|afni       | 23.1.10 | 25.0.12 |
 |cellranger | 8.0.0 | 9.0.1 |
 |cutadapt   | 3.4 | 4.9 |
 |fastqc     | 0.11.5 | 0.12.1 |
