@@ -506,9 +506,9 @@ Two models of NVIDIA A100 GPUs are available; 2 nodes with 40GB of GPU memory pe
 ```
 This is in addition to requesting an `a100` in the `gres` option.
 
-### NVIDIA GPU BasePOD™ Now Available for Rivanna and Afton Users
+### HGX H200 GPUs and NVIDIA GPU BasePOD™ for Rivanna and Afton Users
 
-As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna and Afton, UVA's High-Performance Computing (HPC) systems. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
+As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna and Afton, UVA's High-Performance Computing (HPC) systems. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. In addition, new HGX H200 GPU nodes have been added to the cluster, further expanding UVA’s capabilities for cutting-edge AI research.
 
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
