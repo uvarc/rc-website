@@ -4,7 +4,7 @@ author = "Staff"
 description = ""
 date = "2025-03-21T00:00:00-05:00"
 title = "New NVIDIA H200 GPU Nodes Coming to Afton"
-draft = true
+draft = false
 tags = ["afton","hpc"]
 categories = ["feature"]
 +++
