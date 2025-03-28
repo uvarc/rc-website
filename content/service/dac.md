@@ -28,6 +28,14 @@ Assisting Researchers across Grounds with Big Data Management and Analysis
 
 The DAC offers comprehensive support for projects on [Research Computing platforms](/userinfo/systems/) at every stage, from initial grant proposals and data ingestion to the development of finalized models and manuscript preparation, ensuring effective and efficient use of high-performance computing resources.  Our consultants provide tailored guidance and technical support to researchers to ensure that their projects benefit from the latest methodologies and best practices in big data analytics. 
 
+
+
+<center> <div style="margin-left: 5%">
+    <img src="/images/dac/afton_dedication.jpg" width=550>
+</div></center>
+
+
+
 Our team consists of experts with diverse backgrounds, offering a wealth of knowledge and experience in various domains, including bioinformatics, AI and machine learning, drug discovery, statistical analysis, image processing, high-performance computing, and data management and compliance, among others.  Our services and resources range from embedding one of our team members in your project and creating custom workflows to leasing storage and purchasing time on our high-performance cluster.  These services are designed to be flexible and adaptable, allowing us to support researchers across a wide range of disciplines and research questions, and can vary in scope, rate, and time-commitment from DAC team members. PIs may budget for DAC support in their grants and DAC members can be listed as key personnel. 
 
 We are committed to enhancing the quality and impact of research across Grounds by providing exceptional data analytics support using UVA HPC platforms.  If you would like to learn more about how the DAC can assist with your project, or if you have specific needs or questions, please contact us at RC-DAC@virginia.edu. 
@@ -147,51 +155,7 @@ The DAC has the following awards currently available.  Faculty can apply for the
 
 We have years of experience with collaborations. To see more examples, visit our [Projects](/project/) page.
 
-
-<div class="row">
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/calcium-oscillations" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/cell-rosettes.png" alt="Quantifying Calcium Oscillations" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Quantifying Calcium Oscillations</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/ciliberto-economics" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/market-trends.jpg" alt="Economic Market Behavior" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Economic<br>Market<br>Behavior</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/nicu-bpd" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/infant-rn.jpg" alt="Bradycardia and Desaturation Events in Infants" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Bradycardia and Desaturation Events in Infants</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/arctic" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/weather-station.png" alt="Integrated Sensor Networks in Arctic Alaska" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Integrated Sensor Networks in Arctic Alaska</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-</div>
-<br>
-
+{{< dac-featured >}}
 
 # Team
 

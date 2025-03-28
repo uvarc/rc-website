@@ -13,7 +13,7 @@ tags = [
   "parallel-computing"
 ]
 draft = false
-projecttype = ["hpc-computing", "tools", "basic-science"]
+projecttype = ["hpc-computing", "tools", "basic-science", "dac"]
 publications = [{authors = "Martin Kapun, Joaquin C B Nunez, María Bogaerts-Márquez, Jesús Murga-Moreno, Margot Paris, Joseph Outten, …, Alan O Bergland", title = "Drosophila Evolution over Space and Time (DEST): A New Population Genomics Resource", journal = "Molecular Biology and Evolution", volume = "38", issue = "12", month="December", year = "2021", pages = "5782–5805", doi = "10.1093/molbev/msab259"}]
 +++
 

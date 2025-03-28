@@ -1,5 +1,5 @@
 +++
-title = "RC Exhibition Call for Posters: March 28, 2025"
+title = "RC Exhibition Call for Posters: March 31, 2025"
 description = ""
 author = "RC Staff"
 images = [
@@ -15,8 +15,8 @@ draft = false
 <img class="card-img-top" src="/images/RC_posters_image.png" alt="" style="float: right;">
 
 <strong>Important Dates</strong>
-<strong>March 28, 2025</strong>:   Poster Submissions Due 
-<strong>April 23, 2025</strong>:   UVA RC Exhibition 
+<strong>New Submission Date: March 31, 2025</strong>
+<strong>UVA RC Exhibition: April 23, 2025</strong>:   
 
 `
 <strong>Everyone is welcome to attend the Exhibition on April 23rd, at the Newcomb Hall Ballroom, 10:00am - 2:00pm</strong>. 
@@ -36,7 +36,7 @@ Although all researchers using Research Computing resources are invited to parti
  
 
 
-Submit your poster PDF on the [Poster Competition Submission Form](https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=26c2154183&e=7a592fe565) by midnight March 28 in one of the following categories: Biological and Health Sciences, Physical and Health Sciences, Social Sciences and Humanities, or Other. Participants must print their poster for the event day.  
+Submit your poster PDF on the [Poster Competition Submission Form](https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=26c2154183&e=7a592fe565) on or before March 31st in one of the following categories: Biological and Health Sciences, Physical and Health Sciences, Social Sciences and Humanities, or Other. Participants must print their poster for the event day.  
  
 
 Judging Information 

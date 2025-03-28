@@ -8,11 +8,11 @@ service:
                   9454 architecture for a total of 28,800 cores. The increase in core count is augmented by a significant increase 
                   in memory per node compared to Rivanna. Each Afton node boasts a minimum of 750 Gigabytes of memory, with some supporting up to 1.5 
                   Terabytes of RAM memory. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines. 
-                  The Afton and Rivanna systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, and A100), including an NVIDIA BasePOD. 
+                  The Afton and Rivanna systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, A100, and H200), including an NVIDIA BasePOD. 
                   The Afton and Rivanna platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
       - name: "Rivanna"
         summary: "Rivanna is one of the University of Virginia's High-Performance Computing (HPC) systems. After hardware upgrades and expansions in 2019, the Rivanna supercomputer currently has 603 nodes with over 20,476 compute cores. 
-                  The Rivanna and Afton systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, and A100), including an NVIDIA BasePOD. 
+                  The Rivanna and Afton systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, A100, and H200), including an NVIDIA BasePOD. 
                   Both platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
     security_zone: "SSZ"
     tags: "HPC"
@@ -235,6 +235,17 @@ hardware:
       su_per_cpu_hour: 0.403
       su_per_gb_hour: 0.043
       su_per_gpu_hour: 50.89
+      # H200
+    - system: "Afton"
+      cores_per_node: 96
+      memory_per_node: "2TB"
+      speciality_hardware: "GPU: H200"
+      gpu_memory_per_device: "141GB"
+      gpu_devices_per_node: "8"
+      number_of_nodes: 2
+      su_per_cpu_hour: 0.400
+      su_per_gb_hour: 0.0269
+      su_per_gpu_hour: 81.667
     # Afton-A40
     - system: "Afton"
       cores_per_node: 96
