@@ -772,14 +772,19 @@
         try {
             const response = await $.ajax(settings)
             .done(function() {
-                alert( "success" );
+                
               })
-              .fail(function(errorbody) {
-                showErrorMessage("Submission failed. Please try again.");
-                alert( "error" );
+              .fail(function(jqXHR, textStatus, errorThrown) {
+                // Log or show details
+                console.log("Status Code:", jqXHR.status);
+                console.log("Response Text:", jqXHR.responseText);
+                console.log("Text Status:", textStatus);
+                console.log("Error Thrown:", errorThrown);
+        
+                showErrorMessage("Submission failed: " + jqXHR.responseText);
               })
               .always(function() {
-                alert( "complete" );
+                
               });
 
             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
