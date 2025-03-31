@@ -530,10 +530,10 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
         if (isNew && !isRenew) {
-            $('#allocation-fields #new-project-name-container,#su-capacity, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
-            $('#allocation-fields #new-project-name-container,#su-capacity, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
             populateExistingServiceUnitsTable(consoleData);
         }
@@ -624,7 +624,7 @@
                 const $parentRow = $selectedRadio.closest('tr');
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
-                
+                //CHange the su's requested to the value of the renewal selected
                 // Parse it to an object (if needed)
                 let billingData;
                 try {
@@ -770,7 +770,18 @@
             };
         }
         try {
-            const response = await $.ajax(settings);
+            const response = await $.ajax(settings)
+            .done(function() {
+                alert( "success" );
+              })
+              .fail(function(errorbody) {
+                showErrorMessage("Submission failed. Please try again.");
+                alert( "error" );
+              })
+              .always(function() {
+                alert( "complete" );
+              });
+
             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
             
             // Show success message
@@ -1013,7 +1024,7 @@
                     "hpc_service_units": {
                         [selectedSU]: {
                             "tier": selectedTier,
-                            "request_count": existingRequestCount, // Keep the same
+                            "request_count": formData.requestCount, 
                             "billing_details": billingDetails, // Updated billing details
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
