@@ -772,8 +772,8 @@
         try {
             const response = await $.ajax(settings)
             .done(function(response) {
-                if (response.status === "error") {
-                    showErrorMessage("Submission failed: " + response.message);
+                if (response[0].status === "error") {
+                    showErrorMessage("Submission failed: " + response[0].message);
                 }
               })
               .fail(function(jqXHR, textStatus, errorThrown) {
