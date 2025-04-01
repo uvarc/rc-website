@@ -8,7 +8,7 @@ images = [
 categories = [
   "userinfo",
 ]
-date = "2024-02-01T17:57:24-05:00"
+date = "2025-03-18"
 tags = [
   "userinfo",
   "services",
@@ -18,116 +18,157 @@ tags = [
 ]
 draft = false
 
-+++
++++ 
 
-The Data Analytics Center is the hub for assisting researchers across Grounds with the management and analysis of large datasets on Research Computing platforms.  
+<p class="lead">
+Assisting Researchers across Grounds with Big Data Management and Analysis
+</p>
 
-# Quick Links
+- - -
 
-<div class="row">
-  <div class="column", style="width:29%; margin-left:15px">
-	<a href="#how-to-request-support"><button class="btn btn-warning">How To Request<br>DAC Support</button></a>
-  </div>
-  <div class="column", style="width:33%">
-	<a href="#include-dac-support-in-your-grant-budget"><button class="btn btn-warning">Include DAC Support<br>in Your Grant Budget</button></a>
-  </div>
-  <div class="column", style="width:30%">
-	<a href="#dac-analytics-resource-awards"><button class="btn btn-warning">DAC Analytics<br>Resource Awards</button></a>
-  </div>
-</div>
-<br>
-
-# Services 
-We offer comprehensive computational solutions for your research projects including  
-* workflow development, 
-* software and computing platforms selection, 
-* new platform configuration,
-* containerization,
-* coding assistance, 
-* code optimization and parallelization,
-* data collection and analysis, and
-* machine learning and artificial intelligence support.
-
-# Areas of Expertise
-Our [staff](/about/people/) have a variety of experience and expertise to assist with your next research project and many have been academic researchers.  We have expertise in 
-* artificial intelligence and machine learning,
-* bioinformatics,
-* data science, 
-* image processing, and
-* parallel computing. 
-
-# Past Collaborations
-We have years of experience with collaborations. A few of our past collaborations with UVA researchers are below.  To see more examples, visit our [Projects](/project/) page.
+The DAC offers comprehensive support for projects on [Research Computing platforms](/userinfo/systems/) at every stage, from initial grant proposals and data ingestion to the development of finalized models and manuscript preparation, ensuring effective and efficient use of high-performance computing resources.  Our consultants provide tailored guidance and technical support to researchers to ensure that their projects benefit from the latest methodologies and best practices in big data analytics. 
 
 
-<div class="row">
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/calcium-oscillations" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/cell-rosettes.png" alt="Quantifying Calcium Oscillations" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Quantifying Calcium Oscillations</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/ciliberto-economics" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/market-trends.jpg" alt="Economic Market Behavior" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Economic<br>Market<br>Behavior</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/nicu-bpd" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/infant-rn.jpg" alt="Bradycardia and Desaturation Events in Infants" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Bradycardia and Desaturation Events in Infants</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-  <div class="column", style="width:20%; margin-left:15px">
-	<a href="/project/arctic" class="card-link">
-		<div class="card card-shadow" style="width:120px; max-width:120px; margin: 8px; max-height:11em; min-height:11em; text-align:center; padding:4px;">
-			<img class="card-img-top" src="/images/projects/weather-station.png" alt="Integrated Sensor Networks in Arctic Alaska" style="max-width:96px;max-height:96px;">
-			<div class="card-body" style="margin-top:auto;margin-bottom:auto;">
-				<h5 class="card-title" style="font-size:14px; margin-top:-4px;margin-bottom:auto;">Integrated Sensor Networks in Arctic Alaska</h5>
-			</div>
-		</div>
-	</a>
-  </div>
-</div>
-<br>
 
-# How to Request Support
-We provide [three tiers of support](/service/tiers) that can each be requested through a [support request](/form/support-request/?category=Data%20Analytics). 
+<center> <div style="margin-left: 5%">
+    <img src="/images/dac/afton_dedication.jpg" width=550>
+</div></center>
 
-* Tier 1: Training & Technical Support 
-* Tier 2: Consultation   
-* Tier 3: Collaboration  
+
+
+Our team consists of experts with diverse backgrounds, offering a wealth of knowledge and experience in various domains, including bioinformatics, AI and machine learning, drug discovery, statistical analysis, image processing, high-performance computing, and data management and compliance, among others.  Our services and resources range from embedding one of our team members in your project and creating custom workflows to leasing storage and purchasing time on our high-performance cluster.  These services are designed to be flexible and adaptable, allowing us to support researchers across a wide range of disciplines and research questions, and can vary in scope, rate, and time-commitment from DAC team members. PIs may budget for DAC support in their grants and DAC members can be listed as key personnel. 
+
+We are committed to enhancing the quality and impact of research across Grounds by providing exceptional data analytics support using UVA HPC platforms.  If you would like to learn more about how the DAC can assist with your project, or if you have specific needs or questions, please contact us at RC-DAC@virginia.edu. 
+ 
+
+# Service Areas 
+ 
+ <table class="table table-striped">
+  <tbody>
+    <tr>
+		<th scope="row" style="width:25%;font-weight:bold;">Project Preparation</th>
+			<td>
+				<img src="/images/dac/pexels-tirachard-kumtanom-112571-733857.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				The computational needs of each project are unique.  To help you prepare, we provide:
+				<ul>
+				<li>Project feasibility and best practices advising</li>
+				<li>Software and compute platform selection and configuration</li>
+				<li><a style="" href="/service/tiers/#tier-1-training--technical-support" target="_new">RC Systems Training</a></li>
+				</ul>
+			</td>
+	</tr>
+  	<tr>
+		<th scope="row" style="width:25%;font-weight:bold;">HPC Support</th>
+			<td>
+				<img src="/images/dac/ai-generated-7957989_1280.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				We assist researchers with effective and efficient use of HPC resources, including: 
+				<ul>
+				<li><a style="" href="/service/tiers/#tier-1-training--technical-support" target="_new">Technical Support</a></li>
+				<li>Best practices advising</li>
+				<li>Code parallelization, optimization, and debugging</li>
+				</ul>
+			</td>
+		</tr>
+    <tr>
+		<th scope="row" style="width:25%;font-weight:bold;">Data Storage and Compliance</th>
+			<td>
+				<img src="/images/dac/pexels-cookiecutter-17489153.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				RC provides a variety of <a style="" href="/userinfo/storage" target="_new">Research Data Storage</a> options.  We can help you decide which option best fits your needs and compliance requirements, and assist in transferring your data onto our storage.
+			</td>
+		</tr>
+		<tr>
+		<th scope="row" style="width:25%;font-weight:bold;">Data Wrangling and Analysis</th>
+			<td>
+				<img src="/images/dac/luke-chesser-JKUTrJ4vK00-unsplash.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				We assist researchers with big data wrangling, analysis, and visualization, including creation of customized data pipelines and data dashboards.
+			</td>
+		</tr>
+		<tr>
+		<th scope="row" style="width:25%;font-weight:bold;">Code Improvement</th>
+			<td>
+				<img src="/images/dac/pexels-technobulka-10816120.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				To assist you with code improvements - such as enhancing efficiency, optimizing performance, and ensuring scalability - we offer services in code debugging, optimization, parallelization, and <a style="" href="/userinfo/microservices/" target="_new">containerization</a>. 
+			</td>
+		</tr>
+		<tr>
+		<th scope="row" style="width:25%;font-weight:bold;">Computational Domain Expertise</th>
+			<td>
+				<img src="/images/dac/ai-generated-7912533_1280.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				We have a variety of expertise including conducting academic research. We can provide specialized assistance in topics such as:
+				<ul>
+				<li>AI and Machine Learning</li>
+				<li><a style="" href="/service/imaging/" target="_new">Image Processing</a></li> 
+				<li><a style="" href="/service/bioinformatics/" target="_new">Bioinformatics</a></li> 
+				<li>Text Analysis</li>		
+				</ul>
+			</td>
+		</tr>
+		<tr>
+		<th scope="row" style="width:25%;font-weight:bold;">Grant Proposal Support</th>
+			<td>
+				<img src="/images/dac/pexels-kindelmedia-7054757.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
+				We can help you prepare documents such as: 
+				<ul>
+				<li>Data analysis plans</li>
+				<li>Budget justifications for compute resources</li> 
+				<li>Letters of support</li>
+				</ul>				 
+			</td>
+		</tr>
+	</tbody>
+</table>
+ 
+ 
+# Services Provided at No Charge
+
+* [Training in Using RC Systems](/service/tiers/#tier-1-training--technical-support) 
+* [Technical Support](/service/tiers/#tier-1-training--technical-support) 
+* [Consultation](/service/tiers/#tier-2-consultation) (does not include hands-on work by DAC personnel)
+* [Short-Term Collaboration](/service/tiers/#tier-3-collaboration) (less than 20 hours of hands-on work by DAC personnel)
+
+
+
+# Services Provided for a Fee
+
+If you are interested in a paid service, please contact us at RC-DAC@virginia.edu for rates and other information.  
+
+* [Long-Term Collaboration](/service/tiers/#tier-3-collaboration) (20 or more hours of hands-on work by DAC personnel)
+
+
+
+# How to Get Started with DAC Support
+If you would like DAC assistance with a project, please contact us at RC-DAC@virginia.edu. Generally, we will start with a consultation to discuss project feasibility.  If your project is approved and meets the short-term or long-term collaboration requirements, a DAC team member will schedule a meeting to discuss staff effort and deliverables.  For a long-term collaboration, we will create a detailed Statement of Work (SOW) that outlines the support researchers can expect from the DAC, detailing the project scope, budget, technical tasks to be completed, timeline, team member percent effort, and the deliverables to be provided at the end of the project. The SOW ensures all parties have a mutual understanding of the project's objectives and the level of support that will be offered. 
 
 <!--
-<div style="display: flex; justify-content: center">
-    {{< button button-url="/form/support-request/?category=Data%20Analytics" button-class="primary" button-text="Request DAC Support" >}}
-</div>
-<br>
+To ensure that DAC support is included in your upcoming grant proposal, we recommend that you schedule a consultation to explore the ways in which we can assist you.
 -->
 
-# Include DAC Support in Your Grant Budget   
+# DAC Awards
 
-PIs may budget for DAC support in their grants.  To ensure that DAC support is included in your upcoming grant proposal, we recommend that you schedule a consultation to explore the ways in which we can assist you.  Our services and resources range from embedding one of our team members in your project and creating custom workflows to leasing storage and purchasing time on our high-performance cluster.
+The DAC has the following awards currently available.  Faculty can apply for these awards by submitting a proposal.  More information and proposal instructions are provided at the corresponding links.  For a list of previous DAC Award winners and corresponding projects, click [here](/service/dac/past_awardees).
 
-We are here to support your research.
-
-# DAC Analytics Resource Awards
-
-If you have not yet budgeted for DAC support in a current funding source, you can apply for a DAC Analytics Resource Award. Currently, the awards will cover up to $10,000 of DAC services.  A proposal is necessary to apply for this award. More information and how to apply is available [here](/service/dac/awards).
+* [Small Awards](/service/dac/awards) (up to $10,000 in services)
+* [Large Awards](/service/dac/awards) (up to $100,000 in services)
 
 
+# Featured Collaborations
+
+We have years of experience with collaborations. To see more examples, visit our [Projects](/project/) page.
+
+{{< dac-featured >}}
+
+# Team
+
+* [Jacalyn Huband, PhD](/about/people/huband/): Assistant Director of the Data Analytics Center
+* Madeline Erickson: Administrative Support
+
+Consultants
+* [Angela Boakye Danquah](/about/people/boakyedanquah/)
+* Ed Hall, PhD
+* [Kathryn Linehan, PhD](/about/people/linehan/)
+* [Priyanka Prakash, PhD](/about/people/prakash/)
+* Andrew Strumpf
+* Deb Triant, PhD
 
 
+  

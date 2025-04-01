@@ -283,9 +283,10 @@
         function collectFormData() {
             
             const formData = {
-                requestType: $('input[name="request-type"]:checked').val(),
+                requestType: $('select[name="request-type"]').val(),
                 group: $('#mygroups-group').val(),
                 projectName: $('#new-project-name').val(),
+                requestCount: $('#su-quantity').val(),                
                 capacity: $('#capacity').val(),
                 allocationTier: $('input[name="allocation-choice"]:checked').val(),
                 storageTier: $('input[name="storage-choice"]:checked').val(),
@@ -299,8 +300,20 @@
                 }
                 
             } else if (formData.requestType === 'storage') {
+                
                 formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
-                formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
+                if(formData.typeOfRequest === 'new-storage') {
+                    formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
+                    formData.sharedSpaceName = $('#shared-space-name').val();//
+                    formData.project_title = $('#project-title').val();
+                    formData.storage_size = $('#capacity').val();
+                }else if(formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage') {
+                    formData.storage_size = $('#capacity').val();
+                    var checkedRadio=$('input[name="selected-st"]:checked')               
+                    formData.sharedSpaceName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
+                    formData.storageTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
+                    formData.storage_size = $('#capacity').val();
+                }
                 if (formData.typeOfRequest !== 'new-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
                 }
@@ -420,6 +433,9 @@
         /// Clear Form Fields
 
         function clearFormFields() {
+            const uid = document.querySelector('[name="user-id"]')?.value;
+    const email = document.querySelector('[name="email"]')?.value;
+    const name = document.querySelector('[name="name"]')?.value;
             const $form = $('#combined-request-form');
             $form[0].reset(); // Reset all form fields
             $form.find('.is-valid, .is-invalid').removeClass('is-valid is-invalid'); // Remove validation styles
@@ -493,7 +509,7 @@
     // ===================================
 
     function toggleRequestFields() {
-        const requestType = $('input[name="request-type"]:checked').val();
+        const requestType = $('select[name="request-type"]').val();
 
         // Show common fields
         $('#common-fields').show();
@@ -515,30 +531,34 @@
 
     function toggleAllocationFields() {
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
-    
-        if (isNew) {
-            // Hide the renewal table when "New" is selected
+        const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
+        if (isNew && !isRenew) {
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
-        } else {
-            // Show the renewal table only when "Renewal" is selected
+        } else if(!isNew && isRenew) {
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
+            populateExistingServiceUnitsTable(consoleData);
         }
     }
 
     function toggleStorageFields() {
         const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
-
+    
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage) {
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
             $('#storage-fields #existing-projects-storage').hide();
         } else {
-            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
+            if ($('#storage-fields input[name="type-of-request"]:checked').val() === 'increase-storage' ||
+                $('#storage-fields input[name="type-of-request"]:checked').val() === 'decrease-storage') {
+                $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
+            }
+            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
             $('#storage-fields #existing-projects-storage').show();
         }
     }
+    
 
     function toggleStorageTierOptions() {
         const isHighlySensitive = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
@@ -553,28 +573,80 @@
         }
     }
 
+    
+
     // ===================================
     // Setup Event Handlers
     // ===================================
 
     function setupEventHandlers() {
+       
         // Use event delegation for dynamically added inputs
-        $(document).on('change', 'input[name="request-type"]', toggleRequestFields);
+        $(document).on('change', '#request-type', toggleRequestFields);
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
-            toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
+            //toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
+            
         });
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
     
         // General input, select, and textarea validation and updates
-        $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function () {
+        $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function (event) {
+            if ($(event.target).is('input[name="selected-st"]')) {
+                // Get the currently checked radio button (in case of multiple triggers)
+                const $selectedRadio = $('input[name="selected-st"]:checked');
+                // Traverse to the parent <tr>
+                const $parentRow = $selectedRadio.closest('tr');
+                // Retrieve the data-additional attribute
+                const additionalData = $parentRow.attr('data-additional');
+                
+                // Parse it to an object (if needed)
+                let billingData;
+                try {
+                    billingData = JSON.parse(additionalData);
+                } catch (e) {
+                    console.error("Failed to parse billing data:", e);
+                }
+                
+                // Call your updateBilling method with the parsed data
+                updateBilling(billingData);
+            }
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
     
         // Attach submit event handler
         $(document).on('submit', '#combined-request-form', handleFormSubmit);
+
+        $(document).on("change", 'input[name="selected-su"]', function (event) {
+            
+                // Get the currently checked radio button (in case of multiple triggers)
+                const $selectedRadio = $('input[name="selected-su"]:checked');
+                // Traverse to the parent <tr>
+                const $parentRow = $selectedRadio.closest('tr');
+                // Retrieve the data-additional attribute
+                const additionalData = $parentRow.attr('data-additional');
+                //CHange the su's requested to the value of the renewal selected
+                // Parse it to an object (if needed)
+                let billingData;
+                try {
+                    billingData = JSON.parse(additionalData);
+                } catch (e) {
+                    console.error("Failed to parse billing data:", e);
+                }
+                
+                // Call your updateBilling method with the parsed data
+                updateBilling(billingData);
+                                
+        
+            
+            // Ensure fields are editable
+            $('#financial-contact, #company-id, #cost-center, #business-unit, #funding-number, #fund, #function, #program, #activity, #assignee')
+                .prop('readonly', false);
+        
+            console.log("Billing fields successfully autofilled in the UI.");
+        });
     }
     
     // ===================================
@@ -586,24 +658,21 @@
     
         console.log("Form submission triggered.");
     
-        const formData = collectFormData(); // Collect data from the form
-        const payload = buildPayloadPreview(); // Build payload for submission
-        const errors = validatePayload(payload); // Validate the payload
-    
-        // Remove duplicate logging (Keep only one)
-        if (payload) {
-            console.log("Final Payload Before Submission:", JSON.stringify(payload, null, 2));
-        }
+        const formData = collectFormData();
+        const payload = buildPayloadPreview();
+        const errors = validatePayload(payload);
     
         if (errors.length > 0) {
             displayValidationErrors(errors);
-            return; // Stop submission on validation errors
+            return;
         }
     
         try {
             const isRenewal = formData.newOrRenewal === 'renewal';
-            const method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
-    
+            var method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
+            if(formData.requestType==="storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')){
+                method = 'PUT'; // Use PUT for storage changes
+            }
             console.log(`Submitting ${isRenewal ? 'Renewal (PUT)' : 'New Request (POST)'}...`);
     
             const responseData = await submitForm(formData, payload, method);
@@ -612,12 +681,11 @@
                 console.log("API Response:", responseData);
                 showSuccessMessage("Your request has been submitted successfully!");
     
-                // Update the updated_date for the selected SU if it's a renewal**
                 if (isRenewal) {
                     updateServiceUnitTimestamp(formData.existingProject);
                 }
     
-                clearFormFields(); // Reset form after successful submission
+                clearFormFields();
             }
         } catch (error) {
             console.error("Error during form submission:", error);
@@ -653,10 +721,12 @@
     
         // Check if it's a renewal by detecting the selected existing SU
         const isRenewal = formData.newOrRenewal === 'renewal';
-    
+        const isRetire = formData.typeOfRequest === 'retire-storage'
         // Set the correct HTTP method
-        const method = isRenewal ? 'PUT' : 'POST';
-    
+        var method = isRenewal ? 'PUT' : 'POST';
+        if(isRetire){
+            method = 'DELETE'; // Use DELETE for retiring storage
+        }
         console.log(`Submitting ${method} request for ${isRenewal ? "Renewal" : "New Request"}...`);
     
         // Ensure correct URL for PUT (Renewals)
@@ -664,49 +734,66 @@
         if (isRenewal && formData.existingProject) {
             requestUrl += `/${formData.existingProject}`;
         }
-    
+        if(isRetire ){
+            const requestType= formData.requestType==="storage" ? "storage" : "hpc_service-units";
+            const group=$('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim();
+            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim()+"-"+$('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim();
+            requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
+        }
+        // Check for `trigger_notification` flag in payload
+        if (isRenewal && payload.length > 0 && payload[0].trigger_notification) {
+            console.log("Triggering notification for renewal request.");
+        }
+        var settings = {};
+        if(!isRetire){
         // Remove "Origin" header (Handled automatically by browser)
-        const settings = {
-            "url": requestUrl, 
-            "method": method, 
-            "timeout": 0, 
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify(payload), 
-            "xhrFields": { 
-                withCredentials: true // Ensure authentication and cookies are included
-            }
+         settings = {
+            url: requestUrl,
+    method: method,
+    timeout: 0,
+    contentType: "application/json",  
+    dataType: "json",                 
+    data: JSON.stringify(payload),
+    xhrFields: {
+        withCredentials: true
+    }
         };
-    
+        }else{
+             settings = {
+                url: requestUrl,
+                method: method,
+                timeout: 0,
+                dataType: "json",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                xhrFields: {
+                    withCredentials: true
+                }
+            };
+        }
         try {
             const response = await $.ajax(settings);
-            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
-            
-            // Show success message
-            showSuccessMessage("Your request has been submitted successfully!");
     
-            // If renewal, update the "Updated" timestamp for the selected SU**
-            if (isRenewal && formData.existingProject) {
-                updateServiceUnitTimestamp(formData.existingProject);
+            if (Array.isArray(response) && response[0].status === "error") {
+                showErrorMessage("Submission failed: " + response[0].message);
+                $('#submit').prop('disabled', false);
+                return null;
             }
     
-            // Re-enable Submit Button**
-            $('#submit').prop('disabled', false);
+            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
     
-            // Clear form after successful submission**
-            clearFormFields();
+            sessionStorage.setItem('submissionSuccess', isRenewal
+                ? "Your renewal request has been submitted successfully!"
+                : "Your request has been submitted successfully!");
     
+            location.reload();
             return response;
+    
         } catch (error) {
             console.error(`Submission failed (${method}):`, error.responseText || error);
-            
-            // Show error message
             showErrorMessage("Submission failed. Please try again.");
-    
-            // Re-enable Submit Button for retries**
             $('#submit').prop('disabled', false);
-    
             return null;
         }
     }
@@ -731,9 +818,29 @@
             console.warn(`No limits found for storage tier: ${tierType}`);
         }
     }
+    function updateBilling(billingData) {
+        if (billingData) {
+            if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
+                $('#funding-number').val(billingData[0].project || '');
+            }
+            
+            $('#financial-contact').val(billingData[0].financial_contact || '');
+            $('#company-id').val(billingData[0].company || '');
+            $('#business-unit').val(billingData[0].business_unit || '');
+            $('#cost-center').val(billingData[0].cost_center || '');
+            $('#fund').val(billingData[0].fund || '');
+            
+            $('#program').val(billingData[0].program_code || '');
+            $('#function').val(billingData[0].function || '');
+            $('#activity').val(billingData[0].activity || '');
+            $('#assignee').val(billingData[0].assignee || '');
+            console.log("Billing data updated from existing line:", billingData);
+            $('#financial-contact').trigger("change").trigger("input"); //trigger the form update
+        }
+    }
 
     function updateBillingVisibility() {
-        const requestType = $('input[name="request-type"]:checked').val();
+        const requestType = $('select[name="request-type"]').val();
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
@@ -835,16 +942,20 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-    
+        const billingDetails = getBillingDetails();
+        const storageChange = formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
+        var selectedSU = "n/a";
         let selectedGroup, selectedTier;
     
         if (formData.newOrRenewal === "renewal") {
             // Extract from the selected SU in the renewal table
-            const selectedSU = $('input[name="selected-su"]:checked').val();
+            selectedSU = $('input[name="selected-su"]:checked').val();
             if (selectedSU) {
-                [selectedGroup, selectedTier] = selectedSU.split('-'); // Extract group & tier
+                var checkedRadio=$('input[name="selected-su"]:checked')               
+                selectedTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
+                selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();                
             }
-        }else if(formData.requestType === "storage") {
+        } else if (formData.requestType === "storage") {
             selectedGroup = formData.group ? formData.group.trim() : "";
             selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
         } else {
@@ -853,17 +964,17 @@
             selectedTier = getTierEnum(formData.allocationTier);
         }
     
-        if (!selectedGroup || !selectedTier) {
+        if (!storageChange && (!selectedGroup || !selectedTier)) {
             console.error(`⚠ Missing required values: Group: ${selectedGroup}, Tier: ${selectedTier}`);
             showErrorMessage("⚠ Please select a valid Group and Tier.");
             return null;
         }
-    
+       
         // Handle Renewals: Check if the resource exists in the API response
         if (formData.newOrRenewal === "renewal") {
-            let existingResource = consoleData[0]?.user_resources?.find(resource => 
+            let existingResource = consoleData[0]?.user_resources?.find(resource =>
                 resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                resource.resources?.hpc_service_units?.[selectedGroup]?.tier.toLowerCase() === selectedTier.toLowerCase()
+                resource.resources?.hpc_service_units?.[selectedSU]?.tier.toLowerCase() === selectedTier.toLowerCase()
             );
     
             if (!existingResource) {
@@ -871,10 +982,20 @@
                 return null;
             }
     
-            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Sending minimal PUT payload.`);
+            console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Fetching existing SU details.`);
     
-            // Get existing request count to avoid changes
-            const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
+            // Get existing request count to avoid unintended changes
+            const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedSU]?.request_count || "50000";
+            
+            // Retrieve existing billing details & merge with updated user input
+            //const updatedBillingDetails = {
+               // "financial_contact": $('#financial-contact').val().trim() || existingResource.billing_details?.financial_contact || "",
+               // "company_id": $('#company-id').val().trim() || existingResource.billing_details?.company_id || "",
+               // "cost_center": $('#cost-center').val().trim() || existingResource.billing_details?.cost_center || "",
+               // "business_unit": $('#business-unit').val().trim() || existingResource.billing_details?.business_unit || ""
+           // };
+    
+            //console.log("Updated Billing Details for Renewal:", updatedBillingDetails);
     
             // Construct minimal payload for PUT (Renewal)
             const renewalPayload = {
@@ -885,39 +1006,79 @@
                 "pi_uid": userId,
                 "resources": {
                     "hpc_service_units": {
-                        [selectedGroup]: {
+                        [selectedSU]: {
                             "tier": selectedTier,
-                            "request_count": existingRequestCount, // Keep the same
+                            "request_count": formData.requestCount, 
+                            "billing_details": billingDetails, // Updated billing details
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
                     }
-                }
+                }                
             };
     
             console.log("Final Renewal Payload (PUT):", JSON.stringify(renewalPayload, null, 2));
             return [renewalPayload]; // Return as an array for consistency
         }
     
-        // Handle New Requests
-        const billingDetails = getBillingDetails();
-        const hpcServiceUnitKey = selectedGroup;
-    
-        const newResource = {
-            "group_name": selectedGroup,
-            "project_name": formData.projectName?.trim() || "Test Project",
-            "project_desc": $('#project-description').val()?.trim() || "This is free text",
-            "data_agreement_signed": $('#data-agreement').is(':checked'),
-            "pi_uid": userId,
-            "resources": {
-                "hpc_service_units": {
-                    [hpcServiceUnitKey]: {
+        // Handle storage adjustments (no changes)
+        if (formData.requestType === "storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')) {
+            // Construct minimal payload for PUT (change)
+            const changePayload = {
+                "storage": {
+                    [formData.sharedSpaceName]: {
                         "tier": selectedTier,
-                        "request_count": formData.requestCount || "1000",
+                        "request_size": formData.capacity,
                         "billing_details": billingDetails
                     }
                 }
-            }
-        };
+            };
+    
+            console.log("Final Storage Change Payload (PUT):", JSON.stringify(changePayload, null, 2));
+            return [changePayload]; // Return as an array for consistency
+        }
+    
+        // Handle New Requests (Unchanged)
+        
+        const hpcServiceUnitKey = selectedGroup;
+        let newResource = {};
+    
+        if (formData.requestType === "storage") {
+            newResource = {
+                "group_name": selectedGroup,                
+                "data_agreement_signed": $('#data-agreement').is(':checked'),
+                "pi_uid": userId,
+                "project_name": "",
+                "project_desc": "",
+                "resources": {
+                    "storage": {
+                        [hpcServiceUnitKey]: {
+                            "tier": selectedTier,
+                            "shared_space_name": formData.sharedSpaceName?.trim() || "Shared Space",
+                            "storage_size": formData.storage_size || "0",
+                            "project_title": formData.project_title?.trim() || "Project Title",                            
+                            "billing_details": billingDetails
+                        }
+                    }
+                }
+            };
+        } else {
+            newResource = {
+                "group_name": selectedGroup,
+                "project_name": formData.projectName?.trim() || "Test Project",
+                "project_desc": $('#project-description').val()?.trim() || "This is free text",
+                "data_agreement_signed": $('#data-agreement').is(':checked'),
+                "pi_uid": userId,
+                "resources": {
+                    "hpc_service_units": {
+                        [hpcServiceUnitKey]: {
+                            "tier": selectedTier,
+                            "request_count": formData.requestCount || "1000",
+                            "billing_details": billingDetails
+                        }
+                    }
+                }
+            };
+        }
     
         console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
         return [newResource]; // Return as an array
@@ -927,7 +1088,9 @@
 
     function validatePayload(payload) {
         const errors = [];
-    
+        if($('input[name="type-of-request"]:checked').val() === 'retire-storage'){
+            return errors;
+        }
         // Ensure payload is an array with exactly one object
         if (!Array.isArray(payload) || payload.length !== 1) {
             errors.push("Payload must be an array containing a single object.");
@@ -936,7 +1099,8 @@
     
         const resourceWrapper = payload[0];
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
-    
+        var isStorage = $('select[name="request-type"]').val() === 'storage';
+        var isStorageChange=$('input[name="type-of-request"]:checked').val() === 'increase-storage' || $('input[name="type-of-request"]:checked').val() === 'decrease-storage';
         // **If it's a renewal, user_resources array should NOT be validated for new entries**
         if (isRenewal) {
             if (!resourceWrapper.group_name || !resourceWrapper.resources?.hpc_service_units) {
@@ -951,7 +1115,24 @@
     
             return errors; // Skip other validations for renewals
         }
+        if(isStorage && !isStorageChange){
+            Object.values(payload[0].resources.storage).forEach((group, index) => {
+                // Check for required properties
+                if (!group.tier) {
+                  console.log(`You must select a storage tier.`);
+                } 
+                if(!group.storage_size || group.storage_size === "0") {
+                    console.log(`You must have a storage size > 0.`);
+                }
+                if(isStorageChange){
+                    if(!group.request_size || group.request_size === "0") {
+                        console.log(`You must have a request size > 0.`);
+                    }
+                }
+              });
     
+            return errors; // Skip other validations for storage
+        }
         // **For New Requests (POST)**
         const seenGroupTiers = new Set();
     
@@ -1184,19 +1365,20 @@
         userResources.forEach(resource => {
             const projectName = resource.project_name || "N/A";
             const groupName = resource.group_name || "N/A";
-    
+            
             let resourceType = "Unknown";
-            if (resource.resources?.hpc_service_units) {
+            if ( resource.resources?.hpc_service_units &&
+                Object.keys(resource.resources.hpc_service_units).length > 0) {
                 resourceType = "SU";
-            } else if (resource.resources?.storage) {
-                resourceType = "Storage";
-            }
+            } 
     
-            if (resource.resources?.hpc_service_units) {
+            if (resourceType==="SU" && resource.resources?.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
-                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : `Requested: ${details.request_date || "No date available"}`;
+                    var shortDate=formatDateToEST(details.update_date || details.request_date);
+                    const request_status=details.request_status || "N/A";
+                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
     
                     const row = `
                         <tr>
@@ -1204,7 +1386,35 @@
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
                             <td>${tier}</td>
-                            <td>${requestCount} | ${updateDate}</td>
+                            <td>${requestCount}</td>
+                            <td>${request_status}</td>
+                            <td>${updateDate}</td>
+                        </tr>
+                    `;
+                    previewTableBody.append(row);
+                });
+            } 
+            if (resource.resources?.storage &&
+                Object.keys(resource.resources.storage).length > 0) {
+                resourceType = "Storage";
+            }
+            if(resourceType==="Storage" && resource.resources?.storage) {
+                Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
+                    const tier = details.tier || "N/A";
+                    const storageSize = details.storage_size ? `${details.storage_size} TB` : "N/A";
+                    var shortDate=formatDateToEST(details.update_date || details.request_date);
+                    const request_status=details.request_status || "N/A";
+                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+    
+                    const row = `
+                        <tr>
+                            <td>${resourceType}</td>
+                            <td>${projectName}</td> 
+                            <td>${groupName}</td>
+                            <td>${tier}</td>
+                            <td>${storageSize}</td>
+                            <td>${request_status}</td>
+                            <td>${updateDate}</td>
                         </tr>
                     `;
                     previewTableBody.append(row);
@@ -1214,24 +1424,24 @@
     
         // Also update the Existing Service Units table for Renewals
         populateExistingServiceUnitsTable(apiResponse);
+        populateExistingStorageTable(apiResponse);
     }
-
-    function populateExistingServiceUnitsTable(apiResponse) {
+    function populateExistingStorageTable(apiResponse) {
         const { userResources } = parseConsoleData(apiResponse);
-        const suTableBody = $('#allocation-projects-tbody');
+        const suTableBody = $('#storage-projects-tbody');
         suTableBody.empty();
     
         if (!Array.isArray(userResources) || userResources.length === 0) {
-            suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
+            suTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
             return;
         }
     
         // **Sort resources by most recent `update_date` (or fallback to `request_date`)**
         userResources.sort((a, b) => {
-            const dateA = new Date(a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.update_date || 
-                                   a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.request_date || 0);
-            const dateB = new Date(b.resources?.hpc_service_units?.[Object.keys(b.resources.hpc_service_units)[0]]?.update_date || 
-                                   b.resources?.hpc_service_units?.[Object.keys(b.resources.hpc_service_units)[0]]?.request_date || 0);
+            const dateA = new Date(a.resources?.storage?.[Object.keys(a.resources.storage)[0]]?.update_date || 
+                                   a.resources?.storage?.[Object.keys(a.resources.storage)[0]]?.request_date || 0);
+            const dateB = new Date(b.resources?.storage?.[Object.keys(b.resources.storage)[0]]?.update_date || 
+                                   b.resources?.storage?.[Object.keys(b.resources.storage)[0]]?.request_date || 0);
             return dateB - dateA; // Sort descending (newest first)
         });
     
@@ -1239,21 +1449,25 @@
             const projectName = resource.project_name || "N/A";
             const groupName = resource.group_name || "N/A";
     
-            if (resource.resources?.hpc_service_units) {
-                Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
+            if (resource.resources?.storage) {
+                Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
-                    const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
-                    const updateDate = details.update_date ? `Updated: ${details.update_date}` : `Requested: ${details.request_date || "No date available"}`;
-    
+                    const storageSize = details.storage_size? `${details.storage_size} TB` : "N/A";
+                    var shortDate=formatDateToEST(details.update_date || details.request_date);
+                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+                    const sharedSpace = details.shared_space_name ? `${details.shared_space_name}` : "N/A";
+                    const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const row = `
-                        <tr>
+                        <tr data-additional='${billingJson}'>
                             <td>
-                                <input type="radio" name="selected-su" value="${groupName}-${tier}" 
+                                <input type="radio" name="selected-st" value="${groupName}-${tier}" 
                                     data-group="${groupName}" data-tier="${tier}">
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
                             <td>${tier}</td>
+                            <td>${sharedSpace}</td>
+                            <td>${storageSize}</td>
                         </tr>
                     `;
                     suTableBody.append(row);
@@ -1263,6 +1477,50 @@
     
         console.log("Existing Service Units table updated!");
     }
+
+    function populateExistingServiceUnitsTable(apiResponse) {
+    const { userResources } = parseConsoleData(apiResponse);
+    const suTableBody = $('#allocation-projects-tbody');
+    suTableBody.empty();
+
+    if (!Array.isArray(userResources) || userResources.length === 0) {
+        suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
+        return;
+    }
+
+    userResources.forEach(resource => {
+        const projectName = resource.project_name || "N/A";
+        const groupName = resource.group_name || "N/A";
+
+        if (resource.resources?.hpc_service_units) {
+            Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
+                const tier = details.tier || "N/A";
+                const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
+                const updateDate = details.update_date ? `Updated: ${formatDateToEST(details.update_date)}` : `Requested: ${formatDateToEST(details.request_date)}`;
+                if (details.billing_details && details.billing_details.fdm_billing_info &&
+                    Object.values(details.billing_details.fdm_billing_info).every(val => val !== null)) {
+                const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
+                    
+                const row = `
+                    <tr data-additional='${billingJson}'>
+                        <td>
+                            <input type="radio" name="selected-su" value="${groupName}-${tier}" 
+                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName}">
+                        </td>
+                        <td>${projectName}</td> 
+                        <td>${groupName}</td>
+                        <td>${tier}</td>
+                        <td>${requestCount} | ${updateDate}</td>
+                    </tr>
+                `;
+                suTableBody.append(row);
+                    }
+            });
+        }
+    });
+
+    console.log("Existing Service Units table updated!");
+}
 
     function updateServiceUnitTimestamp(selectedSU) {
         if (!selectedSU) {
@@ -1294,7 +1552,7 @@
 
     function updateFormValidation() {
         const $form = $('#combined-request-form');
-        const requestType = $('input[name="request-type"]:checked').val();
+        const requestType = $('select[name="request-type"]').val();
     
         const visibleFieldsSelector = requestType === 'service-unit'
             ? '#allocation-fields input[required]:visible, #allocation-fields select[required]:visible'
@@ -1309,7 +1567,11 @@
     // Initialization Function
     async function initialize() {
         console.log("Initializing form...");
-    
+        const successMsg = sessionStorage.getItem('submissionSuccess');
+        if (successMsg) {
+            showSuccessMessage(successMsg);
+            sessionStorage.removeItem('submissionSuccess'); // Clear it so it doesn't show again on the next reload
+        }
         try {
             // Hide sections initially to avoid flickering
             $('#allocation-fields, #storage-fields, #common-fields, #billing-information').hide();
@@ -1369,6 +1631,28 @@
             $('#loading-message').fadeOut(300, function() { $(this).remove(); });
         }
     }
+
+    function formatDateToEST(isoDateStr) {
+        // Create a Date object from the ISO string
+        const dateObj = new Date(isoDateStr);
+        
+        // Define options for a short, formatted date
+        const options = {
+          timeZone: "America/New_York", // Eastern Time
+          year: "2-digit",              // Two-digit year
+          month: "numeric",             // Numeric month
+          day: "numeric",               // Numeric day
+          hour: "numeric",              // Numeric hour
+          minute: "numeric",            // Numeric minute
+          hour12: true                  // 12-hour format
+        };
+      
+        // Format the date for Eastern Time
+        const formatted = dateObj.toLocaleString("en-US", options);
+        
+        // If needed, append the EST label (ensure you handle daylight saving if necessary)
+        return `${formatted} EST`;
+      }
 
     $(document).ready(function () {
         console.log("Script started");

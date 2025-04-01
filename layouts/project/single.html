@@ -17,8 +17,16 @@
   {{ end }}
 
   <div class="explainer">
-    {{ if .Params.images }}
+    <!-- {{ if .Params.images }}
       <img src="{{ .Params.images }}" alt="{{ .Title }}" class="project-inset" align="right" />
+    {{ end }} -->
+    {{ if .Params.images }}
+      <figure class="project-inset" style="float: right; margin: 0 0 10px 10px;">
+        <img src="{{ .Params.images }}" alt="{{ .Title }}" class="project-inset" />
+        {{ if .Params.caption }}
+          <figcaption style="font-size: 0.75rem; text-align: center;">{{ .Params.caption }}</figcaption>
+        {{ end }}
+      </figure>
     {{ end }}
 
     {{ .Content }}
