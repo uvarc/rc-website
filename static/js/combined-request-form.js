@@ -777,6 +777,8 @@
             .done(function(response) {
                 if (Array.isArray(response) && response[0].status === "error") {
                     showErrorMessage("Submission failed: " + response[0].message);
+                    $('#submit').prop('disabled', false);
+                    return null;
                 }else{
                     console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
             
