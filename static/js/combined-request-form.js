@@ -433,6 +433,9 @@
         /// Clear Form Fields
 
         function clearFormFields() {
+            const uid = document.querySelector('[name="user-id"]')?.value;
+    const email = document.querySelector('[name="email"]')?.value;
+    const name = document.querySelector('[name="name"]')?.value;
             const $form = $('#combined-request-form');
             $form[0].reset(); // Reset all form fields
             $form.find('.is-valid, .is-invalid').removeClass('is-valid is-invalid'); // Remove validation styles
@@ -772,8 +775,15 @@
         try {
             const response = await $.ajax(settings)
             .done(function(response) {
-                if (response[0].status === "error") {
+                if (Array.isArray(response) && response[0].status === "error") {
                     showErrorMessage("Submission failed: " + response[0].message);
+                }else{
+                    console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
+            
+                    sessionStorage.setItem('submissionSuccess', isRenewal 
+                        ? "Your renewal request has been submitted successfully!" 
+                        : "Your request has been submitted successfully!");
+                    location.reload(); // Refresh page to show message
                 }
               })
               .fail(function(jqXHR, textStatus, errorThrown) {
@@ -789,24 +799,21 @@
                 
               });
 
-            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
             
-            // Show success message
-            showSuccessMessage(isRenewal ? "Your renewal request has been submitted successfully!" : "Your request has been submitted successfully!");
     
             // If renewal, update the "Updated" timestamp for the selected SU**
-            if (isRenewal && formData.existingProject) {
-                updateServiceUnitTimestamp(formData.existingProject);
-            }
+            //if (isRenewal && formData.existingProject) {
+              //  updateServiceUnitTimestamp(formData.existingProject);
+            //}
     
             // Ensure UI updates immediately after submission
-            updateFormUsingMetadata(await fetchMetadata());
+           // updateFormUsingMetadata(await fetchMetadata());
     
             // Re-enable Submit Button**
-            $('#submit').prop('disabled', false);
+            //$('#submit').prop('disabled', false);
     
             // Clear form after successful submission**
-            clearFormFields();
+            //clearFormFields();
     
             return response;
         } catch (error) {
@@ -1590,7 +1597,11 @@
     // Initialization Function
     async function initialize() {
         console.log("Initializing form...");
-    
+        const successMsg = sessionStorage.getItem('submissionSuccess');
+        if (successMsg) {
+            showSuccessMessage(successMsg);
+            sessionStorage.removeItem('submissionSuccess'); // Clear it so it doesn't show again on the next reload
+        }
         try {
             // Hide sections initially to avoid flickering
             $('#allocation-fields, #storage-fields, #common-fields, #billing-information').hide();
