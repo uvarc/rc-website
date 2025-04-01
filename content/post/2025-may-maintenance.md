@@ -33,4 +33,6 @@ Slurm will be upgraded to 24.11.3.
 |openmpi    | 4.1.4-nofabric-withoutverbs | 4.1.4 |
 |spaceranger| 3.1.1 | 3.1.3 |
 |trimgalore | 0.6.4 | 0.6.10 |
+|matlab     | R2022b | R2024b |
+|mathematica| 11.2 | 14.2 |
 {{< /table >}}
