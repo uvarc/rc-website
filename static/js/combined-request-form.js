@@ -773,58 +773,26 @@
             };
         }
         try {
-            const response = await $.ajax(settings)
-            .done(function(response) {
-                if (Array.isArray(response) && response[0].status === "error") {
-                    showErrorMessage("Submission failed: " + response[0].message);
-                    $('#submit').prop('disabled', false);
-                    return null;
-                }else{
-                    console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
-            
-                    sessionStorage.setItem('submissionSuccess', isRenewal 
-                        ? "Your renewal request has been submitted successfully!" 
-                        : "Your request has been submitted successfully!");
-                    location.reload(); // Refresh page to show message
-                }
-              })
-              .fail(function(jqXHR, textStatus, errorThrown) {
-                // Log or show details
-                console.log("Status Code:", jqXHR.status);
-                console.log("Response Text:", jqXHR.responseText);
-                console.log("Text Status:", textStatus);
-                console.log("Error Thrown:", errorThrown);
-        
-                showErrorMessage("Submission failed: " + jqXHR.responseText);
-              })
-              .always(function() {
-                
-              });
-
-            
+            const response = await $.ajax(settings);
     
-            // If renewal, update the "Updated" timestamp for the selected SU**
-            //if (isRenewal && formData.existingProject) {
-              //  updateServiceUnitTimestamp(formData.existingProject);
-            //}
+            if (Array.isArray(response) && response[0].status === "error") {
+                showErrorMessage("Submission failed: " + response[0].message);
+                $('#submit').prop('disabled', false);
+                return null;
+            }
     
-            // Ensure UI updates immediately after submission
-           // updateFormUsingMetadata(await fetchMetadata());
+            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
     
-            // Re-enable Submit Button**
-            //$('#submit').prop('disabled', false);
+            sessionStorage.setItem('submissionSuccess', isRenewal
+                ? "Your renewal request has been submitted successfully!"
+                : "Your request has been submitted successfully!");
     
-            // Clear form after successful submission**
-            //clearFormFields();
-    
+            location.reload();
             return response;
+    
         } catch (error) {
             console.error(`Submission failed (${method}):`, error.responseText || error);
-    
-            // Show error message
             showErrorMessage("Submission failed. Please try again.");
-    
-            // Re-enable Submit Button for retries**
             $('#submit').prop('disabled', false);
             return null;
         }
