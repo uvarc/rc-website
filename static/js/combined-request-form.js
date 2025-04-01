@@ -745,27 +745,27 @@
         if(!isRetire){
         // Remove "Origin" header (Handled automatically by browser)
          settings = {
-            "url": requestUrl, 
-            "method": method, 
-            "timeout": 0, 
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify(payload), 
-            "xhrFields": { 
-                withCredentials: true // Ensure authentication and cookies are included
-            }
+            url: requestUrl,
+    method: method,
+    timeout: 0,
+    contentType: "application/json",  
+    dataType: "json",                 
+    data: JSON.stringify(payload),
+    xhrFields: {
+        withCredentials: true
+    }
         };
         }else{
              settings = {
-                "url": requestUrl, 
-                "method": method, 
-                "timeout": 0, 
-                "headers": {
+                url: requestUrl,
+                method: method,
+                timeout: 0,
+                dataType: "json",
+                headers: {
                     "Content-Type": "application/json"
-                },                
-                "xhrFields": { 
-                    withCredentials: true // Ensure authentication and cookies are included
+                },
+                xhrFields: {
+                    withCredentials: true
                 }
             };
         }
