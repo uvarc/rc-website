@@ -43,24 +43,6 @@ The UVA Research Computing Exhibition showcases the incredible research happenin
 
 * Enjoy free food and beverages 
 
-## Submit a Poster (Due March 31) 
-
-If you’ve used UVA Research Computing resources — such as Rivanna, Afton, Ivy, or collaborations with our staff — to support your research, we encourage you to submit a poster. 
-
-Awards will be given in two categories: Biological & Health Sciences and Engineering & Physical Sciences. Each category will have three winners, for a total of up to six awards. 
-
-<strong>First Place</strong>: $3,000 travel voucher 
-
-<strong>Second Place</strong>: $2,000 travel voucher 
-
-<strong>Third Place</strong>: $1,000 travel voucher 
-
-<strong>Submission Deadline: March 31 </strong>
-
-[View poster requirements](https://rc.virginia.edu/2025/03/rc-exhibition-call-for-posters-march-31-2025/) > 
-
-[Submit your poster](https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=26c2154183&e=7a592fe565) > 
-
 ## Exhibition Agenda 
 
 Attendees can drop by anytime. 
@@ -81,5 +63,24 @@ Meet participants, discuss their research, exchange ideas, and explore potential
 Celebrate outstanding research and recognize the winners of the poster competition. 
 
 <strong>2:00pm</strong> — <strong>Event Wrap-Up</strong> 
+
+## Submit a Poster (Due March 31) 
+
+If you’ve used UVA Research Computing resources — such as Rivanna, Afton, Ivy, or collaborations with our staff — to support your research, we encourage you to submit a poster. 
+
+Awards will be given in two categories: Biological & Health Sciences and Engineering & Physical Sciences. Each category will have three winners, for a total of up to six awards. 
+
+<strong>First Place</strong>: $3,000 travel voucher 
+
+<strong>Second Place</strong>: $2,000 travel voucher 
+
+<strong>Third Place</strong>: $1,000 travel voucher 
+
+<strong>Submission Deadline: March 31 </strong>
+
+[View poster requirements](https://rc.virginia.edu/2025/03/rc-exhibition-call-for-posters-march-31-2025/) > 
+
+[Submit your poster](https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=26c2154183&e=7a592fe565) > 
+
  
 
