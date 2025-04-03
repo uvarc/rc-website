@@ -599,7 +599,7 @@
                 const $selectedRadio = $('input[name="selected-st"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
-                const storageText = row.cells[5].textContent.trim();
+                const storageText = $parentRow[0].cells[5].textContent.trim();
                 const number = parseInt(storageText);
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 // Retrieve the data-additional attribute
@@ -629,7 +629,7 @@
                 const $selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
-                const fullText = row.cells[4].textContent.trim(); // 5th <td> (index 4)
+                const fullText = $parentRow[0].cells[4].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
                 if (match) {
                     const number = parseInt(match[1]);
