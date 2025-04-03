@@ -2,15 +2,15 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-04-02T00:00:00-05:00"
-title = "New NVIDIA H200 GPU Nodes Coming to Afton"
+date = "2025-04-03T00:00:00-05:00"
+title = "New NVIDIA H200 GPU Node Coming to Afton"
 draft = false
 tags = ["afton","hpc"]
 categories = ["feature"]
 +++
 
 <p>
-We are excited to announce the expansion of UVA’s AI computing capabilities. <b>On April 3</b>, we are adding two NVIDIA HGX H200 GPU nodes to the Afton high-performance computing (HPC) cluster, each providing 2TB of node CPU memory and 8-way connected Tensor Core GPUs with 141GB of VRAM memory per device. These devices offer higher performance than the current Afton GPU nodes, opening new possibilities for the most challenging deep learning and large language model computations.</p>
+We are excited to announce the expansion of UVA’s AI computing capabilities. <b>On April 3</b>, we are adding a NVIDIA HGX H200 GPU node to the Afton high-performance computing (HPC) cluster, the first of many planned for the coming year. Each node provides 2TB of node CPU memory and 8-way connected Tensor Core GPUs with 141GB of VRAM memory per device. These devices offer higher performance than the current Afton GPU nodes, opening new possibilities for the most challenging deep learning and large language model computations.</p>
 
 ## Hot can I get access to the new hardware?
 
