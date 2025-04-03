@@ -452,6 +452,7 @@
                 .addClass('alert alert-danger')
                 .text(message);
             $('#combined-request-form').prepend(errorDiv);
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
             setTimeout(() => errorDiv.remove(), 10000);
         }
         
@@ -598,6 +599,9 @@
                 const $selectedRadio = $('input[name="selected-st"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
+                const storageText = row.cells[5].textContent.trim();
+                const number = parseInt(storageText);
+                $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 
@@ -625,6 +629,13 @@
                 const $selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
+                const fullText = row.cells[4].textContent.trim(); // 5th <td> (index 4)
+                const match = fullText.match(/(\d+)\s+SUs/);
+                if (match) {
+                    const number = parseInt(match[1]);
+                    $('#su-quantity').val(number); // Update the SU quantity field with the selected row's SU count
+                    console.log("Selected SUs:", number); // Logs: 5000
+                }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 //CHange the su's requested to the value of the renewal selected
