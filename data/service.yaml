@@ -242,7 +242,7 @@ hardware:
       speciality_hardware: "GPU: H200"
       gpu_memory_per_device: "141GB"
       gpu_devices_per_node: "8"
-      number_of_nodes: 2
+      number_of_nodes: 1
       su_per_cpu_hour: 0.400
       su_per_gb_hour: 0.0269
       su_per_gpu_hour: 81.667
