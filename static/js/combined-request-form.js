@@ -433,6 +433,9 @@
         /// Clear Form Fields
 
         function clearFormFields() {
+            const uid = document.querySelector('[name="user-id"]')?.value;
+    const email = document.querySelector('[name="email"]')?.value;
+    const name = document.querySelector('[name="name"]')?.value;
             const $form = $('#combined-request-form');
             $form[0].reset(); // Reset all form fields
             $form.find('.is-valid, .is-invalid').removeClass('is-valid is-invalid'); // Remove validation styles
@@ -443,12 +446,13 @@
 
         /// Success Message
 
-        function showErrorMessage(message) {
+        function showErrorMessagePost(message) {
             $('.alert-danger').remove(); // Remove old errors
             const errorDiv = $('<div>')
                 .addClass('alert alert-danger')
                 .text(message);
             $('#combined-request-form').prepend(errorDiv);
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
             setTimeout(() => errorDiv.remove(), 10000);
         }
         
@@ -484,6 +488,7 @@
             .addClass('alert alert-danger')
             .text(message);
         $('#combined-request-form').prepend(errorDiv);
+       
         setTimeout(() => errorDiv.remove(), 10000);
     }
 
@@ -530,10 +535,10 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
         if (isNew && !isRenew) {
-            $('#allocation-fields #new-project-name-container,#su-capacity, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
-            $('#allocation-fields #new-project-name-container,#su-capacity, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
+            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
             populateExistingServiceUnitsTable(consoleData);
         }
@@ -595,6 +600,9 @@
                 const $selectedRadio = $('input[name="selected-st"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
+                const storageText = $parentRow[0].cells[5].textContent.trim();
+                const number = parseInt(storageText);
+                $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 
@@ -622,9 +630,16 @@
                 const $selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
+                const fullText = $parentRow[0].cells[4].textContent.trim(); // 5th <td> (index 4)
+                const match = fullText.match(/(\d+)\s+SUs/);
+                if (match) {
+                    const number = parseInt(match[1]);
+                    $('#su-quantity').val(number); // Update the SU quantity field with the selected row's SU count
+                    console.log("Selected SUs:", number); // Logs: 5000
+                }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
-                
+                //CHange the su's requested to the value of the renewal selected
                 // Parse it to an object (if needed)
                 let billingData;
                 try {
@@ -734,7 +749,7 @@
         if(isRetire ){
             const requestType= formData.requestType==="storage" ? "storage" : "hpc_service-units";
             const group=$('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim();
-            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(4).text().trim();
+            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim()+"-"+$('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim();
             requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
         }
         // Check for `trigger_notification` flag in payload
@@ -745,59 +760,51 @@
         if(!isRetire){
         // Remove "Origin" header (Handled automatically by browser)
          settings = {
-            "url": requestUrl, 
-            "method": method, 
-            "timeout": 0, 
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify(payload), 
-            "xhrFields": { 
-                withCredentials: true // Ensure authentication and cookies are included
-            }
+            url: requestUrl,
+    method: method,
+    timeout: 0,
+    contentType: "application/json",  
+    dataType: "json",                 
+    data: JSON.stringify(payload),
+    xhrFields: {
+        withCredentials: true
+    }
         };
         }else{
              settings = {
-                "url": requestUrl, 
-                "method": method, 
-                "timeout": 0, 
-                "headers": {
+                url: requestUrl,
+                method: method,
+                timeout: 0,
+                dataType: "json",
+                headers: {
                     "Content-Type": "application/json"
-                },                
-                "xhrFields": { 
-                    withCredentials: true // Ensure authentication and cookies are included
+                },
+                xhrFields: {
+                    withCredentials: true
                 }
             };
         }
         try {
             const response = await $.ajax(settings);
-            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
-            
-            // Show success message
-            showSuccessMessage(isRenewal ? "Your renewal request has been submitted successfully!" : "Your request has been submitted successfully!");
     
-            // If renewal, update the "Updated" timestamp for the selected SU**
-            if (isRenewal && formData.existingProject) {
-                updateServiceUnitTimestamp(formData.existingProject);
+            if (Array.isArray(response) && response[0].status === "error") {
+                showErrorMessagePost("Submission failed: " + response[0].message);
+                $('#submit').prop('disabled', false);
+                return null;
             }
     
-            // Ensure UI updates immediately after submission
-            updateFormUsingMetadata(await fetchMetadata());
+            console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
     
-            // Re-enable Submit Button**
-            $('#submit').prop('disabled', false);
+            sessionStorage.setItem('submissionSuccess', isRenewal
+                ? "Your renewal request has been submitted successfully!"
+                : "Your request has been submitted successfully!");
     
-            // Clear form after successful submission**
-            clearFormFields();
-    
+            location.reload();
             return response;
+    
         } catch (error) {
             console.error(`Submission failed (${method}):`, error.responseText || error);
-    
-            // Show error message
-            showErrorMessage("Submission failed. Please try again.");
-    
-            // Re-enable Submit Button for retries**
+            showErrorMessagePost("Submission failed. Please try again.");
             $('#submit').prop('disabled', false);
             return null;
         }
@@ -990,7 +997,7 @@
             console.log(`Renewal detected: ${selectedGroup} - ${selectedTier}. Fetching existing SU details.`);
     
             // Get existing request count to avoid unintended changes
-            const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedGroup]?.request_count || "50000";
+            const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedSU]?.request_count || "50000";
             
             // Retrieve existing billing details & merge with updated user input
             //const updatedBillingDetails = {
@@ -1011,15 +1018,14 @@
                 "pi_uid": userId,
                 "resources": {
                     "hpc_service_units": {
-                        [selectedGroup]: {
+                        [selectedSU]: {
                             "tier": selectedTier,
-                            "request_count": existingRequestCount, // Keep the same
+                            "request_count": formData.requestCount, 
                             "billing_details": billingDetails, // Updated billing details
                             "update_date": new Date().toISOString() // Set new timestamp
                         }
                     }
-                },
-                "trigger_notification": true // Add a flag to indicate renewal notification
+                }                
             };
     
             console.log("Final Renewal Payload (PUT):", JSON.stringify(renewalPayload, null, 2));
@@ -1573,7 +1579,11 @@
     // Initialization Function
     async function initialize() {
         console.log("Initializing form...");
-    
+        const successMsg = sessionStorage.getItem('submissionSuccess');
+        if (successMsg) {
+            showSuccessMessage(successMsg);
+            sessionStorage.removeItem('submissionSuccess'); // Clear it so it doesn't show again on the next reload
+        }
         try {
             // Hide sections initially to avoid flickering
             $('#allocation-fields, #storage-fields, #common-fields, #billing-information').hide();
