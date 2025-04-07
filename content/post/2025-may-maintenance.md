@@ -27,6 +27,7 @@ Slurm will be upgraded to 24.11.3.
 |cellranger | 8.0.0 | 9.0.1 |
 |cutadapt   | 3.4 | 4.9 |
 |fastqc     | 0.11.5 | 0.12.1 |
+|gcc        | 13.3.0 | 14.2.0 |
 |go         | 1.21.4 | 1.23.6 |
 |intel      | 2024.0 | 2025.0 |
 |mathematica| 11.2 | 14.2 |
