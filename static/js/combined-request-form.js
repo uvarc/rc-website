@@ -446,13 +446,13 @@
 
         /// Success Message
 
-        function showErrorMessage(message) {
+        function showErrorMessagePost(message) {
             $('.alert-danger').remove(); // Remove old errors
             const errorDiv = $('<div>')
                 .addClass('alert alert-danger')
                 .text(message);
             $('#combined-request-form').prepend(errorDiv);
-            $('html, body').animate({ scrollTop: 0 }, 'fast');
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
             setTimeout(() => errorDiv.remove(), 10000);
         }
         
@@ -488,6 +488,7 @@
             .addClass('alert alert-danger')
             .text(message);
         $('#combined-request-form').prepend(errorDiv);
+       
         setTimeout(() => errorDiv.remove(), 10000);
     }
 
@@ -787,7 +788,7 @@
             const response = await $.ajax(settings);
     
             if (Array.isArray(response) && response[0].status === "error") {
-                showErrorMessage("Submission failed: " + response[0].message);
+                showErrorMessagePost("Submission failed: " + response[0].message);
                 $('#submit').prop('disabled', false);
                 return null;
             }
@@ -803,7 +804,7 @@
     
         } catch (error) {
             console.error(`Submission failed (${method}):`, error.responseText || error);
-            showErrorMessage("Submission failed. Please try again.");
+            showErrorMessagePost("Submission failed. Please try again.");
             $('#submit').prop('disabled', false);
             return null;
         }
