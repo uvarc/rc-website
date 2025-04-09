@@ -580,6 +580,18 @@
     // ===================================
     // Setup Event Handlers
     // ===================================
+    
+    document.addEventListener("DOMContentLoaded", function() {
+        // Only target a form with a specific ID or class
+        const form = document.querySelector('#form-userinfo-v2-1'); // Or another specific identifier
+        if (form) {
+          // Hide fields as required
+          form.querySelector('#department').style.display = 'none';
+          form.querySelector('#classification').style.display = 'none';
+          form.querySelector('#discipline').style.display = 'none';
+          form.querySelector('#discipline-other').style.display = 'none';
+        }
+      });
 
     function setupEventHandlers() {
        
