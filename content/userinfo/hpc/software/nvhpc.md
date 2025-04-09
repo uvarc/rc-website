@@ -35,6 +35,7 @@ Please use the following values when compiling CUDA code on the HPC system.
 | Datacenter | V100      | Volta        | 7.0                | 9+           |
 |            | A100      | Ampere       | 8.0                | 11+          |
 |            | A40       | Ampere       | 8.6                | 11+          |
+|            | H200      | Hopper       | 9.0                | 11.8+        |
 | RTX        | A6000     | Ampere       | 8.6                | 11+          |
 | GeForce    | RTX2080Ti | Turing       | 7.5                | 10+          |
 |            | RTX3090   | Ampere       | 8.6                | 11+          |

@@ -490,7 +490,7 @@ The following example runs a total of 32 MPI processes, 8 on each node, with eac
 
 ## GPU Computations {#gpu-intensive-computation} 
 
-The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, A6000, V100, and A100 NVIDIA GPU devices.
+The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, A6000, V100, A100, and H200 NVIDIA GPU devices.
 
 {{< highlight >}}
    In order to use GPU devices, the jobs must to be submitted to the <b>gpu</b> partition and must include the <b>--gres=gpu</b> option.</alert>
@@ -498,7 +498,7 @@ The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX309
 
 {{< pull-code file="/static/scripts/gpu_job.slurm" lang="no-highlight" >}}
 
-The second argument to `gres` can be `rtx2080`, `rtx3090`, `v100`, or `a100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
+The second argument to `gres` can be `rtx2080`, `rtx3090`, `v100`, `a100`, or `h200` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
 Two models of NVIDIA A100 GPUs are available; 2 nodes with 40GB of GPU memory per GPU, and 18 nodes with 80GB of memory per GPU. To make a specific request for an 80GB A100 node, please add a _constraint_ to the Slurm script:
 ```nohighlight
@@ -506,9 +506,9 @@ Two models of NVIDIA A100 GPUs are available; 2 nodes with 40GB of GPU memory pe
 ```
 This is in addition to requesting an `a100` in the `gres` option.
 
-### NVIDIA GPU BasePOD™ Now Available for Rivanna and Afton Users
+### HGX H200 GPUs and NVIDIA GPU BasePOD™ for Rivanna and Afton Users
 
-As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna and Afton, UVA's High-Performance Computing (HPC) systems. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
+As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna and Afton, UVA's High-Performance Computing (HPC) systems. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. In addition, new HGX H200 GPU nodes have been added to the cluster, further expanding UVA’s capabilities for cutting-edge AI research.
 
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 

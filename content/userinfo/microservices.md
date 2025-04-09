@@ -165,13 +165,13 @@ Microservices may not run efficiently for all use cases. Some scenarios that can
 </div>
 
 - - -
-
+<!--
 # Pricing
 
 Container services hosted by UVA Research Computing fall under this pricing structure:
 
 {{< pricing microservices >}}
-
+-->
 - - -
 
 # Apptainer

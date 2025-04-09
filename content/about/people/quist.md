@@ -4,6 +4,8 @@ date = "2024-6-3T11:15:10-05:00"
 title = "Wright Quist"
 job_title = "Student"
 lastname = "quist"
+student_year = "4th Year"
+student_type = "Undergraduate"
 biolink = true
 email = "wru3rm@virginia.edu"
 type = "people"
@@ -22,5 +24,5 @@ Wright is a 4th-year computer science student at UVA studying computer science a
 - B.A. Studio Art
   University of Virginia SEAS (Expected Graduation: 2025)
 
-**Summer 2024 Presentation:**
-{{< youtube XYQduJCkrWY >}}
+<!-- **Summer 2024 Presentation:**
+{{< youtube XYQduJCkrWY >}} -->

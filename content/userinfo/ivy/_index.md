@@ -1,8 +1,8 @@
 +++
 description = ""
-title = "Ivy Secure Environment"
+title = "Ivy and Rio Secure Environment"
 draft = false
-date = "2023-02-23T11:45:12-05:00"
+date = "2025-01-15T11:45:12-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -13,14 +13,13 @@ layout = "single"
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p class=lead>Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows).
-Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA</a>, FERPA, CUI or ITAR requirements.</p>
+<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and certain controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or ITAR data cannot access Rio at this time. To access the High security Rio HPC, researchers need to request an Ivy Linux VM which serves as a login node.</p>
 
 {{< systems-boilerplate >}}
 
 # Overview
 
-Ivy consists of both virtual computing environments and secure storage. In order to obtain access to either system, users must 
+Ivy provides virtual computing environments (virtual machines) specifically designed for interactive and small-scale analysis of highly sensitive data. Ivy Linux VMs can also act as a frontend for accessing the Rio HPC environment, which is optimized for large-scale analysis of sensitive data. Project-specific storage volumes are seamlessly mounted to the VMs and made accessible on the HPC system, facilitating smooth transitions between tasks performed on the VM and the HPC environment. In order to obtain access to either system, users must 
 
 1. **Submit an account request,**
 2. **Complete the Information Security Awareness Training, and**
@@ -29,13 +28,11 @@ Ivy consists of both virtual computing environments and secure storage. In order
 * [Requesting Access](#requesting-access)
 * [Security Training](#training)
 * [High Security VPN](#high-security-vpn)
+* [Storage](#storage)
 * [Virtual Machines](#virtual-machines)
-* [JupyterLab Notebooks](#jupyterlab-notebooks)
+* [Using the Rio HPC System](#using-the-rio-hpc-system)
 * [Data Transfer In/Out of Ivy](#data-transfer-in-out-of-ivy)
-* [HIPAA Compliance](#hipaa-compliance)
-
-A summary description of the Ivy environment suitable for **grant applications** is available [here](/userinfo/computing-environments#ivy). 
-
+<!-- * [HIPAA Compliance](#hipaa-compliance)-->
 
 - - -
 
@@ -129,6 +126,10 @@ Once you have completed these three steps, you will be connected to the secure I
 
 - - -
 
+# Storage
+
+Ivy VM and Rio HPC have a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to either of these environments. Virtual machines do not come with any significant disk storage of their own. 
+
 # Virtual Machines
 
 A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign in to a single VM.
@@ -202,13 +203,9 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 
 
 
-
-
 ## Software
 
-Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by
-providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation
-upon request. See the lists below for options.
+Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation upon request. See the lists below for options.
 
 ### Preinstalled Software
 
@@ -247,8 +244,7 @@ upon request. See the lists below for options.
 
 ### Additional Approved Software (Available by Request)
 
-If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security
-and regulatory compliance and, if approved, will be installed for you.
+If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security and regulatory compliance and, if approved, will be installed for you.
 
 
 <div class="row" style="margin-bottom:2rem;">
@@ -384,9 +380,7 @@ After creating your conda environment, you can install additional libraries with
     
 Once installed on your VM, packages will persist and you will not need to install them again. You will only need to import them again in your code.
 
-## Storage
-
-Ivy VM has a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to Ivy. Virtual machines do not come with any significant disk storage of their own.  
+ 
 ## Scheduled Maintenance
 
 Beginning Sunday, April 14, your Ivy virtual machine (VM) will be rebooted on the 2nd Sunday of each month between 5:00 a.m. and 6:00 a.m. EST while RC engineers install security updates. Any sessions running during this period will be terminated. Windows and Linux VMs will be rebooted at the same time.
@@ -394,12 +388,7 @@ Beginning Sunday, April 14, your Ivy virtual machine (VM) will be rebooted on th
 If you have any questions or problems with your software applications after the security updates have been installed, you may [contact our user services team](https://www.rc.virginia.edu/form/support-request/?category=Ivy).
 - - -
 
-# JupyterLab Notebooks
-
-<div class="alert alert-danger">
-  As of August 31, 2019 Domino Data Lab will no longer be available within Ivy. Existing projects should be migrated to a virtual machine.
-  Interactive data sessions will be available using Jupyter Notebooks (coming soon!)
-</div>
+## JupyterLab Notebooks
 
 {{% callout %}}
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" align="right" style="max-width:20%;" />
@@ -410,9 +399,29 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 - - -
 
-# Data Transfer In/Out of Ivy {#data-transfer-in-out-of-ivy}
+# Using the Rio HPC System
 
-Moving sensitive data into the Ivy VMware platform is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “High-Security Research Standard Storage”, which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
+## Access
+
+Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above.
+
+As outlined above, VMs are available in various sizes. Please request a VM that is appropriately sized for your specific workflow. For larger groups or projects involving computationally intensive tasks, we recommend selecting a larger VM, with a preference for Small or above. 
+  
+## System Details
+
+### Hardware Configuration
+
+Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Rio also includes an NVIDIA HGX H200 GPU, and additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future.
+
+### Job Queues
+
+Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/). 
+
+For an introduction to the Rio HPC system, please see our [tutorial](https://learning.rc.virginia.edu/tutorials/rio-intro/).
+
+# Data Transfer In/Out of Ivy/Rio {#data-transfer-in-out-of-ivy}
+
+Moving sensitive data into the Ivy VM platform (and Rio) is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “High-Security Research Standard Storage”, which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
 
 <img style="max-width:100%;" alt="Ivy Secure DTN Flow" src="/images/ivy-dtn-flow.png" />
 
@@ -435,7 +444,7 @@ Before transferring files to Ivy, you will need Globus installed on the computer
 7. Once the data transfer is complete, you will be able to access the data in your VM by clicking the **High-Security Research Standard Storage** shortcut on your VM's desktop.
 
 - - -
-
+<!--
 # HIPAA Compliance
 
 The Ivy platform is HIPAA-compliant by design. From the <a href="https://research.virginia.edu/irb-hsr/protected-health-information-hipaa-regulations-and-research" target="_new">UVA Institutional Review Board for Health Sciences Research</a> (IRB-HSR):
@@ -458,8 +467,6 @@ All data imported into Ivy must be treated as highly sensitive data. Data and re
 
 <button onclick="topFunction()" id="scrollBtn" title="Go to top"><i class="fas fa-2x fa-angle-double-up"></i></button>
 
-
-<!--
 
 # Coming Soon - Secure HPC
 

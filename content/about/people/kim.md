@@ -3,6 +3,8 @@ draft = false
 date = "2024-05-31T11:15:10-05:00"
 title = "Jinwoo Kim"
 job_title = "Student"
+student_year = "2nd Year"
+student_type = "Undergraduate"
 lastname = "kim"
 biolink = true
 email = "eer6vt@virginia.edu"
@@ -23,6 +25,6 @@ Jinwoo is currently a second-year UVA student pursuing a major in computer scien
 B.S. Computer Science
 University of Virginia (Expected Graduation: 2026)
 
-**Summer 2024 Presentation:**
-{{< youtube Wz86jF-d5F4 >}}
+<!-- **Summer 2024 Presentation:**
+{{< youtube Wz86jF-d5F4 >}} -->
 

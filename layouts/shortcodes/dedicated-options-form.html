@@ -1,0 +1,60 @@
+<!-- Determine index of Dedicated Computing Entry -->
+{{ $services := $.Site.Data.service.service }}
+{{ $dedicated_computing_index := -1 }}
+{{ range $i, $service := $services }}
+  {{ if eq $service.label "Dedicated Computing" }}
+    {{ $dedicated_computing_index = $i }}
+  {{ end }}
+{{ end }}
+
+{{ $dedicated_computing := index $services $dedicated_computing_index }}
+{{ $options := index $dedicated_computing "options" }}
+
+<div id="dedicated-computing" style="border: 1px solid #ccc; padding: 15px; margin-top: 10px; border-radius: 5px;">
+    {{ range $options }}
+        <div class="form-check" style="margin: 10px 0; margin-left: 15px">
+            <input 
+                class="form-check-input hardware-checkbox" 
+                style="width: 20px; height: 20px; margin-right: 10px;" 
+                type="checkbox" 
+                id="{{ .hardware }}" 
+                data-hardware="{{ .hardware }}" 
+                name="hardware[]" 
+                value="{{ .hardware }}">
+            <label class="form-check-label" for="{{ .hardware }}">{{ .hardware }} ({{ .cores_per_node}} cores, {{ .mem_per_node}}) </label>
+            <!-- Placeholder for dynamic input -->
+            <div id="{{ .hardware }}-input-container" style="margin-left: 25px; margin-top: 10px;"></div>
+        </div>
+    {{ end }}
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const checkboxes = document.querySelectorAll(".hardware-checkbox");
+
+        checkboxes.forEach(function(checkbox) {
+            checkbox.addEventListener("change", function() {
+                const hardwareType = this.getAttribute("data-hardware");
+                const inputContainer = document.getElementById(`${hardwareType}-input-container`);
+
+                if (this.checked) {
+                    // Add input box for the hardware
+                    const inputBox = document.createElement("input");
+                    inputBox.setAttribute("type", "number");
+                    inputBox.setAttribute("name", `${hardwareType}-nodes`);
+                    inputBox.setAttribute("class", "form-control");
+                    inputBox.setAttribute("placeholder", `Enter number of nodes for ${hardwareType}`);
+                    inputBox.setAttribute("min", "1");
+                    inputBox.setAttribute("step", "1");
+                    inputBox.setAttribute("required", true);
+                    inputBox.style.marginTop = "5px";
+
+                    inputContainer.appendChild(inputBox);
+                } else {
+                    // Remove the input box if checkbox is unchecked
+                    inputContainer.innerHTML = "";
+                }
+            });
+        });
+    });
+</script>

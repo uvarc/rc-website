@@ -85,7 +85,6 @@ aliases = [ "/storage" ]
 
 - Personally identifying information (PII) is any information that can be used to identify a person. Examples of PII include social security number, passport number, driver’s license number, military identification number, or biometric records (e.g. photographic facial images, fingerprints, voice signature, etc.).
 - Health information that reveals an individual’s health condition and/or medical history, including information defined by the Health Insurance Portability and Accountability Act (HIPAA)
-- Cardholder data (CHD) such as credit card numbers, primary cardholder account numbers, cardholder names, expiration date, and/or service code
 
 {{< storage_main_page_second >}}
 

@@ -44,6 +44,11 @@ Course material and exercises are available through a companion site. Feel free 
 
 - - -
 
+# New Tutorials
+Specifically, check out these new tutorials!
+
+{{% new-tutorials %}}
+
 # Previous Workshops
 
 - Advanced Computing in the Cloud

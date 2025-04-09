@@ -2,7 +2,7 @@
 draft = false
 date = "2022-06-05T15:25:10-05:00"
 title = "Ahmad Sheikhzada, PhD"
-job_title = "Computational Scientist"
+job_title = "Research Computing Technical Support Manager"
 lastname = "sheikhzada"
 type = "people"
 biolink = false
@@ -13,8 +13,9 @@ images = [
 ]
 subjects = [
   "hpc",
-  "rivanna",
-  "parallel-computing"
+  "parallel-computing",
+  "data-analysis",
+  "python"
 ]
 +++
 

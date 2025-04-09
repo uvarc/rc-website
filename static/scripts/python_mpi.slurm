@@ -14,5 +14,5 @@ module load gcc openmpi
 module load miniforge
 source activate custom_env
 
-srun --export=ALL python myscript.py
+mpirun --export=ALL python myscript.py
 
