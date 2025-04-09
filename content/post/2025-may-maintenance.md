@@ -38,6 +38,7 @@ Slurm will be upgraded to 24.11.3.
 |openmpi    | 4.1.4-nofabric[-withoutverbs] | 4.1.4 |
 |openmpi    | 4.1.5-intel | 4.1.5 |
 |spaceranger| 3.1.1 | 3.1.3 |
+|texlive    | 2023 | 2025 |
 |tmux       | 2.5 | 3.4 |
 |trimgalore | 0.6.4 | 0.6.10 |
 {{< /table >}}
