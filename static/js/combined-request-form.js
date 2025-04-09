@@ -582,9 +582,8 @@
     // ===================================
     document.addEventListener("DOMContentLoaded", function() {
           // Hide fields as required
-          document.querySelector('#department').style.display = 'none';
-          document.querySelector('#classification').style.display = 'none';
-          document.querySelector('#discipline').style.display = 'none';
+          document.querySelector('#departmet_clasification_row').style.display = 'none';
+          document.querySelector('#discipline_row').style.display = 'none';
       });
 
     function setupEventHandlers() {
