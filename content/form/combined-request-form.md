@@ -110,7 +110,7 @@ private = true
               <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />
               <label class="control-label" for="new-or-renewal-2">Renewal</label>
             </div>
-            <div class="help-block col" style="width:8rem;">If this is your first request, select New. Otherwise select Renewal.</div>
+            <div class="help-block col tiny">If this is your first request, select New. Otherwise select Renewal.</div>
           </div>
           <div id="su-capacity" class="col form-item form-group">
             <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
