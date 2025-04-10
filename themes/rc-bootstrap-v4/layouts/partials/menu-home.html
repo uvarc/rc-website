@@ -1,110 +1,123 @@
 <div class="navbar" style="background-color:#232d4b;opacity: 95%;border-radius: 0;">
-  <div class="" style="background-color: #E57200;height:0.8rem;margin-left:-1rem;margin-right:-1rem;margin-top:-1rem;"></div>
+  <div class="" style="background-color: #E57200;height:0.8rem;margin-left:-1rem;margin-right:-1rem;margin-top:-1rem;">
+  </div>
   <div class="container" style="margin-top:0.8rem;">
     <a href="/"><img src="/images/logos/uvarc-knockout-logo-6-2022.png" alt="UVA Research Computing" style="" /></a>
   </div>
 </div>
 
 <nav class="navbar navbar-toggleable-md navbar-dark" style="background-color:#232d4b;border-radius: 0 !important;">
-  <div class="container">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">   
-      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-    </span>
-  </button>
+  <div class="container text-center">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon">
+        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+      </span>
+    </button>
 
-  {{ partial "search-modal.html" . }}
+    {{ partial "search-modal.html" . }}
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-  <ul class="navbar-nav mr-auto">
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">ABOUT</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/about/mission/">MISSION</a>
-      <a class="dropdown-item nav-clean" href="/about/people/">PEOPLE</a>
-      <a class="dropdown-item nav-clean" href="/about/students/">STUDENTS</a> 
+      <ul class="navbar-nav" style="column-gap: 1rem;">
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false" style="color:white;">ABOUT</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item nav-clean" href="/about/mission/">MISSION</a>
+            <a class="dropdown-item nav-clean" href="/about/people/">PEOPLE</a>
+            <a class="dropdown-item nav-clean" href="/about/students/">STUDENTS</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false" style="color:white;">GET STARTED</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item nav-clean" href="/userinfo/systems/">CHOOSE A SYSTEM</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/hpc/access/">REQUEST ACCESS</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/user-guide/">USER GUIDES</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false" style="color:white;">SERVICES</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item nav-clean" href="/service/high-performance-computing/">HIGH PERFORMANCE
+              COMPUTING</a>
+            <a class="dropdown-item nav-clean" href="/service/dac/">DATA ANALYTICS CENTER</a>
+            <a class="dropdown-item nav-clean" href="/service/dtc/">DIGITAL TECHNOLOGY CORE</a>
+            <a class="dropdown-item nav-clean" href="/service/imaging/">IMAGE PROCESSING & VISUALIZATION</a>
+            <a class="dropdown-item nav-clean" href="/service/bioinformatics/">BIOINFORMATICS</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/microservices/">CONTAINER SERVICES</a>
+            <a class="dropdown-item nav-clean" href="/service/cloud/">CLOUD SOLUTIONS</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/storage/">STORAGE</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item nav-clean" href="/userinfo/computing-environments/">GRANT PROPOSAL SUPPORT</a>
+            <a class="dropdown-item nav-clean" href="/form/support-request/">PROJECT CONSULTING</a>
+            <a class="dropdown-item nav-clean" href="/service/acknowledgement/">ACKNOWLEDGMENT</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item nav-clean" href="/service/status/">SERVICE STATUS</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false" style="color:white;">USER INFO</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item nav-clean" href="/userinfo/user-guide/">USER GUIDES</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/faq">FAQs</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/howtos">HOW-TOs</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item nav-clean" href="/userinfo/hpc">HPC</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/ivy">IVY</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/accord">ACCORD</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/microservices/">CONTAINER SERVICES</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/access-ci/">NSF ACCESS-CI</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/storage/">STORAGE</a>
+            <a class="dropdown-item nav-clean" href="/userinfo/data-transfer/">DATA TRANSFER</a>
+            <!-- <a class="dropdown-item nav-clean" href="/userinfo/omero">OMERO IMAGE DATABASE</a> -->
+            <a class="dropdown-item nav-clean" href="/userinfo/pricing/">PRICING</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+            aria-expanded="false" style="color:white;">EDUCATION</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item nav-clean" href="/education/workshops/">WORKSHOPS</a>
+            <a class="dropdown-item nav-clean" target="_new" href="https://learning.rc.virginia.edu/">COURSE
+              MATERIAL</a>
+            <a class="dropdown-item nav-clean" href="/education/rivanna-instructional">USING HPC FOR INSTRUCTION</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link nav-clean" href="/project/" style="color:white;">PROJECTS</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/support/"><button
+              style="font-size:95%;font-weight:700;font-family:'Roboto', sans-serif;background-color:#232d4b;color:white;border:solid 1px #ccc;"
+              class="btn btn-default" type="submit">USER SUPPORT</button></a>
+        </li>
+
+      </ul>
+
+      <!-- BEGIN SEARCH BOX -->
+      <div style="float:right;">
+        <button type="button" class="btn btn-default" style="background-color:#232d4b;color:white;border:none;"
+          data-toggle="modal" data-target=".search-modal"><i class="fas fa-search"
+            style="font-size:120%;color:white;"></i></button>
+      </div>
+      <!-- END SEARCH BOX -->
+
     </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">GET STARTED</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/userinfo/systems/">CHOOSE A SYSTEM</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/hpc/access/">REQUEST ACCESS</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/user-guide/">USER GUIDES</a>
-    </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">SERVICES</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/service/high-performance-computing/">HIGH PERFORMANCE COMPUTING</a>
-      <a class="dropdown-item nav-clean" href="/service/dac/">DATA ANALYTICS CENTER</a>
-      <a class="dropdown-item nav-clean" href="/service/dtc/">DIGITAL TECHNOLOGY CORE</a>
-      <a class="dropdown-item nav-clean" href="/service/imaging/">IMAGE PROCESSING & VISUALIZATION</a>
-      <a class="dropdown-item nav-clean" href="/service/bioinformatics/">BIOINFORMATICS</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/microservices/">CONTAINER SERVICES</a>
-      <a class="dropdown-item nav-clean" href="/service/cloud/">CLOUD SOLUTIONS</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/storage/">STORAGE</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item nav-clean" href="/userinfo/computing-environments/">GRANT PROPOSAL SUPPORT</a>
-      <a class="dropdown-item nav-clean" href="/form/support-request/">PROJECT CONSULTING</a>
-      <a class="dropdown-item nav-clean" href="/service/acknowledgement/">ACKNOWLEDGMENT</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item nav-clean" href="/service/status/">SERVICE STATUS</a>
-    </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">USER INFO</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/userinfo/user-guide/">USER GUIDES</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/faq">FAQs</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/howtos">HOW-TOs</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item nav-clean" href="/userinfo/hpc">HPC</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/ivy">IVY</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/accord">ACCORD</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/microservices/">CONTAINER SERVICES</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/access-ci/">NSF ACCESS-CI</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/storage/">STORAGE</a>
-      <a class="dropdown-item nav-clean" href="/userinfo/data-transfer/">DATA TRANSFER</a>
-      <!-- <a class="dropdown-item nav-clean" href="/userinfo/omero">OMERO IMAGE DATABASE</a> -->
-      <a class="dropdown-item nav-clean" href="/userinfo/pricing/">PRICING</a>
-    </div>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link nav-clean" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white;margin-right:1rem;">EDUCATION</a>
-    <div class="dropdown-menu">
-      <a class="dropdown-item nav-clean" href="/education/workshops/">WORKSHOPS</a>
-      <a class="dropdown-item nav-clean" target="_new" href="https://learning.rc.virginia.edu/">COURSE MATERIAL</a>
-      <a class="dropdown-item nav-clean" href="/education/rivanna-instructional">USING HPC FOR INSTRUCTION</a>
-    </div>
-  </li>
-
-  <li class="nav-item">
-    <a class="nav-link nav-clean" href="/project/" style="color:white;margin-right:2rem;">PROJECTS</a>
-  </li>
-
-  <li class="nav-item">
-    <a href="/support/"><button style="font-size:95%;font-weight:700;font-family:'Roboto', sans-serif;background-color:#232d4b;color:white;border:solid 1px #ccc;" class="btn btn-default" type="submit">USER SUPPORT</button></a>
-  </li>
-
-  </ul>
-
-  <!-- BEGIN SEARCH BOX -->
-  <div style="float:right;">
-    <button type="button" class="btn btn-default" style="background-color:#232d4b;color:white;border:none;" data-toggle="modal" data-target=".search-modal"><i class="fas fa-search" style="font-size:120%;color:white;"></i></button>
-  </div>
-  <!-- END SEARCH BOX -->
-
-  </div>
 </nav>
 
 <script>
-$('.search-modal').on('shown.bs.modal', function () {
+  $('.search-modal').on('shown.bs.modal', function () {
     $('#qt').focus();
-})
+  })
 </script>
