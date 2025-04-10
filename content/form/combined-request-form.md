@@ -99,8 +99,8 @@ private = true
 
       <!-- New or Renewal (First section for SU requests) -->
       <fieldset class="form-item form-group form-type-radios form-group">
-        <legend class="control-label h6 mb-2">New or Renewal <span class="form-required" title="This field is required.">*</span></legend>
-        <div class="row">
+      <div class="row">
+         <legend class="control-label h6 mb-2">New or Renewal <span  class="form-required" title="This field is required.">*</ span></legend>
           <div id="new-or-renewal-options" class="form-radios col">
             <div class="form-item form-type-radio radio">
               <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" class="form-radio" />
@@ -110,16 +110,16 @@ private = true
               <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />
               <label class="control-label" for="new-or-renewal-2">Renewal</label>
             </div>
+            <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
           </div>
-          
-        <div id="su-capacity" class="col form-item form-group">
-          <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
-          <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
-          <p class="tiny">The number of SU's requested.</p>
-        </div>
-      </fieldset>
-      <div class="help-block col">If this is your first request,   select New. Otherwise select Renewal.</div>
+          <div id="su-capacity" class="col form-item form-group">
+            <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
+            <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
+           <p class="tiny">The number of SU's requested.</p>
+          </div>
       </div>
+      </fieldset>
+
       <!-- Grouper/MyGroups Selection -->
       <div id="mygroups-group-container" style="display: none;">
         <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
