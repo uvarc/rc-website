@@ -113,12 +113,13 @@ private = true
           </div>
           <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
         </div>
-      </fieldset>
-<div id="su-capacity" class="col form-item form-group">
+        <div id="su-capacity" class="col form-item form-group">
           <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
           <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
           <p class="tiny">The number of SU's requested.</p>
         </div>
+      </fieldset>
+
       <!-- Grouper/MyGroups Selection -->
       <div id="mygroups-group-container" style="display: none;">
         <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
@@ -210,12 +211,9 @@ private = true
               </div>
               <div class="form-item form-type-radio radio">
                 <input required="required" type="radio" id="type-of-request-increase" name="type-of-request" value="increase-storage" class="form-radio">
-                <label for="type-of-request-increase">Increase size of existing share</label>
+                <label for="type-of-request-increase">Update existing share</label>
               </div>
-              <div class="form-item form-type-radio radio">
-                <input required="required" type="radio" id="type-of-request-decrease" name="type-of-request" value="decrease-storage" class="form-radio">
-                <label for="type-of-request-decrease">Decrease size of existing share</label>
-              </div>
+
               <div class="form-item form-type-radio radio">
                 <input required="required" type="radio" id="type-of-request-retire" name="type-of-request" value="retire-storage" class="form-radio">
                 <label for="type-of-request-retire">Retire existing share</label>
