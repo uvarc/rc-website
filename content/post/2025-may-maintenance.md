@@ -15,8 +15,10 @@ All systems are expected to return to service by **Wednesday, May 28** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
 
-### Slurm
-Slurm will be upgraded to 24.11.3.
+### System upgrades
+- Operating system: Rocky 8.10
+- Slurm: 24.11.3
+- NVIDIA driver: 570.124.06 (CUDA 12.8)
 
 ### Modules
 
@@ -25,6 +27,7 @@ Slurm will be upgraded to 24.11.3.
 |---|---|---|
 |afni       | 23.1.10 | 25.0.12 |
 |cellranger | 8.0.0 | 9.0.1 |
+|code-server| 4.92.1 | 4.99.1 |
 |cmake      | 3.23.3, 3.24.3 | 3.28.1, 4.0.0 |
 |cutadapt   | 3.4 | 4.9 |
 |fastqc     | 0.11.5 | 0.12.1 |
