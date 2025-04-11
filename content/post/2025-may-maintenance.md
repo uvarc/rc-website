@@ -27,7 +27,7 @@ All systems are expected to return to service by **Wednesday, May 28** at 6 am.
 |---|---|---|
 |afni       | 23.1.10 | 25.0.12 |
 |cellranger | 8.0.0 | 9.0.1 |
-|code-server| 4.92.1 | 4.99.1 |
+|code-server| 4.92.2 | 4.99.1 |
 |cmake      | 3.23.3, 3.24.3 | 3.28.1, 4.0.0 |
 |cutadapt   | 3.4 | 4.9 |
 |fastqc     | 0.11.5 | 0.12.1 |
