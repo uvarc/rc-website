@@ -13,9 +13,8 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_diya_tomar.jpg"
 subjects = [
-  "markdowns",
   "python",
-  "web development"
+  "software-development"
 ]
 active = false
 +++

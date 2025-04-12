@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_jennifer_vo.jpg"
 subjects = [
-  "java", "r", "unity"
+  "java", "r", "va-whpc"
 ]
 active = true
 +++

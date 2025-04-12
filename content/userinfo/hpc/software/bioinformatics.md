@@ -9,7 +9,7 @@ categories = [
   "bioinformatics"
 ]
 date = "2019-06-23T08:37:46-05:00"
-tags = ["bio"
+tags = ["bio","bioinformatics","computational-biology","docking"
 ]
 draft = false
 shorttitle = "Bioinformatics"
