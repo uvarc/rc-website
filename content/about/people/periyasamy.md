@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_hariprasad_periyasamy.jpeg"
 subjects = [
-  "python", "software"
+  "python", "software-development","api"
 ]
 active = true
 +++

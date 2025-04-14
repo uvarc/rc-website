@@ -4,7 +4,7 @@ description = ""
 title = "Container Services"
 date = "2023-02-23T23:59:16-05:00"
 draft = false
-tags = ["compute","containers","hybrid","infrastructure","docker","kubernetes","api","k8s"]
+tags = ["compute","containers","hybrid","infrastructure","docker","kubernetes","api","k8s","software-development"]
 categories = ["userinfo","containers"]
 images = [""]
 +++
@@ -165,13 +165,13 @@ Microservices may not run efficiently for all use cases. Some scenarios that can
 </div>
 
 - - -
-
+<!--
 # Pricing
 
 Container services hosted by UVA Research Computing fall under this pricing structure:
 
 {{< pricing microservices >}}
-
+-->
 - - -
 
 # Apptainer

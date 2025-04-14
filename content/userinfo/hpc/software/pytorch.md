@@ -2,7 +2,7 @@
 type = "rivanna"
 date = "2020-02-28T08:37:46-05:00"
 tags = [
-  "rivanna", "software", "machine learning"
+  "rivanna", "software", "machine-learning","deep-learning"
 ]
 draft = false
 modulename = "pytorch"

@@ -27,7 +27,7 @@ Open OnDemand can be accessed from off Grounds without the <a href="https://virg
 # The Dashboard
 Once you log in, you are automatically redirected to the Open OnDemand dashboard. The dashboard may contain information about upcoming changes and maintenance work that can affect your jobs, so please read all announcements carefully. Keep the dashboard tab open until you are ready to end your session and log out.
 
-<img src="/images/rivanna/openondemand-dash.png" alt="Open OnDemand Dashboard" class="project-inset" style="float:right;max-width:100%;" />
+<img src="/images/rivanna/ood-dash.png" alt="Open OnDemand Dashboard" class="project-inset" style="float:right;max-width:100%;" />
 
 The dashboard provides access to all Open OnDemand services and applications. These include
 

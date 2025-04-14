@@ -14,7 +14,7 @@ images = [
 subjects = [
   "hpc",
   "parallel-computing",
-  "machine/deep learning",
+  "data-analysis",
   "python"
 ]
 +++

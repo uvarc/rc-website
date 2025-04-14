@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_bhargav_garrevenkata.jpg"
 subjects = [
-    "webdev", "video", "rest-apis", "scripting"
+    "software-development", "api"
 ]
 active = true
 +++

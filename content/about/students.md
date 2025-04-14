@@ -32,12 +32,23 @@ For any questions, please email <a href="mailto:rc-studentjobs@virginia.edu">rc-
 {{< /rawhtml >}}
 
 <h3 style="margin-top: 2rem; margin-bottom: 2rem">Interested in Becoming a Student Worker?</h3>
+<div id="button-container>
 
-{{< button 
-   button-url="https://uva.wd1.myworkdayjobs.com/UVAStudentJobs/job/Charlottesville-VA/Research-Computing-Student-Worker--Student-Wage-_R0066673" 
-   button-class="primary" 
-   button-text="Apply for the Student Worker Position" 
->}}
+<style>
+@media (max-width: 600px) {
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+</style>
 
+<div class="button-wrapper">
+  {{< button 
+     button-url="https://uva.wd1.myworkdayjobs.com/UVAStudentJobs/job/Charlottesville-VA/Research-Computing-Student-Worker--Student-Wage-_R0066673" 
+     button-class="primary" 
+     button-text="Apply for the Student Worker Position" 
+  >}}
+</div>
 
 
