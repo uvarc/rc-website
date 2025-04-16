@@ -15,6 +15,7 @@ tags = [
   "consulting",
   "collaboration",
   "rc",
+  "drug-discovery",
 ]
 draft = false
 

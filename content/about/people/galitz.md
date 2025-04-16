@@ -12,7 +12,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_matthew_galitz.jpg"
 email = "ykk6rh@virginia.edu"
-subjects = ["python", "scripting", "software engineering"]
+subjects = ["python", "software-development"]
 active = true
 +++
 
