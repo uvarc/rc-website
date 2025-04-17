@@ -210,8 +210,8 @@ private = true
                 <label for="type-of-request-new">Create new storage share</label>
               </div>
               <div class="form-item form-type-radio radio">
-                <input required="required" type="radio" id="type-of-request-increase" name="type-of-request" value="increase-storage" class="form-radio">
-                <label for="type-of-request-increase">Update existing share</label>
+                <input required="required" type="radio" id="type-of-request-update" name="type-of-request" value="update-storage" class="form-radio">
+                <label for="type-of-request-update">Update existing share</label>
               </div>
 
               <div class="form-item form-type-radio radio">

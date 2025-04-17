@@ -306,13 +306,13 @@
                     formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
                     formData.sharedSpaceName = $('#shared-space-name').val();//
                     formData.project_title = $('#project-title').val();
-                    formData.storage_size = $('#capacity').val();
-                }else if(formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage') {
-                    formData.storage_size = $('#capacity').val();
+                    formData.request_size = $('#capacity').val();
+                }else if(formData.typeOfRequest === 'update-storage') {
+                    formData.request_size = $('#capacity').val();
                     var checkedRadio=$('input[name="selected-st"]:checked')               
                     formData.sharedSpaceName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
                     formData.storageTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
-                    formData.storage_size = $('#capacity').val();
+                    formData.request_size = $('#capacity').val();
                 }
                 if (formData.typeOfRequest !== 'new-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
@@ -489,7 +489,7 @@
             .text(message);
         $('#combined-request-form').prepend(errorDiv);
        
-        setTimeout(() => errorDiv.remove(), 10000);
+        //setTimeout(() => errorDiv.remove(), 10000);
     }
 
     function handleApiError(error) {
@@ -552,8 +552,7 @@
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
             $('#storage-fields #existing-projects-storage').hide();
         } else {
-            if ($('#storage-fields input[name="type-of-request"]:checked').val() === 'increase-storage' ||
-                $('#storage-fields input[name="type-of-request"]:checked').val() === 'decrease-storage') {
+            if ($('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage') {
                 $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
             }
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
@@ -687,7 +686,7 @@
         try {
             const isRenewal = formData.newOrRenewal === 'renewal';
             var method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
-            if(formData.requestType==="storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')){
+            if(formData.requestType==="storage" && (formData.typeOfRequest === 'update-storage')){
                 method = 'PUT'; // Use PUT for storage changes
             }
             console.log(`Submitting ${isRenewal ? 'Renewal (PUT)' : 'New Request (POST)'}...`);
@@ -960,7 +959,7 @@
         const formData = collectFormData();
         const userId = getUserId();
         const billingDetails = getBillingDetails();
-        const storageChange = formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
+        const storageChange = formData.typeOfRequest === 'update-storage';
         var selectedSU = "n/a";
         let selectedGroup, selectedTier;
     
@@ -1038,7 +1037,7 @@
         }
     
         // Handle storage adjustments (no changes)
-        if (formData.requestType === "storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')) {
+        if (formData.requestType === "storage" && (formData.typeOfRequest === 'update-storage')) {
             // Construct minimal payload for PUT (change)
             const changePayload = {
                 "storage": {
@@ -1064,14 +1063,14 @@
                 "group_name": selectedGroup,                
                 "data_agreement_signed": $('#data-agreement').is(':checked'),
                 "pi_uid": userId,
-                "project_name": "",
+                "project_name": formData.project_title?.trim() || "Test Project",
                 "project_desc": "",
                 "resources": {
                     "storage": {
                         [hpcServiceUnitKey]: {
                             "tier": selectedTier,
                             "shared_space_name": formData.sharedSpaceName?.trim() || "Shared Space",
-                            "storage_size": formData.storage_size || "0",
+                            "request_size": formData.request_size || "0",
                             "project_title": formData.project_title?.trim() || "Project Title",                            
                             "billing_details": billingDetails
                         }
@@ -1117,7 +1116,7 @@
         const resourceWrapper = payload[0];
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
         var isStorage = $('select[name="request-type"]').val() === 'storage';
-        var isStorageChange=$('input[name="type-of-request"]:checked').val() === 'increase-storage' || $('input[name="type-of-request"]:checked').val() === 'decrease-storage';
+        var isStorageChange=$('input[name="type-of-request"]:checked').val() === 'update-storage';
         // **If it's a renewal, user_resources array should NOT be validated for new entries**
         if (isRenewal) {
             if (!resourceWrapper.group_name || !resourceWrapper.resources?.hpc_service_units) {
@@ -1138,7 +1137,7 @@
                 if (!group.tier) {
                   console.log(`You must select a storage tier.`);
                 } 
-                if(!group.storage_size || group.storage_size === "0") {
+                if(!group.request_size || group.request_size === "0") {
                     console.log(`You must have a storage size > 0.`);
                 }
                 if(isStorageChange){
@@ -1418,7 +1417,7 @@
             if(resourceType==="Storage" && resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
-                    const storageSize = details.storage_size ? `${details.storage_size} TB` : "N/A";
+                    const storageSize = details.request_size ? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const request_status=details.request_status || "N/A";
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
@@ -1469,7 +1468,7 @@
             if (resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
-                    const storageSize = details.storage_size? `${details.storage_size} TB` : "N/A";
+                    const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
                     const sharedSpace = details.shared_space_name ? `${details.shared_space_name}` : "N/A";
