@@ -65,7 +65,7 @@ private = true
         <thead>
             <tr>
                 <th scope="col">Type</th>
-                <th scope="col">Project/Class</th>
+                <th scope="col">Project</th>
                 <th scope="col">Group</th>
                 <th scope="col">Tier</th>
                 <th scope="col">Size/Count</th>
@@ -165,9 +165,11 @@ private = true
             <thead>
               <tr>
                 <th>Select</th>
-                <th>Project/Class</th>
+                <th>Project</th>
                 <th>Group</th>
                 <th>Tier</th>
+                <th>Count</th>
+                <th>Update Date</th>
               </tr>
             </thead>
             <tbody id="allocation-projects-tbody">

@@ -1446,7 +1446,7 @@
         const { userResources } = parseConsoleData(apiResponse);
         const suTableBody = $('#storage-projects-tbody');
         suTableBody.empty();
-    
+        console.log("***********" + userResources[0].project_name);
         if (!Array.isArray(userResources) || userResources.length === 0) {
             suTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
             return;
@@ -1498,7 +1498,6 @@
     const { userResources } = parseConsoleData(apiResponse);
     const suTableBody = $('#allocation-projects-tbody');
     suTableBody.empty();
-
     if (!Array.isArray(userResources) || userResources.length === 0) {
         suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
         return;
@@ -1526,7 +1525,8 @@
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
                         <td>${tier}</td>
-                        <td>${requestCount} | ${updateDate}</td>
+                        <td>${requestCount}</td>
+                        <td>${updateDate}</td>
                     </tr>
                 `;
                 suTableBody.append(row);
