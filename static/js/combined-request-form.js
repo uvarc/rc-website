@@ -1446,7 +1446,6 @@
         const { userResources } = parseConsoleData(apiResponse);
         const suTableBody = $('#storage-projects-tbody');
         suTableBody.empty();
-        console.log("***********" + userResources[0].project_name);
         if (!Array.isArray(userResources) || userResources.length === 0) {
             suTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
             return;
@@ -1490,7 +1489,7 @@
                 });
             }
         });
-    
+        document.getElementById("new-project-name").value = userResources[0].project_name
         console.log("Existing Service Units table updated!");
     }
 
@@ -1534,7 +1533,7 @@
             });
         }
     });
-
+    document.getElementById("new-project-name").value = userResources[0].project_name
     console.log("Existing Service Units table updated!");
 }
 
