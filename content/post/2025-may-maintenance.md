@@ -22,6 +22,13 @@ All systems are expected to return to service by **Wednesday, May 28** at 6 am.
 
 ### Modules
 
+Default version changes include:
+- cuda/12.4.1 &rarr; 12.8.0
+- nvhpc/24.5 &rarr; 25.3
+- R/4.4.1 &rarr; 4.5.0
+
+(The original defaults are not removed.)
+
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
