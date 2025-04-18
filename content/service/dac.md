@@ -168,8 +168,8 @@ Consultants
 * Ed Hall, PhD
 * [Kathryn Linehan, PhD](/about/people/linehan/)
 * [Priyanka Prakash, PhD](/about/people/prakash/)
-* Andrew Strumpf
-* Deb Triant, PhD
+* [Andrew Strumpf] (/about/people/strumpf/)
+* [Deb Triant, PhD] (/about/people/triant/)
 
 
   
