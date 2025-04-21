@@ -60,7 +60,6 @@ jobs:
             --max-connections=10
             --max-connections-per-host=1
             --rate-limit=5                   
-            --max-response-body-size=4096
             --accepted-status-codes=200..300,301,403,406,999,429
             --skip-tls-verification
             --timeout=50
