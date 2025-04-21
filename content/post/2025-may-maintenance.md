@@ -36,6 +36,7 @@ Default version changes include:
 | Module | Remove | Replace with |
 |---|---|---|
 |afni       | 23.1.10 | 25.0.12 |
+|bracken    | 2.9 | 3.1 |
 |cellranger | 8.0.0 | 9.0.1 |
 |code-server| 4.92.2 | 4.99.1 |
 |cmake      | 3.23.3, 3.24.3 | 3.28.1, 4.0.0 |
