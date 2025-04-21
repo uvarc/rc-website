@@ -604,8 +604,9 @@
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
             //toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
-            
-        });
+            });
+        $(document).on('change', 'input[name="allocation-choice"]', toggleAllocationTierOptions);
+
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
     
