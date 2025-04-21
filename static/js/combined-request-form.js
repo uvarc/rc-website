@@ -838,7 +838,7 @@
         if (billingData) {
             if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
                 $('#funding-number').val(billingData[0].project || '');
-                $('#funding-project').checked = true
+                $('#funding-project').prop('checked', true);
             }
             
             $('#financial-contact').val(billingData[0].financial_contact || '');
