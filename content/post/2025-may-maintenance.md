@@ -22,6 +22,8 @@ All systems are expected to return to service by **Wednesday, May 28** at 6 am.
 
 ### Modules
 
+The software stack is migrated from `/sfs/applications` to `/sfs/gpfs/tardis/applications` and the `/apps` symbolic link is updated accordingly. Unless the full path is required, users should simply use `/apps`.
+
 Default version changes include:
 - cuda/12.4.1 &rarr; 12.8.0
 - nvhpc/24.5 &rarr; 25.3
