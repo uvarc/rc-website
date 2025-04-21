@@ -537,6 +537,9 @@
         if (isNew && !isRenew) {
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
+            $('#su-quantity').val(100000);
+            document.getElementById("su-quantity").disabled = true;
+
         } else if(!isNew && isRenew) {
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
