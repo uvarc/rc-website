@@ -112,11 +112,6 @@ private = true
             </div>
             <div class="help-block col tiny">If this is your first request, select New. Otherwise select Renewal.</div>
           </div>
-          <div id="su-capacity" class="col form-item form-group">
-            <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
-            <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
-           <p class="tiny">The number of SU's requested.</p>
-          </div>
       </div>
       </fieldset>
 
@@ -178,7 +173,11 @@ private = true
           </table>
         </fieldset>
       </div>
-      
+      <div id="su-capacity" class="col form-item form-group">
+            <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
+            <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
+           <p class="tiny">The number of SU's requested.</p>
+      </div>
       <!-- Project/Class Name (Only for New requests) -->
       <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
         <div class="form-item form-group form-type-textfield form-group">
