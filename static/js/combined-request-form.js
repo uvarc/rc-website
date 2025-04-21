@@ -537,9 +537,6 @@
         if (isNew && !isRenew) {
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
-            $('#su-quantity').val(100000);
-            document.getElementById("su-quantity").disabled = true;
-
         } else if(!isNew && isRenew) {
             $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
@@ -576,7 +573,19 @@
             $('#storage-tier-options #standard-data').show();
         }
     }
+    
+    function toggleAllocationTierOptions() {
+        const isStandard = $('#allocation-tier-options input[name="allocation-choice"]:checked').val() === 'Standard';
 
+        // Explicitly show or hide tier-specific sections
+        if (isStandard) {
+            $('#su-quantity').val(100000);
+            document.getElementById("su-quantity").disabled = true;
+        } else {
+            $('#su-quantity').val(1000);
+            document.getElementById("su-quantity").disabled = false;
+        }
+    }
     
 
     // ===================================
