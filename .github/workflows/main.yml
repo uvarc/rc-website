@@ -60,7 +60,7 @@ jobs:
             --max-connections=10
             --accepted-status-codes=200..300,301,403,406,999,429
             --skip-tls-verification
-            --timeout=1000
+            --timeout=200
             --exclude="(https://rci.hpc.virginia.edu/xdmod/|https://groups.identity.virginia.edu|https://fastx.hpc.virginia.edu|https://uvarc.io/support|https://services.rc.virginia.edu/)"
     
   Slack:
