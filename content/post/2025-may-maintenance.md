@@ -26,6 +26,7 @@ The software stack is migrated from `/sfs/applications` to `/sfs/gpfs/tardis/app
 
 Default version changes include:
 - cuda/12.4.1 &rarr; 12.8.0
+- miniforge/24.3.0-py3.11 &rarr; 24.11.3-py3.12
 - nvhpc/24.5 &rarr; 25.3
 - R/4.4.1 &rarr; 4.5.0
 
