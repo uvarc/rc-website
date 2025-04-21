@@ -16,7 +16,7 @@ subjects = [
   "reinforcement-learning",
   "machine-learning",
   "python",
-  "software-engineering"
+  "software-development"
 ]
 active = false
 +++

@@ -54,7 +54,7 @@ We are committed to enhancing the quality and impact of research across Grounds 
 				<ul>
 				<li>Project feasibility and best practices advising</li>
 				<li>Software and compute platform selection and configuration</li>
-				<li><a style="" href="/service/tiers/#tier-1-training--technical-support" target="_new">RC Systems Training</a></li>
+				<li><a style="" href="/service/tiers/#tier-1-training-technical-support" target="_new">RC Systems Training</a></li>
 				</ul>
 			</td>
 	</tr>
@@ -64,7 +64,7 @@ We are committed to enhancing the quality and impact of research across Grounds 
 				<img src="/images/dac/ai-generated-7957989_1280.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
 				We assist researchers with effective and efficient use of HPC resources, including: 
 				<ul>
-				<li><a style="" href="/service/tiers/#tier-1-training--technical-support" target="_new">Technical Support</a></li>
+				<li><a style="" href="/service/tiers/#tier-1-training-technical-support" target="_new">Technical Support</a></li>
 				<li>Best practices advising</li>
 				<li>Code parallelization, optimization, and debugging</li>
 				</ul>

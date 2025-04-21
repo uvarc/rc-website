@@ -23,7 +23,7 @@ draft = false
 We offer a variety of services, most of which are provided at no charge to the researcher. 
 
 
-# Training and Technical Support
+# Training and Technical Support {#tier-1-training-technical-support}
 
 <img src="/images/dac/maya-maceka-yW-Qgw_IJXg-unsplash.jpg" style="float:right;" class="project-inset" />
 
