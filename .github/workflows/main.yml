@@ -61,6 +61,7 @@ jobs:
             --accepted-status-codes=200..300,301,403,999,429
             --skip-tls-verification
             --timeout=200
+            --exclude '^https://128\.143\.245\.137(/|$)'
     
   Slack:
     name: Error Notification
