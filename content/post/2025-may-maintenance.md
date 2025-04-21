@@ -38,16 +38,22 @@ Default version changes include:
 |cmake      | 3.23.3, 3.24.3 | 3.28.1, 4.0.0 |
 |cutadapt   | 3.4 | 4.9 |
 |fastqc     | 0.11.5 | 0.12.1 |
+|fsl        | 6.0.7.6 | 6.0.7.17 |
 |gcc        | 13.3.0 | 14.2.0 |
 |go         | 1.21.4 | 1.23.6 |
 |intel      | 2024.0 | 2025.0 |
+|jupyterlab | 3.6.3-py3.11 | 4.3.6-py3.12 |
+|kraken2    | 2.1.3 | 2.1.5 |
 |mathematica| 11.2 | 14.2 |
 |matlab     | R2022b | R2024b |
 |multiqc    | 1.14 | 1.27.1 |
 |nextflow   | 23.04.1 | 24.10.5 |
 |openmpi    | 4.1.4-nofabric[-withoutverbs] | 4.1.4 |
 |openmpi    | 4.1.5-intel | 4.1.5 |
+|perl       | 5.36.0 | 5.40.2 |
+|ruby       | 3.1.2 | 3.4.3 |
 |spaceranger| 3.1.1 | 3.1.3 |
+|sumo       | 1.14.1 | 1.22.0 |
 |texlive    | 2023 | 2025 |
 |tmux       | 2.5 | 3.4 |
 |trimgalore | 0.6.4 | 0.6.10 |
