@@ -72,7 +72,7 @@ Refer to the [official documentation](https://github.com/google-deepmind/alphafo
 
 We prepared a Docker image based on the official Dockerfile with some modifications. 
 
-- AlphaFold does not use TensorFlow on the GPU (instead it uses JAX). See [issue](https://github.com/deepmind/alphafold/issues/88). Changed `tensorflow` to `tensorflow-cpu`.
+- AlphaFold does not use TensorFlow on the GPU (instead it uses JAX). See [issue](https://github.com/google-deepmind/alphafold/issues/88). Changed `tensorflow` to `tensorflow-cpu`.
 - There is no need to have system CUDA libraries since they are already included in the conda environment.
 - Switched to micromamba instead of Miniconda.
 
@@ -92,7 +92,7 @@ For your convenience, we have prepared a launch script `run` that takes care of 
 
 1. The database and models are stored in `$ALPHAFOLD_DATA_PATH`.
 1. A cache file `ld.so.cache` will be written to `/etc`, which is not allowed on the HPC system. The workaround is to bind-mount e.g. the current working directory to `/etc` inside the container. `[-B .:/etc]`
-1. You must launch AlphaFold from `/app/alphafold` inside the container due to [this issue](https://github.com/deepmind/alphafold/issues/32). `[--pwd /app/alphafold]`
+1. You must launch AlphaFold from `/app/alphafold` inside the container due to [this issue](https://github.com/google-deepmind/alphafold/issues/32). `[--pwd /app/alphafold]`
 1. The `--nv` flag enables GPU support.
 
 ### Explanation of AlphaFold flags
