@@ -644,12 +644,12 @@
         $(document).on("change", 'input[name="selected-su"]', function (event) {
             
                 // Get the currently checked radio button (in case of multiple triggers)
-               /* const $selectedRadio = $('input[name="selected-su"]:checked');
+                const $selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
                 const fullText = $parentRow[0].cells[4].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
-                if (match) {
+                /*if (match) {
                     const number = parseInt(match[1]);
                     $('#su-quantity').val(number); // Update the SU quantity field with the selected row's SU count
                     console.log("Selected SUs:", number); // Logs: 5000
