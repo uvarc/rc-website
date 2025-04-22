@@ -735,7 +735,7 @@
                 <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
             `);
         $('#combined-request-form').prepend(errorDiv);
-        setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+        //setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
         console.error("Validation errors:", errors);
     }
     
