@@ -453,7 +453,7 @@
                 .text(message);
             $('#combined-request-form').prepend(errorDiv);
             $('html, body').animate({ scrollTop: 0 }, 'slow');
-            setTimeout(() => errorDiv.remove(), 10000);
+            //setTimeout(() => errorDiv.remove(), 10000);
         }
         
         function showSuccessMessage(message) {
