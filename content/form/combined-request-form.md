@@ -222,13 +222,6 @@ private = true
             </div>
           </fieldset>
         </div>
-        <!-- Storage Capacity -->
-        <div id="storage-capacity" class="col form-item form-group">
-          <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
-          <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
-          <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
-        </div>
-      </div>
 
       <!-- Grouper/MyGroups Selection -->
       <div id="storage-mygroups-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em;"> 
@@ -252,9 +245,7 @@ private = true
                 <th>Group</th>
                 <th>Tier</th>
                 <th>Shared Space</th>
-                <th>Current Size 
-                     <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
-                </th>
+                <th>Current Size</th>
               </tr>
             </thead>
             <tbody id="storage-projects-tbody">
@@ -295,22 +286,21 @@ private = true
         </div>
       </div>
 
-      <!-- Shared Space Name -->
-      <div id="shared-space-name-container" style="display: none; margin-top:1em;" class="new-request-only">
-        <div class="form-item form-type-textarea form-group">
-          <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
-          <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-          <p class="tiny">This is the name to be applied to your shared storage space. By default, the space will be named according to the Grouper/MyGroups group associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
+              <!-- Storage Capacity -->
+        <div id="storage-capacity" class="col form-item form-group">
+          <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
+          <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
+          <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
         </div>
       </div>
 
       <!-- Project Title -->
-      <div id="project-title-container" style="display: none; margin-top:1em;" class="new-request-only">
+    <div id="project-title-container" style="display: none;margin-top:1em;" class="new-request-only">
         <div class="form-item form-group form-item form-type-textarea form-group"> 
           <label class="control-label" for="project-title">Project Title <span class="form-required" title="This field is required.">*</span></label>
           <input required="required" class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
         </div>
-      </div>
+    </div>
     </div>
     <!-- Billing Information Section -->
     <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
