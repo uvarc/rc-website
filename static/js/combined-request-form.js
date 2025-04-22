@@ -52,7 +52,7 @@
 
     let apiMetadata = {};
 
-    let consoleData = [];
+    let  consoleData = [];
 
     // ===================================
     // CSS Styles
@@ -550,13 +550,13 @@
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage) {
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
-            $('#storage-fields #existing-projects-storage').hide();
+            $('#existing-projects-storage').hide();
         } else {
             if ($('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage') {
                 $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
             }
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
-            $('#storage-fields #existing-projects-storage').show();
+            $('#existing-projects-storage').show();
         }
     }
     
@@ -632,7 +632,7 @@
                 }
                 
                 // Call your updateBilling method with the parsed data
-                updateBilling(billingData);
+                 (billingData);
             }
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
