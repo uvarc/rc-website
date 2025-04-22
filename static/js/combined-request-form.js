@@ -653,6 +653,7 @@
                     const number = parseInt(match[1]);
                     $('#su-quantity').val(number); // Update the SU quantity field with the selected row's SU count
                     console.log("Selected SUs:", number); // Logs: 5000
+                    disabledownsize(su-quantity);
                 }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
@@ -847,6 +848,15 @@
             console.warn(`No limits found for storage tier: ${tierType}`);
         }
     }
+    function disabledownsize() {
+        const inputField = document.getElementById(inputId);
+        inputField.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') {
+            e.preventDefault();
+          }
+        });
+    }
+
     function updateBilling(billingData) {
         if (billingData) {
             if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
