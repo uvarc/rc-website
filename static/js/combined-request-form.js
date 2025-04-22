@@ -849,10 +849,22 @@
         }
     }
     function disabledownsize(inputId) {
-        const inputField = document.getElementById(inputId);
-        inputField.addEventListener('keydown', function(e) {
-          if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') {
-            e.preventDefault();
+        const input = document.getElementById(inputId);
+        if (!input) return;
+
+        // Get the current value to treat as the minimum allowed going forward
+         const minValue = parseInt(input.value);
+
+         // Prevent decreasing via arrow keys or manual typing
+        input.addEventListener('input', function () {
+          if (parseInt(this.value) < minValue) {
+            this.value = minValue;
+            }
+        });
+
+        input.addEventListener('keydown', function (e) {
+           if (e.key === 'ArrowDown') {
+              e.preventDefault(); // Block the down arrow
           }
         });
     }
