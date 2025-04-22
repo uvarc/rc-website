@@ -632,7 +632,7 @@
                 }
                 
                 // Call your updateBilling method with the parsed data
-                 (billingData);
+                updateBilling(billingData);
             }
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
