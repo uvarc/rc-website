@@ -252,7 +252,9 @@ private = true
                 <th>Group</th>
                 <th>Tier</th>
                 <th>Shared Space</th>
-                <th>Current Size</th>
+                <th>Current Size 
+                     <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
+                </th>
               </tr>
             </thead>
             <tbody id="storage-projects-tbody">
