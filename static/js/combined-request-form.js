@@ -848,7 +848,7 @@
             console.warn(`No limits found for storage tier: ${tierType}`);
         }
     }
-    function disabledownsize() {
+    function disabledownsize(inputId) {
         const inputField = document.getElementById(inputId);
         inputField.addEventListener('keydown', function(e) {
           if (e.key === 'ArrowDown' || e.key === 'ArrowLeft') {
