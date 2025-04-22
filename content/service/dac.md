@@ -15,6 +15,7 @@ tags = [
   "consulting",
   "collaboration",
   "rc",
+  "drug-discovery",
 ]
 draft = false
 
@@ -53,7 +54,7 @@ We are committed to enhancing the quality and impact of research across Grounds 
 				<ul>
 				<li>Project feasibility and best practices advising</li>
 				<li>Software and compute platform selection and configuration</li>
-				<li><a style="" href="/service/tiers/#tier-1-training--technical-support" target="_new">RC Systems Training</a></li>
+				<li><a style="" href="/service/tiers/#tier-1-training-technical-support" target="_new">RC Systems Training</a></li>
 				</ul>
 			</td>
 	</tr>
@@ -63,7 +64,7 @@ We are committed to enhancing the quality and impact of research across Grounds 
 				<img src="/images/dac/ai-generated-7957989_1280.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
 				We assist researchers with effective and efficient use of HPC resources, including: 
 				<ul>
-				<li><a style="" href="/service/tiers/#tier-1-training--technical-support" target="_new">Technical Support</a></li>
+				<li><a style="" href="/service/tiers/#tier-1-training-technical-support" target="_new">Technical Support</a></li>
 				<li>Best practices advising</li>
 				<li>Code parallelization, optimization, and debugging</li>
 				</ul>
@@ -121,10 +122,9 @@ We are committed to enhancing the quality and impact of research across Grounds 
  
 # Services Provided at No Charge
 
-* [Training in Using RC Systems](/service/tiers/#tier-1-training--technical-support) 
-* [Technical Support](/service/tiers/#tier-1-training--technical-support) 
-* [Consultation](/service/tiers/#tier-2-consultation) (does not include hands-on work by DAC personnel)
-* [Short-Term Collaboration](/service/tiers/#tier-3-collaboration) (less than 20 hours of hands-on work by DAC personnel)
+* [Training in Using RC Systems and Technical Support](/service/tiers/#training-and-technical-support)  
+* [Consultation](/service/tiers/#consultations-advising) (does not include hands-on work by DAC personnel)
+* [Basic Collaboration](/service/tiers/#collaborations-expertise-and-custom-solutions) (typically less than 20 hours of hands-on work by DAC personnel)
 
 
 
@@ -132,12 +132,12 @@ We are committed to enhancing the quality and impact of research across Grounds 
 
 If you are interested in a paid service, please contact us at RC-DAC@virginia.edu for rates and other information.  
 
-* [Long-Term Collaboration](/service/tiers/#tier-3-collaboration) (20 or more hours of hands-on work by DAC personnel)
+* [In-Depth Collaboration](/service/tiers/#collaborations-expertise-and-custom-solutions) (typically 20 or more hours of hands-on work by DAC personnel)
 
 
 
 # How to Get Started with DAC Support
-If you would like DAC assistance with a project, please contact us at RC-DAC@virginia.edu. Generally, we will start with a consultation to discuss project feasibility.  If your project is approved and meets the short-term or long-term collaboration requirements, a DAC team member will schedule a meeting to discuss staff effort and deliverables.  For a long-term collaboration, we will create a detailed Statement of Work (SOW) that outlines the support researchers can expect from the DAC, detailing the project scope, budget, technical tasks to be completed, timeline, team member percent effort, and the deliverables to be provided at the end of the project. The SOW ensures all parties have a mutual understanding of the project's objectives and the level of support that will be offered. 
+If you would like DAC assistance with a project, please contact us at RC-DAC@virginia.edu. Generally, we will start with a consultation to discuss project feasibility.  If your project is approved and meets the basic or in-depth collaboration requirements, a DAC team member will schedule a meeting to discuss staff effort and deliverables.  For an in-depth collaboration, we will create a detailed Statement of Work (SOW) that outlines the support researchers can expect from the DAC, detailing the project scope, budget, technical tasks to be completed, timeline, team member percent effort, and the deliverables to be provided at the end of the project. The SOW ensures all parties have a mutual understanding of the project's objectives and the level of support that will be offered. 
 
 <!--
 To ensure that DAC support is included in your upcoming grant proposal, we recommend that you schedule a consultation to explore the ways in which we can assist you.
@@ -167,8 +167,8 @@ Consultants
 * Ed Hall, PhD
 * [Kathryn Linehan, PhD](/about/people/linehan/)
 * [Priyanka Prakash, PhD](/about/people/prakash/)
-* Andrew Strumpf
-* Deb Triant, PhD
+* [Andrew Strumpf](/about/people/strumpf/)
+* [Deb Triant, PhD](/about/people/triant/)
 
 
   

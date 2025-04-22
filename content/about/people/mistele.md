@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_ivey_mistele.jpg" 
 subjects = [
-   "python", "r"
+   "python", "r","va-whpc"
 ]
 active = true
 +++
