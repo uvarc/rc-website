@@ -546,12 +546,12 @@
 
     function toggleStorageFields() {
         const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
-    
+        const changeExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage';
         // Explicitly show or hide new vs existing storage fields
-        if (isNewStorage) {
+        if (isNewStorage && !changeExsisting) {
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
-            $('#existing-projects-storage').hide();
-        } else {
+            $('#storage-fields #existing-projects-storage').hide();
+        } else if(!isNewStorage && changeExsisting) {
             if ($('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage') {
                 $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
             }
