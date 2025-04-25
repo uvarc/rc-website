@@ -649,7 +649,7 @@
                 const fullText = $parentRow[0].cells[4].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
                 const tire = $parentRow[0].cells[3].textContent.trim();
-                if(tire === "Standard") {
+                if(tire === "ssz_standard") {
                     const number = parseInt(match[1]);
                     $('#su-quantity').val(number); 
                     console.log("Selected SUs:", number); 
