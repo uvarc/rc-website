@@ -648,12 +648,16 @@
                 const $parentRow = $selectedRadio.closest('tr');
                 const fullText = $parentRow[0].cells[4].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
-                /*if (match) {
+                const tire = $parentRow[0].cells[3].textContent.trim();
+                if(tire === "Standard") {
                     const number = parseInt(match[1]);
-                    $('#su-quantity').val(number); // Update the SU quantity field with the selected row's SU count
-                    console.log("Selected SUs:", number); // Logs: 5000
-                }*/
-                $('#su-quantity').val(0);
+                    $('#su-quantity').val(number); 
+                    console.log("Selected SUs:", number); 
+                    document.getElementById("su-quantity").disabled = true;
+                } else {
+                    $('#su-quantity').val(0);
+                    document.getElementById("su-quantity").disabled = false;
+                }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 //CHange the su's requested to the value of the renewal selected
@@ -873,6 +877,18 @@
             if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
                 $('#funding-number').val(billingData[0].project || '');
                 $('#funding-project').prop('checked', true);
+            }
+            if (billingData[0].gift && typeof billingData[0].gift === 'string' && billingData[0].gift.trim().length > 0) {
+                $('#funding-number').val(billingData[0].gift || '');
+                $('#funding-gift').prop('checked', true);
+            }
+            if (billingData[0].grant && typeof billingData[0].grant === 'string' && billingData[0].grant.trim().length > 0) {
+                $('#funding-number').val(billingData[0].grant || '');
+                $('#funding-grant').prop('checked', true);
+            }
+            if (billingData[0].designated && typeof billingData[0].designated === 'string' && billingData[0].designated.trim().length > 0) {
+                $('#funding-number').val(billingData[0].designated || '');
+                $('#funding-designated').prop('checked', true);
             }
             
             $('#financial-contact').val(billingData[0].financial_contact || '');
