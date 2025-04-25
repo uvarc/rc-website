@@ -653,6 +653,7 @@
                     $('#su-quantity').val(number); // Update the SU quantity field with the selected row's SU count
                     console.log("Selected SUs:", number); // Logs: 5000
                 }*/
+                $('#su-quantity').val(0);
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 //CHange the su's requested to the value of the renewal selected
@@ -1236,6 +1237,59 @@
         return errors;
     }
 
+     // ===================================
+    // Refresh and Populate Groups
+    // ===================================
+
+    async function refreshAndPopulateGroups() {
+        // Show a waiting message (use utility function if available)
+        const waitingMessage = utils?.showWaitingMessage?.() || $('<div>').text('Loading...').prependTo('#combined-request-form');
+    
+        try {
+            // Dynamically fetch the user ID using the helper function
+            const userId = getUserId(); 
+            console.log(`Attempting API call for user: ${userId}`);
+            
+            // Construct the API request URL
+            const requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
+            console.log("Request URL:", requestUrl);
+    
+            // Perform the AJAX call using jQuery
+            const jsonResponse = await $.ajax({
+                url: requestUrl,
+                method: "GET",
+                headers: {
+                    ...API_CONFIG.headers,
+                    'Origin': window.location.origin // Dynamically set the origin
+                },
+                credentials: 'include'
+            });
+    
+            // Save to global variable for further use
+            consoleData = jsonResponse; 
+            console.log("Fetched groups and resources:", consoleData);
+    
+            // Parse and populate user groups and resources
+            const { userGroups, userResources } = parseConsoleData(jsonResponse);
+    
+            // Populate dropdowns for user groups
+            if (Array.isArray(userGroups) && userGroups.length > 0) {
+                console.log("Populating user groups:", userGroups);
+                populateGrouperMyGroupsDropdown(userGroups);
+            } else {
+                console.warn("No user groups found.");
+                populateGrouperMyGroupsDropdown([]);
+            }
+    
+        } catch (error) {
+            console.error("Error fetching user groups:", error);
+            handleApiError(error); // Display a user-friendly error message
+        } finally {
+            // Remove the waiting message
+            utils?.removeWaitingMessage?.() || waitingMessage.remove();
+        }
+    }
+
     // ===================================
     // Fetch and Populate Groups
     // ===================================
@@ -1660,7 +1714,7 @@
             setInterval(async () => {
                 try {
                     console.log("Refreshing user groups...");
-                    await fetchAndPopulateGroups();
+                    await refreshAndPopulateGroups();
                 } catch (err) {
                     console.error("Error refreshing groups:", err);
                 }
