@@ -4,7 +4,7 @@
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
 <article class="blog-post">
-  <header style="display: flex;">
+  <header style="display: flex; justify-content: space-between; align-items: center;">
     <h2 id="support-header" class="blog-post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h2>
     <a href="https://uvarc-unified-service.pods.uvarc.io/uvarc/api/ticket/admin/mgmt">Admin</a>
   </header>
