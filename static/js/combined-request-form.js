@@ -251,6 +251,7 @@
                 $(`#${tier}-description`).text(description);
             });
             //display admin button
+            //is_user_resource_request_elligible
             if (metadata.is_user_admin) {
                 document.getElementById('admin-button').style.display = 'inline-block';
               }
@@ -1737,7 +1738,7 @@
                 } catch (err) {
                     console.error("Error refreshing groups:", err);
                 }
-            }, 120000);
+            }, 30000);
 
             // Set up event handlers for dynamic interactivity
             setupEventHandlers();
