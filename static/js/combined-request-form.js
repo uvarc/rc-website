@@ -250,7 +250,10 @@
                 const description = allocationDescriptions[tier].description || "No description available.";
                 $(`#${tier}-description`).text(description);
             });
-        
+            //display admin button
+            if (metadata.is_user_admin) {
+                document.getElementById('admin-button').style.display = 'inline-block';
+              }
             console.log("Form updated using metadata:", metadata);
         }
 
