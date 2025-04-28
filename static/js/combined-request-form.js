@@ -1723,12 +1723,12 @@
             }
     
             console.log("Metadata successfully fetched:", apiMetadata);
+            
             if(!apiMetadata[0].is_user_resource_request_elligible){
                 $('#data-agreement').prop('disabled', true);
                 $('#submit').prop('disabled', true);
             }
             
-
             // Update form elements using fetched metadata
             updateFormUsingMetadata(apiMetadata);
     
