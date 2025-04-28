@@ -1724,7 +1724,10 @@
     
             console.log("Metadata successfully fetched:", apiMetadata);
             if(apiMetadata[0].is_user_resource_request_elligible){
+                //showErrorMessage("user is not eligible to open the form")
+                $('#combined-request-form').hide();
                 showErrorMessage("user is not eligible to open the form")
+                
             }
             
 
