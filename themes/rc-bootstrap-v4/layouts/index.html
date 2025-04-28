@@ -17,8 +17,10 @@
   <body>
     {{ partial "menu-home.html" . }}
     {{ partial "site-header.html" . }}
-    {{ partial "carousel.html" . }} 
-    <!-- {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/sept-17-banner.png") }} -->
+    <!-- use the carousel partial if you want to use the main banner -->
+    <!-- {{ partial "carousel.html" . }}  -->
+    <!-- use this partial below for specific events (comment out the carousel partial) -->
+    {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/afton_upgraded_RC_website_banner.png" "imageLink" "/2025/04/new-nvidia-h200-gpu-node-coming-to-afton/") }}
 
     <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
       Press 'S' to search

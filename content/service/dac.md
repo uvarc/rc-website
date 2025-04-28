@@ -97,7 +97,7 @@ We are committed to enhancing the quality and impact of research across Grounds 
 				<img src="/images/dac/ai-generated-7912533_1280.jpg" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
 				We have a variety of expertise including conducting academic research. We can provide specialized assistance in topics such as:
 				<ul>
-				<li>AI and Machine Learning</li>
+				<li><a style="" href="/service/dac/ai" target="_new">AI and Machine Learning</a></li>
 				<li><a style="" href="/service/imaging/" target="_new">Image Processing</a></li> 
 				<li><a style="" href="/service/bioinformatics/" target="_new">Bioinformatics</a></li> 
 				<li>Text Analysis</li>		
