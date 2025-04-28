@@ -1724,7 +1724,7 @@
     
             console.log("Metadata successfully fetched:", apiMetadata);
             if(apiMetadata[0].is_user_resource_request_elligible){
-                $('#data-agreement').disable();
+                $('#data-agreement').prop('disabled', true);
                 showErrorMessage("User is not eligible to submit the form. please contact system Admin")
             }
             
