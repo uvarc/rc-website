@@ -639,10 +639,7 @@
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
-        //refresh groups when you click on dropdown
-        $(document).on('click', '#mygroups-group', refreshAndPopulateGroups);
-        $(document).on('click', '#storage-mygroups-group', refreshAndPopulateGroups);
-
+    
         // Attach submit event handler
         $(document).on('submit', '#combined-request-form', handleFormSubmit);
 
@@ -700,7 +697,7 @@
         const formData = collectFormData();
         const payload = buildPayloadPreview();
         const errors = validatePayload(payload);
-      
+    
         if (errors.length > 0) {
             displayValidationErrors(errors);
             return;
@@ -1117,7 +1114,7 @@
     
         if (formData.requestType === "storage") {
             newResource = {
-                "group_name": selectedGroup,
+                "group_name": selectedGroup,                
                 "data_agreement_signed": $('#data-agreement').is(':checked'),
                 "pi_uid": userId,
                 "project_name": formData.project_title?.trim() || "Test Project",
@@ -1126,6 +1123,7 @@
                     "storage": {
                         [hpcServiceUnitKey]: {
                             "tier": selectedTier,
+                            "shared_space_name": formData.sharedSpaceName?.trim() || "Shared Space",
                             "request_size": formData.request_size || "0",
                             "project_title": formData.project_title?.trim() || "Project Title",                            
                             "billing_details": billingDetails
@@ -1262,7 +1260,7 @@
     // Refresh and Populate Groups
     // ===================================
 
-     function refreshAndPopulateGroups() {
+    async function refreshAndPopulateGroups() {
         // Show a waiting message (use utility function if available)
         const waitingMessage = utils?.showWaitingMessage?.() || $('<div>').text('Loading...').prependTo('#combined-request-form');
     
@@ -1579,7 +1577,7 @@
                     const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
-                    //const sharedSpace = details.shared_space_name ? `${details.shared_space_name}` : "N/A";
+                    const sharedSpace = details.shared_space_name ? `${details.shared_space_name}` : "N/A";
                     const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const row = `
                         <tr data-additional='${billingJson}'>
@@ -1725,17 +1723,26 @@
             }
     
             console.log("Metadata successfully fetched:", apiMetadata);
-
-            if(!apiMetadata[0].is_user_resource_request_elligible){
+            if(apiMetadata[0].is_user_resource_request_elligible){
                 $('#data-agreement').prop('disabled', true);
-                $('#submit').prop('disabled', true);
+                showErrorMessage("User is not eligible to submit the form. please contact system Admin")
             }
             
+
             // Update form elements using fetched metadata
             updateFormUsingMetadata(apiMetadata);
     
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
+    
+            setInterval(async () => {
+                try {
+                    console.log("Refreshing user groups...");
+                    await refreshAndPopulateGroups();
+                } catch (err) {
+                    console.error("Error refreshing groups:", err);
+                }
+            }, 30000);
 
             // Set up event handlers for dynamic interactivity
             setupEventHandlers();
