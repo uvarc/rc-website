@@ -1725,7 +1725,10 @@
             console.log("Metadata successfully fetched:", apiMetadata);
             if(apiMetadata[0].is_user_resource_request_elligible){
                 $('#combined-request-form').hide();
-                $('#error-message-container').html('<div class="alert alert-danger">You are not eligible to make a resource request. please contact system admin.</div>').show();
+                var errorMessageDiv = document.createElement('div');
+                errorMessageDiv.className = 'alert alert-danger';  // Add the Bootstrap alert classes
+                errorMessageDiv.textContent = 'You are not eligible to make a resource request. please contact system admin.';  
+                document.body.appendChild(errorMessageDiv); 
             }
             
 

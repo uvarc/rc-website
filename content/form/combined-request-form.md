@@ -22,7 +22,7 @@ private = true
       class="needs-validation" 
       novalidate 
       accept-charset="UTF-8">
-<div id="error-message-container" style="display:none;"></div>
+
 {{< enable-disable-form >}}
 
 <!-- Response Messages -->
