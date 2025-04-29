@@ -1,0 +1,59 @@
+name: Docker Build CI
+
+on:
+  push:
+    branches:
+      - 'staging_onprem'
+  workflow_dispatch:
+jobs:
+  build-for-git:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - 
+        name: Set the emv
+        id: set_env
+        run: echo "BUILD_PROJ=rc-website" >> $GITHUB_ENV
+      -
+        name: Extract branch name
+        shell: bash
+        run: |
+          build_branch=$(echo "${{ github.ref }}" | sed 's/refs\/heads\/.*\///')
+          echo "Building release version $build_branch"
+          echo "BUILD_BRANCH=$build_branch" >> $GITHUB_ENV
+        id: extract_branch
+      -
+        name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_USERNAME }}
+          password: ${{ secrets.GHCR_PAT }}
+      -
+        name: Build and push
+        if: github.ref == 'refs/heads/master'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./docker/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ghcr.io/uvarc/${{ env.BUILD_PROJ }}:${{ github.ref_name }}
+            ghcr.io/uvarc/${{ env.BUILD_PROJ }}:latest
+      -
+        name: Build and push
+        if: github.ref != 'refs/heads/master'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./docker/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ghcr.io/uvarc/${{ env.BUILD_PROJ }}:${{ github.ref_name }}

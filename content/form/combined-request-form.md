@@ -65,7 +65,7 @@ private = true
         <thead>
             <tr>
                 <th scope="col">Type</th>
-                <th scope="col">Project/Class</th>
+                <th scope="col">Project</th>
                 <th scope="col">Group</th>
                 <th scope="col">Tier</th>
                 <th scope="col">Size/Count</th>
@@ -99,8 +99,8 @@ private = true
 
       <!-- New or Renewal (First section for SU requests) -->
       <fieldset class="form-item form-group form-type-radios form-group">
-        <legend class="control-label h6 mb-2">New or Renewal <span class="form-required" title="This field is required.">*</span></legend>
-        <div class="row">
+      <legend class="control-label h6 mb-2">New or Renewal <span  class="form-required" title="This field is required.">*</ span></legend>
+      <div class="row">
           <div id="new-or-renewal-options" class="form-radios col">
             <div class="form-item form-type-radio radio">
               <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" class="form-radio" />
@@ -110,15 +110,11 @@ private = true
               <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />
               <label class="control-label" for="new-or-renewal-2">Renewal</label>
             </div>
+            <div class="help-block col tiny">If this is your first request, select New. Otherwise select Renewal.</div>
           </div>
-          <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
-        </div>
+      </div>
       </fieldset>
-<div id="su-capacity" class="col form-item form-group">
-          <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
-          <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
-          <p class="tiny">The number of SU's requested.</p>
-        </div>
+
       <!-- Grouper/MyGroups Selection -->
       <div id="mygroups-group-container" style="display: none;">
         <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
@@ -164,9 +160,11 @@ private = true
             <thead>
               <tr>
                 <th>Select</th>
-                <th>Project/Class</th>
+                <th>Project</th>
                 <th>Group</th>
                 <th>Tier</th>
+                <th>Count</th>
+                <th>Update Date</th>
               </tr>
             </thead>
             <tbody id="allocation-projects-tbody">
@@ -175,7 +173,11 @@ private = true
           </table>
         </fieldset>
       </div>
-      
+      <div id="su-capacity" class="col form-item form-group">
+            <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
+            <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
+           <p class="tiny">The number of SU's requested.</p>
+      </div>
       <!-- Project/Class Name (Only for New requests) -->
       <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
         <div class="form-item form-group form-type-textfield form-group">
@@ -209,25 +211,16 @@ private = true
                 <label for="type-of-request-new">Create new storage share</label>
               </div>
               <div class="form-item form-type-radio radio">
-                <input required="required" type="radio" id="type-of-request-increase" name="type-of-request" value="increase-storage" class="form-radio">
-                <label for="type-of-request-increase">Increase size of existing share</label>
+                <input required="required" type="radio" id="type-of-request-update" name="type-of-request" value="update-storage" class="form-radio">
+                <label for="type-of-request-update">Update existing share</label>
               </div>
-              <div class="form-item form-type-radio radio">
-                <input required="required" type="radio" id="type-of-request-decrease" name="type-of-request" value="decrease-storage" class="form-radio">
-                <label for="type-of-request-decrease">Decrease size of existing share</label>
-              </div>
+
               <div class="form-item form-type-radio radio">
                 <input required="required" type="radio" id="type-of-request-retire" name="type-of-request" value="retire-storage" class="form-radio">
                 <label for="type-of-request-retire">Retire existing share</label>
               </div>
             </div>
           </fieldset>
-        </div>
-        <!-- Storage Capacity -->
-        <div id="storage-capacity" class="col form-item form-group">
-          <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
-          <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
-          <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
         </div>
       </div>
 
@@ -293,14 +286,11 @@ private = true
           </div>
         </div>
       </div>
-
-      <!-- Shared Space Name -->
-      <div id="shared-space-name-container" style="display: none; margin-top:1em;" class="new-request-only">
-        <div class="form-item form-type-textarea form-group">
-          <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
-          <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-          <p class="tiny">This is the name to be applied to your shared storage space. By default, the space will be named according to the Grouper/MyGroups group associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
-        </div>
+           <!-- Storage Capacity -->
+      <div id="storage-capacity" class="col form-item form-group">
+          <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
+          <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
+          <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>
 
       <!-- Project Title -->
