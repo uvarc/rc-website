@@ -1736,15 +1736,6 @@
     
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
-    
-            setInterval(async () => {
-                try {
-                    console.log("Refreshing user groups...");
-                    await refreshAndPopulateGroups();
-                } catch (err) {
-                    console.error("Error refreshing groups:", err);
-                }
-            }, 30000);
 
             // Set up event handlers for dynamic interactivity
             setupEventHandlers();
