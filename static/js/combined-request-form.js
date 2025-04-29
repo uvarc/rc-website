@@ -641,7 +641,7 @@
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
-        
+
         //refresh groups when you click on dropdown
         $(document).on('focus', '#mygroups-group', async function () {
             await refreshAndPopulateGroups();
@@ -1455,7 +1455,7 @@
                         disabled: true,
                     })
                 );
-                //$dropdown.prop('disabled', true);
+                $dropdown.prop('disabled', true);
             }
     
             // Trigger change event for validation or dependent logic
