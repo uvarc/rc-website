@@ -1724,8 +1724,9 @@
     
             console.log("Metadata successfully fetched:", apiMetadata);
             if(apiMetadata[0].is_user_resource_request_elligible){
-                $('#data-agreement').prop('disabled', true);
-                showErrorMessage("User is not eligible to submit the form. please contact system Admin")
+                $('#combined-request-form').hide();
+                $('#api_error_response').html('<div class="alert alert-danger">You are not eligible to make a resource request.</div>').show();
+
             }
             
 
@@ -1735,15 +1736,6 @@
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
     
-            setInterval(async () => {
-                try {
-                    console.log("Refreshing user groups...");
-                    await refreshAndPopulateGroups();
-                } catch (err) {
-                    console.error("Error refreshing groups:", err);
-                }
-            }, 30000);
-
             // Set up event handlers for dynamic interactivity
             setupEventHandlers();
     
