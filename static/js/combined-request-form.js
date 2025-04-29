@@ -597,6 +597,8 @@
           // Hide fields as required
           document.querySelector('#departmet_clasification_row').style.display = 'none';
           document.querySelector('#discipline_row').style.display = 'none';
+          // In billing details hide Financial contact field
+          document.querySelector('#financial-contact-div').style.display = 'none';
       });
 
     function setupEventHandlers() {
