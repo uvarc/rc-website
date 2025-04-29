@@ -641,9 +641,14 @@
             updatePayloadPreview(); // Update the real-time payload preview
             updateBillingVisibility(); // Update billing visibility
         });
+        
         //refresh groups when you click on dropdown
-        $(document).on('change', '#mygroups-group', refreshAndPopulateGroups);
-        $(document).on('click', '#storage-mygroups-group', refreshAndPopulateGroups);
+        $(document).on('focus', '#mygroups-group', async function () {
+            await refreshAndPopulateGroups();
+        });
+        $(document).on('focus', '#storage-mygroups-group', async function () {
+            await refreshAndPopulateGroups();
+        });
 
         // Attach submit event handler
         $(document).on('submit', '#combined-request-form', handleFormSubmit);
