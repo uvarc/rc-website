@@ -1725,8 +1725,7 @@
             console.log("Metadata successfully fetched:", apiMetadata);
             if(apiMetadata[0].is_user_resource_request_elligible){
                 $('#combined-request-form').hide();
-                $('#api_error_response').html('<div class="alert alert-danger">You are not eligible to make a resource request.</div>').show();
-
+                $('#error-message-container').html('<div class="alert alert-danger">You are not eligible to make a resource request. please contact system admin.</div>').show();
             }
             
 

@@ -42,7 +42,7 @@ private = true
   <input type="hidden" id="metadata-timestamp" name="metadata-timestamp" value="">
   <input type="hidden" id="tier-limits" name="tier-limits" value="">
   <input type="hidden" id="group-options" name="group-options" value="">
-
+  <div id="error-message-container" style="display:none;"></div>
   {{% getstatus keyword="jira" %}}
   {{% form-userinfo-v2 %}}
   <!-- PI Requestor Information (temporarily disabled)-->
