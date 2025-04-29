@@ -642,7 +642,7 @@
             updateBillingVisibility(); // Update billing visibility
         });
         //refresh groups when you click on dropdown
-        $(document).on('click', '#mygroups-group', function () { refreshAndPopulateGroups();});
+        $(document).on('change', '#mygroups-group', refreshAndPopulateGroups);
         $(document).on('click', '#storage-mygroups-group', refreshAndPopulateGroups);
 
         // Attach submit event handler
