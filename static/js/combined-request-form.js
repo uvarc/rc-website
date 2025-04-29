@@ -1723,7 +1723,7 @@
             }
     
             console.log("Metadata successfully fetched:", apiMetadata);
-            if(apiMetadata[0].is_user_resource_request_elligible){
+            if(!apiMetadata[0].is_user_resource_request_elligible){
                 $('#combined-request-form').hide();
                 $('#error-message-container').html('<span class="alert alert-danger">You are not eligible to make a resource request. please contact system admin.</span>').show();
             }
