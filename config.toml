@@ -1,4 +1,4 @@
-#baseurl = "/"
+baseurl = "/"
 title = "Research Computing"
 publishdir = "public"
 languageCode = "en-us"
