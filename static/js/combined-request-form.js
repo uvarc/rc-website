@@ -1265,7 +1265,7 @@
     // Refresh and Populate Groups
     // ===================================
 
-    function refreshAndPopulateGroups() {
+    async function refreshAndPopulateGroups() {
         // Show a waiting message (use utility function if available)
         const waitingMessage = utils?.showWaitingMessage?.() || $('<div>').text('Loading...').prependTo('#combined-request-form');
     
