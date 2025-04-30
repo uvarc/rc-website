@@ -1092,6 +1092,8 @@
                         }
                     }
                 };
+                console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
+                return [newResource]; // Return as an array
             }   
         } 
         else if (formData.requestType == "storage") {
@@ -1132,7 +1134,9 @@
                                }
                             }
                         };
-                }
+                        console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
+                        return [newResource]; // Return as an array
+                    }
         }
         if ( (!allocationChange ||!storageChange)   && (!selectedGroup || !selectedTier)) {
             console.error(`⚠ Missing required values: Group: ${selectedGroup}, Tier: ${selectedTier}`);
