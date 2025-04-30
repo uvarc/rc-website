@@ -7,16 +7,8 @@ students:
         type: "Poster"
         projectdesc: "Adam contributed to the XALT containerization project by developing a Docker container for running XALT on UVA RC clusters. 
     His work streamlined deployment of XALT, a tool which will help UVA RC with usage tracking and resource allocation."
-        imagepath: "/images/student-work/Poster-Adam-Eubanks-min.jpg"
+        imagepath: "/images/student-work/Spring_2024_Eubanks_Poster.jpg"
         archived: false
-    #   - projectname: "XALT Containerization"
-    #     year: 2024 
-    #     term: "Spring"
-    #     type: "Poster"
-    #     projectdesc: "Adam contributed to the XALT containerization project by developing a Docker container for running XALT on UVA RC clusters. 
-    # His work streamlined deployment of XALT, a tool which will help UVA RC with usage tracking and resource allocation."
-    #     imagepath: "/images/student-work/Poster-Adam-Eubanks-min.jpg"
-    #     archived: false
   - name: "Matthew Galitz"
     projects:
       - projectname: "Rivanna Utilization"
@@ -27,7 +19,41 @@ students:
     This initiative enhanced the efficiency of generating usage statistics and allocation reports for UVA’s Rivanna high-performance 
     computing system. By developing scripts that aggregate and analyze computational resource utilization, 
     his work supports strategic planning of resource allocation and infrastructure upgrades."
-        imagepath: "/images/student-work/Poster-Matthew-Galitz-min.jpg"
+        imagepath: "/images/student-work/Spring_2024_Galitz_Poster.jpg"
+        archived: false
+      - projectname: "Building a Research Faculty Search Engine"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: ""
+        imagepath: "/images/student-work/Spring_2025_Galitz_Poster.png"
+        archived: false
+  - name: "Bhargav Garre Venkata"
+    projects: 
+      - projectname: "Improving HPC Accessibility Through Instructional Video Development"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: ""
+        imagepath: "/images/student-work/Spring_2025_GarreVenkata_Poster.png"
+        archived: false
+  - name: "Diana Lin"
+    projects: 
+      - projectname: "Developing a Dashboard for Research Computing Workshop Data"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: ""
+        imagepath: "/images/student-work/Spring_2025_Lin_Poster.png"
+        archived: false
+  - name: "Ivey Mistele"
+    projects: 
+      - projectname: "Student Data Visualization and Markdown Conversion"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: ""
+        imagepath: "/images/student-work/Spring_2025_Mistele_Poster.png"
         archived: false
   - name: "Juwon Park"
     projects:
@@ -37,18 +63,27 @@ students:
         type: "Poster"
         projectdesc: "Juwon contributed to the Image Processing with Matlab project, which utilized image processing functionality to skeletonize a brain image for a consultation. 
     The project explored Matlab's various capabilities for image transformation, simplifying the quantification of fluorescent changes across brain tissue for further research."
-        imagepath: "/images/student-work/Poster-Juwon-Park-min.jpg"
+        imagepath: "/images/student-work/Spring_2024_Park_Poster.jpg"
         archived: false
   - name: "Hariprasad Periyasamy"
     projects:
-      - projectname: "Workshop Data"
+      - projectname: "Research Computing Workshop Data"
         year: 2024
         term: "Spring"
         type: "Poster"
         projectdesc: "Hari contributed to the Workshop Data project. He worked on creating a microservice that takes in a specified time period and returns a list of the number of workshops 
     and the number of registrants for each workshop. The goal was to gain a better understanding of the workshops that should continue 
     to be offered, as well as which departments we should target for advertising our workshops to maximize utilization."
-        imagepath: "/images/student-work/Poster-Hari-Periyasamy-min.jpg"
+        imagepath: "/images/student-work/Spring_2024_Periyasamy_Poster.jpg"
+        archived: false
+      - projectname: "Unified UVA-RC APIs: LDAP and Office Hours"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Hari contributed to the unified UVA-RC APIs initiative. He helped out in replacing the existing LDAP API and Office Hours application and integrating the now modularized software
+        into a class-based Flask API that houses all of the existing backends. In addition, he upgraded the LDAP API to have the ability to query for time-based entries, a key endpoint necessary for the 
+        Workshop Data Visualization Project."
+        imagepath: "/images/student-work/Spring_2025_Periyasamy_Poster.png"
         archived: false
   - name: "Diya Tomar"
     projects:
@@ -60,7 +95,7 @@ students:
       particularly the Jupyter Python and RStudio Server environments, to the latest versions. She also worked on developing scripts to test 
       these environments. This work aims to support researchers by providing the latest versions of these environments and ensuring that researchers 
       have access to the newest functionalities."
-        imagepath: "/images/student-work/Poster-Diya-Tomar-min.jpg"
+        imagepath: "/images/student-work/Spring_2024_Tomar_Poster.jpg"
         archived: false
   - name: "Jinwoo Kim"
     projects:
@@ -80,6 +115,24 @@ students:
       youtube_link: "https://www.youtube.com/watch?v=XYQduJCkrWY"
       embed_link: "https://www.youtube.com/embed/XYQduJCkrWY"
       archived: false
+  - name: "Mohan Shankar"
+    projects: 
+      - projectname: "Collaborative Innovations in Data Science and Engineering"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: ""
+        imagepath: "/images/student-work/Spring_2025_Shankar_Poster.png"
+        archived: false
+  - name: "Steven Siadaty"
+    projects: 
+      - projectname: "An Accessible Graphical User Interface for RNA-seq Analysis"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: ""
+        imagepath: "/images/student-work/Spring_2025_Siadaty_Poster.png"
+        archived: false
   - name: "Jennifer Vo"
     projects: 
     - projectname: "Markdown and Women in HPC"
@@ -88,6 +141,13 @@ students:
       type: "Video"
       youtube_link: "https://www.youtube.com/watch?v=YuFVIZkp8uQ"
       embed_link: "https://www.youtube.com/embed/YuFVIZkp8uQ"
+      archived: false
+    - projectname: "Improving HPC Accessibility with Embedded PowerPoint Tutorials"
+      year: 2025
+      term: "Spring"
+      type: "Poster"
+      projectdesc: ""
+      imagepath: "/images/student-work/Spring_2025_Vo_Poster.png"
       archived: false
   
 
