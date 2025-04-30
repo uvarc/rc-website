@@ -308,7 +308,6 @@
                 formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
                 if(formData.typeOfRequest === 'new-storage') {
                     formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
-                    formData.sharedSpaceName = $('#shared-space-name').val();//
                     formData.project_title = $('#project-title').val();
                     formData.request_size = $('#capacity').val();
                 }else if(formData.typeOfRequest === 'update-storage') {
