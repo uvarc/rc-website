@@ -1028,7 +1028,7 @@
         var selectedSU = "n/a";
         let selectedGroup = formData.group ? formData.group.trim() : "";
         let selectedTier, hpcServiceUnitKey, storageKey;
-        if (formData.requestType === "hpc_service_units") {
+        if (formData.requestType === "service-unit") {
            if (formData.newOrRenewal === "renewal") {
               // Extract from the selected SU in the renewal table
                selectedSU = $('input[name="selected-su"]:checked').val();
