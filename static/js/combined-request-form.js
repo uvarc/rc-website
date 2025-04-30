@@ -289,7 +289,7 @@
                 requestType: $('select[name="request-type"]').val(),
                 group: $('#mygroups-group').val(),
                 projectName: $('#new-project-name').val(),
-                projectDescription: $('#project-description').val(),
+                projectDescription: $('#project-description-text').val(),
                 requestCount: $('#su-quantity').val(),                
                 capacity: $('#capacity').val(),
                 allocationTier: $('input[name="allocation-choice"]:checked').val(),
