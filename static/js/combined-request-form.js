@@ -1455,7 +1455,7 @@
                         disabled: true,
                     })
                 );
-                $dropdown.prop('disabled', true);
+                //$dropdown.prop('disabled', true);
             }
     
             // Trigger change event for validation or dependent logic
