@@ -539,10 +539,10 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
         if (isNew && !isRenew) {
-            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
+            $('#allocation-fields #new-project-name-container, #project-description, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
-            $('#allocation-fields #new-project-name-container, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
+            $('#allocation-fields #new-project-name-container, #project-description, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
             $('#existing-projects-allocation').show();
             populateExistingServiceUnitsTable(consoleData);
         }
@@ -554,11 +554,11 @@
         const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage && !changeExsisting && !retireExsisting) {
-            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
+            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container, #project-description-container').show();
             $('#storage-fields #existing-projects-storage').hide();
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                 $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
-                $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
+                $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container, #project-description-container').hide();
                 $('#existing-projects-storage').show();
         }
     }
@@ -1104,7 +1104,7 @@
                              [storageKey]: {
                                             "tier": selectedTier,
                                             "request_size": formData.request_size,
-                                            "project_title": formData.project_title,
+                                            "project_name": formData.project_title,
                                             "billing_details": billingDetails
                                           }
                                 }
@@ -1120,6 +1120,7 @@
                          "data_agreement_signed": $('#data-agreement').is(':checked'),
                          "pi_uid": userId,
                          "project_name": formData.project_title?.trim() || "Test Project",
+                         "project_desc": formData.projectDescription.trim() || "This is free text",
                          "resources": {
                              "storage": {
                                  [selectedGroup]: {
