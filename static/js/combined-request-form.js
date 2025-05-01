@@ -1084,8 +1084,6 @@
                             [hpcServiceUnitKey]: {
                                 "tier": selectedTier,
                                 "request_count": formData.requestCount || "1000",
-                                "request_date": new Date(), 
-                                "update_date": new Date(), 
                                 "billing_details": billingDetails
                             }
                         }
@@ -1102,12 +1100,13 @@
                       // Construct minimal payload for PUT (change)
                       const changePayload = {
                       "storage": {
-                             [formData.sharedSpaceName]: {
+                             [storageKey]: {
                                             "tier": selectedTier,
-                                            "request_size": formData.capacity,
+                                            "request_size": formData.request_size,
+                                            "project_title": formData.project_title,
                                             "billing_details": billingDetails
-                                        }
-                               }
+                                          }
+                                }
                         };
                         console.log("Final Storage Change Payload (PUT):", JSON.stringify(changePayload, null, 2));
                         return [changePayload];
@@ -1126,8 +1125,6 @@
                                      "tier": selectedTier,
                                      "request_size": formData.request_size || "0",
                                      "project_title": formData.project_title?.trim() || "Project Title",
-                                     "request_date": new Date(), 
-                                     "update_date": new Date(),                        
                                      "billing_details": billingDetails
                                   }
                                }
