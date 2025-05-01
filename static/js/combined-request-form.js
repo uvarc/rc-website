@@ -1081,7 +1081,7 @@
                     "pi_uid": userId,
                     "resources": {
                         "hpc_service_units": {
-                            [hpcServiceUnitKey]: {
+                            [selectedGroup]: {
                                 "tier": selectedTier,
                                 "request_count": formData.requestCount || "1000",
                                 "billing_details": billingDetails
@@ -1121,10 +1121,9 @@
                          "project_name": formData.project_title?.trim() || "Test Project",
                          "resources": {
                              "storage": {
-                                 [storageKey]: {
+                                 [selectedGroup]: {
                                      "tier": selectedTier,
                                      "request_size": formData.request_size || "0",
-                                     "project_title": formData.project_title?.trim() || "Project Title",
                                      "billing_details": billingDetails
                                   }
                                }
