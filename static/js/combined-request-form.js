@@ -319,6 +319,7 @@
                 }
                 if (formData.typeOfRequest !== 'new-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
+                    formData.projectDescription = $('#project-description-text-storage').val();
                 }
             }
         
