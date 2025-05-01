@@ -66,5 +66,6 @@ Default version changes include:
 |sumo       | 1.14.1 | 1.22.0 |
 |texlive    | 2023 | 2025 |
 |tmux       | 2.5 | 3.4 |
+|tree       | 1.8.0 | 2.2.1 |
 |trimgalore | 0.6.4 | 0.6.10 |
 {{< /table >}}
