@@ -242,7 +242,7 @@ private = true
         </div>
       </div>
       <!-- Project Description -->
-      <div id="project-description" class="form-item form-type-textarea form-group" style="display: none;"> 
+      <div id="project-description-container" class="form-item form-type-textarea form-group" style="display: none;"> 
         <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
         <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
         <div class="form-textarea-wrapper resizable">
