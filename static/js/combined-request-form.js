@@ -287,43 +287,32 @@
             
             const formData = {
                 requestType: $('select[name="request-type"]').val(),
-                group: $('#mygroups-group').val(),
-                projectName: $('#new-project-name').val(),
-                projectDescription: $('#project-description-text').val(),
-                requestCount: $('#su-quantity').val(),                
-                capacity: $('#capacity').val(),
-                allocationTier: $('input[name="allocation-choice"]:checked').val(),
-                storageTier: $('input[name="storage-choice"]:checked').val(),
-                shouldShowBilling: $('#billing-information').is(':visible'),
+                shouldShowBilling: $('#billing-information').is(':visible')
             };
-        
             if (formData.requestType === 'service-unit') {
                 formData.newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
+                formData.group = $('#mygroups-group').val();
+                formData.projectName = $('#new-project-name').val();
+                formData.projectDescription = $('#project-description-text').val();
+                formData.requestCount = $('#su-quantity').val(); 
+                formData.allocationTier = $('input[name="allocation-choice"]:checked').val();
                 if (formData.newOrRenewal === 'renewal') {
                     formData.existingProject = $('input[name="existing-project-allocation"]:checked').val();
-                }
-                
+                } 
             } else if (formData.requestType === 'storage') {
-                
                 formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
-                if(formData.typeOfRequest === 'new-storage') {
-                    formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
-                    formData.project_title = $('#project-title').val();
-                    formData.request_size = $('#capacity').val();
-                }else if(formData.typeOfRequest === 'update-storage') {
-                    formData.request_size = $('#capacity').val();
-                    var checkedRadio=$('input[name="selected-st"]:checked')               
-                    formData.sharedSpaceName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
-                    formData.storageTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
-                    formData.request_size = $('#capacity').val();
-                }
-                if (formData.typeOfRequest !== 'new-storage') {
+                formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
+                formData.project_title = $('#project-title').val();
+                formData.storageTier = $('input[name="storage-choice"]:checked').val();
+                formData.request_size = $('#capacity').val();
+                formData.projectDescription = $('#project-description-text-storage').val();
+                if (formData.typeOfRequest === 'update-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
-                    formData.projectDescription = $('#project-description-text-storage').val();
+                    var checkedRadio=$('input[name="selected-st"]:checked')               
+                    //formData.storageTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
                 }
             }
-        
-            return formData;
+           return formData;
         }
 
         /// Enum Mappings
