@@ -52,7 +52,9 @@ students:
         year: 2025
         term: "Spring"
         type: "Poster"
-        projectdesc: ""
+        projectdesc: "Ivey worked on converting workshop tutorials to markdown for the RC Learning Portal. 
+        She helped coordinate events and update the website for Virginia Women in HPC. In addition, 
+        she is working on a data visualization summary of the RC Student Program."
         imagepath: "/images/student-work/Spring_2025_Mistele_Poster.png"
         archived: false
   - name: "Juwon Park"
