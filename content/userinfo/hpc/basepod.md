@@ -13,36 +13,15 @@ author = "RC Staff"
 +++
 
 # HGX H200 Nodes
-*March 28, 2025*
+*May 1, 2025*
 
-We’re excited to announce the beta release of our newest high-performance compute node featuring the NVIDIA HGX H200 platform. This node is built on the Dell PowerEdge XE9680 server model, and we currently have one server available for testing.
+We’re excited to announce the release of our newest high-performance compute node featuring the NVIDIA HGX H200 platform. This node is built on the Dell PowerEdge XE9680 server model, and we currently have one server available.
 
 The node is equipped with dual Intel Xeon Platinum 8468 CPUs, offering a total of 96 cores running at 2.1GHz, and comes with a massive 2TB of memory. This addition features eight NVIDIA HGX H200 GPUs based on the NVIDIA Hopper architecture.
 
 Each H200 GPU includes 141 GB of memory and delivers up to 4.8 TB/s of memory bandwidth. High-speed communication between GPUs is supported via 900 GB/s NVLink, while connectivity between CPU and GPU uses PCIe Gen5, providing up to 128 GB/s bi-directional bandwidth. More information can be found [here](https://www.nvidia.com/en-us/data-center/h200/).
 
-This node is now integrated into our SLURM scheduler and can be accessed using the `gpu` partition. H200 GPUs must be requested specifically by either including `--gres=gpu:h200` or adding the SLURM feature constraint `--constraint=h200` in the job script. For example
-```
-#SBATCH -p gpu
-#SBATCH --gres=gpu:h200
-```
-or
-```
-#SBATCH -p gpu
-#SBATCH --contraint=h200
-```
-Jobs that do not specify the h200 gres/constraint will not start on the H200s.
-
-{{% callout %}}
-Note:
-The H200 node may be taken out of service during beta-release phase on short notice for ad hoc configuration adjustments and diagnoses outside of scheduled maintenance windows. Usage of the H200s will be charged at production rate, but failed jobs will incur no SU charges. The node is destined to go into production by May 1st. 
-
-During the beta-release, GPUs can only be accessed through Slurm batch jobs. Jobs through Open OnDemand  are not available.
-{{% /callout %}}
-
-Information for accounting and scheduling purposes can be found [here](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration).
-
-We invite users with GPU-intensive workflows to take advantage of these powerful nodes and provide feedback during the beta release phase. Any questions or feedback should be communicated through the support web form [here](https://www.rc.virginia.edu/form/support-request/) on our website with "H200 Beta Feedback" as the description of the request.
+This node is now integrated into our SLURM scheduler and can be accessed using the `gpu` partition. Information for accounting and scheduling purposes can be found [here](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration). We invite users with GPU-intensive workflows to take advantage of these powerful nodes. 
 
 # Introducing the NVIDIA DGX BasePOD™
 *May 30, 2023*

@@ -19,6 +19,7 @@ All systems are expected to return to service by **Wednesday, May 28** at 6 am.
 - Operating system: Rocky 8.10
 - Slurm: 24.11.3
 - NVIDIA driver: 570.124.06 (CUDA 12.8)
+- Open OnDemand: 4.0
 
 ### Modules
 
@@ -40,13 +41,16 @@ Default version changes include:
 |cellranger | 8.0.0 | 9.0.1 |
 |code-server| 4.92.2 | 4.99.1 |
 |cmake      | 3.23.3, 3.24.3 | 3.28.1, 4.0.0 |
+|cuda       | 10.2.89, 11.8.0 | 12.8.0 |
+|cudnn      | 8.* | 9.8.0-CUDA-12.8.0 |
 |cutadapt   | 3.4 | 4.9 |
 |fastqc     | 0.11.5 | 0.12.1 |
+|fmriprep   | 23.1.4 | 25.0.0 |
 |fsl        | 6.0.7.6 | 6.0.7.17 |
 |gcc        | 13.3.0 | 14.2.0 |
 |go         | 1.21.4 | 1.23.6 |
 |intel      | 2024.0 | 2025.0 |
-|jupyterlab | 3.6.3-py3.11 | 4.3.6-py3.12 |
+|jupyterlab | 3.6.3-py3.11 | 4.4.1-py3.12 |
 |kraken2    | 2.1.3 | 2.1.5 |
 |mathematica| 11.2 | 14.2 |
 |matlab     | R2022b | R2024b |
@@ -55,10 +59,13 @@ Default version changes include:
 |openmpi    | 4.1.4-nofabric[-withoutverbs] | 4.1.4 |
 |openmpi    | 4.1.5-intel | 4.1.5 |
 |perl       | 5.36.0 | 5.40.2 |
+|pytorch    | 1.12.0, 2.0.1 | 2.4.0, 2.7.0 |
 |ruby       | 3.1.2 | 3.4.3 |
+|smrtlink   | 13.1.0.221970 | 25.2.0 |
 |spaceranger| 3.1.1 | 3.1.3 |
 |sumo       | 1.14.1 | 1.22.0 |
 |texlive    | 2023 | 2025 |
 |tmux       | 2.5 | 3.4 |
+|tree       | 1.8.0 | 2.2.1 |
 |trimgalore | 0.6.4 | 0.6.10 |
 {{< /table >}}

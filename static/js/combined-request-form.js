@@ -52,7 +52,7 @@
 
     let apiMetadata = {};
 
-    let consoleData = [];
+    let  consoleData = [];
 
     // ===================================
     // CSS Styles
@@ -250,7 +250,10 @@
                 const description = allocationDescriptions[tier].description || "No description available.";
                 $(`#${tier}-description`).text(description);
             });
-        
+            //display admin button
+            if (metadata[0].is_user_admin) {
+                document.getElementById('admin-button').style.display = 'inline-block';
+              }
             console.log("Form updated using metadata:", metadata);
         }
 
@@ -306,13 +309,13 @@
                     formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
                     formData.sharedSpaceName = $('#shared-space-name').val();//
                     formData.project_title = $('#project-title').val();
-                    formData.storage_size = $('#capacity').val();
-                }else if(formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage') {
-                    formData.storage_size = $('#capacity').val();
+                    formData.request_size = $('#capacity').val();
+                }else if(formData.typeOfRequest === 'update-storage') {
+                    formData.request_size = $('#capacity').val();
                     var checkedRadio=$('input[name="selected-st"]:checked')               
                     formData.sharedSpaceName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
                     formData.storageTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
-                    formData.storage_size = $('#capacity').val();
+                    formData.request_size = $('#capacity').val();
                 }
                 if (formData.typeOfRequest !== 'new-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
@@ -453,7 +456,7 @@
                 .text(message);
             $('#combined-request-form').prepend(errorDiv);
             $('html, body').animate({ scrollTop: 0 }, 'slow');
-            setTimeout(() => errorDiv.remove(), 10000);
+            //setTimeout(() => errorDiv.remove(), 10000);
         }
         
         function showSuccessMessage(message) {
@@ -489,7 +492,7 @@
             .text(message);
         $('#combined-request-form').prepend(errorDiv);
        
-        setTimeout(() => errorDiv.remove(), 10000);
+        //setTimeout(() => errorDiv.remove(), 10000);
     }
 
     function handleApiError(error) {
@@ -546,18 +549,16 @@
 
     function toggleStorageFields() {
         const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
-    
+        const changeExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage';
+        const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
         // Explicitly show or hide new vs existing storage fields
-        if (isNewStorage) {
+        if (isNewStorage && !changeExsisting && !retireExsisting) {
             $('#storage-fields #storage-mygroups-container, #storage-fields #storage-capacity, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').show();
             $('#storage-fields #existing-projects-storage').hide();
-        } else {
-            if ($('#storage-fields input[name="type-of-request"]:checked').val() === 'increase-storage' ||
-                $('#storage-fields input[name="type-of-request"]:checked').val() === 'decrease-storage') {
+        } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                 $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
-            }
-            $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
-            $('#storage-fields #existing-projects-storage').show();
+                $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container').hide();
+                $('#existing-projects-storage').show();
         }
     }
     
@@ -574,12 +575,29 @@
             $('#storage-tier-options #standard-data').show();
         }
     }
+    
+    function toggleAllocationTierOptions() {
+        const isStandard = $('#allocation-tier-options input[name="allocation-choice"]:checked').val() === 'Standard';
 
+        // Explicitly show or hide tier-specific sections
+        if (isStandard) {
+            $('#su-quantity').val(100000);
+            document.getElementById("su-quantity").disabled = true;
+        } else {
+            $('#su-quantity').val(1000);
+            document.getElementById("su-quantity").disabled = false;
+        }
+    }
     
 
     // ===================================
     // Setup Event Handlers
     // ===================================
+    document.addEventListener("DOMContentLoaded", function() {
+          // Hide fields as required
+          document.querySelector('#departmet_clasification_row').style.display = 'none';
+          document.querySelector('#discipline_row').style.display = 'none';
+      });
 
     function setupEventHandlers() {
        
@@ -588,8 +606,9 @@
         $(document).on('change', 'input[name="new-or-renewal"]', function () {
             toggleAllocationFields(); // Existing function for showing/hiding fields
             //toggleExistingServiceUnitsTable(); // Ensure the table updates correctly
-            
-        });
+            });
+        $(document).on('change', 'input[name="allocation-choice"]', toggleAllocationTierOptions);
+
         $(document).on('change', 'input[name="type-of-request"]', toggleStorageFields);
         $(document).on('change', 'input[name="storage-choice"]', toggleStorageTierOptions);
     
@@ -632,10 +651,15 @@
                 const $parentRow = $selectedRadio.closest('tr');
                 const fullText = $parentRow[0].cells[4].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
-                if (match) {
+                const tire = $parentRow[0].cells[3].textContent.trim();
+                if(tire === "ssz_standard") {
                     const number = parseInt(match[1]);
-                    $('#su-quantity').val(number); // Update the SU quantity field with the selected row's SU count
-                    console.log("Selected SUs:", number); // Logs: 5000
+                    $('#su-quantity').val(number); 
+                    console.log("Selected SUs:", number); 
+                    document.getElementById("su-quantity").disabled = true;
+                } else {
+                    $('#su-quantity').val(0);
+                    document.getElementById("su-quantity").disabled = false;
                 }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
@@ -682,7 +706,7 @@
         try {
             const isRenewal = formData.newOrRenewal === 'renewal';
             var method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
-            if(formData.requestType==="storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')){
+            if(formData.requestType==="storage" && (formData.typeOfRequest === 'update-storage')){
                 method = 'PUT'; // Use PUT for storage changes
             }
             console.log(`Submitting ${isRenewal ? 'Renewal (PUT)' : 'New Request (POST)'}...`);
@@ -717,7 +741,7 @@
                 <ul>${errors.map(err => `<li>${err}</li>`).join('')}</ul>
             `);
         $('#combined-request-form').prepend(errorDiv);
-        setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+        //setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
         console.error("Validation errors:", errors);
     }
     
@@ -830,10 +854,44 @@
             console.warn(`No limits found for storage tier: ${tierType}`);
         }
     }
+    function disabledownsize(inputId) {
+        const input = document.getElementById(inputId);
+        if (!input) return;
+
+        // Get the current value to treat as the minimum allowed going forward
+         const minValue = parseInt(input.value);
+
+         // Prevent decreasing via arrow keys or manual typing
+        input.addEventListener('input', function () {
+          if (parseInt(this.value) < minValue) {
+            this.value = minValue;
+            }
+        });
+
+        input.addEventListener('keydown', function (e) {
+           if (e.key === 'ArrowDown') {
+              e.preventDefault(); // Block the down arrow
+          }
+        });
+    }
+
     function updateBilling(billingData) {
         if (billingData) {
             if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
                 $('#funding-number').val(billingData[0].project || '');
+                $('#funding-project').prop('checked', true);
+            }
+            if (billingData[0].gift && typeof billingData[0].gift === 'string' && billingData[0].gift.trim().length > 0) {
+                $('#funding-number').val(billingData[0].gift || '');
+                $('#funding-gift').prop('checked', true);
+            }
+            if (billingData[0].grant && typeof billingData[0].grant === 'string' && billingData[0].grant.trim().length > 0) {
+                $('#funding-number').val(billingData[0].grant || '');
+                $('#funding-grant').prop('checked', true);
+            }
+            if (billingData[0].designated && typeof billingData[0].designated === 'string' && billingData[0].designated.trim().length > 0) {
+                $('#funding-number').val(billingData[0].designated || '');
+                $('#funding-designated').prop('checked', true);
             }
             
             $('#financial-contact').val(billingData[0].financial_contact || '');
@@ -955,7 +1013,7 @@
         const formData = collectFormData();
         const userId = getUserId();
         const billingDetails = getBillingDetails();
-        const storageChange = formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage';
+        const storageChange = formData.typeOfRequest === 'update-storage';
         var selectedSU = "n/a";
         let selectedGroup, selectedTier;
     
@@ -1033,7 +1091,7 @@
         }
     
         // Handle storage adjustments (no changes)
-        if (formData.requestType === "storage" && (formData.typeOfRequest === 'increase-storage' || formData.typeOfRequest === 'decrease-storage')) {
+        if (formData.requestType === "storage" && (formData.typeOfRequest === 'update-storage')) {
             // Construct minimal payload for PUT (change)
             const changePayload = {
                 "storage": {
@@ -1059,14 +1117,14 @@
                 "group_name": selectedGroup,                
                 "data_agreement_signed": $('#data-agreement').is(':checked'),
                 "pi_uid": userId,
-                "project_name": "",
+                "project_name": formData.project_title?.trim() || "Test Project",
                 "project_desc": "",
                 "resources": {
                     "storage": {
                         [hpcServiceUnitKey]: {
                             "tier": selectedTier,
                             "shared_space_name": formData.sharedSpaceName?.trim() || "Shared Space",
-                            "storage_size": formData.storage_size || "0",
+                            "request_size": formData.request_size || "0",
                             "project_title": formData.project_title?.trim() || "Project Title",                            
                             "billing_details": billingDetails
                         }
@@ -1112,7 +1170,7 @@
         const resourceWrapper = payload[0];
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
         var isStorage = $('select[name="request-type"]').val() === 'storage';
-        var isStorageChange=$('input[name="type-of-request"]:checked').val() === 'increase-storage' || $('input[name="type-of-request"]:checked').val() === 'decrease-storage';
+        var isStorageChange=$('input[name="type-of-request"]:checked').val() === 'update-storage';
         // **If it's a renewal, user_resources array should NOT be validated for new entries**
         if (isRenewal) {
             if (!resourceWrapper.group_name || !resourceWrapper.resources?.hpc_service_units) {
@@ -1133,7 +1191,7 @@
                 if (!group.tier) {
                   console.log(`You must select a storage tier.`);
                 } 
-                if(!group.storage_size || group.storage_size === "0") {
+                if(!group.request_size || group.request_size === "0") {
                     console.log(`You must have a storage size > 0.`);
                 }
                 if(isStorageChange){
@@ -1196,6 +1254,59 @@
         });
     
         return errors;
+    }
+
+     // ===================================
+    // Refresh and Populate Groups
+    // ===================================
+
+    async function refreshAndPopulateGroups() {
+        // Show a waiting message (use utility function if available)
+        const waitingMessage = utils?.showWaitingMessage?.() || $('<div>').text('Loading...').prependTo('#combined-request-form');
+    
+        try {
+            // Dynamically fetch the user ID using the helper function
+            const userId = getUserId(); 
+            console.log(`Attempting API call for user: ${userId}`);
+            
+            // Construct the API request URL
+            const requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
+            console.log("Request URL:", requestUrl);
+    
+            // Perform the AJAX call using jQuery
+            const jsonResponse = await $.ajax({
+                url: requestUrl,
+                method: "GET",
+                headers: {
+                    ...API_CONFIG.headers,
+                    'Origin': window.location.origin // Dynamically set the origin
+                },
+                credentials: 'include'
+            });
+    
+            // Save to global variable for further use
+            consoleData = jsonResponse; 
+            console.log("Fetched groups and resources:", consoleData);
+    
+            // Parse and populate user groups and resources
+            const { userGroups, userResources } = parseConsoleData(jsonResponse);
+    
+            // Populate dropdowns for user groups
+            if (Array.isArray(userGroups) && userGroups.length > 0) {
+                console.log("Populating user groups:", userGroups);
+                populateGrouperMyGroupsDropdown(userGroups);
+            } else {
+                console.warn("No user groups found.");
+                populateGrouperMyGroupsDropdown([]);
+            }
+    
+        } catch (error) {
+            console.error("Error fetching user groups:", error);
+            handleApiError(error); // Display a user-friendly error message
+        } finally {
+            // Remove the waiting message
+            utils?.removeWaitingMessage?.() || waitingMessage.remove();
+        }
     }
 
     // ===================================
@@ -1413,7 +1524,7 @@
             if(resourceType==="Storage" && resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
-                    const storageSize = details.storage_size ? `${details.storage_size} TB` : "N/A";
+                    const storageSize = details.request_size ? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const request_status=details.request_status || "N/A";
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
@@ -1442,7 +1553,6 @@
         const { userResources } = parseConsoleData(apiResponse);
         const suTableBody = $('#storage-projects-tbody');
         suTableBody.empty();
-    
         if (!Array.isArray(userResources) || userResources.length === 0) {
             suTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
             return;
@@ -1464,7 +1574,7 @@
             if (resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
                     const tier = details.tier || "N/A";
-                    const storageSize = details.storage_size? `${details.storage_size} TB` : "N/A";
+                    const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
                     const sharedSpace = details.shared_space_name ? `${details.shared_space_name}` : "N/A";
@@ -1486,7 +1596,7 @@
                 });
             }
         });
-    
+        document.getElementById("project-title").value = userResources[0].project_name
         console.log("Existing Service Units table updated!");
     }
 
@@ -1494,7 +1604,6 @@
     const { userResources } = parseConsoleData(apiResponse);
     const suTableBody = $('#allocation-projects-tbody');
     suTableBody.empty();
-
     if (!Array.isArray(userResources) || userResources.length === 0) {
         suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
         return;
@@ -1522,7 +1631,8 @@
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
                         <td>${tier}</td>
-                        <td>${requestCount} | ${updateDate}</td>
+                        <td>${requestCount}</td>
+                        <td>${updateDate}</td>
                     </tr>
                 `;
                 suTableBody.append(row);
@@ -1530,7 +1640,7 @@
             });
         }
     });
-
+    document.getElementById("new-project-name").value = userResources[0].project_name
     console.log("Existing Service Units table updated!");
 }
 
@@ -1613,13 +1723,27 @@
             }
     
             console.log("Metadata successfully fetched:", apiMetadata);
-    
+            
+            if(!apiMetadata[0].is_user_resource_request_elligible){
+                $('#data-agreement').prop('disabled', true);
+                $('#submit').prop('disabled', true);
+            }
+            
             // Update form elements using fetched metadata
             updateFormUsingMetadata(apiMetadata);
     
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
     
+            setInterval(async () => {
+                try {
+                    console.log("Refreshing user groups...");
+                    await refreshAndPopulateGroups();
+                } catch (err) {
+                    console.error("Error refreshing groups:", err);
+                }
+            }, 30000);
+
             // Set up event handlers for dynamic interactivity
             setupEventHandlers();
     
