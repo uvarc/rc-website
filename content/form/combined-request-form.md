@@ -261,7 +261,7 @@ private = true
             <thead>
               <tr>
                 <th>Select</th>
-                <th>Project/Class</th>
+                <th>Project</th>
                 <th>Group</th>
                 <th>Resource Name</th>
                 <th>Tier</th>
