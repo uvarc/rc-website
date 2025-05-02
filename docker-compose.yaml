@@ -1,0 +1,8 @@
+services:
+  server:
+    image: klakegg/hugo:0.80.0
+    command: server --disableFastRender
+    volumes:
+      - ".:/src"
+    ports:
+      - "1313:1313"

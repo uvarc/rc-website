@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
-  <head>
-    {{ partial "head-meta.html" . }}
-    <base href="{{ .Site.BaseURL }}">
-    <link rel="canonical" href="{{ .Permalink }}">
-    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
-    <title>UVA {{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    {{ "<!-- combined, minified CSS -->" | safeHTML }}
-    <link href="{{ .Site.BaseURL }}css/style.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
-    {{ template "_internal/google_analytics.html" . }}
-    {{ partial "head-custom.html" . }}
-    <script src="/js/search-modal.js"></script>
-  </head>
 
-  <body>
-    {{ partial "menu-home.html" . }}
-    {{ partial "site-header.html" . }}
-    {{ partial "carousel.html" . }} 
-    <!-- {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/sept-17-banner.png") }} -->
+<head>
+  {{ partial "head-meta.html" . }}
+  <base href="{{ .Site.BaseURL }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+  <title>UVA {{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  {{ "<!-- combined, minified CSS -->" | safeHTML }}
+  <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
+  {{ template "_internal/google_analytics.html" . }}
+  {{ partial "head-custom.html" . }}
+  <script src="/js/search-modal.js"></script>
+</head>
 
-    <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
-      Press 'S' to search
+<body>
+  {{ partial "menu-home.html" . }}
+  {{ partial "site-header.html" . }}
+  {{ partial "carousel.html" . }}
+  <!-- {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/sept-17-banner.png") }} -->
+
+  <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
+    Press 'S' to search
+  </div>
+
+  <div class="container">
+
+    <!-- STATUS MESSAGE ALERT -->
+    <div class="row" style="margin-bottom:1rem;">
+      <div id="status-message" class="alert alert-danger" role="alert"
+        style="font-size:80%;padding:10px;width:100%;margin-left:1rem;margin-right:1rem;">
+        <p id="status-message-content" style="margin:0; padding:0;"></p>
+      </div>
     </div>
 
-    <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-4 blog-main">
 
-      <!-- STATUS MESSAGE ALERT -->
-      <div class="row" style="margin-bottom:1rem;">
-        <div id="status-message" class="alert alert-danger" role="alert" style="font-size:80%;padding:10px;width:100%;margin-left:1rem;margin-right:1rem;">
-          <p id="status-message-content" style="margin:0; padding:0;"></p>
-        </div>
-      </div>
+        <!-- begin Featured Stories section -->
+        {{ partial "featured-stories.html" . }}
+        <!-- end Featured Story section -->
 
-      <div class="row">
-        <div class="col-md-6 col-lg-4 blog-main">
+      </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+      <!-- END LEFT COLUMN -->
 
-      <!-- begin Featured Stories section -->
-      {{ partial "featured-stories.html" . }}
-      <!-- end Featured Story section -->
+      <!-- BEGIN MIDDLE COLUMN -->
+      <div class="col-md-6 col-lg-4 blog-main">
 
-        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
-        <!-- END LEFT COLUMN -->
-
-        <!-- BEGIN MIDDLE COLUMN -->
-        <div class="col-md-6 col-lg-4 blog-main">
-
-          {{ partial "status.html" . }}
-          <!-- Not called twitter and doesn't allow API scraping anymore
+        {{ partial "status.html" . }}
+        <!-- Not called twitter and doesn't allow API scraping anymore
           {{ partial "twitter.html" . }}
           -->
-          {{ partial "project-home.html" .}}
+        {{ partial "project-home.html" .}}
 
-        </div> {{ "<!-- /.blog-main -->" | safeHTML }}
-        <!-- END MIDDLE COLUMN -->
+      </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+      <!-- END MIDDLE COLUMN -->
 
-        <!-- BEGIN RIGHT COLUMN -->
-        {{ "<!-- /.blog-sidebar -->" | safeHTML }}
-        <aside class="col-md-6 col-lg-4 blog-sidebar">
+      <!-- BEGIN RIGHT COLUMN -->
+      {{ "<!-- /.blog-sidebar -->" | safeHTML }}
+      <aside class="col-md-6 col-lg-4 blog-sidebar">
 
         <!-- THE ARTIST FORMERLY KNOWN AS THE SMART SIDEBAR -->
-          {{ partial "user-help-widget.html" . }}
-          <div style="width:100%;height:2rem;"></div>
-          {{ partial "right-smart-sidebar.html" . }}
-          <!-- {{ partial "boast.html" . }} -->
-          <!-- {{ partial "training-events.html" . }} -->
-          {{ partial "office-hours.html" . }}
-          {{ partial "typed-widget.html" . }}
+        {{ partial "user-help-widget.html" . }}
+        <div style="width:100%;height:2rem;"></div>
+        {{ partial "right-smart-sidebar.html" . }}
+        <!-- {{ partial "boast.html" . }} -->
+        <!-- {{ partial "training-events.html" . }} -->
+        {{ partial "office-hours.html" . }}
+        {{ partial "typed-widget.html" . }}
         <!-- END SMART SIDEBAR -->
 
-        </aside><!-- /.blog-sidebar -->
+      </aside><!-- /.blog-sidebar -->
 
-      </div> {{ "<!-- /.row -->" | safeHTML }}
+    </div> {{ "<!-- /.row -->" | safeHTML }}
 
-    </div> {{ "<!-- /.container -->" | safeHTML }}
+  </div> {{ "<!-- /.container -->" | safeHTML }}
 
-    {{ partial "konami-modal.html" . }}
-    {{ partial "footer.html" . }}
+  {{ partial "konami-modal.html" . }}
+  {{ partial "footer.html" . }}
 
-  </body>
+</body>
 
 </html>
 
