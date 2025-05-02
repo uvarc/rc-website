@@ -284,7 +284,6 @@
         }
 
         function collectFormData() {
-            
             const formData = {
                 requestType: $('select[name="request-type"]').val(),
                 shouldShowBilling: $('#billing-information').is(':visible')
@@ -633,10 +632,10 @@
         });
 
         //refresh groups when you click on dropdown
-        $(document).on('focus', '#mygroups-group', async function () {
+        $(document).on('click', '#mygroups-group', async function () {
             await refreshAndPopulateGroups();
         });
-        $(document).on('focus', '#storage-mygroups-group', async function () {
+        $(document).on('click', '#storage-mygroups-group', async function () {
             await refreshAndPopulateGroups();
         });
 
