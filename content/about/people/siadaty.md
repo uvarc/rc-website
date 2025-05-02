@@ -4,13 +4,15 @@ date = "2024-05-31T11:15:10-05:00"
 title = "Steven Siadaty"
 job_title = "Student"
 lastname = "Siadaty"
+student_year = "2nd Year"
+student_type = "Undergraduate"
 biolink = true
 email = "vth3bk@virginia.edu"
 type = "people"
 description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_steven_siadaty.jpg"
-subjects = ["python", "machine learning", "data science", "computational biology"]
+subjects = ["python", "machine-learning", "r", "bioinformatics"]
 active = true
 +++
 

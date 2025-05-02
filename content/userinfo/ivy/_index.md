@@ -13,8 +13,7 @@ layout = "single"
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p class=lead>The UVA secure environment consits of Ivy virtual machines (Linux and Windows) and Rio HPC.
-Researchers can use Ivy and Rio to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA</a>, FERPA, CUI (Rio excluded) or ITAR requirements. To access the High security Rio HPC, researchers need to request an Ivy Linux VM which serves as a login node.</p>
+<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and certain controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or ITAR data cannot access Rio at this time. To access the High security Rio HPC, researchers need to request an Ivy Linux VM which serves as a login node.</p>
 
 {{< systems-boilerplate >}}
 
@@ -412,11 +411,13 @@ As outlined above, VMs are available in various sizes. Please request a VM that 
 
 ### Hardware Configuration
 
-Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future.
+Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Rio also includes an NVIDIA HGX H200 GPU, and additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future.
 
 ### Job Queues
 
-Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/).
+Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/). 
+
+For an introduction to the Rio HPC system, please see our [tutorial](https://learning.rc.virginia.edu/tutorials/rio-intro/).
 
 # Data Transfer In/Out of Ivy/Rio {#data-transfer-in-out-of-ivy}
 

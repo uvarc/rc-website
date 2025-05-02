@@ -3,6 +3,8 @@ draft = false
 date = "2024-05-31T11:15:10-05:00"
 title = "Jinwoo Kim"
 job_title = "Student"
+student_year = "2nd Year"
+student_type = "Undergraduate"
 lastname = "kim"
 biolink = true
 email = "eer6vt@virginia.edu"
@@ -11,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_jinwoo_kim.jpeg"
 subjects = [
-  "python", "web-development"
+  "python", "software-development"
 ]
 active = false
 +++

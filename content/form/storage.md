@@ -72,6 +72,7 @@ private = true
     </div>
     <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
       <p>None of these storage options offer data backups or replication. Research Project storage provides week long snapshots of data. Snapshots are not available on Research Standard storage</p>
+	<p>Billing information is required. However, if you are within the 10TB of free Research Standard Storage, no charges will apply.</p>
     </div>
 
   </div>
@@ -124,4 +125,3 @@ private = true
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/storage-request.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
-Re

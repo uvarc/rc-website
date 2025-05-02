@@ -516,6 +516,16 @@ Make sure that the ssh key is in your authorized_keys file in your .ssh director
 
 3. The next step is to clone the repository using the ssh link. If you have already cloned the repository using the http link and made a number of changes to your files, you won’t want to redo them.  Rename the directory that was created when you first cloned the repository. Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
 
+## How do I add external or mapped network drives onto the Globus Path
+
+When you first set up Globus, it only has access to certain folders of your local drive. You can add additional locations such as mapped network drives or external hard drives in the Globus Options/Preferences menu.
+
+Windows: Right click the Globus icon > Options > + to add a new folder
+
+Mac: Globus icon > Preferences > Access > + to add a new folder
+
+Click the Up button in the Globus File Manager to navigate to higher level folders.
+
 # Downloading Files
 
 ## What command-line tools are available on Rivanna/Afton for downloading files from web?
