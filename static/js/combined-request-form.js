@@ -1473,7 +1473,7 @@
             } 
     
             if (resourceType==="SU" && resource.resources?.hpc_service_units) {
-                Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
+                Object.entries(resource.resources.hpc_service_units).forEach(([resourceName, details]) => {
                     const tier = details.tier || "N/A";
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
@@ -1485,6 +1485,7 @@
                             <td>${resourceType}</td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
+                            <td>${resourceName}</td>
                             <td>${tier}</td>
                             <td>${requestCount}</td>
                             <td>${request_status}</td>
@@ -1499,7 +1500,7 @@
                 resourceType = "Storage";
             }
             if(resourceType==="Storage" && resource.resources?.storage) {
-                Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
+                Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
                     const tier = details.tier || "N/A";
                     const storageSize = details.request_size ? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
@@ -1511,6 +1512,7 @@
                             <td>${resourceType}</td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
+                            <td>${resourceName}</td>
                             <td>${tier}</td>
                             <td>${storageSize}</td>
                             <td>${request_status}</td>
@@ -1549,7 +1551,7 @@
             const groupName = resource.group_name || "N/A";
     
             if (resource.resources?.storage) {
-                Object.entries(resource.resources.storage).forEach(([allocationName, details]) => {
+                Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
                     const tier = details.tier || "N/A";
                     const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
@@ -1564,6 +1566,7 @@
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
+                            <td>${resourceName}</td>
                             <td>${tier}</td>
                             <td>${sharedSpace}</td>
                             <td>${storageSize}</td>
@@ -1591,7 +1594,7 @@
         const groupName = resource.group_name || "N/A";
 
         if (resource.resources?.hpc_service_units) {
-            Object.entries(resource.resources.hpc_service_units).forEach(([allocationName, details]) => {
+            Object.entries(resource.resources.hpc_service_units).forEach(([resourceName, details]) => {
                 const tier = details.tier || "N/A";
                 const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                 const updateDate = details.update_date ? `Updated: ${formatDateToEST(details.update_date)}` : `Requested: ${formatDateToEST(details.request_date)}`;
@@ -1607,6 +1610,7 @@
                         </td>
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
+                        <td>${resourceName}</td>
                         <td>${tier}</td>
                         <td>${requestCount}</td>
                         <td>${updateDate}</td>

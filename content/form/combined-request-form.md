@@ -67,6 +67,7 @@ private = true
                 <th scope="col">Type</th>
                 <th scope="col">Project</th>
                 <th scope="col">Group</th>
+                <th scope="col">Resource Name</th>
                 <th scope="col">Tier</th>
                 <th scope="col">Size/Count</th>
                 <th scope="col">Status</th>
@@ -178,6 +179,7 @@ private = true
                 <th>Select</th>
                 <th>Project</th>
                 <th>Group</th>
+                <th>Resource Name</th>
                 <th>Tier</th>
                 <th>Count</th>
                 <th>Update Date</th>
@@ -260,6 +262,7 @@ private = true
                 <th>Select</th>
                 <th>Project/Class</th>
                 <th>Group</th>
+                <th>Resource name</th>
                 <th>Tier</th>
                 <th>Shared Space</th>
                 <th>Current Size</th>
