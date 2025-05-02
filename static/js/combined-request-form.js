@@ -632,10 +632,11 @@
         });
 
         //refresh groups when you click on dropdown
-        $(document).on('focus', '#mygroups-group', async function () {
+        $(document).on('click', '#mygroups-group', async function () {
             await refreshAndPopulateGroups();
+            console.log('Clicked!');
         });
-        $(document).on('focus', '#storage-mygroups-group', async function () {
+        $(document).on('click', '#storage-mygroups-group', async function () {
             await refreshAndPopulateGroups();
         });
 
