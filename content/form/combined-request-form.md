@@ -84,7 +84,7 @@ private = true
   <fieldset class="form-item form-group form-type-select">
     <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
     <select name="request-type" id="request-type" class="form-control" required>
-      <option value="service-unit">Service Unit (SU)</option>
+      <option value="service-unit">Allocation (SU)</option>
       <option value="storage">Storage</option>
     </select>
   </fieldset>
