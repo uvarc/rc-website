@@ -1557,6 +1557,7 @@
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
                     const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
+                    const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
                     const row = `
                         <tr data-additional='${billingJson}'>
                             <td>
@@ -1568,13 +1569,17 @@
                             <td>${resourceName}</td>
                             <td>${tier}</td>
                             <td>${storageSize}</td>
+                            <td>${requestStatus}</td>
+                            <td>${updateDate}</td>
+                            
                         </tr>
                     `;
                     suTableBody.append(row);
                 });
             }
         });
-        document.getElementById("project-title").value = userResources[0].project_name
+        document.getElementById("project-title").value = userResources[0].project_name;
+        document.getElementById("project-description-text").value = userResources[0].project_desc;
         console.log("Existing Service Units table updated!");
     }
 
@@ -1595,6 +1600,7 @@
             Object.entries(resource.resources.hpc_service_units).forEach(([resourceName, details]) => {
                 const tier = details.tier || "N/A";
                 const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
+                const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
                 const updateDate = details.update_date ? `Updated: ${formatDateToEST(details.update_date)}` : `Requested: ${formatDateToEST(details.request_date)}`;
                 if (details.billing_details && details.billing_details.fdm_billing_info &&
                     Object.values(details.billing_details.fdm_billing_info).every(val => val !== null)) {
@@ -1611,6 +1617,7 @@
                         <td>${resourceName}</td>
                         <td>${tier}</td>
                         <td>${requestCount}</td>
+                        <td>${requestStatus}</td>
                         <td>${updateDate}</td>
                     </tr>
                 `;
@@ -1619,7 +1626,8 @@
             });
         }
     });
-    document.getElementById("new-project-name").value = userResources[0].project_name
+    document.getElementById("new-project-name").value = userResources[0].project_name;
+    document.getElementById("project-description-text-storage").value = userResources[0].project_desc;
     console.log("Existing Service Units table updated!");
 }
 

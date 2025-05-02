@@ -181,7 +181,8 @@ private = true
                 <th>Group</th>
                 <th>Resource Name</th>
                 <th>Tier</th>
-                <th>Count</th>
+                <th>Size/Count</th>
+                <th>Status</th>
                 <th>Update Date</th>
               </tr>
             </thead>
@@ -262,9 +263,11 @@ private = true
                 <th>Select</th>
                 <th>Project/Class</th>
                 <th>Group</th>
-                <th>Resource name</th>
+                <th>Resource Name</th>
                 <th>Tier</th>
-                <th>Current Size</th>
+                <th>Size/Count</th>
+                <th>Status</th>
+                <th>Update Date</th>
               </tr>
             </thead>
             <tbody id="storage-projects-tbody">
