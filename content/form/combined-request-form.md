@@ -264,7 +264,6 @@ private = true
                 <th>Group</th>
                 <th>Resource name</th>
                 <th>Tier</th>
-                <th>Shared Space</th>
                 <th>Current Size</th>
               </tr>
             </thead>

@@ -1556,7 +1556,6 @@
                     const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
-                    const sharedSpace = details.shared_space_name ? `${details.shared_space_name}` : "N/A";
                     const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const row = `
                         <tr data-additional='${billingJson}'>
@@ -1568,7 +1567,6 @@
                             <td>${groupName}</td>
                             <td>${resourceName}</td>
                             <td>${tier}</td>
-                            <td>${sharedSpace}</td>
                             <td>${storageSize}</td>
                         </tr>
                     `;
