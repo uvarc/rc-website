@@ -25,7 +25,10 @@ students:
         year: 2025
         term: "Spring"
         type: "Poster"
-        projectdesc: ""
+        projectdesc: "Matthew contributed to the development of a research faculty search engine for UVA’s Data Analytics Center. 
+        He designed and implemented a Flask-based web application that scrapes UVA department sites and integrates NIH RePORTER data to compile faculty profiles, which are then embedded using a transformer model and indexed with FAISS for semantic search.
+        The tool enables users to filter and query for faculty aligned with DAC expertise and NIH domains, significantly improving upon previous manual workflows. Matthew also led backend deployment using Docker, Nginx, and Gunicorn, 
+        and collaborated with DAC staff to validate functionality and guide iterative refinement."
         imagepath: "/images/student-work/Spring_2025_Galitz_Poster.png"
         archived: false
   - name: "Bhargav Garre Venkata"
@@ -34,7 +37,9 @@ students:
         year: 2025
         term: "Spring"
         type: "Poster"
-        projectdesc: ""
+        projectdesc: "Bhargav improved HPC accessibility by creating new instructional videos that effectively teach users how to use Research Computing’s resources, 
+        reducing the time RC staff spend handling support tickets. He also redesigned the Flask-based faculty search tool for the Data Analytics Center 
+        with a new frontend and expanded functionality, as well as enhancing the Hugo-based RC Learning site with improved layouts and branding."
         imagepath: "/images/student-work/Spring_2025_GarreVenkata_Poster.png"
         archived: false
   - name: "Diana Lin"
@@ -123,7 +128,8 @@ students:
         year: 2025
         term: "Spring"
         type: "Poster"
-        projectdesc: ""
+        projectdesc: "Mohan works as an aid for chemical engineering groups, installing and maintaining software while giving domain-specific advice. 
+        He also helped the Data Analytics Center (DAC) develop a tool to find faculty they might want to collaborate with through keyword queries."
         imagepath: "/images/student-work/Spring_2025_Shankar_Poster.png"
         archived: false
   - name: "Steven Siadaty"
@@ -132,7 +138,10 @@ students:
         year: 2025
         term: "Spring"
         type: "Poster"
-        projectdesc: ""
+        projectdesc: "Steven developed a bioinformatics tool, ExpressDiff, for accessible differential RNA-seq analysis. 
+        The ExpressDiff pipeline implements open-source tools for read quality control, adapter trimming, gene alignment, 
+        and differential analysis to deliver repeatable results based on user input. ExpressDiff runs entirely on UVA HPC, 
+        and once finalized, may be used a bioinformatics research and teaching tool."
         imagepath: "/images/student-work/Spring_2025_Siadaty_Poster.png"
         archived: false
   - name: "Jennifer Vo"
@@ -148,7 +157,9 @@ students:
       year: 2025
       term: "Spring"
       type: "Poster"
-      projectdesc: ""
+      projectdesc: "Jennifer contributed to the development of Tutorials for the RC-Learning website using embedded slides, streamlining content delivery. 
+      Jennifer also contributed to Virginia Women in High Performance (VA-WHPC) by maintaining their website, coordinating event logistics, and managing Zoom registration. 
+      She also supported the launch of a YouTube channel for UVA Research Computing."
       imagepath: "/images/student-work/Spring_2025_Vo_Poster.png"
       archived: false
   
