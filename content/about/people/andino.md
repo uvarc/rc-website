@@ -9,7 +9,7 @@ biolink = true
 email = "gka6a@virginia.edu"
 description = ""
 author = "UVARC Staff"
-image = "/images/profiles/profile_gladys_andino.jpg"
+image = "/images/profiles/profile_gladys_andino.png"
 subjects = [
   "hpc",
   "bioinformatics",
@@ -18,12 +18,14 @@ subjects = [
 ]
 +++
 
-**Gladys** is the Strategic Services and Education Manager for ITS-Research Computing at UVA. She 
+<p align="justify"> <strong> Gladys </strong> is the Strategic Services and Education Manager for ITS-Research Computing at UVA. She 
 leads strategic planning for researcher training and outreach initiatives coordinating workshops and tutorials to support UVA’s computational research community. She adeptly manages a team of student workers, optimizing ITS-Research Computing’s efficiency by delegating routine tasks, thereby enabling staff to concentrate on domain-specific research challenges, all while grooming the next generation of HPC and scientific computing professionals. <br>
 
 With a strong background in biological sciences and expertise in bioinformatics, Gladys supports computational biology research, particularly in genomic data analysis and high-performance computing applications. She is also part of the Data Analytics Center (DAC) consulting team at UVA, advising on bioinformatics workflows and computational methodologies. <bd>
 
 Since 2021, Gladys has served as the Founder and Chair of Virginia Women in HPC, a program she has successfully expanded across seven Virginia institutions. She organizes virtual events featuring distinguished technical speakers to champion women and allies in HPC and technology.
+
+</p>
 
 ##### Selected Publications
 
