@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2024-12-19T00:00:00-05:00"
+date = "2025-05-01T00:00:00-05:00"
 tags = [
   "bio",
   "multi-core",
@@ -115,6 +115,8 @@ Below are some Slurm script templates for version 2.3.
 {{< pull-code file="/static/scripts/alphafold_multimer.slurm" lang="no-highlight" >}}
 
 ### Notes
+
+1. **For users running large protein jobs:** Version `2.3.2-dev` is based on commit `020cd6d`, about 2 years after the official `2.3.2` release. The reason for using a development version is that the package requirements are updated for compatibility on the H200 GPU. Users who have experienced out-of-memory errors for large protein calculations should request an H200 GPU (`--gres=gpu:h200`) and load the `2.3.2-dev` version.
 
 1. Before upgrading to a newer version, please always check the [official repo](https://github.com/deepmind/alphafold) for details, especially on any changes to the parameters, databases, and flags.
 
