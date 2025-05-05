@@ -48,7 +48,10 @@ students:
         year: 2025
         term: "Spring"
         type: "Poster"
-        projectdesc: ""
+        projectdesc: "Diana developed an interactive dashboard to visualize attendance and survey data from UVA Research Computing workshops. 
+        Using Chart.js and Flask, she implemented dynamic visualizations with filtering options and integrated live data pulling from various APIs. 
+        Her work supports improved planning and analytics for Research Computing workshops. She also contributed to the RC website and 
+        began exploring Open OnDemand for future interactive apps."
         imagepath: "/images/student-work/Spring_2025_Lin_Poster.png"
         archived: false
   - name: "Ivey Mistele"
