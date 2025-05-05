@@ -346,7 +346,9 @@ private = true
       <div class="form-actions" id="submit-div" style="margin-top:1rem;">
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
         <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled="">Submit</button>
-        <button class="button-primary btn btn-primary" id="cancel" >Cancel</button>
+      </div>
+      <div style="display: flex; gap: 10px;>
+      <button> id="cancel" >Cancel</button>
       </div>
     </div>
   </div>

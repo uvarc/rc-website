@@ -614,7 +614,7 @@
         // Initialize visibility of fields based on initial state
         toggleRequestFields();
         updateFormValidation();
-        button.hide();
+        $("#resource-button").hide();
         });
     });
 
