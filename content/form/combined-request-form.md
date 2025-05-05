@@ -62,7 +62,7 @@ private = true
 
 <!-- Current Resources Preview -->
 <div id="existing-resources-preview" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
-    <h5 class="mb-3">Your Current Resources</h5>
+    <h4 class="mb-3">Your Current Resources</h4>
 
     <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
