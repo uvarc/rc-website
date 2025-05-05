@@ -254,6 +254,9 @@
             if (metadata[0].is_user_admin) {
                 document.getElementById('admin-button').style.display = 'inline-block';
               }
+              if (metadata[0].is_user_resource_request_elligible) {
+                document.getElementById('resource-button').style.display = 'inline-block';
+              }
             console.log("Form updated using metadata:", metadata);
         }
 
