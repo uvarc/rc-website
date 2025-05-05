@@ -11,7 +11,7 @@ type = "form"
 private = true
 +++
 <style>
-  th {
+  .table thead th {
     vertical-align: top;
 }
 </style>
