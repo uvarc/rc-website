@@ -19,8 +19,6 @@ private = true
     width: 100%;
 }
 .table th, .table td {
-    border: 1px solid #ccc;
-    padding: 8px;
     text-align: left;
     word-wrap: break-word; /* Ensures long words don’t overflow */
 }
