@@ -63,7 +63,7 @@ private = true
     <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
         <thead>
-            <tr>
+            <tr style = "vertical-align: top;">
                 <th scope="col">Type</th>
                 <th scope="col">Project</th>
                 <th scope="col">Group</th>
