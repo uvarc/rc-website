@@ -580,6 +580,9 @@
 
         // Explicitly show or hide tier-specific sections
         if (isStandard || isInstructional) {
+            $('#su-quantity').val(1000000);
+            document.getElementById("su-quantity").disabled = true;
+        } else if(isInstructional) {
             $('#su-quantity').val(100000);
             document.getElementById("su-quantity").disabled = true;
         } else {
