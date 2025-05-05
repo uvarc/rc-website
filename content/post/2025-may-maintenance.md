@@ -42,7 +42,7 @@ Default version changes include:
 |code-server| 4.92.2 | 4.99.1 |
 |cmake      | 3.23.3, 3.24.3 | 3.28.1, 4.0.0 |
 |cuda       | 10.2.89, 11.8.0 | 12.8.0 |
-|cudnn      | 8.* | 9.8.0-CUDA-12.8.0 |
+|cudnn      | 8.2.4.15, 8.9.7 | 8.9.4.25, 9.8.0-CUDA-12.8.0 |
 |cutadapt   | 3.4 | 4.9 |
 |fastqc     | 0.11.5 | 0.12.1 |
 |fmriprep   | 23.1.4 | 25.0.0 |
@@ -50,6 +50,7 @@ Default version changes include:
 |gcc        | 13.3.0 | 14.2.0 |
 |go         | 1.21.4 | 1.23.6 |
 |intel      | 2024.0 | 2025.0 |
+|jcuda      | 11.4.1 | - |
 |jupyterlab | 3.6.3-py3.11 | 4.4.1-py3.12 |
 |kraken2    | 2.1.3 | 2.1.5 |
 |mathematica| 11.2 | 14.2 |
