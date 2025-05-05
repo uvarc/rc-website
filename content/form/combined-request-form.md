@@ -17,10 +17,12 @@ private = true
 .table {
     table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
 }
 .table th, .table td {
     text-align: left;
-    word-wrap: break-word; /* Ensures long words don’t overflow */
+    word-wrap: break-word; 
+    border: none;
 }
 </style>
 <!-- Core scripts needed for form functionality -->
