@@ -576,9 +576,10 @@
     
     function toggleAllocationTierOptions() {
         const isStandard = $('#allocation-tier-options input[name="allocation-choice"]:checked').val() === 'Standard';
+        const isInstructional = $('#allocation-tier-options input[name="allocation-choice"]:checked').val() === 'Instructional';
 
         // Explicitly show or hide tier-specific sections
-        if (isStandard) {
+        if (isStandard || isInstructional) {
             $('#su-quantity').val(100000);
             document.getElementById("su-quantity").disabled = true;
         } else {
@@ -689,9 +690,9 @@
                 const $selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
-                const fullText = $parentRow[0].cells[4].textContent.trim(); // 5th <td> (index 4)
+                const fullText = $parentRow[0].cells[5].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
-                const tire = $parentRow[0].cells[3].textContent.trim();
+                const tire = $parentRow[0].cells[4].textContent.trim();
                 if(tire === "ssz_standard") {
                     const number = parseInt(match[1]);
                     $('#su-quantity').val(number); 
