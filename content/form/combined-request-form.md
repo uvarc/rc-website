@@ -81,7 +81,7 @@ private = true
 </div>
 
   <!-- Resource Type Selection -->
-  <div class="container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+  <div class="resource_type_container" id = "resource_type_container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
   <fieldset class="form-item form-group form-type-select">
     <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
     <select name="request-type" id="request-type" class="form-control" required>
@@ -92,7 +92,7 @@ private = true
 </div>
 
   <!-- Form Fields Container -->
-  <div style="margin-bottom:1rem;">
+  <div style="margin-bottom:1rem;" id = "service_unit_container">
     <!-- Service Unit (SU) Request Fields -->
     <div id="allocation-fields" style="display: none; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <h5 class="mb-3">Service Unit (SU) Request</h5>

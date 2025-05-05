@@ -501,6 +501,11 @@
     // ===================================
     // UI Toggles
     // ===================================
+    function showFormFields() {
+        $('#resource_type_container').show();
+        $('#service_unit_container').show();
+        $('#common-fields').show();
+    }
 
     function toggleRequestFields() {
         const requestType = $('select[name="request-type"]').val();
@@ -589,6 +594,24 @@
           // In billing details hide Financial contact field
           document.querySelector('#financial-contact-div').style.display = 'none';
       });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the button element
+        const button = document.getElementById("resource-button");
+        button.addEventListener("click", function() {
+        showFormFields();
+    
+        // Set up event handlers for dynamic interactivity
+        setupEventHandlers();
+
+        // Set up real-time payload preview
+        setupPayloadPreviewUpdater();
+
+        // Initialize visibility of fields based on initial state
+        toggleRequestFields();
+        updateFormValidation();
+        });
+    });
 
     function setupEventHandlers() {
        
@@ -1683,7 +1706,7 @@
         }
         try {
             // Hide sections initially to avoid flickering
-            $('#allocation-fields, #storage-fields, #common-fields, #billing-information').hide();
+            $('#resource_type_container, #service_unit_container, #common-fields, #billing-information').hide();
     
             // Display a loading spinner during metadata and user data fetch
             const loadingMessage = $('<div>')
@@ -1722,16 +1745,6 @@
             // Fetch user groups and populate dropdowns
             await fetchAndPopulateGroups();
     
-            // Set up event handlers for dynamic interactivity
-            setupEventHandlers();
-    
-            // Set up real-time payload preview
-            setupPayloadPreviewUpdater();
-    
-            // Initialize visibility of fields based on initial state
-            toggleRequestFields();
-            updateFormValidation();
-    
             console.log("Form initialization complete.");
         } catch (error) {
             console.error("Error during form initialization:", error);
@@ -1745,6 +1758,7 @@
             $('#loading-message').fadeOut(300, function() { $(this).remove(); });
         }
     }
+
 
     function formatDateToEST(isoDateStr) {
         // Create a Date object from the ISO string
