@@ -508,6 +508,7 @@
         $('#resource_type_container').show();
         $('#service_unit_container').show();
         $('#common-fields').show();
+        $('#existing-resources-preview').hide();
     }
 
     function toggleRequestFields() {
