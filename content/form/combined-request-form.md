@@ -10,7 +10,11 @@ draft = false
 type = "form"
 private = true
 +++
-
+<style>
+  th {
+    vertical-align: top;
+}
+</style>
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="/js/combined-request-form.js"></script>
@@ -63,7 +67,7 @@ private = true
     <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
         <thead>
-            <tr style = "vertical-align: top;">
+            <tr>
                 <th scope="col">Type</th>
                 <th scope="col">Project</th>
                 <th scope="col">Group</th>
