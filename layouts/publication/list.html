@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 
-  <head>
-    {{ partial "head-meta.html" . }}
+<head>
+  {{ partial "head-meta.html" . }}
 
-    <base href="{{ .Permalink }}">
-    <link rel="canonical" href="{{ .Permalink }}">
-    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+  <base href="{{ .Permalink }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
 
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-    {{ "<!-- combined, minified CSS -->" | safeHTML }}
-    <link href="{{ .Site.BaseURL }}css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  {{ "<!-- combined, minified CSS -->" | safeHTML }}
+  <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    {{ partial "head-custom.html" . }}
-  </head>
+  {{ partial "head-custom.html" . }}
+</head>
 
-  <body>
+<body>
 
-    {{ partial "menu-home.html" . }}
+  {{ partial "menu-home.html" . }}
 
-    {{ partial "site-header.html" . }}
+  {{ partial "site-header.html" . }}
 
-        <section id="main-content" class="main-content" style="margin-top:20px;">
+  <section id="main-content" class="main-content" style="margin-top:20px;">
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-8 blog-main">
+        <div class="col-sm-9 blog-main">
           
           {{ partial "publications-list.html" . }} 
           <!-- The part of the page that begins to differ between templates -->
-          
+
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
         {{ partial "sidebar.html" . }}
@@ -41,6 +42,6 @@
 
     {{ partial "footer.html" . }}
 
-  </body>
+</body>
 
 </html>

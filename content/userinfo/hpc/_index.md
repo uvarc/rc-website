@@ -162,10 +162,8 @@ Rivanna and Afton are managed resources; users must submit jobs to queues contro
 - `parallel` requires *at least* 2 nodes and 4 CPU cores.
 - Slurm's default memory unit is in MB. Different units may be specified, e.g. `--mem=100G`, where 1G = 1024M.
 - The `gpu` partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). In Slurm scripts you must request at least one GPU device through `--gres=gpu`. Jobs that do not utilize any GPUs are not allowed in this partition.  
-The maximum *aggregate* GPUs allowed for a single user’s running jobs is 32.  
-SU charge rate = #cores + 2 x #GPUs, which is *at least* 1 + 2x1 = 3.
-- `interactive` maximum *aggregate* CPU cores (GPUs) is 24 (2) for a single user. The charge rates for cores and GPUs are the same as the other partitions.
-- The NVIDIA DGX BasePOD offers high-performance GPUs that brings new AI and ML functionality to support parallel GPU computing and large deep-learning models.  
+- `interactive` maximum *aggregate* CPU cores (GPUs) is 24 (2) for a single user.
+- The NVIDIA DGX BasePOD and HGX H200 GPU nodes offer high-performance GPUs that bring new AI and ML functionality to support parallel GPU computing and large deep-learning models.  
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
 - - -
@@ -189,6 +187,10 @@ Excessive consumption of licenses for commercial software, either in time or num
 ## Inappropriate Usage
 
 Any violation of the University’s security policies, or any behavior that is considered criminal in nature or a legal threat to the University, will result in the immediate termination of access privileges without warning.
+
+## Acceptable Use of the University’s Information Technology Resources
+
+According to UVA policy, users are prohibited from downloading or using applications such as TikTok, WeChat, DeepSeek, and similar software on any RC resources. For more details, please see [here](https://uvapolicy.virginia.edu/policy/irm-002).
 
 <br clear=all />
 

@@ -9,4 +9,4 @@
 module load gcc
 module load openmpi
 
-srun ./parallel_executable
+mpirun ./parallel_executable

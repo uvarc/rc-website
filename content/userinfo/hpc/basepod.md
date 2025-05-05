@@ -1,23 +1,35 @@
 +++
 categories = ["userinfo"]
 type = "rivanna"
-date = "2023-05-30T00:00:00-05:00"
+date = "2025-03-28T00:00:00-05:00"
 tags = [
     "hpc","rivanna","parallel-computing","software","containers"
 ]
 draft = false
-title = "NVIDIA DGX BasePOD™"
+title = "HGX H200 Nodes and the NVIDIA DGX BasePOD™"
 description = ""
 author = "RC Staff"
 
 +++
 
+# HGX H200 Nodes
+*May 1, 2025*
+
+We’re excited to announce the release of our newest high-performance compute node featuring the NVIDIA HGX H200 platform. This node is built on the Dell PowerEdge XE9680 server model, and we currently have one server available.
+
+The node is equipped with dual Intel Xeon Platinum 8468 CPUs, offering a total of 96 cores running at 2.1GHz, and comes with a massive 2TB of memory. This addition features eight NVIDIA HGX H200 GPUs based on the NVIDIA Hopper architecture.
+
+Each H200 GPU includes 141 GB of memory and delivers up to 4.8 TB/s of memory bandwidth. High-speed communication between GPUs is supported via 900 GB/s NVLink, while connectivity between CPU and GPU uses PCIe Gen5, providing up to 128 GB/s bi-directional bandwidth. More information can be found [here](https://www.nvidia.com/en-us/data-center/h200/).
+
+This node is now integrated into our SLURM scheduler and can be accessed using the `gpu` partition. Information for accounting and scheduling purposes can be found [here](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration). We invite users with GPU-intensive workflows to take advantage of these powerful nodes. 
+
 # Introducing the NVIDIA DGX BasePOD™
+*May 30, 2023*
 
 As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
 
 The NVIDIA DGX BasePOD™ on Rivanna and Afton, hereafter referred to as the POD, is comprised of:
-- 10 DGX A100 nodes with
+- 18 DGX A100 nodes with
   - 2TB of RAM memory per node
   - 80 GB GPU memory per GPU device
 
@@ -83,3 +95,5 @@ For documentation and demos, refer to the “Resources” section at the bottom 
 ## GPU-enabled modules
 
 A complete list of GPU-enabled modules on the HPC system can be found [here](https://www.rc.virginia.edu/userinfo/hpc/software/gpu/). Please refer to their respective pages and/or module load messages (if any) for usage instructions.
+
+

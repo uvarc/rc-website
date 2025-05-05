@@ -4,6 +4,8 @@ date = "2025-02-05T11:15:10-05:00"
 title = "Diana Lin"
 job_title = "Student"
 lastname = "lin"
+student_year = "1st Year"
+student_type = "Undergraduate"
 biolink = true
 email = "xrc9wg@virginia.edu"
 type = "people"
@@ -13,7 +15,7 @@ image = "/images/profiles/profile_diana_lin.jpg"
 subjects = [
   "python",
   "docker",
-  "machine learning",
+  "machine-learning",
 ]
 active = true
 +++

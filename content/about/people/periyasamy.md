@@ -3,6 +3,8 @@ draft = false
 date = "2023-12-24T11:15:10-05:00"
 title = "Hariprasad Periyasamy"
 job_title = "Student"
+student_year = "3rd Year"
+student_type = "Undergraduate"
 lastname = "periyasamy"
 biolink = true
 email = "sfb3jj@virginia.edu"
@@ -11,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_hariprasad_periyasamy.jpeg"
 subjects = [
-  "python, software"
+  "python", "software-development","api"
 ]
 active = true
 +++

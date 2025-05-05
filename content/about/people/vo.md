@@ -3,6 +3,8 @@ draft = false
 date = "2024-05-30T18:43:42-05:00"
 title = "Jennifer Vo"
 job_title = "Student"
+student_year = "4th Year"
+student_type = "Undergraduate"
 lastname = "vo"
 biolink = true
 email = "phb8pt@virginia.edu"
@@ -11,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_jennifer_vo.jpg"
 subjects = [
-  "java", "r", "unity"
+  "java", "r", "va-whpc"
 ]
 active = true
 +++

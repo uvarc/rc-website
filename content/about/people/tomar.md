@@ -4,6 +4,8 @@ date = "2023-12-21T11:15:10-05:00"
 title = "Diya Tomar"
 job_title = "Student"
 lastname = "tomar"
+student_year = "2nd Year"
+student_type = "Undergraduate"
 biolink = true
 email = "mhe3ft@virginia.edu"
 type = "people"
@@ -11,9 +13,8 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_diya_tomar.jpg"
 subjects = [
-  "markdowns",
   "python",
-  "web development"
+  "software-development"
 ]
 active = false
 +++

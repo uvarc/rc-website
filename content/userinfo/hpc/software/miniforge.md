@@ -154,5 +154,41 @@ conda install -c conda-forge mpi4py
 
 {{< pull-code file="/static/scripts/python_mpi.slurm" lang="no-highlight" >}}
 
+# Using Conda Environments on Rio
+
+When running Slurm jobs on Rio, it is essential to ensure that all packages and environments installed with miniforge are configured correctly. Rio compute nodes can only run jobs from high-security research standard storage, so it’s important to ensure that all necessary files and variables point to this location.
+
+The following environment variables should be exported in your `~/.bashrc` file to install conda packages and environment into a specific directory (`/standard/ivy-xxx-xxxx/path/to/.conda/`):
+
+```
+export CONDA_PKGS_DIRS="/standard/ivy-xxx-xxxx/path/to/.conda/pkgs"
+export CONDA_ENVS_PATH="/standard/ivy-xxx-xxxx/path/to/.conda/envs" 
+export CONDA_CACHE_DIR="/standard/ivy-xxx-xxxx/path/to/.conda/cache" 
+export CONDA_ROOT="/standard/ivy-xxx-xxxx/path/to/.conda" 
+export XDG_CACHE_HOME="/standard/ivy-xxx-xxxx/path/to/.conda/cache"
+```
+
+{{% callout %}}
+Keep in mind to replace `/standard/ivy-xxx-xxxx/path/to/.conda` with the path to your `.conda`
+directory in your storage share.
+
+Additionally, You'll want to make sure all of the sub directories exist under `.conda` (Eg pkgs, envs, and cache)
+{{% /callout %}}
+
+Conda environments will need to be created with the `--prefix` flag. Eg
+
+```
+module purge
+module load miniforge
+
+conda create --prefix /standard/ivy-xxx-xxxx/path/to/.conda/envs/my_env python=3.11
+```
+
+To access the environment on the compute nodes you'll want to export all of the previous commands and  active the full file path to the environment:
+
+```
+source activate /standard/ivy-xxx-xxxx/path/to/.conda/envs/my_env
+```
+
 # More Information
 Please visit the official [website](https://github.com/conda-forge/miniforge).

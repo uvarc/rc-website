@@ -9,4 +9,4 @@
 module purge
 module load goolf R
 
-srun Rscript myRprog.R
+mpirun Rscript myRprog.R
