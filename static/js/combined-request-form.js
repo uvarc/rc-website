@@ -614,6 +614,19 @@
         // Initialize visibility of fields based on initial state
         toggleRequestFields();
         updateFormValidation();
+        button.hide();
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the button element
+        const button = document.getElementById("cancel");
+        button.addEventListener("click", function() {
+            $('#resource_type_container').hide();
+            $('#service_unit_container').hide();
+            $('#common-fields').hide();
+            $('#existing-resources-preview').show();
+            $("#resource-button").show()
         });
     });
 
