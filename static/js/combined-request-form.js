@@ -1075,7 +1075,7 @@
                selectedSU = $('input[name="selected-su"]:checked').val();
                if (selectedSU) {
                    var checkedRadio=$('input[name="selected-su"]:checked')               
-                   selectedTier=checkedRadio.closest('tr').find('td:nth-child(4)').text().trim();
+                   selectedTier=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
                    selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();                
                  }
                  let existingResource = consoleData[0]?.user_resources?.find(resource =>
@@ -1102,8 +1102,7 @@
                             [selectedSU]: {
                                 "tier": selectedTier,
                                 "request_count": formData.requestCount, 
-                                "billing_details": billingDetails, // Updated billing details
-                                "update_date": new Date().toISOString() // Set new timestamp
+                                "billing_details": billingDetails // Updated billing details
                             }
                         }
                     }                
