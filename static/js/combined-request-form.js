@@ -46,10 +46,6 @@
         }
     };
 
-    let selectedUpdateResourceName = "";
-    let selectedUpdateResourceTier = "";
-    let selectedUpdateGroupName = "";
-
     // ===================================
     // Fetches and Holds API Data
     // ===================================
@@ -660,9 +656,6 @@
                 const $parentRow = $selectedRadio.closest('tr');
                 const storageText = $parentRow[0].cells[5].textContent.trim();
                 const number = parseInt(storageText);
-                selectedUpdateResourceName = $parentRow[0].cells[3].textContent.trim();
-                selectedUpdateResourceTier = $parentRow[0].cells[4].textContent.trim();
-                selectedUpdateGroupName = $parentRow[0].cells[2].textContent.trim();
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
@@ -1093,8 +1086,8 @@
                // Construct minimal payload for PUT (Renewal)
                 const renewalPayload = {
                     "group_name": selectedGroup,
-                    "project_name": existingResource.project_name,
-                    "project_desc": existingResource.project_desc,
+                    "project_name": formData.projectName?.trim(),
+                    "project_desc": formData.projectDescription.trim(),
                     "data_agreement_signed": existingResource.data_agreement_signed,
                     "pi_uid": userId,
                     "resources": {
@@ -1157,8 +1150,8 @@
                         "group_name": selectedGroup,
                         "data_agreement_signed": existingResource.data_agreement_signed,
                         "pi_uid": userId,
-                        "project_name": existingResource.project_name,
-                        "project_desc": existingResource.project_desc,
+                        "project_name": formData.project_title?.trim(),
+                        "project_desc": formData.projectDescription.trim(),
                         "resources": {
                             "storage": {
                                 [selectedST]: {
