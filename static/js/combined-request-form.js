@@ -752,7 +752,13 @@
             displayValidationErrors(errors);
             return;
         }
-    
+        let isUpdateRequest;
+        if(formData.requestType==="service-unit"){
+            isUpdateRequest = formData.newOrRenewal === 'renewal';
+        }
+        else if(formData.requestType==="storage"){
+                isUpdateRequest = formData.typeOfRequest === 'update-storage';
+        }
         try {
             const responseData = await submitForm(formData, payload);
     
@@ -760,7 +766,7 @@
                 console.log("API Response:", responseData);
                 showSuccessMessage("Your request has been submitted successfully!");
     
-                if (isRenewal) {
+                if (isUpdateRequest) {
                     updateServiceUnitTimestamp(formData.existingProject);
                 }
     
@@ -1690,7 +1696,7 @@
     
         $('#allocation-projects-tbody tr').each(function () {
             const group = $(this).find("td:eq(2)").text().trim();
-            const tier = $(this).find("td:eq(3)").text().trim();
+            const tier = $(this).find("td:eq(4)").text().trim();
             const matchValue = `${group}-${tier}`;
     
             if (matchValue === selectedSU) {
