@@ -809,7 +809,7 @@
 
         if(formData.requestType==="service-unit"){
             isUpdateRequest = formData.newOrRenewal === 'renewal';
-             method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
+             method = isUpdateRequest ? 'PUT' : 'POST'; // Use PUT for renewals
         }
         else if(formData.requestType==="storage"){
                 isUpdateRequest = formData.typeOfRequest === 'update-storage';
@@ -871,7 +871,7 @@
     
             console.log(`Form ${method === 'PUT' ? 'updated' : 'submitted'} successfully:`, response);
     
-            sessionStorage.setItem('submissionSuccess', isRenewal
+            sessionStorage.setItem('submissionSuccess', isUpdateRequest
                 ? "Your renewal request has been submitted successfully!"
                 : "Your request has been submitted successfully!");
     
