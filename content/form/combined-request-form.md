@@ -14,9 +14,6 @@ private = true
   .table thead th {
     vertical-align: top;
 }
-.table {
-    table-layout: fixed;
-}
 
 </style>
 <!-- Core scripts needed for form functionality -->
