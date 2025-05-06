@@ -807,7 +807,7 @@
         }
         else if(formData.requestType==="storage"){
                 isUpdateRequest = formData.typeOfRequest === 'update-storage';
-                method = updateStorage ? 'PUT' : 'POST'; 
+                method = isUpdateRequest ? 'PUT' : 'POST'; 
                 if (isRetire)
                     method = 'DELETE';
         }
