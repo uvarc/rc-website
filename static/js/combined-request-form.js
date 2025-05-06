@@ -1136,17 +1136,34 @@
         } 
         else if (formData.requestType == "storage") {
                  if (formData.typeOfRequest === 'update-storage') {
+                    // Extract from the selected storage in the update table
+                    selectedST = $('input[name="selected-st"]:checked').val();
+                    if (selectedST) {
+                        var checkedRadio=$('input[name="selected-st"]:checked');
+                        selectedTier=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
+                        selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();
+                    }
+                    let existingResource = consoleData[0]?.user_resources?.find(resource =>
+                    resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
+                    resource.resources?.storage?.[selectedST]?.tier.toLowerCase() === selectedTier.toLowerCase());
+               
+                    if (!existingResource) {
+                       showErrorMessage(`⚠ The selected Group and Tier do not match any existing resources.`);
+                       return null;
+                    }
+                    console.log(`Update detected: ${selectedGroup} - ${selectedTier}. Fetching existing storage details.`);
+        
                       let changePayload = {
-                        "group_name": selectedUpdateGroupName,
-                        "data_agreement_signed": $('#data-agreement').is(':checked'),
+                        "group_name": selectedGroup,
+                        "data_agreement_signed": existingResource.data_agreement_signed,
                         "pi_uid": userId,
-                        "project_name": formData.project_title?.trim() || "Test Project",
-                        "project_desc": formData.projectDescription.trim() || "This is free text",
+                        "project_name": existingResource.project_name,
+                        "project_desc": existingResource.project_desc,
                         "resources": {
                             "storage": {
-                                [selectedUpdateResourceName]: {
-                                    "tier": selectedUpdateResourceTier,
-                                    "request_size": formData.request_size || "0",
+                                [selectedST]: {
+                                    "tier": selectedTier,
+                                    "request_size": formData.request_size,
                                     "billing_details": billingDetails
                                  }
                               }
