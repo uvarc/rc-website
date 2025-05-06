@@ -18,12 +18,8 @@ private = true
     table-layout: fixed;
     width: 100%;
  }
- .table th,
  .table td {
-    white-space: normal;  
-    overflow-wrap: break-word;  
     word-break: break-word;
-    padding: 0.5rem 1rem;
   }
 </style>
 <!-- Core scripts needed for form functionality -->
@@ -357,7 +353,7 @@ private = true
       <div class="form-actions" id="submit-div" style="margin-top:1rem;">
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
         <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled="">Submit</button>
-        <button class="button-primary btn btn-primary id="cancel">Cancel</button>
+        <button class="button-primary btn btn-primary" type="button" id="cancel">Cancel</button>
       </div>
     </div>
   </div>
