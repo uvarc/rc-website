@@ -660,9 +660,12 @@
                 const storageText = $parentRow[0].cells[5].textContent.trim();
                 const number = parseInt(storageText);
                 selectedUpdateResourceName = $parentRow[0].cells[3].textContent.trim();
+                alert(selectedUpdateResourceName);
                 selectedUpdateResourceTier = $parentRow[0].cells[4].textContent.trim();
+                alert(selectedUpdateResourceTier);
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 // Retrieve the data-additional attribute
+                alert(number);
                 const additionalData = $parentRow.attr('data-additional');
                 
                 // Parse it to an object (if needed)
@@ -1136,7 +1139,7 @@
                  if (formData.typeOfRequest === 'update-storage') {
                       //selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
                       // Construct minimal payload for PUT (change)
-                      const changePayload = {
+                      let changePayload = {
                         "group_name": selectedGroup,
                         "data_agreement_signed": $('#data-agreement').is(':checked'),
                         "pi_uid": userId,
@@ -1151,17 +1154,7 @@
                                  }
                               }
                            }
-                       };
-                    //   {
-                    //   "storage": {
-                    //          [storageKey]: {
-                    //                         "tier": selectedTier,
-                    //                         "request_size": formData.request_size,
-                    //                         "project_name": formData.project_title,
-                    //                         "billing_details": billingDetails
-                    //                       }
-                    //             }
-                    //     };
+                        };
                         console.log("Final Storage Change Payload (PUT):", JSON.stringify(changePayload, null, 2));
                         return [changePayload];
                    } else {
