@@ -543,7 +543,7 @@
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').show();
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
-            $('#allocation-fields, #mygroups-group-container, #allocation-tier').hide();
+            $('#mygroups-group-container, #allocation-tier').hide();
             $('#existing-projects-allocation, #new-project-name-container, #project-description').show();
             populateExistingServiceUnitsTable(consoleData);
         }
