@@ -17,11 +17,7 @@ private = true
 .table {
     table-layout: fixed;
 }
-.table th, .table td {
-    text-align: left;
-    word-wrap: break-word; 
-    border: none;
-}
+
 </style>
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
