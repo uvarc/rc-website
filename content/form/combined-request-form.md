@@ -16,8 +16,6 @@ private = true
 }
 .table {
     table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
 }
 .table th, .table td {
     text-align: left;
