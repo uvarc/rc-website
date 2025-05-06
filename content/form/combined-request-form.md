@@ -22,10 +22,6 @@ private = true
  .table td {
     padding: 8px;
     text-align: left;
-    white-space: nowrap;       /* Prevents wrapping */
-    overflow: hidden;          /* Hides overflow */
-    text-overflow: ellipsis; 
-    border: none;
   }
 </style>
 <!-- Core scripts needed for form functionality -->
