@@ -46,6 +46,9 @@
         }
     };
 
+    let selectedUpdateResourceName = "";
+    let selectedUpdateResourceTier = "";
+
     // ===================================
     // Fetches and Holds API Data
     // ===================================
@@ -656,6 +659,8 @@
                 const $parentRow = $selectedRadio.closest('tr');
                 const storageText = $parentRow[0].cells[5].textContent.trim();
                 const number = parseInt(storageText);
+                selectedUpdateResourceName = $parentRow[0].cells[3].textContent.trim();
+                selectedUpdateResourceTier = $parentRow[0].cells[4].textContent.trim();
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
@@ -1060,7 +1065,7 @@
         const allocationChange = formData.newOrRenewal === "renewal";
         var selectedSU = "n/a";
         let selectedGroup = formData.group ? formData.group.trim() : "";
-        let selectedTier, hpcServiceUnitKey, storageKey;
+       // let selectedTier, hpcServiceUnitKey, storageKey;
         if (formData.requestType === "service-unit") {
            if (formData.newOrRenewal === "renewal") {
               // Extract from the selected SU in the renewal table
@@ -1129,19 +1134,34 @@
         } 
         else if (formData.requestType == "storage") {
                  if (formData.typeOfRequest === 'update-storage') {
-                      selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
-                      storageKey = selectedGroup +"-"+ selectedTier
+                      //selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
                       // Construct minimal payload for PUT (change)
                       const changePayload = {
-                      "storage": {
-                             [storageKey]: {
-                                            "tier": selectedTier,
-                                            "request_size": formData.request_size,
-                                            "project_name": formData.project_title,
-                                            "billing_details": billingDetails
-                                          }
-                                }
-                        };
+                        "group_name": selectedGroup,
+                        "data_agreement_signed": $('#data-agreement').is(':checked'),
+                        "pi_uid": userId,
+                        "project_name": formData.project_title?.trim() || "Test Project",
+                        "project_desc": formData.projectDescription.trim() || "This is free text",
+                        "resources": {
+                            "storage": {
+                                [selectedUpdateResourceName]: {
+                                    "tier": selectedUpdateResourceTier,
+                                    "request_size": formData.request_size || "0",
+                                    "billing_details": billingDetails
+                                 }
+                              }
+                           }
+                       };
+                    //   {
+                    //   "storage": {
+                    //          [storageKey]: {
+                    //                         "tier": selectedTier,
+                    //                         "request_size": formData.request_size,
+                    //                         "project_name": formData.project_title,
+                    //                         "billing_details": billingDetails
+                    //                       }
+                    //             }
+                    //     };
                         console.log("Final Storage Change Payload (PUT):", JSON.stringify(changePayload, null, 2));
                         return [changePayload];
                    } else {
