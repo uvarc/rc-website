@@ -1,54 +1,63 @@
-  <!-- footer -->
-  <footer class="footer" style="margin-top:20px;">
-    <div class="container" style="text-align:left;padding-top:20px;">
-      <div class="row">
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4">
-          <strong>Contact</strong>
-          <address>
-            Research Computing<br />
-            University of Virginia<br />
-            Michie North Building<br />
-            918 Emmet Street<br />
-            Charlottesville, VA 22903<br />
-          </address>
-        </div>
-
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" style="padding-left:20px;">
-          <strong>Find Us</strong><br /><br />
-            <p style="line-height:240%;">
-              <a href="https://github.com/uvarc" target="_blank" rel="noopener noreferrer"><i class="fab fa-2x fa-github" style="margin-right:8px;"></i></a>
-              <a href="https://hub.docker.com/r/uvarc/" target="_blank" rel="noopener noreferer"><i class="fab fa-2x fa-docker" style="margin-right:8px;"></i></a>
-              <a href="https://rci.hpc.virginia.edu/xdmod/#main_tab_panel:tg_summary" target="_blank" rel="noopener noreferer"><i class="far fa-2x fa-chart-bar" style="margin-right:8px;"></i></a>
-              <a href="http://stats.pingdom.com/ahjqdv66ptc9" target="_blank" rel="noopener noreferer"><i class="fab fa-2x fa-product-hunt" style="margin-right:8px;"></i></a>
-            </p>
-      	</div>
-
-        <div class="col-6 col-sm-6 col-md-6 col-lg-4" style="padding-left:20px;">
-          <strong>Explore</strong>
-        	<p>
-        	  <a href="https://mailchi.mp/virginia/rc-signup" target="_blank" rel="noopener noreferrer">Newsletter</a> <br />
-        	  <a href="/education/workshops/">Workshops</a> <br />
-        	  <a href="https://learning.rc.virginia.edu/" target="_blank" rel="noopener noreferrer">Learn</a> <br />
-        	  <a href="https://cio.virginia.edu" target="_blank" rel="noopener noreferrer">CIO @ UVA</a> <br />
-        	  <!-- <a href="https://access-ci.org/" target="_blank" rel="noopener noreferrer">ACCESS Super Computing</a> <br /> -->
-        	  <a href="/search/#search">Search</a><br />
-        	</p>
-        </div>
+<!-- footer -->
+<footer class="footer" style="margin-top:20px;">
+  <div class="container" style="text-align:left;padding-top:20px;">
+    <div class="row" style="justify-content: space-evenly;">
+      <div>
+        <strong>Contact</strong>
+        <address>
+          Research Computing<br />
+          University of Virginia<br />
+          Michie North Building<br />
+          918 Emmet Street<br />
+          Charlottesville, VA 22903<br />
+        </address>
       </div>
-      <div class="row">
-        <div class="col" style="text-align:center;margin-bottom:20px;">
-          <span class="copyright">
-            &copy;{{ replace .Site.Copyright "{year}" now.Year }} The Rector and Visitors of the <a href="https://www.virginia.edu/" target="_new">University of Virginia</a> | <a href="https://www.virginia.edu/siteinfo/privacy/" target="_new">Privacy</a>
-          </span>
-        </div>
+
+      <div>
+        <strong>Find Us</strong><br /><br />
+        <p style="line-height:240%;">
+          <a href="https://github.com/uvarc" target="_blank" rel="noopener noreferrer"><i class="fab fa-2x fa-github"
+              style="margin-right:8px;"></i></a>
+          <a href="https://hub.docker.com/r/uvarc/" target="_blank" rel="noopener noreferer"><i
+              class="fab fa-2x fa-docker" style="margin-right:8px;"></i></a>
+          <a href="https://rci.hpc.virginia.edu/xdmod/#main_tab_panel:tg_summary" target="_blank"
+            rel="noopener noreferer"><i class="far fa-2x fa-chart-bar" style="margin-right:8px;"></i></a>
+          <a href="http://stats.pingdom.com/ahjqdv66ptc9" target="_blank" rel="noopener noreferer"><i
+              class="fab fa-2x fa-product-hunt" style="margin-right:8px;"></i></a>
+        </p>
+      </div>
+
+      <div>
+        <strong>Explore</strong>
+        <p>
+          <a href="https://mailchi.mp/virginia/rc-signup" target="_blank" rel="noopener noreferrer">Newsletter</a>
+          <br />
+          <a href="/education/workshops/">Workshops</a> <br />
+          <a href="https://learning.rc.virginia.edu/" target="_blank" rel="noopener noreferrer">Learn</a> <br />
+          <a href="https://cio.virginia.edu" target="_blank" rel="noopener noreferrer">CIO @ UVA</a> <br />
+          <!-- <a href="https://access-ci.org/" target="_blank" rel="noopener noreferrer">ACCESS Super Computing</a> <br /> -->
+          <a href="/search/#search">Search</a><br />
+        </p>
       </div>
     </div>
-  </footer>
+    <div class="row">
+      <div class="col" style="text-align:center;margin-bottom:20px;">
+        <span class="copyright">
+          &copy;{{ replace .Site.Copyright "{year}" now.Year }} The Rector and Visitors of the <a
+            href="https://www.virginia.edu/" target="_new">University of Virginia</a> | <a
+            href="https://www.virginia.edu/siteinfo/privacy" target="_new">Privacy</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <!-- Insert search modal -->
 <script src="/js/search-overlay.js"></script>
 
 <!-- MailChimp signup widget -->
-<script async defer type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-<script async defer type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us9.list-manage.com","uuid":"b918ecff2df30f32775065906","lid":"7f59482acd","uniqueMethods":true}) })</script>
+<script async defer type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js"
+  data-dojo-config="usePlainJson: true, isDebug: false"></script>
+<script async defer
+  type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us9.list-manage.com", "uuid": "b918ecff2df30f32775065906", "lid": "7f59482acd", "uniqueMethods": true }) })</script>
 <!-- /footer -->
