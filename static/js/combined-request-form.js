@@ -543,8 +543,8 @@
             $('#allocation-fields #new-project-name-container, #project-description, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').show();
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
-            $('#allocation-fields #new-project-name-container, #project-description, #allocation-fields #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
-            $('#existing-projects-allocation').show();
+            $('#allocation-fields, #project-description, #allocation-fields #mygroups-group-container, #allocation-fields #allocation-tier').hide();
+            $('#existing-projects-allocation, #new-project-name-container, #project-description').show();
             populateExistingServiceUnitsTable(consoleData);
         }
     }
@@ -559,8 +559,8 @@
             $('#storage-fields #existing-projects-storage').hide();
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                 $('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
-                $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields #project-title-container, #project-description-container').hide();
-                $('#existing-projects-storage').show();
+                $('#storage-fields #storage-mygroups-container, #storage-fields #storage-platform, #storage-fields #shared-space-name-container, #storage-fields').hide();
+                $('#existing-projects-storage, #project-title-container, #project-description-container').show();
         }
     }
     
