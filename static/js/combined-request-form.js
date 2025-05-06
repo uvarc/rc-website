@@ -792,7 +792,7 @@
     // Submit Form (Using jQuery AJAX)
     // ===================================
 
-    async function submitForm(formData, payload, method) {
+    async function submitForm(formData, payload) {
         const userId = getUserId();
         const userEmail = `${userId}@virginia.edu`; // Construct the user's email
         console.log("Submitting payload for user:", userId);
@@ -1131,8 +1131,6 @@
         } 
         else if (formData.requestType == "storage") {
                  if (formData.typeOfRequest === 'update-storage') {
-                      //selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
-                      // Construct minimal payload for PUT (change)
                       let changePayload = {
                         "group_name": selectedUpdateGroupName,
                         "data_agreement_signed": $('#data-agreement').is(':checked'),
