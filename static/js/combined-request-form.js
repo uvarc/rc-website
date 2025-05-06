@@ -558,7 +558,7 @@
             $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container').show();
             $('#existing-projects-storage').hide();
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
-                //$('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
+                $('#storage-fields').show(); // Show capacity field for increase/decrease
                 $('#storage-mygroups-container, #storage-platform').hide();
                 $('#existing-projects-storage, #project-title-container, #project-description-container').show();
         }
