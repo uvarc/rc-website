@@ -748,21 +748,13 @@
         const formData = collectFormData();
         const payload = buildPayloadPreview();
         const errors = validatePayload(payload);
-    
         if (errors.length > 0) {
             displayValidationErrors(errors);
             return;
         }
     
         try {
-            const isRenewal = formData.newOrRenewal === 'renewal';
-            var method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
-            if(formData.requestType==="storage" && (formData.typeOfRequest === 'update-storage')){
-                method = 'PUT'; // Use PUT for storage changes
-            }
-            console.log(`Submitting ${isRenewal ? 'Renewal (PUT)' : 'New Request (POST)'}...`);
-    
-            const responseData = await submitForm(formData, payload, method);
+            const responseData = await submitForm(formData, payload);
     
             if (responseData) {
                 console.log("API Response:", responseData);
@@ -800,64 +792,67 @@
     // Submit Form (Using jQuery AJAX)
     // ===================================
 
-    async function submitForm(formData, payload) {
+    async function submitForm(formData, payload, method) {
         const userId = getUserId();
         const userEmail = `${userId}@virginia.edu`; // Construct the user's email
         console.log("Submitting payload for user:", userId);
         console.log("User email:", userEmail);
-    
-        // Check if it's a renewal by detecting the selected existing SU
-        const isRenewal = formData.newOrRenewal === 'renewal';
-        const isRetire = formData.typeOfRequest === 'retire-storage'
-        // Set the correct HTTP method
-        var method = isRenewal ? 'PUT' : 'POST';
-        if(isRetire){
-            method = 'DELETE'; // Use DELETE for retiring storage
+        let isUpdateRequest;
+        let method;
+        let isRetire = formData.typeOfRequest === 'retire-storage';
+
+        if(formData.requestType==="service-unit"){
+            isUpdateRequest = formData.newOrRenewal === 'renewal';
+             method = isRenewal ? 'PUT' : 'POST'; // Use PUT for renewals
         }
-        console.log(`Submitting ${method} request for ${isRenewal ? "Renewal" : "New Request"}...`);
-    
+        else if(formData.requestType==="storage"){
+                isUpdateRequest = formData.typeOfRequest === 'update-storage';
+                method = updateStorage ? 'PUT' : 'POST'; 
+                if (isRetire)
+                    method = 'DELETE';
+        }
         // Ensure correct URL for PUT (Renewals)
         let requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
-        if (isRenewal && formData.existingProject) {
+        if (isUpdateRequest && formData.existingProject) {
             requestUrl += `/${formData.existingProject}`;
         }
-        if(isRetire ){
+        if (isRetire ) {
             const requestType= formData.requestType==="storage" ? "storage" : "hpc_service-units";
             const group=$('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim();
             const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim()+"-"+$('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim();
             requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
         }
         // Check for `trigger_notification` flag in payload
-        if (isRenewal && payload.length > 0 && payload[0].trigger_notification) {
+        if (isUpdateRequest && payload.length > 0 && payload[0].trigger_notification) {
             console.log("Triggering notification for renewal request.");
         }
         var settings = {};
-        if(!isRetire){
+        if (!isRetire) {
         // Remove "Origin" header (Handled automatically by browser)
-         settings = {
-            url: requestUrl,
-    method: method,
-    timeout: 0,
-    contentType: "application/json",  
-    dataType: "json",                 
-    data: JSON.stringify(payload),
-    xhrFields: {
-        withCredentials: true
-    }
-        };
-        }else{
-             settings = {
-                url: requestUrl,
-                method: method,
-                timeout: 0,
-                dataType: "json",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                xhrFields: {
-                    withCredentials: true
-                }
+           settings = {
+              url: requestUrl,
+              method: method,
+              timeout: 0,
+              contentType: "application/json",  
+              dataType: "json",                 
+              data: JSON.stringify(payload),
+              xhrFields: {
+                withCredentials: true
+              }
             };
+        } else {
+                settings = {
+                  url: requestUrl,
+                  method: method,
+                  timeout: 0,
+                  dataType: "json",
+                  headers: {
+                      "Content-Type": "application/json"
+                     },
+                  xhrFields: {
+                     withCredentials: true
+                   }
+                };
         }
         try {
             const response = await $.ajax(settings);
