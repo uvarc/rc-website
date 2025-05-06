@@ -48,6 +48,7 @@
 
     let selectedUpdateResourceName = "";
     let selectedUpdateResourceTier = "";
+    let selectedUpdateGroupName = "";
 
     // ===================================
     // Fetches and Holds API Data
@@ -660,12 +661,10 @@
                 const storageText = $parentRow[0].cells[5].textContent.trim();
                 const number = parseInt(storageText);
                 selectedUpdateResourceName = $parentRow[0].cells[3].textContent.trim();
-                alert(selectedUpdateResourceName);
                 selectedUpdateResourceTier = $parentRow[0].cells[4].textContent.trim();
-                alert(selectedUpdateResourceTier);
+                selectedUpdateGroupName = $parentRow[0].cells[2].textContent.trim();
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 // Retrieve the data-additional attribute
-                alert(number);
                 const additionalData = $parentRow.attr('data-additional');
                 
                 // Parse it to an object (if needed)
@@ -1140,7 +1139,7 @@
                       //selectedTier = formData.storageTier ? getStorageTierEnum(formData.storageTier) : "";
                       // Construct minimal payload for PUT (change)
                       let changePayload = {
-                        "group_name": selectedGroup,
+                        "group_name": selectedUpdateGroupName,
                         "data_agreement_signed": $('#data-agreement').is(':checked'),
                         "pi_uid": userId,
                         "project_name": formData.project_title?.trim() || "Test Project",
@@ -1206,19 +1205,19 @@
         var isStorage = $('select[name="request-type"]').val() === 'storage';
         var isStorageChange=$('input[name="type-of-request"]:checked').val() === 'update-storage';
         // **If it's a renewal, user_resources array should NOT be validated for new entries**
-        if (isRenewal) {
-            if (!resourceWrapper.group_name || !resourceWrapper.resources?.hpc_service_units) {
-                errors.push("Renewal request must include a valid Group and existing HPC Service Unit.");
-            }
+        // if (isRenewal) {
+        //     if (!resourceWrapper.group_name || !resourceWrapper.resources?.hpc_service_units) {
+        //         errors.push("Renewal request must include a valid Group and existing HPC Service Unit.");
+        //     }
     
             // Ensure the update_date field is present for renewal
-            const hpcKeys = Object.keys(resourceWrapper.resources?.hpc_service_units || {});
-            if (hpcKeys.length === 0 || !resourceWrapper.resources.hpc_service_units[hpcKeys[0]].update_date) {
-                errors.push("Renewal request must include an update_date field.");
-            }
+            // const hpcKeys = Object.keys(resourceWrapper.resources?.hpc_service_units || {});
+            // if (hpcKeys.length === 0 || !resourceWrapper.resources.hpc_service_units[hpcKeys[0]].update_date) {
+            //     errors.push("Renewal request must include an update_date field.");
+            //}
     
-            return errors; // Skip other validations for renewals
-        }
+           // return errors; // Skip other validations for renewals
+        //}
         if(isStorage && !isStorageChange){
             Object.values(payload[0].resources.storage).forEach((group, index) => {
                 // Check for required properties
