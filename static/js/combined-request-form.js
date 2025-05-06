@@ -555,12 +555,12 @@
         const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage && !changeExsisting && !retireExsisting) {
-            $('#storage-fields').show();
+            $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container').show();
             $('#existing-projects-storage').hide();
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
-                $('#storage-fields').show();
+                //$('#storage-fields #storage-capacity').show(); // Show capacity field for increase/decrease
                 $('#storage-mygroups-container, #storage-platform').hide();
-                $('#existing-projects-storage').show();
+                $('#existing-projects-storage, #project-title-container, #project-description-container').show();
         }
     }
     
