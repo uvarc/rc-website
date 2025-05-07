@@ -1094,7 +1094,7 @@
                         "hpc_service_units": {
                             [selectedSU]: {
                                 "tier": selectedTier,
-                                "request_count": int(formData.requestCount), 
+                                "request_count": formData.requestCount, 
                                 "billing_details": billingDetails // Updated billing details
                             }
                         }
@@ -1117,7 +1117,7 @@
                         "hpc_service_units": {
                             [selectedGroup]: {
                                 "tier": selectedTier,
-                                "request_count": int(formData.requestCount) || "1000",
+                                "request_count": formData.requestCount || "1000",
                                 "billing_details": billingDetails
                             }
                         }
@@ -1156,7 +1156,7 @@
                             "storage": {
                                 [selectedST]: {
                                     "tier": selectedTier,
-                                    "request_size": int(formData['request_size']),
+                                    "request_size": formData.request_size,
                                     "billing_details": billingDetails
                                  }
                               }
@@ -1178,7 +1178,7 @@
                              "storage": {
                                  [selectedGroup]: {
                                      "tier": selectedTier,
-                                     "request_size": int(formData['request_size']) || "0",
+                                     "request_size": formData.request_size || "0",
                                      "billing_details": billingDetails
                                   }
                                }
