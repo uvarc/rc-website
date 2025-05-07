@@ -817,8 +817,8 @@
         }
         if (isRetire ) {
             const requestType= formData.requestType==="storage" ? "storage" : "hpc_service-units";
-            const group=$('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim();
-            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim()+"-"+$('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim();
+            const group=$('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim();
+            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim()+"-"+$('input[name="selected-st"]:checked').closest('tr').find('td').eq(5).text().trim();
             requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
         }
         // Check for `trigger_notification` flag in payload
@@ -1127,8 +1127,9 @@
                 return [newResource]; // Return as an array
             }   
         } 
+        
         else if (formData.requestType == "storage") {
-                 if (formData.typeOfRequest === 'update-storage') {
+                if (formData.typeOfRequest === 'update-storage' || formData.typeOfRequest === 'retire-storage') {
                     // Extract from the selected storage in the update table
                     selectedST = $('input[name="selected-st"]:checked').val();
                     if (selectedST) {
