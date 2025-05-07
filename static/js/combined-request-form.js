@@ -698,7 +698,7 @@
                 const tire = $parentRow[0].cells[4].textContent.trim();
                 if(tire === "ssz_standard" || tire === "ssz_instructional") {
                     const number = parseInt(match[1]);
-                    $('#su-quantity').val(number); 
+                    $('#su-quantity').val(0); 
                     console.log("Selected SUs:", number); 
                     document.getElementById("su-quantity").disabled = true;
                 } else {
