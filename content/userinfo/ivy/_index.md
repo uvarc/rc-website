@@ -9,7 +9,9 @@ images = [""]
 author = "RC Staff"  
 aliases = [ "/ivy" ]
 layout = "single"
+
 +++
+
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
@@ -157,7 +159,7 @@ To connect to a Windows VM from a **Mac**, you will need the Microsoft Remote De
 Windows laptops/desktops already have the Remote Desktop Connection application installed.
 
 
-### Steps to connect to your VM
+**STEPS TO CONNECT TO YOUR VM**
 
 Follow the steps below for the **type of VM** that you have:
 
@@ -207,7 +209,7 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 
 Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation upon request. See the lists below for options.
 
-### Preinstalled Software
+**Preinstalled Software**
 
 {{< rawhtml >}}
 <div class="row" style="margin-bottom:2rem;">
@@ -242,7 +244,7 @@ Every virtual machine (Linux or Windows) comes with a base installation of softw
 
 **Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
 
-### Additional Approved Software (Available by Request)
+**ADDITIONAL APPROVED SOFTWARE (Available by Request)**
 
 If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security and regulatory compliance and, if approved, will be installed for you.
 
@@ -297,7 +299,7 @@ To request installation of optional software packages, please use the web reques
 
 ## Installing Python Packages on Your VM
 
-### Creating a Conda Environment
+**CREATING CONDA ENVIRONEMENT**
 
 Researchers often require Python packages that are not included in the base installation of Anaconda. Users can install additional Python packages on their VMs using conda environments. Conda environments allows users to install packages in isolated environments to avoid version conflicts with other users on the VM.
 
@@ -336,7 +338,7 @@ If you require a specific version of Python, you can create a new conda environm
 
 `conda create -n my_env python=2.7`
 
-### Installing Packages
+**INSTALLING PACKAGES**
 
 After creating your conda environment, you can install additional libraries with `pip` and `conda`.
 
@@ -403,17 +405,19 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 ## Access
 
-Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above.
+Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above. Please note that PIs must specifically request for their associated Linux VM to be provisioned as a frontend to Rio. Access to Rio from the VM is not granted by default.
 
 As outlined above, VMs are available in various sizes. Please request a VM that is appropriately sized for your specific workflow. For larger groups or projects involving computationally intensive tasks, we recommend selecting a larger VM, with a preference for Small or above. 
+
+[<button class="btn btn-success">Request Ivy VM for Rio</button>](https://services.rc.virginia.edu/ivyvm)
   
 ## System Details
 
-### Hardware Configuration
+**HARDWARE CONFIGURATION**
 
 Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Rio also includes an NVIDIA HGX H200 GPU, and additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future.
 
-### Job Queues
+**JOB QUEUES**
 
 Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/). 
 
