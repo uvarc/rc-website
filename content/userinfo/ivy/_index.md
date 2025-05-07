@@ -403,7 +403,7 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 ## Access
 
-Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above.
+Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above. Please note that PIs must specifically request for their associated Linux VM to be provisioned as a frontend to Rio. Access to Rio from the VM is not granted by default.
 
 As outlined above, VMs are available in various sizes. Please request a VM that is appropriately sized for your specific workflow. For larger groups or projects involving computationally intensive tasks, we recommend selecting a larger VM, with a preference for Small or above. 
   
