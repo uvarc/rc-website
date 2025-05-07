@@ -23,7 +23,7 @@ service:
       - "Cost"
       - "SU Expiration"
     options:
-      - type: "Standard*"
+      - type: "Standard"
         link: "/userinfo/hpc/access/#standard-allocations"
         su_limits: "None"
         cost: "Free"
