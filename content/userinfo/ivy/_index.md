@@ -9,11 +9,10 @@ images = [""]
 author = "RC Staff"  
 aliases = [ "/ivy" ]
 layout = "single"
+BookToC = 2
 +++
 
----
-toc_max_heading_level:2
----
+
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
