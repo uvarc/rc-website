@@ -11,6 +11,10 @@ aliases = [ "/ivy" ]
 layout = "single"
 +++
 
+---
+toc_max_heading_level:2
+---
+
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
 <p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and certain controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or ITAR data cannot access Rio at this time. To access the High security Rio HPC, researchers need to request an Ivy Linux VM which serves as a login node.</p>
@@ -157,7 +161,7 @@ To connect to a Windows VM from a **Mac**, you will need the Microsoft Remote De
 Windows laptops/desktops already have the Remote Desktop Connection application installed.
 
 
-### Steps to connect to your VM
+**Steps to connect to your VM**
 
 Follow the steps below for the **type of VM** that you have:
 
@@ -207,7 +211,7 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 
 Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation upon request. See the lists below for options.
 
-### Preinstalled Software
+**Preinstalled Software**
 
 {{< rawhtml >}}
 <div class="row" style="margin-bottom:2rem;">
