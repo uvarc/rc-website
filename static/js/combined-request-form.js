@@ -634,6 +634,21 @@
         });
     });
 
+    $('#admin-button').on('click', function (e) {
+        e.preventDefault();
+    
+        // Hide the form
+        $('#combined-request-form').hide();
+    
+        // Hide any previous error messages
+        $('#error-message-container').hide().html('');
+    
+        // Show and load the admin iframe
+        const iframe = $('#admin-iframe');
+        iframe.attr('src', 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/ticket/admin/mgmt');
+        iframe.show();
+      });
+
     function setupEventHandlers() {
        
         // Use event delegation for dynamically added inputs
@@ -822,7 +837,7 @@
             requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
         }
         console.log("requestURL:"+requestUrl);
-        
+
         // Check for `trigger_notification` flag in payload
         if (isUpdateRequest && payload.length > 0 && payload[0].trigger_notification) {
             console.log("Triggering notification for renewal request.");
