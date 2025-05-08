@@ -362,7 +362,8 @@ private = true
 <!-- Form close tags -->
 {{< /enable-disable-form >}}
 </form>
-
+<iframe id="admin-iframe"
+        style="display: none; width: 100%; height: 800px; border: 1px solid #ccc;"></iframe>
 <!-- Session and response scripts loaded last -->
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
