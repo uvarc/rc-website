@@ -636,18 +636,23 @@
 
     $('#admin-button').on('click', function (e) {
         e.preventDefault();
-    
-        // Hide the form
         $('#combined-request-form').hide();
-    
-        // Hide any previous error messages
-        $('#error-message-container').hide().html('');
-    
+         $('#error-message-container').hide().html('');
         // Show and load the admin iframe
         const iframe = $('#admin-iframe');
         iframe.attr('src', 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/ticket/admin/mgmt');
         iframe.show();
+        $('#admin-button').hide();
+        $('#back-button').show();
       });
+
+    $('#back-button').on('click', function (e) {
+        e.preventDefault();
+        $('#admin-iframe').hide().attr('src', '');
+        $('#combined-request-form').show();
+        $('#back-button').hide();
+        $('#admin-button').show();
+    });
 
     function setupEventHandlers() {
        
