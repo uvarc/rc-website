@@ -640,7 +640,7 @@
          //$('#error-message-container').hide().html('');
         // Show and load the admin iframe
         const iframe = $('#admin-iframe');
-        iframe.attr('src', 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/ticket/admin/mgmt');
+        iframe.attr('src', 'https://uvarc-unified-service-test.pods.uvarc.io/uvarc/api/ticket/admin/mgmt');
         iframe.show();
         $('#admin-button').hide();
         $('#resource-button').hide();
