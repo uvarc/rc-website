@@ -112,7 +112,7 @@ We are committed to enhancing the quality and impact of research across Grounds 
 				<ul>
 				<li>Data analysis plans</li>
 				<li>Budget justifications for compute resources</li> 
-				<li>Letters of support</li>
+				<li><a style="" href="https://forms.office.com/Pages/ResponsePage.aspx?id=x4A0ewc3c0iLd-IWczplrBt9bKFzemJOpBlzxJvrcutUN0NYSEo2WVBLVUJTS0VNOVFPTTBTSFZIRS4u" target="_new">Letters of Support</a></li> 
 				</ul>				 
 			</td>
 		</tr>
