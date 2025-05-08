@@ -652,7 +652,7 @@
         $('#admin-iframe').hide().attr('src', '');
         $('#combined-request-form').show();
         $('#back-button').hide();
-        if ($('#existing-resources-preview').is(':hidden')) {
+        if ($('#existing-resources-preview').is(':visible')) {
             $('#resource-button').show();
           }
         $('#admin-button').show();
