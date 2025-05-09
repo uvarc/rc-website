@@ -536,7 +536,7 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
         if (isNew && !isRenew) {
-            $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').show();
+            $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #addFDM').show();
             $('#existing-projects-allocation').hide();
             $('#billing-information').hide();
         } else if(!isNew && isRenew) {
@@ -986,7 +986,7 @@
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
-        let shouldShowBilling = true; // Default to show billing. put the commented out back when we're ready for free logic
+        let shouldShowBilling = false;
     
         //if (requestType === 'storage') {
          //   if (selectedStorageTier === "SSZ Research Standard") {
