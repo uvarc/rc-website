@@ -203,12 +203,14 @@ private = true
           </table>
         </fieldset>
       </div>
-      <div id="su-capacity" class="col form-item form-group">
+      <div>
+          <button class="btn btn-success btn-primary" type="button" id="addFDM"> + FDMs</button>
+      </div>
+         <div id="su-capacity" class="col form-item form-group">
             <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
             <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
            <p class="tiny">The number of SU's requested.(Note: SU's  cannot be requested for Standard and Instructional resources but will be automatically applied/updated once submitted)</p>
       </div>
-  
     </div>
     <!-- Storage Request Fields -->
     <div id="storage-fields" style="display: none; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
