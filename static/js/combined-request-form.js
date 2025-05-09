@@ -536,9 +536,9 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
         if (isNew && !isRenew) {
-            $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #addFDM').show();
+            $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').show();
+            $('#addFDM').show();
             $('#existing-projects-allocation').hide();
-            $('#billing-information').hide();
         } else if(!isNew && isRenew) {
             $('#mygroups-group-container, #allocation-tier').hide();
             $('#existing-projects-allocation, #new-project-name-container, #project-description').show();
