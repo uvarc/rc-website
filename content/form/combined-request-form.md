@@ -209,7 +209,7 @@ private = true
            <p class="tiny">The number of SU's requested.(Note: SU's  cannot be requested for Standard and Instructional resources but will be automatically applied/updated once submitted)</p>
       </div>
       <div>
-          <button class="btn btn-success btn-primary" type="button" style="display: none; id="fdm_button"> + FDM's</button>
+          <button class="btn btn-success btn-primary" type="button" style="display: none;" id="fdm_button"> + FDM's</button>
        </div>
     </div>
     <!-- Storage Request Fields -->
