@@ -622,6 +622,12 @@
         });
     });
 
+    $('#fdm_button').on('click', function (e) {
+        e.preventDefault();
+        $('#billing-information').toggle(true);
+    });
+
+
     document.addEventListener("DOMContentLoaded", function() {
         // Get the button element
         const button = document.getElementById("cancel");
