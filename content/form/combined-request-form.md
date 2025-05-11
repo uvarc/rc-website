@@ -208,9 +208,6 @@ private = true
             <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
            <p class="tiny">The number of SU's requested.(Note: SU's  cannot be requested for Standard and Instructional resources but will be automatically applied/updated once submitted)</p>
       </div>
-      <div>
-          <button class="btn btn-success btn-primary" type="button" style="display: none;" id="fdm_button"> + FDM's</button>
-       </div>
     </div>
     <!-- Storage Request Fields -->
     <div id="storage-fields" style="display: none; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
@@ -326,6 +323,9 @@ private = true
           <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
           <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>
+    </div>
+    <div>
+          <button class="btn btn-success btn-primary" type="button" style="display: none;" id="fdm_button"> + FDM's</button>
     </div>
     <!-- Billing Information Section -->
     <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
