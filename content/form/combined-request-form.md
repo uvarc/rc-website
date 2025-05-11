@@ -325,12 +325,13 @@ private = true
       </div>
     </div>
     <div id="fdm_table" style="margin-top:1em; padding:1.5rem;background-color:#eee; border:solid 1px #ccc;">
-        <div>
-          <button class="btn btn-success btn-primary" type="button" id="fdm_button"> + FDM's</button>
-        </div>
-        <div id="existing-fdms" margin-top:1em;">
+
+        <div id="existing-fdms" style="margin-top:1em;">
           <fieldset>
-             <legend class="control-label h6 mb-2">Your Existing FDM's</legend>
+             <div style="display: flex; justify-content: space-between; align-items: center;">>
+             <legend class="control-label h5 mb-2">Existing FDM's</legend>
+             <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ FDM's</button>
+             </div>
              <table class="table table-bordered table-hover">
                 <thead>
                   <tr>
