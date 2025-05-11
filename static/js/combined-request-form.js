@@ -622,14 +622,14 @@
         });
     });
 
-    documentaddEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
         const fdmButton = document.getElementById("fdm_button");
         fdmButton.addEventListener("click", function() {
         $('#billing-information').toggle(true);
         });
     });
 
-    documentaddEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
         // Get the button element
         const button = document.getElementById("cancel");
         button.addEventListener("click", function() {
