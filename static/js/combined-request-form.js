@@ -592,7 +592,7 @@
     }
     
 
-    // ===================================
+    // ========.===========================
     // Setup Event Handlers
     // ===================================
     document.addEventListener("DOMContentLoaded", function() {
@@ -622,13 +622,14 @@
         });
     });
 
-    $('#fdm_button').on('click', function (e) {
-        e.preventDefault();
+    documentaddEventListener("DOMContentLoaded", function() {
+        const fdmButton = document.getElementById("fdm_button");
+        fdmButton.addEventListener("click", function() {
         $('#billing-information').toggle(true);
+        });
     });
 
-
-    document.addEventListener("DOMContentLoaded", function() {
+    documentaddEventListener("DOMContentLoaded", function() {
         // Get the button element
         const button = document.getElementById("cancel");
         button.addEventListener("click", function() {
