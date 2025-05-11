@@ -328,8 +328,8 @@ private = true
 
         <div id="existing-fdms" style="margin-top:1em;">
           <fieldset>
-             <div style="display: flex; justify-content: space-between; align-items: center;">>
-             <legend class="control-label h5 mb-2">Existing FDM's</legend>
+             <div style="display: flex; justify-content: space-between; align-items: center;">
+             <legend class="control-label h5">Existing FDM's</legend>
              <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ FDM's</button>
              </div>
              <table class="table table-bordered table-hover">
