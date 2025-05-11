@@ -324,8 +324,33 @@ private = true
           <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>
     </div>
-    <div>
+    <div id="fdm_table"  margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
+        <div>
           <button class="btn btn-success btn-primary" type="button" style="display: none;" id="fdm_button"> + FDM's</button>
+        </div>
+        <div id="existing-fdms" margin-top:1em;">
+        <fieldset>
+          <legend class="control-label h6 mb-2">Your Existing FDM's</legend>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Cost Center</th>
+                <th>Business Unit</th>
+                <th>Funding Number</th>
+                <th>Fund</th>
+                <th>Function</th>
+                <th>Program</th>
+                <th>Activity</th>
+                <th>Assignee</th>
+              </tr>
+            </thead>
+            <tbody id="FDMS">
+              <!-- Will be populated by API -->
+            </tbody>
+          </table>
+        </fieldset>
+      </div>
     </div>
     <!-- Billing Information Section -->
     <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
