@@ -326,7 +326,7 @@ private = true
     </div>
     <div id="fdm_table"  margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
         <div>
-          <button class="btn btn-success btn-primary" type="button" style="display: none;" id="fdm_button"> + FDM's</button>
+          <button class="btn btn-success btn-primary" type="button" id="fdm_button"> + FDM's</button>
         </div>
         <div id="existing-fdms" margin-top:1em;">
         <fieldset>
