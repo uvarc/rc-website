@@ -332,6 +332,7 @@ private = true
              <legend class="control-label h5">Existing FDM's</legend>
              <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ FDM's</button>
              </div>
+             <hr size="1" />
              <table class="table table-bordered table-hover">
                 <thead>
                   <tr>
@@ -362,6 +363,10 @@ private = true
         <!--<input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" /> -->
       </div>
       {{% billing-fdm %}}
+      <hr size="1" />
+      <div>
+        <button class="btn btn-success btn-primary" type="button" id="add_fdm">add</button>
+       </div>
     </div>
 
     <!-- Data Agreement and Submit Button Section -->
