@@ -703,7 +703,7 @@
                 updateBilling(billingData);
             }
             updatePayloadPreview(); // Update the real-time payload preview
-            updateBillingVisibility(); // Update billing visibility
+            //updateBillingVisibility(); // Update billing visibility
         });
 
         //refresh groups when you click on dropdown
@@ -1001,7 +1001,7 @@
          //   }
        // }
     
-        $('#billing-information').toggle(shouldShowBilling);
+        //$('#billing-information').toggle(shouldShowBilling);
         console.log(`Billing visibility updated: ${shouldShowBilling}`);
     }
 
