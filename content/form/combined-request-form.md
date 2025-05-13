@@ -324,7 +324,7 @@ private = true
           <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>
     </div>
-    <div id="fdm_table" style="margin-top:1em; padding:1.5rem;background-color:#eee; border:solid 1px #ccc;">
+    <div id="fdm_table" style="display: none; margin-top:1em; padding:1.5rem;background-color:#eee; border:solid 1px #ccc;">
 
         <div id="existing-fdms" style="margin-top:1em;">
           <fieldset>
