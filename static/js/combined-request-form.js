@@ -625,7 +625,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const fdmButton = document.getElementById("fdm_button");
         fdmButton.addEventListener("click", function() {
-        $('#billing-information').toggle(true);
+        $('#billing-information').show();
         });
     });
 
