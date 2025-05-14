@@ -3,7 +3,7 @@
     // ===================================
 
     const API_CONFIG = {
-        baseUrl: 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
+        baseUrl: 'https://uvarc-unified-service-test.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -634,6 +634,30 @@
         });
     });
 
+    $('#admin-button').on('click', function (e) {
+        e.preventDefault();
+        $('#combined-request-form').hide();
+         //$('#error-message-container').hide().html('');
+        // Show and load the admin iframe
+        const iframe = $('#admin-iframe');
+        iframe.attr('src', 'https://uvarc-unified-service-test.pods.uvarc.io/uvarc/api/ticket/admin/mgmt');
+        iframe.show();
+        $('#admin-button').hide();
+        $('#resource-button').hide();
+        $('#back-button').show();
+      });
+
+    $('#back-button').on('click', function (e) {
+        e.preventDefault();
+        $('#admin-iframe').hide().attr('src', '');
+        $('#combined-request-form').show();
+        $('#back-button').hide();
+        if ($('#existing-resources-preview').is(':visible')) {
+            $('#resource-button').show();
+          }
+        $('#admin-button').show();
+    });
+
     function setupEventHandlers() {
        
         // Use event delegation for dynamically added inputs
@@ -822,7 +846,7 @@
             requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
         }
         console.log("requestURL:"+requestUrl);
-        
+
         // Check for `trigger_notification` flag in payload
         if (isUpdateRequest && payload.length > 0 && payload[0].trigger_notification) {
             console.log("Triggering notification for renewal request.");
