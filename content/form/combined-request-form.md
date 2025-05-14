@@ -208,7 +208,6 @@ private = true
             <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
            <p class="tiny">The number of SU's requested.(Note: SU's  cannot be requested for Standard and Instructional resources but will be automatically applied/updated once submitted)</p>
       </div>
-  
     </div>
     <!-- Storage Request Fields -->
     <div id="storage-fields" style="display: none; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
@@ -325,6 +324,36 @@ private = true
           <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>
     </div>
+    <div id="fdm_table" style="display: none; margin-top:1em; padding:1.5rem;background-color:#eee; border:solid 1px #ccc;">
+
+        <div id="existing-fdms" style="margin-top:1em;">
+          <fieldset>
+             <div style="display: flex; justify-content: space-between; align-items: center;">
+             <legend class="control-label h5">Existing FDM's</legend>
+             <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ FDM's</button>
+             </div>
+             <hr size="1" />
+             <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Cost Center</th>
+                    <th>Business Unit</th>
+                    <th>Funding Number</th>
+                    <th>Fund</th>
+                    <th>Function</th>
+                    <th>Program</th>
+                    <th>Activity</th>
+                    <th>Assignee</th>
+                  </tr>
+                </thead>
+                <tbody id="FDMS">
+                     <!-- Will be populated by API -->
+                </tbody>
+              </table>
+          </fieldset>
+        </div>
+      </div>
     <!-- Billing Information Section -->
     <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <h5 class="mb-3">Payment Information</h5>
@@ -334,6 +363,10 @@ private = true
         <!--<input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" /> -->
       </div>
       {{% billing-fdm %}}
+      <hr size="1" />
+      <div>
+        <button class="btn btn-success btn-primary" type="button" id="add_fdm">add</button>
+       </div>
     </div>
 
     <!-- Data Agreement and Submit Button Section -->
