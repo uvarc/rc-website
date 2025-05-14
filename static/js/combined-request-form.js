@@ -536,7 +536,7 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
         if (isNew && !isRenew) {
-            $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table').show();
+            $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').show();
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
             $('#mygroups-group-container, #allocation-tier').hide();
@@ -592,7 +592,7 @@
     }
     
 
-    // ========.===========================
+    // ===================================
     // Setup Event Handlers
     // ===================================
     document.addEventListener("DOMContentLoaded", function() {
@@ -619,13 +619,6 @@
         toggleRequestFields();
         updateFormValidation();
         $("#resource-button").hide();
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const fdmButton = document.getElementById("fdm_button");
-        fdmButton.addEventListener("click", function() {
-        $('#billing-information').show();
         });
     });
 
@@ -703,7 +696,7 @@
                 updateBilling(billingData);
             }
             updatePayloadPreview(); // Update the real-time payload preview
-            //updateBillingVisibility(); // Update billing visibility
+            updateBillingVisibility(); // Update billing visibility
         });
 
         //refresh groups when you click on dropdown
@@ -992,7 +985,7 @@
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
-        let shouldShowBilling = false;
+        let shouldShowBilling = true; // Default to show billing. put the commented out back when we're ready for free logic
     
         //if (requestType === 'storage') {
          //   if (selectedStorageTier === "SSZ Research Standard") {
@@ -1001,7 +994,7 @@
          //   }
        // }
     
-        //$('#billing-information').toggle(shouldShowBilling);
+        $('#billing-information').toggle(shouldShowBilling);
         console.log(`Billing visibility updated: ${shouldShowBilling}`);
     }
 
