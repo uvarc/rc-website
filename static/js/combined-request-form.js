@@ -55,9 +55,7 @@
     let  consoleData = [];
 
     const billingData = {
-        billing_details: {
-            fdm_billing_info: []
-        }
+       fdm_billing_info: []
     };
 
     // ===================================
