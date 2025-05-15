@@ -631,8 +631,27 @@
 
     document.addEventListener("DOMContentLoaded", function() {
         const addFdmButton = document.getElementById("add_fdm");
-        addFdmButton.addEventListener("click", function() {
-        const billingDetails = getBillingDetails();
+        const billingData = {
+            fdm_billing_info: []
+        };
+        addFdmButton.addEventListener("click", function () {
+            const newBillingEntry = getBillingDetails();
+            billingData.fdm_billing_info.push(newBillingEntry.fdm_billing_info[0]);
+            console.log(billingData); // Check the updated array in the console
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${newBillingEntry.company}</td>
+                <td>${newBillingEntry.cost_center}</td>
+                <td>${newBillingEntry.business_unit}</td>
+                <td>${newBillingEntry.gift || newBillingEntry.grant || newBillingEntry.designated || newBillingEntry.project}</td>
+                <td>${newBillingEntry.fund}</td>
+                <td>${newBillingEntry.function}</td>
+                <td>${newBillingEntry.program_code}</td>
+                <td>${newBillingEntry.activity}</td>
+                <td>${newBillingEntry.assignee}</td>
+            `;
+            fdmsTableBody.appendChild(row);
+        });
         });
     });
 
@@ -961,6 +980,40 @@
     }
 
     function updateBilling(billingData) {
+        if (billingData) {
+            if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
+                $('#funding-number').val(billingData[0].project || '');
+                $('#funding-project').prop('checked', true);
+            }
+            if (billingData[0].gift && typeof billingData[0].gift === 'string' && billingData[0].gift.trim().length > 0) {
+                $('#funding-number').val(billingData[0].gift || '');
+                $('#funding-gift').prop('checked', true);
+            }
+            if (billingData[0].grant && typeof billingData[0].grant === 'string' && billingData[0].grant.trim().length > 0) {
+                $('#funding-number').val(billingData[0].grant || '');
+                $('#funding-grant').prop('checked', true);
+            }
+            if (billingData[0].designated && typeof billingData[0].designated === 'string' && billingData[0].designated.trim().length > 0) {
+                $('#funding-number').val(billingData[0].designated || '');
+                $('#funding-designated').prop('checked', true);
+            }
+            
+            $('#financial-contact').val(billingData[0].financial_contact || '');
+            $('#company-id').val(billingData[0].company || '');
+            $('#business-unit').val(billingData[0].business_unit || '');
+            $('#cost-center').val(billingData[0].cost_center || '');
+            $('#fund').val(billingData[0].fund || '');
+            
+            $('#program').val(billingData[0].program_code || '');
+            $('#function').val(billingData[0].function || '');
+            $('#activity').val(billingData[0].activity || '');
+            $('#assignee').val(billingData[0].assignee || '');
+            console.log("Billing data updated from existing line:", billingData);
+            $('#financial-contact').trigger("change").trigger("input"); //trigger the form update
+        }
+    }
+
+    function updateBillinTable(billingData) {
         if (billingData) {
             if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
                 $('#funding-number').val(billingData[0].project || '');
