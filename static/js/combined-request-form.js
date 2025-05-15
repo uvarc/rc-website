@@ -641,15 +641,15 @@
             const fdmsTableBody = document.getElementById("FDMS");
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td>${newBillingEntry.company}</td>
-                <td>${newBillingEntry.cost_center}</td>
-                <td>${newBillingEntry.business_unit}</td>
+                <td>${newBillingEntry.fdm_billing_info[0].company}</td>
+                <td>${newBillingEntry.fdm_billing_info[0].cost_center}</td>
+                <td>${newBillingEntry.fdm_billing_info[0].business_unit}</td>
                 <td>${newBillingEntry.gift || newBillingEntry.grant || newBillingEntry.designated || newBillingEntry.project}</td>
-                <td>${newBillingEntry.fund}</td>
-                <td>${newBillingEntry.function}</td>
-                <td>${newBillingEntry.program_code}</td>
-                <td>${newBillingEntry.activity}</td>
-                <td>${newBillingEntry.assignee}</td>
+                <td>${newBillingEntry.fdm_billing_info[0].fund}</td>
+                <td>${newBillingEntry.fdm_billing_info[0].function}</td>
+                <td>${newBillingEntry.fdm_billing_info[0].program_code}</td>
+                <td>${newBillingEntry.fdm_billing_info[0].activity}</td>
+                <td>${newBillingEntry.fdm_billing_info[0].assignee}</td>
             `;
             fdmsTableBody.appendChild(row);
         });
