@@ -640,7 +640,7 @@
             $('#billing-information').hide();
             $("#fdm_button").show();
             const entry = getBillingDetails();
-            billingData.billing_details.fdm_billing_info.push(entry);
+            billingData.fdm_billing_info.push(entry);
             console.log(billingData); // Check the updated array in the console
             const fdmsTableBody = document.getElementById("FDMS");
             const row = document.createElement("tr");
