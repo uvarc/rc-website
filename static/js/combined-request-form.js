@@ -658,6 +658,7 @@
             <td>${entry.assignee}</td>
         `;
         fdmsTableBody.appendChild(row);
+        clearBillingForm();
         });
     });
 
@@ -983,6 +984,19 @@
               e.preventDefault(); // Block the down arrow
           }
         });
+    }
+
+    function clearBillingForm() {
+        $('#company-id').val('');
+        $('#business-unit').val('');
+        $('#cost-center').val('');
+        $('#fund').val('');
+        $('#funding-number').val('');
+        $('#program').val('');
+        $('#function').val('');
+        $('#activity').val('');
+        $('#assignee').val('');
+        $('input[name="funding-type"]').prop('checked', false); // uncheck funding type
     }
 
     function updateBilling(billingData) {
