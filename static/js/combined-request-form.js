@@ -544,7 +544,7 @@
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
             $('#mygroups-group-container, #allocation-tier').hide();
-            $('#existing-projects-allocation, #new-project-name-container, #project-description').show();
+            $('#existing-projects-allocation, #new-project-name-container, #project-description, #fdm_table').show();
             populateExistingServiceUnitsTable(consoleData);
         }
     }
@@ -629,8 +629,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         const fdmButton = document.getElementById("fdm_button");
         fdmButton.addEventListener("click", function() {
-        $("#fdm_button").hide();
-        $('#billing-information').show();
+          $("#fdm_button").hide();
+          $('#billing-information').show();
         });
     });
 
@@ -781,14 +781,19 @@
                 // Call your updateBilling method with the parsed data
                 populateBillinTable(billingData);
 
-                                
-        
-            
             // Ensure fields are editable
             $('#financial-contact, #company-id, #cost-center, #business-unit, #funding-number, #fund, #function, #program, #activity, #assignee')
                 .prop('readonly', false);
         
             console.log("Billing fields successfully autofilled in the UI.");
+        });
+
+        $(document).on("change", 'input[name="selected-FDM"]', function (event) {
+            const $selectedRadio = $('input[name="selected-FDM"]:checked');
+            const $parentRow = $selectedRadio.closest('tr');
+            const entry = $(this).data("entry");
+            updateBilling(entry);
+           console.log("Billing fields successfully autofilled in the UI.");
         });
     }
     
@@ -1040,6 +1045,9 @@
           const row = document.createElement("tr");
           const fundingNumber = entry.gift || entry.grant || entry.designated || entry.project || "";
           row.innerHTML = `
+            <td>
+              <input type="radio" name="selected-FDM">
+            </td>
             <td>${entry.company}</td>
             <td>${entry.cost_center}</td>
             <td>${entry.business_unit}</td>

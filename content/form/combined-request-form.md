@@ -336,6 +336,7 @@ private = true
              <table class="table table-bordered table-hover">
                 <thead>
                   <tr>
+                   <th>Select</th>
                     <th>Company</th>
                     <th>Cost Center</th>
                     <th>Business Unit</th>
