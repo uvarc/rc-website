@@ -631,6 +631,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         const fdmButton = document.getElementById("fdm_button");
         fdmButton.addEventListener("click", function() {
+        $("#fdm_button").hide();
         $('#billing-information').show();
         });
     });
@@ -638,6 +639,8 @@
     document.addEventListener("DOMContentLoaded", function() {
         const addFdmButton = document.getElementById("add_fdm");
         addFdmButton.addEventListener("click", function () {
+            $('#billing-information').hide();
+            $("#fdm_button").show();
             const entry = getBillingDetails();
             billingData.billing_details.fdm_billing_info.push(entry);
             console.log(billingData); // Check the updated array in the console
