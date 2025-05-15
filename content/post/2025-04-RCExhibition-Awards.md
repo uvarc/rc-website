@@ -13,17 +13,17 @@ categories = ["feature"]
 Research Computing, a team within UVA Information Technology Services, recently held its second annual Research Computing Exhibition on April 23. This event showcased how researchers at UVA are pushing the boundaries of innovation using Research Computing’s services and resources.  
 {{% /lead %}}
 
-Students and scholars presented work spanning environmental science, astronomy, cancer genomics, digital health, chemical engineering, and beyond — demonstrating the breadth of disciplines empowered by Research Computing’s computational capabilities. 
+Featuring research presentations, faculty lightning talks, and a poster competition, the exhibition underscored the growing significance and impact of computational research across the University. 
 
-In addition to the poster presentations, the event featured brief lightning talks from faculty across disciplines, offering high-level overviews of how they’re integrating Research Computing tools into their research, from exploring the universe to advancing healthcare and molecular biology. 
+More than 30 students and scholars presented posters highlighting research powered by UVA Research Computing’s resources. Their work spanned a wide range of fields — including environmental science, astronomy, cancer genomics, digital health, and chemical engineering — demonstrating the breadth of disciplines benefiting from advanced computational tools. Projects included analyzing forest dieback along the Atlantic Coast, predicting health outcomes for newborns in intensive care, and investigating the chemistry of stars. 
 
-A highlight of the event was the poster competition. Researchers submitted 31 posters on a range of topics, including analyzing the spread of dying forests along the Atlantic Coast, predicting the health of newborns in intensive care, and understanding the chemistry of stars.
+In addition to the posters, faculty from across UVA delivered lightning talks—brief, high-level presentations on how they are integrating Research Computing tools into their research. Topics ranged from exploring the universe to advancing healthcare and molecular biology. 
 
-A cross-disciplinary team of UVA faculty judged the posters in two major categories: Biological & Health Science and Engineering & Physical Sciences. The criteria for evaluating poster submissions include: 1) the extent to which Research Computing resources contributed to the research, 2) how clearly the use of those resources was presented on the poster, and 3) the clarity and significance of the scientific findings. 
+The poster competition was judged by a cross-disciplinary panel of UVA faculty, who evaluated submissions in two categories: Biological & Health Science and Engineering & Physical Sciences. Evaluations were based upon three criteria: 1) the extent to which Research Computing resources contributed to the research, 2) how clearly the use of those resources was presented on the poster, and 3) the clarity and significance of the scientific findings. 
 
-Below are this year's winners of the poster competition. The winners receive a travel voucher to attend a conference of their choice, where they can present their work.  
+Below are this year's winners of the poster competition. The winners receive a travel voucher to attend a conference of their choice where they can present their work.  
 
-Thank you to all the researchers for sharing your brilliant insights and compelling results with us! 
+Thank you to all the researchers for sharing your brilliant insights and compelling results with us!
 
 # Biological & Health Science 
 
@@ -51,7 +51,7 @@ Rising sea levels and climate-driven stressors are transforming coastal forests,
 
 **Abstract:** 
 
-1 in 10 infants are born prematurely globally and receive specialized care in environments like the Neonatal Intensive Care Unit.1 Preterm infants are at exponentially higher risk for developmental disorders, such as cerebral palsy and autism at rates tens to hundreds of the general population. The most common diagnostic for such disorders is the general motion assessment (GMAs) heuristic carried out manually by clinicians for preterm infants to assess neurodevelopmental (NVD) risk. As formal screening and diagnosis methods are limited by availability of trained clinicians and NICU size, we propose using computer assisted digital twins for automatic, even remote, risk assessment using a computer vision machine learning (CVML) model. We successfully develop the first clinical pose estimation framework for infants in clinical care settings meant for real-time streaming contexts.3 Our two-step sequential framework is comprised of two distinct models: (1) a CNN model for pose estimation of anatomic key points, and (2) a digital twin model prototype to reproduce the pose estimation CNN results in high fidelity. Each frame of a video is processed by the model pipeline and is only enabled by the vastly different capabilities of the HPC ecosystem, ranging from data storage, labeling, manipulation, training, and even validation and low latency deployment onto edge devices such as clinical tablets and computer devices. 
+1 in 10 infants are born prematurely globally and receive specialized care in environments like the Neonatal Intensive Care Unit. Preterm infants are at exponentially higher risk for developmental disorders, such as cerebral palsy and autism at rates tens to hundreds of the general population. The most common diagnostic for such disorders is the general motion assessment (GMAs) heuristic carried out manually by clinicians for preterm infants to assess neurodevelopmental (NVD) risk. As formal screening and diagnosis methods are limited by availability of trained clinicians and NICU size, we propose using computer assisted digital twins for automatic, even remote, risk assessment using a computer vision machine learning (CVML) model. We successfully develop the first clinical pose estimation framework for infants in clinical care settings meant for real-time streaming contexts. Our two-step sequential framework is comprised of two distinct models: (1) a CNN model for pose estimation of anatomic key points, and (2) a digital twin model prototype to reproduce the pose estimation CNN results in high fidelity. Each frame of a video is processed by the model pipeline and is only enabled by the vastly different capabilities of the HPC ecosystem, ranging from data storage, labeling, manipulation, training, and even validation and low latency deployment onto edge devices such as clinical tablets and computer devices. 
 
 ---
 
@@ -73,7 +73,7 @@ Large granular lymphocytic leukemia (LGLL) is a rare lymphoproliferative disorde
 
 ## #1: Mélisse Bonfand-Caldeira
 
-*Post-Doctoral Student, Departments of Astronomy and Chemistry* 
+*Post-Doctoral Fellow, Departments of Astronomy and Chemistry* 
 
 **Poster:** Unlocking the chemistry of stars with high-performance computing 
 
