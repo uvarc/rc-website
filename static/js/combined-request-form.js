@@ -638,6 +638,7 @@
             const newBillingEntry = getBillingDetails();
             billingData.fdm_billing_info.push(newBillingEntry.fdm_billing_info[0]);
             console.log(billingData); // Check the updated array in the console
+            const fdmsTableBody = document.getElementById("FDMS");
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${newBillingEntry.company}</td>
