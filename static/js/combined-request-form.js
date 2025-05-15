@@ -780,6 +780,7 @@
                 
                 // Call your updateBilling method with the parsed data
                 populateBillinTable(billingData);
+
                                 
         
             
@@ -1034,7 +1035,7 @@
     function populateBillinTable(billingData) {
         const fdmsTableBody = document.getElementById("FDMS");
         fdmsTableBody.innerHTML = ""; 
-        const entries = billingDetails.billing_details.fdm_billing_info;
+        const entries = billingDetails.fdm_billing_info;
         entries.forEach(entry => {
           const row = document.createElement("tr");
           const fundingNumber = entry.gift || entry.grant || entry.designated || entry.project || "";
