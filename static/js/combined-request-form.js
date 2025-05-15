@@ -54,6 +54,12 @@
 
     let  consoleData = [];
 
+    const billingData = {
+        billing_details: {
+            fdm_billing_info: []
+        }
+    };
+
     // ===================================
     // CSS Styles
     // ===================================
@@ -631,27 +637,24 @@
 
     document.addEventListener("DOMContentLoaded", function() {
         const addFdmButton = document.getElementById("add_fdm");
-        const billingData = {
-            fdm_billing_info: []
-        };
         addFdmButton.addEventListener("click", function () {
-            const newBillingEntry = getBillingDetails();
-            billingData.fdm_billing_info.push(newBillingEntry.fdm_billing_info[0]);
+            const entry = getBillingDetails();
+            billingData.billing_details.fdm_billing_info.push(entry);
             console.log(billingData); // Check the updated array in the console
             const fdmsTableBody = document.getElementById("FDMS");
             const row = document.createElement("tr");
             row.innerHTML = `
-                <td>${newBillingEntry.fdm_billing_info[0].company}</td>
-                <td>${newBillingEntry.fdm_billing_info[0].cost_center}</td>
-                <td>${newBillingEntry.fdm_billing_info[0].business_unit}</td>
-                <td>${newBillingEntry.gift || newBillingEntry.grant || newBillingEntry.designated || newBillingEntry.project}</td>
-                <td>${newBillingEntry.fdm_billing_info[0].fund}</td>
-                <td>${newBillingEntry.fdm_billing_info[0].function}</td>
-                <td>${newBillingEntry.fdm_billing_info[0].program_code}</td>
-                <td>${newBillingEntry.fdm_billing_info[0].activity}</td>
-                <td>${newBillingEntry.fdm_billing_info[0].assignee}</td>
-            `;
-            fdmsTableBody.appendChild(row);
+            <td>${entry.company}</td>
+            <td>${entry.cost_center}</td>
+            <td>${entry.business_unit}</td>
+            <td>${entry.gift || entry.grant || entry.designated || entry.project}</td>
+            <td>${entry.fund}</td>
+            <td>${entry.function}</td>
+            <td>${entry.program_code}</td>
+            <td>${entry.activity}</td>
+            <td>${entry.assignee}</td>
+        `;
+        fdmsTableBody.appendChild(row);
         });
     });
 
@@ -1067,22 +1070,18 @@
 
     function getBillingDetails() {
         return {
-            fdm_billing_info: [
-                {
-                    company: $('#company-id').val()?.trim() || '',
-                    business_unit: $('#business-unit').val()?.trim() || '',
-                    cost_center: $('#cost-center').val()?.trim() || '',
-                    fund: $('#fund').val()?.trim() || '',
-                    gift: $('input[name="funding-type"]:checked').val() === 'Gift' ? $('#funding-number').val()?.trim() || '' : '',
-                    grant: $('input[name="funding-type"]:checked').val() === 'Grant' ? $('#funding-number').val()?.trim() || '' : '',
-                    designated: $('input[name="funding-type"]:checked').val() === 'Designated' ? $('#funding-number').val()?.trim() || '' : '',
-                    project: $('input[name="funding-type"]:checked').val() === 'Project' ? $('#funding-number').val()?.trim() || '' : '',
-                    program_code: $('#program').val()?.trim() || '',
-                    function: $('#function').val()?.trim() || '',
-                    activity: $('#activity').val()?.trim() || '',
-                    assignee: $('#assignee').val()?.trim() || '',
-                }
-            ]
+                company: $('#company-id').val()?.trim() || '',
+                business_unit: $('#business-unit').val()?.trim() || '',
+                cost_center: $('#cost-center').val()?.trim() || '',
+                fund: $('#fund').val()?.trim() || '',
+                gift: $('input[name="funding-type"]:checked').val() === 'Gift' ? $('#funding-number').val()?.trim() || '' : '',
+                grant: $('input[name="funding-type"]:checked').val() === 'Grant' ? $('#funding-number').val()?.trim() || '' : '',
+                designated: $('input[name="funding-type"]:checked').val() === 'Designated' ? $('#funding-number').val()?.trim() || '' : '',
+                project: $('input[name="funding-type"]:checked').val() === 'Project' ? $('#funding-number').val()?.trim() || '' : '',
+                program_code: $('#program').val()?.trim() || '',
+                function: $('#function').val()?.trim() || '',
+                activity: $('#activity').val()?.trim() || '',
+                assignee: $('#assignee').val()?.trim() || ''
         };
     }
 
@@ -1149,7 +1148,7 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-        const billingDetails = getBillingDetails();
+        const billingDetails = billingData;
         const storageChange = formData.typeOfRequest === 'update-storage';
         const allocationChange = formData.newOrRenewal === "renewal";
         var selectedSU = "n/a";
