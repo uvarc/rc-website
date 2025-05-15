@@ -652,7 +652,6 @@
             `;
             fdmsTableBody.appendChild(row);
         });
-        });
     });
 
     document.addEventListener("DOMContentLoaded", function() {
