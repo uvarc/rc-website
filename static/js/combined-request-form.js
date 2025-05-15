@@ -789,9 +789,8 @@
         });
 
         $(document).on("change", 'input[name="selected-FDM"]', function (event) {
-            const $selectedRadio = $('input[name="selected-FDM"]:checked');
-            const $parentRow = $selectedRadio.closest('tr');
             const entry = $(this).data("entry");
+            $('#billing-information').show();
             updateBilling(entry);
            console.log("Billing fields successfully autofilled in the UI.");
         });
