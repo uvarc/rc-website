@@ -792,7 +792,7 @@
             console.log("Billing fields successfully autofilled in the UI.");
         });
 
-        // $(document).on("change", 'input[name="selected-FDM"]', function (event) {
+        // $(document).on("click", 'input[name="selected-FDM"]', function (event) {
         //     const entry = $(this).data("entry");
         //     $('#billing-information').show();
         //     $('#add_fdm').hide();
@@ -1050,9 +1050,6 @@
           const row = document.createElement("tr");
           const fundingNumber = entry.gift || entry.grant || entry.designated || entry.project || "";
           row.innerHTML = `
-            <td>
-              <input type="radio" name="selected-FDM" data-entry='${JSON.stringify(entry)}'>
-            </td>
             <td>${entry.company}</td>
             <td>${entry.cost_center}</td>
             <td>${entry.business_unit}</td>
@@ -1062,6 +1059,11 @@
             <td>${entry.program_code}</td>
             <td>${entry.activity}</td>
             <td>${entry.assignee}</td>
+            <td> 
+              <button class="btn btn-danger btn-sm delete-btn" title="Delete">
+              <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
         `;
         fdmsTableBody.appendChild(row);
         });
