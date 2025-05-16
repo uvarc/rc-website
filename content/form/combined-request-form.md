@@ -354,6 +354,9 @@ private = true
           </fieldset>
         </div>
       </div>
+      <div>
+        <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ New FDM</button>
+      </div>
     <!-- Billing Information Section -->
     <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <h5 class="mb-3">Payment Information</h5>
@@ -367,9 +370,7 @@ private = true
         <button class="btn btn-success btn-primary" type="button" id="add_fdm">Save</button>
        </div>
     </div>
-    <div>
-     <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ New FDM</button>
-    </div>
+
     <!-- Data Agreement and Submit Button Section -->
     <div id="common-fields" style="display: block; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <!-- Data Agreement -->
