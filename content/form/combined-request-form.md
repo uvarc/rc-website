@@ -330,13 +330,12 @@ private = true
           <fieldset>
              <div style="display: flex; justify-content: space-between; align-items: center;">
              <legend class="control-label h5">Existing FDM's</legend>
-             <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ FDM's</button>
+             <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ NewFDM</button>
              </div>
              <hr size="1" />
              <table class="table table-bordered table-hover">
                 <thead>
                   <tr>
-                   <th>Select</th>
                     <th>Company</th>
                     <th>Cost Center</th>
                     <th>Business Unit</th>
@@ -346,6 +345,7 @@ private = true
                     <th>Program</th>
                     <th>Activity</th>
                     <th>Assignee</th>
+                    <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody id="FDMS">
@@ -366,9 +366,7 @@ private = true
       {{% billing-fdm %}}
       <hr size="1" />
       <div>
-        <button class="btn btn-success btn-primary" type="button" id="add_fdm">add</button>
-        <button type="button" class="btn btn-primary" style="display: none;" id="update_fdm">Update</button>
-        <button type="button" class="btn btn-primary" style="display: none;" id="delete_fdm">Delete</button>
+        <button class="btn btn-success btn-primary" type="button" id="add_fdm">Save</button>
        </div>
     </div>
 

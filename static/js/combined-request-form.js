@@ -629,7 +629,6 @@
     document.addEventListener("DOMContentLoaded", function() {
         const fdmButton = document.getElementById("fdm_button");
         fdmButton.addEventListener("click", function() {
-          $("#fdm_button").hide();
           $('#billing-information').show();
         });
     });
@@ -645,9 +644,6 @@
             const fdmsTableBody = document.getElementById("FDMS");
             const row = document.createElement("tr");
             row.innerHTML = `
-             <td>
-              <input type="radio" name="selected-FDM" data-entry='${JSON.stringify(entry)}'>
-            </td>
             <td>${entry.company}</td>
             <td>${entry.cost_center}</td>
             <td>${entry.business_unit}</td>
@@ -657,16 +653,12 @@
             <td>${entry.program_code}</td>
             <td>${entry.activity}</td>
             <td>${entry.assignee}</td>
+            <td><button class="btn btn-danger btn-sm delete-btn">Delete</button></td>
         `;
         fdmsTableBody.appendChild(row);
         clearBillingForm();
         });
     });
-
-    $('#update_fdm').on('click', function (e) {
-        const updatedEntry = getBillingDetails();
-      });
-
 
     document.addEventListener("DOMContentLoaded", function() {
         // Get the button element
@@ -796,15 +788,15 @@
             console.log("Billing fields successfully autofilled in the UI.");
         });
 
-        $(document).on("change", 'input[name="selected-FDM"]', function (event) {
-            const entry = $(this).data("entry");
-            $('#billing-information').show();
-            $('#add_fdm').hide();
-            $('#update_fdm').show();
-            $('#delete_fdm').show();
-            updateBilling(entry);
-            console.log("Billing fields successfully autofilled in the UI.");
-        });
+        // $(document).on("change", 'input[name="selected-FDM"]', function (event) {
+        //     const entry = $(this).data("entry");
+        //     $('#billing-information').show();
+        //     $('#add_fdm').hide();
+        //     $('#update_fdm').show();
+        //     $('#delete_fdm').show();
+        //     updateBilling(entry);
+        //     console.log("Billing fields successfully autofilled in the UI.");
+        // });
     }
     
     // ===================================
