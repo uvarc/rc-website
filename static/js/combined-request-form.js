@@ -654,7 +654,7 @@
             <td>${entry.activity}</td>
             <td>${entry.assignee}</td>
             <td> 
-              <button class="btn btn-sm delete-btn" title="Delete">
+              <button class="btn btn-danger btn-sm delete-btn" title="Delete">
               <i class="fas fa-trash-alt"></i>
               </button>
             </td>
