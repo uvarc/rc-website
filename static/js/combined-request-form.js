@@ -655,6 +655,7 @@
             <td>${entry.assignee}</td>
             <td> 
               <button class="btn btn-sm delete-btn" title="Delete">
+              <i class="fas fa-trash-alt"></i>
               </button>
             </td>
         `;
