@@ -54,6 +54,7 @@ Default version changes include:
 |fmriprep   | 23.1.4 | 25.0.0 |
 |fsl        | 6.0.7.6 | 6.0.7.17 |
 |gcc        | 13.3.0 | 14.2.0 |
+|globus_cli | 3.11.0 | 3.34.0 |
 |go         | 1.21.4 | 1.23.6 |
 |intel      | 2024.0 | 2025.0 |
 |jcuda      | 11.4.1 | - |
