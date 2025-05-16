@@ -663,6 +663,11 @@
         });
     });
 
+    $('#update_fdm').on('click', function (e) {
+        const updatedEntry = getBillingDetails();
+      });
+
+
     document.addEventListener("DOMContentLoaded", function() {
         // Get the button element
         const button = document.getElementById("cancel");
@@ -794,6 +799,9 @@
         $(document).on("change", 'input[name="selected-FDM"]', function (event) {
             const entry = $(this).data("entry");
             $('#billing-information').show();
+            $('#add_fdm').hide();
+            $('#update_fdm').show();
+            $('#delete_fdm').show();
             updateBilling(entry);
             console.log("Billing fields successfully autofilled in the UI.");
         });

@@ -367,6 +367,8 @@ private = true
       <hr size="1" />
       <div>
         <button class="btn btn-success btn-primary" type="button" id="add_fdm">add</button>
+        <button type="button" class="btn btn-primary" style="display: none;" id="update_fdm">Update</button>
+        <button type="button" class="btn btn-primary" style="display: none;" id="delete_fdm">Delete</button>
        </div>
     </div>
 
