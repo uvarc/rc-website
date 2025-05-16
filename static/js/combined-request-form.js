@@ -653,7 +653,11 @@
             <td>${entry.program_code}</td>
             <td>${entry.activity}</td>
             <td>${entry.assignee}</td>
-            <td><button class="btn btn-danger btn-sm delete-btn">Delete</button></td>
+            <td> 
+              <button class="btn btn-danger btn-sm delete-btn" title="Delete">
+              <i class="fas fa-trash-alt"></i> <!-- or use bi bi-trash -->
+              </button>
+            </td>
         `;
         fdmsTableBody.appendChild(row);
         clearBillingForm();
