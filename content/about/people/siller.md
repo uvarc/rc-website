@@ -20,10 +20,6 @@ subjects = [
 ]
 +++
 
-<iframe src="https://myuva.sharepoint.com/sites/ResearchComputing-CCOAssets/_layouts/15/Doc.aspx?sourcedoc={31c0da35-5c45-464c-af29-0981469e131e}&amp;action=embedview&amp;wdAr=1.7770833333333333" width="476px" height="288px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQTB4bVBO3hoH-t01J4r4PiUBmrweGzXYHbnx4Qq4ztDXoCk_Cf-JPoMbA5A2dvW2rpMa1wScxjE0BO/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-
 Karsten's background is in developmental cell biology, genetics and light microscopy. He leads Research Computing's User Services team and provides technical support, training and project consultation for UVA's centralized compute platforms. His focus areas are HPC workflows, software containers, Python programming and image processing.
 
 ##### Selected Publications
