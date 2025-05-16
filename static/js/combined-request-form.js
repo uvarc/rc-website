@@ -792,7 +792,7 @@
             const entry = $(this).data("entry");
             $('#billing-information').show();
             updateBilling(entry);
-           console.log("Billing fields successfully autofilled in the UI.");
+            console.log("Billing fields successfully autofilled in the UI.");
         });
     }
     
@@ -1004,33 +1004,32 @@
 
     function updateBilling(billingData) {
         if (billingData) {
-            if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
-                $('#funding-number').val(billingData[0].project || '');
+            if (billingData.project && typeof billingData.project === 'string' && billingData.project.trim().length > 0) {
+                $('#funding-number').val(billingData.project || '');
                 $('#funding-project').prop('checked', true);
             }
-            if (billingData[0].gift && typeof billingData[0].gift === 'string' && billingData[0].gift.trim().length > 0) {
-                $('#funding-number').val(billingData[0].gift || '');
+            if (billingData.gift && typeof billingData.gift === 'string' && billingData.gift.trim().length > 0) {
+                $('#funding-number').val(billingData.gift || '');
                 $('#funding-gift').prop('checked', true);
             }
-            if (billingData[0].grant && typeof billingData[0].grant === 'string' && billingData[0].grant.trim().length > 0) {
-                $('#funding-number').val(billingData[0].grant || '');
+            if (billingData.grant && typeof billingData.grant === 'string' && billingData.grant.trim().length > 0) {
+                $('#funding-number').val(billingData.grant || '');
                 $('#funding-grant').prop('checked', true);
             }
-            if (billingData[0].designated && typeof billingData[0].designated === 'string' && billingData[0].designated.trim().length > 0) {
-                $('#funding-number').val(billingData[0].designated || '');
+            if (billingData.designated && typeof billingData.designated === 'string' && billingData.designated.trim().length > 0) {
+                $('#funding-number').val(billingData.designated || '');
                 $('#funding-designated').prop('checked', true);
             }
             
-            $('#financial-contact').val(billingData[0].financial_contact || '');
-            $('#company-id').val(billingData[0].company || '');
-            $('#business-unit').val(billingData[0].business_unit || '');
-            $('#cost-center').val(billingData[0].cost_center || '');
-            $('#fund').val(billingData[0].fund || '');
-            
-            $('#program').val(billingData[0].program_code || '');
-            $('#function').val(billingData[0].function || '');
-            $('#activity').val(billingData[0].activity || '');
-            $('#assignee').val(billingData[0].assignee || '');
+            $('#financial-contact').val(billingData.financial_contact || '');
+            $('#company-id').val(billingData.company || '');
+            $('#business-unit').val(billingData.business_unit || '');
+            $('#cost-center').val(billingData.cost_center || '');
+            $('#fund').val(billingData.fund || '');
+            $('#program').val(billingData.program_code || '');
+            $('#function').val(billingData.function || '');
+            $('#activity').val(billingData.activity || '');
+            $('#assignee').val(billingData.assignee || '');
             console.log("Billing data updated from existing line:", billingData);
             $('#financial-contact').trigger("change").trigger("input"); //trigger the form update
         }
