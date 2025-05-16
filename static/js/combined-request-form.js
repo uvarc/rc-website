@@ -633,6 +633,15 @@
         });
     });
 
+    document.getElementById('FDMS').addEventListener('click', function (e) {
+        if (e.target && e.target.classList.contains('delete-btn')) {
+          const row = e.target.closest('tr');
+          if (row) {
+            row.remove();
+          }
+        }
+      });
+
     document.addEventListener("DOMContentLoaded", function() {
         const addFdmButton = document.getElementById("add_fdm");
         addFdmButton.addEventListener("click", function () {
@@ -791,6 +800,15 @@
         
             console.log("Billing fields successfully autofilled in the UI.");
         });
+
+         document.getElementById('FDMS').addEventListener('click', function (e) {
+    if (e.target && e.target.classList.contains('delete-btn')) {
+      const row = e.target.closest('tr');
+      if (row) {
+        row.remove();
+      }
+    }
+  });
 
         // $(document).on("click", 'input[name="selected-FDM"]', function (event) {
         //     const entry = $(this).data("entry");
