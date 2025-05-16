@@ -645,6 +645,9 @@
             const fdmsTableBody = document.getElementById("FDMS");
             const row = document.createElement("tr");
             row.innerHTML = `
+             <td>
+              <input type="radio" name="selected-FDM">
+            </td>
             <td>${entry.company}</td>
             <td>${entry.cost_center}</td>
             <td>${entry.business_unit}</td>
