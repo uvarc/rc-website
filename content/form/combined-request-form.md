@@ -354,7 +354,7 @@ private = true
           </fieldset>
         </div>
       </div>
-      <div style = "margin-top:1em;">
+      <div style = "margin-top:1em; display: none;" id="fdm_button_div">
         <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ New FDM</button>
       </div>
     <!-- Billing Information Section -->
