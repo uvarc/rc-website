@@ -330,7 +330,6 @@ private = true
           <fieldset>
              <div style="display: flex; justify-content: space-between; align-items: center;">
              <legend class="control-label h5">Existing FDM's</legend>
-             <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ NewFDM</button>
              </div>
              <hr size="1" />
              <table class="table table-bordered table-hover">
@@ -364,12 +363,13 @@ private = true
         <!--<input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" /> -->
       </div>
       {{% billing-fdm %}}
-      <hr size="1" />
       <div>
         <button class="btn btn-success btn-primary" type="button" id="add_fdm">Save</button>
        </div>
     </div>
-
+    <div>
+     <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ New FDM</button>
+    </div>
     <!-- Data Agreement and Submit Button Section -->
     <div id="common-fields" style="display: block; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <!-- Data Agreement -->
