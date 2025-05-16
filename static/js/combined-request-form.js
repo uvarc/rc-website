@@ -646,7 +646,7 @@
             const row = document.createElement("tr");
             row.innerHTML = `
              <td>
-              <input type="radio" name="selected-FDM">
+              <input type="radio" name="selected-FDM" data-entry='${JSON.stringify(entry)}'>
             </td>
             <td>${entry.company}</td>
             <td>${entry.cost_center}</td>
