@@ -83,8 +83,8 @@ students:
     testimonial: "I’m grateful to Research Computing for my internship from Fall 2023 to Spring 2025, as I learned the value of clear requirements and proactive communication. 
     In a summer leadership role, I helped recruit and onboard new students and emphasized the importance of documentation to 
     streamline cohort transitions. The hands-on experience, which included API development, CI/CD, and website refactoring, 
-    truly enhanced my ability to learn technologies quickly and boosted my confidence in technical interviews. I’m now headed to AWS as a Software Development Engineer intern for the summer of 2025 and l
-    ook forward to returning next year to finish my degree before starting full-time work."
+    truly enhanced my ability to learn technologies quickly and boosted my confidence in technical interviews. I am now headed to AWS as a Software Development Engineer intern for the summer of 2025 and 
+    look forward to returning next year to finish my degree before starting full-time work."
     projects:
       - projectname: "Research Computing Workshop Data"
         year: 2024
