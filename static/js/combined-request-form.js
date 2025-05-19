@@ -795,7 +795,8 @@
         });
 
         document.getElementById('FDMS').addEventListener('click', function (e) {
-          if (e.target && e.closest('.delete-btn')) {
+          const deleteBtn = e.target.closest('.delete-btn'); // ← this works even if <i> is clicked
+          if (deleteBtn) {
             const row = e.target.closest('tr');
             if (row) {
              row.remove();
