@@ -775,7 +775,7 @@
                 const additionalData = $parentRow.attr('data-additional');
                 //CHange the su's requested to the value of the renewal selected
                 // Parse it to an object (if needed)
-                let billingData;
+                //let billingData;
                 try {
                     billingData = JSON.parse(additionalData);
                 } catch (e) {
@@ -797,6 +797,8 @@
             const row = e.target.closest('tr');
             if (row) {
              row.remove();
+             
+
             }
           }
         });
