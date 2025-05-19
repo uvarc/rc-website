@@ -777,7 +777,7 @@
                 // Parse it to an object (if needed)
                 //let billingData;
                 try {
-                    billingData = JSON.parse(additionalData);
+                    billingData.fdm_billing_info = JSON.parse(additionalData);
                 } catch (e) {
                     console.error("Failed to parse billing data:", e);
                 }
@@ -797,7 +797,7 @@
             const row = e.target.closest('tr');
             if (row) {
              row.remove();
-             
+
 
             }
           }
