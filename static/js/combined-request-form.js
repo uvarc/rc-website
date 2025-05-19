@@ -799,11 +799,9 @@
             const row = e.target.closest('tr');
             if (row) {
              row.remove();
-             const rowId = row.getAttribute('data-id');
-
-             // Remove the corresponding object from the array
-             billingData.fdm_billing_info = billingData.fdm_billing_info.filter(
-               item => item.id != rowId);
+             const index = row.getAttribute('data-id');
+                // Remove entry from billingData
+                billingData.fdm_billing_info.splice(index, 1);
              }
           }
         });
@@ -1062,6 +1060,7 @@
         const fdmsTableBody = document.getElementById("FDMS");
         fdmsTableBody.innerHTML = ""; 
         const entries = billingData;
+        const index = billingData.fdm_billing_info.length;
         entries.forEach(entry => {
           const row = document.createElement("tr");
           const fundingNumber = entry.gift || entry.grant || entry.designated || entry.project || "";
