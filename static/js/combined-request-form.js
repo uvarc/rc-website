@@ -799,7 +799,7 @@
             const row = e.target.closest('tr');
             if (row) {
              row.remove();
-             const index = row.getAttribute('data-id');
+             const index = row.getAttribute('data-index');
                 billingData.fdm_billing_info.splice(index, 1);
              }
           }
