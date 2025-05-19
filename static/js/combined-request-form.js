@@ -1060,7 +1060,6 @@
         const fdmsTableBody = document.getElementById("FDMS");
         fdmsTableBody.innerHTML = ""; 
         const entries = billingData;
-        const index = billingData.fdm_billing_info.length;
         entries.forEach(entry => {
           const row = document.createElement("tr");
           const fundingNumber = entry.gift || entry.grant || entry.designated || entry.project || "";
