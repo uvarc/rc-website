@@ -783,7 +783,7 @@
                 }
                 
                 // Call your updateBilling method with the parsed data
-                populateBillinTable(billingData);
+                populateBillinTable(billingData.fdm_billing_info);
 
             // Ensure fields are editable
             $('#financial-contact, #company-id, #cost-center, #business-unit, #funding-number, #fund, #function, #program, #activity, #assignee')
