@@ -674,6 +674,15 @@
     });
 
     document.addEventListener("DOMContentLoaded", function() {
+        const cancelFdmButton = document.getElementById("cancel-fdm");
+        cancelFdmButton.addEventListener("click", function() {
+          clearBillingForm();
+          $('#billing-information').hide();
+          $('#fdm_button').show();
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
         // Get the button element
         const button = document.getElementById("cancel");
         button.addEventListener("click", function() {
