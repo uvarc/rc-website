@@ -795,7 +795,7 @@
         });
 
         document.getElementById('FDMS').addEventListener('click', function (e) {
-          if (e.target && e.target.classList.contains('delete-btn')) {
+          if (e.target && e.closest('.delete-btn')) {
             const row = e.target.closest('tr');
             if (row) {
              row.remove();
