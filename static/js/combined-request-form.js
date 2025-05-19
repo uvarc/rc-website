@@ -678,7 +678,7 @@
         cancelFdmButton.addEventListener("click", function() {
           clearBillingForm();
           $('#billing-information').hide();
-          $('#fdm_button').show();
+          $('#fdm_button_div').show();
         });
     });
 
