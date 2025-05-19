@@ -678,7 +678,7 @@
         cancelFdmButton.addEventListener("click", function() {
           clearBillingForm();
           $('#billing-information').hide();
-          $('#fdm_button_div').show();
+          $('#fdm_button').show();
         });
     });
 
@@ -802,7 +802,7 @@
                 
                 // Call your updateBilling method with the parsed data
                 populateBillinTable(billingData.fdm_billing_info);
-                $('#fdm_button').show();
+                $('#fdm_button_div').show();
         });
 
         document.getElementById('FDMS').addEventListener('click', function (e) {
