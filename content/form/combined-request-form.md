@@ -366,7 +366,7 @@ private = true
         <!--<input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" /> -->
       </div>
       {{% billing-fdm %}}
-      <div style = "margin-top:1em; text-align: right;">
+      <div style = "margin-top:1em; margin-right:1em; text-align:right">
         <button class="btn btn-success btn-primary" type="button" id="add_fdm">Add to FDM Details</button>
         <button class="btn btn-secondary" type="button" id="cancel-fdm">Cancel</button>
        </div>
