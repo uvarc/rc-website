@@ -1058,7 +1058,7 @@
     function populateBillinTable(billingData) {
         const fdmsTableBody = document.getElementById("FDMS");
         fdmsTableBody.innerHTML = ""; 
-        const entries = billingData.fdm_billing_info;
+        const entries = billingData;
         entries.forEach((entry, index) => {
           const row = document.createElement("tr");
           const fundingNumber = entry.gift || entry.grant || entry.designated || entry.project || "";
