@@ -1058,10 +1058,11 @@
     function populateBillinTable(billingData) {
         const fdmsTableBody = document.getElementById("FDMS");
         fdmsTableBody.innerHTML = ""; 
-        const entries = billingData;
-        entries.forEach(entry => {
+        const entries = billingData.fdm_billing_info;
+        entries.forEach((entry, index) => {
           const row = document.createElement("tr");
           const fundingNumber = entry.gift || entry.grant || entry.designated || entry.project || "";
+          row.setAttribute("data-index", index);
           row.innerHTML = `
             <td>${entry.company}</td>
             <td>${entry.cost_center}</td>
