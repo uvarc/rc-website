@@ -354,7 +354,7 @@ private = true
           </fieldset>
         </div>
       </div>
-      <div style = "margin-top:1em; display: none;" id="fdm_button_div">
+      <div style = "margin-top:1em; display: none; text-align: right;" id="fdm_button_div">
         <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ New FDM</button>
       </div>
     <!-- Billing Information Section -->
@@ -366,8 +366,9 @@ private = true
         <!--<input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" /> -->
       </div>
       {{% billing-fdm %}}
-      <div style = "margin-top:1em;">
-        <button class="btn btn-success btn-primary" type="button" id="add_fdm">Save</button>
+      <div style = "margin-top:1em; text-align: right;">
+        <button class="btn btn-success btn-primary" type="button" id="add_fdm">Add to FDM Details</button>
+        <button class="btn btn-secondary" type="button" id="cancel-fdm">Cancel</button>
        </div>
     </div>
 

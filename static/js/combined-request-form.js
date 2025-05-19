@@ -630,6 +630,7 @@
         const fdmButton = document.getElementById("fdm_button");
         fdmButton.addEventListener("click", function() {
           $('#billing-information').show();
+          $('#fdm_button').hide();
         });
     });
 
