@@ -802,12 +802,7 @@
                 
                 // Call your updateBilling method with the parsed data
                 populateBillinTable(billingData.fdm_billing_info);
-
-            // Ensure fields are editable
-            $('#financial-contact, #company-id, #cost-center, #business-unit, #funding-number, #fund, #function, #program, #activity, #assignee')
-                .prop('readonly', false);
-        
-            console.log("Billing fields successfully autofilled in the UI.");
+                $('#fdm_button').show();
         });
 
         document.getElementById('FDMS').addEventListener('click', function (e) {
