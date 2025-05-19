@@ -1205,7 +1205,6 @@
         
                 // Get existing request count to avoid unintended changes
                 const existingRequestCount = existingResource.resources?.hpc_service_units?.[selectedSU]?.request_count || "50000";
-                billingDetails = existingResource.resources?.hpc_service_units?.[selectedSU]?.billing_details;
                // Construct minimal payload for PUT (Renewal)
                 const renewalPayload = {
                     "group_name": selectedGroup,
