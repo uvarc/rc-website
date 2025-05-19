@@ -1,0 +1,58 @@
+<style>
+    .styled-quote {
+      position: relative;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 3rem 2rem;          
+      border: 2px solid #000;
+      border-radius: 0.75rem;
+      background: #fff;
+      color: #222;
+      font-style: italic;
+      line-height: 1.6;
+    }
+  
+    .styled-quote * {
+      position: relative;
+      z-index: 1;
+    }
+  
+    /* brush-style quotes as SVG background */
+    .styled-quote::before,
+    .styled-quote::after {
+      content: "";
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+      z-index: 0;
+    }
+  
+    .styled-quote::before {
+      top: 1rem;
+      left: 1rem;
+      background-image: url('data:image/svg+xml;utf8,\
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">\
+          <text y="80" font-size="100" font-family="serif" fill="black">“</text>\
+        </svg>');
+    }
+  
+    .styled-quote::after {
+      bottom: 1rem;
+      right: 1rem;
+      background-image: url('data:image/svg+xml;utf8,\
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">\
+          <text y="80" font-size="100" font-family="serif" fill="black">”</text>\
+        </svg>');
+    }
+  
+</style>
+
+<blockquote class="styled-quote">
+    <p>
+      {{ . }}
+    </p>
+ </blockquote>
+

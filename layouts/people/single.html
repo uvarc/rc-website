@@ -4,9 +4,10 @@
 {{ define "main" }}
 {{ $dateFormat := default "January 2, 2006" (index .Site.Params "date_format") }}
 
-{{ $students := .Site.Data.studentproject.students}}
+{{ $students := .Site.Data.student_info.students}}
 {{ $student_entry := index (where $students "name" .Title) 0 }}
 {{ $student_projects := $student_entry.projects }}
+{{ $student_testimonial := $student_entry.testimonial }}
 
 
 <div class="container">
@@ -78,6 +79,10 @@
     <p>No projects currently available</p>
     <hr size="4px" />   
   {{ end }}
+{{ end }}
+
+{{ if $student_testimonial }}
+  {{ partial "student_testimonial.html" $student_testimonial }}
 {{ end }}
 
 
