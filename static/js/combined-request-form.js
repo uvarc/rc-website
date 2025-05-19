@@ -641,8 +641,10 @@
             const entry = getBillingDetails();
             billingData.fdm_billing_info.push(entry);
             console.log(billingData); // Check the updated array in the console
+            const index = billingData.fdm_billing_info.length;
             const fdmsTableBody = document.getElementById("FDMS");
             const row = document.createElement("tr");
+            row.setAttribute("data-index", index);
             row.innerHTML = `
             <td>${entry.company}</td>
             <td>${entry.cost_center}</td>
@@ -797,9 +799,12 @@
             const row = e.target.closest('tr');
             if (row) {
              row.remove();
+             const rowId = row.getAttribute('data-id');
 
-
-            }
+             // Remove the corresponding object from the array
+             billingData.fdm_billing_info = billingData.fdm_billing_info.filter(
+               item => item.id != rowId);
+             }
           }
         });
 
