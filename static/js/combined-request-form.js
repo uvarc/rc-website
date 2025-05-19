@@ -800,7 +800,6 @@
             if (row) {
              row.remove();
              const index = row.getAttribute('data-id');
-                // Remove entry from billingData
                 billingData.fdm_billing_info.splice(index, 1);
              }
           }
