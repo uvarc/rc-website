@@ -640,6 +640,12 @@
             $('#billing-information').hide();
             $("#fdm_button").show();
             const entry = getBillingDetails();
+            const isEmptyEntry = Object.values(entry).every(value => value === '');
+            if (isEmptyEntry) {
+                //alert("Please fill in at least one field before adding.");
+                return; 
+               }
+
             billingData.fdm_billing_info.push(entry);
             console.log(billingData); // Check the updated array in the console
             const index = billingData.fdm_billing_info.length;
