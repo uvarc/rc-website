@@ -59,7 +59,7 @@ service:
         use_cases: "Ideal for long-term storage of data to be accessed from Rivanna. Research Project storage is ideal for sharing data within a research group and for running jobs with smaller files."
       - name: "Research Standard"
         security: "Standard"
-        cost: "$45/TB per year (Each PI with an RC account will be granted up to 10 TB of Research Standard Storage at no charge<sup>1</sup>)"
+        cost: "$45/TB per year (Upon request, each PI with an RC account will be granted up to 10 TB of Research Standard Storage at no charge<sup>1</sup>)"
         quota: "1TB increments"
         snapshots: "No"
         replication: "No"
