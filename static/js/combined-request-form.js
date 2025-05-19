@@ -648,7 +648,7 @@
 
             billingData.fdm_billing_info.push(entry);
             console.log(billingData); // Check the updated array in the console
-            const index = billingData.fdm_billing_info.length;
+            const index = billingData.fdm_billing_info.length-1;
             const fdmsTableBody = document.getElementById("FDMS");
             const row = document.createElement("tr");
             row.setAttribute("data-index", index);
@@ -806,7 +806,7 @@
         });
 
         document.getElementById('FDMS').addEventListener('click', function (e) {
-          const deleteBtn = e.target.closest('.delete-btn'); // ← this works even if <i> is clicked
+          const deleteBtn = e.target.closest('.delete-btn');
           if (deleteBtn) {
             const row = e.target.closest('tr');
             if (row) {
