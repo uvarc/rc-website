@@ -1966,11 +1966,10 @@
     $(document).ready(function () {
         console.log("Script started");
         console.log("Updated Combined Request Form JS loaded");
-    
+        const sections = document.querySelectorAll(".blog-sidebar");
+        sections.forEach(section => section.remove());
         // ===================================
         // Start Initiation
         // ===================================
         initialize();
-        const sections = document.querySelectorAll(".blog-sidebar");
-        sections.forEach(section => section.remove());
     });
