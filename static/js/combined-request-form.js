@@ -587,7 +587,7 @@
         // Explicitly show or hide tier-specific sections
         if (isStandard) {
             $('#su-quantity').val(10000000);
-            document.getElementById("su-capacity").hide()
+            document.getElementById("su-capacity").hide();
         } else if(isInstructional) {
             $('#su-quantity').val(100000);
             document.getElementById("su-capacity").show();
