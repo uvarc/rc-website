@@ -585,15 +585,15 @@
         const isInstructional = $('#allocation-tier-options input[name="allocation-choice"]:checked').val() === 'Instructional';
 
         // Explicitly show or hide tier-specific sections
-        if (isStandard || isInstructional) {
-            $('#su-quantity').val(1000000);
-            document.getElementById("su-quantity").disabled = true;
+        if (isStandard) {
+            $('#su-quantity').val(10000000);
+            document.getElementById("su-quantity").hide()
         } else if(isInstructional) {
             $('#su-quantity').val(100000);
-            document.getElementById("su-quantity").disabled = true;
+            document.getElementById("su-quantity").show();
         } else {
             $('#su-quantity').val(1000);
-            document.getElementById("su-quantity").disabled = false;
+            document.getElementById("su-quantity").show();
         }
     }
     
@@ -786,10 +786,10 @@
                     const number = parseInt(match[1]);
                     $('#su-quantity').val(0); 
                     console.log("Selected SUs:", number); 
-                    document.getElementById("su-quantity").disabled = true;
+                    document.getElementById("su-quantity").hide();
                 } else {
                     $('#su-quantity').val(0);
-                    document.getElementById("su-quantity").disabled = false;
+                    document.getElementById("su-quantity").show();
                 }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
@@ -1653,7 +1653,10 @@
         previewTableBody.empty();
     
         if (!Array.isArray(userResources) || userResources.length === 0) {
-            showEmptyState(previewTableBody);
+            document.getElementById("existing-resources-preview").style.display = "none";
+
+            // Show the empty state message
+            document.getElementById("empty-message").style.display = "block";
             return;
         }
     

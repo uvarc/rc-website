@@ -17,6 +17,8 @@ private = true
  .table {
     table-layout: fixed;
     width: 100%;
+    font-size: 0.9rem;
+
  }
  .table td {
     word-break: break-word;
@@ -89,6 +91,9 @@ private = true
             <!-- Rows will be dynamically injected by JavaScript -->
         </tbody>
     </table>
+</div>
+<div id="empty-message" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+  No resources available to display.
 </div>
 
   <!-- Resource Type Selection -->
