@@ -747,7 +747,7 @@
                 const additionalData = $parentRow.attr('data-additional');
                 
                 // Parse it to an object (if needed)
-                let billingData;
+                billingData;
                 try {
                     billingData = JSON.parse(additionalData);
                 } catch (e) {
