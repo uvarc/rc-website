@@ -544,7 +544,7 @@
             $('#existing-projects-allocation').hide();
         } else if(!isNew && isRenew) {
             $('#mygroups-group-container, #allocation-tier').hide();
-            $('#existing-projects-allocation, #new-project-name-container, #project-description, #fdm_table').show();
+            $('#existing-projects-allocation, #new-project-name-container, #project-description, #fdm_table, #fdm_button_div').show();
             populateExistingServiceUnitsTable(consoleData);
         }
     }
@@ -555,12 +555,12 @@
         const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage && !changeExsisting && !retireExsisting) {
-            $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container').show();
+            $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container #fdm_table, #fdm_button_div').show();
             $('#existing-projects-storage').hide();
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                 $('#storage-fields').show(); // Show capacity field for increase/decrease
                 $('#storage-mygroups-container, #storage-platform').hide();
-                $('#existing-projects-storage, #project-title-container, #project-description-container').show();
+                $('#existing-projects-storage, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
         }
     }
     
@@ -802,7 +802,6 @@
                 
                 // Call your updateBilling method with the parsed data
                 populateBillinTable(billingData.fdm_billing_info);
-                $('#fdm_button_div').show();
         });
 
         document.getElementById('FDMS').addEventListener('click', function (e) {
