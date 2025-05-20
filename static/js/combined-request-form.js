@@ -546,6 +546,8 @@
             $('#mygroups-group-container, #allocation-tier').hide();
             $('#existing-projects-allocation, #new-project-name-container, #project-description, #fdm_table, #fdm_button_div').show();
             populateExistingServiceUnitsTable(consoleData);
+        } else {
+                
         }
     }
 
@@ -1969,4 +1971,6 @@
         // Start Initiation
         // ===================================
         initialize();
+        const sections = document.querySelectorAll(".blog-sidebar");
+        sections.forEach(section => section.remove());
     });
