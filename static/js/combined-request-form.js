@@ -587,13 +587,13 @@
         // Explicitly show or hide tier-specific sections
         if (isStandard) {
             $('#su-quantity').val(10000000);
-            document.getElementById("su-quantity").hide()
+            document.getElementById("su-capacity").hide()
         } else if(isInstructional) {
             $('#su-quantity').val(100000);
-            document.getElementById("su-quantity").show();
+            document.getElementById("su-capacity").show();
         } else {
             $('#su-quantity').val(1000);
-            document.getElementById("su-quantity").show();
+            document.getElementById("su-capacity").show();
         }
     }
     
@@ -786,10 +786,10 @@
                     const number = parseInt(match[1]);
                     $('#su-quantity').val(0); 
                     console.log("Selected SUs:", number); 
-                    document.getElementById("su-quantity").hide();
+                    document.getElementById("su-capacity").hide();
                 } else {
                     $('#su-quantity').val(0);
-                    document.getElementById("su-quantity").show();
+                    document.getElementById("su-capacity").show();
                 }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
