@@ -813,6 +813,7 @@
              row.remove();
              const index = row.getAttribute('data-index');
                 billingData.fdm_billing_info.splice(index, 1);
+                populateBillinTable(billingData.fdm_billing_info);
              }
           }
         });
