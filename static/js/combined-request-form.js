@@ -540,6 +540,7 @@
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
         document.getElementById("FDMS").innerHTML = "";
+        document.getElementById("su-capacity").style.display = "block";
         clearBillingForm();
         if (isNew && !isRenew) {
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
@@ -751,13 +752,13 @@
                 // Parse it to an object (if needed)
                 billingData;
                 try {
-                    billingData = JSON.parse(additionalData);
+                    billingData.fdm_billing_info = JSON.parse(additionalData);
                 } catch (e) {
                     console.error("Failed to parse billing data:", e);
                 }
                 
                 // Call your updateBilling method with the parsed data
-                populateBillinTable(billingData);
+                populateBillinTable(billingData.fdm_billing_info);
             }
             updatePayloadPreview(); // Update the real-time payload preview
             //updateBillingVisibility(); // Update billing visibility
