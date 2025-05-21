@@ -787,20 +787,20 @@
                 const fullText = $parentRow[0].cells[5].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
                 const tire = $parentRow[0].cells[4].textContent.trim();
-                if(tire === "ssz_standard" || tire === "ssz_instructional") {
-                    const number = parseInt(match[1]);
+                const number = parseInt(match[1]);
+                console.log("Selected SUs:", number); 
+                if(tire === "ssz_standard") {
                     $('#su-quantity').val(0); 
-                    console.log("Selected SUs:", number); 
                     document.getElementById("su-capacity").style.display = "none";
+                } else if(tire === "ssz_instructional") {
+                    $('#su-quantity').val(0); 
+                    document.getElementById("su-capacity").style.display = "block"; 
                 } else {
                     $('#su-quantity').val(0);
                     document.getElementById("su-capacity").style.display = "block";
                 }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
-                //CHange the su's requested to the value of the renewal selected
-                // Parse it to an object (if needed)
-                //let billingData;
                 try {
                     billingData.fdm_billing_info = JSON.parse(additionalData);
                 } catch (e) {
@@ -823,16 +823,6 @@
              }
           }
         });
-
-        // $(document).on("click", 'input[name="selected-FDM"]', function (event) {
-        //     const entry = $(this).data("entry");
-        //     $('#billing-information').show();
-        //     $('#add_fdm').hide();
-        //     $('#update_fdm').show();
-        //     $('#delete_fdm').show();
-        //     updateBilling(entry);
-        //     console.log("Billing fields successfully autofilled in the UI.");
-        // });
     }
     
     // ===================================
