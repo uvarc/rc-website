@@ -563,6 +563,7 @@
         if (isNewStorage && !changeExsisting && !retireExsisting) {
             $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-storage').hide();
+            billingData.fdm_billing_info = [];
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                 $('#storage-fields').show(); // Show capacity field for increase/decrease
                 $('#storage-mygroups-container, #storage-platform').hide();
