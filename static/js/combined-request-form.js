@@ -539,16 +539,14 @@
     function toggleAllocationFields() {
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
+        document.getElementById("FDMS").innerHTML = "";
+        clearBillingForm();
         if (isNew && !isRenew) {
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
-            document.getElementById("FDMS").innerHTML = "";
-            clearBillingForm();
         } else if(!isNew && isRenew) {
             $('#mygroups-group-container, #allocation-tier').hide();
             $('#existing-projects-allocation, #new-project-name-container, #project-description, #fdm_table, #fdm_button_div').show();
-            document.getElementById("FDMS").innerHTML ="";
-            clearBillingForm();
             populateExistingServiceUnitsTable(consoleData);
         } 
     }
@@ -557,18 +555,16 @@
         const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
         const changeExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage';
         const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
+        document.getElementById("FDMS").innerHTML = "";
+        clearBillingForm();
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage && !changeExsisting && !retireExsisting) {
             $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-storage').hide();
-            document.getElementById("FDMS").innerHTML = "";
-            clearBillingForm();
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                 $('#storage-fields').show(); // Show capacity field for increase/decrease
                 $('#storage-mygroups-container, #storage-platform').hide();
                 $('#existing-projects-storage, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
-                document.getElementById("FDMS").innerHTML = "";
-                clearBillingForm();
         }
     }
     
