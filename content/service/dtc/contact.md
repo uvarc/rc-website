@@ -5,7 +5,7 @@ title = "Digital Technology Core Contact Information"
 date = "2025-04-29T00:00:00-05:00"
 draft = false
 tags = []
-categories = ["services"]
+categories = []
 images = [ ]
 +++
 

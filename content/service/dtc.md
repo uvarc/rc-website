@@ -33,12 +33,12 @@ The DTC understands different teams have different needs. We are open to working
 * Brainstorm ideas within the digital technology space (we love to help you formulate your ideas)
 
 # Isn't building an app time consuming and expensive?
-Traditionally yes, but the DTC offers a model that we call "hosted" apps that are faster and more affordable than a traditional app. A "hosted" app is somewhere between building an app from scratch and using someone else's app. The hosted approach has many benefits for you:
-* Maintenance costs (e.g., bug fixes) are shared by all DTC "hosted" apps
-* New features added by the DTC will be immediately available to you for free
-* You are able to avoid all app store reviews and publication requirements
-* Updates to your "hosted" app can be released in a matter of minutes
-* Your "hosted" app will automatically work natively in both iOS and Android
+Traditionally yes, but the DTC offers a model that we call "hosted" apps, which can be built faster and cheaper than traditional apps. A "hosted" app is inbetween building an app from scratch and using someone else's app. If your goal is to run a research study, a "hosted" app will do everything you want. If your goal is to eventually have your own stand-alone app, think of a "hosted" app as an affordable prototype. The hosted approach has many benefits for you:
+* Maintenance costs are minimized due to a shared infrastructure
+* New features are available for free due to a shared infrastructure
+* App store review and approval processes are avoided
+* Updates to your app can be released in a matter of minutes
+* Your app will be available on both iOS and Android without any extra work
 
 # Can I collect data from device _____?
 Probably, most modern wearable device support integration via web APIs. If a device you want to work with provides API integration (e.g., Apple Watch, Android Wear, Whoop, Oura, BioStrap, FitBit) then we can easily add it to our eco-system (if we haven't already). If you aren't sure if we support your device contact us and ask.
