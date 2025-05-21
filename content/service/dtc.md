@@ -33,7 +33,7 @@ The DTC understands different teams have different needs. We are open to working
 * Brainstorm ideas within the digital technology space (we love to help you formulate your ideas)
 
 # Isn't building an app time consuming and expensive?
-Traditionally yes, but the DTC offers a model that we call "hosted" apps, which can be built faster and cheaper than traditional apps. A "hosted" app is inbetween building an app from scratch and using someone else's app. If your goal is to run a research study, a "hosted" app will do everything you want. If your goal is to eventually have your own stand-alone app, think of a "hosted" app as an affordable prototype. The hosted approach has many benefits for you:
+Traditionally, yes, but the DTC offers a model that we call "hosted" apps, which can be built faster and more cheaply than traditional apps. A "hosted" app is in between building an app from scratch and using someone else's app. If your goal is to run a research study, a "hosted" app will do everything you want. If your goal is to eventually have your own stand-alone app, think of a "hosted" app as an affordable prototype. The hosted approach has many benefits for you:
 * Maintenance costs are minimized due to a shared infrastructure
 * New features are available for free due to a shared infrastructure
 * App store review and approval processes are avoided
