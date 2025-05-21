@@ -545,6 +545,7 @@
         if (isNew && !isRenew) {
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
+            billingData.fdm_billing_info = [];
         } else if(!isNew && isRenew) {
             $('#mygroups-group-container, #allocation-tier').hide();
             $('#existing-projects-allocation, #new-project-name-container, #project-description, #fdm_table, #fdm_button_div').show();
