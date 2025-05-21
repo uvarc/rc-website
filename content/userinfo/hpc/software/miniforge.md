@@ -161,6 +161,8 @@ When running Slurm jobs on Rio, it is essential to ensure that all packages and 
 The following environment variables should be exported in your `~/.bashrc` file to install conda packages and environment into a specific directory (`/standard/ivy-xxx-xxxx/path/to/.conda/`):
 
 ```
+export HTTPS_PROXY=http://figgis-s.hpc.virginia.edu:8080 
+export HTTP_PROXY=http://figgis-s.hpc.virginia.edu:8080
 export CONDA_PKGS_DIRS="/standard/ivy-xxx-xxxx/path/to/.conda/pkgs"
 export CONDA_ENVS_PATH="/standard/ivy-xxx-xxxx/path/to/.conda/envs" 
 export CONDA_CACHE_DIR="/standard/ivy-xxx-xxxx/path/to/.conda/cache" 

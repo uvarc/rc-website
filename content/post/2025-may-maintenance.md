@@ -2,16 +2,22 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-05-20T00:00:00-05:00"
+date = "2025-05-13T00:00:00-05:00"
 title = "HPC Maintenance: May 27, 2025"
 draft = false
 tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}The HPC cluster will be down for maintenance on <strong>Tuesday, May 27, 2025</strong> beginning at 6 am.{{< /alert-green >}}
+{{< alert-green >}}The UVA HPC systems, Afton/Rivanna, will be down for maintenance on <strong>Tuesday, May 27, 2025</strong> beginning at 6 am.{{< /alert-green >}}
 
 All systems are expected to return to service by **Wednesday, May 28** at 6 am.
+
+## How should I prepare and what to expect on May 27, 2025? 
+
+You may continue submitting jobs to the HPC system until the maintenance period begins. However, if the system determines your job won't finish in time, it will not start until the system is back online. The upcoming maintenance will include upgrades to the HPC image (upgrading to Rocky 8.10), the HPC scheduler (Slurm 24.11), the NVIDIA driver and Open OnDemand. To complete these tasks, all compute nodes and login nodes - including the Open OnDemand and FastX portals – will need to be taken offline. However, Research Project Storage and Research Standard Storage will remain accessible via SMB and NFS mounts. Additionally, the UVA Standard Security Storage Data Transfer Node (DTN) will stay operational throughout the maintenance period. 
+
+If you have any questions about the upcoming HPC system maintenance, you may [contact our user services team](https://www.rc.virginia.edu/support/). 
 
 ## IMPORTANT MAINTENANCE NOTES
 
@@ -28,6 +34,7 @@ The software stack is migrated from `/sfs/applications` to `/sfs/gpfs/tardis/app
 Default version changes include:
 - cuda/12.4.1 &rarr; 12.8.0
 - miniforge/24.3.0-py3.11 &rarr; 24.11.3-py3.12
+- namd/2.14 &rarr; 3.0.1
 - nvhpc/24.5 &rarr; 25.3
 - R/4.4.1 &rarr; 4.5.0
 
@@ -48,6 +55,7 @@ Default version changes include:
 |fmriprep   | 23.1.4 | 25.0.0 |
 |fsl        | 6.0.7.6 | 6.0.7.17 |
 |gcc        | 13.3.0 | 14.2.0 |
+|globus_cli | 3.11.0 | 3.34.0 |
 |go         | 1.21.4 | 1.23.6 |
 |intel      | 2024.0 | 2025.0 |
 |jcuda      | 11.4.1 | - |

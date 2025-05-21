@@ -10,6 +10,7 @@ students:
         imagepath: "/images/student-work/Spring_2024_Eubanks_Poster.jpg"
         archived: false
   - name: "Matthew Galitz"
+    testimonial: 
     projects:
       - projectname: "Rivanna Utilization"
         year: 2024
@@ -32,6 +33,7 @@ students:
         imagepath: "/images/student-work/Spring_2025_Galitz_Poster.png"
         archived: false
   - name: "Bhargav Garre Venkata"
+    testimonial: 
     projects: 
       - projectname: "Improving HPC Accessibility Through Instructional Video Development"
         year: 2025
@@ -43,6 +45,7 @@ students:
         imagepath: "/images/student-work/Spring_2025_GarreVenkata_Poster.png"
         archived: false
   - name: "Diana Lin"
+    testimonial: 
     projects: 
       - projectname: "Developing a Dashboard for Research Computing Workshop Data"
         year: 2025
@@ -55,6 +58,7 @@ students:
         imagepath: "/images/student-work/Spring_2025_Lin_Poster.png"
         archived: false
   - name: "Ivey Mistele"
+    testimonial: 
     projects: 
       - projectname: "Student Data Visualization and Markdown Conversion"
         year: 2025
@@ -76,6 +80,11 @@ students:
         imagepath: "/images/student-work/Spring_2024_Park_Poster.jpg"
         archived: false
   - name: "Hariprasad Periyasamy"
+    testimonial: "I’m grateful to Research Computing for my internship from Fall 2023 to Spring 2025, as I learned the value of clear requirements and proactive communication. 
+    In a summer leadership role, I helped recruit and onboard new students and emphasized the importance of documentation to 
+    streamline cohort transitions. The hands-on experience, which included API development, CI/CD, and website refactoring, 
+    truly enhanced my ability to learn technologies quickly and boosted my confidence in technical interviews. I am now headed to AWS as a Software Development Engineer intern for the summer of 2025 and 
+    look forward to returning next year to finish my degree before starting full-time work."
     projects:
       - projectname: "Research Computing Workshop Data"
         year: 2024
@@ -126,6 +135,7 @@ students:
       embed_link: "https://www.youtube.com/embed/XYQduJCkrWY"
       archived: false
   - name: "Mohan Shankar"
+    testimonial: 
     projects: 
       - projectname: "Collaborative Innovations in Data Science and Engineering"
         year: 2025
@@ -136,6 +146,7 @@ students:
         imagepath: "/images/student-work/Spring_2025_Shankar_Poster.png"
         archived: false
   - name: "Steven Siadaty"
+    testimonial: 
     projects: 
       - projectname: "An Accessible Graphical User Interface for RNA-seq Analysis"
         year: 2025
@@ -148,6 +159,7 @@ students:
         imagepath: "/images/student-work/Spring_2025_Siadaty_Poster.png"
         archived: false
   - name: "Jennifer Vo"
+    testimonial: 
     projects: 
     - projectname: "Markdown and Women in HPC"
       year: 2024

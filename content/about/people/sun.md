@@ -20,7 +20,7 @@ subjects = [
 ]
 +++
 
-Ruoshi is experienced in electronic structure codes for computational materials science. He takes part in managing the Rivanna software stack, building Apptainer/Docker containers, and providing user support/research consultation.
+Ruoshi is experienced in electronic structure codes for computational materials science. He takes part in managing the HPC software stacks, building Apptainer/Docker containers, and providing user support/research consultation.
 
 He is a volunteer pianist at the University Hospital through the "Music for Healing" program.
 
