@@ -101,7 +101,7 @@ private = true
   <fieldset class="form-item form-group form-type-select">
     <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
     <select name="request-type" id="request-type" class="form-control" required>
-      <option value="service-unit">Allocation (SU)</option>
+      <option value="service-unit">Allocation's (SU)</option>
       <option value="storage">Storage</option>
     </select>
   </fieldset>
@@ -111,7 +111,7 @@ private = true
   <div style="margin-bottom:1rem;" id = "service_unit_container">
     <!-- Service Unit (SU) Request Fields -->
     <div id="allocation-fields" style="display: none; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
-      <h5 class="mb-3">Service Unit (SU) Request</h5>
+      <h5 class="mb-3"> Allocation's (SU) Request</h5>
       <hr size="1" />
 
       <!-- New or Renewal (First section for SU requests) -->
@@ -125,7 +125,7 @@ private = true
             </div>
             <div class="form-item form-type-radio radio">
               <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />
-              <label class="control-label" for="new-or-renewal-2">Renewal</label>
+              <label class="control-label" for="new-or-renewal-2">Update/Renewal</label>
             </div>
             <div class="help-block col tiny">If this is your first request, select New. Otherwise select Renewal.</div>
           </div>
@@ -209,7 +209,7 @@ private = true
         </fieldset>
       </div>
       <div id="su-capacity" class="col form-item form-group">
-            <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
+            <label class="control-label" for="su-quantity">Additional SU's Requested <span class="form-required" title="This field is required.">*</span></label>
             <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
            <p class="tiny">The number of SU's requested.(Note: SU's  cannot be requested for Standard and Instructional resources but will be automatically applied/updated once submitted)</p>
       </div>

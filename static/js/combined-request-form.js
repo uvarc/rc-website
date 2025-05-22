@@ -513,6 +513,7 @@
         $('#service_unit_container').show();
         $('#common-fields').show();
         $('#existing-resources-preview').hide();
+        $('#empty-message').hide();
     }
 
     function toggleRequestFields() {
@@ -546,8 +547,8 @@
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
             billingData.fdm_billing_info = [];
-        } else if(!isNew && isRenew) {
-            $('#mygroups-group-container, #allocation-tier').hide();
+        } else if(!isNew && isRenew) { 
+            $('#mygroups-group-container, #allocation-tier, #su-capacity').hide();
             $('#existing-projects-allocation, #new-project-name-container, #project-description, #fdm_table, #fdm_button_div').show();
             populateExistingServiceUnitsTable(consoleData);
         } 
@@ -791,7 +792,6 @@
                 console.log("Selected SUs:", number); 
                 if(tire === "ssz_standard") {
                     $('#su-quantity').val(0); 
-                    document.getElementById("su-capacity").style.display = "none";
                 } else if(tire === "ssz_instructional") {
                     $('#su-quantity').val(0); 
                     document.getElementById("su-capacity").style.display = "block"; 
