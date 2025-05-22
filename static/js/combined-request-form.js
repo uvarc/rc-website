@@ -1530,11 +1530,16 @@
             }
     
             // Process user resources if available
-            if (Array.isArray(userResources) && userResources.length > 0) {
+            if (!Array.isArray(userResources) || userResources.length === 0) {
+                console.warn("No user resources found.");
+                document.getElementById("existing-resources-preview").style.display = "none";
+    
+                // Show the empty state message
+                document.getElementById("empty-message").style.display = "block";
+                return;
+            } else {
                 console.log("Processing user resources...");
                 processUserResources(jsonResponse);
-            } else {
-                console.warn("No user resources found.");
             }
         } catch (error) {
             console.error("Error fetching user groups:", error);
@@ -1646,14 +1651,6 @@
         const { userResources } = parseConsoleData(apiResponse);
         const previewTableBody = $('#combined-preview-tbody');
         previewTableBody.empty();
-    
-        if (!Array.isArray(userResources) || userResources.length === 0) {
-            document.getElementById("existing-resources-preview").style.display = "none";
-
-            // Show the empty state message
-            document.getElementById("empty-message").style.display = "block";
-            return;
-        }
     
         // **Sort resources by most recent `update_date` (or fallback to `request_date`)**
         userResources.sort((a, b) => {
