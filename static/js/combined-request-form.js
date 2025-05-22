@@ -791,6 +791,7 @@
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
                 if(tire === "ssz_standard") {
+                    document.getElementById("su-capacity").style.display = "none"; 
                     $('#su-quantity').val(0); 
                 } else if(tire === "ssz_instructional") {
                     $('#su-quantity').val(0); 
