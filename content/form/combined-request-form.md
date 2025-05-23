@@ -324,7 +324,7 @@ private = true
       </div>
            <!-- Storage Capacity -->
       <div id="storage-capacity" class="col form-item form-group">
-          <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
+          <label class="control-label" for="capacity"> Total Space (TB) <span class="form-required" title="This field is required.">*</span></label>
           <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
           <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>

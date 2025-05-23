@@ -567,7 +567,7 @@
             billingData.fdm_billing_info = [];
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                 $('#storage-fields').show(); // Show capacity field for increase/decrease
-                $('#storage-mygroups-container, #storage-platform').hide();
+                $('#storage-mygroups-container, #storage-platform,  #storage-capacity').hide();
                 $('#existing-projects-storage, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
         }
     }
@@ -743,12 +743,19 @@
         $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function (event) {
             if ($(event.target).is('input[name="selected-st"]')) {
                 // Get the currently checked radio button (in case of multiple triggers)
+                const changeExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage';
+                const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
                 const $selectedRadio = $('input[name="selected-st"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
                 const storageText = $parentRow[0].cells[5].textContent.trim();
                 const number = parseInt(storageText);
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
+                if (changeExsisting){
+                    document.getElementById("storage-capacity").style.display = "block";   
+                } else {
+                    document.getElementById("storage-capacity").style.display = "none";
+                }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 
