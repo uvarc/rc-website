@@ -797,12 +797,9 @@
                 const tire = $parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
-                if(tire === "ssz_standard") {
+                if(tire === "ssz_standard" || tire === "ssz_instructional" ) {
                     document.getElementById("su-capacity").style.display = "none"; 
                     $('#su-quantity').val(0); 
-                } else if(tire === "ssz_instructional") {
-                    $('#su-quantity').val(0); 
-                    document.getElementById("su-capacity").style.display = "block"; 
                 } else {
                     $('#su-quantity').val(0);
                     document.getElementById("su-capacity").style.display = "block";
