@@ -566,7 +566,7 @@
             $('#existing-projects-storage').hide();
             billingData.fdm_billing_info = [];
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
-                $('#storage-fields').show(); // Show capacity field for increase/decrease
+               // $('#storage-fields').show(); // Show capacity field for increase/decrease
                 $('#storage-mygroups-container, #storage-platform,  #storage-capacity').hide();
                 $('#existing-projects-storage, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
         }
