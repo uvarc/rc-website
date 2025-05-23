@@ -962,7 +962,6 @@
             if (Array.isArray(response) && response[0].status === "error") {
                 showErrorMessagePost("Submission failed: " + response[0].message);
                 $('#submit').prop('disabled', false);
-                location.reload();
                 return null;
             }
     
