@@ -715,7 +715,7 @@
         $('#back-button').show();
       });
 
-    $('').on('click', function (e) {
+    $('#back-button').on('click', function (e) {
         e.preventDefault();
         $('#admin-iframe').hide().attr('src', '');
         $('#combined-request-form').show();
