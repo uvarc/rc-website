@@ -580,10 +580,13 @@
         if (isHighlySensitive) {
             $('#storage-tier-options #sensitive-data').show();
             $('#storage-tier-options #standard-data').hide();
+            $('#free_resource_distribution').hide();
         } else {
             if (isResearchStandard) {
                 $('#free_resource_distribution').show();
-            } 
+            } else {
+                $('#free_resource_distribution').hide();
+            }
             $('#storage-tier-options #sensitive-data').hide();
             $('#storage-tier-options #standard-data').show();
         }
