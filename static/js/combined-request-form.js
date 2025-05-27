@@ -575,12 +575,15 @@
 
     function toggleStorageTierOptions() {
         const isHighlySensitive = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
-
+        const isResearchStandard = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'SSZ Research Standard';
         // Explicitly show or hide tier-specific sections
         if (isHighlySensitive) {
             $('#storage-tier-options #sensitive-data').show();
             $('#storage-tier-options #standard-data').hide();
         } else {
+            if (isResearchStandard) {
+                $('#storage-choice3').show();
+            } 
             $('#storage-tier-options #sensitive-data').hide();
             $('#storage-tier-options #standard-data').show();
         }
