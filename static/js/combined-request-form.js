@@ -756,13 +756,20 @@
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
                 const storageText = $parentRow[0].cells[5].textContent.trim();
+                const storageTire = $parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(storageText);
+                const freeSpaceNumber = $parentRow.attr('data-free-space');
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 if (changeExsisting){
                     document.getElementById("storage-capacity").style.display = "block";   
                 } else {
                     document.getElementById("storage-capacity").style.display = "none";
                 }
+                if (storageTire === 'ssz_standard') {
+                    $('#free_resource_distribution').show();
+                    $('#freeSpace').val(freeSpaceNumber);
+                } else
+                    $('#free_resource_distribution').hide();
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 
@@ -1770,12 +1777,14 @@
                 Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
                     const tier = details.tier || "N/A";
                     const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
+                    const freeSpace = details.free_space || "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
                     const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
                     const row = `
-                        <tr data-additional='${billingJson}'>
+                        <tr data-free-space="${freeSpace}" 
+                             data-additional='${billingJson}'>
                             <td>
                                 <input type="radio" name="selected-st" value="${groupName}-${tier}" 
                                     data-group="${groupName}" data-tier="${tier}">
@@ -1787,8 +1796,7 @@
                             <td>${storageSize}</td>
                             <td>${requestStatus}</td>
                             <td>${updateDate}</td>
-                            
-                        </tr>
+                         </tr>
                     `;
                     suTableBody.append(row);
                 });
