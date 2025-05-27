@@ -311,6 +311,7 @@
                 formData.project_title = $('#project-title').val();
                 formData.storageTier = $('input[name="storage-choice"]:checked').val();
                 formData.request_size = $('#capacity').val();
+                formData.free_space = $('#freeSpace').val();
                 formData.projectDescription = $('#project-description-text-storage').val();
                 if (formData.typeOfRequest === 'update-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
@@ -1330,6 +1331,10 @@
                                }
                             }
                         };
+                        if (selectedTier== 'SSZ Research Standard') {
+                            billingDetails.free_resource_distribution_info = {
+                                userId: formData.free_space 
+                        }
                         console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
                         return [newResource]; // Return as an array
                     }

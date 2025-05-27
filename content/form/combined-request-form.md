@@ -329,8 +329,8 @@ private = true
           <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>
       <div id="free_resource_distribution" style="display:none" class="col form-item form-group">
-          <label class="control-label" for="capacity"> Free Space (TB) <span class="form-required" title="This field is required.">*</span></label>
-          <input class="form-control required" type="number" min="1" max="10" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
+          <label class="control-label" for="freeSpace"> Free Space (TB) <span class="form-required" title="This field is required.">*</span></label>
+          <input class="form-control required" type="number" min="1" max="10" required="required" id="freeSpace" name="freeSpace" value="0" style="width:8rem;">
           <p class="tiny">You have 10TB of free space, how much would you like to apply for this share?</p>
       </div>
     </div>
