@@ -1316,6 +1316,11 @@
                               }
                            }
                         };
+                        if (selectedTier== 'ssz_standard') {
+                            billingDetails.free_resource_distribution_info = {
+                                [userId]: formData.free_space 
+                             }
+                        }
                         console.log("Final Storage Change Payload (PUT):", JSON.stringify(changePayload, null, 2));
                         return [changePayload];
                    } else {
