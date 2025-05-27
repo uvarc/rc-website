@@ -1331,7 +1331,7 @@
                                }
                             }
                         };
-                        if (selectedTier== 'SSZ Research Standard') {
+                        if (selectedTier== 'ssz_standard') {
                             billingDetails.free_resource_distribution_info = {
                                 userId: formData.free_space 
                              }
