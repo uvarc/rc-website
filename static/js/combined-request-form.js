@@ -582,7 +582,7 @@
             $('#storage-tier-options #standard-data').hide();
         } else {
             if (isResearchStandard) {
-                $('#storage-choice3').show();
+                $('#free_resource_distribution').show();
             } 
             $('#storage-tier-options #sensitive-data').hide();
             $('#storage-tier-options #standard-data').show();
