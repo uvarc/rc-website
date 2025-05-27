@@ -574,8 +574,8 @@
     
 
     function toggleStorageTierOptions() {
-        const isHighlySensitive = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
-        const isResearchStandard = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'SSZ Research Standard';
+        const isHighlySensitive = $('#storage-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
+        const isResearchStandard = $('#storage-options input[name="storage-choice"]:checked').val() === 'SSZ Research Standard';
         // Explicitly show or hide tier-specific sections
         if (isHighlySensitive) {
             $('#storage-tier-options #sensitive-data').show();
