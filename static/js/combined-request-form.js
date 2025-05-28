@@ -1802,9 +1802,9 @@
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
-                            <td>${resourceName}</td>
+                            <td><strong>${resourceName}</strong></td>
                             <td>${tier}</td>
-                            <td>${storageSize}</td>
+                            <td><strong>${storageSize}</strong></td>
                             <td>${requestStatus}</td>
                             <td>${updateDate}</td>
                          </tr>
@@ -1849,9 +1849,9 @@
                         </td>
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
-                        <td>${resourceName}</td>
+                        <td><strong>${resourceName}</strong></td>
                         <td>${tier}</td>
-                        <td>${requestCount}</td>
+                        <td><strong>${requestCount}</strong></td>
                         <td>${requestStatus}</td>
                         <td>${updateDate}</td>
                     </tr>
