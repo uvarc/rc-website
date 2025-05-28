@@ -93,7 +93,7 @@ private = true
     </table>
 </div>
 <div id="empty-message" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem; text-align: center; display:none;">
-  No resources available to display.
+  No resources found to display.
 </div>
 
   <!-- Resource Type Selection -->

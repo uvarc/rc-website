@@ -515,6 +515,7 @@
         $('#common-fields').show();
         $('#existing-resources-preview').hide();
         $('#empty-message').hide();
+        $('#admin-button').hide();
     }
 
     function toggleRequestFields() {
@@ -701,11 +702,7 @@
         // Get the button element
         const button = document.getElementById("cancel");
         button.addEventListener("click", function() {
-            $('#resource_type_container').hide();
-            $('#service_unit_container').hide();
-            $('#common-fields').hide();
-            $('#existing-resources-preview').show();
-            $("#resource-button").show()
+        location.reload();
         });
     });
 
@@ -727,9 +724,7 @@
         $('#admin-iframe').hide().attr('src', '');
         $('#combined-request-form').show();
         $('#back-button').hide();
-        if ($('#existing-resources-preview').is(':visible')) {
-            $('#resource-button').show();
-          }
+        $('#resource-button').show();
         $('#admin-button').show();
         location.reload();
     });
