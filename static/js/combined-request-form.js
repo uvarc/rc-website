@@ -1782,13 +1782,19 @@
                 Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
                     const tier = details.tier || "N/A";
                     const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
-                    const freeSpace = details.free_space || "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
                     const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
+                    //populate free_space 
+                    let freeSpaceValue = "N/A"; 
+                    if(tier === 'ssz_standard' && details.free_resource_distribution_info) {
+                        const freeInfo = details.free_resource_distribution_info;
+                        const key = Object.keys(freeInfo)[0];
+                        freeSpaceValue = freeInfo[key] || "N/A";
+                    }
                     const row = `
-                        <tr data-free-space="${freeSpace}" 
+                        <tr data-free-space="${freeSpaceValue}" 
                              data-additional='${billingJson}'>
                             <td>
                                 <input type="radio" name="selected-st" value="${groupName}-${tier}" 
