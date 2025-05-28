@@ -731,6 +731,7 @@
             $('#resource-button').show();
           }
         $('#admin-button').show();
+        location.reload();
     });
 
     function setupEventHandlers() {
