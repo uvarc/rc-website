@@ -551,7 +551,7 @@
             billingData.fdm_billing_info = [];
         } else if(!isNew && isRenew) { 
             $('#mygroups-group-container, #allocation-tier, #su-capacity').hide();
-            $('#existing-projects-allocation, #new-project-name-container, #project-description, #fdm_table, #fdm_button_div').show();
+            $('#existing-projects-allocation, #fdm_table, #fdm_button_div').show();
             populateExistingServiceUnitsTable(consoleData);
         } 
     }
@@ -808,6 +808,7 @@
                 const tire = $parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
+                $('#new-project-name-container, #project-description').show();
                 if(tire === "ssz_standard" || tire === "ssz_instructional" ) {
                     document.getElementById("su-capacity").style.display = "none"; 
                     $('#su-quantity').val(0); 
