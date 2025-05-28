@@ -545,7 +545,6 @@
         document.getElementById("FDMS").innerHTML = "";
         document.getElementById("su-capacity").style.display = "block";
         clearBillingForm();
-        clearFormFields();
         if (isNew && !isRenew) {
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
@@ -563,7 +562,6 @@
         const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
         document.getElementById("FDMS").innerHTML = "";
         clearBillingForm();
-        clearFormFields();
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage && !changeExsisting && !retireExsisting) {
             $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
