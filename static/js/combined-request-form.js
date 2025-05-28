@@ -880,6 +880,7 @@
                 }
     
                 clearFormFields();
+                location.reload();
             }
         } catch (error) {
             console.error("Error during form submission:", error);
