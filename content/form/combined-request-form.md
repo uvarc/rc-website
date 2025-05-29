@@ -146,6 +146,30 @@ private = true
               <option value="">- Select a group -</option>
           </select>
       </div>
+
+      <!-- Existing Projects for Service Units (Only visible for Renewal) -->
+      <div id="existing-projects-allocation" style="display:none; margin-top:1em;">
+        <fieldset>
+          <legend class="control-label h5 mb-2">Your Existing Service Units</legend>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Project</th>
+                <th>Group</th>
+                <th>Resource Name</th>
+                <th>Tier</th>
+                <th>Size/Count</th>
+                <th>Status</th>
+                <th>Update Date</th>
+              </tr>
+            </thead>
+            <tbody id="allocation-projects-tbody">
+              <!-- Will be populated by API -->
+            </tbody>
+          </table>
+        </fieldset>
+      </div>
           <!-- Project/Class Name (Only for New requests) -->
       <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
         <div class="form-item form-group form-type-textfield form-group">
@@ -185,29 +209,6 @@ private = true
         </fieldset>
       </div>
 
-      <!-- Existing Projects for Service Units (Only visible for Renewal) -->
-      <div id="existing-projects-allocation" style="display:none; margin-top:1em;">
-        <fieldset>
-          <legend class="control-label h6 mb-2">Your Existing Service Units</legend>
-          <table class="table table-bordered table-hover">
-            <thead>
-              <tr>
-                <th>Select</th>
-                <th>Project</th>
-                <th>Group</th>
-                <th>Resource Name</th>
-                <th>Tier</th>
-                <th>Size/Count</th>
-                <th>Status</th>
-                <th>Update Date</th>
-              </tr>
-            </thead>
-            <tbody id="allocation-projects-tbody">
-              <!-- Will be populated by API -->
-            </tbody>
-          </table>
-        </fieldset>
-      </div>
       <div id="su-capacity" class="col form-item form-group">
             <label class="control-label" for="su-quantity">Additional SU's Requested <span class="form-required" title="This field is required.">*</span></label>
             <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
