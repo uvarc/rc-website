@@ -901,6 +901,7 @@
     // ===================================
 
     function displayValidationErrors(errors) {
+        $('#combined-request-form .alert.alert-danger').remove();
         const errorDiv = $('<div>')
             .addClass('alert alert-danger')
             .html(`
