@@ -1381,7 +1381,10 @@
             errors.push("Payload must be an array containing a single object.");
             return errors;
         }
-    
+        if ($('#billing-information').is(':visible')) {
+            errors.push("Add billing information to FDM Details or Click Cancel");
+            return errors;
+          }
         const resourceWrapper = payload[0];
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
         var isStorage = $('select[name="request-type"]').val() === 'storage';
