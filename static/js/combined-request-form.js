@@ -567,6 +567,10 @@
             $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-storage').hide();
             $('#free_resource_distribution').hide();
+            $('#capacity').val(0);
+            $('#freeSpace').val(0);
+            const radios = document.querySelectorAll('input[name="storage-choice"]');
+            radios.forEach(radio => radio.checked = false);
             billingData.fdm_billing_info = [];
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                // $('#storage-fields').show(); // Show capacity field for increase/decrease
