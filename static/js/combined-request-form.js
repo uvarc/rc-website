@@ -548,6 +548,9 @@
         if (isNew && !isRenew) {
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
+            $('#su-quantity').val(0);
+            const radios = document.querySelectorAll('input[name="allocation-choice"]');
+            radios.forEach(radio => radio.checked = false);
             billingData.fdm_billing_info = [];
         } else if(!isNew && isRenew) { 
             $('#mygroups-group-container, #allocation-tier, #su-capacity, #new-project-name-container, #project-description').hide();
@@ -576,6 +579,8 @@
                // $('#storage-fields').show(); // Show capacity field for increase/decrease
                 $('#storage-mygroups-container, #storage-platform,  #storage-capacity, #project-title-container, #project-description-container').hide();
                 $('#existing-projects-storage, #fdm_table, #fdm_button_div').show();
+                $('#free_resource_distribution').hide();
+                populateExistingStorageTable(consoleData);
         }
     }
     
