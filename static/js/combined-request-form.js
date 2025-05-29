@@ -619,6 +619,7 @@
         } else {
             $('#su-quantity').val(1000);
             document.getElementById("su-capacity").style.display = "block";
+            document.getElementById('su-quantity').disabled = false;
         }
     }
     
