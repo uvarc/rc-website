@@ -570,8 +570,8 @@
             billingData.fdm_billing_info = [];
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                // $('#storage-fields').show(); // Show capacity field for increase/decrease
-                $('#storage-mygroups-container, #storage-platform,  #storage-capacity').hide();
-                $('#existing-projects-storage, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
+                $('#storage-mygroups-container, #storage-platform,  #storage-capacity, #project-title-container, #project-description-container').hide();
+                $('#existing-projects-storage, #fdm_table, #fdm_button_div').show();
         }
     }
     
@@ -756,6 +756,7 @@
                 const storageTire = $parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(storageText);
                 const freeSpaceNumber = $parentRow.attr('data-free-space');
+                $('#project-title-container, #project-description-container').show();
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 if (changeExsisting){
                     document.getElementById("storage-capacity").style.display = "block";   
