@@ -54,6 +54,10 @@
 
     let  consoleData = [];
 
+    const billingData = {
+       fdm_billing_info: []
+    };
+
     // ===================================
     // CSS Styles
     // ===================================
@@ -307,6 +311,7 @@
                 formData.project_title = $('#project-title').val();
                 formData.storageTier = $('input[name="storage-choice"]:checked').val();
                 formData.request_size = $('#capacity').val();
+                formData.free_space = $('#freeSpace').val();
                 formData.projectDescription = $('#project-description-text-storage').val();
                 if (formData.typeOfRequest === 'update-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
@@ -429,8 +434,8 @@
 
         function clearFormFields() {
             const uid = document.querySelector('[name="user-id"]')?.value;
-    const email = document.querySelector('[name="email"]')?.value;
-    const name = document.querySelector('[name="name"]')?.value;
+            const email = document.querySelector('[name="email"]')?.value;
+            const name = document.querySelector('[name="name"]')?.value;
             const $form = $('#combined-request-form');
             $form[0].reset(); // Reset all form fields
             $form.find('.is-valid, .is-invalid').removeClass('is-valid is-invalid'); // Remove validation styles
@@ -509,6 +514,8 @@
         $('#service_unit_container').show();
         $('#common-fields').show();
         $('#existing-resources-preview').hide();
+        $('#empty-message').hide();
+        $('#admin-button').hide();
     }
 
     function toggleRequestFields() {
@@ -535,40 +542,63 @@
     function toggleAllocationFields() {
         const isNew = $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'new';
         const isRenew= $('#new-or-renewal-options input[name="new-or-renewal"]:checked').val() === 'renewal';
+        document.getElementById("FDMS").innerHTML = "";
+        document.getElementById("su-capacity").style.display = "block";
+        clearBillingForm();
         if (isNew && !isRenew) {
-            $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier').show();
+            $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
-        } else if(!isNew && isRenew) {
-            $('#mygroups-group-container, #allocation-tier').hide();
-            $('#existing-projects-allocation, #new-project-name-container, #project-description').show();
+            $('#su-quantity').val(0);
+            const radios = document.querySelectorAll('input[name="allocation-choice"]');
+            radios.forEach(radio => radio.checked = false);
+            billingData.fdm_billing_info = [];
+        } else if(!isNew && isRenew) { 
+            $('#mygroups-group-container, #allocation-tier, #su-capacity, #new-project-name-container, #project-description').hide();
+            $('#existing-projects-allocation, #fdm_table, #fdm_button_div').show();
             populateExistingServiceUnitsTable(consoleData);
-        }
+        } 
     }
 
     function toggleStorageFields() {
         const isNewStorage = $('#storage-fields input[name="type-of-request"]:checked').val() === 'new-storage';
         const changeExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage';
         const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
+        document.getElementById("FDMS").innerHTML = "";
+        clearBillingForm();
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage && !changeExsisting && !retireExsisting) {
-            $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container').show();
+            $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-storage').hide();
+            $('#free_resource_distribution').hide();
+            $('#capacity').val(0);
+            $('#freeSpace').val(0);
+            const radios = document.querySelectorAll('input[name="storage-choice"]');
+            radios.forEach(radio => radio.checked = false);
+            billingData.fdm_billing_info = [];
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
-                $('#storage-fields').show(); // Show capacity field for increase/decrease
-                $('#storage-mygroups-container, #storage-platform').hide();
-                $('#existing-projects-storage, #project-title-container, #project-description-container').show();
+               // $('#storage-fields').show(); // Show capacity field for increase/decrease
+                $('#storage-mygroups-container, #storage-platform,  #storage-capacity, #project-title-container, #project-description-container').hide();
+                $('#existing-projects-storage, #fdm_table, #fdm_button_div').show();
+                $('#free_resource_distribution').hide();
+                populateExistingStorageTable(consoleData);
         }
     }
     
 
     function toggleStorageTierOptions() {
-        const isHighlySensitive = $('#storage-tier-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
-
+        const isHighlySensitive = $('#storage-options input[name="storage-choice"]:checked').val() === 'Highly Sensitive Data';
+        const isResearchStandard = $('#storage-options input[name="storage-choice"]:checked').val() === 'SSZ Research Standard';
         // Explicitly show or hide tier-specific sections
         if (isHighlySensitive) {
             $('#storage-tier-options #sensitive-data').show();
             $('#storage-tier-options #standard-data').hide();
+            $('#free_resource_distribution').hide();
         } else {
+            if (isResearchStandard) {
+                $('#free_resource_distribution').show();
+            } else {
+                $('#free_resource_distribution').hide();
+            }
             $('#storage-tier-options #sensitive-data').hide();
             $('#storage-tier-options #standard-data').show();
         }
@@ -579,20 +609,21 @@
         const isInstructional = $('#allocation-tier-options input[name="allocation-choice"]:checked').val() === 'Instructional';
 
         // Explicitly show or hide tier-specific sections
-        if (isStandard || isInstructional) {
-            $('#su-quantity').val(1000000);
-            document.getElementById("su-quantity").disabled = true;
+        if (isStandard) {
+            $('#su-quantity').val(10000000);
+            document.getElementById("su-capacity").style.display = "none";
         } else if(isInstructional) {
             $('#su-quantity').val(100000);
-            document.getElementById("su-quantity").disabled = true;
+            document.getElementById("su-capacity").style.display = "block";
+            document.getElementById('su-quantity').disabled = true;
         } else {
             $('#su-quantity').val(1000);
-            document.getElementById("su-quantity").disabled = false;
+            document.getElementById("su-capacity").style.display = "block";
         }
     }
     
 
-    // ===================================
+    // ========.===========================
     // Setup Event Handlers
     // ===================================
     document.addEventListener("DOMContentLoaded", function() {
@@ -623,14 +654,66 @@
     });
 
     document.addEventListener("DOMContentLoaded", function() {
+        const fdmButton = document.getElementById("fdm_button");
+        fdmButton.addEventListener("click", function() {
+          $('#billing-information').show();
+          $('#fdm_button').hide();
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const addFdmButton = document.getElementById("add_fdm");
+        addFdmButton.addEventListener("click", function () {
+            $('#billing-information').hide();
+            $("#fdm_button").show();
+            const entry = getBillingDetails();
+            const isEmptyEntry = Object.values(entry).every(value => value === '');
+            if (isEmptyEntry) {
+                //alert("Please fill in at least one field before adding.");
+                return; 
+               }
+
+            billingData.fdm_billing_info.push(entry);
+            console.log(billingData); // Check the updated array in the console
+            const index = billingData.fdm_billing_info.length-1;
+            const fdmsTableBody = document.getElementById("FDMS");
+            const row = document.createElement("tr");
+            row.setAttribute("data-index", index);
+            row.innerHTML = `
+            <td>${entry.company}</td>
+            <td>${entry.cost_center}</td>
+            <td>${entry.business_unit}</td>
+            <td>${entry.gift || entry.grant || entry.designated || entry.project}</td>
+            <td>${entry.fund}</td>
+            <td>${entry.function}</td>
+            <td>${entry.program_code}</td>
+            <td>${entry.activity}</td>
+            <td>${entry.assignee}</td>
+            <td> 
+              <button type="button" class="btn btn-danger btn-sm delete-btn" title="Delete">
+              <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+        `;
+        fdmsTableBody.appendChild(row);
+        clearBillingForm();
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const cancelFdmButton = document.getElementById("cancel-fdm");
+        cancelFdmButton.addEventListener("click", function() {
+          clearBillingForm();
+          $('#billing-information').hide();
+          $('#fdm_button').show();
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
         // Get the button element
         const button = document.getElementById("cancel");
         button.addEventListener("click", function() {
-            $('#resource_type_container').hide();
-            $('#service_unit_container').hide();
-            $('#common-fields').hide();
-            $('#existing-resources-preview').show();
-            $("#resource-button").show()
+        location.reload();
         });
     });
 
@@ -652,10 +735,9 @@
         $('#admin-iframe').hide().attr('src', '');
         $('#combined-request-form').show();
         $('#back-button').hide();
-        if ($('#existing-resources-preview').is(':visible')) {
-            $('#resource-button').show();
-          }
+        $('#resource-button').show();
         $('#admin-button').show();
+        location.reload();
     });
 
     function setupEventHandlers() {
@@ -675,28 +757,43 @@
         $(document).on('input change', '#combined-request-form input, #combined-request-form select, #combined-request-form textarea', function (event) {
             if ($(event.target).is('input[name="selected-st"]')) {
                 // Get the currently checked radio button (in case of multiple triggers)
+                const changeExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage';
+                const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
                 const $selectedRadio = $('input[name="selected-st"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
                 const storageText = $parentRow[0].cells[5].textContent.trim();
+                const storageTire = $parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(storageText);
+                const freeSpaceNumber = $parentRow.attr('data-free-space');
+                $('#project-title-container, #project-description-container').show();
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
+                if (changeExsisting){
+                    document.getElementById("storage-capacity").style.display = "block";   
+                } else {
+                    document.getElementById("storage-capacity").style.display = "none";
+                }
+                if (storageTire === 'ssz_standard' && changeExsisting) {
+                    $('#free_resource_distribution').show();
+                    $('#freeSpace').val(freeSpaceNumber);
+                } else
+                    $('#free_resource_distribution').hide();
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 
                 // Parse it to an object (if needed)
-                let billingData;
+                billingData;
                 try {
-                    billingData = JSON.parse(additionalData);
+                    billingData.fdm_billing_info = JSON.parse(additionalData);
                 } catch (e) {
                     console.error("Failed to parse billing data:", e);
                 }
                 
                 // Call your updateBilling method with the parsed data
-                updateBilling(billingData);
+                populateBillinTable(billingData.fdm_billing_info);
             }
             updatePayloadPreview(); // Update the real-time payload preview
-            updateBillingVisibility(); // Update billing visibility
+            //updateBillingVisibility(); // Update billing visibility
         });
 
         //refresh groups when you click on dropdown
@@ -720,36 +817,39 @@
                 const fullText = $parentRow[0].cells[5].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
                 const tire = $parentRow[0].cells[4].textContent.trim();
-                if(tire === "ssz_standard" || tire === "ssz_instructional") {
-                    const number = parseInt(match[1]);
+                const number = parseInt(match[1]);
+                console.log("Selected SUs:", number); 
+                $('#new-project-name-container, #project-description').show();
+                if(tire === "ssz_standard" || tire === "ssz_instructional" ) {
+                    document.getElementById("su-capacity").style.display = "none"; 
                     $('#su-quantity').val(0); 
-                    console.log("Selected SUs:", number); 
-                    document.getElementById("su-quantity").disabled = true;
                 } else {
                     $('#su-quantity').val(0);
-                    document.getElementById("su-quantity").disabled = false;
+                    document.getElementById("su-capacity").style.display = "block";
                 }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
-                //CHange the su's requested to the value of the renewal selected
-                // Parse it to an object (if needed)
-                let billingData;
                 try {
-                    billingData = JSON.parse(additionalData);
+                    billingData.fdm_billing_info = JSON.parse(additionalData);
                 } catch (e) {
                     console.error("Failed to parse billing data:", e);
                 }
                 
                 // Call your updateBilling method with the parsed data
-                updateBilling(billingData);
-                                
-        
-            
-            // Ensure fields are editable
-            $('#financial-contact, #company-id, #cost-center, #business-unit, #funding-number, #fund, #function, #program, #activity, #assignee')
-                .prop('readonly', false);
-        
-            console.log("Billing fields successfully autofilled in the UI.");
+                populateBillinTable(billingData.fdm_billing_info);
+        });
+
+        document.getElementById('FDMS').addEventListener('click', function (e) {
+          const deleteBtn = e.target.closest('.delete-btn');
+          if (deleteBtn) {
+            const row = e.target.closest('tr');
+            if (row) {
+             row.remove();
+             const index = row.getAttribute('data-index');
+                billingData.fdm_billing_info.splice(index, 1);
+                populateBillinTable(billingData.fdm_billing_info);
+             }
+          }
         });
     }
     
@@ -946,38 +1046,78 @@
         });
     }
 
+    function clearBillingForm() {
+        $('#company-id').val('');
+        $('#business-unit').val('');
+        $('#cost-center').val('');
+        $('#fund').val('');
+        $('#funding-number').val('');
+        $('#program').val('');
+        $('#function').val('');
+        $('#activity').val('');
+        $('#assignee').val('');
+        $('input[name="funding-type"]').prop('checked', false); // uncheck funding type
+    }
+
     function updateBilling(billingData) {
         if (billingData) {
-            if (billingData[0].project && typeof billingData[0].project === 'string' && billingData[0].project.trim().length > 0) {
-                $('#funding-number').val(billingData[0].project || '');
+            if (billingData.project && typeof billingData.project === 'string' && billingData.project.trim().length > 0) {
+                $('#funding-number').val(billingData.project || '');
                 $('#funding-project').prop('checked', true);
             }
-            if (billingData[0].gift && typeof billingData[0].gift === 'string' && billingData[0].gift.trim().length > 0) {
-                $('#funding-number').val(billingData[0].gift || '');
+            if (billingData.gift && typeof billingData.gift === 'string' && billingData.gift.trim().length > 0) {
+                $('#funding-number').val(billingData.gift || '');
                 $('#funding-gift').prop('checked', true);
             }
-            if (billingData[0].grant && typeof billingData[0].grant === 'string' && billingData[0].grant.trim().length > 0) {
-                $('#funding-number').val(billingData[0].grant || '');
+            if (billingData.grant && typeof billingData.grant === 'string' && billingData.grant.trim().length > 0) {
+                $('#funding-number').val(billingData.grant || '');
                 $('#funding-grant').prop('checked', true);
             }
-            if (billingData[0].designated && typeof billingData[0].designated === 'string' && billingData[0].designated.trim().length > 0) {
-                $('#funding-number').val(billingData[0].designated || '');
+            if (billingData.designated && typeof billingData.designated === 'string' && billingData.designated.trim().length > 0) {
+                $('#funding-number').val(billingData.designated || '');
                 $('#funding-designated').prop('checked', true);
             }
             
-            $('#financial-contact').val(billingData[0].financial_contact || '');
-            $('#company-id').val(billingData[0].company || '');
-            $('#business-unit').val(billingData[0].business_unit || '');
-            $('#cost-center').val(billingData[0].cost_center || '');
-            $('#fund').val(billingData[0].fund || '');
-            
-            $('#program').val(billingData[0].program_code || '');
-            $('#function').val(billingData[0].function || '');
-            $('#activity').val(billingData[0].activity || '');
-            $('#assignee').val(billingData[0].assignee || '');
+            $('#financial-contact').val(billingData.financial_contact || '');
+            $('#company-id').val(billingData.company || '');
+            $('#business-unit').val(billingData.business_unit || '');
+            $('#cost-center').val(billingData.cost_center || '');
+            $('#fund').val(billingData.fund || '');
+            $('#program').val(billingData.program_code || '');
+            $('#function').val(billingData.function || '');
+            $('#activity').val(billingData.activity || '');
+            $('#assignee').val(billingData.assignee || '');
             console.log("Billing data updated from existing line:", billingData);
             $('#financial-contact').trigger("change").trigger("input"); //trigger the form update
         }
+    }
+
+    function populateBillinTable(billingData) {
+        const fdmsTableBody = document.getElementById("FDMS");
+        fdmsTableBody.innerHTML = ""; 
+        const entries = billingData;
+        entries.forEach((entry, index) => {
+          const row = document.createElement("tr");
+          const fundingNumber = entry.gift || entry.grant || entry.designated || entry.project || "";
+          row.setAttribute("data-index", index);
+          row.innerHTML = `
+            <td>${entry.company}</td>
+            <td>${entry.cost_center}</td>
+            <td>${entry.business_unit}</td>
+            <td>${fundingNumber}</td>
+            <td>${entry.fund}</td>
+            <td>${entry.function}</td>
+            <td>${entry.program_code}</td>
+            <td>${entry.activity}</td>
+            <td>${entry.assignee}</td>
+            <td> 
+              <button type="button" class="btn btn-danger btn-sm delete-btn" title="Delete">
+              <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+        `;
+        fdmsTableBody.appendChild(row);
+        });
     }
 
     function updateBillingVisibility() {
@@ -985,7 +1125,7 @@
         const selectedStorageTier = $('input[name="storage-choice"]:checked').val();
         const requestedStorageSize = parseInt($('#capacity').val(), 10) || 0;
     
-        let shouldShowBilling = true; // Default to show billing. put the commented out back when we're ready for free logic
+        let shouldShowBilling = false;
     
         //if (requestType === 'storage') {
          //   if (selectedStorageTier === "SSZ Research Standard") {
@@ -994,28 +1134,24 @@
          //   }
        // }
     
-        $('#billing-information').toggle(shouldShowBilling);
+        //$('#billing-information').toggle(shouldShowBilling);
         console.log(`Billing visibility updated: ${shouldShowBilling}`);
     }
 
     function getBillingDetails() {
         return {
-            fdm_billing_info: [
-                {
-                    company: $('#company-id').val()?.trim() || '',
-                    business_unit: $('#business-unit').val()?.trim() || '',
-                    cost_center: $('#cost-center').val()?.trim() || '',
-                    fund: $('#fund').val()?.trim() || '',
-                    gift: $('input[name="funding-type"]:checked').val() === 'Gift' ? $('#funding-number').val()?.trim() || '' : '',
-                    grant: $('input[name="funding-type"]:checked').val() === 'Grant' ? $('#funding-number').val()?.trim() || '' : '',
-                    designated: $('input[name="funding-type"]:checked').val() === 'Designated' ? $('#funding-number').val()?.trim() || '' : '',
-                    project: $('input[name="funding-type"]:checked').val() === 'Project' ? $('#funding-number').val()?.trim() || '' : '',
-                    program_code: $('#program').val()?.trim() || '',
-                    function: $('#function').val()?.trim() || '',
-                    activity: $('#activity').val()?.trim() || '',
-                    assignee: $('#assignee').val()?.trim() || '',
-                }
-            ]
+                company: $('#company-id').val()?.trim() || '',
+                business_unit: $('#business-unit').val()?.trim() || '',
+                cost_center: $('#cost-center').val()?.trim() || '',
+                fund: $('#fund').val()?.trim() || '',
+                gift: $('input[name="funding-type"]:checked').val() === 'Gift' ? $('#funding-number').val()?.trim() || '' : '',
+                grant: $('input[name="funding-type"]:checked').val() === 'Grant' ? $('#funding-number').val()?.trim() || '' : '',
+                designated: $('input[name="funding-type"]:checked').val() === 'Designated' ? $('#funding-number').val()?.trim() || '' : '',
+                project: $('input[name="funding-type"]:checked').val() === 'Project' ? $('#funding-number').val()?.trim() || '' : '',
+                program_code: $('#program').val()?.trim() || '',
+                function: $('#function').val()?.trim() || '',
+                activity: $('#activity').val()?.trim() || '',
+                assignee: $('#assignee').val()?.trim() || ''
         };
     }
 
@@ -1082,7 +1218,7 @@
     function buildPayloadPreview() {
         const formData = collectFormData();
         const userId = getUserId();
-        const billingDetails = getBillingDetails();
+        const billingDetails = billingData;
         const storageChange = formData.typeOfRequest === 'update-storage';
         const allocationChange = formData.newOrRenewal === "renewal";
         var selectedSU = "n/a";
@@ -1189,6 +1325,11 @@
                               }
                            }
                         };
+                        if (selectedTier== 'ssz_standard') {
+                            billingDetails.free_resource_distribution_info = {
+                                [userId]: formData.free_space 
+                             }
+                        }
                         console.log("Final Storage Change Payload (PUT):", JSON.stringify(changePayload, null, 2));
                         return [changePayload];
                    } else {
@@ -1211,6 +1352,11 @@
                                }
                             }
                         };
+                        if (selectedTier== 'ssz_standard') {
+                            billingDetails.free_resource_distribution_info = {
+                                [userId]: formData.free_space 
+                             }
+                        }
                         console.log("Final New Request Payload (POST):", JSON.stringify(newResource, null, 2));
                         return [newResource]; // Return as an array
                     }
@@ -1422,11 +1568,16 @@
             }
     
             // Process user resources if available
-            if (Array.isArray(userResources) && userResources.length > 0) {
+            if (!Array.isArray(userResources) || userResources.length === 0) {
+                console.warn("No user resources found.");
+                document.getElementById("existing-resources-preview").style.display = "none";
+    
+                // Show the empty state message
+                document.getElementById("empty-message").style.display = "block";
+                return;
+            } else {
                 console.log("Processing user resources...");
                 processUserResources(jsonResponse);
-            } else {
-                console.warn("No user resources found.");
             }
         } catch (error) {
             console.error("Error fetching user groups:", error);
@@ -1539,11 +1690,6 @@
         const previewTableBody = $('#combined-preview-tbody');
         previewTableBody.empty();
     
-        if (!Array.isArray(userResources) || userResources.length === 0) {
-            showEmptyState(previewTableBody);
-            return;
-        }
-    
         // **Sort resources by most recent `update_date` (or fallback to `request_date`)**
         userResources.sort((a, b) => {
             const dateA = new Date(a.resources?.hpc_service_units?.[Object.keys(a.resources.hpc_service_units)[0]]?.update_date || 
@@ -1649,21 +1795,28 @@
                     const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
                     const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
+                    //populate free_space 
+                    let freeSpaceValue = "N/A"; 
+                    if(tier === 'ssz_standard' && details.billing_details?.free_resource_distribution_info) {
+                        const freeInfo = details.billing_details.free_resource_distribution_info;
+                        const key = Object.keys(freeInfo)[0];
+                        freeSpaceValue = freeInfo[key] || "N/A";
+                    }
                     const row = `
-                        <tr data-additional='${billingJson}'>
+                        <tr data-free-space="${freeSpaceValue}" 
+                             data-additional='${billingJson}'>
                             <td>
                                 <input type="radio" name="selected-st" value="${groupName}-${tier}" 
                                     data-group="${groupName}" data-tier="${tier}">
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
-                            <td>${resourceName}</td>
+                            <td><strong>${resourceName}</strong></td>
                             <td>${tier}</td>
-                            <td>${storageSize}</td>
+                            <td><strong>${storageSize}</strong></td>
                             <td>${requestStatus}</td>
                             <td>${updateDate}</td>
-                            
-                        </tr>
+                         </tr>
                     `;
                     suTableBody.append(row);
                 });
@@ -1705,9 +1858,9 @@
                         </td>
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
-                        <td>${resourceName}</td>
+                        <td><strong>${resourceName}</strong></td>
                         <td>${tier}</td>
-                        <td>${requestCount}</td>
+                        <td><strong>${requestCount}</strong></td>
                         <td>${requestStatus}</td>
                         <td>${updateDate}</td>
                     </tr>
@@ -1853,7 +2006,13 @@
     $(document).ready(function () {
         console.log("Script started");
         console.log("Updated Combined Request Form JS loaded");
-    
+        const sections = document.querySelectorAll(".blog-sidebar");
+        sections.forEach(section => section.remove());
+        const blogMain = document.querySelector(".blog-main");
+        if (blogMain) {
+           blogMain.classList.remove("col-sm-9");
+           blogMain.classList.add("col-sm-12");
+        }
         // ===================================
         // Start Initiation
         // ===================================
