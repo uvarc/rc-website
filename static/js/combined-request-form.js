@@ -615,6 +615,7 @@
         } else if(isInstructional) {
             $('#su-quantity').val(100000);
             document.getElementById("su-capacity").style.display = "block";
+            document.getElementById('su-quantity').disabled = true;
         } else {
             $('#su-quantity').val(1000);
             document.getElementById("su-capacity").style.display = "block";
@@ -767,16 +768,14 @@
                 const freeSpaceNumber = $parentRow.attr('data-free-space');
                 $('#project-title-container, #project-description-container').show();
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
-                if (changeExsisting){
-                    document.getElementById("storage-capacity").style.display = "block";   
-                } else {
-                    document.getElementById("storage-capacity").style.display = "none";
-                }
-                if (storageTire === 'ssz_standard') {
+                if (changeExsisting && storageTire === 'ssz_standard'){
+                    document.getElementById("storage-capacity").style.display = "block";
                     $('#free_resource_distribution').show();
                     $('#freeSpace').val(freeSpaceNumber);
-                } else
+                } else {
+                    document.getElementById("storage-capacity").style.display = "none";
                     $('#free_resource_distribution').hide();
+                }
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 
