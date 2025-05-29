@@ -910,6 +910,7 @@
             `);
         $('#combined-request-form').prepend(errorDiv);
         //setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
         console.error("Validation errors:", errors);
     }
     
