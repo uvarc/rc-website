@@ -1721,7 +1721,7 @@
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const request_status=details.request_status || "N/A";
-                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+                    const updateDate = details.update_date ? `${shortDate}` : `${shortDate || "No date available"}`;
     
                     const row = `
                         <tr>
@@ -1798,7 +1798,7 @@
                     const tier = details.tier || "N/A";
                     const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
-                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+                    const updateDate = details.update_date ? `${shortDate}` : `${shortDate || "No date available"}`;
                     const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
                     //populate free_space 
@@ -1851,7 +1851,7 @@
                 const tier = details.tier || "N/A";
                 const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                 const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
-                const updateDate = details.update_date ? `Updated: ${formatDateToEST(details.update_date)}` : `Requested: ${formatDateToEST(details.request_date)}`;
+                const updateDate = details.update_date ? `${formatDateToEST(details.update_date)}` : `${formatDateToEST(details.request_date)}`;
                 if (details.billing_details && details.billing_details.fdm_billing_info &&
                     Object.values(details.billing_details.fdm_billing_info).every(val => val !== null)) {
                 const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
