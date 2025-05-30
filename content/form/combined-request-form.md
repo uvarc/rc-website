@@ -145,7 +145,7 @@ private = true
           <select id="storage-mygroups-group-old" class="form-control" required>
               <option value="">- Select a group -</option>
           </select>
-      </div><br/><br/>
+      </div><br/>
       
       <!-- Existing Projects for Service Units (Only visible for Renewal) -->
       <div id="existing-projects-allocation" style="display:none; margin-top:1em;">
