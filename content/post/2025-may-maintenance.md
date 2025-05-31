@@ -59,7 +59,7 @@ Default version changes include:
 |go         | 1.21.4 | 1.23.6 |
 |intel      | 2024.0 | 2025.0 |
 |jcuda      | 11.4.1 | - |
-|jupyterlab | 3.6.3-py3.11 | 4.4.1-py3.12 |
+|jupyterlab | 3.6.3-py3.11 | 4.4.1-py3.12 (see note below) |
 |kraken2    | 2.1.3 | 2.1.5 |
 |mathematica| 11.2 | 14.2 |
 |matlab     | R2022b | R2024b |
@@ -78,3 +78,7 @@ Default version changes include:
 |tree       | 1.8.0 | 2.2.1 |
 |trimgalore | 0.6.4 | 0.6.10 |
 {{< /table >}}
+
+## Post-Maintenance Note
+
+- Due to issues with accessing subfolders in the new JupyterLab, we have reverted to the pre-maintenance version on Open OnDemand. However, the issue is not observed when Jupyter is launched manually from the command line, and so the new version is still kept as a module for those who wish to launch it manually (e.g. within a Desktop session).

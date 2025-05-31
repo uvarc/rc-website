@@ -7,13 +7,12 @@ author = "Staff"
 tags = ["dac","award"]
 +++
 
-# Purpose
 
 The mission of the Data Analytics Center (DAC) is to provide UVA researchers with support for the management and analysis of large datasets on Research Computing platforms.
 
 To fulfill this mission and to empower faculty in advancing their research, we offer Awards for access to Research Comuting (RC) resources.  These Awards aim to 
 
-i) help launch new research projects,
+i) launch new research projects,
 
 ii) promote interdisciplinary collaborations,
 
@@ -22,7 +21,7 @@ iii) cultivate communities of researchers with shared interests in data and anal
 
 # The Awards 
 
-The DAC offers two types of Awards:  Small Awards (up to $10,000 worth of services) and Large Awards (up to $100,000).
+The DAC offers two types of Awards:  Small Awards (up to $10,000 worth of services) and Large Awards (up to $100,000 of services).
 
 Recipients of the Awards will receive vouchers that may be used toward RC services, such as collaborations with DAC team members or purchase of data storage, or for support from any of the UVA Cores.
  
@@ -48,16 +47,10 @@ The Large Analytics Resource Awards are aimed to build data or analytics infrast
 
 <br>
 
-<u>Timelines for Small Awards</u>:
-
-
-We now are accepting Small Award proposals at any time throughout the year.
-
-
-<br>
   
-<u>Timelines for Large Awards</u>: 
+<u>Timelines for Small Awards</u>: 
 
+We accept Small Award proposals at any time throughout the year; however, your best chance for receiving an award will be if you submit it at the end of a quarter.  The following table shows the upcoming deadlines for proposals.
 
 <table border="1" >
   <colgroup>
@@ -71,9 +64,56 @@ We now are accepting Small Award proposals at any time throughout the year.
     <th>Award <br> Start Date </th>
   </tr>
   <tr>
-    <td>24 Jan. 2025</td>
-    <td>14 Mar. 2025</td>
-    <td>21 Apr. 2025</td>
+    <td>30 Jun. 2025</td>
+    <td>21 Jul. 2025</td>
+    <td>11 Aug. 2025</td>
+  </tr>
+  <tr>
+    <td>29 Sep. 2025</td>
+    <td>20 Oct. 2025</td>
+    <td>10 Nov. 2025</td>
+  </tr>
+  <tr>
+    <td>29 Mar. 2026</td>
+    <td>19 Apr. 2026</td>
+    <td>9 May 2026</td>
+  </tr>
+  <tr>
+    <td>29 Jun. 2026</td>
+    <td>20 Jul. 2026</td>
+    <td>10 Aug. 2026</td>
+  </tr>
+</table>
+
+<br>
+
+
+<br>
+  
+<u>Timelines for Large Awards</u>: 
+
+We will accept proposals for the Large Awards on specified dates.  The following table provides the deadlines for the upcoming Large Award submissions.
+
+<table border="1" >
+  <colgroup>
+    <col style="width: 30%;" />
+    <col style="width: 40%;" />
+    <col style="width: 30%;" />
+  </colgroup>
+  <tr>
+    <th>Proposal <br> Deadline</th>
+    <th>Award <br> Announcements</th>
+    <th>Award <br> Start Date </th>
+  </tr>
+  <tr>
+    <td>20 Oct. 2025</td>
+    <td>8 Dec. 2025</td>
+    <td>12 Jan. 2026</td>
+  </tr>
+  <tr>
+    <td>1 Jun. 2026</td>
+    <td>20 Jul. 2026</td>
+    <td>24 Aug. 2026</td>
   </tr>
 </table>
 
@@ -97,7 +137,7 @@ To apply for the Small Analytics Research Award, the PI will submit a proposal (
 * A description of the project and its goals,
 * A description of the type(s) of data collected for the project and how the data will be used to meet the goals of the project,
 * A description of how the Analytics Research Award will support the goals of the project, including the use of vouchers to obtain services,
-* A plan for how the Analytics Research Award will lead to future support (e.g., external grants or other funding) for this or subsequent projects.
+* A plan for how the Analytics Research Award will lead to future support (e.g., external grants or other funding) for this or subsequent projects. **Priority will be given to proposals that state how a DAC team member will be included in future funding proposals.**
 * An attachment with a budget showing the services and expected costs that the Award would cover.  The attachment will not count toward the two-page limit.
 
 
@@ -143,7 +183,7 @@ After the Awards recipients have been announced, the Data Analytics Center will 
 
 # Publicity & Communication
 * The PI must acknowledge Research Computing in any publication, presentation, or poster that results from the work done on the Award.
-* At the end of the Award, the PI must agree to have a blurb about the research project posted on the Research Computing website
+* At the end of the Award, the PI must agree to have a blurb about the research project posted on the Research Computing website.
 
 
 

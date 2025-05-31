@@ -5,7 +5,7 @@
   {{ partial "head-meta.html" . }}
   <base href="{{ .Site.BaseURL }}">
   <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+  <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}/images/favicon.ico" type="image/x-icon" />
   <title>UVA {{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
   {{ "<!-- combined, minified CSS -->" | safeHTML }}
   <link href="{{ .Site.BaseURL }}/css/style.css" rel="stylesheet">
