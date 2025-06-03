@@ -2040,7 +2040,7 @@
         if (blogMain) {
            blogMain.classList.remove("col-sm-9");
            blogMain.classList.add("col-sm-12");
-           blogMain.classList.add("full-width");
+          // blogMain.classList.add("full-width");
         }
         // ===================================
         // Start Initiation

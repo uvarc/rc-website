@@ -24,8 +24,8 @@ private = true
     word-break: break-word;
   }
 
-  .full-width {
-    width: 100%;
+  .container {
+    width: 1200px;
   }
 </style>
 <!-- Core scripts needed for form functionality -->
