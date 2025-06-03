@@ -351,6 +351,15 @@
             return tierMap[tier] || 'ssz_standard'; // Default to 'ssz_standard' if no match
         }
 
+        function getStorageTierDisplayName(enumValue) {
+            const displayMap = {
+                'ssz_standard': 'Research Standard(ssz)',
+                'ssz_project': 'Research Project(ssz)',
+                'hsz_standard': 'Highly Sensitive Data(hsz)'
+            };
+            return displayMap[enumValue] || enumValue;
+        }
+
         /// Utils Object
 
         const utils = {
@@ -1726,7 +1735,8 @@
     
             if (resourceType==="SU" && resource.resources?.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([resourceName, details]) => {
-                    const tier = details.tier || "N/A";
+                    const originalTier = details.tier || "N/A";
+                    const tier = getTierDisplayName(originalTier);
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const request_status=details.request_status || "N/A";
@@ -1753,7 +1763,8 @@
             }
             if(resourceType==="Storage" && resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
-                    const tier = details.tier || "N/A";
+                    const originalTier = details.tier || "N/A";
+                    const tier = getStorageTierDisplayName(originalTier);
                     const storageSize = details.request_size ? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const request_status=details.request_status || "N/A";
@@ -1804,7 +1815,8 @@
     
             if (resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
-                    const tier = details.tier || "N/A";
+                    const originalTier = details.tier || "N/A";
+                    const tier = getStorageTierDisplayName(originalTier);
                     const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const updateDate = details.update_date ? `${shortDate}` : `${shortDate || "No date available"}`;
