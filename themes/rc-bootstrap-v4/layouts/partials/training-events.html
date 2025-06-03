@@ -9,27 +9,29 @@
         </tr>
       </thead>
       <tbody>
-        {{ $url := $.Site.Params.eventsUrl }}
+        {{ $url := site.Params.eventsUrl }}
         {{ $sep := "," }}
         {{ $counter:=0 }}
-        {{- range $i, $r := getCSV $sep $url -}}
-        {{- $title:=index $r 0 -}}
-        {{- $scheduled_date:=replace (index $r 1) "/" "-" -}}
-        {{- $link:=index $r 2 -}}
-        {{- $instructor:=index $r 3 -}}
-        {{- $last_date:=last 1 (split $scheduled_date ",") -}}
-        {{- $last_date:=time (index $last_date 0) -}}
-        {{- if and ( lt $counter 5) ($last_date.After (now.AddDate 0 0 -1)) -}}
-          <tr>
-            <td scope="row" style="width:70%;"><a href="{{ $link }}" target="_new">{{ $title }}</a></td>
-            <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }} {{ end }}</td>
-          </tr>
-          {{ $counter = add $counter 1}}
-         {{ end }}
-      {{ end }}
+        {{- $sep := dict "delimiter" "," -}}
+        {{ with resources.Get $url -}}
+          {{- range $i, $r := (.Content | transform.Unmarshal $sep) -}}
+            {{- $title:=index $r 0 -}}
+            {{- $scheduled_date:=replace (index $r 1) "/" "-" -}}
+            {{- $link:=index $r 2 -}}
+            {{- $instructor:=index $r 3 -}}
+            {{- $last_date:=last 1 (split $scheduled_date ",") -}}
+            {{- $last_date:=time (index $last_date 0) -}}
+            {{- if and ( lt $counter 5) ($last_date.After (now.AddDate 0 0 -1)) -}}
+              <tr>
+                <td scope="row" style="width:70%;"><a href="{{ $link }}" target="_new">{{ $title }}</a></td>
+                <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }} {{ end }}</td>
+              </tr>
+              {{ $counter = add $counter 1}}
+            {{ end }}
+          {{ end }}
+        {{ end }}
       </tbody>
     </table>
     <p style="font-size:90%;"><a href="/education/workshops/" style="text-decoration:none;">Complete list of workshops &raquo;</a></p>
     </div>
   </section>
-
