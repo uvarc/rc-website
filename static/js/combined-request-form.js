@@ -337,7 +337,7 @@
             const displayMap = {
                 'ssz_standard': 'Standard(ssz)',
                 'ssz_paid': 'Paid(ssz)',
-                'ssz_instructional': 'Instructional(ssd)'
+                'ssz_instructional': 'Instructional(ssz)'
             };
             return displayMap[enumValue] || enumValue;
         }
@@ -2040,7 +2040,6 @@
         if (blogMain) {
            blogMain.classList.remove("col-sm-9");
            blogMain.classList.add("col-sm-12");
-          // blogMain.classList.add("full-width");
         }
         // ===================================
         // Start Initiation
