@@ -253,11 +253,11 @@ hardware:
       speciality_hardware: "GPU: A40"
       gpu_memory_per_device: "48GB"
       gpu_devices_per_node: "8"
-      number_of_nodes: 6
+      number_of_nodes: 12
       su_per_cpu_hour: 0.34
       su_per_gb_hour: 0.02
       su_per_gpu_hour: 18.669
-    - system: "Afton"
+  #  - system: "Afton"
       cores_per_node: 96
       memory_per_node: "750GB"
       speciality_hardware: "GPU: A40"
