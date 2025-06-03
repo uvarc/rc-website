@@ -187,7 +187,7 @@ hardware:
       speciality_hardware: "-"
       gpu_memory_per_device: "-"
       gpu_devices_per_node: "-"
-      number_of_nodes: 294
+      number_of_nodes: 280
       su_per_cpu_hour: 0.464
       su_per_gb_hour: 0.0284
       su_per_gpu_hour: 0 
@@ -209,7 +209,7 @@ hardware:
       speciality_hardware: "-"
       gpu_memory_per_device: "-"
       gpu_devices_per_node: "-"
-      number_of_nodes: 6
+      number_of_nodes: 20
       su_per_cpu_hour: 0.418
       su_per_gb_hour: 0.0244
       su_per_gpu_hour: 0
