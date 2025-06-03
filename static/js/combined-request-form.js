@@ -2039,7 +2039,7 @@
         const blogMain = document.querySelector(".blog-main");
         if (blogMain) {
            blogMain.classList.remove("col-sm-9");
-           blogMain.classList.add("col-sm-16");
+           blogMain.classList.add("col-sm-12");
         }
         // ===================================
         // Start Initiation
