@@ -18,7 +18,6 @@ subjects = [
   "software-development",
   "r",
   "docker",
-  ""
   
 ]
 active = true
