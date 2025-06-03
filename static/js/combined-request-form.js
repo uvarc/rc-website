@@ -333,6 +333,15 @@
             return tierMap[tier] || 'ssz_standard';
         }
 
+        function getTierDisplayName(enumValue) {
+            const displayMap = {
+                'ssz_standard': 'Standard(ssz)',
+                'ssz_paid': 'Paid(ssz)',
+                'ssz_instructional': 'Instructional(ssd)'
+            };
+            return displayMap[enumValue] || enumValue;
+        }
+
         function getStorageTierEnum(tier) {
             const tierMap = {
                 'SSZ Research Standard': 'ssz_standard',
@@ -1748,7 +1757,7 @@
                     const storageSize = details.request_size ? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const request_status=details.request_status || "N/A";
-                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+                    const updateDate = details.update_date ? `${shortDate}` : `${shortDate || "No date available"}`;
     
                     const row = `
                         <tr>
@@ -1848,7 +1857,8 @@
 
         if (resource.resources?.hpc_service_units) {
             Object.entries(resource.resources.hpc_service_units).forEach(([resourceName, details]) => {
-                const tier = details.tier || "N/A";
+                const originalTier = details.tier || "N/A";
+                const tier = getTierDisplayName(originalTier);
                 const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                 const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
                 const updateDate = details.update_date ? `${formatDateToEST(details.update_date)}` : `${formatDateToEST(details.request_date)}`;
