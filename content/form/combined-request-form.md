@@ -409,6 +409,7 @@ private = true
 
 <!-- Form close tags -->
 {{< /enable-disable-form >}}
+style="width: 90%; max-width: 1200px;"
 </form>
 <iframe id="admin-iframe"
         style="display: none; width: 100%; height: 800px; border: 1px solid #ccc;"></iframe>
