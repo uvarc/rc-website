@@ -8,7 +8,7 @@ RUN yum -y update && \
     yum clean all
 
 # Install Hugo
-ENV HUGO_VERSION 0.117.0
+ENV HUGO_VERSION 0.133.0
 RUN wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
     tar -zxvf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && \
     mv hugo /usr/local/bin/hugo && \
