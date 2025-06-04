@@ -337,7 +337,7 @@
             const displayMap = {
                 'ssz_standard': 'Standard(ssz)',
                 'ssz_paid': 'Paid(ssz)',
-                'ssz_instructional': 'Instructional(ssd)'
+                'ssz_instructional': 'Instructional(ssz)'
             };
             return displayMap[enumValue] || enumValue;
         }
@@ -2041,10 +2041,6 @@
            blogMain.classList.remove("col-sm-9");
            blogMain.classList.add("col-sm-12");
         }
-        const con = document.querySelector(".container");
-        con.style.width = "1200px";
-       // con.style.flex = "0 0 100%";
-        
         // ===================================
         // Start Initiation
         // ===================================
