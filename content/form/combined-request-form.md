@@ -99,19 +99,27 @@ private = true
   <!-- Resource Type Selection -->
   <div class="resource_type_container" id = "resource_type_container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
         <!-- Grouper/MyGroups Selection -->
-    <div id="mygroups-group-container" style="display: none;">
-      <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
+    <div id="mygroups-group-container">
+      <label for="mygroups-group" class="control-label h6 mb-2">Name of Grouper/MyGroups Account *</label>
         <select id="mygroups-group" class="form-control" required>
             <option value="">- Select a group -</option>
       </select>
-    </div>
+    </div><br/>
   <fieldset class="form-item form-group form-type-select">
     <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
     <select name="request-type" id="request-type" class="form-control" required>
       <option value="service-unit">Allocation's (SU)</option>
       <option value="storage">Storage</option>
     </select>
-  </fieldset>
+  </fieldset><br/>
+     <!-- Project/Class Name (Only for New requests) -->
+      <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
+        <div class="form-item form-group form-type-textfield form-group">
+          <label class="control-label" for="new-project-name">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
+          <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
+        </div>
+      </div>
+
 </div>
 
   <!-- Form Fields Container -->
@@ -162,13 +170,6 @@ private = true
             </tbody>
           </table>
         </fieldset>
-      </div>
-          <!-- Project/Class Name (Only for New requests) -->
-      <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
-        <div class="form-item form-group form-type-textfield form-group">
-          <label class="control-label" for="new-project-name">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
-          <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
-        </div>
       </div>
 
       <!-- Project Description -->
