@@ -113,7 +113,7 @@ private = true
     </select>
   </fieldset><br/>
      <!-- Project/Class Name (Only for New requests) -->
-      <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
+      <div id="new-project-name-container" style="margin-top:1em;" class="new-request-only">
         <div class="form-item form-group form-type-textfield form-group">
           <label class="control-label" for="new-project-name">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
           <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
