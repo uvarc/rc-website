@@ -119,6 +119,14 @@ private = true
           <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
         </div>
       </div>
+      <!-- Project Description -->
+      <div id="project-description" class="form-item form-type-textarea form-group"> 
+        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
+        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+        <div class="form-textarea-wrapper resizable">
+          <textarea required="required" class="form-control form-textarea required" id="project-description-text" name="project-description" cols="60" rows="8"></textarea>
+        </div>
+      </div>
 
 </div>
 
@@ -170,15 +178,6 @@ private = true
             </tbody>
           </table>
         </fieldset>
-      </div>
-
-      <!-- Project Description -->
-      <div id="project-description" class="form-item form-type-textarea form-group" style="display: none;"> 
-        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
-        <div class="form-textarea-wrapper resizable">
-          <textarea required="required" class="form-control form-textarea required" id="project-description-text" name="project-description" cols="60" rows="8"></textarea>
-        </div>
       </div>
       
       <!-- Tier Options (Only shown for New requests) -->
