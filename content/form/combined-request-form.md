@@ -98,6 +98,13 @@ private = true
 
   <!-- Resource Type Selection -->
   <div class="resource_type_container" id = "resource_type_container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+        <!-- Grouper/MyGroups Selection -->
+    <div id="mygroups-group-container" style="display: none;">
+      <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
+        <select id="mygroups-group" class="form-control" required>
+            <option value="">- Select a group -</option>
+      </select>
+    </div>
   <fieldset class="form-item form-group form-type-select">
     <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
     <select name="request-type" id="request-type" class="form-control" required>
@@ -131,21 +138,6 @@ private = true
           </div>
       </div>
       </fieldset>
-
-      <!-- Grouper/MyGroups Selection -->
-      <div id="mygroups-group-container" style="display: none;">
-        <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
-        <select id="mygroups-group" class="form-control" required>
-            <option value="">- Select a group -</option>
-        </select>
-      </div>
-
-      <div id="storage-mygroups-group-container" style="display: none;">
-          <label for="storage-mygroups-group-old">Storage Grouper/MyGroups Account *</label>
-          <select id="storage-mygroups-group-old" class="form-control" required>
-              <option value="">- Select a group -</option>
-          </select>
-      </div><br/>
       
       <!-- Existing Projects for Service Units (Only visible for Renewal) -->
       <div id="existing-projects-allocation" style="display:none; margin-top:1em;">
