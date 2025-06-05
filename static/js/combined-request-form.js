@@ -355,7 +355,7 @@
             const displayMap = {
                 'ssz_standard': 'Research Standard(ssz)',
                 'ssz_project': 'Research Project(ssz)',
-                'hsz_standard': 'Highly Sensitive Data(hsz)'
+                'hsz_standard': ' Research Standard(hsz-High Sensitive)'
             };
             return displayMap[enumValue] || enumValue;
         }
