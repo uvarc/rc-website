@@ -111,7 +111,7 @@ private = true
       <option value="service-unit">Allocation's (SU)</option>
       <option value="storage">Storage</option>
     </select>
-  </fieldset><br/>
+  </fieldset>
      <!-- Project/Class Name (Only for New requests) -->
       <div id="new-project-name-container" style="margin-top:1em;" class="new-request-only">
         <div class="form-item form-group form-type-textfield form-group">
