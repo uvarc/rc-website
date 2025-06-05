@@ -105,13 +105,15 @@ private = true
           <option value="">- Select a group -</option>
       </select>
     </div>
-   <fieldset class="form-item form-group form-type-select">
-    <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
-    <select name="request-type" id="request-type" class="form-control" required>
+    <div>
+     <fieldset class="form-item form-group form-type-select">
+       <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
+      <select name="request-type" id="request-type"  class="form-control" required>
       <option value="service-unit">Allocation's (SU)</option>
       <option value="storage">Storage</option>
-    </select>
-   </fieldset>
+      </select>
+     </fieldset>
+     </div>
       <!-- Project/Class Name (Only for New requests) -->
     <div id="new-project-name-container" style="margin-top:1em;" class="new-request-only">
       <div class="form-item form-group form-type-textfield form-group">
