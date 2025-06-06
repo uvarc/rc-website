@@ -246,7 +246,7 @@ private = true
       </div>
 
       <!-- Grouper/MyGroups Selection -->
-      <div id="storage-mygroups-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em;"> 
+      <div id="storage-mygroups-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em; display: none;"> 
         <label class="control-label" for="storage-mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
         <select required="required" class="form-control form-select required" id="storage-mygroups-group" name="storage-mygroups-group">
           <option value="">- Select a group -</option>
