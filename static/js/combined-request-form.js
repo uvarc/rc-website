@@ -529,8 +529,6 @@
     // ===================================
     function showFormFields() {
         $('#resource_type_container').show();
-        $('#service_unit_container').show();
-        $('#common-fields').show();
         $('#existing-resources-preview').hide();
         $('#empty-message').hide();
         $('#admin-button').hide();
@@ -1849,8 +1847,8 @@
                 });
             }
         });
-        document.getElementById("project-title").value = userResources[0].project_name;
-        document.getElementById("project-description-text").value = userResources[0].project_desc;
+        //document.getElementById("project-title").value = userResources[0].project_name;
+        //document.getElementById("project-description-text").value = userResources[0].project_desc;
         console.log("Existing Service Units table updated!");
     }
 
@@ -1898,8 +1896,8 @@
             });
         }
     });
-    document.getElementById("new-project-name").value = userResources[0].project_name;
-    document.getElementById("project-description-text-storage").value = userResources[0].project_desc;
+    //document.getElementById("new-project-name").value = userResources[0].project_name;
+    //document.getElementById("project-description-text-storage").value = userResources[0].project_desc;
     console.log("Existing Service Units table updated!");
 }
 
