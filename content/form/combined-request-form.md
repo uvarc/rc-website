@@ -98,37 +98,13 @@ private = true
 
   <!-- Resource Type Selection -->
   <div class="resource_type_container" id = "resource_type_container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
-        <!-- Grouper/MyGroups Selection -->
-    <div id="mygroups-group-container">
-      <label for="mygroups-group" class="control-label h6 mb-2">Name of Grouper/MyGroups Account *</label>
-        <select id="mygroups-group" class="form-control" required>
-            <option value="">- Select a group -</option>
-      </select>
-    </div><br/>
   <fieldset class="form-item form-group form-type-select">
     <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
     <select name="request-type" id="request-type" class="form-control" required>
-      <option value="">- Select Resource -</option>
       <option value="service-unit">Allocation's (SU)</option>
       <option value="storage">Storage</option>
     </select>
   </fieldset>
-     <!-- Project/Class Name (Only for New requests) -->
-      <div id="new-project-name-container" style="margin-top:1em;" class="new-request-only">
-        <div class="form-item form-group form-type-textfield form-group">
-          <label class="control-label" for="new-project-name">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
-          <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
-        </div>
-      </div>
-      <!-- Project Description -->
-      <div id="project-description" class="form-item form-type-textarea form-group"> 
-        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
-        <div class="form-textarea-wrapper resizable">
-          <textarea required="required" class="form-control form-textarea required" id="project-description-text" name="project-description" cols="60" rows="8"></textarea>
-        </div>
-      </div>
-
 </div>
 
   <!-- Form Fields Container -->
@@ -155,6 +131,21 @@ private = true
           </div>
       </div>
       </fieldset>
+
+      <!-- Grouper/MyGroups Selection -->
+      <div id="mygroups-group-container" style="display: none;">
+        <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
+        <select id="mygroups-group" class="form-control" required>
+            <option value="">- Select a group -</option>
+        </select>
+      </div>
+
+      <div id="storage-mygroups-group-container" style="display: none;">
+          <label for="storage-mygroups-group-old">Storage Grouper/MyGroups Account *</label>
+          <select id="storage-mygroups-group-old" class="form-control" required>
+              <option value="">- Select a group -</option>
+          </select>
+      </div><br/>
       
       <!-- Existing Projects for Service Units (Only visible for Renewal) -->
       <div id="existing-projects-allocation" style="display:none; margin-top:1em;">
@@ -179,6 +170,22 @@ private = true
             </tbody>
           </table>
         </fieldset>
+      </div>
+          <!-- Project/Class Name (Only for New requests) -->
+      <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
+        <div class="form-item form-group form-type-textfield form-group">
+          <label class="control-label" for="new-project-name">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
+          <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
+        </div>
+      </div>
+
+      <!-- Project Description -->
+      <div id="project-description" class="form-item form-type-textarea form-group" style="display: none;"> 
+        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
+        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+        <div class="form-textarea-wrapper resizable">
+          <textarea required="required" class="form-control form-textarea required" id="project-description-text" name="project-description" cols="60" rows="8"></textarea>
+        </div>
       </div>
       
       <!-- Tier Options (Only shown for New requests) -->
@@ -238,6 +245,15 @@ private = true
         </div>
       </div>
 
+      <!-- Grouper/MyGroups Selection -->
+      <div id="storage-mygroups-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em;"> 
+        <label class="control-label" for="storage-mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
+        <select required="required" class="form-control form-select required" id="storage-mygroups-group" name="storage-mygroups-group">
+          <option value="">- Select a group -</option>
+        </select>
+        <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
+        <div id="storage-group-validation-message" class="validation-message"></div>
+      </div>
       <!-- Existing Projects for Storage (Only visible for increase/decrease/retire) -->
       <div id="existing-projects-storage" style="display: none; margin-top:1em;">
         <fieldset>
@@ -261,6 +277,21 @@ private = true
             </tbody>
           </table>
         </fieldset>
+      </div>
+            <!-- Project Title -->
+      <div id="project-title-container" style="display: none; margin-top:1em;" class="new-request-only">
+        <div class="form-item form-group form-item form-type-textarea form-group"> 
+          <label class="control-label" for="project-title">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
+          <input required="required" class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
+        </div>
+      </div>
+      <!-- Project Description -->
+      <div id="project-description-container" class="form-item form-type-textarea form-group" style="display: none;"> 
+        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
+        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+        <div class="form-textarea-wrapper resizable">
+          <textarea required="required" class="form-control form-textarea required" id="project-description-text-storage" name="project-description" cols="60" rows="8"></textarea>
+        </div>
       </div>
 
       <!-- Storage Tier Options -->
