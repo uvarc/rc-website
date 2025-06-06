@@ -262,21 +262,6 @@ private = true
           </table>
         </fieldset>
       </div>
-            <!-- Project Title -->
-      <div id="project-title-container" style="display: none; margin-top:1em;" class="new-request-only">
-        <div class="form-item form-group form-item form-type-textarea form-group"> 
-          <label class="control-label" for="project-title">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
-          <input required="required" class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
-        </div>
-      </div>
-      <!-- Project Description -->
-      <div id="project-description-container" class="form-item form-type-textarea form-group" style="display: none;"> 
-        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
-        <div class="form-textarea-wrapper resizable">
-          <textarea required="required" class="form-control form-textarea required" id="project-description-text-storage" name="project-description" cols="60" rows="8"></textarea>
-        </div>
-      </div>
 
       <!-- Storage Tier Options -->
       <div id="storage-platform" style="display: none; margin-top:1em;" class="new-request-only">
