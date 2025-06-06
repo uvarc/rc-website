@@ -1,18 +1,20 @@
 {{- $counter:=0 -}}
 {{- $url := $.Site.Params.eventsUrl -}}
-{{- $sep := "," -}}
-{{- range $i, $r := getCSV $sep $url -}}
-  {{- $scheduled_date:=replace (index $r 1) "/" "-" -}}
-  {{- $last_date:=last 1 (split $scheduled_date ",") -}}
-  {{- $last_date:=time (index $last_date 0) -}}
-  {{- if $last_date.After (now.AddDate 0 0 -1) -}}
-    {{ $counter = add $counter 1}}
-  {{- end -}}  
-{{- end -}}
-{{- if ( lt $counter 1 ) -}}
-  {{ partial "boast.html" . }}
-  <div style="width:100%;height:2rem;"></div>
-{{- else -}}
-  {{ partial "training-events.html" . }}
-  <div style="width:100%;height:2rem;"></div>
+{{- $sep := dict "delimiter" "," -}}
+{{ with resources.Get $url -}}
+  {{- range $i, $r := (.Content | transform.Unmarshal $sep) -}}
+    {{- $scheduled_date:=replace (index $r 1) "/" "-" -}}
+    {{- $last_date:=last 1 (split $scheduled_date ",") -}}
+    {{- $last_date:=time (index $last_date 0) -}}
+    {{- if $last_date.After (now.AddDate 0 0 -1) -}}
+      {{ $counter = add $counter 1}}
+    {{- end -}}  
+  {{- end -}}
+  {{- if ( lt $counter 1 ) -}}
+    {{ partial "boast.html" . }}
+    <div style="width:100%;height:2rem;"></div>
+  {{- else -}}
+    {{ partial "training-events.html" . }}
+    <div style="width:100%;height:2rem;"></div>
+  {{- end -}}
 {{- end -}}

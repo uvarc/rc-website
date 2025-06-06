@@ -14,25 +14,27 @@
     </tr>
   </thead>
   <tbody>
-  {{- $gistJ := getJSON .Site.Params.rivannaJsonUrl -}}
-  {{- range $modulename,$items := $gistJ -}}
-     {{- if eq $module $modulename -}}
-        {{- range $items -}}
-           <tr>
-               {{- if $showmname -}}
-                   <td> {{ $modulename }}</td>
-               {{- end -}}
-               <td>{{ .Version }}</td>
-               <td>
-                 {{- "module load " -}}
-                 {{- range .parentAA -}}
-                     {{- delimit . " " -}}
-                 {{- end -}}
-                 {{ printf " %s/%s" $modulename .Version }}
-               </td>
-           </tr>
+  {{- with resources.GetRemote .Site.Params.rivannaJsonUrl -}}
+    {{- $gistJ := .Content | transform.Unmarshal -}}
+    {{- range $modulename,$items := $gistJ -}}
+      {{- if eq $module $modulename -}}
+          {{- range $items -}}
+            <tr>
+                {{- if $showmname -}}
+                    <td> {{ $modulename }}</td>
+                {{- end -}}
+                <td>{{ .Version }}</td>
+                <td>
+                  {{- "module load " -}}
+                  {{- range .parentAA -}}
+                      {{- delimit . " " -}}
+                  {{- end -}}
+                  {{ printf " %s/%s" $modulename .Version }}
+                </td>
+            </tr>
+          {{- end -}}
         {{- end -}}
-      {{- end -}}
+    {{- end -}}
   {{- end -}}
   </tbody>
 </table>

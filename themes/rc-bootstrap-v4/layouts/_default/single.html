@@ -38,7 +38,7 @@
   {{ end }}
 </article> <!-- /.blog-post -->
 
-{{ if .Site.DisqusShortname }}
+{{ if .Site.Config.Services.Disqus.Shortname }}
 {{ partial "disqus.html" . }}
 {{ end }}
 

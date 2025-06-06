@@ -1,0 +1,10 @@
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    command: --disableFastRender
+    volumes:
+      - "..:/site"
+    ports:
+      - "1313:1313"
