@@ -858,6 +858,17 @@
                 populateBillinTable(billingData.fdm_billing_info);
         });
 
+        $('#mygroups-group, #storage-mygroups-group').on('change', function() {
+            const selectedGroupName = $(this).val();
+            const resource = consoleData[0]?.user_resources?.find(resource =>
+                resource.group_name.toLowerCase() === selectedGroup.toLowerCase());
+        
+            if (resource) {
+                $('#project-name').text(resource.project_name);
+                $('#project-description').text(resource.project_description);
+            } 
+        });
+
         document.getElementById('FDMS').addEventListener('click', function (e) {
           const deleteBtn = e.target.closest('.delete-btn');
           if (deleteBtn) {
