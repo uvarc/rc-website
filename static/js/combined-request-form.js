@@ -295,11 +295,11 @@
                 requestType: $('select[name="request-type"]').val(),
                 shouldShowBilling: $('#billing-information').is(':visible')
             };
+            formData.group = $('#mygroups-group').val();   
+            formData.projectName = $('#new-project-name').val();
+            formData.projectDescription = $('#project-description-text').val();
             if (formData.requestType === 'service-unit') {
                 formData.newOrRenewal = $('input[name="new-or-renewal"]:checked').val();
-                formData.group = $('#mygroups-group').val();
-                formData.projectName = $('#new-project-name').val();
-                formData.projectDescription = $('#project-description-text').val();
                 formData.requestCount = $('#su-quantity').val(); 
                 formData.allocationTier = $('input[name="allocation-choice"]:checked').val();
                 if (formData.newOrRenewal === 'renewal') {
@@ -307,12 +307,9 @@
                 } 
             } else if (formData.requestType === 'storage') {
                 formData.typeOfRequest = $('input[name="type-of-request"]:checked').val();
-                formData.group= $('#storage-mygroups-group').val(); //grab group from storage dropdown
-                formData.project_title = $('#project-title').val();
                 formData.storageTier = $('input[name="storage-choice"]:checked').val();
                 formData.request_size = $('#capacity').val();
                 formData.free_space = $('#freeSpace').val();
-                formData.projectDescription = $('#project-description-text-storage').val();
                 if (formData.typeOfRequest === 'update-storage') {
                     formData.existingProject = $('input[name="existing-project-storage"]:checked').val();
                     var checkedRadio=$('input[name="selected-st"]:checked')               
@@ -585,7 +582,7 @@
         clearBillingForm();
         // Explicitly show or hide new vs existing storage fields
         if (isNewStorage && !changeExsisting && !retireExsisting) {
-            $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #project-title-container, #project-description-container, #fdm_table, #fdm_button_div').show();
+            $('#storage-fields, #storage-mygroups-container, #storage-capacity, #storage-platform, #new-project-name-container, #project-description, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-storage').hide();
             $('#free_resource_distribution').hide();
             $('#capacity').val(0);
@@ -595,7 +592,7 @@
             billingData.fdm_billing_info = [];
         } else if((!isNewStorage && changeExsisting) || (!isNewStorage && retireExsisting)) {
                // $('#storage-fields').show(); // Show capacity field for increase/decrease
-                $('#storage-mygroups-container, #storage-platform,  #storage-capacity, #project-title-container, #project-description-container').hide();
+                $('#storage-mygroups-container, #storage-platform,  #storage-capacity, #new-project-name-container, #project-description').hide();
                 $('#existing-projects-storage, #fdm_table, #fdm_button_div').show();
                 $('#free_resource_distribution').hide();
                 populateExistingStorageTable(consoleData);
@@ -785,7 +782,7 @@
                 const storageTire = $parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(storageText);
                 const freeSpaceNumber = $parentRow.attr('data-free-space');
-                $('#project-title-container, #project-description-container').show();
+                $('#new-project-name-container, #project-description').show();
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 if (changeExsisting){
                     document.getElementById("storage-capacity").style.display = "block";   
