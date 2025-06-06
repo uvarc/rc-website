@@ -860,24 +860,26 @@
 
         $('#storage-mygroups-group').on('change', function() {
             const selectedGroupName = $(this).val();
-            const resource = consoleData[0]?.user_resources?.find(resource =>
-                resource.group_name.toLowerCase() === selectedGroupName.toLowerCase());
-        
-            if (resource) {
-                document.getElementById("project-title").value = resource.project_name;
-                document.getElementById("project-description-text-storage").value = resource.project_desc;
+            if (selectedGroupName) {
+               const resource = consoleData[0]?.user_resources?.find(resource =>
+                    resource.group_name === selectedGroupName);
+               if (resource) {
+                  document.getElementById("project-title").value = resource.project_name;
+                  document.getElementById("project-description-text-storage").value = resource.project_desc;
+                }
             } 
         });
         
         $('#mygroups-group').on('change', function() {
             const selectedGroupName = $(this).val();
-            const resource = consoleData[0]?.user_resources?.find(resource =>
-                resource.group_name.toLowerCase() === selectedGroupName.toLowerCase());
-        
-            if (resource) {
-                document.getElementById("new-project-name").value = resource.project_name;
-                document.getElementById("project-description-text").value = resource.project_desc;
-            } 
+            if (selectedGroupName) {
+                const resource = consoleData[0]?.user_resources?.find(resource =>
+                  resource.group_name === selectedGroupName);
+               if (resource) {
+                  document.getElementById("new-project-name").value = resource.project_name;
+                  document.getElementById("project-description-text").value = resource.project_desc;
+                } 
+            }
         });
 
         document.getElementById('FDMS').addEventListener('click', function (e) {
