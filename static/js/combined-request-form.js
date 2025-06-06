@@ -529,6 +529,7 @@
     // ===================================
     function showFormFields() {
         $('#resource_type_container').show();
+        $('#common-fields').show();
         $('#existing-resources-preview').hide();
         $('#empty-message').hide();
         $('#admin-button').hide();
