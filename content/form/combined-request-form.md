@@ -238,15 +238,6 @@ private = true
         </div>
       </div>
 
-      <!-- Grouper/MyGroups Selection -->
-      <div id="storage-mygroups-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em;"> 
-        <label class="control-label" for="storage-mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
-        <select required="required" class="form-control form-select required" id="storage-mygroups-group" name="storage-mygroups-group">
-          <option value="">- Select a group -</option>
-        </select>
-        <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
-        <div id="storage-group-validation-message" class="validation-message"></div>
-      </div>
       <!-- Existing Projects for Storage (Only visible for increase/decrease/retire) -->
       <div id="existing-projects-storage" style="display: none; margin-top:1em;">
         <fieldset>
