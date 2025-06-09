@@ -567,8 +567,8 @@
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
             $('#su-quantity').val(0);
-            $('#new-project-name-container').val(0);
-            $('#project-description').val(0);
+            $('#new-project-name').val("");
+            $('#project-description-text').val("");
             const radios = document.querySelectorAll('input[name="allocation-choice"]');
             radios.forEach(radio => radio.checked = false);
             billingData.fdm_billing_info = [];
@@ -592,8 +592,8 @@
             $('#free_resource_distribution').hide();
             $('#capacity').val(0);
             $('#freeSpace').val(0);
-            $('#project-title').val(0);
-            $('#project-description-text-storage').val(0);
+            $('#project-title').val("");
+            $('#project-description-text-storage').val("");
             const radios = document.querySelectorAll('input[name="storage-choice"]');
             radios.forEach(radio => radio.checked = false);
             billingData.fdm_billing_info = [];
@@ -1874,7 +1874,7 @@
                              data-additional='${billingJson}'>
                             <td>
                                 <input type="radio" name="selected-st" value="${groupName}-${tier}" 
-                                    data-group="${groupName}" data-tier="${tier} data-project="${projectName}" data-projectDesc="${projectDesc}">
+                                    data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
