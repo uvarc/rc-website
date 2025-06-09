@@ -567,6 +567,8 @@
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
             $('#su-quantity').val(0);
+            $('#new-project-name-container').val(0);
+            $('#project-description').val(0);
             const radios = document.querySelectorAll('input[name="allocation-choice"]');
             radios.forEach(radio => radio.checked = false);
             billingData.fdm_billing_info = [];
@@ -590,6 +592,8 @@
             $('#free_resource_distribution').hide();
             $('#capacity').val(0);
             $('#freeSpace').val(0);
+            $('#project-title').val(0);
+            $('#project-description-text-storage').val(0);
             const radios = document.querySelectorAll('input[name="storage-choice"]');
             radios.forEach(radio => radio.checked = false);
             billingData.fdm_billing_info = [];
@@ -786,6 +790,10 @@
                 const number = parseInt(storageText);
                 const freeSpaceNumber = $parentRow.attr('data-free-space');
                 $('#project-title-container, #project-description-container').show();
+                const projectName = $selectedRadio.data('project');
+                const projectDesc = $selectedRadio.data('projectdesc'); 
+                document.getElementById("project-title").value = projectName;
+                document.getElementById("project-description-text-storage").value = projectDesc;
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 if (changeExsisting){
                     document.getElementById("storage-capacity").style.display = "block";   
@@ -1843,6 +1851,7 @@
         userResources.forEach(resource => {
             const projectName = resource.project_name || "N/A";
             const groupName = resource.group_name || "N/A";
+            const projectDesc = resource.project_desc || "N/A";
     
             if (resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
@@ -1865,7 +1874,7 @@
                              data-additional='${billingJson}'>
                             <td>
                                 <input type="radio" name="selected-st" value="${groupName}-${tier}" 
-                                    data-group="${groupName}" data-tier="${tier}">
+                                    data-group="${groupName}" data-tier="${tier} data-project="${projectName}" data-projectDesc="${projectDesc}">
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
