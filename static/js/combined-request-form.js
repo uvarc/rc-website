@@ -839,8 +839,10 @@
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
                 $('#new-project-name-container, #project-description').show();
-                document.getElementById("new-project-name").value = $parentRow.attr('data-project');
-                document.getElementById("project-description-text").value = $parentRow.attr('data-projectDesc');
+                const projectName = $selectedRadio.data('project');
+                const projectDesc = $selectedRadio.data('projectdesc'); 
+                document.getElementById("new-project-name").value = projectName;
+                document.getElementById("project-description-text").value = projectDesc;
 
                 if(tire === "Standard(ssz)" || tire === "Instructional(ssz)") {
                     document.getElementById("su-capacity").style.display = "none"; 
