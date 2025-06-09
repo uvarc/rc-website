@@ -839,13 +839,18 @@
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
                 $('#new-project-name-container, #project-description').show();
-                if(tire === "ssz_standard" || tire === "ssz_instructional" ) {
+                document.getElementById("new-project-name").value = $parentRow.attr('data-project');
+                document.getElementById("project-description-text").value = $parentRow.attr('data-projectDesc')
+
+                if(tire === "Standard(ssz)" || tire === "Instructional(ssz)") {
                     document.getElementById("su-capacity").style.display = "none"; 
                     $('#su-quantity').val(0); 
                 } else {
                     $('#su-quantity').val(0);
                     document.getElementById("su-capacity").style.display = "block";
                 }
+                $('#su-quantity').val(0); 
+                
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 try {
@@ -1890,6 +1895,7 @@
     userResources.forEach(resource => {
         const projectName = resource.project_name || "N/A";
         const groupName = resource.group_name || "N/A";
+        const projectDesc = resource.project_desc || "N/A";
 
         if (resource.resources?.hpc_service_units) {
             Object.entries(resource.resources.hpc_service_units).forEach(([resourceName, details]) => {
@@ -1906,7 +1912,7 @@
                     <tr data-additional='${billingJson}'>
                         <td>
                             <input type="radio" name="selected-su" value="${groupName}-${tier}" 
-                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName}">
+                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName} data-projectDesc="${projectDesc}">
                         </td>
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
