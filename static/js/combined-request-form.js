@@ -840,7 +840,7 @@
                 console.log("Selected SUs:", number); 
                 $('#new-project-name-container, #project-description').show();
                 document.getElementById("new-project-name").value = $parentRow.attr('data-project');
-                document.getElementById("project-description-text").value = $parentRow.attr('data-projectDesc')
+                document.getElementById("project-description-text").value = $parentRow.attr('data-projectDesc');
 
                 if(tire === "Standard(ssz)" || tire === "Instructional(ssz)") {
                     document.getElementById("su-capacity").style.display = "none"; 
