@@ -1914,7 +1914,7 @@
                     <tr data-additional='${billingJson}'>
                         <td>
                             <input type="radio" name="selected-su" value="${groupName}-${tier}" 
-                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName} data-projectDesc="${projectDesc}">
+                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                         </td>
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
