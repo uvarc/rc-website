@@ -333,6 +333,15 @@
             return tierMap[tier] || 'ssz_standard';
         }
 
+        function getTierDisplayName(enumValue) {
+            const displayMap = {
+                'ssz_standard': 'Standard(ssz)',
+                'ssz_paid': 'Paid(ssz)',
+                'ssz_instructional': 'Instructional(ssz)'
+            };
+            return displayMap[enumValue] || enumValue;
+        }
+
         function getStorageTierEnum(tier) {
             const tierMap = {
                 'SSZ Research Standard': 'ssz_standard',
@@ -340,6 +349,15 @@
                 'Highly Sensitive Data': 'hsz_standard',
             };
             return tierMap[tier] || 'ssz_standard'; // Default to 'ssz_standard' if no match
+        }
+
+        function getStorageTierDisplayName(enumValue) {
+            const displayMap = {
+                'ssz_standard': 'Research Standard(ssz)',
+                'ssz_project': 'Research Project(ssz)',
+                'hsz_standard': 'Research Standard(hsz-high sensitive)'
+            };
+            return displayMap[enumValue] || enumValue;
         }
 
         /// Utils Object
@@ -549,6 +567,8 @@
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
             $('#su-quantity').val(0);
+            $('#new-project-name').val("");
+            $('#project-description-text').val("");
             const radios = document.querySelectorAll('input[name="allocation-choice"]');
             radios.forEach(radio => radio.checked = false);
             billingData.fdm_billing_info = [];
@@ -572,6 +592,8 @@
             $('#free_resource_distribution').hide();
             $('#capacity').val(0);
             $('#freeSpace').val(0);
+            $('#project-title').val("");
+            $('#project-description-text-storage').val("");
             const radios = document.querySelectorAll('input[name="storage-choice"]');
             radios.forEach(radio => radio.checked = false);
             billingData.fdm_billing_info = [];
@@ -619,6 +641,7 @@
         } else {
             $('#su-quantity').val(1000);
             document.getElementById("su-capacity").style.display = "block";
+            document.getElementById('su-quantity').disabled = false;
         }
     }
     
@@ -767,6 +790,10 @@
                 const number = parseInt(storageText);
                 const freeSpaceNumber = $parentRow.attr('data-free-space');
                 $('#project-title-container, #project-description-container').show();
+                const projectName = $selectedRadio.data('project');
+                const projectDesc = $selectedRadio.data('projectdesc'); 
+                document.getElementById("project-title").value = projectName;
+                document.getElementById("project-description-text-storage").value = projectDesc;
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
                 if (changeExsisting){
                     document.getElementById("storage-capacity").style.display = "block";   
@@ -820,13 +847,20 @@
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
                 $('#new-project-name-container, #project-description').show();
-                if(tire === "ssz_standard" || tire === "ssz_instructional" ) {
+                const projectName = $selectedRadio.data('project');
+                const projectDesc = $selectedRadio.data('projectdesc'); 
+                document.getElementById("new-project-name").value = projectName;
+                document.getElementById("project-description-text").value = projectDesc;
+
+                if(tire === "Standard(ssz)" || tire === "Instructional(ssz)") {
                     document.getElementById("su-capacity").style.display = "none"; 
                     $('#su-quantity').val(0); 
                 } else {
                     $('#su-quantity').val(0);
                     document.getElementById("su-capacity").style.display = "block";
                 }
+                $('#su-quantity').val(0); 
+                
                 // Retrieve the data-additional attribute
                 const additionalData = $parentRow.attr('data-additional');
                 try {
@@ -837,6 +871,30 @@
                 
                 // Call your updateBilling method with the parsed data
                 populateBillinTable(billingData.fdm_billing_info);
+        });
+
+        $('#storage-mygroups-group').on('change', function() {
+            const selectedGroupName = $(this).val();
+            if (selectedGroupName) {
+               const resource = consoleData[0]?.user_resources?.find(resource =>
+                    resource.group_name === selectedGroupName);
+               if (resource) {
+                  document.getElementById("project-title").value = resource.project_name;
+                  document.getElementById("project-description-text-storage").value = resource.project_desc;
+                }
+            } 
+        });
+        
+        $('#mygroups-group').on('change', function() {
+            const selectedGroupName = $(this).val();
+            if (selectedGroupName) {
+                const resource = consoleData[0]?.user_resources?.find(resource =>
+                  resource.group_name === selectedGroupName);
+               if (resource) {
+                  document.getElementById("new-project-name").value = resource.project_name;
+                  document.getElementById("project-description-text").value = resource.project_desc;
+                } 
+            }
         });
 
         document.getElementById('FDMS').addEventListener('click', function (e) {
@@ -900,6 +958,7 @@
     // ===================================
 
     function displayValidationErrors(errors) {
+        $('#combined-request-form .alert.alert-danger').remove();
         const errorDiv = $('<div>')
             .addClass('alert alert-danger')
             .html(`
@@ -908,6 +967,7 @@
             `);
         $('#combined-request-form').prepend(errorDiv);
         //setTimeout(() => errorDiv.remove(), 10000); // Remove after 10 seconds
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
         console.error("Validation errors:", errors);
     }
     
@@ -1380,7 +1440,10 @@
             errors.push("Payload must be an array containing a single object.");
             return errors;
         }
-    
+        if ($('#billing-information').is(':visible')) {
+            errors.push("Add billing information to FDM Details or Click Cancel");
+            return errors;
+          }
         const resourceWrapper = payload[0];
         const isRenewal = $('input[name="new-or-renewal"]:checked').val() === 'renewal';
         var isStorage = $('select[name="request-type"]').val() === 'storage';
@@ -1711,11 +1774,12 @@
     
             if (resourceType==="SU" && resource.resources?.hpc_service_units) {
                 Object.entries(resource.resources.hpc_service_units).forEach(([resourceName, details]) => {
-                    const tier = details.tier || "N/A";
+                    const originalTier = details.tier || "N/A";
+                    const tier = getTierDisplayName(originalTier);
                     const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const request_status=details.request_status || "N/A";
-                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+                    const updateDate = details.update_date ? `${shortDate}` : `${shortDate || "No date available"}`;
     
                     const row = `
                         <tr>
@@ -1738,11 +1802,12 @@
             }
             if(resourceType==="Storage" && resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
-                    const tier = details.tier || "N/A";
+                    const originalTier = details.tier || "N/A";
+                    const tier = getStorageTierDisplayName(originalTier);
                     const storageSize = details.request_size ? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
                     const request_status=details.request_status || "N/A";
-                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+                    const updateDate = details.update_date ? `${shortDate}` : `${shortDate || "No date available"}`;
     
                     const row = `
                         <tr>
@@ -1786,13 +1851,15 @@
         userResources.forEach(resource => {
             const projectName = resource.project_name || "N/A";
             const groupName = resource.group_name || "N/A";
+            const projectDesc = resource.project_desc || "N/A";
     
             if (resource.resources?.storage) {
                 Object.entries(resource.resources.storage).forEach(([resourceName, details]) => {
-                    const tier = details.tier || "N/A";
+                    const originalTier = details.tier || "N/A";
+                    const tier = getStorageTierDisplayName(originalTier);
                     const storageSize = details.request_size? `${details.request_size} TB` : "N/A";
                     var shortDate=formatDateToEST(details.update_date || details.request_date);
-                    const updateDate = details.update_date ? `Updated: ${shortDate}` : `Requested: ${shortDate || "No date available"}`;
+                    const updateDate = details.update_date ? `${shortDate}` : `${shortDate || "No date available"}`;
                     const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
                     const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
                     //populate free_space 
@@ -1807,7 +1874,7 @@
                              data-additional='${billingJson}'>
                             <td>
                                 <input type="radio" name="selected-st" value="${groupName}-${tier}" 
-                                    data-group="${groupName}" data-tier="${tier}">
+                                    data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
@@ -1822,8 +1889,8 @@
                 });
             }
         });
-        document.getElementById("project-title").value = userResources[0].project_name;
-        document.getElementById("project-description-text").value = userResources[0].project_desc;
+        //document.getElementById("project-title").value = userResources[0].project_name;
+        //document.getElementById("project-description-text").value = userResources[0].project_desc;
         console.log("Existing Service Units table updated!");
     }
 
@@ -1839,13 +1906,15 @@
     userResources.forEach(resource => {
         const projectName = resource.project_name || "N/A";
         const groupName = resource.group_name || "N/A";
+        const projectDesc = resource.project_desc || "N/A";
 
         if (resource.resources?.hpc_service_units) {
             Object.entries(resource.resources.hpc_service_units).forEach(([resourceName, details]) => {
-                const tier = details.tier || "N/A";
+                const originalTier = details.tier || "N/A";
+                const tier = getTierDisplayName(originalTier);
                 const requestCount = details.request_count ? `${details.request_count} SUs` : "N/A";
                 const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
-                const updateDate = details.update_date ? `Updated: ${formatDateToEST(details.update_date)}` : `Requested: ${formatDateToEST(details.request_date)}`;
+                const updateDate = details.update_date ? `${formatDateToEST(details.update_date)}` : `${formatDateToEST(details.request_date)}`;
                 if (details.billing_details && details.billing_details.fdm_billing_info &&
                     Object.values(details.billing_details.fdm_billing_info).every(val => val !== null)) {
                 const billingJson = JSON.stringify(details.billing_details.fdm_billing_info);
@@ -1854,7 +1923,7 @@
                     <tr data-additional='${billingJson}'>
                         <td>
                             <input type="radio" name="selected-su" value="${groupName}-${tier}" 
-                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName}">
+                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                         </td>
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
@@ -1870,8 +1939,8 @@
             });
         }
     });
-    document.getElementById("new-project-name").value = userResources[0].project_name;
-    document.getElementById("project-description-text-storage").value = userResources[0].project_desc;
+    //document.getElementById("new-project-name").value = userResources[0].project_name;
+    //document.getElementById("project-description-text-storage").value = userResources[0].project_desc;
     console.log("Existing Service Units table updated!");
 }
 
