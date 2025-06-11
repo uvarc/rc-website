@@ -1291,11 +1291,12 @@
                if (selectedSU) {
                    var checkedRadio=$('input[name="selected-su"]:checked')               
                    selectedTier=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
-                   selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();                
+                   selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();
+                   const tier = getTierDisplayName(originalTier);
                  }
                  let existingResource = consoleData[0]?.user_resources?.find(resource =>
                     resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                    resource.resources?.hpc_service_units?.[selectedSU]?.tier.toLowerCase() === selectedTier.toLowerCase()
+                    getTierDisplayName(resource.resources?.hpc_service_units?.[selectedSU]?.tier).toLowerCase() === selectedTier.toLowerCase()
                 );
                 if (!existingResource) {
                     showErrorMessage(`⚠ The selected Group and Tier do not match any existing resources.`);
