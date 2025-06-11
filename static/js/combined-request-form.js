@@ -800,7 +800,7 @@
                 } else {
                     document.getElementById("storage-capacity").style.display = "none";
                 }
-                if (storageTire === 'ssz_standard' && changeExsisting) {
+                if (storageTire === 'Research Standard(ssz)' && changeExsisting) {
                     $('#free_resource_distribution').show();
                     $('#freeSpace').val(freeSpaceNumber);
                 } else
