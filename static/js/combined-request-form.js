@@ -1295,8 +1295,7 @@
                  }
                  let existingResource = consoleData[0]?.user_resources?.find(resource =>
                     resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                    getTierDisplayName(resource.resources?.hpc_service_units?.[selectedSU]?.tier).toLowerCase() === selectedTier.toLowerCase()
-                );
+                    getTierDisplayName(resource.resources?.hpc_service_units?.[selectedSU]?.tier) === selectedTier);
                 if (!existingResource) {
                     showErrorMessage(`⚠ The selected Group and Tier do not match any existing resources.`);
                     return null;
