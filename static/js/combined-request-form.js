@@ -838,7 +838,7 @@
         $(document).on("change", 'input[name="selected-su"]', function (event) {
             
                 // Get the currently checked radio button (in case of multiple triggers)
-                const $selectedRadio = $('input[name="selected-su"]:checked');
+                const selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
                 const $parentRow = $selectedRadio.closest('tr');
                 const fullText = $parentRow[0].cells[5].textContent.trim(); // 5th <td> (index 4)
@@ -847,8 +847,8 @@
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
                 $('#new-project-name-container, #project-description').show();
-                const projectName = $selectedRadio.data('project');
-                const projectDesc = $selectedRadio.data('projectdesc'); 
+                const projectName = selectedRadio.data('project');
+                const projectDesc = selectedRadio.data('projectdesc'); 
                 document.getElementById("new-project-name").value = projectName;
                 document.getElementById("project-description-text").value = projectDesc;
 
@@ -1290,8 +1290,9 @@
                selectedSU = $('input[name="selected-su"]:checked').val();
                if (selectedSU) {
                    var checkedRadio=$('input[name="selected-su"]:checked')               
-                   selectedTier=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
+                   tierName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
                    selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();
+                   selectedTier = checkedRadio.data('tier');
                  }
                  let existingResource = consoleData[0]?.user_resources?.find(resource =>
                     resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
@@ -1922,7 +1923,7 @@
                     <tr data-additional='${billingJson}'>
                         <td>
                             <input type="radio" name="selected-su" value="${groupName}-${originalTier}" 
-                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
+                                data-group="${groupName}" data-tier="${originalTier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                         </td>
                         <td>${projectName}</td> 
                         <td>${groupName}</td>
