@@ -1865,7 +1865,7 @@
                     const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
                     //populate free_space 
                     let freeSpaceValue = "N/A"; 
-                    if(tier === 'ssz_standard' && details.billing_details?.free_resource_distribution_info) {
+                    if(originalTier === 'ssz_standard' && details.billing_details?.free_resource_distribution_info) {
                         const freeInfo = details.billing_details.free_resource_distribution_info;
                         const key = Object.keys(freeInfo)[0];
                         freeSpaceValue = freeInfo[key] || "N/A";
