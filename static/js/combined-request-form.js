@@ -782,16 +782,16 @@
                 // Get the currently checked radio button (in case of multiple triggers)
                 const changeExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage';
                 const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
-                const $selectedRadio = $('input[name="selected-st"]:checked');
+                const selectedRadio = $('input[name="selected-st"]:checked');
                 // Traverse to the parent <tr>
-                const $parentRow = $selectedRadio.closest('tr');
-                const storageText = $parentRow[0].cells[5].textContent.trim();
-                const storageTire = $parentRow[0].cells[4].textContent.trim();
+                const parentRow = selectedRadio.closest('tr');
+                const storageText = parentRow[0].cells[5].textContent.trim();
+                const storageTire = parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(storageText);
-                const freeSpaceNumber = $parentRow.attr('data-free-space');
+                const freeSpaceNumber = parentRow.attr('data-free-space');
                 $('#project-title-container, #project-description-container').show();
-                const projectName = $selectedRadio.data('project');
-                const projectDesc = $selectedRadio.data('projectdesc'); 
+                const projectName = selectedRadio.data('project');
+                const projectDesc = selectedRadio.data('projectdesc'); 
                 document.getElementById("project-title").value = projectName;
                 document.getElementById("project-description-text-storage").value = projectDesc;
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
@@ -806,7 +806,7 @@
                 } else
                     $('#free_resource_distribution').hide();
                 // Retrieve the data-additional attribute
-                const additionalData = $parentRow.attr('data-additional');
+                const additionalData = parentRow.attr('data-additional');
                 
                 // Parse it to an object (if needed)
                 billingData;
@@ -862,7 +862,7 @@
                 $('#su-quantity').val(0); 
                 
                 // Retrieve the data-additional attribute
-                const additionalData = $parentRow.attr('data-additional');
+                const additionalData = parentRow.attr('data-additional');
                 try {
                     billingData.fdm_billing_info = JSON.parse(additionalData);
                 } catch (e) {
@@ -1356,12 +1356,13 @@
                     selectedST = $('input[name="selected-st"]:checked').val();
                     if (selectedST) {
                         var checkedRadio=$('input[name="selected-st"]:checked');
-                        selectedTier=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
+                        tierName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
                         selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();
+                        selectedTier = checkedRadio.data('tier');
                     }
                     let existingResource = consoleData[0]?.user_resources?.find(resource =>
                     resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                    resource.resources?.storage?.[selectedST]?.tier.toLowerCase() === selectedTier.toLowerCase());
+                    resource.resources?.storage?.[selectedST]?.tier === selectedTier);
                
                     if (!existingResource) {
                        showErrorMessage(`⚠ The selected Group and Tier do not match any existing resources.`);
@@ -1874,7 +1875,7 @@
                              data-additional='${billingJson}'>
                             <td>
                                 <input type="radio" name="selected-st" value="${groupName}-${originalTier}" 
-                                    data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
+                                    data-group="${groupName}" data-tier="${originalTier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
