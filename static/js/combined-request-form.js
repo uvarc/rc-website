@@ -1872,7 +1872,7 @@
                         <tr data-free-space="${freeSpaceValue}" 
                              data-additional='${billingJson}'>
                             <td>
-                                <input type="radio" name="selected-st" value="${groupName}-${tier}" 
+                                <input type="radio" name="selected-st" value="${groupName}-${originalTier}" 
                                     data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                             </td>
                             <td>${projectName}</td> 
@@ -1921,7 +1921,7 @@
                 const row = `
                     <tr data-additional='${billingJson}'>
                         <td>
-                            <input type="radio" name="selected-su" value="${groupName}-${tier}" 
+                            <input type="radio" name="selected-su" value="${groupName}-${originalTier}" 
                                 data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                         </td>
                         <td>${projectName}</td> 
