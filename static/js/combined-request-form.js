@@ -840,10 +840,10 @@
                 // Get the currently checked radio button (in case of multiple triggers)
                 const selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
-                const $parentRow = $selectedRadio.closest('tr');
-                const fullText = $parentRow[0].cells[5].textContent.trim(); // 5th <td> (index 4)
+                const parentRow = selectedRadio.closest('tr');
+                const fullText = parentRow[0].cells[5].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
-                const tire = $parentRow[0].cells[4].textContent.trim();
+                const tire = parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
                 $('#new-project-name-container, #project-description').show();
@@ -1296,7 +1296,7 @@
                  }
                  let existingResource = consoleData[0]?.user_resources?.find(resource =>
                     resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                    getTierDisplayName(resource.resources?.hpc_service_units?.[selectedSU]?.tier) === selectedTier);
+                   resource.resources?.hpc_service_units?.[selectedSU]?.tier === selectedTier);
                 if (!existingResource) {
                     showErrorMessage(`⚠ The selected Group and Tier do not match any existing resources.`);
                     return null;
