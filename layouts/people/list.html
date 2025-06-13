@@ -1,147 +1,151 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 
-  <head>
-    {{ partial "head-meta.html" . }}
+<head>
+  {{ partial "head-meta.html" . }}
 
-    <base href="{{ .Permalink }}">
-    <link rel="canonical" href="{{ .Permalink }}">
-    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+  <base href="{{ .Permalink }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="Shortcut Icon" href="{{ absURL "/images/favicon.ico" }}" type="image/x-icon" />
 
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-    {{ "<!-- combined, minified CSS -->" | safeHTML }}
-    <link href="{{ .Site.BaseURL }}css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  {{ "<!-- combined, minified CSS -->" | safeHTML }}
+  <link href="{{ absURL "/css/style.css" }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    {{ partial "head-custom.html" . }}
-  </head>
+  {{ partial "head-custom.html" . }}
+</head>
 
-  <body>
+<body>
 
-    {{ partial "menu-home.html" . }}
+  {{ partial "menu-home.html" . }}
 
-    {{ partial "site-header.html" . }}
+  {{ partial "site-header.html" . }}
 
-        <section id="main-content" class="main-content" style="margin-top:20px;">
+  <section id="main-content" class="main-content" style="margin-top:20px;">
 
     <div class="container">
       <div class="row">
         <div class="col-sm-12 blog-main">
 
-<h2 style="margin-bottom:2rem;">Staff Directory</h2>          
+          <h2 style="margin-bottom:2rem;">Staff Directory</h2>
 
-<table class="table table-hover">
-  <thead style="" class="table-dark">
-    <tr>
-      <th scope="col" style="width:25%;">Name</th>
-      <th scope="col">Position</th>
-      <th scope="col">Areas of Focus</th>
-    </tr>
-  </thead>
-  <tbody>
+          <table class="table table-hover">
+            <thead style="" class="table-dark">
+              <tr>
+                <th scope="col" style="width:25%;">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Areas of Focus</th>
+              </tr>
+            </thead>
+            <tbody>
 
-    {{ range (.Pages.ByParam "lastname") }}
-        {{ if ne (lower .Params.job_title) "student" }}
+              {{ range (.Pages.ByParam "lastname") }}
+              {{ if ne (lower .Params.job_title) "student" }}
 
-        <tr>
-          <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
-          {{ if .Params.biolink }}
-            <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th>
-          {{ else }}
-            <th scope="row">{{ .Title }}</th>
-          {{ end }}
-          <td>{{ title .Params.job_title }}</td>
-          <td>
-            {{ $subjects := .Params.subjects }}
-            {{ range first 6 ( sort $subjects ) }}
-              <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
-            {{ end }}
-          </td>
-        </tr>
-        {{ end }}
+              <tr>
+                <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
+                {{ if .Params.biolink }}
+                <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a>
+                </th>
+                {{ else }}
+                <th scope="row">{{ .Title }}</th>
+                {{ end }}
+                <td>{{ title .Params.job_title }}</td>
+                <td>
+                  {{ $subjects := .Params.subjects }}
+                  {{ range first 6 ( sort $subjects ) }}
+                  <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
+                  {{ end }}
+                </td>
+              </tr>
+              {{ end }}
 
-    {{ end }}
+              {{ end }}
 
-  </tbody>
-</table>
+            </tbody>
+          </table>
 
 
-<hr>
+          <hr>
 
-<h2 style="margin-bottom:2rem;"> Active Student Directory</h2>          
+          <h2 style="margin-bottom:2rem;"> Active Student Directory</h2>
 
-<table class="table table-hover">
-  <thead style="" class="table-dark">
-    <tr>
-      <th scope="col" style="width:25%;">Name</th>
-      <th scope="col">Position</th>
-      <th scope="col">Areas of Focus</th>
-    </tr>
-  </thead>
-  <tbody>
+          <table class="table table-hover">
+            <thead style="" class="table-dark">
+              <tr>
+                <th scope="col" style="width:25%;">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Areas of Focus</th>
+              </tr>
+            </thead>
+            <tbody>
 
-    {{ range (.Pages.ByParam "lastname") }}
-      {{ if and (eq (lower .Params.job_title) "student") (eq .Params.active true) }}
+              {{ range (.Pages.ByParam "lastname") }}
+              {{ if and (eq (lower .Params.job_title) "student") (eq .Params.active true) }}
 
-        <tr>
-          <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
-          {{ if .Params.biolink }}
-            <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th>
-          {{ else }}
-            <th scope="row">{{ .Title }}</th>
-          {{ end }}
-          <td>{{ title .Params.job_title }}</td>
-          <td>
-            {{ $subjects := .Params.subjects }}
-            {{ range first 6 ( sort $subjects ) }}
-              <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
-            {{ end }}
-          </td>
-        </tr>
-        {{ end }}
+              <tr>
+                <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
+                {{ if .Params.biolink }}
+                <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a>
+                </th>
+                {{ else }}
+                <th scope="row">{{ .Title }}</th>
+                {{ end }}
+                <td>{{ title .Params.job_title }}</td>
+                <td>
+                  {{ $subjects := .Params.subjects }}
+                  {{ range first 6 ( sort $subjects ) }}
+                  <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
+                  {{ end }}
+                </td>
+              </tr>
+              {{ end }}
 
-    {{ end }}
+              {{ end }}
 
-  </tbody>
-</table>
+            </tbody>
+          </table>
 
-<h2 style="margin-bottom:2rem;">Former Student Directory</h2>   
+          <h2 style="margin-bottom:2rem;">Former Student Directory</h2>
 
-<table class="table table-hover">
-  <thead style="" class="table-dark">
-    <tr>
-      <th scope="col" style="width:25%;">Name</th>
-      <th scope="col">Position</th>
-      <th scope="col">Areas of Focus</th>
-    </tr>
-  </thead>
-  <tbody>
+          <table class="table table-hover">
+            <thead style="" class="table-dark">
+              <tr>
+                <th scope="col" style="width:25%;">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Areas of Focus</th>
+              </tr>
+            </thead>
+            <tbody>
 
-    {{ range (.Pages.ByParam "lastname") }}
-        {{ if and (eq (lower .Params.job_title) "student") (eq .Params.active false) }}
+              {{ range (.Pages.ByParam "lastname") }}
+              {{ if and (eq (lower .Params.job_title) "student") (eq .Params.active false) }}
 
-        <tr>
-          <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
-          {{ if .Params.biolink }}
-            <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th>
-          {{ else }}
-            <th scope="row">{{ .Title }}</th>
-          {{ end }}
-          <td>{{ title .Params.job_title }}</td>
-          <td>
-            {{ $subjects := .Params.subjects }}
-            {{ range first 6 ( sort $subjects ) }}
-              <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
-            {{ end }}
-          </td>
-        </tr>
-        {{ end }}
+              <tr>
+                <!-- <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a></th> -->
+                {{ if .Params.biolink }}
+                <th scope="row"><a style="text-decoration:none;color:black;" href="{{ .Permalink }}">{{ .Title }}</a>
+                </th>
+                {{ else }}
+                <th scope="row">{{ .Title }}</th>
+                {{ end }}
+                <td>{{ title .Params.job_title }}</td>
+                <td>
+                  {{ $subjects := .Params.subjects }}
+                  {{ range first 6 ( sort $subjects ) }}
+                  <a style="text-decoration:none;" href="/tags/{{ . }}"><button class="btn btn-outline-danger btn-sm">{{ . }}</button></a>
+                  {{ end }}
+                </td>
+              </tr>
+              {{ end }}
 
-    {{ end }}
+              {{ end }}
 
-  </tbody>
-</table>
+            </tbody>
+          </table>
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
@@ -150,6 +154,6 @@
 
     {{ partial "footer.html" . }}
 
-  </body>
+</body>
 
 </html>

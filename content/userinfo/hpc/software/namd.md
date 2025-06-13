@@ -8,7 +8,8 @@ date = "2021-05-21T00:00:00-05:00"
 tags = [
   "chem",
   "multi-core",
-  "mpi"
+  "mpi",
+  "namd"
 ]
 draft = false
 modulename = "namd"

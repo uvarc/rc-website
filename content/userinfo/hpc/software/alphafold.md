@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2024-12-19T00:00:00-05:00"
+date = "2025-05-01T00:00:00-05:00"
 tags = [
   "bio",
   "multi-core",
@@ -72,7 +72,7 @@ Refer to the [official documentation](https://github.com/google-deepmind/alphafo
 
 We prepared a Docker image based on the official Dockerfile with some modifications. 
 
-- AlphaFold does not use TensorFlow on the GPU (instead it uses JAX). See [issue](https://github.com/deepmind/alphafold/issues/88). Changed `tensorflow` to `tensorflow-cpu`.
+- AlphaFold does not use TensorFlow on the GPU (instead it uses JAX). See [issue](https://github.com/google-deepmind/alphafold/issues/88). Changed `tensorflow` to `tensorflow-cpu`.
 - There is no need to have system CUDA libraries since they are already included in the conda environment.
 - Switched to micromamba instead of Miniconda.
 
@@ -92,7 +92,7 @@ For your convenience, we have prepared a launch script `run` that takes care of 
 
 1. The database and models are stored in `$ALPHAFOLD_DATA_PATH`.
 1. A cache file `ld.so.cache` will be written to `/etc`, which is not allowed on the HPC system. The workaround is to bind-mount e.g. the current working directory to `/etc` inside the container. `[-B .:/etc]`
-1. You must launch AlphaFold from `/app/alphafold` inside the container due to [this issue](https://github.com/deepmind/alphafold/issues/32). `[--pwd /app/alphafold]`
+1. You must launch AlphaFold from `/app/alphafold` inside the container due to [this issue](https://github.com/google-deepmind/alphafold/issues/32). `[--pwd /app/alphafold]`
 1. The `--nv` flag enables GPU support.
 
 ### Explanation of AlphaFold flags
@@ -115,6 +115,8 @@ Below are some Slurm script templates for version 2.3.
 {{< pull-code file="/static/scripts/alphafold_multimer.slurm" lang="no-highlight" >}}
 
 ### Notes
+
+1. **For users running large protein jobs:** Version `2.3.2-dev` is based on commit `020cd6d`, about 2 years after the official `2.3.2` release. The reason for using a development version is that the package requirements are updated for compatibility on the H200 GPU. Users who have experienced out-of-memory errors for large protein calculations should request an H200 GPU (`--gres=gpu:h200`) and load the `2.3.2-dev` version.
 
 1. Before upgrading to a newer version, please always check the [official repo](https://github.com/deepmind/alphafold) for details, especially on any changes to the parameters, databases, and flags.
 
