@@ -9,9 +9,9 @@ window.odometerOptions = {
 }
 setTimeout(function(){
   // set these values in config.toml
-  odometer1.innerHTML = {{ .Site.Params.metrics.coreHours }};
-  odometer2.innerHTML = {{ .Site.Params.metrics.userAccounts }};
-  odometer3.innerHTML = {{ .Site.Params.metrics.storage }};
+  odometer1.innerHTML = {{ site.Params.metrics.coreHours }};
+  odometer2.innerHTML = {{ site.Params.metrics.userAccounts }};
+  odometer3.innerHTML = {{ site.Params.metrics.storage }};
 }, 400);
 </script>
 <div style="width:100%;">
