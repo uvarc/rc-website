@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software"
 ]
-date = "2024-07-16T00:00:00-05:00"
+date = "2025-06-13T00:00:00-05:00"
 tags = [
   "multi-core",
   "chem"
@@ -25,22 +25,12 @@ Local support is not available. The package is supported by its developers throu
 
 For detailed information, visit the [{{% software-name %}} website]({{< module-homepage >}}).
 
-# Available Versions
-To find the available versions and learn how to load them, run:
-```
-module spider {{% module-name %}}
-```
-
-The output of the command shows the available {{% software-name %}} module versions.
-
-For detailed information about a particular {{% software-name %}} module, including how to load the module, run the `module spider` command with the module's full version label. __For example__:
-```
-module spider {{% module-firstversion %}}
-```
-
-{{< module-versions >}}
-
 # Building VASP
+
+## VASP 6 on AMD hardware
+Please follow the instructions on the [VASP wiki](https://www.vasp.at/wiki/index.php/Installing_VASP.6.X.X). We recommend that you load `intel/2025.0` and start from `makefile.include.oneapi`. To build for AMD (all `parallel` nodes are AMD), change `-xHost` to `-march=znver4 -mtune=native`.
+
+## VASP 5 on Intel hardware
 VASP is typically built with the Intel compiler and relies on Intel's Math Kernel Libraries (MKL).  VASP users should read our documentation for this compiler before beginning.  VASP version 5.4.1 and up provides a sample makefile.include.linux_intel that can be modified for local requirements and for different distributions of MPI.
 
 We recommend that users copy `makefile.include.linux_intel` from the arch subdirectory to `makefile.include` in the top-level VASP directory, i.e.
@@ -54,7 +44,7 @@ This `makefile.include` is preconfigured to use the Intel compiler, IntelMPI, an
 
 To use [OpenMPI](/userinfo/hpc/software/mpi), the user must also change the Fortran compiler to `FC=mpif90` and the `BLACS` library to `-lmkl_blacs_openmpi_lp64` while leaving `SCALAPACK = -lmkl_scalapack_lp64.a`.
 
-Installation details can be found on the VASP wiki: [5.x](https://www.vasp.at/wiki/index.php/Installing_VASP.5.X.X#How_to_make_VASP), [6.x](https://www.vasp.at/wiki/index.php/Installing_VASP.6.X.X).
+Installation details can be found on the VASP wiki: [5.x](https://www.vasp.at/wiki/index.php/Installing_VASP.5.X.X#How_to_make_VASP)
 
 # Example Slurm script
 To run VASP, the user prepares a group of input files with predetermined names.  The path to the vasp binary must be provided to the Slurm process manager `srun`; in the example below we assume it is in a directory `bin` under the user's home directory.  All input and potential files must be located in the same directory as the Slurm job script in this example.
