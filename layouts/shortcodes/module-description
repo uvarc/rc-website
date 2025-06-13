@@ -1,6 +1,6 @@
-{{- with resources.GetRemote .Site.Params.rivannaJsonUrl }}
-  {{- $gistJ := .Content | transform.Unmarshal }}
-  {{- $module := default $.Page.Params.modulename ($.Get "module") }}
+
+  {{- $gistJ := getJSON .Site.Params.rivannaJsonUrl -}}
+  {{ $module := default $.Page.Params.modulename (.Get "module") }}
   {{- range $modulename,$entries := $gistJ -}}
       {{- if eq ($modulename) $.Page.Params.modulename -}}
           {{- $scratch := newScratch -}}
@@ -13,5 +13,4 @@
           {{ $firstentry.Description }}
       {{- end -}}
   {{- end -}}
-{{- end -}}
 
