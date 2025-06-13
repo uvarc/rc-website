@@ -11,7 +11,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_xinyue_xu.jpg"
 subjects = [
-  "python", "machine learning", "C++", "hugo"
+  "python", "machine-learning", "c/c++", "software-development"
 ]
 active = false
 +++
