@@ -1,16 +1,14 @@
-{{- $module := default $.Page.Params.modulename (.Get "module") -}}
-{{- with resources.GetRemote .Site.Params.rivannaJsonUrl -}}
-  {{- $gistJ := .Content | transform.Unmarshal -}}
-    {{- range $modulename,$entries := $gistJ -}}
-        {{- if eq ($modulename) $module -}}
-            {{- $scratch := newScratch -}}
-            {{- range $k, $v := $entries -}}
-                {{- $scratch.Add $modulename (slice $k) -}}
-            {{- end -}}
-            {{- $firstentrykey := index ($scratch.Get $modulename) 0 -}}
-            {{- $scratch.Delete $modulename -}}
-            {{- $firstentry := index $entries $firstentrykey -}}
-            {{- (printf "%s/%s"  $modulename $firstentry.Version) -}}
+{{ $module := default $.Page.Params.modulename (.Get "module") }}
+{{- $gistJ := getJSON .Site.Params.rivannaJsonUrl -}}
+{{- range $modulename,$entries := $gistJ -}}
+    {{- if eq ($modulename) $module -}}
+        {{- $scratch := newScratch -}}
+        {{- range $k, $v := $entries -}}
+            {{- $scratch.Add $modulename (slice $k) -}}
         {{- end -}}
+        {{- $firstentrykey := index ($scratch.Get $modulename) 0 -}}
+        {{- $scratch.Delete $modulename -}}
+        {{- $firstentry := index $entries $firstentrykey -}}
+        {{- (printf "%s/%s"  $modulename $firstentry.Version) -}}
     {{- end -}}
 {{- end -}}

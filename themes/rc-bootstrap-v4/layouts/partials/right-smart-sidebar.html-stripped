@@ -8,28 +8,24 @@
 <!-- END WHEN NO WORKSHOPS -->
 {{ $url := $.Site.Params.eventsUrl }}
 {{ $sep := "," }}
-{{- $url := $.Site.Params.eventsUrl -}}
-{{- $sep := dict "delimiter" "," -}}
-{{ with resources.Get $url -}}
-  {{ $dataWorkshops := .Content | transform.Unmarshal $sep }}
-  {{ if (eq ($dataWorkshops | len) 0) }}
-  <!-- WHEN NO WORKSHOPS -->
-    {{ partial "typed-widget.html" . }}
-    {{ partial "user-help-widget.html" . }}
-      <div style="height:3rem;"></div>
-    {{ partial "office-hours.html" . }}
+{{ $dataWorkshops := getCSV $sep $url }}
+{{ if (eq ($dataWorkshops | len) 0) }}
+<!-- WHEN NO WORKSHOPS -->
+  {{ partial "typed-widget.html" . }}
+  {{ partial "user-help-widget.html" . }}
+    <div style="height:3rem;"></div>
+  {{ partial "office-hours.html" . }}
 
-  <!-- END WHEN NO WORKSHOPS -->
+<!-- END WHEN NO WORKSHOPS -->
 
-  {{ else }}
+{{ else }}
 
-  <!-- WHEN WORKSHOPS EXIST -->
+<!-- WHEN WORKSHOPS EXIST -->
 
-    {{ partial "office-hours.html" . }}
-    {{ partial "user-help-widget.html" . }}
-    {{ partial "training-events.html" . }}
+  {{ partial "office-hours.html" . }}
+  {{ partial "user-help-widget.html" . }}
+  {{ partial "training-events.html" . }}
 
-  <!-- END WHEN WORKSHOPS EXIST -->
+<!-- END WHEN WORKSHOPS EXIST -->
 
-  {{ end }}
 {{ end }}
