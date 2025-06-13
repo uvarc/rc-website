@@ -12,7 +12,7 @@ type = "people"
 description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_steven_siadaty.jpg"
-subjects = ["python", "machine-learning", "r", "bioinformatics"]
+subjects = ["python", "machine learning", "data science", "computational biology"]
 active = true
 +++
 

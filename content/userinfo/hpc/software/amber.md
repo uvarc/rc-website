@@ -8,7 +8,6 @@ categories = [
 date = "2019-06-22T08:37:46-05:00"
 tags = [
   "multi-core",
-  "amber"
 ]
 draft = false
 modulename = "amber"

@@ -1,6 +1,6 @@
 <!-- cooke-consent -->
-<link href="{{ absURL "/css/cookieconsent.min.css" }}" rel="stylesheet" type="text/css">
-<script src="{{ absURL "/js/cookieconsent.min.js" }}" async></script>
+<link href="{{ .Site.BaseURL }}css/cookieconsent.min.css" rel="stylesheet" type="text/css">
+<script src="{{ .Site.BaseURL }}js/cookieconsent.min.js" async></script>
 <script>
 window.addEventListener("load", function(){
   window.cookieconsent.initialise({

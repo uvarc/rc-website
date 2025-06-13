@@ -11,10 +11,10 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_angela_boakyedanquah.png"
 subjects = [
-  "machine-learning",
-  "deep-learning",
+  "machine learning",
+  "deep learning",
   "hpc",
-  "r",
+  "R",
   "parallel-computing",
   "python",
 ]

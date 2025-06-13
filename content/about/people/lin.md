@@ -15,7 +15,7 @@ image = "/images/profiles/profile_diana_lin.jpg"
 subjects = [
   "python",
   "docker",
-  "machine-learning",
+  "machine learning",
 ]
 active = true
 +++

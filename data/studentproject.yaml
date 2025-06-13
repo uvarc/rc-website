@@ -1,0 +1,96 @@
+students:
+  - name: "Adam Eubanks"
+    projects:
+      - projectname: "XALT Containerization"
+        year: 2024 
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Adam contributed to the XALT containerization project by developing a Docker container for running XALT on UVA RC clusters. 
+    His work streamlined deployment of XALT, a tool which will help UVA RC with usage tracking and resource allocation."
+        imagepath: "/images/student-work/Poster-Adam-Eubanks-min.jpg"
+        archived: false
+    #   - projectname: "XALT Containerization"
+    #     year: 2024 
+    #     term: "Spring"
+    #     type: "Poster"
+    #     projectdesc: "Adam contributed to the XALT containerization project by developing a Docker container for running XALT on UVA RC clusters. 
+    # His work streamlined deployment of XALT, a tool which will help UVA RC with usage tracking and resource allocation."
+    #     imagepath: "/images/student-work/Poster-Adam-Eubanks-min.jpg"
+    #     archived: false
+  - name: "Matthew Galitz"
+    projects:
+      - projectname: "Rivanna Utilization"
+        year: 2024
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Matthew contributed to the Rivanna Utilization Statistics project.
+    This initiative enhanced the efficiency of generating usage statistics and allocation reports for UVA’s Rivanna high-performance 
+    computing system. By developing scripts that aggregate and analyze computational resource utilization, 
+    his work supports strategic planning of resource allocation and infrastructure upgrades."
+        imagepath: "/images/student-work/Poster-Matthew-Galitz-min.jpg"
+        archived: false
+  - name: "Juwon Park"
+    projects:
+      - projectname: "Image Processing with MATLAB"
+        year: 2024
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Juwon contributed to the Image Processing with Matlab project, which utilized image processing functionality to skeletonize a brain image for a consultation. 
+    The project explored Matlab's various capabilities for image transformation, simplifying the quantification of fluorescent changes across brain tissue for further research."
+        imagepath: "/images/student-work/Poster-Juwon-Park-min.jpg"
+        archived: false
+  - name: "Hariprasad Periyasamy"
+    projects:
+      - projectname: "Workshop Data"
+        year: 2024
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Hari contributed to the Workshop Data project. He worked on creating a microservice that takes in a specified time period and returns a list of the number of workshops 
+    and the number of registrants for each workshop. The goal was to gain a better understanding of the workshops that should continue 
+    to be offered, as well as which departments we should target for advertising our workshops to maximize utilization."
+        imagepath: "/images/student-work/Poster-Hari-Periyasamy-min.jpg"
+        archived: false
+  - name: "Diya Tomar"
+    projects:
+      - projectname: "Accord Containers"
+        year: 2024
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Diya contributed to the ACCORD Containers project. She worked on updating the containerized applications available on ACCORD, 
+      particularly the Jupyter Python and RStudio Server environments, to the latest versions. She also worked on developing scripts to test 
+      these environments. This work aims to support researchers by providing the latest versions of these environments and ensuring that researchers 
+      have access to the newest functionalities."
+        imagepath: "/images/student-work/Poster-Diya-Tomar-min.jpg"
+        archived: false
+  - name: "Jinwoo Kim"
+    projects:
+    - projectname: "OOD Videos, Customization, Containerization, and Authentication"
+      year: 2024
+      term: "Summer"
+      type: "Video"
+      youtube_link: "https://www.youtube.com/watch?v=Wz86jF-d5F4"
+      embed_link: "https://www.youtube.com/embed/Wz86jF-d5F4"
+      archived: false
+  - name: "Wright Quist"
+    projects: 
+    - projectname: "CryoSparc and OOD"
+      year: 2024
+      term: "Summer"
+      type: "Video"
+      youtube_link: "https://www.youtube.com/watch?v=XYQduJCkrWY"
+      embed_link: "https://www.youtube.com/embed/XYQduJCkrWY"
+      archived: false
+  - name: "Jennifer Vo"
+    projects: 
+    - projectname: "Markdown and Women in HPC"
+      year: 2024
+      term: "Summer"
+      type: "Video"
+      youtube_link: "https://www.youtube.com/watch?v=YuFVIZkp8uQ"
+      embed_link: "https://www.youtube.com/embed/YuFVIZkp8uQ"
+      archived: false
+  
+
+
+
+

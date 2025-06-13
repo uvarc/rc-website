@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_jinwoo_kim.jpeg"
 subjects = [
-  "python", "software-development"
+  "python", "web-development"
 ]
 active = false
 +++

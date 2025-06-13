@@ -16,6 +16,7 @@ subjects = [
   "infrastructure",
   "kubernetes",
   "api",
+  "prometheus"
 ]
 +++
 

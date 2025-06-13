@@ -5,11 +5,7 @@ tags = [
   "rivanna",
   "lmod",
   "software",
-  "hpc",
-  "amber",
-  "reinforcement-learning",
-  "machine-learning",
-  "deep-learning"
+  "hpc"
 ]
 draft = false
 title = "GPU-enabled Software and UVA HPC"

@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2025-02-05T11:15:10-05:00"
+date = "2025-2-05T11:15:10-05:00"
 title = "Ivey Mistele"
 job_title = "Student"
 lastname = "mistele"
@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_ivey_mistele.jpg" 
 subjects = [
-   "python", "r","va-whpc"
+   "python", "r"
 ]
 active = true
 +++

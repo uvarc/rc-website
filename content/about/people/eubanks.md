@@ -13,9 +13,9 @@ author = "UVARC Staff"
 image = "/images/profiles/profile_adam_eubanks.jpeg"
 email = "ucn5xj@virginia.edu"
 subjects = [
-  "machine-learning",
-  "ood",
-  "docker"
+  "machine learning",
+  "Open OnDemand",
+  "Docker"
 ]
 active = false
 +++

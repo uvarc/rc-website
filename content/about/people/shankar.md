@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_mohan_s.JPG"
 subjects = [
-  "hpc", "python", "dft", "computational-chemistry"
+  "HPC", "Python", "DFT"
 ]
 active = true
 +++

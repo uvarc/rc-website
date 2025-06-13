@@ -8,7 +8,7 @@ categories = [
   "software",
 ]
 date = "2024-01-02T00:00:00-05:00"
-tags = ["chem","computational-chemistry","dft"
+tags = ["chem"
 ]
 draft = false
 shorttitle = "Chemistry"

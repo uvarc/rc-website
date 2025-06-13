@@ -53,13 +53,7 @@ Select “University of Virginia” and then click **Continue**. You are then ta
 
 <img alt="Globus CLI authentication" src="/images/globus-cli-authenticate.png" align="right" style="max-width:20%;">
 
-You may now close your browser window. After you log in, there is one more step to complete authentication. Now, use the following command:
-
-{{< code >}}
-globus session consent "urn:globus:auth:scope:transfer.api.globus.org:all[*https://auth.globus.org/scopes/af187d15-768f-4449-8670-d00e1eb1ce6a/data_access]"
-{{< /code >}}
-
-This will open the same browser that pops up when you log in. Follow the same steps to complete the authentication. Once done, you may close the browser. Your command-line tools are now authenticated and ready to use.
+You may now close your browser window. Your command-line tools are now authenticated and ready to use.
 
 # Basic Commands
 

@@ -13,10 +13,10 @@ author = "UVARC Staff"
 image = "/images/profiles/profile_hongyan_wu.png"
 email = "hw5uj@virginia.edu"
 subjects = [
-  "reinforcement-learning",
-  "machine-learning",
+  "Reinforcement learning",
+  "machine learning",
   "python",
-  "software-development"
+  "software engineering"
 ]
 active = false
 +++

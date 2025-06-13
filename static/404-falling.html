@@ -1,89 +1,81 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 Not Found | UVA Research Computing</title>
   <link rel="Shortcut Icon" href="/images/favicon.ico" type="image/x-icon" />
-  <link href="/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="/css/style.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
   <style>
     body {
-      color: white;
-      font-family: 'Roboto Mono';
-      padding: 200px;
+      color:white;
+      font-family:'Roboto Mono';
+      padding:200px;
     }
-
     a {
-      color: white;
+      color:white;
     }
-
     a:hover {
-      background-color: #39ff14;
-      text-decoration: none;
-      color: black;
+      background-color:#39ff14;
+      text-decoration:none;
+      color:black;
     }
-
     .list-unstyled li a {
-      font-family: 'Roboto Mono';
-      margin-left: 0px;
-      padding-left: 60px;
-      padding-right: 20px;
-      padding-top: 4px;
-      padding-bottom: 4px;
+      font-family:'Roboto Mono';
+      margin-left:0px;
+      padding-left:60px;
+      padding-right:20px;
+      padding-top:4px;
+      padding-bottom:4px;
     }
-
     .playsi {
-      display: none;
-      text-align: left;
-      color: white;
-      width: 300px;
-      height: 60px;
-      font-size: 90%;
+      display:none;
+      text-align:left;
+      color:white;
+      width:300px;
+      height:60px;
+      font-size:90%;
     }
   </style>
 
 </head>
 
-<body
-  style="background-image:url('https://s3.amazonaws.com/uvarc-media/404/zooming.gif');background-repeat:no-repeat;background-size: 2000px 2000px;">
+<body style="background-image:url('https://s3.amazonaws.com/uvarc-media/404/zooming.gif');background-repeat:no-repeat;background-size: 2000px 2000px;">
 
   <header class="page-container page-container-responsive">
-    <span class="screen-reader-only" style="font-face:bold;">
-      UVA Research Computing
-    </span>
+      <span class="screen-reader-only" style="font-face:bold;">
+        UVA Research Computing
+      </span>
   </header>
 
   <div class="page-container page-container-responsive">
     <div class="row space-top-12 space-12 row-table">
-      <div class="col-12 col-middle">
-        <h1 class="text-jumbo" style="font-size:100px;">404 Oops!</h1>
-        <h2>The page you are looking for has fallen into <code>/tmp</code></h2>
-        <ol class="list-unstyled">
-          <li>Want to get a 200 OK? Try one of these links instead:</li>
-          <li><a href="/">Home</a></li>
-          <li><a href="/search/">Search</a></li>
-          <li><a href="/about/mission/">About-Us</a></li>
-          <li><a href="/about/people/">Staff</a></li>
-          <li><a href="/support/">Support</a></li>
-          <li><a href="/userinfo/systems/">Systems</a></li>
-          <li><a href="/userinfo/user-guide/">User-Guides</a></li>
-          <li><a href="/project/">Projects</a></li>
-        </ol>
-      </div>
-      <div class="col-5 col-middle text-center">
+        <div class="col-12 col-middle">
+          <h1 class="text-jumbo" style="font-size:100px;">404 Oops!</h1>
+          <h2>The page you are looking for has fallen into <code>/tmp</code></h2>
+          <ol class="list-unstyled">
+            <li>Want to get a 200 OK? Try one of these links instead:</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/search/">Search</a></li>
+            <li><a href="/about/mission/">About-Us</a></li>
+            <li><a href="/about/people/">Staff</a></li>
+            <li><a href="/support/">Support</a></li>
+            <li><a href="/userinfo/systems/">Systems</a></li>
+            <li><a href="/userinfo/user-guide/">User-Guides</a></li>
+            <li><a href="/project/">Projects</a></li>
+          </ol>
+        </div>
+        <div class="col-5 col-middle text-center">
+        </div>
       </div>
     </div>
   </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
-    $(function () {
+    $(function() {
       $(".playsi").delay(10000).fadeIn();
       $(".playsi").delay(5000).fadeOut();
       $(".playsi").delay(30000).fadeIn();
@@ -96,5 +88,4 @@
   </div>
 
 </body>
-
 </html>

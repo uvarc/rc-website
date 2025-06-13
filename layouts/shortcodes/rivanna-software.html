@@ -29,51 +29,49 @@ function searchFunction() {
 
 <table class="table table-striped" id="moduleTable">
   <thead class="thead-dark">
-    {{ with resources.GetRemote .Site.Params.rivannaJsonUrl }}
-      {{ $gistJ := .Content | transform.Unmarshal }}
-      {{ $mclasses := $.Get "moduleclasses" }}
-      {{ $arch := $.Get "arch" }}
-      {{ $eclasses := $.Get "exclude" }}
-      {{ $showhidden := $.Get "showhidden" }}
-      <tr>
-        <th scope="col">Module</th>
-        <th scope="col">Category</th>
-        <th scope="col">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{ range $modulename, $entries := $gistJ }}
-        {{ $modulelisted := false }}
-        {{ $modulesite := (printf "/userinfo/hpc/software/%s" (lower $modulename)) }}
-        {{ $scratch := newScratch}}
-        {{ $hasArch := not $arch }}
-        {{ range $k, $v := $entries}}
-          {{ if and (ne $arch "*") (ne $arch "") }}
-            {{ with $v.propT.arch }}
-              {{ $hasArch := eq (int (index . $arch)) 1 }}
-              {{ if $hasArch }}
-                {{ $scratch.Set $modulename $v }}
-              {{ end }}
+    {{ $gistJ := getJSON .Site.Params.rivannaJsonUrl }}
+    {{ $mclasses := .Get "moduleclasses" }}
+    {{ $arch := .Get "arch" }}
+    {{ $eclasses := .Get "exclude" }}
+    {{ $showhidden := .Get "showhidden" }}
+    <tr>
+      <th scope="col">Module</th>
+      <th scope="col">Category</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $modulename, $entries := $gistJ }}
+      {{ $modulelisted := false }}
+      {{ $modulesite := (printf "/userinfo/hpc/software/%s" (lower $modulename)) }}
+      {{ $scratch := newScratch}}
+      {{ $hasArch := not $arch }}
+      {{ range $k, $v := $entries}}
+        {{ if and (ne $arch "*") (ne $arch "") }}
+          {{ with $v.propT.arch }}
+            {{ $hasArch := eq (int (index . $arch)) 1 }}
+            {{ if $hasArch }}
+              {{ $scratch.Set $modulename $v }}
             {{ end }}
-          {{ else}}
-            {{ $scratch.Set $modulename $v }}
           {{ end }}
+        {{ else}}
+          {{ $scratch.Set $modulename $v }}
         {{ end }}
-        {{ range $mname,$v := $scratch.Values }}
-          {{ $category := index (split (index $v.whatis 2) "Application class: ") 1 }}
-          {{ if or (eq $mclasses "all") (in $category $mclasses) }}
-            {{ $category := (printf "%s %s" $category $arch) }}
-            {{ $descr := $v.Description }}
-            <tr>
-              {{ if (fileExists (printf "%s.md" $modulesite)) }}
-                <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
-              {{ else }}
-                <td>{{ $modulename }}</td>
-              {{ end }}
-              <td>{{ $category }}</td>
-              <td>{{ $descr }}</td>
-            </tr>
-          {{ end }}
+      {{ end }}
+      {{ range $mname,$v := $scratch.Values }}
+        {{ $category := index (split (index $v.whatis 2) "Application class: ") 1 }}
+        {{ if or (eq $mclasses "all") (in $category $mclasses) }}
+          {{ $category := (printf "%s %s" $category $arch) }}
+          {{ $descr := $v.Description }}
+          <tr>
+            {{ if (fileExists (printf "%s.md" $modulesite)) }}
+              <td><a href="{{ $modulesite }}">{{ $modulename }}</a></td>
+            {{ else }}
+              <td>{{ $modulename }}</td>
+            {{ end }}
+            <td>{{ $category }}</td>
+            <td>{{ $descr }}</td>
+          </tr>
         {{ end }}
       {{ end }}
     {{ end }}

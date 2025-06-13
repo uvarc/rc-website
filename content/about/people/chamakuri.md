@@ -18,7 +18,7 @@ subjects = [
   "python",
   "docker",
   "kubernetes",
-  "software-development"
+  "development"
 ]
 +++
 

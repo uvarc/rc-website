@@ -13,7 +13,7 @@ images = [
 ]
 subjects = [
   "data-analysis",
-  "computational-chemistry",
+  "chemistry",
   "python",
   "research"
 ]

@@ -53,4 +53,4 @@ Cytometry A. 95(1):110-121. [doi:10.1002/cyto.a.23711](https://doi.org/10.1002/c
 
 * Siller KH, Serr M, Steward R, Hays TS, Doe CQ. (2005) Live imaging of Drosophila brain neuroblasts reveals a role for Lis1/dynactin in spindle assembly and mitotic checkpoint control. Mol Biol Cell. 16(11):5127-40. [doi:10.1091/mbc.e05-04-0338](https://doi.org/10.1091/mbc.e05-04-0338).
 
-See [Google Scholar](https://scholar.google.com/citations?hl=en&user=RRCzKhwAAAAJ&view_op=list_works) for a complete list of publications.
+See [Google Scholar](https://scholar.google.com/citations?hl=en&user=RRCzKhwAAAAJ&view_op=list_works&authuser=1) for a complete list of publications.

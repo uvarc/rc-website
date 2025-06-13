@@ -3,7 +3,7 @@
   "children":
 {{- $.Scratch.Add "index" slice -}}
 {{- range $name, $taxonomy := .Site.Taxonomies.tags -}}
-{{- $url := (printf "%s%s" "/tags/" $name ) -}}
+{{- $url := (printf "%s%s" "https://www.rc.virginia.edu/tags/" $name ) -}}
 {{- $.Scratch.Add "index" (dict "name" $name "size" $taxonomy.Count "url" $url ) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}

@@ -1,15 +1,13 @@
-{{- with resources.GetRemote .Site.Params.rivannaJsonUrl -}}
-    {{- $gistJ := .Content | transform.Unmarshal -}}
-    {{- range $modulename,$entries := $gistJ -}}
-        {{- if eq ($modulename) $.Page.Params.modulename -}}
-            {{- $scratch := newScratch -}}
-            {{- range $k, $v := $entries -}}
-                {{- $scratch.Add $modulename (slice $k) -}}
-            {{- end -}}
-            {{- $firstentrykey := index ($scratch.Get $modulename) 0 -}}
-            {{- $firstentry := index $entries $firstentrykey -}}
-            {{- $category := index (split (delimit (last 1 (split (index $firstentry.whatis 2) "Application class: ")) " ") "\n") 0 -}}
-            {{ $category }}
+{{- $gistJ := getJSON .Site.Params.rivannaJsonUrl -}}
+{{- range $modulename,$entries := $gistJ -}}
+    {{- if eq ($modulename) $.Page.Params.modulename -}}
+        {{- $scratch := newScratch -}}
+        {{- range $k, $v := $entries -}}
+            {{- $scratch.Add $modulename (slice $k) -}}
         {{- end -}}
+        {{- $firstentrykey := index ($scratch.Get $modulename) 0 -}}
+        {{- $firstentry := index $entries $firstentrykey -}}
+        {{- $category := index (split (delimit (last 1 (split (index $firstentry.whatis 2) "Application class: ")) " ") "\n") 0 -}}
+        {{ $category }}
     {{- end -}}
 {{- end -}}
