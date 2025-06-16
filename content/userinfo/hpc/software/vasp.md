@@ -28,7 +28,7 @@ For detailed information, visit the [{{% software-name %}} website]({{< module-h
 # Building VASP
 
 ## VASP 6 on AMD hardware
-Please follow the instructions on the [VASP wiki](https://www.vasp.at/wiki/index.php/Installing_VASP.6.X.X). We recommend that you load `intel/2025.0` and start from `makefile.include.oneapi`. To build for AMD (all `parallel` nodes are AMD), change `-xHost` to `-march=znver4 -mtune=native`.
+Please follow the instructions on the [VASP wiki](https://www.vasp.at/wiki/index.php/Installing_VASP.6.X.X). We recommend that you load `intel/2025.0` and start from `makefile.include.oneapi`. To build for AMD (all `parallel` nodes are AMD), change `-xHost` to `-march=znver4`.
 
 ## VASP 5 on Intel hardware
 VASP is typically built with the Intel compiler and relies on Intel's Math Kernel Libraries (MKL).  VASP users should read our documentation for this compiler before beginning.  VASP version 5.4.1 and up provides a sample makefile.include.linux_intel that can be modified for local requirements and for different distributions of MPI.
