@@ -61,7 +61,6 @@
       </select>
       <button type="submit">Claim</button>
     </form>
-
     <div class="message" id="resultMessage"></div>
   </div>
 </body>
