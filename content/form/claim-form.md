@@ -59,7 +59,6 @@
         <option value="group_b">Group B</option>
         <option value="group_c">Group C</option>
       </select>
-
       <button type="submit">Claim</button>
     </form>
 
