@@ -1,9 +1,21 @@
     // ===================================
     // Constants and Configuration
     // ===================================
+    const hostname = window.location.hostname;
 
+    let serviceHost = '';
+    
+    if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('staging.rc.virginia.edu')) {
+      serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
+    } else if (hostname === 'rc.virginia.edu') {
+      serviceHost = 'https://uvarc-unified-service-prod.pods.uvarc.io';
+    } else {
+      console.warn('Unknown environment, defaulting to staging');
+      serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
+    }
+    
     const API_CONFIG = {
-        baseUrl: 'https://uvarc-unified-service-test.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
+        baseUrl: `${serviceHost}/uvarc/api/resource/rcwebform/user`,
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -1662,7 +1674,7 @@
             return { userGroups: [], userResources: [] };
         }
     
-        const userGroups = data[0]?.user_groups || [];
+        const userGroups = data[0]?.owner_groups || [];
         const userResources = (() => {
             try {
                 return typeof data[0]?.user_resources === 'string'
