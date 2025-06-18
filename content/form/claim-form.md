@@ -70,10 +70,5 @@ title = "Group Claim Form"
     $(document).ready(function () {
         const sections = document.querySelectorAll(".blog-sidebar");
         sections.forEach(section => section.remove());
-        const blogMain = document.querySelector(".blog-main");
-        if (blogMain) {
-           blogMain.classList.remove("col-sm-9");
-           blogMain.classList.add("col-sm-12");
-        }
     });
   </script>
