@@ -1,6 +1,8 @@
++++
+title = "Group Claim Form"
++++
 <head>
   <meta charset="UTF-8">
-  <title>Claim Group</title>
   <style>
     body {
       font-family: Arial, sans-serif;
