@@ -134,7 +134,10 @@ private = true
 
       <!-- Grouper/MyGroups Selection -->
       <div id="mygroups-group-container" style="display: none;">
+        <div style="display: flex; justify-content: space-between;  align-items: center;">
         <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
+        <a href="your-other-page.html" target="_blank" style="margin-left: 10px; font-size: 0.9em;">claim your group</a>
+        </div>
         <select id="mygroups-group" class="form-control" required>
             <option value="">- Select a group -</option>
         </select>
