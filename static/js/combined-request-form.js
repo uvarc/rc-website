@@ -921,6 +921,15 @@
              }
           }
         });
+
+        document.getElementById("claimLink").addEventListener("click", function (event) {
+            event.preventDefault();
+            const userId = getUserId();
+            const dynamicUrl = `https://staging-onprem.rc.virginia.edu/form/claim-form?user=${userId}`;
+          
+            // Do something — like redirect
+            window.open(dynamicUrl, "_blank"); // open in new tab
+          });
     }
     
     // ===================================

@@ -136,7 +136,7 @@ private = true
       <div id="mygroups-group-container" style="display: none;">
         <div style="display: flex; justify-content: space-between;  align-items: center;">
         <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
-        <a href="https://staging-onprem.rc.virginia.edu/form/claim-form" target="_blank" style="margin-left: 10px; font-size: 0.9em; color:green;">claim your group</a>
+        <a href="https://staging-onprem.rc.virginia.edu/form/claim-form" id="claimLink" style="margin-left: 10px; font-size: 0.9em; color:green;">claim your group</a>
         </div>
         <select id="mygroups-group" class="form-control" required>
             <option value="">- Select a group -</option>

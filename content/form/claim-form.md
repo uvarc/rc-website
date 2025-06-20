@@ -57,9 +57,6 @@ title = "Group Claim Form"
       <label for="user_groups">Select a Group to Claim:</label>
       <select id="user_groups" name="user_groups" required>
         <option value="">-- Select Group --</option>
-        <option value="group_a">Group A</option>
-        <option value="group_b">Group B</option>
-        <option value="group_c">Group C</option>
       </select>
       <button type="submit">Claim</button>
     </form>
