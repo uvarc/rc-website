@@ -10,4 +10,5 @@ COPY . /site
 EXPOSE 1313
 
 # Run Hugo server
-ENTRYPOINT ["hugo-0.133.0-ext", "server", "--bind", "0.0.0.0"]
+ENV HUGO_VERSION=0.133.0-ext
+ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0"]
