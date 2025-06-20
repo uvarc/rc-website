@@ -9,7 +9,7 @@ tags = ["rc"]
 categories = ["feature"]
 +++
 
-<img src="/images/2025-students/matthew-1.png" alt="Matthew Galitz" style="max-width:50%;margin:5px;margin-top:20px;float:right;">
+<img src="/images/2025-students/matthew-1.png" alt="Matthew Galitz" style="max-width:50%;margin:5px;float:right;">
 
 As a [student worker](https://www.rc.virginia.edu/about/students/) at UVA Research Computing, Matthew Galitz gained hands-on experience in software engineering and machine learning, fields he is passionate about. He led projects that created practical tools to help researchers across UVA find collaborators and manage their work more efficiently. Through this experience, Matthew developed important professional skills like collaboration, communication, and project ownership. In this Q&A, he shares how working alongside experts and tackling real-world challenges helped prepare him for his future career.
 
@@ -33,7 +33,7 @@ One of the most valuable aspects of working with UVA Research Computing was the 
 
 ### Can you share a project or accomplishment from your time as a student worker that you're especially proud of?
 
-<img src="/images/2025-students/matthew-2.png" alt="Matthew Galitz presentation" style="max-width:50%;margin:5px;margin-top:20px;float:right;">
+<img src="/images/2025-students/matthew-2.png" alt="Matthew Galitz presentation" style="max-width:50%;margin:5px;float:right;">
 
 One project I’m especially proud of is the Research Faculty Search Engine I built for the Data Analytics Center. I led development from start to finish, designing both the backend and frontend, integrating faculty data, and deploying a fully functional web application. The tool helps streamline outreach by letting users search and filter faculty based on their research area and funding history. Building something genuinely useful — something with real stakeholders and long-term impact — is a rare opportunity for an undergraduate. It pushed me to think not just like a coder, but like a software engineer: balancing usability, performance, and maintainability while meeting project goals. Leading this effort taught me how to take ownership of a project and follow through with clarity and professionalism.
 

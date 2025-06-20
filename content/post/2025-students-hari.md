@@ -9,7 +9,7 @@ tags = ["rc"]
 categories = ["feature"]
 +++
 
-<img src="/images/2025-students/hari-1.png" alt="Hari Periyasamy" style="max-width:50%;margin:5px;margin-top:20px;float:right;">
+<img src="/images/2025-students/hari-1.png" alt="Hari Periyasamy" style="max-width:50%;margin:5px;float:right;">
 
 As a student worker at UVA Research Computing, Hari Periyasamy gained practical experience in software development while taking on leadership roles. He contributed to maintaining and improving the team’s website, developed APIs, and helped onboard and support fellow students. Through these opportunities, Hari built important skills in teamwork, communication, and professional software development. In this Q&A, he shares how his time at Research Computing expanded his technical knowledge, boosted his confidence in public speaking, and prepared him for a software engineering internship at Amazon.
 
@@ -40,7 +40,7 @@ Gladys was instrumental in ensuring that we worked on projects that aligned with
 
 ### How has this experience helped prepare you for your future academic or professional goals? 
 
-<img src="/images/2025-students/hari-2.png" alt="Hari Periyasamy presentation" style="max-width:50%;margin:5px;margin-top:20px;float:right;">
+<img src="/images/2025-students/hari-2.png" alt="Hari Periyasamy presentation" style="max-width:50%;margin:5px;float:right;">
 
 After this semester, I am pursuing an internship at Amazon (AWS) as a Software Development Engineer Intern. My experience at UVA Research Computing played a heavy role in obtaining that internship, as the projects that I mentioned in my resume covered a wide variety of topics, including API development, continuous integration/continuous delivery involvement, and website refactoring. Working in an environment where I had to be ready for any type of project strengthened my overall knowledge and accelerated how quickly I learn new technologies.
 

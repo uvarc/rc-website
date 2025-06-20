@@ -9,7 +9,7 @@ tags = ["rc"]
 categories = ["feature"]
 +++
 
-<img src="/images/2025-students/jennifer-1.png" alt="Jennifer Vo" style="max-width:50%;margin:5px;margin-top:20px;float:right;">
+<img src="/images/2025-students/jennifer-1.png" alt="Jennifer Vo" style="max-width:50%;margin:5px;float:right;">
 
 As a [student worker](https://www.rc.virginia.edu/about/students/) at UVA Research Computing, Jennifer Vo blended technical development with community outreach. She enhanced the Research Computing Learning site, streamlined internal workflows, and represented the team at national workshops. In this Q&A, she reflects on how hands-on projects, mentorship, and cross-disciplinary collaboration helped her grow as both a developer and communicator. That growth played a direct role in helping her secure a full-time position after graduation.
 
@@ -26,7 +26,7 @@ I was looking for an opportunity to gain hands-on technical and professional exp
 
 ### What kinds of responsibilities and opportunities did you have as a student worker? 
 
-<img src="/images/2025-students/jennifer-2.jpg" alt="Jennifer Vo presentation" style="max-width:50%;margin:5px;margin-top:20px;float:right;">
+<img src="/images/2025-students/jennifer-2.jpg" alt="Jennifer Vo presentation" style="max-width:50%;margin:5px;float:right;">
 
 I mostly worked on and led projects. My primary project involved contributing to the development and organization of instructional content on the Research Computing Learning site. I worked closely with staff to design a more efficient workflow for uploading and maintaining workshop materials. Beyond technical tasks, I had several leadership and outreach opportunities, such as representing this student program at the Coalition for Academic Scientific Computation Spring 2025 Member Meeting and Cyberinfrastructure Leadership Academy Workshop, where I spoke on a panel. I also collaborated with the Virginia Women in High Performance Computing committee to host virtual events that showcased career paths and trends in research computing, helping connect HPC professionals across Virginia institutions.
 
@@ -44,7 +44,7 @@ I hope the documentation and workflows I developed will continue to support cons
 
 ### How did the UVA Research Computing team support your growth and learning throughout your time there? 
 
-<img src="/images/2025-students/jennifer-3.png" alt="Jennifer Vo with fellow student workers" style="max-width:50%;margin:5px;margin-top:20px;float:right;">
+<img src="/images/2025-students/jennifer-3.png" alt="Jennifer Vo with fellow student workers" style="max-width:50%;margin:5px;float:right;">
 
 The UVA Research Computing team was incredibly supportive and generous with their time and expertise. From day one, I was encouraged to ask questions, take ownership of my projects, and share ideas — regardless of my student status. Their mentorship helped me build confidence in professional settings and taught me how to communicate effectively across technical and non-technical audiences. One particularly meaningful moment was presenting my work to multiple stakeholders, including senior leadership. It was both a challenge and a privilege, and I’m incredibly grateful for the trust and support that made experiences like that possible. I always felt like a valued team member, not just a temporary intern.
 
