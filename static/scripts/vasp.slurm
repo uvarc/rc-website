@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH --account my_acct
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=40
-#SBATCH --time=3-00:00:00
-#SBATCH --output=thermo.out
+#SBATCH --account=my_acct
 #SBATCH --partition=parallel
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=96
+#SBATCH --time=1-00:00:00
+#SBATCH --output=thermo.out
 
 module load intel
 
