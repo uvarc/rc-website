@@ -47,6 +47,8 @@ title = "Group Claim Form"
       margin-top: 10px;
     }
   </style>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/  ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/claim-form.js"></script>
 </head>
 
 
@@ -63,9 +65,3 @@ title = "Group Claim Form"
     <div class="message" id="resultMessage"></div>
   </div>
 </body>
-  <script>
-    $(document).ready(function () {
-        const sections = document.querySelectorAll(".blog-sidebar");
-        sections.forEach(section => section.remove());
-    });
-  </script>
