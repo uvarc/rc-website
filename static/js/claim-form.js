@@ -46,22 +46,16 @@
             console.log("Fetched groups and resources:", consoleData);
     
             // Parse and populate user groups and resources
-            const { userGroups, userResources } = parseConsoleData(jsonResponse);
-    
-           
-    
-            // Process user resources if available
-            if (!Array.isArray(userResources) || userResources.length === 0) {
-                console.warn("No user resources found.");
-                document.getElementById("existing-resources-preview").style.display = "none";
-    
-                // Show the empty state message
-                document.getElementById("empty-message").style.display = "block";
-                return;
+            const {userGroups} = parseConsoleData(jsonResponse);
+            // Populate dropdowns for user groups
+            if (Array.isArray(userGroups) && userGroups.length > 0) {
+                console.log("Populating user groups:", userGroups);
+                populateUserGroupsDropdown(userGroups);
             } else {
-                console.log("Processing user resources...");
-                processUserResources(jsonResponse);
+                console.warn("No user groups found.");
+                populateUserGroupsDropdown([]);
             }
+    
         } catch (error) {
             console.error("Error fetching user groups:", error);
             handleApiError(error); // Display a user-friendly error message
@@ -69,6 +63,69 @@
             // Remove the waiting message
             utils?.removeWaitingMessage?.() || waitingMessage.remove();
         }
+    }
+    function parseConsoleData(data) {
+        if (!Array.isArray(data) || data.length === 0) {
+            console.error("Invalid consoleData format or empty data:", data);
+            return {userGroups: []};
+        }
+        const userGroups = data[0]?.user_groups || [];
+    
+        console.log("Parsed user groups:", userGroups);
+        return { userGroups };
+    }
+
+
+    function populateUserGroupsDropdown(groups) {
+        const $dropdown = $('#user_groups');
+        const currentValue = $dropdown.val();
+            // Clear existing options but retain the placeholder
+            $dropdown.empty();
+            $dropdown.append(
+                $('<option>', {
+                    value: '',
+                    text: '- Select a group -',
+                    selected: true,
+                    disabled: true
+                })
+            );
+    
+            console.log(`Populating dropdown: ${$dropdown.attr('id')} with groups:`, groups);
+    
+            if (groups.length) {
+                groups.forEach(group => {
+                    const groupName = typeof group === 'string' ? group : group.name;
+                    const option = $('<option>', {
+                        value: groupName.trim(),
+                        text: groupName.trim(),
+                    });
+    
+                    // Restore previous selection if the value exists
+                    if (groupName.trim() === currentValue) {
+                        option.prop('selected', true);
+                    }
+    
+                    $dropdown.append(option);
+                });
+    
+                $dropdown.prop('disabled', false);
+            } else {
+                console.warn("No groups found to populate.");
+                $dropdown.append(
+                    $('<option>', {
+                        value: '',
+                        text: 'No groups available - contact support',
+                        disabled: true,
+                    })
+                );
+                //$dropdown.prop('disabled', true);
+            }
+    
+            // Trigger change event for validation or dependent logic
+            $dropdown.trigger('change');
+       
+    
+        console.log('Dropdown populated successfully.');
     }
 
     $(document).ready(function () {
