@@ -27,7 +27,7 @@
     async function fetchAndPopulateGroups(userId) {
         try {
             // Construct the API request URL
-            const requestUrl = `${API_CONFIG.baseUrl}/${userId}`;
+            const requestUrl = `${API_CONFIG.baseUrl}/${userId}?user_groups_info=true`;
             console.log("Request URL:", requestUrl);
     
             // Perform the AJAX call using jQuery
@@ -48,14 +48,7 @@
             // Parse and populate user groups and resources
             const { userGroups, userResources } = parseConsoleData(jsonResponse);
     
-            // Populate dropdowns for user groups
-            if (Array.isArray(userGroups) && userGroups.length > 0) {
-                console.log("Populating user groups:", userGroups);
-                populateGrouperMyGroupsDropdown(userGroups);
-            } else {
-                console.warn("No user groups found.");
-                populateGrouperMyGroupsDropdown([]);
-            }
+           
     
             // Process user resources if available
             if (!Array.isArray(userResources) || userResources.length === 0) {
