@@ -1,4 +1,4 @@
-FROM ghcr.io/uvarc/hugo-build:v3
+FROM ghcr.io/uvarc/hugo-build:v_extended_0.133.0
 
 # working directory
 WORKDIR /site
@@ -10,4 +10,4 @@ COPY . /site
 EXPOSE 1313
 
 # Run Hugo server
-ENTRYPOINT ["hugo-0.133.0-ext", "server", "--bind", "0.0.0.0"]
+ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0"]
