@@ -409,6 +409,10 @@ Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar
 
 As outlined above, VMs are available in various sizes. Please request a VM that is appropriately sized for your specific workflow. For larger groups or projects involving computationally intensive tasks, we recommend selecting a larger VM, with a preference for Small or above. 
 
+<div class="bd-callout bd-callout-warning">
+  <p>Please note that PIs must specifically request for their associated Linux VM to be provisioned as a frontend to Rio. Access to Rio from the VM is not granted by default. After submitting the Linux VM request, PIs should also submit a general support request through our <a href="https://rc.virginia.edu/form/support-request/">webform</a> specifying that the VM requires access to Rio. The title of the project should be included in the details of the request.</p>
+</div>
+
 [<button class="btn btn-success">Request Ivy VM for Rio</button>](https://services.rc.virginia.edu/ivyvm)
   
 ## System Details

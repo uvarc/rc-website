@@ -1,19 +1,21 @@
 {{ $keywords := default (slice "all") (split (.Get "keywords" | lower) ",") }}
-{{- $gistJ := getJSON "https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages" -}}
-{{- range $gistJ -}}
-   {{- range $key,$values := . -}}
-       {{- if and (eq $key "body") (intersect (split (.|lower) " ") $keywords) -}} 
-           <div class="alert alert-danger" role="alert">
-           {{- if in $keywords "all" -}}
-              {{ . | markdownify }}
-           {{- else }}    
-               {{- range (split $values "<br>") -}}
-                   {{- if intersect (split (.|lower) " ") $keywords -}}
-                       {{ . | markdownify }} <br>
-                    {{- end -}}
-               {{- end -}} 
-           {{- end -}}
-           </div>
-       {{- end -}}
-   {{- end -}}
+{{ with resources.GetRemote "https://tja4lfp3da.execute-api.us-east-1.amazonaws.com/api/messages" }}
+  {{ $gistJ := .Content | transform.Unmarshal }}
+    {{- range $gistJ -}}
+    {{- range $key,$values := . -}}
+        {{- if and (eq $key "body") (intersect (split (.|lower) " ") $keywords) -}} 
+            <div class="alert alert-danger" role="alert">
+            {{- if in $keywords "all" -}}
+                {{ . | markdownify }}
+            {{- else }}    
+                {{- range (split $values "<br>") -}}
+                    {{- if intersect (split (.|lower) " ") $keywords -}}
+                        {{ . | markdownify }} <br>
+                        {{- end -}}
+                {{- end -}} 
+            {{- end -}}
+            </div>
+        {{- end -}}
+    {{- end -}}
+    {{- end -}}
 {{- end -}}

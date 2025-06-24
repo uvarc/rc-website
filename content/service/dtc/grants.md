@@ -2,7 +2,7 @@
 author = "RC Staff"
 description = ""
 title = "Digital Technology Core Seed Grants"
-date = "2025-04-2T00:00:00-05:00"
+date = "2025-04-02T00:00:00-05:00"
 draft = false
 tags = []
 categories = []

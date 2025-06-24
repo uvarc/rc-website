@@ -81,4 +81,4 @@ Default version changes include:
 
 ## Post-Maintenance Note
 
-- Due to issues with accessing subfolders in the new JupyterLab, we have reverted to the pre-maintenance version on Open OnDemand. However, the issue is not observed when Jupyter is launched manually from the command line, and so the new version is still kept as a module for those who wish to launch it manually (e.g. within a Desktop session).
+- Due to issues with accessing subfolders in the new JupyterLab, we have reverted to the pre-maintenance version on Open OnDemand. However, the issue is not observed when Jupyter is launched manually from the command line, and so the new version is still kept as a module for those who wish to launch it manually (e.g. within a Desktop session). Consequently the default version of miniforge is also reverted to the pre-maintenance version.

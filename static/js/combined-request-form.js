@@ -782,16 +782,16 @@
                 // Get the currently checked radio button (in case of multiple triggers)
                 const changeExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'update-storage';
                 const retireExsisting = $('#storage-fields input[name="type-of-request"]:checked').val() === 'retire-storage';
-                const $selectedRadio = $('input[name="selected-st"]:checked');
+                const selectedRadio = $('input[name="selected-st"]:checked');
                 // Traverse to the parent <tr>
-                const $parentRow = $selectedRadio.closest('tr');
-                const storageText = $parentRow[0].cells[5].textContent.trim();
-                const storageTire = $parentRow[0].cells[4].textContent.trim();
+                const parentRow = selectedRadio.closest('tr');
+                const storageText = parentRow[0].cells[5].textContent.trim();
+                const storageTire = parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(storageText);
-                const freeSpaceNumber = $parentRow.attr('data-free-space');
+                const freeSpaceNumber = parentRow.attr('data-free-space');
                 $('#project-title-container, #project-description-container').show();
-                const projectName = $selectedRadio.data('project');
-                const projectDesc = $selectedRadio.data('projectdesc'); 
+                const projectName = selectedRadio.data('project');
+                const projectDesc = selectedRadio.data('projectdesc'); 
                 document.getElementById("project-title").value = projectName;
                 document.getElementById("project-description-text-storage").value = projectDesc;
                 $('#capacity').val(number); // Update the capacity field with the selected row's storage size
@@ -800,13 +800,13 @@
                 } else {
                     document.getElementById("storage-capacity").style.display = "none";
                 }
-                if (storageTire === 'ssz_standard' && changeExsisting) {
+                if (storageTire === 'Research Standard(ssz)' && changeExsisting) {
                     $('#free_resource_distribution').show();
                     $('#freeSpace').val(freeSpaceNumber);
                 } else
                     $('#free_resource_distribution').hide();
                 // Retrieve the data-additional attribute
-                const additionalData = $parentRow.attr('data-additional');
+                const additionalData = parentRow.attr('data-additional');
                 
                 // Parse it to an object (if needed)
                 billingData;
@@ -838,17 +838,17 @@
         $(document).on("change", 'input[name="selected-su"]', function (event) {
             
                 // Get the currently checked radio button (in case of multiple triggers)
-                const $selectedRadio = $('input[name="selected-su"]:checked');
+                const selectedRadio = $('input[name="selected-su"]:checked');
                 // Traverse to the parent <tr>
-                const $parentRow = $selectedRadio.closest('tr');
-                const fullText = $parentRow[0].cells[5].textContent.trim(); // 5th <td> (index 4)
+                const parentRow = selectedRadio.closest('tr');
+                const fullText = parentRow[0].cells[5].textContent.trim(); // 5th <td> (index 4)
                 const match = fullText.match(/(\d+)\s+SUs/);
-                const tire = $parentRow[0].cells[4].textContent.trim();
+                const tire = parentRow[0].cells[4].textContent.trim();
                 const number = parseInt(match[1]);
                 console.log("Selected SUs:", number); 
                 $('#new-project-name-container, #project-description').show();
-                const projectName = $selectedRadio.data('project');
-                const projectDesc = $selectedRadio.data('projectdesc'); 
+                const projectName = selectedRadio.data('project');
+                const projectDesc = selectedRadio.data('projectdesc'); 
                 document.getElementById("new-project-name").value = projectName;
                 document.getElementById("project-description-text").value = projectDesc;
 
@@ -862,7 +862,7 @@
                 $('#su-quantity').val(0); 
                 
                 // Retrieve the data-additional attribute
-                const additionalData = $parentRow.attr('data-additional');
+                const additionalData = parentRow.attr('data-additional');
                 try {
                     billingData.fdm_billing_info = JSON.parse(additionalData);
                 } catch (e) {
@@ -1290,13 +1290,13 @@
                selectedSU = $('input[name="selected-su"]:checked').val();
                if (selectedSU) {
                    var checkedRadio=$('input[name="selected-su"]:checked')               
-                   selectedTier=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
-                   selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();                
+                   tierName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
+                   selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();
+                   selectedTier = checkedRadio.data('tier');
                  }
                  let existingResource = consoleData[0]?.user_resources?.find(resource =>
                     resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                    resource.resources?.hpc_service_units?.[selectedSU]?.tier.toLowerCase() === selectedTier.toLowerCase()
-                );
+                   resource.resources?.hpc_service_units?.[selectedSU]?.tier === selectedTier);
                 if (!existingResource) {
                     showErrorMessage(`⚠ The selected Group and Tier do not match any existing resources.`);
                     return null;
@@ -1356,12 +1356,13 @@
                     selectedST = $('input[name="selected-st"]:checked').val();
                     if (selectedST) {
                         var checkedRadio=$('input[name="selected-st"]:checked');
-                        selectedTier=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
+                        tierName=checkedRadio.closest('tr').find('td:nth-child(5)').text().trim();
                         selectedGroup=checkedRadio.closest('tr').find('td:nth-child(3)').text().trim();
+                        selectedTier = checkedRadio.data('tier');
                     }
                     let existingResource = consoleData[0]?.user_resources?.find(resource =>
                     resource.group_name.toLowerCase() === selectedGroup.toLowerCase() &&
-                    resource.resources?.storage?.[selectedST]?.tier.toLowerCase() === selectedTier.toLowerCase());
+                    resource.resources?.storage?.[selectedST]?.tier === selectedTier);
                
                     if (!existingResource) {
                        showErrorMessage(`⚠ The selected Group and Tier do not match any existing resources.`);
@@ -1864,7 +1865,7 @@
                     const requestStatus = details.request_status ? `${details.request_status}` : "N/A";
                     //populate free_space 
                     let freeSpaceValue = "N/A"; 
-                    if(tier === 'ssz_standard' && details.billing_details?.free_resource_distribution_info) {
+                    if(originalTier === 'ssz_standard' && details.billing_details?.free_resource_distribution_info) {
                         const freeInfo = details.billing_details.free_resource_distribution_info;
                         const key = Object.keys(freeInfo)[0];
                         freeSpaceValue = freeInfo[key] || "N/A";
@@ -1873,8 +1874,8 @@
                         <tr data-free-space="${freeSpaceValue}" 
                              data-additional='${billingJson}'>
                             <td>
-                                <input type="radio" name="selected-st" value="${groupName}-${tier}" 
-                                    data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
+                                <input type="radio" name="selected-st" value="${groupName}-${originalTier}" 
+                                    data-group="${groupName}" data-tier="${originalTier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                             </td>
                             <td>${projectName}</td> 
                             <td>${groupName}</td>
@@ -1922,8 +1923,8 @@
                 const row = `
                     <tr data-additional='${billingJson}'>
                         <td>
-                            <input type="radio" name="selected-su" value="${groupName}-${tier}" 
-                                data-group="${groupName}" data-tier="${tier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
+                            <input type="radio" name="selected-su" value="${groupName}-${originalTier}" 
+                                data-group="${groupName}" data-tier="${originalTier}" data-project="${projectName}" data-projectDesc="${projectDesc}">
                         </td>
                         <td>${projectName}</td> 
                         <td>${groupName}</td>

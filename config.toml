@@ -4,7 +4,6 @@ publishdir = "public"
 languageCode = "en-us"
 theme = "rc-bootstrap-v4"
 copyright = " {year} "
-paginate = 20
 disableKinds= ["RSS","404"]
 # ignoreCache = true
 # date_format = "January 2, 2006"
@@ -70,7 +69,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   # eventsUrl = "https://s3.amazonaws.com/uvarc-resources/website/events.csv"
 
 [params.support]
-  enableForms = true
+  enableForms = false
   
 [params.metrics]
   coreHours = "6817198"
@@ -133,3 +132,11 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   changefreq = "daily"
   filename = "sitemap.xml"
   priority = 0.5
+
+[pagination]
+  pagerSize = 20
+
+[module]
+    [[module.mounts]]
+        source = "static/"
+        target = "assets/static/"
