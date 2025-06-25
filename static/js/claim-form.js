@@ -4,6 +4,7 @@
     const hostname = window.location.hostname;
 
     let serviceHost = '';
+    const userId = '';
     
     if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('staging.rc.virginia.edu')) {
       serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
@@ -99,15 +100,8 @@
                         value: groupName.trim(),
                         text: groupName.trim(),
                     });
-    
-                    // Restore previous selection if the value exists
-                    if (groupName.trim() === currentValue) {
-                        option.prop('selected', true);
-                    }
-    
                     $dropdown.append(option);
                 });
-    
                 $dropdown.prop('disabled', false);
             } else {
                 console.warn("No groups found to populate.");
@@ -118,20 +112,43 @@
                         disabled: true,
                     })
                 );
-                //$dropdown.prop('disabled', true);
             }
     
-            // Trigger change event for validation or dependent logic
-            $dropdown.trigger('change');
-       
-    
         console.log('Dropdown populated successfully.');
+    }
+
+    $(document).on('submit', '#claimForm', handleFormSubmit);
+
+    function handleFormSubmit(e) {
+        e.preventDefault(); // Prevent default form behavior
+    
+        const selectedGroup = $('#user_groups').val();
+        const resultMessage = $('#resultMessage');
+    
+        if (!selectedGroup) {
+            resultMessage.text('Please select a group.').css('color', 'red');
+            return;
+        }
+    
+        $.ajax({
+            url: 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/ticket/claim-group',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ group: selectedGroup, uid: userId }),
+            success: function(response) {
+                resultMessage.text('Group "' + selectedGroup + '" claimed successfully.').css('color', 'green');
+            },
+            error: function(xhr) {
+                const message = xhr.responseJSON?.message || 'Failed to claim group.';
+                resultMessage.text('Error: ' + message).css('color', 'red');
+            }
+        });
     }
 
     $(document).ready(function () {
         const sections = document.querySelectorAll(".blog-sidebar");
         sections.forEach(section => section.remove());
         const params = new URLSearchParams(window.location.search);
-        const userId = params.get("user");
+        userId = params.get("user");
         fetchAndPopulateGroups(userId);
     });
