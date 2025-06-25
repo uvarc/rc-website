@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-06-20T00:00:00"
+date = "2025-05-14T00:00:00"
 title = "Student Q&A: Jennifer Vo on Building Confidence, Community, and a Career in Research Computing"
 draft = false
 tags = ["rc"]

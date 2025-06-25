@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-06-20T00:00:00"
+date = "2025-05-14T00:00:00"
 title = "Student Q&A: Matthew Galitz on Designing Tools That Power UVA Research"
 draft = false
 tags = ["rc"]
