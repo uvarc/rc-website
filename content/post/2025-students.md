@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-06-20T00:00:00"
+date = "2025-05-14T00:00:00"
 title = "Beyond the Classroom: How UVA Students Are Shaping & Growing Through Research Computing"
 draft = false
 tags = ["rc"]
