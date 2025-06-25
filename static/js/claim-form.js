@@ -4,7 +4,6 @@
     const hostname = window.location.hostname;
 
     let serviceHost = '';
-    const userId = '';
     
     if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('staging.rc.virginia.edu')) {
       serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
@@ -124,6 +123,9 @@
     
         const selectedGroup = $('#user_groups').val();
         const resultMessage = $('#resultMessage');
+
+        const params = new URLSearchParams(window.location.search);
+        const userId = params.get("user");
     
         if (!selectedGroup) {
             resultMessage.text('Please select a group.').css('color', 'red');
@@ -149,6 +151,6 @@
         const sections = document.querySelectorAll(".blog-sidebar");
         sections.forEach(section => section.remove());
         const params = new URLSearchParams(window.location.search);
-        userId = params.get("user");
+        const userId = params.get("user");
         fetchAndPopulateGroups(userId);
     });
