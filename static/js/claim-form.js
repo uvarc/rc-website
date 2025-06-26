@@ -16,6 +16,7 @@
     
     const API_CONFIG = {
         baseUrl: `${serviceHost}/uvarc/api/resource/rcwebform/user`,
+        groupClaimUrl: `${serviceHost}/uvarc/api/ticket/PI/claim-group`,
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -133,12 +134,13 @@
         }
     
         $.ajax({
-            url: 'https://uvarc-unified-service.pods.uvarc.io/uvarc/api/ticket/claim-group',
+            url:`${API_CONFIG.groupClaimUrl}`,
             method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify({ group: selectedGroup, uid: userId }),
             success: function(response) {
-                resultMessage.text('Group "' + selectedGroup + '" claimed successfully.').css('color', 'green');
+                const message = response.message || 'Group "' + selectedGroup + '" claimed successfully.';
+                $('#resultMessage').text(message).css('color', 'green');
             },
             error: function(xhr) {
                 const message = xhr.responseJSON?.message || 'Failed to claim group.';
