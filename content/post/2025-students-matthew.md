@@ -6,7 +6,7 @@ date = "2025-05-14T00:00:00"
 title = "Student Q&A: Matthew Galitz on Designing Tools That Power UVA Research"
 draft = false
 tags = ["rc"]
-categories = ["feature"]
+categories = []
 +++
 
 <img src="/images/2025-students/matthew-1.png" alt="Matthew Galitz" style="max-width:50%;margin:5px;float:right;">
