@@ -2,11 +2,11 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-06-20T00:00:00"
+date = "2025-05-14T00:00:00"
 title = "Student Q&A: Hari Periyasamy on Learning to Lead Through Code and Collaboration"
 draft = false
 tags = ["rc"]
-categories = ["feature"]
+categories = []
 +++
 
 <img src="/images/2025-students/hari-1.png" alt="Hari Periyasamy" style="max-width:50%;margin:5px;float:right;">
