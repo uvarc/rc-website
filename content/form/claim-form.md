@@ -1,8 +1,16 @@
 +++
-title = "Group Claim Form"
+date = "2023-09-18T23:59:16-05:00"
+tags = ["search"]
+categories = ["forms"]
+images = [""]
+author = "Staff"
+description = ""
+title = "PI Group Claim Form"
+draft = false
+type = "form"
+private = true
 +++
-<head>
-  <meta charset="UTF-8">
+<style>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -46,22 +54,19 @@ title = "Group Claim Form"
       text-align: center;
       margin-top: 10px;
     }
-  </style>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/  ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="/js/claim-form.js"></script>
-</head>
+</style>
+<!-- Core scripts needed for form functionality -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/claim-form.js"></script>
 
-
-<body>
-
-  <div class="form-container">
-    <form id="claimForm">
-      <label for="user_groups">Select a Group to Claim:</label>
-      <select id="user_groups" name="user_groups" required>
-        <option value="">-- Select Group --</option>
-      </select>
-      <button type="submit">Claim</button>
-    </form>
-    <div class="message" id="resultMessage"></div>
-  </div>
-</body>
+<div class="message" id="resultMessage"></div>
+<form id="claimForm">
+  <label for="user_groups">Select a Group to Claim:</label>
+  <select id="user_groups" name="user_groups" required>
+    <option value="">-- Select Group --</option>
+  </select>
+  <button type="submit">Claim</button>
+</form>
+<script type="text/javascript" src="/js/response-message.js"></script>
+<script type="text/javascript" src="/js/user-session-v2.js"></script>
+<script type="text/javascript" src="/js/support-request.js"></script>
