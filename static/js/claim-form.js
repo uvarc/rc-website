@@ -16,7 +16,7 @@
     
     const API_CONFIG = {
         baseUrl: `${serviceHost}/uvarc/api/resource/rcwebform/user`,
-        groupClaimUrl: `${serviceHost}/uvarc/api/ticket/PI/claim-group`,
+        groupClaimUrl: `${serviceHost}/uvarc/api/ticket/pi/claim-group`,
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
