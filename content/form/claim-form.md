@@ -61,6 +61,7 @@ private = true
 
 <div class="message" id="resultMessage"></div>
 <form id="claimForm">
+  {{% form-userinfo-v2 %}} 
   <label for="user_groups">Select a Group to Claim:</label>
   <select id="user_groups" name="user_groups" required>
     <option value="">-- Select Group --</option>
