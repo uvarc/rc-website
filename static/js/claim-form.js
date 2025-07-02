@@ -153,6 +153,7 @@
             success: function(response) {
                 const message = response.message || 'Group "' + selectedGroup + '" claimed successfully.';
                 $('#resultMessage').text(message).css('color', 'green');
+                $('#user_groups').val() = "";
             },
             error: function(xhr) {
                 const message = xhr.responseJSON?.message || 'Failed to claim group.';
