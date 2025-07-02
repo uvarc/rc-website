@@ -116,7 +116,7 @@
     
         console.log('Dropdown populated successfully.');
     }
-
+    
     $(document).on('submit', '#claimForm', handleFormSubmit);
 
     function handleFormSubmit(e) {
@@ -148,6 +148,14 @@
             }
         });
     }
+    // ========.===========================
+    // Setup Event Handlers
+    // ===================================
+    document.addEventListener("DOMContentLoaded", function() {
+        // Hide fields as required
+        document.querySelector('#departmet_clasification_row').style.display = 'none';
+        document.querySelector('#discipline_row').style.display = 'none';
+    });
 
     $(document).ready(function () {
         const sections = document.querySelectorAll(".blog-sidebar");
