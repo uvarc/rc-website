@@ -56,3 +56,25 @@ When RStudio opens in your web browser, it will appear just like the RStudio tha
 
 # Closing the Interactive Session
 When you are done, quit the RStudio Server application and terminate the session. The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged until the specified time limit is reached.
+
+# RStudio in Rio
+## Access
+1. Begin by [connecting to your Linux VM](https://www.rc.virginia.edu/userinfo/ivy/#connecting-to-your-vm)
+   - This will display the Open OnDemand dashboard.
+2. On the top right of the menu bar of the Open OnDemand dashboard, click on “Interactive Apps”.
+3. In the drop-down box, click on “RStudio Server”.
+
+## Requesting an Instance
+Requesting an instance in Rio OOD is the same as Rivanna/Afton (described above). More information on partitions and the system can be found [here](https://www.rc.virginia.edu/userinfo/ivy/#system-details). 
+
+## Using RStudio
+Using RStudio will be the same as on your laptop or in Rivanna/Afton. It's important to keep in mind that outbound connections are prohibited and only ceritan sites are whitelisted. If you need to install packages from external repositories (Eg CRAN or Bioconductor), you'll need to set the proxy:
+```
+> Sys.setenv(HTTPS_PROXY="http://figgis-s.hpc.virginia.edu:8080")
+> Sys.setenv(HTTP_PROXY="http://figgis-s.hpc.virginia.edu:8080") 
+```
+This should be saved inside of your Rscript if you're running the file. Otherwise, the commands can simply be run in the console. 
+
+Installed R packages will be saved under `/standard/ivy-xxxx-xxxx/<computingID>/R/X.Y` where `ivy-xxxx-xxxx` is the name of your project, `<computingID>` is your computing ID, and `X.Y` is the major(X) and minor(Y) version number of R you're using.
+
+Closing the session is the same as described above in the standard security zone implementation.
