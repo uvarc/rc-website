@@ -76,7 +76,7 @@
             utils?.removeWaitingMessage?.() || waitingMessage.remove();
         }
     }
-    
+
     function parseConsoleData(data) {
         if (!Array.isArray(data) || data.length === 0) {
             console.error("Invalid consoleData format or empty data:", data);
@@ -167,6 +167,7 @@
         // Hide fields as required
         document.querySelector('#departmet_clasification_row').style.display = 'none';
         document.querySelector('#discipline_row').style.display = 'none';
+        document.querySelector('#discipline').removeAttribute('required');
     });
 
     $(document).ready(function () {
