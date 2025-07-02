@@ -137,7 +137,7 @@
         const resultMessage = $('#resultMessage');
 
         const params = new URLSearchParams(window.location.search);
-        const userId = params.get("user");
+        const userId = getUserId();
     
         if (!selectedGroup) {
             resultMessage.text('Please select a group.').css('color', 'red');
