@@ -168,6 +168,8 @@
         document.querySelector('#departmet_clasification_row').style.display = 'none';
         document.querySelector('#discipline_row').style.display = 'none';
         document.querySelector('#discipline').removeAttribute('required');
+        document.querySelector('#department')?.removeAttribute('required');
+        document.querySelector('#classification')?.removeAttribute('required');
     });
 
     $(document).ready(function () {
