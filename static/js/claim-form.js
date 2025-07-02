@@ -76,6 +76,7 @@
             utils?.removeWaitingMessage?.() || waitingMessage.remove();
         }
     }
+    
     function parseConsoleData(data) {
         if (!Array.isArray(data) || data.length === 0) {
             console.error("Invalid consoleData format or empty data:", data);
@@ -128,7 +129,7 @@
         console.log('Dropdown populated successfully.');
     }
     
-    //$(document).on('submit', '#claimForm', handleFormSubmit);
+   $(document).on('submit', '#claimForm', handleFormSubmit);
 
     function handleFormSubmit(e) {
         e.preventDefault(); // Prevent default form behavior
@@ -166,7 +167,6 @@
         // Hide fields as required
         document.querySelector('#departmet_clasification_row').style.display = 'none';
         document.querySelector('#discipline_row').style.display = 'none';
-        $(document).on('submit', '#claimForm', handleFormSubmit);
     });
 
     $(document).ready(function () {
