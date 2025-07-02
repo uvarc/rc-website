@@ -25,6 +25,17 @@
         }
     };
 
+    function getUserId() {
+        const userId = $('#uid').val() || "Unknown"; // Fetch the user ID dynamically
+        if (userId === "Unknown") {
+            console.error("User ID is not available. Please ensure you are logged in.");
+            showErrorMessage("Failed to retrieve user information. Please log in and refresh the page.");
+            throw new Error("User ID is unknown.");
+        }
+        console.log("User ID:", userId);
+        return userId;
+    }
+
     async function fetchAndPopulateGroups(userId) {
         try {
             // Construct the API request URL
@@ -160,7 +171,6 @@
     $(document).ready(function () {
         const sections = document.querySelectorAll(".blog-sidebar");
         sections.forEach(section => section.remove());
-        const params = new URLSearchParams(window.location.search);
-        const userId = params.get("user");
+        const userId = getUserId();
         fetchAndPopulateGroups(userId);
     });
