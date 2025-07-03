@@ -136,8 +136,6 @@
     
         const selectedGroup = $('#user_groups').val();
         const resultMessage = $('#resultMessage');
-
-        const params = new URLSearchParams(window.location.search);
         const userId = getUserId();
     
         if (!selectedGroup) {
@@ -149,11 +147,11 @@
             url:`${API_CONFIG.groupClaimUrl}`,
             method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ group: selectedGroup, uid: userId }),
+            data: JSON.stringify({ uid: userId, group_name: selectedGroup }),
             success: function(response) {
                 const message = response.message || 'Group "' + selectedGroup + '" claimed successfully.';
                 $('#resultMessage').text(message).css('color', 'green');
-                $('#user_groups').val('');
+                $('#user_groups').val(''); 
             },
             error: function(xhr) {
                 const message = xhr.responseJSON?.message || 'Failed to claim group.';
