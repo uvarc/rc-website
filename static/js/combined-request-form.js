@@ -220,7 +220,7 @@
                 for (let attempt = 1; attempt <= 3; attempt++) {
                     console.log(`Retrying metadata fetch (Attempt ${attempt})...`);
                     await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retry
-        
+                    const userId = getUserId();
                     try {
                         let retryMetadata = await $.ajax({
                             url: metadataUrl,
