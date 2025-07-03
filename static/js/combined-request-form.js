@@ -2031,7 +2031,7 @@
     
             // Set a timeout for metadata loading
             const metadataTimeout = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Metadata loading timed out.')), 15000)
+                setTimeout(() => reject(new Error('Metadata loading timed out.')), 25000)
             );
     
             // Attempt to fetch metadata with a timeout
