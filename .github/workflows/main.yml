@@ -28,10 +28,18 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: echo $BUCKET_NAME
-    - name: Get HUGO container
-      run: docker pull ghcr.io/uvarc/hugo-build:v_extended_0.133.0
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+    - name: Build Docker image
+      uses: docker/build-push-action@v6
+      with:
+        context: .
+        file: ./docker/Dockerfile
+        push: false
+        tags: ghcr.io/uvarc/rc-website:${{ github.ref_name }}
+        target: base
     - name: Run HUGO container
-      run: docker run -e BRANCH=$BRANCH_NAME -e TRAVIS_BRANCH=$BRANCH_NAME -e BUCKET_NAME=${{ secrets.BUCKET_NAME }} -e DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }} -e BUCKET_NAME_STAGING=${{ secrets.BUCKET_NAME_STAGING }} -e STAGING_DISTRIBUTION_ID=${{ secrets.STAGING_DISTRIBUTION_ID }} -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -e MAX_AGE=${{ secrets.MAX_AGE}} ghcr.io/uvarc/hugo-build:v_extended_0.133.0 /root/build-site.sh uvarc/rc-website hugo
+      run: docker run -e BRANCH=$BRANCH_NAME -e TRAVIS_BRANCH=$BRANCH_NAME -e BUCKET_NAME=${{ secrets.BUCKET_NAME }} -e DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }} -e BUCKET_NAME_STAGING=${{ secrets.BUCKET_NAME_STAGING }} -e STAGING_DISTRIBUTION_ID=${{ secrets.STAGING_DISTRIBUTION_ID }} -e AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} -e AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} -e MAX_AGE=${{ secrets.MAX_AGE}} ghcr.io/uvarc/rc-website:${{ github.ref_name }} /root/build-site.sh uvarc/rc-website hugo
   #Broken Link Checker using Broken Link Checker Action provided by technote-space
   # -exclude excludes any vpn links or links that are prone to false negatives
   Broken_Link_Checker:
