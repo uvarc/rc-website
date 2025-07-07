@@ -149,6 +149,8 @@
             contentType: 'application/json',
             data: JSON.stringify({ uid: userId, group_name: selectedGroup }),
             success: function(response) {
+                // Log the entire response for debugging
+                console.log('Success Response:', response);
                 const message = response.message || 'Group "' + selectedGroup + '" claimed successfully.';
                 $('#resultMessage').text(message).css('color', 'green');
                 $('#user_groups').val(''); 
