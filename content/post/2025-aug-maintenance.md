@@ -20,7 +20,9 @@ All systems are expected to return to service by **Wednesday, August 13** at 6 a
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-|idl | 8.9 | 9.1 |
+|cellpose     | 2.3.2 | 3.0.10, 4.0.5 |
+|idl          | 8.9 | 9.1 |
 |openspeedshop| 2.4 | - |
-|totalview |  |  |
+|platform-mpi |9.01.04.03| - |
+|totalview    |  |  |
 {{< /table >}}
