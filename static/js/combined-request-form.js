@@ -1650,7 +1650,11 @@
             }
     
             // Process user resources if available
-            if (!Array.isArray(userResources) || userResources.length === 0) {
+            if (!userResources || 
+                (Array.isArray(userResources.resources?.hpc_service_units) && userResources.resources.hpc_service_units.length === 0 &&
+                    (!userResources.resources.storage || userResources.resources.storage.length === 0)
+                )
+            )  {
                 console.warn("No user resources found.");
                 document.getElementById("existing-resources-preview").style.display = "none";
     
