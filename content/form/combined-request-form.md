@@ -100,8 +100,8 @@ private = true
   <div class="resource_type_container" id = "resource_type_container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
   <fieldset class="form-item form-group form-type-select">
     <div style="display: flex; justify-content: space-between;   align-items: center;">
-            <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
-        <a href="https://staging-onprem.rc.virginia.edu/form/claim-form" id="claimLink" style="margin-left: 10px; font-size: 0.9em; color:green;">claim your group</a>
+        <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
+        <a href="https://staging-onprem.rc.virginia.edu/form/claim-form" id="claimLink" style="margin-left: 10px; font-size: 0.9em; color:green;">PI group ownership claim request</a>
       
     </div>
     <select name="request-type" id="request-type" class="form-control" required>
