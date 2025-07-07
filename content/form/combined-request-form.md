@@ -99,7 +99,11 @@ private = true
   <!-- Resource Type Selection -->
   <div class="resource_type_container" id = "resource_type_container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
   <fieldset class="form-item form-group form-type-select">
-    <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
+    <div style="display: flex; justify-content: space-between;   align-items: center;">
+            <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
+        <a href="https://staging-onprem.rc.virginia.edu/form/claim-form" id="claimLink" style="margin-left: 10px; font-size: 0.9em; color:green;">claim your group</a>
+      
+    </div>
     <select name="request-type" id="request-type" class="form-control" required>
       <option value="service-unit">Allocation's (SU)</option>
       <option value="storage">Storage</option>
@@ -134,10 +138,7 @@ private = true
 
       <!-- Grouper/MyGroups Selection -->
       <div id="mygroups-group-container" style="display: none;">
-        <div style="display: flex; justify-content: space-between;  align-items: center;">
         <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
-        <a href="https://staging-onprem.rc.virginia.edu/form/claim-form" id="claimLink" style="margin-left: 10px; font-size: 0.9em; color:green;">claim your group</a>
-        </div>
         <select id="mygroups-group" class="form-control" required>
             <option value="">- Select a group -</option>
         </select>
