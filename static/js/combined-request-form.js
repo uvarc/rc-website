@@ -1648,13 +1648,29 @@
                 console.warn("No user groups found.");
                 populateGrouperMyGroupsDropdown([]);
             }
-    
+            let hasValidResources = false;
+            if (Array.isArray(userResources)) {
+                // Loop through each resource object in the array
+                userResources.forEach(resource => {
+                    // If we already found valid resources, skip further checks
+                    if (hasValidResources) return;
+            
+                    // Extract hpc_service_units and storage, default to empty objects if missing
+                    const hpcUnits = resource.resources?.hpc_service_units || {};
+                    const storageUnits = resource.resources?.storage || {};
+            
+                    // Check if either hpc_service_units or storage has any keys (i.e., is not empty)
+                    const hasHpcUnits = Object.keys(hpcUnits).length > 0;
+                    const hasStorageUnits = Object.keys(storageUnits).length > 0;
+            
+                    // If either has data, mark hasValidResources as true
+                    if (hasHpcUnits || hasStorageUnits) {
+                        hasValidResources = true;
+                    }
+                });
+            }
             // Process user resources if available
-            if (!userResources || 
-                (Array.isArray(userResources.resources?.hpc_service_units) && userResources.resources.hpc_service_units.length === 0 &&
-                    (!userResources.resources.storage || userResources.resources.storage.length === 0)
-                )
-            )  {
+            if (!hasValidResources) {
                 console.warn("No user resources found.");
                 document.getElementById("existing-resources-preview").style.display = "none";
     
