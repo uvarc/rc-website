@@ -1329,7 +1329,7 @@
                     "project_name": formData.projectName?.trim(),
                     "project_desc": formData.projectDescription.trim(),
                     "data_agreement_signed": existingResource.data_agreement_signed,
-                    "pi_uid": userId,
+                    "pi_uid": existingResource.pi_uid,
                     "resources": {
                         "hpc_service_units": {
                             [selectedSU]: {
@@ -1391,7 +1391,7 @@
                       let changePayload = {
                         "group_name": selectedGroup,
                         "data_agreement_signed": existingResource.data_agreement_signed,
-                        "pi_uid": userId,
+                        "pi_uid": existingResource.pi_uid,
                         "project_name": formData.project_title?.trim(),
                         "project_desc": formData.projectDescription.trim(),
                         "resources": {
