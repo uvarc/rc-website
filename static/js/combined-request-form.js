@@ -1649,6 +1649,8 @@
                 populateGrouperMyGroupsDropdown([]);
             }
             let hasValidResources = false;
+            let hasHpcResources = false;
+            let hasStorageResources = false;
             if (Array.isArray(userResources)) {
                 // Loop through each resource object in the array
                 userResources.forEach(resource => {
@@ -1656,15 +1658,15 @@
                     if (hasValidResources) return;
             
                     // Extract hpc_service_units and storage, default to empty objects if missing
-                    const hpcUnits = resource.resources?.hpc_service_units || {};
-                    const storageUnits = resource.resources?.storage || {};
+                    const hpcResources = resource.resources?.hpc_service_units || {};
+                    const storageResources = resource.resources?.storage || {};
             
                     // Check if either hpc_service_units or storage has any keys (i.e., is not empty)
-                    const hasHpcUnits = Object.keys(hpcUnits).length > 0;
-                    const hasStorageUnits = Object.keys(storageUnits).length > 0;
+                    hasHpcResources = Object.keys(hpcResources).length > 0;
+                    hasStorageResources = Object.keys(storageResources).length > 0;
             
                     // If either has data, mark hasValidResources as true
-                    if (hasHpcUnits || hasStorageUnits) {
+                    if (hasHpcResources || hasStorageResources) {
                         hasValidResources = true;
                     }
                 });
@@ -1673,9 +1675,20 @@
             if (!hasValidResources) {
                 console.warn("No user resources found.");
                 document.getElementById("existing-resources-preview").style.display = "none";
-    
                 // Show the empty state message
                 document.getElementById("empty-message").style.display = "block";
+                // Show the empty su table message
+                if (!hasHpcResources) {
+                    const suTableBody = $('#allocation-projects-tbody');
+                    suTableBody.empty();
+                    suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
+                  }
+                // Show the empty storage table message
+                if (!hasStorageResources) {
+                    const storageTableBody = $('#storage-projects-tbody');
+                    storageTableBody.empty();
+                    storageTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
+                  }
                 return;
             } else {
                 console.log("Processing user resources...");
