@@ -66,7 +66,10 @@ private = true
   <select id="user_groups" name="user_groups" required>
     <option value="">-- Select Group --</option>
   </select>
-  <button type="submit">Claim</button>
+   <div style="margin-top: 1rem; display: inline-flex; gap: 1rem;">
+    <button type="submit" class="btn btn-primary">Claim</button>
+    <button type="button" class="btn btn-secondary"  id="cancelButton">Cancel</button>
+  </div>
 </form>
 <script type="text/javascript" src="/js/response-message.js"></script>
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
