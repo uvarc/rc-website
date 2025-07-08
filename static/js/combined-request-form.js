@@ -1021,7 +1021,7 @@
             const requestType= formData.requestType==="storage" ? "storage" : "hpc_service-units";
             const group=$('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim();
             const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim()+"-"+$('input[name="selected-st"]:checked').closest('tr').find('td').eq(4).text().trim();
-            requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
+            requestUrl += `?group_name=${group}&request_type=${requestType}&resource_requst_name=${requestName}`;
         }
         console.log("requestURL:"+requestUrl);
 
@@ -1883,7 +1883,7 @@
             }
         }
         if (!hasStorageResources) {
-            suTableBody.append('<tr><td colspan="4" class="text-center" style="color: #888; font-style: italic; padding: 10px;">No existing storage available.</td></tr>');
+            suTableBody.append('<tr><td colspan="4" class="text-center" style="color: #888; font-style: italic; padding: 10px;">No existing storage resources available.</td></tr>');
             return;
         }
     
