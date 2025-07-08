@@ -1882,7 +1882,7 @@
                 }
             }
         }
-        if (!hasStorage) {
+        if (!hasStorageResources) {
             storageTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
             return;
         }
