@@ -1883,7 +1883,7 @@
             }
         }
         if (!hasStorageResources) {
-            storageTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
+            storageTableBody.append('<tr><td colspan="4" class="text-center" style="color: #888; font-style: italic; padding: 10px;">No existing storage available.</td></tr>');
             return;
         }
     
@@ -1957,7 +1957,7 @@
         }
     }
     if (!hasServiceResources) {
-        suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
+        suTableBody.append('<tr><td colspan="4" class="text-center" style="color: #888; font-style: italic; padding: 10px;">No existing service units available.</td></tr>');
         return;
     }
 
