@@ -1649,8 +1649,6 @@
                 populateGrouperMyGroupsDropdown([]);
             }
             let hasValidResources = false;
-            let hasHpcResources = false;
-            let hasStorageResources = false;
             if (Array.isArray(userResources)) {
                 // Loop through each resource object in the array
                 userResources.forEach(resource => {
@@ -1662,8 +1660,8 @@
                     const storageResources = resource.resources?.storage || {};
             
                     // Check if either hpc_service_units or storage has any keys (i.e., is not empty)
-                    hasHpcResources = Object.keys(hpcResources).length > 0;
-                    hasStorageResources = Object.keys(storageResources).length > 0;
+                     const hasHpcResources = Object.keys(hpcResources).length > 0;
+                     const hasStorageResources = Object.keys(storageResources).length > 0;
             
                     // If either has data, mark hasValidResources as true
                     if (hasHpcResources || hasStorageResources) {
@@ -1677,18 +1675,6 @@
                 document.getElementById("existing-resources-preview").style.display = "none";
                 // Show the empty state message
                 document.getElementById("empty-message").style.display = "block";
-                // Show the empty su table message
-                if (!hasHpcResources) {
-                    const suTableBody = $('#allocation-projects-tbody');
-                    suTableBody.empty();
-                    suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
-                  }
-                // Show the empty storage table message
-                if (!hasStorageResources) {
-                    const storageTableBody = $('#storage-projects-tbody');
-                    storageTableBody.empty();
-                    storageTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
-                  }
                 return;
             } else {
                 console.log("Processing user resources...");
@@ -1886,8 +1872,18 @@
         const { userResources } = parseConsoleData(apiResponse);
         const suTableBody = $('#storage-projects-tbody');
         suTableBody.empty();
-        if (!Array.isArray(userResources) || userResources.length === 0) {
-            suTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
+        let hasStorageResources = false;
+        if (Array.isArray(userResources)) {
+            for (const resource of userResources) {
+                const storageResources = resource.resources?.storage || {};
+                if (Object.keys(storage).length > 0) {
+                    hasStorageResources = true;
+                    break;
+                }
+            }
+        }
+        if (!hasStorage) {
+            storageTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
             return;
         }
     
@@ -1950,7 +1946,17 @@
     const { userResources } = parseConsoleData(apiResponse);
     const suTableBody = $('#allocation-projects-tbody');
     suTableBody.empty();
-    if (!Array.isArray(userResources) || userResources.length === 0) {
+    let hasServiceResources = false;
+    if (Array.isArray(userResources)) {
+        for (const resource of userResources) {
+            const hpcResources = resource.resources?.hpc_service_units || {};
+            if (Object.keys(hpcResources).length > 0) {
+                hasServiceResources = true;
+                break;
+            }
+        }
+    }
+    if (!hasServiceResources) {
         suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
         return;
     }
