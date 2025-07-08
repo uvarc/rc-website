@@ -1883,7 +1883,7 @@
             }
         }
         if (!hasStorageResources) {
-            storageTableBody.append('<tr><td colspan="4" class="text-center" style="color: #888; font-style: italic; padding: 10px;">No existing storage available.</td></tr>');
+            suTableBody.append('<tr><td colspan="4" class="text-center" style="color: #888; font-style: italic; padding: 10px;">No existing storage available.</td></tr>');
             return;
         }
     
