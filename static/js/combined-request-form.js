@@ -1876,7 +1876,7 @@
         if (Array.isArray(userResources)) {
             for (const resource of userResources) {
                 const storageResources = resource.resources?.storage || {};
-                if (Object.keys(storage).length > 0) {
+                if (Object.keys(storageResources).length > 0) {
                     hasStorageResources = true;
                     break;
                 }
