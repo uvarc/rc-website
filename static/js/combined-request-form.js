@@ -815,8 +815,12 @@
                 if (storageTire === 'Research Standard(ssz)' && changeExsisting) {
                     $('#free_resource_distribution').show();
                     $('#freeSpace').val(freeSpaceNumber);
+                } else if (storageTire === 'Research Standard(ssz)' && retireExsisting) {
+                    $('#free_resource_distribution').hide();
+                    $('#freeSpace').val(freeSpaceNumber);
                 } else
                     $('#free_resource_distribution').hide();
+
                 // Retrieve the data-additional attribute
                 const additionalData = parentRow.attr('data-additional');
                 
