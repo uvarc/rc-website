@@ -186,9 +186,9 @@
                   window.location.href = 'https://staging-onprem.rc.virginia.edu/support/';
               }
           });
-       } else {
-        console.warn('Cancel button not found in DOM.');
-       }
+        } else {
+          console.warn('Cancel button not found in DOM.');
+        }
     });
 
     $(document).ready(function () {
