@@ -162,20 +162,6 @@
         });
     }
 
-    document.getElementById('cancelButton').addEventListener('click', function () {
-        const urlParams = new URLSearchParams(window.location.search);
-        const referrer = urlParams.get('from');
-
-        const combinedFormUrl = 'https://staging-onprem.rc.virginia.edu/form/combined-request-form/';
-      
-        if (referrer && referrer.startsWith(combinedFormUrl)) {
-          window.location.href = combinedFormUrl;
-        } else {
-          // Default fallback
-          window.location.href = 'https://staging-onprem.rc.virginia.edu/support/';
-        }
-      });
-
     // ========.===========================
     // Setup Event Handlers
     // ===================================
@@ -186,6 +172,23 @@
         document.querySelector('#discipline').removeAttribute('required');
         document.querySelector('#department')?.removeAttribute('required');
         document.querySelector('#classification')?.removeAttribute('required');
+
+        const cancelBtn = document.getElementById('cancelButton');
+       if (cancelBtn) {
+           cancelBtn.addEventListener('click', function () {
+              const urlParams = new URLSearchParams(window.location.search);
+              const referrer = urlParams.get('from');
+              const combinedFormUrl = 'https://staging-onprem.rc.virginia.edu/form/combined-request-form/';
+
+              if (referrer && referrer.startsWith(combinedFormUrl)) {
+                  window.location.href = combinedFormUrl;
+              } else {
+                  window.location.href = 'https://staging-onprem.rc.virginia.edu/support/';
+              }
+          });
+       } else {
+        console.warn('Cancel button not found in DOM.');
+       }
     });
 
     $(document).ready(function () {
