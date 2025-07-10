@@ -929,7 +929,7 @@
         document.getElementById("claimLink").addEventListener("click", function (event) {
             event.preventDefault();
             const source = encodeURIComponent(window.location.href);
-            const dynamicUrl = `https://staging-onprem.rc.virginia.edu/form/claim-form/?from=${source}`;
+            const dynamicUrl = `${window.location.origin}/form/claim-form/?from=${source}`;
             window.open(dynamicUrl, "_blank");
         });
     }
