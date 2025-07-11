@@ -930,7 +930,7 @@
             event.preventDefault();
             const source = encodeURIComponent(window.location.href);
             const dynamicUrl = `${window.location.origin}/form/claim-form/?from=${source}`;
-            window.open(dynamicUrl);
+            window.open(dynamicUrl,  '_self');
         });
     }
     
