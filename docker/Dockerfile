@@ -1,5 +1,7 @@
 FROM ghcr.io/uvarc/hugo-build:prod-0.133.0 AS base
 
+FROM base AS app
+
 # working directory
 WORKDIR /site
 
