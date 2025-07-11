@@ -18,6 +18,8 @@ jobs:
       env:
         ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     - run: echo ${BRANCH_NAME}
+    - name: Checkout repository
+      uses: actions/checkout@v4
     - name: Set ENV vars
       env:
         BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
