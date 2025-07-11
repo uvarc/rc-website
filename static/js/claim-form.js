@@ -178,12 +178,11 @@
            cancelBtn.addEventListener('click', function () {
               const urlParams = new URLSearchParams(window.location.search);
               const referrer = urlParams.get('from');
-              const combinedFormUrl = 'https://staging-onprem.rc.virginia.edu/form/combined-request-form/';
 
-              if (referrer && referrer.startsWith(combinedFormUrl)) {
-                  window.location.href = combinedFormUrl;
+              if (referrer ) {
+                  window.location.href = referrer;
               } else {
-                  window.location.href = 'https://staging-onprem.rc.virginia.edu/support/';
+                  window.location.href = 'https://www.rc.virginia.edu/userinfo/hpc/access/';
               }
           });
         } else {
