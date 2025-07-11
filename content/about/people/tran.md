@@ -11,7 +11,7 @@ email = "tfe2zz@virginia.edu"
 type = "people"
 description = ""
 author = "UVARC Staff"
-image = "/images/profiles/profile_dominic_tran.jpg"
+image = "/images/profiles/profile_dominic.jpeg"
 subjects = [
 ]
 active = true

@@ -18,9 +18,9 @@
 <body>
   {{ partial "menu-home.html" . }}
   {{ partial "site-header.html" . }}
-  <!-- {{ partial "carousel.html" . }} -->
+  {{ partial "carousel.html" . }}
    <!-- use this partial below for specific events (comment out the carousel partial) -->
-   {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/June_2025_DAC_Proposal_Deadline.png" "imageLink" "/service/dac/awards" "altText" "Due June 30 - Small Analytics Resource Proposals. Get the analytics support your research needs.  Apply for an analytics resource award to receive hands-on support for your project. Apply for a Resource Award." "linkAriaLabel" "View proposal instructions" ) }}
+   {{/*  {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/June_2025_DAC_Proposal_Deadline.png" "imageLink" "/service/dac/awards" "altText" "Due June 30 - Small Analytics Resource Proposals. Get the analytics support your research needs.  Apply for an analytics resource award to receive hands-on support for your project. Apply for a Resource Award." "linkAriaLabel" "View proposal instructions" ) }}  */}}
 
   <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
     Press 'S' to search

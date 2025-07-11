@@ -44,6 +44,7 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
+          target: app
           tags: |
             ghcr.io/uvarc/${{ env.BUILD_PROJ }}:${{ github.ref_name }}
             ghcr.io/uvarc/${{ env.BUILD_PROJ }}:latest
@@ -55,5 +56,6 @@ jobs:
           context: .
           file: ./docker/Dockerfile
           push: ${{ github.event_name != 'pull_request' }}
+          target: app
           tags: |
             ghcr.io/uvarc/${{ env.BUILD_PROJ }}:${{ github.ref_name }}
