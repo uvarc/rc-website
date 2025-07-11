@@ -180,7 +180,7 @@
               const referrer = urlParams.get('from');
 
               if (referrer ) {
-                  window.location.href = referrer;
+                  window.location.href = document.referrer;;
               } else {
                   window.location.href = 'https://www.rc.virginia.edu/userinfo/hpc/access/';
               }
