@@ -8,7 +8,7 @@
     if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('staging.rc.virginia.edu')) {
       serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
     } else if (hostname === 'rc.virginia.edu') {
-      serviceHost = 'https://uvarc-unified-service-prod.pods.uvarc.io';
+      serviceHost = 'https://uvarc-unified-service.pods.uvarc.io';
     } else {
       console.warn('Unknown environment, defaulting to staging');
       serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
@@ -758,7 +758,8 @@
          //$('#error-message-container').hide().html('');
         // Show and load the admin iframe
         const iframe = $('#admin-iframe');
-        iframe.attr('src', 'https://uvarc-unified-service-test.pods.uvarc.io/uvarc/api/ticket/admin/mgmt');
+        const srcUrl = `${serviceHost}/uvarc/api/ticket/admin/mgmt`
+        iframe.attr('src', srcUrl);
         iframe.show();
         $('#admin-button').hide();
         $('#resource-button').hide();
