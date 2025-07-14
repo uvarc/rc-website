@@ -1,10 +1,10 @@
 #!/bin/bash
-#SBATCH -A myaccount  # your allocation
-#SBATCH -p parallel   # must be parallel
-#SBATCH -N 3          # number of nodes
-#SBATCH -c 96         # cores per executor
-#SBATCH --mem=100G    # memory per node
-#SBATCH -t 10:00:00   # time
+#SBATCH -A myallocation  # replace with your actual allocation
+#SBATCH -p parallel      # partition
+#SBATCH -N 3             # number of nodes
+#SBATCH -c 96            # cores per node
+#SBATCH --mem=100G       # memory per node
+#SBATCH -t 10:00:00      # time
 
 SPARK_VERSION=4.0.0
 #---------------------------
