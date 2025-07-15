@@ -1,4 +1,4 @@
-FROM ghcr.io/uvarc/hugo-build:v3
+FROM ghcr.io/uvarc/hugo-build:prod-0.133.0 AS base
 
 # working directory
 WORKDIR /site
@@ -6,8 +6,10 @@ WORKDIR /site
 # Copy the website files into the container
 COPY . /site
 
+FROM base AS app
+
 # Expose port 1313
 EXPOSE 1313
 
 # Run Hugo server
-ENTRYPOINT ["hugo-0.133.0-ext", "server", "--bind", "0.0.0.0"]
+ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0"]

@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2021-09-30T00:00:00-05:00"
+date = "2025-07-14T00:00:00-05:00"
 tags = [
   "chem",
   "multi-core",
@@ -145,60 +145,12 @@ If the CPU efficiency is much lower, please consider using fewer cores for your 
 
 ## Standalone cluster mode using multiple nodes
 
-**As of 5/29/2024 this is no longer working. We will update as soon as we have a solution. For the time being please use the local mode up to 96 cores in the `afton` partition.**
+*We gratefully acknowledge Advanced Research Computing at the University of Michigan for the spark-start script.* The following is implemented for module versions 4.0.0 and above.
 
-*We gratefully acknowledge the Pittsburg Supercomputing Center for giving us permission to use their Spark configuration and launch scripts.*
-
-Before using multiple nodes, please make sure that your job can use a full standard node effectively. When you request N nodes in the standalone cluster mode, one node is set aside as the master node and the remaining N-1 nodes are worker nodes. Thus, running on 2 nodes will have the same effect as running on 1 node.
+Before requesting multiple nodes, please make sure that your job can use a full standard node effectively. When you request N nodes in the standalone cluster mode, one node is set aside as the master node and the remaining N-1 nodes are worker nodes. Thus, running on 2 nodes will have the same effect as running on 1 node.
 
 {{< pull-code file="/static/scripts/spark_multinode.slurm" lang="no-highlight" >}}
 
-In the above Slurm script template, note that:
+It is recommended that all cores (96 per parallel node) be requested. Advanced users may make a copy of `$SPARK_HOME/bin/spark-start` and customize it before submission; specify the path to your local copy in the Slurm script.
 
-- Request `parallel` nodes with exclusive access.
-- You may reduce the number of cores if the job needs more memory per core.
-- Your code should begin with:
-
-    ```python
-    from pyspark import SparkConf
-    from pyspark import SparkContext
-    conf = SparkConf()
-    sc = SparkContext(conf=conf)
-    spark = SparkSession(sc)
-    ```
-
-- You may need to set the number of partitions explicitly, e.g. in the second argument of `sc.parallelize()`:
-
-    ```python
-    sc.parallelize(..., os.environ['PARTITIONS'])
-    ```
-
-    where the `PARTITIONS` environment variable is defined as the total number of cores on worker nodes in the Slurm script for your convenience. Without doing so only one partition will be created on each node.
-
-### Benchmark
-
-We used a code that estimates the value of pi as a benchmark. The following table illustrates good scaling performance across multiple nodes (40 cores per node) on the HPC system.
-
-| Nodes | Worker nodes | Time (s) |
-|--:|--:|--:|
-|1|1|134.4|
-|3|2|71.3|
-|5|4|39.6|
-|9|8|23.6|
-
-### Cleanup
-
-Temporary files are created inside your scratch directory during a multinode Spark job. They have the form:
-
-- `spark-mst3k-org.apache.spark.deploy.master.Master-1-udc-aw33-2c1.out`
-- `spark-8147c5b8-eb70-4b98-809e-19fdbcf3eafb`
-- `app-20211012113817-0000`
-- `blockmgr-b41a7c79-cbf4-49f0-b373-f6c6467e9d01`
-
-You may safely remove these files when your job is done by running:
-
-{{< code-snippet >}}
-find /scratch/$USER -maxdepth 1 -regextype sed \( -name "spark-$USER-*" -o -regex '.*/spark-[0-9a-z]\{8\}-.*' -o -regex '.*/app-[0-9]\{14\}-.*' -o -regex '.*/blockmgr-[0-9a-z]\{8\}-.*' \) -exec rm -rf {} \;
-{{< /code-snippet >}}
-
-Make sure that you do not use this pattern to name other files!
+Temporary files are created in `~/.spark-local/<JOB_ID>` and may be safely removed after the job completes.
