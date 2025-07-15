@@ -762,19 +762,18 @@
         iframe.attr('src', srcUrl);
         iframe.show();
         $('#admin-button').hide();
-        $('#resource-button').hide();
-        $('#back-button').show();
+        $('#resource-button').hide();s
       });
 
-    $('#back-button').on('click', function (e) {
-        e.preventDefault();
-        $('#admin-iframe').hide().attr('src', '');
-        $('#combined-request-form').show();
-        $('#back-button').hide();
-        $('#resource-button').show();
-        $('#admin-button').show();
-        location.reload();
-    });
+    // $('#back-button').on('click', function (e) {
+    //     e.preventDefault();
+    //     $('#admin-iframe').hide().attr('src', '');
+    //     $('#combined-request-form').show();
+    //     $('#back-button').hide();
+    //     $('#resource-button').show();
+    //     $('#admin-button').show();
+    //     location.reload();
+    // });
 
     function setupEventHandlers() {
        
