@@ -10,7 +10,7 @@ categories = ["feature"]
 
 ## Experience Research Computing in Action — and Discover New Opportunities for Your Research 
 
-**Join us on September 9 for an engaging Open House hosted by UVA Research Computing – for the first time, in our very own space!** Whether you're new to research computing or looking to expand your use, this event will offer you an inside look at the computational tools, services, and expert support available to accelerate your research. 
+**Join us on September 9 for an engaging [Open House](https://in.virginia.edu/rc-open-house-rsvp) hosted by UVA Research Computing – for the first time, in our very own space at Michie North!** Whether you're new to research computing or looking to expand your use, this event will offer you an inside look at the computational tools, services, and expert support available to accelerate your research. 
 
 ### Why Attend?
 
@@ -24,26 +24,36 @@ categories = ["feature"]
 
 * **Enjoy refreshments and enter to win door prizes**
 
-### Event Details
+<hr>
 
-**Who Should Attend**: UVA Faculty, Staff Researchers, & Students  
+### Event Details
 
 **Date & Time**: September 9, 2025, from 3-6 p.m. 
 
 **Location**: Michie North 
 918 Emmet St N, Charlottesville, VA 22903 
 
-**Event Registration**: RSVPs preferred but not required—feel free to drop by anytime.
+**Registration**: RSVPs preferred but not required—feel free to drop by anytime.
 
-<br>
+<a href=" https://in.virginia.edu/rc-open-house-rsvp"><button class="btn btn-primary">RSVP for the Open House</button></a> 
 
-[**RSVP for the Open House >**](https://in.virginia.edu/rc-open-house-rsvp)
+<hr>
 
-<br>
+### FAQs
 
-**Parking**: Free parking is available in Y1 lot (far left side of Carruthers Hall). Paid parking is available via ParkMobile in lot #5564 at Michie North. 
+**Who should attend the Research Computing Open House?**
 
-**Have any questions?** Contact our team at [rc-events@virginia.edu](mailto:rc-events@virginia.edu).
+UVA Faculty, Staff Researchers, & Students 
+
+**Where can I park?** 
+
+Free parking is available in Y1 lot (far left side of Carruthers Hall). Paid parking is available via ParkMobile in lot #5564 at Michie North. 
+
+**Who can I contact with questions?**
+
+Contact our team at [rc-events@virginia.edu](mailto:rc-events@virginia.edu).
+
+<hr>
 
 ### Last Year's Event
 
