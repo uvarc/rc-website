@@ -43,14 +43,6 @@ categories = ["feature"]
 
 **Parking**: Free parking is available in Y1 lot (far left side of Carruthers Hall). Paid parking is available via ParkMobile in lot #5564 at Michie North. 
 
-**Event Registration**: RSVPs preferred but not required—feel free to drop by anytime.
-
-<br>
-
-[**RSVP for the Open House >**](https://in.virginia.edu/rc-open-house-rsvp)
-
-<br>
-
 **Have any questions?** Contact our team at [rc-events@virginia.edu](mailto:rc-events@virginia.edu).
 
 ### Last Year's Event
