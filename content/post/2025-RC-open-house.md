@@ -33,8 +33,6 @@ categories = ["feature"]
 **Location**: Michie North 
 918 Emmet St N, Charlottesville, VA 22903 
 
-**Parking**: Free parking is available in Y1 lot (far left side of Carruthers Hall). Paid parking is available via ParkMobile in lot #5564 at Michie North. 
-
 **Event Registration**: RSVPs preferred but not required—feel free to drop by anytime.
 
 <br>
@@ -42,6 +40,8 @@ categories = ["feature"]
 [**RSVP for the Open House >**](https://in.virginia.edu/rc-open-house-rsvp)
 
 <br>
+
+**Parking**: Free parking is available in Y1 lot (far left side of Carruthers Hall). Paid parking is available via ParkMobile in lot #5564 at Michie North. 
 
 **Have any questions?** Contact our team at [rc-events@virginia.edu](mailto:rc-events@virginia.edu).
 
