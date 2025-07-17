@@ -429,7 +429,7 @@ For an introduction to the Rio HPC system, please see our [tutorial](https://lea
 
 ## Open OnDemand for Rio
 
-Rio offers a simplified version of Open OnDemand to facilitate easier computing access. Compared to the standard Rivanna/Afton implementation, Rio provides limited functionality. While the [Dashboard](https://www.rc.virginia.edu/userinfo/hpc/ood/#the-dashboard) and [File Explorer](https://www.rc.virginia.edu/userinfo/hpc/ood/#file-explorer) operate similarly, only RStudio Server, JupyterLab, and the OOD Desktop are available as [interactive apps](https://www.rc.virginia.edu/userinfo/hpc/ood/#interactive-applications). Utilities and the Job Composer are not yet supported. Refer to our documentation for detailed guidance on using [RStudio Server](https://www.rc.virginia.edu/userinfo/hpc/software/rstudio/) and [JupyterLab](https://www.rc.virginia.edu/userinfo/hpc/software/jupyterlab/) in Rio.
+Rio offers a simplified version of Open OnDemand to facilitate easier computing access. Compared to the standard Rivanna/Afton implementation, Rio provides limited functionality. While the [Dashboard](https://www.rc.virginia.edu/userinfo/hpc/ood/#the-dashboard) operates similarly to the standard security zone, only RStudio Server, JupyterLab, and the OOD Desktop are available as [interactive apps](https://www.rc.virginia.edu/userinfo/hpc/ood/#interactive-applications). Utilities and the Job Composer are not supported. Refer to our documentation for detailed guidance on using [RStudio Server](https://www.rc.virginia.edu/userinfo/hpc/software/rstudio/) and [JupyterLab](https://www.rc.virginia.edu/userinfo/hpc/software/jupyterlab/) in Rio.
 
 # Data Transfer In/Out of Ivy/Rio {#data-transfer-in-out-of-ivy}
 
