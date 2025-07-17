@@ -43,7 +43,7 @@ categories = ["feature"]
 
 **Who should attend the Research Computing Open House?**
 
-UVA Faculty, Staff Researchers, & Students 
+All members of the UVA community are welcome—especially UVA faculty, staff, and students engaged in research. 
 
 **Where can I park?** 
 
