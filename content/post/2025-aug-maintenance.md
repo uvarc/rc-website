@@ -15,6 +15,10 @@ All systems are expected to return to service by **Wednesday, August 13** at 6 a
 
 ## IMPORTANT MAINTENANCE NOTES
 
+### Open OnDemand
+
+The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 kernel within JupyterLab. For details see [here](/userinfo/hpc/software/spark).
+
 ### Modules
 
 {{< table title="replacement" class="table table-striped" >}}
