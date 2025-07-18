@@ -28,5 +28,6 @@ The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 ke
 |idl          | 8.9 | 9.1 |
 |openspeedshop| 2.4 | - |
 |platform-mpi |9.01.04.03| - |
+|rapidsai     | 24.06 | 25.06 |
 |totalview    |  |  |
 {{< /table >}}
