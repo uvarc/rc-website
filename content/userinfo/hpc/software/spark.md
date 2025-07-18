@@ -4,7 +4,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2025-07-14T00:00:00-05:00"
+date = "2025-07-18T00:00:00-05:00"
 tags = [
   "chem",
   "multi-core",
@@ -44,7 +44,7 @@ module spider {{% module-firstversion %}}
 
 There are three ways to use Spark interactively:
 1. Shell prompt
-1. Open OnDemand PySpark
+1. Open OnDemand JupyterLab PySpark kernel
 1. Open OnDemand Desktop
 
 If you need the Web UI you must use the third method (OOD Desktop).
@@ -85,9 +85,11 @@ package ‘SparkR’ was built under R version 4.1.0
 
 We recommend loading the closest available version.
 
-## Open OnDemand PySpark
+## Open OnDemand JupyterLab PySpark kernel
 
-Python users can run Spark in a JupyterLab interface via the PySpark Interactive App on [Open OnDemand](/userinfo/hpc/ood).
+Starting from version 4.0.0, the PySpark kernel is available through the JupyterLab Interactive App on [Open OnDemand](/userinfo/hpc/ood).
+
+The PySpark 3.4 Interactive App will be removed in the near future.
 
 ## Open OnDemand Desktop
 
@@ -97,7 +99,11 @@ The URL is displayed upon launching Spark and is of the form `http://udc-xxxx-xx
 
 ### Jupyter notebook/lab
 
-You can redirect `pyspark` to open a Jupyter notebook/lab as follows. The `jupyter` command is provided by the `jupyterlab` module.
+You can redirect `pyspark` to open a Jupyter notebook/lab as follows. First load the modules:
+
+```
+module load spark/4.0.0 jupyterlab
+```
 
 Set two environment variables:
 ```
@@ -111,9 +117,9 @@ Navigate to your working directory and run:
 ```
 pyspark
 ```
-This will start up Jupyter inside a browser automatically. Use the "Python 3" kernel.
+This will start up Jupyter inside a browser automatically. **Select the Python 3 kernel, not PySpark.**
 
-The example below estimates the value of pi in a PySpark session running on 16 cores, with the JupyterLab window on the left and the Spark Web UI event timeline on the right. Note that the `SparkContext` object `sc` is initialized automatically.
+The example below estimates the value of pi, with the JupyterLab window on the left and the Spark Web UI event timeline on the right. Note that the `SparkContext` object `sc` is initialized automatically.
 
 <img src="/images/pyspark.png" style="height:100%;width:100%"></img>
 
