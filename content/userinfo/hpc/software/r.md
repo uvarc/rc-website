@@ -149,7 +149,7 @@ Keep in mind to replace `/standard/ivy-xxx-xxxx/path/to/R` with the path to R in
 {{% /callout %}}
 
 ### 2. Configure .Rprofile
-Next, using the following template for your `.Rprofile`:
+Next, use the following template for your `.Rprofile`:
 
 ```
 R_VERSION <- paste(R.version$major, sub("\\..*", "", R.version$minor), sep=".")
