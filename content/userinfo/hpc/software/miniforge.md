@@ -186,7 +186,7 @@ module load miniforge
 conda create --prefix /standard/ivy-xxx-xxxx/path/to/.conda/envs/my_env python=3.11
 ```
 
-To access the environment on the compute nodes you'll want to export all of the previous commands and  active the full file path to the environment:
+If you do not export the previous commands in your `~/.bashrc` file, you'll need to export all of them on the compute node in order to access the environment. You can then activate the full file path to the environment:
 
 ```
 source activate /standard/ivy-xxx-xxxx/path/to/.conda/envs/my_env
