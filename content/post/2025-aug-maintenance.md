@@ -24,12 +24,18 @@ The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 ke
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-|bazel        | 6.1.1 | 8.3.1 |
-|cellpose     | 2.3.2 | 3.0.10, 4.0.5 |
-|idl          | 8.9   | 9.1 |
-|jdftx        | 1.7.0 | - |
-|openspeedshop| 2.4   | - |
+|bazel        | 6.1.1  | 8.3.1 |
+|blasr        |20190414| - |
+|cellpose     | 2.3.2  | 3.0.10, 4.0.5 |
+|dbg2olc      |20200723| - |
+|idl          | 8.9    | 9.1 |
+|jdftx        | 1.7.0  | - |
+|openspeedshop| 2.4    | - |
 |platform-mpi |9.01.04.03| - |
-|rapidsai     | 24.06 | 25.06 |
+|rapidsai     | 24.06  | 25.06 |
+|rasqual      |20210424| - |
+|sparc        |20180702| - |
+|sparseassembler|2016  | - |
+|torus        |20221211| - |
 |totalview    |  |  |
 {{< /table >}}
