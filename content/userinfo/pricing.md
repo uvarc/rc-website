@@ -25,6 +25,8 @@ images = [""]
 
 {{< pricing dedicated_computing >}}
 
+[<button class="btn btn-primary btn-sm">Request Dedicated Node(s)</button>](/form/dedicated-computing/)
+
 - - -
 
 # Storage
