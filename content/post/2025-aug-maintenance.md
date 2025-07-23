@@ -21,6 +21,9 @@ The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 ke
 
 ### Modules
 
+Default version changes:
+- homer/4.11 &rarr; 5.1
+
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
