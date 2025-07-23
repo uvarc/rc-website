@@ -30,10 +30,13 @@ The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 ke
 |dbg2olc      |20200723| - |
 |idl          | 8.9    | 9.1 |
 |jdftx        | 1.7.0  | - |
+|nextflow     | 24.10.5| 25.04.6 |
 |openspeedshop| 2.4    | - |
+|peakseq      | 1.31   | - |
 |platform-mpi |9.01.04.03| - |
 |rapidsai     | 24.06  | 25.06 |
 |rasqual      |20210424| - |
+|snakemake    | 7.24.2 | 9.8.1 |
 |sparc        |20180702| - |
 |sparseassembler|2016  | - |
 |torus        |20221211| - |
