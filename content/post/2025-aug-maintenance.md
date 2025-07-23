@@ -32,7 +32,6 @@ The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 ke
 |genrich      | 0.6.1  | - |
 |idl          | 8.9    | 9.1 |
 |jdftx        | 1.7.0  | - |
-|macs2        | 2.2.7.1| macs3/3.0.3 |
 |marge        | 1.0    | - |
 |nextflow     | 24.10.5| 25.04.6 |
 |openspeedshop| 2.4    | - |
