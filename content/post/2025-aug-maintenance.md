@@ -28,12 +28,14 @@ Default version changes:
 | Module | Remove | Replace with |
 |---|---|---|
 |bazel        | 6.1.1  | 8.3.1 |
+|bioconda     | py3.10 | py3.11 |
 |blasr        |20190414| - |
 |bsmap        | 2.42   | - |
 |cellpose     | 2.3.2  | 3.0.10, 4.0.5 |
 |cnnpeaks     | 200913 | - |
 |dbg2olc      |20200723| - |
 |exonerate    | 2.4.0  | - |
+|fsa          | 1.15.9 | - |
 |genrich      | 0.6.1  | - |
 |idl          | 8.9    | 9.1 |
 |jdftx        | 1.7.0  | - |
