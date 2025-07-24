@@ -29,15 +29,22 @@ Default version changes:
 |---|---|---|
 |bazel        | 6.1.1  | 8.3.1 |
 |blasr        |20190414| - |
+|bsmap        | 2.42   | - |
 |cellpose     | 2.3.2  | 3.0.10, 4.0.5 |
 |cnnpeaks     | 200913 | - |
 |dbg2olc      |20200723| - |
+|exonerate    | 2.4.0  | - |
 |genrich      | 0.6.1  | - |
 |idl          | 8.9    | 9.1 |
 |jdftx        | 1.7.0  | - |
 |marge        | 1.0    | - |
+|mutect       | 1.1.4  | - |
+|mutsigcv     | 1.41   | - |
+|netperf      | 2.6.0  | - |
 |nextflow     | 24.10.5| 25.04.6 |
+|nseg         | 1.0.0  | - |
 |openspeedshop| 2.4    | - |
+|p3dfft       | 2.7.9  | - |
 |peakseq      | 1.31   | - |
 |platform-mpi |9.01.04.03| - |
 |rapidsai     | 24.06  | 25.06 |
@@ -47,4 +54,6 @@ Default version changes:
 |sparseassembler|2016  | - |
 |torus        |20221211| - |
 |totalview    |  |  |
+|wdltool      | 0.14   | - |
+|yasm         | 1.3.0  | - |
 {{< /table >}}
