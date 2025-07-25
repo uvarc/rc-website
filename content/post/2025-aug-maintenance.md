@@ -39,32 +39,50 @@ We are removing many old modules that are no longer maintained. If you need to u
 |clearcut     | 1.3.0  | - |
 |cnnpeaks     | 200913 | - |
 |cromwell     | 30.1   | - |
-|cufflinks    | 2.2.1  | - |
 |dbg2olc      |20200723| - |
+|emboss       | 6.6.0  | - |
+|evm          | 1.1.1  | - |
 |exonerate    | 2.4.0  | - |
+|fastx-toolkit| 0.0.14 | - |
 |fsa          | 1.15.9 | - |
 |genrich      | 0.6.1  | - |
+|grace        | 5.1.25 | - |
 |idl          | 8.9    | 9.1 |
+|impute2      | 2.3.2  | - |
+|io_lib       | 1.14.8 | - |
 |jdftx        | 1.7.0  | - |
+|jtreeview    | 3      | - |
+|junit        | 4.12   | - |
+|levmar       | 2.6    | - |
 |locuszoom    | 1.4    | - |
 |marge        | 1.0    | - |
+|mirdeep2     | 0.1.3  | - |
 |motif        | 2.3.8  | - |
 |mutect       | 1.1.4  | - |
 |mutsigcv     | 1.41   | - |
 |netperf      | 2.6.0  | - |
 |nextflow     | 24.10.5| 25.04.6 |
 |nseg         | 1.0.0  | - |
+|openbugs     | 3.2.3  | - |
 |openspeedshop| 2.4    | - |
 |p3dfft       | 2.7.9  | - |
+|paintor      | 3.0    | - |
 |peakseq      | 1.31   | - |
 |platform-mpi |9.01.04.03| - |
+|psipred      | 4.02   | - |
 |rapidsai     | 24.06  | 25.06 |
 |rasqual      |20210424| - |
+|saint        | 2.5.0  | - |
+|saintexpress | 3.6.3  | - |
+|seacr        | 1.3    | - |
+|slatec       | 4.1    | - |
 |snakemake    | 7.24.2 | 9.8.1 |
 |sparc        |20180702| - |
 |sparseassembler|2016  | - |
+|sparsehash   | 2.0.3  | - |
 |torus        |20221211| - |
 |totalview    |  |  |
 |wdltool      | 0.14   | - |
+|yaff         | 1.6.0  | - |
 |yasm         | 1.3.0  | - |
 {{< /table >}}
