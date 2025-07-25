@@ -24,22 +24,31 @@ The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 ke
 Default version changes:
 - homer/4.11 &rarr; 5.1
 
+We are removing many old modules that are no longer maintained. If you need to use any of these please contact us.
+
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
+|aspera-connect|4.2.4  | 4.2.8 |
 |bazel        | 6.1.1  | 8.3.1 |
 |bioconda     | py3.10 | py3.11 |
 |blasr        |20190414| - |
 |bsmap        | 2.42   | - |
+|cd-hit       | 4.8.1  | - |
 |cellpose     | 2.3.2  | 3.0.10, 4.0.5 |
+|clearcut     | 1.3.0  | - |
 |cnnpeaks     | 200913 | - |
+|cromwell     | 30.1   | - |
+|cufflinks    | 2.2.1  | - |
 |dbg2olc      |20200723| - |
 |exonerate    | 2.4.0  | - |
 |fsa          | 1.15.9 | - |
 |genrich      | 0.6.1  | - |
 |idl          | 8.9    | 9.1 |
 |jdftx        | 1.7.0  | - |
+|locuszoom    | 1.4    | - |
 |marge        | 1.0    | - |
+|motif        | 2.3.8  | - |
 |mutect       | 1.1.4  | - |
 |mutsigcv     | 1.41   | - |
 |netperf      | 2.6.0  | - |
