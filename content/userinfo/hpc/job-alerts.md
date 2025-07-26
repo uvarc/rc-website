@@ -1,8 +1,8 @@
 +++
 description = ""
-title = "Upcoming Policy on Zero GPU Utilization Jobs – User Notifications and Enforcement"
+title = "Policy on Zero GPU Utilization Jobs"
 draft = false
-date = "2025-07-28T17:45:12-05:00"
+date = "2025-07-25T17:45:12-05:00"
 tags = ["hpc","rivanna","afton","utilization","supercomputer","queues","gpu"]
 categories = ["userinfo"]
 images = [""]
@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-# Upcoming Policy on Zero GPU Utilization Jobs – User Notifications and Enforcement 
+# User Notification and Enforcement
 
 Research Computing expects all users of the UVA HPC clusters to make efficient use of the resources allocated to their jobs. Recently, we’ve observed significant queuing delays in the gpu partition, an issue frequently echoed in user feedback. At the same time, many submitted GPU jobs either show very low utilization or, in some cases, no GPU usage at all—despite consuming high-demand resources. 
 
