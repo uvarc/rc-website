@@ -37,7 +37,6 @@ We are removing many old modules that are no longer maintained. If you need to u
 |cd-hit       | 4.8.1  | - |
 |cellpose     | 2.3.2  | 3.0.10, 4.0.5 |
 |ciftilib     | 1.6.0  | - |
-|circos       | 0.69.9 | - |
 |clearcut     | 1.3.0  | - |
 |cnnpeaks     | 200913 | - |
 |cromwell     | 30.1   | - |
@@ -45,7 +44,6 @@ We are removing many old modules that are no longer maintained. If you need to u
 |emboss       | 6.6.0  | - |
 |evm          | 1.1.1  | - |
 |exonerate    | 2.4.0  | - |
-|fastx-toolkit| 0.0.14 | - |
 |fgwas        | 0.3.6  | - |
 |fsa          | 1.15.9 | - |
 |gdrcopy      | 2.4.4  | (system) |
@@ -96,7 +94,6 @@ We are removing many old modules that are no longer maintained. If you need to u
 |sparsehash   | 2.0.3  | - |
 |tophat       | 2.1.1  | - |
 |torus        |20221211| - |
-|voro++       | 0.4.6  | - |
 |wasp         | 0.3.4  | - |
 |wdltool      | 0.14   | - |
 |yaff         | 1.6.0  | - |
