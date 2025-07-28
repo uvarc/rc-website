@@ -522,13 +522,7 @@ We’re excited to announce the launch of a new MIG-enabled GPU partition (`gpu-
 - Right-sized resources: Request only what you need—reduce waste, improve fairness.
 - Isolation: MIG slices are hardware-isolated; your job won’t be affected by a noisy neighbor.
 
-<<<<<<< HEAD
-How to use:
-
-\#SBATCH --partition=gpu-mig and #SBATCH --gres=gpu:1 (only single slices allowed per job)
-=======
 **How to use:**
->>>>>>> 1c0ee51f (added edits to gpu-mig)
 
 Use the following SLURM directives in your Slurm job script  
 ```
