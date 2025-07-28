@@ -512,6 +512,23 @@ As artificial intelligence (AI) and machine learning (ML) continue to change how
 
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
+### MIG GPU Partition
+
+We’re excited to announce the launch of a new MIG-enabled GPU partition (gpu-mig), available after our August 12th, 2025
+scheduled maintenance. MIG (Multi-Instance GPU) allows a single NVIDIA A100 80GB to be subdivided into 7 smaller, isolated 
+"slices" with 10GB GPU memory so that multiple jobs can run concurrently on one physical card, each with guaranteed memory and compute.
+
+Why this change?
+
+•	Shorter wait times: Smaller jobs no longer block an entire 80 GB GPU.
+•	Right-sized resources: Request only what you need—reduce waste, improve fairness.
+•	Isolation: MIG slices are hardware-isolated; your job won’t be affected by a noisy neighbor.
+
+How to use: #SBATCH --partition=gpu-mig and #SBATCH --gres=gpu:1 (only single slices allowed per job)
+
+Initially, only 1 A100 80GB will have this configuration for users to try it out and provide feedback. More MIGs may be 
+added in the future if the initial rollout is successful and we observe significant benefit.
+
 # CPU and Memory Usage
 Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate Slurm commands for running jobs and completed jobs.
 
