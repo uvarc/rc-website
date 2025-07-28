@@ -53,7 +53,6 @@ We are removing many old modules that are no longer maintained. If you need to u
 |glpk         | 5.0    | - |
 |gpunufft     | 2.1.0  | - |
 |grace        | 5.1.25 | - |
-|idl          | 8.9    | 9.1 |
 |impute2      | 2.3.2  | - |
 |intltool     | 0.51.0 | - |
 |io_lib       | 1.14.8 | - |
@@ -97,7 +96,6 @@ We are removing many old modules that are no longer maintained. If you need to u
 |sparsehash   | 2.0.3  | - |
 |tophat       | 2.1.1  | - |
 |torus        |20221211| - |
-|totalview    |2024.3.10| 2025.2 |
 |voro++       | 0.4.6  | - |
 |wasp         | 0.3.4  | - |
 |wdltool      | 0.14   | - |
