@@ -97,7 +97,7 @@ We are removing many old modules that are no longer maintained. If you need to u
 |sparsehash   | 2.0.3  | - |
 |tophat       | 2.1.1  | - |
 |torus        |20221211| - |
-|totalview    |  |  |
+|totalview    |2024.3.10| 2025.2 |
 |voro++       | 0.4.6  | - |
 |wasp         | 0.3.4  | - |
 |wdltool      | 0.14   | - |
