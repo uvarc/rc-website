@@ -522,7 +522,9 @@ Why this change?
 •	Right-sized resources: Request only what you need—reduce waste, improve fairness.
 •	Isolation: MIG slices are hardware-isolated; your job won’t be affected by a noisy neighbor.
 
-How to use: #SBATCH --partition=gpu-mig and #SBATCH --gres=gpu:1 (only single slices allowed per job)
+How to use:
+
+\#SBATCH --partition=gpu-mig and #SBATCH --gres=gpu:1 (only single slices allowed per job)
 
 Note: Initially, only one A100 80GB node (56 total 10GB MIGs) will have this configuration for users to try it out and provide feedback. More MIGs may be added in the future if the initial rollout is successful and we observe significant benefit.
 
