@@ -524,7 +524,7 @@ Why this change?
 
 How to use: #SBATCH --partition=gpu-mig and #SBATCH --gres=gpu:1 (only single slices allowed per job)
 
-Initially, only 1 A100 80GB device will have this configuration for users to try it out and provide feedback. More MIGs may be added in the future if the initial rollout is successful and we observe significant benefit.
+Note: Initially, only 1 A100 80GB device will have this configuration for users to try it out and provide feedback. More MIGs may be added in the future if the initial rollout is successful and we observe significant benefit.
 
 # CPU and Memory Usage
 Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate Slurm commands for running jobs and completed jobs.
