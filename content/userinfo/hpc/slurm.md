@@ -2,7 +2,7 @@
 description = ""
 title = "Slurm Job Manager"
 draft = false
-date = "2019-05-28T17:45:12-05:00"
+date = "2025-07-27T17:45:12-05:00"
 tags = ["hpc","rivanna","parallel-computing","supercomputer","allocations","queues","storage"]
 categories = ["userinfo"]
 images = [""]
@@ -511,6 +511,27 @@ This is in addition to requesting an `a100` in the `gres` option.
 As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna and Afton, UVA's High-Performance Computing (HPC) systems. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. In addition, new HGX H200 GPU nodes have been added to the cluster, further expanding UVA’s capabilities for cutting-edge AI research.
 
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
+
+### MIG GPU Partition
+
+We’re excited to announce the launch of a new MIG-enabled GPU partition (`gpu-mig`), available after our August 12th, 2025 scheduled maintenance. MIG (Multi-Instance GPU) allows a single NVIDIA A100 80GB GPU device to be subdivided into 7 smaller, isolated "slices" each with approximately 10GB GPU memory so that multiple jobs can run concurrently on one physical card, each with guaranteed memory and compute.
+
+**Why this change?**
+
+- Shorter wait times: Smaller jobs no longer block an entire 80 GB GPU.
+- Right-sized resources: Request only what you need—reduce waste, improve fairness.
+- Isolation: MIG slices are hardware-isolated; your job won’t be affected by a noisy neighbor.
+
+**How to use:**
+
+Use the following SLURM directives in your Slurm job script  
+```
+#SBATCH --partition=gpu-mig
+#SBATCH --gres=gpu:1 (only single slices allowed per job)
+```
+Or request the `gpu-mig` partition through Open OnDemand (OOD) platform.
+
+**Note:** Currently, only one A100 80GB node—configured with 56 total 10GB MIG instances—is available for users to try out and provide feedback. Additional MIG resources may be added in the future if this initial rollout proves successful and demonstrates clear benefits. For now, jobs run in this partition will not be charged any Service Units (SUs).
 
 # CPU and Memory Usage
 Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate Slurm commands for running jobs and completed jobs.
