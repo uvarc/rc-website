@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-08-05T00:00:00-05:00"
+date = "2025-07-28T00:00:00-05:00"
 title = "HPC Maintenance: Aug 12, 2025"
 draft = false
 tags = ["rivanna", "afton"]
@@ -14,6 +14,52 @@ categories = ["feature"]
 All systems are expected to return to service by **Wednesday, August 13** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
+
+This maintenance marks the beginning of broader efforts to improve GPU job efficiency on Rivanna and Afton. Below are details on the maintenance impacts and upcoming GPU-related changes designed to reduce wait times and enhance system performance. In addition, we are removing many old modules that are no longer maintained.  
+
+### What to Expect During Maintenance 
+
+**Access:**
+ 
+You will not be able to log in or use the HPC systems, including Open OnDemand and FastX. 
+
+**Jobs:**
+ 
+You can submit jobs until maintenance begins. If the scheduler determines that a job cannot finish before maintenance starts, it will be held in the queue and will automatically start once the system is back online. No jobs will run during maintenance. 
+
+**Storage:**
+ 
+Research Standard and Research Project storage remain accessible via Server Message Block (SMB) and Network File System (NFS) mounts, meaning: 
+
+- You can access files from other systems (e.g., your computer) if mounts are set up. 
+
+- You cannot access files through the HPC interface during maintenance. 
+
+- The Data Transfer Node (DTN) stays online for ongoing data transfers. 
+
+
+### Improving GPU Resource Availability and Job Efficiency 
+
+To improve wait times and system performance in the gpu partition, we are implementing three key updates: 
+
+**1. User Awareness Emails – Starting Aug. 13** 
+    
+Informational alerts will be sent to users whose GPU jobs show zero utilization for extended periods. These alerts encourage efficient GPU use and will not affect your job status. This applies only to no-charge SU jobs in the gpu partition. 
+
+**2. Job Termination Policy – Starting Sept. 9** 
+    
+GPU jobs that show no utilization may be automatically terminated, in line with our [usage guidelines](https://www.rc.virginia.edu/userinfo/hpc/job-alerts/). This policy ensures that GPU resources are used efficiently by active jobs. We'll share more information ahead of the change. 
+
+ 
+**3. New Experimental gpu-mig Partition – Available Starting Aug. 13** 
+    
+To help you get faster access to GPU resources, we are launching a gpu-mig partition that uses NVIDIA’s Multi-Instance GPU (MIG) technology to split a single A100 80GB GPU into 56 smaller instances. 
+
+**What this means for you:** Run smaller GPU jobs with less queue delays — and without using any Service Units (SUs).  
+
+See how to submit a job to the gpu-mig partition [link](https://www.rc.virginia.edu/userinfo/hpc/slurm/#mig-gpu-partition). 
+
+If you have any questions about the maintenance or GPU queue improvements, please contact our user services team. 
 
 ### Open OnDemand
 
@@ -100,3 +146,5 @@ We are removing many old modules that are no longer maintained. If you need to u
 |yaff         | 1.6.0  | - |
 |yasm         | 1.3.0  | - |
 {{< /table >}}
+
+If you have any questions about the maintenance or GPU queue improvements, please [contact our user services team](https://www.rc.virginia.edu/support/). 
