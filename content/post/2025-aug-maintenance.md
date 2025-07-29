@@ -59,7 +59,7 @@ To help you get faster access to GPU resources, we are launching a gpu-mig parti
 
 [See how to submit a job to the gpu-mig partition](https://www.rc.virginia.edu/userinfo/hpc/slurm/#mig-gpu-partition). 
 
-If you have any questions about the maintenance or GPU queue improvements, please contact our user services team. 
+If you have any questions about the maintenance or GPU queue improvements, please [contact our user services team](https://www.rc.virginia.edu/support/). 
 
 ### Open OnDemand
 
