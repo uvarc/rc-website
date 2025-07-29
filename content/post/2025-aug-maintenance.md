@@ -57,7 +57,7 @@ To help you get faster access to GPU resources, we are launching a gpu-mig parti
 
 **What this means for you:** Run smaller GPU jobs with less queue delays — and without using any Service Units (SUs).  
 
-See how to submit a job to the gpu-mig partition [link](https://www.rc.virginia.edu/userinfo/hpc/slurm/#mig-gpu-partition). 
+[See how to submit a job to the gpu-mig partition](https://www.rc.virginia.edu/userinfo/hpc/slurm/#mig-gpu-partition). 
 
 If you have any questions about the maintenance or GPU queue improvements, please contact our user services team. 
 
