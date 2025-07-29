@@ -32,6 +32,7 @@ We are removing many old modules that are no longer maintained. If you need to u
 |aspera-connect|4.2.4  | 4.2.8 |
 |bazel        | 6.1.1  | 8.3.1 |
 |bioconda     | py3.10 | py3.11 |
+|biopython    |1.81-py3| 1.85 |
 |blasr        |20190414| - |
 |bsmap        | 2.42   | - |
 |cd-hit       | 4.8.1  | - |
