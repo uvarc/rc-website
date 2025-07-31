@@ -76,6 +76,7 @@ We are removing many old modules that are no longer maintained. If you need to u
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
+|amptorch     |0.1, 20201028-al | - |
 |aspera-connect|4.2.4  | 4.2.8 |
 |bazel        | 6.1.1  | 8.3.1 |
 |bioconda     | py3.10 | py3.11 |
@@ -117,6 +118,7 @@ We are removing many old modules that are no longer maintained. If you need to u
 |netperf      | 2.6.0  | - |
 |nextflow     | 24.10.5| 25.04.6 |
 |nseg         | 1.0.0  | - |
+|ocp-models   | 0.1    | - |
 |openbugs     | 3.2.3  | - |
 |openspeedshop| 2.4    | - |
 |p3dfft       | 2.7.9  | - |
