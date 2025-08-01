@@ -100,7 +100,7 @@ Dedicated computing is an alternative to self-managed lab systems and condominiu
 
 **Available to:** [Eligible PIs](#pi-eligibility) who need exclusive access to a subset of HPC nodes for extended periods.
 
-**Note:** When requesting a dedicated node, it can be desirable to create a new Grouper group so that you can control access to the node within your research group, but it is not required.
+**Note:** When requesting dedicated compute resources, it can be desirable to create a new Grouper group so that you can manage access to the resources within your research group, but it is not required.
 
 <a href="/form/support-request/?category=Rivanna&request_title=Dedicated%20Computing">
 
