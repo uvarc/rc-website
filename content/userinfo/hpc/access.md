@@ -48,7 +48,9 @@ Each PI should create his/her own Grouper group using the <a href="https://in.vi
 Whether you need to set up a new group, modify a group or access the legacy MyGroups groups, go to [Grouper](https://groups.identity.virginia.edu/) which requires VPN connection. For new groups, specify "This group will be used for Rivanna/Afton access" in the description section of the Service Now request form to expedite group creation. Please add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
 {{% /highlight %}}
 
-Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When users are added or deleted, accounts are automatically created. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
+Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When a user is added to an allocation, unless the user already has an HPC user account, one will automatically be created for them. In the near future, group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
+
+Once a group member has graduated or left the University, they should be removed from an allocation as soon as possible to prevent continued access to UVA resources. In cases where a researcher may continue working at the direction of the PI on a UVA research project after leaving UVA, a temporary sponsored account should be requested from UVA ITS (see: https://in.virginia.edu/sponsor). A "contractor" type of sponsored account is generally recommended in these cases.
 
 [<button class="btn btn-warning">Manage Grouper</button>](https://groups.identity.virginia.edu/)
 
