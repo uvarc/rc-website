@@ -30,7 +30,7 @@ summary = """
 <div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
 <p>Compute time on Rivanna/Afton is available through two service models.
 
-<b>Service Unit (SU) Allocations</b>. One SU corresponds to one core-hour. Multiple SUs make up what is called an SU allocation (e.g., a new allocation = 1M SUs).
+<b>Service Unit (SU) Allocations</b>. One SU corresponds to one core-hour. Multiple SUs make up what is called an SU allocation (e.g., a new allocation = 10M SUs).
 
 <b>Dedicated Computing</b>. This model allows researchers to lease hardware managed by Research Computing (RC) as an alternative to purchasing their own equipment. It provides dedicated access to HPC resources with no wait times.
 
