@@ -527,7 +527,7 @@ We’re excited to announce the launch of a new MIG-enabled GPU partition (`gpu-
 Use the following SLURM directives in your Slurm job script  
 ```
 #SBATCH --partition=gpu-mig
-#SBATCH --gres=gpu:1 (only single slices allowed per job)
+#SBATCH --gres=gpu:1 or #SBATCH --gres=gpu:1g.10gb:1 (only single MIG slices allowed per job)
 ```
 Or request the `gpu-mig` partition through Open OnDemand (OOD) platform.
 
