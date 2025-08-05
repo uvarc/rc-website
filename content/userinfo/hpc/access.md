@@ -30,7 +30,7 @@ summary = """
 <div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
 <p>Compute time on Rivanna/Afton is available through two service models.
 
-<b>Service Unit (SU) Allocations</b>. One SU corresponds to one core-hour. Multiple SUs make up what is called an SU allocation (e.g., a new allocation = 1M SUs).
+<b>Service Unit (SU) Allocations</b>. One SU corresponds to one core-hour. Multiple SUs make up what is called an SU allocation (e.g., a new standard allocation = 10M SUs).
 
 <b>Dedicated Computing</b>. This model allows researchers to lease hardware managed by Research Computing (RC) as an alternative to purchasing their own equipment. It provides dedicated access to HPC resources with no wait times.
 
@@ -48,7 +48,9 @@ Each PI should create his/her own Grouper group using the <a href="https://in.vi
 Whether you need to set up a new group, modify a group or access the legacy MyGroups groups, go to [Grouper](https://groups.identity.virginia.edu/) which requires VPN connection. For new groups, specify "This group will be used for Rivanna/Afton access" in the description section of the Service Now request form to expedite group creation. Please add yourself as a member to the group in order for us to fulfill any allocation request related to this group.
 {{% /highlight %}}
 
-Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When users are added or deleted, accounts are automatically created. Group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
+Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When a user is added to an allocation, unless the user already has an HPC user account, one will automatically be created for them. In the near future, group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
+
+Once a group member has graduated or left the University, they should be removed from an allocation as soon as possible to prevent continued access to UVA resources. In cases where a researcher may continue working at the direction of the PI on a UVA research project after leaving UVA, a temporary sponsored account should be requested from UVA ITS (see: https://in.virginia.edu/sponsor). A "contractor" type of sponsored account is generally recommended in these cases.
 
 [<button class="btn btn-warning">Manage Grouper</button>](https://groups.identity.virginia.edu/)
 
@@ -99,6 +101,8 @@ Instructional allocations provide limited access to Rivanna and Afton and are av
 Dedicated computing is an alternative to self-managed lab systems and condominium nodes. This option provides researchers with exclusive access to HPC resources without wait times, eliminating the need for RC to manage the lifecycle of hardware purchased by researchers. Dedicated Computing involves nodes that RC has procured as part of its large-scale HPC acquisitions being “leased” to researchers for a term of one year or longer. These leased nodes are configured with the same system image as the primary HPC environment, ensuring consistency and minimizing support overhead. Once the lease term ends, dedicated nodes are returned to the public queues, making them available for general HPC use.
 
 **Available to:** [Eligible PIs](#pi-eligibility) who need exclusive access to a subset of HPC nodes for extended periods.
+
+**Note:** When requesting dedicated compute resources, it can be desirable to create a new Grouper group so that you can manage access to the resources within your research group, but it is not required.
 
 <a href="/form/support-request/?category=Rivanna&request_title=Dedicated%20Computing">
 
