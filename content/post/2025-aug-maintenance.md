@@ -70,6 +70,7 @@ The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 ke
 
 Default version changes:
 - homer/4.11 &rarr; 5.1
+- nodejs/18.12.1 &rarr; 24.5.0
 
 We are removing many old modules that are no longer maintained. If you need to use any of these please contact us.
 
