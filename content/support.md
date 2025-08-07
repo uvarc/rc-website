@@ -153,7 +153,9 @@ via Zoom</button></a>
 
 ### New to High-Performance Computing?  
 
-We offer orientation sessions to introduce you to the Afton & Rivanna HPC systems on Wednesdays (appointment required).
+We have core training that is essential to getting up to speed working in the UVA HPC environment. We offer virtual orientation sessions to introduce you to the Afton & Rivanna HPC systems. Trainings are hosted Wednesdays. Registration is required.
+
+The [training material](https://learning.rc.virginia.edu/tutorials/hpc-intro/) is hosted on our learning page where you can find a full YouTube video series and the workshop content of our core training.
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
