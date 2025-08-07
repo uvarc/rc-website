@@ -47,7 +47,10 @@ All members of the UVA community are welcome—especially UVA faculty, staff, an
 
 **Where can I park?** 
 
-Free parking is available in Y1 lot (far left side of Carruthers Hall). Paid parking is available via ParkMobile in lot #5564 at Michie North. 
+**Free Parking**: Y1 lot (left side of Carruthers Hall)
+**Paid Parking**: Y2  lot - ParkMobile Lot #5564 (Michie North)
+
+**[Parking Map](https://parking.virginia.edu/sites/parking/files/2025-03/MasterParkingMap%280225%29.pdf)**
 
 **Who can I contact with questions?**
 
