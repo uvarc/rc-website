@@ -100,7 +100,6 @@ We are removing many old modules that are no longer maintained. If you need to u
 |genrich      | 0.6.1  | - |
 |glpk         | 5.0    | - |
 |gpunufft     | 2.1.0  | - |
-|grace        | 5.1.25 | - |
 |impute2      | 2.3.2  | - |
 |intltool     | 0.51.0 | - |
 |io_lib       | 1.14.8 | - |
