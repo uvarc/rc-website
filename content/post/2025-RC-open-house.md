@@ -22,8 +22,6 @@ categories = ["feature"]
 
 * **Network with potential collaborators** and members of the research community 
 
-* **Enjoy refreshments and enter to win door prizes**
-
 <hr>
 
 ### Event Details
