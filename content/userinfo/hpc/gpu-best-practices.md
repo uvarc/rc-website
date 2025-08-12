@@ -12,7 +12,6 @@ type = "rivanna"
 +++
 
 
-
 ---
 
 ## Core Principles
@@ -28,7 +27,6 @@ type = "rivanna"
 ## Right‑Sizing in 5 Steps
 
 1. **Baseline (≤5 minutes):** Run a tiny slice on 1 GPU. Note:
-
    * Throughput (samples/s or tokens/s)
    * GPU utilization and memory usage
    * Any stalls from CPU or I/O
@@ -86,5 +84,3 @@ type = "rivanna"
 * What you tried (one sentence) and the goal.
 * Your baseline measurements (throughput, GPU util/memory) and any obvious bottleneck.
 * What you requested (GPUs/CPUs/RAM/time) and whether the job finished or stalled.
-
----
