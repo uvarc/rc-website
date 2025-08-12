@@ -11,7 +11,7 @@ type = "rivanna"
 
 +++
 
-# GPU Best Practices (High‑Level Guidance)
+
 
 ---
 
