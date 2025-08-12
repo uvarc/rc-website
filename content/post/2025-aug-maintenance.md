@@ -64,7 +64,7 @@ To help you get faster access to GPU resources, we are launching a gpu-mig parti
 
 ### Open OnDemand
 
-The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 kernel within JupyterLab. For details see [here](/userinfo/hpc/software/spark).
+The PySpark Interactive App will be removed. Please use the new PySpark 4.0.0 kernel within JupyterLab. For details see [our Spark page](/userinfo/hpc/software/spark).
 
 ### Modules
 
@@ -150,4 +150,4 @@ We are removing many old modules that are no longer maintained. If you need to u
 |yasm         | 1.3.0  | - |
 {{< /table >}}
 
-If you have any questions about the maintenance, software stac or GPU queue improvements, please [contact our user services team](https://www.rc.virginia.edu/support/). 
+If you have any questions about the maintenance, software stack or GPU queue improvements, please [contact our user services team](https://www.rc.virginia.edu/support/). 
