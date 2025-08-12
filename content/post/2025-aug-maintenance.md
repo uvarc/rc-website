@@ -129,7 +129,7 @@ We are removing many old modules that are no longer maintained. If you need to u
 |pov-ray      |3.7.0.10| - |
 |psipred      | 4.02   | - |
 |psmc         | 0.6.5  | - |
-|pstool       | 0.4.5  | - |
+|pslib        | 0.4.5  | - |
 |qtltools     | 1.3.1  | - |
 |rapidsai     | 24.06  | 25.06 |
 |rasqual      |20210424| - |
