@@ -318,7 +318,7 @@ job_queues:
       purpose: "For jobs on a single compute node"
       max_time_per_job: "7 days"
       max_nodes_per_job: 1
-      max_cores_per_job:
+      max_cores_per_job: 96
       max_cores_per_node: 96 
       default_mem_per_core: "9GB"
       max_mem_per_node_per_job: "1462GB"
