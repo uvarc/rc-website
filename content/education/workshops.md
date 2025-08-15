@@ -51,6 +51,24 @@ Specifically, check out these new tutorials!
 
 {{% new-tutorials %}}
 
+- - -
+
+# Explore Our HPC Core Training Videos
+Before attending any of our live workshops, we invite you to check out our foundational HPC training videos available on our [YouTube channel](https://www.youtube.com/@UVAResearchComputing).
+
+These short tutorials will help you get the most out of your workshop experience:
+
+* [Connecting to HPC](https://youtu.be/uxr2R5-u9II?si=-RW0_JCqxQ5HfoTW)
+* [Working with Files](https://www.youtube.com/watch?v=dYDcGtlyIh0)
+* [Features of Open OnDemand](https://youtu.be/MpzThi43iak?si=igXRPkeGnGm1PVQA)
+* [Using Open OnDemand Interactive Apps](https://youtu.be/o9XVUhCQuEI?si=l8Tyhv0OtVxn-GVP)
+
+Whether you’re new to high-performance computing or need a quick refresher, these videos are a great place to start.
+
+<a href="https://www.youtube.com/@UVAResearchComputing" class="btn btn-warning" target="_new">Watch Now</a>
+
+- - -
+
 # Previous Workshops
 
 - Advanced Computing in the Cloud
