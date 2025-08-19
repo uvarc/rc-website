@@ -1,6 +1,6 @@
 +++
 type = "rivanna"
-date = "2019-04-23T08:37:46-05:00"
+date = "2025-08-19T00:00:00-05:00"
 tags = [
   "rivanna", "software", "compiler","gpu"
 ]
@@ -30,6 +30,7 @@ According to the [CUDA documentation](https://docs.nvidia.com/cuda/cuda-compiler
 
 Please use the following values when compiling CUDA code on the HPC system.
 
+{{< table title="gpu" class="table table-striped" >}}
 | Type       | GPU       | Architecture | Compute Capability | CUDA Version |
 |------------|-----------|--------------|--------------------|--------------|
 | Datacenter | V100      | Volta        | 7.0                | 9+           |
@@ -39,6 +40,7 @@ Please use the following values when compiling CUDA code on the HPC system.
 | RTX        | A6000     | Ampere       | 8.6                | 11+          |
 | GeForce    | RTX2080Ti | Turing       | 7.5                | 10+          |
 |            | RTX3090   | Ampere       | 8.6                | 11+          |
+{{< /table >}}
 
 <br>
 
