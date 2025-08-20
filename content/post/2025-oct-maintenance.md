@@ -17,7 +17,7 @@ All systems are expected to return to service by **Wednesday, October 15** at 6 
 
 ### System
 
-- Slurm will be upgraded from 24.11.3 to 25.05.1.
+- Slurm will be upgraded from 24.11 to 25.05.
 
 ### Modules
 
