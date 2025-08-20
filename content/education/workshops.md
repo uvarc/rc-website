@@ -46,12 +46,12 @@ Course material and exercises are available through a companion site. Feel free 
 
 - - -
 
-# New Tutorials
+<!-- # New Tutorials
 Specifically, check out these new tutorials!
 
 {{% new-tutorials %}}
 
-- - -
+- - - -->
 
 # Explore Our HPC Core Training Videos
 Before attending any of our live workshops, we invite you to check out our foundational HPC training videos available on our [YouTube channel](https://www.youtube.com/@UVAResearchComputing).
