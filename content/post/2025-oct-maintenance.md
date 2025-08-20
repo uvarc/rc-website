@@ -15,6 +15,10 @@ All systems are expected to return to service by **Wednesday, October 15** at 6 
 
 ## IMPORTANT MAINTENANCE NOTES
 
+### System
+
+- Slurm will be upgraded from 24.11.3 to 25.05.1.
+
 ### Modules
 
 - The `nvhpc/24.1` and `nvompi/24.1_4.1.6` toolchains, together with all associated modules, will be removed. Users should migrate to newer versions.
