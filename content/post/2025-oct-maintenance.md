@@ -23,10 +23,11 @@ All systems are expected to return to service by **Wednesday, October 15** at 6 
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-|nvhpc | 24.1   | 24.5, 25.3 |
-|orca  | 5.0.4, 6.0.0 | 6.1.0 |
-|python| 2.7.18 | 3.11.4 |
-|rclone| 1.61.1 | 1.70.3 |
+|nvhpc   | 24.1   | 24.5, 25.3 |
+|orca    | 5.0.4, 6.0.0 | 6.1.0 |
+|parallel|20200322| 20250722 |
+|python  | 2.7.18 | 3.11.4 |
+|rclone  | 1.61.1 | 1.70.3 |
 {{< /table >}}
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
