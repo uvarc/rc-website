@@ -105,6 +105,8 @@ After you initiate a transfer, it will be assigned a `Task ID` that you can use 
 
 Your transfer may take several minutes or hours to complete depending upon the size of the data. Globus transfers are persistent, which means that if there is a network interruption, or one collection is turned off, the transfer will resume whenever the connection is restored.  The transfer takes place in the background, so once it is assigned an ID and you receive the notification that it has begun, you can log out from the Globus page.
 
+**Note:** Globus allows you to schedule and repeat data transfers through its web app or command-line interface. To set a specific start time and choose a repeat interval to create recurring transfers click on the `Transfer & Timer Options` pulldown menu.
+
 The Globus Personal Connection application will show only a limited default set of paths on your computer.  If you need to use another folder, such as one on an external hard drive, as the source or destination, you will have to add it.  With the Globus Personal Collection running, click on the `g` logo in your taskbar or tray.  Mac: go to `Preferences/Access`.  Click the `+` button to add a path.  Windows: `Options/Access`, click `+` to add the path to the drive.  Navigate as usual to the location you wish to add.
 
 <img src="/images/globus-add-path.png" alt="add-path" width="354" height="508">

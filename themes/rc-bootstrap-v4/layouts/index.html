@@ -5,10 +5,10 @@
   {{ partial "head-meta.html" . }}
   <base href="{{ .Site.BaseURL }}">
   <link rel="canonical" href="{{ .Permalink }}">
-  <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}/images/favicon.ico" type="image/x-icon" />
+  <link rel="Shortcut Icon" href="{{ absURL "/images/favicon.ico" }}" type="image/x-icon" />
   <title>UVA {{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
   {{ "<!-- combined, minified CSS -->" | safeHTML }}
-  <link href="{{ .Site.BaseURL }}/css/style.css" rel="stylesheet">
+  <link href="{{ absURL "/css/style.css" }}" rel="stylesheet">
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> -->
   {{ template "_internal/google_analytics.html" . }}
   {{ partial "head-custom.html" . }}
@@ -18,9 +18,9 @@
 <body>
   {{ partial "menu-home.html" . }}
   {{ partial "site-header.html" . }}
-  <!-- {{ partial "carousel.html" . }} -->
+  {{/* {{ partial "carousel.html" . }} */}}
    <!-- use this partial below for specific events (comment out the carousel partial) -->
-   {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/June_2025_DAC_Proposal_Deadline.png" "imageLink" "/service/dac/awards" "altText" "Due June 30 - Small Analytics Resource Proposals. Get the analytics support your research needs.  Apply for an analytics resource award to receive hands-on support for your project. Apply for a Resource Award." "linkAriaLabel" "View proposal instructions" ) }}
+   {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/rc-open-house-2025-website-banner.png" "imageLink" "/2025/07/research-computing-open-house-sept.-9-2025" "altText" "UVA Research Computing Open House 2025, Sept. 9, 3-6 p.m., Michie North, View event details" "linkAriaLabel" "View Open House details" ) }}
 
   <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
     Press 'S' to search
