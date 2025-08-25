@@ -162,10 +162,8 @@ Rivanna and Afton are managed resources; users must submit jobs to queues contro
 - `parallel` requires *at least* 2 nodes and 4 CPU cores.
 - Slurm's default memory unit is in MB. Different units may be specified, e.g. `--mem=100G`, where 1G = 1024M.
 - The `gpu` partition is dedicated to jobs that can utilize a general purpose graphics processing unit (GPGPU). In Slurm scripts you must request at least one GPU device through `--gres=gpu`. Jobs that do not utilize any GPUs are not allowed in this partition.  
-The maximum *aggregate* GPUs allowed for a single user’s running jobs is 32.  
-SU charge rate = #cores + 2 x #GPUs, which is *at least* 1 + 2x1 = 3.
-- `interactive` maximum *aggregate* CPU cores (GPUs) is 24 (2) for a single user. The charge rates for cores and GPUs are the same as the other partitions.
-- The NVIDIA DGX BasePOD offers high-performance GPUs that brings new AI and ML functionality to support parallel GPU computing and large deep-learning models.  
+- `interactive` maximum *aggregate* CPU cores (GPUs) is 24 (2) for a single user.
+- The NVIDIA DGX BasePOD and HGX H200 GPU nodes offer high-performance GPUs that bring new AI and ML functionality to support parallel GPU computing and large deep-learning models. Currently, H200 nodes are not accessible through Open OnDemand and can only be utilized via batch job submissions. 
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
 
 - - -

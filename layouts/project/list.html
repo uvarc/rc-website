@@ -6,13 +6,13 @@
 
     <base href="{{ .Permalink }}">
     <link rel="canonical" href="{{ .Permalink }}">
-    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
+    <link rel="Shortcut Icon" href="{{ absURL "/images/favicon.ico" }}" type="image/x-icon" />
     <meta type="{{ .Type }}" />
 
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
     {{ "<!-- combined, minified CSS -->" | safeHTML }}
-    <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet">
+    <link href="{{ absURL "/css/style.css" }}" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <style>
       .btn-info{margin-right:0rem;}
@@ -97,6 +97,8 @@ $(window).on('load', function(){
         <a href="#" data-filter=".machine-learning"><button class="btn btn-sm btn-info">Machine Learning</button></a>
         <a href="#" data-filter=".containers"><button class="btn btn-sm btn-info">Microservices</button></a>
         <a href="#" data-filter=".tools"><button class="btn btn-sm btn-info">Tools & Data</button></a>
+		<a href="#" data-filter=".dac"><button class="btn btn-sm btn-info">DAC</button></a>
+		<a href="#" data-filter=".dtc"><button class="btn btn-sm btn-info">DTC</button></a>
       </p>
     </div>
 

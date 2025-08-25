@@ -31,13 +31,12 @@
         justify-content: start;
         align-items: center;
         padding: 10px;
-        border: 1px solid #ddd;
+        border: 2px solid #ddd;
         border-radius: 8px;
         max-width: 300px;
         flex: 1 1 250px; 
     }
 
-    /* Image styling */
     .person-image {
         width: 60px;
         height: 60px;
@@ -59,9 +58,16 @@
     }
 
     @media (max-width: 600px) {
-        .people-container {
-            flex-direction: column;
-            align-items: center;
-        }
+    .people-container {
+        flex-direction: column;
+        align-items: center;
     }
+
+    .person-card {
+        width: 100%;  
+        max-width: 350px; 
+        margin-bottom: 20px;
+    }
+
+}
 </style>

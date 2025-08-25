@@ -225,6 +225,11 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and interactive queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
 
+## How does the system decide how long my job is queued? Does Slurm have "fairshare"? 
+
+A variety of factors are considered when Slurm schedules your job and assigns it a priority. Some of these factors include: resource request (time, memory, etc.), allocation type (standard vs paid), your SU burn frequencies, and the frequency of jobs submitted from your allocation. Slurm on our system has fair use enabled to allow equitable access to our users across the system. Slurm calculates your fairshare based off of previously listed factors and assigns your job a fair priority. 
+
+
 ## How is my "Fairshare" impacted by the changed SU charge rates?
 
 Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value.
@@ -515,6 +520,16 @@ You must first generate an ssh key and then copy it to your git repository. Here
 Make sure that the ssh key is in your authorized_keys file in your .ssh directory on Rivanna/Afton.
 
 3. The next step is to clone the repository using the ssh link. If you have already cloned the repository using the http link and made a number of changes to your files, you won’t want to redo them.  Rename the directory that was created when you first cloned the repository. Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
+
+## How do I add external or mapped network drives onto the Globus Path
+
+When you first set up Globus, it only has access to certain folders of your local drive. You can add additional locations such as mapped network drives or external hard drives in the Globus Options/Preferences menu.
+
+Windows: Right click the Globus icon > Options > + to add a new folder
+
+Mac: Globus icon > Preferences > Access > + to add a new folder
+
+Click the Up button in the Globus File Manager to navigate to higher level folders.
 
 # Downloading Files
 

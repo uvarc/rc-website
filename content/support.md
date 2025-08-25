@@ -136,6 +136,8 @@ Examples of the type of support we can provide are:
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Tuesdays 3:00-5:00pm</b>
+
+<em>Our <a href="https://www.rc.virginia.edu/2025/07/research-computing-open-house-sept.-9-2025/">RC Open House</a> on <strong>Tuesday, September 9</strong> overlaps with  virtual office hours, so we will <strong>cancel the virtual session for that day</strong>. We invite you to stop by the Open House in person to speak with us and ask questions. We look forward to seeing you there!</em>
 <a style="float:right;" href="https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09"><button class="btn btn-primary btn-sm">Join us 
 via Zoom</button></a>
 <!-- Physical Life Sciences Building, Room 430-->
@@ -153,7 +155,9 @@ via Zoom</button></a>
 
 ### New to High-Performance Computing?  
 
-We offer orientation sessions to introduce you to the Afton & Rivanna HPC systems on Wednesdays (appointment required).
+We have core training that is essential to getting up to speed working in the UVA HPC environment. We offer virtual orientation sessions to introduce you to the Afton & Rivanna HPC systems. Trainings are hosted Wednesdays. Registration is required.
+
+The [training material](https://learning.rc.virginia.edu/tutorials/hpc-intro/) is hosted on our learning page where you can find a full YouTube video series and the workshop content of our core training.
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->

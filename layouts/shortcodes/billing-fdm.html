@@ -1,26 +1,26 @@
 <div style="padding:2rem;background-color#eee;border:solid 1px #ccc">
 <h4>Billing Information</h4>
 <div class="alert alert-danger" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
-  <b>PLEASE NOTE:</b> We no longer accept PTAOs as payment for RC services. Please reach out to your fiscal contact for the full FDM 
-accounting string before submitting a service request.  All worktag values are needed for processing payments, not just the driver worktag. Thank you!
+  <b> NOTE: </b> Please reach out to your fiscal contact for the full FDM accounting string before submitting a service request. 
+  All worktag values are required for payment processing, not just the driver worktag. If the FDM is not valid or needs verification, please check with your financial contact. Thank you!
 </div><!-- MAIN FDM FIELDS -->
   <div class="row">
-    <div class="col form-item form-type-textarea form-group">
+    <div class="col form-item form-type-textarea form-group" id = "financial-contact-div">
       <label class="control-label" for="financial-contact">Financial Contact </label>
       <input class="form-control form-text" type="text" id="financial-contact" name="financial-contact" />
     </div>
   </div>
   <div class="row">
     <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="company-id">Company ID </label>
-      <input class="form-control form-text" type="text" id="company-id" name="company-id" />
+      <label class="control-label" for="company-id"> Company ID </label>
+      <input class="form-control form-text" type="text" id="company-id" name="company-id" placeholder="e.g. UVA_207" />
     </div>
     <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="cost-center">Cost Center </label>
-      <input class="form-control form-text" type="text" id="cost-center" name="cost-center" />
+      <label class="control-label" for="cost-center"> Cost Center </label>
+      <input class="form-control form-text" type="text" id="cost-center" name="cost-center"  placeholder="e.g. CC1234"/>
     </div>
     <div class="col form-item form-type-textarea form-group">
-      <label class="control-label" for="business-unit">Business Unit </label>
+      <label class="control-label" for="business-unit"> Business Unit </label>
       <input class="form-control form-text" type="text" id="business-unit" name="business-unit" />
     </div>
   </div><!-- FDM FUNDING TYPE OPTIONS -->

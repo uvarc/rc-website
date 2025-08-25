@@ -44,7 +44,7 @@ For detailed information about a particular {{% software-name %}} module, includ
 module spider {{% module-firstversion %}}
 ```
 
-{{< module-versions >}}
+{{% module-versions %}}
 
 You can work in the MATLAB desktop on the UVA HPC frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access) for this application.  However, the time and memory that a job can use on the frontends are limited, so for longer jobs you should submit your job to compute nodes through Slurm.
 

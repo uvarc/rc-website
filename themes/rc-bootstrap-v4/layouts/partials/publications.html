@@ -7,7 +7,17 @@
       <ul style="margin-right:2rem;margin-bottom:2rem;">
         {{ range $.Params.publications }}
           <li>
-            {{ .authors }}. "{{ .title }}." <em>{{ .journal }}</em>, {{ .year }}.
+            {{ .authors }}. "{{ .title }}." <em>{{ .journal }}</em>, 
+            {{ if .volume }} 
+              Volume {{ .volume }}, 
+            {{ end }} 
+            {{ if .issue }} 
+              Issue {{ .issue }}, 
+            {{ end }}
+            {{ if .month }}
+              {{ .month }} 
+            {{ end }}
+            {{ .year }}.
             {{ if .doi }}
               <a href="https://doi.org/{{ .doi }}" target="_blank">https://doi.org/{{ .doi }}</a>
             {{ end }}

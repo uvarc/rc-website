@@ -10,7 +10,20 @@ draft = false
 type = "form"
 private = true
 +++
+<style>
+  .table thead th {
+    vertical-align: top;
+}
+ .table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 0.9rem;
 
+ }
+ .table td {
+    word-break: break-word;
+  }
+</style>
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="/js/combined-request-form.js"></script>
@@ -58,15 +71,16 @@ private = true
 
 <!-- Current Resources Preview -->
 <div id="existing-resources-preview" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
-    <h5 class="mb-3">Your Current Resources</h5>
+    <h4 class="mb-3">Your Current Resources</h4>
 
     <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
         <thead>
             <tr>
                 <th scope="col">Type</th>
-                <th scope="col">Project/Class</th>
+                <th scope="col">Project</th>
                 <th scope="col">Group</th>
+                <th scope="col">Resource Name</th>
                 <th scope="col">Tier</th>
                 <th scope="col">Size/Count</th>
                 <th scope="col">Status</th>
@@ -78,29 +92,32 @@ private = true
         </tbody>
     </table>
 </div>
+<div id="empty-message" class="container" style="padding:1.5rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem; text-align: center; display:none;">
+  No resources found to display.
+</div>
 
   <!-- Resource Type Selection -->
-  <div class="container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
+  <div class="resource_type_container" id = "resource_type_container" style="padding:1rem;background-color:#eee;border:solid 1px #ccc;margin-bottom:1rem;">
   <fieldset class="form-item form-group form-type-select">
     <legend class="control-label h6 mb-2">Resource Type <span class="form-required" title="This field is required.">*</span></legend>
     <select name="request-type" id="request-type" class="form-control" required>
-      <option value="service-unit">Service Unit (SU)</option>
+      <option value="service-unit">Allocation's (SU)</option>
       <option value="storage">Storage</option>
     </select>
   </fieldset>
 </div>
 
   <!-- Form Fields Container -->
-  <div style="margin-bottom:1rem;">
+  <div style="margin-bottom:1rem;" id = "service_unit_container">
     <!-- Service Unit (SU) Request Fields -->
     <div id="allocation-fields" style="display: none; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
-      <h5 class="mb-3">Service Unit (SU) Request</h5>
+      <h5 class="mb-3"> Allocation's (SU) Request</h5>
       <hr size="1" />
 
       <!-- New or Renewal (First section for SU requests) -->
       <fieldset class="form-item form-group form-type-radios form-group">
-        <legend class="control-label h6 mb-2">New or Renewal <span class="form-required" title="This field is required.">*</span></legend>
-        <div class="row">
+      <legend class="control-label h6 mb-2">New or Renewal <span  class="form-required" title="This field is required.">*</ span></legend>
+      <div class="row">
           <div id="new-or-renewal-options" class="form-radios col">
             <div class="form-item form-type-radio radio">
               <input required="required" type="radio" id="new-or-renewal-1" name="new-or-renewal" value="new" class="form-radio" />
@@ -108,17 +125,13 @@ private = true
             </div>
             <div class="form-item form-type-radio radio">
               <input required="required" type="radio" id="new-or-renewal-2" name="new-or-renewal" value="renewal" class="form-radio" />
-              <label class="control-label" for="new-or-renewal-2">Renewal</label>
+              <label class="control-label" for="new-or-renewal-2">Update/Renewal</label>
             </div>
+            <div class="help-block col tiny">If this is your first request, select New. Otherwise select Renewal.</div>
           </div>
-          <div class="help-block col">If this is your first request, select New. Otherwise select Renewal.</div>
-        </div>
+      </div>
       </fieldset>
-<div id="su-capacity" class="col form-item form-group">
-          <label class="control-label" for="su-quantity">SU's Requested <span class="form-required" title="This field is required.">*</span></label>
-          <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
-          <p class="tiny">The number of SU's requested.</p>
-        </div>
+
       <!-- Grouper/MyGroups Selection -->
       <div id="mygroups-group-container" style="display: none;">
         <label for="mygroups-group">Name of Grouper/MyGroups Account *</label>
@@ -132,6 +145,47 @@ private = true
           <select id="storage-mygroups-group-old" class="form-control" required>
               <option value="">- Select a group -</option>
           </select>
+      </div><br/>
+      
+      <!-- Existing Projects for Service Units (Only visible for Renewal) -->
+      <div id="existing-projects-allocation" style="display:none; margin-top:1em;">
+        <fieldset>
+          <legend class="control-label h5 mb-2"><strong>Your Existing Service Units</strong></legend>
+          <hr size="1" />
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Project</th>
+                <th>Group</th>
+                <th>Resource Name</th>
+                <th>Tier</th>
+                <th>Size/Count</th>
+                <th>Status</th>
+                <th>Update Date</th>
+              </tr>
+            </thead>
+            <tbody id="allocation-projects-tbody">
+              <!-- Will be populated by API -->
+            </tbody>
+          </table>
+        </fieldset>
+      </div>
+          <!-- Project/Class Name (Only for New requests) -->
+      <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
+        <div class="form-item form-group form-type-textfield form-group">
+          <label class="control-label" for="new-project-name">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
+          <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
+        </div>
+      </div>
+
+      <!-- Project Description -->
+      <div id="project-description" class="form-item form-type-textarea form-group" style="display: none;"> 
+        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
+        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+        <div class="form-textarea-wrapper resizable">
+          <textarea required="required" class="form-control form-textarea required" id="project-description-text" name="project-description" cols="60" rows="8"></textarea>
+        </div>
       </div>
       
       <!-- Tier Options (Only shown for New requests) -->
@@ -156,41 +210,10 @@ private = true
         </fieldset>
       </div>
 
-      <!-- Existing Projects for Service Units (Only visible for Renewal) -->
-      <div id="existing-projects-allocation" style="display:none; margin-top:1em;">
-        <fieldset>
-          <legend class="control-label h6 mb-2">Your Existing Service Units</legend>
-          <table class="table table-bordered table-hover">
-            <thead>
-              <tr>
-                <th>Select</th>
-                <th>Project/Class</th>
-                <th>Group</th>
-                <th>Tier</th>
-              </tr>
-            </thead>
-            <tbody id="allocation-projects-tbody">
-              <!-- Will be populated by API -->
-            </tbody>
-          </table>
-        </fieldset>
-      </div>
-      
-      <!-- Project/Class Name (Only for New requests) -->
-      <div id="new-project-name-container" style="display: none; margin-top:1em;" class="new-request-only">
-        <div class="form-item form-group form-type-textfield form-group">
-          <label class="control-label" for="new-project-name">Project/Class Name <span class="form-required" title="This field is required.">*</span></label>
-          <input required="required" class="form-control form-text required" type="text" id="new-project-name" name="new-project-name" value="" size="60" maxlength="128" />
-        </div>
-      </div>
-
-      <!-- Project Description -->
-      <div id="project-description" class="form-item form-type-textarea form-group"> 
-        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
-        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
-        <div class="form-textarea-wrapper resizable">
-          <textarea required="required" class="form-control form-textarea required" id="project-description" name="project-description" cols="60" rows="8"></textarea>
-        </div>
+      <div id="su-capacity" class="col form-item form-group">
+            <label class="control-label" for="su-quantity">Additional SU's Requested <span class="form-required" title="This field is required.">*</span></label>
+            <input class="form-control required" type="number" min="100" step="100" max="20000" required="required" id="su-quantity" name="su-quantity" value="1000" style="width:8rem;">
+           <p class="tiny">The number of SU's requested.(Note: SU's  cannot be requested for Standard and Instructional resources but will be automatically applied/updated once submitted)</p>
       </div>
     </div>
     <!-- Storage Request Fields -->
@@ -209,13 +232,10 @@ private = true
                 <label for="type-of-request-new">Create new storage share</label>
               </div>
               <div class="form-item form-type-radio radio">
-                <input required="required" type="radio" id="type-of-request-increase" name="type-of-request" value="increase-storage" class="form-radio">
-                <label for="type-of-request-increase">Increase size of existing share</label>
+                <input required="required" type="radio" id="type-of-request-update" name="type-of-request" value="update-storage" class="form-radio">
+                <label for="type-of-request-update">Update existing share</label>
               </div>
-              <div class="form-item form-type-radio radio">
-                <input required="required" type="radio" id="type-of-request-decrease" name="type-of-request" value="decrease-storage" class="form-radio">
-                <label for="type-of-request-decrease">Decrease size of existing share</label>
-              </div>
+
               <div class="form-item form-type-radio radio">
                 <input required="required" type="radio" id="type-of-request-retire" name="type-of-request" value="retire-storage" class="form-radio">
                 <label for="type-of-request-retire">Retire existing share</label>
@@ -223,16 +243,10 @@ private = true
             </div>
           </fieldset>
         </div>
-        <!-- Storage Capacity -->
-        <div id="storage-capacity" class="col form-item form-group">
-          <label class="control-label" for="capacity">Space (TB) <span class="form-required" title="This field is required.">*</span></label>
-          <input class="form-control required" type="number" min="1" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
-          <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
-        </div>
       </div>
 
       <!-- Grouper/MyGroups Selection -->
-      <div id="storage-mygroups-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em;"> 
+      <div id="storage-mygroups-container" class="form-item form-group form-type-select form-group new-request-only" style="margin-top:1em; display: none;"> 
         <label class="control-label" for="storage-mygroups-group">Name of Grouper/MyGroups Account <span class="form-required" title="This field is required.">*</span></label>
         <select required="required" class="form-control form-select required" id="storage-mygroups-group" name="storage-mygroups-group">
           <option value="">- Select a group -</option>
@@ -240,20 +254,22 @@ private = true
         <small class="helper-text">Group names can only contain letters, numbers, dashes, and underscores (e.g., research-lab-1, data_science_2)</small>
         <div id="storage-group-validation-message" class="validation-message"></div>
       </div>
-
       <!-- Existing Projects for Storage (Only visible for increase/decrease/retire) -->
       <div id="existing-projects-storage" style="display: none; margin-top:1em;">
         <fieldset>
-          <legend class="control-label h6 mb-2">Your Existing Storage</legend>
+          <legend class="control-label h5 mb-2"><strong>Your Existing Storage</strong></legend>
+          <hr size="1" />
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
                 <th>Select</th>
-                <th>Project/Class</th>
+                <th>Project</th>
                 <th>Group</th>
+                <th>Resource Name</th>
                 <th>Tier</th>
-                <th>Shared Space</th>
-                <th>Current Size</th>
+                <th>Size/Count</th>
+                <th>Status</th>
+                <th>Update Date</th>
               </tr>
             </thead>
             <tbody id="storage-projects-tbody">
@@ -261,6 +277,21 @@ private = true
             </tbody>
           </table>
         </fieldset>
+      </div>
+            <!-- Project Title -->
+      <div id="project-title-container" style="display: none; margin-top:1em;" class="new-request-only">
+        <div class="form-item form-group form-item form-type-textarea form-group"> 
+          <label class="control-label" for="project-title">Project Nick Name <span class="form-required" title="This field is required.">*</span></label>
+          <input required="required" class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
+        </div>
+      </div>
+      <!-- Project Description -->
+      <div id="project-description-container" class="form-item form-type-textarea form-group" style="display: none;"> 
+        <label class="control-label" id="new-descr" for="project-description">Description of Research Project <span class="form-required" title="This field is required.">*</span></label>
+        <label class="control-label" id="renewal-descr" for="project-description" style="display: none;">Briefly describe how you have used Rivanna/Afton in your research. Please include conference presentations, journal articles, other publications, or grant proposals that cite Rivanna. <span class="form-required" title="This field is required.">*</span></label>
+        <div class="form-textarea-wrapper resizable">
+          <textarea required="required" class="form-control form-textarea required" id="project-description-text-storage" name="project-description" cols="60" rows="8"></textarea>
+        </div>
       </div>
 
       <!-- Storage Tier Options -->
@@ -293,33 +324,64 @@ private = true
           </div>
         </div>
       </div>
-
-      <!-- Shared Space Name -->
-      <div id="shared-space-name-container" style="display: none; margin-top:1em;" class="new-request-only">
-        <div class="form-item form-type-textarea form-group">
-          <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
-          <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-          <p class="tiny">This is the name to be applied to your shared storage space. By default, the space will be named according to the Grouper/MyGroups group associated with the storage request. If you would prefer a different identifier, indicate the name for the space.</p>
-        </div>
+           <!-- Storage Capacity -->
+      <div id="storage-capacity" class="col form-item form-group">
+          <label class="control-label" for="capacity"> Total Space (TB) <span class="form-required" title="This field is required.">*</span></label>
+          <input class="form-control required" type="number" min="0" max="200" required="required" id="capacity" name="capacity" value="0" style="width:8rem;">
+          <p class="tiny">The size of storage to be created/retired, or the amount of the increase/decrease to your storage. Specify in 1TB increments.</p>
       </div>
-
-      <!-- Project Title -->
-      <div id="project-title-container" style="display: none; margin-top:1em;" class="new-request-only">
-        <div class="form-item form-group form-item form-type-textarea form-group"> 
-          <label class="control-label" for="project-title">Project Title <span class="form-required" title="This field is required.">*</span></label>
-          <input required="required" class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
-        </div>
+      <div id="free_resource_distribution" style="display:none" class="col form-item form-group">
+          <label class="control-label" for="freeSpace"> Free Space (TB) <span class="form-required" title="This field is required.">*</span></label>
+          <input class="form-control required" type="number" min="0" max="10" required="required" id="freeSpace" name="freeSpace" value="0" style="width:8rem;">
+          <p class="tiny">You have 10TB of free space, how much would you like to apply for this share?</p>
       </div>
     </div>
+    <div id="fdm_table" style="display: none; margin-top:1em; padding:1.5rem;background-color:#eee; border:solid 1px #ccc;">
+
+        <div id="existing-fdms" style="margin-top:1em;">
+          <fieldset>
+             <div style="display: flex; justify-content: space-between; align-items: center;">
+             <legend class="control-label h5">Existing FDM's</legend>
+             </div>
+             <hr size="1" />
+             <table class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Cost Center</th>
+                    <th>Business Unit</th>
+                    <th>Funding Number</th>
+                    <th>Fund</th>
+                    <th>Function</th>
+                    <th>Program</th>
+                    <th>Activity</th>
+                    <th>Assignee</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="FDMS">
+                     <!-- Will be populated by API -->
+                </tbody>
+              </table>
+          </fieldset>
+        </div>
+      </div>
+      <div style = "margin-top:1em; display: none; text-align: right;" id="fdm_button_div">
+        <button class="btn btn-success btn-primary" type="button" id="fdm_button">+ New FDM</button>
+      </div>
     <!-- Billing Information Section -->
     <div id="billing-information" style="display: none; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <h5 class="mb-3">Payment Information</h5>
       <hr size="1" />
       <div class="form-item form-group form-type-textfield form-group">
         <!-- <label class="control-label" for="fdm-id">FDM ID <span class="form-required" title="This field is required.">*</span></label> -->
-        <input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" />
+        <!--<input required="required" class="form-control form-text required" type="text" id="fdm-id" name="fdm-id" value="" size="60" maxlength="128" /> -->
       </div>
       {{% billing-fdm %}}
+      <div style = "margin-top:1em; margin-right:1em; text-align:right">
+        <button class="btn btn-success btn-primary" type="button" id="add_fdm">Add to FDM Details</button>
+        <button class="btn btn-secondary" type="button" id="cancel-fdm">Cancel</button>
+       </div>
     </div>
 
     <!-- Data Agreement and Submit Button Section -->
@@ -339,6 +401,7 @@ private = true
       <div class="form-actions" id="submit-div" style="margin-top:1rem;">
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
         <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled="">Submit</button>
+        <button class="btn btn-secondary" type="button" id="cancel">Cancel</button>
       </div>
     </div>
   </div>
@@ -347,7 +410,8 @@ private = true
 <!-- Form close tags -->
 {{< /enable-disable-form >}}
 </form>
-
+<iframe id="admin-iframe"
+        style="display: none; width: 100%; height: 800px; border: 1px solid #ccc;"></iframe>
 <!-- Session and response scripts loaded last -->
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>

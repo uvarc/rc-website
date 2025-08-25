@@ -13,14 +13,14 @@ images = [
   ""
 ]
 subjects = [
-  "computational chemistry",
-  "computational biophysics",
-  "data analysis",
-  "drug discovery",
+  "computational-chemistry",
+  "computational-biophysics",
+  "data-analysis",
+  "drug-discovery",
   "amber", 
   "namd",
   "rosetta",
-  "dock",
+  "docking",
   "python",
   "hpc",
   "rivanna",

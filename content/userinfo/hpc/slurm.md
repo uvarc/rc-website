@@ -2,7 +2,7 @@
 description = ""
 title = "Slurm Job Manager"
 draft = false
-date = "2019-05-28T17:45:12-05:00"
+date = "2025-07-27T17:45:12-05:00"
 tags = ["hpc","rivanna","parallel-computing","supercomputer","allocations","queues","storage"]
 categories = ["userinfo"]
 images = [""]
@@ -490,7 +490,7 @@ The following example runs a total of 32 MPI processes, 8 on each node, with eac
 
 ## GPU Computations {#gpu-intensive-computation} 
 
-The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, A6000, V100, and A100 NVIDIA GPU devices.
+The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX3090, A6000, V100, A100, and H200 NVIDIA GPU devices.
 
 {{< highlight >}}
    In order to use GPU devices, the jobs must to be submitted to the <b>gpu</b> partition and must include the <b>--gres=gpu</b> option.</alert>
@@ -498,7 +498,7 @@ The `gpu` queue provides access to compute nodes equipped with RTX2080Ti, RTX309
 
 {{< pull-code file="/static/scripts/gpu_job.slurm" lang="no-highlight" >}}
 
-The second argument to `gres` can be `rtx2080`, `rtx3090`, `v100`, or `a100` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
+The second argument to `gres` can be `rtx2080`, `rtx3090`, `v100`, `a100`, or `h200` for the different GPU architectures.  The third argument to `gres` specifies the number of devices to be requested.  If unspecified, the job will run on the first available GPU node with a single GPU device regardless of architecture.
 
 Two models of NVIDIA A100 GPUs are available; 2 nodes with 40GB of GPU memory per GPU, and 18 nodes with 80GB of memory per GPU. To make a specific request for an 80GB A100 node, please add a _constraint_ to the Slurm script:
 ```nohighlight
@@ -506,11 +506,32 @@ Two models of NVIDIA A100 GPUs are available; 2 nodes with 40GB of GPU memory pe
 ```
 This is in addition to requesting an `a100` in the `gres` option.
 
-### NVIDIA GPU BasePOD™ Now Available for Rivanna and Afton Users
+### HGX H200 GPUs and NVIDIA GPU BasePOD™ for Rivanna and Afton Users
 
-As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna and Afton, UVA's High-Performance Computing (HPC) systems. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
+As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality to Rivanna and Afton, UVA's High-Performance Computing (HPC) systems. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. In addition, new HGX H200 GPU nodes have been added to the cluster, further expanding UVA’s capabilities for cutting-edge AI research.
 
 <a href="/userinfo/hpc/basepod"><button class="btn btn-success">Learn More</button></a> &nbsp;&nbsp;
+
+### MIG GPU Partition
+
+We’re excited to announce the launch of a new MIG-enabled GPU partition (`gpu-mig`), available after our August 12th, 2025 scheduled maintenance. MIG (Multi-Instance GPU) allows a single NVIDIA A100 80GB GPU device to be subdivided into 7 smaller, isolated "slices" each with approximately 10GB GPU memory so that multiple jobs can run concurrently on one physical card, each with guaranteed memory and compute.
+
+**Why this change?**
+
+- Shorter wait times: Smaller jobs no longer block an entire 80 GB GPU.
+- Right-sized resources: Request only what you need—reduce waste, improve fairness.
+- Isolation: MIG slices are hardware-isolated; your job won’t be affected by a noisy neighbor.
+
+**How to use:**
+
+Use the following SLURM directives in your Slurm job script  
+```
+#SBATCH --partition=gpu-mig
+#SBATCH --gres=gpu:1 or #SBATCH --gres=gpu:1g.10gb:1 (only single MIG slices allowed per job)
+```
+Or request the `gpu-mig` partition through Open OnDemand (OOD) platform.
+
+**Note:** Currently, only one A100 80GB node—configured with 56 total 10GB MIG instances—is available for users to try out and provide feedback. Additional MIG resources may be added in the future if this initial rollout proves successful and demonstrates clear benefits. For now, jobs run in this partition will not be charged any Service Units (SUs).
 
 # CPU and Memory Usage
 Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate Slurm commands for running jobs and completed jobs.

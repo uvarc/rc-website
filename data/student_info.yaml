@@ -1,0 +1,184 @@
+students:
+  - name: "Adam Eubanks"
+    projects:
+      - projectname: "XALT Containerization"
+        year: 2024 
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Adam contributed to the XALT containerization project by developing a Docker container for running XALT on UVA RC clusters. 
+    His work streamlined deployment of XALT, a tool which will help UVA RC with usage tracking and resource allocation."
+        imagepath: "/images/student-work/Spring_2024_Eubanks_Poster.jpg"
+        archived: false
+  - name: "Matthew Galitz"
+    testimonial: 
+    projects:
+      - projectname: "Rivanna Utilization"
+        year: 2024
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Matthew contributed to the Rivanna Utilization Statistics project.
+    This initiative enhanced the efficiency of generating usage statistics and allocation reports for UVA’s Rivanna high-performance 
+    computing system. By developing scripts that aggregate and analyze computational resource utilization, 
+    his work supports strategic planning of resource allocation and infrastructure upgrades."
+        imagepath: "/images/student-work/Spring_2024_Galitz_Poster.jpg"
+        archived: false
+      - projectname: "Building a Research Faculty Search Engine"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Matthew contributed to the development of a research faculty search engine for UVA’s Data Analytics Center. 
+        He designed and implemented a Flask-based web application that scrapes UVA department sites and integrates NIH RePORTER data to compile faculty profiles, which are then embedded using a transformer model and indexed with FAISS for semantic search.
+        The tool enables users to filter and query for faculty aligned with DAC expertise and NIH domains, significantly improving upon previous manual workflows. Matthew also led backend deployment using Docker, Nginx, and Gunicorn, 
+        and collaborated with DAC staff to validate functionality and guide iterative refinement."
+        imagepath: "/images/student-work/Spring_2025_Galitz_Poster.png"
+        archived: false
+  - name: "Bhargav Garre Venkata"
+    testimonial: 
+    projects: 
+      - projectname: "Improving HPC Accessibility Through Instructional Video Development"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Bhargav improved HPC accessibility by creating new instructional videos that effectively teach users how to use Research Computing’s resources, 
+        reducing the time RC staff spend handling support tickets. He also redesigned the Flask-based faculty search tool for the Data Analytics Center 
+        with a new frontend and expanded functionality, as well as enhancing the Hugo-based RC Learning site with improved layouts and branding."
+        imagepath: "/images/student-work/Spring_2025_GarreVenkata_Poster.png"
+        archived: false
+  - name: "Diana Lin"
+    testimonial: 
+    projects: 
+      - projectname: "Developing a Dashboard for Research Computing Workshop Data"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Diana developed an interactive dashboard to visualize attendance and survey data from UVA Research Computing workshops. 
+        Using Chart.js and Flask, she implemented dynamic visualizations with filtering options and integrated live data pulling from various APIs. 
+        Her work supports improved planning and analytics for Research Computing workshops. She also contributed to the RC website and 
+        began exploring Open OnDemand for future interactive apps."
+        imagepath: "/images/student-work/Spring_2025_Lin_Poster.png"
+        archived: false
+  - name: "Ivey Mistele"
+    testimonial: 
+    projects: 
+      - projectname: "Student Data Visualization and Markdown Conversion"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Ivey worked on converting workshop tutorials to markdown for the RC Learning Portal. 
+        She helped coordinate events and update the website for Virginia Women in HPC. In addition, 
+        she is working on a data visualization summary of the RC Student Program."
+        imagepath: "/images/student-work/Spring_2025_Mistele_Poster.png"
+        archived: false
+  - name: "Juwon Park"
+    projects:
+      - projectname: "Image Processing with MATLAB"
+        year: 2024
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Juwon contributed to the Image Processing with Matlab project, which utilized image processing functionality to skeletonize a brain image for a consultation. 
+    The project explored Matlab's various capabilities for image transformation, simplifying the quantification of fluorescent changes across brain tissue for further research."
+        imagepath: "/images/student-work/Spring_2024_Park_Poster.jpg"
+        archived: false
+  - name: "Hariprasad Periyasamy"
+    testimonial: "I’m grateful to Research Computing for my internship from Fall 2023 to Spring 2025, as I learned the value of clear requirements and proactive communication. 
+    In a summer leadership role, I helped recruit and onboard new students and emphasized the importance of documentation to 
+    streamline cohort transitions. The hands-on experience, which included API development, CI/CD, and website refactoring, 
+    truly enhanced my ability to learn technologies quickly and boosted my confidence in technical interviews. I am now headed to AWS as a Software Development Engineer intern for the summer of 2025 and 
+    look forward to returning next year to finish my degree before starting full-time work."
+    projects:
+      - projectname: "Research Computing Workshop Data"
+        year: 2024
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Hari contributed to the Workshop Data project. He worked on creating a microservice that takes in a specified time period and returns a list of the number of workshops 
+    and the number of registrants for each workshop. The goal was to gain a better understanding of the workshops that should continue 
+    to be offered, as well as which departments we should target for advertising our workshops to maximize utilization."
+        imagepath: "/images/student-work/Spring_2024_Periyasamy_Poster.jpg"
+        archived: false
+      - projectname: "Unified UVA-RC APIs: LDAP and Office Hours"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Hari contributed to the unified UVA-RC APIs initiative. He helped out in replacing the existing LDAP API and Office Hours application and integrating the now modularized software
+        into a class-based Flask API that houses all of the existing backends. In addition, he upgraded the LDAP API to have the ability to query for time-based entries, a key endpoint necessary for the 
+        Workshop Data Visualization Project."
+        imagepath: "/images/student-work/Spring_2025_Periyasamy_Poster.png"
+        archived: false
+  - name: "Diya Tomar"
+    projects:
+      - projectname: "Accord Containers"
+        year: 2024
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Diya contributed to the ACCORD Containers project. She worked on updating the containerized applications available on ACCORD, 
+      particularly the Jupyter Python and RStudio Server environments, to the latest versions. She also worked on developing scripts to test 
+      these environments. This work aims to support researchers by providing the latest versions of these environments and ensuring that researchers 
+      have access to the newest functionalities."
+        imagepath: "/images/student-work/Spring_2024_Tomar_Poster.jpg"
+        archived: false
+  - name: "Jinwoo Kim"
+    projects:
+    - projectname: "OOD Videos, Customization, Containerization, and Authentication"
+      year: 2024
+      term: "Summer"
+      type: "Video"
+      youtube_link: "https://www.youtube.com/watch?v=Wz86jF-d5F4"
+      embed_link: "https://www.youtube.com/embed/Wz86jF-d5F4"
+      archived: false
+  - name: "Wright Quist"
+    projects: 
+    - projectname: "CryoSparc and OOD"
+      year: 2024
+      term: "Summer"
+      type: "Video"
+      youtube_link: "https://www.youtube.com/watch?v=XYQduJCkrWY"
+      embed_link: "https://www.youtube.com/embed/XYQduJCkrWY"
+      archived: false
+  - name: "Mohan Shankar"
+    testimonial: 
+    projects: 
+      - projectname: "Collaborative Innovations in Data Science and Engineering"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Mohan works as an aid for chemical engineering groups, installing and maintaining software while giving domain-specific advice. 
+        He also helped the Data Analytics Center (DAC) develop a tool to find faculty they might want to collaborate with through keyword queries."
+        imagepath: "/images/student-work/Spring_2025_Shankar_Poster.png"
+        archived: false
+  - name: "Steven Siadaty"
+    testimonial: 
+    projects: 
+      - projectname: "An Accessible Graphical User Interface for RNA-seq Analysis"
+        year: 2025
+        term: "Spring"
+        type: "Poster"
+        projectdesc: "Steven developed a bioinformatics tool, ExpressDiff, for accessible differential RNA-seq analysis. 
+        The ExpressDiff pipeline implements open-source tools for read quality control, adapter trimming, gene alignment, 
+        and differential analysis to deliver repeatable results based on user input. ExpressDiff runs entirely on UVA HPC, 
+        and once finalized, may be used a bioinformatics research and teaching tool."
+        imagepath: "/images/student-work/Spring_2025_Siadaty_Poster.png"
+        archived: false
+  - name: "Jennifer Vo"
+    testimonial: 
+    projects: 
+    - projectname: "Markdown and Women in HPC"
+      year: 2024
+      term: "Summer"
+      type: "Video"
+      youtube_link: "https://www.youtube.com/watch?v=YuFVIZkp8uQ"
+      embed_link: "https://www.youtube.com/embed/YuFVIZkp8uQ"
+      archived: false
+    - projectname: "Improving HPC Accessibility with Embedded PowerPoint Tutorials"
+      year: 2025
+      term: "Spring"
+      type: "Poster"
+      projectdesc: "Jennifer contributed to the development of Tutorials for the RC-Learning website using embedded slides, streamlining content delivery. 
+      Jennifer also contributed to Virginia Women in High Performance (VA-WHPC) by maintaining their website, coordinating event logistics, and managing Zoom registration. 
+      She also supported the launch of a YouTube channel for UVA Research Computing."
+      imagepath: "/images/student-work/Spring_2025_Vo_Poster.png"
+      archived: false
+  
+
+
+
+

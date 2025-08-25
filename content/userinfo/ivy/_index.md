@@ -9,12 +9,13 @@ images = [""]
 author = "RC Staff"  
 aliases = [ "/ivy" ]
 layout = "single"
+
 +++
+
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p class=lead>The UVA secure environment consits of Ivy virtual machines (Linux and Windows) and Rio HPC.
-Researchers can use Ivy and Rio to process and store sensitive data with the confidence that the environment is secure and meets <a href="#hipaa-compliance">HIPAA</a>, FERPA, CUI (Rio excluded) or ITAR requirements. To access the High security Rio HPC, researchers need to request an Ivy Linux VM which serves as a login node.</p>
+<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and certain controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or ITAR data cannot access Rio at this time. To access the High security Rio HPC, researchers need to request an Ivy Linux VM which serves as a login node.</p>
 
 {{< systems-boilerplate >}}
 
@@ -158,7 +159,7 @@ To connect to a Windows VM from a **Mac**, you will need the Microsoft Remote De
 Windows laptops/desktops already have the Remote Desktop Connection application installed.
 
 
-### Steps to connect to your VM
+**STEPS TO CONNECT TO YOUR VM**
 
 Follow the steps below for the **type of VM** that you have:
 
@@ -208,7 +209,7 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 
 Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation upon request. See the lists below for options.
 
-### Preinstalled Software
+**Preinstalled Software**
 
 {{< rawhtml >}}
 <div class="row" style="margin-bottom:2rem;">
@@ -243,7 +244,7 @@ Every virtual machine (Linux or Windows) comes with a base installation of softw
 
 **Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
 
-### Additional Approved Software (Available by Request)
+**ADDITIONAL APPROVED SOFTWARE (Available by Request)**
 
 If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security and regulatory compliance and, if approved, will be installed for you.
 
@@ -298,7 +299,7 @@ To request installation of optional software packages, please use the web reques
 
 ## Installing Python Packages on Your VM
 
-### Creating a Conda Environment
+**CREATING CONDA ENVIRONEMENT**
 
 Researchers often require Python packages that are not included in the base installation of Anaconda. Users can install additional Python packages on their VMs using conda environments. Conda environments allows users to install packages in isolated environments to avoid version conflicts with other users on the VM.
 
@@ -337,7 +338,7 @@ If you require a specific version of Python, you can create a new conda environm
 
 `conda create -n my_env python=2.7`
 
-### Installing Packages
+**INSTALLING PACKAGES**
 
 After creating your conda environment, you can install additional libraries with `pip` and `conda`.
 
@@ -404,19 +405,78 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 ## Access
 
-Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above.
+Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above. Please note that PIs must specifically request for their associated Linux VM to be provisioned as a frontend to Rio. Access to Rio from the VM is not granted by default.
 
 As outlined above, VMs are available in various sizes. Please request a VM that is appropriately sized for your specific workflow. For larger groups or projects involving computationally intensive tasks, we recommend selecting a larger VM, with a preference for Small or above. 
+
+<div class="bd-callout bd-callout-warning">
+  <p>Please note that PIs must specifically request for their associated Linux VM to be provisioned as a frontend to Rio. Access to Rio from the VM is not granted by default. After submitting the Linux VM request, PIs should also submit a general support request through our <a href="https://rc.virginia.edu/form/support-request/">webform</a> specifying that the VM requires access to Rio. The title of the project should be included in the details of the request.</p>
+</div>
+
+[<button class="btn btn-success">Request Ivy VM for Rio</button>](https://services.rc.virginia.edu/ivyvm)
   
 ## System Details
 
-### Hardware Configuration
+**HARDWARE CONFIGURATION**
 
-Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future.
+Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Rio also includes an NVIDIA HGX H200 GPU, and additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future.
 
-### Job Queues
+**JOB QUEUES**
 
 Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/). 
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 12px 20px;  /* More padding for spacing */
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Partition</th>
+      <th>Purpose</th>
+      <th>Max Time / Job</th>
+      <th>Max Nodes / Job</th>
+      <th>Max Cores / Job</th>
+      <th>Max Cores / Node</th>
+      <th>Default Mem / Core</th>
+      <th>Max Mem / Node / Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>standard</td>
+      <td>CPU-based jobs</td>
+      <td>7 days</td>
+      <td>10</td>
+      <td>400</td>
+      <td>40</td>
+      <td>4 GB</td>
+      <td>375 GB</td>
+    </tr>
+    <tr>
+      <td>gpu</td>
+      <td>GPU jobs (H200 general purpose)</td>
+      <td>3 days</td>
+      <td>1</td>
+      <td>1GPU</td>
+      <td>96</td>
+      <td>4 GB</td>
+      <td>2 TB</td>
+    </tr>
+  </tbody>
+</table>
+
 
 For an introduction to the Rio HPC system, please see our [tutorial](https://learning.rc.virginia.edu/tutorials/rio-intro/).
 
