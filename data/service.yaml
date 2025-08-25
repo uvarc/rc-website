@@ -348,7 +348,7 @@ job_queues:
       max_cores_per_job: 2
       max_cores_per_node: 14 MIGs/user
       default_mem_per_core: "4000MB"
-      max_mem_per_node_per_job: "15000MB"
+      max_mem_per_node_per_job: "30000MB"
     # interactive partition
     - partition: "interactive"
       purpose: "For quick interactive sessions"
