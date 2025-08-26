@@ -47,6 +47,8 @@ Users with legitimate workflows that result in delayed GPU usage can request an 
 
 ## Need Help? 
 
+Our team has outlined a set of [GPU best practices](https://www.rc.virginia.edu/userinfo/hpc/gpu-best-practices/) to help our users run their GPU jobs more efficiently and make the best use of available resources.
+
 If you receive a warning email and have questions, simply reply to that message to open a support ticket. For general inquiries, please [contact our user services team](https://www.rc.virginia.edu/form/support-request/).  
 
 Thank you for helping us improve resource efficiency and support all researchers using our systems. 
