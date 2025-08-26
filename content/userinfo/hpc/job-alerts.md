@@ -27,9 +27,9 @@ Starting August 12, Research Computing will begin sending informational emails t
 
 These notifications are intended to raise awareness and encourage best practices. **They will not affect job execution at this stage.** 
 
-## Job Terminations Begin September 9, 2025 
+## Job Terminations Begin September 16, 2025 
 
-Starting September 9, jobs meeting the above criteria will be **terminated** if no action is taken after two warning emails are sent. A third email will confirm the job termination. 
+Starting September 16, jobs meeting the above criteria will be **terminated** if no action is taken after two warning emails are sent. A third email will confirm the job termination. 
 
  
 
