@@ -21,7 +21,9 @@ The node is equipped with dual Intel Xeon Platinum 8468 CPUs, offering a total o
 
 Each H200 GPU includes 141 GB of memory and delivers up to 4.8 TB/s of memory bandwidth. High-speed communication between GPUs is supported via 900 GB/s NVLink, while connectivity between CPU and GPU uses PCIe Gen5, providing up to 128 GB/s bi-directional bandwidth. More information can be found [here](https://www.nvidia.com/en-us/data-center/h200/).
 
-This node is now integrated into our SLURM scheduler and can be accessed using the `gpu` partition. However, to maximize the efficiency of this high-demand resource, it is excluded from access via the Open OnDemand platform and is only available through batch job requests. Information for accounting and scheduling purposes can be found [here](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration). We invite users with GPU-intensive workflows to take advantage of these powerful nodes. 
+We’ve added a gpu-h200 partition for jobs requiring the new H200 GPUs with the same limits as the regular GPU QOS: up to 10,000 submitted jobs per user, 1–4 GPUs per user. H200s can be accessed by specifying `--partition=gpu-h200` and `--gres=gpu:1` (Adjust --gres=gpu:N (N = 1–4) as needed) in your slurm script(s).
+
+To maximize the efficiency of this high-demand resource, it is excluded from access via the Open OnDemand platform and is only available through batch job requests. Information for accounting and scheduling purposes can be found [here](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration). We invite users with GPU-intensive workflows to take advantage of these powerful nodes. 
 
 # Introducing the NVIDIA DGX BasePOD™
 *May 30, 2023*

@@ -27,9 +27,9 @@ Starting August 12, Research Computing will begin sending informational emails t
 
 These notifications are intended to raise awareness and encourage best practices. **They will not affect job execution at this stage.** 
 
-## Job Terminations Begin September 9, 2025 
+## Job Terminations Begin September 16, 2025 
 
-Starting September 9, jobs meeting the above criteria will be **terminated** if no action is taken after two warning emails are sent. A third email will confirm the job termination. 
+Starting September 16, jobs meeting the above criteria will be **terminated** if no action is taken after two warning emails are sent. A third email will confirm the job termination. 
 
  
 
@@ -46,6 +46,8 @@ Starting September 9, jobs meeting the above criteria will be **terminated** if 
 Users with legitimate workflows that result in delayed GPU usage can request an exemption by opening a support ticket. Approved users will be added to an exclusion list and will no longer receive alerts or be subject to job termination under this policy. 
 
 ## Need Help? 
+
+Our team has outlined a set of [GPU best practices](https://www.rc.virginia.edu/userinfo/hpc/gpu-best-practices/) to help our users run their GPU jobs more efficiently and make the best use of available resources.
 
 If you receive a warning email and have questions, simply reply to that message to open a support ticket. For general inquiries, please [contact our user services team](https://www.rc.virginia.edu/form/support-request/).  
 
