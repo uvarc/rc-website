@@ -29,11 +29,13 @@ All systems are expected to return to service by **Wednesday, October 15** at 6 
 |---|---|---|
 |jq        | 1.6    | 1.8.1 |
 |julia     | 1.9.2  | 1.11.6 |
+|jupyterlab|3.6.3-py3.11, 4.4.1-py3.12| 4.4.6-py3.12 |
 |nvhpc     | 24.1   | 24.5, 25.3 |
 |orca      | 5.0.4, 6.0.0 | 6.1.0 |
 |parallel  |20200322| 20250722 |
 |python    | 2.7.18 | 3.11.4 |
 |rclone    | 1.61.1 | 1.70.3 |
+|spark     | 3.4.1  | 4.0.0 |
 |redis-cli | 6.2.6  | redis/8.2.1 |
 |thirdorder| 1.1.1  | 1.1.3 |
 {{< /table >}}
