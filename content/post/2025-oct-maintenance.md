@@ -27,6 +27,7 @@ All systems are expected to return to service by **Wednesday, October 15** at 6 
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
+|gperf     | 3.0.4  | 3.3 |
 |jq        | 1.6    | 1.8.1 |
 |julia     | 1.9.2  | 1.11.6 |
 |jupyterlab|3.6.3-py3.11, 4.4.1-py3.12| 4.4.6-py3.12 |
