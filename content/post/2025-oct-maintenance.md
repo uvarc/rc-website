@@ -27,6 +27,7 @@ All systems are expected to return to service by **Wednesday, October 15** at 6 
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
+|gcloud-sdk| 422.0.0| gcloud/536.0.1 |
 |gperf     | 3.0.4  | 3.3 |
 |jq        | 1.6    | 1.8.1 |
 |julia     | 1.9.2  | 1.11.6 |
