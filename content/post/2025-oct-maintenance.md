@@ -47,6 +47,7 @@ All systems are expected to return to service by **Wednesday, October 15** at 6 
 |rdp-classifier|2.12| 2.14 |
 |slim      | 4.0.1  | 5.0 |
 |spark     | 3.4.1  | 4.0.0 |
+|spglib    | 1.10.4 | 2.0.2 |
 |trimmomatic| 0.39  | 0.40 |
 |redis-cli | 6.2.6  | redis/8.2.1 |
 |thirdorder| 1.1.1  | 1.1.3 |
