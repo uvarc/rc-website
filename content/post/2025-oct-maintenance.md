@@ -11,7 +11,7 @@ categories = ["feature"]
 
 {{< alert-green >}}The UVA HPC systems, Afton/Rivanna, will be down for maintenance on <strong>Tuesday, October 14, 2025</strong> beginning at 6 am.{{< /alert-green >}}
 
-All systems are expected to return to service by **Wednesday, October 16** at 6 am.
+All systems are expected to return to service by **Thursday, October 16** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
 
