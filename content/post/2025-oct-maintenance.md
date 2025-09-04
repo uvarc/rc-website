@@ -47,6 +47,7 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |rdp-classifier|2.12| 2.14 |
 |shapelib  | 1.5.0  | 1.6.1 |
 |slim      | 4.0.1  | 5.0 |
+|spaceranger| 3.1.3 | 4.0.1 |
 |spark     | 3.4.1  | 4.0.0 |
 |spglib    | 1.10.4 | 2.0.2 |
 |superlu_mt| 3.1    | 4.0.1 |
