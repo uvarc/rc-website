@@ -46,6 +46,7 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |rclone    | 1.61.1 | 1.70.3 |
 |rdp-classifier|2.12| 2.14 |
 |shapelib  | 1.5.0  | 1.6.1 |
+|sagemath  | 9.0    | 10.7 |
 |slim      | 4.0.1  | 5.0 |
 |spaceranger| 3.1.3 | 4.0.1 |
 |spark     | 3.4.1  | 4.0.0 |
