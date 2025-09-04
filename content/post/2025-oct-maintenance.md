@@ -32,6 +32,7 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |caviar    | 2.2    | - |
 |cppcheck  | 1.83   | 2.18.0 |
 |ddd       | 3.3.12 | 3.4.1 |
+|dragonn   | 0.4.1  | - |
 |gcloud-sdk| 422.0.0| gcloud/536.0.1 |
 |gperf     | 3.0.4  | 3.3 |
 |hunspell  | 1.6.2  | 1.7.2 |
@@ -45,8 +46,10 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |python    | 2.7.18 | 3.11.4 |
 |rclone    | 1.61.1 | 1.70.3 |
 |rdp-classifier|2.12| 2.14 |
-|shapelib  | 1.5.0  | 1.6.1 |
 |sagemath  | 9.0    | 10.7 |
+|sga       | 0.10.15| - |
+|sgp       |pytorch-1.0| - |
+|shapelib  | 1.5.0  | 1.6.1 |
 |slim      | 4.0.1  | 5.0 |
 |spaceranger| 3.1.3 | 4.0.1 |
 |spark     | 3.4.1  | 4.0.0 |
