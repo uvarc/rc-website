@@ -579,6 +579,7 @@
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
             $('#su-quantity').val(0);
+            $('#mygroups-group').val("");
             $('#new-project-name').val("");
             $('#project-description-text').val("");
             const radios = document.querySelectorAll('input[name="allocation-choice"]');
@@ -604,6 +605,7 @@
             $('#free_resource_distribution').hide();
             $('#capacity').val(0);
             $('#freeSpace').val(0);
+            $('#storage-mygroups-group').val("");
             $('#project-title').val("");
             $('#project-description-text-storage').val("");
             const radios = document.querySelectorAll('input[name="storage-choice"]');
