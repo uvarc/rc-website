@@ -35,7 +35,7 @@ FastX connects only to a *frontend*.  We significantly restrict the time, memory
 
 # How to Submit a Request
 
-Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a generic group name related to the course rubric, e.g. `cs5014`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors will need to submit an instructional allocation renewal request at the start of each semester. 
+Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a generic group name related to the course rubric, e.g. `cs5014`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors will need to submit an instructional allocation renewal request at the start of each semester. Existing Grouper groups may be used for instructional allocation renewals.
 
 - - -
 
@@ -58,7 +58,7 @@ or
 ```
 If students use the Open OnDemand interface, they will enter this into the appropriate textbox when starting their interactive job application.
 
-Instructors are urged to request *reservations* for their classes.  The reservation will be created to coincide with the class meeting time.  Students must add an option `--reservation=your-reservation` in order to access the reserved resources.  Students may still use the instructional partition outside the reservation, but those jobs will wait like any other queued job. Outside the dedicated reservation window jobs should be submitted without the `--reservation` flag for immediate queueing; otherwise the job will be pending until the next reservation window opens.
+Instructors are allowed to request *reservations* for their classes.  The reservation will be created to coincide with the class meeting time, and only that time.  Students must add an option `--reservation=your-reservation` in order to access the reserved resources.  Students may still use the the cluster's partitions outside the reservation, but those jobs will wait like any other queued job. Outside the dedicated reservation window jobs should be submitted without the `--reservation` flag for immediate queueing; otherwise the job will be pending until the next reservation window opens.
 
 For batch jobs, the reservation can be entered on the command line
 ```
