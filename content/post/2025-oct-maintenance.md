@@ -43,6 +43,7 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |nvhpc     | 24.1   | 24.5, 25.3 |
 |orca      | 5.0.4, 6.0.0 | 6.1.0 |
 |parallel  |20200322| 20250722 |
+|pymol     | 2.5.5  | 3.1.6.1 |
 |python    | 2.7.18 | 3.11.4 |
 |rclone    | 1.61.1 | 1.70.3 |
 |rdp-classifier|2.12| 2.14 |
