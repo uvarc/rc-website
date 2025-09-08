@@ -40,6 +40,7 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |julia     | 1.9.2  | 1.11.6 |
 |jupyterlab|3.6.3-py3.11, 4.4.1-py3.12| 4.4.6-py3.12 |
 |libxc     | 2.2.0  | 5.2.3, 6.1.0 |
+|mrtrix3   | 3.0.2  | 3.0.7 |
 |nvhpc     | 24.1   | 24.5, 25.3 |
 |orca      | 5.0.4, 6.0.0 | 6.1.0 |
 |parallel  |20200322| 20250722 |
