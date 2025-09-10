@@ -1,7 +1,7 @@
 +++
 categories = ["userinfo"]
 type = "rivanna"
-date = "2024-01-02T00:00:00-05:00"
+date = "2025-09-05T00:00:00-05:00"
 tags = [
   "rivanna", "software", "containers", "apptainer"
 ]
@@ -29,6 +29,9 @@ module avail
 ```
 
 Loading any of these container modules produces an on-screen message with instructions on how to copy the container image file to your directory and how to run the container.
+
+Our framework for container modules is described in the paper:
+R. Sun and K. Siller, HPC Container Management at the University of Virginia, PEARC '24: Practice and Experience in Advanced Research Computing 2024: Human Powered Computing 73, 1 (2024). [doi:10.1145/3626203.3670568](https://doi.org/10.1145/3626203.3670568)
 
 # Building Apptainer Containers
 To build your own image from scratch, create an Apptainer definition file (say `myimage.def`) and run:

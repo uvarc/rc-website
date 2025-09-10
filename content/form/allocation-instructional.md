@@ -30,7 +30,7 @@ private = true
   {{% getstatus keyword="jira" %}}
 
   {{% form-userinfo-v2 %}}
-  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of Grouper/MyGroup Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create his/her Grouper group</a> for new allocations.</span></label>
+  <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of Grouper/MyGroup Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create a new, unique Grouper group</a> for new allocations.</span></label>
     {{% group_creation_tip %}}
     <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
   </div>
@@ -71,8 +71,8 @@ private = true
     </div>
   </div>
   
-  <div class="form-item form-type-textarea form-group"> <label class="control-label" for="resources-required">Cores/Memory Required <span class="form-required" title="This field is required.">*</span></label>
-    <p style="font-size:80%;">Estimate how many cores and how much memory each student will need to process his/her jobs. General descriptions are fine. A member of our user services team will contact you if we need additional information.</p>
+  <div class="form-item form-type-textarea form-group"> <label class="control-label" for="resources-required">Estimated per-student compute needs <span class="form-required" title="This field is required.">*</span></label>
+    <p style="font-size:80%;">This estimate is for resource planning and advising only—it does not reserve dedicated resources. Please provide a rough per-student core and memory need (e.g., “2–4 cores, 8–16 GB”). A member of our user services team will contact you if we need additional information.</p>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea required" id="resources-required" name="resources-required" cols="60" rows="5"></textarea>
     </div>
   </div>
@@ -86,7 +86,7 @@ private = true
   <input type="hidden" name="details" />
   <div class="form-actions" id="submit-div" style="margin-top:1rem;">
     <hr size="1" style="" />
-    <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
+    <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm whether the submission completed.</p>
     <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit">Submit</button>
   </div>
 </div>

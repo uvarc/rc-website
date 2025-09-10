@@ -9,7 +9,7 @@ tags = ["Rivanna","instructional","courses"]
 
 +++
 
-Instructors can request _instructional allocations_ on Rivanna and Afton for classes and extended workshops.  These allocations are time-limited and generally allow access to a restricted set of nodes and only one special Slurm partition, but are otherwise equivalent to any allocation.
+Instructors can request _instructional allocations_ on Rivanna and Afton for classes and extended workshops.  These allocations are time-limited and expire at the end of the teaching period, but are otherwise equivalent to any allocation.
 
 - - -
 
@@ -17,7 +17,7 @@ Instructors can request _instructional allocations_ on Rivanna and Afton for cla
 
 ## Hardware and Partition
 
-Instructional allocations may use `interactive` partition.  The instructional allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards. RC offers several low-cost storage options to researchers, including 10TB of Research Standard storage for each eligible PI at no charge. Instructors are encouraged to utilize this 10TB of storage for both research and teaching activities. For more detailed descriptions of our storage options, visit https://www.rc.virginia.edu/userinfo/storage/. 
+Instructional allocations are encouraged to use the `interactive` partition during lecture.  The instructional allocation is 100,000 SUs for the semester during which the course is conducted.  For workshops, the allocation will persist during the workshop and for two days afterwards. RC offers several low-cost storage options to researchers, including 10TB of Research Standard storage for each eligible PI at no charge. Instructors are encouraged to utilize this 10TB of storage for both research and teaching activities. For more detailed descriptions of our storage options, visit https://www.rc.virginia.edu/userinfo/storage/. 
 
 ## Software & Storage Environment
 
@@ -35,7 +35,7 @@ FastX connects only to a *frontend*.  We significantly restrict the time, memory
 
 # How to Submit a Request
 
-Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a generic group name related to the course rubric, e.g. `cs5014`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors will need to submit an instructional allocation renewal request at the start of each semester. 
+Instructors planning to use HPC should fill out the [form](https://www.rc.virginia.edu/form/allocation-instructional).  You will need to create the Grouper (requires VPN connection) allocation group.  We suggest a generic group name related to the course rubric, e.g. `cs5014`.  Once the group is created, the instructor or a designated group administrator will need to add the student IDs.  The instructor should empty the membership of the group after the class or workshop has terminated. Instructors will need to submit an instructional allocation renewal request at the start of each semester. Existing Grouper groups may be used for instructional allocation renewals.
 
 - - -
 
@@ -48,7 +48,7 @@ Students, particularly undergraduates, frequently experience password difficulti
 
 ## Partition and Reservations
 
-The allocation will have access to the `interactive` partition.  Students can enter this with the `-p` or `--partition` options to Slurm.
+It is recommended to use the `interactive` partition during lecture, which is designed for short interactive sessions aligned with educational goals.  Students can enter this with the `-p` or `--partition` options to Slurm.
 ```
 #SBATCH -p interactive
 ```
@@ -58,7 +58,7 @@ or
 ```
 If students use the Open OnDemand interface, they will enter this into the appropriate textbox when starting their interactive job application.
 
-Instructors are urged to request *reservations* for their classes.  The reservation will be created to coincide with the class meeting time.  Students must add an option `--reservation=your-reservation` in order to access the reserved resources.  Students may still use the instructional partition outside the reservation, but those jobs will wait like any other queued job. Outside the dedicated reservation window jobs should be submitted without the `--reservation` flag for immediate queueing; otherwise the job will be pending until the next reservation window opens.
+Instructors are allowed to request *reservations* for their classes.  The reservation will be created to coincide with the class meeting time, and only that time.  Students must add an option `--reservation=your-reservation` in order to access the reserved resources.  Students may still use the the cluster's partitions outside the reservation, but those jobs will wait like any other queued job. Outside the dedicated reservation window jobs should be submitted without the `--reservation` flag for immediate queueing; otherwise the job will be pending until the next reservation window opens.
 
 For batch jobs, the reservation can be entered on the command line
 ```
