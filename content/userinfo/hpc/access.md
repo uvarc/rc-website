@@ -98,7 +98,7 @@ Instructional allocations provide limited access to Rivanna and Afton and are av
 </a>
 
 # Dedicated Computing {#dedicated-computing}
-Dedicated computing is an alternative to self-managed lab systems and condominium nodes. This option provides researchers with exclusive access to HPC resources without wait times, eliminating the need for RC to manage the lifecycle of hardware purchased by researchers. Dedicated Computing involves nodes that RC has procured as part of its large-scale HPC acquisitions being “leased” to researchers for a term of one year or longer. These leased nodes are configured with the same system image as the primary HPC environment, ensuring consistency and minimizing support overhead. Once the lease term ends, dedicated nodes are returned to the public queues, making them available for general HPC use.
+Dedicated computing is an alternative to self-managed lab systems and condominium nodes. This option provides researchers with exclusive access to HPC resources without wait times (assuming no contention for the dedicated resources by other group members), eliminating the need for RC to manage the lifecycle of hardware purchased by researchers. Dedicated Computing involves nodes that RC has procured as part of its large-scale HPC acquisitions being “leased” to researchers for a term of one year or longer. These leased nodes are configured with the same system image as the primary HPC environment, ensuring consistency and minimizing support overhead. Once the lease term ends, dedicated nodes are returned to the public queues, making them available for general HPC use.
 
 **Available to:** [Eligible PIs](#pi-eligibility) who need exclusive access to a subset of HPC nodes for extended periods.
 
