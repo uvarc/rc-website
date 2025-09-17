@@ -5,7 +5,7 @@ categories = [
   "software",
   "math"
 ]
-date = "2019-06-22T08:37:46-05:00"
+date = "2025-07-25T00:00:00-05:00"
 tags = [
   "multi-core",
   "programming",
@@ -18,8 +18,7 @@ author = "RC Staff"
 +++
 
 # Description
-Julia is a high-level programming language designed for high-performance numerical analysis and computational science. Distinctive aspects of Julia's design include a type system with parametric polymorphism and types in a fully dynamic programming language and multiple dispatch as its core programming paradigm. It allows concurrent, parallel and distributed computing, and direct calling of C and Fortran libraries without glue code. A just-in-time compiler that is referred to as "just-ahead-of-time" in the Julia community is used. [Ref: Wikipedia](https://en.wikipedia.org/wiki/
-
+Julia is a high-level programming language designed for high-performance numerical analysis and computational science. Distinctive aspects of Julia's design include a type system with parametric polymorphism and types in a fully dynamic programming language and multiple dispatch as its core programming paradigm. It allows concurrent, parallel and distributed computing, and direct calling of C and Fortran libraries without glue code. A just-in-time compiler is used. [Ref: Wikipedia](https://en.wikipedia.org/wiki/Julia_%28programming_language%29)
 
 **Software Category:** {{% module-category %}}
 
@@ -42,94 +41,92 @@ module spider {{% module-firstversion %}}
 
 # Installing Julia Packages
 
-Julia wants to update any existing packages whenever a user tries to add a package. Of course, the basic packages were installed in a system directory that is not writable by the users.
-
-One work-around is to force Julia to use your local directory the first time that you add a package. For example, from the Linux command line set the shell variable,
+By default, your packages will be installed into `~/.julia`. If you wish to use a different location, run:
+```bash
+export JULIA_DEPOT_PATH=/path/to/depot
 ```
-export JULIA_DEPOT_PATH="~/.julia"
-```
-Then when you add a package from within Julia, it will be added to the `.julia` folder in your home directory, e.g.
-After that first time, it should always default to /home/$USER/.julia .
 
-The following link is a useful reference for loading Julia packages.
-[Loading Packages](https://aaowens.github.io/julia/2020/01/13/A-Newcomers-Guide-to-the-Julia-Package-Manager.html)
+[Here](https://aaowens.github.io/julia/2020/01/13/A-Newcomers-Guide-to-the-Julia-Package-Manager.html) is a useful reference for loading Julia packages.
 
 The following code snippet shows the steps used on my UVA HPC account to install and verify the SharedArrays package.
 ```
-udc-ba34-36-gahlmann$module load julia
-udc-ba34-36-gahlmann$julia
-               _
-   _       _ _(_)_     |  Documentation: https://docs.julialang.org
-  (_)     | (_) (_)    |
-   _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
-  | | | | | | |/ _` |  |
-  | | |_| | | | (_| |  |  Version 1.6.0 (2021-03-24)
- _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
-|__/                   |
+$ module load julia
+$ julia
 
 julia> using Pkg
 
-(v1.6) pkg> status
-      Status `/sfs/qumulo/qhome/teh1m/.julia/environments/v1.6/Project.toml`
-  [91a5bcdd] Plots v1.19.4
-  [8ba89e20] Distributed
-  [de0858da] Printf
+(press ] to enter package manager mode)
+
+(@v1.11) pkg> status
+Status `/sfs/gpfs/tardis/home/rs7wz/.julia/environments/v1.11/Project.toml`
+
+(press backspace to exit)
 
 julia>
 
+(press ? to enter help mode)
+
 help?> sdata
-search: isdirpath isdispatchtuple StridedMatrix StridedVecOrMat searchsortedlast
+search: stat ispath
 
 Couldn't find sdata
-Perhaps you meant stat, sort, sort!, sqrt, ispath, lstat, edit, Meta or atan
+Perhaps you meant stat, ispath, splat, lstat, sort, sort!, cat, hcat, atan, edit, vcat, sqrt, stack, Meta or abspath
   No documentation found.
 
   Binding sdata does not exist.
 
-(v1.6) pkg> add SharedArrays
-    Updating registry at `~/.julia/registries/General`
+(@v1.11) pkg> add SharedArrays
+  Installing known registries into `~/.julia`
+       Added `General` registry to ~/.julia/registries
+    Updating registry at `~/.julia/registries/General.toml`
    Resolving package versions...
-    Updating `/sfs/qumulo/qhome/teh1m/.julia/environments/v1.6/Project.toml`
-  [1a1011a3] + SharedArrays
-  No Changes to `/sfs/qumulo/qhome/teh1m/.julia/environments/v1.6/Manifest.toml`
+    Updating `/sfs/gpfs/tardis/home/rs7wz/.julia/environments/v1.11/Project.toml`
+  [1a1011a3] + SharedArrays v1.11.0
+    Updating `/sfs/gpfs/tardis/home/rs7wz/.julia/environments/v1.11/Manifest.toml`
+  [8ba89e20] + Distributed v1.11.0
+  [a63ad114] + Mmap v1.11.0
+  [9a3f8284] + Random v1.11.0
+  [ea8e919c] + SHA v0.7.0
+  [9e88b42a] + Serialization v1.11.0
+  [1a1011a3] + SharedArrays v1.11.0
+  [6462fe0b] + Sockets v1.11.0
 
-(v1.6) pkg> status
-      Status `/sfs/qumulo/qhome/teh1m/.julia/environments/v1.6/Project.toml`
-  [91a5bcdd] Plots v1.19.4
-  [8ba89e20] Distributed
-  [de0858da] Printf
-  [1a1011a3] SharedArrays
+(@v1.11) pkg> status
+Status `/sfs/gpfs/tardis/home/rs7wz/.julia/environments/v1.11/Project.toml`
+  [1a1011a3] SharedArrays v1.11.0
 
 julia> using SharedArrays
 
 help?> sdata
-search: sdata isdirpath isdispatchtuple SharedMatrix StridedMatrix
+search: sdata stat ispath
 
   sdata(S::SharedArray)
 
-  Returns the actual Array object backing S.
-
-julia>
+  Return the actual Array object backing S.
 ```
-You can work with Julia on the UVA HPC frontend nodes; we recommend [FastX](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access) for this application. 
 
-# Interactive Sessions through the Open OnDemand Web Portal
+# Interactive Session through Open OnDemand JupyterLab
+
+## One-time Setup
+Open a Julia terminal and install `IJulia`:
+```bash
+(press ] to enter package manager mode)
+
+(@v1.11) pkg> add IJulia
+  Installing known registries into `~/.julia`
+       Added `General` registry to ~/.julia/registries
+    Updating registry at `~/.julia/registries/General.toml`
+...
+Precompiling project...
+  13 dependencies successfully precompiled in 34 seconds. 28 already precompiled.
+```
 
 ## Starting an Interactive Session
-To launch an instance of {{% software-name %}} through a notebook interface, you will begin by connecting to our Open OnDemand portal. You need to specify required resources, e.g. node partition, time, your UVA HPC allocation, etc. If you are new to HPC, you may want to read the [Getting Started Guide](/userinfo/hpc/#job-queues) to learn more about the partitions.
+See [here](https://www.rc.virginia.edu/userinfo/hpc/software/jupyterlab/) for instructions.
 
-1. Open a web browser and go to URL:  https://ood.hpc.virginia.edu.
-2. Use your Netbadge credentials to log in. This will open the Open OnDemand web portal.
-3. On the top banner of the Open OnDemand dashboard, click on `Interactive Apps`.
-4. In the drop-down box, click on `JupyterLab`.
-5. After connecting to `JupyterLab`` through Open OnDemand, a form will appear where you can fill in the resources for `JupyterLab`.
-6. When done filling in the resources, click on the blue `Launch` button at the bottom of the form. **Do not click the button multiple times**.
-7. It may take a few minutes for the system to gather the resources for your instance of `JupyterLab`. When the resources are ready a `Connect to JupyterLab` button will appear. Click on the button to start `JupyterLab`.
-
-## Using JupyterLab
 When JupyterLab opens in your web browser, it will appear with a selection of notebook kernels to choose from, as shown below.
 <img src="/images/juliaNotebook.png" style="height:110%;width:110%"></img>
-If you double-click on one of the Julia kernels, an IPython notebook will open connected to Julia, ready for interactive commands.
+Select the kernel for the desired Julia version.
 
 ## Closing the Interactive Session
 When you are done, quit the JupyterLab application.  The interactive session will be closed and the allocated resources will be released. If you leave the session open, your allocation will continue to be charged until the specified time limit is reached.

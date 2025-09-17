@@ -7,6 +7,6 @@
 #SBATCH -t 10:00:00           # time
 
 module purge
-module load goolf/11.2.0_4.1.4 gromacs
+module load nvompi gromacs
 
 srun gmx_mpi <arguments>

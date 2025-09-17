@@ -1,8 +1,8 @@
 {{ $imagePath := .imagePath }}
 {{ $imageLink := .imageLink }}
 <div class="container responsive-image-container">
-    <a href="{{ $imageLink }}"> 
-        <img class="d-block img-fluid responsive-image" src="{{ $imagePath }}" alt="event banner" />     
+    <a href="{{ $imageLink }}" {{ with .linkAriaLabel }}aria-label="{{ . }}"{{ end }}> 
+        <img class="d-block img-fluid responsive-image" src="{{ $imagePath }}" alt="{{ with .altText }}{{ . }}{{ else }}event banner{{ end }}" />
     </a>     
 </div>
 

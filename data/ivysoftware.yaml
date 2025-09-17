@@ -196,8 +196,12 @@ software:
    versions:
      - version: "2023b"
        status: approved # pending,rejected
-       platforms: [Linux,Windows]
-       installation: preinstalled #preinstalled,none  
+       platforms: [Linux]
+       installation: preinstalled #preinstalled,none
+     - version: "2023b"
+       status: approved
+       platforms: [Windows]
+       installation: optional
    category: [Data Analysis]
    description: MATLAB is a multi-paradigm numerical computing environment and proprietary programming language developed by MathWorks. 
    license: Matlab usage by UVA affiliates is covered by a site license.

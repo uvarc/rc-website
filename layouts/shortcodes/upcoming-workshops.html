@@ -9,26 +9,28 @@
 </thead>
 <tbody>
   {{- $url := $.Site.Params.eventsUrl -}}
-  {{- $sep := "," -}}
-  {{- range $i, $r := getCSV $sep $url -}}
-    {{- $title:=index $r 0 -}}
-    {{- $scheduled_date:=replace (index $r 1) "/" "-" -}}
-    {{- $link:=index $r 2 -}}
-    {{- $instructor:=index $r 3 -}}
-    {{- $last_date:=last 1 (split $scheduled_date ",") -}}
-    {{- $last_date:=time (index $last_date 0) -}}
-    {{- if $last_date.After (now.AddDate 0 0 -1) -}}
-      <tr>
-        <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }}<br> {{ end }}</td>
-        {{- if ne $link "" -}}
-          <td><a href="{{ $link }}" target="_blank">{{ $title }}</a></td>
-        {{- else -}}
-          <td>{{ $title }}</td>
-        {{- end -}}
-        <td>{{ $instructor }}</td>
-      </tr>
-    {{- end -}}  
-{{- end -}}
+  {{- $sep := dict "delimiter" "," -}}
+  {{ with resources.Get $url -}}
+    {{- range $i, $r := (.Content | transform.Unmarshal $sep) -}}
+      {{- $title:=index $r 0 -}}
+      {{- $scheduled_date:=replace (index $r 1) "/" "-" -}}
+      {{- $link:=index $r 2 -}}
+      {{- $instructor:=index $r 3 -}}
+      {{- $last_date:=last 1 (split $scheduled_date ",") -}}
+      {{- $last_date:=time (index $last_date 0) -}}
+      {{- if $last_date.After (now.AddDate 0 0 -1) -}}
+        <tr>
+          <td>{{ range (split $scheduled_date ",") }} {{ (time .).Format "Jan 2, 2006" }}<br> {{ end }}</td>
+          {{- if ne $link "" -}}
+            <td><a href="{{ $link }}" target="_blank">{{ $title }}</a></td>
+          {{- else -}}
+            <td>{{ $title }}</td>
+          {{- end -}}
+          <td>{{ $instructor }}</td>
+        </tr>
+      {{- end -}}  
+    {{- end -}}
+  {{- end -}}
 </tbody>
 </table>
 </div>

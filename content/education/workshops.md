@@ -15,7 +15,9 @@ images = [""]
 
 # New to High-Performance Computing?  
 
-We offer orientation sessions to introduce you to the Afton & Rivanna HPC systems on Wednesdays (appointment required).
+We have core training that is essential to getting up to speed working in the UVA HPC environment. We offer virtual orientation sessions to introduce you to the Afton & Rivanna HPC systems. Trainings are hosted Wednesdays. Registration is required.
+
+The [training material](https://learning.rc.virginia.edu/tutorials/hpc-intro/) is hosted on our learning page where you can find a full YouTube video series and the workshop content of our core training.
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
@@ -30,7 +32,7 @@ session</button></a>
 
 {{% upcoming-workshops-smart %}}
 
-Research Computing is partnering with the Research Library and the Health Sciences Library to deliver workshops covering a variety of research computing topics.  
+Research Computing is partnering with the UVA Library Research Data Services and the Health Sciences Library to deliver workshops covering a variety of research computing topics.  
 
 <a href="https://data.library.virginia.edu/training/" class="btn btn-warning" target="_new">All Upcoming Workshops from UVA Library Research Data Services</a>
 
@@ -44,10 +46,28 @@ Course material and exercises are available through a companion site. Feel free 
 
 - - -
 
-# New Tutorials
+<!-- # New Tutorials
 Specifically, check out these new tutorials!
 
 {{% new-tutorials %}}
+
+- - - -->
+
+# Explore Our HPC Core Training Videos
+Before attending any of our live workshops, we invite you to check out our foundational HPC training videos available on our [YouTube channel](https://www.youtube.com/@UVAResearchComputing).
+
+These short tutorials will help you get the most out of your workshop experience:
+
+* [Connecting to HPC](https://youtu.be/uxr2R5-u9II?si=-RW0_JCqxQ5HfoTW)
+* [Working with Files](https://www.youtube.com/watch?v=dYDcGtlyIh0)
+* [Features of Open OnDemand](https://youtu.be/MpzThi43iak?si=igXRPkeGnGm1PVQA)
+* [Using Open OnDemand Interactive Apps](https://youtu.be/o9XVUhCQuEI?si=l8Tyhv0OtVxn-GVP)
+
+Whether you’re new to high-performance computing or need a quick refresher, these videos are a great place to start.
+
+<a href="https://www.youtube.com/@UVAResearchComputing" class="btn btn-warning" target="_new">Watch Now</a>
+
+- - -
 
 # Previous Workshops
 

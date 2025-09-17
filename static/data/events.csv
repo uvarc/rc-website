@@ -1,30 +1,4 @@
-Introduction to the Command Line for HPC,2024-06-03,https://cal.lib.virginia.edu/event/12423016,"Paul Orndorff, Hana Parece"
-High Performance Python,2024-06-03,https://cal.lib.virginia.edu/event/12423429,"Camden Duy, Katherine Holcomb"
-Introduction to GPU Accelerated Python,2024-06-04,https://cal.lib.virginia.edu/event/12423108,"Angela Boakye Danquah, Hana Parece"
-Introduction to Deep Learning with HPC,2024-06-05,https://cal.lib.virginia.edu/event/12423243,"Angela Boakye Danquah, Kathryn Linehan"
-Distributed Deep Learning on Rivanna,2024-06-06,https://cal.lib.virginia.edu/event/12423291,"Marcus Bobar, Ahmad Sheikhzada"
-Drug Discovery with Deep Learning: Computational Chemistry Application,2024-06-07,https://cal.lib.virginia.edu/event/12423345,"Priyanka Prakash, Ahmad Sheikhzada"
-Introduction to Writing Slurm Job Scripts for HPC,2024-06-10,https://cal.lib.virginia.edu/event/12423080,"Paul Orndorff, Hana Parece"
-Introduction to the Command Line for HPC,2024-09-09,https://cal.lib.virginia.edu/event/12889799,"Paul Orndorff, Hana Parece"
-Introduction to PyTorch for HPC,2024-09-10,https://cal.lib.virginia.edu/event/12889658,"Angela Boakye Danquah, Kathryn Linehan"
-High Performance Computing with Matlab,2024-09-12,https://cal.lib.virginia.edu/event/12889966,Ed Hall
-Introduction to Writing Slurm Job Scripts for HPC,2024-09-16,https://cal.lib.virginia.edu/event/12914242,"Camden Duy, Hana Parece"
-Large Language Models (LLMs) on HPC,2024-10-08,https://cal.lib.virginia.edu/event/12889746,"Angela Boakye Danquah, Marcus Bobar, Kathryn Linehan"
-Distributed Deep Learning on HPC,2024-10-23,https://cal.lib.virginia.edu/event/12889702,"Marcus Bobar, Ahmad Sheikhzada"
-Using Containers on HPC,2024-11-04,https://cal.lib.virginia.edu/event/12889924,Ruoshi Sun
-Deep learning in drug discovery,2024-11-06,https://cal.lib.virginia.edu/event/12900138,Priyanka Prakash
-Introduction to the Command Line for HPC,2025-02-04,https://cal.lib.virginia.edu/event/13832854,"Camden Duy, Hana Parece"
-Introduction to Writing Slurm Job Scripts for HPC,2025-02-10,https://cal.lib.virginia.edu/event/13838434,"Camden Duy, Hana Parece"
-Introduction to LLMs and Inference on UVA HPC,2025-02-13,https://cal.lib.virginia.edu/event/13838468,Kathryn Linehan
-Introduction to PyTorch,2025-03-04,https://cal.lib.virginia.edu/event/13924638,Angela Boakye Danquah
-Introduction to VSCode for HPC,2025-03-04,https://cal.lib.virginia.edu/event/13838392,Hana Parece
-Introduction to UVA's HPC System from the Terminal,2025-06-02,https://cal.lib.virginia.edu/event/14584244,"Camden Duy, Hana Parece"
-Using Containers on HPC,2025-06-02,https://cal.lib.virginia.edu/event/14584323,Ruoshi Sun
-Introduction to Ivy/Rio,2025-06-03,https://cal.lib.virginia.edu/event/14584533,"Camden Duy, Paul Orndorff"
-Multi-GPU LLM Inference,2025-06-03,https://cal.lib.virginia.edu/event/14584586,"Marcus Bobar, Kathryn Linehan"
-Introduction to Writing Slurm Job Scripts for HPC,2025-06-04,https://cal.lib.virginia.edu/event/14584667,"Camden Duy, Hana Parece"
-Introduction to Bioinformatics Tools for HPC,2025-06-04,https://cal.lib.virginia.edu/event/14584619,"Marcus Bobar, Deb Triant"
-Introduction to PyTorch for HPC,2025-06-05,https://cal.lib.virginia.edu/event/14584797,Angela Boakye Danquah
-Working with genomic data on HPC,2025-06-05,https://cal.lib.virginia.edu/event/14584935,Deb Triant
-Building Containers on HPC,2025-06-06,https://cal.lib.virginia.edu/event/14584855,Ruoshi Sun
-Introduction to VSCode for HPC,2025-06-06,https://cal.lib.virginia.edu/event/14584874,Hana Parece
+High Performance Computing from a Terminal Window,2025-09-16,https://cal.lib.virginia.edu/event/15143544,"Camden Duy, Hana Parece"
+Introduction to Writing Slurm Job Scripts for HPC,2025-09-18,https://cal.lib.virginia.edu/event/15143435,"Camden Duy, Hana Parece"
+Introduction to VSCode for HPC,2025-09-30,https://cal.lib.virginia.edu/event/15143581,Hana Parece
+Introduction to Bioinformatics Tools for HPC,2025-10-09,https://cal.lib.virginia.edu/event/15143630,Deb Triant

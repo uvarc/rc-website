@@ -225,6 +225,11 @@ are deducted from the allocation balance. See [How do I check my allocation stat
 
 Service Units (SUs) serve as a general single currency on the HPC system. SUs in a given allocation account can be used freely to run jobs on nodes in the standard, parallel, gpu and interactive queues.  Please note that the SU charge rate is different for some of the specialty hardware, e.g. the GPU nodes, as listed [here](/userinfo/hpc/#job-queues).
 
+## How does the system decide how long my job is queued? Does Slurm have "fairshare"? 
+
+A variety of factors are considered when Slurm schedules your job and assigns it a priority. Some of these factors include: resource request (time, memory, etc.), allocation type (standard vs paid), your SU burn frequencies, and the frequency of jobs submitted from your allocation. Slurm on our system has fair use enabled to allow equitable access to our users across the system. Slurm calculates your fairshare based off of previously listed factors and assigns your job a fair priority. 
+
+
 ## How is my "Fairshare" impacted by the changed SU charge rates?
 
 Your Fairshare value is driven by your SU consumption and affects the priority of jobs that you submit. This is true for both the standard and purchased allocations. If the changes to the SU consumption rates increases your SU consumption you will see a proportional impact on your Fairshare value.

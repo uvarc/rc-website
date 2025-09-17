@@ -56,10 +56,10 @@ service:
         access: "Rivanna, Afton, <a href=\"/userinfo/howtos/storage/drive-mapping/\">mountable on local workstation</a>"
         filesystem_location: "<code>/project</code>"
         highly-sens-ds-compliant: "No"
-        use_cases: "Ideal for long-term storage of data to be accessed from Rivanna. Research Project storage is ideal for sharing data within a research group and for running jobs with smaller files."
+        use_cases: "<code>/project</code> storage is best suited for data accessible to Rivanna/Afton, shared within a research group, and for researchers who are actively running Slurm jobs and need more capacity than <code>/home</code> provides."
       - name: "Research Standard"
         security: "Standard"
-        cost: "$45/TB per year (Each PI with an RC account will be granted up to 10 TB of Research Standard Storage at no charge<sup>1</sup>)"
+        cost: "$45/TB per year (Upon request, each PI with an RC account will be granted up to 10 TB of Research Standard Storage at no charge<sup>1</sup>)"
         quota: "1TB increments"
         snapshots: "No"
         replication: "No"
@@ -67,7 +67,7 @@ service:
         access: "Rivanna, Afton, <a href=\"/userinfo/howtos/storage/drive-mapping/\">mountable on local workstation</a>"
         filesystem_location: "<code>/standard</code>"
         highly-sens-ds-compliant: "No"
-        use_cases: "Budget solution for storing data that can be accessed by a personal computer or Rivanna. It is not recommended to run Slurm jobs against research standard storage unless absolutely necessary. File operations on Research Standard storage are slower than on Rivanna <code>/home</code>, <code>/scratch</code>, or <code>Research Project</code> storage."
+        use_cases: "<code>/standard</code> storage is best suited for data that needs to be accessible to a workstation or Rivanna/Afton, shared within a research group, and for longer-term storage of Slurm job outputs completed in <code>/scratch</code>. It is not recommended to run Slurm jobs directly against <code>/standard</code> as file operations are slower compared to <code>/home</code>, <code>/scratch</code>, and <code>/project</code> storage."
       - name: "High-Security Research Standard"
         security: "High"
         cost: "$45/TB/year"
@@ -187,7 +187,7 @@ hardware:
       speciality_hardware: "-"
       gpu_memory_per_device: "-"
       gpu_devices_per_node: "-"
-      number_of_nodes: 294
+      number_of_nodes: 280
       su_per_cpu_hour: 0.464
       su_per_gb_hour: 0.0284
       su_per_gpu_hour: 0 
@@ -209,7 +209,7 @@ hardware:
       speciality_hardware: "-"
       gpu_memory_per_device: "-"
       gpu_devices_per_node: "-"
-      number_of_nodes: 6
+      number_of_nodes: 20
       su_per_cpu_hour: 0.418
       su_per_gb_hour: 0.0244
       su_per_gpu_hour: 0
@@ -253,17 +253,7 @@ hardware:
       speciality_hardware: "GPU: A40"
       gpu_memory_per_device: "48GB"
       gpu_devices_per_node: "8"
-      number_of_nodes: 6
-      su_per_cpu_hour: 0.34
-      su_per_gb_hour: 0.02
-      su_per_gpu_hour: 18.669
-    - system: "Afton"
-      cores_per_node: 96
-      memory_per_node: "750GB"
-      speciality_hardware: "GPU: A40"
-      gpu_memory_per_device: "48GB"
-      gpu_devices_per_node: "8"
-      number_of_nodes: 6
+      number_of_nodes: 12
       su_per_cpu_hour: 0.34
       su_per_gb_hour: 0.02
       su_per_gpu_hour: 18.669
@@ -328,7 +318,7 @@ job_queues:
       purpose: "For jobs on a single compute node"
       max_time_per_job: "7 days"
       max_nodes_per_job: 1
-      max_cores_per_job:
+      max_cores_per_job: 96
       max_cores_per_node: 96 
       default_mem_per_core: "9GB"
       max_mem_per_node_per_job: "1462GB"
@@ -350,6 +340,15 @@ job_queues:
       max_cores_per_node: 128
       default_mem_per_core: "6GB"
       max_mem_per_node_per_job: "1953GB"
+    # gpu-mig partition
+    - partition: "gpu-mig"
+      purpose: "For smaller GPU jobs"
+      max_time_per_job: "3 days"
+      max_nodes_per_job: 1
+      max_cores_per_job: 2
+      max_cores_per_node: 14 MIGs/user
+      default_mem_per_core: "4000MB"
+      max_mem_per_node_per_job: "30000MB"
     # interactive partition
     - partition: "interactive"
       purpose: "For quick interactive sessions"

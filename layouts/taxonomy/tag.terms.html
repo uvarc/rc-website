@@ -1,114 +1,116 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}">
 
-  <head>
-    {{ partial "head-meta.html" . }}
+<head>
+  {{ partial "head-meta.html" . }}
 
-    <base href="{{ .Permalink }}">
-    <link rel="canonical" href="{{ .Permalink }}">
-    <link rel="Shortcut Icon" href="{{ .Site.BaseURL }}images/favicon.ico" type="image/x-icon" />
-    <meta type="{{ .Type }}" />
+  <base href="{{ .Permalink }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="Shortcut Icon" href="{{ absURL "/images/favicon.ico" }}" type="image/x-icon" />
+  <meta type="{{ .Type }}" />
 
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-    {{ "<!-- combined, minified CSS -->" | safeHTML }}
-    <link href="{{ .Site.BaseURL }}/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  {{ "<!-- combined, minified CSS -->" | safeHTML }}
+  <link href="{{ absURL "/css/style.css" }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+    integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    {{ partial "head-custom.html" . }}
+  {{ partial "head-custom.html" . }}
 
-<style>
-circle {
-  fill: rgb(31, 119, 180);
-  fill-opacity: .25;
-  stroke: rgb(31, 119, 180);
-  stroke-width: 1px;
-}
+  <style>
+    circle {
+      fill: rgb(31, 119, 180);
+      fill-opacity: .25;
+      stroke: rgb(31, 119, 180);
+      stroke-width: 1px;
+    }
 
-.leaf circle {
-  fill: #ff7f0e;
-  fill-opacity: 1;
-}
+    .leaf circle {
+      fill: #ff7f0e;
+      fill-opacity: 1;
+    }
 
-text {
-  font: 12px sans-serif;
-  text-anchor: middle;
-}
-</style>
+    text {
+      font: 12px sans-serif;
+      text-anchor: middle;
+    }
+  </style>
 
-  </head>
+</head>
 
-  <body>
+<body>
 
-    {{ partial "menu-home.html" . }}
+  {{ partial "menu-home.html" . }}
 
-    {{ partial "site-header.html" . }}
-	
-	<section id="main-content" class="main-content">
+  {{ partial "site-header.html" . }}
+
+  <section id="main-content" class="main-content">
 
     <div class="container">
       <div class="row">
         <div class="col-sm-9 blog-main">
 
-<!-- BEGIN TAG CLOUD -->
-<section id="main">
-  <div>
-    <h1 id="title"><i class="fa fa-tag" aria-hidden="true"></i> {{ .Title }}</h1>
+          <!-- BEGIN TAG CLOUD -->
+          <section id="main">
+            <div>
+              <h1 id="title"><i class="fa fa-tag" aria-hidden="true"></i> {{ .Title }}</h1>
 
 
-    <!-- BEGIN TAG D3 -->
-<svg width="700" height="700"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script>
+              <!-- BEGIN TAG D3 -->
+              <svg width="700" height="700"></svg>
+              <script src="https://d3js.org/d3.v4.min.js"></script>
+              <script>
 
-var svg = d3.select("svg"),
-    diameter = +svg.attr("width"),
-    g = svg.append("g").attr("transform", "translate(2,2)"),
-    format = d3.format(",d");
+                var svg = d3.select("svg"),
+                  diameter = +svg.attr("width"),
+                  g = svg.append("g").attr("transform", "translate(2,2)"),
+                  format = d3.format(",d");
 
-var pack = d3.pack()
-    .size([diameter - 4, diameter - 4]);
+                var pack = d3.pack()
+                  .size([diameter - 4, diameter - 4]);
 
-d3.json("/index.json", function(error, root) {
-  if (error) throw error;
+                d3.json("/index.json", function (error, root) {
+                  if (error) throw error;
 
-  root = d3.hierarchy(root)
-      .sum(function(d) { return d.size; })
-      .sort(function(a, b) { return b.value - a.value; });
+                  root = d3.hierarchy(root)
+                    .sum(function (d) { return d.size; })
+                    .sort(function (a, b) { return b.value - a.value; });
 
-  var node = g.selectAll(".node")
-    .data(pack(root).descendants())
-    .enter().append("g")
-      .attr("class", function(d) { return d.children ? "node" : "leaf node"; })
-      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+                  var node = g.selectAll(".node")
+                    .data(pack(root).descendants())
+                    .enter().append("g")
+                    .attr("class", function (d) { return d.children ? "node" : "leaf node"; })
+                    .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
 
-  node.append("title")
-      .text(function(d) { return d.data.name + "\n" + format(d.value); });
+                  node.append("title")
+                    .text(function (d) { return d.data.name + "\n" + format(d.value); });
 
-  node.append("circle")
-      .attr("r", function(d) { return d.r; });
+                  node.append("circle")
+                    .attr("r", function (d) { return d.r; });
 
-  node.filter(function(d) { return !d.children; }).append("text")
-      .attr("dy", "0.3em")
-      .text(function(d) { return d.data.name.substring(0, d.r / 3); });
-});
+                  node.filter(function (d) { return !d.children; }).append("text")
+                    .attr("dy", "0.3em")
+                    .text(function (d) { return d.data.name.substring(0, d.r / 3); });
+                });
 
-</script>
-    <!-- END TAG D3 -->
-
-
-    <!-- BEGIN TAG LIST -->
-    <p style="line-height: 200%;">
-    {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
-      <a style="font-weight:bold;" href="/tags/{{ $name | urlize }}"><button class="btn btn-outline-danger btn-sm">{{ $name }} ({{ $taxonomy.Count }}) </button></a>
-    {{end}}
-    </p>
-    <!-- END TAG LIST -->
+              </script>
+              <!-- END TAG D3 -->
 
 
-  </div>
-</section>
-<!-- END TAG CLOUD -->
+              <!-- BEGIN TAG LIST -->
+              <p style="line-height: 200%;">
+                {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+                <a style="font-weight:bold;" href="/tags/{{ $name | urlize }}"><button
+                    class="btn btn-outline-danger btn-sm">{{ $name }} ({{ $taxonomy.Count }}) </button></a>
+                {{end}}
+              </p>
+              <!-- END TAG LIST -->
+
+
+            </div>
+          </section>
+          <!-- END TAG CLOUD -->
 
         </div> {{ "<!-- /.blog-main -->" | safeHTML }}
 
@@ -117,11 +119,11 @@ d3.json("/index.json", function(error, root) {
       </div> {{ "<!-- /.row -->" | safeHTML }}
     </div> {{ "<!-- /.container -->" | safeHTML }}
 
-	</section>
-	
-    {{ partial "footer.html" . }}
+  </section>
 
-  </body>
+  {{ partial "footer.html" . }}
+
+</body>
 
 </html>
 

@@ -409,6 +409,10 @@ Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar
 
 As outlined above, VMs are available in various sizes. Please request a VM that is appropriately sized for your specific workflow. For larger groups or projects involving computationally intensive tasks, we recommend selecting a larger VM, with a preference for Small or above. 
 
+<div class="bd-callout bd-callout-warning">
+  <p>Please note that PIs must specifically request for their associated Linux VM to be provisioned as a frontend to Rio. Access to Rio from the VM is not granted by default. After submitting the Linux VM request, PIs should also submit a general support request through our <a href="https://rc.virginia.edu/form/support-request/">webform</a> specifying that the VM requires access to Rio. The title of the project should be included in the details of the request.</p>
+</div>
+
 [<button class="btn btn-success">Request Ivy VM for Rio</button>](https://services.rc.virginia.edu/ivyvm)
   
 ## System Details
@@ -420,6 +424,59 @@ Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit
 **JOB QUEUES**
 
 Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/). 
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 12px 20px;  /* More padding for spacing */
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Partition</th>
+      <th>Purpose</th>
+      <th>Max Time / Job</th>
+      <th>Max Nodes / Job</th>
+      <th>Max Cores / Job</th>
+      <th>Max Cores / Node</th>
+      <th>Default Mem / Core</th>
+      <th>Max Mem / Node / Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>standard</td>
+      <td>CPU-based jobs</td>
+      <td>7 days</td>
+      <td>10</td>
+      <td>400</td>
+      <td>40</td>
+      <td>4 GB</td>
+      <td>375 GB</td>
+    </tr>
+    <tr>
+      <td>gpu</td>
+      <td>GPU jobs (H200 general purpose)</td>
+      <td>3 days</td>
+      <td>1</td>
+      <td>1GPU</td>
+      <td>96</td>
+      <td>4 GB</td>
+      <td>2 TB</td>
+    </tr>
+  </tbody>
+</table>
+
 
 For an introduction to the Rio HPC system, please see our [tutorial](https://learning.rc.virginia.edu/tutorials/rio-intro/).
 
