@@ -42,6 +42,7 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |jupyterlab|3.6.3-py3.11, 4.4.1-py3.12| 4.4.6-py3.12 |
 |libxc     | 2.2.0  | 5.2.3, 6.1.0 |
 |llvm      | 15.0.7 | 21.1.1 |
+|mesa      | 23.1.4 | 25.2.3 |
 |meson     |1.0.1-py3.11| 1.9.0 |
 |mrtrix3   | 3.0.2  | 3.0.7 |
 |ninja     |1.11.1, 1.11.1-py3.11| 1.13.1 |
