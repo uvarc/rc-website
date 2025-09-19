@@ -67,6 +67,8 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |trimmomatic| 0.39  | 0.40 |
 |redis-cli | 6.2.6  | redis/8.2.1 |
 |thirdorder| 1.1.1  | 1.1.3 |
+|x264      |20230226| 20250619 |
+|x265      | 3.5    | 4.1 |
 {{< /table >}}
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
