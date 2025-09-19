@@ -44,6 +44,7 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |llvm      | 15.0.7 | 21.1.1 |
 |mesa      | 23.1.4 | 25.2.3 |
 |meson     |1.0.1-py3.11| 1.9.0 |
+|mummer    |4.0.0rc1| 4.0.1 |
 |mrtrix3   | 3.0.2  | 3.0.7 |
 |ninja     |1.11.1, 1.11.1-py3.11| 1.13.1 |
 |nvhpc     | 24.1   | 24.5, 25.3 |
