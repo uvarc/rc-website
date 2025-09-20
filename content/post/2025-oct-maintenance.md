@@ -41,6 +41,7 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |julia     | 1.9.2  | 1.11.6 |
 |jupyterlab|3.6.3-py3.11, 4.4.1-py3.12| 4.4.6-py3.12 |
 |libxc     | 2.2.0  | 5.2.3, 6.1.0 |
+|lame      | 3.99.5 | 3.100 |
 |llvm      | 15.0.7 | 21.1.1 |
 |mesa      | 23.1.4 | 25.2.3 |
 |meson     |1.0.1-py3.11| 1.9.0 |
@@ -66,6 +67,8 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |trimmomatic| 0.39  | 0.40 |
 |redis-cli | 6.2.6  | redis/8.2.1 |
 |thirdorder| 1.1.1  | 1.1.3 |
+|x264      |20230226| 20250619 |
+|x265      | 3.5    | 4.1 |
 {{< /table >}}
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
