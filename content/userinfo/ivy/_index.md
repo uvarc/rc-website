@@ -419,7 +419,7 @@ As outlined above, VMs are available in various sizes. Please request a VM that 
 
 **HARDWARE CONFIGURATION**
 
-Currently, Rio comprises of 39 compute nodes in the standard partition, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Rio also includes an NVIDIA HGX H200 GPU, and additional L40s GPU nodes designed to support AI and machine learning workloads.
+Currently, Rio comprises of 34 compute nodes in the standard partition, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Rio also includes an NVIDIA HGX H200 GPU, and additional L40s GPU nodes within the gpu partition, designed to support AI and machine learning workloads.
 
 **JOB QUEUES**
 
