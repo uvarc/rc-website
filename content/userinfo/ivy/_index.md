@@ -45,7 +45,7 @@ Ivy provides virtual computing environments (virtual machines) specifically desi
   {{% pi-eligibility %}}
 {{% /highlight %}}
 
-Access to Ivy resources is project-based, limited to PIs and their designees, and requires approval. Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
+Access to Ivy resources is project-based, limited to PIs and their designees, and requires institutional review board approval (including IRB-HSR approval for health sciences research projects). Once a project is approved a PI and her/his researchers must sign a RUDA (one for every researcher on each project).
 
 [<button class="btn btn-success">Request an Ivy Account</button>](https://services.rc.virginia.edu/ivyvm)
 
