@@ -35,7 +35,7 @@ service:
         su_expiration: "Never"
       - type: "Instructional"
         link: "/userinfo/hpc/access/#instructional-allocations"
-        su_limits: "100,000"
+        su_limits: "1,000,000"
         cost: "Free"
         su_expiration: "2 weeks after last training session"
   - name: "Storage"
