@@ -1,0 +1,25 @@
+{{ $hardware := index $.Site.Data.service.rio_hardware 0}}
+{{ $columns := index $hardware "columns" }}
+{{ $options := index $hardware "options" }}
+
+<table class="table" style="margin-top:2rem;">
+  <thead class="thead-dark" style="">
+    <tr>
+      {{ range $columns }}
+      <th scope="col">{{ . }}</th>
+      {{ end }}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {{ range $options }}
+    <tr>
+      <td>{{ .cores_per_node }}</td>
+      <td>{{ .memory_per_node }}</td>
+      <td>{{ .speciality_hardware }}</td>
+      <td>{{ .number_of_nodes }}</td>
+    </tr>
+    {{ end }}
+    </tr>
+  </tbody>
+</table>

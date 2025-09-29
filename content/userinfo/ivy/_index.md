@@ -421,6 +421,8 @@ As outlined above, VMs are available in various sizes. Please request a VM that 
 
 Currently, Rio comprises 39 compute nodes, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Rio also includes an NVIDIA HGX H200 GPU, and additional GPU nodes designed to support AI and machine learning workloads will be integrated in the near future.
 
+{{< rio-specs >}}
+
 **JOB QUEUES**
 
 Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/). 
