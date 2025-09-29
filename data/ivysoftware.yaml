@@ -293,8 +293,16 @@ software:
    versions:
      - version: "14.5"
        status: approved # pending,rejected
-       platforms: [Linux,Windows]
+       platforms: [Windows]
        installation: optional #preinstalled,none  
+   category: [Database Software]
+   description: PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying.  
+ - name: PostgreSQL
+   versions:
+     - version: "14.5"
+       status: approved # pending,rejected
+       platforms: [Linux]
+       installation: preinstalled #preinstalled,none  
    category: [Database Software]
    description: PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying.  
  - name: MySQL Workbench
