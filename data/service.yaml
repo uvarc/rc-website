@@ -301,6 +301,18 @@ hardware:
       su_per_cpu_hour: 0.058
       su_per_gb_hour: 0.005
       su_per_gpu_hour: 2.096
+  
+rio_hardware:
+  - columns:
+    - "Cores/Node"
+    - "Memory/Node"
+    - "Specialty Hardware"
+    - "# of Nodes"
+    options:
+    - cores_per_node: 40
+      memory_per_node: "375GB"
+      speciality_hardware: "GPU: H200"
+      number_of_nodes: 39
 
 job_queues:
   - columns:
