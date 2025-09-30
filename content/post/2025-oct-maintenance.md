@@ -2,18 +2,59 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2025-10-08T00:00:00-05:00"
+date = "2025-09-29T00:00:00-05:00"
 title = "HPC Maintenance: Oct 14, 2025"
 draft = false
 tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}The UVA HPC systems, Afton/Rivanna, will be down for maintenance on <strong>Tuesday, October 14, 2025</strong> beginning at 6 am.{{< /alert-green >}}
+{{< alert-green >}}The UVA HPC systems, Afton/Rivanna, will be unavailable for maintenance beginning <strong>Tuesday, October 14, 2025</strong> beginning at 6 am.{{< /alert-green >}}
+
+- **Rivanna**: Service will resume by <strong>6 a.m. Wednesday, Oct. 15.</strong> 
+
+- **Afton**: Due to required vendor work, downtime will extend until <strong>6 a.m. Thursday, Oct. 16.</strong> This will affect the availability of the **standard**, **interactive** and **gpu** partitions (partially) and the **parallel** partition (fully). 
 
 All systems are expected to return to service by **Thursday, October 16** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
+
+### What to Expect During Maintenance  
+
+**Access:**
+ 
+You will not be able to log in or use the HPC systems, including Open OnDemand and FastX. 
+
+**Jobs:**
+ 
+You can submit jobs until maintenance begins. If the scheduler determines that a job cannot finish before maintenance starts, it will be held in the queue and will automatically start once the system is back online. <strong>No jobs will run during maintenance.</strong> 
+
+**Storage:**
+ 
+Research Standard and Research Project storage remain accessible via Globus, Server Message Block (SMB), and Network File System (NFS) mounts, meaning: 
+
+- You cannot access files through the HPC interface during maintenance. 
+
+- You can access files from other systems (e.g., your computer) if mounts are set up. 
+
+- The Data Transfer Node (DTN) stays online for ongoing data transfers via Globus. 
+
+### Reminder: Improving GPU Resource Availability and Job Efficiency 
+
+To improve wait times and system performance in the gpu partition, we have implemented the following key updates. <strong>These are in addition to a significant new investment in GPU hardware planned for this Fall.</strong> 
+
+**1. User Awareness Emails and Job Termination Policy**
+
+We have begun sending informational alerts to users whose GPU jobs show zero utilization for extended periods. These alerts are part of our job termination policy, which is designed to encourage efficient GPU use by active jobs. If no action is taken, GPU jobs with no utilization will be automatically terminated, in line with our [usage guidelines](https://www.rc.virginia.edu/userinfo/hpc/job-alerts/). This will apply only to no-charge Service Unit (SU) jobs in the **gpu** partition. 
+
+**2. New Experimental gpu-mig Partition** 
+
+To help you get faster access to GPU resources, we have launched the  **gpu-mig** partition that uses NVIDIA’s Multi-Instance GPU (MIG) technology to split a single A100 80GB GPU node into 56 smaller instances. Each job in this partition will get one-seventh of a single GPU with 10 GB of memory. 
+
+**What this means for you:** Run smaller GPU jobs with less queue delays and without using any SUs. 
+
+[See how to submit a job to the gpu-mig partition](https://www.rc.virginia.edu/userinfo/hpc/slurm/#mig-gpu-partition).  
+
 
 ### System
 
@@ -71,4 +112,4 @@ All systems are expected to return to service by **Thursday, October 16** at 6 a
 |x265      | 3.5    | 4.1 |
 {{< /table >}}
 
-If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
+If you have any questions about the maintenance or GPU queue improvements, please [contact our user services team](https://www.rc.virginia.edu/support/). 
