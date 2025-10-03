@@ -77,6 +77,7 @@ To help you get faster access to GPU resources, we have launched the  **gpu-mig*
 |dragonn   | 0.4.1  | - |
 |gcloud-sdk| 422.0.0| gcloud/536.0.1 |
 |gperf     | 3.0.4  | 3.3 |
+|ffmpeg    | 5.1.2  | 8.0 |
 |hunspell  | 1.6.2  | 1.7.2 |
 |jq        | 1.6    | 1.8.1 |
 |julia     | 1.9.2  | 1.11.6 |
