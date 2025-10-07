@@ -754,8 +754,11 @@
         });
     });
 
-    //$('#admin-button').on('click', function (e) {
-       // e.preventDefault();
+    $('#admin-button').on('click', function (e) {
+        e.preventDefault();
+        const source = encodeURIComponent(window.location.href);
+        const dynamicUrl = `${window.location.origin}/form/admin-form/?from=${source}`;
+        window.open(dynamicUrl);
        // $('#combined-request-form').hide();
          //$('#error-message-container').hide().html('');
         // Show and load the admin iframe
@@ -765,7 +768,7 @@
         //iframe.show();
        // $('#admin-button').hide();
        // $('#resource-button').hide();s
-     // });
+      });
 
     // $('#back-button').on('click', function (e) {
     //     e.preventDefault();
