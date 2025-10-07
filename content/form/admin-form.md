@@ -11,7 +11,6 @@ type = "form"
 private = true
 +++
 <style>
-  <style>
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
@@ -88,7 +87,8 @@ private = true
     }
 </style>
 <!-- Core scripts needed for form functionality -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 <script type="text/javascript" src="/js/admin-form.js"></script>
 <div class="message" id="resultMessage"></div><br /><br/>
 <form id="adminForm">
@@ -99,7 +99,7 @@ private = true
         <button class="tab-button" onclick="showForm(2)">Update Status</button>
     </div>
     <!-- Tab Content: Form 1 -->
-    <div id="form1" class="tab-content active">
+    <div id="form1" class="tab-content">
       <h2>Update Group Owner UID</h2>
       <div id="updateResponse" style="margin:10px"></div>
       <label for="group_name_for_update">Group Name:</label>
@@ -112,7 +112,7 @@ private = true
       </div>
     </div>
     <!-- Tab Content: Form 2 -->
-    <div id="form2" class="tab-content">
+    <div id="form2" class="tab-content" style="display:none;">
       <div id="message" style="text-align: center; margin-top: 20px;">
         <h2>{{ message }}</h2>
       </div>
