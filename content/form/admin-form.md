@@ -11,10 +11,13 @@ type = "form"
 private = true
 +++
 <style>
-   .tab-container{
-    width: 100%;
-   }
-   
+    select, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
     button {
       background-color: #4CAF50;
       color: white;
