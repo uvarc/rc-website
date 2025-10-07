@@ -3,7 +3,7 @@
     // ===================================
 
     function showForm(tabIndex) {
-        ocument.querySelectorAll('.tab-content').forEach(tab => {
+        document.querySelectorAll('.tab-content').forEach(tab => {
             tab.style.display = 'none';
           });
           document.getElementById(`form${formNumber}`).style.display = 'block';
