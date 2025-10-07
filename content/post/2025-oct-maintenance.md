@@ -106,6 +106,7 @@ To help you get faster access to GPU resources, we have launched the  **gpu-mig*
 |spark     | 3.4.1  | 4.0.0 |
 |spglib    | 1.10.4 | 2.0.2 |
 |superlu_mt| 3.1    | 4.0.1 |
+|tensorflow|2.10.0, 2.13.0| 2.17.0 |
 |trimmomatic| 0.39  | 0.40 |
 |redis-cli | 6.2.6  | redis/8.2.1 |
 |thirdorder| 1.1.1  | 1.1.3 |
