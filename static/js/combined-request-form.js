@@ -754,18 +754,18 @@
         });
     });
 
-    $('#admin-button').on('click', function (e) {
-        e.preventDefault();
-        $('#combined-request-form').hide();
+    //$('#admin-button').on('click', function (e) {
+       // e.preventDefault();
+       // $('#combined-request-form').hide();
          //$('#error-message-container').hide().html('');
         // Show and load the admin iframe
-        const iframe = $('#admin-iframe');
-        const srcUrl = `${serviceHost}/uvarc/api/ticket/admin/mgmt`
-        iframe.attr('src', srcUrl);
-        iframe.show();
-        $('#admin-button').hide();
-        $('#resource-button').hide();s
-      });
+       // const iframe = $('#admin-iframe');
+        //const srcUrl = `${serviceHost}/uvarc/api/ticket/admin/mgmt`
+       // iframe.attr('src', srcUrl);
+        //iframe.show();
+       // $('#admin-button').hide();
+       // $('#resource-button').hide();s
+     // });
 
     // $('#back-button').on('click', function (e) {
     //     e.preventDefault();
