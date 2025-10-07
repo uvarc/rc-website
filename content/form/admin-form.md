@@ -11,32 +11,6 @@ type = "form"
 private = true
 +++
 <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-
-    .form-container {
-      max-width: 400px;
-      margin: auto;
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    select, button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
 
     button {
       background-color: #4CAF50;
