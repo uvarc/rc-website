@@ -3,10 +3,10 @@
     // ===================================
 
     function showForm(tabIndex) {
-        document.querySelectorAll('.tab-content').forEach(tab => {
-            tab.style.display = 'none';
-          });
-          document.getElementById(`form${formNumber}`).style.display = 'block';
+        const forms = document.querySelectorAll('.tab-content');
+        forms.forEach((form, index) => {
+            form.style.display = index === tabIndex ? 'block' : 'none';
+        });
     }
    
 
