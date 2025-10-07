@@ -11,7 +11,10 @@ type = "form"
 private = true
 +++
 <style>
-
+   .tab-container{
+    width: 100%;
+   }
+   
     button {
       background-color: #4CAF50;
       color: white;
