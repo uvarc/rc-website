@@ -32,8 +32,14 @@ private = true
   {{% form-userinfo-v2 %}}
   <div class="form-item form-group form-item form-type-textfield form-group"> <label class="control-label" for="mygroups-group">Name of Grouper/MyGroup Account <span class="form-required" title="This field is required.">*</span><span style="font-weight:normal;"><br />Lowercase only, no spaces, PI must <a href="https://in.virginia.edu/how-to-request-group" target="_new">create a new, unique Grouper group</a> for new allocations.</span></label>
     {{% group_creation_tip %}}
-    <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" maxlength="128" />
+    <input required="required" class="form-control form-text required" type="text" id="mygroups-group" name="mygroups-group" value="" size="60" aria-describedby="mygroups-group-help"/>
+
+  <small id="mygroups-group-help" class="form-text text-muted mt-1" aria-live="polite">
+    0/40 characters (max 40).
+  </small>
   </div>
+
+
   <div class="col form-item form-group">
      <div class="alert alert-warning">
         Instructors are responsible for creating the class Grouper group and updating the roster for the chosen account through the <a href="https://groups.identity.virginia.edu/">Grouper portal</a>.
@@ -98,3 +104,27 @@ private = true
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
 <script type="text/javascript" src="/js/allocation-request.js"></script>
+
+<script>
+  (function () {
+    const max = 40;
+    const input = document.getElementById('mygroups-group');
+    const help  = document.getElementById('mygroups-group-help');
+
+    function update() {
+      const len = input.value.length;
+      if (len > max) {
+        input.setCustomValidity(`Please shorten to ${max} characters or fewer.`);
+        help.classList.add('text-danger');
+        help.textContent = `Too long: ${len}/${max}. Please shorten.`;
+      } else {
+        input.setCustomValidity('');
+        help.classList.remove('text-danger');
+        help.textContent = `${len}/${max} characters (max ${max}).`;
+      }
+    }
+
+    input.addEventListener('input', update);
+    update();
+  })();
+</script>
