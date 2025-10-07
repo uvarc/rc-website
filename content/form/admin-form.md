@@ -99,7 +99,7 @@ private = true
         <button class="tab-button" onclick="showForm(2)">Update Status</button>
     </div>
     <!-- Tab Content: Form 1 -->
-    <div id="form1" class="tab-content">
+    <div id="form1" class="tab-content" style="display:block;">
       <h2>Update Group Owner UID</h2>
       <div id="updateResponse" style="margin:10px"></div>
       <label for="group_name_for_update">Group Name:</label>
