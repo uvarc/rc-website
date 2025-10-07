@@ -3,20 +3,7 @@
     // ===================================
 
     function showForm(tabIndex) {
-        const forms = document.querySelectorAll('.tab-content');
-        forms.forEach((form, index) => {
-            form.style.display = index === tabIndex ? 'block' : 'none';
-        });
-        // Remove active class from all tab buttons
-        const tabButtons = document.querySelectorAll('.tab-button');
-        tabButtons.forEach(button => button.classList.remove('active'));
         
-        // Add active class to the clicked tab button
-        tabButtons[tabIndex].classList.add('active');
-        const activeForm = forms[tabIndex].querySelector('form');
-        if (activeForm) {
-            activeForm.reset();
-        }
     }
 
     
