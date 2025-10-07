@@ -89,16 +89,15 @@ private = true
 </style>
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript" src="/js/claim-form.js"></script>
 
 <div class="message" id="resultMessage"></div><br /><br/>
 <form id="adminForm">
   {{% form-userinfo-v2 %}} 
   <div class="tab-container">
-    <ul class="tab-header">
-      <li class="tab-link active" data-tab="form2">Update Group Owner UID</li>
-      <li class="tab-link" data-tab="form3">Update Resource Request Status</li>
-    </ul>
+    <div class="tabs">
+        <button class="tab-button" onclick="showForm(1)">Update UID</button>
+        <button class="tab-button" onclick="showForm(2)">Update Status</button>
+    </div>
     <!-- Tab Content: Form 1 -->
     <div id="form1" class="tab-content active">
       <h2>Update Group Owner UID</h2>
