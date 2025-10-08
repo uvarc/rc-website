@@ -11,7 +11,7 @@ type = "form"
 private = true
 +++
 <style>
-    select, button {
+    select,input, button {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
