@@ -29,20 +29,31 @@ private = true
       background-color:rgb(223, 240, 227);
     }
 
+    .button-row {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px; /* space between buttons */
+      margin-top: 10px;
+    }
+
+    .button-row button {
+      flex: 0 0 auto; /* buttons stay their natural size */
+    }
+
     .message {
       text-align: center;
       margin-top: 10px;
     }
-  .container {
+    .container {
         width: 80%;
         margin: 0 auto;
         padding-top: 20px;
-    }
+     }
     
     .tabs {
         display: flex;
         margin-bottom: 20px;
-        margin-top:-50px;
+        margin-top:-40px;
     }
     
     .tab-button {
