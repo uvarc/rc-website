@@ -19,14 +19,14 @@ private = true
     }
 
     button {
-      background-color: #0275d8;
+      background-color:#014c8c;;
       color: white;
       border: none;
       cursor: pointer;
     }
 
     button:hover {
-      background-color:rgb(140, 145, 141);
+      background-color:rgb(223, 240, 227);
     }
 
     .message {
@@ -47,11 +47,11 @@ private = true
     
     .tab-button {
         cursor: pointer;
-        border-radius: 1px;
+        border-radius: 2px;
     }
     
     .tab-button.active {
-        background-color:rgb(9, 80, 39); /* Change to the color you want */
+        background-color:#5cb85c;
         color: white;
     }
     
