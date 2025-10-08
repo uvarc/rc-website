@@ -73,7 +73,21 @@ private = true
       <input class="form-control form-date" type="date" id="su-expires" name="su-expires" value="" size="20" maxlength="20" />
     </div>
     <div class="col form-item form-type-textfield form-group"> <label class="control-label" for="su-allocation">Apply this purchase to which allocation <span class="form-required" title="This field is required.">*</span></label>
-      <input required="required" class="form-control form-text required" type="text" id="su-allocation" name="su-allocation" value="" size="60" maxlength="128" />
+      <input
+    required="required"
+    class="form-control form-text required"
+    type="text"
+    id="su-allocation"
+    name="su-allocation"
+    value=""
+    size="60"
+    maxlength="128"
+    aria-describedby="su-allocation-help"
+  />
+
+  <small id="su-allocation-help" class="form-text text-muted mt-1" aria-live="polite">
+    0/40 characters (max 40).
+  </small>
     </div>
       {{% group_creation_tip %}}
   </div>
@@ -106,3 +120,44 @@ function figureTotal() {
 
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/response-message.js"></script>
+
+<script>
+  (function () {
+    function init() {
+      const max = 40;
+      const input = document.getElementById('su-allocation');
+      const help  = document.getElementById('su-allocation-help');
+      if (!input || !help) return;
+
+      function update() {
+        const len = input.value.trim().length;
+
+        if (len === 0) {
+          input.setCustomValidity('Please fill out this field.');
+          input.setAttribute('aria-invalid', 'true');
+          help.classList.add('text-danger');
+          help.textContent = `Required. 0/${max} characters (max ${max}).`;
+        } else if (len > max) {
+          input.setCustomValidity(`Please shorten to ${max} characters or fewer.`);
+          input.setAttribute('aria-invalid', 'true');
+          help.classList.add('text-danger');
+          help.textContent = `Too long: ${len}/${max}. Please shorten.`;
+        } else {
+          input.setCustomValidity('');
+          input.removeAttribute('aria-invalid');
+          help.classList.remove('text-danger');
+          help.textContent = `${len}/${max} characters (max ${max}).`;
+        }
+      }
+
+      input.addEventListener('input', update);
+      update();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
