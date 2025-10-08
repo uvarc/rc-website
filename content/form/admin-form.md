@@ -26,7 +26,7 @@ private = true
     }
 
     button:hover {
-      background-color:rgb(223, 240, 227);
+      background-color:rgb(142, 200, 131);
     }
 
     .button-row {
