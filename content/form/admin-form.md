@@ -72,7 +72,6 @@ private = true
 <script type="text/javascript" src="/js/admin-form.js"></script>
 <div class="message" id="resultMessage"></div><br /><br/>
 <form id="adminForm">
-  {{% form-userinfo-v2 %}}
 
   <div class="tab-container">
     <!-- Tabs -->
