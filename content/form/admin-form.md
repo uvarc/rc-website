@@ -19,14 +19,14 @@ private = true
     }
 
     button {
-      background-color: #4CAF50;
+      background-color: #014c8c;
       color: white;
       border: none;
       cursor: pointer;
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color:rgb(133, 139, 133);
     }
 
     .message {
@@ -42,6 +42,7 @@ private = true
     .tabs {
         display: flex;
         margin-bottom: 20px;
+        margin-bottom:-40px;
     }
     
     .tab-button {
