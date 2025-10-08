@@ -32,13 +32,15 @@ private = true
     .button-row {
       display: flex;
       justify-content: flex-start;
-      gap: 10px; /* space between buttons */
+      gap: 10px;
       margin-top: 10px;
     }
 
-    .button-row button {
-      flex: 0 0 auto; /* buttons stay their natural size */
-    }
+   .button-row button {
+     width: auto;
+    flex: 0 0 auto;
+    padding: 10px 20px;
+   }
 
     .message {
       text-align: center;
@@ -93,7 +95,7 @@ private = true
     </div>
      <!-- Tab 1: Update UID -->
     <div id="form1" class="tab-content" style="display: block;">
-      <h2>Update Group Owner UID</h2>
+      <h3>Update Group Owner UID</h3>
       <div id="updateResponse" style="margin:10px"></div>
       <label for="group_name_for_update">Group Name:</label>
       <input type="text" id="group_name_for_update" name="group_name_for_update" required>
