@@ -1,14 +1,34 @@
 // ===================================
     // Constants and Configuration
     // ===================================
-
-    function showForm(tabIndex) {
-        const forms = document.querySelectorAll('.tab-content');
-        forms.forEach((form, index) => {
-            form.style.display = index === tabIndex ? 'block' : 'none';
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+      
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+      
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+      
+            // Show the selected tab content and hide others
+            tabContents.forEach(content => {
+              if (content.id === `form${tabId}`) {
+                content.style.display = 'block';
+              } else {
+                content.style.display = 'none';
+              }
+            });
+          });
         });
-    }
-   
+      
+        // Open first tab by default
+        if (tabButtons.length > 0) {
+          tabButtons[0].click();
+        }
+      });
 
     
     $(document).ready(function () {

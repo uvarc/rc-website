@@ -72,34 +72,37 @@ private = true
 <script type="text/javascript" src="/js/admin-form.js"></script>
 <div class="message" id="resultMessage"></div><br /><br/>
 <form id="adminForm">
-  {{% form-userinfo-v2 %}} 
+  {{% form-userinfo-v2 %}}
+
   <div class="tab-container">
+    <!-- Tabs -->
     <div class="tabs">
-        <button class="tab-button" onclick="showForm(1)">Update UID</button>
-        <button class="tab-button" onclick="showForm(2)">Update Status</button>
+      <button type="button" class="tab-button active" data-tab="1">Update UID</button>
+      <button type="button" class="tab-button" data-tab="2">Update Status</button>
     </div>
-    <!-- Tab Content: Form 1 -->
-    <div id="form1" class="tab-content" style="display:block;">
+     <!-- Tab 1: Update UID -->
+    <div id="form1" class="tab-content" style="display: block;">
       <h2>Update Group Owner UID</h2>
       <div id="updateResponse" style="margin:10px"></div>
       <label for="group_name_for_update">Group Name:</label>
       <input type="text" id="group_name_for_update" name="group_name_for_update" required>
-     <label for="owner_uid">Owner UID:</label>
-      <input type="text" id="owner_uid" name="owner_uid" required><br/>
+      <label for="owner_uid">Owner UID:</label>
+      <input type="text" id="owner_uid" name="owner_uid" required>
+      <br/>
       <div class="button-row">
         <button type="submit" name="action" value="update_uid">Submit</button>
-        <button type="button" class="cancel-button" onclick="cancelAndReset()">Cancel</button>
+        <button type="button" class="cancel-button" id="cancelBtn1">Cancel</button>
       </div>
     </div>
-    <!-- Tab Content: Form 2 -->
-    <div id="form2" class="tab-content" style="display:none;">
+    <!-- Tab 2: Update Resource Request Status -->
+    <div id="form2" class="tab-content" style="display: none;">
       <div id="message" style="text-align: center; margin-top: 20px;">
         <h2>{{ message }}</h2>
       </div>
       <h2>Update Resource Request Status</h2>
       <label for="ticket_id">Ticket ID:</label>
       <input type="text" id="ticket_id" name="ticket_id" value="{{ ticket_id }}" required><br>
-      <label for="group_name">Group Name:</label>
+     <label for="group_name">Group Name:</label>
       <input type="text" id="group_name" name="group_name" value="{{ group_name }}" required><br>
      <label for="resource_type">Resource Type:</label>
       <select id="resource_type" name="resource_type" required>
@@ -108,7 +111,7 @@ private = true
       </select><br><br>
       <label for="resource_name">Resource Name:</label>
       <input type="text" id="resource_name" name="resource_name" value="{{ resource_name }}" required><br>
-     <label for="update_status">Action to be taken:</label>
+      <label for="update_status">Action to be taken:</label>
       <select id="update_status" name="update_status" required>
         <option value="active">Activate/Approve Change</option>
         <option value="retired" id="retire_option">Retire</option>
@@ -118,11 +121,10 @@ private = true
       <input type="text" id="update_comment" name="update_comment" value="{{ update_comment }}" required><br>
       <div class="button-row">
         <button type="submit" name="action" value="update_status">Submit</button>
-        <button type="button" class="cancel-button" onclick="cancelAndReset()">Cancel</button>
+        <button type="button" class="cancel-button" id="cancelBtn2">Cancel</button>
       </div>
     </div>
   </div>
-
 </form>
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/support-request.js"></script>
