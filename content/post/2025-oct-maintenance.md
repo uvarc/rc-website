@@ -95,6 +95,7 @@ To help you get faster access to GPU resources, we have launched the  **gpu-mig*
 |parallel  |20200322| 20250722 |
 |pymol     | 2.5.5  | 3.1.6.1 |
 |python    | 2.7.18 | 3.11.4 |
+|pytorch   | 2.4.0  | 2.7.0 |
 |rclone    | 1.61.1 | 1.70.3 |
 |rdp-classifier|2.12| 2.14 |
 |sagemath  | 9.0    | 10.7 |
