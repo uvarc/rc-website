@@ -95,7 +95,7 @@ private = true
     </div>
      <!-- Tab 1: Update UID -->
     <div id="form1" class="tab-content" style="display: block;">
-      <h2>Update Group Owner UID</h2></br/>
+      <h4>Update Group Owner UID</h4></br/>
       <label for="group_name_for_update">Group Name:</label>
       <input type="text" id="group_name_for_update" name="group_name_for_update" required>
       <label for="owner_uid">Owner UID:</label>
@@ -108,7 +108,7 @@ private = true
     </div>
     <!-- Tab 2: Update Resource Request Status -->
     <div id="form2" class="tab-content" style="display: none;">
-    <h2>Update Resource Request Status</h2><br/>
+    <h4>Update Resource Request Status</h4><br/>
       <label for="ticket_id">Ticket ID:</label>
       <input type="text" id="ticket_id" name="ticket_id" value="{{ ticket_id }}" required><br>
      <label for="group_name">Group Name:</label>
