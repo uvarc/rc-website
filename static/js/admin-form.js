@@ -8,7 +8,11 @@
         tabButtons.forEach(button => {
           button.addEventListener('click', () => {
             const tabId = button.getAttribute('data-tab');
-      
+            const title = button.getAttribute('data-title');
+            
+             // Update header dynamically
+             mainHeader.textContent = title;
+
             // Remove active class from all buttons
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');

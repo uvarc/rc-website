@@ -87,14 +87,14 @@ private = true
 <form id="adminForm">
 
   <div class="tab-container">
+  <h1 id="mainHeader" class="main-header">Update Group Owner UID</h1>
     <!-- Tabs -->
     <div class="tabs">
-      <button type="button" class="tab-button active" data-tab="1">Update UID</button>
-      <button type="button" class="tab-button" data-tab="2">Update Status</button>
+      <button type="button" class="tab-button active" data-tab="1" data-title="Update Group Owner UID">Update UID</button>
+      <button type="button" class="tab-button" data-tab="2" data-title="Update Resource Request Status">Update Status</button>
     </div>
      <!-- Tab 1: Update UID -->
     <div id="form1" class="tab-content" style="display: block;">
-      <h4>Update Group Owner UID</h4></br></br>
       <div id="updateResponse" style="margin:10px"></div>
       <label for="group_name_for_update">Group Name:</label>
       <input type="text" id="group_name_for_update" name="group_name_for_update" required>
@@ -108,10 +108,6 @@ private = true
     </div>
     <!-- Tab 2: Update Resource Request Status -->
     <div id="form2" class="tab-content" style="display: none;">
-      <div id="message" style="text-align: center; margin-top: 20px;">
-        <h2>{{ message }}</h2>
-      </div>
-      <h4>Update Resource Request Status</h4></br></br>
       <label for="ticket_id">Ticket ID:</label>
       <input type="text" id="ticket_id" name="ticket_id" value="{{ ticket_id }}" required><br>
      <label for="group_name">Group Name:</label>
