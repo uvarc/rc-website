@@ -3,6 +3,7 @@ date = "2023-09-18T23:59:16-05:00"
 tags = ["search"]
 categories = ["forms"]
 images = [""]
+title = "Admin Form"
 author = "Staff"
 description = ""
 draft = false
@@ -87,7 +88,6 @@ private = true
 <form id="adminForm">
 
   <div class="tab-container">
-  <h1 id="mainHeader" class="main-header">Update Group Owner UID</h1>
     <!-- Tabs -->
     <div class="tabs">
       <button type="button" class="tab-button active" data-tab="1" data-title="Update Group Owner UID">Update UID</button>
@@ -95,7 +95,7 @@ private = true
     </div>
      <!-- Tab 1: Update UID -->
     <div id="form1" class="tab-content" style="display: block;">
-      <div id="updateResponse" style="margin:10px"></div>
+      <h3>Update Group Owner UID</h3>
       <label for="group_name_for_update">Group Name:</label>
       <input type="text" id="group_name_for_update" name="group_name_for_update" required>
       <label for="owner_uid">Owner UID:</label>
@@ -108,6 +108,7 @@ private = true
     </div>
     <!-- Tab 2: Update Resource Request Status -->
     <div id="form2" class="tab-content" style="display: none;">
+    <h3>Update Resource Request Status</h3>
       <label for="ticket_id">Ticket ID:</label>
       <input type="text" id="ticket_id" name="ticket_id" value="{{ ticket_id }}" required><br>
      <label for="group_name">Group Name:</label>
