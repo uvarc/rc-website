@@ -54,8 +54,8 @@
           tabButtons[0].click();
         }
       });
-
-      function handleUpdateUid() {
+      $(document).on('submit', '#update_uid_form', handleUpdateUidSubmit);
+      function handleUpdateUidSubmit() {
         const groupName = $('#group_name_for_update').val().trim();
         const ownerUid = $('#owner_uid').val().trim();
         const responseContainer = $('#updateResponse');
