@@ -55,39 +55,38 @@
         }
       });
 
-      $(document).on('submit', '#update_uid_form', function(event) {
-        event.preventDefault(); 
-    
+      function handleUpdateUid() {
         const groupName = $('#group_name_for_update').val().trim();
         const ownerUid = $('#owner_uid').val().trim();
         const responseContainer = $('#updateResponse');
-    
+      
         if (!groupName || !ownerUid) {
-            responseContainer.html('<p style="color: red;">Both Group Name and Owner UID are required.</p>');
-            return;
+          responseContainer.html('<p style="color: red;">Both Group Name and Owner UID are required.</p>');
+          return;
         }
-    
-        const url = `${API_CONFIG.updateUidBaseUrl}/${groupName}`;
+      
+        const url = `${API_CONFIG.updateUidUrl}${groupName}`;
+      
         $.ajax({
-            url: url,
-            type: 'PUT',
-            headers: API_CONFIG.headers,
-            data: JSON.stringify({ owner_uid: ownerUid }),
-            success: function(response) {
-                const resObj = Array.isArray(response) ? response[0] : response;
-                if (resObj.status === 'success') {
-                    responseContainer.html(`<p style="color: green;">${resObj.message}</p>`);
-                } else {
-                    responseContainer.html(`<p style="color: red;">${resObj.message}</p>`);
-                }
-            },
-            error: function(xhr) {
-                const errorMessage = xhr.responseJSON?.message || 'An error occurred.';
-                responseContainer.html(`<p style="color: red;">${errorMessage}</p>`);
+          url: url,
+          type: 'PUT',
+          headers: API_CONFIG.headers,
+          data: JSON.stringify({ owner_uid: ownerUid }),
+          success: function (response) {
+            const resObj = Array.isArray(response) ? response[0] : response;
+            if (resObj.status === 'success') {
+              responseContainer.html(`<p style="color: green;">${resObj.message}</p>`);
+            } else {
+              responseContainer.html(`<p style="color: red;">${resObj.message}</p>`);
             }
+          },
+          error: function (xhr) {
+            const errorMessage = xhr.responseJSON?.message || 'An error occurred.';
+            responseContainer.html(`<p style="color: red;">${errorMessage}</p>`);
+          },
         });
-    });
-    
+      }
+
     $(document).ready(function () {
         const sections = document.querySelectorAll(".blog-sidebar");
         sections.forEach(section => section.remove());
