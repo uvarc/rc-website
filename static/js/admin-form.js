@@ -58,7 +58,7 @@
       function handleUpdateUidSubmit() {
         const groupName = $('#group_name_for_update').val().trim();
         const ownerUid = $('#owner_uid').val().trim();
-        const responseContainer = $('#updateResponse');
+        const responseContainer = $('#resultMessage');
       
         if (!groupName || !ownerUid) {
           responseContainer.html('<p style="color: red;">Both Group Name and Owner UID are required.</p>');

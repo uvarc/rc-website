@@ -44,6 +44,7 @@ private = true
 
     .message {
       text-align: center;
+      margin-top: 10px;
     }
     .container {
         width: 80%;
@@ -83,7 +84,9 @@ private = true
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 <script type="text/javascript" src="/js/admin-form.js"></script>
-   <div class="tab-container">
+<div class="message" id="resultMessage"></div><br /><br/>
+
+  <div class="tab-container">
     <!-- Tabs -->
     <div class="tabs">
       <button type="button" class="tab-button active" data-tab="1" data-title="Update Group Owner UID">Update UID</button>
@@ -92,7 +95,6 @@ private = true
        <!--  Form 1: Update UID -->
     <div id="form1" class="tab-content" style="display: block;">
      <form id="update_uid_form">
-      <div id="updateResponse" class="message"></div>
       <h4>Update Group Owner UID</h4><br/>
       <label for="group_name_for_update">Group Name:</label>
       <input type="text" id="group_name_for_update" name="group_name_for_update" required>
@@ -108,7 +110,6 @@ private = true
   <!--  Update Resource Status -->
   <div id="form2" class="tab-content" style="display: none;">
     <form id="update_status_form">
-     <div id="updateStatusResponse" class = "message"></div>
       <h4>Update Resource Request Status</h4><br/>
       <label for="ticket_id">Ticket ID:</label>
       <input type="text" id="ticket_id" name="ticket_id" required><br>
@@ -133,7 +134,6 @@ private = true
         <button type="submit">Submit</button>
         <button type="button" class="cancel-button" id="cancelBtn2">Cancel</button>
       </div>
-      <div id="statusResponse" class="message"></div>
     </form>
   </div>
 </div>
