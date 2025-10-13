@@ -55,7 +55,9 @@
         }
       });
       $(document).on('submit', '#update_uid_form', handleUpdateUidSubmit);
-      function handleUpdateUidSubmit() {
+      function handleUpdateUidSubmit(e) {
+        e.preventDefault();
+
         const groupName = $('#group_name_for_update').val().trim();
         const ownerUid = $('#owner_uid').val().trim();
         const responseContainer = $('#resultMessage');
