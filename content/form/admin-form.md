@@ -44,7 +44,6 @@ private = true
 
     .message {
       text-align: center;
-      margin-top: 10px;
     }
     .container {
         width: 80%;
