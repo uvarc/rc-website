@@ -16,7 +16,6 @@
     }
     
     const API_CONFIG = {
-        baseUrl: `${serviceHost}/uvarc/api/resource/rcwebform/user`,
         updateUidUrl: `${serviceHost}/uvarc/api/resource/rcadminform/group/`,
         headers: {
             'Accept': 'application/json',
@@ -67,7 +66,7 @@
           return;
         }
       
-        const url = `${API_CONFIG.updateUidUrl}${groupName}`;
+        const url = `${API_CONFIG.updateUidUrl}/${groupName}`;
       
         $.ajax({
           url: url,
