@@ -66,7 +66,7 @@
           return;
         }
       
-        const url = `${API_CONFIG.updateUidUrl}/${groupName}`;
+        const url = `${API_CONFIG.updateUidUrl}${groupName}`;
       
         $.ajax({
           url: url,
@@ -84,6 +84,7 @@
           error: function (xhr) {
             const errorMessage = xhr.responseJSON?.message || 'An error occurred.';
             responseContainer.html(`<p style="color: red;">${errorMessage}</p>`);
+            console.error('AJAX error:', xhr);
           },
         });
       }
