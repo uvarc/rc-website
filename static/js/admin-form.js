@@ -18,10 +18,7 @@
     const API_CONFIG = {
         updateUidUrl: `${serviceHost}/uvarc/api/resource/rcadminform/group/`,
         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest',
-            'Origin': window.location.origin
+            'Accept': 'application/json'
         }
     };
 
@@ -83,12 +80,8 @@
         $.ajax({
           url: `${API_CONFIG.updateUidUrl}${groupName}`,
           type: 'PUT',
-          data: JSON.stringify({ owner_uid: ownerUid }),
-          contentType: 'application/json',
-          headers: {
-            'Accept': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest'
-          },
+          contentType: 'application/x-www-form-urlencoded',
+          data: `owner_uid=${encodeURIComponent(ownerUid)}`,
           success: function (response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             if (resObj.status === 'success') {
