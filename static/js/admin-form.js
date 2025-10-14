@@ -53,6 +53,22 @@
           tabButtons[0].click();
         }
       });
+
+      document.addEventListener('click', (e) => {
+        // Check if the clicked element has the cancel-button class
+        if (e.target.classList.contains('cancel-button')) {
+          e.preventDefault();
+      
+          const urlParams = new URLSearchParams(window.location.search);
+          const referrerParam = urlParams.get('from');
+          const fallbackUrl = 'https://www.rc.virginia.edu/userinfo/hpc/access/';
+          const redirectUrl = referrerParam || document.referrer || fallbackUrl;
+      
+          window.location.href = redirectUrl;
+        }
+      });
+      
+        
       $(document).on('submit', '#update_uid_form', handleUpdateUidSubmit);
       function handleUpdateUidSubmit(e) {
         e.preventDefault();

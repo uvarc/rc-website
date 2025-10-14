@@ -758,7 +758,7 @@
         e.preventDefault();
         const source = encodeURIComponent(window.location.href);
         const dynamicUrl = `${window.location.origin}/form/admin-form/?from=${source}`;
-        window.open(dynamicUrl);
+        window.open(dynamicUrl,  '_self');
        // $('#combined-request-form').hide();
          //$('#error-message-container').hide().html('');
         // Show and load the admin iframe
@@ -935,13 +935,6 @@
             event.preventDefault();
             const source = encodeURIComponent(window.location.href);
             const dynamicUrl = `${window.location.origin}/form/claim-form/?from=${source}`;
-            window.open(dynamicUrl,  '_self');
-        });
-
-        document.getElementById("admin-button").addEventListener("click", function (event) {
-            event.preventDefault();
-            const source = encodeURIComponent(window.location.href);
-            const dynamicUrl = `${window.location.origin}/form/admin-form/?from=${source}`;
             window.open(dynamicUrl,  '_self');
         });
     }
