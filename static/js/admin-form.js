@@ -14,14 +14,7 @@ if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('st
 }
 
 // ====================
-// Helper Functions
-// ====================
-function showMessage(container, message, color = 'red') {
-    container.html(`<p style="color: ${color}; font-style: italic; font-size: 15px;">${message}</p>`);
-}
-
-// ====================
-// Form Submissions
+// Form Submission Logic
 // ====================
 
 // --- Update UID Form ---
@@ -33,25 +26,30 @@ $(document).on('submit', '#update_uid_form', function(e) {
     const responseContainer = $('#resultMessage');
 
     if (!groupName || !ownerUid) {
-        showMessage(responseContainer, 'Both Group Name and Owner UID are required.');
+        responseContainer.html('<p style="color: red;">Both Group Name and Owner UID are required.</p>');
         return;
     }
 
-    const formData = `owner_uid=${encodeURIComponent(ownerUid)}`; // URL-encoded to avoid preflight
+    // URL-encoded data to avoid preflight
+    const formData = `owner_uid=${encodeURIComponent(ownerUid)}`;
 
     $.ajax({
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`,
         type: 'PUT',
-        contentType: 'application/x-www-form-urlencoded',
+        contentType: 'application/x-www-form-urlencoded', // avoids preflight
         data: formData,
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
-            showMessage(responseContainer, resObj.message, resObj.status === 'success' ? 'green' : 'red');
-            if (resObj.status === 'success') $('#update_uid_form')[0].reset();
+            if (resObj.status === 'success') {
+                responseContainer.html(`<p style="color: green;">${resObj.message}</p>`);
+                $('#update_uid_form')[0].reset();
+            } else {
+                responseContainer.html(`<p style="color: red;">${resObj.message}</p>`);
+            }
         },
         error: function(xhr) {
             const errorMessage = xhr.responseJSON?.message || 'An error occurred while updating UID.';
-            showMessage(responseContainer, errorMessage);
+            responseContainer.html(`<p style="color: red;">${errorMessage}</p>`);
         }
     });
 });
@@ -66,23 +64,39 @@ $(document).on('submit', '#update_status_form', function(e) {
     $.ajax({
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/update`,
         type: 'PUT',
-        contentType: 'application/x-www-form-urlencoded',
+        contentType: 'application/x-www-form-urlencoded', // avoids preflight
         data: formData,
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
-            showMessage(responseContainer, resObj.message, resObj.status === 'success' ? 'green' : 'red');
-            if (resObj.status === 'success') $('#update_status_form')[0].reset();
+            if (resObj.status === 'success') {
+                responseContainer.html(`<p style="color: green;">${resObj.message}</p>`);
+                $('#update_status_form')[0].reset();
+            } else {
+                responseContainer.html(`<p style="color: red;">${resObj.message}</p>`);
+            }
         },
         error: function(xhr) {
             const errorMessage = xhr.responseJSON?.message || 'An error occurred while updating status.';
-            showMessage(responseContainer, errorMessage);
+            responseContainer.html(`<p style="color: red;">${errorMessage}</p>`);
         }
     });
 });
 
-// ====================
-// Tabs
-// ====================
+// --- Cancel Buttons ---
+document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('cancel-button')) {
+        e.preventDefault();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const referrerParam = urlParams.get('from');
+        const fallbackUrl = 'https://www.rc.virginia.edu/userinfo/hpc/access/';
+        const redirectUrl = referrerParam || document.referrer || fallbackUrl;
+
+        window.location.href = redirectUrl;
+    }
+});
+
+// --- Tabs ---
 document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
@@ -103,35 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tabButtons.length > 0) tabButtons[0].click();
 });
 
-// ====================
-// Cancel Buttons
-// ====================
-document.addEventListener('click', (e) => {
-    if (e.target.classList.contains('cancel-button')) {
-        e.preventDefault();
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const referrerParam = urlParams.get('from');
-        const fallbackUrl = 'https://www.rc.virginia.edu/userinfo/hpc/access/';
-        const redirectUrl = referrerParam || document.referrer || fallbackUrl;
-
-        window.location.href = redirectUrl;
-    }
-});
-
-// ====================
-// Page Ready
-// ====================
+// --- Remove unnecessary sections ---
 $(document).ready(function () {
-    // Remove unnecessary sections
-    $(".blog-sidebar").remove();
-
-    // Hide certain rows and remove required attributes
-    ['#departmet_clasification_row', '#discipline_row'].forEach(r => $(r).hide());
-    $('#discipline, #department, #classification').removeAttr('required');
-
-    // Ensure status message container exists
-    if ($('#statusMessage').length === 0) {
-        $('#update_status_form').prepend('<div class="message" id="statusMessage"></div>');
-    }
+    const sections = document.querySelectorAll(".blog-sidebar");
+    sections.forEach(section => section.remove());
+    document.querySelector('#departmet_clasification_row').style.display = 'none';
+    document.querySelector('#discipline_row').style.display = 'none';
+    document.querySelector('#discipline').removeAttribute('required');
+    document.querySelector('#department')?.removeAttribute('required');
+    document.querySelector('#classification')?.removeAttribute('required');
 });
