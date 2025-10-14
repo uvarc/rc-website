@@ -87,10 +87,7 @@
         $.ajax({
           url: `${API_CONFIG.updateUidUrl}${groupName}`,
           type: 'PUT',
-          headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-          },
+          contentType: 'application/json',
           data: JSON.stringify({ owner_uid: ownerUid }),
           success: function (response) {
             const resObj = Array.isArray(response) ? response[0] : response;
