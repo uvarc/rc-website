@@ -75,7 +75,6 @@
 
         const groupName = $('#group_name_for_update').val().trim();
         const ownerUid = $('#owner_uid').val().trim();
-        const formData = $(this).serialize(); 
         const responseContainer = $('#resultMessage');
       
         if (!groupName || !ownerUid) {
@@ -86,11 +85,13 @@
         const url = `${API_CONFIG.updateUidUrl}${groupName}`;
       
         $.ajax({
-          url: url,
+          url: `${API_CONFIG.updateUidUrl}${groupName}`,
           type: 'PUT',
-          headers: API_CONFIG.headers,
-          contentType: 'application/x-www-form-urlencoded',
-          data: formData,
+          headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+          },
+          data: JSON.stringify({ owner_uid: ownerUid }),
           success: function (response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             if (resObj.status === 'success') {
