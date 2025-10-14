@@ -55,7 +55,13 @@ The exact cost for a project is determined on a per-project basis, though in gen
 Yes, if you have a research idea but don't yet have grant money, you can apply for DTC funding. We call thse awards "seed "grants". The goal of DTC seed grants is to support you en-route to a larger and more competitive research grant. As such, awards are typically around $10,000, which covers adding one new feature to the DTC ecosystem and completing a study with participants. If you want to apply for a seed grant we encourage you to talk with us first. In our initial conversation we can let you know if your proposal is something the DTC could fund. For eligibility criteria and application template see [DTC seed grants](/service/dtc/grants).
 
 # How do I include the DTC in my grant budget?
-PIs may budget for DTC support in their grants.  To ensure that DTC support is included in your upcoming grant proposal, we recommend that you schedule a consultation to explore the ways in which we can assist you.  Our services and resources range from embedding one of our team members in your project to providing access to our existing software infrastructure for mobile data collection.
+PIs may budget for DTC support in their grants. To ensure that DTC support is included in your upcoming grant proposal, we recommend that you schedule a consultation to explore the ways in which we can assist you.  Our services and resources range purchasing development time from one of our team members to providing access to our existing software infrastructure for mobile data collection.
+
+# Do you write letters of support?
+We do. If you are interested in this, please reach out to us using any of the methods on our [contact page](/service/dtc/contact). We will find a time to meet and discuss what your needs are. If we feel that your research needs are something we can help with we'll write you a letter. If we feel that we can't help with your research needs, we can probably recommend a team that can.
+
+# What if I didn't find what I was looking for?
+The DTC is just one of many research support services offered by UVA. Other services include [Research Computing](https://rc.virginia.edu), the [Data Analytics Center](/service/dac), the [Research Data Enclave](https://precisionhealth.virginia.edu/about/research-data-enclave), [UVA Qualtrics](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=ec27144cdbec53044f32fb671d96193c), and [UVA Redcap](https://redcap.healthsystem.virginia.edu/) (for researchers in the health system ).
 
 # Ready to get started?
 Contact us today using any of the methods on our [contact page](/service/dtc/contact). If you still aren't sure if the DTC can help you, please reach out anyways. Tech jargon can be hard to follow, and sometimes all you need is to talk it through.
