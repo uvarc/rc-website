@@ -84,6 +84,7 @@ private = true
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 <script type="text/javascript" src="/js/admin-form.js"></script>
+{{% form-userinfo-v2 %}} 
 <div class="message" id="resultMessage"></div><br /><br/>
 
   <div class="tab-container">
