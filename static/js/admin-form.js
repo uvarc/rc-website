@@ -75,6 +75,7 @@
 
         const groupName = $('#group_name_for_update').val().trim();
         const ownerUid = $('#owner_uid').val().trim();
+        const formData = $(this).serialize(); 
         const responseContainer = $('#resultMessage');
       
         if (!groupName || !ownerUid) {
@@ -88,7 +89,8 @@
           url: url,
           type: 'PUT',
           headers: API_CONFIG.headers,
-          data: JSON.stringify({ owner_uid: ownerUid }),
+          contentType: 'application/x-www-form-urlencoded',
+          data: formData,
           success: function (response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             if (resObj.status === 'success') {
@@ -103,6 +105,33 @@
           },
         });
       }
+      
+      $(document).on('submit', '#update_status_form', function (event) {
+        event.preventDefault();
+    
+        const responseContainer = $('#statusMessage');
+        const formData = $(this).serialize(); 
+        $.ajax({
+            url: `${serviceHost}/uvarc/api/resource/rcadminform/group/update`,
+            type: 'PUT',
+            headers: API_CONFIG.headers,
+            contentType: 'application/x-www-form-urlencoded',
+            data: formData,
+            success: function (response) {
+                const resObj = Array.isArray(response) ? response[0] : response;
+                if (resObj.status === 'success') {
+                    responseContainer.html(`<p style="color: green;">${resObj.message}</p>`);
+                    $('#update_status_form')[0].reset();
+                } else {
+                    responseContainer.html(`<p style="color: red;">${resObj.message}</p>`);
+                }
+            },
+            error: function (xhr) {
+                const errorMessage = xhr.responseJSON?.message || 'An error occurred while updating status.';
+                responseContainer.html(`<p style="color: red;">${errorMessage}</p>`);
+            }
+        });
+      });
 
     $(document).ready(function () {
         const sections = document.querySelectorAll(".blog-sidebar");
