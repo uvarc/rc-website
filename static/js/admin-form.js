@@ -68,11 +68,9 @@
         }
       });
       
-        
-      $(document).on('submit', '#update_uid_form', handleUpdateUidSubmit);
-      function handleUpdateUidSubmit(e) {
+      $(document).on('submit', '#update_uid_form', function (e) {
         e.preventDefault();
-
+      
         const groupName = $('#group_name_for_update').val().trim();
         const ownerUid = $('#owner_uid').val().trim();
         const responseContainer = $('#resultMessage');
@@ -82,27 +80,35 @@
           return;
         }
       
-        const url = `${API_CONFIG.updateUidUrl}${groupName}`;
-      
         $.ajax({
           url: `${API_CONFIG.updateUidUrl}${groupName}`,
           type: 'PUT',
-          contentType: 'application/json',
           data: JSON.stringify({ owner_uid: ownerUid }),
+          contentType: 'application/json',
+          headers: {
+            'Accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+          },
           success: function (response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             if (resObj.status === 'success') {
               responseContainer.html(`<p style="color: green;">${resObj.message}</p>`);
+              $('#update_uid_form')[0].reset();
             } else {
               responseContainer.html(`<p style="color: red;">${resObj.message}</p>`);
             }
           },
           error: function (xhr) {
-            const errorMessage = xhr.responseJSON?.message || 'An error occurred.';
+            let errorMessage = 'An error occurred.';
+            if (xhr.responseJSON && xhr.responseJSON.message) {
+              errorMessage = xhr.responseJSON.message;
+            } else if (xhr.responseText) {
+              errorMessage = xhr.responseText;
+            }
             responseContainer.html(`<p style="color: red;">${errorMessage}</p>`);
-          },
+          }
         });
-      }
+      });   
       
       $(document).on('submit', '#update_status_form', function (event) {
         event.preventDefault();
