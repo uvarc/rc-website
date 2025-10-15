@@ -44,6 +44,9 @@ $(document).on('submit', '#update_uid_form', function(e) {
         type: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify({ owner_uid: ownerUid }),
+        xhrFields: {
+          withCredentials: true           // <-- allows cookies/auth with CORS
+          },
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             showMessage(responseContainer, resObj.message, resObj.status === 'success' ? 'green' : 'red');
