@@ -36,11 +36,10 @@ $(document).on('submit', '#update_uid_form', function(e) {
         showMessage(responseContainer, 'Both Group Name and Owner UID are required.');
         return;
     }
-
-    //const formData = `owner_uid=${encodeURIComponent(ownerUid)}`;
-
+    const requestUrl = `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`;
+    console.log("Request URL:", requestUrl);
     $.ajax({
-        url: `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`,
+        url: requestUrl,
         type: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify({ owner_uid: ownerUid }),
