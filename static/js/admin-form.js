@@ -45,7 +45,7 @@ $(document).on('submit', '#update_uid_form', function(e) {
         contentType: 'application/json',
         data: JSON.stringify({ owner_uid: ownerUid }),
         xhrFields: {
-          withCredentials: true           // <-- allows cookies/auth with CORS
+          withCredentials: true
           },
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
