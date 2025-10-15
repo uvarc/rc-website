@@ -70,6 +70,7 @@ $(document).on('submit', '#update_status_form', function(e) {
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/update`,
         type: 'PUT',
         contentType: 'application/x-www-form-urlencoded',
+        origin:'http://localhost:5000',
         data: formData,
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
