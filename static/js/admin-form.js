@@ -37,13 +37,13 @@ $(document).on('submit', '#update_uid_form', function(e) {
         return;
     }
 
-    const formData = `owner_uid=${encodeURIComponent(ownerUid)}`; // URL-encoded to avoid preflight
+    //const formData = `owner_uid=${encodeURIComponent(ownerUid)}`;
 
     $.ajax({
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`,
         type: 'PUT',
-        contentType: 'application/x-www-form-urlencoded',
-        data: formData,
+        contentType: 'application/json',
+        data: JSON.stringify({ owner_uid: ownerUid }),
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             showMessage(responseContainer, resObj.message, resObj.status === 'success' ? 'green' : 'red');
