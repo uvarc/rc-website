@@ -99,8 +99,8 @@ private = true
       <h4>Update Group Owner UID</h4><br/>
       <label for="group_name_for_update">Group Name:</label>
       <input type="text" id="group_name_for_update" name="group_name_for_update" required>
-      <!--<label for="owner_uid">Owner UID:</label>
-      <input type="text" id="owner_uid" name="owner_uid" required> -->
+      <label for="owner_uid">Owner UID:</label>
+      <input type="text" id="owner_uid" name="owner_uid" required>
       <br/>
       <div class="button-row">
         <button type="submit">Submit</button>
