@@ -82,7 +82,7 @@ private = true
 </style>
 <!-- Core scripts needed for form functionality -->
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="/js/admin-form.js"></script>
 
 <div class="message" id="resultMessage"></div><br /><br/>
@@ -138,5 +138,6 @@ private = true
     </form>
   </div>
 </div>
+<script type="text/javascript" src="/js/response-message.js"></script>
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
 <script type="text/javascript" src="/js/support-request.js"></script>
