@@ -5,7 +5,7 @@ const hostname = window.location.hostname;
 let serviceHost = '';
 
 if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('staging.rc.virginia.edu')) {
-    serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
+    serviceHost = 'http://localhost:5000';
 } else if (hostname === 'rc.virginia.edu') {
     serviceHost = 'https://uvarc-unified-service-prod.pods.uvarc.io';
 } else {
