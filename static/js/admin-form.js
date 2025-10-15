@@ -41,15 +41,9 @@ $(document).on('submit', '#update_uid_form', function(e) {
 
     $.ajax({
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`,
-        type: 'PUT',
+        type: 'POST',
         contentType: 'application/x-www-form-urlencoded',
         data: formData,
-        headers: {
-          "Content-Type": "application/json"
-         },
-        xhrFields: {
-         withCredentials: true
-       },
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             showMessage(responseContainer, resObj.message, resObj.status === 'success' ? 'green' : 'red');
