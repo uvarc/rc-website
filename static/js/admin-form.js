@@ -38,7 +38,8 @@ $(document).on('submit', '#update_uid_form', function(e) {
     }
 
     //const formData = `owner_uid=${encodeURIComponent(ownerUid)}`;
-
+    url = `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`
+    
     $.ajax({
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`,
         type: 'PUT',
@@ -70,7 +71,6 @@ $(document).on('submit', '#update_status_form', function(e) {
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/update`,
         type: 'PUT',
         contentType: 'application/x-www-form-urlencoded',
-        origin:'http://localhost:5000',
         data: formData,
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
