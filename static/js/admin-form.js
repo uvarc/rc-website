@@ -29,15 +29,15 @@ $(document).on('submit', '#update_uid_form', function(e) {
     e.preventDefault();
 
     const groupName = $('#group_name_for_update').val().trim();
-    const ownerUid = $('#owner_uid').val().trim();
+    //const ownerUid = $('#owner_uid').val().trim();
     const responseContainer = $('#resultMessage');
 
-    if (!groupName || !ownerUid) {
+    if (!groupName) {
         showMessage(responseContainer, 'Both Group Name and Owner UID are required.');
         return;
     }
 
-    const formData = `owner_uid=${encodeURIComponent(ownerUid)}`; // URL-encoded to avoid preflight
+    //const formData = `owner_uid=${encodeURIComponent(ownerUid)}`; // URL-encoded to avoid preflight
 
     $.ajax({
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`,
