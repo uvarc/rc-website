@@ -41,7 +41,7 @@ $(document).on('submit', '#update_uid_form', function(e) {
 
     $.ajax({
         url: `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`,
-        type: 'POST',
+        type: 'PUT',
         contentType: 'application/x-www-form-urlencoded',
         data: formData,
         success: function(response) {
