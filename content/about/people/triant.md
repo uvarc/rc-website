@@ -1,7 +1,7 @@
 +++
 draft = false
 date = "2025-04-11T13:25:10-05:00"
-title = "Deb Triant"
+title = "Deb Triant, PhD"
 job_title = "Research Computing Scientist"
 lastname = "triant"
 email="dtriant@virginia.edu"
