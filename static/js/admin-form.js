@@ -13,6 +13,16 @@ if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('st
     serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
 }
 
+const API_CONFIG = {
+  headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+      'Origin': window.location.origin
+  }
+};
+
+
 // ====================
 // Helper Functions
 // ====================
@@ -43,9 +53,11 @@ $(document).on('submit', '#update_uid_form', function(e) {
         type: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify({ owner_uid: ownerUid }),
-        xhrFields: {
-          withCredentials: true
-          },
+        headers: {
+          ...API_CONFIG.headers,
+          'Origin': window.location.origin // Dynamically set the origin
+        },
+        credentials: 'include',
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             showMessage(responseContainer, resObj.message, resObj.status === 'success' ? 'green' : 'red');
