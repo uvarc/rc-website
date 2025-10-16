@@ -21,7 +21,7 @@
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
-            'Origin': serviceHost,
+            'Origin': window.location.origin
         }
     };
 
@@ -135,22 +135,19 @@
         e.preventDefault(); // Prevent default form behavior
     
         const selectedGroup = $('#user_groups').val();
-        const ownerUid = $('#owner_uid').val().trim();
         const resultMessage = $('#resultMessage');
         const userId = getUserId();
+    
         if (!selectedGroup) {
             resultMessage.text('Please select a group.').css('color', 'red');
             return;
         }
-        const requestUrl = `${serviceHost}/uvarc/api/resource/rcadminform/group/${selectedGroup}`
+    
         $.ajax({
-            url:requestUrl,
-            method: 'PUT',
+            url:`${API_CONFIG.groupClaimUrl}`,
+            method: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ owner_uid: ownerUid }),
-            headers: {
-                'Origin': serviceHost // Dynamically set the origin
-            },
+            data: JSON.stringify({ uid: userId, group_name: selectedGroup }),
             success: function(response) {
                 console.log('Success Response:', response);
                 const resObj = Array.isArray(response) ? response[0] : response;

@@ -67,7 +67,6 @@ private = true
     <option value="">-- Select Group --</option>
   </select>
    <div style="margin-top: 1rem; display: inline-flex; gap: 1rem; width:100%">
-   <input type="text" id="owner_uid" name="owner_uid">
     <button type="submit" class="btn btn-primary">Claim</button>
     <button type="button" class="btn btn-secondary"  id="cancelButton">Cancel</button>
   </div>
