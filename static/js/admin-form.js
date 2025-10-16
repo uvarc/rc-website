@@ -47,7 +47,7 @@ $(document).on('submit', '#update_uid_form', function(e) {
         showMessage(responseContainer, 'Both Group Name and Owner UID are required.');
         return;
     }
-    const requestUrl = `${API_CONFIG.baseUrl}/${groupName}`;
+    const requestUrl = `${API_CONFIG.updateUidUrl}/${groupName}`;
     console.log("Request URL:", requestUrl);
     $.ajax({
         url: requestUrl,
