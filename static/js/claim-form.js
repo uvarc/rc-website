@@ -148,6 +148,9 @@
             method: 'PUT',
             contentType: 'application/json',
             data: JSON.stringify({ owner_uid: ownerUid }),
+            headers: {
+                'Origin': window.location.origin // Dynamically set the origin
+            },
             success: function(response) {
                 console.log('Success Response:', response);
                 const resObj = Array.isArray(response) ? response[0] : response;
