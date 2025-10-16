@@ -149,7 +149,7 @@
             contentType: 'application/json',
             data: JSON.stringify({ owner_uid: ownerUid }),
             headers: {
-                'Origin': window.location.origin // Dynamically set the origin
+                'Origin': serviceHost // Dynamically set the origin
             },
             success: function(response) {
                 console.log('Success Response:', response);
