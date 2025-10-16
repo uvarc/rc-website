@@ -14,11 +14,12 @@ if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('st
 }
 
 const API_CONFIG = {
+  updateUidUrl: `${serviceHost}/uvarc/api/resource/rcadminform/group/update`,
   headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest',
-      'Origin': serviceHost,
+      'Origin': window.location.origin
   }
 };
 
@@ -46,7 +47,7 @@ $(document).on('submit', '#update_uid_form', function(e) {
         showMessage(responseContainer, 'Both Group Name and Owner UID are required.');
         return;
     }
-    const requestUrl = `${serviceHost}/uvarc/api/resource/rcadminform/group/${groupName}`;
+    const requestUrl = `${API_CONFIG.baseUrl}/${groupName}`;
     console.log("Request URL:", requestUrl);
     $.ajax({
         url: requestUrl,
@@ -56,6 +57,10 @@ $(document).on('submit', '#update_uid_form', function(e) {
         xhrFields: {
           withCredentials: true
           },
+          headers: {
+            ...API_CONFIG.headers,
+            'Origin': window.location.origin // Dynamically set the origin
+        },
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             showMessage(responseContainer, resObj.message, resObj.status === 'success' ? 'green' : 'red');
