@@ -53,11 +53,9 @@ $(document).on('submit', '#update_uid_form', function(e) {
         type: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify({ owner_uid: ownerUid }),
-        headers: {
-          ...API_CONFIG.headers,
-          'Origin': window.location.origin // Dynamically set the origin
-        },
-        credentials: 'include',
+        xhrFields: {
+          withCredentials: true
+          },
         success: function(response) {
             const resObj = Array.isArray(response) ? response[0] : response;
             showMessage(responseContainer, resObj.message, resObj.status === 'success' ? 'green' : 'red');

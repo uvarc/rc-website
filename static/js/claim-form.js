@@ -135,19 +135,19 @@
         e.preventDefault(); // Prevent default form behavior
     
         const selectedGroup = $('#user_groups').val();
+        const ownerUid = $('#owner_uid').val().trim();
         const resultMessage = $('#resultMessage');
         const userId = getUserId();
-    
         if (!selectedGroup) {
             resultMessage.text('Please select a group.').css('color', 'red');
             return;
         }
-    
+        const requestUrl = `${serviceHost}/uvarc/api/resource/rcadminform/group/${selectedGroup}`
         $.ajax({
-            url:`${API_CONFIG.groupClaimUrl}`,
-            method: 'POST',
+            url:requestUrl,
+            method: 'PUT',
             contentType: 'application/json',
-            data: JSON.stringify({ uid: userId, group_name: selectedGroup }),
+            data: JSON.stringify({ owner_uid: ownerUid }),
             success: function(response) {
                 console.log('Success Response:', response);
                 const resObj = Array.isArray(response) ? response[0] : response;
