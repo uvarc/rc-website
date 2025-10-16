@@ -18,7 +18,7 @@ const API_CONFIG = {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest',
-      'Origin': window.location.origin
+      'Origin': serviceHost
   }
 };
 
