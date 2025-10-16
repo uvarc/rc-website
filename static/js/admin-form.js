@@ -14,7 +14,7 @@ if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('st
 }
 
 const API_CONFIG = {
-  updateUidUrl: `${serviceHost}/uvarc/api/resource/rcadminform/group/update`,
+  updateUidUrl: `${serviceHost}/uvarc/api/resource/rcadminform/group`,
   headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
