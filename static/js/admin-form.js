@@ -42,7 +42,7 @@ $(document).on('submit', '#update_uid_form', function(e) {
 
     const groupName = $('#group_name_for_update').val().trim();
     const ownerUid = $('#owner_uid').val().trim();
-    const responseContainer = $('#statusMessage');
+    const responseContainer = $('#updateUidMessage');
 
     if (!groupName || !ownerUid) {
         showMessage(responseContainer, 'Both Group Name and Owner UID are required.');
