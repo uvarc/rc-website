@@ -5,7 +5,7 @@ const hostname = window.location.hostname;
 let serviceHost = '';
 
 if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('staging.rc.virginia.edu')) {
-    serviceHost = 'http://localhost:5000';
+    serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
 } else if (hostname === 'rc.virginia.edu') {
     serviceHost = 'https://uvarc-unified-service-prod.pods.uvarc.io';
 } else {
@@ -19,7 +19,7 @@ const API_CONFIG = {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest',
-      'Origin': 'http://localhost:5000'
+      'Origin': window.location.origin
   }
 };
 
@@ -54,9 +54,6 @@ $(document).on('submit', '#update_uid_form', function(e) {
         type: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify({ owner_uid: ownerUid }),
-        xhrFields: {
-          withCredentials: true
-          },
           headers: {
             ...API_CONFIG.headers
         },
