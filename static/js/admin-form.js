@@ -42,7 +42,7 @@ $(document).on('submit', '#update_uid_form', function(e) {
 
     const groupName = $('#group_name_for_update').val().trim();
     const ownerUid = $('#owner_uid').val().trim();
-    const responseContainer = $('#statusMessage');
+    const responseContainer = $('#updateUidMessage');
 
     if (!groupName || !ownerUid) {
         showMessage(responseContainer, 'Both Group Name and Owner UID are required.');
@@ -150,6 +150,9 @@ $(document).ready(function () {
     // Ensure status message container exists
     if ($('#statusMessage').length === 0) {
         $('#update_status_form').prepend('<div class="message" id="statusMessage"></div>');
-        $('#update_uid_form').prepend('<div class="message" id="statusMessage"></div>');
-    }
+     }
+    if ($('#updateUidMessage').length === 0) {
+        $('#update_uid_form').prepend('<div class="message" id="updateUidMessage"></div>');
+     }
+
 });
