@@ -51,10 +51,10 @@ $(document).on('submit', '#update_uid_form', function(e) {
     console.log("Request URL:", requestUrl);
     $.ajax({
         url: requestUrl,
-        type: 'GET',
+        type: 'PUT',
         contentType: 'application/json',
-        //data: JSON.stringify({ owner_uid: ownerUid }),
-          headers: {
+        data: JSON.stringify({ owner_uid: ownerUid }),
+        headers: {
             ...API_CONFIG.headers
         },
         success: function(response) {
