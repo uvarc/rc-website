@@ -15,6 +15,7 @@ if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('st
 
 const API_CONFIG = {
   updateUidUrl: `${serviceHost}/uvarc/api/resource/rcadminform/group`,
+  updateStatusUrl: `${serviceHost}//uvarc/api/resource/rcadminform/group/update`,
   headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -74,10 +75,13 @@ $(document).on('submit', '#update_status_form', function(e) {
     e.preventDefault();
 
     const responseContainer = $('#statusMessage');
-    const formData = $(this).serialize(); // URL-encoded
+    const formData = $(this).serialize();
+
+    const requestUrl = `${API_CONFIG.updateStatusUrl}`;
+    console.log("Request URL:", requestUrl);
 
     $.ajax({
-        url: `${serviceHost}/uvarc/api/resource/rcadminform/group/update`,
+        url: requestUrl,
         type: 'PUT',
         contentType: 'application/x-www-form-urlencoded',
         data: formData,
