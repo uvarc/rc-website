@@ -15,7 +15,7 @@ layout = "single"
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store highly-sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or ITAR data cannot access Rio at this time. To access Rio HPC, researchers must request a Linux virtual machine (VM) which serves as a login node.</p>
+<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store highly-sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or Export-Controlled data cannot access Rio at this time. To access Rio HPC, researchers must request a Linux virtual machine (VM) which serves as a login node.</p>
 
 {{< systems-boilerplate >}}
 
