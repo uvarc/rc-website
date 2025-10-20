@@ -15,13 +15,13 @@ layout = "single"
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or ITAR data cannot access Rio at this time. To access the High security Rio HPC, researchers need to request an Ivy Linux VM which serves as a login node.</p>
+<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store highly-sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or ITAR data cannot access Rio at this time. To access Rio HPC, researchers must request a Linux virtual machine (VM) which serves as a login node.</p>
 
 {{< systems-boilerplate >}}
 
 # Overview
 
-Ivy provides virtual computing environments (virtual machines) specifically designed for interactive and small-scale analysis of highly sensitive data. Ivy Linux VMs can also act as a frontend for accessing the Rio HPC environment, which is optimized for large-scale analysis of sensitive data. Project-specific storage volumes are seamlessly mounted to the VMs and made accessible on the HPC system, facilitating smooth transitions between tasks performed on the VM and the HPC environment. In order to obtain access to either system, users must 
+Ivy provides virtual computing environments specifically designed for interactive and small-scale analysis of highly sensitive data. Ivy Linux VMs can also serve as a frontend for accessing the Rio HPC environment, which is optimized for large-scale analysis of highly-sensitive data. Project-specific storage volumes are seamlessly mounted to the VMs and made accessible on the HPC system, facilitating smooth transitions between tasks performed on the VM and the HPC environment. In order to obtain access to either system, users must: 
 
 1. **Submit an account request,**
 2. **Complete the Information Security Awareness Training, and**
@@ -403,27 +403,27 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 # Using the Rio HPC System
 
-## Access
+**Access to Rio HPC and Open OnDemand (OOD)**
 
-Access to the Rio HPC requires an Ivy Linux VM to serve as a login node. Similar to other Ivy VMs, access to the Rio HPC is project-based. For details on requesting an Ivy Linux VM and accessing it, please refer to the instructions provided above. Please note that PIs must specifically request for their associated Linux VM to be provisioned as a frontend to Rio. Access to Rio from the VM is not granted by default.
+Linux VMs on Ivy now provide integrated access to the Rio HPC system and OOD interface by default. Once your Linux VM is provisioned, you can seamlessly use it as a login node to Rio and access OOD without submitting a separate request. 
 
-As outlined above, VMs are available in various sizes. Please request a VM that is appropriately sized for your specific workflow. For larger groups or projects involving computationally intensive tasks, we recommend selecting a larger VM, with a preference for Small or above. 
+**VM Availability and Sizing**
 
-<div class="bd-callout bd-callout-warning">
-  <p>Please note that PIs must specifically request for their associated Linux VM to be provisioned as a frontend to Rio. Access to Rio from the VM is not granted by default. After submitting the Linux VM request, PIs should also submit a general support request through our <a href="https://rc.virginia.edu/form/support-request/">webform</a> specifying that the VM requires access to Rio. The title of the project should be included in the details of the request.</p>
-</div>
+As detailed above, Linux VMs are available in multiple sizes to match different research needs. Small Linux VMs with access to Rio are now offered at **no cost**. Larger Linux VM configurations remain available for projects that require additional computing resources; however, these are subject to the standard cost model.
 
-[<button class="btn btn-success">Request Ivy VM for Rio</button>](https://services.rc.virginia.edu/ivyvm)
+**CUI and Export-Controlled Data**
+
+For projects involving Controlled Unclassified Information (CUI) or other export-controlled data, Linux VMs are provisioned in a separate, isolated environment. These VMs do **not** have access to Rio HPC or OOD in order to maintain compliance with federal and institutional security requirements. 
   
 ## System Details
 
-**HARDWARE CONFIGURATION**
+**Hardware Configuration**
 
 Currently, Rio comprises of 34 compute nodes in the standard partition, providing a total of 1,560 x86 64-bit compute cores. Each HPC node is equipped with 375 GB of RAM to accommodate memory-intensive applications. Rio also includes an NVIDIA HGX H200 GPU, and additional L40s GPU nodes within the gpu partition, designed to support AI and machine learning workloads.
 
 {{< rio-specs >}}
 
-**JOB QUEUES**
+**Job Queues**
 
 Similar to our clusters Rivanna and Afton in standard security zone, Rio is a managed resource. Users must submit jobs to queues controlled by a resource manager, also known as a queueing system. The manager in use on Rio is Slurm. Slurm refers to queues as partitions because they divide the machine into sets of resources. There is no default partition and each job must request a specific partition. Partitions and access policies are subject to change, but the following table shows the current structure. Detailed information on Slurm and instructions for submitting jobs to the HPC can be found [here](https://www.rc.virginia.edu/userinfo/hpc/slurm/). 
 
