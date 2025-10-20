@@ -5,7 +5,7 @@ author = "Staff"
 images = [
   "",
 ]
-date = "2017-01-19T09:55:56-05:00"
+date = "2025-10-25T09:55:56-05:00"
 categories = ["userinfo"]
 tags = [
   "hpc",
@@ -36,7 +36,7 @@ quell_footer = true
     <div style="text-align:center;"><i class="fa fa-shield-alt fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
       <h4 class="card-title">Secure Computing</h4>
-      <p class="card-text">Secure virtual machines and interactive notebooks for processing HIPAA and other highly sensitive data.</p>
+      <p class="card-text">Secure virtual machines and interactive notebooks for processing highly sensitive data.</p>
       <br clear=all />
       <div class="contact-button">
         <a href="/userinfo/ivy"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>

@@ -84,7 +84,7 @@ aliases = [ "/storage" ]
 [Highly sensitive data (HSD)](https://security.virginia.edu/definitions/highly-sensitive-data) are data that require restrictions on access under the law or that may be protected from release in accordance with applicable law or regulation. HSD includes personal information that can lead to identity theft or health information that reveals an individual's health condition and/or medical history. Examples of HSD include, but are not limited to: 
 
 - Personally identifying information (PII) is any information that can be used to identify a person. Examples of PII include social security number, passport number, driver’s license number, military identification number, or biometric records (e.g. photographic facial images, fingerprints, voice signature, etc.).
-- Health information that reveals an individual’s health condition and/or medical history, including information defined by the Health Insurance Portability and Accountability Act (HIPAA)
+- Health information that reveals an individual’s health condition and/or medical history, including information defined by the Health Insurance Portability and Accountability Act (HIPAA). Note: Because Research Computing is outside the UVA Health covered entity, only health sciences research data collected under an IRB-HSR approved protocol with a waiver of HIPAA authorization may be stored on Ivy.
 
 {{< storage_main_page_second >}}
 
