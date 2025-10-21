@@ -304,15 +304,39 @@ hardware:
   
 rio_hardware:
   - columns:
+    - "System"
     - "Cores/Node"
     - "Memory/Node"
     - "Specialty Hardware"
+    - "GPU memory/Device"
+    - "GPU devices/Node"
     - "# of Nodes"
     options:
-    - cores_per_node: 40
+    # H200
+    - system: "Rio"
+      cores_per_node: 96
+      memory_per_node: "2TB"
+      specialty_hardware: "GPU: H200"
+      gpu_memory_per_device: "141GB"
+      gpu_devices_per_node: 8
+      number_of_nodes: 1
+    # CPU Nodes
+    - system: "Rio"
+      cores_per_node: 40
       memory_per_node: "375GB"
-      speciality_hardware: "GPU: H200"
-      number_of_nodes: 39
+      specialty_hardware: "-"
+      gpu_memory_per_device: "-"
+      gpu_devices_per_node: "-"
+      number_of_nodes: 34
+    # L40s
+    - system: "Rio"
+      cores_per_node: 32 
+      memory_per_node: "750GB"
+      specialty_hardware: "GPU: L40s"
+      gpu_memory_per_device: "48GB" 
+      gpu_devices_per_node: 8
+      number_of_nodes: 4
+
 
 job_queues:
   - columns:

@@ -9,7 +9,7 @@ tags = [
   "rivanna",
 ]
 draft = false
-date = "2025-10-25T09:30:12-05:00"
+date = "2025-10-15T00:00:00-05:00"
 title = "High Performance Computing"
 description = ""
 author = "RC Staff"
