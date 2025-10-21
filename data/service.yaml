@@ -322,7 +322,7 @@ rio_hardware:
       number_of_nodes: 1
     # CPU Nodes
     - system: "Rio"
-      core_per_node: 40
+      cores_per_node: 40
       memory_per_node: "375GB"
       specialty_hardware: "-"
       gpu_memory_per_device: "-"
@@ -330,12 +330,12 @@ rio_hardware:
       number_of_nodes: 34
     # L40s
     - system: "Rio"
-      core_per_node: 
-      memory_per_node:
+      cores_per_node: 32 
+      memory_per_node: "750GB"
       specialty_hardware: "GPU: L40s"
-      gpu_memory_per_device: 
-      gpu_devices_per_node: 
-      number_of_nodes: 
+      gpu_memory_per_device: "48GB" 
+      gpu_devices_per_node: 8
+      number_of_nodes: 4
 
 
 job_queues:
