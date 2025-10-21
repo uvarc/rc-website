@@ -48,7 +48,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td align="center" valign="top">
 				<i class="fas fa-database fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br>
-				<b>Storage for Public and Internal Use Data</b>
+				<b>Storage for Public, Internal Use, and Sensitive Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
@@ -113,11 +113,11 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td align="center" valign="top">
 				<i class="fas fa-lock fa-4x" aria-hidden="true" style="padding:20px 5px;"></i>
 				<br>
-				<b>Storage for Sensitive and Highly Sensitive Data</b>
+				<b>Storage for Highly-Sensitive Data</b>
 			</td>
 			<td vertical-align="middle" style="padding:25px 10px">
 				<ul>
-					<li>Transfer HIPAA data from a Health Systems workstation to High-Security Research Standard Storage.</li>
+					<li>Transfer highly-sensitive data from a secure workstation to High-Security Research Standard Storage.</li>
 				</ul>
 				<p>&nbsp;</p>
 				<span style="float:right;font-size:85%;margin-bottom:-8px;"><i class="fas fa-angle-double-down"></i> Expand</span>
@@ -127,8 +127,7 @@ The data transfer method you choose heavily relies on the [data sensitivity clas
 			<td>
 				<p align="center"><b>Sources</b></p>
 				<ul>
-					<li>Lab Workstation</li>
-					<li>Health Systems Workstation</li>
+					<li>Secure Lab Workstation</li>
 				</ul>
 			</td>
 			<td>
