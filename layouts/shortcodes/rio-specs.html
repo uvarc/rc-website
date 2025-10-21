@@ -14,9 +14,12 @@
     <tr>
       {{ range $options }}
     <tr>
+      <td>{{ .system }}</td>
       <td>{{ .cores_per_node }}</td>
       <td>{{ .memory_per_node }}</td>
       <td>{{ .speciality_hardware }}</td>
+      <td>{{ .gpu_memory_per_device }}</td>
+      <td>{{ .gpu_devices_per_node }}</td>
       <td>{{ .number_of_nodes }}</td>
     </tr>
     {{ end }}
