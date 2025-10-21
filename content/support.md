@@ -51,7 +51,7 @@ var user_token = getCookie("__user_token");
   <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Ivy Projects</h5>
-      <p class="card-text">Perform your research on a HIPAA-compliant computing platform.</p>
+      <p class="card-text">Perform your research on a secure computing platform for highly-sensitive data.</p>
       <div class="support-tiles">
         <a href="https://services.rc.virginia.edu/"><button class="btn btn-primary btn-sm">Set up a Project</button></a>
       </div>

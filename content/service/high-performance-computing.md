@@ -9,7 +9,7 @@ tags = [
   "rivanna",
 ]
 draft = false
-date = "2025-01-15T09:30:12-05:00"
+date = "2025-10-25T09:30:12-05:00"
 title = "High Performance Computing"
 description = ""
 author = "RC Staff"
@@ -60,7 +60,7 @@ Examples of service areas include:
     <h2 class="card-title">Rio</h2>
     <h5 class="card-subtitle mb-2">High-Security HPC Cluster</h5>
     <p class="card-text">
-Rio is one of the recent University of Virginia’s High-Performance Computing (HPC) systems, specifically designed for the processing and analysis of controlled-access and highly sensitive data. Currenlty, Rio consists of 39 HPC nodes, each equipped with 375 GB of RAM and offering a combined total of 1,560 x86 64-bit compute cores. Researchers can use Rio to process and store sensitive data with the confidence that the environment is secure and meets HIPAA and FERPA requirements.     
+Rio is one of the recent University of Virginia’s High-Performance Computing (HPC) systems, specifically designed for the processing and analysis of controlled-access and highly sensitive data. Currenlty, Rio consists of 39 HPC nodes, each equipped with 375 GB of RAM and offering a combined total of 1,560 x86 64-bit compute cores. Researchers can use Rio to process and store highly-sensitive data with the confidence that the environment is secure and meets HIPAA and FERPA requirements.     
 </p>
     <a href="/userinfo/ivy" class="card-link"><button class="btn btn-warning">Read more about Rio</button></a>
   </div>
@@ -69,9 +69,9 @@ Rio is one of the recent University of Virginia’s High-Performance Computing (
 <div class="card" style="margin:2rem;">
   <div class="card-block">
     <h2 class="card-title">Ivy</h2>
-    <h5 class="card-subtitle mb-2">High-Security / HIPAA Computing Environment</h5>
+    <h5 class="card-subtitle mb-2">High-Security Computing Environment</h5>
     <p class="card-text">
-    Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) backed by a total of {{< ivy-node-count >}} nodes and approximately {{< ivy-core-count >}} cpu cores. Researchers can use Ivy to process and store sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, CUI or ITAR requirements.
+    Ivy is a secure computing environment for researchers consisting of virtual machines (Linux and Windows) backed by a total of {{< ivy-node-count >}} nodes and approximately {{< ivy-core-count >}} cpu cores. Researchers can use Ivy to process and store highly-sensitive data with the confidence that the environment is secure and meets HIPAA, FERPA, CUI or ITAR requirements.
     </p>
     <a href="/userinfo/ivy" class="card-link"><button class="btn btn-warning">Read more about Ivy</button></a>
   </div>

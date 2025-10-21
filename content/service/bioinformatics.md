@@ -45,9 +45,9 @@ UVA has three computing facilities available to researchers: _Rivanna_ and _Afto
 <div class="card">
   <div class="card-block">
     <h4 class="card-title">Ivy</h4>
-    <h6 class="card-subtitle mb-2 text-muted">High-Security / HIPAA Computing</h6>
+    <h6 class="card-subtitle mb-2 text-muted">High-Security Computing</h6>
     <p class="card-text">
-	Ivy is a HIPAA and CUI compliant cluster at UVA for working with sensitive data. Researchers have access to a group of bioinformatics software on Ivy Linux VMs.  
+	Ivy is a high-security computing environment at UVA for working with highly-sensitive data. Researchers have access to a group of bioinformatics software on Ivy Linux VMs.  
     </p>
 	<a href="/userinfo/ivy" class="card-link"><button class="btn  btn-primary">Learn more</button></a>
   </div>
