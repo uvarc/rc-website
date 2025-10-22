@@ -11,13 +11,18 @@ type = "form"
 private = true
 +++
 <style>
-
+  .table-container {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 20px;
+     }
 </style>
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 <div class="message" id="resultMessage"></div><br /><br/>
   {{% form-userinfo-v2 %}} 
+<div class="table-container">
   <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
         <thead>
@@ -35,6 +40,7 @@ private = true
             <!-- Rows will be dynamically injected by JavaScript -->
         </tbody>
     </table>
+</div>
 
 <script type="text/javascript" src="/js/response-message.js"></script>
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
