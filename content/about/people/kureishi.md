@@ -20,7 +20,7 @@ subjects = [
   "docker",
   
 ]
-active = true
+active = false
 +++
 
 Namai is a rising third-year UVA student majoring in computer science. She is proficient in Python, Java, and JavaScript, and is passionate about software development, cybersecurity,and statistics. At Research Computing, she hopes to apply her skills and learn new things. 
