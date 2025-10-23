@@ -21,7 +21,7 @@ private = true
 
   .resource-preview-table {
     width: 100%;
-    border-collapse: collapse;
+    border: solid 1px #ccc;
     font-size: 15px;
     padding: 1.5rem;
     background-color: #eee;
@@ -52,6 +52,8 @@ private = true
 <div class="message" id="resultMessage"></div><br /><br/>
   {{% form-userinfo-v2 %}} 
 <div class="table-container">
+<h4 class="mb-3">Your Current Resources</h4>
+
   <!-- Table for Resource Preview -->
     <table class="table table-bordered table-hover resource-preview-table">
         <thead>
