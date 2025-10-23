@@ -168,6 +168,7 @@ Consultants
 * Fahimeh Mohagheghian, PhD
 * [Kathryn Linehan, PhD](/about/people/linehan/)
 * [Priyanka Prakash, PhD](/about/people/prakash/)
+* [Bruce Rushing, PhD](/about/people/rushing/)
 * [Andrew Strumpf](/about/people/strumpf/)
 * [Deb Triant, PhD](/about/people/triant/)
 
