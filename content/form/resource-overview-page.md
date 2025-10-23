@@ -48,6 +48,7 @@ private = true
 </style>
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/resource-overview-page.js"></script>
 
 <div class="message" id="resultMessage"></div><br /><br/>
   {{% form-userinfo-v2 %}} 
