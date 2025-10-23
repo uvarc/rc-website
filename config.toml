@@ -72,7 +72,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   enableForms = true
   
 [params.metrics]
-  coreHours = "6817198"
+  coreHours = "20862350"
   storage = "9.5"
   newAccounts = "94"
   userAccounts = "714"
