@@ -11,11 +11,66 @@ type = "form"
 private = true
 +++
 <style>
+
   .table-container {
-        width: 80%;
-        margin: 0 auto;
-        padding-top: 20px;
-     }
+    width: 95%;
+    margin: 0 auto;
+    padding-top: 20px;
+    overflow-x: auto;
+  }
+
+  .resource-preview-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+
+  .resource-preview-table thead {
+    background-color: #004080;
+    color: #fff;
+  }
+
+  .resource-preview-table th,
+  .resource-preview-table td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .resource-preview-table tbody tr:hover {
+    background-color: #f1f5ff;
+  }
+
+  .resource-preview-table td:last-child {
+    text-align: center;
+  }
+
+  .resource-preview-table button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .resource-preview-table button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Responsive adjustment */
+  @media (max-width: 768px) {
+    .resource-preview-table th,
+    .resource-preview-table td {
+      padding: 10px 8px;
+      font-size: 13px;
+    }
+  }
 </style>
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
