@@ -24,8 +24,7 @@ private = true
     border: solid 1px #ccc;
     font-size: 15px;
     padding: 1.5rem;
-    background-color: #eee;
-    border: solid 1px #ccc;
+    background-color: #efefef;
     margin-bottom: 1rem;
     overflow: hidden;
   }
