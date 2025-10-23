@@ -18,10 +18,8 @@
 <body>
   {{ partial "menu-home.html" . }}
   {{ partial "site-header.html" . }}
-  {{/* {{ partial "carousel.html" . }} */}}
-   <!-- use this partial below for specific events (comment out the carousel partial) -->
-  {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/DAC_Award_Banner_2025_10_23.png" 
-   "imageLink" "https://rc.virginia.edu/service/dac/awards" "altText" "Image shows illuminated circuits with the following text overlaid: \"Large Analytics Resource Awards. Developing Better Analytic Tools and Hosting Big Data Sets. Proposals Due Oct. 20. \"" "linkAriaLabel" "Learn More and Apply >> (opens in a new window)" ) }}
+   {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/UVA_Data_Storage_Finder_Banner.png"
+   "imageLink" "https://data-storage-finder.library.virginia.edu" "altText" "Image shows an aerial photo of UVA with specific locations highlighted with the following text overlaid: \"UVA Data Storage Finder. Find the right place for your research data. Try out the tool >\"" "linkAriaLabel" "Try out the Storage Finder tool (opens in a new window)" ) }}
   <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
     Press 'S' to search
   </div>
