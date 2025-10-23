@@ -13,9 +13,9 @@ private = true
 <style>
 
   .table-container {
-    width: 95%;
+    width: 100%;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 10px;
     overflow-x: auto;
   }
 
@@ -23,46 +23,20 @@ private = true
     width: 100%;
     border-collapse: collapse;
     font-size: 15px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    background-color: #eee;
+    border: solid 1px #ccc;
+    margin-bottom: 1rem;
     overflow: hidden;
   }
 
-  .resource-preview-table thead {
-    background-color: #004080;
-    color: #fff;
-  }
 
   .resource-preview-table th,
   .resource-preview-table td {
     text-align: left;
     padding: 12px 16px;
-    border-bottom: 1px solid #ddd;
   }
-
-  .resource-preview-table tbody tr:hover {
-    background-color: #f1f5ff;
-  }
-
-  .resource-preview-table td:last-child {
-    text-align: center;
-  }
-
-  .resource-preview-table button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-
-  .resource-preview-table button:hover {
-    background-color: #0056b3;
-  }
-
+  
   /* Responsive adjustment */
   @media (max-width: 768px) {
     .resource-preview-table th,
