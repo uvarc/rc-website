@@ -73,9 +73,9 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   
 [params.metrics]
   coreHours = "20862350"
-  storage = "9.5"
+  storage = "10.5"
   newAccounts = "94"
-  userAccounts = "714"
+  userAccounts = "1376"
 
 [params.rivanna]
   totalNodes = "603"
