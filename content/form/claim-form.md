@@ -28,11 +28,10 @@ private = true
 
     label {
       font-weight: bold;
-      display: block;
       margin-bottom: 8px;
     }
 
-    select, button {
+    select,input, button {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -66,8 +65,8 @@ private = true
   <select id="user_groups" name="user_groups" required>
     <option value="">-- Select Group --</option>
   </select>
-  <label class="control-label" for="project-title">Project Name <span class="form-required" title="This field is required.">*</span></label>
-  <input required="required" class="form-control form-text required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
+  <label for="project-title">Project Name <span class="form-required" title="This field is required.">*</span></label>
+  <input required="required" class="required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
 
   <label class="control-label" for="project-desc">Project Description <span class="form-required" title="This field is required.">*</span></label>
   <input required="required" class="form-control form-text required" type="text" id="project-desc" name="project-desc" value="" size="200" maxlength="200" />   
