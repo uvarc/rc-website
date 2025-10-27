@@ -69,11 +69,22 @@ private = true
       <option value="service-unit" selected>Allocation's (SU)</option>
       <option value="storage">Storage</option>
     </select>
-    <label for="group_Name">Group Name:</label>
-    <select id="user_groups" name="user_groups" required>
-      <option value="">-- Select Group --</option>
-    </select>
-    <a href="claim-form.md" id="claimLink" style="margin-left: 10px; font-size: 0.9em; color:green; white-space: nowrap; text-decoration: underline;">PI group ownership claim request</a>
+       <!-- Group Name and Claim Link -->
+   <div style="display: flex; flex-direction: column; margin-bottom: 1em;">
+      <label for="user_groups" style="font-weight: bold;">Group Name:</label>
+      <select id="user_groups" name="user_groups" required style="width: 100%;">
+        <option value="">-- Select Group --</option>
+     </select>
+     <!-- Helper text and link -->
+     <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 0.25em;">
+       <small style="font-size: 0.9em; color: #555; margin-right: 4px;">
+      Not seeing your group?
+       </small>
+       <a href="claim-form.md" id="claimLink"style="font-size: 0.9em;     color:green; text-decoration: underline; white-space: nowrap;">
+        Click here to claim
+       </a>
+     </div>
+   </div>
 
    <!-- Allocation Tier Options -->
    <div id="allocation-tier" style="margin-top:1em;display:none;">
