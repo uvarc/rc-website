@@ -36,6 +36,7 @@ private = true
       padding: 10px;
       margin-bottom: 15px;
       font-size: 16px;
+      line-height: 1.25;
     }
 
     button {
@@ -66,10 +67,10 @@ private = true
     <option value="">-- Select Group --</option>
   </select>
   <label for="project-title">Project Name <span class="form-required" title="This field is required.">*</span></label>
-  <input required="required" class="required" type="text" id="project-title" name="project-title" value="" size="200" maxlength="200" />
+  <input type="text" id="project-title" name="project-title" value="" />
 
-  <label class="control-label" for="project-desc">Project Description <span class="form-required" title="This field is required.">*</span></label>
-  <input required="required" class="form-control form-text required" type="text" id="project-desc" name="project-desc" value="" size="200" maxlength="200" />   
+  <label for="project-desc">Project Description <span  title="This field is required.">*</span></label>
+  <input type="text" id="project-desc" name="project-desc" value=""/>
 
  <div style="margin-top: 1rem; display: inline-flex; gap: 1rem; width:100%">
     <button type="submit" class="btn btn-primary">Claim</button>
