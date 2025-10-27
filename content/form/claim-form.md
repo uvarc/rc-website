@@ -18,12 +18,13 @@ private = true
     }
 
     .form-container {
-      max-width: 400px;
-      margin: auto;
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      border: solid 1px #ccc;
+      font-size: 15px;
+      padding: 1.5rem;
+      background-color: #efefef;
+      margin-bottom: 1rem;
+      overflow: hidden;
     }
 
     label {
@@ -62,16 +63,16 @@ private = true
 <div class="message" id="resultMessage"></div><br /><br/>
 <form id="claimForm">
   {{% form-userinfo-v2 %}} 
-  <label for="user_groups">Select a Group to Claim:</label>
-  <select id="user_groups" name="user_groups" required>
-    <option value="">-- Select Group --</option>
-  </select>
-  <label for="project-title">Project Name <span class="form-required" title="This field is required.">*</span></label>
-  <input type="text" id="project-title" name="project-title" value="" />
-
-  <label for="project-desc">Project Description <span  title="This field is required.">*</span></label>
-  <input type="text" id="project-desc" name="project-desc" value=""/>
-
+  <div class="form-container">
+    <label for="user_groups">Select a Group to Claim:</label>
+    <select id="user_groups" name="user_groups" required>
+      <option value="">-- Select Group --</option>
+    </select>
+    <label for="project-title">Project Name <span class="form-required" title="This field is required.">*</span></label>
+    <input type="text" id="project-title" name="project-title" value="" />
+    <label for="project-desc">Project Description <span  title="This field is required.">*</span></label>
+    <input type="text" id="project-desc" name="project-desc" value=""/>
+  </div>
  <div style="margin-top: 1rem; display: inline-flex; gap: 1rem; width:100%">
     <button type="submit" class="btn btn-primary">Claim</button>
     <button type="button" class="btn btn-secondary"  id="cancelButton">Cancel</button>
