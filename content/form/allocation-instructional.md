@@ -72,7 +72,7 @@ private = true
   </div>
   
   <div class="form-item form-type-textarea form-group"> <label class="control-label" for="resources-required">Estimated per-student compute needs <span class="form-required" title="This field is required.">*</span></label>
-    <p style="font-size:80%;">This estimate is for resource planning and advising only—it does not reserve dedicated resources. Please provide a rough per-student core and memory need (e.g., “2–4 cores, 8–16 GB”). A member of our user services team will contact you if we need additional information.</p>
+    <p style="font-size:80%;">This estimate is for resource planning and advising only—it does not reserve dedicated resources. Please provide a rough per-student core and memory need (e.g., “2–4 cores, 8–16 GB”). Instructional reservations are evaluated on a case-by-case basis depending on available resources and requirements of the instructor, as such not every reservation request can be accomodated. A member of our user services team will contact you if we need additional information.</p>
     <div class="form-textarea-wrapper resizable"><textarea class="form-control form-textarea required" id="resources-required" name="resources-required" cols="60" rows="5"></textarea>
     </div>
   </div>

@@ -89,6 +89,8 @@ iAs an alternative to purchasing SU's, RC offers dedicated computing which allow
 ### Instructional Allocations
 Instructional allocations provide limited access to Rivanna and Afton and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a Grouper account name using the class rubric, e.g. cs5014. Service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
 
+PIs of instructional allocations may choose to request a reservation of resources for their class times. To request a reservation, instructors must be sure to include the class meeting times, estimated resources per student and state they would like a reservation in their instructional allocation request. Reservations are evaluated on a case-by-case basis depending on available resources and requirements of the instructor, as such not every reservation request can be accomodated.
+
 **Available to:** Faculty who intend to use HPC resources in their class. 
 
 <a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
