@@ -76,7 +76,7 @@ private = true
         <option value="">-- Select Group --</option>
      </select>
      <!-- Helper text and link -->
-     <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 0.25em;">
+     <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 0.25em; gap: 50px;"">
        <small style="font-size: 0.9em; color: #555; margin-right: 4px;">
       Not seeing your group?
        </small>
@@ -95,10 +95,19 @@ private = true
           Allocation Types Documentation
         </a>.
       </small>
-      <div id="allocation-tier-options">
-        <label><input type="radio" name="allocation-choice" value="Standard" required> Standard</label><br>
-        <label><input type="radio" name="allocation-choice" value="Paid" required> Paid</label><br>
-        <label><input type="radio" name="allocation-choice" value="Instructional" required> Instructional</label>
+      <div id="allocation-tier-options" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="display: flex; align-items: center; gap: 8px;">
+          <input type="radio" name="allocation-choice" value="Standard" required>
+          <span>Standard</span>
+        </label>
+        <label style="display: flex; align-items: center; gap: 8px;">
+          <input type="radio" name="allocation-choice" value="Paid" required>
+          <span>Paid</span>
+        </label>
+        <label style="display: flex; align-items: center; gap: 8px;">
+          <input type="radio" name="allocation-choice" value="Instructional" required>
+          <span>Instructional</span>
+         </label>
       </div>
      </fieldset>
     </div>
