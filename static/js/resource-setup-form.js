@@ -11,7 +11,6 @@
     }
   }
 
-  resourceSelect.addEventListener("change", toggleTiers);
 
   $(document).ready(function () {
     // Remove unnecessary sections
