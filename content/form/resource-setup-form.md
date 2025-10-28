@@ -145,7 +145,7 @@ private = true
       <div class="form-actions" id="submit-div" style="margin-top:1rem;">
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
         <div style="margin-top: 1rem; display: inline-flex; gap: 1rem;  width:100%">
-        <button type="submit" class="btn btn-primary">Claim</button>
+        <button type="submit" class="btn btn-primary">Save</button>
         <button type="button" class="btn btn-secondary"  id="cancelButton">Cancel</button>
        </div>
       </div>
