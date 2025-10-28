@@ -101,7 +101,7 @@ private = true
           Allocation Types Documentation
         </a>.
       </small>
-      <div id="allocation-tier-options" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+      <div id="allocation-tier-options" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.1rem;">
         <label style="display: flex; align-items: center; gap: 8px;">
           <input type="radio" name="allocation-choice" value="Standard" required>
           <span>Standard</span>
