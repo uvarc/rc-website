@@ -30,12 +30,12 @@ private = true
     label {
       font-weight: bold;
       margin-bottom: 8px;
+      marging_top:8px;
     }
 
     select,input, button {
       width: 100%;
       padding: 10px;
-      margin-bottom: 15px;
       font-size: 16px;
       line-height: 1.25;
     }
@@ -56,12 +56,13 @@ private = true
       text-align: center;
       margin-top: 10px;
     }
-    
+
     input[type="radio"],
     input[type="checkbox"] {
     width: auto !important;
     margin-right: 8px;
-  }
+    }
+
 </style>
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -85,10 +86,10 @@ private = true
      <!-- Helper text and link -->
      <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 0.25em; gap: 50px;"">
        <small style="font-size: 0.9em; color: #555; margin-right: 4px;">
-      Not seeing your group?
+      Not seeing your group?click here to claim
        </small>
        <a href="claim-form.md" id="claimLink"style="font-size: 0.9em;     color:green; text-decoration: underline; white-space: nowrap;">
-        Click here to claim
+        PI group ownership claim request
        </a>
      </div>
    </div>
@@ -97,8 +98,7 @@ private = true
    <div id="allocation-tier" style="margin-top:1em;display:none;">
      <fieldset>
       <legend>Tier Options *</legend>
-      <small>For detailed info visit our 
-        <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">
+      <small>or detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">
           Allocation Types Documentation
         </a>.
       </small>
