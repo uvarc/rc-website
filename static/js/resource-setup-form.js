@@ -1,32 +1,19 @@
+ // Function to toggle tier sections based on resource type
+ function toggleTiers() {
+    const type = resourceSelect.value;
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Element references
-    const resourceSelect = document.getElementById("resource_type");
-    const allocationTierDiv = document.getElementById("allocation-tier");
-    const storageTierDiv = document.getElementById("storage-platform");
-  
-    // Function to toggle tier sections based on resource type
-    function toggleTiers() {
-      const type = resourceSelect.value;
-  
-      if (type === "service-unit") {
-        allocationTierDiv.style.display = "block";
-        storageTierDiv.style.display = "none";
-      } else if (type === "storage") {
-        allocationTierDiv.style.display = "none";
-        storageTierDiv.style.display = "block";
-      }
+    if (type === "service-unit") {
+      allocationTierDiv.style.display = "block";
+      storageTierDiv.style.display = "none";
+    } else if (type === "storage") {
+      allocationTierDiv.style.display = "none";
+      storageTierDiv.style.display = "block";
     }
-  
-    // Run toggle on page load (set initial state)
-    toggleTiers();
-  
-    // Listen for dropdown changes
-    resourceSelect.addEventListener("change", toggleTiers);
-  });
-  
+  }
 
-$(document).ready(function () {
+  resourceSelect.addEventListener("change", toggleTiers);
+
+  $(document).ready(function () {
     // Remove unnecessary sections
     $(".blog-sidebar").remove();
     // Hide certain rows and remove required attributes
@@ -37,4 +24,9 @@ $(document).ready(function () {
        blogMain.classList.remove("col-sm-9");
        blogMain.classList.add("col-sm-12");
     }
+    const resourceSelect = document.getElementById("resource_type");
+    const allocationTierDiv = document.getElementById("allocation-tier");
+    const storageTierDiv = document.getElementById("storage-tier");
+    // Run toggle on page load (set initial state)
+    toggleTiers();
 });

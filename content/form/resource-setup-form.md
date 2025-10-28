@@ -118,7 +118,7 @@ private = true
      </fieldset>
     </div>
     <!-- Storage Tier Options -->
-    <div id="storage-tier" style="margin-top:1em;display:none;">
+    <div id="storage-tier" style="margin-top:1em; display:none;">
        <fieldset>
         <legend>Storage Tier Options *</legend><br/>
          <small>For detailed information about each storage tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/storage/" target="_blank">Storage Documentation</a>.</small>
