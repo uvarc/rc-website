@@ -131,13 +131,14 @@ private = true
    <!-- Data Agreement and Submit Button Section -->
   <div id="common-fields" style="display: block; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <!-- Data Agreement -->
-      <div class="form-check form-item form-group" style="margin-top:1rem;">
-        <label class="control-label h6 mb-2" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
+      <div>
+        <label class="h6 mb-2" for="data-agreement">Data Agreement
+        <span  title="This field is required.">*</span></label></br>
         <span for="data-agreement">
           The owner of these services assumes all responsibility for complying with state, federal, and international data retention laws. Researchers may be required to keep data securely stored for years after a project has ended and should plan accordingly. University of Virginia researchers are strongly encouraged to use the <a href="https://recordsmanagement.virginia.edu/urma/overview" target="_new" style="font-weight:bold;">University Records Management Application (URMA)</a>, a web-based tool that automatically tracks when data can be safely transferred or destroyed.
         </span>
       </div>
-      <div class="form-item form-group">
+      <div>
         <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
       </div>
       <!-- Submit Section -->
