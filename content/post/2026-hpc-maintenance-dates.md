@@ -12,11 +12,11 @@ categories = ["feature"]
 
 Rivanna/Afton will be taken down for maintenance in 2026 on the following days: 
 
-- [Winter: Tuesday, January 6, 2026]
-- Spring: 
-- Summer:
-- Fall: 
+- Winter: Tuesday, January 6
+- Spring: Tuesday, May 26
+- Summer: Tuesday, Aug 11
+- Fall: Tuesday, Oct 13
 
-Please plan accordingly. Questions about the 2026 maintenance schedule should be directed to our user services team.
+Please plan accordingly. Questions about the 2026 maintenance schedule should be directed to our [user services team](https://www.rc.virginia.edu/support/).
 
 
