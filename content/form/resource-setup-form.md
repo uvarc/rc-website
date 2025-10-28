@@ -133,9 +133,9 @@ private = true
       <!-- Data Agreement -->
       <div class="form-check form-item form-group" style="margin-top:1rem;">
         <label class="control-label h6 mb-2" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
-        <label class="form-check-label" for="data-agreement">
+        <span for="data-agreement">
           The owner of these services assumes all responsibility for complying with state, federal, and international data retention laws. Researchers may be required to keep data securely stored for years after a project has ended and should plan accordingly. University of Virginia researchers are strongly encouraged to use the <a href="https://recordsmanagement.virginia.edu/urma/overview" target="_new" style="font-weight:bold;">University Records Management Application (URMA)</a>, a web-based tool that automatically tracks when data can be safely transferred or destroyed.
-        </label>
+        </span>
       </div>
       <div class="form-item form-group">
         <input class="form-check-input required" style="margin-left:4rem;" type="checkbox" value="" id="data-agreement">&nbsp;&nbsp; I understand
@@ -143,8 +143,10 @@ private = true
       <!-- Submit Section -->
       <div class="form-actions" id="submit-div" style="margin-top:1rem;">
         <p style="font-size:80%;">Please submit the form only once. If you receive an error message after submitting this request, please check your email to confirm that the submission completed.</p>
-        <button class="button-primary btn btn-primary form-submit" id="submit" type="submit" name="op" value="Submit" disabled="">Submit</button>
-        <button class="btn btn-secondary" type="button" id="cancel">Cancel</button>
+        <div style="margin-top: 1rem; display: inline-flex; gap: 1rem;  width:100%">
+        <button type="submit" class="btn btn-primary">Claim</button>
+        <button type="button" class="btn btn-secondary"  id="cancelButton">Cancel</button>
+       </div>
       </div>
     </div>
 </form>
