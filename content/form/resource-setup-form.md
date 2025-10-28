@@ -84,7 +84,7 @@ private = true
           <option value="">-- Select Group --</option>
        </select>
        <!-- Helper text and link -->
-       <div style="display: flex; justify-content: flex-end; align-items:   center; margin-top: 0.25em; gap: 50px;"">
+       <div style="display: flex; justify-content: flex-end; align-items:   center; margin-top: 0.25em; gap: 50px;">
          <small style="font-size: 0.9em; color: #555; margin-right: 4px;">
            Not seeing your group?click here to claim
          </small>
@@ -96,7 +96,7 @@ private = true
     <!-- Allocation Tier Options -->
     <div id="allocation-tier" style="margin-top:1em;display:none;">
      <fieldset>
-      <label>Tier Options *</label>
+      <label>Tier Options *</label><br/>
       <small>For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">
           Allocation Types Documentation
         </a>.
