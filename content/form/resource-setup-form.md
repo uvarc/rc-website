@@ -120,11 +120,22 @@ private = true
     <!-- Storage Tier Options -->
     <div id="storage-tier" style="margin-top:1em; display:none;">
        <fieldset>
-        <legend>Storage Tier Options *</legend><br/>
+        <label>Tier Options *</label><br/>
          <small>For detailed information about each storage tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/storage/" target="_blank">Storage Documentation</a>.</small>
-        <label><input type="radio" name="storage-choice" value="SSZ Research Project" required>SSZ Research Project</label><br>
-        <label><input type="radio" name="storage-choice" value="SSZ Research Standard" required> SSZ Research Standard</label>
-        <label><input type="radio" name="storage-choice" value="Highly Sensitive Data" required> High-Security Research Standard Storage</label>
+        <div id="storage-tier-options" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.1rem;">
+          <label style="display: flex; align-items: center; gap: 8px;">
+          <input type="radio" name="storage-choice" value="SSZ Research Project" required>
+          <span>SSZ Research Project</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px;">
+          <input type="radio" name="storage-choice" value="SSZ Research Standard" required> 
+          <span>SSZ Research Standard</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 8px;">
+          <input type="radio" name="storage-choice" value="Highly Sensitive Data" required> 
+          <span>High-Security Research Standard Storage</span>
+          </label>
+         </div>
       </fieldset>
     </div>
   </div>
