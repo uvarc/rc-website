@@ -69,7 +69,7 @@ private = true
 <script type="text/javascript" src="/js/resource-setup-form.js"></script>
 
 <div class="message" id="resultMessage"></div><br /><br/>
-<form id="claimForm">
+<form id="setupForm">
   {{% form-userinfo-v2 %}} 
   <div class="form-container">
     <label for="resource_type"> Resource Type:</label>
@@ -78,24 +78,23 @@ private = true
       <option value="storage">Storage</option>
     </select>
        <!-- Group Name and Claim Link -->
-   <div style="display: flex; flex-direction: column; margin-bottom: 1em;">
-      <label for="user_groups" style="font-weight: bold;">Group Name:</label>
-      <select id="user_groups" name="user_groups" required style="width: 100%;">
-        <option value="">-- Select Group --</option>
-     </select>
-     <!-- Helper text and link -->
-     <div style="display: flex; justify-content: flex-end; align-items: center; margin-top: 0.25em; gap: 50px;"">
-       <small style="font-size: 0.9em; color: #555; margin-right: 4px;">
-      Not seeing your group?click here to claim
-       </small>
-       <a href="claim-form.md" id="claimLink"style="font-size: 0.9em;     color:green; text-decoration: underline; white-space: nowrap;">
-        PI group ownership claim request
-       </a>
+    <div style="display: flex; flex-direction: column; margin-bottom: 1em;">
+       <label for="user_groups" style="font-weight: bold;">Group Name:</label>
+       <select id="user_groups" name="user_groups" required style="width: 100%;">
+          <option value="">-- Select Group --</option>
+       </select>
+       <!-- Helper text and link -->
+       <div style="display: flex; justify-content: flex-end; align-items:   center; margin-top: 0.25em; gap: 50px;"">
+         <small style="font-size: 0.9em; color: #555; margin-right: 4px;">
+           Not seeing your group?click here to claim
+         </small>
+         <a href="claim-form.md" id="claimLink"style="font-size: 0.9em; color:green; text-decoration: underline; white-space: nowrap;">
+         PI group ownership claim request
+         </a>
+       </div>
      </div>
-   </div>
-
-   <!-- Allocation Tier Options -->
-   <div id="allocation-tier" style="margin-top:1em;display:none;">
+    <!-- Allocation Tier Options -->
+    <div id="allocation-tier" style="margin-top:1em;display:none;">
      <fieldset>
       <label>Tier Options *</label>
       <small>For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">
@@ -121,15 +120,16 @@ private = true
     <!-- Storage Tier Options -->
     <div id="storage-tier" style="margin-top:1em;display:none;">
        <fieldset>
-        <legend>Storage Tier Options *</legend>
+        <legend>Storage Tier Options *</legend><br/>
          <small>For detailed information about each storage tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/storage/" target="_blank">Storage Documentation</a>.</small>
         <label><input type="radio" name="storage-choice" value="SSZ Research Project" required>SSZ Research Project</label><br>
         <label><input type="radio" name="storage-choice" value="SSZ Research Standard" required> SSZ Research Standard</label>
         <label><input type="radio" name="storage-choice" value="Highly Sensitive Data" required> High-Security Research Standard Storage</label>
       </fieldset>
+    </div>
   </div>
-  <!-- Data Agreement and Submit Button Section -->
-    <div id="common-fields" style="display: block; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
+   <!-- Data Agreement and Submit Button Section -->
+  <div id="common-fields" style="display: block; margin-top:1em; padding:1.5rem; background-color:#eee; border:solid 1px #ccc;">
       <!-- Data Agreement -->
       <div class="form-check form-item form-group" style="margin-top:1rem;">
         <label class="control-label h6 mb-2" for="data-agreement">Data Agreement <span class="form-required" title="This field is required.">*</span></label>
@@ -147,12 +147,6 @@ private = true
         <button class="btn btn-secondary" type="button" id="cancel">Cancel</button>
       </div>
     </div>
-</form>
-  </div>
- <div style="margin-top: 1rem; display: inline-flex; gap: 1rem; width:100%">
-    <button type="submit" class="btn btn-primary">Claim</button>
-    <button type="button" class="btn btn-secondary"  id="cancelButton">Cancel</button>
-  </div>
 </form>
 <script type="text/javascript" src="/js/response-message.js"></script>
 <script type="text/javascript" src="/js/user-session-v2.js"></script>
