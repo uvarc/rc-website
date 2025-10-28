@@ -30,7 +30,7 @@ private = true
     label {
       font-weight: bold;
       margin-bottom: 8px;
-      marging_top:8px;
+      margin-top:8px;
     }
 
     select,input, button {
@@ -97,8 +97,8 @@ private = true
    <!-- Allocation Tier Options -->
    <div id="allocation-tier" style="margin-top:1em;display:none;">
      <fieldset>
-      <legend>Tier Options *</legend>
-      <small>or detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">
+      <label>Tier Options *</label>
+      <small>For detailed information about each allocation tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/hpc/allocations/#allocation-types" target="_blank">
           Allocation Types Documentation
         </a>.
       </small>
