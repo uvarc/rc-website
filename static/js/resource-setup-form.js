@@ -1,17 +1,3 @@
- // Function to toggle tier sections based on resource type
- function toggleTiers() {
-    const type = resourceSelect.value;
-
-    if (type === "service-unit") {
-      allocationTierDiv.style.display = "block";
-      storageTierDiv.style.display = "none";
-    } else if (type === "storage") {
-      allocationTierDiv.style.display = "none";
-      storageTierDiv.style.display = "block";
-    }
-  }
-
-
   $(document).ready(function () {
     // Remove unnecessary sections
     $(".blog-sidebar").remove();
@@ -26,6 +12,26 @@
     const resourceSelect = document.getElementById("resource_type");
     const allocationTierDiv = document.getElementById("allocation-tier");
     const storageTierDiv = document.getElementById("storage-tier");
-    // Run toggle on page load (set initial state)
+
+    // Define toggle function inside ready block so it can access these variables
+    function toggleTiers() {
+      const type = resourceSelect.value;
+      if (type === "service-unit") {
+        allocationTierDiv.style.display = "block";
+        storageTierDiv.style.display = "none";
+      } else if (type === "storage") {
+        allocationTierDiv.style.display = "none";
+        storageTierDiv.style.display = "block";
+      } else {
+        // Default (hide both if not selected)
+        allocationTierDiv.style.display = "none";
+        storageTierDiv.style.display = "none";
+      }
+    }
+
+    // Run toggle on page load
     toggleTiers();
+
+    // Attach change event to dropdown
+    resourceSelect.addEventListener("change", toggleTiers);
 });
