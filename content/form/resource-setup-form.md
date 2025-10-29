@@ -116,7 +116,7 @@ private = true
           Allocation Types Documentation
         </a>.
       </small>
-      <div id="tier-options" class = "allocation-tier-options">
+      <div class="tier-options" id = "allocation-tier-options">
         <label>
           <input type="radio" name="allocation-choice" value="Standard" required>
           <span>Standard</span>
