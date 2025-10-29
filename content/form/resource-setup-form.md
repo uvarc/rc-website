@@ -62,6 +62,21 @@ private = true
     width: auto !important;
     margin-right: 8px;
     }
+   
+    .tire-options {
+      margin-top: 1rem;
+      display: flex; 
+      flex-direction: column; 
+      gap: 0.1rem;"
+    }
+
+    .tier-options label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
 
 </style>
 <!-- Core scripts needed for form functionality -->
@@ -101,16 +116,16 @@ private = true
           Allocation Types Documentation
         </a>.
       </small>
-      <div id="allocation-tier-options" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.1rem;">
-        <label style="display: flex; align-items: center; gap: 8px;">
+      <div id="tier-options" class = "allocation-tier-options">
+        <label>
           <input type="radio" name="allocation-choice" value="Standard" required>
           <span>Standard</span>
         </label>
-        <label style="display: flex; align-items: center; gap: 8px;">
+        <label>
           <input type="radio" name="allocation-choice" value="Paid" required>
           <span>Paid</span>
         </label>
-        <label style="display: flex; align-items: center; gap: 8px;">
+        <label>
           <input type="radio" name="allocation-choice" value="Instructional" required>
           <span>Instructional</span>
          </label>
@@ -122,16 +137,16 @@ private = true
        <fieldset>
         <label>Tier Options *</label><br/>
          <small>For detailed information about each storage tier option, please visit our <a href="https://www.rc.virginia.edu/userinfo/storage/" target="_blank">Storage Documentation</a>.</small>
-        <div id="storage-tier-options" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.1rem;">
-          <label style="display: flex; align-items: center; gap: 8px;">
+        <div id="storage-tier-options" class="tier-options">
+          <label>
           <input type="radio" name="storage-choice" value="SSZ Research Project" required>
           <span>SSZ Research Project</span>
           </label>
-          <label style="display: flex; align-items: center; gap: 8px;">
+          <label>
           <input type="radio" name="storage-choice" value="SSZ Research Standard" required> 
           <span>SSZ Research Standard</span>
           </label>
-          <label style="display: flex; align-items: center; gap: 8px;">
+          <label >
           <input type="radio" name="storage-choice" value="Highly Sensitive Data" required> 
           <span>High-Security Research Standard Storage</span>
           </label>
