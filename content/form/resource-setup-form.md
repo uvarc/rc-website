@@ -71,6 +71,7 @@ private = true
     }
 
     .tier-options label {
+      font-weight: normal;
       display: flex;
       align-items: center;
       gap: 8px;
