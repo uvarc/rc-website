@@ -72,10 +72,10 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   enableForms = true
   
 [params.metrics]
-  coreHours = "20862350"
+  coreHours = "18659784"
   storage = "10.5"
   newAccounts = "94"
-  userAccounts = "1376"
+  userAccounts = "1375"
 
 [params.rivanna]
   totalNodes = "603"
