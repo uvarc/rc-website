@@ -27,14 +27,17 @@ New modules:
 
 - cuda/13.0.2
 - cudnn/9.15.0-CUDA-13.0.2
+- nccl/2.28.9-CUDA-13.0.2
 - nvhpc/25.11
+- nvompi/25.11_5.0.7
 - pytorch/2.9.0
 - ucx-cuda/1.19.0-CUDA-13.0.2 
 
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-| | | |
+|cuda   |11.4.2 |11.8.0+ |
+|mumax3 |3.10   |3.11.1 |
 {{< /table >}}
 
 If you have any questions about the maintenance or GPU queue improvements, please [contact our user services team](https://www.rc.virginia.edu/support/). 
