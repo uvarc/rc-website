@@ -471,7 +471,7 @@ Similar to our clusters Rivanna and Afton in standard security zone, Rio is a ma
       <td>GPU jobs </td>
       <td>3 days</td>
       <td>1</td>
-      <td>1GPU</td>
+      <td>8GPU</td>
       <td>96</td>
       <td>4 GB</td>
       <td>2 TB</td>
