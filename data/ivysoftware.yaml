@@ -313,24 +313,15 @@ software:
        installation: optional #preinstalled,none  
    category: [Database Software]
    description: MySQL Workbench is a unified visual tool for database architects, developers, and DBAs. MySQL Workbench provides data modeling, SQL development, and comprehensive administration tools for server configuration, user administration, backup, and much more.  
- - name: Microsoft SQL Server
+ - name: Microsoft SQL Server 2019
    versions:
      - version: ""
        status: approved # pending,rejected
        platforms: [Windows]
        installation: optional #preinstalled,none  
    category: [Database Software]
-   description: Microsoft SQL Server is a relational database management system developed by Microsoft.
+   description: Microsoft SQL Server is a relational database management system developed by Microsoft. Currently, we can only support up to 2019 version.
    license: Installation requires user-provided software license.
- - name: Microsoft SQL Server 2022 Express
-   versions:
-     - version: "2022"
-       status: approved # pending,rejected
-       platforms: [Windows]
-       installation: optional #preinstalled,none  
-   category: [Database Software]
-   description: Microsoft SQL Server 2022 Express is a free editions of SQL Server that is ideal for learning, developing, powering desktop, web & small server applications.
-   license: No license is required.
  - name: DaVinci Resolve
    versions:
      - version: "17"
