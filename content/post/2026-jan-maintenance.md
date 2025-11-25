@@ -36,6 +36,8 @@ New modules:
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
+|atat   |3.36   |3.50 |
+|cc3d   |4.2.5  |4.7.0 |
 |cuda   |11.4.2 |11.8.0+ |
 |mumax3 |3.10   |3.11.1 |
 {{< /table >}}
