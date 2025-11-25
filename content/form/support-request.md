@@ -38,7 +38,7 @@ private = true
       <option id="storage" value="Storage">Storage</option>
       <option id="container" value="Container">Container Service</option>
       <option id="dac" value="Data Analytics">Data Analytics Center</option>
-      <option id="dtc" value="Other">Digital Technology Core</option>
+      <option id="dtc" value="Digital Technology">Digital Technology Core</option>
       <!-- <option id="consultation" value="Consultation">General Consultation Request</option> -->
       <!-- <option id="workshops" value="Workshops">Workshops</option> -->
       <option id="other" value="Other">Other</option>
