@@ -19,7 +19,7 @@ All systems are expected to return to service by **Wednesday, January 7** at 6 a
 
 ### System
 
-- The NVIDIA driver will be upgraded to 580.95.05 to support CUDA 13.
+- The NVIDIA driver will be upgraded to 580.95.05 to support CUDA 13. (The driver is backwards-compatible with older versions of CUDA, so users should not have to rebuild their own codes. Please contact us if you experience any issues.)
 
 ### Modules
 
@@ -39,7 +39,8 @@ New modules:
 |atat   |3.36   |3.50 |
 |cc3d   |4.2.5  |4.7.0 |
 |cuda   |11.4.2 |11.8.0+ |
+|lammps |2Aug2023-cpu | 22Jul2025_update1 |
 |mumax3 |3.10   |3.11.1 |
 {{< /table >}}
 
-If you have any questions about the maintenance or GPU queue improvements, please [contact our user services team](https://www.rc.virginia.edu/support/). 
+If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
