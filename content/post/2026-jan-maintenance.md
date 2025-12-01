@@ -43,4 +43,4 @@ New modules:
 |mumax3 |3.10   |3.11.1 |
 {{< /table >}}
 
-If you have any questions about the maintenance or GPU queue improvements, please [contact our user services team](https://www.rc.virginia.edu/support/). 
+If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
