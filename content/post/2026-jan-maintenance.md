@@ -2,20 +2,38 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2026-01-01T00:00:00-05:00"
+date = "2025-12-14T00:00:00-05:00"
 title = "HPC Maintenance: Jan 6, 2026"
 draft = false
 tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}The UVA HPC systems, Afton/Rivanna, will be unavailable for maintenance beginning <strong>Tuesday, Janurary 6, 2026</strong> beginning at 6 am.{{< /alert-green >}}
+{{< alert-green >}}The UVA HPC systems, Afton/Rivanna, will be unavailable for maintenance on <strong>Tuesday, Janurary 6, 2026</strong> beginning at 6 am.{{< /alert-green >}}
 
 All systems are expected to return to service by **Wednesday, January 7** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
 
 ### What to Expect During Maintenance  
+
+**Access:**
+ 
+You will not be able to log in or use the HPC systems, including Open OnDemand and FastX. 
+
+**Jobs:**
+ 
+You can submit jobs until maintenance begins. If the scheduler determines that a job cannot finish before maintenance starts, it will be held in the queue and will automatically start once the system is back online. <strong>No jobs will run during maintenance.</strong> 
+
+**Storage:**
+ 
+Research Standard and Research Project storage remain accessible via Globus, Server Message Block (SMB), and Network File System (NFS) mounts, meaning: 
+
+- You cannot access files through the HPC interface during maintenance. 
+
+- You can access files from other systems (e.g., your computer) if mounts are set up. 
+
+- The Data Transfer Node (DTN) stays online for ongoing data transfers via Globus. 
 
 ### System
 
