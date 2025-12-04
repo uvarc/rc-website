@@ -57,6 +57,7 @@ New modules:
 |atat   |3.36   |3.50 |
 |cc3d   |4.2.5  |4.7.0 |
 |cuda   |11.4.2 |11.8.0+ |
+|gurobi |10.0.1, 11.0.0 |13.0.0 |
 |isoseqenv|py3.7|isoseq/4.3.0 |
 |lammps |2Aug2023-cpu | 22Jul2025_update1 |
 |mumax3 |3.10   |3.11.1 |
