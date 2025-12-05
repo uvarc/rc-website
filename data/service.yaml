@@ -78,7 +78,7 @@ service:
         access: "Ivy Virtual Machine"
         filesystem_location: "<code>/project</code>"
         highly-sens-ds-compliant: "Yes"
-        use_cases: "Ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in High-Security Research Standard are read-write only."
+        use_cases: "High-performance storage for computational workflows involving highly sensitive data. Files stored in High-Security Research Project are read-write only."
       - name: "High-Security Research Standard"
         security: "High"
         cost: "$45/TB/year"
