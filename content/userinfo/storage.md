@@ -88,7 +88,7 @@ aliases = [ "/storage" ]
 
 {{< storage_main_page_second >}}
 
-Researchers who request space on High-Security Research Project or Research Standard must first request an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Further information on Ivy and the High-Security Research storage can be found [here](/userinfo/storage/sensitive-data/#hs-standard-storage).
+Researchers who request space on High-Security Research Project or Standard must first request an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Further information on Ivy and the High-Security Research storage can be found [here](/userinfo/storage/sensitive-data/#hs-standard-storage).
 
 High-Security Research Storage is accessible by using [Globus](/userinfo/globus/) and connecting to the High-Security DTN.
 
