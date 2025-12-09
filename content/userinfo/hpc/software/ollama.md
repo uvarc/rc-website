@@ -37,13 +37,6 @@ module spider {{% module-firstversion %}}
 # Ollama Command Line
 You can run the container directly if you are familiar with the ollama commands. For most users we recommend the Open OnDemand interactive app as detailed in the next section.
 
-## Download model
-We have prepared a script `pullm` to simplify the model download process. Open a terminal, load the ollama module, and run:
-```bash
-pullm LLM
-```
-where `LLM` is the name of the large language model that can be found on the [Ollama Models page](https://ollama.com/search). If the pull fails for whatever reason, try again later. "Cloud" models require an API key.
-
 # Ollama Open OnDemand Interactive App
 
 ## Request a session
@@ -61,6 +54,19 @@ To fill out the form:
 Click `Launch` to start the session.
 
 This will start Ollama inside a JupyterLab session. The Ollama server is backed by an Apptainer container instance. The python API is provided by a separate module, `ollama-python`.
+
+## Download model
+
+If you selected "Home" for the model directory and wish to download a new LLM, click on File&rarr;New&rarr;Terminal to open a terminal window. Run:
+```bash
+apptainer run --env OLLAMA_HOST=$OLLAMA_HOST $CONTAINERDIR/ollama-0.13.1.sif pull <LLM>
+```
+where `<LLM>` is the name of the large language model that can be found on the [Ollama Models page](https://ollama.com/search). "Cloud" models require an API key.
+
+To list all available models, run:
+```bash
+apptainer run --env OLLAMA_HOST=$OLLAMA_HOST $CONTAINERDIR/ollama-0.13.1.sif list
+```
 
 ## Sample code
 
