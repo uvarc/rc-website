@@ -59,13 +59,13 @@ This will start Ollama inside a JupyterLab session. The Ollama server is backed 
 
 If you selected "Home" for the model directory and wish to download a new LLM, click on File&rarr;New&rarr;Terminal to open a terminal window. Run:
 ```bash
-apptainer run --env OLLAMA_HOST=$OLLAMA_HOST $CONTAINERDIR/ollama-0.13.1.sif pull <LLM>
+apptainer run --env OLLAMA_HOST=$OLLAMA_HOST $CONTAINERDIR/ollama-${EBVERSIONOLLAMA}.sif pull <LLM>
 ```
 where `<LLM>` is the name of the large language model that can be found on the [Ollama Models page](https://ollama.com/search). "Cloud" models require an API key.
 
 To list all available models, run:
 ```bash
-apptainer run --env OLLAMA_HOST=$OLLAMA_HOST $CONTAINERDIR/ollama-0.13.1.sif list
+apptainer run --env OLLAMA_HOST=$OLLAMA_HOST $CONTAINERDIR/ollama-${EBVERSIONOLLAMA}.sif list
 ```
 
 ## Sample code
