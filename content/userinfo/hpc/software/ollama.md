@@ -68,6 +68,16 @@ To list all available models, run:
 apptainer run --env OLLAMA_HOST=$OLLAMA_HOST $CONTAINERDIR/ollama-${EBVERSIONOLLAMA}.sif list
 ```
 
+To remove a model, run:
+```bash
+apptainer run --env OLLAMA_HOST=$OLLAMA_HOST $CONTAINERDIR/ollama-${EBVERSIONOLLAMA}.sif rm <LLM>
+```
+
+To remove all models, you may simply wipe the directory:
+```bash
+rm -rf ~/.ollama/models
+```
+
 ## Sample code
 
 Copy and paste the following to a notebook. You may modify the prompt and the model. The model name must match exactly with those listed in the OOD form.
