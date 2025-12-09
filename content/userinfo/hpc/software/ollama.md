@@ -34,9 +34,6 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
-# Ollama Command Line
-You can run the container directly if you are familiar with the ollama commands. For most users we recommend the Open OnDemand interactive app as detailed in the next section.
-
 # Ollama Open OnDemand Interactive App
 
 ## Request a session
