@@ -56,9 +56,10 @@ This will start Ollama inside a JupyterLab session. The Ollama server is backed 
 
 If you selected "Home" for the model directory and wish to download a new LLM, click on File&rarr;New&rarr;Terminal to open a terminal window. Run:
 ```bash
+module load ollama
 ollama pull <LLM>
 ```
-where `<LLM>` is the name of the large language model that can be found on the [Ollama Models page](https://ollama.com/search). "Cloud" models require an API key. (Note: For your convenience, we set up an alias `ollama` for the actual Apptainer command.)
+where `<LLM>` is the name of the large language model that can be found on the [Ollama Models page](https://ollama.com/search). "Cloud" models require an API key. (Note: For your convenience, we set up an alias `ollama` for the actual Apptainer command. The module load command is necessary to activate the alias.)
 
 To list all available models, run:
 ```bash
