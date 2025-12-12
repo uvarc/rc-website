@@ -1,23 +1,25 @@
 # Information about services for pricing, descriptions, etc.
 service:
   - label: "Allocations"
-    systems: 
+    systems:
       - name: "Afton"
-        summary: "Afton is the University of Virginia's newest High-Performance Computing system. 
-                  The Afton supercomputer is comprised of 300 compute node each with 96 compute cores based on the AMD EPYC 
-                  9454 architecture for a total of 28,800 cores. The increase in core count is augmented by a significant increase 
-                  in memory per node compared to Rivanna. Each Afton node boasts a minimum of 750 Gigabytes of memory, with some supporting up to 1.5 
-                  Terabytes of RAM memory. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines. 
-                  The Afton and Rivanna systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, A100, and H200), including an NVIDIA BasePOD. 
-                  The Afton and Rivanna platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
+        summary:
+          "Afton is the University of Virginia's newest High-Performance Computing system.
+          The Afton supercomputer is comprised of 300 compute node each with 96 compute cores based on the AMD EPYC
+          9454 architecture for a total of 28,800 cores. The increase in core count is augmented by a significant increase
+          in memory per node compared to Rivanna. Each Afton node boasts a minimum of 750 Gigabytes of memory, with some supporting up to 1.5
+          Terabytes of RAM memory. The large amount of memory per node allows researchers to efficiently work with the ever-expanding datasets we are seeing across diverse research disciplines.
+          The Afton and Rivanna systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, A100, and H200), including an NVIDIA BasePOD.
+          The Afton and Rivanna platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
       - name: "Rivanna"
-        summary: "Rivanna is one of the University of Virginia's High-Performance Computing (HPC) systems. After hardware upgrades and expansions in 2019, the Rivanna supercomputer currently has 603 nodes with over 20,476 compute cores. 
-                  The Rivanna and Afton systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, A100, and H200), including an NVIDIA BasePOD. 
-                  Both platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
+        summary:
+          "Rivanna is one of the University of Virginia's High-Performance Computing (HPC) systems. After hardware upgrades and expansions in 2019, the Rivanna supercomputer currently has 603 nodes with over 20,476 compute cores.
+          The Rivanna and Afton systems provide access to 55 nodes with NVIDIA general purpose GPU accelerators (RTX2080, RTX3090, A6000, V100, A40, A100, and H200), including an NVIDIA BasePOD.
+          Both platforms share storage systems of over 8 Petabytes and a stack of pre-installed software packages available for computational research across many disciplines."
     security_zone: "SSZ"
     tags: "HPC"
-    footnote: "A service unit (SU) resembles usage of a trackable hardware resource for a specified amount of time. The SU charge rate can vary based on the specific hardware used. Resources like GPUs and memory may incur additional SU charges. See  <a href=\"/userinfo/hpc/#hardware-configuration\">here</a> for more information.<p> Standard allocations are available for Afton, Rivanna and Rio. At this time, Rio does not support purchase SUs or dedicated compute resources.</p>"
-    columns: 
+    footnote: 'A service unit (SU) resembles usage of a trackable hardware resource for a specified amount of time. The SU charge rate can vary based on the specific hardware used. Resources like GPUs and memory may incur additional SU charges. See  <a href="/userinfo/hpc/#hardware-configuration">here</a> for more information.<p> Standard allocations are available for Afton, Rivanna and Rio. At this time, Rio does not support purchase SUs or dedicated compute resources.</p>'
+    columns:
       - "Type"
       - "SU Limits"
       - "Cost"
@@ -53,7 +55,7 @@ service:
         snapshots: "Daily snapshots for 1 week"
         replication: "No"
         backup: "No"
-        access: "Rivanna, Afton, <a href=\"/userinfo/howtos/storage/drive-mapping/\">mountable on local workstation</a>"
+        access: 'Rivanna, Afton, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a>'
         filesystem_location: "<code>/project</code>"
         highly-sens-ds-compliant: "No"
         use_cases: "<code>/project</code> storage is best suited for data accessible to Rivanna/Afton, shared within a research group, and for researchers who are actively running Slurm jobs and need more capacity than <code>/home</code> provides."
@@ -64,7 +66,7 @@ service:
         snapshots: "No"
         replication: "No"
         backup: "No"
-        access: "Rivanna, Afton, <a href=\"/userinfo/howtos/storage/drive-mapping/\">mountable on local workstation</a>"
+        access: 'Rivanna, Afton, <a href="/userinfo/howtos/storage/drive-mapping/">mountable on local workstation</a>'
         filesystem_location: "<code>/standard</code>"
         highly-sens-ds-compliant: "No"
         use_cases: "<code>/standard</code> storage is best suited for data that needs to be accessible to a workstation or Rivanna/Afton, shared within a research group, and for longer-term storage of Slurm job outputs completed in <code>/scratch</code>. It is not recommended to run Slurm jobs directly against <code>/standard</code> as file operations are slower compared to <code>/home</code>, <code>/scratch</code>, and <code>/project</code> storage."
@@ -90,15 +92,18 @@ service:
         filesystem_location: "<code>/standard</code>"
         highly-sens-ds-compliant: "Yes"
         use_cases: "Ideal for long-term storage of highly sensitive data and is suitable for computation with smaller file sizes. Files stored in High-Security Research Standard are read-write only."
+      - name: "High-Security Research Project"
+        security: "High"
+        cost: "$70/TB/year"
   - name: "IvyVM"
     label: "Virtual Machine"
     footnote: ""
-    columns: 
+    columns:
       - "Type"
       - "Specs"
       - "Cost"
-    options: 
-      - type: "Mini"  
+    options:
+      - type: "Mini"
         specs: "2 cores / 2GB mem"
         cost: "$4/month"
       - type: "Small"
@@ -120,7 +125,7 @@ service:
       - "Tier"
       - "Containers"
       - "Price"
-    options: 
+    options:
       - tier: "Light Tier"
         containers: "1 - 5"
         price: "$5 / month"
@@ -133,288 +138,275 @@ service:
   - name: "Dedicated Computing"
     label: "Dedicated Computing"
     columns:
-    - "Hardware"
-    - "Cores/Node"
-    - "Memory/Node"
-    - "GPU Memory"
-    - "Yearly Rate/Node"
+      - "Hardware"
+      - "Cores/Node"
+      - "Memory/Node"
+      - "GPU Memory"
+      - "Yearly Rate/Node"
     options:
-    - hardware: "Rivanna-375"
-      cores_per_node: 40
-      mem_per_node: "375GB"
-      gpu_mem: 
-      yearly_rate: "$1,046.45"
-    - hardware: "Rivanna-750"
-      cores_per_node: 40
-      mem_per_node: "750GB"
-      gpu_mem: 
-      yearly_rate: "$1,046.45"
-    - hardware: "Afton-750"
-      cores_per_node: 96
-      mem_per_node: "750GB"
-      gpu_mem: 
-      yearly_rate: "$5,563.66"
-    - hardware: "Afton-1464"
-      cores_per_node: 96
-      mem_per_node: "1464GB"
-      gpu_mem: 
-      yearly_rate: "$6,458.46"
-    - hardware: "Afton-Nvidia A40 (8 GPUs)"
-      cores_per_node: 96
-      mem_per_node: "1464GB"
-      gpu_mem: "48GB/GPU"
-      yearly_rate: "$17,682.24"
-
-
+      - hardware: "Rivanna-375"
+        cores_per_node: 40
+        mem_per_node: "375GB"
+        gpu_mem:
+        yearly_rate: "$1,046.45"
+      - hardware: "Rivanna-750"
+        cores_per_node: 40
+        mem_per_node: "750GB"
+        gpu_mem:
+        yearly_rate: "$1,046.45"
+      - hardware: "Afton-750"
+        cores_per_node: 96
+        mem_per_node: "750GB"
+        gpu_mem:
+        yearly_rate: "$5,563.66"
+      - hardware: "Afton-1464"
+        cores_per_node: 96
+        mem_per_node: "1464GB"
+        gpu_mem:
+        yearly_rate: "$6,458.46"
+      - hardware: "Afton-Nvidia A40 (8 GPUs)"
+        cores_per_node: 96
+        mem_per_node: "1464GB"
+        gpu_mem: "48GB/GPU"
+        yearly_rate: "$17,682.24"
 
 hardware:
   - columns:
-    - "System"
-    - "Cores/Node"
-    - "Memory/Node"
-    - "Specialty Hardware"
-    - "GPU memory/Device"
-    - "GPU devices/Node"
-    - "# of Nodes"
-    - "SU/CPU-hr"
-    - "SU/GB-hr"
-    - "SU/GPU-hr"
+      - "System"
+      - "Cores/Node"
+      - "Memory/Node"
+      - "Specialty Hardware"
+      - "GPU memory/Device"
+      - "GPU devices/Node"
+      - "# of Nodes"
+      - "SU/CPU-hr"
+      - "SU/GB-hr"
+      - "SU/GPU-hr"
     options:
-    # Rivanna-375
-    - system: "Rivanna"
-      cores_per_node: 40
-      memory_per_node: "375GB"
-      speciality_hardware: "-"
-      gpu_memory_per_device: "-"
-      gpu_devices_per_node: "-"
-      number_of_nodes: 182
-      su_per_cpu_hour: 0.177
-      su_per_gb_hour: 0.0143
-      su_per_gpu_hour: 0
-      # Afton-Standard
-    - system: "Afton"
-      cores_per_node: 96
-      memory_per_node: "750GB"
-      speciality_hardware: "-"
-      gpu_memory_per_device: "-"
-      gpu_devices_per_node: "-"
-      number_of_nodes: 280
-      su_per_cpu_hour: 0.464
-      su_per_gb_hour: 0.0284
-      su_per_gpu_hour: 0 
-      # Rivanna-750
-    - system: "Rivanna"
-      cores_per_node: 40
-      memory_per_node: "750GB"
-      speciality_hardware: "-"
-      gpu_memory_per_device: "-"
-      gpu_devices_per_node: "-"
-      number_of_nodes: 40
-      su_per_cpu_hour: 0.13
-      su_per_gb_hour: 0.009
-      su_per_gpu_hour: 0
-      # Afton-High Mem
-    - system: "Afton"
-      cores_per_node: 96
-      memory_per_node: "1464GB"
-      speciality_hardware: "-"
-      gpu_memory_per_device: "-"
-      gpu_devices_per_node: "-"
-      number_of_nodes: 20
-      su_per_cpu_hour: 0.418
-      su_per_gb_hour: 0.0244
-      su_per_gpu_hour: 0
-    # L-A100-40GB
-    - system: "Afton"
-      cores_per_node: 128
-      memory_per_node: "976GB"
-      speciality_hardware: "GPU: A100"
-      gpu_memory_per_device: "40GB"
-      gpu_devices_per_node: "8"
-      number_of_nodes: 2
-      su_per_cpu_hour: 0.311
-      su_per_gb_hour: 0.0292
-      su_per_gpu_hour: 46.381
-    # BasePOD
-    - system: "Afton"
-      cores_per_node: 128
-      memory_per_node: "1953GB"
-      speciality_hardware: "GPU: A100"
-      gpu_memory_per_device: "80GB"
-      gpu_devices_per_node: "8"
-      number_of_nodes: 18
-      su_per_cpu_hour: 0.403
-      su_per_gb_hour: 0.043
-      su_per_gpu_hour: 50.89
-      # H200
-    - system: "Afton"
-      cores_per_node: 96
-      memory_per_node: "2TB"
-      speciality_hardware: "GPU: H200"
-      gpu_memory_per_device: "141GB"
-      gpu_devices_per_node: "8"
-      number_of_nodes: 1
-      su_per_cpu_hour: 0.400
-      su_per_gb_hour: 0.0269
-      su_per_gpu_hour: 81.667
-    # Afton-A40
-    - system: "Afton"
-      cores_per_node: 96
-      memory_per_node: "1464GB"
-      speciality_hardware: "GPU: A40"
-      gpu_memory_per_device: "48GB"
-      gpu_devices_per_node: "8"
-      number_of_nodes: 12
-      su_per_cpu_hour: 0.34
-      su_per_gb_hour: 0.02
-      su_per_gpu_hour: 18.669
-    # L-A6000
-    - system: "Afton"
-      cores_per_node: 48
-      memory_per_node: "250GB"
-      speciality_hardware: "GPU: A6000"
-      gpu_memory_per_device: "48GB"
-      gpu_devices_per_node: "8"
-      number_of_nodes: 14
-      su_per_cpu_hour: 0.383
-      su_per_gb_hour: 0.062
-      su_per_gpu_hour: 14.273
-    # L-RTX2080
-    - system: "Afton"
-      cores_per_node: 40
-      memory_per_node: "374GB"
-      speciality_hardware: "GPU: RTX2080Ti"
-      gpu_memory_per_device: "11GB"
-      gpu_devices_per_node: "10"
-      number_of_nodes: 2
-      su_per_cpu_hour: 0.388
-      su_per_gb_hour: 0.041
-      su_per_gpu_hour: 7.757
-      # L-RTX3090
-    - system: "Afton"
-      cores_per_node: 32
-      memory_per_node: "125GB"
-      speciality_hardware: "GPU: RTX3090"
-      gpu_memory_per_device: "24GB"
-      gpu_devices_per_node: "4"
-      number_of_nodes: 4
-      su_per_cpu_hour: 0.303
-      su_per_gb_hour: 0.076
-      su_per_gpu_hour: 11.323
-    # V100
-    - system: "Afton"
-      cores_per_node: 36
-      memory_per_node: "375GB"
-      speciality_hardware: "GPU: V100"
-      gpu_memory_per_device: "32GB"
-      gpu_devices_per_node: "4"
-      number_of_nodes: 2
-      su_per_cpu_hour: 0.058
-      su_per_gb_hour: 0.005
-      su_per_gpu_hour: 2.096
-  
+      # Rivanna-375
+      - system: "Rivanna"
+        cores_per_node: 40
+        memory_per_node: "375GB"
+        speciality_hardware: "-"
+        gpu_memory_per_device: "-"
+        gpu_devices_per_node: "-"
+        number_of_nodes: 182
+        su_per_cpu_hour: 0.177
+        su_per_gb_hour: 0.0143
+        su_per_gpu_hour: 0
+        # Afton-Standard
+      - system: "Afton"
+        cores_per_node: 96
+        memory_per_node: "750GB"
+        speciality_hardware: "-"
+        gpu_memory_per_device: "-"
+        gpu_devices_per_node: "-"
+        number_of_nodes: 280
+        su_per_cpu_hour: 0.464
+        su_per_gb_hour: 0.0284
+        su_per_gpu_hour: 0
+        # Rivanna-750
+      - system: "Rivanna"
+        cores_per_node: 40
+        memory_per_node: "750GB"
+        speciality_hardware: "-"
+        gpu_memory_per_device: "-"
+        gpu_devices_per_node: "-"
+        number_of_nodes: 40
+        su_per_cpu_hour: 0.13
+        su_per_gb_hour: 0.009
+        su_per_gpu_hour: 0
+        # Afton-High Mem
+      - system: "Afton"
+        cores_per_node: 96
+        memory_per_node: "1464GB"
+        speciality_hardware: "-"
+        gpu_memory_per_device: "-"
+        gpu_devices_per_node: "-"
+        number_of_nodes: 20
+        su_per_cpu_hour: 0.418
+        su_per_gb_hour: 0.0244
+        su_per_gpu_hour: 0
+      # L-A100-40GB
+      - system: "Afton"
+        cores_per_node: 128
+        memory_per_node: "976GB"
+        speciality_hardware: "GPU: A100"
+        gpu_memory_per_device: "40GB"
+        gpu_devices_per_node: "8"
+        number_of_nodes: 2
+        su_per_cpu_hour: 0.311
+        su_per_gb_hour: 0.0292
+        su_per_gpu_hour: 46.381
+      # BasePOD
+      - system: "Afton"
+        cores_per_node: 128
+        memory_per_node: "1953GB"
+        speciality_hardware: "GPU: A100"
+        gpu_memory_per_device: "80GB"
+        gpu_devices_per_node: "8"
+        number_of_nodes: 18
+        su_per_cpu_hour: 0.403
+        su_per_gb_hour: 0.043
+        su_per_gpu_hour: 50.89
+        # H200
+      - system: "Afton"
+        cores_per_node: 96
+        memory_per_node: "2TB"
+        speciality_hardware: "GPU: H200"
+        gpu_memory_per_device: "141GB"
+        gpu_devices_per_node: "8"
+        number_of_nodes: 1
+        su_per_cpu_hour: 0.400
+        su_per_gb_hour: 0.0269
+        su_per_gpu_hour: 81.667
+      # Afton-A40
+      - system: "Afton"
+        cores_per_node: 96
+        memory_per_node: "1464GB"
+        speciality_hardware: "GPU: A40"
+        gpu_memory_per_device: "48GB"
+        gpu_devices_per_node: "8"
+        number_of_nodes: 12
+        su_per_cpu_hour: 0.34
+        su_per_gb_hour: 0.02
+        su_per_gpu_hour: 18.669
+      # L-A6000
+      - system: "Afton"
+        cores_per_node: 48
+        memory_per_node: "250GB"
+        speciality_hardware: "GPU: A6000"
+        gpu_memory_per_device: "48GB"
+        gpu_devices_per_node: "8"
+        number_of_nodes: 14
+        su_per_cpu_hour: 0.383
+        su_per_gb_hour: 0.062
+        su_per_gpu_hour: 14.273
+      # L-RTX2080
+      - system: "Afton"
+        cores_per_node: 40
+        memory_per_node: "374GB"
+        speciality_hardware: "GPU: RTX2080Ti"
+        gpu_memory_per_device: "11GB"
+        gpu_devices_per_node: "10"
+        number_of_nodes: 2
+        su_per_cpu_hour: 0.388
+        su_per_gb_hour: 0.041
+        su_per_gpu_hour: 7.757
+        # L-RTX3090
+      - system: "Afton"
+        cores_per_node: 32
+        memory_per_node: "125GB"
+        speciality_hardware: "GPU: RTX3090"
+        gpu_memory_per_device: "24GB"
+        gpu_devices_per_node: "4"
+        number_of_nodes: 4
+        su_per_cpu_hour: 0.303
+        su_per_gb_hour: 0.076
+        su_per_gpu_hour: 11.323
+      # V100
+      - system: "Afton"
+        cores_per_node: 36
+        memory_per_node: "375GB"
+        speciality_hardware: "GPU: V100"
+        gpu_memory_per_device: "32GB"
+        gpu_devices_per_node: "4"
+        number_of_nodes: 2
+        su_per_cpu_hour: 0.058
+        su_per_gb_hour: 0.005
+        su_per_gpu_hour: 2.096
+
 rio_hardware:
   - columns:
-    - "System"
-    - "Cores/Node"
-    - "Memory/Node"
-    - "Specialty Hardware"
-    - "GPU memory/Device"
-    - "GPU devices/Node"
-    - "# of Nodes"
+      - "System"
+      - "Cores/Node"
+      - "Memory/Node"
+      - "Specialty Hardware"
+      - "GPU memory/Device"
+      - "GPU devices/Node"
+      - "# of Nodes"
     options:
-    # H200
-    - system: "Rio"
-      cores_per_node: 96
-      memory_per_node: "2TB"
-      specialty_hardware: "GPU: H200"
-      gpu_memory_per_device: "141GB"
-      gpu_devices_per_node: 8
-      number_of_nodes: 1
-    # CPU Nodes
-    - system: "Rio"
-      cores_per_node: 40
-      memory_per_node: "375GB"
-      specialty_hardware: "-"
-      gpu_memory_per_device: "-"
-      gpu_devices_per_node: "-"
-      number_of_nodes: 34
-    # L40s
-    - system: "Rio"
-      cores_per_node: 32 
-      memory_per_node: "750GB"
-      specialty_hardware: "GPU: L40s"
-      gpu_memory_per_device: "48GB" 
-      gpu_devices_per_node: 8
-      number_of_nodes: 4
-
+      # H200
+      - system: "Rio"
+        cores_per_node: 96
+        memory_per_node: "2TB"
+        specialty_hardware: "GPU: H200"
+        gpu_memory_per_device: "141GB"
+        gpu_devices_per_node: 8
+        number_of_nodes: 1
+      # CPU Nodes
+      - system: "Rio"
+        cores_per_node: 40
+        memory_per_node: "375GB"
+        specialty_hardware: "-"
+        gpu_memory_per_device: "-"
+        gpu_devices_per_node: "-"
+        number_of_nodes: 34
+      # L40s
+      - system: "Rio"
+        cores_per_node: 32
+        memory_per_node: "750GB"
+        specialty_hardware: "GPU: L40s"
+        gpu_memory_per_device: "48GB"
+        gpu_devices_per_node: 8
+        number_of_nodes: 4
 
 job_queues:
   - columns:
-    - "Partition"
-    - "Purpose"
-    - "Max time / job"
-    - "Max nodes / job"
-    - "Max cores / job"
-    - "Max cores / node"
-    - "Default memory / core"
-    - "Max memory / node / job"
+      - "Partition"
+      - "Purpose"
+      - "Max time / job"
+      - "Max nodes / job"
+      - "Max cores / job"
+      - "Max cores / node"
+      - "Default memory / core"
+      - "Max memory / node / job"
     options:
-    # standard partition
-    - partition: "standard"
-      purpose: "For jobs on a single compute node"
-      max_time_per_job: "7 days"
-      max_nodes_per_job: 1
-      max_cores_per_job: 96
-      max_cores_per_node: 96 
-      default_mem_per_core: "9GB"
-      max_mem_per_node_per_job: "1462GB"
-    # parallel partition
-    - partition: "parallel"
-      purpose: "For large parallel jobs on up to 64 nodes"
-      max_time_per_job: "3 days"
-      max_nodes_per_job: 64 
-      max_cores_per_job: 6000 
-      max_cores_per_node: 96
-      default_mem_per_core: "8GB"
-      max_mem_per_node_per_job: "750GB"
-    # gpu partition
-    - partition: "gpu"
-      purpose: "For jobs using general purpose graphical processing units"
-      max_time_per_job: "3 days"
-      max_nodes_per_job: 4
-      max_cores_per_job: "32GPU"
-      max_cores_per_node: 128
-      default_mem_per_core: "6GB"
-      max_mem_per_node_per_job: "1953GB"
-    # gpu-mig partition
-    - partition: "gpu-mig"
-      purpose: "For smaller GPU jobs"
-      max_time_per_job: "3 days"
-      max_nodes_per_job: 1
-      max_cores_per_job: 2
-      max_cores_per_node: 14 MIGs/user
-      default_mem_per_core: "4000MB"
-      max_mem_per_node_per_job: "30000MB"
-    # interactive partition
-    - partition: "interactive"
-      purpose: "For quick interactive sessions"
-      max_time_per_job: "12 hours"
-      max_nodes_per_job: 2
-      max_cores_per_job: "24/2GPU"
-      max_cores_per_node: 96
-      default_mem_per_core: "6GB"
-      max_mem_per_node_per_job: "216GB"
-
-
-
-
-
-  
-
-    
-
-       
+      # standard partition
+      - partition: "standard"
+        purpose: "For jobs on a single compute node"
+        max_time_per_job: "7 days"
+        max_nodes_per_job: 1
+        max_cores_per_job: 96
+        max_cores_per_node: 96
+        default_mem_per_core: "9GB"
+        max_mem_per_node_per_job: "1462GB"
+      # parallel partition
+      - partition: "parallel"
+        purpose: "For large parallel jobs on up to 64 nodes"
+        max_time_per_job: "3 days"
+        max_nodes_per_job: 64
+        max_cores_per_job: 6000
+        max_cores_per_node: 96
+        default_mem_per_core: "8GB"
+        max_mem_per_node_per_job: "750GB"
+      # gpu partition
+      - partition: "gpu"
+        purpose: "For jobs using general purpose graphical processing units"
+        max_time_per_job: "3 days"
+        max_nodes_per_job: 4
+        max_cores_per_job: "32GPU"
+        max_cores_per_node: 128
+        default_mem_per_core: "6GB"
+        max_mem_per_node_per_job: "1953GB"
+      # gpu-mig partition
+      - partition: "gpu-mig"
+        purpose: "For smaller GPU jobs"
+        max_time_per_job: "3 days"
+        max_nodes_per_job: 1
+        max_cores_per_job: 2
+        max_cores_per_node: 14 MIGs/user
+        default_mem_per_core: "4000MB"
+        max_mem_per_node_per_job: "30000MB"
+      # interactive partition
+      - partition: "interactive"
+        purpose: "For quick interactive sessions"
+        max_time_per_job: "12 hours"
+        max_nodes_per_job: 2
+        max_cores_per_job: "24/2GPU"
+        max_cores_per_node: 96
+        default_mem_per_core: "6GB"
+        max_mem_per_node_per_job: "216GB"
 # ivy:
 #   mini: 4
 #   small: 12
@@ -434,13 +426,13 @@ job_queues:
 #     cost = "Free"
 #     su_lifetime = "12 months"
 
-# [rivanna_allocations_purchased] 
+# [rivanna_allocations_purchased]
 #     name = "Purchased"
 #     su_limits = "None"
 #     cost = "$0.01"
 #     su_lifetime = "Forever"
 
-# [rivanna_allocations_instructional] 
+# [rivanna_allocations_instructional]
 #     name = "Instructional"
 #     su_limits = "100,000"
 #     cost = "Free"
@@ -463,5 +455,5 @@ job_queues:
 #     medium = 48
 #     large = 96
 #     xlarge = 176
-  
+
 # omero = 60

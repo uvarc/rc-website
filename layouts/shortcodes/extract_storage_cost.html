@@ -11,6 +11,7 @@
 {{ $standard_storage := index (where $options "name" "Research Standard") 0 }}
 {{ $project_storage := index (where $options "name" "Research Project") 0 }}
 {{ $ivy_central_storage := index (where $options "name" "High-Security Research Standard") 0 }}
+{{ $ivy_project_storage := index (where $options "name" "High-Security Research Project") 0 }}
 
 {{ with .Get "type" }}
   {{ if eq . "standard" }}
@@ -19,6 +20,8 @@
     {{ index $project_storage "cost" | markdownify}}
   {{ else if eq . "hsz standard" }}
     {{ index $ivy_central_storage "cost" | markdownify }}
+  {{ else if eq . "hsz project" }}
+    {{ index $ivy_project_storage "cost" | markdownify }}
   {{ else }}
     Unknown storage type
   {{ end }}
