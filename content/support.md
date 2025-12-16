@@ -151,7 +151,7 @@ via Zoom</button></a>
 
 ---
 
-### New to High-Performance Computing?  
+## New to High Performance Computing?  
 
 We have core training that is essential to getting up to speed working in the UVA HPC environment. We offer virtual orientation sessions to introduce you to the Afton & Rivanna HPC systems. Trainings are hosted Wednesdays. Registration is required.
 
