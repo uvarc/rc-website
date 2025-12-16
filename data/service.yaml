@@ -103,7 +103,7 @@ service:
         cost: "$4/month"
       - type: "Small"
         specs: "4 cores / 16GB mem"
-        cost: "$12/month"
+        cost: "$12/month (Charges are waived for Small VM's used as Rio login nodes.)"
       - type: "Medium"
         specs: "8 cores / 32GB mem"
         cost: "$48/month"
