@@ -84,7 +84,7 @@ You can search for the collections to use for your transfer from the File Manage
 The official UVA managed collections are:
 
 * `UVA Standard Security Storage` - generally available; maps to Rivanna/Afton _home_ directories, _scratch_, _Research Standard_ & _Research Project_ storage.
-* `uva#ivy-DTN` - available to Ivy secure platform users, for moving files into High-Security Research Standard Storage.
+* `UVA IVY-DTN` - available to Ivy secure platform users, for moving files into High-Security Research Standard Storage.
     **Globus is the *only* permitted data-transfer protocol for highly sensitive data.** To transfer data to High-Security Research Standard Storage, please see the special instructions [here](/userinfo/ivy/#data-transfer-in-out-of-ivy).
 
 You can transfer files to or from your personal collection to a managed collection, one run either by UVA or by another institution.  You can transfer files between two managed collections.  You cannot transfer files from one personal collection to another personal collection.  If you wish to do this, contact Research Computing to convert at least one personal collection to a Globus Plus collection.
