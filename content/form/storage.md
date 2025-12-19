@@ -70,7 +70,7 @@ private = true
         <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="High-Security Research Standard" class="form-radio" /> &nbsp; High-Security Research Standard Storage ({{< extract_storage_cost type="hsz standard" >}})</label>
       </div>
       <div class="form-item form-type-radio radio">
-        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="High-Security Research Standard" class="form-radio" /> &nbsp; High-Security Research Project Storage ({{< extract_storage_cost type="hsz project" >}})</label>
+        <input required="required" type="radio" id="storage-choice2" name="storage-choice" value="High-Security Research Project" class="form-radio" /> &nbsp; High-Security Research Project Storage ({{< extract_storage_cost type="hsz project" >}})</label>
       </div>
     </div>
     <div class="alert alert-warning" style="font-size:92%;margin-top:1.5rem;margin-bottom:1.5rem;" role="alert">
