@@ -21,7 +21,7 @@ The [training material](https://learning.rc.virginia.edu/tutorials/hpc-intro/) i
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
-<b>Wednesdays 3:00-4:00pm</b>
+<b>Wednesdays 3:00-4:00pm - Cancelled for Winterbreak starting Dec. 24th</b>
 <a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to HPC" 
 session</button></a>
 <!-- Health Sciences Library, MILL Room -->
