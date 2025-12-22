@@ -1,3 +1,4 @@
+
 "High Performance Python","2021/01/19,2021/01/20,2021/01/21","https://cal.lib.virginia.edu/event/7403863","Katherine Holcomb"
 "Introduction to Shiny","2021-02-04","https://cal.lib.virginia.edu/event/7405869","Christina Gancayco"
 "Parallel Matlab I","2021-02-05","https://cal.lib.virginia.edu/event/7405744","Ed Hall"
@@ -99,9 +100,8 @@
 "Introduction to Writing Slurm Job Scripts for HPC","2024-06-10","https://cal.lib.virginia.edu/event/12423080","Paul Orndorff, Hana Parece"
 Introduction to HPC from a Terminal Window,2026-02-24,https://cal.lib.virginia.edu/event/16000606,Hana Parece
 Introduction to Writing Slurm Job,2026-03-03,https://cal.lib.virginia.edu/event/16000483,Camden Duy
+Reproducibility in Bioinformatics,2026-03-23,https://cal.lib.virginia.edu/event/16000331,"Marcus Bobar, Deb Triant"
+Introduction to PyTorch on HPC,2026-03-24,https://cal.lib.virginia.edu/event/16000714,Bruce Rushing
 Using Containers on HPC,2026-03-30,https://cal.lib.virginia.edu/event/16000844,Ruoshi Sun
 Building Containers on HPC,2026-04-06,https://cal.lib.virginia.edu/event/16001020,Ruoshi Sun
-High Performance Computing from a Terminal Window,2025-09-16,https://cal.lib.virginia.edu/event/15143544,"Camden Duy, Hana Parece"
-Introduction to Writing Slurm Job Scripts for HPC,2025-09-18,https://cal.lib.virginia.edu/event/15143435,"Camden Duy, Hana Parece"
-Introduction to VSCode for HPC,2025-09-30,https://cal.lib.virginia.edu/event/15143581,Hana Parece
-Introduction to Bioinformatics Tools for HPC,2025-10-09,https://cal.lib.virginia.edu/event/15143630,Deb Triant
+
