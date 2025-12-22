@@ -49,6 +49,8 @@ New modules:
 - nvhpc/25.11
 - nvompi/25.11_5.0.7
 - pytorch/2.9.0
+- qiime2/2025.10
+- quantumespresso/7.5
 - ucx-cuda/1.19.0-CUDA-13.0.2 
 
 {{< table title="replacement" class="table table-striped" >}}
