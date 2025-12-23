@@ -15,7 +15,7 @@ private = true
 
 {{< getstatus keyword="jira" >}}
 
-<form action="https://api.k8s.rc.virginia.edu/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
+<form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 
 {{< enable-disable-form >}}
 

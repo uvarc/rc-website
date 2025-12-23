@@ -29,7 +29,7 @@ private = true
 <script type="text/javascript" src="/js/combined-request-form.js"></script>
 
 {{% jira-msg %}}
-<form action="https://api.k8s.rc.virginia.edu/rest/general-support-request/" 
+<form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" 
       method="post" 
       id="combined-request-form" 
       class="needs-validation" 
