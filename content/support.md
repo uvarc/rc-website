@@ -135,7 +135,7 @@ Examples of the type of support we can provide are:
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
-<b>Tuesdays 3:00-5:00pm - Cancelled for Winter Break starting Dec. 24th</b>
+<b>Tuesdays 3:00-5:00pm</b>
 <a style="float:right;" href="https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09"><button class="btn btn-primary btn-sm">Join us 
 via Zoom</button></a>
 <!-- Physical Life Sciences Building, Room 430-->
@@ -143,7 +143,7 @@ via Zoom</button></a>
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
-<b>Thursdays 10:00-12:00pm - Cancelled for Winter Break starting Dec. 24th</b>
+<b>Thursdays 10:00-12:00pm</b>
 <a style="float:right;" href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button  class="btn btn-primary btn-sm">Join us 
 via Zoom</button></a>
 <!-- Health Sciences Library, MILL Room -->
@@ -159,7 +159,7 @@ The [training material](https://learning.rc.virginia.edu/tutorials/hpc-intro/) i
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
-<b>Wednesdays 3:00-4:00pm - Cancelled for Winter Break starting Dec. 24th</b>
+<b>Wednesdays 3:00-4:00pm</b>
 <a></a>
 <a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to HPC" 
 session</button></a>
