@@ -106,7 +106,7 @@ Dedicated computing is an alternative to self-managed lab systems and condominiu
 
 **Note:** When requesting dedicated compute resources, it can be desirable to create a new Grouper group so that you can manage access to the resources within your research group, but it is not required.
 
-<a href="/form/support-request/?category=Rivanna&request_title=Dedicated%20Computing">
+<a href="/form/dedicated-computing/">
 
   <button class="btn btn-primary">Request Dedicated Computing</button>
 </a>
