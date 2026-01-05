@@ -45,7 +45,7 @@ For any questions, please email <a href="mailto:rc-studentjobs@virginia.edu">rc-
 
 <div class="button-wrapper">
   {{< button 
-     button-url="https://uva.wd1.myworkdayjobs.com/UVAStudentJobs/job/Charlottesville-VA/Research-Computing-Student-Worker--Student-Wage-_R0066673" 
+     button-url="https://uva.wd1.myworkdayjobs.com/en-US/UVAStudentJobs/job/Research-Computing-Assistant--Student-Wage-_R0079054" 
      button-class="primary" 
      button-text="Apply for the Student Worker Position" 
   >}}
