@@ -35,6 +35,8 @@ module spider {{% module-firstversion %}}
 
 {{< module-versions >}}
 
+**Versions 2.9.0+ do not work on V100.** You can exclude them via `-x udc-an33-[37-38]`. (For OOD JupyterLab, copy and paste into the Slurm Options box in the session form.)
+
 # PyTorch Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. PyTorch Jupyter kernels are backed by containers in the corresponding modules.
 
