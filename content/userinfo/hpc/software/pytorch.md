@@ -74,9 +74,9 @@ The following is a Slurm script template. The commented numbers correspond to th
 #SBATCH -e pytorchtest-%A.err
 
 module purge
-module load apptainer pytorch/2.0.1  # 2
+module load apptainer pytorch/2.9.0  # 2
 
-apptainer run --nv $CONTAINERDIR/pytorch-2.0.1.sif pytorch_example.py # 3
+apptainer run --nv $CONTAINERDIR/pytorch-2.9.0.sif pytorch_example.py # 3
 ```
 
 Notes:
@@ -99,8 +99,8 @@ ijob -A mygroup -p gpu --gres=gpu -c 1
 
 ```
 module purge
-module load apptainer pytorch/2.0.1
-apptainer run --nv $CONTAINERDIR/pytorch-2.0.1.sif pytorch_example.py
+module load apptainer pytorch/2.9.0
+apptainer run --nv $CONTAINERDIR/pytorch-2.9.0.sif pytorch_example.py
 ```
 
 # Interaction with the Host File System
