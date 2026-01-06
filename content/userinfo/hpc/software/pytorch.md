@@ -104,12 +104,11 @@ apptainer run --nv $CONTAINERDIR/pytorch-2.9.0.sif pytorch_example.py
 ```
 
 # Interaction with the Host File System
-The following user directories are overlayed onto each container by default on the HPC system:
+The following user directories are mounted into the container by default on the HPC system:
 
 + /home
 + /scratch
-+ /nv
 + /standard
 + /project
 
-Due to the overlay, these directories are by default the same inside and outside the container with the same read, write, and execute permissions. **This means that file modifications in these directories (e.g. in /home) via processes running inside the container are persistent even after the container instance exits.** The `/nv` and `/project` directories refer to leased storage locations that may not be available to all users.
+These directories are by default the same inside and outside the container with the same read, write, and execute permissions. **This means that file modifications in these directories (e.g. in /home) via processes running inside the container are persistent even after the container instance exits.** The `/standard` and `/project` directories refer to leased storage locations that may not be available to all users.
