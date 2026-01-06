@@ -1,6 +1,6 @@
 +++
 type = "rivanna"
-date = "2020-02-28T08:37:46-05:00"
+date = "2026-01-06T00:00:00-05:00"
 tags = [
   "rivanna", "software", "machine-learning","deep-learning"
 ]
@@ -12,7 +12,6 @@ description = "PyTorch and UVA HPC"
 author = "RC Staff"
 +++
 
-# Description
 {{% module-description %}}
 
 **Software Category:** {{% module-category %}}
