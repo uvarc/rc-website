@@ -55,6 +55,8 @@ There are several ways to use Gurobi. First load the module.
 
 For version 13+, either use `gurobi_cl` via command line or install your own `gurobipy` for the Python API. In the latter case, load miniforge and run `pip install gurobipy==<version>` where `<version>` should match with the `gurobi` module. If you wish, you may [create an environment first](https://www.rc.virginia.edu/userinfo/hpc/software/miniforge/#package-installation-with-conda).
 
+Please note that version 13 no longer ships the command prompt `gurobi.sh` or `gurobipy` with its installation.
+
 ## Julia
 
 The `GUROBI_HOME` environment variable is already defined. Load the `julia` module and run:
