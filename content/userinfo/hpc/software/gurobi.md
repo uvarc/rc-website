@@ -7,7 +7,7 @@ categories = [
   "HPC",
   "software",
 ]
-date = "2025-03-28T00:00:00-05:00"
+date = "2026-01-06T00:00:00-05:00"
 tags = [
   "gurobi",
 ]
@@ -54,31 +54,6 @@ Please submit a ticket if you are UVA faculty/staff/student and need access to t
 There are several ways to use Gurobi. First load the module.
 
 For version 13+, either use `gurobi_cl` via command line or install your own `gurobipy` for the Python API. In the latter case, load miniforge and run `pip install gurobipy==<version>` where `<version>` should match with the `gurobi` module. If you wish, you may [create an environment first](https://www.rc.virginia.edu/userinfo/hpc/software/miniforge/#package-installation-with-conda).
-
-The following instructions are for versions 10 and 11 which will be removed during the maintenance on Jan 6, 2026. Please note that version 13 no longer ships the command prompt `gurobi.sh` or `gurobipy` with its installation.
-
-## Gurobi command prompt
-Run:
-```
-gurobi.sh
-```
-
-## Python
-To import `gurobipy` as a Python module, you can use either Gurobi's own `python3.7` executable or a different `python`. gurobi/10.0.1 uses `python3.7` and gurobi/11.0.0 uses `python3.11`.
-
-### Gurobi Python
-Please replace `python` with `python3.7` or `python3.11` in your Slurm scripts. However, note that Gurobi does not provide `pip`. If you need additional Python packages please use a non-Gurobi Python (e.g. via `module load miniforge`). See next section.
-
-### Non-Gurobi Python
-Gurobi/10.0.1 supports Python versions 2.7, 3.6 - 3.9. Please follow the instructions in the `module load` message. To check the version of your `python`, run `python -V`.
-
-If you are using the base python from the `miniforge` module and have trouble installing additional packages, run:
-```bash
-export PYTHONPATH=$EBROOTMINIFORGE/lib/python3.11:$PYTHONPATH
-```
-You will still be able to import `gurobipy` from the `gurobi` module. Do not install your own `gurobipy`.
-
-If you followed these instructions and still have trouble importing `gurobipy` in your Python script, please use the Gurobi Python.
 
 ## Julia
 
