@@ -109,7 +109,7 @@ You can specify which version of Python you want to run using conda. This can be
 	Then, create a new kernel:
 		`python -m ipykernel install --user --name=MyEnvName`
 
-	Your new kernel will show up as a tile when you select File-> New Launcher in JupyterLab. **Note:** Create your kernels from a FastX terminal, SSH connection, or using HPC Shell Access within Open OnDemand - avoid using the terimnal within an interactive JupyterLab session for this purpose.
+	Your new kernel will show up as a tile when you select File-> New Launcher in JupyterLab. **Note:** Create your kernels from a FastX terminal, SSH connection, or using HPC Shell Access within Open OnDemand - please avoid using the terimnal within an interactive JupyterLab session for this purpose.
  
 To see all available environments, run `conda env list`.
 
