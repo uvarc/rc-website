@@ -166,7 +166,8 @@ For the Large Analytics Research Award, the proposal must include the following:
 Please use Calibri, 11-point font, single-spaced with 1-inch page margins. All pages, except for the cover page, should be numbered consecutively throughout the proposal.
 
 
-<u>Submission Process</u>: Email your proposal, in PDF format, to RC-DAC@virginia.edu.  The subject line for the email must be "Analytics Resource Proposal". You may include a brief cover letter in the body of the email.
+<u><b>New </b>Submission Process</u>: Submit your proposal, in PDF format, through the [webform](https://airtable.com/appNE0nMLFYjMq9KL/pagqbGGkyPqID3vVX/form) . 
+
 
 We encourage you to follow these instructions precisely to ensure that your proposal is received and processed correctly. After your email is received, we will secure a copy of your proposal and review that copy. We will not consider any changes that you make to the proposal after we have received it.
 

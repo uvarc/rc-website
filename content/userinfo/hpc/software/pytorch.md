@@ -1,6 +1,6 @@
 +++
 type = "rivanna"
-date = "2020-02-28T08:37:46-05:00"
+date = "2026-01-06T00:00:00-05:00"
 tags = [
   "rivanna", "software", "machine-learning","deep-learning"
 ]
@@ -12,7 +12,6 @@ description = "PyTorch and UVA HPC"
 author = "RC Staff"
 +++
 
-# Description
 {{% module-description %}}
 
 **Software Category:** {{% module-category %}}
@@ -34,6 +33,8 @@ module spider {{% module-firstversion %}}
 ```
 
 {{< module-versions >}}
+
+**Versions 2.9.0+ do not work on V100.** You can exclude them via `-x udc-an33-[37-38]`. (For OOD JupyterLab, copy and paste into the Slurm Options box in the session form.)
 
 # PyTorch Jupyter Notebooks
 Jupyter Notebooks can be used for interactive code development and execution of Python scripts and several other codes. PyTorch Jupyter kernels are backed by containers in the corresponding modules.
@@ -73,9 +74,9 @@ The following is a Slurm script template. The commented numbers correspond to th
 #SBATCH -e pytorchtest-%A.err
 
 module purge
-module load apptainer pytorch/2.0.1  # 2
+module load apptainer pytorch/2.9.0  # 2
 
-apptainer run --nv $CONTAINERDIR/pytorch-2.0.1.sif pytorch_example.py # 3
+apptainer run --nv $CONTAINERDIR/pytorch-2.9.0.sif pytorch_example.py # 3
 ```
 
 Notes:
@@ -98,17 +99,16 @@ ijob -A mygroup -p gpu --gres=gpu -c 1
 
 ```
 module purge
-module load apptainer pytorch/2.0.1
-apptainer run --nv $CONTAINERDIR/pytorch-2.0.1.sif pytorch_example.py
+module load apptainer pytorch/2.9.0
+apptainer run --nv $CONTAINERDIR/pytorch-2.9.0.sif pytorch_example.py
 ```
 
 # Interaction with the Host File System
-The following user directories are overlayed onto each container by default on the HPC system:
+The following user directories are mounted into the container by default on the HPC system:
 
 + /home
 + /scratch
-+ /nv
 + /standard
 + /project
 
-Due to the overlay, these directories are by default the same inside and outside the container with the same read, write, and execute permissions. **This means that file modifications in these directories (e.g. in /home) via processes running inside the container are persistent even after the container instance exits.** The `/nv` and `/project` directories refer to leased storage locations that may not be available to all users.
+These directories are by default the same inside and outside the container with the same read, write, and execute permissions. **This means that file modifications in these directories (e.g. in /home) via processes running inside the container are persistent even after the container instance exits.** The `/standard` and `/project` directories refer to leased storage locations that may not be available to all users.

@@ -119,7 +119,7 @@ Now you can execute any command or application defined in the container, for exa
 Apptainer> ls
 ```
 
-You can navigate the container file system, including `/scratch` and `/nv`, and run any application that is installed inside the container. To leave the interactive container shell, type `exit`:
+You can navigate the container file system and run any application that is installed inside the container. To leave the interactive container shell, type `exit`:
 
 ```
 Apptainer> exit
@@ -199,18 +199,18 @@ Each container provides its own file system.  In addition, directories of the ho
 * `/sys`
 * `/dev`
 
-In addition, the following user directories are overlayed onto each container by default on the HPC system:
+In addition, the following user directories are mounted into each container by default on the HPC system:
 
 * `/home`
 * `/scratch`
-* `/nv`
+* `/standard`
 * `/project`
 
-Due to the overlay these directories are by default the same inside and outside the container with the same read, write, and execute permissions.  This means that file modifications in these directories (e.g. in `/home`) via processes running inside the container are persistent even after the container instance exits.  The `/nv` and `/project` directories refer to leased storage locations that may not be available to all users.
+These directories are by default the same inside and outside the container with the same read, write, and execute permissions.  This means that file modifications in these directories (e.g. in `/home`) via processes running inside the container are persistent even after the container instance exits.  The `/standard` and `/project` directories refer to leased storage locations that may not be available to all users.
 
 ## Disabling the Default Bind Paths
 
-Under some circumstances this default overlay of the host file systems is undesirable.  Users can disable the overlay of `/home`, `/scratch`, `/nv`, `/project` by adding the `-c` flag when executing the `apptainer shell`, `apptainer exec`, or `apptainer run` commands.
+Under some circumstances this default mounting of the host file systems is undesirable. Users can disable the default mounts by adding the `-c` flag when executing the `apptainer shell`, `apptainer exec`, or `apptainer run` commands.
 
 For example,
 
