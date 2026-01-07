@@ -9,7 +9,7 @@ tags = ["rivanna", "afton"]
 categories = ["feature"]
 +++
 
-{{< alert-green >}}The UVA HPC systems, Afton/Rivanna, will be unavailable for maintenance on <strong>Tuesday, Janurary 6, 2026</strong> beginning at 6 am.{{< /alert-green >}}
+{{< alert-green >}}The UVA HPC systems, Afton/Rivanna, will be unavailable for maintenance on <strong>Tuesday, January 6, 2026</strong> beginning at 6 am.{{< /alert-green >}}
 
 All systems are expected to return to service by **Wednesday, January 7** at 6 am.
 
