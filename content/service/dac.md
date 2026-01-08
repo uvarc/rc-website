@@ -122,7 +122,7 @@ We are committed to enhancing the quality and impact of research across Grounds 
  
 # Services Provided at No Charge
 
-* [Training in Using RC Systems and Technical Support](/service/tiers/#training-and-technical-support)  
+* [Training in Using RC Systems and Technical Support](/service/tiers/#tier-1-training-technical-support)  
 * [Consultation](/service/tiers/#consultations-advising) (does not include hands-on work by DAC personnel)
 * [Basic Collaboration](/service/tiers/#collaborations-expertise-and-custom-solutions) (typically less than 20 hours of hands-on work by DAC personnel)
 
