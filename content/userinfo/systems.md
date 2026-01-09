@@ -13,7 +13,6 @@ images = [""]
 From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure,
 various systems are available to researchers.</p>
 
-{{< systems-boilerplate >}}
 
 <div class="card-group">
   <div class="card">
@@ -101,3 +100,5 @@ various systems are available to researchers.</p>
 </div>
 
 <br>
+
+{{< systems-boilerplate >}}
