@@ -61,19 +61,6 @@ various systems are available to researchers.</p>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
-      <img align="right" src="/images/cloud.png" style="max-width:20%;" />
-      <h4 class="card-title">Virtual Machines - Public/Private Cloud</h4>
-        <p class="card-text">
-        Cloud-based computing solutions are also available in Amazon Web Services, Google Cloud Platform, and our private cloud UVA Skyline. All three provide options for quick deployments, short-term lifecycles, and unique requirements such as GPUs or clusters.
-        </p>
-      <a href="/service/cloud/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
-    </div>
-  </div>
-</div>
-<br>
-<div class="card-group">
-  <div class="card">
-    <div class="card-block">
       <h4 class="card-title">Container Services</h4>
       <img align="right" src="/images/container-cluster.png" style="max-width:20%;" />
         <p class="card-text" style="width:90%;">
@@ -82,6 +69,19 @@ various systems are available to researchers.</p>
         a Kubernetes cluster to support research-oriented microservices.
         </p>
       <a href="/userinfo/microservices/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card-group">
+  <div class="card">
+    <div class="card-block">
+      <img align="right" src="/images/cloud.png" style="max-width:20%;" />
+      <h4 class="card-title">Virtual Machines - Public/Private Cloud</h4>
+        <p class="card-text">
+        Cloud-based computing solutions are also available in Amazon Web Services, Google Cloud Platform, and our private cloud UVA Skyline. All three provide options for quick deployments, short-term lifecycles, and unique requirements such as GPUs or clusters.
+        </p>
+      <a href="/service/cloud/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
 </div>
