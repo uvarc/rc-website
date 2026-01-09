@@ -46,7 +46,7 @@ various systems are available to researchers.</p>
     </div>
   </div>
 </div>
-<br>
+<!--<br>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
@@ -56,7 +56,7 @@ various systems are available to researchers.</p>
         <a href="/userinfo/accord" class="btn btn-warning" style="color:white;">Get started on ACCORD</a>
     </div>
   </div>
-</div>
+</div>-->
 <br>
 <div class="card-group">
   <div class="card">
@@ -72,7 +72,7 @@ various systems are available to researchers.</p>
     </div>
   </div>
 </div>
-<br>
+<!--<br>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
@@ -97,8 +97,7 @@ various systems are available to researchers.</p>
       <a href="/userinfo/access-ci/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
-</div>
-
+</div>-->
 <br>
 
 {{< systems-boilerplate >}}
