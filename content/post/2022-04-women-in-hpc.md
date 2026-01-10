@@ -32,6 +32,6 @@ Please join us for a lively panel discussion of the high-performance computing i
 
 * [**Carol Parish (U. Richmond)**](https://chemistry.richmond.edu/faculty/cparish/)
 
-* [**Mike Davis (VCU)**](https://chipc.vcu.edu/welcome/people/)
+* [**Mike Davis (VCU)**](https://research.vcu.edu/resources/cores/hprc/our-team/)
 
 Virginia WHPC is committed to increasing diversity and inclusion by promoting and encouraging the participation of women in high-performance computing and related fields. 
