@@ -20,7 +20,8 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 ### System
 
 ### Modules
-Apptainer will be upgraded to . Existing containers do not need to be rebuilt.
+- Apptainer will be upgraded to 1.4.5. Existing containers do not need to be rebuilt.
+- GCC 12.4.0 and all modules underneath will be removed. Please use 11.4.0 (default) or 14.2.0.
 
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
@@ -30,6 +31,7 @@ Apptainer will be upgraded to . Existing containers do not need to be rebuilt.
 |clara-parabricks|4.2.0 | |
 |cumulus_feature_barcoding|0.10.0|- |
 |danpos    |2.2.2 |-|
+|gcc       |12.4.0|11.4.0, 14.2.0|
 |gromacs   |2023.2|2025.x|
 |metamorpheus|0.0.320|-|
 |nanopolish|0.13.2|-|
