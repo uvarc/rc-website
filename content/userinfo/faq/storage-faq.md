@@ -37,7 +37,7 @@ Research Computing offers two tiers of leased storage, _Research Standard_ and _
 The best place to run your slurm jobs is out of `/scratch` storage. `/scratch` is a fast, robust filesystem best suited for running slurm jobs. `/home` and `/project` are also appropriate. We ask that users do not run jobs out of `/standard`, as `/standard` is not intended for file I/O. If your workflow specifies a "workdir" make sure that the directory is set to the appropriate file space and not in `/standard`.
 
 # How do I transfer data from /standard or other storage shares?
-To transfer files out of `/standard` into another storage space or otherwise move files between storage shares you can use [Globus](userinfo/globus/) or one of many command line options such as `cp` `mv` or `rsync`.
+To transfer files out of `/standard` into another storage space or otherwise move files between storage shares you can use [Globus](/userinfo/globus/) or one of many command line options such as `cp` `mv` or `rsync`.
 
 - `mv` is best suited for transfering 1 file or a small collection of files to a new location. ie `mv /standard/share/file.txt /scratch/mst3k` will move file.txt into scratch
 - `cp` will copy a file to a new location, keeping a copy in the original location. ie `cp /standard/share/file.txt /scratch/mst3k` will copy  file.txt into scratch, and keep it in /standard

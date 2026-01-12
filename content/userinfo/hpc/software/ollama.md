@@ -4,7 +4,7 @@ date = "2025-01-28T00:00:00-05:00"
 tags = [
   "rivanna", "software", "machine-learning","deep-learning"
 ]
-draft = false
+draft = true
 modulename = "ollama"
 softwarename = "Ollama"
 title = "Ollama and UVA HPC"

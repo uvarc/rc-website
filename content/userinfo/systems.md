@@ -13,7 +13,6 @@ images = [""]
 From supercomputers to HIPAA secure systems to cloud-based deployments with advanced infrastructure,
 various systems are available to researchers.</p>
 
-{{< systems-boilerplate >}}
 
 <div class="card-group">
   <div class="card">
@@ -47,7 +46,7 @@ various systems are available to researchers.</p>
     </div>
   </div>
 </div>
-<br>
+<!--<br>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
@@ -57,8 +56,23 @@ various systems are available to researchers.</p>
         <a href="/userinfo/accord" class="btn btn-warning" style="color:white;">Get started on ACCORD</a>
     </div>
   </div>
-</div>
+</div>-->
 <br>
+<div class="card-group">
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title">Container Services</h4>
+      <img align="right" src="/images/container-cluster.png" style="max-width:20%;" />
+        <p class="card-text" style="width:90%;">
+        Deploying software in containers has grown increasingly useful for research scenarios. Containers are portable, distributable,
+        allowing developers to include both code and dependencies (libraries, modules, etc.) in a single bundle. We operate
+        a Kubernetes cluster to support research-oriented microservices.
+        </p>
+      <a href="/userinfo/microservices/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
+    </div>
+  </div>
+</div>
+<!--<br>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
@@ -75,21 +89,6 @@ various systems are available to researchers.</p>
 <div class="card-group">
   <div class="card">
     <div class="card-block">
-      <h4 class="card-title">Container Services</h4>
-      <img align="right" src="/images/container-cluster.png" style="max-width:20%;" />
-        <p class="card-text" style="width:90%;">
-        Deploying software in containers has grown increasingly useful for research scenarios. Containers are portable, distributable,
-        allowing developers to include both code and dependencies (libraries, modules, etc.) in a single bundle. We operate
-        a Kubernetes cluster to support research-oriented microservices.
-        </p>
-      <a href="/userinfo/microservices/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
-    </div>
-  </div>
-</div>
-<br>
-<div class="card-group">
-  <div class="card">
-    <div class="card-block">
       <h4 class="card-title">NSF ACCESS-CI</h4>
       <img align="right" src="/images/access-logo.png" style="max-width:20%;" />
         <p class="card-text" style="width:90%;">
@@ -98,6 +97,7 @@ various systems are available to researchers.</p>
       <a href="/userinfo/access-ci/" class="card-link"><button class="btn btn-warning">Learn more</button></a>
     </div>
   </div>
-</div>
-
+</div>-->
 <br>
+
+{{< systems-boilerplate >}}

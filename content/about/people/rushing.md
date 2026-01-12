@@ -15,7 +15,7 @@ image = [
 subjects = [
   "machine-learning",
   "deep-learning",
-  "AI",
+  "ai",
   "hpc",
   "parallel-computing",
   "rivanna"
