@@ -15,7 +15,7 @@ layout = "single"
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store highly-sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or Export-Controlled data cannot access Rio at this time. To access Rio HPC, researchers must request a Linux virtual machine (VM) which serves as a login node.</p>
+<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store highly-sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or Export-Controlled data cannot access Rio at this time. To access Rio HPC, researchers must request a Ivy Linux virtual machine (VM) which serves as a login node.</p>
 
 {{< systems-boilerplate >}}
 
@@ -45,15 +45,15 @@ Ivy provides virtual computing environments specifically designed for interactiv
   {{% pi-eligibility %}}
 {{% /highlight %}}
 
-Access to Ivy resources is project-based and limited to PIs and their designated research team. Institutional Review Board approval is required. For health sciences research projects, an IRB-HSR-approved protocol with a waiver of HIPAA authorization is also required. Once a project is approved, the PI and each research team member must individually sign a RUDA for that specific project.
+Access to Ivy and Rio resources is project-based and limited to PIs and their designated research team. Institutional Review Board approval is required. For health sciences research projects, an IRB-HSR-approved protocol with a waiver of HIPAA authorization is also required. Once a project is approved by RC staff, the PI and each research team member must individually sign a RUDA for that specific project.
 
-[<button class="btn btn-success">Request an Ivy Account</button>](https://services.rc.virginia.edu/ivyvm)
+[<button class="btn btn-success">Request an Ivy/Rio Account</button>](https://services.rc.virginia.edu/ivyvm)
 
 - - -
 
 # Security Training {#training}
 
-In order to use Ivy, researchers must complete the High Security Awareness Training (HSAT). This training takes approximately 10 minutes to complete.
+In order to use Ivy/Rio, researchers must complete the High Security Awareness Training (HSAT). This training takes approximately 10 minutes to complete.
 
 Please complete the training at the following link: <a href="https://in.virginia.edu/hsat-training" target="_blank">https://in.virginia.edu/hsat-training</a>.
 
@@ -124,19 +124,19 @@ Ivy resources will be provided without a fee for approved projects. Please note 
   <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new"><button class="btn btn-sm btn-warning">Learn More about UVA VPN</button></a>
 </div>
 
-Once you have completed these three steps, you will be connected to the secure Ivy network. From there you can connect to a Virtual Machine, or use a web browser to access JupyterLab.
+Once you have completed these three steps, you will be connected to the secure Ivy network. From there, you can connect to a virtual machine or use a web browser to access applications such as JupyterLab, RStudio, or FastX Desktop. When used for Rio, the Ivy VM serves as a login node for accessing Rio HPC resources.
 
 - - -
 
 # Storage
 
-Ivy VM and Rio HPC have a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to either of these environments. Virtual machines do not come with any significant disk storage of their own. 
+Ivy VM and Rio HPC have a pool of over 13 petabytes of Network Attached Storage shared amongst users. An Ivy VM comes with 1 TB of our High Security Standard storage. PI's can request more storage using our [Storage Request Form](https://www.rc.virginia.edu/form/storage/). Virtual machines do not come with any significant disk storage of their own. 
 
 # Virtual Machines
 
 A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign in to a single VM.
 
-Virtual machines come in two platforms, *Rocky 8 Linux* and *Windows Server 2019*. Each platform is available in numerous instance types. Refer to the grid below for specifics.
+Virtual machines are available on two platforms: *Rocky Linux 8*, which by default provides access to Rio HPC resources and comes with Slurm and Open OnDemand preinstalled, and *Windows Server 2019*, offered as a standalone option. Each platform is available in multiple instance types. Please refer to the table below for details.
 
 
 {{< pricing ivy >}}
@@ -390,26 +390,30 @@ Beginning Sunday, April 14, your Ivy virtual machine (VM) will be rebooted on th
 If you have any questions or problems with your software applications after the security updates have been installed, you may [contact our user services team](https://www.rc.virginia.edu/form/support-request/?category=Ivy).
 - - -
 
-## JupyterLab Notebooks
+<!-- ## JupyterLab Notebooks
 
 {{% callout %}}
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" align="right" style="max-width:20%;" />
 JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones.
 <br clear=all />
 <a href="https://jupyter.org/" target="_new"><button class="btn btn-success">Learn more about Jupyter</button></a>
-{{% /callout %}}
-
+{{% /callout %}} 
+-->
 - - -
 
 # Using the Rio HPC System
 
 **Access to Rio HPC and Open OnDemand (OOD)**
 
-Linux VMs on Ivy now provide integrated access to the Rio HPC system and OOD interface by default. Once your Linux VM is provisioned, you can seamlessly use it as a login node to Rio and access OOD without submitting a separate request. 
+Linux VMs on Ivy now provide integrated access to the Rio HPC system and OOD interface by default. Once your Linux VM is provisioned, you can seamlessly use it as a login node to Rio and access OOD without submitting a separate request. Open OnDemand is a web-based portal that provides access to HPC resources, including applications such as RStudio, JupyterLab, and a desktop environment for running Graphical User Interface (GUI)-based applications on compute nodes. 
 
 **VM Availability and Sizing**
 
-As detailed above, Linux VMs are available in multiple sizes to match different research needs. Small Linux VMs with access to Rio are now offered at **no cost**. Larger Linux VM configurations remain available for projects that require additional computing resources; however, these are subject to the standard cost model.
+As detailed above, Linux VMs are available in multiple sizes to match different research needs. Small Linux VMs are now offered at **no cost**. Larger Linux VM configurations remain available for projects that require additional computing resources; however, these are subject to the standard cost model.
+
+**Storage**
+
+Any Linux VM used for Rio includes 1 TB of High Security Zone(HSZ) Research Standard storage by default. In addition, HSZ Project storage, backed by an IBM GPFS parallel file system, is now available by request on Rio. HSZ Project storage is more performant and feature-rich than HSZ Standard storage and is generally equivalent to SSZ Project storage for HPC workloads. All data stored in HSZ Project storage is encrypted at rest and can be transferred to and from Rio at high speed using Globus. For additional storage beyond the default 1 TB, please submit a requst using our [Storage Request Form](https://www.rc.virginia.edu/form/storage/).
 
 **CUI and Export-Controlled Data**
 
