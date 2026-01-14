@@ -27,6 +27,11 @@ High-Security Research Standard Storage is an HSD storage area within the HSZ wi
 
 Researchers can request space on High-Security Research Standard Storage by first requesting an Ivy account using the [Ivy request form](https://services.rc.virginia.edu/ivyvm). Researchers are granted 1TB of space at no-cost, and additional space can be requested in 1TB increments using our [Storage Request](/form/storage/) form.
 
+# High-Security Research Project Storage {#hs-project-storage}
+
+High-Security Research Project Storage is a high-performance parallel HSD storage area within the HSZ with a capacity of approximately 1.6 PB. High-Security Research Research Storage is integrated with the High-Security Data Transfer Node and mounted on a [Rio virtual machine](/userinfo/ivy/) (VM) to create a highly secure environment. Note: daily snapshots are available with HSZ Research Project Storage for the preceding 7 days. 
+
+Researchers can request space on High-Security Research Project Storage for an existing Ivy or Rio project in 1TB increments using our [Storage Request](/form/storage/) form.
 
 # Data Transfer to Ivy
 

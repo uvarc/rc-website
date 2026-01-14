@@ -44,12 +44,6 @@ Ivy is a secure computing environment for researchers consisting of virtual mach
 
 For standard security projects, UVA-RC supports microservices in a clustered orchestration environment that leverages Kubernetes to automate the deployment and management of many containers in an easy and scalable manner. This cluster has 876 cores and 4.9TB of memory allocated to running containerized services, including one node with 4 x A100 GPUs. It also has over 300TB of cluster storage and can attach to UVA-RC's broader storage offerings. 
 
-**ACCORD**
-
-The ACCORD project (NSF Award: #1919667) offers flexible web-based interfaces for sensitive and highly sensitive data in a system focused on supporting cross-institutional access and collaboration. The ACCORD platform consists of 8 nodes in a Kubernetes cluster, for a total of 320 cores and ~3.2TB of memory. Cluster storage is approximately 1PB of IBM Spectrum storage (GPFS).
-
-Researchers from non-UVA institutions can be brought into the ACCORD system through a memorandum of understanding between the researcher’s institution and UVA, security training for the researcher, and a posture-checking client installed on the researcher’s laptop/desktop. 
-
 # Data Storage 
 
 UVA Research Computing (UVA-RC) provides researchers with access to a robust, high-performance standard security zone (SSZ) data storage ecosystem designed to support a broad range of computational and data-intensive research workflows. Core storage services include an SSZ Research Project high-performance parallel file system that delivers approximately 12 PB of usable capacity with sustained read and write performance of up to 10 GB/sec. This system is tightly integrated with UVA-RC’s computing infrastructure and includes daily snapshotting to protect data integrity and enable rapid recovery from accidental deletion or corruption.
@@ -59,7 +53,6 @@ To support data-intensive SSZ research projects with diverse performance and cos
 In addition to these SSZ storage services, UVA-RC offers High Security Zone (HSZ) research storage solutions for projects with enhanced data security, compliance, or access-control requirements. These include an HSZ Research Standard file storage platform, providing approximately 13 PB of secure, scalable capacity, as well as a high-performance parallel HSZ Research Project file system, offering approximately 1.6 PB of project-scoped storage. Both HSZ storage systems are designed to meet institutional and regulatory security standards, support controlled access, and integrate seamlessly with approved HSZ VM and Rio HPC compute resources.
 
 Together, these storage platforms enable UVA-RC to support the full research data lifecycle—from active computation and analysis to secure project storage and long-term data stewardship across a wide spectrum of scientific and scholarly domains.
-
 
 # Data Centers, Network Connectivity, and Office Facilities 
 
