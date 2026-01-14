@@ -1,5 +1,5 @@
 +++
-title = "Highly Sensitive Data Storage - Ivy"
+title = "Highly Sensitive Data Storage - Ivy and Rio"
 description = ""
 author = "RC Staff"
 images = [""]
@@ -14,7 +14,7 @@ draft = false
 +++
 
 # Overview
-Residing within the High Security Zone (HSZ), the [Ivy](/userinfo/ivy/) secure computing environment is designed to fit your [highly sensitive](https://security.virginia.edu/definitions/highly-sensitive-data) research computing needs and meets HIPAA, FERPA, CUI and ITAR compliance standards. Within the HSZ, researchers can store their highly sensitive research data in High-Security Research Standard Storage. 
+Residing within the High Security Zone (HSZ), the [Ivy](/userinfo/ivy/) secure computing environment is designed to fit your [highly sensitive data](https://security.virginia.edu/definitions/highly-sensitive-data) (HSD) research computing needs and meets HIPAA, FERPA, CUI and ITAR compliance standards. Within the HSZ, researchers can store their highly sensitive research data in High-Security Research Standard Storage. 
 
 # Ivy Central Storage {#ivy-central-storage}
 Ivy Central Storage (ICS) was an HSD parking zone and central storage pool with a capacity greater than 1PB. This storage space was available for researchers with highly sensitive data and could be mounted on an Ivy Virtual Machine. 
@@ -31,11 +31,11 @@ Researchers can request space on High-Security Research Standard Storage by firs
 
 High-Security Research Project Storage is a high-performance parallel HSD storage area within the HSZ with a capacity of approximately 1.6 PB. High-Security Research Research Storage is integrated with the High-Security Data Transfer Node and mounted on a [Rio virtual machine](/userinfo/ivy/) (VM) to create a highly secure environment. Note: daily snapshots are available with HSZ Research Project Storage for the preceding 7 days. 
 
-Researchers can request space on High-Security Research Project Storage for an existing Ivy or Rio project in 1TB increments using our [Storage Request](/form/storage/) form.
+Researchers can request space on High-Security Research Project Storage for an existing Rio HPC project in 1TB increments using our [Storage Request](/form/storage/) form.
 
-# Data Transfer to Ivy
+# Data Transfer to HSZ (Ivy and Rio)
 
-To ensure that files are always secure, data can only be transferred to Ivy through the High-Security Data Transfer Node using Globus Connect. <a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and HSZ storage. Data can then be moved between HSZ storage as needed. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found [here](/userinfo/data-transfer).
+To ensure that files are always secure, data can only be transferred to Ivy and Rio through the High-Security Data Transfer Node using Globus Connect. <a href="https://www.globus.org/" target="_blank">Globus</a> provides access to data on local machines and HSZ storage. Data can then be moved between HSZ storage as needed. Globus is well suited for transferring both small files and large amounts of data. More information on Globus data transfer can be found [here](/userinfo/data-transfer).
 
 <h3>
   Sensitive Storage Data Transfer
