@@ -57,12 +57,12 @@ var user_token = getCookie("__user_token");
       </div>
     </div>
   </div>
-  <!--<div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
+  <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
     <div class="card-body">
-      <h5 class="card-title">ACCORD</h5>
-      <p class="card-text">Request information or support for an ACCORD project. <a href="/userinfo/accord" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
+      <h5 class="card-title">Dedicated Computing</h5>
+      <p class="card-text">Request exclusive, long-term access to a dedicated subset of HPC nodes. <a href="https://www.rc.virginia.edu/userinfo/hpc/access/#dedicated-computing" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
       <div class="support-tiles">
-        <a href="mailto:accord-support@virginia.edu?Subject=ACCORD Support Request"><button class="btn btn-primary btn-sm">ACCORD Support</button></a>
+        <a href="/form/dedicated-computing"><button class="btn btn-primary btn-sm">Request Dedicated Computing</button></a>
       </div>
     </div>
   </div> -->
