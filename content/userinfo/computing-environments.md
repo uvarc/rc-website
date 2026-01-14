@@ -52,7 +52,14 @@ Researchers from non-UVA institutions can be brought into the ACCORD system thro
 
 # Data Storage 
 
-All researchers on UVA-RC's systems have access to a high-performance parallel storage platform. This system provides 8PB (PetaBytes) of storage with sustained read and write speeds of up to 10 GB/sec. The integrity of the data is protected by daily snapshots. UVA-RC also supports a second-tier storage solution, 3 PB, designed to address the growing need for resources that support data-intensive research by offering a lower cost, scalable solution. The system is tightly integrated with other UVA-RC storage and computing resources in order to support a wide variety of research data life cycles and data analysis workflows. 
+UVA Research Computing (UVA-RC) provides researchers with access to a robust, high-performance standard security zone (SSZ) data storage ecosystem designed to support a broad range of computational and data-intensive research workflows. Core storage services include an SSZ Research Project high-performance parallel file system that delivers approximately 12 PB of usable capacity with sustained read and write performance of up to 10 GB/sec. This system is tightly integrated with UVA-RC’s computing infrastructure and includes daily snapshotting to protect data integrity and enable rapid recovery from accidental deletion or corruption.
+
+To support data-intensive SSZ research projects with diverse performance and cost requirements, UVA-RC also operates a second-tier, scalable SSZ Research Standard storage platform providing approximately 16 PB of capacity. This tier is optimized for large-scale data analysis, long-term project storage, and workflows that benefit from cost-effective, high-throughput access, while remaining fully integrated with UVA-RC compute resources.
+
+In addition to these SSZ storage services, UVA-RC offers High Security Zone (HSZ) research storage solutions for projects with enhanced data security, compliance, or access-control requirements. These include an HSZ Research Standard file storage platform, providing approximately 13 PB of secure, scalable capacity, as well as a high-performance parallel HSZ Research Project file system, offering approximately 1.6 PB of project-scoped storage. Both HSZ storage systems are designed to meet institutional and regulatory security standards, support controlled access, and integrate seamlessly with approved HSZ VM and Rio HPC compute resources.
+
+Together, these storage platforms enable UVA-RC to support the full research data lifecycle—from active computation and analysis to secure project storage and long-term data stewardship across a wide spectrum of scientific and scholarly domains.
+
 
 # Data Centers, Network Connectivity, and Office Facilities 
 
