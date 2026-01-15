@@ -19,7 +19,7 @@ toc = true
 
 - - -
 
-# General
+# <u>General</u>
 
 ## What storage options are available to me to use on Rivanna/Afton?
 All users are provided a 200-GB home directory for longer-term storage.  This directory provides "snapshots" though it is not backed up.  Each user also is provided 10TB of temporary "scratch" storage accessible as `/scratch/$USER` where `$USER` will stand for your ID.  Scratch storage is fast but is not backed up in any way.
@@ -45,7 +45,7 @@ Scratch storage is fast and provides a large quantity of free space.  However, t
 
 - - -
 
-# Storage Management
+# <u>Storage Management</u>
 
 ## How do I check my disk usage?
 Run `hdquota` on a HPC frontend.
@@ -84,7 +84,7 @@ If you wish to share data in leased space with a member of your group, be sure t
 
 - - -
 
-# Data Transfer
+# <u>Data Transfer</u>
 
 ## How do I transfer data from UVA Box to my /scratch directory on Rivanna/Afton?
 
@@ -139,7 +139,7 @@ Click the Up button in the Globus File Manager to navigate to higher level folde
 
 - - -
 
-# Downloading Files
+# <u>Downloading Files</u>
 
 ## What command-line tools are available on Rivanna/Afton for downloading files from web?
 
