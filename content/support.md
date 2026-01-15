@@ -65,7 +65,7 @@ var user_token = getCookie("__user_token");
         <a href="/form/dedicated-computing"><button class="btn btn-primary btn-sm">Request Dedicated Computing</button></a>
       </div>
     </div>
-  </div> -->
+  </div> 
   <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Container Services</h5>
