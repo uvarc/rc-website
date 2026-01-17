@@ -11,10 +11,9 @@ type = "form"
 private = true
 +++
 
-Can't find an answer in our website documentation, <a href="../../userinfo/faq/" target="_blank">FAQ</a>, or <a href="../../userinfo/user-guide/" target="_blank">User Guides</a>? 
-We'd love to hear from you!
+Have you seen our website documentation, <a href="../../userinfo/faq/" target="_blank">FAQ</a>, or <a href="../../userinfo/user-guide/" target="_blank">User Guides</a>? 
+If you can't find answer there, we'd love to hear from you!
 {{% jira-msg %}}
-
 {{< form-cookies >}}
 <form action="https://uvarc-api.pods.uvarc.io/rest/general-support-request/" method="post" id="request-form" accept-charset="UTF-8">
 
