@@ -11,7 +11,8 @@ type = "form"
 private = true
 +++
 
-Did you look for an answer in our documentation?
+Can't find an answer in our website documentation, <a href="../userinfo/faq/" target="_blank">FAQ</a>, or User Guides?
+We'd love to hear from you!
 {{% jira-msg %}}
 
 {{< form-cookies >}}
