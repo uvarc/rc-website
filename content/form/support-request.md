@@ -53,11 +53,11 @@ If you can't find answer there, we'd love to hear from you!
     <div id="dtc-help" style="font-size:90%;" class="form-text text-muted">Use this form for questions related to services offered by our Digital Technology Core. Learn more about the <a href="/service/dtc/" style="font-weight:bold;">Digital Technology Core</a>.</div>
   <div class="form-item form-type-textfield form-group">
     <label class="control-label" for="request_title">Brief description of your request <span class="form-required" title="This field is required.">*</span></label>
-    <p style="font-size:80%;">For best service, please provide as much detail as possible.</p>
     <input required="required" class="form-control form-text required" type="text" id="request_title" name="request_title" value="" size="60" maxlength="100" placeholder="What can we help you with?" />
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group">
     <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span> </label>
+    <p style="font-size:80%;">For best service, please provide as much detail as possible.</p>
     <div class="form-textarea-wrapper resizable">
       <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
       <div id="textarea_feedback" style="font-family:monospace;color:green;font-size:85%;margin-top:0.5rem;float:right;"></div>
