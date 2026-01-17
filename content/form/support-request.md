@@ -11,7 +11,7 @@ type = "form"
 private = true
 +++
 
-Can't find an answer in our website documentation, <a href="../userinfo/faq/" target="_blank">FAQ</a>, or User Guides?
+Can't find an answer in our website documentation, <a href="../../userinfo/faq/" target="_blank">FAQ</a>, or <a href="../../userinfo/user-guide/" target="_blank">User Guides</a>? 
 We'd love to hear from you!
 {{% jira-msg %}}
 
