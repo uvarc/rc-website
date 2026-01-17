@@ -11,6 +11,7 @@ type = "form"
 private = true
 +++
 
+Did you look for an answer in our documentation?
 {{% jira-msg %}}
 
 {{< form-cookies >}}
