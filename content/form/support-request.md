@@ -57,7 +57,7 @@ If you can't find answer there, we'd love to hear from you!
   </div>
   <div class="form-item form-group form-item form-type-textarea form-group">
     <label class="control-label" for="description">Details of your request <span class="form-required" title="This field is required.">*</span> </label>
-    <p style="font-size:80%;">For best service, please provide as much detail as possible.</p>
+    <p style="font-size:80%;">Please provide as much detail as possible.</p>
     <div class="form-textarea-wrapper resizable">
       <textarea required="required" class="form-control form-textarea required" id="description" name="description" cols="60" rows="8" maxlength="5000"></textarea>
       <div id="textarea_feedback" style="font-family:monospace;color:green;font-size:85%;margin-top:0.5rem;float:right;"></div>
