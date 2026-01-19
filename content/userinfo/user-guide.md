@@ -44,6 +44,10 @@ quell_footer = true
     </div>
   </div>
 
+</div>
+
+<div class="card-group">
+
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-database fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">
@@ -55,33 +59,7 @@ quell_footer = true
       </div>
     </div>
   </div>
-</div>
-
-<div class="card-group">
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-cloud fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
-    <div class="card-block">
-      <h4 class="card-title">Cloud</h4>
-      <p class="card-text">Have an idea you'd like to test? Need an environment provisioned in short-order? We can help you build in the AWS cloud.</p>
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/service/cloud/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div style="text-align:center;"><i class="fa fa-image fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
-    <div class="card-block">
-      <h4 class="card-title">Image Analysis</h4>
-      <p class="card-text">Do you have a large imaging dataset to process? Do you want to automate your image processing pipeline? Learn more about tools and techniques to speed up your workflow. 
-      </p>
-      <br clear=all />
-      <div class="contact-button">
-        <a href="/service/imaging/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
-      </div>
-    </div>
-  </div>
-
+  
   <div class="card">
     <div style="text-align:center;"><i class="fa fa-truck fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
     <div class="card-block">

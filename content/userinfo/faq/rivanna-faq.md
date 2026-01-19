@@ -13,16 +13,14 @@ type = "rivanna"
 
 * [General Usage](#general-usage)
 * [Allocations](#allocations)
+* [Dedicated Computing](#dedicated-computing)
 * [Research Software](#research-software)
 * [Job Management](#job-management)
-* [Storage Management](#storage-management)
-* [Data Transfer](#data-transfer)
-* [Downloading Files](#downloading-files)
 * [Other Questions](#other-questions)
 
 - - -
 
-# General Usage
+# <u>General Usage</u>
 
 ## How do I gain access to Rivanna/Afton?
 A faculty member must first request an allocation on the HPC system. Full details can be found [here](/userinfo/hpc/access).
@@ -107,77 +105,7 @@ alias vi='vim'
 
 - - -
 
-# Dedicated Computing
-
-## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
-
-The following table might help you decide which model suits you the best.
-
-<table class="table" style="margin-top:2rem;">
-    <thead class="thead-dark" style="">
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">SU Allocations</th>
-        <th scope="col">Dedicated Computing</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Description</th>
-        <td>Access to variety number of cores and node types</td>
-        <td>Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores</td>
-      </tr>
-      <tr>
-        <th scope="row">Lifetime</th>
-        <td>Standard alloc: 1 year; paid alloc: unlimited</td>
-        <td>5 year (expected hardware EOL)</td>
-      </tr>
-      <tr>
-        <th scope="row">Queue times</th>
-        <td>System load dependent; standard alloc: default priority; paid alloc: shorter than standard allocation; no preemption</td>
-        <td>None(assuming no contention for the dedicated resources by other group members)</td>
-      </tr>
-      <tr>
-        <th scope="row">Max walltime</th>
-        <td>3-7d</td>
-        <td>Typically 1 to 5 years</td>
-      </tr>
-      <tr>
-        <th scope="row">Ideal workload</th>
-        <td>Even or bursty</td>
-        <td>Even</td>
-      </tr>
-      <tr>
-        <th scope="row">GPU or largemem</th>
-        <td>Yes</td>
-        <td>If that node type was purchased (can be expensive!)</td>
-      </tr>
-    </tbody>
-</table>
-
-
-
-To learn about RC's service models and how to request and access each, plese refer to [here](/userinfo/hpc/access).
-
-## Can I still get access to HPC allocations without having to pay?
-
-Yes, standard and instructional allocations remain available free of charge.
-
-## What will happen to my unused SUs that I purchased before Jan 7, 2025?
-
-The service unit balance of your paid allocation will carry forward as is. Please be aware of the new service unit consumption rates which are more directly tied to the hardware type number of cpu cores, memory, and specialty hardware (e.g. GPUs) requested. 
-
-## What hardware options are available under the Dedicated Computing services? 
-
-See [here](/userinfo/hpc/access/#dedicated-computing).
-
-## Can the node I purchased under the Dedicated Computing model be configured as my personal login node to the HPC system? 
-
-No. Dedicated computing hardware is configured as compute nodes only. 
-
-- - -
-
-# Allocations
+# <u>Allocations</u>
 
 ## What is an allocation?
 
@@ -256,7 +184,77 @@ Only [Standard Allocations](/userinfo/hpc/access/#standard-allocations), and [In
 
 - - -
 
-# Research Software
+# <u>Dedicated Computing</u>
+
+## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
+
+The following table might help you decide which model suits you the best.
+
+<table class="table" style="margin-top:2rem;">
+    <thead class="thead-dark" style="">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">SU Allocations</th>
+        <th scope="col">Dedicated Computing</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Description</th>
+        <td>Access to variety number of cores and node types</td>
+        <td>Access to a [set of] dedicated node[s] of prespecified hardware with fixed number of cores</td>
+      </tr>
+      <tr>
+        <th scope="row">Lifetime</th>
+        <td>Standard alloc: 1 year; paid alloc: unlimited</td>
+        <td>5 year (expected hardware EOL)</td>
+      </tr>
+      <tr>
+        <th scope="row">Queue times</th>
+        <td>System load dependent; standard alloc: default priority; paid alloc: shorter than standard allocation; no preemption</td>
+        <td>None(assuming no contention for the dedicated resources by other group members)</td>
+      </tr>
+      <tr>
+        <th scope="row">Max walltime</th>
+        <td>3-7d</td>
+        <td>Typically 1 to 5 years</td>
+      </tr>
+      <tr>
+        <th scope="row">Ideal workload</th>
+        <td>Even or bursty</td>
+        <td>Even</td>
+      </tr>
+      <tr>
+        <th scope="row">GPU or largemem</th>
+        <td>Yes</td>
+        <td>If that node type was purchased (can be expensive!)</td>
+      </tr>
+    </tbody>
+</table>
+
+
+
+To learn about RC's service models and how to request and access each, plese refer to [here](/userinfo/hpc/access).
+
+## Can I still get access to HPC allocations without having to pay?
+
+Yes, standard and instructional allocations remain available free of charge.
+
+## What will happen to my unused SUs that I purchased before Jan 7, 2025?
+
+The service unit balance of your paid allocation will carry forward as is. Please be aware of the new service unit consumption rates which are more directly tied to the hardware type number of cpu cores, memory, and specialty hardware (e.g. GPUs) requested. 
+
+## What hardware options are available under the Dedicated Computing services? 
+
+See [here](/userinfo/hpc/access/#dedicated-computing).
+
+## Can the node I purchased under the Dedicated Computing model be configured as my personal login node to the HPC system? 
+
+No. Dedicated computing hardware is configured as compute nodes only. 
+
+- - -
+
+# <u>Research Software</u>
 
 ## How do I use research software that's already installed?
 We use the `lmod` system for managing software environments. [Learn more about how to use `lmod`](/userinfo/hpc/software/modules/).
@@ -307,7 +305,7 @@ Please check the user manual for your application/container before running on a 
       [https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access)
 - - -
 
-# Job Management
+# <u>Job Management</u>
 
 ## How do I submit jobs?
 You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our [Slurm documentation](/userinfo/hpc/slurm).
@@ -440,132 +438,6 @@ When submitting jobs using sbatch, Slurm will remember the environment that you 
 This makes it so that Slurm does not carry over any environment variables into your running job. Be sure to include the necessary `module load` or `conda activate` commands in your script to run your code. If you are using srun in your Slurm script, see an example script [here](/userinfo/hpc/software/miniforge/#mpi)
 
 - - -
-
-# Storage Management
-
-## What storage options are available to me to use on Rivanna/Afton?
-All users are provided a 200-GB home directory for longer-term storage.  This directory provides "snapshots" though it is not backed up.  Each user also is provided 10TB of temporary "scratch" storage accessible as `/scratch/$USER` where `$USER` will stand for your ID.  Scratch storage is fast but is not backed up in any way.
-
-If the free storage is not sufficient, you need snapshots of your files, or you wish to share space among a research group, the group should lease storage.
-
-## Why should I use /scratch storage?
-Scratch storage is fast and provides a large quantity of free space.  However, there are limits on the number of files and the amount of space you may use.  This is to maintain the stability and performance of the system.  [Please review our scratch filesystem policy for details](/userinfo/hpc/#scratch-directory). If you use or expect to use a large number of files please contact us.
-
-
-## How do I obtain leased storage?
-Research Computing offers two tiers of leased storage, _Research Standard_ and _Research Project_. Please see our [storage page](/userinfo/storage) for details.
-
-## How do I check my disk usage?
-Run `hdquota` on a HPC frontend.
-
-## How do I check my `/scratch` usage on Rivanna/Afton?
-Run the command `hdquota -s`:
-
-```
-hdquota -s
-```
-
-If you have used up too much space, created too many files, or have "old" files you may be regarded as "overallocated". Please note that if you are overallocated, you won't be able to submit any new jobs until you clean up your `/scratch` folder.
-
-## If I'm over my disk quota in either in my `/home` directory or my `/scratch` directory, how can I determine my disk usage?
-You can run the following command from your `/home` or `/scratch` directory to see how your disk usage is distributed
-across subdirectories, and where you need to remove files. You can increase `max-depth` to go further down in the directory structure.
-
-```
-du . -h  --max-depth=1|sort -h -r
-```
-
-## If I'm over my file limit in `/scratch`, how can I determine where all the files are located?
-From your `/scratch` directory, run the following command to determine where you need to remove files.
-
-```
-find . -type f | cut -d/ -f2 | sort | uniq -c
-```
-
-## How long can I store files in `/scratch`?
-`/scratch` is designed to serve as fast, temporary storage for running jobs, and is not long-term storage. For this reason, files are periodically marked for deletion from all `/scratch` directories. [Please review the /scratch filesystem policy for more details](/userinfo/hpc/#scratch-directory).  Store longer-term files in your home directory or [purchased storage](/userinfo/hpc/storage).
-
-## How do I share data in my `/scratch` or leased storage with a colleague?
-To share data from your `/scratch` directly with any other user, use [Globus](/userinfo/globus) sharing.  If your colleague also has an account on UVA HPC, he or she does not need to set up a personal endpoint but can simply log into the uva#main-DTN endpoint and navigate to his or her `/scratch` directory to transfer the files.
-
-If you wish to share data in leased space with a member of your group, be sure that permissions are set so that the group member can access your subdirectory.  The college can then simply use the data directly, or copy it elsewhere.  If you wish to share data from your leased storage to a colleague who is not a member of the group, use Globus sharing in the same manner as sharing `/scratch`.
-
-- - -
-
-# Data Transfer
-
-## How do I transfer data from UVA Box to my /scratch directory on Rivanna/Afton?
-
-Log into UVA HPC using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop, in the upper right hand corner of the browser window you should see 3 horizontal bars. Click on that and then select Preferences from the drop-down window. In the new window scroll down until you see Downloads and select ‘Always ask you where to save files’.  Then when you go to Box to download, a new window will pop up and if you click on ‘Other locations’, you can navigate to your scratch directory.
-
-## How do I transfer data from my /scratch directory on Rivanna/Afton to my UVA Box account?
-
-Log into UVA HPC using the web-based FastX and launch the MATE Desktop interface. Then from the top menu bar, open firefox through the FastX desktop and log into your UVA Box account. Once logged in to box, click on the New + button (upper right) to upload a file/folder. In the left sidebar of the new window, select Other Locations/Computer/scratch/<yourid> to navigate to your scratch directory and select the files/folders you want to upload to your box account.
-
-## What Linux commands can I use to transfer files to/from Rivanna/Afton?
-
-Smaller files can be transferred to/from Rivanna/Afton using `scp`, `sftp`, and `rsync` as well as standard FTP tools.
-
-Larger files should be moved using [Globus](/userinfo/globus/).
-
-[Read more](/userinfo/data-transfer/) about data transfer.
-
-## I need to push and commit code changes from Rivanna/Afton to my GitHub account. How do I set that up?
-
-You must first generate an ssh key and then copy it to your git repository. Here are the instructions for generating the ssh key and what to do on your git page:
-
-1. To generate an ssh key, see the following link: [ssh key generation](https://www.rc.virginia.edu/userinfo/howtos/general/sshkeys/)
-
-2. Click on the drop-down menu next to my Git profile picture in the upper right corner; Select Settings; Click on SSH and GPG keys in the left column; Click on the New SSH Key button and followed the directions to upload your ssh key.
-Make sure that the ssh key is in your authorized_keys file in your .ssh directory on Rivanna/Afton.
-
-3. The next step is to clone the repository using the ssh link. If you have already cloned the repository using the http link and made a number of changes to your files, you won’t want to redo them.  Rename the directory that was created when you first cloned the repository. Then, re-clone the repository using the ssh link and copy all of the files you had changed to the new directory. Finally, push those changes back to the repository.
-
-## How do I add external or mapped network drives onto the Globus Path
-
-When you first set up Globus, it only has access to certain folders of your local drive. You can add additional locations such as mapped network drives or external hard drives in the Globus Options/Preferences menu.
-
-Windows: Right click the Globus icon > Options > + to add a new folder
-
-Mac: Globus icon > Preferences > Access > + to add a new folder
-
-Click the Up button in the Globus File Manager to navigate to higher level folders.
-
-# Downloading Files
-
-## What command-line tools are available on Rivanna/Afton for downloading files from web?
-
-#### wget
-
-wget can be used to download files over HTTP,HTTPS and FTP protocols. You can use wget to download files from a single URL or multiple URLs. For example to download a file from a website you can use the following command:
-```bash
-wget https://example.com/file.zip
-```
-#### curl
-
-In addition to what mentioned for wget, curl can be used to upload files to a server as well. To download a file from a website, you can use the following command:
-```bash
-curl -O https://example.com/file.zip
-```
-
-#### axel
-
-axel not only downloads files over different protocols, but accelerates the process by using multiple connections to retrieve files from the destination. Axel is available on Rivanna/Afton through `module load axel`.
-The syntax for using axel over 10 connections is as follows:
-```bash
-axel -n 10 http://example.com/file.zip
-```
-
-## wget, curl or axel?
-
-For rather small files of size <1GB, it might be easier to use `wget` or `curl` since module loading is not necessary. For large files it is recommended to use axel on a compute node. Below is a simple comparison between the download rate of these tools on a single core compute node on Rivanna/Afton:
-
-
-| tool | 100MB | 1GB |
-|------|------|------|
-| wget | ~5s | 36s |
-| curl | ~5s | 35s |
-| axel | ~2s | 8s |  
 
 # Other Questions
 What if my question doesn't appear here? Take a look at our User Guide.  If your answer isn't there, contact us.
