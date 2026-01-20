@@ -20,7 +20,7 @@ type = "rivanna"
 
 - - -
 
-# <u>General Usage</u>
+# General Usage
 
 ## How do I gain access to Rivanna/Afton?
 A faculty member must first request an allocation on the HPC system. Full details can be found [here](/userinfo/hpc/access).
@@ -105,7 +105,7 @@ alias vi='vim'
 
 - - -
 
-# <u>Allocations</u>
+# Allocations
 
 ## What is an allocation?
 
@@ -184,7 +184,7 @@ Only [Standard Allocations](/userinfo/hpc/access/#standard-allocations), and [In
 
 - - -
 
-# <u>Dedicated Computing</u>
+# Dedicated Computing
 
 ## Service Unit Allocation or Dedicated Computing--What is the right HPC service for me? 
 
@@ -254,7 +254,7 @@ No. Dedicated computing hardware is configured as compute nodes only.
 
 - - -
 
-# <u>Research Software</u>
+# Research Software
 
 ## How do I use research software that's already installed?
 We use the `lmod` system for managing software environments. [Learn more about how to use `lmod`](/userinfo/hpc/software/modules/).
@@ -305,7 +305,7 @@ Please check the user manual for your application/container before running on a 
       [https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access)
 - - -
 
-# <u>Job Management</u>
+# Job Management
 
 ## How do I submit jobs?
 You submit jobs by writing a Slurm script and submitting it with the  sbatch command.  Please see our [Slurm documentation](/userinfo/hpc/slurm).
