@@ -139,7 +139,7 @@ Click the Up button in the Globus File Manager to navigate to higher level folde
 
 - - -
 
-# <span style="text-decoration: underline;">Downloading Files</span>
+# Downloading Files
 
 ## What command-line tools are available on Rivanna/Afton for downloading files from web?
 
