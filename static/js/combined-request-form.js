@@ -1,9 +1,21 @@
     // ===================================
     // Constants and Configuration
     // ===================================
+    const hostname = window.location.hostname;
 
+    let serviceHost = '';
+    
+    if (hostname.includes('staging-onprem.rc.virginia.edu') || hostname.includes('staging.rc.virginia.edu')) {
+      serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
+    } else if (hostname === 'rc.virginia.edu') {
+      serviceHost = 'https://uvarc-unified-service.pods.uvarc.io';
+    } else {
+      console.warn('Unknown environment, defaulting to staging');
+      serviceHost = 'https://uvarc-unified-service-test.pods.uvarc.io';
+    }
+    
     const API_CONFIG = {
-        baseUrl: 'https://uvarc-unified-service-test.pods.uvarc.io/uvarc/api/resource/rcwebform/user',
+        baseUrl: `${serviceHost}/uvarc/api/resource/rcwebform/user`,
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -208,7 +220,7 @@
                 for (let attempt = 1; attempt <= 3; attempt++) {
                     console.log(`Retrying metadata fetch (Attempt ${attempt})...`);
                     await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds before retry
-        
+                    const userId = getUserId();
                     try {
                         let retryMetadata = await $.ajax({
                             url: metadataUrl,
@@ -567,6 +579,7 @@
             $('#allocation-fields, #new-project-name-container, #project-description, #mygroups-group-container, #allocation-tier, #fdm_table, #fdm_button_div').show();
             $('#existing-projects-allocation').hide();
             $('#su-quantity').val(0);
+            $('#mygroups-group').val("");
             $('#new-project-name').val("");
             $('#project-description-text').val("");
             const radios = document.querySelectorAll('input[name="allocation-choice"]');
@@ -592,6 +605,7 @@
             $('#free_resource_distribution').hide();
             $('#capacity').val(0);
             $('#freeSpace').val(0);
+            $('#storage-mygroups-group').val("");
             $('#project-title').val("");
             $('#project-description-text-storage').val("");
             const radios = document.querySelectorAll('input[name="storage-choice"]');
@@ -742,26 +756,29 @@
 
     $('#admin-button').on('click', function (e) {
         e.preventDefault();
-        $('#combined-request-form').hide();
+        const source = encodeURIComponent(window.location.href);
+        const dynamicUrl = `${window.location.origin}/form/admin-form/?from=${source}`;
+        window.open(dynamicUrl,  '_self');
+       // $('#combined-request-form').hide();
          //$('#error-message-container').hide().html('');
         // Show and load the admin iframe
-        const iframe = $('#admin-iframe');
-        iframe.attr('src', 'https://uvarc-unified-service-test.pods.uvarc.io/uvarc/api/ticket/admin/mgmt');
-        iframe.show();
-        $('#admin-button').hide();
-        $('#resource-button').hide();
-        $('#back-button').show();
+       // const iframe = $('#admin-iframe');
+        //const srcUrl = `${serviceHost}/uvarc/api/ticket/admin/mgmt`
+       // iframe.attr('src', srcUrl);
+        //iframe.show();
+       // $('#admin-button').hide();
+       // $('#resource-button').hide();s
       });
 
-    $('#back-button').on('click', function (e) {
-        e.preventDefault();
-        $('#admin-iframe').hide().attr('src', '');
-        $('#combined-request-form').show();
-        $('#back-button').hide();
-        $('#resource-button').show();
-        $('#admin-button').show();
-        location.reload();
-    });
+    // $('#back-button').on('click', function (e) {
+    //     e.preventDefault();
+    //     $('#admin-iframe').hide().attr('src', '');
+    //     $('#combined-request-form').show();
+    //     $('#back-button').hide();
+    //     $('#resource-button').show();
+    //     $('#admin-button').show();
+    //     location.reload();
+    // });
 
     function setupEventHandlers() {
        
@@ -803,8 +820,12 @@
                 if (storageTire === 'Research Standard(ssz)' && changeExsisting) {
                     $('#free_resource_distribution').show();
                     $('#freeSpace').val(freeSpaceNumber);
+                } else if (storageTire === 'Research Standard(ssz)' && retireExsisting) {
+                    $('#free_resource_distribution').hide();
+                    $('#freeSpace').val(freeSpaceNumber);
                 } else
                     $('#free_resource_distribution').hide();
+
                 // Retrieve the data-additional attribute
                 const additionalData = parentRow.attr('data-additional');
                 
@@ -909,6 +930,13 @@
              }
           }
         });
+
+        document.getElementById("claimLink").addEventListener("click", function (event) {
+            event.preventDefault();
+            const source = encodeURIComponent(window.location.href);
+            const dynamicUrl = `${window.location.origin}/form/claim-form/?from=${source}`;
+            window.open(dynamicUrl,  '_self');
+        });
     }
     
     // ===================================
@@ -1002,7 +1030,7 @@
         if (isRetire ) {
             const requestType= formData.requestType==="storage" ? "storage" : "hpc_service-units";
             const group=$('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim();
-            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(2).text().trim()+"-"+$('input[name="selected-st"]:checked').closest('tr').find('td').eq(4).text().trim();
+            const requestName = $('input[name="selected-st"]:checked').closest('tr').find('td').eq(3).text().trim();
             requestUrl += `?group_name=${group}&resource_request_type=${requestType}&resource_requst_name=${requestName}`;
         }
         console.log("requestURL:"+requestUrl);
@@ -1311,7 +1339,7 @@
                     "project_name": formData.projectName?.trim(),
                     "project_desc": formData.projectDescription.trim(),
                     "data_agreement_signed": existingResource.data_agreement_signed,
-                    "pi_uid": userId,
+                    "pi_uid": existingResource.pi_uid,
                     "resources": {
                         "hpc_service_units": {
                             [selectedSU]: {
@@ -1373,7 +1401,7 @@
                       let changePayload = {
                         "group_name": selectedGroup,
                         "data_agreement_signed": existingResource.data_agreement_signed,
-                        "pi_uid": userId,
+                        "pi_uid": existingResource.pi_uid,
                         "project_name": formData.project_title?.trim(),
                         "project_desc": formData.projectDescription.trim(),
                         "resources": {
@@ -1630,12 +1658,31 @@
                 console.warn("No user groups found.");
                 populateGrouperMyGroupsDropdown([]);
             }
-    
+            let hasValidResources = false;
+            if (Array.isArray(userResources)) {
+                // Loop through each resource object in the array
+                userResources.forEach(resource => {
+                    // If we already found valid resources, skip further checks
+                    if (hasValidResources) return;
+            
+                    // Extract hpc_service_units and storage, default to empty objects if missing
+                    const hpcResources = resource.resources?.hpc_service_units || {};
+                    const storageResources = resource.resources?.storage || {};
+            
+                    // Check if either hpc_service_units or storage has any keys (i.e., is not empty)
+                     const hasHpcResources = Object.keys(hpcResources).length > 0;
+                     const hasStorageResources = Object.keys(storageResources).length > 0;
+            
+                    // If either has data, mark hasValidResources as true
+                    if (hasHpcResources || hasStorageResources) {
+                        hasValidResources = true;
+                    }
+                });
+            }
             // Process user resources if available
-            if (!Array.isArray(userResources) || userResources.length === 0) {
+            if (!hasValidResources) {
                 console.warn("No user resources found.");
                 document.getElementById("existing-resources-preview").style.display = "none";
-    
                 // Show the empty state message
                 document.getElementById("empty-message").style.display = "block";
                 return;
@@ -1662,7 +1709,7 @@
             return { userGroups: [], userResources: [] };
         }
     
-        const userGroups = data[0]?.user_groups || [];
+        const userGroups = data[0]?.owner_groups || [];
         const userResources = (() => {
             try {
                 return typeof data[0]?.user_resources === 'string'
@@ -1835,8 +1882,18 @@
         const { userResources } = parseConsoleData(apiResponse);
         const suTableBody = $('#storage-projects-tbody');
         suTableBody.empty();
-        if (!Array.isArray(userResources) || userResources.length === 0) {
-            suTableBody.append('<tr><td colspan="4" class="text-center">No existing storage available.</td></tr>');
+        let hasStorageResources = false;
+        if (Array.isArray(userResources)) {
+            for (const resource of userResources) {
+                const storageResources = resource.resources?.storage || {};
+                if (Object.keys(storageResources).length > 0) {
+                    hasStorageResources = true;
+                    break;
+                }
+            }
+        }
+        if (!hasStorageResources) {
+            suTableBody.append('<tr><td colspan="4" class="text-center" style="color: #888; font-style: italic; padding: 10px;">No existing storage resources available.</td></tr>');
             return;
         }
     
@@ -1899,8 +1956,18 @@
     const { userResources } = parseConsoleData(apiResponse);
     const suTableBody = $('#allocation-projects-tbody');
     suTableBody.empty();
-    if (!Array.isArray(userResources) || userResources.length === 0) {
-        suTableBody.append('<tr><td colspan="4" class="text-center">No existing service units available.</td></tr>');
+    let hasServiceResources = false;
+    if (Array.isArray(userResources)) {
+        for (const resource of userResources) {
+            const hpcResources = resource.resources?.hpc_service_units || {};
+            if (Object.keys(hpcResources).length > 0) {
+                hasServiceResources = true;
+                break;
+            }
+        }
+    }
+    if (!hasServiceResources) {
+        suTableBody.append('<tr><td colspan="4" class="text-center" style="color: #888; font-style: italic; padding: 10px;">No existing service units available.</td></tr>');
         return;
     }
 
@@ -2013,7 +2080,7 @@
     
             // Set a timeout for metadata loading
             const metadataTimeout = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error('Metadata loading timed out.')), 15000)
+                setTimeout(() => reject(new Error('Metadata loading timed out.')), 25000)
             );
     
             // Attempt to fetch metadata with a timeout
