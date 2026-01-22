@@ -122,8 +122,8 @@ students:
       year: 2024
       term: "Summer"
       type: "Video"
-      youtube_link: "https://www.youtube.com/watch?v=Wz86jF-d5F4"
-      embed_link: "https://www.youtube.com/embed/Wz86jF-d5F4"
+      youtube_link: "https://www.youtube.com/watch?v=4bu5hFeMEDg"
+      embed_link: "https://www.youtube.com/embed/4bu5hFeMEDg"
       archived: false
   - name: "Wright Quist"
     projects: 
@@ -131,8 +131,8 @@ students:
       year: 2024
       term: "Summer"
       type: "Video"
-      youtube_link: "https://www.youtube.com/watch?v=XYQduJCkrWY"
-      embed_link: "https://www.youtube.com/embed/XYQduJCkrWY"
+      youtube_link: "https://www.youtube.com/watch?v=tDy3gu92pv0"
+      embed_link: "https://www.youtube.com/embed/tDy3gu92pv0"
       archived: false
   - name: "Mohan Shankar"
     testimonial: 
@@ -165,8 +165,8 @@ students:
       year: 2024
       term: "Summer"
       type: "Video"
-      youtube_link: "https://www.youtube.com/watch?v=YuFVIZkp8uQ"
-      embed_link: "https://www.youtube.com/embed/YuFVIZkp8uQ"
+      youtube_link: "https://www.youtube.com/watch?v=WnZqNYPifAE"
+      embed_link: "https://www.youtube.com/embed/WnZqNYPifAE"
       archived: false
     - projectname: "Improving HPC Accessibility with Embedded PowerPoint Tutorials"
       year: 2025

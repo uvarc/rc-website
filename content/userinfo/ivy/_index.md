@@ -405,7 +405,7 @@ JupyterLab is a web-based interactive development environment for Jupyter notebo
 
 **Access to Rio HPC and Open OnDemand (OOD)**
 
-Linux VMs on Ivy now provide integrated access to the Rio HPC system and OOD interface by default. Once your Linux VM is provisioned, you can seamlessly use it as a login node to Rio and access OOD without submitting a separate request. Open OnDemand is a web-based portal that provides access to HPC resources, including applications such as RStudio, JupyterLab, and a desktop environment for running Graphical User Interface (GUI)-based applications on compute nodes. 
+Linux VMs on Ivy now provide integrated access to the Rio HPC system and OOD interface by default. Once your Linux VM is provisioned, you can seamlessly use it as a login node to Rio and access OOD without submitting a separate request. Open OnDemand is a web-based portal that provides access to HPC resources, including applications such as RStudio, JupyterLab, and a desktop environment for running Graphical User Interface (GUI)-based applications on compute nodes. OOD Dashboard can be accessed by connecting to the HSVPN and opening a web browser to the IP of the VM (e.g. http://10.254.X.X/), which can be found on the ivy project page (https://services.rc.virginia.edu/).
 
 **VM Availability and Sizing**
 
