@@ -6,6 +6,7 @@
   <base href="{{ .Site.BaseURL }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="Shortcut Icon" href="{{ absURL "/images/favicon.ico" }}" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/auto-carousel.css">
   <title>UVA {{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
   {{ "<!-- combined, minified CSS -->" | safeHTML }}
   <link href="{{ absURL "/css/style.css" }}" rel="stylesheet">
@@ -13,6 +14,7 @@
   {{ template "_internal/google_analytics.html" . }}
   {{ partial "head-custom.html" . }}
   <script src="/js/search-modal.js"></script>
+  <script src="/js/auto-carousel.js"></script>
 </head>
 
 <body>
@@ -20,8 +22,27 @@
   {{ partial "site-header.html" . }}
    <!-- {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/UVA_Data_Storage_Finder_Banner.png"
    "imageLink" "https://data-storage-finder.library.virginia.edu" "altText" "Image shows an aerial photo of UVA with specific locations highlighted with the following text overlaid: \"UVA Data Storage Finder. Find the right place for your research data. Try out the tool >\"" "linkAriaLabel" "Try out the Storage Finder tool" ) }} -->
-   {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/spring_2026_workshops.png"
-   "imageLink" "/education/workshops" "altText" "Image is a graphic to promote the upcoming 2026 Spring Workshops" ) }}
+   <!-- {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/spring_2026_workshops.png"
+   "imageLink" "/education/workshops" "altText" "Image is a graphic to promote the upcoming 2026 Spring Workshops" ) }} -->
+   
+  {{ $carouselItems := slice
+    (dict
+      "imagePath" "/images/UVA_Data_Storage_Finder_Banner.png"
+      "imageLink" "https://data-storage-finder.library.virginia.edu"
+      "altText" "Image shows an aerial photo of UVA with specific locations highlighted with the following text overlaid: UVA Data Storage Finder. Find the right place for your research data."
+    )
+    (dict
+      "imagePath" "/images/spring_2026_workshops.png"
+      "imageLink" "/education/workshops"
+      "altText" "Image is a graphic to promote the upcoming 2026 Spring Workshops"
+    )
+  }}
+
+  <div class="container responsive-image-container">
+    {{ partial "list-to-carousel.html" (dict "items" $carouselItems "duration" 8000 "id" "home-carousel") }}
+  </div>
+
+
   <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
     Press 'S' to search
   </div>
