@@ -4,8 +4,8 @@ author = "Staff"
 description = ""
 date = "2022-08-01T10:18:25-05:00"
 title = "ACCORD Community Meeting - August 5, 2022"
-draft = false
-tags = ["accord","k8s","hipaa","security","nsf"]
+draft = true
+tags = ["k8s","hipaa","security","nsf"]
 categories = ["feature","accord"]
 +++
 
