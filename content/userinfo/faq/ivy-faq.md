@@ -44,7 +44,7 @@ When you are added to a project, you will receive an email to review and sign th
 Note: You do not need to request an HSVPN filter. Our team submits the request when provisioning you as a new user. 
 
 ## Can I access the Internet from my VM?
-VMs run on a private, secure network and cannot reach outside Internet sources by default. PIs may request access to specific sites required for the project, subject to a security review by our team by submitting an [Ivy support ticket](https://www.rc.virginia.edu/form/support-request/). We cannot guarantee that all domains can be accessed.
+VMs run on a private, secure network and cannot reach outside Internet sources by default. PIs may request access to specific sites required for the project, subject to a security review by our team by submitting an [Ivy support ticket](https://www.rc.virginia.edu/form/support-request/). Access is limited to https domains only. We cannot guarantee that all domains can be accessed.
 
  - - -
 
