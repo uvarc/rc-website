@@ -89,7 +89,7 @@ private = true
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">Grouper/MyGroups Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
-      <p class=tiny>This Grouper group will control access to the storage space. PIs need to be an owner and member of the group. Membership can be modified via the <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> app. Legacy MyGroups groups created before November 28th, 2023, can be accessed through the “Legacy MyGroups” folder in <a href="https://mygroups.virginia.edu/groups/" target="_new" style="font-weight:bold;"> Grouper</a>.</p> 
+      <p class=tiny>This group will control access to the storage space. PIs need to be an owner and member of the group. Membership can be modified via the <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> app. Legacy MyGroups groups created before November 28th, 2023, can be accessed through the “Legacy MyGroups” folder in <a href="https://mygroups.virginia.edu/groups/" target="_new" style="font-weight:bold;"> Grouper</a>.</p> 
     </div>
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
