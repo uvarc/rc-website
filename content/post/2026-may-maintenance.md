@@ -32,6 +32,7 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 |cumulus_feature_barcoding|0.10.0|- |
 |danpos    |2.2.2 |-|
 |gcc       |12.4.0|11.4.0, 14.2.0|
+|gdb       |13.1-py3.11|16.3|
 |gromacs   |2023.2|2025.x|
 |metamorpheus|0.0.320|-|
 |nanopolish|0.13.2|-|
