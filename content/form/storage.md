@@ -94,7 +94,7 @@ private = true
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-      <p class=tiny>This will be the name of your storage space on the file system. The name may not contain spaces and it can, but does not necesarily need to be the same as the associated Grouper group. <strong>If you are modifying an existing storage share, please ensure this name matches exactly how it is visible on the file system.</strong></p>
+      <p class=tiny>This will be the name of your storage space on the file system. The name may not contain spaces and it can, but does not necesarily need to be the same as the associated Grouper group. <strong>If you are modifying an existing storage space, please ensure this name matches exactly how it is listed on the file system.</strong></p>
     </div>
     {{% group_creation_tip %}}          
   </div>
