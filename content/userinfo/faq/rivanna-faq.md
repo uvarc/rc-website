@@ -303,6 +303,11 @@ Please check the user manual for your application/container before running on a 
 6. Open a terminal window on the HPC system, and move to the location where your scripts are.  We recommend using the web-based FastX application (see below). Once in a terminal window, type sbatch followed my the name of your Slurm script.
 
       [https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access](https://www.rc.virginia.edu/userinfo/hpc/login/#remote-desktop-access)
+
+## I am getting a Killed message trying to create a conda environment.
+
+You are likely getting this message because you are running out of memory during the creation of your conda environment. The login nodes have limited memory availability per user, which can commonly be the cause of this message. Instead, start an [interactive job](https://www.rc.virginia.edu/userinfo/hpc/slurm/#submitting-an-interactive-job) requesting additional memory. If you receive this error within an interactive job, request an increasing amount of memory until the error resolves.
+
 - - -
 
 # Job Management
