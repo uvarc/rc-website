@@ -26,24 +26,25 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-|cellassign|0.99.2|-|
-|cellpose  |3.0.10|4.0.5|
-|clara-parabricks|4.2.0 | |
+|cellassign               |0.99.2|-|
+|cellpose                 |3.0.10|4.0.5|
+|clara-parabricks         |4.2.0 | |
 |cumulus_feature_barcoding|0.10.0|- |
-|danpos    |2.2.2 |-|
-|gcc       |12.4.0|11.4.0, 14.2.0|
-|gdb       |13.1-py3.11|16.3|
-|gromacs   |2023.2|2025.x|
-|metamorpheus|0.0.320|-|
-|nanopolish|0.13.2|-|
-|nibabies  |22.1.3|-|
-|openmm    |7.5.0 |-|
-|peer      |1.3   |-|
-|rmats-turbo|4.1.1|-|
-|skopeo    |1.13.1|-|
-|subversion|1.14.0|-|
-|thermorawfileparser|1.3.4|-|
-|vg        |1.22.0|-|
+|danpos                   |2.2.2 |-|
+|gcc                      |12.4.0|11.4.0, 14.2.0|
+|gdb                      |13.1-py3.11|16.3|
+|gromacs                  |2023.2|2025.x|
+|gsea                     |4.3.3 |4.4.0|
+|metamorpheus             |0.0.320|-|
+|nanopolish               |0.13.2|-|
+|nibabies                 |22.1.3|-|
+|openmm                   |7.5.0 |-|
+|peer                     |1.3   |-|
+|rmats-turbo              |4.1.1 |-|
+|skopeo                   |1.13.1|-|
+|subversion               |1.14.0|-|
+|thermorawfileparser      |1.3.4|-|
+|vg                       |1.22.0|-|
 {{< /table >}}
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
