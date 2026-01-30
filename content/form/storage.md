@@ -89,12 +89,12 @@ private = true
     <div id="group-selector" class="col form-item form-group form-item form-type-textarea form-group"> 
       <label class="control-label" for="mygroup-ownership">Grouper/MyGroups Ownership <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required typeahead" type="text" id="mygroup-ownership" name="mygroup-ownership" placeholder="Group Name" size="32" maxlength="32" style="width:14rem;font-family:courier;" />
-      <p class=tiny>Grouper or MyGroups group name under your Eservices user ID. You will have access to <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> management and will be able to add/remove users for your project.  Legacy MyGroups groups created before November 28th, 2023, can be accessed through the “Legacy MyGroups” folder on <a href="https://mygroups.virginia.edu/groups/" target="_new" style="font-weight:bold;"> Grouper</a>.</p> 
+      <p class=tiny>This group will control access to the storage space. PIs need to be an owner <strong>and</strong> member of the group. Membership can be modified via the <a href="https://groups.identity.virginia.edu/" target="_new" style="font-weight:bold;">Grouper</a> app. Legacy MyGroups groups created before November 28th, 2023, can be accessed through the “Legacy MyGroups” folder in <a href="https://mygroups.virginia.edu/groups/" target="_new" style="font-weight:bold;"> Grouper</a>.</p> 
     </div>
     <div class="col form-item form-type-textarea form-group">
       <label class="control-label" for="shared-space-name">Shared Space Name <span class="form-required" title="This field is required.">*</span></label>
       <input required="required" class="form-control form-text required" type="text" id="shared-space-name" name="shared-space-name" value="" size="40" maxlength="40" style="width:14rem;font-family:courier;" />
-      <p class=tiny>This is the name to be applied to your shared storage space as it is visible on the cluster. The name may or may not match the name of the Grouper group. Shared space names may not contain spaces. If you are modifying an existing storage share, please ensure this name matches how it is visible on the system.</p>
+      <p class=tiny>This will be the name of your storage space on the file system. The name may not contain spaces and it can, but does not necesarily need to be the same as the associated Grouper group. <strong>**If you are modifying an existing storage space, please ensure this name matches exactly (case-sensitive) how the storage space is listed on the file system.</strong></p>
     </div>
     {{% group_creation_tip %}}          
   </div>
