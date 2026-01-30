@@ -79,18 +79,6 @@ We provide the following JupyterLab extensions:
 - [jupyterlab-toc](https://github.com/jupyterlab/jupyterlab-toc) auto-generates a table of contents in the left area
 - [voila](https://voila.readthedocs.io/en/stable/index.html) allows you to convert a Jupyter Notebook into an interactive dashboard
 
-# JupyterLab on Rio
-## Access
-Connecting to JupyterLab through OOD on Rio is similar to the standard security zone (Rivanna/Afton). You'll begin by [connecting to your Linux VM](https://www.rc.virginia.edu/userinfo/ivy/#connecting-to-your-vm). On the top right of the menu bar of the Open OnDemand dashboard, click on “Interactive Apps”, then click "JupyterLab" in the drop-down box. You may be prompted to enter your credentials (computingID and EServices password) each time you need each time a new notebook file, kernel, or JupyterLab session is selected. Other than this, above instructions should be followed. More information regarding Rio's partition and systems details are outlined [here](https://www.rc.virginia.edu/userinfo/ivy/#system-details).
-
-## Conda Environments and Custom Kernels
-Inside of the JupyterLab terminal, conda needs to be loaded with Miniforge module (Eg `module load miniforge`). Environments are created under `/standard/ivy-xyz-xyz/<computingID>/.conda/envs`, where `ivy-xyz-xyz` is the name of your project, and `<computingID>` is your computing ID.
-
-Conda environments created outside of OOD JupyterLab (Eg OOD Clusters>HPC shell access, or through ssh) can still be accessed if instructions [here](https://www.rc.virginia.edu/userinfo/hpc/software/miniforge/#using-conda-environments-on-rio) are followed.
-
-Kernels can be created in the OOD JupyterLab terminal and associated files are written to `/standard/ivy-xyz-xyz/<computingID>/.local/share/jupyter/kernels `.
-
-
 # FAQ
 ## How to create custom JupyterLab kernels?
 Please refer to our [how-to](/userinfo/howtos/rivanna/custom-jupyter-kernels).
