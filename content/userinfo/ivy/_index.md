@@ -486,6 +486,7 @@ Similar to our clusters Rivanna and Afton in standard security zone, Rio is a ma
 
 For an introduction to the Rio HPC system, please see our [tutorial](https://learning.rc.virginia.edu/tutorials/rio-intro/).
 
+
 # Data Transfer In/Out of Ivy/Rio {#data-transfer-in-out-of-ivy}
 
 Moving sensitive data into the Ivy VM platform (and Rio) is possible through a secure Globus DTN (data transfer node). The Ivy DTN is connected to a pool of secure storage called “High-Security Research Standard Storage”, which in turn is connected to Ivy VMs. Only active research projects using Ivy virtual machines can use this service.
