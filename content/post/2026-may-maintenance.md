@@ -31,7 +31,7 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
     A few modules will be moved under `core` (no need to load gcc), `openmpi` (e.g. hisat2/2.2.1), or `apptainer` (e.g. grass/8.4.2). Please use `module spider <NAME>` to check the load command.
 - GCC 12.4.0 and all modules under it will be removed. 
 - Apptainer will be upgraded to 1.4.5. Existing containers do not need to be rebuilt.
-- Below is a subset of the module changes, since there are too many to list.
+- The modules to be removed during this maintenance are listed below.
 
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
