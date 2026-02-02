@@ -192,14 +192,14 @@ If you want to use a newer or different version of R without reinstalling your p
 
 To use the script, provide two arguments: the current version of R and the desired version of R. For example, if you want to install the packages you're using with R 4.3.1 with R 4.6.0, type:
 
-```/share/resources/HPCtools/updateRlib 4.3.1 4.5.0```
+```/share/resources/HPCtools/updateRlib 4.3.1 4.6.0```
 
 The script will prompt you:
 ```
 Packages from
 ~/R/goolf/4.3 
 will be built in 
-~/R/goolf/4.5 
+~/R/goolf/4.6 
 Is this what you want to do? <Y or N>
 ```
 Respond with "Y" to re-install your packages and make them compatible with the newer R version.
