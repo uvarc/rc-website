@@ -28,6 +28,7 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
     - rust/1.92.0
 
     If a module is only found under GCC 11.4.0, it should be seen as deprecated, meaning it will be removed with the entire GCC 11.4.0 toolchain in the future. (They are not removed during this maintenance.) If you still need to use these modules, please let us know as soon as possible.
+
     A few modules will be moved under `core` (no need to load gcc), `openmpi` (e.g. hisat2/2.2.1), or `apptainer` (e.g. grass/8.4.2). Please use `module spider <NAME>` to check the load command.
 - GCC 12.4.0 and all modules under it will be removed. 
 - Apptainer will be upgraded to 1.4.5. Existing containers do not need to be rebuilt.
