@@ -37,11 +37,13 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
+|apptainer                |1.3.4 |1.4.5 |
 |cellassign               |0.99.2|-|
 |cellpose                 |3.0.10|4.x|
 |clara-parabricks         |4.2.0 | |
 |cumulus_feature_barcoding|0.10.0|-|
 |danpos                   |2.2.2 |-|
+|gcc                      |12.4.0|14.2.0 (default), 11.4.0 (legacy) |
 |gdb                      |13.1-py3.11|16.3|
 |gromacs                  |2023.2|2025.x|
 |gsea                     |4.3.3 |4.4.0|
