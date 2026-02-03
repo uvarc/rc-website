@@ -23,6 +23,8 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 
 - GCC 14.2.0 will become the new default. Most modules under 11.4.0 will be migrated under 14.2.0. Some of the most important upgrades include:
     - bcftools|htslib|samtools/1.23
+    - mariadb/11.8.3 (new)
+    - postgresql/18.1
     - python/3.13.11
     - R/4.6.0
     - rust/1.92.0
@@ -34,6 +36,9 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
     - A few modules will be moved under `openmpi` (e.g. hisat2/2.2.1) or `apptainer` (e.g. grass/8.4.2). Please use `module spider <NAME>` to check the load command.
     - **[R]** Apart from the removal of 4.3.1, existing R versions will remain under GCC 11.4.0, so that users won't have to reinstall their R libraries. Starting from 4.6.0, R will be built under 14.2.0.
     - **[Boost]** Starting from version 1.88.0, the MPI-enabled module name is `boost.mpi`. The non-MPI module name is `boost`.
+    - **[Berkeley DB]** `berkeley_db` is renamed to `db`.
+    - **[SRA Toolkit]** `sratoolkit` is renamed to `sra-toolkit`.
+    - **[wigToBigWig/Kent Tools]** `wigtobigwig/2.8` is absorbed into `kent-tools/487`. Note the change in the version format of the latter.
 - GCC 12.4.0 and all modules under it will be removed. 
 - Apptainer will be upgraded to 1.4.5. Existing containers do not need to be rebuilt.
 - The modules to be removed during this maintenance are listed below.
