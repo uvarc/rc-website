@@ -29,7 +29,7 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
     - R/4.6.0
     - rust/1.92.0
 
-    If a module is only found under GCC 11.4.0, it should be seen as deprecated, meaning it will be removed with the entire GCC 11.4.0 toolchain in the future. Deprecated modules are listed at the end of this page and will not removed during this maintenance. If you still need to use these modules, please let us know as soon as possible.
+    If a module is only found under GCC 11.4.0, it should be seen as deprecated, meaning it will be removed with the entire GCC 11.4.0 toolchain in the future. Deprecated modules are listed at the end of this page and will not be removed during this maintenance. If you still need to use these modules, please let us know as soon as possible.
 
     Some specifics:
 
