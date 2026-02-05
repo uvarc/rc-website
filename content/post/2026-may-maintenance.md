@@ -69,6 +69,27 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 |vg                       |1.22.0  |-|
 {{< /table >}}
 
+
+### Transitioning to a new R version
+
+If you want to use the newer R 4.6.0 version you will need to update your R packages. Without reinstalling your packages manually, you can run the `updateRlib` script. This script is located under `/share/resources/HPCtools`.
+
+To use the script, provide two arguments: the current version of R and the newer version. For example, if you want to install the packages you're using with R 4.3.1 with R 4.6.0, type:
+
+```/share/resources/HPCtools/updateRlib 4.3.1 4.6.0```
+
+The script will prompt you:
+```
+Packages from
+~/R/goolf/4.3 
+will be built in 
+~/R/goolf/4.6 
+Is this what you want to do? <Y or N>
+```
+Respond with "Y" to re-install your packages and make them compatible with the newer R version.
+
+### Deprecated modules under GCC 11.4.0
+
 - Deprecated modules under GCC 11.4.0 are listed alphabetically below. They will not be removed during this maintenance.
     - Non-MPI
 
@@ -89,5 +110,6 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
         gildas itk mafft regtools sundials
         wxpython wxwidgets
         ```
+
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
