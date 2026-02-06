@@ -190,7 +190,9 @@ Any violation of the University’s security policies, or any behavior that is c
 
 ## Acceptable Use of the University’s Information Technology Resources
 
-According to UVA policy, users are prohibited from downloading or using applications such as TikTok, WeChat, DeepSeek, and similar software on any RC resources. For more details, please see [here](https://uvapolicy.virginia.edu/policy/irm-002).
+Users are required to comply with all applicable University policies governing [acceptable use of information technology resources](https://uvapolicy.virginia.edu/policy/irm-002). This includes restrictions on downloading or using prohibited applications such as DeepSeek AI, TikTok, WeChat, and CapCut on RC resources. 
+
+In addition, users are responsible for safeguarding research records in accordance with [RES-002: Ownership, Retention, Safeguarding, Management, and Transfer of Research Records](https://uvapolicy.virginia.edu/policy/RES-002) and should adhere to the University's [Generative AI Use Guidelines](https://in.virginia.edu/genai-useguidelines). This includes maintaining research records on University-owned and/or University-managed devices, systems, or services. The University recommends the use of appropriately contracted and licensed Gen AI tools to prevent the inadvertent exposure of internal use or sensitive data.
 
 <br clear=all />
 
