@@ -59,6 +59,7 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 |metamorpheus             |0.0.320 |-|
 |nanopolish               |0.13.2  |-|
 |nibabies                 |22.1.3  |-|
+|nvhpc                    |24.5    |25.3+ |
 |openmm                   |7.5.0   |-|
 |peer                     |1.3     |-|
 |R                        |4.3.1   |4.4.1+ |
