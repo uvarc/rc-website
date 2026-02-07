@@ -74,8 +74,8 @@ VMs are provisioned with 1TB of High Security Research Standard Storage that all
 ## How do I access my High Security Research Standard or Research Project Storage? 
 After SSH login on a Linux VM:  
 
- * Project Storage: cd ../../project/ivy-proj-name 
- * Standard Storage: cd ../../standard/ivy-proj-name 
+ * Project Storage: `cd /project` 
+ * Standard Storage: `cd /standard/` 
 
 Replace ivy-proj-name with your Ivy project’s Grouper group name.
 Storage may also be accessed via the Open OnDemand (OOD) file manager or Windows File Explorer for Windows VMs. 
@@ -112,7 +112,7 @@ The partitions currently available are standard and gpu. Standard is for CPU-bas
 Rio hardware only has Research Standard and Research Project storage mounted. A user’s home folder is not visible on Rio compute nodes. No files necessary to perform a job should reside in /home. This includes job scripts, which must be submitted within either standard or project storage.
 
 ## What extra information does my job script need? 
-Slurm requires that you input an account using the `–A` or `--account` option. Your account name is the group name depicted on your project’s page. 
+Slurm requires that you input an account using the `–A` or `--account` option. Your account name is the group name listed on your project's page on the [Ivy Services Application](https://services.rc.virginia.edu/). 
 
 ## What data is permitted for use with Rio?
 Refer to the [data sensitivity matrix](https://www.rc.virginia.edu/userinfo/storage/data-sensitivity/) to determine which data types are permitted on Rio, or reach out to RC-DAC@virginia.edu for a consultation. 
@@ -129,4 +129,4 @@ Only Linux VMs have the functionality to access the Rio cluster. Windows VMs can
  - - - 
 
 # Other Questions
-What if my question doesn't appear here? Take a look at our User Guide.  If your answer isn't there, contact us.
+What if my question doesn't appear here? Take a look at our User Guide. If your answer isn't there, submit a [support ticket](https://www.rc.virginia.edu/form/support-request/).
