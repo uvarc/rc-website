@@ -11,7 +11,7 @@ email = "bzm5zw@virginia.edu"
 type = "people"
 description = ""
 author = "UVARC Staff"
-image = "images\profiles\profile_aaditi_rai.png" 
+image = "/images/profiles/profile_aaditi_rai.png" 
 subjects = [
    "python"
 ]
