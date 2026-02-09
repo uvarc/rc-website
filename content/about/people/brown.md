@@ -1,10 +1,10 @@
 +++
 draft = false
-date = "2026-02-09T11:15:10-05:00"
+date = "2025-02-05T11:15:10-05:00"
 title = "Jayden Brown"
 job_title = "Student"
 lastname = "brown"
-student_year = "3rd Year"
+student_year = "3rd year"
 student_type = "Undergraduate"
 biolink = true
 email = "mug4ct@virginia.edu"
