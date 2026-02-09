@@ -18,4 +18,4 @@ subjects = [
 active = true
 +++
 
-Jayden is a 3rd year student pursuing a major computer science with an applied math minor. His primary experience developing is in Python, but also works with markdown languages and C as well. He loves to learn in varying areas of math and technology and hopes to pursue a PHD in the future. Outside of Research Computing, he loves playing table tennis and trying new chai tea flavors.
+Jayden is a 3rd year student pursuing a major computer science and hoping to have an applied math minor. His primary experience developing is in Python, but also works with markdown languages and C as well. He loves to learn in varying areas of math and technology and wants to pursue a PHD in the future. Outside of Research Computing, he loves playing table tennis and trying new chai tea flavors.
