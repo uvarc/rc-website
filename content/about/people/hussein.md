@@ -11,7 +11,7 @@ type = "people"
 description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_hussein_fadumo.png"
-email = "fmh7pvuj@virginia.edu"
+email = "fmh7pv@virginia.edu"
 subjects = ["r","python", "sql", "machine learning"]
 +++
 
