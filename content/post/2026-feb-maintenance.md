@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2026-02-10T00:00:00-05:00"
+date = "2026-02-02T00:00:00-05:00"
 title = "HPC Maintenance: Feb 17, 2026"
 draft = false
 tags = ["ivy", "hpc"]
@@ -16,6 +16,19 @@ All systems are expected to return to service by **Wednesday, February 17** at 6
 ## IMPORTANT MAINTENANCE NOTES
 
 ### What to Expect During Maintenance  
+
+**Access:**
+
+ 
+You will continue to have access to your Ivy Virtual Machine (VM). However, you will not be able to access the HPC systems, including Open OnDemand, from those VMs used as Rio login nodes. 
+
+**Jobs:**
+ 
+You can submit jobs until maintenance begins. If the scheduler determines that a job cannot finish before maintenance starts, it will be held in the queue and will automatically start once the system is back online. No jobs will run during maintenance. 
+
+**Storage:**
+ 
+HSZ Research Standard and Research Project storage will remain accessible via the VMs. However, the Data Transfer Node (DTN) will undergo a brief security upgrade, temporarily pausing ongoing Globus transfers. All transfers will automatically resume once the DTN is back online. 
 
 ### System
 
