@@ -1,11 +1,11 @@
- +++
++++
 draft = false
 date = "2024-06-06T13:41:00"
 title = "Fadumo Hussein"
 job_title = "student"
 student_year = "2nd Year"
 student_type = "Graduate"
-lastname = "Huseein"
+lastname = "Hussein"
 biolink = true
 type = "people"
 description = ""
