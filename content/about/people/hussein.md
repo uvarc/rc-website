@@ -1,17 +1,17 @@
- +++
++++
 draft = false
 date = "2024-06-06T13:41:00"
 title = "Fadumo Hussein"
 job_title = "student"
 student_year = "2nd Year"
 student_type = "Graduate"
-lastname = "Huseein"
+lastname = "Hussein"
 biolink = true
 type = "people"
 description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_hussein_fadumo.png"
-email = "fmh7pvuj@virginia.edu"
+email = "fmh7pv@virginia.edu"
 subjects = ["r","python", "sql", "machine learning"]
 +++
 
