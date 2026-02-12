@@ -42,6 +42,7 @@ Some specifics:
 - [Amber] `amber` and `ambertools` will become distinct modules.
 - [Berkeley DB] `berkeley_db` will be renamed to `db`.
 - [Boost] Starting from version 1.88.0, the MPI-enabled module name will be `boost.mpi`. The non-MPI module name will be `boost`.
+- [CUDA] Modules that depend on CUDA 12.x will be consolidated to 12.8.0. `cuda/12.2.2, 12.4.1` will be removed. If you built your own CUDA code with these versions, check if they run fine under 12.8.0. You may not need to rebuild.
 - [SRA Toolkit] `sratoolkit` will be renamed to `sra-toolkit`.
 - [wigToBigWig/Kent Tools] `wigtobigwig` will be absorbed into `kent-tools/487`. Note the change in the version format of the latter.
 
@@ -92,6 +93,7 @@ The modules to be removed during this maintenance are listed below.
 |cellassign               |0.99.2  |-|
 |cellpose                 |3.0.10  |4.0.5+ |
 |clara-parabricks         |4.2.0   |4.6.0 |
+|cuda                     |12.2.2, 12.4.1  |12.8.0+ |
 |cumulus_feature_barcoding|0.10.0  |-|
 |danpos                   |2.2.2   |-|
 |gcc                      |12.4.0  |14.2.0 (default), 11.4.0 (legacy) |
