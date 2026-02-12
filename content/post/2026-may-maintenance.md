@@ -48,7 +48,7 @@ GCC 12.4.0 and all modules under it will be removed.
 
 #### NVHPC
 
-Starting from 26.1, the `nvhpc` toolchain will become a complete toolchain (compiler + MPI + math libary). Instead of building our own OpenMPI with the NVIDIA compilers, we will switch to the bundled HPC-X (NVIDIA's modified OpenMPI). Simply run `module load nvhpc/26.1`. Do not load `nvompi` or `openmpi`.
+Starting from 26.1, the `nvhpc` toolchain will become a complete toolchain (compiler + MPI + math libary). Instead of building our own OpenMPI with the NVIDIA compilers, we will switch to the bundled HPC-X (NVIDIA's modified OpenMPI). Simply run `module load nvhpc/26.1`. Do not load `nvompi` or `openmpi`. In Slurm scripts replace `srun` with `mpirun`.
 
 Users who build MPI code using NVIDIA compilers should test out the new toolchain as soon as possible. We recommend against cross-compiling (e.g. building on the frontend) as it can often lead to "illegal instruction" errors at runtime. We recommend building on an Ampere GPU (A40, A6000, A100).
 
@@ -57,6 +57,7 @@ Users who only need the compilers but not NVIDIA's MPI or math libraries should 
 During this maintenance, only 24.5 will be removed. 25.x are deprecated and will be removed in the future.
 
 #### Apptainer
+
 Apptainer will be upgraded to 1.4.5. Existing containers do not need to be rebuilt.
 
 #### Transitioning to a new R version
@@ -94,7 +95,7 @@ The modules to be removed during this maintenance are listed below.
 |danpos                   |2.2.2   |-|
 |gcc                      |12.4.0  |14.2.0 (default), 11.4.0 (legacy) |
 |gdb                      |13.1-py3.11|16.3 |
-|gromacs                  |2023.2  |2025.1+ |
+|gromacs                  |2023.2, 2025.1  |2025.3 (cpu), 2026.0 (gpu) |
 |gsea                     |4.3.3   |4.4.0 |
 |metamorpheus             |0.0.320 |-|
 |nanopolish               |0.13.2  |-|
