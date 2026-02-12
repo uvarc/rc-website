@@ -39,10 +39,11 @@ Some specifics:
 
 - A few modules will be moved under `openmpi` (e.g. hisat2/2.2.1) or `apptainer` (e.g. grass/8.4.2). Please use `module spider <NAME>` to check the load command.
 - [R] Apart from the removal of 4.3.1, existing R versions will remain under GCC 11.4.0, so that users won't have to reinstall their R libraries. Starting from 4.6.0, R will be built under 14.2.0. (We have prepared a script to help you transition to 4.6. See section below for more information.)
-- [Boost] Starting from version 1.88.0, the MPI-enabled module name is `boost.mpi`. The non-MPI module name is `boost`.
-- [Berkeley DB] `berkeley_db` is renamed to `db`.
-- [SRA Toolkit] `sratoolkit` is renamed to `sra-toolkit`.
-- [wigToBigWig/Kent Tools] `wigtobigwig` is absorbed into `kent-tools/487`. Note the change in the version format of the latter.
+- [Amber] `amber` and `ambertools` will become distinct modules.
+- [Berkeley DB] `berkeley_db` will be renamed to `db`.
+- [Boost] Starting from version 1.88.0, the MPI-enabled module name will be `boost.mpi`. The non-MPI module name will be `boost`.
+- [SRA Toolkit] `sratoolkit` will be renamed to `sra-toolkit`.
+- [wigToBigWig/Kent Tools] `wigtobigwig` will be absorbed into `kent-tools/487`. Note the change in the version format of the latter.
 
 GCC 12.4.0 and all modules under it will be removed. 
 
