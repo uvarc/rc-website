@@ -129,7 +129,7 @@ Deprecated modules under GCC 11.4.0 are listed alphabetically below. They will n
     ```
     abseil bart-mri bedops canu circos eigensoft
     g2clib g2lib gd gemma grackle
-    lapack libibmad libibumad libmatheval libmcfp libtorch libxml++
+    lapack libibmad libibumad libmatheval libmcfp libxml++
     mm-common mrc mrtrix3tissue nlopt
     pasapipeline protobuf protobuf-python qwt
     seqoutbias shapeit4 shapelib
@@ -139,10 +139,9 @@ Deprecated modules under GCC 11.4.0 are listed alphabetically below. They will n
 - MPI
 
     ```
-    attrdict3 chemps2 cloudcompare finestructure
+    amber attrdict3 chemps2 cloudcompare finestructure
     gildas itk mafft regtools sundials
     wxpython wxwidgets
     ```
-
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
