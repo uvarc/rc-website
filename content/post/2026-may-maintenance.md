@@ -92,6 +92,7 @@ The modules to be removed during this maintenance are listed below.
 |apptainer                |1.3.4   |1.4.5 |
 |cellassign               |0.99.2  |-|
 |cellpose                 |3.0.10  |4.0.5+ |
+|chemps2                  |1.8.12  |- |
 |clara-parabricks         |4.2.0   |4.6.0 |
 |cuda                     |12.2.2  |12.4.1+ |
 |cudnn                    |8.9.4.25| 9+ |
@@ -101,6 +102,7 @@ The modules to be removed during this maintenance are listed below.
 |gdb                      |13.1-py3.11|16.3 |
 |gromacs                  |2023.2, 2025.1  |2025.3 (cpu), 2026.0 (gpu) |
 |gsea                     |4.3.3   |4.4.0 |
+|itk                      |5.3.0   |- |
 |libtorch                 |2.1.1, 2.4.1-precxx11 | 2.7.1 |
 |metamorpheus             |0.0.320 |-|
 |nanopolish               |0.13.2  |-|
@@ -129,19 +131,18 @@ Deprecated modules under GCC 11.4.0 are listed alphabetically below. They will n
     ```
     abseil bart-mri bedops canu circos eigensoft
     g2clib g2lib gd gemma grackle
-    lapack libibmad libibumad libmatheval libmcfp libxml++
+    lapack libibmad libibumad libmatheval libxml++
     mm-common mrc mrtrix3tissue nlopt
     pasapipeline protobuf protobuf-python qwt
     seqoutbias shapeit4 shapelib
-    tensorrt viennarna xxdiff
+    viennarna xxdiff
     ```
 
 - MPI
 
     ```
-    amber attrdict3 chemps2 cloudcompare finestructure
-    gildas itk mafft regtools sundials
-    wxpython wxwidgets
+    amber attrdict3 cloudcompare finestructure
+    gildas mafft regtools sundials wxpython
     ```
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
