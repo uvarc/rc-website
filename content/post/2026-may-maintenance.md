@@ -141,7 +141,7 @@ Deprecated modules under GCC 11.4.0 are listed alphabetically below. They will n
 - MPI
 
     ```
-    amber attrdict3 cloudcompare finestructure
+    attrdict3 cloudcompare finestructure
     gildas mafft regtools sundials wxpython
     ```
 
