@@ -39,16 +39,17 @@ Some specifics:
 
 - A few modules will be moved under `openmpi` (e.g. hisat2/2.2.1) or `apptainer` (e.g. grass/8.4.2). Please use `module spider <NAME>` to check the load command.
 - [R] Apart from the removal of 4.3.1, existing R versions will remain under GCC 11.4.0, so that users won't have to reinstall their R libraries. Starting from 4.6.0, R will be built under 14.2.0. (We have prepared a script to help you transition to 4.6. See section below for more information.)
-- [Boost] Starting from version 1.88.0, the MPI-enabled module name is `boost.mpi`. The non-MPI module name is `boost`.
-- [Berkeley DB] `berkeley_db` is renamed to `db`.
-- [SRA Toolkit] `sratoolkit` is renamed to `sra-toolkit`.
-- [wigToBigWig/Kent Tools] `wigtobigwig` is absorbed into `kent-tools/487`. Note the change in the version format of the latter.
+- [Berkeley DB] `berkeley_db` will be renamed to `db`.
+- [Boost] Starting from version 1.88.0, the MPI-enabled module name will be `boost.mpi`. The non-MPI module name will be `boost`.
+- [CUDA] Modules that depend on CUDA 12.x will be consolidated to 12.8.0, except Amber 24 will be rebuilt with `cuda/12.4.1` due to limitations. `cuda/12.2.2` will be removed. If you built your own CUDA code with these versions, check if they run fine under 12.8.0. You may not need to rebuild.
+- [SRA Toolkit] `sratoolkit` will be renamed to `sra-toolkit`.
+- [wigToBigWig/Kent Tools] `wigtobigwig` will be absorbed into `kent-tools/487`. Note the change in the version format of the latter.
 
 GCC 12.4.0 and all modules under it will be removed. 
 
 #### NVHPC
 
-Starting from 26.1, the `nvhpc` toolchain will become a complete toolchain (compiler + MPI + math libary). Instead of building our own OpenMPI with the NVIDIA compilers, we will switch to the bundled HPC-X (NVIDIA's modified OpenMPI). Simply run `module load nvhpc/26.1`. Do not load `nvompi` or `openmpi`.
+Starting from 26.1, the `nvhpc` toolchain will become a complete toolchain (compiler + MPI + math libary). Instead of building our own OpenMPI with the NVIDIA compilers, we will switch to the bundled HPC-X (NVIDIA's modified OpenMPI). Simply run `module load nvhpc/26.1`. Do not load `nvompi` or `openmpi`. In Slurm scripts replace `srun` with `mpirun`.
 
 Users who build MPI code using NVIDIA compilers should test out the new toolchain as soon as possible. We recommend against cross-compiling (e.g. building on the frontend) as it can often lead to "illegal instruction" errors at runtime. We recommend building on an Ampere GPU (A40, A6000, A100).
 
@@ -57,6 +58,7 @@ Users who only need the compilers but not NVIDIA's MPI or math libraries should 
 During this maintenance, only 24.5 will be removed. 25.x are deprecated and will be removed in the future.
 
 #### Apptainer
+
 Apptainer will be upgraded to 1.4.5. Existing containers do not need to be rebuilt.
 
 #### Transitioning to a new R version
@@ -86,18 +88,23 @@ The modules to be removed during this maintenance are listed below.
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
+|amber                    |24-CUDA-12.2.2 |24-CUDA-12.4.1 |
 |apptainer                |1.3.4   |1.4.5 |
 |cellassign               |0.99.2  |-|
 |cellpose                 |3.0.10  |4.0.5+ |
 |clara-parabricks         |4.2.0   |4.6.0 |
+|cuda                     |12.2.2  |12.4.1+ |
+|cudnn                    |8.9.4.25| 9+ |
 |cumulus_feature_barcoding|0.10.0  |-|
 |danpos                   |2.2.2   |-|
 |gcc                      |12.4.0  |14.2.0 (default), 11.4.0 (legacy) |
 |gdb                      |13.1-py3.11|16.3 |
-|gromacs                  |2023.2  |2025.1+ |
+|gromacs                  |2023.2, 2025.1  |2025.3 (cpu), 2026.0 (gpu) |
 |gsea                     |4.3.3   |4.4.0 |
+|libtorch                 |2.1.1, 2.4.1-precxx11 | 2.7.1 |
 |metamorpheus             |0.0.320 |-|
 |nanopolish               |0.13.2  |-|
+|nccl                     |2.18.3, 2.21.5 | 2.22.3+ |
 |nibabies                 |22.1.3  |-|
 |nvhpc                    |24.5    |25.3+ |
 |openmm                   |7.5.0   |-|
@@ -107,6 +114,9 @@ The modules to be removed during this maintenance are listed below.
 |skopeo                   |1.13.1  |-|
 |subversion               |1.14.0  |-|
 |thermorawfileparser      |1.3.4   |-|
+|tensorrt                 |10.0.1  |-|
+|ucc-cuda                 |1.2.0-CUDA-12.2.2 | 1.3.0-CUDA-12.8.0 |
+|ucx-cuda                 |1.15.0  |1.18.0+ |
 |vg                       |1.22.0  |-|
 {{< /table >}}
 
