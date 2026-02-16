@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_warsame_mohamed.jpg"
 subjects = [
-  "python", "java", "javascript", "sql", "Software-engineering"
+  "python", "java", "javascript", "sql", "software-engineering"
 ]
 active = true
 +++
