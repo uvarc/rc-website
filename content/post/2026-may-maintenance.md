@@ -99,8 +99,9 @@ The modules to be removed during this maintenance are listed below.
 |cumulus_feature_barcoding|0.10.0  |-|
 |danpos                   |2.2.2   |-|
 |gcc                      |12.4.0  |14.2.0 (default), 11.4.0 (legacy) |
-|gdb                      |13.1-py3.11|16.3 |
-|gromacs                  |2023.2, 2025.1  |2025.3 (cpu), 2026.0 (gpu) |
+|gdb                      |13.1-py3.11    | 16.3 |
+|gromacs                  |2023.2, 2025.1 | 2025.3 (cpu), 2026.0 (gpu) |
+|grass                    |8.2.1, 8.4.1   | 8.4.2 |
 |gsea                     |4.3.3   |4.4.0 |
 |itk                      |5.3.0   |- |
 |libtorch                 |2.1.1, 2.4.1-precxx11 | 2.7.1 |
