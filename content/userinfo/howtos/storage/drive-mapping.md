@@ -17,7 +17,8 @@ author = "RC Staff"
 
 +++
 
-_Research Standard_ and _Research Project_ storage can be mapped to your Windows or Mac computer as a remote drive.  If you are off Grounds you must be running a VPN, such as the UVA Anywhere or the More Secure VPN from [ITS](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).  We recommend the More Secure VPN if that is available to you.
+_Research Standard_ and _Research Project_ storage can be mapped to your Windows or Mac computer as a remote drive. SMB exports for new shares are not created by default and must be specifically requested. If you need SMB access, please have the PI of the share submit a request so the export can be provisioned.
+If you are off Grounds, you must be connected to a VPN, such as the UVA Anywhere VPN or the More Secure VPN from [ITS](https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0). The More Secure VPN is recommended where available.
 
 # Windows
 
