@@ -15,7 +15,7 @@ image = "/images/profiles/profile_filip_georgievski.jpg"
 subjects = [
   "r",
   "bioinformatics",
-  "data science",
+  "data-science",
 ]
 active = true
 +++

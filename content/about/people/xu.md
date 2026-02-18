@@ -2,8 +2,10 @@
 draft = false
 date = "2024-05-30T11:15:10-05:00"
 title = "Xinyue Xu"
-job_title = "2nd Year Graduate Student"
+job_title = "Student"
 lastname = "xu"
+student_year = "2nd Year"
+student_type = "Graduate"
 biolink = true
 email = "syw3ev@virginia.edu"
 type = "people"
