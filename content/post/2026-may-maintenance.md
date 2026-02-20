@@ -115,6 +115,7 @@ The modules to be removed during this maintenance are listed below.
 |R                        |4.3.1   |4.4.1+ |
 |rmats-turbo              |4.1.1   |-|
 |skopeo                   |1.13.1  |-|
+|snakemake                |9.8.1   |9.16.3 |
 |subversion               |1.14.0  |-|
 |thermorawfileparser      |1.3.4   |-|
 |tensorrt                 |10.0.1  |-|
