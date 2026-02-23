@@ -1,4 +1,4 @@
-FROM ghcr.io/uvarc/hugo-build:prod-0.110.0 AS base
+FROM ghcr.io/uvarc/hugo-build:prod-0.133.0 AS base
 
 # working directory
 WORKDIR /site
