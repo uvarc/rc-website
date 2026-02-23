@@ -28,7 +28,7 @@ Although all researchers using RC resources are invited to participate, **the l
 
 ## Poster Submissions Due March 20
 
-Submit your poster PDF through the [Poster Competition Submission Form](https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=244db812ae&e=307ba5e081) by **11:59 p.m. on Friday, March 20**, in one of the following categories: 
+Submit your poster PDF through the <a href="https://virginia.us9.list-manage.com/track/click?u=b918ecff2df30f32775065906&id=244db812ae&e=307ba5e081" target="_blank" rel="noopener noreferrer">Poster Competition Submission</a> by **11:59 p.m. on Friday, March 20**, in one of the following categories: 
 - Biological and Health Sciences
 - Physical Sciences and Engineering
 - Social Sciences, Arts, and Humanities
