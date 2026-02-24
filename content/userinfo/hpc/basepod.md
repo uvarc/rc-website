@@ -6,24 +6,12 @@ tags = [
     "hpc","rivanna","parallel-computing","software","containers"
 ]
 draft = false
-title = "HGX H200 Nodes and the NVIDIA DGX BasePOD™"
+title = "NVIDIA DGX BasePOD™"
 description = ""
 author = "RC Staff"
 
 +++
 
-# HGX H200 Nodes
-*May 1, 2025*
-
-We’re excited to announce the release of our newest high-performance compute node featuring the NVIDIA HGX H200 platform. This node is built on the Dell PowerEdge XE9680 server model, and we currently have one server available.
-
-The node is equipped with dual Intel Xeon Platinum 8468 CPUs, offering a total of 96 cores running at 2.1GHz, and comes with a massive 2TB of memory. This addition features eight NVIDIA HGX H200 GPUs based on the NVIDIA Hopper architecture.
-
-Each H200 GPU includes 141 GB of memory and delivers up to 4.8 TB/s of memory bandwidth. High-speed communication between GPUs is supported via 900 GB/s NVLink, while connectivity between CPU and GPU uses PCIe Gen5, providing up to 128 GB/s bi-directional bandwidth. More information can be found [here](https://www.nvidia.com/en-us/data-center/h200/).
-
-We’ve added a gpu-h200 partition for jobs requiring the new H200 GPUs with the same limits as the regular GPU QOS: up to 10,000 submitted jobs per user, 1–4 GPUs per user. H200s can be accessed by specifying `--partition=gpu-h200` and `--gres=gpu:1` (Adjust --gres=gpu:N (N = 1–4) as needed) in your slurm script(s).
-
-To maximize the efficiency of this high-demand resource, it is excluded from access via the Open OnDemand platform and is only available through batch job requests. Information for accounting and scheduling purposes can be found [here](https://www.rc.virginia.edu/userinfo/hpc/#hardware-configuration). We invite users with GPU-intensive workflows to take advantage of these powerful nodes. 
 
 # Introducing the NVIDIA DGX BasePOD™
 *May 30, 2023*
@@ -63,7 +51,7 @@ The POD nodes are contained in the `gpu` partition with a specific Slurm constra
 
 Select `NVIDIA A100` in the GPU type dropdown.  Select the number requested in the appropriate textbox.  Select `Yes` for `Show Additional Options.` Into the h “Optional: Slurm Option” textbox type:
 ```
--Cgpupod
+-C gpupod
 ```
 
 ## Remarks
