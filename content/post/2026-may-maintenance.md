@@ -162,8 +162,7 @@ Deprecated GCC and Intel modules are listed alphabetically below. They will not 
         ```
     - MPI
         ```
-        abinit cesm eccodes esmf
-        gromacs python siesta
+        abinit cesm eccodes esmf siesta
         ```
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
