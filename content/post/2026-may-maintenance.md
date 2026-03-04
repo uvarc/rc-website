@@ -21,7 +21,7 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 
 ### Modules
 
-There are major changes to compiler and container toolchains (GCC, NVHPC, Apptainer). Users should read the corresponding sections carefully if applicable.
+There are major changes to compiler and container toolchains (GCC, Intel, NVHPC, Apptainer). Users should read the corresponding sections carefully if applicable.
 
 #### GCC
 
@@ -46,6 +46,15 @@ Some specifics:
 - [wigToBigWig/Kent Tools] `wigtobigwig` will be absorbed into `kent-tools/487`. Note the change in the version format of the latter.
 
 GCC 12.4.0 and all modules under it will be removed. 
+
+#### Intel
+
+Intel 2025.3 will become the new default. Most modules under 2023.1 and 2025.0 will be migrated under 2025.3. Some of the most important upgrades include:
+- cp2k/2026.1
+- elpa/2025.06.002
+- libxc/7.0.0
+
+A module that is not migrated may exist under GCC (e.g. spglib) or NVHPC (e.g. gromacs). If not, it should be seen as deprecated, meaning it will be removed with the Intel 2023.1 and 2025.0 toolchains in the future, but not during this maintenance. Deprecated modules are listed at the end of this page. If you still need to use these modules, please let us know as soon as possible.
 
 #### NVHPC
 
@@ -124,27 +133,36 @@ The modules to be removed during this maintenance are listed below.
 |vg                       |1.22.0  |-|
 {{< /table >}}
 
-#### Deprecated modules under GCC 11.4.0
+#### Deprecated modules
 
-Deprecated modules under GCC 11.4.0 are listed alphabetically below. They will not be removed during this maintenance.
+Deprecated GCC and Intel modules are listed alphabetically below. They will not be removed during this maintenance.
 
-- Non-MPI
+- gcc/11.4.0
+    - Non-MPI
 
-    ```
-    abseil bart-mri bedops canu circos eigensoft
-    g2clib g2lib gd gemma grackle
-    lapack libibmad libibumad libmatheval libxml++
-    mm-common mrc mrtrix3tissue nlopt
-    pasapipeline protobuf protobuf-python qwt
-    seqoutbias shapeit4 shapelib
-    viennarna xxdiff
-    ```
+        ```
+        abseil bart-mri bedops canu circos eigensoft
+        g2clib g2lib gd gemma grackle
+        lapack libibmad libibumad libmatheval libxml++
+        mm-common mrc mrtrix3tissue nlopt
+        pasapipeline protobuf protobuf-python qwt
+        seqoutbias shapeit4 shapelib
+        viennarna xxdiff
+        ```
+    - MPI
 
-- MPI
-
-    ```
-    attrdict3 cloudcompare finestructure
-    gildas mafft regtools sundials wxpython
-    ```
+        ```
+        attrdict3 cloudcompare finestructure
+        gildas mafft regtools sundials wxpython
+        ```
+- intel/2023.1, 2025.0
+    - Non-MPI
+        ```
+        superlu_mt 
+        ```
+    - MPI
+        ```
+        abinit cesm esmf siesta
+        ```
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
