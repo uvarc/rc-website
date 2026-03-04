@@ -8,7 +8,7 @@ tags = ["rc"]
 categories = ["feature"]
 +++
 
-<img class="card-img-top" src="/images/2026-call-for-posters.jpg" alt="Participant presents her research poster at the 2025 Exhibition">
+<img class="card-img-top" src="/images/2026-call-for-posters.jpg" alt="Participant presents her research poster at the 2025 Exhibition" style="max-width:100%; width:100%;">
 
 <br />
 <br />
