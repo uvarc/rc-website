@@ -99,6 +99,7 @@ The modules to be removed during this maintenance are listed below.
 |---|---|---|
 |amber                    |24-CUDA-12.2.2 |24-CUDA-12.4.1 |
 |apptainer                |1.3.4   |1.4.5 |
+|blender                  |3.6.17  |5.0.1 |
 |cellassign               |0.99.2  |-|
 |cellpose                 |3.0.10  |4.0.5+ |
 |chemps2                  |1.8.12  |- |
