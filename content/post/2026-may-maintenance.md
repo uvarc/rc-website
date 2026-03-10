@@ -123,6 +123,7 @@ The modules to be removed during this maintenance are listed below.
 |openmm                   |7.5.0   |-|
 |peer                     |1.3     |-|
 |R                        |4.3.1   |4.4.1+ |
+|rapidsai                 |25.06   |26.02 |
 |rmats-turbo              |4.1.1   |-|
 |skopeo                   |1.13.1  |-|
 |snakemake                |9.8.1   |9.16.3 |
