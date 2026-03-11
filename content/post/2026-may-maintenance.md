@@ -164,7 +164,7 @@ Deprecated GCC and Intel modules are listed alphabetically below. They will not 
         ```
     - MPI
         ```
-        abinit cesm esmf siesta
+        abinit cesm siesta
         ```
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
