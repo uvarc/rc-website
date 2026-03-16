@@ -26,9 +26,7 @@ There are major changes to compiler and container toolchains (GCC, Intel, NVHPC,
 #### GCC
 
 GCC 14.2.0 will become the new default. Most modules under 11.4.0 will be migrated under 14.2.0. Some of the most important upgrades include:
-- bcftools|htslib|samtools/1.23
-- mariadb/11.8.3 (new)
-- postgresql/18.1
+- bcftools, htslib, samtools/1.23
 - python/3.13.11
 - R/4.6.0
 - rust/1.92.0
