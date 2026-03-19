@@ -99,6 +99,7 @@ The modules to be removed during this maintenance are listed below.
 |apptainer                |1.3.4   |1.4.5 |
 |blender                  |3.6.17  |5.0.1 |
 |cellassign               |0.99.2  |-|
+|cellranger               |9.0.1   |10.0.0 |
 |cellpose                 |3.0.10  |4.0.5+ |
 |chemps2                  |1.8.12  |- |
 |clara-parabricks         |4.2.0   |4.6.0 |
