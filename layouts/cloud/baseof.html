@@ -19,10 +19,12 @@
   </head>
 
   <body>
+     
+    {{ if not .Params.hideNavbar }}
+       {{ partial "menu-home.html" . }}
+       {{ partial "site-header.html" . }}
+    {{ end }}
 
-    {{ partial "menu-home.html" . }}
-
-    {{ partial "site-header.html" . }}
     
     <section id="main-content" class="main-content" style="margin-top:20px;">
 
