@@ -9,6 +9,7 @@ title = "Combined Request Form"
 draft = false
 type = "form"
 private = true
+hideNavbar = true 
 +++
 <style>
   .table thead th {
@@ -24,6 +25,7 @@ private = true
     word-break: break-word;
   }
 </style>
+
 <!-- Core scripts needed for form functionality -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="/js/combined-request-form.js"></script>

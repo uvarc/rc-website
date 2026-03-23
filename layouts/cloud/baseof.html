@@ -19,8 +19,10 @@
   </head>
 
   <body>
-
-    {{ partial "menu-home.html" . }}
+     
+    {{ if not .Params.hideNavbar }}
+       {{ partial "menu-home.html" . }}
+    {{ end }}
 
     {{ partial "site-header.html" . }}
     
