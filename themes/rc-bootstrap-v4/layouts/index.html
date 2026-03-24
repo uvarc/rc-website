@@ -16,71 +16,76 @@
 </head>
 
 <body>
-
-       {{ partial "site-header.html" . }}
+  <!--
+  {{ partial "site-header.html" . }}
 
   {{ partial "carousel.html" . }}
+  -->
    <!-- use this partial below for specific events (comment out the carousel partial) -->
    {{/*  {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/June_2025_DAC_Proposal_Deadline.png" "imageLink" "/service/dac/awards" "altText" "Due June 30 - Small Analytics Resource Proposals. Get the analytics support your research needs.  Apply for an analytics resource award to receive hands-on support for your project. Apply for a Resource Award." "linkAriaLabel" "View proposal instructions" ) }}  */}}
-
+  <!--
   <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
     Press 'S' to search
   </div>
 
   <div class="container">
-
+  -->
     <!-- STATUS MESSAGE ALERT -->
+    <!--
     <div class="row" style="margin-bottom:1rem;">
       <div id="status-message" class="alert alert-danger" role="alert"
         style="font-size:80%;padding:10px;width:100%;margin-left:1rem;margin-right:1rem;">
         <p id="status-message-content" style="margin:0; padding:0;"></p>
       </div>
     </div>
-
+  -->
+  <!--
     <div class="row">
       <div class="col-md-6 col-lg-4 blog-main">
-
+      -->
         <!-- begin Featured Stories section -->
-        {{ partial "featured-stories.html" . }}
+        <!--
+          {{ partial "featured-stories.html" . }} 
+        -->
         <!-- end Featured Story section -->
-
-      </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+     
+     <!-- </div> {{ "--><!-- /.blog-main -->" <!--| safeHTML }} -->
       <!-- END LEFT COLUMN -->
 
       <!-- BEGIN MIDDLE COLUMN -->
-      <div class="col-md-6 col-lg-4 blog-main">
+      <!--<div class="col-md-6 col-lg-4 blog-main">
 
-        {{ partial "status.html" . }}
+        {{ partial "status.html" . }} -->
         <!-- Not called twitter and doesn't allow API scraping anymore
           {{ partial "twitter.html" . }}
           -->
-        {{ partial "project-home.html" .}}
+        <!--{{ partial "project-home.html" .}}
 
-      </div> {{ "<!-- /.blog-main -->" | safeHTML }}
+      </div> {{ "--><!-- /.blog-main -->" <!--| safeHTML }}-->
       <!-- END MIDDLE COLUMN -->
 
       <!-- BEGIN RIGHT COLUMN -->
-      {{ "<!-- /.blog-sidebar -->" | safeHTML }}
-      <aside class="col-md-6 col-lg-4 blog-sidebar">
+      <!--{{ "--><!-- /.blog-sidebar -->" <!-- | safeHTML }}-->
+      <!--<aside class="col-md-6 col-lg-4 blog-sidebar"> -->
 
         <!-- THE ARTIST FORMERLY KNOWN AS THE SMART SIDEBAR -->
-        {{ partial "user-help-widget.html" . }}
+       <!-- {{ partial "user-help-widget.html" . }}
         <div style="width:100%;height:2rem;"></div>
-        {{ partial "right-smart-sidebar.html" . }}
+        {{ partial "right-smart-sidebar.html" . }} -->
         <!-- {{ partial "boast.html" . }} -->
         <!-- {{ partial "training-events.html" . }} -->
-        {{ partial "office-hours.html" . }}
-        {{ partial "typed-widget.html" . }}
+        <!--{{ partial "office-hours.html" . }}
+        {{ partial "typed-widget.html" . }} -->
         <!-- END SMART SIDEBAR -->
 
-      </aside><!-- /.blog-sidebar -->
+      <!--</aside>--><!-- /.blog-sidebar -->
 
-    </div> {{ "<!-- /.row -->" | safeHTML }}
+  <!--  </div> {{ "--><!-- /.row --><!--" | safeHTML }}-->
 
-  </div> {{ "<!-- /.container -->" | safeHTML }}
+  <!--</div> {{ "--><!-- /.container --><!--" | safeHTML }}
 
   {{ partial "konami-modal.html" . }}
-  {{ partial "footer.html" . }}
+  {{ partial "footer.html" . }} -->
 
 </body>
 
