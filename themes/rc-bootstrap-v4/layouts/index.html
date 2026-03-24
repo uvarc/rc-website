@@ -16,10 +16,9 @@
 </head>
 
 <body>
-  {{ if not .Params.hideNavbar }}
-       {{ partial "menu-home.html" . }}
+
        {{ partial "site-header.html" . }}
-  {{ end }}
+
   {{ partial "carousel.html" . }}
    <!-- use this partial below for specific events (comment out the carousel partial) -->
    {{/*  {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/June_2025_DAC_Proposal_Deadline.png" "imageLink" "/service/dac/awards" "altText" "Due June 30 - Small Analytics Resource Proposals. Get the analytics support your research needs.  Apply for an analytics resource award to receive hands-on support for your project. Apply for a Resource Award." "linkAriaLabel" "View proposal instructions" ) }}  */}}
