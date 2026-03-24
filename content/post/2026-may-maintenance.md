@@ -19,6 +19,12 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 
 ### System
 
+The NVIDIA driver will be upgraded to  to support CUDA 13.1. See section on NVHPC below.
+
+Open OnDemand will be ugpraded to .
+
+JupyterLab will be upgrade to 4.5.6-py3.13.
+
 ### Modules
 
 There are major changes to compiler and container toolchains (GCC, Intel, NVHPC, Apptainer). Users should read the corresponding sections carefully if applicable.
@@ -26,9 +32,7 @@ There are major changes to compiler and container toolchains (GCC, Intel, NVHPC,
 #### GCC
 
 GCC 14.2.0 will become the new default. Most modules under 11.4.0 will be migrated under 14.2.0. Some of the most important upgrades include:
-- bcftools|htslib|samtools/1.23
-- mariadb/11.8.3 (new)
-- postgresql/18.1
+- bcftools, htslib, samtools/1.23
 - python/3.13.11
 - R/4.6.0
 - rust/1.92.0
@@ -101,6 +105,7 @@ The modules to be removed during this maintenance are listed below.
 |apptainer                |1.3.4   |1.4.5 |
 |blender                  |3.6.17  |5.0.1 |
 |cellassign               |0.99.2  |-|
+|cellranger               |9.0.1   |10.0.0 |
 |cellpose                 |3.0.10  |4.0.5+ |
 |chemps2                  |1.8.12  |- |
 |clara-parabricks         |4.2.0   |4.6.0 |
@@ -114,6 +119,7 @@ The modules to be removed during this maintenance are listed below.
 |grass                    |8.2.1, 8.4.1   | 8.4.2 |
 |gsea                     |4.3.3   |4.4.0 |
 |itk                      |5.3.0   |- |
+|jupyterlab               |4.4.6-py3.12 |4.5.6-py3.13 |
 |libtorch                 |2.1.1, 2.4.1-precxx11 | 2.7.1 |
 |metamorpheus             |0.0.320 |-|
 |nanopolish               |0.13.2  |-|
@@ -146,16 +152,16 @@ Deprecated GCC and Intel modules are listed alphabetically below. They will not 
         abseil bart-mri bedops canu circos eigensoft
         g2clib g2lib gd gemma grackle
         lapack libibmad libibumad libmatheval libxml++
-        mm-common mrc mrtrix3tissue nlopt
+        mm-common mrtrix3tissue nlopt
         pasapipeline protobuf protobuf-python qwt
-        seqoutbias shapeit4 shapelib
+        seqoutbias shapeit4 shapelib trinity
         viennarna xxdiff
         ```
     - MPI
 
         ```
-        attrdict3 cloudcompare finestructure
-        gildas mafft regtools sundials wxpython
+        attrdict3 cloudcompare finestructure gildas
+        mafft regtools rsem sundials wxpython
         ```
 - intel/2023.1, 2025.0
     - Non-MPI
@@ -164,7 +170,7 @@ Deprecated GCC and Intel modules are listed alphabetically below. They will not 
         ```
     - MPI
         ```
-        abinit cesm esmf siesta
+        abinit cesm siesta
         ```
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
