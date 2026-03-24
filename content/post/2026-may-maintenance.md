@@ -19,6 +19,12 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 
 ### System
 
+The NVIDIA driver will be upgraded to  to support CUDA 13.1. See section on NVHPC below.
+
+Open OnDemand will be ugpraded to .
+
+JupyterLab will be upgrade to 4.5.6-py3.13.
+
 ### Modules
 
 There are major changes to compiler and container toolchains (GCC, Intel, NVHPC, Apptainer). Users should read the corresponding sections carefully if applicable.
@@ -113,6 +119,7 @@ The modules to be removed during this maintenance are listed below.
 |grass                    |8.2.1, 8.4.1   | 8.4.2 |
 |gsea                     |4.3.3   |4.4.0 |
 |itk                      |5.3.0   |- |
+|jupyterlab               |4.4.6-py3.12 |4.5.6-py3.13 |
 |libtorch                 |2.1.1, 2.4.1-precxx11 | 2.7.1 |
 |metamorpheus             |0.0.320 |-|
 |nanopolish               |0.13.2  |-|
