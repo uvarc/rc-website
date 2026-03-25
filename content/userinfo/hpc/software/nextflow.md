@@ -82,6 +82,7 @@ process {
     withName: CUTADAPT {
         cpus = 2
         time = '4h'
+        mem = '8 GB'
         beforeScript = '''
         module purge
         module load cutadapt
@@ -91,6 +92,7 @@ process {
     withName: BWA_ALIGN {
         cpus = 2
         time = '4h'
+        mem = '8 GB'
         beforeScript = '''
         module purge
         module load bwa
@@ -101,6 +103,7 @@ process {
     withName: FREEBAYES {
         cpus = 2
         time = '4h'
+        mem = '8 GB'
         beforeScript = '''
         module purge
         module load freebayes
@@ -113,12 +116,11 @@ process {
 
 - The main.nf contains the processes of your workflow (the steps)
 - Your workflow will determine the order of the processes in order to create that output
-- Each rule consists of 3 required parts: the input files, the output files, and the shell (command)
+- Each process generally has at least a script, input, output consists of 3 required parts: the input files, the output files, and the shell (command)
 - Below is an example of a process to align sequences using hisat. The log and threads options are optional, but included for reference
 - The target output is a gene count matrix in a csv format
 
 ```
-
 process CUTADAPT {
 
     publishDir params.outdir, mode: 'copy'
@@ -134,7 +136,6 @@ process CUTADAPT {
     cutadapt -a ${params.adapter} -o ${reads.simpleName}_trimmed.fastq $reads
     """
 }
-
 
 process BWA_ALIGN {
 
@@ -153,6 +154,7 @@ process BWA_ALIGN {
     bwa mem $ref $reads | samtools sort -o ${reads.simpleName}.bam
     """
 }
+
 process FREEBAYES {
 
     publishDir params.outdir, mode: 'copy'
@@ -183,19 +185,19 @@ workflow {
 - After the rule `align_hisat` is completed, the workflow can move to the next rule `stringtie_assemble`
 - Notice that the output of `align_hisat` is a `.bam` file, this is now the input to the rule `stringtie_assemble`
 
-```
-rule stringtie_assemble:
-    input:
-        genome_gtf=config['GENOME_GTF'],
-        bam="align_hisat2/{sample}.bam"
-    output: "stringtie/assembled/{sample}.gtf"
-    threads: config['THREADS']
-    shell:
-        "stringtie -p {threads} -G {input.genome_gtf} "
-        "-o {output} -l {wildcards.sample} {input.bam}"
-```
+#```
+#rule stringtie_assemble:
+#    input:
+#        genome_gtf=config['GENOME_GTF'],
+#        bam="align_hisat2/{sample}.bam"
+#    output: "stringtie/assembled/{sample}.gtf"
+#    threads: config['THREADS']
+#    shell:
+#        "stringtie -p {threads} -G {input.genome_gtf} "
+#        "-o {output} -l {wildcards.sample} {input.bam}"
+#```
 
-- You can add as many rules as you like as long as they are sequential with inputs and outputs
+- You can add as many processes as you like as long as they are sequential with inputs and outputs
 
 # Slurm for Nextflow:
 

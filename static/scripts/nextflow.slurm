@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#SBATCH -t 5:00:00
-#SBATCH -p standard
-#SBATCH --mem=50000
-#SBATCH -A allocation_name
-#SBATCH -n 9
+#SBATCH --time=05:00:00
+#SBATCH --partition=standard
+#SBATCH --mem=4GB
+#SBATCH --account=allocation_name
+#SBATCH --cpus-per-task=1
 
 module purge
 module load nextflow
