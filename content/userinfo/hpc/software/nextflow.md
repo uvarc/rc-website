@@ -61,7 +61,7 @@ module spider {{% module-firstversion %}}
 
 # nextflow.config file:
 
-- Config files are for users to input filenames and paths for the workflow
+- Config files are for users to input filenames and paths settings for the workflow
 - In the case below, the user inputs 3 samples for a simple RNA-seq pipeline
 - Threads can be passed as an argument for multithreading
 
@@ -111,10 +111,10 @@ process {
 
 # main.nf:
 
-- The Snakefile contains the rules of your workflow (the steps)
-- The target rule is your final output, Snakemake will determine the order of the rules in order to create that output
+- The main.nf contains the processes of your workflow (the steps)
+- Your workflow will determine the order of the processes in order to create that output
 - Each rule consists of 3 required parts: the input files, the output files, and the shell (command)
-- Below is an example of a rule to align sequences using hisat. The log and threads options are optional, but included for reference
+- Below is an example of a process to align sequences using hisat. The log and threads options are optional, but included for reference
 - The target output is a gene count matrix in a csv format
 
 ```
@@ -203,7 +203,7 @@ rule stringtie_assemble:
 - Below is an example script to submit to the standard partition with 8 threads
 - This script is using a `conda` environment called rnaseq
 
-{{< pull-code file="/static/scripts/snakemake.slurm" lang="no-highlight" >}}
+{{< pull-code file="/static/scripts/nextflow.slurm" lang="no-highlight" >}}
 
 # Dry Runs:
 
