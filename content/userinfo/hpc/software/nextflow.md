@@ -17,7 +17,7 @@ author = "RC Staff"
 +++
 
 # Description
-<img src="/images/snakemake.png" style="float:right;" ##class="project-inset" />
+<img src="/images/nextflow.png" style="float:right;" class="project-inset" />
 {{% module-description %}}
 
 <br>
