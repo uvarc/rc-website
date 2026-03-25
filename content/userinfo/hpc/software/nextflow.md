@@ -209,4 +209,4 @@ rule stringtie_assemble:
 
 - Dry-runs are a great way to check your commands before running them
 - The code is printed, but not actually run
-- For a dry run, use `snakemake -n`
+- For a dry run, use `nextflow run main.nf -dry-run`
