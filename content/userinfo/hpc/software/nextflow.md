@@ -60,10 +60,10 @@ module spider {{% module-firstversion %}}
 - Dependencies between the rules are determined automatically, creating a DAG (directed acyclic graph) of jobs that can be parallelized
 
 # nextflow.config file:
-
-- Config files are for users to input filenames and paths settings for the workflow
-- In the case below, the user inputs 3 samples for a simple RNA-seq pipeline
-- Threads can be passed as an argument for multithreading
+Config files are generally for
+- params: workflow parameters (like input filenames, paths, job settings) processes to define global or process-specific options, or profiles.
+- process: additional processes specifying global and/or per-process settings, software environments, and job settings
+- profile: 
 
 ```
 
