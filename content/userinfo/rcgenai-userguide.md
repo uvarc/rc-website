@@ -13,7 +13,7 @@ type = "rivanna"
 
 * [Introduction](#introduction)
 * [Getting Started](#getting-started)
-* [Using the Browser Interface](#using-the-broser-interface-openwebui)
+* [Using the Browser Interface](#using-the-browser-interface-openwebui)
 * [API Access](#api-access)
 * [Policies and Limiatations](#policies-and-limitations)
 * [Frequently Asked Questions](#frequently-asked-questions)
@@ -22,7 +22,7 @@ type = "rivanna"
 
 # Introduction
 
-UVARC GenAI is a UVA-hosted multimodal LLM and VLM server available to UVA research computing members with an active research computing account.  Like other common multimodal platforms (e.g., ChatGPT or Claude), UVARC GenAI can be used to assist with research, coding, and writing support, all data is securely processed in-house at UVA. Currently, UVARC GenAI is running the Kimi K2.5 model and is accessible via browser and API. UVA RC GenAI is only being offered to research projects; it is not available for academic or administrative purposes. 
+UVARC GenAI is a UVA-hosted multimodal LLM and VLM server available to UVA research computing members with an active research computing account.  Like other common multimodal platforms (e.g., ChatGPT or Claude), UVA RC GenAI can be used to assist with research, coding, and writing support, all data is securely processed in-house at UVA. Currently, UVARC GenAI is running the Kimi K2.5 model and is accessible via browser and API. UVA RC GenAI is only being offered to research projects; it is not available for academic or administrative purposes. 
 
 # Getting Started
 
@@ -31,13 +31,13 @@ Below are the first steps needed for all users regardless of access method:
 
 <div class="bd-callout bd-callout-warning">
   <div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
-  <p><b>Note:</b>Accessing UVARC GenAI requires an active UVA computing ID, research computing account and Eservices password for Netbadge authentication. Duo two-factor authentication is required for browser access.</p>
+  <p><b>Note:</b> Accessing UVA RC GenAI requires an active UVA computing ID, research computing account and Eservices password for Netbadge authentication. Duo two-factor authentication is required for browser access.</p>
   </div>
 
 
-1. If you don’t have an RC user account please make your request at UVA RC Access  
+1. If you don’t have an RC user account please see [How to get access to HPC Services](https://www.rc.virginia.edu/userinfo/hpc/access/)  
 
-2. Once you have an RC account, navigate to UVARC GenAI 
+2. Once you have an RC account, navigate to [UVA RC GenAI](https://open-webui.rc.virginia.edu/) 
 
 3. Login with Computing ID and EServices password 
 
@@ -48,28 +48,28 @@ Below are the first steps needed for all users regardless of access method:
 
 After signing in, you should have browser access to UVARC GenAI through the OpenWebUI interface. 
 
-<center> <div style="margin-left: 5%">
+<center>
     <img src="/images/openwebui.png" width=750>
-</div></center>
+</center>
 
-Here, you can chat through the conversational interface, adjust integrations (e.g., web search), or even upload/attach content to the chat session. 
+Here, you can chat through the conversational interface, adjust integrations (e.g., web search), or even upload and attach content to the chat session. 
 
 Files can be loaded into the web interface –  supported extensions include: pdf, docx, txt, md, csv, png, jpeg, jpg, pptx, xls, xlsx, json, sh, html, htm, xhtml, js, and py. 
 
 <div class="bd-callout bd-callout-warning">
   <div style="float:right;margin:2rem;"><i class="fas fa-user-clock fa-5x" aria-hidden="true"></i></div>
-  <p><b>Note:</b>Chats are not saved. Conversation history disappears when you close the browser tab, sign out, or if the session expires. </p>
+  <p><b>Note:</b> Chats are not saved. Conversation history disappears when you close the browser tab, sign out, or if the session expires. </p>
   </div>   
 
 You can export your work in either Json, txt, or pdf formatting. Select the three dotted icon (top right) then ‘Download’ to select a format. Chats can also be archived or copied to the clipboard by selecting the desired option.  
 
 # API Access
 
-API access to UVARC GenAI  is useful for users who want to integrate the LLM into their code. 
+API access to UVA RC GenAI  is useful for users who want to integrate the LLM into their code. 
 
 ## Getting your API key
 
-1. Sign in to   UVARC GenAI  (see Getting Started) 
+1. Sign in to   UVA RC GenAI  (see [Getting Started](#getting-started)) 
 
 2. Click profile (top right) → Settings → Account 
 
@@ -81,7 +81,7 @@ You will have the option to view, copy or create a new API key.
 
 Use environment variables to safely store your key (e.g., `export  UVARC_GenAI_API ="your-key-here"`). Make sure to never commit keys to code repositories, and regenerate keys in   UVA RC GenAI browser if compromised. 
 
-Where to run your code from:  not VPN, must be on standard security zone (SSZ) HPC node 
+**Please note that to run your code you need to be on a HPC compute node.** 
 
 ## Code examples
 
@@ -132,13 +132,13 @@ response = requests.post(
 
 **Jupyter Notebook reference**
 
-<link>
+[Download the ZIP file](/static/data/LLM_API_Example.zip)
 
 # Policies and Limitations
 
 ## What type of research data can you submit:  
 
-- **Approved:** Any data suitable for SSZ (Rivanna/Afton), including sensitive university research data. 
+- **Approved:** Any data suitable for Standard Security Zone (SSZ) (Rivanna/Afton), including sensitive university research data. 
 
 - **Restricted:** No Highly Sensitive, PHI, or other controlled access data types. 
 
@@ -146,7 +146,7 @@ response = requests.post(
 
 ## Where can I find information on University GenAI Usage policies: 
 
-UVARC GenAI aligns with the University’s GenAI Use Guidelines. These can be found at [Using AI at UVA: Guidelines & Terms of Use](https://in.virginia.edu/genai-useguidelines)  
+UVA RC GenAI aligns with the University’s GenAI Use Guidelines. These can be found at [Using AI at UVA: Guidelines & Terms of Use](https://in.virginia.edu/genai-useguidelines)  
 
 ## What’s logged: 
 
@@ -174,7 +174,7 @@ No, to help researchers adhere to UVA AI and data policy this feature has been d
 
 ## Why can’t I sign out using the WebUI sign out button? 
 
-Due to SSO configurations 
+Due to Single Sign On configurations this feature is not available. However, closing out he browser page should be sufficient.
 
 ## I lost my chat history. Can I get it back?
 
@@ -182,7 +182,7 @@ No. Chats are not saved. Use copy/paste for persistence.
 
 ## Do I need a new API key for each project? 
 
-One key per user is sufficient. Rotate if needed via UVARC GenAI settings. 
+One key per user is sufficient. Rotate if needed via [UVA RC GenAI](https://open-webui.rc.virginia.edu/) settings. 
 
 ## Can I share my API key? 
 
@@ -206,7 +206,7 @@ Currently only Moonshot Kimi K2.5 is supported.
 
 # Getting Help
 
-This is an early-access deployment and support is limited. Please contact us through our support request form with any questions, concerns, or suggestions.  
+This is an early-access deployment and support is limited. Please contact us through our [support request form](https://www.rc.virginia.edu/form/support-request/) with any questions, concerns, or suggestions.  
 
 <!--
 # Claude Code on HPC 
