@@ -83,7 +83,7 @@ quell_footer = true
       <p class="card-text">UVA RC GenAI is a locally hosted AI platform powered by Kimi K2.5. Available both through web interface and API, it enables fast, secure multimodal and code-driven workflows, with up to 60 queries per minute at no cost for our researchers.</p>
       <br clear=all />
       <div class="contact-button">
-        <a href="/userinfo/storage/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
+        <a href="/userinfo/rcgenai-userguide/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
       </div>
     </div>
   </div>
