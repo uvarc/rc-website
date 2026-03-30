@@ -49,7 +49,7 @@ Below are the first steps needed for all users regardless of access method:
 After signing in, you should have browser access to UVARC GenAI through the OpenWebUI interface. 
 
 <center> <div style="margin-left: 5%">
-    <img src="/images/openwebui.png" width=550>
+    <img src="/images/openwebui.png" width=750>
 </div></center>
 
 Here, you can chat through the conversational interface, adjust integrations (e.g., web search), or even upload/attach content to the chat session. 
