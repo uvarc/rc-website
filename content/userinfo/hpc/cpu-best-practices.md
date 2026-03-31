@@ -176,7 +176,7 @@ Test the most memory-intensive steps individually
 •	Forgetting memory scales with CPUs
    → --mem-per-cpu × CPUs can unintentionally request large totals 
 •	Ignoring peak vs average usage
-   → short spikes matter (Grafana/jobstats help here) 
+   → short spikes matter (Grafana helps here) 
 •	Not re-tuning after pipeline changes
    → different steps may have very different memory needs 
 
