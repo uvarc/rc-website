@@ -29,7 +29,7 @@ Submitting hundreds or thousands of jobs with overestimated memory can:
 •	Increase queue wait times 
 •	Reduce overall cluster throughput 
 •	Lead to significant unused allocated memory
-•	Once all the memory for a node is used, the remaining CPUs on a node are inaccessible to other users.
+•	Once all a node's memory is used, any remaining CPUs on a node are inaccessible to other users.
 
 ---
 
@@ -58,17 +58,15 @@ module load jobstats; jobstats <JobID>
 Provides:
 •	Memory usage (maximum)
 •	CPU utilization 
-•	Helpful for tuning future jobs 
  
 3. Grafana Dashboard (during or after job)
-Our Grafana dashboards provide interactive monitoring of job performance, including:
+Provides interactive monitoring of job performance, including:
 •	Memory usage over time 
 •	CPU utilization trends 
 •	Node-level resource usage 
 Best for:
 •	Visualizing spikes vs steady usage 
 •	Identifying peak memory requirements 
-•	Comparing multiple jobs 
 
 ---
 
@@ -161,7 +159,7 @@ Avoid using one large memory value for all steps
 Assign step-specific memory requirements where possible
 Test the most memory-intensive steps individually
 
-Summary
+### Summary
 
 ✔ Run a few test jobs first
 ✔ Measure peak memory usage
