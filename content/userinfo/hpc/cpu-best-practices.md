@@ -87,7 +87,7 @@ Best for:
 
 ---
 
-## Recommended Approach
+## Practical Workflow for Right-Sizing Memory
 
 1. Run a small number of test jobs first
 
