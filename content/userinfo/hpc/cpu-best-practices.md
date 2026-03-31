@@ -186,7 +186,7 @@ Test the most memory-intensive steps individually
 
 If you're unsure how much memory your workflow requires, Research Computing is happy to help:
 
-•	Review your job scripts 
+•	Review job scripts 
 •	Analyze seff/jobstats/Grafana output 
 •	Recommend optimized resource requests 
 
