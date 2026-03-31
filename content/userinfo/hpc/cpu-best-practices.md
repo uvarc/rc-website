@@ -56,7 +56,7 @@ Memory Efficiency: 7.5% of 16.0 GB
 More detailed and works for running jobs:
 module load jobstats; jobstats <JobID>
 Provides:
-•	Memory usage over time 
+•	Memory usage (maximum)
 •	CPU utilization 
 •	Helpful for tuning future jobs 
  
@@ -65,7 +65,7 @@ Our Grafana dashboards provide interactive monitoring of job performance, includ
 •	Memory usage over time 
 •	CPU utilization trends 
 •	Node-level resource usage 
-✔ Best for:
+Best for:
 •	Visualizing spikes vs steady usage 
 •	Identifying peak memory requirements 
 •	Comparing multiple jobs 
@@ -124,7 +124,8 @@ Size your memory request based on the specific workload
 Example 100 job workflow:
 95/100 jobs expect to consume 5GB memory
 5/100 jobs expect to consume 90GB memory
-Don't request 100 GB for every job - split workflow into 2 separate arrays i.e. 95 jobs requesting 10GB and 5 jobs requesting 100GB
+Do not request 100 GB for every job - leads to significant wasted memory
+Do split workflow into separate arrays i.e. 95 jobs requesting 10GB and 5 jobs requesting 100GB
 
 4. Add a small safety margin
 
