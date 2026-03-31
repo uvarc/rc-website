@@ -54,7 +54,6 @@ Memory Efficiency: 7.5% of 16.0 GB
 2. jobstats (recommended)
 More detailed and works for running jobs:
 module load jobstats; jobstats <JobID>
-
 Provides:
 •	Memory usage over time 
 •	CPU utilization 
