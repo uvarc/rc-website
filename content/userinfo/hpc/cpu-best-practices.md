@@ -23,7 +23,7 @@ Aim to request an appropriate amount memory for your jobs.
 
 If you are running many similar jobs (e.g., job arrays, parameter sweeps, workflows processing many different samples, etc.), it’s important to **estimate memory needs before scaling up.**
 
-### Why this matters
+**Why this matters**
 
 Submitting hundreds or thousands of jobs with overestimated memory can:
 •	Increase queue wait times 
