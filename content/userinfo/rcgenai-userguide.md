@@ -132,9 +132,7 @@ response = requests.post(
 
 **Jupyter Notebook reference**
 
-<a href="/static/data/LLM_API_Example.zip" download>Download ZIP file</a>
-
-<!-- [Download the ZIP file](/static/data/LLM_API_Example.zip)-->
+<a href="/data/LLM_API_Example.zip" download>Download the ZIP file</a>
 
 # Policies and Limitations
 
