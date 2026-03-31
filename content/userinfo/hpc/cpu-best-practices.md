@@ -21,17 +21,19 @@ Aim to request an appropriate amount memory for your job.
 •	Too low (<30%) → likely over-requesting 
 •	Too high (>95%) → risk of job failure (OOM)
 
-If you are running many similar jobs (e.g., job arrays, parameter sweeps, or pipelines like Nextflow/Snakemake), it’s important to **estimate memory needs before scaling up.**
+If you are running many similar jobs (e.g., job arrays, parameter sweeps, processing many different samples, or bioinformatics pipelines like Nextflow/Snakemake), it’s important to **estimate memory needs before scaling up.**
 
-Why this matters
+### Why this matters
+
 Submitting hundreds or thousands of jobs with overestimated memory can:
-•	Increase your queue wait times 
+•	Increase queue wait times 
 •	Reduce overall cluster throughput 
 •	Lead to significant unused allocated memory
 
 ---
 
 ## How to Request Memory in Slurm
+
 You can request memory in two main ways:
 •	Per node (total memory):
    #SBATCH --mem=16G
@@ -48,19 +50,16 @@ seff <JobID>
 Example output:
 Memory Utilized: 1.2 GB
 Memory Efficiency: 7.5% of 16.0 GB
-✔ Best for: quick post-job checks
-⚠ Limitation: only works after job completion
  
-2. jobstats (recommended)
+2. jobstats (during or after job)
 More detailed and works for running jobs:
 module load jobstats; jobstats <JobID>
 Provides:
 •	Memory usage over time 
 •	CPU utilization 
 •	Helpful for tuning future jobs 
-✔ Best for: diagnosing real usage patterns
  
-3. Grafana Dashboard
+3. Grafana Dashboard (during or after job)
 Our Grafana dashboards provide interactive monitoring of job performance, including:
 •	Memory usage over time 
 •	CPU utilization trends 
