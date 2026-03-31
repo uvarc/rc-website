@@ -14,7 +14,7 @@ type = "rivanna"
 
 ---
 
-Efficient memory usage helps ensure that limited cluster resources remain available for all users. Requesting too much memory can lead to longer queue times (for you and others), while requesting too little may cause jobs to fail.
+Efficient CPU memory usage helps ensure that limited cluster resources remain available for all users. Requesting too much memory can lead to longer queue times (for you and others), while requesting too little may cause jobs to fail.
 
 Aim to request an appropriate amount memory for your job.
 •	Target utilization: ~70–90% of requested memory 
@@ -35,9 +35,9 @@ Submitting hundreds or thousands of jobs with overestimated memory can:
 ## How to Request Memory in Slurm
 
 You can request memory in two main ways:
-•	Per node (total memory):
+•	Total memory:
    #SBATCH --mem=16G
-•	Per CPU core:
+•	Memory per CPU core:
    #SBATCH --mem-per-cpu=4G
 
 ---
@@ -83,8 +83,6 @@ Our Grafana dashboards provide interactive monitoring of job performance, includ
 4.	Adjust memory 
    o	Increase if near OOM 
    o	Decrease if utilization is low 
-5.	Repeat once or twice 
-   o	Most jobs converge quickly to a good value 
 
 ---
 
