@@ -40,11 +40,6 @@ You can request memory in two main ways:
 
 ---
 
-## OOD vs SLURM (When to Use What)
-
-* **Open OnDemand (interactive):** Fast prototyping, visualization, short tests. Keep sessions short and purposeful. Stop them when not actively using the GPU.
-* **SLURM batch (production):** Long or repeatable runs, sweeps, or multi‑GPU/multi‑node training. Log metrics and use checkpoints so work can resume if preempted or time‑limited.
-
 ## How to Check Memory Usage
 
 1. seff (after job completes)
