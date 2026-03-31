@@ -14,9 +14,9 @@ type = "rivanna"
 
 ---
 
-Efficient CPU memory usage helps ensure that limited cluster resources remain available for all users. Requesting too much memory can lead to longer queue times (for you and others), while requesting too little may cause jobs to fail.
+Efficient CPU memory usage helps ensure that the shared cluster resources remain available for all users. Requesting too much memory can lead to longer queue times (for you and others), while requesting too little may cause jobs to fail.
 
-Aim to request an appropriate amount memory for your job.
+Aim to request an appropriate amount memory for your jobs.
 •	Target utilization: ~70–90% of requested memory 
 •	Too low (<50%) → likely over-requesting 
 •	Too high (>95%) → risk of job failure (OOM)
