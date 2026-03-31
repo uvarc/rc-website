@@ -18,10 +18,10 @@ Efficient CPU memory usage helps ensure that limited cluster resources remain av
 
 Aim to request an appropriate amount memory for your job.
 •	Target utilization: ~70–90% of requested memory 
-•	Too low (<30%) → likely over-requesting 
+•	Too low (<50%) → likely over-requesting 
 •	Too high (>95%) → risk of job failure (OOM)
 
-If you are running many similar jobs (e.g., job arrays, parameter sweeps, processing many different samples, or bioinformatics pipelines like Nextflow/Snakemake), it’s important to **estimate memory needs before scaling up.**
+If you are running many similar jobs (e.g., job arrays, parameter sweeps, workflows processing many different samples, etc.), it’s important to **estimate memory needs before scaling up.**
 
 ### Why this matters
 
@@ -29,6 +29,7 @@ Submitting hundreds or thousands of jobs with overestimated memory can:
 •	Increase queue wait times 
 •	Reduce overall cluster throughput 
 •	Lead to significant unused allocated memory
+•	Once all the memory for a node is used, the remaining CPUs on a node are inaccessible to other users.
 
 ---
 
@@ -86,6 +87,89 @@ Our Grafana dashboards provide interactive monitoring of job performance, includ
 
 ---
 
+## Recommended Approach
+
+1. Run a small number of test jobs first
+
+Before launching a large batch:
+
+Submit 1–3 representative jobs
+Use realistic input sizes (or slightly larger, if unsure)
+Monitor with:
+jobstats <JobID> (recommended)
+seff <JobID> (after completion)
+
+2. Identify peak memory usage (not just average)
+
+Focus on:
+
+Maximum memory used during the job
+Not just final or average values
+
+Tools like jobstats or Grafana are especially useful here since they show usage over time.
+
+3. Account for variation in inputs
+
+Memory usage can vary depending on:
+
+Input file size (e.g., small vs large FASTQ files)
+Data complexity (e.g., coverage depth, number of features)
+Model or parameter size (for ML/AI workloads)
+
+Make sure to:
+
+Test both a typical case and a worst-case input
+Size your memory request based on the specific workload
+
+Example 100 job workflow:
+95/100 jobs expect to consume 5GB memory
+5/100 jobs expect to consume 90GB memory
+Don't request 100 GB for every job - split workflow into 2 separate arrays i.e. 95 jobs requesting 10GB and 5 jobs requesting 100GB
+
+4. Add a small safety margin
+
+Once you identify peak usage:
+
+Add ~10–20% buffer to avoid out-of-memory failures
+Avoid large safety margins (e.g., 2–10×), which lead to inefficiency
+
+5. Scale up
+
+After validating your memory needs:
+
+Launch your full job array or pipeline
+Use consistent, right-sized memory requests
+Example
+
+Instead of submitting 1,000 jobs like this:
+
+#SBATCH --mem=16G
+
+You might find after testing:
+
+Actual peak usage: ~1.2 GB
+Recommended request: ~2 GB
+#SBATCH --mem=2G
+
+This can dramatically improve scheduling efficiency and reduce wait times.
+
+
+Workflows may have different steps that have very different memory requirements.
+
+Avoid using one large memory value for all steps
+Assign step-specific memory requirements where possible
+Test the most memory-intensive steps individually
+
+Summary
+
+✔ Run a few test jobs first
+✔ Measure peak memory usage
+✔ Account for input variability
+✔ Add a modest safety buffer
+✔ Then scale to full production
+
+---
+
 ## Common Pitfalls
 
 •	Over-requesting “just to be safe”
@@ -102,6 +186,7 @@ Our Grafana dashboards provide interactive monitoring of job performance, includ
 ## Need Help?
 
 If you're unsure how much memory your workflow requires, Research Computing is happy to help:
+
 •	Review your job scripts 
 •	Analyze jobstats output 
 •	Recommend optimized resource requests 
