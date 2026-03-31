@@ -19,12 +19,13 @@ Efficient CPU memory usage helps ensure that the shared cluster resources remain
 Aim to request an appropriate amount memory for all of your jobs.
 •	Target utilization: ~80–90% of requested memory 
 
-If you are running many similar jobs (e.g., job arrays, parameter sweeps, workflows processing many different samples, etc.), it’s important to **estimate memory needs before scaling up.**
+If you are running many similar jobs (e.g., job arrays, parameter sweeps, workflows processing many different samples, etc.), it is especially important to **estimate memory needs before scaling up.**
 
 **Why this matters**
 
 Submitting hundreds or thousands of jobs with overestimated memory can:
 •	Increase queue wait times 
+•	Compound wasted memory
 •	Reduce overall cluster throughput 
 •	Lead to significant unused allocated memory
 •	Once all a node's memory is used, any remaining CPUs on a node are inaccessible to other users.
