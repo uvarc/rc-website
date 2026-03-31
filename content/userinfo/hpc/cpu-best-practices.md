@@ -93,8 +93,9 @@ Before launching a large batch:
 Submit 1–3 representative jobs
 Use realistic input sizes (or slightly larger, if unsure)
 Monitor with:
-jobstats <JobID> (recommended)
+jobstats <JobID>
 seff <JobID> (after completion)
+Grafana Dashboard
 
 2. Identify peak memory usage (not just average)
 
@@ -103,7 +104,7 @@ Focus on:
 Maximum memory used during the job
 Not just final or average values
 
-Tools like jobstats or Grafana are especially useful here since they show usage over time.
+Grafana is especially useful here to spot memory spikes over the course of your job(s) which can help identify potential code inefficiencies.
 
 3. Account for variation in inputs
 
