@@ -1,7 +1,7 @@
 +++
 description = ""
 title = "CPU Memory Best Practices"
-draft = false
+draft = true
 date = "2025-07-25T17:45:12-05:00"
 tags = ["hpc","rivanna","afton","utilization","slurm","supercomputer","queues"]
 categories = ["userinfo"]
