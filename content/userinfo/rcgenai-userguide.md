@@ -138,11 +138,11 @@ response = requests.post(
 
 ## What type of research data can you submit:  
 
-- **Approved:** Any data suitable for Standard Security Zone (SSZ) (Rivanna/Afton), including sensitive university research data. 
+- **Approved:** Any [data suitable for Standard Security Zone (SSZ) (Rivanna/Afton)](https://www.rc.virginia.edu/userinfo/storage/data-sensitivity), including [sensitive](https://security.virginia.edu/definitions/sensitive-data) University research data. 
 
-- **Restricted:** No Highly Sensitive, PHI, or other controlled access data types. 
+- **Restricted:** No [Highly Sensitive](https://security.virginia.edu/definitions/highly-sensitive-data), [PHI](https://hrpp.research.virginia.edu/teams/irb-hsr/researcher-guide-irb-hsr/protected-health-information-hipaa-regulations-and-research), or other controlled access data types. 
 
-- **When in doubt:** Contact us here for support before submitting 
+- **When in doubt:** Contact us for (support)[https://www.rc.virginia.edu/support] before submitting 
 
 ## Where can I find information on University GenAI Usage policies: 
 
