@@ -24,7 +24,6 @@ All are welcome to attend. Light refreshments will be served.
 <style>
 table#schedule {
   border-collapse: collapse;
-  width: 443px;
 
   th,
   td {
@@ -35,15 +34,7 @@ table#schedule {
 }
 
 .col-time {
-  width: 130px;
-}
-
-.col-hub {
-  width: 139px;
-}
-
-.col-corp {
-  width: 174px;
+  width: 8rem;
 }
 </style>
 <table id="schedule">
