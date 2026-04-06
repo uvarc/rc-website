@@ -22,36 +22,125 @@ All are welcome to attend. Light refreshments will be served.
 
 ## Agenda
 <style>
-    .table-wrapper {
-        table, th, td {
-            border: 1px solid black;
-        }
-        
-        table  {
-            table-layout: auto;
-            width: auto;
-        }
-        
-        th:first-child, td:first-child {
-            width: 8rem;
-        }
-    }
+table#schedule {
+  border-collapse: collapse;
+  width: 443px;
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 3px 5px;
+    vertical-align: top;
+  }
+}
+
+.col-time {
+  width: 130px;
+}
+
+.col-hub {
+  width: 139px;
+}
+
+.col-corp {
+  width: 174px;
+}
 </style>
-<span class="table-wrapper">
-
-| Time | Room: Capital One Hub | Room: Corporate Commons |
-| :---- | :---- | :---- |
-| 10 a.m. | Event begins |  |
-| 10:30 a.m. | Opening remarks from **Joshua A. Baller, PhD**, Associate Vice President for Research Computing, and **Michael E. Navicky**, Research Computing Operations Director |  |
-| 11-11:45 a.m. |  | Research Computing presentation and keynote speaker **Tom Hartvigsen, PhD**, Assistant Professor of Data Science |
-| 12:15-1 p.m.  | Poster Session I |  |
-| 1-1:45 p.m. | Poster Session II |  |
-| 1:30-2:15 p.m. |  | Early Career in Research Computing Panel featuring experts from UVA Information Technology Services, UVA Research Computing, and industry partners.   |
-| 1:45-2:30 p.m.  | Poster Session III |  |
-| 2:40-3:25 p.m. |  | Lightning Talks |
-| 3:45-4 p.m.  | Award announcements |  |
-
-</span>
+<table id="schedule">
+  <tr>
+    <th class="col-time">Time</th>
+    <th class="col-hub">Capital One Hub</th>
+    <th class="col-corp">Corporate Commons</th>
+  </tr>
+  <tr>
+    <td class="col-time">10:00 – 10:30</td>
+    <td class="col-hub">Socializing</td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">10:30 – 10:50</td>
+    <td class="col-hub" style="background:#FFFF89">Opening Remarks</td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">11:00 – 11:45</td>
+    <td class="col-hub"></td>
+    <td class="col-corp" style="background:#FFABAD">RC Presentation</td>
+  </tr>
+  <tr>
+    <td class="col-time">11:45 – 12:00</td>
+    <td class="col-hub"></td>
+    <td class="col-corp" style="background:#FAE2D5" rowspan="3">Invited Speaker</td>
+  </tr>
+  <tr>
+    <td class="col-time">12:00 – 12:15</td>
+    <td class="col-hub"></td>
+  </tr>
+  <tr>
+    <td class="col-time">12:15 – 12:30</td>
+    <td class="col-hub" style="background:#CAEDFB" rowspan="3">Poster Session 1</td>
+  </tr>
+  <tr>
+    <td class="col-time">12:30 – 12:45</td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">12:45 – 1:00</td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">1:00 – 1:15</td>
+    <td class="col-hub" style="background:#F2CEED" rowspan="3">Poster Session 2</td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">1:15 – 1:30</td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">1:30 – 1:45</td>
+    <td class="col-corp" style="background:#DAE9F7" rowspan="3">Panel Discussion</td>
+  </tr>
+  <tr>
+    <td class="col-time">1:45 – 2:00</td>
+    <td class="col-hub" style="background:#D9F2D0" rowspan="3">Poster Session 3</td>
+  </tr>
+  <tr>
+    <td class="col-time">2:00 – 2:15</td>
+  </tr>
+  <tr>
+    <td class="col-time">2:15 – 2:30</td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">2:30 – 2:45</td>
+    <td class="col-hub"></td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">2:45 – 3:00</td>
+    <td class="col-hub"></td>
+    <td class="col-corp" style="background:yellow" rowspan="3">Lightning Talks (2:40&nbsp;–&nbsp;3:25)</td>
+  </tr>
+  <tr>
+    <td class="col-time">3:00 – 3:15</td>
+    <td class="col-hub"></td>
+  </tr>
+  <tr>
+    <td class="col-time">3:15 – 3:30</td>
+    <td class="col-hub"></td>
+  </tr>
+  <tr>
+    <td class="col-time">3:30 – 3:45</td>
+    <td class="col-hub"></td>
+    <td class="col-corp"></td>
+  </tr>
+  <tr>
+    <td class="col-time">3:45 – 4:00</td>
+    <td class="col-hub" style="background:#66FFFF">Award Announcements</td>
+    <td class="col-corp"></td>
+  </tr>
+</table>
 
 ## Speaker Lineup
 
