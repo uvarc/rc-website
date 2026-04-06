@@ -21,6 +21,23 @@ The event offers opportunity to network, learn about research resources, explore
 All are welcome to attend. Light refreshments will be served. 
 
 ## Agenda
+<style>
+    .table-wrapper {
+        table, th, td {
+            border: 1px solid black;
+        }
+        
+        table  {
+            table-layout: auto;
+            width: auto;
+        }
+        
+        th:first-child, td:first-child {
+            width: 8rem;
+        }
+    }
+</style>
+<span class="table-wrapper">
 
 | Time | Room: Capital One Hub | Room: Corporate Commons |
 | :---- | :---- | :---- |
@@ -31,8 +48,10 @@ All are welcome to attend. Light refreshments will be served.
 | 1-1:45 p.m. | Poster Session II |  |
 | 1:30-2:15 p.m. |  | Early Career in Research Computing Panel featuring experts from UVA Information Technology Services, UVA Research Computing, and industry partners.   |
 | 1:45-2:30 p.m.  | Poster Session III |  |
-| 2:40-3:25 p.m. | Lightning Talks |  |
+| 2:40-3:25 p.m. |  | Lightning Talks |
 | 3:45-4 p.m.  | Award announcements |  |
+
+</span>
 
 ## Speaker Lineup
 
@@ -59,3 +78,4 @@ All are welcome to attend. Light refreshments will be served.
 * [Teague Henry, PhD](https://datascience.virginia.edu/people/teague-henry), Assistant Professor of Data Science; Assistant Professor, Department of Psychology  
 * [Bronek Gepner, PhD](https://engineering.virginia.edu/centers-institutes/center-applied-biomechanics/people/researchers/bronislaw-gepner), Research Assistant Professor of Mechanical and Aerospace Engineering   
 * [Zhe Zeng, PhD](https://engineering.virginia.edu/faculty/zhe-zeng), Assistant Professor, Computer Science
+* [Christopher Kuenze, PhD](https://education.virginia.edu/about/directory/chris-kuenze), Associate Professor of Education
