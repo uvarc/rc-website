@@ -22,9 +22,9 @@ A software stack is built for each architecture (x86-64, Arm) in the high-securi
 
 The Arm software stack is automatically mounted to `/apps` when you are on a GH200 node. You cannot use modules from this stack elsewhere.
 
-To create a Conda environments, load the miniforge module on a GH200 node. (This is different from the miniforge on your VM or other compute nodes.)
+Conda users must load the miniforge module on a GH200 node to create conda environments. You cannot use conda environments created on x86.
 
-Prebuilt binaries must be Arm-based. Look for `arm`, `arm64`, `aarch64`, etc. in the options.
+Prebuilt binaries must be Arm-based. Look for `arm`, `arm64`, `aarch64`, etc. in the download options.
 
 Containers must be Arm-based. In your pull command add `--arch arm64` or else it will default to x86. (You can pull on an x86 machine.)
 
