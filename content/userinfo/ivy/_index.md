@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy and Rio Secure Environment"
 draft = false
-date = "2025-01-15T11:45:12-05:00"
+date = "2026-04-09T00:00:00-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -207,25 +207,18 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 
 ## Software
 
-Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation upon request. See the lists below for options.
+Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. 
 
-**Preinstalled Software**
+**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
+
+### Linux
+
+Software is managed through modules. You can browse the [complete list of modules](/userinfo/ivy/ivy-linux-sw).
+
+### Windows
 
 {{< rawhtml >}}
 <div class="row" style="margin-bottom:2rem;">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        <b>PREINSTALLED Linux Software</b>
-      </div>
-      <div class="card-block">
-        <i>Click on each for details:</i>
-        <p class="card-text">
-			{{% ivy-approved-software os="Linux" installation="preinstalled" category="all" %}}
-        </p>
-      </div>
-    </div>
-  </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
@@ -242,34 +235,11 @@ Every virtual machine (Linux or Windows) comes with a base installation of softw
 </div>
 {{< /rawhtml >}}
 
-**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
-
 **ADDITIONAL APPROVED SOFTWARE (Available by Request)**
 
 If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security and regulatory compliance and, if approved, will be installed for you.
 
-
 <div class="row" style="margin-bottom:2rem;">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        <b>ADDITIONAL Linux Groups</b>
-      </div>
-      <div class="card-block">
-        <i>Click on each for more information:</i>
-        <p class="card-text">
-          <ul>
-            <li><a href="/userinfo/ivy/ivy-linux-sw" style="color: #0275d8;">All Packages</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#database-software" style="color: #0275d8;">Database Software</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#image-processing" style="color: #0275d8;">Image Processing</a></li>
-          </ul>
-        </p>
-        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-linux-sw';"">Software Details for Linux</button>
-      </div>
-    </div>
-  </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
