@@ -29,7 +29,7 @@ function searchFunction() {
 
 <table class="table table-striped" id="moduleTable">
   <thead class="thead-dark">
-    {{ with resources.Get .Site.Params.hszJsonUrl }}
+    {{ with resources.Get .Site.Params.hszArmJsonUrl }}
       {{ $gistJ := .Content | transform.Unmarshal }}
       {{ $mclasses := $.Get "moduleclasses" }}
       {{ $arch := $.Get "arch" }}
