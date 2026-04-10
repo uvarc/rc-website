@@ -122,6 +122,7 @@ The modules to be removed during this maintenance are listed below.
 |itk                      |5.3.0   |- |
 |jupyterlab               |4.4.6-py3.12 |4.5.6-py3.13 |
 |libtorch                 |2.1.1, 2.4.1-precxx11 | 2.7.1 |
+|Matlab                   |R2017a, R2023a, R2023b, R2024a, R2024b |-|
 |metamorpheus             |0.0.320 |-|
 |nanopolish               |0.13.2  |-|
 |nccl                     |2.18.3, 2.21.5 | 2.22.3+ |
