@@ -38,7 +38,7 @@ table#schedule {
 }
 
 .col-time {
-  width: 8rem;
+  width: 7rem;
 }
 </style>
 <table id="schedule">
@@ -54,13 +54,18 @@ table#schedule {
   </tr>
   <tr>
     <td class="col-time">10:30 – 10:50</td>
-    <td class="col-hub">Opening Remarks</td>
+    <td class="col-hub">
+
+  **Opening remarks** from **Joshua A. Baller, PhD**, Associate Vice President for Research Computing, and **Michael E. Navicky**, Research Computing Operations Director</td>
     <td class="col-corp"></td>
   </tr>
   <tr>
     <td class="col-time">11:00 – 11:45</td>
     <td class="col-hub"></td>
-    <td class="col-corp">RC Presentation</td>
+    <td class="col-corp">
+  
+  **Research Computing Presentation** by Joshua A. Baller, PhD
+    </td>
   </tr>
   <tr>
     <td class="col-time">11:45 – 12:00</td>
@@ -94,7 +99,9 @@ table#schedule {
   </tr>
   <tr>
     <td class="col-time">1:30 – 1:45</td>
-    <td class="col-corp" rowspan="3">Panel Discussion</td>
+    <td class="col-corp" rowspan="3">
+    
+  **Early Career in Research Computing Panel Discussion** featuring experts from UVA Information Technology Services, UVA Research Computing, and industry partners</td>
   </tr>
   <tr>
     <td class="col-time">1:45 – 2:00</td>
@@ -115,7 +122,9 @@ table#schedule {
   <tr>
     <td class="col-time">2:45 – 3:00</td>
     <td class="col-hub"></td>
-    <td class="col-corp" rowspan="3">Lightning Talks (2:40&nbsp;–&nbsp;3:25)</td>
+    <td class="col-corp" rowspan="3">
+    
+  **Lightning Talks** (2:40&nbsp;–&nbsp;3:25) featuring faculty who have used Research Computing services to advance their research.</td>
   </tr>
   <tr>
     <td class="col-time">3:00 – 3:15</td>
