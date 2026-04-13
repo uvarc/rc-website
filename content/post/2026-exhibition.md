@@ -31,6 +31,10 @@ table#schedule {
     padding: 3px 5px;
     vertical-align: top;
   }
+  
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
 }
 
 .col-time {
@@ -38,7 +42,7 @@ table#schedule {
 }
 </style>
 <table id="schedule">
-  <tr>
+  <tr style="color:white; background:#232D4B;">
     <th class="col-time">Time</th>
     <th class="col-hub">Capital One Hub</th>
     <th class="col-corp">Corporate Commons</th>
@@ -50,18 +54,18 @@ table#schedule {
   </tr>
   <tr>
     <td class="col-time">10:30 – 10:50</td>
-    <td class="col-hub" style="background:#FFFF89">Opening Remarks</td>
+    <td class="col-hub">Opening Remarks</td>
     <td class="col-corp"></td>
   </tr>
   <tr>
     <td class="col-time">11:00 – 11:45</td>
     <td class="col-hub"></td>
-    <td class="col-corp" style="background:#FFABAD">RC Presentation</td>
+    <td class="col-corp">RC Presentation</td>
   </tr>
   <tr>
     <td class="col-time">11:45 – 12:00</td>
     <td class="col-hub"></td>
-    <td class="col-corp" style="background:#FAE2D5" rowspan="3">Invited Speaker</td>
+    <td class="col-corp" rowspan="3">Invited Speaker</td>
   </tr>
   <tr>
     <td class="col-time">12:00 – 12:15</td>
@@ -69,7 +73,7 @@ table#schedule {
   </tr>
   <tr>
     <td class="col-time">12:15 – 12:30</td>
-    <td class="col-hub" style="background:#CAEDFB" rowspan="3">Poster Session 1</td>
+    <td class="col-hub" rowspan="3">Poster Session 1</td>
   </tr>
   <tr>
     <td class="col-time">12:30 – 12:45</td>
@@ -81,7 +85,7 @@ table#schedule {
   </tr>
   <tr>
     <td class="col-time">1:00 – 1:15</td>
-    <td class="col-hub" style="background:#F2CEED" rowspan="3">Poster Session 2</td>
+    <td class="col-hub" rowspan="3">Poster Session 2</td>
     <td class="col-corp"></td>
   </tr>
   <tr>
@@ -90,11 +94,11 @@ table#schedule {
   </tr>
   <tr>
     <td class="col-time">1:30 – 1:45</td>
-    <td class="col-corp" style="background:#DAE9F7" rowspan="3">Panel Discussion</td>
+    <td class="col-corp" rowspan="3">Panel Discussion</td>
   </tr>
   <tr>
     <td class="col-time">1:45 – 2:00</td>
-    <td class="col-hub" style="background:#D9F2D0" rowspan="3">Poster Session 3</td>
+    <td class="col-hub" rowspan="3">Poster Session 3</td>
   </tr>
   <tr>
     <td class="col-time">2:00 – 2:15</td>
@@ -111,7 +115,7 @@ table#schedule {
   <tr>
     <td class="col-time">2:45 – 3:00</td>
     <td class="col-hub"></td>
-    <td class="col-corp" style="background:yellow" rowspan="3">Lightning Talks (2:40&nbsp;–&nbsp;3:25)</td>
+    <td class="col-corp" rowspan="3">Lightning Talks (2:40&nbsp;–&nbsp;3:25)</td>
   </tr>
   <tr>
     <td class="col-time">3:00 – 3:15</td>
@@ -128,7 +132,7 @@ table#schedule {
   </tr>
   <tr>
     <td class="col-time">3:45 – 4:00</td>
-    <td class="col-hub" style="background:#66FFFF">Award Announcements</td>
+    <td class="col-hub">Award Announcements</td>
     <td class="col-corp"></td>
   </tr>
 </table>
