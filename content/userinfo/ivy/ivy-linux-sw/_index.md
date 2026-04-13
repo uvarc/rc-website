@@ -9,66 +9,23 @@ tags = [
     "Linux",
     "Software",
 ]
-date = "2020-01-19T17:45:12-05:00"
+date = "2026-04-09T00:00:00-05:00"
 draft = false
 layout = "single"
 +++
 
-{{% callout %}}
-Each Linux Virtual Machine (VM) comes with a set of preinstalled software applications.  Each VM can further be customized via installation of optional software packages.
-{{% /callout %}}
+A software stack is built for each architecture (x86-64, Arm) in the high-security zone. The complete list of modules is shown in each link:
+    - [x86-64](/userinfo/ivy/ivy-linux-sw/complete-list): virtual machines (VMs), non-GH200 compute nodes in Rio
+    - [Arm](/userinfo/ivy/ivy-linux-sw/complete-list-arm): GH200 compute nodes in Rio 
 
-An overview of available software packages for Windows VMs is provided [here](/userinfo/ivy/ivy-windows-sw).
+## Running software on GH200
 
+The Arm software stack is automatically mounted to `/apps` when you are on a GH200 node. You cannot use modules from this stack elsewhere.
 
-# Preinstalled Software 
+Conda users must load the miniforge module on a GH200 node to create conda environments. You cannot use conda environments created on x86.
 
-{{< ivy-approved-sw-detailed os="Linux" installation="preinstalled" category="all" >}}
+Prebuilt binaries must be Arm-based. Look for `arm`, `arm64`, `aarch64`, etc. in the download options.
 
-<br>
+Containers must be Arm-based. In your pull command add `--arch arm64` or else it will default to x86. (You can pull on an x86 machine.)
 
-- - -
-
-# Optional Software
-
-In addition to the preinstalled software, researchers may request installation of the following approved software packages for their Virtual Machine.
-
-[<button class="btn btn-success">Request Ivy Software</button>](https://www.rc.virginia.edu/form/support-request)
-
-<br>
-
-## Bioinformatics
-
-{{< ivy-approved-sw-detailed os="Linux" installation="optional" category="Bioinformatics" >}}
-
-<br>
-
-- - -
-
-## Data Analysis
-
-{{< ivy-approved-sw-detailed os="Linux" installation="optional" category="Data Analysis" >}}
-
-<br>
-
-- - -
-
-## Database Software
-
-{{< ivy-approved-sw-detailed os="Linux" installation="optional" category="Database Software" >}}
-
-<br>
-
-- - -
-
-## Engineering
-
-{{< ivy-approved-sw-detailed os="Linux" installation="optional" category="Engineering" >}}
-
-<br>
-
-- - -
-
-## Image Processing
-
-{{< ivy-approved-sw-detailed os="Linux" installation="optional" category="Image Processing" >}}
+To build from source for Arm, load the compiler of choice (gcc or nvhpc) on a GH200 node with compiler flags `-mcpu=neoverse-v2` (gcc) or `-tp=neoverse-v2` (nvhpc) for optimization. If you get errors related to ld, also load binutils.

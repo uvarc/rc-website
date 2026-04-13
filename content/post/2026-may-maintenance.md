@@ -22,7 +22,7 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 The NVIDIA driver will be upgraded to 595.45.04 to support CUDA 13.1. See section on NVHPC below.
 
 Open OnDemand will be ugpraded to 4.1.4.
-    - Code Server will be upgraded to .
+    - Code Server will be upgraded to 4.115.0.
     - JupyterLab will be upgraded to 4.5.6-py3.13.
     - RStudio Server will be upgraded to (R 4.6.0).
 
@@ -102,44 +102,46 @@ The modules to be removed during this maintenance are listed below.
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-|amber                    |24-CUDA-12.2.2 |24-CUDA-12.4.1 |
-|apptainer                |1.3.4   |1.4.5 |
-|blender                  |3.6.17  |5.0.1 |
-|cellassign               |0.99.2  |-|
-|cellranger               |9.0.1   |10.0.0 |
-|cellpose                 |3.0.10  |4.0.5+ |
-|chemps2                  |1.8.12  |- |
-|clara-parabricks         |4.2.0   |4.6.0 |
-|cuda                     |12.2.2  |12.4.1+ |
-|cudnn                    |8.9.4.25| 9+ |
-|cumulus_feature_barcoding|0.10.0  |-|
-|danpos                   |2.2.2   |-|
-|gcc                      |12.4.0  |14.2.0 (default), 11.4.0 (legacy) |
-|gdb                      |13.1-py3.11    | 16.3 |
-|gromacs                  |2023.2, 2025.1 | 2025.3 (cpu), 2026.0 (gpu) |
-|grass                    |8.2.1, 8.4.1   | 8.4.2 |
-|gsea                     |4.3.3   |4.4.0 |
-|itk                      |5.3.0   |- |
-|jupyterlab               |4.4.6-py3.12 |4.5.6-py3.13 |
+|amber                    |24-CUDA-12.2.2        |24-CUDA-12.4.1 |
+|apptainer                |1.3.4                 |1.4.5 |
+|blender                  |3.6.17                |5.0.1 |
+|cellassign               |0.99.2                |-|
+|cellranger               |9.0.1                 |10.0.0 |
+|cellpose                 |3.0.10                |4.0.5+ |
+|chemps2                  |1.8.12                |- |
+|clara-parabricks         |4.2.0                 |4.6.0 |
+|code-server              |4.99.1                |4.115.0 |
+|cuda                     |12.2.2                |12.4.1+ |
+|cudnn                    |8.9.4.25              | 9+ |
+|cumulus_feature_barcoding|0.10.0                |-|
+|danpos                   |2.2.2                 |-|
+|gcc                      |12.4.0                |14.2.0 (default), 11.4.0 (legacy) |
+|gdb                      |13.1-py3.11           | 16.3 |
+|gromacs                  |2023.2, 2025.1        | 2025.3 (cpu), 2026.0 (gpu) |
+|grass                    |8.2.1, 8.4.1          | 8.4.2 |
+|gsea                     |4.3.3                 |4.4.0 |
+|itk                      |5.3.0                 |- |
+|jupyterlab               |4.4.6-py3.12          |4.5.6-py3.13 |
 |libtorch                 |2.1.1, 2.4.1-precxx11 | 2.7.1 |
-|metamorpheus             |0.0.320 |-|
-|nanopolish               |0.13.2  |-|
-|nccl                     |2.18.3, 2.21.5 | 2.22.3+ |
-|nibabies                 |22.1.3  |-|
-|nvhpc                    |24.5    |25.3+ |
-|openmm                   |7.5.0   |-|
-|peer                     |1.3     |-|
-|R                        |4.3.1   |4.4.1+ |
-|rapidsai                 |25.06   |26.02 |
-|rmats-turbo              |4.1.1   |-|
-|skopeo                   |1.13.1  |-|
-|snakemake                |9.8.1   |9.16.3 |
-|subversion               |1.14.0  |-|
-|thermorawfileparser      |1.3.4   |-|
-|tensorrt                 |10.0.1  |-|
-|ucc-cuda                 |1.2.0-CUDA-12.2.2 | 1.3.0-CUDA-12.8.0 |
-|ucx-cuda                 |1.15.0  |1.18.0+ |
-|vg                       |1.22.0  |-|
+|matlab                   |R2017a, R2023a, R2023b, R2024a, R2024b | R2025a+ |
+|metamorpheus             |0.0.320               |-|
+|nanopolish               |0.13.2                |-|
+|nccl                     |2.18.3, 2.21.5        | 2.22.3+ |
+|nibabies                 |22.1.3                |-|
+|nvhpc                    |24.5                  |25.3+ |
+|openmm                   |7.5.0                 |-|
+|peer                     |1.3                   |-|
+|R                        |4.3.1                 |4.4.1+ |
+|rapidsai                 |25.06                 |26.02 |
+|rmats-turbo              |4.1.1                 |-|
+|skopeo                   |1.13.1                |-|
+|snakemake                |9.8.1                 |9.16.3 |
+|subversion               |1.14.0                |-|
+|thermorawfileparser      |1.3.4                 |-|
+|tensorrt                 |10.0.1                |-|
+|ucc-cuda                 |1.2.0-CUDA-12.2.2     | 1.3.0-CUDA-12.8.0 |
+|ucx-cuda                 |1.15.0                |1.18.0+ |
+|vg                       |1.22.0                |-|
 {{< /table >}}
 
 #### Deprecated modules
