@@ -121,6 +121,7 @@ table#schedule {
 * [Chris Fowler, Cambridge Computer](https://www.linkedin.com/in/christopher-fowler-61831584/)  
 * Dale Robinson, Director, University Data Centers, UVA Information Technology Services   
 * [Bruce Rushing, PhD](https://www.rc.virginia.edu/about/people/rushing/), AI Specialist, UVA Research Computing
+* [Stuart Benington, Dell Technologies](https://www.linkedin.com/in/sbenington/)
 
 ### Lightning Talks
 
