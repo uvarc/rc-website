@@ -23,8 +23,12 @@ All are welcome to attend. Light refreshments will be served.
 ## Agenda
 <style>
 table#schedule {
-  border-collapse: collapse;
-
+  
+  thead > tr > th {
+    color: white; 
+    background: #232D4B;
+  }
+  
   th,
   td {
     border: 1px solid black;
@@ -38,102 +42,65 @@ table#schedule {
 }
 
 .col-time {
-  width: 8rem;
+  width: 6.5rem;
 }
 </style>
-<table id="schedule">
-  <tr style="color:white; background:#232D4B;">
-    <th class="col-time">Time</th>
-    <th class="col-hub">Capital One Hub</th>
-    <th class="col-corp">Corporate Commons</th>
+
+<table border="1" id="schedule">
+  <thead>
+    <th scope="col">Time</th>
+    <th scope="col">Room: Capital One Hub</th>
+    <th scope="col">Room: Corporate Commons</th>
+  </thead>
+  <tr>
+    <td class="col-time">10:00 a.m.</td>
+    <td>Event begins, networking</td>
+    <td></td>
   </tr>
   <tr>
-    <td class="col-time">10:00 – 10:30</td>
-    <td class="col-hub">Socializing</td>
-    <td class="col-corp"></td>
+    <td class="col-time">10:30 a.m.</td>
+    <td><b>Opening remarks</b> from <b>Joshua A. Baller, PhD</b>, Associate Vice President for Research Computing, and <b>Michael E. Navicky,</b> Research Computing Operations Director</td>
+    <td></td>
   </tr>
   <tr>
-    <td class="col-time">10:30 – 10:50</td>
-    <td class="col-hub">Opening Remarks</td>
-    <td class="col-corp"></td>
+    <td class="col-time">11:00 a.m.</td>
+    <td></td>
+    <td><b>Research Computing Presentation</b> by Joshua A. Baller, PhD</td>
   </tr>
   <tr>
-    <td class="col-time">11:00 – 11:45</td>
-    <td class="col-hub"></td>
-    <td class="col-corp">RC Presentation</td>
+    <td class="col-time">11:45 a.m.</td>
+    <td></td>
+    <td><b>Invited Speaker</b><br><b>Tom Hartvigsen, PhD,</b> Assistant Professor of Data Science<br>(ends at 12:30 p.m.)</td>
   </tr>
   <tr>
-    <td class="col-time">11:45 – 12:00</td>
-    <td class="col-hub"></td>
-    <td class="col-corp" rowspan="3">Invited Speaker</td>
+    <td class="col-time">12:15 p.m.</td>
+    <td><b>Poster Session I</b></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="col-time">12:00 – 12:15</td>
-    <td class="col-hub"></td>
+    <td class="col-time">1:00 p.m.</td>
+    <td><b>Poster Session II</b><br>(ends at 1:45)</td>
+    <td></td>
   </tr>
   <tr>
-    <td class="col-time">12:15 – 12:30</td>
-    <td class="col-hub" rowspan="3">Poster Session 1</td>
+    <td class="col-time">1:30 p.m.</td>
+    <td></td>
+    <td><b>Early Career in Research Computing Panel Discussion</b> featuring experts from UVA Information Technology Services, UVA Research Computing, and industry partners<br>(ends at 2:15)</td>
   </tr>
   <tr>
-    <td class="col-time">12:30 – 12:45</td>
-    <td class="col-corp"></td>
+    <td class="col-time">1:45 p.m.</td>
+    <td><b>Poster Session III</b></td>
+    <td></td>
   </tr>
   <tr>
-    <td class="col-time">12:45 – 1:00</td>
-    <td class="col-corp"></td>
+    <td class="col-time">2:40 p.m.</td>
+    <td></td>
+    <td><b>Lightning Talks</b> featuring faculty who have used Research Computing services to advance their research.</td>
   </tr>
   <tr>
-    <td class="col-time">1:00 – 1:15</td>
-    <td class="col-hub" rowspan="3">Poster Session 2</td>
-    <td class="col-corp"></td>
-  </tr>
-  <tr>
-    <td class="col-time">1:15 – 1:30</td>
-    <td class="col-corp"></td>
-  </tr>
-  <tr>
-    <td class="col-time">1:30 – 1:45</td>
-    <td class="col-corp" rowspan="3">Panel Discussion</td>
-  </tr>
-  <tr>
-    <td class="col-time">1:45 – 2:00</td>
-    <td class="col-hub" rowspan="3">Poster Session 3</td>
-  </tr>
-  <tr>
-    <td class="col-time">2:00 – 2:15</td>
-  </tr>
-  <tr>
-    <td class="col-time">2:15 – 2:30</td>
-    <td class="col-corp"></td>
-  </tr>
-  <tr>
-    <td class="col-time">2:30 – 2:45</td>
-    <td class="col-hub"></td>
-    <td class="col-corp"></td>
-  </tr>
-  <tr>
-    <td class="col-time">2:45 – 3:00</td>
-    <td class="col-hub"></td>
-    <td class="col-corp" rowspan="3">Lightning Talks (2:40&nbsp;–&nbsp;3:25)</td>
-  </tr>
-  <tr>
-    <td class="col-time">3:00 – 3:15</td>
-    <td class="col-hub"></td>
-  </tr>
-  <tr>
-    <td class="col-time">3:15 – 3:30</td>
-    <td class="col-hub"></td>
-  </tr>
-  <tr>
-    <td class="col-time">3:30 – 3:45</td>
-    <td class="col-hub"></td>
-    <td class="col-corp"></td>
-  </tr>
-  <tr>
-    <td class="col-time">3:45 – 4:00</td>
-    <td class="col-hub">Award Announcements</td>
-    <td class="col-corp"></td>
+    <td class="col-time">3:45 p.m.</td>
+    <td><b>Award Announcements</b></td>
+    <td></td>
   </tr>
 </table>
 
