@@ -13,6 +13,9 @@ categories = ["feature"]
 <br />
 <br />
 
+**The poster deadline has passed.  For more information about the Exhibition, please visit the [RC Exhibition webpage](/2026/04/research-collaboration-and-innovation-take-center-stage-at-uva-research-computing-exhibition-on-april-21/).**
+
+
 UVA Research Computing, including the Data Analytics Center and the Digital Technology Core, is proud to announce our **Annual Research Computing Exhibition, from 10 a.m. to 4 p.m. on Tuesday, April 21, at the School of Data Science**.
 
 Our Exhibition includes a judged poster competition, with travel awards presented to select finalists. **If you have used Research Computing resources to support your research, we invite you to submit a poster.**
