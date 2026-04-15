@@ -114,7 +114,7 @@ var user_token = getCookie("__user_token");
 
 <div class="col form-item form-group">
    <div class="alert alert-warning">
-      NOTE: Office hours are cancelled on Tuesday, April 21st, 2026, due to the RC Exhibition. Please join us at the exhibition with your questions.
+      NOTE: Office hours are cancelled on Tuesday, April 21st, 2026. Please join us at the <a href="https://www.rc.virginia.edu/2026/04/research-collaboration-and-innovation-take-center-stage-at-uva-research-computing-exhibition-on-april-21/">RC Exhibition</a> with your questions.
    </div>
 </div>
 

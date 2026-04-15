@@ -22,9 +22,9 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 The NVIDIA driver will be upgraded to 595.45.04 to support CUDA 13.1. See section on NVHPC below.
 
 Open OnDemand will be ugpraded to 4.1.4.
-    - Code Server will be upgraded to 4.115.0.
-    - JupyterLab will be upgraded to 4.5.6-py3.13.
-    - RStudio Server will be upgraded to (R 4.6.0).
+- Code Server will be upgraded to 4.115.0.
+- JupyterLab will be upgraded to 4.5.6-py3.13.
+- RStudio Server will be upgraded to (R 4.6.0).
 
 ### Modules
 
