@@ -22,6 +22,7 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 The NVIDIA driver will be upgraded to 595.45.04 to support CUDA 13.1. See section on NVHPC below.
 
 Open OnDemand will be ugpraded to 4.1.4.
+
 - Code Server will be upgraded to 4.115.0.
 - JupyterLab will be upgraded to 4.5.6-py3.13.
 - RStudio Server will be upgraded to (R 4.6.0).
@@ -33,6 +34,7 @@ There are major changes to compiler and container toolchains (GCC, Intel, NVHPC,
 #### GCC
 
 GCC 14.2.0 will become the new default. Most modules under 11.4.0 will be migrated under 14.2.0. Some of the most important upgrades include:
+
 - bcftools, htslib, samtools/1.23
 - python/3.13.11
 - R/4.6.0
@@ -55,11 +57,13 @@ GCC 12.4.0 and all modules under it will be removed.
 #### Intel
 
 Intel 2025.3 will become the new default. Most modules under 2023.1 and 2025.0 will be migrated under 2025.3. Some of the most important upgrades include:
+
 - cp2k/2026.1
 - elpa/2025.06.002
 - libxc/7.0.0
+- siesta/5.4.2
 
-A module that is not migrated may exist under GCC (e.g. spglib) or NVHPC (e.g. gromacs). If not, it should be seen as deprecated, meaning it will be removed with the Intel 2023.1 and 2025.0 toolchains in the future, but not during this maintenance. Deprecated modules are listed at the end of this page. If you still need to use these modules, please let us know as soon as possible.
+A module that is not migrated may exist under GCC (e.g. spglib) or NVHPC (e.g. gromacs). If not, it should be seen as deprecated, meaning it will be removed with the Intel 2023.1 and 2025.0 toolchains in the future, but not during this maintenance. Deprecated modules are listed at the end. If you still need to use these modules, please let us know as soon as possible.
 
 #### NVHPC
 
@@ -117,6 +121,7 @@ The modules to be removed during this maintenance are listed below.
 |danpos                   |2.2.2                 |-|
 |gcc                      |12.4.0                |14.2.0 (default), 11.4.0 (legacy) |
 |gdb                      |13.1-py3.11           | 16.3 |
+|go                       |1.23.6                |1.26.2 |
 |gromacs                  |2023.2, 2025.1        | 2025.3 (cpu), 2026.0 (gpu) |
 |grass                    |8.2.1, 8.4.1          | 8.4.2 |
 |gsea                     |4.3.3                 |4.4.0 |
@@ -141,6 +146,7 @@ The modules to be removed during this maintenance are listed below.
 |tensorrt                 |10.0.1                |-|
 |ucc-cuda                 |1.2.0-CUDA-12.2.2     | 1.3.0-CUDA-12.8.0 |
 |ucx-cuda                 |1.15.0                |1.18.0+ |
+|unrar                    |6.0.2                 |7.21    |
 |vg                       |1.22.0                |-|
 {{< /table >}}
 
@@ -173,7 +179,7 @@ Deprecated GCC and Intel modules are listed alphabetically below. They will not 
         ```
     - MPI
         ```
-        abinit cesm siesta
+        abinit cesm
         ```
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 
