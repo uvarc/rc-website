@@ -121,6 +121,7 @@ The modules to be removed during this maintenance are listed below.
 |danpos                   |2.2.2                 |-|
 |gcc                      |12.4.0                |14.2.0 (default), 11.4.0 (legacy) |
 |gdb                      |13.1-py3.11           | 16.3 |
+|go                       |1.23.6                |1.26.2 |
 |gromacs                  |2023.2, 2025.1        | 2025.3 (cpu), 2026.0 (gpu) |
 |grass                    |8.2.1, 8.4.1          | 8.4.2 |
 |gsea                     |4.3.3                 |4.4.0 |
@@ -145,6 +146,7 @@ The modules to be removed during this maintenance are listed below.
 |tensorrt                 |10.0.1                |-|
 |ucc-cuda                 |1.2.0-CUDA-12.2.2     | 1.3.0-CUDA-12.8.0 |
 |ucx-cuda                 |1.15.0                |1.18.0+ |
+|unrar                    |6.0.2                 |7.21    |
 |vg                       |1.22.0                |-|
 {{< /table >}}
 
