@@ -180,30 +180,12 @@ workflow {
     bam_ch     = BWA_ALIGN(trimmed_ch, ref_ch)
     FREEBAYES(bam_ch, ref_ch)
 }
-```
-
-- After the rule `align_hisat` is completed, the workflow can move to the next rule `stringtie_assemble`
-- Notice that the output of `align_hisat` is a `.bam` file, this is now the input to the rule `stringtie_assemble`
-
-#```
-#rule stringtie_assemble:
-#    input:
-#        genome_gtf=config['GENOME_GTF'],
-#        bam="align_hisat2/{sample}.bam"
-#    output: "stringtie/assembled/{sample}.gtf"
-#    threads: config['THREADS']
-#    shell:
-#        "stringtie -p {threads} -G {input.genome_gtf} "
-#        "-o {output} -l {wildcards.sample} {input.bam}"
-#```
-
-- You can add as many processes as you like as long as they are sequential with inputs and outputs
-
+``'
 # Slurm for Nextflow:
 
 - The Nextflow pipeline can be executed using a `SLURM` script on the HPC system
-- Below is an example script to submit to the standard partition with 8 threads
-- This script is using a `conda` environment called rnaseq
+- Below is an example script to submit your main controller script to the standard partition with 1 core
+
 
 {{< pull-code file="/static/scripts/nextflow.slurm" lang="no-highlight" >}}
 
