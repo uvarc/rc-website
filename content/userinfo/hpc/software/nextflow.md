@@ -55,9 +55,8 @@ module spider {{% module-firstversion %}}
 # Nextflow processes:
 
 ![Snakemake DAG](/images/snakemake_dag.png)
-- Snakemake follows the GNU Make paradigm
 - Workflows are defined in processes
-- Dependencies between the rules are determined automatically, creating a DAG (directed acyclic graph) of jobs that can be parallelized
+- Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized
 
 # nextflow.config file:
 Config files are generally for
