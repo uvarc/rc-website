@@ -61,8 +61,7 @@ module spider {{% module-firstversion %}}
 # nextflow.config file:
 Config files are generally for
 - params: workflow parameters (like input filenames, paths, job settings) processes to define global or process-specific options, or profiles.
-- process: additional processes specifying global and/or per-process settings, software environments, and job settings
-- profile: 
+- process: additional processes specifying global and/or per-process settings, software environments, profiles, and job settings
 
 ```
 
