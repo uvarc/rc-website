@@ -31,10 +31,10 @@ Submitting hundreds or thousands of jobs with overestimated memory can:
 
 ---
 
-## How to Request Memory in Slurm
+## Requesting Memory in Slurm
 
 You can request memory in two main ways:
-•	Total memory:
+•	Total memory for job:
    #SBATCH --mem=16G
 •	Memory per CPU core:
    #SBATCH --mem-per-cpu=4G
@@ -158,7 +158,7 @@ Avoid using one large memory value for all steps
 Assign step-specific memory requirements where possible
 Test the most memory-intensive steps individually
 -->
-### Summary
+### Simplified Workflow for Right-Sizing Memory
 
 ✔ Run a few test jobs first
 ✔ Measure peak memory usage
