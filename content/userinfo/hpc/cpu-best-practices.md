@@ -24,11 +24,10 @@ If you are running many similar jobs (e.g., job arrays, parameter sweeps, workfl
 **Why this matters**
 
 Submitting hundreds or thousands of jobs with overestimated memory can:
-•	Increase queue wait times 
 •	Compound wasted memory
+•	Increase queue wait times
 •	Reduce overall cluster throughput 
-•	Lead to significant unused allocated memory
-•	Once all a node's memory is used, any remaining CPUs on a node are inaccessible to other users.
+•	Lead to significant number of unusable CPUs
 
 ---
 
@@ -68,7 +67,7 @@ Best for:
 •	Identifying peak memory requirements 
 
 ---
-
+<!-- 
 ## Practical Workflow for Right-Sizing Memory
 
 1.	Start with an estimate 
@@ -158,7 +157,7 @@ Workflows may have different steps that have very different memory requirements.
 Avoid using one large memory value for all steps
 Assign step-specific memory requirements where possible
 Test the most memory-intensive steps individually
-
+-->
 ### Summary
 
 ✔ Run a few test jobs first
