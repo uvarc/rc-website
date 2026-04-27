@@ -181,6 +181,8 @@ Test the most memory-intensive steps individually
 
 ## Common Pitfalls
 
+- **Over-requesting “just to be safe”**  
+  Leads to longer queue times and wasted resources.
 •	Over-requesting “just to be safe”
    → leads to longer queue times and wasted resources 
 •	Forgetting memory scales with CPUs
