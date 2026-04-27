@@ -114,6 +114,7 @@ The modules to be removed during this maintenance are listed below.
 |cellpose                 |3.0.10                |4.0.5+ |
 |chemps2                  |1.8.12                |- |
 |clara-parabricks         |4.2.0                 |4.6.0 |
+|cmake                    |4.0.0, 4.1.2          |4.2.2 |
 |code-server              |4.99.1                |4.115.0 |
 |cuda                     |12.2.2                |12.4.1+ |
 |cudnn                    |8.9.4.25              | 9+ |
@@ -144,9 +145,10 @@ The modules to be removed during this maintenance are listed below.
 |subversion               |1.14.0                |-|
 |thermorawfileparser      |1.3.4                 |-|
 |tensorrt                 |10.0.1                |-|
+|tmux                     |3.4, 3.5a             |3.6a |
 |ucc-cuda                 |1.2.0-CUDA-12.2.2     | 1.3.0-CUDA-12.8.0 |
 |ucx-cuda                 |1.15.0                |1.18.0+ |
-|unrar                    |6.0.2                 |7.21    |
+|unrar                    |6.0.2                 |7.21 |
 |vg                       |1.22.0                |-|
 {{< /table >}}
 
