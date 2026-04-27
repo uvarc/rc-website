@@ -112,12 +112,13 @@ var user_token = getCookie("__user_token");
 ## Office Hours
 - - -
 
+<!--
 <div class="col form-item form-group">
    <div class="alert alert-warning">
       NOTE: Office hours are cancelled on Tuesday, April 21st, 2026. Please join us at the <a href="https://www.rc.virginia.edu/2026/04/research-collaboration-and-innovation-take-center-stage-at-uva-research-computing-exhibition-on-april-21/">RC Exhibition</a> with your questions.
    </div>
 </div>
-
+-->
 
 Research Computing staff host weekly office hours via Zoom twice a week, with no appointment required. Tell us about a project idea or talk to us about our high performance computing platforms, storage and services. We're here to help you solve your computational problems. Examples of the type of support we can provide are:
 
