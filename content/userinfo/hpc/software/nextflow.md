@@ -54,16 +54,15 @@ module spider {{% module-firstversion %}}
 
 # Nextflow processes:
 
-![Snakemake DAG](/images/snakemake_dag.png)
-- Snakemake follows the GNU Make paradigm
+<!--![Snakemake DAG](/images/snakemake_dag.png)-->
 - Workflows are defined in processes
-- Dependencies between the rules are determined automatically, creating a DAG (directed acyclic graph) of jobs that can be parallelized
+- Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized
 
 # nextflow.config file:
 Config files are generally for
 - params: workflow parameters (like input filenames, paths, job settings) processes to define global or process-specific options, or profiles.
-- process: additional processes specifying global and/or per-process settings, software environments, and job settings
-- profile: 
+- processes: additional processes specifying global and/or per-process settings, software environments, profiles, and job settings
+- profiles: specify a commonly used collection of settings/parameters
 
 ```
 
@@ -180,30 +179,12 @@ workflow {
     bam_ch     = BWA_ALIGN(trimmed_ch, ref_ch)
     FREEBAYES(bam_ch, ref_ch)
 }
-```
-
-- After the rule `align_hisat` is completed, the workflow can move to the next rule `stringtie_assemble`
-- Notice that the output of `align_hisat` is a `.bam` file, this is now the input to the rule `stringtie_assemble`
-
-#```
-#rule stringtie_assemble:
-#    input:
-#        genome_gtf=config['GENOME_GTF'],
-#        bam="align_hisat2/{sample}.bam"
-#    output: "stringtie/assembled/{sample}.gtf"
-#    threads: config['THREADS']
-#    shell:
-#        "stringtie -p {threads} -G {input.genome_gtf} "
-#        "-o {output} -l {wildcards.sample} {input.bam}"
-#```
-
-- You can add as many processes as you like as long as they are sequential with inputs and outputs
-
+``'
 # Slurm for Nextflow:
 
 - The Nextflow pipeline can be executed using a `SLURM` script on the HPC system
-- Below is an example script to submit to the standard partition with 8 threads
-- This script is using a `conda` environment called rnaseq
+- Below is an example script to submit your main controller script to the standard partition with 1 core
+
 
 {{< pull-code file="/static/scripts/nextflow.slurm" lang="no-highlight" >}}
 
