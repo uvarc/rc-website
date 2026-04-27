@@ -2,7 +2,7 @@
 description = ""
 title = "CPU Memory Best Practices"
 draft = false
-date = "2025-07-25T17:45:12-05:00"
+date = "2026-04-25T17:45:12-05:00"
 tags = ["hpc","rivanna","afton","utilization","slurm","supercomputer","queues"]
 categories = ["userinfo"]
 images = [""]
@@ -17,7 +17,7 @@ type = "rivanna"
 Efficient CPU memory usage helps ensure that the shared cluster resources remain available for all users. Requesting too much memory can lead to longer queue times (for you and others), while requesting too little may cause jobs to fail.
 
 Aim to request an appropriate amount memory for all of your jobs.
-•	Target utilization: ~80–90% of requested memory 
+•	Target utilization: ~70–80% of requested memory 
 
 If you are running many similar jobs (e.g., job arrays, parameter sweeps, workflows processing many different samples, etc.), it is especially important to **estimate memory needs before scaling up.**
 
@@ -34,35 +34,46 @@ Submitting hundreds or thousands of jobs with overestimated memory can:
 ## Requesting Memory in Slurm
 
 You can request memory in two main ways:
-•	Total memory for job:
-   #SBATCH --mem=16G
-•	Memory per CPU core:
-   #SBATCH --mem-per-cpu=4G
+
+•	Total memory for job, ex. `#SBATCH --mem=16G`
+
+•	Memory per CPU core, ex. `#SBATCH --mem-per-cpu=4G`
 
 ---
 
 ## How to Check Memory Usage
 
-1. seff (after job completes)
-Provides a quick summary of efficiency:
+1. `seff` (after job completes) Provides a quick summary of efficiency:
+
+```
 seff <JobID>
+```
+
 Example output:
+
+```
 Memory Utilized: 1.2 GB
 Memory Efficiency: 7.5% of 16.0 GB
+```
  
-2. jobstats (during or after job)
-More detailed and works for running jobs:
-module load jobstats; jobstats <JobID>
+2. `jobstats` (during or after job). More detailed and works for running jobs:
+
+```
+module load jobstats; 
+jobstats <JobID>
+```
 Provides:
 •	Memory usage (maximum)
 •	CPU utilization 
  
-3. Grafana Dashboard (during or after job)
-Provides interactive monitoring of job performance, including:
+3. `Grafana Dashboard` (during or after job). Provides interactive monitoring of job performance, including:
+
 •	Memory usage over time 
 •	CPU utilization trends 
 •	Node-level resource usage 
+
 Best for:
+
 •	Visualizing spikes vs steady usage 
 •	Identifying peak memory requirements 
 
@@ -170,14 +181,14 @@ Test the most memory-intensive steps individually
 
 ## Common Pitfalls
 
-•	Over-requesting “just to be safe”
-   → leads to longer queue times and wasted resources 
-•	Forgetting memory scales with CPUs
-   → --mem-per-cpu × CPUs can unintentionally request large totals 
-•	Ignoring peak vs average usage
-   → short spikes matter (Grafana helps here) 
-•	Not re-tuning after pipeline changes
-   → different steps may have very different memory needs 
+- **Over-requesting “just to be safe”**  
+  Leads to longer queue times and wasted resources.
+- **Forgetting memory scales with CPUs**  
+  Using --mem-per-cpu × CPUs can unintentionally request large totals.
+- **Ignoring peak vs average usage**  
+  Short spikes matter (Grafana helps here).
+- **Not re-tuning after pipeline changes**  
+  Different steps may have very different memory needs.
 
 ---
 
