@@ -183,14 +183,12 @@ Test the most memory-intensive steps individually
 
 - **Over-requesting “just to be safe”**  
   Leads to longer queue times and wasted resources.
-•	Over-requesting “just to be safe”
-   → leads to longer queue times and wasted resources 
-•	Forgetting memory scales with CPUs
-   → --mem-per-cpu × CPUs can unintentionally request large totals 
-•	Ignoring peak vs average usage
-   → short spikes matter (Grafana helps here) 
-•	Not re-tuning after pipeline changes
-   → different steps may have very different memory needs 
+- **Forgetting memory scales with CPUs”**  
+  Using --mem-per-cpu × CPUs can unintentionally request large totals.
+- **Ignoring peak vs average usage”**  
+  Short spikes matter (Grafana helps here).
+- **Not re-tuning after pipeline changes”**  
+  Different steps may have very different memory needs.
 
 ---
 
