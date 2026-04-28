@@ -109,6 +109,7 @@ The modules to be removed during this maintenance are listed below.
 |amber                    |24-CUDA-12.2.2        |24-CUDA-12.4.1 |
 |apptainer                |1.3.4                 |1.4.5 |
 |blender                  |3.6.17                |5.0.1 |
+|busco                    |5.8.2                 |6.0.0 |
 |cellassign               |0.99.2                |-|
 |cellranger               |9.0.1                 |10.0.0 |
 |cellpose                 |3.0.10                |4.0.5+ |
@@ -133,6 +134,7 @@ The modules to be removed during this maintenance are listed below.
 |metamorpheus             |0.0.320               |-|
 |nanopolish               |0.13.2                |-|
 |nccl                     |2.18.3, 2.21.5        | 2.22.3+ |
+|nextflow                 |25.04.6               |25.10.4 |
 |nibabies                 |22.1.3                |-|
 |nvhpc                    |24.5                  |25.3+ |
 |openmm                   |7.5.0                 |-|
@@ -141,7 +143,7 @@ The modules to be removed during this maintenance are listed below.
 |rapidsai                 |25.06                 |26.02 |
 |rmats-turbo              |4.1.1                 |-|
 |skopeo                   |1.13.1                |-|
-|snakemake                |9.8.1                 |9.16.3 |
+|snakemake                |9.8.1                 |9.19.0 |
 |subversion               |1.14.0                |-|
 |thermorawfileparser      |1.3.4                 |-|
 |tensorrt                 |10.0.1                |-|
