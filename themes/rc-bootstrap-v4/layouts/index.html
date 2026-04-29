@@ -20,27 +20,23 @@
 <body>
   {{ partial "menu-home.html" . }}
   {{ partial "site-header.html" . }}
-   <!-- {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/UVA_Data_Storage_Finder_Banner.png"
-   "imageLink" "https://data-storage-finder.library.virginia.edu" "altText" "Image shows an aerial photo of UVA with specific locations highlighted with the following text overlaid: \"UVA Data Storage Finder. Find the right place for your research data. Try out the tool >\"" "linkAriaLabel" "Try out the Storage Finder tool" ) }} -->
+  {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/banner-genai-now-available.png"
+  "imageLink" "/2026/03/uva-research-computing-launches-uva-rc-genai/" "altText" "Graphic reading 'Now Available: UVA RC GenAI, UVA Research Computing's high-powered generative Al solution dedicated to UVA researchers. Try The Tool >'" "linkAriaLabel" "Try out the GenAI tool" ) }}
    <!-- {{ partial "event-home-banner.html" (dict "context" . "imagePath" "/images/spring_2026_workshops.png"
    "imageLink" "/education/workshops" "altText" "Image is a graphic to promote the upcoming 2026 Spring Workshops" ) }} -->
    
-  {{ $carouselItems := slice
-    (dict
-      "imagePath" "/images/2026-exhibition-banner-new.png"
-      "imageLink" "/2026/04/research-collaboration-and-innovation-take-center-stage-at-uva-research-computing-exhibition-on-april-21/"
-      "altText" "Graphic reading 'Research Computing Exhibition 2026. April 21, 10 a.m. - 4 p.m. School of Data Science.' Learn more >"
-    )
+  {{/*  ! Comment the above partial and uncomment the next two sections to enable the carousel  */}}
+  {{/*  {{ $carouselItems := slice
     (dict
       "imagePath" "/images/banner-genai-now-available.png"
       "imageLink" "/2026/03/uva-research-computing-launches-uva-rc-genai/"
       "altText" "Graphic reading 'Now Available: UVA RC GenAI, UVA Research Computing's high-powered generative Al solution dedicated to UVA researchers. Try The Tool >'"
     )
-  }}
+  }}  */}}
 
-  <div class="container responsive-image-container">
+  {{/*  <div class="container responsive-image-container">
     {{ partial "list-to-carousel.html" (dict "items" $carouselItems "duration" 8000 "id" "home-carousel") }}
-  </div>
+  </div>  */}}
 
 
   <div class="reminder" style="position:fixed;font-family:monospace;color:#666;font-size:12px;right:8px;bottom:8px;">
