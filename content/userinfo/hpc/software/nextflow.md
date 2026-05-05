@@ -62,6 +62,22 @@ module spider {{% module-firstversion %}}
 - Workflows are defined in processes
 - Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized
 
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+
+  <div style="flex: 1; min-width: 250px;">
+    <h1>Nextflow processes:</h1>
+    <ul>
+      <li>Workflows are defined in processes</li>
+      <li>Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized</li>
+    </ul>
+  </div>
+
+  <div>
+    <img src="/images/nextflow-dag.png" alt="Nextflow DAG" style="width:200px;">
+  </div>
+
+</div>
+
 # nextflow.config file:
 Config files are generally for
 - params: workflow parameters (like input filenames, paths, job settings) processes to define global or process-specific options, or profiles.
