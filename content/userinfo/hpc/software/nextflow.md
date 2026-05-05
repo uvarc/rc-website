@@ -8,6 +8,9 @@ categories = [
 date = "2021-07-08T08:37:46-05:00"
 tags = [
   "multi-core",
+  "workflow managers",
+  "bioinformatics",
+  "nextflow",
 ]
 draft = false
 modulename = "nextflow"
