@@ -65,7 +65,7 @@ module spider {{% module-firstversion %}}
 Config files are generally for
 - params: workflow parameters (like input filenames, paths, job settings) processes to define global or process-specific options, or profiles.
 - processes: additional processes specifying global and/or per-process settings, software environments, profiles, and job settings
-- profiles: specify a commonly used collection of settings/parameters
+- profiles: specify a frequently used collection of settings and/or parameters
 
 ```
 
