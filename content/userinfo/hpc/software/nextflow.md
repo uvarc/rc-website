@@ -57,7 +57,7 @@ module spider {{% module-firstversion %}}
 
 # Nextflow processes:
 
-![Nextflow DAG](/images/nextflo-dag.png)
+![Nextflow DAG](/images/nextflow-dag.png)
 - Workflows are defined in processes
 - Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized
 
