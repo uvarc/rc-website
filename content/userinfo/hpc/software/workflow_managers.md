@@ -36,7 +36,7 @@ The most popular workflow managers on the HPC system are listed below:
 			</td>
 		</tr>
 		<tr>
-		<th scope="row" style="width:25%;font-weight:bold;">Nextflow</th>
+		<th scope="row" style="width:25%;font-weight:bold;"><a href="/userinfo/hpc/software/nextflow/">Nextflow</a></th>
 			<td>
 				<img src="/images/nextflow.png" alt="Workflows" align="right" style="max-width:40%;padding:10px;" />
                                 Nextflow enables scalable and reproducible scientific workflows using software containers
