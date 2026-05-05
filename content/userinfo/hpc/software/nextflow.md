@@ -182,7 +182,7 @@ workflow {
     bam_ch     = BWA_ALIGN(trimmed_ch, ref_ch)
     FREEBAYES(bam_ch, ref_ch)
 }
-``'
+```
 # Slurm for Nextflow:
 
 - The Nextflow pipeline can be executed using a `SLURM` script on the HPC system
