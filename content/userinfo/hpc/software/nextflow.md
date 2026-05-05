@@ -55,12 +55,12 @@ module spider {{% module-firstversion %}}
 - Workflows are written in Groovy and can be deployed in parallel on the HPC system
 - Workflows can be executed with modules or containerized environments: Conda or Apptainer
 
-# Nextflow processes:
+<!--# Nextflow processes:
 
-<!-- ![Nextflow DAG](/images/nextflow-dag.png) -->
+![Nextflow DAG](/images/nextflow-dag.png)
 <img src="/images/nextflow-dag.png" alt="Nextflow DAG" style="width:10%;">
 - Workflows are defined in processes
-- Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized
+- Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized -->
 
 <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
 
