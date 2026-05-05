@@ -73,7 +73,7 @@ module spider {{% module-firstversion %}}
   </div>
 
   <div>
-    <img src="/images/nextflow-dag.png" alt="Nextflow DAG" style="width:200px;">
+    <img src="/images/nextflow-dag.png" alt="Nextflow DAG" style="width:200px; margin-top: 10px;">
   </div>
 
 </div>
