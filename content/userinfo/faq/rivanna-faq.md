@@ -102,6 +102,15 @@ if [ -f /etc/bashrc ]; then
 PS1="\s-\v\$"
 alias vi='vim'
 ```
+## Can I install GenAI tools on Rivanna or Afton to help with coding?
+Use of AI tools on RC resources must comply with the University's policies governing [acceptable use of information technology resources](https://uvapolicy.virginia.edu/policy/irm-002). This includes restrictions on downloading or using prohibited applications (e.g., DeepSeek AI, TikTok, WeChat, CapCut).
+
+Users should follow the University's GenAI Use Guidelines and are encourage to use appropriately contracted and licensed GenAI tools (i.e, M365 Copilot) with [Sensitive](https://security.virginia.edu/definitions/sensitive-data) or [Internal Use](https://uvapolicy.virginia.edu/policy/IRM-003) research data. Data classified as "Public" may be used with other GenAI tools. 
+
+## Does this prevent training or fine-tuning AI models for research?
+No. Standard research workflows including training, fine-tuning, or evaluating machine learning or generative models as part of research projects are permitted on RC resources.
+
+Please note that models trained or fine-tuned on sensitive or highly sensitive data may allow aspects of that data to be extracted. Therefore, model weights of any model trained or fine-tuned using research data should be protected in accordance with the applicable [data protection standard](https://security.virginia.edu/data-protection).
 
 - - -
 

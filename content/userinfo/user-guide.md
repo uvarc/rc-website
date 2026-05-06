@@ -73,3 +73,33 @@ quell_footer = true
   </div>
   
 </div>
+
+<div class="card-group">
+
+  <div class="card">
+    <div style="text-align:center;"><i class="fa fa-brain fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
+    <div class="card-block">
+      <h4 class="card-title">UVA RC GenAI</h4>
+      <p class="card-text">UVA RC GenAI is a locally hosted AI platform powered by Kimi K2.5. Available both through web interface and API, it enables fast, secure multimodal and code-driven workflows, with up to 60 queries per minute at no cost for our researchers.</p>
+      <br clear=all />
+      <div class="contact-button">
+        <a href="/userinfo/rcgenai-userguide/"><button class="btn btn-sm btn-primary"">Get Started &rsaquo;</button></a>
+      </div>
+    </div>
+  </div>
+  
+<div class="card">
+    <!---
+<div style="text-align:center;"><i class="fa fa-truck fa-4x" aria-hidden="true" style="padding-top:40px;padding-bottom:20px;"></i></div>
+    <div class="card-block">
+      <h4 class="card-title">Data Transfer</h4>
+      <p class="card-text">Sometimes you have the right data, but in the wrong place. There are several paths available for researchers depending upon the size and destination of your data.</p>
+      <br clear=all />
+      <div class="contact-button">
+        <a href="/userinfo/data-transfer/"><button class="btn btn-sm btn-primary">Get Started &rsaquo;</button></a>
+      </div>
+    </div>
+  </div>
+-->
+  
+</div>

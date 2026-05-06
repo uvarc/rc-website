@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy and Rio Secure Environment"
 draft = false
-date = "2025-01-15T11:45:12-05:00"
+date = "2026-04-09T00:00:00-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -64,10 +64,10 @@ Please complete the training at the following link: <a href="https://in.virginia
 The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both on and off grounds. In order to use the HSVPN, users must ensure that their personal machines meet the following requirements. More information on HSVPN compliance can be found on the ITS website: <a href="https://in.virginia.edu/vpncheck" target="_blank">https://in.virginia.edu/vpncheck</a>
 
 1. **Install the Cisco AnyConnect Secure Mobility Client.**
-    This can be found at the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=d66f4fd4db29274c2192e665059619d6&sysparm_category=06d7db5bdbfcab00cebc550a48961963" target="_blank">UVA ITS Software Gateway</a>. Be sure to install the version of VPN Client HS 4.6 that is compatible with your personal computer's operating system. More detailed instructions for installing the VPN client can be found on the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">ITS website</a>.
+    This can be found at the <a href="https://virginia.service-now.com/its" target="_blank">UVA ITS Software Gateway</a>. Be sure to install the version of VPN Client HS 4.6 that is compatible with your personal computer's operating system. More detailed instructions for installing the VPN client can be found on the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">ITS website</a>.
     
 2. **Install Opswat.**
-    Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa" target="_blank">UVA ITS Software Gateway</a>.
+    Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its" target="_blank">UVA ITS Software Gateway</a>.
 
 {{% callout %}}
 If your personal machine's operating system is no longer supported and does not allow for disk encryption, having OPSWAT installed will not resolve the issue. The recommended solution is to upgrade the operating system or acquire a device with an updated OS that meets these security requirements.
@@ -75,7 +75,7 @@ If your personal machine's operating system is no longer supported and does not 
 
 
 3. **Install Anti-malware software (Windows Defender recommended)**.
-    Anti-malware software must be installed on your machine. Windows Defender is behavioral-based antimalware software and meets UVA's HSVPN requirements. Windows Defender can be downloaded from the <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=2bee0fd3dbc4a4d005fff49eae9619ee" target="_blank">UVA ITS Software Gateway</a>.
+    Anti-malware software must be installed on your machine. Windows Defender is behavioral-based antimalware software and meets UVA's HSVPN requirements. Windows Defender can be downloaded from the <a href="https://virginia.service-now.com/its" target="_blank">UVA ITS Software Gateway</a>.
     
 
 <!-- 
@@ -207,25 +207,18 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 
 ## Software
 
-Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation upon request. See the lists below for options.
+Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. 
 
-**Preinstalled Software**
+**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
+
+### Linux
+
+Software is managed through modules. You can browse the [complete list of modules](/userinfo/ivy/ivy-linux-sw).
+
+### Windows
 
 {{< rawhtml >}}
 <div class="row" style="margin-bottom:2rem;">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        <b>PREINSTALLED Linux Software</b>
-      </div>
-      <div class="card-block">
-        <i>Click on each for details:</i>
-        <p class="card-text">
-			{{% ivy-approved-software os="Linux" installation="preinstalled" category="all" %}}
-        </p>
-      </div>
-    </div>
-  </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
@@ -242,34 +235,11 @@ Every virtual machine (Linux or Windows) comes with a base installation of softw
 </div>
 {{< /rawhtml >}}
 
-**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
-
 **ADDITIONAL APPROVED SOFTWARE (Available by Request)**
 
 If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security and regulatory compliance and, if approved, will be installed for you.
 
-
 <div class="row" style="margin-bottom:2rem;">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        <b>ADDITIONAL Linux Groups</b>
-      </div>
-      <div class="card-block">
-        <i>Click on each for more information:</i>
-        <p class="card-text">
-          <ul>
-            <li><a href="/userinfo/ivy/ivy-linux-sw" style="color: #0275d8;">All Packages</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#database-software" style="color: #0275d8;">Database Software</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#image-processing" style="color: #0275d8;">Image Processing</a></li>
-          </ul>
-        </p>
-        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-linux-sw';"">Software Details for Linux</button>
-      </div>
-    </div>
-  </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
@@ -472,6 +442,16 @@ Similar to our clusters Rivanna and Afton in standard security zone, Rio is a ma
     </tr>
     <tr>
       <td>gpu</td>
+      <td>GPU jobs </td>
+      <td>3 days</td>
+      <td>1</td>
+      <td>8GPU</td>
+      <td>96</td>
+      <td>4 GB</td>
+      <td>750 GB</td>
+    </tr>
+    <tr>
+      <td>gpu-h200</td>
       <td>GPU jobs </td>
       <td>3 days</td>
       <td>1</td>

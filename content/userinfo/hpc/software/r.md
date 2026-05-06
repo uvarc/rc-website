@@ -186,4 +186,24 @@ export R_PROFILE="/standard/ivy-xxx-xxxx/path/to/R/.Rprofile"
 export R_ENVIRON="/standard/ivy-xxx-xxxx/path/to/R/.Renviron"
 ```
 
+# Transitioning to a new R version
+
+If you want to use a newer or different version of R without reinstalling your packages manually, you can run the `updateRlib` script. This script is located under `/share/resources/HPCtools`.
+
+To use the script, provide two arguments: the current version of R and the desired version of R. For example, if you want to install the packages you're using with R 4.3.1 with R 4.6.0, type:
+
+```/share/resources/HPCtools/updateRlib 4.3.1 4.6.0```
+
+The script will prompt you:
+```
+Packages from
+~/R/goolf/4.3 
+will be built in 
+~/R/goolf/4.6 
+Is this what you want to do? <Y or N>
+```
+Respond with "Y" to re-install your packages and make them compatible with the newer R version.
+
+If you have any questions, concerns, or issues running the script, please submit a [support request](https://www.rc.virginia.edu/form/support-request/), and we'll be happy to assist.
+
 If you have questions about running your R code on the HPC system or would like a consultation to optimize or parallelize your code, contact hpc-support@virginia.edu.

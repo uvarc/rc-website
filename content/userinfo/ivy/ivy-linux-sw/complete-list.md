@@ -8,7 +8,7 @@ tags = [
   "hpc"
 ]
 draft = false
-title = "UVA High Security Zone Software List"
+title = "UVA High Security Zone Software List (x86)"
 description = "List of all linux software modules on the UVA High Security Zone"
 author = "RC Staff"
 categories = ["userinfo"]

@@ -1,0 +1,764 @@
+{
+    "miniforge": {
+        "/apps/modulefiles/standard/core/miniforge/26.1.1.lua": {
+            "Version": "26.1.1",
+            "whatis": [
+                "Description: Miniforge is a free minimal installer for conda and Mamba specific\n to conda-forge.",
+                "Homepage: https://github.com/conda-forge/miniforge",
+                "Application class: lang"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/miniforge/26.1.1": 1,
+                "/apps/software/standard/core/miniforge/26.1.1/bin": 1,
+                "/apps/software/standard/core/miniforge/26.1.1/sbin": 1
+            },
+            "pV": "000000026.000000001.000000001.*zfinal",
+            "fullName": "miniforge/26.1.1",
+            "Description": "Miniforge is a free minimal installer for conda and Mamba specific\n to conda-forge.",
+            "wV": "000000026.000000001.000000001.*zfinal",
+            "help": "\nDescription\n===========\nMiniforge is a free minimal installer for conda and Mamba specific\n to conda-forge.\n\n\nMore information\n================\n - Homepage: https://github.com/conda-forge/miniforge\n",
+            "lpathA": {
+                "/apps/software/standard/core/miniforge/26.1.1/lib": 1
+            }
+        }
+    },
+    "gcc": {
+        "/apps/modulefiles/standard/core/gcc/14.2.0.lua": {
+            "Version": "14.2.0",
+            "whatis": [
+                "Description: The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Java, and Ada,\n as well as libraries for these languages (libstdc++, libgcj,...).",
+                "Homepage: https://gcc.gnu.org/",
+                "Application class: compiler"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/gcc/14.2.0/bin": 1
+            },
+            "pV": "000000014.000000002.*zfinal",
+            "fullName": "gcc/14.2.0",
+            "Description": "The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Java, and Ada,\n as well as libraries for these languages (libstdc++, libgcj,...).",
+            "wV": "000000014.000000002.*zfinal",
+            "help": "\nDescription\n===========\nThe GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Java, and Ada,\n as well as libraries for these languages (libstdc++, libgcj,...).\n\n\nMore information\n================\n - Homepage: https://gcc.gnu.org/\n",
+            "lpathA": {
+                "/apps/software/standard/core/gcc/14.2.0/lib64": 1
+            }
+        }
+    },
+    "bzip2": {
+        "/apps/modulefiles/standard/core/bzip2/1.0.8.lua": {
+            "Version": "1.0.8",
+            "whatis": [
+                "Description: \n bzip2 is a freely available, patent free, high-quality data compressor. It\n typically compresses files to within 10% to 15% of the best available\n techniques (the PPM family of statistical compressors), whilst being around\n twice as fast at compression and six times faster at decompression.\n",
+                "Homepage: https://sourceware.org/bzip2",
+                "Application class: tools"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/bzip2/1.0.8/bin": 1
+            },
+            "pV": "000000001.000000000.000000008.*zfinal",
+            "fullName": "bzip2/1.0.8",
+            "Description": "bzip2 is a freely available, patent free, high-quality data compressor. It\n typically compresses files to within 10% to 15% of the best available\n techniques (the PPM family of statistical compressors), whilst being around\n twice as fast at compression and six times faster at decompression.\n",
+            "wV": "000000001.000000000.000000008.*zfinal",
+            "help": "\nDescription\n===========\nbzip2 is a freely available, patent free, high-quality data compressor. It\n typically compresses files to within 10% to 15% of the best available\n techniques (the PPM family of statistical compressors), whilst being around\n twice as fast at compression and six times faster at decompression.\n\n\nMore information\n================\n - Homepage: https://sourceware.org/bzip2\n",
+            "lpathA": {
+                "/apps/software/standard/core/bzip2/1.0.8/lib": 1
+            }
+        }
+    },
+    "openblas": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/openblas/0.3.32.lua": {
+            "Version": "0.3.32",
+            "whatis": [
+                "Description: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.",
+                "Homepage: http://xianyi.github.com/OpenBLAS/",
+                "Application class: numlib"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pV": "000000000.000000003.000000032.*zfinal",
+            "fullName": "openblas/0.3.32",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/openblas/0.3.32/lib": 1
+            },
+            "help": "\nDescription\n===========\nOpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.\n\n\nMore information\n================\n - Homepage: http://xianyi.github.com/OpenBLAS/\n",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "wV": "000000000.000000003.000000032.*zfinal",
+            "Description": "OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version."
+        }
+    },
+    "binutils": {
+        "/apps/modulefiles/standard/core/binutils/2.45.lua": {
+            "Version": "2.45",
+            "whatis": [
+                "Description: binutils: GNU binary utilities",
+                "Homepage: https://directory.fsf.org/project/binutils/",
+                "Application class: tools"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/binutils/2.45/bin": 1
+            },
+            "pV": "000000002.000000045.*zfinal",
+            "fullName": "binutils/2.45",
+            "Description": "binutils: GNU binary utilities",
+            "wV": "000000002.000000045.*zfinal",
+            "help": "\nDescription\n===========\nbinutils: GNU binary utilities\n\n\nMore information\n================\n - Homepage: https://directory.fsf.org/project/binutils/\n",
+            "lpathA": {
+                "/apps/software/standard/core/binutils/2.45/lib": 1
+            }
+        },
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/binutils/2.45.lua": {
+            "Version": "2.45",
+            "whatis": [
+                "Description: binutils: GNU binary utilities",
+                "Homepage: https://directory.fsf.org/project/binutils/",
+                "Application class: tools"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/binutils/2.45/bin": 1
+            },
+            "pV": "000000002.000000045.*zfinal",
+            "fullName": "binutils/2.45",
+            "wV": "000000002.000000045.*zfinal",
+            "Description": "binutils: GNU binary utilities",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\nbinutils: GNU binary utilities\n\n\nMore information\n================\n - Homepage: https://directory.fsf.org/project/binutils/\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/binutils/2.45/lib": 1
+            }
+        }
+    },
+    "lz4": {
+        "/apps/modulefiles/standard/core/lz4/1.10.0.lua": {
+            "Version": "1.10.0",
+            "whatis": [
+                "Description: LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.\n It features an extremely fast decoder, with speed in multiple GB/s per core.",
+                "Homepage: https://lz4.github.io/lz4/",
+                "Application class: lib"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/lz4/1.10.0/bin": 1
+            },
+            "pV": "000000001.000000010.*zfinal",
+            "fullName": "lz4/1.10.0",
+            "Description": "LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.\n It features an extremely fast decoder, with speed in multiple GB/s per core.",
+            "wV": "000000001.000000010.*zfinal",
+            "help": "\nDescription\n===========\nLZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.\n It features an extremely fast decoder, with speed in multiple GB/s per core.\n\n\nMore information\n================\n - Homepage: https://lz4.github.io/lz4/\n",
+            "lpathA": {
+                "/apps/software/standard/core/lz4/1.10.0/lib": 1
+            }
+        }
+    },
+    "cmake": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/cmake/4.3.1.lua": {
+            "Version": "4.3.1",
+            "whatis": [
+                "Description: \n CMake, the cross-platform, open-source build system.  CMake is a family of\n tools designed to build, test and package software.\n",
+                "Homepage: https://www.cmake.org",
+                "Application class: devel"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/cmake/4.3.1/bin": 1
+            },
+            "pV": "000000004.000000003.000000001.*zfinal",
+            "fullName": "cmake/4.3.1",
+            "help": "\nDescription\n===========\nCMake, the cross-platform, open-source build system.  CMake is a family of\n tools designed to build, test and package software.\n\n\nMore information\n================\n - Homepage: https://www.cmake.org\n",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "wV": "000000004.000000003.000000001.*zfinal",
+            "Description": "CMake, the cross-platform, open-source build system.  CMake is a family of\n tools designed to build, test and package software.\n"
+        }
+    },
+    "libarchive": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/libarchive/3.8.6.lua": {
+            "Version": "3.8.6",
+            "whatis": [
+                "Description: \n Multi-format archive and compression library\n",
+                "Homepage: https://www.libarchive.org/",
+                "Application class: tools"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/libarchive/3.8.6/bin": 1
+            },
+            "pV": "000000003.000000008.000000006.*zfinal",
+            "fullName": "libarchive/3.8.6",
+            "wV": "000000003.000000008.000000006.*zfinal",
+            "Description": "Multi-format archive and compression library\n",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\nMulti-format archive and compression library\n\n\nMore information\n================\n - Homepage: https://www.libarchive.org/\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/libarchive/3.8.6/lib": 1
+            }
+        }
+    },
+    "nvhpc": {
+        "/apps/modulefiles/standard/toolchains/nvhpc/26.3.lua": {
+            "Version": "26.3",
+            "whatis": [
+                "Description: Complete toolchain based on NVIDIA HPC SDK. Includes C, C++ and FORTRAN\ncompilers (nvidia-compilers), an MPI implementation based on OpenMPI (NVHPCX)\nand math libraries based on OpenBLAS and ScaLAPACK.",
+                "Homepage: https://developer.nvidia.com/hpc-sdk/",
+                "Application class: toolchain"
+            ],
+            "mpath": "/apps/modulefiles/standard/toolchains",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/ucx/bin": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/hpcx/bin": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/ucc/bin": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/ompi/tests/imb": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/sharp/bin": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/hcoll/bin": 1
+            },
+            "pV": "000000026.000000003.*zfinal",
+            "fullName": "nvhpc/26.3",
+            "Description": "Complete toolchain based on NVIDIA HPC SDK. Includes C, C++ and FORTRAN\ncompilers (nvidia-compilers), an MPI implementation based on OpenMPI (NVHPCX)\nand math libraries based on OpenBLAS and ScaLAPACK.",
+            "wV": "000000026.000000003.*zfinal",
+            "help": "\nDescription\n===========\nComplete toolchain based on NVIDIA HPC SDK. Includes C, C++ and FORTRAN\ncompilers (nvidia-compilers), an MPI implementation based on OpenMPI (NVHPCX)\nand math libraries based on OpenBLAS and ScaLAPACK.\n\n\nMore information\n================\n - Homepage: https://developer.nvidia.com/hpc-sdk/\n",
+            "lpathA": {
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/ucx/lib/ucx": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/ucc/lib": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/nccl_rdma_sharp_plugin/lib": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/ompi/lib": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/nvshmem/lib": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/ucc/lib/ucc": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/nccl/lib": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/ucx/lib": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/hcoll/lib": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/comm_libs/13.1/hpcx/hpcx-2.25.1/sharp/lib": 1,
+                "/apps/software/standard/toolchains/nvhpc/26.3/Linux_aarch64/26.3/math_libs/13.1/targets/sbsa-linux/lib": 1
+            }
+        }
+    },
+    "curl": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/curl/8.18.0.lua": {
+            "Version": "8.18.0",
+            "whatis": [
+                "Description: \n libcurl is a free and easy-to-use client-side URL transfer library,\n supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP,\n LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP.\n libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP\n form based upload, proxies, cookies, user+password authentication (Basic,\n Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling\n and more.\n",
+                "Homepage: http://curl.haxx.se",
+                "Application class: tools"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/curl/8.18.0/bin": 1
+            },
+            "pV": "000000008.000000018.*zfinal",
+            "fullName": "curl/8.18.0",
+            "wV": "000000008.000000018.*zfinal",
+            "Description": "libcurl is a free and easy-to-use client-side URL transfer library,\n supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP,\n LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP.\n libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP\n form based upload, proxies, cookies, user+password authentication (Basic,\n Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling\n and more.\n",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\nlibcurl is a free and easy-to-use client-side URL transfer library,\n supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS, LDAP,\n LDAPS, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMTP, SMTPS, Telnet and TFTP.\n libcurl supports SSL certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP\n form based upload, proxies, cookies, user+password authentication (Basic,\n Digest, NTLM, Negotiate, Kerberos), file transfer resume, http proxy tunneling\n and more.\n\n\nMore information\n================\n - Homepage: http://curl.haxx.se\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/curl/8.18.0/lib": 1
+            }
+        }
+    },
+    "zstd": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/zstd/1.5.7.lua": {
+            "Version": "1.5.7",
+            "whatis": [
+                "Description: Zstandard is a real-time compression algorithm, providing high compression ratios. \n It offers a very wide range of compression/speed trade-off, while being backed by a very fast decoder.\n It also offers a special mode for small data, called dictionary compression, and can create dictionaries\n from any sample set.",
+                "Homepage: https://facebook.github.io/zstd",
+                "Application class: lib"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/zstd/1.5.7/bin": 1
+            },
+            "pV": "000000001.000000005.000000007.*zfinal",
+            "fullName": "zstd/1.5.7",
+            "wV": "000000001.000000005.000000007.*zfinal",
+            "Description": "Zstandard is a real-time compression algorithm, providing high compression ratios. \n It offers a very wide range of compression/speed trade-off, while being backed by a very fast decoder.\n It also offers a special mode for small data, called dictionary compression, and can create dictionaries\n from any sample set.",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\nZstandard is a real-time compression algorithm, providing high compression ratios. \n It offers a very wide range of compression/speed trade-off, while being backed by a very fast decoder.\n It also offers a special mode for small data, called dictionary compression, and can create dictionaries\n from any sample set.\n\n\nMore information\n================\n - Homepage: https://facebook.github.io/zstd\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/zstd/1.5.7/lib": 1
+            }
+        }
+    },
+    "ncurses": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/ncurses/6.5.lua": {
+            "Version": "6.5",
+            "whatis": [
+                "Description: The Ncurses (new curses) library is a free software emulation of curses in System V Release 4.0,\n and more. It uses Terminfo format, supports pads and color and multiple highlights and forms characters and\n function-key mapping, and has all the other SYSV-curses enhancements over BSD Curses.",
+                "Homepage: http://www.gnu.org/software/ncurses/",
+                "Application class: devel"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/ncurses/6.5/bin": 1
+            },
+            "pV": "000000006.000000005.*zfinal",
+            "fullName": "ncurses/6.5",
+            "wV": "000000006.000000005.*zfinal",
+            "Description": "The Ncurses (new curses) library is a free software emulation of curses in System V Release 4.0,\n and more. It uses Terminfo format, supports pads and color and multiple highlights and forms characters and\n function-key mapping, and has all the other SYSV-curses enhancements over BSD Curses.",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\nThe Ncurses (new curses) library is a free software emulation of curses in System V Release 4.0,\n and more. It uses Terminfo format, supports pads and color and multiple highlights and forms characters and\n function-key mapping, and has all the other SYSV-curses enhancements over BSD Curses.\n\n\nMore information\n================\n - Homepage: http://www.gnu.org/software/ncurses/\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/ncurses/6.5/lib": 1
+            }
+        }
+    },
+    "nvidia-compilers": {
+        "/apps/modulefiles/standard/core/nvidia-compilers/26.3.lua": {
+            "Version": "26.3",
+            "whatis": [
+                "Description: C, C++ and Fortran compilers included with the NVIDIA HPC SDK",
+                "Homepage: https://developer.nvidia.com/hpc-sdk/",
+                "Application class: compiler"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/nvidia-compilers/26.3/Linux_aarch64/26.3/cuda/13.1/bin": 1,
+                "/apps/software/standard/core/nvidia-compilers/26.3/Linux_aarch64/26.3/compilers/bin": 1
+            },
+            "pV": "000000026.000000003.*zfinal",
+            "fullName": "nvidia-compilers/26.3",
+            "Description": "C, C++ and Fortran compilers included with the NVIDIA HPC SDK",
+            "wV": "000000026.000000003.*zfinal",
+            "help": "\nDescription\n===========\nC, C++ and Fortran compilers included with the NVIDIA HPC SDK\n\n\nMore information\n================\n - Homepage: https://developer.nvidia.com/hpc-sdk/\n",
+            "lpathA": {
+                "/apps/software/standard/core/nvidia-compilers/26.3/Linux_aarch64/26.3/cuda/13.1/targets/sbsa-linux/lib": 1,
+                "/apps/software/standard/core/nvidia-compilers/26.3/Linux_aarch64/26.3/compilers/lib": 1
+            }
+        }
+    },
+    "easybuild": {
+        "/apps/modulefiles/standard/core/easybuild/5.2.1.lua": {
+            "Version": "5.2.1",
+            "whatis": [
+                "Description: EasyBuild is a software build and installation framework\n written in Python that allows you to install software in a structured,\n repeatable and robust way.",
+                "Homepage: https://easybuilders.github.io/easybuild",
+                "Application class: tools"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/easybuild/5.2.1/bin": 1
+            },
+            "pV": "000000005.000000002.000000001.*zfinal",
+            "fullName": "easybuild/5.2.1",
+            "wV": "000000005.000000002.000000001.*zfinal",
+            "help": "\nDescription\n===========\nEasyBuild is a software build and installation framework\n written in Python that allows you to install software in a structured,\n repeatable and robust way.\n\n\nMore information\n================\n - Homepage: https://easybuilders.github.io/easybuild\n",
+            "Description": "EasyBuild is a software build and installation framework\n written in Python that allows you to install software in a structured,\n repeatable and robust way."
+        }
+    },
+    "pkgconf": {
+        "/apps/modulefiles/standard/core/pkgconf/2.4.3.lua": {
+            "Version": "2.4.3",
+            "whatis": [
+                "Description: pkgconf is a program which helps to configure compiler and linker flags for development libraries.\n It is similar to pkg-config from freedesktop.org.",
+                "Homepage: https://github.com/pkgconf/pkgconf",
+                "Application class: devel"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/pkgconf/2.4.3/bin": 1
+            },
+            "pV": "000000002.000000004.000000003.*zfinal",
+            "fullName": "pkgconf/2.4.3",
+            "Description": "pkgconf is a program which helps to configure compiler and linker flags for development libraries.\n It is similar to pkg-config from freedesktop.org.",
+            "wV": "000000002.000000004.000000003.*zfinal",
+            "help": "\nDescription\n===========\npkgconf is a program which helps to configure compiler and linker flags for development libraries.\n It is similar to pkg-config from freedesktop.org.\n\n\nMore information\n================\n - Homepage: https://github.com/pkgconf/pkgconf\n",
+            "lpathA": {
+                "/apps/software/standard/core/pkgconf/2.4.3/lib": 1
+            }
+        },
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/pkgconf/2.4.3.lua": {
+            "Version": "2.4.3",
+            "whatis": [
+                "Description: pkgconf is a program which helps to configure compiler and linker flags for development libraries.\n It is similar to pkg-config from freedesktop.org.",
+                "Homepage: https://github.com/pkgconf/pkgconf",
+                "Application class: devel"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/pkgconf/2.4.3/bin": 1
+            },
+            "pV": "000000002.000000004.000000003.*zfinal",
+            "fullName": "pkgconf/2.4.3",
+            "wV": "000000002.000000004.000000003.*zfinal",
+            "Description": "pkgconf is a program which helps to configure compiler and linker flags for development libraries.\n It is similar to pkg-config from freedesktop.org.",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\npkgconf is a program which helps to configure compiler and linker flags for development libraries.\n It is similar to pkg-config from freedesktop.org.\n\n\nMore information\n================\n - Homepage: https://github.com/pkgconf/pkgconf\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/pkgconf/2.4.3/lib": 1
+            }
+        }
+    },
+    "lzo": {
+        "/apps/modulefiles/standard/core/lzo/2.10.lua": {
+            "Version": "2.10",
+            "whatis": [
+                "Description: Portable lossless data compression library",
+                "Homepage: https://www.oberhumer.com/opensource/lzo/",
+                "Application class: devel"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pV": "000000002.000000010.*zfinal",
+            "fullName": "lzo/2.10",
+            "lpathA": {
+                "/apps/software/standard/core/lzo/2.10/lib": 1
+            },
+            "wV": "000000002.000000010.*zfinal",
+            "help": "\nDescription\n===========\nPortable lossless data compression library\n\n\nMore information\n================\n - Homepage: https://www.oberhumer.com/opensource/lzo/\n",
+            "Description": "Portable lossless data compression library"
+        }
+    },
+    "fftw": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/fftw/3.3.10.lua": {
+            "Version": "3.3.10",
+            "whatis": [
+                "Description: FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)\n in one or more dimensions, of arbitrary input size, and of both real and complex data.",
+                "Homepage: http://www.fftw.org",
+                "Application class: numlib"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/fftw/3.3.10/bin": 1
+            },
+            "pV": "000000003.000000003.000000010.*zfinal",
+            "fullName": "fftw/3.3.10",
+            "wV": "000000003.000000003.000000010.*zfinal",
+            "Description": "FFTW is a C subroutine library for computing the discrete Fourier transform (DFT)\n in one or more dimensions, of arbitrary input size, and of both real and complex data.",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\nFFTW is a C subroutine library for computing the discrete Fourier transform (DFT)\n in one or more dimensions, of arbitrary input size, and of both real and complex data.\n\n\nMore information\n================\n - Homepage: http://www.fftw.org\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/fftw/3.3.10/lib": 1
+            }
+        }
+    },
+    "apptainer": {
+        "/apps/modulefiles/standard/core/apptainer/1.4.5.lua": {
+            "Version": "1.4.5",
+            "whatis": [
+                "Description: Apptainer/Singularity is an application containerization solution for High-Performance Computing (HPC). The goal\nof Apptainer is to allow for \"mobility of computing\": an application containerized on one Linux system should\nbe able to run on another system, as it is, and without the need to reconcile software dependencies and Linux\nversion differences between the source and target systems.",
+                "Homepage: https://apptainer.org",
+                "Application class: tools"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/apptainer/1.4.5/libexec/apptainer/bin": 1,
+                "/apps/software/standard/core/apptainer/1.4.5/bin": 1
+            },
+            "pV": "000000001.000000004.000000005.*zfinal",
+            "fullName": "apptainer/1.4.5",
+            "wV": "000000001.000000004.000000005.*zfinal",
+            "help": "\nDescription\n===========\nApptainer/Singularity is an application containerization solution for High-Performance Computing (HPC). The goal\nof Apptainer is to allow for \"mobility of computing\": an application containerized on one Linux system should\nbe able to run on another system, as it is, and without the need to reconcile software dependencies and Linux\nversion differences between the source and target systems.\n\n\nMore information\n================\n - Homepage: https://apptainer.org\n",
+            "Description": "Apptainer/Singularity is an application containerization solution for High-Performance Computing (HPC). The goal\nof Apptainer is to allow for \"mobility of computing\": an application containerized on one Linux system should\nbe able to run on another system, as it is, and without the need to reconcile software dependencies and Linux\nversion differences between the source and target systems."
+        }
+    },
+    "openssl": {
+        "/apps/modulefiles/standard/core/openssl/3.lua": {
+            "Version": "3",
+            "whatis": [
+                "Description: The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured,\n and Open Source toolchain implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1)\n protocols as well as a full-strength general purpose cryptography library. ",
+                "Homepage: https://www.openssl.org/",
+                "Application class: system"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/openssl/3/bin": 1
+            },
+            "pV": "000000003.*zfinal",
+            "fullName": "openssl/3",
+            "Description": "The OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured,\n and Open Source toolchain implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1)\n protocols as well as a full-strength general purpose cryptography library. ",
+            "wV": "000000003.*zfinal",
+            "help": "\nDescription\n===========\nThe OpenSSL Project is a collaborative effort to develop a robust, commercial-grade, full-featured,\n and Open Source toolchain implementing the Secure Sockets Layer (SSL v2/v3) and Transport Layer Security (TLS v1)\n protocols as well as a full-strength general purpose cryptography library.\n\n\nMore information\n================\n - Homepage: https://www.openssl.org/\n",
+            "lpathA": {
+                "/apps/software/standard/core/openssl/3/lib64": 1
+            }
+        }
+    },
+    "zlib": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/zlib/1.3.1.lua": {
+            "Version": "1.3.1",
+            "whatis": [
+                "Description: zlib is designed to be a free, general-purpose, legally unencumbered -- that is,\n not covered by any patents -- lossless data-compression library for use on virtually any\n computer hardware and operating system.",
+                "Homepage: https://www.zlib.net/",
+                "Application class: lib"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pV": "000000001.000000003.000000001.*zfinal",
+            "fullName": "zlib/1.3.1",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/zlib/1.3.1/lib": 1
+            },
+            "help": "\nDescription\n===========\nzlib is designed to be a free, general-purpose, legally unencumbered -- that is,\n not covered by any patents -- lossless data-compression library for use on virtually any\n computer hardware and operating system.\n\n\nMore information\n================\n - Homepage: https://www.zlib.net/\n",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "wV": "000000001.000000003.000000001.*zfinal",
+            "Description": "zlib is designed to be a free, general-purpose, legally unencumbered -- that is,\n not covered by any patents -- lossless data-compression library for use on virtually any\n computer hardware and operating system."
+        },
+        "/apps/modulefiles/standard/core/zlib/1.3.1.lua": {
+            "Version": "1.3.1",
+            "whatis": [
+                "Description: zlib is designed to be a free, general-purpose, legally unencumbered -- that is,\n not covered by any patents -- lossless data-compression library for use on virtually any\n computer hardware and operating system.",
+                "Homepage: https://www.zlib.net/",
+                "Application class: lib"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pV": "000000001.000000003.000000001.*zfinal",
+            "fullName": "zlib/1.3.1",
+            "lpathA": {
+                "/apps/software/standard/core/zlib/1.3.1/lib": 1
+            },
+            "wV": "000000001.000000003.000000001.*zfinal",
+            "help": "\nDescription\n===========\nzlib is designed to be a free, general-purpose, legally unencumbered -- that is,\n not covered by any patents -- lossless data-compression library for use on virtually any\n computer hardware and operating system.\n\n\nMore information\n================\n - Homepage: https://www.zlib.net/\n",
+            "Description": "zlib is designed to be a free, general-purpose, legally unencumbered -- that is,\n not covered by any patents -- lossless data-compression library for use on virtually any\n computer hardware and operating system."
+        }
+    },
+    "pytorch": {
+        "/apps/modulefiles/standard/container/apptainer/1.4.5/pytorch/2.11.0.lua": {
+            "Version": "2.11.0",
+            "whatis": [
+                "Description: \nPyTorch is a deep learning framework that puts Python first. It provides Tensors and Dynamic neural networks in Python with strong GPU acceleration.\n",
+                "Homepage: https://www.pytorch.org",
+                "Application class: data"
+            ],
+            "mpath": "/apps/modulefiles/standard/container/apptainer/1.4.5",
+            "propT": {
+                "arch": {
+                    "gpu": 1
+                }
+            },
+            "pV": "000000002.000000011.*zfinal",
+            "hidden": false,
+            "fullName": "pytorch/2.11.0",
+            "wV": "000000002.000000011.*zfinal",
+            "parentAA": [
+                [
+                    "apptainer/1.4.5"
+                ]
+            ],
+            "help": "\nDescription\n===========\nPyTorch is a deep learning framework that puts Python first. It provides Tensors and Dynamic neural networks in Python with strong GPU acceleration.\n\n\nMore information\n================\n - Homepage: https://www.pytorch.org\n",
+            "Description": "PyTorch is a deep learning framework that puts Python first. It provides Tensors and Dynamic neural networks in Python with strong GPU acceleration.\n"
+        }
+    },
+    "go": {
+        "/apps/modulefiles/standard/core/go/1.26.1.lua": {
+            "Version": "1.26.1",
+            "whatis": [
+                "Description: Go is an open source programming language that makes it easy to build\n simple, reliable, and efficient software.",
+                "Homepage: https://www.golang.org",
+                "Application class: compiler"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/go/1.26.1/bin": 1
+            },
+            "pV": "000000001.000000026.000000001.*zfinal",
+            "fullName": "go/1.26.1",
+            "wV": "000000001.000000026.000000001.*zfinal",
+            "help": "\nDescription\n===========\nGo is an open source programming language that makes it easy to build\n simple, reliable, and efficient software.\n\n\nMore information\n================\n - Homepage: https://www.golang.org\n",
+            "Description": "Go is an open source programming language that makes it easy to build\n simple, reliable, and efficient software."
+        }
+    },
+    "java": {
+        "/apps/modulefiles/standard/core/java/21.lua": {
+            "Version": "21",
+            "whatis": [
+                "Description: Java Platform, Standard Edition (Java SE) lets you develop and deploy\nJava applications on desktops and servers.",
+                "Homepage: https://openjdk.org",
+                "Application class: lang"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/java/21": 1,
+                "/apps/software/standard/core/java/21/bin": 1
+            },
+            "pV": "000000021.*zfinal",
+            "fullName": "java/21",
+            "Description": "Java Platform, Standard Edition (Java SE) lets you develop and deploy\nJava applications on desktops and servers.",
+            "wV": "000000021.*zfinal",
+            "help": "\nDescription\n===========\nJava Platform, Standard Edition (Java SE) lets you develop and deploy\nJava applications on desktops and servers.\n\n\nMore information\n================\n - Homepage: https://openjdk.org\n",
+            "lpathA": {
+                "/apps/software/standard/core/java/21/lib": 1
+            }
+        }
+    },
+    "libxml2": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/libxml2/2.14.6.lua": {
+            "Version": "2.14.6",
+            "whatis": [
+                "Description: \n Libxml2 is the XML C parser and toolchain developed for the Gnome project\n (but usable outside of the Gnome platform).\n",
+                "Homepage: http://xmlsoft.org/",
+                "Application class: lib"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/libxml2/2.14.6/bin": 1
+            },
+            "pV": "000000002.000000014.000000006.*zfinal",
+            "fullName": "libxml2/2.14.6",
+            "wV": "000000002.000000014.000000006.*zfinal",
+            "Description": "Libxml2 is the XML C parser and toolchain developed for the Gnome project\n (but usable outside of the Gnome platform).\n",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\nLibxml2 is the XML C parser and toolchain developed for the Gnome project\n (but usable outside of the Gnome platform).\n\n\nMore information\n================\n - Homepage: http://xmlsoft.org/\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/libxml2/2.14.6/lib": 1
+            }
+        }
+    },
+    "xz": {
+        "/apps/modulefiles/standard/core/xz/5.8.3.lua": {
+            "Version": "5.8.3",
+            "whatis": [
+                "Description: xz: XZ utilities",
+                "Homepage: https://tukaani.org/xz/",
+                "Application class: tools"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/xz/5.8.3/bin": 1
+            },
+            "pV": "000000005.000000008.000000003.*zfinal",
+            "fullName": "xz/5.8.3",
+            "Description": "xz: XZ utilities",
+            "wV": "000000005.000000008.000000003.*zfinal",
+            "help": "\nDescription\n===========\nxz: XZ utilities\n\n\nMore information\n================\n - Homepage: https://tukaani.org/xz/\n",
+            "lpathA": {
+                "/apps/software/standard/core/xz/5.8.3/lib": 1
+            }
+        }
+    },
+    "golf": {
+        "/apps/modulefiles/standard/toolchains/golf/14.2.0.lua": {
+            "Version": "14.2.0",
+            "whatis": [
+                "Description: \nGNU Compiler Collection (GCC) based compiler toolchain, including OpenBLAS\n(BLAS and LAPACK support) and FFTW.",
+                "Homepage: (none)",
+                "Application class: toolchain"
+            ],
+            "mpath": "/apps/modulefiles/standard/toolchains",
+            "hidden": false,
+            "pV": "000000014.000000002.*zfinal",
+            "fullName": "golf/14.2.0",
+            "help": "\nDescription\n===========\nGNU Compiler Collection (GCC) based compiler toolchain, including OpenBLAS\n(BLAS and LAPACK support) and FFTW.\n\n\nMore information\n================\n - Homepage: (none)\n",
+            "wV": "000000014.000000002.*zfinal",
+            "Description": "GNU Compiler Collection (GCC) based compiler toolchain, including OpenBLAS\n(BLAS and LAPACK support) and FFTW."
+        }
+    },
+    "libpsl": {
+        "/apps/modulefiles/standard/compiler/gcc/14.2.0/libpsl/0.21.5.lua": {
+            "Version": "0.21.5",
+            "whatis": [
+                "Description: C library for the Public Suffix List",
+                "Homepage: https://rockdaboot.github.io/libpsl",
+                "Application class: lib"
+            ],
+            "mpath": "/apps/modulefiles/standard/compiler/gcc/14.2.0",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/libpsl/0.21.5/bin": 1
+            },
+            "pV": "000000000.000000021.000000005.*zfinal",
+            "fullName": "libpsl/0.21.5",
+            "wV": "000000000.000000021.000000005.*zfinal",
+            "Description": "C library for the Public Suffix List",
+            "parentAA": [
+                [
+                    "gcc/14.2.0"
+                ]
+            ],
+            "help": "\nDescription\n===========\nC library for the Public Suffix List\n\n\nMore information\n================\n - Homepage: https://rockdaboot.github.io/libpsl\n",
+            "lpathA": {
+                "/apps/software/standard/compiler/gcc/14.2.0/libpsl/0.21.5/lib": 1
+            }
+        }
+    },
+    "bison": {
+        "/apps/modulefiles/standard/core/bison/3.8.2.lua": {
+            "Version": "3.8.2",
+            "whatis": [
+                "Description: Bison is a general-purpose parser generator that converts an annotated context-free grammar\n into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables.",
+                "Homepage: https://www.gnu.org/software/bison",
+                "Application class: lang"
+            ],
+            "mpath": "/apps/modulefiles/standard/core",
+            "hidden": false,
+            "pathA": {
+                "/apps/software/standard/core/bison/3.8.2/bin": 1
+            },
+            "pV": "000000003.000000008.000000002.*zfinal",
+            "fullName": "bison/3.8.2",
+            "Description": "Bison is a general-purpose parser generator that converts an annotated context-free grammar\n into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables.",
+            "wV": "000000003.000000008.000000002.*zfinal",
+            "help": "\nDescription\n===========\nBison is a general-purpose parser generator that converts an annotated context-free grammar\n into a deterministic LR or generalized LR (GLR) parser employing LALR(1) parser tables.\n\n\nMore information\n================\n - Homepage: https://www.gnu.org/software/bison\n",
+            "lpathA": {
+                "/apps/software/standard/core/bison/3.8.2/lib": 1
+            }
+        }
+    }
+}
