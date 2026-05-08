@@ -8,6 +8,9 @@ categories = [
 date = "2021-07-08T08:37:46-05:00"
 tags = [
   "multi-core",
+  "workflow managers",
+  "bioinformatics",
+  "nextflow",
 ]
 draft = false
 modulename = "nextflow"
@@ -52,17 +55,34 @@ module spider {{% module-firstversion %}}
 - Workflows are written in Groovy and can be deployed in parallel on the HPC system
 - Workflows can be executed with modules or containerized environments: Conda or Apptainer
 
-# Nextflow processes:
+<!--# Nextflow processes:
 
-<!--![Snakemake DAG](/images/snakemake_dag.png)-->
+![Nextflow DAG](/images/nextflow-dag.png)
+<img src="/images/nextflow-dag.png" alt="Nextflow DAG" style="width:10%;">
 - Workflows are defined in processes
-- Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized
+- Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized -->
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+
+  <div style="flex: 1; min-width: 250px;">
+    <h1>Nextflow processes:</h1>
+    <ul>
+      <li>Workflows are defined in processes</li>
+      <li>Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized</li>
+    </ul>
+  </div>
+
+  <div>
+    <img src="/images/nextflow-dag.png" alt="Nextflow DAG" style="width:200px; margin-top: 30px;">
+  </div>
+
+</div>
 
 # nextflow.config file:
 Config files are generally for
 - params: workflow parameters (like input filenames, paths, job settings) processes to define global or process-specific options, or profiles.
 - processes: additional processes specifying global and/or per-process settings, software environments, profiles, and job settings
-- profiles: specify a commonly used collection of settings/parameters
+- profiles: specify a frequently used collection of settings and/or parameters
 
 ```
 
@@ -179,7 +199,7 @@ workflow {
     bam_ch     = BWA_ALIGN(trimmed_ch, ref_ch)
     FREEBAYES(bam_ch, ref_ch)
 }
-``'
+```
 # Slurm for Nextflow:
 
 - The Nextflow pipeline can be executed using a `SLURM` script on the HPC system
