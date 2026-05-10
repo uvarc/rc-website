@@ -2,7 +2,7 @@
 description = ""
 title = "Ivy and Rio Secure Environment"
 draft = false
-date = "2025-01-15T11:45:12-05:00"
+date = "2026-04-09T00:00:00-05:00"
 tags = ["ivy","vm","hipaa","linux","windows","security","jupyter","infrastructure"]
 categories = ["userinfo"]
 images = [""]
@@ -15,7 +15,7 @@ layout = "single"
 
 ![Ivy Secure Computing](https://img.shields.io/badge/dynamic/json?color=color&label=Ivy&query=message&url=https%3A%2F%2Ftja4lfp3da.execute-api.us-east-1.amazonaws.com%2Fapi%2Fbadge%2Fivy&style=for-the-badge)
 
-<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store highly-sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or Export-Controlled data cannot access Rio at this time. To access Rio HPC, researchers must request a Linux virtual machine (VM) which serves as a login node.</p>
+<p class=lead>The UVA secure environment consists of Ivy virtual machines (Linux and Windows) and Rio HPC. Researchers can use Ivy and Rio to process and store highly-sensitive data with the confidence that the environment is secure and meets requirements for HIPAA, FERPA, and controlled-access data (e.g. dbGaP, NIMH NDA, etc.). However, projects involving CUI or Export-Controlled data cannot access Rio at this time. To access Rio HPC, researchers must request a Ivy Linux virtual machine (VM) which serves as a login node.</p>
 
 {{< systems-boilerplate >}}
 
@@ -45,15 +45,15 @@ Ivy provides virtual computing environments specifically designed for interactiv
   {{% pi-eligibility %}}
 {{% /highlight %}}
 
-Access to Ivy resources is project-based and limited to PIs and their designated research team. Institutional Review Board approval is required. For health sciences research projects, an IRB-HSR-approved protocol with a waiver of HIPAA authorization is also required. Once a project is approved, the PI and each research team member must individually sign a RUDA for that specific project.
+Access to Ivy and Rio resources is project-based and limited to PIs and their designated research team. Institutional Review Board approval is required. For health sciences research projects, an IRB-HSR-approved protocol with a waiver of HIPAA authorization is also required. Once a project is approved by RC staff, the PI and each research team member must individually sign a RUDA for that specific project.
 
-[<button class="btn btn-success">Request an Ivy Account</button>](https://services.rc.virginia.edu/ivyvm)
+[<button class="btn btn-success">Request an Ivy/Rio Account</button>](https://services.rc.virginia.edu/ivyvm)
 
 - - -
 
 # Security Training {#training}
 
-In order to use Ivy, researchers must complete the High Security Awareness Training (HSAT). This training takes approximately 10 minutes to complete.
+In order to use Ivy/Rio, researchers must complete the High Security Awareness Training (HSAT). This training takes approximately 10 minutes to complete.
 
 Please complete the training at the following link: <a href="https://in.virginia.edu/hsat-training" target="_blank">https://in.virginia.edu/hsat-training</a>.
 
@@ -64,10 +64,10 @@ Please complete the training at the following link: <a href="https://in.virginia
 The High Security VPN (HSVPN) allows researchers to connect to Ivy securely both on and off grounds. In order to use the HSVPN, users must ensure that their personal machines meet the following requirements. More information on HSVPN compliance can be found on the ITS website: <a href="https://in.virginia.edu/vpncheck" target="_blank">https://in.virginia.edu/vpncheck</a>
 
 1. **Install the Cisco AnyConnect Secure Mobility Client.**
-    This can be found at the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=d66f4fd4db29274c2192e665059619d6&sysparm_category=06d7db5bdbfcab00cebc550a48961963" target="_blank">UVA ITS Software Gateway</a>. Be sure to install the version of VPN Client HS 4.6 that is compatible with your personal computer's operating system. More detailed instructions for installing the VPN client can be found on the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">ITS website</a>.
+    This can be found at the <a href="https://virginia.service-now.com/its" target="_blank">UVA ITS Software Gateway</a>. Be sure to install the version of VPN Client HS 4.6 that is compatible with your personal computer's operating system. More detailed instructions for installing the VPN client can be found on the <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_blank">ITS website</a>.
     
 2. **Install Opswat.**
-    Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its?id=sg_catalog&sys_id=a2bf4d91db716f402192e665059619fa" target="_blank">UVA ITS Software Gateway</a>.
+    Opswat checks if your computer is compliant with HSVPN requirements. Opswat can be downloaded from the <a href="https://virginia.service-now.com/its" target="_blank">UVA ITS Software Gateway</a>.
 
 {{% callout %}}
 If your personal machine's operating system is no longer supported and does not allow for disk encryption, having OPSWAT installed will not resolve the issue. The recommended solution is to upgrade the operating system or acquire a device with an updated OS that meets these security requirements.
@@ -75,7 +75,7 @@ If your personal machine's operating system is no longer supported and does not 
 
 
 3. **Install Anti-malware software (Windows Defender recommended)**.
-    Anti-malware software must be installed on your machine. Windows Defender is behavioral-based antimalware software and meets UVA's HSVPN requirements. Windows Defender can be downloaded from the <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=2bee0fd3dbc4a4d005fff49eae9619ee" target="_blank">UVA ITS Software Gateway</a>.
+    Anti-malware software must be installed on your machine. Windows Defender is behavioral-based antimalware software and meets UVA's HSVPN requirements. Windows Defender can be downloaded from the <a href="https://virginia.service-now.com/its" target="_blank">UVA ITS Software Gateway</a>.
     
 
 <!-- 
@@ -124,19 +124,19 @@ Ivy resources will be provided without a fee for approved projects. Please note 
   <a href="https://virginia.service-now.com/its?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0" target="_new"><button class="btn btn-sm btn-warning">Learn More about UVA VPN</button></a>
 </div>
 
-Once you have completed these three steps, you will be connected to the secure Ivy network. From there you can connect to a Virtual Machine, or use a web browser to access JupyterLab.
+Once you have completed these three steps, you will be connected to the secure Ivy network. From there, you can connect to a virtual machine or use a web browser to access applications such as JupyterLab, RStudio, or FastX Desktop. When used for Rio, the Ivy VM serves as a login node for accessing Rio HPC resources.
 
 - - -
 
 # Storage
 
-Ivy VM and Rio HPC have a pool of over 2 petabytes of Network Attached Storage shared amongst users. A PI specifies the storage space s/he would like to have when requesting access to either of these environments. Virtual machines do not come with any significant disk storage of their own. 
+Ivy VM and Rio HPC have a pool of over 13 petabytes of Network Attached Storage shared amongst users. An Ivy VM comes with 1 TB of our High Security Standard storage. PI's can request more storage using our [Storage Request Form](https://www.rc.virginia.edu/form/storage/). Virtual machines do not come with any significant disk storage of their own. 
 
 # Virtual Machines
 
 A virtual machine (VM) is a computing instance dedicated to your project. Multiple users can sign in to a single VM.
 
-Virtual machines come in two platforms, *Rocky 8 Linux* and *Windows Server 2019*. Each platform is available in numerous instance types. Refer to the grid below for specifics.
+Virtual machines are available on two platforms: *Rocky Linux 8*, which by default provides access to Rio HPC resources and comes with Slurm and Open OnDemand preinstalled, and *Windows Server 2019*, offered as a standalone option. Each platform is available in multiple instance types. Please refer to the table below for details.
 
 
 {{< pricing ivy >}}
@@ -207,25 +207,18 @@ In addition to connecting to a Linux VM through a web browser, you have the opti
 
 ## Software
 
-Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. Additional software packages are pre-approved and available for installation upon request. See the lists below for options.
+Every virtual machine (Linux or Windows) comes with a base installation of software by default. These help researchers by providing the basic tools for data processing and manipulation. 
 
-**Preinstalled Software**
+**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
+
+### Linux
+
+Software is managed through modules. You can browse the [complete list of modules](/userinfo/ivy/ivy-linux-sw).
+
+### Windows
 
 {{< rawhtml >}}
 <div class="row" style="margin-bottom:2rem;">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        <b>PREINSTALLED Linux Software</b>
-      </div>
-      <div class="card-block">
-        <i>Click on each for details:</i>
-        <p class="card-text">
-			{{% ivy-approved-software os="Linux" installation="preinstalled" category="all" %}}
-        </p>
-      </div>
-    </div>
-  </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
@@ -242,34 +235,11 @@ Every virtual machine (Linux or Windows) comes with a base installation of softw
 </div>
 {{< /rawhtml >}}
 
-**Python/R Packages** - Anaconda Python and R packages are available to users through the normal `pip`, `conda`, and `CRAN` and library installation methods.
-
 **ADDITIONAL APPROVED SOFTWARE (Available by Request)**
 
 If you require additional software not listed, you must submit a request. Requests are reviewed by the UVA ISPRO office for security and regulatory compliance and, if approved, will be installed for you.
 
-
 <div class="row" style="margin-bottom:2rem;">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-header">
-        <b>ADDITIONAL Linux Groups</b>
-      </div>
-      <div class="card-block">
-        <i>Click on each for more information:</i>
-        <p class="card-text">
-          <ul>
-            <li><a href="/userinfo/ivy/ivy-linux-sw" style="color: #0275d8;">All Packages</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#bioinformatics" style="color: #0275d8;">Bioinformatics</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#data-analysis" style="color: #0275d8;">Data Analysis</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#database-software" style="color: #0275d8;">Database Software</a></li>
-            <li><a href="/userinfo/ivy/ivy-linux-sw/#image-processing" style="color: #0275d8;">Image Processing</a></li>
-          </ul>
-        </p>
-        <button type="button" class="btn btn-success" onclick="window.location.href='/userinfo/ivy/ivy-linux-sw';"">Software Details for Linux</button>
-      </div>
-    </div>
-  </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-header">
@@ -390,26 +360,30 @@ Beginning Sunday, April 14, your Ivy virtual machine (VM) will be rebooted on th
 If you have any questions or problems with your software applications after the security updates have been installed, you may [contact our user services team](https://www.rc.virginia.edu/form/support-request/?category=Ivy).
 - - -
 
-## JupyterLab Notebooks
+<!-- ## JupyterLab Notebooks
 
 {{% callout %}}
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" align="right" style="max-width:20%;" />
 JupyterLab is a web-based interactive development environment for Jupyter notebooks, code, and data. JupyterLab is flexible: configure and arrange the user interface to support a wide range of workflows in data science, scientific computing, and machine learning. JupyterLab is extensible and modular: write plugins that add new components and integrate with existing ones.
 <br clear=all />
 <a href="https://jupyter.org/" target="_new"><button class="btn btn-success">Learn more about Jupyter</button></a>
-{{% /callout %}}
-
+{{% /callout %}} 
+-->
 - - -
 
 # Using the Rio HPC System
 
 **Access to Rio HPC and Open OnDemand (OOD)**
 
-Linux VMs on Ivy now provide integrated access to the Rio HPC system and OOD interface by default. Once your Linux VM is provisioned, you can seamlessly use it as a login node to Rio and access OOD without submitting a separate request. 
+Linux VMs on Ivy now provide integrated access to the Rio HPC system and OOD interface by default. Once your Linux VM is provisioned, you can seamlessly use it as a login node to Rio and access OOD without submitting a separate request. Open OnDemand is a web-based portal that provides access to HPC resources, including applications such as RStudio, JupyterLab, and a desktop environment for running Graphical User Interface (GUI)-based applications on compute nodes. OOD Dashboard can be accessed by connecting to the HSVPN and opening a web browser to the IP of the VM (e.g. http://10.254.X.X/), which can be found on the ivy project page (https://services.rc.virginia.edu/).
 
 **VM Availability and Sizing**
 
-As detailed above, Linux VMs are available in multiple sizes to match different research needs. Small Linux VMs with access to Rio are now offered at **no cost**. Larger Linux VM configurations remain available for projects that require additional computing resources; however, these are subject to the standard cost model.
+As detailed above, Linux VMs are available in multiple sizes to match different research needs. Small Linux VMs are now offered at **no cost**. Larger Linux VM configurations remain available for projects that require additional computing resources; however, these are subject to the standard cost model.
+
+**Storage**
+
+Any Linux VM used for Rio includes 1 TB of High Security Zone(HSZ) Research Standard storage by default. In addition, HSZ Project storage, backed by an IBM GPFS parallel file system, is now available by request on Rio. HSZ Project storage is more performant and feature-rich than HSZ Standard storage and is generally equivalent to SSZ Project storage for HPC workloads. All data stored in HSZ Project storage is encrypted at rest and can be transferred to and from Rio at high speed using Globus. For additional storage beyond the default 1 TB, please submit a requst using our [Storage Request Form](https://www.rc.virginia.edu/form/storage/).
 
 **CUI and Export-Controlled Data**
 
@@ -474,6 +448,16 @@ Similar to our clusters Rivanna and Afton in standard security zone, Rio is a ma
       <td>8GPU</td>
       <td>96</td>
       <td>4 GB</td>
+      <td>750 GB</td>
+    </tr>
+    <tr>
+      <td>gpu-h200</td>
+      <td>GPU jobs </td>
+      <td>3 days</td>
+      <td>1</td>
+      <td>8GPU</td>
+      <td>96</td>
+      <td>4 GB</td>
       <td>2 TB</td>
     </tr>
   </tbody>
@@ -481,6 +465,7 @@ Similar to our clusters Rivanna and Afton in standard security zone, Rio is a ma
 
 
 For an introduction to the Rio HPC system, please see our [tutorial](https://learning.rc.virginia.edu/tutorials/rio-intro/).
+
 
 # Data Transfer In/Out of Ivy/Rio {#data-transfer-in-out-of-ivy}
 

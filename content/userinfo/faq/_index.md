@@ -63,7 +63,7 @@ layout = "single"
           <h2 class="card-title">Ivy</h2>
           <p class="card-text">Secure Data Computing Platform</p>
           <div style="margin-bottom:1rem;">
-            <a href="/userinfo/ivy"><button class="btn btn-sm btn-primary">Read our FAQ &rsaquo;</button></a>
+            <a href="/userinfo/faq/ivy-faq"><button class="btn btn-sm btn-primary">Read our FAQ &rsaquo;</button></a>
           </div>
         </div>
       </div>

@@ -9,8 +9,7 @@ description = "Tips and Tricks"
 author = "RC Staff"
 layout = "single"
 +++
-
-- [User Guides](/userinfo/user-guide)
+<!-- - [User Guides](/userinfo/user-guide)-->
 <!--  - MySQL
   - [Redis](/userinfo/howtos/general/redis)
   - MongoDB -->

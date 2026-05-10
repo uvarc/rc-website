@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2025-10-7T11:15:10-05:00"
+date = "2025-10-07T11:15:10-05:00"
 title = "Hariprasad Periyasamy"
 job_title = "Student"
 student_year = "4th Year"

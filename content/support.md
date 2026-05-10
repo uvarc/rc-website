@@ -59,13 +59,13 @@ var user_token = getCookie("__user_token");
   </div>
   <div class="card image-shadow col-md-4 p-3 mb-4 rounded" style="border:solid 1px #ccc;">
     <div class="card-body">
-      <h5 class="card-title">ACCORD</h5>
-      <p class="card-text">Request information or support for an ACCORD project. <a href="/userinfo/accord" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
+      <h5 class="card-title">Dedicated Computing</h5>
+      <p class="card-text">Request exclusive, long-term access to a dedicated subset of HPC nodes. <a href="https://www.rc.virginia.edu/userinfo/hpc/access/#dedicated-computing" style="text-color:blue;text-decoration:underline;">Learn more</a>.</p>
       <div class="support-tiles">
-        <a href="mailto:accord-support@virginia.edu?Subject=ACCORD Support Request"><button class="btn btn-primary btn-sm">ACCORD Support</button></a>
+        <a href="/form/dedicated-computing"><button class="btn btn-primary btn-sm">Request Dedicated Computing</button></a>
       </div>
     </div>
-  </div>
+  </div> 
   <div class="card image-shadow col-md-4 p-3 mb-4 bg-white rounded" style="border:solid 1px #ccc;"">
     <div class="card-body">
       <h5 class="card-title">Container Services</h5>
@@ -113,12 +113,14 @@ var user_token = getCookie("__user_token");
 - - -
 
 <!--
-Research Computing staff host weekly office hours. Drop by with a project idea, question about a system or anything else you would like to discuss. Walkups are welcome.
+<div class="col form-item form-group">
+   <div class="alert alert-warning">
+      NOTE: Office hours are cancelled on Tuesday, April 21st, 2026. Please join us at the <a href="https://www.rc.virginia.edu/2026/04/research-collaboration-and-innovation-take-center-stage-at-uva-research-computing-exhibition-on-april-21/">RC Exhibition</a> with your questions.
+   </div>
+</div>
 -->
 
-Research Computing staff host weekly office hours. Tell us about a project idea or talk to us about our high performance computing platforms, storage and services. We're here to help you solve your computational problems.
-
-Examples of the type of support we can provide are:
+Research Computing staff host weekly office hours via Zoom twice a week, with no appointment required. Tell us about a project idea or talk to us about our high performance computing platforms, storage and services. We're here to help you solve your computational problems. Examples of the type of support we can provide are:
 
 - Data Transfer/Access
 - Parallel Coding in Fortran, C, Python, R, Matlab, Mathematica
@@ -131,12 +133,10 @@ Examples of the type of support we can provide are:
 - Managing Computational Workflows
 
 
-**We offer office hours as online Zoom sessions twice a week. No appointments required.**
-
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.51213/38.03284/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Tuesdays 3:00-5:00pm</b>
-<a style="float:right;" href="https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09"><button class="btn btn-primary btn-sm">Join us 
+<a style="float:right;" href="https://virginia.zoom.us/j/98431594025?pwd=ptiCHQUJyD6reItPlIQbgDZbkxgLBS.1"><button class="btn btn-primary btn-sm">Join us 
 via Zoom</button></a>
 <!-- Physical Life Sciences Building, Room 430-->
 </div>
@@ -144,7 +144,7 @@ via Zoom</button></a>
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
 <b>Thursdays 10:00-12:00pm</b>
-<a style="float:right;" href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09"><button  class="btn btn-primary btn-sm">Join us 
+<a style="float:right;" href="https://virginia.zoom.us/j/95526878144?pwd=mqvhYS5AWyAI3aIxlbfZSAsKyRZhS1.1"><button  class="btn btn-primary btn-sm">Join us 
 via Zoom</button></a>
 <!-- Health Sciences Library, MILL Room -->
 </div>
@@ -153,9 +153,9 @@ via Zoom</button></a>
 
 ## New to High Performance Computing?  
 
-We have core training that is essential to getting up to speed working in the UVA HPC environment. We offer virtual orientation sessions to introduce you to the Afton & Rivanna HPC systems. Trainings are hosted Wednesdays. Registration is required.
+We offer core training essential for getting started in the UVA HPC environment. Virtual orientation sessions introduce the Afton and Rivanna HPC systems and are held on Wednesdays. Registration is required.
 
-The [training material](https://learning.rc.virginia.edu/tutorials/hpc-intro/) is hosted on our learning page where you can find a full YouTube video series and the workshop content of our core training.
+Please see the [core training content](https://learning.rc.virginia.edu/tutorials/hpc-intro/) which also includes a full YouTube video series.
 
 <div class="alert alert-success" role="alert">
 <!-- <div style="float:right;margin-top:-10px;"><a href="https://visitormap.virginia.edu/#/-78.50123/38.03199/17" target="_new"><img src="/images/navigation-40x40.png" alt="Map this location" /></a></div> -->
@@ -163,7 +163,4 @@ The [training material](https://learning.rc.virginia.edu/tutorials/hpc-intro/) i
 <a></a>
 <a style="float:right;" href={{% intro-rivanna-request %}}><button  class="btn btn-primary btn-sm">Sign up for an "Intro to HPC" 
 session</button></a>
-<!-- Health Sciences Library, MILL Room -->
-</div>
 
-<!-- {{< office-hours-grid >}} -->

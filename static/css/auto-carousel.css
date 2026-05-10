@@ -1,0 +1,65 @@
+.auto-carousel {
+  position: relative;
+  margin: 1rem 0 !important;
+}
+
+.auto-carousel ul {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+.auto-carousel ul li {
+  flex: 0 0 100%;
+  list-style: none;
+}
+
+.auto-carousel ul li a {
+  display: block;
+}
+
+.auto-carousel ul li img {
+  width: 100%;
+  height: auto;
+  max-height: 370px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .auto-carousel ul li img {
+    max-height: 250px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .auto-carousel ul li img {
+    max-height: 200px;
+  }
+}
+
+/* Arrows */
+.auto-carousel .prev,
+.auto-carousel .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 48px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+  padding: 10px;
+}
+
+.auto-carousel .prev {
+  left: 10px;
+}
+
+.auto-carousel .next {
+  right: 10px;
+}

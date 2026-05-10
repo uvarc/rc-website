@@ -13,7 +13,7 @@ description = ""
 author = "UVARC Staff"
 image = "/images/profiles/profile_steven_siadaty.jpg"
 subjects = ["python", "machine-learning", "r", "bioinformatics"]
-active = true
+active = false
 +++
 
 Steven is a third-year in the College of Arts and Sciences studying computer science and statistics. He has experience working with Python, Java, and C#. His interests focus on deep learning and AI integration, particularly involving bioinformatics and genetic sequencing. At Research computing Steven hopes to expand his understanding of the software development workflow, and to make high performance computing resources more available to UVA students and staff.

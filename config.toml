@@ -66,6 +66,7 @@ ignoreErrors = ["error-remote-getjson", "error-remote-getcsv"]
   eventsUrl = "/static/data/events.csv"
   newTutorialsUrl = "/static/data/new-tutorials.csv"
   hszJsonUrl = "/static/data/hsz-software.json"
+  hszArmJsonUrl = "/static/data/hsz-software-arm.json"
   # eventsUrl = "https://s3.amazonaws.com/uvarc-resources/website/events.csv"
 
 [params.support]

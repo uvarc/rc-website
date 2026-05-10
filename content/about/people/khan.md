@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2025-06-3T11:15:10-05:00"
+date = "2025-06-03T11:15:10-05:00"
 title = "Muneer Khan"
 job_title = "Student"
 lastname = "khan"

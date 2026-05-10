@@ -1,0 +1,22 @@
+{{- $items := .items -}}
+{{- $duration := .duration | default 7000 -}}
+{{- $id := .id | default "carousel" -}}
+
+<div id="{{ $id }}" class="auto-carousel" duration="{{ $duration }}">
+  <ul>
+    {{- range $i, $item := $items -}}
+      <li id="{{ $id }}_slide_{{ $i }}">
+        <a href="{{ $item.imageLink }}">
+          <img
+            src="{{ $item.imagePath }}"
+            alt="{{ $item.altText }}"
+            loading="lazy"
+          />
+        </a>
+      </li>
+    {{- end -}}
+  </ul>
+
+  <div class="prev" aria-label="Previous slide">‹</div>
+  <div class="next" aria-label="Next slide">›</div>
+</div>
