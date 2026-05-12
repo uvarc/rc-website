@@ -509,9 +509,12 @@ This is in addition to requesting an `a100` in the `gres` option.
 
 ### MIG GPU Partition
 
-We’re excited to announce the launch of a new MIG-enabled GPU partition (`gpu-mig`), available after our August 12th, 2025 scheduled maintenance. MIG (Multi-Instance GPU) allows a single NVIDIA A100 80GB GPU device to be subdivided into 7 smaller, isolated "slices" each with approximately 10GB GPU memory so that multiple jobs can run concurrently on one physical card, each with guaranteed memory and compute.
 
-**Why this change?**
+### MIG GPU Partition
+
+MIG (Multi-Instance GPU) allows a single GPU device to be subdivided into smaller, isolated "slices" so that multiple jobs can run concurrently on one physical card, each with guaranteed memory and compute. We currently have two MIG-enabled GPU nodes in the `gpu-mig` partition - 1 NVIDIA A100 80GB and 1 NVIDIA RTX PRO 6000.
+
+**Why choose this partition?**
 
 - Shorter wait times: Smaller jobs no longer block an entire 80 GB GPU.
 - Right-sized resources: Request only what you need—reduce waste, improve fairness.
@@ -519,14 +522,33 @@ We’re excited to announce the launch of a new MIG-enabled GPU partition (`gpu-
 
 **How to use:**
 
-Use the following SLURM directives in your Slurm job script  
+Use the following SLURM directives in your Slurm job script for the A100
 ```
 #SBATCH --partition=gpu-mig
-#SBATCH --gres=gpu:1 or #SBATCH --gres=gpu:1g.10gb:1 (only single MIG slices allowed per job)
+#SBATCH --gres=gpu:1 (only single MIG slices allowed per job)
+#SBATCH --constraint=a100
+or
+#SBATCH --partition=gpu-mig
+#SBATCH --gres=gpu:1g.10gb:1
 ```
-Or request the `gpu-mig` partition through Open OnDemand (OOD) platform.
 
-**Note:** Currently, only one A100 80GB node—configured with 56 total 10GB MIG instances—is available for users to try out and provide feedback. Additional MIG resources may be added in the future if this initial rollout proves successful and demonstrates clear benefits. For now, jobs run in this partition will not be charged any Service Units (SUs).
+Use the following SLURM directives in your Slurm job script for the RTX PRO 6000
+```
+#SBATCH --partition=gpu-mig
+#SBATCH --gres=gpu:1 (only single MIG slices allowed per job)
+#SBATCH --constraint=rtxpro6000
+or
+#SBATCH --partition=gpu-mig
+#SBATCH --gres=gpu:1g.24gb:1 (only single MIG slices allowed per job)
+```
+
+Or request the `gpu-mig` partition through Open OnDemand (OOD) platform:
+A100 is requested by default or for RTX PRO 6000 use:
+```
+--constraint=rtxpro6000
+```
+
+**Note:** The NVIDIA RTX PRO 6000 has the new Blackwell architecture, which is generally compatible with GPU libraries built with CUDA/12.9 and newer (CUDA/13.0 recommended). If your GPU librarires were built with an earlier version of CUDA, you will likely need to rebuild them to use the RTX PRO 6000. Users will temporarily have the option to continue using the A100 MIG node and thus may not necessarily need to rebuild their GPU libraries to use the A100 MIG node, however, the A100 will ultimately be moved back to the `gpu-pod` in the regular `gpu` partition in the near future. Additional MIG resources may be added in the future if this partition continues to demonstrate clear benefits. For now, jobs run in this partition will not be charged any Service Units (SUs).
 
 # CPU and Memory Usage
 Sometimes it is important to determine if you used all cores effectively and if enough memory was allocated to the job. There are separate Slurm commands for running jobs and completed jobs.
