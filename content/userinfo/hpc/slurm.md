@@ -543,7 +543,7 @@ or
 ```
 
 Or request the `gpu-mig` partition through Open OnDemand (OOD) platform:
-A100 is requested by default or for RTX PRO 6000 use:
+Note: A100 is requested by default or for RTX PRO 6000 use the following in the "Slurm Options" field:
 ```
 --constraint=rtxpro6000
 ```
