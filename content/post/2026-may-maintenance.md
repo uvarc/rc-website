@@ -60,7 +60,7 @@ Open OnDemand will be ugpraded to 4.1.4.
 
 - Code Server will be upgraded to 4.115.0.
 - JupyterLab will be upgraded to 4.5.6-py3.13.
-- RStudio Server will be upgraded to (R 4.6.0).
+- RStudio Server will be upgraded to 2026.04.0 (R 4.6.0).
 
 ### Modules
 
@@ -83,7 +83,7 @@ Some specifics:
 - [R] Apart from the removal of 4.3.1, existing R versions will remain under GCC 11.4.0, so that users won't have to reinstall their R libraries. Starting from 4.6.0, R will be built under 14.2.0. (We have prepared a script to help you transition to 4.6. See section below for more information.)
 - [Berkeley DB] `berkeley_db` will be renamed to `db`.
 - [Boost] Starting from version 1.88.0, the MPI-enabled module name will be `boost.mpi`. The non-MPI module name will be `boost`.
-- [CUDA] Modules that depend on CUDA 12.x will be consolidated to 12.8.0, except Amber 24 will be rebuilt with `cuda/12.4.1` due to limitations. `cuda/12.2.2` will be removed. If you built your own CUDA code with these versions, check if they run fine under 12.8.0. You may not need to rebuild.
+- [CUDA] Modules that depend on CUDA 12.x will be consolidated to 12.8.0. `cuda/12.2.2` will be removed. If you built your own CUDA code with these versions, check if they run fine under 12.8.0. You may not need to rebuild.
 - [SRA Toolkit] `sratoolkit` will be renamed to `sra-toolkit`.
 - [wigToBigWig/Kent Tools] `wigtobigwig` will be absorbed into `kent-tools/487`. Note the change in the version format of the latter.
 
@@ -141,7 +141,7 @@ The modules to be removed during this maintenance are listed below.
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-|amber                    |24-CUDA-12.2.2        |24-CUDA-12.4.1 |
+|amber                    |24-CUDA-12.2.2        |26-CUDA-12.8.0 |
 |apptainer                |1.3.4                 |1.4.5 |
 |blender                  |3.6.17                |5.0.1 |
 |busco                    |5.8.2                 |6.0.0 |
