@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2026-05-24T00:00:00-05:00"
+date = "2026-05-12T00:00:00-05:00"
 title = "HPC Maintenance: May 26, 2026"
 draft = false
 tags = ["rivanna", "afton"]
@@ -15,7 +15,42 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
 
-### What to Expect During Maintenance  
+As part of this maintenance, we will: 
+
+- Upgrade the Open OnDemand and Slurm scheduler  
+
+- Introduce significant updates to compiler and container toolchains 
+
+- Add a new RTX 6000 Pro GPU node to the gpu-mig partition as part of our ongoing efforts to improve GPU resource availability and reduce wait times  
+
+### What to Expect During Maintenance
+
+**Access:**
+
+You will not be able to log in or use the HPC systems, including Open OnDemand and FastX, between **6 a.m. Tuesday, May 26, to 6 a.m. Wednesday, May 27**. 
+
+**Jobs:**
+
+You can submit jobs until maintenance begins. If the scheduler determines that a job cannot finish before maintenance starts, it will be held in the queue and will automatically start once the system is back online. **No jobs will run during maintenance.** 
+
+
+**Storage:**
+
+Research Standard and Research Project storage will remain accessible via Globus, Server Message Block (SMB), and Network File System (NFS) mounts. However, access to Research Project storage may be temporarily disrupted during the maintenance window. In general, take note of the following: 
+
+- You can continue to access files from other systems (e.g., your computer) if mounts are set up. 
+
+- You cannot access files through the HPC interface during maintenance. 
+
+- The Data Transfer Nodes (DTNs) stay online for ongoing data transfers through Globus. 
+
+### Improving GPU Resource Availability 
+
+To improve access to GPU resources, RC previously introduced the gpu-mig partition using NVIDIA MIG technology to divide A100 80GB GPUs into smaller instances. Since the existing 10 GB GPU slices are insufficient for many workloads, RC has added a new RTX 6000 Pro GPU node that provides 32 GPU instances, each with 24 GB of GPU memory. Following maintenance, the RTX node will replace the current A100 node in the gpu-mig partition, and the A100 node will be returned to the main gpu partition. 
+
+**What this means for you:** Run smaller GPU jobs with less queue delays — and without using any Service Units (SUs). 
+
+[See how to submit a job to the gpu-mig partition.](https://www.rc.virginia.edu/userinfo/hpc/slurm/#mig-gpu-partition) 
 
 ### System
 

@@ -9,9 +9,6 @@ email = "ejf9db@virginia.edu"
 type = "people"
 description = ""
 author = "UVARC Staff"
-image = [
-  ""
-]
 subjects = [
   "machine-learning",
   "deep-learning",
