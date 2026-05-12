@@ -506,10 +506,6 @@ Two models of NVIDIA A100 GPUs are available; 2 nodes with 40GB of GPU memory pe
 ```
 This is in addition to requesting an `a100` in the `gres` option.
 
-
-### MIG GPU Partition
-
-
 ### MIG GPU Partition
 
 MIG (Multi-Instance GPU) allows a single GPU device to be subdivided into smaller, isolated "slices" so that multiple jobs can run concurrently on one physical card, each with guaranteed memory and compute. We currently have two MIG-enabled GPU nodes in the `gpu-mig` partition - 1 NVIDIA A100 80GB and 1 NVIDIA RTX PRO 6000.
