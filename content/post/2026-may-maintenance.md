@@ -172,6 +172,7 @@ The modules to be removed during this maintenance are listed below.
 |nextflow                 |25.04.6               |25.10.4 |
 |nibabies                 |22.1.3                |-|
 |nvhpc                    |24.5                  |25.3+ |
+|ollama                   |0.13.1                |0.23.4 |
 |openmm                   |7.5.0                 |-|
 |peer                     |1.3                   |-|
 |R                        |4.3.1                 |4.4.1+ |
