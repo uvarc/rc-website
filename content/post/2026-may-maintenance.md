@@ -201,9 +201,8 @@ Deprecated GCC and Intel modules are listed alphabetically below. They will not 
         abseil bart-mri bedops canu circos eigensoft
         g2clib g2lib gd gemma grackle
         lapack libibmad libibumad libmatheval libxml++
-        mm-common mrtrix3tissue nlopt
-        pasapipeline protobuf protobuf-python qwt
-        seqoutbias shapeit4 shapelib trinity
+        mm-common nlopt pasapipeline protobuf protobuf-python
+        qwt seqoutbias shapeit4 shapelib trinity
         viennarna xxdiff
         ```
     - MPI
