@@ -88,30 +88,26 @@ Use environment variables to safely store your key (e.g., `export  UVARC_GenAI_A
 **curl**
 
 ```bash
-export  UVARC_GenAI_API="<yourAPIkey>" 
-curl -X POST "https://open-webui.rc.virginia.edu/api/chat/completions" \ 
-     -H "Authorization: Bearer $UVARC_GenAI_API" \ 
-     -H "Content-Type: application/json" \ 
-     -d '{"model": "Kimi K2.5", "messages": [{"role": "user", "content": "Hello"}]}' 
+curl -X POST "https://open-webui.rc.virginia.edu/api/chat/completions" -H "Authorization: Bearer $UVARC_GenAI_API" -H "Content-Type: application/json" -d '{"model": "Kimi K2.5", "messages": [{"role": "user", "content": "Hello"}]}' | grep '^data: ' | grep -oP '"content":"\K[^"]*' | tr -d '\n' && echo
 ```
 
 **Python with OpenAI library**
 
 ```python
-import os 
-import openai 
- 
-client = openai.OpenAI( 
-    base_url="https://open-webui.rc.virginia.edu/api/", 
-    api_key=os.environ.get("UVARC_GenAI_API") 
-) 
- 
-response = client.chat.completions.create( 
-    model="Kimi K2.5", 
-    messages=[{"role": "user", "content": "Hello"}] 
-) 
+import openai
+import os
 
-print(response) 
+client = openai.OpenAI(
+    base_url="https://open-webui.rc.virginia.edu/api",
+    api_key=f"{os.environ.get('UVARC_GenAI_API')}"
+)
+
+for chunk in client.chat.completions.create(
+    model="Kimi K2.5",
+    messages=[{"role": "user", "content": "Hello"}],
+    stream=True
+):
+    print(chunk.choices[0].delta.content or "", end="")
 ```
 
 **Python with requests**
@@ -119,20 +115,43 @@ print(response)
 ```python
 import os 
 import requests 
- 
-response = requests.post( 
+import json
+
+with requests.post( 
     "https://open-webui.rc.virginia.edu/api/chat/completions", 
-    headers={"Authorization": f"Bearer {os.environ.get('UVARC_GenAI_API')}"}, 
+    headers={"Authorization": f"Bearer {os.environ.get('UVARC_GenAI_API')}",
+            'Content-Type': 'application/json'
+            }, 
     json={ 
         "model": "Kimi K2.5", 
         "messages": [{"role": "user", "content": "Hello"}] 
     } 
-) 
+) as resp:
+    resp.raise_for_status()
+
+    full_text = ""
+
+    for line in resp.iter_lines(decode_unicode=True):
+        if not line:
+            continue
+
+        if line.startswith("data: "):
+            data = line.removeprefix("data: ").strip()
+
+            if data == "[DONE]":
+                break
+
+            chunk = json.loads(data)
+            delta = chunk["choices"][0].get("delta", {})
+            token = delta.get("content", "")
+
+            print(token, end="", flush=True)
+            full_text += token
 ```
 
 **Jupyter Notebook reference**
 
-<a href="/data/LLM_API_Example.zip" download>Download the ZIP file</a>
+<a href="/data/LLM_API_Example_Test.zip" download>Download the ZIP file</a>
 
 # Policies and Limitations
 
