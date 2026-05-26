@@ -2,7 +2,7 @@
 images = [""]
 author = "Staff"
 description = ""
-date = "2026-05-24T00:00:00-05:00"
+date = "2026-05-12T00:00:00-05:00"
 title = "HPC Maintenance: May 26, 2026"
 draft = false
 tags = ["rivanna", "afton"]
@@ -15,17 +15,52 @@ All systems are expected to return to service by **Wednesday, May 27** at 6 am.
 
 ## IMPORTANT MAINTENANCE NOTES
 
-### What to Expect During Maintenance  
+As part of this maintenance, we will: 
+
+- Upgrade the Open OnDemand and Slurm scheduler  
+
+- Introduce significant updates to compiler and container toolchains 
+
+- Add a new RTX 6000 Pro GPU node to the gpu-mig partition as part of our ongoing efforts to improve GPU resource availability and reduce wait times  
+
+### What to Expect During Maintenance
+
+**Access:**
+
+You will not be able to log in or use the HPC systems, including Open OnDemand and FastX, between **6 a.m. Tuesday, May 26, to 6 a.m. Wednesday, May 27**. 
+
+**Jobs:**
+
+You can submit jobs until maintenance begins. If the scheduler determines that a job cannot finish before maintenance starts, it will be held in the queue and will automatically start once the system is back online. **No jobs will run during maintenance.** 
+
+
+**Storage:**
+
+Research Standard and Research Project storage will remain accessible via Globus, Server Message Block (SMB), and Network File System (NFS) mounts. However, access to Research Project storage may be temporarily disrupted during the maintenance window. In general, take note of the following: 
+
+- You can continue to access files from other systems (e.g., your computer) if mounts are set up. 
+
+- You cannot access files through the HPC interface during maintenance. 
+
+- The Data Transfer Nodes (DTNs) stay online for ongoing data transfers through Globus. 
+
+### Improving GPU Resource Availability 
+
+To improve access to GPU resources, RC previously introduced the gpu-mig partition using NVIDIA MIG technology to divide A100 80GB GPUs into smaller instances. Since the existing 10 GB GPU slices are insufficient for many workloads, RC has added a new RTX 6000 Pro GPU node that provides 32 GPU instances, each with 24 GB of GPU memory. Following maintenance, the RTX node will replace the current A100 node in the gpu-mig partition, and the A100 node will be returned to the main gpu partition. 
+
+**What this means for you:** Run smaller GPU jobs with less queue delays — and without using any Service Units (SUs). 
+
+[See how to submit a job to the gpu-mig partition.](https://www.rc.virginia.edu/userinfo/hpc/slurm/#mig-gpu-partition) 
 
 ### System
 
-The NVIDIA driver will be upgraded to 595.45.04 to support CUDA 13.1. See section on NVHPC below.
+The NVIDIA driver will be upgraded to 595.71.05 to support CUDA 13.2. See section on NVHPC below.
 
-Open OnDemand will be ugpraded to 4.1.4.
+Open OnDemand will be ugpraded to 4.1.5.
 
 - Code Server will be upgraded to 4.115.0.
 - JupyterLab will be upgraded to 4.5.6-py3.13.
-- RStudio Server will be upgraded to (R 4.6.0).
+- RStudio Server will be upgraded to 2026.04.0 (R 4.6.0).
 
 ### Modules
 
@@ -48,7 +83,7 @@ Some specifics:
 - [R] Apart from the removal of 4.3.1, existing R versions will remain under GCC 11.4.0, so that users won't have to reinstall their R libraries. Starting from 4.6.0, R will be built under 14.2.0. (We have prepared a script to help you transition to 4.6. See section below for more information.)
 - [Berkeley DB] `berkeley_db` will be renamed to `db`.
 - [Boost] Starting from version 1.88.0, the MPI-enabled module name will be `boost.mpi`. The non-MPI module name will be `boost`.
-- [CUDA] Modules that depend on CUDA 12.x will be consolidated to 12.8.0, except Amber 24 will be rebuilt with `cuda/12.4.1` due to limitations. `cuda/12.2.2` will be removed. If you built your own CUDA code with these versions, check if they run fine under 12.8.0. You may not need to rebuild.
+- [CUDA] Modules that depend on CUDA 12.x will be consolidated to 12.8.0. `cuda/12.2.2` will be removed. If you built your own CUDA code with these versions, check if they run fine under 12.8.0. You may not need to rebuild.
 - [SRA Toolkit] `sratoolkit` will be renamed to `sra-toolkit`.
 - [wigToBigWig/Kent Tools] `wigtobigwig` will be absorbed into `kent-tools/487`. Note the change in the version format of the latter.
 
@@ -106,7 +141,7 @@ The modules to be removed during this maintenance are listed below.
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-|amber                    |24-CUDA-12.2.2        |24-CUDA-12.4.1 |
+|amber                    |24-CUDA-12.2.2        |26-CUDA-12.8.0 |
 |apptainer                |1.3.4                 |1.4.5 |
 |blender                  |3.6.17                |5.0.1 |
 |busco                    |5.8.2                 |6.0.0 |
@@ -121,6 +156,7 @@ The modules to be removed during this maintenance are listed below.
 |cudnn                    |8.9.4.25              | 9+ |
 |cumulus_feature_barcoding|0.10.0                |-|
 |danpos                   |2.2.2                 |-|
+|finestructure            |4.1.1                 |-|
 |gcc                      |12.4.0                |14.2.0 (default), 11.4.0 (legacy) |
 |gdb                      |13.1-py3.11           | 16.3 |
 |go                       |1.23.6                |1.26.2 |
@@ -137,11 +173,14 @@ The modules to be removed during this maintenance are listed below.
 |nextflow                 |25.04.6               |25.10.4 |
 |nibabies                 |22.1.3                |-|
 |nvhpc                    |24.5                  |25.3+ |
+|ollama                   |0.13.1                |0.23.4 |
 |openmm                   |7.5.0                 |-|
 |peer                     |1.3                   |-|
 |R                        |4.3.1                 |4.4.1+ |
 |rapidsai                 |25.06                 |26.02 |
+|regtools                 |1.0.0                 |- |
 |rmats-turbo              |4.1.1                 |-|
+|rsem                     |1.3.3                 |- |
 |skopeo                   |1.13.1                |-|
 |snakemake                |9.8.1                 |9.19.0 |
 |subversion               |1.14.0                |-|
@@ -165,9 +204,8 @@ Deprecated GCC and Intel modules are listed alphabetically below. They will not 
         abseil bart-mri bedops canu circos eigensoft
         g2clib g2lib gd gemma grackle
         lapack libibmad libibumad libmatheval libxml++
-        mm-common mrtrix3tissue nlopt
-        pasapipeline protobuf protobuf-python qwt
-        seqoutbias shapeit4 shapelib trinity
+        mm-common nlopt pasapipeline protobuf protobuf-python
+        qwt seqoutbias shapeit4 shapelib trinity
         viennarna xxdiff
         ```
     - MPI

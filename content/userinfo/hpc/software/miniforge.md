@@ -192,5 +192,15 @@ If you do not export the previous commands in your `~/.bashrc` file, you'll need
 source activate /standard/ivy-xxx-xxxx/path/to/.conda/envs/my_env
 ```
 
+## Conda Environments on GH200
+
+GH200 nodes use ARM architecture, whereas traditional x86 nodes use x86-64. Because Conda environments are architecture-specific and not portable between ARM and x86-64, existing x86 Conda environments will not work on GH200 nodes.
+
+To use Conda on GH200:
+1. Load the miniforge module to create new ARM-compatible environments
+2. See the Ivy Linux Virtual Machines Software [documentation](https://www.rc.virginia.edu/userinfo/ivy/ivy-linux-sw/) for details on the ARM software stack
+
+You cannot reuse x86 Conda environments on ARM-based nodes. You'll need to create fresh environments using the GH200-specific miniforge module instead.
+
 # More Information
 Please visit the official [website](https://github.com/conda-forge/miniforge).
