@@ -128,6 +128,12 @@ Globus maintains a well documented [FAQ webpage](https://docs.globus.org/faq/) t
 ## I keep getting a 'Permission Denied' error when trying to transfer my files through Globus. What can I do?
 If you are certain that you have write permissions in the target directory and read permissions in the origin directory, you may be experiencing a common error with hidden files such as `.AppleDouble` or `Thumb.db`. You can resolve this issue by opening the `Transfer and Timer Options` menu at the center of the Globus screen (between the two blue "Start" buttons). Then check the box for `Skip files on source with errors` to tell Globus to ignore files that trigger a 'file not found' or 'permission denied' error.
 
+## Can I set up an S3 AWS connector with Globus?
+Yes, we can help you set up an AWS bucket connection via Globus. To do so, please reach out to us via our support options with the following information:
+- Virtual-hosted style URL ie: ```https://<bucket-name>.s3.<region-code>.amazonaws.com/```
+- The type of data you are transferring. Is it data for the HSZ or the SSZ?
+
+
 ## How do I add external or mapped network drives onto the Globus Path
 When you first set up Globus, it only has access to certain folders of your local drive. You can add additional locations such as mapped network drives or external hard drives in the Globus Options/Preferences menu.
 

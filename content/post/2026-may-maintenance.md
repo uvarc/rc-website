@@ -156,6 +156,7 @@ The modules to be removed during this maintenance are listed below.
 |cudnn                    |8.9.4.25              | 9+ |
 |cumulus_feature_barcoding|0.10.0                |-|
 |danpos                   |2.2.2                 |-|
+|finestructure            |4.1.1                 |-|
 |gcc                      |12.4.0                |14.2.0 (default), 11.4.0 (legacy) |
 |gdb                      |13.1-py3.11           | 16.3 |
 |go                       |1.23.6                |1.26.2 |
@@ -177,7 +178,9 @@ The modules to be removed during this maintenance are listed below.
 |peer                     |1.3                   |-|
 |R                        |4.3.1                 |4.4.1+ |
 |rapidsai                 |25.06                 |26.02 |
+|regtools                 |1.0.0                 |- |
 |rmats-turbo              |4.1.1                 |-|
+|rsem                     |1.3.3                 |- |
 |skopeo                   |1.13.1                |-|
 |snakemake                |9.8.1                 |9.19.0 |
 |subversion               |1.14.0                |-|
