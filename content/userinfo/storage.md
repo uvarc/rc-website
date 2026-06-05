@@ -100,6 +100,10 @@ Ivy Central Storage has been replaced by High-Security Research Standard storage
 
 # Request Storage
 
+Access to all RC services in the standard security zone are controlled by membership to Grouper groups. For those unfamiliar with using Grouper, ITS has some helpful video tutorials: <a href="https://www.youtube.com/watch?v=Hq_GJfIeoBI">Grouper Portal Overview</a>, <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Creating and Deleting Groups in Grouper</a>, and <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Add - Remove Group Members in Grouper</a>.
+
+Prior to requesting new storage, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the storage, and you will need to explicitly add yourself to the new group via Grouper.
+
 Storage requests can be made via this form:
 
 [<button class="btn btn-success">Request / Purchase Storage</button>](/form/storage/)
