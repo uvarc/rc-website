@@ -68,7 +68,9 @@ Once a group member has graduated or left the University, they should be removed
 ## Types {#allocation-types}
 
 ### Standard Allocations
-Standard allocations require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations must be renewed annually along with a synopsis of results from the original allocation. There cannot be more than 1 PI per Grouper group. Standard allocations expire 12 months after they are disbursed. 
+Standard allocations require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations must be renewed annually along with a synopsis of results from the original allocation. There cannot be more than 1 PI per Grouper group. Standard allocations expire 12 months after they are disbursed.
+
+Prior to requesting a new standard allocation, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the allocation, and explicitly add yourself as a member of the new group via Grouper.
 
 **Available to:** [Eligible PIs](#pi-eligibility)
 
@@ -79,6 +81,8 @@ Standard allocations require a brief summary of the research project along with 
 ### Allocation Purchases
 Time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
 iAs an alternative to purchasing SU's, RC offers dedicated computing which allows researchers to request exclusive access to a subset of HPC nodes for extended periods. See below for more information.
+
+Prior to requesting a new paid allocation, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the allocation, and explicitly add yourself as a member of the new group via Grouper.
 
 **Available to:** [Eligible PIs](#pi-eligibility) who need priority access and premium service.
 
@@ -92,6 +96,8 @@ iAs an alternative to purchasing SU's, RC offers dedicated computing which allow
 Instructional allocations provide limited access to Rivanna and Afton and are available to UVA instructors who are teaching a class or leading a training session. Faculty who wish to request an instructional allocation should choose a Grouper account name using the class rubric, e.g. cs5014. Service units will be automatically purged 2 weeks after the class ends unless the instructor requests an extension. Instructors are required to submit a fresh instructional allocation request—either a new request or a renewal request—at the start of each semester.
 
 PIs of instructional allocations may choose to request a reservation of resources for their class times. To request a reservation, instructors must be sure to include the class meeting times, estimated resources per student and state they would like a reservation in their instructional allocation request. Reservations are evaluated on a case-by-case basis depending on available resources and requirements of the instructor, as such not every reservation request can be accomodated.
+
+Prior to requesting a new instructional allocation, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the allocation, and explicitly add yourself as a member of the new group via Grouper.
 
 **Available to:** Faculty who intend to use HPC resources in their class. 
 
