@@ -102,7 +102,7 @@ Ivy Central Storage has been replaced by High-Security Research Standard storage
 
 Access to shared research storage in the standard security zone is managed through membership in Grouper groups. For those unfamiliar with using Grouper, UVA IT Services has provided some helpful video tutorials: <a href="https://www.youtube.com/watch?v=Hq_GJfIeoBI">Grouper Portal Overview</a>, <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Creating and Deleting Groups in Grouper</a>, and <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Add - Remove Group Members in Grouper</a>.
 
-PI's: Prior to requesting new storage, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the storage space, and explicitly add yourself as a member of the new group via <a href="https://groups.identity.virginia.edu/">Grouper</a>.
+**PI's:** Prior to requesting new storage, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the storage space, and explicitly add yourself as a member of the new group via <a href="https://groups.identity.virginia.edu/">Grouper</a>.
 
 Storage requests can be made via this form:
 
