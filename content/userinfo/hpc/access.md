@@ -99,6 +99,8 @@ PIs of instructional allocations may choose to request a reservation of resource
 
 **Available to:** Faculty who intend to use HPC resources in their class. 
 
+**Available to:** Faculty who intend to use HPC resources in their class.
+
 **PI's:** Prior to requesting a new instructional allocation, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the allocation, and explicitly add yourself as a member of the new group via <a href="https://groups.identity.virginia.edu/">Grouper</a>.
 
 <a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
