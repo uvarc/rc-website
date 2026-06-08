@@ -201,7 +201,7 @@ Deprecated GCC and Intel modules are listed alphabetically below. They will not 
     - Non-MPI
 
         ```
-        abseil bart-mri bedops canu circos eigensoft
+        abseil bedops canu circos eigensoft
         g2clib g2lib gd grackle
         lapack libibmad libibumad libmatheval libxml++
         mm-common nlopt pasapipeline protobuf protobuf-python

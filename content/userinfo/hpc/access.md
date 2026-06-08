@@ -42,6 +42,8 @@ Below, you’ll find information on eligibility for access, account creation, an
 
 # Account Creation
 
+Access to HPC allocations is managed through membership in Grouper groups. For those unfamiliar with using Grouper, UVA IT Services has provided some helpful video tutorials: <a href="https://www.youtube.com/watch?v=Hq_GJfIeoBI">Grouper Portal Overview</a>, <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Creating and Deleting Groups in Grouper</a>, and <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Add - Remove Group Members in Grouper</a>.
+
 Each PI should create his/her own Grouper group using the <a href="https://in.virginia.edu/how-to-request-group">ITS Group Management Service</a>. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. The PI may designate one or more group administrators but must remain a member of the group. Collaborators with UVA Eservices accounts, regardless of status, can be added to the Grouper group once it has been created. (Collaborators outside of UVA must request a temporary, sponsored Eservices account.) Grouper group names should consist of lowercase letters, digits, or underscores only and must begin with a letter. Please do not use spaces in the group name.
 
 {{% highlight %}}
@@ -50,7 +52,7 @@ Whether you need to set up a new group, modify a group or access the legacy MyGr
 
 Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When a user is added to an allocation, unless the user already has an HPC user account, one will automatically be created for them. In the near future, group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
 
-Once a group member has graduated or left the University, they should be removed from an allocation as soon as possible to prevent continued access to UVA resources. In cases where a researcher may continue working at the direction of the PI on a UVA research project after leaving UVA, a temporary sponsored account should be requested from UVA ITS (see: https://in.virginia.edu/sponsor). A "contractor" type of sponsored account is generally recommended in these cases.
+Once a group member has graduated or left the University, they should be removed from an allocation as soon as possible to prevent continued access to UVA resources. In cases where a researcher may continue working at the direction of the PI on a UVA research project after leaving UVA, a temporary sponsored account may be requested from UVA ITS (see: https://in.virginia.edu/sponsor). A "contractor" type of sponsored account is generally recommended in these cases.
 
 [<button class="btn btn-warning">Manage Grouper</button>](https://groups.identity.virginia.edu/)
 
@@ -66,19 +68,23 @@ Once a group member has graduated or left the University, they should be removed
 ## Types {#allocation-types}
 
 ### Standard Allocations
-Standard allocations require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations must be renewed annually along with a synopsis of results from the original allocation. There cannot be more than 1 PI per Grouper group. Standard allocations expire 12 months after they are disbursed. 
+Standard allocations require a brief summary of the research project along with an explanation of the computations to be performed. Standard allocations must be renewed annually along with a synopsis of results from the original allocation. There cannot be more than 1 PI per Grouper group. Standard allocations expire 12 months after they are disbursed.
 
 **Available to:** [Eligible PIs](#pi-eligibility)
+
+**PI's:** Prior to requesting a new standard allocation, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the allocation, and explicitly add yourself as a member of the new group via <a href="https://groups.identity.virginia.edu/">Grouper</a>.
 
 [<button class="btn btn-primary">Request New / Renew Standard Allocation</button>](/form/allocation-standard/)
 
 - - -
 
 ### Allocation Purchases
-Time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
-iAs an alternative to purchasing SU's, RC offers dedicated computing which allows researchers to request exclusive access to a subset of HPC nodes for extended periods. See below for more information.
+Priority compute time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
+As an alternative to purchasing SU's, RC offers dedicated computing which allows researchers to request exclusive access to a subset of HPC nodes for extended periods. See below for more information.
 
 **Available to:** [Eligible PIs](#pi-eligibility) who need priority access and premium service.
+
+**PI's:** Prior to requesting a new paid allocation, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the allocation, and explicitly add yourself as a member of the new group via <a href="https://groups.identity.virginia.edu/">Grouper</a>.
 
 <a href="/form/allocation-purchase/">
   <button class="btn btn-primary">Purchase an Allocation</button>
@@ -92,6 +98,8 @@ Instructional allocations provide limited access to Rivanna and Afton and are av
 PIs of instructional allocations may choose to request a reservation of resources for their class times. To request a reservation, instructors must be sure to include the class meeting times, estimated resources per student and state they would like a reservation in their instructional allocation request. Reservations are evaluated on a case-by-case basis depending on available resources and requirements of the instructor, as such not every reservation request can be accomodated.
 
 **Available to:** Faculty who intend to use HPC resources in their class. 
+
+**PI's:** Prior to requesting a new instructional allocation, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the allocation, and explicitly add yourself as a member of the new group via <a href="https://groups.identity.virginia.edu/">Grouper</a>.
 
 <a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
 <a href="/form/allocation-instructional/">
