@@ -42,7 +42,7 @@ Below, you’ll find information on eligibility for access, account creation, an
 
 # Account Creation
 
-Access to all RC services in the standard security zone are controlled by membership to Grouper groups. For those unfamiliar with using Grouper, ITS has some helpful video tutorials: <a href="https://www.youtube.com/watch?v=Hq_GJfIeoBI">Grouper Portal Overview</a>, <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Creating and Deleting Groups in Grouper</a>, and <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Add - Remove Group Members in Grouper</a>.
+Access to HPC allocations is managed through membership in Grouper groups. For those unfamiliar with using Grouper, UVA IT Services has provided some helpful video tutorials: <a href="https://www.youtube.com/watch?v=Hq_GJfIeoBI">Grouper Portal Overview</a>, <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Creating and Deleting Groups in Grouper</a>, and <a href="https://www.youtube.com/watch?v=j0_Shp2xYxw">Add - Remove Group Members in Grouper</a>.
 
 Each PI should create his/her own Grouper group using the <a href="https://in.virginia.edu/how-to-request-group">ITS Group Management Service</a>. New groups will require two owners who hold active roles at UVA, as well as a third departmental owner. The PI may designate one or more group administrators but must remain a member of the group. Collaborators with UVA Eservices accounts, regardless of status, can be added to the Grouper group once it has been created. (Collaborators outside of UVA must request a temporary, sponsored Eservices account.) Grouper group names should consist of lowercase letters, digits, or underscores only and must begin with a letter. Please do not use spaces in the group name.
 
@@ -52,7 +52,7 @@ Whether you need to set up a new group, modify a group or access the legacy MyGr
 
 Each PI is ultimately responsible for managing the roster of users in his/her group although PIs may delegate day-to-day management to one or more other members. When a user is added to an allocation, unless the user already has an HPC user account, one will automatically be created for them. In the near future, group owners will be required to perform an annual attestation of group membership. If group owners do not complete attesting to the validity of their group, the members will be automatically removed from the group.
 
-Once a group member has graduated or left the University, they should be removed from an allocation as soon as possible to prevent continued access to UVA resources. In cases where a researcher may continue working at the direction of the PI on a UVA research project after leaving UVA, a temporary sponsored account should be requested from UVA ITS (see: https://in.virginia.edu/sponsor). A "contractor" type of sponsored account is generally recommended in these cases.
+Once a group member has graduated or left the University, they should be removed from an allocation as soon as possible to prevent continued access to UVA resources. In cases where a researcher may continue working at the direction of the PI on a UVA research project after leaving UVA, a temporary sponsored account may be requested from UVA ITS (see: https://in.virginia.edu/sponsor). A "contractor" type of sponsored account is generally recommended in these cases.
 
 [<button class="btn btn-warning">Manage Grouper</button>](https://groups.identity.virginia.edu/)
 
