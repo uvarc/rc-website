@@ -79,8 +79,8 @@ Prior to requesting a new standard allocation, please make sure to request a new
 - - -
 
 ### Allocation Purchases
-Time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
-iAs an alternative to purchasing SU's, RC offers dedicated computing which allows researchers to request exclusive access to a subset of HPC nodes for extended periods. See below for more information.
+Priority compute time on Rivanna and Afton can also be purchased using an FDM. Purchasers are given a higher priority in the queue and their SUs never expire.
+As an alternative to purchasing SU's, RC offers dedicated computing which allows researchers to request exclusive access to a subset of HPC nodes for extended periods. See below for more information.
 
 Prior to requesting a new paid allocation, please make sure to request a new <a href="https://groups.identity.virginia.edu/">Grouper</a> group to manage access to the allocation, and explicitly add yourself as a member of the new group via Grouper.
 
