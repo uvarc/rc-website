@@ -8,6 +8,9 @@ categories = [
 date = "2021-07-08T08:37:46-05:00"
 tags = [
   "multi-core",
+  "workflow managers",
+  "bioinformatics",
+  "nextflow",
 ]
 draft = false
 modulename = "nextflow"
@@ -52,18 +55,34 @@ module spider {{% module-firstversion %}}
 - Workflows are written in Groovy and can be deployed in parallel on the HPC system
 - Workflows can be executed with modules or containerized environments: Conda or Apptainer
 
-# Nextflow processes:
+<!--# Nextflow processes:
 
-![Snakemake DAG](/images/snakemake_dag.png)
-- Snakemake follows the GNU Make paradigm
+![Nextflow DAG](/images/nextflow-dag.png)
+<img src="/images/nextflow-dag.png" alt="Nextflow DAG" style="width:10%;">
 - Workflows are defined in processes
-- Dependencies between the rules are determined automatically, creating a DAG (directed acyclic graph) of jobs that can be parallelized
+- Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized -->
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px;">
+
+  <div style="flex: 1; min-width: 250px;">
+    <h1>Nextflow processes:</h1>
+    <ul>
+      <li>Workflows are defined in processes</li>
+      <li>Dependencies between the processes are determined when defining a workflow, creating a DAG (directed acyclic graph) of jobs that can be parallelized</li>
+    </ul>
+  </div>
+
+  <div>
+    <img src="/images/nextflow-dag.png" alt="Nextflow DAG" style="width:200px; margin-top: 30px;">
+  </div>
+
+</div>
 
 # nextflow.config file:
 Config files are generally for
 - params: workflow parameters (like input filenames, paths, job settings) processes to define global or process-specific options, or profiles.
-- process: additional processes specifying global and/or per-process settings, software environments, and job settings
-- profile: 
+- processes: additional processes specifying global and/or per-process settings, software environments, profiles, and job settings
+- profiles: specify a frequently used collection of settings and/or parameters
 
 ```
 
@@ -181,29 +200,11 @@ workflow {
     FREEBAYES(bam_ch, ref_ch)
 }
 ```
-
-- After the rule `align_hisat` is completed, the workflow can move to the next rule `stringtie_assemble`
-- Notice that the output of `align_hisat` is a `.bam` file, this is now the input to the rule `stringtie_assemble`
-
-#```
-#rule stringtie_assemble:
-#    input:
-#        genome_gtf=config['GENOME_GTF'],
-#        bam="align_hisat2/{sample}.bam"
-#    output: "stringtie/assembled/{sample}.gtf"
-#    threads: config['THREADS']
-#    shell:
-#        "stringtie -p {threads} -G {input.genome_gtf} "
-#        "-o {output} -l {wildcards.sample} {input.bam}"
-#```
-
-- You can add as many processes as you like as long as they are sequential with inputs and outputs
-
 # Slurm for Nextflow:
 
 - The Nextflow pipeline can be executed using a `SLURM` script on the HPC system
-- Below is an example script to submit to the standard partition with 8 threads
-- This script is using a `conda` environment called rnaseq
+- Below is an example script to submit your main controller script to the standard partition with 1 core
+
 
 {{< pull-code file="/static/scripts/nextflow.slurm" lang="no-highlight" >}}
 

@@ -137,7 +137,7 @@ Feature constraints are optional; you may submit jobs without feature constraint
 | `standard` | `afton`, `rivanna` | None | `rivanna` > `afton` | If not specified, the scheduler will attempt to place the job on Rivanna hardware first or Afton hardware as second alternative. |
 | `parallel` | None | None | n/a | The entire partition is configured with new Afton nodes. No feature constraint is required.
 | `gpu` | None | `v100`, `a40`, `a6000`, `a100_40gb`, `a100_80gb` | `v100` > `a6000` > `a40` >  `a100_40gb`> `a100_80gb`  | If no GRES request is specified, the scheduler will attempt to place the job on a V100 node first and A100 80GB nodes (i.e. the BasePOD) hardware as last alternative. The A40 nodes were purchased along with the new Afton hardware. | 
-| `interactive` | `afton`, `rivanna` | `rtx2080`, `rtx3090` | `rivanna` > `afton` | If not specified, the scheduler will attempt to place the job on Rivanna hardware first or Afton hardware as second alternative. |
+| `interactive` | `afton`, `rivanna` | `rtx_2080`, `rtx_3090` | `rivanna` > `afton` | If not specified, the scheduler will attempt to place the job on Rivanna hardware first or Afton hardware as second alternative. |
 {{< /table >}}
 
 <br>

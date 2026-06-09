@@ -16,6 +16,8 @@ UVA Research Computing—including the Data Analytics Center and the Digital Tec
 **April 21 | 10 a.m.-4 p.m.**  
 **School of Data Science**
 
+**Parking**: For the duration of the event, the Emmet/Ivy Garage is available for parking at no charge. [See the UVA parking lot map](https://parking.virginia.edu/sites/parking/files/2026-02/Master%20Parking%20Map_v2(2026compact).pdf).
+
 The event offers opportunity to network, learn about research resources, explore diverse research methods, find potential collaborators, and connect with the broader UVA research community. At the conclusion of the event, judges will select research posters to receive travel vouchers up to $3,000.
 
 All are welcome to attend. Light refreshments will be served. 
