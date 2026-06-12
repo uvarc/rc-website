@@ -38,7 +38,7 @@ If you can't find answer there, we'd love to hear from you!
       <option id="rivanna" value="Rivanna">HPC (Afton & Rivanna)</option>
       <option id="ivy" value="Ivy">Ivy Secure Computing</option>
       <option id="storage" value="Storage">Storage</option>
-      <option id="container" value="Container">Research Application Services</option>
+      <option id="container" value="Container">Research Application Service</option>
       <option id="dac" value="Data Analytics">Data Analytics Center</option>
       <option id="dtc" value="Digital Technology">Digital Technology Core</option>
       <!-- <option id="consultation" value="Consultation">General Consultation Request</option> -->
