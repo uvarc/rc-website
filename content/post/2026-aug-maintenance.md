@@ -22,7 +22,10 @@ All systems are expected to return to service by **Wednesday, August 12** at 6 a
 {{< table title="replacement" class="table table-striped" >}}
 | Module | Remove | Replace with |
 |---|---|---|
-|alphafold|3.0.1, 3.0.2  |3.0.3 |
+|afni      | 25.0.12      | 26.1.04 |
+|alphafold | 3.0.1, 3.0.2 | 3.0.3 |
+|anvio     | 8            | 9 |
+|fmriprep  | 25.0.0       | 25.2.5 |
 {{< /table >}}
 
 If you have any questions about the maintenance, please [contact our user services team](https://www.rc.virginia.edu/support/). 

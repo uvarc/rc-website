@@ -11,9 +11,30 @@ description = ""
 author = "RC Staff"
 
 +++
+# NVIDIA HGX B200 GPU Nodes
+
+We are excited to announce a major expansion of UVA’s AI and high-performance computing (HPC) capabilities. Beginning June 16, the Afton HPC cluster will be enhanced with some of the most advanced GPU technologies available today, delivering unprecedented performance for AI, machine learning, data analytics, and computational science workloads. 
 
 
-# Introducing the NVIDIA DGX BasePOD™
+## 7 NVIDIA HGX B200 Nodes 
+
+- 2 TB of system memory 
+
+- 8 NVIDIA Blackwell Tensor Core GPUs per node 
+
+- 180 GB of HBM3e memory per GPU device (1.44 TB total GPU memory per node) 
+
+ 
+
+## 6 NVIDIA RTX PRO 6000 Nodes 
+
+- 1.5 TB of system memory per node 
+
+- 8 NVIDIA RTX PRO 6000 per node  
+
+- 96 GB of VRAM memory per GPU device (768 GB total GPU memory per node) 
+
+# NVIDIA DGX BasePOD™
 *May 30, 2023*
 
 As artificial intelligence (AI) and machine learning (ML) continue to change how academic research is conducted, the NVIDIA DGX BasePOD, or BasePOD, brings new AI and ML functionality UVA's High-Performance Computing (HPC) system. The BasePOD is a cluster of high-performance GPUs that allows large deep-learning models to be created and utilized at UVA. 
