@@ -34,7 +34,7 @@ private = true
 
 <div class="form-item form-group form-type-checkbox">
   <label class="control-label" for="dedicated-computing">
-    Type and quantity of hardware requested <a href="/userinfo/hpc/access/#dedicated-computing">(Check out the specifications) </a>
+    Type and quantity of hardware requested <a href="https://www.rc.virginia.edu/services/pricing#hpc-dedicated-computing">(Check out the specifications) </a>
   </label>
   {{< dedicated-options-form >}}
 </div>

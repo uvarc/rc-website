@@ -52,7 +52,7 @@ private = true
     </div>
   </div>
   </div>
-  <div style="font-size:90%;" class="alert alert-success"><b>Billing Tiers</b> are selected and paid for by the PI. Submit this form again if you wish to change your tier. Stopped containers do not incur charges, nor does local cluster storage or remote NFS mounts to <code>/project</code> storage. Project storage pricing can be found <a href="/userinfo/storage/" style="font-weight:bold;">here</a>.</div>
+  <div style="font-size:90%;" class="alert alert-success"><b>Billing Tiers</b> are selected and paid for by the PI. Submit this form again if you wish to change your tier. Stopped containers do not incur charges, nor does local cluster storage or remote NFS mounts to <code>/project</code> storage. Project storage pricing can be found <a href="https://www.rc.virginia.edu/services/pricing#storage" style="font-weight:bold;">here</a>.</div>
   <hr size=1 />
   <div class="row">
   <div class="col form-item form-group form-item form-type-radios form-group"> 

@@ -79,7 +79,7 @@ private = true
   <div class="col form-item form-group">
      <div class="alert alert-warning">
          PIs are eligible for 10TB of Research Standard storage at no charge. Instructors are encouraged to utilize this 10TB of storage for both research and teaching activities. 
-     	<a href="/education/rivanna-instructional/" target="_blank">Read the full policy and guide for instructors.</a>
+     	<a href="https://www.rc.virginia.edu/services/compute-and-storage/rivannaafton#instructional-use" target="_blank">Read the full policy and guide for instructors.</a>
      </div>
   </div>
 
