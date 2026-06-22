@@ -27,6 +27,7 @@ All systems are expected to return to service by **Wednesday, August 12** at 6 a
 |alphapulldown | 0.30.7         | 2.5.0 |
 |anvio         | 8              | 9 |
 |bioconda      | py3.11         | py3.13 |
+|deeplabcut    | 3.0.0rc4       | 3.0.0 |
 |deeptools     | 3.5.5          | bioconda/py3.13 |
 |fmriprep      | 25.0.0         | 25.2.5 |
 |globus_cli    | 3.34.0         | globus-cli/3.42.0 |
