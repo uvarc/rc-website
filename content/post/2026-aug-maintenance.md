@@ -27,6 +27,8 @@ All systems are expected to return to service by **Wednesday, August 12** at 6 a
 |anvio     | 8            | 9 |
 |bioconda  | py3.11       | py3.13 |
 |fmriprep  | 25.0.0       | 25.2.5 |
+|hexrd     | 0.8.4        | 0.10.4 |
+|iqtree    | 2.2.0.3, 3.0.1 | 3.1.2 |
 |kallisto  | 0.48.0       | 0.52.0 |
 {{< /table >}}
 
