@@ -26,6 +26,8 @@ All systems are expected to return to service by **Wednesday, August 12** at 6 a
 |alphafold     | 3.0.1, 3.0.2   | 3.0.3 |
 |alphapulldown | 0.30.7         | 2.5.0 |
 |anvio         | 8              | 9 |
+|cufflinks     | 2.2.1          | - |
+|cutadapt      | 4.9            | 5.2 |
 |bioconda      | py3.11         | py3.13 |
 |deeplabcut    | 3.0.0rc4       | 3.0.0 |
 |deeptools     | 3.5.5          | bioconda/py3.13 |
@@ -35,7 +37,7 @@ All systems are expected to return to service by **Wednesday, August 12** at 6 a
 |hic-pro       | 3.1.0          | - |
 |iqtree        | 2.2.0.3, 3.0.1 | 3.1.2 |
 |kallisto      | 0.48.0         | 0.52.0 |
-|macs2         | 2.2.7.1        | - |
+|macs2         | 2.2.7.1        | macs3/3.0.3 |
 |multiqc       | 1.27.1         | bioconda/py3.13 |
 |myavi         | 4.7.2          | - |
 |mysqlclient   | 2.0.3          | 2.2.8 |
