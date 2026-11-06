@@ -21,4 +21,4 @@ COPY nginx.conf /etc/nginx/conf.d/rc-website.conf
 EXPOSE 1313
 
 # Start Hugo and NGINX
-CMD ["sh", "-c", "hugo server --bind 127.0.0.1 --port 1314 --baseURL forms.rc.virginia.edu --appendPort=false & exec nginx -g 'daemon off;'"]
+CMD ["sh", "-c", "hugo server --bind 127.0.0.1 --port 1314 --baseURL https://forms.rc.virginia.edu --appendPort=false & exec nginx -g 'daemon off;'"]
