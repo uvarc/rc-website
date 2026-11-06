@@ -1,8 +1,10 @@
 
 FROM ghcr.io/uvarc/hugo-build:prod-0.133.0 AS base
 
+# Working directory
 WORKDIR /site
 
+# Copy website files
 COPY . /site
 
 FROM base AS app
@@ -10,7 +12,8 @@ FROM base AS app
 # Install NGINX
 USER root
 
-RUN apk add --no-cache nginx
+RUN apk add --no-cache nginx \
+    && mkdir -p /run/nginx
 
 # Copy NGINX configuration
 COPY nginx.conf /etc/nginx/http.d/default.conf
