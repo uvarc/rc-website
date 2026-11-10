@@ -1,15 +1,24 @@
+
 FROM ghcr.io/uvarc/hugo-build:prod-0.133.0 AS base
 
-# working directory
 WORKDIR /site
 
-# Copy the website files into the container
 COPY . /site
 
 FROM base AS app
 
-# Expose port 1313
+# Install NGINX
+USER root
+
+RUN apk add --no-cache nginx \
+    && mkdir -p /run/nginx
+
+# Copy NGINX configuration to the correct directory
+COPY nginx.conf /etc/nginx/conf.d/rc-website.conf
+
+# Hugo: 1314
+# NGINX: 1313
 EXPOSE 1313
 
-# Run Hugo server
-ENTRYPOINT ["hugo", "server", "--bind", "0.0.0.0"]
+# Start Hugo and NGINX
+CMD ["sh", "-c", "hugo server --bind 127.0.0.1 --port 1314 --baseURL https://archive.rc.virginia.edu --appendPort=false & exec nginx -g 'daemon off;'"]
